@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ConsentBanner from '@/components/ConsentBanner'
+import { GoogleTagManagerHead, GoogleTagManagerBody } from '@/components/GoogleTagManager'
 
 export const metadata: Metadata = {
   title: {
@@ -23,12 +25,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl">
+      <head>
+        <GoogleTagManagerHead />
+      </head>
       <body className="min-h-screen flex flex-col">
+        <GoogleTagManagerBody />
         <Header />
-        <main className="flex-1 pt-16">
+        <main className="flex-1 pt-[72px]">
           {children}
         </main>
         <Footer />
+        <ConsentBanner />
       </body>
     </html>
   )

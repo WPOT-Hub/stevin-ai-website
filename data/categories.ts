@@ -60,4 +60,10 @@ export const categories: Category[] = [
     description: 'Projectmanagement- en workflowtools voor efficiënte marketingoperaties.',
     intro: 'Marketing draait niet alleen om campagnes, maar ook om processen. Goede workflows zorgen dat niets blijft liggen. Stevin.AI koppelt je operationele tools aan je marketingstack zodat taken, briefings en opvolging soepel verlopen.',
   },
+  {
+    name: 'ATS & Recruitment',
+    slug: 'ats-recruitment',
+    description: 'Applicant tracking systems en recruitment marketing tools voor het werven en opvolgen van kandidaten.',
+    intro: 'Recruitment marketing vraagt om dezelfde aanpak als leadgeneratie: de juiste kanalen, goede tracking, snelle opvolging en inzicht in wat werkt. Stevin.AI koppelt je ATS aan je wervingscampagnes zodat kandidaten automatisch worden verwerkt en het hele wervingsproces meetbaar wordt.',
+  },
 ]

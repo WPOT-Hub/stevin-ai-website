@@ -3,35 +3,127 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Section from '@/components/Section'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import SectionHeader from '@/components/SectionHeader'
+import IntegrationGrid from '@/components/IntegrationGrid'
 import CTABlock from '@/components/CTABlock'
 import FAQAccordion from '@/components/FAQAccordion'
-import IntegrationGrid from '@/components/IntegrationGrid'
+import { categories } from '@/data/categories'
 import { integrations } from '@/data/integrations'
-import { getIntegrationBySlug, getCategoryBySlug, getRelatedIntegrations } from '@/lib/utils'
+import { getIntegrationBySlug, getCategoryBySlug, getIntegrationsByCategory, getRelatedIntegrations } from '@/lib/utils'
 
 interface Props {
   params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
-  return integrations.map((i) => ({ slug: i.slug }))
+  const categoryParams = categories.map((cat) => ({ slug: cat.slug }))
+  const integrationParams = integrations.map((i) => ({ slug: i.slug }))
+  return [...categoryParams, ...integrationParams]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const integration = getIntegrationBySlug(slug)
-  if (!integration) return {}
-  return {
-    title: `${integration.name} integratie`,
-    description: integration.shortDescription,
+
+  // Check category first
+  const category = getCategoryBySlug(slug)
+  if (category) {
+    return {
+      title: `${category.name} integraties`,
+      description: category.description,
+    }
   }
+
+  // Then check integration
+  const integration = getIntegrationBySlug(slug)
+  if (integration) {
+    return {
+      title: `${integration.name} integratie`,
+      description: integration.shortDescription,
+    }
+  }
+
+  return {}
 }
 
-export default async function IntegrationDetailPage({ params }: Props) {
-  const { slug } = await params
-  const integration = getIntegrationBySlug(slug)
-  if (!integration) notFound()
+/* ───────── Category page ───────── */
+function CategoryView({ slug }: { slug: string }) {
+  const category = getCategoryBySlug(slug)!
+  const categoryIntegrations = getIntegrationsByCategory(slug)
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${category.name} integraties — Stevin.AI`,
+    description: category.description,
+    url: `https://stevin.ai/integraties/${slug}`,
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <Section>
+        <Breadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Integraties', href: '/integraties' },
+            { label: category.name },
+          ]}
+        />
+
+        <div className="max-w-3xl mb-12">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">
+            {category.name}
+          </h1>
+          <p className="mt-6 text-lg text-muted leading-relaxed">
+            {category.intro}
+          </p>
+        </div>
+
+        <div className="mb-8">
+          <h2 className="text-xl font-bold text-primary mb-6">
+            {categoryIntegrations.length} {category.name.toLowerCase()} integraties
+          </h2>
+          <IntegrationGrid integrations={categoryIntegrations} />
+        </div>
+
+        {/* Related categories */}
+        <div className="mt-16 pt-12 border-t border-border">
+          <h2 className="text-xl font-bold text-primary mb-6">Andere categorieën</h2>
+          <div className="flex flex-wrap gap-3">
+            {categories
+              .filter((c) => c.slug !== slug)
+              .map((cat) => (
+                <Link
+                  key={cat.slug}
+                  href={`/integraties/${cat.slug}`}
+                  className="px-4 py-2 text-sm font-medium bg-surface-alt text-muted rounded-lg border border-border hover:text-primary hover:border-accent/30 transition-colors"
+                >
+                  {cat.name}
+                </Link>
+              ))}
+          </div>
+        </div>
+      </Section>
+
+      <Section bg="surface">
+        <CTABlock
+          title="Hulp nodig bij het koppelen van je tools?"
+          description="We zorgen dat je marketingstack samenwerkt als één systeem. Plan een gesprek en ontdek wat er mogelijk is."
+          buttonText="Plan een gesprek"
+          buttonHref="/contact"
+        />
+      </Section>
+    </>
+  )
+}
+
+/* ───────── Integration detail page ───────── */
+function IntegrationView({ slug }: { slug: string }) {
+  const integration = getIntegrationBySlug(slug)!
   const category = getCategoryBySlug(integration.category)
   const relatedIntegrations = getRelatedIntegrations(integration.relatedSlugs)
 
@@ -75,7 +167,7 @@ export default async function IntegrationDetailPage({ params }: Props) {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Integraties', href: '/integraties' },
-            ...(category ? [{ label: category.name, href: `/integraties/categorie/${category.slug}` }] : []),
+            ...(category ? [{ label: category.name, href: `/integraties/${category.slug}` }] : []),
             { label: integration.name },
           ]}
         />
@@ -93,7 +185,7 @@ export default async function IntegrationDetailPage({ params }: Props) {
                 </h1>
                 {category && (
                   <Link
-                    href={`/integraties/categorie/${category.slug}`}
+                    href={`/integraties/${category.slug}`}
                     className="text-sm text-accent hover:text-accent-dark transition-colors"
                   >
                     {category.name}
@@ -185,7 +277,7 @@ export default async function IntegrationDetailPage({ params }: Props) {
                 <div className="p-6 rounded-xl bg-surface border border-border">
                   <h3 className="text-base font-bold text-primary mb-2">Categorie</h3>
                   <Link
-                    href={`/integraties/categorie/${category.slug}`}
+                    href={`/integraties/${category.slug}`}
                     className="text-sm text-accent hover:text-accent-dark transition-colors"
                   >
                     Bekijk alle {category.name.toLowerCase()} integraties →
@@ -207,4 +299,21 @@ export default async function IntegrationDetailPage({ params }: Props) {
       </Section>
     </>
   )
+}
+
+/* ───────── Main page component ───────── */
+export default async function IntegrationOrCategoryPage({ params }: Props) {
+  const { slug } = await params
+
+  // Check category first
+  if (getCategoryBySlug(slug)) {
+    return <CategoryView slug={slug} />
+  }
+
+  // Then check integration
+  if (getIntegrationBySlug(slug)) {
+    return <IntegrationView slug={slug} />
+  }
+
+  notFound()
 }

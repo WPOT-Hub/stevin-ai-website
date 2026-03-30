@@ -5,27 +5,27 @@ export interface FAQ {
 
 export const homepageFaqs: FAQ[] = [
   {
-    question: 'Werken jullie alleen met advertenties?',
-    answer: 'Nee. Advertenties zijn vaak het startpunt, maar we pakken de hele route aan: van klik tot klant. Dat betekent ook landingspagina\'s, tracking, CRM-koppelingen, automation en opvolging. Alles wat nodig is om van een bezoeker een klant te maken.',
+    question: 'Wat doen jullie precies?',
+    answer: 'Wij nemen je volledige marketing over. Van advertenties en vindbaarheid tot je website, automation en opvolging. Je krijgt een compleet team dat stuurt op resultaat, zonder dat je er zelf iets voor hoeft uit te zoeken.',
   },
   {
-    question: 'Doen jullie ook CRM en leadopvolging?',
-    answer: 'Ja. We richten CRM-systemen in, koppelen ze aan je marketingkanalen en zorgen dat leads automatisch worden verwerkt, gescoord en opgevolgd. Zo valt er geen enkele lead tussen wal en schip.',
+    question: 'Moet ik zelf veel doen?',
+    answer: 'Nee. Wij doen het werk. Jij krijgt overzicht via een helder dashboard en we bespreken samen de resultaten. Verder regelen wij alles achter de schermen.',
   },
   {
-    question: 'Werken jullie met onze bestaande tools?',
-    answer: 'Ja. We werken met de tools die je al hebt. Of dat nu HubSpot, Salesforce, Pipedrive, Mailchimp of een ander platform is — we zorgen dat alles beter op elkaar aansluit in plaats van alles te vervangen.',
+    question: 'Wanneer zie ik resultaat?',
+    answer: 'De eerste verbeteringen zijn vaak al binnen enkele weken zichtbaar. Structureel resultaat bouw je op over de eerste twee tot drie maanden. We sturen continu bij op basis van data.',
   },
   {
-    question: 'Is AI bij jullie volledig automatisch?',
-    answer: 'Nee. We gebruiken AI om analyse, signalering, scoring en optimalisatie te versnellen. Strategie, creatie, kanaalkeuzes en commerciële afwegingen blijven mensenwerk. AI versnelt, maar kennis maakt het verschil.',
+    question: 'Werken jullie met mijn bestaande tools?',
+    answer: 'Ja. We sluiten aan op de tools die je al gebruikt. Of dat nu HubSpot, Mailchimp, WordPress of een ander platform is — wij zorgen dat alles samenwerkt.',
   },
   {
-    question: 'Hoe snel kunnen we starten?',
-    answer: 'Na een intakegesprek starten we met een analyse van je huidige situatie. Binnen twee tot vier weken zijn de eerste verbeteringen live. Grotere trajecten bouwen we stap voor stap op.',
+    question: 'Hoe lang duurt een samenwerking?',
+    answer: 'We werken met een minimale looptijd van 12 maanden. Marketing heeft tijd nodig om structureel resultaat op te bouwen. Binnen die periode richten we alles in, optimaliseren we continu en zorgen we dat je écht groeit. Na het eerste jaar evalueren we samen.',
   },
   {
     question: 'Hoe werkt jullie prijsmodel?',
-    answer: 'We werken met vaste maandelijkse vergoedingen voor beheer en optimalisatie, en projectprijzen voor inrichting en implementatie. We rekenen geen marge op je mediabudget. Je betaalt voor onze kennis, techniek en tijd — niet voor een opslag op je ad spend.',
+    answer: 'We werken met vaste maandprijzen. Geen verrassingen, geen marge op je mediabudget. Je weet precies wat je betaalt en wat je ervoor krijgt.',
   },
 ]
