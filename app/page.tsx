@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Section from '@/components/Section'
 import FAQAccordion from '@/components/FAQAccordion'
 import HeroVideo from '@/components/HeroVideo'
+import PricingTabs from '@/components/PricingTabs'
 import { homepageFaqs } from '@/data/faqs'
 
 export default function HomePage() {
@@ -31,9 +32,9 @@ export default function HomePage() {
         }} />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 lg:gap-6 items-center">
             {/* Left — Text (man wijst hierheen) */}
-            <div>
+            <div className="max-w-lg">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.1] mb-5">
                 <Image src="/logos/icon-white.svg" alt="" width={16} height={16} />
                 <span className="text-sm font-medium text-white/60">Marketing. Inzicht. Resultaat.</span>
@@ -93,98 +94,120 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== PROBLEEM ===== */}
+      {/* ===== KPI BLOK ===== */}
       <Section bg="white">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Herkenbaar?</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-primary leading-tight">
-            Marketing kost tijd, geld en overzicht.
-          </h2>
-          <p className="mt-5 text-lg text-muted leading-relaxed max-w-2xl mx-auto">
-            Je marketing zit verspreid. Het kost meer dan het oplevert. En je hebt geen idee waar het fout gaat.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
           {[
             {
               icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6z" />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
                 </svg>
               ),
-              title: 'Verspreid',
-              text: 'Ads hier, website daar, e-mail ergens anders. Alles staat los van elkaar.',
+              title: 'Meer conversies',
+              desc: 'Door betere aansluiting tussen kanalen',
             },
             {
               icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               ),
-              title: 'Duur',
-              text: 'Je investeert, maar weet niet wat het oplevert. Budget verdwijnt zonder resultaat.',
+              title: 'Lagere kosten per lead',
+              desc: 'Door betere targeting en minder verspilling',
             },
             {
               icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                 </svg>
               ),
-              title: 'Onduidelijk',
-              text: 'Geen overzicht. Je weet niet waar het fout gaat of wat je moet verbeteren.',
+              title: 'Snellere opvolging',
+              desc: 'Automation zorgt dat geen lead wordt gemist',
             },
           ].map((item) => (
-            <div key={item.title} className="p-7 rounded-2xl bg-surface border border-border text-center">
-              <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center mx-auto mb-4">
+            <div key={item.title} className="flex items-start gap-4 p-5 rounded-xl bg-surface border border-border">
+              <div className="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center flex-shrink-0">
                 {item.icon}
               </div>
-              <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
-              <p className="text-[15px] text-muted leading-relaxed">{item.text}</p>
+              <div>
+                <h3 className="text-sm font-bold text-primary">{item.title}</h3>
+                <p className="text-xs text-muted mt-0.5">{item.desc}</p>
+              </div>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* ===== OPLOSSING ===== */}
+      {/* ===== PROBLEEM ===== */}
       <Section bg="surface">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">De oplossing</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-primary leading-tight">
-            Stevin brengt alles samen in één aanpak.
+        <div className="max-w-3xl mx-auto text-center mb-10">
+          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Herkenbaar?</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary leading-tight">
+            Marketing kost tijd, geld en overzicht.
           </h2>
-          <p className="mt-5 text-lg text-muted leading-relaxed max-w-2xl mx-auto">
-            Wij zorgen dat je zichtbaar bent, campagnes draaien, je website converteert, leads worden opgevolgd en je stuurt op resultaat.
-          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
           {[
-            { icon: '📣', title: 'Advertenties', desc: 'Gericht verkeer via de juiste kanalen' },
-            { icon: '🔍', title: 'Vindbaarheid', desc: 'SEO en AI-vindbaarheid verbeteren' },
-            { icon: '🖥️', title: 'Website & conversie', desc: 'Bezoekers omzetten in leads' },
-            { icon: '⚙️', title: 'Automation', desc: 'Leads automatisch opvolgen' },
-            { icon: '📊', title: 'Rapportage & sturing', desc: 'Inzicht in wat werkt en bijsturen' },
+            { title: 'Campagnes werken los', icon: '🔀' },
+            { title: 'Leads worden niet opgevolgd', icon: '⏳' },
+            { title: 'Budget verdwijnt', icon: '💸' },
+            { title: 'Geen inzicht in resultaat', icon: '🔍' },
           ].map((item) => (
-            <div key={item.title} className="p-6 rounded-2xl bg-white border border-border text-center hover:border-accent/20 hover:shadow-md transition-all duration-300">
-              <span className="text-2xl block mb-3">{item.icon}</span>
-              <h3 className="text-sm font-bold text-primary mb-1">{item.title}</h3>
-              <p className="text-xs text-muted leading-relaxed">{item.desc}</p>
+            <div key={item.title} className="p-5 rounded-xl bg-white border border-border text-center">
+              <span className="text-xl block mb-2">{item.icon}</span>
+              <p className="text-sm font-semibold text-primary leading-snug">{item.title}</p>
             </div>
           ))}
         </div>
-        <p className="mt-10 text-center text-base text-muted">
-          Van vindbaarheid tot klant en opvolging — als <span className="font-semibold text-primary">één werkend systeem</span>.
+      </Section>
+
+      {/* ===== OPLOSSING FLOW ===== */}
+      <Section bg="white">
+        <div className="max-w-3xl mx-auto text-center mb-10">
+          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">De aanpak</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary leading-tight">
+            Eén systeem. Vier stappen.
+          </h2>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          {[
+            { step: '01', title: 'Aantrekken', icon: (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" /></svg>
+            )},
+            { step: '02', title: 'Vastleggen', icon: (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z" /></svg>
+            )},
+            { step: '03', title: 'Opvolgen', icon: (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+            )},
+            { step: '04', title: 'Verbeteren', icon: (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+            )},
+          ].map((item) => (
+            <div key={item.step} className="p-5 rounded-xl bg-surface border border-border text-center group hover:border-accent/20 transition-all">
+              <div className="w-11 h-11 rounded-xl bg-accent/10 text-accent flex items-center justify-center mx-auto mb-3">
+                {item.icon}
+              </div>
+              <span className="text-[10px] font-bold text-accent uppercase tracking-wider">{item.step}</span>
+              <h3 className="text-sm font-bold text-primary mt-1">{item.title}</h3>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-center text-sm text-muted">
+          Dit zijn geen losse diensten. Dit is <span className="font-semibold text-primary">één werkend systeem</span>.
         </p>
       </Section>
 
       {/* ===== HOE HET WERKT ===== */}
       <Section bg="white">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Hoe het werkt</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-primary leading-tight">
+        <div className="max-w-3xl mx-auto text-center mb-10">
+          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Hoe het werkt</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary leading-tight">
             Drie stappen naar resultaat
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             {
               step: '01',
@@ -203,22 +226,22 @@ export default function HomePage() {
             },
           ].map((item) => (
             <div key={item.step} className="relative text-center">
-              <div className="w-14 h-14 rounded-2xl bg-accent/10 text-accent flex items-center justify-center mx-auto mb-5 text-lg font-bold">
+              <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center mx-auto mb-4 text-base font-bold">
                 {item.step}
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
-              <p className="text-[15px] text-muted leading-relaxed">{item.desc}</p>
+              <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
+              <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
 
         {/* Flow diagram */}
-        <div className="mt-16 flex items-center justify-center gap-3 sm:gap-5 flex-wrap">
+        <div className="mt-10 flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
           {['Data', 'Inzicht', 'Actie', 'Groei'].map((label, i) => (
-            <div key={label} className="flex items-center gap-3 sm:gap-5">
-              <span className="px-5 py-2.5 text-sm font-semibold text-primary bg-surface rounded-lg border border-border">{label}</span>
+            <div key={label} className="flex items-center gap-3 sm:gap-4">
+              <span className="px-4 py-2 text-sm font-semibold text-primary bg-surface rounded-lg border border-border">{label}</span>
               {i < 3 && (
-                <svg className="w-5 h-5 text-accent/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-accent/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               )}
@@ -228,125 +251,64 @@ export default function HomePage() {
       </Section>
 
       {/* ===== RESULTATEN ===== */}
-      <section className="relative bg-[#0A1628] py-20 sm:py-28 lg:py-32 overflow-hidden">
+      <section className="relative bg-[#0A1628] py-14 sm:py-18 lg:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, #3D8EFF 1px, transparent 0)',
           backgroundSize: '32px 32px',
         }} />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Resultaten</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Resultaten</p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
               Dit bereiken onze klanten.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {[
-              { number: '+83%', label: 'Omzetgroei' },
-              { number: '2x', label: 'ROAS verdubbeld' },
-              { number: '+300%', label: 'Meer leads' },
+              { number: 'Lagere CPL', label: 'Betere targeting verlaagt je kosten per lead' },
+              { number: 'Snellere opvolging', label: 'Automation zorgt dat geen lead wordt gemist' },
+              { number: 'Meer conversie', label: 'Betere aansluiting tussen kanalen en opvolging' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-4xl sm:text-5xl font-bold text-neon mb-2">{stat.number}</div>
-                <p className="text-sm text-slate-400 font-medium">{stat.label}</p>
+                <div className="text-lg sm:text-xl font-bold text-neon mb-1.5">{stat.number}</div>
+                <p className="text-sm text-slate-400 leading-relaxed">{stat.label}</p>
               </div>
             ))}
           </div>
-          <p className="mt-12 text-center text-sm text-slate-500">
-            Gemiddelde resultaten van klanten na 3 maanden samenwerking.
+          <p className="mt-8 text-center text-xs text-slate-500">
+            Dit zien we vaak in de eerste 90 dagen.
           </p>
         </div>
       </section>
 
       {/* ===== PRICING ===== */}
       <Section bg="white" id="pricing">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Geen verborgen kosten</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-primary leading-tight">
-            Transparante pakketten. Vaste maandprijs.
+        <div className="max-w-3xl mx-auto text-center mb-10">
+          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Transparante prijzen</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary leading-tight">
+            Vaste maandprijs. Geen verrassingen.
           </h2>
-          <p className="mt-5 text-lg text-muted leading-relaxed max-w-2xl mx-auto">
-            Geen verrassingen. Wel resultaat. Kies het pakket dat past bij je fase.
+          <p className="mt-4 text-base text-muted leading-relaxed max-w-2xl mx-auto">
+            Kies de dienst die past bij je situatie. Combineer voor maximaal resultaat.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {[
-            {
-              name: 'Groei',
-              price: '850',
-              desc: 'Voor zichtbaarheid en eerste leads',
-              features: ['Gerichte campagnes', 'SEO basis', 'Maandelijkse optimalisatie', 'Rapportage & dashboard'],
-              popular: false,
-            },
-            {
-              name: 'Versnellen',
-              price: '1.400',
-              desc: 'Voor actieve groei',
-              features: ['Alles uit Groei', 'Uitgebreide campagnes', 'Website optimalisatie', 'Basis automation'],
-              popular: true,
-            },
-            {
-              name: 'Schalen',
-              price: '1.850',
-              desc: 'Voor volledige funnel',
-              features: ['Alles uit Versnellen', 'Uitgebreide automation', 'Conversie optimalisatie', 'Diepere analyse & sturing'],
-              popular: false,
-            },
-          ].map((pkg) => (
-            <div key={pkg.name} className={`relative p-8 rounded-2xl border transition-all ${
-              pkg.popular
-                ? 'bg-[#0A1628] border-accent/30 shadow-xl shadow-accent/10 scale-[1.02]'
-                : 'bg-white border-border hover:border-accent/20 hover:shadow-lg'
-            }`}>
-              {pkg.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-accent text-white text-xs font-bold">
-                  Populairste keuze
-                </div>
-              )}
-              <h3 className={`text-xl font-bold mb-1 ${pkg.popular ? 'text-white' : 'text-primary'}`}>{pkg.name}</h3>
-              <p className={`text-sm mb-5 ${pkg.popular ? 'text-slate-400' : 'text-muted'}`}>{pkg.desc}</p>
-              <div className="mb-6">
-                <span className={`text-4xl font-bold ${pkg.popular ? 'text-white' : 'text-primary'}`}>€{pkg.price}</span>
-                <span className={`text-sm ml-1 ${pkg.popular ? 'text-slate-400' : 'text-muted'}`}>p/m</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                {pkg.features.map((feature) => (
-                  <li key={feature} className={`flex items-start gap-2.5 text-sm ${pkg.popular ? 'text-slate-300' : 'text-muted'}`}>
-                    <svg className={`w-4 h-4 mt-0.5 flex-shrink-0 ${pkg.popular ? 'text-neon' : 'text-accent'}`} fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/contact"
-                className={`block w-full text-center py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
-                  pkg.popular
-                    ? 'bg-neon text-[#0A1628] hover:bg-neon-dark neon-glow'
-                    : 'bg-surface text-primary border border-border hover:border-accent/30 hover:shadow-md'
-                }`}
-              >
-                Plan een gesprek
-              </Link>
-            </div>
-          ))}
-        </div>
-        <p className="mt-8 text-center text-sm text-muted">
-          Minimaal 12 maanden. Vaste maandprijs. Geen verborgen kosten.
+        <PricingTabs />
+
+        <p className="mt-10 text-center text-sm text-muted">
+          Minimaal 12 maanden. Geen marge op mediabudget. Combinatie-korting mogelijk.
         </p>
       </Section>
 
       {/* ===== WAAROM STEVIN ===== */}
       <Section bg="surface">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Waarom Stevin</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-primary leading-tight">
+        <div className="max-w-3xl mx-auto text-center mb-10">
+          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Waarom Stevin</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary leading-tight">
             Eén partner voor al je marketing.
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
           {[
             { title: 'Senior team', desc: 'Geen junioren op je account. Ervaren marketeers die weten wat werkt.' },
             { title: 'Volledige funnel', desc: 'Van vindbaarheid tot klant. Geen losse onderdelen maar één werkende aanpak.' },
@@ -365,8 +327,8 @@ export default function HomePage() {
 
       {/* ===== FAQ ===== */}
       <Section bg="white">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">
+        <div className="max-w-3xl mx-auto text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary">
             Veelgestelde vragen
           </h2>
         </div>
@@ -374,21 +336,21 @@ export default function HomePage() {
       </Section>
 
       {/* ===== FINAL CTA ===== */}
-      <section className="bg-surface py-20 sm:py-28">
+      <section className="bg-surface py-14 sm:py-18 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-[#0A1628] px-8 py-16 sm:px-16 sm:py-20 text-center overflow-hidden">
+          <div className="relative rounded-3xl bg-[#0A1628] px-8 py-14 sm:px-16 sm:py-16 text-center overflow-hidden">
             <div className="absolute inset-0 opacity-[0.04]" style={{
               backgroundImage: 'radial-gradient(circle at 1px 1px, #3D8EFF 1px, transparent 0)',
               backgroundSize: '24px 24px',
             }} />
             <div className="relative">
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
                 Klaar om je marketing uit handen te geven?
               </h2>
-              <p className="mt-5 text-lg text-slate-300 max-w-xl mx-auto leading-relaxed">
+              <p className="mt-4 text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
                 Plan een gesprek en ontdek waar je groei laat liggen.
               </p>
-              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href="/contact"
                   className="neon-glow group inline-flex items-center px-8 py-4 text-base font-bold text-[#0A1628] bg-neon rounded-xl hover:bg-neon-dark transition-all duration-300"

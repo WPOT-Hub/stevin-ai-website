@@ -15,7 +15,7 @@ export default function Section({ children, className, id, bg = 'white' }: Secti
   }
 
   return (
-    <section id={id} className={cn(bgClasses[bg], 'py-20 sm:py-28 lg:py-32', className)}>
+    <section id={id} className={cn(bgClasses[bg], 'py-14 sm:py-18 lg:py-20', className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {children}
       </div>
