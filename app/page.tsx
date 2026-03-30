@@ -311,7 +311,7 @@ export default function HomePage() {
             { title: 'Transparant', desc: 'Je ziet wat er gebeurt, wat het kost en wat het oplevert. Altijd.' },
             { title: 'Vaste prijs', desc: 'Geen verrassingen. Geen marge op je mediabudget. Vaste maandprijs.' },
             { title: 'Focus op ROI', desc: 'Wij sturen op resultaat. Niet op klikken of bereik, maar op klanten.' },
-            { title: 'Langetermijnpartner', desc: 'We bouwen structureel op. Minimaal 12 maanden, zodat resultaten echt beklijven.' },
+            { title: 'Langetermijnpartner', desc: 'We investeren in een langere samenwerking. Zo bouwen we structureel op en worden resultaten steeds beter.' },
           ].map((item) => (
             <div key={item.title} className="p-6 rounded-2xl bg-white border border-border">
               <h3 className="text-base font-bold text-primary mb-2">{item.title}</h3>

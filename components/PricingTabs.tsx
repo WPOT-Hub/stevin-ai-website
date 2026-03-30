@@ -15,6 +15,7 @@ const categories = [
         features: [
           'Google & Meta campagnes',
           '< €3.000 adspend p/m',
+          '2 koppelingen inbegrepen',
           'Maandelijkse optimalisatie',
           'Rapportage & dashboard',
         ],
@@ -27,6 +28,7 @@ const categories = [
         features: [
           'Google, Meta & TikTok',
           '< €8.000 adspend p/m',
+          '3 koppelingen inbegrepen',
           'Wekelijkse optimalisatie',
           'Conversietracking setup',
           'A/B testing',
@@ -40,6 +42,7 @@ const categories = [
         features: [
           'Alle kanalen incl. LinkedIn',
           '< €25.000 adspend p/m',
+          '5 koppelingen inbegrepen',
           'Dedicated specialist',
           'Geavanceerde attributie',
           'Custom dashboards',
@@ -60,6 +63,7 @@ const categories = [
         features: [
           'Technische SEO audit',
           'Focus op 1 categorie',
+          '2 koppelingen inbegrepen',
           'AI-zoekoptimalisatie',
           'Basis linkbuilding',
           'Kwartaalrapportage',
@@ -73,6 +77,7 @@ const categories = [
         features: [
           'Alles uit Starter',
           'Meerdere categorieën',
+          '3 koppelingen inbegrepen',
           'LLM & GEO optimalisatie',
           'Content strategie',
           'Maandelijkse rapportage',
@@ -87,6 +92,7 @@ const categories = [
         features: [
           'Alles uit Professional',
           'Volledige cluster aanpak',
+          '5 koppelingen inbegrepen',
           'Topical authority',
           'Concurrentie analyse',
           'PR & linkbuilding',
@@ -108,6 +114,7 @@ const categories = [
         features: [
           'Lead notificaties',
           'Basis e-mail flows',
+          '2 koppelingen inbegrepen',
           'CRM koppeling',
           'Formulier integratie',
         ],
@@ -119,6 +126,7 @@ const categories = [
         desc: 'Voor volledige opvolging',
         features: [
           'Alles uit Starter',
+          '3 koppelingen inbegrepen',
           'Lead scoring',
           'Geavanceerde flows',
           'Multi-channel automation',
@@ -133,6 +141,7 @@ const categories = [
         desc: 'Voor maximale conversie',
         features: [
           'Alles uit Professional',
+          '5 koppelingen inbegrepen',
           'Custom integraties',
           'Predictive lead scoring',
           'Revenue attribution',
