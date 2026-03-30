@@ -294,10 +294,6 @@ export default function HomePage() {
         </div>
 
         <PricingTabs />
-
-        <p className="mt-10 text-center text-sm text-muted">
-          Minimaal 12 maanden. Geen marge op mediabudget. Combinatie-korting mogelijk.
-        </p>
       </Section>
 
       {/* ===== WAAROM STEVIN ===== */}

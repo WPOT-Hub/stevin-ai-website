@@ -26,6 +26,6 @@ export const homepageFaqs: FAQ[] = [
   },
   {
     question: 'Hoe werkt jullie prijsmodel?',
-    answer: 'We werken met vaste maandprijzen. Geen verrassingen, geen marge op je mediabudget. Je weet precies wat je betaalt en wat je ervoor krijgt.',
+    answer: 'We werken met vaste maandprijzen. Geen verrassingen, geen marge op je mediabudget. Je weet precies wat je betaalt en wat je ervoor krijgt. Combineer je meerdere diensten? Dan is korting mogelijk.',
   },
 ]
