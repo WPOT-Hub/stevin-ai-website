@@ -1,9 +1,17 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('verzonden') === '1') {
+      setSubmitted(true)
+    }
+  }, [])
 
   if (submitted) {
     return (
@@ -17,12 +25,15 @@ export default function ContactForm() {
 
   return (
     <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        setSubmitted(true)
-      }}
+      action="https://formsubmit.co/stevin@wpotgroup.com"
+      method="POST"
+      onSubmit={() => setLoading(true)}
       className="rounded-2xl border border-border bg-white p-8 sm:p-12"
     >
+      <input type="hidden" name="_subject" value="Nieuwe aanvraag via stevin.ai" />
+      <input type="hidden" name="_next" value="https://stevin.ai/contact?verzonden=1" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="_honey" style={{ display: 'none' }} />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">
@@ -90,9 +101,10 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="mt-6 w-full sm:w-auto px-8 py-3.5 text-base font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors"
+        disabled={loading}
+        className="mt-6 w-full sm:w-auto px-8 py-3.5 text-base font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors disabled:opacity-60"
       >
-        Verstuur bericht
+        {loading ? 'Verzenden...' : 'Verstuur bericht'}
       </button>
     </form>
   )

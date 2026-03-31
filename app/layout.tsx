@@ -11,10 +11,19 @@ export const metadata: Metadata = {
     template: '%s | Stevin.AI',
   },
   description: 'Meer leads. Betere opvolging. Minder waste. Stevin.AI verbetert de volledige route van klik tot klant. Geen marge op je mediabudget.',
+  metadataBase: new URL('https://stevin.ai'),
   openGraph: {
     type: 'website',
     locale: 'nl_NL',
     siteName: 'Stevin.AI',
+    title: 'Stevin.AI — Jij focust op je business. Wij regelen je marketing.',
+    description: 'Google Ads, SEO, social media en automation — vanaf €950 p/m. Dedicated specialist, geen marge op mediabudget.',
+    url: 'https://stevin.ai',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Stevin.AI — Jij focust op je business. Wij regelen je marketing.',
+    description: 'Google Ads, SEO, social media en automation — vanaf €950 p/m. Dedicated specialist, geen marge op mediabudget.',
   },
 }
 

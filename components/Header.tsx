@@ -58,14 +58,14 @@ export default function Header() {
             : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-8">
         <div className="flex h-[72px] items-center justify-between">
           <Link href="/" className="flex-shrink-0">
             <Logo variant={showDark ? 'mono-white' : 'primary'} width={140} height={23} />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {/* Diensten dropdown */}
             <div ref={dropdownRef} className="relative">
               <button
@@ -121,14 +121,14 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`md:hidden p-2 ${showDark ? 'text-white' : 'text-primary'}`}
+            className={`lg:hidden p-2.5 ${showDark ? 'text-white' : 'text-primary'}`}
             aria-label="Menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
           </button>
@@ -137,7 +137,7 @@ export default function Header() {
 
       {/* Mobile nav */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-border">
+        <div className="lg:hidden bg-white border-t border-border">
           <div className="px-6 py-6 space-y-1">
             {/* Diensten accordion */}
             <button

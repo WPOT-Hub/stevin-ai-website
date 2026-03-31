@@ -27,7 +27,7 @@ export default function HomePage() {
       />
 
       {/* ===== HERO ===== */}
-      <section className="relative overflow-hidden hero-mesh-gradient -mt-[72px] pt-[calc(72px+2.5rem)] sm:pt-[calc(72px+3rem)] lg:pt-[calc(72px+4rem)] pb-10 sm:pb-14 lg:pb-16">
+      <section className="relative overflow-hidden hero-mesh-gradient -mt-[72px] pt-[calc(72px+2.5rem)] sm:pt-[calc(72px+3rem)] lg:pt-[calc(72px+4rem)] pb-0 lg:pb-16">
         <div className="absolute inset-0 opacity-[0.04]" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
           backgroundSize: '40px 40px',
@@ -36,38 +36,34 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 lg:gap-6 items-center">
             {/* Left — Text */}
-            <div className="max-w-lg">
+            <div className="max-w-lg lg:max-w-xl">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.1] mb-5">
                 <Image src="/logos/icon-white.svg" alt="" width={16} height={16} />
                 <span className="text-sm font-medium text-white/60">Marketing. Inzicht. Resultaat.</span>
               </div>
 
-              <h1 className="text-[2rem] sm:text-4xl lg:text-5xl xl:text-[3.5rem] font-bold tracking-tight text-white leading-[1.1]">
+              <h1 className="text-[1.75rem] sm:text-4xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight text-white leading-[1.1]">
                 Jij focust op je business.
               </h1>
-              <p className="mt-2 text-[1.35rem] sm:text-2xl lg:text-[1.75rem] font-light tracking-tight text-white/55 leading-[1.2]">
+              <p className="mt-3 text-lg sm:text-2xl lg:text-[1.85rem] xl:text-[2rem] font-light tracking-tight text-white/55 leading-[1.2]">
                 Wij regelen je marketing en sturen op resultaat.
               </p>
 
-              <p className="mt-5 text-[15px] sm:text-base text-white/35 max-w-md leading-relaxed">
+              <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-white/35 max-w-md lg:max-w-lg leading-relaxed">
                 Google Ads, je website, social media en automatische opvolging. Wij zorgen dat alles samenwerkt.
               </p>
 
-              <p className="mt-3 text-sm font-medium text-neon/70 lg:bg-transparent lg:backdrop-blur-none lg:px-0 lg:py-0 lg:rounded-none bg-[#0A1628]/70 backdrop-blur-sm inline-block px-3 py-1.5 rounded-lg">
-                Vaste maandprijs. Geen verrassingen.
-              </p>
-
-              {/* CTA area with mobile video blob */}
-              <div className="relative mt-7">
-                {/* Mobile video */}
-                <div className="lg:hidden absolute right-4 -top-20 w-[240px] h-[240px] sm:right-0 sm:w-[260px] sm:h-[260px] opacity-40 z-0 pointer-events-none">
+              {/* CTA + mobile video side by side */}
+              <div className="relative mt-6">
+                {/* Mobile video — positioned right of CTA */}
+                <div className="lg:hidden absolute right-[60px] -top-12 w-[200px] h-[200px] sm:right-[-60px] sm:-top-20 sm:w-[360px] sm:h-[360px] md:right-[-250px] md:w-[400px] md:h-[400px] z-0 pointer-events-none">
                   <HeroVideo />
                 </div>
 
                 <div className="relative z-10 flex flex-col sm:flex-row items-start gap-3">
                   <Link
                     href="/contact"
-                    className="neon-glow group inline-flex items-center px-7 py-3.5 text-[15px] font-bold text-[#0A1628] bg-neon rounded-xl hover:bg-neon-dark transition-all duration-300"
+                    className="neon-glow group inline-flex items-center px-7 py-3.5 lg:px-8 lg:py-4 text-[15px] lg:text-base font-bold text-[#0A1628] bg-neon rounded-xl hover:bg-neon-dark transition-all duration-300"
                   >
                     Plan een gesprek
                     <svg className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,22 +72,29 @@ export default function HomePage() {
                   </Link>
                   <Link
                     href="/werkwijze"
-                    className="inline-flex items-center px-7 py-3.5 text-[15px] font-semibold text-white/80 bg-white/[0.06] rounded-xl border border-white/[0.1] hover:bg-white/[0.1] transition-all duration-200"
+                    className="inline-flex items-center px-7 py-3.5 lg:px-8 lg:py-4 text-[15px] lg:text-base font-semibold text-white/80 bg-white/[0.06] rounded-xl border border-white/[0.1] hover:bg-white/[0.1] transition-all duration-200"
                   >
                     Bekijk hoe het werkt
                   </Link>
                 </div>
-
-                <p className="relative z-10 mt-3 text-xs text-white/40 bg-[#0A1628]/70 backdrop-blur-sm inline-block px-3 py-1.5 rounded-lg lg:bg-transparent lg:backdrop-blur-none lg:px-0 lg:py-0 lg:rounded-none lg:text-white/20">
-                  Binnen 30 min inzicht in waar je groei laat liggen. Geen verplichtingen.
-                </p>
               </div>
             </div>
 
-            {/* Right — Video */}
+            {/* Right — Video (desktop only) */}
             <div className="hidden lg:flex justify-end">
               <HeroVideo />
             </div>
+          </div>
+
+          {/* Trust bar — clean row below, no overlap with video */}
+          <div className="relative z-10 mt-6 lg:mt-10 pb-8 sm:pb-10 lg:pb-0 max-w-[55%] lg:max-w-none flex flex-col lg:flex-row lg:items-center gap-1.5 lg:gap-6">
+            <span className="text-sm lg:text-[15px] font-medium text-neon/70">
+              Vaste maandprijs. Geen verrassingen.
+            </span>
+            <span className="hidden sm:block w-px h-4 bg-white/15" />
+            <span className="text-xs lg:text-sm text-white/30 leading-snug">
+              Binnen 30 min inzicht in waar je groei laat liggen. Geen verplichtingen.
+            </span>
           </div>
         </div>
       </section>
@@ -100,9 +103,9 @@ export default function HomePage() {
       <div className="bg-white border-b border-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <p className="text-xs font-semibold text-muted uppercase tracking-widest text-center mb-5">Wij werken onder andere met</p>
-          <div className="flex items-center justify-center gap-8 sm:gap-12 flex-wrap opacity-40 grayscale">
+          <div className="flex items-center justify-center gap-6 sm:gap-12 flex-wrap opacity-40 grayscale">
             {['Google Ads', 'Meta', 'HubSpot', 'Shopify', 'Mailchimp'].map((name) => (
-              <span key={name} className="text-sm font-bold text-slate-400 tracking-wide">{name}</span>
+              <span key={name} className="text-xs sm:text-sm font-bold text-slate-400 tracking-wide">{name}</span>
             ))}
           </div>
         </div>
@@ -110,7 +113,7 @@ export default function HomePage() {
 
       {/* ===== KPI BLOK ===== */}
       <Section bg="white">
-        <div className="grid grid-cols-3 gap-3 sm:gap-5 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-5 max-w-4xl mx-auto">
           {[
             {
               icon: (
