@@ -19,11 +19,21 @@ export const metadata: Metadata = {
     title: 'Stevin.AI — Jij focust op je business. Wij regelen je marketing.',
     description: 'Google Ads, SEO, social media en automation — vanaf €950 p/m. Dedicated specialist, geen marge op mediabudget.',
     url: 'https://stevin.ai',
+    images: [
+      {
+        url: 'https://stevin.ai/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Stevin.AI — Jij focust op je business. Wij regelen je marketing.',
+        type: 'image/png',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Stevin.AI — Jij focust op je business. Wij regelen je marketing.',
     description: 'Google Ads, SEO, social media en automation — vanaf €950 p/m. Dedicated specialist, geen marge op mediabudget.',
+    images: ['https://stevin.ai/og-image.png'],
   },
 }
 
