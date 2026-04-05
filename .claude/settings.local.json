@@ -43,7 +43,11 @@
       "Bash(vercel --version)",
       "Bash(curl -s -o /Users/koenhoogenboom/Stevin-ai-website/public/og-image.png \"http://localhost:3000/opengraph-image\")",
       "WebFetch(domain:stevin.ai)",
-      "Bash(curl -s http://localhost:3000)"
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -sI \"https://stevin.ai/og-image.png\")",
+      "WebFetch(domain:developers.facebook.com)",
+      "Bash(gh repo:*)",
+      "Bash(git config:*)"
     ]
   }
 }

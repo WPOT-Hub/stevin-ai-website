@@ -3,7 +3,23 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const categories = [
+interface Package {
+  name: string
+  price: string | null
+  desc: string
+  features: string[]
+  popular: boolean
+  cta?: string
+  ctaHref?: string
+}
+
+interface Category {
+  id: string
+  label: string
+  packages: Package[]
+}
+
+const categories: Category[] = [
   {
     id: 'paid',
     label: 'Paid Ads',
@@ -141,17 +157,42 @@ const categories = [
       },
     ],
   },
+  {
+    id: 'agency',
+    label: 'Agency',
+    packages: [
+      {
+        name: 'Agency Partner',
+        price: null,
+        desc: 'Schaal jouw bureau met Stevin als technologiepartner',
+        features: [
+          'White-label dashboard',
+          'Multi-client beheer',
+          'Dedicated connectors per klant',
+          'Prioriteit support & onboarding',
+          'Gezamenlijke rapportages',
+          'Volume korting bij meerdere klanten',
+          'Eigen branding in Stevin Desk',
+          'Dedicated account manager',
+        ],
+        popular: true,
+        cta: 'Neem contact op',
+        ctaHref: '/contact',
+      },
+    ],
+  },
 ]
 
 export default function PricingTabs() {
   const [activeTab, setActiveTab] = useState('paid')
   const activeCat = categories.find((c) => c.id === activeTab)!
+  const isSingleCard = activeCat.packages.length === 1
 
   return (
     <div>
       {/* Tab switcher */}
       <div className="flex justify-center mb-12">
-        <div className="inline-flex items-center bg-surface rounded-xl p-1.5 border border-border">
+        <div className="inline-flex items-center bg-surface rounded-xl p-1.5 border border-border flex-wrap justify-center gap-1">
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -169,40 +210,59 @@ export default function PricingTabs() {
       </div>
 
       {/* Pricing cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div className={`max-w-5xl mx-auto ${
+        isSingleCard
+          ? 'flex justify-center'
+          : 'grid grid-cols-1 md:grid-cols-3 gap-6'
+      }`}>
         {activeCat.packages.map((pkg) => (
           <div
             key={pkg.name}
             className={`relative p-8 rounded-2xl border transition-all ${
+              isSingleCard ? 'max-w-lg w-full' : ''
+            } ${
               pkg.popular
                 ? 'bg-[#0A1628] border-accent/30 shadow-xl shadow-accent/10 md:scale-[1.03]'
                 : 'bg-white border-border hover:border-accent/20 hover:shadow-lg'
             }`}
           >
-            {pkg.popular && (
+            {pkg.popular && !isSingleCard && (
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-accent text-white text-xs font-bold whitespace-nowrap">
                 Meest gekozen
               </div>
             )}
+            {isSingleCard && (
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-accent text-white text-xs font-bold whitespace-nowrap">
+                Voor bureaus
+              </div>
+            )}
             <h3 className={`text-lg font-bold mb-1 ${pkg.popular ? 'text-white' : 'text-primary'}`}>
-              {activeCat.label} {pkg.name}
+              {isSingleCard ? pkg.name : `${activeCat.label} ${pkg.name}`}
             </h3>
             <p className={`text-sm mb-5 ${pkg.popular ? 'text-slate-400' : 'text-muted'}`}>{pkg.desc}</p>
             <div className="mb-6">
-              <span className={`text-4xl font-bold ${pkg.popular ? 'text-white' : 'text-primary'}`}>
-                €{pkg.price}
-              </span>
-              <span className={`text-sm ml-1 ${pkg.popular ? 'text-slate-400' : 'text-muted'}`}>p/m</span>
+              {pkg.price ? (
+                <>
+                  <span className={`text-4xl font-bold ${pkg.popular ? 'text-white' : 'text-primary'}`}>
+                    €{pkg.price}
+                  </span>
+                  <span className={`text-sm ml-1 ${pkg.popular ? 'text-slate-400' : 'text-muted'}`}>p/m</span>
+                </>
+              ) : (
+                <span className={`text-3xl font-bold ${pkg.popular ? 'text-neon' : 'text-accent'}`}>
+                  Op aanvraag
+                </span>
+              )}
             </div>
             <Link
-              href="/contact"
+              href={pkg.ctaHref || '/contact'}
               className={`block w-full text-center py-3 rounded-xl text-sm font-semibold transition-all duration-200 mb-6 ${
                 pkg.popular
                   ? 'bg-neon text-[#0A1628] hover:bg-neon-dark neon-glow'
                   : 'bg-surface text-primary border border-border hover:border-accent/30 hover:shadow-md'
               }`}
             >
-              Start vandaag
+              {pkg.cta || 'Start vandaag'}
             </Link>
             <ul className="space-y-2.5">
               {pkg.features.map((feature) => (

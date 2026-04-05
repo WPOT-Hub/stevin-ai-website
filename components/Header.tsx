@@ -15,16 +15,28 @@ const dienstenItems = [
   { label: 'Tracking & Inzicht', href: '/diensten#tracking-inzicht' },
 ]
 
+const platformItems = [
+  { label: 'Platform Overzicht', href: '/platform' },
+  { label: '14 Native Connectors', href: '/platform#connectors' },
+  { label: 'Pulse Lead Gen', href: '/platform#pulse' },
+  { label: 'Nightwatch Monitoring', href: '/platform#nightwatch' },
+  { label: 'AI Reports & Alerts', href: '/platform#ai-reports' },
+]
+
 const navItems = [
   { label: 'Werkwijze', href: '/werkwijze' },
   { label: 'Integraties', href: '/integraties' },
+  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Voor Agencies', href: '/voor-agencies' },
   { label: 'Contact', href: '/contact' },
 ]
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [dienstenOpen, setDienstenOpen] = useState(false)
+  const [platformOpen, setPlatformOpen] = useState(false)
   const [mobileDienstenOpen, setMobileDienstenOpen] = useState(false)
+  const [mobilePlatformOpen, setMobilePlatformOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
   const isHome = pathname === '/'
@@ -36,10 +48,15 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const platformDropdownRef = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setDienstenOpen(false)
+      }
+      if (platformDropdownRef.current && !platformDropdownRef.current.contains(e.target as Node)) {
+        setPlatformOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -89,6 +106,37 @@ export default function Header() {
                       href={item.href}
                       className="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-surface transition-colors"
                       onClick={() => setDienstenOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Platform dropdown */}
+            <div ref={platformDropdownRef} className="relative">
+              <button
+                onClick={() => setPlatformOpen(!platformOpen)}
+                className={`flex items-center gap-1 text-[15px] font-medium transition-colors ${
+                  showDark
+                    ? 'text-white/70 hover:text-white'
+                    : 'text-slate-600 hover:text-primary'
+                }`}
+              >
+                Platform
+                <svg className={`w-3.5 h-3.5 transition-transform ${platformOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {platformOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-border shadow-lg py-2">
+                  {platformItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-surface transition-colors"
+                      onClick={() => setPlatformOpen(false)}
                     >
                       {item.label}
                     </Link>
@@ -152,6 +200,31 @@ export default function Header() {
             {mobileDienstenOpen && (
               <div className="pl-4 space-y-0">
                 {dienstenItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block text-sm text-slate-600 py-2.5 border-b border-border/30"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            {/* Platform accordion */}
+            <button
+              onClick={() => setMobilePlatformOpen(!mobilePlatformOpen)}
+              className="flex items-center justify-between w-full text-base font-medium text-primary py-3 border-b border-border/50"
+            >
+              Platform
+              <svg className={`w-4 h-4 transition-transform ${mobilePlatformOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {mobilePlatformOpen && (
+              <div className="pl-4 space-y-0">
+                {platformItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
