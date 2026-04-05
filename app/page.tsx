@@ -7,6 +7,7 @@ import PricingTabs from '@/components/PricingTabs'
 import StepsTimeline from '@/components/StepsTimeline'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import { homepageFaqs } from '@/data/faqs'
+import { nativeConnectors } from '@/data/connectors'
 
 export default function HomePage() {
   const jsonLd = {
@@ -50,7 +51,7 @@ export default function HomePage() {
               </p>
 
               <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-white/35 max-w-md lg:max-w-lg leading-relaxed">
-                Google Ads, je website, social media en automatische opvolging. Wij zorgen dat alles samenwerkt.
+                14 native connectors, AI-gedreven rapportages, 24/7 monitoring en automatische opvolging. Eén platform dat alles verbindt.
               </p>
 
               {/* CTA + mobile video side by side */}
@@ -99,13 +100,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== SOCIAL PROOF — Logo bar ===== */}
+      {/* ===== SOCIAL PROOF — Connector bar ===== */}
       <div className="bg-white border-b border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-          <p className="text-xs font-semibold text-muted uppercase tracking-widest text-center mb-5">Wij werken onder andere met</p>
-          <div className="flex items-center justify-center gap-6 sm:gap-12 flex-wrap opacity-40 grayscale">
-            {['Google Ads', 'Meta', 'HubSpot', 'Shopify', 'Mailchimp'].map((name) => (
-              <span key={name} className="text-xs sm:text-sm font-bold text-slate-400 tracking-wide">{name}</span>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+          <p className="text-xs font-semibold text-muted uppercase tracking-widest text-center mb-5">14 native connectors — real-time gekoppeld</p>
+          <div className="flex items-center justify-center gap-4 sm:gap-8 flex-wrap opacity-50">
+            {nativeConnectors.map((c) => (
+              <span key={c.slug} className="text-[10px] sm:text-xs font-bold text-slate-400 tracking-wide">{c.name}</span>
             ))}
           </div>
         </div>
@@ -192,6 +193,46 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* ===== HET PLATFORM ===== */}
+      <Section bg="white">
+        <div className="max-w-3xl mx-auto text-center mb-10">
+          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Het platform</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary leading-tight">
+            Alles verbonden in één systeem
+          </h2>
+          <p className="mt-4 text-base text-muted leading-relaxed max-w-2xl mx-auto">
+            Stevin Hub verbindt je campagnes, CRM, tracking en opvolging. Stevin Desk geeft je overzicht.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          {[
+            { icon: '🧠', title: 'AI-gedreven analyses', desc: 'Wekelijkse rapporten, anomalie-alerts en optimalisatie-adviezen — volledig automatisch.' },
+            { icon: '📡', title: 'Lead generation', desc: 'Van anoniem websitebezoek naar gekwalificeerde pipeline. EU-compliant, zonder cookies.' },
+            { icon: '🌙', title: '24/7 monitoring', desc: 'Elke nacht worden je campagnes, tracking en budgetten automatisch gecontroleerd.' },
+            { icon: '🔌', title: '14 native connectors', desc: 'Directe koppelingen met alle grote platformen. Geen middleware, geen vertraging.' },
+            { icon: '📊', title: 'Eén dashboard', desc: 'Campagneprestaties, CRM-pipeline, content en rapportages op één plek.' },
+            { icon: '⚡', title: 'Marketing automation', desc: 'E-mail flows, lead scoring en opvolging volledig geautomatiseerd.' },
+          ].map((item) => (
+            <div key={item.title} className="p-6 rounded-2xl bg-surface border border-border hover:shadow-md hover:border-accent/20 transition-all">
+              <span className="text-2xl block mb-3">{item.icon}</span>
+              <h3 className="text-sm font-bold text-primary mb-1.5">{item.title}</h3>
+              <p className="text-xs text-muted leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link
+            href="/platform"
+            className="inline-flex items-center text-sm font-semibold text-accent hover:text-accent-dark transition-colors"
+          >
+            Ontdek het volledige platform
+            <svg className="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+      </Section>
+
       {/* ===== HOE HET WERKT — Animated Timeline ===== */}
       <Section bg="white">
         <div className="max-w-3xl mx-auto text-center mb-10">
@@ -228,16 +269,47 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
           {[
-            { title: 'Ervaren team', desc: 'Geen junioren op je account. Specialisten die weten wat werkt.' },
-            { title: 'Van bezoeker tot klant', desc: 'Alles hangt samen. Geen losse onderdelen maar één werkende aanpak.' },
-            { title: 'Volledig transparant', desc: 'Je ziet wat er gebeurt, wat het kost en wat het oplevert.' },
-            { title: 'Vaste maandprijs', desc: 'Geen verrassingen. Geen toeslag op je advertentiebudget.' },
+            { title: 'Eigen platform', desc: 'Geen losse tools aan elkaar geknoopt. Eén geIntegreerd systeem gebouwd voor resultaat.' },
+            { title: 'AI-gedreven', desc: 'Automatische rapporten, anomalie-detectie en optimalisatie. 24/7 actief.' },
+            { title: 'Volledig transparant', desc: 'Eigen dashboard met real-time inzicht. Je ziet precies wat er gebeurt.' },
+            { title: 'Vaste maandprijs', desc: 'Geen verrassingen. Geen marge op je advertentiebudget.' },
           ].map((item) => (
             <div key={item.title} className="p-5 rounded-2xl bg-surface border border-border">
               <h3 className="text-sm font-bold text-primary mb-1.5">{item.title}</h3>
               <p className="text-xs text-muted leading-relaxed">{item.desc}</p>
             </div>
           ))}
+        </div>
+      </Section>
+
+      {/* ===== CASE STUDY TEASER ===== */}
+      <Section bg="white">
+        <div className="max-w-4xl mx-auto">
+          <Link href="/case-studies/e-commerce" className="group block rounded-2xl border border-border bg-surface p-8 sm:p-10 hover:shadow-lg hover:border-accent/20 transition-all">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+              <div className="flex-1">
+                <span className="inline-flex px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-3">
+                  Case Study
+                </span>
+                <h3 className="text-lg sm:text-xl font-bold text-primary group-hover:text-accent transition-colors">
+                  Van losse campagnes naar een geIntegreerd marketing systeem
+                </h3>
+                <p className="text-sm text-muted mt-2">
+                  Hoe een snelgroeiend e-commerce bedrijf 42% meer leads genereerde en 8 uur per week bespaarde.
+                </p>
+              </div>
+              <div className="flex gap-6 sm:gap-8 flex-shrink-0">
+                <div className="text-center">
+                  <p className="text-2xl sm:text-3xl font-bold text-accent">+42%</p>
+                  <p className="text-[11px] text-muted">meer leads</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl sm:text-3xl font-bold text-accent">-35%</p>
+                  <p className="text-[11px] text-muted">lagere CPA</p>
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </Section>
 
