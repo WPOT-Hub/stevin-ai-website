@@ -4,55 +4,55 @@ import { nativeConnectors } from '@/data/connectors'
 
 export const metadata: Metadata = {
   title: 'Platform — Stevin',
-  description: 'Stevin Hub en Stevin Desk: het AI-gedreven marketing operations platform met 14 native connectors, Nightwatch monitoring, Pulse lead gen en AI-rapporten.',
+  description: 'Stevin Hub en Stevin Desk: het AI-gedreven marketing platform met 14 native connectors, 24/7 monitoring, social listening en AI-rapporten.',
 }
 
 const features = [
   {
     title: 'Stevin Hub',
-    desc: 'De backbone. 14 native connectors, AI-engine, signal detection, nightly monitoring en unified notifications. Alles draait automatisch op de achtergrond.',
+    desc: 'De motor achter alles. 14 native connectors, AI-analyses, social listening en 24/7 monitoring. Alles draait automatisch op de achtergrond.',
     icon: '🧠',
     color: 'from-blue-500/10 to-indigo-500/10 border-blue-500/20',
   },
   {
     title: 'Stevin Desk',
-    desc: 'Jouw cockpit. Een dashboard met 27+ pagina\'s: campagneprestaties, CRM-pipeline, AI-adviezen, content publicatie, rapportages en meer.',
+    desc: 'Jouw cockpit. Eén dashboard voor campagneprestaties, CRM-pipeline, AI-adviezen, content en rapportages.',
     icon: '📊',
     color: 'from-purple-500/10 to-pink-500/10 border-purple-500/20',
   },
   {
     title: '14 Native Connectors',
-    desc: 'Directe koppelingen met Meta, Google Ads, DV360, GA4, GTM, LinkedIn, TikTok, Snapchat, X, Pinterest, Shopify, WooCommerce, Klaviyo en Mailchimp.',
+    desc: 'Directe koppelingen met Meta, Google Ads, DV360, LinkedIn, TikTok, Snapchat, Pinterest, X, GA4, GTM, Shopify, WooCommerce, Klaviyo en Mailchimp.',
     icon: '🔌',
     color: 'from-green-500/10 to-emerald-500/10 border-green-500/20',
   },
   {
-    title: 'Pulse Lead Gen',
-    desc: 'Sovereign leadgeneratie. Van anoniem websitebezoek naar gekwalificeerde pipeline — volledig geautomatiseerd, 100% EU-compliant, zonder cookies.',
+    title: 'Lead Generation',
+    desc: 'Van anoniem websitebezoek naar gekwalificeerde pipeline — volledig geautomatiseerd, 100% EU-compliant, zonder cookies.',
     icon: '📡',
     color: 'from-orange-500/10 to-red-500/10 border-orange-500/20',
   },
   {
-    title: 'Nightwatch',
-    desc: 'Elke nacht controleert Nightwatch al je campagnes, tracking, connectors en budgetten. Problemen worden automatisch gerepareerd of gemeld via Slack en Google Chat.',
+    title: '24/7 Monitoring',
+    desc: 'Elke nacht worden je campagnes, tracking, connectors en budgetten automatisch gecontroleerd. Problemen worden direct gemeld of gerepareerd.',
     icon: '🌙',
     color: 'from-slate-500/10 to-zinc-500/10 border-slate-500/20',
   },
   {
     title: 'AI Reports & Alerts',
-    desc: 'Mistral AI analyseert je data en genereert wekelijkse rapporten, anomalie-alerts en optimalisatie-adviezen. Geen handmatige rapportages meer.',
+    desc: 'AI analyseert je data en genereert wekelijkse rapporten, anomalie-alerts en optimalisatie-adviezen. Geen handmatige rapportages meer.',
     icon: '✨',
     color: 'from-yellow-500/10 to-amber-500/10 border-yellow-500/20',
   },
 ]
 
 const extras = [
-  { title: 'Korenschuur', desc: 'De beste marktsignalen uitgewerkt tot publiceerbare artikelen.', icon: '🔥' },
-  { title: 'Kafschuur', desc: 'Bullshit detectie: sarcasme, hoaxes en trolling worden automatisch gefilterd.', icon: '🌾' },
-  { title: 'Compensation Engine', desc: 'Automatisch conceptmails bij platformstoringen voor je klanten.', icon: '🛡️' },
-  { title: 'Signal Detection', desc: 'Market intelligence uit meerdere bronnen, continu gemonitord.', icon: '🔎' },
-  { title: 'Social Publishing', desc: 'Content generatie en publicatie over meerdere kanalen.', icon: '📢' },
-  { title: 'CRM & Pipeline', desc: 'Contacten, deals, transcripties, e-mail tracking — alles in één systeem.', icon: '🤝' },
+  { title: 'Social Listening', desc: 'Market intelligence uit meerdere bronnen, uitgewerkt tot bruikbare inzichten en content.', icon: '🔎' },
+  { title: 'Content Curation', desc: 'De belangrijkste trends automatisch gefilterd, alleen relevante inzichten passeren.', icon: '🔥' },
+  { title: 'Brand & Performance', desc: 'Campagneprestaties gekoppeld aan merkdata — van awareness tot conversie in één overzicht.', icon: '📈' },
+  { title: 'Multi-channel Publishing', desc: 'Content generatie en publicatie over meerdere kanalen vanuit één plek.', icon: '📢' },
+  { title: 'CRM & Pipeline', desc: 'Contacten, deals, e-mail tracking en opvolging — alles in één systeem.', icon: '🤝' },
+  { title: 'Automation', desc: 'E-mail flows, lead scoring, nurturing en trigger-based messaging volledig geautomatiseerd.', icon: '⚡' },
 ]
 
 export default function PlatformPage() {
@@ -87,7 +87,7 @@ export default function PlatformPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Alles wat je nodig hebt</h2>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              Stevin vervangt losse tools door één geIntegreerd platform. Elk onderdeel versterkt de rest.
+              Stevin vervangt losse tools door één geintegreerd systeem. Elk onderdeel versterkt de rest.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -121,23 +121,25 @@ export default function PlatformPage() {
           </div>
           <p className="text-center text-sm text-muted mt-8">
             Daarnaast ondersteunen we <Link href="/integraties" className="text-accent hover:underline">100+ andere tools</Link> via koppelingen.
+            Mis je een platform? <Link href="/contact" className="text-accent hover:underline">Laat het ons weten</Link> — we kunnen met vrijwel alles connecten.
           </p>
         </div>
       </section>
 
-      {/* Pulse */}
-      <section id="pulse" className="py-20 bg-white">
+      {/* Lead Generation */}
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-3">Stevin Pulse</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-6">Sovereign Lead Generation</h2>
+              <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-3">Lead Generation</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-6">Van bezoeker naar klant</h2>
               <p className="text-muted leading-relaxed mb-6">
-                Van anoniem websitebezoek naar gekwalificeerde pipeline. Pulse herkent bedrijven via reverse DNS,
-                scoort intent op basis van gedrag en triggert automatisch acties — van CRM-contact tot retargeting.
+                Stevin herkent bedrijven die je website bezoeken, scoort hun koopintentie
+                en triggert automatisch de juiste opvolging — van CRM-contact tot retargeting.
+                Volledig EU-compliant, zonder cookies of third-party tracking.
               </p>
               <ul className="space-y-3">
-                {['100% EU-compliant, zonder cookies', 'IP-naar-bedrijf herkenning', 'AI-gedreven intent scoring', 'Automatische CRM-verrijking', 'Retargeting audiences aanmaken'].map((item) => (
+                {['100% AVG / GDPR compliant', 'Bedrijfsherkenning zonder cookies', 'AI-gedreven intent scoring', 'Automatische CRM-verrijking', 'Retargeting audiences aanmaken'].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-muted">
                     <svg className="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -149,33 +151,33 @@ export default function PlatformPage() {
             </div>
             <div className="rounded-2xl bg-gradient-to-br from-accent/5 to-purple-500/5 border border-accent/20 p-8 text-center">
               <p className="text-6xl mb-4">📡</p>
-              <p className="text-lg font-bold text-primary">IP → Bedrijf → Intent → Actie</p>
+              <p className="text-lg font-bold text-primary">Bezoeker → Bedrijf → Intent → Actie</p>
               <p className="text-sm text-muted mt-2">Volledig geautomatiseerde pipeline</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Nightwatch */}
-      <section id="nightwatch" className="py-20 bg-primary">
+      {/* 24/7 Monitoring */}
+      <section className="py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="text-center mb-12">
-            <p className="text-neon text-sm font-semibold tracking-wider uppercase mb-3">Nightwatch</p>
+            <p className="text-neon text-sm font-semibold tracking-wider uppercase mb-3">24/7 Monitoring</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Je campagnes slapen nooit</h2>
             <p className="text-lg text-white/50 max-w-2xl mx-auto">
-              Elke nacht controleert Nightwatch automatisch al je systemen. Problemen worden direct gerepareerd of gemeld.
+              Elke nacht controleren we automatisch al je systemen. Problemen worden direct gerepareerd of gemeld.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { check: 'Database connecties', icon: '🗃️' },
-              { check: 'API status alle connectors', icon: '🔌' },
-              { check: 'Campagne budgetten', icon: '💰' },
+              { check: 'Alle advertentiekanalen', icon: '📣' },
+              { check: 'Connector status', icon: '🔌' },
+              { check: 'Budget & spend controle', icon: '💰' },
               { check: 'Tracking & conversies', icon: '📈' },
               { check: 'CRM pipeline gezondheid', icon: '🤝' },
-              { check: 'Signal freshness', icon: '📡' },
+              { check: 'Content & social feeds', icon: '📱' },
               { check: 'E-mail deliverability', icon: '📧' },
-              { check: 'Auto-repair bij storingen', icon: '🔧' },
+              { check: 'Automatisch herstel', icon: '🔧' },
             ].map((item) => (
               <div key={item.check} className="rounded-xl bg-white/5 border border-white/10 p-5">
                 <p className="text-xl mb-2">{item.icon}</p>
@@ -187,23 +189,23 @@ export default function PlatformPage() {
       </section>
 
       {/* AI Reports */}
-      <section id="ai-reports" className="py-20 bg-white">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="rounded-2xl bg-gradient-to-br from-yellow-500/5 to-amber-500/5 border border-yellow-500/20 p-8 text-center">
               <p className="text-6xl mb-4">✨</p>
               <p className="text-lg font-bold text-primary">AI-gedreven Inzichten</p>
-              <p className="text-sm text-muted mt-2">Mistral AI analyseert, Stevin optimaliseert</p>
+              <p className="text-sm text-muted mt-2">Automatische analyses en aanbevelingen</p>
             </div>
             <div>
               <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-3">AI Reports</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-6">Rapporten die zichzelf schrijven</h2>
               <p className="text-muted leading-relaxed mb-6">
-                Stevin gebruikt Mistral AI (EU-gehost, Parijs) om je campagnedata te analyseren. Wekelijkse rapporten,
-                anomalie-alerts en optimalisatie-adviezen — allemaal automatisch gegenereerd.
+                Stevin analyseert je campagnedata met AI en genereert wekelijkse rapporten,
+                anomalie-alerts en optimalisatie-adviezen. Volledig automatisch, EU-gehost.
               </p>
               <ul className="space-y-3">
-                {['Wekelijkse performance summaries', 'Real-time anomalie detectie', 'Concrete optimalisatie-adviezen', 'Compensation engine bij storingen', 'Content suggesties uit market intelligence'].map((item) => (
+                {['Wekelijkse performance summaries', 'Real-time anomalie detectie', 'Concrete optimalisatie-adviezen', 'Automatische alerts bij afwijkingen', 'Content suggesties uit market intelligence'].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-muted">
                     <svg className="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -222,7 +224,7 @@ export default function PlatformPage() {
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-primary mb-4">En nog meer</h2>
-            <p className="text-muted">Het platform groeit continu. Dit is wat er verder ingebouwd zit.</p>
+            <p className="text-muted">Het platform groeit continu. Dit is wat er verder in zit.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {extras.map((e) => (

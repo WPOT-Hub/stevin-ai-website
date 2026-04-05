@@ -18,9 +18,9 @@ const dienstenItems = [
 const platformItems = [
   { label: 'Platform Overzicht', href: '/platform' },
   { label: '14 Native Connectors', href: '/platform#connectors' },
-  { label: 'Pulse Lead Gen', href: '/platform#pulse' },
-  { label: 'Nightwatch Monitoring', href: '/platform#nightwatch' },
-  { label: 'AI Reports & Alerts', href: '/platform#ai-reports' },
+  { label: 'Lead Generation', href: '/platform#lead-generation' },
+  { label: '24/7 Monitoring', href: '/platform#monitoring' },
+  { label: 'AI Reports', href: '/platform#ai-reports' },
 ]
 
 const navItems = [

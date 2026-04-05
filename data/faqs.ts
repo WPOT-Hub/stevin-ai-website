@@ -10,7 +10,7 @@ export const homepageFaqs: FAQ[] = [
   },
   {
     question: 'Wat is Stevin Hub?',
-    answer: 'Stevin Hub is ons backend platform met 14 native connectors naar alle grote advertentieplatforms, analytics tools, e-commerce systemen en e-mail platforms. Het verzamelt data, detecteert signalen, genereert AI-rapporten en bewaakt je campagnes 24/7 via Nightwatch.',
+    answer: 'Stevin Hub is ons backend platform met 14 native connectors naar alle grote advertentieplatforms, analytics tools, e-commerce systemen en e-mail platforms. Het verzamelt data, genereert AI-rapporten en bewaakt je campagnes 24/7. Mis je een platform? We kunnen met vrijwel alles connecten.',
   },
   {
     question: 'Moet ik zelf veel doen?',
@@ -18,7 +18,7 @@ export const homepageFaqs: FAQ[] = [
   },
   {
     question: 'Zijn mijn data veilig?',
-    answer: 'Ja. We draaien op EU-gehoste servers, gebruiken Mistral AI (Parijs) als AI-engine en slaan geen data op buiten Europa. We zijn volledig AVG-compliant en werken zonder third-party tracking cookies.',
+    answer: 'Ja. We draaien op EU-gehoste servers, gebruiken EU-gehoste AI en slaan geen data op buiten Europa. We zijn volledig AVG-compliant en werken zonder third-party tracking cookies.',
   },
   {
     question: 'Werken jullie ook voor bureaus?',
