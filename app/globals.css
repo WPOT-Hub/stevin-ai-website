@@ -9,9 +9,13 @@
   --color-accent-dark: #2B7AEE;
   --color-accent-light: #5DA3FF;
 
-  /* Neon accent for hero CTA */
-  --color-neon: #D4FF00;
-  --color-neon-dark: #BFEE00;
+  /* CTA accent — brand teal for high-impact buttons */
+  --color-neon: #00D4A0;
+  --color-neon-dark: #00B889;
+
+  /* Brand pink — secondary accent */
+  --color-pink: #F4216A;
+  --color-pink-dark: #D91D5E;
 
   /* Surfaces */
   --color-surface: #F7F9FC;
@@ -109,12 +113,12 @@ section {
     radial-gradient(ellipse 100% 100% at 50% 0%, #0d1f35 0%, #0A1628 100%);
 }
 
-/* Neon glow effect */
+/* CTA glow effect */
 .neon-glow {
-  box-shadow: 0 0 30px rgba(212, 255, 0, 0.3), 0 0 60px rgba(212, 255, 0, 0.1);
+  box-shadow: 0 0 30px rgba(0, 212, 160, 0.3), 0 0 60px rgba(0, 212, 160, 0.1);
 }
 .neon-glow:hover {
-  box-shadow: 0 0 40px rgba(212, 255, 0, 0.4), 0 0 80px rgba(212, 255, 0, 0.15);
+  box-shadow: 0 0 40px rgba(0, 212, 160, 0.4), 0 0 80px rgba(0, 212, 160, 0.15);
 }
 
 /* Video blob glow */

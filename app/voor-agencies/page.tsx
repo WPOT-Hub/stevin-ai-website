@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Tag, Users, Plug, Zap, TrendingUp, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Voor Agencies — Stevin',
@@ -10,32 +11,32 @@ const features = [
   {
     title: 'White-label Dashboard',
     desc: 'Stevin Desk met je eigen branding. Je klanten zien jouw bureau, niet Stevin.',
-    icon: '🏷️',
+    icon: <Tag className="w-5 h-5 text-accent" />,
   },
   {
     title: 'Multi-client Beheer',
     desc: 'Beheer al je klanten vanuit één omgeving. Gescheiden data, gedeeld overzicht.',
-    icon: '👥',
+    icon: <Users className="w-5 h-5 text-accent" />,
   },
   {
     title: 'Dedicated Connectors',
     desc: 'Elke klant krijgt eigen connector-koppelingen. 14 native platformen beschikbaar.',
-    icon: '🔌',
+    icon: <Plug className="w-5 h-5 text-accent" />,
   },
   {
     title: 'Prioriteit Support',
     desc: 'Dedicated account manager, snellere response times en gezamenlijke onboarding.',
-    icon: '⚡',
+    icon: <Zap className="w-5 h-5 text-accent" />,
   },
   {
     title: 'Volume Korting',
     desc: 'Hoe meer klanten je meebrengt, hoe voordeliger het wordt. Schaalvoordeel ingebouwd.',
-    icon: '📈',
+    icon: <TrendingUp className="w-5 h-5 text-accent" />,
   },
   {
     title: 'AI-rapporten per Klant',
     desc: 'Automatische wekelijkse rapportages per klant. Klaar om door te sturen of te presenteren.',
-    icon: '✨',
+    icon: <Sparkles className="w-5 h-5 text-accent" />,
   },
 ]
 
@@ -88,7 +89,9 @@ export default function VoorAgenciesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f) => (
               <div key={f.title} className="rounded-2xl border border-border bg-white p-8 hover:shadow-lg hover:border-accent/20 transition-all">
-                <div className="text-3xl mb-4">{f.icon}</div>
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                  {f.icon}
+                </div>
                 <h3 className="text-lg font-bold text-primary mb-2">{f.title}</h3>
                 <p className="text-sm text-muted leading-relaxed">{f.desc}</p>
               </div>

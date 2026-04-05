@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Brain, BarChart3, Plug, Radio, Moon, Sparkles, Search, Flame, TrendingUp, Megaphone, Users, Zap, Volume2, Shield, Wrench, Mail, Smartphone, DollarSign, Activity } from 'lucide-react'
 import { nativeConnectors } from '@/data/connectors'
 
 export const metadata: Metadata = {
@@ -11,48 +12,48 @@ const features = [
   {
     title: 'Stevin Hub',
     desc: 'De motor achter alles. 14 native connectors, AI-analyses, social listening en 24/7 monitoring. Alles draait automatisch op de achtergrond.',
-    icon: '🧠',
+    icon: <Brain className="w-5 h-5 text-accent" />,
     color: 'from-blue-500/10 to-indigo-500/10 border-blue-500/20',
   },
   {
     title: 'Stevin Desk',
     desc: 'Jouw cockpit. Eén dashboard voor campagneprestaties, CRM-pipeline, AI-adviezen, content en rapportages.',
-    icon: '📊',
+    icon: <BarChart3 className="w-5 h-5 text-accent" />,
     color: 'from-purple-500/10 to-pink-500/10 border-purple-500/20',
   },
   {
     title: '14 Native Connectors',
     desc: 'Directe koppelingen met Meta, Google Ads, DV360, LinkedIn, TikTok, Snapchat, Pinterest, X, GA4, GTM, Shopify, WooCommerce, Klaviyo en Mailchimp.',
-    icon: '🔌',
+    icon: <Plug className="w-5 h-5 text-accent" />,
     color: 'from-green-500/10 to-emerald-500/10 border-green-500/20',
   },
   {
     title: 'Lead Generation',
     desc: 'Van anoniem websitebezoek naar gekwalificeerde pipeline — volledig geautomatiseerd, 100% EU-compliant, zonder cookies.',
-    icon: '📡',
+    icon: <Radio className="w-5 h-5 text-accent" />,
     color: 'from-orange-500/10 to-red-500/10 border-orange-500/20',
   },
   {
     title: '24/7 Monitoring',
     desc: 'Elke nacht worden je campagnes, tracking, connectors en budgetten automatisch gecontroleerd. Problemen worden direct gemeld of gerepareerd.',
-    icon: '🌙',
+    icon: <Moon className="w-5 h-5 text-accent" />,
     color: 'from-slate-500/10 to-zinc-500/10 border-slate-500/20',
   },
   {
     title: 'AI Reports & Alerts',
     desc: 'AI analyseert je data en genereert wekelijkse rapporten, anomalie-alerts en optimalisatie-adviezen. Geen handmatige rapportages meer.',
-    icon: '✨',
+    icon: <Sparkles className="w-5 h-5 text-accent" />,
     color: 'from-yellow-500/10 to-amber-500/10 border-yellow-500/20',
   },
 ]
 
 const extras = [
-  { title: 'Social Listening', desc: 'Market intelligence uit meerdere bronnen, uitgewerkt tot bruikbare inzichten en content.', icon: '🔎' },
-  { title: 'Content Curation', desc: 'De belangrijkste trends automatisch gefilterd, alleen relevante inzichten passeren.', icon: '🔥' },
-  { title: 'Brand & Performance', desc: 'Campagneprestaties gekoppeld aan merkdata — van awareness tot conversie in één overzicht.', icon: '📈' },
-  { title: 'Multi-channel Publishing', desc: 'Content generatie en publicatie over meerdere kanalen vanuit één plek.', icon: '📢' },
-  { title: 'CRM & Pipeline', desc: 'Contacten, deals, e-mail tracking en opvolging — alles in één systeem.', icon: '🤝' },
-  { title: 'Automation', desc: 'E-mail flows, lead scoring, nurturing en trigger-based messaging volledig geautomatiseerd.', icon: '⚡' },
+  { title: 'Social Listening', desc: 'Market intelligence uit meerdere bronnen, uitgewerkt tot bruikbare inzichten en content.', icon: <Search className="w-5 h-5 text-accent" /> },
+  { title: 'Content Curation', desc: 'De belangrijkste trends automatisch gefilterd, alleen relevante inzichten passeren.', icon: <Flame className="w-5 h-5 text-accent" /> },
+  { title: 'Brand & Performance', desc: 'Campagneprestaties gekoppeld aan merkdata — van awareness tot conversie in één overzicht.', icon: <TrendingUp className="w-5 h-5 text-accent" /> },
+  { title: 'Multi-channel Publishing', desc: 'Content generatie en publicatie over meerdere kanalen vanuit één plek.', icon: <Megaphone className="w-5 h-5 text-accent" /> },
+  { title: 'CRM & Pipeline', desc: 'Contacten, deals, e-mail tracking en opvolging — alles in één systeem.', icon: <Users className="w-5 h-5 text-accent" /> },
+  { title: 'Automation', desc: 'E-mail flows, lead scoring, nurturing en trigger-based messaging volledig geautomatiseerd.', icon: <Zap className="w-5 h-5 text-accent" /> },
 ]
 
 export default function PlatformPage() {
@@ -93,7 +94,9 @@ export default function PlatformPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f) => (
               <div key={f.title} className={`rounded-2xl border bg-gradient-to-br ${f.color} p-8 hover:shadow-lg transition-shadow`}>
-                <div className="text-3xl mb-4">{f.icon}</div>
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                  {f.icon}
+                </div>
                 <h3 className="text-lg font-bold text-primary mb-2">{f.title}</h3>
                 <p className="text-sm text-muted leading-relaxed">{f.desc}</p>
               </div>
@@ -150,7 +153,9 @@ export default function PlatformPage() {
               </ul>
             </div>
             <div className="rounded-2xl bg-gradient-to-br from-accent/5 to-purple-500/5 border border-accent/20 p-8 text-center">
-              <p className="text-6xl mb-4">📡</p>
+              <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                <Radio className="w-8 h-8 text-accent" />
+              </div>
               <p className="text-lg font-bold text-primary">Bezoeker → Bedrijf → Intent → Actie</p>
               <p className="text-sm text-muted mt-2">Volledig geautomatiseerde pipeline</p>
             </div>
@@ -170,17 +175,19 @@ export default function PlatformPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { check: 'Alle advertentiekanalen', icon: '📣' },
-              { check: 'Connector status', icon: '🔌' },
-              { check: 'Budget & spend controle', icon: '💰' },
-              { check: 'Tracking & conversies', icon: '📈' },
-              { check: 'CRM pipeline gezondheid', icon: '🤝' },
-              { check: 'Content & social feeds', icon: '📱' },
-              { check: 'E-mail deliverability', icon: '📧' },
-              { check: 'Automatisch herstel', icon: '🔧' },
+              { check: 'Alle advertentiekanalen', icon: <Volume2 className="w-5 h-5 text-neon" /> },
+              { check: 'Connector status', icon: <Plug className="w-5 h-5 text-neon" /> },
+              { check: 'Budget & spend controle', icon: <DollarSign className="w-5 h-5 text-neon" /> },
+              { check: 'Tracking & conversies', icon: <TrendingUp className="w-5 h-5 text-neon" /> },
+              { check: 'CRM pipeline gezondheid', icon: <Users className="w-5 h-5 text-neon" /> },
+              { check: 'Content & social feeds', icon: <Smartphone className="w-5 h-5 text-neon" /> },
+              { check: 'E-mail deliverability', icon: <Mail className="w-5 h-5 text-neon" /> },
+              { check: 'Automatisch herstel', icon: <Wrench className="w-5 h-5 text-neon" /> },
             ].map((item) => (
               <div key={item.check} className="rounded-xl bg-white/5 border border-white/10 p-5">
-                <p className="text-xl mb-2">{item.icon}</p>
+                <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center mb-2">
+                  {item.icon}
+                </div>
                 <p className="text-sm text-white/80 font-medium">{item.check}</p>
               </div>
             ))}
@@ -193,7 +200,9 @@ export default function PlatformPage() {
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="rounded-2xl bg-gradient-to-br from-yellow-500/5 to-amber-500/5 border border-yellow-500/20 p-8 text-center">
-              <p className="text-6xl mb-4">✨</p>
+              <div className="w-16 h-16 rounded-2xl bg-yellow-500/10 flex items-center justify-center mx-auto mb-4">
+                <Sparkles className="w-8 h-8 text-yellow-500" />
+              </div>
               <p className="text-lg font-bold text-primary">AI-gedreven Inzichten</p>
               <p className="text-sm text-muted mt-2">Automatische analyses en aanbevelingen</p>
             </div>
@@ -229,7 +238,9 @@ export default function PlatformPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {extras.map((e) => (
               <div key={e.title} className="flex items-start gap-4 rounded-xl bg-white border border-border p-6">
-                <span className="text-2xl">{e.icon}</span>
+                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  {e.icon}
+                </div>
                 <div>
                   <h3 className="text-sm font-bold text-primary">{e.title}</h3>
                   <p className="text-sm text-muted mt-1">{e.desc}</p>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Shuffle, Clock, DollarSign, Search, Brain, Radio, Moon, Plug, BarChart3, Zap } from 'lucide-react'
 import Section from '@/components/Section'
 import FAQAccordion from '@/components/FAQAccordion'
 import HeroVideo from '@/components/HeroVideo'
@@ -167,13 +168,15 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
           {[
-            { title: 'Campagnes werken los van elkaar', icon: '🔀' },
-            { title: 'Aanvragen worden niet opgevolgd', icon: '⏳' },
-            { title: 'Budget verdwijnt zonder resultaat', icon: '💸' },
-            { title: 'Geen inzicht in wat werkt', icon: '🔍' },
+            { title: 'Campagnes werken los van elkaar', icon: <Shuffle className="w-5 h-5 text-accent" /> },
+            { title: 'Aanvragen worden niet opgevolgd', icon: <Clock className="w-5 h-5 text-accent" /> },
+            { title: 'Budget verdwijnt zonder resultaat', icon: <DollarSign className="w-5 h-5 text-accent" /> },
+            { title: 'Geen inzicht in wat werkt', icon: <Search className="w-5 h-5 text-accent" /> },
           ].map((item) => (
             <div key={item.title} className="p-4 sm:p-5 rounded-xl bg-white border border-border text-center">
-              <span className="text-lg sm:text-xl block mb-2">{item.icon}</span>
+              <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-2">
+                {item.icon}
+              </div>
               <p className="text-xs sm:text-sm font-semibold text-primary leading-snug">{item.title}</p>
             </div>
           ))}
@@ -206,15 +209,17 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {[
-            { icon: '🧠', title: 'AI-gedreven analyses', desc: 'Wekelijkse rapporten, anomalie-alerts en optimalisatie-adviezen — volledig automatisch.' },
-            { icon: '📡', title: 'Lead generation', desc: 'Van anoniem websitebezoek naar gekwalificeerde pipeline. EU-compliant, zonder cookies.' },
-            { icon: '🌙', title: '24/7 monitoring', desc: 'Elke nacht worden je campagnes, tracking en budgetten automatisch gecontroleerd.' },
-            { icon: '🔌', title: '14 native connectors', desc: 'Directe koppelingen met alle grote platformen. Geen middleware, geen vertraging.' },
-            { icon: '📊', title: 'Eén dashboard', desc: 'Campagneprestaties, CRM-pipeline, content en rapportages op één plek.' },
-            { icon: '⚡', title: 'Marketing automation', desc: 'E-mail flows, lead scoring en opvolging volledig geautomatiseerd.' },
+            { icon: <Brain className="w-5 h-5 text-accent" />, title: 'AI-gedreven analyses', desc: 'Wekelijkse rapporten, anomalie-alerts en optimalisatie-adviezen — volledig automatisch.' },
+            { icon: <Radio className="w-5 h-5 text-accent" />, title: 'Lead generation', desc: 'Van anoniem websitebezoek naar gekwalificeerde pipeline. EU-compliant, zonder cookies.' },
+            { icon: <Moon className="w-5 h-5 text-accent" />, title: '24/7 monitoring', desc: 'Elke nacht worden je campagnes, tracking en budgetten automatisch gecontroleerd.' },
+            { icon: <Plug className="w-5 h-5 text-accent" />, title: '14 native connectors', desc: 'Directe koppelingen met alle grote platformen. Geen middleware, geen vertraging.' },
+            { icon: <BarChart3 className="w-5 h-5 text-accent" />, title: 'Eén dashboard', desc: 'Campagneprestaties, CRM-pipeline, content en rapportages op één plek.' },
+            { icon: <Zap className="w-5 h-5 text-accent" />, title: 'Marketing automation', desc: 'E-mail flows, lead scoring en opvolging volledig geautomatiseerd.' },
           ].map((item) => (
             <div key={item.title} className="p-6 rounded-2xl bg-surface border border-border hover:shadow-md hover:border-accent/20 transition-all">
-              <span className="text-2xl block mb-3">{item.icon}</span>
+              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-3">
+                {item.icon}
+              </div>
               <h3 className="text-sm font-bold text-primary mb-1.5">{item.title}</h3>
               <p className="text-xs text-muted leading-relaxed">{item.desc}</p>
             </div>
