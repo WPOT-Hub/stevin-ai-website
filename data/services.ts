@@ -25,7 +25,7 @@ export const services: Service[] = [
       'Campagne-optimalisatie op basis van klantwaarde',
       'Geen marge op je mediabudget',
     ],
-    icon: '📡',
+    icon: 'radio',
   },
   {
     title: 'Landing Pages & CRO',
@@ -42,7 +42,7 @@ export const services: Service[] = [
       'Koppeling met CRM en automation',
       'Mobiele optimalisatie',
     ],
-    icon: '🎯',
+    icon: 'target',
   },
   {
     title: 'Marketing Automation',
@@ -59,7 +59,7 @@ export const services: Service[] = [
       'Koppeling met CRM en advertentiekanalen',
       'WhatsApp en SMS automation',
     ],
-    icon: '⚡',
+    icon: 'zap',
   },
   {
     title: 'CRM & Leadopvolging',
@@ -76,7 +76,7 @@ export const services: Service[] = [
       'Rapportage op lead-to-klant ratio',
       'Koppeling met alle marketingkanalen',
     ],
-    icon: '🤝',
+    icon: 'users',
   },
   {
     title: 'Tracking & Inzicht',
@@ -93,6 +93,6 @@ export const services: Service[] = [
       'Dashboards in Looker Studio of Power BI',
       'Data-audit en meetplan',
     ],
-    icon: '📊',
+    icon: 'bar-chart-3',
   },
 ]

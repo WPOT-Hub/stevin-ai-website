@@ -1,8 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Radio, Target, Zap, Users, BarChart3 } from 'lucide-react'
 import Section from '@/components/Section'
 import CTABlock from '@/components/CTABlock'
 import { services } from '@/data/services'
+
+const ICON_MAP: Record<string, React.ReactNode> = {
+  'radio': <Radio className="w-6 h-6 text-accent" />,
+  'target': <Target className="w-6 h-6 text-accent" />,
+  'zap': <Zap className="w-6 h-6 text-accent" />,
+  'users': <Users className="w-6 h-6 text-accent" />,
+  'bar-chart-3': <BarChart3 className="w-6 h-6 text-accent" />,
+}
 
 export const metadata: Metadata = {
   title: 'Diensten',
@@ -31,7 +40,9 @@ export default function DienstenPage() {
         <Section key={service.slug} id={service.slug} bg={index % 2 === 0 ? 'surface' : 'white'}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <div className="text-4xl mb-4">{service.icon}</div>
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                {ICON_MAP[service.icon] || <BarChart3 className="w-6 h-6 text-accent" />}
+              </div>
               <h2 className="text-3xl font-bold tracking-tight text-primary">
                 {service.title}
               </h2>
