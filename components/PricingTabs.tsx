@@ -5,12 +5,9 @@ import Link from 'next/link'
 
 interface Package {
   name: string
-  price: string | null
   desc: string
   features: string[]
   popular: boolean
-  cta?: string
-  ctaHref?: string
 }
 
 interface Category {
@@ -26,40 +23,37 @@ const categories: Category[] = [
     packages: [
       {
         name: 'Starter',
-        price: '950',
         desc: 'Voor eerste campagnes',
         features: [
           'Google & Meta',
-          '< €3.000 adspend p/m',
-          '2 koppelingen inbegrepen',
           'Dedicated specialist',
+          '2 koppelingen inbegrepen',
+          'Maandelijkse rapportage',
         ],
         popular: false,
       },
       {
         name: 'Professional',
-        price: '1.650',
         desc: 'Voor serieuze groei',
         features: [
-          'Google, Meta & TikTok',
-          '< €8.000 adspend p/m',
-          '3 koppelingen inbegrepen',
+          'Alle kanalen (Google, Meta, TikTok, LinkedIn)',
           'Dedicated specialist',
+          '3 koppelingen inbegrepen',
           'Conversietracking setup',
+          'AI-gedreven optimalisatie',
         ],
         popular: true,
       },
       {
         name: 'Enterprise',
-        price: '2.450',
         desc: 'Voor maximale schaal',
         features: [
-          'Alle kanalen',
-          '< €25.000 adspend p/m',
-          '5 koppelingen inbegrepen',
+          'Alle kanalen + programmatic',
           'Dedicated specialist',
+          '5+ koppelingen inbegrepen',
           'Geavanceerde attributie',
           'Custom dashboards',
+          '24/7 monitoring',
         ],
         popular: false,
       },
@@ -71,26 +65,20 @@ const categories: Category[] = [
     packages: [
       {
         name: 'Starter',
-        price: '950',
         desc: 'Voor basisvindbaarheid',
         features: [
           'Focus op 1 categorie',
-          '2 koppelingen inbegrepen',
           'Technische SEO check',
           'AI-zoekoptimalisatie',
-          'Basis linkbuilding',
           'Kwartaalrapportage',
         ],
         popular: false,
       },
       {
         name: 'Professional',
-        price: '1.450',
         desc: 'Voor structurele groei',
         features: [
-          'Alles uit Starter',
           'Meerdere categorieën',
-          '3 koppelingen inbegrepen',
           'LLM & GEO optimalisatie',
           'Content strategie',
           'Maandelijkse rapportage',
@@ -99,11 +87,8 @@ const categories: Category[] = [
       },
       {
         name: 'Enterprise',
-        price: '2.250',
         desc: 'Voor marktdominantie',
         features: [
-          'Alles uit Professional',
-          '5 koppelingen inbegrepen',
           'Volledige cluster aanpak',
           'Topical authority',
           'Concurrentie analyse',
@@ -119,39 +104,33 @@ const categories: Category[] = [
     packages: [
       {
         name: 'Starter',
-        price: '750',
         desc: 'Voor eerste flows',
         features: [
           'Lead notificaties',
           'Basis e-mail flows',
-          '2 koppelingen inbegrepen',
           'CRM koppeling',
         ],
         popular: false,
       },
       {
         name: 'Professional',
-        price: '1.350',
         desc: 'Voor volledige opvolging',
         features: [
-          'Alles uit Starter',
-          '3 koppelingen inbegrepen',
           'Lead scoring',
           'Geavanceerde flows',
           'Multi-channel automation',
+          'WhatsApp & SMS',
         ],
         popular: true,
       },
       {
         name: 'Enterprise',
-        price: '1.950',
         desc: 'Voor maximale conversie',
         features: [
-          'Alles uit Professional',
-          '5 koppelingen inbegrepen',
           'Custom integraties',
           'Predictive lead scoring',
           'Revenue attribution',
+          'Dedicated automation specialist',
         ],
         popular: false,
       },
@@ -163,7 +142,6 @@ const categories: Category[] = [
     packages: [
       {
         name: 'Agency Partner',
-        price: null,
         desc: 'Schaal jouw bureau met Stevin als technologiepartner',
         features: [
           'White-label dashboard',
@@ -176,8 +154,6 @@ const categories: Category[] = [
           'Dedicated account manager',
         ],
         popular: true,
-        cta: 'Neem contact op',
-        ctaHref: '/contact',
       },
     ],
   },
@@ -241,28 +217,20 @@ export default function PricingTabs() {
             </h3>
             <p className={`text-sm mb-5 ${pkg.popular ? 'text-slate-400' : 'text-muted'}`}>{pkg.desc}</p>
             <div className="mb-6">
-              {pkg.price ? (
-                <>
-                  <span className={`text-4xl font-bold ${pkg.popular ? 'text-white' : 'text-primary'}`}>
-                    €{pkg.price}
-                  </span>
-                  <span className={`text-sm ml-1 ${pkg.popular ? 'text-slate-400' : 'text-muted'}`}>p/m</span>
-                </>
-              ) : (
-                <span className={`text-3xl font-bold ${pkg.popular ? 'text-neon' : 'text-accent'}`}>
-                  Op aanvraag
-                </span>
-              )}
+              <span className={`text-2xl font-bold ${pkg.popular ? 'text-white/90' : 'text-primary'}`}>
+                Op maat
+              </span>
+              <span className={`text-sm ml-2 ${pkg.popular ? 'text-slate-400' : 'text-muted'}`}>voorstel na gesprek</span>
             </div>
             <Link
-              href={pkg.ctaHref || '/contact'}
+              href="/contact"
               className={`block w-full text-center py-3 rounded-xl text-sm font-semibold transition-all duration-200 mb-6 ${
                 pkg.popular
                   ? 'bg-neon text-[#0A1628] hover:bg-neon-dark neon-glow'
                   : 'bg-surface text-primary border border-border hover:border-accent/30 hover:shadow-md'
               }`}
             >
-              {pkg.cta || 'Start vandaag'}
+              Plan een gesprek
             </Link>
             <ul className="space-y-2.5">
               {pkg.features.map((feature) => (
@@ -290,6 +258,12 @@ export default function PricingTabs() {
           </div>
         ))}
       </div>
+
+      {/* Bottom note */}
+      <p className="text-center text-sm text-muted mt-8 max-w-lg mx-auto">
+        Geen marge op je mediabudget. Vaste maandprijs afgestemd op jouw situatie.
+        Combineer meerdere diensten voor een totaalaanpak.
+      </p>
     </div>
   )
 }
