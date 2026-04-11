@@ -23,11 +23,15 @@ const platformItems = [
   { label: 'AI Reports', href: '/platform#ai-reports' },
 ]
 
+const voorWieItems = [
+  { label: 'Voor Agencies', href: '/voor-agencies' },
+  { label: 'Voor Artiesten & Influencers', href: '/voor-artiesten' },
+]
+
 const navItems = [
   { label: 'Werkwijze', href: '/werkwijze' },
   { label: 'Integraties', href: '/integraties' },
   { label: 'Case Studies', href: '/case-studies' },
-  { label: 'Voor Agencies', href: '/voor-agencies' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -35,8 +39,10 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [dienstenOpen, setDienstenOpen] = useState(false)
   const [platformOpen, setPlatformOpen] = useState(false)
+  const [voorWieOpen, setVoorWieOpen] = useState(false)
   const [mobileDienstenOpen, setMobileDienstenOpen] = useState(false)
   const [mobilePlatformOpen, setMobilePlatformOpen] = useState(false)
+  const [mobileVoorWieOpen, setMobileVoorWieOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
   const isHome = pathname === '/'
@@ -49,6 +55,7 @@ export default function Header() {
   }, [])
 
   const platformDropdownRef = useRef<HTMLDivElement>(null)
+  const voorWieDropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -57,6 +64,9 @@ export default function Header() {
       }
       if (platformDropdownRef.current && !platformDropdownRef.current.contains(e.target as Node)) {
         setPlatformOpen(false)
+      }
+      if (voorWieDropdownRef.current && !voorWieDropdownRef.current.contains(e.target as Node)) {
+        setVoorWieOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -145,6 +155,37 @@ export default function Header() {
               )}
             </div>
 
+            {/* Voor wie dropdown */}
+            <div ref={voorWieDropdownRef} className="relative">
+              <button
+                onClick={() => setVoorWieOpen(!voorWieOpen)}
+                className={`flex items-center gap-1 text-[15px] font-medium transition-colors ${
+                  showDark
+                    ? 'text-white/70 hover:text-white'
+                    : 'text-slate-600 hover:text-primary'
+                }`}
+              >
+                Voor wie
+                <svg className={`w-3.5 h-3.5 transition-transform ${voorWieOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {voorWieOpen && (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl border border-border shadow-lg py-2">
+                  {voorWieItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-surface transition-colors"
+                      onClick={() => setVoorWieOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -225,6 +266,31 @@ export default function Header() {
             {mobilePlatformOpen && (
               <div className="pl-4 space-y-0">
                 {platformItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block text-sm text-slate-600 py-2.5 border-b border-border/30"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            {/* Voor wie accordion */}
+            <button
+              onClick={() => setMobileVoorWieOpen(!mobileVoorWieOpen)}
+              className="flex items-center justify-between w-full text-base font-medium text-primary py-3 border-b border-border/50"
+            >
+              Voor wie
+              <svg className={`w-4 h-4 transition-transform ${mobileVoorWieOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {mobileVoorWieOpen && (
+              <div className="pl-4 space-y-0">
+                {voorWieItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
