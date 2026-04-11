@@ -47,7 +47,7 @@ export default function HomePage() {
               <span className="text-neon">Stop de ruis.</span>
             </h1>
             <p className="mt-4 text-base sm:text-lg lg:text-xl text-white/45 max-w-2xl mx-auto leading-relaxed">
-              Stevin is de intelligente datalaag die versnipperde signalen omzet in keiharde actie. Gebouwd voor de top van de markt.
+              Stevin is de intelligente datalaag die versnipperde signalen omzet in concrete actie. Voor agencies, inhouse teams, artiesten en promotoren.
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export default function HomePage() {
                 Zet online hype om in momentum. Van social buzz tot ticketverkoop — reageer direct op de signalen die ertoe doen.
               </p>
               <span className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-pink/10 text-pink group-hover:bg-pink/20 transition-colors">
-                Ontdek de Artist oplossing
+                Ontdek de oplossing
                 <svg className="ml-1.5 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -170,7 +170,7 @@ export default function HomePage() {
                 icon: <Database className="w-5 h-5 text-accent" />,
                 step: '01',
                 title: 'Centraliseer',
-                desc: 'Koppel je volledige digitale ecosysteem. Stevin trekt alle ruwe data realtime samen in een beveiligde omgeving.',
+                desc: 'Koppel je volledige digitale ecosysteem. Stevin trekt alle ruwe data realtime samen in één overzicht.',
               },
               {
                 icon: <Cpu className="w-5 h-5 text-accent" />,
@@ -182,7 +182,7 @@ export default function HomePage() {
                 icon: <Zap className="w-5 h-5 text-neon" />,
                 step: '03',
                 title: 'Activeer',
-                desc: 'Geen passieve grafieken. Stevin levert directe, datagedreven actiepunten waarmee je direct ingrijpt.',
+                desc: 'Geen passieve grafieken. Stevin levert concrete actiepunten zodat je weet wat je nu moet doen.',
               },
             ].map((item) => (
               <div key={item.title} className="relative p-6 sm:p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
@@ -208,13 +208,13 @@ export default function HomePage() {
                   Ontworpen voor schaal.
                 </h2>
                 <p className="mt-4 text-base text-muted leading-relaxed">
-                  Of je nu tientallen ad-accounts beheert voor klanten, of de cross-channel interacties van miljoenen fans monitort: de Stevin engine schaalt mee. Minder tijd kwijt aan het zoeken naar data, volledige focus op het resultaat.
+                  Of je nu tientallen ad-accounts beheert voor klanten, of de cross-channel interacties van miljoenen fans monitort: Stevin schaalt mee. Minder tijd kwijt aan het zoeken naar data, volledige focus op het resultaat.
                 </p>
               </div>
               <div className="flex gap-8 sm:gap-10 flex-shrink-0">
                 <div className="text-center">
                   <p className="text-3xl sm:text-4xl font-bold text-neon">-35%</p>
-                  <p className="text-xs text-muted mt-1 max-w-[100px]">Vermindering in budgetverspilling</p>
+                  <p className="text-xs text-muted mt-1 max-w-[100px]">Minder budgetverspilling</p>
                 </div>
                 <div className="text-center">
                   <p className="text-3xl sm:text-4xl font-bold text-accent">170+</p>
@@ -246,23 +246,23 @@ export default function HomePage() {
             }} />
             <div className="relative">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-                Kies jouw domein.
+                Klaar om te beginnen?
               </h2>
               <p className="mt-3 text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-                Klaar om de ruis te stoppen en de controle terug te pakken? Selecteer jouw profiel.
+                Stop de ruis. Pak de controle terug. Kies waar je wilt starten.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href="/voor-agencies"
                   className="inline-flex items-center px-8 py-4 text-base font-bold text-white bg-accent rounded-xl hover:bg-accent-dark transition-all duration-200 shadow-lg shadow-accent/20"
                 >
-                  Oplossing voor Agencies
+                  Voor Marketing Teams
                 </Link>
                 <Link
                   href="/voor-artiesten"
                   className="inline-flex items-center px-8 py-4 text-base font-bold text-white bg-pink rounded-xl hover:bg-pink-dark transition-all duration-200 shadow-lg shadow-pink/20"
                 >
-                  Oplossing voor Artiesten
+                  Voor Artiesten & Promotoren
                 </Link>
               </div>
               <p className="mt-5">

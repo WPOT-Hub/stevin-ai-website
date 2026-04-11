@@ -10,7 +10,7 @@ export const homepageFaqs: FAQ[] = [
   },
   {
     question: 'Voor wie is Stevin bedoeld?',
-    answer: 'Voor iedereen die grip wil op versnipperde data. Agencies gebruiken Stevin om meerdere klanten vanuit één systeem te beheren. Artiesten en influencers gebruiken het om cross-channel momentum te volgen en fan-signalen te filteren. De engine is hetzelfde, de toepassing verschilt.',
+    answer: 'Voor iedereen die grip wil op versnipperde data. Agencies en inhouse teams gebruiken Stevin om meerdere accounts vanuit één systeem te beheren. Artiesten en promotoren gebruiken het om cross-channel momentum te volgen en fan-signalen te filteren. Het platform is hetzelfde, de toepassing verschilt.',
   },
   {
     question: 'Welke platforms koppelen jullie?',
