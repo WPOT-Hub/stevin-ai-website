@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Shuffle, Clock, DollarSign, Search, Brain, Radio, Moon, Plug, BarChart3, Zap } from 'lucide-react'
+import { Shuffle, Clock, DollarSign, Search, Brain, Radio, Moon, Plug, BarChart3, Zap, Building2, Music } from 'lucide-react'
 import Section from '@/components/Section'
 import FAQAccordion from '@/components/FAQAccordion'
 import HeroVideo from '@/components/HeroVideo'
-import PricingTabs from '@/components/PricingTabs'
 import StepsTimeline from '@/components/StepsTimeline'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import { homepageFaqs } from '@/data/faqs'
@@ -28,75 +27,85 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ===== HERO ===== */}
-      <section className="relative overflow-hidden hero-mesh-gradient -mt-[72px] pt-[calc(72px+2.5rem)] sm:pt-[calc(72px+3rem)] lg:pt-[calc(72px+4rem)] pb-0 lg:pb-16">
+      {/* ===== HERO — Router ===== */}
+      <section className="relative overflow-hidden hero-mesh-gradient -mt-[72px] pt-[calc(72px+2.5rem)] sm:pt-[calc(72px+3rem)] lg:pt-[calc(72px+4rem)] pb-12 lg:pb-20">
         <div className="absolute inset-0 opacity-[0.04]" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
           backgroundSize: '40px 40px',
         }} />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 lg:gap-6 items-center">
-            {/* Left — Text */}
-            <div className="max-w-lg lg:max-w-xl">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.1] mb-5">
-                <Image src="/logos/icon-white.svg" alt="" width={16} height={16} />
-                <span className="text-sm font-medium text-white/60">Marketing. Inzicht. Resultaat.</span>
-              </div>
-
-              <h1 className="text-[1.75rem] sm:text-4xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight text-white leading-[1.1]">
-                Jij focust op je business.
-              </h1>
-              <p className="mt-3 text-lg sm:text-2xl lg:text-[1.85rem] xl:text-[2rem] font-light tracking-tight text-white/55 leading-[1.2]">
-                Wij regelen je marketing en sturen op resultaat.
-              </p>
-
-              <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-white/35 max-w-md lg:max-w-lg leading-relaxed">
-                170+ integraties, AI-gedreven rapportages, 24/7 monitoring en automatische opvolging. Eén platform dat alles verbindt.
-              </p>
-
-              {/* CTA + mobile video side by side */}
-              <div className="relative mt-6">
-                {/* Mobile video — positioned right of CTA */}
-                <div className="lg:hidden absolute right-[60px] -top-12 w-[200px] h-[200px] sm:right-[-60px] sm:-top-20 sm:w-[360px] sm:h-[360px] md:right-[-250px] md:w-[400px] md:h-[400px] z-0 pointer-events-none">
-                  <HeroVideo />
-                </div>
-
-                <div className="relative z-10 flex flex-col sm:flex-row items-start gap-3">
-                  <Link
-                    href="/contact"
-                    className="neon-glow group inline-flex items-center px-7 py-3.5 lg:px-8 lg:py-4 text-[15px] lg:text-base font-bold text-[#0A1628] bg-neon rounded-xl hover:bg-neon-dark transition-all duration-300"
-                  >
-                    Plan een gesprek
-                    <svg className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                  <Link
-                    href="/werkwijze"
-                    className="inline-flex items-center px-7 py-3.5 lg:px-8 lg:py-4 text-[15px] lg:text-base font-semibold text-white/80 bg-white/[0.06] rounded-xl border border-white/[0.1] hover:bg-white/[0.1] transition-all duration-200"
-                  >
-                    Bekijk hoe het werkt
-                  </Link>
-                </div>
-              </div>
+          {/* Centered headline */}
+          <div className="text-center max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.1] mb-6">
+              <Image src="/logos/icon-white.svg" alt="" width={16} height={16} />
+              <span className="text-sm font-medium text-white/60">Data. Inzicht. Actie.</span>
             </div>
 
-            {/* Right — Video (desktop only) */}
-            <div className="hidden lg:flex justify-end">
-              <HeroVideo />
-            </div>
+            <h1 className="text-[1.75rem] sm:text-4xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight text-white leading-[1.1]">
+              Heers over je data.<br />
+              <span className="text-neon">Stop de ruis.</span>
+            </h1>
+            <p className="mt-4 text-base sm:text-lg lg:text-xl text-white/45 max-w-2xl mx-auto leading-relaxed">
+              170+ integraties, AI-gedreven rapportages en real-time monitoring. Eén platform dat al je kanalen verbindt en omzet in actie.
+            </p>
           </div>
 
-          {/* Trust bar — clean row below, no overlap with video */}
-          <div className="relative z-10 mt-6 lg:mt-10 pb-8 sm:pb-10 lg:pb-0 max-w-[55%] lg:max-w-none flex flex-col lg:flex-row lg:items-center gap-1.5 lg:gap-6">
-            <span className="text-sm lg:text-[15px] font-medium text-neon/70">
-              Vaste maandprijs. Geen verrassingen.
-            </span>
-            <span className="hidden sm:block w-px h-4 bg-white/15" />
-            <span className="text-xs lg:text-sm text-white/30 leading-snug">
-              Binnen 30 min inzicht in waar je groei laat liggen. Geen verplichtingen.
-            </span>
+          {/* Router cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-10 max-w-4xl mx-auto">
+            {/* Agency card */}
+            <Link
+              href="/voor-agencies"
+              className="group relative rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8 hover:bg-white/[0.08] hover:border-accent/30 transition-all duration-300"
+            >
+              <div className="w-11 h-11 rounded-xl bg-accent/15 flex items-center justify-center mb-4">
+                <Building2 className="w-5 h-5 text-accent" />
+              </div>
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-neon transition-colors">Voor Agencies</h2>
+              <p className="text-sm text-white/40 leading-relaxed mb-4">
+                White-label dashboard, multi-client beheer en volume korting. Schaal je bureau zonder extra FTE.
+              </p>
+              <span className="inline-flex items-center text-sm font-semibold text-accent group-hover:text-neon transition-colors">
+                Bekijk agency oplossing
+                <svg className="ml-1.5 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+
+            {/* Artist / Influencer card */}
+            <Link
+              href="/voor-artiesten"
+              className="group relative rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8 hover:bg-white/[0.08] hover:border-accent/30 transition-all duration-300"
+            >
+              <div className="w-11 h-11 rounded-xl bg-accent/15 flex items-center justify-center mb-4">
+                <Music className="w-5 h-5 text-accent" />
+              </div>
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-neon transition-colors">Voor Artiesten & Influencers</h2>
+              <p className="text-sm text-white/40 leading-relaxed mb-4">
+                Cross-channel monitoring, sentiment analyse en fan-bridge detectie. Van ruis naar signaal.
+              </p>
+              <span className="inline-flex items-center text-sm font-semibold text-accent group-hover:text-neon transition-colors">
+                Bekijk artist oplossing
+                <svg className="ml-1.5 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+          </div>
+
+          {/* Universal CTA */}
+          <div className="text-center mt-8">
+            <Link
+              href="/contact"
+              className="neon-glow group inline-flex items-center px-8 py-4 text-base font-bold text-[#0A1628] bg-neon rounded-xl hover:bg-neon-dark transition-all duration-300"
+            >
+              Plan een gesprek
+              <svg className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+            <p className="mt-3 text-sm text-white/25">Geen verplichtingen. Binnen 30 min inzicht.</p>
           </div>
         </div>
       </section>
@@ -123,8 +132,8 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
                 </svg>
               ),
-              title: 'Meer klanten',
-              desc: 'Alles werkt samen, dus je haalt meer uit je budget',
+              title: 'Betere resultaten',
+              desc: 'Alle data werkt samen, zodat je sneller groeit',
             },
             {
               icon: (
@@ -132,8 +141,8 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               ),
-              title: 'Lagere kosten per aanvraag',
-              desc: 'Betere targeting, minder verspilling',
+              title: 'Minder verspilling',
+              desc: 'Weet precies waar je budget naartoe gaat',
             },
             {
               icon: (
@@ -141,8 +150,8 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                 </svg>
               ),
-              title: 'Snellere opvolging',
-              desc: 'Geen aanvraag wordt gemist',
+              title: 'Direct inzicht',
+              desc: 'Real-time data in plaats van achteraf rapportages',
             },
           ].map((item) => (
             <div key={item.title} className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl bg-surface border border-border">
@@ -163,15 +172,15 @@ export default function HomePage() {
         <div className="max-w-3xl mx-auto text-center mb-8">
           <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Herkenbaar?</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary leading-tight">
-            Marketing kost tijd, geld en overzicht.
+            Data overal, inzicht nergens.
           </h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
           {[
-            { title: 'Campagnes werken los van elkaar', icon: <Shuffle className="w-5 h-5 text-accent" /> },
-            { title: 'Aanvragen worden niet opgevolgd', icon: <Clock className="w-5 h-5 text-accent" /> },
+            { title: 'Kanalen werken los van elkaar', icon: <Shuffle className="w-5 h-5 text-accent" /> },
+            { title: 'Signalen verdwijnen in de ruis', icon: <Clock className="w-5 h-5 text-accent" /> },
             { title: 'Budget verdwijnt zonder resultaat', icon: <DollarSign className="w-5 h-5 text-accent" /> },
-            { title: 'Geen inzicht in wat werkt', icon: <Search className="w-5 h-5 text-accent" /> },
+            { title: 'Geen overzicht over alle data', icon: <Search className="w-5 h-5 text-accent" /> },
           ].map((item) => (
             <div key={item.title} className="p-4 sm:p-5 rounded-xl bg-white border border-border text-center">
               <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-2">
@@ -249,27 +258,12 @@ export default function HomePage() {
         <StepsTimeline />
       </Section>
 
-      {/* ===== PRICING ===== */}
-      <Section bg="surface" id="pricing">
-        <div className="max-w-3xl mx-auto text-center mb-10">
-          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Transparante prijzen</p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary leading-tight">
-            Wat kost het?
-          </h2>
-          <p className="mt-4 text-base text-muted leading-relaxed max-w-2xl mx-auto">
-            Kies de dienst die past bij je situatie. Combineer voor meer resultaat.
-          </p>
-        </div>
-
-        <PricingTabs />
-      </Section>
-
       {/* ===== WAAROM STEVIN ===== */}
       <Section bg="white">
         <div className="max-w-3xl mx-auto text-center mb-8">
           <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Waarom Stevin</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary leading-tight">
-            Eén partner voor al je marketing.
+            Eén platform. Alle kanalen. Totaal overzicht.
           </h2>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
@@ -338,10 +332,10 @@ export default function HomePage() {
             }} />
             <div className="relative">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-                Klaar om je marketing uit handen te geven?
+                Klaar om de ruis te stoppen?
               </h2>
               <p className="mt-3 text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-                Plan een gesprek en ontdek waar je groei laat liggen.
+                Plan een gesprek en ontdek hoe Stevin jouw data omzet in actie.
               </p>
               <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
@@ -354,10 +348,10 @@ export default function HomePage() {
                   </svg>
                 </Link>
                 <Link
-                  href="#pricing"
+                  href="/platform"
                   className="inline-flex items-center px-8 py-4 text-base font-semibold text-white/80 bg-white/[0.06] rounded-xl border border-white/[0.1] hover:bg-white/[0.1] transition-all duration-200"
                 >
-                  Bekijk pakketten
+                  Bekijk het platform
                 </Link>
               </div>
               <p className="mt-3 text-sm text-slate-500">Geen verplichtingen</p>

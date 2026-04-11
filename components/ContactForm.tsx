@@ -25,7 +25,7 @@ export default function ContactForm() {
 
   return (
     <form
-      action="https://formsubmit.co/stevin@wpotgroup.com"
+      action="https://formsubmit.co/koen@stevin.ai"
       method="POST"
       onSubmit={() => setLoading(true)}
       className="rounded-2xl border border-border bg-white p-8 sm:p-12"
