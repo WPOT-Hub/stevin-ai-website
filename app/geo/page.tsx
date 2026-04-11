@@ -87,7 +87,7 @@ export default function GEOPage() {
             Waarom GEO naast klassieke SEO nodig is
           </h2>
           <p className="mt-6 text-lg text-muted leading-relaxed text-center">
-            Klassieke SEO blijft belangrijk, maar het is niet meer genoeg. Een groeiend deel van zoekopdrachten wordt beantwoord door AI zonder dat de gebruiker doorklikt. Als je daar niet zichtbaar bent, mis je een steeds groter deel van je potentiele doelgroep.
+            Klassieke SEO blijft belangrijk, maar het is niet meer genoeg. Een groeiend deel van zoekopdrachten wordt beantwoord door AI zonder dat de gebruiker doorklikt. Als je daar niet zichtbaar bent, mis je een steeds groter deel van je potentiële doelgroep.
           </p>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[

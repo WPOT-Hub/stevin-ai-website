@@ -63,7 +63,7 @@ export default function VoorArtiestenPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
-              Vraag Artist Access aan
+              Vraag toegang aan
             </Link>
             <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/80 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
               Bekijk het platform
@@ -157,14 +157,14 @@ export default function VoorArtiestenPage() {
               </ul>
             </div>
             <div className="rounded-2xl bg-[#0A1628] border border-accent/20 p-8 sm:p-10">
-              <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-4">Artist Desk</p>
+              <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-4">Voor Artiesten</p>
               <p className="text-4xl font-bold text-neon mb-2">Op aanvraag</p>
               <p className="text-white/50 text-sm mb-8">Prijs afhankelijk van scope en aantal kanalen</p>
               <Link
                 href="/contact"
                 className="block w-full text-center py-3.5 rounded-xl text-sm font-semibold bg-neon text-[#0A1628] hover:bg-neon-dark transition-colors neon-glow"
               >
-                Vraag Artist Access aan
+                Vraag toegang aan
               </Link>
               <ul className="mt-8 space-y-2.5">
                 {['Cross-channel monitoring', 'AI Advisor met momentum-detectie', 'Fan-engagement filtering', 'Sentiment analyse', 'Geo-hype tracking', 'Merch & ticket conversie-inzichten'].map((f) => (
@@ -186,8 +186,7 @@ export default function VoorArtiestenPage() {
         <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Klaar om de ruis te muten?</h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
-            Krijg exclusieve toegang tot de Stevin Artist Desk. Koppel je kanalen en zie direct
-            wat je de afgelopen maanden hebt gemist.
+            Koppel je kanalen en zie direct wat je de afgelopen maanden hebt gemist.
           </p>
           <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
             Neem contact op

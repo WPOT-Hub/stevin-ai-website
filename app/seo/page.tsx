@@ -91,7 +91,7 @@ export default function SEOPage() {
               Zoekintentie en meetbaarheid
             </h2>
             <p className="mt-4 text-lg text-muted leading-relaxed">
-              Niet elk zoekwoord is even waardevol. Wij richten ons op zoektermen met commerciele intentie &mdash; waar mensen actief op zoek zijn naar een oplossing. En we meten niet alleen verkeer, maar wat dat verkeer oplevert.
+              Niet elk zoekwoord is even waardevol. Wij richten ons op zoektermen met commerciële intentie &mdash; waar mensen actief op zoek zijn naar een oplossing. En we meten niet alleen verkeer, maar wat dat verkeer oplevert.
             </p>
           </div>
           <div className="space-y-6">

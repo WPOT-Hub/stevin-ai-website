@@ -2236,7 +2236,7 @@ export const integrations: Integration[] = [
     slug: 'beatport',
     category: 'streaming-audio',
     shortDescription: 'Chart-posities, sales data en genre rankings.',
-    description: 'Beatport is de grootste digitale muziekwinkel voor elektronische muziek. Chart-posities en sales data zijn directe indicatoren van je commerciele relevantie in de scene.',
+    description: 'Beatport is de grootste digitale muziekwinkel voor elektronische muziek. Chart-posities en sales data zijn directe indicatoren van je commerciële relevantie in de scene.',
     useCase: 'Monitoren van chart-performance en sales trends per track en genre.',
     howWeUseIt: 'Stevin.AI monitort je Beatport rankings en correleert pieken met je marketingactiviteiten en release-strategie.',
     problemsSolved: [
@@ -2624,7 +2624,7 @@ export const integrations: Integration[] = [
     category: 'finance-erp',
     shortDescription: 'CRM, projectmanagement en facturatie in een tool.',
     description: 'Teamleader combineert CRM, projectmanagement en facturatie. Ideaal voor het MKB dat alles in een tool wil. De koppeling met marketing maakt de cirkel rond.',
-    useCase: 'Geintegreerd CRM, project en marketing overzicht.',
+    useCase: 'Geïntegreerd CRM, project en marketing overzicht.',
     howWeUseIt: 'Stevin.AI synchroniseert Teamleader deal- en factuurdata voor een compleet beeld van lead tot omzet.',
     problemsSolved: [
       'CRM, facturatie en marketing staan los van elkaar',

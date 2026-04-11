@@ -47,7 +47,7 @@ export default function EcommerceCaseStudy() {
             E-commerce
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-            Van losse campagnes naar een geIntegreerd marketing systeem
+            Van losse campagnes naar een geïntegreerd marketing systeem
           </h1>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
             Hoe een snelgroeiend Nederlands e-commerce bedrijf hun volledige marketingstack

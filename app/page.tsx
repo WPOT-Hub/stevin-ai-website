@@ -12,7 +12,7 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Stevin',
-    description: 'Stevin is het AI-platform dat agencies, artiesten en ondernemers helpt groeien door data om te zetten in actie.',
+    description: 'Stevin is het AI-platform dat agencies, promotoren en artiesten helpt groeien door data om te zetten in actie.',
     url: 'https://stevin.ai',
     areaServed: 'NL',
     knowsAbout: ['Online Marketing', 'Marketing Automation', 'SEO', 'Paid Media', 'Analytics', 'Social Media Monitoring', 'Artist Management', 'PR & Communications'],
@@ -47,7 +47,7 @@ export default function HomePage() {
               <span className="text-neon">Stop de ruis.</span>
             </h1>
             <p className="mt-4 text-base sm:text-lg lg:text-xl text-white/45 max-w-2xl mx-auto leading-relaxed">
-              Stevin is de intelligente datalaag die versnipperde signalen omzet in concrete actie. Voor agencies, inhouse teams, artiesten en promotoren.
+              Stevin is de intelligente datalaag die versnipperde signalen omzet in concrete actie. Voor agencies, inhouse teams, promotoren en artiesten.
             </p>
           </div>
 
@@ -61,9 +61,9 @@ export default function HomePage() {
               <div className="w-11 h-11 rounded-xl bg-accent/15 flex items-center justify-center mb-4 group-hover:bg-accent/25 transition-colors">
                 <Building2 className="w-5 h-5 text-accent" />
               </div>
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Stevin voor Marketing Teams</h2>
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Stevin voor Marketing Teams & Promotoren</h2>
               <p className="text-sm text-white/40 leading-relaxed mb-5">
-                Krijg grip op ROAS en elimineer verspilling. Of je nu een bureau runt of een inhouse team aanstuurt — beheer alles vanuit een centraal systeem.
+                Krijg grip op ROAS, elimineer verspilling en scan de markt. Of je nu een bureau runt, een inhouse team aanstuurt of events plant — beheer alles vanuit een centraal systeem.
               </p>
               <span className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-accent/10 text-accent group-hover:bg-accent/20 transition-colors">
                 Ontdek de oplossing
@@ -81,9 +81,9 @@ export default function HomePage() {
               <div className="w-11 h-11 rounded-xl bg-pink/15 flex items-center justify-center mb-4 group-hover:bg-pink/25 transition-colors">
                 <Music className="w-5 h-5 text-pink" />
               </div>
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-pink transition-colors">Stevin voor Artiesten & Promotoren</h2>
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-pink transition-colors">Stevin voor Artiesten</h2>
               <p className="text-sm text-white/40 leading-relaxed mb-5">
-                Zet online hype om in momentum. Van social buzz tot ticketverkoop — reageer direct op de signalen die ertoe doen.
+                Zet online hype om in momentum. Filter de ruis uit duizenden comments en reageer direct op de signalen die ertoe doen.
               </p>
               <span className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-pink/10 text-pink group-hover:bg-pink/20 transition-colors">
                 Ontdek de oplossing
@@ -256,13 +256,13 @@ export default function HomePage() {
                   href="/voor-agencies"
                   className="inline-flex items-center px-8 py-4 text-base font-bold text-white bg-accent rounded-xl hover:bg-accent-dark transition-all duration-200 shadow-lg shadow-accent/20"
                 >
-                  Voor Marketing Teams
+                  Voor Marketing Teams & Promotoren
                 </Link>
                 <Link
                   href="/voor-artiesten"
                   className="inline-flex items-center px-8 py-4 text-base font-bold text-white bg-pink rounded-xl hover:bg-pink-dark transition-all duration-200 shadow-lg shadow-pink/20"
                 >
-                  Voor Artiesten & Promotoren
+                  Voor Artiesten
                 </Link>
               </div>
               <p className="mt-5">

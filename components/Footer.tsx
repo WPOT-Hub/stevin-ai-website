@@ -43,7 +43,7 @@ export default function Footer() {
               <Logo variant="mono-white" width={130} height={21} />
             </Link>
             <p className="mt-5 text-sm text-slate-400 leading-relaxed">
-              Marketing met AI waar het versnelt. Onze kennis maakt het verschil. Van klik tot klant.
+              De intelligente datalaag die versnipperde signalen omzet in actie. Voor agencies, promotoren en artiesten.
             </p>
             <p className="mt-5 text-xs text-slate-500">
               Werkzaam vanuit Amsterdam, Eindhoven en Breda.

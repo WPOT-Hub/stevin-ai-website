@@ -10,7 +10,7 @@ const caseStudies = [
   {
     slug: 'e-commerce',
     industry: 'E-commerce',
-    title: 'Van losse campagnes naar een geIntegreerd marketing systeem',
+    title: 'Van losse campagnes naar een geïntegreerd marketing systeem',
     subtitle: 'Hoe een snelgroeiend e-commerce bedrijf 42% meer leads genereerde en 8 uur per week bespaarde',
     metric: '+42%',
     metricLabel: 'meer leads',
