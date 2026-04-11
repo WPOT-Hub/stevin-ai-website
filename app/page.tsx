@@ -81,9 +81,9 @@ export default function HomePage() {
               <div className="w-11 h-11 rounded-xl bg-pink/15 flex items-center justify-center mb-4 group-hover:bg-pink/25 transition-colors">
                 <Music className="w-5 h-5 text-pink" />
               </div>
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-pink transition-colors">Stevin voor Artiesten</h2>
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-pink transition-colors">Stevin voor Artiesten & Promotoren</h2>
               <p className="text-sm text-white/40 leading-relaxed mb-5">
-                Zet online hype om in momentum. Filter duizenden interacties en reageer direct op de signalen die jouw merk bouwen.
+                Zet online hype om in momentum. Van social buzz tot ticketverkoop — reageer direct op de signalen die ertoe doen.
               </p>
               <span className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-pink/10 text-pink group-hover:bg-pink/20 transition-colors">
                 Ontdek de Artist oplossing
