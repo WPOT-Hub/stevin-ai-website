@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Radio, TrendingUp, MessageCircle, Headphones, BarChart3, Filter } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Voor Artiesten & Influencers — Stevin',
-  description: 'Stevin is het AI Operating System dat social chaos filtert en omzet in momentum, fan loyalty en merch sales. Gebouwd voor artiesten op wereldtournee.',
+  title: 'Stevin voor Artiesten — Filter het signaal uit de ruis',
+  description: 'Stevin centraliseert je social kanalen, filtert de ruis en levert concrete actiepunten. Van cross-channel momentum tot fan-engagement.',
 }
 
 const features = [

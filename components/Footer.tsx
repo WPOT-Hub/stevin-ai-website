@@ -17,6 +17,7 @@ const footerLinks = {
     { label: 'Integraties', href: '/integraties' },
     { label: 'SEO', href: '/seo' },
     { label: 'GEO', href: '/geo' },
+    { label: 'Voor Agencies', href: '/voor-agencies' },
     { label: 'Contact', href: '/contact' },
   ],
   integraties: [

@@ -1,7 +1,15 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  // Clean URLs without extensions
+  async redirects() {
+    return [
+      {
+        source: '/voor-artiesten',
+        destination: '/artiesten',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig

@@ -55,7 +55,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-10 max-w-4xl mx-auto">
             {/* Agency card — Blue accent */}
             <Link
-              href="/voor-agencies"
+              href="/marketing"
               className="group relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 sm:p-8 hover:bg-white/[0.08] hover:border-accent/40 transition-all duration-300"
             >
               <div className="w-11 h-11 rounded-xl bg-accent/15 flex items-center justify-center mb-4 group-hover:bg-accent/25 transition-colors">
@@ -75,7 +75,7 @@ export default function HomePage() {
 
             {/* Artist card — Pink accent */}
             <Link
-              href="/voor-artiesten"
+              href="/artiesten"
               className="group relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 sm:p-8 hover:bg-white/[0.08] hover:border-pink/40 transition-all duration-300"
             >
               <div className="w-11 h-11 rounded-xl bg-pink/15 flex items-center justify-center mb-4 group-hover:bg-pink/25 transition-colors">
@@ -259,13 +259,13 @@ export default function HomePage() {
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  href="/voor-agencies"
+                  href="/marketing"
                   className="inline-flex items-center px-8 py-4 text-base font-bold text-white bg-accent rounded-xl hover:bg-accent-dark transition-all duration-200 shadow-lg shadow-accent/20"
                 >
                   Voor Marketing
                 </Link>
                 <Link
-                  href="/voor-artiesten"
+                  href="/artiesten"
                   className="inline-flex items-center px-8 py-4 text-base font-bold text-white bg-pink rounded-xl hover:bg-pink-dark transition-all duration-200 shadow-lg shadow-pink/20"
                 >
                   Voor Artiesten

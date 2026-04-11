@@ -24,8 +24,13 @@ const platformItems = [
 ]
 
 const voorWieItems = [
-  { label: 'Voor Marketing', href: '/voor-agencies' },
-  { label: 'Voor Artiesten', href: '/voor-artiesten' },
+  { label: 'Voor Marketing', href: '/marketing' },
+  { label: 'Voor Artiesten', href: '/artiesten' },
+  { label: 'Voor Influencers', href: '/influencers' },
+  { label: 'Voor Promotoren', href: '/promotoren' },
+  { label: 'Voor Merken', href: '/merken' },
+  { label: 'Voor PR-bureaus', href: '/pr-bureaus' },
+  { label: 'Voor B2B', href: '/b2b' },
 ]
 
 const navItems = [
