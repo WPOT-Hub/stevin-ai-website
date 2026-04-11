@@ -61,12 +61,12 @@ export default function HomePage() {
               <div className="w-11 h-11 rounded-xl bg-accent/15 flex items-center justify-center mb-4 group-hover:bg-accent/25 transition-colors">
                 <Building2 className="w-5 h-5 text-accent" />
               </div>
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Stevin voor Agencies</h2>
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Stevin voor Marketing Teams</h2>
               <p className="text-sm text-white/40 leading-relaxed mb-5">
-                Krijg grip op ROAS en elimineer verspilling. Beheer al je klanten vanuit een centraal systeem en schaal zonder extra FTE.
+                Krijg grip op ROAS en elimineer verspilling. Of je nu een bureau runt of een inhouse team aanstuurt — beheer alles vanuit een centraal systeem.
               </p>
               <span className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-accent/10 text-accent group-hover:bg-accent/20 transition-colors">
-                Ontdek de Agency oplossing
+                Ontdek de oplossing
                 <svg className="ml-1.5 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
