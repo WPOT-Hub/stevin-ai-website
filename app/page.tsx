@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { Database, Cpu, Zap, Building2, Music } from 'lucide-react'
 import Section from '@/components/Section'
 import FAQAccordion from '@/components/FAQAccordion'
-import HeroVideo from '@/components/HeroVideo'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import { homepageFaqs } from '@/data/faqs'
 import { nativeConnectors } from '@/data/connectors'
@@ -28,11 +27,12 @@ export default function HomePage() {
 
       {/* ===== HERO — Router ===== */}
       <section className="relative overflow-hidden bg-primary -mt-[72px] pt-[calc(72px+2.5rem)] sm:pt-[calc(72px+3rem)] lg:pt-[calc(72px+4rem)] pb-12 lg:pb-20">
-        {/* Video background (dimmed) */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <HeroVideo />
-        </div>
-        <div className="absolute inset-0 bg-primary/60" />
+        {/* Background texture */}
+        <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
+        <div className="absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
+          backgroundSize: '40px 40px',
+        }} />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Centered headline */}
