@@ -161,7 +161,7 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Hoe Stevin de ruis filtert</p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
-              Een systeem. Complete controle.
+              Eén systeem. Complete controle.
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
