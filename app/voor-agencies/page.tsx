@@ -20,7 +20,7 @@ const features = [
   },
   {
     title: 'Dedicated Connectors',
-    desc: 'Elke klant krijgt eigen connector-koppelingen. 14 native platformen beschikbaar.',
+    desc: 'Elke klant krijgt eigen connector-koppelingen. 170+ integraties beschikbaar.',
     icon: <Plug className="w-5 h-5 text-accent" />,
   },
   {

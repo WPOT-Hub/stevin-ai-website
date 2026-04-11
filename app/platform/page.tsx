@@ -5,13 +5,13 @@ import { nativeConnectors } from '@/data/connectors'
 
 export const metadata: Metadata = {
   title: 'Platform — Stevin',
-  description: 'Stevin Hub en Stevin Desk: het AI-gedreven marketing platform met 14 native connectors, 24/7 monitoring, social listening en AI-rapporten.',
+  description: 'Stevin Hub en Stevin Desk: het AI-gedreven marketing platform met 170+ integraties, 24/7 monitoring, social listening en AI-rapporten.',
 }
 
 const features = [
   {
     title: 'Stevin Hub',
-    desc: 'De motor achter alles. 14 native connectors, AI-analyses, social listening en 24/7 monitoring. Alles draait automatisch op de achtergrond.',
+    desc: 'De motor achter alles. 170+ integraties, AI-analyses, social listening en 24/7 monitoring. Alles draait automatisch op de achtergrond.',
     icon: <Brain className="w-5 h-5 text-accent" />,
     color: 'from-blue-500/10 to-indigo-500/10 border-blue-500/20',
   },
@@ -22,8 +22,8 @@ const features = [
     color: 'from-purple-500/10 to-pink-500/10 border-purple-500/20',
   },
   {
-    title: '14 Native Connectors',
-    desc: 'Directe koppelingen met Meta, Google Ads, DV360, LinkedIn, TikTok, Snapchat, Pinterest, X, GA4, GTM, Shopify, WooCommerce, Klaviyo en Mailchimp.',
+    title: '170+ Integraties',
+    desc: 'Van ads en analytics tot streaming, social, ticketing en finance. Directe koppelingen met alle grote platformen.',
     icon: <Plug className="w-5 h-5 text-accent" />,
     color: 'from-green-500/10 to-emerald-500/10 border-green-500/20',
   },
@@ -109,7 +109,7 @@ export default function PlatformPage() {
       <section id="connectors" className="py-20 bg-surface">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">14 Native Connectors</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">170+ Integraties</h2>
             <p className="text-lg text-muted max-w-2xl mx-auto">
               Directe, real-time koppelingen met de platformen die ertoe doen. Geen third-party middleware, geen vertraging.
             </p>

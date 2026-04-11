@@ -15,10 +15,10 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Stevin',
-    description: 'Stevin helpt MKB-bedrijven groeien door hun volledige marketing over te nemen en te sturen op resultaat.',
+    description: 'Stevin is het AI-platform dat agencies, artiesten en ondernemers helpt groeien door data om te zetten in actie.',
     url: 'https://stevin.ai',
     areaServed: 'NL',
-    knowsAbout: ['Online Marketing', 'Marketing Automation', 'SEO', 'Paid Media', 'Analytics'],
+    knowsAbout: ['Online Marketing', 'Marketing Automation', 'SEO', 'Paid Media', 'Analytics', 'Social Media Monitoring', 'Artist Management', 'PR & Communications'],
   }
 
   return (
@@ -52,7 +52,7 @@ export default function HomePage() {
               </p>
 
               <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-white/35 max-w-md lg:max-w-lg leading-relaxed">
-                14 native connectors, AI-gedreven rapportages, 24/7 monitoring en automatische opvolging. Eén platform dat alles verbindt.
+                170+ integraties, AI-gedreven rapportages, 24/7 monitoring en automatische opvolging. Eén platform dat alles verbindt.
               </p>
 
               {/* CTA + mobile video side by side */}
@@ -104,7 +104,7 @@ export default function HomePage() {
       {/* ===== SOCIAL PROOF — Connector bar ===== */}
       <div className="bg-white border-b border-border">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-          <p className="text-xs font-semibold text-muted uppercase tracking-widest text-center mb-5">14 native connectors — real-time gekoppeld</p>
+          <p className="text-xs font-semibold text-muted uppercase tracking-widest text-center mb-5">170+ integraties — real-time gekoppeld</p>
           <div className="flex items-center justify-center gap-4 sm:gap-8 flex-wrap opacity-50">
             {nativeConnectors.map((c) => (
               <span key={c.slug} className="text-[10px] sm:text-xs font-bold text-slate-400 tracking-wide">{c.name}</span>
@@ -212,7 +212,7 @@ export default function HomePage() {
             { icon: <Brain className="w-5 h-5 text-accent" />, title: 'AI-gedreven analyses', desc: 'Wekelijkse rapporten, anomalie-alerts en optimalisatie-adviezen — volledig automatisch.' },
             { icon: <Radio className="w-5 h-5 text-accent" />, title: 'Lead generation', desc: 'Van anoniem websitebezoek naar gekwalificeerde pipeline. EU-compliant, zonder cookies.' },
             { icon: <Moon className="w-5 h-5 text-accent" />, title: '24/7 monitoring', desc: 'Elke nacht worden je campagnes, tracking en budgetten automatisch gecontroleerd.' },
-            { icon: <Plug className="w-5 h-5 text-accent" />, title: '14 native connectors', desc: 'Directe koppelingen met alle grote platformen. Geen middleware, geen vertraging.' },
+            { icon: <Plug className="w-5 h-5 text-accent" />, title: '170+ integraties', desc: 'Van ads en analytics tot streaming, social en ticketing. Directe koppelingen, geen middleware.' },
             { icon: <BarChart3 className="w-5 h-5 text-accent" />, title: 'Eén dashboard', desc: 'Campagneprestaties, CRM-pipeline, content en rapportages op één plek.' },
             { icon: <Zap className="w-5 h-5 text-accent" />, title: 'Marketing automation', desc: 'E-mail flows, lead scoring en opvolging volledig geautomatiseerd.' },
           ].map((item) => (
