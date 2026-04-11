@@ -22,21 +22,11 @@ export const metadata: Metadata = {
     title: 'Stevin.AI — Heers over je data. Stop de ruis.',
     description: 'De intelligente datalaag voor agencies, promotoren en artiesten. 170+ integraties, AI-analyses en 24/7 monitoring.',
     url: 'https://stevin.ai',
-    images: [
-      {
-        url: 'https://stevin.ai/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Stevin.AI — Heers over je data. Stop de ruis.',
-        type: 'image/png',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Stevin.AI — Heers over je data. Stop de ruis.',
     description: 'De intelligente datalaag voor agencies, promotoren en artiesten. 170+ integraties, AI-analyses en 24/7 monitoring.',
-    images: ['https://stevin.ai/og-image.png'],
   },
 }
 
