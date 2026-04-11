@@ -126,7 +126,7 @@ export default function VoorArtiestenPage() {
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Onder de motorkap</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">De engine achter het signaal</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">De technologie achter het signaal</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {capabilities.map((c) => (

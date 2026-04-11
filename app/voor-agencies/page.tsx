@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const features = [
   {
     title: 'White-label Dashboard',
-    desc: 'Stevin Desk met je eigen branding. Je klanten zien jouw bureau, niet Stevin.',
+    desc: 'Dashboard met je eigen branding. Je klanten zien jouw bureau, niet Stevin.',
     icon: <Tag className="w-5 h-5 text-accent" />,
   },
   {

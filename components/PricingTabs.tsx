@@ -150,7 +150,7 @@ const categories: Category[] = [
           'Prioriteit support & onboarding',
           'Gezamenlijke rapportages',
           'Volume korting bij meerdere klanten',
-          'Eigen branding in Stevin Desk',
+          'Eigen branding in het dashboard',
           'Dedicated account manager',
         ],
         popular: true,

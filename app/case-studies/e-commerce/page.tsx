@@ -10,7 +10,7 @@ const results = [
   { metric: '+42%', label: 'Meer leads binnen 3 maanden' },
   { metric: '-35%', label: 'Lagere kosten per acquisitie' },
   { metric: '8 uur', label: 'Per week bespaard op rapportage' },
-  { metric: '24/7', label: 'Monitoring via Nightwatch' },
+  { metric: '24/7', label: 'Automatische monitoring' },
 ]
 
 const challenges = [
@@ -23,8 +23,8 @@ const challenges = [
 
 const approach = [
   { step: 'Connectoren', desc: '8 native connectors aangesloten: Meta Ads, Google Ads, TikTok Ads, GA4, GTM, Shopify, Klaviyo en Mailchimp.' },
-  { step: 'CRM & Pipeline', desc: 'Stevin CRM ingericht met automatische leadverwerking, lead scoring en pipeline management.' },
-  { step: 'Nightwatch', desc: 'Nachtelijke health checks geconfigureerd voor alle connectors, tracking en budgetten.' },
+  { step: 'CRM & Pipeline', desc: 'CRM ingericht met automatische leadverwerking, lead scoring en pipeline management.' },
+  { step: 'Monitoring', desc: 'Nachtelijke health checks geconfigureerd voor alle connectors, tracking en budgetten.' },
   { step: 'AI Reports', desc: 'Wekelijkse AI-rapporten met performance summaries, anomalie-alerts en optimalisatie-adviezen.' },
   { step: 'Automation', desc: 'E-mail flows, lead nurturing en trigger-based messaging via Klaviyo gekoppeld aan CRM.' },
   { step: 'Pulse', desc: 'Sovereign lead generation geactiveerd voor aanvullende B2B leadgeneratie via de webshop.' },

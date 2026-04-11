@@ -5,18 +5,18 @@ import { nativeConnectors } from '@/data/connectors'
 
 export const metadata: Metadata = {
   title: 'Platform — Stevin',
-  description: 'Stevin Hub en Stevin Desk: het AI-gedreven marketing platform met 170+ integraties, 24/7 monitoring, social listening en AI-rapporten.',
+  description: 'Het AI-gedreven platform met 170+ integraties, 24/7 monitoring, social listening en AI-rapporten.',
 }
 
 const features = [
   {
-    title: 'Stevin Hub',
+    title: 'Data Engine',
     desc: 'De motor achter alles. 170+ integraties, AI-analyses, social listening en 24/7 monitoring. Alles draait automatisch op de achtergrond.',
     icon: <Brain className="w-5 h-5 text-accent" />,
     color: 'from-blue-500/10 to-indigo-500/10 border-blue-500/20',
   },
   {
-    title: 'Stevin Desk',
+    title: 'Dashboard',
     desc: 'Jouw cockpit. Eén dashboard voor campagneprestaties, CRM-pipeline, AI-adviezen, content en rapportages.',
     icon: <BarChart3 className="w-5 h-5 text-accent" />,
     color: 'from-purple-500/10 to-pink-500/10 border-purple-500/20',
@@ -65,7 +65,7 @@ export default function PlatformPage() {
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
           <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-4">Het Platform</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Stevin Hub + Stevin Desk
+            Eén platform. Alles verbonden.
           </h1>
           <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
             Eén platform dat je volledige marketingstack verbindt, bewaakt en optimaliseert.
