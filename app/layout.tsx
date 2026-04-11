@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   },
   description: 'Stevin is de intelligente datalaag die versnipperde signalen omzet in actie. Voor agencies, inhouse teams, promotoren en artiesten. 170+ integraties, AI-analyses en 24/7 monitoring.',
   metadataBase: new URL('https://stevin.ai'),
+  verification: {
+    google: 'ItP2M9E-39xqD9M8dKV_qAwtizunWFlIH1pnw4E5p10',
+  },
   openGraph: {
     type: 'website',
     locale: 'nl_NL',
