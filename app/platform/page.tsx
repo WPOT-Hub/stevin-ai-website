@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Brain, BarChart3, Plug, Radio, Moon, Sparkles, Search, Flame, TrendingUp, Megaphone, Users, Zap, Volume2, Shield, Wrench, Mail, Smartphone, DollarSign, Activity } from 'lucide-react'
+import { Brain, BarChart3, Plug, Radio, Moon, Sparkles, Search, Flame, TrendingUp, Megaphone, Users, Zap, Volume2, Shield, Wrench, Mail, Smartphone, DollarSign, Activity, RefreshCw } from 'lucide-react'
 import { nativeConnectors } from '@/data/connectors'
 
 export const metadata: Metadata = {
@@ -54,6 +54,7 @@ const extras = [
   { title: 'Multi-channel Publishing', desc: 'Content generatie en publicatie over meerdere kanalen vanuit één plek.', icon: <Megaphone className="w-5 h-5 text-accent" /> },
   { title: 'CRM & Pipeline', desc: 'Contacten, deals, e-mail tracking en opvolging — alles in één systeem.', icon: <Users className="w-5 h-5 text-accent" /> },
   { title: 'Automation', desc: 'E-mail flows, lead scoring, nurturing en trigger-based messaging volledig geautomatiseerd.', icon: <Zap className="w-5 h-5 text-accent" /> },
+  { title: 'Feedback Loops', desc: 'Het platform leert van elke interactie. Rapportages, adviezen en content passen zich aan op jouw tone of voice en die van je klant.', icon: <RefreshCw className="w-5 h-5 text-accent" /> },
 ]
 
 export default function PlatformPage() {

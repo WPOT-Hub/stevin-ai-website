@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Database, Cpu, Zap, Building2, Music } from 'lucide-react'
+import { Database, Cpu, Zap, RefreshCw, Building2, Music } from 'lucide-react'
 import Section from '@/components/Section'
 import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
@@ -164,7 +164,7 @@ export default function HomePage() {
               Eén systeem. Complete controle.
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
               {
                 icon: <Database className="w-5 h-5 text-accent" />,
@@ -183,6 +183,12 @@ export default function HomePage() {
                 step: '03',
                 title: 'Activeer',
                 desc: 'Geen passieve grafieken. Stevin levert concrete actiepunten zodat je weet wat je nu moet doen.',
+              },
+              {
+                icon: <RefreshCw className="w-5 h-5 text-neon" />,
+                step: '04',
+                title: 'Verbeter',
+                desc: 'Het platform leert van elke interactie. Rapportages, adviezen en content passen zich aan op jouw tone of voice en die van je klant.',
               },
             ].map((item) => (
               <div key={item.title} className="relative p-6 sm:p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
