@@ -5,35 +5,27 @@ export interface FAQ {
 
 export const homepageFaqs: FAQ[] = [
   {
-    question: 'Wat doen jullie precies?',
-    answer: 'Stevin is een AI-gedreven marketing operations platform. We beheren je campagnes, tracking, CRM en opvolging via ons eigen platform — Stevin Hub en Stevin Desk. Alles is gekoppeld: van advertenties tot klantdata, met AI die continu analyseert en optimaliseert.',
+    question: 'Wat doet Stevin precies?',
+    answer: 'Stevin koppelt al je digitale kanalen — van advertenties en social media tot streaming en e-commerce — in één platform. Onze AI analyseert die data 24/7, signaleert afwijkingen en levert concrete actiepunten. Geen passieve dashboards, maar directe inzichten waarmee je kunt ingrijpen.',
   },
   {
-    question: 'Wat is Stevin Hub?',
-    answer: 'Stevin Hub is ons backend platform met 14 native connectors naar alle grote advertentieplatforms, analytics tools, e-commerce systemen en e-mail platforms. Het verzamelt data, genereert AI-rapporten en bewaakt je campagnes 24/7. Mis je een platform? We kunnen met vrijwel alles connecten.',
+    question: 'Voor wie is Stevin bedoeld?',
+    answer: 'Voor iedereen die grip wil op versnipperde data. Agencies gebruiken Stevin om meerdere klanten vanuit één systeem te beheren. Artiesten en influencers gebruiken het om cross-channel momentum te volgen en fan-signalen te filteren. De engine is hetzelfde, de toepassing verschilt.',
   },
   {
-    question: 'Moet ik zelf veel doen?',
-    answer: 'Nee. Wij doen het werk. Jij krijgt toegang tot Stevin Desk — ons dashboard waar je alles kunt volgen. Van campagneprestaties tot CRM-pipeline, van AI-adviezen tot content publicatie. Verder regelen wij alles achter de schermen.',
+    question: 'Welke platforms koppelen jullie?',
+    answer: 'Meer dan 170 integraties: van Meta, Google en TikTok tot Spotify, Shopify, Klaviyo en tientallen andere platforms. De koppelingen zijn native — geen middleware, geen vertraging. Mis je een specifiek platform? Neem contact op, we bouwen continu door.',
   },
   {
     question: 'Zijn mijn data veilig?',
-    answer: 'Ja. We draaien op EU-gehoste servers, gebruiken EU-gehoste AI en slaan geen data op buiten Europa. We zijn volledig AVG-compliant en werken zonder third-party tracking cookies.',
+    answer: 'Ja. We draaien op EU-gehoste servers, gebruiken EU-gehoste AI en slaan geen data op buiten Europa. Volledig AVG-compliant, zonder third-party tracking cookies.',
   },
   {
-    question: 'Werken jullie ook voor bureaus?',
-    answer: 'Ja. Met ons Agency-pakket kun je Stevin als technologiepartner inzetten voor je eigen klanten. Je krijgt een white-label dashboard, multi-client beheer en volume korting. Neem contact op voor een gesprek op maat.',
+    question: 'Wat kost het?',
+    answer: 'We werken met vaste maandprijzen, afgestemd op je situatie en het aantal koppelingen. Geen marge op mediabudget, geen verborgen kosten. Plan een gesprek voor een voorstel op maat.',
   },
   {
-    question: 'Wanneer zie ik resultaat?',
-    answer: 'De eerste verbeteringen zijn vaak al binnen enkele weken zichtbaar. Structureel resultaat bouw je op over de eerste twee tot drie maanden. Nightwatch bewaakt je campagnes elke nacht en AI-rapporten geven wekelijks inzicht.',
-  },
-  {
-    question: 'Hoe werkt jullie prijsmodel?',
-    answer: 'We werken met vaste maandprijzen. Geen verrassingen, geen marge op je mediabudget. Je weet precies wat je betaalt en wat je ervoor krijgt. Combineer je meerdere diensten? Dan is korting mogelijk.',
-  },
-  {
-    question: 'Hoe lang duurt een samenwerking?',
-    answer: 'We werken met een minimale looptijd van 12 maanden. Marketing heeft tijd nodig om structureel resultaat op te bouwen. Binnen die periode richten we alles in, optimaliseren we continu en zorgen we dat je echt groeit.',
+    question: 'Hoe snel ben ik operationeel?',
+    answer: 'De meeste koppelingen zijn binnen een dag live. Binnen een week heb je een volledig werkend dashboard met real-time data. Structurele inzichten en patronen bouwen zich op in de eerste weken.',
   },
 ]
