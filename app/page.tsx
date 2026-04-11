@@ -61,7 +61,7 @@ export default function HomePage() {
               <div className="w-11 h-11 rounded-xl bg-accent/15 flex items-center justify-center mb-4 group-hover:bg-accent/25 transition-colors">
                 <Building2 className="w-5 h-5 text-accent" />
               </div>
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Stevin voor Marketing Teams</h2>
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Stevin voor Marketing</h2>
               <p className="text-sm text-white/40 leading-relaxed mb-5">
                 Krijg grip op ROAS, elimineer verspilling en scan de markt. Of je nu een bureau runt, een inhouse team aanstuurt of events plant — beheer alles vanuit een centraal systeem.
               </p>
@@ -262,7 +262,7 @@ export default function HomePage() {
                   href="/voor-agencies"
                   className="inline-flex items-center px-8 py-4 text-base font-bold text-white bg-accent rounded-xl hover:bg-accent-dark transition-all duration-200 shadow-lg shadow-accent/20"
                 >
-                  Voor Marketing Teams
+                  Voor Marketing
                 </Link>
                 <Link
                   href="/voor-artiesten"

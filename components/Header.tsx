@@ -24,7 +24,7 @@ const platformItems = [
 ]
 
 const voorWieItems = [
-  { label: 'Voor Marketing Teams', href: '/voor-agencies' },
+  { label: 'Voor Marketing', href: '/voor-agencies' },
   { label: 'Voor Artiesten', href: '/voor-artiesten' },
 ]
 
