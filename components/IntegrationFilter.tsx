@@ -44,21 +44,25 @@ export default function IntegrationFilter({ integrations }: IntegrationFilterPro
               : 'bg-surface-alt text-muted hover:text-primary border border-border'
           }`}
         >
-          Alles
+          Alles ({integrations.length})
         </button>
-        {categories.map((cat) => (
-          <button
-            key={cat.slug}
-            onClick={() => setActiveCategory(activeCategory === cat.slug ? null : cat.slug)}
-            className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-              activeCategory === cat.slug
-                ? 'bg-accent text-white'
-                : 'bg-surface-alt text-muted hover:text-primary border border-border'
-            }`}
-          >
-            {cat.name}
-          </button>
-        ))}
+        {categories.map((cat) => {
+          const count = integrations.filter((i) => i.category === cat.slug).length
+          if (count === 0) return null
+          return (
+            <button
+              key={cat.slug}
+              onClick={() => setActiveCategory(activeCategory === cat.slug ? null : cat.slug)}
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                activeCategory === cat.slug
+                  ? 'bg-accent text-white'
+                  : 'bg-surface-alt text-muted hover:text-primary border border-border'
+              }`}
+            >
+              {cat.name} ({count})
+            </button>
+          )
+        })}
       </div>
 
       {/* Results */}

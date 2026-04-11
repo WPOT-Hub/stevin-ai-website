@@ -66,4 +66,34 @@ export const categories: Category[] = [
     description: 'Applicant tracking systems en recruitment marketing tools voor het werven en opvolgen van kandidaten.',
     intro: 'Recruitment marketing vraagt om dezelfde aanpak als leadgeneratie: de juiste kanalen, goede tracking, snelle opvolging en inzicht in wat werkt. Stevin.AI koppelt je ATS aan je wervingscampagnes zodat kandidaten automatisch worden verwerkt en het hele wervingsproces meetbaar wordt.',
   },
+  {
+    name: 'Streaming & Audio',
+    slug: 'streaming-audio',
+    description: 'Streaming- en muziekplatformen voor het monitoren van plays, listeners en chart-posities.',
+    intro: 'Als artiest of label wil je weten hoe je muziek presteert op de belangrijkste platformen. Stevin.AI haalt streaming data binnen en correleert het met je social media en advertentie-activiteiten, zodat je ziet welke acties daadwerkelijk streams en listeners opleveren.',
+  },
+  {
+    name: 'Social & Community',
+    slug: 'social-community',
+    description: 'Social media platformen en community tools voor organisch bereik, engagement en sentiment.',
+    intro: 'Social media is waar je publiek leeft. Maar het monitoren van meerdere platformen tegelijk kost uren. Stevin.AI centraliseert je organische data, filtert de ruis en laat alleen de signalen zien die actie vereisen — van fan-engagement tot crisisdetectie.',
+  },
+  {
+    name: 'Live & Ticketing',
+    slug: 'live-ticketing',
+    description: 'Platforms voor live events, ticketing en tour management.',
+    intro: 'Live optredens zijn de ruggengraat van een artiestencarrière. Stevin.AI koppelt ticketing- en eventdata aan je online performance, zodat je ziet hoe social buzz, streaming pieken en advertenties zich vertalen naar uitverkochte shows.',
+  },
+  {
+    name: 'Creator Tools',
+    slug: 'creator-tools',
+    description: 'Tools voor content creators, distributie en monetisatie.',
+    intro: 'Van muziekdistributie tot link-in-bio tools en patronage: creator tools zijn het bindweefsel van je online aanwezigheid. Stevin.AI monitort hoe deze kanalen presteren en waar je kansen laat liggen.',
+  },
+  {
+    name: 'Finance & ERP',
+    slug: 'finance-erp',
+    description: 'Boekhoudsoftware, ERP-systemen en financiële tools voor business intelligence.',
+    intro: 'Marketing en finance horen bij elkaar. Stevin.AI koppelt je financiële data aan je marketingresultaten, zodat je niet alleen weet hoeveel leads er binnenkomen maar ook wat ze daadwerkelijk opleveren aan omzet en marge.',
+  },
 ]
