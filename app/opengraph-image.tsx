@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og'
+import { readFileSync } from 'fs'
+import { join } from 'path'
 
 export const runtime = 'nodejs'
 export const alt = 'Stevin.AI — Heers over je data. Stop de ruis.'
@@ -6,6 +8,10 @@ export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 export default async function OGImage() {
+  const logoPath = join(process.cwd(), 'public', 'logos', 'lockup-mono-white-on-navy-web.png')
+  const logoData = readFileSync(logoPath)
+  const logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`
+
   return new ImageResponse(
     (
       <div
@@ -76,47 +82,13 @@ export default async function OGImage() {
             position: 'relative',
           }}
         >
-          {/* Logo text */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              marginBottom: '40px',
-            }}
-          >
-            <div
-              style={{
-                width: 44,
-                height: 44,
-                borderRadius: 12,
-                background: 'rgba(61,142,255,0.15)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <div
-                style={{
-                  width: 20,
-                  height: 20,
-                  borderRadius: 4,
-                  background: '#3D8EFF',
-                  display: 'flex',
-                }}
-              />
-            </div>
-            <span
-              style={{
-                fontSize: 28,
-                fontWeight: 700,
-                color: 'rgba(255,255,255,0.6)',
-                letterSpacing: '-0.02em',
-              }}
-            >
-              Stevin.AI
-            </span>
-          </div>
+          {/* Logo */}
+          <img
+            src={logoBase64}
+            width={200}
+            height={33}
+            style={{ marginBottom: '40px', opacity: 0.7 }}
+          />
 
           {/* Main headline */}
           <div

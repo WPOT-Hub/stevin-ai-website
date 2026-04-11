@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og'
+import { readFileSync } from 'fs'
+import { join } from 'path'
 
 export const runtime = 'nodejs'
 export const alt = 'Stevin voor Marketing — Grip op je data. Focus op resultaat.'
@@ -6,6 +8,10 @@ export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 export default async function OGImage() {
+  const logoPath = join(process.cwd(), 'public', 'logos', 'lockup-mono-white-on-navy-web.png')
+  const logoData = readFileSync(logoPath)
+  const logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`
+
   return new ImageResponse(
     (
       <div
@@ -57,6 +63,13 @@ export default async function OGImage() {
             position: 'relative',
           }}
         >
+          {/* Logo */}
+          <img
+            src={logoBase64}
+            width={180}
+            height={30}
+            style={{ marginBottom: '32px', opacity: 0.7 }}
+          />
           <div
             style={{
               display: 'flex',
@@ -84,9 +97,6 @@ export default async function OGImage() {
           <span style={{ fontSize: 22, color: 'rgba(255,255,255,0.4)', marginTop: '28px', lineHeight: 1.5 }}>
             Voor agencies, inhouse teams en promotoren.
           </span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '40px' }}>
-            <span style={{ fontSize: 18, fontWeight: 700, color: 'rgba(255,255,255,0.5)' }}>stevin.ai</span>
-          </div>
         </div>
       </div>
     ),
