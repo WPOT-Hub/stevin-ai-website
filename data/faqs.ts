@@ -17,8 +17,12 @@ export const homepageFaqs: FAQ[] = [
     answer: 'Meer dan 170 integraties: van Meta, Google en TikTok tot Spotify, Shopify, Klaviyo en tientallen andere platforms. De koppelingen zijn native — geen middleware, geen vertraging. Mis je een specifiek platform? Neem contact op, we bouwen continu door.',
   },
   {
+    question: 'Hoe verschilt Stevin van een dashboard-tool?',
+    answer: 'Dashboards tonen data. Stevin analyseert, correleert en handelt. Het platform detecteert anomalieën, combineert signalen uit verschillende kanalen en geeft concrete aanbevelingen. Bovendien leert het platform je tone of voice en past rapportages aan op jouw klanten.',
+  },
+  {
     question: 'Zijn mijn data veilig?',
-    answer: 'Ja. We draaien op EU-gehoste servers, gebruiken EU-gehoste AI en slaan geen data op buiten Europa. Volledig AVG-compliant, zonder third-party tracking cookies.',
+    answer: 'Ja. We draaien op EU-gehoste servers, gebruiken EU-gehoste AI en slaan geen data op buiten Europa. Elke klant zit in een volledig afgeschermde omgeving — data van het ene account is technisch onbereikbaar voor een ander. Volledig AVG-compliant, zonder third-party tracking cookies.',
   },
   {
     question: 'Wat kost het?',
@@ -26,6 +30,6 @@ export const homepageFaqs: FAQ[] = [
   },
   {
     question: 'Hoe snel ben ik operationeel?',
-    answer: 'De meeste koppelingen zijn binnen een dag live. Binnen een week heb je een volledig werkend dashboard met real-time data. Structurele inzichten en patronen bouwen zich op in de eerste weken.',
+    answer: 'De meeste koppelingen zijn binnen een dag live. Binnen een week heb je een volledig werkend dashboard met real-time data. Structurele inzichten en patronen bouwen zich op in de eerste weken naarmate het platform meer data verzamelt.',
   },
 ]
