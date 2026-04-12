@@ -30,6 +30,6 @@ export const homepageFaqs: FAQ[] = [
   },
   {
     question: 'Hoe snel ben ik operationeel?',
-    answer: 'De meeste koppelingen zijn binnen een dag live. Afhankelijk van de complexiteit heb je binnen een week een volledig werkend platform met real-time data, alerts en AI-analyses.',
+    answer: 'Gemiddeld een week, afhankelijk van de complexiteit. De meeste koppelingen zijn binnen een dag live, daarna richten we het platform in met alerts, rapportages en AI-analyses.',
   },
 ]
