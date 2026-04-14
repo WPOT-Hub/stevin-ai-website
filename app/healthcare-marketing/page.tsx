@@ -1,91 +1,91 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { BarChart3, Target, Users, Zap, RefreshCw, Calendar, TrendingUp, Filter, Plug } from 'lucide-react'
+import { ShieldCheck, GitMerge, Server, Plug, FileText, Target } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Stevin voor Marketing — Agencies, Inhouse Teams & Promotoren',
-  description: 'Grip op ROAS, minder verspilling en slimmere campagnes. Stevin centraliseert al je marketingdata, analyseert 24/7 en levert concrete actiepunten.',
+  title: 'Stevin voor Healthcare & Farma — Compliant Marketing Intelligence',
+  description: 'Pre-compliance scanning, MLR workflow integratie en compliant server-side tracking. Stevin is gebouwd voor healthcare en farma marketing teams die snel willen schakelen zonder compliance-risicos.',
 }
 
 const painPoints = [
   {
-    title: 'Data verspreid over 10+ tools',
-    desc: 'Google Ads, Meta, Analytics, CRM, e-mail — je besteedt uren aan het bij elkaar brengen van data die automatisch had moeten samenkomen.',
+    title: 'MLR goedkeuring duurt weken',
+    desc: 'Elke creatieve uiting moet door Medical, Legal en Regulatory review. Het proces is traag, handmatig en vertraagt je go-to-market snelheid enorm.',
   },
   {
-    title: 'Rapportages kosten te veel tijd',
-    desc: 'Elke week dezelfde exports, dezelfde spreadsheets, dezelfde presentaties. Tijd die naar strategie en optimalisatie moet gaan.',
+    title: 'Compliance risicos bij elke campagne',
+    desc: 'Een verkeerd geplaatste claim, een niet-goedgekeurde visual of een tracking pixel die te veel data verzamelt. De risicos zijn groot en de foutmarge klein.',
   },
   {
-    title: 'Je reageert te laat op problemen',
-    desc: 'Een budget dat overloopt, een campagne die stilvalt, een conversie die keldert. Je ziet het pas als het al te laat is.',
+    title: 'Geen data-gedreven creatieve briefings',
+    desc: 'Creatieve beslissingen worden genomen op basis van ervaring en regelgeving, niet op basis van wat bewezen werkt. Performance-data bereikt het creatieve team niet.',
   },
 ]
 
 const features = [
   {
-    title: 'Centraal Dashboard',
-    desc: 'Al je kanalen, klanten en campagnes in één overzicht. Van ROAS tot pipeline — geen tabbladen meer.',
-    icon: <BarChart3 className="w-5 h-5 text-accent" />,
+    title: 'Pre-compliance Scanning',
+    desc: 'Scan creatieve uitingen automatisch op potentiele compliance-issues voordat ze naar MLR gaan. Minder reviewrondes, snellere goedkeuring.',
+    icon: <ShieldCheck className="w-5 h-5 text-accent" />,
   },
   {
     title: '220+ Integraties',
-    desc: 'Native koppelingen met Meta, Google, TikTok, LinkedIn, Shopify, Klaviyo en meer. Geen middleware, geen vertraging.',
+    desc: 'Native koppelingen met Google, Meta, LinkedIn, Veeva, Salesforce Health Cloud en meer. Geen middleware, geen vertraging.',
     icon: <Plug className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'AI-gedreven Analyses',
-    desc: 'Onze AI scant 24/7 op afwijkingen en kansen. Van een plotselinge daling in conversie tot onbenut budget.',
+    title: 'MLR Workflow Integratie',
+    desc: 'Integreer je MLR-reviewproces in je campagneworkflow. Automatische routing, statustracking en audit trails voor volledige traceerbaarheid.',
+    icon: <GitMerge className="w-5 h-5 text-accent" />,
+  },
+  {
+    title: 'Compliant Tracking (Server-side)',
+    desc: 'Server-side tracking dat voldoet aan healthcare privacy-vereisten. Betrouwbare data zonder patient-privacy in gevaar te brengen.',
+    icon: <Server className="w-5 h-5 text-accent" />,
+  },
+  {
+    title: 'Automated Compliance Reports',
+    desc: 'Genereer automatisch compliance-rapportages voor audits en interne reviews. Volledige transparantie over je marketingactiviteiten.',
+    icon: <FileText className="w-5 h-5 text-accent" />,
+  },
+  {
+    title: 'HCP Targeting Intelligence',
+    desc: 'Bereik de juiste healthcare professionals met data-gedreven targeting. Compliant, effectief en meetbaar over alle kanalen.',
     icon: <Target className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Concrete Actiepunten',
-    desc: 'Geen passieve grafieken. Stevin vertelt je wat je nu moet doen en waarom — in jouw tone of voice.',
-    icon: <Zap className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Automatische Rapportages',
-    desc: 'Wekelijkse rapporten die zichzelf schrijven. Per klant, per kanaal, klaar om te presenteren.',
-    icon: <RefreshCw className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: '24/7 Monitoring',
-    desc: 'Budgetten, tracking, connectors en campagnes worden continu gecontroleerd. Problemen worden direct gemeld.',
-    icon: <Filter className="w-5 h-5 text-accent" />,
   },
 ]
 
 const audiences = [
   {
-    title: 'Agencies',
-    desc: 'Beheer meerdere klanten vanuit één systeem. White-label dashboard, multi-client overzicht en automatische rapportages per klant.',
-    link: '/voor-agencies',
-    linkText: 'Meer over het Agency Partner programma',
-  },
-  {
-    title: 'Inhouse Teams',
-    desc: 'Verbind je volledige marketingstack — van ads tot CRM. Minder tijd aan data verzamelen, meer tijd aan strategie.',
+    title: 'Farma Marketing',
+    desc: 'Versnel je MLR-proces, waarborg compliance en meet de impact van je campagnes op HCP-engagement en patient awareness.',
     link: null,
     linkText: null,
   },
   {
-    title: 'Promotoren & Event Marketing',
-    desc: 'Scan de markt voordat je boekt. Zie welke concurrerende events met vergelijkbare doelgroepen gepland staan en optimaliseer je campagnes per regio.',
+    title: 'Healthcare Agencies',
+    desc: 'Beheer meerdere farma-klanten vanuit één compliant platform. Gestandaardiseerde workflows, per-klant rapportages en audit-ready documentatie.',
+    link: null,
+    linkText: null,
+  },
+  {
+    title: 'Medical Device Companies',
+    desc: 'Market je medical devices effectief binnen de grenzen van regelgeving. Van pre-compliance checks tot compliant performance tracking.',
     link: null,
     linkText: null,
   },
 ]
 
 const useCases = [
-  'Je besteedt meer dan 5 uur per week aan rapportages',
-  'Je mist kansen omdat je data te laat ziet',
-  'Je beheert meerdere ad-accounts of klanten tegelijk',
-  'Je wilt grip op ROAS maar ziet het totaalplaatje niet',
-  'Je team groeit maar je tooling schaalt niet mee',
-  'Je plant events en wilt weten waar de markt ruimte biedt',
+  'Je MLR-reviewproces duurt weken in plaats van dagen',
+  'Je wilt campagnes lanceren zonder compliance-risicos',
+  'Je hebt geen zicht op welke boodschappen het beste werken bij HCPs',
+  'Je tracking voldoet niet aan healthcare privacy-vereisten',
+  'Je besteedt te veel tijd aan handmatige compliance-rapportages',
+  'Je wilt sneller schakelen zonder concessies te doen aan regelgeving',
 ]
 
-export default function MarketingPage() {
+export default function HealthcareMarketingPage() {
   return (
     <main>
       {/* Hero */}
@@ -93,15 +93,14 @@ export default function MarketingPage() {
         <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-semibold mb-6">
-            Voor marketing
+            Voor healthcare en farma
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Grip op je data.<br />
-            <span className="text-neon">Focus op resultaat.</span>
+            Compliant marketing.<br />
+            <span className="text-neon">Zonder snelheid in te leveren.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
-            Of je nu een bureau runt, een inhouse team aanstuurt of events plant — Stevin centraliseert
-            je data, analyseert 24/7 en levert concrete actiepunten. Minder ruis, meer resultaat.
+            Stevin helpt healthcare en farma teams om sneller te schakelen zonder compliance-risicos. Van pre-compliance scanning tot MLR workflow integratie — alles in één platform.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
@@ -138,7 +137,7 @@ export default function MarketingPage() {
             <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Het platform</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Alles wat je nodig hebt</h2>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              Stevin vervangt losse tools door één systeem dat meegroeit met je ambities.
+              Stevin combineert marketing intelligence met compliance-tools die specifiek zijn ontworpen voor healthcare en farma.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -159,7 +158,7 @@ export default function MarketingPage() {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Voor elk type marketingteam</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Voor elk type healthcare team</h2>
             <p className="text-lg text-muted max-w-2xl mx-auto">
               Het platform is hetzelfde. De toepassing verschilt.
             </p>
@@ -200,7 +199,7 @@ export default function MarketingPage() {
             <div className="text-center lg:text-left">
               <h3 className="text-2xl font-bold text-white mb-4">Klaar om te beginnen?</h3>
               <p className="text-white/50 mb-8 leading-relaxed">
-                Plan een gesprek en we laten zien hoe Stevin jouw marketingdata omzet in resultaat. Geen verplichtingen.
+                Plan een gesprek en we laten zien hoe Stevin jouw healthcare marketing versnelt zonder compliance-risicos. Geen verplichtingen.
               </p>
               <Link
                 href="/contact"

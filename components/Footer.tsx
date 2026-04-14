@@ -26,10 +26,11 @@ const footerLinks = {
     { label: 'CRM & Sales', href: '/integraties/crm-sales' },
     { label: 'Email & Automation', href: '/integraties/email-automation' },
     { label: 'CMS & Ecommerce', href: '/integraties/cms-ecommerce' },
-    { label: 'CDP & Data', href: '/integraties/cdp-data-warehousing' },
-    { label: 'Consent & Tagging', href: '/integraties/consent-tagging' },
-    { label: 'Reporting', href: '/integraties/reporting-dashboards' },
-    { label: 'ATS & Recruitment', href: '/integraties/ats-recruitment' },
+    { label: 'Creative Intelligence', href: '/integraties/creative-intelligence' },
+    { label: 'DAM & Creative Ops', href: '/integraties/dam-creative-ops' },
+    { label: 'Feed Management', href: '/integraties/feed-management' },
+    { label: 'MMM & Attribution', href: '/integraties/mmm-attribution' },
+    { label: 'Alle integraties', href: '/integraties' },
   ],
 }
 

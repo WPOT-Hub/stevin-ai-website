@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: 'Stevin.AI — Heers over je data. Stop de ruis.',
     template: '%s | Stevin.AI',
   },
-  description: 'Stevin is de intelligente datalaag die versnipperde signalen omzet in actie. Voor agencies, inhouse teams, promotoren en artiesten. 170+ integraties, AI-analyses en 24/7 monitoring.',
+  description: 'Stevin is de intelligente datalaag die versnipperde signalen omzet in actie. Voor agencies, inhouse teams, promotoren en artiesten. 220+ integraties, AI-analyses en 24/7 monitoring.',
   metadataBase: new URL('https://stevin.ai'),
   verification: {
     google: 'ItP2M9E-39xqD9M8dKV_qAwtizunWFlIH1pnw4E5p10',
@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     locale: 'nl_NL',
     siteName: 'Stevin.AI',
     title: 'Stevin.AI — Heers over je data. Stop de ruis.',
-    description: 'De intelligente datalaag voor agencies, promotoren en artiesten. 170+ integraties, AI-analyses en 24/7 monitoring.',
+    description: 'De intelligente datalaag voor agencies, promotoren en artiesten. 220+ integraties, AI-analyses en 24/7 monitoring.',
     url: 'https://stevin.ai',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Stevin.AI — Heers over je data. Stop de ruis.',
-    description: 'De intelligente datalaag voor agencies, promotoren en artiesten. 170+ integraties, AI-analyses en 24/7 monitoring.',
+    description: 'De intelligente datalaag voor agencies, promotoren en artiesten. 220+ integraties, AI-analyses en 24/7 monitoring.',
   },
 }
 

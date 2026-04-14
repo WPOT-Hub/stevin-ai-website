@@ -17,7 +17,7 @@ const dienstenItems = [
 
 const platformItems = [
   { label: 'Platform Overzicht', href: '/platform' },
-  { label: '170+ Integraties', href: '/platform#connectors' },
+  { label: '220+ Integraties', href: '/platform#connectors' },
   { label: 'Lead Generation', href: '/platform#lead-generation' },
   { label: '24/7 Monitoring', href: '/platform#monitoring' },
   { label: 'AI Reports', href: '/platform#ai-reports' },
@@ -25,6 +25,11 @@ const platformItems = [
 
 const voorWieItems = [
   { label: 'Voor Marketing', href: '/marketing' },
+  { label: 'Voor Creatieve Bureaus', href: '/creatieve-bureaus' },
+  { label: 'Voor Mediabureaus', href: '/mediabureaus' },
+  { label: 'Voor E-commerce', href: '/e-commerce' },
+  { label: 'Voor Healthcare & Farma', href: '/healthcare-marketing' },
+  { label: 'Voor Retail & FMCG', href: '/retail' },
   { label: 'Voor Artiesten', href: '/artiesten' },
   { label: 'Voor Influencers', href: '/influencers' },
   { label: 'Voor Promotoren', href: '/promotoren' },

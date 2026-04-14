@@ -113,7 +113,7 @@ export default function HomePage() {
       {/* ===== CONNECTOR BAR ===== */}
       <div className="bg-white border-b border-border">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-          <p className="text-xs font-semibold text-muted uppercase tracking-widest text-center mb-5">Gekoppeld aan 170+ databronnen in real-time</p>
+          <p className="text-xs font-semibold text-muted uppercase tracking-widest text-center mb-5">Gekoppeld aan 220+ databronnen in real-time</p>
           <div className="flex items-center justify-center gap-4 sm:gap-8 flex-wrap opacity-50">
             {nativeConnectors.map((c) => (
               <span key={c.slug} className="text-[10px] sm:text-xs font-bold text-slate-400 tracking-wide">{c.name}</span>
@@ -223,7 +223,7 @@ export default function HomePage() {
                   <p className="text-xs text-muted mt-1 max-w-[100px]">Minder budgetverspilling</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl sm:text-4xl font-bold text-accent">170+</p>
+                  <p className="text-3xl sm:text-4xl font-bold text-accent">220+</p>
                   <p className="text-xs text-muted mt-1 max-w-[100px]">Native integraties out-of-the-box</p>
                 </div>
               </div>

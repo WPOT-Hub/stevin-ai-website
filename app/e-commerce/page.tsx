@@ -1,91 +1,91 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { BarChart3, Target, Users, Zap, RefreshCw, Calendar, TrendingUp, Filter, Plug } from 'lucide-react'
+import { Server, Database, Users, Plug, Bell, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Stevin voor Marketing — Agencies, Inhouse Teams & Promotoren',
-  description: 'Grip op ROAS, minder verspilling en slimmere campagnes. Stevin centraliseert al je marketingdata, analyseert 24/7 en levert concrete actiepunten.',
+  title: 'Stevin voor E-commerce — Server-side Tracking & CLV Attribution',
+  description: 'Los iOS-tracking op met server-side tracking, automatiseer je productfeed en begrijp de werkelijke customer lifetime value. Stevin is gebouwd voor webshops en DTC-merken.',
 }
 
 const painPoints = [
   {
-    title: 'Data verspreid over 10+ tools',
-    desc: 'Google Ads, Meta, Analytics, CRM, e-mail — je besteedt uren aan het bij elkaar brengen van data die automatisch had moeten samenkomen.',
+    title: 'ROAS is onbetrouwbaar door iOS',
+    desc: 'iOS-privacy updates hebben je tracking kapotgemaakt. Je ziet niet meer welke campagnes echt converteren en je ROAS-cijfers kloppen niet meer.',
   },
   {
-    title: 'Rapportages kosten te veel tijd',
-    desc: 'Elke week dezelfde exports, dezelfde spreadsheets, dezelfde presentaties. Tijd die naar strategie en optimalisatie moet gaan.',
+    title: 'Productfeed management is handmatig',
+    desc: 'Je beheert feeds handmatig of met fragiele scripts. Prijswijzigingen, voorraadmutaties en nieuwe producten worden te laat of fout doorgezet.',
   },
   {
-    title: 'Je reageert te laat op problemen',
-    desc: 'Een budget dat overloopt, een campagne die stilvalt, een conversie die keldert. Je ziet het pas als het al te laat is.',
+    title: 'Geen zicht op customer lifetime value',
+    desc: 'Je optimaliseert op first-purchase ROAS terwijl je echte winst in herhaalaankopen zit. Zonder CLV-data investeer je in de verkeerde klanten.',
   },
 ]
 
 const features = [
   {
-    title: 'Centraal Dashboard',
-    desc: 'Al je kanalen, klanten en campagnes in één overzicht. Van ROAS tot pipeline — geen tabbladen meer.',
-    icon: <BarChart3 className="w-5 h-5 text-accent" />,
+    title: 'Server-side Tracking',
+    desc: 'Bypass iOS-beperkingen met server-side tracking. Betrouwbare conversiedata, onafhankelijk van browser-restricties en ad blockers.',
+    icon: <Server className="w-5 h-5 text-accent" />,
   },
   {
     title: '220+ Integraties',
-    desc: 'Native koppelingen met Meta, Google, TikTok, LinkedIn, Shopify, Klaviyo en meer. Geen middleware, geen vertraging.',
+    desc: 'Native koppelingen met Shopify, WooCommerce, Magento, Google Ads, Meta, Klaviyo, Criteo en meer. Geen middleware, geen vertraging.',
     icon: <Plug className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'AI-gedreven Analyses',
-    desc: 'Onze AI scant 24/7 op afwijkingen en kansen. Van een plotselinge daling in conversie tot onbenut budget.',
-    icon: <Target className="w-5 h-5 text-accent" />,
+    title: 'Feed Intelligence',
+    desc: 'Automatische feed-optimalisatie op basis van performance-data. Titels, beschrijvingen en biedstrategieen worden continu verbeterd.',
+    icon: <Database className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Concrete Actiepunten',
-    desc: 'Geen passieve grafieken. Stevin vertelt je wat je nu moet doen en waarom — in jouw tone of voice.',
-    icon: <Zap className="w-5 h-5 text-accent" />,
+    title: 'CLV Attribution',
+    desc: 'Begrijp welke kanalen en campagnes klanten met de hoogste lifetime value aantrekken. Optimaliseer op lange-termijn waarde, niet op last click.',
+    icon: <Users className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Automatische Rapportages',
-    desc: 'Wekelijkse rapporten die zichzelf schrijven. Per klant, per kanaal, klaar om te presenteren.',
-    icon: <RefreshCw className="w-5 h-5 text-accent" />,
+    title: 'Product Performance Alerts',
+    desc: 'Automatische alerts bij dalende conversie, voorraadproblemen of prijsverschillen. Grijp in voordat je omzet misloopt.',
+    icon: <Bell className="w-5 h-5 text-accent" />,
   },
   {
-    title: '24/7 Monitoring',
-    desc: 'Budgetten, tracking, connectors en campagnes worden continu gecontroleerd. Problemen worden direct gemeld.',
-    icon: <Filter className="w-5 h-5 text-accent" />,
+    title: 'Automated Reporting',
+    desc: 'Rapportages die zichzelf schrijven. Van ROAS per productcategorie tot CLV-segmentatie — klaar om te delen met je team.',
+    icon: <FileText className="w-5 h-5 text-accent" />,
   },
 ]
 
 const audiences = [
   {
-    title: 'Agencies',
-    desc: 'Beheer meerdere klanten vanuit één systeem. White-label dashboard, multi-client overzicht en automatische rapportages per klant.',
-    link: '/voor-agencies',
-    linkText: 'Meer over het Agency Partner programma',
-  },
-  {
-    title: 'Inhouse Teams',
-    desc: 'Verbind je volledige marketingstack — van ads tot CRM. Minder tijd aan data verzamelen, meer tijd aan strategie.',
+    title: 'Webshops',
+    desc: 'Van Shopify tot Magento — Stevin verbindt je shop-data met je marketingkanalen en levert inzichten die je conversie verhogen.',
     link: null,
     linkText: null,
   },
   {
-    title: 'Promotoren & Event Marketing',
-    desc: 'Scan de markt voordat je boekt. Zie welke concurrerende events met vergelijkbare doelgroepen gepland staan en optimaliseer je campagnes per regio.',
+    title: 'DTC Brands',
+    desc: 'Bouw een direct-to-consumer merk op data. Begrijp je klant, optimaliseer je funnel en schaal winstgevend zonder afhankelijk te zijn van marketplaces.',
+    link: null,
+    linkText: null,
+  },
+  {
+    title: 'E-commerce Teams',
+    desc: 'Geef je hele team toegang tot dezelfde waarheid. Van performance marketing tot merchandising — iedereen werkt met dezelfde data.',
     link: null,
     linkText: null,
   },
 ]
 
 const useCases = [
-  'Je besteedt meer dan 5 uur per week aan rapportages',
-  'Je mist kansen omdat je data te laat ziet',
-  'Je beheert meerdere ad-accounts of klanten tegelijk',
-  'Je wilt grip op ROAS maar ziet het totaalplaatje niet',
-  'Je team groeit maar je tooling schaalt niet mee',
-  'Je plant events en wilt weten waar de markt ruimte biedt',
+  'Je ROAS-cijfers kloppen niet meer sinds iOS-privacy updates',
+  'Je beheert productfeeds handmatig of met fragiele scripts',
+  'Je optimaliseert op first-purchase ROAS in plaats van CLV',
+  'Je mist omzet door te late alerts bij tracking- of voorraadproblemen',
+  'Je wilt weten welke kanalen je meest waardevolle klanten opleveren',
+  'Je schaalt je advertentiebudget maar je marge daalt',
 ]
 
-export default function MarketingPage() {
+export default function EcommercePage() {
   return (
     <main>
       {/* Hero */}
@@ -93,15 +93,14 @@ export default function MarketingPage() {
         <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-semibold mb-6">
-            Voor marketing
+            Voor e-commerce
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Grip op je data.<br />
-            <span className="text-neon">Focus op resultaat.</span>
+            Elke bestelling telt.<br />
+            <span className="text-neon">Weet wat echt werkt.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
-            Of je nu een bureau runt, een inhouse team aanstuurt of events plant — Stevin centraliseert
-            je data, analyseert 24/7 en levert concrete actiepunten. Minder ruis, meer resultaat.
+            Stevin lost je tracking-problemen op met server-side tracking, optimaliseert je feeds automatisch en laat je zien welke klanten echt waarde opleveren. Van ROAS naar CLV.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
@@ -138,7 +137,7 @@ export default function MarketingPage() {
             <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Het platform</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Alles wat je nodig hebt</h2>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              Stevin vervangt losse tools door één systeem dat meegroeit met je ambities.
+              Stevin verbindt je webshop, marketingkanalen en klantdata in één systeem dat meegroeit met je omzet.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -159,7 +158,7 @@ export default function MarketingPage() {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Voor elk type marketingteam</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Voor elk type e-commerce team</h2>
             <p className="text-lg text-muted max-w-2xl mx-auto">
               Het platform is hetzelfde. De toepassing verschilt.
             </p>
@@ -200,7 +199,7 @@ export default function MarketingPage() {
             <div className="text-center lg:text-left">
               <h3 className="text-2xl font-bold text-white mb-4">Klaar om te beginnen?</h3>
               <p className="text-white/50 mb-8 leading-relaxed">
-                Plan een gesprek en we laten zien hoe Stevin jouw marketingdata omzet in resultaat. Geen verplichtingen.
+                Plan een gesprek en we laten zien hoe Stevin jouw e-commerce marketing naar het volgende niveau tilt. Geen verplichtingen.
               </p>
               <Link
                 href="/contact"

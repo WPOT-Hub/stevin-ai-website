@@ -1,91 +1,91 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { BarChart3, Target, Users, Zap, RefreshCw, Calendar, TrendingUp, Filter, Plug } from 'lucide-react'
+import { Search, GitBranch, Database, Plug, Eye, Radar } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Stevin voor Marketing — Agencies, Inhouse Teams & Promotoren',
-  description: 'Grip op ROAS, minder verspilling en slimmere campagnes. Stevin centraliseert al je marketingdata, analyseert 24/7 en levert concrete actiepunten.',
+  title: 'Stevin voor Retail & FMCG — Share of Search & Omnichannel Intelligence',
+  description: 'Monitor je share of search, verbind online en offline data en meet de impact van campagnes op winkelbezoek. Stevin is gebouwd voor retail en FMCG marketing teams.',
 }
 
 const painPoints = [
   {
-    title: 'Data verspreid over 10+ tools',
-    desc: 'Google Ads, Meta, Analytics, CRM, e-mail — je besteedt uren aan het bij elkaar brengen van data die automatisch had moeten samenkomen.',
+    title: 'Online en offline data zijn gescheiden',
+    desc: 'Je online campagnedata en je offline verkoopdata leven in compleet verschillende systemen. Niemand heeft het totaalplaatje van de klantreis.',
   },
   {
-    title: 'Rapportages kosten te veel tijd',
-    desc: 'Elke week dezelfde exports, dezelfde spreadsheets, dezelfde presentaties. Tijd die naar strategie en optimalisatie moet gaan.',
+    title: 'Geen zicht op share of search',
+    desc: 'Je concurrent groeit in zoekvolume en je ziet het pas als het te laat is. Zonder share of search monitoring reageer je altijd achter de feiten aan.',
   },
   {
-    title: 'Je reageert te laat op problemen',
-    desc: 'Een budget dat overloopt, een campagne die stilvalt, een conversie die keldert. Je ziet het pas als het al te laat is.',
+    title: 'Campagne-impact op winkelbezoek onmeetbaar',
+    desc: 'Je investeert in online campagnes die offline verkoop moeten stimuleren, maar je kunt de impact niet meten. Budget-onderbouwing wordt gokken.',
   },
 ]
 
 const features = [
   {
-    title: 'Centraal Dashboard',
-    desc: 'Al je kanalen, klanten en campagnes in één overzicht. Van ROAS tot pipeline — geen tabbladen meer.',
-    icon: <BarChart3 className="w-5 h-5 text-accent" />,
+    title: 'Share of Search Monitoring',
+    desc: 'Monitor continu je share of search versus concurrenten. Zie trends voordat ze in marktaandeel zichtbaar worden en anticipeer op verschuivingen.',
+    icon: <Search className="w-5 h-5 text-accent" />,
   },
   {
     title: '220+ Integraties',
-    desc: 'Native koppelingen met Meta, Google, TikTok, LinkedIn, Shopify, Klaviyo en meer. Geen middleware, geen vertraging.',
+    desc: 'Native koppelingen met Google, Meta, retailmedia platforms, POS-systemen, Shopify en meer. Geen middleware, geen vertraging.',
     icon: <Plug className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'AI-gedreven Analyses',
-    desc: 'Onze AI scant 24/7 op afwijkingen en kansen. Van een plotselinge daling in conversie tot onbenut budget.',
-    icon: <Target className="w-5 h-5 text-accent" />,
+    title: 'Cross-channel Attribution',
+    desc: 'Verbind online campagnes met offline verkoop. Begrijp de werkelijke bijdrage van elk kanaal aan je totale omzet — online en in de winkel.',
+    icon: <GitBranch className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Concrete Actiepunten',
-    desc: 'Geen passieve grafieken. Stevin vertelt je wat je nu moet doen en waarom — in jouw tone of voice.',
-    icon: <Zap className="w-5 h-5 text-accent" />,
+    title: 'Feed Management',
+    desc: 'Beheer en optimaliseer je productfeeds automatisch over alle retailmedia kanalen heen. Van Google Shopping tot retailer-specifieke feeds.',
+    icon: <Database className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Automatische Rapportages',
-    desc: 'Wekelijkse rapporten die zichzelf schrijven. Per klant, per kanaal, klaar om te presenteren.',
-    icon: <RefreshCw className="w-5 h-5 text-accent" />,
+    title: 'Shelf Attention Analysis',
+    desc: 'Analyseer hoe je producten presteren in digitale schappen. Van zoekpositie tot click-through rate per retailer en categorie.',
+    icon: <Eye className="w-5 h-5 text-accent" />,
   },
   {
-    title: '24/7 Monitoring',
-    desc: 'Budgetten, tracking, connectors en campagnes worden continu gecontroleerd. Problemen worden direct gemeld.',
-    icon: <Filter className="w-5 h-5 text-accent" />,
+    title: 'Competitor Intelligence',
+    desc: 'Volg de marketingactiviteiten van je concurrenten. Van ad spend-schattingen tot promotiekalenders en prijspositionering.',
+    icon: <Radar className="w-5 h-5 text-accent" />,
   },
 ]
 
 const audiences = [
   {
-    title: 'Agencies',
-    desc: 'Beheer meerdere klanten vanuit één systeem. White-label dashboard, multi-client overzicht en automatische rapportages per klant.',
-    link: '/voor-agencies',
-    linkText: 'Meer over het Agency Partner programma',
-  },
-  {
-    title: 'Inhouse Teams',
-    desc: 'Verbind je volledige marketingstack — van ads tot CRM. Minder tijd aan data verzamelen, meer tijd aan strategie.',
+    title: 'Retail Chains',
+    desc: 'Verbind je online marketing met je winkeldata. Meet welke campagnes klanten naar je filialen brengen en optimaliseer per regio.',
     link: null,
     linkText: null,
   },
   {
-    title: 'Promotoren & Event Marketing',
-    desc: 'Scan de markt voordat je boekt. Zie welke concurrerende events met vergelijkbare doelgroepen gepland staan en optimaliseer je campagnes per regio.',
+    title: 'FMCG Brands',
+    desc: 'Monitor je share of search, volg concurrenten en meet de impact van je campagnes op sell-out — over alle retailers heen.',
+    link: null,
+    linkText: null,
+  },
+  {
+    title: 'Supermarkten',
+    desc: 'Van folder tot social ad — begrijp welke promoties werken, welke producten groeien in zoekvolume en waar je concurrent aan marktaandeel wint.',
     link: null,
     linkText: null,
   },
 ]
 
 const useCases = [
-  'Je besteedt meer dan 5 uur per week aan rapportages',
-  'Je mist kansen omdat je data te laat ziet',
-  'Je beheert meerdere ad-accounts of klanten tegelijk',
-  'Je wilt grip op ROAS maar ziet het totaalplaatje niet',
-  'Je team groeit maar je tooling schaalt niet mee',
-  'Je plant events en wilt weten waar de markt ruimte biedt',
+  'Je online en offline data leven in gescheiden systemen',
+  'Je hebt geen zicht op je share of search versus concurrenten',
+  'Je kunt de impact van online campagnes op winkelbezoek niet meten',
+  'Je beheert productfeeds handmatig over meerdere retailers',
+  'Je wilt weten wat je concurrent doet voordat je het in marktaandeel ziet',
+  'Je besteedt te veel tijd aan het combineren van data uit verschillende bronnen',
 ]
 
-export default function MarketingPage() {
+export default function RetailPage() {
   return (
     <main>
       {/* Hero */}
@@ -93,15 +93,14 @@ export default function MarketingPage() {
         <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-semibold mb-6">
-            Voor marketing
+            Voor retail en FMCG
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Grip op je data.<br />
-            <span className="text-neon">Focus op resultaat.</span>
+            Van schap tot scherm.<br />
+            <span className="text-neon">Alles verbonden.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
-            Of je nu een bureau runt, een inhouse team aanstuurt of events plant — Stevin centraliseert
-            je data, analyseert 24/7 en levert concrete actiepunten. Minder ruis, meer resultaat.
+            Stevin verbindt je online en offline data, monitort je share of search en meet de impact van campagnes op winkelbezoek. Eén platform voor omnichannel retail marketing.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
@@ -138,7 +137,7 @@ export default function MarketingPage() {
             <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Het platform</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Alles wat je nodig hebt</h2>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              Stevin vervangt losse tools door één systeem dat meegroeit met je ambities.
+              Stevin verbindt je volledige retail marketingstack — van online campagnes tot offline verkoop.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -159,7 +158,7 @@ export default function MarketingPage() {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Voor elk type marketingteam</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Voor elk type retail organisatie</h2>
             <p className="text-lg text-muted max-w-2xl mx-auto">
               Het platform is hetzelfde. De toepassing verschilt.
             </p>
@@ -200,7 +199,7 @@ export default function MarketingPage() {
             <div className="text-center lg:text-left">
               <h3 className="text-2xl font-bold text-white mb-4">Klaar om te beginnen?</h3>
               <p className="text-white/50 mb-8 leading-relaxed">
-                Plan een gesprek en we laten zien hoe Stevin jouw marketingdata omzet in resultaat. Geen verplichtingen.
+                Plan een gesprek en we laten zien hoe Stevin jouw retail marketing verbindt — van online naar offline. Geen verplichtingen.
               </p>
               <Link
                 href="/contact"

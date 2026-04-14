@@ -14,7 +14,7 @@ export const homepageFaqs: FAQ[] = [
   },
   {
     question: 'Welke platforms koppelen jullie?',
-    answer: 'Meer dan 170 integraties: van Meta, Google en TikTok tot Spotify, Shopify, Klaviyo en tientallen andere platforms. De koppelingen zijn native — geen middleware, geen vertraging. Mis je een specifiek platform? Neem contact op, we bouwen continu door.',
+    answer: 'Meer dan 220 integraties: van Meta, Google en TikTok tot Spotify, Shopify, Klaviyo en tientallen andere platforms. De koppelingen zijn native — geen middleware, geen vertraging. Mis je een specifiek platform? Neem contact op, we bouwen continu door.',
   },
   {
     question: 'Hoe verschilt Stevin van een dashboard-tool?',

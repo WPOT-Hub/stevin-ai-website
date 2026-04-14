@@ -145,7 +145,7 @@ export default async function OGImage() {
               marginTop: '48px',
             }}
           >
-            {['170+ Integraties', 'AI-analyses', '24/7 Monitoring'].map((item) => (
+            {['220+ Integraties', 'AI-analyses', '24/7 Monitoring'].map((item) => (
               <div
                 key={item}
                 style={{
