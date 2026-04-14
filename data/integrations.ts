@@ -2635,22 +2635,6 @@ export const integrations: Integration[] = [
 
   // ========== CREATIVE INTELLIGENCE ==========
   {
-    name: 'Meta Ad Library',
-    slug: 'meta-ad-library',
-    category: 'creative-intelligence',
-    shortDescription: 'Competitor ad scanning en creatieve patroonherkenning.',
-    description: 'De Meta Ad Library bevat alle actieve en inactieve advertenties op Facebook en Instagram. Stevin.AI gebruikt dit niet alleen om te kijken wat concurrenten doen, maar om via AI visuele en tekstuele patronen te herkennen die de markt domineren.',
-    useCase: 'Competitor creative analyse, trend detectie en creatieve briefing onderbouwing.',
-    howWeUseIt: 'Stevin.AI scrapt automatisch de ads van door jou geselecteerde concurrenten, analyseert ze via Vision AI op kleurgebruik, compositie, hook-type en copy-structuur, en vertaalt de patronen naar concrete creatieve briefings.',
-    problemsSolved: [
-      'Geen systematisch overzicht van wat concurrenten adverteren',
-      'Creatieve keuzes worden gemaakt op basis van gevoel, niet data',
-      'Trends in ad formats en hooks worden te laat opgepikt',
-      'Creative briefings missen een data-onderbouwing',
-    ],
-    relatedSlugs: ['tiktok-creative-center', 'neurons', 'meta-ads', 'attention-insight'],
-  },
-  {
     name: 'TikTok Creative Center',
     slug: 'tiktok-creative-center',
     category: 'creative-intelligence',
@@ -2663,7 +2647,7 @@ export const integrations: Integration[] = [
       'Content voelt niet TikTok-native aan',
       'Trending sounds en formats worden te laat opgepikt',
     ],
-    relatedSlugs: ['meta-ad-library', 'tiktok-ads', 'neurons'],
+    relatedSlugs: ['tiktok-ads', 'neurons'],
   },
   {
     name: 'Neurons',
@@ -2679,7 +2663,7 @@ export const integrations: Integration[] = [
       'Dure A/B-tests die voorkomen hadden kunnen worden met pre-testing',
       'Discussies over creatie duren te lang door gebrek aan data',
     ],
-    relatedSlugs: ['meta-ad-library', 'attention-insight', 'realeyes'],
+    relatedSlugs: ['attention-insight', 'realeyes'],
     faqs: [
       { question: 'Vervangt Neurons een A/B-test?', answer: 'Nee, maar het filtert slechte varianten er vooraf uit. Je test alleen nog de varianten die de aandachtsdrempel halen, wat je testbudget efficienter maakt.' },
       { question: 'Werkt dit ook voor video?', answer: 'Ja. Neurons analyseert zowel statische afbeeldingen als video frames op aandacht en engagement.' },
@@ -2728,7 +2712,7 @@ export const integrations: Integration[] = [
       'Variaties worden willekeurig gemaakt in plaats van data-gestuurd',
       'Geen koppeling tussen creatieve briefing en productietool',
     ],
-    relatedSlugs: ['meta-ad-library', 'neurons', 'canva'],
+    relatedSlugs: ['neurons', 'canva'],
   },
   {
     name: 'Canva',
@@ -2743,7 +2727,7 @@ export const integrations: Integration[] = [
       'Niet elk teamlid kan met Adobe werken',
       'Ad variaties worden niet systematisch getest',
     ],
-    relatedSlugs: ['adobe-creative-cloud', 'meta-ad-library', 'meta-ads'],
+    relatedSlugs: ['adobe-creative-cloud', 'meta-ads'],
   },
 
   // ========== MARKET & AUDIENCE INTELLIGENCE ==========
@@ -2985,5 +2969,182 @@ export const integrations: Integration[] = [
     faqs: [
       { question: 'Vervangt Stevin.AI de MLR-review?', answer: 'Nee. Stevin.AI is een pre-filter die de meest voorkomende fouten vooraf detecteert. De formele MLR-review blijft noodzakelijk, maar gaat sneller omdat de content schoner binnenkomt.' },
     ],
+  },
+
+  // ========== FEED MANAGEMENT ==========
+  {
+    name: 'Channable',
+    slug: 'channable',
+    category: 'feed-management',
+    shortDescription: 'Productfeed management en shopping advertentie optimalisatie.',
+    description: 'Channable is een van de grootste feed management platforms in Europa. Het optimaliseert productfeeds voor Google Shopping, Meta, Amazon en honderden andere kanalen. Regels bepalen welke producten waar worden geadverteerd en hoe titels en beschrijvingen worden aangepast.',
+    useCase: 'Productfeed optimalisatie, multi-channel shopping advertenties en dynamic ads.',
+    howWeUseIt: 'Stevin.AI koppelt campagneperformance aan Channable\'s feed regels. Producten die budget verspillen (hoge spend, nul conversie) worden automatisch gesignaleerd. De Advisor genereert feed-optimalisaties op basis van echte performance data in plaats van handmatige regels.',
+    problemsSolved: [
+      'Feed regels worden handmatig beheerd zonder performance context',
+      'Budget wasters in shopping feeds worden te laat ontdekt',
+      'Geen koppeling tussen productperformance en feed-prioritering',
+      'Multi-channel feed management kost te veel handmatig werk',
+    ],
+    relatedSlugs: ['google-merchant-center', 'google-ads', 'meta-ads'],
+    faqs: [
+      { question: 'Vervangt Stevin.AI Channable?', answer: 'Nee. Channable blijft de feed engine. Stevin.AI voegt de intelligence laag toe: welke producten moeten aan of uit, welke titels presteren beter, waar lekt budget weg.' },
+    ],
+  },
+  {
+    name: 'Google Merchant Center',
+    slug: 'google-merchant-center',
+    category: 'feed-management',
+    shortDescription: 'Productdata voor Google Shopping, Free Listings en Performance Max.',
+    description: 'Google Merchant Center is het hart van je Google Shopping strategie. Producttitels, beschrijvingen, prijzen en beschikbaarheid bepalen hoe en of je producten verschijnen in Shopping resultaten.',
+    useCase: 'Google Shopping feed beheer, productdata kwaliteit en free listings optimalisatie.',
+    howWeUseIt: 'Stevin.AI monitort je Merchant Center op disapprovals, datakwaliteit issues en performance per productgroep. Feed problemen worden direct gesignaleerd voordat ze je campagnes beinvloeden.',
+    problemsSolved: [
+      'Product disapprovals worden te laat ontdekt',
+      'Feed datakwaliteit is inconsistent',
+      'Geen inzicht in welke productgroepen het meest opleveren',
+    ],
+    relatedSlugs: ['channable', 'google-ads', 'shopify'],
+  },
+  {
+    name: 'DataFeedWatch',
+    slug: 'datafeedwatch',
+    category: 'feed-management',
+    shortDescription: 'Feed optimalisatie en multi-channel productdata management.',
+    description: 'DataFeedWatch optimaliseert productfeeds voor 2000+ shopping kanalen. Met regelgebaseerde transformaties en A/B-testing van producttitels kun je de impact van feed-wijzigingen meten.',
+    useCase: 'Feed optimalisatie, shopping channel management en product titel testing.',
+    howWeUseIt: 'Stevin.AI combineert DataFeedWatch\'s feed optimalisatie met campagneperformance data. De Advisor suggereert welke producttitels en beschrijvingen beter presteren op basis van click-through en conversiedata.',
+    problemsSolved: [
+      'Producttitels zijn niet geoptimaliseerd voor zoekgedrag',
+      'Feed management over meerdere kanalen kost te veel tijd',
+      'Impact van feed-wijzigingen is niet meetbaar',
+    ],
+    relatedSlugs: ['channable', 'google-merchant-center', 'meta-ads'],
+  },
+  {
+    name: 'Producthero',
+    slug: 'producthero',
+    category: 'feed-management',
+    shortDescription: 'AI-gedreven productfeed optimalisatie en labelstrategie voor Google Shopping.',
+    description: 'Producthero segmenteert je producten automatisch in hero, sidekick en villain categorieeen op basis van performance. Dit maakt gerichte budget-allocatie mogelijk in Google Shopping en Performance Max campagnes.',
+    useCase: 'Product segmentatie en shopping budget optimalisatie.',
+    howWeUseIt: 'Stevin.AI integreert Producthero\'s product segmentatie in de Advisor engine. Budget wordt automatisch verschoven van underperformers naar hero producten, onderbouwd met cross-channel performance data.',
+    problemsSolved: [
+      'Geen onderscheid in budget-allocatie tussen top- en underperforming producten',
+      'Shopping budget wordt gelijk verdeeld over alle producten',
+      'Performance Max mist de nuance om producten te differentieren',
+    ],
+    relatedSlugs: ['channable', 'google-merchant-center', 'google-ads'],
+  },
+
+  // ========== DAM & CREATIVE OPS ==========
+  {
+    name: 'Bynder',
+    slug: 'bynder',
+    category: 'dam-creative-ops',
+    shortDescription: 'Digital Asset Management voor merkbestanden, templates en creatieve workflows.',
+    description: 'Bynder centraliseert alle merkbestanden, van logo\'s tot campagnemateriaal. Met Brand Templates kunnen teams snel on-brand variaties produceren zonder de creatieve afdeling te belasten.',
+    useCase: 'Centraal asset beheer, brand consistency en creatieve productie versnellen.',
+    howWeUseIt: 'Stevin.AI koppelt creatieve performance data terug naar Bynder. Welke assets presteren het best in campagnes? Welke templates leveren de hoogste CTR? Het creatieve team ziet direct welke visuele richtingen werken.',
+    problemsSolved: [
+      'Creatieve assets zijn verspreid over mappen, mails en Slack',
+      'Geen inzicht in welke assets het best presteren in campagnes',
+      'Brand consistency gaat verloren bij meerdere teams en markten',
+    ],
+    relatedSlugs: ['adobe-creative-cloud', 'celtra', 'canva'],
+  },
+  {
+    name: 'Celtra',
+    slug: 'celtra',
+    category: 'dam-creative-ops',
+    shortDescription: 'Creative automation voor schaalbare ad productie en dynamic creatives.',
+    description: 'Celtra automatiseert de productie van advertentie-variaties op schaal. Van een master design naar honderden formaten, talen en variaties — zonder handmatig werk. Ideaal voor bureaus die volume moeten draaien.',
+    useCase: 'Schaalbare ad productie, dynamic creative optimisation en format automation.',
+    howWeUseIt: 'Stevin.AI combineert Celtra\'s productiecapaciteit met creatieve intelligence. De Advisor bepaalt welke variaties geproduceerd moeten worden op basis van markt- en performance data. Celtra voert de productie uit.',
+    problemsSolved: [
+      'Creatieve productie kan het volume niet bijhouden',
+      'Handmatige aanpassing per formaat en kanaal kost uren',
+      'Dynamic creatives worden niet gestuurd door performance data',
+    ],
+    relatedSlugs: ['bynder', 'adobe-creative-cloud', 'meta-ads'],
+  },
+  {
+    name: 'Storyteq',
+    slug: 'storyteq',
+    category: 'dam-creative-ops',
+    shortDescription: 'Video en banner automation voor gepersonaliseerde advertenties op schaal.',
+    description: 'Storyteq (onderdeel van Inspired Thinking Group) automatiseert de productie van gepersonaliseerde video\'s en banners. Van een template naar duizenden variaties op basis van data — locatie, product, doelgroep.',
+    useCase: 'Gepersonaliseerde video- en bannerproductie op schaal.',
+    howWeUseIt: 'Stevin.AI levert de data-input voor Storyteq\'s templates: welke producten, welke boodschappen, welke doelgroepen. Het resultaat is hyper-relevante advertenties zonder handmatig creatief werk per variant.',
+    problemsSolved: [
+      'Gepersonaliseerde ads zijn te duur om handmatig te produceren',
+      'Video variaties kosten weken in plaats van uren',
+      'Creatieve personalisatie is beperkt tot tekst, niet visueel',
+    ],
+    relatedSlugs: ['celtra', 'bynder', 'canva'],
+  },
+
+  // ========== MLR & COMPLIANCE ==========
+  {
+    name: 'Zinc Ahead',
+    slug: 'zinc-ahead',
+    category: 'mlr-compliance',
+    shortDescription: 'Content compliance en MLR-workflow management voor healthcare.',
+    description: 'Zinc Ahead stroomlijnt het Medical, Legal, Regulatory (MLR) goedkeuringsproces. Van briefing tot publicatie: elke stap wordt getrackt, elke wijziging gelogd en elke goedkeuring vastgelegd.',
+    useCase: 'MLR-workflow management en compliance tracking in healthcare marketing.',
+    howWeUseIt: 'Stevin.AI integreert als pre-check laag in het Zinc Ahead workflow. Content wordt automatisch gescand op veelvoorkomende compliance risico\'s voordat het de formele review ingaat, waardoor het goedkeuringsproces versnelt.',
+    problemsSolved: [
+      'MLR-cycli duren 2-4 weken door vermijdbare fouten',
+      'Compliance status van content is onduidelijk',
+      'Herwerk door afgewezen content kost meer dan het originele werk',
+    ],
+    relatedSlugs: ['veeva-vault', 'adobe-creative-cloud'],
+  },
+  {
+    name: 'Khoros',
+    slug: 'khoros',
+    category: 'mlr-compliance',
+    shortDescription: 'Social media compliance en content governance voor gereguleerde industrieen.',
+    description: 'Khoros biedt social media management met ingebouwde compliance workflows. Essentieel voor merken in finance, farma en healthcare waar elke social post door een goedkeuringsproces moet.',
+    useCase: 'Social media compliance, content governance en goedkeuringsworkflows.',
+    howWeUseIt: 'Stevin.AI scant social content vooraf op compliance risico\'s en stuurt het door het juiste goedkeuringstraject. Urgente posts worden versneld, risicovolle content wordt geflagd.',
+    problemsSolved: [
+      'Social media posts in gereguleerde industrieen duren te lang',
+      'Compliance risico\'s in social content worden handmatig gecheckt',
+      'Geen audit trail van goedkeuringen voor social posts',
+    ],
+    relatedSlugs: ['zinc-ahead', 'veeva-vault', 'brandwatch'],
+  },
+
+  // ========== MMM & ATTRIBUTION ==========
+  {
+    name: 'Triple Whale',
+    slug: 'triple-whale',
+    category: 'mmm-attribution',
+    shortDescription: 'E-commerce attribution en incrementaliteitsmeting voor DTC merken.',
+    description: 'Triple Whale biedt first-party attribution voor e-commerce merken. Door server-side tracking en statistische modellen zie je welke kanalen daadwerkelijk nieuwe klanten opleveren — voorbij de beperkingen van pixel-based tracking.',
+    useCase: 'E-commerce attribution, customer acquisition cost en incrementaliteitsanalyse.',
+    howWeUseIt: 'Stevin.AI integreert Triple Whale\'s attribution data in de cross-validatie module. Pixel-data van Meta en Google wordt vergeleken met Triple Whale\'s first-party meting voor een realistischer beeld van je werkelijke ROAS.',
+    problemsSolved: [
+      'Platform-gerapporteerde ROAS is onbetrouwbaar door privacy-beperkingen',
+      'Geen inzicht in incrementele vs. kannibaliserende conversies',
+      'Customer acquisition cost is onduidelijk per kanaal',
+    ],
+    relatedSlugs: ['northbeam', 'google-analytics-4', 'shopify'],
+  },
+  {
+    name: 'Northbeam',
+    slug: 'northbeam',
+    category: 'mmm-attribution',
+    shortDescription: 'Multi-touch attribution en media mix analyse voor e-commerce.',
+    description: 'Northbeam combineert multi-touch attribution met machine learning om de werkelijke impact van elk touchpoint in de klantreis te meten. Gebouwd voor e-commerce merken die voorbij last-click willen kijken.',
+    useCase: 'Multi-touch attribution, creative-level performance en kanaal incrementaliteit.',
+    howWeUseIt: 'Stevin.AI gebruikt Northbeam\'s granulaire attribution data om creative-level performance te analyseren. Niet alleen "Meta werkt", maar "deze specifieke creative hook in deze doelgroep levert de hoogste incrementele waarde."',
+    problemsSolved: [
+      'Attribution data is te grof om creatieve beslissingen te sturen',
+      'Multi-touch customer journeys worden niet correct gewaardeerd',
+      'Geen koppeling tussen creative performance en incrementele omzet',
+    ],
+    relatedSlugs: ['triple-whale', 'google-analytics-4', 'google-ads'],
   },
 ]

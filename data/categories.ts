@@ -114,4 +114,28 @@ export const categories: Category[] = [
     description: 'Mediamonitoring, social listening, persanalyse en reputatiemanagement.',
     intro: 'Wat er over je merk wordt gezegd bepaalt je reputatie. Van persberichten tot social mentions en forumthreads: Stevin.AI scant alle bronnen, filtert de ruis en escaleert alleen de signalen die actie vereisen. Zodat je nooit meer verrast wordt door een negatief artikel of een viral klacht.',
   },
+  {
+    name: 'Feed Management',
+    slug: 'feed-management',
+    description: 'Productfeed optimalisatie, shopping feeds en e-commerce advertentie-aansturing.',
+    intro: 'Je productfeed is de directe link tussen je voorraad en je advertenties. Slechte feeds betekenen slechte resultaten — ongeacht hoeveel budget je inzet. Stevin.AI koppelt feed management aan campagneperformance en voorraaddata, zodat budget wasters automatisch worden uitgezet en topproducten extra zichtbaarheid krijgen.',
+  },
+  {
+    name: 'DAM & Creative Ops',
+    slug: 'dam-creative-ops',
+    description: 'Digital Asset Management, creatieve workflow en productie-automatisering.',
+    intro: 'Creatieve productie is vaak de bottleneck in de campagnecyclus. DAM en Creative Ops tools versnellen het proces van briefing tot publicatie. Stevin.AI koppelt creatieve performance data terug naar het productieproces, zodat je team niet meer 5 man op reporting hoeft te zetten maar op creatie kan focussen.',
+  },
+  {
+    name: 'MLR & Compliance',
+    slug: 'mlr-compliance',
+    description: 'Medische, juridische en regulatoire goedkeuring en compliance checks.',
+    intro: 'In gereguleerde industrieen zoals farma en healthcare duurt de goedkeuringscyclus 2 tot 4 weken. Stevin.AI fungeert als pre-filter: content wordt automatisch gescand op veelvoorkomende compliance risico\'s voordat het het MLR-traject ingaat. Resultaat: snellere goedkeuring en minder herwerk.',
+  },
+  {
+    name: 'MMM & Attribution',
+    slug: 'mmm-attribution',
+    description: 'Marketing Mix Modeling, multi-touch attribution en incrementaliteitsmeting.',
+    intro: 'Weten dat je campagne kliks oplevert is niet genoeg. MMM en attribution bewijzen of je marketing daadwerkelijk incrementele omzet genereert. Stevin.AI combineert geavanceerde statistische modellen met campagnedata om de echte waarde van elk kanaal en elke creatieve uiting te onderbouwen — van awareness tot conversie.',
+  },
 ]
