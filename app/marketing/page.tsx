@@ -9,24 +9,24 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    title: 'Data verspreid over 10+ tools',
-    desc: 'Google Ads, Meta, Analytics, CRM, e-mail — je besteedt uren aan het bij elkaar brengen van data die automatisch had moeten samenkomen.',
+    title: 'Rapportage is een achteruitkijkspiegel',
+    desc: 'Je team besteedt dagenlang aan het verklaren van wat er gisteren is gebeurd. Terwijl je klant betaalt voor wat er morgen moet gebeuren.',
   },
   {
-    title: 'Rapportages kosten te veel tijd',
-    desc: 'Elke week dezelfde exports, dezelfde spreadsheets, dezelfde presentaties. Tijd die naar strategie en optimalisatie moet gaan.',
+    title: 'Vijf man op reporting, nul op strategie',
+    desc: 'Exporteren, combineren, formatteren, presenteren. Non-billable uren die je marge opeten en je team weghouden van het werk dat verschil maakt.',
   },
   {
-    title: 'Je reageert te laat op problemen',
-    desc: 'Een budget dat overloopt, een campagne die stilvalt, een conversie die keldert. Je ziet het pas als het al te laat is.',
+    title: 'Dashboards vertellen je niks',
+    desc: 'Een grafiek die omlaag gaat is geen inzicht. Je wilt weten waarom het gebeurt, wat je eraan kunt doen en wanneer je creatieve hook zijn kracht verliest.',
   },
 ]
 
 const features = [
   {
-    title: 'Centraal Dashboard',
-    desc: 'Al je kanalen, klanten en campagnes in één overzicht. Van ROAS tot pipeline — geen tabbladen meer.',
-    icon: <BarChart3 className="w-5 h-5 text-accent" />,
+    title: 'Executive Briefings, geen PDF-dumps',
+    desc: 'Drie zinnen die je direct naar je klant kunt sturen. Geen 40 pagina\'s met historie, maar wat er nu moet gebeuren en waarom.',
+    icon: <Zap className="w-5 h-5 text-accent" />,
   },
   {
     title: '220+ Integraties',
@@ -34,23 +34,23 @@ const features = [
     icon: <Plug className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'AI-gedreven Analyses',
-    desc: 'Onze AI scant 24/7 op afwijkingen en kansen. Van een plotselinge daling in conversie tot onbenut budget.',
+    title: 'Creatieve Verzadigingsdetectie',
+    desc: 'Stevin detecteert wanneer je creative haar kracht verliest. Je weet exact wanneer het tijd is voor een nieuwe hook — voordat je budget verspilt.',
+    icon: <TrendingUp className="w-5 h-5 text-accent" />,
+  },
+  {
+    title: 'Vooruitkijken, niet terugkijken',
+    desc: 'De AI berekent je Growth Multiplier voor volgende week. Niet wat je ROI was, maar waar je volgende euro het hardst groeit.',
     icon: <Target className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Concrete Actiepunten',
-    desc: 'Geen passieve grafieken. Stevin vertelt je wat je nu moet doen en waarom — in jouw tone of voice.',
-    icon: <Zap className="w-5 h-5 text-accent" />,
+    title: 'Brand Momentum Tracking',
+    desc: 'Share of Search, marktsentiment en concurrentiepositie in real-time. Zie verschuivingen voordat ze in marktaandeel zichtbaar worden.',
+    icon: <BarChart3 className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Automatische Rapportages',
-    desc: 'Wekelijkse rapporten die zichzelf schrijven. Per klant, per kanaal, klaar om te presenteren.',
-    icon: <RefreshCw className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: '24/7 Monitoring',
-    desc: 'Budgetten, tracking, connectors en campagnes worden continu gecontroleerd. Problemen worden direct gemeld.',
+    title: '24/7 Anomalie Detectie',
+    desc: 'Budgetten, tracking en campagnes worden continu gescand. Problemen en kansen worden direct gesignaleerd — niet pas in het weekrapport.',
     icon: <Filter className="w-5 h-5 text-accent" />,
   },
 ]
@@ -77,12 +77,12 @@ const audiences = [
 ]
 
 const useCases = [
-  'Je besteedt meer dan 5 uur per week aan rapportages',
-  'Je mist kansen omdat je data te laat ziet',
-  'Je beheert meerdere ad-accounts of klanten tegelijk',
-  'Je wilt grip op ROAS maar ziet het totaalplaatje niet',
-  'Je team groeit maar je tooling schaalt niet mee',
-  'Je plant events en wilt weten waar de markt ruimte biedt',
+  'Je hebt mensen op reporting zitten die niet aan strategie toekomen',
+  'Je wilt weten wanneer je creative haar kracht verliest',
+  'Je klant vraagt om een vooruitblik, niet om een achteruitkijkspiegel',
+  'Je beheert meerdere klanten en wilt per klant in 3 zinnen de status',
+  'Je wilt budget-verschuivingen onderbouwen met data, niet onderbuikgevoel',
+  'Je wilt je positioneren als strategisch partner, niet als rapportage-fabriek',
 ]
 
 export default function MarketingPage() {

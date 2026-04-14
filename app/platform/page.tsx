@@ -209,13 +209,13 @@ export default function PlatformPage() {
             </div>
             <div>
               <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-3">AI Reports</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-6">Rapporten die zichzelf schrijven</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-6">Executive Briefings, geen rapportage-fabrieken</h2>
               <p className="text-muted leading-relaxed mb-6">
-                Stevin analyseert je campagnedata met AI en genereert wekelijkse rapporten,
-                anomalie-alerts en optimalisatie-adviezen. Volledig automatisch, EU-gehost.
+                Geen PDF met 40 pagina&apos;s over gisteren. Stevin levert executive briefings van 3 zinnen
+                die je direct naar je klant kunt sturen. Vooruitkijken, niet terugkijken.
               </p>
               <ul className="space-y-3">
-                {['Wekelijkse performance summaries', 'Real-time anomalie detectie', 'Concrete optimalisatie-adviezen', 'Automatische alerts bij afwijkingen', 'Content suggesties uit market intelligence'].map((item) => (
+                {['Growth Multiplier berekening per kanaal', 'Creatieve verzadigingsdetectie', 'Real-time anomalie detectie', 'Budget waste alerts en kansen', 'Brand Momentum tracking via Share of Search'].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-muted">
                     <svg className="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />

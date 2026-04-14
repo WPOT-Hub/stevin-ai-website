@@ -9,23 +9,23 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    title: 'Creatieve beslissingen zonder data',
-    desc: 'Je team maakt sterke concepten, maar zonder performance-data blijft het gissen welke richting het beste werkt. A/B-tests zijn ad hoc en inzichten verdwijnen na de campagne.',
+    title: 'Je werk wordt doodgegooid met budget',
+    desc: 'Een sterke creative verliest zijn kracht als hij te lang of te vaak wordt ingezet. Maar zonder data weet niemand wanneer het tijd is voor vernieuwing — tot de resultaten kelderen.',
   },
   {
     title: 'Geen feedback loop naar creatie',
     desc: 'Mediaresultaten landen bij het mediateam, niet bij de creatieven. De mensen die het verschil maken zien nooit welke visuals, copy of formats het beste presteren.',
   },
   {
-    title: 'Rapportage-silos tussen disciplines',
-    desc: 'Design, content, social en campagnedata leven in aparte tools. Niemand heeft het totaalbeeld en cross-channel learnings gaan verloren.',
+    title: 'Rapportages in plaats van concepten',
+    desc: 'Je team besteedt uren aan het bouwen van rapporten die niemand leest. Tijd die naar creatieve concepten en strategisch denken moet gaan.',
   },
 ]
 
 const features = [
   {
-    title: 'Creative Intelligence',
-    desc: 'Analyseer welke visuele elementen, kleuren en composities de meeste aandacht trekken. Van attention heatmaps tot pre-testing van concepten.',
+    title: 'Creatieve Verzadigingsdetectie',
+    desc: 'Stevin detecteert exact wanneer een creatieve hook zijn kracht verliest. Je weet het voordat de resultaten dalen — zodat je op tijd vernieuwt in plaats van reageert.',
     icon: <Eye className="w-5 h-5 text-accent" />,
   },
   {
@@ -35,22 +35,22 @@ const features = [
   },
   {
     title: 'Performance-to-Creative Feedback',
-    desc: 'Automatische terugkoppeling van campagneresultaten naar je creatieve team. Welke formats, hooks en visuals presteren het beste per kanaal.',
+    desc: 'Niet "ad set 3 werkt beter" maar "ads met een probleemstelling als hook en warme kleurtonen converteren 34% beter in deze doelgroep."',
     icon: <BarChart3 className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Automated Briefings',
-    desc: 'Genereer data-gedreven creatieve briefings op basis van historische performance. Geen spreadsheets meer doorpluizen voor je volgende concept.',
+    title: 'Automated Creative Briefings',
+    desc: 'Data-gedreven briefings die je team direct kan oppakken. Welke hook, welk format, welke visuele richting — onderbouwd met performance data, niet spreadsheets.',
     icon: <FileText className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Brand Consistency Monitoring',
-    desc: 'Bewaakt je merkidentiteit over alle kanalen heen. Signaleert afwijkingen in tone of voice, visuele stijl en merkwaarden.',
+    title: 'Creative Intelligence',
+    desc: 'Voorspel de effectiviteit van je concept voordat het live gaat. Attention heatmaps, engagement scores en visuele analyse — je weet wat werkt voor publicatie.',
     icon: <ShieldCheck className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Cross-channel Creative Analysis',
-    desc: 'Vergelijk creatieve prestaties over alle kanalen heen. Ontdek welke boodschap waar het beste landt en waarom.',
+    title: 'Executive Briefings, geen PDF-dumps',
+    desc: 'Drie zinnen naar je klant in plaats van 40 pagina\'s. "Je nieuwe visuele stijl is de Growth Multiplier. We zitten onder de Fatigue Threshold. Opschalen."',
     icon: <Palette className="w-5 h-5 text-accent" />,
   },
 ]
@@ -77,12 +77,12 @@ const audiences = [
 ]
 
 const useCases = [
-  'Je wilt creatieve beslissingen onderbouwen met data',
+  'Je wilt weten wanneer je creative zijn kracht verliest — voordat de resultaten dalen',
   'Je mist een feedback loop tussen media en creatie',
-  'Je besteedt te veel tijd aan rapportages in plaats van aan concepten',
+  'Je besteedt meer tijd aan rapportages dan aan concepten',
+  'Je wilt je klant in 3 zinnen de status geven, niet in een 40 pagina PDF',
   'Je wilt pre-testen welke concepten het beste gaan presteren',
-  'Je beheert meerdere merken en wilt brand consistency bewaken',
-  'Je wilt je positioneren als data-gedreven creatief bureau',
+  'Je wilt je positioneren als strategisch creatief partner, niet als productie-unit',
 ]
 
 export default function CreatieveBureausPage() {

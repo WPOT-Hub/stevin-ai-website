@@ -139,12 +139,12 @@ export default function HomePage() {
               desc: 'De waarheid ligt verspreid over social media, advertentieplatforms en e-commerce systemen. Koppel je ze niet, dan stuur je blind.',
             },
             {
-              title: 'Reactief in plaats van proactief',
-              desc: 'Dashboards vertellen je wat er gisteren is gebeurd. Ze waarschuwen je niet voor de kansen of lekken van vandaag.',
+              title: 'Rapportage is een achteruitkijkspiegel',
+              desc: 'Dashboards vertellen je wat er gisteren is gebeurd. Je klant betaalt voor wat er morgen moet gebeuren. Niemand wordt blij van een PDF met 40 pagina\'s.',
             },
             {
-              title: 'Tijdverlies aan handwerk',
-              desc: 'Uren per week weggooien aan het doorspitten van comments, statistieken en budgetten. Tijd die naar strategie of creatie moet gaan.',
+              title: 'Non-billable uren vreten je marge',
+              desc: 'Vijf man op reporting, nul op strategie. Exporteren, combineren, formatteren — tijd die naar creatie, optimalisatie of klantcontact moet gaan.',
             },
           ].map((item) => (
             <div key={item.title} className="p-6 rounded-2xl bg-white border border-border">

@@ -9,16 +9,16 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    title: 'Attribution is onbetrouwbaar',
-    desc: 'Elk kanaal claimt dezelfde conversie. Zonder betrouwbare cross-channel attribution is het onmogelijk om te bepalen welk kanaal echt bijdraagt aan resultaat.',
+    title: 'Rapportage is een non-billable kostenpost',
+    desc: 'Je hebt mensen op reporting zitten die niet aan strategie toekomen. Exporteren, combineren, formatteren — terwijl je klant betaalt voor resultaat, niet voor grafieken.',
   },
   {
     title: 'Budget-allocatie op gevoel',
-    desc: 'Je verdeelt budgetten op basis van historie en onderbuikgevoel in plaats van real-time performance. Geld gaat naar kanalen die onderperformen terwijl kansen onbenut blijven.',
+    desc: 'Je verdeelt budgetten op basis van historie en onderbuikgevoel. Geen wetenschappelijke onderbouwing voor verschuivingen, geen zicht op verzadigingspunten per kanaal.',
   },
   {
-    title: 'Rapportages kosten dagen',
-    desc: 'Je team besteedt dagenlang aan het exporteren, combineren en formatteren van data uit tien verschillende platformen. Tijd die naar optimalisatie moet gaan.',
+    title: 'Je klant vraagt "wat nu?" en je levert "wat was"',
+    desc: 'Dashboards vertellen wat er gisteren is gebeurd. Je klant wil weten wat er morgen moet gebeuren en waar de volgende euro het hardst groeit.',
   },
 ]
 
@@ -39,18 +39,18 @@ const features = [
     icon: <Wallet className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Automated Reporting',
-    desc: 'Rapportages die zichzelf schrijven. Per klant, per kanaal, per periode — klaar om te presenteren aan je opdrachtgever.',
+    title: 'Executive Briefings, geen PDF-dumps',
+    desc: 'Drie zinnen per klant die je direct kunt doorsturen. "Share of Search stijgt 12%, media-kosten dalen. Nieuwe visuele stijl is de Growth Multiplier. Opschalen."',
     icon: <FileText className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Real-time Budget Monitoring',
-    desc: 'Continu overzicht van spend versus planning. Automatische alerts bij overschrijdingen, onderbesting of afwijkende pacing.',
+    title: 'Waste Reduction & Pacing Alerts',
+    desc: 'Continu overzicht van spend versus planning. Budget wasters worden automatisch gesignaleerd. Kansen worden geescaleerd voordat ze voorbij zijn.',
     icon: <Activity className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Client Dashboards',
-    desc: 'Geef je klanten hun eigen dashboard met real-time inzicht. White-label, op maat ingericht per opdrachtgever.',
+    title: 'Creatieve Verzadigingsdetectie',
+    desc: 'Weet wanneer een creative zijn kracht verliest. Stevin berekent de Fatigue Threshold per creatieve uiting zodat je op tijd vernieuwt.',
     icon: <LayoutDashboard className="w-5 h-5 text-accent" />,
   },
 ]
@@ -70,19 +70,19 @@ const audiences = [
   },
   {
     title: 'Client Services',
-    desc: 'Lever rapportages die zichzelf schrijven en geef klanten real-time dashboards. Minder operationeel werk, meer strategisch advies.',
+    desc: 'Lever executive briefings in plaats van dikke rapporten. Je klant krijgt in 3 zinnen de status — jij komt over als strategisch partner, niet als rapportage-fabriek.',
     link: null,
     linkText: null,
   },
 ]
 
 const useCases = [
-  'Je besteedt meer dan een dag per week aan rapportages per klant',
-  'Je vertrouwt attribution-data uit individuele platformen niet',
-  'Je verdeelt budgetten op basis van gevoel in plaats van performance',
-  'Je wilt klanten real-time inzicht geven zonder extra werk',
-  'Je beheert tien of meer ad-accounts tegelijk',
-  'Je wilt sneller schakelen bij budget-overschrijdingen of kansen',
+  'Je hebt mensen op reporting zitten die niet aan strategie toekomen',
+  'Je wilt budget-verschuivingen onderbouwen met wetenschap, niet gevoel',
+  'Je wilt weten wanneer je creative verzadigd raakt — voordat de klant het merkt',
+  'Je klant vraagt om een vooruitblik, niet om een achteruitkijkspiegel',
+  'Je wilt in 3 zinnen de status per klant, niet in een 40 pagina rapport',
+  'Je wilt je positioneren als strategisch partner, niet als uitvoerder',
 ]
 
 export default function MediabureausPage() {
