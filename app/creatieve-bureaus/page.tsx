@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import DataRain from '@/components/DataRain'
 import { Palette, Eye, FileText, Plug, ShieldCheck, BarChart3 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -91,6 +92,7 @@ export default function CreatieveBureausPage() {
       {/* Hero */}
       <section className="relative bg-primary pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
+        <DataRain variant="creatief" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-semibold mb-6">
             Voor creatieve bureaus

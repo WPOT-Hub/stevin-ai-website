@@ -4,7 +4,7 @@ import { Database, Cpu, Zap, RefreshCw, Building2, Music } from 'lucide-react'
 import Section from '@/components/Section'
 import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
-import IntelligenceFeed from '@/components/IntelligenceFeed'
+import DataRain from '@/components/DataRain'
 import { homepageFaqs } from '@/data/faqs'
 import { nativeConnectors } from '@/data/connectors'
 
@@ -28,40 +28,33 @@ export default function HomePage() {
 
       {/* ===== HERO — Router ===== */}
       <section className="relative overflow-hidden bg-primary -mt-[72px] pt-[calc(72px+2.5rem)] sm:pt-[calc(72px+3rem)] lg:pt-[calc(72px+4rem)] pb-12 lg:pb-20">
-        {/* Background texture */}
+        {/* Background layers */}
         <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
+        <DataRain />
         <div className="absolute inset-0 opacity-[0.04]" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
           backgroundSize: '40px 40px',
         }} />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Hero split: left text + right feed */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left: headline */}
-            <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.1] mb-6">
-                <Image src="/logos/icon-white.svg" alt="" width={16} height={16} />
-                <span className="text-sm font-medium text-white/60">Data. Inzicht. Actie.</span>
-              </div>
-
-              <h1 className="text-[1.75rem] sm:text-4xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight text-white leading-[1.1]">
-                Heers over je data.<br />
-                <span className="text-neon">Stop de ruis.</span>
-              </h1>
-              <p className="mt-4 text-base sm:text-lg lg:text-xl text-white/45 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Stevin is de intelligente datalaag die versnipperde signalen omzet in concrete actie. Voor agencies, inhouse teams, promotoren en artiesten.
-              </p>
+          {/* Centered headline */}
+          <div className="text-center max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.1] mb-6">
+              <Image src="/logos/icon-white.svg" alt="" width={16} height={16} />
+              <span className="text-sm font-medium text-white/60">Data. Inzicht. Actie.</span>
             </div>
 
-            {/* Right: Intelligence Feed */}
-            <div className="hidden lg:block">
-              <IntelligenceFeed />
-            </div>
+            <h1 className="text-[1.75rem] sm:text-4xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight text-white leading-[1.1]">
+              Heers over je data.<br />
+              <span className="text-neon">Stop de ruis.</span>
+            </h1>
+            <p className="mt-4 text-base sm:text-lg lg:text-xl text-white/45 max-w-2xl mx-auto leading-relaxed">
+              Stevin is de intelligente datalaag die versnipperde signalen omzet in concrete actie. Voor agencies, inhouse teams, promotoren en artiesten.
+            </p>
           </div>
 
           {/* Router cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-10 max-w-4xl mx-auto lg:max-w-none">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-10 max-w-4xl mx-auto">
             {/* Agency card — Blue accent */}
             <Link
               href="/marketing"

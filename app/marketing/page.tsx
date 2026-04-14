@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BarChart3, Target, Users, Zap, RefreshCw, Calendar, TrendingUp, Filter, Plug } from 'lucide-react'
 import IntelligenceFeed from '@/components/IntelligenceFeed'
+import DataRain from '@/components/DataRain'
 
 export const metadata: Metadata = {
   title: 'Stevin voor Marketing — Agencies, Inhouse Teams & Promotoren',
@@ -92,6 +93,7 @@ export default function MarketingPage() {
       {/* Hero */}
       <section className="relative bg-primary pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
+        <DataRain variant="marketing" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
