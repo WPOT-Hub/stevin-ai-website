@@ -48,7 +48,7 @@ export default function Footer() {
               De intelligente datalaag die versnipperde signalen omzet in actie. Voor agencies, promotoren en artiesten.
             </p>
             <p className="mt-5 text-xs text-slate-500">
-              Werkzaam vanuit Amsterdam, Eindhoven en Breda.
+              Werkzaam vanuit Amsterdam, Eindhoven, Breda en Antwerpen.
             </p>
           </div>
 
@@ -109,7 +109,7 @@ export default function Footer() {
             <ConsentSettingsButton />
             <span className="text-xs text-slate-600">|</span>
             <p className="text-xs text-slate-500">
-              Amsterdam &middot; Eindhoven &middot; Breda
+              Amsterdam &middot; Eindhoven &middot; Breda &middot; Antwerpen
             </p>
           </div>
         </div>

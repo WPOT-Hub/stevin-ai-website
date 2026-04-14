@@ -52,7 +52,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-primary">Locaties</h3>
-                  <p className="text-sm text-muted mt-1">Werkzaam vanuit Amsterdam, Eindhoven en Breda.</p>
+                  <p className="text-sm text-muted mt-1">Werkzaam vanuit Amsterdam, Eindhoven, Breda en Antwerpen.</p>
                 </div>
               </div>
 
