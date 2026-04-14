@@ -96,4 +96,22 @@ export const categories: Category[] = [
     description: 'Boekhoudsoftware, ERP-systemen en financiële tools voor business intelligence.',
     intro: 'Marketing en finance horen bij elkaar. Stevin.AI koppelt je financiële data aan je marketingresultaten, zodat je niet alleen weet hoeveel leads er binnenkomen maar ook wat ze daadwerkelijk opleveren aan omzet en marge.',
   },
+  {
+    name: 'Creative Intelligence',
+    slug: 'creative-intelligence',
+    description: 'Tools voor creatieve analyse, ad testing, visuele intelligentie en competitor creative scanning.',
+    intro: 'Creatie en data horen niet in aparte silo\'s. Creative Intelligence tools laten je zien welke visuele patronen, hooks en formats de markt domineren. Stevin.AI koppelt deze inzichten aan je campagneperformance zodat je creatieve briefings worden onderbouwd met harde data — niet alleen onderbuikgevoel.',
+  },
+  {
+    name: 'Market & Audience Intelligence',
+    slug: 'market-audience-intelligence',
+    description: 'Marktonderzoek, audience insights, share of search en competitieve intelligentie.',
+    intro: 'Begrijp je markt voordat je erin investeert. Van share of search tot consumentengedrag en concurrentie-analyse: Stevin.AI centraliseert marktdata uit meerdere bronnen en vertaalt het naar actiegerichte inzichten voor je strategie en media-allocatie.',
+  },
+  {
+    name: 'Media Monitoring & PR',
+    slug: 'media-monitoring-pr',
+    description: 'Mediamonitoring, social listening, persanalyse en reputatiemanagement.',
+    intro: 'Wat er over je merk wordt gezegd bepaalt je reputatie. Van persberichten tot social mentions en forumthreads: Stevin.AI scant alle bronnen, filtert de ruis en escaleert alleen de signalen die actie vereisen. Zodat je nooit meer verrast wordt door een negatief artikel of een viral klacht.',
+  },
 ]
