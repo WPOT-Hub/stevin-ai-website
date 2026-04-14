@@ -57,20 +57,20 @@ const features = [
 
 const audiences = [
   {
-    title: 'Agencies',
-    desc: 'Beheer meerdere klanten vanuit één systeem. White-label dashboard, multi-client overzicht en automatische rapportages per klant.',
+    title: 'Bureaus',
+    desc: 'Van mediabureau tot creatief bureau: beheer meerdere klanten vanuit één systeem. Attribution, automated reporting en creatieve intelligence per klant.',
     link: '/voor-agencies',
     linkText: 'Meer over het Agency Partner programma',
   },
   {
     title: 'Inhouse Teams',
-    desc: 'Verbind je volledige marketingstack — van ads tot CRM. Minder tijd aan data verzamelen, meer tijd aan strategie.',
+    desc: 'Verbind je volledige marketingstack — van ads en creatie tot CRM. Minder tijd aan data verzamelen, meer tijd aan strategie en optimalisatie.',
     link: null,
     linkText: null,
   },
   {
-    title: 'Promotoren & Event Marketing',
-    desc: 'Scan de markt voordat je boekt. Zie welke concurrerende events met vergelijkbare doelgroepen gepland staan en optimaliseer je campagnes per regio.',
+    title: 'Specialisten',
+    desc: 'E-commerce, healthcare, retail of events — Stevin past zich aan jouw sector aan met relevante integraties, compliance en benchmarks.',
     link: null,
     linkText: null,
   },
@@ -100,7 +100,7 @@ export default function MarketingPage() {
             <span className="text-neon">Focus op resultaat.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
-            Of je nu een bureau runt, een inhouse team aanstuurt of events plant — Stevin centraliseert
+            Of je nu een performance agency runt, een creatief team aanstuurt, media inkoopt of events plant — Stevin centraliseert
             je data, analyseert 24/7 en levert concrete actiepunten. Minder ruis, meer resultaat.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
