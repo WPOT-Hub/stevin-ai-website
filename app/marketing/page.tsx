@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BarChart3, Target, Users, Zap, RefreshCw, Calendar, TrendingUp, Filter, Plug } from 'lucide-react'
+import IntelligenceFeed from '@/components/IntelligenceFeed'
 
 export const metadata: Metadata = {
   title: 'Stevin voor Marketing — Agencies, Inhouse Teams & Promotoren',
@@ -91,25 +92,32 @@ export default function MarketingPage() {
       {/* Hero */}
       <section className="relative bg-primary pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
-        <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-semibold mb-6">
-            Voor marketing
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Grip op je data.<br />
-            <span className="text-neon">Focus op resultaat.</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
-            Of je nu een performance agency runt, een creatief team aanstuurt, media inkoopt of events plant — Stevin centraliseert
-            je data, analyseert 24/7 en levert concrete actiepunten. Minder ruis, meer resultaat.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-            <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
-              Plan een gesprek
-            </Link>
-            <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/80 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
-              Bekijk het platform
-            </Link>
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-semibold mb-6">
+                Voor marketing
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                Grip op je data.<br />
+                <span className="text-neon">Focus op resultaat.</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-white/60 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Of je nu een performance agency runt, een creatief team aanstuurt, media inkoopt of events plant — Stevin centraliseert
+                je data, analyseert 24/7 en levert concrete actiepunten.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 mt-10">
+                <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
+                  Plan een gesprek
+                </Link>
+                <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/80 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
+                  Bekijk het platform
+                </Link>
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <IntelligenceFeed variant="marketing" />
+            </div>
           </div>
         </div>
       </section>

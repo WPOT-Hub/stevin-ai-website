@@ -2,18 +2,22 @@
 
 import { useState, useEffect, useCallback } from 'react'
 
-// ── Scenario data ──
+// ── Types ──
 
 interface FeedLine {
   text: string
   color: 'pink' | 'blue' | 'neon' | 'muted' | 'white'
   prefix?: string
-  delay: number // ms after scenario start
+  delay: number
   mono?: boolean
 }
 
-const SCENARIOS: FeedLine[][] = [
-  // Scenario 1: Creative Fatigue Detection (Agency / Creative Bureau)
+export type FeedVariant = 'all' | 'marketing' | 'artist'
+
+// ── Scenario pools ──
+
+const MARKETING_SCENARIOS: FeedLine[][] = [
+  // Creative Fatigue Detection
   [
     { text: 'Scanning 12 ad accounts...', color: 'muted', prefix: '>', delay: 0, mono: true },
     { text: 'Creative fatigue detected', color: 'pink', prefix: '!', delay: 800 },
@@ -23,17 +27,7 @@ const SCENARIOS: FeedLine[][] = [
     { text: 'Verschuif €2.400 van Facebook Feed naar Reels', color: 'neon', prefix: '\u2192', delay: 3400 },
     { text: 'Geschatte uplift: +€4.320 ROAS per maand', color: 'neon', prefix: '\u2713', delay: 4200 },
   ],
-  // Scenario 2: Artist / Music — Social Pulse
-  [
-    { text: 'Social pulse scan actief...', color: 'muted', prefix: '>', delay: 0, mono: true },
-    { text: '4.812 comments geanalyseerd in 24u', color: 'muted', prefix: '>', delay: 700, mono: true },
-    { text: 'Viral moment gedetecteerd: TikTok duet +340%', color: 'pink', prefix: '!', delay: 1400 },
-    { text: 'Sentiment: 92% positief, "obsessed" trending', color: 'blue', prefix: '~', delay: 2100 },
-    { text: 'Spotify saves +28% in regio Randstad', color: 'blue', delay: 2700 },
-    { text: 'Push geo-targeted ads Randstad + België', color: 'neon', prefix: '\u2192', delay: 3400 },
-    { text: 'Momentum window: 48u — campagne klaargezet', color: 'neon', prefix: '\u2713', delay: 4200 },
-  ],
-  // Scenario 3: Performance Agency — Cross-Channel Attribution
+  // Cross-Channel Attribution
   [
     { text: 'Cross-channel analyse gestart...', color: 'muted', prefix: '>', delay: 0, mono: true },
     { text: '6 kanalen geëvalueerd voor klant: Moda', color: 'muted', prefix: '>', delay: 700, mono: true },
@@ -43,7 +37,7 @@ const SCENARIOS: FeedLine[][] = [
     { text: 'Schaal TikTok op, dim Google Shopping -20%', color: 'neon', prefix: '\u2192', delay: 3500 },
     { text: 'Projected savings: €6.800/maand bij gelijke omzet', color: 'neon', prefix: '\u2713', delay: 4300 },
   ],
-  // Scenario 4: Competitor Intelligence
+  // Competitor Intelligence
   [
     { text: 'Competitor scan actief...', color: 'muted', prefix: '>', delay: 0, mono: true },
     { text: 'Nieuwe campagne gedetecteerd: concurrent A', color: 'blue', prefix: '~', delay: 800 },
@@ -53,7 +47,7 @@ const SCENARIOS: FeedLine[][] = [
     { text: 'Start UGC-test met bestaand budget', color: 'neon', prefix: '\u2192', delay: 3500 },
     { text: 'Brief gegenereerd en klaar voor review', color: 'neon', prefix: '\u2713', delay: 4300 },
   ],
-  // Scenario 5: Budget Optimization (Portfolio)
+  // Budget Optimization
   [
     { text: 'Portfolio-analyse gestart...', color: 'muted', prefix: '>', delay: 0, mono: true },
     { text: '8 klantaccounts geanalyseerd', color: 'muted', prefix: '>', delay: 700, mono: true },
@@ -63,17 +57,7 @@ const SCENARIOS: FeedLine[][] = [
     { text: 'Herverdeel €8.200 naar onderverzadigde kanalen', color: 'neon', prefix: '\u2192', delay: 3600 },
     { text: 'Portfolio-uplift: +23% gemiddelde ROAS', color: 'neon', prefix: '\u2713', delay: 4400 },
   ],
-  // Scenario 6: Artist — Pre-Save & Release Intelligence
-  [
-    { text: 'Release monitor actief...', color: 'muted', prefix: '>', delay: 0, mono: true },
-    { text: 'Pre-save rate: 12.4% (benchmark: 8%)', color: 'blue', prefix: '~', delay: 800 },
-    { text: 'Top regio: België 34%, NL 28%, Duitsland 18%', color: 'blue', delay: 1400 },
-    { text: 'Drop-off na dag 3: -45% engagement', color: 'pink', prefix: '!', delay: 2200 },
-    { text: 'Retarget pre-savers met behind-the-scenes', color: 'neon', prefix: '\u2192', delay: 3000 },
-    { text: 'Playlist pitch brief gegenereerd (12 curators)', color: 'neon', prefix: '\u2192', delay: 3700 },
-    { text: 'Verwacht: +180K streams in eerste week', color: 'neon', prefix: '\u2713', delay: 4400 },
-  ],
-  // Scenario 7: Performance — E-commerce Funnel
+  // E-commerce Funnel
   [
     { text: 'Funnel-analyse draait...', color: 'muted', prefix: '>', delay: 0, mono: true },
     { text: 'Checkout abandonment: 72% (benchmark: 65%)', color: 'pink', prefix: '!', delay: 800 },
@@ -84,6 +68,58 @@ const SCENARIOS: FeedLine[][] = [
     { text: 'Geschatte extra omzet: €14.200/maand', color: 'neon', prefix: '\u2713', delay: 4300 },
   ],
 ]
+
+const ARTIST_SCENARIOS: FeedLine[][] = [
+  // Social Pulse
+  [
+    { text: 'Social pulse scan actief...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: '4.812 comments geanalyseerd in 24u', color: 'muted', prefix: '>', delay: 700, mono: true },
+    { text: 'Viral moment gedetecteerd: TikTok duet +340%', color: 'pink', prefix: '!', delay: 1400 },
+    { text: 'Sentiment: 92% positief, "obsessed" trending', color: 'blue', prefix: '~', delay: 2100 },
+    { text: 'Spotify saves +28% in regio Randstad', color: 'blue', delay: 2700 },
+    { text: 'Push geo-targeted ads Randstad + België', color: 'neon', prefix: '\u2192', delay: 3400 },
+    { text: 'Momentum window: 48u — campagne klaargezet', color: 'neon', prefix: '\u2713', delay: 4200 },
+  ],
+  // Release Intelligence
+  [
+    { text: 'Release monitor actief...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: 'Pre-save rate: 12.4% (benchmark: 8%)', color: 'blue', prefix: '~', delay: 800 },
+    { text: 'Top regio: België 34%, NL 28%, Duitsland 18%', color: 'blue', delay: 1400 },
+    { text: 'Drop-off na dag 3: -45% engagement', color: 'pink', prefix: '!', delay: 2200 },
+    { text: 'Retarget pre-savers met behind-the-scenes', color: 'neon', prefix: '\u2192', delay: 3000 },
+    { text: 'Playlist pitch brief gegenereerd (12 curators)', color: 'neon', prefix: '\u2192', delay: 3700 },
+    { text: 'Verwacht: +180K streams in eerste week', color: 'neon', prefix: '\u2713', delay: 4400 },
+  ],
+  // Fan Engagement Filter
+  [
+    { text: 'Fan-bridge filter actief...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: '2.340 DM\'s en comments gescand', color: 'muted', prefix: '>', delay: 700, mono: true },
+    { text: '95% emoji-ruis weggefilterd', color: 'blue', prefix: '~', delay: 1300 },
+    { text: '12 track-ID requests gedetecteerd', color: 'blue', delay: 1900 },
+    { text: '3 merch-vragen, 1 booking request', color: 'blue', delay: 2500 },
+    { text: 'Concept-replies gegenereerd in jouw tone of voice', color: 'neon', prefix: '\u2192', delay: 3200 },
+    { text: 'Antwoordtijd: van 4 uur naar 30 seconden', color: 'neon', prefix: '\u2713', delay: 4000 },
+  ],
+  // Geo-Hype Detection
+  [
+    { text: 'Geo-hype analyse draait...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: 'Luistercijfers per regio opgehaald', color: 'muted', prefix: '>', delay: 700, mono: true },
+    { text: 'Onverwachte piek: Antwerpen +180% in 48u', color: 'pink', prefix: '!', delay: 1400 },
+    { text: 'Bron: lokale playlist placement + radio spin', color: 'blue', prefix: '~', delay: 2100 },
+    { text: 'Instagram engagement Antwerpen: 3.2x gemiddeld', color: 'blue', delay: 2700 },
+    { text: 'Plan pop-up show Antwerpen, push merch campagne', color: 'neon', prefix: '\u2192', delay: 3400 },
+    { text: 'Booking agent genotificeerd met data-brief', color: 'neon', prefix: '\u2713', delay: 4200 },
+  ],
+]
+
+// Homepage mixes both
+const ALL_SCENARIOS = [...MARKETING_SCENARIOS.slice(0, 3), ...ARTIST_SCENARIOS.slice(0, 2), ...MARKETING_SCENARIOS.slice(3)]
+
+const SCENARIO_MAP: Record<FeedVariant, FeedLine[][]> = {
+  all: ALL_SCENARIOS,
+  marketing: MARKETING_SCENARIOS,
+  artist: ARTIST_SCENARIOS,
+}
 
 // ── Color mapping ──
 
@@ -105,14 +141,19 @@ const PREFIX_COLOR_MAP = {
 
 // ── Component ──
 
-export default function IntelligenceFeed() {
+interface IntelligenceFeedProps {
+  variant?: FeedVariant
+}
+
+export default function IntelligenceFeed({ variant = 'all' }: IntelligenceFeedProps) {
+  const scenarios = SCENARIO_MAP[variant]
   const [scenarioIndex, setScenarioIndex] = useState(0)
   const [visibleLines, setVisibleLines] = useState<number>(0)
   const [typingLine, setTypingLine] = useState<number>(-1)
   const [typedChars, setTypedChars] = useState<number>(0)
   const [fading, setFading] = useState(false)
 
-  const scenario = SCENARIOS[scenarioIndex]
+  const scenario = scenarios[scenarioIndex]
 
   const startScenario = useCallback(() => {
     setVisibleLines(0)
@@ -120,7 +161,6 @@ export default function IntelligenceFeed() {
     setTypedChars(0)
     setFading(false)
 
-    // Schedule each line appearance
     scenario.forEach((line, i) => {
       setTimeout(() => {
         setTypingLine(i)
@@ -128,17 +168,15 @@ export default function IntelligenceFeed() {
       }, line.delay)
     })
 
-    // After last line, wait then fade
     const lastDelay = scenario[scenario.length - 1].delay
     setTimeout(() => {
       setFading(true)
     }, lastDelay + 3000)
 
-    // Switch scenario
     setTimeout(() => {
-      setScenarioIndex((prev) => (prev + 1) % SCENARIOS.length)
+      setScenarioIndex((prev) => (prev + 1) % scenarios.length)
     }, lastDelay + 3800)
-  }, [scenario])
+  }, [scenario, scenarios.length])
 
   // Typewriter effect
   useEffect(() => {
@@ -148,12 +186,10 @@ export default function IntelligenceFeed() {
     const fullText = line.text
 
     if (typedChars >= fullText.length) {
-      // Line complete, mark as visible
       setVisibleLines((prev) => Math.max(prev, typingLine + 1))
       return
     }
 
-    // Type speed: faster for muted/mono lines
     const speed = line.mono ? 15 : 25
     const timer = setTimeout(() => {
       setTypedChars((prev) => prev + 1)
@@ -193,14 +229,10 @@ export default function IntelligenceFeed() {
       {/* Feed content */}
       <div className="px-4 py-4 space-y-2 min-h-[220px] sm:min-h-[240px] font-mono text-[12px] sm:text-[13px] leading-relaxed">
         {scenario.map((line, i) => {
-          // Fully visible previous lines
           if (i < visibleLines && i !== typingLine) {
-            return (
-              <FeedLine key={`${scenarioIndex}-${i}`} line={line} />
-            )
+            return <FeedLineEl key={`${scenarioIndex}-${i}`} line={line} />
           }
 
-          // Currently typing line
           if (i === typingLine) {
             const partialText = line.text.slice(0, typedChars)
             return (
@@ -218,7 +250,6 @@ export default function IntelligenceFeed() {
             )
           }
 
-          // Not yet visible
           return null
         })}
       </div>
@@ -226,10 +257,10 @@ export default function IntelligenceFeed() {
       {/* Bottom status bar */}
       <div className="px-4 py-2 border-t border-white/[0.06] flex items-center justify-between">
         <span className="text-[10px] text-white/15 font-mono">
-          {scenarioIndex + 1}/{SCENARIOS.length} scenario&apos;s
+          {scenarioIndex + 1}/{scenarios.length}
         </span>
         <div className="flex gap-1">
-          {SCENARIOS.map((_, i) => (
+          {scenarios.map((_, i) => (
             <div
               key={i}
               className={`w-4 h-1 rounded-full transition-colors duration-300 ${
@@ -239,16 +270,15 @@ export default function IntelligenceFeed() {
           ))}
         </div>
       </div>
-
     </div>
   )
 }
 
 // ── Sub-component ──
 
-function FeedLine({ line }: { line: FeedLine }) {
+function FeedLineEl({ line }: { line: FeedLine }) {
   return (
-    <div className="flex items-start gap-2 animate-fadeIn">
+    <div className="flex items-start gap-2">
       {line.prefix && (
         <span className={`flex-shrink-0 ${PREFIX_COLOR_MAP[line.color]}`}>
           {line.prefix}
