@@ -1,11 +1,12 @@
 import Script from 'next/script'
 
 const GTM_ID = 'GTM-WHSXRR29'
+const GA4_ID = 'G-WGB40XGYLF'
 
 export function GoogleTagManagerHead() {
   return (
     <>
-      {/* Consent Mode v2 — default denied before GTM loads */}
+      {/* Consent Mode v2 — default denied before GTM/GA4 loads */}
       <Script
         id="consent-default"
         strategy="beforeInteractive"
@@ -34,6 +35,24 @@ export function GoogleTagManagerHead() {
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','${GTM_ID}');
+          `,
+        }}
+      />
+      {/* GA4 — direct gtag.js (respecteert consent mode) */}
+      <Script
+        id="ga4-gtag"
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
+      />
+      <Script
+        id="ga4-config"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA4_ID}');
           `,
         }}
       />
