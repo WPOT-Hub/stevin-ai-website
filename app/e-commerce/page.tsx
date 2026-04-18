@@ -199,9 +199,9 @@ export default function EcommercePage() {
               </ul>
             </div>
             <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-bold text-white mb-4">Klaar om te beginnen?</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h3>
               <p className="text-white/50 mb-8 leading-relaxed">
-                Plan een gesprek en we laten zien hoe Stevin jouw e-commerce marketing naar het volgende niveau tilt. Geen verplichtingen.
+                Elke bestelling herleidbaar naar de juiste bron. Plan een gesprek en we laten zien hoe Stevin jouw e-commerce marketing meetbaar maakt.
               </p>
               <Link
                 href="/contact"

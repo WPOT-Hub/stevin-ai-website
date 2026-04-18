@@ -35,9 +35,9 @@ const features = [
     icon: <TrendingUp className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'AI-rapporten per Klant',
-    desc: 'Automatische wekelijkse rapportages per klant. Klaar om door te sturen of te presenteren.',
-    icon: <Sparkles className="w-5 h-5 text-accent" />,
+    title: 'Wekelijkse Rapporten per Klant',
+    desc: 'Automatische wekelijkse rapporten per klant — gebaseerd op harde data. Klaar om door te sturen of te presenteren.',
+    icon: <TrendingUp className="w-5 h-5 text-accent" />,
   },
 ]
 
@@ -85,7 +85,7 @@ export default function VoorAgenciesPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Wat je krijgt als Agency Partner</h2>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              Alles wat je nodig hebt om je bureau op te schalen met AI-gedreven marketing.
+              Alles wat je nodig hebt om je bureau op te schalen met data-onderbouwde marketing.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

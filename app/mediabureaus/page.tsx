@@ -35,13 +35,13 @@ const features = [
     icon: <Plug className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Budget Optimalisatie AI',
-    desc: 'AI-gestuurde aanbevelingen voor budget-herverdeling op basis van real-time performance, seizoenspatronen en incrementaliteit.',
+    title: 'Budget Optimalisatie',
+    desc: 'Concrete aanbevelingen voor budget-herverdeling op basis van real-time performance, seizoenspatronen en incrementaliteit.',
     icon: <Wallet className="w-5 h-5 text-accent" />,
   },
   {
     title: 'Executive Briefings, geen PDF-dumps',
-    desc: 'Drie zinnen per klant die je direct kunt doorsturen. "Share of Search stijgt 12%, media-kosten dalen. Nieuwe visuele stijl is de Growth Multiplier. Opschalen."',
+    desc: 'Drie zinnen per klant die je direct kunt doorsturen. "Share of Search stijgt 12%, media-kosten dalen. Nieuwe visuele stijl werkt. Opschalen."',
     icon: <FileText className="w-5 h-5 text-accent" />,
   },
   {
@@ -51,7 +51,7 @@ const features = [
   },
   {
     title: 'Creatieve Verzadigingsdetectie',
-    desc: 'Weet wanneer een creative zijn kracht verliest. Stevin berekent de Fatigue Threshold per creatieve uiting zodat je op tijd vernieuwt.',
+    desc: 'Weet wanneer een creative zijn kracht verliest. Stevin meet de verzadiging per creatieve uiting zodat je op tijd vernieuwt — niet reageert.',
     icon: <LayoutDashboard className="w-5 h-5 text-accent" />,
   },
 ]

@@ -42,11 +42,11 @@ const features = [
   },
   {
     title: 'Vooruitkijken, niet terugkijken',
-    desc: 'De AI berekent je Growth Multiplier voor volgende week. Niet wat je ROI was, maar waar je volgende euro het hardst groeit.',
+    desc: 'Stevin berekent per kanaal waar je volgende euro het hardst groeit. Niet wat je ROI was, maar waar de marge nu ligt.',
     icon: <Target className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Brand Momentum Tracking',
+    title: 'Merk-momentum in Kaart',
     desc: 'Share of Search, branded traffic-trends en concurrentiepositie in real-time. Zie verschuivingen voordat ze in marktaandeel zichtbaar worden.',
     icon: <BarChart3 className="w-5 h-5 text-accent" />,
   },

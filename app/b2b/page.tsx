@@ -124,9 +124,9 @@ export default function B2BPage() {
       {/* CTA */}
       <section className="py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Klaar om je funnel te sluiten?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
-            Plan een gesprek en ontdek hoe Stevin je B2B marketing meetbaar maakt tot op klantniveau.
+            Van lead tot klant, elke euro herleidbaar. Plan een gesprek en ontdek hoe Stevin je B2B marketing meetbaar maakt tot op klantniveau.
           </p>
           <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
             Plan een gesprek

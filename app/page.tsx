@@ -13,7 +13,7 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Stevin',
-    description: 'Stevin is het AI-platform dat agencies, promotoren en artiesten helpt groeien door data om te zetten in actie.',
+    description: 'Stevin is de meetlat tussen marketingspend en werkelijk resultaat. Voor ondernemers, merken en bureaus die hun cijfers serieus nemen — zonder black boxes.',
     url: 'https://stevin.ai',
     areaServed: 'NL',
     knowsAbout: ['Online Marketing', 'Marketing Automation', 'SEO', 'Paid Media', 'Analytics', 'Social Media Monitoring', 'Artist Management', 'PR & Communications'],

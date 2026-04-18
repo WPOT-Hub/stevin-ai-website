@@ -31,7 +31,7 @@ const features = [
   },
   {
     title: 'Momentum Detectie',
-    desc: 'De AI herkent wanneer content viraal gaat en stuurt direct een seintje. Grijp het moment voordat het voorbij is.',
+    desc: 'Stevin ziet wanneer content organisch versnelt — gebaseerd op cross-channel data, niet op gevoel. Je krijgt direct een seintje zodat je het moment pakt voordat het voorbij is.',
     icon: <Zap className="w-5 h-5 text-accent" />,
   },
   {

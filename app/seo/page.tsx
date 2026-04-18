@@ -166,8 +166,8 @@ export default function SEOPage() {
       {/* CTA */}
       <Section bg="surface">
         <CTABlock
-          title="Wil je dat je organisch verkeer ook echt oplevert?"
-          description="Plan een gesprek en we laten zien hoe SEO binnen jouw marketingsysteem meer leads en klanten kan opleveren."
+          title="Het is geen wonder. Het is Stevin."
+          description="Organisch verkeer dat daadwerkelijk converteert, meetbaar tot op de euro. Plan een gesprek en we laten zien hoe SEO binnen jouw marketingsysteem meer leads en klanten oplevert."
           buttonText="Plan een gesprek"
           buttonHref="/contact"
         />

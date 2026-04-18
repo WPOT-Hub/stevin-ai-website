@@ -42,7 +42,7 @@ const features = [
   {
     title: 'Causale Rapporten',
     desc: 'Wekelijkse rapporten, anomalie-alerts en concrete adviezen — onderbouwd met data uit je eigen CRM, niet alleen platform-eigen rapportage.',
-    icon: <Sparkles className="w-5 h-5 text-accent" />,
+    icon: <Activity className="w-5 h-5 text-accent" />,
     color: 'from-yellow-500/10 to-amber-500/10 border-yellow-500/20',
   },
 ]
@@ -142,7 +142,7 @@ export default function PlatformPage() {
                 Volledig EU-compliant, zonder cookies of third-party tracking.
               </p>
               <ul className="space-y-3">
-                {['100% AVG / GDPR compliant', 'Bedrijfsherkenning zonder cookies', 'AI-gedreven intent scoring', 'Automatische CRM-verrijking', 'Retargeting audiences aanmaken'].map((item) => (
+                {['100% AVG / GDPR compliant', 'Bedrijfsherkenning zonder cookies', 'Intent scoring op gedragssignalen', 'Automatische CRM-verrijking', 'Retargeting audiences aanmaken'].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-muted">
                     <svg className="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -201,20 +201,20 @@ export default function PlatformPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="rounded-2xl bg-gradient-to-br from-yellow-500/5 to-amber-500/5 border border-yellow-500/20 p-8 text-center">
               <div className="w-16 h-16 rounded-2xl bg-yellow-500/10 flex items-center justify-center mx-auto mb-4">
-                <Sparkles className="w-8 h-8 text-yellow-500" />
+                <Activity className="w-8 h-8 text-yellow-500" />
               </div>
-              <p className="text-lg font-bold text-primary">AI-gedreven Inzichten</p>
-              <p className="text-sm text-muted mt-2">Automatische analyses en aanbevelingen</p>
+              <p className="text-lg font-bold text-primary">Causale Inzichten</p>
+              <p className="text-sm text-muted mt-2">Analyses die terug te voeren zijn op je eigen data</p>
             </div>
             <div>
-              <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-3">AI Reports</p>
+              <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-3">Rapporten</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-6">Executive Briefings, geen rapportage-fabrieken</h2>
               <p className="text-muted leading-relaxed mb-6">
                 Geen PDF met 40 pagina&apos;s over gisteren. Stevin levert executive briefings van 3 zinnen
                 die je direct naar je klant kunt sturen. Vooruitkijken, niet terugkijken.
               </p>
               <ul className="space-y-3">
-                {['Growth Multiplier berekening per kanaal', 'Creatieve verzadigingsdetectie', 'Real-time anomalie detectie', 'Budget waste alerts en kansen', 'Brand Momentum tracking via Share of Search'].map((item) => (
+                {['Groei-factor per kanaal (welke euro werkt het hardst)', 'Creatieve verzadigingsdetectie', 'Real-time anomalie detectie', 'Budget waste alerts en kansen', 'Branded search-trends via Share of Search'].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-muted">
                     <svg className="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
