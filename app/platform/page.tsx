@@ -5,7 +5,7 @@ import { nativeConnectors } from '@/data/connectors'
 
 export const metadata: Metadata = {
   title: 'Platform — Stevin',
-  description: 'Het AI-gedreven platform met 220+ integraties, 24/7 monitoring, social listening en AI-rapporten.',
+  description: 'De onderliggende meetlat: 220+ integraties, 24/7 monitoring, causale rapporten. Platform-cijfers naast de werkelijkheid in je CRM.',
 }
 
 const features = [
@@ -40,8 +40,8 @@ const features = [
     color: 'from-slate-500/10 to-zinc-500/10 border-slate-500/20',
   },
   {
-    title: 'AI Reports & Alerts',
-    desc: 'AI analyseert je data en genereert wekelijkse rapporten, anomalie-alerts en optimalisatie-adviezen. Geen handmatige rapportages meer.',
+    title: 'Causale Rapporten',
+    desc: 'Wekelijkse rapporten, anomalie-alerts en concrete adviezen — onderbouwd met data uit je eigen CRM, niet alleen platform-eigen rapportage.',
     icon: <Sparkles className="w-5 h-5 text-accent" />,
     color: 'from-yellow-500/10 to-amber-500/10 border-yellow-500/20',
   },
@@ -66,11 +66,10 @@ export default function PlatformPage() {
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
           <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-4">Het Platform</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Eén platform. Alles verbonden.
+            De meetlat onder je marketing.
           </h1>
           <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
-            Eén platform dat je volledige marketingstack verbindt, bewaakt en optimaliseert.
-            Van campagnedata tot klantpipeline — aangedreven door AI, 24/7 actief.
+            Platform-cijfers vergeleken met de werkelijkheid in je CRM. 220+ native integraties, continu bewaakt, geen black boxes. Dashboards met een gedeelde waarheid in plaats van elkaar tegensprekende getallen.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">

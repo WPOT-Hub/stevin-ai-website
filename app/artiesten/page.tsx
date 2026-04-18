@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const features = [
   {
     title: 'Het 03:00 AM Command Center',
-    desc: 'Je stapt \'s nachts de booth uit. Je wilt geen complexe dashboards, je wilt weten: hebben we gewonnen? Stevin toont je op je mobiel in één oogopslag de vibe, het sentiment en de belangrijkste fan-interacties van vanavond.',
+    desc: 'Je stapt \'s nachts de booth uit. Je wilt geen complexe dashboards, je wilt weten: hebben we gewonnen? Stevin toont op je mobiel in één oogopslag de reacties, de pieken en de belangrijkste fan-interacties van vanavond.',
     icon: <Headphones className="w-5 h-5 text-accent" />,
   },
   {
@@ -29,9 +29,9 @@ const features = [
 
 const capabilities = [
   { title: 'Deep Social Listening', desc: 'Organische signalen van al je kanalen gecentraliseerd. Weet wat er over je gezegd wordt, overal.' },
-  { title: 'Momentum Detectie', desc: 'De AI herkent wanneer een track, video of post viraal gaat en stuurt je direct een actieplan.' },
+  { title: 'Momentum Detectie', desc: 'Stevin ziet wanneer een track, video of post organisch versnelt — gebaseerd op cross-channel data, niet op gevoel.' },
   { title: 'Owned vs. Rented Audience', desc: 'Zie hoeveel van je bereik van jou is (nieuwsbrief, website) versus gehuurd (TikTok, Instagram).' },
-  { title: 'Sentiment Analyse', desc: 'Weet of de buzz positief, neutraal of negatief is. Grijp in voordat een brandje zich verspreidt.' },
+  { title: 'Reactie-tracking', desc: 'Volg hoe fans reageren op een drop, post of optreden. Zie trends over tijd in plaats van momentopnames.' },
   { title: 'Geo-Hype Tracking', desc: 'Zie in welke steden en landen je het hardst groeit. Stuur je booking en merch erop aan.' },
   { title: 'AI Advisor Cards', desc: 'Geen rapporten van 30 pagina\'s. Concrete kaarten met één actie per signaal.' },
 ]
@@ -175,7 +175,7 @@ export default function VoorArtiestenPage() {
                 Vraag toegang aan
               </Link>
               <ul className="mt-8 space-y-2.5">
-                {['Cross-channel monitoring', 'AI Advisor met momentum-detectie', 'Fan-engagement filtering', 'Sentiment analyse', 'Geo-hype tracking', 'Merch & ticket conversie-inzichten'].map((f) => (
+                {['Cross-channel monitoring', 'AI Advisor met momentum-detectie', 'Fan-engagement filtering', 'Reactie-tracking over tijd', 'Geo-hype tracking', 'Merch & ticket conversie-inzichten'].map((f) => (
                   <li key={f} className="flex items-center gap-2.5 text-sm text-slate-300">
                     <svg className="w-4 h-4 text-neon flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />

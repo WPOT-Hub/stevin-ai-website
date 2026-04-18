@@ -4,24 +4,24 @@ import DataRain from '@/components/DataRain'
 import { Eye, Shield, TrendingUp, MessageCircle, BarChart3, Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Stevin voor Merken — Brand intelligence die werkt',
-  description: 'Stevin geeft merken en brand managers grip op merkperceptie, social sentiment en campagneprestaties. Van awareness tot conversie in één platform.',
+  title: 'Stevin voor Merken — Merk-causaliteit meten',
+  description: 'Stevin geeft merken en brand managers grip op branded search, media-mentions en campagne-impact. Van awareness tot conversie — herleidbaar.',
 }
 
 const features = [
   {
-    title: 'Brand Monitoring',
-    desc: 'Weet wat er over je merk gezegd wordt, overal. Social media, reviews, forums en nieuws — gecentraliseerd en gefilterd op relevantie.',
+    title: 'Merk-mentions in kaart',
+    desc: 'Waar en hoe vaak wordt je merk genoemd? Social, reviews, forums en nieuws — gecentraliseerd en gefilterd op relevantie. Feitelijk, niet gevoelig.',
     icon: <Eye className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Sentiment Analyse',
-    desc: 'Is de buzz positief, neutraal of negatief? Grijp in voordat een brandje zich verspreidt. Volg sentiment trends over tijd.',
+    title: 'Branded Search Trends',
+    desc: 'Stijgt de vraag naar jouw merk? Volg branded search volume en direct traffic over tijd. De echte meetlat voor awareness-investering.',
     icon: <MessageCircle className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Campagne Impact',
-    desc: 'Meet het effect van je branding campagnes op merkbekendheid, sentiment en conversie. Van awareness tot bottom-funnel in één overzicht.',
+    title: 'Campagne-causaliteit',
+    desc: 'Meet het effect van awareness-campagnes op branded traffic, direct visits en conversie. Van top-funnel naar bottom — herleidbaar, niet vermoed.',
     icon: <TrendingUp className="w-5 h-5 text-accent" />,
   },
   {
@@ -61,12 +61,12 @@ export default function MerkenPage() {
             Voor merken & brand managers
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Brand intelligence<br />
-            <span className="text-neon">die werkt.</span>
+            Merk-waarde is<br />
+            <span className="text-neon">geen gevoel.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
-            Weet wat er over je merk gezegd wordt, meet het effect van je campagnes op merkperceptie
-            en volg je concurrenten — alles vanuit één platform.
+            Meet je merk met de enige getallen die eerlijk zijn: branded search volume, direct traffic
+            en campagne-causaliteit. Geen "sentiment scores", wel herleidbare impact.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">

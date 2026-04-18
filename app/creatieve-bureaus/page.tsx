@@ -45,13 +45,13 @@ const features = [
     icon: <FileText className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Creative Intelligence',
-    desc: 'Voorspel de effectiviteit van je concept voordat het live gaat. Attention heatmaps, engagement scores en visuele analyse — je weet wat werkt voor publicatie.',
+    title: 'Hook- en Format-Inzichten',
+    desc: 'Welke openingszin, welk format en welke visuele richting presteren in deze doelgroep? Stevin leest de historie en legt het patroon bloot — niet gevoel, wel bewijs.',
     icon: <ShieldCheck className="w-5 h-5 text-accent" />,
   },
   {
     title: 'Executive Briefings, geen PDF-dumps',
-    desc: 'Drie zinnen naar je klant in plaats van 40 pagina\'s. "Je nieuwe visuele stijl is de Growth Multiplier. We zitten onder de Fatigue Threshold. Opschalen."',
+    desc: 'Drie zinnen naar je klant in plaats van 40 pagina\'s. "Je nieuwe visuele stijl werkt. Vermoeidheid nog niet zichtbaar. Opschalen."',
     icon: <Palette className="w-5 h-5 text-accent" />,
   },
 ]
@@ -98,11 +98,11 @@ export default function CreatieveBureausPage() {
             Voor creatieve bureaus
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Creatie op gevoel is verleden tijd.<br />
-            <span className="text-neon">Data-gedreven concepten winnen.</span>
+            Het gevoel klopte.<br />
+            <span className="text-neon">Nu zie je waarom.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
-            Stevin koppelt campagneperformance aan je creatieve proces. Van attention heatmaps tot automated briefings — zodat je team concepten maakt die niet alleen mooi zijn, maar ook converteren.
+            Creatie leeft van intuïtie. Maar een sterk concept wordt nog sterker als je weet wélke hook, welk format en welke kleur écht raakte. Stevin koppelt campagneperformance terug naar je team — zodat de volgende briefing geen gok is.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">

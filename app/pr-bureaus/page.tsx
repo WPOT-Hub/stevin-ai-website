@@ -5,7 +5,7 @@ import { Newspaper, TrendingUp, MessageCircle, BarChart3, Filter, Zap } from 'lu
 
 export const metadata: Metadata = {
   title: 'Stevin voor PR-bureaus — Media intelligence in één platform',
-  description: 'Stevin helpt PR-bureaus en communicatieadviseurs met media monitoring, sentiment tracking en campagne-impact meting. Alles gecentraliseerd.',
+  description: 'Stevin helpt PR-bureaus en communicatieadviseurs met media monitoring, mention-tracking en campagne-impact meting. Alles gecentraliseerd, herleidbaar.',
 }
 
 const features = [
@@ -15,8 +15,8 @@ const features = [
     icon: <Newspaper className="w-5 h-5 text-accent" />,
   },
   {
-    title: 'Sentiment Tracking',
-    desc: 'Meet het sentiment rond je klant of campagne over tijd. Detecteer verschuivingen voordat ze een probleem worden.',
+    title: 'Mention-volume Tracking',
+    desc: 'Volg vermeldingsvolume van je klant over tijd. Piek na een persbericht? Plotselinge stilte? Zie verschuivingen voordat ze een probleem worden.',
     icon: <MessageCircle className="w-5 h-5 text-accent" />,
   },
   {
@@ -44,7 +44,7 @@ const features = [
 const useCases = [
   'Je besteedt uren per week aan het handmatig clippings verzamelen',
   'Je klanten vragen om bewijs dat PR bijdraagt aan merkperceptie',
-  'Je hebt geen structureel overzicht van online sentiment',
+  'Je hebt geen structureel overzicht van online media-aandacht',
   'Je wilt crisismanagement proactief aanpakken, niet reactief',
   'Je rapportages kosten te veel tijd en missen diepgang',
 ]

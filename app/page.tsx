@@ -45,11 +45,14 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-[1.75rem] sm:text-4xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight text-white leading-[1.1]">
-              Heers over je data.<br />
-              <span className="text-neon">Stop de ruis.</span>
+              Wonder?<br />
+              <span className="text-neon">Het is geen wonder.</span>
             </h1>
             <p className="mt-4 text-base sm:text-lg lg:text-xl text-white/45 max-w-2xl mx-auto leading-relaxed">
-              Stevin is de intelligente datalaag die versnipperde signalen omzet in concrete actie. Voor agencies, inhouse teams, promotoren en artiesten.
+              Marketing wordt onnodig ingewikkeld gemaakt — black boxes, vage voorspellingen, dashboards die elkaar tegenspreken. Stevin is de meetlat tussen wat je uitgeeft en wat het werkelijk oplevert.
+            </p>
+            <p className="mt-3 text-xs sm:text-sm text-white/30 italic max-w-2xl mx-auto">
+              &ldquo;Wonder en is gheen wonder.&rdquo; — Simon Stevin, 1586
             </p>
           </div>
 
@@ -65,7 +68,7 @@ export default function HomePage() {
               </div>
               <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Stevin voor Marketing</h2>
               <p className="text-sm text-white/40 leading-relaxed mb-5">
-                Krijg grip op ROAS, elimineer verspilling en scan de markt. Of je nu een bureau runt, een inhouse team aanstuurt of events plant — beheer alles vanuit een centraal systeem.
+                Elke euro herleidbaar naar resultaat. Geen dashboards die elkaar tegenspreken, geen black boxes. Voor bureaus, inhouse teams, merken en ondernemers die hun cijfers serieus nemen.
               </p>
               <span className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-accent/10 text-accent group-hover:bg-accent/20 transition-colors">
                 Ontdek de oplossing
@@ -85,7 +88,7 @@ export default function HomePage() {
               </div>
               <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-pink transition-colors">Stevin voor Artiesten</h2>
               <p className="text-sm text-white/40 leading-relaxed mb-5">
-                Zet online hype om in momentum. Filter de ruis uit duizenden comments en reageer direct op de signalen die ertoe doen.
+                Hype is geen toeval. Stevin traceert welke momenten écht momentum bouwen — en helpt je daarop te handelen voor de rest het doorheeft.
               </p>
               <span className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-pink/10 text-pink group-hover:bg-pink/20 transition-colors">
                 Ontdek de oplossing
@@ -161,9 +164,9 @@ export default function HomePage() {
       <section className="py-16 sm:py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Hoe Stevin de ruis filtert</p>
+            <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Hoe causaliteit eruitziet</p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
-              Eén systeem. Complete controle.
+              Als de data klopt, verdwijnt de mist.
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -177,8 +180,8 @@ export default function HomePage() {
               {
                 icon: <Cpu className="w-5 h-5 text-accent" />,
                 step: '02',
-                title: 'Analyseer',
-                desc: 'Onze AI scant 24/7 op afwijkingen. Van een kelderende conversie tot een plotselinge piek in organisch momentum.',
+                title: 'Vergelijk',
+                desc: 'Platform-cijfers naast de werkelijkheid in je CRM. Kloppen Meta en Google\'s eigen rapportage? Of is er mist?',
               },
               {
                 icon: <Zap className="w-5 h-5 text-neon" />,
@@ -254,10 +257,10 @@ export default function HomePage() {
             }} />
             <div className="relative">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-                Klaar om te beginnen?
+                Het is geen wonder. Het is Stevin.
               </h2>
               <p className="mt-3 text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-                Stop de ruis. Pak de controle terug. Kies waar je wilt starten.
+                Zie wat je betaalt. Zie wat het oplevert. Kies waar je wilt starten.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link

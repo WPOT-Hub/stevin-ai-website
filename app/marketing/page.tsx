@@ -47,7 +47,7 @@ const features = [
   },
   {
     title: 'Brand Momentum Tracking',
-    desc: 'Share of Search, marktsentiment en concurrentiepositie in real-time. Zie verschuivingen voordat ze in marktaandeel zichtbaar worden.',
+    desc: 'Share of Search, branded traffic-trends en concurrentiepositie in real-time. Zie verschuivingen voordat ze in marktaandeel zichtbaar worden.',
     icon: <BarChart3 className="w-5 h-5 text-accent" />,
   },
   {
