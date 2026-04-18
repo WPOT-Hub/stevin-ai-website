@@ -1,9 +1,43 @@
 import type { Metadata } from 'next'
+import localFont from 'next/font/local'
+import { JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import MainShell from '@/components/MainShell'
 import ConsentBanner from '@/components/ConsentBanner'
 import { GoogleTagManagerHead, GoogleTagManagerBody } from '@/components/GoogleTagManager'
+
+// Self-hosted InterDisplay (display headings) — from Stevin Design System
+const interDisplay = localFont({
+  src: [
+    { path: '../public/fonts/InterDisplay-Medium.woff2', weight: '500', style: 'normal' },
+    { path: '../public/fonts/InterDisplay-SemiBold.woff2', weight: '600', style: 'normal' },
+    { path: '../public/fonts/InterDisplay-Bold.woff2', weight: '700', style: 'normal' },
+    { path: '../public/fonts/InterDisplay-ExtraBold.woff2', weight: '800', style: 'normal' },
+    { path: '../public/fonts/InterDisplay-Black.woff2', weight: '900', style: 'normal' },
+  ],
+  variable: '--font-display-inter',
+  display: 'swap',
+})
+
+// Self-hosted Inter (body, variable weight)
+const interBody = localFont({
+  src: [
+    { path: '../public/fonts/InterVariable.woff2', style: 'normal', weight: '100 900' },
+    { path: '../public/fonts/InterVariable-Italic.woff2', style: 'italic', weight: '100 900' },
+  ],
+  variable: '--font-body-inter',
+  display: 'swap',
+})
+
+// JetBrains Mono via next/font/google (bundled, no runtime CDN)
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -36,16 +70,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="nl">
+    <html lang="nl" className={`${interDisplay.variable} ${interBody.variable} ${jetbrainsMono.variable}`}>
       <head>
         <GoogleTagManagerHead />
       </head>
       <body className="min-h-screen flex flex-col">
         <GoogleTagManagerBody />
         <Header />
-        <main className="flex-1 pt-[72px]">
+        <MainShell>
           {children}
-        </main>
+        </MainShell>
         <Footer />
         <ConsentBanner />
       </body>

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Logo from './Logo'
 import { ConsentSettingsButton } from './ConsentBanner'
 
@@ -36,6 +37,10 @@ const footerLinks = {
 }
 
 export default function Footer() {
+  const pathname = usePathname()
+  // Editorial-routes (Simon Stevin) renderen bewust zonder shared shell
+  if (pathname === '/simon-stevin') return null
+
   return (
     <footer className="bg-[#0A1628] text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">

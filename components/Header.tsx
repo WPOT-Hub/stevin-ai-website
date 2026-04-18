@@ -56,6 +56,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
   const isHome = pathname === '/'
+  const isEditorial = pathname === '/simon-stevin'
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -84,6 +85,9 @@ export default function Header() {
   }, [])
 
   const showDark = isHome && !scrolled
+
+  // Editorial-routes (Simon Stevin) renderen bewust zonder shared shell
+  if (isEditorial) return null
 
   return (
     <header

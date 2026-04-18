@@ -28,6 +28,107 @@
   --font-display: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* ---------------------------------------------------------------
+   Stevin Design System — bridge tokens (source naming → repo vars)
+   Aliases zodat geporteerde HTML uit Claude Design 1:1 werkt met
+   oorspronkelijke variabele-namen (--navy, --accent, --muted, enz.)
+   zonder de 22 bestaande routes aan te raken.
+   --------------------------------------------------------------- */
+:root {
+  /* Color aliases */
+  --navy:           var(--color-primary);
+  --navy-light:     var(--color-primary-light);
+  --accent:         var(--color-accent);
+  --accent-dark:    var(--color-accent-dark);
+  --accent-light:   var(--color-accent-light);
+  --neon:           var(--color-neon);
+  --neon-dark:      var(--color-neon-dark);
+  --pink:           var(--color-pink);
+  --surface:        var(--color-surface);
+  --border:         var(--color-border);
+  --muted:          var(--color-muted);
+
+  /* Semantic aliases (source-side) */
+  --bg:             #FFFFFF;
+  --bg-soft:        var(--color-surface);
+  --bg-invert:      var(--color-primary);
+  --fg:             var(--color-primary);
+  --fg-soft:        #2A3A54;
+  --fg-muted:       var(--color-muted);
+  --fg-invert:      #FFFFFF;
+  --line:           var(--color-border);
+  --line-strong:    #C8D2E0;
+
+  /* Type scale (source) */
+  --fs-xs:   12px;
+  --fs-sm:   14px;
+  --fs-base: 16px;
+  --fs-md:   18px;
+  --fs-lg:   20px;
+  --fs-xl:   24px;
+  --fs-2xl:  32px;
+  --fs-3xl:  44px;
+  --fs-4xl:  60px;
+  --fs-5xl:  80px;
+  --fs-6xl:  104px;
+
+  /* Leading / tracking */
+  --lh-tight:  1.05;
+  --lh-snug:   1.2;
+  --lh-normal: 1.4;
+  --lh-body:   1.6;
+  --tr-tight:  -0.03em;
+  --tr-snug:   -0.015em;
+  --tr-normal: 0;
+  --tr-wide:   0.04em;
+  --tr-caps:   0.08em;
+
+  /* Spacing scale */
+  --sp-0:  0;
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+  --sp-10: 128px;
+
+  /* Radii */
+  --r-xs:  4px;
+  --r-sm:  6px;
+  --r-md:  10px;
+  --r-lg:  14px;
+  --r-xl:  20px;
+  --r-pill: 999px;
+
+  /* Elevation */
+  --shadow-xs: 0 1px 2px rgba(10,22,40,.06);
+  --shadow-sm: 0 2px 6px rgba(10,22,40,.06), 0 1px 2px rgba(10,22,40,.04);
+  --shadow-md: 0 8px 24px rgba(10,22,40,.08), 0 2px 4px rgba(10,22,40,.04);
+  --shadow-lg: 0 24px 60px rgba(10,22,40,.12), 0 4px 10px rgba(10,22,40,.06);
+  --shadow-focus: 0 0 0 3px rgba(61,142,255,.35);
+
+  /* Motion */
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 360ms;
+
+  /* Grid */
+  --container: 1200px;
+  --gutter: 24px;
+
+  /* Self-hosted font aliases — exposed naast de bestaande Plus Jakarta Sans.
+     Niet in plaats van. Ronde 1.5 swapt globaal. */
+  --font-display-stevin: var(--font-display-inter), 'InterDisplay', 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-body-stevin:    var(--font-body-inter), 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-mono-stevin:    var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
 html {
   scroll-behavior: smooth;
 }
