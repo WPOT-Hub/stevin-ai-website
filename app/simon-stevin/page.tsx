@@ -13,8 +13,8 @@ export default function SimonStevinPage() {
       {/* Hero — navy with portrait */}
       <section className="bg-primary pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-accent text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-6">
-            — Waarom wij zijn naam dragen
+          <p className="text-white/55 text-xs font-display font-semibold tracking-[0.08em] uppercase mb-6">
+            WAAROM WIJ ZIJN NAAM DRAGEN
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Portrait */}
@@ -29,6 +29,9 @@ export default function SimonStevinPage() {
                   priority
                 />
               </div>
+              <figcaption className="mt-4 text-[11px] font-medium tracking-[0.08em] uppercase text-white/55 leading-relaxed max-w-xs">
+                Portret — Simon Stevin (1548–1620).
+              </figcaption>
             </div>
             {/* H1 + intro */}
             <div className="lg:col-span-7">
@@ -48,7 +51,7 @@ export default function SimonStevinPage() {
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-8 text-base sm:text-lg text-muted leading-relaxed">
             <p>
-              Simon Stevin (1548-1620) was ingenieur, wiskundige en adviseur van Prins Maurits. Hij bouwde forten, zeilwagens en waterwerken. Hij bedacht Nederlandse woorden voor wetenschap die nog steeds meegaan — wiskunde, evenaar, middellijn. Hij maakte complex simpel zonder afbreuk te doen aan wat telt.
+              Simon Stevin (1548–1620) was ingenieur, wiskundige en adviseur van Prins Maurits. Hij bouwde forten, zeilwagens en waterwerken. Hij bedacht Nederlandse woorden voor wetenschap die nog steeds meegaan — wiskunde, evenaar, middellijn. Hij maakte complex simpel zonder afbreuk te doen aan wat telt.
             </p>
 
             {/* Quote block */}

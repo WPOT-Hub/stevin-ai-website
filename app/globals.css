@@ -129,6 +129,13 @@
   --font-mono-stevin:    var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
+/* Werkwijze H1 — linebreak spans: block on desktop, inline on mobile */
+.linebreak { display: block; }
+@media (max-width: 639px) {
+  .linebreak { display: inline; }
+  .linebreak::before { content: ' '; }
+}
+
 html {
   scroll-behavior: smooth;
 }
