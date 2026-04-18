@@ -64,7 +64,11 @@ export default function PlatformPage() {
       <section className="relative bg-primary pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-4">Het Platform</p>
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center justify-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            HET PLATFORM
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             De meetlat onder je marketing.
           </h1>

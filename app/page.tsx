@@ -39,14 +39,15 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Centered headline */}
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.1] mb-6">
-              <Image src="/logos/icon-white.svg" alt="" width={16} height={16} />
-              <span className="text-sm font-medium text-white/60">Data. Inzicht. Actie.</span>
-            </div>
+            <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6 flex items-center justify-center gap-[14px]">
+              <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+              DATA · INZICHT · ACTIE
+              <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            </p>
 
             <h1 className="text-[1.75rem] sm:text-4xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight text-white leading-[1.1]">
               Wonder?<br />
-              <span className="text-neon">Het is geen wonder.</span>
+              <span className="text-[#5DA3FF]">Het is geen wonder.</span>
             </h1>
             <p className="mt-4 text-base sm:text-lg lg:text-xl text-white/45 max-w-2xl mx-auto leading-relaxed">
               Marketing wordt onnodig ingewikkeld gemaakt — black boxes, vage voorspellingen, dashboards die elkaar tegenspreken. Stevin is de meetlat tussen wat je uitgeeft en wat het werkelijk oplevert.
@@ -256,8 +257,8 @@ export default function HomePage() {
               backgroundSize: '24px 24px',
             }} />
             <div className="relative">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-                Het is geen wonder. Het is Stevin.
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold tracking-tight text-white">
+                Het is geen wonder. Het is <span className="text-[#5DA3FF]">Stevin</span>.
               </h2>
               <p className="mt-3 text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
                 Zie wat je betaalt. Zie wat het oplevert. Kies waar je wilt starten.

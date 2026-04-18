@@ -57,12 +57,13 @@ export default function B2BPage() {
         <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
         <DataRain variant="b2b" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-semibold mb-6">
-            Voor B2B marketing & sales
-          </div>
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            VOOR B2B MARKETING & SALES
+          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Van lead tot klant.<br />
-            <span className="text-neon">Volledig gemeten.</span>
+            <span className="text-[#5DA3FF]">Volledig gemeten.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
             Stevin verbindt je paid media, website, CRM en opvolging zodat je precies weet
@@ -124,7 +125,7 @@ export default function B2BPage() {
       {/* CTA */}
       <section className="py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h2>
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-4">Het is geen wonder. Het is <span className="text-[#5DA3FF]">Stevin</span>.</h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
             Van lead tot klant, elke euro herleidbaar. Plan een gesprek en ontdek hoe Stevin je B2B marketing meetbaar maakt tot op klantniveau.
           </p>

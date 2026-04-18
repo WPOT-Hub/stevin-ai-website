@@ -54,12 +54,13 @@ export default function VoorArtiestenPage() {
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-semibold mb-6">
-                Voor artiesten & influencers
-              </div>
+              <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+                <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+                VOOR ARTIESTEN & INFLUENCERS
+              </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                 Het Signaal<br />
-                <span className="text-neon">in de Ruis.</span>
+                <span className="text-[#5DA3FF]">in de Ruis.</span>
               </h1>
               <p className="text-lg sm:text-xl text-white/60 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 Stop met het doorspitten van duizenden comments. Stevin filtert social chaos en zet het om in momentum, fan loyalty en merch sales.
@@ -192,7 +193,7 @@ export default function VoorArtiestenPage() {
       {/* CTA */}
       <section className="py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h2>
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-4">Het is geen wonder. Het is <span className="text-[#5DA3FF]">Stevin</span>.</h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
             Koppel je kanalen en zie direct wat je de afgelopen maanden hebt gemist.
           </p>

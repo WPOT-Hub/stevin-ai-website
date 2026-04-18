@@ -94,12 +94,13 @@ export default function RetailPage() {
         <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
         <DataRain variant="retail" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-semibold mb-6">
-            Voor retail en FMCG
-          </div>
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            VOOR RETAIL EN FMCG
+          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Van schap tot scherm.<br />
-            <span className="text-neon">Alles verbonden.</span>
+            <span className="text-[#5DA3FF]">Alles verbonden.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
             Stevin verbindt je online en offline data, monitort je share of search en meet de impact van campagnes op winkelbezoek. Eén platform voor omnichannel retail marketing.
@@ -199,7 +200,7 @@ export default function RetailPage() {
               </ul>
             </div>
             <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h3>
+              <h3 className="text-2xl font-display font-extrabold text-white mb-4">Het is geen wonder. Het is <span className="text-[#5DA3FF]">Stevin</span>.</h3>
               <p className="text-white/50 mb-8 leading-relaxed">
                 Van online scherm tot fysiek schap — één meetlat. Plan een gesprek en we laten zien hoe Stevin jouw retail marketing verbindt.
               </p>

@@ -57,12 +57,13 @@ export default function InfluencersPage() {
         <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
         <DataRain variant="influencer" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink/10 border border-pink/20 text-pink text-sm font-semibold mb-6">
-            Voor influencers & creators
-          </div>
+          <p className="text-[#F4216A] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#F4216A] opacity-60 flex-shrink-0" aria-hidden="true" />
+            VOOR INFLUENCERS & CREATORS
+          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Van bereik<br />
-            <span className="text-neon">naar bewijs.</span>
+            <span className="text-[#5DA3FF]">naar bewijs.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
             Stop met screenshots en losse statistieken. Stevin geeft je grip op je totale bereik,
@@ -124,7 +125,7 @@ export default function InfluencersPage() {
       {/* CTA */}
       <section className="py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h2>
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-4">Het is geen wonder. Het is <span className="text-[#5DA3FF]">Stevin</span>.</h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
             Koppel je kanalen en zie binnen een week wat je de afgelopen maanden hebt gemist.
           </p>

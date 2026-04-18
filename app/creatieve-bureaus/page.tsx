@@ -94,12 +94,13 @@ export default function CreatieveBureausPage() {
         <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
         <DataRain variant="creatief" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-semibold mb-6">
-            Voor creatieve bureaus
-          </div>
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            VOOR CREATIEVE BUREAUS
+          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Het gevoel klopte.<br />
-            <span className="text-neon">Nu zie je waarom.</span>
+            <span className="text-[#5DA3FF]">Nu zie je waarom.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
             Creatie leeft van intuïtie. Maar een sterk concept wordt nog sterker als je weet wélke hook, welk format en welke kleur écht raakte. Stevin koppelt campagneperformance terug naar je team — zodat de volgende briefing geen gok is.
@@ -199,7 +200,7 @@ export default function CreatieveBureausPage() {
               </ul>
             </div>
             <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h3>
+              <h3 className="text-2xl font-display font-extrabold text-white mb-4">Het is geen wonder. Het is <span className="text-[#5DA3FF]">Stevin</span>.</h3>
               <p className="text-white/50 mb-8 leading-relaxed">
                 Creatie op bewijs bouwen. Plan een gesprek en we laten zien hoe Stevin jouw creatieve proces versterkt met data.
               </p>
