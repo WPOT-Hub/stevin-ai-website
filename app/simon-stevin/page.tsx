@@ -21,10 +21,11 @@ export default function SimonStevinPage() {
             <div className="lg:col-span-5">
               <div className="relative aspect-[3/4] bg-surface rounded-lg overflow-hidden max-w-xs mx-auto lg:mx-0">
                 <Image
-                  src="/simon-stevin-lineart.svg"
+                  src="/simon-stevin-lineart.png"
                   alt="Portret van Simon Stevin — lijntekening gebaseerd op historisch portret"
                   fill
                   className="object-cover"
+                  style={{ mixBlendMode: 'multiply' }}
                   priority
                 />
               </div>
