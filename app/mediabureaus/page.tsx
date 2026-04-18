@@ -199,9 +199,9 @@ export default function MediabureausPage() {
               </ul>
             </div>
             <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-bold text-white mb-4">Klaar om te beginnen?</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h3>
               <p className="text-white/50 mb-8 leading-relaxed">
-                Plan een gesprek en we laten zien hoe Stevin jouw mediabureau helpt om sneller, scherper en winstgevender te werken. Geen verplichtingen.
+                Scherper bureaus draaien op bewijs. Plan een gesprek en we laten zien hoe Stevin jouw mediabureau sneller en winstgevender maakt.
               </p>
               <Link
                 href="/contact"

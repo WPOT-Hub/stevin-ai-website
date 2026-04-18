@@ -147,9 +147,9 @@ export default function VoorAgenciesPage() {
       {/* CTA */}
       <section className="py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Laten we kennismaken</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
-            Plan een vrijblijvend gesprek en ontdek hoe Stevin jouw bureau kan versterken.
+            Technologiepartner voor bureaus die transparantie als differentiator willen inzetten. Plan een kennismaking.
           </p>
           <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
             Plan een kennismaking

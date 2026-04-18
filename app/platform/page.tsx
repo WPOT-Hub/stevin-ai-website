@@ -254,9 +254,9 @@ export default function PlatformPage() {
       {/* CTA */}
       <section className="py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Klaar om het platform te zien?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
-            Plan een demo en ontdek hoe Stevin je marketing transformeert.
+            De meetlat onder je marketing — live zien werken. Plan een demo.
           </p>
           <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
             Plan een demo

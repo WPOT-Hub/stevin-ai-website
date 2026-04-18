@@ -199,9 +199,9 @@ export default function HealthcareMarketingPage() {
               </ul>
             </div>
             <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-bold text-white mb-4">Klaar om te beginnen?</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h3>
               <p className="text-white/50 mb-8 leading-relaxed">
-                Plan een gesprek en we laten zien hoe Stevin jouw healthcare marketing versnelt zonder compliance-risicos. Geen verplichtingen.
+                Compliant én meetbaar — zonder snelheid in te leveren. Plan een gesprek en we laten zien hoe Stevin jouw healthcare marketing versnelt.
               </p>
               <Link
                 href="/contact"

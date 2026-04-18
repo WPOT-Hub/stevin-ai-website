@@ -176,8 +176,8 @@ export default function GEOPage() {
       {/* CTA */}
       <Section bg="surface">
         <CTABlock
-          title="Zichtbaar blijven in de nieuwe zoekervaring?"
-          description="Plan een gesprek en we laten zien hoe je content en sitestructuur geoptimaliseerd kunnen worden voor AI-zoekmachines."
+          title="Het is geen wonder. Het is Stevin."
+          description="Zichtbaar blijven in AI-zoekervaringen vereist structuur, geen gok. Plan een gesprek en we laten zien hoe je content en sitestructuur geoptimaliseerd kunnen worden."
           buttonText="Plan een gesprek"
           buttonHref="/contact"
         />

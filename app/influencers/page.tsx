@@ -124,7 +124,7 @@ export default function InfluencersPage() {
       {/* CTA */}
       <section className="py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Klaar om je data te ownen?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
             Koppel je kanalen en zie binnen een week wat je de afgelopen maanden hebt gemist.
           </p>

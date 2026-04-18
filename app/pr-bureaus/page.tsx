@@ -124,9 +124,9 @@ export default function PRBureausPage() {
       {/* CTA */}
       <section className="py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Klaar voor betere PR-intelligence?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Het is geen wonder. Het is Stevin.</h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
-            Plan een gesprek en ontdek hoe Stevin je PR-werkzaamheden versterkt met data.
+            Van clipping-diensten naar meetbare impact. Plan een gesprek en ontdek hoe Stevin je PR-werkzaamheden versterkt met harde data.
           </p>
           <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
             Plan een gesprek
