@@ -39,7 +39,6 @@ const footerLinks = {
 export default function Footer() {
   const pathname = usePathname()
   // Editorial-routes (Simon Stevin) renderen bewust zonder shared shell
-  if (pathname === '/simon-stevin') return null
 
   return (
     <footer className="bg-[#0A1628] text-white">

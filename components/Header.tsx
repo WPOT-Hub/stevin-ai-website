@@ -84,10 +84,7 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  const showDark = isHome && !scrolled
-
-  // Editorial-routes (Simon Stevin) renderen bewust zonder shared shell
-  if (isEditorial) return null
+  const showDark = (isHome || isEditorial) && !scrolled
 
   return (
     <header
