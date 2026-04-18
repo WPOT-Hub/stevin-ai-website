@@ -1,113 +1,89 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Radio, Target, Zap, Users, BarChart3 } from 'lucide-react'
-import Section from '@/components/Section'
-import CTABlock from '@/components/CTABlock'
-import { services } from '@/data/services'
-
-const ICON_MAP: Record<string, React.ReactNode> = {
-  'radio': <Radio className="w-6 h-6 text-accent" />,
-  'target': <Target className="w-6 h-6 text-accent" />,
-  'zap': <Zap className="w-6 h-6 text-accent" />,
-  'users': <Users className="w-6 h-6 text-accent" />,
-  'bar-chart-3': <BarChart3 className="w-6 h-6 text-accent" />,
-}
 
 export const metadata: Metadata = {
-  title: 'Diensten',
-  description: 'Van paid media tot CRM-inrichting en tracking: Stevin.AI bouwt een marketingsysteem dat samenwerkt. Geen losse diensten, maar een werkend geheel.',
+  title: 'Diensten — Stevin',
+  description: 'Geen pakkettenlijst. Een werkend platform dat spend en resultaat met elkaar laat kloppen — in combinaties die bij jou passen.',
 }
+
+const tracks = [
+  {
+    number: '01',
+    title: 'Platform-licentie',
+    body: 'Je krijgt Stevin draaiend op je eigen stack. 220+ integraties, Director-laag, CRM-koppeling, causale rapporten. Je consultant of wijzelf bedient het.',
+  },
+  {
+    number: '02',
+    title: 'Platform + Consultancy',
+    body: 'Je krijgt het platform plus ons als partner. Wekelijkse reviews, briefings naar je team of klant, strategische beslissingen samen. Schaalbaar per klantbestand.',
+  },
+  {
+    number: '03',
+    title: 'Agency Partner',
+    body: 'Je bureau draait Stevin onder eigen merk. Wij leveren de motor, jij levert het gezicht naar de klant. Voor bureaus die transparantie als differentiator willen inzetten.',
+  },
+]
 
 export default function DienstenPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-white pt-12 sm:pt-16 lg:pt-20 pb-8">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">
-              Diensten die samen één systeem vormen
-            </h1>
-            <p className="mt-6 text-lg text-muted leading-relaxed">
-              Stevin.AI levert geen losse diensten. We bouwen een marketingsysteem waarin paid media, landingspagina&apos;s, automation, CRM en tracking samenwerken. Elk onderdeel versterkt het andere.
-            </p>
+      {/* Hero — navy */}
+      <section className="bg-primary pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-accent text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-6">
+            — Diensten
+          </p>
+          <h1 className="font-display font-bold text-white leading-[1.05] tracking-tight" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 5rem)' }}>
+            We doen één ding.<br />
+            <span className="text-neon">De meetlat bouwen.</span>
+          </h1>
+          <p className="mt-8 text-base sm:text-lg lg:text-xl text-white/60 leading-relaxed max-w-2xl">
+            Geen pakkettenlijst. Geen modules met checkboxes. Een werkend platform dat spend en resultaat met elkaar laat kloppen — in combinaties die bij jou passen.
+          </p>
+        </div>
+      </section>
+
+      {/* Tracks — white */}
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+            {tracks.map((track) => (
+              <div key={track.number} className="space-y-5">
+                <p className="text-5xl font-display font-bold text-accent tracking-tight">
+                  {track.number}
+                </p>
+                <h2 className="text-xl sm:text-2xl font-display font-bold text-primary tracking-tight">
+                  {track.title}
+                </h2>
+                <p className="text-base text-muted leading-relaxed">
+                  {track.body}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      {services.map((service, index) => (
-        <Section key={service.slug} id={service.slug} bg={index % 2 === 0 ? 'surface' : 'white'}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
-                {ICON_MAP[service.icon] || <BarChart3 className="w-6 h-6 text-accent" />}
-              </div>
-              <h2 className="text-3xl font-bold tracking-tight text-primary">
-                {service.title}
-              </h2>
-              <p className="mt-4 text-lg text-muted leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-            <div className="space-y-6">
-              <div className="p-6 rounded-xl bg-white border border-border">
-                <h3 className="text-base font-bold text-primary mb-2">Waarom dit belangrijk is</h3>
-                <p className="text-sm text-muted leading-relaxed">{service.whyImportant}</p>
-              </div>
-              <div className="p-6 rounded-xl bg-white border border-border">
-                <h3 className="text-base font-bold text-primary mb-2">Hoe het samenhangt</h3>
-                <p className="text-sm text-muted leading-relaxed">{service.howItConnects}</p>
-              </div>
-              <div className="p-6 rounded-xl bg-white border border-border">
-                <h3 className="text-base font-bold text-primary mb-3">Wat we doen</h3>
-                <ul className="space-y-2">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5 text-sm text-muted">
-                      <svg className="flex-shrink-0 w-4 h-4 text-accent mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </Section>
-      ))}
-
-      {/* System overview */}
-      <Section bg="primary">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-            Alles werkt samen
+      {/* Kicker + CTA — navy */}
+      <section className="bg-primary py-20 sm:py-24">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white tracking-tight mb-8">
+            Het is geen wonder. Het is Stevin.
           </h2>
-          <p className="mt-6 text-lg text-slate-300 leading-relaxed">
-            Paid media genereert verkeer. Landingspagina&apos;s converteren bezoekers. Automation volgt leads op. CRM beheert de pipeline. Tracking meet wat werkt. Samen vormen ze één systeem dat je marketing meetbaar en schaalbaar maakt.
+          <p className="text-base sm:text-lg text-white/60 mb-10 max-w-xl mx-auto">
+            Bespreek welke track bij jou past.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            {services.map((service) => (
-              <span
-                key={service.slug}
-                className="px-4 py-2 text-sm font-medium bg-white/10 text-white rounded-lg border border-white/10"
-              >
-                {service.title}
-              </span>
-            ))}
-          </div>
+          <Link
+            href="/contact"
+            className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
+          >
+            Plan een gesprek
+          </Link>
+          <p className="mt-12 text-xs text-white/30 italic">
+            &ldquo;Wonder en is gheen wonder.&rdquo; — Simon Stevin, 1586
+          </p>
         </div>
-      </Section>
-
-      {/* CTA */}
-      <Section bg="surface">
-        <CTABlock
-          title="Benieuwd hoe dit er voor jouw bedrijf uitziet?"
-          description="Plan een gesprek en we laten zien welke onderdelen het meeste impact hebben voor jouw situatie."
-          buttonText="Plan een gesprek"
-          buttonHref="/contact"
-        />
-      </Section>
+      </section>
     </>
   )
 }

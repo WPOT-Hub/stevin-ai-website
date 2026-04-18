@@ -14,6 +14,7 @@ const footerLinks = {
   ],
   bedrijf: [
     { label: 'Werkwijze', href: '/werkwijze' },
+    { label: 'Simon Stevin', href: '/simon-stevin' },
     { label: 'Integraties', href: '/integraties' },
     { label: 'SEO', href: '/seo' },
     { label: 'GEO', href: '/geo' },

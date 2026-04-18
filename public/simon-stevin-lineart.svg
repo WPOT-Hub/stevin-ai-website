@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" fill="none">
+  <!-- Placeholder portrait — sober silhouette until final line-art PNG is uploaded -->
+  <rect width="300" height="400" fill="#F7F9FC"/>
+  <g stroke="#0A1628" stroke-width="1.2" stroke-linecap="round" fill="none">
+    <!-- Head silhouette -->
+    <path d="M 150 80 C 190 80 215 115 215 155 C 215 175 210 195 200 210 L 200 235 C 225 245 250 260 260 280 L 260 320 C 260 340 245 355 220 358 L 80 358 C 55 355 40 340 40 320 L 40 280 C 50 260 75 245 100 235 L 100 210 C 90 195 85 175 85 155 C 85 115 110 80 150 80 Z"/>
+    <!-- Hair texture -->
+    <path d="M 90 120 C 95 105 105 95 120 90 M 180 90 C 195 95 205 105 210 120 M 100 100 C 110 92 125 88 140 87 M 160 87 C 175 88 190 92 200 100"/>
+    <!-- Eyes -->
+    <ellipse cx="125" cy="155" rx="6" ry="3" fill="#0A1628"/>
+    <ellipse cx="175" cy="155" rx="6" ry="3" fill="#0A1628"/>
+    <!-- Brow lines -->
+    <path d="M 115 143 L 135 143 M 165 143 L 185 143"/>
+    <!-- Nose -->
+    <path d="M 150 160 L 150 180 L 155 185"/>
+    <!-- Moustache -->
+    <path d="M 130 197 C 140 195 150 196 160 195 L 170 197 M 140 197 C 145 202 155 202 160 197"/>
+    <!-- Beard -->
+    <path d="M 125 205 C 130 220 135 230 150 235 C 165 230 170 220 175 205 M 130 215 C 140 222 160 222 170 215 M 135 225 C 143 228 157 228 165 225"/>
+    <!-- Ruffed collar -->
+    <path d="M 100 240 C 115 250 130 255 150 255 C 170 255 185 250 200 240"/>
+    <path d="M 90 252 C 95 258 103 262 115 265 M 185 265 C 197 262 205 258 210 252"/>
+    <path d="M 80 265 C 85 272 92 278 105 282 M 195 282 C 208 278 215 272 220 265"/>
+    <!-- Crosshatching on jaw/cheeks for etching feel -->
+    <g opacity="0.4" stroke-width="0.6">
+      <line x1="100" y1="170" x2="110" y2="200"/>
+      <line x1="105" y1="170" x2="115" y2="200"/>
+      <line x1="110" y1="170" x2="120" y2="200"/>
+      <line x1="190" y1="170" x2="200" y2="200"/>
+      <line x1="185" y1="170" x2="195" y2="200"/>
+      <line x1="180" y1="170" x2="190" y2="200"/>
+    </g>
+  </g>
+</svg>

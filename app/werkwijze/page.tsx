@@ -1,169 +1,106 @@
 import type { Metadata } from 'next'
-import Section from '@/components/Section'
-import CTABlock from '@/components/CTABlock'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Werkwijze',
-  description: 'Hoe Stevin.AI werkt: van analyse tot continu verbeteren. Een gestructureerde aanpak in vier fasen die je marketing meetbaar en schaalbaar maakt.',
+  title: 'Werkwijze — Stevin',
+  description: 'De vier fases van ruwe platform-data naar herleidbaar resultaat. Geen black boxes, geen magie.',
 }
 
 const phases = [
   {
-    number: 1,
-    title: 'Analyse',
-    subtitle: 'Begrijpen wat er speelt',
-    description: 'We starten met een grondige analyse van je huidige situatie. Geen aannames, maar feiten.',
-    details: [
-      'Audit van je huidige campagnes, tracking en conversieflow',
-      'Analyse van je CRM-inrichting en leadopvolging',
-      'Beoordeling van je marketingstack en koppelingen',
-      'Identificatie van quick wins en structurele verbeteringen',
-      'Meetplan en KPI-framework opstellen',
-    ],
-    outcome: 'Een helder beeld van waar je staat, wat werkt, wat niet, en een concreet plan voor de volgende stappen.',
+    number: '01',
+    title: 'Koppelen',
+    body: 'We verbinden je volledige digitale ecosysteem met 220+ native integraties. Ruwe data realtime beschikbaar in één overzicht.',
+    claim: 'Geen middleware, geen vertraging.',
   },
   {
-    number: 2,
-    title: 'Inrichten',
-    subtitle: 'De basis op orde brengen',
-    description: 'We richten je marketingstack in zodat alles samenwerkt. Tracking, koppelingen, automations en dashboards.',
-    details: [
-      'Implementatie van tracking (GA4, GTM, Consent Mode)',
-      'CRM-inrichting en koppeling met leadbronnen',
-      'Opzetten van marketing automation en lead scoring',
-      'Landingspagina-optimalisatie',
-      'Dashboard-bouw voor rapportage en inzicht',
-    ],
-    outcome: 'Een werkende marketingstack waarin advertenties, website, CRM en opvolging op elkaar zijn aangesloten.',
+    number: '02',
+    title: 'Vergelijken',
+    body: 'Platform-cijfers naast de werkelijkheid in je CRM. Waar Meta of Google afwijkt, wordt dat meetbaar.',
+    claim: 'Niet vermoed, wel bewezen.',
   },
   {
-    number: 3,
+    number: '03',
     title: 'Activeren',
-    subtitle: 'Live gaan en resultaat genereren',
-    description: 'Campagnes gaan live, flows starten en leads worden automatisch verwerkt en opgevolgd.',
-    details: [
-      'Lancering van campagnes op de juiste kanalen',
-      'Activering van automation en opvolgingsflows',
-      'Monitoring van conversies en datakwaliteit',
-      'Eerste optimalisatieronde op basis van live data',
-      'Afstemming met je salesteam over leadkwaliteit',
-    ],
-    outcome: 'Je marketingsysteem draait. Leads komen binnen, worden opgevolgd en je hebt real-time inzicht in prestaties.',
+    body: 'Concrete acties in plaats van passieve grafieken. Stevin vertelt per euro waar je morgen moet sturen.',
+    claim: 'Adviezen, geen dashboards.',
   },
   {
-    number: 4,
+    number: '04',
     title: 'Verbeteren',
-    subtitle: 'Continu optimaliseren op resultaat',
-    description: 'We analyseren wat werkt en sturen bij. Niet op gevoel, maar op data.',
-    details: [
-      'Wekelijkse en maandelijkse performance reviews',
-      'Campagne-optimalisatie op basis van klantwaarde',
-      'A/B-testen van landingspagina\'s en advertenties',
-      'Verfijning van lead scoring en segmentatie',
-      'Uitbreiding naar nieuwe kanalen en doelgroepen',
-    ],
-    outcome: 'Een marketingsysteem dat continu beter wordt en steeds meer rendement oplevert.',
+    body: 'Het platform leert van elke interactie. Rapportages, alerts en content passen zich aan op jouw werkwijze.',
+    claim: 'Feedback loop als fundament.',
   },
 ]
 
 export default function WerkwijzePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-white pt-12 sm:pt-16 lg:pt-20 pb-8">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">
-              Onze werkwijze
-            </h1>
-            <p className="mt-6 text-lg text-muted leading-relaxed">
-              Een gestructureerde aanpak in vier fasen. Van analyse tot continu verbeteren. Elke fase bouwt voort op de vorige, zodat je marketing stap voor stap beter wordt.
-            </p>
-          </div>
+      {/* Hero — navy */}
+      <section className="bg-primary pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-accent text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-6">
+            — Werkwijze
+          </p>
+          <h1 className="font-display font-bold text-white leading-[1.05] tracking-tight" style={{ fontSize: 'clamp(2.75rem, 6vw, 6rem)' }}>
+            <span className="block">Eerst koppelen.</span>
+            <span className="block">Dan vergelijken.</span>
+            <span className="block">Dan sturen.</span>
+          </h1>
+          <p className="mt-8 text-base sm:text-lg lg:text-xl text-white/60 leading-relaxed max-w-2xl">
+            De vier fases van ruwe platform-data naar herleidbaar resultaat.
+          </p>
         </div>
       </section>
 
-      {/* Phases */}
-      {phases.map((phase, index) => (
-        <Section key={phase.number} bg={index % 2 === 0 ? 'surface' : 'white'}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-            {/* Phase indicator */}
-            <div className="lg:col-span-2">
-              <div className="flex lg:flex-col items-center lg:items-start gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-accent text-white flex items-center justify-center text-xl font-bold">
-                  {phase.number}
+      {/* Phases — white */}
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="space-y-16 sm:space-y-20">
+            {phases.map((phase) => (
+              <div key={phase.number} className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
+                <div className="lg:col-span-2">
+                  <p className="text-5xl sm:text-6xl font-display font-bold text-accent tracking-tight">
+                    {phase.number}
+                  </p>
                 </div>
-                <div className="lg:hidden">
-                  <h2 className="text-2xl font-bold text-primary">{phase.title}</h2>
-                  <p className="text-sm text-muted">{phase.subtitle}</p>
+                <div className="lg:col-span-10 space-y-4">
+                  <h2 className="text-2xl sm:text-3xl font-display font-bold text-primary">
+                    {phase.title}
+                  </h2>
+                  <p className="text-base sm:text-lg text-muted leading-relaxed">
+                    {phase.body}
+                  </p>
+                  <p className="text-sm sm:text-base font-semibold text-primary tracking-tight">
+                    {phase.claim}
+                  </p>
                 </div>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="lg:col-span-10">
-              <div className="hidden lg:block mb-4">
-                <h2 className="text-3xl font-bold text-primary">{phase.title}</h2>
-                <p className="text-lg text-muted mt-1">{phase.subtitle}</p>
-              </div>
-              <p className="text-lg text-muted leading-relaxed mb-6">
-                {phase.description}
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 rounded-xl bg-white border border-border">
-                  <h3 className="text-base font-bold text-primary mb-4">Wat we doen</h3>
-                  <ul className="space-y-2.5">
-                    {phase.details.map((detail) => (
-                      <li key={detail} className="flex items-start gap-2.5 text-sm text-muted">
-                        <svg className="flex-shrink-0 w-4 h-4 text-accent mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="p-6 rounded-xl bg-accent/5 border border-accent/10">
-                  <h3 className="text-base font-bold text-primary mb-3">Resultaat van deze fase</h3>
-                  <p className="text-sm text-muted leading-relaxed">{phase.outcome}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Section>
-      ))}
-
-      {/* Principles */}
-      <Section bg="primary">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-            Principes die in elke fase terugkomen
-          </h2>
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              { title: 'Transparantie', desc: 'Je weet altijd wat we doen, waarom, en wat het oplevert. Geen verborgen kosten of onduidelijke rapportages.' },
-              { title: 'Data-gedreven', desc: 'Elke beslissing is gebaseerd op data. Geen aannames, geen buikgevoel. We meten, analyseren en optimaliseren.' },
-              { title: 'Resultaatgericht', desc: 'We sturen op wat ertoe doet: klanten en omzet. Niet op vanity metrics of tussenliggende cijfers.' },
-            ].map((item) => (
-              <div key={item.title} className="p-6 rounded-xl bg-white/5 border border-white/10 text-left">
-                <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
-      </Section>
+      </section>
 
-      {/* CTA */}
-      <Section bg="surface">
-        <CTABlock
-          title="Klaar om te beginnen?"
-          description="Plan een gesprek en we starten met een analyse van je huidige situatie. Binnen twee tot vier weken zijn de eerste verbeteringen live."
-          buttonText="Plan een gesprek"
-          buttonHref="/contact"
-        />
-      </Section>
+      {/* Kicker + CTA — navy */}
+      <section className="bg-primary py-20 sm:py-24">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white tracking-tight mb-8">
+            Het is geen wonder. Het is Stevin.
+          </h2>
+          <p className="text-base sm:text-lg text-white/60 mb-10 max-w-xl mx-auto">
+            Zie wat je betaalt. Zie wat het oplevert.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
+          >
+            Plan een gesprek
+          </Link>
+          <p className="mt-12 text-xs text-white/30 italic">
+            &ldquo;Wonder en is gheen wonder.&rdquo; — Simon Stevin, 1586
+          </p>
+        </div>
+      </section>
     </>
   )
 }
