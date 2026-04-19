@@ -91,7 +91,7 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-white/80 nav-glass border-b border-border/50 shadow-sm'
-          : isHome
+          : (isHome || isEditorial)
             ? 'bg-transparent'
             : 'bg-white/70 nav-glass'
       }`}
