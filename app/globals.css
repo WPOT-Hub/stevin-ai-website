@@ -138,11 +138,18 @@
 
 html {
   scroll-behavior: smooth;
+  /* Canvas-kleur = primary navy. Witte secties hebben bg-white class.
+     Dit zorgt dat mobile Safari fixed-element compositing correct donker
+     rendert op dark-hero pagina's (header transparent over donkere hero). */
+  background-color: var(--color-primary);
 }
 
 body {
   font-family: var(--font-sans);
   color: var(--color-primary);
+  /* Transparant zodat html's primary canvas zichtbaar is achter de
+     transparante fixed header op dark-hero pagina's. */
+  background-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

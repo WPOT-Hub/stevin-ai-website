@@ -34,45 +34,31 @@ const tracks = [
 export default function DienstenPage() {
   return (
     <>
-      {/* ── Hero — navy 135° gradient ── */}
-      <section
-        className="overflow-hidden"
-        style={{
-          background: 'linear-gradient(135deg, #0A1628 0%, #1A2744 100%)',
-          padding: '112px 24px 128px',
-        }}
-      >
+      {/* ── Hero ── */}
+      <section className="bg-primary -mt-[72px] overflow-hidden" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
         <div className="mx-auto max-w-[1200px]">
           {/* Eyebrow */}
-          <p className="text-white/55 text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-8 flex items-center gap-[14px]">
-            <span className="inline-block w-6 h-px bg-white/45 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
             DIENSTEN
           </p>
 
           <h1
-            className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em] m-0"
-            style={{ fontSize: 'clamp(48px, 6.5vw, 96px)', maxWidth: '1040px' }}
+            className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
+            style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '14ch' }}
           >
             We doen één ding.<br />
             <span className="text-[#5DA3FF]">De meetlat bouwen.</span>
           </h1>
 
-          <p className="text-white/78 leading-[1.55] max-w-[640px] mt-9" style={{ fontSize: '20px' }}>
+          <p className="text-white/60 leading-[1.55] max-w-[560px] mt-8" style={{ fontSize: '20px' }}>
             Geen pakkettenlijst. Geen modules met checkboxes. Een werkend
             platform dat spend en resultaat met elkaar laat kloppen — in
             combinaties die bij jou passen.
           </p>
 
-          {/* Ruler-dark — mini meetlat onder sub */}
-          <div className="mt-10 max-w-[420px] relative" style={{ height: '18px' }}>
-            <div className="absolute left-0 right-0 top-0 h-0.5 bg-white/35" />
-            {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((pct) => (
-              <span
-                key={pct}
-                className="absolute top-0 w-0.5 bg-white/50"
-                style={{ left: `${pct}%`, height: pct === 0 || pct === 50 || pct === 100 ? '12px' : '6px' }}
-              />
-            ))}
+          <div className="mt-16">
+            <MeetlatRuler color="rgba(255,255,255,.35)" />
           </div>
         </div>
       </section>

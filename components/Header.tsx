@@ -56,7 +56,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
   // Pages with a light/white hero — header stays white on these
-  const lightHeroPages = ['/seo', '/geo', '/contact', '/integraties', '/diensten']
+  const lightHeroPages = ['/seo', '/geo', '/contact', '/integraties']
   const isLightHero = lightHeroPages.some(p => pathname === p || pathname.startsWith(p + '/'))
   const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -91,24 +91,26 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 nav-glass border-b transition-[background-color,border-color,box-shadow] duration-500 ease-out ${
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-[background-color,border-color,box-shadow,backdrop-filter] duration-500 ease-out ${
         scrolled
-          ? 'bg-white/85 border-border/40 shadow-sm'
+          ? 'nav-glass bg-white/85 border-border/40 shadow-sm'
           : isLightHero
-            ? 'bg-white/70 border-border/20'
+            ? 'nav-glass bg-white/70 border-border/20'
             : 'bg-white/0 border-white/0'
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-8">
         <div className="flex h-[72px] items-center justify-between">
           {/* Logo: cross-fade between white and primary variant */}
-          <Link href="/" className="flex-shrink-0 relative" style={{ width: 140, height: 23 }}>
-            <span className={`absolute inset-0 transition-opacity duration-500 ${showDark ? 'opacity-100' : 'opacity-0'}`}>
-              <Logo variant="mono-white" width={140} height={23} />
-            </span>
-            <span className={`absolute inset-0 transition-opacity duration-500 ${showDark ? 'opacity-0' : 'opacity-100'}`}>
-              <Logo variant="primary" width={140} height={23} />
-            </span>
+          <Link href="/" className="flex-shrink-0">
+            <div className="relative" style={{ width: 140, height: 23 }}>
+              <span className={`absolute inset-0 transition-opacity duration-500 ${showDark ? 'opacity-100' : 'opacity-0'}`}>
+                <Logo variant="mono-white" width={140} height={23} />
+              </span>
+              <span className={`absolute inset-0 transition-opacity duration-500 ${showDark ? 'opacity-0' : 'opacity-100'}`}>
+                <Logo variant="primary" width={140} height={23} />
+              </span>
+            </div>
           </Link>
 
           {/* Desktop nav */}
