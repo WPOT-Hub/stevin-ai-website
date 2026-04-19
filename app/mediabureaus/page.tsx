@@ -90,7 +90,7 @@ export default function MediabureausPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-primary" style={{ padding: '96px 24px 128px' }}>
+      <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />

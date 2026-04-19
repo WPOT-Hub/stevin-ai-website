@@ -55,8 +55,9 @@ export default function Header() {
   const [mobileVoorWieOpen, setMobileVoorWieOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
-  const isHome = pathname === '/'
-  const isEditorial = pathname === '/simon-stevin'
+  // Pages with a light/white hero — header stays white on these
+  const lightHeroPages = ['/seo', '/geo', '/contact', '/integraties', '/diensten']
+  const isLightHero = lightHeroPages.some(p => pathname === p || pathname.startsWith(p + '/'))
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -84,16 +85,18 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  const showDark = (isHome || isEditorial) && !scrolled
+  // Dark = transparent header with white logo+text, floats over dark navy hero
+  // Applies to all pages EXCEPT those with a light/white first section
+  const showDark = !isLightHero && !scrolled
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-white/80 nav-glass border-b border-border/50 shadow-sm'
-          : (isHome || isEditorial)
-            ? 'bg-transparent'
-            : 'bg-white/70 nav-glass'
+          : isLightHero
+            ? 'bg-white/70 nav-glass'
+            : 'bg-transparent'
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-8">

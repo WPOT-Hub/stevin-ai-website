@@ -24,7 +24,7 @@ export default function HomePage() {
       />
 
       {/* ── HERO ── */}
-      <section className="bg-primary" style={{ padding: '96px 24px 128px' }}>
+      <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
         <div className="mx-auto max-w-[1200px]">
 
           {/* Eyebrow */}

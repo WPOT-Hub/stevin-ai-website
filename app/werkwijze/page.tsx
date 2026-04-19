@@ -68,7 +68,7 @@ export default function WerkwijzePage() {
   return (
     <>
       {/* ── Hero — navy ── */}
-      <section className="bg-primary overflow-hidden" style={{ paddingTop: '96px', paddingBottom: '128px' }}>
+      <section className="bg-primary overflow-hidden -mt-[72px]" style={{ paddingTop: 'calc(96px + 72px)', paddingBottom: '128px' }}>
         <div className="mx-auto max-w-[1200px] px-6">
 
           {/* 2-col grid: left = eyebrow + H1 + sub | right = side-quote */}

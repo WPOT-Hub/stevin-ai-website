@@ -34,7 +34,7 @@ export default function EcommerceCaseStudy() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-primary" style={{ padding: '96px 24px 80px' }}>
+      <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 80px' }}>
         <div className="mx-auto max-w-[1200px]">
           <Link href="/case-studies" className="inline-flex items-center gap-1 text-white/40 text-sm hover:text-white/70 transition-colors mb-8">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
