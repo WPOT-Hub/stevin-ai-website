@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import DataRain from '@/components/DataRain'
+import MeetlatRuler from '@/components/MeetlatRuler'
 import { Tag, Users, Plug, Zap, TrendingUp, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -53,27 +53,27 @@ export default function VoorAgenciesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative bg-primary pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
-        <DataRain variant="agency" />
-        <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
+      <section className="bg-primary" style={{ padding: '96px 24px 128px' }}>
+        <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
             VOOR BUREAUS
           </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          <h1
+            className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
+            style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '16ch' }}>
             Schaal jouw bureau met<br />
             <span className="text-[#5DA3FF]">Stevin als partner</span>
           </h1>
-          <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '560px', marginTop: '32px' }}>
             Geen concurrent, maar een technologiepartner. Gebruik ons platform om meer klanten te bedienen,
             betere resultaten te leveren en je marge te vergroten.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+          <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
               Plan een kennismaking
             </Link>
-            <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/80 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
+            <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
               Bekijk het platform
             </Link>
           </div>
@@ -81,22 +81,27 @@ export default function VoorAgenciesPage() {
       </section>
 
       {/* Features */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Wat je krijgt als Agency Partner</h2>
-            <p className="text-lg text-muted max-w-2xl mx-auto">
-              Alles wat je nodig hebt om je bureau op te schalen met data-onderbouwde marketing.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((f) => (
-              <div key={f.title} className="rounded-2xl border border-border bg-white p-8 hover:shadow-lg hover:border-accent/20 transition-all">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
-                  {f.icon}
-                </div>
-                <h3 className="text-lg font-bold text-primary mb-2">{f.title}</h3>
-                <p className="text-sm text-muted leading-relaxed">{f.desc}</p>
+      <section className="bg-surface" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            HET PLATFORM
+          </p>
+          <h2
+            className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
+            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+          >
+            Wat je krijgt als Agency Partner
+          </h2>
+          <p className="text-[17px] text-muted mb-16 max-w-xl leading-[1.55]">
+            Alles wat je nodig hebt om je bureau op te schalen met data-onderbouwde marketing.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-border">
+            {features.map((f, i) => (
+              <div key={f.title} className="border-b border-border py-10 lg:px-10 lg:first:pl-0 lg:[&:nth-child(3n)]:pr-0 lg:[&:nth-child(3n+1)]:pl-0">
+                <p className="font-mono text-[11px] text-muted mb-4">{String(i + 1).padStart(2, '0')}</p>
+                <h3 className="text-[17px] font-display font-bold text-primary mb-3 leading-tight">{f.title}</h3>
+                <p className="text-[15px] text-muted leading-[1.6]">{f.desc}</p>
               </div>
             ))}
           </div>

@@ -34,22 +34,25 @@ export default function EcommerceCaseStudy() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative bg-primary pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
-        <div className="relative mx-auto max-w-4xl px-6 sm:px-8 text-center">
-          <Link href="/case-studies" className="inline-flex items-center gap-1 text-white/50 text-sm hover:text-white/80 transition-colors mb-6">
+      <section className="bg-primary" style={{ padding: '96px 24px 80px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <Link href="/case-studies" className="inline-flex items-center gap-1 text-white/40 text-sm hover:text-white/70 transition-colors mb-8">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             Alle case studies
           </Link>
-          <span className="inline-flex px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold mb-6">
-            E-commerce
-          </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            E-COMMERCE
+          </p>
+          <h1
+            className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
+            style={{ fontSize: 'clamp(36px, 5vw, 72px)', maxWidth: '18ch' }}
+          >
             Van losse campagnes naar een geïntegreerd marketing systeem
           </h1>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">
+          <p className="text-white/60 leading-[1.55]" style={{ fontSize: '18px', maxWidth: '560px', marginTop: '24px' }}>
             Hoe een snelgroeiend Nederlands e-commerce bedrijf hun volledige marketingstack
             transformeerde met het Stevin platform.
           </p>

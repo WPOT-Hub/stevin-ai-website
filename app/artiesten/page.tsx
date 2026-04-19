@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Radio, TrendingUp, MessageCircle, Headphones, BarChart3, Filter } from 'lucide-react'
-import IntelligenceFeed from '@/components/IntelligenceFeed'
-import DataRain from '@/components/DataRain'
+import MeetlatRuler from '@/components/MeetlatRuler'
 
 export const metadata: Metadata = {
   title: 'Stevin voor Artiesten — Filter het signaal uit de ruis',
@@ -13,17 +11,14 @@ const features = [
   {
     title: 'Het 03:00 AM Command Center',
     desc: 'Je stapt \'s nachts de booth uit. Je wilt geen complexe dashboards, je wilt weten: hebben we gewonnen? Stevin toont op je mobiel in één oogopslag de reacties, de pieken en de belangrijkste fan-interacties van vanavond.',
-    icon: <Headphones className="w-5 h-5 text-accent" />,
   },
   {
     title: 'Cross-Channel Momentum',
     desc: 'Stevin ziet dat een specifieke track organisch ontploft op SoundCloud of TikTok, nog voordat het in je Spotify-cijfers zit. De Advisor geeft direct een seintje om Meta-Ad budget of merch-promo in te zetten op het juiste moment, in de juiste regio.',
-    icon: <TrendingUp className="w-5 h-5 text-accent" />,
   },
   {
     title: 'De Fan-Bridge Filter',
     desc: 'Jouw AI-filter knipt de 95% emoji-ruis weg. Je ziet alleen de verjaardagen, vragen over merchandise en track-ID smeekbedes. Stevin genereert bullet-points voor je antwoord, zodat jij in je eigen woorden in 2 seconden authentiek reageert.',
-    icon: <Filter className="w-5 h-5 text-accent" />,
   },
 ]
 
@@ -44,86 +39,96 @@ const useCases = [
   'Je hebt geen overzicht over je prestaties per regio',
 ]
 
+const channels = ['Instagram', 'TikTok', 'YouTube', 'SoundCloud', 'Spotify', 'Facebook', 'Website']
+
 export default function VoorArtiestenPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative bg-primary pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
-        <DataRain variant="artist" />
-        <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
-                <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-                VOOR ARTIESTEN & INFLUENCERS
-              </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Het Signaal<br />
-                <span className="text-[#5DA3FF]">in de Ruis.</span>
-              </h1>
-              <p className="text-lg sm:text-xl text-white/60 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Stop met het doorspitten van duizenden comments. Stevin filtert social chaos en zet het om in momentum, fan loyalty en merch sales.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 mt-10">
-                <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
-                  Vraag toegang aan
-                </Link>
-                <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/80 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
-                  Bekijk het platform
-                </Link>
-              </div>
-            </div>
-            <div className="hidden lg:block">
-              <IntelligenceFeed variant="artist" />
-            </div>
+      <section className="bg-primary" style={{ padding: '96px 24px 128px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            VOOR ARTIESTEN
+          </p>
+          <h1
+            className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
+            style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '14ch' }}
+          >
+            Het Signaal<br />
+            <span className="text-[#5DA3FF]">in de Ruis.</span>
+          </h1>
+          <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '560px', marginTop: '32px' }}>
+            Stop met het doorspitten van duizenden comments. Stevin filtert social chaos en zet het om in momentum, fan loyalty en merch sales.
+          </p>
+          <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
+            <Link
+              href="/contact"
+              className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
+            >
+              Vraag toegang aan
+            </Link>
+            <Link
+              href="/platform"
+              className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors"
+            >
+              Bekijk het platform
+            </Link>
+          </div>
+          <div className="mt-20">
+            <MeetlatRuler color="rgba(255,255,255,.35)" />
           </div>
         </div>
       </section>
 
       {/* Intro */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Jouw Digitale Backstage</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-6">
-              Al je kanalen. Eén cockpit.
-            </h2>
-            <p className="text-lg text-muted leading-relaxed">
-              Je leeft op TikTok, Instagram, YouTube en SoundCloud. De data is versnipperd en je team
-              is uren kwijt aan het managen van reacties. Stevin centraliseert jouw ecosysteem.
-              Geen irrelevante grafieken, maar keiharde actiepunten.
-            </p>
-          </div>
-
-          {/* Channel bar */}
-          <div className="mt-12 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
-              {['Instagram', 'TikTok', 'YouTube', 'SoundCloud', 'Spotify', 'Facebook', 'Website'].map((ch) => (
-                <span key={ch} className="text-xs font-bold text-slate-400 tracking-wide uppercase">{ch}</span>
-              ))}
-            </div>
+      <section className="bg-white" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            JOUW DIGITALE BACKSTAGE
+          </p>
+          <h2
+            className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
+            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+          >
+            Al je kanalen.<br />Eén cockpit.
+          </h2>
+          <p className="text-[17px] text-muted leading-[1.6] max-w-2xl mb-12">
+            Je leeft op TikTok, Instagram, YouTube en SoundCloud. De data is versnipperd en je team
+            is uren kwijt aan het managen van reacties. Stevin centraliseert jouw ecosysteem.
+            Geen irrelevante grafieken, maar keiharde actiepunten.
+          </p>
+          <div className="flex items-center gap-6 sm:gap-10 flex-wrap border-t border-border pt-8">
+            {channels.map((ch) => (
+              <span key={ch} className="text-xs font-bold text-slate-400 tracking-wide uppercase">{ch}</span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Core Features — 3 cards */}
-      <section className="py-20 bg-surface">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Wat Stevin voor jou doet</h2>
-            <p className="text-lg text-muted max-w-2xl mx-auto">
-              Drie pijlers die van social chaos een gestroomlijnd systeem maken.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {features.map((f) => (
-              <div key={f.title} className="rounded-2xl border border-border bg-white p-8 hover:shadow-lg hover:border-accent/20 transition-all">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
-                  {f.icon}
-                </div>
-                <h3 className="text-lg font-bold text-primary mb-2">{f.title}</h3>
-                <p className="text-sm text-muted leading-relaxed">{f.desc}</p>
+      {/* Core Features */}
+      <section className="bg-surface" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            WAT STEVIN VOOR JOU DOET
+          </p>
+          <h2
+            className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
+            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+          >
+            Drie pijlers
+          </h2>
+          <p className="text-[17px] text-muted mb-16 max-w-xl leading-[1.55]">
+            Die van social chaos een gestroomlijnd systeem maken.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-border">
+            {features.map((f, i) => (
+              <div key={f.title} className="border-b border-border py-10 md:px-10 md:first:pl-0 md:last:pr-0">
+                <p className="font-mono text-[11px] text-muted mb-4">{String(i + 1).padStart(2, '0')}</p>
+                <h3 className="text-[17px] font-display font-bold text-primary mb-3 leading-tight">{f.title}</h3>
+                <p className="text-[15px] text-muted leading-[1.6]">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -131,57 +136,75 @@ export default function VoorArtiestenPage() {
       </section>
 
       {/* Capabilities grid */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Onder de motorkap</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">De technologie achter het signaal</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+      <section className="bg-white" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            ONDER DE MOTORKAP
+          </p>
+          <h2
+            className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16"
+            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+          >
+            De technologie<br />achter het signaal
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-border">
             {capabilities.map((c) => (
-              <div key={c.title} className="p-6 rounded-2xl bg-surface border border-border hover:shadow-md hover:border-accent/20 transition-all">
-                <h3 className="text-sm font-bold text-primary mb-1.5">{c.title}</h3>
-                <p className="text-xs text-muted leading-relaxed">{c.desc}</p>
+              <div key={c.title} className="border-b border-r border-border py-8 px-0 sm:px-8 sm:first:pl-0 lg:[&:nth-child(3n)]:border-r-0">
+                <h3 className="text-[15px] font-display font-bold text-primary mb-2">{c.title}</h3>
+                <p className="text-[14px] text-muted leading-[1.6]">{c.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Use cases + pricing */}
-      <section className="py-20 bg-surface">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* Use cases + CTA */}
+      <section className="bg-primary" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <div>
-              <h2 className="text-3xl font-bold text-primary mb-6">Voor jou als dit herkenbaar is</h2>
-              <ul className="space-y-4">
+              <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+                <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+                VOOR JOU ALS
+              </p>
+              <h2
+                className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10"
+                style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
+              >
+                Dit herkenbaar is
+              </h2>
+              <ul className="space-y-0 border-t border-white/10">
                 {useCases.map((uc) => (
-                  <li key={uc} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-muted">{uc}</span>
+                  <li key={uc} className="flex items-start gap-4 py-5 border-b border-white/10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#5DA3FF] flex-shrink-0 mt-[9px]" />
+                    <span className="text-[15px] text-white/70 leading-[1.6]">{uc}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl bg-[#0A1628] border border-accent/20 p-8 sm:p-10">
-              <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-4">Voor Artiesten</p>
-              <p className="text-4xl font-bold text-neon mb-2">Op aanvraag</p>
-              <p className="text-white/50 text-sm mb-8">Prijs afhankelijk van scope en aantal kanalen</p>
+            <div className="lg:pt-[140px]">
+              <p className="text-[#00D4A0] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6">
+                Het is geen wonder. Het is Stevin.
+              </p>
+              <h3
+                className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-3"
+                style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
+              >
+                Op aanvraag
+              </h3>
+              <p className="text-white/40 text-sm mb-8">Prijs afhankelijk van scope en aantal kanalen</p>
               <Link
                 href="/contact"
-                className="block w-full text-center py-3.5 rounded-xl text-sm font-semibold bg-neon text-[#0A1628] hover:bg-neon-dark transition-colors neon-glow"
+                className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
               >
                 Vraag toegang aan
               </Link>
-              <ul className="mt-8 space-y-2.5">
+              <ul className="mt-8 space-y-0 border-t border-white/10">
                 {['Cross-channel monitoring', 'AI Advisor met momentum-detectie', 'Fan-engagement filtering', 'Reactie-tracking over tijd', 'Geo-hype tracking', 'Merch & ticket conversie-inzichten'].map((f) => (
-                  <li key={f} className="flex items-center gap-2.5 text-sm text-slate-300">
-                    <svg className="w-4 h-4 text-neon flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    {f}
+                  <li key={f} className="flex items-center gap-3 py-3 border-b border-white/10">
+                    <span className="w-1 h-1 rounded-full bg-[#00D4A0] flex-shrink-0" />
+                    <span className="text-[14px] text-white/60">{f}</span>
                   </li>
                 ))}
               </ul>
@@ -191,13 +214,24 @@ export default function VoorArtiestenPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-primary">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-4">Het is geen wonder. Het is <span className="text-[#5DA3FF]">Stevin</span>.</h2>
-          <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
+      <section className="bg-surface" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-[#00D4A0] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6">
+            Het is geen wonder. Het is Stevin.
+          </p>
+          <h2
+            className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
+            style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', maxWidth: '16ch' }}
+          >
+            Koppel je kanalen. Zie wat je mist.
+          </h2>
+          <p className="text-[17px] text-muted mb-10 max-w-lg leading-[1.6]">
             Koppel je kanalen en zie direct wat je de afgelopen maanden hebt gemist.
           </p>
-          <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
+          <Link
+            href="/contact"
+            className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
+          >
             Neem contact op
           </Link>
         </div>

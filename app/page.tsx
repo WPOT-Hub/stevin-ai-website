@@ -1,10 +1,7 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { Database, Cpu, Zap, RefreshCw, Building2, Music } from 'lucide-react'
-import Section from '@/components/Section'
 import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
-import DataRain from '@/components/DataRain'
+import MeetlatRuler from '@/components/MeetlatRuler'
 import { homepageFaqs } from '@/data/faqs'
 import { nativeConnectors } from '@/data/connectors'
 
@@ -26,268 +23,377 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ===== HERO — Router ===== */}
-      <section className="relative overflow-hidden bg-primary -mt-[72px] pt-[calc(72px+2.5rem)] sm:pt-[calc(72px+3rem)] lg:pt-[calc(72px+4rem)] pb-12 lg:pb-20">
-        {/* Background layers */}
-        <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
-        <DataRain />
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
-          backgroundSize: '40px 40px',
-        }} />
+      {/* ── HERO ── */}
+      <section className="bg-primary" style={{ padding: '96px 24px 128px' }}>
+        <div className="mx-auto max-w-[1200px]">
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Centered headline */}
-          <div className="text-center max-w-3xl mx-auto">
-            <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6 flex items-center justify-center gap-[14px]">
-              <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-              DATA · INZICHT · ACTIE
-              <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            </p>
+          {/* Eyebrow */}
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            DATA · INZICHT · ACTIE
+          </p>
 
-            <h1 className="text-[1.75rem] sm:text-4xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight text-white leading-[1.1]">
-              Wonder?<br />
-              <span className="text-[#5DA3FF]">Het is geen wonder.</span>
-            </h1>
-            <p className="mt-4 text-base sm:text-lg lg:text-xl text-white/45 max-w-2xl mx-auto leading-relaxed">
-              Marketing wordt onnodig ingewikkeld gemaakt — black boxes, vage voorspellingen, dashboards die elkaar tegenspreken. Stevin is de meetlat tussen wat je uitgeeft en wat het werkelijk oplevert.
-            </p>
-            <p className="mt-3 text-xs sm:text-sm text-white/30 italic max-w-2xl mx-auto">
-              &ldquo;Wonder en is gheen wonder.&rdquo; — Simon Stevin, 1586
-            </p>
-          </div>
+          {/* H1 */}
+          <h1
+            className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
+            style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '14ch' }}
+          >
+            Wonder?<br />
+            <span className="text-[#5DA3FF]">Het is geen wonder.</span>
+          </h1>
 
-          {/* Router cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-10 max-w-4xl mx-auto">
-            {/* Agency card — Blue accent */}
-            <Link
-              href="/marketing"
-              className="group relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 sm:p-8 hover:bg-white/[0.08] hover:border-accent/40 transition-all duration-300"
-            >
-              <div className="w-11 h-11 rounded-xl bg-accent/15 flex items-center justify-center mb-4 group-hover:bg-accent/25 transition-colors">
-                <Building2 className="w-5 h-5 text-accent" />
-              </div>
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Stevin voor Marketing</h2>
-              <p className="text-sm text-white/40 leading-relaxed mb-5">
-                Elke euro herleidbaar naar resultaat. Geen dashboards die elkaar tegenspreken, geen black boxes. Voor bureaus, inhouse teams, merken en ondernemers die hun cijfers serieus nemen.
-              </p>
-              <span className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-accent/10 text-accent group-hover:bg-accent/20 transition-colors">
-                Ontdek de oplossing
-                <svg className="ml-1.5 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </span>
-            </Link>
+          {/* Sub */}
+          <p
+            className="text-white/60 leading-[1.55]"
+            style={{ fontSize: '20px', maxWidth: '540px', marginTop: '32px' }}
+          >
+            Marketing wordt onnodig ingewikkeld gemaakt. Stevin is de meetlat tussen wat je uitgeeft en wat het werkelijk oplevert — zonder black boxes.
+          </p>
 
-            {/* Artist card — Pink accent */}
-            <Link
-              href="/artiesten"
-              className="group relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 sm:p-8 hover:bg-white/[0.08] hover:border-pink/40 transition-all duration-300"
-            >
-              <div className="w-11 h-11 rounded-xl bg-pink/15 flex items-center justify-center mb-4 group-hover:bg-pink/25 transition-colors">
-                <Music className="w-5 h-5 text-pink" />
-              </div>
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-pink transition-colors">Stevin voor Artiesten</h2>
-              <p className="text-sm text-white/40 leading-relaxed mb-5">
-                Hype is geen toeval. Stevin traceert welke momenten écht momentum bouwen — en helpt je daarop te handelen voor de rest het doorheeft.
-              </p>
-              <span className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-pink/10 text-pink group-hover:bg-pink/20 transition-colors">
-                Ontdek de oplossing
-                <svg className="ml-1.5 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </span>
-            </Link>
-          </div>
+          {/* Quote */}
+          <p className="italic text-white/30 text-sm mt-4">
+            &ldquo;Wonder en is gheen wonder.&rdquo; — Simon Stevin, 1586
+          </p>
 
-          {/* Universal CTA */}
-          <div className="text-center mt-8">
-            <Link
-              href="/contact"
-              className="neon-glow group inline-flex items-center px-8 py-4 text-base font-bold text-[#0A1628] bg-neon rounded-xl hover:bg-neon-dark transition-all duration-300"
-            >
-              Plan een gesprek
-              <svg className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-            <p className="mt-3 text-sm text-white/25">Geen verplichtingen</p>
+          {/* Meetlat */}
+          <div className="mt-20">
+            <MeetlatRuler color="rgba(255,255,255,.35)" />
           </div>
         </div>
       </section>
 
-      {/* ===== CONNECTOR BAR ===== */}
-      <div className="bg-white border-b border-border">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-          <p className="text-xs font-semibold text-muted uppercase tracking-widest text-center mb-5">Gekoppeld aan 220+ databronnen in real-time</p>
-          <div className="flex items-center justify-center gap-4 sm:gap-8 flex-wrap opacity-50">
+      {/* ── PATH SELECTOR ── */}
+      <section className="bg-surface" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+
+          <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+            <div>
+              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+                <span className="inline-block w-6 h-px bg-accent flex-shrink-0" aria-hidden="true" />
+                KIES JE DOMEIN
+              </p>
+              <h2
+                className="font-display font-extrabold text-primary m-0"
+                style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
+              >
+                Eén platform. Twee werelden.
+              </h2>
+            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3.5 font-display font-bold text-[15px] bg-neon text-primary rounded-[10px] hover:bg-neon-dark transition-colors neon-glow flex-shrink-0"
+            >
+              Plan een gesprek
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Marketing */}
+            <Link
+              href="/marketing"
+              className="group rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200 flex flex-col"
+              style={{ padding: '40px 36px 36px' }}
+            >
+              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
+                <span className="inline-block w-5 h-px bg-accent flex-shrink-0" aria-hidden="true" />
+                VOOR MARKETING
+              </p>
+              <h3
+                className="font-display font-bold text-primary mb-4"
+                style={{ fontSize: '28px', lineHeight: '1.1', letterSpacing: '-0.025em' }}
+              >
+                Bureaus, inhouse teams & specialisten
+              </h3>
+              <p className="text-muted leading-[1.6] flex-1" style={{ fontSize: '15px' }}>
+                Elke euro herleidbaar naar resultaat. Geen dashboards die elkaar tegenspreken, geen black boxes. Spend en resultaat met elkaar laten kloppen.
+              </p>
+              <div className="mt-8 pt-5 border-t border-border">
+                <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Ontdek de oplossing
+                  <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
+                </span>
+              </div>
+            </Link>
+
+            {/* Artiesten */}
+            <Link
+              href="/artiesten"
+              className="group rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-pink/30 transition-all duration-200 flex flex-col"
+              style={{ padding: '40px 36px 36px' }}
+            >
+              <p className="text-pink text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
+                <span className="inline-block w-5 h-px bg-pink flex-shrink-0" aria-hidden="true" />
+                VOOR ARTIESTEN
+              </p>
+              <h3
+                className="font-display font-bold text-primary mb-4"
+                style={{ fontSize: '28px', lineHeight: '1.1', letterSpacing: '-0.025em' }}
+              >
+                Artiesten, influencers & promotoren
+              </h3>
+              <p className="text-muted leading-[1.6] flex-1" style={{ fontSize: '15px' }}>
+                Hype is geen toeval. Stevin traceert welke momenten écht momentum bouwen en helpt je daarop te handelen voor de rest het doorheeft.
+              </p>
+              <div className="mt-8 pt-5 border-t border-border">
+                <span className="font-display font-semibold text-pink text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Ontdek de oplossing
+                  <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CONNECTOR BAR ── */}
+      <div className="bg-white border-y border-border">
+        <div className="mx-auto max-w-[1200px] px-6 py-8">
+          <p className="text-[11px] font-display font-bold text-muted uppercase tracking-[0.08em] text-center mb-5">
+            Gekoppeld aan 220+ databronnen in real-time
+          </p>
+          <div className="flex items-center justify-center gap-4 sm:gap-8 flex-wrap opacity-45">
             {nativeConnectors.map((c) => (
-              <span key={c.slug} className="text-[10px] sm:text-xs font-bold text-slate-400 tracking-wide">{c.name}</span>
+              <span key={c.slug} className="text-[10px] sm:text-xs font-bold text-muted tracking-wide">{c.name}</span>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ===== HET PROBLEEM ===== */}
-      <Section bg="surface">
-        <div className="max-w-3xl mx-auto text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary leading-tight">
-            Je mist de data die er echt toe doet.
-          </h2>
-          <p className="mt-4 text-base text-muted leading-relaxed max-w-2xl mx-auto">
-            Je accounts en kanalen genereren duizenden datapunten per minuut. Maar zonder context is al die data slechts ruis.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-          {[
-            {
-              title: 'Versnipperde kanalen',
-              desc: 'De waarheid ligt verspreid over social media, advertentieplatforms en e-commerce systemen. Koppel je ze niet, dan stuur je blind.',
-            },
-            {
-              title: 'Rapportage is een achteruitkijkspiegel',
-              desc: 'Dashboards vertellen je wat er gisteren is gebeurd. Je klant betaalt voor wat er morgen moet gebeuren. Niemand wordt blij van een PDF met 40 pagina\'s.',
-            },
-            {
-              title: 'Non-billable uren vreten je marge',
-              desc: 'Vijf man op reporting, nul op strategie. Exporteren, combineren, formatteren — tijd die naar creatie, optimalisatie of klantcontact moet gaan.',
-            },
-          ].map((item) => (
-            <div key={item.title} className="p-6 rounded-2xl bg-white border border-border">
-              <h3 className="text-sm font-bold text-primary mb-2">{item.title}</h3>
-              <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
+      {/* ── HET PROBLEEM ── */}
+      <section className="bg-white" style={{ padding: '112px 24px 96px' }}>
+        <div className="mx-auto max-w-[1200px]">
 
-      {/* ===== DE ENGINE — Centraliseer → Analyseer → Activeer ===== */}
-      <section className="py-16 sm:py-20 bg-primary">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Hoe causaliteit eruitziet</p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
-              Als de data klopt, verdwijnt de mist.
-            </h2>
+          <div className="flex justify-between items-end gap-12 mb-16 flex-col lg:flex-row">
+            <div>
+              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+                <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
+                HET PROBLEEM
+              </p>
+              <h2
+                className="font-display font-extrabold text-primary m-0"
+                style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '18ch' }}
+              >
+                Je mist de data die er echt toe doet.
+              </h2>
+            </div>
+            <p className="text-muted leading-[1.55] max-w-[280px] lg:text-right" style={{ fontSize: '15px' }}>
+              Je accounts genereren duizenden datapunten per minuut. Zonder context is het ruis.
+            </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Database className="w-5 h-5 text-accent" />,
-                step: '01',
-                title: 'Centraliseer',
-                desc: 'Koppel je volledige digitale ecosysteem. Stevin trekt alle ruwe data realtime samen in één overzicht.',
+                title: 'Versnipperde kanalen',
+                desc: 'De waarheid ligt verspreid over social media, advertentieplatforms en e-commerce systemen. Koppel je ze niet, dan stuur je blind.',
               },
               {
-                icon: <Cpu className="w-5 h-5 text-accent" />,
-                step: '02',
-                title: 'Vergelijk',
-                desc: 'Platform-cijfers naast de werkelijkheid in je CRM. Kloppen Meta en Google\'s eigen rapportage? Of is er mist?',
+                title: 'Rapportage is een achteruitkijkspiegel',
+                desc: "Dashboards vertellen je wat er gisteren is gebeurd. Je klant betaalt voor wat er morgen moet gebeuren. Niemand wordt blij van een PDF met 40 pagina's.",
               },
               {
-                icon: <Zap className="w-5 h-5 text-neon" />,
-                step: '03',
-                title: 'Activeer',
-                desc: 'Geen passieve grafieken. Stevin levert concrete actiepunten zodat je weet wat je nu moet doen.',
-              },
-              {
-                icon: <RefreshCw className="w-5 h-5 text-neon" />,
-                step: '04',
-                title: 'Verbeter',
-                desc: 'Het platform leert van elke interactie. Rapportages, adviezen en content passen zich aan op jouw tone of voice en die van je klant.',
+                title: "Non-billable uren vreten je marge",
+                desc: 'Vijf man op reporting, nul op strategie. Exporteren, combineren, formatteren — tijd die naar creatie, optimalisatie of klantcontact moet gaan.',
               },
             ].map((item) => (
-              <div key={item.title} className="relative p-6 sm:p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
-                <span className="text-xs font-bold text-accent/40 tracking-widest">{item.step}</span>
-                <div className="w-10 h-10 rounded-lg bg-white/[0.06] flex items-center justify-center mt-3 mb-4">
-                  {item.icon}
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-sm text-white/45 leading-relaxed">{item.desc}</p>
-              </div>
+              <article key={item.title} className="pt-6 border-t border-border">
+                <h3
+                  className="font-display font-bold text-primary mb-3"
+                  style={{ fontSize: '18px', letterSpacing: '-0.01em', lineHeight: '1.2' }}
+                >
+                  {item.title}
+                </h3>
+                <p className="text-muted leading-[1.6]" style={{ fontSize: '15px' }}>{item.desc}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== BEWEZEN RESULTAAT ===== */}
-      <Section bg="white">
-        <div className="max-w-4xl mx-auto">
-          <div className="rounded-2xl border border-border bg-surface p-8 sm:p-12">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-8">
-              <div className="flex-1">
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary leading-tight">
-                  Ontworpen voor schaal.
-                </h2>
-                <p className="mt-4 text-base text-muted leading-relaxed">
-                  Of je nu tientallen ad-accounts beheert voor klanten, of de cross-channel interacties van miljoenen fans monitort: Stevin schaalt mee. Minder tijd kwijt aan het zoeken naar data, volledige focus op het resultaat.
-                </p>
-              </div>
-              <div className="flex gap-8 sm:gap-10 flex-shrink-0">
-                <div className="text-center">
-                  <p className="text-3xl sm:text-4xl font-bold text-neon">-35%</p>
-                  <p className="text-xs text-muted mt-1 max-w-[100px]">Minder budgetverspilling</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-3xl sm:text-4xl font-bold text-accent">220+</p>
-                  <p className="text-xs text-muted mt-1 max-w-[100px]">Native integraties out-of-the-box</p>
-                </div>
-              </div>
+      {/* ── DE ENGINE ── */}
+      <section className="bg-primary" style={{ padding: '112px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+
+          <div className="flex justify-between items-end gap-12 mb-14 flex-col lg:flex-row">
+            <div>
+              <p className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+                <span className="inline-block w-6 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+                HOE HET WERKT
+              </p>
+              <h2
+                className="font-display font-extrabold text-white m-0"
+                style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '16ch' }}
+              >
+                Als de data klopt, verdwijnt de mist.
+              </h2>
             </div>
+            <Link
+              href="/werkwijze"
+              className="font-display font-semibold text-[14px] text-white/55 hover:text-white transition-colors flex-shrink-0"
+            >
+              Zie de volledige werkwijze →
+            </Link>
+          </div>
+
+          <MeetlatRuler color="rgba(255,255,255,.3)" />
+          <div className="mt-3 grid grid-cols-4 font-mono text-[11px] text-white/35 tracking-[0.04em]">
+            <span>01 / KOPPELEN</span>
+            <span>02 / VERGELIJKEN</span>
+            <span>03 / ACTIVEREN</span>
+            <span>04 / VERBETEREN</span>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { step: '01', title: 'Koppelen', desc: 'Alle ruwe data uit 220+ bronnen realtime in één overzicht. Geen middleware, geen vertraging.', claim: 'Geen black boxes.' },
+              { step: '02', title: 'Vergelijken', desc: "Platform-cijfers naast de werkelijkheid in je CRM. Waar Meta of Google afwijkt, wordt dat meetbaar.", claim: 'Niet vermoed, wel bewezen.' },
+              { step: '03', title: 'Activeren', desc: 'Concrete actiepunten per euro. Stevin vertelt waar je morgen moet sturen.', claim: 'Adviezen, geen dashboards.' },
+              { step: '04', title: 'Verbeteren', desc: 'Het platform leert van elke interactie. Rapportages en adviezen passen zich aan op jouw werkwijze.', claim: 'Feedback loop als fundament.' },
+            ].map((item) => (
+              <article key={item.step} className="pt-2">
+                <span
+                  className="font-display font-extrabold text-accent leading-none"
+                  style={{ fontSize: '72px', letterSpacing: '-0.04em' }}
+                >
+                  {item.step}
+                </span>
+                <h3
+                  className="font-display font-bold text-white mt-4 mb-3"
+                  style={{ fontSize: '20px', letterSpacing: '-0.02em' }}
+                >
+                  {item.title}
+                </h3>
+                <p className="text-white/55 leading-[1.6] mb-6" style={{ fontSize: '14.5px' }}>
+                  {item.desc}
+                </p>
+                <div className="flex items-center gap-2.5 pt-5 border-t border-white/10">
+                  <span className="w-2 h-2 rounded-full bg-accent flex-shrink-0" aria-hidden="true" />
+                  <p className="font-display font-bold text-accent" style={{ fontSize: '14px', letterSpacing: '-0.01em' }}>
+                    {item.claim}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
-      </Section>
+      </section>
 
-      {/* ===== FAQ ===== */}
-      <Section bg="surface">
-        <div className="max-w-3xl mx-auto text-center mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary">
-            Veelgestelde vragen
-          </h2>
-        </div>
-        <FAQAccordion faqs={homepageFaqs} />
-      </Section>
-
-      {/* ===== FINAL CTA — Kies jouw domein ===== */}
-      <section className="bg-white py-10 sm:py-14 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-[#0A1628] px-8 py-12 sm:px-16 sm:py-14 text-center overflow-hidden">
-            <div className="absolute inset-0 opacity-[0.04]" style={{
-              backgroundImage: 'radial-gradient(circle at 1px 1px, #3D8EFF 1px, transparent 0)',
-              backgroundSize: '24px 24px',
-            }} />
-            <div className="relative">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold tracking-tight text-white">
-                Het is geen wonder. Het is <span className="text-[#5DA3FF]">Stevin</span>.
+      {/* ── RESULTAAT ── */}
+      <section className="bg-surface" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+                <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
+                BEWEZEN RESULTAAT
+              </p>
+              <h2
+                className="font-display font-extrabold text-primary"
+                style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
+              >
+                Ontworpen voor schaal.
               </h2>
-              <p className="mt-3 text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-                Zie wat je betaalt. Zie wat het oplevert. Kies waar je wilt starten.
+              <p className="text-muted leading-[1.6] mt-6" style={{ fontSize: '16px' }}>
+                Of je nu tientallen ad-accounts beheert voor klanten, of de cross-channel interacties van miljoenen fans monitort: Stevin schaalt mee.
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/marketing"
-                  className="inline-flex items-center px-8 py-4 text-base font-bold text-white bg-accent rounded-xl hover:bg-accent-dark transition-all duration-200 shadow-lg shadow-accent/20"
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="rounded-[14px] border border-border bg-white p-8">
+                <p
+                  className="font-display font-extrabold text-neon"
+                  style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.04em', lineHeight: '1' }}
                 >
-                  Voor Marketing
-                </Link>
-                <Link
-                  href="/artiesten"
-                  className="inline-flex items-center px-8 py-4 text-base font-bold text-white bg-pink rounded-xl hover:bg-pink-dark transition-all duration-200 shadow-lg shadow-pink/20"
-                >
-                  Voor Artiesten
-                </Link>
+                  -35%
+                </p>
+                <p className="text-muted mt-3 leading-[1.4]" style={{ fontSize: '13px' }}>Minder budgetverspilling</p>
               </div>
-              <p className="mt-5">
-                <Link href="/contact" className="text-sm text-slate-400 hover:text-white transition-colors underline underline-offset-4">
-                  Of plan direct een gesprek
-                </Link>
-              </p>
+              <div className="rounded-[14px] border border-border bg-white p-8">
+                <p
+                  className="font-display font-extrabold text-accent"
+                  style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.04em', lineHeight: '1' }}
+                >
+                  220+
+                </p>
+                <p className="text-muted mt-3 leading-[1.4]" style={{ fontSize: '13px' }}>Native integraties out-of-the-box</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sticky mobile CTA */}
+      {/* ── FAQ ── */}
+      <section className="bg-white" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <div className="flex justify-between items-end gap-12 mb-12 flex-col lg:flex-row">
+            <div>
+              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+                <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
+                VRAGEN
+              </p>
+              <h2
+                className="font-display font-extrabold text-primary m-0"
+                style={{ fontSize: 'clamp(28px, 3vw, 44px)', letterSpacing: '-0.03em', lineHeight: '1.1' }}
+              >
+                Veelgestelde vragen
+              </h2>
+            </div>
+          </div>
+          <FAQAccordion faqs={homepageFaqs} />
+        </div>
+      </section>
+
+      {/* ── CLOSING ── */}
+      <section className="bg-primary" style={{ padding: '112px 24px 128px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-neon text-[14px] font-display font-bold tracking-[0.14em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-6 h-px bg-neon flex-shrink-0" aria-hidden="true" />
+            Het is geen wonder. Het is Stevin.
+          </p>
+          <div className="flex items-end justify-between gap-12 flex-col lg:flex-row">
+            <h2
+              className="font-display font-extrabold text-white m-0"
+              style={{ fontSize: 'clamp(40px, 5vw, 72px)', lineHeight: '1.02', letterSpacing: '-0.032em', maxWidth: '14ch' }}
+            >
+              Zie wat je betaalt.<br />
+              Zie wat het oplevert.
+            </h2>
+            <div className="flex flex-col items-start lg:items-end gap-5">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3.5 font-display font-bold text-[15px] bg-neon text-primary rounded-[10px] hover:bg-neon-dark transition-colors neon-glow"
+              >
+                Plan een gesprek
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </Link>
+              <div className="flex gap-6 flex-wrap">
+                <Link href="/marketing" className="font-display font-semibold text-sm text-white/45 hover:text-white transition-colors">Voor Marketing →</Link>
+                <Link href="/artiesten" className="font-display font-semibold text-sm text-white/45 hover:text-white transition-colors">Voor Artiesten →</Link>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="mt-20 flex justify-between flex-wrap gap-4 pt-7"
+            style={{ borderTop: '1px solid rgba(255,255,255,.1)' }}
+          >
+            <p className="italic text-[13px]" style={{ color: 'rgba(255,255,255,.35)' }}>
+              &ldquo;Wonder en is gheen wonder.&rdquo; — Simon Stevin, 1586
+            </p>
+            <p
+              className="font-display text-[12px] font-medium tracking-[0.06em] uppercase"
+              style={{ color: 'rgba(255,255,255,.3)' }}
+            >
+              stevin.ai
+            </p>
+          </div>
+        </div>
+      </section>
+
       <StickyMobileCTA />
     </>
   )

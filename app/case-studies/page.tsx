@@ -21,48 +21,57 @@ export default function CaseStudiesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative bg-primary pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 hero-mesh-gradient opacity-50" />
-        <div className="relative mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">Case Studies</h1>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">
+      <section className="bg-primary" style={{ padding: '96px 24px 80px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            RESULTATEN
+          </p>
+          <h1
+            className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
+            style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}
+          >
+            Case Studies
+          </h1>
+          <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '540px', marginTop: '24px' }}>
             Echte resultaten van echte bedrijven. Ontdek hoe het Stevin platform marketing transformeert.
           </p>
         </div>
       </section>
 
       {/* Cases grid */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <div className="grid grid-cols-1 gap-8">
+      <section className="bg-white" style={{ padding: '80px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <div className="grid grid-cols-1 gap-0 border-t border-border">
             {caseStudies.map((cs) => (
               <Link
                 key={cs.slug}
                 href={`/case-studies/${cs.slug}`}
-                className="group rounded-2xl border border-border bg-white p-8 sm:p-10 hover:shadow-xl hover:border-accent/30 transition-all"
+                className="group border-b border-border py-10 flex flex-col sm:flex-row sm:items-center gap-6 hover:bg-surface transition-colors px-2"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-                  <div className="flex-1">
-                    <span className="inline-flex px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-4">
-                      {cs.industry}
-                    </span>
-                    <h2 className="text-xl sm:text-2xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">
-                      {cs.title}
-                    </h2>
-                    <p className="text-muted">{cs.subtitle}</p>
-                  </div>
-                  <div className="text-center sm:text-right flex-shrink-0">
-                    <p className="text-4xl font-bold text-accent">{cs.metric}</p>
-                    <p className="text-sm text-muted">{cs.metricLabel}</p>
-                  </div>
+                <div className="flex-1">
+                  <span className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-4 block">
+                    {cs.industry}
+                  </span>
+                  <h2 className="text-[19px] font-display font-bold text-primary mb-2 leading-tight group-hover:text-[#5DA3FF] transition-colors">
+                    {cs.title}
+                  </h2>
+                  <p className="text-[15px] text-muted leading-[1.6]">{cs.subtitle}</p>
+                </div>
+                <div className="flex-shrink-0">
+                  <p className="text-4xl font-display font-extrabold text-[#5DA3FF]">{cs.metric}</p>
+                  <p className="text-sm text-muted">{cs.metricLabel}</p>
                 </div>
               </Link>
             ))}
           </div>
 
-          <div className="text-center mt-16">
-            <p className="text-muted mb-4">Meer case studies volgen binnenkort.</p>
-            <Link href="/contact" className="inline-flex px-6 py-3 text-sm font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors">
+          <div className="mt-16 border-t border-border pt-10">
+            <p className="text-muted mb-4 text-[15px]">Meer case studies volgen binnenkort.</p>
+            <Link
+              href="/contact"
+              className="inline-flex px-6 py-3 text-sm font-semibold text-white bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
+            >
               Wil je de volgende zijn?
             </Link>
           </div>
