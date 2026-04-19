@@ -61,7 +61,7 @@ export default function Header() {
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10)
+    const handleScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -91,18 +91,24 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 nav-glass border-b transition-[background-color,border-color,box-shadow] duration-500 ease-out ${
         scrolled
-          ? 'bg-white/80 nav-glass border-b border-border/50 shadow-sm'
+          ? 'bg-white/85 border-border/40 shadow-sm'
           : isLightHero
-            ? 'bg-white/70 nav-glass'
-            : 'bg-transparent'
+            ? 'bg-white/70 border-border/20'
+            : 'bg-white/0 border-white/0'
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-8">
         <div className="flex h-[72px] items-center justify-between">
-          <Link href="/" className="flex-shrink-0">
-            <Logo variant={showDark ? 'mono-white' : 'primary'} width={140} height={23} />
+          {/* Logo: cross-fade between white and primary variant */}
+          <Link href="/" className="flex-shrink-0 relative" style={{ width: 140, height: 23 }}>
+            <span className={`absolute inset-0 transition-opacity duration-500 ${showDark ? 'opacity-100' : 'opacity-0'}`}>
+              <Logo variant="mono-white" width={140} height={23} />
+            </span>
+            <span className={`absolute inset-0 transition-opacity duration-500 ${showDark ? 'opacity-0' : 'opacity-100'}`}>
+              <Logo variant="primary" width={140} height={23} />
+            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -224,7 +230,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2.5 ${showDark ? 'text-white' : 'text-primary'}`}
+            className={`lg:hidden p-2.5 transition-colors duration-500 ${showDark ? 'text-white' : 'text-primary'}`}
             aria-label="Menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
