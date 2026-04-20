@@ -1,8 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
+import { pushConversionEvent } from '@/lib/tracking'
 
 export default function ContactForm() {
+  const formRef = useRef<HTMLFormElement>(null)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
@@ -12,6 +14,35 @@ export default function ContactForm() {
       setSubmitted(true)
     }
   }, [])
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if (!formRef.current || loading) return
+    setLoading(true)
+
+    const data = new FormData(formRef.current)
+    const email = (data.get('email') as string) ?? ''
+    const phone = (data.get('phone') as string) ?? ''
+    const name = (data.get('name') as string) ?? ''
+    const [firstName, ...rest] = name.trim().split(' ')
+    const lastName = rest.join(' ')
+
+    // Push gehashte user_data naar dataLayer vóór form submit
+    // SHA-256 hashing gebeurt client-side — geen plaintext PII verlaat de browser
+    try {
+      await pushConversionEvent('generate_lead', {
+        email,
+        ...(phone ? { phone } : {}),
+        ...(firstName ? { firstName } : {}),
+        ...(lastName ? { lastName } : {}),
+      })
+    } catch {
+      // Tracking fout mag formulier niet blokkeren
+    }
+
+    // Native form submit na tracking push
+    formRef.current.submit()
+  }
 
   if (submitted) {
     return (
@@ -25,9 +56,10 @@ export default function ContactForm() {
 
   return (
     <form
+      ref={formRef}
       action="https://formsubmit.co/koen@stevin.ai"
       method="POST"
-      onSubmit={() => setLoading(true)}
+      onSubmit={handleSubmit}
       className="rounded-2xl border border-border bg-white p-8 sm:p-12"
     >
       <input type="hidden" name="_subject" value="Nieuwe aanvraag via stevin.ai" />
