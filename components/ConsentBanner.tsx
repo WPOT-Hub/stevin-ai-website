@@ -3,15 +3,30 @@
 import { useState, useEffect } from 'react'
 import { getStoredConsent, storeConsent, updateGoogleConsent, type ConsentChoice } from '@/lib/consent'
 
+function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
+  return (
+    <label className="relative inline-flex items-center cursor-pointer flex-shrink-0">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(e) => onChange(e.target.checked)}
+        className="sr-only peer"
+      />
+      <div className="w-10 h-[22px] bg-border rounded-full peer peer-checked:bg-accent transition-colors after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-[18px]" />
+    </label>
+  )
+}
+
 export default function ConsentBanner() {
   const [visible, setVisible] = useState(false)
   const [showPreferences, setShowPreferences] = useState(false)
   const [analyticsChecked, setAnalyticsChecked] = useState(false)
+  const [marketingChecked, setMarketingChecked] = useState(false)
 
   useEffect(() => {
     const stored = getStoredConsent()
     if (stored) {
-      // Consent already given — apply it
+      // Consent already given — apply it immediately on page load
       updateGoogleConsent(stored)
     } else {
       // No consent yet — show banner
@@ -25,6 +40,14 @@ export default function ConsentBanner() {
     updateGoogleConsent(choice)
     setVisible(false)
     setShowPreferences(false)
+  }
+
+  function handleSavePreferences() {
+    let choice: ConsentChoice = 'necessary'
+    if (analyticsChecked && marketingChecked) choice = 'analytics_and_marketing'
+    else if (analyticsChecked) choice = 'analytics'
+    else if (marketingChecked) choice = 'marketing'
+    handleChoice(choice)
   }
 
   if (!visible) return null
@@ -68,33 +91,38 @@ export default function ConsentBanner() {
             <h3 className="text-base font-bold text-primary mb-4">
               Cookie-instellingen
             </h3>
-            <div className="space-y-4 mb-6">
+            <div className="space-y-3 mb-6">
+              {/* Noodzakelijk — altijd aan */}
               <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-surface">
                 <div>
                   <p className="text-sm font-semibold text-primary">Noodzakelijk</p>
                   <p className="text-xs text-muted mt-0.5">Vereist voor de werking van de website.</p>
                 </div>
-                <span className="text-xs font-medium text-muted bg-white px-2.5 py-1 rounded-full border border-border">Altijd aan</span>
+                <span className="text-xs font-medium text-muted bg-white px-2.5 py-1 rounded-full border border-border flex-shrink-0">Altijd aan</span>
               </div>
+
+              {/* Statistieken — analytics_storage */}
               <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-surface">
                 <div>
                   <p className="text-sm font-semibold text-primary">Statistieken</p>
-                  <p className="text-xs text-muted mt-0.5">Helpt ons begrijpen hoe bezoekers de site gebruiken.</p>
+                  <p className="text-xs text-muted mt-0.5">Helpt ons begrijpen hoe bezoekers de site gebruiken (Google Analytics).</p>
                 </div>
-                <label className="relative inline-flex items-center cursor-pointer flex-shrink-0">
-                  <input
-                    type="checkbox"
-                    checked={analyticsChecked}
-                    onChange={(e) => setAnalyticsChecked(e.target.checked)}
-                    className="sr-only peer"
-                  />
-                  <div className="w-10 h-[22px] bg-border rounded-full peer peer-checked:bg-accent transition-colors after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-[18px]" />
-                </label>
+                <Toggle checked={analyticsChecked} onChange={setAnalyticsChecked} />
+              </div>
+
+              {/* Marketing — ad_storage, ad_user_data, ad_personalization */}
+              <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-surface">
+                <div>
+                  <p className="text-sm font-semibold text-primary">Marketing</p>
+                  <p className="text-xs text-muted mt-0.5">Advertentiemeting en remarketing (Google Ads, Meta). Nodig voor het meten van campagne-effectiviteit.</p>
+                </div>
+                <Toggle checked={marketingChecked} onChange={setMarketingChecked} />
               </div>
             </div>
+
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
-                onClick={() => handleChoice(analyticsChecked ? 'analytics' : 'necessary')}
+                onClick={handleSavePreferences}
                 className="px-6 py-2.5 text-sm font-semibold text-white bg-accent rounded-lg hover:bg-accent-dark transition-colors"
               >
                 Voorkeuren opslaan

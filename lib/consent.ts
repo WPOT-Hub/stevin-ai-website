@@ -1,10 +1,12 @@
-export type ConsentChoice = 'all' | 'analytics' | 'necessary' | null
+export type ConsentChoice = 'all' | 'analytics' | 'marketing' | 'analytics_and_marketing' | 'necessary' | null
 
 export interface ConsentState {
   ad_storage: 'granted' | 'denied'
   analytics_storage: 'granted' | 'denied'
   ad_user_data: 'granted' | 'denied'
   ad_personalization: 'granted' | 'denied'
+  functionality_storage: 'granted' | 'denied'
+  personalization_storage: 'granted' | 'denied'
 }
 
 const CONSENT_KEY = 'stevin_consent'
@@ -12,8 +14,14 @@ const CONSENT_KEY = 'stevin_consent'
 export function getStoredConsent(): ConsentChoice {
   if (typeof window === 'undefined') return null
   const stored = localStorage.getItem(CONSENT_KEY)
-  if (stored === 'all' || stored === 'analytics' || stored === 'necessary') {
-    return stored
+  if (
+    stored === 'all' ||
+    stored === 'analytics' ||
+    stored === 'marketing' ||
+    stored === 'analytics_and_marketing' ||
+    stored === 'necessary'
+  ) {
+    return stored as ConsentChoice
   }
   return null
 }
@@ -24,29 +32,16 @@ export function storeConsent(choice: ConsentChoice): void {
 }
 
 export function choiceToConsentState(choice: ConsentChoice): ConsentState {
-  switch (choice) {
-    case 'all':
-      return {
-        ad_storage: 'granted',
-        analytics_storage: 'granted',
-        ad_user_data: 'granted',
-        ad_personalization: 'granted',
-      }
-    case 'analytics':
-      return {
-        ad_storage: 'denied',
-        analytics_storage: 'granted',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-      }
-    case 'necessary':
-    default:
-      return {
-        ad_storage: 'denied',
-        analytics_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-      }
+  const analyticsGranted = choice === 'all' || choice === 'analytics' || choice === 'analytics_and_marketing'
+  const marketingGranted = choice === 'all' || choice === 'marketing' || choice === 'analytics_and_marketing'
+
+  return {
+    analytics_storage:       analyticsGranted ? 'granted' : 'denied',
+    ad_storage:              marketingGranted ? 'granted' : 'denied',
+    ad_user_data:            marketingGranted ? 'granted' : 'denied',
+    ad_personalization:      marketingGranted ? 'granted' : 'denied',
+    functionality_storage:   analyticsGranted ? 'granted' : 'denied',
+    personalization_storage: analyticsGranted ? 'granted' : 'denied',
   }
 }
 
@@ -55,7 +50,7 @@ export function updateGoogleConsent(choice: ConsentChoice): void {
 
   const state = choiceToConsentState(choice)
 
-  // Push consent update to dataLayer
+  // Push consent update to dataLayer (gtag is globally defined in GoogleTagManager.tsx)
   window.gtag?.('consent', 'update', state)
 }
 

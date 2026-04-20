@@ -1,11 +1,18 @@
 import Script from 'next/script'
 
 const GTM_ID = 'GTM-WHSXRR29'
+// sGTM server-side endpoint — first-party script serving
+const SGTM_URL = 'https://data.stevin.ai'
 
 export function GoogleTagManagerHead() {
   return (
     <>
-      {/* Consent Mode v2 — default denied before GTM loads */}
+      {/*
+       * Consent Mode v2 — MOET vóór GTM staan (strategy="beforeInteractive")
+       * Alle signalen default denied. wait_for_update geeft CMP 500ms om te laden.
+       * ads_data_redaction: IP + gclid worden geredigeerd bij denied ad_storage.
+       * url_passthrough: consent-context via URL ipv cookies bij denied.
+       */}
       <Script
         id="consent-default"
         strategy="beforeInteractive"
@@ -14,16 +21,25 @@ export function GoogleTagManagerHead() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('consent', 'default', {
-              'ad_storage': 'denied',
-              'analytics_storage': 'denied',
-              'ad_user_data': 'denied',
-              'ad_personalization': 'denied',
-              'wait_for_update': 500
+              'ad_storage':              'denied',
+              'analytics_storage':       'denied',
+              'ad_user_data':            'denied',
+              'ad_personalization':      'denied',
+              'functionality_storage':   'denied',
+              'personalization_storage': 'denied',
+              'security_storage':        'granted',
+              'wait_for_update':         500
             });
+            gtag('set', 'ads_data_redaction', true);
+            gtag('set', 'url_passthrough', true);
           `,
         }}
       />
-      {/* Google Tag Manager — GA4 (G-WGB40XGYLF) is configured as tag inside GTM */}
+      {/*
+       * Google Tag Manager — laadt via first-party sGTM endpoint (data.stevin.ai)
+       * GA4 property G-WGB40XGYLF is geconfigureerd als tag inside GTM.
+       * transport_url in de GA4-tag in sGTM stuurt hits naar data.stevin.ai/g/collect.
+       */}
       <Script
         id="gtm-script"
         strategy="afterInteractive"
@@ -32,7 +48,7 @@ export function GoogleTagManagerHead() {
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            '${SGTM_URL}/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','${GTM_ID}');
           `,
         }}
