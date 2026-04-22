@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { pushConversionEvent } from '@/lib/tracking'
 
-export default function ContactForm() {
+export default function ContactForm({ nextUrl, subject }: { nextUrl?: string; subject?: string } = {}) {
   const formRef = useRef<HTMLFormElement>(null)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -62,8 +62,8 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       className="rounded-2xl border border-border bg-white p-8 sm:p-12"
     >
-      <input type="hidden" name="_subject" value="Nieuwe aanvraag via stevin.ai" />
-      <input type="hidden" name="_next" value="https://stevin.ai/contact?verzonden=1" />
+      <input type="hidden" name="_subject" value={subject ?? 'Nieuwe aanvraag via stevin.ai'} />
+      <input type="hidden" name="_next" value={nextUrl ?? 'https://stevin.ai/contact?verzonden=1'} />
       <input type="hidden" name="_captcha" value="false" />
       <input type="text" name="_honey" style={{ display: 'none' }} />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

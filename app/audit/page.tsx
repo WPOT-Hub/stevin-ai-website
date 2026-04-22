@@ -194,7 +194,10 @@ export default function AuditPage() {
             </div>
 
             <div>
-              <ContactForm />
+              <ContactForm
+                nextUrl="https://stevin.ai/audit?verzonden=1"
+                subject="Audit aanvraag via stevin.ai/audit"
+              />
             </div>
           </div>
         </div>
