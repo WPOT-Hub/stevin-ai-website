@@ -30,28 +30,44 @@ export default function HomePage() {
           {/* Eyebrow */}
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            DATA · INZICHT · ACTIE
+            MARKETING INTELLIGENCE · 24/7
           </p>
 
           {/* H1 */}
           <h1
-            className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
-            style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '14ch' }}
+            className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]"
+            style={{ fontSize: 'clamp(36px, 5vw, 76px)', maxWidth: '18ch' }}
           >
-            Wonder?<br />
-            <span className="text-[#5DA3FF]">Het is geen wonder.</span>
+            Stevin monitort je marketing 24/7 en signaleert veranderingen in performance, tracking, merkzichtbaarheid en{' '}
+            <span className="text-[#5DA3FF]">marktgedrag.</span>
           </h1>
 
           {/* Sub */}
           <p
             className="text-white/60 leading-[1.55]"
-            style={{ fontSize: '20px', maxWidth: '540px', marginTop: '32px' }}
+            style={{ fontSize: '20px', maxWidth: '520px', marginTop: '32px' }}
           >
-            Marketing wordt onnodig ingewikkeld gemaakt. Stevin is de meetlat tussen wat je uitgeeft en wat het werkelijk oplevert — zonder black boxes.
+            Voor je omzet daalt of budget weglekt, weet je wat er speelt en wat je kunt doen.
           </p>
 
+          {/* CTAs */}
+          <div className="flex flex-wrap gap-4 mt-10">
+            <Link
+              href="/demo"
+              className="inline-flex items-center gap-2 bg-[#5DA3FF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#7BB8FF] transition-colors"
+            >
+              Plan demo
+            </Link>
+            <Link
+              href="/alerts"
+              className="inline-flex items-center gap-2 border border-white/20 text-white font-display font-semibold text-[15px] px-7 py-3.5 rounded-lg hover:border-white/40 hover:bg-white/5 transition-colors"
+            >
+              Bekijk voorbeeld alerts
+            </Link>
+          </div>
+
           {/* Quote */}
-          <p className="italic text-white/30 text-sm mt-4">
+          <p className="italic text-white/25 text-sm mt-10">
             &ldquo;Wonder en is gheen wonder.&rdquo; — Simon Stevin, 1586
           </p>
 
