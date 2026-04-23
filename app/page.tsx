@@ -382,7 +382,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <TrustBadges className="mb-14" />
+          <TrustBadges className="mb-14 justify-center" />
 
           <p
             className="text-center text-white/35 leading-[1.6]"
