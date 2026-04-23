@@ -56,6 +56,7 @@ export default function Footer() {
             <p className="mt-5 text-xs text-slate-500">
               Werkzaam vanuit Amsterdam, Eindhoven, Breda en Antwerpen.
             </p>
+            <TrustBadges className="mt-7 justify-start gap-2" small />
           </div>
 
           {/* Diensten */}
@@ -107,11 +108,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-12 border-t border-white/10">
-          <TrustBadges className="mb-10" />
-        </div>
-
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500">
             &copy; {new Date().getFullYear()} Stevin.AI — Alle rechten voorbehouden.
           </p>
