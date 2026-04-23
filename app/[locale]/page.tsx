@@ -1,3 +1,4 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
@@ -6,7 +7,14 @@ import TrustBadges from '@/components/TrustBadges'
 import { homepageFaqs } from '@/data/faqs'
 import { nativeConnectors } from '@/data/connectors'
 
-export default function HomePage() {
+type Props = { params: Promise<{ locale: string }> }
+
+export default async function HomePage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('home')
+  const tr = await getTranslations('trust')
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -31,7 +39,7 @@ export default function HomePage() {
           {/* Eyebrow */}
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            MARKETING INTELLIGENCE · 24/7
+            {t('eyebrow')}
           </p>
 
           {/* H1 */}
@@ -39,8 +47,8 @@ export default function HomePage() {
             className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]"
             style={{ fontSize: 'clamp(36px, 5vw, 76px)', maxWidth: '16ch' }}
           >
-            Voor je omzet daalt of budget weglekt,{' '}
-            <span className="text-[#5DA3FF]">weet je wat er speelt.</span>
+            {t('hero_h1')}{' '}
+            <span className="text-[#5DA3FF]">{t('hero_h1_accent')}</span>
           </h1>
 
           {/* Sub */}
@@ -48,7 +56,7 @@ export default function HomePage() {
             className="text-white/60 leading-[1.55]"
             style={{ fontSize: '20px', maxWidth: '520px', marginTop: '32px' }}
           >
-            Stevin monitort 24/7 je paid en owned media en signaleert wat er verandert — zodat je kunt ingrijpen voor het te laat is.
+            {t('hero_sub')}
           </p>
 
           {/* CTAs */}
@@ -57,19 +65,19 @@ export default function HomePage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-[#5DA3FF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#7BB8FF] transition-colors"
             >
-              Plan demo
+              {t('cta_demo')}
             </Link>
             <Link
               href="/platform"
               className="inline-flex items-center gap-2 border border-white/20 text-white font-display font-semibold text-[15px] px-7 py-3.5 rounded-lg hover:border-white/40 hover:bg-white/5 transition-colors"
             >
-              Bekijk voorbeeld alerts
+              {t('cta_platform')}
             </Link>
           </div>
 
           {/* Quote */}
           <p className="italic text-white/25 text-sm mt-10">
-            &ldquo;Wonder en is gheen wonder.&rdquo; — Simon Stevin, 1586
+            &ldquo;{t('quote')}&rdquo; — {t('quote_author')}
           </p>
 
           {/* Meetlat */}
@@ -87,20 +95,20 @@ export default function HomePage() {
             <div>
               <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
                 <span className="inline-block w-6 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-                KIES JE DOMEIN
+                {t('domain_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-primary m-0"
                 style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
               >
-                Eén platform. Twee werelden.
+                {t('domain_h2')}
               </h2>
             </div>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3.5 font-display font-bold text-[15px] bg-neon text-primary rounded-[10px] hover:bg-neon-dark transition-colors neon-glow flex-shrink-0"
             >
-              Plan een gesprek
+              {t('domain_cta')}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
               </svg>
@@ -116,20 +124,20 @@ export default function HomePage() {
             >
               <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
                 <span className="inline-block w-5 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-                VOOR MARKETING
+                {t('domain_marketing_eyebrow')}
               </p>
               <h3
                 className="font-display font-bold text-primary mb-4"
                 style={{ fontSize: '28px', lineHeight: '1.1', letterSpacing: '-0.025em' }}
               >
-                Bureaus, inhouse teams & specialisten
+                {t('domain_marketing_h3')}
               </h3>
               <p className="text-muted leading-[1.6] flex-1" style={{ fontSize: '15px' }}>
-                Elke euro herleidbaar naar resultaat. Geen dashboards die elkaar tegenspreken, geen black boxes. Spend en resultaat met elkaar laten kloppen.
+                {t('domain_marketing_desc')}
               </p>
               <div className="mt-8 pt-5 border-t border-border">
                 <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                  Ontdek de oplossing
+                  {t('domain_marketing_link')}
                   <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
                 </span>
               </div>
@@ -143,20 +151,20 @@ export default function HomePage() {
             >
               <p className="text-pink text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
                 <span className="inline-block w-5 h-px bg-pink flex-shrink-0" aria-hidden="true" />
-                VOOR ARTIESTEN
+                {t('domain_artists_eyebrow')}
               </p>
               <h3
                 className="font-display font-bold text-primary mb-4"
                 style={{ fontSize: '28px', lineHeight: '1.1', letterSpacing: '-0.025em' }}
               >
-                Artiesten, influencers & promotoren
+                {t('domain_artists_h3')}
               </h3>
               <p className="text-muted leading-[1.6] flex-1" style={{ fontSize: '15px' }}>
-                Hype is geen toeval. Stevin traceert welke momenten écht momentum bouwen en helpt je daarop te handelen voor de rest het doorheeft.
+                {t('domain_artists_desc')}
               </p>
               <div className="mt-8 pt-5 border-t border-border">
                 <span className="font-display font-semibold text-pink text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                  Ontdek de oplossing
+                  {t('domain_artists_link')}
                   <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
                 </span>
               </div>
@@ -169,7 +177,7 @@ export default function HomePage() {
       <div className="bg-white border-y border-border">
         <div className="mx-auto max-w-[1200px] px-6 py-8">
           <p className="text-[11px] font-display font-bold text-muted uppercase tracking-[0.08em] text-center mb-5">
-            Gekoppeld aan 220+ databronnen in real-time
+            {t('connectors_label')}
           </p>
           <div className="flex items-center justify-center gap-4 sm:gap-8 flex-wrap opacity-45">
             {nativeConnectors.map((c) => (
@@ -187,34 +195,25 @@ export default function HomePage() {
             <div>
               <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
                 <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
-                HET PROBLEEM
+                {t('problem_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-primary m-0"
                 style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '18ch' }}
               >
-                Je mist de data die er echt toe doet.
+                {t('problem_h2')}
               </h2>
             </div>
             <p className="text-muted leading-[1.55] max-w-[280px] lg:text-right" style={{ fontSize: '15px' }}>
-              Je accounts genereren duizenden datapunten per minuut. Zonder context is het ruis.
+              {t('problem_sub')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                title: 'Versnipperde kanalen',
-                desc: 'De waarheid ligt verspreid over social media, advertentieplatforms en e-commerce systemen. Koppel je ze niet, dan stuur je blind.',
-              },
-              {
-                title: 'Rapportage is een achteruitkijkspiegel',
-                desc: "Dashboards vertellen je wat er gisteren is gebeurd. Je klant betaalt voor wat er morgen moet gebeuren. Niemand wordt blij van een PDF met 40 pagina's.",
-              },
-              {
-                title: "Non-billable uren vreten je marge",
-                desc: 'Vijf man op reporting, nul op strategie. Exporteren, combineren, formatteren — tijd die naar creatie, optimalisatie of klantcontact moet gaan.',
-              },
+              { title: t('problem1_title'), desc: t('problem1_desc') },
+              { title: t('problem2_title'), desc: t('problem2_desc') },
+              { title: t('problem3_title'), desc: t('problem3_desc') },
             ].map((item) => (
               <article key={item.title} className="pt-6 border-t border-border">
                 <h3
@@ -238,20 +237,20 @@ export default function HomePage() {
             <div>
               <p className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
                 <span className="inline-block w-6 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-                HOE HET WERKT
+                {t('engine_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-white m-0"
                 style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '16ch' }}
               >
-                Als de data klopt, verdwijnt de mist.
+                {t('engine_h2')}
               </h2>
             </div>
             <Link
               href="/werkwijze"
               className="font-display font-semibold text-[14px] text-white/55 hover:text-white transition-colors flex-shrink-0"
             >
-              Zie de volledige werkwijze →
+              {t('engine_link')}
             </Link>
           </div>
 
@@ -265,10 +264,10 @@ export default function HomePage() {
 
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { step: '01', title: 'Koppelen', desc: 'Alle ruwe data uit 220+ bronnen realtime in één overzicht. Geen middleware, geen vertraging.', claim: 'Geen black boxes.' },
-              { step: '02', title: 'Vergelijken', desc: "Platform-cijfers naast de werkelijkheid in je CRM. Waar Meta of Google afwijkt, wordt dat meetbaar.", claim: 'Niet vermoed, wel bewezen.' },
-              { step: '03', title: 'Activeren', desc: 'Concrete actiepunten per euro. Stevin vertelt waar je morgen moet sturen.', claim: 'Adviezen, geen dashboards.' },
-              { step: '04', title: 'Verbeteren', desc: 'Het platform leert van elke interactie. Rapportages en adviezen passen zich aan op jouw werkwijze.', claim: 'Feedback loop als fundament.' },
+              { step: t('step1_num'), title: t('step1_title'), desc: t('step1_desc'), claim: t('step1_claim') },
+              { step: t('step2_num'), title: t('step2_title'), desc: t('step2_desc'), claim: t('step2_claim') },
+              { step: t('step3_num'), title: t('step3_title'), desc: t('step3_desc'), claim: t('step3_claim') },
+              { step: t('step4_num'), title: t('step4_title'), desc: t('step4_desc'), claim: t('step4_claim') },
             ].map((item) => (
               <article key={item.step} className="pt-2">
                 <span
@@ -304,38 +303,22 @@ export default function HomePage() {
           <div className="mb-12">
             <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
               <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
-              ONTWORPEN VOOR JOUW PRAKTIJK
+              {t('benefits_eyebrow')}
             </p>
             <h2
               className="font-display font-extrabold text-primary m-0"
               style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '18ch' }}
             >
-              Klaar voor gebruik. Niet voor een proof of concept.
+              {t('benefits_h2')}
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              {
-                num: '01',
-                title: 'Live in 2 weken',
-                desc: 'Koppelingen geactiveerd, eerste signalen zichtbaar. Geen maandenlang implementatietraject.',
-              },
-              {
-                num: '02',
-                title: 'Human-in-the-loop standaard',
-                desc: 'AI signaleert, jij beslist. Geen autonome acties zonder jouw goedkeuring.',
-              },
-              {
-                num: '03',
-                title: 'Domeinkennis ingebouwd',
-                desc: 'Gebouwd door marketers, voor marketers. Stevin begrijpt het verschil tussen een spike en een structureel probleem.',
-              },
-              {
-                num: '04',
-                title: 'Leert van je resultaten',
-                desc: 'Elke interactie maakt het systeem scherper. Adviezen worden beter naarmate je langer werkt.',
-              },
+              { num: '01', title: t('benefit1_title'), desc: t('benefit1_desc') },
+              { num: '02', title: t('benefit2_title'), desc: t('benefit2_desc') },
+              { num: '03', title: t('benefit3_title'), desc: t('benefit3_desc') },
+              { num: '04', title: t('benefit4_title'), desc: t('benefit4_desc') },
             ].map((item) => (
               <article
                 key={item.title}
@@ -369,16 +352,16 @@ export default function HomePage() {
           <div className="text-center mb-14">
             <p className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center justify-center gap-[14px]">
               <span className="inline-block w-6 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-              BEVEILIGING &amp; COMPLIANCE
+              {t('security_eyebrow')}
             </p>
             <h2
               className="font-display font-extrabold text-white m-0"
               style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
             >
-              Veilig by default.
+              {tr('heading')}
             </h2>
             <p className="text-white/55 leading-[1.55] mt-5 mx-auto" style={{ fontSize: '17px', maxWidth: '440px' }}>
-              Jouw klantdata verlaat nooit de EU. Gebouwd voor de Europese markt, van dag één.
+              {tr('subheading')}
             </p>
           </div>
 
@@ -388,24 +371,15 @@ export default function HomePage() {
             className="text-center text-white/35 leading-[1.6]"
             style={{ fontSize: '14px', maxWidth: '600px', margin: '0 auto' }}
           >
-            EU-gehoste infrastructuur. GDPR-conform en AI Act-ready. Alle data versleuteld opgeslagen en verzonden. Koppelingen zijn altijd read-only — Stevin schrijft nooit terug naar je platformen.
+            {tr('copy')}
           </p>
 
           {/* 3 trust pillars */}
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              {
-                title: 'Per-klant data-isolatie',
-                desc: 'Elk klantaccount draait in een eigen beveiligde omgeving. Geen cross-contaminatie, nooit.',
-              },
-              {
-                title: 'Read-only koppelingen',
-                desc: 'Stevin leest, nooit schrijft. We hebben geen toegang om iets te wijzigen in je advertentieaccounts.',
-              },
-              {
-                title: 'Geen black boxes',
-                desc: 'Je ziet altijd waarom een signaal is gegenereerd en op welke data het gebaseerd is.',
-              },
+              { title: tr('pillar1_title'), desc: tr('pillar1_desc') },
+              { title: tr('pillar2_title'), desc: tr('pillar2_desc') },
+              { title: tr('pillar3_title'), desc: tr('pillar3_desc') },
             ].map((pillar) => (
               <article key={pillar.title} className="pt-6 border-t border-white/10">
                 <div className="flex items-center gap-2.5 mb-3">
@@ -433,16 +407,16 @@ export default function HomePage() {
             <div>
               <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
                 <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
-                BEWEZEN RESULTAAT
+                {t('result_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-primary"
                 style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
               >
-                Ontworpen voor schaal.
+                {t('result_h2')}
               </h2>
               <p className="text-muted leading-[1.6] mt-6" style={{ fontSize: '16px' }}>
-                Of je nu tientallen ad-accounts beheert voor klanten, of de cross-channel interacties van miljoenen fans monitort: Stevin schaalt mee.
+                {t('result_desc')}
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
@@ -451,18 +425,18 @@ export default function HomePage() {
                   className="font-display font-extrabold text-neon"
                   style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.04em', lineHeight: '1' }}
                 >
-                  -35%
+                  {t('stat1_value')}
                 </p>
-                <p className="text-muted mt-3 leading-[1.4]" style={{ fontSize: '13px' }}>Minder budgetverspilling</p>
+                <p className="text-muted mt-3 leading-[1.4]" style={{ fontSize: '13px' }}>{t('stat1_label')}</p>
               </div>
               <div className="rounded-[14px] border border-border bg-white p-8">
                 <p
                   className="font-display font-extrabold text-accent"
                   style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.04em', lineHeight: '1' }}
                 >
-                  220+
+                  {t('stat2_value')}
                 </p>
-                <p className="text-muted mt-3 leading-[1.4]" style={{ fontSize: '13px' }}>Native integraties out-of-the-box</p>
+                <p className="text-muted mt-3 leading-[1.4]" style={{ fontSize: '13px' }}>{t('stat2_label')}</p>
               </div>
             </div>
           </div>
@@ -476,13 +450,13 @@ export default function HomePage() {
             <div>
               <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
                 <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
-                VRAGEN
+                {t('faq_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-primary m-0"
                 style={{ fontSize: 'clamp(28px, 3vw, 44px)', letterSpacing: '-0.03em', lineHeight: '1.1' }}
               >
-                Veelgestelde vragen
+                {t('faq_h2')}
               </h2>
             </div>
           </div>
@@ -495,29 +469,29 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-neon text-[14px] font-display font-bold tracking-[0.14em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-6 h-px bg-neon flex-shrink-0" aria-hidden="true" />
-            Het is geen wonder. Het is Stevin.
+            {t('closing_eyebrow')}
           </p>
           <div className="flex items-end justify-between gap-12 flex-col lg:flex-row">
             <h2
               className="font-display font-extrabold text-white m-0"
               style={{ fontSize: 'clamp(40px, 5vw, 72px)', lineHeight: '1.02', letterSpacing: '-0.032em', maxWidth: '14ch' }}
             >
-              Zie wat je betaalt.<br />
-              Zie wat het oplevert.
+              {t('closing_h2_line1')}<br />
+              {t('closing_h2_line2')}
             </h2>
             <div className="flex flex-col items-start lg:items-end gap-5">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3.5 font-display font-bold text-[15px] bg-neon text-primary rounded-[10px] hover:bg-neon-dark transition-colors neon-glow"
               >
-                Plan een gesprek
+                {t('closing_cta')}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
                 </svg>
               </Link>
               <div className="flex gap-6 flex-wrap">
-                <Link href="/marketing" className="font-display font-semibold text-sm text-white/45 hover:text-white transition-colors">Voor Marketing →</Link>
-                <Link href="/artiesten" className="font-display font-semibold text-sm text-white/45 hover:text-white transition-colors">Voor Artiesten →</Link>
+                <Link href="/marketing" className="font-display font-semibold text-sm text-white/45 hover:text-white transition-colors">{t('closing_link_marketing')}</Link>
+                <Link href="/artiesten" className="font-display font-semibold text-sm text-white/45 hover:text-white transition-colors">{t('closing_link_artists')}</Link>
               </div>
             </div>
           </div>
@@ -527,7 +501,7 @@ export default function HomePage() {
             style={{ borderTop: '1px solid rgba(255,255,255,.1)' }}
           >
             <p className="italic text-[13px]" style={{ color: 'rgba(255,255,255,.35)' }}>
-              &ldquo;Wonder en is gheen wonder.&rdquo; — Simon Stevin, 1586
+              &ldquo;{t('quote')}&rdquo; — {t('quote_author')}
             </p>
             <p
               className="font-display text-[12px] font-medium tracking-[0.06em] uppercase"

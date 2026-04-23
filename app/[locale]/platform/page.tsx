@@ -1,12 +1,18 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
-import { Brain, BarChart3, Plug, Radio, Moon, Activity, Search, Flame, TrendingUp, Megaphone, Users, Zap, Volume2, Shield, Wrench, Mail, Smartphone, DollarSign, RefreshCw } from 'lucide-react'
 import { nativeConnectors } from '@/data/connectors'
 import MeetlatRuler from '@/components/MeetlatRuler'
 
-export const metadata: Metadata = {
-  title: 'Platform — Stevin',
-  description: 'De onderliggende meetlat: 220+ integraties, 24/7 monitoring, causale rapporten. Platform-cijfers naast de werkelijkheid in je CRM.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'platform' })
+  return {
+    title: `${t('eyebrow')} — Stevin`,
+    description: t('sub'),
+  }
 }
 
 const features = [
@@ -79,7 +85,11 @@ const reportItems = [
   'Branded search-trends via Share of Search',
 ]
 
-export default function PlatformPage() {
+export default async function PlatformPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('platform')
+
   return (
     <main>
       {/* Hero */}
@@ -87,31 +97,30 @@ export default function PlatformPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            HET PLATFORM
+            {t('eyebrow')}
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
             style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '16ch' }}
           >
-            De meetlat<br />
+            {t('h1')}<br />
             <span className="text-[#5DA3FF]">onder je marketing.</span>
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '580px', marginTop: '32px' }}>
-            Platform-cijfers vergeleken met de werkelijkheid in je CRM. 220+ native integraties,
-            continu bewaakt, geen black boxes.
+            {t('sub')}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link
               href="/contact"
               className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
             >
-              Plan een demo
+              {t('cta_demo')}
             </Link>
             <Link
               href="#connectors"
               className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors"
             >
-              Bekijk connectors
+              {t('cta_integraties')}
             </Link>
           </div>
           <div className="mt-20">
@@ -347,7 +356,7 @@ export default function PlatformPage() {
             href="/contact"
             className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
           >
-            Plan een demo
+            {t('cta_demo')}
           </Link>
         </div>
       </section>

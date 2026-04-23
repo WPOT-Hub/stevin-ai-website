@@ -1,13 +1,24 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import Section from '@/components/Section'
 import ContactForm from '@/components/ContactForm'
 
-export const metadata: Metadata = {
-  title: 'Contact',
-  description: 'Plan een gesprek met Stevin.AI. Ontdek hoe paid media, opvolging, tracking en automation beter op elkaar kunnen aansluiten.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'contact' })
+  return {
+    title: t('title'),
+    description: t('desc'),
+  }
 }
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('contact')
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -36,10 +47,10 @@ export default function ContactPage() {
           {/* Left: info */}
           <div>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">
-              Plan een gesprek
+              {t('title')}
             </h1>
             <p className="mt-6 text-lg text-muted leading-relaxed">
-              Vertel ons waar je tegenaan loopt of wat je wilt bereiken. We denken graag mee over hoe paid media, opvolging, tracking en automation beter op elkaar kunnen aansluiten.
+              {t('desc')}
             </p>
 
             <div className="mt-10 space-y-6">
@@ -51,8 +62,8 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-primary">Locaties</h3>
-                  <p className="text-sm text-muted mt-1">Werkzaam vanuit Amsterdam, Eindhoven, Breda en Antwerpen.</p>
+                  <h3 className="text-base font-bold text-primary">{t('location_label')}</h3>
+                  <p className="text-sm text-muted mt-1">{t('location_value')}</p>
                 </div>
               </div>
 
@@ -63,8 +74,8 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-primary">Reactietijd</h3>
-                  <p className="text-sm text-muted mt-1">We reageren binnen één werkdag op je bericht.</p>
+                  <h3 className="text-base font-bold text-primary">{t('response_label')}</h3>
+                  <p className="text-sm text-muted mt-1">{t('response_value')}</p>
                 </div>
               </div>
 
@@ -75,21 +86,21 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-primary">Vrijblijvend</h3>
-                  <p className="text-sm text-muted mt-1">Elk eerste gesprek is vrijblijvend. Geen verplichtingen, geen verkooppraatje.</p>
+                  <h3 className="text-base font-bold text-primary">{t('free_label')}</h3>
+                  <p className="text-sm text-muted mt-1">{t('free_value')}</p>
                 </div>
               </div>
             </div>
 
             <div className="mt-10 p-6 rounded-xl bg-surface border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Waar kunnen we je mee helpen?</h3>
+              <h3 className="text-base font-bold text-primary mb-2">{t('help_heading')}</h3>
               <ul className="space-y-1.5 text-sm text-muted">
-                <li>• Audit van je huidige marketingstack</li>
-                <li>• Inrichten of verbeteren van tracking en analytics</li>
-                <li>• CRM-koppeling en leadopvolging</li>
-                <li>• Paid media beheer en optimalisatie</li>
-                <li>• Marketing automation en lead nurturing</li>
-                <li>• Dashboards en rapportage</li>
+                <li>• {t('help1')}</li>
+                <li>• {t('help2')}</li>
+                <li>• {t('help3')}</li>
+                <li>• {t('help4')}</li>
+                <li>• {t('help5')}</li>
+                <li>• {t('help6')}</li>
               </ul>
             </div>
           </div>

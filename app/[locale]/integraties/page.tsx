@@ -1,3 +1,4 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
@@ -6,12 +7,22 @@ import IntegrationFilter from '@/components/IntegrationFilter'
 import { integrations } from '@/data/integrations'
 import { categories } from '@/data/categories'
 
-export const metadata: Metadata = {
-  title: 'Integraties voor marketing, leadopvolging en groei',
-  description: 'Van advertentiekanalen tot CRM, tracking, CDP, dashboards en automation. Stevin.AI koppelt de tools die je al gebruikt, zodat marketing, opvolging en data beter samenwerken.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'integraties' })
+  return {
+    title: 'Integraties voor marketing, leadopvolging en groei',
+    description: t('sub'),
+  }
 }
 
-export default function IntegratiesPage() {
+export default async function IntegratiesPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('integraties')
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -37,16 +48,16 @@ export default function IntegratiesPage() {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/5 border border-accent/10 mb-8">
               <Image src="/logos/logo-icon.svg" alt="" width={16} height={16} />
-              <span className="text-sm font-medium text-accent">{integrations.length}+ tools en platforms</span>
+              <span className="text-sm font-medium text-accent">{integrations.length}+ {t('hero_badge')}</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
-              Integraties voor een{' '}
+              {t('h1_line1')}{' '}
               <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
-                werkend systeem
+                {t('h1_accent')}
               </span>
             </h1>
             <p className="mt-8 text-lg sm:text-xl text-muted leading-relaxed max-w-2xl mx-auto">
-              Van advertentiekanalen tot CRM, tracking en automation. Wij koppelen de tools die je al gebruikt.
+              {t('sub')}
             </p>
           </div>
         </div>
@@ -55,9 +66,9 @@ export default function IntegratiesPage() {
       {/* Categories */}
       <Section bg="white">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Categorieën</p>
+          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">{t('categories_eyebrow')}</p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">
-            Ontdek per categorie
+            {t('categories_h2')}
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -75,7 +86,7 @@ export default function IntegratiesPage() {
                 </div>
                 <p className="text-sm text-muted leading-relaxed">{cat.description}</p>
                 <div className="mt-4 flex items-center text-sm font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                  Bekijk tools
+                  {t('view_tools')}
                   <svg className="ml-1 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -89,12 +100,12 @@ export default function IntegratiesPage() {
       {/* All integrations with filter */}
       <Section bg="surface">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Alle tools</p>
+          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">{t('all_eyebrow')}</p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">
             {integrations.length} integraties
           </h2>
           <p className="mt-4 text-lg text-muted max-w-2xl mx-auto">
-            Zoek direct naar een specifieke tool of platform.
+            {t('search_placeholder')}
           </p>
         </div>
         <IntegrationFilter integrations={integrations} />
@@ -110,16 +121,16 @@ export default function IntegratiesPage() {
             }} />
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-                Werk je met tools die je hier niet ziet?
+                {t('cta_h2')}
               </h2>
               <p className="mt-6 text-lg text-slate-300 max-w-xl mx-auto leading-relaxed">
-                We werken met elk platform dat een API of koppeling biedt.
+                {t('cta_sub')}
               </p>
               <Link
                 href="/contact"
                 className="mt-10 group inline-flex items-center px-8 py-4 text-base font-semibold text-[#0A1628] bg-white rounded-xl hover:bg-slate-100 transition-all duration-200 shadow-lg"
               >
-                Plan een gesprek
+                {t('cta_btn')}
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

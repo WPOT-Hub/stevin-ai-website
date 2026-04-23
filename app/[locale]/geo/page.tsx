@@ -1,12 +1,19 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import Section from '@/components/Section'
 import SectionHeader from '@/components/SectionHeader'
 import CTABlock from '@/components/CTABlock'
 import FAQAccordion from '@/components/FAQAccordion'
 
-export const metadata: Metadata = {
-  title: 'GEO — Generative Engine Optimisation',
-  description: 'Zichtbaar zijn in AI-zoekervaringen. Stevin.AI optimaliseert je content en sitestructuur zodat je gevonden wordt in AI-gegenereerde antwoorden van Google, ChatGPT en andere AI-zoekmachines.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'geo' })
+  return {
+    title: `${t('eyebrow')} — Generative Engine Optimisation`,
+    description: t('sub'),
+  }
 }
 
 const faqs = [
@@ -32,7 +39,11 @@ const faqs = [
   },
 ]
 
-export default function GEOPage() {
+export default async function GEOPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('geo')
+
   return (
     <>
       {/* Hero */}
@@ -40,10 +51,10 @@ export default function GEOPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">
-              GEO &mdash; Zichtbaarheid in AI-zoekervaringen
+              {t('h1')}
             </h1>
             <p className="mt-6 text-lg text-muted leading-relaxed">
-              Zoekmachines veranderen. Google geeft AI-gegenereerde antwoorden. ChatGPT, Perplexity en andere tools beantwoorden vragen direct. Als je content niet wordt opgepikt door die systemen, verlies je zichtbaarheid. GEO zorgt ervoor dat je gevonden blijft &mdash; ook in de nieuwe zoekervaring.
+              {t('sub')}
             </p>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Link } from '@/i18n/navigation'
@@ -46,9 +47,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 /* ───────── Category page ───────── */
-function CategoryView({ slug }: { slug: string }) {
+async function CategoryView({ slug, locale }: { slug: string; locale: string }) {
   const category = getCategoryBySlug(slug)!
   const categoryIntegrations = getIntegrationsByCategory(slug)
+  const t = await getTranslations({ locale, namespace: 'integraties' })
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -92,7 +94,7 @@ function CategoryView({ slug }: { slug: string }) {
 
         {/* Related categories */}
         <div className="mt-16 pt-12 border-t border-border">
-          <h2 className="text-xl font-bold text-primary mb-6">Andere categorieën</h2>
+          <h2 className="text-xl font-bold text-primary mb-6">{t('other_categories')}</h2>
           <div className="flex flex-wrap gap-3">
             {categories
               .filter((c) => c.slug !== slug)
@@ -111,9 +113,9 @@ function CategoryView({ slug }: { slug: string }) {
 
       <Section bg="surface">
         <CTABlock
-          title="Hulp nodig bij het koppelen van je tools?"
-          description="We zorgen dat je marketingstack samenwerkt als één systeem. Plan een gesprek en ontdek wat er mogelijk is."
-          buttonText="Plan een gesprek"
+          title={t('connect_cta_title')}
+          description={t('connect_cta_desc')}
+          buttonText={t('connect_cta_btn')}
           buttonHref="/contact"
         />
       </Section>
@@ -122,10 +124,11 @@ function CategoryView({ slug }: { slug: string }) {
 }
 
 /* ───────── Integration detail page ───────── */
-function IntegrationView({ slug }: { slug: string }) {
+async function IntegrationView({ slug, locale }: { slug: string; locale: string }) {
   const integration = getIntegrationBySlug(slug)!
   const category = getCategoryBySlug(integration.category)
   const relatedIntegrations = getRelatedIntegrations(integration.relatedSlugs)
+  const t = await getTranslations({ locale, namespace: 'integraties' })
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -200,17 +203,17 @@ function IntegrationView({ slug }: { slug: string }) {
 
             <div className="space-y-8">
               <div>
-                <h2 className="text-xl font-bold text-primary mb-3">Waar zetten we {integration.name} voor in?</h2>
+                <h2 className="text-xl font-bold text-primary mb-3">{t('use_case_heading', { name: integration.name })}</h2>
                 <p className="text-muted leading-relaxed">{integration.useCase}</p>
               </div>
 
               <div>
-                <h2 className="text-xl font-bold text-primary mb-3">Hoe Stevin.AI met {integration.name} werkt</h2>
+                <h2 className="text-xl font-bold text-primary mb-3">{t('how_we_use_heading', { name: integration.name })}</h2>
                 <p className="text-muted leading-relaxed">{integration.howWeUseIt}</p>
               </div>
 
               <div>
-                <h2 className="text-xl font-bold text-primary mb-3">Welke problemen lost dit op?</h2>
+                <h2 className="text-xl font-bold text-primary mb-3">{t('problems_heading')}</h2>
                 <ul className="space-y-2.5">
                   {integration.problemsSolved.map((problem) => (
                     <li key={problem} className="flex items-start gap-3">
@@ -225,7 +228,7 @@ function IntegrationView({ slug }: { slug: string }) {
 
               {integration.faqs && integration.faqs.length > 0 && (
                 <div>
-                  <h2 className="text-xl font-bold text-primary mb-4">Veelgestelde vragen over {integration.name}</h2>
+                  <h2 className="text-xl font-bold text-primary mb-4">{t('faqs_heading', { name: integration.name })}</h2>
                   <FAQAccordion faqs={integration.faqs} />
                 </div>
               )}
@@ -238,23 +241,23 @@ function IntegrationView({ slug }: { slug: string }) {
               {/* CTA card */}
               <div className="p-6 rounded-xl bg-surface border border-border">
                 <h3 className="text-base font-bold text-primary mb-2">
-                  {integration.name} koppelen?
+                  {t('sidebar_cta_heading', { name: integration.name })}
                 </h3>
                 <p className="text-sm text-muted mb-4">
-                  We helpen je {integration.name} te integreren in je marketingstack.
+                  {t('sidebar_cta_desc', { name: integration.name })}
                 </p>
                 <Link
                   href="/contact"
                   className="block w-full text-center px-5 py-3 text-sm font-semibold text-white bg-accent rounded-lg hover:bg-accent-dark transition-colors"
                 >
-                  Plan een gesprek
+                  {t('sidebar_cta_btn')}
                 </Link>
               </div>
 
               {/* Related integrations */}
               {relatedIntegrations.length > 0 && (
                 <div className="p-6 rounded-xl bg-surface border border-border">
-                  <h3 className="text-base font-bold text-primary mb-4">Gerelateerde integraties</h3>
+                  <h3 className="text-base font-bold text-primary mb-4">{t('sidebar_related_heading')}</h3>
                   <div className="space-y-2.5">
                     {relatedIntegrations.map((rel) => (
                       <Link
@@ -275,12 +278,12 @@ function IntegrationView({ slug }: { slug: string }) {
               {/* Category link */}
               {category && (
                 <div className="p-6 rounded-xl bg-surface border border-border">
-                  <h3 className="text-base font-bold text-primary mb-2">Categorie</h3>
+                  <h3 className="text-base font-bold text-primary mb-2">{t('sidebar_category_heading')}</h3>
                   <Link
                     href={`/integraties/${category.slug}`}
                     className="text-sm text-accent hover:text-accent-dark transition-colors"
                   >
-                    Bekijk alle {category.name.toLowerCase()} integraties →
+                    {t('sidebar_category_link', { name: category.name.toLowerCase() })}
                   </Link>
                 </div>
               )}
@@ -291,9 +294,9 @@ function IntegrationView({ slug }: { slug: string }) {
 
       <Section bg="surface">
         <CTABlock
-          title={`${integration.name} koppelen aan je marketingstack?`}
-          description="Plan een gesprek en ontdek hoe we je tools laten samenwerken voor betere resultaten."
-          buttonText="Plan een gesprek"
+          title={t('detail_cta_title', { name: integration.name })}
+          description={t('detail_cta_desc')}
+          buttonText={t('detail_cta_btn')}
           buttonHref="/contact"
         />
       </Section>
@@ -303,16 +306,17 @@ function IntegrationView({ slug }: { slug: string }) {
 
 /* ───────── Main page component ───────── */
 export default async function IntegrationOrCategoryPage({ params }: Props) {
-  const { slug } = await params
+  const { locale, slug } = await params
+  setRequestLocale(locale)
 
   // Check category first
   if (getCategoryBySlug(slug)) {
-    return <CategoryView slug={slug} />
+    return <CategoryView slug={slug} locale={locale} />
   }
 
   // Then check integration
   if (getIntegrationBySlug(slug)) {
-    return <IntegrationView slug={slug} />
+    return <IntegrationView slug={slug} locale={locale} />
   }
 
   notFound()

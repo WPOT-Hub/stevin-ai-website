@@ -1,11 +1,18 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 import { Search, GitBranch, Database, Plug, Eye, Radar } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Stevin voor Retail & FMCG — Share of Search & Omnichannel Intelligence',
-  description: 'Monitor je share of search, verbind online en offline data en meet de impact van campagnes op winkelbezoek. Stevin is gebouwd voor retail en FMCG marketing teams.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'retail' })
+  return {
+    title: `Stevin ${t('eyebrow')} — ${t('h1')}`,
+    description: t('sub'),
+  }
 }
 
 const painPoints = [
@@ -86,7 +93,11 @@ const useCases = [
   'Je besteedt te veel tijd aan het combineren van data uit verschillende bronnen',
 ]
 
-export default function RetailPage() {
+export default async function RetailPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('retail')
+
   return (
     <main>
       {/* Hero */}
@@ -94,16 +105,15 @@ export default function RetailPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            VOOR RETAIL EN FMCG
+            {t('eyebrow')}
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
             style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '16ch' }}>
-            Van schap tot scherm.<br />
-            <span className="text-[#5DA3FF]">Alles verbonden.</span>
+            {t('h1')}
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '560px', marginTop: '32px' }}>
-            Stevin verbindt je online en offline data, monitort je share of search en meet de impact van campagnes op winkelbezoek. Eén platform voor omnichannel retail marketing.
+            {t('sub')}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">

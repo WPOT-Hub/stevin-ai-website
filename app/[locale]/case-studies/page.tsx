@@ -1,9 +1,16 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 
-export const metadata: Metadata = {
-  title: 'Case Studies — Stevin',
-  description: 'Ontdek hoe bedrijven hun marketing transformeren met het Stevin platform.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'case_studies' })
+  return {
+    title: `${t('h1')} — Stevin`,
+    description: t('sub'),
+  }
 }
 
 const caseStudies = [
@@ -17,7 +24,11 @@ const caseStudies = [
   },
 ]
 
-export default function CaseStudiesPage() {
+export default async function CaseStudiesPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('case_studies')
+
   return (
     <main>
       {/* Hero */}
@@ -25,16 +36,16 @@ export default function CaseStudiesPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            RESULTATEN
+            {t('eyebrow')}
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
             style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}
           >
-            Case Studies
+            {t('h1')}
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '540px', marginTop: '24px' }}>
-            Echte resultaten van echte bedrijven. Ontdek hoe het Stevin platform marketing transformeert.
+            {t('sub')}
           </p>
         </div>
       </section>

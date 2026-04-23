@@ -1,10 +1,17 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 
-export const metadata: Metadata = {
-  title: 'Stevin voor Artiesten — Filter het signaal uit de ruis',
-  description: 'Stevin centraliseert je social kanalen, filtert de ruis en levert concrete actiepunten. Van cross-channel momentum tot fan-engagement.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'artiesten' })
+  return {
+    title: `Stevin voor Artiesten — ${t('h1_line1')} ${t('h1_accent')}`,
+    description: t('sub'),
+  }
 }
 
 const features = [
@@ -41,7 +48,11 @@ const useCases = [
 
 const channels = ['Instagram', 'TikTok', 'YouTube', 'SoundCloud', 'Spotify', 'Facebook', 'Website']
 
-export default function VoorArtiestenPage() {
+export default async function VoorArtiestenPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('artiesten')
+
   return (
     <main>
       {/* Hero */}
@@ -49,30 +60,30 @@ export default function VoorArtiestenPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            VOOR ARTIESTEN
+            {t('eyebrow')}
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
             style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '14ch' }}
           >
-            Het Signaal<br />
-            <span className="text-[#5DA3FF]">in de Ruis.</span>
+            {t('h1_line1')}<br />
+            <span className="text-[#5DA3FF]">{t('h1_accent')}</span>
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '560px', marginTop: '32px' }}>
-            Stop met het doorspitten van duizenden comments. Stevin filtert social chaos en zet het om in momentum, fan loyalty en merch sales.
+            {t('sub')}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link
               href="/contact"
               className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
             >
-              Vraag toegang aan
+              {t('cta_access')}
             </Link>
             <Link
               href="/platform"
               className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors"
             >
-              Bekijk het platform
+              {t('cta_platform')}
             </Link>
           </div>
           <div className="mt-20">
@@ -86,18 +97,16 @@ export default function VoorArtiestenPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            JOUW DIGITALE BACKSTAGE
+            {t('intro_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Al je kanalen.<br />Eén cockpit.
+            {t('intro_h2_line1')}<br />{t('intro_h2_line2')}
           </h2>
           <p className="text-[17px] text-muted leading-[1.6] max-w-2xl mb-12">
-            Je leeft op TikTok, Instagram, YouTube en SoundCloud. De data is versnipperd en je team
-            is uren kwijt aan het managen van reacties. Stevin centraliseert jouw ecosysteem.
-            Geen irrelevante grafieken, maar keiharde actiepunten.
+            {t('intro_sub')}
           </p>
           <div className="flex items-center gap-6 sm:gap-10 flex-wrap border-t border-border pt-8">
             {channels.map((ch) => (
@@ -198,7 +207,7 @@ export default function VoorArtiestenPage() {
                 href="/contact"
                 className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
               >
-                Vraag toegang aan
+                {t('cta_access')}
               </Link>
               <ul className="mt-8 space-y-0 border-t border-white/10">
                 {['Cross-channel monitoring', 'AI Advisor met momentum-detectie', 'Fan-engagement filtering', 'Reactie-tracking over tijd', 'Geo-hype tracking', 'Merch & ticket conversie-inzichten'].map((f) => (

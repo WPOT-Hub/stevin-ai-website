@@ -1,9 +1,16 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 
-export const metadata: Metadata = {
-  title: 'Case Study: E-commerce — Stevin',
-  description: 'Hoe een snelgroeiend e-commerce bedrijf 42% meer leads genereerde en 8 uur per week bespaarde met het Stevin platform.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'case_studies' })
+  return {
+    title: `Case Study: E-commerce — Stevin`,
+    description: t('sub'),
+  }
 }
 
 const results = [
@@ -30,7 +37,9 @@ const approach = [
   { step: 'Pulse', desc: 'Sovereign lead generation geactiveerd voor aanvullende B2B leadgeneratie via de webshop.' },
 ]
 
-export default function EcommerceCaseStudy() {
+export default async function EcommerceCaseStudy({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
   return (
     <main>
       {/* Hero */}

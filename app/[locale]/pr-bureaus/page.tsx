@@ -1,11 +1,18 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 import { Newspaper, TrendingUp, MessageCircle, BarChart3, Filter, Zap } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Stevin voor PR-bureaus — Media intelligence in één platform',
-  description: 'Stevin helpt PR-bureaus en communicatieadviseurs met media monitoring, mention-tracking en campagne-impact meting. Alles gecentraliseerd, herleidbaar.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'pr_bureaus' })
+  return {
+    title: `Stevin ${t('eyebrow')} — ${t('h1')}`,
+    description: t('sub'),
+  }
 }
 
 const features = [
@@ -49,7 +56,11 @@ const useCases = [
   'Je rapportages kosten te veel tijd en missen diepgang',
 ]
 
-export default function PRBureausPage() {
+export default async function PRBureausPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('pr_bureaus')
+
   return (
     <main>
       {/* Hero */}
@@ -57,17 +68,15 @@ export default function PRBureausPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            VOOR PR-BUREAUS & COMMUNICATIE
+            {t('eyebrow')}
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
             style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '16ch' }}>
-            Media intelligence<br />
-            <span className="text-[#5DA3FF]">in één platform.</span>
+            {t('h1')}
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '560px', marginTop: '32px' }}>
-            Stop met handmatig clippings verzamelen. Stevin monitort, analyseert en rapporteert
-            over je klanten — zodat jij je kunt focussen op strategie en relaties.
+            {t('sub')}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">

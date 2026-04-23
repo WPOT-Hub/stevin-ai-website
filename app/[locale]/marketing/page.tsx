@@ -1,26 +1,18 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 
-export const metadata: Metadata = {
-  title: 'Stevin voor Marketing — Agencies, Inhouse Teams & Promotoren',
-  description: 'Grip op ROAS, minder verspilling en slimmere campagnes. Stevin centraliseert al je marketingdata, analyseert 24/7 en levert concrete actiepunten.',
-}
+type Props = { params: Promise<{ locale: string }> }
 
-const painPoints = [
-  {
-    title: 'Rapportage is een achteruitkijkspiegel',
-    desc: 'Je team besteedt dagenlang aan het verklaren van wat er gisteren is gebeurd. Terwijl je klant betaalt voor wat er morgen moet gebeuren.',
-  },
-  {
-    title: 'Vijf man op reporting, nul op strategie',
-    desc: 'Exporteren, combineren, formatteren, presenteren. Non-billable uren die je marge opeten en je team weghouden van het werk dat verschil maakt.',
-  },
-  {
-    title: 'Dashboards vertellen je niks',
-    desc: 'Een grafiek die omlaag gaat is geen inzicht. Je wilt weten waarom het gebeurt, wat je eraan kunt doen en wanneer je creatieve hook zijn kracht verliest.',
-  },
-]
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'marketing' })
+  return {
+    title: `Stevin voor Marketing — ${t('h1_line1')} ${t('h1_line2')} & ${t('h1_accent')}`,
+    description: t('sub'),
+  }
+}
 
 const features = [
   {
@@ -79,7 +71,17 @@ const useCases = [
   'Je wilt je positioneren als strategisch partner, niet als rapportage-fabriek',
 ]
 
-export default function MarketingPage() {
+export default async function MarketingPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('marketing')
+
+  const painPoints = [
+    { title: t('pain1_title'), desc: t('pain1_desc') },
+    { title: t('pain2_title'), desc: t('pain2_desc') },
+    { title: t('pain3_title'), desc: t('pain3_desc') },
+  ]
+
   return (
     <main>
       {/* Hero */}
@@ -87,7 +89,7 @@ export default function MarketingPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            VOOR MARKETING
+            {t('eyebrow')}
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
@@ -97,8 +99,7 @@ export default function MarketingPage() {
             <span className="text-[#5DA3FF]">Focus op resultaat.</span>
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '560px', marginTop: '32px' }}>
-            Of je nu een performance agency runt, een creatief team aanstuurt, media inkoopt of events plant — Stevin centraliseert
-            je data, analyseert 24/7 en levert concrete actiepunten.
+            {t('sub')}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link
@@ -125,7 +126,7 @@ export default function MarketingPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            DE REALITEIT
+            {t('pain_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16"

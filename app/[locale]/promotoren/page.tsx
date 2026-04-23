@@ -1,11 +1,18 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 import { Calendar, TrendingUp, MapPin, BarChart3, Users, Zap } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Stevin voor Promotoren — Scan de markt. Boek slimmer.',
-  description: 'Stevin helpt promotoren en event marketeers de markt te scannen, concurrerende events te monitoren en campagnes per regio te optimaliseren.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'promotoren' })
+  return {
+    title: `Stevin ${t('eyebrow')} — ${t('h1')}`,
+    description: t('sub'),
+  }
 }
 
 const features = [
@@ -49,7 +56,11 @@ const useCases = [
   'Je wilt data-gedreven beslissingen nemen over line-ups en venues',
 ]
 
-export default function PromotorenPage() {
+export default async function PromotorenPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('promotoren')
+
   return (
     <main>
       {/* Hero */}
@@ -57,17 +68,15 @@ export default function PromotorenPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            VOOR PROMOTOREN & EVENT MARKETING
+            {t('eyebrow')}
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
             style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '16ch' }}>
-            Scan de markt.<br />
-            <span className="text-[#5DA3FF]">Boek slimmer.</span>
+            {t('h1')}
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '560px', marginTop: '32px' }}>
-            Voordat je AFAS Live of de Dome boekt, wil je weten of jouw artiest het moet opnemen tegen
-            een act met dezelfde fanbase. Stevin scant de markt en geeft je de data om slimmer te plannen.
+            {t('sub')}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">

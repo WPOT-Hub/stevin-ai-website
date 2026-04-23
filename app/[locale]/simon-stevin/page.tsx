@@ -1,13 +1,22 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 
-export const metadata: Metadata = {
-  title: 'Simon Stevin — Waarom wij zijn naam dragen',
-  description: 'Simon Stevin zag al door de mist in 1585. Wij dragen zijn naam omdat wij zijn werk voortzetten — niet in polders, wel in marketingbudgetten.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'simon_stevin' })
+  return {
+    title: `${t('eyebrow')} — ${t('h1')}`,
+    description: t('sub'),
+  }
 }
 
-export default function SimonStevinPage() {
+export default async function SimonStevinPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
   return (
     <>
       {/* ── SECTIE 1 — NAVY HERO ── */}

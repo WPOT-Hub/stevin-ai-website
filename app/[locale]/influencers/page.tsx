@@ -1,11 +1,18 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 import { TrendingUp, Filter, BarChart3, MessageCircle, Zap, Users } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Stevin voor Influencers — Van bereik naar bewijs',
-  description: 'Stevin geeft influencers en creators grip op hun data. Cross-channel analytics, brand deal onderbouwing en community intelligence in één platform.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'influencers' })
+  return {
+    title: `Stevin ${t('eyebrow')} — ${t('h1')}`,
+    description: t('sub'),
+  }
 }
 
 const features = [
@@ -49,7 +56,11 @@ const useCases = [
   'Je wilt professioneler overkomen naar brands en agencies',
 ]
 
-export default function InfluencersPage() {
+export default async function InfluencersPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('influencers')
+
   return (
     <main>
       {/* Hero */}
@@ -57,17 +68,15 @@ export default function InfluencersPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#F4216A] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#F4216A] opacity-60 flex-shrink-0" aria-hidden="true" />
-            VOOR INFLUENCERS & CREATORS
+            {t('eyebrow')}
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
             style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '16ch' }}>
-            Van bereik<br />
-            <span className="text-[#5DA3FF]">naar bewijs.</span>
+            {t('h1')}
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '560px', marginTop: '32px' }}>
-            Stop met screenshots en losse statistieken. Stevin geeft je grip op je totale bereik,
-            onderbouwt je waarde richting merken en laat zien welke content echt impact heeft.
+            {t('sub')}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">

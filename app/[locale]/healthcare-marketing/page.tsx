@@ -1,11 +1,18 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 import { ShieldCheck, GitMerge, Server, Plug, FileText, Target } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Stevin voor Healthcare & Farma — Compliant Marketing Intelligence',
-  description: 'Pre-compliance scanning, MLR workflow integratie en compliant server-side tracking. Stevin is gebouwd voor healthcare en farma marketing teams die snel willen schakelen zonder compliance-risicos.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'healthcare' })
+  return {
+    title: `Stevin ${t('eyebrow')} — ${t('h1')}`,
+    description: t('sub'),
+  }
 }
 
 const painPoints = [
@@ -86,7 +93,11 @@ const useCases = [
   'Je wilt sneller schakelen zonder concessies te doen aan regelgeving',
 ]
 
-export default function HealthcareMarketingPage() {
+export default async function HealthcareMarketingPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('healthcare')
+
   return (
     <main>
       {/* Hero */}
@@ -94,16 +105,15 @@ export default function HealthcareMarketingPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            VOOR HEALTHCARE EN FARMA
+            {t('eyebrow')}
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
             style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '16ch' }}>
-            Compliant marketing.<br />
-            <span className="text-[#5DA3FF]">Zonder snelheid in te leveren.</span>
+            {t('h1')}
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '560px', marginTop: '32px' }}>
-            Stevin helpt healthcare en farma teams om sneller te schakelen zonder compliance-risicos. Van pre-compliance scanning tot MLR workflow integratie — alles in één platform.
+            {t('sub')}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">

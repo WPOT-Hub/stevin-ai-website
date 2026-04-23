@@ -1,10 +1,17 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 
-export const metadata: Metadata = {
-  title: 'Werkwijze — Stevin',
-  description: 'De vier fases van ruwe platform-data naar herleidbaar resultaat. Geen black boxes, geen magie.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'werkwijze' })
+  return {
+    title: `${t('eyebrow')} — Stevin`,
+    description: t('sub'),
+  }
 }
 
 const phases = [
@@ -64,7 +71,11 @@ const phases = [
 
 const phaseLabels = ['01 / KOPPELEN', '02 / VERGELIJKEN', '03 / ACTIVEREN', '04 / VERBETEREN']
 
-export default function WerkwijzePage() {
+export default async function WerkwijzePage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('werkwijze')
+
   return (
     <>
       {/* ── Hero — navy ── */}
@@ -77,30 +88,30 @@ export default function WerkwijzePage() {
               {/* Eyebrow */}
               <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
                 <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-                Werkwijze
+                {t('eyebrow')}
               </p>
 
-              {/* H1 — linebreak spans, laatste punt in accent */}
+              {/* H1 */}
               <h1
                 className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em] mb-6"
                 style={{ fontSize: 'clamp(44px, 6.4vw, 96px)', maxWidth: '16ch' }}
               >
-                <span className="linebreak">Eerst koppelen.</span>
-                <span className="linebreak">Dan vergelijken.</span>
-                <span className="linebreak">Dan sturen<span className="text-accent">.</span></span>
+                <span className="linebreak">{t('h1_line1')}</span>
+                <span className="linebreak">{t('h1_line2')}</span>
+                <span className="linebreak">{t('h1_line3').replace('.', '')}<span className="text-accent">.</span></span>
               </h1>
 
               <p className="text-white/60 leading-[1.5] max-w-[520px]" style={{ fontSize: '19px' }}>
-                De vier fases van ruwe platform-data naar herleidbaar resultaat.
+                {t('sub')}
               </p>
             </div>
 
             {/* Side-quote */}
             <aside className="text-white/55 text-[13px] text-right leading-[1.7] pb-[10px] hidden lg:block">
               <span className="block italic text-white/85 leading-[1.45] mb-2" style={{ fontSize: '15px', maxWidth: '260px', marginLeft: 'auto' }}>
-                &ldquo;Wonder en is gheen wonder.&rdquo;
+                &ldquo;{t('side_quote')}&rdquo;
               </span>
-              Simon Stevin, 1586 — en nog steeds het uitgangspunt.
+              {t('side_quote_author')}
             </aside>
           </div>
 
@@ -128,17 +139,17 @@ export default function WerkwijzePage() {
             <div>
               <p className="text-accent text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-[18px] flex items-center gap-[14px]">
                 <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
-                Vier fases
+                {t('phases_eyebrow')}
               </p>
               <h2
                 className="font-display font-bold text-primary m-0"
                 style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', lineHeight: '1.2', maxWidth: '18ch' }}
               >
-                Van bron tot effect, stap voor stap herleidbaar.
+                {t('phases_h2')}
               </h2>
             </div>
             <p className="text-muted text-[15px] leading-[1.55] max-w-[280px] lg:text-right">
-              We slaan niets over. Elke fase doet exact één ding en geeft het aan de volgende door.
+              {t('phases_sub')}
             </p>
           </div>
 
@@ -197,21 +208,21 @@ export default function WerkwijzePage() {
             className="font-display font-extrabold text-white m-0"
             style={{ fontSize: 'clamp(34px, 4.2vw, 60px)', lineHeight: '1.02', letterSpacing: '-0.03em', maxWidth: '14ch' }}
           >
-            Het is geen wonder.<br />
-            Het is <span className="text-accent">Stevin</span>.
+            {t('closing_h3_line1')}<br />
+            {t('closing_h3_line2').replace('Stevin', '')} <span className="text-accent">Stevin</span>.
           </h3>
           <div className="flex flex-col items-start lg:items-end gap-4">
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3.5 font-display font-bold text-[15px] bg-neon text-primary rounded-[10px] hover:bg-neon-dark transition-colors neon-glow"
             >
-              Plan een gesprek
+              {t('closing_cta')}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
               </svg>
             </Link>
             <p className="text-[14px] italic text-white/55">
-              &ldquo;Wonder en is gheen wonder.&rdquo; — Simon Stevin, 1586
+              &ldquo;{t('closing_quote')}&rdquo; — {t('closing_quote_author')}
             </p>
           </div>
         </div>

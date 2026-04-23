@@ -1,11 +1,18 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 import { Tag, Users, Plug, Zap, TrendingUp, Sparkles } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Voor Agencies — Stevin',
-  description: 'Gebruik Stevin als technologiepartner voor je bureau. White-label dashboard, multi-client beheer, dedicated connectors en volume korting.',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'voor_agencies' })
+  return {
+    title: `Stevin ${t('eyebrow')} — ${t('h1')}`,
+    description: t('sub'),
+  }
 }
 
 const features = [
@@ -49,7 +56,11 @@ const useCases = [
   'Je hebt meerdere klanten op dezelfde platformen',
 ]
 
-export default function VoorAgenciesPage() {
+export default async function VoorAgenciesPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations('voor_agencies')
+
   return (
     <main>
       {/* Hero */}
@@ -57,17 +68,15 @@ export default function VoorAgenciesPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            VOOR BUREAUS
+            {t('eyebrow')}
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
             style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '16ch' }}>
-            Schaal jouw bureau met<br />
-            <span className="text-[#5DA3FF]">Stevin als partner</span>
+            {t('h1')}
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '560px', marginTop: '32px' }}>
-            Geen concurrent, maar een technologiepartner. Gebruik ons platform om meer klanten te bedienen,
-            betere resultaten te leveren en je marge te vergroten.
+            {t('sub')}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">

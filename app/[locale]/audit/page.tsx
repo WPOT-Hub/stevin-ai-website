@@ -1,11 +1,18 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import ContactForm from '@/components/ContactForm'
 
-export const metadata: Metadata = {
-  title: 'Gratis marketing audit — 20 minuten, drie concrete aandachtspunten',
-  description: 'Stevin loopt in 20 minuten door je marketingaccounts en geeft je drie concrete aandachtspunten mee. Geen verkooppraatje.',
-  robots: 'noindex',
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'audit' })
+  return {
+    title: t('h1'),
+    description: t('sub'),
+    robots: 'noindex',
+  }
 }
 
 const WHAT_YOU_GET = [
@@ -26,7 +33,10 @@ const WHAT_YOU_GET = [
   },
 ]
 
-export default function AuditPage() {
+export default async function AuditPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <>
       {/* ── HERO ── */}
