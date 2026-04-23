@@ -2,6 +2,7 @@ import Link from 'next/link'
 import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import MeetlatRuler from '@/components/MeetlatRuler'
+import TrustBadges from '@/components/TrustBadges'
 import { homepageFaqs } from '@/data/faqs'
 import { nativeConnectors } from '@/data/connectors'
 
@@ -381,100 +382,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Badges */}
-          <div className="flex justify-center flex-wrap gap-6 mb-14">
-
-            {/* 1 — COMPLIANT */}
-            <svg viewBox="0 0 100 100" width="108" height="108" aria-label="GDPR Compliant">
-              <circle cx="50" cy="50" r="47" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" fill="none"/>
-              <path d="M50 22 L66 30 L66 47 C66 57 59 64 50 67 C41 64 34 57 34 47 L34 30 Z"
-                    stroke="rgba(255,255,255,0.8)" strokeWidth="1.4" fill="none" strokeLinejoin="round" strokeLinecap="round"/>
-              <polyline points="43,46 48,53 59,39"
-                        stroke="rgba(255,255,255,0.8)" strokeWidth="1.6" fill="none"
-                        strokeLinecap="round" strokeLinejoin="round"/>
-              <text x="50" y="84" textAnchor="middle" fontSize="7.5" fontWeight="700"
-                    fill="rgba(255,255,255,0.75)" letterSpacing="1.5" fontFamily="system-ui,sans-serif">COMPLIANT</text>
-            </svg>
-
-            {/* 2 — EU HOSTED */}
-            <svg viewBox="0 0 100 100" width="108" height="108" aria-label="EU Hosted">
-              <circle cx="50" cy="50" r="47" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" fill="none"/>
-              {[...Array(12)].map((_, i) => {
-                const a = (i * 30 - 90) * Math.PI / 180
-                return (
-                  <text key={i} x={50 + 27 * Math.cos(a)} y={43 + 27 * Math.sin(a)}
-                        textAnchor="middle" dominantBaseline="central"
-                        fontSize="5.5" fill="rgba(255,255,255,0.8)" fontFamily="system-ui">★</text>
-                )
-              })}
-              <text x="50" y="43" textAnchor="middle" dominantBaseline="central"
-                    fontSize="13" fontWeight="800" fill="rgba(255,255,255,0.8)" fontFamily="system-ui,sans-serif">EU</text>
-              <text x="50" y="84" textAnchor="middle" fontSize="7.5" fontWeight="700"
-                    fill="rgba(255,255,255,0.75)" letterSpacing="1.5" fontFamily="system-ui,sans-serif">HOSTED</text>
-            </svg>
-
-            {/* 3 — AI ACT READY */}
-            <svg viewBox="0 0 100 100" width="108" height="108" aria-label="AI Act Ready">
-              <circle cx="50" cy="50" r="47" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" fill="none"/>
-              {[...Array(8)].map((_, i) => {
-                const a = ((i * 25) - 87.5 - 90) * Math.PI / 180
-                return (
-                  <text key={i} x={50 + 31 * Math.cos(a)} y={44 + 31 * Math.sin(a)}
-                        textAnchor="middle" dominantBaseline="central"
-                        fontSize="4.5" fill="rgba(255,255,255,0.8)" fontFamily="system-ui">★</text>
-                )
-              })}
-              <rect x="38" y="31" width="24" height="20" rx="3"
-                    stroke="rgba(255,255,255,0.8)" strokeWidth="1.3" fill="none"/>
-              <line x1="43" y1="31" x2="43" y2="26" stroke="rgba(255,255,255,0.6)" strokeWidth="1.2" strokeLinecap="round"/>
-              <line x1="50" y1="31" x2="50" y2="26" stroke="rgba(255,255,255,0.6)" strokeWidth="1.2" strokeLinecap="round"/>
-              <line x1="57" y1="31" x2="57" y2="26" stroke="rgba(255,255,255,0.6)" strokeWidth="1.2" strokeLinecap="round"/>
-              <line x1="43" y1="51" x2="43" y2="56" stroke="rgba(255,255,255,0.6)" strokeWidth="1.2" strokeLinecap="round"/>
-              <line x1="50" y1="51" x2="50" y2="56" stroke="rgba(255,255,255,0.6)" strokeWidth="1.2" strokeLinecap="round"/>
-              <line x1="57" y1="51" x2="57" y2="56" stroke="rgba(255,255,255,0.6)" strokeWidth="1.2" strokeLinecap="round"/>
-              <line x1="38" y1="37" x2="33" y2="37" stroke="rgba(255,255,255,0.6)" strokeWidth="1.2" strokeLinecap="round"/>
-              <line x1="38" y1="44" x2="33" y2="44" stroke="rgba(255,255,255,0.6)" strokeWidth="1.2" strokeLinecap="round"/>
-              <line x1="62" y1="37" x2="67" y2="37" stroke="rgba(255,255,255,0.6)" strokeWidth="1.2" strokeLinecap="round"/>
-              <line x1="62" y1="44" x2="67" y2="44" stroke="rgba(255,255,255,0.6)" strokeWidth="1.2" strokeLinecap="round"/>
-              <text x="50" y="42" textAnchor="middle" dominantBaseline="central"
-                    fontSize="9" fontWeight="800" fill="rgba(255,255,255,0.8)" fontFamily="system-ui,sans-serif">AI</text>
-              <text x="50" y="79" textAnchor="middle" fontSize="7" fontWeight="700"
-                    fill="rgba(255,255,255,0.75)" letterSpacing="0.8" fontFamily="system-ui,sans-serif">AI ACT READY</text>
-            </svg>
-
-            {/* 4 — READ ONLY */}
-            <svg viewBox="0 0 100 100" width="108" height="108" aria-label="Read Only">
-              <circle cx="50" cy="50" r="47" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" fill="none"/>
-              <path d="M22 42 Q36 27 50 27 Q64 27 78 42 Q64 57 50 57 Q36 57 22 42 Z"
-                    stroke="rgba(255,255,255,0.8)" strokeWidth="1.4" fill="none" strokeLinejoin="round"/>
-              <circle cx="50" cy="42" r="7.5" stroke="rgba(255,255,255,0.8)" strokeWidth="1.3" fill="none"/>
-              <circle cx="50" cy="42" r="3" fill="rgba(255,255,255,0.75)"/>
-              <rect x="59" y="49" width="14" height="11" rx="2"
-                    stroke="rgba(255,255,255,0.8)" strokeWidth="1.3" fill="none"/>
-              <path d="M62 49 L62 45 Q62 41 66 41 Q70 41 70 45 L70 49"
-                    stroke="rgba(255,255,255,0.8)" strokeWidth="1.3" fill="none" strokeLinecap="round"/>
-              <circle cx="66" cy="55.5" r="1.8" fill="rgba(255,255,255,0.7)"/>
-              <text x="50" y="84" textAnchor="middle" fontSize="7.5" fontWeight="700"
-                    fill="rgba(255,255,255,0.75)" letterSpacing="1.5" fontFamily="system-ui,sans-serif">READ ONLY</text>
-            </svg>
-
-            {/* 5 — API ACCESS */}
-            <svg viewBox="0 0 100 100" width="108" height="108" aria-label="API Access">
-              <circle cx="50" cy="50" r="47" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" fill="none"/>
-              <path d="M43 26 Q37 26 37 32 L37 39 Q37 44 31 44 Q37 44 37 49 L37 56 Q37 62 43 62"
-                    stroke="rgba(255,255,255,0.8)" strokeWidth="1.5" fill="none"
-                    strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M57 26 Q63 26 63 32 L63 39 Q63 44 69 44 Q63 44 63 49 L63 56 Q63 62 57 62"
-                    stroke="rgba(255,255,255,0.8)" strokeWidth="1.5" fill="none"
-                    strokeLinecap="round" strokeLinejoin="round"/>
-              <circle cx="44" cy="44" r="2.5" fill="rgba(255,255,255,0.78)"/>
-              <circle cx="50" cy="44" r="2.5" fill="rgba(255,255,255,0.78)"/>
-              <circle cx="56" cy="44" r="2.5" fill="rgba(255,255,255,0.78)"/>
-              <text x="50" y="84" textAnchor="middle" fontSize="7.5" fontWeight="700"
-                    fill="rgba(255,255,255,0.75)" letterSpacing="1.5" fontFamily="system-ui,sans-serif">API ACCESS</text>
-            </svg>
-
-          </div>
+          <TrustBadges className="mb-14" />
 
           <p
             className="text-center text-white/35 leading-[1.6]"
