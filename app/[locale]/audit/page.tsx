@@ -15,27 +15,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const WHAT_YOU_GET = [
-  {
-    number: '01',
-    title: 'We lopen door je situatie',
-    body: 'Welke kanalen draaien, wat er gemeten wordt, waar de gaps zitten. Geen voorbereiding nodig van jouw kant.',
-  },
-  {
-    number: '02',
-    title: 'Drie concrete aandachtspunten',
-    body: 'Geen vaag advies. Drie specifieke dingen die je morgen kunt oppakken — of die Stevin automatisch voor je bewaakt.',
-  },
-  {
-    number: '03',
-    title: 'Geen verkooppraatje',
-    body: 'Als Stevin niet past bij jouw situatie, zeggen we dat gewoon. De 20 minuten zijn voor jou, niet voor ons.',
-  },
-]
-
 export default async function AuditPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
+  const t = await getTranslations('audit')
+
+  const WHAT_YOU_GET = [
+    { number: t('wyg1_num'), title: t('wyg1_title'), body: t('wyg1_body') },
+    { number: t('wyg2_num'), title: t('wyg2_title'), body: t('wyg2_body') },
+    { number: t('wyg3_num'), title: t('wyg3_title'), body: t('wyg3_body') },
+  ]
+
+  const signals = [t('sig1'), t('sig2'), t('sig3'), t('sig4'), t('sig5')]
 
   return (
     <>
@@ -46,27 +37,27 @@ export default async function AuditPage({ params }: Props) {
           {/* Eyebrow */}
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            GRATIS · 20 MINUTEN · GEEN VERKOOPPRAATJE
+            {t('hero_eyebrow')}
           </p>
 
           <h1
             className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]"
             style={{ fontSize: 'clamp(36px, 5vw, 72px)', maxWidth: '16ch' }}
           >
-            Wat gaat er mis in je marketing{' '}
-            <span className="text-[#5DA3FF]">zonder dat je het ziet?</span>
+            {t('hero_h1')}{' '}
+            <span className="text-[#5DA3FF]">{t('hero_h1_accent')}</span>
           </h1>
 
           <p
             className="text-white/60 leading-[1.55] mt-8"
             style={{ fontSize: '19px', maxWidth: '500px' }}
           >
-            In 20 minuten lopen we samen door je accounts. Daarna krijg je drie concrete aandachtspunten mee — gratis, zonder verplichtingen.
+            {t('hero_sub')}
           </p>
 
           {/* Trust */}
           <p className="text-white/30 text-sm mt-6 font-mono">
-            Koen Hoogenboom · 20 jaar online marketing · ex-founder June20 · oprichter Stevin
+            {t('hero_trust')}
           </p>
         </div>
       </section>
@@ -77,7 +68,7 @@ export default async function AuditPage({ params }: Props) {
 
           <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-10 flex items-center gap-[14px]">
             <span className="inline-block w-6 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-            WAT JE KRIJGT
+            {t('whatyouget_eyebrow')}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -102,22 +93,16 @@ export default async function AuditPage({ params }: Props) {
             <div>
               <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[14px]">
                 <span className="inline-block w-6 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-                WAT STEVIN SIGNALEERT
+                {t('signals_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
                 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
               >
-                Problemen die je normaal pas ziet als het te laat is.
+                {t('signals_h2')}
               </h2>
               <ul className="space-y-4">
-                {[
-                  'Campagnes die stilletjes slechter presteren',
-                  'Tracking die niet klopt of conversies mist',
-                  'Budget dat weglekt zonder zichtbaar resultaat',
-                  'Zichtbaarheid die daalt in je markt',
-                  'Creatief dat vermoeid raakt zonder dat je het doorhebt',
-                ].map((item) => (
+                {signals.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-[15px] text-muted">
                     <span className="mt-1 w-4 h-4 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
                       <span className="w-1.5 h-1.5 rounded-full bg-accent block" />
@@ -180,22 +165,22 @@ export default async function AuditPage({ params }: Props) {
             <div>
               <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[14px]">
                 <span className="inline-block w-6 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-                PLAN JE AUDIT
+                {t('form_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
                 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
               >
-                20 minuten.<br />Drie aandachtspunten.<br />
-                <span className="text-accent">Geen verkooppraatje.</span>
+                {t('form_h2_line1')}<br />{t('form_h2_line2')}<br />
+                <span className="text-accent">{t('form_h2_line3')}</span>
               </h2>
               <p className="text-muted text-[16px] leading-relaxed mt-4">
-                Laat je naam en bedrijf achter. We nemen binnen één werkdag contact op om een moment in te plannen.
+                {t('form_sub')}
               </p>
 
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-[13px] text-muted">
-                  Liever direct mailen?{' '}
+                  {t('form_email_label')}{' '}
                   <a href="mailto:koen@stevin.ai" className="text-accent hover:underline font-medium">
                     koen@stevin.ai
                   </a>

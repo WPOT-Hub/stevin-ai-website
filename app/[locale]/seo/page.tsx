@@ -16,33 +16,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const faqs = [
-  {
-    question: 'Leveren jullie SEO als losse dienst?',
-    answer: 'Nee. SEO is bij ons altijd onderdeel van een breder marketingsysteem. Losse SEO zonder aansluiting op je landingspagina\'s, CRM en opvolging levert verkeer op dat nergens naartoe gaat. Wij zorgen dat zoekverkeer daadwerkelijk bijdraagt aan leads en omzet.',
-  },
-  {
-    question: 'Hoe lang duurt het voordat SEO resultaat oplevert?',
-    answer: 'Technische verbeteringen en structuuroptimalisaties zijn direct merkbaar voor zoekmachines. Organische groei in posities en verkeer zie je doorgaans binnen drie tot zes maanden. Daarom combineren we SEO altijd met kanalen die op korte termijn resultaat leveren, zoals paid media.',
-  },
-  {
-    question: 'Hoe meten jullie het resultaat van SEO?',
-    answer: 'We kijken niet alleen naar posities en verkeer, maar naar wat dat verkeer oplevert: leads, aanvragen, klanten. Via onze tracking- en CRM-integratie zien we precies welke organische zoektermen en pagina\'s bijdragen aan je pipeline.',
-  },
-  {
-    question: 'Wat is het verschil met een SEO-bureau?',
-    answer: 'Een SEO-bureau optimaliseert je vindbaarheid, maar heeft geen grip op wat er daarna gebeurt. Wij bouwen de hele keten: van zoekresultaat tot landingspagina, van formulier tot CRM, van lead tot opvolging. Dat maakt SEO meetbaar tot op klantniveau.',
-  },
-  {
-    question: 'Werkt SEO samen met jullie paid media aanpak?',
-    answer: 'Ja. We gebruiken data uit paid campagnes om te bepalen welke zoektermen organisch het meest waardevol zijn. Andersom gebruiken we organische data om paid campagnes scherper in te richten. Zo versterken beide kanalen elkaar.',
-  },
-]
-
 export default async function SEOPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('seo')
+
+  const faqs = [
+    { question: t('faq1_q'), answer: t('faq1_a') },
+    { question: t('faq2_q'), answer: t('faq2_a') },
+    { question: t('faq3_q'), answer: t('faq3_a') },
+    { question: t('faq4_q'), answer: t('faq4_a') },
+    { question: t('faq5_q'), answer: t('faq5_a') },
+  ]
 
   return (
     <>
@@ -65,30 +50,24 @@ export default async function SEOPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-primary">
-              Technische basis, contentstructuur en landingspagina&apos;s
+              {t('tech_h2')}
             </h2>
             <p className="mt-4 text-lg text-muted leading-relaxed">
-              Goede SEO begint bij een technisch gezonde website. Snelle laadtijden, correcte indexering, gestructureerde data en een logische sitestructuur. Daarbovenop bouwen we content die aansluit op wat je doelgroep zoekt &mdash; niet op volume, maar op relevantie.
+              {t('tech_p')}
             </p>
           </div>
           <div className="space-y-6">
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Technische SEO</h3>
-              <p className="text-sm text-muted leading-relaxed">
-                Core Web Vitals, crawlbaarheid, indexatiebeheer, canonical tags, hreflang, structured data en sitemap-optimalisatie. De basis die ervoor zorgt dat zoekmachines je site correct lezen en waarderen.
-              </p>
+              <h3 className="text-base font-bold text-primary mb-2">{t('tech_box1_h3')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('tech_box1_p')}</p>
             </div>
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Contentstructuur</h3>
-              <p className="text-sm text-muted leading-relaxed">
-                Pillar pages, topic clusters en interne linkstructuur die zoekmachines laten zien waar je autoriteit ligt. Geen losse blogposts, maar een samenhangende structuur die je domeinautoriteit opbouwt.
-              </p>
+              <h3 className="text-base font-bold text-primary mb-2">{t('tech_box2_h3')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('tech_box2_p')}</p>
             </div>
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Landingspagina&apos;s</h3>
-              <p className="text-sm text-muted leading-relaxed">
-                SEO-geoptimaliseerde landingspagina&apos;s die niet alleen ranken, maar ook converteren. Met duidelijke proposities, sterke CTA&apos;s en aansluiting op je CRM voor directe leadverwerking.
-              </p>
+              <h3 className="text-base font-bold text-primary mb-2">{t('tech_box3_h3')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('tech_box3_p')}</p>
             </div>
           </div>
         </div>
@@ -99,30 +78,24 @@ export default async function SEOPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-primary">
-              Zoekintentie en meetbaarheid
+              {t('intent_h2')}
             </h2>
             <p className="mt-4 text-lg text-muted leading-relaxed">
-              Niet elk zoekwoord is even waardevol. Wij richten ons op zoektermen met commerciële intentie &mdash; waar mensen actief op zoek zijn naar een oplossing. En we meten niet alleen verkeer, maar wat dat verkeer oplevert.
+              {t('intent_p')}
             </p>
           </div>
           <div className="space-y-6">
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Intentie-gedreven keyword research</h3>
-              <p className="text-sm text-muted leading-relaxed">
-                We segmenteren zoektermen op intentie: informatief, vergelijkend en transactioneel. Je content en pagina&apos;s sluiten aan op waar de zoeker zich bevindt in het beslisproces.
-              </p>
+              <h3 className="text-base font-bold text-primary mb-2">{t('intent_box1_h3')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('intent_box1_p')}</p>
             </div>
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Van klik tot klant</h3>
-              <p className="text-sm text-muted leading-relaxed">
-                Via tracking en CRM-integratie meten we de volledige funnel: van organische klik tot lead, van lead tot klant. Zo weet je precies welke pagina&apos;s en zoektermen omzet opleveren.
-              </p>
+              <h3 className="text-base font-bold text-primary mb-2">{t('intent_box2_h3')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('intent_box2_p')}</p>
             </div>
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Data als basis voor beslissingen</h3>
-              <p className="text-sm text-muted leading-relaxed">
-                Geen maandelijkse rapportages met alleen posities en verkeersaantallen. We rapporteren op wat ertoe doet: leads, pipeline-waarde en klantwaarde per kanaal en per zoekterm.
-              </p>
+              <h3 className="text-base font-bold text-primary mb-2">{t('intent_box3_h3')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('intent_box3_p')}</p>
             </div>
           </div>
         </div>
@@ -132,25 +105,16 @@ export default async function SEOPage({ params }: Props) {
       <Section bg="surface" id="seo-cro-opvolging">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary text-center">
-            SEO, conversie-optimalisatie en leadopvolging als geheel
+            {t('chain_h2')}
           </h2>
           <p className="mt-6 text-lg text-muted leading-relaxed text-center">
-            Verkeer zonder conversie is verspilling. Conversie zonder opvolging is gemiste omzet. Wij verbinden deze drie schakels zodat organisch verkeer daadwerkelijk bijdraagt aan groei.
+            {t('chain_p')}
           </p>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              {
-                title: 'SEO',
-                desc: 'Relevante bezoekers aantrekken via zoekmachines. De juiste mensen op het juiste moment naar de juiste pagina.',
-              },
-              {
-                title: 'CRO',
-                desc: 'Bezoekers omzetten naar leads. Pagina-indeling, formulieren, proposities en social proof die conversie verhogen.',
-              },
-              {
-                title: 'Leadopvolging',
-                desc: 'Leads automatisch verwerken in je CRM. Scoring, segmentatie en opvolgingsflows zodat sales de juiste leads op het juiste moment spreekt.',
-              },
+              { title: t('chain_box1_h3'), desc: t('chain_box1_p') },
+              { title: t('chain_box2_h3'), desc: t('chain_box2_p') },
+              { title: t('chain_box3_h3'), desc: t('chain_box3_p') },
             ].map((item) => (
               <div key={item.title} className="p-6 rounded-xl bg-white border border-border">
                 <h3 className="text-base font-bold text-primary mb-2">{item.title}</h3>
@@ -159,7 +123,7 @@ export default async function SEOPage({ params }: Props) {
             ))}
           </div>
           <p className="mt-8 text-base text-muted leading-relaxed text-center">
-            Deze drie werken bij ons als een keten. SEO-data stuurt CRO-prioriteiten. CRO-resultaten voeden de leadopvolging. En leadkwaliteit stuurt weer bij welke zoektermen en pagina&apos;s we prioriteren.
+            {t('chain_footer')}
           </p>
         </div>
       </Section>
@@ -167,8 +131,8 @@ export default async function SEOPage({ params }: Props) {
       {/* FAQ */}
       <Section bg="white" id="faq">
         <SectionHeader
-          title="Veelgestelde vragen over onze SEO-aanpak"
-          subtitle="Hoe SEO werkt binnen een marketingsysteem en wat je kunt verwachten."
+          title={t('faq_title')}
+          subtitle={t('faq_subtitle')}
           centered
         />
         <FAQAccordion faqs={faqs} />
@@ -177,9 +141,9 @@ export default async function SEOPage({ params }: Props) {
       {/* CTA */}
       <Section bg="surface">
         <CTABlock
-          title="Het is geen wonder. Het is Stevin."
-          description="Organisch verkeer dat daadwerkelijk converteert, meetbaar tot op de euro. Plan een gesprek en we laten zien hoe SEO binnen jouw marketingsysteem meer leads en klanten oplevert."
-          buttonText="Plan een gesprek"
+          title={t('cta_title')}
+          description={t('cta_desc')}
+          buttonText={t('cta_btn')}
           buttonHref="/contact"
         />
       </Section>

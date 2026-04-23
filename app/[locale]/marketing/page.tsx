@@ -14,63 +14,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const features = [
-  {
-    title: 'Executive Briefings, geen PDF-dumps',
-    desc: 'Drie zinnen die je direct naar je klant kunt sturen. Geen 40 pagina\'s met historie, maar wat er nu moet gebeuren en waarom.',
-  },
-  {
-    title: '220+ Integraties',
-    desc: 'Native koppelingen met Meta, Google, TikTok, LinkedIn, Shopify, Klaviyo en meer. Geen middleware, geen vertraging.',
-  },
-  {
-    title: 'Creatieve Verzadigingsdetectie',
-    desc: 'Stevin detecteert wanneer je creative haar kracht verliest. Je weet exact wanneer het tijd is voor een nieuwe hook — voordat je budget verspilt.',
-  },
-  {
-    title: 'Vooruitkijken, niet terugkijken',
-    desc: 'Stevin berekent per kanaal waar je volgende euro het hardst groeit. Niet wat je ROI was, maar waar de marge nu ligt.',
-  },
-  {
-    title: 'Merk-momentum in Kaart',
-    desc: 'Share of Search, branded traffic-trends en concurrentiepositie in real-time. Zie verschuivingen voordat ze in marktaandeel zichtbaar worden.',
-  },
-  {
-    title: '24/7 Anomalie Detectie',
-    desc: 'Budgetten, tracking en campagnes worden continu gescand. Problemen en kansen worden direct gesignaleerd — niet pas in het weekrapport.',
-  },
-]
-
-const audiences = [
-  {
-    title: 'Bureaus',
-    desc: 'Van mediabureau tot creatief bureau: beheer meerdere klanten vanuit één systeem. Attribution, automated reporting en creatieve intelligence per klant.',
-    link: '/voor-agencies',
-    linkText: 'Meer over het Agency Partner programma',
-  },
-  {
-    title: 'Inhouse Teams',
-    desc: 'Verbind je volledige marketingstack — van ads en creatie tot CRM. Minder tijd aan data verzamelen, meer tijd aan strategie en optimalisatie.',
-    link: null,
-    linkText: null,
-  },
-  {
-    title: 'Specialisten',
-    desc: 'E-commerce, healthcare, retail of events — Stevin past zich aan jouw sector aan met relevante integraties, compliance en benchmarks.',
-    link: null,
-    linkText: null,
-  },
-]
-
-const useCases = [
-  'Je hebt mensen op reporting zitten die niet aan strategie toekomen',
-  'Je wilt weten wanneer je creative haar kracht verliest',
-  'Je klant vraagt om een vooruitblik, niet om een achteruitkijkspiegel',
-  'Je beheert meerdere klanten en wilt per klant in 3 zinnen de status',
-  'Je wilt budget-verschuivingen onderbouwen met data, niet onderbuikgevoel',
-  'Je wilt je positioneren als strategisch partner, niet als rapportage-fabriek',
-]
-
 export default async function MarketingPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
@@ -80,6 +23,25 @@ export default async function MarketingPage({ params }: Props) {
     { title: t('pain1_title'), desc: t('pain1_desc') },
     { title: t('pain2_title'), desc: t('pain2_desc') },
     { title: t('pain3_title'), desc: t('pain3_desc') },
+  ]
+
+  const features = [
+    { title: t('feat1_title'), desc: t('feat1_desc') },
+    { title: t('feat2_title'), desc: t('feat2_desc') },
+    { title: t('feat3_title'), desc: t('feat3_desc') },
+    { title: t('feat4_title'), desc: t('feat4_desc') },
+    { title: t('feat5_title'), desc: t('feat5_desc') },
+    { title: t('feat6_title'), desc: t('feat6_desc') },
+  ]
+
+  const audiences = [
+    { title: t('aud1_title'), desc: t('aud1_desc'), link: '/voor-agencies', linkText: t('aud1_link') },
+    { title: t('aud2_title'), desc: t('aud2_desc'), link: null, linkText: null },
+    { title: t('aud3_title'), desc: t('aud3_desc'), link: null, linkText: null },
+  ]
+
+  const useCases = [
+    t('uc1'), t('uc2'), t('uc3'), t('uc4'), t('uc5'), t('uc6'),
   ]
 
   return (
@@ -95,8 +57,8 @@ export default async function MarketingPage({ params }: Props) {
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
             style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '16ch' }}
           >
-            Grip op je data.<br />
-            <span className="text-[#5DA3FF]">Focus op resultaat.</span>
+            {t('hero_h1')}<br />
+            <span className="text-[#5DA3FF]">{t('hero_h1_accent')}</span>
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '560px', marginTop: '32px' }}>
             {t('sub')}
@@ -106,13 +68,13 @@ export default async function MarketingPage({ params }: Props) {
               href="/contact"
               className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
             >
-              Plan een gesprek
+              {t('cta_primary')}
             </Link>
             <Link
               href="/platform"
               className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors"
             >
-              Bekijk het platform
+              {t('cta_secondary')}
             </Link>
           </div>
           <div className="mt-20">
@@ -132,7 +94,7 @@ export default async function MarketingPage({ params }: Props) {
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Herkenbaar?
+            {t('pain_h2')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
             {painPoints.map((p) => (
@@ -150,16 +112,16 @@ export default async function MarketingPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            HET PLATFORM
+            {t('features_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Alles wat je nodig hebt
+            {t('features_h2')}
           </h2>
           <p className="text-[17px] text-muted mb-16 max-w-xl leading-[1.55]">
-            Stevin vervangt losse tools door één systeem dat meegroeit met je ambities.
+            {t('features_sub')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-border">
             {features.map((f, i) => (
@@ -181,13 +143,13 @@ export default async function MarketingPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            VOOR ELK TYPE TEAM
+            {t('audiences_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Hetzelfde platform.<br />Andere toepassing.
+            {t('audiences_h2')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border mt-16">
             {audiences.map((a) => (
@@ -212,13 +174,13 @@ export default async function MarketingPage({ params }: Props) {
             <div>
               <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
                 <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-                VOOR JOU ALS
+                {t('usecases_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10"
                 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
               >
-                Stevin is voor jou als
+                {t('usecases_h2')}
               </h2>
               <ul className="space-y-0 border-t border-white/10">
                 {useCases.map((uc) => (
@@ -231,22 +193,22 @@ export default async function MarketingPage({ params }: Props) {
             </div>
             <div className="lg:pt-[140px]">
               <p className="text-[#00D4A0] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6">
-                Het is geen wonder. Het is Stevin.
+                {t('cta_eyebrow')}
               </p>
               <h3
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-6"
                 style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
               >
-                Zie wat je betaalt.<br />Zie wat het oplevert.
+                {t('cta_h3')}
               </h3>
               <p className="text-white/50 mb-8 leading-[1.6] text-[15px]">
-                Elke euro herleidbaar naar resultaat. Plan een gesprek en we laten zien hoe Stevin jouw marketingdata omzet in onderbouwde groei.
+                {t('cta_sub')}
               </p>
               <Link
                 href="/contact"
                 className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
               >
-                Plan een gesprek
+                {t('cta_btn')}
               </Link>
             </div>
           </div>

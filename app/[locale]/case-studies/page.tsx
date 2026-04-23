@@ -13,21 +13,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const caseStudies = [
-  {
-    slug: 'e-commerce',
-    industry: 'E-commerce',
-    title: 'Van losse campagnes naar een geïntegreerd marketing systeem',
-    subtitle: 'Hoe een snelgroeiend e-commerce bedrijf 42% meer leads genereerde en 8 uur per week bespaarde',
-    metric: '+42%',
-    metricLabel: 'meer leads',
-  },
-]
-
 export default async function CaseStudiesPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('case_studies')
+
+  const caseStudies = [
+    {
+      slug: 'e-commerce',
+      industry: t('cs1_industry'),
+      title: t('cs1_title'),
+      subtitle: t('cs1_subtitle'),
+      metric: t('cs1_metric'),
+      metricLabel: t('cs1_metric_label'),
+    },
+  ]
 
   return (
     <main>
@@ -78,12 +78,12 @@ export default async function CaseStudiesPage({ params }: Props) {
           </div>
 
           <div className="mt-16 border-t border-border pt-10">
-            <p className="text-muted mb-4 text-[15px]">Meer case studies volgen binnenkort.</p>
+            <p className="text-muted mb-4 text-[15px]">{t('more_soon')}</p>
             <Link
               href="/contact"
               className="inline-flex px-6 py-3 text-sm font-semibold text-white bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
             >
-              Wil je de volgende zijn?
+              {t('be_next')}
             </Link>
           </div>
         </div>

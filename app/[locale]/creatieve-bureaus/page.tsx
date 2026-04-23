@@ -15,88 +15,49 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const painPoints = [
-  {
-    title: 'Je werk wordt doodgegooid met budget',
-    desc: 'Een sterke creative verliest zijn kracht als hij te lang of te vaak wordt ingezet. Maar zonder data weet niemand wanneer het tijd is voor vernieuwing — tot de resultaten kelderen.',
-  },
-  {
-    title: 'Geen feedback loop naar creatie',
-    desc: 'Mediaresultaten landen bij het mediateam, niet bij de creatieven. De mensen die het verschil maken zien nooit welke visuals, copy of formats het beste presteren.',
-  },
-  {
-    title: 'Rapportages in plaats van concepten',
-    desc: 'Je team besteedt uren aan het bouwen van rapporten die niemand leest. Tijd die naar creatieve concepten en strategisch denken moet gaan.',
-  },
-]
-
-const features = [
-  {
-    title: 'Creatieve Verzadigingsdetectie',
-    desc: 'Stevin detecteert exact wanneer een creatieve hook zijn kracht verliest. Je weet het voordat de resultaten dalen — zodat je op tijd vernieuwt in plaats van reageert.',
-    icon: <Eye className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: '220+ Integraties',
-    desc: 'Native koppelingen met Meta, Google, TikTok, LinkedIn, Shopify, Klaviyo en meer. Geen middleware, geen vertraging.',
-    icon: <Plug className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Performance-to-Creative Feedback',
-    desc: 'Niet "ad set 3 werkt beter" maar "ads met een probleemstelling als hook en warme kleurtonen converteren 34% beter in deze doelgroep."',
-    icon: <BarChart3 className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Automated Creative Briefings',
-    desc: 'Data-gedreven briefings die je team direct kan oppakken. Welke hook, welk format, welke visuele richting — onderbouwd met performance data, niet spreadsheets.',
-    icon: <FileText className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Hook- en Format-Inzichten',
-    desc: 'Welke openingszin, welk format en welke visuele richting presteren in deze doelgroep? Stevin leest de historie en legt het patroon bloot — niet gevoel, wel bewijs.',
-    icon: <ShieldCheck className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Executive Briefings, geen PDF-dumps',
-    desc: 'Drie zinnen naar je klant in plaats van 40 pagina\'s. "Je nieuwe visuele stijl werkt. Vermoeidheid nog niet zichtbaar. Opschalen."',
-    icon: <Palette className="w-5 h-5 text-accent" />,
-  },
-]
-
-const audiences = [
-  {
-    title: 'Creatieve Bureaus',
-    desc: 'Onderbouw je concepten met data. Laat klanten zien waarom je creatieve keuzes werken en versterk je positie als strategisch partner.',
-    link: null,
-    linkText: null,
-  },
-  {
-    title: 'Design Studios',
-    desc: 'Van visual identity tot campagne-assets — weet welke ontwerpkeuzes converteren en welke alleen maar mooi zijn.',
-    link: null,
-    linkText: null,
-  },
-  {
-    title: 'Content Agencies',
-    desc: 'Verbind contentcreatie met performance. Zie welke formats, lengtes en hooks het beste werken per kanaal en doelgroep.',
-    link: null,
-    linkText: null,
-  },
-]
-
-const useCases = [
-  'Je wilt weten wanneer je creative zijn kracht verliest — voordat de resultaten dalen',
-  'Je mist een feedback loop tussen media en creatie',
-  'Je besteedt meer tijd aan rapportages dan aan concepten',
-  'Je wilt je klant in 3 zinnen de status geven, niet in een 40 pagina PDF',
-  'Je wilt pre-testen welke concepten het beste gaan presteren',
-  'Je wilt je positioneren als strategisch creatief partner, niet als productie-unit',
+const featureIcons = [
+  <Eye key="1" className="w-5 h-5 text-accent" />,
+  <Plug key="2" className="w-5 h-5 text-accent" />,
+  <BarChart3 key="3" className="w-5 h-5 text-accent" />,
+  <FileText key="4" className="w-5 h-5 text-accent" />,
+  <ShieldCheck key="5" className="w-5 h-5 text-accent" />,
+  <Palette key="6" className="w-5 h-5 text-accent" />,
 ]
 
 export default async function CreatieveBureausPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('creatieve_bureaus')
+
+  const painPoints = [
+    { title: t('pain1_title'), desc: t('pain1_desc') },
+    { title: t('pain2_title'), desc: t('pain2_desc') },
+    { title: t('pain3_title'), desc: t('pain3_desc') },
+  ]
+
+  const features = [
+    { title: t('feat1_title'), desc: t('feat1_desc'), icon: featureIcons[0] },
+    { title: t('feat2_title'), desc: t('feat2_desc'), icon: featureIcons[1] },
+    { title: t('feat3_title'), desc: t('feat3_desc'), icon: featureIcons[2] },
+    { title: t('feat4_title'), desc: t('feat4_desc'), icon: featureIcons[3] },
+    { title: t('feat5_title'), desc: t('feat5_desc'), icon: featureIcons[4] },
+    { title: t('feat6_title'), desc: t('feat6_desc'), icon: featureIcons[5] },
+  ]
+
+  const audiences = [
+    { title: t('aud1_title'), desc: t('aud1_desc'), link: null, linkText: null },
+    { title: t('aud2_title'), desc: t('aud2_desc'), link: null, linkText: null },
+    { title: t('aud3_title'), desc: t('aud3_desc'), link: null, linkText: null },
+  ]
+
+  const useCases = [
+    t('uc1'),
+    t('uc2'),
+    t('uc3'),
+    t('uc4'),
+    t('uc5'),
+    t('uc6'),
+  ]
 
   return (
     <main>
@@ -117,10 +78,10 @@ export default async function CreatieveBureausPage({ params }: Props) {
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
-              Plan een gesprek
+              {t('cta_primary')}
             </Link>
             <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
-              Bekijk het platform
+              {t('cta_secondary')}
             </Link>
           </div>
           <div className="mt-20">
@@ -134,13 +95,13 @@ export default async function CreatieveBureausPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            DE REALITEIT
+            {t('pain_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Herkenbaar?
+            {t('pain_h2')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
             {painPoints.map((p) => (
@@ -158,16 +119,16 @@ export default async function CreatieveBureausPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            HET PLATFORM
+            {t('features_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Alles wat je nodig hebt
+            {t('features_h2')}
           </h2>
           <p className="text-[17px] text-muted mb-16 max-w-xl leading-[1.55]">
-              Stevin verbindt creatieve output met performance-data en levert de inzichten die je team nodig heeft.
+              {t('features_sub')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-border">
             {features.map((f, i) => (
@@ -186,15 +147,15 @@ export default async function CreatieveBureausPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            VOOR ELK TYPE TEAM
+            {t('audiences_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Voor elk type creatief team
+            {t('audiences_h2')}
           </h2>
-          <p className="text-[17px] text-muted mb-0 max-w-xl leading-[1.55]">Het platform is hetzelfde. De toepassing verschilt.</p>
+          <p className="text-[17px] text-muted mb-0 max-w-xl leading-[1.55]">{t('audiences_sub')}</p>
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border mt-16">
             {audiences.map((a) => (
               <div key={a.title} className="py-10 md:py-0 md:px-10 first:pl-0 last:pr-0">
@@ -218,13 +179,13 @@ export default async function CreatieveBureausPage({ params }: Props) {
             <div>
               <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
                 <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-                VOOR JOU ALS
+                {t('usecases_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10"
                 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
               >
-                Stevin is voor jou als
+                {t('usecases_h2')}
               </h2>
               <ul className="space-y-0 border-t border-white/10">
                 {useCases.map((uc) => (
@@ -237,22 +198,22 @@ export default async function CreatieveBureausPage({ params }: Props) {
             </div>
             <div className="lg:pt-[140px]">
               <p className="text-[#00D4A0] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6">
-                Het is geen wonder. Het is Stevin.
+                {t('cta_eyebrow')}
               </p>
               <h3
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-6"
                 style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
               >
-                Zie wat je betaalt.<br />Zie wat het oplevert.
+                {t('cta_h3')}
               </h3>
               <p className="text-white/50 mb-8 leading-[1.6] text-[15px]">
-                Creatie op bewijs bouwen. Plan een gesprek en we laten zien hoe Stevin jouw creatieve proces versterkt met data.
+                {t('cta_sub')}
               </p>
               <Link
                 href="/contact"
                 className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
               >
-                Plan een gesprek
+                {t('cta_btn')}
               </Link>
             </div>
           </div>

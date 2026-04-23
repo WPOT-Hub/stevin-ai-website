@@ -15,51 +15,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const features = [
-  {
-    title: 'Merk-mentions in kaart',
-    desc: 'Waar en hoe vaak wordt je merk genoemd? Social, reviews, forums en nieuws — gecentraliseerd en gefilterd op relevantie. Feitelijk, niet gevoelig.',
-    icon: <Eye className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Branded Search Trends',
-    desc: 'Stijgt de vraag naar jouw merk? Volg branded search volume en direct traffic over tijd. De echte meetlat voor awareness-investering.',
-    icon: <MessageCircle className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Campagne-causaliteit',
-    desc: 'Meet het effect van awareness-campagnes op branded traffic, direct visits en conversie. Van top-funnel naar bottom — herleidbaar, niet vermoed.',
-    icon: <TrendingUp className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Concurrentie Analyse',
-    desc: 'Volg je concurrenten op social, paid en organisch. Zie waar ze investeren, wat werkt en waar jij kansen laat liggen.',
-    icon: <BarChart3 className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Merkbescherming',
-    desc: 'Automatische alerts bij merkgerelateerde vermeldingen die actie vereisen. Van negatieve reviews tot ongeautoriseerd gebruik.',
-    icon: <Shield className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Content Intelligence',
-    desc: 'Begrijp welke content resoneert met je doelgroep. Trends, onderwerpen en formats die je merk versterken.',
-    icon: <Zap className="w-5 h-5 text-accent" />,
-  },
-]
-
-const useCases = [
-  'Je hebt geen realtime overzicht van hoe je merk wordt waargenomen',
-  'Je campagnes meten bereik maar niet het effect op merkperceptie',
-  'Je wilt concurrenten monitoren maar hebt geen structureel systeem',
-  'Je PR-team en marketingteam werken met verschillende data',
-  'Je wilt brandingcampagnes onderbouwen met harde data',
+const featureIcons = [
+  <Eye key="1" className="w-5 h-5 text-accent" />,
+  <MessageCircle key="2" className="w-5 h-5 text-accent" />,
+  <TrendingUp key="3" className="w-5 h-5 text-accent" />,
+  <BarChart3 key="4" className="w-5 h-5 text-accent" />,
+  <Shield key="5" className="w-5 h-5 text-accent" />,
+  <Zap key="6" className="w-5 h-5 text-accent" />,
 ]
 
 export default async function MerkenPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('merken')
+
+  const features = [
+    { title: t('feat1_title'), desc: t('feat1_desc'), icon: featureIcons[0] },
+    { title: t('feat2_title'), desc: t('feat2_desc'), icon: featureIcons[1] },
+    { title: t('feat3_title'), desc: t('feat3_desc'), icon: featureIcons[2] },
+    { title: t('feat4_title'), desc: t('feat4_desc'), icon: featureIcons[3] },
+    { title: t('feat5_title'), desc: t('feat5_desc'), icon: featureIcons[4] },
+    { title: t('feat6_title'), desc: t('feat6_desc'), icon: featureIcons[5] },
+  ]
+
+  const useCases = [
+    t('uc1'),
+    t('uc2'),
+    t('uc3'),
+    t('uc4'),
+    t('uc5'),
+  ]
 
   return (
     <main>
@@ -80,10 +65,10 @@ export default async function MerkenPage({ params }: Props) {
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
-              Plan een gesprek
+              {t('cta_primary')}
             </Link>
             <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
-              Bekijk het platform
+              {t('cta_secondary')}
             </Link>
           </div>
         </div>
@@ -94,16 +79,16 @@ export default async function MerkenPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            HET PLATFORM
+            {t('features_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Grip op je merk
+            {t('features_h2')}
           </h2>
           <p className="text-[17px] text-muted mb-16 max-w-xl leading-[1.55]">
-            Van monitoring tot actie — alles wat je nodig hebt voor data-gedreven brand management.
+            {t('features_sub')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-border">
             {features.map((f, i) => (
@@ -121,7 +106,7 @@ export default async function MerkenPage({ params }: Props) {
       <section className="py-20 bg-surface">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary mb-8 text-center">Herkenbaar?</h2>
+            <h2 className="text-3xl font-bold text-primary mb-8 text-center">{t('usecases_h2')}</h2>
             <ul className="space-y-4">
               {useCases.map((uc) => (
                 <li key={uc} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-border">
@@ -139,12 +124,12 @@ export default async function MerkenPage({ params }: Props) {
       {/* CTA */}
       <section className="py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-4">Het is geen wonder. Het is <span className="text-[#5DA3FF]">Stevin</span>.</h2>
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-4">{t('cta_eyebrow')}</h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
-            Meet merk-waarde met de enige getallen die eerlijk zijn. Plan een gesprek en ontdek hoe Stevin je merk monitort, analyseert en beschermt.
+            {t('cta_sub')}
           </p>
           <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
-            Plan een gesprek
+            {t('cta_btn')}
           </Link>
         </div>
       </section>

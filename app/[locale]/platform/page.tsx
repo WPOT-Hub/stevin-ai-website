@@ -15,80 +15,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const features = [
-  {
-    label: '01',
-    title: 'Data Engine',
-    desc: 'De motor achter alles. 220+ integraties, AI-analyses, social listening en 24/7 monitoring. Alles draait automatisch op de achtergrond.',
-  },
-  {
-    label: '02',
-    title: 'Dashboard',
-    desc: 'Jouw cockpit. Eén dashboard voor campagneprestaties, CRM-pipeline, AI-adviezen, content en rapportages.',
-  },
-  {
-    label: '03',
-    title: '220+ Integraties',
-    desc: 'Van ads en analytics tot streaming, social, ticketing en finance. Directe koppelingen met alle grote platformen.',
-  },
-  {
-    label: '04',
-    title: 'Lead Generation',
-    desc: 'Van anoniem websitebezoek naar gekwalificeerde pipeline — volledig geautomatiseerd, 100% EU-compliant, zonder cookies.',
-  },
-  {
-    label: '05',
-    title: '24/7 Monitoring',
-    desc: 'Elke nacht worden je campagnes, tracking, connectors en budgetten automatisch gecontroleerd. Problemen worden direct gemeld of gerepareerd.',
-  },
-  {
-    label: '06',
-    title: 'Causale Rapporten',
-    desc: 'Wekelijkse rapporten, anomalie-alerts en concrete adviezen — onderbouwd met data uit je eigen CRM, niet alleen platform-eigen rapportage.',
-  },
-]
-
-const extras = [
-  { title: 'Social Listening', desc: 'Market intelligence uit meerdere bronnen, uitgewerkt tot bruikbare inzichten en content.' },
-  { title: 'Content Curation', desc: 'De belangrijkste trends automatisch gefilterd, alleen relevante inzichten passeren.' },
-  { title: 'Brand & Performance', desc: 'Campagneprestaties gekoppeld aan merkdata — van awareness tot conversie in één overzicht.' },
-  { title: 'Multi-channel Publishing', desc: 'Content generatie en publicatie over meerdere kanalen vanuit één plek.' },
-  { title: 'CRM & Pipeline', desc: 'Contacten, deals, e-mail tracking en opvolging — alles in één systeem.' },
-  { title: 'Automation', desc: 'E-mail flows, lead scoring, nurturing en trigger-based messaging volledig geautomatiseerd.' },
-  { title: 'Feedback Loops', desc: 'Het platform leert van elke interactie. Rapporten en adviezen passen zich aan op jouw tone of voice.' },
-]
-
-const monitoringChecks = [
-  'Alle advertentiekanalen',
-  'Connector status',
-  'Budget & spend controle',
-  'Tracking & conversies',
-  'CRM pipeline gezondheid',
-  'Content & social feeds',
-  'E-mail deliverability',
-  'Automatisch herstel',
-]
-
-const leadGenItems = [
-  '100% AVG / GDPR compliant',
-  'Bedrijfsherkenning zonder cookies',
-  'Intent scoring op gedragssignalen',
-  'Automatische CRM-verrijking',
-  'Retargeting audiences aanmaken',
-]
-
-const reportItems = [
-  'Groei-factor per kanaal (welke euro werkt het hardst)',
-  'Creatieve verzadigingsdetectie',
-  'Real-time anomalie detectie',
-  'Budget waste alerts en kansen',
-  'Branded search-trends via Share of Search',
-]
-
 export default async function PlatformPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('platform')
+
+  const features = [
+    { label: '01', title: t('feat1_title'), desc: t('feat1_desc') },
+    { label: '02', title: t('feat2_title'), desc: t('feat2_desc') },
+    { label: '03', title: t('feat3_title'), desc: t('feat3_desc') },
+    { label: '04', title: t('feat4_title'), desc: t('feat4_desc') },
+    { label: '05', title: t('feat5_title'), desc: t('feat5_desc') },
+    { label: '06', title: t('feat6_title'), desc: t('feat6_desc') },
+  ]
+
+  const extras = [
+    { title: t('extra1_title'), desc: t('extra1_desc') },
+    { title: t('extra2_title'), desc: t('extra2_desc') },
+    { title: t('extra3_title'), desc: t('extra3_desc') },
+    { title: t('extra4_title'), desc: t('extra4_desc') },
+    { title: t('extra5_title'), desc: t('extra5_desc') },
+    { title: t('extra6_title'), desc: t('extra6_desc') },
+    { title: t('extra7_title'), desc: t('extra7_desc') },
+  ]
+
+  const monitoringChecks = [
+    t('monitor1'), t('monitor2'), t('monitor3'), t('monitor4'),
+    t('monitor5'), t('monitor6'), t('monitor7'), t('monitor8'),
+  ]
+
+  const leadGenItems = [
+    t('leadgen_item1'), t('leadgen_item2'), t('leadgen_item3'),
+    t('leadgen_item4'), t('leadgen_item5'),
+  ]
+
+  const reportItems = [
+    t('report1'), t('report2'), t('report3'), t('report4'), t('report5'),
+  ]
 
   return (
     <main>
@@ -104,7 +67,7 @@ export default async function PlatformPage({ params }: Props) {
             style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '16ch' }}
           >
             {t('h1')}<br />
-            <span className="text-[#5DA3FF]">onder je marketing.</span>
+            <span className="text-[#5DA3FF]">{t('h1_sub')}</span>
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '580px', marginTop: '32px' }}>
             {t('sub')}
@@ -134,16 +97,16 @@ export default async function PlatformPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            WAT HET KAN
+            {t('features_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Alles wat je nodig hebt
+            {t('features_h2')}
           </h2>
           <p className="text-[17px] text-muted mb-16 max-w-xl leading-[1.55]">
-            Stevin vervangt losse tools door één geïntegreerd systeem. Elk onderdeel versterkt de rest.
+            {t('features_sub')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-border">
             {features.map((f) => (
@@ -165,16 +128,16 @@ export default async function PlatformPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            INTEGRATIES
+            {t('connectors_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            220+ Integraties
+            {t('connectors_h2')}
           </h2>
           <p className="text-[17px] text-muted mb-12 max-w-xl leading-[1.55]">
-            Directe, real-time koppelingen met de platformen die ertoe doen. Geen third-party middleware, geen vertraging.
+            {t('connectors_sub')}
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
             {nativeConnectors.map((c) => (
@@ -187,11 +150,11 @@ export default async function PlatformPage({ params }: Props) {
             ))}
           </div>
           <p className="text-sm text-muted mt-8 border-t border-border pt-8">
-            Daarnaast ondersteunen we{' '}
-            <Link href="/integraties" className="text-[#5DA3FF] hover:underline">100+ andere tools</Link>{' '}
-            via koppelingen. Mis je een platform?{' '}
-            <Link href="/contact" className="text-[#5DA3FF] hover:underline">Laat het ons weten</Link>{' '}
-            — we kunnen met vrijwel alles connecten.
+            {t('connectors_more')}{' '}
+            <Link href="/integraties" className="text-[#5DA3FF] hover:underline">{t('connectors_more_link')}</Link>
+            {t('connectors_more_rest')}{' '}
+            <Link href="/contact" className="text-[#5DA3FF] hover:underline">{t('connectors_contact')}</Link>
+            {t('connectors_contact_rest')}
           </p>
         </div>
       </section>
@@ -203,18 +166,16 @@ export default async function PlatformPage({ params }: Props) {
             <div>
               <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
                 <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-                LEAD GENERATION
+                {t('leadgen_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
                 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
               >
-                Van bezoeker naar klant
+                {t('leadgen_h2')}
               </h2>
               <p className="text-[15px] text-muted leading-[1.6] mb-8">
-                Stevin herkent bedrijven die je website bezoeken, scoort hun koopintentie
-                en triggert automatisch de juiste opvolging — van CRM-contact tot retargeting.
-                Volledig EU-compliant, zonder cookies of third-party tracking.
+                {t('leadgen_sub')}
               </p>
               <ul className="space-y-0 border-t border-border">
                 {leadGenItems.map((item) => (
@@ -226,14 +187,14 @@ export default async function PlatformPage({ params }: Props) {
               </ul>
             </div>
             <div className="lg:pt-[120px] space-y-4">
-              {['Bezoeker', 'Bedrijfsherkenning', 'Intent scoring', 'Actie'].map((step, i) => (
+              {[t('leadgen_step1'), t('leadgen_step2'), t('leadgen_step3'), t('leadgen_step4')].map((step, i) => (
                 <div key={step} className="flex items-center gap-4 border-t border-border pt-4">
                   <span className="font-mono text-[11px] text-muted w-6">0{i + 1}</span>
                   <span className="text-[15px] font-display font-bold text-primary">{step}</span>
                   {i < 3 && <span className="ml-auto text-muted">↓</span>}
                 </div>
               ))}
-              <p className="text-[13px] text-muted pt-2">Volledig geautomatiseerde pipeline</p>
+              <p className="text-[13px] text-muted pt-2">{t('leadgen_pipeline')}</p>
             </div>
           </div>
         </div>
@@ -244,16 +205,16 @@ export default async function PlatformPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            24/7 MONITORING
+            {t('monitoring_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-4"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Je campagnes slapen nooit
+            {t('monitoring_h2')}
           </h2>
           <p className="text-[17px] text-white/50 mb-16 max-w-xl leading-[1.55]">
-            Elke nacht controleren we automatisch al je systemen. Problemen worden direct gerepareerd of gemeld.
+            {t('monitoring_sub')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-white/10">
             {monitoringChecks.map((check) => (
@@ -273,17 +234,16 @@ export default async function PlatformPage({ params }: Props) {
             <div>
               <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
                 <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-                RAPPORTEN
+                {t('reports_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
                 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
               >
-                Executive Briefings,<br />geen rapportage-fabrieken
+                {t('reports_h2')}
               </h2>
               <p className="text-[15px] text-muted leading-[1.6] mb-8">
-                Geen PDF met 40 pagina&apos;s over gisteren. Stevin levert executive briefings van 3 zinnen
-                die je direct naar je klant kunt sturen. Vooruitkijken, niet terugkijken.
+                {t('reports_sub')}
               </p>
               <ul className="space-y-0 border-t border-border">
                 {reportItems.map((item) => (
@@ -297,14 +257,13 @@ export default async function PlatformPage({ params }: Props) {
             <div className="lg:pt-[120px]">
               <div className="border-t border-border pt-10 space-y-8">
                 <div>
-                  <p className="font-mono text-[11px] text-muted mb-2">BRIEFING FORMAT</p>
+                  <p className="font-mono text-[11px] text-muted mb-2">{t('briefing_label')}</p>
                   <p className="text-[15px] text-muted leading-[1.7] italic">
-                    &ldquo;Meta ROAS steeg 22% t.o.v. vorige week. De top creative verliest kracht — nieuw concept vereist voor week 3.
-                    Budget Meta → Search aanbevolen: €800/dag.&rdquo;
+                    &ldquo;{t('briefing_quote')}&rdquo;
                   </p>
                 </div>
                 <div className="border-t border-border pt-8">
-                  <p className="text-[13px] text-muted">Causale inzichten, onderbouwd met data uit je eigen CRM.</p>
+                  <p className="text-[13px] text-muted">{t('briefing_caption')}</p>
                 </div>
               </div>
             </div>
@@ -317,15 +276,15 @@ export default async function PlatformPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            EN NOG MEER
+            {t('extras_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
             style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
           >
-            Het platform groeit continu
+            {t('extras_h2')}
           </h2>
-          <p className="text-[17px] text-muted mb-16 max-w-xl leading-[1.55]">Dit is wat er verder in zit.</p>
+          <p className="text-[17px] text-muted mb-16 max-w-xl leading-[1.55]">{t('extras_sub')}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-border">
             {extras.map((e) => (
               <div key={e.title} className="border-b border-r border-border py-8 px-6 sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0">
@@ -341,16 +300,16 @@ export default async function PlatformPage({ params }: Props) {
       <section className="bg-primary" style={{ padding: '112px 24px 128px' }}>
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#00D4A0] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6">
-            Het is geen wonder. Het is Stevin.
+            {t('cta_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-6"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)', maxWidth: '16ch' }}
           >
-            De meetlat onder je marketing — live zien werken.
+            {t('cta_h2')}
           </h2>
           <p className="text-white/50 mb-10 leading-[1.6] text-[17px] max-w-lg">
-            Plan een demo en zie hoe Stevin je volledige marketingstack in één systeem samenbrengt.
+            {t('cta_sub')}
           </p>
           <Link
             href="/contact"

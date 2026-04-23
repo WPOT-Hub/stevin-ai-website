@@ -13,33 +13,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const results = [
-  { metric: '+42%', label: 'Meer leads binnen 3 maanden' },
-  { metric: '-35%', label: 'Lagere kosten per acquisitie' },
-  { metric: '8 uur', label: 'Per week bespaard op rapportage' },
-  { metric: '24/7', label: 'Automatische monitoring' },
-]
-
-const challenges = [
-  'Campagnes op Meta, Google en TikTok draaiden los van elkaar — geen totaaloverzicht',
-  'Leads kwamen binnen maar werden niet automatisch opgevolgd',
-  'Handmatige rapportages kostten het team uren per week',
-  'Platformstoringen werden te laat opgemerkt, waardoor budget verloren ging',
-  'Geen inzicht in welke campagnes daadwerkelijk klanten opleverden',
-]
-
-const approach = [
-  { step: 'Connectoren', desc: '8 native connectors aangesloten: Meta Ads, Google Ads, TikTok Ads, GA4, GTM, Shopify, Klaviyo en Mailchimp.' },
-  { step: 'CRM & Pipeline', desc: 'CRM ingericht met automatische leadverwerking, lead scoring en pipeline management.' },
-  { step: 'Monitoring', desc: 'Nachtelijke health checks geconfigureerd voor alle connectors, tracking en budgetten.' },
-  { step: 'AI Reports', desc: 'Wekelijkse AI-rapporten met performance summaries, anomalie-alerts en optimalisatie-adviezen.' },
-  { step: 'Automation', desc: 'E-mail flows, lead nurturing en trigger-based messaging via Klaviyo gekoppeld aan CRM.' },
-  { step: 'Pulse', desc: 'Sovereign lead generation geactiveerd voor aanvullende B2B leadgeneratie via de webshop.' },
-]
-
 export default async function EcommerceCaseStudy({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
+  const t = await getTranslations('case_studies')
+
+  const results = [
+    { metric: t('result1_metric'), label: t('result1_label') },
+    { metric: t('result2_metric'), label: t('result2_label') },
+    { metric: t('result3_metric'), label: t('result3_label') },
+    { metric: t('result4_metric'), label: t('result4_label') },
+  ]
+
+  const challenges = [t('ch1'), t('ch2'), t('ch3'), t('ch4'), t('ch5')]
+
+  const approach = [
+    { step: t('ap1_step'), desc: t('ap1_desc') },
+    { step: t('ap2_step'), desc: t('ap2_desc') },
+    { step: t('ap3_step'), desc: t('ap3_desc') },
+    { step: t('ap4_step'), desc: t('ap4_desc') },
+    { step: t('ap5_step'), desc: t('ap5_desc') },
+    { step: t('ap6_step'), desc: t('ap6_desc') },
+  ]
+
   return (
     <main>
       {/* Hero */}
@@ -49,21 +45,20 @@ export default async function EcommerceCaseStudy({ params }: Props) {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Alle case studies
+            {t('back_link')}
           </Link>
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            E-COMMERCE
+            {t('ecomm_eyebrow')}
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
             style={{ fontSize: 'clamp(36px, 5vw, 72px)', maxWidth: '18ch' }}
           >
-            Van losse campagnes naar een geïntegreerd marketing systeem
+            {t('ecomm_h1')}
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '18px', maxWidth: '560px', marginTop: '24px' }}>
-            Hoe een snelgroeiend Nederlands e-commerce bedrijf hun volledige marketingstack
-            transformeerde met het Stevin platform.
+            {t('ecomm_sub')}
           </p>
         </div>
       </section>
@@ -85,11 +80,9 @@ export default async function EcommerceCaseStudy({ params }: Props) {
       {/* De klant */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <h2 className="text-2xl font-bold text-primary mb-4">De klant</h2>
+          <h2 className="text-2xl font-bold text-primary mb-4">{t('client_h2')}</h2>
           <p className="text-muted leading-relaxed">
-            Een snelgroeiend Nederlands e-commerce bedrijf met een breed productassortiment
-            en meerdere online verkoopkanalen. Het bedrijf adverteert actief op Meta, Google en TikTok
-            en verwerkt honderden leads per maand via hun webshop en landingspagina&apos;s.
+            {t('client_p')}
           </p>
         </div>
       </section>
@@ -97,7 +90,7 @@ export default async function EcommerceCaseStudy({ params }: Props) {
       {/* De uitdaging */}
       <section className="py-16 bg-surface">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <h2 className="text-2xl font-bold text-primary mb-6">De uitdaging</h2>
+          <h2 className="text-2xl font-bold text-primary mb-6">{t('challenge_h2')}</h2>
           <ul className="space-y-4">
             {challenges.map((c, i) => (
               <li key={i} className="flex items-start gap-3">
@@ -114,7 +107,7 @@ export default async function EcommerceCaseStudy({ params }: Props) {
       {/* De aanpak */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <h2 className="text-2xl font-bold text-primary mb-6">De aanpak</h2>
+          <h2 className="text-2xl font-bold text-primary mb-6">{t('approach_h2')}</h2>
           <div className="space-y-6">
             {approach.map((a, i) => (
               <div key={a.step} className="flex items-start gap-4">
@@ -135,22 +128,21 @@ export default async function EcommerceCaseStudy({ params }: Props) {
       <section className="py-16 bg-surface">
         <div className="mx-auto max-w-3xl px-6 sm:px-8 text-center">
           <blockquote className="text-xl sm:text-2xl font-medium text-primary italic leading-relaxed">
-            &ldquo;We hadden nooit verwacht dat we zoveel tijd zouden besparen. Het dashboard geeft ons
-            in één oogopslag inzicht in alles — van campagneprestaties tot CRM-pipeline.&rdquo;
+            &ldquo;{t('quote')}&rdquo;
           </blockquote>
-          <p className="text-muted mt-4">— Marketing Manager</p>
+          <p className="text-muted mt-4">— {t('quote_author')}</p>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Vergelijkbare resultaten voor jouw bedrijf?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t('cta_h2')}</h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
-            Plan een gesprek en ontdek wat Stevin voor jou kan betekenen.
+            {t('cta_sub')}
           </p>
           <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
-            Plan een gesprek
+            {t('cta_btn')}
           </Link>
         </div>
       </section>

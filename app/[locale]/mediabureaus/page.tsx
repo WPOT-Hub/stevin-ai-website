@@ -15,88 +15,49 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const painPoints = [
-  {
-    title: 'Rapportage is een non-billable kostenpost',
-    desc: 'Je hebt mensen op reporting zitten die niet aan strategie toekomen. Exporteren, combineren, formatteren — terwijl je klant betaalt voor resultaat, niet voor grafieken.',
-  },
-  {
-    title: 'Budget-allocatie op gevoel',
-    desc: 'Je verdeelt budgetten op basis van historie en onderbuikgevoel. Geen wetenschappelijke onderbouwing voor verschuivingen, geen zicht op verzadigingspunten per kanaal.',
-  },
-  {
-    title: 'Je klant vraagt "wat nu?" en je levert "wat was"',
-    desc: 'Dashboards vertellen wat er gisteren is gebeurd. Je klant wil weten wat er morgen moet gebeuren en waar de volgende euro het hardst groeit.',
-  },
-]
-
-const features = [
-  {
-    title: 'Cross-channel Attribution',
-    desc: 'Eén waarheid over alle kanalen heen. Begrijp de werkelijke bijdrage van elk touchpoint — van first click tot conversie.',
-    icon: <GitBranch className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: '220+ Integraties',
-    desc: 'Native koppelingen met Meta, Google, TikTok, LinkedIn, DV360, The Trade Desk en meer. Geen middleware, geen vertraging.',
-    icon: <Plug className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Budget Optimalisatie',
-    desc: 'Concrete aanbevelingen voor budget-herverdeling op basis van real-time performance, seizoenspatronen en incrementaliteit.',
-    icon: <Wallet className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Executive Briefings, geen PDF-dumps',
-    desc: 'Drie zinnen per klant die je direct kunt doorsturen. "Share of Search stijgt 12%, media-kosten dalen. Nieuwe visuele stijl werkt. Opschalen."',
-    icon: <FileText className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Waste Reduction & Pacing Alerts',
-    desc: 'Continu overzicht van spend versus planning. Budget wasters worden automatisch gesignaleerd. Kansen worden geescaleerd voordat ze voorbij zijn.',
-    icon: <Activity className="w-5 h-5 text-accent" />,
-  },
-  {
-    title: 'Creatieve Verzadigingsdetectie',
-    desc: 'Weet wanneer een creative zijn kracht verliest. Stevin meet de verzadiging per creatieve uiting zodat je op tijd vernieuwt — niet reageert.',
-    icon: <LayoutDashboard className="w-5 h-5 text-accent" />,
-  },
-]
-
-const audiences = [
-  {
-    title: 'Media Planning',
-    desc: 'Plan campagnes op basis van data, niet op basis van vorig jaar. Stevin levert de inzichten die je nodig hebt voor onderbouwde mediakeuzes.',
-    link: null,
-    linkText: null,
-  },
-  {
-    title: 'Media Buying',
-    desc: 'Optimaliseer budgetten in real-time over alle kanalen heen. Minder waste, meer resultaat per euro mediabesteding.',
-    link: null,
-    linkText: null,
-  },
-  {
-    title: 'Client Services',
-    desc: 'Lever executive briefings in plaats van dikke rapporten. Je klant krijgt in 3 zinnen de status — jij komt over als strategisch partner, niet als rapportage-fabriek.',
-    link: null,
-    linkText: null,
-  },
-]
-
-const useCases = [
-  'Je hebt mensen op reporting zitten die niet aan strategie toekomen',
-  'Je wilt budget-verschuivingen onderbouwen met wetenschap, niet gevoel',
-  'Je wilt weten wanneer je creative verzadigd raakt — voordat de klant het merkt',
-  'Je klant vraagt om een vooruitblik, niet om een achteruitkijkspiegel',
-  'Je wilt in 3 zinnen de status per klant, niet in een 40 pagina rapport',
-  'Je wilt je positioneren als strategisch partner, niet als uitvoerder',
+const featureIcons = [
+  <GitBranch key="1" className="w-5 h-5 text-accent" />,
+  <Plug key="2" className="w-5 h-5 text-accent" />,
+  <Wallet key="3" className="w-5 h-5 text-accent" />,
+  <FileText key="4" className="w-5 h-5 text-accent" />,
+  <Activity key="5" className="w-5 h-5 text-accent" />,
+  <LayoutDashboard key="6" className="w-5 h-5 text-accent" />,
 ]
 
 export default async function MediabureausPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('mediabureaus')
+
+  const painPoints = [
+    { title: t('pain1_title'), desc: t('pain1_desc') },
+    { title: t('pain2_title'), desc: t('pain2_desc') },
+    { title: t('pain3_title'), desc: t('pain3_desc') },
+  ]
+
+  const features = [
+    { title: t('feat1_title'), desc: t('feat1_desc'), icon: featureIcons[0] },
+    { title: t('feat2_title'), desc: t('feat2_desc'), icon: featureIcons[1] },
+    { title: t('feat3_title'), desc: t('feat3_desc'), icon: featureIcons[2] },
+    { title: t('feat4_title'), desc: t('feat4_desc'), icon: featureIcons[3] },
+    { title: t('feat5_title'), desc: t('feat5_desc'), icon: featureIcons[4] },
+    { title: t('feat6_title'), desc: t('feat6_desc'), icon: featureIcons[5] },
+  ]
+
+  const audiences = [
+    { title: t('aud1_title'), desc: t('aud1_desc'), link: null, linkText: null },
+    { title: t('aud2_title'), desc: t('aud2_desc'), link: null, linkText: null },
+    { title: t('aud3_title'), desc: t('aud3_desc'), link: null, linkText: null },
+  ]
+
+  const useCases = [
+    t('uc1'),
+    t('uc2'),
+    t('uc3'),
+    t('uc4'),
+    t('uc5'),
+    t('uc6'),
+  ]
 
   return (
     <main>
@@ -117,10 +78,10 @@ export default async function MediabureausPage({ params }: Props) {
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
-              Plan een gesprek
+              {t('cta_primary')}
             </Link>
             <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
-              Bekijk het platform
+              {t('cta_secondary')}
             </Link>
           </div>
           <div className="mt-20">
@@ -134,13 +95,13 @@ export default async function MediabureausPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            DE REALITEIT
+            {t('pain_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Herkenbaar?
+            {t('pain_h2')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
             {painPoints.map((p) => (
@@ -158,16 +119,16 @@ export default async function MediabureausPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            HET PLATFORM
+            {t('features_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Alles wat je nodig hebt
+            {t('features_h2')}
           </h2>
           <p className="text-[17px] text-muted mb-16 max-w-xl leading-[1.55]">
-              Stevin vervangt losse dashboards door één systeem dat mediainkoop, analyse en rapportage verbindt.
+              {t('features_sub')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-border">
             {features.map((f, i) => (
@@ -186,15 +147,15 @@ export default async function MediabureausPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            VOOR ELK TYPE TEAM
+            {t('audiences_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Voor elke rol in het mediabureau
+            {t('audiences_h2')}
           </h2>
-          <p className="text-[17px] text-muted mb-0 max-w-xl leading-[1.55]">Het platform is hetzelfde. De toepassing verschilt.</p>
+          <p className="text-[17px] text-muted mb-0 max-w-xl leading-[1.55]">{t('audiences_sub')}</p>
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border mt-16">
             {audiences.map((a) => (
               <div key={a.title} className="py-10 md:py-0 md:px-10 first:pl-0 last:pr-0">
@@ -218,13 +179,13 @@ export default async function MediabureausPage({ params }: Props) {
             <div>
               <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
                 <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-                VOOR JOU ALS
+                {t('usecases_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10"
                 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
               >
-                Stevin is voor jou als
+                {t('usecases_h2')}
               </h2>
               <ul className="space-y-0 border-t border-white/10">
                 {useCases.map((uc) => (
@@ -237,22 +198,22 @@ export default async function MediabureausPage({ params }: Props) {
             </div>
             <div className="lg:pt-[140px]">
               <p className="text-[#00D4A0] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6">
-                Het is geen wonder. Het is Stevin.
+                {t('cta_eyebrow')}
               </p>
               <h3
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-6"
                 style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
               >
-                Zie wat je betaalt.<br />Zie wat het oplevert.
+                {t('cta_h3')}
               </h3>
               <p className="text-white/50 mb-8 leading-[1.6] text-[15px]">
-                Scherper bureaus draaien op bewijs. Plan een gesprek en we laten zien hoe Stevin jouw mediabureau sneller en winstgevender maakt.
+                {t('cta_sub')}
               </p>
               <Link
                 href="/contact"
                 className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
               >
-                Plan een gesprek
+                {t('cta_btn')}
               </Link>
             </div>
           </div>

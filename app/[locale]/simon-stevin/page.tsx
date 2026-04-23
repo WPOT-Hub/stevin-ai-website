@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function SimonStevinPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
+  const t = await getTranslations('simon_stevin')
   return (
     <>
       {/* ── SECTIE 1 — NAVY HERO ── */}
@@ -25,7 +26,7 @@ export default async function SimonStevinPage({ params }: Props) {
 
           {/* Eyebrow */}
           <p className="text-white/55 font-display font-semibold text-[12px] tracking-[0.08em] uppercase mb-6">
-            WAAROM WIJ ZIJN NAAM DRAGEN
+            {t('hero_eyebrow')}
           </p>
 
           {/* H1 — vol-breed, boven de grid */}
@@ -33,7 +34,7 @@ export default async function SimonStevinPage({ params }: Props) {
             className="font-display font-extrabold text-white leading-[1.05] tracking-[-0.03em] text-wrap-balance"
             style={{ fontSize: 'clamp(44px, 6vw, 104px)', maxWidth: '900px', marginBottom: '72px' }}
           >
-            Simon Stevin zag al door de mist in 1585.
+            {t('hero_h1')}
           </h1>
 
           {/* Grid: portret links + sub-tekst rechts */}
@@ -52,7 +53,7 @@ export default async function SimonStevinPage({ params }: Props) {
               >
                 <Image
                   src="/simon-stevin-lineart.png"
-                  alt="Portret van Simon Stevin — lijntekening gebaseerd op historisch portret"
+                  alt={t('portrait_alt')}
                   width={380}
                   height={507}
                   className="w-full h-full object-cover block"
@@ -64,7 +65,7 @@ export default async function SimonStevinPage({ params }: Props) {
                 className="font-body font-medium text-white/55 uppercase leading-[1.5]"
                 style={{ fontSize: '11px', letterSpacing: '0.08em', maxWidth: '380px', marginTop: '16px' }}
               >
-                Portret — Simon Stevin (1548–1620).
+                {t('portrait_caption')}
               </figcaption>
             </figure>
 
@@ -73,7 +74,7 @@ export default async function SimonStevinPage({ params }: Props) {
               className="lg:col-span-6 lg:col-start-7 font-body text-white/78 leading-[1.55] text-wrap-pretty"
               style={{ fontSize: '20px', maxWidth: '520px' }}
             >
-              In een tijd dat Europa rekende met breuken op perkament, schreef hij De Thiende — en introduceerde decimalen. Niet omdat het mooier klonk, maar omdat het klopte.
+              {t('intro_sub')}
             </p>
           </div>
 
@@ -85,7 +86,7 @@ export default async function SimonStevinPage({ params }: Props) {
         {/* Eerste paragraaf binnen leeskolom */}
         <div className="mx-auto max-w-[680px] px-6">
           <p className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty mb-0" style={{ fontSize: '18px' }}>
-            Simon Stevin (1548–1620) was ingenieur, wiskundige en adviseur van Prins Maurits. Hij bouwde forten, zeilwagens en waterwerken. Hij bedacht Nederlandse woorden voor wetenschap die nog steeds meegaan — wiskunde, evenaar, middellijn. Hij maakte complex simpel zonder afbreuk te doen aan wat telt.
+            {t('body_p1')}
           </p>
         </div>
 
@@ -118,13 +119,13 @@ export default async function SimonStevinPage({ params }: Props) {
         {/* Rest van de body-paragrafen */}
         <div className="mx-auto max-w-[680px] px-6 space-y-7">
           <p className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty" style={{ fontSize: '18px' }}>
-            Zijn gedachte: wat op het eerste gezicht een wonder lijkt, is bij nader inzien gewoon logica die nog niet was doorgrond. Zwaartekracht. Valsnelheid. Getijden. Allemaal &ldquo;wonderen&rdquo; tot iemand de getallen erachter rangschikt.
+            {t('body_p2')}
           </p>
           <p className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty" style={{ fontSize: '18px' }}>
-            Marketing is in 2026 waar natuurkunde was in 1586. We vertrouwen dashboards die elkaar tegenspreken. We noemen het &ldquo;magie&rdquo; als iets werkt. We accepteren black boxes omdat de complexiteit ons afschrikt.
+            {t('body_p3')}
           </p>
           <p className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty" style={{ fontSize: '18px' }}>
-            Wij dragen zijn naam omdat wij zijn werk voortzetten — niet in polders en zeilwagens, maar in marketingbudgetten en CRM-data. De meetlat leggen waar anderen het bij &ldquo;dat is toch niet te bewijzen&rdquo; laten.
+            {t('body_p4')}
           </p>
         </div>
       </section>
@@ -141,20 +142,20 @@ export default async function SimonStevinPage({ params }: Props) {
               marginBottom: '40px',
             }}
           >
-            Het is geen wonder. Het is Stevin.
+            {t('closing_p')}
           </p>
           <Link
             href="/contact"
             className="inline-block font-display font-bold text-white rounded-[10px] transition-colors hover:bg-accent-dark"
             style={{ background: '#3D8EFF', fontSize: '16px', padding: '18px 28px' }}
           >
-            Zie wat je betaalt. Zie wat het oplevert.
+            {t('closing_cta')}
           </Link>
           <p
             className="font-body italic"
             style={{ fontSize: '12px', color: 'rgba(255,255,255,.5)', letterSpacing: '0.02em', marginTop: '32px' }}
           >
-            Gedachte uit 1586. Nog steeds bruikbaar.
+            {t('closing_footer')}
           </p>
         </div>
       </section>

@@ -14,67 +14,79 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const phases = [
-  {
-    number: '01',
-    title: 'Koppelen',
-    body: <>We verbinden je volledige digitale ecosysteem met <strong className="text-primary font-semibold">220+ native integraties</strong>. Ruwe data realtime beschikbaar in één overzicht.</>,
-    claim: 'Geen middleware, geen vertraging.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" className="w-5 h-5">
-        <path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/>
-        <path d="m2 22 3-3"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/>
-        <path d="m18 3-4 4h6l-4 4"/>
-      </svg>
-    ),
-  },
-  {
-    number: '02',
-    title: 'Vergelijken',
-    body: <><strong className="text-primary font-semibold">Platform-cijfers</strong> naast de werkelijkheid in je CRM. Waar Meta of Google afwijkt, wordt dat meetbaar.</>,
-    claim: 'Niet vermoed, wel bewezen.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" className="w-5 h-5">
-        <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
-        <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
-        <path d="M7 21h10"/><path d="M12 3v18"/>
-        <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
-      </svg>
-    ),
-  },
-  {
-    number: '03',
-    title: 'Activeren',
-    body: <>Concrete acties in plaats van passieve grafieken. Stevin vertelt <strong className="text-primary font-semibold">per euro</strong> waar je morgen moet sturen.</>,
-    claim: 'Adviezen, geen dashboards.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" className="w-5 h-5">
-        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
-      </svg>
-    ),
-  },
-  {
-    number: '04',
-    title: 'Verbeteren',
-    body: <>Het platform leert van <strong className="text-primary font-semibold">elke interactie</strong>. Rapportages, alerts en content passen zich aan op jouw werkwijze.</>,
-    claim: 'Feedback loop als fundament.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" className="w-5 h-5">
-        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
-        <path d="M21 3v5h-5"/>
-        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
-        <path d="M3 21v-5h5"/>
-      </svg>
-    ),
-  },
+const phaseIcons = [
+  (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" className="w-5 h-5">
+      <path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/>
+      <path d="m2 22 3-3"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/>
+      <path d="m18 3-4 4h6l-4 4"/>
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" className="w-5 h-5">
+      <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+      <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+      <path d="M7 21h10"/><path d="M12 3v18"/>
+      <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" className="w-5 h-5">
+      <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" className="w-5 h-5">
+      <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+      <path d="M21 3v5h-5"/>
+      <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+      <path d="M3 21v-5h5"/>
+    </svg>
+  ),
 ]
-
-const phaseLabels = ['01 / KOPPELEN', '02 / VERGELIJKEN', '03 / ACTIVEREN', '04 / VERBETEREN']
 
 export default async function WerkwijzePage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('werkwijze')
+
+  const phases = [
+    {
+      number: '01',
+      title: t('phase1_title'),
+      body: <>{t('phase1_body_intro')} <strong className="text-primary font-semibold">{t('phase1_body_strong')}</strong>{t('phase1_body_rest')}</>,
+      claim: t('phase1_claim'),
+      icon: phaseIcons[0],
+    },
+    {
+      number: '02',
+      title: t('phase2_title'),
+      body: <><strong className="text-primary font-semibold">{t('phase2_body_strong')}</strong>{t('phase2_body_rest')}</>,
+      claim: t('phase2_claim'),
+      icon: phaseIcons[1],
+    },
+    {
+      number: '03',
+      title: t('phase3_title'),
+      body: <>{t('phase3_body_intro')} <strong className="text-primary font-semibold">{t('phase3_body_strong')}</strong>{t('phase3_body_rest')}</>,
+      claim: t('phase3_claim'),
+      icon: phaseIcons[2],
+    },
+    {
+      number: '04',
+      title: t('phase4_title'),
+      body: <>{t('phase4_body_intro')} <strong className="text-primary font-semibold">{t('phase4_body_strong')}</strong>{t('phase4_body_rest')}</>,
+      claim: t('phase4_claim'),
+      icon: phaseIcons[3],
+    },
+  ]
+
+  const phaseLabels = [
+    `01 / ${t('phase1_title').toUpperCase()}`,
+    `02 / ${t('phase2_title').toUpperCase()}`,
+    `03 / ${t('phase3_title').toUpperCase()}`,
+    `04 / ${t('phase4_title').toUpperCase()}`,
+  ]
 
   return (
     <>
@@ -119,11 +131,11 @@ export default async function WerkwijzePage({ params }: Props) {
           <div className="mt-24 text-white/55">
             <MeetlatRuler color="rgba(255,255,255,.55)" />
             <div className="mt-3.5 flex justify-between font-mono text-[11px] text-white/45 tracking-[0.04em]">
-              <span>00 — ruwe data</span>
+              <span>{t('ruler_label0')}</span>
               <span>01</span>
               <span>02</span>
               <span>03</span>
-              <span>04 — resultaat</span>
+              <span>{t('ruler_label4')}</span>
             </div>
           </div>
 

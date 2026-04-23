@@ -14,44 +14,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const features = [
-  {
-    title: 'Het 03:00 AM Command Center',
-    desc: 'Je stapt \'s nachts de booth uit. Je wilt geen complexe dashboards, je wilt weten: hebben we gewonnen? Stevin toont op je mobiel in één oogopslag de reacties, de pieken en de belangrijkste fan-interacties van vanavond.',
-  },
-  {
-    title: 'Cross-Channel Momentum',
-    desc: 'Stevin ziet dat een specifieke track organisch ontploft op SoundCloud of TikTok, nog voordat het in je Spotify-cijfers zit. De Advisor geeft direct een seintje om Meta-Ad budget of merch-promo in te zetten op het juiste moment, in de juiste regio.',
-  },
-  {
-    title: 'De Fan-Bridge Filter',
-    desc: 'Jouw AI-filter knipt de 95% emoji-ruis weg. Je ziet alleen de verjaardagen, vragen over merchandise en track-ID smeekbedes. Stevin genereert bullet-points voor je antwoord, zodat jij in je eigen woorden in 2 seconden authentiek reageert.',
-  },
-]
-
-const capabilities = [
-  { title: 'Deep Social Listening', desc: 'Organische signalen van al je kanalen gecentraliseerd. Weet wat er over je gezegd wordt, overal.' },
-  { title: 'Momentum Detectie', desc: 'Stevin ziet wanneer een track, video of post organisch versnelt — gebaseerd op cross-channel data, niet op gevoel.' },
-  { title: 'Owned vs. Rented Audience', desc: 'Zie hoeveel van je bereik van jou is (nieuwsbrief, website) versus gehuurd (TikTok, Instagram).' },
-  { title: 'Reactie-tracking', desc: 'Volg hoe fans reageren op een drop, post of optreden. Zie trends over tijd in plaats van momentopnames.' },
-  { title: 'Geo-Hype Tracking', desc: 'Zie in welke steden en landen je het hardst groeit. Stuur je booking en merch erop aan.' },
-  { title: 'AI Advisor Cards', desc: 'Geen rapporten van 30 pagina\'s. Concrete kaarten met één actie per signaal.' },
-]
-
-const useCases = [
-  'Je team is uren kwijt aan het filteren van comments en DM\'s',
-  'Je weet niet welke content écht impact heeft op je streams',
-  'Je mist kansen omdat je te laat reageert op momentum',
-  'Je merch-sales lopen achter terwijl je engagement hoog is',
-  'Je hebt geen overzicht over je prestaties per regio',
-]
-
 const channels = ['Instagram', 'TikTok', 'YouTube', 'SoundCloud', 'Spotify', 'Facebook', 'Website']
 
 export default async function VoorArtiestenPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('artiesten')
+
+  const features = [
+    { title: t('feat1_title'), desc: t('feat1_desc') },
+    { title: t('feat2_title'), desc: t('feat2_desc') },
+    { title: t('feat3_title'), desc: t('feat3_desc') },
+  ]
+
+  const capabilities = [
+    { title: t('cap1_title'), desc: t('cap1_desc') },
+    { title: t('cap2_title'), desc: t('cap2_desc') },
+    { title: t('cap3_title'), desc: t('cap3_desc') },
+    { title: t('cap4_title'), desc: t('cap4_desc') },
+    { title: t('cap5_title'), desc: t('cap5_desc') },
+    { title: t('cap6_title'), desc: t('cap6_desc') },
+  ]
+
+  const useCases = [t('uc1'), t('uc2'), t('uc3'), t('uc4'), t('uc5')]
 
   return (
     <main>
@@ -121,16 +106,16 @@ export default async function VoorArtiestenPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            WAT STEVIN VOOR JOU DOET
+            {t('features_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            Drie pijlers
+            {t('features_h2')}
           </h2>
           <p className="text-[17px] text-muted mb-16 max-w-xl leading-[1.55]">
-            Die van social chaos een gestroomlijnd systeem maken.
+            {t('features_sub')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 border-t border-border">
             {features.map((f, i) => (
@@ -149,13 +134,13 @@ export default async function VoorArtiestenPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            ONDER DE MOTORKAP
+            {t('caps_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
           >
-            De technologie<br />achter het signaal
+            {t('caps_h2')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-border">
             {capabilities.map((c) => (
@@ -175,13 +160,13 @@ export default async function VoorArtiestenPage({ params }: Props) {
             <div>
               <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
                 <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-                VOOR JOU ALS
+                {t('usecases_eyebrow')}
               </p>
               <h2
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10"
                 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
               >
-                Dit herkenbaar is
+                {t('usecases_h2')}
               </h2>
               <ul className="space-y-0 border-t border-white/10">
                 {useCases.map((uc) => (
@@ -194,15 +179,15 @@ export default async function VoorArtiestenPage({ params }: Props) {
             </div>
             <div className="lg:pt-[140px]">
               <p className="text-[#00D4A0] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6">
-                Het is geen wonder. Het is Stevin.
+                {t('cta_eyebrow')}
               </p>
               <h3
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-3"
                 style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
               >
-                Op aanvraag
+                {t('cta_h3')}
               </h3>
-              <p className="text-white/40 text-sm mb-8">Prijs afhankelijk van scope en aantal kanalen</p>
+              <p className="text-white/40 text-sm mb-8">{t('cta_note')}</p>
               <Link
                 href="/contact"
                 className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
@@ -210,7 +195,7 @@ export default async function VoorArtiestenPage({ params }: Props) {
                 {t('cta_access')}
               </Link>
               <ul className="mt-8 space-y-0 border-t border-white/10">
-                {['Cross-channel monitoring', 'AI Advisor met momentum-detectie', 'Fan-engagement filtering', 'Reactie-tracking over tijd', 'Geo-hype tracking', 'Merch & ticket conversie-inzichten'].map((f) => (
+                {[t('inc1'), t('inc2'), t('inc3'), t('inc4'), t('inc5'), t('inc6')].map((f) => (
                   <li key={f} className="flex items-center gap-3 py-3 border-b border-white/10">
                     <span className="w-1 h-1 rounded-full bg-[#00D4A0] flex-shrink-0" />
                     <span className="text-[14px] text-white/60">{f}</span>
@@ -226,22 +211,22 @@ export default async function VoorArtiestenPage({ params }: Props) {
       <section className="bg-surface" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#00D4A0] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6">
-            Het is geen wonder. Het is Stevin.
+            {t('bottom_eyebrow')}
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
             style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', maxWidth: '16ch' }}
           >
-            Koppel je kanalen. Zie wat je mist.
+            {t('bottom_h2')}
           </h2>
           <p className="text-[17px] text-muted mb-10 max-w-lg leading-[1.6]">
-            Koppel je kanalen en zie direct wat je de afgelopen maanden hebt gemist.
+            {t('bottom_sub')}
           </p>
           <Link
             href="/contact"
             className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
           >
-            Neem contact op
+            {t('bottom_cta')}
           </Link>
         </div>
       </section>

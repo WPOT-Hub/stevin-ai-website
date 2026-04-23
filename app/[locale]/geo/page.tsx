@@ -16,33 +16,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const faqs = [
-  {
-    question: 'Wat is het verschil tussen SEO en GEO?',
-    answer: 'SEO richt zich op posities in traditionele zoekresultaten. GEO richt zich op zichtbaarheid in AI-gegenereerde antwoorden. Bij SEO wil je op pagina 1 staan. Bij GEO wil je dat AI-systemen jouw content citeren als bron. Beide zijn complementair en versterken elkaar.',
-  },
-  {
-    question: 'Is GEO relevant voor mijn bedrijf?',
-    answer: 'Als je doelgroep zoekt naar informatie, oplossingen of diensten via Google, ChatGPT, Perplexity of andere AI-tools, dan ja. Steeds meer zoekopdrachten worden beantwoord door AI. Bedrijven die daar niet in verschijnen, verliezen zichtbaarheid aan concurrenten die dat wel doen.',
-  },
-  {
-    question: 'Hoe snel levert GEO-optimalisatie resultaat op?',
-    answer: 'Structurele verbeteringen zoals structured data en contentstructuur worden relatief snel opgepikt door AI-systemen. Het opbouwen van autoriteit door content clusters kost meer tijd, vergelijkbaar met SEO. Daarom starten we met de technische basis en bouwen we autoriteit geleidelijk op.',
-  },
-  {
-    question: 'Vervangt GEO de klassieke SEO-aanpak?',
-    answer: 'Nee. GEO is een aanvulling op SEO, geen vervanging. Veel van de principes overlappen: goede contentstructuur, autoriteit en technische gezondheid zijn voor beide belangrijk. Wij pakken ze samen aan zodat je op beide fronten zichtbaar bent.',
-  },
-  {
-    question: 'Hoe meten jullie GEO-resultaten?',
-    answer: 'We monitoren of en hoe je content wordt geciteerd in AI-antwoorden, welke pagina\'s als bron worden gebruikt en hoe je zichtbaarheid zich ontwikkelt ten opzichte van concurrenten. Daarnaast meten we het directe effect op verkeer en leads via onze tracking-infrastructuur.',
-  },
-]
-
 export default async function GEOPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('geo')
+
+  const faqs = [
+    { question: t('faq1_q'), answer: t('faq1_a') },
+    { question: t('faq2_q'), answer: t('faq2_a') },
+    { question: t('faq3_q'), answer: t('faq3_a') },
+    { question: t('faq4_q'), answer: t('faq4_a') },
+    { question: t('faq5_q'), answer: t('faq5_a') },
+  ]
+
+  const whyItems = [
+    { title: t('why_box1_title'), desc: t('why_box1_desc') },
+    { title: t('why_box2_title'), desc: t('why_box2_desc') },
+    { title: t('why_box3_title'), desc: t('why_box3_desc') },
+    { title: t('why_box4_title'), desc: t('why_box4_desc') },
+  ]
 
   return (
     <>
@@ -65,26 +57,26 @@ export default async function GEOPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-primary">
-              Wat is Generative Engine Optimisation?
+              {t('what_h2')}
             </h2>
             <p className="mt-4 text-lg text-muted leading-relaxed">
-              GEO is het optimaliseren van je content en sitestructuur zodat AI-systemen je informatie kunnen vinden, begrijpen en citeren. Waar SEO draait om posities in zoekresultaten, draait GEO om aanwezig zijn in de antwoorden die AI genereert.
+              {t('what_p1')}
             </p>
             <p className="mt-4 text-base text-muted leading-relaxed">
-              AI-zoekmachines werken anders dan traditionele zoekmachines. Ze lezen je content, beoordelen je autoriteit en besluiten of jouw informatie betrouwbaar genoeg is om te citeren. Dat vereist een andere aanpak dan alleen ranken op zoekwoorden.
+              {t('what_p2')}
             </p>
           </div>
           <div className="space-y-6">
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Traditionele zoekmachines</h3>
+              <h3 className="text-base font-bold text-primary mb-2">{t('what_box1_h3')}</h3>
               <p className="text-sm text-muted leading-relaxed">
-                Tonen een lijst met links. De gebruiker klikt door en leest je pagina. Succes = hoge positie en hoge doorklikratio.
+                {t('what_box1_p')}
               </p>
             </div>
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">AI-zoekervaringen</h3>
+              <h3 className="text-base font-bold text-primary mb-2">{t('what_box2_h3')}</h3>
               <p className="text-sm text-muted leading-relaxed">
-                Genereren een direct antwoord op basis van meerdere bronnen. De gebruiker leest het antwoord zonder altijd door te klikken. Succes = geciteerd worden als betrouwbare bron.
+                {t('what_box2_p')}
               </p>
             </div>
           </div>
@@ -95,30 +87,13 @@ export default async function GEOPage({ params }: Props) {
       <Section bg="white" id="waarom-geo">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary text-center">
-            Waarom GEO naast klassieke SEO nodig is
+            {t('why_h2')}
           </h2>
           <p className="mt-6 text-lg text-muted leading-relaxed text-center">
-            Klassieke SEO blijft belangrijk, maar het is niet meer genoeg. Een groeiend deel van zoekopdrachten wordt beantwoord door AI zonder dat de gebruiker doorklikt. Als je daar niet zichtbaar bent, mis je een steeds groter deel van je potentiële doelgroep.
+            {t('why_p')}
           </p>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {[
-              {
-                title: 'AI Overviews in Google',
-                desc: 'Google toont steeds vaker AI-gegenereerde samenvattingen bovenaan de zoekresultaten. Content die daar niet in verschijnt, wordt minder zichtbaar, ongeacht je organische positie.',
-              },
-              {
-                title: 'Direct antwoord via ChatGPT en Perplexity',
-                desc: 'Steeds meer mensen zoeken via AI-tools in plaats van Google. Deze tools citeren bronnen, maar alleen als je content goed gestructureerd en betrouwbaar is.',
-              },
-              {
-                title: 'Minder doorklikken',
-                desc: 'Gebruikers krijgen hun antwoord zonder je site te bezoeken. Je moet dus al in het antwoord zichtbaar zijn als merk en als bron, niet alleen in de zoekresultaten eronder.',
-              },
-              {
-                title: 'Concurrentievoordeel',
-                desc: 'De meeste bedrijven optimaliseren nog alleen voor klassieke SEO. Wie nu investeert in GEO, bouwt een voorsprong op die moeilijk in te halen is.',
-              },
-            ].map((item) => (
+            {whyItems.map((item) => (
               <div key={item.title} className="p-6 rounded-xl bg-white border border-border">
                 <h3 className="text-base font-bold text-primary mb-2">{item.title}</h3>
                 <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
@@ -133,41 +108,41 @@ export default async function GEOPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-primary">
-              Hoe wij je content en sitestructuur optimaliseren voor AI
+              {t('how_h2')}
             </h2>
             <p className="mt-4 text-lg text-muted leading-relaxed">
-              GEO is geen truc of snelle fix. Het vereist een structurele aanpak van je content, je technische setup en je autoriteit. Wij bouwen dat in vijf lagen op.
+              {t('how_p')}
             </p>
           </div>
           <div className="space-y-6">
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Heldere, citeerbare antwoorden</h3>
+              <h3 className="text-base font-bold text-primary mb-2">{t('how_box1_h3')}</h3>
               <p className="text-sm text-muted leading-relaxed">
-                Content die direct antwoord geeft op vragen van je doelgroep. Geen vaag verhaal, maar concrete informatie die AI-systemen kunnen extraheren en citeren.
+                {t('how_box1_p')}
               </p>
             </div>
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Logische interne linkstructuur</h3>
+              <h3 className="text-base font-bold text-primary mb-2">{t('how_box2_h3')}</h3>
               <p className="text-sm text-muted leading-relaxed">
-                Een sitestructuur die AI-systemen helpt begrijpen hoe je content samenhangt. Duidelijke hierarchie, contextuele links en navigatie die de relatie tussen onderwerpen expliciet maakt.
+                {t('how_box2_p')}
               </p>
             </div>
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Structured data en schema markup</h3>
+              <h3 className="text-base font-bold text-primary mb-2">{t('how_box3_h3')}</h3>
               <p className="text-sm text-muted leading-relaxed">
-                Technische markup die AI-systemen helpt je content te classificeren: FAQ-schema, organisatie-informatie, product- en dienstbeschrijvingen in een formaat dat machines direct kunnen verwerken.
+                {t('how_box3_p')}
               </p>
             </div>
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Autoriteit door content clusters</h3>
+              <h3 className="text-base font-bold text-primary mb-2">{t('how_box4_h3')}</h3>
               <p className="text-sm text-muted leading-relaxed">
-                Diepgaande content rond je kernonderwerpen, georganiseerd in clusters. AI-systemen beoordelen niet alleen individuele pagina&apos;s, maar je totale autoriteit op een onderwerp. Clusters bouwen die autoriteit op.
+                {t('how_box4_p')}
               </p>
             </div>
             <div className="p-6 rounded-xl bg-white border border-border">
-              <h3 className="text-base font-bold text-primary mb-2">Consistente merkpresentatie</h3>
+              <h3 className="text-base font-bold text-primary mb-2">{t('how_box5_h3')}</h3>
               <p className="text-sm text-muted leading-relaxed">
-                Je merknaam, je expertise en je propositie consistent terugbrengen in je content. Zodat AI-systemen je herkennen als autoriteit en je merk noemen in hun antwoorden.
+                {t('how_box5_p')}
               </p>
             </div>
           </div>
@@ -177,8 +152,8 @@ export default async function GEOPage({ params }: Props) {
       {/* FAQ */}
       <Section bg="white" id="faq">
         <SectionHeader
-          title="Veelgestelde vragen over GEO"
-          subtitle="Wat Generative Engine Optimisation inhoudt en hoe het zich verhoudt tot SEO."
+          title={t('faq_title')}
+          subtitle={t('faq_subtitle')}
           centered
         />
         <FAQAccordion faqs={faqs} />
@@ -187,9 +162,9 @@ export default async function GEOPage({ params }: Props) {
       {/* CTA */}
       <Section bg="surface">
         <CTABlock
-          title="Het is geen wonder. Het is Stevin."
-          description="Zichtbaar blijven in AI-zoekervaringen vereist structuur, geen gok. Plan een gesprek en we laten zien hoe je content en sitestructuur geoptimaliseerd kunnen worden."
-          buttonText="Plan een gesprek"
+          title={t('cta_title')}
+          description={t('cta_desc')}
+          buttonText={t('cta_btn')}
           buttonHref="/contact"
         />
       </Section>
