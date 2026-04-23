@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
   title: 'Agency Scan — Stevin.AI',
@@ -204,17 +203,18 @@ export default function AgencyScanPage() {
         </div>
       </section>
 
-      {/* ── SECTIE 3: CTA + FORM ── */}
+      {/* ── SECTIE 3: CTA SELF-SERVICE ── */}
       <section id="scan" className="bg-surface" style={{ padding: '80px 24px 120px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+          <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-10 flex items-center gap-[14px]">
+            <span className="inline-block w-6 h-px bg-accent flex-shrink-0" aria-hidden="true" />
+            DURF JIJ HET AAN?
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
             <div>
-              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[14px]">
-                <span className="inline-block w-6 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-                DURF JIJ HET AAN?
-              </p>
-
               <h2
                 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
                 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
@@ -226,28 +226,54 @@ export default function AgencyScanPage() {
                 Als je bureau echt zo goed presteert als ze zeggen in hun rapportages, dan zal onze scan dat alleen maar bevestigen. Maar als je onderbuikgevoel klopt, bespaar je vandaag nog duizenden euro&rsquo;s aan verspild budget.
               </p>
 
-              <p className="text-muted text-[17px] leading-[1.6] mb-8">
+              <p className="text-muted text-[17px] leading-[1.6] mb-10">
                 Laat je niet langer sturen door mooie powerpoints. Stuur op data.
               </p>
 
-              <div className="pt-8 border-t border-border">
-                <p className="text-[13px] text-muted">
-                  Liever direct mailen?{' '}
-                  <a href="mailto:koen@stevin.ai" className="text-accent hover:underline font-medium">
-                    koen@stevin.ai
-                  </a>
-                </p>
-                <p className="text-[12px] text-muted/60 mt-3 italic">
-                  100% vertrouwelijk. Jouw bureau krijgt hier geen melding van.
-                </p>
-              </div>
+              <a
+                href="https://desk.stevin.ai"
+                className="inline-flex items-center gap-2 bg-[#5DA3FF] text-[#0A1628] font-display font-bold text-[15px] px-8 py-4 rounded-lg hover:bg-[#7BB8FF] transition-colors"
+              >
+                Let&rsquo;s Talk — Plan je 20-minuten scan in
+              </a>
+
+              <p className="text-[12px] text-muted/60 mt-4 italic">
+                100% vertrouwelijk. Jouw bureau krijgt hier geen melding van.
+              </p>
             </div>
 
-            <div>
-              <ContactForm
-                nextUrl="https://stevin.ai/agency-scan?verzonden=1"
-                subject="Agency Scan aanvraag via stevin.ai/agency-scan"
-              />
+            {/* Self-service stappen */}
+            <div className="bg-white rounded-2xl border border-border p-8 space-y-6">
+              <p className="font-mono text-[11px] text-accent font-bold tracking-[0.12em] uppercase">
+                Zo werkt het
+              </p>
+              {[
+                {
+                  step: '1',
+                  title: 'Maak een gratis account aan',
+                  body: 'Op desk.stevin.ai. Geen creditcard, geen verplichting.',
+                },
+                {
+                  step: '2',
+                  title: 'Koppel je eigen ad-accounts',
+                  body: 'Verbind je Meta Ads en Google Ads (read-only). Jij behoudt altijd de controle.',
+                },
+                {
+                  step: '3',
+                  title: 'Stevin analyseert automatisch',
+                  body: 'Onze FactEngine scant direct op waste, tracking-gaps en afwijkingen. Geen wachttijd.',
+                },
+              ].map((item) => (
+                <div key={item.step} className="flex gap-5 items-start">
+                  <span className="w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 font-mono text-[12px] font-bold text-accent">
+                    {item.step}
+                  </span>
+                  <div>
+                    <h3 className="font-display font-bold text-primary text-[15px] mb-1">{item.title}</h3>
+                    <p className="text-muted text-[14px] leading-relaxed">{item.body}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
