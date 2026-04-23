@@ -8,6 +8,16 @@ const nextConfig: NextConfig = {
         destination: '/artiesten',
         permanent: true,
       },
+      {
+        source: '/demo',
+        destination: '/contact',
+        permanent: false,
+      },
+      {
+        source: '/alerts',
+        destination: '/platform',
+        permanent: false,
+      },
     ]
   },
 }

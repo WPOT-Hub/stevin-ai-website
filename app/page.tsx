@@ -53,13 +53,13 @@ export default function HomePage() {
           {/* CTAs */}
           <div className="flex flex-wrap gap-4 mt-10">
             <Link
-              href="/demo"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-[#5DA3FF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#7BB8FF] transition-colors"
             >
               Plan demo
             </Link>
             <Link
-              href="/alerts"
+              href="/platform"
               className="inline-flex items-center gap-2 border border-white/20 text-white font-display font-semibold text-[15px] px-7 py-3.5 rounded-lg hover:border-white/40 hover:bg-white/5 transition-colors"
             >
               Bekijk voorbeeld alerts
