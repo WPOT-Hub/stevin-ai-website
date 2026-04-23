@@ -1,17 +1,11 @@
 import { ImageResponse } from 'next/og'
-import { readFileSync } from 'fs'
-import { join } from 'path'
 
 export const runtime = 'nodejs'
-export const alt = 'Stevin.AI — Heers over je data. Stop de ruis.'
+export const alt = 'Stevin.AI — Wonder en is gheen wonder.'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 export default async function OGImage() {
-  const logoPath = join(process.cwd(), 'public', 'logos', 'lockup-mono-white-on-navy-web.png')
-  const logoData = readFileSync(logoPath)
-  const logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`
-
   return new ImageResponse(
     (
       <div
@@ -21,161 +15,68 @@ export default async function OGImage() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          alignItems: 'center',
-          background: '#0A1628',
-          position: 'relative',
-          overflow: 'hidden',
+          alignItems: 'flex-start',
+          background: '#0D1B2E',
+          padding: '80px 96px',
         }}
       >
-        {/* Subtle grid pattern */}
-        <div
+        {/* Wonder? */}
+        <span
           style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            opacity: 0.06,
+            fontSize: 92,
+            fontWeight: 800,
+            color: '#3D8EFF',
+            lineHeight: 1.05,
+            letterSpacing: '-0.02em',
             display: 'flex',
-            backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(61,142,255,0.5) 1px, transparent 0)',
-            backgroundSize: '32px 32px',
-          }}
-        />
-
-        {/* Gradient orb top-right */}
-        <div
-          style={{
-            position: 'absolute',
-            top: -120,
-            right: -80,
-            width: 500,
-            height: 500,
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(61,142,255,0.15) 0%, transparent 70%)',
-            display: 'flex',
-          }}
-        />
-
-        {/* Gradient orb bottom-left */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: -150,
-            left: -100,
-            width: 600,
-            height: 600,
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(0,212,160,0.1) 0%, transparent 70%)',
-            display: 'flex',
-          }}
-        />
-
-        {/* Content */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            padding: '60px 80px',
-            position: 'relative',
           }}
         >
-          {/* Logo */}
-          <img
-            src={logoBase64}
-            width={200}
-            height={33}
-            style={{ marginBottom: '40px', opacity: 0.7 }}
-          />
+          Wonder?
+        </span>
 
-          {/* Main headline */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '8px',
-            }}
-          >
-            <span
-              style={{
-                fontSize: 64,
-                fontWeight: 800,
-                color: '#FFFFFF',
-                lineHeight: 1.1,
-                letterSpacing: '-0.03em',
-              }}
-            >
-              Heers over je data.
-            </span>
-            <span
-              style={{
-                fontSize: 64,
-                fontWeight: 800,
-                color: '#00D4A0',
-                lineHeight: 1.1,
-                letterSpacing: '-0.03em',
-              }}
-            >
-              Stop de ruis.
-            </span>
-          </div>
+        {/* Het is geen wonder. */}
+        <span
+          style={{
+            fontSize: 88,
+            fontWeight: 800,
+            color: 'rgba(255,255,255,0.85)',
+            lineHeight: 1.1,
+            letterSpacing: '-0.02em',
+            display: 'flex',
+            marginTop: '4px',
+          }}
+        >
+          Het is geen wonder.
+        </span>
 
-          {/* Subtitle */}
-          <span
-            style={{
-              fontSize: 22,
-              color: 'rgba(255,255,255,0.4)',
-              marginTop: '32px',
-              lineHeight: 1.5,
-              maxWidth: 700,
-            }}
-          >
-            De intelligente datalaag voor agencies, promotoren en artiesten.
-          </span>
+        {/* Het is Stevin. */}
+        <span
+          style={{
+            fontSize: 96,
+            fontWeight: 800,
+            color: '#FFFFFF',
+            lineHeight: 1.1,
+            letterSpacing: '-0.02em',
+            display: 'flex',
+            marginTop: '4px',
+          }}
+        >
+          Het is Stevin.
+        </span>
 
-          {/* Bottom bar */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '24px',
-              marginTop: '48px',
-            }}
-          >
-            {['220+ Integraties', 'AI-analyses', '24/7 Monitoring'].map((item) => (
-              <div
-                key={item}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                }}
-              >
-                <div
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: '50%',
-                    background: '#3D8EFF',
-                    display: 'flex',
-                  }}
-                />
-                <span
-                  style={{
-                    fontSize: 16,
-                    color: 'rgba(255,255,255,0.5)',
-                    fontWeight: 600,
-                  }}
-                >
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Quote */}
+        <span
+          style={{
+            fontSize: 22,
+            fontWeight: 400,
+            fontStyle: 'italic',
+            color: 'rgba(255,255,255,0.35)',
+            marginTop: '40px',
+            display: 'flex',
+          }}
+        >
+          &quot;Wonder en is gheen wonder.&quot; — Simon Stevin, 1586
+        </span>
       </div>
     ),
     {
