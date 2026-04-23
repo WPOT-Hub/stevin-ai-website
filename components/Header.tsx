@@ -1,51 +1,13 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
+import { Link, usePathname } from '@/i18n/navigation'
 import Logo from './Logo'
-
-const dienstenItems = [
-  { label: 'Overzicht', href: '/diensten' },
-  { label: 'Paid Ads', href: '/diensten#paid-media' },
-  { label: 'SEO', href: '/seo' },
-  { label: 'GEO', href: '/geo' },
-  { label: 'Marketing Automation', href: '/diensten#marketing-automation' },
-  { label: 'CRM & Leadopvolging', href: '/diensten#crm-leadopvolging' },
-  { label: 'Tracking & Inzicht', href: '/diensten#tracking-inzicht' },
-]
-
-const platformItems = [
-  { label: 'Platform Overzicht', href: '/platform' },
-  { label: '220+ Integraties', href: '/platform#connectors' },
-  { label: 'Lead Generation', href: '/platform#lead-generation' },
-  { label: '24/7 Monitoring', href: '/platform#monitoring' },
-  { label: 'AI Reports', href: '/platform#ai-reports' },
-]
-
-const voorWieItems = [
-  { label: 'Voor Marketing', href: '/marketing' },
-  { label: 'Voor Creatieve Bureaus', href: '/creatieve-bureaus' },
-  { label: 'Voor Mediabureaus', href: '/mediabureaus' },
-  { label: 'Voor E-commerce', href: '/e-commerce' },
-  { label: 'Voor Healthcare & Farma', href: '/healthcare-marketing' },
-  { label: 'Voor Retail & FMCG', href: '/retail' },
-  { label: 'Voor Artiesten', href: '/artiesten' },
-  { label: 'Voor Influencers', href: '/influencers' },
-  { label: 'Voor Promotoren', href: '/promotoren' },
-  { label: 'Voor Merken', href: '/merken' },
-  { label: 'Voor PR-bureaus', href: '/pr-bureaus' },
-  { label: 'Voor B2B', href: '/b2b' },
-]
-
-const navItems = [
-  { label: 'Werkwijze', href: '/werkwijze' },
-  { label: 'Integraties', href: '/integraties' },
-  { label: 'Case Studies', href: '/case-studies' },
-  { label: 'Contact', href: '/contact' },
-]
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header() {
+  const t = useTranslations('nav')
   const [mobileOpen, setMobileOpen] = useState(false)
   const [dienstenOpen, setDienstenOpen] = useState(false)
   const [platformOpen, setPlatformOpen] = useState(false)
@@ -55,6 +17,7 @@ export default function Header() {
   const [mobileVoorWieOpen, setMobileVoorWieOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+
   // Pages with a light/white hero — header stays white on these
   const lightHeroPages = ['/seo', '/geo', '/contact', '/integraties']
   const isLightHero = lightHeroPages.some(p => pathname === p || pathname.startsWith(p + '/'))
@@ -85,8 +48,47 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
+  const dienstenItems = [
+    { label: t('diensten_overview'), href: '/diensten' },
+    { label: t('diensten_paid'), href: '/diensten#paid-media' },
+    { label: t('diensten_seo'), href: '/seo' },
+    { label: t('diensten_geo'), href: '/geo' },
+    { label: t('diensten_automation'), href: '/diensten#marketing-automation' },
+    { label: t('diensten_crm'), href: '/diensten#crm-leadopvolging' },
+    { label: t('diensten_tracking'), href: '/diensten#tracking-inzicht' },
+  ]
+
+  const platformItems = [
+    { label: t('platform_overview'), href: '/platform' },
+    { label: t('platform_integrations'), href: '/platform#connectors' },
+    { label: t('platform_leads'), href: '/platform#lead-generation' },
+    { label: t('platform_monitoring'), href: '/platform#monitoring' },
+    { label: t('platform_reports'), href: '/platform#ai-reports' },
+  ]
+
+  const voorWieItems = [
+    { label: t('voor_marketing'), href: '/marketing' },
+    { label: t('voor_creatieve'), href: '/creatieve-bureaus' },
+    { label: t('voor_media'), href: '/mediabureaus' },
+    { label: t('voor_ecommerce'), href: '/e-commerce' },
+    { label: t('voor_healthcare'), href: '/healthcare-marketing' },
+    { label: t('voor_retail'), href: '/retail' },
+    { label: t('voor_artiesten'), href: '/artiesten' },
+    { label: t('voor_influencers'), href: '/influencers' },
+    { label: t('voor_promotoren'), href: '/promotoren' },
+    { label: t('voor_merken'), href: '/merken' },
+    { label: t('voor_pr'), href: '/pr-bureaus' },
+    { label: t('voor_b2b'), href: '/b2b' },
+  ]
+
+  const navItems = [
+    { label: t('werkwijze'), href: '/werkwijze' },
+    { label: t('integraties'), href: '/integraties' },
+    { label: t('case_studies'), href: '/case-studies' },
+    { label: t('contact'), href: '/contact' },
+  ]
+
   // Dark = transparent header with white logo+text, floats over dark navy hero
-  // Applies to all pages EXCEPT those with a light/white first section
   const showDark = !isLightHero && !scrolled
 
   return (
@@ -101,7 +103,7 @@ export default function Header() {
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-8">
         <div className="flex h-[72px] items-center justify-between">
-          {/* Logo: cross-fade between white and primary variant */}
+          {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <div className="relative" style={{ width: 140, height: 23 }}>
               <span className={`absolute inset-0 transition-opacity duration-500 ${showDark ? 'opacity-100' : 'opacity-0'}`}>
@@ -125,7 +127,7 @@ export default function Header() {
                     : 'text-slate-600 hover:text-primary'
                 }`}
               >
-                Diensten
+                {t('diensten')}
                 <svg className={`w-3.5 h-3.5 transition-transform ${dienstenOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -156,7 +158,7 @@ export default function Header() {
                     : 'text-slate-600 hover:text-primary'
                 }`}
               >
-                Platform
+                {t('platform')}
                 <svg className={`w-3.5 h-3.5 transition-transform ${platformOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -187,7 +189,7 @@ export default function Header() {
                     : 'text-slate-600 hover:text-primary'
                 }`}
               >
-                Voor wie
+                {t('voor_wie')}
                 <svg className={`w-3.5 h-3.5 transition-transform ${voorWieOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -221,11 +223,15 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+
+            {/* Language switcher */}
+            <LanguageSwitcher dark={showDark} />
+
             <Link
               href="/contact"
               className="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-white bg-accent rounded-lg hover:bg-accent-dark transition-all duration-200 shadow-sm shadow-accent/20"
             >
-              Plan een gesprek
+              {t('cta')}
             </Link>
           </nav>
 
@@ -255,7 +261,7 @@ export default function Header() {
               onClick={() => setMobileDienstenOpen(!mobileDienstenOpen)}
               className="flex items-center justify-between w-full text-base font-medium text-primary py-3 border-b border-border/50"
             >
-              Diensten
+              {t('diensten')}
               <svg className={`w-4 h-4 transition-transform ${mobileDienstenOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -280,7 +286,7 @@ export default function Header() {
               onClick={() => setMobilePlatformOpen(!mobilePlatformOpen)}
               className="flex items-center justify-between w-full text-base font-medium text-primary py-3 border-b border-border/50"
             >
-              Platform
+              {t('platform')}
               <svg className={`w-4 h-4 transition-transform ${mobilePlatformOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -305,7 +311,7 @@ export default function Header() {
               onClick={() => setMobileVoorWieOpen(!mobileVoorWieOpen)}
               className="flex items-center justify-between w-full text-base font-medium text-primary py-3 border-b border-border/50"
             >
-              Voor wie
+              {t('voor_wie')}
               <svg className={`w-4 h-4 transition-transform ${mobileVoorWieOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -335,13 +341,19 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+
+            {/* Language switcher in mobile */}
+            <div className="py-3 border-b border-border/50">
+              <LanguageSwitcher />
+            </div>
+
             <div className="pt-4">
               <Link
                 href="/contact"
                 className="block w-full text-center px-5 py-3.5 text-sm font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
-                Plan een gesprek
+                {t('cta')}
               </Link>
             </div>
           </div>

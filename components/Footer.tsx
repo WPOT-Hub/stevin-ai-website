@@ -1,45 +1,44 @@
 'use client'
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import Logo from './Logo'
 import { ConsentSettingsButton } from './ConsentBanner'
 import TrustBadges from './TrustBadges'
 
-const footerLinks = {
-  diensten: [
-    { label: 'Paid Media', href: '/diensten#paid-media' },
-    { label: 'Landing Pages & CRO', href: '/diensten#landing-pages-cro' },
-    { label: 'Marketing Automation', href: '/diensten#marketing-automation' },
-    { label: 'CRM & Leadopvolging', href: '/diensten#crm-leadopvolging' },
-    { label: 'Tracking & Inzicht', href: '/diensten#tracking-inzicht' },
-  ],
-  bedrijf: [
-    { label: 'Werkwijze', href: '/werkwijze' },
-    { label: 'Simon Stevin', href: '/simon-stevin' },
-    { label: 'Integraties', href: '/integraties' },
-    { label: 'SEO', href: '/seo' },
-    { label: 'GEO', href: '/geo' },
-    { label: 'Voor Agencies', href: '/voor-agencies' },
-    { label: 'Contact', href: '/contact' },
-  ],
-  integraties: [
-    { label: 'Advertising', href: '/integraties/advertising' },
-    { label: 'Analytics & Tracking', href: '/integraties/analytics-tracking' },
-    { label: 'CRM & Sales', href: '/integraties/crm-sales' },
-    { label: 'Email & Automation', href: '/integraties/email-automation' },
-    { label: 'CMS & Ecommerce', href: '/integraties/cms-ecommerce' },
-    { label: 'Creative Intelligence', href: '/integraties/creative-intelligence' },
-    { label: 'DAM & Creative Ops', href: '/integraties/dam-creative-ops' },
-    { label: 'Feed Management', href: '/integraties/feed-management' },
-    { label: 'MMM & Attribution', href: '/integraties/mmm-attribution' },
-    { label: 'Alle integraties', href: '/integraties' },
-  ],
-}
-
 export default function Footer() {
-  const pathname = usePathname()
-  // Editorial-routes (Simon Stevin) renderen bewust zonder shared shell
+  const t = useTranslations('footer')
+
+  const footerLinks = {
+    diensten: [
+      { label: t('svc_paid'), href: '/diensten#paid-media' },
+      { label: t('svc_landing'), href: '/diensten#landing-pages-cro' },
+      { label: t('svc_automation'), href: '/diensten#marketing-automation' },
+      { label: t('svc_crm'), href: '/diensten#crm-leadopvolging' },
+      { label: t('svc_tracking'), href: '/diensten#tracking-inzicht' },
+    ],
+    bedrijf: [
+      { label: t('bedrijf_werkwijze'), href: '/werkwijze' },
+      { label: t('bedrijf_simon'), href: '/simon-stevin' },
+      { label: t('bedrijf_integraties'), href: '/integraties' },
+      { label: t('bedrijf_seo'), href: '/seo' },
+      { label: t('bedrijf_geo'), href: '/geo' },
+      { label: t('bedrijf_agencies'), href: '/voor-agencies' },
+      { label: t('bedrijf_contact'), href: '/contact' },
+    ],
+    integraties: [
+      { label: t('int_advertising'), href: '/integraties/advertising' },
+      { label: t('int_analytics'), href: '/integraties/analytics-tracking' },
+      { label: t('int_crm'), href: '/integraties/crm-sales' },
+      { label: t('int_email'), href: '/integraties/email-automation' },
+      { label: t('int_cms'), href: '/integraties/cms-ecommerce' },
+      { label: t('int_creative'), href: '/integraties/creative-intelligence' },
+      { label: t('int_dam'), href: '/integraties/dam-creative-ops' },
+      { label: t('int_feed'), href: '/integraties/feed-management' },
+      { label: t('int_mmm'), href: '/integraties/mmm-attribution' },
+      { label: t('int_all'), href: '/integraties' },
+    ],
+  }
 
   return (
     <footer className="bg-[#0A1628] text-white">
@@ -51,10 +50,10 @@ export default function Footer() {
               <Logo variant="mono-white" width={130} height={21} />
             </Link>
             <p className="mt-5 text-sm text-slate-400 leading-relaxed">
-              De intelligente datalaag die versnipperde signalen omzet in actie. Voor agencies, promotoren en artiesten.
+              {t('tagline')}
             </p>
             <p className="mt-5 text-xs text-slate-500">
-              Werkzaam vanuit Amsterdam, Eindhoven, Breda en Antwerpen.
+              {t('location')}
             </p>
             <TrustBadges className="mt-7 justify-start gap-2" small />
           </div>
@@ -62,7 +61,7 @@ export default function Footer() {
           {/* Diensten */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
-              Diensten
+              {t('diensten_heading')}
             </h4>
             <ul className="space-y-3">
               {footerLinks.diensten.map((link) => (
@@ -78,7 +77,7 @@ export default function Footer() {
           {/* Bedrijf */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
-              Bedrijf
+              {t('bedrijf_heading')}
             </h4>
             <ul className="space-y-3">
               {footerLinks.bedrijf.map((link) => (
@@ -94,7 +93,7 @@ export default function Footer() {
           {/* Integraties */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
-              Integraties
+              {t('integraties_heading')}
             </h4>
             <ul className="space-y-3">
               {footerLinks.integraties.map((link) => (
@@ -110,13 +109,13 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} Stevin.AI — Alle rechten voorbehouden.
+            &copy; {new Date().getFullYear()} Stevin.AI — {t('copyright')}
           </p>
           <div className="flex items-center gap-4">
             <ConsentSettingsButton />
             <span className="text-xs text-slate-600">|</span>
             <p className="text-xs text-slate-500">
-              Amsterdam &middot; Eindhoven &middot; Breda &middot; Antwerpen
+              {t('cities')}
             </p>
           </div>
         </div>

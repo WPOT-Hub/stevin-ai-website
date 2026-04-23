@@ -1,12 +1,8 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { JetBrains_Mono } from 'next/font/google'
+import { getLocale } from 'next-intl/server'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import MainShell from '@/components/MainShell'
-import ConsentBanner from '@/components/ConsentBanner'
-import { GoogleTagManagerHead, GoogleTagManagerBody } from '@/components/GoogleTagManager'
 
 // Self-hosted InterDisplay (display headings) — from Stevin Design System
 const interDisplay = localFont({
@@ -40,48 +36,23 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Stevin.AI — Heers over je data. Stop de ruis.',
-    template: '%s | Stevin.AI',
-  },
-  description: 'Stevin is de intelligente datalaag die versnipperde signalen omzet in actie. Voor agencies, inhouse teams, promotoren en artiesten. 220+ integraties, AI-analyses en 24/7 monitoring.',
   metadataBase: new URL('https://stevin.ai'),
   verification: {
     google: 'ItP2M9E-39xqD9M8dKV_qAwtizunWFlIH1pnw4E5p10',
   },
-  openGraph: {
-    type: 'website',
-    locale: 'nl_NL',
-    siteName: 'Stevin.AI',
-    title: 'Stevin.AI — Heers over je data. Stop de ruis.',
-    description: 'De intelligente datalaag voor agencies, promotoren en artiesten. 220+ integraties, AI-analyses en 24/7 monitoring.',
-    url: 'https://stevin.ai',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Stevin.AI — Heers over je data. Stop de ruis.',
-    description: 'De intelligente datalaag voor agencies, promotoren en artiesten. 220+ integraties, AI-analyses en 24/7 monitoring.',
-  },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const locale = await getLocale()
+
   return (
-    <html lang="nl" className={`${interDisplay.variable} ${interBody.variable} ${jetbrainsMono.variable}`}>
-      <head>
-        <GoogleTagManagerHead />
-      </head>
+    <html lang={locale} className={`${interDisplay.variable} ${interBody.variable} ${jetbrainsMono.variable}`}>
       <body className="min-h-screen flex flex-col">
-        <GoogleTagManagerBody />
-        <Header />
-        <MainShell>
-          {children}
-        </MainShell>
-        <Footer />
-        <ConsentBanner />
+        {children}
       </body>
     </html>
   )
