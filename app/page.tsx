@@ -36,10 +36,10 @@ export default function HomePage() {
           {/* H1 */}
           <h1
             className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]"
-            style={{ fontSize: 'clamp(36px, 5vw, 76px)', maxWidth: '18ch' }}
+            style={{ fontSize: 'clamp(36px, 5vw, 76px)', maxWidth: '16ch' }}
           >
-            Stevin monitort je marketing 24/7 en signaleert veranderingen in performance, tracking, merkzichtbaarheid en{' '}
-            <span className="text-[#5DA3FF]">marktgedrag.</span>
+            Voor je omzet daalt of budget weglekt,{' '}
+            <span className="text-[#5DA3FF]">weet je wat er speelt.</span>
           </h1>
 
           {/* Sub */}
@@ -47,7 +47,7 @@ export default function HomePage() {
             className="text-white/60 leading-[1.55]"
             style={{ fontSize: '20px', maxWidth: '520px', marginTop: '32px' }}
           >
-            Voor je omzet daalt of budget weglekt, weet je wat er speelt en wat je kunt doen.
+            Stevin monitort 24/7 je paid en owned media en signaleert wat er verandert — zodat je kunt ingrijpen voor het te laat is.
           </p>
 
           {/* CTAs */}
@@ -291,6 +291,158 @@ export default function HomePage() {
                     {item.claim}
                   </p>
                 </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── VOORDELEN 2×2 ── */}
+      <section className="bg-surface" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <div className="mb-12">
+            <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+              <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
+              ONTWORPEN VOOR JOUW PRAKTIJK
+            </p>
+            <h2
+              className="font-display font-extrabold text-primary m-0"
+              style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '18ch' }}
+            >
+              Klaar voor gebruik. Niet voor een proof of concept.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              {
+                num: '01',
+                title: 'Live in 2 weken',
+                desc: 'Koppelingen geactiveerd, eerste signalen zichtbaar. Geen maandenlang implementatietraject.',
+              },
+              {
+                num: '02',
+                title: 'Human-in-the-loop standaard',
+                desc: 'AI signaleert, jij beslist. Geen autonome acties zonder jouw goedkeuring.',
+              },
+              {
+                num: '03',
+                title: 'Domeinkennis ingebouwd',
+                desc: 'Gebouwd door marketers, voor marketers. Stevin begrijpt het verschil tussen een spike en een structureel probleem.',
+              },
+              {
+                num: '04',
+                title: 'Leert van je resultaten',
+                desc: 'Elke interactie maakt het systeem scherper. Adviezen worden beter naarmate je langer werkt.',
+              },
+            ].map((item) => (
+              <article
+                key={item.title}
+                className="rounded-[14px] bg-white border border-border flex flex-col items-center text-center gap-3"
+                style={{ padding: '40px 32px' }}
+              >
+                <span
+                  className="font-display font-extrabold text-pink leading-none"
+                  style={{ fontSize: '48px', letterSpacing: '-0.04em' }}
+                >
+                  {item.num}
+                </span>
+                <h3
+                  className="font-display font-bold text-primary"
+                  style={{ fontSize: '18px', letterSpacing: '-0.02em', lineHeight: '1.2' }}
+                >
+                  {item.title}
+                </h3>
+                <p className="text-muted leading-[1.6]" style={{ fontSize: '14.5px' }}>
+                  {item.desc}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── VERTROUWEN ── */}
+      <section className="bg-primary" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <div className="text-center mb-14">
+            <p className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center justify-center gap-[14px]">
+              <span className="inline-block w-6 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+              BEVEILIGING &amp; COMPLIANCE
+            </p>
+            <h2
+              className="font-display font-extrabold text-white m-0"
+              style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
+            >
+              Veilig by design.
+            </h2>
+            <p className="text-white/55 leading-[1.55] mt-5 mx-auto" style={{ fontSize: '17px', maxWidth: '440px' }}>
+              Jouw klantdata verlaat nooit de EU. Gebouwd voor de Europese markt, van dag één.
+            </p>
+          </div>
+
+          {/* Badges */}
+          <div className="flex justify-center flex-wrap gap-6 mb-14">
+            {[
+              { lines: ['GDPR', 'COMPLIANT'] },
+              { lines: ['EU', 'HOSTED'] },
+              { lines: ['AI ACT', 'READY'] },
+              { lines: ['READ-ONLY', 'API'] },
+            ].map((badge) => (
+              <div
+                key={badge.lines.join('')}
+                className="flex flex-col items-center justify-center rounded-full border-2 border-white/25 text-center"
+                style={{ width: '96px', height: '96px', padding: '12px' }}
+              >
+                {badge.lines.map((l, i) => (
+                  <span
+                    key={i}
+                    className="font-display font-extrabold text-white leading-tight"
+                    style={{ fontSize: '11px', letterSpacing: '0.06em' }}
+                  >
+                    {l}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+
+          <p
+            className="text-center text-white/35 leading-[1.6]"
+            style={{ fontSize: '14px', maxWidth: '600px', margin: '0 auto' }}
+          >
+            EU-gehoste infrastructuur. GDPR-conform en AI Act-ready. Alle data versleuteld opgeslagen en verzonden. Koppelingen zijn altijd read-only — Stevin schrijft nooit terug naar je platformen.
+          </p>
+
+          {/* 3 trust pillars */}
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Per-klant data-isolatie',
+                desc: 'Elk klantaccount draait in een eigen beveiligde omgeving. Geen cross-contaminatie, nooit.',
+              },
+              {
+                title: 'Read-only koppelingen',
+                desc: 'Stevin leest, nooit schrijft. We hebben geen toegang om iets te wijzigen in je advertentieaccounts.',
+              },
+              {
+                title: 'Geen black boxes',
+                desc: 'Je ziet altijd waarom een signaal is gegenereerd en op welke data het gebaseerd is.',
+              },
+            ].map((pillar) => (
+              <article key={pillar.title} className="pt-6 border-t border-white/10">
+                <div className="flex items-center gap-2.5 mb-3">
+                  <span className="w-2 h-2 rounded-full bg-neon flex-shrink-0" aria-hidden="true" />
+                  <h3
+                    className="font-display font-bold text-white"
+                    style={{ fontSize: '16px', letterSpacing: '-0.01em' }}
+                  >
+                    {pillar.title}
+                  </h3>
+                </div>
+                <p className="text-white/50 leading-[1.6]" style={{ fontSize: '14.5px' }}>
+                  {pillar.desc}
+                </p>
               </article>
             ))}
           </div>
