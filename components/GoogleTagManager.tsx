@@ -1,9 +1,11 @@
 import Script from 'next/script'
 
 const GTM_ID = 'GTM-WHSXRR29'
-// Web container gtm.js is loaded from Google's CDN.
-// The server-side container at https://data.stevin.ai handles tracking hits
-// (GA4 transport_url, Meta CAPI) — configured inside GTM tags, not via script loading.
+// First-party GTM serving: gtm.js is proxied via nginx on data.stevin.ai
+// from www.googletagmanager.com (cached 1h). Tracking hits also go to
+// data.stevin.ai via the sGTM Docker container on port 8080.
+// Full first-party → bypasses adblockers + cookie restrictions.
+const SGTM_URL = 'https://data.stevin.ai'
 
 export function GoogleTagManagerHead() {
   return (
@@ -37,10 +39,11 @@ export function GoogleTagManagerHead() {
         }}
       />
       {/*
-       * Google Tag Manager web container.
-       * Script laadt van www.googletagmanager.com (standard loading).
-       * Tracking hits (GA4, Meta CAPI) gaan via data.stevin.ai — dat is geconfigureerd
-       * in de GTM tags zelf (transport_url / server_container_url), niet hier.
+       * Google Tag Manager — first-party gtm.js serving via data.stevin.ai.
+       * nginx proxyt /gtm.js naar www.googletagmanager.com met 1h cache.
+       * GA4 property G-WGB40XGYLF is geconfigureerd als tag inside GTM.
+       * transport_url in GA4-tag stuurt hits naar data.stevin.ai/g/collect
+       * (server-side container GTM-PBDLT6QH op Docker port 8080).
        */}
       <Script
         id="gtm-script"
@@ -50,7 +53,7 @@ export function GoogleTagManagerHead() {
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            '${SGTM_URL}/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','${GTM_ID}');
           `,
         }}
