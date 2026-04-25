@@ -182,9 +182,11 @@ export default async function MultiMarketPage({ params }: Props) {
               <h3 className="font-display font-bold text-primary mb-4" style={{ fontSize: '24px', lineHeight: '1.2', letterSpacing: '-0.02em' }}>
                 {t('solution_3_title')}
               </h3>
-              <p className="text-[#2A3A54] leading-[1.6] mb-5" style={{ fontSize: '15.5px' }}>
-                {t('solution_3_body')}
-              </p>
+              <div className="text-[#2A3A54] leading-[1.6] mb-5 space-y-3" style={{ fontSize: '15.5px' }}>
+                {t('solution_3_body').split('\n\n').map((para, idx) => (
+                  <p key={idx}>{para}</p>
+                ))}
+              </div>
               <p className="font-display font-bold text-primary leading-[1.4]" style={{ fontSize: '15px' }}>
                 {t('solution_3_close')}
               </p>
@@ -369,6 +371,33 @@ export default async function MultiMarketPage({ params }: Props) {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Compensation — surface */}
+      <section className="bg-surface" style={{ padding: '128px 24px' }}>
+        <div className="mx-auto max-w-[900px]">
+          <p className="text-accent text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-[18px] flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
+            {t('comp_eyebrow')}
+          </p>
+          <h2 className="font-display font-bold text-primary m-0 mb-10" style={{ fontSize: 'clamp(28px, 3.2vw, 44px)', lineHeight: '1.18', letterSpacing: '-0.02em', maxWidth: '24ch' }}>
+            {t('comp_title')}
+          </h2>
+          <div className="space-y-5 mb-10" style={{ maxWidth: '62ch' }}>
+            <p className="text-[#2A3A54] leading-[1.65]" style={{ fontSize: '17px' }}>
+              {t('comp_body_1')}
+            </p>
+            <p className="text-[#2A3A54] leading-[1.65]" style={{ fontSize: '17px' }}>
+              {t('comp_body_2')}
+            </p>
+            <p className="text-[#2A3A54] leading-[1.65]" style={{ fontSize: '17px' }}>
+              {t('comp_body_3')}
+            </p>
+          </div>
+          <p className="font-display font-bold text-primary leading-[1.4]" style={{ fontSize: '18px' }}>
+            {t('comp_close')}
+          </p>
         </div>
       </section>
 
