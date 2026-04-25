@@ -94,7 +94,7 @@ const LINES: Record<DataRainVariant, string[]> = {
     'Attribution gap: klant Veld 28%',
     'Share of Search rapport klaar',
     'Strategisch advies gegenereerd',
-    '220+ integraties actief',
+    '245+ integraties actief',
   ],
   promotor: [
     'Ticketverkoop +18% vs forecast',

@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/platform',
     '/diensten',
     '/werkwijze',
+    '/multi-market',
     '/seo',
     '/geo',
     '/integraties',
