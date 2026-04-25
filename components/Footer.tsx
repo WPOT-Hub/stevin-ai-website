@@ -20,6 +20,7 @@ export default function Footer() {
     bedrijf: [
       { label: t('bedrijf_werkwijze'), href: '/werkwijze' },
       { label: t('bedrijf_simon'), href: '/simon-stevin' },
+      { label: t('bedrijf_multimarket'), href: '/multi-market' },
       { label: t('bedrijf_integraties'), href: '/integraties' },
       { label: t('bedrijf_seo'), href: '/seo' },
       { label: t('bedrijf_geo'), href: '/geo' },

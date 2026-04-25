@@ -1,12 +1,18 @@
 # /multi-market — page copy draft
 
-> **Addendum (post-v1):** An "integrations strip" section was added on top of the brief below to reassure enterprise visitors their stack is supported. It sits between Section 4 (What you get) and Section 5 (Pilot). Strings:
-> - Eyebrow (EN/NL): "Connects to your stack" / "Sluit aan op je stack"
-> - Title (EN/NL): "Built for the tools enterprise marketing already uses." / "Gebouwd op de tools die enterprise-marketing al gebruikt."
-> - Sub (EN/NL): "From paid platforms to data warehouses. 245+ integrations, with the enterprise stack you'd expect." / "Van paid platforms tot datawarehouses. 245+ integraties, met de enterprise-stack die je verwacht."
-> - CTA (EN/NL): "See all 245+ integrations →" / "Bekijk alle 245+ integraties →" → links to `/integraties`
-> - An additional "What you get" bullet was added: `get_8` — "Works with what you already run — paid platforms, web analytics, CRM, CDP, data warehouse, owned channels."
-> The brief below remains the source of truth for everything else.
+> **Addendum 2 (post-review, current state):** Several copy + structure changes locked in after first browser review:
+> - **Solution card 03** rewritten to remove org-prescription. New title: *"Routes to whoever owns it — however you're organized."* New closing: *"Decentralized execution. Centralized decision-making."* Body covers central / local-agencies / mixed setups.
+> - **Comparison row "Lock-in"** changed from "Monthly cancellable" → "No annual lock-in" (EN) / "Geen jaarcontract" (NL) to protect against enterprise-pilot loss-leader risk.
+> - **Pilot Month 3** changed from "Stay or leave. Monthly contract from here" → "Continue or part ways. Quarterly checkpoints from here — no automatic renewal."
+> - **`get_6`** simplified to "Pick your data region — EU, US, or APAC".
+> - **NEW compensation section** added between Trust-via-rigor and Simon Stevin. Eyebrow: "A different kind of return". Title: *"When platforms make mistakes, the math notices first."* Closing: *"This isn't an upsell. It's how the math earns its keep."*
+> - **Homepage hero** got a tertiary multi-market teaser link below the CTAs: *"Operating in multiple markets? See how we model across borders →"*
+> - **Footer** added "Multi-market" link under Bedrijf, between Simon Stevin and Integrations.
+> - Site-wide `220+` / `219+` integration count → `245+`.
+>
+> **Addendum 1 (post-v1):** Integrations strip added between What-you-get and Pilot. See messages files (`multiMarket.connects_*`) for live strings.
+>
+> The block-level copy below is preserved as historical v1. For current strings, the messages JSON is source of truth.
 
 **Status:** v1, awaiting Koen's review
 **Voice:** rigor-first, geography-neutral, anti-AI ("Detected" / "Calculated" / "Reallocate"), Simon Stevin as anchor

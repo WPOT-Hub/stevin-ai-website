@@ -75,6 +75,14 @@ export default async function HomePage({ params }: Props) {
             </Link>
           </div>
 
+          {/* Multi-market teaser */}
+          <Link
+            href="/multi-market"
+            className="inline-flex items-center mt-8 text-[#5DA3FF]/80 hover:text-[#5DA3FF] text-sm font-medium transition-colors"
+          >
+            {t('multimarket_teaser')}
+          </Link>
+
           {/* Quote */}
           <p className="italic text-white/25 text-sm mt-10">
             &ldquo;{t('quote')}&rdquo; — {t('quote_author')}
