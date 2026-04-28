@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   if (locale === 'nl') {
     return {
+      metadataBase: new URL('https://stevin.ai'),
       title: {
         default: 'Stevin.AI — Heers over je data. Stop de ruis.',
         template: '%s | Stevin.AI',
@@ -35,11 +36,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         title: 'Stevin.AI — Heers over je data. Stop de ruis.',
         description: 'De intelligente datalaag voor agencies, promotoren en artiesten. 245+ integraties, AI-analyses en 24/7 monitoring.',
         url: 'https://stevin.ai',
+        images: [
+          {
+            url: '/opengraph-image',
+            width: 1200,
+            height: 630,
+            alt: 'Stevin.AI — Wonder en is gheen wonder.',
+          },
+        ],
       },
       twitter: {
         card: 'summary_large_image',
         title: 'Stevin.AI — Heers over je data. Stop de ruis.',
         description: 'De intelligente datalaag voor agencies, promotoren en artiesten. 245+ integraties, AI-analyses en 24/7 monitoring.',
+        images: ['/opengraph-image'],
       },
       alternates: {
         canonical: 'https://stevin.ai',
@@ -52,23 +62,33 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 
   return {
+    metadataBase: new URL('https://stevin.ai'),
     title: {
-      default: 'Stevin.AI — Master your data. Stop the noise.',
+      default: 'Stevin.AI — Signals tell you what changed. Evidence tells you what holds.',
       template: '%s | Stevin.AI',
     },
-    description: 'Stevin is the intelligent data layer that turns fragmented signals into action. For agencies, in-house teams, promoters and artists. 245+ integrations, AI analyses and 24/7 monitoring.',
+    description: 'The intelligent decision layer for marketing teams and agencies. Signals reconcile what changed in your accounts; Evidence governs what marketing science says still holds. 245+ integrations.',
     openGraph: {
       type: 'website',
       locale: 'en_GB',
       siteName: 'Stevin.AI',
-      title: 'Stevin.AI — Master your data. Stop the noise.',
-      description: 'The intelligent data layer for agencies, promoters and artists. 245+ integrations, AI analyses and 24/7 monitoring.',
+      title: 'Stevin.AI — Signals tell you what changed. Evidence tells you what holds.',
+      description: 'The intelligent decision layer for marketing teams and agencies. 245+ integrations across paid, owned, analytics and CRM.',
       url: 'https://stevin.ai/en',
+      images: [
+        {
+          url: '/en/opengraph-image',
+          width: 1200,
+          height: 630,
+          alt: 'Stevin.AI — Signals tell you what changed. Evidence tells you what holds.',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Stevin.AI — Master your data. Stop the noise.',
-      description: 'The intelligent data layer for agencies, promoters and artists. 245+ integrations, AI analyses and 24/7 monitoring.',
+      title: 'Stevin.AI — Signals tell you what changed. Evidence tells you what holds.',
+      description: 'The intelligent decision layer for marketing teams and agencies. 245+ integrations across paid, owned, analytics and CRM.',
+      images: ['/en/opengraph-image'],
     },
     alternates: {
       canonical: 'https://stevin.ai/en',
