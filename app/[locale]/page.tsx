@@ -123,61 +123,32 @@ export default async function HomePage({ params }: Props) {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Marketing */}
-            <Link
-              href="/marketing"
-              className="group rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200 flex flex-col"
-              style={{ padding: '40px 36px 36px' }}
+          {/* Marketing — single full-width card (artiesten leeft in footer) */}
+          <Link
+            href="/marketing"
+            className="group block rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200"
+            style={{ padding: '48px 44px 44px' }}
+          >
+            <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
+              <span className="inline-block w-5 h-px bg-accent flex-shrink-0" aria-hidden="true" />
+              {t('domain_marketing_eyebrow')}
+            </p>
+            <h3
+              className="font-display font-bold text-primary mb-4"
+              style={{ fontSize: 'clamp(28px, 2.6vw, 36px)', lineHeight: '1.1', letterSpacing: '-0.025em' }}
             >
-              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
-                <span className="inline-block w-5 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-                {t('domain_marketing_eyebrow')}
-              </p>
-              <h3
-                className="font-display font-bold text-primary mb-4"
-                style={{ fontSize: '28px', lineHeight: '1.1', letterSpacing: '-0.025em' }}
-              >
-                {t('domain_marketing_h3')}
-              </h3>
-              <p className="text-muted leading-[1.6] flex-1" style={{ fontSize: '15px' }}>
-                {t('domain_marketing_desc')}
-              </p>
-              <div className="mt-8 pt-5 border-t border-border">
-                <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                  {t('domain_marketing_link')}
-                  <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
-                </span>
-              </div>
-            </Link>
-
-            {/* Artiesten */}
-            <Link
-              href="/artiesten"
-              className="group rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-pink/30 transition-all duration-200 flex flex-col"
-              style={{ padding: '40px 36px 36px' }}
-            >
-              <p className="text-pink text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
-                <span className="inline-block w-5 h-px bg-pink flex-shrink-0" aria-hidden="true" />
-                {t('domain_artists_eyebrow')}
-              </p>
-              <h3
-                className="font-display font-bold text-primary mb-4"
-                style={{ fontSize: '28px', lineHeight: '1.1', letterSpacing: '-0.025em' }}
-              >
-                {t('domain_artists_h3')}
-              </h3>
-              <p className="text-muted leading-[1.6] flex-1" style={{ fontSize: '15px' }}>
-                {t('domain_artists_desc')}
-              </p>
-              <div className="mt-8 pt-5 border-t border-border">
-                <span className="font-display font-semibold text-pink text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                  {t('domain_artists_link')}
-                  <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
-                </span>
-              </div>
-            </Link>
-          </div>
+              {t('domain_marketing_h3')}
+            </h3>
+            <p className="text-muted leading-[1.6] max-w-[680px]" style={{ fontSize: '16px' }}>
+              {t('domain_marketing_desc')}
+            </p>
+            <div className="mt-8 pt-5 border-t border-border">
+              <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+                {t('domain_marketing_link')}
+                <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 
