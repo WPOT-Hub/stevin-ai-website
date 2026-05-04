@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Link } from '@/i18n/navigation'
-import { articles, getArticle, getRelatedArticles } from '@/data/articles'
+import { articles, getArticle, getRelatedArticles, type Article } from '@/data/articles'
 import ReadingProgress from '@/components/blog/ReadingProgress'
 
 export async function generateStaticParams() {
@@ -171,9 +171,14 @@ export default async function ArticlePage({
       {/* ── BODY ── */}
       <article className="bg-white" style={{ padding: '80px 24px 96px' }}>
         <div className="mx-auto journal-body" style={{ maxWidth: '680px' }}>
-          {/* Article-specific body — switch on slug */}
-          {article.slug === '95-procent-ai-pilots-mislukt' && <ArticleMITBody />}
-          {article.slug !== '95-procent-ai-pilots-mislukt' && <ArticleStubBody article={article} />}
+          {/* Article-specific body — switch on slug + format */}
+          {article.format === 'dispatch' && <ArticleDispatchBody article={article} />}
+          {article.format === 'editorial' && article.slug === '95-procent-ai-pilots-mislukt' && (
+            <ArticleMITBody />
+          )}
+          {article.format === 'editorial' && article.slug !== '95-procent-ai-pilots-mislukt' && (
+            <ArticleStubBody article={article} />
+          )}
         </div>
       </article>
 
@@ -484,6 +489,190 @@ function ArticleMITBody() {
       <EndSig>&quot;Het is geen wonder. Het is Stevin.&quot; · Editie 014 / 052</EndSig>
     </>
   )
+}
+
+/* ────────────────────────────────────────────────────────────
+   Dispatch body — short news update + Stevin perspective
+   ──────────────────────────────────────────────────────────── */
+function ArticleDispatchBody({ article }: { article: Article }) {
+  const body = DISPATCH_BODIES[article.slug]
+  return (
+    <>
+      {body ? (
+        body
+      ) : (
+        <p className="lead-para">{article.dek}</p>
+      )}
+
+      {article.source && (
+        <p
+          style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '12px',
+            letterSpacing: '0.04em',
+            color: 'var(--muted)',
+            margin: '32px 0 8px',
+            textTransform: 'uppercase',
+          }}
+        >
+          Bron
+        </p>
+      )}
+      {article.source && (
+        <p style={{ margin: '0 0 24px' }}>
+          <a
+            href={article.source.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--accent)] underline"
+            style={{ fontSize: '15px' }}
+          >
+            {article.source.name} →
+          </a>
+        </p>
+      )}
+
+      <DispatchPerspective slug={article.slug} />
+
+      <EndRule />
+      <EndSig>Editie {article.edition} · Kort</EndSig>
+    </>
+  )
+}
+
+function DispatchPerspective({ slug }: { slug: string }) {
+  const text = DISPATCH_PERSPECTIVES[slug]
+  if (!text) return null
+  return (
+    <div
+      style={{
+        background: 'var(--surface)',
+        border: '1px solid var(--border)',
+        borderLeft: '3px solid var(--accent)',
+        borderRadius: '10px',
+        padding: '28px 32px',
+        margin: '32px 0',
+      }}
+    >
+      <p
+        style={{
+          fontFamily: 'JetBrains Mono, monospace',
+          fontSize: '11px',
+          letterSpacing: '0.12em',
+          textTransform: 'uppercase',
+          color: 'var(--accent)',
+          margin: '0 0 12px',
+        }}
+      >
+        Wat dit betekent voor jou
+      </p>
+      <p
+        style={{
+          fontFamily: 'Inter, sans-serif',
+          fontSize: '16px',
+          lineHeight: '1.6',
+          color: 'var(--navy)',
+          margin: 0,
+        }}
+      >
+        {text}
+      </p>
+    </div>
+  )
+}
+
+const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spotify-ai-muziek-verificatie': (
+    <>
+      <p className="lead-para">
+        Spotify werkt aan een verplichte verificatieprocedure voor uploads. Labels en distributeurs
+        moeten gaan aantonen dat de uitvoerder van een track een echte persoon is, of expliciet
+        markeren dat het om een AI-creatie gaat.
+      </p>
+      <p>
+        Aanleiding is de explosie van AI-gegenereerde tracks die onder bestaande artiestennamen
+        worden geüpload. Volgens Spotify gaat het om tienduizenden uploads per maand. De maatregel
+        komt bovenop het eerder ingevoerde filter dat tracks met minder dan 1.000 streams uitsluit
+        van royalty-uitkering.
+      </p>
+      <p>
+        De roll-out start volgens Spotify dit kwartaal voor grote distributeurs. Wanneer de
+        verificatie verplicht wordt voor zelf-uploadende artiesten is nog niet bekend.
+      </p>
+    </>
+  ),
+  'oscars-ai-acteerprestaties-niet-toegestaan': (
+    <>
+      <p className="lead-para">
+        De Academy of Motion Picture Arts and Sciences heeft bevestigd dat acteerprestaties die met
+        generatieve AI tot stand komen, niet in aanmerking komen voor een Oscar in de categorieën
+        Beste Acteur, Beste Actrice en Beste Bijrol.
+      </p>
+      <p>
+        De regel staat in de bijgewerkte criteria voor het seizoen 2026-2027. Een &quot;performance&quot;
+        moet volgens de Academy het werk zijn van een geïdentificeerde menselijke acteur. Digitale
+        verjonging, stem-aanpassing en motion-capture vallen niet onder de uitsluiting, mits de
+        onderliggende prestatie van een mens komt.
+      </p>
+      <p>
+        De Academy laat AI-gebruik in andere disciplines (visuele effecten, geluid, montage)
+        ongemoeid. Daar wordt alleen verlangd dat het gebruik bij inzending wordt gemeld.
+      </p>
+    </>
+  ),
+  'us-defense-ai-deals-zonder-anthropic': (
+    <>
+      <p className="lead-para">
+        Het Amerikaanse ministerie van Defensie kondigt overeenkomsten aan met acht techbedrijven
+        voor wat het zelf een &quot;AI-first leger&quot; noemt: SpaceX, OpenAI, Google, Nvidia,
+        Reflection, Microsoft, AWS en Oracle. Anthropic, naast OpenAI de grootste Amerikaanse
+        AI-lab, ontbreekt opvallend.
+      </p>
+      <p>
+        De contracten lopen volgens het Pentagon over meerdere jaren en omvatten zowel infrastructuur
+        (cloud, compute) als modellen voor analyse en besluitondersteuning. Een totaalbedrag is niet
+        gepubliceerd; eerdere defensiecontracten met OpenAI en Microsoft alleen liepen al in de
+        miljarden.
+      </p>
+      <p>
+        Anthropic heeft eerder publiek aangegeven terughoudend te zijn met defensiecontracten en
+        bepaalde toepassingen, zoals geautomatiseerde wapeninzet, expliciet uit te sluiten in zijn
+        gebruiksvoorwaarden. Of dat de reden is voor afwezigheid in deze ronde, is door geen van
+        beide partijen bevestigd.
+      </p>
+    </>
+  ),
+  'certe-mijnadviseur-chatgpt-koppeling': (
+    <>
+      <p className="lead-para">
+        De Nederlandse verzekeringsorganisatie Certe lanceert MijnAdviseur, een ChatGPT-applicatie
+        die verzekeringsvragen beantwoordt en de gebruiker vervolgens routeert naar een aangesloten
+        financieel adviseur. Anders dan vergelijkers als Independer wordt geen prijs- of
+        product-vergelijking getoond.
+      </p>
+      <p>
+        De applicatie is beschikbaar als GPT in de ChatGPT-store. Vragen worden beantwoord op basis
+        van Certe-contentbibliotheken; bij concrete behoefte aan een offerte volgt een doorverwijzing
+        naar het netwerk. Certe omschrijft het als &quot;eerste-lijns-advies&quot; gekoppeld aan
+        menselijk vervolgcontact.
+      </p>
+      <p>
+        Of de routering volgens AFM-regelgeving voldoende objectief is, hangt af van de manier
+        waarop adviseurs worden gekozen. Certe heeft daarover nog geen toelichting gegeven.
+      </p>
+    </>
+  ),
+}
+
+const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spotify-ai-muziek-verificatie':
+    'Voor labels en artiesten betekent dit op korte termijn extra administratie bij elke release. Voor distributeurs een nieuwe controle-laag die ze moeten inbouwen. Wat het feitelijk verandert: AI-tracks blijven mogelijk, maar krijgen een eigen label. Dat is geen ban — het is een meetlat. En meetlatten op platforms zijn altijd het begin van een nieuwe reeks regels.',
+  'oscars-ai-acteerprestaties-niet-toegestaan':
+    'De Academy trekt een streep waar Hollywood al maanden om vroeg, maar wel een smalle: alleen acteerprestaties zelf. De rest van het filmpakket (effects, sound, montage) blijft open voor AI. Voor productiehuizen: de keuze voor AI-tooling raakt nu een Oscar-strategie. Voor marketeers van streaming-content geldt hetzelfde: weet welke deel van je productie je labelt en welke niet.',
+  'us-defense-ai-deals-zonder-anthropic':
+    'Voor B2B-marketeers in tech zegt deze ronde één ding heel duidelijk: defensie is een toegangspoort voor enterprise-deals, niet een nichesector. De acht winnaars krijgen een referentie-stempel die de komende vijf jaar blijft betalen. De afwezige partij krijgt een ander stempel — &quot;niet defensie-bereid&quot; — en moet uitleggen wat dat betekent voor banken, verzekeraars en overheidsklanten elders.',
+  'certe-mijnadviseur-chatgpt-koppeling':
+    'Distributie via ChatGPT is geen experiment meer, het is een kanaal. Certe gebruikt het zoals tien jaar geleden Google Ads werd gebruikt: als bron van zoekvragen die naar een eigen funnel worden geleid. Voor andere financiële dienstverleners de vraag: ben je vindbaar binnen ChatGPT als iemand een vraag stelt over jouw product? Niet door SEO. Door aanwezig te zijn als GPT, dataset of partner.',
 }
 
 function ArticleStubBody({ article }: { article: { title: string; dek: string; edition: string } }) {

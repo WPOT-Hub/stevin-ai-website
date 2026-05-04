@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
-import { articles } from '@/data/articles'
+import { editorials, dispatches } from '@/data/articles'
 
 export const metadata: Metadata = {
   title: 'Stevin Journal — Marketing-intelligence redactie',
@@ -17,7 +17,10 @@ const dateNL = (iso: string) => {
 }
 
 export default function BlogIndex() {
-  const [featured, ...rest] = articles
+  const allEditorials = editorials()
+  const allDispatches = dispatches()
+  const [featured, ...restEditorials] = allEditorials
+
   return (
     <>
       {/* Header — navy, editorial */}
@@ -57,144 +60,264 @@ export default function BlogIndex() {
               fontWeight: 300,
             }}
           >
-            Onderzoek, methode en kritische lezingen — voor wie zijn marketing serieus neemt en
-            geen genoegen meer neemt met een dashboard dat alleen zichzelf bevestigt.
+            Onderzoek, methode en kritische lezingen. Voor wie zijn marketing serieus neemt en geen
+            genoegen meer neemt met een dashboard dat alleen zichzelf bevestigt.
           </p>
         </div>
       </header>
 
-      {/* Featured */}
-      <section className="bg-white" style={{ padding: '80px 24px 40px' }}>
-        <div className="mx-auto" style={{ maxWidth: '1200px' }}>
-          <Link
-            href={`/blog/${featured.slug}`}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 no-underline text-inherit group items-center"
-          >
-            <div
-              className="overflow-hidden"
-              style={{ aspectRatio: '4 / 3', borderRadius: '14px' }}
+      {/* Featured editorial */}
+      {featured && (
+        <section className="bg-white" style={{ padding: '80px 24px 40px' }}>
+          <div className="mx-auto" style={{ maxWidth: '1200px' }}>
+            <Link
+              href={`/blog/${featured.slug}`}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12 no-underline text-inherit group items-center"
             >
-              <FeaturedPoster
-                tag={featured.posterTag}
-                topic={featured.posterTopic}
-                style={featured.posterStyle}
-              />
-            </div>
-            <div>
-              <p
+              <div
+                className="overflow-hidden"
+                style={{ aspectRatio: '4 / 3', borderRadius: '14px' }}
+              >
+                <FeaturedPoster
+                  tag={featured.posterTag}
+                  topic={featured.posterTopic}
+                  style={featured.posterStyle}
+                />
+              </div>
+              <div>
+                <p
+                  style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '11px',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: 'var(--muted)',
+                    marginBottom: '14px',
+                  }}
+                >
+                  Editie {featured.edition} · {featured.category} · {featured.readMinutes} min
+                </p>
+                <h2
+                  className="font-display font-bold text-[var(--navy)] m-0 group-hover:text-[var(--accent)] transition-colors"
+                  style={{
+                    fontSize: 'clamp(28px, 3vw, 40px)',
+                    lineHeight: '1.1',
+                    letterSpacing: '-0.025em',
+                    textWrap: 'balance' as const,
+                    marginBottom: '20px',
+                  }}
+                >
+                  {featured.title}
+                </h2>
+                <p
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '17px',
+                    lineHeight: '1.55',
+                    color: 'var(--muted)',
+                    textWrap: 'pretty' as const,
+                    marginBottom: '20px',
+                  }}
+                >
+                  {featured.dek}
+                </p>
+                <span
+                  className="font-display font-semibold text-[var(--accent)] inline-flex items-center gap-2"
+                  style={{ fontSize: '15px' }}
+                >
+                  Lees editie {featured.edition} →
+                </span>
+              </div>
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* Kort — dispatches */}
+      {allDispatches.length > 0 && (
+        <section className="bg-white" style={{ padding: '40px 24px 64px' }}>
+          <div className="mx-auto" style={{ maxWidth: '1200px' }}>
+            <div className="flex justify-between items-baseline mb-8">
+              <div>
+                <p
+                  style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '11px',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: 'var(--accent)',
+                    marginBottom: '6px',
+                  }}
+                >
+                  KORT · DAGELIJKS
+                </p>
+                <h3
+                  className="font-display font-bold text-[var(--navy)] m-0"
+                  style={{ fontSize: '24px', letterSpacing: '-0.02em' }}
+                >
+                  Wat er deze week gebeurde
+                </h3>
+              </div>
+              <span
                 style={{
                   fontFamily: 'JetBrains Mono, monospace',
                   fontSize: '11px',
-                  letterSpacing: '0.12em',
+                  letterSpacing: '0.10em',
                   textTransform: 'uppercase',
                   color: 'var(--muted)',
-                  marginBottom: '14px',
                 }}
               >
-                Editie {featured.edition} · {featured.category} · {featured.readMinutes} min
-              </p>
-              <h2
-                className="font-display font-bold text-[var(--navy)] m-0 group-hover:text-[var(--accent)] transition-colors"
-                style={{
-                  fontSize: 'clamp(28px, 3vw, 40px)',
-                  lineHeight: '1.1',
-                  letterSpacing: '-0.025em',
-                  textWrap: 'balance' as const,
-                  marginBottom: '20px',
-                }}
-              >
-                {featured.title}
-              </h2>
-              <p
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '17px',
-                  lineHeight: '1.55',
-                  color: 'var(--muted)',
-                  textWrap: 'pretty' as const,
-                  marginBottom: '20px',
-                }}
-              >
-                {featured.dek}
-              </p>
-              <span
-                className="font-display font-semibold text-[var(--accent)] inline-flex items-center gap-2"
-                style={{ fontSize: '15px' }}
-              >
-                Lees editie {featured.edition} →
+                {allDispatches.length} berichten
               </span>
             </div>
-          </Link>
-        </div>
-      </section>
-
-      {/* Grid — rest */}
-      <section className="bg-[var(--surface)]" style={{ padding: '64px 24px 96px' }}>
-        <div className="mx-auto" style={{ maxWidth: '1200px' }}>
-          <div className="flex justify-between items-baseline mb-10">
-            <h3
-              className="font-display font-bold text-[var(--navy)] m-0"
-              style={{ fontSize: '24px', letterSpacing: '-0.02em' }}
+            <ul
+              className="grid grid-cols-1 md:grid-cols-2 gap-x-10"
+              style={{ listStyle: 'none', padding: 0, margin: 0 }}
             >
-              Alle edities
-            </h3>
-            <span
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '11px',
-                letterSpacing: '0.10em',
-                textTransform: 'uppercase',
-                color: 'var(--muted)',
-              }}
-            >
-              {articles.length} edities
-            </span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {rest.map((a) => (
-              <Link
-                key={a.slug}
-                href={`/blog/${a.slug}`}
-                className="block no-underline text-inherit group"
-              >
-                <div
-                  className="overflow-hidden mb-[18px]"
-                  style={{ aspectRatio: '16 / 10', borderRadius: '10px' }}
+              {allDispatches.map((d, i) => (
+                <li
+                  key={d.slug}
+                  style={{
+                    borderTop: '1px solid var(--border)',
+                    borderBottom: i === allDispatches.length - 1 ? '1px solid var(--border)' : 'none',
+                  }}
                 >
-                  <FeaturedPoster
-                    tag={a.posterTag}
-                    topic={a.posterTopic}
-                    style={a.posterStyle}
-                  />
-                </div>
-                <div
-                  className="mb-2.5"
+                  <Link
+                    href={`/blog/${d.slug}`}
+                    className="block no-underline text-inherit group"
+                    style={{ padding: '20px 0' }}
+                  >
+                    <div
+                      className="flex items-center gap-3 mb-2"
+                      style={{
+                        fontFamily: 'JetBrains Mono, monospace',
+                        fontSize: '10px',
+                        letterSpacing: '0.10em',
+                        textTransform: 'uppercase',
+                        color: 'var(--muted)',
+                      }}
+                    >
+                      <span style={{ color: 'var(--accent)' }}>{d.posterTag}</span>
+                      <span style={{ opacity: 0.4 }}>·</span>
+                      <span>{dateNL(d.publishedAt)}</span>
+                      <span style={{ opacity: 0.4 }}>·</span>
+                      <span>{d.readMinutes} MIN</span>
+                    </div>
+                    <h4
+                      className="font-display font-semibold text-[var(--navy)] m-0 group-hover:text-[var(--accent)] transition-colors"
+                      style={{
+                        fontSize: '18px',
+                        lineHeight: '1.3',
+                        letterSpacing: '-0.015em',
+                        textWrap: 'balance' as const,
+                      }}
+                    >
+                      {d.title}
+                    </h4>
+                    {d.source && (
+                      <p
+                        style={{
+                          fontFamily: 'Inter, sans-serif',
+                          fontSize: '12px',
+                          color: 'var(--muted)',
+                          margin: '6px 0 0',
+                          fontStyle: 'italic',
+                        }}
+                      >
+                        via {d.source.name}
+                      </p>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Edities — remaining editorials */}
+      {restEditorials.length > 0 && (
+        <section className="bg-[var(--surface)]" style={{ padding: '64px 24px 96px' }}>
+          <div className="mx-auto" style={{ maxWidth: '1200px' }}>
+            <div className="flex justify-between items-baseline mb-10">
+              <div>
+                <p
                   style={{
                     fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '10px',
-                    letterSpacing: '0.10em',
+                    fontSize: '11px',
+                    letterSpacing: '0.12em',
                     textTransform: 'uppercase',
                     color: 'var(--muted)',
+                    marginBottom: '6px',
                   }}
                 >
-                  EDITIE {a.edition} · {a.readMinutes} MIN · {dateNL(a.publishedAt)}
-                </div>
-                <h4
-                  className="font-display font-bold text-[var(--navy)] m-0 group-hover:text-[var(--accent)] transition-colors"
-                  style={{
-                    fontSize: '20px',
-                    lineHeight: '1.25',
-                    letterSpacing: '-0.015em',
-                    textWrap: 'balance' as const,
-                  }}
+                  EDITIES · WEKELIJKS
+                </p>
+                <h3
+                  className="font-display font-bold text-[var(--navy)] m-0"
+                  style={{ fontSize: '24px', letterSpacing: '-0.02em' }}
                 >
-                  {a.title}
-                </h4>
-              </Link>
-            ))}
+                  Lange stukken
+                </h3>
+              </div>
+              <span
+                style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '11px',
+                  letterSpacing: '0.10em',
+                  textTransform: 'uppercase',
+                  color: 'var(--muted)',
+                }}
+              >
+                {allEditorials.length} edities
+              </span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {restEditorials.map((a) => (
+                <Link
+                  key={a.slug}
+                  href={`/blog/${a.slug}`}
+                  className="block no-underline text-inherit group"
+                >
+                  <div
+                    className="overflow-hidden mb-[18px]"
+                    style={{ aspectRatio: '16 / 10', borderRadius: '10px' }}
+                  >
+                    <FeaturedPoster
+                      tag={a.posterTag}
+                      topic={a.posterTopic}
+                      style={a.posterStyle}
+                    />
+                  </div>
+                  <div
+                    className="mb-2.5"
+                    style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '10px',
+                      letterSpacing: '0.10em',
+                      textTransform: 'uppercase',
+                      color: 'var(--muted)',
+                    }}
+                  >
+                    EDITIE {a.edition} · {a.readMinutes} MIN · {dateNL(a.publishedAt)}
+                  </div>
+                  <h4
+                    className="font-display font-bold text-[var(--navy)] m-0 group-hover:text-[var(--accent)] transition-colors"
+                    style={{
+                      fontSize: '20px',
+                      lineHeight: '1.25',
+                      letterSpacing: '-0.015em',
+                      textWrap: 'balance' as const,
+                    }}
+                  >
+                    {a.title}
+                  </h4>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   )
 }
