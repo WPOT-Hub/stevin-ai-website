@@ -415,7 +415,7 @@ function ArticleMITBody() {
         <strong>wat zou er zijn gebeurd als die €150k níét was uitgegeven?</strong> Geen
         0%-conversie. Er waren nog organische leads, klantretentie, return-traffic. Misschien had je
         80% van diezelfde resultaten ook zonder die ads gehaald. Misschien 60%. Niemand weet het,
-        want niemand heeft een geo-test, een holdout-groep of een incrementaliteitsmeting opgezet.
+        want niemand heeft een geo-test, een holdout-groep of een uplift-meting opgezet.
       </p>
 
       <p>
@@ -446,8 +446,8 @@ function ArticleMITBody() {
           is: &quot;dat raden we af&quot;.
         </li>
         <li>
-          <strong>Wie bezit de causale data?</strong> Als de vendor zegt &quot;wij&quot;, of
-          &quot;het is in ons platform geïntegreerd&quot;, heb je geen causale data. Je hebt een
+          <strong>Wie bezit de meetdata?</strong> Als de vendor zegt &quot;wij&quot;, of
+          &quot;het is in ons platform geïntegreerd&quot;, heb je geen meetdata. Je hebt een
           marketing-tool met een grafiek erop.
         </li>
       </ol>

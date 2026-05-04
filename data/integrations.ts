@@ -398,7 +398,7 @@ export const integrations: Integration[] = [
     howWeUseIt: 'Stevin.AI koppelt The Trade Desk aan je tracking, CDP en MMM zodat je niet alleen impressions en klikken meet, maar incrementele bijdrage per kanaal en per markt.',
     problemsSolved: [
       'Programmatic spend zit in een silo buiten de walled gardens',
-      'Geen incrementaliteitsmeting op CTV en open web',
+      'Geen uplift-meting op CTV en open web',
       'Cross-device attributie ontbreekt',
     ],
     relatedSlugs: ['dv360', 'liveramp', 'google-analytics-4'],
@@ -1176,7 +1176,7 @@ export const integrations: Integration[] = [
     problemsSolved: [
       'Lifecycle marketing zit in een silo zonder media-context',
       'Behavioral triggers zijn niet gekoppeld aan acquisitie',
-      'Geen incrementaliteit op CRM-kanalen meetbaar',
+      'Geen uplift op CRM-kanalen meetbaar',
     ],
     relatedSlugs: ['iterable', 'klaviyo', 'segment'],
   },
@@ -3634,9 +3634,9 @@ export const integrations: Integration[] = [
     name: 'Triple Whale',
     slug: 'triple-whale',
     category: 'mmm-attribution',
-    shortDescription: 'E-commerce attribution en incrementaliteitsmeting voor DTC merken.',
+    shortDescription: 'E-commerce attribution en uplift-meting voor DTC merken.',
     description: 'Triple Whale biedt first-party attribution voor e-commerce merken. Door server-side tracking en statistische modellen zie je welke kanalen daadwerkelijk nieuwe klanten opleveren — voorbij de beperkingen van pixel-based tracking.',
-    useCase: 'E-commerce attribution, customer acquisition cost en incrementaliteitsanalyse.',
+    useCase: 'E-commerce attribution, customer acquisition cost en uplift-analyse.',
     howWeUseIt: 'Stevin.AI integreert Triple Whale\'s attribution data in de cross-validatie module. Pixel-data van Meta en Google wordt vergeleken met Triple Whale\'s first-party meting voor een realistischer beeld van je werkelijke ROAS.',
     problemsSolved: [
       'Platform-gerapporteerde ROAS is onbetrouwbaar door privacy-beperkingen',
@@ -3651,7 +3651,7 @@ export const integrations: Integration[] = [
     category: 'mmm-attribution',
     shortDescription: 'Multi-touch attribution en media mix analyse voor e-commerce.',
     description: 'Northbeam combineert multi-touch attribution met machine learning om de werkelijke impact van elk touchpoint in de klantreis te meten. Gebouwd voor e-commerce merken die voorbij last-click willen kijken.',
-    useCase: 'Multi-touch attribution, creative-level performance en kanaal incrementaliteit.',
+    useCase: 'Multi-touch attribution, creative-level performance en kanaal-uplift.',
     howWeUseIt: 'Stevin.AI gebruikt Northbeam\'s granulaire attribution data om creative-level performance te analyseren. Niet alleen "Meta werkt", maar "deze specifieke creative hook in deze doelgroep levert de hoogste incrementele waarde."',
     problemsSolved: [
       'Attribution data is te grof om creatieve beslissingen te sturen',

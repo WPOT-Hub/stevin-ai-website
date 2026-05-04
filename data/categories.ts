@@ -135,7 +135,7 @@ export const categories: Category[] = [
   {
     name: 'MMM & Attribution',
     slug: 'mmm-attribution',
-    description: 'Marketing Mix Modeling, multi-touch attribution en incrementaliteitsmeting.',
+    description: 'Marketing Mix Modeling, multi-touch attribution en uplift-meting.',
     intro: 'Weten dat je campagne kliks oplevert is niet genoeg. MMM en attribution bewijzen of je marketing daadwerkelijk incrementele omzet genereert. Stevin.AI combineert geavanceerde statistische modellen met campagnedata om de echte waarde van elk kanaal en elke creatieve uiting te onderbouwen — van awareness tot conversie.',
   },
 ]
