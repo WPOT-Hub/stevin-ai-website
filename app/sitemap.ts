@@ -29,12 +29,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/case-studies',
     '/case-studies/e-commerce',
     '/contact',
+    '/simon-stevin',
+    '/agency-scan',
+    '/audit',
   ]
 
-  return staticPages.map((path) => ({
+  const priorityFor = (path: string) => {
+    if (path === '') return 1
+    if (path === '/marketing' || path === '/artiesten' || path === '/platform') return 0.9
+    return 0.7
+  }
+
+  const altLangs = (path: string) => ({
+    'nl-NL': `${baseUrl}${path}`,
+    'en': `${baseUrl}/en${path}`,
+    'x-default': `${baseUrl}${path}`,
+  })
+
+  const nlEntries: MetadataRoute.Sitemap = staticPages.map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: now,
-    changeFrequency: path === '' ? 'weekly' : 'monthly',
-    priority: path === '' ? 1 : path.startsWith('/marketing') || path.startsWith('/artiesten') ? 0.9 : 0.7,
+    changeFrequency: (path === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
+    priority: priorityFor(path),
+    alternates: { languages: altLangs(path) },
   }))
+
+  const enEntries: MetadataRoute.Sitemap = staticPages.map((path) => ({
+    url: `${baseUrl}/en${path}`,
+    lastModified: now,
+    changeFrequency: (path === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
+    priority: Math.max(0.3, priorityFor(path) - 0.1),
+    alternates: { languages: altLangs(path) },
+  }))
+
+  return [...nlEntries, ...enEntries]
 }

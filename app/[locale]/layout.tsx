@@ -25,37 +25,38 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     return {
       metadataBase: new URL('https://stevin.ai'),
       title: {
-        default: 'Stevin.AI — Heers over je data. Stop de ruis.',
+        default: 'Stevin.AI — Wat er fout gaat in je marketing, weet jij eerst.',
         template: '%s | Stevin.AI',
       },
-      description: 'Stevin is de intelligente datalaag die versnipperde signalen omzet in actie. Voor agencies, inhouse teams, promotoren en artiesten. 245+ integraties, AI-analyses en 24/7 monitoring.',
+      description: 'Stevin kijkt 24/7 mee in je paid en owned media en signaleert iedere afwijking. Voordat ze in je rapportage staat. Marketing-intelligence voor bureaus, inhouse teams en specialisten.',
       openGraph: {
         type: 'website',
         locale: 'nl_NL',
         siteName: 'Stevin.AI',
-        title: 'Stevin.AI — Heers over je data. Stop de ruis.',
-        description: 'De intelligente datalaag voor agencies, promotoren en artiesten. 245+ integraties, AI-analyses en 24/7 monitoring.',
+        title: 'Stevin.AI — Wat er fout gaat in je marketing, weet jij eerst.',
+        description: 'Stevin kijkt 24/7 mee in je paid en owned media en signaleert iedere afwijking. Voordat ze in je rapportage staat.',
         url: 'https://stevin.ai',
         images: [
           {
             url: '/opengraph-image',
             width: 1200,
             height: 630,
-            alt: 'Stevin.AI — Wonder en is gheen wonder.',
+            alt: 'Stevin.AI — Marketing-intelligence voor paid en owned media.',
           },
         ],
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'Stevin.AI — Heers over je data. Stop de ruis.',
-        description: 'De intelligente datalaag voor agencies, promotoren en artiesten. 245+ integraties, AI-analyses en 24/7 monitoring.',
+        title: 'Stevin.AI — Wat er fout gaat in je marketing, weet jij eerst.',
+        description: 'Stevin kijkt 24/7 mee in je paid en owned media en signaleert iedere afwijking. Voordat ze in je rapportage staat.',
         images: ['/opengraph-image'],
       },
       alternates: {
         canonical: 'https://stevin.ai',
         languages: {
-          nl: 'https://stevin.ai',
-          en: 'https://stevin.ai/en',
+          'nl-NL': 'https://stevin.ai',
+          'en': 'https://stevin.ai/en',
+          'x-default': 'https://stevin.ai',
         },
       },
     }
@@ -93,8 +94,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: {
       canonical: 'https://stevin.ai/en',
       languages: {
-        nl: 'https://stevin.ai',
-        en: 'https://stevin.ai/en',
+        'nl-NL': 'https://stevin.ai',
+        'en': 'https://stevin.ai/en',
+        'x-default': 'https://stevin.ai',
       },
     },
   }
