@@ -1,10 +1,13 @@
 import type { MetadataRoute } from 'next'
+import { articles } from '@/data/articles'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://stevin.ai'
   const now = new Date().toISOString()
 
   const staticPages = [
+    '/blog',
+    ...articles.map((a) => `/blog/${a.slug}`),
     '',
     '/marketing',
     '/artiesten',

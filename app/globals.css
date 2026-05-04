@@ -258,3 +258,93 @@ section {
 .animate-float-up {
   animation: float-up linear infinite;
 }
+
+/* ───────────────────────────────────────────────────────────
+   Stevin Journal — article body typography
+   Match: Claude Design article.html .body
+   ─────────────────────────────────────────────────────────── */
+.journal-body p {
+  font-family: 'Inter', sans-serif;
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--fg);
+  margin: 0 0 28px;
+  text-wrap: pretty;
+}
+
+.journal-body p.lead-para {
+  font-size: 22px;
+  line-height: 1.55;
+  color: var(--navy);
+  font-weight: 500;
+  margin-bottom: 36px;
+}
+.journal-body p.lead-para::first-letter {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 4em;
+  line-height: 0.85;
+  float: left;
+  margin: 6px 14px 0 0;
+  color: var(--accent);
+}
+
+.journal-body h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin: 56px 0 20px;
+  text-wrap: balance;
+}
+
+.journal-body h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+  margin: 36px 0 14px;
+}
+
+.journal-body strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+.journal-body em { color: var(--fg); }
+.journal-body a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.journal-body a:hover { color: var(--accent-dark); }
+
+.journal-body ul,
+.journal-body ol {
+  font-family: 'Inter', sans-serif;
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--fg);
+  margin: 0 0 28px;
+  padding-left: 24px;
+}
+.journal-body li { margin-bottom: 10px; }
+.journal-body li::marker { color: var(--accent); }
+
+.journal-body .body-figure-cap {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 12px 0 28px;
+}
+
+@media (max-width: 640px) {
+  .journal-body p { font-size: 18px; }
+  .journal-body p.lead-para { font-size: 20px; }
+  .journal-body p.lead-para::first-letter { font-size: 3.4em; }
+}
