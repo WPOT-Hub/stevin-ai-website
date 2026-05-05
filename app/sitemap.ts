@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next'
 import { articles } from '@/data/articles'
 import { categories } from '@/data/categories'
 import { integrations } from '@/data/integrations'
+import { comparisons } from '@/data/comparisons'
+import { glossary } from '@/data/glossary'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://stevin.ai'
@@ -35,6 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categories.map((c) => `/integraties/${c.slug}`),
     // Vendor-detail pagina's (245 stuks)
     ...integrations.map((i) => `/integraties/${i.slug}`),
+    // Comparison pages (programmatic SEO playbook "X vs Y")
+    '/vergelijken',
+    ...comparisons.map((c) => `/vergelijken/${c.slug}`),
+    // Woordenboek (programmatic SEO playbook "wat is X")
+    '/woordenboek',
+    ...glossary.map((t) => `/woordenboek/${t.slug}`),
     '/case-studies',
     '/case-studies/e-commerce',
     '/contact',

@@ -32,6 +32,25 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'amazon-ads-22-procent-groei-q1-2026',
+    format: 'dispatch',
+    edition: '019',
+    category: 'Platform',
+    title: 'Amazon\'s advertentie-omzet groeit 22 procent in eerste kwartaal.',
+    dek:
+      'Amazon Ads draaide $17,2 miljard in Q1 op een $70 miljard run-rate. Forrester noemt Amazon leider in omnichannel-advertising voor connected TV en commercial media.',
+    publishedAt: '2026-05-05',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid',
+    posterTag: 'PLATFORM',
+    posterTopic: 'Amazon Ads pakt 22% groei.',
+    source: {
+      url: 'https://www.emerce.nl/nieuws/kwart-meer-reclameinkomsten-amazon',
+      name: 'Emerce',
+    },
+  },
+  {
     slug: 'spotify-ai-muziek-verificatie',
     format: 'dispatch',
     edition: '018',

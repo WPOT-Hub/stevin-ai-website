@@ -1155,6 +1155,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'amazon-ads-22-procent-groei-q1-2026': (
+    <>
+      <p className="lead-para">
+        Amazon&apos;s advertentie-omzet groeide in het eerste kwartaal van 2026 met 22 procent jaar-op-jaar tot 17,2 miljard dollar, volgens Emerce (5 mei 2026). Dat brengt de business op een geannualiseerde run-rate van ongeveer 70 miljard dollar — circa 10 procent van Amazon&apos;s totale Q1-omzet.
+      </p>
+      <p>
+        Amazon Ads draait niet alleen op de commerce-site, maar ook op Prime Video, IMDb en de gaming-streamer Switch. Forrester bestempelde Amazon onlangs als leider in omnichannel-advertising voor connected TV en commercial media. CEO Andy Jassy verwijst zelf naar die erkenning in de toelichting op de cijfers.
+      </p>
+      <p>
+        In de bredere advertentie-markt staat Amazon nu stevig op de derde plek, achter Google en Meta. Met 22 procent groei in Q1 versmalt het verschil opnieuw. Dat is relevant voor adverteerders omdat het signaal naar agencies en in-house teams duidelijk wordt: budget-allocatie tussen de drie grote platforms is geen tweestrijd meer.
+      </p>
+    </>
+  ),
   'spotify-ai-muziek-verificatie': (
     <>
       <p className="lead-para">
@@ -1246,6 +1259,8 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
     'Voor B2B-marketeers in tech zegt deze ronde één ding heel duidelijk: defensie is een toegangspoort voor enterprise-deals, niet een nichesector. De acht winnaars krijgen een referentie-stempel die de komende vijf jaar blijft betalen. De afwezige partij krijgt een ander stempel — "niet defensie-bereid" — en moet uitleggen wat dat betekent voor banken, verzekeraars en overheidsklanten elders.',
   'certe-mijnadviseur-chatgpt-koppeling':
     'Distributie via ChatGPT is geen experiment meer, het is een kanaal. Certe gebruikt het zoals tien jaar geleden Google Ads werd gebruikt: als bron van zoekvragen die naar een eigen funnel worden geleid. Voor andere financiële dienstverleners de vraag: ben je vindbaar binnen ChatGPT als iemand een vraag stelt over jouw product? Niet door SEO. Door aanwezig te zijn als GPT, dataset of partner.',
+  'amazon-ads-22-procent-groei-q1-2026':
+    'Voor D2C-merken en e-commerce: Amazon Ads is geen optie meer, het is een derde verplichte stap naast Google en Meta. De groei van 22 procent is geen incident, het is een trend die al twee jaar loopt. Voor agencies: kanaalmix-besluiten op basis van alleen ROAS van de individuele platforms missen de bredere portfolio-vraag. Een MMM- of uplift-test over Google + Meta + Amazon laat structureel andere optima zien dan platform-eigen attributie suggereert.',
 }
 
 function ArticleStubBody({ article }: { article: { title: string; dek: string; edition: string } }) {
