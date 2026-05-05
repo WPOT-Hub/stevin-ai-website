@@ -44,22 +44,48 @@ function detectAIBot(userAgent: string): string | null {
   return null
 }
 
+// Supabase REST endpoint voor ai_bot_crawls (INSERT-only via RLS,
+// veilig met anon-key). Schrijven we direct naar Supabase ipv via
+// console.log omdat Vercel's runtime-logs API niet meer publiek is.
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
+const SUPABASE_ANON = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+async function logBotCrawl(bot: string, path: string): Promise<void> {
+  if (!SUPABASE_URL || !SUPABASE_ANON) {
+    // Fallback: log naar Vercel function logs zodat we 't kwijt zijn
+    console.log(
+      JSON.stringify({ type: 'ai_bot_crawl', bot, path, ts: new Date().toISOString() }),
+    )
+    return
+  }
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/ai_bot_crawls`, {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_ANON,
+        Authorization: `Bearer ${SUPABASE_ANON}`,
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify({
+        bot,
+        path,
+        crawled_at: new Date().toISOString(),
+      }),
+    })
+  } catch {
+    // Niet-blokkerend: log naar Vercel als fallback
+    console.log(JSON.stringify({ type: 'ai_bot_crawl_failed', bot, path }))
+  }
+}
+
 export default function middleware(request: NextRequest) {
-  // AI-bot crawl logging — structured event naar Vercel function logs.
-  // Niet-blokkerend (alleen console.log), geen impact op latency.
-  // Hub-side parser leest Vercel logs voor weekly digest (PR-B).
+  // AI-bot crawl logging — fire-and-forget naar Supabase.
+  // Niet-blokkerend (geen await), middleware blijft snel.
   const ua = request.headers.get('user-agent') ?? ''
   const aiBot = detectAIBot(ua)
   if (aiBot) {
-    // JSON one-liner zodat Vercel logs parseerbaar blijven
-    console.log(
-      JSON.stringify({
-        type: 'ai_bot_crawl',
-        bot: aiBot,
-        path: request.nextUrl.pathname,
-        ts: new Date().toISOString(),
-      }),
-    )
+    void logBotCrawl(aiBot, request.nextUrl.pathname)
   }
 
   return intlMiddleware(request)
