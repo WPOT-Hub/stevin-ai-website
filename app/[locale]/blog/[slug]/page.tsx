@@ -179,9 +179,13 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'autonome-agents-90-dagen' && (
             <ArticleAgentsBody />
           )}
+          {article.format === 'editorial' && article.slug === 'last-click-is-een-gewoonte' && (
+            <ArticleLastClickBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
-            article.slug !== 'autonome-agents-90-dagen' && (
+            article.slug !== 'autonome-agents-90-dagen' &&
+            article.slug !== 'last-click-is-een-gewoonte' && (
               <ArticleStubBody article={article} />
             )}
         </div>
@@ -492,6 +496,190 @@ function ArticleMITBody() {
 
       <EndRule />
       <EndSig>&quot;Het is geen wonder. Het is Stevin.&quot; · Editie 014 / 052</EndSig>
+    </>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────
+   Editie 012 — Last-click is geen attributiemodel
+   ──────────────────────────────────────────────────────────── */
+function ArticleLastClickBody() {
+  return (
+    <>
+      <p className="lead-para">
+        De meeste marketingteams weten dat last-click niet klopt. Toch staat het op het dashboard van maandagochtend, in de bureau-rapportage van vrijdagmiddag, en in de finance-export van eind kwartaal. De reden is zelden inhoudelijk. Last-click meet niet wat werkt; het meet wat als laatste meetbaar was. Dat is geen attributiemodel. Het is een gewoonte.
+      </p>
+
+      <BodyFigure
+        tag="GARTNER · 2025"
+        stat="7,7%"
+        statCap="Aandeel van de bedrijfsomzet dat marketingbudgetten in 2025 uitmaken. Vlak ten opzichte van 2024. Volgens Gartner CMO Spend Survey, mei 2025."
+        edition="EDITIE 012 / 052 · METHODE"
+        source="Bron: Gartner 2025 CMO Spend Survey (12 mei 2025)"
+      />
+
+      <p>
+        Bij vlakke budgetten groeit de druk om effect te bewijzen. En in die druk pakt elk team het meetmodel dat elke week een getal levert, niet het model dat de beste beslissing ondersteunt. Daar zit de kern van het probleem.
+      </p>
+
+      <H2 num="01">Wat last-click meet, en wat niet</H2>
+
+      <p>
+        Stel: iemand ziet drie weken lang advertenties op YouTube, LinkedIn en display. Daarna typt diegene je merknaam in Google, klikt op een branded search-advertentie en koopt. Last-click zegt: search leverde de conversie. Branded search krijgt het credit, het budget en de bonus.
+      </p>
+
+      <p>
+        De juiste vraag is een andere: <strong>had deze persoon ook gekocht zonder die laatste klik?</strong> Met andere woorden, was die advertentie vlak voor de aankoop oorzaak van de verkoop, of alleen het laatste meetbare contact? Last-click heeft op die vraag geen antwoord. Het model heeft geen vergelijking, geen referentie, geen counterfactual.
+      </p>
+
+      <p>
+        Dat is geen academische haarsplitserij. Het verschil tussen &quot;laatste klik&quot; en &quot;oorzaak van verkoop&quot; bepaalt waar het volgende kwartaal-budget heen gaat.
+      </p>
+
+      <Callout
+        big="500M"
+        label="User-experiment-observations en 1,6 miljard ad impressions in 15 Facebook-experimenten. Gordon, Zettelmeyer, Bhargava en Chapsky vonden dat observationele methodes vaak níét hetzelfde effect produceren als gerandomiseerde experimenten, ook na controle voor demografie en gedrag. Marketing Science, INFORMS."
+      />
+
+      <p>
+        De conclusie van die studie is ongemakkelijk: zelfs met enorme platformdata is causaliteit niet te bepalen zonder een experiment dat een controlegroep meet. Een Meta-rapport van 2.226 experimenten liet daarna zien dat last-click in 12 tot 20 procent van de campagnes tot een andere beslissing leidt dan een echt experiment. Een gemiddelde fout van één op de zes campagnes is veel als je een jaarbudget verdeelt.
+      </p>
+
+      <H2 num="02">Waarom het toch blijft</H2>
+
+      <p>
+        Last-click verdwijnt niet omdat het past in hoe teams sturen. Performance-marketeers krijgen targets op CPA of ROAS. Kanaalmanagers verdedigen hun eigen budget. Bureaus rapporteren per kanaal. Finance wil een concreet getal in plaats van een interval. Dashboards tonen conversies per bron. Elk van die rollen wordt elke week beloond voor &quot;wat heeft het opgeleverd&quot;, en last-click geeft daar elke week antwoord op.
+      </p>
+
+      <p>
+        Dat antwoord voelt afrekenbaar. Niet omdat het waar is, maar omdat het meetbaar is. Een uplift-meting die zegt &quot;dit kanaal levert tussen de 14 en 22 procent extra omzet&quot; is wetenschappelijk sterker dan &quot;branded search leverde 412 conversies&quot;, maar bestuurlijk lastiger. Een interval is geen score.
+      </p>
+
+      <p>
+        Wat we vaak zien: teams die het verschil weten, blijven last-click gebruiken in de weekrapportage en zetten een aparte uplift-test op naast de standaard-stack. Dat is niet ideaal, maar het is realistischer dan een complete cultuuromslag in één kwartaal. Last-click blijft bestaan omdat het in het vergaderritme past, niet omdat iemand het verdedigt.
+      </p>
+
+      <H2 num="03">Wat onderzoek wel laat zien</H2>
+
+      <p>
+        Drie onderzoekslijnen, alle drie met decennia data eronder, wijzen dezelfde kant op. Niet &quot;last-click is fout&quot;, maar &quot;last-click ziet maar een deel&quot;.
+      </p>
+
+      <Takeaways
+        label="DE DRIE LIJNEN"
+        title="Wat we al twintig jaar weten over hoe marketing wérkt"
+        items={[
+          {
+            pct: '60/40',
+            text: (
+              <>
+                <b>Binet en Field.</b> De IPA-onderzoekers waarschuwen dat zeer korte online-metrics als hoofdmaatstaf gevaarlijk zijn voor lange termijn groei. Hun 60:40-vuistregel: ongeveer 60 procent van marketingbudget naar merkbouw, 40 procent naar activatie, voor de meeste categorieën. Last-click ziet vooral die 40 procent.
+              </>
+            ),
+          },
+          {
+            pct: 'EBI',
+            text: (
+              <>
+                <b>Ehrenberg-Bass.</b> Merken groeien via penetratie: zoveel mogelijk kopers, makkelijk te herinneren, makkelijk te kopen. Last-click beloont juist de kanalen het dichtst op de kassa (branded search, retargeting, affiliate, vouchers). Die vangen bestaande vraag op, ze creëren weinig nieuwe vraag.
+              </>
+            ),
+          },
+          {
+            pct: '2%',
+            text: (
+              <>
+                <b>Nielsen.</b> Per kwartaal zonder advertising verliest een merk volgens Nielsen-data 2 procent toekomstige omzet. Herstel duurt drie tot vijf jaar. Doorlopende marketing verklaart 10 tot 35 procent van brand equity. Dat zie je niet terug in een conversie-rapport van vorige week.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <p>
+        Het patroon: last-click meet vooral oogsten. Het meet slecht wat de oogst groter maakt. Een kanaal kan zwak ogen op directe sales en sterk zijn op merkbouw. Een ander kanaal kan sterk ogen op directe sales en vooral bestaande vraag binnenharken die zonder dat kanaal ook was binnengekomen.
+      </p>
+
+      <p>
+        Wie alleen op last-click stuurt, verschuift budget vrijwel altijd naar dat tweede type kanaal. Korte termijn lijkt het te werken; lange termijn slijt de vraag-pijplijn waar diezelfde kanalen op leunen. Dat is de boemerang.
+      </p>
+
+      <H2 num="04">De stack die wél werkt</H2>
+
+      <p>
+        De oplossing is geen vervanging. Het is een gelaagde meetstack waarbij elk model de vraag krijgt waar het goed in is. Vier lagen.
+      </p>
+
+      <Takeaways
+        label="HET MEETKADER"
+        title="Vier lagen, vier vragen"
+        items={[
+          {
+            pct: '01',
+            text: (
+              <>
+                <b>Operationele attributie.</b> Gebruik last-click of platformdata voor korte feedback: tracking werkt, welke zoektermen converteren, welke landingspagina faalt. Operationeel debuggen, niet budget verdelen.
+              </>
+            ),
+          },
+          {
+            pct: '02',
+            text: (
+              <>
+                <b>Uplift-tests.</b> Geo-test, holdout, audience-split. Vooral op kanalen die last-click structureel overschat: branded search, retargeting, affiliate, voucher-sites, Performance Max met veel brand-traffic. Twee per jaar is een minimum.
+              </>
+            ),
+          },
+          {
+            pct: '03',
+            text: (
+              <>
+                <b>Marketing Mix Modeling.</b> Voor de budgetvraag: hoe verdelen we over kanalen, tijd, merk en activatie, rekening houdend met seizoen, prijs, promotie en concurrentie. MMM beantwoordt geen dagelijkse vraag, maar de jaarlijkse en kwartaal-vraag.
+              </>
+            ),
+          },
+          {
+            pct: '04',
+            text: (
+              <>
+                <b>Brand tracking.</b> Spontane bekendheid, overweging, voorkeur, category entry points. Wat last-click niet ziet maar wat Nielsen, Binet en Ehrenberg-Bass koppelen aan toekomstige sales.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <h3>Over Meridian, en over &quot;MMM kost te veel&quot;</h3>
+
+      <p>
+        De klassieke MMM-bezwaren waren reëel: duur bureau, lange doorlooptijd, jaarlijkse update, weinig actie voor performance-teams. Google&apos;s open source MMM-framework Meridian verandert daar een deel van. De software is gratis, de code is openbaar en aanpasbaar, en het framework is expliciet ontworpen voor causale schatting via onder andere geo-level modeling, reach en frequency, en kalibratie met experiment-resultaten.
+      </p>
+
+      <p>
+        Maar Meridian vervangt geen werk. Google&apos;s eigen documentatie adviseert minimaal twee jaar wekelijkse data voor geo-level modellen, drie jaar voor national-level. Maximaal 20 kanalen om genoeg variatie te houden. En altijd kalibreren met echte uplift-experimenten, niet alleen met platformdata. Open source haalt het excuus &quot;te duur&quot; deels weg. Het haalt de discipline-vereiste niet weg.
+      </p>
+
+      <PullQuote
+        text='"Last-click past bij rapporteren. MMM past bij investeren. Een uplift-test past bij twijfelen."'
+        cite="Stevin Journal, redactie."
+      />
+
+      <H2 num="05">De praktische conclusie</H2>
+
+      <p>
+        De vraag is niet of je last-click moet afschaffen. De vraag is: <strong>welke beslissing neem je met welk model?</strong> Een dagrapport mag op last-click. Een kwartaal-budget hoort dat niet te zijn. En de vraag &quot;werkt dit kanaal eigenlijk wel&quot; verdient een uplift-test, geen dashboard-screenshot.
+      </p>
+
+      <p>
+        Praktisch: degradeer last-click tot wat het is. Een operationeel signaal voor de week. Geen investeringsmodel voor het jaar. Bouw daarbovenop minstens twee uplift-tests per jaar op de kanalen die je het meest budgetteert. En gebruik MMM (open source of bureau) op het moment dat een budget-discussie verder gaat dan vijf procent verschuiving.
+      </p>
+
+      <p>
+        Het systeem is verkeerd ingericht, niet de marketeers. Een rapportagemodel gebruiken voor investeringsbesluiten is precies waar Stevin in 1586 al voor waarschuwde: als je het niet kunt herleiden, is het geen feit. Het is een verhaal.
+      </p>
+
+      <EndRule />
+      <EndSig>&quot;Wonder en is gheen wonder.&quot; · Editie 012 / 052</EndSig>
     </>
   )
 }
