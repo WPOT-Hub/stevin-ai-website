@@ -22,8 +22,12 @@ export function GoogleTagManagerHead() {
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('consent', 'default', {
+            // window.gtag (niet alleen lokaal) zodat ConsentBanner de
+            // consent kan updaten — anders blijft alles op 'denied'
+            // ondanks dat de gebruiker accepteerde (GA4 ad_user_data
+            // warning).
+            window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+            window.gtag('consent', 'default', {
               'ad_storage':              'denied',
               'analytics_storage':       'denied',
               'ad_user_data':            'denied',
@@ -33,8 +37,8 @@ export function GoogleTagManagerHead() {
               'security_storage':        'granted',
               'wait_for_update':         500
             });
-            gtag('set', 'ads_data_redaction', true);
-            gtag('set', 'url_passthrough', true);
+            window.gtag('set', 'ads_data_redaction', true);
+            window.gtag('set', 'url_passthrough', true);
           `,
         }}
       />
