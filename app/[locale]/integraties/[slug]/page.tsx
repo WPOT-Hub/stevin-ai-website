@@ -10,6 +10,7 @@ import CTABlock from '@/components/CTABlock'
 import FAQAccordion from '@/components/FAQAccordion'
 import { categories } from '@/data/categories'
 import { integrations } from '@/data/integrations'
+import { getVendorEnrichment } from '@/data/vendor-enrichments'
 import { getIntegrationBySlug, getCategoryBySlug, getIntegrationsByCategory, getRelatedIntegrations } from '@/lib/utils'
 
 interface Props {
@@ -271,6 +272,36 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
             <p className="text-lg text-muted leading-relaxed mb-8">
               {integration.description}
             </p>
+
+            {(() => {
+              const enrichment = getVendorEnrichment(slug)
+              if (!enrichment) return null
+              return (
+                <div className="space-y-6 mb-10 pb-10 border-b border-border">
+                  <div>
+                    <h2 className="text-xl font-bold text-primary mb-3">De Stevin-invalshoek op {integration.name}</h2>
+                    <p className="text-muted leading-relaxed">{enrichment.stevinAngle}</p>
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-bold text-primary mb-3">Wat dit voor jouw stack betekent</h2>
+                    <p className="text-muted leading-relaxed">{enrichment.stackImpact}</p>
+                  </div>
+                  {enrichment.pitfalls && enrichment.pitfalls.length > 0 && (
+                    <div>
+                      <h2 className="text-xl font-bold text-primary mb-3">Veelgemaakte fouten</h2>
+                      <ul className="space-y-2.5">
+                        {enrichment.pitfalls.map((p, i) => (
+                          <li key={i} className="flex items-start gap-3 text-muted leading-relaxed">
+                            <span className="text-accent mt-1 flex-shrink-0">→</span>
+                            <span>{p}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )
+            })()}
 
             <div className="space-y-8">
               <div>

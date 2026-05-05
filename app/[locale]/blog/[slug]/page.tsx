@@ -228,10 +228,14 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'last-click-is-een-gewoonte' && (
             <ArticleLastClickBody />
           )}
+          {article.format === 'editorial' && article.slug === 'mmm-is-een-hypothese' && (
+            <ArticleMMMBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
-            article.slug !== 'last-click-is-een-gewoonte' && (
+            article.slug !== 'last-click-is-een-gewoonte' &&
+            article.slug !== 'mmm-is-een-hypothese' && (
               <ArticleStubBody article={article} />
             )}
         </div>
@@ -542,6 +546,170 @@ function ArticleMITBody() {
 
       <EndRule />
       <EndSig>&quot;Het is geen wonder. Het is Stevin.&quot; · Editie 014 / 052</EndSig>
+    </>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────
+   Editie 011 — MMM is een hypothese
+   ──────────────────────────────────────────────────────────── */
+function ArticleMMMBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Een Marketing Mix Model is geen rapport. Het is een statistisch model dat een hypothese uitspreekt over hoe historische sales en mediadata het beste samenhangen. De output (decomposition charts, response curves, ROI per kanaal) ziet eruit als een rapport. Maar onder de motorkap zit een schatting met intervallen, aannames en priors. Wie dat onderscheid niet leest, koopt false confidence in plaats van inzicht.
+      </p>
+
+      <BodyFigure
+        tag="GARTNER · 2025"
+        stat="MMM"
+        statCap='Volgens Gartner is MMM &quot;a statistical technique used to measure the impact of marketing activities on sales performance&quot;. Een techniek, niet een rapport. Bron: Gartner Marketing Mix Modeling guide (2025).'
+        edition="EDITIE 011 / 052 · ATTRIBUTION"
+        source="Bron: Gartner — Marketing Mix Modeling guide (2025)"
+      />
+
+      <p>
+        Het verschil zit in vijf woorden. Een rapport zegt: dit is wat is gebeurd. Een MMM zegt: dit is mijn beste schatting van wat is gebeurd, onder de aannames die ik heb gemaakt, met deze onzekerheid. Beide zijn nuttig. Alleen: voor een budget-besluit van vijf ton is het verschil tussen die twee precies het verschil tussen winnen en verliezen.
+      </p>
+
+      <H2 num="01">Wat een MMM in feite zegt</H2>
+
+      <p>
+        Een MMM neemt twee à drie jaar wekelijkse data over sales en mediabestedingen, plus controle-variabelen voor seizoen, prijs, promotie, weer, concurrentie en macro-economie. Het model probeert vervolgens te schatten welke combinatie van inputs het beste de variatie in sales verklaart. Output: een decomposition (welk percentage van sales komt waarschijnlijk uit welk kanaal), een response curve per kanaal (waar zit diminishing returns), en een marginale ROI-schatting per kanaal.
+      </p>
+
+      <p>
+        Cruciaal: elk getal in die output heeft een interval. Een goed MMM zegt niet &quot;Google Ads droeg 28 procent bij&quot;. Het zegt &quot;de mediaan-schatting is 28 procent, met een 80-procent geloofwaardigheidsinterval tussen 19 en 36 procent&quot;. Dat interval is geen detail. Het is de kernboodschap. Hoe groter het interval, hoe minder het model echt weet.
+      </p>
+
+      <PullQuote
+        text='"Een MMM zegt niet wat search opbracht. Hij zegt: dit is mijn beste schatting onder mijn aannames, met deze onzekerheid."'
+        cite="Stevin Journal, redactie."
+      />
+
+      <H2 num="02">Wat consultants ervan maken</H2>
+
+      <p>
+        Het probleem zit zelden in het model. Het zit in de slide die het model omzet in een uitspraak. De interval verdwijnt. Het wordt &quot;Google Ads = 28 procent van sales&quot;. De verzameling priors waarmee het model is opgestart, wordt nergens benoemd. De gevoeligheidsanalyse (wat gebeurt er met de output als de prior 5 procent omhoog of omlaag schuift) ontbreekt vaak.
+      </p>
+
+      <p>
+        Drie patronen zien we het vaakst. Eén: een model dat met een sterke prior is opgestart en te weinig data heeft om die prior te overrulen. De output reflecteert dan vooral wat de modelbouwer al dacht. Twee: een decomposition die nooit is gekalibreerd met een echte uplift-test. Het model zegt search levert X op, niemand heeft ooit een geo-test gedaan om dat te verifiëren. Drie: response curves die als feit worden gepresenteerd terwijl de data alleen het lineaire stuk dekt en de saturation-curve dus extrapolatie is.
+      </p>
+
+      <Callout
+        big="2y"
+        label='Minimum aan wekelijkse data dat Google adviseert voor Meridian-modellen op geo-niveau. Voor national-level: 3 jaar. Onder die drempel wordt de schatting onbetrouwbaar — niet omdat het model slecht is, maar omdat er onvoldoende variatie zit om de parameters te identificeren. Bron: developers.google.com/meridian.'
+      />
+
+      <H2 num="03">Wanneer is een MMM wel nuttig</H2>
+
+      <p>
+        MMM beantwoordt één type vraag goed: hoe moeten we ons mediabudget over de komende periode verdelen, gegeven wat we historisch hebben gezien en gegeven wat onafhankelijke experimenten ons hebben verteld over kanaalspecifieke uplift. Dat is een budget-allocatievraag op kwartaal- of jaarbasis, niet een dagelijkse optimalisatievraag.
+      </p>
+
+      <Takeaways
+        label="WAAR MMM HOORT"
+        title="Drie vragen waar MMM goed in is"
+        items={[
+          {
+            pct: '01',
+            text: (
+              <>
+                <b>Budget-allocatie over kanalen.</b> Bij budgetten boven enkele miljoenen per jaar over vijf of meer kanalen. Bij kleinere budgetten domineert ruis de schatting.
+              </>
+            ),
+          },
+          {
+            pct: '02',
+            text: (
+              <>
+                <b>Diminishing returns per kanaal.</b> Waar zit de saturation? Het model schat een response curve. Met experiment-kalibratie wordt die curve serieuzer dan zonder.
+              </>
+            ),
+          },
+          {
+            pct: '03',
+            text: (
+              <>
+                <b>Effect van externe factoren.</b> Hoeveel van de Q4-piek kwam door seizoen, hoeveel door advertising? Dit is precies wat MMM wel kan en wat last-click of platformdata structureel mist.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <H2 num="04">Wanneer levert het false confidence</H2>
+
+      <p>
+        Vier signalen dat een MMM-output meer onzekerheid bevat dan de slide laat zien. Wie deze niet checkt, koopt een grafiek, geen analyse.
+      </p>
+
+      <Takeaways
+        label="DE VIER ROODBRAND-LICHTEN"
+        title="Wat je vraagt voordat je een MMM gelooft"
+        items={[
+          {
+            pct: '01',
+            text: (
+              <>
+                <b>Geen intervallen.</b> Decomposition zonder geloofwaardigheidsinterval per kanaal: dit is een rapportage-grafiek, geen modeloutput. Vraag het interval expliciet.
+              </>
+            ),
+          },
+          {
+            pct: '02',
+            text: (
+              <>
+                <b>Geen experiment-kalibratie.</b> Het model is nooit getoetst aan een geo-test, holdout of conversion lift-experiment. De priors zijn dan geleund op domeinexpertise (lees: een mening), niet op gemeten uplift.
+              </>
+            ),
+          },
+          {
+            pct: '03',
+            text: (
+              <>
+                <b>Geen sensitivity-analyse.</b> Hoe verandert de output als je een prior 5 procent omhoog of omlaag schuift? Als de output dramatisch beweegt, weet het model in feite weinig en reflecteert het vooral de input.
+              </>
+            ),
+          },
+          {
+            pct: '04',
+            text: (
+              <>
+                <b>Te veel kanalen, te weinig data.</b> Google adviseert voor Meridian maximaal 20 kanalen. Sommige bureau-MMM&apos;s draaien 50+ kanalen op dezelfde dataset. Dat is statistisch niet identificeerbaar — het model raadt.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <h3>Open source verandert de drempel, niet de discipline</h3>
+
+      <p>
+        Google Meridian (open source MMM-framework, beschikbaar sinds 2024) verlaagt de prijs van software naar nul. Dat haalt het oude bezwaar &quot;te duur bureau&quot; deels weg. Maar het verandert niets aan de datavereisten (minimaal 2 jaar wekelijkse data), het maximumaantal kanalen (~20), de noodzaak tot experiment-kalibratie, of de leesvaardigheid om intervallen te interpreteren.
+      </p>
+
+      <p>
+        De marktshift is dus niet &quot;MMM wordt makkelijk&quot;. Het is &quot;de toegang tot serieuze MMM is gedemocratiseerd, maar serieuze MMM blijft serieus werk&quot;. Wie Meridian draait zonder te kalibreren met experimenten, krijgt dezelfde false confidence als een bureau-MMM zonder kalibratie. Het verschil is de prijs van de licentie, niet de kwaliteit van de schatting.
+      </p>
+
+      <H2 num="05">De praktische conclusie</H2>
+
+      <p>
+        Behandel de MMM-output zoals je een rapport van een onderzoeker behandelt. Niet als feit. Als hypothese-generator. Het model zegt: &quot;volgens mij ligt de waarheid hier&quot;. Daarna doe je experimenten om te testen of die hypothese klopt.
+      </p>
+
+      <p>
+        Concreet: pak de drie kanalen waar het MMM het sterkste effect schat. Zet daar een uplift-test op (geo, holdout, audience-split). Als de gemeten uplift binnen het MMM-interval valt, bevestigt het experiment het model. Als de uplift buiten het interval valt, weet je dat het model iets mist en moet je de priors of de specificatie herzien.
+      </p>
+
+      <p>
+        Een MMM die niet wordt getoetst aan experimenten, is een verhaal in een grafiek. Met experimenten is het een meetinstrument. Het verschil zit in twee tot vier kalibratie-tests per jaar. Dat is hetzelfde principe waar Stevin in 1586 al voor stond: als je het niet kunt herleiden, is het geen feit.
+      </p>
+
+      <EndRule />
+      <EndSig>&quot;Wonder en is gheen wonder.&quot; · Editie 011 / 052</EndSig>
     </>
   )
 }

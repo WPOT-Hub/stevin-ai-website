@@ -1,4 +1,26 @@
 {
+  "mmm-is-een-hypothese": [
+    {
+      "question": "Wat is een Marketing Mix Model precies?",
+      "answer": "Volgens Gartner een statistische techniek om de impact van marketingactiviteiten op sales te schatten. Het neemt 2-3 jaar wekelijkse data over sales en mediabestedingen plus controle-variabelen voor seizoen, prijs, promotie en macro-economie. Output: decomposition per kanaal, response curves en marginale ROI — als schattingen met intervallen, niet als feiten."
+    },
+    {
+      "question": "Wat is het verschil tussen een MMM-output en een rapport?",
+      "answer": "Een rapport zegt: dit is wat is gebeurd. Een MMM zegt: dit is mijn beste schatting onder mijn aannames, met deze onzekerheid. Een goed MMM noemt geen point estimates ('Google Ads = 28 procent') maar intervallen ('mediaan 28 procent, geloofwaardigheidsinterval 19-36 procent'). Het interval is de kernboodschap, niet een detail."
+    },
+    {
+      "question": "Wanneer is een MMM nuttig?",
+      "answer": "Drie typen vragen: budget-allocatie over kanalen bij budgetten boven enkele miljoenen, response curves voor diminishing returns, en effect van externe factoren zoals seizoen of promotie. NIET voor dagelijkse optimalisatie, kanaalattributie binnen één campagne, of vervanging van A/B-tests."
+    },
+    {
+      "question": "Hoe weet je of een MMM false confidence creëert?",
+      "answer": "Vier signalen: geen geloofwaardigheidsintervallen per kanaal (alleen point estimates), geen kalibratie met uplift-experimenten (geo-test of holdout), geen sensitivity-analyse (output beweegt niet bij prior-veranderingen), of te veel kanalen op te weinig data (Google adviseert max 20 kanalen voor Meridian)."
+    },
+    {
+      "question": "Maakt Google Meridian MMM nu wel betaalbaar voor MKB?",
+      "answer": "Open source verlaagt de softwareprijs naar nul. Maar de datavereisten blijven: minimaal 2 jaar wekelijkse data voor geo-modellen, 3 jaar voor national-level, max 20 kanalen, en kalibratie met experimenten. De toegang is gedemocratiseerd, maar serieuze MMM blijft serieus werk."
+    }
+  ],
   "95-procent-ai-pilots-mislukt": [
     {
       "question": "Wat zegt het MIT-rapport NANDA precies over AI-pilots?",
