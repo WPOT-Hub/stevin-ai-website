@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "indexnow": "npx tsx scripts/indexnow.ts",
+    "validate:schema": "npx tsx scripts/validate-jsonld.ts"
   },
   "dependencies": {
     "lucide-react": "^1.7.0",

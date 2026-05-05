@@ -1,0 +1,29 @@
+name: SEO Checks
+
+on:
+  pull_request:
+    paths:
+      - 'data/articles.ts'
+      - 'app/**/page.tsx'
+      - 'scripts/validate-jsonld.ts'
+  push:
+    branches: [main]
+    paths:
+      - 'data/articles.ts'
+      - 'app/**/page.tsx'
+      - 'scripts/validate-jsonld.ts'
+
+jobs:
+  validate-jsonld:
+    name: Validate Article JSON-LD
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      # npm install ipv ci — tolerant voor minor lock-drift,
+      # validator hangt alleen op data/articles.ts en tsx (geen runtime deps)
+      - run: npm install --no-audit --no-fund
+      - run: npm run validate:schema

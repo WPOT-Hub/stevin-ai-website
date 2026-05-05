@@ -18,6 +18,8 @@ export interface Article {
   title: string
   dek: string
   publishedAt: string
+  /** Optioneel — als afwezig valt JSON-LD dateModified terug op publishedAt */
+  updatedAt?: string
   readMinutes: number
   author: { name: string; role: string }
   posterStyle: 'solid' | 'gradient' | 'surface'

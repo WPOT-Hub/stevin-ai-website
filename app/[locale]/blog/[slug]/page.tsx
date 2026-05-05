@@ -16,6 +16,9 @@ export async function generateMetadata({
   const { slug } = await params
   const a = getArticle(slug)
   if (!a) return {}
+  // Per-post OG image (Next.js conventional route — gegenereerd door
+  // app/[locale]/blog/[slug]/opengraph-image.tsx)
+  const ogImage = `https://stevin.ai/blog/${a.slug}/opengraph-image`
   return {
     title: `${a.title} | Stevin Journal`,
     description: a.dek,
@@ -24,7 +27,15 @@ export async function generateMetadata({
       title: a.title,
       description: a.dek,
       publishedTime: a.publishedAt,
+      modifiedTime: a.updatedAt ?? a.publishedAt,
       authors: [a.author.name],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: a.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: a.title,
+      description: a.dek,
+      images: [ogImage],
     },
     alternates: {
       canonical: `https://stevin.ai/blog/${a.slug}`,
@@ -49,13 +60,23 @@ export default async function ArticlePage({
   if (!article) notFound()
 
   const related = getRelatedArticles(article.slug)
+  // Author = Person als de naam expliciet een mens is, anders Organization.
+  // Default 'Stevin Journal' wordt nog steeds als Organization gepubliceerd
+  // omdat het de redactie als geheel is. Per-auteur Person-schema komt
+  // wanneer auteurs een eigen profielpagina krijgen (EEAT-versterking).
+  const isPersonAuthor =
+    article.author.name !== 'Stevin Journal' && article.author.name !== 'Stevin'
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.title,
     description: article.dek,
+    image: `https://stevin.ai/blog/${article.slug}/opengraph-image`,
     datePublished: article.publishedAt,
-    author: { '@type': 'Organization', name: 'Stevin' },
+    dateModified: article.updatedAt ?? article.publishedAt,
+    author: isPersonAuthor
+      ? { '@type': 'Person', name: article.author.name, jobTitle: article.author.role }
+      : { '@type': 'Organization', name: 'Stevin' },
     publisher: {
       '@type': 'Organization',
       name: 'Stevin',
