@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { articles } from '@/data/articles'
+import { categories } from '@/data/categories'
+import { integrations } from '@/data/integrations'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://stevin.ai'
@@ -29,6 +31,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/seo',
     '/geo',
     '/integraties',
+    // Categorie-hub pagina's (22 stuks)
+    ...categories.map((c) => `/integraties/${c.slug}`),
+    // Vendor-detail pagina's (245 stuks)
+    ...integrations.map((i) => `/integraties/${i.slug}`),
     '/case-studies',
     '/case-studies/e-commerce',
     '/contact',

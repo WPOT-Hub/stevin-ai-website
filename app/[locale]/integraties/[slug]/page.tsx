@@ -25,21 +25,46 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
 
-  // Check category first
+  // Categorie-hub pagina
   const category = getCategoryBySlug(slug)
   if (category) {
+    const count = getIntegrationsByCategory(slug).length
+    const title = `${category.name} integraties${count > 0 ? ` — ${count} platforms` : ''}`
+    const description = (category.description ?? '').slice(0, 155)
+    const canonical = `https://stevin.ai/integraties/${slug}`
     return {
-      title: `${category.name} integraties`,
-      description: category.description,
+      title,
+      description,
+      alternates: { canonical },
+      openGraph: {
+        type: 'website',
+        title,
+        description,
+        url: canonical,
+        images: [{ url: 'https://stevin.ai/og-image.png', width: 1200, height: 630, alt: title }],
+      },
+      twitter: { card: 'summary_large_image', title, description },
     }
   }
 
-  // Then check integration
+  // Vendor-detail pagina
   const integration = getIntegrationBySlug(slug)
   if (integration) {
+    const title = `${integration.name} koppeling — Stevin.AI integratie`
+    const description = integration.shortDescription.slice(0, 155)
+    const canonical = `https://stevin.ai/integraties/${slug}`
     return {
-      title: `${integration.name} integratie`,
-      description: integration.shortDescription,
+      title,
+      description,
+      alternates: { canonical },
+      openGraph: {
+        type: 'website',
+        title,
+        description,
+        url: canonical,
+        images: [{ url: 'https://stevin.ai/og-image.png', width: 1200, height: 630, alt: title }],
+      },
+      twitter: { card: 'summary_large_image', title, description },
     }
   }
 
@@ -60,11 +85,27 @@ async function CategoryView({ slug, locale }: { slug: string; locale: string }) 
     url: `https://stevin.ai/integraties/${slug}`,
   }
 
+  // BreadcrumbList JSON-LD — visible breadcrumbs zonder schema laat zoekmachines
+  // de hierarchie missen. Plus voor LLM-citation: structuur "waar in de site".
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://stevin.ai/' },
+      { '@type': 'ListItem', position: 2, name: 'Integraties', item: 'https://stevin.ai/integraties' },
+      { '@type': 'ListItem', position: 3, name: category.name, item: `https://stevin.ai/integraties/${slug}` },
+    ],
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
       <Section>
@@ -139,6 +180,32 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
     url: `https://stevin.ai/integraties/${slug}`,
   }
 
+  // BreadcrumbList JSON-LD — geeft zoekmachines de site-hierarchie van
+  // home → integraties → categorie → vendor (4 niveaus).
+  const breadcrumbItems: Array<{ '@type': 'ListItem'; position: number; name: string; item: string }> = [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://stevin.ai/' },
+    { '@type': 'ListItem', position: 2, name: 'Integraties', item: 'https://stevin.ai/integraties' },
+  ]
+  if (category) {
+    breadcrumbItems.push({
+      '@type': 'ListItem',
+      position: 3,
+      name: category.name,
+      item: `https://stevin.ai/integraties/${category.slug}`,
+    })
+  }
+  breadcrumbItems.push({
+    '@type': 'ListItem',
+    position: breadcrumbItems.length + 1,
+    name: integration.name,
+    item: `https://stevin.ai/integraties/${slug}`,
+  })
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbItems,
+  }
+
   const faqJsonLd = integration.faqs && integration.faqs.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -157,6 +224,10 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       {faqJsonLd && (
         <script
