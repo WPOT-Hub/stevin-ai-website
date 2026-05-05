@@ -1,4 +1,37 @@
 {
+  "activecampaign": {
+    "stevinAngle": "ActiveCampaign zit in een sweet spot tussen Mailchimp (te simpel zodra je serieus segmenteert) en HubSpot (te duur en te zwaar zodra je 'm niet voor sales gebruikt). De automation-builder is daadwerkelijk visueel logisch ipv het Mailchimp-knutselwerk, en je krijgt CRM-functionaliteit erbij zonder de HubSpot-prijs. Wij migreren regelmatig accounts vanuit Mailchimp wanneer ze tegen 10.000+ contacten aanlopen of multistep automations nodig hebben die in Mailchimp niet schalen. Pas op: ActiveCampaign's eigen reporting is matig, gebruik een externe BI-tool of GA4 voor echte performance-analyse.",
+    "stackImpact": "Combineer met je website-CMS (event-tracking via API of Site Tracking script), Stripe of een ander payment-platform voor revenue-attributie, en een dedicated landing page tool als je veel campagnes draait (Unbounce, Instapage). De interne formulieren zijn OK voor simpele opt-ins; voor conversie-geoptimaliseerde landing pages mis je A/B-test functionaliteit.",
+    "pitfalls": [
+      "Lijst-gebaseerd denken vasthouden in plaats van tag-gebaseerd — segmentatie wordt rigide en moeilijk te onderhouden",
+      "Automations koppelen aan 'subscribe to list' triggers in plaats van event-based triggers — leads zitten vast in te veel flows tegelijk",
+      "Lead score laten berekenen zonder ooit te kalibreren met sales-feedback — score wordt vanity metric in plaats van triage-tool",
+      "Site Tracking aanzetten zonder cookie-consent integratie — AVG-risico"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "amplitude": {
+    "stevinAngle": "Amplitude is product analytics die specifiek gemaakt is voor SaaS en digital products, niet voor marketing. Voor merken die kijken of klanten conversion-funnels doorlopen, retention bouwen en feature-adoption meten is dit dé tool. Voor wie marketing-attributie wil, is GA4 of Mixpanel meer geschikt. We zien teams Amplitude kopen omdat 'het beter dan GA4 is' zonder te beseffen dat het een product-tool is, niet een marketing-tool. Free-tier is genereus tot 10M events per maand, dus testen kost niets.",
+    "stackImpact": "Voor je stack: behandel Amplitude als de plek waar product-data leeft, niet marketing-data. Stuur events via de SDK direct vanuit je app of website, met user_id gekoppeld aan je auth-systeem. Combineer met Segment of Rudderstack als je events naar meerdere destinations wil sturen. Vermijd dubbele tracking via GTM én Amplitude SDK — dat geeft drift in cijfers.",
+    "pitfalls": [
+      "Events tracken zonder een schema-document — binnen 6 maanden heb je 'button_clicked' op 50 verschillende manieren",
+      "Charts bouwen zonder cohort-segmentatie — gemiddelde verbergt dat power-users alles trekken",
+      "Amplitude koppelen aan marketing-attributie zonder te beseffen dat platform-data over conversies daar niet zit",
+      "Pricing-tier overschrijden zonder alert — Amplitude factuur kan onverwacht oplopen bij events-explosion"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "bigquery": {
+    "stevinAngle": "BigQuery is geen analytics-tool; het is een datawarehouse. Het wordt verkocht als 'voor data-analisten' maar de praktische waarde voor marketing zit in één ding: je kunt GA4-data, CRM-data, ad-spend-data en business-data joinen in queries die je nergens anders kunt draaien. We koppelen GA4 standaard aan BigQuery (gratis voor de meeste accounts, kost cents per query) en bouwen daar de echte attributie-vragen op. Zonder BigQuery werk je in losse silo's; mét werk je in één SQL-laag.",
+    "stackImpact": "Voor je stack: GA4-export naar BigQuery dagelijks (gratis tot 1M events/dag), exports vanuit Stripe/HubSpot/Salesforce via Fivetran of Airbyte, en visualisatie via Looker Studio of Metabase. Storage is goedkoop (cents per GB), queries kosten alleen geld bij grote scans. Reken vooraf in: complexe joins op 100GB+ kosten richting €5-20 per query, dus optimaliseer met partitionering en clustering.",
+    "pitfalls": [
+      "SELECT * draaien op grote tabellen — een onbedoelde query kan €50+ kosten",
+      "Geen partitionering op date-velden — query-kosten exploderen bij historische analyses",
+      "Looker Studio rechtstreeks op live BigQuery laten querieën — dashboards traag en kostbaar, beter via materialized views",
+      "Service-accounts geen scoped permissions geven — een gecompromitteerde key kan je hele warehouse exporteren"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
   "google-ads": {
     "stevinAngle": "Google Ads is in 80 procent van de accounts die wij overnemen niet kapot, maar verkeerd uitgelezen. Het dashboard toont conversies die niet door Google zijn veroorzaakt: branded search die toch al was gebeurd, retargeting van warm verkeer, vergelijkers die de aankoop al hadden binnengehaald. Wij draaien standaard een geo-test of holdout binnen de eerste maand, om te meten wat er echt extra binnenkomt versus wat zonder Google Ads ook was geconverteerd. De cijfers die uit zo'n test komen wijken structureel 20 tot 40 procent af van wat het Google-dashboard zelf rapporteert.",
     "stackImpact": "Voor je stack betekent dit: koppel Google Ads aan een externe baseline (CRM, P&L of een holdout-segment), niet alleen aan Google's eigen conversie-API. Wij sturen leads via server-side tagging direct naar je CRM met Click ID, zodat je per lead kunt herleiden welk zoekwoord, welke campagne en welke ad het opleverde. Daarna meten we klantwaarde door tot 12 maanden na de eerste klik. Pas dan zie je welke campagnes echt klanten leveren in plaats van klikken.",
@@ -106,6 +139,83 @@
       "Predictive analytics gebruiken op accounts onder 10.000 klanten — model heeft te weinig data, voorspellingen zijn ruis",
       "Segments bouwen op 'Active in last 30 days' zonder te definiëren wat 'active' betekent — segment vervuilt snel",
       "Email-frequency over 3 per week zonder uitschrijf-triage — list churn versnelt, deliverability daalt"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "hotjar": {
+    "stevinAngle": "Hotjar is geen analytics-tool, het is een diagnose-tool. Je gebruikt het wanneer je weet dat conversies dalen maar niet weet waarom. Heatmaps, session recordings en surveys vertellen wat een dashboard niet kan: waar mensen klikken op niet-klikbare elementen, waar ze scrollen voorbij je belangrijkste CTA, waar ze stoppen op een formulier-veld. Wij draaien Hotjar bewust periodiek (twee weken per kwartaal) ipv permanent — anders verzuipt je team in 'interessant maar niet actiebaar' video-materiaal. Free-tier dekt 35 sessions per dag, voldoende voor diagnose-rondes.",
+    "stackImpact": "Combineer met je analytics-stack als bron van hypotheses, niet als hoofdmeting. Bij dalende conversie op een specifieke page eerst Hotjar aanzetten op die pagina, hypothese vormen, dan A/B-test bouwen om die hypothese te valideren. Surveys integreren met je CRM (via Zapier of native) zodat antwoorden gekoppeld zijn aan klant-segmenten, niet anoniem rondzweven.",
+    "pitfalls": [
+      "Recordings altijd-aan laten staan — privacy-risico (PII in formulieren) en team kijkt nooit terug",
+      "Heatmap interpreteren als kwantitatieve data — 100 sessions is geen statistisch valide sample",
+      "Surveys op elke page tonen — survey-fatigue, response rate stort in",
+      "Cookie-consent niet correct geïmplementeerd — Hotjar plaatst cookies vóór toestemming, AVG-overtreding"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "looker-studio": {
+    "stevinAngle": "Looker Studio (vroeger Data Studio) is gratis en flexibel, maar dat heeft een prijs: trage dashboards, beperkte transformatie-mogelijkheden, en moeilijk te schalen voor meer dan een handvol data-sources. Voor MKB met basale rapportage-behoeften (GA4, Google Ads, GSC samengevoegd) is het prima. Voor multi-platform attribution of cross-tool dashboards loop je snel tegen limieten aan en moet je richting Tableau, Looker (de betaalde versie) of Metabase. Wij gebruiken het zelf voor klantrapportages; intern werken we in BigQuery + custom UI.",
+    "stackImpact": "Voor je stack: koppel altijd via een tussenlaag (BigQuery-views of een ETL-tool zoals Fivetran), niet rechtstreeks op live API's. Direct op GA4 connecten lijkt makkelijk maar dashboards worden traag en kwetsbaar voor API-changes. Bouw één template-dashboard en dupliceer per klant ipv 30 unieke dashboards die niemand bijhoudt.",
+    "pitfalls": [
+      "Sampled data in GA4-connector niet doorhebben — cijfers in dashboard kloppen niet met GA4-UI",
+      "Custom Fields gebruiken als calculaties die ook in BigQuery hadden gemoeten — performance daalt",
+      "Sharing-permissions losjes (Anyone with link) zetten — concurrent kan dashboard inzien",
+      "Dashboards rond een metric bouwen die later van naam verandert in de bron — refactoring is handwerk"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "mixpanel": {
+    "stevinAngle": "Mixpanel concurreert direct met Amplitude voor product-analytics. Het verschil ligt vooral in pricing-model en developer-ervaring. Mixpanel rekent per Monthly Tracked User (MTU), Amplitude per event. Voor apps met veel events per user is Mixpanel goedkoper, voor apps met veel users en weinig events is Amplitude goedkoper. We zien teams die kiezen op basis van wat een collega ergens anders gebruikt heeft, niet op basis van hun event/user-ratio. Reken even uit voor je tekent.",
+    "stackImpact": "Voor je stack: stuur events via de SDK direct, met user.identify() bij login om anonieme en bekende users te koppelen. Combineer met Segment of een eigen event-bus als je dezelfde events ook naar elders wil sturen (data-warehouse, attributie-tool). Funnel-analyses werken het beste als je events consistent benoemt in past tense ('signup_completed' niet 'complete signup'). Mixpanel's ingebouwde A/B-test-functionaliteit is OK maar niet vergelijkbaar met dedicated tools als Optimizely of GrowthBook.",
+    "pitfalls": [
+      "Anoniem en bekend tracken zonder identify-call op het juiste moment — user-journeys breken in tweeën",
+      "Events maken zonder properties — je kunt later niet meer filteren op product-tier of campagne",
+      "MTU laten oplopen door bots of test-accounts mee te tellen — pricing-tier explodeert onverwacht",
+      "Cohort-analyses bouwen op samples — Mixpanel sampled standaard bij grote queries, dat moet je expliciet uitzetten"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "segment": {
+    "stevinAngle": "Segment is een Customer Data Platform die in essentie één probleem oplost: je voorkomt dat je dezelfde event 15 keer moet tracken voor 15 tools. Eén SDK call → Segment routeert naar GA4, Mixpanel, Klaviyo, Facebook CAPI, etcetera. Voor groeiende companies is dit een instant win. Voor MKB met 3 tools is het overkill — directe integraties zijn dan goedkoper en eenvoudiger. Sinds Twilio Segment heeft gekocht is de pricing-structuur strenger geworden; reken vooraf in en let op MTU-grenzen.",
+    "stackImpact": "Voor je stack: Segment vervangt geen analytics-tool, het is een routeer-laag ervoor. Stuur events naar Segment, Segment fan-outt naar destinations. Belangrijkste discipline: één tracking-plan in een gedeeld document, één naming-convention voor events, en versioned schemas zodat een SDK-update niet stilletjes data breekt. Combineer met Protocols (Segment's eigen schema-validation) als je team groter wordt dan 5 developers.",
+    "pitfalls": [
+      "Same event van zowel client als server sturen — telt dubbel in destinations, attribution wordt onbetrouwbaar",
+      "Destinations toevoegen zonder budget-monitoring — kosten lopen op bij multi-platform fan-out",
+      "Geen tracking-plan onderhouden — events groeien organisch tot een chaotisch geheel",
+      "Personas-feature aanzetten zonder data-quality eerst op orde — segmenten zijn ruis"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "shopify": {
+    "stevinAngle": "Shopify is voor 80 procent van D2C-merken in 2026 het juiste platform. De resterende 20 procent zit in twee groepen: enterprise (kies Shopify Plus of een ander CMS), of niche (heel specifieke checkout-flows die Shopify niet ondersteunt). Wij zien teams die met WooCommerce begonnen en migreren naar Shopify omdat ze geen tijd meer hebben voor WordPress-onderhoud. Andersom zien we zelden. Belangrijkste keuze in Shopify-setup: themes ('Online Store 2.0' templates met sections), apps (zo min mogelijk — elke app verlangzaamt je site), en checkout-customization (alleen op Shopify Plus echt mogelijk).",
+    "stackImpact": "Voor je stack: Shopify integreert standaard met de meeste marketing-tools (Klaviyo, Meta, Google), maar pas op met Apps die hun eigen scripts toevoegen — dat is hoe een Shopify-site van 1.5s laadtijd naar 5s groeit. Reviews, fulfillment, abandoned cart-emails, alles via één gecureerde set apps in plaats van 30 die elkaar overlappen. Voor analytics: Shopify Analytics is OK als basis, maar voor echte attribution koppel naar GA4 + BigQuery + Klaviyo.",
+    "pitfalls": [
+      "Apps installeren en niet weer uninstallen — scripts blijven laden ook als je 'm niet gebruikt",
+      "Theme aanpassen zonder version control — de volgende theme-update overschrijft jouw werk",
+      "Standaard checkout gebruiken voor B2B met aparte BTW-regels — leidt tot foute facturatie",
+      "Shopify Payments niet uitzetten op markten waar Mollie of Adyen beter conversie geeft"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "woocommerce": {
+    "stevinAngle": "WooCommerce is geen e-commerce platform, het is een WordPress-plugin waarmee je e-commerce kunt doen. Dat onderscheid bepaalt waarvoor je 'm wel en niet kiest. Wel: wanneer je al WordPress draait voor content-marketing en de overlap waardevol is. Niet: wanneer je puur transactioneel bent. Onderhoud is structureel zwaarder dan Shopify (security-updates, plugin-conflicten, hosting-keuzes), kosten lijken lager maar tellen op. We migreren WooCommerce-shops naar Shopify gemiddeld 3 jaar na launch wanneer onderhoud-tijd niet meer in verhouding staat tot omzet.",
+    "stackImpact": "Voor je stack: hosting is cruciaal (Kinsta, WP Engine of een gespecialiseerde WooCommerce-host, niet generieke shared hosting). Plugin-discipline: WooCommerce Subscriptions, WooCommerce Memberships, een payment-plugin, een tax-plugin. Daarbovenop ALLE caching-plugins UIT zetten op /cart, /checkout, /my-account — anders krijgen klanten oude bestelgegevens te zien. SEO via Yoast of Rank Math, dezelfde hygiene als content-WordPress.",
+    "pitfalls": [
+      "Caching aan op transactionele pages — klanten zien checkout van een vorige bezoeker",
+      "Plugins updaten zonder staging — site valt uit bij conflict, soms uren downtime",
+      "Default WordPress login op /wp-admin laten staan — brute-force aanvallen op continu",
+      "GA4 tracking via een gratis plugin — vaak verouderd of buggy, conversies missen"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "zapier": {
+    "stevinAngle": "Zapier is in 2026 een prima 'duct tape' voor proces-automatisering tussen tools die elkaar niet native kennen. Voor MKB onder 100k zaps per maand is het kosten-efficiënt. Boven die schaal of voor business-critical workflows is Zapier risico (latency, single point of failure, debug is moeilijk wanneer een Zap break). We bouwen Zapier voor proof-of-concepts en migreren naar n8n (open source) of een eigen integratie wanneer een workflow business-critical wordt. Pricing: Free is 100 tasks/maand, gauw te weinig; Starter 750 tasks; Professional 2k voor de meeste MKB voldoende.",
+    "stackImpact": "Voor je stack: Zapier op de plekken waar het volume laag is en betrouwbaarheid niet kritiek (lead-routing, tag-sync tussen marketing-tools, Slack-notifications). Voor business-critical (factuur-generatie, payment-acknowledgement, GDPR-acties) bouw je 'm liever direct via API of een dedicated integration platform zoals n8n of Workato. Documenteer al je Zaps in een spreadsheet — anders weet niemand wat er draait wanneer Marja met vakantie is.",
+    "pitfalls": [
+      "Zaps stapelen tot een Rube Goldberg-machine — debug-tijd loopt op exponentieel",
+      "Tasks-limiet bereiken zonder alert — Zaps stoppen stilletjes, processen breken zonder dat iemand het merkt",
+      "Webhook-trigger gebruiken zonder retry-logic — failed events verdwijnen voor altijd",
+      "Filter-stap vergeten — Zap rent op elke trigger en consumeert tasks onnodig"
     ],
     "enrichedAt": "2026-05-05"
   }

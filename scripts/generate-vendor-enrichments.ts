@@ -41,7 +41,10 @@ interface VendorEnrichment {
 }
 
 const ENRICHMENTS_JSON = path.join(__dirname, '..', 'data', 'vendor-enrichments.json')
-const MODEL = 'claude-opus-4-7'
+// Sonnet 4.6 is voor deze taak (tone + concrete pitfalls produceren) ruim
+// voldoende. Opus 4.7 is overkill voor tekstgeneratie zonder redenering;
+// Sonnet kost ~5x minder en levert vergelijkbare kwaliteit.
+const MODEL = 'claude-sonnet-4-6'
 
 const PROMPT_TEMPLATE = `Je bent de redactie van Stevin Journal. Schrijf voor de volgende vendor unieke content voor de vendor-pagina op stevin.ai/integraties/{{SLUG}}. Volg deze regels strikt:
 
