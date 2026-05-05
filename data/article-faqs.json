@@ -1,1 +1,68 @@
-{}
+{
+  "95-procent-ai-pilots-mislukt": [
+    {
+      "question": "Wat zegt het MIT-rapport NANDA precies over AI-pilots?",
+      "answer": "Het MIT NANDA-onderzoek (april 2026) volgde 312 generative-AI pilots in marketingorganisaties over twaalf maanden. 95 procent haalde nooit de productiefase. In 88 procent van de pilots leverden de modellen wel meetbare output binnen vier weken. Wat faalde, lag dus niet aan de modellen."
+    },
+    {
+      "question": "Wat is dan de echte oorzaak dat AI-pilots mislukken?",
+      "answer": "Volgens NANDA gaat slechts 14 procent van de mislukkingen over modelkwaliteit. 34 procent faalt op het ontbreken van een baseline (geen referentie om met te vergelijken), 47 procent op het ontbreken van een feedback-loop terug naar P&L of conversie. Bij elkaar 81 procent: de meetinfrastructuur, niet de intelligence."
+    },
+    {
+      "question": "Wat is de meetlat-discrepantie?",
+      "answer": "Het verschil tussen wat een marketingplatform zegt dat het oplevert, en wat je in je P&L terugziet. Het MIT-rapport noemt dit de 'attribution gap'. Volgens NANDA overdrijven gen-AI tools hun eigen impact gemiddeld met een factor 3,4 vergeleken met onafhankelijke uplift-tests."
+    },
+    {
+      "question": "Welke vragen moet je aan een AI-vendor stellen voor je tekent?",
+      "answer": "Vier: op welke baseline meten we de uplift, hoe vaak laat je geo-test of holdout-meting toe, wat gebeurt er met je dashboard als ik de campagne een week uitzet, en wie bezit de meetdata. Een goede vendor verwelkomt deze vragen. Bij drie of meer ontwijkende antwoorden: weglopen."
+    },
+    {
+      "question": "Werken die 5 procent geslaagde pilots beter dan handmatige campagnes?",
+      "answer": "Ja, gemiddeld 4,2 keer hogere ROI dan handmatig opgezette campagnes. Maar het verschil zit niet in de technologie. Het zit in de meetstructuur eromheen: een baseline, een feedback-loop, en een onafhankelijke meting van oorzaak en gevolg."
+    }
+  ],
+  "autonome-agents-90-dagen": [
+    {
+      "question": "Wat doet een AI-agent bij DHL precies?",
+      "answer": "DHL Supply Chain noemt drie taken: afspraken inplannen met chauffeurs, achteraan e-mailen wanneer een rit niet binnenkomt, en bij urgente magazijn-issues de juiste mensen op de juiste plek krijgen. Volgens DHL-persbericht van 11 november 2025 verwerkt één agent honderdduizenden e-mails en miljoenen telefoonminuten per jaar."
+    },
+    {
+      "question": "Wat is het verschil tussen een dashboard en een agent?",
+      "answer": "Een dashboard toont, een agent handelt. Een dashboard wacht op input, een agent leest een binnenkomende e-mail of voicemail en weet wat er staat. Een dashboard rapporteert achteraf, een agent praat terug via dezelfde kanalen waar de chauffeur of klant al op zit."
+    },
+    {
+      "question": "Hoeveel bedrijven gebruiken agentic AI in supply chain?",
+      "answer": "In 2025 ongeveer 5 procent volgens Gartner (mei 2025). Gartner verwacht dat dit groeit naar 60 procent in 2030. Tegelijk voorspelt datzelfde Gartner (juni 2025) dat meer dan 40 procent van agentic AI-projecten vóór eind 2027 wordt afgeblazen om kosten of zwakke business case."
+    },
+    {
+      "question": "Wat moet je over 90 dagen meten bij een agent-pilot?",
+      "answer": "Vier dingen elke twee weken: latency (hoe snel reageert de agent in seconden), override-rate (hoe vaak grijpt een mens in om output te corrigeren), exception-rate (hoe vaak escaleert de agent naar een mens, gezond is 5-15 procent), en payback (bespaarde uren maal uurprijs gedeeld door vendor-fee plus integratie-uren)."
+    },
+    {
+      "question": "Wat is de Convoy-les voor wie nu een agent-pilot start?",
+      "answer": "Het Amerikaanse digitale freight-bedrijf Convoy ging dicht in oktober 2023, ondanks meer dan een miljard dollar funding en goede technologie. Wat het niet had: vrachtwagens, drop networks of exclusieve capaciteit. Voor agent-pilots: koppel de agent aan een bestaand proces dat al draait. Een agent vergroot een bestaand systeem, hij vervangt geen markt."
+    }
+  ],
+  "last-click-is-een-gewoonte": [
+    {
+      "question": "Waarom verdwijnt last-click niet ondanks dat iedereen weet dat het niet klopt?",
+      "answer": "Omdat het past in hoe teams sturen. Performance-marketeers krijgen targets op CPA of ROAS, kanaalmanagers verdedigen hun budget, bureaus rapporteren per kanaal, finance wil een concreet getal. Last-click geeft elke week antwoord op 'wat heeft het opgeleverd'. Het past in het vergaderritme, daarom blijft het."
+    },
+    {
+      "question": "Wat is dan het probleem met last-click meten?",
+      "answer": "Last-click verdeelt credit, maar meet geen effect. Het wijst alle waarde toe aan het laatste meetbare contact, zonder te kijken wat er was gebeurd zonder dat contact. Een Facebook-studie van Gordon, Zettelmeyer, Bhargava en Chapsky (Marketing Science) liet zien: zelfs met 1,6 miljard ad impressions verschillen observationele methodes systematisch van gerandomiseerde experimenten."
+    },
+    {
+      "question": "Wat zegt onderzoek over hoe marketing écht werkt?",
+      "answer": "Drie lijnen wijzen dezelfde kant op. Binet en Field (IPA): 60 procent merkbouw, 40 procent activatie. Ehrenberg-Bass: groei via penetratie, niet via funnel-optimalisatie. Nielsen: per kwartaal zonder advertising verliest een merk 2 procent toekomstige omzet, herstel duurt drie tot vijf jaar. Last-click ziet die effecten niet."
+    },
+    {
+      "question": "Welke meetstack zou je dan moeten bouwen?",
+      "answer": "Vier lagen. Eén: operationele attributie (last-click voor debugging, niet budget). Twee: uplift-tests (geo, holdout, audience-split — vooral op kanalen die last-click overschat). Drie: Marketing Mix Modeling voor de budgetvraag. Vier: brand tracking voor wat last-click niet ziet (bekendheid, overweging, voorkeur)."
+    },
+    {
+      "question": "Maakt Google Meridian MMM nu wel toegankelijk voor MKB?",
+      "answer": "Het verlaagt de softwaredrempel: open source, gratis, expliciet ontworpen voor causale schatting via geo-level modeling en kalibratie met experimenten. Maar Google adviseert minimaal twee jaar wekelijkse data voor geo-modellen, drie jaar voor national-level, en max 20 kanalen. Open source haalt het 'te duur' deels weg, maar vervangt geen datadiscipline."
+    }
+  ]
+}

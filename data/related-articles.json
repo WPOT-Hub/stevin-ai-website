@@ -1,1 +1,42 @@
-{}
+{
+  "95-procent-ai-pilots-mislukt": [
+    "autonome-agents-90-dagen",
+    "last-click-is-een-gewoonte",
+    "mmm-is-een-hypothese"
+  ],
+  "autonome-agents-90-dagen": [
+    "95-procent-ai-pilots-mislukt",
+    "last-click-is-een-gewoonte",
+    "us-defense-ai-deals-zonder-anthropic"
+  ],
+  "certe-mijnadviseur-chatgpt-koppeling": [
+    "us-defense-ai-deals-zonder-anthropic",
+    "autonome-agents-90-dagen",
+    "spotify-ai-muziek-verificatie"
+  ],
+  "last-click-is-een-gewoonte": [
+    "mmm-is-een-hypothese",
+    "95-procent-ai-pilots-mislukt",
+    "autonome-agents-90-dagen"
+  ],
+  "mmm-is-een-hypothese": [
+    "last-click-is-een-gewoonte",
+    "95-procent-ai-pilots-mislukt",
+    "autonome-agents-90-dagen"
+  ],
+  "oscars-ai-acteerprestaties-niet-toegestaan": [
+    "spotify-ai-muziek-verificatie",
+    "us-defense-ai-deals-zonder-anthropic",
+    "95-procent-ai-pilots-mislukt"
+  ],
+  "spotify-ai-muziek-verificatie": [
+    "oscars-ai-acteerprestaties-niet-toegestaan",
+    "certe-mijnadviseur-chatgpt-koppeling",
+    "95-procent-ai-pilots-mislukt"
+  ],
+  "us-defense-ai-deals-zonder-anthropic": [
+    "certe-mijnadviseur-chatgpt-koppeling",
+    "autonome-agents-90-dagen",
+    "95-procent-ai-pilots-mislukt"
+  ]
+}
