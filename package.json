@@ -9,7 +9,8 @@
     "lint": "next lint",
     "indexnow": "npx tsx scripts/indexnow.ts",
     "validate:schema": "npx tsx scripts/validate-jsonld.ts",
-    "faq:generate": "npx tsx scripts/generate-faqs.ts"
+    "faq:generate": "npx tsx scripts/generate-faqs.ts",
+    "related:generate": "npx tsx scripts/generate-related.ts"
   },
   "dependencies": {
     "lucide-react": "^1.7.0",

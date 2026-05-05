@@ -180,7 +180,23 @@ export function getArticle(slug: string) {
   return articles.find((a) => a.slug === slug)
 }
 
+/**
+ * Related-articles per slug — primair LLM-gekozen op topic-overlap.
+ * Genereren met `npm run related:generate`. Fallback wanneer geen
+ * mapping bestaat: eerste N andere artikelen (oude gedrag).
+ */
+import relatedMapping from './related-articles.json'
+const RELATED: Record<string, string[]> = relatedMapping as Record<string, string[]>
+
 export function getRelatedArticles(currentSlug: string, count = 3) {
+  const explicit = RELATED[currentSlug]
+  if (explicit && explicit.length > 0) {
+    const matched = explicit
+      .map((slug) => articles.find((a) => a.slug === slug))
+      .filter((a): a is Article => Boolean(a))
+    if (matched.length > 0) return matched.slice(0, count)
+  }
+  // Fallback — willekeurige 3 anderen
   return articles.filter((a) => a.slug !== currentSlug).slice(0, count)
 }
 
