@@ -43,39 +43,6 @@
     ],
     "enrichedAt": "2026-05-05"
   },
-  "meta-ads": {
-    "stevinAngle": "Meta Ads heeft sinds iOS 14 een meetprobleem dat door de meeste accounts wordt verstopt achter Conversions API en geavanceerde modelering. De realiteit: 30 tot 50 procent van de getoonde conversies in Ads Manager is gemodelleerd, niet gemeten. Wij implementeren server-side Conversions API standaard, maar geloven het cijfer pas na een onafhankelijke uplift-meting. Op accounts waar dat is gedaan, blijkt Meta vaak sterker op upper-funnel awareness en zwakker op directe conversie dan het dashboard suggereert.",
-    "stackImpact": "Conversions API is geen optie meer, het is de basis. Daarbovenop koppel je lead forms direct aan je CRM zodat de 24-uurs follow-up automatisch start (Meta-leads die niet binnen 5 minuten worden gebeld, converteren 8x lager). Voor jouw rapportage: scheid 'Meta-attributed conversies' van 'CRM-attributed klanten' in dashboards. De gap daartussen is je echte werk.",
-    "pitfalls": [
-      "Lead forms gebruiken zonder real-time webhook naar CRM — leads koelen binnen een uur fors af",
-      "Conversies optimaliseren op 'Lead' event in plaats van op gekwalificeerde-lead-event uit je CRM",
-      "Lookalike-audiences bouwen op een seedlist van minder dan 1000 klanten — model heeft te weinig signaal",
-      "ASC (Advantage+ Shopping Campaigns) draaien zonder controle of het ook bestaande kopers cannibalizeert"
-    ],
-    "enrichedAt": "2026-05-05"
-  },
-  "linkedin-ads": {
-    "stevinAngle": "LinkedIn Ads heeft de hoogste cost-per-click in de markt en de beste targeting per functietitel of bedrijfsgrootte — beide kloppen. Wat de meeste accounts missen: de attributiewindow van LinkedIn is 30 dagen en B2B-cycli zijn 3 tot 9 maanden. Een lead die zes weken na de eerste impressie via Google binnenkomt, krijgt nul credit van LinkedIn maar werd er wel door geactiveerd. Wij meten LinkedIn niet op conversies binnen 30 dagen, we meten op pipeline-influence over de hele deal-cyclus.",
-    "stackImpact": "Voor B2B betekent dit: koppel LinkedIn aan je CRM op company-niveau (matched audiences blokkeren, lead-routering naar BDR's, opportunity-tagging). Pas dan zie je dat een LinkedIn-touchpoint vaak niet de 'last click' is maar wel de 'first touch' die de hele deal mogelijk maakte. Combineer met Bombora of 6sense voor intent-data zodat je weet wanneer een doelaccount actief in-market is.",
-    "pitfalls": [
-      "ROAS meten over een 30-dagen window terwijl je sales-cyclus 6 maanden is",
-      "Lead Gen Forms gebruiken zonder enrichment-stap — je krijgt naam en email, maar geen functie of bedrijfssize",
-      "Sponsored InMail aan koud verkeer sturen — opt-out rates 80 procent+, schaadt long-term match-rate",
-      "Targeting op functietitel zonder seniority-filter — junior medewerkers in de funnel die nooit beslissen"
-    ],
-    "enrichedAt": "2026-05-05"
-  },
-  "tiktok-ads": {
-    "stevinAngle": "TikTok Ads werkt voor de doelgroepen waar het werkt en niet voor de doelgroepen waar het niet werkt. Klinkt flauw, is in de praktijk wel zo: voor merken met 18-34 publiek presteert het sterk op cost-per-acquisition, voor B2B of 50+ doelgroepen is het symbolisch. We zien teams die TikTok draaien omdat 'het zo hoort' zonder te checken of hun doelgroep er überhaupt is. Eerste stap is altijd: meet of jouw kopers er zitten, niet of jouw concurrenten erop adverteren.",
-    "stackImpact": "Events API moet aan, anders verlies je 40 procent van je conversiedata door iOS- en privacy-restricties. Daarnaast: TikTok-creatives leven 3 tot 7 dagen voordat ze creative-fatigue krijgen. Plan een productie-cadans van minimaal 5 nieuwe creatives per week, anders raakt je account in een neerwaartse spiraal binnen een maand. Wij koppelen creative-performance terug naar de creative-makers met automatische rapportages per asset.",
-    "pitfalls": [
-      "Eén ad set draaien tot het niet meer werkt in plaats van 5 creatives parallel met natuurlijke selectie",
-      "Spark Ads niet gebruiken voor creators die je al organisch volgt — gemiste hefboom",
-      "Web-conversies optimaliseren in een markt waar 70 procent van je publiek native binnen TikTok converteert",
-      "Lookalike audiences bouwen op alle siteverkeer in plaats van op klanten — model krijgt verkeerd signaal"
-    ],
-    "enrichedAt": "2026-05-05"
-  },
   "google-analytics-4": {
     "stevinAngle": "GA4 is in de meeste accounts technisch geïnstalleerd maar fundamenteel verkeerd ingericht. Default-conversies tellen meestal niet wat je wil meten (bv. 'Generate Lead' bij een form-submit terwijl je echte conversie een gekwalificeerde lead in je CRM is). De data-sampling op grote properties verstopt detail dat juist betekenisvol is. Wij gebruiken GA4 als trafficbron-rapportage en gedragsanalyse, niet als attributie-bron voor budget-besluiten — voor dat laatste gaan we naar het CRM of een MMM.",
     "stackImpact": "Drie technische dingen die we standaard fixen: server-side Google Tag Manager voor tracking-betrouwbaarheid (cookieverlies van 20-40 procent halveren), aangepaste events die jouw funnel-stappen meten in plaats van Google's defaults, en BigQuery-koppeling zodat je data uit GA4 kunt joinen met CRM-data. Pas in BigQuery wordt GA4 een echte analyse-tool in plaats van een dashboard.",
@@ -98,6 +65,17 @@
     ],
     "enrichedAt": "2026-05-05"
   },
+  "hotjar": {
+    "stevinAngle": "Hotjar is geen analytics-tool, het is een diagnose-tool. Je gebruikt het wanneer je weet dat conversies dalen maar niet weet waarom. Heatmaps, session recordings en surveys vertellen wat een dashboard niet kan: waar mensen klikken op niet-klikbare elementen, waar ze scrollen voorbij je belangrijkste CTA, waar ze stoppen op een formulier-veld. Wij draaien Hotjar bewust periodiek (twee weken per kwartaal) ipv permanent — anders verzuipt je team in 'interessant maar niet actiebaar' video-materiaal. Free-tier dekt 35 sessions per dag, voldoende voor diagnose-rondes.",
+    "stackImpact": "Combineer met je analytics-stack als bron van hypotheses, niet als hoofdmeting. Bij dalende conversie op een specifieke page eerst Hotjar aanzetten op die pagina, hypothese vormen, dan A/B-test bouwen om die hypothese te valideren. Surveys integreren met je CRM (via Zapier of native) zodat antwoorden gekoppeld zijn aan klant-segmenten, niet anoniem rondzweven.",
+    "pitfalls": [
+      "Recordings altijd-aan laten staan — privacy-risico (PII in formulieren) en team kijkt nooit terug",
+      "Heatmap interpreteren als kwantitatieve data — 100 sessions is geen statistisch valide sample",
+      "Surveys op elke page tonen — survey-fatigue, response rate stort in",
+      "Cookie-consent niet correct geïmplementeerd — Hotjar plaatst cookies vóór toestemming, AVG-overtreding"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
   "hubspot": {
     "stevinAngle": "HubSpot is een CRM met marketing-tools eraan vast, niet andersom. Dat betekent dat de waarde zit in de pipeline-data en de automation, niet in het emailen-functie of het landingspage-builder. Wij zien teams die HubSpot kopen voor één feature en de rest aanzetten 'omdat het er toch is' — vervolgens versplinteren ze hun stack over HubSpot voor sommige dingen en andere tools voor andere dingen. Stevin's lijn: kies óf HubSpot voor de hele customer-journey óf gebruik 'm puur als CRM en bouw de rest om je beste tools heen.",
     "stackImpact": "Voor een schone HubSpot: properties opschonen (de meeste accounts hebben 200+ custom properties waarvan de helft nooit wordt gebruikt), workflows documenteren, en lifecycle-stages strikt definiëren. Daarna integraties: Stripe voor revenue-attributie, je adkanalen voor kanaal-touchpoints, en je website-CMS voor content-engagement. Pas dan worden HubSpot-rapportages betrouwbaar genoeg om beslissingen op te baseren.",
@@ -106,28 +84,6 @@
       "Workflows bouwen op enrollment-trigger zonder exit-criteria — contacten zitten vast in 8 workflows tegelijk",
       "MQL-definitie laten verworden tot 'iemand met een email' — sales kwaliteit zakt, marketing krijgt schuld",
       "HubSpot ads-tool gebruiken voor budget-besturing in plaats van Google/Meta-native — verliest features en data-granulariteit"
-    ],
-    "enrichedAt": "2026-05-05"
-  },
-  "salesforce": {
-    "stevinAngle": "Salesforce is geen tool die je aanzet, het is een platform dat je inricht. Het verschil: 6 weken implementatie versus 6 maanden, 50.000 versus 500.000 in totale kosten over jaar één. Wij zien geregeld accounts die 18 maanden in Salesforce-implementatie zitten zonder dat sales-data er beter van is geworden — meestal omdat scope-creep nooit is gestopt. Stevin's standpunt: als je geen toegewijd RevOps-iemand hebt die Salesforce kent, kies HubSpot. Salesforce wint op customization, verliest op time-to-value bij MKB.",
-    "stackImpact": "Voor de stack betekent dit: investeer in Salesforce-administratie als rol, niet als bijklus. Standaardobjecten goed inrichten (Lead, Contact, Account, Opportunity) is belangrijker dan 30 custom objects bouwen. Marketing-data komt binnen via de Marketing Cloud Account Engagement (vroeger Pardot) of via een custom integratie — beide zijn werk. Connect met je adkanalen via UTM-parameters die naar Lead Source mappen, niet via vage 'Multi-touch attribution'-tools.",
-    "pitfalls": [
-      "Custom fields op Lead niet syncen naar Contact bij convertering — historische data verdwijnt",
-      "Lead routing via Process Builder en Workflows en Apex tegelijk — niemand begrijpt nog wat er triggert",
-      "Validation rules zo strikt dat sales-team alle leads via 'override' aanmaakt — data wordt onbetrouwbaar",
-      "Reports baseren op formula fields die nightly worden herberekend — discrepanties tussen dashboards"
-    ],
-    "enrichedAt": "2026-05-05"
-  },
-  "mailchimp": {
-    "stevinAngle": "Mailchimp is in 2026 een prima entry-level tool en een slechte primair platform voor groeiende bedrijven. De grens ligt rond 10.000 contacten of 50 euro per maand: daaronder is Mailchimp goedkoop en simpel, daarboven betaal je voor features die je elders gratis krijgt. Wij migreren regelmatig van Mailchimp naar ActiveCampaign of Klaviyo wanneer een klant boven die drempel komt — het kost een week werk en bespaart structureel honderden per maand plus opent automation-mogelijkheden die Mailchimp niet biedt.",
-    "stackImpact": "Voor wie wel op Mailchimp blijft: gebruik tags in plaats van lists (lists lopen in elkaar, tags zijn flexibel), zet double opt-in standaard aan ondanks dat het je conversie-rate verlaagt (lange-termijn deliverability is belangrijker), en koppel met je site via de native API in plaats van Zapier-bruggetjes (sneller, betrouwbaarder, geen rate-limits). De API-koppeling is gratis en de meeste accounts gebruiken 'm niet.",
-    "pitfalls": [
-      "Audience-counter laten oplopen zonder uitschrijven van inactieve contacten — betaal je voor lege lijst",
-      "Templates herhaaldelijk dupliceren in plaats van één template + content-blocks — onderhoud wordt brand-inconsistent",
-      "Automations bouwen die in series staan in plaats van als trigger-based workflows — verkeerde getimde sends",
-      "Geen sending-domain authenticatie (DKIM/SPF/DMARC) — emails belanden in spam ondanks goede content"
     ],
     "enrichedAt": "2026-05-05"
   },
@@ -142,14 +98,14 @@
     ],
     "enrichedAt": "2026-05-05"
   },
-  "hotjar": {
-    "stevinAngle": "Hotjar is geen analytics-tool, het is een diagnose-tool. Je gebruikt het wanneer je weet dat conversies dalen maar niet weet waarom. Heatmaps, session recordings en surveys vertellen wat een dashboard niet kan: waar mensen klikken op niet-klikbare elementen, waar ze scrollen voorbij je belangrijkste CTA, waar ze stoppen op een formulier-veld. Wij draaien Hotjar bewust periodiek (twee weken per kwartaal) ipv permanent — anders verzuipt je team in 'interessant maar niet actiebaar' video-materiaal. Free-tier dekt 35 sessions per dag, voldoende voor diagnose-rondes.",
-    "stackImpact": "Combineer met je analytics-stack als bron van hypotheses, niet als hoofdmeting. Bij dalende conversie op een specifieke page eerst Hotjar aanzetten op die pagina, hypothese vormen, dan A/B-test bouwen om die hypothese te valideren. Surveys integreren met je CRM (via Zapier of native) zodat antwoorden gekoppeld zijn aan klant-segmenten, niet anoniem rondzweven.",
+  "linkedin-ads": {
+    "stevinAngle": "LinkedIn Ads heeft de hoogste cost-per-click in de markt en de beste targeting per functietitel of bedrijfsgrootte — beide kloppen. Wat de meeste accounts missen: de attributiewindow van LinkedIn is 30 dagen en B2B-cycli zijn 3 tot 9 maanden. Een lead die zes weken na de eerste impressie via Google binnenkomt, krijgt nul credit van LinkedIn maar werd er wel door geactiveerd. Wij meten LinkedIn niet op conversies binnen 30 dagen, we meten op pipeline-influence over de hele deal-cyclus.",
+    "stackImpact": "Voor B2B betekent dit: koppel LinkedIn aan je CRM op company-niveau (matched audiences blokkeren, lead-routering naar BDR's, opportunity-tagging). Pas dan zie je dat een LinkedIn-touchpoint vaak niet de 'last click' is maar wel de 'first touch' die de hele deal mogelijk maakte. Combineer met Bombora of 6sense voor intent-data zodat je weet wanneer een doelaccount actief in-market is.",
     "pitfalls": [
-      "Recordings altijd-aan laten staan — privacy-risico (PII in formulieren) en team kijkt nooit terug",
-      "Heatmap interpreteren als kwantitatieve data — 100 sessions is geen statistisch valide sample",
-      "Surveys op elke page tonen — survey-fatigue, response rate stort in",
-      "Cookie-consent niet correct geïmplementeerd — Hotjar plaatst cookies vóór toestemming, AVG-overtreding"
+      "ROAS meten over een 30-dagen window terwijl je sales-cyclus 6 maanden is",
+      "Lead Gen Forms gebruiken zonder enrichment-stap — je krijgt naam en email, maar geen functie of bedrijfssize",
+      "Sponsored InMail aan koud verkeer sturen — opt-out rates 80 procent+, schaadt long-term match-rate",
+      "Targeting op functietitel zonder seniority-filter — junior medewerkers in de funnel die nooit beslissen"
     ],
     "enrichedAt": "2026-05-05"
   },
@@ -164,6 +120,39 @@
     ],
     "enrichedAt": "2026-05-05"
   },
+  "mailchimp": {
+    "stevinAngle": "Mailchimp is in 2026 een prima entry-level tool en een slechte primair platform voor groeiende bedrijven. De grens ligt rond 10.000 contacten of 50 euro per maand: daaronder is Mailchimp goedkoop en simpel, daarboven betaal je voor features die je elders gratis krijgt. Wij migreren regelmatig van Mailchimp naar ActiveCampaign of Klaviyo wanneer een klant boven die drempel komt — het kost een week werk en bespaart structureel honderden per maand plus opent automation-mogelijkheden die Mailchimp niet biedt.",
+    "stackImpact": "Voor wie wel op Mailchimp blijft: gebruik tags in plaats van lists (lists lopen in elkaar, tags zijn flexibel), zet double opt-in standaard aan ondanks dat het je conversie-rate verlaagt (lange-termijn deliverability is belangrijker), en koppel met je site via de native API in plaats van Zapier-bruggetjes (sneller, betrouwbaarder, geen rate-limits). De API-koppeling is gratis en de meeste accounts gebruiken 'm niet.",
+    "pitfalls": [
+      "Audience-counter laten oplopen zonder uitschrijven van inactieve contacten — betaal je voor lege lijst",
+      "Templates herhaaldelijk dupliceren in plaats van één template + content-blocks — onderhoud wordt brand-inconsistent",
+      "Automations bouwen die in series staan in plaats van als trigger-based workflows — verkeerde getimde sends",
+      "Geen sending-domain authenticatie (DKIM/SPF/DMARC) — emails belanden in spam ondanks goede content"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "meta-ads": {
+    "stevinAngle": "Meta Ads heeft sinds iOS 14 een meetprobleem dat door de meeste accounts wordt verstopt achter Conversions API en geavanceerde modelering. De realiteit: 30 tot 50 procent van de getoonde conversies in Ads Manager is gemodelleerd, niet gemeten. Wij implementeren server-side Conversions API standaard, maar geloven het cijfer pas na een onafhankelijke uplift-meting. Op accounts waar dat is gedaan, blijkt Meta vaak sterker op upper-funnel awareness en zwakker op directe conversie dan het dashboard suggereert.",
+    "stackImpact": "Conversions API is geen optie meer, het is de basis. Daarbovenop koppel je lead forms direct aan je CRM zodat de 24-uurs follow-up automatisch start (Meta-leads die niet binnen 5 minuten worden gebeld, converteren 8x lager). Voor jouw rapportage: scheid 'Meta-attributed conversies' van 'CRM-attributed klanten' in dashboards. De gap daartussen is je echte werk.",
+    "pitfalls": [
+      "Lead forms gebruiken zonder real-time webhook naar CRM — leads koelen binnen een uur fors af",
+      "Conversies optimaliseren op 'Lead' event in plaats van op gekwalificeerde-lead-event uit je CRM",
+      "Lookalike-audiences bouwen op een seedlist van minder dan 1000 klanten — model heeft te weinig signaal",
+      "ASC (Advantage+ Shopping Campaigns) draaien zonder controle of het ook bestaande kopers cannibalizeert"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "microsoft-advertising": {
+    "stevinAngle": "Microsoft Advertising wordt door de meeste adverteerders behandeld als een kopie van Google Ads met een lagere CPC. Dat is begrijpelijk, maar het mist het punt. In de praktijk zien we bij klanten dat de gebruiksintentie op het Microsoft-netwerk merkbaar verschilt: een hoger aandeel desktop-sessies, een ouder publiek en een opmerkelijk sterke vertegenwoordiging van zakelijke beslissers via de integratie met LinkedIn-profieldata voor targeting. Dat maakt het kanaal voor B2B-klanten soms effectiever dan het volumecijfer doet vermoeden.\n\nWat wij bij implementaties constateren: de conversietracking in Microsoft Advertising is vaker misconfigureerd dan bij Google, simpelweg omdat het minder aandacht krijgt. Het gevolg is false confidence in de Google-data, terwijl een deel van de oorzaak-en-gevolg-keten zich op Bing afspeelt. We starten daarom altijd met een tracking-audit voordat we campagnes opschalen, ook als het account al 'live' is.",
+    "stackImpact": "Microsoft Advertising werkt het schoonst als je meetdata consistent is met Google Ads. Dat betekent in de praktijk: een gedeelde tagmanager-implementatie (Google Tag Manager of een equivalent), een CRM-koppeling als je offline conversies wilt importeren, en een unified rapportage-laag zoals Looker Studio of een datawarehouse waar beide platformen in landen. Automatisch importeren van Google Ads-campagnes werkt als startpunt, maar leidt zonder aanpassing tot suboptimale structuren. Reken op een aparte connectie voor je conversiedata en, als je Microsoft Clarity gebruikt, op een zinvolle koppeling met Advertising voor gedragsdata per campagne.",
+    "enrichedAt": "2026-05-05",
+    "pitfalls": [
+      "De 'import from Google Ads'-functie overschrijft standaard je bestaande biedstrategieën niet, waardoor je onbewust met incompatibele instellingen draait als je later handmatig aanpast.",
+      "Universal Event Tracking (UET) en Google-tags zijn niet uitwisselbaar: als je alleen een Google-tag installeert, registreert Microsoft Advertising geen enkele conversie, zonder foutmelding.",
+      "LinkedIn-targeting in Microsoft Advertising is beschikbaar als laag, maar verhoogt de minimale CPCs en verkleint het bereik sterk. Zonder volumecheck vooraf verbrand je budget op een te klein segment.",
+      "Auto-bidding in Microsoft Advertising heeft significant meer conversiedata nodig om te stabiliseren dan Google's Smart Bidding. Bij lage volumes stuurt het systeem op ruis in plaats van op signaal."
+    ]
+  },
   "mixpanel": {
     "stevinAngle": "Mixpanel concurreert direct met Amplitude voor product-analytics. Het verschil ligt vooral in pricing-model en developer-ervaring. Mixpanel rekent per Monthly Tracked User (MTU), Amplitude per event. Voor apps met veel events per user is Mixpanel goedkoper, voor apps met veel users en weinig events is Amplitude goedkoper. We zien teams die kiezen op basis van wat een collega ergens anders gebruikt heeft, niet op basis van hun event/user-ratio. Reken even uit voor je tekent.",
     "stackImpact": "Voor je stack: stuur events via de SDK direct, met user.identify() bij login om anonieme en bekende users te koppelen. Combineer met Segment of een eigen event-bus als je dezelfde events ook naar elders wil sturen (data-warehouse, attributie-tool). Funnel-analyses werken het beste als je events consistent benoemt in past tense ('signup_completed' niet 'complete signup'). Mixpanel's ingebouwde A/B-test-functionaliteit is OK maar niet vergelijkbaar met dedicated tools als Optimizely of GrowthBook.",
@@ -172,6 +161,28 @@
       "Events maken zonder properties — je kunt later niet meer filteren op product-tier of campagne",
       "MTU laten oplopen door bots of test-accounts mee te tellen — pricing-tier explodeert onverwacht",
       "Cohort-analyses bouwen op samples — Mixpanel sampled standaard bij grote queries, dat moet je expliciet uitzetten"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "pinterest-ads": {
+    "stevinAngle": "Pinterest positioneert zichzelf als het platform voor de inspiratiefase, maar in de praktijk zien we bij klanten dat de Pinterest Tag standaard veel te ruim vuurt. Zonder expliciete deduplicatie tegen Google Analytics of je CDP registreert Pinterest conversies die al elders zijn toegekend. Het gevolg is false confidence in je ROAS-cijfers. Wat we in projecten consequent doen: de Tag configureren met een strikte event-match quality, de API for Conversions koppelen naast de browsertag, en beide signalen reconciliëren in je rapportagelaag. Pas dan zie je het werkelijke beeld. Voor e-commerce klanten met een gemiddelde orderwaarde boven de 60 euro is Pinterest serieus te overwegen als discovery-kanaal, maar alleen als je productfeed dagelijks gesynchroniseerd is en je conversion windows in lijn zijn met je andere platformen. Zonder die basis meet je ruis.",
+    "stackImpact": "Pinterest Ads werkt pas goed als je een betrouwbare productfeed-pipeline hebt, bij voorkeur via een feedmanagementtool zoals Channable of DataFeedWatch die dagelijks naar de Pinterest Catalog pusht. Daarnaast heb je de Pinterest API for Conversions nodig als server-side aanvulling op de browsertag, wat een backend-koppeling vereist met je webshop of orderbeheersysteem. Wil je Pinterest-data serieus meenemen in je attributie, dan moet je datapijplijn naar je BI-tool of datawarehouse Pinterest als expliciete bron bevatten, anders verdwijnt het kanaal in de restcategorie.",
+    "enrichedAt": "2026-05-05",
+    "pitfalls": [
+      "De Pinterest Tag installeren zonder event deduplicatie tegenover je server-side koppeling leidt tot dubbelgetelde conversies en een ROAS die structureel te hoog uitvalt.",
+      "Een productfeed eenmalig uploaden zonder automatische synchronisatie zorgt voor verouderde prijzen en uitverkochte producten in je advertenties, wat je click-to-purchase ratio direct raakt.",
+      "Conversion windows op Pinterest staan standaard op 30 dagen voor klikken en 30 dagen voor views, wat bij korte funnels zorgt voor toewijzing die niet aansluit bij hoe jij je andere kanalen meet.",
+      "Campagnes optimaliseren op Pinterest's eigen conversie-rapportage zonder dit te spiegelen aan je webshop-data leidt tot budgetkeuzes op basis van cijfers die je intern niet kunt terugvinden."
+    ]
+  },
+  "salesforce": {
+    "stevinAngle": "Salesforce is geen tool die je aanzet, het is een platform dat je inricht. Het verschil: 6 weken implementatie versus 6 maanden, 50.000 versus 500.000 in totale kosten over jaar één. Wij zien geregeld accounts die 18 maanden in Salesforce-implementatie zitten zonder dat sales-data er beter van is geworden — meestal omdat scope-creep nooit is gestopt. Stevin's standpunt: als je geen toegewijd RevOps-iemand hebt die Salesforce kent, kies HubSpot. Salesforce wint op customization, verliest op time-to-value bij MKB.",
+    "stackImpact": "Voor de stack betekent dit: investeer in Salesforce-administratie als rol, niet als bijklus. Standaardobjecten goed inrichten (Lead, Contact, Account, Opportunity) is belangrijker dan 30 custom objects bouwen. Marketing-data komt binnen via de Marketing Cloud Account Engagement (vroeger Pardot) of via een custom integratie — beide zijn werk. Connect met je adkanalen via UTM-parameters die naar Lead Source mappen, niet via vage 'Multi-touch attribution'-tools.",
+    "pitfalls": [
+      "Custom fields op Lead niet syncen naar Contact bij convertering — historische data verdwijnt",
+      "Lead routing via Process Builder en Workflows en Apex tegelijk — niemand begrijpt nog wat er triggert",
+      "Validation rules zo strikt dat sales-team alle leads via 'override' aanmaakt — data wordt onbetrouwbaar",
+      "Reports baseren op formula fields die nightly worden herberekend — discrepanties tussen dashboards"
     ],
     "enrichedAt": "2026-05-05"
   },
@@ -194,6 +205,17 @@
       "Theme aanpassen zonder version control — de volgende theme-update overschrijft jouw werk",
       "Standaard checkout gebruiken voor B2B met aparte BTW-regels — leidt tot foute facturatie",
       "Shopify Payments niet uitzetten op markten waar Mollie of Adyen beter conversie geeft"
+    ],
+    "enrichedAt": "2026-05-05"
+  },
+  "tiktok-ads": {
+    "stevinAngle": "TikTok Ads werkt voor de doelgroepen waar het werkt en niet voor de doelgroepen waar het niet werkt. Klinkt flauw, is in de praktijk wel zo: voor merken met 18-34 publiek presteert het sterk op cost-per-acquisition, voor B2B of 50+ doelgroepen is het symbolisch. We zien teams die TikTok draaien omdat 'het zo hoort' zonder te checken of hun doelgroep er überhaupt is. Eerste stap is altijd: meet of jouw kopers er zitten, niet of jouw concurrenten erop adverteren.",
+    "stackImpact": "Events API moet aan, anders verlies je 40 procent van je conversiedata door iOS- en privacy-restricties. Daarnaast: TikTok-creatives leven 3 tot 7 dagen voordat ze creative-fatigue krijgen. Plan een productie-cadans van minimaal 5 nieuwe creatives per week, anders raakt je account in een neerwaartse spiraal binnen een maand. Wij koppelen creative-performance terug naar de creative-makers met automatische rapportages per asset.",
+    "pitfalls": [
+      "Eén ad set draaien tot het niet meer werkt in plaats van 5 creatives parallel met natuurlijke selectie",
+      "Spark Ads niet gebruiken voor creators die je al organisch volgt — gemiste hefboom",
+      "Web-conversies optimaliseren in een markt waar 70 procent van je publiek native binnen TikTok converteert",
+      "Lookalike audiences bouwen op alle siteverkeer in plaats van op klanten — model krijgt verkeerd signaal"
     ],
     "enrichedAt": "2026-05-05"
   },
