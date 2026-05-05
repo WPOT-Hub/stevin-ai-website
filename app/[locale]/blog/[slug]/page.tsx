@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Link } from '@/i18n/navigation'
 import { articles, getArticle, getRelatedArticles, type Article } from '@/data/articles'
+import { getArticleFaqs } from '@/data/faqs'
 import ReadingProgress from '@/components/blog/ReadingProgress'
 
 export async function generateStaticParams() {
@@ -85,12 +86,36 @@ export default async function ArticlePage({
     mainEntityOfPage: `https://stevin.ai/blog/${article.slug}`,
   }
 
+  // FAQPage schema — alleen wanneer er FAQs voor deze slug zijn gegenereerd.
+  // Doel: LLM-citation. Perplexity en ChatGPT gebruiken FAQPage als
+  // primaire structured-context bij retrieval. Ook bij blog-content zonder
+  // rich-result (Google geeft FAQ rich results alleen aan authority sites)
+  // helpt het schema voor AI-search.
+  const articleFaqs = getArticleFaqs(article.slug)
+  const faqSchema = articleFaqs
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: articleFaqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+      }
+    : null
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <ReadingProgress />
 
       {/* ── ARTICLE HEADER (text-only, editorial) ── */}

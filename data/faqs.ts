@@ -3,6 +3,26 @@ export interface FAQ {
   answer: string
 }
 
+/**
+ * FAQ-data per blog-post slug — voor FAQPage JSON-LD op editorials.
+ *
+ * Source-of-truth: `data/article-faqs.json` (genereren met `npm run faq:generate`).
+ * Handmatig editen van die JSON mag — het script overschrijft alleen
+ * slugs die opnieuw worden gegenereerd.
+ *
+ * Doel: LLM-citation. Perplexity, ChatGPT en Claude.ai gebruiken FAQPage
+ * structured data als primaire context-bron bij retrieval. Een artikel met
+ * 3-5 expliciete Q&A's wordt structureel vaker geciteerd.
+ */
+import articleFaqsData from './article-faqs.json'
+export const articleFaqs: Record<string, FAQ[]> = articleFaqsData as Record<string, FAQ[]>
+
+export function getArticleFaqs(slug: string): FAQ[] | null {
+  const list = articleFaqs[slug]
+  if (!list || list.length === 0) return null
+  return list
+}
+
 export const homepageFaqs: FAQ[] = [
   {
     question: 'Wat doet Stevin precies?',

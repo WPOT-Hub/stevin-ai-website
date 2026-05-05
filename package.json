@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "indexnow": "npx tsx scripts/indexnow.ts",
-    "validate:schema": "npx tsx scripts/validate-jsonld.ts"
+    "validate:schema": "npx tsx scripts/validate-jsonld.ts",
+    "faq:generate": "npx tsx scripts/generate-faqs.ts"
   },
   "dependencies": {
     "lucide-react": "^1.7.0",
@@ -18,6 +19,7 @@
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.93.0",
     "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",

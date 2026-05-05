@@ -24,6 +24,7 @@
  */
 
 import { articles } from '../data/articles'
+import { articleFaqs } from '../data/faqs'
 
 interface ArticleSchema {
   '@context': string
@@ -87,20 +88,40 @@ function validate(schema: ArticleSchema, slug: string): string[] {
   return errors.map((e) => `  • ${e}`)
 }
 
+function validateFaqs(slug: string): string[] {
+  const list = articleFaqs[slug]
+  if (!list || list.length === 0) return [] // Geen FAQs is OK, optioneel
+  const errors: string[] = []
+  if (list.length < 2) errors.push(`FAQPage heeft maar ${list.length} item — minimum 2 voor schema`)
+  if (list.length > 10) errors.push(`FAQPage heeft ${list.length} items — keep onder 10 voor relevantie`)
+  for (let i = 0; i < list.length; i++) {
+    const f = list[i]
+    if (!f.question || f.question.length < 8)
+      errors.push(`FAQ #${i + 1}: question te kort/leeg`)
+    if (!f.answer || f.answer.length < 20)
+      errors.push(`FAQ #${i + 1}: answer te kort (<20 chars)`)
+    if (f.answer && f.answer.length > 500)
+      errors.push(`FAQ #${i + 1}: answer te lang (${f.answer.length}>500 chars) — wordt niet door Google getoond`)
+  }
+  return errors.map((e) => `  • ${e}`)
+}
+
 const main = () => {
-  console.log(`[JSON-LD] valideer ${articles.length} artikel-schemas...`)
+  console.log(`[JSON-LD] valideer ${articles.length} artikel-schemas + FAQs...`)
   let totalErrors = 0
   for (const article of articles) {
     const schema = buildSchema(article)
     const errors = validate(schema, article.slug)
-    if (errors.length > 0) {
-      totalErrors += errors.length
+    const faqErrors = validateFaqs(article.slug)
+    const all = [...errors, ...faqErrors]
+    if (all.length > 0) {
+      totalErrors += all.length
       console.error(`✗ ${article.slug} (editie ${article.edition})`)
-      for (const e of errors) console.error(e)
+      for (const e of all) console.error(e)
     }
   }
   if (totalErrors === 0) {
-    console.log(`[JSON-LD] ✓ alle ${articles.length} artikelen valide`)
+    console.log(`[JSON-LD] ✓ alle ${articles.length} artikelen valide (incl. ${Object.keys(articleFaqs).length} FAQ-schemas)`)
     process.exit(0)
   } else {
     console.error(`[JSON-LD] ✗ ${totalErrors} issue(s) gevonden`)
