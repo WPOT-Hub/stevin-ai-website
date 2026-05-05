@@ -19,6 +19,8 @@
 import { articles } from '../data/articles'
 import { categories } from '../data/categories'
 import { integrations } from '../data/integrations'
+import { comparisons } from '../data/comparisons'
+import { glossary } from '../data/glossary'
 
 const HOST = 'stevin.ai'
 const KEY = 'f8320e5bf8a4f23276040719d8a9548f'
@@ -71,8 +73,29 @@ function buildAllIntegrationUrls(): string[] {
   ]
 }
 
+function buildAllComparisonUrls(): string[] {
+  const baseUrl = `https://${HOST}`
+  return [
+    `${baseUrl}/vergelijken`,
+    ...comparisons.map((c) => `${baseUrl}/vergelijken/${c.slug}`),
+  ]
+}
+
+function buildAllGlossaryUrls(): string[] {
+  const baseUrl = `https://${HOST}`
+  return [
+    `${baseUrl}/woordenboek`,
+    ...glossary.map((t) => `${baseUrl}/woordenboek/${t.slug}`),
+  ]
+}
+
 function buildAllUrls(): string[] {
-  return [...buildAllBlogUrls(), ...buildAllIntegrationUrls()]
+  return [
+    ...buildAllBlogUrls(),
+    ...buildAllIntegrationUrls(),
+    ...buildAllComparisonUrls(),
+    ...buildAllGlossaryUrls(),
+  ]
 }
 
 const main = async () => {
@@ -84,6 +107,10 @@ const main = async () => {
     urls = buildAllUrls()
   } else if (args[0] === '--integrations') {
     urls = buildAllIntegrationUrls()
+  } else if (args[0] === '--comparisons') {
+    urls = buildAllComparisonUrls()
+  } else if (args[0] === '--glossary') {
+    urls = buildAllGlossaryUrls()
   } else {
     urls = args
   }
