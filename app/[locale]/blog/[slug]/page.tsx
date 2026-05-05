@@ -176,9 +176,14 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === '95-procent-ai-pilots-mislukt' && (
             <ArticleMITBody />
           )}
-          {article.format === 'editorial' && article.slug !== '95-procent-ai-pilots-mislukt' && (
-            <ArticleStubBody article={article} />
+          {article.format === 'editorial' && article.slug === 'autonome-agents-90-dagen' && (
+            <ArticleAgentsBody />
           )}
+          {article.format === 'editorial' &&
+            article.slug !== '95-procent-ai-pilots-mislukt' &&
+            article.slug !== 'autonome-agents-90-dagen' && (
+              <ArticleStubBody article={article} />
+            )}
         </div>
       </article>
 
@@ -487,6 +492,172 @@ function ArticleMITBody() {
 
       <EndRule />
       <EndSig>&quot;Het is geen wonder. Het is Stevin.&quot; · Editie 014 / 052</EndSig>
+    </>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────
+   Editie 013 — Autonome agents in logistiek
+   ──────────────────────────────────────────────────────────── */
+function ArticleAgentsBody() {
+  return (
+    <>
+      <p className="lead-para">
+        DHL liet AI-agents van het Amerikaanse bedrijf HappyRobot vorig jaar honderdduizenden e-mails en miljoenen telefoonminuten per jaar afhandelen, volgens een persbericht van 11 november 2025. Gartner verwacht dat 60 procent van bedrijven met supply-chain-software in 2030 zulke agentic AI gebruikt. Vandaag is dat 5 procent. Tussen die twee cijfers ligt het echte verhaal.
+      </p>
+
+      <BodyFigure
+        tag="DHL · 2025"
+        stat="100k+"
+        statCap="e-mails per jaar door één agent. Plus miljoenen telefoonminuten. Volgens DHL Group, persbericht 11 november 2025."
+        edition="EDITIE 013 / 052 · AI &amp; AGENTS"
+        source="Bron: DHL Group press release (11 november 2025)"
+      />
+
+      <p>
+        Datzelfde Gartner publiceerde een maand later iets minder hoopvols: meer dan 40 procent van agentic-AI-projecten wordt vóór eind 2027 afgeblazen. Te dure pilots, te onduidelijke business cases, te zwakke risk-controls. De realiteit ligt ergens tussen de belofte en de teleurstelling, en het verschil zit niet in de modellen.
+      </p>
+
+      <H2 num="01">Wat een agent in DHL&apos;s warehouse écht doet</H2>
+
+      <p>
+        DHL Supply Chain noemt drie taken letterlijk in het persbericht: &quot;appointment scheduling, driver follow-up calls, and high-priority warehouse coordination&quot;. Vrij vertaald: afspraken inplannen met chauffeurs, achteraan e-mailen wanneer een rit niet op tijd binnenkomt, en bij urgente magazijn-issues de juiste mensen op de juiste plek krijgen. Werk dat normaal aan een planner of dispatcher hangt, en dat normaal in losse e-mails, telefoontjes en WhatsApp-berichten verzandt.
+      </p>
+
+      <p>
+        Het verschil met een dashboard zit in drie dingen. Een dashboard <strong>toont</strong>; een agent <strong>handelt</strong>. Een dashboard wacht op input; een agent leest een binnenkomende e-mail of voicemail en weet wat er staat. En een dashboard rapporteert achteraf; een agent praat terug, via dezelfde kanalen waar de chauffeur of klant al op zit.
+      </p>
+
+      <p>
+        HappyRobot, het bedrijf achter de DHL-agents, haalde in september 2025 $44 miljoen op en heeft volgens Reuters meer dan 70 enterprise-klanten, waaronder ook Ryder en Flexport. FedEx loopt iets minder ver maar mikt op meer dan de helft van zijn kernprocessen in agent-handen tegen 2028: network planning, customs clearance (al deels live), shipment coordination en customer support.
+      </p>
+
+      <PullQuote
+        text='"De agent rijdt geen vrachtwagen. Hij zorgt dat de vrachtwagen niet stilstaat."'
+        cite="Stevin Journal, redactie."
+      />
+
+      <H2 num="02">De drie cijfers die ertoe doen</H2>
+
+      <p>
+        Drie cijfers van Gartner en Bain vertellen samen het hele verhaal. Eén los geeft of marketing of doemdenken.
+      </p>
+
+      <Takeaways
+        label="HET RAAMWERK"
+        title="Wat agentic AI in 2030 wordt, en wat het in 2027 niet wordt"
+        items={[
+          {
+            pct: '60%',
+            text: (
+              <>
+                <b>De richting.</b> Aandeel bedrijven met supply-chain-software dat in 2030 agentic AI gebruikt. Vandaag 5 procent. (Gartner, mei 2025.)
+              </>
+            ),
+          },
+          {
+            pct: '40%',
+            text: (
+              <>
+                <b>De realiteit.</b> Aandeel agentic-AI-projecten dat vóór eind 2027 wordt afgeblazen door kosten, zwakke business case of onvoldoende controle. (Gartner, juni 2025.)
+              </>
+            ),
+          },
+          {
+            pct: '41%',
+            text: (
+              <>
+                <b>De waarheid in het midden.</b> Aandeel bedrijven dat positieve ROI haalt binnen twaalf maanden na een agent-deployment. 19 procent bereikt het nooit. (Bain, 2026.)
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <p>
+        Lees die 41 procent nog eens. Minder dan de helft van wie aan een agent begint, krijgt het binnen een jaar terugverdiend. Dat is geen verdoemenis. Het zegt dat een agent een serieuze investering is met een duidelijk faalpercentage, geen plug-and-play. Wie zonder strakke executie begint, zit waarschijnlijk in de 59 procent.
+      </p>
+
+      <H2 num="03">Wat je over 90 dagen meet</H2>
+
+      <p>
+        Negentig dagen is kort genoeg om snel duidelijk te krijgen of een agent werkt, en lang genoeg om voorbij de honeymoon-fase te kijken. Vier meetpunten zijn niet onderhandelbaar.
+      </p>
+
+      <Takeaways
+        label="HET MEETKADER"
+        title="Vier dingen die je elke twee weken meet"
+        items={[
+          {
+            pct: '01',
+            text: (
+              <>
+                <b>Latency.</b> Hoe snel reageert de agent op input? In seconden, niet in &quot;binnen werktijd&quot;. Een afspraakverzoek dat vier uur blijft liggen had een mens ook kunnen doen.
+              </>
+            ),
+          },
+          {
+            pct: '02',
+            text: (
+              <>
+                <b>Override-rate.</b> Hoe vaak grijpt een mens alsnog in om de output te corrigeren? Hoog cijfer betekent: de agent kost extra werk, niet minder.
+              </>
+            ),
+          },
+          {
+            pct: '03',
+            text: (
+              <>
+                <b>Exception-rate.</b> Hoe vaak escaleert de agent zélf naar een mens omdat &apos;ie het niet snapt? Een gezond cijfer ligt tussen 5 en 15 procent. Hoger: te ambitieus ingericht.
+              </>
+            ),
+          },
+          {
+            pct: '04',
+            text: (
+              <>
+                <b>Payback.</b> Aantal bespaarde uren maal interne uurprijs, gedeeld door maandelijkse vendor-fee plus integratie-uren. Onder 1 betaal je om er extra werk bij te krijgen.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <h3>De Convoy-les</h3>
+
+      <p>
+        In oktober 2023 ging Convoy dicht. Het Amerikaanse digitale freight-bedrijf had meer dan een miljard dollar opgehaald, een prima technologie-stack en een net AI-team. Wat het niet had: vrachtwagens, drop networks of exclusieve capaciteit. Toen de markt omsloeg, was er geen fysieke hefboom om op terug te vallen. De technologie was niet het probleem; het ontbreken van een operationeel netwerk eromheen was dat wel.
+      </p>
+
+      <p>
+        Voor wie in 2026 een agent-pilot start: koppel de agent aan een bestaand proces dat al draait. Geen nieuwe business unit, geen apart team, geen apart budget. Een agent vergroot een bestaand systeem of vervangt een bestaand stuk werk. Hij vervangt geen markt.
+      </p>
+
+      <Callout
+        big="~130"
+        label='Aantal vendors dat volgens Gartner echt "agentic AI" levert. Uit duizenden die de term gebruiken. De rest noemt RPA en chatbots opnieuw "agent".'
+      />
+
+      <p>
+        Gartner noemt het &quot;agent washing&quot;. Het is de versie van AI-washing die op dit moment plaatsvindt, en het maakt vendor-selectie het belangrijkste deel van een 90-dagen-pilot. Onder de oppervlakte zitten dan vaak workflow-tools die in 2019 al bestonden, met een nieuw frontje.
+      </p>
+
+      <H2 num="04">De praktische conclusie</H2>
+
+      <p>
+        De vraag voor 2026 is niet &quot;agents wel of niet&quot;. De richting (5 procent in 2025, 60 procent in 2030, volgens Gartner) is duidelijk genoeg. De vraag is: <strong>welke smalle taak bewijst zich in 90 dagen, met welke vendor, en wat is de meetlat?</strong>
+      </p>
+
+      <p>
+        DHL koos voor één duidelijk werkterrein, operationele communicatie met chauffeurs en magazijnen, en één vendor (HappyRobot). FedEx phaseert het in over jaren, met customs eerst. Bain&apos;s data laat zien dat externe partnerships ongeveer twee keer zo vaak slagen als interne builds. De boodschap: niet zelf bouwen, niet alles tegelijk, niet zonder meetkader.
+      </p>
+
+      <p>
+        Hou de vier cijfers van het meetkader bij. Latency, override-rate, exception-rate, payback. Als één daarvan 90 dagen lang de verkeerde kant op beweegt, weet je het: dit is de 19 procent die nooit positief eindigt. Beter daar in week 6 achter komen dan in maand 18.
+      </p>
+
+      <EndRule />
+      <EndSig>&quot;Wonder en is gheen wonder.&quot; · Editie 013 / 052</EndSig>
     </>
   )
 }
