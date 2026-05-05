@@ -23,6 +23,8 @@
  * Exit code 0 = alles ok, 1 = minstens één artikel heeft een issue.
  */
 
+import * as fs from 'node:fs'
+import * as path from 'node:path'
 import { articles } from '../data/articles'
 import { articleFaqs } from '../data/faqs'
 
@@ -106,9 +108,43 @@ function validateFaqs(slug: string): string[] {
   return errors.map((e) => `  • ${e}`)
 }
 
+/**
+ * Scan data files voor HTML-entities in JS-string-values. JSX decodeert
+ * &quot; en &apos; alleen in literal text, niet in {expression}. Inhoud
+ * uit data/ wordt vrijwel altijd via {var} gerendered, dus entities daar
+ * verschijnen letterlijk op de pagina. Voorkomt regressie.
+ */
+function checkDataFilesForEntities(): string[] {
+  const errors: string[] = []
+  const dataDir = path.join(__dirname, '..', 'data')
+  const files = fs.readdirSync(dataDir).filter((f) => f.endsWith('.ts') || f.endsWith('.json'))
+  const entityRe = /&(quot|apos|amp|lt|gt);/g
+  for (const file of files) {
+    const content = fs.readFileSync(path.join(dataDir, file), 'utf8')
+    const lines = content.split('\n')
+    lines.forEach((line, i) => {
+      const matches = line.match(entityRe)
+      if (matches) {
+        errors.push(`  • data/${file}:${i + 1} bevat ${matches.join(', ')} — gebruik echte chars (zie feedback_no_html_entities_in_js_strings.md)`)
+      }
+    })
+  }
+  return errors
+}
+
 const main = () => {
-  console.log(`[JSON-LD] valideer ${articles.length} artikel-schemas + FAQs...`)
+  console.log(`[JSON-LD] valideer ${articles.length} artikel-schemas + FAQs + data-files...`)
   let totalErrors = 0
+
+  // 1. HTML-entity scan op data files (voorkomt regressie van &quot;-bug)
+  const entityErrors = checkDataFilesForEntities()
+  if (entityErrors.length > 0) {
+    totalErrors += entityErrors.length
+    console.error(`✗ HTML-entities in data files (${entityErrors.length}):`)
+    for (const e of entityErrors) console.error(e)
+  }
+
+  // 2. Article + FAQ schema validatie
   for (const article of articles) {
     const schema = buildSchema(article)
     const errors = validate(schema, article.slug)

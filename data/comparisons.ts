@@ -67,7 +67,7 @@ export const comparisons: Comparison[] = [
     whenA:
       'Klaviyo wint zodra je serieus e-commerce doet. De product-feed-koppeling met Shopify (en WooCommerce, BigCommerce) werkt out-of-the-box: viewed product, added to cart, started checkout, post-purchase — alles trigger-baar zonder developer. Voor D2C-merken die op revenue per email sturen, is Klaviyo de standaard. De ingebouwde abandonment-flows leveren in onze data 30-40 procent van totale email-revenue, zonder dat iemand er meer naar omkijkt na de eerste setup. Voor wie SMS erbij wil: Klaviyo heeft het native, Mailchimp moet via een derde-partij integratie.',
     whenB:
-      'Mailchimp blijft sterk voor wie onder de 10.000 contacten zit en geen complexe automations nodig heeft. Onder die drempel is het simpelweg goedkoper en eenvoudiger. Voor dienstverleners (agencies, consultants, content-makers) zonder product-feed is een groot deel van Klaviyo&apos;s waarde verspild. Mailchimp&apos;s drag-and-drop builder en templates zijn voor nieuwsbrief-werk prima. Vermijden: Mailchimp&apos;s meer geavanceerde automation-features zijn niet vergelijkbaar met Klaviyo of ActiveCampaign — wie tegen die grens aanloopt, migreert sowieso.',
+      'Mailchimp blijft sterk voor wie onder de 10.000 contacten zit en geen complexe automations nodig heeft. Onder die drempel is het simpelweg goedkoper en eenvoudiger. Voor dienstverleners (agencies, consultants, content-makers) zonder product-feed is een groot deel van Klaviyo\'s waarde verspild. Mailchimp\'s drag-and-drop builder en templates zijn voor nieuwsbrief-werk prima. Vermijden: Mailchimp\'s meer geavanceerde automation-features zijn niet vergelijkbaar met Klaviyo of ActiveCampaign — wie tegen die grens aanloopt, migreert sowieso.',
     costs:
       'Mailchimp Free: 500 contacten, 1.000 sends per maand. Standard: $20/maand voor 500 contacten, schaalt op tot $1.700+ bij 100k contacten. Klaviyo: gratis tot 250 contacten en 500 sends. Daarboven start vanaf $20/maand voor 500 contacten en stijgt tot ongeveer $1.380 bij 50k contacten. Klaviyo is bij vergelijkbaar volume duurder dan Mailchimp, maar de ROI per contact ligt voor e-commerce structureel hoger.',
     stevinView:
@@ -86,7 +86,7 @@ export const comparisons: Comparison[] = [
       {
         question: 'Werkt Mailchimp ook voor Shopify?',
         answer:
-          'Technisch ja, maar de integratie is duidelijk minder diepgaand dan Klaviyo&apos;s. Product-recommendations en abandoned-cart-flows zijn beperkter. Voor een serieuze Shopify-shop is Klaviyo de logische keuze, niet Mailchimp.',
+          'Technisch ja, maar de integratie is duidelijk minder diepgaand dan Klaviyo\'s. Product-recommendations en abandoned-cart-flows zijn beperkter. Voor een serieuze Shopify-shop is Klaviyo de logische keuze, niet Mailchimp.',
       },
       {
         question: 'Heeft Klaviyo SMS ingebouwd?',
@@ -146,7 +146,7 @@ export const comparisons: Comparison[] = [
     tldr:
       'Tot 50 sales-medewerkers en standaard processen: HubSpot. Vanaf complexe sales-cycli, multi-product, multi-region: Salesforce. Zonder fulltime RevOps-iemand: kies HubSpot ongeacht groottre.',
     whenA:
-      'HubSpot wint op tijd-tot-waarde. Een team van 5-30 sales-medewerkers is binnen twee weken operationeel inclusief automation, deal-tracking en rapportages. De interface is intuïtief genoeg dat consultants &apos;m vrijwel zonder training gebruiken. Marketing-automation, CMS en service-desk zitten op hetzelfde platform — voor MKB die niet wil versplinteren tussen 4 tools is dat een groot voordeel. Pricing schaalt voorspelbaar mee. Beperking: bij sales-flows die echt afwijken van standaard (B2B met 18-maanden sales-cycli, multi-stakeholder approval, custom pricing per klant) loop je tegen HubSpot&apos;s limieten aan.',
+      'HubSpot wint op tijd-tot-waarde. Een team van 5-30 sales-medewerkers is binnen twee weken operationeel inclusief automation, deal-tracking en rapportages. De interface is intuïtief genoeg dat consultants \'m vrijwel zonder training gebruiken. Marketing-automation, CMS en service-desk zitten op hetzelfde platform — voor MKB die niet wil versplinteren tussen 4 tools is dat een groot voordeel. Pricing schaalt voorspelbaar mee. Beperking: bij sales-flows die echt afwijken van standaard (B2B met 18-maanden sales-cycli, multi-stakeholder approval, custom pricing per klant) loop je tegen HubSpot\'s limieten aan.',
     whenB:
       'Salesforce wint zodra je sales-proces niet in een standaard-template past. Custom objects, custom validation rules, custom workflows via Apex — wat je je ook voorstelt, Salesforce kan het. Voor enterprises met 50+ sales en complexe sales-cycli is het de standaard, juist omdat de flexibiliteit zo groot is. Maar die flexibiliteit heeft een prijs: zonder een toegewijde Salesforce-administrator (intern of extern) loopt elke implementatie binnen twee jaar uit op een rommelige config waar niemand meer doorheen kijkt. Reken op €40k-150k implementatie-kosten en daarna €40k-80k per jaar voor administrator + licenties.',
     costs:
@@ -186,7 +186,7 @@ export const comparisons: Comparison[] = [
     whenA:
       'Amplitude wint voor apps met laag event-volume per user. Free-tier: 10 miljoen events per maand zonder seat-limiet, ruim voor de meeste startups. De charts en dashboards zijn iets duidelijker dan Mixpanel voor wie minder dataervaring heeft. Cohort-analyses en retention zijn out-of-the-box krachtig. Amplitude wordt vaker gebruikt door product-managers omdat de interface meer op product-discoverability is gebouwd dan op marketing-funnels.',
     whenB:
-      'Mixpanel wint voor apps waar gebruikers veel events triggeren — gaming-apps, productivity-tools met veel acties per sessie, complexe SaaS-dashboards. Pricing op MTU (Monthly Tracked User) betekent dat je betaalt per actieve user, niet per actie die ze nemen. Voor apps met 10k MTU die elk 200 events doen, is Mixpanel structureel goedkoper dan Amplitude. Plus: Mixpanel&apos;s impact-analysis (oorzaak en gevolg tussen features) is iets sterker dan Amplitude&apos;s gelijkwaardige tool.',
+      'Mixpanel wint voor apps waar gebruikers veel events triggeren — gaming-apps, productivity-tools met veel acties per sessie, complexe SaaS-dashboards. Pricing op MTU (Monthly Tracked User) betekent dat je betaalt per actieve user, niet per actie die ze nemen. Voor apps met 10k MTU die elk 200 events doen, is Mixpanel structureel goedkoper dan Amplitude. Plus: Mixpanel\'s impact-analysis (oorzaak en gevolg tussen features) is iets sterker dan Amplitude\'s gelijkwaardige tool.',
     costs:
       'Amplitude Free: 10M events/maand, onbeperkte seats. Plus: vanaf $49/maand. Growth: custom pricing vanaf ongeveer $1.500/maand. Mixpanel Free: 1M events of 100k MTU. Growth: vanaf $24/maand voor 100k events, schaalt op MTU. Voor 10k MTU met 200 events/user/maand (= 2M events): Amplitude Plus dekt dat ruim, Mixpanel zit op Growth-tier rond $250-400/maand.',
     stevinView:
@@ -195,7 +195,7 @@ export const comparisons: Comparison[] = [
       {
         question: 'Welke tool heeft betere A/B-test-functionaliteit?',
         answer:
-          'Beide hebben experimentation-features, maar geen van beide vervangt een dedicated tool als Optimizely of GrowthBook. Voor serieuze experiment-programma&apos;s gebruik je Amplitude/Mixpanel voor analyse, een dedicated tool voor uitvoering.',
+          'Beide hebben experimentation-features, maar geen van beide vervangt een dedicated tool als Optimizely of GrowthBook. Voor serieuze experiment-programma\'s gebruik je Amplitude/Mixpanel voor analyse, een dedicated tool voor uitvoering.',
       },
       {
         question: 'Kunnen Amplitude of Mixpanel naar GA4 vervangen?',
@@ -224,16 +224,16 @@ export const comparisons: Comparison[] = [
     whenA:
       'Google Ads wint voor producten waar mensen actief naar zoeken. Branded search (jouw merknaam), category-search ("AI-marketing-tool", "boekhoudpakket MKB"), local search ("loodgieter Amsterdam") — Google vangt mensen op het moment dat ze al een vraag hebben. Voor B2B en gevestigde merken is dat vaak 50-70 procent van het budget. Performance Max werkt voor e-commerce maar consumeert ongeveer 30-40 procent branded search die je toch al had — gebruik bewust en sluit branded uit als je echte uplift wilt zien.',
     whenB:
-      'Meta Ads wint voor producten die mensen niet zelf opzoeken. Een nieuw skincare-merk, een nieuwe SaaS-feature, een lifestyle-product — niemand googelt daar specifiek op. Meta&apos;s targeting (interesses, look-alikes, retargeting) bouwt vraag op via creatieve content. Voor D2C-startups is Meta vaak 60-80 procent van het budget in jaar één, daarna verschuift het naar Google naarmate de naamsbekendheid groeit. Belangrijke caveat: Meta&apos;s eigen attribution overschat zichzelf systematisch — meet alleen op echte uplift via geo-test of holdout, niet op platform-rapportage.',
+      'Meta Ads wint voor producten die mensen niet zelf opzoeken. Een nieuw skincare-merk, een nieuwe SaaS-feature, een lifestyle-product — niemand googelt daar specifiek op. Meta\'s targeting (interesses, look-alikes, retargeting) bouwt vraag op via creatieve content. Voor D2C-startups is Meta vaak 60-80 procent van het budget in jaar één, daarna verschuift het naar Google naarmate de naamsbekendheid groeit. Belangrijke caveat: Meta\'s eigen attribution overschat zichzelf systematisch — meet alleen op echte uplift via geo-test of holdout, niet op platform-rapportage.',
     costs:
-      'Beide platforms werken op auction-pricing, dus &quot;kost&quot; per platform varieert sterk. Indicaties voor Nederland: Google Search CPC €0,80-€8 (afhankelijk van categorie). Meta CPM €4-€18 (afhankelijk van doelgroep en creatief). Voor een typisch MKB-D2C-budget van €5k/maand: ongeveer 1.500-3.000 conversies via Meta vs 200-800 via Google Search. Maar conversie-waarde verschilt: Google-conversies zijn vaak hoger-intent dus hogere AOV.',
+      'Beide platforms werken op auction-pricing, dus "kost" per platform varieert sterk. Indicaties voor Nederland: Google Search CPC €0,80-€8 (afhankelijk van categorie). Meta CPM €4-€18 (afhankelijk van doelgroep en creatief). Voor een typisch MKB-D2C-budget van €5k/maand: ongeveer 1.500-3.000 conversies via Meta vs 200-800 via Google Search. Maar conversie-waarde verschilt: Google-conversies zijn vaak hoger-intent dus hogere AOV.',
     stevinView:
       'De praktijk: 80 procent van accounts die wij overnemen heeft te weinig Google budget allocated — branded search is meestal te low maar vangt soms 70 procent van warme conversies. Tegelijk overschat Meta zichzelf in dashboards met 30-50 procent door modeled conversies. De juiste budget-verdeling tussen de twee komt niet uit platform-attributie, maar uit een uplift-meting. Wij draaien op alle nieuwe accounts binnen het eerste kwartaal een geo-test of holdout op zowel Google als Meta — uitkomsten wijken structureel 20-40 procent af van wat de platforms zelf rapporteren. Pas dan kun je serieus over budget-allocatie praten.',
     faqs: [
       {
         question: 'Welk kanaal heeft betere ROI?',
         answer:
-          'Hangt volledig af van product, markt en awareness-niveau. Voor zoek-intentieproducten (B2B-tools, services, lokaal) is Google&apos;s ROI doorgaans hoger. Voor visueel D2C en lifestyle-merken is Meta&apos;s ROI vaak beter, vooral in vroege fase. Een uplift-test op beide platforms is de enige manier om voor jouw bedrijf zeker te weten welke beter presteert.',
+          'Hangt volledig af van product, markt en awareness-niveau. Voor zoek-intentieproducten (B2B-tools, services, lokaal) is Google\'s ROI doorgaans hoger. Voor visueel D2C en lifestyle-merken is Meta\'s ROI vaak beter, vooral in vroege fase. Een uplift-test op beide platforms is de enige manier om voor jouw bedrijf zeker te weten welke beter presteert.',
       },
       {
         question: 'Moet ik beide platforms gebruiken of kan ik één kiezen?',
