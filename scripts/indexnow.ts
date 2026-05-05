@@ -17,6 +17,8 @@
  */
 
 import { articles } from '../data/articles'
+import { categories } from '../data/categories'
+import { integrations } from '../data/integrations'
 
 const HOST = 'stevin.ai'
 const KEY = 'f8320e5bf8a4f23276040719d8a9548f'
@@ -61,9 +63,30 @@ function buildAllBlogUrls(): string[] {
   return articles.map((a) => `${baseUrl}/blog/${a.slug}`)
 }
 
+function buildAllIntegrationUrls(): string[] {
+  const baseUrl = `https://${HOST}`
+  return [
+    ...categories.map((c) => `${baseUrl}/integraties/${c.slug}`),
+    ...integrations.map((i) => `${baseUrl}/integraties/${i.slug}`),
+  ]
+}
+
+function buildAllUrls(): string[] {
+  return [...buildAllBlogUrls(), ...buildAllIntegrationUrls()]
+}
+
 const main = async () => {
   const args = process.argv.slice(2)
-  const urls = args.length > 0 ? args : buildAllBlogUrls()
+  let urls: string[]
+  if (args.length === 0) {
+    urls = buildAllBlogUrls()
+  } else if (args[0] === '--all') {
+    urls = buildAllUrls()
+  } else if (args[0] === '--integrations') {
+    urls = buildAllIntegrationUrls()
+  } else {
+    urls = args
+  }
   await submitToIndexNow(urls)
 }
 
