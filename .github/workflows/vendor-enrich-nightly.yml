@@ -107,5 +107,4 @@ jobs:
 
           Goedkeuring → squash + merge → CLI deploy via \`npx vercel --prod --yes\` of wacht op auto-deploy.
 
-          🤖 Auto-generated nightly via Claude Sonnet 4.6" \
-            --label "automated,seo"
+          🤖 Auto-generated nightly via Claude Sonnet 4.6"
