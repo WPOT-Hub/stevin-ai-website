@@ -43,8 +43,42 @@ export default async function DienstenPage({ params }: Props) {
     },
   ]
 
+  // Service-schema bundel: 1 ProfessionalService entity + per-track Service.
+  // Helpt Google + LLMs Stevin classificeren als marketing-service-provider
+  // ipv blog/news-site.
+  const servicesLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ProfessionalService',
+        '@id': 'https://stevin.ai/diensten#professional-service',
+        name: 'Stevin — marketing-meetbaarheid voor MKB',
+        provider: { '@id': 'https://stevin.ai/#organization' },
+        areaServed: [
+          { '@type': 'Country', name: 'Netherlands' },
+          { '@type': 'Country', name: 'Belgium' },
+        ],
+        serviceType: 'Marketing measurement and optimization',
+        url: 'https://stevin.ai/diensten',
+      },
+      ...tracks.map((track, i) => ({
+        '@type': 'Service',
+        '@id': `https://stevin.ai/diensten#track-${i + 1}`,
+        name: track.title,
+        description: track.body,
+        provider: { '@id': 'https://stevin.ai/#organization' },
+        serviceType: track.meta,
+        areaServed: { '@type': 'Country', name: 'Netherlands' },
+      })),
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesLd) }}
+      />
       {/* ── Hero ── */}
       <section className="bg-primary -mt-[72px] overflow-hidden" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
         <div className="mx-auto max-w-[1200px]">

@@ -15,14 +15,62 @@ export default async function HomePage({ params }: Props) {
   const t = await getTranslations('home')
   const tr = await getTranslations('trust')
 
+  // Verrijkte Organization-schema voor Knowledge Graph eligibility +
+  // entity-recognition door LLMs (ChatGPT, Claude, Perplexity gebruiken
+  // dit als primary entity-source). Eén schema op homepage — niet
+  // dupliceren over alle pages.
+  // sameAs: vul aan zodra LinkedIn/X/etc. profielen actief zijn.
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': 'https://stevin.ai/#organization',
     name: 'Stevin',
-    description: 'Stevin is de meetlat tussen marketingspend en werkelijk resultaat. Voor ondernemers, merken en bureaus die hun cijfers serieus nemen — zonder black boxes.',
+    legalName: 'Stevin.AI',
+    description:
+      'Stevin is de meetlat tussen marketingspend en werkelijk resultaat. AI-driven platform voor MKB dat zichtbaar maakt wat marketing écht oplevert via uplift-meting en Marketing Mix Modeling.',
     url: 'https://stevin.ai',
-    areaServed: 'NL',
-    knowsAbout: ['Online Marketing', 'Marketing Automation', 'SEO', 'Paid Media', 'Analytics', 'Social Media Monitoring', 'Artist Management', 'PR & Communications'],
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://stevin.ai/icon.svg',
+      contentUrl: 'https://stevin.ai/icon.svg',
+    },
+    image: 'https://stevin.ai/og-image.png',
+    foundingLocation: {
+      '@type': 'Place',
+      address: { '@type': 'PostalAddress', addressCountry: 'NL' },
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'Netherlands' },
+      { '@type': 'Country', name: 'Belgium' },
+    ],
+    knowsAbout: [
+      'Marketing Mix Modeling',
+      'Uplift Measurement',
+      'Marketing Attribution',
+      'Online Marketing',
+      'Paid Media',
+      'Search Engine Optimization',
+      'Generative Engine Optimization',
+      'Marketing Automation',
+      'CRM Integration',
+      'Analytics & Tracking',
+      'Conversion Rate Optimization',
+      'Marketing for SMBs',
+    ],
+    knowsLanguage: ['nl-NL', 'en'],
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        email: 'koen@stevin.ai',
+        url: 'https://stevin.ai/contact',
+        areaServed: ['NL', 'BE'],
+        availableLanguage: ['Dutch', 'English'],
+      },
+    ],
+    // sameAs: voeg hier social profiles toe (LinkedIn, X) zodra die actief
+    // zijn — versterkt entity-recognition voor Google Knowledge Graph.
+    sameAs: [],
   }
 
   return (
