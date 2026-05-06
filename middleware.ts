@@ -79,13 +79,20 @@ async function logBotCrawl(bot: string, path: string): Promise<void> {
   }
 }
 
-export default function middleware(request: NextRequest) {
-  // AI-bot crawl logging — fire-and-forget naar Supabase.
-  // Niet-blokkerend (geen await), middleware blijft snel.
+export default async function middleware(request: NextRequest) {
+  // AI-bot crawl logging — moet ge-await want Edge runtime kapt
+  // fire-and-forget fetches af zodra middleware response returnt.
+  // Latency-impact: ~50-200ms maar alleen op AI-bot requests, niet
+  // op echte users. Bots geven geen ruk om die latency.
   const ua = request.headers.get('user-agent') ?? ''
   const aiBot = detectAIBot(ua)
   if (aiBot) {
-    void logBotCrawl(aiBot, request.nextUrl.pathname)
+    // Hard timeout van 1500ms zodat bot-request niet eindeloos hangt
+    // bij Supabase-trage responses.
+    await Promise.race([
+      logBotCrawl(aiBot, request.nextUrl.pathname),
+      new Promise<void>((resolve) => setTimeout(resolve, 1500)),
+    ])
   }
 
   return intlMiddleware(request)
