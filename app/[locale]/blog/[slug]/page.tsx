@@ -1323,7 +1323,7 @@ function ArticleAIcowboysBody() {
       <H2 num="03">Een bank die voorzichtig is, en daar uiteindelijk reden toe heeft</H2>
 
       <p>
-        Derde scène, en dit keer niet uit het mkb. Rabobank communiceerde dit kwartaal hoe hun AI-strategie eruitziet. De toon is opvallend voorzichtig. Ze zetten in op AI, dat wel. Alleen pas nadat ze hun eigen Europese datacenters hebben staan. De redenering: als er morgen een politiek conflict ontstaat tussen Den Haag en Washington, en de Amerikaanse overheid bevriest cloud-accounts of access-tokens van Europese banken, dan zit je als bank zonder kritieke infrastructuur. Dat is geen paranoia, dat is wat tijdens de Trump-tarievenoorlog van vorig jaar al een keer in een lichte vorm gebeurd is bij een handelsplatform in Brussel.
+        Derde scène, en dit keer niet uit het mkb. Ook Rabobank kijkt naar AI door de bril van digitale soevereiniteit. De bank erkent dat ze nu sterk leunt op Amerikaanse techbedrijven, onder meer voor cloud en AI. Rabobank onderzoekt met andere Europese banken hoe ze eigen Europese cloud- en datastructuren kunnen opzetten. Niet omdat er al concrete signalen zijn dat Amerikaanse leveranciers de stekker eruit trekken, maar omdat banken hun kritieke infrastructuur niet afhankelijk willen maken van geopolitieke druk. Die zorg is groter geworden sinds de handelsspanningen tussen Washington en Brussel in 2025 opliepen.
       </p>
 
       <p>
