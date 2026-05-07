@@ -4,7 +4,7 @@ import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import MeetlatRuler from '@/components/MeetlatRuler'
 import TrustBadges from '@/components/TrustBadges'
-import { homepageFaqs } from '@/data/faqs'
+import { getHomepageFaqs } from '@/data/faqs'
 import { nativeConnectors } from '@/data/connectors'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -14,6 +14,7 @@ export default async function HomePage({ params }: Props) {
   setRequestLocale(locale)
   const t = await getTranslations('home')
   const tr = await getTranslations('trust')
+  const homepageFaqs = getHomepageFaqs(locale)
 
   // Verrijkte Organization-schema voor Knowledge Graph eligibility +
   // entity-recognition door LLMs (ChatGPT, Claude, Perplexity gebruiken
