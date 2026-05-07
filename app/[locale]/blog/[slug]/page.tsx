@@ -1279,7 +1279,7 @@ function ArticleAIcowboysBody() {
       </p>
 
       <p>
-        Hieronder drie scènes uit het afgelopen kwartaal. Twee uit de praktijk, eentje uit de bestuurskamer van een Nederlandse bank. Samen vertellen ze waarom dit voelt als 2008 in online marketing — alleen sneller, met grotere data en met meer geld op het spel.
+        Hieronder drie scènes uit het afgelopen kwartaal. Twee uit de praktijk, eentje uit de bestuurskamer van een Nederlandse bank. Samen vertellen ze waarom dit voelt als 2008 in online marketing. Alleen sneller, met grotere data en met meer geld op het spel.
       </p>
 
       <H2 num="01">Een online platform met honderdduizenden e-mailadressen, vibecodend op donderdag</H2>
@@ -1312,7 +1312,7 @@ function ArticleAIcowboysBody() {
       </p>
 
       <p>
-        Dat zijn geen academische vragen. Vorige zomer is een Europees bureau-inlog gestolen waarmee aanvallers in twee uur tijd voor zes ton aan Meta-advertenties hadden uitgegeven, op zes verschillende klant-accounts, met dezelfde landing-page van een Indiase scam-store. De klanten merkten het pas toen Meta de accounts zelf bevroor. Met een AI-laag tussen mens en account wordt dat soort scenario sneller, niet trager — een aanvaller die met de juiste prompt de juiste rechten kan triggeren is in minuten klaar waar een mens nog handmatig moet klikken.
+        Dat zijn geen academische vragen. Vorige zomer is een Europees bureau-inlog gestolen waarmee aanvallers in twee uur tijd voor zes ton aan Meta-advertenties hadden uitgegeven, op zes verschillende klant-accounts, met dezelfde landing-page van een Indiase scam-store. De klanten merkten het pas toen Meta de accounts zelf bevroor. Met een AI-laag tussen mens en account wordt dat soort scenario sneller, niet trager. Een aanvaller die met de juiste prompt de juiste rechten kan triggeren is in minuten klaar waar een mens nog handmatig moet klikken.
       </p>
 
       <Callout
@@ -1323,11 +1323,11 @@ function ArticleAIcowboysBody() {
       <H2 num="03">Een bank die voorzichtig is, en daar uiteindelijk reden toe heeft</H2>
 
       <p>
-        Derde scène, en dit keer niet uit het mkb. Rabobank communiceerde dit kwartaal hoe hun AI-strategie eruitziet. De toon is opvallend voorzichtig. Ze zetten in op AI, dat wel — alleen pas nadat ze hun eigen Europese datacenters hebben staan. De redenering: als er morgen een politiek conflict ontstaat tussen Den Haag en Washington, en de Amerikaanse overheid bevriest cloud-accounts of access-tokens van Europese banken, dan zit je als bank zonder kritieke infrastructuur. Dat is geen paranoia, dat is wat tijdens de Trump-tarievenoorlog van vorig jaar al een keer in een lichte vorm gebeurd is bij een handelsplatform in Brussel.
+        Derde scène, en dit keer niet uit het mkb. Rabobank communiceerde dit kwartaal hoe hun AI-strategie eruitziet. De toon is opvallend voorzichtig. Ze zetten in op AI, dat wel. Alleen pas nadat ze hun eigen Europese datacenters hebben staan. De redenering: als er morgen een politiek conflict ontstaat tussen Den Haag en Washington, en de Amerikaanse overheid bevriest cloud-accounts of access-tokens van Europese banken, dan zit je als bank zonder kritieke infrastructuur. Dat is geen paranoia, dat is wat tijdens de Trump-tarievenoorlog van vorig jaar al een keer in een lichte vorm gebeurd is bij een handelsplatform in Brussel.
       </p>
 
       <p>
-        Voor een bank betekent dat: eerst soevereiniteit, dan tempo. Voor een marketing-bureau lijkt dat overdone. Maar het achterliggende principe — wat gebeurt er als de tool waar ik op rijd morgen niet meer beschikbaar is, of erger, gebruikt wordt om mij of mijn klanten aan te vallen — is hetzelfde principe. Banken denken erover na. De meeste agencies en mkb-bedrijven niet. Het zal het boerenverstand zijn dat boven komt drijven bij een bank met agrarische wortels, maar het is een soort denken dat in marketingland nu echt mist.
+        Voor een bank betekent dat: eerst soevereiniteit, dan tempo. Voor een marketing-bureau lijkt dat overdone. Maar het achterliggende principe is hetzelfde: wat gebeurt er als de tool waar ik op rijd morgen niet meer beschikbaar is, of erger, gebruikt wordt om mij of mijn klanten aan te vallen. Banken denken erover na. De meeste agencies en mkb-bedrijven niet. Het zal het boerenverstand zijn dat boven komt drijven bij een bank met agrarische wortels, maar het is een soort denken dat in marketingland nu echt mist.
       </p>
 
       <H2 num="04">Waarom dit voelt als 2008</H2>
@@ -1382,7 +1382,7 @@ function ArticleAIcowboysBody() {
       </p>
 
       <p>
-        Niet alle drie zijn fout. Sommige zijn de pioniers van wat over twee jaar standaard is. Maar tussen pionier en cowboy zit een dunne lijn, en die lijn loopt over hoe iemand omgaat met de details die je niet ziet — toegangsrechten, audit-trails, dataretentie, wat er gebeurt als de tool faalt.
+        Niet alle drie zijn fout. Sommige zijn de pioniers van wat over twee jaar standaard is. Maar tussen pionier en cowboy zit een dunne lijn, en die lijn loopt over hoe iemand omgaat met de details die je niet ziet. Toegangsrechten, audit-trails, dataretentie, wat er gebeurt als de tool faalt.
       </p>
 
       <p>
