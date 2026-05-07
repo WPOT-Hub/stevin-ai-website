@@ -53,7 +53,7 @@ export default function Header() {
     { label: t('diensten_paid'), href: '/diensten#paid-media' },
     { label: t('diensten_seo'), href: '/seo' },
     { label: t('diensten_geo'), href: '/geo' },
-    { label: t('diensten_automation'), href: '/diensten#marketing-automation' },
+    { label: t('diensten_automation'), href: '/marketing-automation' },
     { label: t('diensten_crm'), href: '/diensten#crm-leadopvolging' },
     { label: t('diensten_tracking'), href: '/diensten#tracking-inzicht' },
   ]

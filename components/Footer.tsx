@@ -13,7 +13,7 @@ export default function Footer() {
     diensten: [
       { label: t('svc_paid'), href: '/diensten#paid-media' },
       { label: t('svc_landing'), href: '/diensten#landing-pages-cro' },
-      { label: t('svc_automation'), href: '/diensten#marketing-automation' },
+      { label: t('svc_automation'), href: '/marketing-automation' },
       { label: t('svc_crm'), href: '/diensten#crm-leadopvolging' },
       { label: t('svc_tracking'), href: '/diensten#tracking-inzicht' },
     ],
