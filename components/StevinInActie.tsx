@@ -222,7 +222,7 @@ export default function StevinInActie() {
     >
       <div className="mx-auto max-w-[1200px]">
         {/* Heading */}
-        <div className="mb-16 max-w-[720px]">
+        <div className="mb-16 max-w-[760px]">
           <p className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
             <span className="inline-block w-6 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
             Stevin in actie
@@ -231,12 +231,12 @@ export default function StevinInActie() {
             className="font-display font-extrabold text-white m-0 mb-6"
             style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
           >
-            Een chat-tool wacht tot jij vraagt. Stevin schreeuwt op tijd.
+            Van afwijking naar advies.<br />Voordat jij het ziet.
           </h2>
-          <p className="text-[#A3ABB8] text-[17px] leading-[1.6] max-w-[640px]">
-            Geen zoekbalk, geen dashboard om elke ochtend te openen. Stevin scant 24/7 je
-            paid en owned media en tikt je zodra er omzet, marge of merkwaarde weglekt —
-            mét diagnose en concrete actie.
+          <p className="text-[#A3ABB8] text-[17px] leading-[1.6] max-w-[660px]">
+            Een chat-tool wacht tot jij vraagt. Stevin schreeuwt op tijd. 24/7 monitoring
+            over je paid en owned media — mét diagnose en concrete actie, vóór reguliere
+            rapportage 't oppikt.
           </p>
         </div>
 
@@ -247,11 +247,36 @@ export default function StevinInActie() {
           ))}
         </div>
 
-        {/* Closing line */}
-        <p className="mt-14 text-[#6A7587] text-[13px] font-mono tracking-[0.04em] max-w-[720px]">
-          Voorbeelden uit echte klant-flows. Diagnose en advies komen van Stevin's
-          Causality Engine — niet uit een dashboard, niet op aanvraag.
-        </p>
+        {/* Closing strip — Swoep-style outcome one-liners */}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[960px]">
+          <div>
+            <p className="font-mono text-[10px] tracking-[0.16em] text-[#5DA3FF] uppercase mb-2">
+              24/7 monitoring
+            </p>
+            <p className="text-white text-[15px] leading-snug">
+              Geen dashboard om te openen. Stevin scant continu en tikt je zodra het ergens
+              weglekt.
+            </p>
+          </div>
+          <div>
+            <p className="font-mono text-[10px] tracking-[0.16em] text-[#5DA3FF] uppercase mb-2">
+              Diagnose mét bewijs
+            </p>
+            <p className="text-white text-[15px] leading-snug">
+              Niet alleen "ROAS daalt", maar wáárom. Frequency, thumbstop, GTM-firing,
+              concurrent-bod — Stevin koppelt symptoom aan oorzaak.
+            </p>
+          </div>
+          <div>
+            <p className="font-mono text-[10px] tracking-[0.16em] text-[#5DA3FF] uppercase mb-2">
+              Beslissingen wegnemen
+            </p>
+            <p className="text-white text-[15px] leading-snug">
+              Niet meer overleggen wat een grafiek betekent. Stevin levert het advies erbij,
+              jij keurt goed of past aan.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   )
