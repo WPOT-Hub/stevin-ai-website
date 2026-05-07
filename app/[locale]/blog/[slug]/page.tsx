@@ -234,12 +234,16 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'beste-transcriptietool-2026' && (
             <ArticleTranscriptToolsBody />
           )}
+          {article.format === 'editorial' && article.slug === 'ai-cowboys-marketing-2026' && (
+            <ArticleAIcowboysBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
             article.slug !== 'last-click-is-een-gewoonte' &&
             article.slug !== 'mmm-is-een-hypothese' &&
-            article.slug !== 'beste-transcriptietool-2026' && (
+            article.slug !== 'beste-transcriptietool-2026' &&
+            article.slug !== 'ai-cowboys-marketing-2026' && (
               <ArticleStubBody article={article} />
             )}
         </div>
@@ -1265,6 +1269,141 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
     'Distributie via ChatGPT is geen experiment meer, het is een kanaal. Certe gebruikt het zoals tien jaar geleden Google Ads werd gebruikt: als bron van zoekvragen die naar een eigen funnel worden geleid. Voor andere financiële dienstverleners de vraag: ben je vindbaar binnen ChatGPT als iemand een vraag stelt over jouw product? Niet door SEO. Door aanwezig te zijn als GPT, dataset of partner.',
   'amazon-ads-22-procent-groei-q1-2026':
     'Voor D2C-merken en e-commerce: Amazon Ads is geen optie meer, het is een derde verplichte stap naast Google en Meta. De groei van 22 procent is geen incident, het is een trend die al twee jaar loopt. Voor agencies: kanaalmix-besluiten op basis van alleen ROAS van de individuele platforms missen de bredere portfolio-vraag. Een MMM- of uplift-test over Google + Meta + Amazon laat structureel andere optima zien dan platform-eigen attributie suggereert.',
+}
+
+function ArticleAIcowboysBody() {
+  return (
+    <>
+      <p className="lead-para">
+        AI in marketing is fantastisch. Wij gebruiken het zelf de hele dag. En toch zal er dit jaar net zo veel bedrijven aan ten onder gaan als bedrijven die er miljoenen mee winnen. Niet omdat de modellen falen, maar omdat de mensen die ze inzetten te snel gaan, te weinig weten van de stack eronder, en te veel rechten weggeven aan tools die ze niet helemaal begrijpen.
+      </p>
+
+      <p>
+        Hieronder drie scènes uit het afgelopen kwartaal. Twee uit de praktijk, eentje uit de bestuurskamer van een Nederlandse bank. Samen vertellen ze waarom dit voelt als 2008 in online marketing — alleen sneller, met grotere data en met meer geld op het spel.
+      </p>
+
+      <H2 num="01">Een online platform met 250.000 e-mailadressen, vibecodend op donderdag</H2>
+
+      <p>
+        We spraken laatst met de eigenaar van een internationaal veilingplatform. Dure exclusieve auto's, kopers met vermogen, e-mailadressen van mensen over de hele wereld. Het platform zelf draait al jaren goed. Wat veranderde: de marketeer die er werkt is in een paar maanden tijd helemaal opgeschoven naar AI-gedreven werken. Met Claude Code, met een aantal MCP-koppelingen, met enthousiasme.
+      </p>
+
+      <p>
+        Wat ons opviel in het gesprek was niet de techniek. Het was de combinatie. Geen interne AI-specialist. Een ongezond wantrouwen tegen externe specialisten. En tegelijk een productie-omgeving met data van honderdduizenden welgestelde klanten, gekoppeld aan tools waar de marketeer in real-time mee aan het bouwen is.
+      </p>
+
+      <p>
+        Op zichzelf is daar niks mis mee. Iedereen die met AI begint, voelt die rush. Het werkt verbluffend snel. Wat in 2019 een vol team developer-werk was, is nu een avond op de bank met een terminal open. Het probleem zit in wat er onder de motorkap gebeurt: welke connector heeft welke rechten gekregen, welke API-key staat in welk script, welke prompts hebben toegang tot welk segment van de klantendatabase. Dat soort vragen krijg je in een vibecoding-flow zelden gesteld omdat het niet voelt als bouwen, het voelt als chatten.
+      </p>
+
+      <PullQuote
+        text='"Dit voelt als bouwen, alleen voelt het niet als bouwen. Het voelt als chatten. En dat is precies waarom mensen rechten weggeven die ze achteraf niet meer kunnen terughalen."'
+        cite="Stevin Journal, redactie."
+      />
+
+      <H2 num="02">Een bureau dat in twee maanden tijd alles op AI heeft ingezet</H2>
+
+      <p>
+        Tweede scène. Een Nederlands marketingbureau plaatste deze week een trotse LinkedIn-post over hun nieuwe AI-platform, mét screenshot van het klant-dashboard. Hun specialisten zaten 70 procent van de dag op uitvoering, schreven ze eerlijk. Rapportages, feed-optimalisaties, handmatig bidden. Sinds twee maanden draait er nu AI overheen, en die tijd is teruggegeven aan strategie. Mooi verhaal.
+      </p>
+
+      <p>
+        Wat in dezelfde post niet stond: hoe de toegang werkt. Wie heeft welke OAuth-tokens. Welke klant-accounts hebben "alleen lezen", welke hebben "schrijven en bestellingen plaatsen". Welke logging zit erop. Wie is de fallback als het bureau zelf gehackt wordt en aanvallers de tokens overnemen.
+      </p>
+
+      <p>
+        Dat zijn geen academische vragen. Vorige zomer is een Europees bureau-inlog gestolen waarmee aanvallers in twee uur tijd voor zes ton aan Meta-advertenties hadden uitgegeven, op zes verschillende klant-accounts, met dezelfde landing-page van een Indiase scam-store. De klanten merkten het pas toen Meta de accounts zelf bevroor. Met een AI-laag tussen mens en account wordt dat soort scenario sneller, niet trager — een aanvaller die met de juiste prompt de juiste rechten kan triggeren is in minuten klaar waar een mens nog handmatig moet klikken.
+      </p>
+
+      <Callout
+        big="6"
+        label="Aantal uur waarin een Europees marketingbureau vorige zomer voor naar schatting €600.000 aan ongeautoriseerde Meta-advertenties zag verschijnen vanaf gestolen OAuth-tokens. Geen AI in die zaak, maar het scenario is precies wat een AI-laag versnelt: één compromittering, schaalbare uitvoer."
+      />
+
+      <H2 num="03">Een bank die voorzichtig is, en daar uiteindelijk reden toe heeft</H2>
+
+      <p>
+        Derde scène, en dit keer niet uit het mkb. Rabobank communiceerde dit kwartaal hoe hun AI-strategie eruitziet. De toon is opvallend voorzichtig. Ze zetten in op AI, dat wel — alleen pas nadat ze hun eigen Europese datacenters hebben staan. De redenering: als er morgen een politiek conflict ontstaat tussen Den Haag en Washington, en de Amerikaanse overheid bevriest cloud-accounts of access-tokens van Europese banken, dan zit je als bank zonder kritieke infrastructuur. Dat is geen paranoia, dat is wat tijdens de Trump-tarievenoorlog van vorig jaar al een keer in een lichte vorm gebeurd is bij een handelsplatform in Brussel.
+      </p>
+
+      <p>
+        Voor een bank betekent dat: eerst soevereiniteit, dan tempo. Voor een marketing-bureau lijkt dat overdone. Maar het achterliggende principe — wat gebeurt er als de tool waar ik op rijd morgen niet meer beschikbaar is, of erger, gebruikt wordt om mij of mijn klanten aan te vallen — is hetzelfde principe. Banken denken erover na. De meeste agencies en mkb-bedrijven niet. Het zal het boerenverstand zijn dat boven komt drijven bij een bank met agrarische wortels, maar het is een soort denken dat in marketingland nu echt mist.
+      </p>
+
+      <H2 num="04">Waarom dit voelt als 2008</H2>
+
+      <p>
+        Toen wij in online marketing begonnen, was er bijna niks. YouTube was net een jaar oud. Google Ads heette nog AdWords en je leerde het uit blogs, fora, en gewoon dingen proberen tot iets werkte. Dat trok twee groepen aan. Eén groep marketeers die echt iets wilden bouwen, klanten netjes wilden bedienen, met geduld de fundamenten leerden. En een groep cowboys die ontdekten dat je met een paar trucs in een paar weken meer geld kon binnenhalen dan een gemiddelde MBO-baan, zonder dat klanten doorhadden hoe het werkte.
+      </p>
+
+      <p>
+        De cowboys verdwenen niet. Die werden alleen langzaam doorgeprikt door klanten die wijzer werden, door platforms die regels strakker maakten, en door een professionalisering die de hele branche tien jaar heeft gekost. Wij hebben dat hele proces meegemaakt. Diezelfde ondertoon herkennen we nu in AI.
+      </p>
+
+      <p>
+        De spirit is hetzelfde. Een tool die exponenteel slimmer is dan vorig jaar. Klanten die er amper van begrijpen wat er onder de motorkap zit. Een leerperiode die duizend keer korter is dan bij early Google Ads. Mensen die in een paar weekenden iets in elkaar zetten dat lijkt te werken, het verkopen, en doorgaan voordat de eerste echte storingen zichtbaar worden. Dat is geen kritiek op AI, dat is een observatie over hoe technologie-cycli werken.
+      </p>
+
+      <Takeaways
+        label="WAT WE NU AL ZIEN"
+        title="Drie patronen bij klanten die te snel gingen"
+        items={[
+          {
+            pct: '01',
+            text: (
+              <>
+                <b>Onbekende rechten.</b> Een AI-tool heeft op een gegeven moment ergens write-rechten gekregen "om iets te kunnen testen", en niemand kan terug-traceren wanneer of waarom. Wie het opmerkt is meestal Meta of Google die het account opschort.
+              </>
+            ),
+          },
+          {
+            pct: '02',
+            text: (
+              <>
+                <b>Geen logging.</b> Acties die door AI-laag zijn uitgevoerd worden vaak niet anders gelogd dan acties van een mens. Achteraf onderscheid maken tussen "Koen heeft dit zelf gedaan" en "een agent heeft dit getriggerd op een prompt" wordt onmogelijk. Audit-trails missen.
+              </>
+            ),
+          },
+          {
+            pct: '03',
+            text: (
+              <>
+                <b>Klant-data in prompts.</b> Klantgegevens, contactlijsten, omzet-cijfers verdwijnen in modellen waar het bureau zelf de retentie-policy niet van weet. Soms zit het bij OpenAI of Anthropic, soms bij een proxy daartussenin, soms bij een tool die zelf een eigen vector-database heeft opgebouwd. AVG-vragen worden hierdoor sneller dan menigeen lief is.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <H2 num="05">Niet meer cowboys vermijden, wel weten wie er één is</H2>
+
+      <p>
+        Wij gaan niet zeggen dat je AI moet ontwijken. Dat is precies de verkeerde reactie. Wat wel werkt: dezelfde bullshit-detector die wij in twintig jaar online marketing hebben opgebouwd, opnieuw aanzetten. We herkennen het patroon nu eerder. De flow waarin iemand binnen twee maanden tijd "alles op AI heeft staan" zonder ooit met een security-engineer te hebben gepraat. De marketeer die zegt dat zijn nieuwe AI-flow drie keer zo veel doet zonder uit te leggen hoe de logging werkt. De agency-eigenaar die zelf vibecoded en daarmee zijn klanten bedient.
+      </p>
+
+      <p>
+        Niet alle drie zijn fout. Sommige zijn de pioniers van wat over twee jaar standaard is. Maar tussen pionier en cowboy zit een dunne lijn, en die lijn loopt over hoe iemand omgaat met de details die je niet ziet — toegangsrechten, audit-trails, dataretentie, wat er gebeurt als de tool faalt.
+      </p>
+
+      <p>
+        Voor klanten die nu AI overwegen: de vraag aan een potentiële leverancier is niet "wat kan jouw AI doen". Die vraag wint iedereen. De vraag is "wat heeft jouw AI niet gedaan, en hoe weet je dat zeker". Een leverancier die op die vraag rustig antwoord geeft, weet wat hij aan het bouwen is. Een leverancier die om de vraag heen praat, is de cowboy uit 2008 met een nieuw shirt.
+      </p>
+
+      <H2 num="06">Wat dit jaar gaat gebeuren</H2>
+
+      <p>
+        We voorspellen niet graag. Wat we wel zien aankomen: een handvol publiek-zichtbare incidenten, waarschijnlijk in Q3 of Q4. Eén bureau dat zwaar in het nieuws komt omdat een AI-flow toegang had tot iets wat hij niet had moeten hebben. Eén mkb-bedrijf met klantdata in een verkeerde prompt. Eén platform dat plotseling aansprakelijk wordt gesteld voor een AI-verkochte transactie.
+      </p>
+
+      <p>
+        Daarna wordt het rustiger. Verzekeraars beginnen polissen te eisen, klanten beginnen vragen te stellen die ze nu niet stellen, agencies beginnen te beseffen dat read-only-toegang en gelogde acties geen optionele luxe zijn maar een operationele basis. We belanden in een professionalisering-fase, net als rond 2012 met online marketing. Tot die tijd is het een kwestie van wakker blijven.
+      </p>
+
+      <p>
+        Wij zijn enthousiast over AI. We bouwen er ons platform op. We zien zelf de productiviteits-sprong van factor drie tot vijf. En toch staat onze bullshit-detector aan, voor onze eigen flows en voor wat we bij klanten en collega's voorbij zien komen. Niet uit cynisme, uit ervaring met cycli die hier niet voor het eerst voorbij komen.
+      </p>
+    </>
+  )
 }
 
 function ArticleTranscriptToolsBody() {

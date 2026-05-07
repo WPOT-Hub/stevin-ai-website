@@ -133,6 +133,21 @@ export const articles: Article[] = [
 
   /* ─── EDITORIALS ─── */
   {
+    slug: 'ai-cowboys-marketing-2026',
+    format: 'editorial',
+    edition: '016',
+    category: 'Observatie',
+    title: 'AI in marketing is fantastisch. En dit jaar gaan er bedrijven aan ten onder.',
+    dek:
+      'Net zo veel bedrijven gaan dit jaar aan AI ten onder als bedrijven die er miljoenen mee winnen. Een eerlijke observatie van wie er nu ongezien rechten weggeeft, wie zelf hard aan het vibecoden is, en waarom dit voelt als 2008 in online marketing.',
+    publishedAt: '2026-05-07',
+    readMinutes: 10,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient',
+    posterTag: 'OBSERVATIE',
+    posterTopic: 'Cowboys met Claude Code zijn de nieuwe cowboys van 2008.',
+  },
+  {
     slug: 'beste-transcriptietool-2026',
     format: 'editorial',
     edition: '015',
