@@ -1282,10 +1282,10 @@ function ArticleAIcowboysBody() {
         Hieronder drie scènes uit het afgelopen kwartaal. Twee uit de praktijk, eentje uit de bestuurskamer van een Nederlandse bank. Samen vertellen ze waarom dit voelt als 2008 in online marketing — alleen sneller, met grotere data en met meer geld op het spel.
       </p>
 
-      <H2 num="01">Een online platform met 250.000 e-mailadressen, vibecodend op donderdag</H2>
+      <H2 num="01">Een online platform met honderdduizenden e-mailadressen, vibecodend op donderdag</H2>
 
       <p>
-        We spraken laatst met de eigenaar van een internationaal veilingplatform. Dure exclusieve auto's, kopers met vermogen, e-mailadressen van mensen over de hele wereld. Het platform zelf draait al jaren goed. Wat veranderde: de marketeer die er werkt is in een paar maanden tijd helemaal opgeschoven naar AI-gedreven werken. Met Claude Code, met een aantal MCP-koppelingen, met enthousiasme.
+        We spraken laatst met de eigenaar van een online platform dat al jaren stevig draait. Honderdduizenden e-mailadressen in de database, internationale klantenkring met koopkracht, een nichemarkt met dure transacties. Wat veranderde: de marketeer die er werkt is in een paar maanden tijd helemaal opgeschoven naar AI-gedreven werken. Met Claude Code, met een aantal MCP-koppelingen, met enthousiasme.
       </p>
 
       <p>
