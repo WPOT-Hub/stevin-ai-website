@@ -231,11 +231,15 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'mmm-is-een-hypothese' && (
             <ArticleMMMBody />
           )}
+          {article.format === 'editorial' && article.slug === 'beste-transcriptietool-2026' && (
+            <ArticleTranscriptToolsBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
             article.slug !== 'last-click-is-een-gewoonte' &&
-            article.slug !== 'mmm-is-een-hypothese' && (
+            article.slug !== 'mmm-is-een-hypothese' &&
+            article.slug !== 'beste-transcriptietool-2026' && (
               <ArticleStubBody article={article} />
             )}
         </div>
@@ -1261,6 +1265,145 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
     'Distributie via ChatGPT is geen experiment meer, het is een kanaal. Certe gebruikt het zoals tien jaar geleden Google Ads werd gebruikt: als bron van zoekvragen die naar een eigen funnel worden geleid. Voor andere financiële dienstverleners de vraag: ben je vindbaar binnen ChatGPT als iemand een vraag stelt over jouw product? Niet door SEO. Door aanwezig te zijn als GPT, dataset of partner.',
   'amazon-ads-22-procent-groei-q1-2026':
     'Voor D2C-merken en e-commerce: Amazon Ads is geen optie meer, het is een derde verplichte stap naast Google en Meta. De groei van 22 procent is geen incident, het is een trend die al twee jaar loopt. Voor agencies: kanaalmix-besluiten op basis van alleen ROAS van de individuele platforms missen de bredere portfolio-vraag. Een MMM- of uplift-test over Google + Meta + Amazon laat structureel andere optima zien dan platform-eigen attributie suggereert.',
+}
+
+function ArticleTranscriptToolsBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Wij krijgen elke week een variant van dezelfde vraag: wat is nu de beste transcriptietool? Het antwoord uit twee jaar testen is Plaud. Niet omdat de andere tools slecht zijn, maar omdat Plaud op vier punten consistent wint: batterijduur, compactheid, app-ervaring en desktop-integratie tijdens video-calls. Hieronder de eerlijke ronde, inclusief waar we andere tools wél in voorzien zagen.
+      </p>
+
+      <p>
+        Belangrijk vooraf: de winnaar haal je er niet zomaar uit. De out-of-the-box-ervaring is goed, maar de echte hefboom (transcripts automatisch koppelen aan klanten, follow-up-emails laten draften, agenda-context erbij trekken) vereist wat technische bouwwerk. Daar gaan we onderaan ook iets over zeggen.
+      </p>
+
+      <H2 num="01">Wat we hebben getest</H2>
+
+      <p>
+        Acht oplossingen, ruwweg in drie categorieën. Software-only: OpenAI Whisper (lokaal op Mac), Google Gemini transcript-modus, Otter.ai, en wat hier in jargon meestal "Microsoft AI-notitiemaker" heet (de Copilot-transcript-functie in Teams). Hardware-met-app: Plaud Note, Echo Scribe, en losse Jabra-conferentiemicrofoons gekoppeld aan transcript-software. Plus een tweede ronde apps die zich gespecialiseerd noemen in "AI-notitiemaker assistent"-categorie, namen we hier even niet bij naam noemen omdat ze de status van het experiment niet overleefden.
+      </p>
+
+      <p>
+        Beoordelingscriteria waren simpel en operationeel: hoeveel uur opnemen op één lading, hoe accuraat is het transcript bij Nederlands en bij twee tot vier sprekers, hoe snel ben je van opname-stop tot bruikbare tekst, en hoe makkelijk haal je het transcript daarna in een ander systeem (CRM, mailtool, document).
+      </p>
+
+      <H2 num="02">Software-only: prima voor desk-werk, breekbaar onderweg</H2>
+
+      <p>
+        Whisper lokaal op een Mac geeft objectief de beste pure transcript-kwaliteit van het hele veld. Privé, gratis, geen cloud-call. Maar je hebt er een Mac voor nodig die aanstaat, en de workflow van "ik neem op met mijn telefoon, sleep het bestand in een script" is geen knop, het is een rituaal. Voor losse keynotes die je achteraf wilt uitschrijven: prima. Voor dagelijks gebruik: te veel handelingen.
+      </p>
+
+      <p>
+        Gemini's transcript-modus zit goed in elkaar voor wie al in Google Workspace werkt. Live transcript tijdens een Google Meet, achteraf samenvatting in een Doc. Het werkt. Het probleem zit in waar je niet bent: een belletje met je iPhone, een fysieke meeting bij een klant, een netwerk-event in een lawaaiige zaal. Daar is Gemini afwezig. En transcripts blijven hangen in Google Docs zonder dat een ander systeem ze automatisch oppikt.
+      </p>
+
+      <p>
+        Otter.ai en de Microsoft Copilot-transcripts in Teams zijn vergelijkbaar van klasse. Solide voor wie al in dat eco-systeem leeft. Beiden vallen om zodra je buiten de geplande video-call werkt. En de Nederlandse transcripts van beide zijn merkbaar minder accuraat dan Whisper of Plaud bij accenten en mark-namen.
+      </p>
+
+      <PullQuote
+        text='"Een transcript-tool die alleen in geplande video-calls werkt, mist 60 procent van de gesprekken die ertoe doen."'
+        cite="Stevin Journal, redactie."
+      />
+
+      <H2 num="03">Hardware: het Jabra-experiment en de Echo Scribe</H2>
+
+      <p>
+        Op kantoor hebben we een tijdje vergaderingen geprobeerd op te nemen met Jabra-conferentiemicrofoons gekoppeld aan transcript-software op een laptop. De audio-kwaliteit is uitstekend voor wie aan de tafel zit. Het probleem: het is een opstelling. De microfoon ligt in het midden van de tafel, de laptop staat ernaast, iemand moet 'm starten en stoppen. Spontane gesprekken op de gang, in een auto, of staand bij een netwerkborrel vallen weg.
+      </p>
+
+      <p>
+        Echo Scribe (een hardware-recorder met cloud-transcript) is conceptueel dichter bij Plaud. Goede audio, draagbaar formaat. Wat 'm minder maakte voor ons dagelijks gebruik: de batterij valt op een halve werkdag van intensief opnemen, de bijbehorende app is rommelig, en de prijs zit hoger zonder dat we daar voor onze use-case meer waarde voor terugzagen.
+      </p>
+
+      <H2 num="04">Waarom Plaud op vier vlakken wint</H2>
+
+      <p>
+        <b>Batterijduur.</b> Een hele werkdag van opnemen op één lading is geen marketing-claim, dat is wat we ervaren. Voor consultants die 's ochtends een klant bezoeken, 's middags een interne meeting hebben en 's avonds een networking-event aandoen: de tool gaat niet halverwege uit.
+      </p>
+
+      <p>
+        <b>Compactheid.</b> Het ding is op de achterkant van een iPhone gekleefd of in een zak. Geen aparte opstelling, geen "wacht, ik haal mijn recorder erbij"-moment. Een gesprek bij de koffieautomaat is op te nemen zonder dat de andere kant zich opgenomen voelt door een zichtbaar apparaat in het midden van de tafel.
+      </p>
+
+      <p>
+        <b>App-ervaring.</b> Transcript binnen enkele minuten na opname-stop, samenvatting erbij, exporteerbaar naar email of als deelbare link. Dit klinkt triviaal, maar de concurrentie verliest hier punten: rommelige UI, transcript pas een dag later, geen Nederlandse-taalondersteuning op niveau.
+      </p>
+
+      <p>
+        <b>Desktop-integratie voor video-calls.</b> Hier verraste Plaud ons. De desktop-app pikt audio van een Zoom of Teams-gesprek op zonder dat je een aparte opname-tool hoeft te starten. Dezelfde transcript-flow als bij fysieke gesprekken. Voor agencies en consultants die dagelijks tussen video- en in-persoon-gesprekken pendelen: dit dicht een gat dat alle andere oplossingen lieten staan.
+      </p>
+
+      <Takeaways
+        label="WAT PLAUD WEL EN NIET DOET"
+        title="Het eerlijke beeld vóór je 'm aanschaft"
+        items={[
+          {
+            pct: '01',
+            text: (
+              <>
+                <b>Wel: Nederlands accuraat genoeg.</b> Niet perfect bij heavy dialect of namen van merken die Plaud nooit eerder zag, maar consistent boven de drempel van bruikbaar.
+              </>
+            ),
+          },
+          {
+            pct: '02',
+            text: (
+              <>
+                <b>Wel: meerdere sprekers herkend, niet benoemd.</b> Plaud labelt als "Speaker 1, Speaker 2". Wie wie is, weet de tool niet. Dat is een ontwerpkeuze, geen tekortkoming, maar wel iets om buiten Plaud op te lossen.
+              </>
+            ),
+          },
+          {
+            pct: '03',
+            text: (
+              <>
+                <b>Niet: out-of-the-box gekoppeld aan je CRM.</b> Plaud levert een transcript-email, geen CRM-update. Wil je dat een transcript automatisch aan een klant wordt gehangen, een follow-up-email klaarzet, of een taak in je sales-pipeline aanmaakt: dat bouw je eromheen.
+              </>
+            ),
+          },
+          {
+            pct: '04',
+            text: (
+              <>
+                <b>Niet: zonder leercurve.</b> Recorderen is simpel. Het systeem eromheen optimaliseren (privé-momenten knippen, agenda-koppeling, automatische follow-up-drafts) vereist technische bouwwerk of iemand die het voor je doet.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <H2 num="05">De leercurve, eerlijk uitgelegd</H2>
+
+      <p>
+        Hier moeten we eerlijk zijn. Plaud uit de doos is goed voor "ik heb een transcript van mijn meeting van gisteren". Maar de echte tijdwinst zit niet in dat ene transcript, die zit in wat erna gebeurt. Wij hebben ervoor gekozen om Plaud te koppelen aan onze eigen sales-stack: transcripts worden automatisch aan klanten gekoppeld op basis van wie er gebeld is en welk agenda-event eraan vastzat, AI knipt privé-staartjes weg (Plaud blijft soms aanstaan na een gesprek), en een follow-up-email-draft staat binnen drie minuten na de meeting in de inbox van de juiste consultant.
+      </p>
+
+      <p>
+        Dat soort koppeling kan je zelf bouwen. Het vereist toegang tot je telefoon-belgeschiedenis, een agenda-API, een CRM en een mailtool. Het is werk, maar geen rocket science. Voor wie zelf wil prutsen: de communities rond AdsToAI en Build the Agent geven hier een hoop voorzetten.
+      </p>
+
+      <p>
+        Voor wie liever wil dat het gewoon werkt: dat is precies wat wij voor klanten bouwen. Niet als productlicentie, maar als flow op maat. Een keer goed inrichten en je verliest geen 90 minuten per dag meer aan administratie na gesprekken.
+      </p>
+
+      <H2 num="06">Conclusie</H2>
+
+      <p>
+        Plaud is geen perfecte tool. Het is wel de tool waarmee we na twee jaar testen zijn gestopt met andere proberen. De rest van de markt is goed in deelproblemen, Plaud is goed in de hele werkdag van een consultant of marketeer die tussen klantgesprekken, video-calls en netwerkmomenten beweegt. Het apparaat is de helft van de oplossing. De andere helft is wat je eromheen bouwt.
+      </p>
+
+      <Callout
+        big="0"
+        label="Aantal andere transcriptietools dat we sinds we Plaud actief gebruiken nog actief inzetten op een werkdag. Voor specifieke deelvragen (zoals lokaal Whisper voor een grote keynote-uitdraai) houden we 'm achter de hand. Voor dagelijks gebruik: één tool wint."
+      />
+
+      <p>
+        Een laatste opmerking. Wij hebben hier geen partnerschap met Plaud. Geen affiliate-link, geen commissie. Dit is gewoon wat we na een paar honderd uur opname-tijd zelf gebruiken. Als dat over een jaar verandert (een nieuwe speler, een verbeterde concurrent), zal je dat hier teruglezen.
+      </p>
+    </>
+  )
 }
 
 function ArticleStubBody({ article }: { article: { title: string; dek: string; edition: string } }) {

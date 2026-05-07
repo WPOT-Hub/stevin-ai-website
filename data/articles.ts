@@ -133,6 +133,21 @@ export const articles: Article[] = [
 
   /* ─── EDITORIALS ─── */
   {
+    slug: 'beste-transcriptietool-2026',
+    format: 'editorial',
+    edition: '015',
+    category: 'Werkmethode',
+    title: 'We hebben acht transcriptietools getest. Plaud wint.',
+    dek:
+      'Van Whisper en Gemini tot AI-notitieapps en Echo Scribe. Twee jaar testen levert één duidelijke winnaar op, met kanttekeningen. En een eerlijk gesprek over de leercurve eronder.',
+    publishedAt: '2026-05-07',
+    readMinutes: 9,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid',
+    posterTag: 'WERKMETHODE',
+    posterTopic: 'De beste transcriptietool getest.',
+  },
+  {
     slug: '95-procent-ai-pilots-mislukt',
     format: 'editorial',
     edition: '014',
