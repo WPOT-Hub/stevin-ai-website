@@ -26,30 +26,30 @@ export function getArticleFaqs(slug: string): FAQ[] | null {
 export const homepageFaqs: FAQ[] = [
   {
     question: 'Wat doet Stevin precies?',
-    answer: 'Stevin koppelt al je digitale kanalen — van advertenties en social media tot streaming en e-commerce — in één platform. Onze AI analyseert die data 24/7, signaleert afwijkingen en levert concrete actiepunten. Geen passieve dashboards, maar directe inzichten waarmee je kunt ingrijpen.',
+    answer: 'Stevin is een marketing intelligence platform dat 24/7 met je marketingstack verbonden is en signaleert waar omzet, marge of merkwaarde weglekt — vóór reguliere rapportage het oppikt. Wat fout ging in april, zag Stevin op 4 april. Per signaal krijg je diagnose én concreet advies, niet alleen een grafiek die daalt.',
   },
   {
     question: 'Voor wie is Stevin bedoeld?',
-    answer: 'Voor iedereen die grip wil op versnipperde data. Agencies, inhouse teams en promotoren gebruiken Stevin om meerdere accounts vanuit één systeem te beheren en de markt te scannen. Artiesten gebruiken het om cross-channel momentum te volgen en fan-signalen te filteren. Het platform is hetzelfde, de toepassing verschilt.',
+    answer: 'Voor bureau-eigenaars die portfolio\'s van klanten beheren en voor in-house marketingteams die hun eigen merk diep willen sturen. Bureaus gebruiken Stevin om met hetzelfde aantal mensen meer klanten kwalitatief te bedienen; in-house teams om grip te krijgen op versnipperde data over Google, Meta, GA4, CRM en e-commerce.',
   },
   {
     question: 'Welke platforms koppelen jullie?',
-    answer: 'Meer dan 220 integraties: van Meta, Google en TikTok tot Spotify, Shopify, Klaviyo en tientallen andere platforms. De koppelingen zijn native — geen middleware, geen vertraging. Mis je een specifiek platform? Neem contact op, we bouwen continu door.',
+    answer: 'De relevante marketing-stack: Google Ads, Meta, TikTok, LinkedIn, GA4, Search Console, Shopify, Klaviyo, HubSpot, Salesforce, Mailchimp, ClickUp en meer. Native koppelingen — geen Zapier-tussenlaag. Voor minder gangbare bronnen werken we met een open MCP-laag waarmee we per klant maatwerk-koppelingen toevoegen zonder bouw-traject.',
   },
   {
     question: 'Hoe verschilt Stevin van een dashboard-tool?',
-    answer: 'Dashboards tonen data. Stevin analyseert, correleert en handelt. Het platform detecteert anomalieën, combineert signalen uit verschillende kanalen en geeft concrete aanbevelingen. Bovendien leert het platform je tone of voice en past rapportages aan op jouw klanten.',
+    answer: 'Een dashboard wacht tot jij het opent. Stevin tikt jou. Het platform monitort continu, detecteert afwijkingen tegen wat normaal is voor jouw account (niet generieke drempels), legt symptoom aan oorzaak — frequency, thumbstop, GTM-firing, concurrent-bod — en levert concreet advies. Push, geen pull. Dashboards zijn verleden tense, Stevin is present tense plus advies.',
   },
   {
     question: 'Zijn mijn data veilig?',
-    answer: 'Ja. We draaien op EU-gehoste servers, gebruiken EU-gehoste AI en slaan geen data op buiten Europa. Elke klant zit in een volledig afgeschermde omgeving — data van het ene account is technisch onbereikbaar voor een ander. Volledig AVG-compliant, zonder third-party tracking cookies.',
+    answer: 'Ja. EU-gehoste servers, EU-gehoste AI, geen data buiten Europa. Elke organisatie draait in een afgeschermde omgeving — data van klant A is technisch onbereikbaar voor klant B, ook intern bij ons. Volledig AVG-compliant, geen third-party tracking cookies. Adviezen die Stevin geeft voor één bureau lekken niet door naar een ander.',
   },
   {
     question: 'Wat kost het?',
-    answer: 'We werken met vaste maandprijzen, afgestemd op je situatie en het aantal koppelingen. Geen marge op mediabudget, geen verborgen kosten. Plan een gesprek voor een voorstel op maat.',
+    answer: 'Vaste maandprijzen, afgestemd op het aantal klanten en koppelingen. Geen marge op je mediabudget, geen percentage van spend, geen verborgen kosten. Plan een gesprek voor een voorstel op maat.',
   },
   {
     question: 'Hoe snel ben ik operationeel?',
-    answer: 'Gemiddeld een week, afhankelijk van de complexiteit. De meeste koppelingen zijn binnen een dag live, daarna richten we het platform in met alerts, rapportages en AI-analyses.',
+    answer: 'De gangbare koppelingen (Google, Meta, GA4) zijn binnen een dag live. Daarna leert het platform 1-2 weken wat normaal is voor jouw accounts voordat de eerste signalen scherp worden. Vanaf week 3 levert Stevin betrouwbaar diagnose plus advies.',
   },
 ]
