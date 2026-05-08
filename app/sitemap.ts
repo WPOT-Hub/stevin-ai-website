@@ -26,6 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/healthcare-marketing',
     '/retail',
     '/voor-agencies',
+    '/google-ad-grants-belgie',
+    '/google-ad-grants-nederland',
     '/platform',
     '/diensten',
     '/werkwijze',

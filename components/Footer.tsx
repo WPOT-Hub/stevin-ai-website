@@ -25,6 +25,8 @@ export default function Footer() {
       { label: t('bedrijf_seo'), href: '/seo' },
       { label: t('bedrijf_geo'), href: '/geo' },
       { label: t('bedrijf_agencies'), href: '/voor-agencies' },
+      { label: 'Google Ad Grants (BE)', href: '/google-ad-grants-belgie' },
+      { label: 'Google Ad Grants (NL)', href: '/google-ad-grants-nederland' },
       { label: t('bedrijf_contact'), href: '/contact' },
     ],
     integraties: [
