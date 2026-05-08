@@ -39,6 +39,16 @@ const faqs = [
     answer:
       'In aanmerking komende non-profits kunnen tot 10.000 USD per maand aan zoekadvertentiebudget ontvangen. Het budget moet actief beheerd worden, anders pauzeert Google het account.',
   },
+  {
+    question: 'Heeft Microsoft Ads (Bing) een vergelijkbaar programma?',
+    answer:
+      'Nee. Microsoft Ads (Bing) heeft geen gratis advertentiebudget-programma voor non-profits in Nederland. Microsoft for Nonprofits geeft wel korting of gratis Office 365, Azure en Teams, maar geen Bing-zoekadvertenties. Bing-traffic in NL is ongeveer 3-5%, dus het ontbreken van een equivalent is meestal geen groot gemis.',
+  },
+  {
+    question: 'Zijn er ook advertentie-credits via Meta of TikTok voor stichtingen en verenigingen?',
+    answer:
+      'Meta for Nonprofits geeft non-profits makkelijker verificatie en soms ad-credits bij speciale campagnes, maar geen vast doorlopend budget. TikTok Ads for Good draait in beperkt aantal landen, niet structureel in NL. Voor advertentiebudget op schaal blijft Google Ad Grants veruit de grootste kans.',
+  },
 ]
 
 export default async function GoogleAdGrantsNederlandPage({ params }: Props) {

@@ -39,6 +39,16 @@ const faqs = [
     answer:
       'Vaste maandprijzen, afgestemd op het aantal kanalen en koppelingen. Geen marge op jullie media-budget. Voor non-profits maken we een aangepast voorstel, plan een gesprek voor de details.',
   },
+  {
+    question: 'Welke advertentie-credits zijn er voor non-profits in België?',
+    answer:
+      'Google Ad Grants is veruit het grootste programma: tot 10.000 USD per maand aan gratis Search-advertenties voor in aanmerking komende non-profits. Microsoft Ads (Bing) heeft geen vergelijkbaar gratis programma in BE. Meta for Nonprofits biedt makkelijker verificatie en soms ad-credits bij campagnes. TikTok Ads for Good draait in beperkt aantal landen, niet structureel in BE. Voor non-profit-advertentiebudget op schaal is en blijft Google de grootste kans.',
+  },
+  {
+    question: 'Helpt Stevin ook bij Google Ad Grants?',
+    answer:
+      'Ja. We hebben aparte begeleidings-pagina\'s voor de aanvraag en inrichting: bekijk /google-ad-grants-belgie. Stevin helpt bij eligibility-check, website-scan, aanvraag-voorbereiding bij Google for Nonprofits en Goodstack, en daarna bij campagne-structuur en regels-bewaking om het account actief te houden.',
+  },
 ]
 
 const capabilities = [

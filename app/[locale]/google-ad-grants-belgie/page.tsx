@@ -40,6 +40,16 @@ const faqs = [
     answer:
       'Ja. Musea, fondsenwervende organisaties, gezondheidsfondsen en culturele organisaties komen vaak in aanmerking, mits ze een geregistreerde non-profit-rechtsvorm hebben en aan de website-eisen voldoen.',
   },
+  {
+    question: 'Heeft Microsoft Ads (Bing) een vergelijkbaar programma?',
+    answer:
+      'Nee. Microsoft Ads (Bing) heeft geen gratis advertentiebudget-programma voor non-profits in België. Microsoft for Nonprofits geeft wel korting of gratis Office 365, Azure en Teams, maar geen Bing-zoekadvertenties. In de praktijk is Bing-traffic in BE relatief beperkt (5-10%, hoger door Edge in overheidskantoren), dus het ontbreken van een equivalent is meestal geen groot gemis.',
+  },
+  {
+    question: 'Zijn er ook advertentie-credits via Meta of TikTok voor VZW\'s?',
+    answer:
+      'Meta for Nonprofits geeft VZW\'s makkelijker non-profit-verificatie en soms ad-credits bij speciale campagnes, maar geen vast doorlopend budget. TikTok Ads for Good draait in beperkt aantal landen, niet structureel in BE. Voor advertentiebudget op schaal blijft Google Ad Grants veruit de grootste kans.',
+  },
 ]
 
 export default async function GoogleAdGrantsBelgiePage({ params }: Props) {
