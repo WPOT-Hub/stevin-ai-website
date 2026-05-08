@@ -25,6 +25,8 @@ export default function Footer() {
       { label: t('bedrijf_seo'), href: '/seo' },
       { label: t('bedrijf_geo'), href: '/geo' },
       { label: t('bedrijf_agencies'), href: '/voor-agencies' },
+      { label: 'Non-profit marketing (BE)', href: '/non-profit-marketing-belgie' },
+      { label: 'Non-profit marketing (NL)', href: '/non-profit-marketing-nederland' },
       { label: 'Google Ad Grants (BE)', href: '/google-ad-grants-belgie' },
       { label: 'Google Ad Grants (NL)', href: '/google-ad-grants-nederland' },
       { label: t('bedrijf_contact'), href: '/contact' },

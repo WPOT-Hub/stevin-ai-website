@@ -28,6 +28,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/voor-agencies',
     '/google-ad-grants-belgie',
     '/google-ad-grants-nederland',
+    '/non-profit-marketing-belgie',
+    '/non-profit-marketing-nederland',
     '/platform',
     '/diensten',
     '/werkwijze',
