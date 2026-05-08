@@ -8,10 +8,15 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'pr_bureaus' })
+  if (locale === 'nl') {
+    return {
+      title: 'Stevin voor PR-bureaus · merkwaarde meten en bewijzen',
+      description: 'PR-bureaus laten merkwaarde-werk vaak ongezien. Stevin volgt mentions, sentiment en aandacht over campagnes heen. En levert het bewijs dat je nodig hebt richting opdrachtgever.',
+    }
+  }
   return {
-    title: `Stevin ${t('eyebrow')} — ${t('h1')}`,
-    description: t('sub'),
+    title: 'Stevin for PR agencies · measure and prove brand value',
+    description: 'PR agencies often leave brand-value work invisible. Stevin tracks mentions, sentiment and attention across campaigns. And delivers the evidence you need toward clients.',
   }
 }
 

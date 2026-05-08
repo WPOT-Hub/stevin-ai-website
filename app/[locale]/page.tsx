@@ -117,7 +117,7 @@ export default async function HomePage({ params }: Props) {
               {t('cta_demo')}
             </Link>
             <Link
-              href="/platform"
+              href="/werkwijze"
               className="inline-flex items-center gap-2 border border-white/20 text-white font-display font-semibold text-[15px] px-7 py-3.5 rounded-lg hover:border-white/40 hover:bg-white/5 transition-colors"
             >
               {t('cta_platform')}

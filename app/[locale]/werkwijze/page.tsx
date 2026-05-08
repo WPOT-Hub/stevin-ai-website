@@ -7,10 +7,15 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'werkwijze' })
+  if (locale === 'nl') {
+    return {
+      title: 'Hoe Stevin werkt · van marketing-data naar concrete acties',
+      description: 'We koppelen je marketing-stack, lezen 24/7 mee en signaleren wat lekt. In plaats van een rapport krijg je een actie met de oorzaak erbij.',
+    }
+  }
   return {
-    title: `${t('eyebrow')} — Stevin`,
-    description: t('sub'),
+    title: 'How Stevin works · from marketing data to concrete actions',
+    description: 'We connect your marketing stack, read along 24/7, and signal what\'s leaking. Instead of a report you get an action with the cause attached.',
   }
 }
 

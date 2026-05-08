@@ -27,16 +27,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     return {
       metadataBase: new URL('https://stevin.ai'),
       title: {
-        default: 'Stevin.AI — Wat er fout gaat in je marketing, weet jij eerst.',
+        default: 'Stevin · Marketing intelligence die signalen geeft voor het maandrapport',
         template: '%s | Stevin.AI',
       },
-      description: 'Stevin kijkt 24/7 mee in je paid en owned media en signaleert iedere afwijking. Voordat ze in je rapportage staat. Marketing-intelligence voor bureaus, inhouse teams en specialisten.',
+      description: 'Stevin verbindt je marketing-stack en wijst aan waar omzet, marge of aandacht weglekt voor reguliere rapportage het oppikt. Voor bureaus en in-house marketing-teams.',
       openGraph: {
         type: 'website',
         locale: 'nl_NL',
         siteName: 'Stevin.AI',
-        title: 'Stevin.AI — Wat er fout gaat in je marketing, weet jij eerst.',
-        description: 'Stevin kijkt 24/7 mee in je paid en owned media en signaleert iedere afwijking. Voordat ze in je rapportage staat.',
+        title: 'Stevin · Marketing intelligence die signalen geeft voor het maandrapport',
+        description: 'Stevin verbindt je marketing-stack en wijst aan waar omzet, marge of aandacht weglekt voor reguliere rapportage het oppikt.',
         url: 'https://stevin.ai',
         images: [
           {
@@ -49,8 +49,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'Stevin.AI — Wat er fout gaat in je marketing, weet jij eerst.',
-        description: 'Stevin kijkt 24/7 mee in je paid en owned media en signaleert iedere afwijking. Voordat ze in je rapportage staat.',
+        title: 'Stevin · Marketing intelligence die signalen geeft voor het maandrapport',
+        description: 'Stevin verbindt je marketing-stack en wijst aan waar omzet, marge of aandacht weglekt voor reguliere rapportage het oppikt.',
         images: ['/opengraph-image'],
       },
       alternates: {
@@ -67,30 +67,30 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     metadataBase: new URL('https://stevin.ai'),
     title: {
-      default: 'Stevin.AI — Signals tell you what changed. Evidence tells you what holds.',
+      default: 'Stevin · Marketing intelligence that signals before the monthly report does',
       template: '%s | Stevin.AI',
     },
-    description: 'The intelligent decision layer for marketing teams and agencies. Signals reconcile what changed in your accounts; Evidence governs what marketing science says still holds. 245+ integrations.',
+    description: 'Stevin connects your marketing stack and shows where revenue, margin or attention is leaking before regular reporting catches it. For agencies and in-house marketing teams.',
     openGraph: {
       type: 'website',
       locale: 'en_GB',
       siteName: 'Stevin.AI',
-      title: 'Stevin.AI — Signals tell you what changed. Evidence tells you what holds.',
-      description: 'The intelligent decision layer for marketing teams and agencies. 245+ integrations across paid, owned, analytics and CRM.',
+      title: 'Stevin · Marketing intelligence that signals before the monthly report does',
+      description: 'Stevin connects your marketing stack and shows where revenue, margin or attention is leaking before regular reporting catches it.',
       url: 'https://stevin.ai/en',
       images: [
         {
           url: '/en/opengraph-image',
           width: 1200,
           height: 630,
-          alt: 'Stevin.AI — Signals tell you what changed. Evidence tells you what holds.',
+          alt: 'Stevin · Marketing intelligence that signals before the monthly report does',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Stevin.AI — Signals tell you what changed. Evidence tells you what holds.',
-      description: 'The intelligent decision layer for marketing teams and agencies. 245+ integrations across paid, owned, analytics and CRM.',
+      title: 'Stevin · Marketing intelligence that signals before the monthly report does',
+      description: 'Stevin connects your marketing stack and shows where revenue, margin or attention is leaking before regular reporting catches it.',
       images: ['/en/opengraph-image'],
     },
     alternates: {
