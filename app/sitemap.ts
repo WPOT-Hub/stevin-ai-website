@@ -30,9 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/google-ad-grants-nederland',
     '/non-profit-marketing-belgie',
     '/non-profit-marketing-nederland',
-    '/voor-dealers',
-    '/voor-verhuur',
-    '/voor-musea',
+    // /voor-dealers, /voor-verhuur, /voor-musea — uit sitemap tot vendor-claims gechecked zijn (noindex op pages)
     '/platform',
     '/diensten',
     '/werkwijze',

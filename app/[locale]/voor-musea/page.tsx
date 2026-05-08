@@ -12,6 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Stevin ${t('eyebrow')} — ${t('h1')}`,
     description: t('sub'),
+    robots: { index: false, follow: false },
   }
 }
 
