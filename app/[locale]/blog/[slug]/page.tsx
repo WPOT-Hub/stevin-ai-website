@@ -1163,6 +1163,45 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'conde-nast-search-onder-tien-procent': (
+    <>
+      <p className="lead-para">
+        Condé Nast verwacht dat zoekmachines binnenkort minder dan tien procent van zijn totale website-verkeer leveren, volgens Search Engine Land (13 mei 2026). De uitgever van Vogue, GQ, The New Yorker en Wired baseert die uitspraak op trends die al maanden ingezet zijn na de uitrol van AI Overviews in Google Search en gelijksoortige antwoord-functies bij Bing en Perplexity.
+      </p>
+      <p>
+        De daling is breder dan alleen Condé Nast. Meerdere grote uitgevers melden dat AI-antwoorden steeds vaker de hele lezersvraag afdekken zonder dat de klik naar de bron volgt. Voor titels die historisch tot zestig procent van hun verkeer uit search haalden is dat een fundamentele herziening van het verdienmodel.
+      </p>
+      <p>
+        De uitgever schuift zwaarder naar directe abonnementen, nieuwsbrieven en eigen apps. Op de adverteerderskant valt het verschil tussen zichtbaar zijn in een AI-antwoord en geklikt worden in een ranking nu uit elkaar als twee aparte disciplines, met eigen meetlatten en eigen budgetlijntjes.
+      </p>
+    </>
+  ),
+  'lecun-ami-labs-jepa-tegen-llms': (
+    <>
+      <p className="lead-para">
+        Yann LeCun heeft Meta verlaten en start AMI Labs in Parijs samen met serie-ondernemer Alexandre LeBrun. Het bedrijf haalde een seed-ronde op van iets meer dan een miljard dollar bij een waardering van 3,5 miljard, volgens MIT Technology Review (januari 2026). Dat maakt het volgens Latent Space de grootste seed ooit voor een Europees techbedrijf.
+      </p>
+      <p>
+        De richting is expliciet contra-mainstream. Waar OpenAI, Anthropic en Google blijven inzetten op steeds grotere taalmodellen, kiest LeCun voor JEPA, een joint-embedding predictive architecture die wereld-toestanden voorspelt vanuit beelden. In maart verscheen het paper LeWorldModel met die aanpak. LeCun stelt openlijk dat het huidige LLM-traject vastloopt en wijst op zijn nieuwe paper waarin het begrip AGI als operationeel ongeschikt wordt afgeschreven, met een eigen term in de plaats: Superhuman Adaptable Intelligence.
+      </p>
+      <p>
+        Voor de Europese AI-scene is het bedrag opmerkelijk. Tot nu toe haalden alle Mistral- en Aleph-Alpha-rondes samen niet eens in de buurt van deze enkele seed. AMI Labs heeft op dit moment geen product, alleen een research-roadmap, en gebruikt het kapitaal voor compute en team-bouw.
+      </p>
+    </>
+  ),
+  'google-ads-gemini-dashboards-real-time': (
+    <>
+      <p className="lead-para">
+        Google Ads krijgt een nieuwe AI-laag ingebakken in zijn dashboard, volgens Search Engine Land (12 mei 2026). De integratie gebruikt de Gemini-modellen om campagne-data in natuurlijke taal te bevragen en geeft volgens Google real-time inzichten, zonder dat de adverteerder eerst rapportage-views hoeft te bouwen.
+      </p>
+      <p>
+        De feature volgt op een bredere beweging waarbij ad-platforms hun eigen AI-assistenten direct in de productinterface stoppen. Meta deed het eerder met Advantage+, TikTok met Smart+ en LinkedIn met Accelerate. Voor Google is het de tweede grote AI-uitrol dit jaar binnen Ads, na de uitbreiding van Performance Max met Gemini-creative-generatie.
+      </p>
+      <p>
+        Wat Google&apos;s variant onderscheidt is dat de Gemini-laag toegang heeft tot historische account-data en cross-campagne signalen, niet alleen de campagne die in beeld staat. Volgens de aankondiging kunnen adverteerders vragen stellen zoals welke segmenten verschuiven of waar de marge het hardst beweegt, en krijgen ze antwoorden onderbouwd met klikbare onderliggende rapporten.
+      </p>
+    </>
+  ),
   'amazon-ads-22-procent-groei-q1-2026': (
     <>
       <p className="lead-para">
@@ -1259,6 +1298,12 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'conde-nast-search-onder-tien-procent':
+    'Voor wie marketing voert is dit geen losse uitgevers-zorg. Het is een signaal dat verkeer uit organisch zoekverkeer onder druk staat ongeacht je vak. Eigen kanalen, e-mail-lijsten en directe communities krijgen daarmee een herwaardering. En voor de paid-kant verschuift het advertising-model bij de grote AI-platforms van klik-gebaseerd naar gepresenteerd-worden. Wie nu nog optimaliseert op klikken alleen, optimaliseert binnenkort op een metric die niet meer telt.',
+  'lecun-ami-labs-jepa-tegen-llms':
+    'Voor marketing-tools is de directe impact nul. JEPA is research-fase, geen product. Wel relevant is de signaal-waarde. Als de bouwers van LLMs zelf openlijk zeggen dat de architectuur zijn grenzen raakt, hoort daar een nuchterder verhaal bij over wat de huidige generatie tools kan en wat niet. Een agent die je vandaag een werkweek aan rapportage uit handen neemt blijft handig. Een agent die zelfstandig een marketing-strategie van A tot Z voert, in een complexe organisatie, blijft een belofte. De afstand tussen die twee is geen jaartal, het is een onderzoeksprogramma.',
+  'google-ads-gemini-dashboards-real-time':
+    'Voor adverteerders die alleen binnen Google adverteren wordt het dashboard-werk lichter. Voor wie meerdere kanalen gebruikt verandert het minder dan het lijkt. Een AI-laag binnen Google Ads ziet alleen Google-data. De zinvolle vragen draaien meestal over de portfolio, niet over een enkel platform. Daar zit een belangrijk onderscheid voor agency-teams en in-house marketeers die naast Google ook Meta, TikTok of e-mail draaien. Een single-platform-Gemini lost dat niet op, een meerlaagse beoordeling over kanalen heen wel.',
   'spotify-ai-muziek-verificatie':
     'Voor labels en artiesten betekent dit op korte termijn extra administratie bij elke release. Voor distributeurs een nieuwe controle-laag die ze moeten inbouwen. Wat het feitelijk verandert: AI-tracks blijven mogelijk, maar krijgen een eigen label. Dat is geen ban — het is een meetlat. En meetlatten op platforms zijn altijd het begin van een nieuwe reeks regels.',
   'oscars-ai-acteerprestaties-niet-toegestaan':

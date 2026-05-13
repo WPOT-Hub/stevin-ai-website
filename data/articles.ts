@@ -32,6 +32,63 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-gemini-dashboards-real-time',
+    format: 'dispatch',
+    edition: '022',
+    category: 'Platform',
+    title: 'Google Ads krijgt Gemini-aangedreven dashboards voor real-time inzicht.',
+    dek:
+      'Google integreert zijn Gemini-modellen direct in het Ads-dashboard. Natuurlijke-taal-vragen en cross-campagne-analyse worden de belangrijkste functies.',
+    publishedAt: '2026-05-13',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient',
+    posterTag: 'PLATFORM',
+    posterTopic: 'Google Ads bakt Gemini in.',
+    source: {
+      url: 'https://searchengineland.com',
+      name: 'Search Engine Land',
+    },
+  },
+  {
+    slug: 'lecun-ami-labs-jepa-tegen-llms',
+    format: 'dispatch',
+    edition: '021',
+    category: 'Onderzoek',
+    title: 'Yann LeCun verlaat Meta en haalt een miljard op voor een AI-richting tegen LLMs.',
+    dek:
+      'De Franse onderzoeker stopt na twaalf jaar bij Meta en start AMI Labs in Parijs. Het is de grootste seed-ronde ooit voor een Europees techbedrijf.',
+    publishedAt: '2026-05-13',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid',
+    posterTag: 'ONDERZOEK',
+    posterTopic: 'LeCun zet een miljard tegen LLMs.',
+    source: {
+      url: 'https://www.technologyreview.com/2026/01/22/1131661/yann-lecuns-new-venture-ami-labs/',
+      name: 'MIT Technology Review',
+    },
+  },
+  {
+    slug: 'conde-nast-search-onder-tien-procent',
+    format: 'dispatch',
+    edition: '020',
+    category: 'Markt',
+    title: 'Condé Nast verwacht dat search nog minder dan tien procent van zijn traffic levert.',
+    dek:
+      'De uitgever van Vogue, GQ en The New Yorker zegt openlijk dat zoekmachines hun rol als verkeer-leverancier verliezen. AI Overviews dekken steeds vaker de hele lezersvraag.',
+    publishedAt: '2026-05-13',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid',
+    posterTag: 'MARKT',
+    posterTopic: 'Conde Nast ziet search verdampen.',
+    source: {
+      url: 'https://searchengineland.com',
+      name: 'Search Engine Land',
+    },
+  },
+  {
     slug: 'amazon-ads-22-procent-groei-q1-2026',
     format: 'dispatch',
     edition: '019',
