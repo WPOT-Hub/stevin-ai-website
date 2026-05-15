@@ -2,7 +2,7 @@
   "mmm-is-een-hypothese": [
     {
       "question": "Wat is een Marketing Mix Model precies?",
-      "answer": "Volgens Gartner een statistische techniek om de impact van marketingactiviteiten op sales te schatten. Het neemt 2-3 jaar wekelijkse data over sales en mediabestedingen plus controle-variabelen voor seizoen, prijs, promotie en macro-economie. Output: decomposition per kanaal, response curves en marginale ROI — als schattingen met intervallen, niet als feiten."
+      "answer": "Volgens Gartner een statistische techniek om de impact van marketingactiviteiten op sales te schatten. Het neemt 2-3 jaar wekelijkse data over sales en mediabestedingen plus controle-variabelen voor seizoen, prijs, promotie en macro-economie. Output: decomposition per kanaal, response curves en marginale ROI, als schattingen met intervallen, niet als feiten."
     },
     {
       "question": "Wat is het verschil tussen een MMM-output en een rapport?",
@@ -80,7 +80,7 @@
     },
     {
       "question": "Welke meetstack zou je dan moeten bouwen?",
-      "answer": "Vier lagen. Eén: operationele attributie (last-click voor debugging, niet budget). Twee: uplift-tests (geo, holdout, audience-split — vooral op kanalen die last-click overschat). Drie: Marketing Mix Modeling voor de budgetvraag. Vier: brand tracking voor wat last-click niet ziet (bekendheid, overweging, voorkeur)."
+      "answer": "Vier lagen. Eén: operationele attributie (last-click voor debugging, niet budget). Twee: uplift-tests (geo, holdout, audience-split, vooral op kanalen die last-click overschat). Drie: Marketing Mix Modeling voor de budgetvraag. Vier: brand tracking voor wat last-click niet ziet (bekendheid, overweging, voorkeur)."
     },
     {
       "question": "Maakt Google Meridian MMM nu wel toegankelijk voor MKB?",
