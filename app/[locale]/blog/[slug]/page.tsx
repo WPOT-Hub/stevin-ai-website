@@ -1181,7 +1181,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Twee: het narratief is nu bevestigd op holding-niveau. Drie jaar geleden was AI in marketing een experiment in een innovatie-lab. Nu wordt er 2 miljard betaald om het strategische verhaal naar enterprise-klanten te kunnen vertellen. Voor elke bureau-eigenaar betekent dat: jouw klanten gaan binnen 12 maanden vragen wat jouw AI-positie is. Niet omdat het hype is, maar omdat hun board die vraag aan hen stelt.
       </p>
       <p>
-        Drie: het gat tussen enterprise en MKB wordt zichtbaar groter. Procter &amp; Gamble, Unilever en L&apos;Oreal krijgen straks een geintegreerde Publicis-LiveRamp stack. Het bureau dat de kapper, de loodgieter, de regionale autodealer of de festival-organisator bedient krijgt dat niet. En heeft dat ook nooit nodig.
+        Drie: het gat tussen enterprise en MKB wordt zichtbaar groter. Procter &amp; Gamble, Unilever en L&apos;Oreal krijgen straks een geintegreerde Publicis-LiveRamp stack. Het bureau dat een landelijke retailer, een regionale automotive-groep, een D2C-merk of een festival-organisator bedient krijgt dat niet. En heeft dat ook nooit nodig.
       </p>
     </>
   ),
