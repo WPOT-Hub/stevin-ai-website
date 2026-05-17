@@ -1163,6 +1163,110 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-chatgpt-ads-manager-cpc-self-serve': (
+    <>
+      <p className="lead-para">
+        OpenAI heeft op 5 mei zijn ChatGPT Ads-platform uitgebreid met een self-serve Ads Manager en een cost-per-click biedoptie. Volgens Axios kunnen Amerikaanse adverteerders zich nu direct aanmelden en campagnes inkopen zonder agency-tussenkomst. Het minimum-budget van 50.000 dollar dat tot vorige week gold, is geschrapt.
+      </p>
+      <p>
+        OpenAI mikt op 2,5 miljard dollar advertentie-omzet dit jaar en 100 miljard in 2030. De Ads Manager komt ook beschikbaar via partners zoals Dentsu, Omnicom, Publicis en WPP, plus ad-tech-leveranciers Adobe, Criteo, Kargo, Pacvue en StackAdapt. De pilot wordt in de komende maanden uitgerold naar het Verenigd Koninkrijk, Japan, Brazilie, Mexico en Zuid-Korea.
+      </p>
+      <p>
+        Het bedrijf voegde ook nieuwe meet-tools toe waarmee adverteerders campagnes kunnen analyseren en optimaliseren. Een directe vergelijking met Google Ads of Meta is nog moeilijk te maken, omdat het inventaris-volume in ChatGPT lager is en de auction-dynamiek nog opbouwt. Wel ligt er nu voor het eerst een instap zonder vendor-call.
+      </p>
+    </>
+  ),
+  'klaviyo-anthropic-claude-mcp-agentic-workflows': (
+    <>
+      <p className="lead-para">
+        Klaviyo kondigde op 7 mei een uitgebreide integratie met Anthropic aan waarmee Claude direct toegang krijgt tot Klaviyo-klantdata via het Model Context Protocol. Volgens de aankondiging in het Klaviyo-newsroom kunnen merken vanuit Claude.ai en Claude Cowork prestatie-rapporten, segment-analyses en kant-en-klare campagne-briefs genereren zonder data te exporteren of een tweede dashboard te openen.
+      </p>
+      <p>
+        De nieuwe MCP Connector koppelt aan een Query Metric Aggregates-tool die ruwe prestatie-cijfers blootlegt. Claude kan daarmee Klaviyo-rapporten ophalen, doorredeneren op meerdere flows en customer-profielen, en concept-content schrijven voor een campagne. In Claude Cowork draaien deze stappen in een enkele sessie waarin Claude data trekt, copy schrijft en bestanden opslaat in een gedeelde map.
+      </p>
+      <p>
+        Klaviyo is daarmee na HubSpot en een handvol andere CRM-leveranciers een van de eerste martech-platforms die hun datalaag expliciet openzet voor agent-workflows. Het bedrijf positioneert dit als eerste stap richting wat ze &quot;operational AI&quot; noemen, waarin de marketeer een uitkomst beschrijft en het werk afgerond terugkrijgt.
+      </p>
+    </>
+  ),
+  'eu-ai-act-omnibus-akkoord-deadlines-uitgesteld': (
+    <>
+      <p className="lead-para">
+        De EU-instellingen hebben op 7 mei een politiek akkoord bereikt over de zogenoemde AI Act Omnibus. Volgens Morrison Foerster verheldert het pakket bestaande verplichtingen, schuift het de compliance-deadlines voor hoge-risico-AI-systemen op en introduceert het nieuwe regels rond AI-gegenereerde intieme content.
+      </p>
+      <p>
+        De overgebleven bepalingen van de AI Act worden op 2 augustus 2026 van toepassing. Verboden voor AI-systemen met onaanvaardbaar risico golden al sinds 2 februari 2025, en regels voor general-purpose modellen zoals ChatGPT, Claude en Gemini sinds augustus 2025. Boetes voor de zwaarste overtredingen lopen op tot 7 procent van de wereldwijde jaaromzet, standaard non-compliance tot 3 procent.
+      </p>
+      <p>
+        Voor marketing-bureaus die AI gebruiken om EU-consumentendata te verwerken, valt het werk binnen de scope van de wet. Inzetters van hoge-risico-AI-systemen moeten fundamental-rights-impact-assessments uitvoeren, menselijk toezicht inrichten, gebruikslogs bijhouden voor post-market-monitoring en medewerkers AI-literacy-training geven. De categorieen die het meest raken aan marketing-werk zijn AI die individuen scoort of evalueert, en AI in werving en HR.
+      </p>
+    </>
+  ),
+  'linkedin-off-platform-event-ads-globale-uitrol': (
+    <>
+      <p className="lead-para">
+        LinkedIn maakte Off-Platform Event Ads op 6 mei wereldwijd beschikbaar. Volgens Sourcegeek kunnen marketeers vanaf nu event-advertenties in de LinkedIn-feed serveren die rechtstreeks doorlinken naar externe registratiepagina&apos;s, eigen event-sites, livestreams of formulieren. Tot voor kort moest de aanmelding binnen LinkedIn-omgeving plaatsvinden, met beperkte controle over de vervolg-data.
+      </p>
+      <p>
+        Het voordeel zit in het behouden van je eigen stack: CRM-velden, consent-flow, opvolg-mails en attributie blijven aan jouw kant. LinkedIn levert de doelgroep en het beeld in de feed, jij houdt de hand op het inschrijfproces. Voor B2B-organisatoren van webinars, conferenties en demo&apos;s verlaagt dit de drempel om LinkedIn als top-of-funnel-kanaal te gebruiken zonder afscheid te nemen van bestaande event-tools.
+      </p>
+      <p>
+        De rol-out volgde op twee algemene LinkedIn-trends. Posts met externe links krijgen ongeveer 60 procent minder bereik dan posts zonder, en LinkedIn schoof in het algoritme naar wat het zelf &quot;Depth and Authority&quot; noemt: minder viral-reach, meer professionele substantie. Off-Platform Event Ads geven adverteerders een betaalde route om die link-frictie te omzeilen.
+      </p>
+    </>
+  ),
+  'youtube-brandcast-2026-tv-checkout-ai-sponsoring': (
+    <>
+      <p className="lead-para">
+        YouTube presenteerde op 13 mei tijdens Brandcast 2026 in Lincoln Center een reeks nieuwe advertentie-formats. De aankondiging op de YouTube-blog noemt drie hoofdthema&apos;s: connected-TV-commerce, AI-gedreven sponsoring en uitgebreide creator-deals.
+      </p>
+      <p>
+        Buy with Google Pay laat kijkers vanaf hun TV in twee klikken een aankoop afronden. YouTube meldt dat conversies vanuit CTV-advertenties in Q1 2026 met meer dan 200 procent jaar-op-jaar groeiden. Custom Sponsorships gebruikt AI om video&apos;s te selecteren die passen bij het moment dat een merk wil bereiken, en Masthead met Custom Content Shelf staat marketeers toe om naast hun hero-creative aanvullende content te tonen.
+      </p>
+      <p>
+        Voor creators komt er Affiliate Partnerships Boost, waarmee merken organische content kunnen amplifyen waarin hun producten al getagd zijn. Multimodal Video Creation gebruikt Gemini, Nano Banana en Veo om van brief naar productie te gaan in een paar prompts. YouTube kondigde tegelijk nieuwe creator-shows aan met onder anderen Trevor Noah, Alex Cooper en Kareem Rahma.
+      </p>
+    </>
+  ),
+  'anthropic-claude-small-business-vijftien-workflows': (
+    <>
+      <p className="lead-para">
+        Anthropic lanceerde op 13 mei Claude for Small Business, een pakket connectors en agentische workflows gericht op ondernemers. Volgens SiliconANGLE bevat het pakket vijftien skills die beschrijven hoe Claude payroll plant, boekhouding afstemt, campagnes runt en nieuwe medewerkers onboardt. Het verbindt met QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace en Microsoft 365.
+      </p>
+      <p>
+        Er is geen extra prijskaartje bovenop de bestaande Claude-licentie en de partner-tools die een bedrijf al gebruikt. Anthropic startte tegelijk een tour van tien Amerikaanse steden, beginnend op 14 mei in Chicago, waar 100 lokale ondernemers per stop een halve dag gratis AI-fluency-training en een hands-on workshop krijgen.
+      </p>
+      <p>
+        De marketing-specifieke workflows draaien om campagne-management, social-distributie en het volgen van prestatie-rapportages. Claude voert ze niet alleen uit, maar plant ze ook in: een prompt zoals &quot;plan een launch voor mijn nieuwe lijn&quot; wordt opgebroken in deel-taken die over meerdere connectors lopen. Het is daarmee Anthropic&apos;s eerste poging om de SMB-doelgroep direct te bedienen in plaats van via Claude-API-bouwers.
+      </p>
+    </>
+  ),
+  'insider-one-koopt-bluecore-retail-martech-ipo': (
+    <>
+      <p className="lead-para">
+        Insider One kondigde op 13 mei de overname aan van Bluecore, een retail-martech-platform dat ruim 400 Amerikaanse enterprise-merken bedient zoals Sephora, J.Crew, The North Face, Ralph Lauren en Bloomingdale&apos;s. De voorwaarden van de transactie zijn niet bekendgemaakt. Volgens Bloomberg positioneert Insider One de deal als opmaat naar een geplande IPO.
+      </p>
+      <p>
+        Bluecore brengt zijn Transparent ID Network mee, een identificatie-graaf die meer dan 10 miljard shopper-events per dag verwerkt. Die data-laag versterkt Insider One&apos;s modellen voor retail- en commerce-campagnes. Voor Insider One, dat zichzelf &quot;agentic customer engagement platform&quot; noemt, is dit de tweede grote stap richting de Amerikaanse enterprise-retail-markt.
+      </p>
+      <p>
+        De deal past in een bredere consolidatie-trend onder customer-engagement-platforms. Sinds eind 2025 zijn meerdere zelfstandige CDP- en e-mail-platforms opgekocht of gefuseerd, deels gedreven door de noodzaak om AI-agent-workflows aan een grotere data-laag te koppelen. Voor de top-tien retailers betekent het dat hun martech-vendor-landschap krimpt; voor de middenmoot dat de keuze tussen specialist en suite scherper wordt.
+      </p>
+    </>
+  ),
+  'google-ai-max-uit-beta-ai-brief-shopping': (
+    <>
+      <p className="lead-para">
+        Google heeft AI Max voor Search-campagnes deze maand uit beta gehaald, een jaar na de eerste aankondiging tijdens Google Marketing Live 2025. Op de Google Ads-blog meldt het bedrijf dat campagnes met de volledige feature-set gemiddeld 7 procent meer conversies of conversie-waarde halen bij een vergelijkbare CPA of ROAS.
+      </p>
+      <p>
+        De grootste toevoeging is AI Brief, een tool waarmee adverteerders in eigen woorden context geven over hun bedrijf, welke boodschappen passen en welk publiek ze willen bereiken. Het systeem accepteert messaging-guidelines, matching-guidelines en audience-guidelines als instructies. AI Max breidt daarnaast uit naar Shopping-campagnes en travel-specifieke ad-formats, en Final URL Expansion ondersteunt verplichte tekst-disclaimers voor compliance-redenen.
+      </p>
+      <p>
+        Vanaf september 2026 worden Dynamic Search Ads, automatisch gegenereerde assets en campagne-brede broad-match-campagnes automatisch geupgrade naar AI Max. Voor adverteerders die nu nog op klassieke DSA draaien, betekent dat een verplichte migratie binnen vier maanden. Google Marketing Live 2026 op 20 mei zal naar verwachting meer details geven over hoe de upgrade verloopt en welke controles bewaard blijven.
+      </p>
+    </>
+  ),
   'publicis-liveramp-22-miljard-wat-bureau-eigenaars-nu-moeten-weten': (
     <>
       <p className="lead-para">
@@ -1320,6 +1424,22 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-chatgpt-ads-manager-cpc-self-serve':
+    'Voor bureau-eigenaars en in-house teams betekent dit dat je een testbudget kunt vrijmaken zonder eerst een verkoopgesprek met OpenAI te plannen. De relevante vraag is niet of ChatGPT Ads werkt, maar of jouw doelgroep daar zit en of CPC-attributie in jouw stack landt. Begin klein, meet wat doorklikt, en bewaar de tijd die je vroeger kwijt was aan minimum-spend-besprekingen voor het echte werk.',
+  'klaviyo-anthropic-claude-mcp-agentic-workflows':
+    'Voor in-house teams die op Klaviyo draaien betekent dit dat rapportage-werk dat nu een dagdeel kost, in principe naar een chatprompt verschuift. De vraag aan je bureau wordt scherper: als de prompt het rapport schrijft, waar zit dan jullie waarde? Het antwoord ligt in de duiding en de keuzes die volgen, niet in het exporteren van cijfers. Wij bouwen Stevin met dat antwoord in het achterhoofd.',
+  'eu-ai-act-omnibus-akkoord-deadlines-uitgesteld':
+    'Voor bureau-eigenaars is dit het moment om twee dingen te checken. Eerst: welke AI-tools draaien er in jullie stack die persoonsdata van EU-consumenten verwerken, en heeft de leverancier al een DPIA klaarliggen. Dan: welke van jullie eigen workflows valt onder hoge-risico, en wie houdt daar de logs van bij. De boetes zijn theoretisch, de toezichthouders zijn dat niet meer.',
+  'linkedin-off-platform-event-ads-globale-uitrol':
+    'Voor in-house teams die nu webinars en demo\'s runnen via Hopin, Goldcast of een eigen pagina, is dit het moment om de event-flow opnieuw te tekenen. Vraag aan je bureau: trek je LinkedIn-aanmelders direct in onze CRM, of blijven ze in LinkedIn-formulieren hangen waarvan we de data later moeten matchen. Het verschil tussen die twee zit in de snelheid van je opvolging.',
+  'youtube-brandcast-2026-tv-checkout-ai-sponsoring':
+    'Voor bureau-eigenaars die klanten in retail en D2C bedienen, verschuift de YouTube-vraag van "is video belangrijk" naar "hoe meet je een aankoop die op de TV begint en op de telefoon eindigt". De praktische test is simpel: zet een kleine campagne op met CTV-checkout, en kijk of je analytics-stack de conversie kan toewijzen zonder hand-werk. Lukt dat niet, dan ligt het werk eerst bij de meet-laag, niet bij het format.',
+  'anthropic-claude-small-business-vijftien-workflows':
+    'Voor in-house marketeers in een MKB-bedrijf opent dit een serieuze vraag: welke workflows die je nu uitbesteedt aan een freelancer of bureau, kunnen straks vanuit een chatprompt draaien. Het antwoord zal per workflow verschillen, en de eerlijke meting is hoeveel her-werk Claude oplevert versus hoeveel tijd het bespaart. Wij volgen dit dichtbij omdat het direct raakt aan wat een bureau-eigenaar de komende twaalf maanden moet uitleggen aan zijn klanten.',
+  'insider-one-koopt-bluecore-retail-martech-ipo':
+    'Voor in-house teams die op Bluecore draaien, is de eerstvolgende vraag aan de account-manager wanneer roadmap-prioriteiten zullen schuiven, en welke integraties met Insider One-tools verplicht worden. Voor bureaus die merken adviseren over vendor-keuze: martech-consolidatie betekent minder leveranciers maar bredere lock-in. De middenmoot-retailers die nu kiezen, kopen de komende drie jaar effectief de roadmap van een acquirer, niet alleen de software.',
+  'google-ai-max-uit-beta-ai-brief-shopping':
+    'Voor performance-marketeers en bureau-eigenaars is dit niet een nieuw product, maar een verandering in wie de zoekwoorden kiest. AI Brief geeft je instrument om dat sturend bij te werken in plaats van achteraf te corrigeren. De praktische stap is: schrijf nu een brief-document per klant met messaging, no-go\'s en doelgroep-omschrijving, en gebruik dat als input zodra je migreert. Dan hou je in september je werk over voor de gevallen waar de prompt niet uitpakt zoals verwacht.',
   'publicis-liveramp-22-miljard-wat-bureau-eigenaars-nu-moeten-weten':
     'Het verhaal van Publicis raakt aan het narratief, niet aan het werk. Geen enkele bureau-eigenaar die we dit jaar spraken verloor klanten omdat de concurrentie een data-clean-room had. Ze verloren klanten omdat de maandrapportage te laat kwam, omdat de cijfers uit drie systemen niet overeenkwamen, of omdat een campagne al twee weken minder opleverde dan verwacht voordat iemand het zag. Dat zijn geen agentic-transformation problemen. Dat zijn signaal-problemen. Het verschil tussen weten op 14 mei dat april fout ging, of het op 4 april zien terwijl het gebeurt. Een bureau dat dat verschil voor zijn klanten kan maken zonder een holding-deal van 2 miljard heeft de komende twee jaar een concreet verkoopverhaal. Niet panikeren over agentic-transformation jargon. Wel beginnen met de basis: weten welke campagnes nu, deze week, minder opleveren dan verwacht. Bij welke klant. Op welk kanaal. Met welke verklaring. Dat is geen project van zes maanden en geen audit-traject. Stevin is daar drie jaar in gebouwd, binnen een full-service agency, verfijnd op meer dan tweehonderd klanten. Werkt op de stack die je al hebt: Google Ads, Meta, GA4, Shopify, WooCommerce. Geen migratie nodig. Voor bureau-eigenaars die willen zien wat dat concreet voor hun portefeuille betekent: vrijblijvend gesprek van twintig minuten via stevin.ai/contact. De Publicis-deal is geen probleem voor jou. Stilzitten wel.',
   'conde-nast-search-onder-tien-procent':
