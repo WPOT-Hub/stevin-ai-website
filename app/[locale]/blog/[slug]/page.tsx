@@ -1163,6 +1163,28 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'publicis-liveramp-22-miljard-wat-bureau-eigenaars-nu-moeten-weten': (
+    <>
+      <p className="lead-para">
+        Publicis Groupe heeft op 17 mei aangekondigd LiveRamp over te nemen voor een totale ondernemingswaarde van 2,167 miljard dollar in cash, tegen 38,50 dollar per aandeel. De prijs ligt 29,8 procent boven de slotkoers van LiveRamp op 15 mei. De deal moet voor het einde van 2026 worden afgerond en wordt vanaf het eerste jaar accretief verwacht voor de winst per aandeel, volgens Adweek en GlobeNewswire (17 mei 2026).
+      </p>
+      <p>
+        LiveRamp is een data-collaboration platform. De kern is een identity-resolution infrastructuur (RampID) die first-party klantdata van verschillende partijen aan elkaar koppelt zonder dat partijen elkaars ruwe data hoeven te zien. Brands, uitgevers en platforms gebruiken het om bestaande data te activeren naar meer dan 350 bestemmingen, waaronder DSPs, retail-media netwerken en walled gardens.
+      </p>
+      <p>
+        Publicis CEO Arthur Sadoun verklaarde tegenover Adweek dat de overname Publicis moet positioneren als leider in &quot;agentic transformation&quot;, oftewel het gebruik van AI-agents om bedrijfsprocessen te automatiseren en data-samenwerking tussen organisaties te coordineren. De Groupe heeft tegelijk haar groeidoelstellingen voor 2027 en 2028 verhoogd naar 7 tot 8 procent omzetgroei en 8 tot 10 procent winstgroei per aandeel.
+      </p>
+      <p>
+        Drie observaties. Een: de agency-holding sector consolideert opnieuw rond data en AI. De Publicis-LiveRamp deal volgt op een reeks ad-tech overnames die het hele jaar lopen. WPP, Omnicom en IPG zullen vrijwel zeker volgen met soortgelijke deals. De vraag is niet of, maar wanneer.
+      </p>
+      <p>
+        Twee: het narratief is nu bevestigd op holding-niveau. Drie jaar geleden was AI in marketing een experiment in een innovatie-lab. Nu wordt er 2 miljard betaald om het strategische verhaal naar enterprise-klanten te kunnen vertellen. Voor elke bureau-eigenaar betekent dat: jouw klanten gaan binnen 12 maanden vragen wat jouw AI-positie is. Niet omdat het hype is, maar omdat hun board die vraag aan hen stelt.
+      </p>
+      <p>
+        Drie: het gat tussen enterprise en MKB wordt zichtbaar groter. Procter &amp; Gamble, Unilever en L&apos;Oreal krijgen straks een geintegreerde Publicis-LiveRamp stack. Het bureau dat de kapper, de loodgieter, de regionale autodealer of de festival-organisator bedient krijgt dat niet. En heeft dat ook nooit nodig.
+      </p>
+    </>
+  ),
   'conde-nast-search-onder-tien-procent': (
     <>
       <p className="lead-para">
@@ -1298,6 +1320,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'publicis-liveramp-22-miljard-wat-bureau-eigenaars-nu-moeten-weten':
+    'Het verhaal van Publicis raakt aan het narratief, niet aan het werk. Geen enkele bureau-eigenaar die we dit jaar spraken verloor klanten omdat de concurrentie een data-clean-room had. Ze verloren klanten omdat de maandrapportage te laat kwam, omdat de cijfers uit drie systemen niet overeenkwamen, of omdat een campagne al twee weken minder opleverde dan verwacht voordat iemand het zag. Dat zijn geen agentic-transformation problemen. Dat zijn signaal-problemen. Het verschil tussen weten op 14 mei dat april fout ging, of het op 4 april zien terwijl het gebeurt. Een bureau dat dat verschil voor zijn klanten kan maken zonder een holding-deal van 2 miljard heeft de komende twee jaar een concreet verkoopverhaal. Niet panikeren over agentic-transformation jargon. Wel beginnen met de basis: weten welke campagnes nu, deze week, minder opleveren dan verwacht. Bij welke klant. Op welk kanaal. Met welke verklaring. Dat is geen project van zes maanden en geen audit-traject. Stevin is daar drie jaar in gebouwd, binnen een full-service agency, verfijnd op meer dan tweehonderd klanten. Werkt op de stack die je al hebt: Google Ads, Meta, GA4, Shopify, WooCommerce. Geen migratie nodig. Voor bureau-eigenaars die willen zien wat dat concreet voor hun portefeuille betekent: vrijblijvend gesprek van twintig minuten via stevin.ai/contact. De Publicis-deal is geen probleem voor jou. Stilzitten wel.',
   'conde-nast-search-onder-tien-procent':
     'Voor wie marketing voert is dit geen losse uitgevers-zorg. Het is een signaal dat verkeer uit organisch zoekverkeer onder druk staat ongeacht je vak. Eigen kanalen, e-mail-lijsten en directe communities krijgen daarmee een herwaardering. En voor de paid-kant verschuift het advertising-model bij de grote AI-platforms van klik-gebaseerd naar gepresenteerd-worden. Wie nu nog optimaliseert op klikken alleen, optimaliseert binnenkort op een metric die niet meer telt.',
   'lecun-ami-labs-jepa-tegen-llms':

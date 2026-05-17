@@ -32,6 +32,25 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'publicis-liveramp-22-miljard-wat-bureau-eigenaars-nu-moeten-weten',
+    format: 'dispatch',
+    edition: '023',
+    category: 'Markt',
+    title: 'Publicis koopt LiveRamp voor 2,2 miljard. Wat dat betekent voor bureau-eigenaars die nu niets doen.',
+    dek:
+      'Publicis legt 2,2 miljard dollar neer voor LiveRamp om data-samenwerking en AI-agents te kunnen leveren aan haar grootste klanten. Voor bureau-eigenaars zonder miljardenbudget is dat geen reden om te wachten.',
+    publishedAt: '2026-05-17',
+    readMinutes: 4,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient',
+    posterTag: 'MARKT',
+    posterTopic: 'Publicis koopt LiveRamp voor 2,2 miljard.',
+    source: {
+      url: 'https://www.adweek.com/agencies/publicis-to-acquire-liveramp-for-22-billion/',
+      name: 'Adweek',
+    },
+  },
+  {
     slug: 'google-ads-gemini-dashboards-real-time',
     format: 'dispatch',
     edition: '022',
