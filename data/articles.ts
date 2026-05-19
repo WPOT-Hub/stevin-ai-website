@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'juni-2026-contentkansen-emotionele-thema-s',
+    format: 'dispatch' as const,
+    edition: '039',
+    category: 'Markt',
+    title: "Juni 2026 biedt kansen voor emotionele content",
+    dek: "Practical Ecommerce wijst op vijf thema’s die in juni 2026 kunnen worden ingezet voor contentmarketing.",
+    publishedAt: '2026-05-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Juni 2026 biedt kansen voor emotionele content",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-verandert-print-on-demand-ecommerce',
     format: 'dispatch' as const,
     edition: '038',
