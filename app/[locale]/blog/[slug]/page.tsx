@@ -1221,7 +1221,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Op 7 mei 2026 meldt Practical Ecommerce dat juni traditioneel een maand is met veel emotionele en sociale gebeurtenissen. Denk aan het WK voetbal, bruiloften en zomerse evenementen. Deze gelegenheden lenen zich goed voor content die aansluit bij de belevingswereld van doelgroepen.
       </p>
       <p>
-        Het artikel noemt vijf concrete ideeën om deze thema’s te benutten. Zo kunnen merken inspelen op de opwinding rond sporttoernooien of de feestelijke sfeer van huwelijksvieringen. Ook lokale evenementen zoals festivals of markten bieden aanknopingspunten voor relevante content.
+        Het artikel noemt vijf concrete ideeën om deze thema's te benutten. Zo kunnen merken inspelen op de opwinding rond sporttoernooien of de feestelijke sfeer van huwelijksvieringen. Ook lokale evenementen zoals festivals of markten bieden aanknopingspunten voor relevante content.
       </p>
       <p>
         Practical Ecommerce benadrukt dat timing en authenticiteit cruciaal zijn. Door vroeg te starten met planning en te focussen op waardevolle informatie, kan de impact van campagnes worden vergroot.
@@ -1250,7 +1250,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De eerste update, AI Max voor Shopping, optimaliseert automatisch productweergaven en biedingen op basis van realtime data. AI Brief biedt marketeers een gestructureerd overzicht van campagneprestaties met aanbevelingen voor aanpassingen. De derde update introduceert tekstdisclaimers in zoekresultaten om gebruikers beter te informeren over advertenties.
       </p>
       <p>
-        Practical Ecommerce meldt dat deze updates vooral gericht zijn op het verbeteren van de gebruikerservaring en het verhogen van de conversieratio’s. De functies zijn vanaf deze week beschikbaar voor alle adverteerders.
+        Practical Ecommerce meldt dat deze updates vooral gericht zijn op het verbeteren van de gebruikerservaring en het verhogen van de conversieratio's. De functies zijn vanaf deze week beschikbaar voor alle adverteerders.
       </p>
     </>
   ),
@@ -1397,7 +1397,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Het onderzoek toont aan dat adverteerders die investeren in data-gedreven campagnes, zoals dynamische zoekadvertenties en smart bidding-strategieën, relatief minder last hebben van de hogere kosten. De uplift in conversies varieert sterk per branche: bij online retailers ligt de stijging rond de 10%, terwijl B2B-diensten iets achterblijven met een gemiddelde van 5%. Desondanks blijft de druk op marketingbudgetten groot.
       </p>
       <p>
-        Experts wijzen erop dat de hogere kosten niet alleen door vraag zijn gedreven, maar ook door beperkte voorraad binnen Google’s advertentieplatform. Dit leidt tot meer concurrentie en dus hogere biedingen. Tegelijkertijd biedt deze situatie kansen voor bedrijven die snel kunnen schakelen en hun campagnes continu monitoren.
+        Experts wijzen erop dat de hogere kosten niet alleen door vraag zijn gedreven, maar ook door beperkte voorraad binnen Google's advertentieplatform. Dit leidt tot meer concurrentie en dus hogere biedingen. Tegelijkertijd biedt deze situatie kansen voor bedrijven die snel kunnen schakelen en hun campagnes continu monitoren.
       </p>
     </>
   ),
@@ -1662,14 +1662,14 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
-  ‘wk-2026-campagne-data-voorbereiding’:
-    ‘Voor bureaus die WK-campagnes voorbereiden of al draaien: de meest waardevolle benchmark is niet vorig jaar zomer maar het EK 2024. Welke creatives hielden het vol over vier weken? Welke categorieen piekten in de groepsfase? Welke call-to-action werkte? Die data ligt ergens in je platformen. Stevin haalt hem op, vergelijkt hem met de huidige campagne en signaleert zodra wear-out optreedt. Zonder dat iemand er handmatig achteraan hoeft.’,
-  ‘nieuwe-ecommerce-tools-mei-2026’:
+  'wk-2026-campagne-data-voorbereiding':
+    'Voor bureaus die WK-campagnes voorbereiden of al draaien: de meest waardevolle benchmark is niet vorig jaar zomer maar het EK 2024. Welke creatives hielden het vol over vier weken? Welke categorieen piekten in de groepsfase? Welke call-to-action werkte? Die data ligt ergens in je platformen. Stevin haalt hem op, vergelijkt hem met de huidige campagne en signaleert zodra wear-out optreedt. Zonder dat iemand er handmatig achteraan hoeft.',
+  'nieuwe-ecommerce-tools-mei-2026':
     "Voor bureau-eigenaars en in-house marketeers is het belangrijk om deze ontwikkelingen niet als losse trends te zien, maar als onderdeel van een groter ecosysteem. Begin met een duidelijke prioritering: welke tool lost een directe pijnpunt op? Bijvoorbeeld predictieve AI voor voorraadbeheer kan direct leiden tot minder uitval en hogere marges. Kies daarnaast oplossingen die integreren met bestaande tech-stacks om implementatietijd te beperken. Tot slot: test kleine pilots voordat je grootschalig investeert. Cross-border commerce vereist bijvoorbeeld kennis van lokale betalingsvoorkeuren en regelgeving - begin met een markt om de impact te meten.",
-  ‘merkidentiteit-niet-gebaseerd-op-meningen’:
+  'merkidentiteit-niet-gebaseerd-op-meningen':
     "Voor bureau-eigenaars en in-house marketeers betekent dit dat merkstrategieen niet langer mogen draaien om interne discussies of gevoel. Begin met een grondige analyse van bestaande meetdata, zoals klantfeedback, verkoopcijfers of sentimentanalyses op sociale media. Gebruik deze inzichten als basis voor workshops met stakeholders, zodat iedereen dezelfde feiten als vertrekpunt neemt. Vervolgens is het zaak om de merkwaarden concreet te maken met gedragsindicatoren: welke acties moeten consumenten verrichten na blootstelling aan je communicatie? Test deze hypotheses met kleine experimenten voordat je grote campagnes lanceert.",
-  ‘alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen’:
-    "Voor bureau-eigenaars en in-house marketeers is dit een herinnering dat zelfs grote spelers niet immuun zijn voor marktveranderingen. Het is belangrijk om je eigen data goed te monitoren en niet alleen te vertrouwen op macrotrends. Als je afhankelijk bent van partners of platforms zoals Alibaba, overweeg dan om je marketingstrategie te diversifieren om risico’s te spreiden.",
+  'alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen':
+    "Voor bureau-eigenaars en in-house marketeers is dit een herinnering dat zelfs grote spelers niet immuun zijn voor marktveranderingen. Het is belangrijk om je eigen data goed te monitoren en niet alleen te vertrouwen op macrotrends. Als je afhankelijk bent van partners of platforms zoals Alibaba, overweeg dan om je marketingstrategie te diversifieren om risico's te spreiden.",
   'boekhouder-als-verborgen-dealbreaker':
     'Voor bureaus die klanten bedienen in sectoren met een fiscale koopdrempel: maak de adviseur onderdeel van je campagne, niet de eindgebruiker alleen. Een pagina voor boekhouders met rekenvoorbeelden, een whitepaper via een accountantsblad, of een eenvoudige fiscale samenvatting die de eindgebruiker kan doorsturen. Wie de influence chain in kaart brengt, vindt kanalen die de concurrentie structureel overslaat.',
   'kmo-doelgroep-segmenteren':
@@ -1679,11 +1679,11 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'beardbrand-expansion-plan-na-groeistagnatie':
     "Voor bureaus en marketeers is dit een herkenbaar scenario: merken die lang succesvol waren, moeten soms radicaal vernieuwen om relevant te blijven. Het is verstandig om regelmatig de eigen doelgroep en marktpositie te toetsen aan meetdata. Een frisse blik vanuit externe partijen kan helpen om blind spots te identificeren. Blijf niet hangen in wat ooit werkte, maar durf te experimenteren met nieuwe kanalen of boodschappen.",
   'juni-2026-contentkansen-emotionele-thema-s':
-    "Voor bureau-eigenaars en in-house marketeers is het verstandig om nu al vast te stellen welke thema’s in juni relevant zijn voor hun klanten. Begin met een simpele contentkalender en koppel deze aan meetdata uit eerdere jaren. Zo zie je snel welke onderwerpen resoneren en waar je uplift kunt verwachten. Houd ook rekening met seizoensgebonden zoekgedrag via tools als Google Trends om je planning te verfijnen.",
+    "Voor bureau-eigenaars en in-house marketeers is het verstandig om nu al vast te stellen welke thema's in juni relevant zijn voor hun klanten. Begin met een simpele contentkalender en koppel deze aan meetdata uit eerdere jaren. Zo zie je snel welke onderwerpen resoneren en waar je uplift kunt verwachten. Houd ook rekening met seizoensgebonden zoekgedrag via tools als Google Trends om je planning te verfijnen.",
   'ai-verandert-print-on-demand-ecommerce':
     "Voor bureau-eigenaars betekent dit dat klanten nu verwachten dat AI niet alleen wordt ingezet voor efficiency, maar ook voor strategische beslissingen. Begin met het helder maken van de doelgroep en het creëren van een consistente productfeed voordat je AI-tools implementeert. Test kleine pilots uit voordat je schaalt, zodat je meet wat werkt zonder grote investeringen vooraf. Houd rekening met langere acquisitiecycli: druk op korte termijn resultaat kan leiden tot suboptimale keuzes.",
   'google-ads-introduceert-drie-ai-max-updates':
-    "Voor bureau-eigenaars en in-house marketeers is het belangrijk om deze updates snel te evalueren. Begin met een testcampagne om de impact van AI Max voor Shopping op je productfeed te meten. Gebruik AI Brief als startpunt voor wekelijkse performance-reviews in plaats van handmatige rapportages. Zorg dat je disclaimerteksten consistent en compliant blijven met Google’s richtlijnen. Deze tools kunnen tijd besparen, maar vereisen wel dat je de gegenereerde aanbevelingen kritisch beoordeelt op relevantie voor jouw doelgroep.",
+    "Voor bureau-eigenaars en in-house marketeers is het belangrijk om deze updates snel te evalueren. Begin met een testcampagne om de impact van AI Max voor Shopping op je productfeed te meten. Gebruik AI Brief als startpunt voor wekelijkse performance-reviews in plaats van handmatige rapportages. Zorg dat je disclaimerteksten consistent en compliant blijven met Google's richtlijnen. Deze tools kunnen tijd besparen, maar vereisen wel dat je de gegenereerde aanbevelingen kritisch beoordeelt op relevantie voor jouw doelgroep.",
   'politieke-targeting-en-visuele-aandacht-eye-tracking':
     "Voor bureaus en marketeers betekent dit dat politieke context niet alleen relevant is voor branding, maar ook voor de effectiviteit van advertenties. Het is belangrijk om te testen hoe visuele elementen en boodschappen samenkomen in campagnes die politieke thema's raken. Zorg ervoor dat de creatie niet alleen informatief is, maar ook aansluit bij de verwachtingen van je doelgroep. Kleine aanpassingen in design of timing kunnen al leiden tot meetbare verschillen in aandacht.",
   'ai-print-on-demand-spelers-moeten-fundament-leggen':
@@ -1693,7 +1693,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'marketing-enters-air-traffic-control-era':
     "Voor bureau-eigenaars en in-house marketeers betekent dit dat de focus moet verschuiven van campagneplanning naar systeemdenken. Begin met het in kaart brengen welke AI-systemen binnen je doelgroep al actief zijn en hoe ze klantdata verwerken. Bouw vervolgens interne processen op die net zo flexibel zijn als de AI's waarmee je concurreert: korte feedbackloops, directe meetdata en de mogelijkheid om snel bij te sturen. Het is verstandig om nu al te investeren in tools die realtime data integreren met je bestaande systemen. Denk aan API-koppelingen met CRM's of CDP's die signalen direct doorgeven aan je marketingautomatisering. Houd er rekening mee dat deze overgang niet alleen technisch is, maar ook vraagt om nieuwe samenwerkingsvormen tussen afdelingen zoals IT, data-analyses en creatievelingen.",
   'google-ads-kosten-stijgen-conversies-verbeteren-2025':
-    "Voor bureau-eigenaars en marketeers is dit een signaal om kritisch te kijken naar de ROI van Google Ads-campagnes. Zorg dat je meetdata altijd up-to-date is en focus op campagnes waar je zowel kosten als conversies nauwlettend volgt. Overweeg om extra budget vrij te maken voor A/B-testen van landingspagina’s en creatives, zodat je de uplift kan maximaliseren zonder direct meer te betalen. Daarnaast is het verstandig om alternatieve kanalen zoals Microsoft Advertising of LinkedIn te evalueren, zeker als je doelgroep daar actief is.",
+    "Voor bureau-eigenaars en marketeers is dit een signaal om kritisch te kijken naar de ROI van Google Ads-campagnes. Zorg dat je meetdata altijd up-to-date is en focus op campagnes waar je zowel kosten als conversies nauwlettend volgt. Overweeg om extra budget vrij te maken voor A/B-testen van landingspagina's en creatives, zodat je de uplift kan maximaliseren zonder direct meer te betalen. Daarnaast is het verstandig om alternatieve kanalen zoals Microsoft Advertising of LinkedIn te evalueren, zeker als je doelgroep daar actief is.",
   'openai-chatgpt-ads-manager-cpc-self-serve':
     'Voor bureau-eigenaars en in-house teams betekent dit dat je een testbudget kunt vrijmaken zonder eerst een verkoopgesprek met OpenAI te plannen. De relevante vraag is niet of ChatGPT Ads werkt, maar of jouw doelgroep daar zit en of CPC-attributie in jouw stack landt. Begin klein, meet wat doorklikt, en bewaar de tijd die je vroeger kwijt was aan minimum-spend-besprekingen voor het echte werk.',
   'klaviyo-anthropic-claude-mcp-agentic-workflows':

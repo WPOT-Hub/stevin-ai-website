@@ -6,6 +6,7 @@ import MeetlatRuler from '@/components/MeetlatRuler'
 import TrustBadges from '@/components/TrustBadges'
 import { getHomepageFaqs } from '@/data/faqs'
 import { nativeConnectors } from '@/data/connectors'
+import { editorials } from '@/data/articles'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -491,6 +492,118 @@ export default async function HomePage({ params }: Props) {
           <FAQAccordion faqs={homepageFaqs} />
         </div>
       </section>
+
+      {/* ── JOURNAL FEATURED ── */}
+      {(() => {
+        const featured = editorials()[0]
+        if (!featured) return null
+        const bgStyle =
+          featured.posterStyle === 'gradient'
+            ? 'linear-gradient(135deg, var(--navy) 0%, #1a2f52 100%)'
+            : featured.posterStyle === 'surface'
+            ? 'var(--surface-alt, #E8EFF7)'
+            : 'var(--navy)'
+        const txtColor = featured.posterStyle === 'surface' ? 'var(--navy)' : '#fff'
+        const tagBg = featured.posterStyle === 'surface' ? 'var(--navy)' : 'rgba(255,255,255,0.94)'
+        const tagColor = featured.posterStyle === 'surface' ? '#fff' : 'var(--navy)'
+        return (
+          <section className="bg-[var(--surface)]" style={{ padding: '96px 24px' }}>
+            <div className="mx-auto max-w-[1200px]">
+              <p
+                className="font-display font-bold tracking-[0.12em] uppercase mb-10 flex items-center gap-[14px]"
+                style={{ fontSize: '11px', color: 'var(--muted)' }}
+              >
+                <span className="inline-block w-6 h-px bg-muted opacity-60 flex-shrink-0" aria-hidden="true" />
+                UIT HET JOURNAL
+              </p>
+              <Link
+                href={`/blog/${featured.slug}`}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 no-underline text-inherit group items-center"
+              >
+                <div
+                  className="overflow-hidden w-full h-full flex flex-col justify-between"
+                  style={{
+                    background: bgStyle,
+                    color: txtColor,
+                    borderRadius: '14px',
+                    aspectRatio: '4 / 3',
+                    padding: 'clamp(28px, 5vw, 44px)',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '10px',
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      background: tagBg,
+                      color: tagColor,
+                      padding: '6px 10px',
+                      borderRadius: '4px',
+                      alignSelf: 'flex-start',
+                    }}
+                  >
+                    {featured.posterTag}
+                  </span>
+                  <span
+                    className="font-display font-extrabold"
+                    style={{
+                      fontSize: 'clamp(26px, 3vw, 38px)',
+                      lineHeight: '1.05',
+                      letterSpacing: '-0.025em',
+                      maxWidth: '14ch',
+                    }}
+                  >
+                    {featured.posterTopic}
+                  </span>
+                </div>
+                <div>
+                  <p
+                    style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '11px',
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      color: 'var(--muted)',
+                      marginBottom: '14px',
+                    }}
+                  >
+                    Editie {featured.edition} · {featured.category} · {featured.readMinutes} min
+                  </p>
+                  <h2
+                    className="font-display font-bold text-[var(--navy)] m-0 group-hover:text-[var(--accent)] transition-colors"
+                    style={{
+                      fontSize: 'clamp(28px, 3vw, 42px)',
+                      lineHeight: '1.08',
+                      letterSpacing: '-0.025em',
+                      marginBottom: '20px',
+                    }}
+                  >
+                    {featured.title}
+                  </h2>
+                  <p
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '17px',
+                      lineHeight: '1.55',
+                      color: 'var(--muted)',
+                      marginBottom: '28px',
+                    }}
+                  >
+                    {featured.dek}
+                  </p>
+                  <span
+                    className="font-display font-semibold text-[var(--accent)] inline-flex items-center gap-2"
+                    style={{ fontSize: '15px' }}
+                  >
+                    Lees editie {featured.edition} →
+                  </span>
+                </div>
+              </Link>
+            </div>
+          </section>
+        )
+      })()}
 
       {/* ── CLOSING ── */}
       <section className="bg-primary" style={{ padding: '112px 24px 128px' }}>
