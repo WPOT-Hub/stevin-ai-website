@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen',
+    format: 'dispatch' as const,
+    edition: '044',
+    category: 'Markt',
+    title: "Alibaba’s omzet groeit met 3%, maar mist doel",
+    dek: "Alibaba Group rapporteert op 13 mei een kwartaalomzetstijging van 3%, terwijl analisten een hogere groei hadden verwacht.",
+    publishedAt: '2026-05-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Alibaba’s omzet groeit met 3%, maar mist doel",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'boekhouder-als-verborgen-dealbreaker',
     format: 'dispatch' as const,
     edition: '043',
