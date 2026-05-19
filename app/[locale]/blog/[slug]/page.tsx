@@ -1163,6 +1163,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'nieuwe-ecommerce-tools-mei-2026': (
+    <>
+      <p className="lead-para">
+        Deze week introduceert de sector nieuwe tools voor e-commerce, meldt Practical Ecommerce. Onder de ontwikkelingen vallen predictieve AI voor voorraadbeheer, autonome marketingoplossingen en verbeterde sitebuilders. Ook komen omnichannel fulfillment, programmatic advertenties en cross-border commerce aan bod.
+      </p>
+      <p>
+        Daarnaast worden embedded payments en snellere internationale betalingsverwerkers benadrukt als belangrijke trends. De focus ligt op efficiëntie en schaalbaarheid voor retailers die hun online aanwezigheid willen uitbreiden. Tools zoals deze moeten klantreis en conversie verbeteren door naadloze integratie met bestaande systemen.
+      </p>
+      <p>
+        Volgens de bron bieden deze innovaties vooral voordelen voor merken die actief zijn in meerdere markten of complexe logistiek hanteren. De tools zijn vaak gericht op automatisering van repetitieve taken, waardoor teams zich kunnen richten op strategische groei.
+      </p>
+    </>
+  ),
   'merkidentiteit-niet-gebaseerd-op-meningen': (
     <>
       <p className="lead-para">
@@ -1627,6 +1640,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'nieuwe-ecommerce-tools-mei-2026':
+    "Voor bureau-eigenaars en in-house marketeers is het belangrijk om deze ontwikkelingen niet als losse trends te zien, maar als onderdeel van een groter ecosysteem. Begin met een duidelijke prioritering: welke tool lost een directe pijnpunt op? Bijvoorbeeld predictieve AI voor voorraadbeheer kan direct leiden tot minder uitval en hogere marges. Kies daarnaast oplossingen die integreren met bestaande tech-stacks om implementatietijd te beperken. Tot slot: test kleine pilots voordat je grootschalig investeert. Cross-border commerce vereist bijvoorbeeld kennis van lokale betalingsvoorkeuren en regelgeving – begin met één markt om de impact te meten.",
   'merkidentiteit-niet-gebaseerd-op-meningen':
     "Voor bureau-eigenaars en in-house marketeers betekent dit dat merkstrategieën niet langer mogen draaien om interne discussies of 'gevoel'. Begin met een grondige analyse van bestaande meetdata, zoals klantfeedback, verkoopcijfers of sentimentanalyses op sociale media. Gebruik deze inzichten als basis voor workshops met stakeholders, zodat iedereen dezelfde feiten als vertrekpunt neemt.\n\nVervolgens is het zaak om de merkwaarden concreet te maken met gedragsindicatoren: welke acties moeten consumenten verrichten na blootstelling aan je communicatie? Test deze hypotheses met kleine experimenten voordat je grote campagnes lanceert. Zo bouw je een merkidentiteit die niet alleen consistent is, maar ook daadwerkelijk werkt.",
   'alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen':
