@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'beardbrand-expansion-plan-na-groeistagnatie',
+    format: 'dispatch' as const,
+    edition: '040',
+    category: 'Markt',
+    title: "Beardbrand zet in op herpositionering na omzetdip",
+    dek: "Uit een analyse van Practical Ecommerce blijkt dat de baardproductenmerk Beardbrand kampt met stagnatie en een dalende omzet, ondanks een groeiende doelgroep.",
+    publishedAt: '2026-05-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Beardbrand zet in op herpositionering na omzetdip",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'juni-2026-contentkansen-emotionele-thema-s',
     format: 'dispatch' as const,
     edition: '039',
