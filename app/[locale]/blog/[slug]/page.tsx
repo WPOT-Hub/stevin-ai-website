@@ -1215,6 +1215,66 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'boekhouder-als-verborgen-dealbreaker': (
+    <>
+      <p className="lead-para">
+        Bij complexe zakelijke aankopen beslist de eindgebruiker zelden alleen. Wie zijn adviseur niet meekrijgt, verliest de deal voordat die begonnen is.
+      </p>
+      <p>
+        Voor producten met een fiscale of financiele component (zakelijke auto, softwarelicentie, leasing, verduurzamingsinvestering) loopt de aankoopreis standaard via een derde partij: de boekhouder of fiscalist. Die persoon rekent door, vergelijkt en geeft groen of rood licht. Maar de meeste campagnes richten zich uitsluitend op de eindgebruiker.
+      </p>
+      <p>
+        Het gevolg: de beslisser wordt goed bereikt, maar de persoon die de deal blokkeert of versnelt ziet nooit een boodschap.
+      </p>
+      <p>
+        De tactische les is simpel maar wordt zelden toegepast. Maak een aparte versie van je communicatie die expliciet voor adviseurs is bedoeld, niet met productfeatures maar met fiscale en rationele argumenten die zij kunnen doorspelen aan hun klant. In sectoren waar regelgeving snel verandert (EV-fiscaliteit, premies voor verduurzaming, software-aftrek) is de adviseur bovendien gemotiveerd om die informatie te delen. Hij wil ook dat zijn klant de juiste beslissing neemt.
+      </p>
+      <p>
+        Het principe heet influence chain marketing en het is structureel onderbenut. Brancheorganisaties, accountantskantoren en sectorbladen zijn kanalen met hoge geloofwaardigheid bij precies de mensen die de eindgebruiker raadpleegt. Een whitepaper die via die route circuleert, doet soms meer dan drie weken display.
+      </p>
+      <p>
+        Bureaus die hun campagne alleen op de eindgebruiker richten, missen de helft van de beslissingsketen.
+      </p>
+    </>
+  ),
+  'kmo-doelgroep-segmenteren': (
+    <>
+      <p className="lead-para">
+        De 1,2 miljoen zelfstandigen in Belgie zijn zo divers dat een campagne die hen allemaal probeert te bereiken, niemand echt raakt.
+      </p>
+      <p>
+        Vrije beroepen kopen op prestige en tijdsbesparing. Technici kopen op specificatie en betrouwbaarheid. Creatieven kopen op identiteit en differentiatie. Allemaal zelfstandige, allemaal andere boodschap nodig, andere kanalen, andere koopdrempel. Maar de meeste campagnes behandelen de KMO-doelgroep als een homogene groep. Er komt een generieke boodschap over "ondernemers" die bij niemand in het bijzonder aansluit.
+      </p>
+      <p>
+        Onderzoek naar koopgedrag van Vlaamse zelfstandigen laat zien dat aankoopbeslissingen sterk worden beinvloed door collegas en sectororganisaties, niet door massamedia. Een installateur vertrouwt een vakblad en een collega-installateur. Een advocaat vertrouwt een ordeorganisatie en een peer. Wie dat negeert, concurreert op bereik in plaats van op relevantie.
+      </p>
+      <p>
+        De stap die de meeste bureaus overslaan: persona's bouwen op basis van bedrijfstak, niet op basis van leeftijd of inkomen. Het verschil in messaging en kanaalkeuze tussen een vrij beroep en een technisch bedrijf is groter dan het verschil tussen een 30-jarige en een 50-jarige ondernemer. Toch is leeftijd de standaard segmentatievariabele in de meeste mediaplanning.
+      </p>
+      <p>
+        Segmentatie op bedrijfstak vraagt meer data-werk upfront, maar levert campagnes op die daadwerkelijk iets zeggen tegen de mensen die ze zien.
+      </p>
+    </>
+  ),
+  'regionale-context-campagne-optimalisatie': (
+    <>
+      <p className="lead-para">
+        Geotargeting zegt waar iemand woont. Regionale contextdata zegt of zijn omgeving zijn aankoopbeslissing vergemakkelijkt of blokkeert. Dat verschil maakt in sommige sectoren tientallen procenten verschil in campagnerendement.
+      </p>
+      <p>
+        Een concreet voorbeeld: in Vlaanderen zijn meer dan 17.000 publieke laadstations beschikbaar. In Wallonie zijn dat er minder dan 2.800. Voor een campagne gericht op zakelijke EV-aankopen betekent dat een identieke boodschap met identiek budget in Vlaanderen structureel beter presteert, niet omdat het publiek anders is, maar omdat de context anders is.
+      </p>
+      <p>
+        Hetzelfde principe geldt in andere sectoren. Campagnes voor woningverduurzaming renderen beter in gemeenten met hoog eigen woningbezit dan in verstedelijkte huurmarkten. Webshop campagnes voor snelle levering presteren beter in gebieden met hoge bezorgdichtheid. Horecacampagnes volgen seizoenspatronen die per regio tot drie weken kunnen verschillen.
+      </p>
+      <p>
+        Campagne-optimalisatie stopt te vaak bij "welke regio converteert beter" zonder te vragen waarom. Wie het waarom kent, kan budgetten proactief verschuiven in plaats van reactief bijsturen.
+      </p>
+      <p>
+        De bureaus die dat consequent doen, rapporteren na twee of drie campagnecycli een duidelijk efficiencyvoordeel, simpelweg omdat ze dezelfde budgetten structureel inzetten waar de context werkt. Niet omdat ze beter adverteren, maar omdat ze beter lezen.
+      </p>
+    </>
+  ),
   'politieke-targeting-en-visuele-aandacht-eye-tracking': (
     <>
       <p className="lead-para">
@@ -1541,6 +1601,12 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'boekhouder-als-verborgen-dealbreaker':
+    'Voor bureaus die klanten bedienen in sectoren met een fiscale koopdrempel: maak de adviseur onderdeel van je campagne, niet de eindgebruiker alleen. Een pagina voor boekhouders met rekenvoorbeelden, een whitepaper via een accountantsblad, of een eenvoudige fiscale samenvatting die de eindgebruiker kan doorsturen. Wie de influence chain in kaart brengt, vindt kanalen die de concurrentie structureel overslaat.',
+  'kmo-doelgroep-segmenteren':
+    'Voor bureaus die KMO-campagnes draaien: stop met "ondernemer" als persona. Bouw drie varianten van je boodschap voor drie bedrijfstakken die elk anders kopen, anders lezen en anders beslissen. De data om dat te segmenteren zit al in LinkedIn, Meta of je CRM. De bereidheid om het te doen is het echte onderscheid.',
+  'regionale-context-campagne-optimalisatie':
+    'Voor bureaus die campagnes draaien over meerdere regio\'s: voeg contextdata toe naast conversiedata. Vraag niet alleen welke regio beter converteert, maar ook waarom. Infrastructuur, seizoensdata, eigendomsratio\'s en lokale regelgeving zijn meetbaar en voorspelbaar. Stevin brengt die laag samen met campagneprestaties, zodat budgetverschuivingen plaatsvinden op basis van structurele factoren in plaats van toeval.',
   'beardbrand-expansion-plan-na-groeistagnatie':
     "Voor bureaus en marketeers is dit een herkenbaar scenario: merken die lang succesvol waren, moeten soms radicaal vernieuwen om relevant te blijven. Het is verstandig om regelmatig de eigen doelgroep en marktpositie te toetsen aan meetdata. Een frisse blik vanuit externe partijen kan helpen om blind spots te identificeren. Blijf niet hangen in wat ooit werkte, maar durf te experimenteren met nieuwe kanalen of boodschappen.",
   'juni-2026-contentkansen-emotionele-thema-s':
