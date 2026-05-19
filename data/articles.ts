@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'merkidentiteit-niet-gebaseerd-op-meningen',
+    format: 'dispatch' as const,
+    edition: '045',
+    category: 'Cultuur',
+    title: "Merkidentiteit bouwen: feiten boven meningen",
+    dek: "Gebruik meetdata om merkstrategie te onderbouwen, niet subjectieve oordelen.",
+    publishedAt: '2026-05-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "Merkidentiteit bouwen: feiten boven meningen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen',
     format: 'dispatch' as const,
     edition: '044',
