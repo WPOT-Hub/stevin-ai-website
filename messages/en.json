@@ -30,6 +30,7 @@
     "werkwijze": "How We Work",
     "integraties": "Integrations",
     "case_studies": "Case Studies",
+    "journal": "Journal",
     "contact": "Contact",
     "cta": "Book a call",
     "lang_nl": "NL",
@@ -357,6 +358,7 @@
     "detail_cta_btn": "Book a call"
   },
   "seo": {
+    "meta_title": "SEO for agencies and SMBs — Stevin",
     "eyebrow": "SEO",
     "h1": "Grow organically with data that works.",
     "sub": "Stevin monitors your organic traffic, keyword rankings and technical SEO. signalling anomalies before your rankings drop.",

@@ -82,6 +82,7 @@ export default function Header() {
     { label: t('werkwijze'), href: '/werkwijze' },
     { label: t('integraties'), href: '/integraties' },
     { label: t('case_studies'), href: '/case-studies' },
+    { label: t('journal'), href: '/blog' },
     { label: t('contact'), href: '/contact' },
   ]
 

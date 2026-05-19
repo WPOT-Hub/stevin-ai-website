@@ -30,6 +30,7 @@
  "werkwijze": "Werkwijze",
  "integraties": "Integraties",
  "case_studies": "Case Studies",
+ "journal": "Journal",
  "contact": "Contact",
  "cta": "Plan een gesprek",
  "lang_nl": "NL",
@@ -357,6 +358,7 @@
  "detail_cta_btn": "Plan een gesprek"
  },
  "seo": {
+ "meta_title": "SEO voor bureaus en MKB — Stevin",
  "eyebrow": "SEO",
  "h1": "Organisch groeien met data die klopt.",
  "sub": "Stevin monitort je organisch verkeer, keyword-posities en technische SEO. en signaleert afwijkingen voordat je rankings dalen.",

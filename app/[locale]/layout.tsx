@@ -53,14 +53,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         description: 'Stevin verbindt je marketing-stack en wijst aan waar omzet, marge of aandacht weglekt voor reguliere rapportage het oppikt.',
         images: ['/opengraph-image'],
       },
-      alternates: {
-        canonical: 'https://stevin.ai',
-        languages: {
-          'nl-NL': 'https://stevin.ai',
-          'en': 'https://stevin.ai/en',
-          'x-default': 'https://stevin.ai',
-        },
-      },
     }
   }
 
@@ -92,14 +84,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: 'Stevin · Marketing intelligence that signals before the monthly report does',
       description: 'Stevin connects your marketing stack and shows where revenue, margin or attention is leaking before regular reporting catches it.',
       images: ['/en/opengraph-image'],
-    },
-    alternates: {
-      canonical: 'https://stevin.ai/en',
-      languages: {
-        'nl-NL': 'https://stevin.ai',
-        'en': 'https://stevin.ai/en',
-        'x-default': 'https://stevin.ai',
-      },
     },
   }
 }

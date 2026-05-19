@@ -4,7 +4,7 @@ import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import MeetlatRuler from '@/components/MeetlatRuler'
 import TrustBadges from '@/components/TrustBadges'
-import { getHomepageFaqs } from '@/data/faqs'
+import { getHomepageFaqs, type FAQ } from '@/data/faqs'
 import { nativeConnectors } from '@/data/connectors'
 import { editorials } from '@/data/articles'
 
@@ -72,7 +72,9 @@ export default async function HomePage({ params }: Props) {
     ],
     // sameAs: voeg hier social profiles toe (LinkedIn, X) zodra die actief
     // zijn — versterkt entity-recognition voor Google Knowledge Graph.
-    sameAs: [],
+    sameAs: [
+      'https://www.linkedin.com/company/stevin-ai',
+    ],
   }
 
   return (
@@ -80,6 +82,23 @@ export default async function HomePage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: homepageFaqs.map((faq: FAQ) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
       />
 
       {/* ── HERO ── */}

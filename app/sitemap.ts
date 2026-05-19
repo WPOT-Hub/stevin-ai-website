@@ -7,11 +7,9 @@ import { glossary } from '@/data/glossary'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://stevin.ai'
-  const now = new Date().toISOString()
 
   const staticPages = [
     '/blog',
-    ...articles.map((a) => `/blog/${a.slug}`),
     '',
     '/marketing',
     '/artiesten',
@@ -48,13 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Woordenboek (programmatic SEO playbook "wat is X")
     '/woordenboek',
     ...glossary.map((t) => `/woordenboek/${t.slug}`),
-    '/llms.txt',
     '/case-studies',
     '/case-studies/e-commerce',
     '/contact',
     '/simon-stevin',
-    '/agency-scan',
-    '/audit',
+    // /agency-scan en /audit weggelaten — hebben noindex
+    // /llms.txt weggelaten — is geen HTML-pagina
   ]
 
   const priorityFor = (path: string) => {
@@ -69,9 +66,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'x-default': `${baseUrl}${path}`,
   })
 
+  // Blog posts: gebruik de echte publishedAt datum
+  const blogEntries: MetadataRoute.Sitemap = articles.flatMap((a) => [
+    {
+      url: `${baseUrl}/blog/${a.slug}`,
+      lastModified: a.publishedAt,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+      alternates: { languages: altLangs(`/blog/${a.slug}`) },
+    },
+    {
+      url: `${baseUrl}/en/blog/${a.slug}`,
+      lastModified: a.publishedAt,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+      alternates: { languages: altLangs(`/blog/${a.slug}`) },
+    },
+  ])
+
+  // Statische pagina's: geen lastModified (voorkomt dat crawlers het veld negeren)
   const nlEntries: MetadataRoute.Sitemap = staticPages.map((path) => ({
     url: `${baseUrl}${path}`,
-    lastModified: now,
     changeFrequency: (path === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
     priority: priorityFor(path),
     alternates: { languages: altLangs(path) },
@@ -79,11 +94,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const enEntries: MetadataRoute.Sitemap = staticPages.map((path) => ({
     url: `${baseUrl}/en${path}`,
-    lastModified: now,
     changeFrequency: (path === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
     priority: Math.max(0.3, priorityFor(path) - 0.1),
     alternates: { languages: altLangs(path) },
   }))
 
-  return [...nlEntries, ...enEntries]
+  return [...nlEntries, ...enEntries, ...blogEntries]
 }
