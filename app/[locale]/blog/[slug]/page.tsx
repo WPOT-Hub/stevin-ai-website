@@ -1163,6 +1163,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'beardbrand-expansion-plan-na-groeistagnatie': (
+    <>
+      <p className="lead-para">
+        Volgens een recent rapport van Practical Ecommerce verkeert Beardbrand, bekend van baardverzorgingsproducten, in een fase van stagnatie. De omzet daalt terwijl de markt voor baardproducten juist groeit. De oprichter van het merk geeft aan dat de huidige strategie niet meer aansluit bij de veranderende behoeften van consumenten.
+      </p>
+      <p>
+        De analyse wijst op een verschuiving in de doelgroep: jongere gebruikers zoeken naar duurzamere en multifunctionele producten, terwijl Beardbrands core-aanbod gericht blijft op klassieke verzorging. Daarnaast speelt concurrentie een rol, waarbij nieuwe merken sneller inspelen op trends zoals veganistische en cruelty-free opties.
+      </p>
+      <p>
+        Beardbrand overweegt nu een herpositionering, met extra aandacht voor digital marketing en samenwerkingen met influencers. De focus ligt op het versterken van de merkidentiteit en het aantrekken van nieuwe klantsegmenten door middel van innovatie in productaanbod.
+      </p>
+    </>
+  ),
   'juni-2026-contentkansen-emotionele-thema-s': (
     <>
       <p className="lead-para">
@@ -1528,6 +1541,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'beardbrand-expansion-plan-na-groeistagnatie':
+    "Voor bureaus en marketeers is dit een herkenbaar scenario: merken die lang succesvol waren, moeten soms radicaal vernieuwen om relevant te blijven. Het is verstandig om regelmatig de eigen doelgroep en marktpositie te toetsen aan meetdata. Een frisse blik vanuit externe partijen kan helpen om blind spots te identificeren. Blijf niet hangen in wat ooit werkte, maar durf te experimenteren met nieuwe kanalen of boodschappen.",
   'juni-2026-contentkansen-emotionele-thema-s':
     "Voor bureau-eigenaars en in-house marketeers is het verstandig om nu al vast te stellen welke thema’s in juni relevant zijn voor hun klanten. Begin met een simpele contentkalender en koppel deze aan meetdata uit eerdere jaren. Zo zie je snel welke onderwerpen resoneren en waar je uplift kunt verwachten. Houd ook rekening met seizoensgebonden zoekgedrag via tools als Google Trends om je planning te verfijnen.",
   'ai-verandert-print-on-demand-ecommerce':
