@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'marketing-enters-air-traffic-control-era',
+    format: 'dispatch' as const,
+    edition: '',
+    category: 'Platform',
+    title: "Marketing wordt een ‘luchtverkeersleiding’: realtime sturen op vertrouwen en intentie",
+    dek: "Vanaf 2026 wordt marketing een kwestie van realtime coördinatie tussen AI-systemen die klantgedrag, risico’s en identiteit interpreteren.",
+    publishedAt: '2026-05-19',
+    readMinutes: 1,
+    author: 'Stevin Journal',
+    posterStyle: 'editorial' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Marketing wordt een ‘luchtverkeersleiding’: realtime sturen op vertrouwen en intentie",
+    source: 'Stevin Journal',
+  },
+  {
     slug: 'google-ai-max-uit-beta-ai-brief-shopping',
     format: 'dispatch',
     edition: '031',
