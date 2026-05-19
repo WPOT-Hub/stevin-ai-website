@@ -17,7 +17,7 @@ export async function generateMetadata({
   const { slug } = await params
   const a = getArticle(slug)
   if (!a) return {}
-  // Per-post OG image (Next.js conventional route — gegenereerd door
+  // Per-post OG image (Next.js conventional route, gegenereerd door
   // app/[locale]/blog/[slug]/opengraph-image.tsx)
   const ogImage = `https://stevin.ai/blog/${a.slug}/opengraph-image`
   return {
@@ -86,7 +86,7 @@ export default async function ArticlePage({
     mainEntityOfPage: `https://stevin.ai/blog/${article.slug}`,
   }
 
-  // FAQPage schema — alleen wanneer er FAQs voor deze slug zijn gegenereerd.
+  // FAQPage schema: alleen wanneer er FAQs voor deze slug zijn gegenereerd.
   // Doel: LLM-citation. Perplexity en ChatGPT gebruiken FAQPage als
   // primaire structured-context bij retrieval. Ook bij blog-content zonder
   // rich-result (Google geeft FAQ rich results alleen aan authority sites)
@@ -246,7 +246,7 @@ export default async function ArticlePage({
       {/* ── BODY ── */}
       <article className="bg-white" style={{ padding: '80px 24px 96px' }}>
         <div className="mx-auto journal-body" style={{ maxWidth: '680px' }}>
-          {/* Article-specific body — switch on slug + format */}
+          {/* Article-specific body: switch on slug + format */}
           {article.format === 'dispatch' && <ArticleDispatchBody article={article} />}
           {article.format === 'editorial' && article.slug === '95-procent-ai-pilots-mislukt' && (
             <ArticleMITBody />
@@ -402,7 +402,7 @@ function Poster({
 }
 
 /* ────────────────────────────────────────────────────────────
-   Article body — MIT NANDA piece
+   Article body: MIT NANDA piece
    ──────────────────────────────────────────────────────────── */
 function ArticleMITBody() {
   return (
@@ -592,7 +592,7 @@ function ArticleMITBody() {
 }
 
 /* ────────────────────────────────────────────────────────────
-   Editie 011 — MMM is een hypothese
+   Editie 011: MMM is een hypothese
    ──────────────────────────────────────────────────────────── */
 function ArticleMMMBody() {
   return (
@@ -606,7 +606,7 @@ function ArticleMMMBody() {
         stat="MMM"
         statCap='Volgens Gartner is MMM &quot;a statistical technique used to measure the impact of marketing activities on sales performance&quot;. Een techniek, niet een rapport. Bron: Gartner Marketing Mix Modeling guide (2025).'
         edition="EDITIE 011 / 052 · ATTRIBUTION"
-        source="Bron: Gartner — Marketing Mix Modeling guide (2025)"
+        source="Bron: Gartner, Marketing Mix Modeling guide (2025)"
       />
 
       <p>
@@ -640,7 +640,7 @@ function ArticleMMMBody() {
 
       <Callout
         big="2y"
-        label='Minimum aan wekelijkse data dat Google adviseert voor Meridian-modellen op geo-niveau. Voor national-level: 3 jaar. Onder die drempel wordt de schatting onbetrouwbaar — niet omdat het model slecht is, maar omdat er onvoldoende variatie zit om de parameters te identificeren. Bron: developers.google.com/meridian.'
+        label='Minimum aan wekelijkse data dat Google adviseert voor Meridian-modellen op geo-niveau. Voor national-level: 3 jaar. Onder die drempel wordt de schatting onbetrouwbaar, niet omdat het model slecht is, maar omdat er onvoldoende variatie zit om de parameters te identificeren. Bron: developers.google.com/meridian.'
       />
 
       <H2 num="03">Wanneer is een MMM wel nuttig</H2>
@@ -718,7 +718,7 @@ function ArticleMMMBody() {
             pct: '04',
             text: (
               <>
-                <b>Te veel kanalen, te weinig data.</b> Google adviseert voor Meridian maximaal 20 kanalen. Sommige bureau-MMM&apos;s draaien 50+ kanalen op dezelfde dataset. Dat is statistisch niet identificeerbaar — het model raadt.
+                <b>Te veel kanalen, te weinig data.</b> Google adviseert voor Meridian maximaal 20 kanalen. Sommige bureau-MMM&apos;s draaien 50+ kanalen op dezelfde dataset. Dat is statistisch niet identificeerbaar: het model raadt.
               </>
             ),
           },
@@ -756,7 +756,7 @@ function ArticleMMMBody() {
 }
 
 /* ────────────────────────────────────────────────────────────
-   Editie 012 — Last-click is geen attributiemodel
+   Editie 012: Last-click is geen attributiemodel
    ──────────────────────────────────────────────────────────── */
 function ArticleLastClickBody() {
   return (
@@ -940,7 +940,7 @@ function ArticleLastClickBody() {
 }
 
 /* ────────────────────────────────────────────────────────────
-   Editie 013 — Autonome agents in logistiek
+   Editie 013: Autonome agents in logistiek
    ──────────────────────────────────────────────────────────── */
 function ArticleAgentsBody() {
   return (
@@ -1106,7 +1106,7 @@ function ArticleAgentsBody() {
 }
 
 /* ────────────────────────────────────────────────────────────
-   Dispatch body — short news update + Stevin perspective
+   Dispatch body: short news update + Stevin perspective
    ──────────────────────────────────────────────────────────── */
 function ArticleDispatchBody({ article }: { article: Article }) {
   const body = DISPATCH_BODIES[article.slug]
@@ -1580,7 +1580,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'amazon-ads-22-procent-groei-q1-2026': (
     <>
       <p className="lead-para">
-        Amazon&apos;s advertentie-omzet groeide in het eerste kwartaal van 2026 met 22 procent jaar-op-jaar tot 17,2 miljard dollar, volgens Emerce (5 mei 2026). Dat brengt de business op een geannualiseerde run-rate van ongeveer 70 miljard dollar — circa 10 procent van Amazon&apos;s totale Q1-omzet.
+        Amazon&apos;s advertentie-omzet groeide in het eerste kwartaal van 2026 met 22 procent jaar-op-jaar tot 17,2 miljard dollar, volgens Emerce (5 mei 2026). Dat brengt de business op een geannualiseerde run-rate van ongeveer 70 miljard dollar, circa 10 procent van Amazon&apos;s totale Q1-omzet.
       </p>
       <p>
         Amazon Ads draait niet alleen op de commerce-site, maar ook op Prime Video, IMDb en de gaming-streamer Switch. Forrester bestempelde Amazon onlangs als leider in omnichannel-advertising voor connected TV en commercial media. CEO Andy Jassy verwijst zelf naar die erkenning in de toelichting op de cijfers.
@@ -1728,11 +1728,11 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'google-ads-gemini-dashboards-real-time':
     'Voor adverteerders die alleen binnen Google adverteren wordt het dashboard-werk lichter. Voor wie meerdere kanalen gebruikt verandert het minder dan het lijkt. Een AI-laag binnen Google Ads ziet alleen Google-data. De zinvolle vragen draaien meestal over de portfolio, niet over een enkel platform. Daar zit een belangrijk onderscheid voor agency-teams en in-house marketeers die naast Google ook Meta, TikTok of e-mail draaien. Een single-platform-Gemini lost dat niet op, een meerlaagse beoordeling over kanalen heen wel.',
   'spotify-ai-muziek-verificatie':
-    'Voor labels en artiesten betekent dit op korte termijn extra administratie bij elke release. Voor distributeurs een nieuwe controle-laag die ze moeten inbouwen. Wat het feitelijk verandert: AI-tracks blijven mogelijk, maar krijgen een eigen label. Dat is geen ban — het is een meetlat. En meetlatten op platforms zijn altijd het begin van een nieuwe reeks regels.',
+    'Voor labels en artiesten betekent dit op korte termijn extra administratie bij elke release. Voor distributeurs een nieuwe controle-laag die ze moeten inbouwen. Wat het feitelijk verandert: AI-tracks blijven mogelijk, maar krijgen een eigen label. Dat is geen ban, het is een meetlat. En meetlatten op platforms zijn altijd het begin van een nieuwe reeks regels.',
   'oscars-ai-acteerprestaties-niet-toegestaan':
     'De Academy trekt een streep waar Hollywood al maanden om vroeg, maar wel een smalle: alleen acteerprestaties zelf. De rest van het filmpakket (effects, sound, montage) blijft open voor AI. Voor productiehuizen: de keuze voor AI-tooling raakt nu een Oscar-strategie. Voor marketeers van streaming-content geldt hetzelfde: weet welke deel van je productie je labelt en welke niet.',
   'us-defense-ai-deals-zonder-anthropic':
-    'Voor B2B-marketeers in tech zegt deze ronde één ding heel duidelijk: defensie is een toegangspoort voor enterprise-deals, niet een nichesector. De acht winnaars krijgen een referentie-stempel die de komende vijf jaar blijft betalen. De afwezige partij krijgt een ander stempel — "niet defensie-bereid" — en moet uitleggen wat dat betekent voor banken, verzekeraars en overheidsklanten elders.',
+    'Voor B2B-marketeers in tech zegt deze ronde één ding heel duidelijk: defensie is een toegangspoort voor enterprise-deals, niet een nichesector. De acht winnaars krijgen een referentie-stempel die de komende vijf jaar blijft betalen. De afwezige partij krijgt een ander stempel ("niet defensie-bereid") en moet uitleggen wat dat betekent voor banken, verzekeraars en overheidsklanten elders.',
   'certe-mijnadviseur-chatgpt-koppeling':
     'Distributie via ChatGPT is geen experiment meer, het is een kanaal. Certe gebruikt het zoals tien jaar geleden Google Ads werd gebruikt: als bron van zoekvragen die naar een eigen funnel worden geleid. Voor andere financiële dienstverleners de vraag: ben je vindbaar binnen ChatGPT als iemand een vraag stelt over jouw product? Niet door SEO. Door aanwezig te zijn als GPT, dataset of partner.',
   'amazon-ads-22-procent-groei-q1-2026':
@@ -1755,7 +1755,7 @@ function ArticleWKBody() {
         Het relevante referentiekader is het EK 2024. Twee jaar geleden, maar de meest vergelijkbare context die beschikbaar is. Bij dat toernooi bereikte de NOS via televisie 14,5 miljoen mensen, ofwel 87,6 procent van de Nederlandse bevolking. Oranje-wedstrijden trokken gemiddeld 5,8 miljoen kijkers. De halve finale tegen Engeland piekte op 6,9 miljoen.
       </p>
       <p>
-        De vraag die elk bureau of in-house team nu zou moeten kunnen beantwoorden: welke van jullie creatives hielden het vol over vier toernooiweken? Welke categorieën piekten in de groepsfase en daalden in de kwartfinales? Welke boodschap werkte bij het brede, gemengde EK-publiek — want bijna de helft van de EK-kijkers in 2024 waren vrouwen, een gegeven dat de meeste campagnebriefings negeerden?
+        De vraag die elk bureau of in-house team nu zou moeten kunnen beantwoorden: welke van jullie creatives hielden het vol over vier toernooiweken? Welke categorieën piekten in de groepsfase en daalden in de kwartfinales? Welke boodschap werkte bij het brede, gemengde EK-publiek, want bijna de helft van de EK-kijkers in 2024 waren vrouwen, een gegeven dat de meeste campagnebriefings negeerden?
       </p>
       <p>
         Die data bestaat. Bij de meeste teams ligt ze ergens in een export, een dashboard dat niemand meer opent, of bij een accountmanager die inmiddels elders werkt.
@@ -1764,7 +1764,7 @@ function ArticleWKBody() {
       <BodyFigure
         tag="NOS · EK 2024"
         stat="87,6%"
-        statCap="van de Nederlandse bevolking bereikte de NOS via tv tijdens het EK 2024 — 14,5 miljoen mensen."
+        statCap="van de Nederlandse bevolking bereikte de NOS via tv tijdens het EK 2024: 14,5 miljoen mensen."
         edition="EDITIE 017 · STRATEGIE"
         source="Bron: NOS / Ster terugblik EK 2024"
       />
@@ -1772,7 +1772,7 @@ function ArticleWKBody() {
       <H2 num="02">Wat het kost om mee te doen</H2>
 
       <p>
-        Een WK is geen gewoon evenement voor media-inkopers. Ster verhoogde zijn tv-tarieven voor 2026 opnieuw, en het sportjaar — WK plus Olympische Winterspelen — is expliciet als drijver benoemd. Het basisgetal van 740 euro per GRP is al een stijging ten opzichte van de voorgaande jaren. Daarbovenop komen premiums voor piekposities rond grote wedstrijden.
+        Een WK is geen gewoon evenement voor media-inkopers. Ster verhoogde zijn tv-tarieven voor 2026 opnieuw, en het sportjaar (WK plus Olympische Winterspelen) is expliciet als drijver benoemd. Het basisgetal van 740 euro per GRP is al een stijging ten opzichte van de voorgaande jaren. Daarbovenop komen premiums voor piekposities rond grote wedstrijden.
       </p>
       <p>
         De mondiale context is niet milder. Volgens het WFA Outlook van april 2026 drijft het WK de mondiale media-inflatie op naar 4,4 procent in 2026, tegenover 4,0 procent in 2025. In het Verenigd Koninkrijk verveelvoudigt de lineaire tv-inflatie bijna vijfvoudig in het WK-kwartaal: van 2,3 procent naar 11,3 procent. Dat patroon tekent zich ook in Nederland af, al zijn de precieze Ster-premiums niet publiek.
@@ -1781,7 +1781,7 @@ function ArticleWKBody() {
         Nieuw in 2026 zijn de FIFA-drinkpauzes: twee keer per wedstrijd een reclamepauze van maximaal 90 seconden, midden in de speeltijd. Ster heeft deze slots al geintroduceerd. Ze leveren op papier hoog bereik op een moment van verhoogde aandacht, maar ook een hogere instapprijs dan reguliere blokken.
       </p>
       <p>
-        Tegelijkertijd: 43 procent van de verwachte wereldwijde kijkers plant het WK via streaming te volgen. In de Nederlandse context betekent dat een verschuiving naar NPO Start en andere streamingdiensten, met bijbehorende CTV-plaatsingen. Onderzoek naar live sport op CTV wijst op een effectiviteit van gemiddeld 66 procent hoger dan kabel- en broadcastplaatsingen — maar de CPMs liggen ook significant hoger dan klassieke display.
+        Tegelijkertijd: 43 procent van de verwachte wereldwijde kijkers plant het WK via streaming te volgen. In de Nederlandse context betekent dat een verschuiving naar NPO Start en andere streamingdiensten, met bijbehorende CTV-plaatsingen. Onderzoek naar live sport op CTV wijst op een effectiviteit van gemiddeld 66 procent hoger dan kabel- en broadcastplaatsingen, maar de CPMs liggen ook significant hoger dan klassieke display.
       </p>
 
       <H2 num="03">Het timing-voordeel dat de meeste merken laten liggen</H2>
@@ -1790,7 +1790,7 @@ function ArticleWKBody() {
         Er is een window dat structureel wordt onderschat: de weken voor het toernooi begint. Onderzoek naar zoekgedrag rond grote sportevenementen laat zien dat interesse in de week voorafgaand aan de start met ruim 200 procent kan stijgen ten opzichte van de week daarvoor. De consumentenruimte wordt al bezet voordat de eerste wedstrijd is gespeeld.
       </p>
       <p>
-        Campagnes die timen op emotionele sportmomenten — aankondigingen, selecties, kwartfinaleplaatsing — leveren in onderzoek 35 tot 80 procent hogere effectiviteit op dan always-on spreiding over dezelfde periode. De merken die in de opbouwfase zichtbaar zijn, profiteren van stijgende aandacht zonder de concurrentiedruk die het toernooi zelf meebrengt.
+        Campagnes die timen op emotionele sportmomenten (aankondigingen, selecties, kwartfinaleplaatsing) leveren in onderzoek 35 tot 80 procent hogere effectiviteit op dan always-on spreiding over dezelfde periode. De merken die in de opbouwfase zichtbaar zijn, profiteren van stijgende aandacht zonder de concurrentiedruk die het toernooi zelf meebrengt.
       </p>
       <p>
         Wie pas op 11 juni begint, rijdt achter het peloton aan. Het gevecht om mentale ruimte wordt al weken eerder beslist.
@@ -1808,13 +1808,13 @@ function ArticleWKBody() {
         Zestig procent van de consumenten geeft aan merken actief te vermijden die steeds dezelfde advertentie tonen. Dat is een risico dat vijf weken lang elke dag opnieuw aanwezig is.
       </p>
       <p>
-        De oplossing is geen groter creatief budget. Het is een systeem dat detecteert wanneer een creative zijn effectiviteit verliest, voor je dat ziet in de conversiecijfers. Op basis van frequentie, CTR-verloop en bereikscurve — niet op basis van gevoel.
+        De oplossing is geen groter creatief budget. Het is een systeem dat detecteert wanneer een creative zijn effectiviteit verliest, voor je dat ziet in de conversiecijfers. Op basis van frequentie, CTR-verloop en bereikscurve, niet op basis van gevoel.
       </p>
 
       <H2 num="05">De data bestaat. De vraag is of je er bij kan.</H2>
 
       <p>
-        Het WK 2026 begint over drie weken. De data om een gefundeerde campagne te bouwen — benchmarks uit het EK 2024, mediaprijsinflatie per periode, historische wear-out per creative type, timing-effecten per toernooifase — bestaat. Ze ligt in de platformen waar jullie de afgelopen jaren campagnes hebben gedraaid.
+        Het WK 2026 begint over drie weken. De data om een gefundeerde campagne te bouwen (benchmarks uit het EK 2024, mediaprijsinflatie per periode, historische wear-out per creative type, timing-effecten per toernooifase) bestaat. Ze ligt in de platformen waar jullie de afgelopen jaren campagnes hebben gedraaid.
       </p>
       <p>
         Het probleem is niet de beschikbaarheid van die data. Het is de toegankelijkheid. Verspreid over Google Ads, Meta, DV360, Campaign Manager en een handvol rapportagetools, en georganiseerd per campagne in plaats van per toernooisituatie.
@@ -2357,7 +2357,7 @@ function PullQuote({ text, cite }: { text: string; cite: string }) {
           letterSpacing: '0.02em',
         }}
       >
-        — {cite}
+        {cite}
       </cite>
     </div>
   )
