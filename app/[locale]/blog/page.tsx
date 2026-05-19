@@ -19,7 +19,6 @@ const dateNL = (iso: string) => {
 export default function BlogIndex() {
   const allEditorials = editorials()
   const allDispatches = dispatches()
-  const [featured, ...restEditorials] = allEditorials
 
   return (
     <>
@@ -65,73 +64,6 @@ export default function BlogIndex() {
           </p>
         </div>
       </header>
-
-      {/* Featured editorial */}
-      {featured && (
-        <section className="bg-white" style={{ padding: '80px 24px 40px' }}>
-          <div className="mx-auto" style={{ maxWidth: '1200px' }}>
-            <Link
-              href={`/blog/${featured.slug}`}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 no-underline text-inherit group items-center"
-            >
-              <div
-                className="overflow-hidden"
-                style={{ aspectRatio: '4 / 3', borderRadius: '14px' }}
-              >
-                <FeaturedPoster
-                  tag={featured.posterTag}
-                  topic={featured.posterTopic}
-                  style={featured.posterStyle}
-                />
-              </div>
-              <div>
-                <p
-                  style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '11px',
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                    color: 'var(--muted)',
-                    marginBottom: '14px',
-                  }}
-                >
-                  Editie {featured.edition} · {featured.category} · {featured.readMinutes} min
-                </p>
-                <h2
-                  className="font-display font-bold text-[var(--navy)] m-0 group-hover:text-[var(--accent)] transition-colors"
-                  style={{
-                    fontSize: 'clamp(28px, 3vw, 40px)',
-                    lineHeight: '1.1',
-                    letterSpacing: '-0.025em',
-                    textWrap: 'balance' as const,
-                    marginBottom: '20px',
-                  }}
-                >
-                  {featured.title}
-                </h2>
-                <p
-                  style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '17px',
-                    lineHeight: '1.55',
-                    color: 'var(--muted)',
-                    textWrap: 'pretty' as const,
-                    marginBottom: '20px',
-                  }}
-                >
-                  {featured.dek}
-                </p>
-                <span
-                  className="font-display font-semibold text-[var(--accent)] inline-flex items-center gap-2"
-                  style={{ fontSize: '15px' }}
-                >
-                  Lees editie {featured.edition} →
-                </span>
-              </div>
-            </Link>
-          </div>
-        </section>
-      )}
 
       {/* Kort — dispatches */}
       {allDispatches.length > 0 && (
@@ -235,8 +167,8 @@ export default function BlogIndex() {
         </section>
       )}
 
-      {/* Edities — remaining editorials */}
-      {restEditorials.length > 0 && (
+      {/* Edities — all editorials */}
+      {allEditorials.length > 0 && (
         <section className="bg-[var(--surface)]" style={{ padding: '64px 24px 96px' }}>
           <div className="mx-auto" style={{ maxWidth: '1200px' }}>
             <div className="flex justify-between items-baseline mb-10">
@@ -273,7 +205,7 @@ export default function BlogIndex() {
               </span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {restEditorials.map((a) => (
+              {allEditorials.map((a) => (
                 <Link
                   key={a.slug}
                   href={`/blog/${a.slug}`}
