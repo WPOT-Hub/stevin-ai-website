@@ -95,6 +95,43 @@ export default async function WerkwijzePage({ params }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HowTo',
+            name: 'Hoe Stevin werkt: van marketing-data naar concrete acties',
+            description: 'Stevin verbindt je marketing-stack, signaleert afwijkingen en geeft concrete adviezen voordat het maandrapport het oppikt.',
+            step: [
+              {
+                '@type': 'HowToStep',
+                position: 1,
+                name: 'Koppelen',
+                text: 'Stevin koppelt aan je bestaande platforms: Google Ads, Meta, GA4, DV360, CRM en meer. Geen export, geen handmatig werk.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 2,
+                name: 'Meten',
+                text: 'Alle data stroomt samen in één intelligentielaag. Stevin zet ruwe cijfers om naar betekenisvolle signalen per klant, campagne en kanaal.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 3,
+                name: 'Signaleren',
+                text: 'Stevin detecteert afwijkingen, trends en kansen proactief — voor je klant of DGA er naar vraagt.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 4,
+                name: 'Adviseren',
+                text: 'Concrete adviezen met context: wat er speelt, waarom het ertoe doet, en welke actie je kunt nemen.',
+              },
+            ],
+          }),
+        }}
+      />
       {/* ── Hero — navy ── */}
       <section className="bg-primary overflow-hidden -mt-[72px]" style={{ paddingTop: 'calc(96px + 72px)', paddingBottom: '128px' }}>
         <div className="mx-auto max-w-[1200px] px-6">

@@ -100,6 +100,22 @@ export default async function HomePage({ params }: Props) {
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            '@id': 'https://stevin.ai/#website',
+            name: 'Stevin',
+            url: 'https://stevin.ai',
+            publisher: {
+              '@id': 'https://stevin.ai/#organization',
+            },
+            inLanguage: ['nl-NL', 'en'],
+          }),
+        }}
+      />
 
       {/* ── HERO ── */}
       <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
