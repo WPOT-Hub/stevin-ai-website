@@ -32,6 +32,20 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'wk-2026-campagne-data-voorbereiding',
+    format: 'dispatch' as const,
+    edition: '044',
+    category: 'Strategie',
+    title: 'WK staat voor de deur. Met welke data gaan jullie de voorbereiding in?',
+    dek: 'Drie weken voor het WK 2026 zijn de meeste campagnes al in productie. De vraag is of ze gebaseerd zijn op de juiste data. Die van het EK 2024, niet die van vorig jaar.',
+    publishedAt: '2026-05-19',
+    readMinutes: 2,
+    author: { name: 'Koen Hoogenboom', role: 'Founder, Stevin' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'STRATEGIE',
+    posterTopic: 'Campagnevoorbereiding',
+  },
+  {
     slug: 'boekhouder-als-verborgen-dealbreaker',
     format: 'dispatch' as const,
     edition: '043',

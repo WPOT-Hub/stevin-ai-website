@@ -1215,6 +1215,28 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'wk-2026-campagne-data-voorbereiding': (
+    <>
+      <p className="lead-para">
+        Het WK 2026 begint op 11 juni. Bureaus en adverteerders die nu nog bezig zijn met de creatieve voorbereiding lopen achter. Maar wie al klaar is, heeft de vraag welke data zijn campagne onderbouwt nog niet altijd goed beantwoord.
+      </p>
+      <p>
+        Het meest gemaakte strategische fout bij grote sportevenementen is het vergelijken met het verkeerde referentiepunt. Zomercampagnes van vorig jaar zijn onbruikbaar als benchmark voor een WK-campagne. Het publiek is anders, de aandacht is anders, de context is anders. De relevante vergelijking is het EK 2024, twee jaar geleden. Welke creatives hielden het vol over een toernooi van vier weken? Welke categorieën piekten in de groepsfase en vielen terug na de kwartfinales? Welke call-to-action werkte bij mannelijk publiek en welke niet?
+      </p>
+      <p>
+        Die data bestaat. Maar bij de meeste bureaus ligt ze verspreid over losse exports, rapportagetools en accountmanagers die sindsdien vertrokken zijn. Het resultaat is dat campagnebriefings voor het WK worden geschreven met aannames in plaats van bewijs.
+      </p>
+      <p>
+        Timing is een tweede onderschatte variabele. Merkbekendheidswinst wordt grotendeels geboekt in de weken voor het toernooi, niet tijdens. Wie pas op 11 juni zijn campagne opzet, rijdt mee in het peloton maar heeft het gevecht om mentale ruimte al verloren. De merken die in de periode vanaf half mei zichtbaar zijn, profiteren van de opbouw in media-aandacht zonder de concurrentiedruk die het toernooi zelf meebrengt.
+      </p>
+      <p>
+        Creative wear-out is tijdens een toernooi ook sneller dan normaal. Bij dagelijkse wedstrijden en hoge mediadruk verliezen ads hun kracht in dagen in plaats van weken. Wie geen systeem heeft om dat te detecteren, merkt het pas als de frequentie al te hoog is opgelopen en de klikratio is ingestort.
+      </p>
+      <p>
+        Het WK is over drie weken. De data om het goed te doen is beschikbaar. De vraag is of iemand er toegang toe heeft.
+      </p>
+    </>
+  ),
   'boekhouder-als-verborgen-dealbreaker': (
     <>
       <p className="lead-para">
@@ -1601,6 +1623,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'wk-2026-campagne-data-voorbereiding':
+    'Voor bureaus die WK-campagnes voorbereiden of al draaien: de meest waardevolle benchmark is niet vorig jaar zomer maar het EK 2024. Welke creatives hielden het vol over vier weken? Welke categorieën piekten in de groepsfase? Welke call-to-action werkte? Die data ligt ergens in je platformen. Stevin haalt hem op, vergelijkt hem met de huidige campagne en signaleert zodra wear-out optreedt. Zonder dat iemand er handmatig achteraan hoeft.',
   'boekhouder-als-verborgen-dealbreaker':
     'Voor bureaus die klanten bedienen in sectoren met een fiscale koopdrempel: maak de adviseur onderdeel van je campagne, niet de eindgebruiker alleen. Een pagina voor boekhouders met rekenvoorbeelden, een whitepaper via een accountantsblad, of een eenvoudige fiscale samenvatting die de eindgebruiker kan doorsturen. Wie de influence chain in kaart brengt, vindt kanalen die de concurrentie structureel overslaat.',
   'kmo-doelgroep-segmenteren':
