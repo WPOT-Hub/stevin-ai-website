@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'nieuwe-ecommerce-tools-mei-2026',
+    format: 'dispatch' as const,
+    edition: '046',
+    category: 'Platform',
+    title: "Nieuwe e-commerce tools: AI, autonome marketing en cross-border oplossingen",
+    dek: "Op 12 mei 2026 presenteert Practical Ecommerce een overzicht van opkomende e-commerce tools, variërend van predictieve AI tot embedded payments.",
+    publishedAt: '2026-05-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Nieuwe e-commerce tools: AI, autonome marketing en cross-border oplossingen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'merkidentiteit-niet-gebaseerd-op-meningen',
     format: 'dispatch' as const,
     edition: '045',
