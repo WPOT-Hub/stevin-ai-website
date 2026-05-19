@@ -234,6 +234,9 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'beste-transcriptietool-2026' && (
             <ArticleTranscriptToolsBody />
           )}
+          {article.format === 'editorial' && article.slug === 'wk-2026-campagne-data-voorbereiding' && (
+            <ArticleWKBody />
+          )}
           {article.format === 'editorial' && article.slug === 'ai-cowboys-marketing-2026' && (
             <ArticleAIcowboysBody />
           )}
@@ -243,7 +246,8 @@ export default async function ArticlePage({
             article.slug !== 'last-click-is-een-gewoonte' &&
             article.slug !== 'mmm-is-een-hypothese' &&
             article.slug !== 'beste-transcriptietool-2026' &&
-            article.slug !== 'ai-cowboys-marketing-2026' && (
+            article.slug !== 'ai-cowboys-marketing-2026' &&
+            article.slug !== 'wk-2026-campagne-data-voorbereiding' && (
               <ArticleStubBody article={article} />
             )}
         </div>
@@ -1254,28 +1258,6 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
-  'wk-2026-campagne-data-voorbereiding': (
-    <>
-      <p className="lead-para">
-        Het WK 2026 begint op 11 juni. Bureaus en adverteerders die nu nog bezig zijn met de creatieve voorbereiding lopen achter. Maar wie al klaar is, heeft de vraag welke data zijn campagne onderbouwt nog niet altijd goed beantwoord.
-      </p>
-      <p>
-        Het meest gemaakte strategische fout bij grote sportevenementen is het vergelijken met het verkeerde referentiepunt. Zomercampagnes van vorig jaar zijn onbruikbaar als benchmark voor een WK-campagne. Het publiek is anders, de aandacht is anders, de context is anders. De relevante vergelijking is het EK 2024, twee jaar geleden. Welke creatives hielden het vol over een toernooi van vier weken? Welke categorieën piekten in de groepsfase en vielen terug na de kwartfinales? Welke call-to-action werkte bij mannelijk publiek en welke niet?
-      </p>
-      <p>
-        Die data bestaat. Maar bij de meeste bureaus ligt ze verspreid over losse exports, rapportagetools en accountmanagers die sindsdien vertrokken zijn. Het resultaat is dat campagnebriefings voor het WK worden geschreven met aannames in plaats van bewijs.
-      </p>
-      <p>
-        Timing is een tweede onderschatte variabele. Merkbekendheidswinst wordt grotendeels geboekt in de weken voor het toernooi, niet tijdens. Wie pas op 11 juni zijn campagne opzet, rijdt mee in het peloton maar heeft het gevecht om mentale ruimte al verloren. De merken die in de periode vanaf half mei zichtbaar zijn, profiteren van de opbouw in media-aandacht zonder de concurrentiedruk die het toernooi zelf meebrengt.
-      </p>
-      <p>
-        Creative wear-out is tijdens een toernooi ook sneller dan normaal. Bij dagelijkse wedstrijden en hoge mediadruk verliezen ads hun kracht in dagen in plaats van weken. Wie geen systeem heeft om dat te detecteren, merkt het pas als de frequentie al te hoog is opgelopen en de klikratio is ingestort.
-      </p>
-      <p>
-        Het WK is over drie weken. De data om het goed te doen is beschikbaar. De vraag is of iemand er toegang toe heeft.
-      </p>
-    </>
-  ),
   'boekhouder-als-verborgen-dealbreaker': (
     <>
       <p className="lead-para">
@@ -1662,8 +1644,6 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
-  'wk-2026-campagne-data-voorbereiding':
-    'Voor bureaus die WK-campagnes voorbereiden of al draaien: de meest waardevolle benchmark is niet vorig jaar zomer maar het EK 2024. Welke creatives hielden het vol over vier weken? Welke categorieen piekten in de groepsfase? Welke call-to-action werkte? Die data ligt ergens in je platformen. Stevin haalt hem op, vergelijkt hem met de huidige campagne en signaleert zodra wear-out optreedt. Zonder dat iemand er handmatig achteraan hoeft.',
   'nieuwe-ecommerce-tools-mei-2026':
     "Voor bureau-eigenaars en in-house marketeers is het belangrijk om deze ontwikkelingen niet als losse trends te zien, maar als onderdeel van een groter ecosysteem. Begin met een duidelijke prioritering: welke tool lost een directe pijnpunt op? Bijvoorbeeld predictieve AI voor voorraadbeheer kan direct leiden tot minder uitval en hogere marges. Kies daarnaast oplossingen die integreren met bestaande tech-stacks om implementatietijd te beperken. Tot slot: test kleine pilots voordat je grootschalig investeert. Cross-border commerce vereist bijvoorbeeld kennis van lokale betalingsvoorkeuren en regelgeving - begin met een markt om de impact te meten.",
   'merkidentiteit-niet-gebaseerd-op-meningen':
@@ -1728,6 +1708,93 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
     'Distributie via ChatGPT is geen experiment meer, het is een kanaal. Certe gebruikt het zoals tien jaar geleden Google Ads werd gebruikt: als bron van zoekvragen die naar een eigen funnel worden geleid. Voor andere financiële dienstverleners de vraag: ben je vindbaar binnen ChatGPT als iemand een vraag stelt over jouw product? Niet door SEO. Door aanwezig te zijn als GPT, dataset of partner.',
   'amazon-ads-22-procent-groei-q1-2026':
     'Voor D2C-merken en e-commerce: Amazon Ads is geen optie meer, het is een derde verplichte stap naast Google en Meta. De groei van 22 procent is geen incident, het is een trend die al twee jaar loopt. Voor agencies: kanaalmix-besluiten op basis van alleen ROAS van de individuele platforms missen de bredere portfolio-vraag. Een MMM- of uplift-test over Google + Meta + Amazon laat structureel andere optima zien dan platform-eigen attributie suggereert.',
+}
+
+function ArticleWKBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Op 11 juni gaat het WK 2026 van start in Mexico City. Vijf weken, 104 wedstrijden, verspreid over drie landen en meerdere tijdzones. De meeste campagnes zijn al weken in productie. De vraag die minder wordt gesteld: op basis van welke data zijn ze gemaakt?
+      </p>
+
+      <H2 num="01">Het verkeerde referentiekader</H2>
+
+      <p>
+        De meestgemaakte fout bij grote sportevenementen is het gebruik van het verkeerde vergelijkingspunt. Zomercampagnes uit 2025 zijn onbruikbaar als benchmark voor een WK-campagne. De context is fundamenteel anders: het publiek is groter, de aandacht is gefocust, de emotionele lading is hoog. Een zomercampagne vertelt je niets over hoe jouw creative het houdt bij acht wedstrijden op rij met stijgende media-aandacht.
+      </p>
+      <p>
+        Het relevante referentiekader is het EK 2024. Twee jaar geleden, maar de meest vergelijkbare context die beschikbaar is. Bij dat toernooi bereikte de NOS via televisie 14,5 miljoen mensen, ofwel 87,6 procent van de Nederlandse bevolking. Oranje-wedstrijden trokken gemiddeld 5,8 miljoen kijkers. De halve finale tegen Engeland piekte op 6,9 miljoen.
+      </p>
+      <p>
+        De vraag die elk bureau of in-house team nu zou moeten kunnen beantwoorden: welke van jullie creatives hielden het vol over vier toernooiweken? Welke categorieën piekten in de groepsfase en daalden in de kwartfinales? Welke boodschap werkte bij het brede, gemengde EK-publiek — want bijna de helft van de EK-kijkers in 2024 waren vrouwen, een gegeven dat de meeste campagnebriefings negeerden?
+      </p>
+      <p>
+        Die data bestaat. Bij de meeste teams ligt ze ergens in een export, een dashboard dat niemand meer opent, of bij een accountmanager die inmiddels elders werkt.
+      </p>
+
+      <BodyFigure
+        tag="NOS · EK 2024"
+        stat="87,6%"
+        statCap="van de Nederlandse bevolking bereikte de NOS via tv tijdens het EK 2024 — 14,5 miljoen mensen."
+        edition="EDITIE 017 · STRATEGIE"
+        source="Bron: NOS / Ster terugblik EK 2024"
+      />
+
+      <H2 num="02">Wat het kost om mee te doen</H2>
+
+      <p>
+        Een WK is geen gewoon evenement voor media-inkopers. Ster verhoogde zijn tv-tarieven voor 2026 opnieuw, en het sportjaar — WK plus Olympische Winterspelen — is expliciet als drijver benoemd. Het basisgetal van 740 euro per GRP is al een stijging ten opzichte van de voorgaande jaren. Daarbovenop komen premiums voor piekposities rond grote wedstrijden.
+      </p>
+      <p>
+        De mondiale context is niet milder. Volgens het WFA Outlook van april 2026 drijft het WK de mondiale media-inflatie op naar 4,4 procent in 2026, tegenover 4,0 procent in 2025. In het Verenigd Koninkrijk verveelvoudigt de lineaire tv-inflatie bijna vijfvoudig in het WK-kwartaal: van 2,3 procent naar 11,3 procent. Dat patroon tekent zich ook in Nederland af, al zijn de precieze Ster-premiums niet publiek.
+      </p>
+      <p>
+        Nieuw in 2026 zijn de FIFA-drinkpauzes: twee keer per wedstrijd een reclamepauze van maximaal 90 seconden, midden in de speeltijd. Ster heeft deze slots al geintroduceerd. Ze leveren op papier hoog bereik op een moment van verhoogde aandacht, maar ook een hogere instapprijs dan reguliere blokken.
+      </p>
+      <p>
+        Tegelijkertijd: 43 procent van de verwachte wereldwijde kijkers plant het WK via streaming te volgen. In de Nederlandse context betekent dat een verschuiving naar NPO Start en andere streamingdiensten, met bijbehorende CTV-plaatsingen. Onderzoek naar live sport op CTV wijst op een effectiviteit van gemiddeld 66 procent hoger dan kabel- en broadcastplaatsingen — maar de CPMs liggen ook significant hoger dan klassieke display.
+      </p>
+
+      <H2 num="03">Het timing-voordeel dat de meeste merken laten liggen</H2>
+
+      <p>
+        Er is een window dat structureel wordt onderschat: de weken voor het toernooi begint. Onderzoek naar zoekgedrag rond grote sportevenementen laat zien dat interesse in de week voorafgaand aan de start met ruim 200 procent kan stijgen ten opzichte van de week daarvoor. De consumentenruimte wordt al bezet voordat de eerste wedstrijd is gespeeld.
+      </p>
+      <p>
+        Campagnes die timen op emotionele sportmomenten — aankondigingen, selecties, kwartfinaleplaatsing — leveren in onderzoek 35 tot 80 procent hogere effectiviteit op dan always-on spreiding over dezelfde periode. De merken die in de opbouwfase zichtbaar zijn, profiteren van stijgende aandacht zonder de concurrentiedruk die het toernooi zelf meebrengt.
+      </p>
+      <p>
+        Wie pas op 11 juni begint, rijdt achter het peloton aan. Het gevecht om mentale ruimte wordt al weken eerder beslist.
+      </p>
+
+      <H2 num="04">Wear-out over vijf weken</H2>
+
+      <p>
+        Een WK duurt vijf weken. Dat is twee keer zo lang als een gemiddelde campagnecyclus en vier keer zo lang als de meeste A/B-testperiodes. Vrijwel geen enkel creatief houdt dat vol zonder rotatie.
+      </p>
+      <p>
+        Industrie-onderzoek naar ad wear-out laat zien dat effectiviteit gemiddeld significant daalt na 2,5 vertoningen per persoon. Bij dagelijkse wedstrijden en hoge media-aandacht wordt die grens in dagen bereikt in plaats van weken. Wie geen systeem heeft om dat bij te houden, merkt het pas als de klikratio al ingezakt is en de frequentie al te hoog is opgelopen om bij te sturen zonder merkschade.
+      </p>
+      <p>
+        Zestig procent van de consumenten geeft aan merken actief te vermijden die steeds dezelfde advertentie tonen. Dat is een risico dat vijf weken lang elke dag opnieuw aanwezig is.
+      </p>
+      <p>
+        De oplossing is geen groter creatief budget. Het is een systeem dat detecteert wanneer een creative zijn effectiviteit verliest, voor je dat ziet in de conversiecijfers. Op basis van frequentie, CTR-verloop en bereikscurve — niet op basis van gevoel.
+      </p>
+
+      <H2 num="05">De data bestaat. De vraag is of je er bij kan.</H2>
+
+      <p>
+        Het WK 2026 begint over drie weken. De data om een gefundeerde campagne te bouwen — benchmarks uit het EK 2024, mediaprijsinflatie per periode, historische wear-out per creative type, timing-effecten per toernooifase — bestaat. Ze ligt in de platformen waar jullie de afgelopen jaren campagnes hebben gedraaid.
+      </p>
+      <p>
+        Het probleem is niet de beschikbaarheid van die data. Het is de toegankelijkheid. Verspreid over Google Ads, Meta, DV360, Campaign Manager en een handvol rapportagetools, en georganiseerd per campagne in plaats van per toernooisituatie.
+      </p>
+      <p>
+        Een WK komt eens in de vier jaar. Het EK 2024 was de repetitiegeneraal. Wie nu niet systematisch terugkijkt wat er in juni 2024 werkelijk gebeurde in zijn platformen, bouwt de strategie voor juni 2026 opnieuw op aannames.
+      </p>
+    </>
+  )
 }
 
 function ArticleAIcowboysBody() {

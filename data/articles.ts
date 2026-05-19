@@ -32,20 +32,6 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
-    slug: 'wk-2026-campagne-data-voorbereiding',
-    format: 'dispatch' as const,
-    edition: '047',
-    category: 'Strategie',
-    title: 'WK staat voor de deur. Met welke data gaan jullie de voorbereiding in?',
-    dek: 'Drie weken voor het WK 2026 zijn de meeste campagnes al in productie. De vraag is of ze gebaseerd zijn op de juiste data. Die van het EK 2024, niet die van vorig jaar.',
-    publishedAt: '2026-05-19',
-    readMinutes: 2,
-    author: { name: 'Koen Hoogenboom', role: 'Founder, Stevin' },
-    posterStyle: 'gradient' as const,
-    posterTag: 'STRATEGIE',
-    posterTopic: 'Campagnevoorbereiding',
-  },
-  {
     slug: 'nieuwe-ecommerce-tools-mei-2026',
     format: 'dispatch' as const,
     edition: '046',
@@ -564,6 +550,20 @@ export const articles: Article[] = [
   },
 
   /* ─── EDITORIALS ─── */
+  {
+    slug: 'wk-2026-campagne-data-voorbereiding',
+    format: 'editorial' as const,
+    edition: '017',
+    category: 'Strategie',
+    title: 'WK staat voor de deur. Met welke data gaan jullie de voorbereiding in?',
+    dek: 'Drie weken voor het WK 2026 zijn de meeste campagnes al in productie. De vraag is of ze gebaseerd zijn op de juiste data. Welk referentiekader gebruik je voor een evenement dat twee jaar geleden voor het laatst plaatsvond?',
+    publishedAt: '2026-05-19',
+    readMinutes: 8,
+    author: { name: 'Koen Hoogenboom', role: 'Founder, Stevin' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'STRATEGIE',
+    posterTopic: 'WK 2026. Met welke data ga je de voorbereiding in?',
+  },
   {
     slug: 'ai-cowboys-marketing-2026',
     format: 'editorial',
