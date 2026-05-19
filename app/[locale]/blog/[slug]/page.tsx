@@ -1163,6 +1163,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-introduceert-drie-ai-max-updates': (
+    <>
+      <p className="lead-para">
+        Google Ads heeft op 5 mei drie nieuwe functies aangekondigd die gebruikmaken van kunstmatige intelligentie om de prestaties van campagnes te verbeteren. De updates omvatten AI Max voor Shopping, AI Brief en tekstdisclaimers voor Search. Volgens Google zijn er guardrails ingebouwd om de kwaliteit en relevantie te waarborgen.
+      </p>
+      <p>
+        De eerste update, AI Max voor Shopping, optimaliseert automatisch productweergaven en biedingen op basis van realtime data. AI Brief biedt marketeers een gestructureerd overzicht van campagneprestaties met aanbevelingen voor aanpassingen. De derde update introduceert tekstdisclaimers in zoekresultaten om gebruikers beter te informeren over advertenties.
+      </p>
+      <p>
+        Practical Ecommerce meldt dat deze updates vooral gericht zijn op het verbeteren van de gebruikerservaring en het verhogen van de conversieratio’s. De functies zijn vanaf deze week beschikbaar voor alle adverteerders.
+      </p>
+    </>
+  ),
   'politieke-targeting-en-visuele-aandacht-eye-tracking': (
     <>
       <p className="lead-para">
@@ -1489,6 +1502,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-introduceert-drie-ai-max-updates':
+    "Voor bureau-eigenaars en in-house marketeers is het belangrijk om deze updates snel te evalueren. Begin met een testcampagne om de impact van AI Max voor Shopping op je productfeed te meten. Gebruik AI Brief als startpunt voor wekelijkse performance-reviews in plaats van handmatige rapportages. Zorg dat je disclaimerteksten consistent en compliant blijven met Google’s richtlijnen. Deze tools kunnen tijd besparen, maar vereisen wel dat je de gegenereerde aanbevelingen kritisch beoordeelt op relevantie voor jouw doelgroep.",
   'politieke-targeting-en-visuele-aandacht-eye-tracking':
     "Voor bureaus en marketeers betekent dit dat politieke context niet alleen relevant is voor branding, maar ook voor de effectiviteit van advertenties. Het is belangrijk om te testen hoe visuele elementen en boodschappen samenkomen in campagnes die politieke thema's raken. Zorg ervoor dat de creatie niet alleen informatief is, maar ook aansluit bij de verwachtingen van je doelgroep. Kleine aanpassingen in design of timing kunnen al leiden tot meetbare verschillen in aandacht.",
   'ai-print-on-demand-spelers-moeten-fundament-leggen':
