@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-kosten-stijgen-conversie-efficientie-2025',
+    format: 'dispatch' as const,
+    edition: '034',
+    category: 'Platform',
+    title: "Google Ads-kosten stijgen, maar conversies verbeteren in 2025",
+    dek: "De kosten voor Google Ads zijn in het eerste kwartaal van 2025 met 12% gestegen ten opzichte van vorig jaar, terwijl de gemiddelde conversiepercentages met 8% zijn toegenomen volgens Search Engine Land.",
+    publishedAt: '2026-05-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads-kosten stijgen, maar conversies verbeteren in 2025",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-kosten-stijgen-conversies-verbeteren-2025',
     format: 'dispatch' as const,
     edition: '032',
