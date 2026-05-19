@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-kosten-stijgen-conversies-verbeteren-2025',
+    format: 'dispatch' as const,
+    edition: '',
+    category: 'Platform',
+    title: "Google Ads wordt duurder, maar conversies stijgen in 2025",
+    dek: "De kosten per klik in Google Ads zijn in 2025 met 12% gestegen ten opzichte van vorig jaar, terwijl de conversiepercentages gemiddeld met 8% zijn toegenomen.",
+    publishedAt: '2026-05-19',
+    readMinutes: 1,
+    author: 'Stevin Journal',
+    posterStyle: 'editorial' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads wordt duurder, maar conversies stijgen in 2025",
+    source: 'Stevin Journal',
+  },
+  {
     slug: 'marketing-enters-air-traffic-control-era',
     format: 'dispatch' as const,
     edition: '',
