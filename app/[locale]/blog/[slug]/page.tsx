@@ -1163,6 +1163,45 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'nieuwe-ecommerce-tools-mei-2026': (
+    <>
+      <p className="lead-para">
+        Deze week introduceert de sector nieuwe tools voor e-commerce, meldt Practical Ecommerce. Onder de ontwikkelingen vallen predictieve AI voor voorraadbeheer, autonome marketingoplossingen en verbeterde sitebuilders. Ook komen omnichannel fulfillment, programmatic advertenties en cross-border commerce aan bod.
+      </p>
+      <p>
+        Daarnaast worden embedded payments en snellere internationale betalingsverwerkers benadrukt als belangrijke trends. De focus ligt op efficiëntie en schaalbaarheid voor retailers die hun online aanwezigheid willen uitbreiden. Tools zoals deze moeten klantreis en conversie verbeteren door naadloze integratie met bestaande systemen.
+      </p>
+      <p>
+        Volgens de bron bieden deze innovaties vooral voordelen voor merken die actief zijn in meerdere markten of complexe logistiek hanteren. De tools zijn vaak gericht op automatisering van repetitieve taken, waardoor teams zich kunnen richten op strategische groei.
+      </p>
+    </>
+  ),
+  'merkidentiteit-niet-gebaseerd-op-meningen': (
+    <>
+      <p className="lead-para">
+        Op 19 mei meldt Marketingfacts dat een effectieve merkidentiteit niet tot stand komt door interne voorkeuren of aannames te volgen. Volgens het artikel is het cruciaal om de merkwaarden en -positionering te baseren op objectieve inzichten en meetbare data. Dit voorkomt inconsistenties en zorgt voor een duidelijke, herkenbare uitstraling naar de doelgroep.
+      </p>
+      <p>
+        Het bericht benadrukt dat marketeers vaak terugvallen op persoonlijke smaak of traditionele methoden, zoals focusgroepen die subjectieve feedback geven. Marketingfacts pleit voor het gebruik van gedragsdata en marktonderzoek om de werkelijke perceptie van consumenten in kaart te brengen. Dit helpt bij het ontwikkelen van een merkidentiteit die aansluit bij de behoeften en verwachtingen van de doelgroep.
+      </p>
+      <p>
+        Een voorbeeld dat wordt genoemd is de discrepantie tussen hoe een merk zichzelf ziet en hoe klanten het ervaren. Zonder meetdata kan deze kloof onopgemerkt blijven, wat leidt tot zwakke positionering en minder effectieve communicatie. Het artikel concludeert dat merken die hun identiteit baseren op feiten, uiteindelijk sterker staan in de markt.
+      </p>
+    </>
+  ),
+  'alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen': (
+    <>
+      <p className="lead-para">
+        De Chinese techgigant Alibaba Group Holding zag op woensdag 13 mei de omzet in het afgelopen kwartaal met 3 procent stijgen ten opzichte van een jaar eerder. Volgens Emerce vielen de cijfers tegen, omdat analisten een grotere stijging hadden voorspeld. Het bedrijf kampt al langer met dalende consumentenbestedingen in China en moet vechten tegen toenemende concurrentie in de e-commerce sector.
+      </p>
+      <p>
+        Het resultaat komt bovenop een reeds zwakke periode, waarin Alibaba eerder dit jaar ook al tegenvallende cijfers presenteerde. De groei van de clouddivisie, traditioneel een belangrijke inkomstenbron, vertraagde eveneens. Ondernemers en investeerders kijken met argusogen naar de strategie van het bedrijf om weer aan te haken bij de markt.
+      </p>
+      <p>
+        De teleurstellende kwartaalcijfers zetten druk op het management van Alibaba, dat recent nog reorganisaties aankondigde om efficiënter te werken. Concurrenten zoals JD.com en Pinduoduo blijven hard groeien, wat de positie van Alibaba verder onder druk zet.
+      </p>
+    </>
+  ),
   'beardbrand-expansion-plan-na-groeistagnatie': (
     <>
       <p className="lead-para">
@@ -1623,8 +1662,14 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
-  'wk-2026-campagne-data-voorbereiding':
-    'Voor bureaus die WK-campagnes voorbereiden of al draaien: de meest waardevolle benchmark is niet vorig jaar zomer maar het EK 2024. Welke creatives hielden het vol over vier weken? Welke categorieën piekten in de groepsfase? Welke call-to-action werkte? Die data ligt ergens in je platformen. Stevin haalt hem op, vergelijkt hem met de huidige campagne en signaleert zodra wear-out optreedt. Zonder dat iemand er handmatig achteraan hoeft.',
+  ‘wk-2026-campagne-data-voorbereiding’:
+    ‘Voor bureaus die WK-campagnes voorbereiden of al draaien: de meest waardevolle benchmark is niet vorig jaar zomer maar het EK 2024. Welke creatives hielden het vol over vier weken? Welke categorieen piekten in de groepsfase? Welke call-to-action werkte? Die data ligt ergens in je platformen. Stevin haalt hem op, vergelijkt hem met de huidige campagne en signaleert zodra wear-out optreedt. Zonder dat iemand er handmatig achteraan hoeft.’,
+  ‘nieuwe-ecommerce-tools-mei-2026’:
+    "Voor bureau-eigenaars en in-house marketeers is het belangrijk om deze ontwikkelingen niet als losse trends te zien, maar als onderdeel van een groter ecosysteem. Begin met een duidelijke prioritering: welke tool lost een directe pijnpunt op? Bijvoorbeeld predictieve AI voor voorraadbeheer kan direct leiden tot minder uitval en hogere marges. Kies daarnaast oplossingen die integreren met bestaande tech-stacks om implementatietijd te beperken. Tot slot: test kleine pilots voordat je grootschalig investeert. Cross-border commerce vereist bijvoorbeeld kennis van lokale betalingsvoorkeuren en regelgeving - begin met een markt om de impact te meten.",
+  ‘merkidentiteit-niet-gebaseerd-op-meningen’:
+    "Voor bureau-eigenaars en in-house marketeers betekent dit dat merkstrategieen niet langer mogen draaien om interne discussies of gevoel. Begin met een grondige analyse van bestaande meetdata, zoals klantfeedback, verkoopcijfers of sentimentanalyses op sociale media. Gebruik deze inzichten als basis voor workshops met stakeholders, zodat iedereen dezelfde feiten als vertrekpunt neemt. Vervolgens is het zaak om de merkwaarden concreet te maken met gedragsindicatoren: welke acties moeten consumenten verrichten na blootstelling aan je communicatie? Test deze hypotheses met kleine experimenten voordat je grote campagnes lanceert.",
+  ‘alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen’:
+    "Voor bureau-eigenaars en in-house marketeers is dit een herinnering dat zelfs grote spelers niet immuun zijn voor marktveranderingen. Het is belangrijk om je eigen data goed te monitoren en niet alleen te vertrouwen op macrotrends. Als je afhankelijk bent van partners of platforms zoals Alibaba, overweeg dan om je marketingstrategie te diversifieren om risico’s te spreiden.",
   'boekhouder-als-verborgen-dealbreaker':
     'Voor bureaus die klanten bedienen in sectoren met een fiscale koopdrempel: maak de adviseur onderdeel van je campagne, niet de eindgebruiker alleen. Een pagina voor boekhouders met rekenvoorbeelden, een whitepaper via een accountantsblad, of een eenvoudige fiscale samenvatting die de eindgebruiker kan doorsturen. Wie de influence chain in kaart brengt, vindt kanalen die de concurrentie structureel overslaat.',
   'kmo-doelgroep-segmenteren':
