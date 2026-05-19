@@ -1163,6 +1163,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'marketing-enters-air-traffic-control-era': (
+    <>
+      <p className="lead-para">
+        Op 18 mei meldt Search Engine Land dat marketingorganisaties vanaf volgend jaar moeten concurreren met AI-systemen die klantreizen in realtime beoordelen op vertrouwen, risico, intentie en identiteit. Deze systemen nemen binnen milliseconden beslissingen die traditionele marketingstrategieen overbodig maken.
+      </p>
+      <p>
+        De uitdaging ligt volgens de bron in het synchroniseren van deze AI-gestuurde processen. Waar voorheen campagnes werden gepland op basis van historische data, moet nu worden ingespeeld op dynamische signalen zoals gedragspatronen of plotselinge veranderingen in zoekgedrag. Bedrijven die hier niet op anticiperen, lopen het risico dat hun boodschappen irrelevant worden of zelfs als onbetrouwbaar worden ervaren.
+      </p>
+      <p>
+        Experts wijzen erop dat dit geen kwestie is van nieuwe tools, maar van een fundamentele verschuiving in hoe marketing wordt georganiseerd. Teams moeten sneller schakelen tussen kanalen en signalen, terwijl ze tegelijkertijd de oorzaak en gevolg-relaties tussen acties en reacties blijven monitoren.
+      </p>
+    </>
+  ),
   'google-ads-kosten-stijgen-conversies-verbeteren-2025': (
     <>
       <p className="lead-para">
@@ -1437,6 +1450,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'marketing-enters-air-traffic-control-era':
+    "Voor bureau-eigenaars en in-house marketeers betekent dit dat de focus moet verschuiven van campagneplanning naar systeemdenken. Begin met het in kaart brengen welke AI-systemen binnen je doelgroep al actief zijn en hoe ze klantdata verwerken. Bouw vervolgens interne processen op die net zo flexibel zijn als de AI's waarmee je concurreert: korte feedbackloops, directe meetdata en de mogelijkheid om snel bij te sturen. Het is verstandig om nu al te investeren in tools die realtime data integreren met je bestaande systemen. Denk aan API-koppelingen met CRM's of CDP's die signalen direct doorgeven aan je marketingautomatisering. Houd er rekening mee dat deze overgang niet alleen technisch is, maar ook vraagt om nieuwe samenwerkingsvormen tussen afdelingen zoals IT, data-analyses en creatievelingen.",
   'google-ads-kosten-stijgen-conversies-verbeteren-2025':
     "Voor bureau-eigenaars en marketeers is dit een signaal om kritisch te kijken naar de ROI van Google Ads-campagnes. Zorg dat je meetdata altijd up-to-date is en focus op campagnes waar je zowel kosten als conversies nauwlettend volgt. Overweeg om extra budget vrij te maken voor A/B-testen van landingspagina’s en creatives, zodat je de uplift kan maximaliseren zonder direct meer te betalen. Daarnaast is het verstandig om alternatieve kanalen zoals Microsoft Advertising of LinkedIn te evalueren, zeker als je doelgroep daar actief is.",
   'openai-chatgpt-ads-manager-cpc-self-serve':
