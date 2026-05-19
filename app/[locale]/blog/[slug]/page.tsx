@@ -1163,6 +1163,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-kosten-stijgen-conversie-efficientie-2025': (
+    <>
+      <p className="lead-para">
+        De stijgende kosten in Google Ads zijn een terugkerend thema voor adverteerders. De gemiddelde CPC (cost per click) bedroeg in Q1 2025 €1,45, een stijging van 12% ten opzichte van Q1 2024. Concurrentie om topposities blijft toenemen door groeiende vraag en beperkte advertentieruimte.
+      </p>
+      <p>
+        Desondanks laten meetdata zien dat advertenties beter converteren. De gemiddelde conversieratio steeg naar 4,3%, een stijging van 8% ten opzichte van vorig jaar. Dit suggereert dat campagnes gerichter worden uitgevoerd, ondanks de hogere kosten.
+      </p>
+      <p>
+        Experts wijten de verbeterde efficiëntie aan betere targeting en optimalisatie-tools. Automatisering en AI-gestuurde biedstrategieën spelen hierin een belangrijke rol volgens Search Engine Land.
+      </p>
+    </>
+  ),
   'marketing-enters-air-traffic-control-era': (
     <>
       <p className="lead-para">
@@ -1450,6 +1463,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-kosten-stijgen-conversie-efficientie-2025':
+    "Voor bureau-eigenaars en marketeers betekent deze ontwikkeling dat investeringen in Google Ads nog zorgvuldiger moeten worden afgewogen. Het is verstandig om te focussen op campagnes met duidelijke meetdata en bewezen uplift. Daarnaast is het raadzaam om te experimenteren met nieuwe targeting-opties, zoals dynamische zoekadvertenties of responsieve zoekadvertenties, om de kosten te spreiden over verschillende kanalen. Het monitoren van de totale acquisitiekosten (CAC) wordt nu belangrijker dan ooit.",
   'marketing-enters-air-traffic-control-era':
     "Voor bureau-eigenaars en in-house marketeers betekent dit dat de focus moet verschuiven van campagneplanning naar systeemdenken. Begin met het in kaart brengen welke AI-systemen binnen je doelgroep al actief zijn en hoe ze klantdata verwerken. Bouw vervolgens interne processen op die net zo flexibel zijn als de AI's waarmee je concurreert: korte feedbackloops, directe meetdata en de mogelijkheid om snel bij te sturen. Het is verstandig om nu al te investeren in tools die realtime data integreren met je bestaande systemen. Denk aan API-koppelingen met CRM's of CDP's die signalen direct doorgeven aan je marketingautomatisering. Houd er rekening mee dat deze overgang niet alleen technisch is, maar ook vraagt om nieuwe samenwerkingsvormen tussen afdelingen zoals IT, data-analyses en creatievelingen.",
   'google-ads-kosten-stijgen-conversies-verbeteren-2025':
