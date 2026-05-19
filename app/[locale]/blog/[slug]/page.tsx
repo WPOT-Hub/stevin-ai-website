@@ -1163,6 +1163,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'juni-2026-contentkansen-emotionele-thema-s': (
+    <>
+      <p className="lead-para">
+        Op 7 mei 2026 meldt Practical Ecommerce dat juni traditioneel een maand is met veel emotionele en sociale gebeurtenissen. Denk aan het WK voetbal, bruiloften en zomerse evenementen. Deze gelegenheden lenen zich goed voor content die aansluit bij de belevingswereld van doelgroepen.
+      </p>
+      <p>
+        Het artikel noemt vijf concrete ideeën om deze thema’s te benutten. Zo kunnen merken inspelen op de opwinding rond sporttoernooien of de feestelijke sfeer van huwelijksvieringen. Ook lokale evenementen zoals festivals of markten bieden aanknopingspunten voor relevante content.
+      </p>
+      <p>
+        Practical Ecommerce benadrukt dat timing en authenticiteit cruciaal zijn. Door vroeg te starten met planning en te focussen op waardevolle informatie, kan de impact van campagnes worden vergroot.
+      </p>
+    </>
+  ),
   'ai-verandert-print-on-demand-ecommerce': (
     <>
       <p className="lead-para">
@@ -1515,6 +1528,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'juni-2026-contentkansen-emotionele-thema-s':
+    "Voor bureau-eigenaars en in-house marketeers is het verstandig om nu al vast te stellen welke thema’s in juni relevant zijn voor hun klanten. Begin met een simpele contentkalender en koppel deze aan meetdata uit eerdere jaren. Zo zie je snel welke onderwerpen resoneren en waar je uplift kunt verwachten. Houd ook rekening met seizoensgebonden zoekgedrag via tools als Google Trends om je planning te verfijnen.",
   'ai-verandert-print-on-demand-ecommerce':
     "Voor bureau-eigenaars betekent dit dat klanten nu verwachten dat AI niet alleen wordt ingezet voor efficiency, maar ook voor strategische beslissingen. Begin met het helder maken van de doelgroep en het creëren van een consistente productfeed voordat je AI-tools implementeert. Test kleine pilots uit voordat je schaalt, zodat je meet wat werkt zonder grote investeringen vooraf. Houd rekening met langere acquisitiecycli: druk op korte termijn resultaat kan leiden tot suboptimale keuzes.",
   'google-ads-introduceert-drie-ai-max-updates':
