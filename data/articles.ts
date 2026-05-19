@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'politieke-targeting-en-visuele-aandacht-eye-tracking',
+    format: 'dispatch' as const,
+    edition: '036',
+    category: 'Markt',
+    title: "Politieke targeting beïnvloedt visuele aandacht, eye-tracking toont aan",
+    dek: "Uit een eye-tracking onderzoek blijkt dat politieke targeting de kijkrichting van consumenten direct beïnvloedt.",
+    publishedAt: '2026-05-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Politieke targeting beïnvloedt visuele aandacht, eye-tracking toont aan",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-print-on-demand-spelers-moeten-fundament-leggen',
     format: 'dispatch' as const,
     edition: '035',
