@@ -13,6 +13,7 @@ name: Vercel Production Deploy
 # raakt — dus normale config-pushes geven geen overbodige deploy.
 
 on:
+  workflow_dispatch: # voor handmatige triggers via gh CLI of UI
   push:
     branches: [main]
     paths:
