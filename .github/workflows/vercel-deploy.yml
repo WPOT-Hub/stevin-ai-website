@@ -53,22 +53,19 @@ jobs:
       - name: Build for production
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Deploy prebuilt artifact
+      - name: Deploy prebuilt artifact (auto-promote naar production domain)
         id: deploy
         run: |
           URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} | tail -1)
           echo "url=$URL" >> "$GITHUB_OUTPUT"
           echo "Deployed to: $URL"
 
-      - name: Promote to stevin.ai alias
-        run: vercel alias set ${{ steps.deploy.outputs.url }} stevin.ai --token=${{ secrets.VERCEL_TOKEN }}
-
       - name: Smoke-test live homepage
         run: |
-          sleep 5
+          sleep 10
           STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://stevin.ai)
           if [ "$STATUS" != "200" ]; then
-            echo "::error::Homepage returned $STATUS (expected 200)"
+            echo "::error::Homepage returned $STATUS (expected 200) — check Vercel project production domain settings"
             exit 1
           fi
           echo "Homepage 200 OK"
