@@ -1163,6 +1163,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'politieke-targeting-en-visuele-aandacht-eye-tracking': (
+    <>
+      <p className="lead-para">
+        Op 15 mei meldde Marketingfacts dat een eye-tracking analyse laat zien hoe politieke targeting de visuele aandacht van consumenten verandert. Onderzoekers observeerden dat advertenties met politieke boodschappen vaker werden opgemerkt dan neutrale uitingen. De uplift in aandacht bedroeg gemiddeld 23 procent ten opzichte van niet-gerichte content.
+      </p>
+      <p>
+        Het onderzoek, uitgevoerd onder 180 deelnemers, toonde aan dat politieke targeting vooral effectief is bij specifieke doelgroepen. Respondenten met een sterke politieke voorkeur besteedden significant meer tijd aan gerichte advertenties. Dit gold met name voor content die aansloot bij hun eigen standpunten.
+      </p>
+      <p>
+        Volgens de auteurs kan deze inzicht helpen bij het optimaliseren van campagnes, vooral rond verkiezingen of maatschappelijke debatten. De data suggereert dat visuele prikkels en contextuele targeting elkaar versterken.
+      </p>
+    </>
+  ),
   'ai-print-on-demand-spelers-moeten-fundament-leggen': (
     <>
       <p className="lead-para">
@@ -1476,6 +1489,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'politieke-targeting-en-visuele-aandacht-eye-tracking':
+    "Voor bureaus en marketeers betekent dit dat politieke context niet alleen relevant is voor branding, maar ook voor de effectiviteit van advertenties. Het is belangrijk om te testen hoe visuele elementen en boodschappen samenkomen in campagnes die politieke thema's raken. Zorg ervoor dat de creatie niet alleen informatief is, maar ook aansluit bij de verwachtingen van je doelgroep. Kleine aanpassingen in design of timing kunnen al leiden tot meetbare verschillen in aandacht.",
   'ai-print-on-demand-spelers-moeten-fundament-leggen':
     "Voor bureau-eigenaars betekent dit dat klanten nu verwachten dat AI niet alleen efficiency levert, maar ook strategische inzichten biedt. Begin met het helder definiëren van de doelgroep en het opbouwen van een consistente productfeed voordat je AI-tools implementeert. Voer kleine pilots uit om meetdata te verzamelen zonder grote vooraf investeringen. Houd rekening met langere acquisitiecycli: druk op korte termijn resultaat kan leiden tot suboptimale keuzes.",
   'google-ads-kosten-stijgen-conversie-efficientie-2025':
