@@ -1163,6 +1163,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-kosten-stijgen-conversies-verbeteren-2025': (
+    <>
+      <p className="lead-para">
+        Uit een analyse van Search Engine Land blijkt dat de gemiddelde kosten per klik (CPC) in Google Ads dit jaar verder zijn opgelopen. Vooral in sectoren als e-commerce en financiële diensten is de stijging het meest opvallend. Ondanks deze prijsstijging melden adverteerders echter een verbetering in conversie-efficiëntie. Volgens het rapport is dit vooral toe te schrijven aan betere targeting en geoptimaliseerde landingspagina's.
+      </p>
+      <p>
+        Het onderzoek toont aan dat adverteerders die investeren in data-gedreven campagnes, zoals dynamische zoekadvertenties en smart bidding-strategieën, relatief minder last hebben van de hogere kosten. De uplift in conversies varieert sterk per branche: bij online retailers ligt de stijging rond de 10%, terwijl B2B-diensten iets achterblijven met een gemiddelde van 5%. Desondanks blijft de druk op marketingbudgetten groot.
+      </p>
+      <p>
+        Experts wijzen erop dat de hogere kosten niet alleen door vraag zijn gedreven, maar ook door beperkte voorraad binnen Google’s advertentieplatform. Dit leidt tot meer concurrentie en dus hogere biedingen. Tegelijkertijd biedt deze situatie kansen voor bedrijven die snel kunnen schakelen en hun campagnes continu monitoren.
+      </p>
+    </>
+  ),
   'openai-chatgpt-ads-manager-cpc-self-serve': (
     <>
       <p className="lead-para">
@@ -1424,6 +1437,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-kosten-stijgen-conversies-verbeteren-2025':
+    "Voor bureau-eigenaars en marketeers is dit een signaal om kritisch te kijken naar de ROI van Google Ads-campagnes. Zorg dat je meetdata altijd up-to-date is en focus op campagnes waar je zowel kosten als conversies nauwlettend volgt. Overweeg om extra budget vrij te maken voor A/B-testen van landingspagina’s en creatives, zodat je de uplift kan maximaliseren zonder direct meer te betalen. Daarnaast is het verstandig om alternatieve kanalen zoals Microsoft Advertising of LinkedIn te evalueren, zeker als je doelgroep daar actief is.",
   'openai-chatgpt-ads-manager-cpc-self-serve':
     'Voor bureau-eigenaars en in-house teams betekent dit dat je een testbudget kunt vrijmaken zonder eerst een verkoopgesprek met OpenAI te plannen. De relevante vraag is niet of ChatGPT Ads werkt, maar of jouw doelgroep daar zit en of CPC-attributie in jouw stack landt. Begin klein, meet wat doorklikt, en bewaar de tijd die je vroeger kwijt was aan minimum-spend-besprekingen voor het echte werk.',
   'klaviyo-anthropic-claude-mcp-agentic-workflows':
