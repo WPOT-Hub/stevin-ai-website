@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-verandert-print-on-demand-ecommerce',
+    format: 'dispatch' as const,
+    edition: '038',
+    category: 'Markt',
+    title: "AI dwingt print-on-demand spelers tot fundamentelere keuzes",
+    dek: "Succesvolle print-on-demand bedrijven combineren sterke merchandising, gestructureerde productdata en geduldige klantacquisitie volgens een analyse van Practical Ecommerce.",
+    publishedAt: '2026-05-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "AI dwingt print-on-demand spelers tot fundamentelere keuzes",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-introduceert-drie-ai-max-updates',
     format: 'dispatch' as const,
     edition: '037',
