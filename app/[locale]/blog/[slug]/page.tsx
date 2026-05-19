@@ -1163,6 +1163,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen': (
+    <>
+      <p className="lead-para">
+        De Chinese techgigant Alibaba Group Holding zag op woensdag 13 mei de omzet in het afgelopen kwartaal met 3 procent stijgen ten opzichte van een jaar eerder. Volgens Emerce vielen de cijfers tegen, omdat analisten een grotere stijging hadden voorspeld. Het bedrijf kampt al langer met dalende consumentenbestedingen in China en moet vechten tegen toenemende concurrentie in de e-commerce sector.
+      </p>
+      <p>
+        Het resultaat komt bovenop een reeds zwakke periode, waarin Alibaba eerder dit jaar ook al tegenvallende cijfers presenteerde. De groei van de clouddivisie, traditioneel een belangrijke inkomstenbron, vertraagde eveneens. Ondernemers en investeerders kijken met argusogen naar de strategie van het bedrijf om weer aan te haken bij de markt.
+      </p>
+      <p>
+        De teleurstellende kwartaalcijfers zetten druk op het management van Alibaba, dat recent nog reorganisaties aankondigde om efficiënter te werken. Concurrenten zoals JD.com en Pinduoduo blijven hard groeien, wat de positie van Alibaba verder onder druk zet.
+      </p>
+    </>
+  ),
   'beardbrand-expansion-plan-na-groeistagnatie': (
     <>
       <p className="lead-para">
@@ -1601,6 +1614,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen':
+    "Voor bureau-eigenaars en in-house marketeers is dit een herinnering dat zelfs grote spelers niet immuun zijn voor marktveranderingen. Het is belangrijk om je eigen data goed te monitoren en niet alleen te vertrouwen op macrotrends. Als je afhankelijk bent van partners of platforms zoals Alibaba, overweeg dan om je marketingstrategie te diversifiëren om risico’s te spreiden. Zorg ervoor dat je meetdata altijd up-to-date is, zodat je snel kunt inspelen op veranderingen in consumentengedrag of concurrentie.",
   'boekhouder-als-verborgen-dealbreaker':
     'Voor bureaus die klanten bedienen in sectoren met een fiscale koopdrempel: maak de adviseur onderdeel van je campagne, niet de eindgebruiker alleen. Een pagina voor boekhouders met rekenvoorbeelden, een whitepaper via een accountantsblad, of een eenvoudige fiscale samenvatting die de eindgebruiker kan doorsturen. Wie de influence chain in kaart brengt, vindt kanalen die de concurrentie structureel overslaat.',
   'kmo-doelgroep-segmenteren':
