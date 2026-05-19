@@ -1163,6 +1163,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'merkidentiteit-niet-gebaseerd-op-meningen': (
+    <>
+      <p className="lead-para">
+        Op 19 mei meldt Marketingfacts dat een effectieve merkidentiteit niet tot stand komt door interne voorkeuren of aannames te volgen. Volgens het artikel is het cruciaal om de merkwaarden en -positionering te baseren op objectieve inzichten en meetbare data. Dit voorkomt inconsistenties en zorgt voor een duidelijke, herkenbare uitstraling naar de doelgroep.
+      </p>
+      <p>
+        Het bericht benadrukt dat marketeers vaak terugvallen op persoonlijke smaak of traditionele methoden, zoals focusgroepen die subjectieve feedback geven. Marketingfacts pleit voor het gebruik van gedragsdata en marktonderzoek om de werkelijke perceptie van consumenten in kaart te brengen. Dit helpt bij het ontwikkelen van een merkidentiteit die aansluit bij de behoeften en verwachtingen van de doelgroep.
+      </p>
+      <p>
+        Een voorbeeld dat wordt genoemd is de discrepantie tussen hoe een merk zichzelf ziet en hoe klanten het ervaren. Zonder meetdata kan deze kloof onopgemerkt blijven, wat leidt tot zwakke positionering en minder effectieve communicatie. Het artikel concludeert dat merken die hun identiteit baseren op feiten, uiteindelijk sterker staan in de markt.
+      </p>
+    </>
+  ),
   'alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen': (
     <>
       <p className="lead-para">
@@ -1614,6 +1627,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'merkidentiteit-niet-gebaseerd-op-meningen':
+    "Voor bureau-eigenaars en in-house marketeers betekent dit dat merkstrategieën niet langer mogen draaien om interne discussies of 'gevoel'. Begin met een grondige analyse van bestaande meetdata, zoals klantfeedback, verkoopcijfers of sentimentanalyses op sociale media. Gebruik deze inzichten als basis voor workshops met stakeholders, zodat iedereen dezelfde feiten als vertrekpunt neemt.\n\nVervolgens is het zaak om de merkwaarden concreet te maken met gedragsindicatoren: welke acties moeten consumenten verrichten na blootstelling aan je communicatie? Test deze hypotheses met kleine experimenten voordat je grote campagnes lanceert. Zo bouw je een merkidentiteit die niet alleen consistent is, maar ook daadwerkelijk werkt.",
   'alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen':
     "Voor bureau-eigenaars en in-house marketeers is dit een herinnering dat zelfs grote spelers niet immuun zijn voor marktveranderingen. Het is belangrijk om je eigen data goed te monitoren en niet alleen te vertrouwen op macrotrends. Als je afhankelijk bent van partners of platforms zoals Alibaba, overweeg dan om je marketingstrategie te diversifiëren om risico’s te spreiden. Zorg ervoor dat je meetdata altijd up-to-date is, zodat je snel kunt inspelen op veranderingen in consumentengedrag of concurrentie.",
   'boekhouder-als-verborgen-dealbreaker':
