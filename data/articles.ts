@@ -556,7 +556,7 @@ export const articles: Article[] = [
     edition: '017',
     category: 'Strategie',
     title: 'WK staat voor de deur. Met welke data gaan jullie de voorbereiding in?',
-    dek: 'Drie weken voor het WK 2026 zijn de meeste campagnes al in productie. De vraag is of ze gebaseerd zijn op de juiste data. Welk referentiekader gebruik je voor een evenement dat twee jaar geleden voor het laatst plaatsvond?',
+    dek: 'Drie weken voor het WK 2026 zijn de meeste campagnes al in productie. De vraag is of ze gebaseerd zijn op de juiste data. Het WK was vier jaar geleden. De beste benchmark is het EK 2024 — niet vorig jaar zomer.',
     publishedAt: '2026-05-19',
     readMinutes: 8,
     author: { name: 'Koen Hoogenboom', role: 'Founder, Stevin' },
