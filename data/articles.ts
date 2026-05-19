@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-print-on-demand-spelers-moeten-fundament-leggen',
+    format: 'dispatch' as const,
+    edition: '035',
+    category: 'Markt',
+    title: "AI dwingt print-on-demand spelers tot fundamentele keuzes",
+    dek: "Op 14 mei meldt Practical Ecommerce dat AI de print-on-demand sector ingrijpend verandert",
+    publishedAt: '2026-05-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "AI dwingt print-on-demand spelers tot fundamentele keuzes",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-kosten-stijgen-conversie-efficientie-2025',
     format: 'dispatch' as const,
     edition: '034',
