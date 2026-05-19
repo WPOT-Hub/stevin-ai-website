@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-introduceert-drie-ai-max-updates',
+    format: 'dispatch' as const,
+    edition: '037',
+    category: 'Platform',
+    title: "Google Ads voegt drie AI Max-updates toe voor betere prestaties",
+    dek: "Op 5 mei introduceerde Google drie nieuwe AI Max-functies in Google Ads: Shopping, AI Brief en tekstdisclaimers voor Search.",
+    publishedAt: '2026-05-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads voegt drie AI Max-updates toe voor betere prestaties",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'politieke-targeting-en-visuele-aandacht-eye-tracking',
     format: 'dispatch' as const,
     edition: '036',
