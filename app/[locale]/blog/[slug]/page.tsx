@@ -1196,6 +1196,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'nieuw-raamwerk-zichtbaarheid-ai-tijden': (
+    <>
+      <p className="lead-para">
+        Op 19 mei meldt Search Engine Land dat traditionele SEO-metrics zoals posities en klikfrequenties tekortschieten in AI-systemen. Het nieuwe *Funnel Query Pathway*-model richt zich op de gebruikersreis, van zoekopdracht tot interactie met AI-antwoorden.
+      </p>
+      <p>
+        Het raamwerk splitst de reis in drie fasen: *discovery* (hoe vinden gebruikers content?), *engagement* (hoe interageren ze via AI?) en *conversion* (leidt dit tot actie?). Bureau-eigenaars moeten meetdata uitbreiden naar chatbot-conversaties en AI-antwoorden, niet alleen landingspagina’s.
+      </p>
+      <p>
+        Volgens Search Engine Land vervangt het model traditionele SEO niet, maar vult het aan. Marketeers kunnen hiermee zien welke content werkt in AI-contexten en waar uplift mogelijk is. De methode vraagt samenwerking tussen SEO-specialisten en conversatie-ontwerpers.
+      </p>
+    </>
+  ),
   'google-card-universeel-winkelwagentje-ecommerce': (
     <>
       <p className="lead-para">
@@ -1840,6 +1853,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'nieuw-raamwerk-zichtbaarheid-ai-tijden':
+    "Voor bureau-eigenaars is dit een signaal om direct na te gaan of hun klantencontent zichtbaar is in AI-systemen. Begin met het controleren of jouw content wordt genoemd in AI-antwoorden door relevante vragen van de doelgroep te inventariseren.\n\nEen praktische eerste stap is het vergelijken van zoekopdrachten die leiden tot conversies met vragen die door AI worden beantwoord. Zorg dat je content helder, gestructureerd en direct bruikbaar is voor zowel zoekmachines als AI-tools.\n\nTot slot: AI-systemen belonen bronvermelding en herkenbaarheid. Zorg dat jouw merk duidelijk blijft in elke fase van de gebruikersreis.",
   'google-card-universeel-winkelwagentje-ecommerce':
     'Feedkwaliteit is de nieuwe SEO. Wie zijn producten goed gestructureerd aanlevert, is zichtbaar in AI-vergelijkingen. Wie dat niet doet, bestaat niet in de beslissingslaag van de gebruiker. Stevin trekt productfeed-signalen en campagneprestaties samen zodat je ziet waar je mist.',
   'gemini-spark-proactief-zoeken-intent-verdwijnt':
