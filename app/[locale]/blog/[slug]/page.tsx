@@ -1196,6 +1196,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'organisaties-bouwen-merkbeelden-in-plaats-van-merken': (
+    <>
+      <p className="lead-para">
+        Op 12 mei meldt Marketingfacts dat veel bedrijven hun merkbenadering beperken tot het creëren van logo’s, kleuren en huisstijlen. Volgens de analyse komt dit door een focus op korte-termijnresultaten en zichtbare output. Het gevolg is dat merken vaak herkenbaar zijn, maar geen diepere verbinding met hun doelgroep hebben.
+      </p>
+      <p>
+        De auteur wijst erop dat organisaties soms denken dat een sterk visueel beeld voldoende is om een merk te laten groeien. Echter, merken die alleen op uiterlijk bouwen, lopen het risico om onpersoonlijk en vervangbaar over te komen. Consumenten hechten steeds meer waarde aan authenticiteit en consistentie in communicatie.
+      </p>
+      <p>
+        Experts benadrukken dat merken eerst moeten bepalen wat ze willen uitstralen voordat ze investeren in design. Een duidelijke merkstrategie met kernwaarden en positionering is essentieel voor langetermijnsucces.
+      </p>
+    </>
+  ),
   'middelmatige-ai-content-schadelijk-voor-merk': (
     <>
       <p className="lead-para">
@@ -1686,6 +1699,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'organisaties-bouwen-merkbeelden-in-plaats-van-merken':
+    "Voor bureaus en marketeers betekent dit dat het tijd is om kritisch te kijken naar de opdrachten die worden aangenomen. Als een klant alleen vraagt om een nieuw logo of kleurenschema zonder strategische onderbouwing, is het belangrijk om die vraag te herformuleren naar de onderliggende behoeften. Begin met een gesprek over doelstellingen, doelgroep en concurrentie voordat er wordt geïnvesteerd in design.\n\nOok in-house teams kunnen profiteren van deze aanpak door eerst intern helderheid te creëren over wat het merk wil uitstralen. Werk met meetdata om te achterhalen welke associaties bij de doelgroep leven en pas daar je communicatie op aan. Merkidentiteit gaat niet over hoe je eruitziet, maar over wie je bent en waarom je bestaat.",
   'middelmatige-ai-content-schadelijk-voor-merk':
     "Voor bureau-eigenaars en in-house marketeers is dit een belangrijke reminder om AI niet als wondermiddel te zien. Begin met een duidelijke strategie: bepaal welke contenttypes geschikt zijn voor automatisering en waar menselijke controle essentieel blijft. Gebruik meetdata om te bepalen of AI daadwerkelijk uplift biedt in efficiëntie of conversie, zonder de merkbeleving aan te tasten. Een praktische stap is het instellen van een reviewproces waarbij alle AI-output wordt gecheckt op consistentie met de merkidentiteit.",
   'nieuwe-ecommerce-tools-mei-2026':
