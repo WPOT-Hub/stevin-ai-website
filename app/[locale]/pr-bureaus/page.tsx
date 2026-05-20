@@ -2,7 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
-import { Newspaper, TrendingUp, MessageCircle, BarChart3, Filter, Zap } from 'lucide-react'
+import { Newspaper, TrendingUp, MessageCircle, BarChart3, Radio, Zap } from 'lucide-react'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -10,22 +10,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   if (locale === 'nl') {
     return {
-      title: 'Stevin voor PR-bureaus · merkwaarde meten en bewijzen',
-      description: 'PR-bureaus laten merkwaarde-werk vaak ongezien. Stevin volgt mentions, sentiment en aandacht over campagnes heen. En levert het bewijs dat je nodig hebt richting opdrachtgever.',
+      title: 'Stevin voor PR-bureaus · data voor je pitch, bewijs voor je klant',
+      description: 'Journalisten willen verhalen met echte data. Klanten willen bewijs dat PR werkt. Stevin geeft je beide: de data voor je pitch en het bewijs voor je factuur.',
     }
   }
   return {
-    title: 'Stevin for PR agencies · measure and prove brand value',
-    description: 'PR agencies often leave brand-value work invisible. Stevin tracks mentions, sentiment and attention across campaigns. And delivers the evidence you need toward clients.',
+    title: 'Stevin for PR agencies · data for your pitch, proof for your client',
+    description: 'Journalists want stories with real data. Clients want proof that PR works. Stevin gives you both: the data for your pitch and the evidence for your invoice.',
   }
 }
 
 const featureIcons = [
   <Newspaper key="1" className="w-5 h-5 text-accent" />,
-  <MessageCircle key="2" className="w-5 h-5 text-accent" />,
+  <Radio key="2" className="w-5 h-5 text-accent" />,
   <TrendingUp key="3" className="w-5 h-5 text-accent" />,
-  <BarChart3 key="4" className="w-5 h-5 text-accent" />,
-  <Filter key="5" className="w-5 h-5 text-accent" />,
+  <MessageCircle key="4" className="w-5 h-5 text-accent" />,
+  <BarChart3 key="5" className="w-5 h-5 text-accent" />,
   <Zap key="6" className="w-5 h-5 text-accent" />,
 ]
 
@@ -33,6 +33,12 @@ export default async function PRBureausPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('pr_bureaus')
+
+  const painPoints = [
+    { title: t('pain1_title'), desc: t('pain1_desc') },
+    { title: t('pain2_title'), desc: t('pain2_desc') },
+    { title: t('pain3_title'), desc: t('pain3_desc') },
+  ]
 
   const features = [
     { title: t('feat1_title'), desc: t('feat1_desc'), icon: featureIcons[0] },
@@ -43,12 +49,19 @@ export default async function PRBureausPage({ params }: Props) {
     { title: t('feat6_title'), desc: t('feat6_desc'), icon: featureIcons[5] },
   ]
 
+  const audiences = [
+    { title: t('aud1_title'), desc: t('aud1_desc'), link: null, linkText: null },
+    { title: t('aud2_title'), desc: t('aud2_desc'), link: null, linkText: null },
+    { title: t('aud3_title'), desc: t('aud3_desc'), link: null, linkText: null },
+  ]
+
   const useCases = [
     t('uc1'),
     t('uc2'),
     t('uc3'),
     t('uc4'),
     t('uc5'),
+    t('uc6'),
   ]
 
   return (
@@ -75,6 +88,33 @@ export default async function PRBureausPage({ params }: Props) {
             <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
               {t('cta_secondary')}
             </Link>
+          </div>
+          <div className="mt-20">
+            <MeetlatRuler color="rgba(255,255,255,.35)" />
+          </div>
+        </div>
+      </section>
+
+      {/* Pain points */}
+      <section className="bg-white" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            {t('pain_eyebrow')}
+          </p>
+          <h2
+            className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16"
+            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+          >
+            {t('pain_h2')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
+            {painPoints.map((p) => (
+              <div key={p.title} className="py-10 md:py-0 md:px-10 first:pl-0 last:pr-0">
+                <h3 className="text-[17px] font-display font-bold text-primary mb-4 leading-tight">{p.title}</h3>
+                <p className="text-[15px] text-muted leading-[1.6]">{p.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -107,35 +147,81 @@ export default async function PRBureausPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Use cases */}
-      <section className="py-20 bg-surface">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary mb-8 text-center">{t('usecases_h2')}</h2>
-            <ul className="space-y-4">
-              {useCases.map((uc) => (
-                <li key={uc} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-border">
-                  <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-muted">{uc}</span>
-                </li>
-              ))}
-            </ul>
+      {/* Audience segments */}
+      <section className="bg-white" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            {t('audiences_eyebrow')}
+          </p>
+          <h2
+            className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
+            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+          >
+            {t('audiences_h2')}
+          </h2>
+          <p className="text-[17px] text-muted mb-0 max-w-xl leading-[1.55]">{t('audiences_sub')}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border mt-16">
+            {audiences.map((a) => (
+              <div key={a.title} className="py-10 md:py-0 md:px-10 first:pl-0 last:pr-0">
+                <h3 className="text-[17px] font-display font-bold text-primary mb-4">{a.title}</h3>
+                <p className="text-[15px] text-muted leading-[1.6] mb-4">{a.desc}</p>
+                {a.link && (
+                  <Link href={a.link} className="text-sm font-semibold text-[#5DA3FF] hover:underline">
+                    {a.linkText} &rarr;
+                  </Link>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-primary">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-4">{t('cta_eyebrow')}</h2>
-          <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
-            {t('cta_sub')}
-          </p>
-          <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
-            {t('cta_btn')}
-          </Link>
+      {/* Use cases + CTA */}
+      <section className="bg-primary" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <div>
+              <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+                <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+                {t('usecases_eyebrow')}
+              </p>
+              <h2
+                className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10"
+                style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
+              >
+                {t('usecases_h2')}
+              </h2>
+              <ul className="space-y-0 border-t border-white/10">
+                {useCases.map((uc) => (
+                  <li key={uc} className="flex items-start gap-4 py-5 border-b border-white/10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#5DA3FF] flex-shrink-0 mt-[9px]" />
+                    <span className="text-[15px] text-white/70 leading-[1.6]">{uc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="lg:pt-[140px]">
+              <p className="text-[#00D4A0] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6">
+                {t('cta_eyebrow')}
+              </p>
+              <h3
+                className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-6"
+                style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
+              >
+                {t('cta_h3')}
+              </h3>
+              <p className="text-white/50 mb-8 leading-[1.6] text-[15px]">
+                {t('cta_sub')}
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
+              >
+                {t('cta_btn')}
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </main>
