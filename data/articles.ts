@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'new-york-pizza-toont-macht-van-lokale-marketing',
+    format: 'dispatch' as const,
+    edition: '049',
+    category: 'Markt',
+    title: "New York Pizza groeit met lokale marketing, niet met datacenters",
+    dek: "Op 11 mei meldt Emerce dat New York Pizza zijn succes baseert op ondernemerschap en lokale marketing, in plaats van technologie.",
+    publishedAt: '2026-05-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "New York Pizza groeit met lokale marketing, niet met datacenters",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'organisaties-bouwen-merkbeelden-in-plaats-van-merken',
     format: 'dispatch' as const,
     edition: '048',
