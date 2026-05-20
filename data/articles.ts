@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'middelmatige-ai-content-schadelijk-voor-merk',
+    format: 'dispatch' as const,
+    edition: '047',
+    category: 'Cultuur',
+    title: "Middelmatige AI-content kan je merk schaden",
+    dek: "Op 13 mei meldt Marketingfacts dat middelmatige content gegenereerd door AI de geloofwaardigheid en reputatie van merken ondermijnt.",
+    publishedAt: '2026-05-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "Middelmatige AI-content kan je merk schaden",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'nieuwe-ecommerce-tools-mei-2026',
     format: 'dispatch' as const,
     edition: '046',
