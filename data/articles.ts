@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'retail-crm-pos-integratie-klaviyo-aankoophistorie',
+    format: 'dispatch' as const,
+    edition: '051',
+    category: 'Tooling',
+    title: 'De meeste retail-CRMs zijn B2B-software met een retail-labeltje',
+    dek: 'De vraag "wat is het beste CRM voor retail?" klopt niet. Retail werkt anders dan B2B. Wie dat onderscheid niet maakt, koopt een systeem dat zijn team meer werk geeft dan het afneemt.',
+    publishedAt: '2026-05-20',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid' as const,
+    posterTag: 'TOOLING',
+    posterTopic: 'Retail-CRM: de verkeerde vraag',
+    source: { url: 'https://stevin.ai', name: 'Stevin' },
+  },
+  {
     slug: 'ga4-ai-verkeer-custom-channel-group-geo',
     format: 'dispatch' as const,
     edition: '050',

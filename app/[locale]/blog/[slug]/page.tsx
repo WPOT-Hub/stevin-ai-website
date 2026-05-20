@@ -1196,6 +1196,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'retail-crm-pos-integratie-klaviyo-aankoophistorie': (
+    <>
+      <p className="lead-para">
+        De meeste CRM-tools zijn gebouwd voor B2B: lange verkooptrajecten, meerdere beslissers, deals in een pipeline. Retail werkt andersom. Hoog volume, snelle transacties, relaties die worden opgebouwd via aankoophistorie. Wie een B2B-CRM in een winkelomgeving zet, past een hamer toe op een schroef.
+      </p>
+      <p>
+        De vraag die iedere retailer vooraf moet beantwoorden is niet welk CRM-systeem het beste is, maar waar de aankoopdata vandaan komt. Die zit in het kassasysteem, niet in een CRM. Zonder een werkende koppeling tussen POS en marketinglaag heb je een klantenbestand zonder context. Je weet dat iemand klant is, maar niet wat hij gekocht heeft, hoe vaak hij terugkomt en wanneer hij waarschijnlijk weer koopt.
+      </p>
+      <h3>De twee-lagenstructuur die wel werkt</h3>
+      <p>
+        Wat structureel beter werkt: het kassasysteem en de marketinglaag scheiden en vervolgens goed aan elkaar koppelen. Lightspeed of Shopify POS voor transactieregistratie. Klaviyo als marketinglaag, met aankoopdata als basis voor segmentatie en opvolging.
+      </p>
+      <p>
+        Klaviyo is daarvoor niet toevallig populair in retail. Het systeem is gebouwd op RFM-logica (Recency, Frequency, Monetary value) en maakt het mogelijk klanten te segmenteren op aankoopgedrag in plaats van op demografische aannames. Een segment van klanten die meer dan twee aankopen hebben gedaan, maar de afgelopen 90 dagen niets hebben besteld, is direct bruikbaar voor een gerichte re-engagementcampagne.
+      </p>
+      <h3>De integratiepijn is reeel</h3>
+      <p>
+        De koppeling tussen Lightspeed X en Klaviyo is op dit moment nog in gesloten beta. Wie nu al op Lightspeed X zit, heeft drie opties: wachten op de native integratie, een derde partij inschakelen voor de datasync, of handmatig exporteren en importeren. Die laatste optie houdt vrijwel altijd op zodra het dagelijks druk wordt aan de kassa.
+      </p>
+      <p>
+        Zonder POS-data in de marketinglaag is segmentatie beperkt tot wat klanten zelf invullen of wat ze klikken in e-mails. Daarmee vervalt precies het voordeel van retail ten opzichte van e-commerce: je weet wat iemand in de winkel heeft gekocht.
+      </p>
+      <h3>De praktische test</h3>
+      <p>
+        Kan een medewerker een klantprofiel bijwerken in minder dan dertig seconden, via een tablet of telefoon, midden in een drukke winkeldag? Als het antwoord nee is, zal het team het systeem na een paar weken links laten liggen. Geen CRM overleeft een slechte winkelervaring.
+      </p>
+    </>
+  ),
   'ga4-ai-verkeer-custom-channel-group-geo': (
     <>
       <p className="lead-para">
@@ -1745,6 +1773,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'retail-crm-pos-integratie-klaviyo-aankoophistorie':
+    'Het CRM-vraagstuk in retail is in de kern een datakoppelingsvraagstuk. De aankoophistorie zit in de kassa. De klantcommunicatie zit in een ander systeem. Zolang die twee niet goed gesynchroniseerd zijn, stuur je op aannames. Stevin trekt POS-data, campagnedata en klantgedrag samen in een overzicht dat per vestiging en per segment laat zien wat werkt.',
   'ga4-ai-verkeer-custom-channel-group-geo':
     'Dit is de meest onderschatte GEO-maatregel van dit moment. Rankings zijn zichtbaar. Organisch verkeer is zichtbaar. AI-verkeer is een blind spot. Wie nu een custom channel group aanmaakt, heeft over zes maanden een trendlijn. Wie wacht, niet. Stevin trekt dit kanaal automatisch apart zodra je GA4 hebt gekoppeld.',
   'new-york-pizza-toont-macht-van-lokale-marketing':
