@@ -1251,7 +1251,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'merkidentiteit-niet-gebaseerd-op-meningen': (
     <>
       <p className="lead-para">
-        Op 19 mei meldt Marketingfacts dat een effectieve merkidentiteit niet tot stand komt door interne voorkeuren of aannames te volgen. Volgens het artikel is het cruciaal om de merkwaarden en -positionering te baseren op objectieve inzichten en meetbare data. Dit voorkomt inconsistenties en zorgt voor een duidelijke, herkenbare uitstraling naar de doelgroep.
+        Een effectieve merkidentiteit bouw je niet op interne voorkeuren. Merkwaarden en positionering die op aannames rusten in plaats van op meetdata leiden structureel tot inconsistentie en zwakke uitstraling naar de doelgroep.
       </p>
       <p>
         Het bericht benadrukt dat marketeers vaak terugvallen op persoonlijke smaak of traditionele methoden, zoals focusgroepen die subjectieve feedback geven. Marketingfacts pleit voor het gebruik van gedragsdata en marktonderzoek om de werkelijke perceptie van consumenten in kaart te brengen. Dit helpt bij het ontwikkelen van een merkidentiteit die aansluit bij de behoeften en verwachtingen van de doelgroep.
@@ -1290,7 +1290,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'juni-2026-contentkansen-emotionele-thema-s': (
     <>
       <p className="lead-para">
-        Op 7 mei 2026 meldt Practical Ecommerce dat juni traditioneel een maand is met veel emotionele en sociale gebeurtenissen. Denk aan het WK voetbal, bruiloften en zomerse evenementen. Deze gelegenheden lenen zich goed voor content die aansluit bij de belevingswereld van doelgroepen.
+        Juni brengt een concentratie van emotionele momenten: het WK, bruiloften, festivals, zomerse evenementen. Content die daarop inspeelt presteert structureel beter dan generieke campagnes, mits de timing klopt en de boodschap authentiek aanvoelt.
       </p>
       <p>
         Het artikel noemt vijf concrete ideeën om deze thema's te benutten. Zo kunnen merken inspelen op de opwinding rond sporttoernooien of de feestelijke sfeer van huwelijksvieringen. Ook lokale evenementen zoals festivals of markten bieden aanknopingspunten voor relevante content.
@@ -1303,7 +1303,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'ai-verandert-print-on-demand-ecommerce': (
     <>
       <p className="lead-para">
-        Op 14 mei meldt Practical Ecommerce dat AI de print-on-demand sector ingrijpend verandert. Bedrijven die AI alleen inzetten voor automatisering zonder hun basis te verstevigen, lopen risico om achterop te raken. Sterke merchandising, consistente productdata en een gefocuste acquisitiestrategie worden cruciaal.
+        AI verandert de print-on-demand sector, maar niet op de manier die de meeste spelers verwachten. Wie AI uitsluitend inzet voor automatisering zonder de basis op orde te hebben, raakt achterop. Sterke merchandising, consistente productdata en een scherpe acquisitiestrategie worden daarbij even belangrijk als de technologie zelf.
       </p>
       <p>
         De analyse wijst uit dat merken die AI gebruiken voor dynamische prijsstelling of gepersonaliseerde aanbevelingen vaak hogere conversies zien. Tegelijkertijd blijkt dat klantacquisitie langer duurt dan voorheen, omdat concurrentie en adcosts zijn gestegen. Bedrijven met een duidelijke niche of uniek assortiment slagen beter in het converteren van bezoekers.
@@ -1322,7 +1322,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De eerste update, AI Max voor Shopping, optimaliseert automatisch productweergaven en biedingen op basis van realtime data. AI Brief biedt marketeers een gestructureerd overzicht van campagneprestaties met aanbevelingen voor aanpassingen. De derde update introduceert tekstdisclaimers in zoekresultaten om gebruikers beter te informeren over advertenties.
       </p>
       <p>
-        Practical Ecommerce meldt dat deze updates vooral gericht zijn op het verbeteren van de gebruikerservaring en het verhogen van de conversieratio's. De functies zijn vanaf deze week beschikbaar voor alle adverteerders.
+        De updates zijn gericht op betere gebruikerservaring en hogere conversieratio's. De functies zijn vanaf deze week beschikbaar voor alle adverteerders.
       </p>
     </>
   ),
@@ -1389,7 +1389,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'politieke-targeting-en-visuele-aandacht-eye-tracking': (
     <>
       <p className="lead-para">
-        Op 15 mei meldde Marketingfacts dat een eye-tracking analyse laat zien hoe politieke targeting de visuele aandacht van consumenten verandert. Onderzoekers observeerden dat advertenties met politieke boodschappen vaker werden opgemerkt dan neutrale uitingen. De uplift in aandacht bedroeg gemiddeld 23 procent ten opzichte van niet-gerichte content.
+        Eye-tracking onderzoek onder 180 deelnemers laat zien dat politiek gerichte advertenties gemiddeld 23 procent meer visuele aandacht trekken dan neutrale uitingen. Respondenten met een sterke politieke voorkeur besteedden significant meer tijd aan content die aansloot bij hun eigen standpunten.
       </p>
       <p>
         Het onderzoek, uitgevoerd onder 180 deelnemers, toonde aan dat politieke targeting vooral effectief is bij specifieke doelgroepen. Respondenten met een sterke politieke voorkeur besteedden significant meer tijd aan gerichte advertenties. Dit gold met name voor content die aansloot bij hun eigen standpunten.
@@ -1428,7 +1428,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'marketing-enters-air-traffic-control-era': (
     <>
       <p className="lead-para">
-        Op 18 mei meldt Search Engine Land dat marketingorganisaties vanaf volgend jaar moeten concurreren met AI-systemen die klantreizen in realtime beoordelen op vertrouwen, risico, intentie en identiteit. Deze systemen nemen binnen milliseconden beslissingen die traditionele marketingstrategieen overbodig maken.
+        Marketingorganisaties gaan volgend jaar niet alleen concurreren met andere merken, maar met AI-systemen die klantreizen in realtime beoordelen op vertrouwen, risico, intentie en identiteit. Die systemen nemen binnen milliseconden beslissingen die traditionele campagnelogica buitenspel zetten.
       </p>
       <p>
         De uitdaging ligt volgens de bron in het synchroniseren van deze AI-gestuurde processen. Waar voorheen campagnes werden gepland op basis van historische data, moet nu worden ingespeeld op dynamische signalen zoals gedragspatronen of plotselinge veranderingen in zoekgedrag. Bedrijven die hier niet op anticiperen, lopen het risico dat hun boodschappen irrelevant worden of zelfs als onbetrouwbaar worden ervaren.
@@ -1545,7 +1545,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'google-ai-max-uit-beta-ai-brief-shopping': (
     <>
       <p className="lead-para">
-        Google heeft AI Max voor Search-campagnes deze maand uit beta gehaald, een jaar na de eerste aankondiging tijdens Google Marketing Live 2025. Op de Google Ads-blog meldt het bedrijf dat campagnes met de volledige feature-set gemiddeld 7 procent meer conversies of conversie-waarde halen bij een vergelijkbare CPA of ROAS.
+        Google heeft AI Max voor Search-campagnes deze maand uit beta gehaald, een jaar na de eerste aankondiging tijdens Google Marketing Live 2025. Volgens Google halen campagnes met de volledige feature-set gemiddeld 7 procent meer conversies of conversie-waarde bij een vergelijkbare CPA of ROAS.
       </p>
       <p>
         De grootste toevoeging is AI Brief, een tool waarmee adverteerders in eigen woorden context geven over hun bedrijf, welke boodschappen passen en welk publiek ze willen bereiken. Het systeem accepteert messaging-guidelines, matching-guidelines en audience-guidelines als instructies. AI Max breidt daarnaast uit naar Shopping-campagnes en travel-specifieke ad-formats, en Final URL Expansion ondersteunt verplichte tekst-disclaimers voor compliance-redenen.
