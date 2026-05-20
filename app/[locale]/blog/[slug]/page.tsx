@@ -1196,6 +1196,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'middelmatige-ai-content-schadelijk-voor-merk': (
+    <>
+      <p className="lead-para">
+        Uit onderzoek blijkt dat slecht uitgevoerde AI-content vaak herkenbaar is door generieke toon, fouten of gebrek aan diepgang. Dit leidt volgens experts tot een afname van klantvertrouwen en betrokkenheid bij het merk. Bedrijven die AI inzetten voor contentproductie zonder kwaliteitscontrole lopen risico op reputatieschade.
+      </p>
+      <p>
+        Marketingfacts wijst erop dat consumenten steeds beter in staat zijn om AI-generated tekst te herkennen. Vooral in sectoren waar authenticiteit cruciaal is, zoals zorg of juridische dienstverlening, kan dit direct gevolgen hebben voor de klantrelatie. Ook B2B-merken merken dat partners terughoudender worden bij samenwerking met bedrijven die duidelijk slechte AI-output gebruiken.
+      </p>
+      <p>
+        Experts adviseren om AI alleen te gebruiken als ondersteuning bij contentcreatie, niet als vervanging. Handmatige review en aanpassingen blijven noodzakelijk om de kwaliteit te waarborgen. Daarnaast wordt benadrukt dat merken hun eigen stem en waarden moeten behouden, ook bij automatisering.
+      </p>
+    </>
+  ),
   'nieuwe-ecommerce-tools-mei-2026': (
     <>
       <p className="lead-para">
@@ -1673,6 +1686,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'middelmatige-ai-content-schadelijk-voor-merk':
+    "Voor bureau-eigenaars en in-house marketeers is dit een belangrijke reminder om AI niet als wondermiddel te zien. Begin met een duidelijke strategie: bepaal welke contenttypes geschikt zijn voor automatisering en waar menselijke controle essentieel blijft. Gebruik meetdata om te bepalen of AI daadwerkelijk uplift biedt in efficiëntie of conversie, zonder de merkbeleving aan te tasten. Een praktische stap is het instellen van een reviewproces waarbij alle AI-output wordt gecheckt op consistentie met de merkidentiteit.",
   'nieuwe-ecommerce-tools-mei-2026':
     "Voor bureau-eigenaars en in-house marketeers is het belangrijk om deze ontwikkelingen niet als losse trends te zien, maar als onderdeel van een groter ecosysteem. Begin met een duidelijke prioritering: welke tool lost een directe pijnpunt op? Bijvoorbeeld predictieve AI voor voorraadbeheer kan direct leiden tot minder uitval en hogere marges. Kies daarnaast oplossingen die integreren met bestaande tech-stacks om implementatietijd te beperken. Tot slot: test kleine pilots voordat je grootschalig investeert. Cross-border commerce vereist bijvoorbeeld kennis van lokale betalingsvoorkeuren en regelgeving - begin met een markt om de impact te meten.",
   'merkidentiteit-niet-gebaseerd-op-meningen':
