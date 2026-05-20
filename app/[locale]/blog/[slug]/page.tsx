@@ -1196,6 +1196,39 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ga4-ai-verkeer-custom-channel-group-geo': (
+    <>
+      <p className="lead-para">
+        GA4 deelt kanalen in via regels die gemaakt zijn voor een wereld zonder AI-assistenten. Verkeer van ChatGPT, Perplexity, Claude of Gemini verdwijnt standaard in je Direct- of Referral-bucket. Je weet dat het er zit. Je kunt het niet isoleren.
+      </p>
+      <p>
+        De fix zit in twee stappen.
+      </p>
+      <h3>Stap 1: custom channel group aanmaken</h3>
+      <p>
+        Ga naar Admin &rarr; Gegevensweergave &rarr; Kanaalgroepen en maak een nieuwe groep aan. Naam: <em>AI-assistenten</em>. Conditie: Sessie-bron voldoet aan regex:
+      </p>
+      <pre style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '13px', background: 'var(--surface)', padding: '12px 16px', borderRadius: '6px', overflowX: 'auto' }}>
+        {`chatgpt\\.com|perplexity\\.ai|claude\\.ai|gemini\\.google|copilot\\.microsoft|you\\.com`}
+      </pre>
+      <p>
+        Sla op. Vanaf dat moment verschijnt AI-verkeer als eigen kanaal in je acquisitierapporten en kun je het direct vergelijken met organisch zoekverkeer.
+      </p>
+      <h3>Stap 2: dashboard bouwen op beslissingsvragen</h3>
+      <p>
+        Een GA4-dashboard dat begint vanuit metrics (sessies, bouncepercentage, gebruikers) beantwoordt niets. Vier vragen die het waard zijn om wekelijks te beantwoorden:
+      </p>
+      <ol style={{ paddingLeft: '1.4em', lineHeight: '1.8' }}>
+        <li>Wat doet mijn organische vindbaarheid? (Search Console-koppeling in GA4, engaged sessions per landingspagina)</li>
+        <li>Welke pagina&apos;s betrekken bezoekers en welke stoten ze af? (Engaged sessions en bouncepercentage per pagina)</li>
+        <li>Hoeveel verkeer komt via AI-tools, en van welke? (custom channel group uit stap 1)</li>
+        <li>Welk kanaal levert conversies op? (organisch versus AI, vergeleken op conversieratio)</li>
+      </ol>
+      <p>
+        Vier secties, vier beslissingsvragen. GA4 heeft de data. De standaardinrichting laat ze verstoppen.
+      </p>
+    </>
+  ),
   'new-york-pizza-toont-macht-van-lokale-marketing': (
     <>
       <p className="lead-para">
@@ -1712,6 +1745,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ga4-ai-verkeer-custom-channel-group-geo':
+    'Dit is de meest onderschatte GEO-maatregel van dit moment. Rankings zijn zichtbaar. Organisch verkeer is zichtbaar. AI-verkeer is een blind spot. Wie nu een custom channel group aanmaakt, heeft over zes maanden een trendlijn. Wie wacht, niet. Stevin trekt dit kanaal automatisch apart zodra je GA4 hebt gekoppeld.',
   'new-york-pizza-toont-macht-van-lokale-marketing':
     "Voor bureau-eigenaars en in-house marketeers is dit een duidelijke reminder dat technologie niet altijd de oplossing is. Begin met het begrijpen van je doelgroep op lokaal niveau en bouw daarop voort. Investeer eerst in sterke lokale marketingstrategieën voordat je grote sprongen maakt met geavanceerde tools. Authenticiteit en persoonlijke aandacht leveren vaak meer op dan data-gedreven campagnes zonder context.",
   'organisaties-bouwen-merkbeelden-in-plaats-van-merken':

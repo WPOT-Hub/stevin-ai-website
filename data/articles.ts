@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ga4-ai-verkeer-custom-channel-group-geo',
+    format: 'dispatch' as const,
+    edition: '050',
+    category: 'Tooling',
+    title: 'GA4 ziet AI-verkeer niet. Dit is de fix.',
+    dek: 'ChatGPT, Perplexity en Gemini sturen bezoekers naar je site. GA4 boekt het als Direct of Referral. Zonder aanpassing weet je nooit hoeveel mensen via AI bij je uitkomen.',
+    publishedAt: '2026-05-20',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid' as const,
+    posterTag: 'TOOLING',
+    posterTopic: 'GA4 ziet AI-verkeer niet',
+    source: { url: 'https://stevin.ai', name: 'Stevin' },
+  },
+  {
     slug: 'new-york-pizza-toont-macht-van-lokale-marketing',
     format: 'dispatch' as const,
     edition: '049',
