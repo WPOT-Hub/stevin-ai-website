@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'nieuw-raamwerk-zichtbaarheid-ai-tijden',
+    format: 'dispatch' as const,
+    edition: '056',
+    category: 'Platform',
+    title: "Nieuw model meet zichtbaarheid in AI-gedreven zoekomgevingen",
+    dek: "Op 19 mei introduceert Search Engine Land een raamwerk om zichtbaarheid te meten in systemen zoals Google’s SGE of Microsoft Copilot.",
+    publishedAt: '2026-05-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Nieuw model meet zichtbaarheid in AI-gedreven zoekomgevingen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-card-universeel-winkelwagentje-ecommerce',
     format: 'dispatch' as const,
     edition: '055',
