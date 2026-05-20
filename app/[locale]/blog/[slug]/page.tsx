@@ -1304,23 +1304,23 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Ga naar Admin &rarr; Gegevensweergave &rarr; Kanaalgroepen en maak een nieuwe groep aan. Naam: <em>AI-assistenten</em>. Conditie: Sessie-bron voldoet aan regex:
       </p>
       <pre style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '13px', background: 'var(--surface)', padding: '12px 16px', borderRadius: '6px', overflowX: 'auto' }}>
-        {`chatgpt\\.com|perplexity\\.ai|claude\\.ai|gemini\\.google|copilot\\.microsoft|you\\.com`}
+        {`chatgpt\\.com|perplexity\\.ai|claude\\.ai|gemini\\.google|copilot\\.microsoft|you\\.com|phind\\.com|openai\\.com`}
       </pre>
       <p>
-        Sla op. Vanaf dat moment verschijnt AI-verkeer als eigen kanaal in je acquisitierapporten en kun je het direct vergelijken met organisch zoekverkeer.
+        Sla op. Vanaf dat moment verschijnt AI-verkeer als eigen kanaal in je acquisitierapporten. Let op: GA4 past de groep alleen toe op data vanaf de aanmaakdatum. Historische sessies worden niet bijgevuld. Begin dus zo snel mogelijk, want elke week zonder dit kost je trenddata.
       </p>
-      <h3>Stap 2: dashboard bouwen op beslissingsvragen</h3>
+      <h3>Stap 2: dashboard inrichten op beslissingsvragen</h3>
       <p>
-        Een GA4-dashboard dat begint vanuit metrics (sessies, bouncepercentage, gebruikers) beantwoordt niets. Vier vragen die het waard zijn om wekelijks te beantwoorden:
+        De standaard GA4-Momentopname (het eerste scherm als je op Rapporten klikt) is gevuld met generieke metrics. Vervang die via het potlood-icoon rechtsboven met vier concrete kaarten:
       </p>
       <ol style={{ paddingLeft: '1.4em', lineHeight: '1.8' }}>
-        <li>Wat doet mijn organische vindbaarheid? (Search Console-koppeling in GA4, engaged sessions per landingspagina)</li>
-        <li>Welke pagina&apos;s betrekken bezoekers en welke stoten ze af? (Engaged sessions en bouncepercentage per pagina)</li>
-        <li>Hoeveel verkeer komt via AI-tools, en van welke? (custom channel group uit stap 1)</li>
-        <li>Welk kanaal levert conversies op? (organisch versus AI, vergeleken op conversieratio)</li>
+        <li><strong>Klikken per zoekopdracht</strong> &mdash; Organische Google-zoekopdrachten via Search Console</li>
+        <li><strong>Vertoningen per landingspagina</strong> &mdash; Organische Google-zoekresultaten per pagina</li>
+        <li><strong>Sessies per kanaal</strong> &mdash; met je nieuwe AI-assistenten-groep zichtbaar naast organisch</li>
+        <li><strong>Conversies per kanaalgroep</strong> &mdash; vergelijk organisch versus AI op conversieratio</li>
       </ol>
       <p>
-        Vier secties, vier beslissingsvragen. GA4 heeft de data. De standaardinrichting laat ze verstoppen.
+        Vier kaarten, vier vragen. GA4 heeft de data. De standaardinrichting laat ze verstoppen.
       </p>
     </>
   ),
