@@ -1196,6 +1196,38 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-card-universeel-winkelwagentje-ecommerce': (
+    <>
+      <p className="lead-para">
+        Google Card is een universeel winkelwagentje binnen Gemini dat automatisch de goedkoopste aanbieder zoekt, prijshistorie bijhoudt, prijsdalingen signaleert en productcompatibiliteit controleert. Beschikbaar in de VS deze zomer, daarna in Search, YouTube en Gmail.
+      </p>
+      <p>
+        Voor D2C-merken en e-commerce is dit een structurele verschuiving. Als de AI de aankoopbeslissing overneemt op basis van prijs en productspecificaties, verliest merkvoorkeur zijn functie in het beslissingsmoment. De klant kiest niet meer bewust voor jouw merk. De AI vergelijkt en selecteert.
+      </p>
+      <p>
+        Wat overblijft als hefboom: prijscompetitiviteit en de kwaliteit van je productfeed. AI-traffic naar retailsites groeide in Q1 2026 met 393 procent jaar-op-jaar. AI-verwezen traffic converteert 42 procent beter dan niet-AI-traffic. Maar alleen voor merken waarvan de producten compleet, correct en gestructureerd zijn aangeleverd. Producten zonder goede data worden onzichtbaar in AI-gestuurde vergelijkingen.
+      </p>
+      <p>
+        De praktische implicatie: wie zijn productfeed niet op orde heeft, speelt niet mee in Google Card. Wie zijn prijs niet bijhoudt in realtime, verliest het moment waarop de AI beslist.
+      </p>
+    </>
+  ),
+  'gemini-spark-proactief-zoeken-intent-verdwijnt': (
+    <>
+      <p className="lead-para">
+        Gemini Spark is een 24/7 AI-agent die op de achtergrond draait, ook wanneer je telefoon op slot staat. Hij monitort appartementenmarkt, productbeschikbaarheid, prijswijzigingen en nieuwsontwikkelingen. Wanneer iets relevant verandert, handelt hij of waarschuwt hij. De gebruiker hoeft niet meer te zoeken.
+      </p>
+      <p>
+        Voor marketing-teams is dit een fundamentele verstoring van hoe intent werkt. Het hele model van intent-based advertising rust op het moment dat een gebruiker actief zoekt. Dat moment is het signaal: iemand wil iets. Targeting, biedstrategie en advertentietekst zijn gebouwd rondom dat signaal.
+      </p>
+      <p>
+        Als Spark dat zoekmoment vervangt door continu achtergrondmonitoring, verdwijnt het signaal. De gebruiker zoekt niet meer naar een auto, Spark monitort de markt en meldt wanneer een model binnen budget beschikbaar is. Er is geen zoekmoment meer dat een advertentie triggert.
+      </p>
+      <p>
+        Spark is nog niet beschikbaar in Nederland en Belgie, maar de richting is helder. Google maakt van zijn zoekplatform een proactief systeem dat handelt namens de gebruiker. Minder zichtbare intent, minder stuurbaar adverteren, meer nadruk op aanwezigheid in de feeds die Spark monitort.
+      </p>
+    </>
+  ),
   'google-antigravity-2-claude-code-cursor-gratis': (
     <>
       <p className="lead-para">
@@ -1808,6 +1840,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-card-universeel-winkelwagentje-ecommerce':
+    'Feedkwaliteit is de nieuwe SEO. Wie zijn producten goed gestructureerd aanlevert, is zichtbaar in AI-vergelijkingen. Wie dat niet doet, bestaat niet in de beslissingslaag van de gebruiker. Stevin trekt productfeed-signalen en campagneprestaties samen zodat je ziet waar je mist.',
+  'gemini-spark-proactief-zoeken-intent-verdwijnt':
+    'De overgang van reactief zoeken naar proactieve AI-monitoring verandert de logica van adverteren. De focus verschuift van het winnen van een zoekmoment naar aanwezig zijn in de databronnen die Spark gebruikt als referentie. Dat is een GEO-vraag, geen SEA-vraag.',
   'google-antigravity-2-claude-code-cursor-gratis':
     'Voor bureaus die zelf marketing-tooling willen bouwen, is de gratis public preview een reele instap. Antigravity is geen speelgoed: zestien agents, een miljoen tokens context, en volledige Google-ecosysteemintegratie. Of het Cursor of Claude Code structureel vervangt, hangt af van gebruik. Maar de prijsdrempel is weg.',
   'google-io-2026-marketing-teams-gemini-search-ads':
