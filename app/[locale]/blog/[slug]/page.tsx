@@ -1212,26 +1212,26 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'organisaties-bouwen-merkbeelden-in-plaats-van-merken': (
     <>
       <p className="lead-para">
-        Op 12 mei meldt Marketingfacts dat veel bedrijven hun merkbenadering beperken tot het creëren van logo’s, kleuren en huisstijlen. Volgens de analyse komt dit door een focus op korte-termijnresultaten en zichtbare output. Het gevolg is dat merken vaak herkenbaar zijn, maar geen diepere verbinding met hun doelgroep hebben.
+        Veel bedrijven beperken hun merkbenadering tot logo’s, kleuren en huisstijlen. Het gevolg: merken zijn herkenbaar, maar hebben geen diepere verbinding met hun doelgroep. De focus op zichtbare output gaat ten koste van wat een merk werkelijk onderscheidt.
       </p>
       <p>
         De auteur wijst erop dat organisaties soms denken dat een sterk visueel beeld voldoende is om een merk te laten groeien. Echter, merken die alleen op uiterlijk bouwen, lopen het risico om onpersoonlijk en vervangbaar over te komen. Consumenten hechten steeds meer waarde aan authenticiteit en consistentie in communicatie.
       </p>
       <p>
-        Experts benadrukken dat merken eerst moeten bepalen wat ze willen uitstralen voordat ze investeren in design. Een duidelijke merkstrategie met kernwaarden en positionering is essentieel voor langetermijnsucces.
+        De volgorde is bepalend: wie begint met design zonder merkstrategie, bouwt huisstijl op drijfzand. Kernwaarden en positionering eerst, visuele uitwerking daarna.
       </p>
     </>
   ),
   'middelmatige-ai-content-schadelijk-voor-merk': (
     <>
       <p className="lead-para">
-        Uit onderzoek blijkt dat slecht uitgevoerde AI-content vaak herkenbaar is door generieke toon, fouten of gebrek aan diepgang. Dit leidt volgens experts tot een afname van klantvertrouwen en betrokkenheid bij het merk. Bedrijven die AI inzetten voor contentproductie zonder kwaliteitscontrole lopen risico op reputatieschade.
+        Slecht uitgevoerde AI-content is herkenbaar: generieke toon, fouten, gebrek aan diepgang. Consumenten merken het, klantvertrouwen daalt. Bedrijven die AI inzetten voor contentproductie zonder kwaliteitscontrole lopen reputatieschade op die moeilijk te repareren is.
       </p>
       <p>
         Marketingfacts wijst erop dat consumenten steeds beter in staat zijn om AI-generated tekst te herkennen. Vooral in sectoren waar authenticiteit cruciaal is, zoals zorg of juridische dienstverlening, kan dit direct gevolgen hebben voor de klantrelatie. Ook B2B-merken merken dat partners terughoudender worden bij samenwerking met bedrijven die duidelijk slechte AI-output gebruiken.
       </p>
       <p>
-        Experts adviseren om AI alleen te gebruiken als ondersteuning bij contentcreatie, niet als vervanging. Handmatige review en aanpassingen blijven noodzakelijk om de kwaliteit te waarborgen. Daarnaast wordt benadrukt dat merken hun eigen stem en waarden moeten behouden, ook bij automatisering.
+        AI als ondersteuning werkt. AI als vervanging voor redactioneel oordeel niet. Handmatige review blijft noodzakelijk, en de eigen merkstem moet ook bij automatisering overeind blijven.
       </p>
     </>
   ),
@@ -1421,7 +1421,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Desondanks laten meetdata zien dat advertenties beter converteren. De gemiddelde conversieratio steeg naar 4,3%, een stijging van 8% ten opzichte van vorig jaar. Dit suggereert dat campagnes gerichter worden uitgevoerd, ondanks de hogere kosten.
       </p>
       <p>
-        Experts wijten de verbeterde efficiëntie aan betere targeting en optimalisatie-tools. Automatisering en AI-gestuurde biedstrategieën spelen hierin een belangrijke rol volgens Search Engine Land.
+        De verbeterde efficiëntie is toe te schrijven aan betere targeting en AI-gestuurde biedstrategieën. Hogere kosten, maar ook preciezere inzet.
       </p>
     </>
   ),
@@ -1434,7 +1434,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De uitdaging ligt volgens de bron in het synchroniseren van deze AI-gestuurde processen. Waar voorheen campagnes werden gepland op basis van historische data, moet nu worden ingespeeld op dynamische signalen zoals gedragspatronen of plotselinge veranderingen in zoekgedrag. Bedrijven die hier niet op anticiperen, lopen het risico dat hun boodschappen irrelevant worden of zelfs als onbetrouwbaar worden ervaren.
       </p>
       <p>
-        Experts wijzen erop dat dit geen kwestie is van nieuwe tools, maar van een fundamentele verschuiving in hoe marketing wordt georganiseerd. Teams moeten sneller schakelen tussen kanalen en signalen, terwijl ze tegelijkertijd de oorzaak en gevolg-relaties tussen acties en reacties blijven monitoren.
+        Dit is geen kwestie van nieuwe tools. Het is een verschuiving in hoe marketing wordt georganiseerd: teams moeten sneller schakelen tussen kanalen en signalen, en tegelijkertijd de oorzaak-gevolgrelaties blijven monitoren.
       </p>
     </>
   ),
@@ -1447,7 +1447,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Het onderzoek toont aan dat adverteerders die investeren in data-gedreven campagnes, zoals dynamische zoekadvertenties en smart bidding-strategieën, relatief minder last hebben van de hogere kosten. De uplift in conversies varieert sterk per branche: bij online retailers ligt de stijging rond de 10%, terwijl B2B-diensten iets achterblijven met een gemiddelde van 5%. Desondanks blijft de druk op marketingbudgetten groot.
       </p>
       <p>
-        Experts wijzen erop dat de hogere kosten niet alleen door vraag zijn gedreven, maar ook door beperkte voorraad binnen Google's advertentieplatform. Dit leidt tot meer concurrentie en dus hogere biedingen. Tegelijkertijd biedt deze situatie kansen voor bedrijven die snel kunnen schakelen en hun campagnes continu monitoren.
+        De hogere kosten zijn niet alleen vraaggestuurd. Beperkte advertentieruimte binnen Google's platform drijft de biedingen op. Voor adverteerders die snel kunnen schakelen en continu monitoren, biedt die druk ook ruimte: wie structureel efficiënter inkoopt wint terrein op concurrenten die dat niet doen.
       </p>
     </>
   ),
