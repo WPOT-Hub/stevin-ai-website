@@ -1196,6 +1196,41 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-antigravity-2-claude-code-cursor-gratis': (
+    <>
+      <p className="lead-para">
+        Google lanceerde gisteren op I/O 2026 Antigravity 2.0: een standalone desktop-applicatie, een CLI, een SDK en enterprise-ondersteuning via het Gemini Enterprise Agent Platform. Wat begon als een Cursor-concurrent is uitgegroeid tot een volwaardig agent-platform voor softwaareontwikkeling.
+      </p>
+      <p>
+        De kern van Antigravity 2.0 is agent-orchestratie. Zestien gespecialiseerde agents beslaan de volledige development-stack: frontend, backend, security, testing, infrastructuur, SEO, database-configuratie. Ze draaien parallel en worden aangestuurd via een centrale desktop-interface of de nieuwe CLI. Het 1-miljoen-token contextvenster via Gemini 3.1 Pro is een reeel verschil ten opzichte van Cursor en Claude Code, die uitkomen op 200K tokens. Voor grote codebases of omvangrijke projecten is dat een praktisch voordeel.
+      </p>
+      <p>
+        Het meest opvallende: Antigravity 2.0 is gratis in public preview. Geen creditcard, geen wachtlijst, alle functies beschikbaar. Cursor Pro kost 40 dollar per maand, Claude Code Pro 20 dollar. Google claimt dat Antigravity 2.0 in een demotest een besturingssysteem in twaalf uur bouwde. De prestatieverhouding in de praktijk: Cursor wint op snelheid, Claude Code op architectuurkwaliteit, Antigravity zit er tussenin maar heeft de diepste Google-ecosysteemintegratie (Firebase, Android Studio, AI Studio).
+      </p>
+      <p>
+        Vanaf 18 juni 2026 verdwijnt de Gemini CLI en Gemini Code Assist voor individuele gebruikers. Antigravity is de opvolger. Google communiceert dat expliciet.
+      </p>
+    </>
+  ),
+  'google-io-2026-marketing-teams-gemini-search-ads': (
+    <>
+      <p className="lead-para">
+        Google I/O 2026 was geen productpresentatie. Het was een platformverklaring: Google integreert AI niet in zijn diensten, Google bouwt zijn diensten om AI heen. Voor marketing-teams veranderen er concrete dingen.
+      </p>
+      <p>
+        Search genereert vanaf nu dynamische UI&apos;s per zoekopdracht. Wie zoekt naar een vakantiebestemming, krijgt een interactief vergelijkingstool, geen lijst met blauwe links. Voor marketeers betekent dit dat de vraag &quot;rank ik voor dit keyword?&quot; minder relevant wordt dan &quot;wordt mijn merk gepresenteerd in de AI-gegenereerde interface?&quot; Dat is een fundamenteel andere vraag, met andere optimalisatielogica.
+      </p>
+      <p>
+        AI Max voor Search-campagnes is uit beta. Google rapporteert gemiddeld 7 procent meer conversies bij vergelijkbare CPA of ROAS voor campagnes die de volledige feature-set gebruiken. Vanaf september 2026 worden Dynamic Search Ads automatisch gemigreerd naar AI Max. Voor adverteerders die nu nog op klassieke DSA draaien: vier maanden om de overgang voor te bereiden.
+      </p>
+      <p>
+        Gemini Omni introduceert multimodale real-time verwerking: tekst, beeld, audio en video tegelijk. Praktische toepassing voor marketing: creatieve analyse op videocampagnes, real-time feedbackloops op A/B-varianten, geautomatiseerde brand-safety-checks op grote contentvolumes.
+      </p>
+      <p>
+        De overkoepelende beweging: Google consolideert zijn AI-productlijn. Losse tools verdwijnen, het Gemini-ecosysteem absorbeert alles. Voor agencies die op meerdere Google-producten draaien, is het moment om de integratiestrategie te heroverwegen.
+      </p>
+    </>
+  ),
   'retail-crm-pos-integratie-klaviyo-aankoophistorie': (
     <>
       <p className="lead-para">
@@ -1773,6 +1808,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-antigravity-2-claude-code-cursor-gratis':
+    'Voor bureaus die zelf marketing-tooling willen bouwen, is de gratis public preview een reele instap. Antigravity is geen speelgoed: zestien agents, een miljoen tokens context, en volledige Google-ecosysteemintegratie. Of het Cursor of Claude Code structureel vervangt, hangt af van gebruik. Maar de prijsdrempel is weg.',
+  'google-io-2026-marketing-teams-gemini-search-ads':
+    'De verschuiving van keyword-ranking naar AI-interface-aanwezigheid is de grootste structurele verandering voor SEO en paid search in jaren. Wie wacht tot Google het uitrolt, begint achterop. Wie nu begrijpt hoe Gemini content selecteert en presenteert, bouwt een voorsprong op die moeilijk in te halen is. Stevin volgt de GEO-signalen per klant automatisch.',
   'retail-crm-pos-integratie-klaviyo-aankoophistorie':
     'Het CRM-vraagstuk in retail is in de kern een datakoppelingsvraagstuk. De aankoophistorie zit in de kassa. De klantcommunicatie zit in een ander systeem. Zolang die twee niet goed gesynchroniseerd zijn, stuur je op aannames. Stevin trekt POS-data, campagnedata en klantgedrag samen in een overzicht dat per vestiging en per segment laat zien wat werkt.',
   'ga4-ai-verkeer-custom-channel-group-geo':
