@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'organisaties-bouwen-merkbeelden-in-plaats-van-merken',
+    format: 'dispatch' as const,
+    edition: '048',
+    category: 'Markt',
+    title: "Veel bedrijven focussen op uiterlijk in plaats van merkidentiteit",
+    dek: "Uit een analyse blijkt dat veel organisaties vooral investeren in visuele branding in plaats van een sterke merkidentiteit te ontwikkelen.",
+    publishedAt: '2026-05-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Veel bedrijven focussen op uiterlijk in plaats van merkidentiteit",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'middelmatige-ai-content-schadelijk-voor-merk',
     format: 'dispatch' as const,
     edition: '047',
