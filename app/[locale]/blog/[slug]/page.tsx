@@ -1196,6 +1196,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'new-york-pizza-toont-macht-van-lokale-marketing': (
+    <>
+      <p className="lead-para">
+        New York Pizza blijft groeien zonder afhankelijk te zijn van AI of datacenters. Het merk bewijst volgens Emerce dat lokale franchisekracht en sterke marketing doorslaggevend zijn voor succes. Terwijl veel bedrijven investeren in technologische oplossingen, kiest New York Pizza voor een andere aanpak.
+      </p>
+      <p>
+        De podcast van Emerce benadrukt dat het merk al jarenlang een sterke band heeft met consumenten door persoonlijke aandacht en lokaal ondernemerschap. Deze strategie zorgt voor herkenbaarheid en loyaliteit, iets wat digitale tools niet altijd kunnen vervangen.
+      </p>
+      <p>
+        Het verhaal van New York Pizza laat zien waar de echte frictie zit in moderne marketing: niet in technologie, maar in het begrijpen van de lokale doelgroep en het creëren van authentieke ervaringen.
+      </p>
+    </>
+  ),
   'organisaties-bouwen-merkbeelden-in-plaats-van-merken': (
     <>
       <p className="lead-para">
@@ -1699,6 +1712,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'new-york-pizza-toont-macht-van-lokale-marketing':
+    "Voor bureau-eigenaars en in-house marketeers is dit een duidelijke reminder dat technologie niet altijd de oplossing is. Begin met het begrijpen van je doelgroep op lokaal niveau en bouw daarop voort. Investeer eerst in sterke lokale marketingstrategieën voordat je grote sprongen maakt met geavanceerde tools. Authenticiteit en persoonlijke aandacht leveren vaak meer op dan data-gedreven campagnes zonder context.",
   'organisaties-bouwen-merkbeelden-in-plaats-van-merken':
     "Voor bureaus en marketeers betekent dit dat het tijd is om kritisch te kijken naar de opdrachten die worden aangenomen. Als een klant alleen vraagt om een nieuw logo of kleurenschema zonder strategische onderbouwing, is het belangrijk om die vraag te herformuleren naar de onderliggende behoeften. Begin met een gesprek over doelstellingen, doelgroep en concurrentie voordat er wordt geïnvesteerd in design.\n\nOok in-house teams kunnen profiteren van deze aanpak door eerst intern helderheid te creëren over wat het merk wil uitstralen. Werk met meetdata om te achterhalen welke associaties bij de doelgroep leven en pas daar je communicatie op aan. Merkidentiteit gaat niet over hoe je eruitziet, maar over wie je bent en waarom je bestaat.",
   'middelmatige-ai-content-schadelijk-voor-merk':
