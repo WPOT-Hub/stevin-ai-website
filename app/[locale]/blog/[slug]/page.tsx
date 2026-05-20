@@ -1294,7 +1294,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'ga4-ai-verkeer-custom-channel-group-geo': (
     <>
       <p className="lead-para">
-        GA4 deelt kanalen in via regels die gemaakt zijn voor een wereld zonder AI-assistenten. Verkeer van ChatGPT, Perplexity, Claude of Gemini verdwijnt standaard in je Direct- of Referral-bucket. Je weet dat het er zit. Je kunt het niet isoleren.
+        GA4 deelt kanalen in via regels die gemaakt zijn voor een wereld zonder AI-assistenten. Verkeer van ChatGPT, Perplexity, Claude of Gemini komt bijna altijd binnen als Referral, maar dan met het AI-domein als bron. Zonder aanpassing zie je het niet als eigen kanaal, het verdwijnt in de algemene Referral-bucket.
       </p>
       <p>
         De fix zit in twee stappen.
@@ -1304,14 +1304,14 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Ga naar Admin &rarr; Gegevensweergave &rarr; Kanaalgroepen en maak een nieuwe groep aan. Naam: <em>AI-assistenten</em>. Conditie: Sessie-bron voldoet aan regex:
       </p>
       <pre style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '13px', background: 'var(--surface)', padding: '12px 16px', borderRadius: '6px', overflowX: 'auto' }}>
-        {`chatgpt\\.com|perplexity\\.ai|claude\\.ai|gemini\\.google|copilot\\.microsoft|you\\.com|phind\\.com|openai\\.com`}
+        {`chatgpt\\.com|perplexity\\.ai|claude\\.ai|gemini\\.google\\.com|copilot\\.microsoft\\.com|you\\.com|phind\\.com|openai\\.com`}
       </pre>
       <p>
         Sla op. Vanaf dat moment verschijnt AI-verkeer als eigen kanaal in je acquisitierapporten. Let op: GA4 past de groep alleen toe op data vanaf de aanmaakdatum. Historische sessies worden niet bijgevuld. Begin dus zo snel mogelijk, want elke week zonder dit kost je trenddata.
       </p>
       <h3>Stap 2: dashboard inrichten op beslissingsvragen</h3>
       <p>
-        De standaard GA4-Momentopname (het eerste scherm als je op Rapporten klikt) is gevuld met generieke metrics. Vervang die via het potlood-icoon rechtsboven met vier concrete kaarten:
+        De standaard GA4-Momentopname is gevuld met generieke metrics. Vervang die via het potlood-icoon rechtsboven met vier concrete kaarten. De eerste twee vereisen dat Search Console aan GA4 is gekoppeld (Admin &rarr; Productkoppelingen &rarr; Search Console-koppelingen) &mdash; zonder die koppeling blijven die kaarten leeg.
       </p>
       <ol style={{ paddingLeft: '1.4em', lineHeight: '1.8' }}>
         <li><strong>Klikken per zoekopdracht</strong> &mdash; Organische Google-zoekopdrachten via Search Console</li>
