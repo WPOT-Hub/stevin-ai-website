@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-integreert-meridian-in-analytics-360',
+    format: 'dispatch' as const,
+    edition: '059',
+    category: 'Platform',
+    title: "Google voegt Meridian marketing mix modeling toe aan Analytics 360",
+    dek: "Adverteerders krijgen binnenkort betere inzichten in de effectiviteit van mediabestedingen via een geïntegreerde oplossing in Google Analytics 360.",
+    publishedAt: '2026-05-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google voegt Meridian marketing mix modeling toe aan Analytics 360",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-marketing-live-2026-gemini-drijft-search-advertising-en-commerce',
     format: 'dispatch' as const,
     edition: '058',
