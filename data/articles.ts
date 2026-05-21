@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-lanceert-ask-advisor-in-ads-analytics-en-merchant-center',
+    format: 'dispatch' as const,
+    edition: '057',
+    category: 'Platform',
+    title: "Google introduceert Ask Advisor voor campagnes, analytics en Merchant Center",
+    dek: "Een nieuwe AI-assistent van Google combineert campagnebeheer, meetdata en optimalisatie in één tool.",
+    publishedAt: '2026-05-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google introduceert Ask Advisor voor campagnes, analytics en Merchant Center",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'nieuw-raamwerk-zichtbaarheid-ai-tijden',
     format: 'dispatch' as const,
     edition: '056',
