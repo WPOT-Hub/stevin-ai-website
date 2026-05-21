@@ -1196,6 +1196,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-marketing-live-2026-gemini-drijft-search-advertising-en-commerce': (
+    <>
+      <p className="lead-para">
+        Tijdens Google Marketing Live 2026 presenteerde Google hoe de integratie van Gemini in Search, advertising en commerce een conversational en AI-gedreven ecosysteem creëert. Advertenties worden direct in gesprekken geïntegreerd, zodat gebruikers vragen kunnen stellen zonder tussenstappen. De zoekresultaten passen zich dynamisch aan op basis van contextuele gesprekken, aldus Google.
+      </p>
+      <p>
+        De nieuwe maatregelen maken het voor adverteerders makkelijker om campagnes te optimaliseren op conversaties in plaats van traditionele zoekopdrachten. Meetdata toont aan dat deze aanpak een hogere relevantie en uplift genereert in de customer journey. Commerce wordt ook geïntegreerd: gebruikers kunnen direct producten bestellen via gesprekken met Google Assistant of Search.
+      </p>
+      <p>
+        Voor bureau-eigenaars en marketeers betekent dit dat campagnes moeten worden heroverwogen naar een meer conversational en contextueel model. De focus verschuift van zoekwoorden naar intentie en interactie, wat vraagt om nieuwe optimalisatiestrategieën.
+      </p>
+    </>
+  ),
   'nieuw-raamwerk-zichtbaarheid-ai-tijden': (
     <>
       <p className="lead-para">
@@ -1853,6 +1866,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-marketing-live-2026-gemini-drijft-search-advertising-en-commerce':
+    "Deze ontwikkelingen benadrukken dat marketeers hun strategieën moeten aanpassen aan een wereld waarin AI niet alleen ondersteunt, maar de kern van de interactie vormt. Begin met het testen van conversational search-optimalisaties in bestaande campagnes, bijvoorbeeld door langere zoekopdrachten te analyseren die nu worden gegenereerd. Zorg dat je meetdata beschikbaar is voor deze nieuwe interactievormen, zodat je uplift kunt meten ten opzichte van traditionele campagnes. Voor bureaus is dit een kans om klanten te helpen bij deze transitie door middel van training en pilots.",
   'nieuw-raamwerk-zichtbaarheid-ai-tijden':
     "Voor bureau-eigenaars is dit een signaal om direct na te gaan of hun klantencontent zichtbaar is in AI-systemen. Begin met het controleren of jouw content wordt genoemd in AI-antwoorden door relevante vragen van de doelgroep te inventariseren.\n\nEen praktische eerste stap is het vergelijken van zoekopdrachten die leiden tot conversies met vragen die door AI worden beantwoord. Zorg dat je content helder, gestructureerd en direct bruikbaar is voor zowel zoekmachines als AI-tools.\n\nTot slot: AI-systemen belonen bronvermelding en herkenbaarheid. Zorg dat jouw merk duidelijk blijft in elke fase van de gebruikersreis.",
   'google-card-universeel-winkelwagentje-ecommerce':
