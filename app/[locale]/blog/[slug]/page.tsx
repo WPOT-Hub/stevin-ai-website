@@ -1196,6 +1196,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-lanceert-ask-advisor-in-ads-analytics-en-merchant-center': (
+    <>
+      <p className="lead-para">
+        De nieuwe tool Ask Advisor van Google integreert direct met Ads, Analytics en Merchant Center. Gebruikers kunnen via natuurlijke taal vragen stellen over campagnes, zoals budgetaanpassingen of prestatieanalyses.
+      </p>
+      <p>
+        De assistent werkt op basis van Googles eigen AI-model Gemini en biedt realtime adviezen zonder dat gebruikers zelf moeten zoeken in rapportages. Dit moet de tijd besparen die nu gaat naar handmatige analyse.
+      </p>
+      <p>
+        Ask Advisor is aanvankelijk alleen beschikbaar voor Engelstalige accounts, maar wordt later uitgebreid naar andere talen. De tool verschijnt eerst in een beperkte bèta-versie voor geselecteerde adverteerders.
+      </p>
+    </>
+  ),
   'google-marketing-live-2026-gemini-drijft-search-advertising-en-commerce': (
     <>
       <p className="lead-para">
@@ -1866,6 +1879,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-lanceert-ask-advisor-in-ads-analytics-en-merchant-center':
+    "Voor bureau-eigenaars en marketingteams betekent dit dat ze sneller kunnen schakelen tussen verschillende tools zonder handmatige data-overdracht. Begin met testen in een klein onderdeel van je account om te zien hoe de assistent omgaat met specifieke vraagstukken binnen jouw branche.\n\nHoud er rekening mee dat de tool nog in ontwikkeling is: controleer altijd de gegenereerde aanbevelingen voordat je actie onderneemt. Zorg dat je team bekend is met de mogelijkheden en beperkingen van AI-gestuurde optimalisatie voordat je vol vertrouwen beslissingen neemt.",
   'google-marketing-live-2026-gemini-drijft-search-advertising-en-commerce':
     "Deze ontwikkelingen benadrukken dat marketeers hun strategieën moeten aanpassen aan een wereld waarin AI niet alleen ondersteunt, maar de kern van de interactie vormt. Begin met het testen van conversational search-optimalisaties in bestaande campagnes, bijvoorbeeld door langere zoekopdrachten te analyseren die nu worden gegenereerd. Zorg dat je meetdata beschikbaar is voor deze nieuwe interactievormen, zodat je uplift kunt meten ten opzichte van traditionele campagnes. Voor bureaus is dit een kans om klanten te helpen bij deze transitie door middel van training en pilots.",
   'nieuw-raamwerk-zichtbaarheid-ai-tijden':
