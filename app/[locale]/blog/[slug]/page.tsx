@@ -1196,6 +1196,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-integreert-meridian-in-analytics-360': (
+    <>
+      <p className="lead-para">
+        Google integreert Meridian, het marketing mix modeling (MMM)-platform van Google Cloud, direct in Analytics 360. Hiermee kunnen adverteerders de impact van hun mediabestedingen op basis van meetdata beter analyseren. De integratie maakt het mogelijk om oorzaak en gevolg tussen campagnes en conversies op een gestructureerde manier te onderzoeken.
+      </p>
+      <p>
+        Daarnaast lanceert Google een nieuwe predictieve conversiemetric binnen Analytics 360. Deze metric helpt bij het voorspellen van toekomstige conversies op basis van historische data en huidige campagneprestaties. Adverteerders kunnen hiermee sneller anticiperen op veranderingen in hun mediaplanning.
+      </p>
+      <p>
+        De aanpassingen komen beschikbaar voor alle gebruikers van Analytics 360, ongeacht de grootte van hun organisatie. De integratie is bedoeld om de besluitvorming rondom mediabudgetten te versnellen en te verbeteren.
+      </p>
+    </>
+  ),
   'google-breidt-demand-gen-uit-met-youtube-creator-tools': (
     <>
       <p className="lead-para">
@@ -1892,6 +1905,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-integreert-meridian-in-analytics-360':
+    "Voor bureau-eigenaars en in-house marketeers betekent deze integratie dat ze minder afhankelijk worden van externe MMM-tools. Het is raadzaam om de nieuwe functionaliteit direct te testen zodra deze beschikbaar is, zodat je kunt beoordelen hoe de predictieve metric aansluit bij je bestaande rapportagestructuur. Houd er rekening mee dat de nauwkeurigheid van de voorspellingen afhangt van de kwaliteit en consistentie van je meetdata. Begin met kleine pilots om de waarde voor jouw specifieke situatie in kaart te brengen.",
   'google-breidt-demand-gen-uit-met-youtube-creator-tools':
     "Voor bureau-eigenaars en marketeams biedt deze uitbreiding concrete kansen om campagnes effectiever in te zetten. Begin met het testen van creator-samenwerkingen op YouTube, maar zorg dat de content aansluit bij de merkwaarden en doelgroep. Gebruik de Maps-inventaris alleen als je een duidelijke lokale focus hebt, anders kan het verspilling van budget zijn.\n\nDe AI-optimalisatie is interessant, maar houd altijd controle over de richting van campagnes. Stel duidelijke KPI’s vooraf vast en monitor de resultaten nauwlettend om onverwachte uitgaven te voorkomen. Deze tools kunnen tijd besparen, maar vervangen geen strategisch inzicht.",
   'google-lanceert-ask-advisor-in-ads-analytics-en-merchant-center':
