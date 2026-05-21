@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-breidt-demand-gen-uit-met-youtube-creator-tools',
+    format: 'dispatch' as const,
+    edition: '060',
+    category: 'Platform',
+    title: "Google breidt Demand Gen uit met YouTube creator tools en AI-campagnes",
+    dek: "Google voegt nieuwe samenwerkingen met creators, Maps-inventaris en AI-gestuurde campagneopties toe aan Demand Gen.",
+    publishedAt: '2026-05-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google breidt Demand Gen uit met YouTube creator tools en AI-campagnes",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-integreert-meridian-in-analytics-360',
     format: 'dispatch' as const,
     edition: '059',
