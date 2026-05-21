@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-marketing-live-2026-gemini-drijft-search-advertising-en-commerce',
+    format: 'dispatch' as const,
+    edition: '058',
+    category: 'Platform',
+    title: "Gemini transformeert Search, ads en commerce naar AI-gestuurd model",
+    dek: "Google onthult tijdens GML 2026 hoe Gemini de zoekervaring, advertenties en e-commerce meetbaar verandert met conversational AI.",
+    publishedAt: '2026-05-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Gemini transformeert Search, ads en commerce naar AI-gestuurd model",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-lanceert-ask-advisor-in-ads-analytics-en-merchant-center',
     format: 'dispatch' as const,
     edition: '057',
