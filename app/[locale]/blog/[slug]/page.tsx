@@ -1196,6 +1196,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-breidt-demand-gen-uit-met-youtube-creator-tools': (
+    <>
+      <p className="lead-para">
+        Demand Gen-campagnes krijgen vanaf deze week extra mogelijkheden via YouTube. Creators kunnen nu rechtstreeks worden geïntegreerd in campagnes, waardoor merken hun doelgroepen op een authentieke manier bereiken. Deze samenwerkingen zijn beschikbaar voor zowel video- als display-content, aldus Google.
+      </p>
+      <p>
+        Daarnaast introduceert Google nieuwe inventarisopties via Google Maps. Adverteerders kunnen nu producten of diensten tonen in de kaartomgeving, wat de zichtbaarheid in lokale zoekopdrachten vergroot. De tool is vooral nuttig voor bedrijven met fysieke locaties, zoals winkels of horeca.
+      </p>
+      <p>
+        Tot slot komen er AI-gestuurde optimalisatietools beschikbaar voor Demand Gen-campagnes. Deze tools analyseren meetdata en passen campagnes realtime aan om de beste resultaten te behalen. De focus ligt op het verbeteren van de conversie zonder handmatige aanpassingen, zo blijkt uit de aankondiging.
+      </p>
+    </>
+  ),
   'google-lanceert-ask-advisor-in-ads-analytics-en-merchant-center': (
     <>
       <p className="lead-para">
@@ -1879,6 +1892,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-breidt-demand-gen-uit-met-youtube-creator-tools':
+    "Voor bureau-eigenaars en marketeams biedt deze uitbreiding concrete kansen om campagnes effectiever in te zetten. Begin met het testen van creator-samenwerkingen op YouTube, maar zorg dat de content aansluit bij de merkwaarden en doelgroep. Gebruik de Maps-inventaris alleen als je een duidelijke lokale focus hebt, anders kan het verspilling van budget zijn.\n\nDe AI-optimalisatie is interessant, maar houd altijd controle over de richting van campagnes. Stel duidelijke KPI’s vooraf vast en monitor de resultaten nauwlettend om onverwachte uitgaven te voorkomen. Deze tools kunnen tijd besparen, maar vervangen geen strategisch inzicht.",
   'google-lanceert-ask-advisor-in-ads-analytics-en-merchant-center':
     "Voor bureau-eigenaars en marketingteams betekent dit dat ze sneller kunnen schakelen tussen verschillende tools zonder handmatige data-overdracht. Begin met testen in een klein onderdeel van je account om te zien hoe de assistent omgaat met specifieke vraagstukken binnen jouw branche.\n\nHoud er rekening mee dat de tool nog in ontwikkeling is: controleer altijd de gegenereerde aanbevelingen voordat je actie onderneemt. Zorg dat je team bekend is met de mogelijkheden en beperkingen van AI-gestuurde optimalisatie voordat je vol vertrouwen beslissingen neemt.",
   'google-marketing-live-2026-gemini-drijft-search-advertising-en-commerce':
