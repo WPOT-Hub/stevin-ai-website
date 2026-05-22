@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies',
+    format: 'dispatch' as const,
+    edition: '066',
+    category: 'Technologie',
+    title: "Mazda centraliseert 30 jaar autodata in AI-ready dataplatform",
+    dek: "De automaker verlaagt opslagkosten met 90% door decennia aan simulatiedata te consolideren op een Dell-platform.",
+    publishedAt: '2026-05-22',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECHNOLOGIE',
+    posterTopic: "Mazda centraliseert 30 jaar autodata in AI-ready dataplatform",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spotify-lanceert-ai-remixes-voor-premium-gebruikers',
     format: 'dispatch' as const,
     edition: '065',
