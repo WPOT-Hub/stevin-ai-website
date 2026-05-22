@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'cerebras-beursgang-ai-chipsector': (
+    <>
+      <p className="lead-para">
+        Het Amerikaanse AI-chipbedrijf Cerebras is met zijn beursgang in één klap 70 miljard dollar waard geworden. De twee oprichters bezitten nu elk een vermogen van meer dan een miljard dollar. Dit maakt de beursgang tot de grootste van het jaar tot nu toe.
+      </p>
+      <p>
+        Cerebras concurreert met NVIDIA door grotere chips te ontwikkelen die zo groot zijn als een bord. Het bedrijf werkt met grote techpartners zoals Amazon, Meta en OpenAI, waar het onlangs een deal van 20 miljard dollar afsloot. De vraag naar rekenkracht voor AI-toepassingen blijft onverminderd hoog.
+      </p>
+      <p>
+        De opbrengst van de beursgang wordt gebruikt om de technologie verder te verbeteren en uit te breiden. Cerebras levert niet alleen chips, maar ook datacenters die gespecialiseerd zijn in AI-berekeningen. Ondanks verlieslatendheid wil het bedrijf eerst groeien voordat winst centraal komt te staan.
+      </p>
+    </>
+  ),
   'btw-fraude-netwerk-europa-operatie-admiral': (
     <>
       <p className="lead-para">
@@ -1935,6 +1948,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'cerebras-beursgang-ai-chipsector':
+    "Deze ontwikkeling laat zien hoe snel nieuwe spelers kunnen opschalen in een markt die gedomineerd wordt door gevestigde namen als NVIDIA. Voor bedrijven die afhankelijk zijn van rekenkracht kan dit leiden tot meer keuze en mogelijk lagere kosten op termijn. Tegelijkertijd benadrukt het de risico’s van investeren in nog verlieslatende technologieën met hoge verwachtingen.",
   'btw-fraude-netwerk-europa-operatie-admiral':
     "Wat hieronder ligt is een bredere beweging. Toezichthouders verschuiven van rapportage achteraf naar realtime zichtbaarheid op transactieniveau. Niet alleen voor btw, ook voor de keten van inkoop, betalingen en facturatie. Bedrijven die hun administratie nog inrichten rond maandafsluitingen lopen straks achter de feiten aan.\n\nDe vernietiging van het Lissabon-vonnis laat ook iets anders zien: complexe internationale fraudezaken stranden vaak op procedurefouten, niet op gebrek aan bewijs. Voor zowel opsporing als verdediging wordt de kwaliteit van het procesdossier minstens zo bepalend als de feiten zelf.",
   'signaalverval-bedreigt-top-of-funnel-prestaties':
