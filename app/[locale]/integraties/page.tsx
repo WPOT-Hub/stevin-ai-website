@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import IntegrationFilter from '@/components/IntegrationFilter'
 import { integrations } from '@/data/integrations'
+import { categories } from '@/data/categories'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -40,29 +41,6 @@ const stackLayers = [
     num: '05',
     title: 'Werk',
     body: 'Signalen worden taken, briefings, goedkeuringen of rapportage. Geen losse grafiek zonder eigenaar.',
-  },
-]
-
-const proofRows = [
-  {
-    source: 'Google Ads + CRM',
-    question: 'Welke campagnes leveren echte afspraken en deals op?',
-    status: 'meetbaar',
-  },
-  {
-    source: 'Meta + creatives',
-    question: 'Welke beelden werken nog, en welke trekken alleen ruis?',
-    status: 'signaal',
-  },
-  {
-    source: 'GA4 + consent',
-    question: 'Waar breekt de meting voordat rapportage het ziet?',
-    status: 'controle',
-  },
-  {
-    source: 'Shopify + finance',
-    question: 'Wat is omzet, marge en herhaalaankoop na mediakosten?',
-    status: 'bewijs',
   },
 ]
 
@@ -176,32 +154,39 @@ export default async function IntegratiesPage({ params }: Props) {
         </div>
       </section>
 
-      <section id="koppelingen" className="bg-[#F7F8FA] pb-16 sm:pb-20 lg:pb-24">
+      <section className="bg-[#F7F8FA] pb-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 rounded-[14px] border border-[#D9E0EB] bg-white px-6 py-5 shadow-[0_10px_28px_rgba(10,22,40,0.05)]">
-            <div className="grid gap-5 lg:grid-cols-[280px_1fr] lg:items-start">
-              <div>
-                <p className="mb-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3C8EFF]">
-                  Wat Stevin ermee doet
-                </p>
-                <p className="m-0 text-[15px] leading-[1.55] text-[#6B7280]">
-                  Integraties bepalen welke vragen Stevin kan beantwoorden.
-                </p>
-              </div>
-              <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-                {proofRows.map((row) => (
-                  <div key={row.source} className="border-l border-[#D9E0EB] pl-4">
-                    <p className="m-0 text-sm font-extrabold tracking-[-0.01em] text-[#0A0A0A]">
-                      {row.source}
-                    </p>
-                    <p className="mt-2 text-sm leading-[1.4] text-[#6B7280]">
-                      {row.question}
-                    </p>
-                  </div>
-                ))}
-              </div>
+          <div className="rounded-[14px] border border-[#D9E0EB] bg-white px-5 py-4">
+            <div className="grid gap-4 lg:grid-cols-[160px_1fr] lg:items-start">
+              <p className="m-0 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3C8EFF]">
+                Categorieen
+              </p>
+              <nav className="grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" aria-label="Integratiecategorieen">
+                {categories.map((category) => {
+                  const count = integrations.filter((integration) => integration.category === category.slug).length
+                  if (count === 0) return null
+
+                  return (
+                    <Link
+                      key={category.slug}
+                      href={`/integraties/${category.slug}`}
+                      className="group flex items-baseline justify-between gap-3 border-b border-[#E8EDF4] pb-2 text-sm"
+                    >
+                      <span className="font-bold text-[#1F2933] transition-colors group-hover:text-[#3C8EFF]">
+                        {category.name}
+                      </span>
+                      <span className="font-mono text-xs text-[#8A94A3]">{count}</span>
+                    </Link>
+                  )
+                })}
+              </nav>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="koppelingen" className="bg-[#F7F8FA] pb-16 sm:pb-20 lg:pb-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <IntegrationFilter integrations={integrations} />
         </div>
       </section>

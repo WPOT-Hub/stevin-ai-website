@@ -1216,13 +1216,13 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'signaalverval-bedreigt-top-of-funnel-prestaties': (
     <>
       <p className="lead-para">
-        Uit onderzoek blijkt dat de meetdata van top-of-funnel campagnes snel vervagen, waardoor de impact op latere conversies onderbelicht blijft. Dit fenomeen treedt op doordat tussenstappen zoals herhalingsbezoeken of vergelijkingen niet altijd worden meegenomen in attributie-modellen. Daardoor lijkt het alsof deze campagnes minder renderen dan ze daadwerkelijk doen, aldus de analyse.
+        Top-of-funnel campagnes krijgen vaak minder credit dan ze verdienen. De reden ligt in de meting zelf: tussenstappen zoals herhalingsbezoeken, vergelijkingen of mobiele sessies vallen weg uit standaard attributie-modellen. Daardoor lijkt het alsof awareness-campagnes minder bijdragen, terwijl ze in werkelijkheid de basis leggen voor latere conversies.
       </p>
       <p>
-        Het probleem verergert wanneer bedrijven zich vooral richten op directe conversies, zoals aankopen of leads. Hierdoor verdwijnen de vroege signalen die aangeven dat een klant nog in de oriëntatiefase zit. Zonder deze context is het lastiger om campagnes te optimaliseren voor langetermijnwaarde.
+        Het probleem verergert wanneer bedrijven zich vooral op directe conversies richten. De vroege contactmomenten in de orientatiefase blijven dan onzichtbaar. Zonder die context wordt het lastig om te optimaliseren voor wat op lange termijn werkt.
       </p>
       <p>
-        Oplossingen liggen in het gebruik van meetmodellen die rekening houden met signaalverval. Door bijvoorbeeld tijdsgebonden attributie toe te passen of meer data uit CRM-systemen te integreren, kunnen marketeers een completer beeld krijgen van de customer journey.
+        Een uitweg ligt in meetmodellen die rekening houden met tijd: tijdsgebonden attributie, integratie met CRM-data of marketing mix modelling. Wie alleen op last-click stuurt, snijdt structureel in de campagnes die de pijplijn vullen.
       </p>
     </>
   ),
@@ -1938,7 +1938,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'btw-fraude-netwerk-europa-operatie-admiral':
     "Wat hieronder ligt is een bredere beweging. Toezichthouders verschuiven van rapportage achteraf naar realtime zichtbaarheid op transactieniveau. Niet alleen voor btw, ook voor de keten van inkoop, betalingen en facturatie. Bedrijven die hun administratie nog inrichten rond maandafsluitingen lopen straks achter de feiten aan.\n\nDe vernietiging van het Lissabon-vonnis laat ook iets anders zien: complexe internationale fraudezaken stranden vaak op procedurefouten, niet op gebrek aan bewijs. Voor zowel opsporing als verdediging wordt de kwaliteit van het procesdossier minstens zo bepalend als de feiten zelf.",
   'signaalverval-bedreigt-top-of-funnel-prestaties':
-    "Voor bureau-eigenaars en in-house marketeers is het essentieel om attributie-modellen kritisch te evalueren. Kies niet blind voor last-click of first-click, maar test modellen die rekening houden met tussentijdse interacties. Begin met kleine aanpassingen in je rapportages: voeg bijvoorbeeld een kolom toe voor 'tussentijdse engagement' naast directe conversies.\n\nDaarnaast helpt het om samenwerking tussen teams te stimuleren. Laat sales en marketing data uitwisselen over vroege interacties en laat dit terugkomen in de campagne-evaluatie. Zo voorkom je dat waardevolle top-of-funnel inspanningen ten onrechte worden afgestraft.",
+    "Last-click attributie is geen meting maar een gewoonte. Wie awareness-budgetten alleen op directe conversies afrekent, zal die budgetten vroeg of laat te klein maken. Een tijdsgebonden model, marketing mix modelling, of zelfs een eenvoudige incrementality-test geeft een eerlijker beeld.\n\nDe les is niet dat last-click slecht is, maar dat het maar één lens is. Wie meerdere lenzen naast elkaar legt, ziet pas waar campagnes echt werken.",
   'google-integreert-meridian-in-analytics-360':
     "Voor bureau-eigenaars en in-house marketeers betekent deze integratie dat ze minder afhankelijk worden van externe MMM-tools. Het is raadzaam om de nieuwe functionaliteit direct te testen zodra deze beschikbaar is, zodat je kunt beoordelen hoe de predictieve metric aansluit bij je bestaande rapportagestructuur. Houd er rekening mee dat de nauwkeurigheid van de voorspellingen afhangt van de kwaliteit en consistentie van je meetdata. Begin met kleine pilots om de waarde voor jouw specifieke situatie in kaart te brengen.",
   'google-breidt-demand-gen-uit-met-youtube-creator-tools':

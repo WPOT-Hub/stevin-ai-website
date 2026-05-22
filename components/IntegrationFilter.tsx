@@ -46,35 +46,30 @@ export default function IntegrationFilter({ integrations }: IntegrationFilterPro
         />
       </div>
 
-      {/* Category filters */}
-      <div className="flex flex-wrap gap-2 border-b border-[#D9E0EB] px-5 py-4 sm:px-7">
-        <button
-          onClick={() => setActiveCategory(null)}
-          className={`rounded-full border px-3 py-2 text-sm font-bold transition-colors ${
-            !activeCategory
-              ? 'border-[#3C8EFF]/35 bg-[#EAF3FF] text-[#3C8EFF]'
-              : 'border-[#D9E0EB] bg-white text-[#6B7280] hover:text-[#1F2933]'
-          }`}
-        >
-          Alles ({integrations.length})
-        </button>
-        {categories.map((cat) => {
-          const count = integrations.filter((i) => i.category === cat.slug).length
-          if (count === 0) return null
-          return (
-            <button
-              key={cat.slug}
-              onClick={() => setActiveCategory(activeCategory === cat.slug ? null : cat.slug)}
-              className={`rounded-full border px-3 py-2 text-sm font-bold transition-colors ${
-                activeCategory === cat.slug
-                  ? 'border-[#3C8EFF]/35 bg-[#EAF3FF] text-[#3C8EFF]'
-                  : 'border-[#D9E0EB] bg-white text-[#6B7280] hover:text-[#1F2933]'
-              }`}
-            >
-              {cat.name} ({count})
-            </button>
-          )
-        })}
+      {/* Filter */}
+      <div className="flex flex-col gap-3 border-b border-[#D9E0EB] px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+        <label className="flex flex-col gap-2 text-sm font-bold text-[#1F2933] sm:flex-row sm:items-center">
+          Laag
+          <select
+            value={activeCategory ?? ''}
+            onChange={(event) => setActiveCategory(event.target.value || null)}
+            className="h-10 min-w-64 rounded-[10px] border border-[#D9E0EB] bg-white px-3 text-sm font-bold text-[#1F2933] transition-colors focus:border-[#3C8EFF] focus:outline-none focus:ring-2 focus:ring-[#3C8EFF]/20"
+          >
+            <option value="">Alle lagen ({integrations.length})</option>
+            {categories.map((cat) => {
+              const count = integrations.filter((i) => i.category === cat.slug).length
+              if (count === 0) return null
+              return (
+                <option key={cat.slug} value={cat.slug}>
+                  {cat.name} ({count})
+                </option>
+              )
+            })}
+          </select>
+        </label>
+        <p className="text-sm font-bold text-[#8A94A3]">
+          {filtered.length} van {integrations.length} integraties
+        </p>
       </div>
 
       {/* Results */}
@@ -130,7 +125,7 @@ export default function IntegrationFilter({ integrations }: IntegrationFilterPro
       )}
 
       <p className="border-t border-[#D9E0EB] px-7 py-4 text-center text-sm text-[#6B7280]">
-        {filtered.length} van {integrations.length} integraties
+        Per koppeling blijft een eigen pagina beschikbaar voor uitleg, vindbaarheid en long-tail zoekvragen.
       </p>
     </div>
   )

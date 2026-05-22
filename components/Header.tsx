@@ -99,27 +99,27 @@ export default function Header() {
             : 'bg-white/0 border-white/0'
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-8">
-        <div className="flex h-[72px] items-center justify-between">
+      <div className="mx-auto max-w-[1760px] px-6 sm:px-8 lg:px-10">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <div className="relative" style={{ width: 140, height: 23 }}>
+            <div className="relative" style={{ width: 118, height: 19 }}>
               <span className={`absolute inset-0 transition-opacity duration-500 ${showDark ? 'opacity-100' : 'opacity-0'}`}>
-                <Logo variant="mono-white" width={140} height={23} />
+                <Logo variant="mono-white" width={118} height={19} />
               </span>
               <span className={`absolute inset-0 transition-opacity duration-500 ${showDark ? 'opacity-0' : 'opacity-100'}`}>
-                <Logo variant="primary" width={140} height={23} />
+                <Logo variant="primary" width={118} height={19} />
               </span>
             </div>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden min-w-0 items-center gap-4 lg:flex 2xl:gap-6">
             {/* Diensten dropdown */}
             <div ref={dropdownRef} className="relative">
               <button
                 onClick={() => setDienstenOpen(!dienstenOpen)}
-                className={`flex items-center gap-1 text-[15px] font-medium transition-colors ${
+                className={`flex flex-none items-center gap-1 whitespace-nowrap text-[13px] font-medium transition-colors ${
                   showDark
                     ? 'text-white/70 hover:text-white'
                     : 'text-slate-600 hover:text-primary'
@@ -150,7 +150,7 @@ export default function Header() {
             <div ref={platformDropdownRef} className="relative">
               <button
                 onClick={() => setPlatformOpen(!platformOpen)}
-                className={`flex items-center gap-1 text-[15px] font-medium transition-colors ${
+                className={`flex flex-none items-center gap-1 whitespace-nowrap text-[13px] font-medium transition-colors ${
                   showDark
                     ? 'text-white/70 hover:text-white'
                     : 'text-slate-600 hover:text-primary'
@@ -181,7 +181,7 @@ export default function Header() {
             <div ref={voorWieDropdownRef} className="relative">
               <button
                 onClick={() => setVoorWieOpen(!voorWieOpen)}
-                className={`flex items-center gap-1 text-[15px] font-medium transition-colors ${
+                className={`flex flex-none items-center gap-1 whitespace-nowrap text-[13px] font-medium transition-colors ${
                   showDark
                     ? 'text-white/70 hover:text-white'
                     : 'text-slate-600 hover:text-primary'
@@ -212,7 +212,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-[15px] font-medium transition-colors ${
+                className={`flex-none whitespace-nowrap text-[13px] font-medium transition-colors ${
                   showDark
                     ? 'text-white/70 hover:text-white'
                     : 'text-slate-600 hover:text-primary'
@@ -227,7 +227,7 @@ export default function Header() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-white bg-accent rounded-lg hover:bg-accent-dark transition-all duration-200 shadow-sm shadow-accent/20"
+              className="hidden flex-none items-center whitespace-nowrap rounded-lg bg-accent px-4 py-2 text-[13px] font-semibold text-white shadow-sm shadow-accent/20 transition-all duration-200 hover:bg-accent-dark 2xl:inline-flex"
             >
               {t('cta')}
             </Link>

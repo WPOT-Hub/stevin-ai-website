@@ -5,7 +5,7 @@
  *
  * Doel: pSEO at scale. 245 vendor-pages met identieke template-structuur
  * worden door Google als thin content gezien. Per-vendor unieke
- * "Stevin-invalshoek" plus "Wat dit voor jouw stack betekent" haalt elke
+ * unieke vendor-context plus concrete stack-duiding haalt elke
  * pagina ruim boven de duplicate-content drempel.
  *
  * Source-of-truth: data/vendor-enrichments.json. Genereren via
@@ -19,9 +19,9 @@
 import enrichmentsData from './vendor-enrichments.json'
 
 export interface VendorEnrichment {
-  /** 1-2 alinea's: hoe Stevin déze vendor anders inzet of interpreteert. */
+  /** 1-2 alinea's: hoe Stevin deze vendor inzet of interpreteert. */
   stevinAngle: string
-  /** 1 alinea: wat dit voor jouw stack betekent — concreet, geen jargon. */
+  /** 1 alinea: waar je deze bron naast legt, concreet en zonder jargon. */
   stackImpact: string
   /** Optioneel: 2-4 concrete pitfalls of valkuilen bij deze vendor. */
   pitfalls?: string[]

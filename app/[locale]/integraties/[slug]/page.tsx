@@ -8,6 +8,7 @@ import SectionHeader from '@/components/SectionHeader'
 import IntegrationGrid from '@/components/IntegrationGrid'
 import CTABlock from '@/components/CTABlock'
 import FAQAccordion from '@/components/FAQAccordion'
+import IntegrationGlyph from '@/components/IntegrationGlyph'
 import { categories } from '@/data/categories'
 import { integrations } from '@/data/integrations'
 import { getVendorEnrichment } from '@/data/vendor-enrichments'
@@ -251,9 +252,7 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
           {/* Main content */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-xl bg-surface-alt flex items-center justify-center">
-                <span className="text-2xl font-bold text-accent">{integration.name.charAt(0)}</span>
-              </div>
+              <IntegrationGlyph />
               <div>
                 <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">
                   {integration.name}
@@ -279,11 +278,11 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
               return (
                 <div className="space-y-6 mb-10 pb-10 border-b border-border">
                   <div>
-                    <h2 className="text-xl font-bold text-primary mb-3">De Stevin-invalshoek op {integration.name}</h2>
+                    <h2 className="text-xl font-bold text-primary mb-3">Wat Stevin uit {integration.name} haalt</h2>
                     <p className="text-muted leading-relaxed">{enrichment.stevinAngle}</p>
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold text-primary mb-3">Wat dit voor jouw stack betekent</h2>
+                    <h2 className="text-xl font-bold text-primary mb-3">Waar je het naast legt</h2>
                     <p className="text-muted leading-relaxed">{enrichment.stackImpact}</p>
                   </div>
                   {enrichment.pitfalls && enrichment.pitfalls.length > 0 && (
@@ -367,9 +366,7 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
                         href={`/integraties/${rel.slug}`}
                         className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white transition-colors"
                       >
-                        <span className="w-8 h-8 rounded bg-white flex items-center justify-center text-xs font-bold text-accent border border-border flex-shrink-0">
-                          {rel.name.charAt(0)}
-                        </span>
+                        <IntegrationGlyph size="sm" />
                         <span className="text-sm font-medium text-primary">{rel.name}</span>
                       </Link>
                     ))}
