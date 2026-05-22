@@ -799,7 +799,7 @@ export const articles: Article[] = [
     dek: '83% van enterprises gebruikt AI. Slechts 13% heeft grip op hoe het gebruikt wordt. Over het organisatielaag-probleem achter AI-adoptie, en waarom marketingteams het al jaren kennen.',
     publishedAt: '2026-05-22',
     readMinutes: 7,
-    author: { name: 'Koen Hoogenboom', role: 'Founder, Stevin' },
+    author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'OBSERVATIE',
     posterTopic: 'AI maakt mensen sneller. Organisaties worden er niet automatisch slimmer van.',
