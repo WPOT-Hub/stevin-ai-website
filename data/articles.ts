@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'btw-fraude-netwerk-europa-operatie-admiral',
+    format: 'dispatch' as const,
+    edition: '062',
+    category: 'Beleid',
+    title: "9.000 spookbedrijven verdonkeremaanden 2,9 miljard euro btw",
+    dek: "Een Europees netwerk van bijna 9.000 tijdelijke bedrijven hielp consumenten smartphones te kopen zonder btw, wat leidde tot een verlies van 2,9 miljard euro voor de fiscus.",
+    publishedAt: '2026-05-22',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "9.000 spookbedrijven verdonkeremaanden 2,9 miljard euro btw",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'signaalverval-bedreigt-top-of-funnel-prestaties',
     format: 'dispatch' as const,
     edition: '061',
