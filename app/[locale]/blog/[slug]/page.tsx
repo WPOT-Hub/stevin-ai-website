@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spotify-lanceert-ai-remixes-voor-premium-gebruikers': (
+    <>
+      <p className="lead-para">
+        Spotify introduceert een nieuwe functie waarmee Premium-abonnees tegen betaling AI-remixes en -covers kunnen maken van hits van artiesten als Taylor Swift, Billie Eilish en Elton John. De tool werkt in eerste instantie alleen met muziek van Universal Music Group, aldus Spotify. Gebruikers betalen voor deze extra dienst bovenop hun reguliere abonnement, maar de oorspronkelijke makers krijgen een deel van de opbrengst.
+      </p>
+      <p>
+        Naast de AI-muziektool kondigt Spotify ook twee andere functies aan: een app voor het genereren van AI-podcasts en 'Reserved', een systeem waarbij alleen 'echte fans' tickets kunnen kopen voor concerten. Deze functies zijn eerst alleen in de Verenigde Staten beschikbaar, maar komen later naar andere landen. Spotify geeft nog niet aan wanneer de tool precies beschikbaar komt of wat deze gaat kosten.
+      </p>
+      <p>
+        De nieuwe functies sluiten aan bij de groeiende vraag naar gepersonaliseerde content binnen streamingdiensten. Spotify benadrukt dat artiesten en songwriters extra inkomsten ontvangen via deze AI-gestuurde tools, hoewel de exacte verdeling nog niet duidelijk is.
+      </p>
+    </>
+  ),
   'ai-gemaakte-boeken-zonder-waarschuwing-te-koop': (
     <>
       <p className="lead-para">
@@ -1961,6 +1974,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spotify-lanceert-ai-remixes-voor-premium-gebruikers':
+    "Voor bedrijven die content creëren of distribueren is dit een teken dat AI steeds meer wordt ingezet om gebruikerservaringen te personaliseren. Het biedt kansen om nieuwe inkomstenstromen te ontsluiten, maar brengt ook vragen met zich mee over auteursrecht en de waarde van originele muziek. Ondernemers doen er goed aan na te denken hoe ze dergelijke technologieën kunnen toepassen zonder hun core business te ondermijnen.",
   'ai-gemaakte-boeken-zonder-waarschuwing-te-koop':
     "Voor ondernemers die content produceren of distributiepartners gebruiken, is dit een waarschuwing om transparantie serieus te nemen. Klanten waarderen duidelijkheid over de herkomst van producten, ook als die digitaal tot stand komen. Het risico op reputatieschade door misleiding weegt zwaarder dan eventuele kosten voor extra labelling.",
   'cerebras-beursgang-ai-chipsector':
