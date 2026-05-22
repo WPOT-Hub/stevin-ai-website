@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies': (
+    <>
+      <p className="lead-para">
+        Autofabrikant Mazda heeft haar volledige storage-omgeving voor productontwerp gecentraliseerd op een nieuw AI-ready dataplatform van Dell Technologies. Door CAD-bestanden en simulatiedata uit dertig jaar samen te brengen, creëert het bedrijf een schaalbaar datalake voor toekomstige AI-workloads. De transformatie leidde tot een kostenreductie van 90% per opslageenheid, aldus de Japanse autofabrikant.
+      </p>
+      <p>
+        Het nieuwe platform, gebaseerd op Dell PowerScale, combineert twee eerder gescheiden werelden binnen één scale-out NAS-architectuur: de capaciteitsvraag voor modelgebaseerde ontwikkeldata en de hoge prestatie-eisen van zware CAD-programma’s. Mazda vervangt hiermee magneettape-back-ups en lost structurele capaciteitstekorten op. Sinds de implementatie daalde het aantal IT-tickets aanzienlijk.
+      </p>
+      <p>
+        De centralisatie geeft engineeringteams direct toegang tot decennia aan ontwerphistorie, cruciaal voor het trainen van machine learning-modellen. Dit versnelt innovaties in de productielijn en positioneert Mazda om generatieve AI direct in te zetten binnen de ontwikkelingspijplijn, zo blijkt uit een toelichting van Yuichi Tetsumoto, staff manager Engineering Systems bij Mazda.
+      </p>
+    </>
+  ),
   'spotify-lanceert-ai-remixes-voor-premium-gebruikers': (
     <>
       <p className="lead-para">
@@ -1974,6 +1987,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies':
+    "Voor bedrijven die met grote hoeveelheden historische data werken, toont deze casus hoe consolidatie leidt tot zowel kostenbesparingen als operationele verbeteringen. De stap naar een AI-ready infrastructuur vereist niet alleen technische schaalbaarheid, maar ook een duidelijke visie op hoe data straks wordt ontsloten en gebruikt. Dat vraagt om investeringen in moderne opslagoplossingen en een cultuur waarin data niet langer gefragmenteerd blijft.",
   'spotify-lanceert-ai-remixes-voor-premium-gebruikers':
     "Voor bedrijven die content creëren of distribueren is dit een teken dat AI steeds meer wordt ingezet om gebruikerservaringen te personaliseren. Het biedt kansen om nieuwe inkomstenstromen te ontsluiten, maar brengt ook vragen met zich mee over auteursrecht en de waarde van originele muziek. Ondernemers doen er goed aan na te denken hoe ze dergelijke technologieën kunnen toepassen zonder hun core business te ondermijnen.",
   'ai-gemaakte-boeken-zonder-waarschuwing-te-koop':
