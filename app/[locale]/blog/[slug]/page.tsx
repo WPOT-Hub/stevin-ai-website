@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector': (
+    <>
+      <p className="lead-para">
+        Het Franse AI-bedrijf Mistral AI heeft het Oostenrijkse Emmi AI overgenomen, een bedrijf dat gespecialiseerd is in realtime-simulatie van fysische processen en digitale tweelingen. Met deze stap wil Mistral zich profileren als leverancier van industriële AI-toepassingen, met name voor sectoren waar Europese bedrijven zoals ASML een sleutelrol spelen.
+      </p>
+      <p>
+        Mistral richt zich expliciet op de luchtvaart-, automotive- en halfgeleiderindustrie, aldus het bedrijf. Hoewel er geen bedrag bekend is gemaakt, wordt de overname gezien als een strategische zet om de concurrentiepositie van Mistral in Europa te versterken. De dertig medewerkers van Emmi AI zijn vanaf deze maand onderdeel van Mistral.
+      </p>
+      <p>
+        ASML, dat vorig jaar nog 1,3 miljard euro investeerde in Mistral, lijkt een logische partner voor deze technologie. ASML zelf doet geen uitspraken over samenwerking met Emmi, maar benadrukt dat de toepassing van simulatie bij chipmachineontwikkeling cruciaal is voor snellere innovatie.
+      </p>
+    </>
+  ),
   'mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies': (
     <>
       <p className="lead-para">
@@ -1987,6 +2000,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector':
+    "Deze overname laat zien hoe Europese spelers proberen aan te haken bij de mondiale AI-race, vooral in sectoren waar Europa traditioneel sterk staat zoals halfgeleiders en automotive. Het benadrukt ook de groeiende rol van niche-AI-bedrijven die zich richten op specifieke industriële uitdagingen. Voor Nederlandse en Belgische bedrijven in deze sectoren kan dit leiden tot nieuwe samenwerkingsmogelijkheden of snellere toegang tot geavanceerde simulatietechnieken.",
   'mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies':
     "Voor bedrijven die met grote hoeveelheden historische data werken, toont deze casus hoe consolidatie leidt tot zowel kostenbesparingen als operationele verbeteringen. De stap naar een AI-ready infrastructuur vereist niet alleen technische schaalbaarheid, maar ook een duidelijke visie op hoe data straks wordt ontsloten en gebruikt. Dat vraagt om investeringen in moderne opslagoplossingen en een cultuur waarin data niet langer gefragmenteerd blijft.",
   'spotify-lanceert-ai-remixes-voor-premium-gebruikers':
