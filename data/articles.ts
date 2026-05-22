@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector',
+    format: 'dispatch' as const,
+    edition: '067',
+    category: 'Markt',
+    title: "Mistral neemt Emmi AI over om Europese chip- en auto-industrie te versterken",
+    dek: "Het Franse Mistral AI neemt het Oostenrijkse Emmi AI over om industriële simulatie en digitale kopieën van fysische processen te integreren in zijn AI-modellen voor de luchtvaart-, automotive- en halfgeleiderindustrie.",
+    publishedAt: '2026-05-22',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Mistral neemt Emmi AI over om Europese chip- en auto-industrie te versterken",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies',
     format: 'dispatch' as const,
     edition: '066',
