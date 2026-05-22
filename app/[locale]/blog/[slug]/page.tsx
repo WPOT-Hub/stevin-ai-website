@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-gemaakte-boeken-zonder-waarschuwing-te-koop': (
+    <>
+      <p className="lead-para">
+        Het Nederlandse bedrijf Andries B.V. brengt sinds 2025 non-fictieboeken uit die volledig door kunstmatige intelligentie zijn gegenereerd. Deze titels, vaak over nicheonderwerpen zoals een specifiek hondenras of stad, worden verkocht via platforms als Libris, Bruna en Boekenwereld zonder dat klanten worden geïnformeerd over de AI-oorsprong.
+      </p>
+      <p>
+        Na onderzoek van Trouw bleek dat alleen Bol expliciet aangeeft wanneer een boek AI-gegenereerd is. Andere aanbieders zoals Athenaeum | Scheltema en De Slegte lieten na publicatie weten deze informatie alsnog toe te voegen. Eigenaar Andries Herremans stelt dat de betrokkenheid van AI wel is gemeld bij de boekhandels en in nieuwe uitgaven zelf wordt vermeld.
+      </p>
+      <p>
+        Consumentenreageren verdeeld: sommige lezers vinden het gebruik van AI voor onderzoek acceptabel, maar velen zien het als oneerlijk en misleidend om boeken te verkopen zonder duidelijke waarschuwing.
+      </p>
+    </>
+  ),
   'cerebras-beursgang-ai-chipsector': (
     <>
       <p className="lead-para">
@@ -1948,6 +1961,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-gemaakte-boeken-zonder-waarschuwing-te-koop':
+    "Voor ondernemers die content produceren of distributiepartners gebruiken, is dit een waarschuwing om transparantie serieus te nemen. Klanten waarderen duidelijkheid over de herkomst van producten, ook als die digitaal tot stand komen. Het risico op reputatieschade door misleiding weegt zwaarder dan eventuele kosten voor extra labelling.",
   'cerebras-beursgang-ai-chipsector':
     "Deze ontwikkeling laat zien hoe snel nieuwe spelers kunnen opschalen in een markt die gedomineerd wordt door gevestigde namen als NVIDIA. Voor bedrijven die afhankelijk zijn van rekenkracht kan dit leiden tot meer keuze en mogelijk lagere kosten op termijn. Tegelijkertijd benadrukt het de risico’s van investeren in nog verlieslatende technologieën met hoge verwachtingen.",
   'btw-fraude-netwerk-europa-operatie-admiral':
