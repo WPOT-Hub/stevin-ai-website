@@ -269,6 +269,9 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'ai-cowboys-marketing-2026' && (
             <ArticleAIcowboysBody />
           )}
+          {article.format === 'editorial' && article.slug === 'ai-tools-organisatielaag-marketing' && (
+            <ArticleOrglaagBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
@@ -276,6 +279,7 @@ export default async function ArticlePage({
             article.slug !== 'mmm-is-een-hypothese' &&
             article.slug !== 'beste-transcriptietool-2026' &&
             article.slug !== 'ai-cowboys-marketing-2026' &&
+            article.slug !== 'ai-tools-organisatielaag-marketing' &&
             article.slug !== 'wk-2026-campagne-data-voorbereiding' && (
               <ArticleStubBody article={article} />
             )}
@@ -2371,6 +2375,116 @@ function ArticleTranscriptToolsBody() {
       <p>
         Een laatste opmerking. Wij hebben hier geen partnerschap met Plaud. Geen affiliate-link, geen commissie. Dit is gewoon wat we na een paar honderd uur opname-tijd zelf gebruiken. Als dat over een jaar verandert (een nieuwe speler, een verbeterde concurrent), zal je dat hier teruglezen.
       </p>
+    </>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────
+   Editie 018: AI-tools en de organisatielaag
+   ──────────────────────────────────────────────────────────── */
+function ArticleOrglaagBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Weet jij hoeveel AI-tools er op dit moment actief zijn binnen jouw team? Waarschijnlijk meer
+        dan je denkt. En waarschijnlijk weet je niet precies wat ze doen, wat ze kosten en welke
+        kennis er in verdwijnt. Dat is geen kritiek. Het is de realiteit van hoe AI-adoptie werkt:
+        snel, individueel, en bijna altijd sneller dan de organisatie-inrichting eromheen.
+      </p>
+
+      <BodyFigure
+        tag="CYERA · 2025"
+        stat="13%"
+        statCap="Van enterprises met sterke zichtbaarheid op hoe AI met data omgaat. Terwijl 83% al actief AI gebruikt. Gebruik is niet hetzelfde als grip."
+        edition="EDITIE 018 / 052 · OBSERVATIE"
+        source="Bron: Cyera State of AI Data Security Report 2025"
+      />
+
+      <p>
+        De Wall Street Journal beschreef het eerder dit jaar als agent sprawl. Bedrijven bouwen
+        steeds meer losse AI-agents, elk met een eigen functie, eigen data-toegang en eigen
+        beheerder. Of eigenlijk: zonder beheerder. Dubbele functies, onzichtbare kosten, vragen over
+        security die niemand beantwoordt. Niet omdat AI slecht werkt, maar omdat gebruik harder
+        groeit dan grip.
+      </p>
+
+      <H2 num="01">Gebruik is niet hetzelfde als grip</H2>
+
+      <p>
+        McKinsey bevestigt dat in hun State of AI-rapport van dit jaar. AI-gebruik groeit in
+        vrijwel alle sectoren. Maar organisaties die er echt waarde uit halen, onderscheiden zich
+        niet door meer tools te gebruiken. Ze onderscheiden zich door governance, senior
+        eigenaarschap en herontworpen workflows. Niet de licentie maakt het verschil. De laag
+        eromheen maakt het verschil.
+      </p>
+
+      <p>
+        Harvard Business Review voegde daar eerder dit jaar een interessante observatie aan toe:
+        medewerkers grijpen vaak naar eigen AI-tools niet omdat ze dwars zijn, maar omdat de
+        officiele oplossingen te traag, te beperkt of te onhandig zijn. De vraag naar slimmere
+        manieren van werken is er allang. Organisaties zien die vraag alleen niet goed genoeg.
+      </p>
+
+      <PullQuote
+        text='"De les is niet dat je minder AI moet gebruiken. De les is dat tools mensen sneller maken, maar bedrijven niet automatisch slimmer."'
+        cite="Koen Hoogenboom, Stevin"
+      />
+
+      <H2 num="02">Shadow AI is een symptoom, geen oorzaak</H2>
+
+      <p>
+        Chronus beschreef het goed: shadow AI is niet alleen een securityprobleem. Het is een
+        signaal dat medewerkers waarde zoeken die de organisatie nog niet goed organiseert. TechRadar
+        formuleerde het nog directer: AI faalt niet. Onderliggende systemen falen. Rommelige data,
+        slechte processen, organisaties die niet ingericht zijn om er iets mee te doen.
+      </p>
+
+      <p>
+        Individuele productiviteit is niet hetzelfde als organisatorische intelligentie. En de kloof
+        tussen die twee is precies waar waarde verdampt.
+      </p>
+
+      <H2 num="03">Marketingteams kennen dit patroon al jaren</H2>
+
+      <p>
+        Bij marketingteams en bureaus speelt dit al lang voordat AI op de agenda stond. Paid media
+        staat in Google Ads. Owned media staat in GA4, of in het hoofd van iemand die de content
+        bijhoudt. Klantnotities leven in Slack-threads. Signals komen boven als iemand er toevallig
+        bovenop zit, of als de maandrapportage er al is.
+      </p>
+
+      <p>
+        Een consultant ziet iets bij klant A. Iemand anders herkent hetzelfde patroon bij klant B.
+        Alleen wordt het nooit gedeelde kennis, omdat het nergens samenkomt. De tool is er wel.
+        De organisatielaag ontbreekt.
+      </p>
+
+      <H2 num="04">De organisatielaag is de eigenlijke winst</H2>
+
+      <p>
+        Stevin is gebouwd als antwoord op die kloof. Niet nog een plek met meer data. Niet een
+        dashboard met meer grafieken. Maar een Desk waarop een heel team ziet welke klant aandacht
+        vraagt en waarom, voordat het in een rapportage staat. Een plek waar signals uit paid en
+        owned media samenkomen, waar klantkennis niet verdwijnt in het hoofd of account van een
+        individu, en waar het team samen slimmer wordt in plaats van dat iedereen individueel
+        sneller wordt.
+      </p>
+
+      <p>
+        AI maakt mensen sneller. Organisatie-overzicht maakt bedrijven beter. Het verschil zit niet
+        in de tool die je koopt. Het zit in de laag die je bouwt.
+      </p>
+
+      <EndRule />
+      <EndSig>
+        Als jij een bureau runt of een marketingteam aanstuurt en je herkent dit, ben ik benieuwd
+        hoe dat er bij jou uitziet.{' '}
+        <a href="https://stevin.ai/contact" style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}>
+          Neem contact op
+        </a>{' '}
+        of stuur me een bericht op LinkedIn. Geen sales-gesprek, gewoon een goed gesprek over hoe je
+        dit soort versnippering aanpakt. · Editie 018 / 052
+      </EndSig>
     </>
   )
 }

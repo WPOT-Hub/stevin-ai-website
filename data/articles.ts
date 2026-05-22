@@ -776,6 +776,20 @@ export const articles: Article[] = [
 
   /* ─── EDITORIALS ─── */
   {
+    slug: 'ai-tools-organisatielaag-marketing',
+    format: 'editorial' as const,
+    edition: '018',
+    category: 'Observatie',
+    title: 'Nieuwe tools maken mensen sneller. Maar bedrijven worden er niet automatisch slimmer van.',
+    dek: '83% van enterprises gebruikt AI. Slechts 13% heeft grip op hoe het gebruikt wordt. Over het organisatielaag-probleem achter AI-adoptie, en waarom marketingteams het al jaren kennen.',
+    publishedAt: '2026-05-22',
+    readMinutes: 7,
+    author: { name: 'Koen Hoogenboom', role: 'Founder, Stevin' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OBSERVATIE',
+    posterTopic: 'AI maakt mensen sneller. Organisaties worden er niet automatisch slimmer van.',
+  },
+  {
     slug: 'wk-2026-campagne-data-voorbereiding',
     format: 'editorial' as const,
     edition: '017',
