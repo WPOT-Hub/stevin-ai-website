@@ -1196,6 +1196,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'signaalverval-bedreigt-top-of-funnel-prestaties': (
+    <>
+      <p className="lead-para">
+        Uit onderzoek blijkt dat de meetdata van top-of-funnel campagnes snel vervagen, waardoor de impact op latere conversies onderbelicht blijft. Dit fenomeen treedt op doordat tussenstappen zoals herhalingsbezoeken of vergelijkingen niet altijd worden meegenomen in attributie-modellen. Daardoor lijkt het alsof deze campagnes minder renderen dan ze daadwerkelijk doen, aldus de analyse.
+      </p>
+      <p>
+        Het probleem verergert wanneer bedrijven zich vooral richten op directe conversies, zoals aankopen of leads. Hierdoor verdwijnen de vroege signalen die aangeven dat een klant nog in de oriëntatiefase zit. Zonder deze context is het lastiger om campagnes te optimaliseren voor langetermijnwaarde.
+      </p>
+      <p>
+        Oplossingen liggen in het gebruik van meetmodellen die rekening houden met signaalverval. Door bijvoorbeeld tijdsgebonden attributie toe te passen of meer data uit CRM-systemen te integreren, kunnen marketeers een completer beeld krijgen van de customer journey.
+      </p>
+    </>
+  ),
   'google-integreert-meridian-in-analytics-360': (
     <>
       <p className="lead-para">
@@ -1905,6 +1918,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'signaalverval-bedreigt-top-of-funnel-prestaties':
+    "Voor bureau-eigenaars en in-house marketeers is het essentieel om attributie-modellen kritisch te evalueren. Kies niet blind voor last-click of first-click, maar test modellen die rekening houden met tussentijdse interacties. Begin met kleine aanpassingen in je rapportages: voeg bijvoorbeeld een kolom toe voor 'tussentijdse engagement' naast directe conversies.\n\nDaarnaast helpt het om samenwerking tussen teams te stimuleren. Laat sales en marketing data uitwisselen over vroege interacties en laat dit terugkomen in de campagne-evaluatie. Zo voorkom je dat waardevolle top-of-funnel inspanningen ten onrechte worden afgestraft.",
   'google-integreert-meridian-in-analytics-360':
     "Voor bureau-eigenaars en in-house marketeers betekent deze integratie dat ze minder afhankelijk worden van externe MMM-tools. Het is raadzaam om de nieuwe functionaliteit direct te testen zodra deze beschikbaar is, zodat je kunt beoordelen hoe de predictieve metric aansluit bij je bestaande rapportagestructuur. Houd er rekening mee dat de nauwkeurigheid van de voorspellingen afhangt van de kwaliteit en consistentie van je meetdata. Begin met kleine pilots om de waarde voor jouw specifieke situatie in kaart te brengen.",
   'google-breidt-demand-gen-uit-met-youtube-creator-tools':
