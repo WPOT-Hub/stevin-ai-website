@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'cerebras-beursgang-ai-chipsector',
+    format: 'dispatch' as const,
+    edition: '063',
+    category: 'Markt',
+    title: "Cerebras haalt 5,5 miljard op bij beursgang, oprichters worden miljardair",
+    dek: "Het onbekende AI-chipbedrijf Cerebras verdubbelde bijna in waarde na een succesvolle beursgang en haalde 5,5 miljard dollar op.",
+    publishedAt: '2026-05-22',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Cerebras haalt 5,5 miljard op bij beursgang, oprichters worden miljardair",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'btw-fraude-netwerk-europa-operatie-admiral',
     format: 'dispatch' as const,
     edition: '062',
