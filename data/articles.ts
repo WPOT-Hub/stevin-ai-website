@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-gemaakte-boeken-zonder-waarschuwing-te-koop',
+    format: 'dispatch' as const,
+    edition: '064',
+    category: 'Cultuur',
+    title: "Duizenden AI-boeken zonder waarschuwing bij webshops",
+    dek: "Ruim tweeduizend AI-gegenereerde boeken zijn zonder duidelijke vermelding verkrijgbaar bij grote webshops, meldt NU.nl.",
+    publishedAt: '2026-05-22',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "Duizenden AI-boeken zonder waarschuwing bij webshops",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'cerebras-beursgang-ai-chipsector',
     format: 'dispatch' as const,
     edition: '063',
