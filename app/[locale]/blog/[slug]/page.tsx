@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'btw-fraude-netwerk-europa-operatie-admiral': (
+    <>
+      <p className="lead-para">
+        Een netwerk van bijna 9.000 spookbedrijven in 30 landen organiseerde een btw-fraude met een omvang van 2,9 miljard euro. Consumenten kochten via online platformen smartphones, waarbij de btw-plicht kunstmatig werd omzeild door valse grensoverschrijdende handel. De fraudeurs lieten de opbrengst verdwijnen naar belastingparadijzen als Dubai en de Seychellen, aldus de Portugese justitie.
+      </p>
+      <p>
+        De constructie draaide om valse facturen gegenereerd door software, ontwikkeld door Prathikouhn Lavivong, een Frans-Thaise IT-specialist. In mei 2025 werden twaalf bedrijven en tien personen veroordeeld, maar het vonnis werd in maart 2026 vernietigd wegens procedurefouten. De zaak wordt nu opnieuw behandeld.
+      </p>
+      <p>
+        De EU verloor in 2023 ongeveer 128 miljard euro aan btw-inkomsten door fraude en administratieve tekortkomingen. Nieuwe regels voor digitale facturatie en realtime rapportage moeten dit beperken, maar volledige implementatie is pas in 2030 verplicht.
+      </p>
+    </>
+  ),
   'signaalverval-bedreigt-top-of-funnel-prestaties': (
     <>
       <p className="lead-para">
@@ -1922,6 +1935,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'btw-fraude-netwerk-europa-operatie-admiral':
+    "Voor marketeers betekent deze zaak dat transparantie over budgetstromen steeds belangrijker wordt. Net zoals fiscale autoriteiten realtime zichtbaarheid eisen op transactieniveau, groeit de druk op mediabudgetten die pas achteraf meetbaar zijn. Budgetten die maanden later pas in rapportages verschijnen, worden steeds minder acceptabel: oorzaak en gevolg moet direct traceerbaar zijn.\n\nBureaus en in-house teams doen er goed aan om meetdata direct te koppelen aan uitgaven. Tools die realtime inzicht bieden in campagneprestaties en kostenverdeling worden geen luxe meer, maar een noodzaak om fraude – of inefficiënties – vroegtijdig te signaleren. Begin met het standaardiseren van data-integratie tussen advertentieplatforms en boekhoudsystemen.",
   'signaalverval-bedreigt-top-of-funnel-prestaties':
     "Voor bureau-eigenaars en in-house marketeers is het essentieel om attributie-modellen kritisch te evalueren. Kies niet blind voor last-click of first-click, maar test modellen die rekening houden met tussentijdse interacties. Begin met kleine aanpassingen in je rapportages: voeg bijvoorbeeld een kolom toe voor 'tussentijdse engagement' naast directe conversies.\n\nDaarnaast helpt het om samenwerking tussen teams te stimuleren. Laat sales en marketing data uitwisselen over vroege interacties en laat dit terugkomen in de campagne-evaluatie. Zo voorkom je dat waardevolle top-of-funnel inspanningen ten onrechte worden afgestraft.",
   'google-integreert-meridian-in-analytics-360':
