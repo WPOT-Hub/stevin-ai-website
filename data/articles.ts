@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'signaalverval-bedreigt-top-of-funnel-prestaties',
+    format: 'dispatch' as const,
+    edition: '061',
+    category: 'Distributie',
+    title: "Top-of-funnel campagnes leveren minder op door signaalverval",
+    dek: "Campagnes die nieuwe klanten introduceren, krijgen vaak te weinig credit voor omzet door signaalverval in meetdata.",
+    publishedAt: '2026-05-22',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "Top-of-funnel campagnes leveren minder op door signaalverval",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-breidt-demand-gen-uit-met-youtube-creator-tools',
     format: 'dispatch' as const,
     edition: '060',
