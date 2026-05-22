@@ -813,7 +813,7 @@ export const articles: Article[] = [
     dek: 'Drie weken voor het WK 2026 zijn de meeste campagnes al in productie. De vraag is of ze gebaseerd zijn op de juiste data. Het WK was vier jaar geleden. De beste benchmark is het EK 2024, niet vorig jaar zomer.',
     publishedAt: '2026-05-19',
     readMinutes: 8,
-    author: { name: 'Koen Hoogenboom', role: 'Founder, Stevin' },
+    author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'STRATEGIE',
     posterTopic: 'WK 2026. Met welke data ga je de voorbereiding in?',

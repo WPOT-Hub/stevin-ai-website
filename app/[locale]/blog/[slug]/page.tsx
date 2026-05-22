@@ -2442,7 +2442,7 @@ function ArticleOrglaagBody() {
 
       <PullQuote
         text='"De les is niet dat je minder AI moet gebruiken. De les is dat tools mensen sneller maken, maar bedrijven niet automatisch slimmer."'
-        cite="Koen Hoogenboom, Stevin"
+        cite="Stevin Journal"
       />
 
       <H2 num="02">Shadow AI is een symptoom, geen oorzaak</H2>

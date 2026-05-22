@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stevin integraties - meetlat mockup</title>
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-2: #111f35;
+      --surface: #f7f8fa;
+      --panel: #ffffff;
+      --border: #d9e0eb;
+      --border-strong: #c7d1df;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --muted-2: #8a94a3;
+      --blue: #3c8eff;
+      --blue-soft: #eaf3ff;
+      --data: #0a0a0a;
+      --radius: 14px;
+      --shadow: 0 18px 50px rgba(10, 22, 40, .08), 0 2px 8px rgba(10, 22, 40, .04);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--surface);
+      letter-spacing: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-inner {
+      width: min(1200px, calc(100vw - 48px));
+      height: 74px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .logo {
+      height: 29px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: rgba(255,255,255,.68);
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .nav-links .active { color: #fff; }
+
+    .nav-cta {
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 10px;
+      padding: 10px 15px;
+    }
+
+    .hero {
+      background: var(--navy);
+      color: white;
+      padding: 90px 0 84px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -160px 35%;
+      height: 260px;
+      background: radial-gradient(ellipse at center, rgba(61,142,255,.18), transparent 64%);
+      pointer-events: none;
+    }
+
+    .container {
+      width: min(1200px, calc(100vw - 48px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+      gap: 70px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(255,255,255,.62);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+      opacity: .7;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 850px;
+      color: #fff;
+      font-size: clamp(52px, 7vw, 96px);
+      line-height: .98;
+      letter-spacing: -.04em;
+      font-weight: 850;
+    }
+
+    .hero-lead {
+      max-width: 640px;
+      margin: 30px 0 0;
+      color: rgba(255,255,255,.74);
+      font-size: 20px;
+      line-height: 1.55;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 19px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 750;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+    }
+
+    .measure-card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: var(--radius);
+      padding: 24px;
+      backdrop-filter: blur(8px);
+    }
+
+    .measure-card h2 {
+      margin: 0 0 22px;
+      color: #fff;
+      font-size: 19px;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+
+    .measure-row {
+      display: grid;
+      grid-template-columns: 106px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      min-height: 44px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.76);
+      font-size: 14px;
+    }
+
+    .measure-row:first-of-type { border-top: 0; }
+
+    .measure-row strong {
+      color: #fff;
+      font-weight: 750;
+    }
+
+    .mini-line {
+      height: 2px;
+      background: rgba(255,255,255,.16);
+      position: relative;
+    }
+
+    .mini-line span {
+      position: absolute;
+      inset: -3px auto -3px 0;
+      width: var(--w);
+      border-radius: 999px;
+      background: #fff;
+    }
+
+    .measure-tag {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .rule {
+      position: relative;
+      height: 22px;
+      max-width: 460px;
+      margin-top: 54px;
+      color: rgba(255,255,255,.46);
+    }
+
+    .rule::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .tick {
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 9px;
+      background: currentColor;
+    }
+
+    .tick.major { height: 17px; }
+
+    .section {
+      padding: 82px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 36px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: var(--blue);
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--data);
+      font-size: clamp(34px, 4.2vw, 58px);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+      font-weight: 850;
+    }
+
+    .section-sub {
+      margin: 0;
+      max-width: 340px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .flow-panel {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .flow-step {
+      min-height: 250px;
+      padding: 26px 24px;
+      border-left: 1px solid var(--border);
+      position: relative;
+    }
+
+    .flow-step:first-child { border-left: 0; }
+
+    .flow-step::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      top: 78px;
+      height: 2px;
+      background: var(--navy);
+    }
+
+    .flow-step::after {
+      content: "";
+      position: absolute;
+      top: 72px;
+      left: 24px;
+      width: 2px;
+      height: 14px;
+      background: var(--navy);
+      box-shadow: 42px 0 0 var(--navy), 84px 0 0 var(--navy), 126px 0 0 var(--navy);
+      opacity: .82;
+    }
+
+    .num {
+      font-size: 38px;
+      font-weight: 850;
+      letter-spacing: -.04em;
+      color: var(--data);
+      line-height: 1;
+      margin-bottom: 76px;
+    }
+
+    .flow-step h3 {
+      margin: 0 0 12px;
+      color: var(--text);
+      font-size: 21px;
+      line-height: 1.08;
+      letter-spacing: -.02em;
+    }
+
+    .flow-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.52;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .panel-pad { padding: 30px; }
+
+    .panel-title {
+      margin: 0 0 8px;
+      color: var(--data);
+      font-size: 30px;
+      line-height: 1.05;
+      letter-spacing: -.035em;
+      font-weight: 850;
+    }
+
+    .panel-copy {
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .stack-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .stack-row {
+      display: grid;
+      grid-template-columns: 132px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 15px 0;
+      border-top: 1px solid var(--border);
+      font-size: 15px;
+    }
+
+    .stack-row:first-child { border-top: 0; }
+
+    .stack-row strong {
+      color: var(--data);
+      letter-spacing: -.015em;
+    }
+
+    .stack-row span {
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .status {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    .table-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      padding: 24px 26px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .search {
+      width: min(340px, 100%);
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0 14px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      background: var(--surface);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 18px 26px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: #fff;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .chip.active {
+      color: var(--blue);
+      background: var(--blue-soft);
+      border-color: rgba(60,142,255,.35);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th {
+      text-align: left;
+      padding: 14px 26px;
+      color: var(--muted-2);
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 18px 26px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: var(--muted);
+      line-height: 1.42;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    td:first-child {
+      color: var(--data);
+      font-weight: 800;
+      letter-spacing: -.01em;
+      white-space: nowrap;
+    }
+
+    .layer {
+      color: var(--text);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .connected {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .connected::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .closing {
+      background: var(--navy);
+      color: #fff;
+      padding: 82px 0;
+      margin-top: 20px;
+    }
+
+    .closing-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 42px;
+      align-items: end;
+    }
+
+    .closing h2 {
+      color: #fff;
+      max-width: 760px;
+    }
+
+    .closing p {
+      color: rgba(255,255,255,.66);
+      max-width: 560px;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split,
+      .closing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .measure-card { max-width: 620px; }
+      .flow-panel { grid-template-columns: 1fr; }
+      .flow-step {
+        min-height: 0;
+        border-left: 0;
+        border-top: 1px solid var(--border);
+      }
+      .flow-step:first-child { border-top: 0; }
+      .flow-step::before,
+      .flow-step::after { display: none; }
+      .num { margin-bottom: 28px; }
+      .nav-links a:not(.nav-cta):nth-child(n+4) { display: none; }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner,
+      .container {
+        width: min(100vw - 32px, 1200px);
+      }
+
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { padding: 70px 0 64px; }
+      h1 { font-size: clamp(44px, 14vw, 72px); }
+      .hero-lead { font-size: 18px; }
+      .section { padding: 60px 0; }
+      .section-head {
+        display: block;
+      }
+      .section-sub {
+        margin-top: 18px;
+      }
+      .stack-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+      .table-header {
+        display: block;
+      }
+      .search {
+        margin-top: 16px;
+      }
+      table, thead, tbody, th, td, tr { display: block; }
+      thead { display: none; }
+      tr {
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--border);
+      }
+      td {
+        padding: 4px 0;
+        border-bottom: 0;
+      }
+      td:first-child {
+        margin-bottom: 7px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#" aria-label="Stevin">
+        <img class="logo" src="../public/logos/lockup-mono-white-on-navy-web.png" alt="Stevin.AI" />
+      </a>
+      <nav class="nav-links" aria-label="Hoofdnavigatie">
+        <a href="#">Diensten</a>
+        <a href="#">Werkwijze</a>
+        <a class="active" href="#">Integraties</a>
+        <a href="#">Journal</a>
+        <a href="#">Contact</a>
+        <a class="nav-cta" href="#">Vraag demo aan</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Integraties</div>
+          <h1>Eerst koppelen. Dan pas meten.</h1>
+          <p class="hero-lead">
+            Stevin legt platform-cijfers naast CRM, commerce, finance en opvolging.
+            Niet om een toollijst te tonen, maar om te bewijzen welke bron welk resultaat veroorzaakt.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#">Bekijk de meetlat</a>
+            <a class="btn btn-secondary" href="#">Zoek een koppeling</a>
+          </div>
+          <div class="rule" aria-hidden="true">
+            <span class="tick major" style="left:0"></span>
+            <span class="tick" style="left:10%"></span>
+            <span class="tick" style="left:20%"></span>
+            <span class="tick" style="left:30%"></span>
+            <span class="tick" style="left:40%"></span>
+            <span class="tick major" style="left:50%"></span>
+            <span class="tick" style="left:60%"></span>
+            <span class="tick" style="left:70%"></span>
+            <span class="tick" style="left:80%"></span>
+            <span class="tick" style="left:90%"></span>
+            <span class="tick major" style="left:100%"></span>
+          </div>
+        </div>
+
+        <aside class="measure-card" aria-label="Voorbeeld koppelingen">
+          <h2>Een werkende meting heeft meer nodig dan advertentiekanalen.</h2>
+          <div class="measure-row">
+            <strong>Google Ads</strong>
+            <div class="mini-line"><span style="--w:82%"></span></div>
+            <div class="measure-tag">spend</div>
+          </div>
+          <div class="measure-row">
+            <strong>GA4</strong>
+            <div class="mini-line"><span style="--w:64%"></span></div>
+            <div class="measure-tag">events</div>
+          </div>
+          <div class="measure-row">
+            <strong>HubSpot</strong>
+            <div class="mini-line"><span style="--w:48%"></span></div>
+            <div class="measure-tag">deals</div>
+          </div>
+          <div class="measure-row">
+            <strong>Exact</strong>
+            <div class="mini-line"><span style="--w:58%"></span></div>
+            <div class="measure-tag">omzet</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Meetlat onder je stack</div>
+            <h2>Vijf lagen. Eén werkelijkheid.</h2>
+          </div>
+          <p class="section-sub">
+            Elke koppeling krijgt een plek in de keten. Zo wordt een klik pas interessant wanneer hij bij resultaat uitkomt.
+          </p>
+        </div>
+
+        <div class="flow-panel">
+          <article class="flow-step">
+            <div class="num">01</div>
+            <h3>Campagnes</h3>
+            <p>Spend, impressies, klikken en creatieve varianten uit Google, Meta, LinkedIn en TikTok.</p>
+          </article>
+          <article class="flow-step">
+            <div class="num">02</div>
+            <h3>Tracking</h3>
+            <p>Events, server-side tagging, consent en conversies die betrouwbaar genoeg zijn om op te sturen.</p>
+          </article>
+          <article class="flow-step">
+            <div class="num">03</div>
+            <h3>CRM</h3>
+            <p>Leads, afspraken, deals en opvolging. Hier verdwijnt vaak het verschil tussen claim en werkelijkheid.</p>
+          </article>
+          <article class="flow-step">
+            <div class="num">04</div>
+            <h3>Omzet</h3>
+            <p>Commerce, finance en ticketing laten zien wat er werkelijk binnenkomt, niet wat een platform claimt.</p>
+          </article>
+          <article class="flow-step">
+            <div class="num">05</div>
+            <h3>Werk</h3>
+            <p>Signalen worden taken, briefings, goedkeuringen of rapportage. Geen losse grafiek zonder eigenaar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 20px;">
+      <div class="container split">
+        <aside class="panel panel-pad">
+          <h2 class="panel-title">Wat Stevin ermee doet.</h2>
+          <p class="panel-copy">
+            Integraties zijn geen logo-wall. Ze bepalen welke vragen Stevin kan beantwoorden.
+          </p>
+
+          <div class="stack-list">
+            <div class="stack-row">
+              <strong>Google Ads + CRM</strong>
+              <span>Welke campagnes leveren echte afspraken en deals op?</span>
+              <div class="status">meetbaar</div>
+            </div>
+            <div class="stack-row">
+              <strong>Meta + creatives</strong>
+              <span>Welke beelden werken nog, en welke trekken alleen ruis?</span>
+              <div class="status">signaal</div>
+            </div>
+            <div class="stack-row">
+              <strong>GA4 + consent</strong>
+              <span>Waar breekt de meting voordat rapportage het ziet?</span>
+              <div class="status">controle</div>
+            </div>
+            <div class="stack-row">
+              <strong>Shopify + finance</strong>
+              <span>Wat is omzet, marge en herhaalaankoop na mediakosten?</span>
+              <div class="status">bewijs</div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="panel" aria-label="Koppelingen overzicht">
+          <div class="table-header">
+            <div>
+              <h2 class="panel-title">Koppelingen</h2>
+              <p class="panel-copy" style="margin-bottom:0;">245+ bronnen, getoond als beheerlaag in plaats van tegelmuur.</p>
+            </div>
+            <div class="search">Zoek een platform...</div>
+          </div>
+
+          <div class="chips">
+            <span class="chip active">Alles</span>
+            <span class="chip">Campagnes</span>
+            <span class="chip">Tracking</span>
+            <span class="chip">CRM</span>
+            <span class="chip">Commerce</span>
+            <span class="chip">Finance</span>
+            <span class="chip">Werk</span>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Laag</th>
+                <th>Wat Stevin leest</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google Ads</td>
+                <td class="layer">Campagnes</td>
+                <td>Spend, zoektermen, campagnes, conversies, veilingdruk.</td>
+                <td><span class="connected">Native</span></td>
+              </tr>
+              <tr>
+                <td>Meta Ads</td>
+                <td class="layer">Campagnes</td>
+                <td>Creatives, audiences, spend, resultaat en learning-status.</td>
+                <td><span class="connected">Native</span></td>
+              </tr>
+              <tr>
+                <td>GA4</td>
+                <td class="layer">Tracking</td>
+                <td>Events, conversies, sessies en afwijkingen in meetgedrag.</td>
+                <td><span class="connected">Native</span></td>
+              </tr>
+              <tr>
+                <td>HubSpot</td>
+                <td class="layer">CRM</td>
+                <td>Contacts, deals, pipeline-stage en opvolgingstijd.</td>
+                <td><span class="connected">Native</span></td>
+              </tr>
+              <tr>
+                <td>Shopify</td>
+                <td class="layer">Commerce</td>
+                <td>Orders, omzet, productmix, terugkerende klanten.</td>
+                <td><span class="connected">Native</span></td>
+              </tr>
+              <tr>
+                <td>Exact Online</td>
+                <td class="layer">Finance</td>
+                <td>Facturen, omzet, marge en betaalstatus als realiteitslaag.</td>
+                <td><span class="connected">Koppelbaar</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="container closing-grid">
+        <div>
+          <div class="section-kicker" style="color:var(--blue);">Ontbreekt er iets?</div>
+          <h2>Als het een API heeft, kan het meestal in de meetlat.</h2>
+          <p>
+            We beginnen met de bronnen die je beslissingen raken: media, tracking, CRM, commerce en finance.
+            De rest komt pas wanneer het iets bewijst.
+          </p>
+        </div>
+        <a class="btn btn-primary" href="#">Bespreek je stack</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
