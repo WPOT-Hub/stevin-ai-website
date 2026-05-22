@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'spotify-lanceert-ai-remixes-voor-premium-gebruikers',
+    format: 'dispatch' as const,
+    edition: '065',
+    category: 'Platform',
+    title: "Spotify biedt AI-remixes aan voor Premium-abonnees",
+    dek: "Premium-gebruikers kunnen vanaf deze zomer zelf AI-gegenereerde remixes maken van nummers van grote artiesten zoals Taylor Swift en Billie Eilish.",
+    publishedAt: '2026-05-22',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Spotify biedt AI-remixes aan voor Premium-abonnees",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-gemaakte-boeken-zonder-waarschuwing-te-koop',
     format: 'dispatch' as const,
     edition: '064',
