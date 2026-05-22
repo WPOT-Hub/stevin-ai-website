@@ -1242,7 +1242,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'google-breidt-demand-gen-uit-met-youtube-creator-tools': (
     <>
       <p className="lead-para">
-        Demand Gen-campagnes krijgen vanaf deze week extra mogelijkheden via YouTube. Creators kunnen nu rechtstreeks worden geïntegreerd in campagnes, waardoor merken hun doelgroepen op een authentieke manier bereiken. Deze samenwerkingen zijn beschikbaar voor zowel video- als display-content, aldus Google.
+        Demand Gen-campagnes krijgen vanaf deze week extra mogelijkheden via YouTube. Creators kunnen nu rechtstreeks worden ingebed in campagnes, waardoor merken hun doelgroepen op een authentieke manier bereiken. Deze samenwerkingen zijn beschikbaar voor zowel video- als display-content, aldus Google.
       </p>
       <p>
         Daarnaast introduceert Google nieuwe inventarisopties via Google Maps. Adverteerders kunnen nu producten of diensten tonen in de kaartomgeving, wat de zichtbaarheid in lokale zoekopdrachten vergroot. De tool is vooral nuttig voor bedrijven met fysieke locaties, zoals winkels of horeca.
@@ -1261,20 +1261,20 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De assistent werkt op basis van Googles eigen AI-model Gemini en biedt realtime adviezen zonder dat gebruikers zelf moeten zoeken in rapportages. Dit moet de tijd besparen die nu gaat naar handmatige analyse.
       </p>
       <p>
-        Ask Advisor is aanvankelijk alleen beschikbaar voor Engelstalige accounts, maar wordt later uitgebreid naar andere talen. De tool verschijnt eerst in een beperkte bèta-versie voor geselecteerde adverteerders.
+        Ask Advisor is aanvankelijk alleen beschikbaar voor Engelstalige accounts, maar wordt later uitgebreid naar andere talen. De tool verschijnt eerst in een beperkte beta-versie voor geselecteerde adverteerders.
       </p>
     </>
   ),
   'google-marketing-live-2026-gemini-drijft-search-advertising-en-commerce': (
     <>
       <p className="lead-para">
-        Tijdens Google Marketing Live 2026 presenteerde Google hoe de integratie van Gemini in Search, advertising en commerce een conversational en AI-gedreven ecosysteem creëert. Advertenties worden direct in gesprekken geïntegreerd, zodat gebruikers vragen kunnen stellen zonder tussenstappen. De zoekresultaten passen zich dynamisch aan op basis van contextuele gesprekken, aldus Google.
+        Tijdens Google Marketing Live 2026 presenteerde Google hoe de integratie van Gemini in Search, advertising en commerce een conversational en AI-gedreven ecosysteem oplevert. Advertenties worden direct in gesprekken ingebed, zodat gebruikers vragen kunnen stellen zonder tussenstappen. De zoekresultaten passen zich dynamisch aan op basis van contextuele gesprekken, aldus Google.
       </p>
       <p>
-        De nieuwe maatregelen maken het voor adverteerders makkelijker om campagnes te optimaliseren op conversaties in plaats van traditionele zoekopdrachten. Meetdata toont aan dat deze aanpak een hogere relevantie en uplift genereert in de customer journey. Commerce wordt ook geïntegreerd: gebruikers kunnen direct producten bestellen via gesprekken met Google Assistant of Search.
+        De nieuwe maatregelen maken het voor adverteerders makkelijker om campagnes te optimaliseren op conversaties in plaats van traditionele zoekopdrachten. Meetdata toont aan dat deze aanpak een hogere relevantie en uplift genereert in de customer journey. Commerce wordt ook ingebed: gebruikers kunnen direct producten bestellen via gesprekken met Google Assistant of Search.
       </p>
       <p>
-        Voor bureau-eigenaars en marketeers betekent dit dat campagnes moeten worden heroverwogen naar een meer conversational en contextueel model. De focus verschuift van zoekwoorden naar intentie en interactie, wat vraagt om nieuwe optimalisatiestrategieën.
+        De verschuiving raakt iedereen die op zoekverkeer leunt: van zoekwoorden naar intentie en interactie. Campagnes die nu draaien op losse keywords zullen herbouwd moeten worden rond gespreksstructuren. Wie dat te laat oppakt, ziet zijn zichtbaarheid in Search wegzakken.
       </p>
     </>
   ),
@@ -1310,7 +1310,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'gemini-spark-proactief-zoeken-intent-verdwijnt': (
     <>
       <p className="lead-para">
-        Gemini Spark is een 24/7 AI-agent die op de achtergrond draait, ook wanneer je telefoon op slot staat. Hij monitort appartementenmarkt, productbeschikbaarheid, prijswijzigingen en nieuwsontwikkelingen. Wanneer iets relevant verandert, handelt hij of waarschuwt hij. De gebruiker hoeft niet meer te zoeken.
+        Gemini Spark is een AI-agent die permanent op de achtergrond draait, ook wanneer je telefoon op slot staat. Hij monitort de appartementenmarkt, productbeschikbaarheid, prijswijzigingen en nieuwsontwikkelingen. Wanneer iets relevant verandert, handelt hij of waarschuwt hij. De gebruiker hoeft niet meer te zoeken.
       </p>
       <p>
         Voor marketing-teams is dit een fundamentele verstoring van hoe intent werkt. Het hele model van intent-based advertising rust op het moment dat een gebruiker actief zoekt. Dat moment is het signaal: iemand wil iets. Targeting, biedstrategie en advertentietekst zijn gebouwd rondom dat signaal.
