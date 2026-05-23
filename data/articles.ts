@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'vodafone-batterijgarantie-drie-jaar-accuvervanging',
+    format: 'dispatch' as const,
+    edition: '069',
+    category: 'Platform',
+    title: "Vodafone biedt drie jaar garantie op accucapaciteit smartphones",
+    dek: "Vodafone breidt de garantie op smartphoneaccu’s uit naar drie jaar, met gratis vervanging bij capaciteit onder de 80 procent.",
+    publishedAt: '2026-05-23',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Vodafone biedt drie jaar garantie op accucapaciteit smartphones",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'microsoft-verbergt-copilot-knop-in-office-na-kritiek',
     format: 'dispatch' as const,
     edition: '068',
