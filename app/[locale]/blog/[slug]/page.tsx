@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'microsoft-verbergt-copilot-knop-in-office-na-kritiek': (
+    <>
+      <p className="lead-para">
+        Microsoft maakt de Copilot-knop in Office-applicaties zoals Word, Excel en PowerPoint vanaf volgende week minder opdringerig. Gebruikers kunnen de knop voortaan zelf verplaatsen naar de ribbon-balk bovenin het scherm, waar andere documentopties staan. De knop verdwijnt niet volledig en Copilot blijft beschikbaar, maar is minder constant in beeld. Microsoft stelt dat deze aanpassing is gemaakt naar aanleiding van feedback van gebruikers die de aanwezigheid van de knop als storend ervoeren.
+      </p>
+      <p>
+        De verandering komt na eerdere kritiek op de agressieve implementatie van AI-functies in Windows en Office. Eerder dit jaar werden al namen als 'Copilot' uit applicaties als Kladblok verwijderd, terwijl de onderliggende AI-functionaliteit bleef bestaan. Gebruikersreacties op forums zijn gemengd: sommigen vinden het een stap in de goede richting, anderen zien het als een cosmetische aanpassing zonder echte keuzevrijheid.
+      </p>
+      <p>
+        Het is niet mogelijk om Copilot volledig uit te schakelen of te verwijderen uit Microsoft 365. De functie blijft actief beschikbaar voor gebruikers die er wel gebruik van willen maken. Microsoft benadrukt dat deze wijziging vooral gaat om het bieden van meer controle over hoe Copilot zichtbaar is in het interface.
+      </p>
+    </>
+  ),
   'mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector': (
     <>
       <p className="lead-para">
@@ -2000,6 +2013,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'microsoft-verbergt-copilot-knop-in-office-na-kritiek':
+    "Voor bedrijven die afhankelijk zijn van Microsoft-software kan deze aanpassing betekenen dat medewerkers minder worden afgeleid door AI-prompts tijdens hun werkzaamheden. Het toont aan dat grote techbedrijven soms snel schakelen bij gebruikersonvrede, ook al blijft de onderliggende technologie behouden. Voor marketeers en bureaus die tools zoals Copilot integreren in workflows, is het verstandig om rekening te houden met dergelijke interface-wijzigingen die invloed kunnen hebben op adoptie en gebruiksvriendelijkheid.",
   'mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector':
     "Deze overname laat zien hoe Europese spelers proberen aan te haken bij de mondiale AI-race, vooral in sectoren waar Europa traditioneel sterk staat zoals halfgeleiders en automotive. Het benadrukt ook de groeiende rol van niche-AI-bedrijven die zich richten op specifieke industriële uitdagingen. Voor Nederlandse en Belgische bedrijven in deze sectoren kan dit leiden tot nieuwe samenwerkingsmogelijkheden of snellere toegang tot geavanceerde simulatietechnieken.",
   'mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies':
