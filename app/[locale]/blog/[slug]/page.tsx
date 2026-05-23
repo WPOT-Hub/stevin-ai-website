@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'vodafone-batterijgarantie-drie-jaar-accuvervanging': (
+    <>
+      <p className="lead-para">
+        Klanten van Vodafone kunnen nu voor nieuwe smartphones en toestellen gekocht tot september 2022 een gratis accuvervanging aanvragen als de capaciteit onder de 80 procent zakt. Deze garantie geldt tot drie jaar na aankoop, mits het toestel bij Vodafone of Ziggo is gekocht en het aankoopbewijs kan worden overlegd. Refurbished toestellen vallen buiten deze regeling, aldus Vodafone zelf.
+      </p>
+      <p>
+        De actie gaat verder dan de wettelijke Europese garantie van twee jaar op producten. Volgens de Autoriteit Consument &amp; Markt is dit een aanvullende 'bijkoopgarantie', die consumenten extra zekerheid biedt. De EU verplicht fabrikanten sinds kort om te garanderen dat een accu na 800 laadcycli nog minimaal 80 procent capaciteit heeft. Vodafone breidt dit uit door vervanging aan te bieden ongeacht het aantal laadcycli binnen drie jaar.
+      </p>
+      <p>
+        De provider voert vooraf een controle uit op zichtbare schade, zoals val- of stootschade. Als er tijdens de reparatie blijkt dat verdere schade aanwezig is, betaalt de klant wel onderzoekskosten van €36,30. Vodafone maakt foto’s van het toestel om discussies te voorkomen en geeft klanten drie opties bij onvoorziene kosten: door laten repareren, weigeren of afstand doen van het toestel.
+      </p>
+    </>
+  ),
   'microsoft-verbergt-copilot-knop-in-office-na-kritiek': (
     <>
       <p className="lead-para">
@@ -2013,6 +2026,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'vodafone-batterijgarantie-drie-jaar-accuvervanging':
+    "Voor bedrijven die apparatuur leveren of repareren is dit een signaal dat consumenten steeds vaker langdurige zekerheid eisen over productprestaties. Een duidelijke communicatie over garantievoorwaarden en eventuele extra kosten voorkomt onduidelijkheid en klantontevredenheid. Bedrijven doen er goed aan om dergelijke regelingen proactief te communiceren, zodat ze niet als marketingstunt maar als service worden gezien.",
   'microsoft-verbergt-copilot-knop-in-office-na-kritiek':
     "Voor bedrijven die afhankelijk zijn van Microsoft-software kan deze aanpassing betekenen dat medewerkers minder worden afgeleid door AI-prompts tijdens hun werkzaamheden. Het toont aan dat grote techbedrijven soms snel schakelen bij gebruikersonvrede, ook al blijft de onderliggende technologie behouden. Voor marketeers en bureaus die tools zoals Copilot integreren in workflows, is het verstandig om rekening te houden met dergelijke interface-wijzigingen die invloed kunnen hebben op adoptie en gebruiksvriendelijkheid.",
   'mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector':
