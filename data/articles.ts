@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'microsoft-verbergt-copilot-knop-in-office-na-kritiek',
+    format: 'dispatch' as const,
+    edition: '068',
+    category: 'Platform',
+    title: "Microsoft verbergt Copilot-knop in Office na kritiek op opdringerigheid",
+    dek: "Gebruikers van Microsoft 365 krijgen vanaf volgende week de optie om de zwevende Copilot-knop uit Word, Excel en PowerPoint te verplaatsen naar de ribbon-balk, waardoor deze minder zichtbaar wordt.",
+    publishedAt: '2026-05-23',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Microsoft verbergt Copilot-knop in Office na kritiek op opdringerigheid",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector',
     format: 'dispatch' as const,
     edition: '067',
