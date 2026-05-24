@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'organische-traffic-alleen-als-business-impact',
+    format: 'dispatch' as const,
+    edition: '071',
+    category: 'Platform',
+    title: "Organische bezoekers tellen alleen als ze impact hebben",
+    dek: "Slechts een deel van het organisch verkeer levert daadwerkelijk waarde op voor bedrijven, blijkt uit nieuwe inzichten.",
+    publishedAt: '2026-05-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Organische bezoekers tellen alleen als ze impact hebben",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'openai-breidt-chatgpt-ads-manager-beta-uit-met-budget-en-locatie-opties',
     format: 'dispatch' as const,
     edition: '070',
