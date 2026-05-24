@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'amerika-budget-9-miljard-voor-ai-spionage': (
+    <>
+      <p className="lead-para">
+        De Amerikaanse overheid heeft 9 miljard dollar vrijgemaakt voor de adoptie van kunstmatige intelligentie door inlichtingendiensten als de CIA en NSA. Dit bedrag moet worden gebruikt voor geavanceerde AI-chips en bijbehorende infrastructuur, zoals gespecialiseerde datacenters met hoge energievraag en vloeistofkoeling.
+      </p>
+      <p>
+        De hardware die wordt ingezet, bestaat onder meer uit Nvidia’s Grace Blackwell-superchips. De vraag naar deze chips neemt toe door zowel commerciële als overheidsprojecten, wat de leveringszekerheid onder druk zet. Nvidia’s CEO Jensen Huang heeft eerder al gepleit voor innovatie in de halfgeleiderindustrie om de concurrentiepositie van de VS te versterken.
+      </p>
+      <p>
+        Deze investering kan ook gevolgen hebben voor andere sectoren die afhankelijk zijn van GPU-computing, zoals cryptocurrency en gedecentraliseerde netwerken. Sommige partijen overwegen alternatieve oplossingen, waaronder blockchain-gebaseerde marktplaatsen waar rekenkracht wordt verhandeld.
+      </p>
+    </>
+  ),
   'ai-washing-bedrijven-rebranden-zich-als-tech': (
     <>
       <p className="lead-para">
@@ -2091,6 +2104,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'amerika-budget-9-miljard-voor-ai-spionage':
+    "Voor bedrijven die afhankelijk zijn van high-performance computing of AI-infrastructuur is deze ontwikkeling een waarschuwingssignaal. De vraag naar schaarse hardware neemt toe, wat kan leiden tot hogere kosten of langere levertijden. Het is verstandig om nu al na te denken over alternatieven of samenwerkingen om toekomstige knelpunten te voorkomen. Daarnaast benadrukt dit hoe technologiebeleid op nationaal niveau directe impact kan hebben op private sectoren.",
   'ai-washing-bedrijven-rebranden-zich-als-tech':
     "De trend laat zien hoe snel nieuwe technologieën kunnen verwateren tot een marketinglabel. Voor ondernemers betekent dit dat consumenten en klanten steeds kritischer worden op claims over innovatie. Het risico bestaat dat het vertrouwen in échte AI-toepassingen afneemt als elke verbetering direct wordt bestempeld als kunstmatige intelligentie. Transparantie in plaats van hype wordt daarmee een grotere differentiator.",
   'openai-race-naar-agi-onthuld':
