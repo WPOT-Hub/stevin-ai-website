@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-herdefinieert-creativiteit-bij-bureaus',
+    format: 'dispatch' as const,
+    edition: '076',
+    category: 'Markt',
+    title: "AI herdefinieert creativiteit bij bureaus: minder repetitief werk, meer focus op strategie",
+    dek: "Bureaus die AI slim inzetten, maken hun creatieve processen efficiënter en kunnen zich richten op storytelling en merkcommunities.",
+    publishedAt: '2026-05-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "AI herdefinieert creativiteit bij bureaus: minder repetitief werk, meer focus op strategie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'amerika-budget-9-miljard-voor-ai-spionage',
     format: 'dispatch' as const,
     edition: '075',
