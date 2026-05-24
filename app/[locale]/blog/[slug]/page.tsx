@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-washing-bedrijven-rebranden-zich-als-tech': (
+    <>
+      <p className="lead-para">
+        PR-bureaus in Nederland en België melden een golf van verzoeken om bedrijven neer te zetten als AI-specialisten, zelfs als hun producten of diensten geen kunstmatige intelligentie bevatten. Communicatieadviseurs noemen het ‘yoga-niveau’ stretches om het label AI te plakken op bestaande automatisering of verouderde technologie.
+      </p>
+      <p>
+        Voorbeelden variëren van een schoenenmerk dat plotseling AI-graphicschips aanschaft tot een fitnessstudio die beweert AI-gestuurde yogamatten te verkopen. In de praktijk gaat het vaak om verbeterde automatisering zonder echte AI-kernfuncties zoals machine learning of neurale netwerken.
+      </p>
+      <p>
+        Journalisten en PR-medewerkers merken op dat bedrijven massaal de term ‘AI-powered’ of ‘AI-driven’ gebruiken in marketingteksten en persberichten, terwijl de technologie zelf beperkt is tot basisautomatisering. Een voorbeeld is een vastgoedbedrijf dat een handheld scanner als ‘AI-vloerplanscanner’ presenteert, omdat er enkele algoritmen in zitten die het proces versnellen.
+      </p>
+    </>
+  ),
   'openai-race-naar-agi-onthuld': (
     <>
       <p className="lead-para">
@@ -2078,6 +2091,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-washing-bedrijven-rebranden-zich-als-tech':
+    "De trend laat zien hoe snel nieuwe technologieën kunnen verwateren tot een marketinglabel. Voor ondernemers betekent dit dat consumenten en klanten steeds kritischer worden op claims over innovatie. Het risico bestaat dat het vertrouwen in échte AI-toepassingen afneemt als elke verbetering direct wordt bestempeld als kunstmatige intelligentie. Transparantie in plaats van hype wordt daarmee een grotere differentiator.",
   'openai-race-naar-agi-onthuld':
     "De onthullingen over OpenAI laten zien hoe technologiebedrijven soms doorschieten in hun ambities, waarbij ethiek en transparantie ondergeschikt raken aan groei en dominantie. Voor ondernemers is dit een waarschuwing: zelfs organisaties met ogenschijnlijk nobele doelen kunnen veranderen in gesloten systemen waar medewerkers zich gevangen voelen. Het benadrukt het belang van duidelijke kaders en checks-and-balances, ook bij innovatieve projecten.",
   'buitenlandse-merken-in-afrika':
