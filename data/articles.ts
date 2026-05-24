@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'buitenlandse-merken-in-afrika',
+    format: 'dispatch' as const,
+    edition: '072',
+    category: 'Distributie',
+    title: "Buitenlandse merken groeien sneller in Afrika via lokale partners en directe verkoop",
+    dek: "Marktplaatsen bieden de makkelijkste toegang tot Afrikaanse markten, maar directe verkoop en samenwerking met lokale retailers zorgen voor langdurige groei.",
+    publishedAt: '2026-05-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "Buitenlandse merken groeien sneller in Afrika via lokale partners en directe verkoop",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'organische-traffic-alleen-als-business-impact',
     format: 'dispatch' as const,
     edition: '071',
