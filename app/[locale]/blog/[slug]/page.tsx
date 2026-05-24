@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-herdefinieert-creativiteit-bij-bureaus': (
+    <>
+      <p className="lead-para">
+        AI vervangt geen creativiteit, maar maakt creatieve processen efficiënter door repetitieve taken over te nemen. Dat stelt James Lawton-Hill van APS Group, die benadrukt dat de echte dreiging ligt in het niet benutten van de mogelijkheden die AI biedt. Bureaus die AI integreren in hun workflows, kunnen sneller ideeën genereren en testen zonder de kwaliteit van het eindresultaat te verliezen. Generatieve tools zoals Adobe Firefly en Midjourney worden steeds vaker gebruikt voor conceptontwikkeling en prototyping, aldus Lawton-Hill.
+      </p>
+      <p>
+        De grootste winst zit in de herverdeling van taken: creatieven krijgen meer ruimte voor strategisch denken, storytelling en het bouwen van merkgemeenschappen. Operationele taken zoals versiebeheer en assetmanagement worden steeds vaker overgenomen door zogeheten agentic AI-systemen. Dit leidt tot snellere doorlooptijden, consistente output en meer aandacht voor menselijk oordeel in de vroege fasen van een project.
+      </p>
+      <p>
+        De verschuiving naar AI-gedreven creativiteit vraagt om een nieuwe focus bij bureaus. Succesvolle campagnes draaien niet langer alleen om bereik, maar om resonantie binnen doelgroepen. Merken die communities opbouwen rondom participatie en gedeelde waarden, profiteren het meest van deze trend. AI kan helpen bij snellere contentproductie en personalisatie, maar de emotionele verbinding blijft mensenwerk.
+      </p>
+    </>
+  ),
   'amerika-budget-9-miljard-voor-ai-spionage': (
     <>
       <p className="lead-para">
@@ -2104,6 +2117,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-herdefinieert-creativiteit-bij-bureaus':
+    "Voor bureaus betekent deze ontwikkeling dat investeren in AI-competenties geen keuze meer is, maar een noodzaak om relevant te blijven. Het gaat niet om het vervangen van creatievelingen, maar om het versterken van hun rol met technologie die administratieve lasten vermindert. Tegelijkertijd moeten bureaus kritisch blijven op waar AI wel en niet geschikt is: authentieke merkervaringen blijven afhankelijk van menselijke craftsmanship en strategische visie.",
   'amerika-budget-9-miljard-voor-ai-spionage':
     "Voor bedrijven die afhankelijk zijn van high-performance computing of AI-infrastructuur is deze ontwikkeling een waarschuwingssignaal. De vraag naar schaarse hardware neemt toe, wat kan leiden tot hogere kosten of langere levertijden. Het is verstandig om nu al na te denken over alternatieven of samenwerkingen om toekomstige knelpunten te voorkomen. Daarnaast benadrukt dit hoe technologiebeleid op nationaal niveau directe impact kan hebben op private sectoren.",
   'ai-washing-bedrijven-rebranden-zich-als-tech':
