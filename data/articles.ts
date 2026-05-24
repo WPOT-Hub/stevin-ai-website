@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-in-de-creative-industrie',
+    format: 'dispatch' as const,
+    edition: '077',
+    category: 'Markt',
+    title: "AI neemt creatie over in reclame-industrie van 422 miljard dollar",
+    dek: "De inzet van AI in de reclamebranche verdubbelt jaarlijks, waardoor campagnes sneller en goedkoper worden gemaakt.",
+    publishedAt: '2026-05-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "AI neemt creatie over in reclame-industrie van 422 miljard dollar",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-herdefinieert-creativiteit-bij-bureaus',
     format: 'dispatch' as const,
     edition: '076',
