@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'buitenlandse-merken-in-afrika': (
+    <>
+      <p className="lead-para">
+        Uit onderzoek blijkt dat buitenlandse merken die via Afrikaanse marktplaatsen verkopen vaak snel schaalbaar zijn, maar moeite hebben om klantloyaliteit op te bouwen. Directe verkoop via lokale webshops of fysieke winkels levert betere marges en een duurzamere positie op, aldus de bron.
+      </p>
+      <p>
+        Lokale retailpartnerschappen blijken cruciaal voor merken die niet alleen korte-termijnverkoop willen realiseren. Deze samenwerkingen helpen om culturele nuances, logistieke uitdagingen en betaalgedrag beter te begrijpen. Zonder deze aanpak lopen buitenlandse merken het risico om afhankelijk te blijven van wisselende algoritmes van marktplaatsen.
+      </p>
+      <p>
+        Investeren in eigen distributiekanalen vergt meer inspanning, maar biedt controle over merkbeleving en klantdata. Merken die dit doen, kunnen hun aanbod beter afstemmen op lokale behoeften en voorkeuren.
+      </p>
+    </>
+  ),
   'organische-traffic-alleen-als-business-impact': (
     <>
       <p className="lead-para">
@@ -2052,6 +2065,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'buitenlandse-merken-in-afrika':
+    "Voor bedrijven die buiten Europa willen groeien, is Afrika een kansrijke maar complexe markt. Succes hangt af van het balanceren tussen gemak (marktplaatsen) en investeringen in langetermijnrelaties. Wie kiest voor directe verkoop of lokale partnerschappen, moet bereid zijn om tijd te steken in cultuur, logistiek en compliance.",
   'organische-traffic-alleen-als-business-impact':
     "Voor bureau-eigenaars en in-house teams betekent dit dat ze hun SEO-strategie moeten verschuiven van kwantiteit naar kwaliteit. Het gaat niet om het aantal bezoekers, maar om de juiste bezoekers. Focus op pagina’s die direct bijdragen aan de bedrijfsdoelen en vermijd rapportages die alleen maar aantallen laten zien zonder context. Dat maakt het makkelijker om prioriteiten te stellen en middelen efficiënter in te zetten.",
   'openai-breidt-chatgpt-ads-manager-beta-uit-met-budget-en-locatie-opties':
