@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'organische-traffic-alleen-als-business-impact': (
+    <>
+      <p className="lead-para">
+        Uit onderzoek blijkt dat niet elk organisch bezoek even relevant is voor bedrijven. Veel verkeer komt via informatieve zoekopdrachten die zelden leiden tot conversie of omzet. Dat betekent dat standaard rapportages over 'organische bezoekers' vaak misleidend zijn.
+      </p>
+      <p>
+        Bedrijven doen er goed aan om hun SEO-inspanningen te richten op pagina’s met hoge intentie, zoals productpagina’s of prijsvergelijkingspagina’s. Deze pagina’s trekken bezoekers aan die dichter bij een aankoop staan en daarom meer kans maken op conversie. Meetdata laten zien dat deze benadering leidt tot een duidelijker beeld van de echte business impact.
+      </p>
+      <p>
+        Het is ook verstandig om organisch verkeer te combineren met andere meetbare acties, zoals zoekwoordadvertenties of e-mailcampagnes. Zo ontstaat een completer beeld van de customer journey en waar de meeste waarde ligt.
+      </p>
+    </>
+  ),
   'openai-breidt-chatgpt-ads-manager-beta-uit-met-budget-en-locatie-opties': (
     <>
       <p className="lead-para">
@@ -2039,6 +2052,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'organische-traffic-alleen-als-business-impact':
+    "Voor bureau-eigenaars en in-house teams betekent dit dat ze hun SEO-strategie moeten verschuiven van kwantiteit naar kwaliteit. Het gaat niet om het aantal bezoekers, maar om de juiste bezoekers. Focus op pagina’s die direct bijdragen aan de bedrijfsdoelen en vermijd rapportages die alleen maar aantallen laten zien zonder context. Dat maakt het makkelijker om prioriteiten te stellen en middelen efficiënter in te zetten.",
   'openai-breidt-chatgpt-ads-manager-beta-uit-met-budget-en-locatie-opties':
     "Voor bureaus en merken die experimenteren met AI-gestuurde advertentieplatformen is dit een logische volgende stap. De toevoegingen sluiten aan bij wat adverteerders al gewend zijn van traditionele advertentieplatformen, zoals Google Ads of Meta. Het is verstandig om deze nieuwe mogelijkheden direct te testen in kleine campagnes om de impact op conversies en kosten te meten.",
   'vodafone-batterijgarantie-drie-jaar-accuvervanging':
