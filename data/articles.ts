@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'openai-breidt-chatgpt-ads-manager-beta-uit-met-budget-en-locatie-opties',
+    format: 'dispatch' as const,
+    edition: '070',
+    category: 'Platform',
+    title: "OpenAI breidt ChatGPT Ads Manager uit met budget- en locatiecontroles",
+    dek: "Adverteerders krijgen meer handvatten voor campagnemanagement in de ChatGPT Ads Manager Beta, waaronder betere budgetregeling en geografische targeting.",
+    publishedAt: '2026-05-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "OpenAI breidt ChatGPT Ads Manager uit met budget- en locatiecontroles",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'vodafone-batterijgarantie-drie-jaar-accuvervanging',
     format: 'dispatch' as const,
     edition: '069',
