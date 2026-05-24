@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'openai-race-naar-agi-onthuld',
+    format: 'dispatch' as const,
+    edition: '073',
+    category: 'Tech',
+    title: "OpenAI’s jacht op superintelligentie: paranoia en religieuze overgave",
+    dek: "Een voormalig OpenAI-medewerker beschrijft hoe de organisatie veranderde van een transparant non-profitproject tot een gesloten, competitieve machine gericht op het creëren van ‘machinegod’ AGI.",
+    publishedAt: '2026-05-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "OpenAI’s jacht op superintelligentie: paranoia en religieuze overgave",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'buitenlandse-merken-in-afrika',
     format: 'dispatch' as const,
     edition: '072',
