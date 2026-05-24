@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'amerika-budget-9-miljard-voor-ai-spionage',
+    format: 'dispatch' as const,
+    edition: '075',
+    category: 'Beleid',
+    title: "VS trekt 9 miljard uit voor AI bij inlichtingendiensten",
+    dek: "De Amerikaanse overheid stelt 9 miljard dollar beschikbaar voor de CIA en NSA om AI-technologie in te zetten.",
+    publishedAt: '2026-05-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "VS trekt 9 miljard uit voor AI bij inlichtingendiensten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-washing-bedrijven-rebranden-zich-als-tech',
     format: 'dispatch' as const,
     edition: '074',
