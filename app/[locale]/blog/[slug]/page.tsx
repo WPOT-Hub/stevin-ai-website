@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-breidt-chatgpt-ads-manager-beta-uit-met-budget-en-locatie-opties': (
+    <>
+      <p className="lead-para">
+        De ChatGPT Ads Manager Beta van OpenAI introduceert nieuwe functies voor campagnesturing. Advertenties kunnen nu preciezer worden afgestemd op specifieke regio’s, aldus het bedrijf.
+      </p>
+      <p>
+        Daarnaast krijgen adverteerders meer controle over de pacing van hun budgetten. Dit moet helpen om uitgaven gelijkmatiger te verdelen over de looptijd van een campagne.
+      </p>
+      <p>
+        Ook de analyse van advertentieprestaties wordt uitgebreid: er komen nieuwe meetdata beschikbaar om inzicht te krijgen in hoe gebruikers reageren op advertenties binnen ChatGPT.
+      </p>
+    </>
+  ),
   'vodafone-batterijgarantie-drie-jaar-accuvervanging': (
     <>
       <p className="lead-para">
@@ -2026,6 +2039,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-breidt-chatgpt-ads-manager-beta-uit-met-budget-en-locatie-opties':
+    "Voor bureaus en merken die experimenteren met AI-gestuurde advertentieplatformen is dit een logische volgende stap. De toevoegingen sluiten aan bij wat adverteerders al gewend zijn van traditionele advertentieplatformen, zoals Google Ads of Meta. Het is verstandig om deze nieuwe mogelijkheden direct te testen in kleine campagnes om de impact op conversies en kosten te meten.",
   'vodafone-batterijgarantie-drie-jaar-accuvervanging':
     "Voor bedrijven die apparatuur leveren of repareren is dit een signaal dat consumenten steeds vaker langdurige zekerheid eisen over productprestaties. Een duidelijke communicatie over garantievoorwaarden en eventuele extra kosten voorkomt onduidelijkheid en klantontevredenheid. Bedrijven doen er goed aan om dergelijke regelingen proactief te communiceren, zodat ze niet als marketingstunt maar als service worden gezien.",
   'microsoft-verbergt-copilot-knop-in-office-na-kritiek':
