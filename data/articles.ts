@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-washing-bedrijven-rebranden-zich-als-tech',
+    format: 'dispatch' as const,
+    edition: '074',
+    category: 'Markt',
+    title: "Bedrijven smeren ‘AI’ over elke dienst, ook als het niets met kunstmatige intelligentie te maken heeft",
+    dek: "Drie op de vijf persberichten over AI blijkt gewoon automatisering of marketinghype te zijn, blijkt uit gesprekken met PR-bureaus.",
+    publishedAt: '2026-05-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Bedrijven smeren ‘AI’ over elke dienst, ook als het niets met kunstmatige intelligentie te maken heeft",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'openai-race-naar-agi-onthuld',
     format: 'dispatch' as const,
     edition: '073',
