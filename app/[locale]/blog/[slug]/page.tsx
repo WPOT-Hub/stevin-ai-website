@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-race-naar-agi-onthuld': (
+    <>
+      <p className="lead-para">
+        Journalist Karen Hao kreeg in 2019 zeldzame toegang tot OpenAI en ontdekte een bedrijfscultuur die draaide om geheimhouding en een bijna religieuze obsessie met artificiële algemene intelligentie (AGI). Onderzoekers werden afgeschermd van bepaalde afdelingen en waarschuwden elkaar via Slack om niet buiten voorgeschreven gesprekken te spreken. De sfeer was competitief en paranoïde, aldus Hao in haar boek *Empire of AI*.
+      </p>
+      <p>
+        De transformatie van OpenAI begon toen Microsoft in 2019 voor één miljard dollar investeerde. Wat begon als een idealistisch non-profitorganisatie gericht op het ‘redden van de mensheid’ met transparante AI-ontwikkeling, veranderde onder leiding van Sam Altman in een race naar technologische suprematie. Medewerkers spraken over een ‘machinegod’ die zowel utopia als ondergang kon betekenen, met AGI als doel boven alle andere prioriteiten.
+      </p>
+      <p>
+        Hao beschrijft hoe senior wetenschappers tijdens een retreat in Sierra Nevada badjasjes droegen en symbolisch een effigie verbrandden die AGI vertegenwoordigde. De cultuur binnen OpenAI werd gekenmerkt door angst voor lekken en een focus op snelheid boven ethiek of openheid. Deze dynamiek leidde uiteindelijk tot publieke conflicten, zoals de rechtszaak tussen Elon Musk en Altman over de koerswijziging van het bedrijf.
+      </p>
+    </>
+  ),
   'buitenlandse-merken-in-afrika': (
     <>
       <p className="lead-para">
@@ -2065,6 +2078,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-race-naar-agi-onthuld':
+    "De onthullingen over OpenAI laten zien hoe technologiebedrijven soms doorschieten in hun ambities, waarbij ethiek en transparantie ondergeschikt raken aan groei en dominantie. Voor ondernemers is dit een waarschuwing: zelfs organisaties met ogenschijnlijk nobele doelen kunnen veranderen in gesloten systemen waar medewerkers zich gevangen voelen. Het benadrukt het belang van duidelijke kaders en checks-and-balances, ook bij innovatieve projecten.",
   'buitenlandse-merken-in-afrika':
     "Voor bedrijven die buiten Europa willen groeien, is Afrika een kansrijke maar complexe markt. Succes hangt af van het balanceren tussen gemak (marktplaatsen) en investeringen in langetermijnrelaties. Wie kiest voor directe verkoop of lokale partnerschappen, moet bereid zijn om tijd te steken in cultuur, logistiek en compliance.",
   'organische-traffic-alleen-als-business-impact':
