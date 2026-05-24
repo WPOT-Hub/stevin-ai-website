@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-in-de-creative-industrie': (
+    <>
+      <p className="lead-para">
+        Bureaus en merken passen AI nu op grote schaal toe voor het genereren van advertentieconcepten, beelden en teksten. In de Verenigde Staten loopt de groei op tot meer dan 100% per jaar, aldus een analyse van Ad Age.
+      </p>
+      <p>
+        De technologie wordt vooral gebruikt voor low-budget campagnes en testversies van concepten. Grote bureaus experimenteren echter ook met AI voor high-end producties, zoals animaties en video’s. De kostenbesparing is significant: waar traditionele productie weken kost, levert AI binnen uren resultaat.
+      </p>
+      <p>
+        Critici wijzen op kwaliteitsverlies en het risico dat campagnes minder origineel worden. Toch kiezen steeds meer merken voor AI om snelheid en schaalbaarheid te combineren met lagere kosten.
+      </p>
+    </>
+  ),
   'ai-herdefinieert-creativiteit-bij-bureaus': (
     <>
       <p className="lead-para">
@@ -2117,6 +2130,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-in-de-creative-industrie':
+    "Voor Nederlandse en Belgische bureaus is dit een wake-upcall. De druk om mee te gaan in de AI-trend neemt toe, maar de balans tussen efficiëntie en creativiteit blijft lastig. Wie te snel overschakelt op AI-gedreven campagnes, loopt het risico dat klanten merken als ‘standaard’ of ‘onpersoonlijk’ ervaren. Een gefaseerde aanpak, waarbij AI wordt ingezet als ondersteunend gereedschap in plaats van vervanging, lijkt de meest duurzame route.",
   'ai-herdefinieert-creativiteit-bij-bureaus':
     "Voor bureaus betekent deze ontwikkeling dat investeren in AI-competenties geen keuze meer is, maar een noodzaak om relevant te blijven. Het gaat niet om het vervangen van creatievelingen, maar om het versterken van hun rol met technologie die administratieve lasten vermindert. Tegelijkertijd moeten bureaus kritisch blijven op waar AI wel en niet geschikt is: authentieke merkervaringen blijven afhankelijk van menselijke craftsmanship en strategische visie.",
   'amerika-budget-9-miljard-voor-ai-spionage':
