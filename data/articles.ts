@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'seo-changelogs-ondermijnd-door-onzichtbare-updates',
+    format: 'dispatch' as const,
+    edition: '079',
+    category: 'Platform',
+    title: "Onzichtbare website-updates ondermijnen SEO-prestaties: changelogs als oplossing",
+    dek: "Onduidelijke of onbekende aanpassingen aan grote websites leiden tot dalende zoekresultaten en omzetverlies, blijkt uit een analyse van enterprise SEO-teams.",
+    publishedAt: '2026-05-27',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Onzichtbare website-updates ondermijnen SEO-prestaties: changelogs als oplossing",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'openai-brengt-conversie-gerichte-ads-voor-chatgpt',
     format: 'dispatch' as const,
     edition: '078',
