@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'magnetic-networking-evolutie-personal-branding': (
+    <>
+      <p className="lead-para">
+        Het traditionele netwerken met visitekaartjes en gladde pitches maakt plaats voor een benadering waarbij professionals hun expertise en authenticiteit centraal stellen. Magnetic Networking focust op het creëren van aantrekkingskracht door relevante kennis te delen, aldus experts.
+      </p>
+      <p>
+        Deze aanpak vraagt om een actieve mindset: niet wachten tot anderen contact zoeken, maar zelf initiatief tonen door waardevolle content of oplossingen aan te bieden. Het gaat niet om kwantiteit, maar om de kwaliteit van de interacties die ontstaan.
+      </p>
+      <p>
+        Voor bedrijven betekent dit dat medewerkers niet alleen hun eigen netwerk moeten uitbreiden, maar ook als ambassadeur van de organisatie fungeren. Dat vraagt om training en ruimte voor persoonlijke groei binnen de bedrijfscultuur.
+      </p>
+    </>
+  ),
   'seo-changelogs-ondergewaardeerde-spil-in-enterprise-governance': (
     <>
       <p className="lead-para">
@@ -2172,6 +2185,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'magnetic-networking-evolutie-personal-branding':
+    "Voor ondernemers en bureau-eigenaars is Magnetic Networking een reminder dat zakelijke relaties vaak beginnen met vertrouwen. In een tijd waarin algoritmes en automatisering domineren, blijkt persoonlijke betrokkenheid nog steeds doorslaggevend. Het vraagt wel om een cultuur waarin medewerkers zich veilig voelen om hun stem te laten horen, zonder angst voor mislukking.",
   'seo-changelogs-ondergewaardeerde-spil-in-enterprise-governance':
     "Voor bedrijven met complexe websites is het bijhouden van een changelog geen luxe, maar noodzaak. Het dwingt teams tot discipline in versiebeheer en zorgt ervoor dat SEO niet langer als een losstaand proces wordt gezien, maar integraal onderdeel wordt van elke technische update. Bureaus kunnen hun klanten hiermee helpen door standaard changelogs op te nemen in projectdocumentatie en opleidingen.",
   'seo-changelogs-ondermijnd-door-onzichtbare-updates':
