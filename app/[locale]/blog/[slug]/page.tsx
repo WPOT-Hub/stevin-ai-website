@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-brengt-conversie-gerichte-ads-voor-chatgpt': (
+    <>
+      <p className="lead-para">
+        OpenAI werkt aan een advertentieplatform voor ChatGPT dat bedrijven in staat stelt om campagnes te richten op concrete conversies, zoals online verkopen of leadgeneratie. De toolset omvat trackingfuncties om het succes van campagnes direct te meten en te optimaliseren.
+      </p>
+      <p>
+        Het nieuwe systeem biedt ook een pay-for-results model, waarbij adverteerders alleen betalen voor daadwerkelijk behaalde acties. Dit sluit aan bij de groeiende vraag naar transparantere en meetbare reclame-investeringen.
+      </p>
+      <p>
+        De integratie van deze advertenties zal plaatsvinden binnen de ChatGPT-interface, wat betekent dat gebruikers tijdens gesprekken met het model ook commerciële boodschappen kunnen tegenkomen.
+      </p>
+    </>
+  ),
   'ai-in-de-creative-industrie': (
     <>
       <p className="lead-para">
@@ -2130,6 +2143,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-brengt-conversie-gerichte-ads-voor-chatgpt':
+    "Voor bedrijven die al gebruikmaken van AI-gestuurde klantinteractie biedt dit nieuwe model kansen om conversies directer te beïnvloeden. Het vereist echter wel een duidelijke strategie om gebruikerservaring en commerciële intentie in balans te houden. Daarnaast kan de komst van pay-for-results pricing druk zetten op traditionele betaalmodellen in digitale marketing.",
   'ai-in-de-creative-industrie':
     "Voor Nederlandse en Belgische bureaus is dit een wake-upcall. De druk om mee te gaan in de AI-trend neemt toe, maar de balans tussen efficiëntie en creativiteit blijft lastig. Wie te snel overschakelt op AI-gedreven campagnes, loopt het risico dat klanten merken als ‘standaard’ of ‘onpersoonlijk’ ervaren. Een gefaseerde aanpak, waarbij AI wordt ingezet als ondersteunend gereedschap in plaats van vervanging, lijkt de meest duurzame route.",
   'ai-herdefinieert-creativiteit-bij-bureaus':
