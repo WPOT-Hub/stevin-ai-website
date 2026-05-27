@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'magnetic-networking-evolutie-personal-branding',
+    format: 'dispatch' as const,
+    edition: '081',
+    category: 'Cultuur',
+    title: "Magnetic Networking: nieuwe kijk op zakelijk netwerken",
+    dek: "Netwerken draait steeds meer om waarde bieden in plaats van alleen connecties leggen.",
+    publishedAt: '2026-05-27',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "Magnetic Networking: nieuwe kijk op zakelijk netwerken",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'seo-changelogs-ondergewaardeerde-spil-in-enterprise-governance',
     format: 'dispatch' as const,
     edition: '080',
