@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'visuele-identiteit-niet-start-met-blanco',
+    format: 'dispatch' as const,
+    edition: '082',
+    category: 'Platform',
+    title: "Visuele identiteit lijkt simpel, maar begint niet met een blanco blad",
+    dek: "Een sterke visuele identiteit bouwen vraagt om meer dan alleen een logo of kleurenpalet: het start met de kern van je merk.",
+    publishedAt: '2026-05-27',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Visuele identiteit lijkt simpel, maar begint niet met een blanco blad",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'magnetic-networking-evolutie-personal-branding',
     format: 'dispatch' as const,
     edition: '081',
