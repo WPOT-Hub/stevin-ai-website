@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'visuele-identiteit-niet-start-met-blanco': (
+    <>
+      <p className="lead-para">
+        Een logo of kleurenschema aanpassen is vaak het eerste waar bedrijven aan denken bij een rebrand. Toch vraagt een effectieve visuele identiteit om een heldere merkstrategie als basis. Zonder duidelijke positionering en doelgroepanalyse blijft de uitstraling vaak oppervlakkig of inconsistent, aldus experts.
+      </p>
+      <p>
+        De meeste merken starten niet met een blanco blad, maar met bestaande elementen die ze willen behouden of aanpassen. Denk aan herkenbare typografie, iconen of zelfs historische kleuren die emotionele waarde hebben bij klanten. Deze ankerpunten vormen de start van een proces waarin nieuwe elementen stap voor stap worden geïntegreerd.
+      </p>
+      <p>
+        Het risico ligt in het te snel loslaten van wat al werkt. Een succesvolle visuele identiteit combineert vernieuwing met vertrouwdheid, zodat klanten en medewerkers de verandering accepteren zonder hun binding met het merk te verliezen.
+      </p>
+    </>
+  ),
   'magnetic-networking-evolutie-personal-branding': (
     <>
       <p className="lead-para">
@@ -2185,6 +2198,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'visuele-identiteit-niet-start-met-blanco':
+    "Voor bureaus betekent dit dat ze niet alleen vorm moeten geven aan een visuele identiteit, maar ook de onderliggende merkverhalen moeten ontrafelen. Een sterke briefing begint altijd bij de vraag: wat maakt dit merk uniek? Pas dan kan de uitvoering daadwerkelijk bijdragen aan herkenbaarheid en groei.",
   'magnetic-networking-evolutie-personal-branding':
     "Voor ondernemers en bureau-eigenaars is Magnetic Networking een reminder dat zakelijke relaties vaak beginnen met vertrouwen. In een tijd waarin algoritmes en automatisering domineren, blijkt persoonlijke betrokkenheid nog steeds doorslaggevend. Het vraagt wel om een cultuur waarin medewerkers zich veilig voelen om hun stem te laten horen, zonder angst voor mislukking.",
   'seo-changelogs-ondergewaardeerde-spil-in-enterprise-governance':
