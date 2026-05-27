@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'seo-changelogs-ondergewaardeerde-spil-in-enterprise-governance',
+    format: 'dispatch' as const,
+    edition: '080',
+    category: 'Distributie',
+    title: "SEO-changelogs voorkomen onzichtbare site-updates bij grote bedrijven",
+    dek: "Bij grote websites leiden onopgemerkte aanpassingen vaak tot dalende rankings en omzet: changelogs maken risicovolle wijzigingen direct zichtbaar.",
+    publishedAt: '2026-05-27',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "SEO-changelogs voorkomen onzichtbare site-updates bij grote bedrijven",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'seo-changelogs-ondermijnd-door-onzichtbare-updates',
     format: 'dispatch' as const,
     edition: '079',
