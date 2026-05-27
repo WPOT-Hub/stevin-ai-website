@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'seo-changelogs-ondermijnd-door-onzichtbare-updates': (
+    <>
+      <p className="lead-para">
+        Een onbekend aantal bedrijven ondervindt problemen door wijzigingen op hun website die niet zichtbaar zijn voor de SEO-verantwoordelijken. Kleine aanpassingen zoals code-wijzigingen, template-aanpassingen of serverconfiguraties kunnen plotseling de ranking beïnvloeden zonder dat iemand het doorheeft. Dit leidt vaak tot een snelle daling in organische verkeer en omzet, zonder dat de oorzaak direct duidelijk is.
+      </p>
+      <p>
+        Het ontbreken van een gestructureerde changelog maakt het lastig om oorzaak en gevolg te koppelen. Wanneer een pagina plotseling daalt in de zoekresultaten, duurt het vaak dagen voordat er wordt geconstateerd dat er recent iets is veranderd. Zelfs binnen grote organisaties met meerdere teams blijft overzicht vaak ontbreken, omdat updates via verschillende kanalen verlopen zonder centrale registratie.
+      </p>
+      <p>
+        Sommige bedrijven lossen dit op door automatische monitoring in te stellen die veranderingen detecteert en direct signaleert. Andere kiezen voor strikte governance-processen waarbij elke wijziging moet worden goedgekeurd en geregistreerd voordat deze live gaat. Beide benaderingen vereisen echter een cultuurverandering waarin transparantie en verantwoordelijkheid centraal staan.
+      </p>
+    </>
+  ),
   'openai-brengt-conversie-gerichte-ads-voor-chatgpt': (
     <>
       <p className="lead-para">
@@ -2143,6 +2156,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'seo-changelogs-ondermijnd-door-onzichtbare-updates':
+    "Voor bureaus die grote websites beheren is het verstandig om klanten te adviseren over gestructureerde changelog-systemen. Niet alleen voorkomt dit onverwachte dalingen in rankings, het maakt ook samenwerking tussen verschillende teams soepeler. Binnen eigen organisaties kan een dergelijk systeem helpen om snel te reageren op problemen en de impact van wijzigingen beter te begrijpen.",
   'openai-brengt-conversie-gerichte-ads-voor-chatgpt':
     "Voor bedrijven die al gebruikmaken van AI-gestuurde klantinteractie biedt dit nieuwe model kansen om conversies directer te beïnvloeden. Het vereist echter wel een duidelijke strategie om gebruikerservaring en commerciële intentie in balans te houden. Daarnaast kan de komst van pay-for-results pricing druk zetten op traditionele betaalmodellen in digitale marketing.",
   'ai-in-de-creative-industrie':
