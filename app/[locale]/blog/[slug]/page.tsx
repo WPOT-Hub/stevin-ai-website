@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-introduceert-conversiegericht-adverteren-in-chatgpt': (
+    <>
+      <p className="lead-para">
+        ChatGPT krijgt binnenkort advertenties die niet alleen op kliks of impressies zijn gebaseerd, maar ook op daadwerkelijke acties van gebruikers. De functie moet adverteerders helpen om campagnes beter af te stemmen op conversiedoelen zoals aankopen, leads of downloads.
+      </p>
+      <p>
+        De nieuwe optie maakt gebruik van de bestaande gegevens van gebruikersinteracties binnen ChatGPT, zoals eerdere zoekopdrachten of gesprekken. Hierdoor kunnen adverteerders gerichter adverteren zonder dat gebruikers hun zoekgedrag hoeven te verlaten.
+      </p>
+      <p>
+        De implementatie volgt na eerdere experimenten met betaalde integraties in de chatbot. OpenAI benadrukt dat de privacy van gebruikers gewaarborgd blijft en dat advertenties alleen worden getoond als ze relevant zijn voor de context van het gesprek.
+      </p>
+    </>
+  ),
   'google-ads-zichtbaar-in-ai-overviews': (
     <>
       <p className="lead-para">
@@ -2224,6 +2237,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-introduceert-conversiegericht-adverteren-in-chatgpt':
+    "Voor bedrijven die al gebruikmaken van ChatGPT als klantcontactkanaal biedt deze ontwikkeling kansen om advertenties naadloos te integreren in de gebruikservaring. Het is een logische stap voor platforms die zowel content als commerciële interacties faciliteren. Wel is het belangrijk om de balans te vinden tussen relevantie en storendheid, zodat de ervaring voor de gebruiker niet verslechtert.",
   'google-ads-zichtbaar-in-ai-overviews':
     "Voor bureau-eigenaars en in-house teams betekent dit dat campagnes niet alleen gericht moeten zijn op traditionele zoekresultaten, maar ook op de nieuwe realiteit van AI-gestuurde overzichten. Het is verstandig om nu al te investeren in het onderhoud van productfeeds en landingspagina’s, zodat je later niet achterloopt wanneer deze overzichten verder groeien. Daarnaast kan het nuttig zijn om te experimenteren met kleine budgetten om te zien hoe je campagnes presteren in deze nieuwe context.",
   'google-lanceert-realtime-policy-reviews-voor-snellere-ad-goedkeuringen':
