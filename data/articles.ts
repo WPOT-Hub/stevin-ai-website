@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-verwijdert-historische-data-na-37-maanden',
+    format: 'dispatch' as const,
+    edition: '085',
+    category: 'Platform',
+    title: "Google Ads verwijdert historische data na 37 maanden: actie vereist",
+    dek: "Vanaf juni 2026 verwijdert Google Ads automatisch alle historische rapportagedata ouder dan 37 maanden, tenzij adverteerders deze handmatig exporteren.",
+    publishedAt: '2026-05-28',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads verwijdert historische data na 37 maanden: actie vereist",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-zichtbaar-in-ai-overviews',
     format: 'dispatch' as const,
     edition: '084',
