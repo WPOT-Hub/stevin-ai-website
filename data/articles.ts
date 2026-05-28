@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-zichtbaar-in-ai-overviews',
+    format: 'dispatch' as const,
+    edition: '084',
+    category: 'Platform',
+    title: "Google Ads zichtbaarder maken in AI Overviews met feeds en signalen",
+    dek: "Shopping-, Performance Max- en AI Max-campagnes kunnen nu verschijnen in Google’s AI Overviews door specifieke feeds, landingspagina’s en doelgroepsignalen te optimaliseren.",
+    publishedAt: '2026-05-28',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads zichtbaarder maken in AI Overviews met feeds en signalen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-lanceert-realtime-policy-reviews-voor-snellere-ad-goedkeuringen',
     format: 'dispatch' as const,
     edition: '083',
