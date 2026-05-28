@@ -40,19 +40,27 @@ export default async function PrivacyPage({ params }: Props) {
 
       {isEn ? <PrivacyEnglish /> : <PrivacyDutch />}
 
-      <footer className="mt-16 border-t border-border pt-8 text-xs text-muted-foreground">
+      <footer className="mt-16 border-t border-border pt-8 text-xs text-muted-foreground space-y-2">
         <p>
           {isEn ? (
             <>
-              Stevin.AI is a trade name of WPOT B.V., registered in the Netherlands. Contact:{' '}
-              <a href="mailto:privacy@stevin.ai" className="underline">privacy@stevin.ai</a>.
+              Stevin.AI is a trade name of <strong>WPOT B.V.</strong>, registered with the
+              Dutch Chamber of Commerce (KvK) under number <strong>87774372</strong>,
+              VAT number NL864401954B01. Registered office:{' '}
+              <strong>Amstenradestraat 25, 4834 JB Breda, Netherlands</strong>.
             </>
           ) : (
             <>
-              Stevin.AI is een handelsnaam van WPOT B.V., gevestigd in Nederland. Contact:{' '}
-              <a href="mailto:privacy@stevin.ai" className="underline">privacy@stevin.ai</a>.
+              Stevin.AI is een handelsnaam van <strong>WPOT B.V.</strong>, ingeschreven bij
+              de Kamer van Koophandel onder nummer <strong>87774372</strong>,
+              BTW-nummer NL864401954B01. Vestigingsadres:{' '}
+              <strong>Amstenradestraat 25, 4834 JB Breda, Nederland</strong>.
             </>
           )}
+        </p>
+        <p>
+          {isEn ? 'Contact: ' : 'Contact: '}
+          <a href="mailto:privacy@stevin.ai" className="underline">privacy@stevin.ai</a>
         </p>
       </footer>
     </main>
