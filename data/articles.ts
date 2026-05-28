@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'openai-introduceert-conversiegericht-adverteren-in-chatgpt',
+    format: 'dispatch' as const,
+    edition: '086',
+    category: 'Platform',
+    title: "OpenAI voegt conversiegerichte advertenties toe aan ChatGPT",
+    dek: "OpenAI lanceert nieuwe advertentiefuncties in ChatGPT die direct op omzet en acties van gebruikers zijn gericht.",
+    publishedAt: '2026-05-28',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "OpenAI voegt conversiegerichte advertenties toe aan ChatGPT",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-verwijdert-historische-data-na-37-maanden',
     format: 'dispatch' as const,
     edition: '085',
