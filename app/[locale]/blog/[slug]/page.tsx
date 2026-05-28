@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-zichtbaar-in-ai-overviews': (
+    <>
+      <p className="lead-para">
+        Google voegt steeds vaker advertenties toe aan de AI Overviews die onder de organische zoekresultaten verschijnen. Om hierin opgenomen te worden, moeten adverteerders hun Shopping-, Performance Max- en nieuwe AI Max-campagnes afstemmen op de vereisten van deze overzichten. Dit betekent dat productfeeds nauwkeurig moeten zijn, landingspagina’s relevante inhoud moeten bieden en doelgroepdata duidelijk moet aangeven wie er geadresseerd wordt.
+      </p>
+      <p>
+        Deze aanpassingen zijn vooral relevant voor retailers en e-commerce bedrijven die afhankelijk zijn van zichtbaarheid in de zoekresultaten. Google geeft aan dat campagnes met goed gestructureerde feeds en sterke landingspagina’s een betere kans maken om in de AI Overviews te verschijnen. Daarnaast spelen historische prestatiedata een rol bij het bepalen van de relevantie.
+      </p>
+      <p>
+        Voor campagnes zonder directe koppeling aan productfeeds, zoals dienstverlenende bedrijven, is het belangrijk om landingspagina’s te optimaliseren met heldere antwoorden op veelgestelde vragen. Zo vergroot je de kans dat Google je content als waardevol inschat voor de AI Overviews.
+      </p>
+    </>
+  ),
   'google-lanceert-realtime-policy-reviews-voor-snellere-ad-goedkeuringen': (
     <>
       <p className="lead-para">
@@ -2211,6 +2224,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-zichtbaar-in-ai-overviews':
+    "Voor bureau-eigenaars en in-house teams betekent dit dat campagnes niet alleen gericht moeten zijn op traditionele zoekresultaten, maar ook op de nieuwe realiteit van AI-gestuurde overzichten. Het is verstandig om nu al te investeren in het onderhoud van productfeeds en landingspagina’s, zodat je later niet achterloopt wanneer deze overzichten verder groeien. Daarnaast kan het nuttig zijn om te experimenteren met kleine budgetten om te zien hoe je campagnes presteren in deze nieuwe context.",
   'google-lanceert-realtime-policy-reviews-voor-snellere-ad-goedkeuringen':
     "Voor bureaus en in-house teams betekent deze update dat ze sneller kunnen inspelen op trends of wijzigingen in campagnes zonder vertraging door goedkeuringsprocessen. Het vereist wel dat marketeers zich bewust zijn van de specifieke beleidsregels die nu direct worden gehandhaafd, om onverwachte afkeuringen te voorkomen.",
   'visuele-identiteit-niet-start-met-blanco':
