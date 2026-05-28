@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-lanceert-realtime-policy-reviews-voor-snellere-ad-goedkeuringen',
+    format: 'dispatch' as const,
+    edition: '083',
+    category: 'Platform',
+    title: "Google versnelt advertentiegoedkeuringen met realtime feedback",
+    dek: "Adverteerders krijgen direct feedback tijdens het opzetten van campagnes dankzij nieuwe realtime policy reviews van Google.",
+    publishedAt: '2026-05-28',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google versnelt advertentiegoedkeuringen met realtime feedback",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'visuele-identiteit-niet-start-met-blanco',
     format: 'dispatch' as const,
     edition: '082',
