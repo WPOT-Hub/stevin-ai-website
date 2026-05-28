@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-lanceert-realtime-policy-reviews-voor-snellere-ad-goedkeuringen': (
+    <>
+      <p className="lead-para">
+        Google introduceert Real-Time Policy Reviews, een systeem dat advertenties direct controleert en goedkeurt tijdens het maken van campagnes. Fouten worden direct getoond, waardoor wachten op handmatige goedkeuring niet meer nodig is.
+      </p>
+      <p>
+        Deze aanpassing moet de doorlooptijd van campagnelanceringen verkorten en frustratie bij adverteerders verminderen. Momenteel geldt dit voor een beperkte set advertentietypen, maar Google plant uitbreiding naar meer categorieën.
+      </p>
+      <p>
+        De realtime feedback werkt via automatische scans die beleidsregels vergelijken met de ingestelde targeting en creatives. Dit reduceert het risico op afgekeurde campagnes door onbekende regels.
+      </p>
+    </>
+  ),
   'visuele-identiteit-niet-start-met-blanco': (
     <>
       <p className="lead-para">
@@ -2198,6 +2211,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-lanceert-realtime-policy-reviews-voor-snellere-ad-goedkeuringen':
+    "Voor bureaus en in-house teams betekent deze update dat ze sneller kunnen inspelen op trends of wijzigingen in campagnes zonder vertraging door goedkeuringsprocessen. Het vereist wel dat marketeers zich bewust zijn van de specifieke beleidsregels die nu direct worden gehandhaafd, om onverwachte afkeuringen te voorkomen.",
   'visuele-identiteit-niet-start-met-blanco':
     "Voor bureaus betekent dit dat ze niet alleen vorm moeten geven aan een visuele identiteit, maar ook de onderliggende merkverhalen moeten ontrafelen. Een sterke briefing begint altijd bij de vraag: wat maakt dit merk uniek? Pas dan kan de uitvoering daadwerkelijk bijdragen aan herkenbaarheid en groei.",
   'magnetic-networking-evolutie-personal-branding':
