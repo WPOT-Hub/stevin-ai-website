@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'real-brand-is-de-kern-van-seo-in-ai-tijdperk',
+    format: 'dispatch' as const,
+    edition: '088',
+    category: 'Platform',
+    title: "AI zoekt op merk, niet op zoekwoord",
+    dek: "Een sterk merk wordt de belangrijkste factor voor zichtbaarheid in AI-gestuurde zoekresultaten.",
+    publishedAt: '2026-05-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI zoekt op merk, niet op zoekwoord",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-lanceert-prospects-mode-voor-nieuwe-klanten',
     format: 'dispatch' as const,
     edition: '087',
