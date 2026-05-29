@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-lanceert-prospects-mode-voor-nieuwe-klanten',
+    format: 'dispatch' as const,
+    edition: '087',
+    category: 'Platform',
+    title: "Google voegt ‘nieuwe prospects’ toe aan klantwerving",
+    dek: "Google introduceert een AI-gestuurde targetingmodus om merken te helpen onbekende doelgroepen eerder in hun ontdekkingsfase te bereiken.",
+    publishedAt: '2026-05-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google voegt ‘nieuwe prospects’ toe aan klantwerving",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'openai-introduceert-conversiegericht-adverteren-in-chatgpt',
     format: 'dispatch' as const,
     edition: '086',
