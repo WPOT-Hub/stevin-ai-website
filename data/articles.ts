@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-presentatrice-kids-top-20-wekt-teleurstelling',
+    format: 'dispatch' as const,
+    edition: '090',
+    category: 'Cultuur',
+    title: "AI-presentatrice Kids Top 20 roept weerstand op bij oud-presentatoren",
+    dek: "De terugkeer van de Kids Top 20 met een mogelijk AI gegenereerde presentatrice leidt tot felle kritiek van oud-presentatoren en kijkers.",
+    publishedAt: '2026-05-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "AI-presentatrice Kids Top 20 roept weerstand op bij oud-presentatoren",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'culturele-sector-eist-duidelijke-regels-voor-ai-gebruik',
     format: 'dispatch' as const,
     edition: '089',
