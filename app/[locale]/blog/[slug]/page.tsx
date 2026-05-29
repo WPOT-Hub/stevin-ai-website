@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'real-brand-is-de-kern-van-seo-in-ai-tijdperk': (
+    <>
+      <p className="lead-para">
+        Uit onderzoek blijkt dat AI-systemen zoals Google AI Overviews en andere zoekmachines steeds vaker resultaten tonen op basis van merken in plaats van specifieke zoekwoorden. Dit betekent dat bedrijven die hun merknaam consistent en authentiek uitdragen, automatisch betere posities krijgen in deze nieuwe zoekomgevingen.
+      </p>
+      <p>
+        Consistentie in branding – van website tot sociale media en klantenservice – wordt cruciaal. AI-algoritmes scoren merken hoger als ze herkenbaar zijn, betrouwbare content delen en een duidelijke identiteit hebben. Dit geldt niet alleen voor grote spelers, maar ook voor lokale ondernemingen die hun naamsbekendheid vergroten.
+      </p>
+      <p>
+        De oude SEO-strategieën zoals keyword stuffing of linkbuilding verliezen aan kracht. In plaats daarvan draait het om het opbouwen van vertrouwen door middel van kwalitatieve content, klantbeoordelingen en een consistente boodschap over alle kanalen heen.
+      </p>
+    </>
+  ),
   'google-lanceert-prospects-mode-voor-nieuwe-klanten': (
     <>
       <p className="lead-para">
@@ -2250,6 +2263,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'real-brand-is-de-kern-van-seo-in-ai-tijdperk':
+    "Voor bureaus en marketingteams betekent dit dat SEO-strategieën moeten verschuiven van technische optimalisatie naar merkopbouw. Investeer in content die je merk versterkt in plaats van alleen in zoekwoorden die passen bij je product. Een sterke merkidentiteit wordt de nieuwe basis voor online zichtbaarheid, ongeacht hoe AI de zoekresultaten vormgeeft.",
   'google-lanceert-prospects-mode-voor-nieuwe-klanten':
     "Voor adverteerders betekent deze uitbreiding dat ze hun acquisitiestrategie kunnen aanscherpen door niet alleen te focussen op bestaande leads of retargeting, maar ook op groei via nieuwe doelgroepen. Het is zaak om de meetdata nauwlettend in de gaten te houden: het risico bestaat dat campagnes minder efficiënt worden als de AI verkeerde signalen oppikt. Test daarom altijd kleine budgetten voorafgaand aan grote campagnes.",
   'openai-introduceert-conversiegericht-adverteren-in-chatgpt':
