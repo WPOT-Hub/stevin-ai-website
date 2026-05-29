@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-lanceert-prospects-mode-voor-nieuwe-klanten': (
+    <>
+      <p className="lead-para">
+        Merken kunnen vanaf deze week gebruikmaken van een nieuwe targetingoptie in Google Ads, genaamd ‘Prospects mode’. Deze modus richt zich specifiek op consumenten die nog nooit eerder contact hebben gehad met het merk. Met behulp van AI wordt bepaald welke gebruikers het meest kansrijk zijn om te converteren, zelfs als ze nog geen zoekopdrachten of interacties met het merk hebben vertoond.
+      </p>
+      <p>
+        Deze functionaliteit is vooral bedoeld voor campagnes gericht op klantwerving, niet op retargeting. Het systeem analyseert gedragspatronen en demografische gegevens om nieuwe doelgroepen te identificeren die nog niet bekend zijn met het product of de dienst. Volgens Google zou dit de effectiviteit van campagnes verhogen door eerder in de customer journey in te grijpen.
+      </p>
+      <p>
+        De nieuwe modus is beschikbaar voor zowel Search als Display-netwerken en kan worden gecombineerd met bestaande targetingopties zoals demografie en interesses.
+      </p>
+    </>
+  ),
   'openai-introduceert-conversiegericht-adverteren-in-chatgpt': (
     <>
       <p className="lead-para">
@@ -2237,6 +2250,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-lanceert-prospects-mode-voor-nieuwe-klanten':
+    "Voor adverteerders betekent deze uitbreiding dat ze hun acquisitiestrategie kunnen aanscherpen door niet alleen te focussen op bestaande leads of retargeting, maar ook op groei via nieuwe doelgroepen. Het is zaak om de meetdata nauwlettend in de gaten te houden: het risico bestaat dat campagnes minder efficiënt worden als de AI verkeerde signalen oppikt. Test daarom altijd kleine budgetten voorafgaand aan grote campagnes.",
   'openai-introduceert-conversiegericht-adverteren-in-chatgpt':
     "Voor bedrijven die al gebruikmaken van ChatGPT als klantcontactkanaal biedt deze ontwikkeling kansen om advertenties naadloos te integreren in de gebruikservaring. Het is een logische stap voor platforms die zowel content als commerciële interacties faciliteren. Wel is het belangrijk om de balans te vinden tussen relevantie en storendheid, zodat de ervaring voor de gebruiker niet verslechtert.",
   'google-ads-zichtbaar-in-ai-overviews':
