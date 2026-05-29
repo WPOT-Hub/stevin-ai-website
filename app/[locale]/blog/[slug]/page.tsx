@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-zoekgedrag-verandert-internet': (
+    <>
+      <p className="lead-para">
+        Uit meetdata van grote zoekmachines blijkt dat gebruikers minder vaak doorklikken naar websites sinds AI-antwoorden bovenaan de resultatenpagina verschijnen. De gemiddelde klikfrequentie daalt met ruim een derde in sectoren zoals e-commerce en lokale dienstverlening.
+      </p>
+      <p>
+        Ook de aard van zoekopdrachten verandert: korte vragen met duidelijke intentie domineren, terwijl lange zoektermen afnemen. Dit heeft gevolgen voor SEO-strategieën, omdat pagina’s die alleen op trefwoorden zijn geoptimaliseerd minder zichtbaar worden.
+      </p>
+      <p>
+        Bedrijven merken dat bezoekers sneller een antwoord vinden zonder door te klikken, wat de meetdata verstoort. Dit maakt het lastiger om oorzaak en gevolg tussen marketinginspanningen en klantgedrag vast te stellen.
+      </p>
+    </>
+  ),
   'ai-presentatrice-kids-top-20-wekt-teleurstelling': (
     <>
       <p className="lead-para">
@@ -2292,6 +2305,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-zoekgedrag-verandert-internet':
+    "Voor ondernemers betekent deze verschuiving dat ze hun online aanwezigheid moeten aanpassen. Focus op content die niet alleen trefwoorden bevat, maar ook directe antwoorden geeft op veelgestelde vragen. Daarnaast wordt het belangrijker om meetdata kritisch te analyseren, omdat klassieke KPI’s zoals doorklikratio minder betrouwbaar worden.",
   'ai-presentatrice-kids-top-20-wekt-teleurstelling':
     "Dit voorbeeld laat zien hoe snel technologie ingrijpt in traditionele mediaformatten, zelfs in kinderprogramma’s waar authenticiteit cruciaal is. Voor mediaproducenten betekent dit dat ze moeten afwegen tussen kostenbesparing en de waarde van menselijke connectie. Het risico bestaat dat kijkers het gebrek aan echtheid direct afstraffen, wat de reputatie van het programma kan schaden.",
   'culturele-sector-eist-duidelijke-regels-voor-ai-gebruik':
