@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-zoekgedrag-verandert-internet',
+    format: 'dispatch' as const,
+    edition: '091',
+    category: 'Platform',
+    title: "AI verandert hoe mensen zoeken op internet: minder klikken, meer directe antwoorden",
+    dek: "Zoekmachines geven steeds vaker directe antwoorden via AI-overzichten, waardoor traditionele organische kliks dalen.",
+    publishedAt: '2026-05-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI verandert hoe mensen zoeken op internet: minder klikken, meer directe antwoorden",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-presentatrice-kids-top-20-wekt-teleurstelling',
     format: 'dispatch' as const,
     edition: '090',
