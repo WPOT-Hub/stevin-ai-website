@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'culturele-sector-eist-duidelijke-regels-voor-ai-gebruik',
+    format: 'dispatch' as const,
+    edition: '089',
+    category: 'Beleid',
+    title: "Culturele en creatieve sector vraagt om heldere AI-regels",
+    dek: "Zzp’ers en werkgevers in de culturele sector vrezen ongelijkheid door AI en pleiten voor snelle, duidelijke richtlijnen.",
+    publishedAt: '2026-05-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Culturele en creatieve sector vraagt om heldere AI-regels",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'real-brand-is-de-kern-van-seo-in-ai-tijdperk',
     format: 'dispatch' as const,
     edition: '088',
