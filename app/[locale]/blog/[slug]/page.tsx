@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'culturele-sector-eist-duidelijke-regels-voor-ai-gebruik': (
+    <>
+      <p className="lead-para">
+        Uit onderzoek van de Kunstenbond blijkt dat een meerderheid van makers en zzp’ers in de culturele sector zich zorgen maakt over de impact van AI op hun inkomen en auteursrechten. Bijna de helft verwacht dat binnen twee jaar werk of opdrachten verdwijnen door kunstmatige intelligentie, vooral in audiovisuele productie, media en journalistiek.
+      </p>
+      <p>
+        De makers vragen om verplichte vermelding wanneer AI wordt gebruikt in content en strengere controle op toestemming voor het gebruik van bestaand werk in AI-toepassingen. Werkgevers benadrukken dat innovatie niet mag stagneren door onduidelijke regels, maar willen wel praktische kaders die duidelijk maken wat wel en niet mag.
+      </p>
+      <p>
+        Volgens belangenbehartiger Peter van den Bunder verandert AI de sector fundamenteel: sommige taken verdwijnen, nieuwe mogelijkheden ontstaan. Hij waarschuwt dat grote organisaties sneller profiteren dan zelfstandigen, waardoor de ongelijkheid groeit als er geen goede afspraken komen.
+      </p>
+    </>
+  ),
   'real-brand-is-de-kern-van-seo-in-ai-tijdperk': (
     <>
       <p className="lead-para">
@@ -2263,6 +2276,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'culturele-sector-eist-duidelijke-regels-voor-ai-gebruik':
+    "Voor ondernemers in de culturele sector is dit een signaal om proactief beleid te ontwikkelen rondom AI. Zowel zzp’ers als bedrijven kunnen beter nu al afspraken maken over het gebruik van AI-tools, bijvoorbeeld in contracten met opdrachtgevers of leveranciers. Dit voorkomt later geschillen en zorgt voor een eerlijke verdeling van kansen.",
   'real-brand-is-de-kern-van-seo-in-ai-tijdperk':
     "Voor bureaus en marketingteams betekent dit dat SEO-strategieën moeten verschuiven van technische optimalisatie naar merkopbouw. Investeer in content die je merk versterkt in plaats van alleen in zoekwoorden die passen bij je product. Een sterke merkidentiteit wordt de nieuwe basis voor online zichtbaarheid, ongeacht hoe AI de zoekresultaten vormgeeft.",
   'google-lanceert-prospects-mode-voor-nieuwe-klanten':
