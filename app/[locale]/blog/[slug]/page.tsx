@@ -1200,6 +1200,22 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-presentatrice-kids-top-20-wekt-teleurstelling': (
+    <>
+      <p className="lead-para">
+        De Kids Top 20 maakt een doorstart met een nieuwe presentatrice die mogelijk volledig door kunstmatige intelligentie is gegenereerd. Dat blijkt uit een Instagram-video waarin de presentatrice livebeelden combineert met perfecte spreektaal en uiterlijk. De reacties zijn overweldigend negatief, vooral van oud-presentatoren zoals Kim-Lian van der Meij en Monique Smit, die zich afvragen waarom nieuw talent niet de kans krijgt.
+      </p>
+      <p>
+        Oud-presentatoren wijzen op het gebrek aan interactie en authenticiteit bij een AI-presentator. Kinderen keken juist om die reden naar het programma, aldus Stephanie van Eer en Shaniqua Devine. Zij benadrukken dat er genoeg jong talent in Nederland rondloopt dat de doelgroep beter zou kunnen aanspreken dan een digitaal personage.
+      </p>
+      <p>
+        Producent CTM TV houdt de opties nog open en laat weten binnen twee à drie maanden te beslissen over de definitieve vorm van de doorstart. Tot nu toe reageert het bedrijf niet op vragen over het gebruik van AI, maar benadrukt wel open te staan voor kritiek en andere meningen.
+      </p>
+      <p>
+        De Kids Top 20 blijft een hitlijst die volledig door kinderen wordt samengesteld via stemmen op hun favoriete muziek.
+      </p>
+    </>
+  ),
   'culturele-sector-eist-duidelijke-regels-voor-ai-gebruik': (
     <>
       <p className="lead-para">
@@ -2276,6 +2292,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-presentatrice-kids-top-20-wekt-teleurstelling':
+    "Dit voorbeeld laat zien hoe snel technologie ingrijpt in traditionele mediaformatten, zelfs in kinderprogramma’s waar authenticiteit cruciaal is. Voor mediaproducenten betekent dit dat ze moeten afwegen tussen kostenbesparing en de waarde van menselijke connectie. Het risico bestaat dat kijkers het gebrek aan echtheid direct afstraffen, wat de reputatie van het programma kan schaden.",
   'culturele-sector-eist-duidelijke-regels-voor-ai-gebruik':
     "Voor ondernemers in de culturele sector is dit een signaal om proactief beleid te ontwikkelen rondom AI. Zowel zzp’ers als bedrijven kunnen beter nu al afspraken maken over het gebruik van AI-tools, bijvoorbeeld in contracten met opdrachtgevers of leveranciers. Dit voorkomt later geschillen en zorgt voor een eerlijke verdeling van kansen.",
   'real-brand-is-de-kern-van-seo-in-ai-tijdperk':
