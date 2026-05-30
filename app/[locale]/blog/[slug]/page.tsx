@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'b2b-ppc-metingen-meten-niet-altijd-uplift': (
+    <>
+      <p className="lead-para">
+        Een stijging in conversies of ROAS (Return on Ad Spend) in B2B PPC-campagnes blijkt niet altijd te leiden tot meer pipeline of omzet. Dit komt omdat traditionele KPI’s zoals kliks, leads of kosten per acquisitie vaak geen rekening houden met de daadwerkelijke oorzaak en gevolg van deze acties aldus recent onderzoek.
+      </p>
+      <p>
+        Ook kan er sprake zijn van verlies van meetdata door tracking-blokkades, zoals cookieless browsers of adblockers. Hierdoor ontbreken cruciale meetpunten, waardoor campagnes een vertekend beeld geven van hun prestaties. Dit geldt vooral voor B2B-bedrijven die afhankelijk zijn van langere sales-cycles.
+      </p>
+      <p>
+        Experts wijzen erop dat het meten van de echte uplift – de extra omzet die direct toe te schrijven is aan de campagne – vaak complexer is dan gedacht. Veel bedrijven baseren hun budgetbeslissingen nog steeds op historische data, zonder rekening te houden met externe factoren zoals marktschommelingen of concurrentiegedrag.
+      </p>
+    </>
+  ),
   'google-test-branded-search-controls-ai-max': (
     <>
       <p className="lead-para">
@@ -2331,6 +2344,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'b2b-ppc-metingen-meten-niet-altijd-uplift':
+    "Voor bureaus en in-house teams betekent dit dat ze kritischer moeten kijken naar de meetmethodes die ze hanteren. Het is zaak om niet alleen naar de klassieke KPI’s te kijken, maar ook naar aanvullende data zoals klantwaarde op lange termijn en de impact van campagnes buiten het directe bereik. Een integrale aanpak met meerdere meetpunten geeft een completer beeld van wat werkt.",
   'google-test-branded-search-controls-ai-max':
     "Voor bureaus en marketingteams betekent dit dat ze straks meer grip kunnen krijgen op de verdeling tussen merk- en generieke zoekopdrachten. Dat kan helpen om de uplift van merkactiviteiten beter te isoleren en de effectiviteit van campagnes nauwkeuriger te beoordelen. Het is verstandig om deze ontwikkelingen in de gaten te houden, vooral als je veel investeert in branded search.",
   'google-ads-introduceert-ingebouwd-lead-management-dashboard':
