@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-test-branded-search-controls-ai-max',
+    format: 'dispatch' as const,
+    edition: '093',
+    category: 'Platform',
+    title: "Google test nieuwe branded search controls in AI Max campagnes",
+    dek: "Google Ads experimenteert met nieuwe branded search controls voor AI Max campagnes om merk- en niet-merktraffic beter te scheiden.",
+    publishedAt: '2026-05-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google test nieuwe branded search controls in AI Max campagnes",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-introduceert-ingebouwd-lead-management-dashboard',
     format: 'dispatch' as const,
     edition: '092',
