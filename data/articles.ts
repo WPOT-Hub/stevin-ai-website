@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'b2b-ppc-metingen-meten-niet-altijd-uplift',
+    format: 'dispatch' as const,
+    edition: '094',
+    category: 'Platform',
+    title: "Meer leads en hogere ROAS zeggen niet altijd iets over groei",
+    dek: "Uitgebreide meetdata in B2B PPC-campagnes tonen vaak een te rooskleurig beeld van de werkelijke impact op pipeline en omzet.",
+    publishedAt: '2026-05-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Meer leads en hogere ROAS zeggen niet altijd iets over groei",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-test-branded-search-controls-ai-max',
     format: 'dispatch' as const,
     edition: '093',
