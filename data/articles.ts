@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-introduceert-ingebouwd-lead-management-dashboard',
+    format: 'dispatch' as const,
+    edition: '092',
+    category: 'Platform',
+    title: "Google Ads voegt leadmanagement toe aan dashboard",
+    dek: "Adverteerders kunnen vanaf nu leads rechtstreeks in Google Ads beheren en kwaliteitssignalen delen met AI voor betere biedprestaties.",
+    publishedAt: '2026-05-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads voegt leadmanagement toe aan dashboard",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-zoekgedrag-verandert-internet',
     format: 'dispatch' as const,
     edition: '091',
