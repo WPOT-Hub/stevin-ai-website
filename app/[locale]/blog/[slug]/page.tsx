@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-test-branded-search-controls-ai-max': (
+    <>
+      <p className="lead-para">
+        Adverteerders kunnen binnen AI Max campagnes nu mogelijk specifieke controle krijgen over hoe zoekopdrachten met hun merknaam worden behandeld. Dit biedt meer flexibiliteit om de prestaties van merkgerelateerde en generieke zoektermen apart te meten en optimaliseren.
+      </p>
+      <p>
+        De nieuwe controls zouden het makkelijker maken om overlapping tussen branded en non-branded traffic te verminderen, wat tot nu toe vaak leidde tot onduidelijkheid in rapportages. De test lijkt gericht op grotere campagnes waar merknaam een belangrijke rol speelt in de strategie.
+      </p>
+      <p>
+        Het is nog niet bekend wanneer of of deze functie breed beschikbaar komt voor alle adverteerders. Google heeft geen officiële bevestiging gegeven over de testfase.
+      </p>
+    </>
+  ),
   'google-ads-introduceert-ingebouwd-lead-management-dashboard': (
     <>
       <p className="lead-para">
@@ -2318,6 +2331,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-test-branded-search-controls-ai-max':
+    "Voor bureaus en marketingteams betekent dit dat ze straks meer grip kunnen krijgen op de verdeling tussen merk- en generieke zoekopdrachten. Dat kan helpen om de uplift van merkactiviteiten beter te isoleren en de effectiviteit van campagnes nauwkeuriger te beoordelen. Het is verstandig om deze ontwikkelingen in de gaten te houden, vooral als je veel investeert in branded search.",
   'google-ads-introduceert-ingebouwd-lead-management-dashboard':
     "Voor bedrijven die veel online leads genereren, biedt deze update een concrete besparing op tijd en middelen. Het elimineren van externe tools kan de meetdata verbeteren door minder blinde vlekken in de keten. Toch blijft het zaak om interne processen rond leadkwalificatie goed af te stemmen op de nieuwe mogelijkheden.",
   'ai-zoekgedrag-verandert-internet':
