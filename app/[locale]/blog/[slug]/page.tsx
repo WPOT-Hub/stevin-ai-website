@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-introduceert-ingebouwd-lead-management-dashboard': (
+    <>
+      <p className="lead-para">
+        Google Ads introduceert een nieuw ingebouwd leadmanagementdashboard dat het mogelijk maakt om leads direct in het platform te volgen, te kwalificeren en te activeren. Hiermee verdwijnt de noodzaak om externe tools te gebruiken voor leadverwerking. De integratie met AI moet helpen om de conversiekwaliteit beter in te schatten en biedstrategieën automatisch aan te passen.
+      </p>
+      <p>
+        Het dashboard toont standaard overzichten van leadbronnen, conversiepercentages en follow-up-acties. Gebruikers kunnen zelf filters instellen om specifieke leads prioriteit te geven, zoals hoge-intent leads of herhalingsaankopen. Daarnaast worden kwaliteitssignalen gedeeld met de AI van Google Ads, wat zou moeten leiden tot een hogere uplift in campagnes.
+      </p>
+      <p>
+        De functie is beschikbaar voor alle adverteerders die gebruikmaken van de leadgeneratie-extensies van Google Ads. Momenteel wordt het stapsgewijs uitgerold, waarbij sommige accounts al toegang hebben tot de nieuwe tool.
+      </p>
+    </>
+  ),
   'ai-zoekgedrag-verandert-internet': (
     <>
       <p className="lead-para">
@@ -2305,6 +2318,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-introduceert-ingebouwd-lead-management-dashboard':
+    "Voor bedrijven die veel online leads genereren, biedt deze update een concrete besparing op tijd en middelen. Het elimineren van externe tools kan de meetdata verbeteren door minder blinde vlekken in de keten. Toch blijft het zaak om interne processen rond leadkwalificatie goed af te stemmen op de nieuwe mogelijkheden.",
   'ai-zoekgedrag-verandert-internet':
     "Voor ondernemers betekent deze verschuiving dat ze hun online aanwezigheid moeten aanpassen. Focus op content die niet alleen trefwoorden bevat, maar ook directe antwoorden geeft op veelgestelde vragen. Daarnaast wordt het belangrijker om meetdata kritisch te analyseren, omdat klassieke KPI’s zoals doorklikratio minder betrouwbaar worden.",
   'ai-presentatrice-kids-top-20-wekt-teleurstelling':
