@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'europese-cloud-marketingvraagstuk-datasoevereiniteit': (
+    <>
+      <p className="lead-para">
+        Europese cloudinfrastructuur is niet langer alleen een IT-kwestie. Met de komst van KPN en Schwarz Digits’ nieuwe soevereine cloud voor Nederland, AWS’ European Sovereign Cloud in Duitsland en Microsofts EU Data Boundary wordt duidelijk dat datasoevereiniteit een directievraagstuk wordt. Marketingteams moeten steeds vaker verantwoording afleggen over waar hun klantdata staat, hoe die wordt verwerkt en wie er toegang toe heeft.
+      </p>
+      <p>
+        Deze beweging gaat verder dan lokale datacenters. Aanbieders als OVHcloud, Scaleway, Google Cloud via T-Systems en andere Europese spelers positioneren zich op dataresidentie, lokale controle en compliance. Maar ‘Europees’ of ‘soeverein’ betekent niet hetzelfde bij elke aanbieder. Soms draait het om juridische afscherming, soms om encryptie of sleutelbeheer. Voor marketeers is de kernvraag niet of data in Europa staat, maar of ze controle hebben over wat ermee gebeurt.
+      </p>
+      <p>
+        Marketingdata is inmiddels veel rijker dan campagnes en clicks alleen. CRM-data, salesinformatie, contentprestaties en AI-signalen combineren tot strategische inzichten over klanten en markten. Die informatie vraagt om meer dan een privacyverklaring: klanten willen weten welke data wordt gebruikt, waar die verwerkt wordt en wie er toegang toe heeft.
+      </p>
+    </>
+  ),
   'tiktok-shop-lanceert-in-nederland-en-belgie-op-15-juni': (
     <>
       <p className="lead-para">
@@ -2357,6 +2370,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'europese-cloud-marketingvraagstuk-datasoevereiniteit':
+    "Voor bureaus wordt dit een kans om vertrouwen te winnen door transparantie te tonen. Niet door te benadrukken dat je AI gebruikt, maar door te laten zien hoe je AI veilig, uitlegbaar en klantgescheiden inzet binnen je processen. Dat vraagt om een helder verhaal over tools, datastromen en controlesystemen – niet als juridisch document, maar als onderdeel van professioneel advieswerk.",
   'tiktok-shop-lanceert-in-nederland-en-belgie-op-15-juni':
     "Voor bedrijven die actief zijn op sociale media wordt TikTok Shop een nieuwe kanaal om directe sales te genereren via content. Het cross-border karakter maakt het interessant voor merken die al in meerdere EU-landen actief zijn. Tegelijk vraagt het om aandacht voor lokale regelgeving en communityrichtlijnen om verwijdering te voorkomen.",
   'b2b-ppc-metingen-meten-niet-altijd-uplift':
