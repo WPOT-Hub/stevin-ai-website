@@ -1,4 +1,22 @@
 {
+  "zichtbaar-in-ai-antwoorden-aeo-geo": [
+    {
+      "question": "Hoe word ik zichtbaar in AI-antwoorden zoals ChatGPT en Google AI Overviews?",
+      "answer": "AI-zoekfuncties halen via retrieval-augmented generation hun bronnen uit de gewone zoekindex. De eerste voorwaarde is dus dat je pagina geindexeerd is en in aanmerking komt voor een gewone snippet. Daarna wint niet de slimste markup, maar de bron die een onderwerp het grondigst en met een eigen standpunt dekt. Google stelt expliciet dat er geen speciale markup of bestand voor nodig is."
+    },
+    {
+      "question": "Heb ik llms.txt of speciale schema-markup nodig voor AI-search?",
+      "answer": "Nee. Google zegt letterlijk dat je geen nieuwe machine-leesbare bestanden, AI-tekstbestanden of markup hoeft te maken om in generatieve AI-zoekresultaten te verschijnen, en dat structured data niet vereist is voor AI-search. Structured data blijft nuttig voor rich results in gewone Search, maar het is niet de hefboom voor citatie in AI-antwoorden."
+    },
+    {
+      "question": "Wat is het verschil tussen SEO en AEO of GEO?",
+      "answer": "SEO richt zich op posities in de klassieke zoekresultaten. AEO (answer engine optimization) en GEO (generative engine optimization) richten zich op geciteerd worden in AI-gegenereerde antwoorden. De onderliggende eisen overlappen sterk: crawlbaar en indexeerbaar zijn, een eigen standpunt hebben, en een onderwerp in de volle breedte dekken zodat de query-fan-out je pagina bij meerdere deelvragen oppikt. Het is geen aparte knoppenset, het is goede content."
+    },
+    {
+      "question": "Waarom wordt merk belangrijker dan zoekwoord in AI-search?",
+      "answer": "Als de AI het antwoord geeft en de gebruiker niet meer doorklikt, verdwijnt de klik als ijkpunt. Wat overblijft is of jouw merk genoemd wordt in het antwoord. Word je herkend als de autoriteit op een onderwerp, dan citeert de AI je ook zonder dat iemand op je naam zocht. Zichtbaarheid wordt daarmee minder een zoekwoord-spel en meer een merk-spel."
+    }
+  ],
   "ai-tool-werkt-echt-holdout-bureau": [
     {
       "question": "Hoe weet ik of een AI-marketingtool echt werkt?",

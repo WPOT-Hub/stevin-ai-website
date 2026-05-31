@@ -282,6 +282,9 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'ai-tool-werkt-echt-holdout-bureau' && (
             <ArticleAItoolkeuzeBody />
           )}
+          {article.format === 'editorial' && article.slug === 'zichtbaar-in-ai-antwoorden-aeo-geo' && (
+            <ArticleAEOBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
@@ -292,6 +295,7 @@ export default async function ArticlePage({
             article.slug !== 'ai-tools-organisatielaag-marketing' &&
             article.slug !== 'mmm-attributie-incrementality-welke-meet-wat' &&
             article.slug !== 'ai-tool-werkt-echt-holdout-bureau' &&
+            article.slug !== 'zichtbaar-in-ai-antwoorden-aeo-geo' &&
             article.slug !== 'wk-2026-campagne-data-voorbereiding' && (
               <ArticleStubBody article={article} />
             )}
@@ -3339,6 +3343,121 @@ function ArticleAItoolkeuzeBody() {
 
       <EndRule />
       <EndSig>&quot;Het is geen wonder. Het is Stevin.&quot; · Editie 017 / 052</EndSig>
+    </>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────
+   Editie 018: Zichtbaar in AI-antwoorden (pillar AEO/GEO)
+   ──────────────────────────────────────────────────────────── */
+function ArticleAEOBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Een groeiend deel van je doelgroep stelt zijn vraag niet meer aan Google, maar aan ChatGPT, Perplexity of de AI-samenvatting bovenaan de zoekresultaten. Die geven een antwoord, geen lijst met links. En in dat antwoord sta je er wel of niet in. Het ongemakkelijke nieuws: de trucs waarvan iedereen denkt dat ze helpen, doen dat niet. Het goede nieuws: wat wel werkt, is precies wat je toch al had moeten doen.
+      </p>
+
+      <p>
+        Dit stuk gaat over zichtbaar zijn in AI-antwoorden, een vakgebied dat inmiddels AEO of GEO heet (answer engine optimization, generative engine optimization). We baseren ons niet op speculatie maar op wat Google er zelf over zegt in zijn officiele guidance, en op hoe deze systemen technisch werken. Aan het eind weet je welke vier dingen tijdverspilling zijn, en welke drie het verschil maken.
+      </p>
+
+      <H2 num="01">Hoe een AI-antwoord zijn bronnen kiest</H2>
+
+      <p>
+        Begin bij het mechanisme, want daaruit volgt al het advies. Een AI-zoekfunctie werkt met retrieval-augmented generation: het systeem haalt relevante, actuele pagina's uit de gewone zoekindex en bouwt daar zijn antwoord omheen, met klikbare bronlinks. De eerste voorwaarde is daarmee keihard: als je pagina niet geindexeerd is en niet in aanmerking komt voor een gewone snippet, kan geen enkele AI hem citeren. Geen index, geen antwoord.
+      </p>
+
+      <p>
+        Het tweede mechanisme heet query fan-out. In plaats van alleen jouw exacte vraag, genereert het systeem een serie gerelateerde deelvragen en haalt daar afzonderlijk bronnen bij. Een vraag over de beste meetmethode wordt opgeknipt in deelvragen over attributie, over incrementality, over budget-allocatie. Content die meerdere invalshoeken van een onderwerp grondig dekt, wordt daardoor vaker opgehaald dan een pagina die maar een hoekje raakt. Dat is precies waarom een diepe pillar het wint van tien losse korte berichten.
+      </p>
+
+      <PullQuote
+        text='"Geen index, geen antwoord. En daarna wint niet de slimste markup, maar de bron die het onderwerp het grondigst en het eerlijkst dekt."'
+        cite="Stevin Journal, redactie."
+      />
+
+      <H2 num="02">Vier dingen die niet werken</H2>
+
+      <p>
+        Hier gaat veel tijd en geld verloren, omdat het intuitief klopt en toch onjuist is. Google is er in zijn eigen documentatie expliciet over.
+      </p>
+
+      <Takeaways
+        label="TIJDVERSPILLING"
+        title="Wat je kunt laten staan"
+        items={[
+          {
+            pct: '01',
+            text: (
+              <>
+                <b>Speciale AI-bestanden zoals llms.txt.</b> Google zegt letterlijk dat je geen nieuwe machine-leesbare bestanden of markup hoeft te maken om in AI-zoekresultaten te verschijnen. Het is geen rankingfactor.
+              </>
+            ),
+          },
+          {
+            pct: '02',
+            text: (
+              <>
+                <b>Je content in stukjes hakken (chunking).</b> Er is geen eis om je tekst in kleine brokjes te knippen voor de AI. Schrijf voor de lezer, niet voor de parser.
+              </>
+            ),
+          },
+          {
+            pct: '03',
+            text: (
+              <>
+                <b>Extra schema-markup als wondermiddel.</b> Structured data is niet vereist voor generatieve AI-zoek. Het helpt voor rich results in gewone Search, maar het is niet de hefboom voor citatie.
+              </>
+            ),
+          },
+          {
+            pct: '04',
+            text: (
+              <>
+                <b>Herschrijven in AI-taal of mentions kopen.</b> Tekst speciaal verdraaien voor AI, of kunstmatige vermeldingen verzamelen, valt onder spam en helpt niet duurzaam.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <p>
+        Het patroon achter deze vier: het zijn allemaal pogingen om het systeem te slim af te zijn met een technische ingreep. Maar deze systemen zijn juist gebouwd om door dat soort ingrepen heen te kijken naar de onderliggende kwaliteit. De afkorting AEO of GEO suggereert dat er een nieuwe knoppenset is. Die is er niet.
+      </p>
+
+      <H2 num="03">Drie dingen die wel werken</H2>
+
+      <p>
+        Wat overblijft is onspectaculair en juist daarom betrouwbaar. Een. Wees crawlbaar en indexeerbaar, want zonder dat begint niets. Twee. Schrijf content met een eigen standpunt dat nergens anders zo staat, want een AI citeert geen herhaling van wat al tien keer bestaat, maar de bron die iets toevoegt. Drie. Dek een onderwerp in de volle breedte, met heldere koppen en secties, zodat de query fan-out jouw pagina bij meerdere deelvragen oppikt.
+      </p>
+
+      <p>
+        Merk op dat dit exact de definitie van een goede pillar is. Geen toeval. De AI-zoekwereld beloont dezelfde dingen als een serieuze lezer: diepgang, een eigen mening, en een tekst die de moeite van het citeren waard is. Wie zijn content al schrijft om gezaghebbend te zijn op een onderwerp, doet aan AEO zonder het zo te noemen.
+      </p>
+
+      <Callout
+        big="0"
+        label="Het aantal nieuwe technische bestanden of markup-formats dat je moet aanmaken om in AI-antwoorden te verschijnen, volgens Google's eigen guidance. De hefboom is content-uniekheid, niet een bestand."
+      />
+
+      <H2 num="04">Waarom dit een merkvraag wordt</H2>
+
+      <p>
+        Er is een verschuiving die dieper gaat dan techniek. Als de AI het antwoord geeft en de gebruiker niet meer doorklikt, verdwijnt de klik als ijkpunt. Wat overblijft is of jouw merk genoemd wordt in het antwoord. Dat maakt zichtbaarheid in AI minder een zoekwoord-spel en meer een merk-spel: word je herkend als de autoriteit op een onderwerp, dan citeert de AI je, ook zonder dat iemand op je naam zocht. We schreven eerder dat AI op merk zoekt, niet op zoekwoord. Dit is daar de mechaniek onder.
+      </p>
+
+      <p>
+        Voor een marketingbureau of in-house team betekent dat een onaangename maar bevrijdende conclusie. Je kunt je niet meer een weg naar zichtbaarheid trucen. Je kunt alleen zichtbaar worden door op een onderwerp het beste, eerlijkste en grondigste te zijn dat er te vinden is. Dat is trager dan een SEO-hack, en het is het enige dat overeind blijft als de zoekmachine een antwoordmachine wordt.
+      </p>
+
+      <p>
+        Dat is ook waarom dit stuk bestaat, en waarom Stevin schrijft zoals het schrijft. Niet om een algoritme te plezieren, maar om op de onderwerpen die ertoe doen, meetbaarheid, attributie, de keuze van AI-tools, het meest navolgbare standpunt te hebben. Zichtbaar zijn in AI is geen apart project naast goede content. Het is het gevolg ervan.
+      </p>
+
+      <PullQuote text='"Wonder en is gheen wonder."' cite="Simon Stevin, 1586. Geen truc maakt je zichtbaar. Alleen herleidbare kwaliteit." />
+
+      <EndRule />
+      <EndSig>&quot;Het is geen wonder. Het is Stevin.&quot; · Editie 018 / 052</EndSig>
     </>
   )
 }

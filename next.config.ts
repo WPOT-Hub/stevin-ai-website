@@ -95,6 +95,190 @@ const nextConfig: NextConfig = {
         destination: '/:locale/blog/ai-verandert-print-on-demand-ecommerce',
         permanent: true,
       },
+      // 301-redirects voor geschrapte off-topic dispatches (geen marketing-hoek).
+      // Verwijzen naar de blog-index zodat oude URLs niet 404'en.
+      // Per slug twee varianten: kaal /blog/-pad (NL default, geen locale-prefix)
+      // plus /:locale/blog/-vorm voor /en/ (en eventuele /nl/) URLs.
+      {
+        source: '/blog/social-media-opgeblazen-drone-algoritme-claim',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/social-media-opgeblazen-drone-algoritme-claim',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/softbank-investeert-tientallen-miljarden-in-franse-ai-data-centers',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/softbank-investeert-tientallen-miljarden-in-franse-ai-data-centers',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/robotaxis-in-de-vs-komen-onder-druk-door-onveilige-incidenten',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/robotaxis-in-de-vs-komen-onder-druk-door-onveilige-incidenten',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/tno-defensie-samenwerken-innovatie',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/tno-defensie-samenwerken-innovatie',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/amerika-budget-9-miljard-voor-ai-spionage',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/amerika-budget-9-miljard-voor-ai-spionage',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/cerebras-beursgang-ai-chipsector',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/cerebras-beursgang-ai-chipsector',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/btw-fraude-netwerk-europa-operatie-admiral',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/btw-fraude-netwerk-europa-operatie-admiral',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/spotify-lanceert-ai-remixes-voor-premium-gebruikers',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/spotify-lanceert-ai-remixes-voor-premium-gebruikers',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/ai-gemaakte-boeken-zonder-waarschuwing-te-koop',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/ai-gemaakte-boeken-zonder-waarschuwing-te-koop',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/vodafone-batterijgarantie-drie-jaar-accuvervanging',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/vodafone-batterijgarantie-drie-jaar-accuvervanging',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/openai-race-naar-agi-onthuld',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/openai-race-naar-agi-onthuld',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/ai-presentatrice-kids-top-20-wekt-teleurstelling',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/ai-presentatrice-kids-top-20-wekt-teleurstelling',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/microsoft-verbergt-copilot-knop-in-office-na-kritiek',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/microsoft-verbergt-copilot-knop-in-office-na-kritiek',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/new-york-pizza-toont-macht-van-lokale-marketing',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/new-york-pizza-toont-macht-van-lokale-marketing',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/beardbrand-expansion-plan-na-groeistagnatie',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/beardbrand-expansion-plan-na-groeistagnatie',
+        destination: '/:locale/blog',
+        permanent: true,
+      },
     ]
   },
 }
