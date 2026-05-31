@@ -276,6 +276,9 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'ai-tools-organisatielaag-marketing' && (
             <ArticleOrglaagBody />
           )}
+          {article.format === 'editorial' && article.slug === 'mmm-attributie-incrementality-welke-meet-wat' && (
+            <ArticleAttributiePillarBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
@@ -284,6 +287,7 @@ export default async function ArticlePage({
             article.slug !== 'beste-transcriptietool-2026' &&
             article.slug !== 'ai-cowboys-marketing-2026' &&
             article.slug !== 'ai-tools-organisatielaag-marketing' &&
+            article.slug !== 'mmm-attributie-incrementality-welke-meet-wat' &&
             article.slug !== 'wk-2026-campagne-data-voorbereiding' && (
               <ArticleStubBody article={article} />
             )}
@@ -3095,6 +3099,139 @@ function ArticleOrglaagBody() {
         of stuur me een bericht op LinkedIn. Geen sales-gesprek, gewoon een goed gesprek over hoe je
         dit soort versnippering aanpakt. · Editie 018 / 052
       </EndSig>
+    </>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────
+   Editie 016: MMM, attributie en incrementality (pillar attributie)
+   ──────────────────────────────────────────────────────────── */
+function ArticleAttributiePillarBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Er zijn grofweg drie manieren om te meten wat marketing oplevert: een marketing mix model, multi-touch attributie, en incrementality-testen. Ze worden vaak in een adem genoemd, alsof het drie smaken van hetzelfde zijn. Dat zijn ze niet. Ze beantwoorden drie verschillende vragen, met drie verschillende soorten zekerheid. Wie ze door elkaar haalt, stuurt zijn budget op de verkeerde grafiek.
+      </p>
+
+      <p>
+        Dit stuk zet de drie naast elkaar. Wat meet elk echt, waar is het sterk, en waar geeft het je een getal dat eruitziet als een feit maar het niet is. En aan het eind: waarom geen van de drie alleen volstaat, en wat je in de plaats daarvan moet doen.
+      </p>
+
+      <H2 num="01">Drie methodes, drie vragen</H2>
+
+      <p>
+        Begin bij de vraag, niet bij de tool. Een marketing mix model (MMM) vraagt: hoe verhouden mijn totale mediabestedingen zich historisch tot mijn totale sales, gecorrigeerd voor seizoen, prijs, promotie en macro-economie? Het kijkt van bovenaf, op week- of maandniveau, naar het hele bedrijf. Het raakt geen enkele individuele klik aan.
+      </p>
+
+      <p>
+        Multi-touch attributie (MTA) vraagt iets heel anders: van de mensen die hebben geconverteerd, welke contactmomenten zaten er in hun pad, en hoeveel krediet geef ik aan elk? Het werkt op individueel niveau, op basis van trackbare touchpoints. Het ziet alleen wat het kan volgen, en alleen van mensen die uiteindelijk kochten.
+      </p>
+
+      <p>
+        Incrementality vraagt de enige vraag die echt over oorzaak gaat: wat zou er zijn gebeurd als ik deze campagne niet had gedraaid? Je houdt een groep bewust buiten de campagne (een holdout of een geo-test), en je vergelijkt. Het verschil is de werkelijke uplift. Niet de toegeschreven uplift, de werkelijke.
+      </p>
+
+      <PullQuote
+        text='"MMM kijkt naar het hele bedrijf van bovenaf. MTA kijkt naar individuele paden van onderaf. Incrementality is de enige die vraagt wat er zonder de campagne was gebeurd."'
+        cite="Stevin Journal, redactie."
+      />
+
+      <H2 num="02">Wat elk wel en niet kan</H2>
+
+      <p>
+        Een MMM is sterk waar de andere twee blind zijn: het pakt offline, het pakt brand, het pakt het effect van weer en seizoen, en het heeft geen cookies of pixels nodig. Het is privacy-bestendig per ontwerp. Maar het is traag (je hebt twee tot drie jaar data nodig voordat de schatting betrouwbaar wordt), het is grof (het zegt iets over kanalen, niet over campagnes of doelgroepen), en elk getal dat het oplevert is een schatting met een interval, geen vaststelling. Wie de MMM-uitkomst als rapport leest in plaats van als hypothese, koopt false confidence. Dat schreven we eerder al uit in een apart stuk over waarom een MMM een hypothese is.
+      </p>
+
+      <p>
+        Multi-touch attributie is snel en gedetailleerd, en daarom zo verleidelijk. Je ziet per campagne, per advertentie, per zoekwoord een bijdrage. Het probleem is dat die details een precisie suggereren die er niet is. MTA ziet alleen trackbare touchpoints, en sinds de afbraak van third-party cookies, iOS-restricties en consent-weigering ziet het een steeds kleiner en steeds schever deel van de werkelijkheid. Het ziet ook alleen de paden van mensen die converteerden, dus het mist per definitie alles wat top-of-funnel gebeurde bij mensen die later, via een ander pad, terugkwamen. En het allergrootste bezwaar: correlatie in een pad is geen causaliteit. Dat iemand een advertentie zag voordat hij kocht, betekent niet dat de advertentie de aankoop veroorzaakte.
+      </p>
+
+      <Callout
+        big="0%"
+        label="De uplift die een MTA-model toeschrijft aan een kanaal kan in werkelijkheid nul zijn. Het model ziet de touchpoints in het pad, maar weet niet of die touchpoints de conversie veroorzaakten of er alleen toevallig naast lagen. Alleen een holdout-test scheidt die twee."
+      />
+
+      <p>
+        Incrementality is de enige van de drie die causaliteit echt benadert, omdat het een controlegroep gebruikt. Het is de gouden standaard voor de vraag of een euro extra in dit kanaal een euro extra omzet oplevert. Maar het is duur in denkwerk, het kost je bewust een stuk bereik (de holdout krijgt de campagne niet), en je kunt niet alles tegelijk testen. Het beantwoordt scherpe, losse vragen, geen continu dashboard.
+      </p>
+
+      <Takeaways
+        label="WELKE METHODE VOOR WELKE VRAAG"
+        title="Wat je moet pakken, afhankelijk van wat je wilt weten"
+        items={[
+          {
+            pct: '01',
+            text: (
+              <>
+                <b>Hoe verdeel ik mijn budget over kanalen voor het komende kwartaal?</b> MMM. Het is de enige die het hele plaatje pakt, inclusief offline en brand.
+              </>
+            ),
+          },
+          {
+            pct: '02',
+            text: (
+              <>
+                <b>Levert deze specifieke campagne echt iets op, of zou het ook zonder zijn gebeurd?</b> Incrementality. Alleen een holdout of geo-test beantwoordt dit eerlijk.
+              </>
+            ),
+          },
+          {
+            pct: '03',
+            text: (
+              <>
+                <b>Welke creatives en doelgroepen presteren relatief beter binnen een kanaal?</b> MTA, maar alleen als directioneel signaal, nooit als absolute waarheid.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <H2 num="03">De denkfout die geld kost</H2>
+
+      <p>
+        De fout die we het vaakst zien is niet dat iemand de verkeerde methode kiest. Het is dat iemand een getal uit de ene methode behandelt alsof het de vraag van een andere methode beantwoordt. Een MTA-dashboard zegt dat Meta 4,1 ROAS doet, en dat getal verschijnt in een budget-overleg alsof het de incrementele bijdrage van Meta is. Dat is het niet. Het is de toegeschreven bijdrage binnen een trackbaar pad, en de werkelijke uplift kan de helft zijn, of nul.
+      </p>
+
+      <p>
+        Andersom net zo goed. Een MMM zegt dat search historisch 28 procent van de sales verklaart, en iemand leidt daaruit af dat de search-campagne van volgende week 28 procent gaat opleveren. Dat is een schatting over het verleden, met een breed interval, omgebogen tot een belofte over de toekomst. De methode is niet fout. De lezing is fout.
+      </p>
+
+      <PullQuote
+        text='"De duurste fout is niet de verkeerde methode kiezen. Het is een getal uit de ene methode lezen alsof het de vraag van een andere beantwoordt."'
+        cite="Stevin Journal, redactie."
+      />
+
+      <p>
+        Het patroon erachter is altijd hetzelfde: een dashboard geeft een precies getal, een precies getal voelt als zekerheid, en zekerheid wint het in een vergadering van een eerlijk interval. Zo stuurt het bureau zijn budget op de grafiek die het zelfverzekerdst oogt, niet op de grafiek die het dichtst bij de waarheid zit. Dit is dezelfde meetlat-discrepantie die we beschreven in het stuk over waarom 95 procent van de AI-marketingpilots faalt: niet het model is het probleem, maar de vraag of iemand weet of het werkt.
+      </p>
+
+      <H2 num="04">Triangulatie, niet een winnaar</H2>
+
+      <p>
+        De eerlijke conclusie is ongemakkelijk voor wie een simpel antwoord wil: geen van de drie methodes is de juiste. Ze zijn alle drie nodig, omdat ze elkaars zwakte afdekken. MMM geeft de richting voor de grote budget-verdeling. Incrementality kalibreert die richting met een paar harde causale metingen, zodat de MMM niet op zichzelf hoeft te vertrouwen. En MTA vult de dagelijkse, fijnmazige optimalisatie in binnen de grenzen die de andere twee hebben uitgezet.
+      </p>
+
+      <p>
+        Dat heet triangulatie. Je gebruikt drie onvolmaakte metingen die op verschillende manieren fout zijn, en je vertrouwt het meest op wat er overeind blijft als je ze naast elkaar legt. Als MMM, een geo-test en je MTA-dashboard alle drie naar hetzelfde kanaal wijzen, weet je genoeg. Als ze uit elkaar lopen, weet je dat je nog niet klaar bent met meten, en dat is op zichzelf de waardevolste uitkomst.
+      </p>
+
+      <Callout
+        big="3×"
+        label="Triangulatie betekent niet drie keer zoveel werk. Het betekent dat je een MMM een paar keer per jaar kalibreert met een geo-test, en je MTA-dashboard leest als kompas in plaats van als waarheid. De drie methodes versterken elkaar pas als iemand ze actief tegen elkaar uitzet."
+      />
+
+      <p>
+        Hier zit precies het werk dat zelden gebeurt. Triangulatie vraagt dat iemand de drie metingen samenbrengt, de afwijkingen opmerkt, en er een beslissing aan koppelt. In de praktijk leven de drie methodes in drie tools, beheerd door drie mensen, gerapporteerd in drie verschillende weken. Niemand legt ze naast elkaar, dus niemand ziet de afwijking, dus het budget blijft op de zelfverzekerde grafiek staan.
+      </p>
+
+      <p>
+        Dat samenbrengen is waar Stevin voor is gebouwd. Niet om een vierde meetmethode toe te voegen, maar om de drie die je al hebt te laten samenkomen, de afwijkingen zichtbaar te maken, en er een concrete volgende actie aan te hangen. Meten is niet het eindpunt. Een beslissing is het eindpunt. Marketing intelligence die beslist, niet alleen rapporteert.
+      </p>
+
+      <PullQuote text='"Wonder en is gheen wonder."' cite="Simon Stevin, 1586. Als je het niet kunt herleiden, is het geen feit maar een verhaal." />
+
+      <EndRule />
+      <EndSig>&quot;Het is geen wonder. Het is Stevin.&quot; · Editie 016 / 052</EndSig>
     </>
   )
 }
