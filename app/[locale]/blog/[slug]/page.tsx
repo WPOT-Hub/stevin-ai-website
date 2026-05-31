@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'tiktok-shop-lanceert-in-nederland-op-15-juni': (
+    <>
+      <p className="lead-para">
+        TikTok Shop gaat op 15 juni officieel van start in Nederland en België, na een succesvolle introductie in zes andere EU-landen. Lokale merken zoals Meroda, Perfetti Van Melle en kleinere bedrijven als Cloudpillo doen mee bij de lancering. De winkel combineert korte video’s met directe aankoopopties en live verkoopmomenten, waardoor consumenten direct kunnen kopen vanuit hun favoriete creators of merken.
+      </p>
+      <p>
+        Verkopers kunnen via ‘Sell Across Europe’ hun producten aanbieden in alle EU-markten waar TikTok Shop actief is. Het platform biedt lokale productbeschrijvingen, verzendopties via goedgekeurde logistieke partners en affiliate-programma’s voor creators. Om mee te doen, moeten verkopers zich registreren via een specifiek e-mailadres en voldoen aan de communityrichtlijnen van TikTok.
+      </p>
+      <p>
+        De nieuwe shop-tabbladen op bedrijfsprofielen geven klanten een overzichtelijk overzicht van producten, recensies en aanbiedingen. Betalingen verlopen via vertrouwde externe partijen om de veiligheid te waarborgen. TikTok benadrukt dat het beleid handhaaft met zowel technologie als handmatige controles om regels te handhaven.
+      </p>
+    </>
+  ),
   'robotaxis-in-de-vs-komen-onder-druk-door-onveilige-incidenten': (
     <>
       <p className="lead-para">
@@ -2409,6 +2422,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'tiktok-shop-lanceert-in-nederland-op-15-juni':
+    "Voor bedrijven die al actief zijn op TikTok biedt de Shop-functie een natuurlijke uitbreiding naar direct verkoopkanaal zonder extra investeringen in nieuwe platforms. Merken die nog geen ervaring hebben met sociale commerce kunnen profiteren van de aantrekkingskracht van short-form content zonder complexe integraties. Wel is het belangrijk om de communityrichtlijnen strikt te volgen om sancties te voorkomen.",
   'robotaxis-in-de-vs-komen-onder-druk-door-onveilige-incidenten':
     "Voor bedrijven die nieuwe technologieën omarmen is dit een waarschuwing: schaalvergroting gaat vaak gepaard met onverwachte risico’s. Zelfrijdende systemen zijn nog niet uitontwikkeld en vereisen continue updates om edge cases te tackelen. Ondernemers die investeren in innovatie doen er goed aan om pilots klein te houden en feedback van gebruikers en omgeving serieus te nemen voordat ze opschalen.",
   'instagram-gaat-naar-connected-tv-wat-merken-nu-moeten-doen':
