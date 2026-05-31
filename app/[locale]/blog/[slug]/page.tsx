@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'tiktok-shop-lanceert-in-nederland-en-belgie-op-15-juni': (
+    <>
+      <p className="lead-para">
+        TikTok Shop gaat op 15 juni officieel van start in Nederland en België. Ook Oostenrijk en Polen volgen die dag. De shop brengt shoppable video’s en interactieve livestreams samen, waarbij merken, verkopers en creators direct producten kunnen verkopen. Bij de lancering doen onder meer Meroda, Perfetti Van Melle, Nbrands by Nikkie Plessen en Versuni mee, naast kleinere Nederlandse merken zoals Cloudpillo.
+      </p>
+      <p>
+        Verkopers kunnen via ‘Sell Across Europe’ direct hun producten aanbieden in andere EU-markten waar TikTok Shop beschikbaar is. Productbeschrijvingen worden automatisch gelokaliseerd per markt. Verkopers hebben keuze uit directe verzending of samenwerking met goedgekeurde logistieke partners van TikTok Shop. Daarnaast kunnen ze gebruikmaken van het affiliate-netwerk van TikTok Shop-creators om commissie te verdienen.
+      </p>
+      <p>
+        Wie aan de slag wil op TikTok Shop kan zich registeren via tiktokshop.eu.markets@bytedance.com. De shop biedt een eigen tabblad waar bedrijven hun producten tonen, klanten kunnen zoeken en bestellingen beheren. Betaling verloopt via vertrouwde externe platforms.
+      </p>
+    </>
+  ),
   'b2b-ppc-metingen-meten-niet-altijd-uplift': (
     <>
       <p className="lead-para">
@@ -2344,6 +2357,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'tiktok-shop-lanceert-in-nederland-en-belgie-op-15-juni':
+    "Voor bedrijven die actief zijn op sociale media wordt TikTok Shop een nieuwe kanaal om directe sales te genereren via content. Het cross-border karakter maakt het interessant voor merken die al in meerdere EU-landen actief zijn. Tegelijk vraagt het om aandacht voor lokale regelgeving en communityrichtlijnen om verwijdering te voorkomen.",
   'b2b-ppc-metingen-meten-niet-altijd-uplift':
     "Voor bureaus en in-house teams betekent dit dat ze kritischer moeten kijken naar de meetmethodes die ze hanteren. Het is zaak om niet alleen naar de klassieke KPI’s te kijken, maar ook naar aanvullende data zoals klantwaarde op lange termijn en de impact van campagnes buiten het directe bereik. Een integrale aanpak met meerdere meetpunten geeft een completer beeld van wat werkt.",
   'google-test-branded-search-controls-ai-max':
