@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'tno-defensie-samenwerken-innovatie': (
+    <>
+      <p className="lead-para">
+        Het ministerie van Defensie en TNO gaan innovaties van het onderzoeksinstituut versneld commercialiseren. Doel is om de Nederlandse defensie-industrie concurrerender te maken en nieuwe bedrijven op te zetten.
+      </p>
+      <p>
+        De samenwerking richt zich op technologieën die direct toepasbaar zijn in defensietoepassingen. Denk aan geavanceerde materialen, sensoren en energieoplossingen die de veiligheid en capaciteit van de krijgsmacht vergroten.
+      </p>
+      <p>
+        TNO werkt al langer aan toepassingen voor extreme omstandigheden, zoals batterijtechnologie voor arctische missies. Deze innovaties worden nu geoptimaliseerd voor operationeel gebruik.
+      </p>
+    </>
+  ),
   'europese-cloud-marketingvraagstuk-datasoevereiniteit': (
     <>
       <p className="lead-para">
@@ -2370,6 +2383,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'tno-defensie-samenwerken-innovatie':
+    "Voor ondernemers in Nederland betekent deze samenwerking dat er nieuwe kansen ontstaan om mee te liften op defensiegerelateerde innovaties. Het toont aan dat publieke investeringen in R&D ook directe economische impact kunnen hebben. Bedrijven die actief zijn in hightech of duurzame technologie zouden deze ontwikkelingen moeten volgen om vroegtijdig kansen te signaleren.",
   'europese-cloud-marketingvraagstuk-datasoevereiniteit':
     "Voor bureaus wordt dit een kans om vertrouwen te winnen door transparantie te tonen. Niet door te benadrukken dat je AI gebruikt, maar door te laten zien hoe je AI veilig, uitlegbaar en klantgescheiden inzet binnen je processen. Dat vraagt om een helder verhaal over tools, datastromen en controlesystemen – niet als juridisch document, maar als onderdeel van professioneel advieswerk.",
   'tiktok-shop-lanceert-in-nederland-en-belgie-op-15-juni':
