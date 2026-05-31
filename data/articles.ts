@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'social-media-opgeblazen-drone-algoritme-claim',
+    format: 'dispatch' as const,
+    edition: '102',
+    category: 'Technologie',
+    title: "Social media maakt van Chinese drone-paper een “100% kill-rate” verhaal",
+    dek: "Een Chinees wetenschappelijk artikel over dronezwermen wordt op social media opgeblazen tot een angstbeeld van autonome drones met een perfecte dodelijke score.",
+    publishedAt: '2026-05-31',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECHNOLOGIE',
+    posterTopic: "Social media maakt van Chinese drone-paper een “100% kill-rate” verhaal",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'softbank-investeert-tientallen-miljarden-in-franse-ai-data-centers',
     format: 'dispatch' as const,
     edition: '101',
