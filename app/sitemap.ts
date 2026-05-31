@@ -66,23 +66,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'x-default': `${baseUrl}${path}`,
   })
 
-  // Blog posts: gebruik de echte publishedAt datum
-  const blogEntries: MetadataRoute.Sitemap = articles.flatMap((a) => [
-    {
-      url: `${baseUrl}/blog/${a.slug}`,
-      lastModified: a.publishedAt,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-      alternates: { languages: altLangs(`/blog/${a.slug}`) },
-    },
-    {
-      url: `${baseUrl}/en/blog/${a.slug}`,
-      lastModified: a.publishedAt,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-      alternates: { languages: altLangs(`/blog/${a.slug}`) },
-    },
-  ])
+  // Blog posts: gebruik de echte publishedAt datum.
+  // Alleen de NL-URL in de sitemap. De /en/blog/<slug> variant toont vandaag
+  // nog dezelfde NL-tekst (echte EN-vertaling komt via de Hub journal-pipeline)
+  // en hoort dus niet als aparte indexeerbare URL in de sitemap: dat is een
+  // duplicate-signaal en verspilt crawl-budget. Google adviseert expliciet
+  // "reduce duplicate content". Zodra er per artikel een echte EN-vertaling is,
+  // voeg je hier de /en/blog/<slug> entry met een eigen hreflang-paar weer toe.
+  const blogEntries: MetadataRoute.Sitemap = articles.map((a) => ({
+    url: `${baseUrl}/blog/${a.slug}`,
+    lastModified: a.publishedAt,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+    alternates: { languages: { 'nl-NL': `${baseUrl}/blog/${a.slug}`, 'x-default': `${baseUrl}/blog/${a.slug}` } },
+  }))
 
   // Statische pagina's: geen lastModified (voorkomt dat crawlers het veld negeren)
   const nlEntries: MetadataRoute.Sitemap = staticPages.map((path) => ({
