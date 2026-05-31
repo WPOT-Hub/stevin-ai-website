@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'europese-cloud-marketingvraagstuk-datasoevereiniteit',
+    format: 'dispatch' as const,
+    edition: '096',
+    category: 'Platform',
+    title: "Europese cloud wordt een marketingvraagstuk: waar staat jouw data?",
+    dek: "KPN en Schwarz Digits lanceren een Europese soevereine cloud voor Nederland, maar het echte issue ligt in de groeiende vraag naar controle over marketingdata en AI-workflows binnen Europa.",
+    publishedAt: '2026-05-31',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Europese cloud wordt een marketingvraagstuk: waar staat jouw data?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'tiktok-shop-lanceert-in-nederland-en-belgie-op-15-juni',
     format: 'dispatch' as const,
     edition: '095',
