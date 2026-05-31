@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'softbank-investeert-tientallen-miljarden-in-franse-ai-data-centers',
+    format: 'dispatch' as const,
+    edition: '101',
+    category: 'Markt',
+    title: "SoftBank investeert 45 miljard euro in Franse AI-data centers",
+    dek: "De Japanse techinvesteerder zet minimaal 45 miljard euro in drie Franse data centers voor kunstmatige intelligentie, met een totale capaciteit van 3,1 gigawatt tegen 2031.",
+    publishedAt: '2026-05-31',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "SoftBank investeert 45 miljard euro in Franse AI-data centers",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'tiktok-shop-lanceert-in-nederland-op-15-juni',
     format: 'dispatch' as const,
     edition: '100',
