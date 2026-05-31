@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'tiktok-shop-lanceert-in-nederland-en-belgie-op-15-juni',
+    format: 'dispatch' as const,
+    edition: '095',
+    category: 'Distributie',
+    title: "TikTok Shop start 15 juni in Nederland en België",
+    dek: "TikTok Shop lanceert op 15 juni in Nederland en België, met live shoppable video’s, livestreams en cross-border verkoop voor lokale merken.",
+    publishedAt: '2026-05-31',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "TikTok Shop start 15 juni in Nederland en België",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'b2b-ppc-metingen-meten-niet-altijd-uplift',
     format: 'dispatch' as const,
     edition: '094',
