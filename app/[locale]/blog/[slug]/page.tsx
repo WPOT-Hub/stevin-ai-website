@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'robotaxis-in-de-vs-komen-onder-druk-door-onveilige-incidenten': (
+    <>
+      <p className="lead-para">
+        Zelfrijdende taxibedrijven zoals Waymo en Tesla zien hun diensten in tientallen Amerikaanse steden onder vuur liggen door herhaalde incidenten. Uit politierapporten en sociale media blijkt dat robotvoertuigen regelmatig vast komen te zitten in overstromingen, file veroorzaken of zelfs hulpdiensten blokkeren. In Atlanta werden onbemande Waymo’s bijvoorbeeld urenlang geblokkeerd door bewoners die een barricade opwierpen tegen de voertuigen.
+      </p>
+      <p>
+        De problemen lopen uiteen van hilarisch tot zorgwekkend: Waymo’s software update na een massale terugroepactie van 3.800 voertuigen bleek nog steeds niet bestand tegen extreme weersomstandigheden. In San Antonio en Atlanta raakten meerdere robotaxis vast in overstromingen, ondanks eerdere aanpassingen. Lokale overheden en wetshandhavers reageren met strenge maatregelen, zoals tijdelijke rijverboden op snelwegen.
+      </p>
+      <p>
+        Ondanks de kritiek claimen bedrijven als Waymo dat hun voertuigen significant veiliger zijn dan menselijke bestuurders: volgens eigen onderzoek veroorzaken ze 80% minder letselgevende ongelukken per gereden kilometer. Tesla benadrukt dat haar FSD-software pas na gemiddeld 1,6 miljoen kilometer een lichte botsing registreert, tegenover 220.000 kilometer voor menselijke chauffeurs.
+      </p>
+    </>
+  ),
   'instagram-gaat-naar-connected-tv-wat-merken-nu-moeten-doen': (
     <>
       <p className="lead-para">
@@ -2396,6 +2409,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'robotaxis-in-de-vs-komen-onder-druk-door-onveilige-incidenten':
+    "Voor bedrijven die nieuwe technologieën omarmen is dit een waarschuwing: schaalvergroting gaat vaak gepaard met onverwachte risico’s. Zelfrijdende systemen zijn nog niet uitontwikkeld en vereisen continue updates om edge cases te tackelen. Ondernemers die investeren in innovatie doen er goed aan om pilots klein te houden en feedback van gebruikers en omgeving serieus te nemen voordat ze opschalen.",
   'instagram-gaat-naar-connected-tv-wat-merken-nu-moeten-doen':
     "Voor merken is dit een signaal om hun contentstrategie te diversifiëren. Short form blijft belangrijk als ingang, maar long form kan de verdieping bieden die nodig is om aandacht vast te houden. Het combineren van verschillende formats – van Reels tot livestreams – maakt campagnes meetbaarder en effectiever. Daarnaast biedt AI kansen om productiekosten te verlagen en content efficiënter te hergebruiken.",
   'tno-defensie-samenwerken-innovatie':
