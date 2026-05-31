@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'instagram-gaat-naar-connected-tv-wat-merken-nu-moeten-doen': (
+    <>
+      <p className="lead-para">
+        Meta breidt Instagram uit naar Connected TV-apparaten zoals Amazon Fire TV en Google TV. Met Instagram for TV komen Reels naar het grote scherm, gegroepeerd in kanalen zoals sport en reizen. De app speelt content automatisch af met geluid aan, wat aansluit bij het kijkgedrag op de bank in plaats van tussen door scrollen.
+      </p>
+      <p>
+        Instagram zoekt hiermee een plek in de strijd om aandacht op Connected TV, waar traditionele tv, YouTube en Netflix concurreren. Voor adverteerders is dit interessant omdat Connected TV bereik combineert met digitale meetbaarheid. Maar Reels zijn gemaakt voor mobiel verticaal kijken, niet voor langere formats op tv. Meta onderzoekt daarom ook podcasts, livestreams en mini-series om gebruikers langer vast te houden.
+      </p>
+      <p>
+        Voor merken betekent dit dat ze niet alleen korte video’s moeten maken, maar ook langere formats zoals mini-series of terugkerende programma’s. Een makelaar kan bijvoorbeeld een serie maken over kopen in een regio, terwijl een B2B-dienstverlener gesprekken of cases kan publiceren. Dit vraagt om een andere benadering: niet wat posten we vandaag, maar welk format kunnen mensen blijven volgen?
+      </p>
+    </>
+  ),
   'tno-defensie-samenwerken-innovatie': (
     <>
       <p className="lead-para">
@@ -2383,6 +2396,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'instagram-gaat-naar-connected-tv-wat-merken-nu-moeten-doen':
+    "Voor merken is dit een signaal om hun contentstrategie te diversifiëren. Short form blijft belangrijk als ingang, maar long form kan de verdieping bieden die nodig is om aandacht vast te houden. Het combineren van verschillende formats – van Reels tot livestreams – maakt campagnes meetbaarder en effectiever. Daarnaast biedt AI kansen om productiekosten te verlagen en content efficiënter te hergebruiken.",
   'tno-defensie-samenwerken-innovatie':
     "Voor ondernemers in Nederland betekent deze samenwerking dat er nieuwe kansen ontstaan om mee te liften op defensiegerelateerde innovaties. Het toont aan dat publieke investeringen in R&D ook directe economische impact kunnen hebben. Bedrijven die actief zijn in hightech of duurzame technologie zouden deze ontwikkelingen moeten volgen om vroegtijdig kansen te signaleren.",
   'europese-cloud-marketingvraagstuk-datasoevereiniteit':
