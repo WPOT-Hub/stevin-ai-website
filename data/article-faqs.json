@@ -1,4 +1,22 @@
 {
+  "ai-tool-werkt-echt-holdout-bureau": [
+    {
+      "question": "Hoe weet ik of een AI-marketingtool echt werkt?",
+      "answer": "Draai een holdout-test op de tool zelf. Houd een segment, een geo of een periode bewust buiten de tool en vergelijk de resultaten met de groep die de tool wel gebruikt. Het verschil is de werkelijke bijdrage. Het dashboard van de tool meet alleen zijn eigen output en bewijst niet dat die output iets toevoegde aan wat je zonder de tool ook had gehad."
+    },
+    {
+      "question": "Waarom is het dashboard van een AI-tool geen bewijs?",
+      "answer": "Een tool meet zijn eigen output en optimaliseert daarop, dus die output ziet er per definitie goed uit. Het dashboard zegt wat de tool deed, niet wat er zonder de tool zou zijn gebeurd. Onderzoek van MIT laat zien dat gen-AI-tools hun eigen impact gemiddeld met een factor 3,4 overdrijven tegenover onafhankelijke uplift-tests. Alleen een externe baseline of holdout scheidt werkelijke van toegeschreven bijdrage."
+    },
+    {
+      "question": "Welke vragen moet ik een AI-vendor stellen voor ik koop?",
+      "answer": "Vier vragen: mag ik een holdout draaien op jullie tool, op welke externe baseline meten we de uplift, wat gebeurt er met jullie cijfers als ik de tool een week uitzet, en wie bezit de meetdata. Een vendor die twee of meer van deze vragen ontwijkt, geeft je daarmee het antwoord dat je nodig hebt."
+    },
+    {
+      "question": "Moet ik kiezen voor automatisering of beslissingsondersteuning?",
+      "answer": "Voor beslissingsondersteuning, zeker zolang je nog niet kunt herleiden of een tool werkt. Volledige automatisering haalt het controlepunt weg waar een fout zichtbaar wordt voordat hij geld kost. Een tool die een signaal geeft met onderbouwing en de mens laat beslissen is trager maar betrouwbaarder dan een tool die autonoom handelt in een blinde vlek."
+    }
+  ],
   "mmm-attributie-incrementality-welke-meet-wat": [
     {
       "question": "Wat is het verschil tussen MMM, multi-touch attributie en incrementality?",

@@ -279,6 +279,9 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'mmm-attributie-incrementality-welke-meet-wat' && (
             <ArticleAttributiePillarBody />
           )}
+          {article.format === 'editorial' && article.slug === 'ai-tool-werkt-echt-holdout-bureau' && (
+            <ArticleAItoolkeuzeBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
@@ -288,6 +291,7 @@ export default async function ArticlePage({
             article.slug !== 'ai-cowboys-marketing-2026' &&
             article.slug !== 'ai-tools-organisatielaag-marketing' &&
             article.slug !== 'mmm-attributie-incrementality-welke-meet-wat' &&
+            article.slug !== 'ai-tool-werkt-echt-holdout-bureau' &&
             article.slug !== 'wk-2026-campagne-data-voorbereiding' && (
               <ArticleStubBody article={article} />
             )}
@@ -3232,6 +3236,109 @@ function ArticleAttributiePillarBody() {
 
       <EndRule />
       <EndSig>&quot;Het is geen wonder. Het is Stevin.&quot; · Editie 016 / 052</EndSig>
+    </>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────
+   Editie 017: Werkt je AI-marketingtool echt? (pillar AI-tooling-keuze)
+   ──────────────────────────────────────────────────────────── */
+function ArticleAItoolkeuzeBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Er is een vraag die bureau-eigenaren steeds vaker aan een AI stellen, en waar ze steeds een lijstje op terugkrijgen: wat is de beste AI-tool voor marketing? Het antwoord is altijd een opsomming van features, integraties en prijzen. Het is de verkeerde vraag, op precies dezelfde manier als waarop "wat is de beste transcriptietool" de verkeerde vraag is. De juiste vraag is niet welke tool het meeste kan. Het is: hoe weet ik of deze tool echt iets oplevert, en niet alleen een dashboard dat zegt dat het werkt.
+      </p>
+
+      <p>
+        Dit stuk gaat over dat verschil. Waarom een toolkeuze op features bijna altijd misgaat, waarom het dashboard van een tool nooit het bewijs is, en wat de enige test is die wel telt. Aan het eind: een concreet rijtje vragen dat je aan elke vendor stelt voordat je tekent.
+      </p>
+
+      <H2 num="01">Features zijn geen bewijs</H2>
+
+      <p>
+        Een feature-lijst meet wat een tool kan doen, niet wat een tool voor jou oplevert. Dat klinkt als een open deur, maar het is precies waar de meeste keuzes op stranden. Twee tools met een vrijwel identieke feature-lijst kunnen een totaal verschillend effect hebben op jouw resultaat, omdat het effect niet in de feature zit maar in hoe goed de tool past op jouw proces, jouw data en jouw team. De vraag of tool X iets kan, is bijna altijd ja. De vraag of tool X bij jou meer oplevert dan wat je nu doet, is bijna nooit beantwoord voordat het contract getekend is.
+      </p>
+
+      <p>
+        We schreven dit eerder uit voor transcriptietools: de beste tool bestaat niet los van de vraag wat je ermee wilt. Hetzelfde geldt voor elke AI-marketingtool. Een tool die ad-copy genereert is niet beter of slechter dan een andere op grond van zijn feature-lijst. Hij is beter of slechter op grond van of die copy meer verkoopt dan wat je team nu schrijft. En dat staat in geen enkele demo.
+      </p>
+
+      <H2 num="02">Het dashboard liegt niet, maar het bewijst ook niks</H2>
+
+      <p>
+        Elke AI-tool komt met een dashboard, en elk dashboard laat zien dat de tool werkt. Dat is geen toeval en het is geen kwade opzet. Een tool meet zijn eigen output, en zijn eigen output ziet er per definitie goed uit, want dat is wat hij optimaliseert. Het probleem is dat de cijfers op dat dashboard de verkeerde vraag beantwoorden. Het dashboard zegt: dit heeft de tool gedaan. Het zegt niet: dit zou er zonder de tool niet zijn gebeurd.
+      </p>
+
+      <p>
+        Dat onderscheid is precies de meetlat-discrepantie die we beschreven bij het MIT-onderzoek naar mislukte AI-pilots. 95 procent van die pilots haalde de productie nooit, en in de overgrote meerderheid lag dat niet aan het model maar aan het ontbreken van een baseline. Niemand kon zeggen of het werkte, omdat niemand een referentie had. Een tool die zijn eigen succes rapporteert is geen referentie. Het is een marketing-tool met een grafiek erop.
+      </p>
+
+      <Callout
+        big="3,4×"
+        label="Volgens het MIT-onderzoek overdrijven gen-AI-tools hun eigen impact gemiddeld met een factor 3,4, gemeten tegen onafhankelijke uplift-tests. Het dashboard van de tool is structureel optimistischer dan de werkelijkheid."
+      />
+
+      <H2 num="03">De enige test die telt is een holdout</H2>
+
+      <p>
+        Er is precies een manier om te weten of een tool echt iets oplevert: je houdt een deel bewust buiten de tool en je vergelijkt. Een holdout-groep, een geo-test, een periode waarin je de tool uitzet. Het verschil tussen de groep met en de groep zonder is de werkelijke bijdrage. Niet de toegeschreven bijdrage op het dashboard, de werkelijke. Dit is dezelfde logica als bij incrementality-meting voor campagnes: alleen een controlegroep scheidt oorzaak van toeval.
+      </p>
+
+      <p>
+        En hier wordt het ongemakkelijk voor de vendor. Een holdout op de tool zelf is precies wat de meeste leveranciers je liever niet laten doen, want het is het enige experiment dat hun dashboard kan tegenspreken. Een goede vendor verwelkomt het. Een vendor die je een holdout uit het hoofd praat (dat raden we af, dat vertekent de resultaten, ons model heeft alle data nodig om te werken) vertelt je daarmee precies wat je moet weten.
+      </p>
+
+      <PullQuote
+        text='"Een vendor die je een holdout op zijn eigen tool afraadt, geeft je daarmee het belangrijkste antwoord dat je nodig hebt."'
+        cite="Stevin Journal, redactie."
+      />
+
+      <H2 num="04">Kies op beslissingsondersteuning, niet op automatisering</H2>
+
+      <p>
+        Er is een tweede onderscheid dat bureaus structureel verkeerd wegen. De meeste AI-tools verkopen automatisering: ze nemen werk uit handen, ze doen het sneller, ze draaien zonder dat iemand kijkt. Dat klinkt als de hele belofte, maar het is precies waar het misgaat als je het niet kunt herleiden. Een tool die autonoom handelt zonder dat je weet of het werkt, is geen tijdwinst, het is een blinde vlek die sneller groeit.
+      </p>
+
+      <p>
+        De tools die wel renderen, zijn de tools die een beslissing ondersteunen in plaats van vervangen. Die een signaal geven, de onderbouwing erbij leveren, en de mens laten beslissen of het klopt. Dat is trager dan volledige automatisering, en het is precies daarom betrouwbaarder: er zit een controlepunt in waar een fout zichtbaar wordt voordat hij geld kost. We schreven eerder dat AI in marketing in 2026 voelt als 2008: niet omdat de modellen falen, maar omdat mensen te veel rechten weggeven aan tools die ze niet helemaal begrijpen. Beslissingsondersteuning houdt dat controlepunt in stand. Automatisering haalt het weg.
+      </p>
+
+      <H2 num="05">De vier vragen voor elke vendor</H2>
+
+      <p>
+        Concreet. Voordat je een AI-marketingtool inkoopt, stel deze vier vragen. Ontwijkt een vendor er twee of meer, loop dan weg.
+      </p>
+
+      <ol>
+        <li>
+          <strong>Mag ik een holdout draaien op jullie tool?</strong> Een week, een segment, een geo. Het juiste antwoord is ja, graag. Het foute antwoord is een reden waarom dat niet kan.
+        </li>
+        <li>
+          <strong>Op welke baseline meten we de uplift?</strong> Niet jullie dashboard, maar mijn CRM, mijn P&amp;L, of een controlegroep. Als de enige baseline het dashboard van de tool zelf is, is er geen baseline.
+        </li>
+        <li>
+          <strong>Wat gebeurt er met jullie cijfers als ik de tool een week uitzet?</strong> Het juiste antwoord is: dat moet zichtbaar worden in een uplift-grafiek. Het foute antwoord is: dat raden we af.
+        </li>
+        <li>
+          <strong>Wie bezit de meetdata?</strong> Als het antwoord wij is, of het zit in ons platform, dan heb je geen meetdata. Dan heb je een tool met een grafiek.
+        </li>
+      </ol>
+
+      <H2 num="06">Waarom dit een bureau-vraag is, geen tech-vraag</H2>
+
+      <p>
+        Het kiezen van een AI-tool wordt vaak behandeld als een technische vraag, opgelost met een vergelijkingstabel. Maar het is een bureau-vraag, en de inzet is groter dan een abonnement. Een bureau dat een tool inzet zonder te weten of het werkt, verkoopt zijn klant uiteindelijk een verhaal dat het niet kan onderbouwen. En de dag dat de klant vraagt wat dit nou echt heeft opgeleverd, staat het bureau met hetzelfde dashboard dat de tool zelf produceerde. Dat is geen antwoord, dat is een doorverwijzing naar de marketingafdeling van de vendor.
+      </p>
+
+      <p>
+        Daarom is de toolkeuze niet het eindpunt, maar het begin van een meetvraag. Welke tool je ook kiest, de waarde ontstaat pas als je de uitkomst kunt herleiden tot iets buiten de tool om. Dat is waar Stevin voor is gebouwd: niet om nog een tool toe te voegen die zijn eigen succes rapporteert, maar om de signalen uit je hele stack samen te brengen, de afwijking zichtbaar te maken, en er een beslissing aan te koppelen die je kunt verantwoorden. Marketing intelligence die beslist, niet alleen rapporteert.
+      </p>
+
+      <PullQuote text='"Wonder en is gheen wonder."' cite="Simon Stevin, 1586. Als je het niet kunt herleiden, is het geen feit maar een verhaal." />
+
+      <EndRule />
+      <EndSig>&quot;Het is geen wonder. Het is Stevin.&quot; · Editie 017 / 052</EndSig>
     </>
   )
 }
