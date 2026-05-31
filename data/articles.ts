@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'robotaxis-in-de-vs-komen-onder-druk-door-onveilige-incidenten',
+    format: 'dispatch' as const,
+    edition: '099',
+    category: 'Markt',
+    title: "Robotaxis in de VS krijgen flinke kritiek door gevaarlijke incidenten",
+    dek: "Tientallen Amerikaanse steden ervaren problemen met zelfrijdende taxidiensten, van files tot verstoorde hulpdiensten.",
+    publishedAt: '2026-05-31',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Robotaxis in de VS krijgen flinke kritiek door gevaarlijke incidenten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'instagram-gaat-naar-connected-tv-wat-merken-nu-moeten-doen',
     format: 'dispatch' as const,
     edition: '098',
