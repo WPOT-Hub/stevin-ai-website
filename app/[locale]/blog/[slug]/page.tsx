@@ -40,6 +40,10 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `https://stevin.ai/blog/${a.slug}`,
+      // Geen en-hreflang tot er een echte EN-vertaling per artikel is. De
+      // /en/blog route toont nu nog NL-tekst, dus een en-alternate zou Google
+      // een verkeerd taalsignaal geven. Canonical wijst alles naar de NL-URL.
+      languages: { 'nl-NL': `https://stevin.ai/blog/${a.slug}` },
     },
   }
 }
