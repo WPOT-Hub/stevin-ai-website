@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'softbank-investeert-tientallen-miljarden-in-franse-ai-data-centers': (
+    <>
+      <p className="lead-para">
+        De Japanse groep SoftBank investeert minimaal 45 miljard euro in de bouw van drie grote data centers in Frankrijk, gericht op kunstmatige intelligentie. De projecten moeten tegen 2031 een totale capaciteit van 3,1 gigawatt leveren en worden daarmee het grootste AI-infrastructuurproject van Europa. De locaties liggen in Dunkirk, Bosquel en Bouchain.
+      </p>
+      <p>
+        Het bedrag kan oplopen tot 75 miljard euro als de capaciteit wordt uitgebreid naar vijf gigawatt. SoftBank werkt hiervoor samen met andere bedrijven en Schneider Electric, dat onderdelen voor de data centers gaat fabriceren bij Dunkirk. De aankondiging komt vlak voor een investeringsconferentie die de Franse president Emmanuel Macron organiseert om buitenlandse investeringen te stimuleren.
+      </p>
+      <p>
+        Frankrijk hoopt met deze investeringen zijn positie op het gebied van AI te versterken en minder afhankelijk te worden van Amerikaanse en Chinese technologie. Macron streeft ernaar om de energiebehoefte van de data centers te dekken met het bestaande netwerk van kerncentrales, in plaats van overtollige stroom te exporteren.
+      </p>
+    </>
+  ),
   'tiktok-shop-lanceert-in-nederland-op-15-juni': (
     <>
       <p className="lead-para">
@@ -2422,6 +2435,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'softbank-investeert-tientallen-miljarden-in-franse-ai-data-centers':
+    "Voor Nederlandse bedrijven die actief zijn in datacenters of cloudinfrastructuur biedt dit project kansen om mee te liften op de groeiende vraag naar Europese AI-capaciteit. Tegelijkertijd onderstreept het belang van duurzame energievoorziening: wie nu kiest voor locaties met toegang tot groene stroom of kernenergie, kan zich onderscheiden in een markt waar concurrentie en regelgeving straks toenemen.",
   'tiktok-shop-lanceert-in-nederland-op-15-juni':
     "Voor bedrijven die al actief zijn op TikTok biedt de Shop-functie een natuurlijke uitbreiding naar direct verkoopkanaal zonder extra investeringen in nieuwe platforms. Merken die nog geen ervaring hebben met sociale commerce kunnen profiteren van de aantrekkingskracht van short-form content zonder complexe integraties. Wel is het belangrijk om de communityrichtlijnen strikt te volgen om sancties te voorkomen.",
   'robotaxis-in-de-vs-komen-onder-druk-door-onveilige-incidenten':
