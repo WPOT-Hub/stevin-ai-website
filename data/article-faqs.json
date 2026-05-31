@@ -1,4 +1,22 @@
 {
+  "mmm-attributie-incrementality-welke-meet-wat": [
+    {
+      "question": "Wat is het verschil tussen MMM, multi-touch attributie en incrementality?",
+      "answer": "De drie methodes beantwoorden verschillende vragen. Een marketing mix model (MMM) kijkt van bovenaf naar de relatie tussen totale mediabestedingen en totale sales, gecorrigeerd voor seizoen en prijs, zonder cookies. Multi-touch attributie (MTA) kijkt van onderaf naar de trackbare touchpoints in het pad van mensen die converteerden. Incrementality meet via een holdout of geo-test wat er zou zijn gebeurd zonder de campagne, en is de enige die echt causaliteit benadert."
+    },
+    {
+      "question": "Welke meetmethode is het meest betrouwbaar voor marketing-ROI?",
+      "answer": "Geen enkele alleen. MMM is sterk voor budget-allocatie over kanalen maar grof en traag. MTA is snel en gedetailleerd maar verwart correlatie met causaliteit en ziet steeds minder door cookie-restricties. Incrementality benadert causaliteit het best maar kost bereik en kan niet alles tegelijk meten. De betrouwbaarste aanpak is triangulatie: de drie naast elkaar leggen en het meest vertrouwen op wat overeind blijft."
+    },
+    {
+      "question": "Waarom klopt mijn ROAS uit het platform-dashboard vaak niet?",
+      "answer": "Een ROAS uit een platform-dashboard is een toegeschreven waarde binnen een trackbaar pad, geen incrementele waarde. Het dashboard ziet de touchpoints, maar weet niet of die de conversie veroorzaakten of er toevallig naast lagen. De werkelijke uplift kan de helft zijn, of nul. Alleen een holdout-test of geo-experiment scheidt toegeschreven van werkelijke bijdrage."
+    },
+    {
+      "question": "Wat is triangulatie in marketing-meting?",
+      "answer": "Triangulatie betekent dat je drie onvolmaakte meetmethodes (MMM, MTA en incrementality) naast elkaar gebruikt, omdat ze op verschillende manieren fout zijn. Je vertrouwt het meest op wat overeind blijft als de drie naar hetzelfde wijzen. Lopen ze uiteen, dan weet je dat je nog niet klaar bent met meten. Dat is op zichzelf de waardevolste uitkomst, omdat het voorkomt dat je budget stuurt op de meest zelfverzekerde grafiek in plaats van de meest waarheidsgetrouwe."
+    }
+  ],
   "mmm-is-een-hypothese": [
     {
       "question": "Wat is een Marketing Mix Model precies?",

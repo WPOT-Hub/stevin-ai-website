@@ -1391,6 +1391,21 @@ export const articles: Article[] = [
 
   /* ─── EDITORIALS ─── */
   {
+    slug: 'mmm-attributie-incrementality-welke-meet-wat',
+    format: 'editorial' as const,
+    edition: '016',
+    category: 'Attribution',
+    title: 'MMM, multi-touch attributie en incrementality: welke meet wat echt?',
+    dek: 'Drie meetmethodes, drie verschillende vragen. Geen enkele meet alleen de waarheid. Wie ze door elkaar haalt, stuurt zijn budget op de verkeerde grafiek. Een nuchtere vergelijking, en waarom triangulatie het enige eerlijke antwoord is.',
+    publishedAt: '2026-05-31',
+    readMinutes: 11,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid' as const,
+    posterTag: 'ATTRIBUTION',
+    posterTopic: 'Welke meet wat echt?',
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-tools-organisatielaag-marketing',
     format: 'editorial' as const,
     edition: '018',
