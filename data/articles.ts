@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'instagram-gaat-naar-connected-tv-wat-merken-nu-moeten-doen',
+    format: 'dispatch' as const,
+    edition: '098',
+    category: 'Platform',
+    title: "Instagram gaat naar de tv: merken moeten contentstrategie aanpassen",
+    dek: "Meta test Instagram op Connected TV met Reels en long form content, wat een nieuwe contentstrategie voor merken vereist.",
+    publishedAt: '2026-05-31',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Instagram gaat naar de tv: merken moeten contentstrategie aanpassen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'tno-defensie-samenwerken-innovatie',
     format: 'dispatch' as const,
     edition: '097',
