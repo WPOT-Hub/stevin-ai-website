@@ -1200,6 +1200,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'social-media-opgeblazen-drone-algoritme-claim': (
+    <>
+      <p className="lead-para">
+        Op Instagram en andere kanalen circuleren berichten over Chinese AI-dronezwermen die een ‘100% kill-rate’ zouden hebben. Dat klinkt als sciencefiction of een militaire doorbraak waar niemand grip op heeft.
+      </p>
+      <p>
+        Er is inderdaad een Chinese wetenschappelijke publicatie over het algoritme HG-STR voor autonome dronezwermen in verkennings- en aanvalsscenario’s. Het algoritme combineert graph reasoning, reinforcement learning en hiërarchische besluitvorming om samenwerking te verbeteren.
+      </p>
+      <p>
+        De paper claimt echter geen ‘100% kill-rate’. In de verifieerbare abstract staan meetbare resultaten uit simulaties: 37,14% betere taakvoltooiing dan traditionele algoritmes, besluitvorming versneld van seconden naar milliseconden en een taaksucsespercentage van 94% bij beperkte communicatie.
+      </p>
+    </>
+  ),
   'softbank-investeert-tientallen-miljarden-in-franse-ai-data-centers': (
     <>
       <p className="lead-para">
@@ -2435,6 +2448,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'social-media-opgeblazen-drone-algoritme-claim':
+    "Dit soort ontsporing van technisch nieuws is niet nieuw. Eerst komt een beperkte wetenschappelijke claim, gevolgd door scherpere mediakoppen en uiteindelijk een absoluut angstbeeld op social media. Bij onderwerpen als AI en defensie is het extra belangrijk om de bron kritisch te lezen. Simulaties zijn geen realiteit, maar verdienen wel serieuze aandacht. Paniek helpt niemand, maar naïviteit evenmin.",
   'softbank-investeert-tientallen-miljarden-in-franse-ai-data-centers':
     "Voor Nederlandse bedrijven die actief zijn in datacenters of cloudinfrastructuur biedt dit project kansen om mee te liften op de groeiende vraag naar Europese AI-capaciteit. Tegelijkertijd onderstreept het belang van duurzame energievoorziening: wie nu kiest voor locaties met toegang tot groene stroom of kernenergie, kan zich onderscheiden in een markt waar concurrentie en regelgeving straks toenemen.",
   'tiktok-shop-lanceert-in-nederland-op-15-juni':
