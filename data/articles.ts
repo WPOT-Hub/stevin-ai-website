@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'tno-defensie-samenwerken-innovatie',
+    format: 'dispatch' as const,
+    edition: '097',
+    category: 'Markt',
+    title: "Defensie en TNO versnellen innovaties voor Nederlandse industrie",
+    dek: "Het ministerie van Defensie en TNO starten een samenwerking om TNO-innovaties sneller naar de markt te brengen en de Nederlandse defensie-industrie te versterken.",
+    publishedAt: '2026-05-31',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Defensie en TNO versnellen innovaties voor Nederlandse industrie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'europese-cloud-marketingvraagstuk-datasoevereiniteit',
     format: 'dispatch' as const,
     edition: '096',
