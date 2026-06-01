@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'kessels-kramer-failliet-na-60-jaar',
+    format: 'dispatch' as const,
+    edition: '103',
+    category: 'Markt',
+    title: "Reclamebureau KesselsKramer failliet verklaard",
+    dek: "Het historische reclamebureau KesselsKramer is failliet, ondanks recente succesvolle campagnes.",
+    publishedAt: '2026-06-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Reclamebureau KesselsKramer failliet verklaard",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'brand-strategie-2026-coca-cola-focus-features-coinbase',
     format: 'dispatch' as const,
     edition: '102',
