@@ -1216,6 +1216,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'kleding-en-accessoires-om-facial-recognition-te-misleiden': (
+    <>
+      <p className="lead-para">
+        Ontwerpers en wetenschappers ontwikkelen kleding, maskers en accessoires die kunstmatige intelligentie in gezichtsherkenningssystemen opzettelijk misleiden. Zo blokkeert een transparant lensvormig masker de herkenning zonder de expressies van de drager te verdoezelen, aldus ontwerper Jip van Leeuwenstein. Een draagbare projector kan zelfs een ander gezicht over dat van de drager projecteren, waardoor detectie vrijwel onmogelijk wordt.
+      </p>
+      <p>
+        Ook Japanse onderzoekers experimenteerden met een 'privacy visor' uitgerust met infrarood-LED’s die ruis toevoegen aan beelden van camera’s, zodat AI geen menselijk gezicht meer herkent. Belgische wetenschappers gingen nog een stap verder door 'adversarial patches' te ontwikkelen: grafische prints op kleding die surveillancecamera’s doelbewust verwarren.
+      </p>
+      <p>
+        Deze oplossingen zijn nog experimenteel en niet waterdicht, want sommige algoritmes worden al aangepast om deze trucs te omzeilen. Toch groeit de vraag naar manieren om privacy te beschermen nu gezichtsherkenning steeds vaker wordt ingezet door overheden en bedrijven.
+      </p>
+    </>
+  ),
   'social-media-opgeblazen-drone-algoritme-claim': (
     <>
       <p className="lead-para">
@@ -2464,6 +2477,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'kleding-en-accessoires-om-facial-recognition-te-misleiden':
+    "Voor ondernemers is dit een signaal dat consumenten zich meer bewust worden van digitale privacy. Bedrijven die werken met gezichtsherkenning zouden proactief moeten communiceren over hoe ze data beschermen, om vertrouwen te behouden. Tegelijkertijd biedt het kansen voor creatieve sectoren: mode, design en tech kunnen samenwerken aan innovatieve oplossingen voor privacyvriendelijke producten.",
   'social-media-opgeblazen-drone-algoritme-claim':
     "Dit soort ontsporing van technisch nieuws is niet nieuw. Eerst komt een beperkte wetenschappelijke claim, gevolgd door scherpere mediakoppen en uiteindelijk een absoluut angstbeeld op social media. Bij onderwerpen als AI en defensie is het extra belangrijk om de bron kritisch te lezen. Simulaties zijn geen realiteit, maar verdienen wel serieuze aandacht. Paniek helpt niemand, maar naïviteit evenmin.",
   'softbank-investeert-tientallen-miljarden-in-franse-ai-data-centers':
