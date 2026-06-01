@@ -1216,6 +1216,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'brand-strategie-2026-coca-cola-focus-features-coinbase': (
+    <>
+      <p className="lead-para">
+        Coca-Cola kiest voor een roadtrip-campagne om de viering van America’s 250-jarig bestaan te markeren. Het merk werkt hiervoor samen met Ogilvy Worldwide, aldus Joe Sciarrotta, deputy CCO bij het bureau. De campagne combineert fysieke ervaringen met digitale storytelling om een breder publiek te bereiken.
+      </p>
+      <p>
+        Focus Features zet in op gamingplatforms om de betrokkenheid bij filmreleases te vergroten. Met titels als *Obsession* en *Pressure* creëert het studio games die fans dieper laten duiken in de films. Dit sluit aan bij de groeiende vraag naar meeslepende content buiten traditionele kanalen.
+      </p>
+      <p>
+        Coinbase introduceert voor het eerst een productgerichte marketingstrategie, zo blijkt uit een toelichting van CMO Catherine Ferdon. Het bedrijf wil de focus leggen op het nut van haar dienst als brug tussen Big Tech en financiën, in plaats van alleen op merkbekendheid.
+      </p>
+    </>
+  ),
   'kleding-en-accessoires-om-facial-recognition-te-misleiden': (
     <>
       <p className="lead-para">
@@ -2477,6 +2490,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'brand-strategie-2026-coca-cola-focus-features-coinbase':
+    "Voor merken die hun brand strategy willen vernieuwen is authenticiteit cruciaal. Een sterke visuele of ervaringsgerichte campagne zoals die van Coca-Cola kan emotionele verbinding maken met doelgroepen. Tegelijkertijd biedt gaming nieuwe kansen voor merken die jongere generaties willen bereiken. Succes hangt af van hoe goed een merk zijn core boodschap weet te vertalen naar nieuwe kanalen zonder zijn identiteit te verliezen.",
   'kleding-en-accessoires-om-facial-recognition-te-misleiden':
     "Voor ondernemers is dit een signaal dat consumenten zich meer bewust worden van digitale privacy. Bedrijven die werken met gezichtsherkenning zouden proactief moeten communiceren over hoe ze data beschermen, om vertrouwen te behouden. Tegelijkertijd biedt het kansen voor creatieve sectoren: mode, design en tech kunnen samenwerken aan innovatieve oplossingen voor privacyvriendelijke producten.",
   'social-media-opgeblazen-drone-algoritme-claim':
