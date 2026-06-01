@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'kleding-en-accessoires-om-facial-recognition-te-misleiden',
+    format: 'dispatch' as const,
+    edition: '101',
+    category: 'Cultuur',
+    title: "Kleding en accessoires die gezichtsherkenning omzeilen",
+    dek: "Ontwerpers creëren kleding en maskers met patronen of projecties die algoritmes van gezichtsherkenning misleiden.",
+    publishedAt: '2026-06-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "Kleding en accessoires die gezichtsherkenning omzeilen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'tiktok-shop-lanceert-in-nederland-op-15-juni',
     format: 'dispatch' as const,
     edition: '100',
