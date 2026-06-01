@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import { editorials, dispatches } from '@/data/articles'
+import { hasDispatchBody } from './[slug]/page'
 
 export const metadata: Metadata = {
   title: 'Stevin Journal — Marketing-intelligence redactie',
@@ -18,7 +19,9 @@ const dateNL = (iso: string) => {
 
 export default function BlogIndex() {
   const allEditorials = editorials()
-  const allDispatches = dispatches()
+  // Vangrail: toon alleen dispatches die al een echte body hebben (geen thin
+  // content in de lijst, geen kaarten die naar een 404 linken).
+  const allDispatches = dispatches().filter((d) => hasDispatchBody(d.slug))
 
   return (
     <>

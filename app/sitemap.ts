@@ -4,6 +4,7 @@ import { categories } from '@/data/categories'
 import { integrations } from '@/data/integrations'
 import { comparisons } from '@/data/comparisons'
 import { glossary } from '@/data/glossary'
+import { isPublishableArticle } from './[locale]/blog/[slug]/page'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://stevin.ai'
@@ -73,7 +74,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // duplicate-signaal en verspilt crawl-budget. Google adviseert expliciet
   // "reduce duplicate content". Zodra er per artikel een echte EN-vertaling is,
   // voeg je hier de /en/blog/<slug> entry met een eigen hreflang-paar weer toe.
-  const blogEntries: MetadataRoute.Sitemap = articles.map((a) => ({
+  // Body-loze dispatches niet in de sitemap (thin content, Google-richtlijn).
+  const blogEntries: MetadataRoute.Sitemap = articles.filter(isPublishableArticle).map((a) => ({
     url: `${baseUrl}/blog/${a.slug}`,
     lastModified: a.publishedAt,
     changeFrequency: 'monthly' as const,

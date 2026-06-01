@@ -5,8 +5,23 @@ import { articles, getArticle, getRelatedArticles, type Article } from '@/data/a
 import { getArticleFaqs } from '@/data/faqs'
 import ReadingProgress from '@/components/blog/ReadingProgress'
 
+// ── Publicatie-vangrail ─────────────────────────────────────────────────────
+// De auto-publish doet het in twee stappen: eerst het artikel-record, daarna
+// pas de body (in DISPATCH_BODIES). In dat venster zou een dispatch body-loos
+// live staan: alleen de dek, oftewel thin content. Dat is slecht voor lezers en
+// voor Google (thin/duplicate content). Daarom geldt: een dispatch is pas
+// publiceerbaar als er een echte body bestaat. Body-loze dispatches krijgen geen
+// statische route, 404 bij opvragen, noindex, en staan niet in de index-lijst
+// of de sitemap. Editorials hebben hun body inline en zijn altijd publiceerbaar.
+export function hasDispatchBody(slug: string): boolean {
+  return Boolean(DISPATCH_BODIES[slug])
+}
+export function isPublishableArticle(a: { format: string; slug: string }): boolean {
+  return a.format !== 'dispatch' || hasDispatchBody(a.slug)
+}
+
 export async function generateStaticParams() {
-  return articles.map((a) => ({ slug: a.slug }))
+  return articles.filter(isPublishableArticle).map((a) => ({ slug: a.slug }))
 }
 
 export async function generateMetadata({
@@ -17,6 +32,8 @@ export async function generateMetadata({
   const { slug } = await params
   const a = getArticle(slug)
   if (!a) return {}
+  // Body-loze dispatch: niet indexeren (thin content), Google-richtlijn.
+  if (!isPublishableArticle(a)) return { robots: { index: false, follow: false } }
   // Per-post OG image (Next.js conventional route, gegenereerd door
   // app/[locale]/blog/[slug]/opengraph-image.tsx)
   const ogImage = `https://stevin.ai/blog/${a.slug}/opengraph-image`
@@ -63,8 +80,11 @@ export default async function ArticlePage({
   const { slug } = await params
   const article = getArticle(slug)
   if (!article) notFound()
+  // Vangrail: een dispatch zonder echte body mag niet live (thin content).
+  if (!isPublishableArticle(article)) notFound()
 
-  const related = getRelatedArticles(article.slug)
+  // Geen kaarten naar body-loze dispatches (zouden naar een 404 linken).
+  const related = getRelatedArticles(article.slug).filter(isPublishableArticle)
   // Author = Person als de naam expliciet een mens is, anders Organization.
   // Default 'Stevin Journal' wordt nog steeds als Organization gepubliceerd
   // omdat het de redactie als geheel is. Per-auteur Person-schema komt
