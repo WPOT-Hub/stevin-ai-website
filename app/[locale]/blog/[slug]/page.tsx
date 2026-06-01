@@ -1216,6 +1216,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'kessels-kramer-failliet-na-60-jaar': (
+    <>
+      <p className="lead-para">
+        Het bekende Nederlandse reclamebureau KesselsKramer is vrijdag failliet verklaard door de rechtbank. Het bureau, opgericht in 1966, stond bekend om iconische campagnes voor merken als Albert Heijn en KPN. De laatste weken presenteerde het nog een nieuwe campagne voor het Stedelijk Museum, die positief werd ontvangen.
+      </p>
+      <p>
+        De oorzaak van het faillissement is nog niet volledig duidelijk, maar financiële problemen spelen waarschijnlijk een rol. Het bureau had recent te maken met teruglopende opdrachten en concurrentie vanuit digitale marketingbureaus. Medewerkers zijn op de hoogte gesteld van de situatie en zoeken naar oplossingen.
+      </p>
+      <p>
+        KesselsKramer was een van de laatste grote klassieke reclamebureaus in Nederland. Het faillissement markeert mogelijk een verdere verschuiving in de markt richting kleinere, gespecialiseerde bureaus.
+      </p>
+    </>
+  ),
   'brand-strategie-2026-coca-cola-focus-features-coinbase': (
     <>
       <p className="lead-para">
@@ -2490,6 +2503,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'kessels-kramer-failliet-na-60-jaar':
+    "De ondergang van KesselsKramer toont hoe traditionele reclamebureaus onder druk staan door veranderende marktomstandigheden. Voor andere bureaus betekent dit dat ze moeten investeren in innovatie en flexibiliteit om relevant te blijven. Ook in-house marketingteams kunnen hier lessen uit trekken over het belang van diversificatie en risicomanagement.",
   'brand-strategie-2026-coca-cola-focus-features-coinbase':
     "Voor merken die hun brand strategy willen vernieuwen is authenticiteit cruciaal. Een sterke visuele of ervaringsgerichte campagne zoals die van Coca-Cola kan emotionele verbinding maken met doelgroepen. Tegelijkertijd biedt gaming nieuwe kansen voor merken die jongere generaties willen bereiken. Succes hangt af van hoe goed een merk zijn core boodschap weet te vertalen naar nieuwe kanalen zonder zijn identiteit te verliezen.",
   'kleding-en-accessoires-om-facial-recognition-te-misleiden':
