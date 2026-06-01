@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'brand-strategie-2026-coca-cola-focus-features-coinbase',
+    format: 'dispatch' as const,
+    edition: '102',
+    category: 'Strategie',
+    title: "Coca-Cola, Focus Features en Coinbase zetten in op vernieuwende brand strategieën",
+    dek: "Topmerken passen hun brand strategieën aan met onconventionele campagnes, gaming en productgerichte marketing.",
+    publishedAt: '2026-06-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'STRATEGIE',
+    posterTopic: "Coca-Cola, Focus Features en Coinbase zetten in op vernieuwende brand strategieën",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'kleding-en-accessoires-om-facial-recognition-te-misleiden',
     format: 'dispatch' as const,
     edition: '101',
