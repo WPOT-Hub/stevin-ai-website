@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'mistral-breidt-uit-naar-industrie-en-infrastructuur': (
+    <>
+      <p className="lead-para">
+        Mistral breidt zijn activiteiten uit van AI-modellen naar industriële toepassingen en infrastructuur, zo meldt Techzine. Het bedrijf introduceerde tijdens de AI NOW Summit een platform dat generatieve AI koppelt aan simulatie- en ontwerpsoftware, speciaal gericht op fabrikanten. Met deze technologie kunnen bedrijven zoals Airbus, BMW en ASML ontwerp- en ontwikkeltrajecten versnellen door snellere voorspellende analyses mogelijk te maken. Traditionele simulaties blijven nodig voor controle, maar AI neemt een deel van het rekenwerk over.
+      </p>
+      <p>
+        Naast software investeert Mistral in Europese AI-datacenters om de vraag naar lokale infrastructuur te bedienen. In Frankrijk draait inmiddels een trainingsfaciliteit nabij Parijs, met een tweede locatie voor inferentieworkloads gepland voor volgend jaar. De investeringen worden ondersteund door honderden miljoenen euro’s aan externe financiering. Organisaties willen meer controle over hun data en niet afhankelijk zijn van Amerikaanse cloudproviders, aldus het bedrijf.
+      </p>
+      <p>
+        Ook aan de gebruikerskant voert Mistral veranderingen door: de AI-assistent Le Chat wordt omgedoopt tot Vibe en krijgt een bredere rol binnen organisaties. Vibe kan verbinding maken met bestaande bedrijfssoftware en ontwikkelplatformen, terwijl het productaanbod wordt vereenvoudigd door functionaliteiten samen te brengen in één generatie modellen. Daarnaast werkt Mistral aan taalmodellen die beter geschikt zijn voor technische toepassingen.
+      </p>
+    </>
+  ),
   'mistral-ai-breidt-uit-naar-fysieke-wereld': (
     <>
       <p className="lead-para">
@@ -2575,6 +2588,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'mistral-breidt-uit-naar-industrie-en-infrastructuur':
+    "Voor bedrijven die afhankelijk zijn van Amerikaanse cloudproviders of hun data lokaal willen houden, biedt Mistrals benadering een aantrekkelijk alternatief. De combinatie van eigen modellen, lokale infrastructuur en on-premises implementaties sluit aan bij de groeiende vraag naar soevereine technologische oplossingen in Europa. Dit kan vooral relevant zijn voor sectoren met strenge datacompliance-eisen, zoals de industrie of overheden.",
   'mistral-ai-breidt-uit-naar-fysieke-wereld':
     "Voor bedrijven in industrie en techniek betekent deze ontwikkeling dat investeringen in AI niet langer beperkt hoeven te blijven tot software of marketingtoepassingen. De komende jaren zal AI een steeds grotere rol spelen in fysieke productieprocessen, onderhoud en ontwerp. Dat vraagt om samenwerking tussen techleveranciers en traditionele industrieën om de juiste tools te ontwikkelen. Tegelijkertijd ontstaat er een nieuwe afhankelijkheid: wie controle heeft over de onderliggende infrastructuur (zoals chips) bepaalt mede de snelheid van innovatie.",
   'branding-versus-marketing-wat-is-het-verschil':
