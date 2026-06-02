@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-demand-gen-integratie-commerce-media': (
+    <>
+      <p className="lead-para">
+        Google heeft Demand Gen uitgebreid zodat merken hun eigen retailerdata kunnen koppelen aan campagnes. Hiermee kunnen ze consumenten die al een aankoopintentie hebben, benaderen op meerdere Google-eigendommen. Dit geldt niet alleen voor retailwebsites, maar ook voor video’s, nieuwsstromen en e-mails.
+      </p>
+      <p>
+        De integratie maakt gebruik van first-party data van merken om campagnes nauwkeuriger te targeten. Zo kunnen advertenties worden getoond aan gebruikers die eerder producten bekeken of in een winkelwagen plaatsten. De uitbreiding is beschikbaar voor alle adverteerders, ongeacht hun branche.
+      </p>
+      <p>
+        Deze stap volgt op de groei van commerce media, waarbij advertenties direct gekoppeld zijn aan koopgedrag. Merken krijgen hiermee meer controle over waar en hoe hun boodschap wordt getoond.
+      </p>
+    </>
+  ),
   'kessels-kramer-failliet-na-60-jaar': (
     <>
       <p className="lead-para">
@@ -2523,6 +2536,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-demand-gen-integratie-commerce-media':
+    "Voor bureaus en in-house teams betekent deze uitbreiding dat campagnes nog gerichter kunnen worden ingezet. Het combineren van retailerdata met Google’s platform biedt kansen om de uplift te vergroten. Tegelijkertijd vraagt het om zorgvuldige afweging van privacy en datagebruik, zeker nu wetgeving zoals de AVG strenger wordt gehandhaafd.",
   'kessels-kramer-failliet-na-60-jaar':
     "De ondergang van KesselsKramer toont hoe traditionele reclamebureaus onder druk staan door veranderende marktomstandigheden. Voor andere bureaus betekent dit dat ze moeten investeren in innovatie en flexibiliteit om relevant te blijven. Ook in-house marketingteams kunnen hier lessen uit trekken over het belang van diversificatie en risicomanagement.",
   'brand-strategie-2026-coca-cola-focus-features-coinbase':
