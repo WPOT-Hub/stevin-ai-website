@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-content-met-client-memory-beter-gegrond-in-markt',
+    format: 'dispatch' as const,
+    edition: '105',
+    category: 'Platform',
+    title: "AI-content met ‘client memory’ blijft dichter bij merk en campagne",
+    dek: "Door AI te voeden met gestructureerde klantomgevingen voorkomen bureaus dat gegenereerde content afdwaalt van merkrichtlijnen of eerdere campagnes.",
+    publishedAt: '2026-06-02',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI-content met ‘client memory’ blijft dichter bij merk en campagne",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-demand-gen-integratie-commerce-media',
     format: 'dispatch' as const,
     edition: '104',
