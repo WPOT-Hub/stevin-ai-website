@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'mistral-breidt-uit-naar-industrie-en-infrastructuur',
+    format: 'dispatch' as const,
+    edition: '108',
+    category: 'Platform',
+    title: "Mistral lanceert AI-platform voor industrie en Europese datacenters",
+    dek: "Het Franse Mistral introduceert een nieuw AI-platform voor industriële toepassingen en breidt uit met Europese datacenters om lokale data-controle te bieden.",
+    publishedAt: '2026-06-02',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Mistral lanceert AI-platform voor industrie en Europese datacenters",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'mistral-ai-breidt-uit-naar-fysieke-wereld',
     format: 'dispatch' as const,
     edition: '107',
