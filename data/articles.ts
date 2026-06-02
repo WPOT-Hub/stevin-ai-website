@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'mistral-ai-breidt-uit-naar-fysieke-wereld',
+    format: 'dispatch' as const,
+    edition: '107',
+    category: 'Tech',
+    title: "Mistral AI stapt over naar fysieke systemen: impact op industrie en tech",
+    dek: "Mistral AI zet grote taalmodellen om in systemen die de echte wereld aansturen, met overnames en chipplannen voor industriële toepassingen.",
+    publishedAt: '2026-06-02',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Mistral AI stapt over naar fysieke systemen: impact op industrie en tech",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'branding-versus-marketing-wat-is-het-verschil',
     format: 'dispatch' as const,
     edition: '106',
