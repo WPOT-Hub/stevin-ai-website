@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'branding-versus-marketing-wat-is-het-verschil': (
+    <>
+      <p className="lead-para">
+        Branding gaat over wie je bent als bedrijf: je waarden, missie en hoe je wilt dat klanten je zien. Het is de identiteit die je opbouwt en die consistent terugkomt in al je uitingen, van logo tot toon. Marketing daarentegen richt zich op het bereiken van mensen en het stimuleren van acties zoals aankopen of aanmeldingen. Waar branding emotionele verbinding maakt, zorgt marketing voor directe resultaten.
+      </p>
+      <p>
+        De grootste valkuil is denken dat branding en marketing vervangbaar zijn. Een sterk merk zonder marketing blijft onzichtbaar, terwijl marketing zonder branding vaak kortetermijnsucces oplevert maar geen loyaliteit opbouwt. Succesvolle bedrijven combineren beide: ze gebruiken hun branding om vertrouwen te wekken en hun marketing om die vertrouwde boodschap te verspreiden naar de juiste doelgroep.
+      </p>
+      <p>
+        In de praktijk zie je vaak dat startups eerst focussen op branding om een herkenbaar profiel op te bouwen, waarna ze met gerichte campagnes de markt betreden. Gevestigde merken passen hun branding aan aan veranderende marktomstandigheden en gebruiken marketing om die aanpassingen te communiceren naar bestaande en nieuwe klanten.
+      </p>
+    </>
+  ),
   'ai-content-met-client-memory-beter-gegrond-in-markt': (
     <>
       <p className="lead-para">
@@ -2549,6 +2562,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'branding-versus-marketing-wat-is-het-verschil':
+    "Voor ondernemers is het belangrijk om te beseffen dat branding niet alleen een taak is voor grote bedrijven met een vast budget. Zelfs kleine ondernemers kunnen met beperkte middelen een consistente identiteit neerzetten door helder te definiëren wat hun merk uniek maakt. De combinatie van branding en marketing zorgt ervoor dat investeringen in reclame niet verloren gaan in een zee van gelijksoortige aanbiedingen. Het helpt ook bij het aantrekken van medewerkers die passen bij de bedrijfscultuur, wat op termijn kosten bespaart.",
   'ai-content-met-client-memory-beter-gegrond-in-markt':
     "Voor bedrijven die AI inzetten voor contentcreatie is het belangrijk om niet alleen te vertrouwen op algemene modellen. Een eigen ‘client brain’ helpt om de output te verankeren in de specifieke context van het merk. Dit vraagt wel om eenmalige investering in het opzetten van zo’n systeem, maar bespaart op termijn tijd en frustratie. Het is een praktische stap om generatieve AI écht nuttig te maken voor marketingdoeleinden.",
   'google-demand-gen-integratie-commerce-media':
