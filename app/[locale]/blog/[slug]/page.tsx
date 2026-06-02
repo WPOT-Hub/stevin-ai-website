@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-content-met-client-memory-beter-gegrond-in-markt': (
+    <>
+      <p className="lead-para">
+        Een ‘client brain’ – een gestructureerde database met merkrichtlijnen, campagnegeschiedenis en technische beperkingen – zorgt ervoor dat AI gegenereerde content altijd binnen de kaders blijft. Zo voorkom je dat automatisch gegenereerde teksten of afbeeldingen niet aansluiten bij de stijl, toon of doelen van het merk.
+      </p>
+      <p>
+        Deze aanpak is vooral nuttig voor SEO-content waar consistentie en relevantie cruciaal zijn. Door AI te trainen op historische data en actuele campagnedoelen, kan het systeem beter inschatten welke onderwerpen prioriteit verdienen of welke terminologie moet worden gebruikt.
+      </p>
+      <p>
+        Voor bureaus betekent dit minder nazorg: AI levert direct bruikbare output die aansluit bij de wensen van de klant, zonder dat er handmatig wordt gecorrigeerd. Ook voor in-house marketingteams biedt dit een manier om contentproductie te versnellen zonder kwaliteitsverlies.
+      </p>
+    </>
+  ),
   'google-demand-gen-integratie-commerce-media': (
     <>
       <p className="lead-para">
@@ -2536,6 +2549,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-content-met-client-memory-beter-gegrond-in-markt':
+    "Voor bedrijven die AI inzetten voor contentcreatie is het belangrijk om niet alleen te vertrouwen op algemene modellen. Een eigen ‘client brain’ helpt om de output te verankeren in de specifieke context van het merk. Dit vraagt wel om eenmalige investering in het opzetten van zo’n systeem, maar bespaart op termijn tijd en frustratie. Het is een praktische stap om generatieve AI écht nuttig te maken voor marketingdoeleinden.",
   'google-demand-gen-integratie-commerce-media':
     "Voor bureaus en in-house teams betekent deze uitbreiding dat campagnes nog gerichter kunnen worden ingezet. Het combineren van retailerdata met Google’s platform biedt kansen om de uplift te vergroten. Tegelijkertijd vraagt het om zorgvuldige afweging van privacy en datagebruik, zeker nu wetgeving zoals de AVG strenger wordt gehandhaafd.",
   'kessels-kramer-failliet-na-60-jaar':
