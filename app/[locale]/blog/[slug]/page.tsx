@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'mistral-ai-breidt-uit-naar-fysieke-wereld': (
+    <>
+      <p className="lead-para">
+        Arthur Mensch, CEO van Mistral AI, voorspelt dat kunstmatige intelligentie binnenkort niet alleen digitale taken ondersteunt, maar ook fysieke processen gaat aansturen. Tijdens ITF World 2026 legde hij uit waarom de stap naar de echte wereld fundamenteel anders is dan softwareontwikkeling. Feedbackloops zijn daar traag: experimenten moeten worden uitgevoerd, resultaten gemeten en herhaald. Toch ziet Mensch juist hier de grootste kans voor AI om waarde te creëren, vooral in sectoren als chemische engineering, chipproductie en microscopie.
+      </p>
+      <p>
+        Mistral richt zich nu op platforms die AI integreren met complexe fysieke systemen. Het bedrijf heeft meerdere gespecialiseerde bedrijven overgenomen, zoals het Oostenrijkse Emmi AI, dat natuurkundige simulaties vertaalt naar efficiëntere processen. Deze overnames moeten leiden tot modellen die honderd keer goedkoper en nauwkeuriger werken dankzij realistische data. De focus ligt op industriële toepassingen waar precisie cruciaal is, zoals luchtvaart, auto-industrie en halfgeleiderproductie.
+      </p>
+      <p>
+        Om onafhankelijker te worden van externe partijen als Nvidia werkt Mistral aan het ontwikkelen van eigen chips. CEO Mensch bevestigt dat dit nog geen realiteit is, maar wel een doelstelling voor de toekomst. De strategie past in een bredere trend waarbij AI niet langer alleen digitale taken automatiseert, maar steeds dieper doordringt in industriële processen.
+      </p>
+    </>
+  ),
   'branding-versus-marketing-wat-is-het-verschil': (
     <>
       <p className="lead-para">
@@ -2562,6 +2575,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'mistral-ai-breidt-uit-naar-fysieke-wereld':
+    "Voor bedrijven in industrie en techniek betekent deze ontwikkeling dat investeringen in AI niet langer beperkt hoeven te blijven tot software of marketingtoepassingen. De komende jaren zal AI een steeds grotere rol spelen in fysieke productieprocessen, onderhoud en ontwerp. Dat vraagt om samenwerking tussen techleveranciers en traditionele industrieën om de juiste tools te ontwikkelen. Tegelijkertijd ontstaat er een nieuwe afhankelijkheid: wie controle heeft over de onderliggende infrastructuur (zoals chips) bepaalt mede de snelheid van innovatie.",
   'branding-versus-marketing-wat-is-het-verschil':
     "Voor ondernemers is het belangrijk om te beseffen dat branding niet alleen een taak is voor grote bedrijven met een vast budget. Zelfs kleine ondernemers kunnen met beperkte middelen een consistente identiteit neerzetten door helder te definiëren wat hun merk uniek maakt. De combinatie van branding en marketing zorgt ervoor dat investeringen in reclame niet verloren gaan in een zee van gelijksoortige aanbiedingen. Het helpt ook bij het aantrekken van medewerkers die passen bij de bedrijfscultuur, wat op termijn kosten bespaart.",
   'ai-content-met-client-memory-beter-gegrond-in-markt':
