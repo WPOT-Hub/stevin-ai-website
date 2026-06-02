@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'branding-versus-marketing-wat-is-het-verschil',
+    format: 'dispatch' as const,
+    edition: '106',
+    category: 'Markt',
+    title: "Branding en marketing zijn niet hetzelfde: dit zijn de verschillen",
+    dek: "Een duidelijke branding is de basis voor effectieve marketing, maar beide hebben een eigen rol in het bedrijfsproces.",
+    publishedAt: '2026-06-02',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Branding en marketing zijn niet hetzelfde: dit zijn de verschillen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-content-met-client-memory-beter-gegrond-in-markt',
     format: 'dispatch' as const,
     edition: '105',
