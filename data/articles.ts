@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-demand-gen-integratie-commerce-media',
+    format: 'dispatch' as const,
+    edition: '104',
+    category: 'Platform',
+    title: "Google breidt Demand Gen uit met retailerdata voor cross-platform campagnes",
+    dek: "Merken kunnen nu met behulp van retailerdata doelgerichte shoppers bereiken op YouTube, Discover en Gmail.",
+    publishedAt: '2026-06-02',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google breidt Demand Gen uit met retailerdata voor cross-platform campagnes",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'kessels-kramer-failliet-na-60-jaar',
     format: 'dispatch' as const,
     edition: '103',
