@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'nieuwe-ecommerce-tools-juni-2026',
+    format: 'dispatch' as const,
+    edition: '113',
+    category: 'Distributie',
+    title: "Nieuwe tools voor e-commerce: van Reddit tot last-mile delivery",
+    dek: "Dit weekend zijn er nieuwe tools gelanceerd voor Reddit-advertenties, e-mailmarketing, design en crowdshipping.",
+    publishedAt: '2026-06-03',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "Nieuwe tools voor e-commerce: van Reddit tot last-mile delivery",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'microsoft-scout-enterprise-ai-agent',
     format: 'dispatch' as const,
     edition: '112',
