@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'hoog-roas-campagnes-budget-verhogen',
+    format: 'dispatch' as const,
+    edition: '111',
+    category: 'Markt',
+    title: "Meer budget voor hoge ROAS-campagnes? Pas op voor de valkuil",
+    dek: "Uitbreiden van campagnes met een hoge ROAS leidt niet altijd tot meer omzet, blijkt uit analyse.",
+    publishedAt: '2026-06-03',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Meer budget voor hoge ROAS-campagnes? Pas op voor de valkuil",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'seo-dominante-factor-in-ai-aanbevelingen',
     format: 'dispatch' as const,
     edition: '110',
