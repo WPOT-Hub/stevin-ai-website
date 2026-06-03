@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga',
+    format: 'dispatch' as const,
+    edition: '114',
+    category: 'Beleid',
+    title: "Hof Den Haag: bv mag cryptotokens niet afwaarderen bij privérekening dga",
+    dek: "Een bv mag de waardedaling van cryptotokens niet verwerken als verlies in haar winst-en-verliesrekening als de investering in privé is gedaan door de dga.",
+    publishedAt: '2026-06-03',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Hof Den Haag: bv mag cryptotokens niet afwaarderen bij privérekening dga",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'nieuwe-ecommerce-tools-juni-2026',
     format: 'dispatch' as const,
     edition: '113',
