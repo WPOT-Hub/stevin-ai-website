@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'seo-dominante-factor-in-ai-aanbevelingen': (
+    <>
+      <p className="lead-para">
+        Uit analyses blijkt dat AI-systemen zoals chatbots en virtuele assistenten merken en bronnen vooral selecteren op basis van zoekmachineoptimalisatie. Dit terwijl de discussie rond geografische optimalisatie (GEO) nog steeds breed wordt gevoerd.
+      </p>
+      <p>
+        De oorzaak ligt in het ontbreken van robuuste alternatieven voor SEO in AI-algoritmes. Waar traditionele zoekmachines expliciet zoekopdrachten verwerken, vertrouwen AI-systemen op bestaande indexen die sterk afhankelijk zijn van geoptimaliseerde content. Blinde vlekken in de meting ontstaan doordat merken zonder sterke SEO-strategie moeilijker worden meegenomen.
+      </p>
+      <p>
+        Voor bedrijven betekent dit dat investeringen in SEO nu ook direct doorwerken in de zichtbaarheid binnen AI-systemen. De uitdaging is om content niet alleen voor zoekmachines, maar ook voor deze nieuwe generatie platforms te optimaliseren.
+      </p>
+    </>
+  ),
   'google-ads-verandert-servicevoorwaarden-voor-juli-2026': (
     <>
       <p className="lead-para">
@@ -2601,6 +2614,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'seo-dominante-factor-in-ai-aanbevelingen':
+    "Dit fenomeen toont aan hoe snel digitale ecosystemen verschuiven. Waar marketeers vroeger focusten op lokale vindbaarheid of specifieke kanalen, wordt nu duidelijk dat fundamentele optimalisatie doorslaggevend is. Het benadrukt het belang van een integrale digitale strategie die zowel traditionele als nieuwe platforms beslaat.",
   'google-ads-verandert-servicevoorwaarden-voor-juli-2026':
     "Voor bedrijven die afhankelijk zijn van Google Ads betekent dit een fundamentele verschuiving. Het wordt belangrijker om eigen meetdata te combineren met externe tools om controle te behouden. Bureaus kunnen hierin een rol spelen door klanten te helpen bij het opzetten van robuuste tracking en alternatieve kanalen te verkennen als risico’s te groot worden.",
   'mistral-breidt-uit-naar-industrie-en-infrastructuur':
