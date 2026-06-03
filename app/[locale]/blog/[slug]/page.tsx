@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'hoog-roas-campagnes-budget-verhogen': (
+    <>
+      <p className="lead-para">
+        Uitbreiden van campagnes met een hoge ROAS (Return On Ad Spend) lijkt logisch, maar kan leiden tot dalende rendementen. Meetdata van zoekadvertenties tonen aan dat extra budget vaak vooral duurdere zoektermen en concurrentieverhoging triggeren, zonder dat de omzet in dezelfde mate stijgt. Dit fenomeen doet zich voor omdat de markt reageert op de verhoogde vraag naar dezelfde zoekwoorden, aldus experts.
+      </p>
+      <p>
+        Een tweede risico is dat campagnes die nu goed presteren, hun doelgroep snel uitputten. Klanten die al via deze kanalen converteren, zijn vaak moeilijker te bereiken via andere kanalen of campagnes. Hierdoor neemt de effectiviteit van schaalvergroting af, terwijl de kosten per acquisitie stijgen.
+      </p>
+      <p>
+        Bureau’s en in-house teams zien dit terug in dalende uplift bij verdere budgetverhogingen. Het is belangrijk om niet alleen naar ROAS te kijken, maar ook naar de bron van deze waarde: zijn het nieuwe klanten of herhalingsaankopen? De laatste groep levert vaak minder langetermijnwaarde op.
+      </p>
+    </>
+  ),
   'seo-dominante-factor-in-ai-aanbevelingen': (
     <>
       <p className="lead-para">
@@ -2614,6 +2627,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'hoog-roas-campagnes-budget-verhogen':
+    "Voor adverteerders betekent dit dat ze moeten differentiëren tussen campagnes die schaalbaar zijn en campagnes die hun maximale bereik hebben bereikt. Het is verstandig om regelmatig te evalueren of de huidige prestaties nog wel gebaseerd zijn op echte groei of slechts op inflatie van kosten. Daarnaast helpt het om te investeren in kanalen of strategieën die nieuwe doelgroepen aanspreken, in plaats van alleen bestaande succesformules verder op te schalen.",
   'seo-dominante-factor-in-ai-aanbevelingen':
     "Dit fenomeen toont aan hoe snel digitale ecosystemen verschuiven. Waar marketeers vroeger focusten op lokale vindbaarheid of specifieke kanalen, wordt nu duidelijk dat fundamentele optimalisatie doorslaggevend is. Het benadrukt het belang van een integrale digitale strategie die zowel traditionele als nieuwe platforms beslaat.",
   'google-ads-verandert-servicevoorwaarden-voor-juli-2026':
