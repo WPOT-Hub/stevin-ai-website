@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga': (
+    <>
+      <p className="lead-para">
+        Het Gerechtshof Den Haag oordeelt dat een bv de afwaardering van €250.000 aan cryptotokens niet mag verrekenen met haar belastbaar resultaat. De dga had de investering namens zichzelf gedaan via een privéovereenkomst, ondanks dat de betaling via de bankrekening van de bv verliep. Het hof stelt vast dat er geen bewijs is dat de bv zelf contractueel partij was bij de aankoop van de tokens.
+      </p>
+      <p>
+        De zaak draait om een investering in 2018 waarbij een Nederlandse bv €250.000 betaalde voor tokens via een LLC in Dubai. In 2020 bleek het project niet te zijn gestart en werd de waarde van de tokens nihil. De bv wilde deze waardedaling aftrekken, maar het hof verwerpt dit omdat de investering duidelijk in privé verband stond. Uit documenten zoals de Token Agreement en e-mails blijkt volgens het hof dat alleen de dga partij was.
+      </p>
+      <p>
+        Het hof benadrukt dat betalingsverkeer via een vennootschap niet automatisch betekent dat sprake is van een zakelijke transactie voor rekening van die vennootschap. Ook interne vastleggingen of correspondentie ontbraken om aan te tonen dat de bv zelf actief betrokken was bij het project of er commercieel voordeel uit wilde halen.
+      </p>
+    </>
+  ),
   'nieuwe-ecommerce-tools-juni-2026': (
     <>
       <p className="lead-para">
@@ -2653,6 +2666,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga':
+    "Voor ondernemers die met digitale activa werken, toont deze uitspraak hoe belangrijk het is om investeringen strikt gescheiden te houden tussen privé en zakelijk. Zelfs als betalingen via bedrijfsrekeningen lopen, kan een fiscale autoriteit concluderen dat sprake is van een privérekening als er geen duidelijke zakelijke motivering of administratie is. Dit benadrukt het belang van heldere contractuele afspraken en bewijsvoering bij complexe financiële transacties.",
   'nieuwe-ecommerce-tools-juni-2026':
     "Voor bedrijven die hun e-commerce-stack willen vernieuwen, biedt deze golf aan tools kansen om processen efficiënter in te richten. Het is echter belangrijk om niet te veel nieuwe systemen tegelijk te implementeren zonder eerst de impact op de bestaande workflows te testen. Een gefaseerde aanpak voorkomt dat teams overweldigd raken door veranderingen.",
   'microsoft-scout-enterprise-ai-agent':
