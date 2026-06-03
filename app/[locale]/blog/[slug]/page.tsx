@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-verandert-servicevoorwaarden-voor-juli-2026': (
+    <>
+      <p className="lead-para">
+        Vanaf juli 2026 mogen adverteerders geen bezwaar meer maken tegen Googles gebruik van AI voor het optimaliseren van advertenties. De nieuwe voorwaarden schrijven voor dat Google zelf mag bepalen hoe advertenties worden weergegeven en welke data wordt gebruikt voor targeting, aldus bronnen.
+      </p>
+      <p>
+        De aanpassingen leiden bij veel bureaus en in-house teams tot zorgen over transparantie. Advertentie-eigendom komt minder bij de adverteerder te liggen, wat risico’s met zich meebrengt bij het meten van uplift of het corrigeren van foutieve optimalisaties.
+      </p>
+      <p>
+        Ook de manier waarop Google data verwerkt verandert: adverteerders krijgen minder inzicht in welke signalen worden gebruikt voor targeting. Dit kan leiden tot blind spots in de meetdata en moeilijkere evaluatie van campagneprestaties.
+      </p>
+    </>
+  ),
   'mistral-breidt-uit-naar-industrie-en-infrastructuur': (
     <>
       <p className="lead-para">
@@ -2588,6 +2601,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-verandert-servicevoorwaarden-voor-juli-2026':
+    "Voor bedrijven die afhankelijk zijn van Google Ads betekent dit een fundamentele verschuiving. Het wordt belangrijker om eigen meetdata te combineren met externe tools om controle te behouden. Bureaus kunnen hierin een rol spelen door klanten te helpen bij het opzetten van robuuste tracking en alternatieve kanalen te verkennen als risico’s te groot worden.",
   'mistral-breidt-uit-naar-industrie-en-infrastructuur':
     "Voor bedrijven die afhankelijk zijn van Amerikaanse cloudproviders of hun data lokaal willen houden, biedt Mistrals benadering een aantrekkelijk alternatief. De combinatie van eigen modellen, lokale infrastructuur en on-premises implementaties sluit aan bij de groeiende vraag naar soevereine technologische oplossingen in Europa. Dit kan vooral relevant zijn voor sectoren met strenge datacompliance-eisen, zoals de industrie of overheden.",
   'mistral-ai-breidt-uit-naar-fysieke-wereld':
