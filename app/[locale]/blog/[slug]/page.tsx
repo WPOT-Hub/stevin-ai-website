@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'nieuwe-ecommerce-tools-juni-2026': (
+    <>
+      <p className="lead-para">
+        Een nieuwe tool voor Reddit-advertenties maakt het makkelijker om campagnes te beheren op het platform, waar organische en betaalde content vaak door elkaar lopen. Daarnaast is er een oplossing gelanceerd voor e-mailmarketing die automatische segmentatie combineert met A/B-testen op basis van klantgedrag. Designteams krijgen toegang tot een tool die realtime feedback geeft op productafbeeldingen, zodat aanpassingen sneller kunnen worden doorgevoerd.
+      </p>
+      <p>
+        Voor webshops die internationale bezorging aanbieden, is er een crowdshipping-dienst beschikbaar die klanten zelf laat kiezen tussen snelle of goedkope bezorgopties. Een aparte tool richt zich op agentic commerce, waarbij systemen zelfstandig aankopen doen namens bedrijven of consumenten. Tot slot zijn er updates voor last-mile delivery-oplossingen die de communicatie tussen fulfilmentcentra en bezorgers stroomlijnen.
+      </p>
+      <p>
+        De meeste tools zijn direct te integreren met bestaande e-commerceplatforms zoals Shopify en WooCommerce. Sommige vereisen een abonnement, terwijl andere werken op pay-per-use basis. De ontwikkelaars benadrukken dat de nieuwe functionaliteiten vooral gericht zijn op het verbeteren van de klantreis en het verminderen van operationele overhead.
+      </p>
+    </>
+  ),
   'microsoft-scout-enterprise-ai-agent': (
     <>
       <p className="lead-para">
@@ -2640,6 +2653,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'nieuwe-ecommerce-tools-juni-2026':
+    "Voor bedrijven die hun e-commerce-stack willen vernieuwen, biedt deze golf aan tools kansen om processen efficiënter in te richten. Het is echter belangrijk om niet te veel nieuwe systemen tegelijk te implementeren zonder eerst de impact op de bestaande workflows te testen. Een gefaseerde aanpak voorkomt dat teams overweldigd raken door veranderingen.",
   'microsoft-scout-enterprise-ai-agent':
     "Voor bedrijven die al investeren in Microsoft-ecosystemen biedt Scout een logische volgende stap: automatisering zonder handmatige triggers. Het verschuift de focus van 'AI als tool' naar 'AI als actieve collega', wat vooral nuttig kan zijn in teams waar veel coördinatie en herhalende taken voorkomen. Tegelijkertijd roept het vragen op over privacy en controle: hoe ver mag zo’n agent gaan zonder dat gebruikers het gevoel hebben hun autonomie te verliezen?",
   'hoog-roas-campagnes-budget-verhogen':
