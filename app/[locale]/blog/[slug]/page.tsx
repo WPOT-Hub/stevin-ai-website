@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'microsoft-scout-enterprise-ai-agent': (
+    <>
+      <p className="lead-para">
+        Microsoft heeft tijdens Build 2026 een nieuwe AI-agent genaamd Scout geïntroduceerd. Deze agent draait op het open-source framework OpenClaw en is ontworpen om taken automatisch uit te voeren binnen Microsoft 365-toepassingen zoals Teams, Outlook, OneDrive en SharePoint. In tegenstelling tot traditionele AI-tools wacht Scout niet op opdrachten van gebruikers, maar handelt zelfstandig acties af zoals het plannen van vergaderingen over tijdzones heen of het blokkeren van kalendertijd bij dreigende deadlines.
+      </p>
+      <p>
+        Scout wordt geleverd met extra beveiligingsmaatregelen en beleidscontroles om te voldoen aan enterprise-standaarden. De agent kan bijvoorbeeld toegang beperken tot specifieke documenten of communicatiekanalen op basis van bedrijfsbeleid. Microsoft positioneert Scout als een aanvulling op Copilot, met de nadruk op proactieve taken in plaats van reactieve assistentie.
+      </p>
+      <p>
+        De technologie achter Scout is gebaseerd op OpenClaw, dat sinds januari 2026 beschikbaar is en inmiddels meer dan 180.000 sterren op GitHub heeft verzameld. Deze open-source benadering maakt het mogelijk voor bedrijven om de functionaliteit verder aan te passen aan hun specifieke behoeften.
+      </p>
+    </>
+  ),
   'hoog-roas-campagnes-budget-verhogen': (
     <>
       <p className="lead-para">
@@ -2627,6 +2640,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'microsoft-scout-enterprise-ai-agent':
+    "Voor bedrijven die al investeren in Microsoft-ecosystemen biedt Scout een logische volgende stap: automatisering zonder handmatige triggers. Het verschuift de focus van 'AI als tool' naar 'AI als actieve collega', wat vooral nuttig kan zijn in teams waar veel coördinatie en herhalende taken voorkomen. Tegelijkertijd roept het vragen op over privacy en controle: hoe ver mag zo’n agent gaan zonder dat gebruikers het gevoel hebben hun autonomie te verliezen?",
   'hoog-roas-campagnes-budget-verhogen':
     "Voor adverteerders betekent dit dat ze moeten differentiëren tussen campagnes die schaalbaar zijn en campagnes die hun maximale bereik hebben bereikt. Het is verstandig om regelmatig te evalueren of de huidige prestaties nog wel gebaseerd zijn op echte groei of slechts op inflatie van kosten. Daarnaast helpt het om te investeren in kanalen of strategieën die nieuwe doelgroepen aanspreken, in plaats van alleen bestaande succesformules verder op te schalen.",
   'seo-dominante-factor-in-ai-aanbevelingen':
