@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'microsoft-scout-enterprise-ai-agent',
+    format: 'dispatch' as const,
+    edition: '112',
+    category: 'Platform',
+    title: "Microsoft lanceert altijd-actieve AI-agent Scout voor bedrijven",
+    dek: "Microsoft introduceert Scout, een nieuwe AI-agent die taken automatisch uitvoert in Microsoft 365 zonder actieve input van de gebruiker.",
+    publishedAt: '2026-06-03',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Microsoft lanceert altijd-actieve AI-agent Scout voor bedrijven",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'hoog-roas-campagnes-budget-verhogen',
     format: 'dispatch' as const,
     edition: '111',
