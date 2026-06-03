@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-verandert-servicevoorwaarden-voor-juli-2026',
+    format: 'dispatch' as const,
+    edition: '109',
+    category: 'Platform',
+    title: "Google Ads past servicevoorwaarden aan voor AI-gestuurde automatisering",
+    dek: "Google breidt met nieuwe Ads-voorwaarden de inzet van AI-gestuurde automatisering uit, waardoor adverteerders minder controle en eigendom over hun campagnes krijgen.",
+    publishedAt: '2026-06-03',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads past servicevoorwaarden aan voor AI-gestuurde automatisering",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'mistral-breidt-uit-naar-industrie-en-infrastructuur',
     format: 'dispatch' as const,
     edition: '108',
