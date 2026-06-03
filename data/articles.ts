@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'seo-dominante-factor-in-ai-aanbevelingen',
+    format: 'dispatch' as const,
+    edition: '110',
+    category: 'Platform',
+    title: "SEO bepaalt steeds meer welke merken AI-systemen aanbevelen",
+    dek: "De zichtbaarheid van merken in AI-systemen verschuift van geografische optimalisatie naar zoekmachinevriendelijkheid als dominante factor.",
+    publishedAt: '2026-06-03',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "SEO bepaalt steeds meer welke merken AI-systemen aanbevelen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-verandert-servicevoorwaarden-voor-juli-2026',
     format: 'dispatch' as const,
     edition: '109',
