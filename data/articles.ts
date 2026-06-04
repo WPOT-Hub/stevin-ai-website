@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'chatgpt-wordt-advertentieplatform',
+    format: 'dispatch' as const,
+    edition: '115',
+    category: 'Platform',
+    title: "ChatGPT breidt advertenties uit naar Europa",
+    dek: "OpenAI zet de uitrol van advertenties in ChatGPT versneld door en bereidt zich voor op introductie in de EU en Nederland.",
+    publishedAt: '2026-06-04',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "ChatGPT breidt advertenties uit naar Europa",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga',
     format: 'dispatch' as const,
     edition: '114',
