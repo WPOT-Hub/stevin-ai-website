@@ -1236,6 +1236,13 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'chatgpt-wordt-advertentieplatform': (
+    <>
+      <p className="lead-para">
+        De grootste uitdaging voor OpenAI ligt in het balanceren tussen groei en vertrouwen. Advertenties mogen geen invloed hebben op antwoorden en gebruikersdata wordt niet gedeeld met adverteerders om privacygevoelens te voorkomen. Tegelijkertijd is snelle opschaling nodig om nieuwe inkomstenstromen te genereren voor de dure AI-infrastructuur. Voor Europa geldt een extra complicatie door strenge privacywetgeving zoals GDPR, wat de uitrol vertraagt tot er duidelijkheid is over compliance.
+      </p>
+    </>
+  ),
   'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga': (
     <>
       <p className="lead-para">
@@ -2666,6 +2673,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'chatgpt-wordt-advertentieplatform':
+    "Voor bureaus en adverteerders is dit het moment om kennis op te doen over conversational advertising, zonder direct grootschalig te investeren. Het kanaal komt eraan, maar pas als aan alle voorwaarden is voldaan. De komende maanden zullen duidelijk maken hoe dit nieuwe format zich verhoudt tot bestaande mediamixstrategieën en welke meetmethodes nodig zijn om succesvol te zijn.",
   'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga':
     "Voor ondernemers die met digitale activa werken, toont deze uitspraak hoe belangrijk het is om investeringen strikt gescheiden te houden tussen privé en zakelijk. Zelfs als betalingen via bedrijfsrekeningen lopen, kan een fiscale autoriteit concluderen dat sprake is van een privérekening als er geen duidelijke zakelijke motivering of administratie is. Dit benadrukt het belang van heldere contractuele afspraken en bewijsvoering bij complexe financiële transacties.",
   'nieuwe-ecommerce-tools-juni-2026':
