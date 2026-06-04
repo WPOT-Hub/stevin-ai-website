@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'seo-en-affiliate-teams-samenbrengen-voor-meer-omzet',
+    format: 'dispatch' as const,
+    edition: '117',
+    category: 'Markt',
+    title: "SEO en affiliate teams samenbrengen levert 20% lagere acquisitiekosten op",
+    dek: "Uit onderzoek blijkt dat SEO en affiliate marketing elkaar versterken: door beide teams beter te laten samenwerken daalt de kosten voor klantacquisitie met gemiddeld een vijfde.",
+    publishedAt: '2026-06-04',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "SEO en affiliate teams samenbrengen levert 20% lagere acquisitiekosten op",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-aangedreven-google-ads-verandert-ppc-rol',
     format: 'dispatch' as const,
     edition: '116',
