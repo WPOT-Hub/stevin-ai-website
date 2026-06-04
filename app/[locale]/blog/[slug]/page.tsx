@@ -1236,6 +1236,13 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-aangedreven-google-ads-verandert-ppc-rol': (
+    <>
+      <p className="lead-para">
+        De rol van PPC-specialisten verandert door AI-gestuurde Google Ads: niet langer draait het om handmatige campagne-instellingen, maar om het bouwen van systemen die zelflerend zijn. Dat betekent dat marketeers zich moeten richten op signal design, waarbij ze bepalen welke data Google Ads gebruikt voor optimalisatie. Daarnaast wordt conversion architecture belangrijker: het creëren van meetbare stappen tussen advertentie en conversie, zodat AI effectief kan bijsturen.
+      </p>
+    </>
+  ),
   'chatgpt-wordt-advertentieplatform': (
     <>
       <p className="lead-para">
@@ -2688,6 +2695,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-aangedreven-google-ads-verandert-ppc-rol':
+    "Deze ontwikkeling onderstreept dat automatisering in marketing niet louter een efficiencykwestie is, maar een fundamentele verandering in hoe we waarde creëren. Voor ondernemers betekent dit dat ze moeten investeren in kennis over systeemdenken en data-infrastructuur. Wie nu alleen nog maar campagnes beheert zonder zicht op het grotere plaatje, loopt het risico achterop te raken als concurrenten hun processen al hebben geoptimaliseerd voor deze nieuwe realiteit.",
   'chatgpt-wordt-advertentieplatform':
     "Het kanaal komt eraan, de vraag is niet of je meedoet maar hoe je het meet. Een aankoop die bij een ChatGPT-gesprek begint, valt nu buiten de meeste analytics. Wie vooroploopt, zet de meting nu klaar in plaats van te wachten tot het in Nederland live staat.",
   'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga':
