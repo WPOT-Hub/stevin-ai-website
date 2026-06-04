@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getCategoryBySlug(slug)
   if (category) {
     const count = getIntegrationsByCategory(slug).length
-    const title = `${category.name} integraties${count > 0 ? ` — ${count} platforms` : ''}`
+    const title = `${category.name} integraties${count > 0 ? ` (${count} platforms)` : ''}`
     const description = (category.description ?? '').slice(0, 155)
     const canonical = `https://stevin.ai/integraties/${slug}`
     return {
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Vendor-detail pagina
   const integration = getIntegrationBySlug(slug)
   if (integration) {
-    const title = `${integration.name} koppeling — Stevin.AI integratie`
+    const title = `${integration.name} koppeling, Stevin.AI integratie`
     const description = integration.shortDescription.slice(0, 155)
     const canonical = `https://stevin.ai/integraties/${slug}`
     return {
@@ -82,7 +82,7 @@ async function CategoryView({ slug, locale }: { slug: string; locale: string }) 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: `${category.name} integraties — Stevin.AI`,
+    name: `${category.name} integraties, Stevin.AI`,
     description: category.description,
     url: `https://stevin.ai/integraties/${slug}`,
   }

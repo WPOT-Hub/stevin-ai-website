@@ -1239,7 +1239,22 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'chatgpt-wordt-advertentieplatform': (
     <>
       <p className="lead-para">
-        De grootste uitdaging voor OpenAI ligt in het balanceren tussen groei en vertrouwen. Advertenties mogen geen invloed hebben op antwoorden en gebruikersdata wordt niet gedeeld met adverteerders om privacygevoelens te voorkomen. Tegelijkertijd is snelle opschaling nodig om nieuwe inkomstenstromen te genereren voor de dure AI-infrastructuur. Voor Europa geldt een extra complicatie door strenge privacywetgeving zoals GDPR, wat de uitrol vertraagt tot er duidelijkheid is over compliance.
+        OpenAI maakt van ChatGPT een advertentieplatform. Niet als los experiment, maar als een echt kanaal: een self-serve Ads Manager in beta, cost-per-click als biedmodel, en knoppen voor budget en locatie. Het minimumbudget van 50.000 dollar dat eerder nodig was, is vervallen, meldde Axios. Daarmee komt advertentieruimte in ChatGPT binnen bereik van iedere adverteerder, niet alleen de grootste merken.
+      </p>
+      <p>
+        De advertenties zijn conversiegericht. Ze sturen op omzet en op concrete acties, niet alleen op bereik. In de Ads Manager Beta kun je budgetten regelen en geografisch targeten, dezelfde knoppen die je van Google en Meta kent. Het verschil zit in de plek: de advertentie verschijnt in het antwoord, op het moment dat iemand een vraag stelt.
+      </p>
+      <p>
+        Voor Europa gaat het langzamer. OpenAI bereidt de uitrol naar de EU en Nederland voor, maar privacywetgeving zoals de AVG vertraagt dat tot er duidelijkheid is over compliance. OpenAI loopt op een dun koord: advertenties mogen de antwoorden niet beïnvloeden en gebruikersdata wordt niet met adverteerders gedeeld. Dat vertrouwen houdt het product overeind, en tegelijk moet het snel opschalen om de dure AI-infrastructuur te betalen.
+      </p>
+      <p>
+        Waarom dit groot is: mensen zoeken hun antwoord steeds vaker in een chat in plaats van in een lijst met links. Precies daar komen nu advertenties. Er ontstaat een nieuw kanaal naast zoekadvertenties en social, in de laag die de afgelopen jaren het hardst is gegroeid. Wie adverteert, krijgt er een vindplaats bij. Wie het negeert, mist straks de plek waar de aandacht zit.
+      </p>
+      <p>
+        De lastigste vraag is niet of je meedoet, maar hoe je het meet. Een aankoop die begint bij een gesprek met ChatGPT valt vaak buiten je analytics: geen klik die je herkent, geen kanaal dat netjes in je rapportage staat. Net als bij bezoek uit AI-zoekmachines loop je het risico dat de waarde als direct of onbekend wordt geboekt. Dan werkt het kanaal wel, maar kun je er niet op sturen.
+      </p>
+      <p>
+        Ons advies is nuchter: begin nu klein met leren. Wacht niet tot het in Nederland live staat, want dan ben je laat. Zet op tijd je meting klaar zodat je straks weet wat een advertentie in ChatGPT echt oplevert. Daar bouwen we met Stevin aan: een onafhankelijke laag over je kanalen, zodat je op echte cijfers stuurt en een nieuw kanaal niet pas in de maandrapportage ontdekt.
       </p>
     </>
   ),
@@ -2674,7 +2689,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'chatgpt-wordt-advertentieplatform':
-    "Voor bureaus en adverteerders is dit het moment om kennis op te doen over conversational advertising, zonder direct grootschalig te investeren. Het kanaal komt eraan, maar pas als aan alle voorwaarden is voldaan. De komende maanden zullen duidelijk maken hoe dit nieuwe format zich verhoudt tot bestaande mediamixstrategieën en welke meetmethodes nodig zijn om succesvol te zijn.",
+    "Het kanaal komt eraan, de vraag is niet of je meedoet maar hoe je het meet. Een aankoop die bij een ChatGPT-gesprek begint, valt nu buiten de meeste analytics. Wie vooroploopt, zet de meting nu klaar in plaats van te wachten tot het in Nederland live staat.",
   'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga':
     "Voor ondernemers die met digitale activa werken, toont deze uitspraak hoe belangrijk het is om investeringen strikt gescheiden te houden tussen privé en zakelijk. Zelfs als betalingen via bedrijfsrekeningen lopen, kan een fiscale autoriteit concluderen dat sprake is van een privérekening als er geen duidelijke zakelijke motivering of administratie is. Dit benadrukt het belang van heldere contractuele afspraken en bewijsvoering bij complexe financiële transacties.",
   'nieuwe-ecommerce-tools-juni-2026':
