@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-aangedreven-google-ads-verandert-ppc-rol',
+    format: 'dispatch' as const,
+    edition: '116',
+    category: 'Platform',
+    title: "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+    dek: "Google Ads verschuift door AI van zoekwoordoptimalisatie naar het ontwerpen van meetbare systemen en conversiepaden.",
+    publishedAt: '2026-06-04',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'chatgpt-wordt-advertentieplatform',
     format: 'dispatch' as const,
     edition: '115',
