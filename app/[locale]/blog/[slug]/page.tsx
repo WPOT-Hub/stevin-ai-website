@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'seo-autoriteit-distributie-en-brand-zijn-nu-de-drijvers-voor-organische-groei': (
+    <>
+      <p className="lead-para">
+        Uit onderzoek blijkt dat traditionele SEO-tactieken zoals zoekwoordonderzoek en technische optimalisatie nog steeds noodzakelijk zijn, maar alleen leiden tot organische groei als ze worden gecombineerd met sterke autoriteit, effectieve distributie en merkzichtbaarheid.
+      </p>
+      <p>
+        Deze verschuiving komt doordat algoritmes van zoekmachines zoals Google steeds beter in staat zijn om de kwaliteit van content te beoordelen op basis van context, relevantie en gebruikerservaring. Sites met een sterke autoriteit scoren niet alleen hoger in de zoekresultaten, maar trekken ook meer organisch verkeer aan zonder dat er per se nieuwe content moet worden gepubliceerd.
+      </p>
+      <p>
+        Distributie speelt een cruciale rol: zelfs de beste content wordt niet gevonden als deze niet wordt gedeeld via sociale media, nieuwsbrieven of andere kanalen. Merkbekendheid versterkt dit proces verder, omdat gebruikers eerder geneigd zijn om op bekende merken te klikken en deze vaker te bezoeken.
+      </p>
+    </>
+  ),
   'customer-match-voordeel-in-google-ads': (
     <>
       <p className="lead-para">
@@ -2721,6 +2734,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'seo-autoriteit-distributie-en-brand-zijn-nu-de-drijvers-voor-organische-groei':
+    "Voor bureau-eigenaars en in-house teams betekent dit dat SEO niet langer alleen een kwestie is van techniek en content. Investeren in autoriteitsopbouw via backlinks, gastbijdragen of partnerships is net zo belangrijk als het creëren van hoogwaardige content. Daarnaast verdient distributie meer aandacht: plan structureel in hoe je content wordt verspreid en meet welke kanalen de meeste uplift genereren. Merkzichtbaarheid vergt tijd, maar bedrijven die hierin investeren, zien vaak een cumulatief effect dat verder gaat dan alleen zoekmachineoptimalisatie.",
   'customer-match-voordeel-in-google-ads':
     "Voor marketeers die afhankelijk zijn van Google Ads, is Customer Match een praktische oplossing om de impact van privacyregels te beperken. Het benadrukt opnieuw hoe belangrijk het is om eerstparty data te benutten en eigen kanalen zoals e-mailmarketing en CRM-systemen sterker in te zetten. Bureaus kunnen hierin adviseren door klanten te helpen bij het opzetten en onderhouden van deze strategieën.",
   'seo-en-affiliate-teams-samenbrengen-voor-meer-omzet':
