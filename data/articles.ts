@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'customer-match-voordeel-in-google-ads',
+    format: 'dispatch' as const,
+    edition: '118',
+    category: 'Platform',
+    title: "Klantenbestand uploaden geeft voorsprong in Google Ads",
+    dek: "Het uploaden van je klantenbestand in Google Ads zorgt voor betere targeting nu tracking door privacyregels minder nauwkeurig wordt.",
+    publishedAt: '2026-06-05',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Klantenbestand uploaden geeft voorsprong in Google Ads",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'seo-en-affiliate-teams-samenbrengen-voor-meer-omzet',
     format: 'dispatch' as const,
     edition: '117',
