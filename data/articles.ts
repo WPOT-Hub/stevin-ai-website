@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'seo-autoriteit-distributie-en-brand-zijn-nu-de-drijvers-voor-organische-groei',
+    format: 'dispatch' as const,
+    edition: '119',
+    category: 'Platform',
+    title: "SEO draait nu om autoriteit, distributie en merkzichtbaarheid",
+    dek: "Keyword research en on-page optimalisatie leveren minder zichtbare groei op als autoriteit, distributie en merkbekendheid ontbreken.",
+    publishedAt: '2026-06-05',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "SEO draait nu om autoriteit, distributie en merkzichtbaarheid",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'customer-match-voordeel-in-google-ads',
     format: 'dispatch' as const,
     edition: '118',
