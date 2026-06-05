@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'case_studies' })
   return {
-    title: `Case Study: E-commerce — Stevin`,
+    title: `Case Study: E-commerce, Stevin`,
     description: t('sub'),
   }
 }

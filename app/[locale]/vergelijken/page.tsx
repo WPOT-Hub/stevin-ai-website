@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { comparisons } from '@/data/comparisons'
 
 export const metadata: Metadata = {
-  title: 'Tool-vergelijkingen — welke past bij jouw stack?',
+  title: 'Tool-vergelijkingen, welke past bij jouw stack?',
   description:
     'Stevin&apos;s praktijk-vergelijkingen tussen marketing-tools. Geen feature-tabellen, wel concrete keuze-overwegingen vanuit veld-ervaring.',
   alternates: { canonical: 'https://stevin.ai/vergelijken' },

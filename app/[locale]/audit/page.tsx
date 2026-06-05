@@ -135,7 +135,7 @@ export default async function AuditPage({ params }: Props) {
                 {
                   label: 'HIGH',
                   color: '#5DA3FF',
-                  title: '[BUDGET WASTE] €173 spend — 0 conversies',
+                  title: '[BUDGET WASTE] €173 spend, 0 conversies',
                   body: 'NON-BRAND campagne trekt verkeer zonder intentie. 92% bounce rate.',
                 },
               ].map((signal) => (

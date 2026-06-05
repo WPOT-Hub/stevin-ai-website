@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { glossary, type GlossaryTerm } from '@/data/glossary'
 
 export const metadata: Metadata = {
-  title: 'Stevin Woordenboek — marketing-termen in MKB-Nederlands',
+  title: 'Stevin Woordenboek, marketing-termen in MKB-Nederlands',
   description:
     'Heldere uitleg van marketing-termen die je in dashboards, presentaties en gesprekken tegenkomt. Geen academisch jargon, wel praktijkvoorbeelden.',
   alternates: { canonical: 'https://stevin.ai/woordenboek' },

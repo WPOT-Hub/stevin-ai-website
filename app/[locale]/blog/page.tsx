@@ -4,7 +4,7 @@ import { editorials, dispatches } from '@/data/articles'
 import { hasDispatchBody } from './[slug]/page'
 
 export const metadata: Metadata = {
-  title: 'Stevin Journal — Marketing-intelligence redactie',
+  title: 'Stevin Journal, Marketing-intelligence redactie',
   description:
     'Redactionele stukken over marketing-attribution, AI-tooling en meetstructuur. Geen hype, geen jargon, alleen wat herleidbaar is.',
   alternates: { canonical: 'https://stevin.ai/blog' },

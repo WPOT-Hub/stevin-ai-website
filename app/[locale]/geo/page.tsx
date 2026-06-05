@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'geo' })
   return {
-    title: `${t('eyebrow')} — Generative Engine Optimisation`,
+    title: `${t('eyebrow')}, Generative Engine Optimisation`,
     description: t('sub'),
   }
 }

@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'influencers' })
   return {
-    title: `Stevin ${t('eyebrow')} — ${t('h1')}`,
+    title: `Stevin ${t('eyebrow')}, ${t('h1')}`,
     description: t('sub'),
   }
 }

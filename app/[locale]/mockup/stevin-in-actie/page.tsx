@@ -1,7 +1,7 @@
 import StevinInActie from '@/components/StevinInActie'
 
 export const metadata = {
-  title: 'Mockup — Stevin in actie',
+  title: 'Mockup, Stevin in actie',
   robots: { index: false, follow: false },
 }
 

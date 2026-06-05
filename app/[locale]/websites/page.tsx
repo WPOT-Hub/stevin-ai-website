@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'websites' })
   return {
-    title: `${t('h1')} | Stevin`,
+    title: t('h1'),
     description: t('sub'),
     robots: { index: false, follow: false },
   }
@@ -52,6 +52,13 @@ export default async function WebsitesPage({ params }: Props) {
   ]
 
   const useCases = [t('uc1'), t('uc2'), t('uc3'), t('uc4'), t('uc5'), t('uc6')]
+
+  const more = [
+    { title: t('more1_title'), desc: t('more1_desc') },
+    { title: t('more2_title'), desc: t('more2_desc') },
+    { title: t('more3_title'), desc: t('more3_desc') },
+    { title: t('more4_title'), desc: t('more4_desc') },
+  ]
 
   return (
     <main>
@@ -128,6 +135,32 @@ export default async function WebsitesPage({ params }: Props) {
                 <p className="font-mono text-[11px] text-muted mb-4">{String(i + 1).padStart(2, '0')}</p>
                 <h3 className="text-[17px] font-display font-bold text-primary mb-3 leading-tight">{f.title}</h3>
                 <p className="text-[15px] text-muted leading-[1.6]">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* More than a standard site */}
+      <section className="bg-white" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            {t('more_eyebrow')}
+          </p>
+          <h2
+            className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
+            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+          >
+            {t('more_h2')}
+          </h2>
+          <p className="text-[17px] text-muted mb-16 max-w-2xl leading-[1.55]">{t('more_sub')}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-border">
+            {more.map((m, i) => (
+              <div key={m.title} className="border-b border-border py-10 lg:px-8 lg:first:pl-0 lg:last:pr-0">
+                <p className="font-mono text-[11px] text-muted mb-4">{String(i + 1).padStart(2, '0')}</p>
+                <h3 className="text-[16px] font-display font-bold text-primary mb-3 leading-tight">{m.title}</h3>
+                <p className="text-[15px] text-muted leading-[1.6]">{m.desc}</p>
               </div>
             ))}
           </div>
