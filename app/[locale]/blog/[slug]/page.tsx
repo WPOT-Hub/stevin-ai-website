@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'customer-match-voordeel-in-google-ads': (
+    <>
+      <p className="lead-para">
+        Google Ads biedt met Customer Match een manier om bestaande klanten direct te targeten, zelfs als tracking door nieuwe privacyregels zoals de Digital Markets Act en cookieless browsers minder betrouwbaar wordt. Door je klantenbestand te uploaden, kan Google’s AI beter voorspellen welke gebruikers waarschijnlijk converteren, aldus Search Engine Land.
+      </p>
+      <p>
+        Deze aanpak werkt ook als je geen gedetailleerde gebruikersdata meer kunt verzamelen via cookies of trackingpixels. Customer Match gebruikt alleen e-mailadressen of telefoonnummers van je eigen klanten om ze te herkennen in het advertentienetwerk. Dat leidt tot hogere relevantie en lagere kosten per acquisitie.
+      </p>
+      <p>
+        Voor bedrijven met een grote klantendatabase is dit eenvoudige maar effectieve manier om de uplift van campagnes te behouden zonder afhankelijk te zijn van externe tracking. Het vereist wel dat je de gegevens up-to-date houdt en voldoet aan de privacy-eisen van GDPR.
+      </p>
+    </>
+  ),
   'seo-en-affiliate-teams-samenbrengen-voor-meer-omzet': (
     <>
       <p className="lead-para">
@@ -2708,6 +2721,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'customer-match-voordeel-in-google-ads':
+    "Voor marketeers die afhankelijk zijn van Google Ads, is Customer Match een praktische oplossing om de impact van privacyregels te beperken. Het benadrukt opnieuw hoe belangrijk het is om eerstparty data te benutten en eigen kanalen zoals e-mailmarketing en CRM-systemen sterker in te zetten. Bureaus kunnen hierin adviseren door klanten te helpen bij het opzetten en onderhouden van deze strategieën.",
   'seo-en-affiliate-teams-samenbrengen-voor-meer-omzet':
     "Voor bedrijven die nu nog losse teams hebben voor SEO en affiliate marketing, is het tijd om de samenwerking structureel aan te pakken. Begin met het delen van data tussen beide afdelingen en definieer gezamenlijke KPI’s zoals ‘kosten per acquisitie’ of ‘zichtbaarheid in LLM’s’. Dit voorkomt dat teams elkaars inspanningen ondermijnen en creëert ruimte voor innovatie in hoe het merk online wordt gevonden.",
   'ai-aangedreven-google-ads-verandert-ppc-rol':
