@@ -1236,6 +1236,39 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'customer-match-voordeel-in-google-ads': (
+    <>
+      <p className="lead-para">
+        Google Ads biedt met Customer Match een manier om bestaande klanten direct te targeten, zelfs als tracking door nieuwe privacyregels zoals de Digital Markets Act en cookieless browsers minder betrouwbaar wordt. Door je klantenbestand te uploaden, kan Google’s AI beter voorspellen welke gebruikers waarschijnlijk converteren, aldus Search Engine Land.
+      </p>
+      <p>
+        Deze aanpak werkt ook als je geen gedetailleerde gebruikersdata meer kunt verzamelen via cookies of trackingpixels. Customer Match gebruikt alleen e-mailadressen of telefoonnummers van je eigen klanten om ze te herkennen in het advertentienetwerk. Dat leidt tot hogere relevantie en lagere kosten per acquisitie.
+      </p>
+      <p>
+        Voor bedrijven met een grote klantendatabase is dit eenvoudige maar effectieve manier om de uplift van campagnes te behouden zonder afhankelijk te zijn van externe tracking. Het vereist wel dat je de gegevens up-to-date houdt en voldoet aan de privacy-eisen van GDPR.
+      </p>
+    </>
+  ),
+  'seo-en-affiliate-teams-samenbrengen-voor-meer-omzet': (
+    <>
+      <p className="lead-para">
+        SEO en affiliate marketing richten zich vaak op dezelfde doelgroepen, maar opereren nog te vaak in silo’s. Door content, zoekwoordenstrategieën en promotiecampagnes op elkaar af te stemmen, kunnen bedrijven dubbel werk voorkomen en hun zichtbaarheid in zoekmachines én bij affiliates vergroten. Dit leidt niet alleen tot betere rankings, maar ook tot een hogere conversie per bezoeker aldus Search Engine Land.
+      </p>
+      <p>
+        Een concrete uitkomst van betere afstemming is het terugdringen van acquisitiekosten. Bedrijven die SEO en affiliate teams laten samenwerken, zien gemiddeld een daling van 20% in kosten per geconverteerde klant. Dit komt doordat beide kanalen elkaar versterken: organische zoekresultaten leveren meer kwalitatief verkeer op voor affiliates, terwijl affiliates weer nieuwe kansen bieden voor SEO-teams om hun autoriteit te vergroten.
+      </p>
+      <p>
+        Daarnaast speelt deze samenwerking een rol in de zichtbaarheid van merken in AI-gestuurde zoekomgevingen. Merkcontent die zowel door SEO als affiliates wordt gedeeld, heeft meer kans om in grote taalmodellen (LLM’s) te verschijnen. Dit vergroot de langetermijnwaarde van het merk en zorgt voor een stabielere stroom van organisch verkeer.
+      </p>
+    </>
+  ),
+  'ai-aangedreven-google-ads-verandert-ppc-rol': (
+    <>
+      <p className="lead-para">
+        De rol van PPC-specialisten verandert door AI-gestuurde Google Ads: niet langer draait het om handmatige campagne-instellingen, maar om het bouwen van systemen die zelflerend zijn. Dat betekent dat marketeers zich moeten richten op signal design, waarbij ze bepalen welke data Google Ads gebruikt voor optimalisatie. Daarnaast wordt conversion architecture belangrijker: het creëren van meetbare stappen tussen advertentie en conversie, zodat AI effectief kan bijsturen.
+      </p>
+    </>
+  ),
   'chatgpt-wordt-advertentieplatform': (
     <>
       <p className="lead-para">
@@ -2688,6 +2721,12 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'customer-match-voordeel-in-google-ads':
+    "Voor marketeers die afhankelijk zijn van Google Ads, is Customer Match een praktische oplossing om de impact van privacyregels te beperken. Het benadrukt opnieuw hoe belangrijk het is om eerstparty data te benutten en eigen kanalen zoals e-mailmarketing en CRM-systemen sterker in te zetten. Bureaus kunnen hierin adviseren door klanten te helpen bij het opzetten en onderhouden van deze strategieën.",
+  'seo-en-affiliate-teams-samenbrengen-voor-meer-omzet':
+    "Voor bedrijven die nu nog losse teams hebben voor SEO en affiliate marketing, is het tijd om de samenwerking structureel aan te pakken. Begin met het delen van data tussen beide afdelingen en definieer gezamenlijke KPI’s zoals ‘kosten per acquisitie’ of ‘zichtbaarheid in LLM’s’. Dit voorkomt dat teams elkaars inspanningen ondermijnen en creëert ruimte voor innovatie in hoe het merk online wordt gevonden.",
+  'ai-aangedreven-google-ads-verandert-ppc-rol':
+    "Deze ontwikkeling onderstreept dat automatisering in marketing niet louter een efficiencykwestie is, maar een fundamentele verandering in hoe we waarde creëren. Voor ondernemers betekent dit dat ze moeten investeren in kennis over systeemdenken en data-infrastructuur. Wie nu alleen nog maar campagnes beheert zonder zicht op het grotere plaatje, loopt het risico achterop te raken als concurrenten hun processen al hebben geoptimaliseerd voor deze nieuwe realiteit.",
   'chatgpt-wordt-advertentieplatform':
     "Het kanaal komt eraan, de vraag is niet of je meedoet maar hoe je het meet. Een aankoop die bij een ChatGPT-gesprek begint, valt nu buiten de meeste analytics. Wie vooroploopt, zet de meting nu klaar in plaats van te wachten tot het in Nederland live staat.",
   'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga':
