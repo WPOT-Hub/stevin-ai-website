@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-demands-striktere-audience-targeting-regels-demand-gen',
+    format: 'dispatch' as const,
+    edition: '120',
+    category: 'Platform',
+    title: "Google verduidelijkt striktere regels voor gevoelige doelgroep-targeting in Demand Gen",
+    dek: "Campagnes die zich richten op gevoelige doelgroepen in Google Demand Gen lopen risico op beperkte bereikbaarheid door nieuwe richtlijnen.",
+    publishedAt: '2026-06-06',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google verduidelijkt striktere regels voor gevoelige doelgroep-targeting in Demand Gen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'seo-autoriteit-distributie-en-brand-zijn-nu-de-drijvers-voor-organische-groei',
     format: 'dispatch' as const,
     edition: '119',
