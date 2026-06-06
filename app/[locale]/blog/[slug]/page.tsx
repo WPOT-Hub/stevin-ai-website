@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'vier-manieren-om-ai-zoekzichtbaarheid-te-tracken': (
+    <>
+      <p className="lead-para">
+        Door de opkomst van AI-gestuurde zoekresultaten en chatbots verdwijnt een deel van de traditionele meetdata. Organische kliks en conversies die via klassieke zoekopdrachten binnenkomen, worden minder zichtbaar. Dit leidt tot blinde vlekken in campagnes die afhankelijk zijn van attribuutmodellen zoals first- of last-click.
+      </p>
+      <p>
+        Een combinatie van bestaande trackingmethodes en nieuwe databronnen kan hier verlichting bieden. Denk aan het koppelen van zoekopdrachten aan conversiedata via CRM-systemen of het gebruik van server-side tracking om gegevensverlies te beperken. Ook het monitoren van merkgerelateerde zoektermen in AI-chatbots kan inzicht geven in de impact van merkbekendheid.
+      </p>
+      <p>
+        Daarnaast worden tools ontwikkeld die specifiek gericht zijn op het meten van AI-invloed. Deze analyseren niet alleen klikgedrag, maar ook de tijd die gebruikers besteden aan AI-antwoorden of de mate waarin merknamen terugkomen in suggesties. Het is een kwestie van experimenteren met verschillende methodes om te zien wat voor jouw bedrijf het beste werkt.
+      </p>
+    </>
+  ),
   'google-demands-striktere-audience-targeting-regels-demand-gen': (
     <>
       <p className="lead-para">
@@ -2747,6 +2760,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'vier-manieren-om-ai-zoekzichtbaarheid-te-tracken':
+    "Voor bedrijven die afhankelijk zijn van organische zoekresultaten wordt het belangrijker om niet alleen te focussen op directe conversies, maar ook op langetermijnwaarde zoals merkbekendheid en klantloyaliteit. De verschuiving naar AI-gestuurde zoekervaringen betekent dat traditionele KPI’s mogelijk moeten worden aangepast of uitgebreid. Het is verstandig om nu al te investeren in flexibele meetoplossingen die meegroeien met deze ontwikkelingen.",
   'google-demands-striktere-audience-targeting-regels-demand-gen':
     "Voor bureaus en in-house teams betekent dit dat campagnes nog zorgvuldiger moeten worden opgezet en getest. De nieuwe regels dwingen tot een meer gefocuste aanpak, waarbij creativiteit en strategische keuzes belangrijker worden dan brede targeting. Het is een goede gelegenheid om de eigen werkwijze tegen het licht te houden en te investeren in data-driven beslissingen.",
   'seo-autoriteit-distributie-en-brand-zijn-nu-de-drijvers-voor-organische-groei':
