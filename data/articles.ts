@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'vier-manieren-om-ai-zoekzichtbaarheid-te-tracken',
+    format: 'dispatch' as const,
+    edition: '121',
+    category: 'Platform',
+    title: "AI zoekzichtbaarheid meten blijft lastig: vier concrete oplossingen",
+    dek: "De overstap van ontdekking naar aankoop wordt steeds moeilijker te meten door gebrekkige attribution, maar nieuwe signalen bieden uitkomst.",
+    publishedAt: '2026-06-06',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI zoekzichtbaarheid meten blijft lastig: vier concrete oplossingen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-demands-striktere-audience-targeting-regels-demand-gen',
     format: 'dispatch' as const,
     edition: '120',
