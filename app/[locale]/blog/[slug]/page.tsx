@@ -1236,6 +1236,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-demands-striktere-audience-targeting-regels-demand-gen': (
+    <>
+      <p className="lead-para">
+        Google heeft nieuwe richtlijnen gepubliceerd voor gevoelige doelgroep-targeting in Demand Gen-campagnes. Deze campagnes kunnen nu minder goed worden afgeleverd als ze zich richten op onderwerpen zoals gezondheid, financiële producten of politieke standpunten.
+      </p>
+      <p>
+        De verandering betekent dat marketeers hun targetingstrategie moeten herzien. Campagnes die te breed of te specifiek zijn ingesteld, kunnen worden afgestraft met een lagere zichtbaarheid. Dit geldt vooral voor campagnes die gebruikmaken van automatische biedstrategieën.
+      </p>
+      <p>
+        Het is nu belangrijker dan ooit om de targetingopties nauwkeurig af te stemmen op de campagne-doelstellingen. Google raadt aan om eerst kleine testcampagnes op te zetten om de impact van de nieuwe regels te meten voordat grote budgetten worden ingezet.
+      </p>
+    </>
+  ),
   'seo-autoriteit-distributie-en-brand-zijn-nu-de-drijvers-voor-organische-groei': (
     <>
       <p className="lead-para">
@@ -2734,6 +2747,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-demands-striktere-audience-targeting-regels-demand-gen':
+    "Voor bureaus en in-house teams betekent dit dat campagnes nog zorgvuldiger moeten worden opgezet en getest. De nieuwe regels dwingen tot een meer gefocuste aanpak, waarbij creativiteit en strategische keuzes belangrijker worden dan brede targeting. Het is een goede gelegenheid om de eigen werkwijze tegen het licht te houden en te investeren in data-driven beslissingen.",
   'seo-autoriteit-distributie-en-brand-zijn-nu-de-drijvers-voor-organische-groei':
     "Voor bureau-eigenaars en in-house teams betekent dit dat SEO niet langer alleen een kwestie is van techniek en content. Investeren in autoriteitsopbouw via backlinks, gastbijdragen of partnerships is net zo belangrijk als het creëren van hoogwaardige content. Daarnaast verdient distributie meer aandacht: plan structureel in hoe je content wordt verspreid en meet welke kanalen de meeste uplift genereren. Merkzichtbaarheid vergt tijd, maar bedrijven die hierin investeren, zien vaak een cumulatief effect dat verder gaat dan alleen zoekmachineoptimalisatie.",
   'customer-match-voordeel-in-google-ads':
