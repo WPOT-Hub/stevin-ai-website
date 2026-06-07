@@ -716,10 +716,6 @@ export default async function HomePage({ params }: Props) {
                   <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
                 </svg>
               </Link>
-              <div className="flex gap-6 flex-wrap">
-                <Link href="/marketing" className="font-display font-semibold text-sm text-white/45 hover:text-white transition-colors">{t('closing_link_marketing')}</Link>
-                <Link href="/artiesten" className="font-display font-semibold text-sm text-white/45 hover:text-white transition-colors">{t('closing_link_artists')}</Link>
-              </div>
             </div>
           </div>
 
