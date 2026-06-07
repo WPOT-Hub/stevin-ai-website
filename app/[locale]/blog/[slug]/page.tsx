@@ -573,9 +573,9 @@ function ArticleLeCunBody() {
         wel kan, taal en context begrijpen, en hou je het oordeel waar het hoort.
       </p>
 
-      <Callout
-        big="Grond"
-        label="Zo bouwen wij Stevin. Het taalmodel is niet de denker. Het is de laag die signalen herkent in echte data, en die elke stap met impact aan een mens voorlegt."
+      <PullQuote
+        text="Zo bouwen wij Stevin. Het taalmodel is niet de denker. Het is de laag die signalen herkent in echte data, en die elke stap met impact aan een mens voorlegt."
+        cite="Stevin"
       />
 
       <H2 num="06">Wat dit betekent</H2>
