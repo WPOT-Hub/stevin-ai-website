@@ -1316,6 +1316,21 @@ export const articles: Article[] = [
 
   /* ─── EDITORIALS ─── */
   {
+    slug: 'lecun-miljard-tegen-het-taalmodel',
+    format: 'editorial' as const,
+    edition: '019',
+    category: 'Observatie',
+    title: 'Een miljard tegen het taalmodel',
+    dek: 'Yann LeCun haalde de grootste seed-ronde uit de Europese geschiedenis op om te bewijzen dat taalmodellen doodlopen. Hij heeft een punt. Maar de vraag die telt voor wie vandaag met AI werkt, is een andere.',
+    publishedAt: '2026-06-07',
+    readMinutes: 7,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OBSERVATIE',
+    posterTopic: 'Een miljard tegen het taalmodel',
+    source: { url: 'https://techcrunch.com/2026/03/09/yann-lecuns-ami-labs-raises-1-03-billion-to-build-world-models/', name: 'TechCrunch' },
+  },
+  {
     slug: 'zichtbaar-in-ai-antwoorden-aeo-geo',
     format: 'editorial' as const,
     edition: '018',

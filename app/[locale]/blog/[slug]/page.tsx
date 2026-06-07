@@ -305,6 +305,9 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'zichtbaar-in-ai-antwoorden-aeo-geo' && (
             <ArticleAEOBody />
           )}
+          {article.format === 'editorial' && article.slug === 'lecun-miljard-tegen-het-taalmodel' && (
+            <ArticleLeCunBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
@@ -316,6 +319,7 @@ export default async function ArticlePage({
             article.slug !== 'mmm-attributie-incrementality-welke-meet-wat' &&
             article.slug !== 'ai-tool-werkt-echt-holdout-bureau' &&
             article.slug !== 'zichtbaar-in-ai-antwoorden-aeo-geo' &&
+            article.slug !== 'lecun-miljard-tegen-het-taalmodel' &&
             article.slug !== 'wk-2026-campagne-data-voorbereiding' && (
               <ArticleStubBody article={article} />
             )}
@@ -444,6 +448,222 @@ function Poster({
 /* ────────────────────────────────────────────────────────────
    Article body: MIT NANDA piece
    ──────────────────────────────────────────────────────────── */
+function ArticleLeCunBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Yann LeCun, Turing Award-winnaar en jarenlang het hoofd van de AI-onderzoeksgroep van Meta,
+        haalde op 10 maart 2026 ruim een miljard dollar op voor een nieuw bedrijf. AMI Labs in Parijs
+        kreeg 1,03 miljard dollar bij een waardering van 3,5 miljard, volgens TechCrunch en Crunchbase
+        News de grootste seed-ronde ooit voor een Europese startup. Onder de investeerders staan
+        Nvidia, Samsung, Bezos Expeditions, Eric Schmidt en Xavier Niel.
+      </p>
+
+      <p>
+        Het opvallende zit niet in het bedrag. Het zit in de inzet. LeCun haalde dat geld op om precies
+        het soort AI te vervangen waar de rest van de industrie honderden miljarden in pompt: het grote
+        taalmodel achter ChatGPT, Gemini en Claude. We schreven er in januari al een kort bericht over,
+        over{' '}
+        <Link
+          href="/blog/lecun-ami-labs-jepa-tegen-llms"
+          className="text-[var(--accent)] no-underline"
+        >
+          de aankondiging
+        </Link>
+        . Dit is de mening erachter.
+      </p>
+
+      <H2 num="01">De gok</H2>
+
+      <p>
+        LeCun vertrok eind 2025 bij Meta. Zijn overtuiging herhaalt hij al jaren: de manier waarop de
+        industrie nu AI bouwt is een &quot;doodlopende weg&quot;. Een taalmodel voorspelt het volgende
+        woord op basis van patronen in tekst. Daardoor kan zo&apos;n systeem volgens hem nooit echt
+        redeneren, niet betrouwbaar plannen en niet leren hoe de wereld werkt. Het kent alleen tekst,
+        geen werkelijkheid.
+      </p>
+
+      <p>
+        Zijn alternatief heet een &quot;world model&quot;. AMI bouwt voort op LeCun&apos;s eigen
+        architectuur, de &quot;Joint Embedding Predictive Architecture&quot;, afgekort JEPA. Een model
+        dat niet het volgende woord of de volgende pixel voorspelt, maar de betekenis van hoe een
+        situatie verandert. Eerst de wereld leren begrijpen, dan pas handelen. AMI mikt op industrie,
+        robotica en zorg, plekken waar de zwakte van taalmodellen het hardst aankomt.
+      </p>
+
+      <H2 num="02">Heeft hij gelijk?</H2>
+
+      <p>
+        Een paar weken na de aankondiging kwam er munitie. Op 25 maart 2026 lanceerde de ARC Prize
+        Foundation een nieuwe test, ARC-AGI-3, die meet hoe goed een AI kan verkennen, plannen en doelen
+        ontdekken in een onbekende, interactieve omgeving. De uitkomst was hard. Alle topmodellen
+        scoorden onder de 1 procent. Mensen lossen dezelfde opgaven volledig op.
+      </p>
+
+      <Callout
+        big="< 1%"
+        label="Op ARC-AGI-3 scoorden alle topmodellen onder de 1 procent. Een taalloos reinforcement-learning model van Tufa Labs won met rond de 12 procent. Bron: ARC Prize Foundation, maart 2026."
+      />
+
+      <p>
+        Dat sluit aan bij wat onderzoekers al langer zien. Taalmodellen zijn briljant in het produceren
+        van tekst die klinkt als een redenering, en zwak zodra ze moeten plannen of de fysieke gevolgen
+        van een actie moeten inschatten. Ze hallucineren niet door een bug. Ze hallucineren omdat het
+        volgende woord voorspellen iets anders is dan weten of het waar is.
+      </p>
+
+      <PullQuote
+        text='"Een taalmodel hallucineert niet door een bug. Het hallucineert omdat het volgende woord voorspellen iets anders is dan weten of het waar is."'
+        cite="Stevin Journal"
+      />
+
+      <H2 num="03">Wat een wereldmodel wel belooft</H2>
+
+      <p>
+        De aantrekkingskracht van LeCun&apos;s plan is reeel. Een systeem dat de fysica van een situatie
+        begrijpt, kan een handeling vooraf simuleren, de gevolgen inschatten en bijsturen voordat het
+        iets doet. Dat is precies wat een robot, een zelfrijdende machine of een planningssysteem nodig
+        heeft, en precies wat een taalmodel mist. Voor die domeinen, met fysieke gevolgen en weinig
+        ruimte voor gokwerk, is de gok van AMI logisch. De vraag is alleen of dat de hele AI-wereld op
+        zijn kop zet, of er een laag aan toevoegt.
+      </p>
+
+      <H2 num="04">Waar LeCun overdrijft</H2>
+
+      <p>
+        En toch. LeCun stelt dat taalmodellen binnen vijf jaar nutteloos zijn. Dat is geen analyse, dat
+        is een verkoopargument. Hij haalde net een miljard op voor het alternatief, dus hij heeft elke
+        reden om het zwart-wit te brengen.
+      </p>
+
+      <p>
+        Drie kanttekeningen. Een: het bezwaar dat een taalmodel voor elk woord evenveel rekenkracht
+        gebruikt, klopt steeds minder. De nieuwste modellen denken in stappen, gebruiken gereedschap en
+        besteden meer rekentijd aan moeilijke vragen. Twee: wereldmodellen en taalmodellen sluiten
+        elkaar niet uit. De waarschijnlijke toekomst is hybride. Een taalmodel voor taal en kennis, een
+        wereldmodel voor planning en fysica, gereedschap voor de rest. Drie: het einde van het taalmodel
+        is al vaak voorspeld en even vaak opgeschoven.
+      </p>
+
+      <p>
+        Wegwuiven mag je LeCun niet. Hij had eerder gelijk toen de rest twijfelde aan diep leren. Maar
+        de sprong van &quot;structureel beperkt&quot; naar &quot;nutteloos&quot; maakt hij om geld op te
+        halen, niet omdat het bewijs er is.
+      </p>
+
+      <H2 num="05">De vraag die telt</H2>
+
+      <p>
+        Hier komt onze mening, en het is een mening. Het hele debat draait om de vraag of een taalmodel
+        in zijn eentje kan denken. Voor wie vandaag met AI werkt, is dat de verkeerde vraag. De juiste
+        vraag is: hoe zet je een taalmodel zo in dat zijn zwaktes er niet toe doen?
+      </p>
+
+      <p>
+        Want je kent die zwaktes. Een taalmodel verzint dingen, het plant slecht, het heeft geen model
+        van jouw werkelijkheid. Dus geef je het die werkelijkheid. Je vraagt het niet om uit het niets
+        te redeneren, je voert het met echte data uit de systemen die een bedrijf al gebruikt. De mail,
+        de planning, de offerte, de boekhouding. Dat is het wereldmodel dat je vandaag al hebt. Geen
+        from-scratch JEPA, maar de feitelijke staat van het bedrijf.
+      </p>
+
+      <p>
+        En je laat het taalmodel niet alleen beslissen. Elke serieuze uitkomst toont zijn bron. Elke
+        actie met impact gaat langs een mens. Alles wordt gelogd. Dan gebruik je het model voor wat het
+        wel kan, taal en context begrijpen, en hou je het oordeel waar het hoort.
+      </p>
+
+      <Callout
+        big="Grond"
+        label="Zo bouwen wij Stevin. Het taalmodel is niet de denker. Het is de laag die signalen herkent in echte data, en die elke stap met impact aan een mens voorlegt."
+      />
+
+      <H2 num="06">Wat dit betekent</H2>
+
+      <p>
+        Dat is het verschil tussen een AI die je moet vertrouwen en een AI die je kunt controleren.
+        LeCun heeft gelijk dat je een taalmodel niet blind moet vertrouwen om te redeneren en te plannen.
+        Wij zijn het daarmee eens, en daarom bouwen we het ook niet zo.
+      </p>
+
+      <p>
+        Het mooie van die keuze: je hoeft geen kant in zijn weddenschap te kiezen. Plateauen
+        taalmodellen? Een gegronde, gecontroleerde AI werkt nog steeds, want je vroeg hem nooit het
+        onmogelijke. Komt het wereldmodel er wel, sneller en beter? Dan schuift dat er gewoon onder. De
+        laag blijft, het model is verwisselbaar.
+      </p>
+
+      <p>
+        Voor wie nu een AI-product bouwt, is dat meteen het scherpste filter. Een venture die erop gokt
+        dat het taalmodel het probleem magisch oplost, is fragiel. Een venture die het taalmodel grondt
+        in echte data en menselijk toezicht, staat overeind, wat de onderzoekers de komende vijf jaar
+        ook ontdekken.
+      </p>
+
+      <Takeaways
+        label="DE KERN"
+        title="Wat je hiervan onthoudt"
+        items={[
+          {
+            pct: '01',
+            text: (
+              <>
+                <b>De inzet.</b> LeCun haalde 1,03 miljard dollar op voor AMI Labs, om taalmodellen te
+                vervangen door &quot;world models&quot;. Grootste Europese seed-ronde ooit.
+              </>
+            ),
+          },
+          {
+            pct: '02',
+            text: (
+              <>
+                <b>Deels terecht.</b> Taalmodellen plannen slecht en hallucineren omdat ze tekst
+                voorspellen, geen werkelijkheid. ARC-AGI-3 hield topmodellen onder 1 procent.
+              </>
+            ),
+          },
+          {
+            pct: '03',
+            text: (
+              <>
+                <b>Overdreven.</b> &quot;Nutteloos binnen vijf jaar&quot; is eigenbelang. De toekomst is
+                waarschijnlijk hybride.
+              </>
+            ),
+          },
+          {
+            pct: '04',
+            text: (
+              <>
+                <b>De uitweg bestaat al.</b> Grond het taalmodel in echte data, toon bronnen, hou een
+                mens in de lus.
+              </>
+            ),
+          },
+          {
+            pct: '05',
+            text: (
+              <>
+                <b>Geen kant kiezen.</b> De laag blijft, het model is verwisselbaar.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <H2 num="07">Slot</H2>
+
+      <p>
+        LeCun zet een miljard in op de vraag of een machine de wereld echt kan begrijpen. Een
+        fascinerende vraag, en zijn lab is de juiste plek om hem te stellen. Maar voor een bedrijf dat
+        deze maand een offerte niet wil laten liggen, is de vraag kleiner en concreter. Krijgt de juiste
+        persoon op tijd het juiste signaal, met de bron erbij? Daar heb je geen wereldmodel voor nodig.
+        Je hebt grond onder de voeten nodig.
+      </p>
+    </>
+  )
+}
+
 function ArticleMITBody() {
   return (
     <>
