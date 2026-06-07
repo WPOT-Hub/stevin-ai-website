@@ -10,12 +10,36 @@ import { editorials } from '@/data/articles'
 
 type Props = { params: Promise<{ locale: string }> }
 
+// Brede capability-sectie (de werklaag), domein-onafhankelijk. Inline copy per
+// taal zodat dit los staat van de marketing-i18n en makkelijk te itereren is.
+const CAPABILITIES = {
+  nl: {
+    eyebrow: 'EEN LAAG OVER JE SYSTEMEN',
+    h2: 'Wat Stevin doet, voor je hele bedrijf.',
+    cards: [
+      { t: 'Structuur in je data', d: 'Al je losse systemen, van mail en CRM tot planning en boekhouding, komen samen op een plek. Geen middleware, geen losse eilanden.' },
+      { t: 'Agents in je afdeling', d: 'Niet een chatbot, maar agents die echt werk uit handen nemen, elk met eigen rechten en context. Van opvolging tot rapportage.' },
+      { t: 'Human in the loop', d: 'Elke actie met impact gaat eerst langs een mens, met de bron erbij. AI die meewerkt zonder dat je grip verliest.' },
+    ],
+  },
+  en: {
+    eyebrow: 'ONE LAYER OVER YOUR SYSTEMS',
+    h2: 'What Stevin does, for your whole business.',
+    cards: [
+      { t: 'Structure in your data', d: 'All your separate systems, from email and CRM to planning and accounting, come together in one place. No middleware, no islands.' },
+      { t: 'Agents in your department', d: 'Not a chatbot, but agents that genuinely take work off your hands, each with their own permissions and context. From follow-up to reporting.' },
+      { t: 'Human in the loop', d: 'Every action with impact passes by a person first, with the source attached. AI that works with you without you losing control.' },
+    ],
+  },
+} as const
+
 export default async function HomePage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('home')
   const tr = await getTranslations('trust')
   const homepageFaqs = getHomepageFaqs(locale)
+  const cap = locale === 'en' ? CAPABILITIES.en : CAPABILITIES.nl
 
   // Verrijkte Organization-schema voor Knowledge Graph eligibility +
   // entity-recognition door LLMs (ChatGPT, Claude, Perplexity gebruiken
@@ -176,6 +200,33 @@ export default async function HomePage({ params }: Props) {
           {/* Meetlat */}
           <div className="mt-20">
             <MeetlatRuler color="rgba(255,255,255,.35)" />
+          </div>
+        </div>
+      </section>
+
+      {/* ── CAPABILITIES (werklaag, breed) ── */}
+      <section className="bg-white" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+            <span className="inline-block w-6 h-px bg-accent flex-shrink-0" aria-hidden="true" />
+            {cap.eyebrow}
+          </p>
+          <h2
+            className="font-display font-extrabold text-primary m-0 mb-14"
+            style={{ fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '20ch' }}
+          >
+            {cap.h2}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border rounded-[14px] overflow-hidden">
+            {cap.cards.map((c, i) => (
+              <div key={c.t} className="bg-white p-8 lg:p-10">
+                <p className="font-mono text-[11px] text-muted mb-5">{String(i + 1).padStart(2, '0')}</p>
+                <h3 className="font-display font-bold text-primary mb-3" style={{ fontSize: '20px', letterSpacing: '-0.01em' }}>
+                  {c.t}
+                </h3>
+                <p className="text-muted leading-[1.6]" style={{ fontSize: '15px' }}>{c.d}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
