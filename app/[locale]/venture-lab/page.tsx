@@ -2,6 +2,7 @@ import { setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import VentureLabForm from '@/components/VentureLabForm'
+import VentureLabNav from '@/components/VentureLabNav'
 import {
   Target,
   FlaskConical,
@@ -106,8 +107,9 @@ export default async function VentureLabPage({ params }: Props) {
       <section className="hero-mesh-gradient -mt-[72px] overflow-hidden">
         <div
           className="mx-auto max-w-[1200px]"
-          style={{ padding: 'calc(96px + 72px) 24px 110px' }}
+          style={{ padding: 'calc(96px + 56px) 24px 110px' }}
         >
+          <VentureLabNav locale={locale} />
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_440px] gap-16 items-center">
             {/* Left: copy */}
             <div>
@@ -136,7 +138,7 @@ export default async function VentureLabPage({ params }: Props) {
                   Meld je interesse
                 </Link>
                 <Link
-                  href="#programma"
+                  href="/venture-lab/programma"
                   className="inline-flex items-center gap-2 border border-white/20 text-white font-display font-semibold text-[15px] px-7 py-3.5 rounded-lg hover:border-white/40 hover:bg-white/5 transition-colors"
                 >
                   Bekijk het programma
