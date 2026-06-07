@@ -138,4 +138,10 @@ export const categories: Category[] = [
     description: 'Marketing Mix Modeling, multi-touch attribution en uplift-meting.',
     intro: 'Weten dat je campagne kliks oplevert is niet genoeg. MMM en attribution bewijzen of je marketing daadwerkelijk incrementele omzet genereert. Stevin.AI combineert geavanceerde statistische modellen met campagnedata om de echte waarde van elk kanaal en elke creatieve uiting te onderbouwen — van awareness tot conversie.',
   },
+  {
+    name: 'Bouw & Techniek',
+    slug: 'bouw-techniek',
+    description: 'Bouw-, installatie- en techniek-software: projectadministratie, calculatie, werkbonnen en aanbesteding.',
+    intro: 'In de bouw en techniek staat informatie verspreid over mail, WhatsApp, planning, calculatie en de projectsoftware. Stevin legt een werklaag boven die systemen. Het leest projecten, offertes, leveringen en planning, en zet losse informatie om in signalen en acties, voordat kleine problemen groot worden. Niet om de bestaande software te vervangen, maar om te zorgen dat wat erin staat op tijd bij de juiste persoon komt.',
+  },
 ]
