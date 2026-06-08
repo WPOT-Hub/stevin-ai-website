@@ -17,18 +17,18 @@ const CAPABILITIES = {
     eyebrow: 'EEN LAAG OVER JE SYSTEMEN',
     h2: 'Wat Stevin doet, voor je hele bedrijf.',
     cards: [
-      { t: 'Structuur in je data', d: 'Al je losse systemen, van mail en CRM tot planning en boekhouding, komen samen op een plek. Geen middleware, geen losse eilanden.' },
-      { t: 'Agents in je afdeling', d: 'Niet een chatbot, maar agents die echt werk uit handen nemen, elk met eigen rechten en context. Van opvolging tot rapportage.' },
-      { t: 'Human in the loop', d: 'Elke actie met impact gaat eerst langs een mens, met de bron erbij. AI die meewerkt zonder dat je grip verliest.' },
+      { t: 'Structuur in je data', d: 'Al je losse systemen, van mail en CRM tot planning en boekhouding, komen samen op een plek. Geen middleware, geen losse eilanden.', href: '/data-verrijking' },
+      { t: 'Agents in je afdeling', d: 'Niet een chatbot, maar agents die echt werk uit handen nemen, elk met eigen rechten en context. Van opvolging tot rapportage.', href: '/ai-agents' },
+      { t: 'Human in the loop', d: 'Elke actie met impact gaat eerst langs een mens, met de bron erbij. AI die meewerkt zonder dat je grip verliest.', href: null },
     ],
   },
   en: {
     eyebrow: 'ONE LAYER OVER YOUR SYSTEMS',
     h2: 'What Stevin does, for your whole business.',
     cards: [
-      { t: 'Structure in your data', d: 'All your separate systems, from email and CRM to planning and accounting, come together in one place. No middleware, no islands.' },
-      { t: 'Agents in your department', d: 'Not a chatbot, but agents that genuinely take work off your hands, each with their own permissions and context. From follow-up to reporting.' },
-      { t: 'Human in the loop', d: 'Every action with impact passes by a person first, with the source attached. AI that works with you without you losing control.' },
+      { t: 'Structure in your data', d: 'All your separate systems, from email and CRM to planning and accounting, come together in one place. No middleware, no islands.', href: '/data-verrijking' },
+      { t: 'Agents in your department', d: 'Not a chatbot, but agents that genuinely take work off your hands, each with their own permissions and context. From follow-up to reporting.', href: '/ai-agents' },
+      { t: 'Human in the loop', d: 'Every action with impact passes by a person first, with the source attached. AI that works with you without you losing control.', href: null },
     ],
   },
 } as const
@@ -218,15 +218,27 @@ export default async function HomePage({ params }: Props) {
             {cap.h2}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border rounded-[14px] overflow-hidden">
-            {cap.cards.map((c, i) => (
-              <div key={c.t} className="bg-white p-8 lg:p-10">
-                <p className="font-mono text-[11px] text-muted mb-5">{String(i + 1).padStart(2, '0')}</p>
-                <h3 className="font-display font-bold text-primary mb-3" style={{ fontSize: '20px', letterSpacing: '-0.01em' }}>
-                  {c.t}
-                </h3>
-                <p className="text-muted leading-[1.6]" style={{ fontSize: '15px' }}>{c.d}</p>
-              </div>
-            ))}
+            {cap.cards.map((c, i) => {
+              const inner = (
+                <>
+                  <p className="font-mono text-[11px] text-muted mb-5">{String(i + 1).padStart(2, '0')}</p>
+                  <h3 className="font-display font-bold text-primary mb-3 flex items-center gap-2" style={{ fontSize: '20px', letterSpacing: '-0.01em' }}>
+                    {c.t}
+                    {c.href && (
+                      <span className="text-accent transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+                    )}
+                  </h3>
+                  <p className="text-muted leading-[1.6]" style={{ fontSize: '15px' }}>{c.d}</p>
+                </>
+              )
+              return c.href ? (
+                <Link key={c.t} href={c.href} className="group bg-white p-8 lg:p-10 block transition-colors hover:bg-surface">
+                  {inner}
+                </Link>
+              ) : (
+                <div key={c.t} className="bg-white p-8 lg:p-10">{inner}</div>
+              )
+            })}
           </div>
         </div>
       </section>
