@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'content-marketing-ideeën-juli-2026': (
+    <>
+      <p className="lead-para">
+        De zomermaanden lenen zich goed voor content die aansluit bij de belevingswereld van consumenten. Denk aan inspirerende reistips, feestelijke recepten of praktische gidsen voor de zomervakantie. Door producten te koppelen aan deze momenten creëer je natuurlijke aankoopmomenten zonder harde verkoopboodschappen.
+      </p>
+      <p>
+        Zomerse evenementen zoals de Tour de France, Wimbledon of lokale festivals bieden eveneens inspiratie. Content rond deze gebeurtenissen kan variëren van live-updates tot achtergrondverhalen over betrokken merken of atleten. Ook seizoensgebonden thema’s zoals barbecues, stranduitjes of tuinieren sluiten goed aan bij de koopintenties in deze periode.
+      </p>
+      <p>
+        Tot slot kunnen maandthema’s zoals ‘Zomervakantie’ of ‘Zomerse gezondheid’ helpen om content te structureren en doorlopend relevant te blijven. Door deze thema’s breed uit te werken, kun je zowel educatieve als inspirerende content delen die past bij de zomerse levensstijl van je doelgroep.
+      </p>
+    </>
+  ),
   'vier-manieren-om-ai-zoekzichtbaarheid-te-tracken': (
     <>
       <p className="lead-para">
@@ -2980,6 +2993,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'content-marketing-ideeën-juli-2026':
+    "Voor marketeers is juli een kans om buiten de gebaande paden te denken en content te maken die inspeelt op spontane koopbeslissingen. Het gaat niet om het pushen van producten, maar om waarde toevoegen op momenten dat consumenten openstaan voor inspiratie. Door seizoensgebonden thema’s centraal te stellen, bouw je een herkenbaar ritme op dat zowel klanten als zoekmachines waarderen.",
   'vier-manieren-om-ai-zoekzichtbaarheid-te-tracken':
     "Voor bedrijven die afhankelijk zijn van organische zoekresultaten wordt het belangrijker om niet alleen te focussen op directe conversies, maar ook op langetermijnwaarde zoals merkbekendheid en klantloyaliteit. De verschuiving naar AI-gestuurde zoekervaringen betekent dat traditionele KPI’s mogelijk moeten worden aangepast of uitgebreid. Het is verstandig om nu al te investeren in flexibele meetoplossingen die meegroeien met deze ontwikkelingen.",
   'google-demands-striktere-audience-targeting-regels-demand-gen':
