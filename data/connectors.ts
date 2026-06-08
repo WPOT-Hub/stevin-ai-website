@@ -1,10 +1,39 @@
 export interface Connector {
   name: string
   slug: string
-  category: 'advertising' | 'analytics' | 'ecommerce' | 'email' | 'streaming' | 'social' | 'live' | 'creator' | 'finance'
+  category:
+    | 'advertising'
+    | 'analytics'
+    | 'ecommerce'
+    | 'email'
+    | 'streaming'
+    | 'social'
+    | 'live'
+    | 'creator'
+    | 'finance'
+    | 'communication'
+    | 'crm'
+    | 'productivity'
 }
 
 export const nativeConnectors: Connector[] = [
+  // Communicatie (universeel)
+  { name: 'Gmail', slug: 'gmail', category: 'communication' },
+  { name: 'Outlook', slug: 'outlook', category: 'communication' },
+  { name: 'WhatsApp', slug: 'whatsapp', category: 'communication' },
+  { name: 'Slack', slug: 'slack', category: 'communication' },
+  { name: 'Microsoft Teams', slug: 'teams', category: 'communication' },
+  // Agenda & productiviteit
+  { name: 'Google Calendar', slug: 'google-calendar', category: 'productivity' },
+  { name: 'Google Sheets', slug: 'google-sheets', category: 'productivity' },
+  { name: 'Excel', slug: 'excel', category: 'productivity' },
+  // CRM & Sales
+  { name: 'HubSpot', slug: 'hubspot', category: 'crm' },
+  { name: 'Salesforce', slug: 'salesforce', category: 'crm' },
+  { name: 'Pipedrive', slug: 'pipedrive', category: 'crm' },
+  // Finance & boekhouding
+  { name: 'Exact', slug: 'exact', category: 'finance' },
+  { name: 'Moneybird', slug: 'moneybird', category: 'finance' },
   // Advertising
   { name: 'Meta Ads', slug: 'meta', category: 'advertising' },
   { name: 'Google Ads', slug: 'google-ads', category: 'advertising' },
@@ -20,7 +49,7 @@ export const nativeConnectors: Connector[] = [
   // E-commerce
   { name: 'Shopify', slug: 'shopify', category: 'ecommerce' },
   { name: 'WooCommerce', slug: 'woocommerce', category: 'ecommerce' },
-  // Email
+  // E-mail & Automation
   { name: 'Klaviyo', slug: 'klaviyo', category: 'email' },
   { name: 'Mailchimp', slug: 'mailchimp', category: 'email' },
   // Streaming & Audio
@@ -33,6 +62,10 @@ export const nativeConnectors: Connector[] = [
 ]
 
 export const connectorCategories = {
+  communication: { label: 'Communicatie', count: 5 },
+  productivity: { label: 'Agenda & Productiviteit', count: 3 },
+  crm: { label: 'CRM & Sales', count: 3 },
+  finance: { label: 'Finance & Boekhouding', count: 2 },
   advertising: { label: 'Advertising', count: 8 },
   analytics: { label: 'Analytics & Tracking', count: 2 },
   ecommerce: { label: 'E-commerce', count: 2 },
