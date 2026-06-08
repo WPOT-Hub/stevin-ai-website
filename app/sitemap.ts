@@ -47,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Woordenboek (programmatic SEO playbook "wat is X")
     '/woordenboek',
     ...glossary.map((t) => `/woordenboek/${t.slug}`),
+    '/ai-agents',
     '/case-studies',
     '/case-studies/e-commerce',
     '/contact',
