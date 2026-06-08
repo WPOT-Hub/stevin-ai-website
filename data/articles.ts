@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'content-marketing-ideeën-juli-2026',
+    format: 'dispatch' as const,
+    edition: '122',
+    category: 'Markt',
+    title: "Vijf contentmarketing-ideeën voor juli 2026",
+    dek: "Juli biedt kansen om producten te koppelen aan zomerse thema’s zoals vakantie, feesten en seizoensvoorbereiding.",
+    publishedAt: '2026-06-08',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Vijf contentmarketing-ideeën voor juli 2026",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'vier-manieren-om-ai-zoekzichtbaarheid-te-tracken',
     format: 'dispatch' as const,
     edition: '121',
