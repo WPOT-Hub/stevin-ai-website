@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'nokia-verhoogt-jaarverwachting-door-vraag-naar-ai-en-datacenters': (
+    <>
+      <p className="lead-para">
+        De Finse telecomuitruster Nokia ziet een sterke stijging in de verkoop van netwerkinfrastructuur die wordt aangedreven door de groeiende vraag vanuit AI- en datacenterklanten. In het eerste kwartaal steeg de omzet in deze sector met 12% op jaarbasis, onder meer dankzij orders ter waarde van ruim een miljard euro uit Noord- en Zuid-Amerika. De verwachting is nu dat de totale omzet in deze divisie dit jaar met 12 tot 14% zal groeien, tegen eerder een raming van 6 tot 8%.
+      </p>
+      <p>
+        De mobiele infrastructuurdivisie, traditioneel gericht op telecomoperators, daalde met 3% op jaarbasis. Deze daling wordt veroorzaakt door lagere verkopen in Noord-Amerika, ondanks groei in Europa, het Midden-Oosten en Latijns-Amerika. Nokia investeert momenteel in extra productiecapaciteit om aan de toenemende vraag te voldoen en profiteert van de snelle groei in de markt voor AI-netwerken.
+      </p>
+      <p>
+        CEO Justin Hotard waarschuwde echter voor stijgende kosten door langere levertijden en hogere prijzen van halfgeleiders. Deze kosten worden volgens hem doorberekend aan klanten, wat binnen de branche een brede trend is. Daarnaast werkt Nokia aan het optimaliseren van productontwerpen om fabricagekosten te verlagen.
+      </p>
+    </>
+  ),
   'klantmerk-en-werkgeversmerk-moeten-hetzelfde-verhaal-vertellen': (
     <>
       <p className="lead-para">
@@ -3032,6 +3045,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'nokia-verhoogt-jaarverwachting-door-vraag-naar-ai-en-datacenters':
+    "Voor bedrijven die afhankelijk zijn van digitale infrastructuur of cloud-oplossingen betekent deze ontwikkeling dat investeringen in netwerken en datacenters prioriteit krijgen. Tegelijkertijd kunnen stijgende kosten voor halfgeleiders en componenten een uitdaging vormen bij het plannen van nieuwe projecten. Het is verstandig om rekening te houden met langere levertijden en hogere prijzen bij het maken van strategische keuzes.",
   'klantmerk-en-werkgeversmerk-moeten-hetzelfde-verhaal-vertellen':
     "Voor ondernemers is dit een reminder dat merkenconsistentie niet alleen gaat om uiterlijk, maar ook om inhoud. Het helpt om één kernverhaal te formuleren dat zowel klanten als medewerkers aanspreekt. Dat vereist samenwerking tussen marketing en HR, maar levert uiteindelijk een sterker en geloofwaardiger merk op.",
   'google-waarschuwt-voor-derde-partij-seo-tools':
