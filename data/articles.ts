@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'merkcampagnes-niet-klaar-voor-ai-max',
+    format: 'dispatch' as const,
+    edition: '138',
+    category: 'Markt',
+    title: "Merkcampagnes niet direct geschikt voor AI Max: waar begin je wel?",
+    dek: "Uitbreiden van automatisering naar merkverkeer vraagt eerst om een solide basis in meetdata en doelgroepsegmentatie.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Merkcampagnes niet direct geschikt voor AI Max: waar begin je wel?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'netbeheerders-investeren-meer-in-netcongestie-met-verschillen-tussen-bedrijven',
     format: 'dispatch' as const,
     edition: '137',
