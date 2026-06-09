@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'apple-siri-ai-toegang-en-privacy-centraal-in-update': (
+    <>
+      <p className="lead-para">
+        Apple lanceert later dit jaar een volledig vernieuwde versie van Siri, aangedreven door Google’s Gemini-technologie via Apple Intelligence. De assistent is vanaf nu direct beschikbaar via een swipe of ‘Hey Siri’, zonder dat gebruikers aparte AI-apps hoeven te downloaden. Dat maakt de technologie toegankelijker voor een breder publiek, aldus de techgigant.
+      </p>
+      <p>
+        De nieuwe Siri kan niet alleen complexe vragen beantwoorden, maar ook persoonlijke data raadplegen zoals berichten of e-mails om relevante antwoorden te geven. Bijvoorbeeld: vragen naar aanbevelingen uit privéberichten of taken toevoegen aan een paklijst op basis van e-mails. Apple benadrukt dat deze data alleen voor het antwoord wordt gebruikt en direct daarna wordt gewist, zodat geen externe partijen toegang krijgen tot gesprekken.
+      </p>
+      <p>
+        De functies zijn beperkt tot recentere Apple-apparaten met ondersteuning voor Apple Intelligence, waaronder de iPhone 15 Pro en nieuwere modellen. Ook Macs en iPads met M1-chips of nieuwer kunnen gebruikmaken van de basisversie. Toch blijft er een beperking: diepgaande integratie met andere apps dan Apple’s eigen software hangt af van ontwikkelaars die hun systemen openstellen voor Siri.
+      </p>
+    </>
+  ),
   'nokia-verhoogt-jaarverwachting-door-vraag-naar-ai-en-datacenters': (
     <>
       <p className="lead-para">
@@ -3045,6 +3058,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'apple-siri-ai-toegang-en-privacy-centraal-in-update':
+    "Voor bedrijven die klantcontact onderhouden via smartphones, biedt deze aanpak kansen om interacties te versnellen zonder dat gebruikers nieuwe tools hoeven leren. Tegelijkertijd roept de combinatie van persoonlijke data en AI vragen op over transparantie en controle. Het is zaak om bij klantcommunicatie duidelijk te maken welke data wordt gebruikt en waarom.",
   'nokia-verhoogt-jaarverwachting-door-vraag-naar-ai-en-datacenters':
     "Voor bedrijven die afhankelijk zijn van digitale infrastructuur of cloud-oplossingen betekent deze ontwikkeling dat investeringen in netwerken en datacenters prioriteit krijgen. Tegelijkertijd kunnen stijgende kosten voor halfgeleiders en componenten een uitdaging vormen bij het plannen van nieuwe projecten. Het is verstandig om rekening te houden met langere levertijden en hogere prijzen bij het maken van strategische keuzes.",
   'klantmerk-en-werkgeversmerk-moeten-hetzelfde-verhaal-vertellen':
