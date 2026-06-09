@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'klantmerk-en-werkgeversmerk-moeten-hetzelfde-verhaal-vertellen',
+    format: 'dispatch' as const,
+    edition: '125',
+    category: 'Markt',
+    title: "Klantmerk en werkgeversmerk: één verhaal, twee kanalen",
+    dek: "Uit onderzoek blijkt dat bedrijven hun klantmerk en werkgeversmerk zelden op elkaar afstemmen, terwijl dat wel de beste aanpak is.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Klantmerk en werkgeversmerk: één verhaal, twee kanalen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-waarschuwt-voor-derde-partij-seo-tools',
     format: 'dispatch' as const,
     edition: '124',
