@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'autoboeker-haalt-12-miljoen-in-voor-ai-platform-accountants': (
+    <>
+      <p className="lead-para">
+        Het Nederlandse Autoboeker heeft een investering van €1,2 miljoen opgehaald om de ontwikkeling van zijn AI-platform voor accountants en administratiekantoren te versnellen. Het geld wordt gebruikt om administratieve werkzaamheden in de pre-accountingfase verder te automatiseren en efficiënter te maken. Denk aan het verwerken, controleren en valideren van bonnen, facturen en andere documenten.
+      </p>
+      <p>
+        Met de nieuwe fondsen wil Autoboeker de functionaliteit uitbreiden en integraties met boekhoudsoftware verbeteren. Het platform moet kantoren helpen tijd te besparen en fouten in de voorfase van de boekhouding te verminderen. Momenteel werkt het bedrijf al samen met meerdere grote administratiekantoren in Nederland.
+      </p>
+      <p>
+        De investering komt van verschillende partijen, waaronder bestaande investeerders en nieuwe partners. Autoboeker geeft aan dat de groei van het aantal klanten en de vraag naar automatisering hierin een belangrijke rol hebben gespeeld.
+      </p>
+    </>
+  ),
   'europa-usa-ai-dominantie-london-tech-week': (
     <>
       <p className="lead-para">
@@ -3144,6 +3157,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'autoboeker-haalt-12-miljoen-in-voor-ai-platform-accountants':
+    "Voor administratiekantoren die nog handmatig facturen en bonnen verwerken, biedt dit soort tools een concrete stap naar digitalisering. Het is verstandig om niet alleen naar de kostenbesparing te kijken, maar ook naar de kwaliteitsslag: minder fouten in de basis betekent minder nazorg later in het boekhoudproces. Kantoren die nu nog twijfelen, kunnen vaak eerst met een pilot starten om de impact zelf te meten.",
   'europa-usa-ai-dominantie-london-tech-week':
     "Voor Nederlandse en Belgische bedrijven is deze dynamiek relevant omdat het laat zien hoe snel technologischeafhankelijkheid kan leiden tot strategische kwetsbaarheid. Het benadrukt het belang van diversificatie in leverancierskeuzes, ook als dit ten koste gaat van directe efficiencyvoordelen. Daarnaast wordt duidelijk dat beleid rondom AI-soevereiniteit niet alleen een kwestie is voor overheden, maar ook voor bedrijven die hun toekomstige operationele vrijheid willen waarborgen.",
   'osborne-ai-zelfvoorzienendheid-is-weggegooid-geld':
