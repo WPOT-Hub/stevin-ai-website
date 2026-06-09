@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'amerika-breidt-zwartelijst-chinese-techbedrijven-uit': (
+    <>
+      <p className="lead-para">
+        Het Amerikaanse ministerie van Defensie heeft de jaarlijkse lijst met Chinese bedrijven die worden gezien als steunverleners aan het Chinese leger uitgebreid. Daaronder vallen grote namen als technologieconcern Alibaba Group, zoekmachinegigant Baidu en elektrische autofabrikant BYD.
+      </p>
+      <p>
+        De toevoegingen betekenen dat deze bedrijven beperkingen krijgen in hun handel met Amerikaanse partijen. De lijst is gebaseerd op de aanname dat China zijn privésector inzet om militaire technologie te ontwikkelen en verbeteren. Ook een aantal andere sectoren buiten chips en kunstmatige intelligentie worden nu meegenomen, zoals farmacie en robotica.
+      </p>
+      <p>
+        China reageerde kritisch: de ambassade in Washington noemde de lijst discriminerend en overdreven. De betrokken bedrijven ontkennen elke band met militaire activiteiten. Toch kan de aanduiding al leiden tot reputatieschade of verlies van contracten met Amerikaanse overheden of consumenten.
+      </p>
+    </>
+  ),
   'amazon-verkoopt-geen-producten-maar-ervaringen': (
     <>
       <p className="lead-para">
@@ -3065,6 +3078,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'amerika-breidt-zwartelijst-chinese-techbedrijven-uit':
+    "Voor Europese ondernemers die actief zijn in China of zaken doen met Chinese techbedrijven wordt het risicomanagement complexer. De uitbreiding van de Amerikaanse lijst toont aan dat geopolitieke spanningen direct doorwerken in zakelijke beslissingen. Het is verstandig om contracten en samenwerkingen te herzien op mogelijke afhankelijkheid van bedrijven die op dergelijke lijsten staan, zeker als er Amerikaanse partners bij betrokken zijn.",
   'amazon-verkoopt-geen-producten-maar-ervaringen':
     "Voor ondernemers is dit een belangrijke trend: klanten verwachten tegenwoordig niet alleen een goed product, maar ook een soepele en inspirerende koopervaring. Bedrijven die hun online aanwezigheid niet alleen zien als verkoopkanaal maar als onderdeel van de merkbeleving kunnen hier hun voordeel mee doen. Het integreren van persoonlijke aanbevelingen, meerdere touchpoints (zoals video of reviews) en gemak in navigatie wordt steeds belangrijker om concurrentie voor te blijven.",
   'apple-siri-ai-toegang-en-privacy-centraal-in-update':
