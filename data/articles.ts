@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'persoonlijke-prijzen-personalisatie-fair-pricing',
+    format: 'dispatch' as const,
+    edition: '130',
+    category: 'Markt',
+    title: "Persoonlijke prijzen groeien: waar ligt de grens tussen slim en oneerlijk?",
+    dek: "Webshops en platforms overwegen prijzen persoonlijk aan te passen op basis van klantprofielen, maar de vraag is of consumenten dat accepteren.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Persoonlijke prijzen groeien: waar ligt de grens tussen slim en oneerlijk?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'amerika-breidt-zwartelijst-chinese-techbedrijven-uit',
     format: 'dispatch' as const,
     edition: '129',
