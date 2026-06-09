@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'meta-gezichtsherkenning-ai-brillen',
+    format: 'dispatch' as const,
+    edition: '123',
+    category: 'Platform',
+    title: "Meta bouwt gezichtsherkenning in AI-brillen in",
+    dek: "De software voor gezichtsherkenning is al aanwezig in de app van Meta’s AI-brillen, maar wordt nog niet actief gebruikt.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Meta bouwt gezichtsherkenning in AI-brillen in",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'content-marketing-ideeën-juli-2026',
     format: 'dispatch' as const,
     edition: '122',
