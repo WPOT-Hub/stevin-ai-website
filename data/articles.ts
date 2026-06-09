@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'evotrex-30-miljoen-voor-rv-met-hybride-stroom',
+    format: 'dispatch' as const,
+    edition: '143',
+    category: 'Distributie',
+    title: "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+    dek: "De Nederlandse startup Evotrex ontwikkelt een hybride stroomsysteem voor recreatievoertuigen dat zonder laadpaal kan functioneren.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'apple-siri-ai-update-2026',
     format: 'dispatch' as const,
     edition: '142',
