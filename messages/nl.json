@@ -159,7 +159,7 @@
   },
   "contact": {
     "title": "Plan een gesprek",
-    "desc": "Vertel ons waar je tegenaan loopt of wat je wilt bereiken. We denken graag mee over hoe paid media, opvolging, tracking en automation beter op elkaar kunnen aansluiten.",
+    "desc": "Vertel ons waar je tegenaan loopt of wat je wilt bereiken. We denken graag mee over hoe je systemen, data en opvolging beter op elkaar kunnen aansluiten, en waar Stevin het werk uit handen kan nemen.",
     "location_label": "Locaties",
     "location_value": "Werkzaam vanuit Breda en Antwerpen.",
     "response_label": "Reactietijd",
@@ -167,12 +167,12 @@
     "free_label": "Vrijblijvend",
     "free_value": "Elk eerste gesprek is vrijblijvend. Geen verplichtingen, geen verkooppraatje.",
     "help_heading": "Waar kunnen we je mee helpen?",
-    "help1": "Audit van je huidige marketingstack",
-    "help2": "Inrichten of verbeteren van tracking en analytics",
-    "help3": "CRM-koppeling en leadopvolging",
-    "help4": "Paid media beheer en optimalisatie",
-    "help5": "Marketing automation en lead nurturing",
-    "help6": "Dashboards en rapportage"
+    "help1": "Losse systemen koppelen, van mail en CRM tot planning en boekhouding",
+    "help2": "Structuur, opschoning en verrijking van je data",
+    "help3": "Agents die opvolging, rapportage en routinewerk overnemen",
+    "help4": "Signalen zien voordat iets een probleem wordt",
+    "help5": "Je marketing aansturen, onze eerste bewezen toepassing",
+    "help6": "Sparren over waar AI in jouw bedrijf het meeste oplevert"
   },
   "diensten": {
     "eyebrow": "DIENSTEN",

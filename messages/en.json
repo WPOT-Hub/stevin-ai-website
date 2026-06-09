@@ -159,7 +159,7 @@
   },
   "contact": {
     "title": "Book a call",
-    "desc": "Tell us what you're struggling with or what you want to achieve. We'll think along about how paid media, follow-up, tracking and automation can work better together.",
+    "desc": "Tell us what you're struggling with or what you want to achieve. We're happy to think along about how your systems, data and follow-up can work better together, and where Stevin can take work off your hands.",
     "location_label": "Locations",
     "location_value": "Based in Breda and Antwerp.",
     "response_label": "Response time",
@@ -167,12 +167,12 @@
     "free_label": "No strings attached",
     "free_value": "Every first conversation is without obligation. No commitments, no sales pitch.",
     "help_heading": "How can we help you?",
-    "help1": "Audit of your current marketing stack",
-    "help2": "Setting up or improving tracking and analytics",
-    "help3": "CRM integration and lead follow-up",
-    "help4": "Paid media management and optimisation",
-    "help5": "Marketing automation and lead nurturing",
-    "help6": "Dashboards and reporting"
+    "help1": "Connecting separate systems, from email and CRM to planning and accounting",
+    "help2": "Structure, cleaning and enrichment of your data",
+    "help3": "Agents that take over follow-up, reporting and routine work",
+    "help4": "Spotting signals before something becomes a problem",
+    "help5": "Running your marketing, our first proven application",
+    "help6": "Sparring about where AI delivers the most in your business"
   },
   "diensten": {
     "eyebrow": "SERVICES",
