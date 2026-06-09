@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'nokia-verhoogt-jaarverwachting-door-vraag-naar-ai-en-datacenters',
+    format: 'dispatch' as const,
+    edition: '126',
+    category: 'Markt',
+    title: "Nokia verhoogt jaarverwachting met 12-14% door sterke vraag AI en datacenters",
+    dek: "Nokia verwacht dit jaar een groei van 12 tot 14% in de verkoop van netwerkinfrastructuur voor AI en datacenters, tegen eerder 6 tot 8%.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Nokia verhoogt jaarverwachting met 12-14% door sterke vraag AI en datacenters",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'klantmerk-en-werkgeversmerk-moeten-hetzelfde-verhaal-vertellen',
     format: 'dispatch' as const,
     edition: '125',
