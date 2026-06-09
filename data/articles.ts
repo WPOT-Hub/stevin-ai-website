@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'openai-confidentieel-ipo-aanvraag',
+    format: 'dispatch' as const,
+    edition: '140',
+    category: 'Finance',
+    title: "OpenAI dient vertrouwelijke IPO-aanvraag in",
+    dek: "OpenAI heeft een vertrouwelijke beursgangaanvraag ingediend, slechts een week na concurrent Anthropic.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "OpenAI dient vertrouwelijke IPO-aanvraag in",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'waymo-koopt-apple-testcentrum-voor-zelfrijdende-auto-s',
     format: 'dispatch' as const,
     edition: '139',
