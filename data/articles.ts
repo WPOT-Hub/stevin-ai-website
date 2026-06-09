@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'tools-for-humanity-legt-medewerkers-ont',
+    format: 'dispatch' as const,
+    edition: '141',
+    category: 'Finance',
+    title: "Tools for Humanity ontslaat medewerkers door tegenvallende inkomsten",
+    dek: "Het bedrijf van Sam Altman dat werkt met oogscans voor identiteitsverificatie, Tools for Humanity, legt medewerkers ontslag door tegenvallende omzetcijfers.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "Tools for Humanity ontslaat medewerkers door tegenvallende inkomsten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'openai-confidentieel-ipo-aanvraag',
     format: 'dispatch' as const,
     edition: '140',
