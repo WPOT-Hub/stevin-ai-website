@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'apple-siri-ai-update-2026': (
+    <>
+      <p className="lead-para">
+        Tijdens de WWDC 2026 onthulde Apple een grondige upgrade van Siri, nu aangedreven door eigen ontwikkelde AI-modellen. De assistent krijgt betere spraakherkenning, contextueel begrip en integratie met apps en apparaten. CEO Tim Cook benadrukte dat de technologie "grensverleggend" is, hoewel de focus duidelijk ligt op het inhalen van concurrenten als Google en Microsoft.
+      </p>
+      <p>
+        De aankondigingen kwamen met gemengde reacties. Analisten wijzen erop dat Apple pas laat inzet op AI, terwijl andere techgiganten al jaren investeren in vergelijkbare functies. Toch ziet men potentie in de combinatie met Apple’s hardware, zoals de iPhone en Mac, waar privacy en integratie centraal staan.
+      </p>
+      <p>
+        Critici merken op dat veel beloften nog vaag blijven. Zo wordt de nieuwe Siri pas later dit jaar breed uitgerold, en zijn concrete voorbeelden van verbeteringen schaars. Gebruikers moeten afwachten of de beloofde doorbraken daadwerkelijk ervaren worden.
+      </p>
+    </>
+  ),
   'tools-for-humanity-legt-medewerkers-ont': (
     <>
       <p className="lead-para">
@@ -3196,6 +3209,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'apple-siri-ai-update-2026':
+    "Voor bedrijven die klantcontact automatiseren, toont deze stap aan dat zelfs grote merken worstelen met het snel implementeren van AI zonder de gebruikservaring te verwaarlozen. Het benadrukt het belang van een heldere strategie: technologie moet waarde toevoegen zonder gebruikers te overweldigen. Wie nu investeert in AI-tools, doet er goed aan eerst te kijken naar praktische toepassingen binnen bestaande systemen.",
   'tools-for-humanity-legt-medewerkers-ont':
     "Voor ondernemers die werken met nieuwe technologieën of innovatieve dienstverlening is dit een herkenbare situatie: zelfs veelbelovende oplossingen lopen tegen commerciële realiteit aan als de vraag niet snel genoeg opschaalt. Het benadrukt het belang van een heldere monetarisatiestrategie naast technologische ontwikkeling. Tegelijkertijd toont het hoe persoonlijke netwerken en reputatie binnen tech-kringen kunnen helpen om in moeilijke tijden toch steun te vinden.",
   'merkcampagnes-niet-klaar-voor-ai-max':
