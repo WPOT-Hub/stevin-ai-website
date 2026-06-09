@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'merkcampagnes-niet-klaar-voor-ai-max': (
+    <>
+      <p className="lead-para">
+        Een campagne op merkzoektermen of branded content wordt vaak gezien als veilig startpunt voor AI-gestuurde optimalisatie. Toch waarschuwt een analyse dat de huidige meetopzet bij veel merken nog te weinig inzicht biedt in oorzaak en gevolg van conversies. Zonder heldere data over welke touchpoints daadwerkelijk bijdragen, kan AI Max juist leiden tot suboptimale budgetverdeling of zelfs verlies van meetdata door overmatige automatisering. Dit geldt vooral als campagnes draaien op algemene zoekwoorden die geen directe intentie tonen.
+      </p>
+      <p>
+        Experts adviseren om eerst te investeren in het verfijnen van eerste- en laatste-klick attributie, zodat duidelijk wordt welke kanalen en boodschappen daadwerkelijk werken. Daarnaast blijkt dat de meeste merken nog onvoldoende segmentatie toepassen op basis van klantwaarde of lifecycle-fase. Zonder deze basis wordt elke vorm van automatisering een gok, aldus de bron. Vooral bij campagnes met een langere sales cycle of meerdere stakeholders in de buyer journey loopt men risico op blinde vlekken in de meting.
+      </p>
+      <p>
+        Een praktische eerste stap is het testen van AI-gestuurde biedingen op een beperkte subset van zoekwoorden met hoge intentie, terwijl de rest handmatig wordt beheerd. Zo kunnen bureaus en merken de impact van automatisering meten voordat ze deze opschalen naar bredere campagnes.
+      </p>
+    </>
+  ),
   'netbeheerders-investeren-meer-in-netcongestie-met-verschillen-tussen-bedrijven': (
     <>
       <p className="lead-para">
@@ -3170,6 +3183,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'merkcampagnes-niet-klaar-voor-ai-max':
+    "Voor bureaus en merken die AI Max willen toepassen op merkverkeer is het zaak om eerst te borgen dat de onderliggende data betrouwbaar is. Een veelgemaakte valkuil is het aannemen dat branded traffic per definitie veilig is voor automatisering, terwijl juist hier vaak de grootste blinde vlekken zitten in attributie. Begin klein, meet nauwkeurig en schaal pas uit als je weet wat werkt – dat geldt niet alleen voor AI, maar voor elke vorm van marketingautomatisering.",
   'netbeheerders-investeren-meer-in-netcongestie-met-verschillen-tussen-bedrijven':
     "Voor bedrijven die afhankelijk zijn van betrouwbare stroomtoevoer is deze investeringsgolf hoopgevend, maar de praktijk leert dat netuitbreiding vaak jaren duurt. Ondernemers doen er goed aan hun energievraag nu al te optimaliseren en eventueel eigen oplossingen te overwegen, zoals zonnepanelen of batterijopslag. De verschillen tussen netbeheerders laten zien dat lokale omstandigheden doorslaggevend zijn: wie een nieuwe locatie zoekt, moet niet alleen kijken naar beschikbare ruimte, maar ook naar de plannen van de desbetreffende netbeheerder.",
   'autoboeker-haalt-12-miljoen-in-voor-ai-platform-accountants':
