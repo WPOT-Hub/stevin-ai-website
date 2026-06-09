@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'osborne-ai-zelfvoorzienendheid-is-weggegooid-geld': (
+    <>
+      <p className="lead-para">
+        Volledige onafhankelijkheid in de AI-keten is volgens George Osborne, voormalig Brits minister van Financiën en nu werkzaam bij OpenAI, een illusie. Zelfs de VS en China slagen er niet in om elke schakel van de AI-stack lokaal te beheersen. Osborne pleit ervoor om te focussen op relevantie in plaats van autarkie: zijn het land goed is in het adopteren van technologie, over een geschoolde bevolking beschikt en aantrekkelijk is voor ondernemers.
+      </p>
+      <p>
+        In plaats van te proberen alle onderdelen zelf te ontwikkelen, benadrukt Osborne dat landen moeten investeren in lokale adoptie en samenwerking met internationale techbedrijven. Hij wijst op het risico van isolatie: zonder Amerikaanse techgiganten wordt de weg naar AI-innovatie langer en moeilijker. Zijn standpunt komt voort uit zorgen over Europese afhankelijkheid van Amerikaanse technologie, die mogelijk als wapen kan worden ingezet.
+      </p>
+      <p>
+        Ondertussen zetten Europese landen wel stappen richting meer technologische soevereiniteit. De EU wil de capaciteit van datacentra verdrievoudigen, steunt de eigen halfgeleiderindustrie en classificeert bedrijven op hun ‘soevereiniteitsstatus’. Frankrijk vervangt Microsoft Windows door Linux voor overheidsmedewerkers, terwijl het VK £1,6 miljard investeert in nationale AI-capaciteit, waaronder een nieuwe supercomputer.
+      </p>
+    </>
+  ),
   'afm-beboet-bunq-trage-fraudeafhandeling': (
     <>
       <p className="lead-para">
@@ -3124,6 +3137,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'osborne-ai-zelfvoorzienendheid-is-weggegooid-geld':
+    "Voor bedrijven betekent deze discussie dat ze moeten anticiperen op zowel kansen als risico’s rond technologische afhankelijkheid. Of je nu kiest voor lokale oplossingen of samenwerkt met internationale partijen: helderheid over je strategie is essentieel. Overheden stimuleren innovatie, maar ondernemers moeten zelf bepalen waar ze hun middelen inzetten. De balans tussen autonomie en samenwerking blijft een uitdaging waar beleid en praktijk elkaar raken.",
   'afm-beboet-bunq-trage-fraudeafhandeling':
     "Voor bedrijven die met financiële dienstverlening te maken hebben, is dit een duidelijke waarschuwing dat naleving van wettelijke termijnen en transparantie naar klanten prioriteit moeten krijgen. Een gestructureerd proces voor het afhandelen van fraudemeldingen kan niet alleen boetes voorkomen, maar ook het vertrouwen in het merk versterken.",
   'verkoopfraude-e-commerce-samenwerking-keten':
