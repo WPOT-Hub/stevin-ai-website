@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'apple-siri-ai-update-2026',
+    format: 'dispatch' as const,
+    edition: '142',
+    category: 'Tech',
+    title: "Apple lanceert nieuwe Siri AI na jaren achterlopen",
+    dek: "Apple introduceert een vernieuwde Siri met AI-kracht, maar blijft vooral achterstand inhalen ten opzichte van concurrenten.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Apple lanceert nieuwe Siri AI na jaren achterlopen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'tools-for-humanity-legt-medewerkers-ont',
     format: 'dispatch' as const,
     edition: '141',
