@@ -27,7 +27,7 @@ export const TEMPLATES: Template[] = [
   { name: 'Daan Klus', type: 'Klus- en montagebedrijf', url: 'https://daanklus.stevin.ai' },
   { name: 'Koen Kouwenberg', type: 'Elektricien', url: 'https://kouwenberg.stevin.ai' },
   { name: 'Verhulst Elektro', type: 'Elektricien', url: 'https://verhulstelektro.stevin.ai' },
-  { name: 'Tegelwerken Van Keer', type: 'Tegelzetter', url: 'https://tegelwerkenvankeer.stevin.ai' },
+  { name: 'Tegelwerken Hoogstraten', type: 'Tegelzetter', url: 'https://tegelwerkenhoogstraten.stevin.ai' },
   { name: 'Aqua Breda', type: 'Loodgieter', url: 'https://aquabreda.stevin.ai' },
 ]
 
