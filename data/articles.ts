@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'verkoopfraude-e-commerce-samenwerking-keten',
+    format: 'dispatch' as const,
+    edition: '132',
+    category: 'Operations',
+    title: "Verkoopfraude bij webshops stijgt: wie is verantwoordelijk?",
+    dek: "Via valse claims over niet-ontvangen pakketten of verkeerde retouren lopen webshops en logistiek dienstverleners miljoenen per jaar schade op.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Verkoopfraude bij webshops stijgt: wie is verantwoordelijk?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'voormalig-engineer-start-online-kunstacademie',
     format: 'dispatch' as const,
     edition: '131',
