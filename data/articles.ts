@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'afm-beboet-bunq-trage-fraudeafhandeling',
+    format: 'dispatch' as const,
+    edition: '133',
+    category: 'Finance',
+    title: "AFM legt bunq boete op voor trage fraudeafhandeling",
+    dek: "De AFM heeft bunq een boete van €170.000 opgelegd omdat de bank klachten over online fraude te laat afhandelde.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "AFM legt bunq boete op voor trage fraudeafhandeling",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'verkoopfraude-e-commerce-samenwerking-keten',
     format: 'dispatch' as const,
     edition: '132',
