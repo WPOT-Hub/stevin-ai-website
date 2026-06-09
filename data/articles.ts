@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'waymo-koopt-apple-testcentrum-voor-zelfrijdende-auto-s',
+    format: 'dispatch' as const,
+    edition: '139',
+    category: 'Tech',
+    title: "Waymo koopt Apple’s testcentrum voor zelfrijdende auto’s voor 220 miljoen dollar",
+    dek: "Waymo heeft een groot testterrein in Arizona gekocht van een schijnbedrijf gelinkt aan Apple.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Waymo koopt Apple’s testcentrum voor zelfrijdende auto’s voor 220 miljoen dollar",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'merkcampagnes-niet-klaar-voor-ai-max',
     format: 'dispatch' as const,
     edition: '138',
