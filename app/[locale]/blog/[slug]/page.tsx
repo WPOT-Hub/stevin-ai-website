@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'afm-beboet-bunq-trage-fraudeafhandeling': (
+    <>
+      <p className="lead-para">
+        De Autoriteit Financiële Markten (AFM) heeft bunq een boete van €170.000 opgelegd wegens het niet tijdig reageren op zeven klachten over online fraude. Volgens de toezichthouder overschreed de bank in elk geval de wettelijke termijn van zestig dagen voor de afhandeling van dergelijke meldingen.
+      </p>
+      <p>
+        Gedupeerde klanten bleven hierdoor maandenlang in onzekerheid over de status van hun zaak, aldus de AFM. De toezichthouder constateerde dat bunq herhaaldelijk te laat reageerde op verzoeken om terugboeking of onderzoek, wat volgens de regels niet mag.
+      </p>
+      <p>
+        Bunq heeft inmiddels aangegeven de procedures aan te passen om verdere overtredingen te voorkomen. Klanten die slachtoffer zijn geworden van fraude kunnen bij bunq een klacht indienen via het officiële meldpunt.
+      </p>
+    </>
+  ),
   'verkoopfraude-e-commerce-samenwerking-keten': (
     <>
       <p className="lead-para">
@@ -3111,6 +3124,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'afm-beboet-bunq-trage-fraudeafhandeling':
+    "Voor bedrijven die met financiële dienstverlening te maken hebben, is dit een duidelijke waarschuwing dat naleving van wettelijke termijnen en transparantie naar klanten prioriteit moeten krijgen. Een gestructureerd proces voor het afhandelen van fraudemeldingen kan niet alleen boetes voorkomen, maar ook het vertrouwen in het merk versterken.",
   'verkoopfraude-e-commerce-samenwerking-keten':
     "Voor ondernemers betekent deze trend dat het tijd wordt om interne processen rond retouren en aflevering kritisch onder de loep te nemen. Fraude is niet alleen een kwestie van ‘wie heeft schuld’, maar vooral van preventie door middel van betere samenwerking en technologie. Wie nu investeert in heldere systemen, bespaart later op kosten en frustratie.",
   'voormalig-engineer-start-online-kunstacademie':
