@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'van-turing-naar-devotion-hoe-een-nieuwe-lab-de-ai-kaart-in-europa-kan-verleggen',
+    format: 'dispatch' as const,
+    edition: '146',
+    category: 'Platform',
+    title: "Het einde van de ivoren toren: waarom een Brits AI-lab de markt op zijn kop zet",
+    dek: "Een voormalig topwetenschapper van het Alan Turing Institute stapt over naar een commercieel lab om AI voor overheidsopgaven te bouwen – en bewijst dat Nederland en België moeten nadenken over hun eigen strategie.",
+    publishedAt: '2026-06-09',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Het einde van de ivoren toren: waarom een Brits AI-lab de markt op zijn kop zet",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'rivian-r2-marktintroductie-2027',
     format: 'dispatch' as const,
     edition: '145',
