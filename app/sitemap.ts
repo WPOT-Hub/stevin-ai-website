@@ -4,6 +4,7 @@ import { categories } from '@/data/categories'
 import { integrations } from '@/data/integrations'
 import { comparisons } from '@/data/comparisons'
 import { glossary } from '@/data/glossary'
+import { alternatives } from '@/data/alternatives'
 import { isPublishableArticle } from './[locale]/blog/[slug]/page'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -44,6 +45,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Comparison pages (programmatic SEO playbook "X vs Y")
     '/vergelijken',
     ...comparisons.map((c) => `/vergelijken/${c.slug}`),
+    // Alternatief-pages (programmatic SEO + GEO playbook "[tool] alternatief")
+    '/alternatief',
+    ...alternatives.map((a) => `/alternatief/${a.slug}`),
     // Woordenboek (programmatic SEO playbook "wat is X")
     '/woordenboek',
     ...glossary.map((t) => `/woordenboek/${t.slug}`),
