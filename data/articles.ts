@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'marshall-stockwell-iii-speaker-met-vervangbare-batterij',
+    format: 'dispatch' as const,
+    edition: '144',
+    category: 'Cultuur',
+    title: "Marshall Stockwell III met vervangbare batterij en dubbele looptijd",
+    dek: "De nieuwe Marshall Stockwell III biedt een vervangbare batterij die twee keer zo lang meegaat als zijn voorganger.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "Marshall Stockwell III met vervangbare batterij en dubbele looptijd",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'evotrex-30-miljoen-voor-rv-met-hybride-stroom',
     format: 'dispatch' as const,
     edition: '143',
