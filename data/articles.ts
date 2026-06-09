@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'amerika-breidt-zwartelijst-chinese-techbedrijven-uit',
+    format: 'dispatch' as const,
+    edition: '129',
+    category: 'Beleid',
+    title: "VS voegt Alibaba, Baidu en BYD toe aan militaire zwartelijst",
+    dek: "Het Pentagon heeft ruim twintig Chinese techbedrijven, waaronder Alibaba, Baidu en BYD, aangemerkt als steunverleners aan het Chinese leger.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "VS voegt Alibaba, Baidu en BYD toe aan militaire zwartelijst",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'amazon-verkoopt-geen-producten-maar-ervaringen',
     format: 'dispatch' as const,
     edition: '128',
