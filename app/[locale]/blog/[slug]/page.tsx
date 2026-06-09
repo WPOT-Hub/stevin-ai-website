@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-waarschuwt-voor-derde-partij-seo-tools': (
+    <>
+      <p className="lead-para">
+        Google heeft nieuwe richtlijnen gepubliceerd over het gebruik van derde-partij SEO-tools, diensten en advies. Volgens de zoekgigant worden deze tools en aanbevelingen niet officieel ondersteund door Google zelf. Bedrijven die dergelijke oplossingen inzetten, lopen risico op verkeerde optimalisatie of zelfs sancties als de tools tegen de richtlijnen ingaan.
+      </p>
+      <p>
+        De update bevat ook specifieke aandachtspunten voor generatieve AI-optimalisatie. Google legt uit dat content gegenereerd door AI niet per definitie beter scoort, tenzij deze voldoet aan de kwaliteitseisen zoals gedefinieerd in de zoekrichtlijnen. Daarnaast wordt benadrukt dat automatische optimalisatie via externe tools vaak leidt tot verlies van meetdata of blinde vlekken in de meting.
+      </p>
+      <p>
+        Tot slot heeft Google een vacature geplaatst voor een nieuwe SEO-documentatiemanager. Deze rol moet helpen om de communicatie over zoekoptimalisatie te verbeteren en helderheid te bieden over wat wel en niet wordt ondersteund door Google.
+      </p>
+    </>
+  ),
   'meta-gezichtsherkenning-ai-brillen': (
     <>
       <p className="lead-para">
@@ -3006,6 +3019,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-waarschuwt-voor-derde-partij-seo-tools':
+    "Voor bedrijven betekent dit dat ze kritischer moeten kijken naar externe SEO-oplossingen. Het is verstandig om eerst te controleren of een tool of dienst expliciet door Google wordt genoemd als aanbevolen optie. Daarnaast is het belangrijk om meetdata te blijven monitoren, omdat automatische optimalisatie vaak leidt tot onduidelijkheden in oorzaak en gevolg.",
   'meta-gezichtsherkenning-ai-brillen':
     "Gezichtsherkenning roept wereldwijd vragen op over privacy en surveillance, ook buiten Europa waar het in de openbare ruimte verboden is. Voor bedrijven die met Meta samenwerken of soortgelijke technologie overwegen, is het verstandig om nu al na te denken over transparantie en toestemming. Een helder privacybeleid en duidelijke communicatie naar gebruikers kunnen latere problemen voorkomen.",
   'content-marketing-ideeën-juli-2026':
