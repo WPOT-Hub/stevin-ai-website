@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'van-turing-naar-devotion-hoe-een-nieuwe-lab-de-ai-kaart-in-europa-kan-verleggen': (
+    <>
+      <p className="lead-para">
+        Mark Girolami stapte vorige maand niet zomaar over van het Alan Turing Institute naar Devotion Labs. Hij verliet een instituut dat vijf jaar lang als hoeder van Britse AI-ambities gold, om zich te wijden aan iets wat hij ‘een game-changer’ noemt. Zijn motivatie is simpel: hij wil niet langer alleen onderzoek doen in een ivoren toren, maar technologie ontwikkelen die daadwerkelijk bruikbaar is voor organisaties die ertoe doen. Dat betekent AI-modellen die niet alleen slim zijn, maar ook veilig, betrouwbaar en toepasbaar in complexe systemen zoals transportnetwerken, financiële instellingen of defensie. In een tijd waarin landen als Frankrijk en Duitsland al hun eigen AI-strategieën uitrollen, toont Girolami’s keuze aan dat de balans tussen wetenschap en praktijk drastisch aan het verschuiven is.
+      </p>
+      <p>
+        Girolami’s vertrek is geen incident, maar symptomatisch voor een bredere trend. Het Alan Turing Institute werd ooit opgericht als nationaal samenwerkingsverband tussen universiteiten om fundamenteel onderzoek te coördineren. Maar na vijf jaar onder druk gezet door de Britse overheid om zich te richten op defensie en nationale veiligheid, voelt Girolami dat de kloof tussen onderzoek en toepassing te groot is geworden. Zijn nieuwe lab, Devotion Labs, moet die kloof juist dichten door onderzoekers en bedrijven onder één dak te brengen. Het idee is niet nieuw – vergelijkbare initiatieven bestaan in Silicon Valley – maar de focus op ‘sovereign AI’ voor kritieke sectoren maakt het wel uniek. Voor Nederlandse en Belgische bureau-eigenaren en marketingteams is dit relevant omdat het laat zien dat AI niet langer alleen een kwestie is van algoritmes optimaliseren, maar van systeemdenken.
+      </p>
+      <p>
+        De tegenwerping ligt voor de hand: waarom zou een land als Nederland of België hierin willen meedoen? De schaalvoordelen van de VS of China lijken immers onverslaanbaar. Toch is Girolami’s argument krachtig: juist kleinere landen kunnen sneller schakelen als ze hun eigen ecosysteem optimaal benutten. Denk aan de combinatie van sterke technische universiteiten, een compacte overheid die snel kan ingrijpen, en bedrijven die bereid zijn risico’s te nemen. In Nederland hebben we al voorbeelden zoals TNO of het CWI dat soort bruggen slaat tussen wetenschap en industrie. Maar waar Girolami nu kiest voor een commercieel gedreven lab met publieke opdrachten, blijft veel Nederlands onderzoek nog vaak hangen in publicaties zonder directe impact.
+      </p>
+      <p>
+        Wat Devotion Labs bijzonder maakt, is de combinatie van ambitie en pragmatisme. Girolami benadrukt dat het geen ‘clever stuff’ gaat worden zonder maatschappelijke waarde, maar ook geen louter winstgedreven startup die zoekt naar ‘een gouden nugget’. Die balans kennen veel Nederlandse labs nog niet goed genoeg. Neem bijvoorbeeld het recente bericht over Wayve dat in Londen zelfrijdende taxi’s wil introduceren: ook daar gaat het om real-world toepassingen buiten de gebruikelijke tech-bubbel. Voor marketingteams betekent dit dat AI-strategieën niet langer alleen draaien om automatisering of personalisatie, maar om systemen die robuust genoeg zijn om mee te groeien met complexe organisaties.
+      </p>
+      <p>
+        Toch zit er ook een risico in deze beweging. Als commerciële labs zoals Devotion Labs te veel gaan concurreren met publieke instituten zoals het Alan Turing Institute, dreigt er een tweedeling te ontstaan tussen ‘goede’ publieke research en ‘slechte’ commerciële toepassingen. Girolami erkent dit zelf: “Het gaat erom deze werelden samen te brengen.” Voor Nederlandse beleidsmakers zou dit een wake-upcall moeten zijn om hun eigen instituties beter aan te sturen op impactvolle samenwerking met bedrijven.
+      </p>
+      <p>
+        De implicaties voor bureau-eigenaren zijn duidelijk: wie nu nog denkt dat AI-toepassingen beperkt blijven tot chatbots of advertentiesystemen, loopt achter op de curve. De echte vraagstukken liggen bij organisaties die afhankelijk zijn van betrouwbare data-infrastructuur – denk aan zorginstellingen, gemeenten of logistieke ketens. Een lab als Devotion Labs bewijst dat AI geen losstaand product is, maar onderdeel moet worden van grotere systeeminnovaties.
+      </p>
+      <p>
+        Voor marketeers betekent dit concreet: stop met denken in silo’s waarin marketingtechnologie losstaat van operationele systemen. De beste use cases ontstaan wanneer je AI gebruikt om processen end-to-end te verbeteren – niet alleen om klantdata beter te analyseren.
+      </p>
+    </>
+  ),
   'rivian-r2-marktintroductie-2027': (
     <>
       <p className="lead-para">
@@ -3235,6 +3260,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'van-turing-naar-devotion-hoe-een-nieuwe-lab-de-ai-kaart-in-europa-kan-verleggen':
+    "Bij Stevin zien we deze verschuiving al jaren aankomen: organisaties die AI nog steeds benaderen als een toolbox voor campagnes missen de kern van wat echt telt – systeemdenken binnen complexe organisaties. Girolami’s vertrek naar Devotion Labs bevestigt onze overtuiging dat succesvolle AI-implementatie begint bij het herdefiniëren van hoe technologie wordt ingezet binnen bestaande processen. Wij helpen klanten niet alleen met data-driven oplossingen, maar met het ontwerpen van systemen waarin technologie organisch past bij menselijke workflows en strategische doelen. Dat vraagt om meer dan algoritmes; het vraagt om organisatorische wendbaarheid en een cultuur waarin experimenteren centraal staat.",
   'rivian-r2-marktintroductie-2027':
     "Voor autofabrikanten en dealers betekent deze stap dat de concurrentie rond betaalbare elektrische modellen verder toeneemt. De uitdaging ligt niet alleen in het leveren van technologische innovatie, maar ook in het creëren van een merkervaring die aansluit bij bredere consumentengroepen. Rivians keuze om te blijven investeren in menselijke besturing kan bovendien vertrouwen wekken bij kopers die nog terughoudend zijn over autonome systemen.",
   'evotrex-30-miljoen-voor-rv-met-hybride-stroom':
