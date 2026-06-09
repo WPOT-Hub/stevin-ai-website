@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-waarschuwt-voor-derde-partij-seo-tools',
+    format: 'dispatch' as const,
+    edition: '124',
+    category: 'Platform',
+    title: "Google waarschuwt tegen derde-partij SEO-tools en -advies",
+    dek: "Google benadrukt dat externe SEO-tools en adviezen niet officieel worden gesteund en voegt richtlijnen toe over generatieve AI-optimalisatie.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google waarschuwt tegen derde-partij SEO-tools en -advies",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'meta-gezichtsherkenning-ai-brillen',
     format: 'dispatch' as const,
     edition: '123',
