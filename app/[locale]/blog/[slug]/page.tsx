@@ -1456,6 +1456,13 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'persoonlijke-prijzen-personalisatie-fair-pricing': (
+    <>
+      <p className="lead-para">
+        Voor bedrijven betekent dit een afweging tussen maximale winst en klantvertrouwen. Europese regelgeving rond AI en data wordt strenger, wat druk zet op eerlijke prijsstelling. De kernvraag blijft: als twee mensen hetzelfde product kopen, verwachten ze dan dezelfde prijs? Consumenten reageren vaak negatief op persoonsgebonden prijsverhogingen, zelfs als het technisch mogelijk is.
+      </p>
+    </>
+  ),
   'amerika-breidt-zwartelijst-chinese-techbedrijven-uit': (
     <>
       <p className="lead-para">
@@ -3078,6 +3085,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'persoonlijke-prijzen-personalisatie-fair-pricing':
+    "Voor ondernemers die met persoonlijke prijzen experimenteren, is voorzichtigheid geboden. Een kleine uplift in conversie kan ten koste gaan van langetermijnvertrouwen en merkwaarde. Het is beter om persoonsgebonden kortingen te koppelen aan loyaliteit of gedrag dan aan demografische kenmerken. Regelgeving zoals de AI Act zal deze praktijken verder onder de loep nemen, dus transparantie wordt niet alleen een morele keuze maar ook een juridische noodzaak.",
   'amerika-breidt-zwartelijst-chinese-techbedrijven-uit':
     "Voor Europese ondernemers die actief zijn in China of zaken doen met Chinese techbedrijven wordt het risicomanagement complexer. De uitbreiding van de Amerikaanse lijst toont aan dat geopolitieke spanningen direct doorwerken in zakelijke beslissingen. Het is verstandig om contracten en samenwerkingen te herzien op mogelijke afhankelijkheid van bedrijven die op dergelijke lijsten staan, zeker als er Amerikaanse partners bij betrokken zijn.",
   'amazon-verkoopt-geen-producten-maar-ervaringen':
