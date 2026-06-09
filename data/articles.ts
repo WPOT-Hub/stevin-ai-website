@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'europa-usa-ai-dominantie-london-tech-week',
+    format: 'dispatch' as const,
+    edition: '135',
+    category: 'Tech',
+    title: "Europa en UK willen eigen AI-macht opbouwen tegen Amerikaanse dominantie",
+    dek: "Tijdens London Tech Week stond de vraag centraal wie AI bezit en hoe Europa zich kan verdedigen tegen de overheersing door Amerikaanse techbedrijven.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Europa en UK willen eigen AI-macht opbouwen tegen Amerikaanse dominantie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'osborne-ai-zelfvoorzienendheid-is-weggegooid-geld',
     format: 'dispatch' as const,
     edition: '134',
