@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'voormalig-engineer-start-online-kunstacademie': (
+    <>
+      <p className="lead-para">
+        Florence Morin, voormalig engineer bij een techbedrijf, stopte met haar werk na jaren van hoge werkdruk en een gebrek aan voldoening. Ze besloot haar inkomen voortaan te verdienen met het maken en verkopen van kunst, aldus Morin zelf.
+      </p>
+      <p>
+        Haar nieuwe onderneming is een online kunstacademie waar ze cursussen aanbiedt in digitale kunst en illustratie. De school richt zich op beginners en professionals die hun vaardigheden willen verbeteren, zonder de starre structuur van traditionele opleidingen.
+      </p>
+      <p>
+        De academie biedt zowel betaalde als gratis lessen aan via een eigen platform. In de eerste maand trokken de cursussen al honderden studenten uit verschillende landen, wat volgens Morin de vraag naar flexibele en toegankelijke creatieve opleidingen bevestigt.
+      </p>
+    </>
+  ),
   'persoonlijke-prijzen-personalisatie-fair-pricing': (
     <>
       <p className="lead-para">
@@ -3085,6 +3098,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'voormalig-engineer-start-online-kunstacademie':
+    "Voor bedrijven die worstelen met werkdruk of medewerkers met uiteenlopende interesses kan dit verhaal een reminder zijn: talent hoeft niet beperkt te blijven tot één vakgebied. Investeren in persoonlijke ontwikkeling of ruimte bieden voor nevenactiviteiten kan soms leiden tot onverwachte kansen, zowel voor werknemers als voor organisaties.",
   'persoonlijke-prijzen-personalisatie-fair-pricing':
     "Voor ondernemers die met persoonlijke prijzen experimenteren, is voorzichtigheid geboden. Een kleine uplift in conversie kan ten koste gaan van langetermijnvertrouwen en merkwaarde. Het is beter om persoonsgebonden kortingen te koppelen aan loyaliteit of gedrag dan aan demografische kenmerken. Regelgeving zoals de AI Act zal deze praktijken verder onder de loep nemen, dus transparantie wordt niet alleen een morele keuze maar ook een juridische noodzaak.",
   'amerika-breidt-zwartelijst-chinese-techbedrijven-uit':
