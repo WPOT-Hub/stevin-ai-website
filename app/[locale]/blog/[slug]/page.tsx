@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'tools-for-humanity-legt-medewerkers-ont': (
+    <>
+      <p className="lead-para">
+        Tools for Humanity, het bedrijf achter de biometrische identiteitsverificatie via oogscans van voormalig OpenAI-topman Sam Altman, gaat een deel van haar personeel ontslaan. Dat blijkt uit een bericht in TechCrunch. De reden is een gebrek aan voldoende inkomsten om de activiteiten op schaal te draaien.
+      </p>
+      <p>
+        Volgens de rapportage kampt het bedrijf al langer met moeilijkheden om een werkbaar businessmodel te vinden. Ondanks technologische vooruitgang en investeringen in het verificatieproces, blijft de vraag naar de dienst achter bij de verwachtingen. De layoffs zijn een poging om de kosten te verlagen en de levensvatbaarheid van het bedrijf te waarborgen.
+      </p>
+      <p>
+        De ontwikkelingen komen op een moment dat OpenAI zelf een IPO-aanvraag heeft ingediend. Tools for Humanity is hier niet direct bij betrokken, maar de financiële druk op Altmans andere projecten neemt toe.
+      </p>
+    </>
+  ),
   'merkcampagnes-niet-klaar-voor-ai-max': (
     <>
       <p className="lead-para">
@@ -3183,6 +3196,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'tools-for-humanity-legt-medewerkers-ont':
+    "Voor ondernemers die werken met nieuwe technologieën of innovatieve dienstverlening is dit een herkenbare situatie: zelfs veelbelovende oplossingen lopen tegen commerciële realiteit aan als de vraag niet snel genoeg opschaalt. Het benadrukt het belang van een heldere monetarisatiestrategie naast technologische ontwikkeling. Tegelijkertijd toont het hoe persoonlijke netwerken en reputatie binnen tech-kringen kunnen helpen om in moeilijke tijden toch steun te vinden.",
   'merkcampagnes-niet-klaar-voor-ai-max':
     "Voor bureaus en merken die AI Max willen toepassen op merkverkeer is het zaak om eerst te borgen dat de onderliggende data betrouwbaar is. Een veelgemaakte valkuil is het aannemen dat branded traffic per definitie veilig is voor automatisering, terwijl juist hier vaak de grootste blinde vlekken zitten in attributie. Begin klein, meet nauwkeurig en schaal pas uit als je weet wat werkt – dat geldt niet alleen voor AI, maar voor elke vorm van marketingautomatisering.",
   'netbeheerders-investeren-meer-in-netcongestie-met-verschillen-tussen-bedrijven':
