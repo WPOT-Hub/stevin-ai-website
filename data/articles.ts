@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'autoboeker-haalt-12-miljoen-in-voor-ai-platform-accountants',
+    format: 'dispatch' as const,
+    edition: '136',
+    category: 'Tech',
+    title: "AI-platform voor accountants trekt €1,2 miljoen op",
+    dek: "Autoboeker haalt €1,2 miljoen op om zijn AI-platform voor pre-accounting verder te ontwikkelen.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AI-platform voor accountants trekt €1,2 miljoen op",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'europa-usa-ai-dominantie-london-tech-week',
     format: 'dispatch' as const,
     edition: '135',
