@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'netbeheerders-investeren-meer-in-netcongestie-met-verschillen-tussen-bedrijven',
+    format: 'dispatch' as const,
+    edition: '137',
+    category: 'Operations',
+    title: "Netbeheerders verdubbelen investeringen in elektriciteitsnet door congestie",
+    dek: "Nederlandse netbeheerders besteden vanaf 2023 miljarden euro’s extra aan het uitbreiden en verzwaren van het elektriciteitsnet, met uiteenlopende focus per bedrijf.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Netbeheerders verdubbelen investeringen in elektriciteitsnet door congestie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'autoboeker-haalt-12-miljoen-in-voor-ai-platform-accountants',
     format: 'dispatch' as const,
     edition: '136',
