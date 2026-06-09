@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'rivian-r2-marktintroductie-2027',
+    format: 'dispatch' as const,
+    edition: '145',
+    category: 'Markt',
+    title: "Rivian lanceert R2 in 2027: EV voor de massa met focus op rijplezier",
+    dek: "Rivian brengt in 2027 de R2 uit, een betaalbaardere elektrische SUV die de overstap moet maken van niche naar mainstream.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Rivian lanceert R2 in 2027: EV voor de massa met focus op rijplezier",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'marshall-stockwell-iii-speaker-met-vervangbare-batterij',
     format: 'dispatch' as const,
     edition: '144',
