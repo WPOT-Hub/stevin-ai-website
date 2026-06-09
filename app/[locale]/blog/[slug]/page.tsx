@@ -1456,6 +1456,13 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'amazon-verkoopt-geen-producten-maar-ervaringen': (
+    <>
+      <p className="lead-para">
+        De Amerikaanse reus Amazon toont op zijn homepage geen traditionele productcategorieën meer, maar een verzameling van ervaringen: van zomerse kledingstijlen tot vakantie-looks en smart home-oplossingen. De pagina is opgebouwd als een lifestyle-magazine met beperkte tijdsacties en seizoensgebonden highlights, niet als een klassieke webshop. Ook merken die Amazon zelf in de markt zet, zoals Amazon Essentials of Luxury, worden gepresenteerd als lifestyle-opties in plaats van puur functionele artikelen.
+      </p>
+    </>
+  ),
   'apple-siri-ai-toegang-en-privacy-centraal-in-update': (
     <>
       <p className="lead-para">
@@ -3058,6 +3065,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'amazon-verkoopt-geen-producten-maar-ervaringen':
+    "Voor ondernemers is dit een belangrijke trend: klanten verwachten tegenwoordig niet alleen een goed product, maar ook een soepele en inspirerende koopervaring. Bedrijven die hun online aanwezigheid niet alleen zien als verkoopkanaal maar als onderdeel van de merkbeleving kunnen hier hun voordeel mee doen. Het integreren van persoonlijke aanbevelingen, meerdere touchpoints (zoals video of reviews) en gemak in navigatie wordt steeds belangrijker om concurrentie voor te blijven.",
   'apple-siri-ai-toegang-en-privacy-centraal-in-update':
     "Voor bedrijven die klantcontact onderhouden via smartphones, biedt deze aanpak kansen om interacties te versnellen zonder dat gebruikers nieuwe tools hoeven leren. Tegelijkertijd roept de combinatie van persoonlijke data en AI vragen op over transparantie en controle. Het is zaak om bij klantcommunicatie duidelijk te maken welke data wordt gebruikt en waarom.",
   'nokia-verhoogt-jaarverwachting-door-vraag-naar-ai-en-datacenters':
