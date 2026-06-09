@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'verkoopfraude-e-commerce-samenwerking-keten': (
+    <>
+      <p className="lead-para">
+        Webshops verliezen jaarlijks honderden miljoenen euro’s door verkoopfraude, waarbij consumenten ten onrechte stellen een bestelling niet te hebben ontvangen of een verkeerd product retourneren. Uit onderzoek blijkt dat vooral in de e-commerce sector de fraudegevallen toenemen, met directe gevolgen voor marges en klanttevredenheid.
+      </p>
+      <p>
+        Logistiek dienstverleners krijgen deze problematiek ook aan den lijve te voelen. Zij moeten vaak extra controles uitvoeren of zelfs juridische stappen ondernemen om fraude aan te tonen, wat leidt tot hogere operationele kosten. Discussies over de bewijslast en afleverbevestigingen vertragen bovendien het hele proces.
+      </p>
+      <p>
+        De oplossing ligt volgens experts in betere samenwerking tussen webshops, fulfilmentpartijen en vervoerders. Door transparantere data-uitwisseling en duidelijke afspraken over verantwoordelijkheden kunnen veel problemen voorkomen worden voordat ze escaleren.
+      </p>
+    </>
+  ),
   'voormalig-engineer-start-online-kunstacademie': (
     <>
       <p className="lead-para">
@@ -3098,6 +3111,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'verkoopfraude-e-commerce-samenwerking-keten':
+    "Voor ondernemers betekent deze trend dat het tijd wordt om interne processen rond retouren en aflevering kritisch onder de loep te nemen. Fraude is niet alleen een kwestie van ‘wie heeft schuld’, maar vooral van preventie door middel van betere samenwerking en technologie. Wie nu investeert in heldere systemen, bespaart later op kosten en frustratie.",
   'voormalig-engineer-start-online-kunstacademie':
     "Voor bedrijven die worstelen met werkdruk of medewerkers met uiteenlopende interesses kan dit verhaal een reminder zijn: talent hoeft niet beperkt te blijven tot één vakgebied. Investeren in persoonlijke ontwikkeling of ruimte bieden voor nevenactiviteiten kan soms leiden tot onverwachte kansen, zowel voor werknemers als voor organisaties.",
   'persoonlijke-prijzen-personalisatie-fair-pricing':
