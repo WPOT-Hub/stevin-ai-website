@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'amazon-verkoopt-geen-producten-maar-ervaringen',
+    format: 'dispatch' as const,
+    edition: '128',
+    category: 'Platform',
+    title: "Amazon verkoopt geen producten, maar ervaringen",
+    dek: "Amazon positioneert zich niet langer als webwinkel, maar als een platform dat klantbeleving centraal stelt met duizenden aanbiedingen en services.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Amazon verkoopt geen producten, maar ervaringen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'apple-siri-ai-toegang-en-privacy-centraal-in-update',
     format: 'dispatch' as const,
     edition: '127',
