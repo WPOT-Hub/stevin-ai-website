@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'apple-siri-ai-toegang-en-privacy-centraal-in-update',
+    format: 'dispatch' as const,
+    edition: '127',
+    category: 'Tech',
+    title: "Apple’s nieuwe Siri draait om toegankelijkheid en privacy",
+    dek: "Apple introduceert een herziene Siri met AI-functies die direct in het besturingssysteem zitten, zonder extra apps nodig te hebben.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Apple’s nieuwe Siri draait om toegankelijkheid en privacy",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'nokia-verhoogt-jaarverwachting-door-vraag-naar-ai-en-datacenters',
     format: 'dispatch' as const,
     edition: '126',
