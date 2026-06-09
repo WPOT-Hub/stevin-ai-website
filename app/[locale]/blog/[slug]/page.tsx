@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'klantmerk-en-werkgeversmerk-moeten-hetzelfde-verhaal-vertellen': (
+    <>
+      <p className="lead-para">
+        Een sterk merk bouwt je zowel naar buiten toe op als naar binnen. Toch laten veel bedrijven deze twee verhalen los van elkaar bestaan, aldus een recent rapport. Terwijl consumenten en potentiële werknemers dezelfde waarden en beloftes verwachten te horen.
+      </p>
+      <p>
+        De mismatch ontstaat vaak door aparte teams of afdelingen die elk hun eigen focus hebben. Klantcommunicatie wordt dan gericht op productvoordelen, terwijl de werkgeverscommunicatie vooral gaat over cultuur en doorgroeimogelijkheden. Dat leidt tot tegenstrijdige signalen, zo blijkt uit eerdere cases.
+      </p>
+      <p>
+        Bedrijven die beide verhalen wél integreren, zien minder verwarring bij doelgroepen en een hogere herkenbaarheid. Een voorbeeld is een organisatie die haar duurzaamheidsambities zowel in reclames als in vacatures centraal stelt: dat versterkt het imago zowel bij klanten als bij medewerkers.
+      </p>
+    </>
+  ),
   'google-waarschuwt-voor-derde-partij-seo-tools': (
     <>
       <p className="lead-para">
@@ -3019,6 +3032,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'klantmerk-en-werkgeversmerk-moeten-hetzelfde-verhaal-vertellen':
+    "Voor ondernemers is dit een reminder dat merkenconsistentie niet alleen gaat om uiterlijk, maar ook om inhoud. Het helpt om één kernverhaal te formuleren dat zowel klanten als medewerkers aanspreekt. Dat vereist samenwerking tussen marketing en HR, maar levert uiteindelijk een sterker en geloofwaardiger merk op.",
   'google-waarschuwt-voor-derde-partij-seo-tools':
     "Voor bedrijven betekent dit dat ze kritischer moeten kijken naar externe SEO-oplossingen. Het is verstandig om eerst te controleren of een tool of dienst expliciet door Google wordt genoemd als aanbevolen optie. Daarnaast is het belangrijk om meetdata te blijven monitoren, omdat automatische optimalisatie vaak leidt tot onduidelijkheden in oorzaak en gevolg.",
   'meta-gezichtsherkenning-ai-brillen':
