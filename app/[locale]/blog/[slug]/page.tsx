@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'netbeheerders-investeren-meer-in-netcongestie-met-verschillen-tussen-bedrijven': (
+    <>
+      <p className="lead-para">
+        Vanaf volgend jaar steken Nederlandse netbeheerders jaarlijks miljarden euro’s extra in het elektriciteitsnetwerk om de groeiende vraag naar stroom op te vangen. De investeringen zijn een direct gevolg van de toenemende netcongestie, die vooral speelt in gebieden met veel nieuwe bedrijven en woningen. Tot nu toe werden deze kosten vaak afgewenteld op afnemers via nettarieven, maar dat verandert niet wezenlijk met de nieuwe plannen.
+      </p>
+      <p>
+        De uitgaven lopen uiteen per netbeheerder: Stedin richt zich vooral op het laagspanningsnetwerk, waar veel kleine aansluitingen zitten. Enexis en Liander investeren juist fors in het middenspanningsnetwerk, dat belangrijk is voor middelgrote bedrijven en grotere woonwijken. Die verschillen komen voort uit lokale knelpunten en de verwachte vraaggroei in specifieke regio’s.
+      </p>
+      <p>
+        De totale kosten voor de komende jaren lopen op tot tientallen miljarden euro’s. Voor ondernemers betekent dit dat aansluitingen op termijn weer sneller beschikbaar kunnen komen, mits de plannen tijdig worden uitgevoerd. Toch blijft er onzekerheid over de snelheid van realisatie door bureaucratische vertragingen en tekorten aan vakmensen.
+      </p>
+    </>
+  ),
   'autoboeker-haalt-12-miljoen-in-voor-ai-platform-accountants': (
     <>
       <p className="lead-para">
@@ -3157,6 +3170,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'netbeheerders-investeren-meer-in-netcongestie-met-verschillen-tussen-bedrijven':
+    "Voor bedrijven die afhankelijk zijn van betrouwbare stroomtoevoer is deze investeringsgolf hoopgevend, maar de praktijk leert dat netuitbreiding vaak jaren duurt. Ondernemers doen er goed aan hun energievraag nu al te optimaliseren en eventueel eigen oplossingen te overwegen, zoals zonnepanelen of batterijopslag. De verschillen tussen netbeheerders laten zien dat lokale omstandigheden doorslaggevend zijn: wie een nieuwe locatie zoekt, moet niet alleen kijken naar beschikbare ruimte, maar ook naar de plannen van de desbetreffende netbeheerder.",
   'autoboeker-haalt-12-miljoen-in-voor-ai-platform-accountants':
     "Voor administratiekantoren die nog handmatig facturen en bonnen verwerken, biedt dit soort tools een concrete stap naar digitalisering. Het is verstandig om niet alleen naar de kostenbesparing te kijken, maar ook naar de kwaliteitsslag: minder fouten in de basis betekent minder nazorg later in het boekhoudproces. Kantoren die nu nog twijfelen, kunnen vaak eerst met een pilot starten om de impact zelf te meten.",
   'europa-usa-ai-dominantie-london-tech-week':
