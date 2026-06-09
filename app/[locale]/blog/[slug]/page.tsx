@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'meta-gezichtsherkenning-ai-brillen': (
+    <>
+      <p className="lead-para">
+        De app voor Meta’s AI-brillen bevat code die gezichten kan omzetten in unieke digitale vingerafdrukken, zo blijkt uit onderzoek van Wired. Deze ‘faceprints’ worden opgeslagen en geïndexeerd, terwijl niet-herkende gezichten worden bijgesneden en opgeslagen onder de naam ‘in behandeling’. De technologie is nog niet actief, maar de infrastructuur voor updates staat al klaar.
+      </p>
+      <p>
+        In Nederland zijn de AI-brillen van Meta beschikbaar, samen met de bijbehorende app die vijftig miljoen gebruikers hebben gedownload. De software werkt naast bestaande functies, zoals het verbinden van de brillen met smartphones. Meta benadrukt dat er nog geen definitieve beslissing is genomen over het daadwerkelijk lanceren van Name Tag.
+      </p>
+      <p>
+        De ontwikkeling vindt plaats ondanks juridische problemen rondom gezichtsherkenning in de VS. Meta schikte eerder al rechtszaken over het onrechtmatig verzamelen van biometrische gegevens en kreeg een dagvaarding van het ministerie van Binnenlandse Veiligheid om data te delen over kritische accounts.
+      </p>
+    </>
+  ),
   'content-marketing-ideeën-juli-2026': (
     <>
       <p className="lead-para">
@@ -2993,6 +3006,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'meta-gezichtsherkenning-ai-brillen':
+    "Gezichtsherkenning roept wereldwijd vragen op over privacy en surveillance, ook buiten Europa waar het in de openbare ruimte verboden is. Voor bedrijven die met Meta samenwerken of soortgelijke technologie overwegen, is het verstandig om nu al na te denken over transparantie en toestemming. Een helder privacybeleid en duidelijke communicatie naar gebruikers kunnen latere problemen voorkomen.",
   'content-marketing-ideeën-juli-2026':
     "Voor marketeers is juli een kans om buiten de gebaande paden te denken en content te maken die inspeelt op spontane koopbeslissingen. Het gaat niet om het pushen van producten, maar om waarde toevoegen op momenten dat consumenten openstaan voor inspiratie. Door seizoensgebonden thema’s centraal te stellen, bouw je een herkenbaar ritme op dat zowel klanten als zoekmachines waarderen.",
   'vier-manieren-om-ai-zoekzichtbaarheid-te-tracken':
