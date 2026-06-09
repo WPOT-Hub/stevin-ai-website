@@ -1456,6 +1456,13 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'europa-usa-ai-dominantie-london-tech-week': (
+    <>
+      <p className="lead-para">
+        De vraag wie AI bezit en controleert domineerde tijdens London Tech Week, waar Europese bezoekers vooral geïnteresseerd waren in hoe ze de Amerikaanse dominantie kunnen beperken. Premier Starmer benadrukte het belang van de techsector voor geopolitiek, maar de discussie ging vooral over soevereiniteit en afhankelijkheid van VS-gestuurde technologie. Topmanagers van Amerikaanse techbedrijven als AMD en HPE erkenden impliciet de spanning, terwijl ze toch investeringen in het VK aankondigden. De frustratie over de verkoop van DeepMind aan Google en de afhankelijkheid van Amerikaanse AI-modellen was voelbaar onder Europese beleidsmakers en investeerders.
+      </p>
+    </>
+  ),
   'osborne-ai-zelfvoorzienendheid-is-weggegooid-geld': (
     <>
       <p className="lead-para">
@@ -3137,6 +3144,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'europa-usa-ai-dominantie-london-tech-week':
+    "Voor Nederlandse en Belgische bedrijven is deze dynamiek relevant omdat het laat zien hoe snel technologischeafhankelijkheid kan leiden tot strategische kwetsbaarheid. Het benadrukt het belang van diversificatie in leverancierskeuzes, ook als dit ten koste gaat van directe efficiencyvoordelen. Daarnaast wordt duidelijk dat beleid rondom AI-soevereiniteit niet alleen een kwestie is voor overheden, maar ook voor bedrijven die hun toekomstige operationele vrijheid willen waarborgen.",
   'osborne-ai-zelfvoorzienendheid-is-weggegooid-geld':
     "Voor bedrijven betekent deze discussie dat ze moeten anticiperen op zowel kansen als risico’s rond technologische afhankelijkheid. Of je nu kiest voor lokale oplossingen of samenwerkt met internationale partijen: helderheid over je strategie is essentieel. Overheden stimuleren innovatie, maar ondernemers moeten zelf bepalen waar ze hun middelen inzetten. De balans tussen autonomie en samenwerking blijft een uitdaging waar beleid en praktijk elkaar raken.",
   'afm-beboet-bunq-trage-fraudeafhandeling':
