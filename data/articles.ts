@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'voormalig-engineer-start-online-kunstacademie',
+    format: 'dispatch' as const,
+    edition: '131',
+    category: 'Operations',
+    title: "Voormalig engineer start online kunstacademie na burn-out",
+    dek: "Een ex-ingenieur lanceerde een online kunstacademie nadat ze haar baan verliet door werkdruk en het gebrek aan creativiteit in haar vak.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Voormalig engineer start online kunstacademie na burn-out",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'persoonlijke-prijzen-personalisatie-fair-pricing',
     format: 'dispatch' as const,
     edition: '130',
