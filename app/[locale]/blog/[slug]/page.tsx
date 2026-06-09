@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'rivian-r2-marktintroductie-2027': (
+    <>
+      <p className="lead-para">
+        De R2 wordt Rivians eerste elektrische voertuig voor een breder publiek, met een startspecifieke prijs onder de $50.000. De SUV is ontworpen als een compactere en betaalbaardere versie van de bestaande R1-modellen, die tot nu toe vooral gericht waren op liefhebbers en early adopters. Rivian richt zich hiermee op consumenten die welwillend staan tegenover elektrische mobiliteit, maar niet bereid zijn om premium prijzen te betalen.
+      </p>
+      <p>
+        De R2 onderscheidt zich door een sterke focus op rijervaring en prestaties, iets wat Rivian eerder al succesvol toonde met de R1T en R1S. Volgens testrijders biedt de R2 een balans tussen comfort, acceleratie en wendbaarheid, zonder afbreuk te doen aan functionaliteit of ruimte. Dit past binnen Rivians strategie om elektrisch rijden aantrekkelijk te maken voor dagelijks gebruik.
+      </p>
+      <p>
+        Ondanks de ambitie om meer klanten te bereiken, blijft Rivian vasthouden aan zijn missie om duurzame mobiliteit te promoten. De R2 zal beschikbaar zijn met verschillende batterijopties, waaronder een versie met een actieradius van meer dan 400 kilometer. Rivian benadrukt dat zelfrijden nog geen volwassen technologie is en kiest ervoor om in eerste instantie te focussen op menselijke besturing.
+      </p>
+    </>
+  ),
   'evotrex-30-miljoen-voor-rv-met-hybride-stroom': (
     <>
       <p className="lead-para">
@@ -3222,6 +3235,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'rivian-r2-marktintroductie-2027':
+    "Voor autofabrikanten en dealers betekent deze stap dat de concurrentie rond betaalbare elektrische modellen verder toeneemt. De uitdaging ligt niet alleen in het leveren van technologische innovatie, maar ook in het creëren van een merkervaring die aansluit bij bredere consumentengroepen. Rivians keuze om te blijven investeren in menselijke besturing kan bovendien vertrouwen wekken bij kopers die nog terughoudend zijn over autonome systemen.",
   'evotrex-30-miljoen-voor-rv-met-hybride-stroom':
     "Voor ondernemers in de mobiliteitssector toont dit aan hoe nieuwe technologieën bestaande markten kunnen vernieuwen. De combinatie van duurzaamheid en praktische toepasbaarheid lijkt hierbij een sleutelfactor. Voor bedrijven die actief zijn in de energiesector of toelevering aan de RV-industrie kan dit een aanzet zijn om zelf in te zetten op hybride of autonome oplossingen.",
   'apple-siri-ai-update-2026':
