@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'osborne-ai-zelfvoorzienendheid-is-weggegooid-geld',
+    format: 'dispatch' as const,
+    edition: '134',
+    category: 'Beleid',
+    title: "Osborne: zelfvoorzienendheid in AI is een onhaalbaar streven",
+    dek: "De voormalig Britse minister George Osborne stelt dat landen die streven naar volledige AI-zelfvoorzienendheid een verloren zaak najagen.",
+    publishedAt: '2026-06-09',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Osborne: zelfvoorzienendheid in AI is een onhaalbaar streven",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'afm-beboet-bunq-trage-fraudeafhandeling',
     format: 'dispatch' as const,
     edition: '133',
