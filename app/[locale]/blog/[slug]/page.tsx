@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'evotrex-30-miljoen-voor-rv-met-hybride-stroom': (
+    <>
+      <p className="lead-para">
+        Het Nederlandse bedrijf Evotrex heeft 30 miljoen dollar opgehaald bij investeerders, onder wie Anker, om zijn hybride stroomsysteem voor recreatievoertuigen (RVs) verder te ontwikkelen. Het systeem combineert zonne-energie, een waterstofgenerator en een batterijopslag om onafhankelijk van laadinfrastructuur te kunnen rijden en kamperen.
+      </p>
+      <p>
+        De oplossing richt zich op RV-eigenaren die langer willen genieten zonder afhankelijk te zijn van campings of stopcontacten. Volgens de oprichters kan het systeem tot wel twee weken autonomie bieden zonder externe stroomvoorziening, aldus TechCrunch.
+      </p>
+      <p>
+        Evotrex is niet de enige partij die inzet op off-grid mobiliteit voor RVs, maar onderscheidt zich door de combinatie van technologieën in één geïntegreerd systeem. De startup werkt momenteel aan een eerste serieproductieversie van het systeem.
+      </p>
+    </>
+  ),
   'apple-siri-ai-update-2026': (
     <>
       <p className="lead-para">
@@ -3209,6 +3222,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'evotrex-30-miljoen-voor-rv-met-hybride-stroom':
+    "Voor ondernemers in de mobiliteitssector toont dit aan hoe nieuwe technologieën bestaande markten kunnen vernieuwen. De combinatie van duurzaamheid en praktische toepasbaarheid lijkt hierbij een sleutelfactor. Voor bedrijven die actief zijn in de energiesector of toelevering aan de RV-industrie kan dit een aanzet zijn om zelf in te zetten op hybride of autonome oplossingen.",
   'apple-siri-ai-update-2026':
     "Voor bedrijven die klantcontact automatiseren, toont deze stap aan dat zelfs grote merken worstelen met het snel implementeren van AI zonder de gebruikservaring te verwaarlozen. Het benadrukt het belang van een heldere strategie: technologie moet waarde toevoegen zonder gebruikers te overweldigen. Wie nu investeert in AI-tools, doet er goed aan eerst te kijken naar praktische toepassingen binnen bestaande systemen.",
   'tools-for-humanity-legt-medewerkers-ont':
