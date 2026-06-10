@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-zero-click-searches-stijgen-naar-68-procent-in-2026',
+    format: 'dispatch' as const,
+    edition: '150',
+    category: 'Platform',
+    title: "Google AI-overzichten leiden tot recordaantal zero-click searches",
+    dek: "Zes op de tien zoekopdrachten op Google eindigen zonder klik naar externe websites, blijkt uit recent onderzoek.",
+    publishedAt: '2026-06-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google AI-overzichten leiden tot recordaantal zero-click searches",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc',
     format: 'dispatch' as const,
     edition: '149',
