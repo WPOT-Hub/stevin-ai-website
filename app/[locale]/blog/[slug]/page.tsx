@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc': (
+    <>
+      <p className="lead-para">
+        Justin Ernest, oprichter van Sabertooth VC, investeerde bijna $500 miljoen in hot startups door gebruik te maken van een vast netwerk van beperkte partners (LPs). In plaats van jarenlang een fonds op te bouwen, zocht hij directe samenwerking met investeerders die al bekend waren met zijn strategie. Dit model maakte snelle beslissingen mogelijk zonder de trage cyclus van fondsenwerving.
+      </p>
+      <p>
+        De aanpak leverde deals op bij bedrijven als Anthropic, Anduril en SpaceX, die allemaal actief zijn in sectoren zoals AI en defensietechnologie. Ernest koos ervoor om via persoonlijke connecties kapitaal aan te trekken, waardoor hij flexibeler kon inspelen op kansen. Zijn methode toont aan dat alternatieve financieringsmodellen succesvol kunnen zijn buiten de traditionele VC-structuur.
+      </p>
+      <p>
+        Het voorbeeld van Ernest benadrukt dat netwerken en vertrouwen vaak belangrijker zijn dan formele fondsenstructuren. Voor startups betekent dit dat ze niet per se afhankelijk hoeven te zijn van grote VC-kantoren om groei te financieren. Het model kan vooral aantrekkelijk zijn voor bedrijven met een sterke community of niche-aanhang.
+      </p>
+    </>
+  ),
   'tech-industrie-krijgt-mangos-in-plaats-van-faang': (
     <>
       <p className="lead-para">
@@ -3286,6 +3299,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc':
+    "Voor ondernemers die op zoek zijn naar financiering buiten de gebaande paden, biedt Ernests aanpak concrete inspiratie: bouw eerst een betrouwbaar netwerk en demonstreer daarmee waarde voordat je formele structuren opzet. Het laat zien dat vertrouwen en snelheid soms doorslaggevender zijn dan papieren fondsen.",
   'tech-industrie-krijgt-mangos-in-plaats-van-faang':
     "Voor ondernemers betekent deze verschuiving dat ze zich moeten richten op technologische innovatie om relevant te blijven. De komst van MANGOS toont aan dat alleen bedrijven met sterke fundamenten en duidelijke visies kunnen groeien in een snel veranderend landschap. Het is tijd om te investeren in vaardigheden die aansluiten bij deze nieuwe realiteit.",
   'starlink-verhoogt-kosten-hardware-en-service':
