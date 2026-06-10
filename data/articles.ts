@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'tech-industrie-krijgt-mangos-in-plaats-van-faang',
+    format: 'dispatch' as const,
+    edition: '148',
+    category: 'Markt',
+    title: "Techgiganten krijgen nieuw acroniem: MANGOS verdrijft FAANG",
+    dek: "De techsector bereidt zich voor op een nieuwe generatie dominante bedrijven, aangeduid als MANGOS, na SpaceX, Anthropic en OpenAI.",
+    publishedAt: '2026-06-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Techgiganten krijgen nieuw acroniem: MANGOS verdrijft FAANG",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'starlink-verhoogt-kosten-hardware-en-service',
     format: 'dispatch' as const,
     edition: '147',
