@@ -26,7 +26,7 @@ export function getArticleFaqs(slug: string): FAQ[] | null {
 const homepageFaqsNL: FAQ[] = [
   {
     question: 'Wat doet Stevin precies?',
-    answer: 'Stevin is een marketing intelligence platform dat 24/7 met je marketingstack verbonden is en signaleert waar omzet, marge of merkwaarde weglekt — vóór reguliere rapportage het oppikt. Wat fout ging in april, zag Stevin op 4 april. Per signaal krijg je diagnose én concreet advies, niet alleen een grafiek die daalt.',
+    answer: 'Stevin is een AI-laag over je operatie. Het start in marketing en sales, waar het signaleert waar omzet, marge of merkwaarde weglekt voordat de reguliere rapportage het oppikt, en daar eerst resultaat levert. Wat fout ging in april, zag Stevin al op 4 april. Van daaruit bouwt Stevin verder met agents op elke afdeling, van eerste klantcontact tot onderhoud.',
   },
   {
     question: 'Voor wie is Stevin bedoeld?',
@@ -57,7 +57,7 @@ const homepageFaqsNL: FAQ[] = [
 const homepageFaqsEN: FAQ[] = [
   {
     question: 'What does Stevin actually do?',
-    answer: 'Stevin is a marketing intelligence platform connected 24/7 to your marketing stack that flags where revenue, margin or brand value is leaking — before regular reporting catches it. What went wrong in April, Stevin saw on April 4th. Every signal comes with diagnosis and concrete action, not just a graph trending down.',
+    answer: 'Stevin is an AI layer across your operation. It starts in marketing and sales, where it flags where revenue, margin or brand value is leaking before regular reporting catches it, and delivers results there first. What went wrong in April, Stevin saw on April 4th. From there Stevin builds further with agents in every department, from first customer contact to ongoing support.',
   },
   {
     question: 'Who is Stevin built for?',
