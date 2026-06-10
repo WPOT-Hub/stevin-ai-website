@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc',
+    format: 'dispatch' as const,
+    edition: '149',
+    category: 'Finance',
+    title: "Investeerder steekt $500 miljoen in startups via eigen netwerk, zonder VC",
+    dek: "Een Amerikaanse investeerder heeft bijna een half miljard dollar gestoken in toonaangevende startups zoals Anthropic en SpaceX, zonder een traditioneel durfkapitaalfonds op te zetten.",
+    publishedAt: '2026-06-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "Investeerder steekt $500 miljoen in startups via eigen netwerk, zonder VC",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'tech-industrie-krijgt-mangos-in-plaats-van-faang',
     format: 'dispatch' as const,
     edition: '148',
