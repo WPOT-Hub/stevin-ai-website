@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'spacemit-risc-v-mini-desktop-2026',
+    format: 'dispatch' as const,
+    edition: '152',
+    category: 'Tech',
+    title: "Eerste bruikbare RISC-V mini-pc met Vast op de markt",
+    dek: "SpacemiT lanceert een compacte desktop met RVA23-architectuur die dagelijks werk aankan, maar tegen een premiumprijs.",
+    publishedAt: '2026-06-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Eerste bruikbare RISC-V mini-pc met Vast op de markt",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'rekentool-helpt-e-commerce-keuze-verpakking',
     format: 'dispatch' as const,
     edition: '151',
