@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-zero-click-searches-stijgen-naar-68-procent-in-2026': (
+    <>
+      <p className="lead-para">
+        In het eerste kwartaal van 2026 leidt 68 procent van alle zoekopdrachten op Google niet tot een klik op een extern resultaat. Dit blijkt uit een analyse van Search Engine Land, die de impact van AI Overviews en andere on-page antwoorden meet. De stijging is vooral toe te schrijven aan de groeiende hoeveelheid directe antwoorden die Google in de zoekresultaten toont.
+      </p>
+      <p>
+        Deze ontwikkeling raakt met name publishers en bedrijven die afhankelijk zijn van organisch verkeer via zoekmachines. Uit eerdere data bleek al dat AI-antwoorden de click-through rate (CTR) met gemiddeld 15 procent hebben verlaagd. Nu de technologie verder wordt geïntegreerd in Google’s interface, zoals via AI Mode, wordt verwacht dat het aantal zero-click searches nog verder zal toenemen.
+      </p>
+      <p>
+        Ook adverteerders merken veranderingen: campagnes die gericht zijn op branded keywords zien minder conversies via zoekresultaten, terwijl non-branded campagnes juist harder getroffen worden door de verschuiving naar directe antwoorden.
+      </p>
+    </>
+  ),
   'ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc': (
     <>
       <p className="lead-para">
@@ -3299,6 +3312,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-zero-click-searches-stijgen-naar-68-procent-in-2026':
+    "Voor bedrijven die afhankelijk zijn van online zichtbaarheid is dit een wake-up call om hun strategie aan te passen. Investeer niet alleen in SEO, maar ook in merkbekendheid buiten Google, zoals via social media of direct verkeer. Daarnaast wordt het belang van een sterke eigen digitale aanwezigheid – zoals een goed functionerende website of app – steeds groter. Dit omdat gebruikers minder snel externe links volgen.",
   'ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc':
     "Voor ondernemers die op zoek zijn naar financiering buiten de gebaande paden, biedt Ernests aanpak concrete inspiratie: bouw eerst een betrouwbaar netwerk en demonstreer daarmee waarde voordat je formele structuren opzet. Het laat zien dat vertrouwen en snelheid soms doorslaggevender zijn dan papieren fondsen.",
   'tech-industrie-krijgt-mangos-in-plaats-van-faang':
