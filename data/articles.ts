@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'rekentool-helpt-e-commerce-keuze-verpakking',
+    format: 'dispatch' as const,
+    edition: '151',
+    category: 'Duurzaamheid',
+    title: "E-commerce krijgt tool om herbruikbare verpakkingen te vergelijken",
+    dek: "Een nieuwe online rekentool vergelijkt eenmalige en herbruikbare verzendverpakkingen op duurzaamheidskosten.",
+    publishedAt: '2026-06-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DUURZAAMHEID',
+    posterTopic: "E-commerce krijgt tool om herbruikbare verpakkingen te vergelijken",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-zero-click-searches-stijgen-naar-68-procent-in-2026',
     format: 'dispatch' as const,
     edition: '150',
