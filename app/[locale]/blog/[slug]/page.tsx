@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'rekentool-helpt-e-commerce-keuze-verpakking': (
+    <>
+      <p className="lead-para">
+        E-commercespelers kunnen vanaf vandaag gebruikmaken van een gratis online rekentool die eenmalige en herbruikbare verzendverpakkingen vergelijkt. De tool berekent de impact op CO₂-uitstoot, watergebruik en materiaalverbruik, aldus de makers. Zo krijgen bedrijven direct inzicht in de milieuvoordelen van elke optie zonder zelf complexe berekeningen uit te voeren.
+      </p>
+      <p>
+        De tool is ontwikkeld door een samenwerkingsverband van verpakkingsproducenten, logistieke dienstverleners en duurzaamheidsorganisaties. Zij zetten zich in om de e-commercesector te helpen bij het maken van keuzes die zowel kosten als milieu ten goede komen. Voor kleine webshops tot grote retailers biedt de tool een uniforme methode om verschillende verpakkingsopties te evalueren.
+      </p>
+      <p>
+        De lancering komt op een moment dat consumenten steeds vaker vragen naar duurzamere verzendmethodes. Bedrijven die hierop anticiperen, kunnen hun merkwaarde verhogen en tegelijkertijd voldoen aan strengere wetgeving rondom verpakkingsafval.
+      </p>
+    </>
+  ),
   'spacemit-risc-v-mini-desktop-2026': (
     <>
       <p className="lead-para">
@@ -3319,6 +3332,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'rekentool-helpt-e-commerce-keuze-verpakking':
+    "Voor ondernemers die hun verpakkingsbeleid willen optimaliseren, biedt deze tool een praktische eerste stap naar meer transparantie. Het is echter belangrijk om de uitkomsten niet als absolute waarheid te zien: lokale verschillen in afvalverwerking of transportafstanden kunnen de resultaten beïnvloeden. Een combinatie van meetdata en pragmatische keuzes blijft essentieel.",
   'spacemit-risc-v-mini-desktop-2026':
     "Voor ondernemers die streven naar technologische onafhankelijkheid of duurzaamheid in hun IT-infrastructuur, biedt deze stap richting RISC-V nieuwe keuzemogelijkheden. Toch zal de adoptie sterk afhangen van softwareondersteuning en prijsontwikkeling in de komende jaren. Voor veel MKB-bedrijven blijft x86 waarschijnlijk nog lang de standaardoptie.",
   'google-zero-click-searches-stijgen-naar-68-procent-in-2026':
