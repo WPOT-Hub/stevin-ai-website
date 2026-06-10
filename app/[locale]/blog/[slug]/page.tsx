@@ -1456,6 +1456,13 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spacemit-risc-v-mini-desktop-2026': (
+    <>
+      <p className="lead-para">
+        De Chinese chipmaker SpacemiT heeft een mini-desktop gepresenteerd die draait op de RVA23-architectuur van RISC-V. Volgens testers presteert de machine voldoende voor kantoortaken en licht multitasken, aldus The Register. De prijs ligt echter ver boven gangbare x86-systemen van vergelijkbare specificaties.
+      </p>
+    </>
+  ),
   'google-zero-click-searches-stijgen-naar-68-procent-in-2026': (
     <>
       <p className="lead-para">
@@ -3312,6 +3319,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spacemit-risc-v-mini-desktop-2026':
+    "Voor ondernemers die streven naar technologische onafhankelijkheid of duurzaamheid in hun IT-infrastructuur, biedt deze stap richting RISC-V nieuwe keuzemogelijkheden. Toch zal de adoptie sterk afhangen van softwareondersteuning en prijsontwikkeling in de komende jaren. Voor veel MKB-bedrijven blijft x86 waarschijnlijk nog lang de standaardoptie.",
   'google-zero-click-searches-stijgen-naar-68-procent-in-2026':
     "Voor bedrijven die afhankelijk zijn van online zichtbaarheid is dit een wake-up call om hun strategie aan te passen. Investeer niet alleen in SEO, maar ook in merkbekendheid buiten Google, zoals via social media of direct verkeer. Daarnaast wordt het belang van een sterke eigen digitale aanwezigheid – zoals een goed functionerende website of app – steeds groter. Dit omdat gebruikers minder snel externe links volgen.",
   'ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc':
