@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'tech-industrie-krijgt-mangos-in-plaats-van-faang': (
+    <>
+      <p className="lead-para">
+        SpaceX, Anthropic en OpenAI staan op het punt om met grote beursdebuten te komen, wat de techindustrie een nieuwe generatie machtige spelers geeft. Deze bedrijven vertegenwoordigen een verschuiving naar sectoren zoals ruimtevaart, kunstmatige intelligentie en geavanceerde technologie. De komende jaren zullen hun impact op markten en consumenten toenemen, aldus analisten.
+      </p>
+      <p>
+        Deze ontwikkelingen doen de traditionele FAANG-groep (Meta, Apple, Netflix, Google en Amazon) verouderd lijken. MANGOS staat voor Microsoft, Anthropic, Nvidia, Google (via DeepMind), OpenAI en SpaceX. De focus ligt nu op innovatie in AI en ruimtevaarttechnologie.
+      </p>
+      <p>
+        Investeerders bereiden zich voor op de volatiliteit die dergelijke debuten met zich meebrengen. De groei van deze bedrijven kan leiden tot nieuwe economische dynamieken en concurrentiepatronen in de techsector.
+      </p>
+    </>
+  ),
   'starlink-verhoogt-kosten-hardware-en-service': (
     <>
       <p className="lead-para">
@@ -3273,6 +3286,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'tech-industrie-krijgt-mangos-in-plaats-van-faang':
+    "Voor ondernemers betekent deze verschuiving dat ze zich moeten richten op technologische innovatie om relevant te blijven. De komst van MANGOS toont aan dat alleen bedrijven met sterke fundamenten en duidelijke visies kunnen groeien in een snel veranderend landschap. Het is tijd om te investeren in vaardigheden die aansluiten bij deze nieuwe realiteit.",
   'starlink-verhoogt-kosten-hardware-en-service':
     "Deze stap laat zien hoe technologiebedrijven steeds vaker teruggrijpen op recurrente modellen om klantbinding te versterken. Voor ondernemers kan dit een signaal zijn om kritisch te kijken naar hun eigen prijsstrategieën: recurrente inkomsten bieden stabiliteit, maar kunnen ook klantverlies veroorzaken als concurrenten lagere drempels hanteren. Het benadrukt het belang van transparantie bij prijswijzigingen om vertrouwen te behouden.",
   'van-turing-naar-devotion-hoe-een-nieuwe-lab-de-ai-kaart-in-europa-kan-verleggen':
