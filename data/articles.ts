@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'starlink-verhoogt-kosten-hardware-en-service',
+    format: 'dispatch' as const,
+    edition: '147',
+    category: 'Markt',
+    title: "Starlink voert maandelijkse hardwarekosten in en verhoogt abonnementsprijs",
+    dek: "Starlink introduceert een maandelijkse huur van $10 voor hardware en verhoogt de serviceprijs met $5 tot $10.",
+    publishedAt: '2026-06-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Starlink voert maandelijkse hardwarekosten in en verhoogt abonnementsprijs",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'van-turing-naar-devotion-hoe-een-nieuwe-lab-de-ai-kaart-in-europa-kan-verleggen',
     format: 'dispatch' as const,
     edition: '146',
