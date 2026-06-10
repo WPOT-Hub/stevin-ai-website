@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'starlink-verhoogt-kosten-hardware-en-service': (
+    <>
+      <p className="lead-para">
+        Starlink, het satellietinternet van SpaceX, past zijn prijsmodel aan door een vaste maandelijkse kostenpost te introduceren voor hardware. Klanten betalen voortaan $10 per maand voor het ontvangststation en modem, in plaats van een eenmalige aankoopprijs. Deze verandering geldt zowel voor nieuwe als bestaande abonnees, aldus het bedrijf.
+      </p>
+      <p>
+        Naast de hardwarekosten stijgt ook de maandelijkse serviceprijs met $5. Voor consumenten betekent dit een totale verhoging van minimaal $15 per maand. Zakelijke klanten zien hun kosten met vergelijkbare bedragen stijgen, afhankelijk van het gekozen pakket.
+      </p>
+      <p>
+        De wijziging volgt op eerdere prijsverhogingen en past bij de strategie om recurrente inkomsten te vergroten. Starlink blijft daarmee concurreren met traditionele internetproviders, die al langer werken met maandelijkse kostenmodellen.
+      </p>
+    </>
+  ),
   'van-turing-naar-devotion-hoe-een-nieuwe-lab-de-ai-kaart-in-europa-kan-verleggen': (
     <>
       <p className="lead-para">
@@ -3260,6 +3273,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'starlink-verhoogt-kosten-hardware-en-service':
+    "Deze stap laat zien hoe technologiebedrijven steeds vaker teruggrijpen op recurrente modellen om klantbinding te versterken. Voor ondernemers kan dit een signaal zijn om kritisch te kijken naar hun eigen prijsstrategieën: recurrente inkomsten bieden stabiliteit, maar kunnen ook klantverlies veroorzaken als concurrenten lagere drempels hanteren. Het benadrukt het belang van transparantie bij prijswijzigingen om vertrouwen te behouden.",
   'van-turing-naar-devotion-hoe-een-nieuwe-lab-de-ai-kaart-in-europa-kan-verleggen':
     "Bij Stevin zien we deze verschuiving al jaren aankomen: organisaties die AI nog steeds benaderen als een toolbox voor campagnes missen de kern van wat echt telt – systeemdenken binnen complexe organisaties. Girolami’s vertrek naar Devotion Labs bevestigt onze overtuiging dat succesvolle AI-implementatie begint bij het herdefiniëren van hoe technologie wordt ingezet binnen bestaande processen. Wij helpen klanten niet alleen met data-driven oplossingen, maar met het ontwerpen van systemen waarin technologie organisch past bij menselijke workflows en strategische doelen. Dat vraagt om meer dan algoritmes; het vraagt om organisatorische wendbaarheid en een cultuur waarin experimenteren centraal staat.",
   'rivian-r2-marktintroductie-2027':
