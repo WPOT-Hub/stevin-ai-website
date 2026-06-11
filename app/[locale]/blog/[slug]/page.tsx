@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'drone-leveringen-wing-uitbreiding-walmart': (
+    <>
+      <p className="lead-para">
+        De droneleverancier Wing breidt zijn samenwerking met Walmart uit naar zeven nieuwe steden in de VS. Vanaf komende maand kunnen klanten in onder meer Dallas, Houston en Atlanta bestellingen laten bezorgen door drones. De leveringen vinden plaats binnen een straal van ongeveer 10 kilometer rond de winkels.
+      </p>
+      <p>
+        De uitbreiding volgt op eerdere pilots in kleinere steden, waar Wing al meer dan een miljoen leveringen heeft verzorgd. Walmart zet hiermee een stap verder in de automatisering van zijn logistiek en hoopt zo de levertijden voor kleine bestellingen te verkorten. Klanten ontvangen hun pakketje binnen 30 minuten na bestelling.
+      </p>
+      <p>
+        De drones van Wing vliegen op lage hoogte en zijn uitgerust met sensoren om obstakels te detecteren. Volgens het bedrijf is de technologie veilig en betrouwbaar gebleken tijdens eerdere testperiodes. Walmart ziet dit als een manier om concurrentievoordeel te behalen ten opzichte van andere retailers die nog afhankelijk zijn van traditionele bezorgdiensten.
+      </p>
+    </>
+  ),
   'rekentool-helpt-e-commerce-keuze-verpakking': (
     <>
       <p className="lead-para">
@@ -3332,6 +3345,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'drone-leveringen-wing-uitbreiding-walmart':
+    "Voor bedrijven die actief zijn in e-commerce of fysieke retail kan deze ontwikkeling een signaal zijn dat droneleveringen binnenkort mainstream worden. Het is verstandig om te onderzoeken hoe deze technologie past bij de eigen logistieke strategieën, zeker als je werkt met kleine, snelle leveringen. De kosten en schaalbaarheid zullen voor veel organisaties nog een drempel vormen, maar wie nu al nadenkt over innovatie, kan mogelijk als eerste profiteren.",
   'rekentool-helpt-e-commerce-keuze-verpakking':
     "Voor ondernemers die hun verpakkingsbeleid willen optimaliseren, biedt deze tool een praktische eerste stap naar meer transparantie. Het is echter belangrijk om de uitkomsten niet als absolute waarheid te zien: lokale verschillen in afvalverwerking of transportafstanden kunnen de resultaten beïnvloeden. Een combinatie van meetdata en pragmatische keuzes blijft essentieel.",
   'spacemit-risc-v-mini-desktop-2026':
