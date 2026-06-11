@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'bluesky-lanceert-communities-voor-gedeelde-interesses',
+    format: 'dispatch' as const,
+    edition: '163',
+    category: 'Platform',
+    title: "Bluesky introduceert groepen om gerichter te discussiëren",
+    dek: "Bluesky voegt binnenkort ‘communities’ toe: gesloten ruimtes voor specifieke onderwerpen, gebaseerd op het AT Protocol.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Bluesky introduceert groepen om gerichter te discussiëren",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'iranese-drone-stort-25-miljoen-helicopter',
     format: 'dispatch' as const,
     edition: '162',
