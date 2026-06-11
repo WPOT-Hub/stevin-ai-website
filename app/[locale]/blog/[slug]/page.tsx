@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'informer-money-genomineerd-voor-best-fintech-startup-belgie': (
+    <>
+      <p className="lead-para">
+        De Nederlandse Informer Group staat met zijn Belgische dochter Informer Money op de shortlist voor Best FinTech Startup of the Year bij de Digital Finance Awards Belgium 2026. De nominatie benadrukt de groeiambities van het bedrijf in België, waar het ondernemers en accountants ondersteunt bij geïntegreerd bankieren, e-facturatie en boekhoudsoftware.
+      </p>
+      <p>
+        Informer Money combineert financiële dienstverlening met automatisering, zodat gebruikers facturen direct kunnen verwerken, betalingen kunnen volgen en boekhoudkundige overzichten realtime beschikbaar hebben. Volgens de organisatie past deze aanpak bij de toenemende vraag naar efficiënte financiële workflows in Belgische kmo’s.
+      </p>
+      <p>
+        De winnaar wordt bekendgemaakt tijdens de awardsceremonie in oktober 2026. Voor Informer Group is deze nominatie een erkenning van hun groeiende aanwezigheid buiten Nederland.
+      </p>
+    </>
+  ),
   'jedify-24-miljoen-voor-ai-agent-context': (
     <>
       <p className="lead-para">
@@ -3358,6 +3371,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'informer-money-genomineerd-voor-best-fintech-startup-belgie':
+    "Voor Nederlandse ondernemers met internationale ambities toont deze nominatie hoe gespecialiseerde fintech-oplossingen zich snel kunnen verspreiden over landsgrenzen. Het benadrukt ook het belang van lokale aanpassingen: een product dat in Nederland werkt, moet elders niet zomaar overeenkomen met marktbehoeften. Voor bureaus die klanten begeleiden bij digitalisering biedt dit een voorbeeld van hoe fintech-partnerschappen nieuwe diensten mogelijk maken.",
   'jedify-24-miljoen-voor-ai-agent-context':
     "Voor bedrijven die nu worstelen met de balans tussen AI-adoptie en databeveiliging biedt dit een praktische tussenoplossing. Het laat zien dat er steeds meer gespecialiseerde tools komen die specifieke knelpunten wegnemen. Tegelijkertijd onderstreept het de groeiende vraag naar oplossingen die compliantie combineren met innovatie.",
   'drone-leveringen-wing-uitbreiding-walmart':
