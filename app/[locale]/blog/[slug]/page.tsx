@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'jedify-24-miljoen-voor-ai-agent-context': (
+    <>
+      <p className="lead-para">
+        Het bedrijf JEDIFY, met vestigingen in Nederland en de VS, heeft een Series A-rondje van 24 miljoen dollar opgehaald. De investering wordt geleid door Norwest Venture Partners, met medefinanciers zoals S Capital VC, Cerca Partners en Oceans Ventures. Snowflake Ventures participeert als strategische investeerder.
+      </p>
+      <p>
+        JEDIFY bouwt software die bedrijven helpt om hun eigen data veilig te ontsluiten voor AI-assistenten. Met tools zoals chatbots of automatische workflows kunnen organisaties interne documenten, klantgegevens of procesinformatie integreren zonder dat deze buiten het bedrijf terechtkomen. Dit moet leiden tot betere beslissingen en efficiëntere automatisering.
+      </p>
+      <p>
+        De oplossing richt zich op bedrijven die AI willen inzetten maar terughoudend zijn vanwege privacy of compliance-eisen. Door data lokaal te houden en alleen relevante context te delen, hoeven organisaties niet alles openbaar te maken voor externe AI-modellen.
+      </p>
+    </>
+  ),
   'drone-leveringen-wing-uitbreiding-walmart': (
     <>
       <p className="lead-para">
@@ -3345,6 +3358,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'jedify-24-miljoen-voor-ai-agent-context':
+    "Voor bedrijven die nu worstelen met de balans tussen AI-adoptie en databeveiliging biedt dit een praktische tussenoplossing. Het laat zien dat er steeds meer gespecialiseerde tools komen die specifieke knelpunten wegnemen. Tegelijkertijd onderstreept het de groeiende vraag naar oplossingen die compliantie combineren met innovatie.",
   'drone-leveringen-wing-uitbreiding-walmart':
     "Voor bedrijven die actief zijn in e-commerce of fysieke retail kan deze ontwikkeling een signaal zijn dat droneleveringen binnenkort mainstream worden. Het is verstandig om te onderzoeken hoe deze technologie past bij de eigen logistieke strategieën, zeker als je werkt met kleine, snelle leveringen. De kosten en schaalbaarheid zullen voor veel organisaties nog een drempel vormen, maar wie nu al nadenkt over innovatie, kan mogelijk als eerste profiteren.",
   'rekentool-helpt-e-commerce-keuze-verpakking':
