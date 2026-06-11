@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-overname-aecom-consigli-bouwsector-scherp': (
+    <>
+      <p className="lead-para">
+        Met de overname van Consigli zet AECOM een forse stap in de integratie van kunstmatige intelligentie in grote bouwprojecten. Het bedrijf betaalde een recordbedrag voor een zes jaar oude startup, wat volgens waarnemers een duidelijk signaal geeft aan de sector: AI is geen experiment meer maar een noodzaak. De deal benadrukt dat traditionele bouwbedrijven hun digitale strategie moeten versnellen om concurrerend te blijven.
+      </p>
+      <p>
+        De overname leidde tot discussies tussen Nederlandse en Belgische bouwbedrijven, architecten en ingenieursbureaus over hoe zij zelf AI kunnen inzetten. Bram Mommers, Arjen Adriaanse en Alison Jones publiceerden een paper waarin ze pleiten voor een gestructureerde aanpak, gericht op praktische toepassingen zoals projectplanning en risicobeheersing. Hun visie werd breed gedeeld binnen bestuurskamers van grote spelers in de sector.
+      </p>
+      <p>
+        Ook kleinere partijen voelen de druk om mee te bewegen. De vraag is niet meer óf AI ingezet moet worden, maar hoe snel en op welke schaal. Experts wijzen erop dat bedrijven die nu niet investeren in kennis en technologie achter kunnen raken bij internationale concurrenten zoals AECOM.
+      </p>
+    </>
+  ),
   'deezer-lanceert-ai-muziekdetector-voor-andere-streamingdiensten': (
     <>
       <p className="lead-para">
@@ -3456,6 +3469,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-overname-aecom-consigli-bouwsector-scherp':
+    "Voor Nederlandse en Belgische bouwbedrijven betekent deze overname vooral één ding: actie ondernemen voordat het te laat is. Het is geen kwestie van of je AI nodig hebt, maar wanneer je ermee begint. Begin klein met concrete toepassingen die direct meetbare voordelen opleveren, zoals tijdsbesparing of lagere kosten. Bouw daarnaast samenwerking op met gespecialiseerde partijen om kennis op te doen zonder zelf het wiel uit te vinden.",
   'deezer-lanceert-ai-muziekdetector-voor-andere-streamingdiensten':
     "Voor bedrijven die afhankelijk zijn van muziekstreaming voor marketing of klantbinding wordt het belangrijker om transparantie te bieden over de herkomst van content. AI-gemaakte muziek kan de authenticiteit van merken aantasten, zeker als het ongemerkt in playlists belandt. Een proactieve aanpak met detectietools helpt om risico’s op reputatieschade te beperken.",
   'bluesky-lanceert-communities-voor-gedeelde-interesses':
