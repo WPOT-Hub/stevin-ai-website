@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'waymo-ontwikkelt-model-voor-menselijk-gedrag-in-botsingen',
+    format: 'dispatch' as const,
+    edition: '166',
+    category: 'Tech',
+    title: "Waymo creëert model voor betere vergelijking robottaxi’s met menselijke bestuurders",
+    dek: "Waymo introduceert een nieuw computeralgoritme dat menselijk rijgedrag in botsingscenario’s simuleert om de veiligheid van robottaxi’s te testen.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Waymo creëert model voor betere vergelijking robottaxi’s met menselijke bestuurders",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-overname-aecom-consigli-bouwsector-scherp',
     format: 'dispatch' as const,
     edition: '165',
