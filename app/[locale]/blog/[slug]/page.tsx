@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'enterprise-ai-centraal-op-vivatech-2026': (
+    <>
+      <p className="lead-para">
+        De komende editie van VivaTech in Parijs zet enterprise AI vol in de schijnwerpers. Terwijl techbedrijven in Silicon Valley blijven investeren in consumentengerichte AI-toepassingen, ligt de focus van Europese spelers op het integreren van kunstmatige intelligentie in bestaande bedrijfsprocessen. Denk aan supply chain-optimalisatie, klantenservice-automatisering of risicomanagement binnen financiële systemen.
+      </p>
+      <p>
+        Experts verwachten dat de beurs vooral innovaties zal tonen die direct bruikbaar zijn voor grote organisaties. Dit past bij de trend waarbij bedrijven zoeken naar meetbare resultaten uit AI-investeringen, zoals kostenbesparingen of verbeterde operationele efficiëntie. Ook sectoren als gezondheidszorg, logistiek en energie zullen vertegenwoordigd zijn met concrete cases.
+      </p>
+      <p>
+        De aandacht voor enterprise AI komt niet uit de lucht vallen. Europese regelgeving zoals de AI Act dwingt organisaties om na te denken over verantwoorde implementatie van deze technologieën. Tegelijkertijd groeit de vraag naar oplossingen die compliance met lokale wetgeving combineren met concurrentievoordeel.
+      </p>
+    </>
+  ),
   'yang-automatisering-ai-ondernemen-inplaats-van-wachten-op-beleid': (
     <>
       <p className="lead-para">
@@ -3397,6 +3410,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'enterprise-ai-centraal-op-vivatech-2026':
+    "Voor ondernemers en marketeers is dit een signaal dat AI niet langer een experimenteel speeltje is, maar een strategisch instrument dat integratie vereist in bestaande systemen en processen. Het benadrukt het belang van samenwerking tussen techleveranciers en eindgebruikers om oplossingen te ontwikkelen die daadwerkelijk waarde toevoegen. Wie nu al kijkt naar toepassingen binnen eigen organisatie, loopt minder risico om achterop te raken wanneer deze technologieën mainstream worden.",
   'yang-automatisering-ai-ondernemen-inplaats-van-wachten-op-beleid':
     "Voor ondernemers is deze dynamiek herkenbaar: de snelheid van technologische verandering maakt het noodzakelijk om zelf initiatief te nemen. Het laat zien dat bedrijven niet alleen moeten anticiperen op toekomstige uitdagingen, maar ook actief kunnen bijdragen aan oplossingen. Dat vraagt om een cultuur waarin experimenteren en leren centraal staan, los van wat beleid voorschrijft.",
   'nasa-selecteert-bemanningsleden-voor-artemis-iii-maanlander-repetitie':
