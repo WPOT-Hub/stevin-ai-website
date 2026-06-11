@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-overname-aecom-consigli-bouwsector-scherp',
+    format: 'dispatch' as const,
+    edition: '165',
+    category: 'Bouw',
+    title: "AECOM koopt AI-startup voor 390 miljoen: bouwsector moet nu schakelen",
+    dek: "Het Amerikaanse ingenieursbureau AECOM nam de Noorse AI-startup Consigli over voor 390 miljoen dollar, waardoor de bouwsector wereldwijd onder druk staat om serieuzer met AI aan de slag te gaan.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BOUW',
+    posterTopic: "AECOM koopt AI-startup voor 390 miljoen: bouwsector moet nu schakelen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'deezer-lanceert-ai-muziekdetector-voor-andere-streamingdiensten',
     format: 'dispatch' as const,
     edition: '164',
