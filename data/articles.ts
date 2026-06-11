@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'wat-klanten-echt-willen-van-persoonlijke-ai',
+    format: 'dispatch' as const,
+    edition: '167',
+    category: 'Cultuur',
+    title: "Klanten willen een AI-assistent, maar niet als vervanging",
+    dek: "Uit onderzoek blijkt dat consumenten wel gebruikmaken van persoonlijke AI-tools, maar niet willen afhankelijk worden van kunstmatige intelligentie in hun dagelijks leven.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "Klanten willen een AI-assistent, maar niet als vervanging",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'waymo-ontwikkelt-model-voor-menselijk-gedrag-in-botsingen',
     format: 'dispatch' as const,
     edition: '166',
