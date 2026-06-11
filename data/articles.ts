@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'enterprise-ai-centraal-op-vivatech-2026',
+    format: 'dispatch' as const,
+    edition: '159',
+    category: 'Markt',
+    title: "Enterprise AI staat centraal op VivaTech 2026",
+    dek: "Europese bedrijven richten zich op praktische toepassingen van AI in complexe bedrijfssystemen tijdens de aankomende VivaTech-beurs.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Enterprise AI staat centraal op VivaTech 2026",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: '11-ppc-fouten-ontdekt-in-b2b-audits',
     format: 'dispatch' as const,
     edition: '158',
