@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'spacex-ipo-afhankelijk-van-ruimte-data-centers',
+    format: 'dispatch' as const,
+    edition: '160',
+    category: 'Tech',
+    title: "SpaceX IPO draait om ruimte-datacenters",
+    dek: "De waarde van SpaceX in een eventuele beursgang hangt grotendeels af van plannen voor datacenters in de ruimte.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "SpaceX IPO draait om ruimte-datacenters",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'enterprise-ai-centraal-op-vivatech-2026',
     format: 'dispatch' as const,
     edition: '159',
