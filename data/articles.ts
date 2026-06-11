@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'india-blokkeert-starlink-voor-spacex-beursgang',
+    format: 'dispatch' as const,
+    edition: '161',
+    category: 'Markt',
+    title: "India blokkeert Starlink-licentie vlak voor SpaceX IPO",
+    dek: "De Indiase overheid weigerde Starlink een licentie te verlenen, waardoor de groeiplannen van SpaceX voor de IPO in gevaar komen.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "India blokkeert Starlink-licentie vlak voor SpaceX IPO",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spacex-ipo-afhankelijk-van-ruimte-data-centers',
     format: 'dispatch' as const,
     edition: '160',
