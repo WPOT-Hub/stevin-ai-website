@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'india-blokkeert-starlink-voor-spacex-beursgang': (
+    <>
+      <p className="lead-para">
+        India heeft Starlink geen toestemming gegeven om satellietinternet aan te bieden in het land. De licentieaanvraag werd afgewezen vanwege onduidelijkheden over de controle op gebruikersgegevens en lokale regelgeving. SpaceX had juist grote verwachtingen van de Indiase markt als onderdeel van zijn IPO-verhaal.
+      </p>
+      <p>
+        De afwijzing komt op een cruciaal moment, vlak voor de geplande beursgang van SpaceX. De satellietinternetdivisie Starlink vormt een belangrijk onderdeel van de groeiverwachtingen, met name in regio’s waar traditionele internetinfrastructuur ontbreekt. India zou een van de grootste afzetmarkten moeten worden.
+      </p>
+      <p>
+        Analisten wijzen erop dat de beslissing mogelijk te maken heeft met zorgen over nationale veiligheid en data-soevereiniteit. Andere landen zoals China en Rusland hanteren soortgelijke restricties, wat de internationale uitrol van Starlink bemoeilijkt.
+      </p>
+    </>
+  ),
   'spacex-ipo-afhankelijk-van-ruimte-data-centers': (
     <>
       <p className="lead-para">
@@ -3423,6 +3436,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'india-blokkeert-starlink-voor-spacex-beursgang':
+    "Voor bedrijven die afhankelijk zijn van digitale infrastructuur is deze situatie een waarschuwing. Regelgeving kan plotseling veranderen en grote impact hebben op groeistrategieën. Het benadrukt het belang van risicomanagement bij internationale expansie, vooral in markten met strenge lokale eisen. Voor investeerders is dit een reminder dat technologische innovatie niet altijd gelijkstaat aan snelle toegang tot alle markten.",
   'spacex-ipo-afhankelijk-van-ruimte-data-centers':
     "Voor bedrijven die afhankelijk zijn van data-intensieve processen kan dit nieuws interessant zijn als indicator voor toekomstige infrastructuurkeuzes. Ruimtelijke datacenters bieden mogelijkheden voor snellere en betrouwbaardere digitale diensten, maar de praktische implementatie blijft nog jaren ver weg. Ondernemers doen er goed aan deze ontwikkelingen te volgen, zeker als hun activiteiten vragen om lage latentie of hoge beschikbaarheid.",
   'enterprise-ai-centraal-op-vivatech-2026':
