@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'droneboot-redt-neergestorte-helicopterpiloten-eerste-zee-reddingsactie',
+    format: 'dispatch' as const,
+    edition: '168',
+    category: 'Tech',
+    title: "Droneboot redt voor het eerst neergestorte helikopterpiloten op zee",
+    dek: "De Amerikaanse marine redde drie neergestorte helikopterpiloten met een onbemand schip bij de Straat van Hormuz.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Droneboot redt voor het eerst neergestorte helikopterpiloten op zee",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'wat-klanten-echt-willen-van-persoonlijke-ai',
     format: 'dispatch' as const,
     edition: '167',
