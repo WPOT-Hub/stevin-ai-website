@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'drone-leveringen-wing-uitbreiding-walmart',
+    format: 'dispatch' as const,
+    edition: '153',
+    category: 'Distributie',
+    title: "Wing breidt drone-leveringen uit met Walmart in zeven nieuwe Amerikaanse steden",
+    dek: "Wing, onderdeel van Alphabet, start binnenkort met drone-leveringen via Walmart in zeven Amerikaanse steden.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "Wing breidt drone-leveringen uit met Walmart in zeven nieuwe Amerikaanse steden",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spacemit-risc-v-mini-desktop-2026',
     format: 'dispatch' as const,
     edition: '152',
