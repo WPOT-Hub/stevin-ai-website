@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'apple-ios-27-automatische-wachtwoordvervanging': (
+    <>
+      <p className="lead-para">
+        In de aankomende iOS 27-update introduceert Apple een nieuwe functie die gecompromitteerde wachtwoorden direct vervangt door sterke, unieke alternatieven. De vervanging gebeurt automatisch zodra het systeem een beveiligingsrisico detecteert, zonder dat gebruikers handmatig actie hoeven te ondernemen.
+      </p>
+      <p>
+        De functie werkt via de ingebouwde wachtwoordmanager en is gekoppeld aan het controlepaneel voor beveiligingswaarschuwingen. Gebruikers krijgen een melding wanneer er wijzigingen plaatsvinden, maar de daadwerkelijke vervanging verloopt achter de schermen. Apple claimt dat deze aanpak de beveiliging aanzienlijk verbetert zonder extra handelingen van de gebruiker te vereisen.
+      </p>
+      <p>
+        De update sluit aan bij eerdere initiatieven zoals automatische tweefactor-authenticatie en wachtwoordgeneratie. Analisten zien dit als een praktische toepassing van AI in consumententechnologie, gericht op alledaagse problemen zoals hergebruikte of zwakke wachtwoorden.
+      </p>
+    </>
+  ),
   'droneboot-redt-neergestorte-helicopterpiloten-eerste-zee-reddingsactie': (
     <>
       <p className="lead-para">
@@ -3495,6 +3508,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'apple-ios-27-automatische-wachtwoordvervanging':
+    "Voor bedrijven die veel afhankelijk zijn van Apple-apparaten kan deze update helpen om interne beveiligingsrisico's te verminderen. Het automatiseren van wachtwoordbeheer neemt echter niet weg dat organisaties zelf nog steeds beleid moeten instellen voor wachtwoordcomplexiteit en regelmatige updates. Een hybride aanpak blijft daarom essentieel.",
   'droneboot-redt-neergestorte-helicopterpiloten-eerste-zee-reddingsactie':
     "Voor bedrijven die opereren in risicovolle omgevingen of logistieke uitdagingen hebben, laat deze ontwikkeling zien hoe autonome systemen menselijk ingrijpen kunnen aanvullen of zelfs vervangen. Het illustreert dat technologie niet alleen efficiëntie verhoogt, maar ook nieuwe oplossingen biedt voor problemen waar traditionele methoden tekortschieten. Voor ondernemers die actief zijn in sectoren als maritieme logistiek of offshore-activiteiten kan dit een aanzet zijn om na te denken over innovatieve toepassingen van autonome tools.",
   'wat-klanten-echt-willen-van-persoonlijke-ai':
