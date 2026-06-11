@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'yang-automatisering-ai-ondernemen-inplaats-van-wachten-op-beleid',
+    format: 'dispatch' as const,
+    edition: '157',
+    category: 'Werk',
+    title: "Automatisering en AI: ondernemers kiezen voor actie in plaats van wachten op beleid",
+    dek: "Ondernemers zoals Andrew Yang zetten nu concrete stappen om de gevolgen van automatisering en AI op te vangen, terwijl beleidsmakers nog discussiëren.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'WERK',
+    posterTopic: "Automatisering en AI: ondernemers kiezen voor actie in plaats van wachten op beleid",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'nasa-selecteert-bemanningsleden-voor-artemis-iii-maanlander-repetitie',
     format: 'dispatch' as const,
     edition: '156',
