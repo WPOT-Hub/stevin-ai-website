@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'yang-automatisering-ai-ondernemen-inplaats-van-wachten-op-beleid': (
+    <>
+      <p className="lead-para">
+        Andrew Yang waarschuwde al in 2020 voor de impact van automatisering en kunstmatige intelligentie op de arbeidsmarkt. Zijn pleidooi voor een universeel basisinkomen leek toen radicaal, maar inmiddels sluiten ook techleiders als Sam Altman en politieke figuren als Bernie Sanders zich bij dat standpunt aan.
+      </p>
+      <p>
+        Nu zien we een verschuiving: waar beleidsmakers nog debatteren over regelgeving en compensatiemechanismen, kiezen ondernemers ervoor om zelf oplossingen te ontwikkelen. Yang richt zich bijvoorbeeld op het stimuleren van nieuwe sectoren en vaardigheden die AI niet kan overnemen.
+      </p>
+      <p>
+        Deze aanpak past bij een bredere trend waarin bedrijven proactief investeren in menselijke vaardigheden en innovatie, in plaats van af te wachten tot overheden met oplossingen komen.
+      </p>
+    </>
+  ),
   'nasa-selecteert-bemanningsleden-voor-artemis-iii-maanlander-repetitie': (
     <>
       <p className="lead-para">
@@ -3384,6 +3397,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'yang-automatisering-ai-ondernemen-inplaats-van-wachten-op-beleid':
+    "Voor ondernemers is deze dynamiek herkenbaar: de snelheid van technologische verandering maakt het noodzakelijk om zelf initiatief te nemen. Het laat zien dat bedrijven niet alleen moeten anticiperen op toekomstige uitdagingen, maar ook actief kunnen bijdragen aan oplossingen. Dat vraagt om een cultuur waarin experimenteren en leren centraal staan, los van wat beleid voorschrijft.",
   'nasa-selecteert-bemanningsleden-voor-artemis-iii-maanlander-repetitie':
     "Voor bedrijven die afhankelijk zijn van technologische doorbraken, zoals ruimtevaart of innovatieve productontwikkeling, toont dit aan hoe belangrijk realistische planning is. Vertragingen zijn niet uitzonderlijk, maar kunnen grote gevolgen hebben voor deadlines en investeringen. Het is verstandig om marges in te bouwen voor onvoorziene omstandigheden.",
   'informer-money-genomineerd-voor-best-fintech-startup-belgie':
