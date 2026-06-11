@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'droneboot-redt-neergestorte-helicopterpiloten-eerste-zee-reddingsactie': (
+    <>
+      <p className="lead-para">
+        De Amerikaanse marine meldt dat Task Force 59 voor het eerst in de geschiedenis drie helikopterpiloten redde met een autonome droneboot. Het incident vond plaats bij de Straat van Hormuz, waar de helikopter neerstortte tijdens een trainingsmissie. De droneboot lokaliseerde de drenkelingen en transporteerde hen veilig naar een nabijgelegen fregat. Dit markeert een doorbraak in reddingsoperaties op zee, aldus het Amerikaanse ministerie van Defensie.
+      </p>
+      <p>
+        De redding toont aan dat autonome systemen kunnen bijspringen in gevaarlijke situaties waar bemande schepen te laat arriveren. De droneboot werkte samen met bemande reddingsschepen en vliegtuigen om de operatie tot een goed einde te brengen. Experts zien dit als een voorproefje van toekomstige reddingsmissies, waarbij technologie menselijke beperkingen overstijgt.
+      </p>
+      <p>
+        De piloten waren ongedeerd na de landing in het water. De Amerikaanse marine benadrukt dat deze technologie niet alleen tijd bespaart, maar ook risico’s voor reddingsteams vermindert. Verdere tests zijn gepland om de inzetbaarheid van dergelijke systemen uit te breiden.
+      </p>
+    </>
+  ),
   'wat-klanten-echt-willen-van-persoonlijke-ai': (
     <>
       <p className="lead-para">
@@ -3482,6 +3495,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'droneboot-redt-neergestorte-helicopterpiloten-eerste-zee-reddingsactie':
+    "Voor bedrijven die opereren in risicovolle omgevingen of logistieke uitdagingen hebben, laat deze ontwikkeling zien hoe autonome systemen menselijk ingrijpen kunnen aanvullen of zelfs vervangen. Het illustreert dat technologie niet alleen efficiëntie verhoogt, maar ook nieuwe oplossingen biedt voor problemen waar traditionele methoden tekortschieten. Voor ondernemers die actief zijn in sectoren als maritieme logistiek of offshore-activiteiten kan dit een aanzet zijn om na te denken over innovatieve toepassingen van autonome tools.",
   'wat-klanten-echt-willen-van-persoonlijke-ai':
     "Voor ondernemers is dit een belangrijke les: technologie moet mensen dienen, niet vervangen. Bedrijven die AI-implementaties overwegen, doen er goed aan om eerst te onderzoeken waar klanten écht behoefte aan hebben. Een te sterke focus op automatisering kan leiden tot onbedoelde gevolgen, zoals verminderde klantloyaliteit of juist meer vragen naar menselijke support.",
   'ai-overname-aecom-consigli-bouwsector-scherp':
