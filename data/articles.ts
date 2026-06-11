@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'apple-ios-27-automatische-wachtwoordvervanging',
+    format: 'dispatch' as const,
+    edition: '169',
+    category: 'Tech',
+    title: "Apple voegt één-tik-wachtwoordvervanging toe in iOS 27",
+    dek: "Gebruikers van iOS 27 kunnen met één tik alle gecompromitteerde wachtwoorden automatisch laten vervangen door nieuwe, veilige varianten.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Apple voegt één-tik-wachtwoordvervanging toe in iOS 27",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'droneboot-redt-neergestorte-helicopterpiloten-eerste-zee-reddingsactie',
     format: 'dispatch' as const,
     edition: '168',
