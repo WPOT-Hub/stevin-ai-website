@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'jedify-24-miljoen-voor-ai-agent-context',
+    format: 'dispatch' as const,
+    edition: '154',
+    category: 'Agents',
+    title: "JEDIFY haalt 24 miljoen dollar op voor AI-assistenten met bedrijfsspecifieke kennis",
+    dek: "De scale-up uit Nederland en de VS ontwikkelt software die interne bedrijfsdata veilig koppelt aan AI-tools.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'AGENTS',
+    posterTopic: "JEDIFY haalt 24 miljoen dollar op voor AI-assistenten met bedrijfsspecifieke kennis",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'drone-leveringen-wing-uitbreiding-walmart',
     format: 'dispatch' as const,
     edition: '153',
