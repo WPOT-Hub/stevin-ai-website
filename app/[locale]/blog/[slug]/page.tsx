@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'deezer-lanceert-ai-muziekdetector-voor-andere-streamingdiensten': (
+    <>
+      <p className="lead-para">
+        Gebruikers van Deezer kunnen vanaf nu hun playlists op andere streamingdiensten laten scannen op AI-gemaakte muziek. De tool werkt via een browser-extensie en geeft direct aan welke nummers mogelijk door kunstmatige intelligentie zijn gegenereerd.
+      </p>
+      <p>
+        Deezer was al eerder begonnen met het labelen van AI-muziek in eigen catalogus, maar breidt de detectie nu uit naar externe bronnen. Het bedrijf bood de technologie eerder aan andere platforms aan, maar zonder veel succes. Alleen Qobuz lanceerde zelf een vergelijkbare oplossing.
+      </p>
+      <p>
+        Apple en Spotify hebben nog geen eigen detectiesysteem geïmplementeerd, ondanks dat ze dit eerder aangekondigd hadden. Gebruikers blijven dus afhankelijk van dergelijke tools om ongewenste AI-content te filteren in hun streams.
+      </p>
+    </>
+  ),
   'bluesky-lanceert-communities-voor-gedeelde-interesses': (
     <>
       <p className="lead-para">
@@ -3443,6 +3456,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'deezer-lanceert-ai-muziekdetector-voor-andere-streamingdiensten':
+    "Voor bedrijven die afhankelijk zijn van muziekstreaming voor marketing of klantbinding wordt het belangrijker om transparantie te bieden over de herkomst van content. AI-gemaakte muziek kan de authenticiteit van merken aantasten, zeker als het ongemerkt in playlists belandt. Een proactieve aanpak met detectietools helpt om risico’s op reputatieschade te beperken.",
   'bluesky-lanceert-communities-voor-gedeelde-interesses':
     "Voor merken en bureaus biedt deze ontwikkeling nieuwe kansen om niche doelgroepen te bereiken via gerichte communities. Het is een logische stap in de trend naar meer privacy en controle voor gebruikers, wat ook invloed heeft op hoe content wordt gedeeld en ontvangen. Bedrijven die nu al actief zijn op sociale media doen er goed aan om na te denken over hun strategie voor dergelijke gesloten ruimtes.",
   'india-blokkeert-starlink-voor-spacex-beursgang':
