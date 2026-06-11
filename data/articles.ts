@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'iranese-drone-stort-25-miljoen-helicopter',
+    format: 'dispatch' as const,
+    edition: '162',
+    category: 'Defensie | Technologie',
+    title: "Goedkope Iraanse drone raakt Amerikaanse helikopter van 25 miljoen dollar",
+    dek: "Een Iraanse drone met beperkte middelen raakte een Amerikaanse Black Hawk-helikopter, mogelijk per ongeluk.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DEFENSIE | TECHNOLOGIE',
+    posterTopic: "Goedkope Iraanse drone raakt Amerikaanse helikopter van 25 miljoen dollar",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'india-blokkeert-starlink-voor-spacex-beursgang',
     format: 'dispatch' as const,
     edition: '161',
