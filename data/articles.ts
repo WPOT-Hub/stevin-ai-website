@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: '11-ppc-fouten-ontdekt-in-b2b-audits',
+    format: 'dispatch' as const,
+    edition: '158',
+    category: 'Platform',
+    title: "Elf veelvoorkomende PPC-fouten kosten B2B-bedrijven geld en leads",
+    dek: "Uit recent onderzoek blijken gebreken in conversietracking, automatisering en targeting tot structurele budgetverspilling te leiden in B2B-PPC campagnes.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Elf veelvoorkomende PPC-fouten kosten B2B-bedrijven geld en leads",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'yang-automatisering-ai-ondernemen-inplaats-van-wachten-op-beleid',
     format: 'dispatch' as const,
     edition: '157',
