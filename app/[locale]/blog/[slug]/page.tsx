@@ -1456,6 +1456,13 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'bluesky-lanceert-communities-voor-gedeelde-interesses': (
+    <>
+      <p className="lead-para">
+        Gebruikers van Bluesky krijgen binnenkort de mogelijkheid om gesloten groepen aan te maken rond specifieke thema’s. Deze ‘communities’ moeten diepere discussies en betere interactie met gelijkgestemden mogelijk maken. Volgens Alex Benzer, hoofd product bij Bluesky, bieden ze een alternatief voor de brede, open feeds die nu gangbaar zijn op sociale platforms. De implementatie gebeurt via het decentralized AT Protocol, dat ook de basis vormt voor Bluesky zelf. Benzer noemt het een manier om de ‘sfeer’ van traditionele forums terug te brengen in een modern sociaal netwerk.
+      </p>
+    </>
+  ),
   'india-blokkeert-starlink-voor-spacex-beursgang': (
     <>
       <p className="lead-para">
@@ -3436,6 +3443,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'bluesky-lanceert-communities-voor-gedeelde-interesses':
+    "Voor merken en bureaus biedt deze ontwikkeling nieuwe kansen om niche doelgroepen te bereiken via gerichte communities. Het is een logische stap in de trend naar meer privacy en controle voor gebruikers, wat ook invloed heeft op hoe content wordt gedeeld en ontvangen. Bedrijven die nu al actief zijn op sociale media doen er goed aan om na te denken over hun strategie voor dergelijke gesloten ruimtes.",
   'india-blokkeert-starlink-voor-spacex-beursgang':
     "Voor bedrijven die afhankelijk zijn van digitale infrastructuur is deze situatie een waarschuwing. Regelgeving kan plotseling veranderen en grote impact hebben op groeistrategieën. Het benadrukt het belang van risicomanagement bij internationale expansie, vooral in markten met strenge lokale eisen. Voor investeerders is dit een reminder dat technologische innovatie niet altijd gelijkstaat aan snelle toegang tot alle markten.",
   'spacex-ipo-afhankelijk-van-ruimte-data-centers':
