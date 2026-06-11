@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'nasa-selecteert-bemanningsleden-voor-artemis-iii-maanlander-repetitie',
+    format: 'dispatch' as const,
+    edition: '156',
+    category: 'Tech',
+    title: "NASA kiest bemanning voor maanlander-repetitie Artemis III",
+    dek: "De Amerikaanse ruimtevaartorganisatie NASA heeft de bemanning bekendgemaakt die in 2027 een testvlucht maakt met de maanlander voor de Artemis III-missie.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "NASA kiest bemanning voor maanlander-repetitie Artemis III",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'informer-money-genomineerd-voor-best-fintech-startup-belgie',
     format: 'dispatch' as const,
     edition: '155',
