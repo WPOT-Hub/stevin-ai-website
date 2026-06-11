@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'wat-klanten-echt-willen-van-persoonlijke-ai': (
+    <>
+      <p className="lead-para">
+        Een groeiend aantal consumenten gebruikt dagelijks persoonlijke AI-assistenten zoals Siri of Google Assistant, aldus een recent TechCrunch-artikel. De tools helpen bij routinematige taken zoals wekker zetten of het opzoeken van informatie. Toch blijkt uit de ervaringen van gebruikers dat ze geen behoefte hebben aan een volledige vervanging van menselijke interactie.
+      </p>
+      <p>
+        Veel respondenten geven aan dat ze de assistent vooral waarderen voor praktische ondersteuning, zoals het plannen van afspraken of het beantwoorden van simpele vragen. Tegelijkertijd benadrukken ze dat ze niet willen dat AI hun beslissingen volledig overneemt. Menselijke controle en eigen verantwoordelijkheid blijven belangrijk.
+      </p>
+      <p>
+        De vraag rijst of bedrijven die AI-oplossingen ontwikkelen hier rekening mee houden. De verwachting is dat klanten vooral zoeken naar tools die hun leven makkelijker maken zonder hen te isoleren van sociale interacties.
+      </p>
+    </>
+  ),
   'ai-overname-aecom-consigli-bouwsector-scherp': (
     <>
       <p className="lead-para">
@@ -3469,6 +3482,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'wat-klanten-echt-willen-van-persoonlijke-ai':
+    "Voor ondernemers is dit een belangrijke les: technologie moet mensen dienen, niet vervangen. Bedrijven die AI-implementaties overwegen, doen er goed aan om eerst te onderzoeken waar klanten écht behoefte aan hebben. Een te sterke focus op automatisering kan leiden tot onbedoelde gevolgen, zoals verminderde klantloyaliteit of juist meer vragen naar menselijke support.",
   'ai-overname-aecom-consigli-bouwsector-scherp':
     "Voor Nederlandse en Belgische bouwbedrijven betekent deze overname vooral één ding: actie ondernemen voordat het te laat is. Het is geen kwestie van of je AI nodig hebt, maar wanneer je ermee begint. Begin klein met concrete toepassingen die direct meetbare voordelen opleveren, zoals tijdsbesparing of lagere kosten. Bouw daarnaast samenwerking op met gespecialiseerde partijen om kennis op te doen zonder zelf het wiel uit te vinden.",
   'deezer-lanceert-ai-muziekdetector-voor-andere-streamingdiensten':
