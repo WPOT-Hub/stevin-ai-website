@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'nasa-selecteert-bemanningsleden-voor-artemis-iii-maanlander-repetitie': (
+    <>
+      <p className="lead-para">
+        De vier geselecteerde astronauten oefenen in een nagebouwde omgeving met de nieuwe maanlander, aldus NASA. Het doel is om ervaring op te doen met het landen en opstijgen van het voertuig op het maanoppervlak. De missie moet de weg vrijmaken voor de eerste bemande landing sinds Apollo 17 in 1972.
+      </p>
+      <p>
+        Of de maanlander daadwerkelijk in staat is om volgens schema te vliegen, blijft onzeker. Verschillende technische uitdagingen en vertragingen hebben eerdere plannen al onder druk gezet. Experts wijzen op de complexiteit van het ontwerp en de strenge veiligheidseisen.
+      </p>
+      <p>
+        De repetitie staat gepland voor eind 2027, maar NASA heeft nog geen bevestiging gegeven of deze datum haalbaar is. De organisatie benadrukt dat veiligheid voorop staat, zelfs als dat betekent dat de missie later plaatsvindt.
+      </p>
+    </>
+  ),
   'informer-money-genomineerd-voor-best-fintech-startup-belgie': (
     <>
       <p className="lead-para">
@@ -3371,6 +3384,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'nasa-selecteert-bemanningsleden-voor-artemis-iii-maanlander-repetitie':
+    "Voor bedrijven die afhankelijk zijn van technologische doorbraken, zoals ruimtevaart of innovatieve productontwikkeling, toont dit aan hoe belangrijk realistische planning is. Vertragingen zijn niet uitzonderlijk, maar kunnen grote gevolgen hebben voor deadlines en investeringen. Het is verstandig om marges in te bouwen voor onvoorziene omstandigheden.",
   'informer-money-genomineerd-voor-best-fintech-startup-belgie':
     "Voor Nederlandse ondernemers met internationale ambities toont deze nominatie hoe gespecialiseerde fintech-oplossingen zich snel kunnen verspreiden over landsgrenzen. Het benadrukt ook het belang van lokale aanpassingen: een product dat in Nederland werkt, moet elders niet zomaar overeenkomen met marktbehoeften. Voor bureaus die klanten begeleiden bij digitalisering biedt dit een voorbeeld van hoe fintech-partnerschappen nieuwe diensten mogelijk maken.",
   'jedify-24-miljoen-voor-ai-agent-context':
