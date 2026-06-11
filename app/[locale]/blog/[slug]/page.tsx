@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spacex-ipo-afhankelijk-van-ruimte-data-centers': (
+    <>
+      <p className="lead-para">
+        De meeste marktwaarde die SpaceX zou ophalen bij een beursgang is gekoppeld aan drie technologische projecten. Een daarvan is het bouwen van datacenters in een baan om de aarde. Deze faciliteiten zouden gegevensverwerking op grote schaal mogelijk maken met lagere latentie dan op aarde, aldus TechCrunch.
+      </p>
+      <p>
+        De andere twee projecten zijn een volledig herbruikbare Starship-raket en een wereldwijd breedbandnetwerk via duizenden satellieten. Samen moeten deze initiatieven de kosten voor ruimtetransport en communicatie drastisch verlagen. Bedrijven en overheden kijken naar deze technologieën als cruciale stappen voor toekomstige digitale infrastructuur.
+      </p>
+      <p>
+        Experts wijzen erop dat de haalbaarheid van deze plannen nog onzeker is. De technologische uitdagingen zijn enorm, net als de investeringen die nodig zijn om ze te realiseren. Toch trekken ze al jarenlang miljarden aan kapitaal en talent naar SpaceX.
+      </p>
+    </>
+  ),
   'enterprise-ai-centraal-op-vivatech-2026': (
     <>
       <p className="lead-para">
@@ -3410,6 +3423,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spacex-ipo-afhankelijk-van-ruimte-data-centers':
+    "Voor bedrijven die afhankelijk zijn van data-intensieve processen kan dit nieuws interessant zijn als indicator voor toekomstige infrastructuurkeuzes. Ruimtelijke datacenters bieden mogelijkheden voor snellere en betrouwbaardere digitale diensten, maar de praktische implementatie blijft nog jaren ver weg. Ondernemers doen er goed aan deze ontwikkelingen te volgen, zeker als hun activiteiten vragen om lage latentie of hoge beschikbaarheid.",
   'enterprise-ai-centraal-op-vivatech-2026':
     "Voor ondernemers en marketeers is dit een signaal dat AI niet langer een experimenteel speeltje is, maar een strategisch instrument dat integratie vereist in bestaande systemen en processen. Het benadrukt het belang van samenwerking tussen techleveranciers en eindgebruikers om oplossingen te ontwikkelen die daadwerkelijk waarde toevoegen. Wie nu al kijkt naar toepassingen binnen eigen organisatie, loopt minder risico om achterop te raken wanneer deze technologieën mainstream worden.",
   'yang-automatisering-ai-ondernemen-inplaats-van-wachten-op-beleid':
