@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'informer-money-genomineerd-voor-best-fintech-startup-belgie',
+    format: 'dispatch' as const,
+    edition: '155',
+    category: 'Finance',
+    title: "Informer Money genomineerd voor Best FinTech Startup van België",
+    dek: "De Belgische shortlist van de Digital Finance Awards 2026 bevat Informer Money in de categorie Best FinTech Startup of the Year.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "Informer Money genomineerd voor Best FinTech Startup van België",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'jedify-24-miljoen-voor-ai-agent-context',
     format: 'dispatch' as const,
     edition: '154',
