@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'deezer-lanceert-ai-muziekdetector-voor-andere-streamingdiensten',
+    format: 'dispatch' as const,
+    edition: '164',
+    category: 'Tech',
+    title: "Deezer scant nu playlists van andere streamingdiensten op AI-muziek",
+    dek: "Deezer introduceert een tool die AI-gemaakte muziek opspoort in playlists van concurrerende platforms zoals Spotify en Apple Music.",
+    publishedAt: '2026-06-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Deezer scant nu playlists van andere streamingdiensten op AI-muziek",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'bluesky-lanceert-communities-voor-gedeelde-interesses',
     format: 'dispatch' as const,
     edition: '163',
