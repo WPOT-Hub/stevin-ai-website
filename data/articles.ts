@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'spacex-start-ipo-met-aandeelprijs-van-135-dollar',
+    format: 'dispatch' as const,
+    edition: '181',
+    category: 'Finance',
+    title: "SpaceX start beursgang met aandeelprijs van $135",
+    dek: "De aandeelprijs voor SpaceX is officieel vastgesteld op $135 per aandeel, waarmee de grootste IPO ooit van start gaat.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "SpaceX start beursgang met aandeelprijs van $135",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spacex-spv-investors-risico-na-ipo',
     format: 'dispatch' as const,
     edition: '180',
