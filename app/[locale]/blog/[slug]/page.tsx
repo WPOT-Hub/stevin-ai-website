@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'instagram-geeft-gebruikers-meer-invloed-op-algoritme': (
+    <>
+      <p className="lead-para">
+        Instagram voegt zogeheten topic controls toe aan de app, waardoor gebruikers zelf kunnen selecteren welke thema’s ze in hun hoofdfeed willen zien. Deze optie verschijnt in de instellingen en biedt keuzes zoals reizen, sport of technologie. Het algoritme past zich vervolgens aan om meer content over gekozen onderwerpen te tonen.
+      </p>
+      <p>
+        Voor merken betekent dit dat ze hun content nog gerichter moeten afstemmen op specifieke doelgroepen en interesses. Content die aansluit bij de geselecteerde topics krijgt meer kans om getoond te worden. Hierdoor wordt het belang van relevante en thematische posts groter dan ooit.
+      </p>
+      <p>
+        De verandering volgt op eerdere kritiek over de onvoorspelbaarheid van het algoritme. Instagram hoopt met deze update de gebruikerservaring te verbeteren en tegelijkertijd de zichtbaarheid van merken te vergroten die waardevolle content aanbieden.
+      </p>
+    </>
+  ),
   'endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen': (
     <>
       <p className="lead-para">
@@ -3573,6 +3586,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'instagram-geeft-gebruikers-meer-invloed-op-algoritme':
+    "Voor bedrijven die afhankelijk zijn van sociale media is dit een duidelijke reminder dat algoritmes voortdurend veranderen. Het loont om niet alleen te focussen op engagement, maar ook op het creëren van content die aansluit bij specifieke interesses. Wie hierin slaagt, kan profiteren van een betere organische bereik zonder extra budget voor advertenties.",
   'endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen':
     "Voor ondernemers in energietransitie biedt deze ontwikkeling kansen om vroeg in te stappen op een nieuwe markt. Oceaanwarmte kan een aanvulling vormen op bestaande hernieuwbare bronnen zoals wind en zonne-energie, vooral in kustgebieden. De komende jaren zal moeten blijken of de technologie technisch en economisch haalbaar is.",
   'theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots':
