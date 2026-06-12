@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'flutter-verlaat-london-stock-exchange': (
+    <>
+      <p className="lead-para">
+        Flutter Entertainment, eigenaar van merken als Paddy Power en Betfair, stopt per 3 augustus met de secundaire notering op de London Stock Exchange. De groep kiest definitief voor een enkelvoudige notering in New York, waar het sinds mei 2024 al de primaire marktplaats heeft. De beslissing volgt op een strategische herziening die de lage handelsactiviteit in Londen en de hoge kosten van een dubbele notering als belangrijkste redenen aanvoert.
+      </p>
+      <p>
+        De verhuizing naar New York werd eerder dit jaar al ingezet om betere toegang te krijgen tot kapitaal voor groei in nieuwe markten zoals India, Turkije en Brazilië. CEO Peter Jackson gaf indertijd aan dat een Londense notering behouden zou blijven voor Europese aandeelhouders die alleen Britse of Europese aandelen mogen houden. Die groep blijkt nu niet groot genoeg om de extra kosten te rechtvaardigen.
+      </p>
+      <p>
+        De stap past in een bredere trend waarbij grote bedrijven Londen verlaten als beurslocatie. CRH, Wise, Ashtead en Indivior maakten eerder soortgelijke keuzes. Ook Tate &amp; Lyle wordt overgenomen door een Amerikaanse concurrent, wat honderden banen bedreigt.
+      </p>
+    </>
+  ),
   'ai-bouwt-zichzelf-het-einde-van-de-menselijke-controle': (
     <>
       <p className="lead-para">
@@ -3731,6 +3744,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'flutter-verlaat-london-stock-exchange':
+    "Deze delisting onderstreept dat Londen als financieel centrum aan aantrekkingskracht verliest ten opzichte van New York. Voor Nederlandse bedrijven met internationale ambities kan dit een signaal zijn om hun eigen beursstrategie kritisch te herzien. Een focus op de meest liquide markt kan kapitaalkosten verlagen en groeimogelijkheden vergroten, maar brengt ook risico’s met zich mee zoals verlies van lokale investeerders.",
   'ai-bouwt-zichzelf-het-einde-van-de-menselijke-controle':
     "Bij Stevin zien we deze ontwikkeling met gemengde gevoelens. Enerzijds biedt autonome AI enorme kansen: snellere innovatiecyclus betekent betere producten en diensten voor onze klanten, kortere time-to-market en lagere kosten door efficiënter gebruik van middelen. Anderzijds roept het fundamentele vragen op over ethiek en verantwoordelijkheid die we niet mogen negeren.\n\nOnze aanpak is tweeledig: eerst bewustwording creëren binnen teams over waar autonome systemen nu staan en waar ze naartoe kunnen groeien. Vervolgens bouwen we veiligheidsmechanismen in vanaf dag één – niet als lapmiddel achteraf, maar als integraal onderdeel van elke ontwikkelstap.\n\nWe geloven dat de sleutel ligt in transparantie en geleidelijke adoptie: begin met kleine taken waar menselijke supervisie makkelijk te behouden is, breid stap voor stap uit naarmate systemen betrouwbaarder worden bewezen.\n\nHet grootste risico is niet dat machines slimmer worden dan wij, maar dat we ze blind vertrouwen zonder voldoende checks and balances in te bouwen.",
   'aws-graviton-5-geen-ai-chips':
