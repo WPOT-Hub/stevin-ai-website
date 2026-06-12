@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'waymo-lanceert-premium-abonnement-voor-autonoom-vervoer',
+    format: 'dispatch' as const,
+    edition: '175',
+    category: 'Distributie',
+    title: "Waymo introduceert maandelijks abonnement voor snellere ritten met robotaxi’s",
+    dek: "Waymo lanceert een premiumlidmaatschap van bijna 30 euro per maand voor klanten die vaker gebruikmaken van hun autonoom rijdende taxiservice.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "Waymo introduceert maandelijks abonnement voor snellere ritten met robotaxi’s",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen',
     format: 'dispatch' as const,
     edition: '174',
