@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-chip-startups-netwerkversnelling-rack-scale': (
+    <>
+      <p className="lead-para">
+        Startups die concurreren met chipgiganten als Nvidia of AMD hoeven niet langer maanden te besteden aan het oplossen van netwerkproblemen voordat ze hun hardware kunnen testen. Delos Data biedt een kant-en-klaar platform dat de integratie van AI-chips in servers versnelt, zodat ontwikkelaars zich kunnen focussen op de prestaties van hun chips in plaats van op de onderliggende netwerktechniek.
+      </p>
+      <p>
+        Het platform werkt met standaardprotocollen en is compatibel met zowel ethernet als InfiniBand, wat de drempel verlaagt voor startups die geen eigen netwerkinfrastructuur willen of kunnen ontwikkelen. Daarnaast biedt Delos Data meetdata over de netwerkprestaties, zodat teams snel kunnen zien waar knelpunten zitten en hoe ze die kunnen oplossen.
+      </p>
+      <p>
+        De dienst is vooral interessant voor startups die nog in de ontwikkelfase zitten en hun chips willen testen in een realistische omgeving. Door het gebruik van kant-en-klare oplossingen kunnen ze sneller door naar de volgende fase, zoals het aantrekken van investeerders of het opbouwen van partnerschappen met cloudproviders.
+      </p>
+    </>
+  ),
   'europa-loopt-ten-opzichte-van-vs-achter-op-ai-investeringen': (
     <>
       <p className="lead-para">
@@ -3757,6 +3770,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-chip-startups-netwerkversnelling-rack-scale':
+    "Voor bedrijven die actief zijn in AI-hardware kan deze ontwikkeling betekenen dat de tijd tot marktintroductie drastisch wordt verkort. Het maakt het makkelijker om innovatieve chipontwerpen te testen zonder afhankelijk te zijn van dure en complexe netwerkinfrastructuur. Tegelijkertijd daalt de drempel voor nieuwe spelers om toe te treden tot een markt die momenteel wordt gedomineerd door grote, gevestigde partijen.",
   'europa-loopt-ten-opzichte-van-vs-achter-op-ai-investeringen':
     "Voor Nederlandse en Belgische bedrijven betekent deze kloof dat samenwerking binnen Europa of met lokale cloudproviders kan helpen om minder afhankelijk te worden van Amerikaanse systemen. Tegelijkertijd biedt de sterke Europese arbeidsmarkt kansen om talent aan te trekken dat elders minder snel beschikbaar is. De uitdaging ligt in het vinden van een balans tussen noodzakelijke schaalvergroting en behoud van lokale autonomie.",
   'flutter-verlaat-london-stock-exchange':
