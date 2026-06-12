@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'prometheus-12-miljard-ai-fysieke-wereld': (
+    <>
+      <p className="lead-para">
+        Prometheus, het fysieke-AI-bedrijf van Jeff Bezos, heeft een financieringsronde van 12 miljard dollar afgerond. De startup ontwikkelt een systeem dat complexe fysieke taken kan overnemen, zoals het ontwerpen van machines of nieuwe medicijnen. De waardering van Prometheus komt hiermee uit op 41 miljard dollar.
+      </p>
+      <p>
+        De technologie richt zich op zogeheten 'artificial general engineer': een AI die niet alleen data analyseert, maar ook ontwerpt en optimaliseert in de echte wereld. Dit kan de tijd en kosten voor grote infrastructurele projecten of medische doorbraken aanzienlijk verminderen.
+      </p>
+      <p>
+        Het fonds wordt onder meer gebruikt om nieuwe rekenfaciliteiten en onderzoeksteams uit te breiden. Bezos investeert persoonlijk mee in de onderneming, aldus TechCrunch.
+      </p>
+    </>
+  ),
   'b2b-content-geo-chatgpt-ai-tools': (
     <>
       <p className="lead-para">
@@ -3521,6 +3534,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'prometheus-12-miljard-ai-fysieke-wereld':
+    "Voor ondernemers is dit een teken dat AI steeds verder doordringt in sectoren waar nu nog menselijk vakmanschap centraal staat. Het benadrukt de noodzaak om na te denken over hoe je eigen processen kunt combineren met dergelijke systemen, zonder afhankelijk te worden van externe partijen. Tegelijkertijd roept het vragen op over de ethiek en controleerbaarheid van AI die zelfstandig ontwerpt.",
   'b2b-content-geo-chatgpt-ai-tools':
     "Voor bureaus en in-house teams betekent dit dat ze hun contentstrategie moeten aanpassen aan de nieuwe realiteit van AI-gedreven zoekopdrachten. Het gaat niet meer om zoekwoorden optimaliseren, maar om heldere, informatieve antwoorden bieden op echte vragen uit de doelgroep. Het investeren in up-to-date, goed gestructureerde content loont nu direct zichtbaar in meetdata.",
   'apple-ios-27-automatische-wachtwoordvervanging':
