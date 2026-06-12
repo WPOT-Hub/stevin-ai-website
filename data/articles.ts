@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'barclays-koopt-gohenry-voor-180-miljoen',
+    format: 'dispatch' as const,
+    edition: '189',
+    category: 'Finance',
+    title: "Barclays pakt GoHenry voor £180 miljoen over",
+    dek: "Barclays neemt de Britse tak van de kinderbank-app GoHenry over voor naar schatting £180 miljoen.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "Barclays pakt GoHenry voor £180 miljoen over",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'europa-loopt-ten-opzichte-van-vs-achter-op-ai-investeringen',
     format: 'dispatch' as const,
     edition: '188',
