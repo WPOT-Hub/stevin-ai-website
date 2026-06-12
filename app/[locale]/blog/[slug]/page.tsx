@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'europa-loopt-ten-opzichte-van-vs-achter-op-ai-investeringen': (
+    <>
+      <p className="lead-para">
+        Europese techbedrijven lopen volgens CEO’s zoals Miki Kuusi van Deliveroo ruim een decennium achter op Amerikaanse concurrenten zoals SpaceX en de Bay Area. De Europese sector groeit weliswaar snel, maar dreigt politiek en economisch aan invloed te verliezen als niet drastisch meer wordt geïnvesteerd in AI-capaciteiten. Kuusi benadrukt dat Europa niet afhankelijk wil blijven van toerisme als belangrijkste economische pijler, aldus een waarschuwing tijdens London Tech Week.
+      </p>
+      <p>
+        In het eerste kwartaal van dit jaar haalden Europese AI-startups samen $9,2 miljard op, drie keer zoveel als in dezelfde periode vorig jaar. Toch blijft dit bedrag ver achter bij de investeringen van Amerikaanse spelers: Anthropic alleen al haalde vorige maand $65 miljard op voor AI-ontwikkeling. Daarnaast domineren Amerikaanse hyperscalers als Google, Amazon en Microsoft met 70% de Europese cloudmarkt, waardoor Europese bedrijven afhankelijk zijn van buitenlandse infrastructuur.
+      </p>
+      <p>
+        Ondanks de zorgen zien sommige ondernemers ook kansen. Anton Osika van Lovable wijst op het snelle tempo waarin Europese bedrijven opereren en de aantrekkingskracht van het continent voor technisch talent. Judith Dada van Visionaries Club waarschuwt echter dat Europa zonder structurele verandering riskeert politiek gemarginaliseerd te worden en technologie te moeten gebruiken die het niet zelf kan besturen.
+      </p>
+    </>
+  ),
   'flutter-verlaat-london-stock-exchange': (
     <>
       <p className="lead-para">
@@ -3744,6 +3757,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'europa-loopt-ten-opzichte-van-vs-achter-op-ai-investeringen':
+    "Voor Nederlandse en Belgische bedrijven betekent deze kloof dat samenwerking binnen Europa of met lokale cloudproviders kan helpen om minder afhankelijk te worden van Amerikaanse systemen. Tegelijkertijd biedt de sterke Europese arbeidsmarkt kansen om talent aan te trekken dat elders minder snel beschikbaar is. De uitdaging ligt in het vinden van een balans tussen noodzakelijke schaalvergroting en behoud van lokale autonomie.",
   'flutter-verlaat-london-stock-exchange':
     "Deze delisting onderstreept dat Londen als financieel centrum aan aantrekkingskracht verliest ten opzichte van New York. Voor Nederlandse bedrijven met internationale ambities kan dit een signaal zijn om hun eigen beursstrategie kritisch te herzien. Een focus op de meest liquide markt kan kapitaalkosten verlagen en groeimogelijkheden vergroten, maar brengt ook risico’s met zich mee zoals verlies van lokale investeerders.",
   'ai-bouwt-zichzelf-het-einde-van-de-menselijke-controle':
