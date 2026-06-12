@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'aws-graviton-5-geen-ai-chips',
+    format: 'dispatch' as const,
+    edition: '185',
+    category: 'Tech',
+    title: "AWS Graviton 5 is krachtig, maar geen 'AI-chip': waarom de term misleidend is",
+    dek: "Onderzoekers en tech-experts waarschuwen dat de term 'AI-chip' voor AWS Graviton 5 misleidend is, ondanks de indrukwekkende prestaties.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AWS Graviton 5 is krachtig, maar geen 'AI-chip': waarom de term misleidend is",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'katalyst-link-ruimtevaartuig-geintegreerd-voor-lancering',
     format: 'dispatch' as const,
     edition: '184',
