@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'b2b-content-geo-chatgpt-ai-tools': (
+    <>
+      <p className="lead-para">
+        Content die direct antwoord geeft op veelgestelde vragen uit de B2B-markt heeft de hoogste kans om door AI-tools te worden gebruikt. Zo blijkt uit recent onderzoek dat formuleringen als 'Wat is het verschil tussen X en Y?' of 'Hoe los je Z op?' beter scoren dan algemene marketingteksten. Ook het gebruik van actuele marktcijfers en concrete voorbeelden verhoogt de zichtbaarheid in AI-responses.
+      </p>
+      <p>
+        Teksten met een duidelijke structuur, zoals genummerde stappen of lijstjes, worden sneller herkend en geciteerd door AI-systemen. Daarnaast blijkt dat content die recent is gepubliceerd of geactualiseerd een grotere uplift krijgt in de respons van tools als ChatGPT en Perplexity. Dit geldt vooral voor sector-specifieke onderwerpen waar vraag naar bestaat.
+      </p>
+      <p>
+        Een opvallende constatering is dat traditionele SEO-optimalisaties zoals keyword density minder relevant zijn voor AI-tools. In plaats daarvan draait het om de kwaliteit van de informatie en de manier waarop deze wordt gepresenteerd. Content die te commercieel klinkt, wordt vaker genegeerd door deze systemen.
+      </p>
+    </>
+  ),
   'apple-ios-27-automatische-wachtwoordvervanging': (
     <>
       <p className="lead-para">
@@ -3508,6 +3521,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'b2b-content-geo-chatgpt-ai-tools':
+    "Voor bureaus en in-house teams betekent dit dat ze hun contentstrategie moeten aanpassen aan de nieuwe realiteit van AI-gedreven zoekopdrachten. Het gaat niet meer om zoekwoorden optimaliseren, maar om heldere, informatieve antwoorden bieden op echte vragen uit de doelgroep. Het investeren in up-to-date, goed gestructureerde content loont nu direct zichtbaar in meetdata.",
   'apple-ios-27-automatische-wachtwoordvervanging':
     "Voor bedrijven die veel afhankelijk zijn van Apple-apparaten kan deze update helpen om interne beveiligingsrisico's te verminderen. Het automatiseren van wachtwoordbeheer neemt echter niet weg dat organisaties zelf nog steeds beleid moeten instellen voor wachtwoordcomplexiteit en regelmatige updates. Een hybride aanpak blijft daarom essentieel.",
   'droneboot-redt-neergestorte-helicopterpiloten-eerste-zee-reddingsactie':
