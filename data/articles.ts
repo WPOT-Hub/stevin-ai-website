@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'zte-wint-drie-selular-awards-2026-voor-ai-gedreven-netwerkinnovaties',
+    format: 'dispatch' as const,
+    edition: '176',
+    category: 'Tech',
+    title: "ZTE wint drie Selular Awards 2026 voor AI-gedreven netwerkinnovaties",
+    dek: "Het Chinese ZTE wint drie prijzen voor baanbrekende AI-toepassingen in vaste draadloze toegang, netwerkecosystemen en basisbandtechnologie.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "ZTE wint drie Selular Awards 2026 voor AI-gedreven netwerkinnovaties",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'waymo-lanceert-premium-abonnement-voor-autonoom-vervoer',
     format: 'dispatch' as const,
     edition: '175',
