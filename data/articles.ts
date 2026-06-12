@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-chip-startups-netwerkversnelling-rack-scale',
+    format: 'dispatch' as const,
+    edition: '190',
+    category: 'Tech',
+    title: "Delos Data versnelt netwerkintegratie voor AI-chipstartups",
+    dek: "Een nieuw platform van Delos Data maakt het voor startups mogelijk om hun AI-chips direct op rack-schaal te testen zonder zelf complexe netwerkinfrastructuur te bouwen.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Delos Data versnelt netwerkintegratie voor AI-chipstartups",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'barclays-koopt-gohenry-voor-180-miljoen',
     format: 'dispatch' as const,
     edition: '189',
