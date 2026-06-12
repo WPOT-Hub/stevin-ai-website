@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-bouwt-zichzelf-het-einde-van-de-menselijke-controle',
+    format: 'dispatch' as const,
+    edition: '186',
+    category: 'Platform',
+    title: "De dag dat AI zichzelf bouwt: wie houdt dan nog de regie",
+    dek: "Als AI straks zijn eigen opvolger ontwerpt, wie bepaalt dan nog wat goed of kwaad is?",
+    publishedAt: '2026-06-12',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "De dag dat AI zichzelf bouwt: wie houdt dan nog de regie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'aws-graviton-5-geen-ai-chips',
     format: 'dispatch' as const,
     edition: '185',
