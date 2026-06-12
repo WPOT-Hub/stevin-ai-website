@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'nasa-deep-space-network-artemis-ii',
+    format: 'dispatch' as const,
+    edition: '182',
+    category: 'Tech',
+    title: "NASA’s Deep Space Network hield Artemis II draaiend ondanks piekbelasting",
+    dek: "De communicatienetwerken van NASA bleken tijdens de Artemis II-missie robuuster dan verwacht, ondanks extreme belasting.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "NASA’s Deep Space Network hield Artemis II draaiend ondanks piekbelasting",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spacex-start-ipo-met-aandeelprijs-van-135-dollar',
     format: 'dispatch' as const,
     edition: '181',
