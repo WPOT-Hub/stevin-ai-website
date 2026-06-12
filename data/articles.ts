@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'amazon-alexa-wordt-shopping-agent-en-advertentieplatform',
+    format: 'dispatch' as const,
+    edition: '178',
+    category: 'Platform',
+    title: "Amazon laat Alexa shoppen én adverteren tijdens gesprekken",
+    dek: "Consumenten kunnen vanaf nu via Alexa direct producten bestellen en merken krijgen advertenties te zien tijdens gesprekken met de slimme assistent.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Amazon laat Alexa shoppen én adverteren tijdens gesprekken",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'instagram-geeft-gebruikers-meer-invloed-op-algoritme',
     format: 'dispatch' as const,
     edition: '177',
