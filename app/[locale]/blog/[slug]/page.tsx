@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'enterprises-frustrated-by-llm-makers-says-palantir-ceo': (
+    <>
+      <p className="lead-para">
+        Alex Karp van Palantir waarschuwt dat bedrijven steeds meer teleurgesteld raken in frontier AI-labs. Volgens hem richten deze labs zich te veel op het maximaliseren van tokengebruik ('tokenmaxen') in plaats van daadwerkelijke oplossingen voor ondernemingen te bieden. Karp stelt dat de huidige focus op schaal en complexiteit ten koste gaat van bruikbaarheid en toepasbaarheid in de praktijk.
+      </p>
+      <p>
+        Karp wijst erop dat veel bedrijven worstelen met de integratie van grote taalmodellen in hun bestaande systemen. De modellen zouden vaak te traag, te onvoorspelbaar of te duur zijn voor dagelijkse operaties. Daarnaast ontbreekt het volgens hem aan transparantie over hoe deze systemen precies werken, wat vertrouwen ondermijnt.
+      </p>
+      <p>
+        De frustratie neemt toe naarmate bedrijven merken dat ze zelf veel tijd en geld moeten investeren om de modellen geschikt te maken voor hun behoeften. Karp pleit voor een verschuiving naar modellen die beter aansluiten bij de praktische eisen van organisaties, zoals betrouwbaarheid, snelheid en kostenbeheersing.
+      </p>
+    </>
+  ),
   'prometheus-12-miljard-ai-fysieke-wereld': (
     <>
       <p className="lead-para">
@@ -3534,6 +3547,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'enterprises-frustrated-by-llm-makers-says-palantir-ceo':
+    "Voor bedrijven die AI willen inzetten, is deze kritiek een reminder dat technologie pas waardevol wordt als het past bij hun eigen processen. Het benadrukt het belang van heldere eisen vooraf: welke problemen moet AI oplossen, en welke meetdata zijn nodig om succes te meten? Zonder die basis blijft AI vaak een dure experimentruimte in plaats van een werkbare tool.",
   'prometheus-12-miljard-ai-fysieke-wereld':
     "Voor ondernemers is dit een teken dat AI steeds verder doordringt in sectoren waar nu nog menselijk vakmanschap centraal staat. Het benadrukt de noodzaak om na te denken over hoe je eigen processen kunt combineren met dergelijke systemen, zonder afhankelijk te worden van externe partijen. Tegelijkertijd roept het vragen op over de ethiek en controleerbaarheid van AI die zelfstandig ontwerpt.",
   'b2b-content-geo-chatgpt-ai-tools':
