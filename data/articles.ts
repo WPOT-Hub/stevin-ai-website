@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'waymo-lanceert-loyalty-program-met-cashback-en-gratis-annuleringen',
+    format: 'dispatch' as const,
+    edition: '179',
+    category: 'Platform',
+    title: "Waymo introduceert loyalty-program met 10% cashback en gratis annuleringen",
+    dek: "Waymo start een betaald loyalty-program genaamd 'Waymo Premier' waarbij leden maandelijks $29,99 betalen voor 10% cashback en onbeperkt gratis ritten kunnen annuleren.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Waymo introduceert loyalty-program met 10% cashback en gratis annuleringen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'amazon-alexa-wordt-shopping-agent-en-advertentieplatform',
     format: 'dispatch' as const,
     edition: '178',
