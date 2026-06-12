@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'instagram-geeft-gebruikers-meer-invloed-op-algoritme',
+    format: 'dispatch' as const,
+    edition: '177',
+    category: 'Platform',
+    title: "Instagram geeft gebruikers meer invloed op wat ze zien",
+    dek: "Gebruikers kunnen vanaf deze week via nieuwe topic controls zelf aangeven welke onderwerpen ze in hun feed willen zien.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Instagram geeft gebruikers meer invloed op wat ze zien",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'zte-wint-drie-selular-awards-2026-voor-ai-gedreven-netwerkinnovaties',
     format: 'dispatch' as const,
     edition: '176',
