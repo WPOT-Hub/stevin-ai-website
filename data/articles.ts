@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'europa-loopt-ten-opzichte-van-vs-achter-op-ai-investeringen',
+    format: 'dispatch' as const,
+    edition: '188',
+    category: 'Markt',
+    title: "Europa loopt achter op VS in AI-investeringen, waarschuwen techbazen",
+    dek: "Europese techleiders pleiten voor miljardeninvesteringen in AI om concurrentie met de VS vol te houden en politieke marginalisering te voorkomen.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Europa loopt achter op VS in AI-investeringen, waarschuwen techbazen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'flutter-verlaat-london-stock-exchange',
     format: 'dispatch' as const,
     edition: '187',
