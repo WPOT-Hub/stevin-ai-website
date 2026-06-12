@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'flutter-verlaat-london-stock-exchange',
+    format: 'dispatch' as const,
+    edition: '187',
+    category: 'Finance',
+    title: "Flutter haalt beursnotering in Londen weg",
+    dek: "Het Ierse gokconcern Flutter verplaatst zijn resterende beursnotering in Londen naar New York per augustus 2025.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "Flutter haalt beursnotering in Londen weg",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-bouwt-zichzelf-het-einde-van-de-menselijke-controle',
     format: 'dispatch' as const,
     edition: '186',
