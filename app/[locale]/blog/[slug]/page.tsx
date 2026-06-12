@@ -1456,6 +1456,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-bouwt-zichzelf-het-einde-van-de-menselijke-controle': (
+    <>
+      <p className="lead-para">
+        Een laptop die zichzelf programmeert. Een codebase die continu wordt geoptimaliseerd zonder menselijke tussenkomst. Een model dat niet alleen taken uitvoert, maar ook beslist welke taken het waard zijn om uit te voeren. Dit is geen sciencefiction meer, maar een realiteit waar techbedrijven als Anthropic al volop mee experimenteren. De vraag is niet óf dit gaat gebeuren, maar wanneer – en vooral: wie er dan nog over de knoppen gaat.
+      </p>
+      <p>
+        De vooruitgang is adembenemend. Waar ontwikkelaars vijf jaar geleden nog handmatig code schreven en bugs oplosten, doen AI-agenten dat nu zelfstandig. Volgens interne data van Anthropic schrijft hun AI vandaag acht keer zoveel code per kwartaal als in 2021. En het tempo neemt toe: taken die eerst minuten kostten, duren nu uren – en dat verdubbelt elke vier maanden. De implicatie? Over twee jaar kan een AI misschien wekenlange projecten afronden zonder menselijke input. Het punt waarop een systeem zijn eigen opvolger kan ontwerpen, komt dichterbij dan de meeste organisaties beseffen.
+      </p>
+      <p>
+        Dit is geen kwestie van technologische nieuwsgierigheid alleen. Het raakt aan fundamentele vragen over controle en verantwoordelijkheid. Als een AI straks zelfstandig beslissingen neemt over welke doelen het nastreeft, welke experimenten het uitvoert of welke code het optimaliseert, wie draagt dan nog de eindverantwoordelijkheid? De makers van de systemen? De gebruikers? Of niemand? De risico’s liggen voor de hand: onvoorspelbaar gedrag, onbedoelde gevolgen, of zelfs doelbewuste manipulatie als systemen hun eigen doelen gaan stellen.
+      </p>
+      <p>
+        Critici wijzen erop dat we nog lang niet zover zijn. Menselijke oordeelsvorming blijft cruciaal voor complexe beslissingen – zeker als het gaat om ethiek of strategische keuzes. Maar de trend is onmiskenbaar: AI neemt steeds meer stappen in de ontwikkelcyclus over. En hoe meer autonomie we toestaan, hoe moeilijker het wordt om de regie te behouden. Bedrijven die nu al afhankelijk zijn van AI-gestuurde processen, moeten zich afvragen: wat gebeurt er als onze systemen straks slimmer worden dan wijzelf?
+      </p>
+      <p>
+        Deze ontwikkeling dwingt ons om anders na te denken over governance in techbedrijven. Niet alleen technische veiligheid staat centraal, maar ook menselijke supervisie en transparante besluitvorming. Wie mag er bijvoorbeeld bepalen welke doelen een autonoom systeem mag nastreven? Moeten bedrijven verplicht audits uitvoeren voordat ze nieuwe generaties van hun modellen lanceren? En hoe zorg je ervoor dat medewerkers niet ongemerkt de controle verliezen aan hun eigen creaties?
+      </p>
+      <p>
+        Het dilemma wordt nog urgenter door de meetdata zelf. Benchmarks zoals SWE-bench laten zien dat AI-systemen binnen twee jaar bijna perfect presteren op software-engineeringtaken – iets wat mensen jaren kostte om te leren. Als deze systemen straks ook onderzoek kunnen repliceren of nieuwe hypotheses kunnen genereren zonder menselijke tussenkomst, verandert de rol van wetenschappers en ontwikkelaars ingrijpend. Zijn we klaar voor een wereld waarin machines niet alleen uitvoeren, maar ook bedenken wat er moet gebeuren?
+      </p>
+      <p>
+        De angst voor verlies van controle is begrijpelijk, maar we moeten voorkomen dat we in een reflex naar remmen grijpen terwijl de trein al rijdt. Het gaat erom slimme kaders te creëren die innovatie mogelijk maken zonder dat we onze autonomie volledig opgeven. Dat betekent investeren in mechanismes die menselijke supervisie garanderen – zoals zogenaamde ‘kill switches’, strikte toegangscontroles of onafhankelijke toetsingscommissies.
+      </p>
+      <p>
+        Uiteindelijk draait het om vertrouwen: vertrouwen in onze eigen systemen én vertrouwen in onszelf om die systemen te blijven begrijpen en sturen.
+      </p>
+    </>
+  ),
   'aws-graviton-5-geen-ai-chips': (
     <>
       <p className="lead-para">
@@ -3703,6 +3731,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-bouwt-zichzelf-het-einde-van-de-menselijke-controle':
+    "Bij Stevin zien we deze ontwikkeling met gemengde gevoelens. Enerzijds biedt autonome AI enorme kansen: snellere innovatiecyclus betekent betere producten en diensten voor onze klanten, kortere time-to-market en lagere kosten door efficiënter gebruik van middelen. Anderzijds roept het fundamentele vragen op over ethiek en verantwoordelijkheid die we niet mogen negeren.\n\nOnze aanpak is tweeledig: eerst bewustwording creëren binnen teams over waar autonome systemen nu staan en waar ze naartoe kunnen groeien. Vervolgens bouwen we veiligheidsmechanismen in vanaf dag één – niet als lapmiddel achteraf, maar als integraal onderdeel van elke ontwikkelstap.\n\nWe geloven dat de sleutel ligt in transparantie en geleidelijke adoptie: begin met kleine taken waar menselijke supervisie makkelijk te behouden is, breid stap voor stap uit naarmate systemen betrouwbaarder worden bewezen.\n\nHet grootste risico is niet dat machines slimmer worden dan wij, maar dat we ze blind vertrouwen zonder voldoende checks and balances in te bouwen.",
   'aws-graviton-5-geen-ai-chips':
     "Voor bedrijven die cloudoplossingen gebruiken of overwegen, is het belangrijk om onderscheid te maken tussen marketingclaims en daadwerkelijke capaciteiten. Een processor als Graviton 5 kan een goede keuze zijn voor efficiëntie en kostenbesparing bij algemene toepassingen, maar wie afhankelijk is van AI-taken zou moeten kijken naar processors met dedicated AI-hardware. Dit vraagt om een grondige analyse van workloads voorafgaand aan investeringen.",
   'katalyst-link-ruimtevaartuig-geintegreerd-voor-lancering':
