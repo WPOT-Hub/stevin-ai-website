@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'katalyst-link-ruimtevaartuig-geintegreerd-voor-lancering': (
+    <>
+      <p className="lead-para">
+        Het Amerikaanse bedrijf Katalyst heeft zijn LINK-ruimtevaartuig succesvol geïntegreerd met een draagraket. De lancering staat gepland vanaf het eiland Kwajalein in de Stille Oceaan, met een verwachte datum binnen enkele weken. Het vaartuig moet de Swift-satelliet redden die dreigt terug te vallen in de atmosfeer en verloren te gaan.
+      </p>
+      <p>
+        De missie van LINK is om zich vast te koppelen aan de Swift-satelliet en deze naar een veiligere baan te brengen. Dit zou de levensduur van de satelliet aanzienlijk verlengen. De lancering wordt gezien als een cruciale stap in het behoud van dure ruimte-infrastructuur.
+      </p>
+      <p>
+        De integratie van LINK markeert een belangrijke mijlpaal voor Katalyst, dat zich richt op oplossingen voor satellietreddingsmissies. Het bedrijf werkt samen met internationale partners om de technologie verder te ontwikkelen en beschikbaar te maken voor andere ruimtevaartorganisaties.
+      </p>
+    </>
+  ),
   'dutch-chip-startup-european-fab-flow-met-amerikaanse-hulp': (
     <>
       <p className="lead-para">
@@ -3677,6 +3690,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'katalyst-link-ruimtevaartuig-geintegreerd-voor-lancering':
+    "Voor bedrijven die afhankelijk zijn van satellietdata of -communicatie kan deze ontwikkeling interessant zijn. Het toont aan dat commerciële oplossingen voor ruimteafvalbeheer snel in opkomst zijn. Tegelijkertijd blijft het risico op verlies van kostbare assets door technische storingen of externe factoren bestaan, wat onderstreept hoe kwetsbaar huidige ruimte-infrastructuur nog is.",
   'dutch-chip-startup-european-fab-flow-met-amerikaanse-hulp':
     "Voor ondernemers die actief zijn in hightech of supply chain management is dit een herkenbaar dilemma: hoe balans vinden tussen lokale ambities en praktische haalbaarheid? De keuze voor buitenlandse productie kan strategisch zijn, maar brengt ook risico’s met zich mee zoals geopolitieke spanningen of exportbeperkingen. Het benadrukt dat technologische soevereiniteit vaak een kwestie is van slimme samenwerking, niet alleen van lokale capaciteit.",
   'spacex-start-ipo-met-aandeelprijs-van-135-dollar':
