@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'aws-graviton-5-geen-ai-chips': (
+    <>
+      <p className="lead-para">
+        De nieuwste AWS Graviton 5-processor levert betere prestaties dan voorgaande generaties, vooral op het gebied van efficiëntie en rekenkracht voor algemene workloads. Toch blijft de marketingtaal rond de chip hangen bij de term 'AI-chip', terwijl experts benadrukken dat deze processor niet specifiek is ontworpen voor kunstmatige intelligentie-taken. De Graviton 5 blinkt uit in energiezuinigheid en geschiktheid voor cloudomgevingen, aldus analisten die de chip hebben getest.
+      </p>
+      <p>
+        De verwarring komt voort uit het feit dat veel moderne processoren wel degelijk AI-functies ondersteunen via geïntegreerde versnellers, zoals NPU’s (Neural Processing Units). De Graviton 5 beschikt echter niet over een dergelijke dedicated AI-hardware. In plaats daarvan draait het om verbeterde CPU-prestaties en geheugenbandbreedte, wat vooral voordelig is voor traditionele applicaties en virtualisatie. Experts wijzen erop dat zelfs AWS zelf terughoudend is met het label 'AI-chip', hoewel concurrenten zoals Nvidia en AMD deze term wel breed toepassen.
+      </p>
+      <p>
+        De discussie onderstreept een groter probleem in de techindustrie: het gebruik van marketingtermen die niet altijd overeenkomen met de technische realiteit. Voor bedrijven die afhankelijk zijn van cloudinfrastructuur betekent dit dat ze kritisch moeten kijken naar de specificaties van hardware voordat ze investeren in nieuwe systemen. Een processor als Graviton 5 kan prima geschikt zijn voor algemene workloads, maar wie specifiek AI-workloads draait, doet er goed aan andere opties te overwegen.
+      </p>
+    </>
+  ),
   'katalyst-link-ruimtevaartuig-geintegreerd-voor-lancering': (
     <>
       <p className="lead-para">
@@ -3690,6 +3703,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'aws-graviton-5-geen-ai-chips':
+    "Voor bedrijven die cloudoplossingen gebruiken of overwegen, is het belangrijk om onderscheid te maken tussen marketingclaims en daadwerkelijke capaciteiten. Een processor als Graviton 5 kan een goede keuze zijn voor efficiëntie en kostenbesparing bij algemene toepassingen, maar wie afhankelijk is van AI-taken zou moeten kijken naar processors met dedicated AI-hardware. Dit vraagt om een grondige analyse van workloads voorafgaand aan investeringen.",
   'katalyst-link-ruimtevaartuig-geintegreerd-voor-lancering':
     "Voor bedrijven die afhankelijk zijn van satellietdata of -communicatie kan deze ontwikkeling interessant zijn. Het toont aan dat commerciële oplossingen voor ruimteafvalbeheer snel in opkomst zijn. Tegelijkertijd blijft het risico op verlies van kostbare assets door technische storingen of externe factoren bestaan, wat onderstreept hoe kwetsbaar huidige ruimte-infrastructuur nog is.",
   'dutch-chip-startup-european-fab-flow-met-amerikaanse-hulp':
