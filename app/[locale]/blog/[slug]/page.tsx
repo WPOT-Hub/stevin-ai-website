@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots': (
+    <>
+      <p className="lead-para">
+        Met een nieuwe investering van 85 miljoen dollar zet Theker een stap naar de productie van robots die niet vastzitten aan één functie. In tegenstelling tot humanoïde robots zoals die van Boston Dynamics, zijn de machines van Theker modulair en kunnen ze binnen enkele uren worden omgebouwd voor nieuwe taken. Dit maakt ze geschikt voor fabrieken waar productielijnen vaak veranderen of waar kleine series worden gemaakt.
+      </p>
+      <p>
+        Het bedrijf uit Nederland richt zich op het automatiseren van repetitieve taken in sectoren als logistiek, metaalbewerking en voedselproductie. Volgens oprichter en CEO Thomas van der Meer kan de technologie helpen om de flexibiliteit in fabrieken te vergroten zonder dat er dure specialistische apparatuur nodig is. De eerste klanten zijn al actief in pilotprojecten, aldus Van der Meer.
+      </p>
+      <p>
+        De opbrengst van de funding wordt gebruikt voor verdere ontwikkeling en opschaling van de productie. Theker werkt samen met partners in Duitsland en België om de technologie sneller op de markt te brengen. Concurrenten zoals Universal Robots focussen nog sterk op geprogrammeerde taken, terwijl Theker juist kiest voor adaptieve systemen.
+      </p>
+    </>
+  ),
   'enterprises-frustrated-by-llm-makers-says-palantir-ceo': (
     <>
       <p className="lead-para">
@@ -3547,6 +3560,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots':
+    "Voor ondernemers in productiebedrijven biedt deze ontwikkeling een kans om sneller in te spelen op veranderende vraag. De combinatie van flexibiliteit en lagere instapkosten kan vooral interessant zijn voor MKB-bedrijven die nu nog wachten met automatisering vanwege hoge drempels. Tegelijkertijd vraagt het wel om een andere benadering van robotica: niet meer investeren in vaste oplossingen, maar in systemen die meegroeien met je bedrijf.",
   'enterprises-frustrated-by-llm-makers-says-palantir-ceo':
     "Voor bedrijven die AI willen inzetten, is deze kritiek een reminder dat technologie pas waardevol wordt als het past bij hun eigen processen. Het benadrukt het belang van heldere eisen vooraf: welke problemen moet AI oplossen, en welke meetdata zijn nodig om succes te meten? Zonder die basis blijft AI vaak een dure experimentruimte in plaats van een werkbare tool.",
   'prometheus-12-miljard-ai-fysieke-wereld':
