@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spacex-start-ipo-met-aandeelprijs-van-135-dollar': (
+    <>
+      <p className="lead-para">
+        SpaceX heeft de prijs van haar aandelen definitief vastgesteld op $135 per stuk. De IPO, die daarmee de grootste ooit wordt, is hiermee een feit. De opbrengst zal grotendeels naar de uitbreiding van het Starlink-netwerk en verdere ontwikkeling van ruimtevaarttechnologie gaan.
+      </p>
+      <p>
+        De beursgang vindt plaats via een directe notering op de Nasdaq, zonder traditionele onderwriting door banken. Dit model past bij het innovatieve karakter van het bedrijf en vermindert transactiekosten. Investeerders kunnen vanaf deze week inschrijven op de aandelen.
+      </p>
+      <p>
+        De vraag naar SpaceX-aandelen blijkt groot te zijn: binnen enkele uren na de bekendmaking was de helft van het geplande aanbod al toegewezen. Analisten verwachten dat de koers in de eerste dagen flink kan stijgen, mede door de hype rondom ruimtevaart en satelliettechnologie.
+      </p>
+    </>
+  ),
   'nasa-deep-space-network-artemis-ii': (
     <>
       <p className="lead-para">
@@ -3651,6 +3664,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spacex-start-ipo-met-aandeelprijs-van-135-dollar':
+    "Voor Nederlandse en Belgische ondernemers is deze IPO een goed voorbeeld van hoe innovatieve technologiebedrijven kapitaal kunnen aantrekken zonder afhankelijk te zijn van traditionele financieringsbronnen. De directe notering laat zien dat er ook in Europa ruimte is voor vergelijkbare modellen, mits er voldoende interesse en vertrouwen bij investeerders bestaat.",
   'nasa-deep-space-network-artemis-ii':
     "Voor bedrijven die afhankelijk zijn van kritieke IT-infrastructuur, zoals e-commerceplatforms of logistieke systemen, is dit een herinnering aan het belang van schaalbaarheid en back-upplannen. Investeren in overcapaciteit en flexibele oplossingen kan op lange termijn kosten besparen door uitval te voorkomen. Bovendien benadrukt het verhaal dat betrouwbaarheid niet alleen afhangt van techniek, maar ook van slimme procesinrichting en snelle schakelmogelijkheden.",
   'spacex-spv-investors-risico-na-ipo':
