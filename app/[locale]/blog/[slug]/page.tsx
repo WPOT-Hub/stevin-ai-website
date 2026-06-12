@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'dutch-chip-startup-european-fab-flow-met-amerikaanse-hulp': (
+    <>
+      <p className="lead-para">
+        Het Nederlandse bedrijf NXP Semiconductors heeft volgens eigen zeggen een 'all-European fab flow' bereikt voor navigatiechips. De onderdelen zijn ontworpen en geassembleerd in Europa, maar de daadwerkelijke productie vindt plaats bij GlobalFoundries in de Verenigde Staten. Dit zou de afhankelijkheid van Aziatische chipfabrieken verminderen, aldus het bedrijf.
+      </p>
+      <p>
+        De chips zijn bestemd voor systemen in auto’s en industriële toepassingen, waar Europese normen en veiligheidsvoorschriften gelden. Door gebruik te maken van een Amerikaanse fabriek blijft het ontwerp en de eindmontage binnen Europa, wat volgens NXP helpt om de supply chain te stabiliseren en juridische risico’s te beperken.
+      </p>
+      <p>
+        Critici wijzen erop dat deze aanpak nog steeds afhankelijk maakt van buitenlandse productiecapaciteit. Bovendien roept het vragen op over de werkelijke invloed van Europa op de kritieke schakels in de keten.
+      </p>
+    </>
+  ),
   'spacex-start-ipo-met-aandeelprijs-van-135-dollar': (
     <>
       <p className="lead-para">
@@ -3664,6 +3677,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'dutch-chip-startup-european-fab-flow-met-amerikaanse-hulp':
+    "Voor ondernemers die actief zijn in hightech of supply chain management is dit een herkenbaar dilemma: hoe balans vinden tussen lokale ambities en praktische haalbaarheid? De keuze voor buitenlandse productie kan strategisch zijn, maar brengt ook risico’s met zich mee zoals geopolitieke spanningen of exportbeperkingen. Het benadrukt dat technologische soevereiniteit vaak een kwestie is van slimme samenwerking, niet alleen van lokale capaciteit.",
   'spacex-start-ipo-met-aandeelprijs-van-135-dollar':
     "Voor Nederlandse en Belgische ondernemers is deze IPO een goed voorbeeld van hoe innovatieve technologiebedrijven kapitaal kunnen aantrekken zonder afhankelijk te zijn van traditionele financieringsbronnen. De directe notering laat zien dat er ook in Europa ruimte is voor vergelijkbare modellen, mits er voldoende interesse en vertrouwen bij investeerders bestaat.",
   'nasa-deep-space-network-artemis-ii':
