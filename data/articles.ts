@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen',
+    format: 'dispatch' as const,
+    edition: '174',
+    category: 'Technologie',
+    title: "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+    dek: "Het Amerikaanse Endurance Energy ontwikkelt technologie om geothermische energie uit de oceaan te winnen en haalde daarvoor $54 miljoen op.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECHNOLOGIE',
+    posterTopic: "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'enterprises-frustrated-by-llm-makers-says-palantir-ceo',
     format: 'dispatch' as const,
     edition: '173',
