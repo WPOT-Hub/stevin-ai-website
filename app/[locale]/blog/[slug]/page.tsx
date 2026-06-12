@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'waymo-lanceert-loyalty-program-met-cashback-en-gratis-annuleringen': (
+    <>
+      <p className="lead-para">
+        Leden van het nieuwe programma krijgen naast de cashback ook toegang tot snellere ritten en prioriteit bij beschikbaarheid. Het abonnement kost $29,99 per maand en is bedoeld om klantbinding te versterken in een markt waar concurrentie tussen autonome mobiliteitsdiensten groeit.
+      </p>
+      <p>
+        De cashback geldt direct op elke rit en kan worden gebruikt voor nieuwe ritten of worden overgemaakt naar een gekoppelde betaalrekening. Gratis annuleringen gelden voor alle ritten, ongeacht de reden, wat uniek is in de sector.
+      </p>
+      <p>
+        Het programma is nu beschikbaar in steden waar Waymo actief is, waaronder Phoenix en San Francisco. Concurrenten zoals Cruise hebben soortgelijke initiatieven overwogen maar nog niet geïmplementeerd.
+      </p>
+    </>
+  ),
   'amazon-alexa-wordt-shopping-agent-en-advertentieplatform': (
     <>
       <p className="lead-para">
@@ -3612,6 +3625,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'waymo-lanceert-loyalty-program-met-cashback-en-gratis-annuleringen':
+    "Voor bedrijven die klantloyaliteit willen stimuleren biedt dit programma een helder model: betaalde voordelen die direct meetbaar zijn in zowel omzet als klanttevredenheid. De combinatie van cashback en flexibiliteit kan vooral waardevol zijn in sectoren waar dienstverlening sterk afhankelijk is van herhalingsaankopen.",
   'amazon-alexa-wordt-shopping-agent-en-advertentieplatform':
     "Voor bedrijven die al afhankelijk zijn van online verkoop via Amazon is deze verandering vooral relevant omdat ze hun zichtbaarheid moeten optimaliseren in een steeds concurrerender landschap. Het benadrukt opnieuw hoe belangrijk het is om mee te bewegen met platform-updates die consumentengedrag beïnvloeden. Wie nu niet inspeelt op voice-commerce loopt het risico om achterop te raken ten opzichte van concurrenten die deze kanalen wel benutten.",
   'zte-wint-drie-selular-awards-2026-voor-ai-gedreven-netwerkinnovaties':
