@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'katalyst-link-ruimtevaartuig-geintegreerd-voor-lancering',
+    format: 'dispatch' as const,
+    edition: '184',
+    category: 'Tech',
+    title: "Ruimtevaartuig Katalyst LINK is klaar voor lancering",
+    dek: "Het Katalyst LINK-ruimtevaartuig is geïntegreerd en wacht op een lancering vanaf Kwajalein binnen enkele weken.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Ruimtevaartuig Katalyst LINK is klaar voor lancering",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'dutch-chip-startup-european-fab-flow-met-amerikaanse-hulp',
     format: 'dispatch' as const,
     edition: '183',
