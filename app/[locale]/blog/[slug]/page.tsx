@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'amazon-alexa-wordt-shopping-agent-en-advertentieplatform': (
+    <>
+      <p className="lead-para">
+        De nieuwe functie van Alexa maakt het mogelijk om tijdens een gesprek over een product direct een bestelling te plaatsen. Als iemand bijvoorbeeld vraagt naar een nieuwe keukenmachine, toont Alexa niet alleen resultaten maar ook betaalde advertenties van merken die relevant zijn voor die zoekopdracht. Gebruikers hoeven niet meer naar een scherm te kijken om te shoppen of informatie te krijgen.
+      </p>
+      <p>
+        Voor merken betekent dit dat ze hun producten nog gerichter kunnen aanbieden in de context van een gesprek. De advertenties verschijnen alleen als ze passen bij de vraag van de gebruiker, wat de kans op conversie vergroot. Amazon verdient hiermee aan zowel de transacties als de advertenties, wat het platform nog aantrekkelijker maakt voor adverteerders.
+      </p>
+      <p>
+        De stap past binnen Amazons strategie om Alexa tot een allesomvattend platform te maken waar consumenten niet alleen informatie vinden maar ook direct actie ondernemen. Concurrenten zoals Google en Apple zullen deze ontwikkeling waarschijnlijk volgen, gezien het potentieel om gebruikers nog langer binnen hun eigen ecosysteem te houden.
+      </p>
+    </>
+  ),
   'zte-wint-drie-selular-awards-2026-voor-ai-gedreven-netwerkinnovaties': (
     <>
       <p className="lead-para">
@@ -3599,6 +3612,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'amazon-alexa-wordt-shopping-agent-en-advertentieplatform':
+    "Voor bedrijven die al afhankelijk zijn van online verkoop via Amazon is deze verandering vooral relevant omdat ze hun zichtbaarheid moeten optimaliseren in een steeds concurrerender landschap. Het benadrukt opnieuw hoe belangrijk het is om mee te bewegen met platform-updates die consumentengedrag beïnvloeden. Wie nu niet inspeelt op voice-commerce loopt het risico om achterop te raken ten opzichte van concurrenten die deze kanalen wel benutten.",
   'zte-wint-drie-selular-awards-2026-voor-ai-gedreven-netwerkinnovaties':
     "Voor bedrijven die afhankelijk zijn van betrouwbare digitale infrastructuur biedt dit een blik op hoe AI-toepassingen operationele kosten kunnen verlagen en nieuwe diensten mogelijk maken. Het laat zien dat technologische innovatie niet alleen voor techbedrijven relevant is, maar ook voor organisaties die streven naar efficiëntere processen of snellere dataverwerking.",
   'instagram-geeft-gebruikers-meer-invloed-op-algoritme':
