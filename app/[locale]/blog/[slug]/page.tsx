@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'nasa-deep-space-network-artemis-ii': (
+    <>
+      <p className="lead-para">
+        Tijdens de Artemis II-missie naar de maan bereikte het dataverkeer via NASA’s Deep Space Network (DSN) een recordhoogte. Ondanks kritische momenten zoals lancering en maanlanding bleef de communicatie stabiel, aldus ruimtevaartdeskundigen. De netwerken moesten plotseling tot wel 40 procent meer data verwerken dan waarvoor ze oorspronkelijk waren ontworpen.
+      </p>
+      <p>
+        Deze onverwachte capaciteit komt voort uit jarenlange upgrades en flexibele inzet van beschikbare schotelantennes wereldwijd. NASA maakte gebruik van zowel vaste als mobiele stations om storingen te voorkomen. Het systeem combineerde realtime telemetrie met live beelden en wetenschappelijke data, zonder noemenswaardige vertragingen of uitval.
+      </p>
+      <p>
+        Experts wijzen op een les voor toekomstige missies: redundantie en modulariteit zijn cruciaal bij het ontwerp van kritieke infrastructuur. De ervaring met Artemis II laat zien dat zelfs systemen die aan hun limieten werken, betrouwbaar kunnen functioneren onder extreme omstandigheden.
+      </p>
+    </>
+  ),
   'spacex-spv-investors-risico-na-ipo': (
     <>
       <p className="lead-para">
@@ -3638,6 +3651,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'nasa-deep-space-network-artemis-ii':
+    "Voor bedrijven die afhankelijk zijn van kritieke IT-infrastructuur, zoals e-commerceplatforms of logistieke systemen, is dit een herinnering aan het belang van schaalbaarheid en back-upplannen. Investeren in overcapaciteit en flexibele oplossingen kan op lange termijn kosten besparen door uitval te voorkomen. Bovendien benadrukt het verhaal dat betrouwbaarheid niet alleen afhangt van techniek, maar ook van slimme procesinrichting en snelle schakelmogelijkheden.",
   'spacex-spv-investors-risico-na-ipo':
     "Voor bedrijven die via SPV’s of andere constructies kapitaal aantrekken is dit een waarschuwing om heldere afspraken te maken over transparantie en kosten. Investeerders moeten niet alleen letten op de groei van het bedrijf, maar ook op de juridische en financiële structuur achter hun participatie. Dit soort risico’s kan snel leiden tot reputatieschade en juridische strijd.",
   'waymo-lanceert-loyalty-program-met-cashback-en-gratis-annuleringen':
