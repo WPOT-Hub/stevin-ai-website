@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'b2b-content-geo-chatgpt-ai-tools',
+    format: 'dispatch' as const,
+    edition: '170',
+    category: 'Platform',
+    title: "B2B-content die werkt in AI-tools: wat scoort in ChatGPT, Google AIO en Perplexity?",
+    dek: "Uit analyse blijkt dat B2B-content met specifieke vraag-antwoordstructuren en actuele data vaker wordt opgepakt door AI-tools zoals ChatGPT, Google AIO en Perplexity.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "B2B-content die werkt in AI-tools: wat scoort in ChatGPT, Google AIO en Perplexity?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'apple-ios-27-automatische-wachtwoordvervanging',
     format: 'dispatch' as const,
     edition: '169',
