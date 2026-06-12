@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spacex-spv-investors-risico-na-ipo': (
+    <>
+      <p className="lead-para">
+        Investeerders die via SPV’s deelnamen aan SpaceX lopen tegen onverwachte problemen aan na de geplande beursgang. Pas na het aflopen van lock-up-periodes wordt duidelijk hoeveel aandelen ze daadwerkelijk bezitten, aldus TechCrunch.
+      </p>
+      <p>
+        Deze structuur brengt meerdere risico’s met zich mee: verborgen transactiekosten, lange wachttijden voor uitbetalingen en zelfs het gevaar dat SPV-beheerders fraude plegen door aandelen te verkopen zonder medeweten van investeerders. Voor kleinere participaties is de transparantie vaak minimaal.
+      </p>
+      <p>
+        Ook zijn er gevallen bekend waarbij SPV’s zelf failliet gingen voordat investeerders hun geld terugkregen, wat de financiële onzekerheid vergroot. Dit maakt de stap naar een beursgang voor particuliere investeerders extra riskant.
+      </p>
+    </>
+  ),
   'waymo-lanceert-loyalty-program-met-cashback-en-gratis-annuleringen': (
     <>
       <p className="lead-para">
@@ -3625,6 +3638,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spacex-spv-investors-risico-na-ipo':
+    "Voor bedrijven die via SPV’s of andere constructies kapitaal aantrekken is dit een waarschuwing om heldere afspraken te maken over transparantie en kosten. Investeerders moeten niet alleen letten op de groei van het bedrijf, maar ook op de juridische en financiële structuur achter hun participatie. Dit soort risico’s kan snel leiden tot reputatieschade en juridische strijd.",
   'waymo-lanceert-loyalty-program-met-cashback-en-gratis-annuleringen':
     "Voor bedrijven die klantloyaliteit willen stimuleren biedt dit programma een helder model: betaalde voordelen die direct meetbaar zijn in zowel omzet als klanttevredenheid. De combinatie van cashback en flexibiliteit kan vooral waardevol zijn in sectoren waar dienstverlening sterk afhankelijk is van herhalingsaankopen.",
   'amazon-alexa-wordt-shopping-agent-en-advertentieplatform':
