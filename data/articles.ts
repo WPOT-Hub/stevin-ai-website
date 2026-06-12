@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'prometheus-12-miljard-ai-fysieke-wereld',
+    format: 'dispatch' as const,
+    edition: '171',
+    category: 'Tech',
+    title: "Fysieke AI-startup Prometheus haalt 12 miljard op voor 'algemene ingenieur'",
+    dek: "Het bedrijf van Jeff Bezos, Prometheus, haalt 12 miljard dollar op om een AI-systeem te bouwen dat zware engineering en medicijnontwerp kan automatiseren.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Fysieke AI-startup Prometheus haalt 12 miljard op voor 'algemene ingenieur'",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'b2b-content-geo-chatgpt-ai-tools',
     format: 'dispatch' as const,
     edition: '170',
