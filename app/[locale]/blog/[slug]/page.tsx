@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'zte-wint-drie-selular-awards-2026-voor-ai-gedreven-netwerkinnovaties': (
+    <>
+      <p className="lead-para">
+        ZTE ontving drie Selular Awards 2026 voor haar AI-gedreven innovaties in vaste draadloze toegang (FWA), netwerkecosystemen en native AI-basisbandtechnologie. De prijzen bevestigen de rol van het bedrijf als sleutelspeler in Indonesië’s groei naar een 5G-Advanced en AI-gedreven economie.
+      </p>
+      <p>
+        De awards benadrukken ZTE’s vooruitgang in het integreren van kunstmatige intelligentie in telecomnetwerken, wat leidt tot efficiënter beheer en hogere prestaties. Volgens lokale experts helpt deze technologie om de digitale kloof te verkleinen en nieuwe economische kansen te creëren.
+      </p>
+      <p>
+        De erkenning komt op een moment dat Indonesië investeert in uitbreiding van zijn 5G-infrastructuur en digitale transformatie. Concurrenten zoals Huawei en Ericsson blijven ook actief in deze markt, maar ZTE lijkt nu met concrete resultaten te komen.
+      </p>
+    </>
+  ),
   'instagram-geeft-gebruikers-meer-invloed-op-algoritme': (
     <>
       <p className="lead-para">
@@ -3586,6 +3599,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'zte-wint-drie-selular-awards-2026-voor-ai-gedreven-netwerkinnovaties':
+    "Voor bedrijven die afhankelijk zijn van betrouwbare digitale infrastructuur biedt dit een blik op hoe AI-toepassingen operationele kosten kunnen verlagen en nieuwe diensten mogelijk maken. Het laat zien dat technologische innovatie niet alleen voor techbedrijven relevant is, maar ook voor organisaties die streven naar efficiëntere processen of snellere dataverwerking.",
   'instagram-geeft-gebruikers-meer-invloed-op-algoritme':
     "Voor bedrijven die afhankelijk zijn van sociale media is dit een duidelijke reminder dat algoritmes voortdurend veranderen. Het loont om niet alleen te focussen op engagement, maar ook op het creëren van content die aansluit bij specifieke interesses. Wie hierin slaagt, kan profiteren van een betere organische bereik zonder extra budget voor advertenties.",
   'endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen':
