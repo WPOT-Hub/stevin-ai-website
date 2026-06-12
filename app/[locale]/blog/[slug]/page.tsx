@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen': (
+    <>
+      <p className="lead-para">
+        Het bedrijf Endurance Energy, opgericht door voormalige SpaceX-medewerkers, werkt aan een systeem dat warmte uit diepe oceaanlagen omzet in elektriciteit. De technologie maakt gebruik van temperatuurverschillen tussen oppervlaktewater en diepere lagen, aldus het bedrijf.
+      </p>
+      <p>
+        Met de nieuwe investeringsronde wil Endurance Energy de eerste commerciële installaties bouwen en testen. Het geld komt onder meer van investeerders zoals Congruent Ventures en Congruent Ventures II, zo blijkt uit een persbericht.
+      </p>
+      <p>
+        De potentie van oceaanwarmte is groot: wereldwijd zijn er grote hoeveelheden energie beschikbaar in oceanen, maar deze bron wordt nog nauwelijks benut. Endurance Energy claimt dat hun technologie een betrouwbare en duurzame energiebron kan worden.
+      </p>
+    </>
+  ),
   'theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots': (
     <>
       <p className="lead-para">
@@ -3560,6 +3573,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen':
+    "Voor ondernemers in energietransitie biedt deze ontwikkeling kansen om vroeg in te stappen op een nieuwe markt. Oceaanwarmte kan een aanvulling vormen op bestaande hernieuwbare bronnen zoals wind en zonne-energie, vooral in kustgebieden. De komende jaren zal moeten blijken of de technologie technisch en economisch haalbaar is.",
   'theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots':
     "Voor ondernemers in productiebedrijven biedt deze ontwikkeling een kans om sneller in te spelen op veranderende vraag. De combinatie van flexibiliteit en lagere instapkosten kan vooral interessant zijn voor MKB-bedrijven die nu nog wachten met automatisering vanwege hoge drempels. Tegelijkertijd vraagt het wel om een andere benadering van robotica: niet meer investeren in vaste oplossingen, maar in systemen die meegroeien met je bedrijf.",
   'enterprises-frustrated-by-llm-makers-says-palantir-ceo':
