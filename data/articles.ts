@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots',
+    format: 'dispatch' as const,
+    edition: '172',
+    category: 'Tech',
+    title: "Theker haalt 85 miljoen op voor robots die zichzelf heruitvinden",
+    dek: "De Nederlandse startup Theker ontwikkelt fabrieksrobots die zonder aanpassingen verschillende taken kunnen uitvoeren.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Theker haalt 85 miljoen op voor robots die zichzelf heruitvinden",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'prometheus-12-miljard-ai-fysieke-wereld',
     format: 'dispatch' as const,
     edition: '171',
