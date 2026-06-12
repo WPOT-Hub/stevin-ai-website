@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'dutch-chip-startup-european-fab-flow-met-amerikaanse-hulp',
+    format: 'dispatch' as const,
+    edition: '183',
+    category: 'Tech',
+    title: "Nederlandse chipstart-up produceert EU-onderdelen bij Amerikaanse fabriek",
+    dek: "Een Nederlandse chipstart-up claimt een volledig Europese productieketen te hebben gerealiseerd, ondanks dat de chips daadwerkelijk gemaakt worden in de VS.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Nederlandse chipstart-up produceert EU-onderdelen bij Amerikaanse fabriek",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'nasa-deep-space-network-artemis-ii',
     format: 'dispatch' as const,
     edition: '182',
