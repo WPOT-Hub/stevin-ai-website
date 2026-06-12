@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'spacex-spv-investors-risico-na-ipo',
+    format: 'dispatch' as const,
+    edition: '180',
+    category: 'Finance',
+    title: "SpaceX-investeerders in SPV’s lopen risico op verborgen kosten en fraude na beursgang",
+    dek: "Na de beursgang van SpaceX blijven investeerders in SPV’s (Special Purpose Vehicles) lang wachten op inzicht in hun daadwerkelijke aandelenbezit door uitgestelde lock-ups en onduidelijke kostenstructuren.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "SpaceX-investeerders in SPV’s lopen risico op verborgen kosten en fraude na beursgang",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'waymo-lanceert-loyalty-program-met-cashback-en-gratis-annuleringen',
     format: 'dispatch' as const,
     edition: '179',
