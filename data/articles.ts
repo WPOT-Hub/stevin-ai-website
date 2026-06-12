@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'enterprises-frustrated-by-llm-makers-says-palantir-ceo',
+    format: 'dispatch' as const,
+    edition: '173',
+    category: 'Tech',
+    title: "Bedrijven gefrustreerd door LLM-makers: focus ligt op tokens, niet op oplossingen",
+    dek: "Bedrijven zijn ontevreden over de huidige generatie grote taalmodellen, aldus Palantir-topman Alex Karp.",
+    publishedAt: '2026-06-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Bedrijven gefrustreerd door LLM-makers: focus ligt op tokens, niet op oplossingen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots',
     format: 'dispatch' as const,
     edition: '172',
