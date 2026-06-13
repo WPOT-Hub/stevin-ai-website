@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'nova-en-de-toekomst-van-ruimtevaart',
+    format: 'dispatch' as const,
+    edition: '192',
+    category: 'Markt',
+    title: "De Nova-raket en de vraag die elke sector zich moet stellen",
+    dek: "Wanneer de volgende stap onvermijdelijk is, maar niemand weet hoe die eruitziet.",
+    publishedAt: '2026-06-13',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "De Nova-raket en de vraag die elke sector zich moet stellen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'europa-moet-asml-inzetten-als-strategische-onderhandelingskaart',
     format: 'dispatch' as const,
     edition: '191',
