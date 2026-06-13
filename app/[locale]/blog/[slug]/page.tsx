@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'politiek-dreigt-wetenschap-bij-nationale-academies-te-beinvloeden': (
+    <>
+      <p className="lead-para">
+        Een nog niet openbaar gemaakt klimaatrapport van de Amerikaanse National Academies of Science dreigt politieke druk te ondervinden voordat het wordt gepubliceerd. Dit zou een breuk betekenen met de traditionele onafhankelijkheid van wetenschappelijke instellingen in het land.
+      </p>
+      <p>
+        De Academies, die normaal gesproken op basis van peer review werken, krijgen kritiek omdat ze een rapport hebben laten beoordelen door niet-gespecialiseerde beleidsmakers. Dit roept vragen op over de objectiviteit en transparantie van toekomstige onderzoeken.
+      </p>
+      <p>
+        Politici uit zowel de Republikeinse als Democratische partij lijken invloed uit te oefenen op de inhoud, wat kan leiden tot een situatie waarin wetenschap wordt aangepast aan politieke belangen in plaats van andersom.
+      </p>
+    </>
+  ),
   'ukraine-ai-drones-autonoom-oorlogsvoering': (
     <>
       <p className="lead-para">
@@ -3943,6 +3956,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'politiek-dreigt-wetenschap-bij-nationale-academies-te-beinvloeden':
+    "Dit incident laat zien hoe kwetsbaar onafhankelijke wetenschap kan zijn in tijden van polarisatie. Voor ondernemers is het belangrijk om te beseffen dat zelfs gerenommeerde instellingen niet immuun zijn voor externe druk. Het benadrukt het belang van kritisch denken bij het evalueren van onderzoeksresultaten, vooral wanneer die direct verband houden met beleidsbeslissingen die hun bedrijven kunnen raken.",
   'ukraine-ai-drones-autonoom-oorlogsvoering':
     "Voor bedrijven die actief zijn in defensie-gerelateerde technologie of AI-toepassingen is dit een belangrijke ontwikkeling. Het laat zien dat autonome systemen steeds verder gaan dan ondersteunende taken en direct operationeel kunnen worden ingezet. Tegelijkertijd onderstreept het de noodzaak om ethische kaders en regelgeving rondom dergelijke technologieën tijdig vorm te geven.",
   'pokemongo-data-militaire-toepassingen':
