@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'tiktok-shop-nederland-logistieke-uitdagingen': (
+    <>
+      <p className="lead-para">
+        TikTok Shop opent vanaf deze week ook in Nederland, waardoor consumenten via de app kunnen betalen en producten kunnen kopen zonder de app te verlaten. De lancering volgt op eerdere introducties in landen als Duitsland, waar bedrijven al snel geconfronteerd werden met onverwachte vraagpieken die de logistiek onder druk zetten.
+      </p>
+      <p>
+        In Duitsland leidde de plotselinge toename van orders tot vertragingen bij verzending en retourprocessen. Veel bedrijven waren niet voorbereid op de schommelingen in vraag die TikTok Shop met zich mee kan brengen, vooral omdat de app een jong publiek bedient dat impulsief koopt. Dit resulteerde in klantklachten en extra kosten voor spoedverzending.
+      </p>
+      <p>
+        Voor Nederlandse ondernemers betekent dit dat ze hun voorraadbeheer en fulfilmentprocessen moeten aanpassen voordat de pieken toeslaan. Een proactieve aanpak is nodig om te voorkomen dat klanten teleurgesteld raken door lange levertijden of onduidelijkheden over retourzendingen.
+      </p>
+    </>
+  ),
   'google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren': (
     <>
       <p className="lead-para">
@@ -3865,6 +3878,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'tiktok-shop-nederland-logistieke-uitdagingen':
+    "De komst van TikTok Shop laat zien hoe snel digitale kanalen het consumentengedrag kunnen veranderen. Voor bedrijven is het belangrijk om niet alleen te focussen op de verkoopkans, maar ook op de operationele impact. Een goed doordacht logistiek plan voorkomt dat korte-termijn succes omdraait in langdurige reputatieschade.",
   'google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren':
     "Voor bureau-eigenaars en in-house teams betekent dit dat campagnes beter gemeten kunnen worden zonder complexe workarounds. Het is een stap richting betrouwbaardere data, maar vereist wel dat teams hun meetstrategie opnieuw tegen het licht houden. De hostname-filter kan vooral nuttig zijn bij grote organisaties met meerdere websites of subdomeinen.",
   'attributie-impact-niet-meer-gelijk-aan-meetdata-in-ppc':
