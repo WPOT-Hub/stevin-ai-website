@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-in-film-industrie-2026-geen-revolutie',
+    format: 'dispatch' as const,
+    edition: '207',
+    category: 'Cultuur',
+    title: "AI in de filmindustrie levert nog geen echte hits op",
+    dek: "Generatieve AI-modellen kunnen nog geen speelfilms maken die publiek trekken, ondanks de hype.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "AI in de filmindustrie levert nog geen echte hits op",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'neuralink-tussen-hoop-en-hype-wat-bureaus-ervan-moeten-weten',
     format: 'dispatch' as const,
     edition: '206',
