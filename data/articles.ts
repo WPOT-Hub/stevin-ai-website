@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'politiek-dreigt-wetenschap-bij-nationale-academies-te-beinvloeden',
+    format: 'dispatch' as const,
+    edition: '202',
+    category: 'Beleid',
+    title: "Eerste klimaatrapport van Amerikaanse wetenschappers mogelijk gepolitiseerd",
+    dek: "Een aanstaand rapport over klimaatattributie kan de eerste politieke botsing worden met de Amerikaanse wetenschapsacademies.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Eerste klimaatrapport van Amerikaanse wetenschappers mogelijk gepolitiseerd",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ukraine-ai-drones-autonoom-oorlogsvoering',
     format: 'dispatch' as const,
     edition: '201',
