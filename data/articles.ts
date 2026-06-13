@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'europa-moet-asml-inzetten-als-strategische-onderhandelingskaart',
+    format: 'dispatch' as const,
+    edition: '191',
+    category: 'Beleid',
+    title: "Als Amerika AI afsluit, moet Europa ASML serieus nemen",
+    dek: "De VS dicteert wie toegang krijgt tot AI. Europa heeft één troef: ASML. Gebruik die.",
+    publishedAt: '2026-06-13',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Als Amerika AI afsluit, moet Europa ASML serieus nemen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-chip-startups-netwerkversnelling-rack-scale',
     format: 'dispatch' as const,
     edition: '190',
