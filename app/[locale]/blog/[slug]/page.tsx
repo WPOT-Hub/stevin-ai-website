@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'afm-kritiek-op-ai-toezicht-verdeling-met-dnb': (
+    <>
+      <p className="lead-para">
+        De Autoriteit Financiële Markten (AFM) krijgt met de Nederlandse uitvoering van de Europese AI-verordening een nieuwe toezichthoudende rol. De toezichthouder moet controleren of financiële instellingen consumenten beschermen tegen manipulatieve of misleidende AI-systemen. Ook wordt nagegaan of kwetsbaarheden in AI-modellen niet worden uitgebuit door bedrijven. Dit betekent extra werk voor de AFM, aldus de uitvoeringstoets die de toezichthouder heeft opgesteld.
+      </p>
+      <p>
+        De kritiek richt zich vooral op de verdeling van taken tussen AFM en De Nederlandsche Bank (DNB). Volgens de AFM ontbreekt het aan heldere afspraken over wie welke AI-systemen mag beoordelen. Dit kan leiden tot dubbel werk of juist gaten in het toezicht. De AFM wijst erop dat financiële instellingen vaak complexe AI-oplossingen gebruiken die zowel onder financieel als technisch toezicht vallen.
+      </p>
+      <p>
+        De nieuwe taken moeten uiterlijk in 2027 operationeel zijn, wanneer de Europese AI-verordening volledig in werking treedt. Financiële instellingen moeten zich voorbereiden op strengere controles en meer transparantievereisten rondom hun AI-systemen.
+      </p>
+    </>
+  ),
   'ai-agents-veiligheid-jfrog-nanoclaw': (
     <>
       <p className="lead-para">
@@ -3969,6 +3982,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'afm-kritiek-op-ai-toezicht-verdeling-met-dnb':
+    "Voor bedrijven betekent dit dat ze zich moeten verdiepen in de nieuwe regels en hun AI-toepassingen tijdig moeten laten screenen. Het is verstandig om nu al een inventarisatie te maken van welke systemen mogelijk onder de verordening vallen. Daarnaast kunnen bureaus die gespecialiseerd zijn in compliance en risicomanagement een grotere rol gaan spelen bij het helpen navigeren door deze complexe regelgeving.",
   'ai-agents-veiligheid-jfrog-nanoclaw':
     "Voor bedrijven die AI inzetten, wordt veiligheid steeds belangrijker naarmate systemen autonomer worden. Het is verstandig om niet alleen te vertrouwen op standaardbeveiligingsmaatregelen, maar ook specifieke oplossingen te implementeren voor AI-gestuurde processen. Dit vraagt om een proactieve houding, waarbij je niet wacht tot er iets misgaat.",
   'politiek-dreigt-wetenschap-bij-nationale-academies-te-beinvloeden':
