@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ukraine-ai-drones-autonoom-oorlogsvoering': (
+    <>
+      <p className="lead-para">
+        In een zeldzame test heeft Oekraïne autonome drones ingezet die zonder menselijke tussenkomst Russische soldaten opspoorden en uitschakelden. De drones waren uitgerust met AI-modules die doelen herkenden en beslissingen namen over aanval of terugtrekking. Volgens rapporten was de operatie succesvol en leidde tot een significante uplift in effectiviteit ten opzichte van traditionele drone-aanvallen.
+      </p>
+      <p>
+        De technologie maakt gebruik van realtime beeldverwerking en machine learning om bewegende doelen te detecteren en te volgen, zelfs in complexe omstandigheden. Experts wijzen erop dat deze stap de oorlogsvoering kan veranderen, omdat het de afhankelijkheid van menselijke operators vermindert. Tegelijkertijd roept het ethische vragen op over de inzet van dergelijke systemen in conflictsituaties.
+      </p>
+      <p>
+        De test markeert een trend waarbij militaire partijen wereldwijd investeren in autonome wapensystemen. Oekraïne toont hiermee aan dat AI niet alleen wordt gebruikt voor logistiek of verkenning, maar ook voor directe gevechtsacties.
+      </p>
+    </>
+  ),
   'pokemongo-data-militaire-toepassingen': (
     <>
       <p className="lead-para">
@@ -3930,6 +3943,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ukraine-ai-drones-autonoom-oorlogsvoering':
+    "Voor bedrijven die actief zijn in defensie-gerelateerde technologie of AI-toepassingen is dit een belangrijke ontwikkeling. Het laat zien dat autonome systemen steeds verder gaan dan ondersteunende taken en direct operationeel kunnen worden ingezet. Tegelijkertijd onderstreept het de noodzaak om ethische kaders en regelgeving rondom dergelijke technologieën tijdig vorm te geven.",
   'pokemongo-data-militaire-toepassingen':
     "Dit voorbeeld laat zien hoe kwetsbaar gebruikersdata is in een wereld waarin data steeds vaker wordt gezien als grondstof voor innovatie en zelfs defensie. Voor bedrijven die werken met consumentendata is dit een waarschuwing om niet alleen te voldoen aan wettelijke eisen, maar ook om proactief te communiceren over hoe data wordt gebruikt. Transparantie wordt daarmee niet alleen een compliance-kwestie, maar ook een kwestie van vertrouwen.",
   'spacex-tesla-merger-2026':
