@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'elon-musk-wordt-eerste-biljonair-door-spacex-ipo': (
+    <>
+      <p className="lead-para">
+        SpaceX is officieel genoteerd aan de beurs met een openingskoers van $150 per aandeel. De IPO bracht het bedrijf direct in de schijnwerpers en gaf Musks netto vermogen een forse uplift. Zijn aandelenpakket van 4,8 miljard stuks in SpaceX is hierbij doorslaggevend gebleken.
+      </p>
+      <p>
+        Voor zijn andere bedrijven, zoals Tesla, blijft Musk eveneens aan het roer staan. Hun waarde draagt eveneens bij aan zijn totale vermogen, dat nu boven de $1 biljoen uitkomt. Analisten wijzen erop dat deze mijlpaal vooral te danken is aan de groei van SpaceX in de ruimtevaartsector.
+      </p>
+      <p>
+        De beursgang van SpaceX volgt op jarenlange investeringen en technologische doorbraken in de ruimtevaart. Musk zelf heeft eerder al laten weten dat hij zijn vermogen wil inzetten voor ambitieuze doelen, waaronder kolonisatie van Mars.
+      </p>
+    </>
+  ),
   'nova-en-de-toekomst-van-ruimtevaart': (
     <>
       <p className="lead-para">
@@ -3826,6 +3839,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'elon-musk-wordt-eerste-biljonair-door-spacex-ipo':
+    "Voor ondernemers toont deze gebeurtenis hoe snel waarde kan toenemen door innovatie en schaalvergroting. Het benadrukt ook het belang van diversificatie: Musks vermogen is niet afhankelijk van één bedrijf of sector. Tegelijkertijd roept het vragen op over concentratie van kapitaal en de impact daarvan op markten en concurrentie.",
   'nova-en-de-toekomst-van-ruimtevaart':
     "Bij Stevin zien we deze dynamiek terug in veel markten waar onze klanten actief zijn: van tech tot retail tot logistiek. De les van de Nova-raket is niet dat technologie per se alles verandert, maar dat afhankelijkheid gevaarlijk wordt wanneer disruptie onvermijdelijk lijkt. Onze rol als strategisch partner ligt erin om organisaties voor te bereiden op scenario’s waarin hun huidige modellen plotseling niet meer werken – zonder dat ze daarbij hun core business uit het oog verliezen. Dat betekent investeren in flexibiliteit, diversificatie en meetdata die niet alleen prestaties volgen, maar ook waarschuwen wanneer risico’s zich aandienen.",
   'europa-moet-asml-inzetten-als-strategische-onderhandelingskaart':
