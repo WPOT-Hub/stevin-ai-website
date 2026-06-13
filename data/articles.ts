@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren',
+    format: 'dispatch' as const,
+    edition: '195',
+    category: 'Platform',
+    title: "Google Analytics voegt bron-groepering en hostname-filter toe",
+    dek: "Google Analytics introduceert betere bron-attributie en nieuwe filteropties voor eenvoudigere cross-channel analyse.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Analytics voegt bron-groepering en hostname-filter toe",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'attributie-impact-niet-meer-gelijk-aan-meetdata-in-ppc',
     format: 'dispatch' as const,
     edition: '194',
