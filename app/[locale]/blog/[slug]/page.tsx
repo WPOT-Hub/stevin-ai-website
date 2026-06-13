@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'robinhood-record-verkeer-na-spacex-introductie': (
+    <>
+      <p className="lead-para">
+        De handelspijplijn Robinhood zag woensdag een ongekend hoog aantal gebruikers tegelijk actief toen SpaceX voor het eerst aandelen aanbood op de beurs. De servers van het platform konden de stroom aan transacties en verzoeken tijdelijk niet volledig verwerken, waardoor sommige klanten korte tijd geen toegang hadden tot hun account of handelspagina.
+      </p>
+      <p>
+        Na ongeveer twee uur waren de problemen volgens Robinhood opgelost en functioneerde het platform weer normaal. Het bedrijf heeft geen melding gemaakt van gegevensverlies of financiële gevolgen voor gebruikers als gevolg van de storingen.
+      </p>
+      <p>
+        SpaceX introduceerde ruim 20 miljoen aandelen tegen een startprijs van 97 dollar per aandeel, wat direct leidde tot een recordomzet voor de handel in nieuwe aandelen via Robinhood.
+      </p>
+    </>
+  ),
   'tiktok-shop-nederland-logistieke-uitdagingen': (
     <>
       <p className="lead-para">
@@ -3878,6 +3891,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'robinhood-record-verkeer-na-spacex-introductie':
+    "Voor bedrijven die afhankelijk zijn van online platforms is dit een herinnering aan de risico's van piekbelasting tijdens grote gebeurtenissen. Een robuuste infrastructuur en realtime monitoring kunnen storingen voorkomen of beperken. Daarnaast blijkt dat gebruikers bij dergelijke situaties snel terugkeren naar vertrouwde systemen, wat de noodzaak onderstreept om stabiliteit boven alle andere features te stellen.",
   'tiktok-shop-nederland-logistieke-uitdagingen':
     "De komst van TikTok Shop laat zien hoe snel digitale kanalen het consumentengedrag kunnen veranderen. Voor bedrijven is het belangrijk om niet alleen te focussen op de verkoopkans, maar ook op de operationele impact. Een goed doordacht logistiek plan voorkomt dat korte-termijn succes omdraait in langdurige reputatieschade.",
   'google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren':
