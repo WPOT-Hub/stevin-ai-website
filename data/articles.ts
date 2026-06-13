@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'robinhood-record-verkeer-na-spacex-introductie',
+    format: 'dispatch' as const,
+    edition: '197',
+    category: 'Platform',
+    title: "Robinhood verwerkt recordaantal klanten na SpaceX-beursgang",
+    dek: "Robinhood meldt een piek in verkeer tijdens de beursintroductie van SpaceX, met kortstondige storingen die inmiddels zijn opgelost.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Robinhood verwerkt recordaantal klanten na SpaceX-beursgang",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'tiktok-shop-nederland-logistieke-uitdagingen',
     format: 'dispatch' as const,
     edition: '196',
