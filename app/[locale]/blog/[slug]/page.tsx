@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spacex-tesla-merger-2026': (
+    <>
+      <p className="lead-para">
+        Gwynne Shotwell, president van SpaceX, heeft opnieuw gesuggereerd dat een fusie met Tesla binnenkort kan plaatsvinden. Tijdens een interview met TechCrunch gaf ze aan dat de twee bedrijven al jaren nauw samenwerken en dat een formele combinatie logisch zou zijn.
+      </p>
+      <p>
+        Shotwell wees erop dat zowel SpaceX als Tesla dezelfde visie delen op technologische innovatie en duurzaamheid. Volgens haar zou een fusie de samenwerking tussen beide bedrijven verder versterken en nieuwe kansen creëren voor beide partijen.
+      </p>
+      <p>
+        De uitspraken volgen op eerdere hints van Elon Musk, die eerder al aangaf dat een fusie tussen de twee bedrijven mogelijk is. Musk is zowel CEO van Tesla als grootste aandeelhouder van SpaceX.
+      </p>
+    </>
+  ),
   'mistral-waardering-verdubbeld-rond-e20-miljard': (
     <>
       <p className="lead-para">
@@ -3904,6 +3917,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spacex-tesla-merger-2026':
+    "Voor ondernemers in de techsector laat deze ontwikkeling zien hoe snel strategische allianties kunnen evolueren tot volledige integratie. Het benadrukt het belang van flexibiliteit en het vermogen om kansen te grijpen wanneer ze zich voordoen, vooral in sectoren waar technologie en innovatie centraal staan.",
   'mistral-waardering-verdubbeld-rond-e20-miljard':
     "Voor ondernemers die actief zijn in tech of data-gedreven sectoren is deze ontwikkeling een signaal dat Europa serieus meedoet in de AI-race. Het toont aan dat er nog ruimte is voor Europese alternatieven naast de gevestigde Amerikaanse spelers. Tegelijkertijd blijft de vraag hoe lang dergelijke hoge waarderingen houdbaar zijn zonder directe winstgevendheid.",
   'robinhood-record-verkeer-na-spacex-introductie':
