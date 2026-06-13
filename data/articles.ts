@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-agents-veiligheid-jfrog-nanoclaw',
+    format: 'dispatch' as const,
+    edition: '203',
+    category: 'Operations',
+    title: "AI-agents krijgen veiligere downloads via JFrog",
+    dek: "NanoClaw integreert JFrog Registry om gevaarlijke AI-agent downloads te blokkeren.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "AI-agents krijgen veiligere downloads via JFrog",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'politiek-dreigt-wetenschap-bij-nationale-academies-te-beinvloeden',
     format: 'dispatch' as const,
     edition: '202',
