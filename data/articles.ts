@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'tiktok-shop-nederland-logistieke-uitdagingen',
+    format: 'dispatch' as const,
+    edition: '196',
+    category: 'Distributie',
+    title: "TikTok Shop start in Nederland: Duitse logistiek als waarschuwing",
+    dek: "Vanaf 15 juni kunnen Nederlandse TikTok-gebruikers via de app direct betalen en shoppen, wat forse pieken in vraag kan veroorzaken.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "TikTok Shop start in Nederland: Duitse logistiek als waarschuwing",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren',
     format: 'dispatch' as const,
     edition: '195',
