@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'attributie-impact-niet-meer-gelijk-aan-meetdata-in-ppc',
+    format: 'dispatch' as const,
+    edition: '194',
+    category: 'Markt',
+    title: "Attributie en impact in PPC zijn niet hetzelfde",
+    dek: "Uit meetdata van platforms blijkt slechts een deel van de werkelijke marketingimpact bij PPC-campagnes.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Attributie en impact in PPC zijn niet hetzelfde",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'elon-musk-wordt-eerste-biljonair-door-spacex-ipo',
     format: 'dispatch' as const,
     edition: '193',
