@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'pokemongo-data-militaire-toepassingen': (
+    <>
+      <p className="lead-para">
+        Uit onderzoek blijkt dat locatie- en bewegingsdata van Pokémon Go-spelers zijn ingezet voor het trainen van AI-systemen die later ook voor militaire drones werden gebruikt. De data werd verzameld via de app en vervolgens geanalyseerd door techbedrijven zonder dat spelers hiervan op de hoogte waren. Dit roept opnieuw vragen op over de onzichtbare waarde van gebruikersdata in commerciële en defensieprojecten.
+      </p>
+      <p>
+        De praktijk onderstreept hoe gemakkelijk persoonlijke informatie kan worden hergebruikt voor doeleinden waar spelers nooit mee hebben ingestemd. Techbedrijven verwerkten de data vaak als onderdeel van grotere datasets voor machine learning, zonder expliciete toestemming of duidelijke communicatie over het eindgebruik. Voor veel gebruikers is dit een schokkende ontdekking, zeker omdat Pokémon Go zelf geen directe link heeft met defensie of veiligheid.
+      </p>
+      <p>
+        Ook in Europa komt deze kwestie terug bij discussies over data-eigendom en transparantie. Regels zoals de AVG bieden weliswaar bescherming, maar de praktijk laat zien dat handhaving en bewustzijn bij gebruikers achterblijven. Gebruikers kunnen hun data niet meer terugdraaien als deze eenmaal is geanonimiseerd en verspreid over meerdere systemen.
+      </p>
+    </>
+  ),
   'spacex-tesla-merger-2026': (
     <>
       <p className="lead-para">
@@ -3917,6 +3930,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'pokemongo-data-militaire-toepassingen':
+    "Dit voorbeeld laat zien hoe kwetsbaar gebruikersdata is in een wereld waarin data steeds vaker wordt gezien als grondstof voor innovatie en zelfs defensie. Voor bedrijven die werken met consumentendata is dit een waarschuwing om niet alleen te voldoen aan wettelijke eisen, maar ook om proactief te communiceren over hoe data wordt gebruikt. Transparantie wordt daarmee niet alleen een compliance-kwestie, maar ook een kwestie van vertrouwen.",
   'spacex-tesla-merger-2026':
     "Voor ondernemers in de techsector laat deze ontwikkeling zien hoe snel strategische allianties kunnen evolueren tot volledige integratie. Het benadrukt het belang van flexibiliteit en het vermogen om kansen te grijpen wanneer ze zich voordoen, vooral in sectoren waar technologie en innovatie centraal staan.",
   'mistral-waardering-verdubbeld-rond-e20-miljard':
