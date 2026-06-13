@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'elon-musk-wordt-eerste-biljonair-door-spacex-ipo',
+    format: 'dispatch' as const,
+    edition: '193',
+    category: 'Finance',
+    title: "Elon Musk wordt eerste biljonair na SpaceX-beursgang",
+    dek: "De waarde van Elon Musks vermogen overschrijdt voor het eerst de duizend miljard dollar na de beursgang van SpaceX.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "Elon Musk wordt eerste biljonair na SpaceX-beursgang",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'nova-en-de-toekomst-van-ruimtevaart',
     format: 'dispatch' as const,
     edition: '192',
