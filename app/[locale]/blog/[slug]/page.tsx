@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'mistral-waardering-verdubbeld-rond-e20-miljard': (
+    <>
+      <p className="lead-para">
+        De geruchten over de nieuwe investeringsronde komen kort na de vorige ronde in 2024, toen Mistral nog €11,7 miljard waard was. De opbrengst zou worden gebruikt voor verdere ontwikkeling van grote taalmodellen en infrastructuur.
+      </p>
+      <p>
+        Als de deal doorgaat, komt het geld vooral van bestaande investeerders en strategische partners. Mistral richt zich op Europese markten, waar het concurreert met Amerikaanse spelers als OpenAI en Meta.
+      </p>
+      <p>
+        De start-up positioneert zich als een onafhankelijke Europese AI-partner, wat in lijn ligt met de ambities van de EU om digitale soevereiniteit te vergroten.
+      </p>
+    </>
+  ),
   'robinhood-record-verkeer-na-spacex-introductie': (
     <>
       <p className="lead-para">
@@ -3891,6 +3904,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'mistral-waardering-verdubbeld-rond-e20-miljard':
+    "Voor ondernemers die actief zijn in tech of data-gedreven sectoren is deze ontwikkeling een signaal dat Europa serieus meedoet in de AI-race. Het toont aan dat er nog ruimte is voor Europese alternatieven naast de gevestigde Amerikaanse spelers. Tegelijkertijd blijft de vraag hoe lang dergelijke hoge waarderingen houdbaar zijn zonder directe winstgevendheid.",
   'robinhood-record-verkeer-na-spacex-introductie':
     "Voor bedrijven die afhankelijk zijn van online platforms is dit een herinnering aan de risico's van piekbelasting tijdens grote gebeurtenissen. Een robuuste infrastructuur en realtime monitoring kunnen storingen voorkomen of beperken. Daarnaast blijkt dat gebruikers bij dergelijke situaties snel terugkeren naar vertrouwde systemen, wat de noodzaak onderstreept om stabiliteit boven alle andere features te stellen.",
   'tiktok-shop-nederland-logistieke-uitdagingen':
