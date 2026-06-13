@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'neuralink-tussen-hoop-en-hype-wat-bureaus-ervan-moeten-weten',
+    format: 'dispatch' as const,
+    edition: '206',
+    category: 'Technologie',
+    title: "Neuralink: de volgende marketingrevolutie of een medische niche?",
+    dek: "Een hersenimplantaat dat gedachten vertaalt naar digitale acties klinkt als sciencefiction, maar Neuralink is al bezig met menselijke trials. Voor bureaus is dit geen toekomstmuziek, maar een signaal dat technologie de menselijke ervaring kan herdefiniëren.",
+    publishedAt: '2026-06-13',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECHNOLOGIE',
+    posterTopic: "Neuralink: de volgende marketingrevolutie of een medische niche?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'yang-ziet-kans-in-kostenverlaging-als-startup-goudkoorts',
     format: 'dispatch' as const,
     edition: '205',
