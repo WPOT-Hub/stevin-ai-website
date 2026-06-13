@@ -1456,6 +1456,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'neuralink-tussen-hoop-en-hype-wat-bureaus-ervan-moeten-weten': (
+    <>
+      <p className="lead-para">
+        Stel je voor: je denkt aan een bericht typen en het verschijnt vanzelf op je scherm. Geen vingers nodig, geen spraakherkenning, gewoon je brein dat direct communiceert met een computer. Dat is niet de plot van een nieuwe Netflix-serie, maar het doel van Neuralink, het bedrijf van Elon Musk dat hersenimplantaat Telepathy ontwikkelt.
+      </p>
+      <p>
+        De technologie werkt nu vooral voor mensen met ernstige verlamming. Uit klinische trials blijkt dat proefpersonen al kunnen typen, games spelen of een cursor besturen met hun gedachten. Het zijn kleine stappen, maar ze markeren het begin van een fundamentele verschuiving: de grens tussen mens en machine vervaagt niet in theorie, maar in praktijk. Voor bureaus die zich bezighouden met digitale ervaringen of toegankelijkheid is dit geen abstract concept meer, maar een teken aan de wand.
+      </p>
+      <p>
+        Toch gaat de hype rond Neuralink vaak verder dan de realiteit. Sociale media gonzen van claims over ‘breinen koppelen aan AI’ of ‘kennis downloaden’, terwijl Neuralink zelf benadrukt dat het systeem momenteel alleen bewegingssignalen vertaalt naar digitale acties. De technologie leest geen gedachten en zet geen herinneringen in je brein – het herkent patronen in hersensignalen die gekoppeld zijn aan bedoelde bewegingen. Dat is precies waar de marketingvalkuil ligt: wat technisch mogelijk is, wordt snel verward met wat wenselijk of ethisch verantwoord is.
+      </p>
+      <p>
+        De echte vraag is niet of Neuralink werkt, maar onder welke voorwaarden we bereid zijn om onze meest persoonlijke data – onze hersensignalen – te delen met systemen die we niet volledig begrijpen. Wie mag die data zien? Hoe lang wordt die bewaard? En wat gebeurt er als zo’n systeem faalt? Een storing in de software kan voor iemand die afhankelijk is van Telepathy betekenen dat plotseling de toegang tot communicatie verdwijnt – iets wat vergelijkbaar is met iemands stem verliezen.
+      </p>
+      <p>
+        Voor bureaus die zich richten op innovatie en klantbeleving biedt Neuralink een unieke kans om na te denken over de rol van technologie in ons dagelijks leven. De vraag is niet langer óf deze systemen komen, maar wanneer ze mainstream worden en wie er baat bij heeft. Nu nog beperkt tot medische toepassingen, kan deze technologie over tien jaar net zo normaal zijn als touchscreens vandaag. Het verschil? Hersendata zijn onomkeerbaar en onvervangbaar – terwijl een gebroken scherm gewoon vervangen kan worden.
+      </p>
+      <p>
+        Er zijn ook praktische uitdagingen. Een hersenimplantaat brengt risico’s met zich mee: infecties, littekenvorming of beschadiging van weefsel zijn reële gevaren. Daarnaast is er de kwestie van acceptatie. Niet iedereen zal bereid zijn om zich te laten opereren voor een technologie die nu nog experimenteel is. Toch laat de eerste golf proefpersonen zien dat de belofte van autonomie sterk genoeg kan zijn om risico’s te nemen.
+      </p>
+      <p>
+        De grootste les voor bureaus ligt misschien niet in de technologie zelf, maar in hoe ze hiermee omgaan als communicators en adviseurs. Neuralink dwingt ons om na te denken over ethiek in innovatie: wie profiteert ervan? Wie bepaalt wat acceptabel is? En hoe zorgen we ervoor dat deze systemen toegankelijk blijven voor wie ze het meest nodig heeft?
+      </p>
+      <p>
+        Het antwoord ligt niet in sensatiezucht, maar in verantwoordelijkheid. Neuralink toont aan dat technologie onze capaciteiten kan uitbreiden – mits we haar op de juiste manier vormgeven.
+      </p>
+    </>
+  ),
   'yang-ziet-kans-in-kostenverlaging-als-startup-goudkoorts': (
     <>
       <p className="lead-para">
@@ -3995,6 +4023,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'neuralink-tussen-hoop-en-hype-wat-bureaus-ervan-moeten-weten':
+    "Bij Stevin zien we Neuralink niet als een marketingtrend, maar als een katalysator voor fundamentele veranderingen in hoe wij interactie hebben met digitale systemen. De echte uitdaging ligt niet in het bouwen van betere algoritmes of snellere interfaces, maar in het begrijpen van de menselijke kant: hoe accepteren we technologie die zo intiem wordt als ons eigen denken? Voor bureaus betekent dit dat we moeten leren omgaan met data die verder gaat dan gedragspatronen of demografie – data die rechtstreeks uit onze neurale netwerken komt. Dat vraagt om een andere benadering van privacy, ethiek en zelfs design: interfaces moeten niet alleen functioneel zijn, maar ook voelbaar veilig en betrouwbaar voor gebruikers die afhankelijk worden van deze systemen.",
   'yang-ziet-kans-in-kostenverlaging-als-startup-goudkoorts':
     "Voor ondernemers in Nederland en België is dit een herkenbaar fenomeen: lokale initiatieven zoals huurderscoöperaties of collectieve energieinkoop laten zien dat kostenbesparing niet alleen mogelijk is, maar ook schaalbaar. Het benadrukt dat klantbehoud vaak begint met transparantie en waardecreatie buiten de traditionele businessmodellen om. Wie nu investeert in efficiëntie of samenwerking, bouwt niet alleen aan loyaliteit maar ook aan toekomstbestendigheid.",
   'afm-kritiek-op-ai-toezicht-verdeling-met-dnb':
