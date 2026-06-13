@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren': (
+    <>
+      <p className="lead-para">
+        Google Analytics voegt bron-groepering toe om directe en indirecte verkeersbronnen samen te voegen. Hiermee wordt het makkelijker om de echte oorzaak van bezoekersstromen in kaart te brengen. Daarnaast komt er een hostname-filter, zodat gebruikers specifieke domeinen kunnen uitsluiten of selecteren in hun rapportages.
+      </p>
+      <p>
+        De nieuwe functies moeten helpen om blinde vlekken in de meting te verminderen. Bijvoorbeeld: als een campagne via meerdere tussenstops loopt, wordt nu duidelijker welke stap de meeste waarde toevoegt. Ook voor multi-domein tracking biedt het meer controle over welke data wel of niet wordt meegenomen.
+      </p>
+      <p>
+        De veranderingen zijn beschikbaar in zowel GA4 als Universal Analytics, hoewel sommige opties alleen in GA4 zullen werken. Gebruikers kunnen direct aan de slag met de nieuwe instellingen via het admin-menu.
+      </p>
+    </>
+  ),
   'attributie-impact-niet-meer-gelijk-aan-meetdata-in-ppc': (
     <>
       <p className="lead-para">
@@ -3852,6 +3865,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren':
+    "Voor bureau-eigenaars en in-house teams betekent dit dat campagnes beter gemeten kunnen worden zonder complexe workarounds. Het is een stap richting betrouwbaardere data, maar vereist wel dat teams hun meetstrategie opnieuw tegen het licht houden. De hostname-filter kan vooral nuttig zijn bij grote organisaties met meerdere websites of subdomeinen.",
   'attributie-impact-niet-meer-gelijk-aan-meetdata-in-ppc':
     "Voor bureaus en in-house teams betekent dit dat standaard platformrapportages moeten worden aangevuld met andere meetmethodes om effectieve campagnes te kunnen ontwerpen. Door impact en attributie uit elkaar te halen, kunnen marketingbudgetten gerichter worden ingezet. Dit vraagt om samenwerking tussen data-analisten, marketeers en productteams om een compleet beeld te vormen.",
   'elon-musk-wordt-eerste-biljonair-door-spacex-ipo':
