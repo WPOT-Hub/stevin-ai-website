@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-in-film-industrie-2026-geen-revolutie': (
+    <>
+      <p className="lead-para">
+        De belofte dat generatieve AI de filmindustrie gaat veranderen blijkt voorlopig vooral een belofte te zijn. Tijdens het Tribeca Film Festival dit jaar werden weinig projecten getoond die met AI waren gemaakt en tegelijkertijd commercieel aantrekkelijk leken. De meeste modellen van techbedrijven zoals Google DeepMind en OpenAI produceren momenteel alleen korte fragmenten die niet geschikt zijn voor een volledige bioscoopervaring.
+      </p>
+      <p>
+        Experts wijzen erop dat de huidige AI-tools vooral geschikt zijn voor repetitieve taken, zoals het genereren van achtergronden of geluidseffecten. Voor creatieve processen zoals scripting, regisseren of acteren bieden ze nog onvoldoende ondersteuning om kwalitatief hoogwaardige films te maken. De industrie blijft zo afhankelijk van menselijke creativiteit en vakmanschap.
+      </p>
+      <p>
+        Ondanks de investeringen in AI-ontwikkeling is er tot nu toe weinig bewijs dat het publiek bereid is om films te bekijken die volledig met AI zijn gegenereerd. De meeste kijkers hechten nog steeds waarde aan authentieke verhalen en menselijke emoties, iets wat machines moeilijk kunnen nabootsen.
+      </p>
+    </>
+  ),
   'neuralink-tussen-hoop-en-hype-wat-bureaus-ervan-moeten-weten': (
     <>
       <p className="lead-para">
@@ -4023,6 +4036,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-in-film-industrie-2026-geen-revolutie':
+    "Voor bedrijven in de media- en entertainmentsector is het duidelijk dat AI wel degelijk een rol kan spelen in ondersteunende taken, maar niet als vervanging van creatief talent. Het is verstandig om eerst te investeren in tools die menselijke workflows verbeteren, voordat je kiest voor volledige automatisering. De komende jaren zullen uitwijzen of AI uiteindelijk wel in staat is om echt meeslepende verhalen te vertellen.",
   'neuralink-tussen-hoop-en-hype-wat-bureaus-ervan-moeten-weten':
     "Bij Stevin zien we Neuralink niet als een marketingtrend, maar als een katalysator voor fundamentele veranderingen in hoe wij interactie hebben met digitale systemen. De echte uitdaging ligt niet in het bouwen van betere algoritmes of snellere interfaces, maar in het begrijpen van de menselijke kant: hoe accepteren we technologie die zo intiem wordt als ons eigen denken? Voor bureaus betekent dit dat we moeten leren omgaan met data die verder gaat dan gedragspatronen of demografie – data die rechtstreeks uit onze neurale netwerken komt. Dat vraagt om een andere benadering van privacy, ethiek en zelfs design: interfaces moeten niet alleen functioneel zijn, maar ook voelbaar veilig en betrouwbaar voor gebruikers die afhankelijk worden van deze systemen.",
   'yang-ziet-kans-in-kostenverlaging-als-startup-goudkoorts':
