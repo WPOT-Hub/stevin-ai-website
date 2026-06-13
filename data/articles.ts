@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'afm-kritiek-op-ai-toezicht-verdeling-met-dnb',
+    format: 'dispatch' as const,
+    edition: '204',
+    category: 'Beleid',
+    title: "AFM krijgt nieuwe AI-toezichttaken, maar kritiek op samenwerking met DNB",
+    dek: "De AFM moet straks toezien op AI-toepassingen van financiële instellingen, maar de samenwerking met DNB roept vragen op over effectiviteit.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "AFM krijgt nieuwe AI-toezichttaken, maar kritiek op samenwerking met DNB",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-agents-veiligheid-jfrog-nanoclaw',
     format: 'dispatch' as const,
     edition: '203',
