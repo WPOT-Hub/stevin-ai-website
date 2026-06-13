@@ -1456,6 +1456,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'europa-moet-asml-inzetten-als-strategische-onderhandelingskaart': (
+    <>
+      <p className="lead-para">
+        Een Amerikaanse rechter dwong Anthropic vorige week om twee van de krachtigste AI-modellen wereldwijd offline te halen. Niet omdat het bedrijf dat wilde, maar omdat de overheid het verbood. Het vonnis was duidelijk: toegang tot AI is geen fundamenteel recht, maar een privilege dat de VS kan inperken wanneer ze dat nodig achten. Voor buitenlandse staatsburgers, voor Chinese bedrijven, en zelfs voor Europese gebruikers als Washington dat besluit.
+      </p>
+      <p>
+        De boodschap is hard: wie afhankelijk is van Amerikaanse technologie leeft met Amerikaanse regels. Europa heeft dat jarenlang geaccepteerd, vooral bij chips en chipmachines. Nu de VS ook AI als strategische infrastructuur behandelen, wordt de situatie onhoudbaar. Want terwijl Europa nog nadenkt over hoe het moet reageren, dreigt het dezelfde machteloosheid te ervaren bij toegang tot geavanceerde AI-modellen.
+      </p>
+      <p>
+        Maar Europa heeft één troef die weinig andere regio’s hebben: ASML. De Nederlandse machinebouwer is de enige ter wereld die machines kan leveren waarmee de allerkleinste nanometerstructuren op chips worden aangebracht. Zonder ASML-stompers staat bijna elke chipfabriek stil. Dat maakt ASML niet zomaar een leverancier, maar een schakel in een mondiale machtsstrijd.
+      </p>
+      <p>
+        Tot nu toe heeft Europa die positie niet benut. Terwijl de VS exportcontroles gebruiken om hun eigen belangen te beschermen—van chips tot AI—heeft Europa vaak meegedaan met sancties zonder iets terug te vragen. Dat is begrijpelijk bij zaken als mensenrechten of oorlogsmisdaden, maar het wordt problematisch als Europa zelf steeds meer afhankelijk raakt van Amerikaanse technologie zonder compensatie.
+      </p>
+      <p>
+        Het tijdperk van vrije toegang is voorbij. Als Washington kan beslissen wie wel en niet mag trainen op de beste modellen, dan moet Brussel hetzelfde kunnen doen met ASML’s machines en kennis. Dat betekent niet dat Europa morgen alle Amerikaanse bedrijven moet weren van Nederlandse technologieën—dat zou ook ons raken—but wel dat toegang niet langer vanzelfsprekend mag zijn.
+      </p>
+      <p>
+        Europa kan ASML inzetten als onderhandelingskaart bij cruciale dossiers: toegang tot Amerikaanse frontier-AI, gelijke behandeling van Europese bedrijven in cloudcontracten, of transparante procedures bij exportcontroles. Het gaat om wederkerigheid, niet om wraak. Wie zijn eigen cruciale technologieën beschermt, creëert ruimte voor gesprekken op voet van gelijkwaardigheid.
+      </p>
+      <p>
+        De les is simpel: wie afhankelijk is van andermans technologie leeft met andermans regels. Europa heeft weinig digitale machtsposities, maar waar het ze wél heeft—zoals bij ASML—moet het die gebruiken om zijn eigen belangen veilig te stellen.
+      </p>
+      <p>
+        Het alternatief is passiviteit: blijven accepteren dat buitenlandse regeringen bepalen wie mag profiteren van onze economie en innovatie.
+      </p>
+    </>
+  ),
   'ai-chip-startups-netwerkversnelling-rack-scale': (
     <>
       <p className="lead-para">
@@ -3770,6 +3798,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'europa-moet-asml-inzetten-als-strategische-onderhandelingskaart':
+    "Bij Stevin zien we deze spanning dagelijks terug in de praktijk van marketingteams en bureau-eigenaars die worstelen met afhankelijkheid van Amerikaanse techplatforms en cloudproviders. De risico’s zijn niet alleen politiek of strategisch—they zijn direct merkbaar in data-afhankelijkheid en operationele vrijheid. Wij adviseren organisaties om nu al na te denken over diversificatie: lokale hostingopties verkennen waar mogelijk, EU-gedekte cloudproviders overwegen voor kritieke workloads, en contracten zo op te zetten dat ze minder kwetsbaar zijn voor plotselinge exportbeperkingen of prijsverhogingen door Amerikaanse leveranciers. Dit is geen vraagstuk voor overmorgen—het gaat om concurrentievermogen vandaag.",
   'ai-chip-startups-netwerkversnelling-rack-scale':
     "Voor bedrijven die actief zijn in AI-hardware kan deze ontwikkeling betekenen dat de tijd tot marktintroductie drastisch wordt verkort. Het maakt het makkelijker om innovatieve chipontwerpen te testen zonder afhankelijk te zijn van dure en complexe netwerkinfrastructuur. Tegelijkertijd daalt de drempel voor nieuwe spelers om toe te treden tot een markt die momenteel wordt gedomineerd door grote, gevestigde partijen.",
   'europa-loopt-ten-opzichte-van-vs-achter-op-ai-investeringen':
