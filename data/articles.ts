@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ukraine-ai-drones-autonoom-oorlogsvoering',
+    format: 'dispatch' as const,
+    edition: '201',
+    category: 'Markt',
+    title: "Oekraïne test volledig autonome drones in oorlogsvoering",
+    dek: "Oekraïne gebruikt voor het eerst volledig autonome AI-aangedreven drones om Russische troepen uit te schakelen.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Oekraïne test volledig autonome drones in oorlogsvoering",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'pokemongo-data-militaire-toepassingen',
     format: 'dispatch' as const,
     edition: '200',
