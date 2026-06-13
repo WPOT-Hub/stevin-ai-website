@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'yang-ziet-kans-in-kostenverlaging-als-startup-goudkoorts',
+    format: 'dispatch' as const,
+    edition: '205',
+    category: 'Markt',
+    title: "Startups die kosten van levensonderhoud verlagen winnen aan populariteit",
+    dek: "Andrew Yang voorspelt een groeiende markt voor bedrijven die huur, boodschappen en abonnementen goedkoper maken.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Startups die kosten van levensonderhoud verlagen winnen aan populariteit",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'afm-kritiek-op-ai-toezicht-verdeling-met-dnb',
     format: 'dispatch' as const,
     edition: '204',
