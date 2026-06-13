@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'attributie-impact-niet-meer-gelijk-aan-meetdata-in-ppc': (
+    <>
+      <p className="lead-para">
+        Platformrapporten zoals Google Ads of Meta Ads tonen welke kanalen, zoektermen of campagnes conversies genereren, maar ze leggen geen oorzaak en gevolg bloot. Klantgedrag buiten deze kanalen – zoals herhaalaankopen via directe kanalen of CRM-data – ontbreekt vaak in deze overzichten. Daardoor ontstaat een vertekend beeld van waar de echte uplift vandaan komt.
+      </p>
+      <p>
+        Voor bedrijven met complexe klantreizen levert attributie alleen niet genoeg op. Een gebruiker kan bijvoorbeeld eerst via een display-ad bekend raken met een merk, daarna via organische zoekopdrachten meer te weten komen en pas bij de laatste klik converteren. Als alleen de laatste stap wordt gemeten, gaat de bijdrage van eerdere touchpoints verloren.
+      </p>
+      <p>
+        Om impact beter te begrijpen, is aanvullende data nodig: incrementality-tests, CRM-analyses of geavanceerde meetmodellen zoals multi-touch attribution. Deze methodes geven inzicht in welke kanalen daadwerkelijk waarde toevoegen, in plaats van alleen welke kanalen conversies registreren.
+      </p>
+    </>
+  ),
   'elon-musk-wordt-eerste-biljonair-door-spacex-ipo': (
     <>
       <p className="lead-para">
@@ -3839,6 +3852,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'attributie-impact-niet-meer-gelijk-aan-meetdata-in-ppc':
+    "Voor bureaus en in-house teams betekent dit dat standaard platformrapportages moeten worden aangevuld met andere meetmethodes om effectieve campagnes te kunnen ontwerpen. Door impact en attributie uit elkaar te halen, kunnen marketingbudgetten gerichter worden ingezet. Dit vraagt om samenwerking tussen data-analisten, marketeers en productteams om een compleet beeld te vormen.",
   'elon-musk-wordt-eerste-biljonair-door-spacex-ipo':
     "Voor ondernemers toont deze gebeurtenis hoe snel waarde kan toenemen door innovatie en schaalvergroting. Het benadrukt ook het belang van diversificatie: Musks vermogen is niet afhankelijk van één bedrijf of sector. Tegelijkertijd roept het vragen op over concentratie van kapitaal en de impact daarvan op markten en concurrentie.",
   'nova-en-de-toekomst-van-ruimtevaart':
