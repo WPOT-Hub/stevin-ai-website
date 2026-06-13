@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'mistral-waardering-verdubbeld-rond-e20-miljard',
+    format: 'dispatch' as const,
+    edition: '198',
+    category: 'Markt',
+    title: "Mistral haalt mogelijk €3 miljard op bij €20 miljard waardering",
+    dek: "De Franse AI-startup Mistral zou een nieuwe financieringsronde van €3 miljard aantrekken, wat de waardering bijna verdubbelt naar €20 miljard.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Mistral haalt mogelijk €3 miljard op bij €20 miljard waardering",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'robinhood-record-verkeer-na-spacex-introductie',
     format: 'dispatch' as const,
     edition: '197',
