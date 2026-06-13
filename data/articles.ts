@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'pokemongo-data-militaire-toepassingen',
+    format: 'dispatch' as const,
+    edition: '200',
+    category: 'Tech',
+    title: "Pokémon Go-data gebruikt voor militaire drone-training",
+    dek: "Gebruikersgegevens van Pokémon Go blijken in AI-modellen te zijn verwerkt die ook militaire toepassingen voeden.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Pokémon Go-data gebruikt voor militaire drone-training",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spacex-tesla-merger-2026',
     format: 'dispatch' as const,
     edition: '199',
