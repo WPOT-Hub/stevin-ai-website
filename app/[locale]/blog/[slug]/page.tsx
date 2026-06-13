@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'yang-ziet-kans-in-kostenverlaging-als-startup-goudkoorts': (
+    <>
+      <p className="lead-para">
+        Amerikanen geven jaarlijks honderden miljarden dollars uit aan vaste lasten zoals huur, mobiele telefoonabonnementen en boodschappen. Yang constateert dat veel van deze uitgaven onnodig hoog zijn door gebrek aan concurrentie of inefficiëntie in de markt. Hij ziet hierin een kans voor startups die deze kosten structureel kunnen verlagen, aldus Yang in een recent interview met TechCrunch.
+      </p>
+      <p>
+        Yang noemt specifiek sectoren als woningbouw, supermarkten en telecom als gebieden waar innovatie kan leiden tot lagere prijzen. Zijn analyse sluit aan bij een bredere trend waarbij consumenten steeds kritischer kijken naar waar hun geld naartoe gaat. Vooral jongere generaties zijn bereid om over te stappen naar alternatieven als dat betekent dat ze meer overhouden aan het eind van de maand.
+      </p>
+      <p>
+        De voorspelling komt op een moment dat inflatie wereldwijd nog steeds een rol speelt in het dagelijkse leven. Bedrijven die hierop inspelen met concrete oplossingen, zoals gezamenlijke inkoop of digitale tussenpersonen, kunnen volgens Yang rekenen op grote interesse van consumenten en investeerders.
+      </p>
+    </>
+  ),
   'afm-kritiek-op-ai-toezicht-verdeling-met-dnb': (
     <>
       <p className="lead-para">
@@ -3982,6 +3995,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'yang-ziet-kans-in-kostenverlaging-als-startup-goudkoorts':
+    "Voor ondernemers in Nederland en België is dit een herkenbaar fenomeen: lokale initiatieven zoals huurderscoöperaties of collectieve energieinkoop laten zien dat kostenbesparing niet alleen mogelijk is, maar ook schaalbaar. Het benadrukt dat klantbehoud vaak begint met transparantie en waardecreatie buiten de traditionele businessmodellen om. Wie nu investeert in efficiëntie of samenwerking, bouwt niet alleen aan loyaliteit maar ook aan toekomstbestendigheid.",
   'afm-kritiek-op-ai-toezicht-verdeling-met-dnb':
     "Voor bedrijven betekent dit dat ze zich moeten verdiepen in de nieuwe regels en hun AI-toepassingen tijdig moeten laten screenen. Het is verstandig om nu al een inventarisatie te maken van welke systemen mogelijk onder de verordening vallen. Daarnaast kunnen bureaus die gespecialiseerd zijn in compliance en risicomanagement een grotere rol gaan spelen bij het helpen navigeren door deze complexe regelgeving.",
   'ai-agents-veiligheid-jfrog-nanoclaw':
