@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-agents-veiligheid-jfrog-nanoclaw': (
+    <>
+      <p className="lead-para">
+        NanoClaw voegt JFrog Registry toe aan zijn platform, zodat AI-agents alleen veilige packages kunnen downloaden. De integratie moet voorkomen dat kwaadaardige code of onbetrouwbare bronnen toegang krijgen tot bedrijfsnetwerken. Volgens NanoClaw is dit nodig omdat AI-agents vaak zonder controle van gebruikers acties ondernemen.
+      </p>
+      <p>
+        De nieuwe beveiligingslaag werkt met realtime scans van packages voordat ze worden uitgevoerd. Bedrijven kunnen zo voorkomen dat AI-agenten onbedoeld gevoelige data lekken of schade aanrichten. JFrog biedt hiervoor een centrale repository waar alleen goedgekeurde software kan worden opgeslagen.
+      </p>
+      <p>
+        De integratie is vooral relevant voor organisaties die veel gebruikmaken van autonome AI-systemen. Door de combinatie van NanoClaw en JFrog wordt het risico op cyberaanvallen via AI-agents aanzienlijk verkleind.
+      </p>
+    </>
+  ),
   'politiek-dreigt-wetenschap-bij-nationale-academies-te-beinvloeden': (
     <>
       <p className="lead-para">
@@ -3956,6 +3969,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-agents-veiligheid-jfrog-nanoclaw':
+    "Voor bedrijven die AI inzetten, wordt veiligheid steeds belangrijker naarmate systemen autonomer worden. Het is verstandig om niet alleen te vertrouwen op standaardbeveiligingsmaatregelen, maar ook specifieke oplossingen te implementeren voor AI-gestuurde processen. Dit vraagt om een proactieve houding, waarbij je niet wacht tot er iets misgaat.",
   'politiek-dreigt-wetenschap-bij-nationale-academies-te-beinvloeden':
     "Dit incident laat zien hoe kwetsbaar onafhankelijke wetenschap kan zijn in tijden van polarisatie. Voor ondernemers is het belangrijk om te beseffen dat zelfs gerenommeerde instellingen niet immuun zijn voor externe druk. Het benadrukt het belang van kritisch denken bij het evalueren van onderzoeksresultaten, vooral wanneer die direct verband houden met beleidsbeslissingen die hun bedrijven kunnen raken.",
   'ukraine-ai-drones-autonoom-oorlogsvoering':
