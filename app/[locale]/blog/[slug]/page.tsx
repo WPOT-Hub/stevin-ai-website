@@ -1456,6 +1456,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'nova-en-de-toekomst-van-ruimtevaart': (
+    <>
+      <p className="lead-para">
+        De vraag galmt door de gangen van ruimtevaartbedrijven: 'Als ik morgen op een andere raket moest vliegen, wat zou dat dan betekenen voor mijn business?' Terwijl de Nova-raket van Rocket Lab door zijn testcampagne gaat, wordt deze vraag plotseling urgent. Niet omdat de Nova revolutionair is in technisch opzicht, maar omdat hij een fundamentele waarheid blootlegt: afhankelijkheid van één transportmiddel is riskant. Voor bedrijven buiten de ruimtevaart voelt dit als een metafoor. Hoe lang kun je nog vertrouwen op één leverancier, één technologie of één distributiekanaal voordat je gedwongen wordt om radicaal te veranderen?
+      </p>
+      <p>
+        De Nova is geen SpaceX Starship of Blue Origin New Glenn. Het is een kleinere, wendbare raket die vooral inspeelt op de groeiende vraag naar snelle en betaalbare lanceringen voor kleine satellieten. Maar juist die niche maakt hem gevaarlijk voor wie nu nog denkt dat de markt stabiel blijft. Rocket Lab heeft met zijn Electron-raket al bewezen dat betrouwbaarheid en herhaalbaarheid niet alleen voor grote spelers zijn weggelegd. Nu ze met Nova een stap verder gaan, dwingt dat concurrenten om na te denken over hun eigen flexibiliteit.
+      </p>
+      <p>
+        Wat gebeurt er als Rocket Lab slaagt? Dan ontstaat er een nieuwe realiteit waarin klanten niet meer gebonden zijn aan één lanceerprovider. Dat klinkt als goed nieuws voor wie nu vastzit aan hoge kosten of lange wachtlijsten bij SpaceX of Arianespace. Maar het is ook een wake-upcall voor iedereen die tot nu toe dacht dat de ruimtevaartmarkt een gesloten circuit was. De komende jaren zullen laten zien wie er klaar is om mee te bewegen – en wie straks met lege handen staat.
+      </p>
+      <p>
+        Er is altijd weerstand tegen verandering. 'Waarom zou ik mijn huidige contract bij SpaceX opzeggen als het nog werkt?' hoor je vaak in boardrooms. De reden is simpel: innovatie volgt zelden een lineaire lijn. De Nova bewijst dat zelfs kleine spelers met slimme oplossingen een gat in de markt kunnen slaan. Wie nu denkt dat de ruimtevaartmarkt te complex of te gespecialiseerd is om te veranderen, heeft gelijk – totdat iemand anders het anders doet.
+      </p>
+      <p>
+        Deze dynamiek speelt zich niet alleen af in de ruimtevaart. Denk aan de energietransitie: wie jarenlang vertrouwde op fossiele brandstoffen ziet plotseling hoe zonne-energie en windkracht goedkoper en efficiënter worden. Of kijk naar logistiek: bedrijven die decennialang vertrouwden op traditionele scheepvaartroutes worden nu gedwongen om alternatieven te overwegen door stijgende brandstofprijzen en congestie in havens.
+      </p>
+      <p>
+        Het verschil tussen ruimtevaart en andere sectoren? In veel gevallen is er geen Plan B. Als jouw bedrijf afhankelijk is van één toeleverancier en die valt weg, dan sta je plotseling stil. De Nova laat zien dat zelfs in high-tech sectoren redundantie niet langer een luxe is, maar een noodzaak.
+      </p>
+      <p>
+        De komende maanden zullen uitwijzen of Rocket Lab in staat is om zijn belofte waar te maken. Maar één ding is zeker: de vraag 'wat als?' zal niet meer verdwijnen uit strategische discussies. Bedrijven die nu al nadenken over hun exitstrategieën zullen straks als eerste profiteren van nieuwe kansen.
+      </p>
+      <p>
+        Wie wacht tot het probleem zich aandient, loopt altijd achterop.
+      </p>
+    </>
+  ),
   'europa-moet-asml-inzetten-als-strategische-onderhandelingskaart': (
     <>
       <p className="lead-para">
@@ -3798,6 +3826,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'nova-en-de-toekomst-van-ruimtevaart':
+    "Bij Stevin zien we deze dynamiek terug in veel markten waar onze klanten actief zijn: van tech tot retail tot logistiek. De les van de Nova-raket is niet dat technologie per se alles verandert, maar dat afhankelijkheid gevaarlijk wordt wanneer disruptie onvermijdelijk lijkt. Onze rol als strategisch partner ligt erin om organisaties voor te bereiden op scenario’s waarin hun huidige modellen plotseling niet meer werken – zonder dat ze daarbij hun core business uit het oog verliezen. Dat betekent investeren in flexibiliteit, diversificatie en meetdata die niet alleen prestaties volgen, maar ook waarschuwen wanneer risico’s zich aandienen.",
   'europa-moet-asml-inzetten-als-strategische-onderhandelingskaart':
     "Bij Stevin zien we deze spanning dagelijks terug in de praktijk van marketingteams en bureau-eigenaars die worstelen met afhankelijkheid van Amerikaanse techplatforms en cloudproviders. De risico’s zijn niet alleen politiek of strategisch—they zijn direct merkbaar in data-afhankelijkheid en operationele vrijheid. Wij adviseren organisaties om nu al na te denken over diversificatie: lokale hostingopties verkennen waar mogelijk, EU-gedekte cloudproviders overwegen voor kritieke workloads, en contracten zo op te zetten dat ze minder kwetsbaar zijn voor plotselinge exportbeperkingen of prijsverhogingen door Amerikaanse leveranciers. Dit is geen vraagstuk voor overmorgen—het gaat om concurrentievermogen vandaag.",
   'ai-chip-startups-netwerkversnelling-rack-scale':
