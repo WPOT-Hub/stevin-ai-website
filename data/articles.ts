@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'spacex-tesla-merger-2026',
+    format: 'dispatch' as const,
+    edition: '199',
+    category: 'Markt',
+    title: "SpaceX-president duidt op mogelijke Tesla-fusie",
+    dek: "Een fusie tussen SpaceX en Tesla wordt door de president van SpaceX steeds waarschijnlijker genoemd.",
+    publishedAt: '2026-06-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "SpaceX-president duidt op mogelijke Tesla-fusie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'mistral-waardering-verdubbeld-rond-e20-miljard',
     format: 'dispatch' as const,
     edition: '198',
