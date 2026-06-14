@@ -1456,6 +1456,13 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-rationering-dwingt-techbedrijven-tot-budgetdiscipline': (
+    <>
+      <p className="lead-para">
+        Investeerder Chamath Palihapitiya wijst erop dat de meeste taken prima kunnen worden afgehandeld door goedkopere modellen zoals DeepSeek-R1, terwijl dure systemen zoals ChatGPT-5.5 Pro vaak onnodig worden ingezet. Zijn platform verlaagt de kosten voor bedrijven met meer dan 97% door taken automatisch te routeren naar het meest kosteneffectieve model. Toch blijft de vraag of deze rationering voldoende is om een mogelijke bubbel te voorkomen, of dat het juist een signaal is dat de markt zich aanpast aan realistische verwachtingen.
+      </p>
+    </>
+  ),
   'ai-in-film-industrie-2026-geen-revolutie': (
     <>
       <p className="lead-para">
@@ -4036,6 +4043,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-rationering-dwingt-techbedrijven-tot-budgetdiscipline':
+    "Voor bedrijven die AI inzetten betekent dit dat ze nu serieus moeten nadenken over governance en meetdata. Het is niet langer genoeg om alleen te kijken naar productiviteitswinst: elke euro aan AI moet direct terugverdiend kunnen worden. Voor techbedrijven zelf geldt dat transparantie over kosten en rendement essentieel wordt om investeerders te behouden. De komende maanden zullen uitwijzen of rationering een tijdelijke correctie is of het begin van een structurele verschuiving in hoe AI wordt ingezet.",
   'ai-in-film-industrie-2026-geen-revolutie':
     "Voor bedrijven in de media- en entertainmentsector is het duidelijk dat AI wel degelijk een rol kan spelen in ondersteunende taken, maar niet als vervanging van creatief talent. Het is verstandig om eerst te investeren in tools die menselijke workflows verbeteren, voordat je kiest voor volledige automatisering. De komende jaren zullen uitwijzen of AI uiteindelijk wel in staat is om echt meeslepende verhalen te vertellen.",
   'neuralink-tussen-hoop-en-hype-wat-bureaus-ervan-moeten-weten':
