@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'machine-leesbaar-maken-ai-vindbaarheid': (
+    <>
+      <p className="lead-para">
+        Structured data in JSON-LD, een llms.txt-bestand en platte tekst prijzenbestanden helpen AI-systemen je content correct te interpreteren. Een productpagina zonder deze signalen wordt mogelijk niet herkend als verkooppagina, een artikel mist de kans om als bron te worden geciteerd. Deze elementen vormen de basis voor AI-vindbaarheid, los van traditionele SEO-regels.
+      </p>
+      <p>
+        Snelheid speelt ook een rol: IndexNow en RSS-feeds zorgen dat nieuwe content direct wordt opgepikt door Bing en Copilot. Google werkt nog met crawlen en sitemaps, wat vertraging kan veroorzaken. Voor bedrijven die vaak nieuws of updates publiceren is dit een cruciaal verschil in zichtbaarheid.
+      </p>
+      <p>
+        Een vaak over het hoofd gezien detail zijn FAQ-antwoorden. Als ze pas zichtbaar worden na een klik, ziet een crawler ze niet. Juist deze korte antwoorden worden vaak letterlijk geciteerd in AI-antwoorden. Plaats ze daarom direct in de statische HTML van de pagina.
+      </p>
+    </>
+  ),
   'slecht-geindexeerd-is-zelden-een-schrijfprobleem': (
     <>
       <p className="lead-para">
@@ -4068,6 +4081,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'machine-leesbaar-maken-ai-vindbaarheid':
+    "Voor ondernemers betekent dit dat AI-vindbaarheid geen kwestie is van meer content maken, maar van de juiste structuur aanbrengen. Eenmalig investeren in structured data en llms.txt levert op termijn tijdwinst op bij elke nieuwe pagina of update. Het is geen technische specialisatie meer: tools en handleidingen zijn breed beschikbaar, waardoor het binnen handbereik ligt van elk bureau of marketingteam.",
   'slecht-geindexeerd-is-zelden-een-schrijfprobleem':
     "Bij Stevin zien we vaak dat bedrijven hun energie stoppen in contentcreatie terwijl hun technische basis ondermaats blijft. Een goed geïndexeerde site begint met een slimme architectuur: minder pagina’s met meer focus per stuk, heldere interne linkschema’s en een sitemap die zoekmachines helpt prioriteren wat echt belangrijk is.\n\nAutoriteit bouw je niet door algoritmes te misleiden met keywords of AI-gegenereerde teksten, maar door echte mensen met echte namen te koppelen aan relevante inhoud. Dat vraagt om geduld – autoriteit groeit niet binnen weken – maar wel om duurzame impact.\n\nOnze aanpak bij klanten is simpel: eerst opruimen wat indexatie blokkeert (vaak technisch gedoe), dan selectief verdiepen op kernpagina’s met meetbare doelstellingen (bijvoorbeeld conversie per bezoeker), en pas daarna optimaliseren voor nieuwe kanalen zoals AI-antwoorden.\n\nHet mooiste bewijs? Klanten die deze route volgen zien binnen drie maanden een stijging van zowel organische traffic als conversies – zonder dat we één zin hebben aangeraakt.",
   'ai-rationering-dwingt-techbedrijven-tot-budgetdiscipline':
