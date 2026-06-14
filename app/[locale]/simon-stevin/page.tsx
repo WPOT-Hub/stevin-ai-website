@@ -2,6 +2,7 @@ import { setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
+import FAQAccordion from '@/components/FAQAccordion'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -46,6 +47,24 @@ const COPY = {
     payoff: 'Kennis die werkt.',
     cta: 'Plan een kennismaking',
     footer: 'Simon Stevin, 1548 tot 1620.',
+    faqH: 'Veelgestelde vragen',
+    faqs: [
+      {
+        question: 'Wie was Simon Stevin?',
+        answer:
+          'Simon Stevin (1548 tot 1620) was een Vlaams-Nederlandse wiskundige, natuurkundige en ingenieur, geboren in Brugge. Hij stond bekend om het praktisch toepasbaar maken van kennis: hij maakte het rekenen met kommagetallen en het dubbel boekhouden bruikbaar voor het dagelijks werk.',
+      },
+      {
+        question: 'Waarom heet het platform Stevin?',
+        answer:
+          'Net zoals Simon Stevin wetenschap toegankelijk maakte voor de praktijk, maakt het platform Stevin data, systemen en informatie bruikbaar voor dagelijkse bedrijfsbeslissingen. Niet door alles te vervangen, maar door bestaande kennis slimmer met elkaar te verbinden.',
+      },
+      {
+        question: 'Waar komt Stevin vandaan?',
+        answer:
+          'Het eerste idee ontstond in Belgie, bij het eigen bureau van de oprichter, op zoek naar een slimmere manier om processen, systemen en data te verbinden. De verdere ontwikkeling vond plaats vanuit Breda, waar het platform werd uitgebouwd tot een bredere AI-oplossing voor bedrijven.',
+      },
+    ],
   },
   en: {
     metaTitle: 'The name Stevin, named after Simon Stevin',
@@ -85,6 +104,24 @@ const COPY = {
     payoff: 'Knowledge that works.',
     cta: 'Plan an introduction',
     footer: 'Simon Stevin, 1548 to 1620.',
+    faqH: 'Frequently asked questions',
+    faqs: [
+      {
+        question: 'Who was Simon Stevin?',
+        answer:
+          'Simon Stevin (1548 to 1620) was a Flemish-Dutch mathematician, physicist and engineer, born in Bruges. He was known for making knowledge practical: he made decimal arithmetic and double-entry bookkeeping usable in everyday work.',
+      },
+      {
+        question: 'Why is the platform named Stevin?',
+        answer:
+          'Just as Simon Stevin made science accessible for practice, the Stevin platform makes data, systems and information usable for everyday business decisions. Not by replacing everything, but by connecting existing knowledge more intelligently.',
+      },
+      {
+        question: 'Where does Stevin come from?',
+        answer:
+          'The first idea was born in Belgium, at the founder’s own agency, while looking for a smarter way to connect processes, systems and data. The platform was further developed from Breda into a broader AI solution for businesses.',
+      },
+    ],
   },
 } as const
 
@@ -102,9 +139,63 @@ export default async function SimonStevinPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const c = pick(locale)
+  const isEn = locale === 'en'
+
+  // Entity-schema: koppelt het merk Stevin aan de historische persoon Simon
+  // Stevin (Wikipedia nl+en + Wikidata Q23696), zodat Google en LLMs de
+  // naamsoorsprong als 1 herkenbare entiteit zien. Person -> AboutPage ->
+  // #organization. FAQPage matcht de zichtbare FAQ onderaan de pagina.
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Person',
+        '@id': 'https://stevin.ai/simon-stevin#person',
+        name: 'Simon Stevin',
+        birthDate: '1548',
+        deathDate: '1620',
+        birthPlace: { '@type': 'Place', name: 'Brugge' },
+        description: isEn
+          ? 'Flemish-Dutch mathematician, physicist and engineer (1548 to 1620), known for making decimal fractions and double-entry bookkeeping usable in everyday practice.'
+          : 'Vlaams-Nederlandse wiskundige, natuurkundige en ingenieur (1548 tot 1620), bekend om het praktisch bruikbaar maken van kommagetallen en dubbel boekhouden.',
+        sameAs: [
+          'https://en.wikipedia.org/wiki/Simon_Stevin',
+          'https://nl.wikipedia.org/wiki/Simon_Stevin',
+          'https://www.wikidata.org/wiki/Q23696',
+        ],
+      },
+      {
+        '@type': 'AboutPage',
+        '@id': 'https://stevin.ai/simon-stevin#webpage',
+        url: 'https://stevin.ai/simon-stevin',
+        name: c.metaTitle,
+        description: c.metaDesc,
+        inLanguage: isEn ? 'en' : 'nl-NL',
+        mainEntity: { '@id': 'https://stevin.ai/simon-stevin#person' },
+        about: [
+          { '@id': 'https://stevin.ai/simon-stevin#person' },
+          { '@id': 'https://stevin.ai/#organization' },
+        ],
+        isPartOf: { '@id': 'https://stevin.ai/#website' },
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://stevin.ai/simon-stevin#faq',
+        mainEntity: c.faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+      },
+    ],
+  }
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       {/* ── SECTIE 1 — NAVY HERO ── */}
       <section className="bg-primary" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1120px]">
@@ -245,6 +336,16 @@ export default async function SimonStevinPage({ params }: Props) {
           <p className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty" style={{ fontSize: '18px' }}>
             {c.broadening}
           </p>
+        </div>
+
+        <div className="mx-auto max-w-3xl px-6" style={{ marginTop: '80px' }}>
+          <h2
+            className="font-display font-extrabold text-primary tracking-[-0.02em] text-center"
+            style={{ fontSize: 'clamp(24px, 3vw, 34px)', marginBottom: '40px' }}
+          >
+            {c.faqH}
+          </h2>
+          <FAQAccordion faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))} />
         </div>
       </section>
 
