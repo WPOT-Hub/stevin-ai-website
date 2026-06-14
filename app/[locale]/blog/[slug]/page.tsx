@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'slecht-geindexeerd-is-zelden-een-schrijfprobleem': (
+    <>
+      <p className="lead-para">
+        Je lanceert een nieuwe website met trots: honderden pagina’s vol zorgvuldig opgestelde content, klaar om klanten te verleiden en zoekmachines te overtuigen. Toch zie je na weken dat Google hooguit twintig procent van die pagina’s heeft geïndexeerd. De eerste reactie is vaak paniek. De tweede: alles herschrijven, alsof betere teksten het probleem zullen oplossen. Maar wat als het tegenovergestelde waar is? Wat als de pagina’s zelf prima zijn, maar de structuur en autoriteit van je domein nog niet?
+      </p>
+      <p>
+        Het echte probleem ligt niet in de kwaliteit van de tekst, maar in het volume. Een jong domein dat in één keer tientallen of honderden templated pagina’s publiceert, botst direct tegen de kwaliteitsdrempel van Google aan. Zoekmachines belonen relevantie en autoriteit, niet kwantiteit. Elke extra pagina die weinig toevoegt aan waarde vecht om dezelfde beperkte aandacht van algoritmes en gebruikers. Het resultaat: een race naar beneden waar alleen de sterkste overblijven.
+      </p>
+      <p>
+        Dat geldt nog sterker nu AI-gestuurde zoekmachines zoals Perplexity of antwoordblokken in traditionele zoekresultaten meelezen. Een taalmodel kan alleen citeren wat daadwerkelijk geïndexeerd is – en dus vindbaar voor machines. Een perfect geoptimaliseerde pagina die Google negeert, levert ook geen citaten op in een AI-antwoord. Generative Engine Optimization (GEO) werkt pas als je basis in orde is: indexatie en autoriteit.
+      </p>
+      <p>
+        De oplossing begint waar veel bedrijven eindigen: bij het snoeien. Begin met het consolideren van dunne programmatic pagina’s, zoals productvarianten zonder unieke waarde of locatiepagina’s die identiek zijn behalve de plaatsnaam. Verwijder dubbele taalvarianten en dubbelopnames in interne links die algoritmes verwarren. Maak een schone sitemap waarin alleen de routes staan die écht iets toevoegen voor mens én machine.
+      </p>
+      <p>
+        Pas daarna komt het bouwen van autoriteit aan de beurt. Dat betekent geen vage ‘SEO-tips’ uit oude handboeken, maar concrete stappen: benoem auteurs met naam en functie op je site, laat ze linken vanuit onafhankelijke bronnen zoals LinkedIn of relevante vakbladen, en zorg dat die bronnen weer teruglinken naar jouw domein. Autoriteit bouw je niet met keywords, maar met herkenbare namen die vertrouwen uitstralen.
+      </p>
+      <p>
+        Pas als deze twee fundamenten stevig staan, kun je gericht verdiepen op de dertig tot vijftig pagina’s die daadwerkelijk omzet genereren of citaties opleveren. Die selectie hoeft niet groot te zijn – liever tien sterke landingspagina’s dan honderd zwakke – maar wel scherp gepositioneerd rond kernproducten of diensten.
+      </p>
+      <p>
+        Een volledige herschrijfoperatie kost weken werk en raakt geen van beide hefbomen: indexatie en autoriteit blijven buiten beeld zolang de basis rommelig is. Snoeien en selectief verdiepen is niet alleen goedkoper, het pakt direct de oorzaak aan in plaats van symptomen te bestrijden.
+      </p>
+    </>
+  ),
   'ai-rationering-dwingt-techbedrijven-tot-budgetdiscipline': (
     <>
       <p className="lead-para">
@@ -4043,6 +4068,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'slecht-geindexeerd-is-zelden-een-schrijfprobleem':
+    "Bij Stevin zien we vaak dat bedrijven hun energie stoppen in contentcreatie terwijl hun technische basis ondermaats blijft. Een goed geïndexeerde site begint met een slimme architectuur: minder pagina’s met meer focus per stuk, heldere interne linkschema’s en een sitemap die zoekmachines helpt prioriteren wat echt belangrijk is.\n\nAutoriteit bouw je niet door algoritmes te misleiden met keywords of AI-gegenereerde teksten, maar door echte mensen met echte namen te koppelen aan relevante inhoud. Dat vraagt om geduld – autoriteit groeit niet binnen weken – maar wel om duurzame impact.\n\nOnze aanpak bij klanten is simpel: eerst opruimen wat indexatie blokkeert (vaak technisch gedoe), dan selectief verdiepen op kernpagina’s met meetbare doelstellingen (bijvoorbeeld conversie per bezoeker), en pas daarna optimaliseren voor nieuwe kanalen zoals AI-antwoorden.\n\nHet mooiste bewijs? Klanten die deze route volgen zien binnen drie maanden een stijging van zowel organische traffic als conversies – zonder dat we één zin hebben aangeraakt.",
   'ai-rationering-dwingt-techbedrijven-tot-budgetdiscipline':
     "Voor bedrijven die AI inzetten betekent dit dat ze nu serieus moeten nadenken over governance en meetdata. Het is niet langer genoeg om alleen te kijken naar productiviteitswinst: elke euro aan AI moet direct terugverdiend kunnen worden. Voor techbedrijven zelf geldt dat transparantie over kosten en rendement essentieel wordt om investeerders te behouden. De komende maanden zullen uitwijzen of rationering een tijdelijke correctie is of het begin van een structurele verschuiving in hoe AI wordt ingezet.",
   'ai-in-film-industrie-2026-geen-revolutie':
