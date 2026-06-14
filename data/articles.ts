@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'machine-leesbaar-maken-ai-vindbaarheid',
+    format: 'dispatch' as const,
+    edition: '210',
+    category: 'Platform',
+    title: "AI ziet je site anders dan mensen: deze signalen bepalen of je wordt gelezen",
+    dek: "AI-systemen lezen websites via machine-leesbare signalen, en veel bedrijven halen hier punten door te missen.",
+    publishedAt: '2026-06-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI ziet je site anders dan mensen: deze signalen bepalen of je wordt gelezen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'slecht-geindexeerd-is-zelden-een-schrijfprobleem',
     format: 'dispatch' as const,
     edition: '209',
