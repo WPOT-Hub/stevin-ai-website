@@ -11,6 +11,32 @@ export interface Integration {
   faqs?: { question: string; answer: string }[]
 }
 
+// Categorieen die we bewust NIET indexeren. Reden: een jong domein dat 260
+// templated vendor-pagina's aanbiedt verdunt zijn autoriteit, Google indexeert
+// dan maar een fractie. Deze categorieen hebben geen marketing-zoekintentie
+// voor Stevin's ICP en geen actieve go-to-market, dus de vendor-detailpagina's
+// (en de categorie-hub) krijgen noindex en vallen uit de sitemap.
+//
+// BEWUST WEL indexeerbaar gehouden: de strategische verticals bouw-techniek
+// (Platform OS), streaming-audio, live-ticketing en creator-tools (artiesten/
+// influencers). Wil je een categorie verplaatsen, pas alleen deze set aan.
+export const NOINDEX_INTEGRATION_CATEGORIES = new Set<string>([
+  'ats-recruitment',
+  'finance-erp',
+  'workflow-operations',
+  'mlr-compliance',
+  'media-monitoring-pr',
+  'dam-creative-ops',
+])
+
+export function isIndexableIntegrationCategory(categorySlug: string): boolean {
+  return !NOINDEX_INTEGRATION_CATEGORIES.has(categorySlug)
+}
+
+export function isIndexableIntegration(integration: Pick<Integration, 'category'>): boolean {
+  return isIndexableIntegrationCategory(integration.category)
+}
+
 export const integrations: Integration[] = [
   // ========== BOUW & TECHNIEK ==========
   {

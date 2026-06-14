@@ -10,6 +10,7 @@ import CTABlock from '@/components/CTABlock'
 import FAQAccordion from '@/components/FAQAccordion'
 import IntegrationGlyph from '@/components/IntegrationGlyph'
 import { categories } from '@/data/categories'
+import { NOINDEX_INTEGRATION_CATEGORIES, isIndexableIntegration } from '@/data/integrations'
 import { integrations } from '@/data/integrations'
 import { getVendorEnrichment } from '@/data/vendor-enrichments'
 import { getIntegrationBySlug, getCategoryBySlug, getIntegrationsByCategory, getRelatedIntegrations } from '@/lib/utils'
@@ -38,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       alternates: { canonical },
+      ...(NOINDEX_INTEGRATION_CATEGORIES.has(slug) ? { robots: { index: false, follow: true } } : {}),
       openGraph: {
         type: 'website',
         title,
@@ -59,6 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       alternates: { canonical },
+      ...(isIndexableIntegration(integration) ? {} : { robots: { index: false, follow: true } }),
       openGraph: {
         type: 'website',
         title,

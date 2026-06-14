@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { articles } from '@/data/articles'
 import { categories } from '@/data/categories'
-import { integrations } from '@/data/integrations'
+import { integrations, isIndexableIntegration, isIndexableIntegrationCategory } from '@/data/integrations'
 import { comparisons } from '@/data/comparisons'
 import { glossary } from '@/data/glossary'
 import { alternatives } from '@/data/alternatives'
@@ -38,10 +38,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/seo',
     '/geo',
     '/integraties',
-    // Categorie-hub pagina's (22 stuks)
-    ...categories.map((c) => `/integraties/${c.slug}`),
-    // Vendor-detail pagina's (245 stuks)
-    ...integrations.map((i) => `/integraties/${i.slug}`),
+    // Categorie-hub pagina's, alleen de indexeerbare (zie NOINDEX_INTEGRATION_CATEGORIES)
+    ...categories.filter((c) => isIndexableIntegrationCategory(c.slug)).map((c) => `/integraties/${c.slug}`),
+    // Vendor-detail pagina's, alleen de indexeerbare (off-topic categorieen eruit)
+    ...integrations.filter(isIndexableIntegration).map((i) => `/integraties/${i.slug}`),
     // Comparison pages (programmatic SEO playbook "X vs Y")
     '/vergelijken',
     ...comparisons.map((c) => `/vergelijken/${c.slug}`),
