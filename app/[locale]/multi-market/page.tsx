@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -7,10 +8,12 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'multiMarket' })
-  return {
+  return localizedMetadata({
+    path: '/multi-market',
+    locale,
     title: t('meta_title'),
     description: t('meta_description'),
-  }
+  })
 }
 
 export default async function MultiMarketPage({ params }: Props) {

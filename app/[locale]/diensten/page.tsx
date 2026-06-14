@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 
@@ -8,10 +9,12 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'diensten' })
-  return {
+  return localizedMetadata({
+    path: '/diensten',
+    locale,
     title: `${t('eyebrow')}, Stevin`,
     description: t('sub'),
-  }
+  })
 }
 
 export default async function DienstenPage({ params }: Props) {

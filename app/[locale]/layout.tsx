@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (locale === 'nl') {
     return {
       metadataBase: new URL('https://stevin.ai'),
+      alternates: { types: { 'application/rss+xml': 'https://stevin.ai/feed.xml' } },
       title: {
         default: 'Stevin · Marketing intelligence die signalen geeft voor het maandrapport',
         template: '%s | Stevin.AI',

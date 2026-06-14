@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 
@@ -7,16 +8,17 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  if (locale === 'nl') {
-    return {
-      title: 'Hoe Stevin werkt · van marketing-data naar concrete acties',
-      description: 'We koppelen je marketing-stack, lezen 24/7 mee en signaleren wat lekt. In plaats van een rapport krijg je een actie met de oorzaak erbij.',
-    }
-  }
-  return {
-    title: 'How Stevin works · from marketing data to concrete actions',
-    description: 'We connect your marketing stack, read along 24/7, and signal what\'s leaking. Instead of a report you get an action with the cause attached.',
-  }
+  const isNl = locale !== 'en'
+  return localizedMetadata({
+    path: '/werkwijze',
+    locale,
+    title: isNl
+      ? 'Hoe Stevin werkt · van marketing-data naar concrete acties'
+      : 'How Stevin works · from marketing data to concrete actions',
+    description: isNl
+      ? 'We koppelen je marketing-stack, lezen 24/7 mee en signaleren wat lekt. In plaats van een rapport krijg je een actie met de oorzaak erbij.'
+      : 'We connect your marketing stack, read along 24/7, and signal what\'s leaking. Instead of a report you get an action with the cause attached.',
+  })
 }
 
 const phaseIcons = [
