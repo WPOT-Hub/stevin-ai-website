@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-experts-denken-over-economische-gevolgen-van-ai-in-2030': (
+    <>
+      <p className="lead-para">
+        Een denktank in Washington D.C. heeft onderzocht hoe een AI-gedreven economie in 2030 eruit zou kunnen zien. Volgens de scenario’s kan kunstmatige intelligentie de Amerikaanse economie bijna verdubbelen in omvang, met een stijging van de arbeidsproductiviteit als gevolg. Tegelijkertijd dreigt onderbenutting van werknemers toe te nemen van 8% naar 14%, wat zou leiden tot meer parttime werk, gig-economie en overkwalificeerde banen.
+      </p>
+      <p>
+        De experts wijzen op een groeiende kloof tussen economische groei en sociale stabiliteit. Hoewel het bruto nationaal product en de aandelenmarkten zouden stijgen, zou een groot deel van de bevolking te maken krijgen met onzekerheid over hun inkomen en toekomstperspectief. Politieke verdeeldheid en trage overheidsreacties maken het lastig om tijdig beleid te ontwikkelen dat deze risico’s beperkt.
+      </p>
+      <p>
+        Om de negatieve gevolgen te beperken, wordt er gepleit voor heropleiding van werknemers en herverdeling van de welvaart die AI creëert. Er is echter nog onduidelijkheid over welke nieuwe banen AI precies zal voortbrengen en hoe bestaande beroepen zullen veranderen.
+      </p>
+    </>
+  ),
   'ai-citeert-merken-via-onafhankelijke-bronnen': (
     <>
       <p className="lead-para">
@@ -4094,6 +4107,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-experts-denken-over-economische-gevolgen-van-ai-in-2030':
+    "Voor bedrijven in Nederland en België is dit scenario relevant omdat het laat zien hoe snel technologische veranderingen kunnen leiden tot structurele verschuivingen op de arbeidsmarkt. Zonder proactief beleid dreigt een situatie waarin economische groei niet gepaard gaat met voldoende werkgelegenheid of kwalitatieve banen. Dat vraagt om investeringen in flexibele opleidingstrajecten en samenwerking tussen overheid, bedrijven en onderwijsinstellingen om werknemers toekomstbestendig te maken.",
   'ai-citeert-merken-via-onafhankelijke-bronnen':
     "Dit vraagt om een andere strategie dan alleen zoekmachineoptimalisatie. Bouw allereerst je eigen pagina’s goed op met schema-markup en duidelijke auteurspagina’s. Focus daarnaast op aanwezigheid waar AI-systemen zoeken: reviewsites, vakbladen en communities waar anderen over je merk praten.",
   'machine-leesbaar-maken-ai-vindbaarheid':
