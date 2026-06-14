@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  launchd-job: dagelijkse token-vrije SEO-maintenance voor stevin.ai.
+  Draait scripts/seo-maintenance.sh elke dag om 07:30 lokale tijd.
+
+  Installeren op de Mac mini (eenmalig):
+    cp "<repo>/scripts/ai.stevin.seo-maintenance.plist" ~/Library/LaunchAgents/
+    launchctl load -w ~/Library/LaunchAgents/ai.stevin.seo-maintenance.plist
+    launchctl start ai.stevin.seo-maintenance        # meteen testen
+    tail -n 30 ~/Library/Logs/stevin-seo-maintenance.log
+
+  Let op: pas het pad in ProgramArguments hieronder aan als je repo niet op
+  /Users/koenhoogenboom/Scripts/stevin-ai-website staat.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>ai.stevin.seo-maintenance</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/koenhoogenboom/Scripts/stevin-ai-website/scripts/seo-maintenance.sh</string>
+  </array>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>7</integer>
+    <key>Minute</key>
+    <integer>30</integer>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/koenhoogenboom/Library/Logs/stevin-seo-maintenance.launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/koenhoogenboom/Library/Logs/stevin-seo-maintenance.launchd.log</string>
+</dict>
+</plist>
