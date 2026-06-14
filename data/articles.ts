@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-citeert-merken-via-onafhankelijke-bronnen',
+    format: 'dispatch' as const,
+    edition: '211',
+    category: 'Platform',
+    title: "AI-antwoorden citeren merken via derden, niet via eigen site",
+    dek: "AI-systemen citeren merken vaker als ze via onafhankelijke bronnen worden genoemd dan via de eigen website.",
+    publishedAt: '2026-06-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI-antwoorden citeren merken via derden, niet via eigen site",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'machine-leesbaar-maken-ai-vindbaarheid',
     format: 'dispatch' as const,
     edition: '210',
