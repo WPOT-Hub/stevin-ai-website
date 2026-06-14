@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'slecht-geindexeerd-is-zelden-een-schrijfprobleem',
+    format: 'dispatch' as const,
+    edition: '209',
+    category: 'Platform',
+    title: "Honderden pagina’s online maar Google ziet er maar een paar? Begin dan niet met herschrijven",
+    dek: "De reflex om teksten te verbeteren als je site slecht geïndexeerd wordt, is een doodlopende weg. Het probleem zit in overaanbod en zwakke autoriteit, niet in de woorden zelf.",
+    publishedAt: '2026-06-14',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Honderden pagina’s online maar Google ziet er maar een paar? Begin dan niet met herschrijven",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-rationering-dwingt-techbedrijven-tot-budgetdiscipline',
     format: 'dispatch' as const,
     edition: '208',
