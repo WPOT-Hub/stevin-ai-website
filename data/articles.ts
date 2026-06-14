@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-experts-denken-over-economische-gevolgen-van-ai-in-2030',
+    format: 'dispatch' as const,
+    edition: '212',
+    category: 'Beleid',
+    title: "Experts waarschuwen voor sociale onrust door AI-gedreven economie",
+    dek: "Een groep van 40 economen, tech-experts en beleidsmakers voorspelt dat AI de Amerikaanse economie kan verdubbelen tegen 2030, maar ook onderbenutting van werknemers kan laten stijgen van 8% naar 14%.",
+    publishedAt: '2026-06-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Experts waarschuwen voor sociale onrust door AI-gedreven economie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-citeert-merken-via-onafhankelijke-bronnen',
     format: 'dispatch' as const,
     edition: '211',
