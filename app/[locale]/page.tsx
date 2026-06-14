@@ -41,72 +41,12 @@ export default async function HomePage({ params }: Props) {
   const homepageFaqs = getHomepageFaqs(locale)
   const cap = locale === 'en' ? CAPABILITIES.en : CAPABILITIES.nl
 
-  // Verrijkte Organization-schema voor Knowledge Graph eligibility +
-  // entity-recognition door LLMs (ChatGPT, Claude, Perplexity gebruiken
-  // dit als primary entity-source). Eén schema op homepage — niet
-  // dupliceren over alle pages.
-  // sameAs: vul aan zodra LinkedIn/X/etc. profielen actief zijn.
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': 'https://stevin.ai/#organization',
-    name: 'Stevin',
-    legalName: 'Stevin.AI',
-    description:
-      'Stevin is de meetlat tussen marketingspend en werkelijk resultaat. AI-driven platform voor MKB dat zichtbaar maakt wat marketing écht oplevert via uplift-meting en Marketing Mix Modeling.',
-    url: 'https://stevin.ai',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://stevin.ai/icon.svg',
-      contentUrl: 'https://stevin.ai/icon.svg',
-    },
-    image: 'https://stevin.ai/og-image.png',
-    foundingLocation: {
-      '@type': 'Place',
-      address: { '@type': 'PostalAddress', addressCountry: 'NL' },
-    },
-    areaServed: [
-      { '@type': 'Country', name: 'Netherlands' },
-      { '@type': 'Country', name: 'Belgium' },
-    ],
-    knowsAbout: [
-      'Marketing Mix Modeling',
-      'Uplift Measurement',
-      'Marketing Attribution',
-      'Online Marketing',
-      'Paid Media',
-      'Search Engine Optimization',
-      'Generative Engine Optimization',
-      'Marketing Automation',
-      'CRM Integration',
-      'Analytics & Tracking',
-      'Conversion Rate Optimization',
-      'Marketing for SMBs',
-    ],
-    knowsLanguage: ['nl-NL', 'en'],
-    contactPoint: [
-      {
-        '@type': 'ContactPoint',
-        contactType: 'sales',
-        email: 'koen@stevin.ai',
-        url: 'https://stevin.ai/contact',
-        areaServed: ['NL', 'BE'],
-        availableLanguage: ['Dutch', 'English'],
-      },
-    ],
-    // sameAs: voeg hier social profiles toe (LinkedIn, X) zodra die actief
-    // zijn — versterkt entity-recognition voor Google Knowledge Graph.
-    sameAs: [
-      'https://www.linkedin.com/company/stevin-ai',
-    ],
-  }
+  // Organization + WebSite JSON-LD staan nu sitewide via components/SiteJsonLd.tsx
+  // (in de gedeelde layout), zodat de #organization-referenties op alle long-tail
+  // pagina's resolveren. Hier op de homepage houden we alleen de FAQPage over.
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -121,22 +61,6 @@ export default async function HomePage({ params }: Props) {
                 text: faq.answer,
               },
             })),
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebSite',
-            '@id': 'https://stevin.ai/#website',
-            name: 'Stevin',
-            url: 'https://stevin.ai',
-            publisher: {
-              '@id': 'https://stevin.ai/#organization',
-            },
-            inLanguage: ['nl-NL', 'en'],
           }),
         }}
       />

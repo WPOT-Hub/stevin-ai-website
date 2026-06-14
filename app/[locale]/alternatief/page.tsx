@@ -3,6 +3,7 @@ import { Link } from '@/i18n/navigation'
 import Section from '@/components/Section'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { alternatives } from '@/data/alternatives'
+import ItemListJsonLd from '@/components/ItemListJsonLd'
 
 export const metadata: Metadata = {
   title: 'Alternatieven voor marketing-data-tools',
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
 export default function AlternativesHub() {
   return (
     <Section>
+      <ItemListJsonLd
+        items={alternatives.map((a) => ({ path: `/alternatief/${a.slug}`, name: a.title }))}
+      />
       <Breadcrumbs
         items={[
           { label: 'Home', href: '/' },

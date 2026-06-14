@@ -32,6 +32,25 @@ export default function GlossaryHub() {
 
   return (
     <Section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'DefinedTermSet',
+            '@id': 'https://stevin.ai/woordenboek/#termset',
+            name: 'Stevin Woordenboek',
+            url: 'https://stevin.ai/woordenboek',
+            hasDefinedTerm: glossary.map((term) => ({
+              '@type': 'DefinedTerm',
+              '@id': `https://stevin.ai/woordenboek/${term.slug}#term`,
+              name: term.term,
+              description: term.shortDefinition,
+              url: `https://stevin.ai/woordenboek/${term.slug}`,
+            })),
+          }),
+        }}
+      />
       <Breadcrumbs
         items={[
           { label: 'Home', href: '/' },

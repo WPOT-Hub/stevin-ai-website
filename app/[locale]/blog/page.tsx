@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import { editorials, dispatches } from '@/data/articles'
+import ItemListJsonLd from '@/components/ItemListJsonLd'
 import { hasDispatchBody } from './[slug]/page'
 
 export const metadata: Metadata = {
@@ -25,6 +26,12 @@ export default function BlogIndex() {
 
   return (
     <>
+      <ItemListJsonLd
+        items={[...allEditorials, ...allDispatches].map((a) => ({
+          path: `/blog/${a.slug}`,
+          name: a.title,
+        }))}
+      />
       {/* Header — navy, editorial */}
       <header className="bg-[var(--navy)] text-white" style={{ padding: '96px 24px 64px' }}>
         <div className="mx-auto" style={{ maxWidth: '1200px' }}>

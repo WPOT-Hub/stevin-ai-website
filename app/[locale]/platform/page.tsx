@@ -55,6 +55,26 @@ export default async function PlatformPage({ params }: Props) {
 
   return (
     <main>
+      {/* SoftwareApplication: dit is de pagina die LLMs gebruiken om te bepalen
+          WAT Stevin is. Verwijst naar de sitewide #organization-node. offers
+          weggelaten zolang pricing niet publiek is (voorkomt incomplete-offer). */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'SoftwareApplication',
+            '@id': 'https://stevin.ai/#software',
+            name: 'Stevin',
+            applicationCategory: 'BusinessApplication',
+            applicationSubCategory: 'Marketing Intelligence',
+            operatingSystem: 'Web',
+            url: 'https://stevin.ai/platform',
+            description: t('sub'),
+            publisher: { '@id': 'https://stevin.ai/#organization' },
+          }),
+        }}
+      />
       {/* Hero */}
       <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
         <div className="mx-auto max-w-[1200px]">

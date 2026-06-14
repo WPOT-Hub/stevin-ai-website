@@ -10,6 +10,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MainShell from '@/components/MainShell'
 import ConsentBanner from '@/components/ConsentBanner'
+import SiteJsonLd from '@/components/SiteJsonLd'
 
 interface Props {
   children: React.ReactNode
@@ -102,6 +103,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
+      <SiteJsonLd />
       <GoogleTagManagerHead />
       <GoogleTagManagerBody />
       <MicrosoftClarity />

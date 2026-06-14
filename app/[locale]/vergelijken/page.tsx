@@ -3,6 +3,7 @@ import { Link } from '@/i18n/navigation'
 import Section from '@/components/Section'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { comparisons } from '@/data/comparisons'
+import ItemListJsonLd from '@/components/ItemListJsonLd'
 
 export const metadata: Metadata = {
   title: 'Tool-vergelijkingen, welke past bij jouw stack?',
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
 export default function ComparisonsHub() {
   return (
     <Section>
+      <ItemListJsonLd
+        items={comparisons.map((c) => ({ path: `/vergelijken/${c.slug}`, name: c.title }))}
+      />
       <Breadcrumbs
         items={[
           { label: 'Home', href: '/' },
