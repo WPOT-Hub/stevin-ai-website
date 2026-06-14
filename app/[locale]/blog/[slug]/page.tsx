@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-citeert-merken-via-onafhankelijke-bronnen': (
+    <>
+      <p className="lead-para">
+        Een vermelding op een reviewsite, in een vakblad of in een community weegt zwaarder dan een blogpost op je eigen domein. AI-systemen baseren autoriteit vooral op wat anderen over je zeggen aldus analyse van zoekgedrag in AI-antwoorden.
+      </p>
+      <p>
+        De kans op een citaat neemt toe als je bronnen expliciet noemt, cijfers met een primaire bron onderbouwt en auteurs met naam en achtergrond koppelt. Anonimiteit werkt averechts.
+      </p>
+      <p>
+        Voor jongere merken is dit de grootste kans: AI-systemen leiden autoriteit af uit externe signalen, niet uit eigen content.
+      </p>
+    </>
+  ),
   'machine-leesbaar-maken-ai-vindbaarheid': (
     <>
       <p className="lead-para">
@@ -4081,6 +4094,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-citeert-merken-via-onafhankelijke-bronnen':
+    "Dit vraagt om een andere strategie dan alleen zoekmachineoptimalisatie. Bouw allereerst je eigen pagina’s goed op met schema-markup en duidelijke auteurspagina’s. Focus daarnaast op aanwezigheid waar AI-systemen zoeken: reviewsites, vakbladen en communities waar anderen over je merk praten.",
   'machine-leesbaar-maken-ai-vindbaarheid':
     "Voor ondernemers betekent dit dat AI-vindbaarheid geen kwestie is van meer content maken, maar van de juiste structuur aanbrengen. Eenmalig investeren in structured data en llms.txt levert op termijn tijdwinst op bij elke nieuwe pagina of update. Het is geen technische specialisatie meer: tools en handleidingen zijn breed beschikbaar, waardoor het binnen handbereik ligt van elk bureau of marketingteam.",
   'slecht-geindexeerd-is-zelden-een-schrijfprobleem':
