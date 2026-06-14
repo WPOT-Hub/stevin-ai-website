@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-rationering-dwingt-techbedrijven-tot-budgetdiscipline',
+    format: 'dispatch' as const,
+    edition: '208',
+    category: 'Markt',
+    title: "AI-rationering dwingt techbedrijven tot budgetdiscipline",
+    dek: "Uber en Microsoft beperken AI-uitgaven per medewerker, terwijl de kosten van taalmodellen blijven stijgen.",
+    publishedAt: '2026-06-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "AI-rationering dwingt techbedrijven tot budgetdiscipline",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-in-film-industrie-2026-geen-revolutie',
     format: 'dispatch' as const,
     edition: '207',
