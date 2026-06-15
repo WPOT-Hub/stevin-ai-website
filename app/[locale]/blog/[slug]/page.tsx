@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-startups-ipo-hype-wie-profiteert': (
+    <>
+      <p className="lead-para">
+        Cloudproviders zoals AWS en Google Cloud boeken een forse omzetstijging nu AI-startups hun infrastructuur intensief gebruiken. Ook adviesbureaus en juridische kantoren zien een stijging in vraag naar begeleiding bij beursgang en compliance, aldus berichten uit de sector.
+      </p>
+      <p>
+        Investeerders zoals durfkapitaal en private equity kijken met argusogen naar deze markt, maar ook traditionele banken melden een toename van financieringsaanvragen. De verwachting is dat niet elke IPO succesvol zal zijn, wat risico’s met zich meebrengt voor minder ervaren partijen.
+      </p>
+      <p>
+        Ook leveranciers van hardware zoals servers en netwerkapparatuur profiteren direct van de groeiende vraag. Zij passen hun productie aan om aan de gestegen orders te voldoen, terwijl concurrentie tussen toeleveranciers de prijzen onder druk zet.
+      </p>
+    </>
+  ),
   'spacex-raketten-passen-tesla-in-mobiliteitsmarkt': (
     <>
       <p className="lead-para">
@@ -4146,6 +4159,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-startups-ipo-hype-wie-profiteert':
+    "Voor bedrijven die actief zijn in de techsector biedt deze hype kansen, maar ook uitdagingen. Een snelle groei kan leiden tot overcapaciteit of prijsdruk op lange termijn. Het is verstandig om niet alleen te focussen op korte termijn winst, maar ook te anticiperen op mogelijke marktcorrecties.",
   'spacex-raketten-passen-tesla-in-mobiliteitsmarkt':
     "Voor ondernemers in logistiek en transport opent dit nieuwe kansen, maar ook uitdagingen. Bedrijven die zich richten op regionale verbindingen zullen hun strategie moeten herzien om concurrerend te blijven. Tegelijkertijd biedt dit een voorproefje van hoe technologie disruptie kan versnellen in sectoren die traditioneel traag veranderen.",
   'reddit-voor-merken-7-stappen-succes':
