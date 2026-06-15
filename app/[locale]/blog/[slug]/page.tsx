@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'brand-legt-google-cloud-india-netwerk-langs-en-gevolgen-blijven-zichtbaar': (
+    <>
+      <p className="lead-para">
+        Een brand in een serverruimte van Google Cloud in Mumbai legde afgelopen zondag plotseling het regionale netwerk lam. De brand ontstond door een defect in de elektrische infrastructuur, aldus lokale brandweerberichten. Drie dagen na de brand waren de meeste diensten nog steeds traag of volledig onbereikbaar voor klanten in Zuid-Azië.
+      </p>
+      <p>
+        Klanten melden vooral problemen met opslag, databases en compute-diensten. Google Cloud heeft inmiddels bevestigd dat de oorzaak ligt bij schade aan kritieke hardware, maar geeft geen inschatting wanneer alles weer volledig functioneert. Een woordvoerder sprak van een 'complex herstelproces' door de omvang van de schade.
+      </p>
+      <p>
+        De storing raakt vooral bedrijven die afhankelijk zijn van cloudinfrastructuur in de regio. Lokale IT-leveranciers waarschuwen voor extra kosten en vertragingen bij projecten die afhankelijk zijn van tijdkritische diensten.
+      </p>
+    </>
+  ),
   'ai-experts-denken-over-economische-gevolgen-van-ai-in-2030': (
     <>
       <p className="lead-para">
@@ -4107,6 +4120,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'brand-legt-google-cloud-india-netwerk-langs-en-gevolgen-blijven-zichtbaar':
+    "Voor bedrijven die cloudinfrastructuur gebruiken is dit een herhaling van eerdere incidenten: afhankelijkheid van één provider kan snel leiden tot grote verstoringen. Het is verstandig om altijd een back-upplan te hebben, zoals een multi-cloud strategie of lokale opslagopties. Daarnaast blijkt weer dat fysieke veiligheid en redundantie in datacenters cruciaal zijn – iets waar niet alle providers even transparant over zijn.",
   'ai-experts-denken-over-economische-gevolgen-van-ai-in-2030':
     "Voor bedrijven in Nederland en België is dit scenario relevant omdat het laat zien hoe snel technologische veranderingen kunnen leiden tot structurele verschuivingen op de arbeidsmarkt. Zonder proactief beleid dreigt een situatie waarin economische groei niet gepaard gaat met voldoende werkgelegenheid of kwalitatieve banen. Dat vraagt om investeringen in flexibele opleidingstrajecten en samenwerking tussen overheid, bedrijven en onderwijsinstellingen om werknemers toekomstbestendig te maken.",
   'ai-citeert-merken-via-onafhankelijke-bronnen':
