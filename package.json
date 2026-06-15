@@ -14,7 +14,7 @@
     "vendor:enrich": "npx tsx scripts/generate-vendor-enrichments.ts"
   },
   "dependencies": {
-    "lucide-react": "^1.7.0",
+    "lucide-react": "^1.18.0",
     "next": "^16.2.6",
     "next-intl": "^4.9.1",
     "react": "^19.2.4",
