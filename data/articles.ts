@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'brand-legt-google-cloud-india-netwerk-langs-en-gevolgen-blijven-zichtbaar',
+    format: 'dispatch' as const,
+    edition: '213',
+    category: 'Tech',
+    title: "Brand legt Google Cloud India’s netwerk lam: trage diensten blijven een week later",
+    dek: "Een brand in een van Google Clouds datacenters in India heeft vorige week het regionale netwerk ernstig verstoord, met nog steeds langzame of onbereikbare diensten als gevolg.",
+    publishedAt: '2026-06-15',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Brand legt Google Cloud India’s netwerk lam: trage diensten blijven een week later",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-experts-denken-over-economische-gevolgen-van-ai-in-2030',
     format: 'dispatch' as const,
     edition: '212',
