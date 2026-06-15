@@ -66,8 +66,14 @@ export default async function HomePage({ params }: Props) {
       />
 
       {/* ── HERO ── */}
-      <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
-        <div className="mx-auto max-w-[1200px]">
+      <section className="relative overflow-hidden bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
+        {/* Hero-achtergrond: VR-studio render met navy-overlay zodat de tekst leesbaar blijft */}
+        <div className="absolute inset-0 z-0" aria-hidden="true">
+          <div className="absolute inset-0 bg-cover" style={{ backgroundImage: 'url(/hero-studio.jpg)', backgroundPosition: 'right center' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, #0A1628 0%, #0A1628 36%, rgba(10,22,40,0.6) 64%, rgba(10,22,40,0.3) 100%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(10,22,40,0.35) 0%, rgba(10,22,40,0) 35%, rgba(10,22,40,0.55) 100%)' }} />
+        </div>
+        <div className="relative z-10 mx-auto max-w-[1200px]">
 
           {/* Eyebrow */}
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
@@ -118,7 +124,7 @@ export default async function HomePage({ params }: Props) {
 
           {/* Quote */}
           <p className="italic text-white/25 text-sm mt-10">
-            &ldquo;{t('quote')}&rdquo; — {t('quote_author')}
+            &ldquo;{t('quote')}&rdquo; &middot; {t('quote_author')}
           </p>
 
           {/* Meetlat */}
@@ -713,7 +719,7 @@ export default async function HomePage({ params }: Props) {
             style={{ borderTop: '1px solid rgba(255,255,255,.1)' }}
           >
             <p className="italic text-[13px]" style={{ color: 'rgba(255,255,255,.35)' }}>
-              &ldquo;{t('quote')}&rdquo; — {t('quote_author')}
+              &ldquo;{t('quote')}&rdquo; &middot; {t('quote_author')}
             </p>
             <p
               className="font-display text-[12px] font-medium tracking-[0.06em] uppercase"
