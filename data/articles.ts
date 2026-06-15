@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'tno-biobuilt-centrum-versnelt-opschaling-biobased-materialen',
+    format: 'dispatch' as const,
+    edition: '217',
+    category: 'Bouw',
+    title: "Nieuw TNO-centrum versnelt doorbraak biobased bouwmaterialen",
+    dek: "TNO opent in Zoetermeer een innovatiecentrum om de productie van circulaire en CO2-vriendelijke bouwmaterialen sneller op te schalen.",
+    publishedAt: '2026-06-15',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BOUW',
+    posterTopic: "Nieuw TNO-centrum versnelt doorbraak biobased bouwmaterialen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-startups-ipo-hype-wie-profiteert',
     format: 'dispatch' as const,
     edition: '216',
