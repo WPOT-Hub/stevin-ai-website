@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-startups-ipo-hype-wie-profiteert',
+    format: 'dispatch' as const,
+    edition: '216',
+    category: 'Markt',
+    title: "AI-startups racen naar beursgang: wie profiteert mee?",
+    dek: "Naast AI-bedrijven zelf profiteren ook toeleveranciers, investeerders en dienstverleners van de hype rond IPO’s.",
+    publishedAt: '2026-06-15',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "AI-startups racen naar beursgang: wie profiteert mee?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spacex-raketten-passen-tesla-in-mobiliteitsmarkt',
     format: 'dispatch' as const,
     edition: '215',
