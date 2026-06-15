@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'reddit-voor-merken-7-stappen-succes',
+    format: 'dispatch' as const,
+    edition: '214',
+    category: 'Platform',
+    title: "Zeven stappen om succesvol te adverteren op Reddit voor merken",
+    dek: "Adverteren op Reddit vereist een andere aanpak dan op traditionele social media kanalen.",
+    publishedAt: '2026-06-15',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Zeven stappen om succesvol te adverteren op Reddit voor merken",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'brand-legt-google-cloud-india-netwerk-langs-en-gevolgen-blijven-zichtbaar',
     format: 'dispatch' as const,
     edition: '213',
