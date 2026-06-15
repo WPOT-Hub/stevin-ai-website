@@ -66,8 +66,14 @@ export default async function HomePage({ params }: Props) {
       />
 
       {/* ── HERO ── */}
-      <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
-        <div className="mx-auto max-w-[1200px]">
+      <section className="relative overflow-hidden bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
+        {/* Hero-achtergrond: VR-studio render met navy-overlay zodat de tekst leesbaar blijft */}
+        <div className="absolute inset-0 z-0" aria-hidden="true">
+          <div className="absolute inset-0 bg-cover" style={{ backgroundImage: 'url(/hero-studio.jpg)', backgroundPosition: 'right center' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, #0A1628 0%, #0A1628 36%, rgba(10,22,40,0.6) 64%, rgba(10,22,40,0.3) 100%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(10,22,40,0.35) 0%, rgba(10,22,40,0) 35%, rgba(10,22,40,0.55) 100%)' }} />
+        </div>
+        <div className="relative z-10 mx-auto max-w-[1200px]">
 
           {/* Eyebrow */}
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
@@ -118,7 +124,7 @@ export default async function HomePage({ params }: Props) {
 
           {/* Quote */}
           <p className="italic text-white/25 text-sm mt-10">
-            &ldquo;{t('quote')}&rdquo; — {t('quote_author')}
+            &ldquo;{t('quote')}&rdquo; &middot; {t('quote_author')}
           </p>
 
           {/* Meetlat */}
@@ -195,32 +201,85 @@ export default async function HomePage({ params }: Props) {
             </Link>
           </div>
 
-          {/* Marketing — single full-width card (artiesten leeft in footer) */}
-          <Link
-            href="/marketing"
-            className="group block rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200"
-            style={{ padding: '48px 44px 44px' }}
-          >
-            <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
-              <span className="inline-block w-5 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-              {t('domain_marketing_eyebrow')}
-            </p>
-            <h3
-              className="font-display font-bold text-primary mb-4"
-              style={{ fontSize: 'clamp(28px, 2.6vw, 36px)', lineHeight: '1.1', letterSpacing: '-0.025em' }}
+          {/* Twee sporen: vakmensen/MKB en marketing (artiesten leeft in footer) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Vakmensen en MKB */}
+            <Link
+              href="/contact"
+              className="group block rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200"
+              style={{ padding: '48px 44px 44px' }}
             >
-              {t('domain_marketing_h3')}
-            </h3>
-            <p className="text-muted leading-[1.6] max-w-[680px]" style={{ fontSize: '16px' }}>
-              {t('domain_marketing_desc')}
-            </p>
-            <div className="mt-8 pt-5 border-t border-border">
-              <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                {t('domain_marketing_link')}
-                <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
-              </span>
-            </div>
-          </Link>
+              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
+                <span className="inline-block w-5 h-px bg-accent flex-shrink-0" aria-hidden="true" />
+                {t('domain_vakman_eyebrow')}
+              </p>
+              <h3
+                className="font-display font-bold text-primary mb-4"
+                style={{ fontSize: 'clamp(24px, 2.2vw, 32px)', lineHeight: '1.1', letterSpacing: '-0.025em' }}
+              >
+                {t('domain_vakman_h3')}
+              </h3>
+              <p className="text-muted leading-[1.6]" style={{ fontSize: '16px' }}>
+                {t('domain_vakman_desc')}
+              </p>
+              <div className="mt-8 pt-5 border-t border-border">
+                <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+                  {t('domain_vakman_link')}
+                  <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
+                </span>
+              </div>
+            </Link>
+            {/* Marketing */}
+            <Link
+              href="/marketing"
+              className="group block rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200"
+              style={{ padding: '48px 44px 44px' }}
+            >
+              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
+                <span className="inline-block w-5 h-px bg-accent flex-shrink-0" aria-hidden="true" />
+                {t('domain_marketing_eyebrow')}
+              </p>
+              <h3
+                className="font-display font-bold text-primary mb-4"
+                style={{ fontSize: 'clamp(24px, 2.2vw, 32px)', lineHeight: '1.1', letterSpacing: '-0.025em' }}
+              >
+                {t('domain_marketing_h3')}
+              </h3>
+              <p className="text-muted leading-[1.6]" style={{ fontSize: '16px' }}>
+                {t('domain_marketing_desc')}
+              </p>
+              <div className="mt-8 pt-5 border-t border-border">
+                <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+                  {t('domain_marketing_link')}
+                  <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── VAKMAN-BLOK: concrete cold-call-haken ── */}
+      <section className="bg-white" style={{ padding: '96px 24px' }} id="vakman">
+        <div className="mx-auto max-w-[1000px]">
+          <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+            <span className="inline-block w-6 h-px bg-accent flex-shrink-0" aria-hidden="true" />
+            {t('vakman_eyebrow')}
+          </p>
+          <h2
+            className="font-display font-extrabold text-primary m-0 mb-10"
+            style={{ fontSize: 'clamp(28px, 3.2vw, 44px)', letterSpacing: '-0.03em', lineHeight: '1.1', maxWidth: '20ch' }}
+          >
+            {t('vakman_h2')}
+          </h2>
+          <ul className="space-y-5 max-w-[760px] list-none p-0 m-0">
+            {(['vakman_item1', 'vakman_item2', 'vakman_item3', 'vakman_item4', 'vakman_item5'] as const).map((k) => (
+              <li key={k} className="flex items-start gap-4">
+                <span className="mt-[10px] inline-block w-2 h-2 rounded-full bg-accent flex-shrink-0" aria-hidden="true" />
+                <span className="text-[#2A3A54] leading-[1.6]" style={{ fontSize: '18px' }}>{t(k)}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -660,7 +719,7 @@ export default async function HomePage({ params }: Props) {
             style={{ borderTop: '1px solid rgba(255,255,255,.1)' }}
           >
             <p className="italic text-[13px]" style={{ color: 'rgba(255,255,255,.35)' }}>
-              &ldquo;{t('quote')}&rdquo; — {t('quote_author')}
+              &ldquo;{t('quote')}&rdquo; &middot; {t('quote_author')}
             </p>
             <p
               className="font-display text-[12px] font-medium tracking-[0.06em] uppercase"
