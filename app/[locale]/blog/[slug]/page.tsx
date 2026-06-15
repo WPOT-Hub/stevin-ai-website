@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spacex-raketten-passen-tesla-in-mobiliteitsmarkt': (
+    <>
+      <p className="lead-para">
+        SpaceX heeft aangekondigd dat het vanaf 2027 raketvluchten aanbiedt voor passagiersvervoer over lange afstanden. De eerste commerciële vluchten tussen steden als New York en Los Angeles moeten al volgend jaar starten, aldus Elon Musk.
+      </p>
+      <p>
+        De dienst, genaamd 'StarHop', maakt gebruik van herbruikbare Starship-raketten en belooft reistijden te verkorten tot minder dan een uur. Dit zet druk op traditionele luchtvaartmaatschappijen en high-speed treinen, die momenteel de markt domineren.
+      </p>
+      <p>
+        Analisten wijzen erop dat de lage operationele kosten van SpaceX een doorslaggevende factor kunnen zijn. De kosten per passagier zouden uiteindelijk vergelijkbaar zijn met die van een businessclass-vlucht, maar met aanzienlijk kortere reistijden.
+      </p>
+    </>
+  ),
   'reddit-voor-merken-7-stappen-succes': (
     <>
       <p className="lead-para">
@@ -4133,6 +4146,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spacex-raketten-passen-tesla-in-mobiliteitsmarkt':
+    "Voor ondernemers in logistiek en transport opent dit nieuwe kansen, maar ook uitdagingen. Bedrijven die zich richten op regionale verbindingen zullen hun strategie moeten herzien om concurrerend te blijven. Tegelijkertijd biedt dit een voorproefje van hoe technologie disruptie kan versnellen in sectoren die traditioneel traag veranderen.",
   'reddit-voor-merken-7-stappen-succes':
     "Voor merken die nieuwe kanalen willen ontdekken, biedt Reddit een unieke kans om direct in contact te komen met specifieke doelgroepen. Het verschil met andere platforms ligt in de cultuur: hier draait alles om dialoog en gemeenschapszin. Bureaus kunnen klanten helpen door niet alleen campagnes uit te voeren, maar ook door hen te begeleiden in het begrijpen van deze dynamiek.",
   'brand-legt-google-cloud-india-netwerk-langs-en-gevolgen-blijven-zichtbaar':
