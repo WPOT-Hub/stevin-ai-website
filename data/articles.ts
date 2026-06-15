@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'spacex-raketten-passen-tesla-in-mobiliteitsmarkt',
+    format: 'dispatch' as const,
+    edition: '215',
+    category: 'Markt',
+    title: "SpaceX lanceert raketten als nieuwe speler in mobiliteit",
+    dek: "Raketten van SpaceX worden binnen drie jaar een serieuze concurrent voor Tesla in de mobiliteitssector.",
+    publishedAt: '2026-06-15',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "SpaceX lanceert raketten als nieuwe speler in mobiliteit",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'reddit-voor-merken-7-stappen-succes',
     format: 'dispatch' as const,
     edition: '214',
