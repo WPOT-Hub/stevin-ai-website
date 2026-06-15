@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'tno-biobuilt-centrum-versnelt-opschaling-biobased-materialen': (
+    <>
+      <p className="lead-para">
+        In Zoetermeer opent TNO deze maand het BioBuilt-innovatiecentrum, dat producenten direct helpt bij de doorontwikkeling en opschaling van biobased en circulaire bouwmaterialen. Het centrum combineert labfaciliteiten met praktijkgerichte testruimtes, zodat nieuwe materialen direct in realistische omstandigheden kunnen worden beproefd. Doel is om de bouwsector sneller te laten switchen naar materialen met een lagere CO2-footprint, aldus TNO.
+      </p>
+      <p>
+        Het centrum richt zich op drie pijlers: het optimaliseren van bestaande materialen zoals houtbeton, het ontwikkelen van nieuwe recepturen met biomassa, en het standaardiseren van productieprocessen. Volgens betrokken partijen kan dit leiden tot een forse kostenreductie bij de overstap naar duurzamere alternatieven voor traditionele materialen zoals staal en beton.
+      </p>
+      <p>
+        De opening sluit aan bij de Nederlandse doelstelling om de CO2-uitstoot in de bouw met 55% te verminderen voor 2030. Momenteel blijft de adoptie van biobased materialen achter door hoge kosten en gebrek aan schaalvoordeel, maar met het nieuwe centrum hoopt TNO deze drempels weg te nemen.
+      </p>
+    </>
+  ),
   'ai-startups-ipo-hype-wie-profiteert': (
     <>
       <p className="lead-para">
@@ -4159,6 +4172,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'tno-biobuilt-centrum-versnelt-opschaling-biobased-materialen':
+    "Voor aannemers en leveranciers betekent dit dat ze binnenkort toegang krijgen tot geavanceerde testfaciliteiten zonder zelf grote investeringen te hoeven doen. Tegelijkertijd onderstreept dit initiatief hoe sterk de druk op de sector is om innovatief te blijven: wie nu niet meebeweegt met circulaire oplossingen, loopt straks tegen wettelijke eisen of marktverliezen aan. Het is een duidelijke reminder dat duurzaamheid geen keuze meer is, maar een voorwaarde voor continuïteit.",
   'ai-startups-ipo-hype-wie-profiteert':
     "Voor bedrijven die actief zijn in de techsector biedt deze hype kansen, maar ook uitdagingen. Een snelle groei kan leiden tot overcapaciteit of prijsdruk op lange termijn. Het is verstandig om niet alleen te focussen op korte termijn winst, maar ook te anticiperen op mogelijke marktcorrecties.",
   'spacex-raketten-passen-tesla-in-mobiliteitsmarkt':
