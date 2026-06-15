@@ -196,7 +196,7 @@ export default async function SimonStevinPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      {/* ── SECTIE 1 — NAVY HERO ── */}
+      {/* ── SECTIE 1: NAVY HERO ── */}
       <section className="bg-primary" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1120px]">
           <p className="text-white/55 font-display font-semibold text-[12px] tracking-[0.08em] uppercase mb-6">
@@ -249,7 +249,7 @@ export default async function SimonStevinPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── SECTIE 2 — ORIGIN + NAAMGEVER (wit) ── */}
+      {/* ── SECTIE 2: ORIGIN + NAAMGEVER (wit) ── */}
       <section className="bg-white" style={{ paddingTop: '128px', paddingBottom: '40px' }}>
         <div className="mx-auto max-w-[680px] px-6 space-y-7">
           <p className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty" style={{ fontSize: '18px' }}>
@@ -295,7 +295,7 @@ export default async function SimonStevinPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── SECTIE 3 — WAT STEVIN IS (positionering) ── */}
+      {/* ── SECTIE 3: WAT STEVIN IS (positionering) ── */}
       <section className="bg-surface" style={{ paddingTop: '112px', paddingBottom: '112px' }}>
         <div className="mx-auto max-w-[820px] px-6 text-center">
           <h2
@@ -349,7 +349,7 @@ export default async function SimonStevinPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── SECTIE 4 — NAVY CLOSE ── */}
+      {/* ── SECTIE 4: NAVY CLOSE ── */}
       <section className="bg-primary text-center" style={{ padding: '112px 24px' }}>
         <div className="mx-auto max-w-[880px]">
           <p

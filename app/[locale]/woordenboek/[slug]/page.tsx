@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const term = getGlossaryTerm(slug)
   if (!term) return {}
 
-  const title = `${term.term} — Stevin Woordenboek`
+  const title = `${term.term}: Stevin Woordenboek`
   const canonical = `https://stevin.ai/woordenboek/${slug}`
   const ogImage = `https://stevin.ai/og-image.png`
   return {
@@ -49,8 +49,8 @@ export default async function GlossaryTermPage({ params }: Props) {
   const term = getGlossaryTerm(slug)
   if (!term) notFound()
 
-  // DefinedTerm schema voor woordenboek-termen — Schema.org's primaire
-  // type voor terminologie. Helpt LLM-citation én Google's Knowledge
+  // DefinedTerm schema voor woordenboek-termen, Schema.org's primaire
+  // type voor terminologie. Helpt LLM-citation en Google's Knowledge
   // Graph om Stevin's definitie te indexeren.
   const definedTermLd = {
     '@context': 'https://schema.org',
@@ -65,7 +65,7 @@ export default async function GlossaryTermPage({ params }: Props) {
     url: `https://stevin.ai/woordenboek/${slug}`,
   }
 
-  // Article schema bovendien — voor de uitgebreide content (definitie +
+  // Article schema bovendien, voor de uitgebreide content (definitie +
   // voorbeeld + Stevin-perspectief + FAQ-achtige structuur).
   const articleLd = {
     '@context': 'https://schema.org',

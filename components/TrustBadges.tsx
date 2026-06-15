@@ -43,7 +43,7 @@ export default function TrustBadges({ className = '', small = false }: { classNa
   return (
     <div className={`flex flex-wrap gap-2 ${className}`}>
 
-      {/* 1 — COMPLIANT */}
+      {/* 1: COMPLIANT */}
       <Badge label="GDPR Compliant" small={small}>
         <path d="M50 23 L65 31 L65 47 C65 57 58 63 50 66 C42 63 35 57 35 47 L35 31 Z"
           stroke={C1} strokeWidth="1.4" fill="none" strokeLinejoin="round" strokeLinecap="round" />
@@ -52,7 +52,7 @@ export default function TrustBadges({ className = '', small = false }: { classNa
         <Lbl text="COMPLIANT" />
       </Badge>
 
-      {/* 2 — EU HOSTED */}
+      {/* 2: EU HOSTED */}
       <Badge label="EU Hosted" small={small}>
         {EU_STARS.map(({ x, y, key }) => (
           <text key={key} x={x} y={y} textAnchor="middle" dominantBaseline="central"
@@ -63,7 +63,7 @@ export default function TrustBadges({ className = '', small = false }: { classNa
         <Lbl text="HOSTED" />
       </Badge>
 
-      {/* 3 — AI ACT READY */}
+      {/* 3: AI ACT READY */}
       <Badge label="AI Act Ready" small={small}>
         {AI_STARS.map(({ x, y, key }) => (
           <text key={key} x={x} y={y} textAnchor="middle" dominantBaseline="central"
@@ -86,7 +86,7 @@ export default function TrustBadges({ className = '', small = false }: { classNa
           fill={C3} letterSpacing="0.8" fontFamily={FF}>AI ACT READY</text>
       </Badge>
 
-      {/* 4 — READ ONLY */}
+      {/* 4: READ ONLY */}
       <Badge label="Read Only" small={small}>
         <path d="M22 42 Q36 27 50 27 Q64 27 78 42 Q64 57 50 57 Q36 57 22 42 Z"
           stroke={C1} strokeWidth="1.4" fill="none" strokeLinejoin="round" />
@@ -99,7 +99,7 @@ export default function TrustBadges({ className = '', small = false }: { classNa
         <Lbl text="READ ONLY" />
       </Badge>
 
-      {/* 5 — API ACCESS */}
+      {/* 5: API ACCESS */}
       <Badge label="API Access" small={small}>
         <path d="M43 26 Q37 26 37 32 L37 39 Q37 44 31 44 Q37 44 37 49 L37 56 Q37 62 43 62"
           stroke={C1} strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />

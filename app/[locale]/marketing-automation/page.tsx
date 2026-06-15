@@ -99,7 +99,7 @@ export default async function MarketingAutomationPage({ params }: Props) {
         </div>
       </section>
 
-      {/* How — eigen verhaal */}
+      {/* How: eigen verhaal */}
       <section className="bg-surface" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">

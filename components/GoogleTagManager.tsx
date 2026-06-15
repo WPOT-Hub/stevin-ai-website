@@ -11,7 +11,7 @@ export function GoogleTagManagerHead() {
   return (
     <>
       {/*
-       * Consent Mode v2 — MOET vóór GTM staan (strategy="beforeInteractive")
+       * Consent Mode v2: MOET voor GTM staan (strategy="beforeInteractive")
        * Alle signalen default denied. wait_for_update geeft CMP 500ms om te laden.
        * ads_data_redaction: IP + gclid worden geredigeerd bij denied ad_storage.
        * url_passthrough: consent-context via URL ipv cookies bij denied.
@@ -23,7 +23,7 @@ export function GoogleTagManagerHead() {
           __html: `
             window.dataLayer = window.dataLayer || [];
             // window.gtag (niet alleen lokaal) zodat ConsentBanner de
-            // consent kan updaten — anders blijft alles op 'denied'
+            // consent kan updaten, anders blijft alles op 'denied'
             // ondanks dat de gebruiker accepteerde (GA4 ad_user_data
             // warning).
             window.gtag = window.gtag || function(){dataLayer.push(arguments);};
@@ -43,7 +43,7 @@ export function GoogleTagManagerHead() {
         }}
       />
       {/*
-       * Google Tag Manager — first-party gtm.js serving via data.stevin.ai.
+       * Google Tag Manager: first-party gtm.js serving via data.stevin.ai.
        * nginx proxyt /gtm.js naar www.googletagmanager.com met 1h cache.
        * GA4 property G-WGB40XGYLF is geconfigureerd als tag inside GTM.
        * transport_url in GA4-tag stuurt hits naar data.stevin.ai/g/collect

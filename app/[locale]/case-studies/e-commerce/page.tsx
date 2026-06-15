@@ -130,7 +130,7 @@ export default async function EcommerceCaseStudy({ params }: Props) {
           <blockquote className="text-xl sm:text-2xl font-medium text-primary italic leading-relaxed">
             &ldquo;{t('quote')}&rdquo;
           </blockquote>
-          <p className="text-muted mt-4">— {t('quote_author')}</p>
+          <p className="text-muted mt-4">{t('quote_author')}</p>
         </div>
       </section>
 

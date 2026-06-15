@@ -64,7 +64,7 @@ export default function GlossaryHub() {
         </h1>
         <p className="mt-6 text-lg text-muted leading-relaxed">
           Marketing-termen in MKB-Nederlands. Geen academisch jargon, wel praktijkvoorbeelden.
-          Wat je in dashboards, presentaties en bureau-gesprekken tegenkomt — uitgelegd zoals een
+          Wat je in dashboards, presentaties en bureau-gesprekken tegenkomt, uitgelegd zoals een
           accountant het zou doen, niet zoals een professor.
         </p>
       </div>

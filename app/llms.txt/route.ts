@@ -1,9 +1,9 @@
 /**
- * llms.txt — markdown manifest voor LLM-crawlers (ChatGPT, Claude,
+ * llms.txt: markdown manifest voor LLM-crawlers (ChatGPT, Claude,
  * Perplexity, Gemini etc.). Volgt de llmstxt.org-standaard.
  *
  * Doel: LLMs vertellen wat de site doet, welke pagina's prioriteit
- * hebben en hoe ze de content moeten interpreteren — beter dan via
+ * hebben en hoe ze de content moeten interpreteren, beter dan via
  * crawl-discovery.
  *
  * Dynamisch gegenereerd uit data/* zodat nieuwe content automatisch
@@ -49,7 +49,7 @@ export async function GET() {
     ...glossary.map((t) => `- [${t.term}](https://stevin.ai/woordenboek/${t.slug}): ${t.shortDefinition}`),
     '',
     '## Platform & propositie',
-    '- [Platform](https://stevin.ai/platform): Productoverzicht — connectors, signalen, AI-rapportages',
+    '- [Platform](https://stevin.ai/platform): Productoverzicht: connectors, signalen, AI-rapportages',
     '- [Werkwijze](https://stevin.ai/werkwijze): Hoe Stevin met klanten werkt',
     '- [Diensten](https://stevin.ai/diensten): Paid media, SEO, automation, CRM, tracking',
     '- [SEO](https://stevin.ai/seo): SEO-aanpak van Stevin',

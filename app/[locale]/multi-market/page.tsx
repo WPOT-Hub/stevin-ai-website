@@ -76,7 +76,7 @@ export default async function MultiMarketPage({ params }: Props) {
 
   return (
     <>
-      {/* Hero — navy */}
+      {/* Hero, navy */}
       <section className="bg-primary overflow-hidden -mt-[72px]" style={{ paddingTop: 'calc(96px + 72px)', paddingBottom: '128px' }}>
         <div className="mx-auto max-w-[1200px] px-6">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
@@ -109,7 +109,7 @@ export default async function MultiMarketPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Problem — surface */}
+      {/* Problem, surface */}
       <section className="bg-surface" style={{ padding: '112px 24px' }}>
         <div className="mx-auto max-w-[1000px]">
           <p className="text-accent text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-[18px] flex items-center gap-[14px]">
@@ -131,7 +131,7 @@ export default async function MultiMarketPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Solution — white */}
+      {/* Solution, white */}
       <section className="bg-white" style={{ padding: '128px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-[72px]">
@@ -161,7 +161,7 @@ export default async function MultiMarketPage({ params }: Props) {
               </p>
             </article>
 
-            {/* Card 2 — with quote block */}
+            {/* Card 2, with quote block */}
             <article className="border border-border rounded-[14px] p-8 bg-white">
               <span className="font-display font-extrabold text-accent leading-none block mb-6" style={{ fontSize: '56px', letterSpacing: '-0.04em' }}>
                 {t('solution_2_label')}
@@ -198,7 +198,7 @@ export default async function MultiMarketPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Comparison table — surface */}
+      {/* Comparison table, surface */}
       <section className="bg-surface" style={{ padding: '128px 24px' }}>
         <div className="mx-auto max-w-[1100px]">
           <p className="text-accent text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-[18px] flex items-center gap-[14px]">
@@ -239,7 +239,7 @@ export default async function MultiMarketPage({ params }: Props) {
         </div>
       </section>
 
-      {/* What you get — white */}
+      {/* What you get, white */}
       <section className="bg-white" style={{ padding: '128px 24px' }}>
         <div className="mx-auto max-w-[1000px]">
           <p className="text-accent text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-[18px] flex items-center gap-[14px]">
@@ -260,7 +260,7 @@ export default async function MultiMarketPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Connects to your stack — navy */}
+      {/* Connects to your stack, navy */}
       <section className="bg-primary" style={{ padding: '120px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-[18px] flex items-center gap-[14px]">
@@ -308,7 +308,7 @@ export default async function MultiMarketPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Pilot timeline — surface */}
+      {/* Pilot timeline, surface */}
       <section className="bg-surface" style={{ padding: '128px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
           <p className="text-accent text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-[18px] flex items-center gap-[14px]">
@@ -341,7 +341,7 @@ export default async function MultiMarketPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Trust via rigor — white */}
+      {/* Trust via rigor, white */}
       <section className="bg-white" style={{ padding: '112px 24px' }}>
         <div className="mx-auto max-w-[1100px]">
           <p className="text-accent text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-[18px] flex items-center gap-[14px]">
@@ -377,7 +377,7 @@ export default async function MultiMarketPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Compensation — surface */}
+      {/* Compensation, surface */}
       <section className="bg-surface" style={{ padding: '128px 24px' }}>
         <div className="mx-auto max-w-[900px]">
           <p className="text-accent text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-[18px] flex items-center gap-[14px]">
@@ -404,7 +404,7 @@ export default async function MultiMarketPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Simon Stevin — navy */}
+      {/* Simon Stevin, navy */}
       <section className="bg-primary" style={{ padding: '128px 24px' }}>
         <div className="mx-auto max-w-[900px]">
           <p className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-[18px] flex items-center gap-[14px]">
@@ -429,7 +429,7 @@ export default async function MultiMarketPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Final CTA — surface */}
+      {/* Final CTA, surface */}
       <section className="bg-surface" style={{ padding: '128px 24px' }}>
         <div className="mx-auto max-w-[900px] text-center">
           <h2 className="font-display font-extrabold text-primary m-0 mb-8" style={{ fontSize: 'clamp(34px, 4.2vw, 60px)', lineHeight: '1.05', letterSpacing: '-0.03em' }}>
@@ -454,7 +454,7 @@ export default async function MultiMarketPage({ params }: Props) {
         </div>
       </section>
 
-      {/* FAQ — white */}
+      {/* FAQ, white */}
       <section className="bg-white" style={{ padding: '128px 24px' }}>
         <div className="mx-auto max-w-[900px]">
           <p className="text-accent text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-[18px] flex items-center gap-[14px]">

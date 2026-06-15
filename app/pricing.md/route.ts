@@ -1,5 +1,5 @@
 /**
- * pricing.md — machine-leesbare prijs-info voor AI-agents die producten
+ * pricing.md, machine-leesbare prijs-info voor AI-agents die producten
  * programmatisch vergelijken (ChatGPT, Perplexity, agent-buyers). Plain
  * markdown, geen rendering of login nodig.
  *
@@ -18,7 +18,7 @@ const body = `# Pricing, Stevin
 Stevin werkt met prijs op aanvraag, afgestemd op het aantal advertentie-accounts, koppelingen en de gewenste diepte. Er is bewust geen vaste publieke prijslijst: de prijs schaalt mee met de omvang van de marketing-stack.
 
 ## Wat je krijgt
-- Marketing intelligence platform: connectors, signalen voor reguliere rapportage, AI-rapportages.
+- AI-laag over je operatie: connectors, signalen voordat de reguliere rapportage het oppikt, AI-rapportages.
 - Read-only koppelingen met je bestaande tools (Google Ads, Meta, GA4, en meer).
 - Geschikt voor bureaus (meerdere klant-accounts) en in-house marketing-teams.
 

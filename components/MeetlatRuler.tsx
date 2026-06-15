@@ -1,4 +1,4 @@
-// Decoratief meetlat-motief — horizontale lijn met tick marks.
+// Decoratief meetlat-motief: horizontale lijn met tick marks.
 // Signatuur-element van het Stevin design system.
 interface MeetlatRulerProps {
   color?: string

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 /**
- * Stevin Journal — reading-progress bar bovenaan article pages.
+ * Stevin Journal: reading-progress bar bovenaan article pages.
  * Match: Claude Design article.html .progress
  */
 export default function ReadingProgress() {

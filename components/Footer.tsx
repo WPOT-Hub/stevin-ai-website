@@ -114,7 +114,7 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} Stevin.AI — {t('copyright')}
+            &copy; {new Date().getFullYear()} Stevin.AI, {t('copyright')}
           </p>
           <div className="flex items-center gap-4">
             <ConsentSettingsButton />

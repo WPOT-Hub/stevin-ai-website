@@ -1,5 +1,5 @@
 /**
- * Stevin.ai — Client-side tracking utilities
+ * Stevin.ai, Client-side tracking utilities
  *
  * SHA-256 hashing happens in the browser before any PII leaves the client.
  * Use these helpers to push user_data to the dataLayer for:

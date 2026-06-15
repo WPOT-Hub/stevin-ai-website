@@ -1,12 +1,12 @@
 /**
- * Microsoft Clarity — gratis heatmaps + session recordings.
+ * Microsoft Clarity: gratis heatmaps + session recordings.
  *
  * Geen event-limiet (anders dan GA4's 10M/maand). Geen aparte cookie-consent
- * nodig wanneer je Clarity in "consent-pending" mode draait — Clarity
+ * nodig wanneer je Clarity in "consent-pending" mode draait. Clarity
  * registreert dan alleen als de gebruiker analytics-cookies heeft toegestaan.
  *
  * Gated op NEXT_PUBLIC_CLARITY_PROJECT_ID env var. Wanneer niet gezet,
- * rendert het component niets — geen fail bij deploy zonder credentials.
+ * rendert het component niets, geen fail bij deploy zonder credentials.
  *
  * Setup:
  *   1. clarity.microsoft.com → New project → naam "Stevin.AI"

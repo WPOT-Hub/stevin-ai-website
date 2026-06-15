@@ -54,7 +54,7 @@ export default async function ComparisonPage({ params }: Props) {
   const integrationB = getIntegrationBySlug(comparison.slugB)
 
   // Article schema voor de comparison-page (Article ipv Product, want
-  // we vergelijken redactioneel — geen review-rating).
+  // we vergelijken redactioneel, geen review-rating).
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',

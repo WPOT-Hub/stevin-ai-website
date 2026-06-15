@@ -14,7 +14,7 @@ export const services: Service[] = [
     title: 'Paid Media',
     slug: 'paid-media',
     shortDescription: 'Advertenties die sturen op klanten, niet alleen op kliks.',
-    description: 'We beheren campagnes op Google, Meta, LinkedIn en andere kanalen. Niet op basis van verborgen marge op je mediabudget, maar op basis van resultaat. Door campagnes te koppelen aan CRM en tracking weten we welke campagnes daadwerkelijk klanten opleveren — en optimaliseren we daarop.',
+    description: 'We beheren campagnes op Google, Meta, LinkedIn en andere kanalen. Niet op basis van verborgen marge op je mediabudget, maar op basis van resultaat. Door campagnes te koppelen aan CRM en tracking weten we welke campagnes daadwerkelijk klanten opleveren, en optimaliseren we daarop.',
     whyImportant: 'Zonder goede koppeling tussen advertenties en opvolging stuur je op de verkeerde cijfers. Veel bedrijven optimaliseren op kosten per klik terwijl ze zouden moeten sturen op kosten per klant.',
     howItConnects: 'Paid media is de bovenkant van het systeem. Het genereert verkeer en leads. Maar de waarde wordt pas zichtbaar als tracking, landingspagina\'s, CRM en opvolging goed op elkaar aansluiten.',
     features: [
@@ -49,7 +49,7 @@ export const services: Service[] = [
     slug: 'marketing-automation',
     shortDescription: 'Geautomatiseerde opvolging die geen lead laat liggen.',
     description: 'We richten marketing automation in zodat leads op het juiste moment de juiste boodschap krijgen. Van welkomstflows tot lead scoring en nurturing: automation versnelt opvolging en verhoogt conversie.',
-    whyImportant: 'Handmatige opvolging is te traag en te foutgevoelig. Marketing automation zorgt dat elke lead wordt opgepakt — ook als je team druk is.',
+    whyImportant: 'Handmatige opvolging is te traag en te foutgevoelig. Marketing automation zorgt dat elke lead wordt opgepakt, ook als je team druk is.',
     howItConnects: 'Automation is de verbinding tussen marketing en sales. Het scoort leads, stuurt opvolgingsmails en waarschuwt sales wanneer een lead klaar is voor contact.',
     features: [
       'E-mail automation en drip campaigns',
@@ -67,7 +67,7 @@ export const services: Service[] = [
     shortDescription: 'Zorg dat geen enkele lead tussen wal en schip valt.',
     description: 'We richten je CRM in zodat het werkt als verlengstuk van je marketing. Leads komen automatisch binnen, worden gescoord en verdeeld, en sales weet precies wat een lead heeft gedaan voor het eerste gesprek.',
     whyImportant: 'De meeste leads gaan verloren door trage of slechte opvolging. Een goed ingericht CRM voorkomt dat en geeft sales de context die ze nodig hebben.',
-    howItConnects: 'CRM is de plek waar marketing en sales samenkomen. Het moet gevoed worden door campagnes, tracking en automation — en het moet terugkoppelen welke leads klant worden.',
+    howItConnects: 'CRM is de plek waar marketing en sales samenkomen. Het moet gevoed worden door campagnes, tracking en automation, en het moet terugkoppelen welke leads klant worden.',
     features: [
       'CRM-inrichting en -optimalisatie',
       'Automatische leadverwerking',

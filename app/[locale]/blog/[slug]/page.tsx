@@ -696,7 +696,7 @@ function ArticleMITBody() {
       <H2 num="01">Het probleem zit niet in het model</H2>
 
       <p>
-        De onderzoekers groeperen de mislukkingen in drie categorieën, en exact één daarvan gaat
+        De onderzoekers groeperen de mislukkingen in drie categorieen, en exact een daarvan gaat
         over modelkwaliteit. De andere twee, samen goed voor 81% van de pilots, gaan over iets
         anders: niemand weet of het werkt.
       </p>
@@ -777,7 +777,7 @@ function ArticleMITBody() {
 
       <p>
         Nu de vraag die niemand stelt:{' '}
-        <strong>wat zou er zijn gebeurd als die €150k níét was uitgegeven?</strong> Geen
+        <strong>wat zou er zijn gebeurd als die €150k niet was uitgegeven?</strong> Geen
         0%-conversie. Er waren nog organische leads, klantretentie, return-traffic. Misschien had je
         80% van diezelfde resultaten ook zonder die ads gehaald. Misschien 60%. Niemand weet het,
         want niemand heeft een geo-test, een holdout-groep of een uplift-meting opgezet.
@@ -789,7 +789,7 @@ function ArticleMITBody() {
         opgezette campagne.
       </p>
 
-      <H2 num="03">Wat moet je vragen vóór je tekent?</H2>
+      <H2 num="03">Wat moet je vragen voor je tekent?</H2>
 
       <p>
         Wij gebruiken intern een lijstje van vier vragen. Stel ze aan elke vendor. Als ze er drie of
@@ -812,7 +812,7 @@ function ArticleMITBody() {
         </li>
         <li>
           <strong>Wie bezit de meetdata?</strong> Als de vendor zegt &quot;wij&quot;, of
-          &quot;het is in ons platform geïntegreerd&quot;, heb je geen meetdata. Je hebt een
+          &quot;het is in ons platform geintegreerd&quot;, heb je geen meetdata. Je hebt een
           marketing-tool met een grafiek erop.
         </li>
       </ol>
@@ -835,7 +835,7 @@ function ArticleMITBody() {
       </p>
 
       <p>
-        Dat klinkt saai. Het is ook saai. Maar het is wel de reden dat 5% van de pilots wél schaalt
+        Dat klinkt saai. Het is ook saai. Maar het is wel de reden dat 5% van de pilots wel schaalt
         naar productie, en dat die 5% gemiddeld een <strong>4,2× hogere ROI</strong> haalt dan
         handmatig opgezette campagnes. De technologie is niet het verschil. De meetstructuur is dat.
       </p>
@@ -876,7 +876,7 @@ function ArticleMMMBody() {
       <H2 num="01">Wat een MMM in feite zegt</H2>
 
       <p>
-        Een MMM neemt twee à drie jaar wekelijkse data over sales en mediabestedingen, plus controle-variabelen voor seizoen, prijs, promotie, weer, concurrentie en macro-economie. Het model probeert vervolgens te schatten welke combinatie van inputs het beste de variatie in sales verklaart. Output: een decomposition (welk percentage van sales komt waarschijnlijk uit welk kanaal), een response curve per kanaal (waar zit diminishing returns), en een marginale ROI-schatting per kanaal.
+        Een MMM neemt twee a drie jaar wekelijkse data over sales en mediabestedingen, plus controle-variabelen voor seizoen, prijs, promotie, weer, concurrentie en macro-economie. Het model probeert vervolgens te schatten welke combinatie van inputs het beste de variatie in sales verklaart. Output: een decomposition (welk percentage van sales komt waarschijnlijk uit welk kanaal), een response curve per kanaal (waar zit diminishing returns), en een marginale ROI-schatting per kanaal.
       </p>
 
       <p>
@@ -895,7 +895,7 @@ function ArticleMMMBody() {
       </p>
 
       <p>
-        Drie patronen zien we het vaakst. Eén: een model dat met een sterke prior is opgestart en te weinig data heeft om die prior te overrulen. De output reflecteert dan vooral wat de modelbouwer al dacht. Twee: een decomposition die nooit is gekalibreerd met een echte uplift-test. Het model zegt search levert X op, niemand heeft ooit een geo-test gedaan om dat te verifiëren. Drie: response curves die als feit worden gepresenteerd terwijl de data alleen het lineaire stuk dekt en de saturation-curve dus extrapolatie is.
+        Drie patronen zien we het vaakst. Een: een model dat met een sterke prior is opgestart en te weinig data heeft om die prior te overrulen. De output reflecteert dan vooral wat de modelbouwer al dacht. Twee: een decomposition die nooit is gekalibreerd met een echte uplift-test. Het model zegt search levert X op, niemand heeft ooit een geo-test gedaan om dat te verifieren. Drie: response curves die als feit worden gepresenteerd terwijl de data alleen het lineaire stuk dekt en de saturation-curve dus extrapolatie is.
       </p>
 
       <Callout
@@ -906,7 +906,7 @@ function ArticleMMMBody() {
       <H2 num="03">Wanneer is een MMM wel nuttig</H2>
 
       <p>
-        MMM beantwoordt één type vraag goed: hoe moeten we ons mediabudget over de komende periode verdelen, gegeven wat we historisch hebben gezien en gegeven wat onafhankelijke experimenten ons hebben verteld over kanaalspecifieke uplift. Dat is een budget-allocatievraag op kwartaal- of jaarbasis, niet een dagelijkse optimalisatievraag.
+        MMM beantwoordt een type vraag goed: hoe moeten we ons mediabudget over de komende periode verdelen, gegeven wat we historisch hebben gezien en gegeven wat onafhankelijke experimenten ons hebben verteld over kanaalspecifieke uplift. Dat is een budget-allocatievraag op kwartaal- of jaarbasis, niet een dagelijkse optimalisatievraag.
       </p>
 
       <Takeaways
@@ -1053,11 +1053,11 @@ function ArticleLastClickBody() {
 
       <Callout
         big="500M"
-        label="User-experiment-observations en 1,6 miljard ad impressions in 15 Facebook-experimenten. Gordon, Zettelmeyer, Bhargava en Chapsky vonden dat observationele methodes vaak níét hetzelfde effect produceren als gerandomiseerde experimenten, ook na controle voor demografie en gedrag. Marketing Science, INFORMS."
+        label="User-experiment-observations en 1,6 miljard ad impressions in 15 Facebook-experimenten. Gordon, Zettelmeyer, Bhargava en Chapsky vonden dat observationele methodes vaak niet hetzelfde effect produceren als gerandomiseerde experimenten, ook na controle voor demografie en gedrag. Marketing Science, INFORMS."
       />
 
       <p>
-        De conclusie van die studie is ongemakkelijk: zelfs met enorme platformdata is causaliteit niet te bepalen zonder een experiment dat een controlegroep meet. Een Meta-rapport van 2.226 experimenten liet daarna zien dat last-click in 12 tot 20 procent van de campagnes tot een andere beslissing leidt dan een echt experiment. Een gemiddelde fout van één op de zes campagnes is veel als je een jaarbudget verdeelt.
+        De conclusie van die studie is ongemakkelijk: zelfs met enorme platformdata is causaliteit niet te bepalen zonder een experiment dat een controlegroep meet. Een Meta-rapport van 2.226 experimenten liet daarna zien dat last-click in 12 tot 20 procent van de campagnes tot een andere beslissing leidt dan een echt experiment. Een gemiddelde fout van een op de zes campagnes is veel als je een jaarbudget verdeelt.
       </p>
 
       <H2 num="02">Waarom het toch blijft</H2>
@@ -1071,7 +1071,7 @@ function ArticleLastClickBody() {
       </p>
 
       <p>
-        Wat we vaak zien: teams die het verschil weten, blijven last-click gebruiken in de weekrapportage en zetten een aparte uplift-test op naast de standaard-stack. Dat is niet ideaal, maar het is realistischer dan een complete cultuuromslag in één kwartaal. Last-click blijft bestaan omdat het in het vergaderritme past, niet omdat iemand het verdedigt.
+        Wat we vaak zien: teams die het verschil weten, blijven last-click gebruiken in de weekrapportage en zetten een aparte uplift-test op naast de standaard-stack. Dat is niet ideaal, maar het is realistischer dan een complete cultuuromslag in een kwartaal. Last-click blijft bestaan omdat het in het vergaderritme past, niet omdat iemand het verdedigt.
       </p>
 
       <H2 num="03">Wat onderzoek wel laat zien</H2>
@@ -1082,13 +1082,13 @@ function ArticleLastClickBody() {
 
       <Takeaways
         label="DE DRIE LIJNEN"
-        title="Wat we al twintig jaar weten over hoe marketing wérkt"
+        title="Wat we al twintig jaar weten over hoe marketing werkt"
         items={[
           {
             pct: '60/40',
             text: (
               <>
-                <b>Binet en Field.</b> De IPA-onderzoekers waarschuwen dat zeer korte online-metrics als hoofdmaatstaf gevaarlijk zijn voor lange termijn groei. Hun 60:40-vuistregel: ongeveer 60 procent van marketingbudget naar merkbouw, 40 procent naar activatie, voor de meeste categorieën. Last-click ziet vooral die 40 procent.
+                <b>Binet en Field.</b> De IPA-onderzoekers waarschuwen dat zeer korte online-metrics als hoofdmaatstaf gevaarlijk zijn voor lange termijn groei. Hun 60:40-vuistregel: ongeveer 60 procent van marketingbudget naar merkbouw, 40 procent naar activatie, voor de meeste categorieen. Last-click ziet vooral die 40 procent.
               </>
             ),
           },
@@ -1096,7 +1096,7 @@ function ArticleLastClickBody() {
             pct: 'EBI',
             text: (
               <>
-                <b>Ehrenberg-Bass.</b> Merken groeien via penetratie: zoveel mogelijk kopers, makkelijk te herinneren, makkelijk te kopen. Last-click beloont juist de kanalen het dichtst op de kassa (branded search, retargeting, affiliate, vouchers). Die vangen bestaande vraag op, ze creëren weinig nieuwe vraag.
+                <b>Ehrenberg-Bass.</b> Merken groeien via penetratie: zoveel mogelijk kopers, makkelijk te herinneren, makkelijk te kopen. Last-click beloont juist de kanalen het dichtst op de kassa (branded search, retargeting, affiliate, vouchers). Die vangen bestaande vraag op, ze creeren weinig nieuwe vraag.
               </>
             ),
           },
@@ -1119,7 +1119,7 @@ function ArticleLastClickBody() {
         Wie alleen op last-click stuurt, verschuift budget vrijwel altijd naar dat tweede type kanaal. Korte termijn lijkt het te werken; lange termijn slijt de vraag-pijplijn waar diezelfde kanalen op leunen. Dat is de boemerang.
       </p>
 
-      <H2 num="04">De stack die wél werkt</H2>
+      <H2 num="04">De stack die wel werkt</H2>
 
       <p>
         De oplossing is geen vervanging. Het is een gelaagde meetstack waarbij elk model de vraag krijgt waar het goed in is. Vier lagen.
@@ -1167,7 +1167,7 @@ function ArticleLastClickBody() {
       <h3>Over Meridian, en over &quot;MMM kost te veel&quot;</h3>
 
       <p>
-        De klassieke MMM-bezwaren waren reëel: duur bureau, lange doorlooptijd, jaarlijkse update, weinig actie voor performance-teams. Google&apos;s open source MMM-framework Meridian verandert daar een deel van. De software is gratis, de code is openbaar en aanpasbaar, en het framework is expliciet ontworpen voor causale schatting via onder andere geo-level modeling, reach en frequency, en kalibratie met experiment-resultaten.
+        De klassieke MMM-bezwaren waren reeel: duur bureau, lange doorlooptijd, jaarlijkse update, weinig actie voor performance-teams. Google&apos;s open source MMM-framework Meridian verandert daar een deel van. De software is gratis, de code is openbaar en aanpasbaar, en het framework is expliciet ontworpen voor causale schatting via onder andere geo-level modeling, reach en frequency, en kalibratie met experiment-resultaten.
       </p>
 
       <p>
@@ -1212,16 +1212,16 @@ function ArticleAgentsBody() {
       <BodyFigure
         tag="DHL · 2025"
         stat="100k+"
-        statCap="e-mails per jaar door één agent. Plus miljoenen telefoonminuten. Volgens DHL Group, persbericht 11 november 2025."
+        statCap="e-mails per jaar door een agent. Plus miljoenen telefoonminuten. Volgens DHL Group, persbericht 11 november 2025."
         edition="EDITIE 013 / 052 · AI &amp; AGENTS"
         source="Bron: DHL Group press release (11 november 2025)"
       />
 
       <p>
-        Datzelfde Gartner publiceerde een maand later iets minder hoopvols: meer dan 40 procent van agentic-AI-projecten wordt vóór eind 2027 afgeblazen. Te dure pilots, te onduidelijke business cases, te zwakke risk-controls. De realiteit ligt ergens tussen de belofte en de teleurstelling, en het verschil zit niet in de modellen.
+        Datzelfde Gartner publiceerde een maand later iets minder hoopvols: meer dan 40 procent van agentic-AI-projecten wordt voor eind 2027 afgeblazen. Te dure pilots, te onduidelijke business cases, te zwakke risk-controls. De realiteit ligt ergens tussen de belofte en de teleurstelling, en het verschil zit niet in de modellen.
       </p>
 
-      <H2 num="01">Wat een agent in DHL&apos;s warehouse écht doet</H2>
+      <H2 num="01">Wat een agent in DHL&apos;s warehouse echt doet</H2>
 
       <p>
         DHL Supply Chain noemt drie taken letterlijk in het persbericht: &quot;appointment scheduling, driver follow-up calls, and high-priority warehouse coordination&quot;. Vrij vertaald: afspraken inplannen met chauffeurs, achteraan e-mailen wanneer een rit niet op tijd binnenkomt, en bij urgente magazijn-issues de juiste mensen op de juiste plek krijgen. Werk dat normaal aan een planner of dispatcher hangt, en dat normaal in losse e-mails, telefoontjes en WhatsApp-berichten verzandt.
@@ -1243,7 +1243,7 @@ function ArticleAgentsBody() {
       <H2 num="02">De drie cijfers die ertoe doen</H2>
 
       <p>
-        Drie cijfers van Gartner en Bain vertellen samen het hele verhaal. Eén los geeft of marketing of doemdenken.
+        Drie cijfers van Gartner en Bain vertellen samen het hele verhaal. Een los geeft of marketing of doemdenken.
       </p>
 
       <Takeaways
@@ -1262,7 +1262,7 @@ function ArticleAgentsBody() {
             pct: '40%',
             text: (
               <>
-                <b>De realiteit.</b> Aandeel agentic-AI-projecten dat vóór eind 2027 wordt afgeblazen door kosten, zwakke business case of onvoldoende controle. (Gartner, juni 2025.)
+                <b>De realiteit.</b> Aandeel agentic-AI-projecten dat voor eind 2027 wordt afgeblazen door kosten, zwakke business case of onvoldoende controle. (Gartner, juni 2025.)
               </>
             ),
           },
@@ -1311,7 +1311,7 @@ function ArticleAgentsBody() {
             pct: '03',
             text: (
               <>
-                <b>Exception-rate.</b> Hoe vaak escaleert de agent zélf naar een mens omdat &apos;ie het niet snapt? Een gezond cijfer ligt tussen 5 en 15 procent. Hoger: te ambitieus ingericht.
+                <b>Exception-rate.</b> Hoe vaak escaleert de agent zelf naar een mens omdat &apos;ie het niet snapt? Een gezond cijfer ligt tussen 5 en 15 procent. Hoger: te ambitieus ingericht.
               </>
             ),
           },
@@ -1352,11 +1352,11 @@ function ArticleAgentsBody() {
       </p>
 
       <p>
-        DHL koos voor één duidelijk werkterrein, operationele communicatie met chauffeurs en magazijnen, en één vendor (HappyRobot). FedEx phaseert het in over jaren, met customs eerst. Bain&apos;s data laat zien dat externe partnerships ongeveer twee keer zo vaak slagen als interne builds. De boodschap: niet zelf bouwen, niet alles tegelijk, niet zonder meetkader.
+        DHL koos voor een duidelijk werkterrein, operationele communicatie met chauffeurs en magazijnen, en een vendor (HappyRobot). FedEx phaseert het in over jaren, met customs eerst. Bain&apos;s data laat zien dat externe partnerships ongeveer twee keer zo vaak slagen als interne builds. De boodschap: niet zelf bouwen, niet alles tegelijk, niet zonder meetkader.
       </p>
 
       <p>
-        Hou de vier cijfers van het meetkader bij. Latency, override-rate, exception-rate, payback. Als één daarvan 90 dagen lang de verkeerde kant op beweegt, weet je het: dit is de 19 procent die nooit positief eindigt. Beter daar in week 6 achter komen dan in maand 18.
+        Hou de vier cijfers van het meetkader bij. Latency, override-rate, exception-rate, payback. Als een daarvan 90 dagen lang de verkeerde kant op beweegt, weet je het: dit is de 19 procent die nooit positief eindigt. Beter daar in week 6 achter komen dan in maand 18.
       </p>
 
       <EndRule />
@@ -1730,7 +1730,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'spacex-raketten-passen-tesla-in-mobiliteitsmarkt': (
     <>
       <p className="lead-para">
-        SpaceX heeft aangekondigd dat het vanaf 2027 raketvluchten aanbiedt voor passagiersvervoer over lange afstanden. De eerste commerciële vluchten tussen steden als New York en Los Angeles moeten al volgend jaar starten, aldus Elon Musk.
+        SpaceX heeft aangekondigd dat het vanaf 2027 raketvluchten aanbiedt voor passagiersvervoer over lange afstanden. De eerste commerciele vluchten tussen steden als New York en Los Angeles moeten al volgend jaar starten, aldus Elon Musk.
       </p>
       <p>
         De dienst, genaamd 'StarHop', maakt gebruik van herbruikbare Starship-raketten en belooft reistijden te verkorten tot minder dan een uur. Dit zet druk op traditionele luchtvaartmaatschappijen en high-speed treinen, die momenteel de markt domineren.
@@ -1756,7 +1756,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'brand-legt-google-cloud-india-netwerk-langs-en-gevolgen-blijven-zichtbaar': (
     <>
       <p className="lead-para">
-        Een brand in een serverruimte van Google Cloud in Mumbai legde afgelopen zondag plotseling het regionale netwerk lam. De brand ontstond door een defect in de elektrische infrastructuur, aldus lokale brandweerberichten. Drie dagen na de brand waren de meeste diensten nog steeds traag of volledig onbereikbaar voor klanten in Zuid-Azië.
+        Een brand in een serverruimte van Google Cloud in Mumbai legde afgelopen zondag plotseling het regionale netwerk lam. De brand ontstond door een defect in de elektrische infrastructuur, aldus lokale brandweerberichten. Drie dagen na de brand waren de meeste diensten nog steeds traag of volledig onbereikbaar voor klanten in Zuid-Azie.
       </p>
       <p>
         Klanten melden vooral problemen met opslag, databases en compute-diensten. Google Cloud heeft inmiddels bevestigd dat de oorzaak ligt bij schade aan kritieke hardware, maar geeft geen inschatting wanneer alles weer volledig functioneert. Een woordvoerder sprak van een 'complex herstelproces' door de omvang van de schade.
@@ -1775,7 +1775,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De experts wijzen op een groeiende kloof tussen economische groei en sociale stabiliteit. Hoewel het bruto nationaal product en de aandelenmarkten zouden stijgen, zou een groot deel van de bevolking te maken krijgen met onzekerheid over hun inkomen en toekomstperspectief. Politieke verdeeldheid en trage overheidsreacties maken het lastig om tijdig beleid te ontwikkelen dat deze risico’s beperkt.
       </p>
       <p>
-        Om de negatieve gevolgen te beperken, wordt er gepleit voor heropleiding van werknemers en herverdeling van de welvaart die AI creëert. Er is echter nog onduidelijkheid over welke nieuwe banen AI precies zal voortbrengen en hoe bestaande beroepen zullen veranderen.
+        Om de negatieve gevolgen te beperken, wordt er gepleit voor heropleiding van werknemers en herverdeling van de welvaart die AI creeert. Er is echter nog onduidelijkheid over welke nieuwe banen AI precies zal voortbrengen en hoe bestaande beroepen zullen veranderen.
       </p>
     </>
   ),
@@ -1808,22 +1808,22 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'slecht-geindexeerd-is-zelden-een-schrijfprobleem': (
     <>
       <p className="lead-para">
-        Je lanceert een nieuwe website met trots: honderden pagina’s vol zorgvuldig opgestelde content, klaar om klanten te verleiden en zoekmachines te overtuigen. Toch zie je na weken dat Google hooguit twintig procent van die pagina’s heeft geïndexeerd. De eerste reactie is vaak paniek. De tweede: alles herschrijven, alsof betere teksten het probleem zullen oplossen. Maar wat als het tegenovergestelde waar is? Wat als de pagina’s zelf prima zijn, maar de structuur en autoriteit van je domein nog niet?
+        Je lanceert een nieuwe website met trots: honderden pagina’s vol zorgvuldig opgestelde content, klaar om klanten te verleiden en zoekmachines te overtuigen. Toch zie je na weken dat Google hooguit twintig procent van die pagina’s heeft geindexeerd. De eerste reactie is vaak paniek. De tweede: alles herschrijven, alsof betere teksten het probleem zullen oplossen. Maar wat als het tegenovergestelde waar is? Wat als de pagina’s zelf prima zijn, maar de structuur en autoriteit van je domein nog niet?
       </p>
       <p>
-        Het echte probleem ligt niet in de kwaliteit van de tekst, maar in het volume. Een jong domein dat in één keer tientallen of honderden templated pagina’s publiceert, botst direct tegen de kwaliteitsdrempel van Google aan. Zoekmachines belonen relevantie en autoriteit, niet kwantiteit. Elke extra pagina die weinig toevoegt aan waarde vecht om dezelfde beperkte aandacht van algoritmes en gebruikers. Het resultaat: een race naar beneden waar alleen de sterkste overblijven.
+        Het echte probleem ligt niet in de kwaliteit van de tekst, maar in het volume. Een jong domein dat in een keer tientallen of honderden templated pagina’s publiceert, botst direct tegen de kwaliteitsdrempel van Google aan. Zoekmachines belonen relevantie en autoriteit, niet kwantiteit. Elke extra pagina die weinig toevoegt aan waarde vecht om dezelfde beperkte aandacht van algoritmes en gebruikers. Het resultaat: een race naar beneden waar alleen de sterkste overblijven.
       </p>
       <p>
-        Dat geldt nog sterker nu AI-gestuurde zoekmachines zoals Perplexity of antwoordblokken in traditionele zoekresultaten meelezen. Een taalmodel kan alleen citeren wat daadwerkelijk geïndexeerd is – en dus vindbaar voor machines. Een perfect geoptimaliseerde pagina die Google negeert, levert ook geen citaten op in een AI-antwoord. Generative Engine Optimization (GEO) werkt pas als je basis in orde is: indexatie en autoriteit.
+        Dat geldt nog sterker nu AI-gestuurde zoekmachines zoals Perplexity of antwoordblokken in traditionele zoekresultaten meelezen. Een taalmodel kan alleen citeren wat daadwerkelijk geindexeerd is, en dus vindbaar voor machines. Een perfect geoptimaliseerde pagina die Google negeert, levert ook geen citaten op in een AI-antwoord. Generative Engine Optimization (GEO) werkt pas als je basis in orde is: indexatie en autoriteit.
       </p>
       <p>
-        De oplossing begint waar veel bedrijven eindigen: bij het snoeien. Begin met het consolideren van dunne programmatic pagina’s, zoals productvarianten zonder unieke waarde of locatiepagina’s die identiek zijn behalve de plaatsnaam. Verwijder dubbele taalvarianten en dubbelopnames in interne links die algoritmes verwarren. Maak een schone sitemap waarin alleen de routes staan die écht iets toevoegen voor mens én machine.
+        De oplossing begint waar veel bedrijven eindigen: bij het snoeien. Begin met het consolideren van dunne programmatic pagina’s, zoals productvarianten zonder unieke waarde of locatiepagina’s die identiek zijn behalve de plaatsnaam. Verwijder dubbele taalvarianten en dubbelopnames in interne links die algoritmes verwarren. Maak een schone sitemap waarin alleen de routes staan die echt iets toevoegen voor mens en machine.
       </p>
       <p>
         Pas daarna komt het bouwen van autoriteit aan de beurt. Dat betekent geen vage ‘SEO-tips’ uit oude handboeken, maar concrete stappen: benoem auteurs met naam en functie op je site, laat ze linken vanuit onafhankelijke bronnen zoals LinkedIn of relevante vakbladen, en zorg dat die bronnen weer teruglinken naar jouw domein. Autoriteit bouw je niet met keywords, maar met herkenbare namen die vertrouwen uitstralen.
       </p>
       <p>
-        Pas als deze twee fundamenten stevig staan, kun je gericht verdiepen op de dertig tot vijftig pagina’s die daadwerkelijk omzet genereren of citaties opleveren. Die selectie hoeft niet groot te zijn – liever tien sterke landingspagina’s dan honderd zwakke – maar wel scherp gepositioneerd rond kernproducten of diensten.
+        Pas als deze twee fundamenten stevig staan, kun je gericht verdiepen op de dertig tot vijftig pagina’s die daadwerkelijk omzet genereren of citaties opleveren. Die selectie hoeft niet groot te zijn (liever tien sterke landingspagina’s dan honderd zwakke) maar wel scherp gepositioneerd rond kernproducten of diensten.
       </p>
       <p>
         Een volledige herschrijfoperatie kost weken werk en raakt geen van beide hefbomen: indexatie en autoriteit blijven buiten beeld zolang de basis rommelig is. Snoeien en selectief verdiepen is niet alleen goedkoper, het pakt direct de oorzaak aan in plaats van symptomen te bestrijden.
@@ -1859,29 +1859,29 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De technologie werkt nu vooral voor mensen met ernstige verlamming. Uit klinische trials blijkt dat proefpersonen al kunnen typen, games spelen of een cursor besturen met hun gedachten. Het zijn kleine stappen, maar ze markeren het begin van een fundamentele verschuiving: de grens tussen mens en machine vervaagt niet in theorie, maar in praktijk. Voor bureaus die zich bezighouden met digitale ervaringen of toegankelijkheid is dit geen abstract concept meer, maar een teken aan de wand.
       </p>
       <p>
-        Toch gaat de hype rond Neuralink vaak verder dan de realiteit. Sociale media gonzen van claims over ‘breinen koppelen aan AI’ of ‘kennis downloaden’, terwijl Neuralink zelf benadrukt dat het systeem momenteel alleen bewegingssignalen vertaalt naar digitale acties. De technologie leest geen gedachten en zet geen herinneringen in je brein – het herkent patronen in hersensignalen die gekoppeld zijn aan bedoelde bewegingen. Dat is precies waar de marketingvalkuil ligt: wat technisch mogelijk is, wordt snel verward met wat wenselijk of ethisch verantwoord is.
+        Toch gaat de hype rond Neuralink vaak verder dan de realiteit. Sociale media gonzen van claims over ‘breinen koppelen aan AI’ of ‘kennis downloaden’, terwijl Neuralink zelf benadrukt dat het systeem momenteel alleen bewegingssignalen vertaalt naar digitale acties. De technologie leest geen gedachten en zet geen herinneringen in je brein: het herkent patronen in hersensignalen die gekoppeld zijn aan bedoelde bewegingen. Dat is precies waar de marketingvalkuil ligt: wat technisch mogelijk is, wordt snel verward met wat wenselijk of ethisch verantwoord is.
       </p>
       <p>
-        De echte vraag is niet of Neuralink werkt, maar onder welke voorwaarden we bereid zijn om onze meest persoonlijke data – onze hersensignalen – te delen met systemen die we niet volledig begrijpen. Wie mag die data zien? Hoe lang wordt die bewaard? En wat gebeurt er als zo’n systeem faalt? Een storing in de software kan voor iemand die afhankelijk is van Telepathy betekenen dat plotseling de toegang tot communicatie verdwijnt – iets wat vergelijkbaar is met iemands stem verliezen.
+        De echte vraag is niet of Neuralink werkt, maar onder welke voorwaarden we bereid zijn om onze meest persoonlijke data (onze hersensignalen) te delen met systemen die we niet volledig begrijpen. Wie mag die data zien? Hoe lang wordt die bewaard? En wat gebeurt er als zo’n systeem faalt? Een storing in de software kan voor iemand die afhankelijk is van Telepathy betekenen dat plotseling de toegang tot communicatie verdwijnt, iets wat vergelijkbaar is met iemands stem verliezen.
       </p>
       <p>
-        Voor bureaus die zich richten op innovatie en klantbeleving biedt Neuralink een unieke kans om na te denken over de rol van technologie in ons dagelijks leven. De vraag is niet langer óf deze systemen komen, maar wanneer ze mainstream worden en wie er baat bij heeft. Nu nog beperkt tot medische toepassingen, kan deze technologie over tien jaar net zo normaal zijn als touchscreens vandaag. Het verschil? Hersendata zijn onomkeerbaar en onvervangbaar – terwijl een gebroken scherm gewoon vervangen kan worden.
+        Voor bureaus die zich richten op innovatie en klantbeleving biedt Neuralink een unieke kans om na te denken over de rol van technologie in ons dagelijks leven. De vraag is niet langer of deze systemen komen, maar wanneer ze mainstream worden en wie er baat bij heeft. Nu nog beperkt tot medische toepassingen, kan deze technologie over tien jaar net zo normaal zijn als touchscreens vandaag. Het verschil? Hersendata zijn onomkeerbaar en onvervangbaar, terwijl een gebroken scherm gewoon vervangen kan worden.
       </p>
       <p>
-        Er zijn ook praktische uitdagingen. Een hersenimplantaat brengt risico’s met zich mee: infecties, littekenvorming of beschadiging van weefsel zijn reële gevaren. Daarnaast is er de kwestie van acceptatie. Niet iedereen zal bereid zijn om zich te laten opereren voor een technologie die nu nog experimenteel is. Toch laat de eerste golf proefpersonen zien dat de belofte van autonomie sterk genoeg kan zijn om risico’s te nemen.
+        Er zijn ook praktische uitdagingen. Een hersenimplantaat brengt risico’s met zich mee: infecties, littekenvorming of beschadiging van weefsel zijn reele gevaren. Daarnaast is er de kwestie van acceptatie. Niet iedereen zal bereid zijn om zich te laten opereren voor een technologie die nu nog experimenteel is. Toch laat de eerste golf proefpersonen zien dat de belofte van autonomie sterk genoeg kan zijn om risico’s te nemen.
       </p>
       <p>
         De grootste les voor bureaus ligt misschien niet in de technologie zelf, maar in hoe ze hiermee omgaan als communicators en adviseurs. Neuralink dwingt ons om na te denken over ethiek in innovatie: wie profiteert ervan? Wie bepaalt wat acceptabel is? En hoe zorgen we ervoor dat deze systemen toegankelijk blijven voor wie ze het meest nodig heeft?
       </p>
       <p>
-        Het antwoord ligt niet in sensatiezucht, maar in verantwoordelijkheid. Neuralink toont aan dat technologie onze capaciteiten kan uitbreiden – mits we haar op de juiste manier vormgeven.
+        Het antwoord ligt niet in sensatiezucht, maar in verantwoordelijkheid. Neuralink toont aan dat technologie onze capaciteiten kan uitbreiden, mits we haar op de juiste manier vormgeven.
       </p>
     </>
   ),
   'yang-ziet-kans-in-kostenverlaging-als-startup-goudkoorts': (
     <>
       <p className="lead-para">
-        Amerikanen geven jaarlijks honderden miljarden dollars uit aan vaste lasten zoals huur, mobiele telefoonabonnementen en boodschappen. Yang constateert dat veel van deze uitgaven onnodig hoog zijn door gebrek aan concurrentie of inefficiëntie in de markt. Hij ziet hierin een kans voor startups die deze kosten structureel kunnen verlagen, aldus Yang in een recent interview met TechCrunch.
+        Amerikanen geven jaarlijks honderden miljarden dollars uit aan vaste lasten zoals huur, mobiele telefoonabonnementen en boodschappen. Yang constateert dat veel van deze uitgaven onnodig hoog zijn door gebrek aan concurrentie of inefficientie in de markt. Hij ziet hierin een kans voor startups die deze kosten structureel kunnen verlagen, aldus Yang in een recent interview met TechCrunch.
       </p>
       <p>
         Yang noemt specifiek sectoren als woningbouw, supermarkten en telecom als gebieden waar innovatie kan leiden tot lagere prijzen. Zijn analyse sluit aan bij een bredere trend waarbij consumenten steeds kritischer kijken naar waar hun geld naartoe gaat. Vooral jongere generaties zijn bereid om over te stappen naar alternatieven als dat betekent dat ze meer overhouden aan het eind van de maand.
@@ -1894,13 +1894,13 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'afm-kritiek-op-ai-toezicht-verdeling-met-dnb': (
     <>
       <p className="lead-para">
-        De Autoriteit Financiële Markten (AFM) krijgt met de Nederlandse uitvoering van de Europese AI-verordening een nieuwe toezichthoudende rol. De toezichthouder moet controleren of financiële instellingen consumenten beschermen tegen manipulatieve of misleidende AI-systemen. Ook wordt nagegaan of kwetsbaarheden in AI-modellen niet worden uitgebuit door bedrijven. Dit betekent extra werk voor de AFM, aldus de uitvoeringstoets die de toezichthouder heeft opgesteld.
+        De Autoriteit Financiele Markten (AFM) krijgt met de Nederlandse uitvoering van de Europese AI-verordening een nieuwe toezichthoudende rol. De toezichthouder moet controleren of financiele instellingen consumenten beschermen tegen manipulatieve of misleidende AI-systemen. Ook wordt nagegaan of kwetsbaarheden in AI-modellen niet worden uitgebuit door bedrijven. Dit betekent extra werk voor de AFM, aldus de uitvoeringstoets die de toezichthouder heeft opgesteld.
       </p>
       <p>
-        De kritiek richt zich vooral op de verdeling van taken tussen AFM en De Nederlandsche Bank (DNB). Volgens de AFM ontbreekt het aan heldere afspraken over wie welke AI-systemen mag beoordelen. Dit kan leiden tot dubbel werk of juist gaten in het toezicht. De AFM wijst erop dat financiële instellingen vaak complexe AI-oplossingen gebruiken die zowel onder financieel als technisch toezicht vallen.
+        De kritiek richt zich vooral op de verdeling van taken tussen AFM en De Nederlandsche Bank (DNB). Volgens de AFM ontbreekt het aan heldere afspraken over wie welke AI-systemen mag beoordelen. Dit kan leiden tot dubbel werk of juist gaten in het toezicht. De AFM wijst erop dat financiele instellingen vaak complexe AI-oplossingen gebruiken die zowel onder financieel als technisch toezicht vallen.
       </p>
       <p>
-        De nieuwe taken moeten uiterlijk in 2027 operationeel zijn, wanneer de Europese AI-verordening volledig in werking treedt. Financiële instellingen moeten zich voorbereiden op strengere controles en meer transparantievereisten rondom hun AI-systemen.
+        De nieuwe taken moeten uiterlijk in 2027 operationeel zijn, wanneer de Europese AI-verordening volledig in werking treedt. Financiele instellingen moeten zich voorbereiden op strengere controles en meer transparantievereisten rondom hun AI-systemen.
       </p>
     </>
   ),
@@ -1933,23 +1933,23 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'ukraine-ai-drones-autonoom-oorlogsvoering': (
     <>
       <p className="lead-para">
-        In een zeldzame test heeft Oekraïne autonome drones ingezet die zonder menselijke tussenkomst Russische soldaten opspoorden en uitschakelden. De drones waren uitgerust met AI-modules die doelen herkenden en beslissingen namen over aanval of terugtrekking. Volgens rapporten was de operatie succesvol en leidde tot een significante uplift in effectiviteit ten opzichte van traditionele drone-aanvallen.
+        In een zeldzame test heeft Oekraine autonome drones ingezet die zonder menselijke tussenkomst Russische soldaten opspoorden en uitschakelden. De drones waren uitgerust met AI-modules die doelen herkenden en beslissingen namen over aanval of terugtrekking. Volgens rapporten was de operatie succesvol en leidde tot een significante uplift in effectiviteit ten opzichte van traditionele drone-aanvallen.
       </p>
       <p>
         De technologie maakt gebruik van realtime beeldverwerking en machine learning om bewegende doelen te detecteren en te volgen, zelfs in complexe omstandigheden. Experts wijzen erop dat deze stap de oorlogsvoering kan veranderen, omdat het de afhankelijkheid van menselijke operators vermindert. Tegelijkertijd roept het ethische vragen op over de inzet van dergelijke systemen in conflictsituaties.
       </p>
       <p>
-        De test markeert een trend waarbij militaire partijen wereldwijd investeren in autonome wapensystemen. Oekraïne toont hiermee aan dat AI niet alleen wordt gebruikt voor logistiek of verkenning, maar ook voor directe gevechtsacties.
+        De test markeert een trend waarbij militaire partijen wereldwijd investeren in autonome wapensystemen. Oekraine toont hiermee aan dat AI niet alleen wordt gebruikt voor logistiek of verkenning, maar ook voor directe gevechtsacties.
       </p>
     </>
   ),
   'pokemongo-data-militaire-toepassingen': (
     <>
       <p className="lead-para">
-        Uit onderzoek blijkt dat locatie- en bewegingsdata van Pokémon Go-spelers zijn ingezet voor het trainen van AI-systemen die later ook voor militaire drones werden gebruikt. De data werd verzameld via de app en vervolgens geanalyseerd door techbedrijven zonder dat spelers hiervan op de hoogte waren. Dit roept opnieuw vragen op over de onzichtbare waarde van gebruikersdata in commerciële en defensieprojecten.
+        Uit onderzoek blijkt dat locatie- en bewegingsdata van Pokemon Go-spelers zijn ingezet voor het trainen van AI-systemen die later ook voor militaire drones werden gebruikt. De data werd verzameld via de app en vervolgens geanalyseerd door techbedrijven zonder dat spelers hiervan op de hoogte waren. Dit roept opnieuw vragen op over de onzichtbare waarde van gebruikersdata in commerciele en defensieprojecten.
       </p>
       <p>
-        De praktijk onderstreept hoe gemakkelijk persoonlijke informatie kan worden hergebruikt voor doeleinden waar spelers nooit mee hebben ingestemd. Techbedrijven verwerkten de data vaak als onderdeel van grotere datasets voor machine learning, zonder expliciete toestemming of duidelijke communicatie over het eindgebruik. Voor veel gebruikers is dit een schokkende ontdekking, zeker omdat Pokémon Go zelf geen directe link heeft met defensie of veiligheid.
+        De praktijk onderstreept hoe gemakkelijk persoonlijke informatie kan worden hergebruikt voor doeleinden waar spelers nooit mee hebben ingestemd. Techbedrijven verwerkten de data vaak als onderdeel van grotere datasets voor machine learning, zonder expliciete toestemming of duidelijke communicatie over het eindgebruik. Voor veel gebruikers is dit een schokkende ontdekking, zeker omdat Pokemon Go zelf geen directe link heeft met defensie of veiligheid.
       </p>
       <p>
         Ook in Europa komt deze kwestie terug bij discussies over data-eigendom en transparantie. Regels zoals de AVG bieden weliswaar bescherming, maar de praktijk laat zien dat handhaving en bewustzijn bij gebruikers achterblijven. Gebruikers kunnen hun data niet meer terugdraaien als deze eenmaal is geanonimiseerd en verspreid over meerdere systemen.
@@ -1962,7 +1962,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Gwynne Shotwell, president van SpaceX, heeft opnieuw gesuggereerd dat een fusie met Tesla binnenkort kan plaatsvinden. Tijdens een interview met TechCrunch gaf ze aan dat de twee bedrijven al jaren nauw samenwerken en dat een formele combinatie logisch zou zijn.
       </p>
       <p>
-        Shotwell wees erop dat zowel SpaceX als Tesla dezelfde visie delen op technologische innovatie en duurzaamheid. Volgens haar zou een fusie de samenwerking tussen beide bedrijven verder versterken en nieuwe kansen creëren voor beide partijen.
+        Shotwell wees erop dat zowel SpaceX als Tesla dezelfde visie delen op technologische innovatie en duurzaamheid. Volgens haar zou een fusie de samenwerking tussen beide bedrijven verder versterken en nieuwe kansen creeren voor beide partijen.
       </p>
       <p>
         De uitspraken volgen op eerdere hints van Elon Musk, die eerder al aangaf dat een fusie tussen de twee bedrijven mogelijk is. Musk is zowel CEO van Tesla als grootste aandeelhouder van SpaceX.
@@ -1988,7 +1988,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De handelspijplijn Robinhood zag woensdag een ongekend hoog aantal gebruikers tegelijk actief toen SpaceX voor het eerst aandelen aanbood op de beurs. De servers van het platform konden de stroom aan transacties en verzoeken tijdelijk niet volledig verwerken, waardoor sommige klanten korte tijd geen toegang hadden tot hun account of handelspagina.
       </p>
       <p>
-        Na ongeveer twee uur waren de problemen volgens Robinhood opgelost en functioneerde het platform weer normaal. Het bedrijf heeft geen melding gemaakt van gegevensverlies of financiële gevolgen voor gebruikers als gevolg van de storingen.
+        Na ongeveer twee uur waren de problemen volgens Robinhood opgelost en functioneerde het platform weer normaal. Het bedrijf heeft geen melding gemaakt van gegevensverlies of financiele gevolgen voor gebruikers als gevolg van de storingen.
       </p>
       <p>
         SpaceX introduceerde ruim 20 miljoen aandelen tegen een startprijs van 97 dollar per aandeel, wat direct leidde tot een recordomzet voor de handel in nieuwe aandelen via Robinhood.
@@ -2024,7 +2024,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'attributie-impact-niet-meer-gelijk-aan-meetdata-in-ppc': (
     <>
       <p className="lead-para">
-        Platformrapporten zoals Google Ads of Meta Ads tonen welke kanalen, zoektermen of campagnes conversies genereren, maar ze leggen geen oorzaak en gevolg bloot. Klantgedrag buiten deze kanalen – zoals herhaalaankopen via directe kanalen of CRM-data – ontbreekt vaak in deze overzichten. Daardoor ontstaat een vertekend beeld van waar de echte uplift vandaan komt.
+        Platformrapporten zoals Google Ads of Meta Ads tonen welke kanalen, zoektermen of campagnes conversies genereren, maar ze leggen geen oorzaak en gevolg bloot. Klantgedrag buiten deze kanalen (zoals herhaalaankopen via directe kanalen of CRM-data) ontbreekt vaak in deze overzichten. Daardoor ontstaat een vertekend beeld van waar de echte uplift vandaan komt.
       </p>
       <p>
         Voor bedrijven met complexe klantreizen levert attributie alleen niet genoeg op. Een gebruiker kan bijvoorbeeld eerst via een display-ad bekend raken met een merk, daarna via organische zoekopdrachten meer te weten komen en pas bij de laatste klik converteren. Als alleen de laatste stap wordt gemeten, gaat de bijdrage van eerdere touchpoints verloren.
@@ -2050,25 +2050,25 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'nova-en-de-toekomst-van-ruimtevaart': (
     <>
       <p className="lead-para">
-        De vraag galmt door de gangen van ruimtevaartbedrijven: 'Als ik morgen op een andere raket moest vliegen, wat zou dat dan betekenen voor mijn business?' Terwijl de Nova-raket van Rocket Lab door zijn testcampagne gaat, wordt deze vraag plotseling urgent. Niet omdat de Nova revolutionair is in technisch opzicht, maar omdat hij een fundamentele waarheid blootlegt: afhankelijkheid van één transportmiddel is riskant. Voor bedrijven buiten de ruimtevaart voelt dit als een metafoor. Hoe lang kun je nog vertrouwen op één leverancier, één technologie of één distributiekanaal voordat je gedwongen wordt om radicaal te veranderen?
+        De vraag galmt door de gangen van ruimtevaartbedrijven: 'Als ik morgen op een andere raket moest vliegen, wat zou dat dan betekenen voor mijn business?' Terwijl de Nova-raket van Rocket Lab door zijn testcampagne gaat, wordt deze vraag plotseling urgent. Niet omdat de Nova revolutionair is in technisch opzicht, maar omdat hij een fundamentele waarheid blootlegt: afhankelijkheid van een transportmiddel is riskant. Voor bedrijven buiten de ruimtevaart voelt dit als een metafoor. Hoe lang kun je nog vertrouwen op een leverancier, een technologie of een distributiekanaal voordat je gedwongen wordt om radicaal te veranderen?
       </p>
       <p>
         De Nova is geen SpaceX Starship of Blue Origin New Glenn. Het is een kleinere, wendbare raket die vooral inspeelt op de groeiende vraag naar snelle en betaalbare lanceringen voor kleine satellieten. Maar juist die niche maakt hem gevaarlijk voor wie nu nog denkt dat de markt stabiel blijft. Rocket Lab heeft met zijn Electron-raket al bewezen dat betrouwbaarheid en herhaalbaarheid niet alleen voor grote spelers zijn weggelegd. Nu ze met Nova een stap verder gaan, dwingt dat concurrenten om na te denken over hun eigen flexibiliteit.
       </p>
       <p>
-        Wat gebeurt er als Rocket Lab slaagt? Dan ontstaat er een nieuwe realiteit waarin klanten niet meer gebonden zijn aan één lanceerprovider. Dat klinkt als goed nieuws voor wie nu vastzit aan hoge kosten of lange wachtlijsten bij SpaceX of Arianespace. Maar het is ook een wake-upcall voor iedereen die tot nu toe dacht dat de ruimtevaartmarkt een gesloten circuit was. De komende jaren zullen laten zien wie er klaar is om mee te bewegen – en wie straks met lege handen staat.
+        Wat gebeurt er als Rocket Lab slaagt? Dan ontstaat er een nieuwe realiteit waarin klanten niet meer gebonden zijn aan een lanceerprovider. Dat klinkt als goed nieuws voor wie nu vastzit aan hoge kosten of lange wachtlijsten bij SpaceX of Arianespace. Maar het is ook een wake-upcall voor iedereen die tot nu toe dacht dat de ruimtevaartmarkt een gesloten circuit was. De komende jaren zullen laten zien wie er klaar is om mee te bewegen, en wie straks met lege handen staat.
       </p>
       <p>
-        Er is altijd weerstand tegen verandering. 'Waarom zou ik mijn huidige contract bij SpaceX opzeggen als het nog werkt?' hoor je vaak in boardrooms. De reden is simpel: innovatie volgt zelden een lineaire lijn. De Nova bewijst dat zelfs kleine spelers met slimme oplossingen een gat in de markt kunnen slaan. Wie nu denkt dat de ruimtevaartmarkt te complex of te gespecialiseerd is om te veranderen, heeft gelijk – totdat iemand anders het anders doet.
+        Er is altijd weerstand tegen verandering. 'Waarom zou ik mijn huidige contract bij SpaceX opzeggen als het nog werkt?' hoor je vaak in boardrooms. De reden is simpel: innovatie volgt zelden een lineaire lijn. De Nova bewijst dat zelfs kleine spelers met slimme oplossingen een gat in de markt kunnen slaan. Wie nu denkt dat de ruimtevaartmarkt te complex of te gespecialiseerd is om te veranderen, heeft gelijk, totdat iemand anders het anders doet.
       </p>
       <p>
-        Deze dynamiek speelt zich niet alleen af in de ruimtevaart. Denk aan de energietransitie: wie jarenlang vertrouwde op fossiele brandstoffen ziet plotseling hoe zonne-energie en windkracht goedkoper en efficiënter worden. Of kijk naar logistiek: bedrijven die decennialang vertrouwden op traditionele scheepvaartroutes worden nu gedwongen om alternatieven te overwegen door stijgende brandstofprijzen en congestie in havens.
+        Deze dynamiek speelt zich niet alleen af in de ruimtevaart. Denk aan de energietransitie: wie jarenlang vertrouwde op fossiele brandstoffen ziet plotseling hoe zonne-energie en windkracht goedkoper en efficienter worden. Of kijk naar logistiek: bedrijven die decennialang vertrouwden op traditionele scheepvaartroutes worden nu gedwongen om alternatieven te overwegen door stijgende brandstofprijzen en congestie in havens.
       </p>
       <p>
-        Het verschil tussen ruimtevaart en andere sectoren? In veel gevallen is er geen Plan B. Als jouw bedrijf afhankelijk is van één toeleverancier en die valt weg, dan sta je plotseling stil. De Nova laat zien dat zelfs in high-tech sectoren redundantie niet langer een luxe is, maar een noodzaak.
+        Het verschil tussen ruimtevaart en andere sectoren? In veel gevallen is er geen Plan B. Als jouw bedrijf afhankelijk is van een toeleverancier en die valt weg, dan sta je plotseling stil. De Nova laat zien dat zelfs in high-tech sectoren redundantie niet langer een luxe is, maar een noodzaak.
       </p>
       <p>
-        De komende maanden zullen uitwijzen of Rocket Lab in staat is om zijn belofte waar te maken. Maar één ding is zeker: de vraag 'wat als?' zal niet meer verdwijnen uit strategische discussies. Bedrijven die nu al nadenken over hun exitstrategieën zullen straks als eerste profiteren van nieuwe kansen.
+        De komende maanden zullen uitwijzen of Rocket Lab in staat is om zijn belofte waar te maken. Maar een ding is zeker: de vraag 'wat als?' zal niet meer verdwijnen uit strategische discussies. Bedrijven die nu al nadenken over hun exitstrategieen zullen straks als eerste profiteren van nieuwe kansen.
       </p>
       <p>
         Wie wacht tot het probleem zich aandient, loopt altijd achterop.
@@ -2084,19 +2084,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De boodschap is hard: wie afhankelijk is van Amerikaanse technologie leeft met Amerikaanse regels. Europa heeft dat jarenlang geaccepteerd, vooral bij chips en chipmachines. Nu de VS ook AI als strategische infrastructuur behandelen, wordt de situatie onhoudbaar. Want terwijl Europa nog nadenkt over hoe het moet reageren, dreigt het dezelfde machteloosheid te ervaren bij toegang tot geavanceerde AI-modellen.
       </p>
       <p>
-        Maar Europa heeft één troef die weinig andere regio’s hebben: ASML. De Nederlandse machinebouwer is de enige ter wereld die machines kan leveren waarmee de allerkleinste nanometerstructuren op chips worden aangebracht. Zonder ASML-stompers staat bijna elke chipfabriek stil. Dat maakt ASML niet zomaar een leverancier, maar een schakel in een mondiale machtsstrijd.
+        Maar Europa heeft een troef die weinig andere regio’s hebben: ASML. De Nederlandse machinebouwer is de enige ter wereld die machines kan leveren waarmee de allerkleinste nanometerstructuren op chips worden aangebracht. Zonder ASML-stompers staat bijna elke chipfabriek stil. Dat maakt ASML niet zomaar een leverancier, maar een schakel in een mondiale machtsstrijd.
       </p>
       <p>
-        Tot nu toe heeft Europa die positie niet benut. Terwijl de VS exportcontroles gebruiken om hun eigen belangen te beschermen—van chips tot AI—heeft Europa vaak meegedaan met sancties zonder iets terug te vragen. Dat is begrijpelijk bij zaken als mensenrechten of oorlogsmisdaden, maar het wordt problematisch als Europa zelf steeds meer afhankelijk raakt van Amerikaanse technologie zonder compensatie.
+        Tot nu toe heeft Europa die positie niet benut. Terwijl de VS exportcontroles gebruiken om hun eigen belangen te beschermen (van chips tot AI) heeft Europa vaak meegedaan met sancties zonder iets terug te vragen. Dat is begrijpelijk bij zaken als mensenrechten of oorlogsmisdaden, maar het wordt problematisch als Europa zelf steeds meer afhankelijk raakt van Amerikaanse technologie zonder compensatie.
       </p>
       <p>
-        Het tijdperk van vrije toegang is voorbij. Als Washington kan beslissen wie wel en niet mag trainen op de beste modellen, dan moet Brussel hetzelfde kunnen doen met ASML’s machines en kennis. Dat betekent niet dat Europa morgen alle Amerikaanse bedrijven moet weren van Nederlandse technologieën—dat zou ook ons raken—but wel dat toegang niet langer vanzelfsprekend mag zijn.
+        Het tijdperk van vrije toegang is voorbij. Als Washington kan beslissen wie wel en niet mag trainen op de beste modellen, dan moet Brussel hetzelfde kunnen doen met ASML’s machines en kennis. Dat betekent niet dat Europa morgen alle Amerikaanse bedrijven moet weren van Nederlandse technologieen (dat zou ook ons raken) but wel dat toegang niet langer vanzelfsprekend mag zijn.
       </p>
       <p>
-        Europa kan ASML inzetten als onderhandelingskaart bij cruciale dossiers: toegang tot Amerikaanse frontier-AI, gelijke behandeling van Europese bedrijven in cloudcontracten, of transparante procedures bij exportcontroles. Het gaat om wederkerigheid, niet om wraak. Wie zijn eigen cruciale technologieën beschermt, creëert ruimte voor gesprekken op voet van gelijkwaardigheid.
+        Europa kan ASML inzetten als onderhandelingskaart bij cruciale dossiers: toegang tot Amerikaanse frontier-AI, gelijke behandeling van Europese bedrijven in cloudcontracten, of transparante procedures bij exportcontroles. Het gaat om wederkerigheid, niet om wraak. Wie zijn eigen cruciale technologieen beschermt, creeert ruimte voor gesprekken op voet van gelijkwaardigheid.
       </p>
       <p>
-        De les is simpel: wie afhankelijk is van andermans technologie leeft met andermans regels. Europa heeft weinig digitale machtsposities, maar waar het ze wél heeft—zoals bij ASML—moet het die gebruiken om zijn eigen belangen veilig te stellen.
+        De les is simpel: wie afhankelijk is van andermans technologie leeft met andermans regels. Europa heeft weinig digitale machtsposities, maar waar het ze wel heeft (zoals bij ASML) moet het die gebruiken om zijn eigen belangen veilig te stellen.
       </p>
       <p>
         Het alternatief is passiviteit: blijven accepteren dat buitenlandse regeringen bepalen wie mag profiteren van onze economie en innovatie.
@@ -2119,7 +2119,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'europa-loopt-ten-opzichte-van-vs-achter-op-ai-investeringen': (
     <>
       <p className="lead-para">
-        Europese techbedrijven lopen volgens CEO’s zoals Miki Kuusi van Deliveroo ruim een decennium achter op Amerikaanse concurrenten zoals SpaceX en de Bay Area. De Europese sector groeit weliswaar snel, maar dreigt politiek en economisch aan invloed te verliezen als niet drastisch meer wordt geïnvesteerd in AI-capaciteiten. Kuusi benadrukt dat Europa niet afhankelijk wil blijven van toerisme als belangrijkste economische pijler, aldus een waarschuwing tijdens London Tech Week.
+        Europese techbedrijven lopen volgens CEO’s zoals Miki Kuusi van Deliveroo ruim een decennium achter op Amerikaanse concurrenten zoals SpaceX en de Bay Area. De Europese sector groeit weliswaar snel, maar dreigt politiek en economisch aan invloed te verliezen als niet drastisch meer wordt geinvesteerd in AI-capaciteiten. Kuusi benadrukt dat Europa niet afhankelijk wil blijven van toerisme als belangrijkste economische pijler, aldus een waarschuwing tijdens London Tech Week.
       </p>
       <p>
         In het eerste kwartaal van dit jaar haalden Europese AI-startups samen $9,2 miljard op, drie keer zoveel als in dezelfde periode vorig jaar. Toch blijft dit bedrag ver achter bij de investeringen van Amerikaanse spelers: Anthropic alleen al haalde vorige maand $65 miljard op voor AI-ontwikkeling. Daarnaast domineren Amerikaanse hyperscalers als Google, Amazon en Microsoft met 70% de Europese cloudmarkt, waardoor Europese bedrijven afhankelijk zijn van buitenlandse infrastructuur.
@@ -2135,7 +2135,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Flutter Entertainment, eigenaar van merken als Paddy Power en Betfair, stopt per 3 augustus met de secundaire notering op de London Stock Exchange. De groep kiest definitief voor een enkelvoudige notering in New York, waar het sinds mei 2024 al de primaire marktplaats heeft. De beslissing volgt op een strategische herziening die de lage handelsactiviteit in Londen en de hoge kosten van een dubbele notering als belangrijkste redenen aanvoert.
       </p>
       <p>
-        De verhuizing naar New York werd eerder dit jaar al ingezet om betere toegang te krijgen tot kapitaal voor groei in nieuwe markten zoals India, Turkije en Brazilië. CEO Peter Jackson gaf indertijd aan dat een Londense notering behouden zou blijven voor Europese aandeelhouders die alleen Britse of Europese aandelen mogen houden. Die groep blijkt nu niet groot genoeg om de extra kosten te rechtvaardigen.
+        De verhuizing naar New York werd eerder dit jaar al ingezet om betere toegang te krijgen tot kapitaal voor groei in nieuwe markten zoals India, Turkije en Brazilie. CEO Peter Jackson gaf indertijd aan dat een Londense notering behouden zou blijven voor Europese aandeelhouders die alleen Britse of Europese aandelen mogen houden. Die groep blijkt nu niet groot genoeg om de extra kosten te rechtvaardigen.
       </p>
       <p>
         De stap past in een bredere trend waarbij grote bedrijven Londen verlaten als beurslocatie. CRH, Wise, Ashtead en Indivior maakten eerder soortgelijke keuzes. Ook Tate &amp; Lyle wordt overgenomen door een Amerikaanse concurrent, wat honderden banen bedreigt.
@@ -2145,38 +2145,38 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'ai-bouwt-zichzelf-het-einde-van-de-menselijke-controle': (
     <>
       <p className="lead-para">
-        Een laptop die zichzelf programmeert. Een codebase die continu wordt geoptimaliseerd zonder menselijke tussenkomst. Een model dat niet alleen taken uitvoert, maar ook beslist welke taken het waard zijn om uit te voeren. Dit is geen sciencefiction meer, maar een realiteit waar techbedrijven als Anthropic al volop mee experimenteren. De vraag is niet óf dit gaat gebeuren, maar wanneer – en vooral: wie er dan nog over de knoppen gaat.
+        Een laptop die zichzelf programmeert. Een codebase die continu wordt geoptimaliseerd zonder menselijke tussenkomst. Een model dat niet alleen taken uitvoert, maar ook beslist welke taken het waard zijn om uit te voeren. Dit is geen sciencefiction meer, maar een realiteit waar techbedrijven als Anthropic al volop mee experimenteren. De vraag is niet of dit gaat gebeuren, maar wanneer, en vooral: wie er dan nog over de knoppen gaat.
       </p>
       <p>
-        De vooruitgang is adembenemend. Waar ontwikkelaars vijf jaar geleden nog handmatig code schreven en bugs oplosten, doen AI-agenten dat nu zelfstandig. Volgens interne data van Anthropic schrijft hun AI vandaag acht keer zoveel code per kwartaal als in 2021. En het tempo neemt toe: taken die eerst minuten kostten, duren nu uren – en dat verdubbelt elke vier maanden. De implicatie? Over twee jaar kan een AI misschien wekenlange projecten afronden zonder menselijke input. Het punt waarop een systeem zijn eigen opvolger kan ontwerpen, komt dichterbij dan de meeste organisaties beseffen.
+        De vooruitgang is adembenemend. Waar ontwikkelaars vijf jaar geleden nog handmatig code schreven en bugs oplosten, doen AI-agenten dat nu zelfstandig. Volgens interne data van Anthropic schrijft hun AI vandaag acht keer zoveel code per kwartaal als in 2021. En het tempo neemt toe: taken die eerst minuten kostten, duren nu uren, en dat verdubbelt elke vier maanden. De implicatie? Over twee jaar kan een AI misschien wekenlange projecten afronden zonder menselijke input. Het punt waarop een systeem zijn eigen opvolger kan ontwerpen, komt dichterbij dan de meeste organisaties beseffen.
       </p>
       <p>
         Dit is geen kwestie van technologische nieuwsgierigheid alleen. Het raakt aan fundamentele vragen over controle en verantwoordelijkheid. Als een AI straks zelfstandig beslissingen neemt over welke doelen het nastreeft, welke experimenten het uitvoert of welke code het optimaliseert, wie draagt dan nog de eindverantwoordelijkheid? De makers van de systemen? De gebruikers? Of niemand? De risico’s liggen voor de hand: onvoorspelbaar gedrag, onbedoelde gevolgen, of zelfs doelbewuste manipulatie als systemen hun eigen doelen gaan stellen.
       </p>
       <p>
-        Critici wijzen erop dat we nog lang niet zover zijn. Menselijke oordeelsvorming blijft cruciaal voor complexe beslissingen – zeker als het gaat om ethiek of strategische keuzes. Maar de trend is onmiskenbaar: AI neemt steeds meer stappen in de ontwikkelcyclus over. En hoe meer autonomie we toestaan, hoe moeilijker het wordt om de regie te behouden. Bedrijven die nu al afhankelijk zijn van AI-gestuurde processen, moeten zich afvragen: wat gebeurt er als onze systemen straks slimmer worden dan wijzelf?
+        Critici wijzen erop dat we nog lang niet zover zijn. Menselijke oordeelsvorming blijft cruciaal voor complexe beslissingen, zeker als het gaat om ethiek of strategische keuzes. Maar de trend is onmiskenbaar: AI neemt steeds meer stappen in de ontwikkelcyclus over. En hoe meer autonomie we toestaan, hoe moeilijker het wordt om de regie te behouden. Bedrijven die nu al afhankelijk zijn van AI-gestuurde processen, moeten zich afvragen: wat gebeurt er als onze systemen straks slimmer worden dan wijzelf?
       </p>
       <p>
         Deze ontwikkeling dwingt ons om anders na te denken over governance in techbedrijven. Niet alleen technische veiligheid staat centraal, maar ook menselijke supervisie en transparante besluitvorming. Wie mag er bijvoorbeeld bepalen welke doelen een autonoom systeem mag nastreven? Moeten bedrijven verplicht audits uitvoeren voordat ze nieuwe generaties van hun modellen lanceren? En hoe zorg je ervoor dat medewerkers niet ongemerkt de controle verliezen aan hun eigen creaties?
       </p>
       <p>
-        Het dilemma wordt nog urgenter door de meetdata zelf. Benchmarks zoals SWE-bench laten zien dat AI-systemen binnen twee jaar bijna perfect presteren op software-engineeringtaken – iets wat mensen jaren kostte om te leren. Als deze systemen straks ook onderzoek kunnen repliceren of nieuwe hypotheses kunnen genereren zonder menselijke tussenkomst, verandert de rol van wetenschappers en ontwikkelaars ingrijpend. Zijn we klaar voor een wereld waarin machines niet alleen uitvoeren, maar ook bedenken wat er moet gebeuren?
+        Het dilemma wordt nog urgenter door de meetdata zelf. Benchmarks zoals SWE-bench laten zien dat AI-systemen binnen twee jaar bijna perfect presteren op software-engineeringtaken, iets wat mensen jaren kostte om te leren. Als deze systemen straks ook onderzoek kunnen repliceren of nieuwe hypotheses kunnen genereren zonder menselijke tussenkomst, verandert de rol van wetenschappers en ontwikkelaars ingrijpend. Zijn we klaar voor een wereld waarin machines niet alleen uitvoeren, maar ook bedenken wat er moet gebeuren?
       </p>
       <p>
-        De angst voor verlies van controle is begrijpelijk, maar we moeten voorkomen dat we in een reflex naar remmen grijpen terwijl de trein al rijdt. Het gaat erom slimme kaders te creëren die innovatie mogelijk maken zonder dat we onze autonomie volledig opgeven. Dat betekent investeren in mechanismes die menselijke supervisie garanderen – zoals zogenaamde ‘kill switches’, strikte toegangscontroles of onafhankelijke toetsingscommissies.
+        De angst voor verlies van controle is begrijpelijk, maar we moeten voorkomen dat we in een reflex naar remmen grijpen terwijl de trein al rijdt. Het gaat erom slimme kaders te creeren die innovatie mogelijk maken zonder dat we onze autonomie volledig opgeven. Dat betekent investeren in mechanismes die menselijke supervisie garanderen, zoals zogenaamde ‘kill switches’, strikte toegangscontroles of onafhankelijke toetsingscommissies.
       </p>
       <p>
-        Uiteindelijk draait het om vertrouwen: vertrouwen in onze eigen systemen én vertrouwen in onszelf om die systemen te blijven begrijpen en sturen.
+        Uiteindelijk draait het om vertrouwen: vertrouwen in onze eigen systemen en vertrouwen in onszelf om die systemen te blijven begrijpen en sturen.
       </p>
     </>
   ),
   'aws-graviton-5-geen-ai-chips': (
     <>
       <p className="lead-para">
-        De nieuwste AWS Graviton 5-processor levert betere prestaties dan voorgaande generaties, vooral op het gebied van efficiëntie en rekenkracht voor algemene workloads. Toch blijft de marketingtaal rond de chip hangen bij de term 'AI-chip', terwijl experts benadrukken dat deze processor niet specifiek is ontworpen voor kunstmatige intelligentie-taken. De Graviton 5 blinkt uit in energiezuinigheid en geschiktheid voor cloudomgevingen, aldus analisten die de chip hebben getest.
+        De nieuwste AWS Graviton 5-processor levert betere prestaties dan voorgaande generaties, vooral op het gebied van efficientie en rekenkracht voor algemene workloads. Toch blijft de marketingtaal rond de chip hangen bij de term 'AI-chip', terwijl experts benadrukken dat deze processor niet specifiek is ontworpen voor kunstmatige intelligentie-taken. De Graviton 5 blinkt uit in energiezuinigheid en geschiktheid voor cloudomgevingen, aldus analisten die de chip hebben getest.
       </p>
       <p>
-        De verwarring komt voort uit het feit dat veel moderne processoren wel degelijk AI-functies ondersteunen via geïntegreerde versnellers, zoals NPU’s (Neural Processing Units). De Graviton 5 beschikt echter niet over een dergelijke dedicated AI-hardware. In plaats daarvan draait het om verbeterde CPU-prestaties en geheugenbandbreedte, wat vooral voordelig is voor traditionele applicaties en virtualisatie. Experts wijzen erop dat zelfs AWS zelf terughoudend is met het label 'AI-chip', hoewel concurrenten zoals Nvidia en AMD deze term wel breed toepassen.
+        De verwarring komt voort uit het feit dat veel moderne processoren wel degelijk AI-functies ondersteunen via geintegreerde versnellers, zoals NPU’s (Neural Processing Units). De Graviton 5 beschikt echter niet over een dergelijke dedicated AI-hardware. In plaats daarvan draait het om verbeterde CPU-prestaties en geheugenbandbreedte, wat vooral voordelig is voor traditionele applicaties en virtualisatie. Experts wijzen erop dat zelfs AWS zelf terughoudend is met het label 'AI-chip', hoewel concurrenten zoals Nvidia en AMD deze term wel breed toepassen.
       </p>
       <p>
         De discussie onderstreept een groter probleem in de techindustrie: het gebruik van marketingtermen die niet altijd overeenkomen met de technische realiteit. Voor bedrijven die afhankelijk zijn van cloudinfrastructuur betekent dit dat ze kritisch moeten kijken naar de specificaties van hardware voordat ze investeren in nieuwe systemen. Een processor als Graviton 5 kan prima geschikt zijn voor algemene workloads, maar wie specifiek AI-workloads draait, doet er goed aan andere opties te overwegen.
@@ -2186,7 +2186,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'katalyst-link-ruimtevaartuig-geintegreerd-voor-lancering': (
     <>
       <p className="lead-para">
-        Het Amerikaanse bedrijf Katalyst heeft zijn LINK-ruimtevaartuig succesvol geïntegreerd met een draagraket. De lancering staat gepland vanaf het eiland Kwajalein in de Stille Oceaan, met een verwachte datum binnen enkele weken. Het vaartuig moet de Swift-satelliet redden die dreigt terug te vallen in de atmosfeer en verloren te gaan.
+        Het Amerikaanse bedrijf Katalyst heeft zijn LINK-ruimtevaartuig succesvol geintegreerd met een draagraket. De lancering staat gepland vanaf het eiland Kwajalein in de Stille Oceaan, met een verwachte datum binnen enkele weken. Het vaartuig moet de Swift-satelliet redden die dreigt terug te vallen in de atmosfeer en verloren te gaan.
       </p>
       <p>
         De missie van LINK is om zich vast te koppelen aan de Swift-satelliet en deze naar een veiligere baan te brengen. Dit zou de levensduur van de satelliet aanzienlijk verlengen. De lancering wordt gezien als een cruciale stap in het behoud van dure ruimte-infrastructuur.
@@ -2202,7 +2202,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Het Nederlandse bedrijf NXP Semiconductors heeft volgens eigen zeggen een 'all-European fab flow' bereikt voor navigatiechips. De onderdelen zijn ontworpen en geassembleerd in Europa, maar de daadwerkelijke productie vindt plaats bij GlobalFoundries in de Verenigde Staten. Dit zou de afhankelijkheid van Aziatische chipfabrieken verminderen, aldus het bedrijf.
       </p>
       <p>
-        De chips zijn bestemd voor systemen in auto’s en industriële toepassingen, waar Europese normen en veiligheidsvoorschriften gelden. Door gebruik te maken van een Amerikaanse fabriek blijft het ontwerp en de eindmontage binnen Europa, wat volgens NXP helpt om de supply chain te stabiliseren en juridische risico’s te beperken.
+        De chips zijn bestemd voor systemen in auto’s en industriele toepassingen, waar Europese normen en veiligheidsvoorschriften gelden. Door gebruik te maken van een Amerikaanse fabriek blijft het ontwerp en de eindmontage binnen Europa, wat volgens NXP helpt om de supply chain te stabiliseren en juridische risico’s te beperken.
       </p>
       <p>
         Critici wijzen erop dat deze aanpak nog steeds afhankelijk maakt van buitenlandse productiecapaciteit. Bovendien roept het vragen op over de werkelijke invloed van Europa op de kritieke schakels in de keten.
@@ -2244,7 +2244,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Deze structuur brengt meerdere risico’s met zich mee: verborgen transactiekosten, lange wachttijden voor uitbetalingen en zelfs het gevaar dat SPV-beheerders fraude plegen door aandelen te verkopen zonder medeweten van investeerders. Voor kleinere participaties is de transparantie vaak minimaal.
       </p>
       <p>
-        Ook zijn er gevallen bekend waarbij SPV’s zelf failliet gingen voordat investeerders hun geld terugkregen, wat de financiële onzekerheid vergroot. Dit maakt de stap naar een beursgang voor particuliere investeerders extra riskant.
+        Ook zijn er gevallen bekend waarbij SPV’s zelf failliet gingen voordat investeerders hun geld terugkregen, wat de financiele onzekerheid vergroot. Dit maakt de stap naar een beursgang voor particuliere investeerders extra riskant.
       </p>
     </>
   ),
@@ -2257,7 +2257,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De cashback geldt direct op elke rit en kan worden gebruikt voor nieuwe ritten of worden overgemaakt naar een gekoppelde betaalrekening. Gratis annuleringen gelden voor alle ritten, ongeacht de reden, wat uniek is in de sector.
       </p>
       <p>
-        Het programma is nu beschikbaar in steden waar Waymo actief is, waaronder Phoenix en San Francisco. Concurrenten zoals Cruise hebben soortgelijke initiatieven overwogen maar nog niet geïmplementeerd.
+        Het programma is nu beschikbaar in steden waar Waymo actief is, waaronder Phoenix en San Francisco. Concurrenten zoals Cruise hebben soortgelijke initiatieven overwogen maar nog niet geimplementeerd.
       </p>
     </>
   ),
@@ -2277,13 +2277,13 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'zte-wint-drie-selular-awards-2026-voor-ai-gedreven-netwerkinnovaties': (
     <>
       <p className="lead-para">
-        ZTE ontving drie Selular Awards 2026 voor haar AI-gedreven innovaties in vaste draadloze toegang (FWA), netwerkecosystemen en native AI-basisbandtechnologie. De prijzen bevestigen de rol van het bedrijf als sleutelspeler in Indonesië’s groei naar een 5G-Advanced en AI-gedreven economie.
+        ZTE ontving drie Selular Awards 2026 voor haar AI-gedreven innovaties in vaste draadloze toegang (FWA), netwerkecosystemen en native AI-basisbandtechnologie. De prijzen bevestigen de rol van het bedrijf als sleutelspeler in Indonesie’s groei naar een 5G-Advanced en AI-gedreven economie.
       </p>
       <p>
-        De awards benadrukken ZTE’s vooruitgang in het integreren van kunstmatige intelligentie in telecomnetwerken, wat leidt tot efficiënter beheer en hogere prestaties. Volgens lokale experts helpt deze technologie om de digitale kloof te verkleinen en nieuwe economische kansen te creëren.
+        De awards benadrukken ZTE’s vooruitgang in het integreren van kunstmatige intelligentie in telecomnetwerken, wat leidt tot efficienter beheer en hogere prestaties. Volgens lokale experts helpt deze technologie om de digitale kloof te verkleinen en nieuwe economische kansen te creeren.
       </p>
       <p>
-        De erkenning komt op een moment dat Indonesië investeert in uitbreiding van zijn 5G-infrastructuur en digitale transformatie. Concurrenten zoals Huawei en Ericsson blijven ook actief in deze markt, maar ZTE lijkt nu met concrete resultaten te komen.
+        De erkenning komt op een moment dat Indonesie investeert in uitbreiding van zijn 5G-infrastructuur en digitale transformatie. Concurrenten zoals Huawei en Ericsson blijven ook actief in deze markt, maar ZTE lijkt nu met concrete resultaten te komen.
       </p>
     </>
   ),
@@ -2306,7 +2306,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Het bedrijf Endurance Energy, opgericht door voormalige SpaceX-medewerkers, werkt aan een systeem dat warmte uit diepe oceaanlagen omzet in elektriciteit. De technologie maakt gebruik van temperatuurverschillen tussen oppervlaktewater en diepere lagen, aldus het bedrijf.
       </p>
       <p>
-        Met de nieuwe investeringsronde wil Endurance Energy de eerste commerciële installaties bouwen en testen. Het geld komt onder meer van investeerders zoals Congruent Ventures en Congruent Ventures II, zo blijkt uit een persbericht.
+        Met de nieuwe investeringsronde wil Endurance Energy de eerste commerciele installaties bouwen en testen. Het geld komt onder meer van investeerders zoals Congruent Ventures en Congruent Ventures II, zo blijkt uit een persbericht.
       </p>
       <p>
         De potentie van oceaanwarmte is groot: wereldwijd zijn er grote hoeveelheden energie beschikbaar in oceanen, maar deze bron wordt nog nauwelijks benut. Endurance Energy claimt dat hun technologie een betrouwbare en duurzame energiebron kan worden.
@@ -2316,13 +2316,13 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots': (
     <>
       <p className="lead-para">
-        Met een nieuwe investering van 85 miljoen dollar zet Theker een stap naar de productie van robots die niet vastzitten aan één functie. In tegenstelling tot humanoïde robots zoals die van Boston Dynamics, zijn de machines van Theker modulair en kunnen ze binnen enkele uren worden omgebouwd voor nieuwe taken. Dit maakt ze geschikt voor fabrieken waar productielijnen vaak veranderen of waar kleine series worden gemaakt.
+        Met een nieuwe investering van 85 miljoen dollar zet Theker een stap naar de productie van robots die niet vastzitten aan een functie. In tegenstelling tot humanoide robots zoals die van Boston Dynamics, zijn de machines van Theker modulair en kunnen ze binnen enkele uren worden omgebouwd voor nieuwe taken. Dit maakt ze geschikt voor fabrieken waar productielijnen vaak veranderen of waar kleine series worden gemaakt.
       </p>
       <p>
         Het bedrijf uit Nederland richt zich op het automatiseren van repetitieve taken in sectoren als logistiek, metaalbewerking en voedselproductie. Volgens oprichter en CEO Thomas van der Meer kan de technologie helpen om de flexibiliteit in fabrieken te vergroten zonder dat er dure specialistische apparatuur nodig is. De eerste klanten zijn al actief in pilotprojecten, aldus Van der Meer.
       </p>
       <p>
-        De opbrengst van de funding wordt gebruikt voor verdere ontwikkeling en opschaling van de productie. Theker werkt samen met partners in Duitsland en België om de technologie sneller op de markt te brengen. Concurrenten zoals Universal Robots focussen nog sterk op geprogrammeerde taken, terwijl Theker juist kiest voor adaptieve systemen.
+        De opbrengst van de funding wordt gebruikt voor verdere ontwikkeling en opschaling van de productie. Theker werkt samen met partners in Duitsland en Belgie om de technologie sneller op de markt te brengen. Concurrenten zoals Universal Robots focussen nog sterk op geprogrammeerde taken, terwijl Theker juist kiest voor adaptieve systemen.
       </p>
     </>
   ),
@@ -2413,7 +2413,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De overname leidde tot discussies tussen Nederlandse en Belgische bouwbedrijven, architecten en ingenieursbureaus over hoe zij zelf AI kunnen inzetten. Bram Mommers, Arjen Adriaanse en Alison Jones publiceerden een paper waarin ze pleiten voor een gestructureerde aanpak, gericht op praktische toepassingen zoals projectplanning en risicobeheersing. Hun visie werd breed gedeeld binnen bestuurskamers van grote spelers in de sector.
       </p>
       <p>
-        Ook kleinere partijen voelen de druk om mee te bewegen. De vraag is niet meer óf AI ingezet moet worden, maar hoe snel en op welke schaal. Experts wijzen erop dat bedrijven die nu niet investeren in kennis en technologie achter kunnen raken bij internationale concurrenten zoals AECOM.
+        Ook kleinere partijen voelen de druk om mee te bewegen. De vraag is niet meer of AI ingezet moet worden, maar hoe snel en op welke schaal. Experts wijzen erop dat bedrijven die nu niet investeren in kennis en technologie achter kunnen raken bij internationale concurrenten zoals AECOM.
       </p>
     </>
   ),
@@ -2426,7 +2426,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Deezer was al eerder begonnen met het labelen van AI-muziek in eigen catalogus, maar breidt de detectie nu uit naar externe bronnen. Het bedrijf bood de technologie eerder aan andere platforms aan, maar zonder veel succes. Alleen Qobuz lanceerde zelf een vergelijkbare oplossing.
       </p>
       <p>
-        Apple en Spotify hebben nog geen eigen detectiesysteem geïmplementeerd, ondanks dat ze dit eerder aangekondigd hadden. Gebruikers blijven dus afhankelijk van dergelijke tools om ongewenste AI-content te filteren in hun streams.
+        Apple en Spotify hebben nog geen eigen detectiesysteem geimplementeerd, ondanks dat ze dit eerder aangekondigd hadden. Gebruikers blijven dus afhankelijk van dergelijke tools om ongewenste AI-content te filteren in hun streams.
       </p>
     </>
   ),
@@ -2456,7 +2456,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De meeste marktwaarde die SpaceX zou ophalen bij een beursgang is gekoppeld aan drie technologische projecten. Een daarvan is het bouwen van datacenters in een baan om de aarde. Deze faciliteiten zouden gegevensverwerking op grote schaal mogelijk maken met lagere latentie dan op aarde, aldus TechCrunch.
       </p>
       <p>
-        De andere twee projecten zijn een volledig herbruikbare Starship-raket en een wereldwijd breedbandnetwerk via duizenden satellieten. Samen moeten deze initiatieven de kosten voor ruimtetransport en communicatie drastisch verlagen. Bedrijven en overheden kijken naar deze technologieën als cruciale stappen voor toekomstige digitale infrastructuur.
+        De andere twee projecten zijn een volledig herbruikbare Starship-raket en een wereldwijd breedbandnetwerk via duizenden satellieten. Samen moeten deze initiatieven de kosten voor ruimtetransport en communicatie drastisch verlagen. Bedrijven en overheden kijken naar deze technologieen als cruciale stappen voor toekomstige digitale infrastructuur.
       </p>
       <p>
         Experts wijzen erop dat de haalbaarheid van deze plannen nog onzeker is. De technologische uitdagingen zijn enorm, net als de investeringen die nodig zijn om ze te realiseren. Toch trekken ze al jarenlang miljarden aan kapitaal en talent naar SpaceX.
@@ -2466,13 +2466,13 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'enterprise-ai-centraal-op-vivatech-2026': (
     <>
       <p className="lead-para">
-        De komende editie van VivaTech in Parijs zet enterprise AI vol in de schijnwerpers. Terwijl techbedrijven in Silicon Valley blijven investeren in consumentengerichte AI-toepassingen, ligt de focus van Europese spelers op het integreren van kunstmatige intelligentie in bestaande bedrijfsprocessen. Denk aan supply chain-optimalisatie, klantenservice-automatisering of risicomanagement binnen financiële systemen.
+        De komende editie van VivaTech in Parijs zet enterprise AI vol in de schijnwerpers. Terwijl techbedrijven in Silicon Valley blijven investeren in consumentengerichte AI-toepassingen, ligt de focus van Europese spelers op het integreren van kunstmatige intelligentie in bestaande bedrijfsprocessen. Denk aan supply chain-optimalisatie, klantenservice-automatisering of risicomanagement binnen financiele systemen.
       </p>
       <p>
-        Experts verwachten dat de beurs vooral innovaties zal tonen die direct bruikbaar zijn voor grote organisaties. Dit past bij de trend waarbij bedrijven zoeken naar meetbare resultaten uit AI-investeringen, zoals kostenbesparingen of verbeterde operationele efficiëntie. Ook sectoren als gezondheidszorg, logistiek en energie zullen vertegenwoordigd zijn met concrete cases.
+        Experts verwachten dat de beurs vooral innovaties zal tonen die direct bruikbaar zijn voor grote organisaties. Dit past bij de trend waarbij bedrijven zoeken naar meetbare resultaten uit AI-investeringen, zoals kostenbesparingen of verbeterde operationele efficientie. Ook sectoren als gezondheidszorg, logistiek en energie zullen vertegenwoordigd zijn met concrete cases.
       </p>
       <p>
-        De aandacht voor enterprise AI komt niet uit de lucht vallen. Europese regelgeving zoals de AI Act dwingt organisaties om na te denken over verantwoorde implementatie van deze technologieën. Tegelijkertijd groeit de vraag naar oplossingen die compliance met lokale wetgeving combineren met concurrentievoordeel.
+        De aandacht voor enterprise AI komt niet uit de lucht vallen. Europese regelgeving zoals de AI Act dwingt organisaties om na te denken over verantwoorde implementatie van deze technologieen. Tegelijkertijd groeit de vraag naar oplossingen die compliance met lokale wetgeving combineren met concurrentievoordeel.
       </p>
     </>
   ),
@@ -2505,10 +2505,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'informer-money-genomineerd-voor-best-fintech-startup-belgie': (
     <>
       <p className="lead-para">
-        De Nederlandse Informer Group staat met zijn Belgische dochter Informer Money op de shortlist voor Best FinTech Startup of the Year bij de Digital Finance Awards Belgium 2026. De nominatie benadrukt de groeiambities van het bedrijf in België, waar het ondernemers en accountants ondersteunt bij geïntegreerd bankieren, e-facturatie en boekhoudsoftware.
+        De Nederlandse Informer Group staat met zijn Belgische dochter Informer Money op de shortlist voor Best FinTech Startup of the Year bij de Digital Finance Awards Belgium 2026. De nominatie benadrukt de groeiambities van het bedrijf in Belgie, waar het ondernemers en accountants ondersteunt bij geintegreerd bankieren, e-facturatie en boekhoudsoftware.
       </p>
       <p>
-        Informer Money combineert financiële dienstverlening met automatisering, zodat gebruikers facturen direct kunnen verwerken, betalingen kunnen volgen en boekhoudkundige overzichten realtime beschikbaar hebben. Volgens de organisatie past deze aanpak bij de toenemende vraag naar efficiënte financiële workflows in Belgische kmo’s.
+        Informer Money combineert financiele dienstverlening met automatisering, zodat gebruikers facturen direct kunnen verwerken, betalingen kunnen volgen en boekhoudkundige overzichten realtime beschikbaar hebben. Volgens de organisatie past deze aanpak bij de toenemende vraag naar efficiente financiele workflows in Belgische kmo’s.
       </p>
       <p>
         De winnaar wordt bekendgemaakt tijdens de awardsceremonie in oktober 2026. Voor Informer Group is deze nominatie een erkenning van hun groeiende aanwezigheid buiten Nederland.
@@ -2521,7 +2521,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Het bedrijf JEDIFY, met vestigingen in Nederland en de VS, heeft een Series A-rondje van 24 miljoen dollar opgehaald. De investering wordt geleid door Norwest Venture Partners, met medefinanciers zoals S Capital VC, Cerca Partners en Oceans Ventures. Snowflake Ventures participeert als strategische investeerder.
       </p>
       <p>
-        JEDIFY bouwt software die bedrijven helpt om hun eigen data veilig te ontsluiten voor AI-assistenten. Met tools zoals chatbots of automatische workflows kunnen organisaties interne documenten, klantgegevens of procesinformatie integreren zonder dat deze buiten het bedrijf terechtkomen. Dit moet leiden tot betere beslissingen en efficiëntere automatisering.
+        JEDIFY bouwt software die bedrijven helpt om hun eigen data veilig te ontsluiten voor AI-assistenten. Met tools zoals chatbots of automatische workflows kunnen organisaties interne documenten, klantgegevens of procesinformatie integreren zonder dat deze buiten het bedrijf terechtkomen. Dit moet leiden tot betere beslissingen en efficientere automatisering.
       </p>
       <p>
         De oplossing richt zich op bedrijven die AI willen inzetten maar terughoudend zijn vanwege privacy of compliance-eisen. Door data lokaal te houden en alleen relevante context te delen, hoeven organisaties niet alles openbaar te maken voor externe AI-modellen.
@@ -2567,7 +2567,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         In het eerste kwartaal van 2026 leidt 68 procent van alle zoekopdrachten op Google niet tot een klik op een extern resultaat. Dit blijkt uit een analyse van Search Engine Land, die de impact van AI Overviews en andere on-page antwoorden meet. De stijging is vooral toe te schrijven aan de groeiende hoeveelheid directe antwoorden die Google in de zoekresultaten toont.
       </p>
       <p>
-        Deze ontwikkeling raakt met name publishers en bedrijven die afhankelijk zijn van organisch verkeer via zoekmachines. Uit eerdere data bleek al dat AI-antwoorden de click-through rate (CTR) met gemiddeld 15 procent hebben verlaagd. Nu de technologie verder wordt geïntegreerd in Google’s interface, zoals via AI Mode, wordt verwacht dat het aantal zero-click searches nog verder zal toenemen.
+        Deze ontwikkeling raakt met name publishers en bedrijven die afhankelijk zijn van organisch verkeer via zoekmachines. Uit eerdere data bleek al dat AI-antwoorden de click-through rate (CTR) met gemiddeld 15 procent hebben verlaagd. Nu de technologie verder wordt geintegreerd in Google’s interface, zoals via AI Mode, wordt verwacht dat het aantal zero-click searches nog verder zal toenemen.
       </p>
       <p>
         Ook adverteerders merken veranderingen: campagnes die gericht zijn op branded keywords zien minder conversies via zoekresultaten, terwijl non-branded campagnes juist harder getroffen worden door de verschuiving naar directe antwoorden.
@@ -2616,25 +2616,25 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'van-turing-naar-devotion-hoe-een-nieuwe-lab-de-ai-kaart-in-europa-kan-verleggen': (
     <>
       <p className="lead-para">
-        Mark Girolami stapte vorige maand niet zomaar over van het Alan Turing Institute naar Devotion Labs. Hij verliet een instituut dat vijf jaar lang als hoeder van Britse AI-ambities gold, om zich te wijden aan iets wat hij ‘een game-changer’ noemt. Zijn motivatie is simpel: hij wil niet langer alleen onderzoek doen in een ivoren toren, maar technologie ontwikkelen die daadwerkelijk bruikbaar is voor organisaties die ertoe doen. Dat betekent AI-modellen die niet alleen slim zijn, maar ook veilig, betrouwbaar en toepasbaar in complexe systemen zoals transportnetwerken, financiële instellingen of defensie. In een tijd waarin landen als Frankrijk en Duitsland al hun eigen AI-strategieën uitrollen, toont Girolami’s keuze aan dat de balans tussen wetenschap en praktijk drastisch aan het verschuiven is.
+        Mark Girolami stapte vorige maand niet zomaar over van het Alan Turing Institute naar Devotion Labs. Hij verliet een instituut dat vijf jaar lang als hoeder van Britse AI-ambities gold, om zich te wijden aan iets wat hij ‘een game-changer’ noemt. Zijn motivatie is simpel: hij wil niet langer alleen onderzoek doen in een ivoren toren, maar technologie ontwikkelen die daadwerkelijk bruikbaar is voor organisaties die ertoe doen. Dat betekent AI-modellen die niet alleen slim zijn, maar ook veilig, betrouwbaar en toepasbaar in complexe systemen zoals transportnetwerken, financiele instellingen of defensie. In een tijd waarin landen als Frankrijk en Duitsland al hun eigen AI-strategieen uitrollen, toont Girolami’s keuze aan dat de balans tussen wetenschap en praktijk drastisch aan het verschuiven is.
       </p>
       <p>
-        Girolami’s vertrek is geen incident, maar symptomatisch voor een bredere trend. Het Alan Turing Institute werd ooit opgericht als nationaal samenwerkingsverband tussen universiteiten om fundamenteel onderzoek te coördineren. Maar na vijf jaar onder druk gezet door de Britse overheid om zich te richten op defensie en nationale veiligheid, voelt Girolami dat de kloof tussen onderzoek en toepassing te groot is geworden. Zijn nieuwe lab, Devotion Labs, moet die kloof juist dichten door onderzoekers en bedrijven onder één dak te brengen. Het idee is niet nieuw – vergelijkbare initiatieven bestaan in Silicon Valley – maar de focus op ‘sovereign AI’ voor kritieke sectoren maakt het wel uniek. Voor Nederlandse en Belgische bureau-eigenaren en marketingteams is dit relevant omdat het laat zien dat AI niet langer alleen een kwestie is van algoritmes optimaliseren, maar van systeemdenken.
+        Girolami’s vertrek is geen incident, maar symptomatisch voor een bredere trend. Het Alan Turing Institute werd ooit opgericht als nationaal samenwerkingsverband tussen universiteiten om fundamenteel onderzoek te coordineren. Maar na vijf jaar onder druk gezet door de Britse overheid om zich te richten op defensie en nationale veiligheid, voelt Girolami dat de kloof tussen onderzoek en toepassing te groot is geworden. Zijn nieuwe lab, Devotion Labs, moet die kloof juist dichten door onderzoekers en bedrijven onder een dak te brengen. Het idee is niet nieuw (vergelijkbare initiatieven bestaan in Silicon Valley) maar de focus op ‘sovereign AI’ voor kritieke sectoren maakt het wel uniek. Voor Nederlandse en Belgische bureau-eigenaren en marketingteams is dit relevant omdat het laat zien dat AI niet langer alleen een kwestie is van algoritmes optimaliseren, maar van systeemdenken.
       </p>
       <p>
-        De tegenwerping ligt voor de hand: waarom zou een land als Nederland of België hierin willen meedoen? De schaalvoordelen van de VS of China lijken immers onverslaanbaar. Toch is Girolami’s argument krachtig: juist kleinere landen kunnen sneller schakelen als ze hun eigen ecosysteem optimaal benutten. Denk aan de combinatie van sterke technische universiteiten, een compacte overheid die snel kan ingrijpen, en bedrijven die bereid zijn risico’s te nemen. In Nederland hebben we al voorbeelden zoals TNO of het CWI dat soort bruggen slaat tussen wetenschap en industrie. Maar waar Girolami nu kiest voor een commercieel gedreven lab met publieke opdrachten, blijft veel Nederlands onderzoek nog vaak hangen in publicaties zonder directe impact.
+        De tegenwerping ligt voor de hand: waarom zou een land als Nederland of Belgie hierin willen meedoen? De schaalvoordelen van de VS of China lijken immers onverslaanbaar. Toch is Girolami’s argument krachtig: juist kleinere landen kunnen sneller schakelen als ze hun eigen ecosysteem optimaal benutten. Denk aan de combinatie van sterke technische universiteiten, een compacte overheid die snel kan ingrijpen, en bedrijven die bereid zijn risico’s te nemen. In Nederland hebben we al voorbeelden zoals TNO of het CWI dat soort bruggen slaat tussen wetenschap en industrie. Maar waar Girolami nu kiest voor een commercieel gedreven lab met publieke opdrachten, blijft veel Nederlands onderzoek nog vaak hangen in publicaties zonder directe impact.
       </p>
       <p>
-        Wat Devotion Labs bijzonder maakt, is de combinatie van ambitie en pragmatisme. Girolami benadrukt dat het geen ‘clever stuff’ gaat worden zonder maatschappelijke waarde, maar ook geen louter winstgedreven startup die zoekt naar ‘een gouden nugget’. Die balans kennen veel Nederlandse labs nog niet goed genoeg. Neem bijvoorbeeld het recente bericht over Wayve dat in Londen zelfrijdende taxi’s wil introduceren: ook daar gaat het om real-world toepassingen buiten de gebruikelijke tech-bubbel. Voor marketingteams betekent dit dat AI-strategieën niet langer alleen draaien om automatisering of personalisatie, maar om systemen die robuust genoeg zijn om mee te groeien met complexe organisaties.
+        Wat Devotion Labs bijzonder maakt, is de combinatie van ambitie en pragmatisme. Girolami benadrukt dat het geen ‘clever stuff’ gaat worden zonder maatschappelijke waarde, maar ook geen louter winstgedreven startup die zoekt naar ‘een gouden nugget’. Die balans kennen veel Nederlandse labs nog niet goed genoeg. Neem bijvoorbeeld het recente bericht over Wayve dat in Londen zelfrijdende taxi’s wil introduceren: ook daar gaat het om real-world toepassingen buiten de gebruikelijke tech-bubbel. Voor marketingteams betekent dit dat AI-strategieen niet langer alleen draaien om automatisering of personalisatie, maar om systemen die robuust genoeg zijn om mee te groeien met complexe organisaties.
       </p>
       <p>
-        Toch zit er ook een risico in deze beweging. Als commerciële labs zoals Devotion Labs te veel gaan concurreren met publieke instituten zoals het Alan Turing Institute, dreigt er een tweedeling te ontstaan tussen ‘goede’ publieke research en ‘slechte’ commerciële toepassingen. Girolami erkent dit zelf: “Het gaat erom deze werelden samen te brengen.” Voor Nederlandse beleidsmakers zou dit een wake-upcall moeten zijn om hun eigen instituties beter aan te sturen op impactvolle samenwerking met bedrijven.
+        Toch zit er ook een risico in deze beweging. Als commerciele labs zoals Devotion Labs te veel gaan concurreren met publieke instituten zoals het Alan Turing Institute, dreigt er een tweedeling te ontstaan tussen ‘goede’ publieke research en ‘slechte’ commerciele toepassingen. Girolami erkent dit zelf: “Het gaat erom deze werelden samen te brengen.” Voor Nederlandse beleidsmakers zou dit een wake-upcall moeten zijn om hun eigen instituties beter aan te sturen op impactvolle samenwerking met bedrijven.
       </p>
       <p>
-        De implicaties voor bureau-eigenaren zijn duidelijk: wie nu nog denkt dat AI-toepassingen beperkt blijven tot chatbots of advertentiesystemen, loopt achter op de curve. De echte vraagstukken liggen bij organisaties die afhankelijk zijn van betrouwbare data-infrastructuur – denk aan zorginstellingen, gemeenten of logistieke ketens. Een lab als Devotion Labs bewijst dat AI geen losstaand product is, maar onderdeel moet worden van grotere systeeminnovaties.
+        De implicaties voor bureau-eigenaren zijn duidelijk: wie nu nog denkt dat AI-toepassingen beperkt blijven tot chatbots of advertentiesystemen, loopt achter op de curve. De echte vraagstukken liggen bij organisaties die afhankelijk zijn van betrouwbare data-infrastructuur: denk aan zorginstellingen, gemeenten of logistieke ketens. Een lab als Devotion Labs bewijst dat AI geen losstaand product is, maar onderdeel moet worden van grotere systeeminnovaties.
       </p>
       <p>
-        Voor marketeers betekent dit concreet: stop met denken in silo’s waarin marketingtechnologie losstaat van operationele systemen. De beste use cases ontstaan wanneer je AI gebruikt om processen end-to-end te verbeteren – niet alleen om klantdata beter te analyseren.
+        Voor marketeers betekent dit concreet: stop met denken in silo’s waarin marketingtechnologie losstaat van operationele systemen. De beste use cases ontstaan wanneer je AI gebruikt om processen end-to-end te verbeteren, niet alleen om klantdata beter te analyseren.
       </p>
     </>
   ),
@@ -2660,7 +2660,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De oplossing richt zich op RV-eigenaren die langer willen genieten zonder afhankelijk te zijn van campings of stopcontacten. Volgens de oprichters kan het systeem tot wel twee weken autonomie bieden zonder externe stroomvoorziening, aldus TechCrunch.
       </p>
       <p>
-        Evotrex is niet de enige partij die inzet op off-grid mobiliteit voor RVs, maar onderscheidt zich door de combinatie van technologieën in één geïntegreerd systeem. De startup werkt momenteel aan een eerste serieproductieversie van het systeem.
+        Evotrex is niet de enige partij die inzet op off-grid mobiliteit voor RVs, maar onderscheidt zich door de combinatie van technologieen in een geintegreerd systeem. De startup werkt momenteel aan een eerste serieproductieversie van het systeem.
       </p>
     </>
   ),
@@ -2686,7 +2686,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Volgens de rapportage kampt het bedrijf al langer met moeilijkheden om een werkbaar businessmodel te vinden. Ondanks technologische vooruitgang en investeringen in het verificatieproces, blijft de vraag naar de dienst achter bij de verwachtingen. De layoffs zijn een poging om de kosten te verlagen en de levensvatbaarheid van het bedrijf te waarborgen.
       </p>
       <p>
-        De ontwikkelingen komen op een moment dat OpenAI zelf een IPO-aanvraag heeft ingediend. Tools for Humanity is hier niet direct bij betrokken, maar de financiële druk op Altmans andere projecten neemt toe.
+        De ontwikkelingen komen op een moment dat OpenAI zelf een IPO-aanvraag heeft ingediend. Tools for Humanity is hier niet direct bij betrokken, maar de financiele druk op Altmans andere projecten neemt toe.
       </p>
     </>
   ),
@@ -2719,7 +2719,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'autoboeker-haalt-12-miljoen-in-voor-ai-platform-accountants': (
     <>
       <p className="lead-para">
-        Het Nederlandse Autoboeker heeft een investering van €1,2 miljoen opgehaald om de ontwikkeling van zijn AI-platform voor accountants en administratiekantoren te versnellen. Het geld wordt gebruikt om administratieve werkzaamheden in de pre-accountingfase verder te automatiseren en efficiënter te maken. Denk aan het verwerken, controleren en valideren van bonnen, facturen en andere documenten.
+        Het Nederlandse Autoboeker heeft een investering van €1,2 miljoen opgehaald om de ontwikkeling van zijn AI-platform voor accountants en administratiekantoren te versnellen. Het geld wordt gebruikt om administratieve werkzaamheden in de pre-accountingfase verder te automatiseren en efficienter te maken. Denk aan het verwerken, controleren en valideren van bonnen, facturen en andere documenten.
       </p>
       <p>
         Met de nieuwe fondsen wil Autoboeker de functionaliteit uitbreiden en integraties met boekhoudsoftware verbeteren. Het platform moet kantoren helpen tijd te besparen en fouten in de voorfase van de boekhouding te verminderen. Momenteel werkt het bedrijf al samen met meerdere grote administratiekantoren in Nederland.
@@ -2732,14 +2732,14 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'europa-usa-ai-dominantie-london-tech-week': (
     <>
       <p className="lead-para">
-        De vraag wie AI bezit en controleert domineerde tijdens London Tech Week, waar Europese bezoekers vooral geïnteresseerd waren in hoe ze de Amerikaanse dominantie kunnen beperken. Premier Starmer benadrukte het belang van de techsector voor geopolitiek, maar de discussie ging vooral over soevereiniteit en afhankelijkheid van VS-gestuurde technologie. Topmanagers van Amerikaanse techbedrijven als AMD en HPE erkenden impliciet de spanning, terwijl ze toch investeringen in het VK aankondigden. De frustratie over de verkoop van DeepMind aan Google en de afhankelijkheid van Amerikaanse AI-modellen was voelbaar onder Europese beleidsmakers en investeerders.
+        De vraag wie AI bezit en controleert domineerde tijdens London Tech Week, waar Europese bezoekers vooral geinteresseerd waren in hoe ze de Amerikaanse dominantie kunnen beperken. Premier Starmer benadrukte het belang van de techsector voor geopolitiek, maar de discussie ging vooral over soevereiniteit en afhankelijkheid van VS-gestuurde technologie. Topmanagers van Amerikaanse techbedrijven als AMD en HPE erkenden impliciet de spanning, terwijl ze toch investeringen in het VK aankondigden. De frustratie over de verkoop van DeepMind aan Google en de afhankelijkheid van Amerikaanse AI-modellen was voelbaar onder Europese beleidsmakers en investeerders.
       </p>
     </>
   ),
   'osborne-ai-zelfvoorzienendheid-is-weggegooid-geld': (
     <>
       <p className="lead-para">
-        Volledige onafhankelijkheid in de AI-keten is volgens George Osborne, voormalig Brits minister van Financiën en nu werkzaam bij OpenAI, een illusie. Zelfs de VS en China slagen er niet in om elke schakel van de AI-stack lokaal te beheersen. Osborne pleit ervoor om te focussen op relevantie in plaats van autarkie: zijn het land goed is in het adopteren van technologie, over een geschoolde bevolking beschikt en aantrekkelijk is voor ondernemers.
+        Volledige onafhankelijkheid in de AI-keten is volgens George Osborne, voormalig Brits minister van Financien en nu werkzaam bij OpenAI, een illusie. Zelfs de VS en China slagen er niet in om elke schakel van de AI-stack lokaal te beheersen. Osborne pleit ervoor om te focussen op relevantie in plaats van autarkie: zijn het land goed is in het adopteren van technologie, over een geschoolde bevolking beschikt en aantrekkelijk is voor ondernemers.
       </p>
       <p>
         In plaats van te proberen alle onderdelen zelf te ontwikkelen, benadrukt Osborne dat landen moeten investeren in lokale adoptie en samenwerking met internationale techbedrijven. Hij wijst op het risico van isolatie: zonder Amerikaanse techgiganten wordt de weg naar AI-innovatie langer en moeilijker. Zijn standpunt komt voort uit zorgen over Europese afhankelijkheid van Amerikaanse technologie, die mogelijk als wapen kan worden ingezet.
@@ -2752,13 +2752,13 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'afm-beboet-bunq-trage-fraudeafhandeling': (
     <>
       <p className="lead-para">
-        De Autoriteit Financiële Markten (AFM) heeft bunq een boete van €170.000 opgelegd wegens het niet tijdig reageren op zeven klachten over online fraude. Volgens de toezichthouder overschreed de bank in elk geval de wettelijke termijn van zestig dagen voor de afhandeling van dergelijke meldingen.
+        De Autoriteit Financiele Markten (AFM) heeft bunq een boete van €170.000 opgelegd wegens het niet tijdig reageren op zeven klachten over online fraude. Volgens de toezichthouder overschreed de bank in elk geval de wettelijke termijn van zestig dagen voor de afhandeling van dergelijke meldingen.
       </p>
       <p>
         Gedupeerde klanten bleven hierdoor maandenlang in onzekerheid over de status van hun zaak, aldus de AFM. De toezichthouder constateerde dat bunq herhaaldelijk te laat reageerde op verzoeken om terugboeking of onderzoek, wat volgens de regels niet mag.
       </p>
       <p>
-        Bunq heeft inmiddels aangegeven de procedures aan te passen om verdere overtredingen te voorkomen. Klanten die slachtoffer zijn geworden van fraude kunnen bij bunq een klacht indienen via het officiële meldpunt.
+        Bunq heeft inmiddels aangegeven de procedures aan te passen om verdere overtredingen te voorkomen. Klanten die slachtoffer zijn geworden van fraude kunnen bij bunq een klacht indienen via het officiele meldpunt.
       </p>
     </>
   ),
@@ -2801,7 +2801,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Het Amerikaanse ministerie van Defensie heeft de jaarlijkse lijst met Chinese bedrijven die worden gezien als steunverleners aan het Chinese leger uitgebreid. Daaronder vallen grote namen als technologieconcern Alibaba Group, zoekmachinegigant Baidu en elektrische autofabrikant BYD.
       </p>
       <p>
-        De toevoegingen betekenen dat deze bedrijven beperkingen krijgen in hun handel met Amerikaanse partijen. De lijst is gebaseerd op de aanname dat China zijn privésector inzet om militaire technologie te ontwikkelen en verbeteren. Ook een aantal andere sectoren buiten chips en kunstmatige intelligentie worden nu meegenomen, zoals farmacie en robotica.
+        De toevoegingen betekenen dat deze bedrijven beperkingen krijgen in hun handel met Amerikaanse partijen. De lijst is gebaseerd op de aanname dat China zijn privesector inzet om militaire technologie te ontwikkelen en verbeteren. Ook een aantal andere sectoren buiten chips en kunstmatige intelligentie worden nu meegenomen, zoals farmacie en robotica.
       </p>
       <p>
         China reageerde kritisch: de ambassade in Washington noemde de lijst discriminerend en overdreven. De betrokken bedrijven ontkennen elke band met militaire activiteiten. Toch kan de aanduiding al leiden tot reputatieschade of verlies van contracten met Amerikaanse overheden of consumenten.
@@ -2811,7 +2811,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'amazon-verkoopt-geen-producten-maar-ervaringen': (
     <>
       <p className="lead-para">
-        De Amerikaanse reus Amazon toont op zijn homepage geen traditionele productcategorieën meer, maar een verzameling van ervaringen: van zomerse kledingstijlen tot vakantie-looks en smart home-oplossingen. De pagina is opgebouwd als een lifestyle-magazine met beperkte tijdsacties en seizoensgebonden highlights, niet als een klassieke webshop. Ook merken die Amazon zelf in de markt zet, zoals Amazon Essentials of Luxury, worden gepresenteerd als lifestyle-opties in plaats van puur functionele artikelen.
+        De Amerikaanse reus Amazon toont op zijn homepage geen traditionele productcategorieen meer, maar een verzameling van ervaringen: van zomerse kledingstijlen tot vakantie-looks en smart home-oplossingen. De pagina is opgebouwd als een lifestyle-magazine met beperkte tijdsacties en seizoensgebonden highlights, niet als een klassieke webshop. Ook merken die Amazon zelf in de markt zet, zoals Amazon Essentials of Luxury, worden gepresenteerd als lifestyle-opties in plaats van puur functionele artikelen.
       </p>
     </>
   ),
@@ -2821,7 +2821,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Apple lanceert later dit jaar een volledig vernieuwde versie van Siri, aangedreven door Google’s Gemini-technologie via Apple Intelligence. De assistent is vanaf nu direct beschikbaar via een swipe of ‘Hey Siri’, zonder dat gebruikers aparte AI-apps hoeven te downloaden. Dat maakt de technologie toegankelijker voor een breder publiek, aldus de techgigant.
       </p>
       <p>
-        De nieuwe Siri kan niet alleen complexe vragen beantwoorden, maar ook persoonlijke data raadplegen zoals berichten of e-mails om relevante antwoorden te geven. Bijvoorbeeld: vragen naar aanbevelingen uit privéberichten of taken toevoegen aan een paklijst op basis van e-mails. Apple benadrukt dat deze data alleen voor het antwoord wordt gebruikt en direct daarna wordt gewist, zodat geen externe partijen toegang krijgen tot gesprekken.
+        De nieuwe Siri kan niet alleen complexe vragen beantwoorden, maar ook persoonlijke data raadplegen zoals berichten of e-mails om relevante antwoorden te geven. Bijvoorbeeld: vragen naar aanbevelingen uit priveberichten of taken toevoegen aan een paklijst op basis van e-mails. Apple benadrukt dat deze data alleen voor het antwoord wordt gebruikt en direct daarna wordt gewist, zodat geen externe partijen toegang krijgen tot gesprekken.
       </p>
       <p>
         De functies zijn beperkt tot recentere Apple-apparaten met ondersteuning voor Apple Intelligence, waaronder de iPhone 15 Pro en nieuwere modellen. Ook Macs en iPads met M1-chips of nieuwer kunnen gebruikmaken van de basisversie. Toch blijft er een beperking: diepgaande integratie met andere apps dan Apple’s eigen software hangt af van ontwikkelaars die hun systemen openstellen voor Siri.
@@ -2844,13 +2844,13 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'klantmerk-en-werkgeversmerk-moeten-hetzelfde-verhaal-vertellen': (
     <>
       <p className="lead-para">
-        Een sterk merk bouwt je zowel naar buiten toe op als naar binnen. Toch laten veel bedrijven deze twee verhalen los van elkaar bestaan, aldus een recent rapport. Terwijl consumenten en potentiële werknemers dezelfde waarden en beloftes verwachten te horen.
+        Een sterk merk bouwt je zowel naar buiten toe op als naar binnen. Toch laten veel bedrijven deze twee verhalen los van elkaar bestaan, aldus een recent rapport. Terwijl consumenten en potentiele werknemers dezelfde waarden en beloftes verwachten te horen.
       </p>
       <p>
         De mismatch ontstaat vaak door aparte teams of afdelingen die elk hun eigen focus hebben. Klantcommunicatie wordt dan gericht op productvoordelen, terwijl de werkgeverscommunicatie vooral gaat over cultuur en doorgroeimogelijkheden. Dat leidt tot tegenstrijdige signalen, zo blijkt uit eerdere cases.
       </p>
       <p>
-        Bedrijven die beide verhalen wél integreren, zien minder verwarring bij doelgroepen en een hogere herkenbaarheid. Een voorbeeld is een organisatie die haar duurzaamheidsambities zowel in reclames als in vacatures centraal stelt: dat versterkt het imago zowel bij klanten als bij medewerkers.
+        Bedrijven die beide verhalen wel integreren, zien minder verwarring bij doelgroepen en een hogere herkenbaarheid. Een voorbeeld is een organisatie die haar duurzaamheidsambities zowel in reclames als in vacatures centraal stelt: dat versterkt het imago zowel bij klanten als bij medewerkers.
       </p>
     </>
   ),
@@ -2870,7 +2870,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'meta-gezichtsherkenning-ai-brillen': (
     <>
       <p className="lead-para">
-        De app voor Meta’s AI-brillen bevat code die gezichten kan omzetten in unieke digitale vingerafdrukken, zo blijkt uit onderzoek van Wired. Deze ‘faceprints’ worden opgeslagen en geïndexeerd, terwijl niet-herkende gezichten worden bijgesneden en opgeslagen onder de naam ‘in behandeling’. De technologie is nog niet actief, maar de infrastructuur voor updates staat al klaar.
+        De app voor Meta’s AI-brillen bevat code die gezichten kan omzetten in unieke digitale vingerafdrukken, zo blijkt uit onderzoek van Wired. Deze ‘faceprints’ worden opgeslagen en geindexeerd, terwijl niet-herkende gezichten worden bijgesneden en opgeslagen onder de naam ‘in behandeling’. De technologie is nog niet actief, maar de infrastructuur voor updates staat al klaar.
       </p>
       <p>
         In Nederland zijn de AI-brillen van Meta beschikbaar, samen met de bijbehorende app die vijftig miljoen gebruikers hebben gedownload. De software werkt naast bestaande functies, zoals het verbinden van de brillen met smartphones. Meta benadrukt dat er nog geen definitieve beslissing is genomen over het daadwerkelijk lanceren van Name Tag.
@@ -2880,13 +2880,13 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
-  'content-marketing-ideeën-juli-2026': (
+  'content-marketing-ideeen-juli-2026': (
     <>
       <p className="lead-para">
-        De zomermaanden lenen zich goed voor content die aansluit bij de belevingswereld van consumenten. Denk aan inspirerende reistips, feestelijke recepten of praktische gidsen voor de zomervakantie. Door producten te koppelen aan deze momenten creëer je natuurlijke aankoopmomenten zonder harde verkoopboodschappen.
+        De zomermaanden lenen zich goed voor content die aansluit bij de belevingswereld van consumenten. Denk aan inspirerende reistips, feestelijke recepten of praktische gidsen voor de zomervakantie. Door producten te koppelen aan deze momenten creeer je natuurlijke aankoopmomenten zonder harde verkoopboodschappen.
       </p>
       <p>
-        Zomerse evenementen zoals de Tour de France, Wimbledon of lokale festivals bieden eveneens inspiratie. Content rond deze gebeurtenissen kan variëren van live-updates tot achtergrondverhalen over betrokken merken of atleten. Ook seizoensgebonden thema’s zoals barbecues, stranduitjes of tuinieren sluiten goed aan bij de koopintenties in deze periode.
+        Zomerse evenementen zoals de Tour de France, Wimbledon of lokale festivals bieden eveneens inspiratie. Content rond deze gebeurtenissen kan varieren van live-updates tot achtergrondverhalen over betrokken merken of atleten. Ook seizoensgebonden thema’s zoals barbecues, stranduitjes of tuinieren sluiten goed aan bij de koopintenties in deze periode.
       </p>
       <p>
         Tot slot kunnen maandthema’s zoals ‘Zomervakantie’ of ‘Zomerse gezondheid’ helpen om content te structureren en doorlopend relevant te blijven. Door deze thema’s breed uit te werken, kun je zowel educatieve als inspirerende content delen die past bij de zomerse levensstijl van je doelgroep.
@@ -2909,10 +2909,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'google-demands-striktere-audience-targeting-regels-demand-gen': (
     <>
       <p className="lead-para">
-        Google heeft nieuwe richtlijnen gepubliceerd voor gevoelige doelgroep-targeting in Demand Gen-campagnes. Deze campagnes kunnen nu minder goed worden afgeleverd als ze zich richten op onderwerpen zoals gezondheid, financiële producten of politieke standpunten.
+        Google heeft nieuwe richtlijnen gepubliceerd voor gevoelige doelgroep-targeting in Demand Gen-campagnes. Deze campagnes kunnen nu minder goed worden afgeleverd als ze zich richten op onderwerpen zoals gezondheid, financiele producten of politieke standpunten.
       </p>
       <p>
-        De verandering betekent dat marketeers hun targetingstrategie moeten herzien. Campagnes die te breed of te specifiek zijn ingesteld, kunnen worden afgestraft met een lagere zichtbaarheid. Dit geldt vooral voor campagnes die gebruikmaken van automatische biedstrategieën.
+        De verandering betekent dat marketeers hun targetingstrategie moeten herzien. Campagnes die te breed of te specifiek zijn ingesteld, kunnen worden afgestraft met een lagere zichtbaarheid. Dit geldt vooral voor campagnes die gebruikmaken van automatische biedstrategieen.
       </p>
       <p>
         Het is nu belangrijker dan ooit om de targetingopties nauwkeurig af te stemmen op de campagne-doelstellingen. Google raadt aan om eerst kleine testcampagnes op te zetten om de impact van de nieuwe regels te meten voordat grote budgetten worden ingezet.
@@ -2948,7 +2948,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'seo-en-affiliate-teams-samenbrengen-voor-meer-omzet': (
     <>
       <p className="lead-para">
-        SEO en affiliate marketing richten zich vaak op dezelfde doelgroepen, maar opereren nog te vaak in silo’s. Door content, zoekwoordenstrategieën en promotiecampagnes op elkaar af te stemmen, kunnen bedrijven dubbel werk voorkomen en hun zichtbaarheid in zoekmachines én bij affiliates vergroten. Dit leidt niet alleen tot betere rankings, maar ook tot een hogere conversie per bezoeker aldus Search Engine Land.
+        SEO en affiliate marketing richten zich vaak op dezelfde doelgroepen, maar opereren nog te vaak in silo’s. Door content, zoekwoordenstrategieen en promotiecampagnes op elkaar af te stemmen, kunnen bedrijven dubbel werk voorkomen en hun zichtbaarheid in zoekmachines en bij affiliates vergroten. Dit leidt niet alleen tot betere rankings, maar ook tot een hogere conversie per bezoeker aldus Search Engine Land.
       </p>
       <p>
         Een concrete uitkomst van betere afstemming is het terugdringen van acquisitiekosten. Bedrijven die SEO en affiliate teams laten samenwerken, zien gemiddeld een daling van 20% in kosten per geconverteerde klant. Dit komt doordat beide kanalen elkaar versterken: organische zoekresultaten leveren meer kwalitatief verkeer op voor affiliates, terwijl affiliates weer nieuwe kansen bieden voor SEO-teams om hun autoriteit te vergroten.
@@ -2961,7 +2961,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'ai-aangedreven-google-ads-verandert-ppc-rol': (
     <>
       <p className="lead-para">
-        De rol van PPC-specialisten verandert door AI-gestuurde Google Ads: niet langer draait het om handmatige campagne-instellingen, maar om het bouwen van systemen die zelflerend zijn. Dat betekent dat marketeers zich moeten richten op signal design, waarbij ze bepalen welke data Google Ads gebruikt voor optimalisatie. Daarnaast wordt conversion architecture belangrijker: het creëren van meetbare stappen tussen advertentie en conversie, zodat AI effectief kan bijsturen.
+        De rol van PPC-specialisten verandert door AI-gestuurde Google Ads: niet langer draait het om handmatige campagne-instellingen, maar om het bouwen van systemen die zelflerend zijn. Dat betekent dat marketeers zich moeten richten op signal design, waarbij ze bepalen welke data Google Ads gebruikt voor optimalisatie. Daarnaast wordt conversion architecture belangrijker: het creeren van meetbare stappen tussen advertentie en conversie, zodat AI effectief kan bijsturen.
       </p>
     </>
   ),
@@ -2974,7 +2974,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De advertenties zijn conversiegericht. Ze sturen op omzet en op concrete acties, niet alleen op bereik. In de Ads Manager Beta kun je budgetten regelen en geografisch targeten, dezelfde knoppen die je van Google en Meta kent. Het verschil zit in de plek: de advertentie verschijnt in het antwoord, op het moment dat iemand een vraag stelt.
       </p>
       <p>
-        Voor Europa gaat het langzamer. OpenAI bereidt de uitrol naar de EU en Nederland voor, maar privacywetgeving zoals de AVG vertraagt dat tot er duidelijkheid is over compliance. OpenAI loopt op een dun koord: advertenties mogen de antwoorden niet beïnvloeden en gebruikersdata wordt niet met adverteerders gedeeld. Dat vertrouwen houdt het product overeind, en tegelijk moet het snel opschalen om de dure AI-infrastructuur te betalen.
+        Voor Europa gaat het langzamer. OpenAI bereidt de uitrol naar de EU en Nederland voor, maar privacywetgeving zoals de AVG vertraagt dat tot er duidelijkheid is over compliance. OpenAI loopt op een dun koord: advertenties mogen de antwoorden niet beinvloeden en gebruikersdata wordt niet met adverteerders gedeeld. Dat vertrouwen houdt het product overeind, en tegelijk moet het snel opschalen om de dure AI-infrastructuur te betalen.
       </p>
       <p>
         Waarom dit groot is: mensen zoeken hun antwoord steeds vaker in een chat in plaats van in een lijst met links. Precies daar komen nu advertenties. Er ontstaat een nieuw kanaal naast zoekadvertenties en social, in de laag die de afgelopen jaren het hardst is gegroeid. Wie adverteert, krijgt er een vindplaats bij. Wie het negeert, mist straks de plek waar de aandacht zit.
@@ -2990,10 +2990,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga': (
     <>
       <p className="lead-para">
-        Het Gerechtshof Den Haag oordeelt dat een bv de afwaardering van €250.000 aan cryptotokens niet mag verrekenen met haar belastbaar resultaat. De dga had de investering namens zichzelf gedaan via een privéovereenkomst, ondanks dat de betaling via de bankrekening van de bv verliep. Het hof stelt vast dat er geen bewijs is dat de bv zelf contractueel partij was bij de aankoop van de tokens.
+        Het Gerechtshof Den Haag oordeelt dat een bv de afwaardering van €250.000 aan cryptotokens niet mag verrekenen met haar belastbaar resultaat. De dga had de investering namens zichzelf gedaan via een priveovereenkomst, ondanks dat de betaling via de bankrekening van de bv verliep. Het hof stelt vast dat er geen bewijs is dat de bv zelf contractueel partij was bij de aankoop van de tokens.
       </p>
       <p>
-        De zaak draait om een investering in 2018 waarbij een Nederlandse bv €250.000 betaalde voor tokens via een LLC in Dubai. In 2020 bleek het project niet te zijn gestart en werd de waarde van de tokens nihil. De bv wilde deze waardedaling aftrekken, maar het hof verwerpt dit omdat de investering duidelijk in privé verband stond. Uit documenten zoals de Token Agreement en e-mails blijkt volgens het hof dat alleen de dga partij was.
+        De zaak draait om een investering in 2018 waarbij een Nederlandse bv €250.000 betaalde voor tokens via een LLC in Dubai. In 2020 bleek het project niet te zijn gestart en werd de waarde van de tokens nihil. De bv wilde deze waardedaling aftrekken, maar het hof verwerpt dit omdat de investering duidelijk in prive verband stond. Uit documenten zoals de Token Agreement en e-mails blijkt volgens het hof dat alleen de dga partij was.
       </p>
       <p>
         Het hof benadrukt dat betalingsverkeer via een vennootschap niet automatisch betekent dat sprake is van een zakelijke transactie voor rekening van die vennootschap. Ook interne vastleggingen of correspondentie ontbraken om aan te tonen dat de bv zelf actief betrokken was bij het project of er commercieel voordeel uit wilde halen.
@@ -3016,7 +3016,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'microsoft-scout-enterprise-ai-agent': (
     <>
       <p className="lead-para">
-        Microsoft heeft tijdens Build 2026 een nieuwe AI-agent genaamd Scout geïntroduceerd. Deze agent draait op het open-source framework OpenClaw en is ontworpen om taken automatisch uit te voeren binnen Microsoft 365-toepassingen zoals Teams, Outlook, OneDrive en SharePoint. In tegenstelling tot traditionele AI-tools wacht Scout niet op opdrachten van gebruikers, maar handelt zelfstandig acties af zoals het plannen van vergaderingen over tijdzones heen of het blokkeren van kalendertijd bij dreigende deadlines.
+        Microsoft heeft tijdens Build 2026 een nieuwe AI-agent genaamd Scout geintroduceerd. Deze agent draait op het open-source framework OpenClaw en is ontworpen om taken automatisch uit te voeren binnen Microsoft 365-toepassingen zoals Teams, Outlook, OneDrive en SharePoint. In tegenstelling tot traditionele AI-tools wacht Scout niet op opdrachten van gebruikers, maar handelt zelfstandig acties af zoals het plannen van vergaderingen over tijdzones heen of het blokkeren van kalendertijd bij dreigende deadlines.
       </p>
       <p>
         Scout wordt geleverd met extra beveiligingsmaatregelen en beleidscontroles om te voldoen aan enterprise-standaarden. De agent kan bijvoorbeeld toegang beperken tot specifieke documenten of communicatiekanalen op basis van bedrijfsbeleid. Microsoft positioneert Scout als een aanvulling op Copilot, met de nadruk op proactieve taken in plaats van reactieve assistentie.
@@ -3068,26 +3068,26 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'mistral-breidt-uit-naar-industrie-en-infrastructuur': (
     <>
       <p className="lead-para">
-        Mistral breidt zijn activiteiten uit van AI-modellen naar industriële toepassingen en infrastructuur, zo meldt Techzine. Het bedrijf introduceerde tijdens de AI NOW Summit een platform dat generatieve AI koppelt aan simulatie- en ontwerpsoftware, speciaal gericht op fabrikanten. Met deze technologie kunnen bedrijven zoals Airbus, BMW en ASML ontwerp- en ontwikkeltrajecten versnellen door snellere voorspellende analyses mogelijk te maken. Traditionele simulaties blijven nodig voor controle, maar AI neemt een deel van het rekenwerk over.
+        Mistral breidt zijn activiteiten uit van AI-modellen naar industriele toepassingen en infrastructuur, zo meldt Techzine. Het bedrijf introduceerde tijdens de AI NOW Summit een platform dat generatieve AI koppelt aan simulatie- en ontwerpsoftware, speciaal gericht op fabrikanten. Met deze technologie kunnen bedrijven zoals Airbus, BMW en ASML ontwerp- en ontwikkeltrajecten versnellen door snellere voorspellende analyses mogelijk te maken. Traditionele simulaties blijven nodig voor controle, maar AI neemt een deel van het rekenwerk over.
       </p>
       <p>
         Naast software investeert Mistral in Europese AI-datacenters om de vraag naar lokale infrastructuur te bedienen. In Frankrijk draait inmiddels een trainingsfaciliteit nabij Parijs, met een tweede locatie voor inferentieworkloads gepland voor volgend jaar. De investeringen worden ondersteund door honderden miljoenen euro’s aan externe financiering. Organisaties willen meer controle over hun data en niet afhankelijk zijn van Amerikaanse cloudproviders, aldus het bedrijf.
       </p>
       <p>
-        Ook aan de gebruikerskant voert Mistral veranderingen door: de AI-assistent Le Chat wordt omgedoopt tot Vibe en krijgt een bredere rol binnen organisaties. Vibe kan verbinding maken met bestaande bedrijfssoftware en ontwikkelplatformen, terwijl het productaanbod wordt vereenvoudigd door functionaliteiten samen te brengen in één generatie modellen. Daarnaast werkt Mistral aan taalmodellen die beter geschikt zijn voor technische toepassingen.
+        Ook aan de gebruikerskant voert Mistral veranderingen door: de AI-assistent Le Chat wordt omgedoopt tot Vibe en krijgt een bredere rol binnen organisaties. Vibe kan verbinding maken met bestaande bedrijfssoftware en ontwikkelplatformen, terwijl het productaanbod wordt vereenvoudigd door functionaliteiten samen te brengen in een generatie modellen. Daarnaast werkt Mistral aan taalmodellen die beter geschikt zijn voor technische toepassingen.
       </p>
     </>
   ),
   'mistral-ai-breidt-uit-naar-fysieke-wereld': (
     <>
       <p className="lead-para">
-        Arthur Mensch, CEO van Mistral AI, voorspelt dat kunstmatige intelligentie binnenkort niet alleen digitale taken ondersteunt, maar ook fysieke processen gaat aansturen. Tijdens ITF World 2026 legde hij uit waarom de stap naar de echte wereld fundamenteel anders is dan softwareontwikkeling. Feedbackloops zijn daar traag: experimenten moeten worden uitgevoerd, resultaten gemeten en herhaald. Toch ziet Mensch juist hier de grootste kans voor AI om waarde te creëren, vooral in sectoren als chemische engineering, chipproductie en microscopie.
+        Arthur Mensch, CEO van Mistral AI, voorspelt dat kunstmatige intelligentie binnenkort niet alleen digitale taken ondersteunt, maar ook fysieke processen gaat aansturen. Tijdens ITF World 2026 legde hij uit waarom de stap naar de echte wereld fundamenteel anders is dan softwareontwikkeling. Feedbackloops zijn daar traag: experimenten moeten worden uitgevoerd, resultaten gemeten en herhaald. Toch ziet Mensch juist hier de grootste kans voor AI om waarde te creeren, vooral in sectoren als chemische engineering, chipproductie en microscopie.
       </p>
       <p>
-        Mistral richt zich nu op platforms die AI integreren met complexe fysieke systemen. Het bedrijf heeft meerdere gespecialiseerde bedrijven overgenomen, zoals het Oostenrijkse Emmi AI, dat natuurkundige simulaties vertaalt naar efficiëntere processen. Deze overnames moeten leiden tot modellen die honderd keer goedkoper en nauwkeuriger werken dankzij realistische data. De focus ligt op industriële toepassingen waar precisie cruciaal is, zoals luchtvaart, auto-industrie en halfgeleiderproductie.
+        Mistral richt zich nu op platforms die AI integreren met complexe fysieke systemen. Het bedrijf heeft meerdere gespecialiseerde bedrijven overgenomen, zoals het Oostenrijkse Emmi AI, dat natuurkundige simulaties vertaalt naar efficientere processen. Deze overnames moeten leiden tot modellen die honderd keer goedkoper en nauwkeuriger werken dankzij realistische data. De focus ligt op industriele toepassingen waar precisie cruciaal is, zoals luchtvaart, auto-industrie en halfgeleiderproductie.
       </p>
       <p>
-        Om onafhankelijker te worden van externe partijen als Nvidia werkt Mistral aan het ontwikkelen van eigen chips. CEO Mensch bevestigt dat dit nog geen realiteit is, maar wel een doelstelling voor de toekomst. De strategie past in een bredere trend waarbij AI niet langer alleen digitale taken automatiseert, maar steeds dieper doordringt in industriële processen.
+        Om onafhankelijker te worden van externe partijen als Nvidia werkt Mistral aan het ontwikkelen van eigen chips. CEO Mensch bevestigt dat dit nog geen realiteit is, maar wel een doelstelling voor de toekomst. De strategie past in een bredere trend waarbij AI niet langer alleen digitale taken automatiseert, maar steeds dieper doordringt in industriele processen.
       </p>
     </>
   ),
@@ -3107,7 +3107,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'ai-content-met-client-memory-beter-gegrond-in-markt': (
     <>
       <p className="lead-para">
-        Een ‘client brain’ – een gestructureerde database met merkrichtlijnen, campagnegeschiedenis en technische beperkingen – zorgt ervoor dat AI gegenereerde content altijd binnen de kaders blijft. Zo voorkom je dat automatisch gegenereerde teksten of afbeeldingen niet aansluiten bij de stijl, toon of doelen van het merk.
+        Een ‘client brain’ (een gestructureerde database met merkrichtlijnen, campagnegeschiedenis en technische beperkingen) zorgt ervoor dat AI gegenereerde content altijd binnen de kaders blijft. Zo voorkom je dat automatisch gegenereerde teksten of afbeeldingen niet aansluiten bij de stijl, toon of doelen van het merk.
       </p>
       <p>
         Deze aanpak is vooral nuttig voor SEO-content waar consistentie en relevantie cruciaal zijn. Door AI te trainen op historische data en actuele campagnedoelen, kan het systeem beter inschatten welke onderwerpen prioriteit verdienen of welke terminologie moet worden gebruikt.
@@ -3136,7 +3136,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Het bekende Nederlandse reclamebureau KesselsKramer is vrijdag failliet verklaard door de rechtbank. Het bureau, opgericht in 1966, stond bekend om iconische campagnes voor merken als Albert Heijn en KPN. De laatste weken presenteerde het nog een nieuwe campagne voor het Stedelijk Museum, die positief werd ontvangen.
       </p>
       <p>
-        De oorzaak van het faillissement is nog niet volledig duidelijk, maar financiële problemen spelen waarschijnlijk een rol. Het bureau had recent te maken met teruglopende opdrachten en concurrentie vanuit digitale marketingbureaus. Medewerkers zijn op de hoogte gesteld van de situatie en zoeken naar oplossingen.
+        De oorzaak van het faillissement is nog niet volledig duidelijk, maar financiele problemen spelen waarschijnlijk een rol. Het bureau had recent te maken met teruglopende opdrachten en concurrentie vanuit digitale marketingbureaus. Medewerkers zijn op de hoogte gesteld van de situatie en zoeken naar oplossingen.
       </p>
       <p>
         KesselsKramer was een van de laatste grote klassieke reclamebureaus in Nederland. Het faillissement markeert mogelijk een verdere verschuiving in de markt richting kleinere, gespecialiseerde bureaus.
@@ -3149,10 +3149,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Coca-Cola kiest voor een roadtrip-campagne om de viering van America’s 250-jarig bestaan te markeren. Het merk werkt hiervoor samen met Ogilvy Worldwide, aldus Joe Sciarrotta, deputy CCO bij het bureau. De campagne combineert fysieke ervaringen met digitale storytelling om een breder publiek te bereiken.
       </p>
       <p>
-        Focus Features zet in op gamingplatforms om de betrokkenheid bij filmreleases te vergroten. Met titels als *Obsession* en *Pressure* creëert het studio games die fans dieper laten duiken in de films. Dit sluit aan bij de groeiende vraag naar meeslepende content buiten traditionele kanalen.
+        Focus Features zet in op gamingplatforms om de betrokkenheid bij filmreleases te vergroten. Met titels als *Obsession* en *Pressure* creeert het studio games die fans dieper laten duiken in de films. Dit sluit aan bij de groeiende vraag naar meeslepende content buiten traditionele kanalen.
       </p>
       <p>
-        Coinbase introduceert voor het eerst een productgerichte marketingstrategie, zo blijkt uit een toelichting van CMO Catherine Ferdon. Het bedrijf wil de focus leggen op het nut van haar dienst als brug tussen Big Tech en financiën, in plaats van alleen op merkbekendheid.
+        Coinbase introduceert voor het eerst een productgerichte marketingstrategie, zo blijkt uit een toelichting van CMO Catherine Ferdon. Het bedrijf wil de focus leggen op het nut van haar dienst als brug tussen Big Tech en financien, in plaats van alleen op merkbekendheid.
       </p>
     </>
   ),
@@ -3175,7 +3175,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Op Instagram en andere kanalen circuleren berichten over Chinese AI-dronezwermen die een ‘100% kill-rate’ zouden hebben. Dat klinkt als sciencefiction of een militaire doorbraak waar niemand grip op heeft.
       </p>
       <p>
-        Er is inderdaad een Chinese wetenschappelijke publicatie over het algoritme HG-STR voor autonome dronezwermen in verkennings- en aanvalsscenario’s. Het algoritme combineert graph reasoning, reinforcement learning en hiërarchische besluitvorming om samenwerking te verbeteren.
+        Er is inderdaad een Chinese wetenschappelijke publicatie over het algoritme HG-STR voor autonome dronezwermen in verkennings- en aanvalsscenario’s. Het algoritme combineert graph reasoning, reinforcement learning en hierarchische besluitvorming om samenwerking te verbeteren.
       </p>
       <p>
         De paper claimt echter geen ‘100% kill-rate’. In de verifieerbare abstract staan meetbare resultaten uit simulaties: 37,14% betere taakvoltooiing dan traditionele algoritmes, besluitvorming versneld van seconden naar milliseconden en een taaksucsespercentage van 94% bij beperkte communicatie.
@@ -3198,7 +3198,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'tiktok-shop-lanceert-in-nederland-op-15-juni': (
     <>
       <p className="lead-para">
-        TikTok Shop gaat op 15 juni officieel van start in Nederland en België, na een succesvolle introductie in zes andere EU-landen. Lokale merken zoals Meroda, Perfetti Van Melle en kleinere bedrijven als Cloudpillo doen mee bij de lancering. De winkel combineert korte video’s met directe aankoopopties en live verkoopmomenten, waardoor consumenten direct kunnen kopen vanuit hun favoriete creators of merken.
+        TikTok Shop gaat op 15 juni officieel van start in Nederland en Belgie, na een succesvolle introductie in zes andere EU-landen. Lokale merken zoals Meroda, Perfetti Van Melle en kleinere bedrijven als Cloudpillo doen mee bij de lancering. De winkel combineert korte video’s met directe aankoopopties en live verkoopmomenten, waardoor consumenten direct kunnen kopen vanuit hun favoriete creators of merken.
       </p>
       <p>
         Verkopers kunnen via ‘Sell Across Europe’ hun producten aanbieden in alle EU-markten waar TikTok Shop actief is. Het platform biedt lokale productbeschrijvingen, verzendopties via goedgekeurde logistieke partners en affiliate-programma’s voor creators. Om mee te doen, moeten verkopers zich registreren via een specifiek e-mailadres en voldoen aan de communityrichtlijnen van TikTok.
@@ -3240,7 +3240,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Het ministerie van Defensie en TNO gaan innovaties van het onderzoeksinstituut versneld commercialiseren. Doel is om de Nederlandse defensie-industrie concurrerender te maken en nieuwe bedrijven op te zetten.
       </p>
       <p>
-        De samenwerking richt zich op technologieën die direct toepasbaar zijn in defensietoepassingen. Denk aan geavanceerde materialen, sensoren en energieoplossingen die de veiligheid en capaciteit van de krijgsmacht vergroten.
+        De samenwerking richt zich op technologieen die direct toepasbaar zijn in defensietoepassingen. Denk aan geavanceerde materialen, sensoren en energieoplossingen die de veiligheid en capaciteit van de krijgsmacht vergroten.
       </p>
       <p>
         TNO werkt al langer aan toepassingen voor extreme omstandigheden, zoals batterijtechnologie voor arctische missies. Deze innovaties worden nu geoptimaliseerd voor operationeel gebruik.
@@ -3263,7 +3263,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'tiktok-shop-lanceert-in-nederland-en-belgie-op-15-juni': (
     <>
       <p className="lead-para">
-        TikTok Shop gaat op 15 juni officieel van start in Nederland en België. Ook Oostenrijk en Polen volgen die dag. De shop brengt shoppable video’s en interactieve livestreams samen, waarbij merken, verkopers en creators direct producten kunnen verkopen. Bij de lancering doen onder meer Meroda, Perfetti Van Melle, Nbrands by Nikkie Plessen en Versuni mee, naast kleinere Nederlandse merken zoals Cloudpillo.
+        TikTok Shop gaat op 15 juni officieel van start in Nederland en Belgie. Ook Oostenrijk en Polen volgen die dag. De shop brengt shoppable video’s en interactieve livestreams samen, waarbij merken, verkopers en creators direct producten kunnen verkopen. Bij de lancering doen onder meer Meroda, Perfetti Van Melle, Nbrands by Nikkie Plessen en Versuni mee, naast kleinere Nederlandse merken zoals Cloudpillo.
       </p>
       <p>
         Verkopers kunnen via ‘Sell Across Europe’ direct hun producten aanbieden in andere EU-markten waar TikTok Shop beschikbaar is. Productbeschrijvingen worden automatisch gelokaliseerd per markt. Verkopers hebben keuze uit directe verzending of samenwerking met goedgekeurde logistieke partners van TikTok Shop. Daarnaast kunnen ze gebruikmaken van het affiliate-netwerk van TikTok Shop-creators om commissie te verdienen.
@@ -3282,7 +3282,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Ook kan er sprake zijn van verlies van meetdata door tracking-blokkades, zoals cookieless browsers of adblockers. Hierdoor ontbreken cruciale meetpunten, waardoor campagnes een vertekend beeld geven van hun prestaties. Dit geldt vooral voor B2B-bedrijven die afhankelijk zijn van langere sales-cycles.
       </p>
       <p>
-        Experts wijzen erop dat het meten van de echte uplift – de extra omzet die direct toe te schrijven is aan de campagne – vaak complexer is dan gedacht. Veel bedrijven baseren hun budgetbeslissingen nog steeds op historische data, zonder rekening te houden met externe factoren zoals marktschommelingen of concurrentiegedrag.
+        Experts wijzen erop dat het meten van de echte uplift (de extra omzet die direct toe te schrijven is aan de campagne) vaak complexer is dan gedacht. Veel bedrijven baseren hun budgetbeslissingen nog steeds op historische data, zonder rekening te houden met externe factoren zoals marktschommelingen of concurrentiegedrag.
       </p>
     </>
   ),
@@ -3295,14 +3295,14 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De nieuwe controls zouden het makkelijker maken om overlapping tussen branded en non-branded traffic te verminderen, wat tot nu toe vaak leidde tot onduidelijkheid in rapportages. De test lijkt gericht op grotere campagnes waar merknaam een belangrijke rol speelt in de strategie.
       </p>
       <p>
-        Het is nog niet bekend wanneer of of deze functie breed beschikbaar komt voor alle adverteerders. Google heeft geen officiële bevestiging gegeven over de testfase.
+        Het is nog niet bekend wanneer of of deze functie breed beschikbaar komt voor alle adverteerders. Google heeft geen officiele bevestiging gegeven over de testfase.
       </p>
     </>
   ),
   'google-ads-introduceert-ingebouwd-lead-management-dashboard': (
     <>
       <p className="lead-para">
-        Google Ads introduceert een nieuw ingebouwd leadmanagementdashboard dat het mogelijk maakt om leads direct in het platform te volgen, te kwalificeren en te activeren. Hiermee verdwijnt de noodzaak om externe tools te gebruiken voor leadverwerking. De integratie met AI moet helpen om de conversiekwaliteit beter in te schatten en biedstrategieën automatisch aan te passen.
+        Google Ads introduceert een nieuw ingebouwd leadmanagementdashboard dat het mogelijk maakt om leads direct in het platform te volgen, te kwalificeren en te activeren. Hiermee verdwijnt de noodzaak om externe tools te gebruiken voor leadverwerking. De integratie met AI moet helpen om de conversiekwaliteit beter in te schatten en biedstrategieen automatisch aan te passen.
       </p>
       <p>
         Het dashboard toont standaard overzichten van leadbronnen, conversiepercentages en follow-up-acties. Gebruikers kunnen zelf filters instellen om specifieke leads prioriteit te geven, zoals hoge-intent leads of herhalingsaankopen. Daarnaast worden kwaliteitssignalen gedeeld met de AI van Google Ads, wat zou moeten leiden tot een hogere uplift in campagnes.
@@ -3318,7 +3318,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Uit meetdata van grote zoekmachines blijkt dat gebruikers minder vaak doorklikken naar websites sinds AI-antwoorden bovenaan de resultatenpagina verschijnen. De gemiddelde klikfrequentie daalt met ruim een derde in sectoren zoals e-commerce en lokale dienstverlening.
       </p>
       <p>
-        Ook de aard van zoekopdrachten verandert: korte vragen met duidelijke intentie domineren, terwijl lange zoektermen afnemen. Dit heeft gevolgen voor SEO-strategieën, omdat pagina’s die alleen op trefwoorden zijn geoptimaliseerd minder zichtbaar worden.
+        Ook de aard van zoekopdrachten verandert: korte vragen met duidelijke intentie domineren, terwijl lange zoektermen afnemen. Dit heeft gevolgen voor SEO-strategieen, omdat pagina’s die alleen op trefwoorden zijn geoptimaliseerd minder zichtbaar worden.
       </p>
       <p>
         Bedrijven merken dat bezoekers sneller een antwoord vinden zonder door te klikken, wat de meetdata verstoort. Dit maakt het lastiger om oorzaak en gevolg tussen marketinginspanningen en klantgedrag vast te stellen.
@@ -3334,7 +3334,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Oud-presentatoren wijzen op het gebrek aan interactie en authenticiteit bij een AI-presentator. Kinderen keken juist om die reden naar het programma, aldus Stephanie van Eer en Shaniqua Devine. Zij benadrukken dat er genoeg jong talent in Nederland rondloopt dat de doelgroep beter zou kunnen aanspreken dan een digitaal personage.
       </p>
       <p>
-        Producent CTM TV houdt de opties nog open en laat weten binnen twee à drie maanden te beslissen over de definitieve vorm van de doorstart. Tot nu toe reageert het bedrijf niet op vragen over het gebruik van AI, maar benadrukt wel open te staan voor kritiek en andere meningen.
+        Producent CTM TV houdt de opties nog open en laat weten binnen twee a drie maanden te beslissen over de definitieve vorm van de doorstart. Tot nu toe reageert het bedrijf niet op vragen over het gebruik van AI, maar benadrukt wel open te staan voor kritiek en andere meningen.
       </p>
       <p>
         De Kids Top 20 blijft een hitlijst die volledig door kinderen wordt samengesteld via stemmen op hun favoriete muziek.
@@ -3360,10 +3360,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Uit onderzoek blijkt dat AI-systemen zoals Google AI Overviews en andere zoekmachines steeds vaker resultaten tonen op basis van merken in plaats van specifieke zoekwoorden. Dit betekent dat bedrijven die hun merknaam consistent en authentiek uitdragen, automatisch betere posities krijgen in deze nieuwe zoekomgevingen.
       </p>
       <p>
-        Consistentie in branding – van website tot sociale media en klantenservice – wordt cruciaal. AI-algoritmes scoren merken hoger als ze herkenbaar zijn, betrouwbare content delen en een duidelijke identiteit hebben. Dit geldt niet alleen voor grote spelers, maar ook voor lokale ondernemingen die hun naamsbekendheid vergroten.
+        Consistentie in branding (van website tot sociale media en klantenservice) wordt cruciaal. AI-algoritmes scoren merken hoger als ze herkenbaar zijn, betrouwbare content delen en een duidelijke identiteit hebben. Dit geldt niet alleen voor grote spelers, maar ook voor lokale ondernemingen die hun naamsbekendheid vergroten.
       </p>
       <p>
-        De oude SEO-strategieën zoals keyword stuffing of linkbuilding verliezen aan kracht. In plaats daarvan draait het om het opbouwen van vertrouwen door middel van kwalitatieve content, klantbeoordelingen en een consistente boodschap over alle kanalen heen.
+        De oude SEO-strategieen zoals keyword stuffing of linkbuilding verliezen aan kracht. In plaats daarvan draait het om het opbouwen van vertrouwen door middel van kwalitatieve content, klantbeoordelingen en een consistente boodschap over alle kanalen heen.
       </p>
     </>
   ),
@@ -3412,7 +3412,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Google introduceert Real-Time Policy Reviews, een systeem dat advertenties direct controleert en goedkeurt tijdens het maken van campagnes. Fouten worden direct getoond, waardoor wachten op handmatige goedkeuring niet meer nodig is.
       </p>
       <p>
-        Deze aanpassing moet de doorlooptijd van campagnelanceringen verkorten en frustratie bij adverteerders verminderen. Momenteel geldt dit voor een beperkte set advertentietypen, maar Google plant uitbreiding naar meer categorieën.
+        Deze aanpassing moet de doorlooptijd van campagnelanceringen verkorten en frustratie bij adverteerders verminderen. Momenteel geldt dit voor een beperkte set advertentietypen, maar Google plant uitbreiding naar meer categorieen.
       </p>
       <p>
         De realtime feedback werkt via automatische scans die beleidsregels vergelijken met de ingestelde targeting en creatives. Dit reduceert het risico op afgekeurde campagnes door onbekende regels.
@@ -3425,7 +3425,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Een logo of kleurenschema aanpassen is vaak het eerste waar bedrijven aan denken bij een rebrand. Toch vraagt een effectieve visuele identiteit om een heldere merkstrategie als basis. Zonder duidelijke positionering en doelgroepanalyse blijft de uitstraling vaak oppervlakkig of inconsistent, aldus experts.
       </p>
       <p>
-        De meeste merken starten niet met een blanco blad, maar met bestaande elementen die ze willen behouden of aanpassen. Denk aan herkenbare typografie, iconen of zelfs historische kleuren die emotionele waarde hebben bij klanten. Deze ankerpunten vormen de start van een proces waarin nieuwe elementen stap voor stap worden geïntegreerd.
+        De meeste merken starten niet met een blanco blad, maar met bestaande elementen die ze willen behouden of aanpassen. Denk aan herkenbare typografie, iconen of zelfs historische kleuren die emotionele waarde hebben bij klanten. Deze ankerpunten vormen de start van een proces waarin nieuwe elementen stap voor stap worden geintegreerd.
       </p>
       <p>
         Het risico ligt in het te snel loslaten van wat al werkt. Een succesvolle visuele identiteit combineert vernieuwing met vertrouwdheid, zodat klanten en medewerkers de verandering accepteren zonder hun binding met het merk te verliezen.
@@ -3435,7 +3435,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'magnetic-networking-evolutie-personal-branding': (
     <>
       <p className="lead-para">
-        Het traditionele netwerken met visitekaartjes en gladde pitches maakt plaats voor een benadering waarbij professionals hun expertise en authenticiteit centraal stellen. Magnetic Networking focust op het creëren van aantrekkingskracht door relevante kennis te delen, aldus experts.
+        Het traditionele netwerken met visitekaartjes en gladde pitches maakt plaats voor een benadering waarbij professionals hun expertise en authenticiteit centraal stellen. Magnetic Networking focust op het creeren van aantrekkingskracht door relevante kennis te delen, aldus experts.
       </p>
       <p>
         Deze aanpak vraagt om een actieve mindset: niet wachten tot anderen contact zoeken, maar zelf initiatief tonen door waardevolle content of oplossingen aan te bieden. Het gaat niet om kwantiteit, maar om de kwaliteit van de interacties die ontstaan.
@@ -3464,7 +3464,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'seo-changelogs-ondermijnd-door-onzichtbare-updates': (
     <>
       <p className="lead-para">
-        Een onbekend aantal bedrijven ondervindt problemen door wijzigingen op hun website die niet zichtbaar zijn voor de SEO-verantwoordelijken. Kleine aanpassingen zoals code-wijzigingen, template-aanpassingen of serverconfiguraties kunnen plotseling de ranking beïnvloeden zonder dat iemand het doorheeft. Dit leidt vaak tot een snelle daling in organische verkeer en omzet, zonder dat de oorzaak direct duidelijk is.
+        Een onbekend aantal bedrijven ondervindt problemen door wijzigingen op hun website die niet zichtbaar zijn voor de SEO-verantwoordelijken. Kleine aanpassingen zoals code-wijzigingen, template-aanpassingen of serverconfiguraties kunnen plotseling de ranking beinvloeden zonder dat iemand het doorheeft. Dit leidt vaak tot een snelle daling in organische verkeer en omzet, zonder dat de oorzaak direct duidelijk is.
       </p>
       <p>
         Het ontbreken van een gestructureerde changelog maakt het lastig om oorzaak en gevolg te koppelen. Wanneer een pagina plotseling daalt in de zoekresultaten, duurt het vaak dagen voordat er wordt geconstateerd dat er recent iets is veranderd. Zelfs binnen grote organisaties met meerdere teams blijft overzicht vaak ontbreken, omdat updates via verschillende kanalen verlopen zonder centrale registratie.
@@ -3483,7 +3483,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Het nieuwe systeem biedt ook een pay-for-results model, waarbij adverteerders alleen betalen voor daadwerkelijk behaalde acties. Dit sluit aan bij de groeiende vraag naar transparantere en meetbare reclame-investeringen.
       </p>
       <p>
-        De integratie van deze advertenties zal plaatsvinden binnen de ChatGPT-interface, wat betekent dat gebruikers tijdens gesprekken met het model ook commerciële boodschappen kunnen tegenkomen.
+        De integratie van deze advertenties zal plaatsvinden binnen de ChatGPT-interface, wat betekent dat gebruikers tijdens gesprekken met het model ook commerciele boodschappen kunnen tegenkomen.
       </p>
     </>
   ),
@@ -3503,7 +3503,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'ai-herdefinieert-creativiteit-bij-bureaus': (
     <>
       <p className="lead-para">
-        AI vervangt geen creativiteit, maar maakt creatieve processen efficiënter door repetitieve taken over te nemen. Dat stelt James Lawton-Hill van APS Group, die benadrukt dat de echte dreiging ligt in het niet benutten van de mogelijkheden die AI biedt. Bureaus die AI integreren in hun workflows, kunnen sneller ideeën genereren en testen zonder de kwaliteit van het eindresultaat te verliezen. Generatieve tools zoals Adobe Firefly en Midjourney worden steeds vaker gebruikt voor conceptontwikkeling en prototyping, aldus Lawton-Hill.
+        AI vervangt geen creativiteit, maar maakt creatieve processen efficienter door repetitieve taken over te nemen. Dat stelt James Lawton-Hill van APS Group, die benadrukt dat de echte dreiging ligt in het niet benutten van de mogelijkheden die AI biedt. Bureaus die AI integreren in hun workflows, kunnen sneller ideeen genereren en testen zonder de kwaliteit van het eindresultaat te verliezen. Generatieve tools zoals Adobe Firefly en Midjourney worden steeds vaker gebruikt voor conceptontwikkeling en prototyping, aldus Lawton-Hill.
       </p>
       <p>
         De grootste winst zit in de herverdeling van taken: creatieven krijgen meer ruimte voor strategisch denken, storytelling en het bouwen van merkgemeenschappen. Operationele taken zoals versiebeheer en assetmanagement worden steeds vaker overgenomen door zogeheten agentic AI-systemen. Dit leidt tot snellere doorlooptijden, consistente output en meer aandacht voor menselijk oordeel in de vroege fasen van een project.
@@ -3519,7 +3519,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De Amerikaanse overheid heeft 9 miljard dollar vrijgemaakt voor de adoptie van kunstmatige intelligentie door inlichtingendiensten als de CIA en NSA. Dit bedrag moet worden gebruikt voor geavanceerde AI-chips en bijbehorende infrastructuur, zoals gespecialiseerde datacenters met hoge energievraag en vloeistofkoeling.
       </p>
       <p>
-        De hardware die wordt ingezet, bestaat onder meer uit Nvidia’s Grace Blackwell-superchips. De vraag naar deze chips neemt toe door zowel commerciële als overheidsprojecten, wat de leveringszekerheid onder druk zet. Nvidia’s CEO Jensen Huang heeft eerder al gepleit voor innovatie in de halfgeleiderindustrie om de concurrentiepositie van de VS te versterken.
+        De hardware die wordt ingezet, bestaat onder meer uit Nvidia’s Grace Blackwell-superchips. De vraag naar deze chips neemt toe door zowel commerciele als overheidsprojecten, wat de leveringszekerheid onder druk zet. Nvidia’s CEO Jensen Huang heeft eerder al gepleit voor innovatie in de halfgeleiderindustrie om de concurrentiepositie van de VS te versterken.
       </p>
       <p>
         Deze investering kan ook gevolgen hebben voor andere sectoren die afhankelijk zijn van GPU-computing, zoals cryptocurrency en gedecentraliseerde netwerken. Sommige partijen overwegen alternatieve oplossingen, waaronder blockchain-gebaseerde marktplaatsen waar rekenkracht wordt verhandeld.
@@ -3529,10 +3529,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'ai-washing-bedrijven-rebranden-zich-als-tech': (
     <>
       <p className="lead-para">
-        PR-bureaus in Nederland en België melden een golf van verzoeken om bedrijven neer te zetten als AI-specialisten, zelfs als hun producten of diensten geen kunstmatige intelligentie bevatten. Communicatieadviseurs noemen het ‘yoga-niveau’ stretches om het label AI te plakken op bestaande automatisering of verouderde technologie.
+        PR-bureaus in Nederland en Belgie melden een golf van verzoeken om bedrijven neer te zetten als AI-specialisten, zelfs als hun producten of diensten geen kunstmatige intelligentie bevatten. Communicatieadviseurs noemen het ‘yoga-niveau’ stretches om het label AI te plakken op bestaande automatisering of verouderde technologie.
       </p>
       <p>
-        Voorbeelden variëren van een schoenenmerk dat plotseling AI-graphicschips aanschaft tot een fitnessstudio die beweert AI-gestuurde yogamatten te verkopen. In de praktijk gaat het vaak om verbeterde automatisering zonder echte AI-kernfuncties zoals machine learning of neurale netwerken.
+        Voorbeelden varieren van een schoenenmerk dat plotseling AI-graphicschips aanschaft tot een fitnessstudio die beweert AI-gestuurde yogamatten te verkopen. In de praktijk gaat het vaak om verbeterde automatisering zonder echte AI-kernfuncties zoals machine learning of neurale netwerken.
       </p>
       <p>
         Journalisten en PR-medewerkers merken op dat bedrijven massaal de term ‘AI-powered’ of ‘AI-driven’ gebruiken in marketingteksten en persberichten, terwijl de technologie zelf beperkt is tot basisautomatisering. Een voorbeeld is een vastgoedbedrijf dat een handheld scanner als ‘AI-vloerplanscanner’ presenteert, omdat er enkele algoritmen in zitten die het proces versnellen.
@@ -3542,10 +3542,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'openai-race-naar-agi-onthuld': (
     <>
       <p className="lead-para">
-        Journalist Karen Hao kreeg in 2019 zeldzame toegang tot OpenAI en ontdekte een bedrijfscultuur die draaide om geheimhouding en een bijna religieuze obsessie met artificiële algemene intelligentie (AGI). Onderzoekers werden afgeschermd van bepaalde afdelingen en waarschuwden elkaar via Slack om niet buiten voorgeschreven gesprekken te spreken. De sfeer was competitief en paranoïde, aldus Hao in haar boek *Empire of AI*.
+        Journalist Karen Hao kreeg in 2019 zeldzame toegang tot OpenAI en ontdekte een bedrijfscultuur die draaide om geheimhouding en een bijna religieuze obsessie met artificiele algemene intelligentie (AGI). Onderzoekers werden afgeschermd van bepaalde afdelingen en waarschuwden elkaar via Slack om niet buiten voorgeschreven gesprekken te spreken. De sfeer was competitief en paranoide, aldus Hao in haar boek *Empire of AI*.
       </p>
       <p>
-        De transformatie van OpenAI begon toen Microsoft in 2019 voor één miljard dollar investeerde. Wat begon als een idealistisch non-profitorganisatie gericht op het ‘redden van de mensheid’ met transparante AI-ontwikkeling, veranderde onder leiding van Sam Altman in een race naar technologische suprematie. Medewerkers spraken over een ‘machinegod’ die zowel utopia als ondergang kon betekenen, met AGI als doel boven alle andere prioriteiten.
+        De transformatie van OpenAI begon toen Microsoft in 2019 voor een miljard dollar investeerde. Wat begon als een idealistisch non-profitorganisatie gericht op het ‘redden van de mensheid’ met transparante AI-ontwikkeling, veranderde onder leiding van Sam Altman in een race naar technologische suprematie. Medewerkers spraken over een ‘machinegod’ die zowel utopia als ondergang kon betekenen, met AGI als doel boven alle andere prioriteiten.
       </p>
       <p>
         Hao beschrijft hoe senior wetenschappers tijdens een retreat in Sierra Nevada badjasjes droegen en symbolisch een effigie verbrandden die AGI vertegenwoordigde. De cultuur binnen OpenAI werd gekenmerkt door angst voor lekken en een focus op snelheid boven ethiek of openheid. Deze dynamiek leidde uiteindelijk tot publieke conflicten, zoals de rechtszaak tussen Elon Musk en Altman over de koerswijziging van het bedrijf.
@@ -3620,7 +3620,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector': (
     <>
       <p className="lead-para">
-        Het Franse AI-bedrijf Mistral AI heeft het Oostenrijkse Emmi AI overgenomen, een bedrijf dat gespecialiseerd is in realtime-simulatie van fysische processen en digitale tweelingen. Met deze stap wil Mistral zich profileren als leverancier van industriële AI-toepassingen, met name voor sectoren waar Europese bedrijven zoals ASML een sleutelrol spelen.
+        Het Franse AI-bedrijf Mistral AI heeft het Oostenrijkse Emmi AI overgenomen, een bedrijf dat gespecialiseerd is in realtime-simulatie van fysische processen en digitale tweelingen. Met deze stap wil Mistral zich profileren als leverancier van industriele AI-toepassingen, met name voor sectoren waar Europese bedrijven zoals ASML een sleutelrol spelen.
       </p>
       <p>
         Mistral richt zich expliciet op de luchtvaart-, automotive- en halfgeleiderindustrie, aldus het bedrijf. Hoewel er geen bedrag bekend is gemaakt, wordt de overname gezien als een strategische zet om de concurrentiepositie van Mistral in Europa te versterken. De dertig medewerkers van Emmi AI zijn vanaf deze maand onderdeel van Mistral.
@@ -3633,10 +3633,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies': (
     <>
       <p className="lead-para">
-        Autofabrikant Mazda heeft haar volledige storage-omgeving voor productontwerp gecentraliseerd op een nieuw AI-ready dataplatform van Dell Technologies. Door CAD-bestanden en simulatiedata uit dertig jaar samen te brengen, creëert het bedrijf een schaalbaar datalake voor toekomstige AI-workloads. De transformatie leidde tot een kostenreductie van 90% per opslageenheid, aldus de Japanse autofabrikant.
+        Autofabrikant Mazda heeft haar volledige storage-omgeving voor productontwerp gecentraliseerd op een nieuw AI-ready dataplatform van Dell Technologies. Door CAD-bestanden en simulatiedata uit dertig jaar samen te brengen, creeert het bedrijf een schaalbaar datalake voor toekomstige AI-workloads. De transformatie leidde tot een kostenreductie van 90% per opslageenheid, aldus de Japanse autofabrikant.
       </p>
       <p>
-        Het nieuwe platform, gebaseerd op Dell PowerScale, combineert twee eerder gescheiden werelden binnen één scale-out NAS-architectuur: de capaciteitsvraag voor modelgebaseerde ontwikkeldata en de hoge prestatie-eisen van zware CAD-programma’s. Mazda vervangt hiermee magneettape-back-ups en lost structurele capaciteitstekorten op. Sinds de implementatie daalde het aantal IT-tickets aanzienlijk.
+        Het nieuwe platform, gebaseerd op Dell PowerScale, combineert twee eerder gescheiden werelden binnen een scale-out NAS-architectuur: de capaciteitsvraag voor modelgebaseerde ontwikkeldata en de hoge prestatie-eisen van zware CAD-programma’s. Mazda vervangt hiermee magneettape-back-ups en lost structurele capaciteitstekorten op. Sinds de implementatie daalde het aantal IT-tickets aanzienlijk.
       </p>
       <p>
         De centralisatie geeft engineeringteams direct toegang tot decennia aan ontwerphistorie, cruciaal voor het trainen van machine learning-modellen. Dit versnelt innovaties in de productielijn en positioneert Mazda om generatieve AI direct in te zetten binnen de ontwikkelingspijplijn, zo blijkt uit een toelichting van Yuichi Tetsumoto, staff manager Engineering Systems bij Mazda.
@@ -3659,7 +3659,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'ai-gemaakte-boeken-zonder-waarschuwing-te-koop': (
     <>
       <p className="lead-para">
-        Het Nederlandse bedrijf Andries B.V. brengt sinds 2025 non-fictieboeken uit die volledig door kunstmatige intelligentie zijn gegenereerd. Deze titels, vaak over nicheonderwerpen zoals een specifiek hondenras of stad, worden verkocht via platforms als Libris, Bruna en Boekenwereld zonder dat klanten worden geïnformeerd over de AI-oorsprong.
+        Het Nederlandse bedrijf Andries B.V. brengt sinds 2025 non-fictieboeken uit die volledig door kunstmatige intelligentie zijn gegenereerd. Deze titels, vaak over nicheonderwerpen zoals een specifiek hondenras of stad, worden verkocht via platforms als Libris, Bruna en Boekenwereld zonder dat klanten worden geinformeerd over de AI-oorsprong.
       </p>
       <p>
         Na onderzoek van Trouw bleek dat alleen Bol expliciet aangeeft wanneer een boek AI-gegenereerd is. Andere aanbieders zoals Athenaeum | Scheltema en De Slegte lieten na publicatie weten deze informatie alsnog toe te voegen. Eigenaar Andries Herremans stelt dat de betrokkenheid van AI wel is gemeld bij de boekhandels en in nieuwe uitgaven zelf wordt vermeld.
@@ -3672,7 +3672,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'cerebras-beursgang-ai-chipsector': (
     <>
       <p className="lead-para">
-        Het Amerikaanse AI-chipbedrijf Cerebras is met zijn beursgang in één klap 70 miljard dollar waard geworden. De twee oprichters bezitten nu elk een vermogen van meer dan een miljard dollar. Dit maakt de beursgang tot de grootste van het jaar tot nu toe.
+        Het Amerikaanse AI-chipbedrijf Cerebras is met zijn beursgang in een klap 70 miljard dollar waard geworden. De twee oprichters bezitten nu elk een vermogen van meer dan een miljard dollar. Dit maakt de beursgang tot de grootste van het jaar tot nu toe.
       </p>
       <p>
         Cerebras concurreert met NVIDIA door grotere chips te ontwikkelen die zo groot zijn als een bord. Het bedrijf werkt met grote techpartners zoals Amazon, Meta en OpenAI, waar het onlangs een deal van 20 miljard dollar afsloot. De vraag naar rekenkracht voor AI-toepassingen blijft onverminderd hoog.
@@ -3888,13 +3888,13 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       </p>
       <h3>Stap 2: dashboard inrichten op beslissingsvragen</h3>
       <p>
-        De standaard GA4-Momentopname is gevuld met generieke metrics. Vervang die via het potlood-icoon rechtsboven met vier concrete kaarten. De eerste twee vereisen dat Search Console aan GA4 is gekoppeld (Admin &rarr; Productkoppelingen &rarr; Search Console-koppelingen) &mdash; zonder die koppeling blijven die kaarten leeg.
+        De standaard GA4-Momentopname is gevuld met generieke metrics. Vervang die via het potlood-icoon rechtsboven met vier concrete kaarten. De eerste twee vereisen dat Search Console aan GA4 is gekoppeld (Admin &rarr; Productkoppelingen &rarr; Search Console-koppelingen), zonder die koppeling blijven die kaarten leeg.
       </p>
       <ol style={{ paddingLeft: '1.4em', lineHeight: '1.8' }}>
-        <li><strong>Klikken per zoekopdracht</strong> &mdash; Organische Google-zoekopdrachten via Search Console</li>
-        <li><strong>Vertoningen per landingspagina</strong> &mdash; Organische Google-zoekresultaten per pagina</li>
-        <li><strong>Sessies per kanaal</strong> &mdash; met je nieuwe AI-assistenten-groep zichtbaar naast organisch</li>
-        <li><strong>Conversies per kanaalgroep</strong> &mdash; vergelijk organisch versus AI op conversieratio</li>
+        <li><strong>Klikken per zoekopdracht</strong>, Organische Google-zoekopdrachten via Search Console</li>
+        <li><strong>Vertoningen per landingspagina</strong>, Organische Google-zoekresultaten per pagina</li>
+        <li><strong>Sessies per kanaal</strong>, met je nieuwe AI-assistenten-groep zichtbaar naast organisch</li>
+        <li><strong>Conversies per kanaalgroep</strong>, vergelijk organisch versus AI op conversieratio</li>
       </ol>
       <p>
         Vier kaarten, vier vragen. GA4 heeft de data. De standaardinrichting laat ze verstoppen.
@@ -3910,7 +3910,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De podcast van Emerce benadrukt dat het merk al jarenlang een sterke band heeft met consumenten door persoonlijke aandacht en lokaal ondernemerschap. Deze strategie zorgt voor herkenbaarheid en loyaliteit, iets wat digitale tools niet altijd kunnen vervangen.
       </p>
       <p>
-        Het verhaal van New York Pizza laat zien waar de echte frictie zit in moderne marketing: niet in technologie, maar in het begrijpen van de lokale doelgroep en het creëren van authentieke ervaringen.
+        Het verhaal van New York Pizza laat zien waar de echte frictie zit in moderne marketing: niet in technologie, maar in het begrijpen van de lokale doelgroep en het creeren van authentieke ervaringen.
       </p>
     </>
   ),
@@ -3946,7 +3946,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Deze week introduceert de sector nieuwe tools voor e-commerce, meldt Practical Ecommerce. Onder de ontwikkelingen vallen predictieve AI voor voorraadbeheer, autonome marketingoplossingen en verbeterde sitebuilders. Ook komen omnichannel fulfillment, programmatic advertenties en cross-border commerce aan bod.
       </p>
       <p>
-        Daarnaast worden embedded payments en snellere internationale betalingsverwerkers benadrukt als belangrijke trends. De focus ligt op efficiëntie en schaalbaarheid voor retailers die hun online aanwezigheid willen uitbreiden. Tools zoals deze moeten klantreis en conversie verbeteren door naadloze integratie met bestaande systemen.
+        Daarnaast worden embedded payments en snellere internationale betalingsverwerkers benadrukt als belangrijke trends. De focus ligt op efficientie en schaalbaarheid voor retailers die hun online aanwezigheid willen uitbreiden. Tools zoals deze moeten klantreis en conversie verbeteren door naadloze integratie met bestaande systemen.
       </p>
       <p>
         Volgens de bron bieden deze innovaties vooral voordelen voor merken die actief zijn in meerdere markten of complexe logistiek hanteren. De tools zijn vaak gericht op automatisering van repetitieve taken, waardoor teams zich kunnen richten op strategische groei.
@@ -3975,7 +3975,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Het resultaat komt bovenop een reeds zwakke periode, waarin Alibaba eerder dit jaar ook al tegenvallende cijfers presenteerde. De groei van de clouddivisie, traditioneel een belangrijke inkomstenbron, vertraagde eveneens. Ondernemers en investeerders kijken met argusogen naar de strategie van het bedrijf om weer aan te haken bij de markt.
       </p>
       <p>
-        De teleurstellende kwartaalcijfers zetten druk op het management van Alibaba, dat recent nog reorganisaties aankondigde om efficiënter te werken. Concurrenten zoals JD.com en Pinduoduo blijven hard groeien, wat de positie van Alibaba verder onder druk zet.
+        De teleurstellende kwartaalcijfers zetten druk op het management van Alibaba, dat recent nog reorganisaties aankondigde om efficienter te werken. Concurrenten zoals JD.com en Pinduoduo blijven hard groeien, wat de positie van Alibaba verder onder druk zet.
       </p>
     </>
   ),
@@ -3998,7 +3998,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Juni brengt een concentratie van emotionele momenten: het WK, bruiloften, festivals, zomerse evenementen. Content die daarop inspeelt presteert structureel beter dan generieke campagnes, mits de timing klopt en de boodschap authentiek aanvoelt.
       </p>
       <p>
-        Het artikel noemt vijf concrete ideeën om deze thema's te benutten. Zo kunnen merken inspelen op de opwinding rond sporttoernooien of de feestelijke sfeer van huwelijksvieringen. Ook lokale evenementen zoals festivals of markten bieden aanknopingspunten voor relevante content.
+        Het artikel noemt vijf concrete ideeen om deze thema's te benutten. Zo kunnen merken inspelen op de opwinding rond sporttoernooien of de feestelijke sfeer van huwelijksvieringen. Ook lokale evenementen zoals festivals of markten bieden aanknopingspunten voor relevante content.
       </p>
       <p>
         Practical Ecommerce benadrukt dat timing en authenticiteit cruciaal zijn. Door vroeg te starten met planning en te focussen op waardevolle informatie, kan de impact van campagnes worden vergroot.
@@ -4014,7 +4014,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De analyse wijst uit dat merken die AI gebruiken voor dynamische prijsstelling of gepersonaliseerde aanbevelingen vaak hogere conversies zien. Tegelijkertijd blijkt dat klantacquisitie langer duurt dan voorheen, omdat concurrentie en adcosts zijn gestegen. Bedrijven met een duidelijke niche of uniek assortiment slagen beter in het converteren van bezoekers.
       </p>
       <p>
-        Practical Ecommerce benadrukt dat AI vooral helpt om oorzaak en gevolg beter te meten. Door automatische rapportages kunnen bedrijven snel zien welke campagnes werken en waar aanpassingen nodig zijn. Dit leidt tot efficiënter budgetgebruik en minder verspilling.
+        Practical Ecommerce benadrukt dat AI vooral helpt om oorzaak en gevolg beter te meten. Door automatische rapportages kunnen bedrijven snel zien welke campagnes werken en waar aanpassingen nodig zijn. Dit leidt tot efficienter budgetgebruik en minder verspilling.
       </p>
     </>
   ),
@@ -4113,7 +4113,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Merken die AI inzetten voor dynamische prijsstelling of gepersonaliseerde aanbevelingen zien vaak hogere conversies. Tegelijkertijd blijkt klantacquisitie langer te duren door gestegen concurrentie en adcosts. Bedrijven met een duidelijke niche of uniek assortiment converteren bezoekers beter.
       </p>
       <p>
-        AI helpt vooral om oorzaak en gevolg beter te meten via automatische rapportages. Bedrijven zien snel welke campagnes werken en waar aanpassingen nodig zijn. Dit leidt tot efficiënter budgetgebruik en minder verspilling aldus Practical Ecommerce.
+        AI helpt vooral om oorzaak en gevolg beter te meten via automatische rapportages. Bedrijven zien snel welke campagnes werken en waar aanpassingen nodig zijn. Dit leidt tot efficienter budgetgebruik en minder verspilling aldus Practical Ecommerce.
       </p>
     </>
   ),
@@ -4126,7 +4126,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Desondanks laten meetdata zien dat advertenties beter converteren. De gemiddelde conversieratio steeg naar 4,3%, een stijging van 8% ten opzichte van vorig jaar. Dit suggereert dat campagnes gerichter worden uitgevoerd, ondanks de hogere kosten.
       </p>
       <p>
-        De verbeterde efficiëntie is toe te schrijven aan betere targeting en AI-gestuurde biedstrategieën. Hogere kosten, maar ook preciezere inzet.
+        De verbeterde efficientie is toe te schrijven aan betere targeting en AI-gestuurde biedstrategieen. Hogere kosten, maar ook preciezere inzet.
       </p>
     </>
   ),
@@ -4146,13 +4146,13 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'google-ads-kosten-stijgen-conversies-verbeteren-2025': (
     <>
       <p className="lead-para">
-        Uit een analyse van Search Engine Land blijkt dat de gemiddelde kosten per klik (CPC) in Google Ads dit jaar verder zijn opgelopen. Vooral in sectoren als e-commerce en financiële diensten is de stijging het meest opvallend. Ondanks deze prijsstijging melden adverteerders echter een verbetering in conversie-efficiëntie. Volgens het rapport is dit vooral toe te schrijven aan betere targeting en geoptimaliseerde landingspagina's.
+        Uit een analyse van Search Engine Land blijkt dat de gemiddelde kosten per klik (CPC) in Google Ads dit jaar verder zijn opgelopen. Vooral in sectoren als e-commerce en financiele diensten is de stijging het meest opvallend. Ondanks deze prijsstijging melden adverteerders echter een verbetering in conversie-efficientie. Volgens het rapport is dit vooral toe te schrijven aan betere targeting en geoptimaliseerde landingspagina's.
       </p>
       <p>
-        Het onderzoek toont aan dat adverteerders die investeren in data-gedreven campagnes, zoals dynamische zoekadvertenties en smart bidding-strategieën, relatief minder last hebben van de hogere kosten. De uplift in conversies varieert sterk per branche: bij online retailers ligt de stijging rond de 10%, terwijl B2B-diensten iets achterblijven met een gemiddelde van 5%. Desondanks blijft de druk op marketingbudgetten groot.
+        Het onderzoek toont aan dat adverteerders die investeren in data-gedreven campagnes, zoals dynamische zoekadvertenties en smart bidding-strategieen, relatief minder last hebben van de hogere kosten. De uplift in conversies varieert sterk per branche: bij online retailers ligt de stijging rond de 10%, terwijl B2B-diensten iets achterblijven met een gemiddelde van 5%. Desondanks blijft de druk op marketingbudgetten groot.
       </p>
       <p>
-        De hogere kosten zijn niet alleen vraaggestuurd. Beperkte advertentieruimte binnen Google's platform drijft de biedingen op. Voor adverteerders die snel kunnen schakelen en continu monitoren, biedt die druk ook ruimte: wie structureel efficiënter inkoopt wint terrein op concurrenten die dat niet doen.
+        De hogere kosten zijn niet alleen vraaggestuurd. Beperkte advertentieruimte binnen Google's platform drijft de biedingen op. Voor adverteerders die snel kunnen schakelen en continu monitoren, biedt die druk ook ruimte: wie structureel efficienter inkoopt wint terrein op concurrenten die dat niet doen.
       </p>
     </>
   ),
@@ -4285,10 +4285,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'conde-nast-search-onder-tien-procent': (
     <>
       <p className="lead-para">
-        Condé Nast verwacht dat zoekmachines binnenkort minder dan tien procent van zijn totale website-verkeer leveren, volgens Search Engine Land (13 mei 2026). De uitgever van Vogue, GQ, The New Yorker en Wired baseert die uitspraak op trends die al maanden ingezet zijn na de uitrol van AI Overviews in Google Search en gelijksoortige antwoord-functies bij Bing en Perplexity.
+        Conde Nast verwacht dat zoekmachines binnenkort minder dan tien procent van zijn totale website-verkeer leveren, volgens Search Engine Land (13 mei 2026). De uitgever van Vogue, GQ, The New Yorker en Wired baseert die uitspraak op trends die al maanden ingezet zijn na de uitrol van AI Overviews in Google Search en gelijksoortige antwoord-functies bij Bing en Perplexity.
       </p>
       <p>
-        De daling is breder dan alleen Condé Nast. Meerdere grote uitgevers melden dat AI-antwoorden steeds vaker de hele lezersvraag afdekken zonder dat de klik naar de bron volgt. Voor titels die historisch tot zestig procent van hun verkeer uit search haalden is dat een fundamentele herziening van het verdienmodel.
+        De daling is breder dan alleen Conde Nast. Meerdere grote uitgevers melden dat AI-antwoorden steeds vaker de hele lezersvraag afdekken zonder dat de klik naar de bron volgt. Voor titels die historisch tot zestig procent van hun verkeer uit search haalden is dat een fundamentele herziening van het verdienmodel.
       </p>
       <p>
         De uitgever schuift zwaarder naar directe abonnementen, nieuwsbrieven en eigen apps. Op de adverteerderskant valt het verschil tussen zichtbaar zijn in een AI-antwoord en geklikt worden in een ranking nu uit elkaar als twee aparte disciplines, met eigen meetlatten en eigen budgetlijntjes.
@@ -4343,7 +4343,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       </p>
       <p>
         Aanleiding is de explosie van AI-gegenereerde tracks die onder bestaande artiestennamen
-        worden geüpload. Volgens Spotify gaat het om tienduizenden uploads per maand. De maatregel
+        worden geupload. Volgens Spotify gaat het om tienduizenden uploads per maand. De maatregel
         komt bovenop het eerder ingevoerde filter dat tracks met minder dan 1.000 streams uitsluit
         van royalty-uitkering.
       </p>
@@ -4357,12 +4357,12 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
     <>
       <p className="lead-para">
         De Academy of Motion Picture Arts and Sciences heeft bevestigd dat acteerprestaties die met
-        generatieve AI tot stand komen, niet in aanmerking komen voor een Oscar in de categorieën
+        generatieve AI tot stand komen, niet in aanmerking komen voor een Oscar in de categorieen
         Beste Acteur, Beste Actrice en Beste Bijrol.
       </p>
       <p>
         De regel staat in de bijgewerkte criteria voor het seizoen 2026-2027. Een &quot;performance&quot;
-        moet volgens de Academy het werk zijn van een geïdentificeerde menselijke acteur. Digitale
+        moet volgens de Academy het werk zijn van een geidentificeerde menselijke acteur. Digitale
         verjonging, stem-aanpassing en motion-capture vallen niet onder de uitsluiting, mits de
         onderliggende prestatie van een mens komt.
       </p>
@@ -4460,23 +4460,23 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'reddit-voor-merken-7-stappen-succes':
     "Voor merken die nieuwe kanalen willen ontdekken, biedt Reddit een unieke kans om direct in contact te komen met specifieke doelgroepen. Het verschil met andere platforms ligt in de cultuur: hier draait alles om dialoog en gemeenschapszin. Bureaus kunnen klanten helpen door niet alleen campagnes uit te voeren, maar ook door hen te begeleiden in het begrijpen van deze dynamiek.",
   'brand-legt-google-cloud-india-netwerk-langs-en-gevolgen-blijven-zichtbaar':
-    "Voor bedrijven die cloudinfrastructuur gebruiken is dit een herhaling van eerdere incidenten: afhankelijkheid van één provider kan snel leiden tot grote verstoringen. Het is verstandig om altijd een back-upplan te hebben, zoals een multi-cloud strategie of lokale opslagopties. Daarnaast blijkt weer dat fysieke veiligheid en redundantie in datacenters cruciaal zijn – iets waar niet alle providers even transparant over zijn.",
+    "Voor bedrijven die cloudinfrastructuur gebruiken is dit een herhaling van eerdere incidenten: afhankelijkheid van een provider kan snel leiden tot grote verstoringen. Het is verstandig om altijd een back-upplan te hebben, zoals een multi-cloud strategie of lokale opslagopties. Daarnaast blijkt weer dat fysieke veiligheid en redundantie in datacenters cruciaal zijn, iets waar niet alle providers even transparant over zijn.",
   'ai-experts-denken-over-economische-gevolgen-van-ai-in-2030':
-    "Voor bedrijven in Nederland en België is dit scenario relevant omdat het laat zien hoe snel technologische veranderingen kunnen leiden tot structurele verschuivingen op de arbeidsmarkt. Zonder proactief beleid dreigt een situatie waarin economische groei niet gepaard gaat met voldoende werkgelegenheid of kwalitatieve banen. Dat vraagt om investeringen in flexibele opleidingstrajecten en samenwerking tussen overheid, bedrijven en onderwijsinstellingen om werknemers toekomstbestendig te maken.",
+    "Voor bedrijven in Nederland en Belgie is dit scenario relevant omdat het laat zien hoe snel technologische veranderingen kunnen leiden tot structurele verschuivingen op de arbeidsmarkt. Zonder proactief beleid dreigt een situatie waarin economische groei niet gepaard gaat met voldoende werkgelegenheid of kwalitatieve banen. Dat vraagt om investeringen in flexibele opleidingstrajecten en samenwerking tussen overheid, bedrijven en onderwijsinstellingen om werknemers toekomstbestendig te maken.",
   'ai-citeert-merken-via-onafhankelijke-bronnen':
     "Dit vraagt om een andere strategie dan alleen zoekmachineoptimalisatie. Bouw allereerst je eigen pagina’s goed op met schema-markup en duidelijke auteurspagina’s. Focus daarnaast op aanwezigheid waar AI-systemen zoeken: reviewsites, vakbladen en communities waar anderen over je merk praten.",
   'machine-leesbaar-maken-ai-vindbaarheid':
     "Voor ondernemers betekent dit dat AI-vindbaarheid geen kwestie is van meer content maken, maar van de juiste structuur aanbrengen. Eenmalig investeren in structured data en llms.txt levert op termijn tijdwinst op bij elke nieuwe pagina of update. Het is geen technische specialisatie meer: tools en handleidingen zijn breed beschikbaar, waardoor het binnen handbereik ligt van elk bureau of marketingteam.",
   'slecht-geindexeerd-is-zelden-een-schrijfprobleem':
-    "Bij Stevin zien we vaak dat bedrijven hun energie stoppen in contentcreatie terwijl hun technische basis ondermaats blijft. Een goed geïndexeerde site begint met een slimme architectuur: minder pagina’s met meer focus per stuk, heldere interne linkschema’s en een sitemap die zoekmachines helpt prioriteren wat echt belangrijk is.\n\nAutoriteit bouw je niet door algoritmes te misleiden met keywords of AI-gegenereerde teksten, maar door echte mensen met echte namen te koppelen aan relevante inhoud. Dat vraagt om geduld – autoriteit groeit niet binnen weken – maar wel om duurzame impact.\n\nOnze aanpak bij klanten is simpel: eerst opruimen wat indexatie blokkeert (vaak technisch gedoe), dan selectief verdiepen op kernpagina’s met meetbare doelstellingen (bijvoorbeeld conversie per bezoeker), en pas daarna optimaliseren voor nieuwe kanalen zoals AI-antwoorden.\n\nHet mooiste bewijs? Klanten die deze route volgen zien binnen drie maanden een stijging van zowel organische traffic als conversies – zonder dat we één zin hebben aangeraakt.",
+    "Bij Stevin zien we vaak dat bedrijven hun energie stoppen in contentcreatie terwijl hun technische basis ondermaats blijft. Een goed geindexeerde site begint met een slimme architectuur: minder pagina’s met meer focus per stuk, heldere interne linkschema’s en een sitemap die zoekmachines helpt prioriteren wat echt belangrijk is.\n\nAutoriteit bouw je niet door algoritmes te misleiden met keywords of AI-gegenereerde teksten, maar door echte mensen met echte namen te koppelen aan relevante inhoud. Dat vraagt om geduld (autoriteit groeit niet binnen weken) maar wel om duurzame impact.\n\nOnze aanpak bij klanten is simpel: eerst opruimen wat indexatie blokkeert (vaak technisch gedoe), dan selectief verdiepen op kernpagina’s met meetbare doelstellingen (bijvoorbeeld conversie per bezoeker), en pas daarna optimaliseren voor nieuwe kanalen zoals AI-antwoorden.\n\nHet mooiste bewijs? Klanten die deze route volgen zien binnen drie maanden een stijging van zowel organische traffic als conversies, zonder dat we een zin hebben aangeraakt.",
   'ai-rationering-dwingt-techbedrijven-tot-budgetdiscipline':
     "Voor bedrijven die AI inzetten betekent dit dat ze nu serieus moeten nadenken over governance en meetdata. Het is niet langer genoeg om alleen te kijken naar productiviteitswinst: elke euro aan AI moet direct terugverdiend kunnen worden. Voor techbedrijven zelf geldt dat transparantie over kosten en rendement essentieel wordt om investeerders te behouden. De komende maanden zullen uitwijzen of rationering een tijdelijke correctie is of het begin van een structurele verschuiving in hoe AI wordt ingezet.",
   'ai-in-film-industrie-2026-geen-revolutie':
     "Voor bedrijven in de media- en entertainmentsector is het duidelijk dat AI wel degelijk een rol kan spelen in ondersteunende taken, maar niet als vervanging van creatief talent. Het is verstandig om eerst te investeren in tools die menselijke workflows verbeteren, voordat je kiest voor volledige automatisering. De komende jaren zullen uitwijzen of AI uiteindelijk wel in staat is om echt meeslepende verhalen te vertellen.",
   'neuralink-tussen-hoop-en-hype-wat-bureaus-ervan-moeten-weten':
-    "Bij Stevin zien we Neuralink niet als een marketingtrend, maar als een katalysator voor fundamentele veranderingen in hoe wij interactie hebben met digitale systemen. De echte uitdaging ligt niet in het bouwen van betere algoritmes of snellere interfaces, maar in het begrijpen van de menselijke kant: hoe accepteren we technologie die zo intiem wordt als ons eigen denken? Voor bureaus betekent dit dat we moeten leren omgaan met data die verder gaat dan gedragspatronen of demografie – data die rechtstreeks uit onze neurale netwerken komt. Dat vraagt om een andere benadering van privacy, ethiek en zelfs design: interfaces moeten niet alleen functioneel zijn, maar ook voelbaar veilig en betrouwbaar voor gebruikers die afhankelijk worden van deze systemen.",
+    "Bij Stevin zien we Neuralink niet als een marketingtrend, maar als een katalysator voor fundamentele veranderingen in hoe wij interactie hebben met digitale systemen. De echte uitdaging ligt niet in het bouwen van betere algoritmes of snellere interfaces, maar in het begrijpen van de menselijke kant: hoe accepteren we technologie die zo intiem wordt als ons eigen denken? Voor bureaus betekent dit dat we moeten leren omgaan met data die verder gaat dan gedragspatronen of demografie, data die rechtstreeks uit onze neurale netwerken komt. Dat vraagt om een andere benadering van privacy, ethiek en zelfs design: interfaces moeten niet alleen functioneel zijn, maar ook voelbaar veilig en betrouwbaar voor gebruikers die afhankelijk worden van deze systemen.",
   'yang-ziet-kans-in-kostenverlaging-als-startup-goudkoorts':
-    "Voor ondernemers in Nederland en België is dit een herkenbaar fenomeen: lokale initiatieven zoals huurderscoöperaties of collectieve energieinkoop laten zien dat kostenbesparing niet alleen mogelijk is, maar ook schaalbaar. Het benadrukt dat klantbehoud vaak begint met transparantie en waardecreatie buiten de traditionele businessmodellen om. Wie nu investeert in efficiëntie of samenwerking, bouwt niet alleen aan loyaliteit maar ook aan toekomstbestendigheid.",
+    "Voor ondernemers in Nederland en Belgie is dit een herkenbaar fenomeen: lokale initiatieven zoals huurderscooperaties of collectieve energieinkoop laten zien dat kostenbesparing niet alleen mogelijk is, maar ook schaalbaar. Het benadrukt dat klantbehoud vaak begint met transparantie en waardecreatie buiten de traditionele businessmodellen om. Wie nu investeert in efficientie of samenwerking, bouwt niet alleen aan loyaliteit maar ook aan toekomstbestendigheid.",
   'afm-kritiek-op-ai-toezicht-verdeling-met-dnb':
     "Voor bedrijven betekent dit dat ze zich moeten verdiepen in de nieuwe regels en hun AI-toepassingen tijdig moeten laten screenen. Het is verstandig om nu al een inventarisatie te maken van welke systemen mogelijk onder de verordening vallen. Daarnaast kunnen bureaus die gespecialiseerd zijn in compliance en risicomanagement een grotere rol gaan spelen bij het helpen navigeren door deze complexe regelgeving.",
   'ai-agents-veiligheid-jfrog-nanoclaw':
@@ -4484,7 +4484,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'politiek-dreigt-wetenschap-bij-nationale-academies-te-beinvloeden':
     "Dit incident laat zien hoe kwetsbaar onafhankelijke wetenschap kan zijn in tijden van polarisatie. Voor ondernemers is het belangrijk om te beseffen dat zelfs gerenommeerde instellingen niet immuun zijn voor externe druk. Het benadrukt het belang van kritisch denken bij het evalueren van onderzoeksresultaten, vooral wanneer die direct verband houden met beleidsbeslissingen die hun bedrijven kunnen raken.",
   'ukraine-ai-drones-autonoom-oorlogsvoering':
-    "Voor bedrijven die actief zijn in defensie-gerelateerde technologie of AI-toepassingen is dit een belangrijke ontwikkeling. Het laat zien dat autonome systemen steeds verder gaan dan ondersteunende taken en direct operationeel kunnen worden ingezet. Tegelijkertijd onderstreept het de noodzaak om ethische kaders en regelgeving rondom dergelijke technologieën tijdig vorm te geven.",
+    "Voor bedrijven die actief zijn in defensie-gerelateerde technologie of AI-toepassingen is dit een belangrijke ontwikkeling. Het laat zien dat autonome systemen steeds verder gaan dan ondersteunende taken en direct operationeel kunnen worden ingezet. Tegelijkertijd onderstreept het de noodzaak om ethische kaders en regelgeving rondom dergelijke technologieen tijdig vorm te geven.",
   'pokemongo-data-militaire-toepassingen':
     "Dit voorbeeld laat zien hoe kwetsbaar gebruikersdata is in een wereld waarin data steeds vaker wordt gezien als grondstof voor innovatie en zelfs defensie. Voor bedrijven die werken met consumentendata is dit een waarschuwing om niet alleen te voldoen aan wettelijke eisen, maar ook om proactief te communiceren over hoe data wordt gebruikt. Transparantie wordt daarmee niet alleen een compliance-kwestie, maar ook een kwestie van vertrouwen.",
   'spacex-tesla-merger-2026':
@@ -4500,11 +4500,11 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'attributie-impact-niet-meer-gelijk-aan-meetdata-in-ppc':
     "Voor bureaus en in-house teams betekent dit dat standaard platformrapportages moeten worden aangevuld met andere meetmethodes om effectieve campagnes te kunnen ontwerpen. Door impact en attributie uit elkaar te halen, kunnen marketingbudgetten gerichter worden ingezet. Dit vraagt om samenwerking tussen data-analisten, marketeers en productteams om een compleet beeld te vormen.",
   'elon-musk-wordt-eerste-biljonair-door-spacex-ipo':
-    "Voor ondernemers toont deze gebeurtenis hoe snel waarde kan toenemen door innovatie en schaalvergroting. Het benadrukt ook het belang van diversificatie: Musks vermogen is niet afhankelijk van één bedrijf of sector. Tegelijkertijd roept het vragen op over concentratie van kapitaal en de impact daarvan op markten en concurrentie.",
+    "Voor ondernemers toont deze gebeurtenis hoe snel waarde kan toenemen door innovatie en schaalvergroting. Het benadrukt ook het belang van diversificatie: Musks vermogen is niet afhankelijk van een bedrijf of sector. Tegelijkertijd roept het vragen op over concentratie van kapitaal en de impact daarvan op markten en concurrentie.",
   'nova-en-de-toekomst-van-ruimtevaart':
-    "Bij Stevin zien we deze dynamiek terug in veel markten waar onze klanten actief zijn: van tech tot retail tot logistiek. De les van de Nova-raket is niet dat technologie per se alles verandert, maar dat afhankelijkheid gevaarlijk wordt wanneer disruptie onvermijdelijk lijkt. Onze rol als strategisch partner ligt erin om organisaties voor te bereiden op scenario’s waarin hun huidige modellen plotseling niet meer werken – zonder dat ze daarbij hun core business uit het oog verliezen. Dat betekent investeren in flexibiliteit, diversificatie en meetdata die niet alleen prestaties volgen, maar ook waarschuwen wanneer risico’s zich aandienen.",
+    "Bij Stevin zien we deze dynamiek terug in veel markten waar onze klanten actief zijn: van tech tot retail tot logistiek. De les van de Nova-raket is niet dat technologie per se alles verandert, maar dat afhankelijkheid gevaarlijk wordt wanneer disruptie onvermijdelijk lijkt. Onze rol als strategisch partner ligt erin om organisaties voor te bereiden op scenario’s waarin hun huidige modellen plotseling niet meer werken, zonder dat ze daarbij hun core business uit het oog verliezen. Dat betekent investeren in flexibiliteit, diversificatie en meetdata die niet alleen prestaties volgen, maar ook waarschuwen wanneer risico’s zich aandienen.",
   'europa-moet-asml-inzetten-als-strategische-onderhandelingskaart':
-    "Bij Stevin zien we deze spanning dagelijks terug in de praktijk van marketingteams en bureau-eigenaars die worstelen met afhankelijkheid van Amerikaanse techplatforms en cloudproviders. De risico’s zijn niet alleen politiek of strategisch—they zijn direct merkbaar in data-afhankelijkheid en operationele vrijheid. Wij adviseren organisaties om nu al na te denken over diversificatie: lokale hostingopties verkennen waar mogelijk, EU-gedekte cloudproviders overwegen voor kritieke workloads, en contracten zo op te zetten dat ze minder kwetsbaar zijn voor plotselinge exportbeperkingen of prijsverhogingen door Amerikaanse leveranciers. Dit is geen vraagstuk voor overmorgen—het gaat om concurrentievermogen vandaag.",
+    "Bij Stevin zien we deze spanning dagelijks terug in de praktijk van marketingteams en bureau-eigenaars die worstelen met afhankelijkheid van Amerikaanse techplatforms en cloudproviders. De risico’s zijn niet alleen politiek of strategisch, they zijn direct merkbaar in data-afhankelijkheid en operationele vrijheid. Wij adviseren organisaties om nu al na te denken over diversificatie: lokale hostingopties verkennen waar mogelijk, EU-gedekte cloudproviders overwegen voor kritieke workloads, en contracten zo op te zetten dat ze minder kwetsbaar zijn voor plotselinge exportbeperkingen of prijsverhogingen door Amerikaanse leveranciers. Dit is geen vraagstuk voor overmorgen, het gaat om concurrentievermogen vandaag.",
   'ai-chip-startups-netwerkversnelling-rack-scale':
     "Voor bedrijven die actief zijn in AI-hardware kan deze ontwikkeling betekenen dat de tijd tot marktintroductie drastisch wordt verkort. Het maakt het makkelijker om innovatieve chipontwerpen te testen zonder afhankelijk te zijn van dure en complexe netwerkinfrastructuur. Tegelijkertijd daalt de drempel voor nieuwe spelers om toe te treden tot een markt die momenteel wordt gedomineerd door grote, gevestigde partijen.",
   'europa-loopt-ten-opzichte-van-vs-achter-op-ai-investeringen':
@@ -4512,11 +4512,11 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'flutter-verlaat-london-stock-exchange':
     "Deze delisting onderstreept dat Londen als financieel centrum aan aantrekkingskracht verliest ten opzichte van New York. Voor Nederlandse bedrijven met internationale ambities kan dit een signaal zijn om hun eigen beursstrategie kritisch te herzien. Een focus op de meest liquide markt kan kapitaalkosten verlagen en groeimogelijkheden vergroten, maar brengt ook risico’s met zich mee zoals verlies van lokale investeerders.",
   'ai-bouwt-zichzelf-het-einde-van-de-menselijke-controle':
-    "Bij Stevin zien we deze ontwikkeling met gemengde gevoelens. Enerzijds biedt autonome AI enorme kansen: snellere innovatiecyclus betekent betere producten en diensten voor onze klanten, kortere time-to-market en lagere kosten door efficiënter gebruik van middelen. Anderzijds roept het fundamentele vragen op over ethiek en verantwoordelijkheid die we niet mogen negeren.\n\nOnze aanpak is tweeledig: eerst bewustwording creëren binnen teams over waar autonome systemen nu staan en waar ze naartoe kunnen groeien. Vervolgens bouwen we veiligheidsmechanismen in vanaf dag één – niet als lapmiddel achteraf, maar als integraal onderdeel van elke ontwikkelstap.\n\nWe geloven dat de sleutel ligt in transparantie en geleidelijke adoptie: begin met kleine taken waar menselijke supervisie makkelijk te behouden is, breid stap voor stap uit naarmate systemen betrouwbaarder worden bewezen.\n\nHet grootste risico is niet dat machines slimmer worden dan wij, maar dat we ze blind vertrouwen zonder voldoende checks and balances in te bouwen.",
+    "Bij Stevin zien we deze ontwikkeling met gemengde gevoelens. Enerzijds biedt autonome AI enorme kansen: snellere innovatiecyclus betekent betere producten en diensten voor onze klanten, kortere time-to-market en lagere kosten door efficienter gebruik van middelen. Anderzijds roept het fundamentele vragen op over ethiek en verantwoordelijkheid die we niet mogen negeren.\n\nOnze aanpak is tweeledig: eerst bewustwording creeren binnen teams over waar autonome systemen nu staan en waar ze naartoe kunnen groeien. Vervolgens bouwen we veiligheidsmechanismen in vanaf dag een, niet als lapmiddel achteraf, maar als integraal onderdeel van elke ontwikkelstap.\n\nWe geloven dat de sleutel ligt in transparantie en geleidelijke adoptie: begin met kleine taken waar menselijke supervisie makkelijk te behouden is, breid stap voor stap uit naarmate systemen betrouwbaarder worden bewezen.\n\nHet grootste risico is niet dat machines slimmer worden dan wij, maar dat we ze blind vertrouwen zonder voldoende checks and balances in te bouwen.",
   'aws-graviton-5-geen-ai-chips':
-    "Voor bedrijven die cloudoplossingen gebruiken of overwegen, is het belangrijk om onderscheid te maken tussen marketingclaims en daadwerkelijke capaciteiten. Een processor als Graviton 5 kan een goede keuze zijn voor efficiëntie en kostenbesparing bij algemene toepassingen, maar wie afhankelijk is van AI-taken zou moeten kijken naar processors met dedicated AI-hardware. Dit vraagt om een grondige analyse van workloads voorafgaand aan investeringen.",
+    "Voor bedrijven die cloudoplossingen gebruiken of overwegen, is het belangrijk om onderscheid te maken tussen marketingclaims en daadwerkelijke capaciteiten. Een processor als Graviton 5 kan een goede keuze zijn voor efficientie en kostenbesparing bij algemene toepassingen, maar wie afhankelijk is van AI-taken zou moeten kijken naar processors met dedicated AI-hardware. Dit vraagt om een grondige analyse van workloads voorafgaand aan investeringen.",
   'katalyst-link-ruimtevaartuig-geintegreerd-voor-lancering':
-    "Voor bedrijven die afhankelijk zijn van satellietdata of -communicatie kan deze ontwikkeling interessant zijn. Het toont aan dat commerciële oplossingen voor ruimteafvalbeheer snel in opkomst zijn. Tegelijkertijd blijft het risico op verlies van kostbare assets door technische storingen of externe factoren bestaan, wat onderstreept hoe kwetsbaar huidige ruimte-infrastructuur nog is.",
+    "Voor bedrijven die afhankelijk zijn van satellietdata of -communicatie kan deze ontwikkeling interessant zijn. Het toont aan dat commerciele oplossingen voor ruimteafvalbeheer snel in opkomst zijn. Tegelijkertijd blijft het risico op verlies van kostbare assets door technische storingen of externe factoren bestaan, wat onderstreept hoe kwetsbaar huidige ruimte-infrastructuur nog is.",
   'dutch-chip-startup-european-fab-flow-met-amerikaanse-hulp':
     "Voor ondernemers die actief zijn in hightech of supply chain management is dit een herkenbaar dilemma: hoe balans vinden tussen lokale ambities en praktische haalbaarheid? De keuze voor buitenlandse productie kan strategisch zijn, maar brengt ook risico’s met zich mee zoals geopolitieke spanningen of exportbeperkingen. Het benadrukt dat technologische soevereiniteit vaak een kwestie is van slimme samenwerking, niet alleen van lokale capaciteit.",
   'spacex-start-ipo-met-aandeelprijs-van-135-dollar':
@@ -4524,15 +4524,15 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'nasa-deep-space-network-artemis-ii':
     "Voor bedrijven die afhankelijk zijn van kritieke IT-infrastructuur, zoals e-commerceplatforms of logistieke systemen, is dit een herinnering aan het belang van schaalbaarheid en back-upplannen. Investeren in overcapaciteit en flexibele oplossingen kan op lange termijn kosten besparen door uitval te voorkomen. Bovendien benadrukt het verhaal dat betrouwbaarheid niet alleen afhangt van techniek, maar ook van slimme procesinrichting en snelle schakelmogelijkheden.",
   'spacex-spv-investors-risico-na-ipo':
-    "Voor bedrijven die via SPV’s of andere constructies kapitaal aantrekken is dit een waarschuwing om heldere afspraken te maken over transparantie en kosten. Investeerders moeten niet alleen letten op de groei van het bedrijf, maar ook op de juridische en financiële structuur achter hun participatie. Dit soort risico’s kan snel leiden tot reputatieschade en juridische strijd.",
+    "Voor bedrijven die via SPV’s of andere constructies kapitaal aantrekken is dit een waarschuwing om heldere afspraken te maken over transparantie en kosten. Investeerders moeten niet alleen letten op de groei van het bedrijf, maar ook op de juridische en financiele structuur achter hun participatie. Dit soort risico’s kan snel leiden tot reputatieschade en juridische strijd.",
   'waymo-lanceert-loyalty-program-met-cashback-en-gratis-annuleringen':
     "Voor bedrijven die klantloyaliteit willen stimuleren biedt dit programma een helder model: betaalde voordelen die direct meetbaar zijn in zowel omzet als klanttevredenheid. De combinatie van cashback en flexibiliteit kan vooral waardevol zijn in sectoren waar dienstverlening sterk afhankelijk is van herhalingsaankopen.",
   'amazon-alexa-wordt-shopping-agent-en-advertentieplatform':
-    "Voor bedrijven die al afhankelijk zijn van online verkoop via Amazon is deze verandering vooral relevant omdat ze hun zichtbaarheid moeten optimaliseren in een steeds concurrerender landschap. Het benadrukt opnieuw hoe belangrijk het is om mee te bewegen met platform-updates die consumentengedrag beïnvloeden. Wie nu niet inspeelt op voice-commerce loopt het risico om achterop te raken ten opzichte van concurrenten die deze kanalen wel benutten.",
+    "Voor bedrijven die al afhankelijk zijn van online verkoop via Amazon is deze verandering vooral relevant omdat ze hun zichtbaarheid moeten optimaliseren in een steeds concurrerender landschap. Het benadrukt opnieuw hoe belangrijk het is om mee te bewegen met platform-updates die consumentengedrag beinvloeden. Wie nu niet inspeelt op voice-commerce loopt het risico om achterop te raken ten opzichte van concurrenten die deze kanalen wel benutten.",
   'zte-wint-drie-selular-awards-2026-voor-ai-gedreven-netwerkinnovaties':
-    "Voor bedrijven die afhankelijk zijn van betrouwbare digitale infrastructuur biedt dit een blik op hoe AI-toepassingen operationele kosten kunnen verlagen en nieuwe diensten mogelijk maken. Het laat zien dat technologische innovatie niet alleen voor techbedrijven relevant is, maar ook voor organisaties die streven naar efficiëntere processen of snellere dataverwerking.",
+    "Voor bedrijven die afhankelijk zijn van betrouwbare digitale infrastructuur biedt dit een blik op hoe AI-toepassingen operationele kosten kunnen verlagen en nieuwe diensten mogelijk maken. Het laat zien dat technologische innovatie niet alleen voor techbedrijven relevant is, maar ook voor organisaties die streven naar efficientere processen of snellere dataverwerking.",
   'instagram-geeft-gebruikers-meer-invloed-op-algoritme':
-    "Voor bedrijven die afhankelijk zijn van sociale media is dit een duidelijke reminder dat algoritmes voortdurend veranderen. Het loont om niet alleen te focussen op engagement, maar ook op het creëren van content die aansluit bij specifieke interesses. Wie hierin slaagt, kan profiteren van een betere organische bereik zonder extra budget voor advertenties.",
+    "Voor bedrijven die afhankelijk zijn van sociale media is dit een duidelijke reminder dat algoritmes voortdurend veranderen. Het loont om niet alleen te focussen op engagement, maar ook op het creeren van content die aansluit bij specifieke interesses. Wie hierin slaagt, kan profiteren van een betere organische bereik zonder extra budget voor advertenties.",
   'endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen':
     "Voor ondernemers in energietransitie biedt deze ontwikkeling kansen om vroeg in te stappen op een nieuwe markt. Oceaanwarmte kan een aanvulling vormen op bestaande hernieuwbare bronnen zoals wind en zonne-energie, vooral in kustgebieden. De komende jaren zal moeten blijken of de technologie technisch en economisch haalbaar is.",
   'theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots':
@@ -4546,21 +4546,21 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'apple-ios-27-automatische-wachtwoordvervanging':
     "Voor bedrijven die veel afhankelijk zijn van Apple-apparaten kan deze update helpen om interne beveiligingsrisico's te verminderen. Het automatiseren van wachtwoordbeheer neemt echter niet weg dat organisaties zelf nog steeds beleid moeten instellen voor wachtwoordcomplexiteit en regelmatige updates. Een hybride aanpak blijft daarom essentieel.",
   'droneboot-redt-neergestorte-helicopterpiloten-eerste-zee-reddingsactie':
-    "Voor bedrijven die opereren in risicovolle omgevingen of logistieke uitdagingen hebben, laat deze ontwikkeling zien hoe autonome systemen menselijk ingrijpen kunnen aanvullen of zelfs vervangen. Het illustreert dat technologie niet alleen efficiëntie verhoogt, maar ook nieuwe oplossingen biedt voor problemen waar traditionele methoden tekortschieten. Voor ondernemers die actief zijn in sectoren als maritieme logistiek of offshore-activiteiten kan dit een aanzet zijn om na te denken over innovatieve toepassingen van autonome tools.",
+    "Voor bedrijven die opereren in risicovolle omgevingen of logistieke uitdagingen hebben, laat deze ontwikkeling zien hoe autonome systemen menselijk ingrijpen kunnen aanvullen of zelfs vervangen. Het illustreert dat technologie niet alleen efficientie verhoogt, maar ook nieuwe oplossingen biedt voor problemen waar traditionele methoden tekortschieten. Voor ondernemers die actief zijn in sectoren als maritieme logistiek of offshore-activiteiten kan dit een aanzet zijn om na te denken over innovatieve toepassingen van autonome tools.",
   'wat-klanten-echt-willen-van-persoonlijke-ai':
-    "Voor ondernemers is dit een belangrijke les: technologie moet mensen dienen, niet vervangen. Bedrijven die AI-implementaties overwegen, doen er goed aan om eerst te onderzoeken waar klanten écht behoefte aan hebben. Een te sterke focus op automatisering kan leiden tot onbedoelde gevolgen, zoals verminderde klantloyaliteit of juist meer vragen naar menselijke support.",
+    "Voor ondernemers is dit een belangrijke les: technologie moet mensen dienen, niet vervangen. Bedrijven die AI-implementaties overwegen, doen er goed aan om eerst te onderzoeken waar klanten echt behoefte aan hebben. Een te sterke focus op automatisering kan leiden tot onbedoelde gevolgen, zoals verminderde klantloyaliteit of juist meer vragen naar menselijke support.",
   'ai-overname-aecom-consigli-bouwsector-scherp':
-    "Voor Nederlandse en Belgische bouwbedrijven betekent deze overname vooral één ding: actie ondernemen voordat het te laat is. Het is geen kwestie van of je AI nodig hebt, maar wanneer je ermee begint. Begin klein met concrete toepassingen die direct meetbare voordelen opleveren, zoals tijdsbesparing of lagere kosten. Bouw daarnaast samenwerking op met gespecialiseerde partijen om kennis op te doen zonder zelf het wiel uit te vinden.",
+    "Voor Nederlandse en Belgische bouwbedrijven betekent deze overname vooral een ding: actie ondernemen voordat het te laat is. Het is geen kwestie van of je AI nodig hebt, maar wanneer je ermee begint. Begin klein met concrete toepassingen die direct meetbare voordelen opleveren, zoals tijdsbesparing of lagere kosten. Bouw daarnaast samenwerking op met gespecialiseerde partijen om kennis op te doen zonder zelf het wiel uit te vinden.",
   'deezer-lanceert-ai-muziekdetector-voor-andere-streamingdiensten':
     "Voor bedrijven die afhankelijk zijn van muziekstreaming voor marketing of klantbinding wordt het belangrijker om transparantie te bieden over de herkomst van content. AI-gemaakte muziek kan de authenticiteit van merken aantasten, zeker als het ongemerkt in playlists belandt. Een proactieve aanpak met detectietools helpt om risico’s op reputatieschade te beperken.",
   'bluesky-lanceert-communities-voor-gedeelde-interesses':
     "Voor merken en bureaus biedt deze ontwikkeling nieuwe kansen om niche doelgroepen te bereiken via gerichte communities. Het is een logische stap in de trend naar meer privacy en controle voor gebruikers, wat ook invloed heeft op hoe content wordt gedeeld en ontvangen. Bedrijven die nu al actief zijn op sociale media doen er goed aan om na te denken over hun strategie voor dergelijke gesloten ruimtes.",
   'india-blokkeert-starlink-voor-spacex-beursgang':
-    "Voor bedrijven die afhankelijk zijn van digitale infrastructuur is deze situatie een waarschuwing. Regelgeving kan plotseling veranderen en grote impact hebben op groeistrategieën. Het benadrukt het belang van risicomanagement bij internationale expansie, vooral in markten met strenge lokale eisen. Voor investeerders is dit een reminder dat technologische innovatie niet altijd gelijkstaat aan snelle toegang tot alle markten.",
+    "Voor bedrijven die afhankelijk zijn van digitale infrastructuur is deze situatie een waarschuwing. Regelgeving kan plotseling veranderen en grote impact hebben op groeistrategieen. Het benadrukt het belang van risicomanagement bij internationale expansie, vooral in markten met strenge lokale eisen. Voor investeerders is dit een reminder dat technologische innovatie niet altijd gelijkstaat aan snelle toegang tot alle markten.",
   'spacex-ipo-afhankelijk-van-ruimte-data-centers':
     "Voor bedrijven die afhankelijk zijn van data-intensieve processen kan dit nieuws interessant zijn als indicator voor toekomstige infrastructuurkeuzes. Ruimtelijke datacenters bieden mogelijkheden voor snellere en betrouwbaardere digitale diensten, maar de praktische implementatie blijft nog jaren ver weg. Ondernemers doen er goed aan deze ontwikkelingen te volgen, zeker als hun activiteiten vragen om lage latentie of hoge beschikbaarheid.",
   'enterprise-ai-centraal-op-vivatech-2026':
-    "Voor ondernemers en marketeers is dit een signaal dat AI niet langer een experimenteel speeltje is, maar een strategisch instrument dat integratie vereist in bestaande systemen en processen. Het benadrukt het belang van samenwerking tussen techleveranciers en eindgebruikers om oplossingen te ontwikkelen die daadwerkelijk waarde toevoegen. Wie nu al kijkt naar toepassingen binnen eigen organisatie, loopt minder risico om achterop te raken wanneer deze technologieën mainstream worden.",
+    "Voor ondernemers en marketeers is dit een signaal dat AI niet langer een experimenteel speeltje is, maar een strategisch instrument dat integratie vereist in bestaande systemen en processen. Het benadrukt het belang van samenwerking tussen techleveranciers en eindgebruikers om oplossingen te ontwikkelen die daadwerkelijk waarde toevoegen. Wie nu al kijkt naar toepassingen binnen eigen organisatie, loopt minder risico om achterop te raken wanneer deze technologieen mainstream worden.",
   'yang-automatisering-ai-ondernemen-inplaats-van-wachten-op-beleid':
     "Voor ondernemers is deze dynamiek herkenbaar: de snelheid van technologische verandering maakt het noodzakelijk om zelf initiatief te nemen. Het laat zien dat bedrijven niet alleen moeten anticiperen op toekomstige uitdagingen, maar ook actief kunnen bijdragen aan oplossingen. Dat vraagt om een cultuur waarin experimenteren en leren centraal staan, los van wat beleid voorschrijft.",
   'nasa-selecteert-bemanningsleden-voor-artemis-iii-maanlander-repetitie':
@@ -4570,31 +4570,31 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'jedify-24-miljoen-voor-ai-agent-context':
     "Voor bedrijven die nu worstelen met de balans tussen AI-adoptie en databeveiliging biedt dit een praktische tussenoplossing. Het laat zien dat er steeds meer gespecialiseerde tools komen die specifieke knelpunten wegnemen. Tegelijkertijd onderstreept het de groeiende vraag naar oplossingen die compliantie combineren met innovatie.",
   'drone-leveringen-wing-uitbreiding-walmart':
-    "Voor bedrijven die actief zijn in e-commerce of fysieke retail kan deze ontwikkeling een signaal zijn dat droneleveringen binnenkort mainstream worden. Het is verstandig om te onderzoeken hoe deze technologie past bij de eigen logistieke strategieën, zeker als je werkt met kleine, snelle leveringen. De kosten en schaalbaarheid zullen voor veel organisaties nog een drempel vormen, maar wie nu al nadenkt over innovatie, kan mogelijk als eerste profiteren.",
+    "Voor bedrijven die actief zijn in e-commerce of fysieke retail kan deze ontwikkeling een signaal zijn dat droneleveringen binnenkort mainstream worden. Het is verstandig om te onderzoeken hoe deze technologie past bij de eigen logistieke strategieen, zeker als je werkt met kleine, snelle leveringen. De kosten en schaalbaarheid zullen voor veel organisaties nog een drempel vormen, maar wie nu al nadenkt over innovatie, kan mogelijk als eerste profiteren.",
   'rekentool-helpt-e-commerce-keuze-verpakking':
-    "Voor ondernemers die hun verpakkingsbeleid willen optimaliseren, biedt deze tool een praktische eerste stap naar meer transparantie. Het is echter belangrijk om de uitkomsten niet als absolute waarheid te zien: lokale verschillen in afvalverwerking of transportafstanden kunnen de resultaten beïnvloeden. Een combinatie van meetdata en pragmatische keuzes blijft essentieel.",
+    "Voor ondernemers die hun verpakkingsbeleid willen optimaliseren, biedt deze tool een praktische eerste stap naar meer transparantie. Het is echter belangrijk om de uitkomsten niet als absolute waarheid te zien: lokale verschillen in afvalverwerking of transportafstanden kunnen de resultaten beinvloeden. Een combinatie van meetdata en pragmatische keuzes blijft essentieel.",
   'spacemit-risc-v-mini-desktop-2026':
     "Voor ondernemers die streven naar technologische onafhankelijkheid of duurzaamheid in hun IT-infrastructuur, biedt deze stap richting RISC-V nieuwe keuzemogelijkheden. Toch zal de adoptie sterk afhangen van softwareondersteuning en prijsontwikkeling in de komende jaren. Voor veel MKB-bedrijven blijft x86 waarschijnlijk nog lang de standaardoptie.",
   'google-zero-click-searches-stijgen-naar-68-procent-in-2026':
-    "Voor bedrijven die afhankelijk zijn van online zichtbaarheid is dit een wake-up call om hun strategie aan te passen. Investeer niet alleen in SEO, maar ook in merkbekendheid buiten Google, zoals via social media of direct verkeer. Daarnaast wordt het belang van een sterke eigen digitale aanwezigheid – zoals een goed functionerende website of app – steeds groter. Dit omdat gebruikers minder snel externe links volgen.",
+    "Voor bedrijven die afhankelijk zijn van online zichtbaarheid is dit een wake-up call om hun strategie aan te passen. Investeer niet alleen in SEO, maar ook in merkbekendheid buiten Google, zoals via social media of direct verkeer. Daarnaast wordt het belang van een sterke eigen digitale aanwezigheid (zoals een goed functionerende website of app) steeds groter. Dit omdat gebruikers minder snel externe links volgen.",
   'ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc':
     "Voor ondernemers die op zoek zijn naar financiering buiten de gebaande paden, biedt Ernests aanpak concrete inspiratie: bouw eerst een betrouwbaar netwerk en demonstreer daarmee waarde voordat je formele structuren opzet. Het laat zien dat vertrouwen en snelheid soms doorslaggevender zijn dan papieren fondsen.",
   'tech-industrie-krijgt-mangos-in-plaats-van-faang':
     "Voor ondernemers betekent deze verschuiving dat ze zich moeten richten op technologische innovatie om relevant te blijven. De komst van MANGOS toont aan dat alleen bedrijven met sterke fundamenten en duidelijke visies kunnen groeien in een snel veranderend landschap. Het is tijd om te investeren in vaardigheden die aansluiten bij deze nieuwe realiteit.",
   'starlink-verhoogt-kosten-hardware-en-service':
-    "Deze stap laat zien hoe technologiebedrijven steeds vaker teruggrijpen op recurrente modellen om klantbinding te versterken. Voor ondernemers kan dit een signaal zijn om kritisch te kijken naar hun eigen prijsstrategieën: recurrente inkomsten bieden stabiliteit, maar kunnen ook klantverlies veroorzaken als concurrenten lagere drempels hanteren. Het benadrukt het belang van transparantie bij prijswijzigingen om vertrouwen te behouden.",
+    "Deze stap laat zien hoe technologiebedrijven steeds vaker teruggrijpen op recurrente modellen om klantbinding te versterken. Voor ondernemers kan dit een signaal zijn om kritisch te kijken naar hun eigen prijsstrategieen: recurrente inkomsten bieden stabiliteit, maar kunnen ook klantverlies veroorzaken als concurrenten lagere drempels hanteren. Het benadrukt het belang van transparantie bij prijswijzigingen om vertrouwen te behouden.",
   'van-turing-naar-devotion-hoe-een-nieuwe-lab-de-ai-kaart-in-europa-kan-verleggen':
-    "Bij Stevin zien we deze verschuiving al jaren aankomen: organisaties die AI nog steeds benaderen als een toolbox voor campagnes missen de kern van wat echt telt – systeemdenken binnen complexe organisaties. Girolami’s vertrek naar Devotion Labs bevestigt onze overtuiging dat succesvolle AI-implementatie begint bij het herdefiniëren van hoe technologie wordt ingezet binnen bestaande processen. Wij helpen klanten niet alleen met data-driven oplossingen, maar met het ontwerpen van systemen waarin technologie organisch past bij menselijke workflows en strategische doelen. Dat vraagt om meer dan algoritmes; het vraagt om organisatorische wendbaarheid en een cultuur waarin experimenteren centraal staat.",
+    "Bij Stevin zien we deze verschuiving al jaren aankomen: organisaties die AI nog steeds benaderen als een toolbox voor campagnes missen de kern van wat echt telt: systeemdenken binnen complexe organisaties. Girolami’s vertrek naar Devotion Labs bevestigt onze overtuiging dat succesvolle AI-implementatie begint bij het herdefinieren van hoe technologie wordt ingezet binnen bestaande processen. Wij helpen klanten niet alleen met data-driven oplossingen, maar met het ontwerpen van systemen waarin technologie organisch past bij menselijke workflows en strategische doelen. Dat vraagt om meer dan algoritmes; het vraagt om organisatorische wendbaarheid en een cultuur waarin experimenteren centraal staat.",
   'rivian-r2-marktintroductie-2027':
-    "Voor autofabrikanten en dealers betekent deze stap dat de concurrentie rond betaalbare elektrische modellen verder toeneemt. De uitdaging ligt niet alleen in het leveren van technologische innovatie, maar ook in het creëren van een merkervaring die aansluit bij bredere consumentengroepen. Rivians keuze om te blijven investeren in menselijke besturing kan bovendien vertrouwen wekken bij kopers die nog terughoudend zijn over autonome systemen.",
+    "Voor autofabrikanten en dealers betekent deze stap dat de concurrentie rond betaalbare elektrische modellen verder toeneemt. De uitdaging ligt niet alleen in het leveren van technologische innovatie, maar ook in het creeren van een merkervaring die aansluit bij bredere consumentengroepen. Rivians keuze om te blijven investeren in menselijke besturing kan bovendien vertrouwen wekken bij kopers die nog terughoudend zijn over autonome systemen.",
   'evotrex-30-miljoen-voor-rv-met-hybride-stroom':
-    "Voor ondernemers in de mobiliteitssector toont dit aan hoe nieuwe technologieën bestaande markten kunnen vernieuwen. De combinatie van duurzaamheid en praktische toepasbaarheid lijkt hierbij een sleutelfactor. Voor bedrijven die actief zijn in de energiesector of toelevering aan de RV-industrie kan dit een aanzet zijn om zelf in te zetten op hybride of autonome oplossingen.",
+    "Voor ondernemers in de mobiliteitssector toont dit aan hoe nieuwe technologieen bestaande markten kunnen vernieuwen. De combinatie van duurzaamheid en praktische toepasbaarheid lijkt hierbij een sleutelfactor. Voor bedrijven die actief zijn in de energiesector of toelevering aan de RV-industrie kan dit een aanzet zijn om zelf in te zetten op hybride of autonome oplossingen.",
   'apple-siri-ai-update-2026':
     "Voor bedrijven die klantcontact automatiseren, toont deze stap aan dat zelfs grote merken worstelen met het snel implementeren van AI zonder de gebruikservaring te verwaarlozen. Het benadrukt het belang van een heldere strategie: technologie moet waarde toevoegen zonder gebruikers te overweldigen. Wie nu investeert in AI-tools, doet er goed aan eerst te kijken naar praktische toepassingen binnen bestaande systemen.",
   'tools-for-humanity-legt-medewerkers-ont':
-    "Voor ondernemers die werken met nieuwe technologieën of innovatieve dienstverlening is dit een herkenbare situatie: zelfs veelbelovende oplossingen lopen tegen commerciële realiteit aan als de vraag niet snel genoeg opschaalt. Het benadrukt het belang van een heldere monetarisatiestrategie naast technologische ontwikkeling. Tegelijkertijd toont het hoe persoonlijke netwerken en reputatie binnen tech-kringen kunnen helpen om in moeilijke tijden toch steun te vinden.",
+    "Voor ondernemers die werken met nieuwe technologieen of innovatieve dienstverlening is dit een herkenbare situatie: zelfs veelbelovende oplossingen lopen tegen commerciele realiteit aan als de vraag niet snel genoeg opschaalt. Het benadrukt het belang van een heldere monetarisatiestrategie naast technologische ontwikkeling. Tegelijkertijd toont het hoe persoonlijke netwerken en reputatie binnen tech-kringen kunnen helpen om in moeilijke tijden toch steun te vinden.",
   'merkcampagnes-niet-klaar-voor-ai-max':
-    "Voor bureaus en merken die AI Max willen toepassen op merkverkeer is het zaak om eerst te borgen dat de onderliggende data betrouwbaar is. Een veelgemaakte valkuil is het aannemen dat branded traffic per definitie veilig is voor automatisering, terwijl juist hier vaak de grootste blinde vlekken zitten in attributie. Begin klein, meet nauwkeurig en schaal pas uit als je weet wat werkt – dat geldt niet alleen voor AI, maar voor elke vorm van marketingautomatisering.",
+    "Voor bureaus en merken die AI Max willen toepassen op merkverkeer is het zaak om eerst te borgen dat de onderliggende data betrouwbaar is. Een veelgemaakte valkuil is het aannemen dat branded traffic per definitie veilig is voor automatisering, terwijl juist hier vaak de grootste blinde vlekken zitten in attributie. Begin klein, meet nauwkeurig en schaal pas uit als je weet wat werkt, dat geldt niet alleen voor AI, maar voor elke vorm van marketingautomatisering.",
   'netbeheerders-investeren-meer-in-netcongestie-met-verschillen-tussen-bedrijven':
     "Voor bedrijven die afhankelijk zijn van betrouwbare stroomtoevoer is deze investeringsgolf hoopgevend, maar de praktijk leert dat netuitbreiding vaak jaren duurt. Ondernemers doen er goed aan hun energievraag nu al te optimaliseren en eventueel eigen oplossingen te overwegen, zoals zonnepanelen of batterijopslag. De verschillen tussen netbeheerders laten zien dat lokale omstandigheden doorslaggevend zijn: wie een nieuwe locatie zoekt, moet niet alleen kijken naar beschikbare ruimte, maar ook naar de plannen van de desbetreffende netbeheerder.",
   'autoboeker-haalt-12-miljoen-in-voor-ai-platform-accountants':
@@ -4604,11 +4604,11 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'osborne-ai-zelfvoorzienendheid-is-weggegooid-geld':
     "Voor bedrijven betekent deze discussie dat ze moeten anticiperen op zowel kansen als risico’s rond technologische afhankelijkheid. Of je nu kiest voor lokale oplossingen of samenwerkt met internationale partijen: helderheid over je strategie is essentieel. Overheden stimuleren innovatie, maar ondernemers moeten zelf bepalen waar ze hun middelen inzetten. De balans tussen autonomie en samenwerking blijft een uitdaging waar beleid en praktijk elkaar raken.",
   'afm-beboet-bunq-trage-fraudeafhandeling':
-    "Voor bedrijven die met financiële dienstverlening te maken hebben, is dit een duidelijke waarschuwing dat naleving van wettelijke termijnen en transparantie naar klanten prioriteit moeten krijgen. Een gestructureerd proces voor het afhandelen van fraudemeldingen kan niet alleen boetes voorkomen, maar ook het vertrouwen in het merk versterken.",
+    "Voor bedrijven die met financiele dienstverlening te maken hebben, is dit een duidelijke waarschuwing dat naleving van wettelijke termijnen en transparantie naar klanten prioriteit moeten krijgen. Een gestructureerd proces voor het afhandelen van fraudemeldingen kan niet alleen boetes voorkomen, maar ook het vertrouwen in het merk versterken.",
   'verkoopfraude-e-commerce-samenwerking-keten':
     "Voor ondernemers betekent deze trend dat het tijd wordt om interne processen rond retouren en aflevering kritisch onder de loep te nemen. Fraude is niet alleen een kwestie van ‘wie heeft schuld’, maar vooral van preventie door middel van betere samenwerking en technologie. Wie nu investeert in heldere systemen, bespaart later op kosten en frustratie.",
   'voormalig-engineer-start-online-kunstacademie':
-    "Voor bedrijven die worstelen met werkdruk of medewerkers met uiteenlopende interesses kan dit verhaal een reminder zijn: talent hoeft niet beperkt te blijven tot één vakgebied. Investeren in persoonlijke ontwikkeling of ruimte bieden voor nevenactiviteiten kan soms leiden tot onverwachte kansen, zowel voor werknemers als voor organisaties.",
+    "Voor bedrijven die worstelen met werkdruk of medewerkers met uiteenlopende interesses kan dit verhaal een reminder zijn: talent hoeft niet beperkt te blijven tot een vakgebied. Investeren in persoonlijke ontwikkeling of ruimte bieden voor nevenactiviteiten kan soms leiden tot onverwachte kansen, zowel voor werknemers als voor organisaties.",
   'persoonlijke-prijzen-personalisatie-fair-pricing':
     "Voor ondernemers die met persoonlijke prijzen experimenteren, is voorzichtigheid geboden. Een kleine uplift in conversie kan ten koste gaan van langetermijnvertrouwen en merkwaarde. Het is beter om persoonsgebonden kortingen te koppelen aan loyaliteit of gedrag dan aan demografische kenmerken. Regelgeving zoals de AI Act zal deze praktijken verder onder de loep nemen, dus transparantie wordt niet alleen een morele keuze maar ook een juridische noodzaak.",
   'amerika-breidt-zwartelijst-chinese-techbedrijven-uit':
@@ -4620,35 +4620,35 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'nokia-verhoogt-jaarverwachting-door-vraag-naar-ai-en-datacenters':
     "Voor bedrijven die afhankelijk zijn van digitale infrastructuur of cloud-oplossingen betekent deze ontwikkeling dat investeringen in netwerken en datacenters prioriteit krijgen. Tegelijkertijd kunnen stijgende kosten voor halfgeleiders en componenten een uitdaging vormen bij het plannen van nieuwe projecten. Het is verstandig om rekening te houden met langere levertijden en hogere prijzen bij het maken van strategische keuzes.",
   'klantmerk-en-werkgeversmerk-moeten-hetzelfde-verhaal-vertellen':
-    "Voor ondernemers is dit een reminder dat merkenconsistentie niet alleen gaat om uiterlijk, maar ook om inhoud. Het helpt om één kernverhaal te formuleren dat zowel klanten als medewerkers aanspreekt. Dat vereist samenwerking tussen marketing en HR, maar levert uiteindelijk een sterker en geloofwaardiger merk op.",
+    "Voor ondernemers is dit een reminder dat merkenconsistentie niet alleen gaat om uiterlijk, maar ook om inhoud. Het helpt om een kernverhaal te formuleren dat zowel klanten als medewerkers aanspreekt. Dat vereist samenwerking tussen marketing en HR, maar levert uiteindelijk een sterker en geloofwaardiger merk op.",
   'google-waarschuwt-voor-derde-partij-seo-tools':
     "Voor bedrijven betekent dit dat ze kritischer moeten kijken naar externe SEO-oplossingen. Het is verstandig om eerst te controleren of een tool of dienst expliciet door Google wordt genoemd als aanbevolen optie. Daarnaast is het belangrijk om meetdata te blijven monitoren, omdat automatische optimalisatie vaak leidt tot onduidelijkheden in oorzaak en gevolg.",
   'meta-gezichtsherkenning-ai-brillen':
     "Gezichtsherkenning roept wereldwijd vragen op over privacy en surveillance, ook buiten Europa waar het in de openbare ruimte verboden is. Voor bedrijven die met Meta samenwerken of soortgelijke technologie overwegen, is het verstandig om nu al na te denken over transparantie en toestemming. Een helder privacybeleid en duidelijke communicatie naar gebruikers kunnen latere problemen voorkomen.",
-  'content-marketing-ideeën-juli-2026':
+  'content-marketing-ideeen-juli-2026':
     "Voor marketeers is juli een kans om buiten de gebaande paden te denken en content te maken die inspeelt op spontane koopbeslissingen. Het gaat niet om het pushen van producten, maar om waarde toevoegen op momenten dat consumenten openstaan voor inspiratie. Door seizoensgebonden thema’s centraal te stellen, bouw je een herkenbaar ritme op dat zowel klanten als zoekmachines waarderen.",
   'vier-manieren-om-ai-zoekzichtbaarheid-te-tracken':
     "Voor bedrijven die afhankelijk zijn van organische zoekresultaten wordt het belangrijker om niet alleen te focussen op directe conversies, maar ook op langetermijnwaarde zoals merkbekendheid en klantloyaliteit. De verschuiving naar AI-gestuurde zoekervaringen betekent dat traditionele KPI’s mogelijk moeten worden aangepast of uitgebreid. Het is verstandig om nu al te investeren in flexibele meetoplossingen die meegroeien met deze ontwikkelingen.",
   'google-demands-striktere-audience-targeting-regels-demand-gen':
     "Voor bureaus en in-house teams betekent dit dat campagnes nog zorgvuldiger moeten worden opgezet en getest. De nieuwe regels dwingen tot een meer gefocuste aanpak, waarbij creativiteit en strategische keuzes belangrijker worden dan brede targeting. Het is een goede gelegenheid om de eigen werkwijze tegen het licht te houden en te investeren in data-driven beslissingen.",
   'seo-autoriteit-distributie-en-brand-zijn-nu-de-drijvers-voor-organische-groei':
-    "Voor bureau-eigenaars en in-house teams betekent dit dat SEO niet langer alleen een kwestie is van techniek en content. Investeren in autoriteitsopbouw via backlinks, gastbijdragen of partnerships is net zo belangrijk als het creëren van hoogwaardige content. Daarnaast verdient distributie meer aandacht: plan structureel in hoe je content wordt verspreid en meet welke kanalen de meeste uplift genereren. Merkzichtbaarheid vergt tijd, maar bedrijven die hierin investeren, zien vaak een cumulatief effect dat verder gaat dan alleen zoekmachineoptimalisatie.",
+    "Voor bureau-eigenaars en in-house teams betekent dit dat SEO niet langer alleen een kwestie is van techniek en content. Investeren in autoriteitsopbouw via backlinks, gastbijdragen of partnerships is net zo belangrijk als het creeren van hoogwaardige content. Daarnaast verdient distributie meer aandacht: plan structureel in hoe je content wordt verspreid en meet welke kanalen de meeste uplift genereren. Merkzichtbaarheid vergt tijd, maar bedrijven die hierin investeren, zien vaak een cumulatief effect dat verder gaat dan alleen zoekmachineoptimalisatie.",
   'customer-match-voordeel-in-google-ads':
-    "Voor marketeers die afhankelijk zijn van Google Ads, is Customer Match een praktische oplossing om de impact van privacyregels te beperken. Het benadrukt opnieuw hoe belangrijk het is om eerstparty data te benutten en eigen kanalen zoals e-mailmarketing en CRM-systemen sterker in te zetten. Bureaus kunnen hierin adviseren door klanten te helpen bij het opzetten en onderhouden van deze strategieën.",
+    "Voor marketeers die afhankelijk zijn van Google Ads, is Customer Match een praktische oplossing om de impact van privacyregels te beperken. Het benadrukt opnieuw hoe belangrijk het is om eerstparty data te benutten en eigen kanalen zoals e-mailmarketing en CRM-systemen sterker in te zetten. Bureaus kunnen hierin adviseren door klanten te helpen bij het opzetten en onderhouden van deze strategieen.",
   'seo-en-affiliate-teams-samenbrengen-voor-meer-omzet':
-    "Voor bedrijven die nu nog losse teams hebben voor SEO en affiliate marketing, is het tijd om de samenwerking structureel aan te pakken. Begin met het delen van data tussen beide afdelingen en definieer gezamenlijke KPI’s zoals ‘kosten per acquisitie’ of ‘zichtbaarheid in LLM’s’. Dit voorkomt dat teams elkaars inspanningen ondermijnen en creëert ruimte voor innovatie in hoe het merk online wordt gevonden.",
+    "Voor bedrijven die nu nog losse teams hebben voor SEO en affiliate marketing, is het tijd om de samenwerking structureel aan te pakken. Begin met het delen van data tussen beide afdelingen en definieer gezamenlijke KPI’s zoals ‘kosten per acquisitie’ of ‘zichtbaarheid in LLM’s’. Dit voorkomt dat teams elkaars inspanningen ondermijnen en creeert ruimte voor innovatie in hoe het merk online wordt gevonden.",
   'ai-aangedreven-google-ads-verandert-ppc-rol':
-    "Deze ontwikkeling onderstreept dat automatisering in marketing niet louter een efficiencykwestie is, maar een fundamentele verandering in hoe we waarde creëren. Voor ondernemers betekent dit dat ze moeten investeren in kennis over systeemdenken en data-infrastructuur. Wie nu alleen nog maar campagnes beheert zonder zicht op het grotere plaatje, loopt het risico achterop te raken als concurrenten hun processen al hebben geoptimaliseerd voor deze nieuwe realiteit.",
+    "Deze ontwikkeling onderstreept dat automatisering in marketing niet louter een efficiencykwestie is, maar een fundamentele verandering in hoe we waarde creeren. Voor ondernemers betekent dit dat ze moeten investeren in kennis over systeemdenken en data-infrastructuur. Wie nu alleen nog maar campagnes beheert zonder zicht op het grotere plaatje, loopt het risico achterop te raken als concurrenten hun processen al hebben geoptimaliseerd voor deze nieuwe realiteit.",
   'chatgpt-wordt-advertentieplatform':
     "Het kanaal komt eraan, de vraag is niet of je meedoet maar hoe je het meet. Een aankoop die bij een ChatGPT-gesprek begint, valt nu buiten de meeste analytics. Wie vooroploopt, zet de meting nu klaar in plaats van te wachten tot het in Nederland live staat.",
   'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga':
-    "Voor ondernemers die met digitale activa werken, toont deze uitspraak hoe belangrijk het is om investeringen strikt gescheiden te houden tussen privé en zakelijk. Zelfs als betalingen via bedrijfsrekeningen lopen, kan een fiscale autoriteit concluderen dat sprake is van een privérekening als er geen duidelijke zakelijke motivering of administratie is. Dit benadrukt het belang van heldere contractuele afspraken en bewijsvoering bij complexe financiële transacties.",
+    "Voor ondernemers die met digitale activa werken, toont deze uitspraak hoe belangrijk het is om investeringen strikt gescheiden te houden tussen prive en zakelijk. Zelfs als betalingen via bedrijfsrekeningen lopen, kan een fiscale autoriteit concluderen dat sprake is van een priverekening als er geen duidelijke zakelijke motivering of administratie is. Dit benadrukt het belang van heldere contractuele afspraken en bewijsvoering bij complexe financiele transacties.",
   'nieuwe-ecommerce-tools-juni-2026':
-    "Voor bedrijven die hun e-commerce-stack willen vernieuwen, biedt deze golf aan tools kansen om processen efficiënter in te richten. Het is echter belangrijk om niet te veel nieuwe systemen tegelijk te implementeren zonder eerst de impact op de bestaande workflows te testen. Een gefaseerde aanpak voorkomt dat teams overweldigd raken door veranderingen.",
+    "Voor bedrijven die hun e-commerce-stack willen vernieuwen, biedt deze golf aan tools kansen om processen efficienter in te richten. Het is echter belangrijk om niet te veel nieuwe systemen tegelijk te implementeren zonder eerst de impact op de bestaande workflows te testen. Een gefaseerde aanpak voorkomt dat teams overweldigd raken door veranderingen.",
   'microsoft-scout-enterprise-ai-agent':
-    "Voor bedrijven die al investeren in Microsoft-ecosystemen biedt Scout een logische volgende stap: automatisering zonder handmatige triggers. Het verschuift de focus van 'AI als tool' naar 'AI als actieve collega', wat vooral nuttig kan zijn in teams waar veel coördinatie en herhalende taken voorkomen. Tegelijkertijd roept het vragen op over privacy en controle: hoe ver mag zo’n agent gaan zonder dat gebruikers het gevoel hebben hun autonomie te verliezen?",
+    "Voor bedrijven die al investeren in Microsoft-ecosystemen biedt Scout een logische volgende stap: automatisering zonder handmatige triggers. Het verschuift de focus van 'AI als tool' naar 'AI als actieve collega', wat vooral nuttig kan zijn in teams waar veel coordinatie en herhalende taken voorkomen. Tegelijkertijd roept het vragen op over privacy en controle: hoe ver mag zo’n agent gaan zonder dat gebruikers het gevoel hebben hun autonomie te verliezen?",
   'hoog-roas-campagnes-budget-verhogen':
-    "Voor adverteerders betekent dit dat ze moeten differentiëren tussen campagnes die schaalbaar zijn en campagnes die hun maximale bereik hebben bereikt. Het is verstandig om regelmatig te evalueren of de huidige prestaties nog wel gebaseerd zijn op echte groei of slechts op inflatie van kosten. Daarnaast helpt het om te investeren in kanalen of strategieën die nieuwe doelgroepen aanspreken, in plaats van alleen bestaande succesformules verder op te schalen.",
+    "Voor adverteerders betekent dit dat ze moeten differentieren tussen campagnes die schaalbaar zijn en campagnes die hun maximale bereik hebben bereikt. Het is verstandig om regelmatig te evalueren of de huidige prestaties nog wel gebaseerd zijn op echte groei of slechts op inflatie van kosten. Daarnaast helpt het om te investeren in kanalen of strategieen die nieuwe doelgroepen aanspreken, in plaats van alleen bestaande succesformules verder op te schalen.",
   'seo-dominante-factor-in-ai-aanbevelingen':
     "Dit fenomeen toont aan hoe snel digitale ecosystemen verschuiven. Waar marketeers vroeger focusten op lokale vindbaarheid of specifieke kanalen, wordt nu duidelijk dat fundamentele optimalisatie doorslaggevend is. Het benadrukt het belang van een integrale digitale strategie die zowel traditionele als nieuwe platforms beslaat.",
   'google-ads-verandert-servicevoorwaarden-voor-juli-2026':
@@ -4656,11 +4656,11 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'mistral-breidt-uit-naar-industrie-en-infrastructuur':
     "Voor bedrijven die afhankelijk zijn van Amerikaanse cloudproviders of hun data lokaal willen houden, biedt Mistrals benadering een aantrekkelijk alternatief. De combinatie van eigen modellen, lokale infrastructuur en on-premises implementaties sluit aan bij de groeiende vraag naar soevereine technologische oplossingen in Europa. Dit kan vooral relevant zijn voor sectoren met strenge datacompliance-eisen, zoals de industrie of overheden.",
   'mistral-ai-breidt-uit-naar-fysieke-wereld':
-    "Voor bedrijven in industrie en techniek betekent deze ontwikkeling dat investeringen in AI niet langer beperkt hoeven te blijven tot software of marketingtoepassingen. De komende jaren zal AI een steeds grotere rol spelen in fysieke productieprocessen, onderhoud en ontwerp. Dat vraagt om samenwerking tussen techleveranciers en traditionele industrieën om de juiste tools te ontwikkelen. Tegelijkertijd ontstaat er een nieuwe afhankelijkheid: wie controle heeft over de onderliggende infrastructuur (zoals chips) bepaalt mede de snelheid van innovatie.",
+    "Voor bedrijven in industrie en techniek betekent deze ontwikkeling dat investeringen in AI niet langer beperkt hoeven te blijven tot software of marketingtoepassingen. De komende jaren zal AI een steeds grotere rol spelen in fysieke productieprocessen, onderhoud en ontwerp. Dat vraagt om samenwerking tussen techleveranciers en traditionele industrieen om de juiste tools te ontwikkelen. Tegelijkertijd ontstaat er een nieuwe afhankelijkheid: wie controle heeft over de onderliggende infrastructuur (zoals chips) bepaalt mede de snelheid van innovatie.",
   'branding-versus-marketing-wat-is-het-verschil':
-    "Voor ondernemers is het belangrijk om te beseffen dat branding niet alleen een taak is voor grote bedrijven met een vast budget. Zelfs kleine ondernemers kunnen met beperkte middelen een consistente identiteit neerzetten door helder te definiëren wat hun merk uniek maakt. De combinatie van branding en marketing zorgt ervoor dat investeringen in reclame niet verloren gaan in een zee van gelijksoortige aanbiedingen. Het helpt ook bij het aantrekken van medewerkers die passen bij de bedrijfscultuur, wat op termijn kosten bespaart.",
+    "Voor ondernemers is het belangrijk om te beseffen dat branding niet alleen een taak is voor grote bedrijven met een vast budget. Zelfs kleine ondernemers kunnen met beperkte middelen een consistente identiteit neerzetten door helder te definieren wat hun merk uniek maakt. De combinatie van branding en marketing zorgt ervoor dat investeringen in reclame niet verloren gaan in een zee van gelijksoortige aanbiedingen. Het helpt ook bij het aantrekken van medewerkers die passen bij de bedrijfscultuur, wat op termijn kosten bespaart.",
   'ai-content-met-client-memory-beter-gegrond-in-markt':
-    "Voor bedrijven die AI inzetten voor contentcreatie is het belangrijk om niet alleen te vertrouwen op algemene modellen. Een eigen ‘client brain’ helpt om de output te verankeren in de specifieke context van het merk. Dit vraagt wel om eenmalige investering in het opzetten van zo’n systeem, maar bespaart op termijn tijd en frustratie. Het is een praktische stap om generatieve AI écht nuttig te maken voor marketingdoeleinden.",
+    "Voor bedrijven die AI inzetten voor contentcreatie is het belangrijk om niet alleen te vertrouwen op algemene modellen. Een eigen ‘client brain’ helpt om de output te verankeren in de specifieke context van het merk. Dit vraagt wel om eenmalige investering in het opzetten van zo’n systeem, maar bespaart op termijn tijd en frustratie. Het is een praktische stap om generatieve AI echt nuttig te maken voor marketingdoeleinden.",
   'google-demand-gen-integratie-commerce-media':
     "Voor bureaus en in-house teams betekent deze uitbreiding dat campagnes nog gerichter kunnen worden ingezet. Het combineren van retailerdata met Google’s platform biedt kansen om de uplift te vergroten. Tegelijkertijd vraagt het om zorgvuldige afweging van privacy en datagebruik, zeker nu wetgeving zoals de AVG strenger wordt gehandhaafd.",
   'kessels-kramer-failliet-na-60-jaar':
@@ -4670,19 +4670,19 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'kleding-en-accessoires-om-facial-recognition-te-misleiden':
     "Voor ondernemers is dit een signaal dat consumenten zich meer bewust worden van digitale privacy. Bedrijven die werken met gezichtsherkenning zouden proactief moeten communiceren over hoe ze data beschermen, om vertrouwen te behouden. Tegelijkertijd biedt het kansen voor creatieve sectoren: mode, design en tech kunnen samenwerken aan innovatieve oplossingen voor privacyvriendelijke producten.",
   'social-media-opgeblazen-drone-algoritme-claim':
-    "Dit soort ontsporing van technisch nieuws is niet nieuw. Eerst komt een beperkte wetenschappelijke claim, gevolgd door scherpere mediakoppen en uiteindelijk een absoluut angstbeeld op social media. Bij onderwerpen als AI en defensie is het extra belangrijk om de bron kritisch te lezen. Simulaties zijn geen realiteit, maar verdienen wel serieuze aandacht. Paniek helpt niemand, maar naïviteit evenmin.",
+    "Dit soort ontsporing van technisch nieuws is niet nieuw. Eerst komt een beperkte wetenschappelijke claim, gevolgd door scherpere mediakoppen en uiteindelijk een absoluut angstbeeld op social media. Bij onderwerpen als AI en defensie is het extra belangrijk om de bron kritisch te lezen. Simulaties zijn geen realiteit, maar verdienen wel serieuze aandacht. Paniek helpt niemand, maar naiviteit evenmin.",
   'softbank-investeert-tientallen-miljarden-in-franse-ai-data-centers':
     "Voor Nederlandse bedrijven die actief zijn in datacenters of cloudinfrastructuur biedt dit project kansen om mee te liften op de groeiende vraag naar Europese AI-capaciteit. Tegelijkertijd onderstreept het belang van duurzame energievoorziening: wie nu kiest voor locaties met toegang tot groene stroom of kernenergie, kan zich onderscheiden in een markt waar concurrentie en regelgeving straks toenemen.",
   'tiktok-shop-lanceert-in-nederland-op-15-juni':
     "Voor bedrijven die al actief zijn op TikTok biedt de Shop-functie een natuurlijke uitbreiding naar direct verkoopkanaal zonder extra investeringen in nieuwe platforms. Merken die nog geen ervaring hebben met sociale commerce kunnen profiteren van de aantrekkingskracht van short-form content zonder complexe integraties. Wel is het belangrijk om de communityrichtlijnen strikt te volgen om sancties te voorkomen.",
   'robotaxis-in-de-vs-komen-onder-druk-door-onveilige-incidenten':
-    "Voor bedrijven die nieuwe technologieën omarmen is dit een waarschuwing: schaalvergroting gaat vaak gepaard met onverwachte risico’s. Zelfrijdende systemen zijn nog niet uitontwikkeld en vereisen continue updates om edge cases te tackelen. Ondernemers die investeren in innovatie doen er goed aan om pilots klein te houden en feedback van gebruikers en omgeving serieus te nemen voordat ze opschalen.",
+    "Voor bedrijven die nieuwe technologieen omarmen is dit een waarschuwing: schaalvergroting gaat vaak gepaard met onverwachte risico’s. Zelfrijdende systemen zijn nog niet uitontwikkeld en vereisen continue updates om edge cases te tackelen. Ondernemers die investeren in innovatie doen er goed aan om pilots klein te houden en feedback van gebruikers en omgeving serieus te nemen voordat ze opschalen.",
   'instagram-gaat-naar-connected-tv-wat-merken-nu-moeten-doen':
-    "Voor merken is dit een signaal om hun contentstrategie te diversifiëren. Short form blijft belangrijk als ingang, maar long form kan de verdieping bieden die nodig is om aandacht vast te houden. Het combineren van verschillende formats – van Reels tot livestreams – maakt campagnes meetbaarder en effectiever. Daarnaast biedt AI kansen om productiekosten te verlagen en content efficiënter te hergebruiken.",
+    "Voor merken is dit een signaal om hun contentstrategie te diversifieren. Short form blijft belangrijk als ingang, maar long form kan de verdieping bieden die nodig is om aandacht vast te houden. Het combineren van verschillende formats (van Reels tot livestreams) maakt campagnes meetbaarder en effectiever. Daarnaast biedt AI kansen om productiekosten te verlagen en content efficienter te hergebruiken.",
   'tno-defensie-samenwerken-innovatie':
     "Voor ondernemers in Nederland betekent deze samenwerking dat er nieuwe kansen ontstaan om mee te liften op defensiegerelateerde innovaties. Het toont aan dat publieke investeringen in R&D ook directe economische impact kunnen hebben. Bedrijven die actief zijn in hightech of duurzame technologie zouden deze ontwikkelingen moeten volgen om vroegtijdig kansen te signaleren.",
   'europese-cloud-marketingvraagstuk-datasoevereiniteit':
-    "Voor bureaus wordt dit een kans om vertrouwen te winnen door transparantie te tonen. Niet door te benadrukken dat je AI gebruikt, maar door te laten zien hoe je AI veilig, uitlegbaar en klantgescheiden inzet binnen je processen. Dat vraagt om een helder verhaal over tools, datastromen en controlesystemen – niet als juridisch document, maar als onderdeel van professioneel advieswerk.",
+    "Voor bureaus wordt dit een kans om vertrouwen te winnen door transparantie te tonen. Niet door te benadrukken dat je AI gebruikt, maar door te laten zien hoe je AI veilig, uitlegbaar en klantgescheiden inzet binnen je processen. Dat vraagt om een helder verhaal over tools, datastromen en controlesystemen, niet als juridisch document, maar als onderdeel van professioneel advieswerk.",
   'tiktok-shop-lanceert-in-nederland-en-belgie-op-15-juni':
     "Voor bedrijven die actief zijn op sociale media wordt TikTok Shop een nieuwe kanaal om directe sales te genereren via content. Het cross-border karakter maakt het interessant voor merken die al in meerdere EU-landen actief zijn. Tegelijk vraagt het om aandacht voor lokale regelgeving en communityrichtlijnen om verwijdering te voorkomen.",
   'b2b-ppc-metingen-meten-niet-altijd-uplift':
@@ -4698,11 +4698,11 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'culturele-sector-eist-duidelijke-regels-voor-ai-gebruik':
     "Voor ondernemers in de culturele sector is dit een signaal om proactief beleid te ontwikkelen rondom AI. Zowel zzp’ers als bedrijven kunnen beter nu al afspraken maken over het gebruik van AI-tools, bijvoorbeeld in contracten met opdrachtgevers of leveranciers. Dit voorkomt later geschillen en zorgt voor een eerlijke verdeling van kansen.",
   'real-brand-is-de-kern-van-seo-in-ai-tijdperk':
-    "Voor bureaus en marketingteams betekent dit dat SEO-strategieën moeten verschuiven van technische optimalisatie naar merkopbouw. Investeer in content die je merk versterkt in plaats van alleen in zoekwoorden die passen bij je product. Een sterke merkidentiteit wordt de nieuwe basis voor online zichtbaarheid, ongeacht hoe AI de zoekresultaten vormgeeft.",
+    "Voor bureaus en marketingteams betekent dit dat SEO-strategieen moeten verschuiven van technische optimalisatie naar merkopbouw. Investeer in content die je merk versterkt in plaats van alleen in zoekwoorden die passen bij je product. Een sterke merkidentiteit wordt de nieuwe basis voor online zichtbaarheid, ongeacht hoe AI de zoekresultaten vormgeeft.",
   'google-lanceert-prospects-mode-voor-nieuwe-klanten':
-    "Voor adverteerders betekent deze uitbreiding dat ze hun acquisitiestrategie kunnen aanscherpen door niet alleen te focussen op bestaande leads of retargeting, maar ook op groei via nieuwe doelgroepen. Het is zaak om de meetdata nauwlettend in de gaten te houden: het risico bestaat dat campagnes minder efficiënt worden als de AI verkeerde signalen oppikt. Test daarom altijd kleine budgetten voorafgaand aan grote campagnes.",
+    "Voor adverteerders betekent deze uitbreiding dat ze hun acquisitiestrategie kunnen aanscherpen door niet alleen te focussen op bestaande leads of retargeting, maar ook op groei via nieuwe doelgroepen. Het is zaak om de meetdata nauwlettend in de gaten te houden: het risico bestaat dat campagnes minder efficient worden als de AI verkeerde signalen oppikt. Test daarom altijd kleine budgetten voorafgaand aan grote campagnes.",
   'openai-introduceert-conversiegericht-adverteren-in-chatgpt':
-    "Voor bedrijven die al gebruikmaken van ChatGPT als klantcontactkanaal biedt deze ontwikkeling kansen om advertenties naadloos te integreren in de gebruikservaring. Het is een logische stap voor platforms die zowel content als commerciële interacties faciliteren. Wel is het belangrijk om de balans te vinden tussen relevantie en storendheid, zodat de ervaring voor de gebruiker niet verslechtert.",
+    "Voor bedrijven die al gebruikmaken van ChatGPT als klantcontactkanaal biedt deze ontwikkeling kansen om advertenties naadloos te integreren in de gebruikservaring. Het is een logische stap voor platforms die zowel content als commerciele interacties faciliteren. Wel is het belangrijk om de balans te vinden tussen relevantie en storendheid, zodat de ervaring voor de gebruiker niet verslechtert.",
   'google-ads-zichtbaar-in-ai-overviews':
     "Voor bureau-eigenaars en in-house teams betekent dit dat campagnes niet alleen gericht moeten zijn op traditionele zoekresultaten, maar ook op de nieuwe realiteit van AI-gestuurde overzichten. Het is verstandig om nu al te investeren in het onderhoud van productfeeds en landingspagina’s, zodat je later niet achterloopt wanneer deze overzichten verder groeien. Daarnaast kan het nuttig zijn om te experimenteren met kleine budgetten om te zien hoe je campagnes presteren in deze nieuwe context.",
   'google-lanceert-realtime-policy-reviews-voor-snellere-ad-goedkeuringen':
@@ -4716,21 +4716,21 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'seo-changelogs-ondermijnd-door-onzichtbare-updates':
     "Voor bureaus die grote websites beheren is het verstandig om klanten te adviseren over gestructureerde changelog-systemen. Niet alleen voorkomt dit onverwachte dalingen in rankings, het maakt ook samenwerking tussen verschillende teams soepeler. Binnen eigen organisaties kan een dergelijk systeem helpen om snel te reageren op problemen en de impact van wijzigingen beter te begrijpen.",
   'openai-brengt-conversie-gerichte-ads-voor-chatgpt':
-    "Voor bedrijven die al gebruikmaken van AI-gestuurde klantinteractie biedt dit nieuwe model kansen om conversies directer te beïnvloeden. Het vereist echter wel een duidelijke strategie om gebruikerservaring en commerciële intentie in balans te houden. Daarnaast kan de komst van pay-for-results pricing druk zetten op traditionele betaalmodellen in digitale marketing.",
+    "Voor bedrijven die al gebruikmaken van AI-gestuurde klantinteractie biedt dit nieuwe model kansen om conversies directer te beinvloeden. Het vereist echter wel een duidelijke strategie om gebruikerservaring en commerciele intentie in balans te houden. Daarnaast kan de komst van pay-for-results pricing druk zetten op traditionele betaalmodellen in digitale marketing.",
   'ai-in-de-creative-industrie':
-    "Voor Nederlandse en Belgische bureaus is dit een wake-upcall. De druk om mee te gaan in de AI-trend neemt toe, maar de balans tussen efficiëntie en creativiteit blijft lastig. Wie te snel overschakelt op AI-gedreven campagnes, loopt het risico dat klanten merken als ‘standaard’ of ‘onpersoonlijk’ ervaren. Een gefaseerde aanpak, waarbij AI wordt ingezet als ondersteunend gereedschap in plaats van vervanging, lijkt de meest duurzame route.",
+    "Voor Nederlandse en Belgische bureaus is dit een wake-upcall. De druk om mee te gaan in de AI-trend neemt toe, maar de balans tussen efficientie en creativiteit blijft lastig. Wie te snel overschakelt op AI-gedreven campagnes, loopt het risico dat klanten merken als ‘standaard’ of ‘onpersoonlijk’ ervaren. Een gefaseerde aanpak, waarbij AI wordt ingezet als ondersteunend gereedschap in plaats van vervanging, lijkt de meest duurzame route.",
   'ai-herdefinieert-creativiteit-bij-bureaus':
     "Voor bureaus betekent deze ontwikkeling dat investeren in AI-competenties geen keuze meer is, maar een noodzaak om relevant te blijven. Het gaat niet om het vervangen van creatievelingen, maar om het versterken van hun rol met technologie die administratieve lasten vermindert. Tegelijkertijd moeten bureaus kritisch blijven op waar AI wel en niet geschikt is: authentieke merkervaringen blijven afhankelijk van menselijke craftsmanship en strategische visie.",
   'amerika-budget-9-miljard-voor-ai-spionage':
     "Voor bedrijven die afhankelijk zijn van high-performance computing of AI-infrastructuur is deze ontwikkeling een waarschuwingssignaal. De vraag naar schaarse hardware neemt toe, wat kan leiden tot hogere kosten of langere levertijden. Het is verstandig om nu al na te denken over alternatieven of samenwerkingen om toekomstige knelpunten te voorkomen. Daarnaast benadrukt dit hoe technologiebeleid op nationaal niveau directe impact kan hebben op private sectoren.",
   'ai-washing-bedrijven-rebranden-zich-als-tech':
-    "De trend laat zien hoe snel nieuwe technologieën kunnen verwateren tot een marketinglabel. Voor ondernemers betekent dit dat consumenten en klanten steeds kritischer worden op claims over innovatie. Het risico bestaat dat het vertrouwen in échte AI-toepassingen afneemt als elke verbetering direct wordt bestempeld als kunstmatige intelligentie. Transparantie in plaats van hype wordt daarmee een grotere differentiator.",
+    "De trend laat zien hoe snel nieuwe technologieen kunnen verwateren tot een marketinglabel. Voor ondernemers betekent dit dat consumenten en klanten steeds kritischer worden op claims over innovatie. Het risico bestaat dat het vertrouwen in echte AI-toepassingen afneemt als elke verbetering direct wordt bestempeld als kunstmatige intelligentie. Transparantie in plaats van hype wordt daarmee een grotere differentiator.",
   'openai-race-naar-agi-onthuld':
     "De onthullingen over OpenAI laten zien hoe technologiebedrijven soms doorschieten in hun ambities, waarbij ethiek en transparantie ondergeschikt raken aan groei en dominantie. Voor ondernemers is dit een waarschuwing: zelfs organisaties met ogenschijnlijk nobele doelen kunnen veranderen in gesloten systemen waar medewerkers zich gevangen voelen. Het benadrukt het belang van duidelijke kaders en checks-and-balances, ook bij innovatieve projecten.",
   'buitenlandse-merken-in-afrika':
     "Voor bedrijven die buiten Europa willen groeien, is Afrika een kansrijke maar complexe markt. Succes hangt af van het balanceren tussen gemak (marktplaatsen) en investeringen in langetermijnrelaties. Wie kiest voor directe verkoop of lokale partnerschappen, moet bereid zijn om tijd te steken in cultuur, logistiek en compliance.",
   'organische-traffic-alleen-als-business-impact':
-    "Voor bureau-eigenaars en in-house teams betekent dit dat ze hun SEO-strategie moeten verschuiven van kwantiteit naar kwaliteit. Het gaat niet om het aantal bezoekers, maar om de juiste bezoekers. Focus op pagina’s die direct bijdragen aan de bedrijfsdoelen en vermijd rapportages die alleen maar aantallen laten zien zonder context. Dat maakt het makkelijker om prioriteiten te stellen en middelen efficiënter in te zetten.",
+    "Voor bureau-eigenaars en in-house teams betekent dit dat ze hun SEO-strategie moeten verschuiven van kwantiteit naar kwaliteit. Het gaat niet om het aantal bezoekers, maar om de juiste bezoekers. Focus op pagina’s die direct bijdragen aan de bedrijfsdoelen en vermijd rapportages die alleen maar aantallen laten zien zonder context. Dat maakt het makkelijker om prioriteiten te stellen en middelen efficienter in te zetten.",
   'openai-breidt-chatgpt-ads-manager-beta-uit-met-budget-en-locatie-opties':
     "Voor bureaus en merken die experimenteren met AI-gestuurde advertentieplatformen is dit een logische volgende stap. De toevoegingen sluiten aan bij wat adverteerders al gewend zijn van traditionele advertentieplatformen, zoals Google Ads of Meta. Het is verstandig om deze nieuwe mogelijkheden direct te testen in kleine campagnes om de impact op conversies en kosten te meten.",
   'vodafone-batterijgarantie-drie-jaar-accuvervanging':
@@ -4738,19 +4738,19 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'microsoft-verbergt-copilot-knop-in-office-na-kritiek':
     "Voor bedrijven die afhankelijk zijn van Microsoft-software kan deze aanpassing betekenen dat medewerkers minder worden afgeleid door AI-prompts tijdens hun werkzaamheden. Het toont aan dat grote techbedrijven soms snel schakelen bij gebruikersonvrede, ook al blijft de onderliggende technologie behouden. Voor marketeers en bureaus die tools zoals Copilot integreren in workflows, is het verstandig om rekening te houden met dergelijke interface-wijzigingen die invloed kunnen hebben op adoptie en gebruiksvriendelijkheid.",
   'mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector':
-    "Deze overname laat zien hoe Europese spelers proberen aan te haken bij de mondiale AI-race, vooral in sectoren waar Europa traditioneel sterk staat zoals halfgeleiders en automotive. Het benadrukt ook de groeiende rol van niche-AI-bedrijven die zich richten op specifieke industriële uitdagingen. Voor Nederlandse en Belgische bedrijven in deze sectoren kan dit leiden tot nieuwe samenwerkingsmogelijkheden of snellere toegang tot geavanceerde simulatietechnieken.",
+    "Deze overname laat zien hoe Europese spelers proberen aan te haken bij de mondiale AI-race, vooral in sectoren waar Europa traditioneel sterk staat zoals halfgeleiders en automotive. Het benadrukt ook de groeiende rol van niche-AI-bedrijven die zich richten op specifieke industriele uitdagingen. Voor Nederlandse en Belgische bedrijven in deze sectoren kan dit leiden tot nieuwe samenwerkingsmogelijkheden of snellere toegang tot geavanceerde simulatietechnieken.",
   'mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies':
     "Voor bedrijven die met grote hoeveelheden historische data werken, toont deze casus hoe consolidatie leidt tot zowel kostenbesparingen als operationele verbeteringen. De stap naar een AI-ready infrastructuur vereist niet alleen technische schaalbaarheid, maar ook een duidelijke visie op hoe data straks wordt ontsloten en gebruikt. Dat vraagt om investeringen in moderne opslagoplossingen en een cultuur waarin data niet langer gefragmenteerd blijft.",
   'spotify-lanceert-ai-remixes-voor-premium-gebruikers':
-    "Voor bedrijven die content creëren of distribueren is dit een teken dat AI steeds meer wordt ingezet om gebruikerservaringen te personaliseren. Het biedt kansen om nieuwe inkomstenstromen te ontsluiten, maar brengt ook vragen met zich mee over auteursrecht en de waarde van originele muziek. Ondernemers doen er goed aan na te denken hoe ze dergelijke technologieën kunnen toepassen zonder hun core business te ondermijnen.",
+    "Voor bedrijven die content creeren of distribueren is dit een teken dat AI steeds meer wordt ingezet om gebruikerservaringen te personaliseren. Het biedt kansen om nieuwe inkomstenstromen te ontsluiten, maar brengt ook vragen met zich mee over auteursrecht en de waarde van originele muziek. Ondernemers doen er goed aan na te denken hoe ze dergelijke technologieen kunnen toepassen zonder hun core business te ondermijnen.",
   'ai-gemaakte-boeken-zonder-waarschuwing-te-koop':
     "Voor ondernemers die content produceren of distributiepartners gebruiken, is dit een waarschuwing om transparantie serieus te nemen. Klanten waarderen duidelijkheid over de herkomst van producten, ook als die digitaal tot stand komen. Het risico op reputatieschade door misleiding weegt zwaarder dan eventuele kosten voor extra labelling.",
   'cerebras-beursgang-ai-chipsector':
-    "Deze ontwikkeling laat zien hoe snel nieuwe spelers kunnen opschalen in een markt die gedomineerd wordt door gevestigde namen als NVIDIA. Voor bedrijven die afhankelijk zijn van rekenkracht kan dit leiden tot meer keuze en mogelijk lagere kosten op termijn. Tegelijkertijd benadrukt het de risico’s van investeren in nog verlieslatende technologieën met hoge verwachtingen.",
+    "Deze ontwikkeling laat zien hoe snel nieuwe spelers kunnen opschalen in een markt die gedomineerd wordt door gevestigde namen als NVIDIA. Voor bedrijven die afhankelijk zijn van rekenkracht kan dit leiden tot meer keuze en mogelijk lagere kosten op termijn. Tegelijkertijd benadrukt het de risico’s van investeren in nog verlieslatende technologieen met hoge verwachtingen.",
   'btw-fraude-netwerk-europa-operatie-admiral':
     "Wat hieronder ligt is een bredere beweging. Toezichthouders verschuiven van rapportage achteraf naar realtime zichtbaarheid op transactieniveau. Niet alleen voor btw, ook voor de keten van inkoop, betalingen en facturatie. Bedrijven die hun administratie nog inrichten rond maandafsluitingen lopen straks achter de feiten aan.\n\nDe vernietiging van het Lissabon-vonnis laat ook iets anders zien: complexe internationale fraudezaken stranden vaak op procedurefouten, niet op gebrek aan bewijs. Voor zowel opsporing als verdediging wordt de kwaliteit van het procesdossier minstens zo bepalend als de feiten zelf.",
   'signaalverval-bedreigt-top-of-funnel-prestaties':
-    "Last-click attributie is geen meting maar een gewoonte. Wie awareness-budgetten alleen op directe conversies afrekent, zal die budgetten vroeg of laat te klein maken. Een tijdsgebonden model, marketing mix modelling, of zelfs een eenvoudige incrementality-test geeft een eerlijker beeld.\n\nDe les is niet dat last-click slecht is, maar dat het maar één lens is. Wie meerdere lenzen naast elkaar legt, ziet pas waar campagnes echt werken.",
+    "Last-click attributie is geen meting maar een gewoonte. Wie awareness-budgetten alleen op directe conversies afrekent, zal die budgetten vroeg of laat te klein maken. Een tijdsgebonden model, marketing mix modelling, of zelfs een eenvoudige incrementality-test geeft een eerlijker beeld.\n\nDe les is niet dat last-click slecht is, maar dat het maar een lens is. Wie meerdere lenzen naast elkaar legt, ziet pas waar campagnes echt werken.",
   'google-integreert-meridian-in-analytics-360':
     "Voor bureau-eigenaars en in-house marketeers betekent deze integratie dat ze minder afhankelijk worden van externe MMM-tools. Het is raadzaam om de nieuwe functionaliteit direct te testen zodra deze beschikbaar is, zodat je kunt beoordelen hoe de predictieve metric aansluit bij je bestaande rapportagestructuur. Houd er rekening mee dat de nauwkeurigheid van de voorspellingen afhangt van de kwaliteit en consistentie van je meetdata. Begin met kleine pilots om de waarde voor jouw specifieke situatie in kaart te brengen.",
   'google-breidt-demand-gen-uit-met-youtube-creator-tools':
@@ -4758,7 +4758,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'google-lanceert-ask-advisor-in-ads-analytics-en-merchant-center':
     "Voor bureau-eigenaars en marketingteams betekent dit dat ze sneller kunnen schakelen tussen verschillende tools zonder handmatige data-overdracht. Begin met testen in een klein onderdeel van je account om te zien hoe de assistent omgaat met specifieke vraagstukken binnen jouw branche.\n\nHoud er rekening mee dat de tool nog in ontwikkeling is: controleer altijd de gegenereerde aanbevelingen voordat je actie onderneemt. Zorg dat je team bekend is met de mogelijkheden en beperkingen van AI-gestuurde optimalisatie voordat je vol vertrouwen beslissingen neemt.",
   'google-marketing-live-2026-gemini-drijft-search-advertising-en-commerce':
-    "Deze ontwikkelingen benadrukken dat marketeers hun strategieën moeten aanpassen aan een wereld waarin AI niet alleen ondersteunt, maar de kern van de interactie vormt. Begin met het testen van conversational search-optimalisaties in bestaande campagnes, bijvoorbeeld door langere zoekopdrachten te analyseren die nu worden gegenereerd. Zorg dat je meetdata beschikbaar is voor deze nieuwe interactievormen, zodat je uplift kunt meten ten opzichte van traditionele campagnes. Voor bureaus is dit een kans om klanten te helpen bij deze transitie door middel van training en pilots.",
+    "Deze ontwikkelingen benadrukken dat marketeers hun strategieen moeten aanpassen aan een wereld waarin AI niet alleen ondersteunt, maar de kern van de interactie vormt. Begin met het testen van conversational search-optimalisaties in bestaande campagnes, bijvoorbeeld door langere zoekopdrachten te analyseren die nu worden gegenereerd. Zorg dat je meetdata beschikbaar is voor deze nieuwe interactievormen, zodat je uplift kunt meten ten opzichte van traditionele campagnes. Voor bureaus is dit een kans om klanten te helpen bij deze transitie door middel van training en pilots.",
   'nieuw-raamwerk-zichtbaarheid-ai-tijden':
     "Voor bureau-eigenaars is dit een signaal om direct na te gaan of hun klantencontent zichtbaar is in AI-systemen. Begin met het controleren of jouw content wordt genoemd in AI-antwoorden door relevante vragen van de doelgroep te inventariseren.\n\nEen praktische eerste stap is het vergelijken van zoekopdrachten die leiden tot conversies met vragen die door AI worden beantwoord. Zorg dat je content helder, gestructureerd en direct bruikbaar is voor zowel zoekmachines als AI-tools.\n\nTot slot: AI-systemen belonen bronvermelding en herkenbaarheid. Zorg dat jouw merk duidelijk blijft in elke fase van de gebruikersreis.",
   'google-card-universeel-winkelwagentje-ecommerce':
@@ -4774,11 +4774,11 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'ga4-ai-verkeer-custom-channel-group-geo':
     'Dit is de meest onderschatte GEO-maatregel van dit moment. Rankings zijn zichtbaar. Organisch verkeer is zichtbaar. AI-verkeer is een blind spot. Wie nu een custom channel group aanmaakt, heeft over zes maanden een trendlijn. Wie wacht, niet. Stevin trekt dit kanaal automatisch apart zodra je GA4 hebt gekoppeld.',
   'new-york-pizza-toont-macht-van-lokale-marketing':
-    "Voor bureau-eigenaars en in-house marketeers is dit een duidelijke reminder dat technologie niet altijd de oplossing is. Begin met het begrijpen van je doelgroep op lokaal niveau en bouw daarop voort. Investeer eerst in sterke lokale marketingstrategieën voordat je grote sprongen maakt met geavanceerde tools. Authenticiteit en persoonlijke aandacht leveren vaak meer op dan data-gedreven campagnes zonder context.",
+    "Voor bureau-eigenaars en in-house marketeers is dit een duidelijke reminder dat technologie niet altijd de oplossing is. Begin met het begrijpen van je doelgroep op lokaal niveau en bouw daarop voort. Investeer eerst in sterke lokale marketingstrategieen voordat je grote sprongen maakt met geavanceerde tools. Authenticiteit en persoonlijke aandacht leveren vaak meer op dan data-gedreven campagnes zonder context.",
   'organisaties-bouwen-merkbeelden-in-plaats-van-merken':
-    "Voor bureaus en marketeers betekent dit dat het tijd is om kritisch te kijken naar de opdrachten die worden aangenomen. Als een klant alleen vraagt om een nieuw logo of kleurenschema zonder strategische onderbouwing, is het belangrijk om die vraag te herformuleren naar de onderliggende behoeften. Begin met een gesprek over doelstellingen, doelgroep en concurrentie voordat er wordt geïnvesteerd in design.\n\nOok in-house teams kunnen profiteren van deze aanpak door eerst intern helderheid te creëren over wat het merk wil uitstralen. Werk met meetdata om te achterhalen welke associaties bij de doelgroep leven en pas daar je communicatie op aan. Merkidentiteit gaat niet over hoe je eruitziet, maar over wie je bent en waarom je bestaat.",
+    "Voor bureaus en marketeers betekent dit dat het tijd is om kritisch te kijken naar de opdrachten die worden aangenomen. Als een klant alleen vraagt om een nieuw logo of kleurenschema zonder strategische onderbouwing, is het belangrijk om die vraag te herformuleren naar de onderliggende behoeften. Begin met een gesprek over doelstellingen, doelgroep en concurrentie voordat er wordt geinvesteerd in design.\n\nOok in-house teams kunnen profiteren van deze aanpak door eerst intern helderheid te creeren over wat het merk wil uitstralen. Werk met meetdata om te achterhalen welke associaties bij de doelgroep leven en pas daar je communicatie op aan. Merkidentiteit gaat niet over hoe je eruitziet, maar over wie je bent en waarom je bestaat.",
   'middelmatige-ai-content-schadelijk-voor-merk':
-    "Voor bureau-eigenaars en in-house marketeers is dit een belangrijke reminder om AI niet als wondermiddel te zien. Begin met een duidelijke strategie: bepaal welke contenttypes geschikt zijn voor automatisering en waar menselijke controle essentieel blijft. Gebruik meetdata om te bepalen of AI daadwerkelijk uplift biedt in efficiëntie of conversie, zonder de merkbeleving aan te tasten. Een praktische stap is het instellen van een reviewproces waarbij alle AI-output wordt gecheckt op consistentie met de merkidentiteit.",
+    "Voor bureau-eigenaars en in-house marketeers is dit een belangrijke reminder om AI niet als wondermiddel te zien. Begin met een duidelijke strategie: bepaal welke contenttypes geschikt zijn voor automatisering en waar menselijke controle essentieel blijft. Gebruik meetdata om te bepalen of AI daadwerkelijk uplift biedt in efficientie of conversie, zonder de merkbeleving aan te tasten. Een praktische stap is het instellen van een reviewproces waarbij alle AI-output wordt gecheckt op consistentie met de merkidentiteit.",
   'nieuwe-ecommerce-tools-mei-2026':
     "Voor bureau-eigenaars en in-house marketeers is het belangrijk om deze ontwikkelingen niet als losse trends te zien, maar als onderdeel van een groter ecosysteem. Begin met een duidelijke prioritering: welke tool lost een directe pijnpunt op? Bijvoorbeeld predictieve AI voor voorraadbeheer kan direct leiden tot minder uitval en hogere marges. Kies daarnaast oplossingen die integreren met bestaande tech-stacks om implementatietijd te beperken. Tot slot: test kleine pilots voordat je grootschalig investeert. Cross-border commerce vereist bijvoorbeeld kennis van lokale betalingsvoorkeuren en regelgeving - begin met een markt om de impact te meten.",
   'merkidentiteit-niet-gebaseerd-op-meningen':
@@ -4796,13 +4796,13 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'juni-2026-contentkansen-emotionele-thema-s':
     "Voor bureau-eigenaars en in-house marketeers is het verstandig om nu al vast te stellen welke thema's in juni relevant zijn voor hun klanten. Begin met een simpele contentkalender en koppel deze aan meetdata uit eerdere jaren. Zo zie je snel welke onderwerpen resoneren en waar je uplift kunt verwachten. Houd ook rekening met seizoensgebonden zoekgedrag via tools als Google Trends om je planning te verfijnen.",
   'ai-verandert-print-on-demand-ecommerce':
-    "Voor bureau-eigenaars betekent dit dat klanten nu verwachten dat AI niet alleen wordt ingezet voor efficiency, maar ook voor strategische beslissingen. Begin met het helder maken van de doelgroep en het creëren van een consistente productfeed voordat je AI-tools implementeert. Test kleine pilots uit voordat je schaalt, zodat je meet wat werkt zonder grote investeringen vooraf. Houd rekening met langere acquisitiecycli: druk op korte termijn resultaat kan leiden tot suboptimale keuzes.",
+    "Voor bureau-eigenaars betekent dit dat klanten nu verwachten dat AI niet alleen wordt ingezet voor efficiency, maar ook voor strategische beslissingen. Begin met het helder maken van de doelgroep en het creeren van een consistente productfeed voordat je AI-tools implementeert. Test kleine pilots uit voordat je schaalt, zodat je meet wat werkt zonder grote investeringen vooraf. Houd rekening met langere acquisitiecycli: druk op korte termijn resultaat kan leiden tot suboptimale keuzes.",
   'google-ads-introduceert-drie-ai-max-updates':
     "Voor bureau-eigenaars en in-house marketeers is het belangrijk om deze updates snel te evalueren. Begin met een testcampagne om de impact van AI Max voor Shopping op je productfeed te meten. Gebruik AI Brief als startpunt voor wekelijkse performance-reviews in plaats van handmatige rapportages. Zorg dat je disclaimerteksten consistent en compliant blijven met Google's richtlijnen. Deze tools kunnen tijd besparen, maar vereisen wel dat je de gegenereerde aanbevelingen kritisch beoordeelt op relevantie voor jouw doelgroep.",
   'politieke-targeting-en-visuele-aandacht-eye-tracking':
     "Voor bureaus en marketeers betekent dit dat politieke context niet alleen relevant is voor branding, maar ook voor de effectiviteit van advertenties. Het is belangrijk om te testen hoe visuele elementen en boodschappen samenkomen in campagnes die politieke thema's raken. Zorg ervoor dat de creatie niet alleen informatief is, maar ook aansluit bij de verwachtingen van je doelgroep. Kleine aanpassingen in design of timing kunnen al leiden tot meetbare verschillen in aandacht.",
   'ai-print-on-demand-spelers-moeten-fundament-leggen':
-    "Voor bureau-eigenaars betekent dit dat klanten nu verwachten dat AI niet alleen efficiency levert, maar ook strategische inzichten biedt. Begin met het helder definiëren van de doelgroep en het opbouwen van een consistente productfeed voordat je AI-tools implementeert. Voer kleine pilots uit om meetdata te verzamelen zonder grote vooraf investeringen. Houd rekening met langere acquisitiecycli: druk op korte termijn resultaat kan leiden tot suboptimale keuzes.",
+    "Voor bureau-eigenaars betekent dit dat klanten nu verwachten dat AI niet alleen efficiency levert, maar ook strategische inzichten biedt. Begin met het helder definieren van de doelgroep en het opbouwen van een consistente productfeed voordat je AI-tools implementeert. Voer kleine pilots uit om meetdata te verzamelen zonder grote vooraf investeringen. Houd rekening met langere acquisitiecycli: druk op korte termijn resultaat kan leiden tot suboptimale keuzes.",
   'google-ads-kosten-stijgen-conversie-efficientie-2025':
     "Voor bureau-eigenaars en marketeers betekent deze ontwikkeling dat investeringen in Google Ads nog zorgvuldiger moeten worden afgewogen. Het is verstandig om te focussen op campagnes met duidelijke meetdata en bewezen uplift. Daarnaast is het raadzaam om te experimenteren met nieuwe targeting-opties, zoals dynamische zoekadvertenties of responsieve zoekadvertenties, om de kosten te spreiden over verschillende kanalen. Het monitoren van de totale acquisitiekosten (CAC) wordt nu belangrijker dan ooit.",
   'marketing-enters-air-traffic-control-era':
@@ -4838,9 +4838,9 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'oscars-ai-acteerprestaties-niet-toegestaan':
     'De Academy trekt een streep waar Hollywood al maanden om vroeg, maar wel een smalle: alleen acteerprestaties zelf. De rest van het filmpakket (effects, sound, montage) blijft open voor AI. Voor productiehuizen: de keuze voor AI-tooling raakt nu een Oscar-strategie. Voor marketeers van streaming-content geldt hetzelfde: weet welke deel van je productie je labelt en welke niet.',
   'us-defense-ai-deals-zonder-anthropic':
-    'Voor B2B-marketeers in tech zegt deze ronde één ding heel duidelijk: defensie is een toegangspoort voor enterprise-deals, niet een nichesector. De acht winnaars krijgen een referentie-stempel die de komende vijf jaar blijft betalen. De afwezige partij krijgt een ander stempel ("niet defensie-bereid") en moet uitleggen wat dat betekent voor banken, verzekeraars en overheidsklanten elders.',
+    'Voor B2B-marketeers in tech zegt deze ronde een ding heel duidelijk: defensie is een toegangspoort voor enterprise-deals, niet een nichesector. De acht winnaars krijgen een referentie-stempel die de komende vijf jaar blijft betalen. De afwezige partij krijgt een ander stempel ("niet defensie-bereid") en moet uitleggen wat dat betekent voor banken, verzekeraars en overheidsklanten elders.',
   'certe-mijnadviseur-chatgpt-koppeling':
-    'Distributie via ChatGPT is geen experiment meer, het is een kanaal. Certe gebruikt het zoals tien jaar geleden Google Ads werd gebruikt: als bron van zoekvragen die naar een eigen funnel worden geleid. Voor andere financiële dienstverleners de vraag: ben je vindbaar binnen ChatGPT als iemand een vraag stelt over jouw product? Niet door SEO. Door aanwezig te zijn als GPT, dataset of partner.',
+    'Distributie via ChatGPT is geen experiment meer, het is een kanaal. Certe gebruikt het zoals tien jaar geleden Google Ads werd gebruikt: als bron van zoekvragen die naar een eigen funnel worden geleid. Voor andere financiele dienstverleners de vraag: ben je vindbaar binnen ChatGPT als iemand een vraag stelt over jouw product? Niet door SEO. Door aanwezig te zijn als GPT, dataset of partner.',
   'amazon-ads-22-procent-groei-q1-2026':
     'Voor D2C-merken en e-commerce: Amazon Ads is geen optie meer, het is een derde verplichte stap naast Google en Meta. De groei van 22 procent is geen incident, het is een trend die al twee jaar loopt. Voor agencies: kanaalmix-besluiten op basis van alleen ROAS van de individuele platforms missen de bredere portfolio-vraag. Een MMM- of uplift-test over Google + Meta + Amazon laat structureel andere optima zien dan platform-eigen attributie suggereert.',
 }
@@ -4861,7 +4861,7 @@ function ArticleWKBody() {
         Het relevante referentiekader is het EK 2024. Twee jaar geleden, maar de meest vergelijkbare context die beschikbaar is. Bij dat toernooi bereikte de NOS via televisie 14,5 miljoen mensen, ofwel 87,6 procent van de Nederlandse bevolking. Oranje-wedstrijden trokken gemiddeld 5,8 miljoen kijkers. De halve finale tegen Engeland piekte op 6,9 miljoen.
       </p>
       <p>
-        De vraag die elk bureau of in-house team nu zou moeten kunnen beantwoorden: welke van jullie creatives hielden het vol over vier toernooiweken? Welke categorieën piekten in de groepsfase en daalden in de kwartfinales? Welke boodschap werkte bij het brede, gemengde EK-publiek, want bijna de helft van de EK-kijkers in 2024 waren vrouwen, een gegeven dat de meeste campagnebriefings negeerden?
+        De vraag die elk bureau of in-house team nu zou moeten kunnen beantwoorden: welke van jullie creatives hielden het vol over vier toernooiweken? Welke categorieen piekten in de groepsfase en daalden in de kwartfinales? Welke boodschap werkte bij het brede, gemengde EK-publiek, want bijna de helft van de EK-kijkers in 2024 waren vrouwen, een gegeven dat de meeste campagnebriefings negeerden?
       </p>
       <p>
         Die data bestaat. Bij de meeste teams ligt ze ergens in een export, een dashboard dat niemand meer opent, of bij een accountmanager die inmiddels elders werkt.
@@ -4940,7 +4940,7 @@ function ArticleAIcowboysBody() {
       </p>
 
       <p>
-        Hieronder drie scènes uit het afgelopen kwartaal. Twee uit de praktijk, eentje uit de bestuurskamer van een Nederlandse bank. Samen vertellen ze waarom dit voelt als 2008 in online marketing. Alleen sneller, met grotere data en met meer geld op het spel.
+        Hieronder drie scenes uit het afgelopen kwartaal. Twee uit de praktijk, eentje uit de bestuurskamer van een Nederlandse bank. Samen vertellen ze waarom dit voelt als 2008 in online marketing. Alleen sneller, met grotere data en met meer geld op het spel.
       </p>
 
       <H2 num="01">Een online platform met honderdduizenden e-mailadressen, vibecodend op donderdag</H2>
@@ -4965,7 +4965,7 @@ function ArticleAIcowboysBody() {
       <H2 num="02">Een bureau dat in twee maanden tijd alles op AI heeft ingezet</H2>
 
       <p>
-        Tweede scène. Een Nederlands marketingbureau plaatste deze week een trotse LinkedIn-post over hun nieuwe AI-platform, mét screenshot van het klant-dashboard. Hun specialisten zaten 70 procent van de dag op uitvoering, schreven ze eerlijk. Rapportages, feed-optimalisaties, handmatig bidden. Sinds twee maanden draait er nu AI overheen, en die tijd is teruggegeven aan strategie. Mooi verhaal.
+        Tweede scene. Een Nederlands marketingbureau plaatste deze week een trotse LinkedIn-post over hun nieuwe AI-platform, met screenshot van het klant-dashboard. Hun specialisten zaten 70 procent van de dag op uitvoering, schreven ze eerlijk. Rapportages, feed-optimalisaties, handmatig bidden. Sinds twee maanden draait er nu AI overheen, en die tijd is teruggegeven aan strategie. Mooi verhaal.
       </p>
 
       <p>
@@ -4978,13 +4978,13 @@ function ArticleAIcowboysBody() {
 
       <Callout
         big="6"
-        label="Aantal uur waarin een Europees marketingbureau vorige zomer voor naar schatting €600.000 aan ongeautoriseerde Meta-advertenties zag verschijnen vanaf gestolen OAuth-tokens. Geen AI in die zaak, maar het scenario is precies wat een AI-laag versnelt: één compromittering, schaalbare uitvoer."
+        label="Aantal uur waarin een Europees marketingbureau vorige zomer voor naar schatting €600.000 aan ongeautoriseerde Meta-advertenties zag verschijnen vanaf gestolen OAuth-tokens. Geen AI in die zaak, maar het scenario is precies wat een AI-laag versnelt: een compromittering, schaalbare uitvoer."
       />
 
       <H2 num="03">Een bank die voorzichtig is, en daar uiteindelijk reden toe heeft</H2>
 
       <p>
-        Derde scène, en dit keer niet uit het mkb. Ook Rabobank kijkt naar AI door de bril van digitale soevereiniteit. De bank erkent dat ze nu sterk leunt op Amerikaanse techbedrijven, onder meer voor cloud en AI. Rabobank onderzoekt met andere Europese banken hoe ze eigen Europese cloud- en datastructuren kunnen opzetten. Niet omdat er al concrete signalen zijn dat Amerikaanse leveranciers de stekker eruit trekken, maar omdat banken hun kritieke infrastructuur niet afhankelijk willen maken van geopolitieke druk. Die zorg is groter geworden sinds de handelsspanningen tussen Washington en Brussel in 2025 opliepen.
+        Derde scene, en dit keer niet uit het mkb. Ook Rabobank kijkt naar AI door de bril van digitale soevereiniteit. De bank erkent dat ze nu sterk leunt op Amerikaanse techbedrijven, onder meer voor cloud en AI. Rabobank onderzoekt met andere Europese banken hoe ze eigen Europese cloud- en datastructuren kunnen opzetten. Niet omdat er al concrete signalen zijn dat Amerikaanse leveranciers de stekker eruit trekken, maar omdat banken hun kritieke infrastructuur niet afhankelijk willen maken van geopolitieke druk. Die zorg is groter geworden sinds de handelsspanningen tussen Washington en Brussel in 2025 opliepen.
       </p>
 
       <p>
@@ -4994,7 +4994,7 @@ function ArticleAIcowboysBody() {
       <H2 num="04">Waarom dit voelt als 2008</H2>
 
       <p>
-        Toen wij in online marketing begonnen, was er bijna niks. YouTube was net een jaar oud. Google Ads heette nog AdWords en je leerde het uit blogs, fora, en gewoon dingen proberen tot iets werkte. Dat trok twee groepen aan. Eén groep marketeers die echt iets wilden bouwen, klanten netjes wilden bedienen, met geduld de fundamenten leerden. En een groep cowboys die ontdekten dat je met een paar trucs in een paar weken meer geld kon binnenhalen dan een gemiddelde MBO-baan, zonder dat klanten doorhadden hoe het werkte.
+        Toen wij in online marketing begonnen, was er bijna niks. YouTube was net een jaar oud. Google Ads heette nog AdWords en je leerde het uit blogs, fora, en gewoon dingen proberen tot iets werkte. Dat trok twee groepen aan. Een groep marketeers die echt iets wilden bouwen, klanten netjes wilden bedienen, met geduld de fundamenten leerden. En een groep cowboys die ontdekten dat je met een paar trucs in een paar weken meer geld kon binnenhalen dan een gemiddelde MBO-baan, zonder dat klanten doorhadden hoe het werkte.
       </p>
 
       <p>
@@ -5036,7 +5036,7 @@ function ArticleAIcowboysBody() {
         ]}
       />
 
-      <H2 num="05">Niet meer cowboys vermijden, wel weten wie er één is</H2>
+      <H2 num="05">Niet meer cowboys vermijden, wel weten wie er een is</H2>
 
       <p>
         Wij gaan niet zeggen dat je AI moet ontwijken. Dat is precies de verkeerde reactie. Wat wel werkt: dezelfde bullshit-detector die wij in twintig jaar online marketing hebben opgebouwd, opnieuw aanzetten. We herkennen het patroon nu eerder. De flow waarin iemand binnen twee maanden tijd "alles op AI heeft staan" zonder ooit met een security-engineer te hebben gepraat. De marketeer die zegt dat zijn nieuwe AI-flow drie keer zo veel doet zonder uit te leggen hoe de logging werkt. De agency-eigenaar die zelf vibecoded en daarmee zijn klanten bedient.
@@ -5047,13 +5047,13 @@ function ArticleAIcowboysBody() {
       </p>
 
       <p>
-        Voor klanten die nu AI overwegen: de vraag aan een potentiële leverancier is niet "wat kan jouw AI doen". Die vraag wint iedereen. De vraag is "wat heeft jouw AI niet gedaan, en hoe weet je dat zeker". Een leverancier die op die vraag rustig antwoord geeft, weet wat hij aan het bouwen is. Een leverancier die om de vraag heen praat, is de cowboy uit 2008 met een nieuw shirt.
+        Voor klanten die nu AI overwegen: de vraag aan een potentiele leverancier is niet "wat kan jouw AI doen". Die vraag wint iedereen. De vraag is "wat heeft jouw AI niet gedaan, en hoe weet je dat zeker". Een leverancier die op die vraag rustig antwoord geeft, weet wat hij aan het bouwen is. Een leverancier die om de vraag heen praat, is de cowboy uit 2008 met een nieuw shirt.
       </p>
 
       <H2 num="06">Wat dit jaar gaat gebeuren</H2>
 
       <p>
-        We voorspellen niet graag. Wat we wel zien aankomen: een handvol publiek-zichtbare incidenten, waarschijnlijk in Q3 of Q4. Eén bureau dat zwaar in het nieuws komt omdat een AI-flow toegang had tot iets wat hij niet had moeten hebben. Eén mkb-bedrijf met klantdata in een verkeerde prompt. Eén platform dat plotseling aansprakelijk wordt gesteld voor een AI-verkochte transactie.
+        We voorspellen niet graag. Wat we wel zien aankomen: een handvol publiek-zichtbare incidenten, waarschijnlijk in Q3 of Q4. Een bureau dat zwaar in het nieuws komt omdat een AI-flow toegang had tot iets wat hij niet had moeten hebben. Een mkb-bedrijf met klantdata in een verkeerde prompt. Een platform dat plotseling aansprakelijk wordt gesteld voor een AI-verkochte transactie.
       </p>
 
       <p>
@@ -5071,7 +5071,7 @@ function ArticleTranscriptToolsBody() {
   return (
     <>
       <p className="lead-para">
-        Wij krijgen elke week een variant van dezelfde vraag: wat is nu de beste transcriptietool? Het antwoord uit twee jaar testen is Plaud. Niet omdat de andere tools slecht zijn, maar omdat Plaud op vier punten consistent wint: batterijduur, compactheid, app-ervaring en desktop-integratie tijdens video-calls. Hieronder de eerlijke ronde, inclusief waar we andere tools wél in voorzien zagen.
+        Wij krijgen elke week een variant van dezelfde vraag: wat is nu de beste transcriptietool? Het antwoord uit twee jaar testen is Plaud. Niet omdat de andere tools slecht zijn, maar omdat Plaud op vier punten consistent wint: batterijduur, compactheid, app-ervaring en desktop-integratie tijdens video-calls. Hieronder de eerlijke ronde, inclusief waar we andere tools wel in voorzien zagen.
       </p>
 
       <p>
@@ -5081,17 +5081,17 @@ function ArticleTranscriptToolsBody() {
       <H2 num="01">Wat we hebben getest</H2>
 
       <p>
-        Acht oplossingen, ruwweg in drie categorieën. Software-only: OpenAI Whisper (lokaal op Mac), Google Gemini transcript-modus, Otter.ai, en wat hier in jargon meestal "Microsoft AI-notitiemaker" heet (de Copilot-transcript-functie in Teams). Hardware-met-app: Plaud Note, Echo Scribe, en losse Jabra-conferentiemicrofoons gekoppeld aan transcript-software. Plus een tweede ronde apps die zich gespecialiseerd noemen in "AI-notitiemaker assistent"-categorie, namen we hier even niet bij naam noemen omdat ze de status van het experiment niet overleefden.
+        Acht oplossingen, ruwweg in drie categorieen. Software-only: OpenAI Whisper (lokaal op Mac), Google Gemini transcript-modus, Otter.ai, en wat hier in jargon meestal "Microsoft AI-notitiemaker" heet (de Copilot-transcript-functie in Teams). Hardware-met-app: Plaud Note, Echo Scribe, en losse Jabra-conferentiemicrofoons gekoppeld aan transcript-software. Plus een tweede ronde apps die zich gespecialiseerd noemen in "AI-notitiemaker assistent"-categorie, namen we hier even niet bij naam noemen omdat ze de status van het experiment niet overleefden.
       </p>
 
       <p>
-        Beoordelingscriteria waren simpel en operationeel: hoeveel uur opnemen op één lading, hoe accuraat is het transcript bij Nederlands en bij twee tot vier sprekers, hoe snel ben je van opname-stop tot bruikbare tekst, en hoe makkelijk haal je het transcript daarna in een ander systeem (CRM, mailtool, document).
+        Beoordelingscriteria waren simpel en operationeel: hoeveel uur opnemen op een lading, hoe accuraat is het transcript bij Nederlands en bij twee tot vier sprekers, hoe snel ben je van opname-stop tot bruikbare tekst, en hoe makkelijk haal je het transcript daarna in een ander systeem (CRM, mailtool, document).
       </p>
 
       <H2 num="02">Software-only: prima voor desk-werk, breekbaar onderweg</H2>
 
       <p>
-        Whisper lokaal op een Mac geeft objectief de beste pure transcript-kwaliteit van het hele veld. Privé, gratis, geen cloud-call. Maar je hebt er een Mac voor nodig die aanstaat, en de workflow van "ik neem op met mijn telefoon, sleep het bestand in een script" is geen knop, het is een rituaal. Voor losse keynotes die je achteraf wilt uitschrijven: prima. Voor dagelijks gebruik: te veel handelingen.
+        Whisper lokaal op een Mac geeft objectief de beste pure transcript-kwaliteit van het hele veld. Prive, gratis, geen cloud-call. Maar je hebt er een Mac voor nodig die aanstaat, en de workflow van "ik neem op met mijn telefoon, sleep het bestand in een script" is geen knop, het is een rituaal. Voor losse keynotes die je achteraf wilt uitschrijven: prima. Voor dagelijks gebruik: te veel handelingen.
       </p>
 
       <p>
@@ -5120,7 +5120,7 @@ function ArticleTranscriptToolsBody() {
       <H2 num="04">Waarom Plaud op vier vlakken wint</H2>
 
       <p>
-        <b>Batterijduur.</b> Een hele werkdag van opnemen op één lading is geen marketing-claim, dat is wat we ervaren. Voor consultants die 's ochtends een klant bezoeken, 's middags een interne meeting hebben en 's avonds een networking-event aandoen: de tool gaat niet halverwege uit.
+        <b>Batterijduur.</b> Een hele werkdag van opnemen op een lading is geen marketing-claim, dat is wat we ervaren. Voor consultants die 's ochtends een klant bezoeken, 's middags een interne meeting hebben en 's avonds een networking-event aandoen: de tool gaat niet halverwege uit.
       </p>
 
       <p>
@@ -5137,7 +5137,7 @@ function ArticleTranscriptToolsBody() {
 
       <Takeaways
         label="WAT PLAUD WEL EN NIET DOET"
-        title="Het eerlijke beeld vóór je 'm aanschaft"
+        title="Het eerlijke beeld voor je 'm aanschaft"
         items={[
           {
             pct: '01',
@@ -5167,7 +5167,7 @@ function ArticleTranscriptToolsBody() {
             pct: '04',
             text: (
               <>
-                <b>Niet: zonder leercurve.</b> Recorderen is simpel. Het systeem eromheen optimaliseren (privé-momenten knippen, agenda-koppeling, automatische follow-up-drafts) vereist technische bouwwerk of iemand die het voor je doet.
+                <b>Niet: zonder leercurve.</b> Recorderen is simpel. Het systeem eromheen optimaliseren (prive-momenten knippen, agenda-koppeling, automatische follow-up-drafts) vereist technische bouwwerk of iemand die het voor je doet.
               </>
             ),
           },
@@ -5177,7 +5177,7 @@ function ArticleTranscriptToolsBody() {
       <H2 num="05">De leercurve, eerlijk uitgelegd</H2>
 
       <p>
-        Hier moeten we eerlijk zijn. Plaud uit de doos is goed voor "ik heb een transcript van mijn meeting van gisteren". Maar de echte tijdwinst zit niet in dat ene transcript, die zit in wat erna gebeurt. Wij hebben ervoor gekozen om Plaud te koppelen aan onze eigen sales-stack: transcripts worden automatisch aan klanten gekoppeld op basis van wie er gebeld is en welk agenda-event eraan vastzat, AI knipt privé-staartjes weg (Plaud blijft soms aanstaan na een gesprek), en een follow-up-email-draft staat binnen drie minuten na de meeting in de inbox van de juiste consultant.
+        Hier moeten we eerlijk zijn. Plaud uit de doos is goed voor "ik heb een transcript van mijn meeting van gisteren". Maar de echte tijdwinst zit niet in dat ene transcript, die zit in wat erna gebeurt. Wij hebben ervoor gekozen om Plaud te koppelen aan onze eigen sales-stack: transcripts worden automatisch aan klanten gekoppeld op basis van wie er gebeld is en welk agenda-event eraan vastzat, AI knipt prive-staartjes weg (Plaud blijft soms aanstaan na een gesprek), en een follow-up-email-draft staat binnen drie minuten na de meeting in de inbox van de juiste consultant.
       </p>
 
       <p>
@@ -5196,7 +5196,7 @@ function ArticleTranscriptToolsBody() {
 
       <Callout
         big="0"
-        label="Aantal andere transcriptietools dat we sinds we Plaud actief gebruiken nog actief inzetten op een werkdag. Voor specifieke deelvragen (zoals lokaal Whisper voor een grote keynote-uitdraai) houden we 'm achter de hand. Voor dagelijks gebruik: één tool wint."
+        label="Aantal andere transcriptietools dat we sinds we Plaud actief gebruiken nog actief inzetten op een werkdag. Voor specifieke deelvragen (zoals lokaal Whisper voor een grote keynote-uitdraai) houden we 'm achter de hand. Voor dagelijks gebruik: een tool wint."
       />
 
       <p>

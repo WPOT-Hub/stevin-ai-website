@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   if (locale === 'nl') {
     return {
-      title: 'Stevin voor Marketing · Eén intelligentie-laag boven je hele stack',
+      title: 'Stevin voor Marketing · Een intelligentie-laag boven je hele stack',
       description: 'Voor marketing-teams en bureaus die niet willen wachten op het maandrapport. Stevin verbindt paid en owned media en signaleert waar omzet, marge of aandacht weglekt.',
     }
   }

@@ -6,7 +6,7 @@ const intlMiddleware = createMiddleware(routing)
 
 /**
  * AI-bot user-agent detectie. Gebruikt voor crawl-monitoring zonder
- * de bots te blokkeren (alleen meten — wie indexeert ons voor LLM-training).
+ * de bots te blokkeren (alleen meten: wie indexeert ons voor LLM-training).
  *
  * Officiële UA-strings:
  *   - GPTBot          → OpenAI crawler voor model-training
@@ -80,9 +80,9 @@ async function logBotCrawl(bot: string, path: string): Promise<void> {
 }
 
 export default async function middleware(request: NextRequest) {
-  // AI-bot crawl logging — fire-and-forget zodat middleware niet blokkeert.
+  // AI-bot crawl logging, fire-and-forget zodat middleware niet blokkeert.
   // Edge runtime kapt losse fetches af na response, maar logBotCrawl()
-  // wacht intern al op de fetch — .catch() zorgt dat fouten stil blijven.
+  // wacht intern al op de fetch, .catch() zorgt dat fouten stil blijven.
   const ua = request.headers.get('user-agent') ?? ''
   const aiBot = detectAIBot(ua)
   if (aiBot) {

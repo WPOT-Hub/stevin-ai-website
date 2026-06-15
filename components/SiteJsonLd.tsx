@@ -15,7 +15,7 @@ const organization = {
   name: 'Stevin',
   legalName: 'Stevin.AI',
   description:
-    'Stevin is de meetlat tussen marketingspend en werkelijk resultaat. AI-driven platform voor MKB dat zichtbaar maakt wat marketing echt oplevert via uplift-meting en Marketing Mix Modeling.',
+    'Stevin is de AI-laag over je operatie. Het levert eerst resultaat in marketing en sales en bouwt van daaruit verder. Voor agencies, multi-vestiging en multi-market bedrijven en in-house teams, werkzaam vanuit Breda en Antwerpen.',
   url: 'https://stevin.ai',
   logo: {
     '@type': 'ImageObject',
@@ -44,6 +44,9 @@ const organization = {
     'Analytics & Tracking',
     'Conversion Rate Optimization',
     'Marketing for SMBs',
+    'Artificial Intelligence',
+    'Sales Operations',
+    'Lead Management',
   ],
   knowsLanguage: ['nl-NL', 'en'],
   contactPoint: [

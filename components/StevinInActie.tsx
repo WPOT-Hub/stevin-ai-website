@@ -1,13 +1,13 @@
 'use client'
 
 /**
- * StevinInActie — push-flow signaal-kaarten voor homepage.
+ * StevinInActie: push-flow signaal-kaarten voor homepage.
  *
  * Anti-Swoep statement: niet "vraag → antwoord", maar "signaal → diagnose → advies".
  * Stevin schreeuwt op tijd, je hoeft niets te vragen.
  *
- * Canon: één accent (blauw), geen categorische kleur, mono labels uppercase,
- * navy-card op surface-achtergrond, géén shadows, radius 12px.
+ * Canon: een accent (blauw), geen categorische kleur, mono labels uppercase,
+ * navy-card op surface-achtergrond, geen shadows, radius 12px.
  */
 
 import { useEffect, useState } from 'react'
@@ -41,7 +41,7 @@ const HEADING_COPY: Record<Locale, {
     eyebrow: 'Stevin in actie',
     h2Line1: 'Van afwijking naar advies.',
     h2Line2: 'Voordat jij het ziet.',
-    sub: "Een chat-tool wacht tot jij vraagt. Stevin schreeuwt op tijd. 24/7 monitoring over je paid en owned media — mét diagnose en concrete actie, vóór reguliere rapportage 't oppikt.",
+    sub: "Een chat-tool wacht tot jij vraagt. Stevin schreeuwt op tijd. 24/7 monitoring over je paid en owned media, met diagnose en concrete actie, voor de reguliere rapportage 't oppikt.",
     labelSignal: 'Signaal',
     labelDiagnose: 'Diagnose',
     labelAdvice: 'Advies',
@@ -51,8 +51,8 @@ const HEADING_COPY: Record<Locale, {
         body: 'Geen dashboard om te openen. Stevin scant continu en tikt je zodra het ergens weglekt.',
       },
       {
-        label: 'Diagnose mét bewijs',
-        body: 'Niet alleen "ROAS daalt", maar wáárom. Frequency, thumbstop, GTM-firing, concurrent-bod — Stevin koppelt symptoom aan oorzaak.',
+        label: 'Diagnose met bewijs',
+        body: 'Niet alleen "ROAS daalt", maar waarom. Frequency, thumbstop, GTM-firing, concurrent-bod. Stevin koppelt symptoom aan oorzaak.',
       },
       {
         label: 'Beslissingen wegnemen',
@@ -64,7 +64,7 @@ const HEADING_COPY: Record<Locale, {
     eyebrow: 'Stevin in action',
     h2Line1: 'From deviation to advice.',
     h2Line2: 'Before you see it.',
-    sub: 'A chat tool waits for you to ask. Stevin shouts on time. 24/7 monitoring across your paid and owned media — with diagnosis and concrete action, before regular reporting catches it.',
+    sub: 'A chat tool waits for you to ask. Stevin shouts on time. 24/7 monitoring across your paid and owned media, with diagnosis and concrete action, before regular reporting catches it.',
     labelSignal: 'Signal',
     labelDiagnose: 'Diagnosis',
     labelAdvice: 'Action',
@@ -75,11 +75,11 @@ const HEADING_COPY: Record<Locale, {
       },
       {
         label: 'Diagnosis with evidence',
-        body: 'Not just "ROAS is dropping", but why. Frequency, thumbstop, GTM-firing, competitor bidding — Stevin links symptom to cause.',
+        body: 'Not just "ROAS is dropping", but why. Frequency, thumbstop, GTM-firing, competitor bidding. Stevin links symptom to cause.',
       },
       {
         label: 'Removing decisions',
-        body: "No more debating what a graph means. Stevin delivers the advice with it — you approve or adjust.",
+        body: "No more debating what a graph means. Stevin delivers the advice with it: you approve or adjust.",
       },
     ],
   },

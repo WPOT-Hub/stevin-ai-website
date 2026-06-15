@@ -1,5 +1,5 @@
 /**
- * Per-vendor unieke content — wordt geconsumeerd door
+ * Per-vendor unieke content, wordt geconsumeerd door
  * app/[locale]/integraties/[slug]/page.tsx als extra sectie boven
  * de generieke template-content.
  *

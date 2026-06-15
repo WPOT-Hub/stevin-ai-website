@@ -27,8 +27,8 @@ export default function ContactForm({ nextUrl, subject }: { nextUrl?: string; su
     const [firstName, ...rest] = name.trim().split(' ')
     const lastName = rest.join(' ')
 
-    // Push gehashte user_data naar dataLayer vóór form submit
-    // SHA-256 hashing gebeurt client-side — geen plaintext PII verlaat de browser
+    // Push gehashte user_data naar dataLayer voor form submit
+    // SHA-256 hashing gebeurt client-side, geen plaintext PII verlaat de browser
     try {
       await pushConversionEvent('generate_lead', {
         email,

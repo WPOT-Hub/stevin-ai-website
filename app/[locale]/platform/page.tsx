@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return localizedMetadata({
     path: '/platform',
     locale,
-    title: 'Marketing intelligence platform, Stevin',
+    title: 'Het platform, de AI-laag over je operatie',
     description: t('sub'),
   })
 }

@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Vendor-detail pagina
   const integration = getIntegrationBySlug(slug)
   if (integration) {
-    const title = `${integration.name} koppeling, Stevin.AI integratie`
+    const title = `${integration.name} koppeling en integratie`
     const description = integration.shortDescription.slice(0, 155)
     const canonical = `https://stevin.ai/integraties/${slug}`
     return {
@@ -90,7 +90,7 @@ async function CategoryView({ slug, locale }: { slug: string; locale: string }) 
     url: `https://stevin.ai/integraties/${slug}`,
   }
 
-  // BreadcrumbList JSON-LD — visible breadcrumbs zonder schema laat zoekmachines
+  // BreadcrumbList JSON-LD, visible breadcrumbs zonder schema laat zoekmachines
   // de hierarchie missen. Plus voor LLM-citation: structuur "waar in de site".
   const breadcrumbLd = {
     '@context': 'https://schema.org',
@@ -185,7 +185,7 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
     url: `https://stevin.ai/integraties/${slug}`,
   }
 
-  // BreadcrumbList JSON-LD — geeft zoekmachines de site-hierarchie van
+  // BreadcrumbList JSON-LD, geeft zoekmachines de site-hierarchie van
   // home → integraties → categorie → vendor (4 niveaus).
   const breadcrumbItems: Array<{ '@type': 'ListItem'; position: number; name: string; item: string }> = [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://stevin.ai/' },

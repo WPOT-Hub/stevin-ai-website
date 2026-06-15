@@ -1,12 +1,12 @@
 'use client'
 
 /**
- * Custom GA4 events — push naar dataLayer zodat GTM ze als events doorzet
+ * Custom GA4 events, push naar dataLayer zodat GTM ze als events doorzet
  * naar GA4 (en eventueel andere destinations).
  *
  * Drie soorten events:
- *   1. Scroll-depth (25/50/75/100%) — engagement-meting per page
- *   2. External-link clicks — uitgaande clicks (vooral naar bron-URLs in
+ *   1. Scroll-depth (25/50/75/100%): engagement-meting per page
+ *   2. External-link clicks: uitgaande clicks (vooral naar bron-URLs in
  *      blog/dispatches en naar /integraties van vendors die we beschrijven)
  *   3. Outbound contact-clicks (mailto:, tel:, plan-een-gesprek)
  *
@@ -111,8 +111,8 @@ export function AnalyticsEvents() {
         }
       }
 
-      // Plan-een-gesprek button click (heeft géén href naar mailto/tel,
-      // maar wel naar /contact route — track als demo-intent signal)
+      // Plan-een-gesprek button click (heeft geen href naar mailto/tel,
+      // maar wel naar /contact route, track als demo-intent signal)
       if (href === '/contact' || href === '/nl/contact' || href === '/en/contact') {
         pushEvent('demo_intent', {
           source_page: pathname,

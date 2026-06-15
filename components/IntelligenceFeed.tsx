@@ -21,7 +21,7 @@ const MARKETING_SCENARIOS: FeedLine[][] = [
   [
     { text: 'Scanning 12 ad accounts...', color: 'muted', prefix: '>', delay: 0, mono: true },
     { text: 'Creative fatigue detected', color: 'pink', prefix: '!', delay: 800 },
-    { text: 'Hero Banner Q1 — CTR gedaald met 34%', color: 'pink', delay: 1200 },
+    { text: 'Hero Banner Q1: CTR gedaald met 34%', color: 'pink', delay: 1200 },
     { text: 'CPC gestegen van €0.42 naar €0.68', color: 'pink', delay: 1800 },
     { text: 'Growth Multiplier: 1.8x op Instagram Reels', color: 'blue', prefix: '~', delay: 2600 },
     { text: 'Verschuif €2.400 van Facebook Feed naar Reels', color: 'neon', prefix: '\u2192', delay: 3400 },
@@ -30,7 +30,7 @@ const MARKETING_SCENARIOS: FeedLine[][] = [
   // Cross-Channel Attribution
   [
     { text: 'Cross-channel analyse gestart...', color: 'muted', prefix: '>', delay: 0, mono: true },
-    { text: '6 kanalen geëvalueerd voor klant: Moda', color: 'muted', prefix: '>', delay: 700, mono: true },
+    { text: '6 kanalen geevalueerd voor klant: Moda', color: 'muted', prefix: '>', delay: 700, mono: true },
     { text: 'Google claimt 142 conversies, GA4 ziet er 89', color: 'pink', prefix: '!', delay: 1400 },
     { text: 'Meta overclaimt: 38% meer dan GA4 ziet', color: 'pink', delay: 2000 },
     { text: 'Werkelijke uplift-ROAS: 2.4x (niet 4.1x)', color: 'blue', prefix: '~', delay: 2800 },
@@ -77,14 +77,14 @@ const ARTIST_SCENARIOS: FeedLine[][] = [
     { text: 'Viral moment gedetecteerd: TikTok duet +340%', color: 'pink', prefix: '!', delay: 1400 },
     { text: 'Sentiment: 92% positief, "obsessed" trending', color: 'blue', prefix: '~', delay: 2100 },
     { text: 'Spotify saves +28% in regio Randstad', color: 'blue', delay: 2700 },
-    { text: 'Push geo-targeted ads Randstad + België', color: 'neon', prefix: '\u2192', delay: 3400 },
-    { text: 'Momentum window: 48u — campagne klaargezet', color: 'neon', prefix: '\u2713', delay: 4200 },
+    { text: 'Push geo-targeted ads Randstad + Belgie', color: 'neon', prefix: '\u2192', delay: 3400 },
+    { text: 'Momentum window: 48u, campagne klaargezet', color: 'neon', prefix: '\u2713', delay: 4200 },
   ],
   // Release Intelligence
   [
     { text: 'Release monitor actief...', color: 'muted', prefix: '>', delay: 0, mono: true },
     { text: 'Pre-save rate: 12.4% (benchmark: 8%)', color: 'blue', prefix: '~', delay: 800 },
-    { text: 'Top regio: België 34%, NL 28%, Duitsland 18%', color: 'blue', delay: 1400 },
+    { text: 'Top regio: Belgie 34%, NL 28%, Duitsland 18%', color: 'blue', delay: 1400 },
     { text: 'Drop-off na dag 3: -45% engagement', color: 'pink', prefix: '!', delay: 2200 },
     { text: 'Retarget pre-savers met behind-the-scenes', color: 'neon', prefix: '\u2192', delay: 3000 },
     { text: 'Playlist pitch brief gegenereerd (12 curators)', color: 'neon', prefix: '\u2192', delay: 3700 },

@@ -78,8 +78,8 @@ function DpaDutch() {
       <p>
         De verwerking duurt zolang de overeenkomst tussen Klant en Stevin van kracht is.
         Aard: geautomatiseerd ophalen, analyseren, opslaan en presenteren via dashboards
-        en notificaties. Categorieën betrokkenen: gebruikers van Klant, eindklanten van
-        Klant, prospects en leads in CRM. Categorieën persoonsgegevens: NAW, contact
+        en notificaties. Categorieen betrokkenen: gebruikers van Klant, eindklanten van
+        Klant, prospects en leads in CRM. Categorieen persoonsgegevens: NAW, contact
         (e-mail, telefoon, LinkedIn), functietitel, bedrijfsdata, online gedrag
         (campagne-interacties, paginabezoeken, search queries) en communicatie
         (e-mails, gesprekstranscripten voor zover de Klant deze deelt).
@@ -98,7 +98,7 @@ function DpaDutch() {
       <h2>5. Subverwerkers</h2>
       <p>
         De Klant geeft Stevin algemene toestemming om subverwerkers in te schakelen.
-        Actuele lijst van substantiële subverwerkers:
+        Actuele lijst van substantiele subverwerkers:
       </p>
       <ul>
         <li><strong>Supabase</strong> (database hosting, EU regio)</li>

@@ -1,5 +1,5 @@
 /**
- * Related-articles generator — kiest per editorial 3 meest-relevante
+ * Related-articles generator, kiest per editorial 3 meest-relevante
  * andere artikelen via Claude API, op basis van title + dek + category.
  *
  * Output gaat naar data/related-articles.json. Wordt gelezen door
@@ -93,7 +93,7 @@ async function pickRelatedForArticle(client: Anthropic, slug: string): Promise<s
   // Validate: alle slugs moeten bestaan en zijn niet currentSlug
   const validSlugs = slugs.filter((s) => articles.find((a) => a.slug === s) && s !== slug)
   if (validSlugs.length < 3) {
-    console.warn(`  ⚠ Verwacht 3 valid slugs, kreeg ${validSlugs.length} — toch opnemen`)
+    console.warn(`  ⚠ Verwacht 3 valid slugs, kreeg ${validSlugs.length}, toch opnemen`)
   }
   return validSlugs.slice(0, 3)
 }

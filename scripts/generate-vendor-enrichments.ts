@@ -1,5 +1,5 @@
 /**
- * Vendor enrichment generator — verrijkt vendor-pages met unieke
+ * Vendor enrichment generator, verrijkt vendor-pages met unieke
  * "Stevin-invalshoek + stack-impact + pitfalls" content per vendor.
  *
  * Doel: 245 vendor-pages met identieke template-structuur worden door
@@ -24,7 +24,7 @@
  * Of in 25 dagen bij batch van 10. Dat is de programmatic SEO-pijplijn
  * voor de komende kwartaal.
  *
- * Output is bewerkbaar — review na elke batch wenselijk vóór deploy.
+ * Output is bewerkbaar, review na elke batch wenselijk vóór deploy.
  */
 
 import Anthropic from '@anthropic-ai/sdk'
@@ -51,7 +51,7 @@ const PROMPT_TEMPLATE = `Je bent de redactie van Stevin Journal. Schrijf voor de
 1. Toon: accountant die toevallig kan designen. Direct, neutraal, met cijfers waar mogelijk.
 2. NOOIT verboden jargon: "incrementaliteit", "causale data", "attribution gap", "synergistische impact". Wel: "uplift", "oorzaak en gevolg", "meetdata", "false confidence".
 3. Géén em-dash voor pauze. Punt of komma.
-4. Specifieke getallen waar je ze hebt. Geen vage kwantificeringen ("veel", "een hoop"). Verzin geen cijfers — als je niet zeker bent, weglaten.
+4. Specifieke getallen waar je ze hebt. Geen vage kwantificeringen ("veel", "een hoop"). Verzin geen cijfers, als je niet zeker bent, weglaten.
 5. "Je" en "jouw", informeel-zakelijk Nederlands.
 6. Inhoudelijk: schrijf vanuit Stevin's perspectief als consultancy die DEZE vendor in de praktijk bij klanten implementeert. Niet als marketing-praatje, maar als field-observatie.
 

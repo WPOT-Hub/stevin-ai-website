@@ -32,7 +32,7 @@ export default function BlogIndex() {
           name: a.title,
         }))}
       />
-      {/* Header — navy, editorial */}
+      {/* Header, navy, editorial */}
       <header className="bg-[var(--navy)] text-white" style={{ padding: '96px 24px 64px' }}>
         <div className="mx-auto" style={{ maxWidth: '1200px' }}>
           <p
@@ -75,7 +75,7 @@ export default function BlogIndex() {
         </div>
       </header>
 
-      {/* Kort — dispatches */}
+      {/* Kort, dispatches */}
       {allDispatches.length > 0 && (
         <section className="bg-white" style={{ padding: '40px 24px 64px' }}>
           <div className="mx-auto" style={{ maxWidth: '1200px' }}>
@@ -177,7 +177,7 @@ export default function BlogIndex() {
         </section>
       )}
 
-      {/* Edities — all editorials */}
+      {/* Edities, all editorials */}
       {allEditorials.length > 0 && (
         <section className="bg-[var(--surface)]" style={{ padding: '64px 24px 96px' }}>
           <div className="mx-auto" style={{ maxWidth: '1200px' }}>

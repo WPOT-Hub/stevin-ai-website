@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: isEn ? 'Terms of Service | Stevin.AI' : 'Algemene Voorwaarden | Stevin.AI',
     description: isEn
-      ? 'Terms of service for Stevin.AI — the conditions under which we provide our marketing intelligence platform.'
-      : 'Algemene voorwaarden van Stevin.AI — onder welke voorwaarden wij ons marketing intelligence platform leveren.',
+      ? 'Terms of service for Stevin.AI: the conditions under which we provide our AI platform.'
+      : 'Algemene voorwaarden van Stevin.AI: onder welke voorwaarden wij ons AI-platform leveren.',
     alternates: {
       canonical: 'https://stevin.ai/terms',
       languages: {
@@ -186,7 +186,7 @@ function TermsDutch() {
         <h2 className="text-xl font-semibold">11. Opzegging</h2>
         <p>
           Je kunt het abonnement maandelijks opzeggen tegen het einde van de
-          lopende maand, tenzij anders overeengekomen. Bij beëindiging blijft jouw
+          lopende maand, tenzij anders overeengekomen. Bij beeindiging blijft jouw
           data 30 dagen beschikbaar voor export, daarna wordt deze verwijderd
           conform onze retentie-policy.
         </p>
@@ -195,7 +195,7 @@ function TermsDutch() {
       <section>
         <h2 className="text-xl font-semibold">12. Wijzigingen</h2>
         <p>
-          Wij kunnen deze voorwaarden aanpassen. Materiële wijzigingen melden wij
+          Wij kunnen deze voorwaarden aanpassen. Materiele wijzigingen melden wij
           minimaal 30 dagen voor inwerkingtreding via e-mail of in-app notificatie.
           Bij doorgaand gebruik na inwerkingtreding accepteer je de nieuwe versie.
         </p>

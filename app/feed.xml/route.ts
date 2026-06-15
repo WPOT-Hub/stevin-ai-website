@@ -1,5 +1,5 @@
 /**
- * feed.xml — RSS 2.0 feed van het Stevin Journal. Een extra discovery-kanaal
+ * feed.xml, RSS 2.0 feed van het Stevin Journal. Een extra discovery-kanaal
  * naast de sitemap: feed-readers, aggregators en sommige indexers pakken nieuwe
  * artikelen hierlangs sneller op. Dynamisch uit data/articles, alleen
  * publiceerbare artikelen (body aanwezig), nieuwste eerst.
@@ -55,7 +55,7 @@ export async function GET() {
     '  <channel>',
     '    <title>Stevin Journal</title>',
     `    <link>${SITE}/blog</link>`,
-    '    <description>Wat we lezen, meten en uitschrijven over marketing, meetbaarheid en AI. Van Stevin, marketing intelligence voor MKB.</description>',
+    '    <description>Wat we lezen, meten en uitschrijven over marketing, meetbaarheid en AI. Van Stevin, de AI-laag over je operatie.</description>',
     '    <language>nl-NL</language>',
     `    <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml" />`,
     items,

@@ -246,7 +246,7 @@ export default async function GoogleAdGrantsNederlandPage({ params }: Props) {
             Vul je gegevens in. Wij doen een eerste eligibility-check en sturen je terug wat je organisatie nodig heeft om kansrijk te zijn. Geen verplichting, geen kosten.
           </p>
           <div className="rounded-[14px] border border-border bg-surface p-8">
-            <ContactForm subject="Google Ad Grants check — Nederland" />
+            <ContactForm subject="Google Ad Grants check: Nederland" />
           </div>
           <p className="text-sm text-muted/80 mt-6">
             Je organisatie blijft altijd zelf eigenaar van de aanvraag, Google for Nonprofits en Google Ads. Stevin bereidt voor en begeleidt; jullie houden de controle.

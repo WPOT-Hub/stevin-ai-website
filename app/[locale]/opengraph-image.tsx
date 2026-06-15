@@ -10,7 +10,7 @@ type Props = { params: Promise<{ locale: string }> }
 export default async function OGImage({ params }: Props) {
   const { locale } = await params
 
-  // ── NL — bestaande Wonder/Het is geen wonder/Het is Stevin versie ──
+  // ── NL: bestaande Wonder/Het is geen wonder/Het is Stevin versie ──
   if (locale === 'nl') {
     return new ImageResponse(
       (
@@ -74,7 +74,7 @@ export default async function OGImage({ params }: Props) {
               display: 'flex',
             }}
           >
-            &quot;Wonder en is gheen wonder.&quot; — Simon Stevin, 1586
+            &quot;Wonder en is gheen wonder.&quot;, Simon Stevin, 1586
           </span>
         </div>
       ),
@@ -82,7 +82,7 @@ export default async function OGImage({ params }: Props) {
     )
   }
 
-  // ── EN — Signals/Evidence architecturale zin ──
+  // ── EN: Signals/Evidence architecturale zin ──
   return new ImageResponse(
     (
       <div

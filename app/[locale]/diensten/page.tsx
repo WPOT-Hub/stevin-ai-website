@@ -55,7 +55,7 @@ export default async function DienstenPage({ params }: Props) {
       {
         '@type': 'ProfessionalService',
         '@id': 'https://stevin.ai/diensten#professional-service',
-        name: 'Stevin — marketing-meetbaarheid voor MKB',
+        name: 'Stevin, marketing-meetbaarheid voor MKB',
         provider: { '@id': 'https://stevin.ai/#organization' },
         areaServed: [
           { '@type': 'Country', name: 'Netherlands' },
@@ -109,7 +109,7 @@ export default async function DienstenPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── Tracks — surface ── */}
+      {/* ── Tracks, surface ── */}
       <section className="bg-surface" style={{ padding: '112px 24px 128px' }}>
         <div className="mx-auto max-w-[1200px]">
 
@@ -197,7 +197,7 @@ export default async function DienstenPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── Closing — navy ── */}
+      {/* ── Closing, navy ── */}
       <section className="bg-primary" style={{ padding: '128px 24px 144px' }}>
         <div className="mx-auto max-w-[1200px]">
 
@@ -237,7 +237,7 @@ export default async function DienstenPage({ params }: Props) {
             style={{ borderTop: '1px solid rgba(255,255,255,.12)' }}
           >
             <p className="italic text-[13px]" style={{ color: 'rgba(255,255,255,.5)' }}>
-              &ldquo;Wonder en is gheen wonder.&rdquo; — Simon Stevin, 1586
+              &ldquo;Wonder en is gheen wonder.&rdquo; Simon Stevin, 1586
             </p>
             <p
               className="font-display text-[12px] font-medium tracking-[0.06em] uppercase"

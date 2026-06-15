@@ -1,5 +1,5 @@
 /**
- * Vendor-vergelijkings-pages — programmatic SEO playbook "X vs Y".
+ * Vendor-vergelijkings-pages, programmatic SEO playbook "X vs Y".
  *
  * Doel: vangen van comparison-zoekers die in vergelijkingsfase zitten.
  * Hoog-intent verkeer ("X vs Y" = bijna-koop), high-conversion potentie.
@@ -9,7 +9,7 @@
  *
  * URL-patroon: /vergelijken/<slug-a>-vs-<slug-b>
  * Slug-format: alfabetisch gesorteerd (klaviyo-vs-mailchimp, niet
- * mailchimp-vs-klaviyo) — voorkomt duplicate content.
+ * mailchimp-vs-klaviyo), voorkomt duplicate content.
  */
 
 export interface ComparisonSection {
@@ -30,11 +30,11 @@ export interface Comparison {
   nameA: string
   /** Display-naam B (bv. "Mailchimp") */
   nameB: string
-  /** SERP-titel — pakt comparison-zoekers */
+  /** SERP-titel, pakt comparison-zoekers */
   title: string
   /** Meta-description, max 160 chars */
   dek: string
-  /** TL;DR — 1-2 zinnen voor wie te lui is om te scrollen */
+  /** TL;DR, 1-2 zinnen voor wie te lui is om te scrollen */
   tldr: string
   /** Wanneer kies je A (~120-180 wrd, concrete praktijk) */
   whenA: string
@@ -42,7 +42,7 @@ export interface Comparison {
   whenB: string
   /** Kosten-vergelijking (~80-120 wrd) */
   costs: string
-  /** Stevin's veld-observatie — wat we in de praktijk zien (~120-180 wrd) */
+  /** Stevin's veld-observatie, wat we in de praktijk zien (~120-180 wrd) */
   stevinView: string
   /** Optioneel: 3-5 FAQs voor FAQPage JSON-LD */
   faqs?: { question: string; answer: string }[]
@@ -146,7 +146,7 @@ export const comparisons: Comparison[] = [
     tldr:
       'Tot 50 sales-medewerkers en standaard processen: HubSpot. Vanaf complexe sales-cycli, multi-product, multi-region: Salesforce. Zonder fulltime RevOps-iemand: kies HubSpot ongeacht groottre.',
     whenA:
-      'HubSpot wint op tijd-tot-waarde. Een team van 5-30 sales-medewerkers is binnen twee weken operationeel inclusief automation, deal-tracking en rapportages. De interface is intuïtief genoeg dat consultants \'m vrijwel zonder training gebruiken. Marketing-automation, CMS en service-desk zitten op hetzelfde platform, voor MKB die niet wil versplinteren tussen 4 tools is dat een groot voordeel. Pricing schaalt voorspelbaar mee. Beperking: bij sales-flows die echt afwijken van standaard (B2B met 18-maanden sales-cycli, multi-stakeholder approval, custom pricing per klant) loop je tegen HubSpot\'s limieten aan.',
+      'HubSpot wint op tijd-tot-waarde. Een team van 5-30 sales-medewerkers is binnen twee weken operationeel inclusief automation, deal-tracking en rapportages. De interface is intuitief genoeg dat consultants \'m vrijwel zonder training gebruiken. Marketing-automation, CMS en service-desk zitten op hetzelfde platform, voor MKB die niet wil versplinteren tussen 4 tools is dat een groot voordeel. Pricing schaalt voorspelbaar mee. Beperking: bij sales-flows die echt afwijken van standaard (B2B met 18-maanden sales-cycli, multi-stakeholder approval, custom pricing per klant) loop je tegen HubSpot\'s limieten aan.',
     whenB:
       'Salesforce wint zodra je sales-proces niet in een standaard-template past. Custom objects, custom validation rules, custom workflows via Apex, wat je je ook voorstelt, Salesforce kan het. Voor enterprises met 50+ sales en complexe sales-cycli is het de standaard, juist omdat de flexibiliteit zo groot is. Maar die flexibiliteit heeft een prijs: zonder een toegewijde Salesforce-administrator (intern of extern) loopt elke implementatie binnen twee jaar uit op een rommelige config waar niemand meer doorheen kijkt. Reken op €40k-150k implementatie-kosten en daarna €40k-80k per jaar voor administrator + licenties.',
     costs:
@@ -162,7 +162,7 @@ export const comparisons: Comparison[] = [
       {
         question: 'Wat kost een Salesforce-implementatie werkelijk?',
         answer:
-          'Naast licenties (€100-300/seat/maand): implementatie-partner €40k-150k voor MKB, plus jaarlijks 15-25 procent van licentie-kosten aan administrator-tijd. Voor een 50-mans sales-team is dat al snel €100k+ jaar-één en €60k+ structureel. Bij HubSpot loopt dat richting de €40k-€80k jaar-één en €30-50k structureel.',
+          'Naast licenties (€100-300/seat/maand): implementatie-partner €40k-150k voor MKB, plus jaarlijks 15-25 procent van licentie-kosten aan administrator-tijd. Voor een 50-mans sales-team is dat al snel €100k+ jaar-een en €60k+ structureel. Bij HubSpot loopt dat richting de €40k-€80k jaar-een en €30-50k structureel.',
       },
       {
         question: 'Welk CRM heeft betere AI-functionaliteit?',
@@ -224,7 +224,7 @@ export const comparisons: Comparison[] = [
     whenA:
       'Google Ads wint voor producten waar mensen actief naar zoeken. Branded search (jouw merknaam), category-search ("AI-marketing-tool", "boekhoudpakket MKB"), local search ("loodgieter Breda"), Google vangt mensen op het moment dat ze al een vraag hebben. Voor B2B en gevestigde merken is dat vaak 50-70 procent van het budget. Performance Max werkt voor e-commerce maar consumeert ongeveer 30-40 procent branded search die je toch al had, gebruik bewust en sluit branded uit als je echte uplift wilt zien.',
     whenB:
-      'Meta Ads wint voor producten die mensen niet zelf opzoeken. Een nieuw skincare-merk, een nieuwe SaaS-feature, een lifestyle-product, niemand googelt daar specifiek op. Meta\'s targeting (interesses, look-alikes, retargeting) bouwt vraag op via creatieve content. Voor D2C-startups is Meta vaak 60-80 procent van het budget in jaar één, daarna verschuift het naar Google naarmate de naamsbekendheid groeit. Belangrijke caveat: Meta\'s eigen attribution overschat zichzelf systematisch, meet alleen op echte uplift via geo-test of holdout, niet op platform-rapportage.',
+      'Meta Ads wint voor producten die mensen niet zelf opzoeken. Een nieuw skincare-merk, een nieuwe SaaS-feature, een lifestyle-product, niemand googelt daar specifiek op. Meta\'s targeting (interesses, look-alikes, retargeting) bouwt vraag op via creatieve content. Voor D2C-startups is Meta vaak 60-80 procent van het budget in jaar een, daarna verschuift het naar Google naarmate de naamsbekendheid groeit. Belangrijke caveat: Meta\'s eigen attribution overschat zichzelf systematisch, meet alleen op echte uplift via geo-test of holdout, niet op platform-rapportage.',
     costs:
       'Beide platforms werken op auction-pricing, dus "kost" per platform varieert sterk. Indicaties voor Nederland: Google Search CPC €0,80-€8 (afhankelijk van categorie). Meta CPM €4-€18 (afhankelijk van doelgroep en creatief). Voor een typisch MKB-D2C-budget van €5k/maand: ongeveer 1.500-3.000 conversies via Meta vs 200-800 via Google Search. Maar conversie-waarde verschilt: Google-conversies zijn vaak hoger-intent dus hogere AOV.',
     stevinView:
@@ -236,14 +236,14 @@ export const comparisons: Comparison[] = [
           'Hangt volledig af van product, markt en awareness-niveau. Voor zoek-intentieproducten (B2B-tools, services, lokaal) is Google\'s ROI doorgaans hoger. Voor visueel D2C en lifestyle-merken is Meta\'s ROI vaak beter, vooral in vroege fase. Een uplift-test op beide platforms is de enige manier om voor jouw bedrijf zeker te weten welke beter presteert.',
       },
       {
-        question: 'Moet ik beide platforms gebruiken of kan ik één kiezen?',
+        question: 'Moet ik beide platforms gebruiken of kan ik een kiezen?',
         answer:
-          'Voor de meeste merken: beide. Google vangt vraag, Meta bouwt vraag. Eén kanaal alleen leidt tot diminishing returns. Uitzondering: pure lokaal MKB (loodgieter, kapper) kan vaak met alleen Google goed uit. Pure D2C-startup zonder budget voor beide: start met Meta, voeg Google later toe naarmate naamsbekendheid groeit.',
+          'Voor de meeste merken: beide. Google vangt vraag, Meta bouwt vraag. Een kanaal alleen leidt tot diminishing returns. Uitzondering: pure lokaal MKB (loodgieter, kapper) kan vaak met alleen Google goed uit. Pure D2C-startup zonder budget voor beide: start met Meta, voeg Google later toe naarmate naamsbekendheid groeit.',
       },
       {
         question: 'Wat is de gemiddelde verdeling tussen Google en Meta?',
         answer:
-          'Voor MKB-D2C in Nederland zien wij meestal 50/50 of 60/40 (Google/Meta) als gezond startpunt. Voor B2B vaak 70/30 richting Google. Voor pure D2C-startups in jaar één: 30/70 of 20/80 richting Meta. Het juiste antwoord hangt af van uplift-test-uitkomsten, niet van een vuistregel.',
+          'Voor MKB-D2C in Nederland zien wij meestal 50/50 of 60/40 (Google/Meta) als gezond startpunt. Voor B2B vaak 70/30 richting Google. Voor pure D2C-startups in jaar een: 30/70 of 20/80 richting Meta. Het juiste antwoord hangt af van uplift-test-uitkomsten, niet van een vuistregel.',
       },
     ],
     publishedAt: '2026-05-05',

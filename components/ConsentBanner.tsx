@@ -26,10 +26,10 @@ export default function ConsentBanner() {
   useEffect(() => {
     const stored = getStoredConsent()
     if (stored) {
-      // Consent already given — apply it immediately on page load
+      // Consent already given, apply it immediately on page load
       updateGoogleConsent(stored)
     } else {
-      // No consent yet — show banner
+      // No consent yet, show banner
       setVisible(true)
     }
   }, [])
@@ -92,7 +92,7 @@ export default function ConsentBanner() {
               Cookie-instellingen
             </h3>
             <div className="space-y-3 mb-6">
-              {/* Noodzakelijk — altijd aan */}
+              {/* Noodzakelijk, altijd aan */}
               <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-surface">
                 <div>
                   <p className="text-sm font-semibold text-primary">Noodzakelijk</p>
@@ -101,7 +101,7 @@ export default function ConsentBanner() {
                 <span className="text-xs font-medium text-muted bg-white px-2.5 py-1 rounded-full border border-border flex-shrink-0">Altijd aan</span>
               </div>
 
-              {/* Statistieken — analytics_storage */}
+              {/* Statistieken: analytics_storage */}
               <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-surface">
                 <div>
                   <p className="text-sm font-semibold text-primary">Statistieken</p>
@@ -110,7 +110,7 @@ export default function ConsentBanner() {
                 <Toggle checked={analyticsChecked} onChange={setAnalyticsChecked} />
               </div>
 
-              {/* Marketing — ad_storage, ad_user_data, ad_personalization */}
+              {/* Marketing: ad_storage, ad_user_data, ad_personalization */}
               <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-surface">
                 <div>
                   <p className="text-sm font-semibold text-primary">Marketing</p>

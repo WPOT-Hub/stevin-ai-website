@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        // Skip API routes — die hebben eigen policy. _next/static heeft al
+        // Skip API routes, die hebben eigen policy. _next/static heeft al
         // immutable cache via Next.js.
         source: '/((?!api/).*)',
         headers: [

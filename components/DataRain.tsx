@@ -3,12 +3,12 @@
 import { useState, useEffect } from 'react'
 
 /**
- * Ambient background layer — floating data lines that drift upward
+ * Ambient background layer, floating data lines that drift upward
  * through the hero at very low opacity. Per-page variant shows
  * contextually relevant data fragments.
  *
  * Renders only on client to avoid hydration mismatch.
- * Pure CSS animations after mount — no JS animation loop.
+ * Pure CSS animations after mount, no JS animation loop.
  */
 
 export type DataRainVariant =
@@ -81,7 +81,7 @@ const LINES: Record<DataRainVariant, string[]> = {
     'Rapportage: 3 min per klant',
     'Creative fatigue: 4 klanten',
     'Portfolio GM: 2.1x gemiddeld',
-    'White-label rapport verstuurd',
+    'Wekelijks klantrapport verstuurd',
     'Klant onboarding: 24u',
     'Anomalie klant Revier: CPC +45%',
     'Budget alert: klant Apex',

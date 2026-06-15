@@ -44,7 +44,7 @@ export default function StepsTimeline() {
 
   return (
     <div ref={containerRef}>
-      {/* Desktop — horizontal */}
+      {/* Desktop, horizontal */}
       <div className="hidden md:block max-w-3xl mx-auto">
         {/* Progress line */}
         <div className="relative flex items-center justify-between mb-8">
@@ -98,7 +98,7 @@ export default function StepsTimeline() {
         </div>
       </div>
 
-      {/* Mobile — vertical timeline */}
+      {/* Mobile, vertical timeline */}
       <div className="md:hidden max-w-sm mx-auto">
         <div className="relative pl-12">
           {/* Vertical line */}

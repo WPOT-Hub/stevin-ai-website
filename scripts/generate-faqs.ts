@@ -1,5 +1,5 @@
 /**
- * FAQ generator — extraheert 3-5 FAQs per editorial via Claude API.
+ * FAQ generator, extraheert 3-5 FAQs per editorial via Claude API.
  *
  * Workflow:
  *   1. Leest data/articles.ts voor de lijst editorials
@@ -18,7 +18,7 @@
  *   - --all: regenerate álles (overschrijft bestaande)
  *   - <slug>: alleen die ene
  *
- * Niet automatisch in CI — dit kost API-tokens. Trigger handmatig na
+ * Niet automatisch in CI, dit kost API-tokens. Trigger handmatig na
  * publicatie van nieuwe editorials.
  */
 
@@ -63,7 +63,7 @@ function readArticleBody(slug: string): string {
   // Match function ArticleXBody met body-naam afgeleid van slug
   // We zoeken het stuk tussen function naam met 'Body' en de afsluitende `}` op rij 0 inspringen.
   // Deterministisch: vind comment-anchor "Editie 0XX" of "ArticleXBody"
-  // Eerst: zoek naar comment-block met de slug erin (genoemd als "Editie ... — <topic>")
+  // Eerst: zoek naar comment-block met de slug erin (genoemd als "Editie ..., <topic>")
   const componentMap: Record<string, string> = {
     '95-procent-ai-pilots-mislukt': 'ArticleMITBody',
     'autonome-agents-90-dagen': 'ArticleAgentsBody',
@@ -130,7 +130,7 @@ async function generateFaqsForSlug(client: Anthropic, slug: string): Promise<FAQ
     }
   }
   if (faqs.length < 3 || faqs.length > 5) {
-    console.warn(`  ⚠ Verwacht 3-5 FAQs, kreeg ${faqs.length} — opname toch`)
+    console.warn(`  ⚠ Verwacht 3-5 FAQs, kreeg ${faqs.length}, opname toch`)
   }
   return faqs
 }

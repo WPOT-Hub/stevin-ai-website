@@ -27,7 +27,7 @@ const faqs = [
   {
     question: 'Hoeveel marketing-data hebben we nodig om dit zinvol te laten werken?',
     answer:
-      'Niet veel. Een werkende GA4-meting, één of twee actieve advertentie-accounts en een e-mail-tool zijn al genoeg om binnen twee weken zinvolle signalen te krijgen. Stevin leert wat normaal is voor jouw organisatie en signaleert pas als iets afwijkt.',
+      'Niet veel. Een werkende GA4-meting, een of twee actieve advertentie-accounts en een e-mail-tool zijn al genoeg om binnen twee weken zinvolle signalen te krijgen. Stevin leert wat normaal is voor jouw organisatie en signaleert pas als iets afwijkt.',
   },
   {
     question: 'Is donor-data veilig?',
@@ -40,7 +40,7 @@ const faqs = [
       'Vaste maandprijzen, afgestemd op het aantal kanalen en koppelingen. Geen marge op jullie media-budget. Voor non-profits maken we een aangepast voorstel, plan een gesprek voor de details.',
   },
   {
-    question: 'Welke advertentie-credits zijn er voor non-profits in België?',
+    question: 'Welke advertentie-credits zijn er voor non-profits in Belgie?',
     answer:
       'Google Ad Grants is veruit het grootste programma: tot 10.000 USD per maand aan gratis Search-advertenties voor in aanmerking komende non-profits. Microsoft Ads (Bing) heeft geen vergelijkbaar gratis programma in BE. Meta for Nonprofits biedt makkelijker verificatie en soms ad-credits bij campagnes. TikTok Ads for Good draait in beperkt aantal landen, niet structureel in BE. Voor non-profit-advertentiebudget op schaal is en blijft Google de grootste kans.',
   },
@@ -52,11 +52,11 @@ const faqs = [
 ]
 
 const capabilities = [
-  { title: 'SEO en AI-search vindbaarheid', desc: 'Word gevonden in Google én in AI-zoekresultaten van ChatGPT, Perplexity en Google AI Overviews. Stevin volgt jullie posities en signaleert kansen op zoekwoorden waar jullie missie sterk staat.' },
+  { title: 'SEO en AI-search vindbaarheid', desc: 'Word gevonden in Google en in AI-zoekresultaten van ChatGPT, Perplexity en Google AI Overviews. Stevin volgt jullie posities en signaleert kansen op zoekwoorden waar jullie missie sterk staat.' },
   { title: 'Social listening', desc: 'Mentions, sentiment en piek-momenten over al jullie kanalen. Een ambassadeur die jullie viraal noemt, een lokale krant die schrijft, een lotgenoot die jullie tagt: Stevin ziet het.' },
   { title: 'Marktsentiment en PR-haakjes', desc: 'Welke onderwerpen leven nu rond jullie missie? Stevin volgt Google Trends, social-discussies en nieuwsverhalen en signaleert wanneer een topic momentum krijgt waar jullie op kunnen inhaken.' },
   { title: 'Automation voor fondswerving', desc: 'Donor-journeys, abandoned-donatie-flows, herinneringen voor terugkerende donateurs. Concept-flows die jullie team alleen nog hoeft goed te keuren.' },
-  { title: 'Campagne-monitoring', desc: 'Paid, owned, e-mail en donatieplatform in één blik. Stevin tikt zodra een campagne inzakt, niet drie weken later in de rapportage.' },
+  { title: 'Campagne-monitoring', desc: 'Paid, owned, e-mail en donatieplatform in een blik. Stevin tikt zodra een campagne inzakt, niet drie weken later in de rapportage.' },
   { title: 'Creative wear-out detection', desc: 'Donor-fatigue is sluipend. Stevin detecteert wanneer een ad zijn werk niet meer doet en stelt een variant of pauze voor, zodat hetzelfde budget langer impact maakt.' },
   { title: 'Briefing naar campagne-concept', desc: 'Een verhaal of campagne-idee binnen? Stevin vertaalt jullie briefing naar een campagne-structuur met zoekwoorden, doelgroepen en eerste creative-richtingen voor het team.' },
   { title: 'Peer en concurrent-tracking', desc: 'Hoe doen vergelijkbare organisaties het? Stevin volgt openbare campagnes en mentions van peer-organisaties zodat jullie zien wat werkt in het veld.' },
@@ -83,7 +83,7 @@ export default async function NonProfitBelgiePage({ params }: Props) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://stevin.ai' },
-      { '@type': 'ListItem', position: 2, name: 'Non-profit marketing België', item: 'https://stevin.ai/non-profit-marketing-belgie' },
+      { '@type': 'ListItem', position: 2, name: 'Non-profit marketing Belgie', item: 'https://stevin.ai/non-profit-marketing-belgie' },
     ],
   }
 
@@ -164,7 +164,7 @@ export default async function NonProfitBelgiePage({ params }: Props) {
             className="font-display font-extrabold text-primary mb-12"
             style={{ fontSize: 'clamp(28px, 3.2vw, 44px)', letterSpacing: '-0.02em', lineHeight: '1.1' }}
           >
-            Eén intelligentie-laag boven jullie hele marketing-stack.
+            Een intelligentie-laag boven jullie hele marketing-stack.
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -255,7 +255,7 @@ export default async function NonProfitBelgiePage({ params }: Props) {
               <h3 className="font-display font-bold text-primary mb-3">Past minder goed bij</h3>
               <ul className="space-y-2 text-muted">
                 <li>• Organisaties zonder digitale marketing-activiteit</li>
-                <li>• Eénmans-VZW&apos;s zonder team</li>
+                <li>• Eenmans-VZW&apos;s zonder team</li>
                 <li>• Overheidsinstellingen</li>
               </ul>
               <p className="text-sm text-muted/80 mt-4">Twijfel je of jullie organisatie past? Plan een korte call, dan kijken we samen.</p>
@@ -281,7 +281,7 @@ export default async function NonProfitBelgiePage({ params }: Props) {
             Vul je gegevens in. We doen een korte scan van jullie huidige marketing-stack en sturen terug waar de meeste impact valt te halen. Geen verplichting, geen kosten.
           </p>
           <div className="rounded-[14px] border border-border bg-white p-8">
-            <ContactForm subject="Non-profit marketing check — België" />
+            <ContactForm subject="Non-profit marketing check: Belgie" />
           </div>
           <p className="text-sm text-muted/80 mt-6">
             Stevin werkt read-only op jullie marketing-data. Geen schrijfrechten op ad-accounts, GA4 of e-mail. Concept-taken landen in jullie projectmanagement-tool, jullie team beslist wat ermee gebeurt.

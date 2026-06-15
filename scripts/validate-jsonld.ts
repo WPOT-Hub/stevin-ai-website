@@ -1,5 +1,5 @@
 /**
- * JSON-LD validator — runt in CI, faalt de build als een gepubliceerd
+ * JSON-LD validator, runt in CI, faalt de build als een gepubliceerd
  * artikel een onvolledig/ongeldig Article-schema oplevert.
  *
  * Wat we checken (Schema.org Article required + recommended velden):
@@ -14,7 +14,7 @@
  *  - mainEntityOfPage
  *
  * Bouwt het schema-object in JS (zonder Next runtime) door de logica
- * uit app/[locale]/blog/[slug]/page.tsx te dupliceren — als beide ooit
+ * uit app/[locale]/blog/[slug]/page.tsx te dupliceren, als beide ooit
  * uit sync raken, faalt de check en weet je het.
  *
  * Usage:
@@ -94,8 +94,8 @@ function validateFaqs(slug: string): string[] {
   const list = articleFaqs[slug]
   if (!list || list.length === 0) return [] // Geen FAQs is OK, optioneel
   const errors: string[] = []
-  if (list.length < 2) errors.push(`FAQPage heeft maar ${list.length} item — minimum 2 voor schema`)
-  if (list.length > 10) errors.push(`FAQPage heeft ${list.length} items — keep onder 10 voor relevantie`)
+  if (list.length < 2) errors.push(`FAQPage heeft maar ${list.length} item, minimum 2 voor schema`)
+  if (list.length > 10) errors.push(`FAQPage heeft ${list.length} items, keep onder 10 voor relevantie`)
   for (let i = 0; i < list.length; i++) {
     const f = list[i]
     if (!f.question || f.question.length < 8)
@@ -103,7 +103,7 @@ function validateFaqs(slug: string): string[] {
     if (!f.answer || f.answer.length < 20)
       errors.push(`FAQ #${i + 1}: answer te kort (<20 chars)`)
     if (f.answer && f.answer.length > 500)
-      errors.push(`FAQ #${i + 1}: answer te lang (${f.answer.length}>500 chars) — wordt niet door Google getoond`)
+      errors.push(`FAQ #${i + 1}: answer te lang (${f.answer.length}>500 chars), wordt niet door Google getoond`)
   }
   return errors.map((e) => `  • ${e}`)
 }
@@ -125,7 +125,7 @@ function checkDataFilesForEntities(): string[] {
     lines.forEach((line, i) => {
       const matches = line.match(entityRe)
       if (matches) {
-        errors.push(`  • data/${file}:${i + 1} bevat ${matches.join(', ')} — gebruik echte chars (zie feedback_no_html_entities_in_js_strings.md)`)
+        errors.push(`  • data/${file}:${i + 1} bevat ${matches.join(', ')}, gebruik echte chars (zie feedback_no_html_entities_in_js_strings.md)`)
       }
     })
   }

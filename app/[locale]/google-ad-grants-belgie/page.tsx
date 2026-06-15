@@ -43,7 +43,7 @@ const faqs = [
   {
     question: 'Heeft Microsoft Ads (Bing) een vergelijkbaar programma?',
     answer:
-      'Nee. Microsoft Ads (Bing) heeft geen gratis advertentiebudget-programma voor non-profits in België. Microsoft for Nonprofits geeft wel korting of gratis Office 365, Azure en Teams, maar geen Bing-zoekadvertenties. In de praktijk is Bing-traffic in BE relatief beperkt (5-10%, hoger door Edge in overheidskantoren), dus het ontbreken van een equivalent is meestal geen groot gemis.',
+      'Nee. Microsoft Ads (Bing) heeft geen gratis advertentiebudget-programma voor non-profits in Belgie. Microsoft for Nonprofits geeft wel korting of gratis Office 365, Azure en Teams, maar geen Bing-zoekadvertenties. In de praktijk is Bing-traffic in BE relatief beperkt (5-10%, hoger door Edge in overheidskantoren), dus het ontbreken van een equivalent is meestal geen groot gemis.',
   },
   {
     question: 'Zijn er ook advertentie-credits via Meta of TikTok voor VZW\'s?',
@@ -72,7 +72,7 @@ export default async function GoogleAdGrantsBelgiePage({ params }: Props) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://stevin.ai' },
-      { '@type': 'ListItem', position: 2, name: 'Google Ad Grants België', item: 'https://stevin.ai/google-ad-grants-belgie' },
+      { '@type': 'ListItem', position: 2, name: 'Google Ad Grants Belgie', item: 'https://stevin.ai/google-ad-grants-belgie' },
     ],
   }
 
@@ -86,7 +86,7 @@ export default async function GoogleAdGrantsBelgiePage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            GOOGLE AD GRANTS · BELGIË
+            GOOGLE AD GRANTS · BELGIE
           </p>
 
           <h1
@@ -247,7 +247,7 @@ export default async function GoogleAdGrantsBelgiePage({ params }: Props) {
             Vul je gegevens in. Wij doen een eerste eligibility-check en sturen je terug wat je organisatie nodig heeft om kansrijk te zijn. Geen verplichting, geen kosten.
           </p>
           <div className="rounded-[14px] border border-border bg-surface p-8">
-            <ContactForm subject="Google Ad Grants check — België" />
+            <ContactForm subject="Google Ad Grants check: Belgie" />
           </div>
           <p className="text-sm text-muted/80 mt-6">
             Je organisatie blijft altijd zelf eigenaar van de aanvraag, Google for Nonprofits en Google Ads. Stevin bereidt voor en begeleidt; jullie houden de controle.

@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: isEn ? 'Privacy Policy | Stevin.AI' : 'Privacyverklaring | Stevin.AI',
     description: isEn
-      ? 'Privacy policy for Stevin.AI — how we collect, store and use personal data.'
-      : 'Privacyverklaring van Stevin.AI — hoe wij persoonsgegevens verzamelen, opslaan en gebruiken.',
+      ? 'Privacy policy for Stevin.AI: how we collect, store and use personal data.'
+      : 'Privacyverklaring van Stevin.AI: hoe wij persoonsgegevens verzamelen, opslaan en gebruiken.',
     alternates: {
       canonical: 'https://stevin.ai/privacy',
       languages: {
@@ -73,7 +73,7 @@ function PrivacyDutch() {
       <section>
         <h2 className="text-xl font-semibold">Wie zijn wij</h2>
         <p>
-          Stevin.AI (&quot;Stevin&quot;) is een marketing intelligence platform geleverd door
+          Stevin.AI (&quot;Stevin&quot;) is een AI-platform geleverd door
           WPOT B.V., gevestigd in Nederland. Wij helpen marketingteams en bureaus om
           campagne-issues eerder te signaleren dan de reguliere rapportage doet.
         </p>
@@ -93,7 +93,7 @@ function PrivacyDutch() {
           </li>
           <li>
             <strong>Gebruiksdata van het platform</strong>: paginabezoeken, gebruikte features,
-            tijdstempels — om de dienst te verbeteren en misbruik te detecteren.
+            tijdstempels, om de dienst te verbeteren en misbruik te detecteren.
           </li>
           <li>
             <strong>Technische data</strong>: IP-adres, browser-type, apparaattype voor
@@ -120,7 +120,7 @@ function PrivacyDutch() {
         <h2 className="text-xl font-semibold">Bewaarduur</h2>
         <p>
           Account-gegevens bewaren wij zolang je een actief account hebt, plus 12 maanden na
-          beëindiging voor administratieve en fiscale verplichtingen. Campagne-data wordt
+          beeindiging voor administratieve en fiscale verplichtingen. Campagne-data wordt
           verwijderd binnen 30 dagen na het ontkoppelen van een platform of het opzeggen van
           de dienst.
         </p>
@@ -132,11 +132,11 @@ function PrivacyDutch() {
           Wij gebruiken een beperkt aantal sub-verwerkers, allen onder verwerkersovereenkomst:
         </p>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Supabase (database hosting, EU-region) — opslag van platformdata.</li>
-          <li>AWS (EU-region) — applicatie-infrastructuur.</li>
-          <li>Vercel (EU-region) — front-end hosting.</li>
-          <li>Resend (EU-region) — transactionele e-mail.</li>
-          <li>Anthropic / OpenAI — alleen voor AI-functies, met gestripte/anonieme prompts
+          <li>Supabase (database hosting, EU-region): opslag van platformdata.</li>
+          <li>AWS (EU-region): applicatie-infrastructuur.</li>
+          <li>Vercel (EU-region): front-end hosting.</li>
+          <li>Resend (EU-region): transactionele e-mail.</li>
+          <li>Anthropic / OpenAI: alleen voor AI-functies, met gestripte/anonieme prompts
             waar mogelijk; geen persoonsgegevens in trainingsdata.</li>
         </ul>
         <p>
@@ -150,8 +150,8 @@ function PrivacyDutch() {
         <p>
           Onder de AVG/GDPR heb je het recht op inzage, correctie, verwijdering, beperking,
           overdraagbaarheid en bezwaar tegen verwerking van je gegevens. Stuur een verzoek
-          naar <a href="mailto:privacy@stevin.ai" className="underline">privacy@stevin.ai</a> —
-          we reageren binnen 30 dagen.
+          naar <a href="mailto:privacy@stevin.ai" className="underline">privacy@stevin.ai</a>.
+          We reageren binnen 30 dagen.
         </p>
         <p>
           Niet tevreden? Je kunt een klacht indienen bij de Autoriteit Persoonsgegevens
@@ -163,7 +163,7 @@ function PrivacyDutch() {
         <h2 className="text-xl font-semibold">Cookies</h2>
         <p>
           Op stevin.ai gebruiken wij alleen functionele cookies (login-sessie, taalkeuze) en
-          geanonimiseerde analytics. Wij plaatsen géén marketing- of tracking-cookies van
+          geanonimiseerde analytics. Wij plaatsen geen marketing- of tracking-cookies van
           derden zonder expliciete toestemming.
         </p>
       </section>
@@ -180,8 +180,8 @@ function PrivacyDutch() {
       <section>
         <h2 className="text-xl font-semibold">Wijzigingen</h2>
         <p>
-          Wij kunnen deze privacyverklaring aanpassen. Bij materiële wijzigingen sturen wij
-          actieve gebruikers een notificatie minimaal 14 dagen vóór de wijziging ingaat.
+          Wij kunnen deze privacyverklaring aanpassen. Bij materiele wijzigingen sturen wij
+          actieve gebruikers een notificatie minimaal 14 dagen voor de wijziging ingaat.
         </p>
       </section>
     </article>
@@ -194,7 +194,7 @@ function PrivacyEnglish() {
       <section>
         <h2 className="text-xl font-semibold">Who we are</h2>
         <p>
-          Stevin.AI (&quot;Stevin&quot;) is a marketing intelligence platform operated by
+          Stevin.AI (&quot;Stevin&quot;) is an AI platform operated by
           WPOT B.V., a company registered in the Netherlands. We help marketing teams and
           agencies detect campaign issues earlier than regular reporting does.
         </p>
@@ -210,10 +210,10 @@ function PrivacyEnglish() {
           <li>
             <strong>Campaign and analytics data</strong>: only through OAuth integrations that
             you initiate (Google Ads, Meta, GA4, etc.). We receive read-only access to campaign
-            metrics — no payment or billing information.
+            metrics, no payment or billing information.
           </li>
           <li>
-            <strong>Platform usage data</strong>: page visits, feature usage, timestamps — to
+            <strong>Platform usage data</strong>: page visits, feature usage, timestamps, to
             improve the service and detect abuse.
           </li>
           <li>
@@ -250,11 +250,11 @@ function PrivacyEnglish() {
         <h2 className="text-xl font-semibold">Subprocessors</h2>
         <p>We use a limited set of subprocessors, all under a data processing agreement:</p>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Supabase (database hosting, EU region) — platform data storage.</li>
-          <li>AWS (EU region) — application infrastructure.</li>
-          <li>Vercel (EU region) — front-end hosting.</li>
-          <li>Resend (EU region) — transactional email.</li>
-          <li>Anthropic / OpenAI — for AI features only, with stripped or anonymous prompts
+          <li>Supabase (database hosting, EU region): platform data storage.</li>
+          <li>AWS (EU region): application infrastructure.</li>
+          <li>Vercel (EU region): front-end hosting.</li>
+          <li>Resend (EU region): transactional email.</li>
+          <li>Anthropic / OpenAI: for AI features only, with stripped or anonymous prompts
             where possible; no personal data goes into training datasets.</li>
         </ul>
         <p>
@@ -268,8 +268,8 @@ function PrivacyEnglish() {
         <p>
           Under GDPR you have the right to access, rectify, erase, restrict, port and object
           to processing of your data. Send a request to{' '}
-          <a href="mailto:privacy@stevin.ai" className="underline">privacy@stevin.ai</a> —
-          we respond within 30 days.
+          <a href="mailto:privacy@stevin.ai" className="underline">privacy@stevin.ai</a>.
+          We respond within 30 days.
         </p>
         <p>
           Not satisfied? You can lodge a complaint with the Dutch Data Protection Authority

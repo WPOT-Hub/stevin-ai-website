@@ -3,7 +3,7 @@ import { readFileSync } from 'fs'
 import { join } from 'path'
 
 export const runtime = 'nodejs'
-export const alt = 'Stevin voor Marketing — Grip op je data. Focus op resultaat.'
+export const alt = 'Stevin voor Marketing. Grip op je data. Focus op resultaat.'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 

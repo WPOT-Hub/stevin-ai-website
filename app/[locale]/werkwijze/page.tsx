@@ -116,13 +116,13 @@ export default async function WerkwijzePage({ params }: Props) {
                 '@type': 'HowToStep',
                 position: 2,
                 name: 'Meten',
-                text: 'Alle data stroomt samen in één intelligentielaag. Stevin zet ruwe cijfers om naar betekenisvolle signalen per klant, campagne en kanaal.',
+                text: 'Alle data stroomt samen in een intelligentielaag. Stevin zet ruwe cijfers om naar betekenisvolle signalen per klant, campagne en kanaal.',
               },
               {
                 '@type': 'HowToStep',
                 position: 3,
                 name: 'Signaleren',
-                text: 'Stevin detecteert afwijkingen, trends en kansen proactief — voor je klant of DGA er naar vraagt.',
+                text: 'Stevin detecteert afwijkingen, trends en kansen proactief, voor je klant of DGA er naar vraagt.',
               },
               {
                 '@type': 'HowToStep',
@@ -134,7 +134,7 @@ export default async function WerkwijzePage({ params }: Props) {
           }),
         }}
       />
-      {/* ── Hero — navy ── */}
+      {/* ── Hero, navy ── */}
       <section className="bg-primary overflow-hidden -mt-[72px]" style={{ paddingTop: 'calc(96px + 72px)', paddingBottom: '128px' }}>
         <div className="mx-auto max-w-[1200px] px-6">
 
@@ -186,7 +186,7 @@ export default async function WerkwijzePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── Phases — surface ── */}
+      {/* ── Phases, surface ── */}
       <section className="bg-surface" style={{ padding: '128px 24px 96px' }}>
         <div className="mx-auto max-w-[1200px]">
 
@@ -257,7 +257,7 @@ export default async function WerkwijzePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── Closing — navy ── */}
+      {/* ── Closing, navy ── */}
       <section className="bg-primary" style={{ padding: '112px 24px' }}>
         <div className="mx-auto max-w-[1200px] flex items-center justify-between gap-12 flex-col lg:flex-row">
           <h3
@@ -278,7 +278,7 @@ export default async function WerkwijzePage({ params }: Props) {
               </svg>
             </Link>
             <p className="text-[14px] italic text-white/55">
-              &ldquo;{t('closing_quote')}&rdquo; — {t('closing_quote_author')}
+              &ldquo;{t('closing_quote')}&rdquo;, {t('closing_quote_author')}
             </p>
           </div>
         </div>

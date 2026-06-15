@@ -1,10 +1,10 @@
 /**
- * Stevin Journal — articles index.
+ * Stevin Journal, articles index.
  *
  * Twee formats:
- * - 'editorial' — lange stukken (8-14 min) met Stevin-mening, drop-cap,
+ * - 'editorial': lange stukken (8-14 min) met Stevin-mening, drop-cap,
  *   callouts, takeaways. Match: Claude Design article.html.
- * - 'dispatch' — korte updates (2-4 min) in nu.nl/tweakers-stijl. Externe
+ * - 'dispatch': korte updates (2-4 min) in nu.nl/tweakers-stijl. Externe
  *   gebeurtenis + 1 paragraaf Stevin-duiding ("Wat dit betekent voor jou").
  *   Schrijf-regels: zie /docs/WRITING.md.
  */
@@ -18,7 +18,7 @@ export interface Article {
   title: string
   dek: string
   publishedAt: string
-  /** Optioneel — als afwezig valt JSON-LD dateModified terug op publishedAt */
+  /** Optioneel, als afwezig valt JSON-LD dateModified terug op publishedAt */
   updatedAt?: string
   readMinutes: number
   author: { name: string; role: string }
@@ -427,7 +427,7 @@ export const articles: Article[] = [
     edition: '209',
     category: 'Platform',
     title: "Honderden pagina’s online maar Google ziet er maar een paar? Begin dan niet met herschrijven",
-    dek: "De reflex om teksten te verbeteren als je site slecht geïndexeerd wordt, is een doodlopende weg. Het probleem zit in overaanbod en zwakke autoriteit, niet in de woorden zelf.",
+    dek: "De reflex om teksten te verbeteren als je site slecht geindexeerd wordt, is een doodlopende weg. Het probleem zit in overaanbod en zwakke autoriteit, niet in de woorden zelf.",
     publishedAt: '2026-06-14',
     readMinutes: 2,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -472,7 +472,7 @@ export const articles: Article[] = [
     edition: '206',
     category: 'Technologie',
     title: "Neuralink: de volgende marketingrevolutie of een medische niche?",
-    dek: "Een hersenimplantaat dat gedachten vertaalt naar digitale acties klinkt als sciencefiction, maar Neuralink is al bezig met menselijke trials. Voor bureaus is dit geen toekomstmuziek, maar een signaal dat technologie de menselijke ervaring kan herdefiniëren.",
+    dek: "Een hersenimplantaat dat gedachten vertaalt naar digitale acties klinkt als sciencefiction, maar Neuralink is al bezig met menselijke trials. Voor bureaus is dit geen toekomstmuziek, maar een signaal dat technologie de menselijke ervaring kan herdefinieren.",
     publishedAt: '2026-06-13',
     readMinutes: 3,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -502,7 +502,7 @@ export const articles: Article[] = [
     edition: '204',
     category: 'Beleid',
     title: "AFM krijgt nieuwe AI-toezichttaken, maar kritiek op samenwerking met DNB",
-    dek: "De AFM moet straks toezien op AI-toepassingen van financiële instellingen, maar de samenwerking met DNB roept vragen op over effectiviteit.",
+    dek: "De AFM moet straks toezien op AI-toepassingen van financiele instellingen, maar de samenwerking met DNB roept vragen op over effectiviteit.",
     publishedAt: '2026-06-13',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -546,14 +546,14 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '201',
     category: 'Markt',
-    title: "Oekraïne test volledig autonome drones in oorlogsvoering",
-    dek: "Oekraïne gebruikt voor het eerst volledig autonome AI-aangedreven drones om Russische troepen uit te schakelen.",
+    title: "Oekraine test volledig autonome drones in oorlogsvoering",
+    dek: "Oekraine gebruikt voor het eerst volledig autonome AI-aangedreven drones om Russische troepen uit te schakelen.",
     publishedAt: '2026-06-13',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'MARKT',
-    posterTopic: "Oekraïne test volledig autonome drones in oorlogsvoering",
+    posterTopic: "Oekraine test volledig autonome drones in oorlogsvoering",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -561,14 +561,14 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '200',
     category: 'Tech',
-    title: "Pokémon Go-data gebruikt voor militaire drone-training",
-    dek: "Gebruikersgegevens van Pokémon Go blijken in AI-modellen te zijn verwerkt die ook militaire toepassingen voeden.",
+    title: "Pokemon Go-data gebruikt voor militaire drone-training",
+    dek: "Gebruikersgegevens van Pokemon Go blijken in AI-modellen te zijn verwerkt die ook militaire toepassingen voeden.",
     publishedAt: '2026-06-13',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'TECH',
-    posterTopic: "Pokémon Go-data gebruikt voor militaire drone-training",
+    posterTopic: "Pokemon Go-data gebruikt voor militaire drone-training",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -697,7 +697,7 @@ export const articles: Article[] = [
     edition: '191',
     category: 'Beleid',
     title: "Als Amerika AI afsluit, moet Europa ASML serieus nemen",
-    dek: "De VS dicteert wie toegang krijgt tot AI. Europa heeft één troef: ASML. Gebruik die.",
+    dek: "De VS dicteert wie toegang krijgt tot AI. Europa heeft een troef: ASML. Gebruik die.",
     publishedAt: '2026-06-13',
     readMinutes: 2,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -802,7 +802,7 @@ export const articles: Article[] = [
     edition: '184',
     category: 'Tech',
     title: "Ruimtevaartuig Katalyst LINK is klaar voor lancering",
-    dek: "Het Katalyst LINK-ruimtevaartuig is geïntegreerd en wacht op een lancering vanaf Kwajalein binnen enkele weken.",
+    dek: "Het Katalyst LINK-ruimtevaartuig is geintegreerd en wacht op een lancering vanaf Kwajalein binnen enkele weken.",
     publishedAt: '2026-06-12',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -891,14 +891,14 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '178',
     category: 'Platform',
-    title: "Amazon laat Alexa shoppen én adverteren tijdens gesprekken",
+    title: "Amazon laat Alexa shoppen en adverteren tijdens gesprekken",
     dek: "Consumenten kunnen vanaf nu via Alexa direct producten bestellen en merken krijgen advertenties te zien tijdens gesprekken met de slimme assistent.",
     publishedAt: '2026-06-12',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'PLATFORM',
-    posterTopic: "Amazon laat Alexa shoppen én adverteren tijdens gesprekken",
+    posterTopic: "Amazon laat Alexa shoppen en adverteren tijdens gesprekken",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -1026,14 +1026,14 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '169',
     category: 'Tech',
-    title: "Apple voegt één-tik-wachtwoordvervanging toe in iOS 27",
-    dek: "Gebruikers van iOS 27 kunnen met één tik alle gecompromitteerde wachtwoorden automatisch laten vervangen door nieuwe, veilige varianten.",
+    title: "Apple voegt een-tik-wachtwoordvervanging toe in iOS 27",
+    dek: "Gebruikers van iOS 27 kunnen met een tik alle gecompromitteerde wachtwoorden automatisch laten vervangen door nieuwe, veilige varianten.",
     publishedAt: '2026-06-11',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'TECH',
-    posterTopic: "Apple voegt één-tik-wachtwoordvervanging toe in iOS 27",
+    posterTopic: "Apple voegt een-tik-wachtwoordvervanging toe in iOS 27",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -1071,14 +1071,14 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '166',
     category: 'Tech',
-    title: "Waymo creëert model voor betere vergelijking robottaxi’s met menselijke bestuurders",
+    title: "Waymo creeert model voor betere vergelijking robottaxi’s met menselijke bestuurders",
     dek: "Waymo introduceert een nieuw computeralgoritme dat menselijk rijgedrag in botsingscenario’s simuleert om de veiligheid van robottaxi’s te testen.",
     publishedAt: '2026-06-11',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'TECH',
-    posterTopic: "Waymo creëert model voor betere vergelijking robottaxi’s met menselijke bestuurders",
+    posterTopic: "Waymo creeert model voor betere vergelijking robottaxi’s met menselijke bestuurders",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -1116,14 +1116,14 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '163',
     category: 'Platform',
-    title: "Bluesky introduceert groepen om gerichter te discussiëren",
+    title: "Bluesky introduceert groepen om gerichter te discussieren",
     dek: "Bluesky voegt binnenkort ‘communities’ toe: gesloten ruimtes voor specifieke onderwerpen, gebaseerd op het AT Protocol.",
     publishedAt: '2026-06-11',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'PLATFORM',
-    posterTopic: "Bluesky introduceert groepen om gerichter te discussiëren",
+    posterTopic: "Bluesky introduceert groepen om gerichter te discussieren",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -1207,7 +1207,7 @@ export const articles: Article[] = [
     edition: '157',
     category: 'Werk',
     title: "Automatisering en AI: ondernemers kiezen voor actie in plaats van wachten op beleid",
-    dek: "Ondernemers zoals Andrew Yang zetten nu concrete stappen om de gevolgen van automatisering en AI op te vangen, terwijl beleidsmakers nog discussiëren.",
+    dek: "Ondernemers zoals Andrew Yang zetten nu concrete stappen om de gevolgen van automatisering en AI op te vangen, terwijl beleidsmakers nog discussieren.",
     publishedAt: '2026-06-11',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -1236,14 +1236,14 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '155',
     category: 'Finance',
-    title: "Informer Money genomineerd voor Best FinTech Startup van België",
+    title: "Informer Money genomineerd voor Best FinTech Startup van Belgie",
     dek: "De Belgische shortlist van de Digital Finance Awards 2026 bevat Informer Money in de categorie Best FinTech Startup of the Year.",
     publishedAt: '2026-06-11',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'FINANCE',
-    posterTopic: "Informer Money genomineerd voor Best FinTech Startup van België",
+    posterTopic: "Informer Money genomineerd voor Best FinTech Startup van Belgie",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -1372,7 +1372,7 @@ export const articles: Article[] = [
     edition: '146',
     category: 'Platform',
     title: "Het einde van de ivoren toren: waarom een Brits AI-lab de markt op zijn kop zet",
-    dek: "Een voormalig topwetenschapper van het Alan Turing Institute stapt over naar een commercieel lab om AI voor overheidsopgaven te bouwen – en bewijst dat Nederland en België moeten nadenken over hun eigen strategie.",
+    dek: "Een voormalig topwetenschapper van het Alan Turing Institute stapt over naar een commercieel lab om AI voor overheidsopgaven te bouwen, en bewijst dat Nederland en Belgie moeten nadenken over hun eigen strategie.",
     publishedAt: '2026-06-09',
     readMinutes: 3,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -1686,14 +1686,14 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '125',
     category: 'Markt',
-    title: "Klantmerk en werkgeversmerk: één verhaal, twee kanalen",
+    title: "Klantmerk en werkgeversmerk: een verhaal, twee kanalen",
     dek: "Uit onderzoek blijkt dat bedrijven hun klantmerk en werkgeversmerk zelden op elkaar afstemmen, terwijl dat wel de beste aanpak is.",
     publishedAt: '2026-06-09',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'MARKT',
-    posterTopic: "Klantmerk en werkgeversmerk: één verhaal, twee kanalen",
+    posterTopic: "Klantmerk en werkgeversmerk: een verhaal, twee kanalen",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -1727,18 +1727,18 @@ export const articles: Article[] = [
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
-    slug: 'content-marketing-ideeën-juli-2026',
+    slug: 'content-marketing-ideeen-juli-2026',
     format: 'dispatch' as const,
     edition: '122',
     category: 'Markt',
-    title: "Vijf contentmarketing-ideeën voor juli 2026",
+    title: "Vijf contentmarketing-ideeen voor juli 2026",
     dek: "Juli biedt kansen om producten te koppelen aan zomerse thema’s zoals vakantie, feesten en seizoensvoorbereiding.",
     publishedAt: '2026-06-08',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'MARKT',
-    posterTopic: "Vijf contentmarketing-ideeën voor juli 2026",
+    posterTopic: "Vijf contentmarketing-ideeen voor juli 2026",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -1851,14 +1851,14 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '114',
     category: 'Beleid',
-    title: "Hof Den Haag: bv mag cryptotokens niet afwaarderen bij privérekening dga",
-    dek: "Een bv mag de waardedaling van cryptotokens niet verwerken als verlies in haar winst-en-verliesrekening als de investering in privé is gedaan door de dga.",
+    title: "Hof Den Haag: bv mag cryptotokens niet afwaarderen bij priverekening dga",
+    dek: "Een bv mag de waardedaling van cryptotokens niet verwerken als verlies in haar winst-en-verliesrekening als de investering in prive is gedaan door de dga.",
     publishedAt: '2026-06-03',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'BELEID',
-    posterTopic: "Hof Den Haag: bv mag cryptotokens niet afwaarderen bij privérekening dga",
+    posterTopic: "Hof Den Haag: bv mag cryptotokens niet afwaarderen bij priverekening dga",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -1942,7 +1942,7 @@ export const articles: Article[] = [
     edition: '108',
     category: 'Platform',
     title: "Mistral lanceert AI-platform voor industrie en Europese datacenters",
-    dek: "Het Franse Mistral introduceert een nieuw AI-platform voor industriële toepassingen en breidt uit met Europese datacenters om lokale data-controle te bieden.",
+    dek: "Het Franse Mistral introduceert een nieuw AI-platform voor industriele toepassingen en breidt uit met Europese datacenters om lokale data-controle te bieden.",
     publishedAt: '2026-06-02',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -1957,7 +1957,7 @@ export const articles: Article[] = [
     edition: '107',
     category: 'Tech',
     title: "Mistral AI stapt over naar fysieke systemen: impact op industrie en tech",
-    dek: "Mistral AI zet grote taalmodellen om in systemen die de echte wereld aansturen, met overnames en chipplannen voor industriële toepassingen.",
+    dek: "Mistral AI zet grote taalmodellen om in systemen die de echte wereld aansturen, met overnames en chipplannen voor industriele toepassingen.",
     publishedAt: '2026-06-02',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -2031,14 +2031,14 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '102',
     category: 'Strategie',
-    title: "Coca-Cola, Focus Features en Coinbase zetten in op vernieuwende brand strategieën",
-    dek: "Topmerken passen hun brand strategieën aan met onconventionele campagnes, gaming en productgerichte marketing.",
+    title: "Coca-Cola, Focus Features en Coinbase zetten in op vernieuwende brand strategieen",
+    dek: "Topmerken passen hun brand strategieen aan met onconventionele campagnes, gaming en productgerichte marketing.",
     publishedAt: '2026-06-01',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'STRATEGIE',
-    posterTopic: "Coca-Cola, Focus Features en Coinbase zetten in op vernieuwende brand strategieën",
+    posterTopic: "Coca-Cola, Focus Features en Coinbase zetten in op vernieuwende brand strategieen",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -2047,7 +2047,7 @@ export const articles: Article[] = [
     edition: '101',
     category: 'Cultuur',
     title: "Kleding en accessoires die gezichtsherkenning omzeilen",
-    dek: "Ontwerpers creëren kleding en maskers met patronen of projecties die algoritmes van gezichtsherkenning misleiden.",
+    dek: "Ontwerpers creeren kleding en maskers met patronen of projecties die algoritmes van gezichtsherkenning misleiden.",
     publishedAt: '2026-06-01',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -2061,14 +2061,14 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '100',
     category: 'Platform',
-    title: "TikTok Shop lanceert op 15 juni in Nederland en België",
+    title: "TikTok Shop lanceert op 15 juni in Nederland en Belgie",
     dek: "Vanaf 15 juni kunnen Nederlandse en Belgische ondernemers producten verkopen via TikTok Shop, met directe integratie in shoppable video’s en livestreams.",
     publishedAt: '2026-05-31',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'PLATFORM',
-    posterTopic: "TikTok Shop lanceert op 15 juni in Nederland en België",
+    posterTopic: "TikTok Shop lanceert op 15 juni in Nederland en Belgie",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -2317,7 +2317,7 @@ export const articles: Article[] = [
     edition: '076',
     category: 'Markt',
     title: "AI herdefinieert creativiteit bij bureaus: minder repetitief werk, meer focus op strategie",
-    dek: "Bureaus die AI slim inzetten, maken hun creatieve processen efficiënter en kunnen zich richten op storytelling en merkcommunities.",
+    dek: "Bureaus die AI slim inzetten, maken hun creatieve processen efficienter en kunnen zich richten op storytelling en merkcommunities.",
     publishedAt: '2026-05-24',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -2703,14 +2703,14 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '036',
     category: 'Markt',
-    title: "Politieke targeting beïnvloedt visuele aandacht, eye-tracking toont aan",
+    title: "Politieke targeting beinvloedt visuele aandacht, eye-tracking toont aan",
     dek: "Politiek gerichte advertenties trekken 23 procent meer aandacht dan neutrale uitingen. Eye-tracking onderzoek onder 180 deelnemers maakt het meetbaar.",
     publishedAt: '2026-05-19',
     readMinutes: 1,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'MARKT',
-    posterTopic: "Politieke targeting beïnvloedt visuele aandacht, eye-tracking toont aan",
+    posterTopic: "Politieke targeting beinvloedt visuele aandacht, eye-tracking toont aan",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
@@ -2910,7 +2910,7 @@ export const articles: Article[] = [
     format: 'dispatch',
     edition: '020',
     category: 'Markt',
-    title: 'Condé Nast verwacht dat search nog minder dan tien procent van zijn traffic levert.',
+    title: 'Conde Nast verwacht dat search nog minder dan tien procent van zijn traffic levert.',
     dek:
       'De uitgever van Vogue, GQ en The New Yorker zegt openlijk dat zoekmachines hun rol als verkeer-leverancier verliezen. AI Overviews dekken steeds vaker de hele lezersvraag.',
     publishedAt: '2026-05-13',
@@ -2970,7 +2970,7 @@ export const articles: Article[] = [
     category: 'Beleid',
     title: 'Acteerprestaties met AI komen niet in aanmerking voor een Oscar.',
     dek:
-      'De Academy heeft expliciet bevestigd dat performances die met generatieve AI tot stand komen, uitgesloten zijn van de Oscar-categorieën voor acteren.',
+      'De Academy heeft expliciet bevestigd dat performances die met generatieve AI tot stand komen, uitgesloten zijn van de Oscar-categorieen voor acteren.',
     publishedAt: '2026-05-03',
     readMinutes: 2,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -3135,7 +3135,7 @@ export const articles: Article[] = [
     category: 'Werkmethode',
     title: 'We hebben acht transcriptietools getest. Plaud wint.',
     dek:
-      'Van Whisper en Gemini tot AI-notitieapps en Echo Scribe. Twee jaar testen levert één duidelijke winnaar op, met kanttekeningen. En een eerlijk gesprek over de leercurve eronder.',
+      'Van Whisper en Gemini tot AI-notitieapps en Echo Scribe. Twee jaar testen levert een duidelijke winnaar op, met kanttekeningen. En een eerlijk gesprek over de leercurve eronder.',
     publishedAt: '2026-05-07',
     readMinutes: 9,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -3151,7 +3151,7 @@ export const articles: Article[] = [
     title:
       '95% van de AI-pilots in marketing mislukt. We lazen het MIT-rapport zo dat jij het niet hoeft.',
     dek:
-      'Niet de modellen falen, maar de meetstructuur eronder. Een nuchtere lezing van wat er écht mis gaat tussen pilot, productie en P&L. Plus: vier vragen die je je vendor móét stellen voor je tekent.',
+      'Niet de modellen falen, maar de meetstructuur eronder. Een nuchtere lezing van wat er echt mis gaat tussen pilot, productie en P&L. Plus: vier vragen die je je vendor moet stellen voor je tekent.',
     publishedAt: '2026-05-02',
     readMinutes: 14,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -3196,7 +3196,7 @@ export const articles: Article[] = [
     category: 'Attribution',
     title: 'Een MMM-model is een hypothese, geen rapport.',
     dek:
-      'Wat een Marketing Mix Model in feite zegt en wat consultants ervan maken. Plus: wanneer een MMM nuttig is en wanneer hij gewoon false confidence creëert.',
+      'Wat een Marketing Mix Model in feite zegt en wat consultants ervan maken. Plus: wanneer een MMM nuttig is en wanneer hij gewoon false confidence creeert.',
     publishedAt: '2026-04-08',
     readMinutes: 9,
     author: { name: 'Stevin Journal', role: 'Redactie' },
@@ -3211,7 +3211,7 @@ export function getArticle(slug: string) {
 }
 
 /**
- * Related-articles per slug — primair LLM-gekozen op topic-overlap.
+ * Related-articles per slug, primair LLM-gekozen op topic-overlap.
  * Genereren met `npm run related:generate`. Fallback wanneer geen
  * mapping bestaat: eerste N andere artikelen (oude gedrag).
  */
@@ -3226,7 +3226,7 @@ export function getRelatedArticles(currentSlug: string, count = 3) {
       .filter((a): a is Article => Boolean(a))
     if (matched.length > 0) return matched.slice(0, count)
   }
-  // Fallback — willekeurige 3 anderen
+  // Fallback, willekeurige 3 anderen
   return articles.filter((a) => a.slug !== currentSlug).slice(0, count)
 }
 

@@ -4,7 +4,7 @@ import { JetBrains_Mono } from 'next/font/google'
 import { getLocale } from 'next-intl/server'
 import './globals.css'
 
-// Self-hosted InterDisplay (display headings) — from Stevin Design System
+// Self-hosted InterDisplay (display headings), from Stevin Design System
 const interDisplay = localFont({
   src: [
     { path: '../public/fonts/InterDisplay-Medium.woff2', weight: '500', style: 'normal' },

@@ -18,7 +18,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
-  // Pages with a light/white hero — header stays white on these
+  // Pages with a light/white hero, header stays white on these
   const lightHeroPages = ['/seo', '/geo', '/contact', '/integraties']
   const isLightHero = lightHeroPages.some(p => pathname === p || pathname.startsWith(p + '/'))
   const dropdownRef = useRef<HTMLDivElement>(null)

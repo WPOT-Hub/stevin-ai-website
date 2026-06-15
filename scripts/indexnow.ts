@@ -1,9 +1,9 @@
 /**
- * IndexNow submitter — pingt Bing/Yandex/Seznam dat URLs zijn vernieuwd.
+ * IndexNow submitter, pingt Bing/Yandex/Seznam dat URLs zijn vernieuwd.
  *
  * IndexNow is het enige legitieme push-protocol voor instant indexering
  * dat door Google's concurrenten ondersteund wordt. Google's Indexing API
- * is alleen voor JobPosting/BroadcastEvent — niet voor blog-content. Voor
+ * is alleen voor JobPosting/BroadcastEvent, niet voor blog-content. Voor
  * Google blijven we afhankelijk van crawl + sitemap-discovery.
  *
  * Endpoint: https://api.indexnow.org/indexnow (forwards naar alle deelnemers)
@@ -52,7 +52,7 @@ async function submitToIndexNow(urls: string[]): Promise<void> {
 
   // 200 = OK, 202 = accepted, 422 = invalid (key mismatch), 429 = rate limit
   if (res.status === 200 || res.status === 202) {
-    console.log(`[IndexNow] ✓ status ${res.status} — submission geaccepteerd`)
+    console.log(`[IndexNow] ✓ status ${res.status}: submission geaccepteerd`)
   } else {
     const text = await res.text().catch(() => '')
     console.error(`[IndexNow] ✗ status ${res.status}: ${text || '(geen body)'}`)
