@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'commodore-komt-terug-met-flipphone',
+    format: 'dispatch' as const,
+    edition: '229',
+    category: 'Markt',
+    title: "Commodore brengt retro flipphone op markt",
+    dek: "Het iconische computermerk Commodore lanceert een draadloze flipphone met retro-stijl en moderne specificaties.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Commodore brengt retro flipphone op markt",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'cloud-compute-verschuift-naar-arm-en-agentic-ai',
     format: 'dispatch' as const,
     edition: '228',
