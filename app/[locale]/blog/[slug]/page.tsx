@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'europa-verspeelt-ai-kansen-door-een-kaart-te-spelen': (
+    <>
+      <p className="lead-para">
+        Stel je voor: je bouwt een auto die alleen op benzine rijdt, maar je hebt maar één jerrycan. Dat is precies waar Europa staat met kunstmatige intelligentie. Terwijl Amerikaanse en Chinese bedrijven miljarden pompen in reusachtige datacentra vol krachtige GPU’s, blijft Europa hangen in projecten als GPT-NL, gefinancierd met €13,5 miljoen en getraind op gelicenseerde data. Techondernemer Jelle Prins noemt het terecht een logische eerste stap—maar ook een symptoom van een veel groter probleem: we spelen het spel met te weinig inzet. De VS en China domineren niet alleen de markt, ze bepalen ook de regels. Wie geen eigen modellen heeft, wordt afhankelijk van buitenlandse technologie, met alle risico’s van dien.
+      </p>
+      <p>
+        De kritiek op GPT-NL is begrijpelijk, maar mist de kern. Het model is nooit bedoeld om te concurreren met ChatGPT of Claude; het draait om compliantie en privacy voor overheden en bedrijven. Toch illustreert de discussie wel hoe snel Europa wordt afgeschreven als ‘te klein’ of ‘te laat’. Alexander Klöpping en Robert Vis hebben gelijk dat we niet moeten doen alsof we zomaar even een Nederlandse versie van GPT kunnen neerzetten—niet zonder dezelfde schaalgrootte en investeringen. Maar hun cynisme verdoezelt iets belangrijks: Europa heeft wel degelijk troeven in handen.
+      </p>
+      <p>
+        Die troef is ASML. Het bedrijf levert machines die nodig zijn om chips te maken waarop zelfs de krachtigste AI-modellen draaien. Zonder ASML zouden Amerikaanse of Chinese techgiganten niet eens kunnen bouwen wat ze nu hebben. Maar die kaart is kwetsbaar. Als Europa geen eigen AI-infrastructuur opbouwt, blijft het afhankelijk van buitenlandse partijen voor toegang tot modellen of hardware. En dat terwijl landen als China al druk bezig zijn met exportbeperkingen voor geavanceerde technologie.
+      </p>
+      <p>
+        Het probleem zit ‘m niet alleen in geld—hoewel dat natuurlijk helpt—maar ook in ambitie. Nederland publiceert meer wetenschappelijke papers dan bijna elk ander land, maar die kennis vertaalt zich zelden in concrete producten of bedrijven die meegaan tot het eindspel. De voorgestelde oprichting van een Nationaal Agentschap voor Disruptieve Innovatie (NADI) en nieuwe labs zoals het ELLIS AI-Lab zijn stappen in de goede richting. Maar stappen alleen zijn niet genoeg; er moet ook daadwerkelijk geïnvesteerd worden in opschaalbare oplossingen.
+      </p>
+      <p>
+        Toptalent is er wel—zowel binnen als buiten Europa—butere salarissen en betere carrièreperspectieven trekken mensen naar Silicon Valley of Singapore. Toch hoeft dat geen verloren zaak te zijn. Sommige Europese AI-startups slagen erin talent aan te trekken door missiegedreven werken centraal te stellen: denk aan Cradle, waar medewerkers bereid zijn om minder te verdienen omdat ze geloven in de impact van hun werk. Dat soort cultuur kan een concurrentievoordeel zijn boven puur financiële prikkels.
+      </p>
+      <p>
+        De vraag is niet óf Europa moet investeren in eigen AI-modellen en infrastructuur, maar hóé snel dat moet gebeuren. De VS en China zitten al jaren aan tafel met grote plannen; Europa loopt achter omdat het eerst nog discussieert over ethiek, privacy en compliance voordat het überhaupt begint met bouwen. Dat kost tijd die we niet hebben.
+      </p>
+      <p>
+        Uiteindelijk gaat het om meer dan technologie alleen. Het gaat om economische soevereiniteit, om strategische onafhankelijkheid in een wereld waar data macht is geworden. Wie alleen maar kijkt naar wat anderen doen, zal altijd achterlopen—wie durft te kiezen voor eigen weg, ook al lijkt die initially kleiner of minder spectaculair.
+      </p>
+    </>
+  ),
   'tno-biobuilt-centrum-versnelt-opschaling-biobased-materialen': (
     <>
       <p className="lead-para">
@@ -4172,6 +4197,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'europa-verspeelt-ai-kansen-door-een-kaart-te-spelen':
+    "Bij Stevin zien we dagelijks hoe Nederlandse bedrijven worstelen met dezelfde dilemma’s: willen we meedoen aan de race naar schaalbare AI-oplossingen, of kiezen we voor nichetoepassingen waar privacy en compliance centraal staan? De realiteit is dat beide benaderingen noodzakelijk zijn—maar zonder schaalgrootte blijven we kwetsbaar voor externe schommelingen in beschikbaarheid van modellen of hardware.\n\nOnze klanten vragen vaak hoe ze kunnen profiteren van deze transitie zonder zelf miljarden te hoeven investeren in infrastructuur of R&D-talenten die schaars zijn als goudstof op Wall Street. Onze antwoord? Focus op toegevoegde waarde binnen bestaande kaders: gebruik open-source modellen waar mogelijk, bouw partnerships met Europese spelers zoals ASML of lokale cloudproviders, en investeer in meetdata die echte uplift laat zien—in plaats van blind te vertrouwen op grote taalmodellen zonder context.\n\nDe les uit dit debat is duidelijk: wie wacht tot iemand anders het werk doet, loopt straks achteraan bij de verdeling van de winst—andersom geldt hetzelfde voor wie nu durft te kiezen.",
   'tno-biobuilt-centrum-versnelt-opschaling-biobased-materialen':
     "Voor aannemers en leveranciers betekent dit dat ze binnenkort toegang krijgen tot geavanceerde testfaciliteiten zonder zelf grote investeringen te hoeven doen. Tegelijkertijd onderstreept dit initiatief hoe sterk de druk op de sector is om innovatief te blijven: wie nu niet meebeweegt met circulaire oplossingen, loopt straks tegen wettelijke eisen of marktverliezen aan. Het is een duidelijke reminder dat duurzaamheid geen keuze meer is, maar een voorwaarde voor continuïteit.",
   'ai-startups-ipo-hype-wie-profiteert':
