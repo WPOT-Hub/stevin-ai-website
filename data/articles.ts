@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'watercongestie-nodigt-uit-tot-verplichte-waterbesparing',
+    format: 'dispatch' as const,
+    edition: '224',
+    category: 'Beleid',
+    title: "Tweede Kamer roept op: verplicht waterbesparing bij nieuwbouw",
+    dek: "Publieke en private partijen vragen de Tweede Kamer om watercongestie aan te pakken met een verplichting voor waterbesparing in nieuwbouwprojecten.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Tweede Kamer roept op: verplicht waterbesparing bij nieuwbouw",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ontkracht-mythes-over-llms-txt-bestanden',
     format: 'dispatch' as const,
     edition: '223',
