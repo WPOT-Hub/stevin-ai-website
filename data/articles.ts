@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'kpmg-haalt-ai-rapport-na-betwiste-voorbeelden',
+    format: 'dispatch' as const,
+    edition: '221',
+    category: 'Tech',
+    title: "KPMG verwijdert AI-rapport na klachten over onjuiste voorbeelden",
+    dek: "Een internationaal AI-onderzoek van KPMG is offline gehaald nadat organisaties de gebruikte voorbeelden betwistten als niet representatief of onjuist.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "KPMG verwijdert AI-rapport na klachten over onjuiste voorbeelden",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'prc-spionnen-ontdekt-in-medische-en-militaire-netwerken',
     format: 'dispatch' as const,
     edition: '220',
