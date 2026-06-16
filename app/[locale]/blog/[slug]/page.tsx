@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'india-ai-startup-sarvam-haalt-234-miljoen-op-met-hcltech-leidend': (
+    <>
+      <p className="lead-para">
+        Het Bengaluru-based bedrijf Sarvam is officieel een unicorn geworden na een financieringsronde van 234 miljoen dollar. Het grootste deel, 150 miljoen dollar, komt van de Indiase IT-dienstverlener HCLTech.
+      </p>
+      <p>
+        De opbrengst wordt gebruikt om de ontwikkeling van Sarvams spraaktechnologie voor lokale Indiase talen te versnellen. Het bedrijf richt zich op het verbeteren van gespreks-AI voor consumentendiensten en bedrijfsprocessen in India.
+      </p>
+      <p>
+        Met deze investering versterkt HCLTech haar positie in de opkomende markt voor AI-toepassingen in Azië. Sarvam werkt al samen met grote spelers zoals Reliance en HDFC Bank.
+      </p>
+    </>
+  ),
   'prc-spionnen-ontdekt-in-medische-en-militaire-netwerken': (
     <>
       <p className="lead-para">
@@ -4236,6 +4249,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'india-ai-startup-sarvam-haalt-234-miljoen-op-met-hcltech-leidend':
+    "Voor Europese bedrijven die actief zijn in Azië biedt deze ontwikkeling kansen om samen te werken met lokale AI-specialisten. De focus op regionale talen en marktspecifieke oplossingen kan een blauwdruk zijn voor internationale expansie. Tegelijkertijd benadrukt het de groeiende concurrentie tussen techbedrijven in opkomende economieën.",
   'prc-spionnen-ontdekt-in-medische-en-militaire-netwerken':
     "Voor bedrijven en instellingen met gevoelige data is dit een belangrijke reminder om niet alleen externe bedreigingen te monitoren, maar ook interne kwetsbaarheden serieus te nemen. Een zero-trust-benadering, waarbij geen enkele verbinding standaard vertrouwd wordt, kan helpen om dergelijke langdurige infiltraties te voorkomen. Daarnaast benadrukt dit incident het belang van regelmatige audits van toegangsrechten en netwerksegmentatie.",
   'kpmg-haalt-ai-rapport-na-betwiste-voorbeelden':
