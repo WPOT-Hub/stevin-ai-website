@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'kodak-chamera-nieuwe-y2k-designs': (
+    <>
+      <p className="lead-para">
+        De Kodak Charmera, een goedkope digitale camera met retro-designs, blijft populair bij verzamelaars en liefhebbers van nostalgische tech. Het originele model, geïnspireerd op de legendarische Kodak Fling uit 1987, verkocht goed dankzij de lage prijs en speelse uitstraling. Reto, het bedrijf achter de licentie van het Kodak-merk, breidt nu het aanbod uit met een speciale Millennium-editie.
+      </p>
+      <p>
+        De nieuwe versie volgt dezelfde formule als de vorige Charmera-modellen: een eenvoudig ontwerp met opvallende kleuren en patronen die doen denken aan de late jaren '90 en vroege jaren 2000. De camera is niet bedoeld voor serieuze fotografie, maar fungeert vooral als verzamelobject of decoratief item. De opvallende designs sluiten aan bij de groeiende vraag naar retro-tech en limited editions.
+      </p>
+      <p>
+        De Charmera blijkt een onverwacht succes voor Kodak, dat eerder vooral bekendstond om zijn klassieke filmcamera’s. De combinatie van nostalgie, betaalbaarheid en beperkte oplages maakt het tot een aantrekkelijk product voor zowel jongere als oudere consumenten.
+      </p>
+    </>
+  ),
   'salesforce-koopt-fin-voor-36-miljard': (
     <>
       <p className="lead-para">
@@ -4275,6 +4288,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'kodak-chamera-nieuwe-y2k-designs':
+    "Voor ondernemers in retail of tech kan dit soort beperkte edities een interessante strategie zijn om klanten te binden en merkwaarde te vergroten. Het laat zien hoe retro-designs en collectible items kunnen leiden tot onverwachte commerciële successen. Tegelijkertijd benadrukt het belang van authenticiteit: zelfs een product dat technisch gezien ondermaats is, kan waarde creëren door unieke uitstraling.",
   'salesforce-koopt-fin-voor-36-miljard':
     "Voor bedrijven die al gebruikmaken van Salesforce of soortgelijke CRM-systemen, biedt deze integratie direct een concrete stap naar efficiëntere klantenservice. De focus op zelflerende agenten betekent dat organisaties minder handmatig hoeven in te grijpen, wat tijd en geld bespaart. Tegelijkertijd vraagt dit om een goede balans tussen automatisering en menselijke controle om de kwaliteit van de dienstverlening te waarborgen.",
   'watercongestie-nodigt-uit-tot-verplichte-waterbesparing':
