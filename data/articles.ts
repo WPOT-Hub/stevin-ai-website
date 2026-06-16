@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'geopolitiek-drukt-nederlandse-ecommerce-omzet',
+    format: 'dispatch' as const,
+    edition: '219',
+    category: 'Markt',
+    title: "Nederlandse e-commerce daalt met 6% door geopolitieke spanningen",
+    dek: "De omzet van Nederlandse webshops daalt met zes procent als gevolg van een verschuiving naar Europese bestemmingen door onrust wereldwijd.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Nederlandse e-commerce daalt met 6% door geopolitieke spanningen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'europa-verspeelt-ai-kansen-door-een-kaart-te-spelen',
     format: 'dispatch' as const,
     edition: '218',
