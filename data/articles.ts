@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'kodak-chamera-nieuwe-y2k-designs',
+    format: 'dispatch' as const,
+    edition: '227',
+    category: 'Cultuur',
+    title: "Kodak brengt Charmera terug met Y2K-designs",
+    dek: "De Kodak Charmera krijgt een nieuwe collectible editie met glanzende Y2K-ontwerpen, na het succes van de goedkope retro-camera.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "Kodak brengt Charmera terug met Y2K-designs",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'threads-passeert-half-miljard-maandelijkse-gebruikers',
     format: 'dispatch' as const,
     edition: '226',
