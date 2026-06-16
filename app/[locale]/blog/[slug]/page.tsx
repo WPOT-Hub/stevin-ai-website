@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'watercongestie-nodigt-uit-tot-verplichte-waterbesparing': (
+    <>
+      <p className="lead-para">
+        De term 'watercongestie' doet denken aan het overbelaste stroomnet, maar dan voor zoet water: de beschikbaarheid komt onder druk te staan door groeiende vraag en droogte. Een coalitie van organisaties uit de bouw, infra en waterschappen pleit ervoor om waterbesparende maatregelen direct verplicht te stellen in nieuwe projecten. Nu blijft hergebruik van water vaak steken in pilots, terwijl de noodzaak urgenter wordt.
+      </p>
+      <p>
+        De oproep volgt op rapporten die laten zien dat Nederlanders per persoon steeds meer drinkwater verbruiken, ondanks de beschikbare technieken om efficiënter met water om te gaan. Bij nieuwbouw kan dat direct worden meegenomen in ontwerp en uitvoering, aldus de initiatiefnemers. Zij wijzen erop dat wachten op perfecte oplossingen leidt tot vertraging, terwijl kleine stappen al effect hebben.
+      </p>
+      <p>
+        De Tweede Kamer wordt gevraagd om binnen twee jaar een wettelijke basis te creëren voor deze verplichting. Ook pleiten ze voor financiële prikkels om bedrijven en gemeenten te stimuleren sneller actie te ondernemen. De sector benadrukt dat mislukkingen bij de start niet erg zijn, zolang er maar geleerd wordt en doorgegaan wordt met innovatie.
+      </p>
+    </>
+  ),
   'india-ai-startup-sarvam-haalt-234-miljoen-op-met-hcltech-leidend': (
     <>
       <p className="lead-para">
@@ -4249,6 +4262,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'watercongestie-nodigt-uit-tot-verplichte-waterbesparing':
+    "Voor bedrijven die betrokken zijn bij bouwprojecten of vastgoedbeheer betekent dit dat ze nu al kunnen anticiperen op strengere regels. Door waterbesparende technieken vroegtijdig toe te passen, voorkom je later aanpassingen of boetes. Tegelijkertijd biedt het kansen voor marktpartijen die zich specialiseren in duurzaam watergebruik: zij kunnen zich profileren als partner voor toekomstbestendige oplossingen.",
   'india-ai-startup-sarvam-haalt-234-miljoen-op-met-hcltech-leidend':
     "Voor Europese bedrijven die actief zijn in Azië biedt deze ontwikkeling kansen om samen te werken met lokale AI-specialisten. De focus op regionale talen en marktspecifieke oplossingen kan een blauwdruk zijn voor internationale expansie. Tegelijkertijd benadrukt het de groeiende concurrentie tussen techbedrijven in opkomende economieën.",
   'prc-spionnen-ontdekt-in-medische-en-militaire-netwerken':
