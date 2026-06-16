@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'india-ai-startup-sarvam-haalt-234-miljoen-op-met-hcltech-leidend',
+    format: 'dispatch' as const,
+    edition: '222',
+    category: 'Markt',
+    title: "Indiase AI-startup Sarvam wordt unicorn na 234 miljoen dollar financering",
+    dek: "De Indiase AI-startup Sarvam haalt 234 miljoen dollar op, waarvan HCLTech 150 miljoen investeert.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Indiase AI-startup Sarvam wordt unicorn na 234 miljoen dollar financering",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'kpmg-haalt-ai-rapport-na-betwiste-voorbeelden',
     format: 'dispatch' as const,
     edition: '221',
