@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-agents-als-gamechanger-in-customer-service',
+    format: 'dispatch' as const,
+    edition: '232',
+    category: 'Platform',
+    title: "Wanneer klanten vragen stellen aan een AI, betaal je niet per medewerker maar per gesprek",
+    dek: "De opkomst van AI agents in customer service dwingt bedrijven om afscheid te nemen van traditionele chatbots en abonnementen op seats — en dat kan miljoenen besparen.",
+    publishedAt: '2026-06-16',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Wanneer klanten vragen stellen aan een AI, betaal je niet per medewerker maar per gesprek",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'zte-day-2026-almaty-digitaal-kazachstan',
     format: 'dispatch' as const,
     edition: '231',
