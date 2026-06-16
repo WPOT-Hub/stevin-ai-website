@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'kpmg-haalt-ai-rapport-na-betwiste-voorbeelden': (
+    <>
+      <p className="lead-para">
+        KPMG heeft een recent gepubliceerd rapport over de inzet van AI-agents op websites offline gehaald. Dit gebeurde na meerdere klachten van betrokken partijen, die de voorbeelden in het rapport als onjuist of misleidend bestempelden.
+      </p>
+      <p>
+        Het rapport bevatte casussen waarin organisaties zouden samenwerken met AI-oplossingen, maar deze bleken niet te kloppen. Verschillende bedrijven en instellingen wezen erop dat de beschreven situaties niet overeenkwamen met hun eigen ervaringen of praktijk.
+      </p>
+      <p>
+        KPMG heeft nog geen officiële reactie gegeven op de verwijdering, maar volgens betrokkenen is het rapport inmiddels niet meer beschikbaar via de gebruikelijke kanalen.
+      </p>
+    </>
+  ),
   'geopolitiek-drukt-nederlandse-ecommerce-omzet': (
     <>
       <p className="lead-para">
@@ -4210,6 +4223,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'kpmg-haalt-ai-rapport-na-betwiste-voorbeelden':
+    "Voor bedrijven die AI inzetten is dit een waarschuwing: transparantie en controleerbaarheid van data zijn cruciaal bij het delen van cases. Het toont aan dat zelfs grote organisaties kwetsbaar zijn voor reputatieschade door onjuiste informatie. Bureaus en in-house teams doen er goed aan om bronnen dubbel te checken voordat ze claims wereldkundig maken.",
   'geopolitiek-drukt-nederlandse-ecommerce-omzet':
     "Voor ondernemers in e-commerce is dit een signaal om hun risicospreiding te vergroten. Het benadrukt het belang van diversificatie: niet alleen in productaanbod, maar ook in klantsegmenten en geografische focus. Wie nu actief inspeelt op groeiende markten binnen Europa, kan de komende maanden mogelijk profiteren van deze verschuiving.",
   'europa-verspeelt-ai-kansen-door-een-kaart-te-spelen':
