@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'commodore-komt-terug-met-flipphone': (
+    <>
+      <p className="lead-para">
+        Commodore, ooit bekend van zijn homecomputers uit de jaren '80 en '90, introduceert binnenkort een nieuwe draadloze flipphone. Het ontwerp is geïnspireerd op de iconische Commodore 64-toetsenbordstijl, aldus ontwikkelaar Christian Simpson. De telefoon krijgt een touchscreen, fysieke knoppen en een kleurendisplay dat doet denken aan oude computerschermen.
+      </p>
+      <p>
+        De flipphone is voorzien van Android en ondersteunt 5G, wat past bij de ambitie om zowel retro als modern te combineren. Simpson benadrukt dat de focus ligt op gebruiksvriendelijkheid en duurzaamheid: het toestel heeft een verwisselbare batterij en een robuust ontwerp. De verwachting is dat de telefoon vooral aanslaat bij verzamelaars en liefhebbers van vintage technologie.
+      </p>
+      <p>
+        De productie start later dit jaar in samenwerking met een Aziatische fabrikant. De prijs wordt nog niet bekendgemaakt, maar Simpson geeft aan dat de telefoon betaalbaar moet blijven om breed toegankelijk te zijn. Voor Commodore is dit het eerste nieuwe product sinds de overname in 2025.
+      </p>
+    </>
+  ),
   'cloud-compute-verschuift-naar-arm-en-agentic-ai': (
     <>
       <p className="lead-para">
@@ -4314,6 +4327,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'commodore-komt-terug-met-flipphone':
+    "Voor merken die teruggrijpen op hun verleden is het belangrijk om niet alleen nostalgie te verkopen, maar ook daadwerkelijk waarde toe te voegen voor moderne gebruikers. Een succesvolle herlancering vereist een balans tussen authenticiteit en actualiteit, waarbij technische specificaties net zo belangrijk zijn als het verhaal achter het merk. Bedrijven die dit goed doen, kunnen nieuwe doelgroepen bereiken zonder hun kernidentiteit te verliezen.",
   'cloud-compute-verschuift-naar-arm-en-agentic-ai':
     "Voor bedrijven die afhankelijk zijn van cloudinfrastructuur betekent deze verschuiving dat keuzes in hardware nu direct doorwerken in kosten en duurzaamheidsdoelen. De komende jaren zal blijken of de beloofde besparingen op energie en hardware-investeringen daadwerkelijk worden gehaald, of dat de complexiteit van migratie en compatibiliteit tegenvalt. Voor techleiders is het zaak om nu al te evalueren hoe deze ontwikkelingen hun IT-strategie beïnvloeden.",
   'threads-passeert-half-miljard-maandelijkse-gebruikers':
