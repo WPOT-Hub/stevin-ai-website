@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'cloud-compute-verschuift-naar-arm-en-agentic-ai': (
+    <>
+      <p className="lead-para">
+        De grootste cloudproviders zoals AWS, Microsoft en Google testen momenteel nieuwe serverplatforms gebaseerd op Arm-processors voor hun AI-workloads. Deze overstap komt voort uit de behoefte aan hogere performance per watt, vooral voor complexe AI-modellen en zogenaamde agentic AI-toepassingen die continu taken uitvoeren zonder menselijke tussenkomst.
+      </p>
+      <p>
+        Arm-chips bieden volgens leveranciers tot 50% betere energie-efficiëntie dan traditionele x86-processors bij gelijkwaardige rekenkracht, aldus analisten. Dit maakt ze aantrekkelijk voor hyperscalers die hun datacenters willen verduurzamen terwijl ze tegelijkertijd de rekenkracht voor AI blijven opschalen.
+      </p>
+      <p>
+        Ook softwareontwikkelaars passen zich aan: frameworks als PyTorch en TensorFlow ondersteunen inmiddels native Arm-architectuur, wat de drempel verlaagt om over te stappen. Experimentele datacenters draaien al maanden stabiel op deze nieuwe hardware, zo blijkt uit interne tests van grote techbedrijven.
+      </p>
+    </>
+  ),
   'threads-passeert-half-miljard-maandelijkse-gebruikers': (
     <>
       <p className="lead-para">
@@ -4301,6 +4314,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'cloud-compute-verschuift-naar-arm-en-agentic-ai':
+    "Voor bedrijven die afhankelijk zijn van cloudinfrastructuur betekent deze verschuiving dat keuzes in hardware nu direct doorwerken in kosten en duurzaamheidsdoelen. De komende jaren zal blijken of de beloofde besparingen op energie en hardware-investeringen daadwerkelijk worden gehaald, of dat de complexiteit van migratie en compatibiliteit tegenvalt. Voor techleiders is het zaak om nu al te evalueren hoe deze ontwikkelingen hun IT-strategie beïnvloeden.",
   'threads-passeert-half-miljard-maandelijkse-gebruikers':
     "Voor bedrijven die sociale media inzetten als kanaal voor klantcontact of branding, biedt deze schaalvergroting nieuwe kansen. Een groot publiek betekent echter niet automatisch betere zichtbaarheid: algoritmes bepalen nog steeds wie je berichten ziet. Het is verstandig om niet alleen te focussen op volume, maar ook op relevante doelgroepen en meetbare resultaten via eigen kanalen.",
   'kodak-chamera-nieuwe-y2k-designs':
