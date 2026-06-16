@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'threads-passeert-half-miljard-maandelijkse-gebruikers',
+    format: 'dispatch' as const,
+    edition: '226',
+    category: 'Platform',
+    title: "Threads passeert half miljard gebruikers per maand",
+    dek: "Meta meldt dat Threads nu meer dan 500 miljoen actieve gebruikers per maand heeft, slechts drie jaar na de lancering.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Threads passeert half miljard gebruikers per maand",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'salesforce-koopt-fin-voor-36-miljard',
     format: 'dispatch' as const,
     edition: '225',
