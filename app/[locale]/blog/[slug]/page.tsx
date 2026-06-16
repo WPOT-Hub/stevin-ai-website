@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'erp-gebruikers-kiezen-voor-headless-oplossingen': (
+    <>
+      <p className="lead-para">
+        Bedrijven die Enterprise Resource Planning (ERP)-systemen gebruiken, dreigen vast te lopen in een cyclus van geforceerde upgrades. Een topfunctionaris van Rimini Street waarschuwt dat deze afhankelijkheid organisaties belemmert in innovatie en aanpassingsvermogen aldus het bedrijf zelf.
+      </p>
+      <p>
+        Headless ERP-systemen bieden een alternatief door de kernfunctionaliteit los te koppelen van de gebruikersinterface. Zo kunnen bedrijven zelf bepalen hoe ze data ontsluiten, zonder gebonden te zijn aan de roadmap of voorwaarden van een enkele leverancier, zo blijkt uit de analyse.
+      </p>
+      <p>
+        De trend sluit aan bij de groeiende vraag naar maatwerkoplossingen en het gebruik van open-source software. AI-agents en automatisering spelen hierin een steeds grotere rol, waardoor organisaties sneller kunnen inspelen op veranderende marktomstandigheden.
+      </p>
+    </>
+  ),
   'zte-day-2026-almaty-digitaal-kazachstan': (
     <>
       <p className="lead-para">
@@ -4340,6 +4353,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'erp-gebruikers-kiezen-voor-headless-oplossingen':
+    "Voor bedrijven die hun ERP-landschap willen moderniseren, kan headless een logische stap zijn. Het vraagt echter wel om een andere mindset: minder focus op standaardpakketten en meer op eigen regie over technologie. Dat betekent vaak ook investeren in interne expertise of samenwerking met gespecialiseerde partners, iets waar veel organisaties nog moeite mee hebben.",
   'zte-day-2026-almaty-digitaal-kazachstan':
     "Voor Europese bedrijven die actief zijn in tech of telecom biedt Kazachstan een interessante markt, maar de toegang vereist wel geduld en lokale samenwerkingen. De combinatie van overheidssteun en technologische ambities maakt het land aantrekkelijk voor innovatieve oplossingen, zeker nu Europa zelf ook versneld digitaliseert.",
   'commodore-komt-terug-met-flipphone':
