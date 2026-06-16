@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'zte-day-2026-almaty-digitaal-kazachstan': (
+    <>
+      <p className="lead-para">
+        Kazachstan zet vol in op digitale transformatie met een focus op kunstmatige intelligentie en supercomputing. Tijdens het evenement in Almaty werden nieuwe netwerktechnologieën getoond die snellere dataverwerking en betrouwbaardere connectiviteit moeten opleveren. De overheid stelt dit jaar extra budget beschikbaar voor de uitrol van deze innovaties, aldus lokale media.
+      </p>
+      <p>
+        De plannen maken deel uit van het nationale programma 'Jaar van Digitalisering en AI', waarbij telecombedrijven samenwerken met techpartners zoals ZTE. Doel is om binnen drie jaar een landelijk netwerk te realiseren dat geschikt is voor realtime toepassingen zoals autonome voertuigen en slimme steden. De eerste pilots lopen al in steden als Nur-Sultan en Almaty.
+      </p>
+      <p>
+        Experts wijzen erop dat Kazachstan hiermee aansluit bij regionale trends, waarbij landen als China en Zuid-Korea al jaren investeren in vergelijkbare infrastructuur. De uitdaging ligt echter in de schaalbaarheid: het land telt grote afstanden tussen bevolkingscentra, wat hoge kosten met zich meebrengt.
+      </p>
+    </>
+  ),
   'commodore-komt-terug-met-flipphone': (
     <>
       <p className="lead-para">
@@ -4327,6 +4340,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'zte-day-2026-almaty-digitaal-kazachstan':
+    "Voor Europese bedrijven die actief zijn in tech of telecom biedt Kazachstan een interessante markt, maar de toegang vereist wel geduld en lokale samenwerkingen. De combinatie van overheidssteun en technologische ambities maakt het land aantrekkelijk voor innovatieve oplossingen, zeker nu Europa zelf ook versneld digitaliseert.",
   'commodore-komt-terug-met-flipphone':
     "Voor merken die teruggrijpen op hun verleden is het belangrijk om niet alleen nostalgie te verkopen, maar ook daadwerkelijk waarde toe te voegen voor moderne gebruikers. Een succesvolle herlancering vereist een balans tussen authenticiteit en actualiteit, waarbij technische specificaties net zo belangrijk zijn als het verhaal achter het merk. Bedrijven die dit goed doen, kunnen nieuwe doelgroepen bereiken zonder hun kernidentiteit te verliezen.",
   'cloud-compute-verschuift-naar-arm-en-agentic-ai':
