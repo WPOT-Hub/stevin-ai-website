@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'salesforce-koopt-fin-voor-36-miljard': (
+    <>
+      <p className="lead-para">
+        De cloudgigant Salesforce betaalt 3,6 miljard dollar voor Fin, een specialist in AI-gestuurde klantenservice. Het bedrijf claimt dat zijn technologie tot driekwart van de klantvragen automatisch kan oplossen zonder menselijke tussenkomst. Fin werkt al samen met grote merken zoals Uber en Shopify, aldus het persbericht.
+      </p>
+      <p>
+        Met de overname wil Salesforce zijn eigen AI-capaciteiten versterken binnen de CRM-markt. Klantenservice is een groeiend segment waar bedrijven steeds meer investeren om kosten te drukken en klanttevredenheid te verhogen. De deal sluit aan bij eerdere acquisities van Salesforce op het gebied van AI en automatisering.
+      </p>
+      <p>
+        Fin blijft na de overname als zelfstandige entiteit bestaan, maar zal nauwer samenwerken met Salesforce-producten zoals Einstein Copilot. Gebruikers kunnen zo profiteren van geavanceerdere automatiseringsmogelijkheden binnen hun bestaande CRM-systemen.
+      </p>
+    </>
+  ),
   'watercongestie-nodigt-uit-tot-verplichte-waterbesparing': (
     <>
       <p className="lead-para">
@@ -4262,6 +4275,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'salesforce-koopt-fin-voor-36-miljard':
+    "Voor bedrijven die al gebruikmaken van Salesforce of soortgelijke CRM-systemen, biedt deze integratie direct een concrete stap naar efficiëntere klantenservice. De focus op zelflerende agenten betekent dat organisaties minder handmatig hoeven in te grijpen, wat tijd en geld bespaart. Tegelijkertijd vraagt dit om een goede balans tussen automatisering en menselijke controle om de kwaliteit van de dienstverlening te waarborgen.",
   'watercongestie-nodigt-uit-tot-verplichte-waterbesparing':
     "Voor bedrijven die betrokken zijn bij bouwprojecten of vastgoedbeheer betekent dit dat ze nu al kunnen anticiperen op strengere regels. Door waterbesparende technieken vroegtijdig toe te passen, voorkom je later aanpassingen of boetes. Tegelijkertijd biedt het kansen voor marktpartijen die zich specialiseren in duurzaam watergebruik: zij kunnen zich profileren als partner voor toekomstbestendige oplossingen.",
   'india-ai-startup-sarvam-haalt-234-miljoen-op-met-hcltech-leidend':
