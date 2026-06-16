@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'prc-spionnen-ontdekt-in-medische-en-militaire-netwerken',
+    format: 'dispatch' as const,
+    edition: '220',
+    category: 'Operations',
+    title: "Spionnen gekoppeld aan China bleven een jaar in medische en militaire netwerken",
+    dek: "Via gehackte accounts bij onderzoeksinstellingen en defensiebedrijven stalen ze data over drones en ziekteverwekkers.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Spionnen gekoppeld aan China bleven een jaar in medische en militaire netwerken",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'geopolitiek-drukt-nederlandse-ecommerce-omzet',
     format: 'dispatch' as const,
     edition: '219',
