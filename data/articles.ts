@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ontkracht-mythes-over-llms-txt-bestanden',
+    format: 'dispatch' as const,
+    edition: '223',
+    category: 'Platform',
+    title: "Google ontkracht mythes over LLMS.txt-bestanden in zoekresultaten",
+    dek: "Google bevestigt dat LLMS.txt-bestanden geen invloed hebben op zoekposities, maar ook niet helpen.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google ontkracht mythes over LLMS.txt-bestanden in zoekresultaten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'india-ai-startup-sarvam-haalt-234-miljoen-op-met-hcltech-leidend',
     format: 'dispatch' as const,
     edition: '222',
