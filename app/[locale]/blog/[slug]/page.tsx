@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'geopolitiek-drukt-nederlandse-ecommerce-omzet': (
+    <>
+      <p className="lead-para">
+        De Nederlandse consument kiest vaker voor vakanties binnen Europa, aldus analyse van e-commerce cijfers. Dit leidt tot een daling van de omzet bij webshops die zich richten op intercontinentale bestemmingen. De trend zet zich door sinds het begin van dit jaar en is direct gekoppeld aan geopolitieke onrust en hogere reiskosten.
+      </p>
+      <p>
+        Webshops die afhankelijk zijn van klanten uit Noord-Amerika, Azië of het Midden-Oosten zien de grootste dalingen. Binnen Europa blijft de vraag stabiel, maar de totale markt krimpt door deze verschuiving. Ook logistieke vertragingen en hogere brandstofprijzen spelen een rol in de terugval.
+      </p>
+      <p>
+        Experts wijzen erop dat deze ontwikkeling niet alleen seizoensgebonden is, maar structurele gevolgen kan hebben voor de sector. Kleine en middelgrote webshops ondervinden hiervan de meeste impact, omdat zij minder buffers hebben om schommelingen op te vangen.
+      </p>
+    </>
+  ),
   'europa-verspeelt-ai-kansen-door-een-kaart-te-spelen': (
     <>
       <p className="lead-para">
@@ -4197,6 +4210,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'geopolitiek-drukt-nederlandse-ecommerce-omzet':
+    "Voor ondernemers in e-commerce is dit een signaal om hun risicospreiding te vergroten. Het benadrukt het belang van diversificatie: niet alleen in productaanbod, maar ook in klantsegmenten en geografische focus. Wie nu actief inspeelt op groeiende markten binnen Europa, kan de komende maanden mogelijk profiteren van deze verschuiving.",
   'europa-verspeelt-ai-kansen-door-een-kaart-te-spelen':
     "Bij Stevin zien we dagelijks hoe Nederlandse bedrijven worstelen met dezelfde dilemma’s: willen we meedoen aan de race naar schaalbare AI-oplossingen, of kiezen we voor nichetoepassingen waar privacy en compliance centraal staan? De realiteit is dat beide benaderingen noodzakelijk zijn—maar zonder schaalgrootte blijven we kwetsbaar voor externe schommelingen in beschikbaarheid van modellen of hardware.\n\nOnze klanten vragen vaak hoe ze kunnen profiteren van deze transitie zonder zelf miljarden te hoeven investeren in infrastructuur of R&D-talenten die schaars zijn als goudstof op Wall Street. Onze antwoord? Focus op toegevoegde waarde binnen bestaande kaders: gebruik open-source modellen waar mogelijk, bouw partnerships met Europese spelers zoals ASML of lokale cloudproviders, en investeer in meetdata die echte uplift laat zien—in plaats van blind te vertrouwen op grote taalmodellen zonder context.\n\nDe les uit dit debat is duidelijk: wie wacht tot iemand anders het werk doet, loopt straks achteraan bij de verdeling van de winst—andersom geldt hetzelfde voor wie nu durft te kiezen.",
   'tno-biobuilt-centrum-versnelt-opschaling-biobased-materialen':
