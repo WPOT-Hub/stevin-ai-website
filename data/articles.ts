@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'salesforce-koopt-fin-voor-36-miljard',
+    format: 'dispatch' as const,
+    edition: '225',
+    category: 'Platform',
+    title: "Salesforce koopt Fin voor 3,6 miljard dollar voor klantenservice-AI",
+    dek: "Salesforce neemt Fin over om zelflerende AI-agenten voor klantenservice te integreren in zijn platform.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Salesforce koopt Fin voor 3,6 miljard dollar voor klantenservice-AI",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'watercongestie-nodigt-uit-tot-verplichte-waterbesparing',
     format: 'dispatch' as const,
     edition: '224',
