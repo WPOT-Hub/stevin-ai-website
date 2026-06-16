@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'cloud-compute-verschuift-naar-arm-en-agentic-ai',
+    format: 'dispatch' as const,
+    edition: '228',
+    category: 'Tech',
+    title: "Cloudproviders bouwen nieuwe generatie AI-ready servers op Arm-chips",
+    dek: "Major cloudproviders schakelen over op Arm-processors voor hun AI-infrastructuur, met focus op energie-efficiëntie en agentic AI-toepassingen.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Cloudproviders bouwen nieuwe generatie AI-ready servers op Arm-chips",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'kodak-chamera-nieuwe-y2k-designs',
     format: 'dispatch' as const,
     edition: '227',
