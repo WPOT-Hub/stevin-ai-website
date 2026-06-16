@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'erp-gebruikers-kiezen-voor-headless-oplossingen',
+    format: 'dispatch' as const,
+    edition: '230',
+    category: 'Operations',
+    title: "Headless ERP wint terrein: minder afhankelijk van leveranciers",
+    dek: "Steeds meer bedrijven overwegen headless ERP-systemen om de greep van softwareleveranciers te verminderen en flexibiliteit te vergroten.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Headless ERP wint terrein: minder afhankelijk van leveranciers",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'commodore-komt-terug-met-flipphone',
     format: 'dispatch' as const,
     edition: '229',
