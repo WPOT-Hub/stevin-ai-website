@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'europa-verspeelt-ai-kansen-door-een-kaart-te-spelen',
+    format: 'dispatch' as const,
+    edition: '218',
+    category: 'Platform',
+    title: "Europa speelt pokeren met één kaart: de ASML-kaart",
+    dek: "Terwijl techmiljardairs GPT-NL afschrijven als 'een model dat helemaal niks kan', onthult een Europees rapport dat Europa slechts vijf procent van de wereldwijde AI-rekenkracht beheerst tegenover tachtig procent in de VS.",
+    publishedAt: '2026-06-16',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Europa speelt pokeren met één kaart: de ASML-kaart",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'tno-biobuilt-centrum-versnelt-opschaling-biobased-materialen',
     format: 'dispatch' as const,
     edition: '217',
