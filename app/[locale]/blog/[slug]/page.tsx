@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'prc-spionnen-ontdekt-in-medische-en-militaire-netwerken': (
+    <>
+      <p className="lead-para">
+        Google meldt dat spionnen gelinkt aan de Chinese overheid gedurende meer dan een jaar toegang hadden tot interne netwerken van medische onderzoekscentra en defensiebedrijven. De indringers gebruikten gehackte Gmail-accounts om gegevens te stelen, waaronder details over drone-technologie en pathogenen.
+      </p>
+      <p>
+        De aanvallers wisten zich maandenlang onopgemerkt te handhaven door gebruik te maken van bestaande toegangspunten binnen organisaties. Ze richtten zich op systemen die niet direct verbonden waren met het internet, maar wel via andere apparaten of medewerkers bereikbaar waren.
+      </p>
+      <p>
+        Onder de getroffen partijen bevonden zich ook instellingen die werken aan vaccins en behandelingen voor infectieziekten. Google heeft de getroffen organisaties gewaarschuwd, maar de omvang van de schade is nog niet volledig in kaart gebracht.
+      </p>
+    </>
+  ),
   'kpmg-haalt-ai-rapport-na-betwiste-voorbeelden': (
     <>
       <p className="lead-para">
@@ -4223,6 +4236,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'prc-spionnen-ontdekt-in-medische-en-militaire-netwerken':
+    "Voor bedrijven en instellingen met gevoelige data is dit een belangrijke reminder om niet alleen externe bedreigingen te monitoren, maar ook interne kwetsbaarheden serieus te nemen. Een zero-trust-benadering, waarbij geen enkele verbinding standaard vertrouwd wordt, kan helpen om dergelijke langdurige infiltraties te voorkomen. Daarnaast benadrukt dit incident het belang van regelmatige audits van toegangsrechten en netwerksegmentatie.",
   'kpmg-haalt-ai-rapport-na-betwiste-voorbeelden':
     "Voor bedrijven die AI inzetten is dit een waarschuwing: transparantie en controleerbaarheid van data zijn cruciaal bij het delen van cases. Het toont aan dat zelfs grote organisaties kwetsbaar zijn voor reputatieschade door onjuiste informatie. Bureaus en in-house teams doen er goed aan om bronnen dubbel te checken voordat ze claims wereldkundig maken.",
   'geopolitiek-drukt-nederlandse-ecommerce-omzet':
