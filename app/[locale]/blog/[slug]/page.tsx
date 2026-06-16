@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'threads-passeert-half-miljard-maandelijkse-gebruikers': (
+    <>
+      <p className="lead-para">
+        Threads heeft de grens van 500 miljoen maandelijkse actieve gebruikers overschreden. Dat blijkt uit een aankondiging van Meta op dinsdag. Het platform bereikte dit aantal net voor de derde verjaardag van de lancering in juli 2023.
+      </p>
+      <p>
+        De groei van Threads verliep snel vanaf de start. Binnen vijf dagen na de release had het al 100 miljoen gebruikers, sneller dan ChatGPT destijds. CEO Mark Zuckerberg gaf eerder aan dat hij verwacht dat Threads uiteindelijk de grens van 1 miljard gebruikers kan bereiken.
+      </p>
+      <p>
+        Threads is onderdeel van Meta’s strategie om concurrentie aan te gaan met X (voorheen Twitter) en andere sociale netwerken. Gebruikers kunnen via Threads berichten delen, discussies volgen en communities vormen rond specifieke onderwerpen.
+      </p>
+    </>
+  ),
   'kodak-chamera-nieuwe-y2k-designs': (
     <>
       <p className="lead-para">
@@ -4288,6 +4301,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'threads-passeert-half-miljard-maandelijkse-gebruikers':
+    "Voor bedrijven die sociale media inzetten als kanaal voor klantcontact of branding, biedt deze schaalvergroting nieuwe kansen. Een groot publiek betekent echter niet automatisch betere zichtbaarheid: algoritmes bepalen nog steeds wie je berichten ziet. Het is verstandig om niet alleen te focussen op volume, maar ook op relevante doelgroepen en meetbare resultaten via eigen kanalen.",
   'kodak-chamera-nieuwe-y2k-designs':
     "Voor ondernemers in retail of tech kan dit soort beperkte edities een interessante strategie zijn om klanten te binden en merkwaarde te vergroten. Het laat zien hoe retro-designs en collectible items kunnen leiden tot onverwachte commerciële successen. Tegelijkertijd benadrukt het belang van authenticiteit: zelfs een product dat technisch gezien ondermaats is, kan waarde creëren door unieke uitstraling.",
   'salesforce-koopt-fin-voor-36-miljard':
