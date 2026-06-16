@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-agents-als-gamechanger-in-customer-service': (
+    <>
+      <p className="lead-para">
+        Stel je voor: een klant stuurt ’s nachts een bericht over een defect product. Binnen seconden reageert niet een mens, maar een AI die het probleem herkent, de status van de bestelling checkt en zelfs een vervangend onderdeel reserveert. Geen wachttijd, geen gefrustreerde medewerker die handmatig gegevens moet opzoeken. Dit is geen toekomstmuziek meer. Respond.io, een Maleisische startup, bewijst dat het werkt: hun AI-agentsysteem verwerkt inmiddels miljoenen gesprekken per maand voor klanten als Samsung en AirAsia, zonder dat daar één extra ‘seat’ bij hoeft te komen.
+      </p>
+      <p>
+        De kern van hun succes ligt in het businessmodel. Waar traditionele helpdesksoftware zoals Zendesk of Freshdesk je per medewerker laat betalen — vaak duizenden euro’s per jaar — rekent Respond.io per *gesprek*. Dat klinkt misschien onschuldig, maar het verandert alles. Een bedrijf met 50 medewerkers die nu €15.000 per jaar betalen voor licenties, betaalt met dit model alleen voor de gesprekken die daadwerkelijk plaatsvinden. Bij lage volumes scheelt dat al snel €10.000 per jaar. Bij piekmomenten of seizoensgebonden drukte betaal je alleen wat je gebruikt — geen vaste kosten meer.
+      </p>
+      <p>
+        Dit is waarom investeerders massaal inspringen: Respond.io haalde onlangs $62,5 miljoen op om hun technologie verder te schalen en acquisities te doen in Noord-Amerika en Europa. Hun groei is geen toeval. Terwijl Europese bedrijven nog worstelen met starre contracten en trage implementaties, tonen zij aan dat flexibiliteit de nieuwe standaard wordt. Klanten willen geen software die hen vasthoudt aan verouderde structuren; ze willen oplossingen die meebewegen met hun behoeften.
+      </p>
+      <p>
+        Toch is er ook scepsis. Critici wijzen erop dat AI agents nog steeds fouten maken, vooral bij complexe vraagstukken waar context cruciaal is. Een klant die klaagt over een vertraagde zending kan door een bot worden doorverwezen naar de verkeerde afdeling als de context niet goed wordt meegegeven. Maar dat is precies waar de technologie zich nu bevindt: in transitie van ‘dumb bots’ naar intelligente agents die leren van elke interactie.
+      </p>
+      <p>
+        De echte gamechanger zit hem niet in de techniek zelf, maar in de mentaliteit van bedrijven. Wie vasthoudt aan oude manieren van werken — zoals abonnementen op seats of starre workflows — loopt het risico achterop te raken. De concurrentie zal niet komen van bedrijven die beter zijn in customer service, maar van bedrijven die sneller kunnen schakelen tussen schaalbaarheid en kwaliteit.
+      </p>
+      <p>
+        Neem bijvoorbeeld de retailsector tijdens Black Friday: klanten verwachten binnen minuten antwoord op vragen over levertijden of retourzendingen. Een traditionele helpdesk crasht onder de load; een AI agent blijft draaien tegen lagere kosten dan het inhuren van extra parttimers. Het verschil tussen winst en verlies ligt hier vaak in details zoals deze.
+      </p>
+      <p>
+        Uiteindelijk gaat het niet om AI versus mensen, maar om efficiëntie versus rigiditeit. Bedrijven die nu investeren in systemen zoals deze zullen niet alleen kosten besparen, maar ook klanttevredenheid verhogen — omdat wachten simpelweg geen optie meer is.
+      </p>
+    </>
+  ),
   'erp-gebruikers-kiezen-voor-headless-oplossingen': (
     <>
       <p className="lead-para">
@@ -4353,6 +4378,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-agents-als-gamechanger-in-customer-service':
+    "Bij Stevin zien we deze shift al jaren aankomen: customer service wordt steeds meer een kwestie van slimme automatisering dan van menselijke beschikbaarheid. Onze eigen ervaring met klanten toont aan dat bedrijven die vroeg instappen op modellen zoals pay-per-convo niet alleen besparen op licentiekosten, maar ook nieuwe inkomstenstromen ontdekken door snellere reactietijden en hogere conversies. De uitdaging ligt echter in het integreren van deze systemen zonder de menselijke touch te verliezen — iets waar onze AI-gestuurde assistenten zich momenteel op richten middels hybride oplossingen waarbij bots complexe vraagstukken escaleren naar specialisten wanneer nodig.",
   'erp-gebruikers-kiezen-voor-headless-oplossingen':
     "Voor bedrijven die hun ERP-landschap willen moderniseren, kan headless een logische stap zijn. Het vraagt echter wel om een andere mindset: minder focus op standaardpakketten en meer op eigen regie over technologie. Dat betekent vaak ook investeren in interne expertise of samenwerking met gespecialiseerde partners, iets waar veel organisaties nog moeite mee hebben.",
   'zte-day-2026-almaty-digitaal-kazachstan':
