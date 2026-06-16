@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'zte-day-2026-almaty-digitaal-kazachstan',
+    format: 'dispatch' as const,
+    edition: '231',
+    category: 'Tech',
+    title: "Kazachstan toont op ZTE Day 2026 hoe AI en supercomputing de telecomsector veranderen",
+    dek: "Tijdens ZTE Day 2026 in Almaty presenteerde Kazachstan concrete plannen om met AI en supercomputing de telecominfrastructuur te moderniseren.",
+    publishedAt: '2026-06-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Kazachstan toont op ZTE Day 2026 hoe AI en supercomputing de telecomsector veranderen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'erp-gebruikers-kiezen-voor-headless-oplossingen',
     format: 'dispatch' as const,
     edition: '230',
