@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'mobileye-lanceert-robotaxi-service-in-us-met-moovit',
+    format: 'dispatch' as const,
+    edition: '234',
+    category: 'Tech',
+    title: "Mobileye start in 2027 met robotaxi’s in Amerikaanse stad",
+    dek: "Het Israëlische Mobileye lanceert een zelfstandige robotaxi-service in de VS, gebaseerd op het Moovit-platform.",
+    publishedAt: '2026-06-17',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Mobileye start in 2027 met robotaxi’s in Amerikaanse stad",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'arvato-mikt-op-10-000-robots-in-2030',
     format: 'dispatch' as const,
     edition: '233',
