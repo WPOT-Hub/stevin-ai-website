@@ -10,6 +10,28 @@
     ],
     "enrichedAt": "2026-05-05"
   },
+  "adform": {
+    "stevinAngle": "Adform positioneert zichzelf als het Europese alternatief voor de Amerikaanse adtech-stacks, en dat klopt voor een deel. De DSP, adserver en DMP zitten onder één dak, wat op papier prettig klinkt. In de praktijk zien we bij klanten dat die integratie intern bij Adform lang niet altijd zo naadloos werkt als de brochure suggereert. De DMP-functionaliteit in het bijzonder is functioneel, maar vraagt merkbaar meer handmatig onderhoud dan standalone DMP-oplossingen. Waar Adform wél sterk is: de campagnedata zit structureel beter gedocumenteerd dan bij veel concurrenten, waardoor onze koppeling naar een centrale rapportagelaag relatief schoon verloopt. We gebruiken Adform bij klanten primair als dataprovider richting de meetstack, niet als waarheidsgevend systeem. De eigen rapportages in het platform tellen conversies op een manier die last-touch bevoordeelt, wat zonder correctie leidt tot false confidence over welke kanalen daadwerkelijk bijdragen.",
+    "stackImpact": "Als je Adform kiest, heb je minimaal een aparte datawarehouse-laag nodig om de ruwe event-data uit Adform bruikbaar te maken naast andere kanalen. Adform levert logs via S3 of SFTP, dus een pijplijn die die bestanden ophaalt, normaliseert en samenvoegt met bijvoorbeeld Google Ads of Meta-data is geen optioneel extraatje. Zonder dat blijft programmatic data een silo. Denk ook aan een cookieless tracking-oplossing ernaast, want Adform's crossdevice-functionaliteit leunt nog op identifiers die in Safari en Firefox sterk beperkt zijn. Een server-side tagging setup of een first-party data-koppeling is dan geen luxe.",
+    "enrichedAt": "2026-06-01",
+    "pitfalls": [
+      "De standaard Adform-conversierapporten tellen view-through attributies mee met een venster dat je zelf niet altijd direct ziet, waardoor gerapporteerde ROAS structureel te hoog uitvalt als je dit niet corrigeert.",
+      "De S3-logbestanden bevatten een vertraging van soms 24 tot 36 uur, waardoor real-time dashboards op basis van Adform-data altijd een blinde vlek hebben voor de meest recente dag.",
+      "De DMP-segmenten in Adform vernieuwen niet automatisch als je externe data koppelt, wat bij klanten regelmatig leidt tot campagnes die draaien op verouderde doelgroepsdefinities.",
+      "Adform's cookieless ID-oplossing (ID Fusion) heeft beperkte match rates buiten Chrome, waardoor crossdevice-rapportages voor Safari-zwaar publiek de werkelijke oorzaak-en-gevolg-relatie tussen impressie en conversie onderschatten."
+    ]
+  },
+  "adroll": {
+    "stevinAngle": "AdRoll positioneert zichzelf als een alles-in-één retargeting-oplossing voor mkb, en dat klopt grotendeels voor de technische opzet. Waar het in de praktijk wringt, is de attributie. AdRoll rapporteert standaard op view-through conversies met een attributievenster van 30 dagen. Dat betekent dat een bezoeker die een banner ziet maar nooit klikt, alsnog als conversie wordt bijgeschreven. Bij klanten die wij begeleiden, zien we daardoor regelmatig een verschil van 40 tot 60 procent tussen conversies die AdRoll claimt en conversies die je terugvindt in Google Analytics of je webshop-backend. De tool werkt goed als retargeting-uitvoeringslaag, maar vertrouw de eigen rapportage niet als bron van waarheid. Stevin koppelt AdRoll altijd aan een externe analytics-laag zodat je oorzaak en gevolg kunt onderscheiden, in plaats van te vertrouwen op de meetdata die AdRoll zelf aanlevert.",
+    "stackImpact": "AdRoll functioneert het best als uitvoerend kanaal binnen een bredere stack, niet als enige databron. Je hebt minimaal een goed geconfigureerde Google Analytics 4 of vergelijkbare analytics-tool nodig om conversies te reconciliëren. Een CDP of datafeed-tool is sterk aan te raden als je productcatalogi dynamisch wilt serveren. Koppeling met je e-commerce platform, Shopify, WooCommerce of Lightspeed, is verplicht om doelgroepsegmenten actueel te houden. Zonder die koppeling werken lijsten op verouderde data, wat leidt tot advertenties voor producten die al zijn uitverkocht of aan klanten die al hebben gekocht.",
+    "enrichedAt": "2026-06-01",
+    "pitfalls": [
+      "View-through attributie staat standaard aan met een venster van 30 dagen, waardoor AdRoll conversies claimt die aantoonbaar via een ander kanaal zijn binnengekomen en je false confidence krijgt over de werkelijke bijdrage.",
+      "Doelgroepsegmenten synchroniseren niet automatisch real-time met je webshop, dus zonder actieve feedkoppeling worden uitverkochte producten gewoon blijven retargeten.",
+      "AdRoll combineert web-retargeting, social en e-mail in één interface, wat overzichtelijk lijkt maar ervoor zorgt dat budgetallocatie per kanaal moeilijk te isoleren en te sturen is.",
+      "De eigen AdRoll-pixel conflicteert in sommige setups met Meta Pixel en Google Tag, wat dubbeltellingen in conversierapporten veroorzaakt als de tagimplementatie niet centraal via een tagmanager wordt beheerd."
+    ]
+  },
   "amplitude": {
     "stevinAngle": "Amplitude is product analytics die specifiek gemaakt is voor SaaS en digital products, niet voor marketing. Voor merken die kijken of klanten conversion-funnels doorlopen, retention bouwen en feature-adoption meten is dit dé tool. Voor wie marketing-attributie wil, is GA4 of Mixpanel meer geschikt. We zien teams Amplitude kopen omdat 'het beter dan GA4 is' zonder te beseffen dat het een product-tool is, niet een marketing-tool. Free-tier is genereus tot 10M events per maand, dus testen kost niets.",
     "stackImpact": "Voor je stack: behandel Amplitude als de plek waar product-data leeft, niet marketing-data. Stuur events via de SDK direct vanuit je app of website, met user_id gekoppeld aan je auth-systeem. Combineer met Segment of Rudderstack als je events naar meerdere destinations wil sturen. Vermijd dubbele tracking via GTM én Amplitude SDK, dat geeft drift in cijfers.",
@@ -31,6 +53,28 @@
       "Service-accounts geen scoped permissions geven, een gecompromitteerde key kan je hele warehouse exporteren"
     ],
     "enrichedAt": "2026-05-05"
+  },
+  "criteo": {
+    "stevinAngle": "Criteo verkoopt zichzelf als een conversie-machine, en dat klopt, tot je doorvraagt. In de praktijk zien we bij klanten structureel dat Criteo's eigen rapportage last-click conversies claimt op bezoekers die toch wel hadden gekocht. Het platform converteert goed, maar het attribueert agressief. Wat we bij implementaties standaard doen: een holdout-groep inrichten voordat de campagne live gaat, zodat je na vier tot acht weken kunt zien hoeveel conversies je écht aan Criteo kunt toeschrijven. Bij drie van de vier e-commerce klanten waar we dit hebben gedaan, lag de werkelijke uplift 30 tot 50 procent lager dan Criteo's eigen dashboard aangaf. Dat betekent niet dat Criteo niet werkt. Het betekent dat je de meetdata zelf moet controleren in plaats van te vertrouwen op het platform dat ook jouw mediabudget beheert.",
+    "stackImpact": "Criteo werkt pas goed als je productfeed op orde is. Dat klinkt simpel, maar vereist een koppeling tussen je e-commerceplatform, een feedmanagementtool zoals Channable of DataFeedWatch, en Criteo's Catalog API. Daarnaast heb je een CDP of datawarehouse nodig om de Criteo-audience-data te vergelijken met je eigen klantdata, anders kun je oorzaak en gevolg in de funnel niet vaststellen. Zonder server-side pixel of Criteo's OneTag via een tagmanager mis je events zodra browsers tracking blokkeren, wat op Safari en Firefox al snel 20 tot 30 procent van het verkeer raakt.",
+    "enrichedAt": "2026-06-01",
+    "pitfalls": [
+      "Criteo's default attribution is last-click met een 30-dagenvenster, waardoor campagnes op papier winstgevend lijken terwijl je budget grotendeels gaat naar conversies die organisch of via een ander kanaal al in gang waren gezet.",
+      "Een productfeed die niet dagelijks gesynchroniseerd wordt zorgt voor advertenties met verouderde prijzen of uitverkochte producten, wat leidt tot klikken zonder conversie en false confidence in de campagneprestaties.",
+      "Criteo-segmenten overlappen standaard met je Google en Meta retargeting-doelgroepen: zonder frequency-caps over kanalen heen betaal je meerdere keren voor hetzelfde bereik.",
+      "De Criteo-pixel registreert standaard alleen paginaweergaven en aankopen, tenzij je expliciet extra events configureert. Zonder 'addToCart' en 'viewItem' heeft het algoritme te weinig signaal en presteert het aanzienlijk slechter in de eerste weken na activatie."
+    ]
+  },
+  "dv360": {
+    "stevinAngle": "DV360 wordt door Google gepositioneerd als het premium programmatic platform met ongeëvenaarde schaal en targeting. Dat klopt, maar in de praktijk zien we bij klanten een terugkerend patroon: de platformcijfers zijn structureel optimistischer dan de realiteit. View-through conversies worden standaard meegeteld op een attentievenster van 30 dagen, wat bij veel klanten leidt tot false confidence over de bijdrage van display en video. We passen dat vrijwel altijd aan naar 1 dag, soms 7, afhankelijk van de aankoopcyclus. Daarnaast zit DV360 van nature in een Google-ecosysteem: de data die je terugkrijgt, is gefilterd door datzelfde ecosysteem. Wie wil weten wat een campagne daadwerkelijk heeft bijgedragen aan conversies, heeft een externe meetlaag nodig. Zonder die laag meet je activiteit, geen oorzaak en gevolg. We zien dat klanten die DV360 inzetten zonder onafhankelijke uplift-meting gemiddeld 20 tot 40 procent van hun programmatic budget niet kunnen verantwoorden.",
+    "stackImpact": "DV360 werkt pas goed als het verbonden is met Campaign Manager 360 voor ad serving en floodlight-tracking. Zonder CM360 verlies je zicht op cross-channel frequentie en worden conversies dubbel geteld met andere kanalen. Daarnaast heb je een onafhankelijke analytics-laag nodig, GA4 of een datawarehouse zoals BigQuery, om de DV360-data te normaliseren. Heb je ook paid search via SA360 of Google Ads, dan is een gedeeld floodlight-configuratie essentieel. Zonder die koppeling rapporteert elk kanaal zijn eigen versie van de waarheid.",
+    "enrichedAt": "2026-06-01",
+    "pitfalls": [
+      "Standaard conversievensters van DV360 overnemen zonder aanpassing leidt tot forse overschatting van het aantal door display gedreven conversies.",
+      "DV360 draaien zonder CM360 zorgt voor ontbrekende cross-channel frequentiedata, waardoor je hetzelfde publiek ongemerkt overmatig bereikt.",
+      "Programmatic resultaten uit DV360 direct vergelijken met last-click data uit GA4 geeft vertekening, omdat de attributielogica structureel verschilt.",
+      "Brand Safety-instellingen standaard laten staan op netwerkniveau in plaats van dealspecifiek configureren resulteert in plaatsingen op inventaris die niet past bij de merkpositionering."
+    ]
   },
   "google-ads": {
     "stevinAngle": "Google Ads is in 80 procent van de accounts die wij overnemen niet kapot, maar verkeerd uitgelezen. Het dashboard toont conversies die niet door Google zijn veroorzaakt: branded search die toch al was gebeurd, retargeting van warm verkeer, vergelijkers die de aankoop al hadden binnengehaald. Wij draaien standaard een geo-test of holdout binnen de eerste maand, om te meten wat er echt extra binnenkomt versus wat zonder Google Ads ook was geconverteerd. De cijfers die uit zo'n test komen wijken structureel 20 tot 40 procent af van wat het Google-dashboard zelf rapporteert.",
@@ -229,6 +273,17 @@
       "GA4 tracking via een gratis plugin, vaak verouderd of buggy, conversies missen"
     ],
     "enrichedAt": "2026-05-05"
+  },
+  "youtube-ads": {
+    "stevinAngle": "YouTube Ads wordt door Google gepositioneerd als een full-funnel kanaal, en dat klopt technisch gezien. Maar in de praktijk zien we bij klanten dat viewthrough-conversies standaard op 3 dagen staan ingesteld, waardoor bijna elke aankoop die volgt op een video-impressie aan YouTube wordt toegeschreven. Dat levert false confidence op in de rapportage: het kanaal oogt beter dan het is. Wij zetten viewthrough-attributievensters standaard terug naar 0 of 1 dag, afhankelijk van de gemiddelde salescyclus van de klant. Daarnaast behandelen we YouTube primair als een doelgroepbouwer. De audiences die je opbouwt via video-views, zoals mensen die 50% of meer van een specifieke ad hebben gekeken, zijn vaak waardevoller als retargeting-laag in Google Search of Display dan als directe conversiedriver. Die verschuiving in perspectief verandert hoe je budget verdeelt.",
+    "stackImpact": "YouTube Ads draait volledig binnen Google Ads, dus je hebt sowieso een actief Google Ads-account nodig. Voor een zinvolle data-flow wil je Google Analytics 4 gekoppeld hebben, zodat video-interacties zichtbaar worden naast je andere kanaaldata. Als je de opgebouwde audiences wilt hergebruiken, bijvoorbeeld in Performance Max of Display, dan is een werkende Google Ads-tagimplementatie via Google Tag Manager een harde vereiste. Wil je YouTube-data ook buiten het Google-ecosysteem vergelijken, dan heb je een externe rapportagetool nodig zoals Looker Studio of een datawarehouse-koppeling.",
+    "enrichedAt": "2026-06-01",
+    "pitfalls": [
+      "Viewthrough-conversies staan standaard op 3 dagen, waardoor YouTube bijna elke latere aankoop claimt en de werkelijke oorzaak en gevolg-relatie vertroebeld raakt.",
+      "YouTube-doelgroepen die je opbouwt via videoviews worden niet automatisch gedeeld met andere Google-campagnes, je moet dit handmatig activeren per campagnetype.",
+      "Zonder een minimale dagelijkse vertoningsdrempel versplinteren je videoviews over te veel segmenten, waardoor Googles eigen algoritme te weinig leersignaal heeft om te optimaliseren.",
+      "Als GA4 niet correct is gekoppeld aan je Google Ads-account, zie je geen sitegedrag na een videoadvertentie en mis je de data die nodig is om audiences te verfijnen."
+    ]
   },
   "zapier": {
     "stevinAngle": "Zapier is in 2026 een prima 'duct tape' voor proces-automatisering tussen tools die elkaar niet native kennen. Voor MKB onder 100k zaps per maand is het kosten-efficiënt. Boven die schaal of voor business-critical workflows is Zapier risico (latency, single point of failure, debug is moeilijk wanneer een Zap break). We bouwen Zapier voor proof-of-concepts en migreren naar n8n (open source) of een eigen integratie wanneer een workflow business-critical wordt. Pricing: Free is 100 tasks/maand, gauw te weinig; Starter 750 tasks; Professional 2k voor de meeste MKB voldoende.",
