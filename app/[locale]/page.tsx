@@ -259,30 +259,6 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── VAKMAN-BLOK: concrete cold-call-haken ── */}
-      <section className="bg-white" style={{ padding: '96px 24px' }} id="vakman">
-        <div className="mx-auto max-w-[1000px]">
-          <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
-            <span className="inline-block w-6 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-            {t('vakman_eyebrow')}
-          </p>
-          <h2
-            className="font-display font-extrabold text-primary m-0 mb-10"
-            style={{ fontSize: 'clamp(28px, 3.2vw, 44px)', letterSpacing: '-0.03em', lineHeight: '1.1', maxWidth: '20ch' }}
-          >
-            {t('vakman_h2')}
-          </h2>
-          <ul className="space-y-5 max-w-[760px] list-none p-0 m-0">
-            {(['vakman_item1', 'vakman_item2', 'vakman_item3', 'vakman_item4', 'vakman_item5'] as const).map((k) => (
-              <li key={k} className="flex items-start gap-4">
-                <span className="mt-[10px] inline-block w-2 h-2 rounded-full bg-accent flex-shrink-0" aria-hidden="true" />
-                <span className="text-[#2A3A54] leading-[1.6]" style={{ fontSize: '18px' }}>{t(k)}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       {/* ── CONNECTOR BAR ── */}
       <div className="bg-white border-y border-border">
         <div className="mx-auto max-w-[1200px] px-6 py-8">
