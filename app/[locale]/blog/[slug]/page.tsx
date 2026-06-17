@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'mobileye-lanceert-robotaxi-service-in-us-met-moovit': (
+    <>
+      <p className="lead-para">
+        Mobileye gaat in 2027 een volledig autonome taxidienst aanbieden in een Amerikaanse stad. De dienst maakt gebruik van de bestaande Moovit-technologie voor routeplanning en passagiersbeheer.
+      </p>
+      <p>
+        De service zal draaien op zelfrijdende voertuigen uitgerust met Mobileye’s sensoren en software. Klanten kunnen via een app een rit boeken, net als bij traditionele taxidiensten.
+      </p>
+      <p>
+        De lancering markeert een belangrijke stap voor Mobileye, dat eerder vooral samenwerkte met autofabrikanten. Met deze stap positioneert het bedrijf zich rechtstreeks als concurrent van Uber en Lyft.
+      </p>
+    </>
+  ),
   'arvato-mikt-op-10-000-robots-in-2030': (
     <>
       <p className="lead-para">
@@ -4391,6 +4404,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'mobileye-lanceert-robotaxi-service-in-us-met-moovit':
+    "Voor bedrijven die actief zijn in mobiliteit of logistiek is dit een signaal dat autonome diensten binnen enkele jaren realiteit worden. Het vraagt om vroegtijdige investeringen in technologie en klantervaring om niet achterop te raken. Tegelijkertijd blijven juridische en ethische vraagstukken rondom verantwoordelijkheid bij ongelukken een uitdaging.",
   'arvato-mikt-op-10-000-robots-in-2030':
     "Voor bedrijven die overwegen te investeren in robotica, biedt dit nieuws een duidelijke indicatie dat grote spelers als Arvato serieus werk maken van automatisering. Het toont aan dat technologie niet langer een optionele verbetering is, maar een noodzakelijke stap voor concurrentiekracht. Tegelijkertijd blijft menselijke expertise cruciaal: training en begeleiding zijn minstens zo belangrijk als de hardware zelf.",
   'ai-agents-als-gamechanger-in-customer-service':
