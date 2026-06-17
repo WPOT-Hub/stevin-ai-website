@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'arvato-mikt-op-10-000-robots-in-2030',
+    format: 'dispatch' as const,
+    edition: '233',
+    category: 'Operations',
+    title: "Arvato wil in 2030 tienduizend robots inzetten",
+    dek: "De logistieke dienstverlener Arvato zet een ambitieus plan in om tegen 2030 tienduizend robots in te zetten voor automatisering.",
+    publishedAt: '2026-06-17',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Arvato wil in 2030 tienduizend robots inzetten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-agents-als-gamechanger-in-customer-service',
     format: 'dispatch' as const,
     edition: '232',
