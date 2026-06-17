@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-en-bci-maken-volledige-baan-mogelijk-voor-spraakloze-als-patiënt': (
+    <>
+      <p className="lead-para">
+        Voor het eerst kan een persoon met amyotrofische laterale sclerose (ALS), die niet meer kan spreken of typen, via een hersen-computerinterface (BCI) communiceren. De patiënt gebruikt de technologie nu om een fulltime administratieve baan uit te voeren. Het systeem registreert hersensignalen en zet deze met behulp van machine learning om in vloeiende tekst of spraak, aldus de onderzoekers.
+      </p>
+      <p>
+        De gebruikte hardware is niet nieuw, maar de doorbraak zit in de software: het algoritme leert patronen in de hersenactiviteit herkennen en corrigeert fouten automatisch. Hierdoor ontstaat een betrouwbaar communicatiemiddel zonder dat de gebruiker langdurig moet trainen. De patiënt kan nu zelfs spontaan reageren op collega’s of klanten, wat voorheen onmogelijk was.
+      </p>
+      <p>
+        De technologie biedt perspectief voor andere patiënten met ernstige motorische beperkingen. Onderzoekers verwachten dat het systeem binnen vijf jaar beschikbaar komt voor thuisgebruik, mits verdere tests succesvol verlopen.
+      </p>
+    </>
+  ),
   'mobileye-lanceert-robotaxi-service-in-us-met-moovit': (
     <>
       <p className="lead-para">
@@ -4404,6 +4417,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-en-bci-maken-volledige-baan-mogelijk-voor-spraakloze-als-patiënt':
+    "Dit laat zien hoe AI niet alleen bestaande processen efficiënter maakt, maar ook nieuwe mogelijkheden creëert voor mensen met ernstige beperkingen. Voor bedrijven die zich bezighouden met toegankelijkheid of innovatie kan dit een signaal zijn om na te denken over toekomstige toepassingen. Technologie zoals deze kan op termijn ook impact hebben op werkomgevingen en productiviteit.",
   'mobileye-lanceert-robotaxi-service-in-us-met-moovit':
     "Voor bedrijven die actief zijn in mobiliteit of logistiek is dit een signaal dat autonome diensten binnen enkele jaren realiteit worden. Het vraagt om vroegtijdige investeringen in technologie en klantervaring om niet achterop te raken. Tegelijkertijd blijven juridische en ethische vraagstukken rondom verantwoordelijkheid bij ongelukken een uitdaging.",
   'arvato-mikt-op-10-000-robots-in-2030':
