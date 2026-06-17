@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-en-bci-maken-volledige-baan-mogelijk-voor-spraakloze-als-patiënt',
+    format: 'dispatch' as const,
+    edition: '235',
+    category: 'Tech',
+    title: "AI en hersen-computerinterface maken fulltime baan mogelijk voor spraakloze ALS-patiënt",
+    dek: "Een onderzoeksteam van UC Davis ontwikkelde een methode om hersenactiviteit van een ALS-patiënt met 92% nauwkeurigheid om te zetten in gesproken zinnen.",
+    publishedAt: '2026-06-17',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AI en hersen-computerinterface maken fulltime baan mogelijk voor spraakloze ALS-patiënt",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'mobileye-lanceert-robotaxi-service-in-us-met-moovit',
     format: 'dispatch' as const,
     edition: '234',
