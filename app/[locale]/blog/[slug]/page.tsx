@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'arvato-mikt-op-10-000-robots-in-2030': (
+    <>
+      <p className="lead-para">
+        Logistiek dienstverlener Arvato streeft naar het inzetten van tienduizend robots in 2030. Dit doel is gebaseerd op een groeiende vraag naar automatisering binnen de sector, aldus Martijn Nielen, directeur bij Arvato. Om dit te realiseren heeft het bedrijf recent een belang genomen in Unchained Robotics, een specialist in robotica-oplossingen.
+      </p>
+      <p>
+        De uitrol van robots moet vooral helpen om de efficiëntie en snelheid van logistieke processen te verhogen. Arvato ziet vooral kansen in repetitieve taken zoals orderpicking en verpakken, waar robots een constante prestatie kunnen leveren zonder vermoeidheid. Het bedrijf benadrukt dat de markt voor robotica nog volop in ontwikkeling is, maar dat er wel druk nodig is om de adoptie te versnellen.
+      </p>
+      <p>
+        Om het doel te halen, werkt Arvato samen met partners en investeert het actief in nieuwe technologieën. De focus ligt niet alleen op de aanschaf van robots, maar ook op het trainen van medewerkers om met deze systemen om te gaan. Volgens Nielen is dit essentieel om de overgang soepel te laten verlopen en de productiviteit direct te verhogen.
+      </p>
+    </>
+  ),
   'ai-agents-als-gamechanger-in-customer-service': (
     <>
       <p className="lead-para">
@@ -4378,6 +4391,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'arvato-mikt-op-10-000-robots-in-2030':
+    "Voor bedrijven die overwegen te investeren in robotica, biedt dit nieuws een duidelijke indicatie dat grote spelers als Arvato serieus werk maken van automatisering. Het toont aan dat technologie niet langer een optionele verbetering is, maar een noodzakelijke stap voor concurrentiekracht. Tegelijkertijd blijft menselijke expertise cruciaal: training en begeleiding zijn minstens zo belangrijk als de hardware zelf.",
   'ai-agents-als-gamechanger-in-customer-service':
     "Bij Stevin zien we deze shift al jaren aankomen: customer service wordt steeds meer een kwestie van slimme automatisering dan van menselijke beschikbaarheid. Onze eigen ervaring met klanten toont aan dat bedrijven die vroeg instappen op modellen zoals pay-per-convo niet alleen besparen op licentiekosten, maar ook nieuwe inkomstenstromen ontdekken door snellere reactietijden en hogere conversies. De uitdaging ligt echter in het integreren van deze systemen zonder de menselijke touch te verliezen — iets waar onze AI-gestuurde assistenten zich momenteel op richten middels hybride oplossingen waarbij bots complexe vraagstukken escaleren naar specialisten wanneer nodig.",
   'erp-gebruikers-kiezen-voor-headless-oplossingen':
