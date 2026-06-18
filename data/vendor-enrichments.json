@@ -1,4 +1,15 @@
 {
+  "12build": {
+    "stevinAngle": "12Build lost het proces van uitvragen netjes op. Aannemers zetten werkpakketten uit, onderaannemers bieden, en het systeem houdt bij wie wat heeft ingediend. Wat het platform niet doet, is beoordelen wat er in die biedingen staat. Dat is precies waar Stevin op aansluit. In de praktijk zien we bij klanten dat biedingsvergelijkingen worden gedaan op totaalprijs, terwijl een offerte stilzwijgend kitwerk, hijskosten of coördinatietaken uitsluit. Pas in de uitvoering wordt dat zichtbaar. Stevin leest de biedingen uit via export of mailparser en legt er een vergelijkingslaag overheen die scopeverschillen en uitsluitingen markeert voordat de opdracht wordt gegund. Het gaat dus niet om het overnemen van het aanbestedingsproces, maar om het bewaken van de overgang van bieden naar bouwen. Die overgang is waar de meeste fouten zitten.",
+    "stackImpact": "12Build staat in jouw stack als het punt waar offertedata ontstaat. Om er iets mee te doen buiten het platform, heb je een exportkoppeling of mailparser nodig die die data leesbaar maakt voor Stevin of andere downstream tools. Heb je een projectplanning in bijvoorbeeld Snagstream, Relatics of een eigen spreadsheet, dan is er geen native brug naar 12Build. Je moet die verbinding zelf bouwen of via Stevin laten inrichten. Denk ook aan je documentbeheer: biedingen bevatten bijlagen die niet altijd in een export meekomen. Een losse bestandsopslag of DMS is dan geen optie maar een vereiste.",
+    "enrichedAt": "2026-06-18",
+    "pitfalls": [
+      "Biedingen worden vergeleken op eindprijs zonder te controleren of de scope gelijk is, waardoor je na gunning alsnog meerwerk betaalt voor wat je dacht te hebben ingekocht.",
+      "Onderaannemers die niet hebben gereageerd worden niet actief opgevolgd in 12Build, wat ertoe leidt dat je met een te kleine selectie vergelijkt zonder dat je dat doorhebt.",
+      "Uitsluitingen in de offerte, zoals het weglaten van hijskosten of afvoer, vallen pas op bij de eerste termijnfactuur, niet bij de biedingsbeoordeling.",
+      "De gekozen bieding wordt gegund maar niet vertaald naar een uitvoeringsplanning, waarna de aannemer en onderaannemer met verschillende verwachtingen de bouw ingaan."
+    ]
+  },
   "activecampaign": {
     "stevinAngle": "ActiveCampaign zit in een sweet spot tussen Mailchimp (te simpel zodra je serieus segmenteert) en HubSpot (te duur en te zwaar zodra je 'm niet voor sales gebruikt). De automation-builder is daadwerkelijk visueel logisch ipv het Mailchimp-knutselwerk, en je krijgt CRM-functionaliteit erbij zonder de HubSpot-prijs. Wij migreren regelmatig accounts vanuit Mailchimp wanneer ze tegen 10.000+ contacten aanlopen of multistep automations nodig hebben die in Mailchimp niet schalen. Pas op: ActiveCampaign's eigen reporting is matig, gebruik een externe BI-tool of GA4 voor echte performance-analyse.",
     "stackImpact": "Combineer met je website-CMS (event-tracking via API of Site Tracking script), Stripe of een ander payment-platform voor revenue-attributie, en een dedicated landing page tool als je veel campagnes draait (Unbounce, Instapage). De interne formulieren zijn OK voor simpele opt-ins; voor conversie-geoptimaliseerde landing pages mis je A/B-test functionaliteit.",
@@ -9,6 +20,17 @@
       "Site Tracking aanzetten zonder cookie-consent integratie, AVG-risico"
     ],
     "enrichedAt": "2026-05-05"
+  },
+  "admicom": {
+    "stevinAngle": "Admicom werkt goed als registratiesysteem. Waar het minder sterk is, is in het proactief naar boven brengen van wat er mis dreigt te gaan. In de praktijk zien we bij bouw- en installatiebedrijven dat Admicom netjes gevuld is, maar dat niemand structureel kijkt of de calculatieprijzen nog kloppen met de marktprijzen van vandaag. Projecten lopen dan maanden met een berekende marge van 12% terwijl de werkelijke marge richting 4% of 5% gaat. Stevin koppelt op de projectdata uit Admicom en genereert signalen op het moment dat een budgetregel afwijkt, een kostenpost sneller loopt dan gepland, of een actie al te lang openstaat. We vertalen daarmee een passief archief naar iets wat je dagelijks stuurt. De koppeling loopt via de Admicom API of via periodieke exports, afhankelijk van wat de klant al heeft ingericht.",
+    "stackImpact": "Admicom als kern betekent dat je voor signalering en analyse een laag bovenop nodig hebt. Stevin vult die rol, maar de datakwaliteit in Admicom is de bottleneck: onvolledige projectcodes, ontbrekende budgetregels of handmatig bijgehouden urenstaten vertragen alles stroomafwaarts. Als je ook factureert vanuit Admicom, is het slim om de facturatiedata mee te nemen in de koppeling zodat je kasstroomverwachting per project klopt. Koppel je daarnaast met een inkoop- of materiaaltool, dan moet je nadenken over welk systeem de brondata levert voor materiaalkosten.",
+    "enrichedAt": "2026-06-18",
+    "pitfalls": [
+      "Calculatieprijzen worden eenmalig ingevoerd en nooit herzien, waardoor margeberekeningen op langlopende projecten structureel te optimistisch zijn.",
+      "Urenstaten worden met vertraging ingevoerd door medewerkers op de bouwplaats, wat betekent dat voortgangsdata in Admicom altijd achterloopt op de werkelijkheid.",
+      "Projectcodes worden inconsistent aangemaakt per medewerker of afdeling, waardoor automatische koppelingen op projectniveau mismatch geven.",
+      "Openstaande acties worden in Admicom geregistreerd maar niet toegewezen met een deadline, wat opvolging handmatig en foutgevoelig houdt."
+    ]
   },
   "amplitude": {
     "stevinAngle": "Amplitude is product analytics die specifiek gemaakt is voor SaaS en digital products, niet voor marketing. Voor merken die kijken of klanten conversion-funnels doorlopen, retention bouwen en feature-adoption meten is dit dé tool. Voor wie marketing-attributie wil, is GA4 of Mixpanel meer geschikt. We zien teams Amplitude kopen omdat 'het beter dan GA4 is' zonder te beseffen dat het een product-tool is, niet een marketing-tool. Free-tier is genereus tot 10M events per maand, dus testen kost niets.",
@@ -31,6 +53,17 @@
       "Service-accounts geen scoped permissions geven, een gecompromitteerde key kan je hele warehouse exporteren"
     ],
     "enrichedAt": "2026-05-05"
+  },
+  "bouw7": {
+    "stevinAngle": "Bouw7 doet wat het belooft: calculatie, planning en urenregistratie op projectniveau, netjes bij elkaar. Het probleem dat we in de praktijk zien is niet de datakwaliteit, maar de timing. Een projectleider opent Bouw7 als hij er al aan toe is, niet als een offerte 10 dagen onbeantwoord is of een levering niet bevestigd is. Stevin draait als actieve laag boven Bouw7 en leest wat er inzit: open offertes, blokkeringen in de planning, meerwerk zonder opvolging. Het systeem stuurt een signaal op het moment dat actie nodig is, niet als iemand toevallig inlogt. Wat ons opvalt bij implementaties is dat de winst zelden zit in betere data. Die data was er al. De winst zit in het verkorten van de tijd tussen 'er staat iets mis' en 'iemand weet het'.",
+    "stackImpact": "Bouw7 is de databron, Stevin is de bovenliggende werklaag. Je hebt dus Bouw7 nodig als primair systeem voor je projectadministratie. Koppelen kan via de Exact Online API, een periodieke export of een mailparser voor automatische berichten vanuit Bouw7. Als je ook met externe planningstools of een apart ERP werkt, moet je bewust kiezen welke bron leidend is voor projectstatus en planning. Zorg dat Bouw7 als single source of truth fungeert voor projectdata, anders krijg je conflicterende signalen aan de Stevin-kant. Een CRM of mailomgeving voor offerteverkeer sluit hier goed op aan.",
+    "enrichedAt": "2026-06-18",
+    "pitfalls": [
+      "Bouw7 exporteren als losse Excel per project en dat als databron gebruiken: de export is een momentopname en Stevin mist daarmee wijzigingen die daarna in het systeem worden doorgevoerd.",
+      "Planningsdata in Bouw7 invoeren met hoge detailgraad maar zonder eigenaar per stap: Stevin kan een blokkering signaleren, maar als er geen verantwoordelijke aan een taak hangt, komt het signaal nergens terecht.",
+      "Meerwerk buiten Bouw7 om afhandelen via mail of app en pas later terugzetten in het systeem: Stevin ziet dan geen openstaand meerwerk, waardoor opvolgingstaken ontbreken.",
+      "Ervan uitgaan dat de API-koppeling realtime is: Exact Online heeft rate limits en afhankelijk van je abonnement kan de verversing meerdere uren achterlopen, wat de urgentie van signalen beïnvloedt."
+    ]
   },
   "google-ads": {
     "stevinAngle": "Google Ads is in 80 procent van de accounts die wij overnemen niet kapot, maar verkeerd uitgelezen. Het dashboard toont conversies die niet door Google zijn veroorzaakt: branded search die toch al was gebeurd, retargeting van warm verkeer, vergelijkers die de aankoop al hadden binnengehaald. Wij draaien standaard een geo-test of holdout binnen de eerste maand, om te meten wat er echt extra binnenkomt versus wat zonder Google Ads ook was geconverteerd. De cijfers die uit zo'n test komen wijken structureel 20 tot 40 procent af van wat het Google-dashboard zelf rapporteert.",
@@ -164,6 +197,17 @@
     ],
     "enrichedAt": "2026-05-05"
   },
+  "opusflow": {
+    "stevinAngle": "OpusFlow positioneert zichzelf als end-to-end software voor de installateur. Dat klopt, maar de meeste problemen die wij bij klanten tegenkomen zitten niet in de software zelf. Ze zitten in wat de software niet doet: signaleren dat er iets mis dreigt te gaan. Een offerte staat op 'verstuurd' maar niemand heeft gebeld. Een warmtepomp-installatie staat voor dinsdag gepland, maar het materiaal is nog niet bevestigd door de leverancier. Een subsidieaanvraag vereist een foto van het serienummer, maar die is drie weken na montage nog niet in het dossier. OpusFlow legt het procesverloop vast. Stevin leest dat procesverloop en trekt conclusies. Wij bouwen een signaallaag boven de data die OpusFlow al heeft, waardoor een monteur of projectleider een gerichte actiemelding krijgt voordat de fout realiteit is. Geen rapportage achteraf, maar een concrete suggestie op het juiste moment.",
+    "stackImpact": "Als je OpusFlow al draait, heb je voor de Stevin-koppeling in principe genoeg aan de bestaande data-uitvoer via API of periodieke export. Wel relevant: als je subsidiestromen beheert via een extern portaal of Excel, moet die data ook beschikbaar zijn. Stevin koppelt niet direct aan subsidieregisters. Zorg verder dat offertestatussen en materialenstatus in OpusFlow consistent worden bijgehouden door je team, want slordig invoergedrag in OpusFlow levert ook slordig signaalgedrag op aan Stevin-kant. Garbage in, garbage out geldt hier letterlijk.",
+    "enrichedAt": "2026-06-18",
+    "pitfalls": [
+      "OpusFlow-statussen worden niet consequent bijgewerkt door monteurs of binnendienst, waardoor Stevin verkeerde of vertraagde signalen afgeeft en je false confidence krijgt over de voortgang van een klus.",
+      "Subsidieverplichtingen variëren per regeling en per jaar. Stevin herkent ontbrekende bewijsstukken op basis van wat jij als vereiste hebt gedefinieerd. Als die definitie niet klopt of verouderd is, mist de signaallaag structureel bepaalde gevallen.",
+      "Materiaalbevestiging wordt in sommige installatiebedrijven mondeling of via WhatsApp afgehandeld en nooit ingevoerd in OpusFlow. Stevin kan alleen signaleren op wat er in het systeem staat, niet op wat er buiten het systeem is afgesproken.",
+      "De koppeling via export werkt, maar als exports handmatig worden aangemaakt, ontstaat er een vertraging tussen werkelijkheid en signaal. Automatiseer de export of gebruik de API om dit te voorkomen."
+    ]
+  },
   "pinterest-ads": {
     "stevinAngle": "Pinterest positioneert zichzelf als het platform voor de inspiratiefase, maar in de praktijk zien we bij klanten dat de Pinterest Tag standaard veel te ruim vuurt. Zonder expliciete deduplicatie tegen Google Analytics of je CDP registreert Pinterest conversies die al elders zijn toegekend. Het gevolg is false confidence in je ROAS-cijfers. Wat we in projecten consequent doen: de Tag configureren met een strikte event-match quality, de API for Conversions koppelen naast de browsertag, en beide signalen reconciliëren in je rapportagelaag. Pas dan zie je het werkelijke beeld. Voor e-commerce klanten met een gemiddelde orderwaarde boven de 60 euro is Pinterest serieus te overwegen als discovery-kanaal, maar alleen als je productfeed dagelijks gesynchroniseerd is en je conversion windows in lijn zijn met je andere platformen. Zonder die basis meet je ruis.",
     "stackImpact": "Pinterest Ads werkt pas goed als je een betrouwbare productfeed-pipeline hebt, bij voorkeur via een feedmanagementtool zoals Channable of DataFeedWatch die dagelijks naar de Pinterest Catalog pusht. Daarnaast heb je de Pinterest API for Conversions nodig als server-side aanvulling op de browsertag, wat een backend-koppeling vereist met je webshop of orderbeheersysteem. Wil je Pinterest-data serieus meenemen in je attributie, dan moet je datapijplijn naar je BI-tool of datawarehouse Pinterest als expliciete bron bevatten, anders verdwijnt het kanaal in de restcategorie.",
@@ -207,6 +251,17 @@
       "Shopify Payments niet uitzetten op markten waar Mollie of Adyen beter conversie geeft"
     ],
     "enrichedAt": "2026-05-05"
+  },
+  "syntess-atrium": {
+    "stevinAngle": "Syntess Atrium doet wat het belooft: één systeem voor serviceplanning, werkbonnen, materiaalregistratie en facturatie in de installatie- en techniekbranche. De marketing-positionering stopt daar. Waar wij in de praktijk tegenaan lopen, is dat die data wél in het systeem zit, maar niet op het moment dat iemand er iets mee kan doen. Een werkbon zonder opvolging valt pas op als een klant belt. Een onderhoudscontract dat over drie weken afloopt, ziet niemand totdat het al te laat is om een monteur in te plannen. Stevin leest de data uit Syntess, signaleert wat aandacht vraagt en koppelt die signalen aan de juiste persoon op het juiste moment. Niet als dashboard dat iemand moet openen, maar als actief voorstel. De mens keurt goed, het systeem onthoudt. Dat is een andere laag dan wat Syntess zelf biedt, en die scheiding is bewust.",
+    "stackImpact": "Syntess Atrium is het systeem van record voor werkbonnen, planning en contracten. Stevin koppelt daar bovenop via API of periodieke export, afhankelijk van wat de installatie toelaat. Je hebt geen extra BI-tool nodig voor de signalering die Stevin verzorgt, maar als je ook wilt rapporteren over doorlooptijden of contractverlenging, heb je een aparte data-afvoer richting een rapportage-omgeving nodig. Syntess heeft geen native webhook-infrastructuur voor real-time events, dus de data-flow is in de meeste implementaties polling-gebaseerd, met een vertraging van minuten tot een uur. Houd daar rekening mee bij tijdkritische signalen.",
+    "enrichedAt": "2026-06-18",
+    "pitfalls": [
+      "Werkbonstatussen in Syntess worden inconsistent ingevuld door monteurs, waardoor Stevin signalen genereert op incomplete data en opvolging verdubbeld wordt.",
+      "Onderhoudscontracten zonder harde einddatum in Syntess produceren geen bruikbare planningssignalen, omdat het systeem geen trigger heeft om op te matchen.",
+      "De API-rechten in Syntess zijn per module instelbaar, maar worden bij implementatie vaak te breed of te smal gezet, wat leidt tot ontbrekende werkbondata of onbedoelde toegang tot facturatiegegevens.",
+      "Planningswijzigingen die mondeling worden doorgegeven en niet in Syntess worden bijgewerkt, creëren false confidence: Stevin rapporteert op de geplande situatie, niet op de werkelijke."
+    ]
   },
   "tiktok-ads": {
     "stevinAngle": "TikTok Ads werkt voor de doelgroepen waar het werkt en niet voor de doelgroepen waar het niet werkt. Klinkt flauw, is in de praktijk wel zo: voor merken met 18-34 publiek presteert het sterk op cost-per-acquisition, voor B2B of 50+ doelgroepen is het symbolisch. We zien teams die TikTok draaien omdat 'het zo hoort' zonder te checken of hun doelgroep er überhaupt is. Eerste stap is altijd: meet of jouw kopers er zitten, niet of jouw concurrenten erop adverteren.",
