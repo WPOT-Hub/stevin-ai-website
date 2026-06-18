@@ -470,6 +470,12 @@
       "Building too many custom objects before you know your own process, cleaning up afterward is expensive.",
       "Expecting AI-native to mean it follows up on its own.",
       "Webhooks that fire without anything downstream listening."
+    ],
+    "faqs": [
+      {
+        "question": "Does Stevin replace Attio?",
+        "answer": "No. Attio stays your CRM, Stevin is the AI layer on top that flags issues and follows up. We connect through the API, webhooks and the MCP layer."
+      }
     ]
   },
   "axeptio": {
@@ -833,6 +839,12 @@
       "Only discovering a budget waster in the feed once it has been running for weeks.",
       "Letting the feed be technically correct while the prioritization sits apart from what sells.",
       "Not feeding shopping performance back into which products deserve budget."
+    ],
+    "faqs": [
+      {
+        "question": "Does Stevin.AI replace Channable?",
+        "answer": "No. Channable stays the feed engine. Stevin.AI adds the intelligence layer: which products to switch on or off, which titles perform better, where budget leaks away."
+      }
     ]
   },
   "close": {
@@ -1394,6 +1406,16 @@
       "Leaving conversion modeling on without understanding that you are then counting model estimates, not measured conversions",
       "Smart Bidding on conversion volumes that are too low (under 30 a month), the algorithm has too little signal and starts guessing",
       "No frequency cap on display, so a user gets served 40 times for one click"
+    ],
+    "faqs": [
+      {
+        "question": "Does Stevin.AI also manage my Google Ads campaigns?",
+        "answer": "Yes, we manage campaigns and make sure they are set up properly on the technical side, connected to your tracking and CRM, and optimised for real results."
+      },
+      {
+        "question": "Do you take a margin on my advertising budget?",
+        "answer": "No. You pay your media budget straight to Google. We do not charge a margin or commission on your ad spend."
+      }
     ]
   },
   "google-analytics-4": {
@@ -1414,6 +1436,12 @@
       "Reading 'engaged sessions' as conversions: Google's definition is 10 seconds, which is not engagement",
       "Cross-domain tracking not set up for your checkout on a different subdomain, splitting sessions",
       "Leaving data retention on the default 2 months when you need 14 months for year-over-year comparisons"
+    ],
+    "faqs": [
+      {
+        "question": "Can Stevin.AI improve my existing GA4?",
+        "answer": "Yes. We audit your current setup, fix errors, and rebuild events and conversions so your data becomes reliable."
+      }
     ]
   },
   "google-consent-mode": {
@@ -1544,6 +1572,16 @@
       "Checking Share of Search occasionally instead of tracking it structurally.",
       "Letting a competitor gain ground because nobody guards the line.",
       "Missing seasonal patterns in your budget split because the data stays unseen."
+    ],
+    "faqs": [
+      {
+        "question": "What exactly is Share of Search?",
+        "answer": "Share of Search is the percentage of branded search volume for your brand against the whole category. Research by Les Binet (IPA) shows it is the best predictor of market share, stronger than Share of Voice."
+      },
+      {
+        "question": "How often is Share of Search updated?",
+        "answer": "Stevin.AI calculates your Share of Search weekly and compares it with previous periods so you see trends right away."
+      }
     ]
   },
   "gwi": {
@@ -1639,6 +1677,12 @@
       "Building workflows on an enrollment trigger without exit criteria, contacts get stuck in 8 workflows at once",
       "Letting the MQL definition decay into 'anyone with an email', sales quality drops, marketing gets blamed",
       "Using the HubSpot ads tool for budget control instead of Google/Meta native, you lose features and data granularity"
+    ],
+    "faqs": [
+      {
+        "question": "Can Stevin.AI improve our existing HubSpot setup?",
+        "answer": "Yes. We audit your current HubSpot setup and optimise workflows, lead scoring, integrations and reporting so you get more out of the CRM you already have."
+      }
     ]
   },
   "infrabox": {
@@ -2186,6 +2230,12 @@
       "Opening a dashboard after the campaign instead of during.",
       "Letting the lesson from one round evaporate before the next starts.",
       "Measuring at creative level but still steering at ad set level."
+    ],
+    "faqs": [
+      {
+        "question": "How is Motion different from the reports in Meta Ads Manager?",
+        "answer": "Meta reports at the ad level. Motion goes deeper: it labels visual and text elements (hook type, colour, format) and correlates them with performance. That surfaces patterns you would never spot in Ads Manager."
+      }
     ]
   },
   "mparticle": {
@@ -2223,6 +2273,16 @@
       "Taking the predicted score as the final verdict and skipping the conversation about the message.",
       "Only testing on the final version, when there is barely any room left to adjust.",
       "Assuming high attention means the right message got through."
+    ],
+    "faqs": [
+      {
+        "question": "Does Neurons replace an A/B test?",
+        "answer": "No, but it filters out the weak variants up front. You only test the ones that clear the attention threshold, which makes your testing budget go further."
+      },
+      {
+        "question": "Does this work for video too?",
+        "answer": "Yes. Neurons analyses both static images and video frames for attention and engagement."
+      }
     ]
   },
   "nielseniq": {
@@ -3424,6 +3484,12 @@
       "Expecting a young open-source CRM to have the same ready-made integrations as the big names.",
       "Setting up a clean CRM and thinking the follow-up comes with it.",
       "Confusing ownership with ease of maintenance: you own it, so you manage it too."
+    ],
+    "faqs": [
+      {
+        "question": "Why Twenty instead of a standard CRM?",
+        "answer": "Twenty is open-source and self-hosted, so you own your data and can extend it. Stevin runs on top as the AI layer, just like with any other CRM."
+      }
     ]
   },
   "twitch": {
@@ -3678,6 +3744,12 @@
       "Hitting the task limit without an alert. Zaps stop quietly and processes break without anyone noticing.",
       "Using a webhook trigger without retry logic. Failed events disappear for good.",
       "Forgetting a filter step. The Zap fires on every trigger and burns tasks for nothing."
+    ],
+    "faqs": [
+      {
+        "question": "Do you always use Zapier?",
+        "answer": "No. We pick the best integration method per situation. Sometimes that is a direct connection, sometimes Zapier or Make, sometimes a custom build."
+      }
     ]
   },
   "zendesk-sell": {

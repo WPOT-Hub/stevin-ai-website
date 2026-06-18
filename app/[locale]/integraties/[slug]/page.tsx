@@ -190,6 +190,7 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
   const enrichment = en && en.stevinAngle
     ? { stevinAngle: en.stevinAngle, stackImpact: en.stackImpact, pitfalls: en.pitfalls }
     : getVendorEnrichment(slug)
+  const faqs = en?.faqs ?? integration.faqs
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -226,10 +227,10 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
     itemListElement: breadcrumbItems,
   }
 
-  const faqJsonLd = integration.faqs && integration.faqs.length > 0 ? {
+  const faqJsonLd = faqs && faqs.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: integration.faqs.map((faq) => ({
+    mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {
@@ -344,10 +345,10 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
                 </ul>
               </div>
 
-              {integration.faqs && integration.faqs.length > 0 && (
+              {faqs && faqs.length > 0 && (
                 <div>
                   <h2 className="text-xl font-bold text-primary mb-4">{t('faqs_heading', { name: integration.name })}</h2>
-                  <FAQAccordion faqs={integration.faqs} />
+                  <FAQAccordion faqs={faqs} />
                 </div>
               )}
             </div>

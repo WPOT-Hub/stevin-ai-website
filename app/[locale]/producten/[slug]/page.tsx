@@ -1,12 +1,13 @@
 import { setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { Link } from '@/i18n/navigation'
 import Section from '@/components/Section'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CTABlock from '@/components/CTABlock'
 import FAQAccordion from '@/components/FAQAccordion'
-import { products, getProductBySlug, getRelatedProducts } from '@/data/products'
+import { products, getProductBySlug, getRelatedProducts, getProductHero } from '@/data/products'
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>
@@ -46,6 +47,7 @@ export default async function ProductPage({ params }: Props) {
   if (!product) notFound()
 
   const related = getRelatedProducts(product.relatedSlugs)
+  const hero = getProductHero(slug)
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -94,17 +96,46 @@ export default async function ProductPage({ params }: Props) {
           ]}
         />
 
+        {hero && (
+          <div className="relative h-72 sm:h-80 rounded-2xl overflow-hidden mb-12 bg-primary">
+            <Image
+              src={hero}
+              alt={product.name}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628] via-[#0A1628]/85 to-[#0A1628]/30" />
+            <div className="absolute inset-0 flex items-center">
+              <div className="px-8 sm:px-12 max-w-2xl">
+                {product.acronym && (
+                  <span className="inline-block text-xs font-semibold uppercase tracking-wider text-accent mb-3">
+                    {product.acronym}
+                  </span>
+                )}
+                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">{product.name}</h1>
+                <p className="mt-4 text-lg text-white/85 leading-relaxed">{product.tagline}</p>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
-            {product.acronym && (
-              <span className="inline-block text-xs font-semibold uppercase tracking-wider text-accent mb-3">
-                {product.acronym}
-              </span>
+            {!hero && (
+              <>
+                {product.acronym && (
+                  <span className="inline-block text-xs font-semibold uppercase tracking-wider text-accent mb-3">
+                    {product.acronym}
+                  </span>
+                )}
+                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">{product.name}</h1>
+                <p className="mt-5 text-lg text-muted leading-relaxed">{product.tagline}</p>
+              </>
             )}
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">{product.name}</h1>
-            <p className="mt-5 text-lg text-muted leading-relaxed">{product.tagline}</p>
 
-            <p className="mt-8 text-muted leading-relaxed">{product.description}</p>
+            <p className="text-muted leading-relaxed">{product.description}</p>
 
             <div className="mt-10 space-y-8">
               <div>

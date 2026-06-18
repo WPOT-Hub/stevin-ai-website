@@ -251,3 +251,20 @@ export function getProductBySlug(slug: string): Product | undefined {
 export function getRelatedProducts(slugs: string[]): Product[] {
   return slugs.map((s) => getProductBySlug(s)).filter((p): p is Product => Boolean(p))
 }
+
+// Hero-beelden per product, in de Stevin-stijl (navy basis, blauw als signatuur).
+// Bestanden geoptimaliseerd in public/producten/. Thematisch gekoppeld.
+const productHeroes: Record<string, string> = {
+  'dynamic-optimization': '/producten/dev.jpg',
+  'dynamic-ads': '/producten/outdoor.jpg',
+  'content-optimization': '/producten/vr-portrait.jpg',
+  'blog-automation': '/producten/dev.jpg',
+  signals: '/producten/vr-studio.jpg',
+  'follow-up': '/producten/meeting.jpg',
+  quote: '/producten/meeting.jpg',
+  uplift: '/producten/vr-crop.jpg',
+}
+
+export function getProductHero(slug: string): string | undefined {
+  return productHeroes[slug]
+}

@@ -89,7 +89,22 @@ export default async function middleware(request: NextRequest) {
     logBotCrawl(aiBot, request.nextUrl.pathname).catch(() => {})
   }
 
-  return intlMiddleware(request)
+  const response = intlMiddleware(request)
+
+  // Edge-caching aanzetten voor de pagina's. De next-intl middleware rewrite
+  // elke route naar /[locale]/..., en Vercel zet rewrite-responses standaard op
+  // no-store, ook al zijn de pagina's statisch geprerenderd (SSG). De hele site
+  // is statische marketing-content (geen auth, geen personalisatie), dus een
+  // deploy bust de cache vanzelf. Alleen op GET-rewrites, niet op redirects
+  // (een Location-header), zodat taal-redirects niet vast komen te zitten.
+  if (request.method === 'GET' && !response.headers.has('location')) {
+    response.headers.set(
+      'cache-control',
+      'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+    )
+  }
+
+  return response
 }
 
 export const config = {

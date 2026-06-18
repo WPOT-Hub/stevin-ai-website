@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import Section from '@/components/Section'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -53,13 +54,25 @@ export default async function ProductenPage({ params }: Props) {
       <Section>
         <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Producten' }]} />
 
-        <div className="max-w-3xl mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">De Stevin-suite</h1>
-          <p className="mt-6 text-lg text-muted leading-relaxed">
-            Stevin is een AI-laag over je hele bedrijf. Hieronder de losse producten, van dynamische campagnes
-            en content tot signalen, opvolging en uplift-meting. Je begint waar het pijn doet en bouwt van
-            daaruit verder.
-          </p>
+        <div className="relative h-80 sm:h-96 rounded-2xl overflow-hidden mb-12 bg-primary">
+          <Image
+            src="/producten/blue-figures.jpg"
+            alt="De Stevin-suite"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628] via-[#0A1628]/85 to-[#0A1628]/40" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="px-8 sm:px-12 max-w-2xl">
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">De Stevin-suite</h1>
+              <p className="mt-5 text-lg text-white/85 leading-relaxed">
+                Stevin is een AI-laag over je hele bedrijf, van dynamische campagnes en content tot signalen,
+                opvolging en uplift-meting. Je begint waar het pijn doet en bouwt van daaruit verder.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

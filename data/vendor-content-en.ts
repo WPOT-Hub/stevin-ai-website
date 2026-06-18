@@ -21,6 +21,7 @@ export interface VendorContentEn {
   stevinAngle: string
   stackImpact: string
   pitfalls: string[]
+  faqs?: { question: string; answer: string }[]
 }
 
 const content = enData as Record<string, VendorContentEn>
