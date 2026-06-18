@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'rocket-engines-als-geothermische-krachtcentrales',
+    format: 'dispatch' as const,
+    edition: '237',
+    category: 'Technologie',
+    title: "SpaceX-alumnus haalt 22 miljoen op om raketmotoren in te zetten als geothermische centrales",
+    dek: "Het Amerikaanse bedrijf Critical Energy wil met omgebouwde raketmotoren geothermische energiecentrales bouwen en streeft naar een capaciteit van 300 GW per jaar in 2045.",
+    publishedAt: '2026-06-18',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECHNOLOGIE',
+    posterTopic: "SpaceX-alumnus haalt 22 miljoen op om raketmotoren in te zetten als geothermische centrales",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'quantum-error-correctie-2028-belofte',
     format: 'dispatch' as const,
     edition: '236',
