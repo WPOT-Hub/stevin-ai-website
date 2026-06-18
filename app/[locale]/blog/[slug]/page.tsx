@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'uber-robotaxi-houston-2027': (
+    <>
+      <p className="lead-para">
+        De dienst start in 2027 en volgt op de introductie in San Francisco, aldus Uber. De elektrische voertuigen worden geleverd door Lucid en voorzien van het zelfrijdende systeem van Nuro. Klanten kunnen dan zonder bestuurder tussen bestemmingen reizen, tegen een tarief dat vergelijkbaar is met traditionele taxiservices.
+      </p>
+      <p>
+        Houston is gekozen vanwege de gunstige infrastructuur en schaalbare logistiek voor autonome voertuigen. De stad heeft weinig heuvels en een goed wegennet, wat de techniek minder complex maakt. Daarnaast is er al ervaring met andere mobiliteitsinnovaties, zoals ridesharing.
+      </p>
+      <p>
+        De service richt zich eerst op zakelijke reizigers en toeristen, maar zal later ook beschikbaar zijn voor particulieren. Uber benadrukt dat de veiligheid gegarandeerd blijft door strikte testprotocollen en continue monitoring van de systemen.
+      </p>
+    </>
+  ),
   'van-shuttle-torens-naar-spacex-raketten-hoe-flexibiliteit-de-ruimtevaart-herdefinieert': (
     <>
       <p className="lead-para">
@@ -4455,6 +4468,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'uber-robotaxi-houston-2027':
+    "Voor bedrijven die klantvervoer organiseren of medewerkers laten reizen, kan dit een indicatie zijn van toekomstige mobiliteitsopties. Het is verstandig om nu al na te denken over hoe autonome diensten passen in reisbeleid of klantvervoerstrategieën. Tegelijkertijd blijft de betrouwbaarheid en acceptatie van dergelijke diensten afhankelijk van lokale regelgeving en publieke opinie.",
   'van-shuttle-torens-naar-spacex-raketten-hoe-flexibiliteit-de-ruimtevaart-herdefinieert':
     "Bij Stevin zien we deze dynamiek terug in onze eigen praktijk: organisaties die vasthouden aan traditionele marketingkanalen ondanks dalende meetdata over effectiviteit lopen het risico om achterop te raken ten opzichte van concurrenten die wel durven te experimenteren met nieuwe technologieën zoals AI-gestuurde campagnes of hypergepersonaliseerde content. Flexibiliteit gaat niet over het blind volgen van trends, maar over het vermogen om snel te schakelen wanneer oorzaak en gevolg veranderen – zoals SpaceX deed door torens af te breken die ooit voor miljoenen werden gebouwd. Onze rol is niet om klanten te vertellen welke kanalen ze moeten gebruiken, maar om hen te helpen begrijpen wanneer oude systemen hun nut hebben verloren en nieuwe kansen bieden.",
   'quantum-error-correctie-2028-belofte':
