@@ -13,6 +13,7 @@ import { categories } from '@/data/categories'
 import { NOINDEX_INTEGRATION_CATEGORIES, isIndexableIntegration } from '@/data/integrations'
 import { integrations } from '@/data/integrations'
 import { getVendorEnrichment } from '@/data/vendor-enrichments'
+import { getVendorContentEn } from '@/data/vendor-content-en'
 import { getIntegrationBySlug, getCategoryBySlug, getIntegrationsByCategory, getRelatedIntegrations } from '@/lib/utils'
 
 interface Props {
@@ -26,7 +27,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
+  const { slug, locale } = await params
 
   // Categorie-hub pagina
   const category = getCategoryBySlug(slug)
@@ -54,8 +55,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Vendor-detail pagina
   const integration = getIntegrationBySlug(slug)
   if (integration) {
-    const title = `${integration.name} koppeling en integratie`
-    const description = integration.shortDescription.slice(0, 155)
+    const en = locale === 'en' ? getVendorContentEn(slug) : null
+    const title = locale === 'en'
+      ? `${integration.name} integration and connection`
+      : `${integration.name} koppeling en integratie`
+    const description = (en?.shortDescription ?? integration.shortDescription).slice(0, 155)
     const canonical = `https://stevin.ai/integraties/${slug}`
     return {
       title,
@@ -176,11 +180,22 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
   const relatedIntegrations = getRelatedIntegrations(integration.relatedSlugs)
   const t = await getTranslations({ locale, namespace: 'integraties' })
 
+  // Locale-bewuste content: op /en de Engelse vertaling, anders de NL-data.
+  // Canonical blijft naar NL wijzen (zie generateMetadata), dit is taalcoherentie.
+  const en = locale === 'en' ? getVendorContentEn(slug) : null
+  const description = en?.description ?? integration.description
+  const useCase = en?.useCase ?? integration.useCase
+  const howWeUseIt = en?.howWeUseIt ?? integration.howWeUseIt
+  const problemsSolved = en?.problemsSolved ?? integration.problemsSolved
+  const enrichment = en && en.stevinAngle
+    ? { stevinAngle: en.stevinAngle, stackImpact: en.stackImpact, pitfalls: en.pitfalls }
+    : getVendorEnrichment(slug)
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: integration.name,
-    description: integration.description,
+    description,
     applicationCategory: 'BusinessApplication',
     url: `https://stevin.ai/integraties/${slug}`,
   }
@@ -272,25 +287,24 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
             </div>
 
             <p className="text-lg text-muted leading-relaxed mb-8">
-              {integration.description}
+              {description}
             </p>
 
             {(() => {
-              const enrichment = getVendorEnrichment(slug)
               if (!enrichment) return null
               return (
                 <div className="space-y-6 mb-10 pb-10 border-b border-border">
                   <div>
-                    <h2 className="text-xl font-bold text-primary mb-3">Wat Stevin uit {integration.name} haalt</h2>
+                    <h2 className="text-xl font-bold text-primary mb-3">{t('enrich_angle_heading', { name: integration.name })}</h2>
                     <p className="text-muted leading-relaxed">{enrichment.stevinAngle}</p>
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold text-primary mb-3">Waar je het naast legt</h2>
+                    <h2 className="text-xl font-bold text-primary mb-3">{t('enrich_stack_heading')}</h2>
                     <p className="text-muted leading-relaxed">{enrichment.stackImpact}</p>
                   </div>
                   {enrichment.pitfalls && enrichment.pitfalls.length > 0 && (
                     <div>
-                      <h2 className="text-xl font-bold text-primary mb-3">Veelgemaakte fouten</h2>
+                      <h2 className="text-xl font-bold text-primary mb-3">{t('enrich_pitfalls_heading')}</h2>
                       <ul className="space-y-2.5">
                         {enrichment.pitfalls.map((p, i) => (
                           <li key={i} className="flex items-start gap-3 text-muted leading-relaxed">
@@ -308,18 +322,18 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
             <div className="space-y-8">
               <div>
                 <h2 className="text-xl font-bold text-primary mb-3">{t('use_case_heading', { name: integration.name })}</h2>
-                <p className="text-muted leading-relaxed">{integration.useCase}</p>
+                <p className="text-muted leading-relaxed">{useCase}</p>
               </div>
 
               <div>
                 <h2 className="text-xl font-bold text-primary mb-3">{t('how_we_use_heading', { name: integration.name })}</h2>
-                <p className="text-muted leading-relaxed">{integration.howWeUseIt}</p>
+                <p className="text-muted leading-relaxed">{howWeUseIt}</p>
               </div>
 
               <div>
                 <h2 className="text-xl font-bold text-primary mb-3">{t('problems_heading')}</h2>
                 <ul className="space-y-2.5">
-                  {integration.problemsSolved.map((problem) => (
+                  {problemsSolved.map((problem) => (
                     <li key={problem} className="flex items-start gap-3">
                       <svg className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
