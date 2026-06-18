@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'nasa-kiest-relativity-space-voor-marsmissie-tegen-spacex': (
+    <>
+      <p className="lead-para">
+        De Amerikaanse ruimtevaartorganisatie NASA heeft Relativity Space aangewezen als partner voor een toekomstige Marsmissie. Het bedrijf, overgenomen door Eric Schmidt in 2025, moet een onbemand ruimtevaartuig naar de rode planeet brengen. De keuze zet de deur open voor een directe concurrentiestrijd met SpaceX, dat al jaren werkt aan soortgelijke plannen.
+      </p>
+      <p>
+        Relativity Space staat bekend om zijn innovatieve 3D-geprinte raketten en modulaire productiemethoden. Na eerdere tegenslagen op aarde, waaronder mislukte lanceringen, lijkt het bedrijf nu een cruciale kans te krijgen om zich te bewijzen. De Marsmissie zou rond 2030 kunnen plaatsvinden, afhankelijk van technologische en financiële ontwikkelingen.
+      </p>
+      <p>
+        SpaceX heeft al meerdere malen aangekondigd binnen tien jaar mensen naar Mars te willen sturen. Met de NASA-selectie komt er nu druk op het bedrijf om zijn plannen te versnellen of alternatieve routes te verkennen. Beide partijen moeten nog veel technische uitdagingen overwinnen, zoals betrouwbare landingstechnieken en levensondersteuningssystemen.
+      </p>
+    </>
+  ),
   'intel-18a-p-chip-prototype': (
     <>
       <p className="lead-para">
@@ -4481,6 +4494,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'nasa-kiest-relativity-space-voor-marsmissie-tegen-spacex':
+    "Voor Nederlandse en Belgische techbedrijven die actief zijn in innovatieve sectoren toont deze ontwikkeling aan hoe snel nieuwe spelers kunnen doorbreken dankzij strategische samenwerkingen en overheidsfinanciering. Het benadrukt ook het belang van risicobereidheid en langetermijnvisie bij het nastreven van ambitieuze doelen. Ondernemers die dergelijke kansen willen benutten, doen er goed aan netwerken met internationale partners en zich te richten op technologieën met brede toepasbaarheid.",
   'intel-18a-p-chip-prototype':
     "Voor bedrijven die afhankelijk zijn van chipproductie kan deze ontwikkeling betekenen dat ze sneller toegang krijgen tot betere prestaties zonder direct over te moeten stappen op volledig nieuwe technologie. Tegelijkertijd onderstreept het hoe kritisch het is om flexibel te blijven in supply chains, zeker nu leveringszekerheid nog steeds een uitdaging blijft.",
   'uber-robotaxi-houston-2027':
