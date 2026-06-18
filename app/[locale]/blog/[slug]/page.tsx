@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'intel-18a-p-chip-prototype': (
+    <>
+      <p className="lead-para">
+        De nieuwe chips zijn compatibel met eerdere ontwerpen voor de standaard 18A-node, waardoor bestaande klanten hun producten kunnen upgraden zonder nieuwe investeringen in ontwerpsoftware. Volgens Intel vereist de aanpassing geen extra stroom of koeling, wat de implementatie voor foundry-klanten vereenvoudigt.
+      </p>
+      <p>
+        De technologie is bedoeld voor bedrijven die gebruikmaken van Intel’s contractproductie, zoals Qualcomm en andere chipontwerpers. De verbeterde prestaties komen voort uit verfijningen in het productieproces, waaronder optimalisaties in de transistorstructuur en interconnecties.
+      </p>
+      <p>
+        De eerste samples worden nu getest bij selecte klanten, al blijft de exacte beschikbaarheidsdatum nog onbekend. Intel benadrukt dat de 18A-P een tussenstap is naar verdere innovaties in de komende jaren.
+      </p>
+    </>
+  ),
   'uber-robotaxi-houston-2027': (
     <>
       <p className="lead-para">
@@ -4468,6 +4481,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'intel-18a-p-chip-prototype':
+    "Voor bedrijven die afhankelijk zijn van chipproductie kan deze ontwikkeling betekenen dat ze sneller toegang krijgen tot betere prestaties zonder direct over te moeten stappen op volledig nieuwe technologie. Tegelijkertijd onderstreept het hoe kritisch het is om flexibel te blijven in supply chains, zeker nu leveringszekerheid nog steeds een uitdaging blijft.",
   'uber-robotaxi-houston-2027':
     "Voor bedrijven die klantvervoer organiseren of medewerkers laten reizen, kan dit een indicatie zijn van toekomstige mobiliteitsopties. Het is verstandig om nu al na te denken over hoe autonome diensten passen in reisbeleid of klantvervoerstrategieën. Tegelijkertijd blijft de betrouwbaarheid en acceptatie van dergelijke diensten afhankelijk van lokale regelgeving en publieke opinie.",
   'van-shuttle-torens-naar-spacex-raketten-hoe-flexibiliteit-de-ruimtevaart-herdefinieert':
