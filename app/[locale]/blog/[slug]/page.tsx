@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'van-shuttle-torens-naar-spacex-raketten-hoe-flexibiliteit-de-ruimtevaart-herdefinieert': (
+    <>
+      <p className="lead-para">
+        Ruim zestig jaar geleden werden op Vandenberg Air Force Base in Californië drie imposante lanceertorens neergezet. Ontworpen voor de Space Shuttle, een ambitieus maar uiteindelijk mislukt project, stonden ze decennialang als monumenten van een tijdperk dat nooit echt begon. Nu zijn ze gesloopt. Niet om plaats te maken voor een museum of een stilstaand eerbetoon, maar voor iets radicaal anders: de lancering van SpaceX’ Starship-raketten. Het is een schokkende ommekeer, die laat zien hoe snel technologische keuzes achterhaald kunnen raken en waarom organisaties die vasthouden aan verouderde systemen uiteindelijk zelf achteropraken.
+      </p>
+      <p>
+        De torens waren het symbool van een rigide systeem. De Space Shuttle was bedoeld als een herbruikbaar werkpaard dat goedkoop vracht en astronauten naar de ruimte moest brengen. Maar door complexe ontwerpen, hoge kosten en twee fatale ongelukken werd het project een financiële last voor NASA. De torens bleven staan, niet omdat ze functioneel waren, maar omdat afbreken duurder leek dan wachten op een wonder. Tot SpaceX kwam. Het bedrijf van Elon Musk gooide niet alleen de spelregels van de ruimtevaart omver met herbruikbare raketten en lagere kosten, maar ook met de manier waarop infrastructuur wordt benaderd: niet als vaststaand gegeven, maar als tijdelijke oplossing die meegroeit met de behoeften van de markt.
+      </p>
+      <p>
+        Dit is geen puur ruimtevaartverhaal. Het gaat over de valkuil waarin veel organisaties belanden: het investeren in systemen die passen bij oude aannames, terwijl nieuwe kansen zich aandienen. Denk aan traditionele mediabedrijven die vastzaten aan printcampagnes toen digitale advertenties explosief groeiden. Of retailketens die hun fysieke winkels niet konden aanpassen aan e-commerce, omdat ze te veel hadden geïnvesteerd in vaste locaties en personeel. De les is duidelijk: wie te lang vasthoudt aan wat ooit werkte, loopt het risico dat anderen met flexibele oplossingen de markt domineren.
+      </p>
+      <p>
+        Er is ook een financiële kant aan dit verhaal. De torens op Vandenberg kostten tientallen miljoenen dollars om te bouwen – geld dat uiteindelijk verloren ging toen besloten werd ze af te breken. Voor bedrijven betekent dit dat starre systemen niet alleen operationele beperkingen opleggen, maar ook financiële risico’s creëren. Een marketingteam dat jarenlang inzette op gedrukte catalogi zag plotseling hun budget verdampen toen klanten digitaal gingen shoppen. De kosten van het vasthouden aan verouderde kanalen kunnen oplopen tot honderdduizenden euro’s per jaar in gemiste kansen en inefficiënties.
+      </p>
+      <p>
+        Toch is er altijd weerstand tegen verandering. Medewerkers en leidinggevenden hechten zich emotioneel aan wat bekend is, zelfs als het niet meer functioneel is. Dit fenomeen zien we ook in kleinere organisaties: een marketingmanager die vast blijft houden aan printadvertenties omdat “het altijd zo gedaan is”, terwijl concurrenten met digitale campagnes klanten werven die nooit meer een krant openslaan. De uitdaging ligt in het erkennen dat flexibiliteit geen luxe is, maar een noodzaak om relevant te blijven.
+      </p>
+      <p>
+        De ruimtevaartsector toont nog iets anders: dat innovatie vaak komt van buitenstaanders die oude structuren negeren. SpaceX was geen NASA-dochterbedrijf, maar een particulier initiatief dat met frisse ideeën binnenkwam. Ook in andere sectoren zien we dit patroon: startups of nieuwe spelers die met simpele oplossingen oude problemen oplossen waar gevestigde partijen jarenlang mee worstelden. Voor bureaus en marketingteams betekent dit dat ze niet moeten wachten tot klanten hen dwingen tot verandering – maar proactief moeten zoeken naar manieren om hun diensten sneller en goedkoper te maken.
+      </p>
+      <p>
+        Uiteindelijk gaat het over keuzes maken op basis van toekomstige behoeften in plaats van verleden successen. De torens op Vandenberg zijn nu gesloopt omdat ze simpelweg niet meer pasten bij de realiteit van vandaag. Voor organisaties betekent dit dat ze regelmatig moeten evalueren of hun huidige systemen nog wel bijdragen aan hun doelen – of juist remmen.
+      </p>
+    </>
+  ),
   'quantum-error-correctie-2028-belofte': (
     <>
       <p className="lead-para">
@@ -4430,6 +4455,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'van-shuttle-torens-naar-spacex-raketten-hoe-flexibiliteit-de-ruimtevaart-herdefinieert':
+    "Bij Stevin zien we deze dynamiek terug in onze eigen praktijk: organisaties die vasthouden aan traditionele marketingkanalen ondanks dalende meetdata over effectiviteit lopen het risico om achterop te raken ten opzichte van concurrenten die wel durven te experimenteren met nieuwe technologieën zoals AI-gestuurde campagnes of hypergepersonaliseerde content. Flexibiliteit gaat niet over het blind volgen van trends, maar over het vermogen om snel te schakelen wanneer oorzaak en gevolg veranderen – zoals SpaceX deed door torens af te breken die ooit voor miljoenen werden gebouwd. Onze rol is niet om klanten te vertellen welke kanalen ze moeten gebruiken, maar om hen te helpen begrijpen wanneer oude systemen hun nut hebben verloren en nieuwe kansen bieden.",
   'quantum-error-correctie-2028-belofte':
     "Voor bedrijven die nu al investeren in quantumonderzoek of -toepassingen kan deze timing strategische keuzes versnellen. Het is verstandig om nu al na te denken over hoe je quantumtechnologie zou kunnen integreren in bestaande systemen, mocht de belofte uitkomen. Tegelijkertijd blijft het risico groot: veel eerdere beloftes over quantum zijn niet uitgekomen binnen de gestelde termijnen.",
   'ai-en-bci-maken-volledige-baan-mogelijk-voor-spraakloze-als-patiënt':
