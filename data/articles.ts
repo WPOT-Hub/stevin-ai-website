@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'intel-18a-p-chip-prototype',
+    format: 'dispatch' as const,
+    edition: '240',
+    category: 'Tech',
+    title: "Intel toont eerste proefchips van 18A-P-technologie met 9% snelheidswinst",
+    dek: "Intel heeft de eerste testchips van zijn verbeterde 18A-P-technologie geproduceerd, die zonder extra stroomverbruik een snelheidsboost van 9% biedt.",
+    publishedAt: '2026-06-18',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Intel toont eerste proefchips van 18A-P-technologie met 9% snelheidswinst",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'uber-robotaxi-houston-2027',
     format: 'dispatch' as const,
     edition: '239',
