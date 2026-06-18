@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'uk-civil-service-ai-influencer-aan-stellen',
+    format: 'dispatch' as const,
+    edition: '242',
+    category: 'Beleid',
+    title: "Verenigd Koninkrijk stelt AI-influencer aan voor ambtenarenapparaat",
+    dek: "Het Britse kabinet zoekt een 'AI-first influencer' om een cultuur van innovatie binnen de overheid te stimuleren.",
+    publishedAt: '2026-06-18',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Verenigd Koninkrijk stelt AI-influencer aan voor ambtenarenapparaat",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'nasa-kiest-relativity-space-voor-marsmissie-tegen-spacex',
     format: 'dispatch' as const,
     edition: '241',
