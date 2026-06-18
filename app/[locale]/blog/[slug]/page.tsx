@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'uk-civil-service-ai-influencer-aan-stellen': (
+    <>
+      <p className="lead-para">
+        Het Britse Kabinet Office zoekt een nieuwe medewerker met de titel 'AI and Innovation Influencer'. Deze functie moet ambtenaren helpen wennen aan kunstmatige intelligentie en een cultuur van digitale vernieuwing binnen de overheid bevorderen.
+      </p>
+      <p>
+        De vacature maakt deel uit van een bredere strategie om het land voor te bereiden op een toekomst waarin AI een centrale rol speelt. Het kabinet streeft naar een overheid die sneller en efficiënter kan inspelen op maatschappelijke uitdagingen door middel van technologie.
+      </p>
+      <p>
+        De functie vereist geen technische achtergrond, maar wel ervaring met het beïnvloeden van organisatieculturen en het stimuleren van gedragsverandering binnen grote organisaties.
+      </p>
+    </>
+  ),
   'nasa-kiest-relativity-space-voor-marsmissie-tegen-spacex': (
     <>
       <p className="lead-para">
@@ -4494,6 +4507,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'uk-civil-service-ai-influencer-aan-stellen':
+    "Deze stap laat zien dat overheden wereldwijd worstelen met de integratie van nieuwe technologieën in traditionele structuren. Voor bedrijven die soortgelijke uitdagingen kennen, kan het nuttig zijn om niet alleen technologische oplossingen te zoeken, maar ook aandacht te besteden aan de menselijke kant: hoe motiveer je medewerkers om open te staan voor verandering? Een dergelijke rol kan ook in het bedrijfsleven waardevol zijn, vooral bij digitale transformaties waar cultuur vaak de grootste bottleneck blijkt.",
   'nasa-kiest-relativity-space-voor-marsmissie-tegen-spacex':
     "Voor Nederlandse en Belgische techbedrijven die actief zijn in innovatieve sectoren toont deze ontwikkeling aan hoe snel nieuwe spelers kunnen doorbreken dankzij strategische samenwerkingen en overheidsfinanciering. Het benadrukt ook het belang van risicobereidheid en langetermijnvisie bij het nastreven van ambitieuze doelen. Ondernemers die dergelijke kansen willen benutten, doen er goed aan netwerken met internationale partners en zich te richten op technologieën met brede toepasbaarheid.",
   'intel-18a-p-chip-prototype':
