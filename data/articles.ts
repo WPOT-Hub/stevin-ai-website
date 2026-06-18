@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'nasa-kiest-relativity-space-voor-marsmissie-tegen-spacex',
+    format: 'dispatch' as const,
+    edition: '241',
+    category: 'Tech',
+    title: "NASA kiest Relativity Space voor Marsmissie, SpaceX in race",
+    dek: "NASA heeft Relativity Space geselecteerd voor een Marsmissie, waardoor de startup van voormalig Google-topman Eric Schmidt de kans krijgt als eerste privébedrijf een bemande missie uit te voeren.",
+    publishedAt: '2026-06-18',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "NASA kiest Relativity Space voor Marsmissie, SpaceX in race",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'intel-18a-p-chip-prototype',
     format: 'dispatch' as const,
     edition: '240',
