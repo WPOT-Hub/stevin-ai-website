@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'van-shuttle-torens-naar-spacex-raketten-hoe-flexibiliteit-de-ruimtevaart-herdefinieert',
+    format: 'dispatch' as const,
+    edition: '238',
+    category: 'Markt',
+    title: "De torens van gisteren, de raketten van morgen: waarom starre systemen falen en flexibiliteit wint",
+    dek: "SpaceX gooit uitgerekend de infrastructuur weg die voor de Space Shuttle was gebouwd – en bewijst dat aanpassingsvermogen belangrijker is dan zware investeringen.",
+    publishedAt: '2026-06-18',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "De torens van gisteren, de raketten van morgen: waarom starre systemen falen en flexibiliteit wint",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'rocket-engines-als-geothermische-krachtcentrales',
     format: 'dispatch' as const,
     edition: '237',
