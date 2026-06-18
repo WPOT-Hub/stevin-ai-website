@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 
@@ -7,16 +8,17 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  if (locale === 'nl') {
-    return {
-      title: 'Stevin voor Artiesten · zie hype voor de rest het doorheeft',
-      description: 'Stevin volgt mentions, streams en aandacht over alle kanalen en wijst aan welke momenten echt momentum bouwen. Voor artiesten, hun managers en promotors.',
-    }
-  }
-  return {
-    title: 'Stevin for Artists · see hype before the rest catches on',
-    description: 'Stevin tracks mentions, streams and attention across channels and pinpoints which moments build real momentum. For artists, managers and promoters.',
-  }
+  const isEn = locale === 'en'
+  return localizedMetadata({
+    path: '/artiesten',
+    locale,
+    title: isEn
+      ? 'Stevin for Artists · see hype before the rest catches on'
+      : 'Stevin voor Artiesten · zie hype voor de rest het doorheeft',
+    description: isEn
+      ? 'Stevin tracks mentions, streams and attention across channels and pinpoints which moments build real momentum. For artists, managers and promoters.'
+      : 'Stevin volgt mentions, streams en aandacht over alle kanalen en wijst aan welke momenten echt momentum bouwen. Voor artiesten, hun managers en promotors.',
+  })
 }
 
 const channels = ['Instagram', 'TikTok', 'YouTube', 'SoundCloud', 'Spotify', 'Facebook', 'Website']

@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 import { Eye, Shield, TrendingUp, MessageCircle, BarChart3, Zap } from 'lucide-react'
@@ -9,10 +10,12 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'merken' })
-  return {
+  return localizedMetadata({
+    path: '/merken',
+    locale,
     title: `Stevin ${t('eyebrow')}, ${t('h1')}`,
     description: t('sub'),
-  }
+  })
 }
 
 const featureIcons = [

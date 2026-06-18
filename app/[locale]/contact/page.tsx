@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import Section from '@/components/Section'
 import ContactForm from '@/components/ContactForm'
 
@@ -12,10 +13,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     locale === 'en'
       ? 'Book a call · Stevin'
       : 'Plan een gesprek · Stevin'
-  return {
+  return localizedMetadata({
+    path: '/contact',
+    locale,
     title: metaTitle,
     description: t('desc'),
-  }
+  })
 }
 
 export default async function ContactPage({ params }: Props) {

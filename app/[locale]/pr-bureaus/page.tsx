@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 import { Newspaper, TrendingUp, MessageCircle, BarChart3, Radio, Zap } from 'lucide-react'
@@ -8,16 +9,17 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  if (locale === 'nl') {
-    return {
-      title: 'Stevin voor PR-bureaus · data voor je pitch, bewijs voor je klant',
-      description: 'Journalisten willen verhalen met echte data. Klanten willen bewijs dat PR werkt. Stevin geeft je beide: de data voor je pitch en het bewijs voor je factuur.',
-    }
-  }
-  return {
-    title: 'Stevin for PR agencies · data for your pitch, proof for your client',
-    description: 'Journalists want stories with real data. Clients want proof that PR works. Stevin gives you both: the data for your pitch and the evidence for your invoice.',
-  }
+  const isEn = locale === 'en'
+  return localizedMetadata({
+    path: '/pr-bureaus',
+    locale,
+    title: isEn
+      ? 'Stevin for PR agencies · data for your pitch, proof for your client'
+      : 'Stevin voor PR-bureaus · data voor je pitch, bewijs voor je klant',
+    description: isEn
+      ? 'Journalists want stories with real data. Clients want proof that PR works. Stevin gives you both: the data for your pitch and the evidence for your invoice.'
+      : 'Journalisten willen verhalen met echte data. Klanten willen bewijs dat PR werkt. Stevin geeft je beide: de data voor je pitch en het bewijs voor je factuur.',
+  })
 }
 
 const featureIcons = [

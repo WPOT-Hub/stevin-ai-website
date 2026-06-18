@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -86,7 +87,12 @@ const pick = (l: string) => (l === 'en' ? COPY.en : COPY.nl)
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const c = pick(locale)
-  return { title: c.metaTitle, description: c.metaDesc }
+  return localizedMetadata({
+    path: '/data-verrijking',
+    locale,
+    title: c.metaTitle,
+    description: c.metaDesc,
+  })
 }
 
 export default async function DataVerrijkingPage({ params }: Props) {

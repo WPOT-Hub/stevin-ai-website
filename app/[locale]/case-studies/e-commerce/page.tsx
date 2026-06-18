@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -7,10 +8,12 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'case_studies' })
-  return {
+  return localizedMetadata({
+    path: '/case-studies/e-commerce',
+    locale,
     title: `Case Study: E-commerce, Stevin`,
     description: t('sub'),
-  }
+  })
 }
 
 export default async function EcommerceCaseStudy({ params }: Props) {

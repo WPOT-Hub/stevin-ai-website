@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
 
@@ -7,16 +8,17 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  if (locale === 'nl') {
-    return {
-      title: 'Stevin voor Marketing · Een intelligentie-laag boven je hele stack',
-      description: 'Voor marketing-teams en bureaus die niet willen wachten op het maandrapport. Stevin verbindt paid en owned media en signaleert waar omzet, marge of aandacht weglekt.',
-    }
-  }
-  return {
-    title: 'Stevin for Marketing · One intelligence layer over your full stack',
-    description: 'For marketing teams and agencies that don\'t want to wait for the monthly report. Stevin connects paid and owned media and signals where revenue, margin or attention is leaking.',
-  }
+  const isEn = locale === 'en'
+  return localizedMetadata({
+    path: '/marketing',
+    locale,
+    title: isEn
+      ? 'Stevin for Marketing · One intelligence layer over your full stack'
+      : 'Stevin voor Marketing · Een intelligentie-laag boven je hele stack',
+    description: isEn
+      ? 'For marketing teams and agencies that don\'t want to wait for the monthly report. Stevin connects paid and owned media and signals where revenue, margin or attention is leaking.'
+      : 'Voor marketing-teams en bureaus die niet willen wachten op het maandrapport. Stevin verbindt paid en owned media en signaleert waar omzet, marge of aandacht weglekt.',
+  })
 }
 
 export default async function MarketingPage({ params }: Props) {

@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import FAQAccordion from '@/components/FAQAccordion'
@@ -132,7 +133,12 @@ function pick(locale: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const c = pick(locale)
-  return { title: c.metaTitle, description: c.metaDesc }
+  return localizedMetadata({
+    path: '/simon-stevin',
+    locale,
+    title: c.metaTitle,
+    description: c.metaDesc,
+  })
 }
 
 export default async function SimonStevinPage({ params }: Props) {
