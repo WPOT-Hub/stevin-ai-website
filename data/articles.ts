@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'uber-robotaxi-houston-2027',
+    format: 'dispatch' as const,
+    edition: '239',
+    category: 'Markt',
+    title: "Uber lanceert premium robotaxi’s in Houston vanaf 2027",
+    dek: "De Amerikaanse stad Houston krijgt volgend jaar als tweede locatie een premium robotaxi-service van Uber, met zelfrijdende Lucid-auto’s uitgerust met Nuro-technologie.",
+    publishedAt: '2026-06-18',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Uber lanceert premium robotaxi’s in Houston vanaf 2027",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'van-shuttle-torens-naar-spacex-raketten-hoe-flexibiliteit-de-ruimtevaart-herdefinieert',
     format: 'dispatch' as const,
     edition: '238',
