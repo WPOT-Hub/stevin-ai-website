@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'quantum-error-correctie-2028-belofte',
+    format: 'dispatch' as const,
+    edition: '236',
+    category: 'Tech',
+    title: "Quantumfoutcorrectie mogelijk vanaf 2028, blijkt uit nieuwe belofte",
+    dek: "Amazon en Quera zeggen dat bruikbare quantumfoutcorrectie binnen twee jaar haalbaar is.",
+    publishedAt: '2026-06-18',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Quantumfoutcorrectie mogelijk vanaf 2028, blijkt uit nieuwe belofte",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-en-bci-maken-volledige-baan-mogelijk-voor-spraakloze-als-patiënt',
     format: 'dispatch' as const,
     edition: '235',
