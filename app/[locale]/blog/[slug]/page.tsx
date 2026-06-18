@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'quantum-error-correctie-2028-belofte': (
+    <>
+      <p className="lead-para">
+        Amazon en het quantumbedrijf Quera stellen dat nuttige quantumfoutcorrectie (QEC) al in 2028 beschikbaar komt. Dit zou een belangrijke stap zijn voor de praktische toepassing van quantumcomputers, die nu nog gevoelig zijn voor fouten door ruis en storingen. De bedrijven werken aan een hybride systeem waarbij klassieke computers de quantumprocessen ondersteunen en corrigeren.
+      </p>
+      <p>
+        De belofte komt op een moment dat concurrenten zoals Google en IBM ook versneld werken aan quantumtechnologie. Quantumfoutcorrectie is cruciaal omdat qubits – de bouwstenen van quantumcomputers – snel hun toestand verliezen en daardoor onbetrouwbare resultaten opleveren. Zonder betrouwbare correctie blijven veel toepassingen, zoals complexe simulaties of cryptografie, buiten bereik.
+      </p>
+      <p>
+        De aankondiging is gebaseerd op recente experimenten met error-correcting codes die minder qubits vereisen dan eerdere methodes. Toch blijft er scepsis over de haalbaarheid binnen zo’n korte termijn, aldus sommige wetenschappers die niet bij het project betrokken zijn.
+      </p>
+    </>
+  ),
   'ai-en-bci-maken-volledige-baan-mogelijk-voor-spraakloze-als-patiënt': (
     <>
       <p className="lead-para">
@@ -4417,6 +4430,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'quantum-error-correctie-2028-belofte':
+    "Voor bedrijven die nu al investeren in quantumonderzoek of -toepassingen kan deze timing strategische keuzes versnellen. Het is verstandig om nu al na te denken over hoe je quantumtechnologie zou kunnen integreren in bestaande systemen, mocht de belofte uitkomen. Tegelijkertijd blijft het risico groot: veel eerdere beloftes over quantum zijn niet uitgekomen binnen de gestelde termijnen.",
   'ai-en-bci-maken-volledige-baan-mogelijk-voor-spraakloze-als-patiënt':
     "Dit laat zien hoe AI niet alleen bestaande processen efficiënter maakt, maar ook nieuwe mogelijkheden creëert voor mensen met ernstige beperkingen. Voor bedrijven die zich bezighouden met toegankelijkheid of innovatie kan dit een signaal zijn om na te denken over toekomstige toepassingen. Technologie zoals deze kan op termijn ook impact hebben op werkomgevingen en productiviteit.",
   'mobileye-lanceert-robotaxi-service-in-us-met-moovit':
