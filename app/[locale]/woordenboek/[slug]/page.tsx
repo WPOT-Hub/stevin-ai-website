@@ -79,7 +79,7 @@ export default async function GlossaryTermPage({ params }: Props) {
     publisher: {
       '@type': 'Organization',
       name: 'Stevin',
-      logo: { '@type': 'ImageObject', url: 'https://stevin.ai/icon.svg' },
+      logo: { '@type': 'ImageObject', url: 'https://stevin.ai/icon.png' },
     },
     mainEntityOfPage: `https://stevin.ai/woordenboek/${slug}`,
   }

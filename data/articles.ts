@@ -82,7 +82,7 @@ export const articles: Article[] = [
     edition: '232',
     category: 'Platform',
     title: "Wanneer klanten vragen stellen aan een AI, betaal je niet per medewerker maar per gesprek",
-    dek: "De opkomst van AI agents in customer service dwingt bedrijven om afscheid te nemen van traditionele chatbots en abonnementen op seats — en dat kan miljoenen besparen.",
+    dek: "De opkomst van AI agents in customer service dwingt bedrijven om afscheid te nemen van traditionele chatbots en abonnementen op seats, en dat kan miljoenen besparen.",
     publishedAt: '2026-06-16',
     readMinutes: 2,
     author: { name: 'Stevin Journal', role: 'Redactie' },

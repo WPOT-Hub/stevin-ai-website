@@ -64,7 +64,7 @@ export default async function AlternativePage({ params }: Props) {
     publisher: {
       '@type': 'Organization',
       name: 'Stevin',
-      logo: { '@type': 'ImageObject', url: 'https://stevin.ai/icon.svg' },
+      logo: { '@type': 'ImageObject', url: 'https://stevin.ai/icon.png' },
     },
     mainEntityOfPage: `https://stevin.ai/alternatief/${slug}`,
   }

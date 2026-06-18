@@ -19,8 +19,8 @@ const organization = {
   url: 'https://stevin.ai',
   logo: {
     '@type': 'ImageObject',
-    url: 'https://stevin.ai/icon.svg',
-    contentUrl: 'https://stevin.ai/icon.svg',
+    url: 'https://stevin.ai/icon.png',
+    contentUrl: 'https://stevin.ai/icon.png',
   },
   image: 'https://stevin.ai/og-image.png',
   foundingLocation: {

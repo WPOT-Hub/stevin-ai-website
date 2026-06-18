@@ -5,6 +5,7 @@ import { integrations, isIndexableIntegration, isIndexableIntegrationCategory } 
 import { comparisons } from '@/data/comparisons'
 import { glossary } from '@/data/glossary'
 import { alternatives } from '@/data/alternatives'
+import { products } from '@/data/products'
 import { isPublishableArticle } from './[locale]/blog/[slug]/page'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -35,8 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/diensten',
     '/werkwijze',
     '/multi-market',
+    '/marketing-automation',
     '/seo',
     '/geo',
+    // Productpagina's (de Stevin-suite)
+    '/producten',
+    ...products.map((p) => `/producten/${p.slug}`),
     '/integraties',
     // Categorie-hub pagina's, alleen de indexeerbare (zie NOINDEX_INTEGRATION_CATEGORIES)
     ...categories.filter((c) => isIndexableIntegrationCategory(c.slug)).map((c) => `/integraties/${c.slug}`),

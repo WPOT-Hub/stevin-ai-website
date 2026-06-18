@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import localFont from 'next/font/local'
+import { JetBrains_Mono } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
@@ -11,6 +13,37 @@ import Footer from '@/components/Footer'
 import MainShell from '@/components/MainShell'
 import ConsentBanner from '@/components/ConsentBanner'
 import SiteJsonLd from '@/components/SiteJsonLd'
+
+// Fonts staan hier (niet in de root-layout) zodat de root pass-through blijft en
+// de hele site statisch geprerenderd kan worden. Paden zijn ../../ want deze
+// layout zit een niveau dieper dan de oude root-layout.
+const interDisplay = localFont({
+  src: [
+    { path: '../../public/fonts/InterDisplay-Medium.woff2', weight: '500', style: 'normal' },
+    { path: '../../public/fonts/InterDisplay-SemiBold.woff2', weight: '600', style: 'normal' },
+    { path: '../../public/fonts/InterDisplay-Bold.woff2', weight: '700', style: 'normal' },
+    { path: '../../public/fonts/InterDisplay-ExtraBold.woff2', weight: '800', style: 'normal' },
+    { path: '../../public/fonts/InterDisplay-Black.woff2', weight: '900', style: 'normal' },
+  ],
+  variable: '--font-display-inter',
+  display: 'swap',
+})
+
+const interBody = localFont({
+  src: [
+    { path: '../../public/fonts/InterVariable.woff2', style: 'normal', weight: '100 900' },
+    { path: '../../public/fonts/InterVariable-Italic.woff2', style: 'italic', weight: '100 900' },
+  ],
+  variable: '--font-body-inter',
+  display: 'swap',
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+  display: 'swap',
+})
 
 interface Props {
   children: React.ReactNode
@@ -103,18 +136,22 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages()
 
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
-      <SiteJsonLd />
-      <GoogleTagManagerHead />
-      <GoogleTagManagerBody />
-      <MicrosoftClarity />
-      <AnalyticsEvents />
-      <Header />
-      <MainShell>
-        {children}
-      </MainShell>
-      <Footer />
-      <ConsentBanner />
-    </NextIntlClientProvider>
+    <html lang={locale} className={`${interDisplay.variable} ${interBody.variable} ${jetbrainsMono.variable}`}>
+      <body className="min-h-screen flex flex-col">
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <SiteJsonLd />
+          <GoogleTagManagerHead />
+          <GoogleTagManagerBody />
+          <MicrosoftClarity />
+          <AnalyticsEvents />
+          <Header />
+          <MainShell>
+            {children}
+          </MainShell>
+          <Footer />
+          <ConsentBanner />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   )
 }

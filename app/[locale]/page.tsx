@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import FAQAccordion from '@/components/FAQAccordion'
@@ -32,6 +33,24 @@ const CAPABILITIES = {
     ],
   },
 } as const
+
+// Homepage self-canonical + hreflang. De layout zet titel/description/OG al,
+// maar geen canonical of taalkoppeling. De belangrijkste URL van de site hoort
+// die expliciet te dragen. types (RSS) hier meenemen, anders overschrijft deze
+// alternates de feed-link uit de layout.
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const isEn = locale === 'en'
+  const nlUrl = 'https://stevin.ai'
+  const enUrl = 'https://stevin.ai/en'
+  return {
+    alternates: {
+      canonical: isEn ? enUrl : nlUrl,
+      languages: { 'nl-NL': nlUrl, en: enUrl, 'x-default': nlUrl },
+      types: { 'application/rss+xml': 'https://stevin.ai/feed.xml' },
+    },
+  }
+}
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params
