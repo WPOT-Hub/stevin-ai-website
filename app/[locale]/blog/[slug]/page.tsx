@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'asml-chipmachines-china-ontkennend': (
+    <>
+      <p className="lead-para">
+        De Amerikaanse overheid heeft via diplomatieke kanalen laten weten dat de meest geavanceerde chipmachines van ASML mogelijk in China zijn geïnstalleerd. Dit zou een schending kunnen betekenen van de exportbeperkingen die de VS vorig jaar instelde om te voorkomen dat Chinese bedrijven toegang krijgen tot de nieuwste halfgeleidertechnologie. De machines in kwestie zijn cruciaal voor het maken van de kleinste en meest krachtige chips ter wereld.
+      </p>
+      <p>
+        ASML, zelf een Nederlands bedrijf, reageert direct met een ontkenning. In een verklaring benadrukt het dat geen enkel apparaat uit de topklasse – zoals de EUV-machines – zonder Amerikaanse vergunning naar China is verscheept. Volgens ASML is er sprake van miscommunicatie of een administratieve fout bij de Amerikaanse autoriteiten. Het bedrijf wijst erop dat het strikt werkt volgens internationale regels en exportcontroles.
+      </p>
+      <p>
+        De zaak brengt spanningen tussen Nederland en de VS aan het licht. Hoewel Nederland zelf geen directe exportbeperkingen heeft opgelegd, volgt het grotendeels het Amerikaanse beleid om technologische voorsprong te beschermen. Voor Nederlandse bedrijven als ASML betekent dit een complex juridisch landschap waarin ze continu moeten balanceren tussen commerciële belangen en compliance met buitenlandse regelgeving.
+      </p>
+    </>
+  ),
   'google-ad-manager-ai-agent-verandert-de-krant': (
     <>
       <p className="lead-para">
@@ -4583,6 +4596,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'asml-chipmachines-china-ontkennend':
+    "Voor bedrijven die opereren in sectoren met strenge exportregels is transparantie cruciaal. ASML’s situatie laat zien hoe snel internationale regelgeving kan leiden tot onbedoelde misverstanden of reputatieschade. Het is zaak om niet alleen intern compliant te werken, maar ook proactief communicatie op te zetten met zowel nationale als buitenlandse autoriteiten om dergelijke situaties voor te zijn.",
   'google-ad-manager-ai-agent-verandert-de-krant':
     "Bij Stevin zien we deze ontwikkeling als een wake-upcall voor elke partij die afhankelijk is van digitale advertentie-inkomsten. De komst van Googles AI-agent voor Ad Manager versnelt niet alleen processen, maar legt ook bloot hoe kwetsbaar veel organisaties zijn geworden door hun afhankelijkheid van externe platforms. Onze benadering is simpel: gebruik technologie als accelerator, maar behoud altijd de regie over je eigen strategie.\n\nWij adviseren klanten om eerst hun eigen meetbare doelen helder te definiëren voordat ze blind vertrouwen op geautomatiseerde suggesties. Dat betekent investeren in eerste- en derdepartijdata om context toe te voegen aan wat Google’s algoritmes voorschotelen – zodat optimalisaties niet alleen gebaseerd zijn op CTR of CPM, maar ook op langetermijnwaarde zoals merkloyaliteit of klantretentie.\n\nDaarnaast pleiten we voor transparantie in hoe systemen zoals deze werken: welke data worden meegenomen? Welke aannames liggen ten grondslag aan de voorspellingen? Zonder antwoorden hierop loop je het risico dat ‘optimalisatie’ niets anders is dan het versterken van bestaande biases.\n\nTot slot benadrukken we dat menselijke creativiteit nooit volledig vervangbaar zal zijn – zelfs niet door AI. De beste resultaten ontstaan wanneer technologie fungeert als katalysator voor menselijke beslissingen, niet als vervanging ervan.",
   'meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit':
