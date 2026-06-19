@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ad-manager-ai-agent-verandert-de-krant',
+    format: 'dispatch' as const,
+    edition: '248',
+    category: 'Platform',
+    title: "De krant van de toekomst wordt geschreven door een AI: wat betekent dat voor jouw advertentie-inkomsten?",
+    dek: "Google’s nieuwe AI-agent voor Ad Manager belooft adverteerders en uitgevers in één klik te optimaliseren, maar wie schrijft hier eigenlijk de regels?",
+    publishedAt: '2026-06-19',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "De krant van de toekomst wordt geschreven door een AI: wat betekent dat voor jouw advertentie-inkomsten?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit',
     format: 'dispatch' as const,
     edition: '247',
