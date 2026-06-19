@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-supplemental-conversion-data-beta': (
+    <>
+      <p className="lead-para">
+        Een dashboard vol rode cijfers. Dat is het eerste wat je ziet als je inlogt na een campagne die ‘perfect’ leek te lopen. Kliks waren er genoeg, maar de conversies blijven uit. Het probleem? De meetdata vertelt niet het hele verhaal. Google Ads heeft nu een beta voor supplemental conversion data: extra signalen die helpen om gaten in je conversiedata op te vullen. Maar deze tool is geen magische oplossing—het is een waarschuwing dat je meetstrategie achterloopt op de realiteit.
+      </p>
+      <p>
+        Deze supplemental data voegt nieuwe bronnen toe aan het bestaande conversiepad, zoals telefoontjes, offline aankopen of zelfs app-interacties die niet direct aan een klik zijn gekoppeld. Voor bureau-eigenaars en marketeers betekent dit dat ze eindelijk zicht krijgen op wat er gebeurt *na* de klik—een cruciale stap nu consumenten steeds vaker meerdere kanalen gebruiken voordat ze converteren. Toch is het geen vrijbrief om blind te vertrouwen op deze nieuwe data. Supplemental conversion data is namelijk gebaseerd op schattingen en modellen, niet op harde feiten.
+      </p>
+      <p>
+        Neem de retailer die vorige maand besloot om supplemental data toe te passen in zijn Google Shopping-campagnes. De uplift in gemelde conversies was indrukwekkend: een stijging van 23% ten opzichte van de baseline. Maar toen ze de resultaten vergeleken met hun eigen CRM-data bleek dat slechts 40% van de ‘nieuwe’ conversies daadwerkelijk bestond uit unieke klanten. De rest waren herhalingsaankopen of foutieve toewijzingen door Google’s algoritme. Dit laat zien dat supplemental conversion data vooral nuttig is als *complement*, niet als vervanging van je bestaande meetinstrumenten.
+      </p>
+      <p>
+        Er zit ook een ethische kant aan deze ontwikkeling. Hoe meer data Google verzamelt over gebruikers—zelfs buiten de directe interactie met advertenties—hoe groter de kans dat privacygrenzen worden overschreden. De beta-test is momenteel alleen beschikbaar voor geselecteerde adverteerders, maar zodra het breder wordt ingezet, zullen marketeers zich moeten afvragen of ze bereid zijn om nog meer persoonlijke gegevens te delen voor een betere ROI-cijfers.
+      </p>
+      <p>
+        Toch kan supplemental conversion data een gamechanger zijn voor bedrijven die al jaren worstelen met onvolledige meetdata. Neem bijvoorbeeld een B2B-leverancier die zijn leadgeneratiecampagnes altijd heeft gemeten via formulieren op de website. Met supplemental data kan hij nu ook tracking instellen voor telefoongesprekken en downloads van brochures—activiteiten die tot nu toe buiten beeld bleven. Maar hierbij komt wel een risico: als je te veel vertrouwt op deze schattingen, loop je het gevaar om campagnes te optimaliseren op basis van verkeerde aannames.
+      </p>
+      <p>
+        De grootste valkuil ligt in het vertrouwen dat adverteerders stellen in deze nieuwe tool zonder kritisch te blijven kijken naar de bronnen ervan. Supplemental conversion data is geen wondermiddel; het is een hulpmiddel dat alleen werkt als je weet hoe het werkt en waar de beperkingen liggen. Bureau-eigenaars moeten hun teams trainen om niet alleen naar de cijfers te kijken, maar ook naar de context achter die cijfers.
+      </p>
+      <p>
+        Uiteindelijk gaat het erom hoe je deze extra informatie gebruikt om betere beslissingen te nemen—niet om simpelweg hogere conversiecijfers te rapporteren aan klanten of bazen. Want wat heb je aan mooie rapportages als ze niet overeenkomen met de werkelijkheid?
+      </p>
+    </>
+  ),
   'rivian-eigenaren-dagvaarden-over-zelfrijdende-beloften': (
     <>
       <p className="lead-para">
@@ -4520,6 +4545,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-supplemental-conversion-data-beta':
+    "Bij Stevin zien we supplemental conversion data als een belangrijke stap voorwaarts in transparantie binnen digitale advertentieplatforms, maar tegelijkertijd als een bevestiging dat meetdata nooit volledig kan zijn zonder aanvullende bronnen zoals CRM-systemen of offline tracking. Voor ons betekent dit dat we onze klanten moeten helpen om deze nieuwe tools niet alleen te implementeren, maar ook kritisch te evalueren tegenover hun bestaande meetstrategieën. Het gaat er niet om blind te varen op Google’s modellen, maar om ze slim in te zetten binnen een bredere benadering van klantreis-tracking en attribuutie-modellen die rekening houden met alle touchpoints—digitaal én analoog.",
   'rivian-eigenaren-dagvaarden-over-zelfrijdende-beloften':
     "Dit soort claims toont aan hoe belangrijk transparantie is in innovatiecommunicatie, vooral bij technologische doorbraken die nog volop in ontwikkeling zijn. Voor bedrijven die pionieren met nieuwe technologieën is het cruciaal om verwachtingen niet te overspannen en duidelijke tijdlijnen te hanteren. Klanten investeren niet alleen in een product, maar ook in vertrouwen – en dat kan snel verloren gaan als beloften niet worden waargemaakt.",
   'uk-civil-service-ai-influencer-aan-stellen':
