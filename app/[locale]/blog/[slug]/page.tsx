@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit': (
+    <>
+      <p className="lead-para">
+        Meta voegt een verplichte checkbox toe voor adverteerders om aan te geven of advertenties met behulp van kunstmatige intelligentie zijn gegenereerd. Deze maatregel moet consumenten meer transparantie bieden over de oorsprong van content, aldus het bedrijf.
+      </p>
+      <p>
+        Daarnaast breidt Meta de tools voor creatieve testing uit. Adverteerders kunnen nu makkelijker verschillende versies van advertenties testen op doelgroepen, zonder dat dit ten koste gaat van de totale campagneprestaties. Deze update is beschikbaar in Meta Ads Manager.
+      </p>
+      <p>
+        Ook introduceert Meta een nieuwe attribuutoptie voor ChatGPT-gebaseerde campagnes. Hierdoor kunnen adverteerders beter inzicht krijgen in het effect van deze campagnes, hoewel dit nieuwe vragen oproept over de betrouwbaarheid van meetdata bij AI-gestuurde interacties.
+      </p>
+    </>
+  ),
   'google-ads-supplemental-conversion-data-beta': (
     <>
       <p className="lead-para">
@@ -4545,6 +4558,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit':
+    "Voor bureaus en merken betekent deze ontwikkeling dat ze extra aandacht moeten besteden aan transparantie in hun campagnes. Het is verstandig om nu al policies op te stellen voor het gebruik van AI gegenereerde content, zodat je compliant bent wanneer deze maatregel volledig wordt doorgevoerd. Daarnaast biedt de uitbreiding van creatieve testing kansen om campagnes nog gerichter te optimaliseren.",
   'google-ads-supplemental-conversion-data-beta':
     "Bij Stevin zien we supplemental conversion data als een belangrijke stap voorwaarts in transparantie binnen digitale advertentieplatforms, maar tegelijkertijd als een bevestiging dat meetdata nooit volledig kan zijn zonder aanvullende bronnen zoals CRM-systemen of offline tracking. Voor ons betekent dit dat we onze klanten moeten helpen om deze nieuwe tools niet alleen te implementeren, maar ook kritisch te evalueren tegenover hun bestaande meetstrategieën. Het gaat er niet om blind te varen op Google’s modellen, maar om ze slim in te zetten binnen een bredere benadering van klantreis-tracking en attribuutie-modellen die rekening houden met alle touchpoints—digitaal én analoog.",
   'rivian-eigenaren-dagvaarden-over-zelfrijdende-beloften':
