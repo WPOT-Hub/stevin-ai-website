@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ad-manager-ai-agent-verandert-de-krant': (
+    <>
+      <p className="lead-para">
+        Een redactie die ’s ochtends om 8.00 uur al weet welke artikelen morgen het meeste engagement genereren. Een layout die automatisch wordt aangepast aan lezersgedrag, met advertenties die niet alleen zichtbaar zijn maar ook écht opvallen. Dit is geen sciencefiction, maar de realiteit die Google onlangs heeft geïntroduceerd met een AI-agent voor Ad Manager. Het systeem analyseert data sneller dan een mens ooit zou kunnen, voorspelt trends en stelt zelfs acties voor – van bidstrategieën aanpassen tot creatieve assets genereren. Voor uitgevers en bureaus voelt het alsof je een co-piloot krijgt die nooit moe wordt, maar tegelijkertijd roept het vragen op over controle, transparantie en de rol van menselijke expertise.
+      </p>
+      <p>
+        De belofte is groot: minder handmatig werk, meer rendement per advertentie en een concurrentievoordeel door realtime optimalisatie. Maar achter de schermen draait het om iets fundamentelers. Ad Manager is al jaren het kloppende hart van digitale advertentieverkoop bij veel Nederlandse en Belgische uitgevers, of het nu gaat om regionale kranten, vakbladen of online platforms. De AI-agent voegt hier een laag aan toe die niet alleen uitvoert wat jij vraagt, maar ook *denkt* wat jij zou moeten vragen. Stel je voor dat je ’s middags een meeting hebt over de komende campagneweek, en ’s avonds krijg je een rapport met concrete aanbevelingen gebaseerd op gedrag van lezers die nog niet eens hebben geklikt op je site.
+      </p>
+      <p>
+        Toch is er een kant aan dit verhaal waar weinig over wordt gesproken: wie bepaalt eigenlijk welke data erin gaat? Een AI-systeem is zo sterk als de input – en als die input gebaseerd is op historische meetdata van dezelfde partijen die al jaren hun algoritmes fijnstemmen om hun eigen winst te maximaliseren, dan loop je het risico dat je in een vicieuze cirkel terechtkomt. Neem bijvoorbeeld de manier waarop sommige platforms al jaren hun algoritmes aanpassen om gebruikers langer vast te houden: meer scrollen betekent meer advertenties gezien, ongeacht of dat leidt tot betere prestaties voor adverteerders. De AI-agent van Google kan deze dynamiek versterken zonder dat iemand het doorheeft.
+      </p>
+      <p>
+        Critici wijzen erop dat dergelijke systemen vaak blind vertrouwen op meetdata zonder rekening te houden met de context waarin die data zijn gegenereerd. Een lage CTR kan betekenen dat je advertenties slecht presteren, maar ook dat je doelgroep juist op andere signalen reageert – zoals merkbekendheid of loyaliteit – die niet direct meetbaar zijn in standaard KPI’s. Hier ligt een kans voor slimme bureaus en uitgevers: zij kunnen de AI gebruiken als tool om hypotheses te testen in plaats van blind te vertrouwen op geautomatiseerde suggesties. Het verschil tussen succes en mislukking ligt straks niet in hoeveel data je hebt, maar in hoeveel *inzicht* je eruit haalt.
+      </p>
+      <p>
+        Een ander punt van zorg is de afhankelijkheid die dit creëert. Als uitgevers en bureaus volledig vertrouwen op Google’s AI om hun advertentie-inkomsten te optimaliseren, dan geven ze impliciet ook de controle uit handen over hoe hun merk wordt gepresenteerd. Stel dat de AI besluit om bepaalde advertentievormen of placements te prioriteren omdat ze historisch gezien goed presteren, terwijl jouw merk juist waarde hecht aan kwaliteit boven kwantiteit. Dan wordt adverteren ineens niet meer een strategische keuze, maar een technische instelling.
+      </p>
+      <p>
+        Maar laten we eerlijk zijn: deze technologie biedt ook enorme kansen voor wie er slim mee omgaat. Kleine tot middelgrote uitgevers en bureaus kunnen nu profiteren van dezelfde tools als grote spelers zoals De Persgroep of DPG Media, zonder zelf legio engineers in dienst te hoeven nemen. De sleutel ligt in het vinden van de juiste balans tussen automatisering en menselijke beoordeling. Neem bijvoorbeeld een regionaal dagblad dat lokale adverteerders bedient: met deze AI kan het blad niet alleen sneller reageren op trends in lokale markten, maar ook gepersonaliseerde campagnes ontwikkelen die veel beter aansluiten bij lezers dan generieke bundels.
+      </p>
+      <p>
+        Uiteindelijk gaat dit niet alleen over technologie, maar over macht. Wie controleert straks de regels van het spel? Google heeft met deze stap duidelijk gemaakt dat ze niet alleen willen faciliteren, maar ook willen sturen. Voor uitgevers en bureaus betekent dat dat ze nu moeten nadenken over hoe ze hun eigen expertise kunnen combineren met deze nieuwe tools – voordat ze ongemerkt onderdeel worden van een ecosysteem waarin anderen bepalen wat succesvol is.
+      </p>
+    </>
+  ),
   'meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit': (
     <>
       <p className="lead-para">
@@ -4558,6 +4583,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ad-manager-ai-agent-verandert-de-krant':
+    "Bij Stevin zien we deze ontwikkeling als een wake-upcall voor elke partij die afhankelijk is van digitale advertentie-inkomsten. De komst van Googles AI-agent voor Ad Manager versnelt niet alleen processen, maar legt ook bloot hoe kwetsbaar veel organisaties zijn geworden door hun afhankelijkheid van externe platforms. Onze benadering is simpel: gebruik technologie als accelerator, maar behoud altijd de regie over je eigen strategie.\n\nWij adviseren klanten om eerst hun eigen meetbare doelen helder te definiëren voordat ze blind vertrouwen op geautomatiseerde suggesties. Dat betekent investeren in eerste- en derdepartijdata om context toe te voegen aan wat Google’s algoritmes voorschotelen – zodat optimalisaties niet alleen gebaseerd zijn op CTR of CPM, maar ook op langetermijnwaarde zoals merkloyaliteit of klantretentie.\n\nDaarnaast pleiten we voor transparantie in hoe systemen zoals deze werken: welke data worden meegenomen? Welke aannames liggen ten grondslag aan de voorspellingen? Zonder antwoorden hierop loop je het risico dat ‘optimalisatie’ niets anders is dan het versterken van bestaande biases.\n\nTot slot benadrukken we dat menselijke creativiteit nooit volledig vervangbaar zal zijn – zelfs niet door AI. De beste resultaten ontstaan wanneer technologie fungeert als katalysator voor menselijke beslissingen, niet als vervanging ervan.",
   'meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit':
     "Voor bureaus en merken betekent deze ontwikkeling dat ze extra aandacht moeten besteden aan transparantie in hun campagnes. Het is verstandig om nu al policies op te stellen voor het gebruik van AI gegenereerde content, zodat je compliant bent wanneer deze maatregel volledig wordt doorgevoerd. Daarnaast biedt de uitbreiding van creatieve testing kansen om campagnes nog gerichter te optimaliseren.",
   'google-ads-supplemental-conversion-data-beta':
