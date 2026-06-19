@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'rivian-eigenaren-dagvaarden-over-zelfrijdende-beloften',
+    format: 'dispatch' as const,
+    edition: '243',
+    category: 'Tech',
+    title: "Rivian-eigenaren dagvaarden over onware beloften zelfrijdende technologie",
+    dek: "Eigenaren van Rivian R1-modellen starten een rechtszaak wegens vermeende misleiding over handsfree rijden.",
+    publishedAt: '2026-06-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Rivian-eigenaren dagvaarden over onware beloften zelfrijdende technologie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'uk-civil-service-ai-influencer-aan-stellen',
     format: 'dispatch' as const,
     edition: '242',
