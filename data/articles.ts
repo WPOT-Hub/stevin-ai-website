@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'karamo-brown-ai-wellness-app-ke',
+    format: 'dispatch' as const,
+    edition: '246',
+    category: 'Platform',
+    title: "De app die je niet meer laat gaan: waarom Karamo Brown’s AI-clone de wellness-markt op z’n kop zet",
+    dek: "Een AI die luistert, adviseert en groeit met je – en dat allemaal via een app die straks net zo onmisbaar is als je wekker.",
+    publishedAt: '2026-06-19',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "De app die je niet meer laat gaan: waarom Karamo Brown’s AI-clone de wellness-markt op z’n kop zet",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-supplemental-conversion-data-beta',
     format: 'dispatch' as const,
     edition: '245',
