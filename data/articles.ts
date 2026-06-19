@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-supplemental-conversion-data-beta',
+    format: 'dispatch' as const,
+    edition: '245',
+    category: 'Platform',
+    title: "Waarom die ‘supplementen’ van Google je ROI een boost kunnen geven",
+    dek: "Met supplemental conversion data vult Google de gaten in meetdata op, maar alleen als je weet waar de grenzen liggen.",
+    publishedAt: '2026-06-19',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Waarom die ‘supplementen’ van Google je ROI een boost kunnen geven",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'top-100-ldv-innovatie-award-nominaties-2026',
     format: 'dispatch' as const,
     edition: '244',
