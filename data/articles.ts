@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'top-100-ldv-innovatie-award-nominaties-2026',
+    format: 'dispatch' as const,
+    edition: '244',
+    category: 'Markt',
+    title: "Vijf logistieke mkb’ers genomineerd voor Top 100 LDV Innovatie Award",
+    dek: "Brouwers Logistics, De Graaf Logistics, Van Rooijen Logistiek, Vredeveld Group en Willems Logistics strijden dit jaar om de Top 100 LDV Innovatie Award.",
+    publishedAt: '2026-06-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Vijf logistieke mkb’ers genomineerd voor Top 100 LDV Innovatie Award",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'rivian-eigenaren-dagvaarden-over-zelfrijdende-beloften',
     format: 'dispatch' as const,
     edition: '243',
