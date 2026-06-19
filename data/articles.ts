@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'asml-chipmachines-china-ontkennend',
+    format: 'dispatch' as const,
+    edition: '249',
+    category: 'Technologie',
+    title: "VS vermoedt ASML-chipmachines in China, ASML ontkent",
+    dek: "De Amerikaanse overheid suggereert dat geavanceerde ASML-chipmachines in China staan, terwijl de Nederlandse fabrikant dit actief ontkent.",
+    publishedAt: '2026-06-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECHNOLOGIE',
+    posterTopic: "VS vermoedt ASML-chipmachines in China, ASML ontkent",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ad-manager-ai-agent-verandert-de-krant',
     format: 'dispatch' as const,
     edition: '248',
