@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'rivian-eigenaren-dagvaarden-over-zelfrijdende-beloften': (
+    <>
+      <p className="lead-para">
+        Eigenaren van Rivian R1-modellen hebben een class-action rechtszaak aangespannen tegen het Amerikaanse automerk. Zij beweren dat Rivian jarenlang valse beloften heeft gemaakt over de beschikbaarheid van handsfree rijden in zijn eerste generatie voertuigen.
+      </p>
+      <p>
+        De aanklacht stelt dat Rivian vanaf de lancering van de R1-serie in 2021 herhaaldelijk heeft geïmpliceerd dat zelfrijdende functies zoals handsfree rijden binnen handbereik waren. Inmiddels blijkt dat deze technologie nooit volledig is geïmplementeerd en mogelijk ook nooit zal worden uitgerold voor deze modellen.
+      </p>
+      <p>
+        De zaak richt zich op de vraag of Rivian klanten bewust heeft misleid met marketing die suggereerde dat hun voertuigen al vergevorderde autonome mogelijkheden hadden. Eigenaren eisen schadevergoeding en een onderzoek naar de bedrijfsvoering rondom deze beloften.
+      </p>
+    </>
+  ),
   'uk-civil-service-ai-influencer-aan-stellen': (
     <>
       <p className="lead-para">
@@ -4507,6 +4520,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'rivian-eigenaren-dagvaarden-over-zelfrijdende-beloften':
+    "Dit soort claims toont aan hoe belangrijk transparantie is in innovatiecommunicatie, vooral bij technologische doorbraken die nog volop in ontwikkeling zijn. Voor bedrijven die pionieren met nieuwe technologieën is het cruciaal om verwachtingen niet te overspannen en duidelijke tijdlijnen te hanteren. Klanten investeren niet alleen in een product, maar ook in vertrouwen – en dat kan snel verloren gaan als beloften niet worden waargemaakt.",
   'uk-civil-service-ai-influencer-aan-stellen':
     "Deze stap laat zien dat overheden wereldwijd worstelen met de integratie van nieuwe technologieën in traditionele structuren. Voor bedrijven die soortgelijke uitdagingen kennen, kan het nuttig zijn om niet alleen technologische oplossingen te zoeken, maar ook aandacht te besteden aan de menselijke kant: hoe motiveer je medewerkers om open te staan voor verandering? Een dergelijke rol kan ook in het bedrijfsleven waardevol zijn, vooral bij digitale transformaties waar cultuur vaak de grootste bottleneck blijkt.",
   'nasa-kiest-relativity-space-voor-marsmissie-tegen-spacex':
