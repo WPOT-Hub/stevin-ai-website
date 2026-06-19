@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit',
+    format: 'dispatch' as const,
+    edition: '247',
+    category: 'Platform',
+    title: "Meta voert AI-disclosure optie in en breidt creatieve testmogelijkheden uit",
+    dek: "Meta introduceert een verplichte aanduiding voor door AI gegenereerde advertenties en breidt de mogelijkheden voor A/B-testen van creatives uit.",
+    publishedAt: '2026-06-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Meta voert AI-disclosure optie in en breidt creatieve testmogelijkheden uit",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'karamo-brown-ai-wellness-app-ke',
     format: 'dispatch' as const,
     edition: '246',
