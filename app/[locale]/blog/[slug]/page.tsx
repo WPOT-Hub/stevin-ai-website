@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'van-video-speler-naar-robots-infrastructuur': (
+    <>
+      <p className="lead-para">
+        De Franse ondernemer Jean-Baptiste Kempf, die eerder de gratis VLC-mediaspeler tot wereldwijd succes bracht, werkt nu aan Kyber. Dit nieuwe project biedt een open-source infrastructuur om robots en andere apparaten op afstand te besturen in realtime. Kyber is ontworpen om betrouwbare communicatie te garanderen, zelfs bij onstabiele netwerkverbindingen.
+      </p>
+      <p>
+        Kyber maakt gebruik van lichte protocollen en is gebouwd op Kempfs ervaring met het ontwikkelen van stabiele software voor media-afspeelapparaten. De technologie kan worden ingezet in sectoren zoals logistiek, productie en landbouw, waar snelle en precieze besturing cruciaal is. Volgens Kempf is de behoefte aan dergelijke systemen groeiende door de opkomst van geautomatiseerde processen.
+      </p>
+      <p>
+        Het project is momenteel in een vroege fase en wordt ondersteund door een klein team van ontwikkelaars. Kyber zal naar verwachting binnenkort beschikbaar zijn als open-source oplossing voor bedrijven en onderzoekers.
+      </p>
+    </>
+  ),
   'aura-ink-e-ink-fotolijst-zonder-digitaal-uiterlijk': (
     <>
       <p className="lead-para">
@@ -4674,6 +4687,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'van-video-speler-naar-robots-infrastructuur':
+    "Voor bedrijven die werken met robotica of automatisering biedt deze ontwikkeling kansen op meer controle over hun systemen zonder afhankelijk te zijn van gesloten, dure oplossingen. Open infrastructuur zoals Kyber kan de drempel verlagen voor het implementeren van realtime besturing, vooral in sectoren waar flexibiliteit en schaalbaarheid belangrijk zijn.",
   'aura-ink-e-ink-fotolijst-zonder-digitaal-uiterlijk':
     "Voor bedrijven die klantenervaring verbeteren met fysieke producten biedt dit een interessante case. Het laat zien hoe technologie kan worden ingezet om een natuurlijke uitstraling te behouden zonder concessies te doen aan functionaliteit. Voor retailers kan dit soort innovaties nieuwe marges creëren in een traditionele markt.",
   'klantervaring-drijft-expert-weg-van-google-ads':
