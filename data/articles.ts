@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'klantervaring-drijft-expert-weg-van-google-ads',
+    format: 'dispatch' as const,
+    edition: '254',
+    category: 'Agents',
+    title: "Klant die niet luisterde drijft expert weg bij Google Ads",
+    dek: "Een slechte samenwerking met een klant leidde tot een exit uit Google Ads en nieuwe inzichten over vertrouwen op eigen gevoel.",
+    publishedAt: '2026-06-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'AGENTS',
+    posterTopic: "Klant die niet luisterde drijft expert weg bij Google Ads",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-automatisch-conversiegebaseerde-audience-lists-activeren',
     format: 'dispatch' as const,
     edition: '253',
