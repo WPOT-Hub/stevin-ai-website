@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'mars-2028-relativity-space-nasa-partnerschap': (
+    <>
+      <p className="lead-para">
+        Een raket die bijna volledig in een printer ontstaat, een lanceercapaciteit die binnen weken kan opschalen en een missie naar Mars die over twee jaar al moet vertrekken. Het klinkt als sciencefiction, maar NASA heeft vorige week officieel bevestigd dat Relativity Space de eerste commerciële partij wordt die een payload naar de rode planeet brengt. Met een contract dat draait om ‘snelheid boven perfectie’ kiest de ruimtevaartorganisatie niet voor SpaceX of Blue Origin, maar voor een bedrijf dat nog geen enkele orbitale lancering heeft voltooid. De boodschap is duidelijk: wie het meest wendbaar is, wint de volgende ronde in de ruimterace.
+      </p>
+      <p>
+        Het is niet alleen een technologische gok, maar ook een strategische zet. NASA’s Aeolus-missie naar Mars is bedoeld om de eerste gedetailleerde metingen te verrichten van de atmosfeer en het klimaat op Mars, data die cruciaal zijn voor toekomstige bemande missies. Tot nu toe werden dit soort projecten toegewezen aan gevestigde spelers met decennialange ervaring en bewezen track records. Maar deze keer heeft NASA bewust gekozen voor een startup die nog geen commerciële lancering heeft afgerond – iets wat normaal gesproken ondenkbaar was. De reden? Relativity Space combineert twee dingen die bij grote bedrijven vaak ontbreken: extreme flexibiliteit en lage kosten. Hun Terran R-raket, volledig geprint met 3D-technologie, belooft zowel snellere productietijden als lagere prijzen per lancering. Voor een organisatie als NASA, die onder druk staat om binnen budget te blijven en toch innovatief te blijven, is dat een aantrekkelijk voorstel.
+      </p>
+      <p>
+        Toch roept deze keuze ook vragen op. Kan een bedrijf zonder bewezen staat van dienst in de ruimtevaart wel garant staan voor betrouwbaarheid? De geschiedenis leert ons dat mislukte lanceringen duur kunnen uitpakken – niet alleen financieel, maar ook in termen van gemiste kansen en vertragingen. In 2023 strandde de eerste poging van Relativity Space om een raket naar orbit te brengen na slechts drie minuten vliegen. Hoewel het bedrijf sindsdien stappen heeft gezet, blijft er risico bestaan dat de technologie nog niet rijp genoeg is voor zo’n complexe missie als een reis naar Mars. Critici wijzen erop dat NASA hiermee mogelijk speelt met vuur: als de lancering mislukt, kan dat jarenlange planning en miljoenen dollars aan onderzoek tenietdoen.
+      </p>
+      <p>
+        Maar er zit meer achter deze beslissing dan alleen kosten en snelheid. Het gaat ook om het doorbreken van oude patronen in de ruimtevaartindustrie. Decennialang werd de sector gedomineerd door overheden en grote conglomeraten zoals Boeing of Lockheed Martin, waarbij innovatie traag verliep en kosten hoog bleven door bureaucratie en rigide processen. Relativity Space bewijst nu dat nieuwe spelers met frisse ideeën – zoals 3D-printen van raketten – ineens serieus mee kunnen doen in het hoogste segment van de markt. Dit partnership tussen NASA en Relativity Space is daarmee niet alleen technologisch baanbrekend, maar ook economisch revolutionair: het laat zien dat publieke instellingen bereid zijn om risico’s te nemen op plekken waar traditionele aanbieders falen.
+      </p>
+      <p>
+        Voor andere commerciële partijen in Nederland en België is dit een wake-upcall. De ruimtevaartsector groeit snel, maar veel bedrijven hier houden vast aan bewezen methodes uit het verleden, terwijl nieuwe kansen zich aandienen in gebieden zoals satellietinternet, maanmissies of zelfs toerisme naar Mars. Wie denkt dat innovatie alleen mogelijk is binnen bestaande kaders, loopt straks achterop wanneer klanten zoals NASA ineens kiezen voor onbekende namen met radicale plannen.
+      </p>
+      <p>
+        Toch is er ook een keerzijde aan deze ontwikkeling. Het vertrouwen in startups betekent automatisch minder zekerheid voor gevestigde partijen die decennialang hebben geïnvesteerd in betrouwbaarheid en kwaliteitsborging. Als Relativity Space slaagt waar anderen falen, kan dat leiden tot een domino-effect waarbij hele supply chains moeten herzien worden – iets wat niet elke organisatie aankan zonder grote aanpassingen.
+      </p>
+      <p>
+        Uiteindelijk gaat het hier om meer dan alleen techniek of businessmodellen: het gaat om de vraag wie straks bepaalt hoe we verder reizen door ons zonnestelsel. Als NASA kan vertrouwen op partners zoals Relativity Space om complexe missies uit te voeren, dan opent dat de deur voor nieuwe spelers wereldwijd om mee te doen in deze gouden eeuw van ruimteverkenning.
+      </p>
+    </>
+  ),
   'film-over-sam-altman-dropt-door-amazon-mgm': (
     <>
       <p className="lead-para">
@@ -4713,6 +4738,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'mars-2028-relativity-space-nasa-partnerschap':
+    "Bij Stevin zien we deze trend al langer aankomen: organisaties die vasthouden aan oude structuren lopen straks achter bij concurrenten die durven te experimenteren met nieuwe technologieën en samenwerkingsmodellen. Voor bureau-eigenaars en marketingteams betekent dit concreet dat innovatie niet langer optioneel is – zelfs niet in sectoren waar stabiliteit traditioneel centraal stond zoals ruimtevaart of defensie.\n\nDe les voor onze doelgroep ligt vooral in het herkennen van disruptieve signalen voordat ze mainstream worden. Wie nu al nadenkt over hoe AI-gestuurde productieprocessen of modulair bouwen hun sector kunnen veranderen, heeft morgen nog invloed op de marktregels.\n\nRelativity Space toont aan dat snelheid vaak belangrijker is dan perfectie – mits je bereid bent om risico’s te nemen én ze goed te managen.\nVanuit marketingperspectief betekent dit ook: als jouw klant straks kiest voor ‘onbekende’ partners omdat zij sneller schalen of goedkoper werken dan jij kunt bieden… dan ben jij degene die moet uitleggen waarom jouw aanpak toch waarde toevoegt.",
   'film-over-sam-altman-dropt-door-amazon-mgm':
     "Dit soort projecten toont hoe snel ontwikkelingen in de techwereld kunnen veranderen. Voor ondernemers die actief zijn in innovatieve sectoren is flexibiliteit cruciaal: wat vandaag relevant lijkt, kan morgen alweer achterhaald zijn. Het benadrukt ook hoe media en entertainment reageren op technologische disruptie, soms met vertraging of zelfs afwijzing.",
   'fusion-startups-7-miljard-dollar-investeringen':
