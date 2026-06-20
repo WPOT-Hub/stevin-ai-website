@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-leeftijdsschatting-asielzoekers-bias-onbetrouwbaar': (
+    <>
+      <p className="lead-para">
+        Een coalitie van negen mensenrechtengroepen, waaronder Liberty en Amnesty International, heeft het Britse ministerie van Binnenlandse Zaken opgeroepen om een gepland experiment met een AI-gestuurde leeftijdscheck voor asielzoekers stop te zetten. De technologie zou volgens hen niet in staat zijn om betrouwbaar onderscheid te maken tussen jongeren en volwassenen op het kritieke moment waarop de methode wordt toegepast.
+      </p>
+      <p>
+        De kritiek richt zich op een pilot die de Home Office deze zomer wil starten bij grenscontroles. Uit tests blijkt dat de software in meer dan 40% van de gevallen verkeerde inschattingen maakt, aldus de organisaties. Met name jonge mannen tussen de 18 en 24 jaar lopen risico om ten onrechte als minderjarige te worden bestempeld, wat gevolgen heeft voor hun recht op bescherming en behandeling.
+      </p>
+      <p>
+        De Home Office verdedigt het systeem echter als een noodzakelijk hulpmiddel om sneller en objectiever leeftijden vast te stellen. Volgens een woordvoerder voldoet de technologie aan strenge ethische en juridische kaders, maar de mensenrechtengroepen vragen om onafhankelijke evaluatie voordat verdere stappen worden gezet.
+      </p>
+    </>
+  ),
   'waymo-recall-4000-robotaxis-na-missen-verkeersborden-bouwstroken': (
     <>
       <p className="lead-para">
@@ -4609,6 +4622,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-leeftijdsschatting-asielzoekers-bias-onbetrouwbaar':
+    "Dit geval toont opnieuw aan dat overheden vaak snel grijpen naar nieuwe technologieën zonder voldoende rekening te houden met fundamentele rechten. Voor ondernemers is dit een waarschuwing: zelfs ogenschijnlijk efficiënte oplossingen kunnen onbedoelde gevolgen hebben als ze niet goed worden getest. Het benadrukt het belang van transparantie en ethische afwegingen bij elke vorm van automatisering in publieke processen.",
   'waymo-recall-4000-robotaxis-na-missen-verkeersborden-bouwstroken':
     "Voor bedrijven die innovatieve technologieën implementeren is dit een waarschuwing: zelfs geavanceerde systemen kunnen falen in onverwachte scenario’s zoals wegwerkzaamheden. Het toont aan dat betrouwbaarheid niet alleen afhangt van algoritmes, maar ook van realistische testomstandigheden en continue monitoring. Voor ondernemers betekent dit dat investeringen in nieuwe technologie gepaard moeten gaan met strikte kwaliteitscontroles en snelle escalatieprocedures bij problemen.",
   'asml-chipmachines-china-ontkennend':
