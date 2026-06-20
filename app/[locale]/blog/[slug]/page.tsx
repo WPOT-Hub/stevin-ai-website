@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-herstelt-target-cpa-en-target-roas-naamgeving': (
+    <>
+      <p className="lead-para">
+        Google Ads herstelt de oorspronkelijke namen Target CPA en Target ROAS voor doelgerichte biedstrategieën. De aanpassing moet verwarring voorkomen tussen strategieën die zich richten op kosten per acquisitie of opbrengst per advertentie-uitgave, aldus het bedrijf.
+      </p>
+      <p>
+        De wijziging volgt op eerdere naamswijzigingen die volgens Google onduidelijkheid veroorzaakten bij adverteerders. Met de terugkeer naar de vertrouwde termen hoopt het platform de gebruiksvriendelijkheid te vergroten.
+      </p>
+      <p>
+        De update geldt direct voor nieuwe campagnes en wordt binnenkort doorgevoerd voor bestaande campagnes. Adverteerders hoeven geen actie te ondernemen, maar kunnen de nieuwe namen vanaf nu in hun rapportages tegenkomen.
+      </p>
+    </>
+  ),
   'ai-leeftijdsschatting-asielzoekers-bias-onbetrouwbaar': (
     <>
       <p className="lead-para">
@@ -4622,6 +4635,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-herstelt-target-cpa-en-target-roas-naamgeving':
+    "Voor bureaus en marketingteams betekent deze wijziging vooral dat oude gewoontes weer terugkeren. Het is een goed moment om het biedbeleid te evalueren: zijn doelgerichte strategieën nog passend bij de huidige doelen? De terugkeer van deze namen kan ook helpen om binnen teams duidelijke afspraken te maken over meetdata en oorzaak en gevolg in campagnes.",
   'ai-leeftijdsschatting-asielzoekers-bias-onbetrouwbaar':
     "Dit geval toont opnieuw aan dat overheden vaak snel grijpen naar nieuwe technologieën zonder voldoende rekening te houden met fundamentele rechten. Voor ondernemers is dit een waarschuwing: zelfs ogenschijnlijk efficiënte oplossingen kunnen onbedoelde gevolgen hebben als ze niet goed worden getest. Het benadrukt het belang van transparantie en ethische afwegingen bij elke vorm van automatisering in publieke processen.",
   'waymo-recall-4000-robotaxis-na-missen-verkeersborden-bouwstroken':
