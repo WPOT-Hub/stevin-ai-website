@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'van-video-speler-naar-robots-infrastructuur',
+    format: 'dispatch' as const,
+    edition: '256',
+    category: 'Tech',
+    title: "Oprichter VLC bouwt nu realtime besturing voor robots",
+    dek: "Jean-Baptiste Kempf, bekend van de VLC-mediaspeler, lanceert Kyber: een open infrastructuur om robots en machines op afstand te besturen.",
+    publishedAt: '2026-06-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Oprichter VLC bouwt nu realtime besturing voor robots",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'aura-ink-e-ink-fotolijst-zonder-digitaal-uiterlijk',
     format: 'dispatch' as const,
     edition: '255',
