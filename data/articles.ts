@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'waymo-recall-4000-robotaxis-na-missen-verkeersborden-bouwstroken',
+    format: 'dispatch' as const,
+    edition: '250',
+    category: 'Tech',
+    title: "Waymo haalt 4.000 robottaxi’s terug na herhaaldelijk negeren van bouwstroken",
+    dek: "Bijna 4.000 zelfrijdende taxi’s van Waymo worden teruggeroepen omdat ze herhaaldelijk wegwerkzaamheden op snelwegen negeren.",
+    publishedAt: '2026-06-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Waymo haalt 4.000 robottaxi’s terug na herhaaldelijk negeren van bouwstroken",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'asml-chipmachines-china-ontkennend',
     format: 'dispatch' as const,
     edition: '249',
