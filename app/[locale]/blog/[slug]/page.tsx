@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'klantervaring-drijft-expert-weg-van-google-ads': (
+    <>
+      <p className="lead-para">
+        Laura Abreu stopte met haar werk voor Google Ads na een project dat volledig misging door onrealistische verwachtingen van de klant. Volgens haar eigen verhaal duurde het maanden voordat ze inzag dat de klant niet bereid was om mee te werken aan de basisvoorwaarden voor succes, aldus Abreu.
+      </p>
+      <p>
+        De ervaring leerde haar dat het belangrijk is om direct bij de start van een samenwerking helder te communiceren over wat wel en niet haalbaar is. Abreu benadrukt dat ze sindsdien meer vertrouwt op haar intuïtie bij het kiezen van klanten, zelfs als dat betekent dat ze bepaalde opdrachten afwijst.
+      </p>
+      <p>
+        Haar verhaal toont aan hoe cruciale fouten in de relatie met klanten kunnen leiden tot grote frustratie, zowel professioneel als persoonlijk. Voor andere marketeers onderstreept het belang van duidelijke afspraken en realistische doelstellingen als basis voor een gezonde samenwerking.
+      </p>
+    </>
+  ),
   'google-ads-automatisch-conversiegebaseerde-audience-lists-activeren': (
     <>
       <p className="lead-para">
@@ -4648,6 +4661,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'klantervaring-drijft-expert-weg-van-google-ads':
+    "Voor bureaus en zelfstandige marketeers is dit een herinnering om niet alleen naar de techniek of tools te kijken, maar ook naar de menselijke kant van het vak. Een goede match tussen bureau en klant gaat verder dan alleen competentie: het vraagt om wederzijds respect en realistische verwachtingen. Wie dat negeert, loopt risico op uitputting of zelfs een burn-out.",
   'google-ads-automatisch-conversiegebaseerde-audience-lists-activeren':
     "Voor bureaus en marketingteams betekent deze automatisering een versnelde start met data-gedreven campagnes, maar het vraagt wel om extra aandacht voor kwaliteitscontrole. Het is verstandig om regelmatig de gegenereerde doelgroepen te evalueren en aan te passen waar nodig. Daarnaast kan het nuttig zijn om de impact van deze nieuwe functie te meten ten opzichte van handmatig gemaakte lijsten, zodat je inzicht houdt in wat het beste werkt voor jouw specifieke doelgroep.",
   'google-ads-herstelt-target-cpa-en-target-roas-naamgeving':
