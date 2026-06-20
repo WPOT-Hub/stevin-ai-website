@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'fusion-startups-7-miljard-dollar-investeringen',
+    format: 'dispatch' as const,
+    edition: '257',
+    category: 'Finance',
+    title: "Fusion-startups trekken 7,1 miljard dollar aan investeringen aan",
+    dek: "Drie fusion-startups hebben samen meer dan de helft van alle fondsenwerving in de sector opgehaald sinds 2020.",
+    publishedAt: '2026-06-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "Fusion-startups trekken 7,1 miljard dollar aan investeringen aan",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'van-video-speler-naar-robots-infrastructuur',
     format: 'dispatch' as const,
     edition: '256',
