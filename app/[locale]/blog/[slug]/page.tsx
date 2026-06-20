@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'fusion-startups-7-miljard-dollar-investeringen': (
+    <>
+      <p className="lead-para">
+        Drie bedrijven – Helion Energy, Commonwealth Fusion Systems en TAE Technologies – hebben sinds hun oprichting in totaal ruim 3,7 miljard dollar opgehaald. Deze drie bedrijven zijn verantwoordelijk voor meer dan de helft van de totale investeringen in fusion-technologie, die inmiddels op 7,1 miljard dollar uitkomt aldus TechCrunch.
+      </p>
+      <p>
+        De overige fondsenwerving is verspreid over tientallen andere startups en onderzoeksprojecten wereldwijd. Toch blijft het merendeel van het kapitaal naar een klein aantal spelers gaan, wat wijst op een sterke concentratie in de sector. De grootste ronde tot nu toe was een investering van 1,8 miljard dollar in Helion Energy, die vorig jaar werd afgerond.
+      </p>
+      <p>
+        De hoge kosten en lange ontwikkeltrajecten maken fusion-technologie een risicovolle investering. Toch blijven durfkapitalisten en overheden bereid om geld te steken in deze technologie, mede omdat het potentieel een doorbraak kan betekenen voor schone energie.
+      </p>
+    </>
+  ),
   'van-video-speler-naar-robots-infrastructuur': (
     <>
       <p className="lead-para">
@@ -4687,6 +4700,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'fusion-startups-7-miljard-dollar-investeringen':
+    "Voor ondernemers die actief zijn in innovatieve technologieën is dit een herkenbaar patroon: markten met hoge drempels trekken disproportioneel veel kapitaal naar een handvol spelers. Dit kan leiden tot snellere doorbraken, maar ook tot monopolievorming of vertraging als sleutelspelers falen. Het is belangrijk om te monitoren hoe deze concentratie zich ontwikkelt en welke gevolgen dit heeft voor toegang tot technologie en concurrentievermogen.",
   'van-video-speler-naar-robots-infrastructuur':
     "Voor bedrijven die werken met robotica of automatisering biedt deze ontwikkeling kansen op meer controle over hun systemen zonder afhankelijk te zijn van gesloten, dure oplossingen. Open infrastructuur zoals Kyber kan de drempel verlagen voor het implementeren van realtime besturing, vooral in sectoren waar flexibiliteit en schaalbaarheid belangrijk zijn.",
   'aura-ink-e-ink-fotolijst-zonder-digitaal-uiterlijk':
