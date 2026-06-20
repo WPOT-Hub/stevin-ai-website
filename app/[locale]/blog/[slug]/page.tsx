@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'go-ipo-japan-robotaxis-en-acquisities-nederlandse-marktaanpak': (
+    <>
+      <p className="lead-para">
+        Toen de beursklok van de Tokyo Stock Exchange dinsdagochtend openging, was het niet de gebruikelijke stroom van tech-aandelen die de aandacht trok. Het was Go, het Japanse antwoord op Uber, dat met een klap van ¥88,6 miljard (ruim €500 miljoen) Japan’s grootste IPO van 2026 binnenhaalde. Wat deze deal bijzonder maakt, is niet alleen het bedrag. Het is het verhaal erachter: een bedrijf dat met een recordbedrag aan kapitaal een probleem oplost dat veel groter is dan winst of verlies. Namelijk het tekort aan chauffeurs dat de hele sector dreigt te verlammen.
+      </p>
+      <p>
+        Voor Nederlandse ondernemers en marketingteams klinkt dit misschien als een ver-van-mijn-bed-show. Toch zit er een cruciale les in voor wie naar eigen markten kijkt. Want terwijl Go in Japan vecht tegen een structureel tekort aan chauffeurs – een probleem dat in Nederland binnen vijf jaar net zo acuut kan worden – kiest de gemiddelde Nederlandse ondernemer vaak voor marketinguitgaven die groei simuleren in plaats van structurele oplossingen te financieren. Een campagne die leads genereert is makkelijker te verkopen dan investeringen in automatisering of personeel, zelfs als laatstgenoemde op de lange termijn meer oplevert.
+      </p>
+      <p>
+        Het verschil tussen Go en veel Nederlandse bedrijven ligt in de manier waarop zij kapitaal inzetten. Waar Go direct aankondigde ¥30 miljard te reserveren voor robotaxis en acquisities – technologieën die het bedrijfsmodel toekomstbestendig maken – zien we hier vaak spaarzaamheid waar moed nodig is. Denk aan de horecaondernemer die zijn marketingbudget verdubbelt om meer gasten te trekken, terwijl hij tegelijkertijd kampt met personeelstekorten die zijn servicekwaliteit ondermijnen. Of de retailer die miljoenen steekt in social media-campagnes terwijl zijn logistieke proces achterloopt door gebrek aan chauffeurs.
+      </p>
+      <p>
+        Een tegenwerping hierop is natuurlijk: ‘Maar we hebben geen ¥500 miljoen om te investeren.’ Dat klopt. Maar het gaat niet om het bedrag, wel om de mentaliteit. Go’s IPO laat zien dat kapitaal niet alleen wordt gebruikt om bestaande processen te schalen, maar om fundamentele uitdagingen aan te pakken die groei op termijn onmogelijk maken. In Nederland zien we datzelfde principe terug bij bedrijven die bijvoorbeeld kiezen voor automatisering van hun klantenservice via AI-chatbots, omdat ze weten dat menselijke medewerkers schaars en duur zijn geworden.
+      </p>
+      <p>
+        De echte vraag is dus: waarom wachten we tot het probleem acuut wordt voordat we actie ondernemen? De Nederlandse arbeidsmarkt staat onder druk, zeker in sectoren als logistiek en zorg waar Go’s probleem zich al manifesteert. Bedrijven die nu investeren in technologie of acquisities om hun operationele modellen toekomstbestendig te maken, zullen over vijf jaar niet alleen overleven, maar domineren. Terwijl anderen nog steeds vechten tegen symptomen zoals dalende marges of klantverlies.
+      </p>
+      <p>
+        De les voor Nederlandse marketeers ligt niet in het kopiëren van Go’s strategie, maar in het heroverwegen van hoe zij kapitaal toewijzen. Marketinguitgaven moeten niet alleen gericht zijn op zichtbare resultaten zoals clicks of conversies, maar ook op meetbare uplift in operationele efficiëntie of klanttevredenheid op lange termijn. Een campagne die leidt tot meer verkopen is waardevol, maar een campagne die leidt tot minder afhankelijkheid van schaarse middelen – zoals chauffeurs of technisch personeel – is goud waard.
+      </p>
+      <p>
+        Uiteindelijk gaat dit verhaal over risico en beloning. Go heeft gekozen voor een radicale zet: gebruik het geld om je bedrijfsmodel fundamenteel te veranderen voordat de markt je daartoe dwingt. Nederlandse ondernemers doen er goed aan hetzelfde principe toe te passen op hun eigen uitdagingen.
+      </p>
+    </>
+  ),
   'mars-2028-relativity-space-nasa-partnerschap': (
     <>
       <p className="lead-para">
@@ -4738,6 +4763,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'go-ipo-japan-robotaxis-en-acquisities-nederlandse-marktaanpak':
+    "Bij Stevin zien we dagelijks hoe Nederlandse bedrijven worstelen met dezelfde dilemma’s als Go: hoe balanceren tussen korte-termijn groei en lange-termijn veerkracht? Onze benadering is simpel: meetdata moet niet alleen leiden tot betere marketingbeslissingen, maar ook tot betere bedrijfsbeslissingen. Een IPO zoals dat van Go is voor Nederland (nog) geen realistische optie voor de meeste MKB’ers, maar de mentaliteit achter deze deal wel: durf prioriteiten te stellen op basis van wat je écht nodig hebt om morgen nog relevant te zijn. Dat betekent soms investeren in technologie voordat je erin gelooft, of acquisities doen voordat concurrenten je voor zijn. Het betekent ook accepteren dat sommige uitgaven – zoals automatisering of opleiding – pas later renderen dan een advertentiecampagne. Maar wie nu kiest voor structurele oplossingen, hoeft zich over vijf jaar geen zorgen te maken over schaarste of inefficiëntie.",
   'mars-2028-relativity-space-nasa-partnerschap':
     "Bij Stevin zien we deze trend al langer aankomen: organisaties die vasthouden aan oude structuren lopen straks achter bij concurrenten die durven te experimenteren met nieuwe technologieën en samenwerkingsmodellen. Voor bureau-eigenaars en marketingteams betekent dit concreet dat innovatie niet langer optioneel is – zelfs niet in sectoren waar stabiliteit traditioneel centraal stond zoals ruimtevaart of defensie.\n\nDe les voor onze doelgroep ligt vooral in het herkennen van disruptieve signalen voordat ze mainstream worden. Wie nu al nadenkt over hoe AI-gestuurde productieprocessen of modulair bouwen hun sector kunnen veranderen, heeft morgen nog invloed op de marktregels.\n\nRelativity Space toont aan dat snelheid vaak belangrijker is dan perfectie – mits je bereid bent om risico’s te nemen én ze goed te managen.\nVanuit marketingperspectief betekent dit ook: als jouw klant straks kiest voor ‘onbekende’ partners omdat zij sneller schalen of goedkoper werken dan jij kunt bieden… dan ben jij degene die moet uitleggen waarom jouw aanpak toch waarde toevoegt.",
   'film-over-sam-altman-dropt-door-amazon-mgm':
