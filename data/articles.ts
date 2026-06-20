@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-automatisch-conversiegebaseerde-audience-lists-activeren',
+    format: 'dispatch' as const,
+    edition: '253',
+    category: 'Platform',
+    title: "Google Ads activeert automatisch conversiegebaseerde klantlijsten",
+    dek: "Google voegt voor geselecteerde adverteerders nieuwe doelgroepen toe op basis van conversiedata zonder handmatige actie.",
+    publishedAt: '2026-06-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads activeert automatisch conversiegebaseerde klantlijsten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-herstelt-target-cpa-en-target-roas-naamgeving',
     format: 'dispatch' as const,
     edition: '252',
