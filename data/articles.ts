@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'mars-2028-relativity-space-nasa-partnerschap',
+    format: 'dispatch' as const,
+    edition: '259',
+    category: 'Markt',
+    title: "De Marsrace is begonnen: waarom NASA kiest voor een startup in plaats van de gevestigde orde",
+    dek: "NASA’s keuze voor Relativity Space om een Marsmissie te vliegen bewijst dat innovatie niet langer wacht op bureaucratie.",
+    publishedAt: '2026-06-20',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "De Marsrace is begonnen: waarom NASA kiest voor een startup in plaats van de gevestigde orde",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'film-over-sam-altman-dropt-door-amazon-mgm',
     format: 'dispatch' as const,
     edition: '258',
