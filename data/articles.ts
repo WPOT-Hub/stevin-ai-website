@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'film-over-sam-altman-dropt-door-amazon-mgm',
+    format: 'dispatch' as const,
+    edition: '258',
+    category: 'Cultuur',
+    title: "Film over Sam Altman geschrapt door Amazon MGM",
+    dek: "De film Artificial over OpenAI-topman Sam Altman is geannuleerd door Amazon MGM Studios.",
+    publishedAt: '2026-06-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "Film over Sam Altman geschrapt door Amazon MGM",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'fusion-startups-7-miljard-dollar-investeringen',
     format: 'dispatch' as const,
     edition: '257',
