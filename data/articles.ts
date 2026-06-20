@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'go-ipo-japan-robotaxis-en-acquisities-nederlandse-marktaanpak',
+    format: 'dispatch' as const,
+    edition: '260',
+    category: 'Finance',
+    title: "Een IPO dat meer doet dan geld ophalen: waarom Go’s Japanse recordbeursgang ook voor Nederlandse marketeers een les is",
+    dek: "Go’s ¥88,6 miljard IPO in Japan bewijst dat kapitaal niet alleen groei financiert, maar ook fundamentele bedrijfsproblemen oplost – een les die Nederlandse bedrijven vaak negeren.",
+    publishedAt: '2026-06-20',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "Een IPO dat meer doet dan geld ophalen: waarom Go’s Japanse recordbeursgang ook voor Nederlandse marketeers een les is",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'mars-2028-relativity-space-nasa-partnerschap',
     format: 'dispatch' as const,
     edition: '259',
