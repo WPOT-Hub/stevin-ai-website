@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'film-over-sam-altman-dropt-door-amazon-mgm': (
+    <>
+      <p className="lead-para">
+        De productie van *Artificial*, een film over de turbulente periode in 2023 rond het ontslag en herstel van OpenAI-CEO Sam Altman, is abrupt gestopt. Amazon MGM Studios trok zich terug uit het project, aldus betrokkenen. De film zou draaien om de vijf dagen waarin Altmans positie als CEO van OpenAI op losse schroeven stond en uiteindelijk werd hersteld.
+      </p>
+      <p>
+        De cast bestond uit Andrew Garfield in de hoofdrol en Monica, die eerder te zien was in *A Complete Unknown*. Het scenario richtte zich op de interne machtsstrijd binnen OpenAI en de impact daarvan op de AI-sector. De productie was ongeveer een jaar in ontwikkeling en had al een aanzienlijk budget vrijgemaakt.
+      </p>
+      <p>
+        De reden voor de annulering is onduidelijk. Mogelijk speelde de dynamische situatie rond OpenAI een rol, of waren er creatieve meningsverschillen. Alternatieve financiers worden momenteel overwogen, maar dat blijft onbevestigd.
+      </p>
+    </>
+  ),
   'fusion-startups-7-miljard-dollar-investeringen': (
     <>
       <p className="lead-para">
@@ -4700,6 +4713,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'film-over-sam-altman-dropt-door-amazon-mgm':
+    "Dit soort projecten toont hoe snel ontwikkelingen in de techwereld kunnen veranderen. Voor ondernemers die actief zijn in innovatieve sectoren is flexibiliteit cruciaal: wat vandaag relevant lijkt, kan morgen alweer achterhaald zijn. Het benadrukt ook hoe media en entertainment reageren op technologische disruptie, soms met vertraging of zelfs afwijzing.",
   'fusion-startups-7-miljard-dollar-investeringen':
     "Voor ondernemers die actief zijn in innovatieve technologieën is dit een herkenbaar patroon: markten met hoge drempels trekken disproportioneel veel kapitaal naar een handvol spelers. Dit kan leiden tot snellere doorbraken, maar ook tot monopolievorming of vertraging als sleutelspelers falen. Het is belangrijk om te monitoren hoe deze concentratie zich ontwikkelt en welke gevolgen dit heeft voor toegang tot technologie en concurrentievermogen.",
   'van-video-speler-naar-robots-infrastructuur':
