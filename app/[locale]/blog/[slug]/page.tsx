@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'aura-ink-e-ink-fotolijst-zonder-digitaal-uiterlijk': (
+    <>
+      <p className="lead-para">
+        De Aura Ink gebruikt e-ink om foto’s weer te geven in een kwaliteit die nauwelijks verschilt van traditioneel papier. Het frame is ontworpen om de nadelen van klassieke digitale fotolijsten te omzeilen, zoals reflectie en een kunstmatige uitstraling. De oplossing komt tegemoet aan consumenten die wel foto’s digitaal willen tonen, maar geen digitaal gevoel willen ervaren.
+      </p>
+      <p>
+        Het apparaat werkt draadloos en toont automatisch nieuwe foto’s via een bijbehorende app of cloudservice. Gebruikers kunnen kiezen uit verschillende formaten en montagemogelijkheden, zodat het frame zowel thuis als op kantoor past. De batterijduur wordt geschat op meerdere weken per lading.
+      </p>
+      <p>
+        De prijs ligt hoger dan die van standaard digitale fotolijsten, maar blijft binnen het bereik van premium consumentenelektronica. Aura positioneert het product als een luxe cadeauartikel voor familie en vrienden.
+      </p>
+    </>
+  ),
   'klantervaring-drijft-expert-weg-van-google-ads': (
     <>
       <p className="lead-para">
@@ -4661,6 +4674,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'aura-ink-e-ink-fotolijst-zonder-digitaal-uiterlijk':
+    "Voor bedrijven die klantenervaring verbeteren met fysieke producten biedt dit een interessante case. Het laat zien hoe technologie kan worden ingezet om een natuurlijke uitstraling te behouden zonder concessies te doen aan functionaliteit. Voor retailers kan dit soort innovaties nieuwe marges creëren in een traditionele markt.",
   'klantervaring-drijft-expert-weg-van-google-ads':
     "Voor bureaus en zelfstandige marketeers is dit een herinnering om niet alleen naar de techniek of tools te kijken, maar ook naar de menselijke kant van het vak. Een goede match tussen bureau en klant gaat verder dan alleen competentie: het vraagt om wederzijds respect en realistische verwachtingen. Wie dat negeert, loopt risico op uitputting of zelfs een burn-out.",
   'google-ads-automatisch-conversiegebaseerde-audience-lists-activeren':
