@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-leeftijdsschatting-asielzoekers-bias-onbetrouwbaar',
+    format: 'dispatch' as const,
+    edition: '251',
+    category: 'Beleid',
+    title: "Brits AI-systeem voor leeftijdscheck asielzoekers faalt betrouwbaarheidstest",
+    dek: "Britse mensenrechtenorganisaties waarschuwen dat het AI-systeem van de Home Office om de leeftijd van asielzoekers te bepalen, structurele fouten maakt en jonge volwassenen ten onrechte als minderjarigen classificeert.",
+    publishedAt: '2026-06-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Brits AI-systeem voor leeftijdscheck asielzoekers faalt betrouwbaarheidstest",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'waymo-recall-4000-robotaxis-na-missen-verkeersborden-bouwstroken',
     format: 'dispatch' as const,
     edition: '250',
