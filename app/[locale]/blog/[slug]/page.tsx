@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'waymo-recall-4000-robotaxis-na-missen-verkeersborden-bouwstroken': (
+    <>
+      <p className="lead-para">
+        De Amerikaanse autofabrikant Waymo haalt bijna 4.000 robottaxi’s terug na meldingen dat deze voertuigen regelmatig waarschuwingsborden bij wegwerkzaamheden op snelwegen missen. Volgens het bedrijf reden de voertuigen soms tussen verkeerskegels door of negeerden gesloten rijstroken, wat gevaarlijke situaties opleverde. De terugroepactie volgt op een reeks incidenten waarbij bestuurders handmatig moesten ingrijpen om ongelukken te voorkomen.
+      </p>
+      <p>
+        Waymo meldt dat de software in de betrokken voertuigen onvoldoende reageert op dynamische verkeersborden en tijdelijke markeringen. Het bedrijf werkt samen met verkeersbeheerders om de herkenning van dergelijke signalen te verbeteren, maar heeft voorlopig besloten de voertuigen uit de roulatie te halen totdat de problemen zijn opgelost. Gebruikers van de dienst krijgen een vervangend vervoermiddel aangeboden.
+      </p>
+      <p>
+        De terugroepactie komt op een moment dat zelfrijdende voertuigen steeds vaker in reguliere verkeer worden ingezet. Waymo benadrukt dat veiligheid voorop staat, maar experts vragen zich af hoe lang het duurt voordat deze systemen betrouwbaar genoeg zijn voor grootschalig gebruik op snelwegen.
+      </p>
+    </>
+  ),
   'asml-chipmachines-china-ontkennend': (
     <>
       <p className="lead-para">
@@ -4596,6 +4609,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'waymo-recall-4000-robotaxis-na-missen-verkeersborden-bouwstroken':
+    "Voor bedrijven die innovatieve technologieën implementeren is dit een waarschuwing: zelfs geavanceerde systemen kunnen falen in onverwachte scenario’s zoals wegwerkzaamheden. Het toont aan dat betrouwbaarheid niet alleen afhangt van algoritmes, maar ook van realistische testomstandigheden en continue monitoring. Voor ondernemers betekent dit dat investeringen in nieuwe technologie gepaard moeten gaan met strikte kwaliteitscontroles en snelle escalatieprocedures bij problemen.",
   'asml-chipmachines-china-ontkennend':
     "Voor bedrijven die opereren in sectoren met strenge exportregels is transparantie cruciaal. ASML’s situatie laat zien hoe snel internationale regelgeving kan leiden tot onbedoelde misverstanden of reputatieschade. Het is zaak om niet alleen intern compliant te werken, maar ook proactief communicatie op te zetten met zowel nationale als buitenlandse autoriteiten om dergelijke situaties voor te zijn.",
   'google-ad-manager-ai-agent-verandert-de-krant':
