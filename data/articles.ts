@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'aura-ink-e-ink-fotolijst-zonder-digitaal-uiterlijk',
+    format: 'dispatch' as const,
+    edition: '255',
+    category: 'Distributie',
+    title: "Aura lanceert fotolijst met e-ink: lijkt op traditioneel papier",
+    dek: "Aura introduceert de Aura Ink, een digitale fotolijst die dankzij e-ink technologie geen digitaal uiterlijk heeft.",
+    publishedAt: '2026-06-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "Aura lanceert fotolijst met e-ink: lijkt op traditioneel papier",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'klantervaring-drijft-expert-weg-van-google-ads',
     format: 'dispatch' as const,
     edition: '254',
