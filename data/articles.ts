@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-herstelt-target-cpa-en-target-roas-naamgeving',
+    format: 'dispatch' as const,
+    edition: '252',
+    category: 'Platform',
+    title: "Google Ads brengt Target CPA en Target ROAS terug in naamgeving",
+    dek: "Adverteerders krijgen weer duidelijkheid over doelgerichte en volumegerichte biedstrategieën in Google Ads.",
+    publishedAt: '2026-06-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads brengt Target CPA en Target ROAS terug in naamgeving",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-leeftijdsschatting-asielzoekers-bias-onbetrouwbaar',
     format: 'dispatch' as const,
     edition: '251',
