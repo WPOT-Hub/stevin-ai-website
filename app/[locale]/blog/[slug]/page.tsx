@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-automatisch-conversiegebaseerde-audience-lists-activeren': (
+    <>
+      <p className="lead-para">
+        Adverteerders in Google Ads krijgen vanaf deze week automatisch nieuwe klantlijsten aangemaakt die zijn gebaseerd op conversies, zoals aankopen of aanmeldingen. Deze lijsten zijn bedoeld om campagnes gerichter te optimaliseren door bestaande klanten opnieuw te benaderen of lookalike-audiences te creëren. De functie geldt alleen voor accounts die voldoen aan bepaalde criteria, zoals een minimale hoeveelheid conversiedata en actieve campagnes binnen de afgelopen 30 dagen.
+      </p>
+      <p>
+        De automatische aanmaak van deze lijsten kan tijd besparen voor bureaus en in-house teams, maar brengt ook risico’s met zich mee. Zo kunnen irrelevante of verouderde segmenten ontstaan als de conversiedata niet accuraat is of als de doelgroep te breed wordt gedefinieerd. Adverteerders moeten controleren of de gegenereerde lijsten aansluiten bij hun marketingdoelstellingen.
+      </p>
+      <p>
+        Google geeft aan dat de functie in eerste instantie alleen beschikbaar is voor accounts in het Verenigd Koninkrijk en de Verenigde Staten. Het bedrijf werkt echter aan uitrol naar andere markten, waaronder Nederland en België. Advertentiebeheerders worden via een melding in hun account geïnformeerd over de activering.
+      </p>
+    </>
+  ),
   'google-ads-herstelt-target-cpa-en-target-roas-naamgeving': (
     <>
       <p className="lead-para">
@@ -4635,6 +4648,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-automatisch-conversiegebaseerde-audience-lists-activeren':
+    "Voor bureaus en marketingteams betekent deze automatisering een versnelde start met data-gedreven campagnes, maar het vraagt wel om extra aandacht voor kwaliteitscontrole. Het is verstandig om regelmatig de gegenereerde doelgroepen te evalueren en aan te passen waar nodig. Daarnaast kan het nuttig zijn om de impact van deze nieuwe functie te meten ten opzichte van handmatig gemaakte lijsten, zodat je inzicht houdt in wat het beste werkt voor jouw specifieke doelgroep.",
   'google-ads-herstelt-target-cpa-en-target-roas-naamgeving':
     "Voor bureaus en marketingteams betekent deze wijziging vooral dat oude gewoontes weer terugkeren. Het is een goed moment om het biedbeleid te evalueren: zijn doelgerichte strategieën nog passend bij de huidige doelen? De terugkeer van deze namen kan ook helpen om binnen teams duidelijke afspraken te maken over meetdata en oorzaak en gevolg in campagnes.",
   'ai-leeftijdsschatting-asielzoekers-bias-onbetrouwbaar':
