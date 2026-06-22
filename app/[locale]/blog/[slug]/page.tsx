@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'sendcloud-boekt-eerste-winst-na-jaren-verlies': (
+    <>
+      <p className="lead-para">
+        Voor het eerst in zijn bestaan sloot Sendcloud het boekjaar 2025 af met een operationele winst. Het bedrijf, dat zich richt op software voor logistieke processen in de e-commerce, rapporteerde dit in een recent financieel overzicht. De omzet groeide verder, maar de winstmarge blijft beperkt door investeringen in schaalvergroting en technologische vernieuwing.
+      </p>
+      <p>
+        Sendcloud specialiseert zich in oplossingen voor verzending, retouren en tracking, en bedient vooral webshops en fulfilmentpartijen. De software integreert met talloze vervoerders en pakketdiensten, wat de afgelopen jaren leidde tot een sterke groei van het klantenbestand. Toch kostte de expansie aanvankelijk meer dan het opbracht, aldus de directie.
+      </p>
+      <p>
+        De winst komt niet uit eenmalige meevallers zoals verkoop van activa of subsidieaanvragen, maar uit reguliere bedrijfsvoering. Dat duidt op een structurele verbetering van de kostenstructuur en efficiëntie binnen het bedrijf. Concurrenten als PostNL Parcel Lab en SendOwl blijven echter actief op dezelfde markt.
+      </p>
+    </>
+  ),
   'van-met-en-actie-de-nieuwe-standaard-voor-bedrijven': (
     <>
       <p className="lead-para">
@@ -4791,6 +4804,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'sendcloud-boekt-eerste-winst-na-jaren-verlies':
+    "Voor ondernemers die actief zijn in e-commerce of logistiek kan dit een signaal zijn dat schaalgrootte uiteindelijk leidt tot rendabiliteit. Het benadrukt dat investeren in technologie en automatisering op lange termijn loont, ook als dat ten koste gaat van korte-termijnresultaten. Tegelijk blijft de druk groot door concurrentie en stijgende kosten voor arbeid en infrastructuur.",
   'van-met-en-actie-de-nieuwe-standaard-voor-bedrijven':
     "Bij Stevin zien we dezelfde trend als Nearfield: bedrijven die hun processen slimmer laten reageren op wat er echt speelt, halen niet alleen betere resultaten binnen, maar behouden ook controle over complexe operaties. Onze aanpak is simpel: we bouwen geen nieuwe toolset aan bovenop bestaande systemen, maar creëren een werklaag die continu meekijkt naar alle beschikbare meetdata en contextuele signalen combineert tot actiegerichte adviezen.\n\nHet verschil met traditionele BI-tools? Waar dashboards vragen om interpretatie door mensen—met alle vertraging van dien—ziet onze AI continu patronen die aandacht nodig hebben voordat ze uitgroeien tot echte problemen.\n\nVoor bureaus betekent dit minder tijd kwijt aan handmatig speurwerk en meer tijd voor strategische beslissingen. Voor in-house teams betekent dit sneller schakelen tussen analyse en actie zonder dat communicatie verloren gaat tussen systemen onderling.\n\nDe kern zit hem niet in technologie alleen, maar in de mindset die daarbij hoort: niet wachten tot een probleem groot genoeg is om te zien, maar ingrijpen zodra het signaal duidelijk genoeg is om te handelen.",
   'go-ipo-japan-robotaxis-en-acquisities-nederlandse-marktaanpak':
