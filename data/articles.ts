@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'sendcloud-boekt-eerste-winst-na-jaren-verlies',
+    format: 'dispatch' as const,
+    edition: '262',
+    category: 'Finance',
+    title: "Sendcloud draait voor het eerst winst na jaren verlies",
+    dek: "De logistieksoftware voor e-commerce Sendcloud behaalde in 2025 een operationele winst, na jaren van verlies.",
+    publishedAt: '2026-06-22',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "Sendcloud draait voor het eerst winst na jaren verlies",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'van-met-en-actie-de-nieuwe-standaard-voor-bedrijven',
     format: 'dispatch' as const,
     edition: '261',
