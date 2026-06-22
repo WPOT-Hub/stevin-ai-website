@@ -1456,6 +1456,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'van-met-en-actie-de-nieuwe-standaard-voor-bedrijven': (
+    <>
+      <p className="lead-para">
+        Een fabriek waar chips uitrollen alsof het papier uit een printer komt. Plots stopt de lijn. Een sensor pikt een afwijking op die niemand met het blote oog zag. Binnen seconden wordt de machine stilgelegd, wordt de fout gecorrigeerd en loopt de productie weer door. Geen rapport achteraf nodig, geen weken wachten op een analyse. Gewoon direct ingrijpen voordat het te laat is.
+      </p>
+      <p>
+        Dat is geen toekomstmuziek, maar wat Nearfield Instruments nu al doet in chipfabrieken. En het illustreert precies waarom 135 miljoen euro aan investeringen hiernaartoe gaat: niet omdat bedrijven nog meer data willen verzamelen, maar omdat ze sneller willen begrijpen wat er misgaat en direct kunnen corrigeren.
+      </p>
+      <p>
+        De waarde zit niet in het hebben van meetdata, maar in het vertalen daarvan naar actie. Een dashboard dat zegt dat de conversie daalt, is nuttig. Een signal dat aangeeft welke campagne onderpresteert, welke doelgroep ontbreekt en welke aanpassing direct kan worden doorgevoerd, is onbetaalbaar. Dat verschil tussen rapporteren en ingrijpen bepaalt nu wie wint en wie verliest.
+      </p>
+      <p>
+        Want overal waar processen complex zijn—of het nu gaat om marketingcampagnes, bouwprojecten of financiële flux—ontstaan er vertragingen en fouten lang voordat iemand ze in een rapport ziet. Een offerte blijft hangen zonder dat sales het merkt. Een project loopt uit zonder dat de planning verschuift. Een klant wordt ontevreden voordat er een escalatie is.
+      </p>
+      <p>
+        De bedrijven die deze valkuilen vermijden, zijn niet degenen met de mooiste dashboards of de meeste rapportages. Het zijn de bedrijven die hun systemen zo hebben ingericht dat ze afwijkingen zien op het moment dat bijsturen nog zin heeft. Niet achteraf, maar terwijl alles nog draait.
+      </p>
+      <p>
+        Dat vraagt om een fundamentele verschuiving: van data verzamelen naar signaleren en van signaleren naar handelen. Dashboards waren stap één—noodzakelijk om überhaupt zicht te krijgen op wat er gebeurt. Maar nu we weten wat er misgaat, moeten we ook weten wat we eraan doen voordat het te laat is.
+      </p>
+      <p>
+        Die beweging zie je ook in marketingteams terug. Ze hebben genoeg tools: CRM-systemen vol leads, analytics met gedetailleerde campagnedata, projectmanagementplatforms vol planningen. Maar die informatie zit verspreid over systemen, mensen en momenten. Daardoor worden problemen vaak pas zichtbaar wanneer budget al is uitgegeven of leads al zijn gemist.
+      </p>
+      <p>
+        De oplossing ligt niet in nog meer tools toevoegen, maar in een laag die continu meekijkt naar alle beschikbare context en afwijkingen herkent voordat ze escaleren tot echte problemen.
+      </p>
+    </>
+  ),
   'go-ipo-japan-robotaxis-en-acquisities-nederlandse-marktaanpak': (
     <>
       <p className="lead-para">
@@ -4763,6 +4791,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'van-met-en-actie-de-nieuwe-standaard-voor-bedrijven':
+    "Bij Stevin zien we dezelfde trend als Nearfield: bedrijven die hun processen slimmer laten reageren op wat er echt speelt, halen niet alleen betere resultaten binnen, maar behouden ook controle over complexe operaties. Onze aanpak is simpel: we bouwen geen nieuwe toolset aan bovenop bestaande systemen, maar creëren een werklaag die continu meekijkt naar alle beschikbare meetdata en contextuele signalen combineert tot actiegerichte adviezen.\n\nHet verschil met traditionele BI-tools? Waar dashboards vragen om interpretatie door mensen—met alle vertraging van dien—ziet onze AI continu patronen die aandacht nodig hebben voordat ze uitgroeien tot echte problemen.\n\nVoor bureaus betekent dit minder tijd kwijt aan handmatig speurwerk en meer tijd voor strategische beslissingen. Voor in-house teams betekent dit sneller schakelen tussen analyse en actie zonder dat communicatie verloren gaat tussen systemen onderling.\n\nDe kern zit hem niet in technologie alleen, maar in de mindset die daarbij hoort: niet wachten tot een probleem groot genoeg is om te zien, maar ingrijpen zodra het signaal duidelijk genoeg is om te handelen.",
   'go-ipo-japan-robotaxis-en-acquisities-nederlandse-marktaanpak':
     "Bij Stevin zien we dagelijks hoe Nederlandse bedrijven worstelen met dezelfde dilemma’s als Go: hoe balanceren tussen korte-termijn groei en lange-termijn veerkracht? Onze benadering is simpel: meetdata moet niet alleen leiden tot betere marketingbeslissingen, maar ook tot betere bedrijfsbeslissingen. Een IPO zoals dat van Go is voor Nederland (nog) geen realistische optie voor de meeste MKB’ers, maar de mentaliteit achter deze deal wel: durf prioriteiten te stellen op basis van wat je écht nodig hebt om morgen nog relevant te zijn. Dat betekent soms investeren in technologie voordat je erin gelooft, of acquisities doen voordat concurrenten je voor zijn. Het betekent ook accepteren dat sommige uitgaven – zoals automatisering of opleiding – pas later renderen dan een advertentiecampagne. Maar wie nu kiest voor structurele oplossingen, hoeft zich over vijf jaar geen zorgen te maken over schaarste of inefficiëntie.",
   'mars-2028-relativity-space-nasa-partnerschap':
