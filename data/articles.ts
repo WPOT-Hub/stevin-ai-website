@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'van-met-en-actie-de-nieuwe-standaard-voor-bedrijven',
+    format: 'dispatch' as const,
+    edition: '261',
+    category: 'Platform',
+    title: "Waarom de beste bedrijven niet meer meten, maar ingrijpen",
+    dek: "135 miljoen euro voor een chipbedrijf dat tijdens productie fouten ziet voordat ze miljoenen kosten: de les voor marketingteams is simpel en hard.",
+    publishedAt: '2026-06-22',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Waarom de beste bedrijven niet meer meten, maar ingrijpen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'go-ipo-japan-robotaxis-en-acquisities-nederlandse-marktaanpak',
     format: 'dispatch' as const,
     edition: '260',
