@@ -224,7 +224,7 @@ export default async function HomePage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Vakmensen en MKB */}
             <Link
-              href="/contact"
+              href="/mkb"
               className="group block rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200"
               style={{ padding: '48px 44px 44px' }}
             >

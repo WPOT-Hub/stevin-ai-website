@@ -67,6 +67,7 @@ export default function Header() {
   ]
 
   const voorWieItems = [
+    { label: t('voor_mkb'), href: '/mkb' },
     { label: t('voor_marketing'), href: '/marketing' },
     { label: t('voor_creatieve'), href: '/creatieve-bureaus' },
     { label: t('voor_media'), href: '/mediabureaus' },
