@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ruimtepuin-aarde-naar-maan',
+    format: 'dispatch' as const,
+    edition: '263',
+    category: 'Tech',
+    title: "Ruimtevaartsector overweegt maan als opslagplaats voor ruimteafval",
+    dek: "De oprichter van Neuraspace stelt voor om hardware die in een baan om de aarde blijft hangen naar de maan te brengen voor veilige verwerking.",
+    publishedAt: '2026-06-22',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Ruimtevaartsector overweegt maan als opslagplaats voor ruimteafval",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'sendcloud-boekt-eerste-winst-na-jaren-verlies',
     format: 'dispatch' as const,
     edition: '262',
