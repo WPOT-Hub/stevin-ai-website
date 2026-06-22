@@ -7,7 +7,7 @@ import Section from '@/components/Section'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CTABlock from '@/components/CTABlock'
 import FAQAccordion from '@/components/FAQAccordion'
-import { products, getProductBySlug, getRelatedProducts, getProductHero } from '@/data/products'
+import { products, getProductBySlug, getRelatedProducts, getProductHero, getProductSeo } from '@/data/products'
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>
@@ -21,7 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const product = getProductBySlug(slug)
   if (!product) return {}
-  const title = `${product.name}${product.acronym ? ` (${product.acronym})` : ''}`
+  const seo = getProductSeo(slug)
+  const title = seo?.title || `${product.name}${product.acronym ? ` (${product.acronym})` : ''}`
   const description = product.tagline.slice(0, 155)
   const canonical = `https://stevin.ai/producten/${slug}`
   return {
@@ -48,6 +49,7 @@ export default async function ProductPage({ params }: Props) {
 
   const related = getRelatedProducts(product.relatedSlugs)
   const hero = getProductHero(slug)
+  const faqs = [...(product.faqs ?? []), ...(getProductSeo(slug)?.faqs ?? [])]
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -69,11 +71,11 @@ export default async function ProductPage({ params }: Props) {
     ],
   }
   const faqLd =
-    product.faqs && product.faqs.length > 0
+    faqs.length > 0
       ? {
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
-          mainEntity: product.faqs.map((f) => ({
+          mainEntity: faqs.map((f) => ({
             '@type': 'Question',
             name: f.question,
             acceptedAnswer: { '@type': 'Answer', text: f.answer },
@@ -165,10 +167,29 @@ export default async function ProductPage({ params }: Props) {
                   <p className="text-muted leading-relaxed">{product.inPractice}</p>
                 </div>
               )}
-              {product.faqs && product.faqs.length > 0 && (
+              {product.results && product.results.length > 0 && (
+                <div>
+                  <h2 className="text-xl font-bold text-primary mb-2">Resultaten</h2>
+                  <p className="text-sm text-muted mb-4">
+                    Cijfers uit eerder eigen bureauwerk, het fundament onder Stevin. Anoniem.
+                  </p>
+                  <ul className="space-y-3">
+                    {product.results.map((r) => (
+                      <li
+                        key={r}
+                        className="flex items-start gap-3 p-4 rounded-xl bg-surface border border-border"
+                      >
+                        <span className="text-accent font-bold mt-0.5">↗</span>
+                        <span className="text-primary font-medium leading-relaxed">{r}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {faqs.length > 0 && (
                 <div>
                   <h2 className="text-xl font-bold text-primary mb-4">Veelgestelde vragen</h2>
-                  <FAQAccordion faqs={product.faqs} />
+                  <FAQAccordion faqs={faqs} />
                 </div>
               )}
             </div>
