@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ruimtepuin-aarde-naar-maan': (
+    <>
+      <p className="lead-para">
+        De hoeveelheid ruimteafval in een lage baan om de aarde groeit snel, aldus experts. Het risico op botsingen met satellieten neemt toe, wat de betrouwbaarheid van kritieke diensten zoals navigatie en communicatie bedreigt.
+      </p>
+      <p>
+        Een oplossing die steeds vaker wordt genoemd, is het verzamelen en hergebruiken van oude satellieten en rakettrappen. De CEO van Neuraspace, een bedrijf dat zich richt op ruimteverkeersmanagement, stelt voor om deze hardware niet langer in een baan om de aarde te laten zweven maar naar de maan te transporteren. Daar kunnen ze veilig worden opgeslagen of gerecycled.
+      </p>
+      <p>
+        Deze aanpak zou de druk op de drukke banen rond de aarde verminderen en tegelijkertijd nieuwe kansen bieden voor maanmissies en wetenschappelijk onderzoek. Toch zijn er nog grote technische en financiële uitdagingen voordat zo’n systeem operationeel kan worden.
+      </p>
+    </>
+  ),
   'sendcloud-boekt-eerste-winst-na-jaren-verlies': (
     <>
       <p className="lead-para">
@@ -4804,6 +4817,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ruimtepuin-aarde-naar-maan':
+    "Voor bedrijven die afhankelijk zijn van satellietdata of communicatie is dit een serieuze dreiging: storingen door ruimtepuin kunnen directe gevolgen hebben voor hun operaties. Het idee om afval naar de maan te brengen laat zien hoe breed het probleem inmiddels is geworden. Ondernemers doen er goed aan om nu al na te denken over redundantie in hun systemen, mocht het ruimteafvalbeleid verscherpen.",
   'sendcloud-boekt-eerste-winst-na-jaren-verlies':
     "Voor ondernemers die actief zijn in e-commerce of logistiek kan dit een signaal zijn dat schaalgrootte uiteindelijk leidt tot rendabiliteit. Het benadrukt dat investeren in technologie en automatisering op lange termijn loont, ook als dat ten koste gaat van korte-termijnresultaten. Tegelijk blijft de druk groot door concurrentie en stijgende kosten voor arbeid en infrastructuur.",
   'van-met-en-actie-de-nieuwe-standaard-voor-bedrijven':
