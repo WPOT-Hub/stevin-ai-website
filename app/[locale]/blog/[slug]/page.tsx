@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'superhuman-verwerft-gptzero': (
+    <>
+      <p className="lead-para">
+        Superhuman, bekend van zijn e-mailapplicatie en Grammarly's AI-detectietool, heeft GPTZero overgenomen. Met deze acquisitie versterkt Superhuman zijn positie in de groeiende markt voor het herkennen van door AI gegenereerde teksten.
+      </p>
+      <p>
+        GPTZero richt zich op het detecteren van content die met tools zoals ChatGPT is gegenereerd. De tool wordt veel gebruikt door onderwijsinstellingen en bedrijven om plagiaat en misinformatie tegen te gaan. De combinatie met Superhuman’s bestaande technologie kan leiden tot betere integratiemogelijkheden voor klanten.
+      </p>
+      <p>
+        De overname past in een trend waarin bedrijven hun portfolio’s uitbreiden met AI-gerelateerde detectieoplossingen. Concurrenten zoals Turnitin en Originality.ai blijven actief, maar de markt wordt steeds complexer door snelle ontwikkelingen in generatieve AI.
+      </p>
+    </>
+  ),
   'ruimtepuin-aarde-naar-maan': (
     <>
       <p className="lead-para">
@@ -4817,6 +4830,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'superhuman-verwerft-gptzero':
+    "Voor bureaus en in-house teams die werken met contentcreatie of communicatie betekent deze consolidatie dat keuzes voor detectietools sneller moeten worden gemaakt. Een heldere strategie rondom authenticiteit en transparantie in content wordt belangrijker, zeker nu de technologie achter tekstgeneratie steeds minder voorspelbaar wordt. Het is verstandig om niet afhankelijk te zijn van één leverancier, maar meerdere oplossingen naast elkaar te evalueren.",
   'ruimtepuin-aarde-naar-maan':
     "Voor bedrijven die afhankelijk zijn van satellietdata of communicatie is dit een serieuze dreiging: storingen door ruimtepuin kunnen directe gevolgen hebben voor hun operaties. Het idee om afval naar de maan te brengen laat zien hoe breed het probleem inmiddels is geworden. Ondernemers doen er goed aan om nu al na te denken over redundantie in hun systemen, mocht het ruimteafvalbeleid verscherpen.",
   'sendcloud-boekt-eerste-winst-na-jaren-verlies':
