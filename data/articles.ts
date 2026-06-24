@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'superhuman-verwerft-gptzero',
+    format: 'dispatch' as const,
+    edition: '265',
+    category: 'Platform',
+    title: "Superhuman koopt AI-detectietool GPTZero",
+    dek: "Superhuman neemt de AI-detectiespecialist GPTZero over, wat de concurrentie in de markt voor tekstauthenticatie verder opschroeft.",
+    publishedAt: '2026-06-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Superhuman koopt AI-detectietool GPTZero",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026',
     format: 'dispatch' as const,
     edition: '264',
