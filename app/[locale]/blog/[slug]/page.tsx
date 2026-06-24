@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spacex-reflection-ai-compute-deal': (
+    <>
+      <p className="lead-para">
+        SpaceX en het open source AI-laboratorium Reflection AI hebben een vierjarig contract getekend voor directe toegang tot Nvidia’s nieuwste GB300 AI-chips. Vanaf juli 2026 betaalt Reflection AI hiervoor $150 miljoen per maand, wat neerkomt op een totaalbedrag van $6 miljard over de looptijd van het contract. De hardware wordt geplaatst in SpaceX’s Colossus 2 datacenter nabij Memphis, Tennessee.
+      </p>
+      <p>
+        Het partnership biedt Reflection AI directe toegang tot hoogwaardige rekenkracht, essentieel voor training en uitvoering van complexe AI-modellen. SpaceX profiteert door haar datacenters te verhuur als high-performance computing-infrastructuur, een groeimarkt binnen de techsector. Beide partijen benadrukken de synergie tussen SpaceX’s schaalbare infrastructuur en Reflection AI’s focus op open source-ontwikkelingen.
+      </p>
+      <p>
+        De deal markeert een verdere professionalisering van de markt voor gespecialiseerde AI-hardware, waar vraag naar rekenkracht blijft stijgen. Concurrenten zoals Microsoft en Amazon Web Services volgen deze ontwikkelingen nauwlettend, aldus TechCrunch.
+      </p>
+    </>
+  ),
   'digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026': (
     <>
       <p className="lead-para">
@@ -4843,6 +4856,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spacex-reflection-ai-compute-deal':
+    "Voor ondernemers die afhankelijk zijn van geavanceerde IT-infrastructuur is deze deal een signaal dat gespecialiseerde hardware steeds toegankelijker wordt via samenwerkingen tussen techgiganten. Het laat zien hoe schaarse middelen zoals high-end chips gedeeld kunnen worden zonder eigendomsoverdracht, wat nieuwe businessmodellen mogelijk maakt.",
   'digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026':
     "Voor bedrijven in de logistiek en maritieme sector betekent dit een belangrijke stap naar digitalisering. Het elimineert administratieve rompslomp en kan de doorlooptijden verkorten. Tegelijkertijd moeten organisaties erop letten dat hun digitale systemen voldoen aan de wettelijke eisen en beveiligingsnormen om fraude of fouten te voorkomen.",
   'superhuman-verwerft-gptzero':
