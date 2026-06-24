@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'flipkart-breidt-snelle-levering-uit-in-india-als-amazon-versnelt',
+    format: 'dispatch' as const,
+    edition: '274',
+    category: 'Markt',
+    title: "Flipkart opent meer dan 1.000 micro-opslagpunten voor snelle levering in India",
+    dek: "Walmart-dochter Flipkart heeft het aantal micro-opslagpunten voor snelle levering in India verdubbeld, terwijl Amazon zijn eigen aanbod versnelt.",
+    publishedAt: '2026-06-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Flipkart opent meer dan 1.000 micro-opslagpunten voor snelle levering in India",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'alexa-agentic-ads-veranderen-de-regels-van-conversational-marketing',
     format: 'dispatch' as const,
     edition: '273',
