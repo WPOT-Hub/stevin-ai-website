@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'vs-dwingt-techbedrijven-tot-amerikaanse-quantumcomputer-binnen-2028': (
+    <>
+      <p className="lead-para">
+        De Trump-administratie heeft techbedrijven in de VS opgeroepen om binnen 24 maanden een quantumcomputer te bouwen die volledig op Amerikaanse technologie draait. Dit plan maakt deel uit van een bredere strategie om de technologische voorsprong van het land te behouden en wetenschappelijke doorbraken te versnellen.
+      </p>
+      <p>
+        De eis geldt voor zowel hardware- als softwareontwikkelaars, inclusief bedrijven die nu nog afhankelijk zijn van buitenlandse componenten of kennis. Volgens interne documenten moeten alle cruciale onderdelen, zoals qubits en cryogene systemen, binnen de VS worden geproduceerd of ontwikkeld.
+      </p>
+      <p>
+        Onderzoekers en bedrijven krijgen tot eind 2027 de tijd om prototypes te testen, waarna de overheid in 2028 een operationele versie verwacht. De maatregel volgt op eerdere zorgen over afhankelijkheid van buitenlandse leveranciers, met name uit China en Europa.
+      </p>
+    </>
+  ),
   'groq-haalt-650-miljoen-op-na-nvidia-deal': (
     <>
       <p className="lead-para">
@@ -4882,6 +4895,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'vs-dwingt-techbedrijven-tot-amerikaanse-quantumcomputer-binnen-2028':
+    "Voor Europese bedrijven die actief zijn in quantumtechnologie kan deze ontwikkeling zowel een bedreiging als een kans vormen. De druk op supply chains neemt toe, terwijl samenwerking met Amerikaanse partijen minder vanzelfsprekend wordt. Tegelijkertijd ontstaat er ruimte voor nieuwe markten als Europese alternatieven sneller beschikbaar komen dan de Amerikaanse variant.",
   'groq-haalt-650-miljoen-op-na-nvidia-deal':
     "Voor bedrijven die afhankelijk zijn van gespecialiseerde hardware voor AI-toepassingen, toont deze ontwikkeling aan dat de markt voor alternatieve chipmakers nog steeds ruimte biedt voor groei. Het benadrukt ook het belang van flexibiliteit: wie niet meegaat in de mainstream (zoals Nvidia), kan toch kansen vinden door slimme strategieën zoals neocloud. Voor bureaus en techteams kan dit betekenen dat ze hun klanten moeten adviseren over de beste infrastructuurkeuzes, ook buiten de gevestigde namen.",
   'google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen':
