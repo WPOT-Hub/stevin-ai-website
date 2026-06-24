@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'groq-haalt-650-miljoen-op-na-nvidia-deal': (
+    <>
+      <p className="lead-para">
+        De Amerikaanse AI-chipmaker Groq heeft een nieuwe financieringsronde van 650 miljoen dollar opgehaald. Het bedrijf gebruikt de middelen om zijn activiteiten uit te breiden en nieuwe leidinggevenden aan te nemen.
+      </p>
+      <p>
+        Groq richt zich nu sterker op zijn neocloud-dienstverlening, waarbij klanten toegang krijgen tot AI-chips via de cloud. Deze strategie volgt op de afwijzing door Nvidia om het bedrijf over te nemen voor zo’n 20 miljard dollar.
+      </p>
+      <p>
+        Het fonds wordt ook gebruikt om het team uit te breiden, met name in sales en marketing. Groq hoopt hiermee sneller marktaandeel te veroveren ten opzichte van concurrenten als Cerebras en SambaNova.
+      </p>
+    </>
+  ),
   'google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen': (
     <>
       <p className="lead-para">
@@ -4869,6 +4882,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'groq-haalt-650-miljoen-op-na-nvidia-deal':
+    "Voor bedrijven die afhankelijk zijn van gespecialiseerde hardware voor AI-toepassingen, toont deze ontwikkeling aan dat de markt voor alternatieve chipmakers nog steeds ruimte biedt voor groei. Het benadrukt ook het belang van flexibiliteit: wie niet meegaat in de mainstream (zoals Nvidia), kan toch kansen vinden door slimme strategieën zoals neocloud. Voor bureaus en techteams kan dit betekenen dat ze hun klanten moeten adviseren over de beste infrastructuurkeuzes, ook buiten de gevestigde namen.",
   'google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen':
     "Voor marketeers is dit een reminder om niet alleen op algoritmes te vertrouwen, maar ook eigen data en doelen scherp te houden. Budgetbeperkingen vragen om extra aandacht bij automatische biedstrategieën, omdat kleine wijzigingen grote gevolgen kunnen hebben voor de meetbaarheid. Het is verstandig om periodiek te testen hoe campagnes reageren op dergelijke updates, zodat aanpassingen sneller kunnen worden doorgevoerd.",
   'spacex-reflection-ai-compute-deal':
