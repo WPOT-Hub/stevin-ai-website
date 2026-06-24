@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'spacex-reflection-ai-compute-deal',
+    format: 'dispatch' as const,
+    edition: '267',
+    category: 'Tech',
+    title: "SpaceX sluit $6 miljard AI-chipdeal met open source-lab Reflection AI",
+    dek: "SpaceX en Reflection AI contracteren een vierjarig partnership voor $150 miljoen per maand om Nvidia GB300 chips te gebruiken in SpaceX's Colossus 2 datacenter.",
+    publishedAt: '2026-06-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "SpaceX sluit $6 miljard AI-chipdeal met open source-lab Reflection AI",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'youtube-introduceert-gemini-gebaseerde-inzichten-tools',
     format: 'dispatch' as const,
     edition: '266',
