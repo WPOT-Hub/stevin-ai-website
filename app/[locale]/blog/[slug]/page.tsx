@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen': (
+    <>
+      <p className="lead-para">
+        Google vervangt binnenkort de huidige target-based bidding voor budgetbeperkte campagnes door een nieuw systeem. Dit betekent dat campagnes die nu bijvoorbeeld een CPA-doel of ROAS-doel hebben, mogelijk minder voorspelbaar presteren als de instellingen niet worden aangepast.
+      </p>
+      <p>
+        De verandering treedt in werking zodra het nieuwe algoritme actief wordt. Adverteerders die afhankelijk zijn van deze biddingsstrategieën, lopen risico op een daling in meetdata of suboptimale prestaties zonder directe oorzaak en gevolg-relatie in hun dashboards.
+      </p>
+      <p>
+        Google raadt aan om voor de implementatie de campagneinstellingen te controleren en eventueel over te stappen op doelgroepgebaseerde of handmatige biedingen. Dit geldt vooral voor campagnes met strikte budgetlimieten.
+      </p>
+    </>
+  ),
   'spacex-reflection-ai-compute-deal': (
     <>
       <p className="lead-para">
@@ -4856,6 +4869,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen':
+    "Voor marketeers is dit een reminder om niet alleen op algoritmes te vertrouwen, maar ook eigen data en doelen scherp te houden. Budgetbeperkingen vragen om extra aandacht bij automatische biedstrategieën, omdat kleine wijzigingen grote gevolgen kunnen hebben voor de meetbaarheid. Het is verstandig om periodiek te testen hoe campagnes reageren op dergelijke updates, zodat aanpassingen sneller kunnen worden doorgevoerd.",
   'spacex-reflection-ai-compute-deal':
     "Voor ondernemers die afhankelijk zijn van geavanceerde IT-infrastructuur is deze deal een signaal dat gespecialiseerde hardware steeds toegankelijker wordt via samenwerkingen tussen techgiganten. Het laat zien hoe schaarse middelen zoals high-end chips gedeeld kunnen worden zonder eigendomsoverdracht, wat nieuwe businessmodellen mogelijk maakt.",
   'digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026':
