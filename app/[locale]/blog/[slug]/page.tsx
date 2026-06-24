@@ -1456,6 +1456,13 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-werkt-voortdurend-in-de-achtergrond': (
+    <>
+      <p className="lead-para">
+        Onderzoekers introduceren zogenaamde 'loops' in AI, waarbij systemen een zwerm van autonome agents aansturen die zonder onderbreking taken uitvoeren. Deze systemen analyseren eerst een opdracht en splitsen deze op in kleinere stappen, waarna ze zelfstandig acties ondernemen tot het doel is bereikt. De technologie richt zich op complexe taken die traditionele AI niet aankan, zoals langdurige projectplanning of realtime dataverwerking. Gebruikers hoeven slechts de beginopdracht te geven, waarna de AI de rest afhandelt.
+      </p>
+    </>
+  ),
   'vs-dwingt-techbedrijven-tot-amerikaanse-quantumcomputer-binnen-2028': (
     <>
       <p className="lead-para">
@@ -4895,6 +4902,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-werkt-voortdurend-in-de-achtergrond':
+    "",
   'vs-dwingt-techbedrijven-tot-amerikaanse-quantumcomputer-binnen-2028':
     "Voor Europese bedrijven die actief zijn in quantumtechnologie kan deze ontwikkeling zowel een bedreiging als een kans vormen. De druk op supply chains neemt toe, terwijl samenwerking met Amerikaanse partijen minder vanzelfsprekend wordt. Tegelijkertijd ontstaat er ruimte voor nieuwe markten als Europese alternatieven sneller beschikbaar komen dan de Amerikaanse variant.",
   'groq-haalt-650-miljoen-op-na-nvidia-deal':
