@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen',
+    format: 'dispatch' as const,
+    edition: '268',
+    category: 'Platform',
+    title: "Google Ads past target-based bidding aan bij budgetbeperkte campagnes",
+    dek: "Adverteerders met budgetbeperkte Google Ads-campagnes moeten hun strategie herzien door een aankomende wijziging in target-based bidding.",
+    publishedAt: '2026-06-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads past target-based bidding aan bij budgetbeperkte campagnes",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spacex-reflection-ai-compute-deal',
     format: 'dispatch' as const,
     edition: '267',
