@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026',
+    format: 'dispatch' as const,
+    edition: '264',
+    category: 'Distributie',
+    title: "Digitale vrachtbrief mag vanaf juli 2026 op schepen",
+    dek: "Elektronische cognossementen worden per 1 juli 2026 juridisch gelijkgesteld aan papieren vrachtbrieven in de scheepvaart.",
+    publishedAt: '2026-06-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "Digitale vrachtbrief mag vanaf juli 2026 op schepen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ruimtepuin-aarde-naar-maan',
     format: 'dispatch' as const,
     edition: '263',
