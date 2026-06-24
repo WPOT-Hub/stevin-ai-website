@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'groq-haalt-650-miljoen-op-na-nvidia-deal',
+    format: 'dispatch' as const,
+    edition: '269',
+    category: 'Tech',
+    title: "AI-chipmaker Groq haalt 650 miljoen op na Nvidia-deal",
+    dek: "Groq bevestigt een nieuwe investeringsronde van 650 miljoen dollar en zet in op zijn neocloud-strategie na Nvidia’s afwijzing van een overname.",
+    publishedAt: '2026-06-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AI-chipmaker Groq haalt 650 miljoen op na Nvidia-deal",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen',
     format: 'dispatch' as const,
     edition: '268',
