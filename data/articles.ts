@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'youtube-introduceert-gemini-gebaseerde-inzichten-tools',
+    format: 'dispatch' as const,
+    edition: '266',
+    category: 'Platform',
+    title: "YouTube voegt AI-gestuurde inzichten toe voor creators en marketeers",
+    dek: "Creators en adverteerders kunnen vanaf deze maand gebruikmaken van nieuwe Gemini-gebaseerde tools om trends en gedrag van kijkers beter te begrijpen.",
+    publishedAt: '2026-06-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "YouTube voegt AI-gestuurde inzichten toe voor creators en marketeers",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'superhuman-verwerft-gptzero',
     format: 'dispatch' as const,
     edition: '265',
