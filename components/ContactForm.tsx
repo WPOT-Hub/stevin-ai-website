@@ -12,6 +12,13 @@ export default function ContactForm({ nextUrl, subject }: { nextUrl?: string; su
     const params = new URLSearchParams(window.location.search)
     if (params.get('verzonden') === '1') {
       setSubmitted(true)
+      // Clarity: markeer de afgeronde inzending, zo wordt de funnel
+      // demo-intentie -> inzending filterbaar in het dashboard.
+      try {
+        window.clarity?.('set', 'form_submit', 'contact')
+      } catch {
+        /* clarity optioneel */
+      }
     }
   }, [])
 
@@ -38,6 +45,13 @@ export default function ContactForm({ nextUrl, subject }: { nextUrl?: string; su
       })
     } catch {
       // Tracking fout mag formulier niet blokkeren
+    }
+
+    // Clarity-tag vlak voor navigatie (best-effort op de vertrekkende sessie)
+    try {
+      window.clarity?.('set', 'form_submit', 'contact')
+    } catch {
+      /* clarity optioneel */
     }
 
     // Native form submit na tracking push
