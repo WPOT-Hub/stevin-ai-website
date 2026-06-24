@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'flipkart-breidt-snelle-levering-uit-in-india-als-amazon-versnelt': (
+    <>
+      <p className="lead-para">
+        Flipkart, eigendom van Walmart, heeft inmiddels meer dan 1.000 micro-opslagpunten geopend in India. Deze kleinschalige distributiepunten maken het mogelijk om orders binnen een uur te bezorgen. De uitbreiding volgt op de groeiende vraag naar snelle levering in het land.
+      </p>
+      <p>
+        Amazon versterkt tegelijkertijd zijn positie in dezelfde markt met een vergelijkbare strategie. Beide bedrijven investeren zwaar in lokale logistieke netwerken om de concurrentie aan te gaan. De race om de consument te bedienen met steeds snellere bezorgopties neemt hiermee een nieuwe fase aan.
+      </p>
+      <p>
+        De groei van quick-commerce in India wordt gedreven door de toenemende smartphonepenetratie en digitalisering van betalingen. Lokale spelers profiteren eveneens van deze trend, maar de strijd tussen Flipkart en Amazon blijft centraal staan.
+      </p>
+    </>
+  ),
   'alexa-agentic-ads-veranderen-de-regels-van-conversational-marketing': (
     <>
       <p className="lead-para">
@@ -4927,6 +4940,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'flipkart-breidt-snelle-levering-uit-in-india-als-amazon-versnelt':
+    "Voor bedrijven die actief zijn in logistiek of e-commerce is deze ontwikkeling een duidelijke reminder dat snelheid en beschikbaarheid steeds belangrijker worden voor klanten. Het investeren in lokale opslag en distributie kan een cruciale factor zijn om concurrentievoordeel te behalen. Tegelijkertijd laat het zien hoe snel markten kunnen veranderen wanneer grote spelers met hoge budgetten de strijd aangaan.",
   'alexa-agentic-ads-veranderen-de-regels-van-conversational-marketing':
     "Bij Stevin zien we deze ontwikkeling als een logische volgende stap in de evolutie van digitale marketing, waarbij technologie niet langer dient als tussenstap maar als directe verbinder tussen vraag en aanbod. De uitdaging ligt niet zozeer in de techniek zelf – die is immers beschikbaar – maar in het vermogen van merken om hun boodschap zo helder en relevant mogelijk te maken binnen de beperkte context van een gesprek.\n\nWij adviseren onze klanten om nu al proefprojecten op te zetten met voice-commerce-functionaliteiten, zelfs als de volumes nog klein zijn. Het gaat erom ervaring op te doen met conversaties die leiden tot actie, zodat je later niet achterloopt wanneer consumenten massaal overstappen op deze manier van winkelen.\n\nDaarnaast benadrukken we het belang van data-driven optimalisatie: welke woorden triggeren aankopen? Welke prijsstrategieën werken in een spraakcontext? Door deze meetdata vroegtijdig te verzamelen en te analyseren, kunnen merken hun campagnes sneller bijsturen dan ooit tevoren.\n\nTot slot blijft privacy een cruciale factor. Merken moeten duidelijk communiceren hoe persoonlijke informatie wordt gebruikt en beveiligd, niet alleen omdat het wettelijk verplicht is, maar omdat vertrouwen uiteindelijk de basis vormt voor duurzame groei in voice-commerce.",
   'ai-werkt-voortdurend-in-de-achtergrond':
