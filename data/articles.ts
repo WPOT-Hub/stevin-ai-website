@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'alexa-agentic-ads-veranderen-de-regels-van-conversational-marketing',
+    format: 'dispatch' as const,
+    edition: '273',
+    category: 'Platform',
+    title: "Alexa koopt voor je: hoe agentic ads de marketinggame voorgoed veranderen",
+    dek: "Met Alexa die direct aankopen afhandelt, wordt conversational commerce niet langer een belofte maar een realiteit – en dat betekent dat marketeers nu moeten leren verkopen in gesprekken.",
+    publishedAt: '2026-06-24',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Alexa koopt voor je: hoe agentic ads de marketinggame voorgoed veranderen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'moengage-koopt-ai-agent-platform',
     format: 'dispatch' as const,
     edition: '272',
