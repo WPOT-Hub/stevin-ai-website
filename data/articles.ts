@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'moengage-koopt-ai-agent-platform',
+    format: 'dispatch' as const,
+    edition: '272',
+    category: 'Platform',
+    title: "MoEngage koopt platform voor miljoenen AI-marketingagenten",
+    dek: "De Indiase marketingtechfirma MoEngage neemt een Amerikaans bedrijf over om klantspecifieke AI-agenten mogelijk te maken.",
+    publishedAt: '2026-06-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "MoEngage koopt platform voor miljoenen AI-marketingagenten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-werkt-voortdurend-in-de-achtergrond',
     format: 'dispatch' as const,
     edition: '271',
