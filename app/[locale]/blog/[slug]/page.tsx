@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'alexa-agentic-ads-veranderen-de-regels-van-conversational-marketing': (
+    <>
+      <p className="lead-para">
+        Stel je voor: je vraagt Alexa om een nieuw koffiezetapparaat en binnen 30 seconden ligt het in je winkelwagen. Geen links, geen tabbladen, geen gedoe. Dat is precies wat Amazon deze week introduceerde met Alexa+ Agentic Ads, aldus Search Engine Land.
+      </p>
+      <p>
+        Deze nieuwe functionaliteit laat consumenten niet alleen producten ontdekken via spraak, maar sluit de deal direct af binnen hetzelfde gesprek. Geen omweg naar een webshop, geen afrekenpagina’s die afschrikken. Het is een fundamentele verschuiving: van ‘kan ik u helpen?’ naar ‘ik regel het voor u’. Voor consumenten voelt het als een natuurlijke uitbreiding van hun dagelijkse routine. Voor marketeers betekent dit dat ze niet langer alleen content of aanbiedingen pushen, maar dat ze moeten leren omgaan met directe verkoopmomenten in een conversatie.
+      </p>
+      <p>
+        Tot nu toe was conversational commerce vooral een experiment. Chatbots op websites of in apps boden weliswaar interactie, maar bleven steken in de fase van informatieverstrekking. De stap naar daadwerkelijke transacties was te groot – tot nu toe. Met agentic ads verandert dat. De technologie achter deze oplossing combineert spraakherkenning, intentieanalyse en betalingsverwerking in één naadloos proces. Consumenten hoeven niets meer te typen of te klikken; ze praten gewoon tegen hun apparaat en krijgen wat ze willen.
+      </p>
+      <p>
+        Maar hier schuilt ook het grootste risico voor marketeers: de overgang van engagement naar verkoop vereist een andere mindset. Waar veel merken nog steeds focussen op branding of leadgeneratie via gesprekken, moet de focus nu liggen op directe conversie. Dat betekent dat campagnes niet alleen aandacht moeten trekken, maar ook vertrouwen moeten wekken in seconden. Een slecht gekozen aanbod of een onduidelijke prijs kan direct leiden tot afhaken – en daar is geen tweede kans meer.
+      </p>
+      <p>
+        Ook retailers die nu nog sceptisch zijn over spraakgestuurde aankopen zullen zich moeten aanpassen. Want als consumenten straks gewend raken aan het idee dat hun stem gelijkstaat aan een bestelling, dan wordt het moeilijk om achter te blijven. Wie niet meegaat in deze ontwikkeling, loopt het risico om buiten spel te staan zodra de concurrentie wel schakelt.
+      </p>
+      <p>
+        Toch is er ook ruimte voor kritische kanttekeningen. Niet elke consument is bereid om persoonlijke gegevens zoals betaalgegevens of adressen hardop uit te spreken tegen een apparaat dat altijd luistert. Privacyzorgen kunnen deze trend snel afremmen als merken niet transparant zijn over hoe data worden gebruikt en beveiligd.
+      </p>
+      <p>
+        Uiteindelijk gaat het erom wie deze nieuwe mogelijkheden het beste weet te benutten. Merken die al ervaring hebben met voice commerce of die snel kunnen schakelen naar conversiegerichte campagnes zullen de grootste uplift zien. Voor anderen wordt het tijd om serieus na te denken over hun strategie – voordat Alexa letterlijk de regels van de game verandert.
+      </p>
+    </>
+  ),
   'ai-werkt-voortdurend-in-de-achtergrond': (
     <>
       <p className="lead-para">
@@ -4902,6 +4927,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'alexa-agentic-ads-veranderen-de-regels-van-conversational-marketing':
+    "Bij Stevin zien we deze ontwikkeling als een logische volgende stap in de evolutie van digitale marketing, waarbij technologie niet langer dient als tussenstap maar als directe verbinder tussen vraag en aanbod. De uitdaging ligt niet zozeer in de techniek zelf – die is immers beschikbaar – maar in het vermogen van merken om hun boodschap zo helder en relevant mogelijk te maken binnen de beperkte context van een gesprek.\n\nWij adviseren onze klanten om nu al proefprojecten op te zetten met voice-commerce-functionaliteiten, zelfs als de volumes nog klein zijn. Het gaat erom ervaring op te doen met conversaties die leiden tot actie, zodat je later niet achterloopt wanneer consumenten massaal overstappen op deze manier van winkelen.\n\nDaarnaast benadrukken we het belang van data-driven optimalisatie: welke woorden triggeren aankopen? Welke prijsstrategieën werken in een spraakcontext? Door deze meetdata vroegtijdig te verzamelen en te analyseren, kunnen merken hun campagnes sneller bijsturen dan ooit tevoren.\n\nTot slot blijft privacy een cruciale factor. Merken moeten duidelijk communiceren hoe persoonlijke informatie wordt gebruikt en beveiligd, niet alleen omdat het wettelijk verplicht is, maar omdat vertrouwen uiteindelijk de basis vormt voor duurzame groei in voice-commerce.",
   'ai-werkt-voortdurend-in-de-achtergrond':
     "",
   'vs-dwingt-techbedrijven-tot-amerikaanse-quantumcomputer-binnen-2028':
