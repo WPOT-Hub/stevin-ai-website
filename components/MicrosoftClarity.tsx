@@ -5,19 +5,16 @@
  * nodig wanneer je Clarity in "consent-pending" mode draait. Clarity
  * registreert dan alleen als de gebruiker analytics-cookies heeft toegestaan.
  *
- * Gated op NEXT_PUBLIC_CLARITY_PROJECT_ID env var. Wanneer niet gezet,
- * rendert het component niets, geen fail bij deploy zonder credentials.
- *
- * Setup:
- *   1. clarity.microsoft.com → New project → naam "Stevin.AI"
- *   2. Kopieer de project-ID (10 chars, bv. abc123de4f)
- *   3. Vercel → Project → Settings → Environment Variables:
- *      NEXT_PUBLIC_CLARITY_PROJECT_ID = <id>
- *   4. Re-deploy
+ * Project-ID is GEEN secret (staat sowieso client-side in de HTML), dus de
+ * waarde van het live "Stevin.AI"-project staat hardcoded als default. De
+ * env-var NEXT_PUBLIC_CLARITY_PROJECT_ID kan dit overschrijven (bijv. voor een
+ * staging-project), maar een lege of ontbrekende env-var kan Clarity nooit
+ * meer per ongeluk uitzetten. Live project: clarity.microsoft.com, "Stevin.AI".
  */
 import Script from 'next/script'
 
-const PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID
+// Default = het live Stevin.AI Clarity-project. Env-var overschrijft indien gezet.
+const PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'wmggc0voks'
 
 export function MicrosoftClarity() {
   if (!PROJECT_ID) return null
