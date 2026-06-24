@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026': (
+    <>
+      <p className="lead-para">
+        Vanaf 1 juli 2026 is een digitaal cognossement voldoende voor schepen in Nederland. De papieren kopie hoeft niet langer mee aan boord, zo meldt de KVNR.
+      </p>
+      <p>
+        De maritieme sector pleitte al jaren voor deze wijziging om de logistiek te versnellen en papierwerk te verminderen. Elektronische cognossementen moeten nu dezelfde rechtsgeldigheid krijgen als fysieke documenten.
+      </p>
+      <p>
+        De nieuwe regel geldt voor zowel binnenlandse als internationale scheepvaart. Schepen die nog met papieren werken, kunnen geleidelijk overschakelen naar digitale systemen.
+      </p>
+    </>
+  ),
   'superhuman-verwerft-gptzero': (
     <>
       <p className="lead-para">
@@ -4830,6 +4843,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026':
+    "Voor bedrijven in de logistiek en maritieme sector betekent dit een belangrijke stap naar digitalisering. Het elimineert administratieve rompslomp en kan de doorlooptijden verkorten. Tegelijkertijd moeten organisaties erop letten dat hun digitale systemen voldoen aan de wettelijke eisen en beveiligingsnormen om fraude of fouten te voorkomen.",
   'superhuman-verwerft-gptzero':
     "Voor bureaus en in-house teams die werken met contentcreatie of communicatie betekent deze consolidatie dat keuzes voor detectietools sneller moeten worden gemaakt. Een heldere strategie rondom authenticiteit en transparantie in content wordt belangrijker, zeker nu de technologie achter tekstgeneratie steeds minder voorspelbaar wordt. Het is verstandig om niet afhankelijk te zijn van één leverancier, maar meerdere oplossingen naast elkaar te evalueren.",
   'ruimtepuin-aarde-naar-maan':
