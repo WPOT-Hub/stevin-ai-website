@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-werkt-voortdurend-in-de-achtergrond',
+    format: 'dispatch' as const,
+    edition: '271',
+    category: 'Tech',
+    title: "AI-systemen werken nu zelfstandig door in de achtergrond",
+    dek: "Nieuwe agent-based AI-systemen kunnen continu taken uitvoeren zonder handmatige tussenkomst.",
+    publishedAt: '2026-06-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AI-systemen werken nu zelfstandig door in de achtergrond",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'vs-dwingt-techbedrijven-tot-amerikaanse-quantumcomputer-binnen-2028',
     format: 'dispatch' as const,
     edition: '270',
