@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'vs-dwingt-techbedrijven-tot-amerikaanse-quantumcomputer-binnen-2028',
+    format: 'dispatch' as const,
+    edition: '270',
+    category: 'Tech',
+    title: "VS eist Amerikaanse quantumcomputer tegen 2028",
+    dek: "De Amerikaanse overheid verplicht techbedrijven om een volledig Amerikaanse quantumcomputer te ontwikkelen en in gebruik te nemen binnen twee jaar.",
+    publishedAt: '2026-06-24',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "VS eist Amerikaanse quantumcomputer tegen 2028",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'groq-haalt-650-miljoen-op-na-nvidia-deal',
     format: 'dispatch' as const,
     edition: '269',
