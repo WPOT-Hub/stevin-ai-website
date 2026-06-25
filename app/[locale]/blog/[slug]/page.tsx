@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'cerebras-ai-chipmaker-margeverwachting-verkeerd-geinterpreteerd': (
+    <>
+      <p className="lead-para">
+        Cerebras verloor dinsdag meer dan een vijfde van zijn marktwaarde na het bekendmaken van de eerste kwartaalcijfers sinds de beursgang. Het bedrijf verwachtte een smallere brutowinstmarge in de kernchipactiviteit, wat direct leidde tot een scherpe daling van het aandeel. De CEO stelde later dat de margeverwachting niet goed was overgekomen bij investeerders.
+      </p>
+      <p>
+        De correctie kwam als een verrassing, omdat Cerebras eerder optimistische groeicijfers presenteerde. Analisten wijten de daling aan onzekerheid over de haalbaarheid van de marges in een competitieve markt. De chipmaker richt zich op hoogwaardige AI-processors, maar moet concurreren met gevestigde namen zoals Nvidia en AMD.
+      </p>
+      <p>
+        Het aandeel herstelde zich later gedeeltelijk na een verklaring van de CEO, maar bleef onder druk staan. Beleggers vragen zich af of het bedrijf voldoende kan differentiëren om hogere marges te rechtvaardigen. De markt voor AI-chips blijft volatiel, mede door snelle technologische ontwikkelingen.
+      </p>
+    </>
+  ),
   'flipkart-breidt-snelle-levering-uit-in-india-als-amazon-versnelt': (
     <>
       <p className="lead-para">
@@ -4940,6 +4953,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'cerebras-ai-chipmaker-margeverwachting-verkeerd-geinterpreteerd':
+    "Voor bedrijven die afhankelijk zijn van gespecialiseerde hardware of technologie-investeringen is deze situatie herkenbaar: hoge verwachtingen leiden vaak tot strenge toetsing door de markt. Het benadrukt het belang van heldere communicatie over financiële verwachtingen, vooral bij nieuwe productlijnen of innovatieve technologieën. Voor startups in deze sector kan dit dienen als waarschuwing om marges realistisch in te schatten en risico’s tijdig te adresseren.",
   'flipkart-breidt-snelle-levering-uit-in-india-als-amazon-versnelt':
     "Voor bedrijven die actief zijn in logistiek of e-commerce is deze ontwikkeling een duidelijke reminder dat snelheid en beschikbaarheid steeds belangrijker worden voor klanten. Het investeren in lokale opslag en distributie kan een cruciale factor zijn om concurrentievoordeel te behalen. Tegelijkertijd laat het zien hoe snel markten kunnen veranderen wanneer grote spelers met hoge budgetten de strijd aangaan.",
   'alexa-agentic-ads-veranderen-de-regels-van-conversational-marketing':
