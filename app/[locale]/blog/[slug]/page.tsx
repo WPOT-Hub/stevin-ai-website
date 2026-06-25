@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'merkloyaliteit-ai-tijdperk-oud-antwoord': (
+    <>
+      <p className="lead-para">
+        Consumenten kopen steeds vaker producten aan via AI-aanbevelingen zoals die van Amazon of Bol.com, aldus een analyse van McKinsey. Daardoor daalt de merkloyaliteit: klanten kiezen sneller voor het product dat het beste scoort in algoritmes, niet per se het merk dat ze eerder vertrouwden.
+      </p>
+      <p>
+        Toch blijkt uit dezelfde data dat persoonlijke interactie nog altijd doorslaggevend is voor loyaliteit. Bedrijven die tijd investeren in één-op-één contact met klanten, zien minder wisseling en hogere herhalingsaankopen. Dit geldt vooral bij complexe producten of diensten waar vertrouwen een rol speelt.
+      </p>
+      <p>
+        De trend zet marketingteams onder druk om balans te vinden tussen schaalbare AI-oplossingen en authentieke menselijke benadering. Te veel focus op automatisering kan leiden tot verlies van emotionele binding met het merk.
+      </p>
+    </>
+  ),
   'cerebras-ai-chipmaker-margeverwachting-verkeerd-geinterpreteerd': (
     <>
       <p className="lead-para">
@@ -4953,6 +4966,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'merkloyaliteit-ai-tijdperk-oud-antwoord':
+    "Voor bedrijven betekent dit dat AI niet moet dienen als vervanging van menselijk contact, maar als hulpmiddel om dat contact efficiënter te maken. De kunst is om technologie in te zetten zonder de kern van merkwaarde – vertrouwen en herkenning – uit het oog te verliezen. Dat vraagt om een duidelijke strategie waarin data en menselijkheid samenkomen.",
   'cerebras-ai-chipmaker-margeverwachting-verkeerd-geinterpreteerd':
     "Voor bedrijven die afhankelijk zijn van gespecialiseerde hardware of technologie-investeringen is deze situatie herkenbaar: hoge verwachtingen leiden vaak tot strenge toetsing door de markt. Het benadrukt het belang van heldere communicatie over financiële verwachtingen, vooral bij nieuwe productlijnen of innovatieve technologieën. Voor startups in deze sector kan dit dienen als waarschuwing om marges realistisch in te schatten en risico’s tijdig te adresseren.",
   'flipkart-breidt-snelle-levering-uit-in-india-als-amazon-versnelt':
