@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-lanceert-eigen-ai-chip-samen-met-broadcom': (
+    <>
+      <p className="lead-para">
+        OpenAI heeft zijn eerste zelf ontwikkelde chip gepresenteerd, de Jalapeño, die specifiek is ontworpen voor de inferentiefase van zijn AI-modellen. De processor is gebouwd door chipfabrikant Broadcom en moet de snelheid en energie-efficiëntie van OpenAIs systemen aanzienlijk verhogen. Volgens het bedrijf zorgt de chip voor minder vertraging bij het verwerken van gebruikersvragen en lagere kosten per berekening. De Jalapeño wordt binnenkort geïntegreerd in de bestaande infrastructuur van OpenAI.
+      </p>
+      <p>
+        De ontwikkeling van een eigen chip past in de strategie van OpenAI om minder afhankelijk te zijn van externe partijen zoals Nvidia. Die afhankelijkheid bleek eerder dit jaar toen leveringsproblemen met Nvidia-chips tot vertragingen leidden bij het trainen van nieuwe modellen. Met de Jalapeño wil OpenAI niet alleen de controle over zijn hardware vergroten, maar ook de marges op AI-diensten verbeteren.
+      </p>
+      <p>
+        Broadcom zal de chip produceren en leveren aan OpenAI, terwijl andere klanten mogelijk later toegang krijgen tot een versie voor eigen gebruik. TechCrunch meldt dat de eerste tests positieve resultaten hebben opgeleverd, met name op het gebied van energieverbruik en rekenkracht per watt.
+      </p>
+    </>
+  ),
   'europa-tegen-washington-chip-exportbeperkingen': (
     <>
       <p className="lead-para">
@@ -4979,6 +4992,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-lanceert-eigen-ai-chip-samen-met-broadcom':
+    "Deze stap onderstreept hoe belangrijk hardware wordt voor techbedrijven die zich richten op schaalbare AI-toepassingen. Voor bedrijven die afhankelijk zijn van cloud-API’s kan dit leiden tot hogere kosten als providers zoals OpenAI hun prijzen aanpassen naar gelang de nieuwe hardware-investeringen. Tegelijkertijd biedt het kansen voor organisaties die zelf aan de slag willen met lokale inferentie-oplossingen, mits ze toegang krijgen tot dergelijke chips.",
   'europa-tegen-washington-chip-exportbeperkingen':
     "Voor bedrijven in Nederland en België die actief zijn in hightech of toelevering aan de chipindustrie is dit een signaal om hun afhankelijkheid van Amerikaanse regelgeving goed in kaart te brengen. De zaak laat zien hoe snel internationale handel kan veranderen door politieke beslissingen, wat impact heeft op supply chains en investeringsplannen. Het is verstandig om nu al scenario’s te bedenken voor alternatieve markten of leveranciers.",
   'merkloyaliteit-ai-tijdperk-oud-antwoord':
