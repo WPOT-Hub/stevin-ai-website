@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-agents-manipulatie-onderzoek',
+    format: 'dispatch' as const,
+    edition: '280',
+    category: 'Tech',
+    title: "Manipulatie van AI-onderzoeksagenten leidt tot valse bronnen in 62% van de gevallen",
+    dek: "Een kleine aanpassing in een webpagina kan AI-onderzoeksagenten misleiden, met tot wel 62% valse entiteiten in rapporten als meerdere pagina's worden gebruikt.",
+    publishedAt: '2026-06-25',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Manipulatie van AI-onderzoeksagenten leidt tot valse bronnen in 62% van de gevallen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'openai-lanceert-eigen-ai-chip-samen-met-broadcom',
     format: 'dispatch' as const,
     edition: '279',
