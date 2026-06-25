@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'deezer-lanceert-fan-remix-functie-met-artiestentoestemming',
+    format: 'dispatch' as const,
+    edition: '278',
+    category: 'Tech',
+    title: "Deezer laat fans nummers remixen met toestemming van artiesten",
+    dek: "Streamingdienst Deezer introduceert een functie waarmee fans officiële remixes van nummers kunnen maken, mits de artiest akkoord gaat.",
+    publishedAt: '2026-06-25',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Deezer laat fans nummers remixen met toestemming van artiesten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'europa-tegen-washington-chip-exportbeperkingen',
     format: 'dispatch' as const,
     edition: '277',
