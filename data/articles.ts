@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'cerebras-ai-chipmaker-margeverwachting-verkeerd-geinterpreteerd',
+    format: 'dispatch' as const,
+    edition: '275',
+    category: 'Tech',
+    title: "Cerebras daalt met 20% na eerste kwartaalcijfers",
+    dek: "De AI-chipmaker Cerebras ziet zijn aandeel dalen nadat de winstmargeverwachting voor de kernactiviteit werd herzien en beleggers die verkeerd begrepen.",
+    publishedAt: '2026-06-25',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Cerebras daalt met 20% na eerste kwartaalcijfers",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'flipkart-breidt-snelle-levering-uit-in-india-als-amazon-versnelt',
     format: 'dispatch' as const,
     edition: '274',
