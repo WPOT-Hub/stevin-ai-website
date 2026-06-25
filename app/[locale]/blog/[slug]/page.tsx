@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-agents-manipulatie-onderzoek': (
+    <>
+      <p className="lead-para">
+        Onderzoekers tonen aan dat zelfs een minimale wijziging in een webpagina ervoor zorgt dat AI-onderzoeksagenten deze als betrouwbare bron gebruiken. In tests verschenen valse entiteiten in 38% tot 51% van de rapporten wanneer één gemanipuleerde pagina werd opgehaald. Bij het combineren van meerdere pagina’s steeg dit percentage naar 62%, aldus de onderzoekers.
+      </p>
+      <p>
+        De manipulatie richtte zich op pagina’s met gebruikersgegenereerde content (UGC), zoals forums of reviewwebsites. Een kleine tekstuele aanpassing, zoals een extra zin of een verkeerd feit, was voldoende om agenten te misleiden. Dit roept vragen op over de kwetsbaarheid van AI-systemen die afhankelijk zijn van externe data.
+      </p>
+      <p>
+        De bevindingen benadrukken het belang van validatie en cross-checking bij het gebruik van AI voor diepgaand onderzoek. Zonder adequate controles kunnen dergelijke systemen onbedoeld valse informatie verspreiden, wat gevolgen heeft voor besluitvorming en reputaties.
+      </p>
+    </>
+  ),
   'openai-lanceert-eigen-ai-chip-samen-met-broadcom': (
     <>
       <p className="lead-para">
@@ -4992,6 +5005,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-agents-manipulatie-onderzoek':
+    "Voor bedrijven die AI-tools integreren in hun processen is dit een waarschuwing om niet blind te vertrouwen op geautomatiseerde rapportages. Het is raadzaam om altijd handmatige checks uit te voeren, vooral bij kritieke beslissingen. Daarnaast toont dit aan hoe kwetsbaar openbare data zijn voor manipulatie, wat gevolgen kan hebben voor marktonderzoek en concurrentieanalyse.",
   'openai-lanceert-eigen-ai-chip-samen-met-broadcom':
     "Deze stap onderstreept hoe belangrijk hardware wordt voor techbedrijven die zich richten op schaalbare AI-toepassingen. Voor bedrijven die afhankelijk zijn van cloud-API’s kan dit leiden tot hogere kosten als providers zoals OpenAI hun prijzen aanpassen naar gelang de nieuwe hardware-investeringen. Tegelijkertijd biedt het kansen voor organisaties die zelf aan de slag willen met lokale inferentie-oplossingen, mits ze toegang krijgen tot dergelijke chips.",
   'europa-tegen-washington-chip-exportbeperkingen':
