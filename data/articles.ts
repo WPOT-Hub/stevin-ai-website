@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'europa-tegen-washington-chip-exportbeperkingen',
+    format: 'dispatch' as const,
+    edition: '277',
+    category: 'Beleid',
+    title: "Europa blokkeert Amerikaanse chip-beperkingen voor oudere machines",
+    dek: "Brussel dreigt met tegenmaatregelen als Washington oudere ASML-apparatuur aan banden legt, die China nu nog wel mag kopen.",
+    publishedAt: '2026-06-25',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Europa blokkeert Amerikaanse chip-beperkingen voor oudere machines",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'merkloyaliteit-ai-tijdperk-oud-antwoord',
     format: 'dispatch' as const,
     edition: '276',
