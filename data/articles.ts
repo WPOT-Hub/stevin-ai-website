@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'openai-lanceert-eigen-ai-chip-samen-met-broadcom',
+    format: 'dispatch' as const,
+    edition: '279',
+    category: 'Tech',
+    title: "OpenAI onthult eerste eigen AI-chip voor inferentie",
+    dek: "De chip, genaamd Jalapeño, is ontwikkeld in samenwerking met Broadcom en moet de efficiëntie van OpenAIs systemen verbeteren.",
+    publishedAt: '2026-06-25',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "OpenAI onthult eerste eigen AI-chip voor inferentie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'deezer-lanceert-fan-remix-functie-met-artiestentoestemming',
     format: 'dispatch' as const,
     edition: '278',
