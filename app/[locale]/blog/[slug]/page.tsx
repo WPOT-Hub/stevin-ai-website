@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'europa-tegen-washington-chip-exportbeperkingen': (
+    <>
+      <p className="lead-para">
+        De Europese Commissie waarschuwt dat nieuwe wetgeving uit Washington, de MATCH Act, de export van oudere chipmachines naar China moet verbieden. Volgens ASML-CEO Christophe Fouquet gaat het hier om diepte-ultraviolet apparatuur die al zo’n tien jaar op de markt is. China koopt deze machines nu nog wel, aldus TechCrunch.
+      </p>
+      <p>
+        Brussel ziet deze beperkingen als een schending van bestaande handelsafspraken en dreigt met tegenmaatregelen. De EU benadrukt dat de voorgestelde regels niet alleen technologische innovatie belemmeren, maar ook de concurrentiepositie van Europese bedrijven ondermijnen. De spanningen tussen Europa en de VS lopen hiermee op.
+      </p>
+      <p>
+        Ondertussen blijft ASML een cruciale speler in de chipindustrie, met Nederlandse fabrieken die essentieel zijn voor de productie van geavanceerde machines. De zaak toont aan hoe geopolitieke belangen en technologische afhankelijkheid elkaar raken.
+      </p>
+    </>
+  ),
   'merkloyaliteit-ai-tijdperk-oud-antwoord': (
     <>
       <p className="lead-para">
@@ -4966,6 +4979,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'europa-tegen-washington-chip-exportbeperkingen':
+    "Voor bedrijven in Nederland en België die actief zijn in hightech of toelevering aan de chipindustrie is dit een signaal om hun afhankelijkheid van Amerikaanse regelgeving goed in kaart te brengen. De zaak laat zien hoe snel internationale handel kan veranderen door politieke beslissingen, wat impact heeft op supply chains en investeringsplannen. Het is verstandig om nu al scenario’s te bedenken voor alternatieve markten of leveranciers.",
   'merkloyaliteit-ai-tijdperk-oud-antwoord':
     "Voor bedrijven betekent dit dat AI niet moet dienen als vervanging van menselijk contact, maar als hulpmiddel om dat contact efficiënter te maken. De kunst is om technologie in te zetten zonder de kern van merkwaarde – vertrouwen en herkenning – uit het oog te verliezen. Dat vraagt om een duidelijke strategie waarin data en menselijkheid samenkomen.",
   'cerebras-ai-chipmaker-margeverwachting-verkeerd-geinterpreteerd':
