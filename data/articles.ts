@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'merkloyaliteit-ai-tijdperk-oud-antwoord',
+    format: 'dispatch' as const,
+    edition: '276',
+    category: 'Markt',
+    title: "AI dreigt merkloyaliteit te ondermijnen: terug naar de basis",
+    dek: "Uit onderzoek blijkt dat consumenten door AI-aanbevelingen sneller merken wisselen, terwijl persoonlijke aandacht de sleutel blijft tot behoud van loyaliteit.",
+    publishedAt: '2026-06-25',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "AI dreigt merkloyaliteit te ondermijnen: terug naar de basis",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'cerebras-ai-chipmaker-margeverwachting-verkeerd-geinterpreteerd',
     format: 'dispatch' as const,
     edition: '275',
