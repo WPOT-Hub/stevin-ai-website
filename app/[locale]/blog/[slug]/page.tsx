@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage': (
+    <>
+      <p className="lead-para">
+        Met API v24.2 introduceert Google tools om de werking van AI binnen advertenties beter te volgen. Advertisers krijgen zicht op welke AI-modellen worden toegepast en hoe deze campagnes beïnvloeden, aldus het bedrijf.
+      </p>
+      <p>
+        Ook zijn er nieuwe security controls toegevoegd om fraude en ongeautoriseerde toegang tegen te gaan. Deze maatregelen moeten helpen bij het beschermen van gevoelige klantdata en campagne-instellingen.
+      </p>
+      <p>
+        Daarnaast komt er een uitbreiding van de PMax-rapportage met nieuwe metrics. Deze geven meer inzicht in de prestaties van Performance Max-campagnes, zodat adverteerders gerichter kunnen optimaliseren.
+      </p>
+    </>
+  ),
   'apple-verhoogt-prijzen-door-ram-schaarste': (
     <>
       <p className="lead-para">
@@ -5018,6 +5031,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage':
+    "Voor bureaus en merken die sterk leunen op automatisering binnen Google Ads is deze update relevant. De extra transparantie helpt bij het begrijpen van AI-gestuurde beslissingen, wat essentieel wordt naarmate algoritmes complexer worden. Tegelijkertijd vraagt de strengere beveiliging om aandacht voor nieuwe instellingen en toegangsbeheer.",
   'apple-verhoogt-prijzen-door-ram-schaarste':
     "Voor bedrijven die afhankelijk zijn van consumentenelektronica betekent deze ontwikkeling dat budgetten voor hardware aanzienlijk kunnen stijgen. Het is verstandig om voorraden tijdig aan te vullen en alternatieve leveranciers te onderzoeken om prijsstijgingen te beperken. Daarnaast kan het slim zijn om klanten proactief te informeren over mogelijke vertragingen of hogere kosten, zodat zij hun planning daarop kunnen aanpassen.",
   'ai-agents-manipulatie-onderzoek':
