@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'apple-verhoogt-prijzen-door-ram-schaarste': (
+    <>
+      <p className="lead-para">
+        Apple verhoogt de prijzen van Macs, iPhones en andere apparaten als gevolg van een wereldwijd tekort aan RAM-geheugen. Het bedrijf past de prijzen aan om de hogere inkoopkosten door te berekenen, aldus analisten die de supply chain volgen.
+      </p>
+      <p>
+        De schaarste aan werkgeheugen wordt veroorzaakt door een combinatie van vraagstijging en productieproblemen bij chipfabrikanten. Vooral high-end apparaten met grote geheugencapaciteit worden getroffen, waardoor consumenten hogere prijzen moeten betalen voor nieuwe toestellen.
+      </p>
+      <p>
+        Ook andere grote techbedrijven overwegen prijsverhogingen, maar Apple loopt hierin voorop door zijn afhankelijkheid van specifieke geheugenleveranciers. De markt reageert met zorgen over verdere stijgingen in de komende maanden.
+      </p>
+    </>
+  ),
   'ai-agents-manipulatie-onderzoek': (
     <>
       <p className="lead-para">
@@ -5005,6 +5018,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'apple-verhoogt-prijzen-door-ram-schaarste':
+    "Voor bedrijven die afhankelijk zijn van consumentenelektronica betekent deze ontwikkeling dat budgetten voor hardware aanzienlijk kunnen stijgen. Het is verstandig om voorraden tijdig aan te vullen en alternatieve leveranciers te onderzoeken om prijsstijgingen te beperken. Daarnaast kan het slim zijn om klanten proactief te informeren over mogelijke vertragingen of hogere kosten, zodat zij hun planning daarop kunnen aanpassen.",
   'ai-agents-manipulatie-onderzoek':
     "Voor bedrijven die AI-tools integreren in hun processen is dit een waarschuwing om niet blind te vertrouwen op geautomatiseerde rapportages. Het is raadzaam om altijd handmatige checks uit te voeren, vooral bij kritieke beslissingen. Daarnaast toont dit aan hoe kwetsbaar openbare data zijn voor manipulatie, wat gevolgen kan hebben voor marktonderzoek en concurrentieanalyse.",
   'openai-lanceert-eigen-ai-chip-samen-met-broadcom':
