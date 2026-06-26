@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     locale,
     title: t('meta_title'),
     description: t('meta_desc'),
+    image: 'https://stevin.ai/og-image.png',
   })
 }
 
