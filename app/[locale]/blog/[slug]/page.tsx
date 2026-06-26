@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-updates-en-annuleerknop-verplicht': (
+    <>
+      <p className="lead-para">
+        Google Ads krijgt binnenkort een verplichte annuleerknop voor advertenties, zodat gebruikers direct kunnen stoppen met het tonen van een campagne. Deze maatregel moet de ervaring van adverteerders verbeteren, aldus Google. Daarnaast introduceert het platform nieuwe AI-functies die automatisch biedingen en doelgroepen optimaliseren op basis van historische data.
+      </p>
+      <p>
+        De updates komen voort uit feedback van adverteerders die meer controle willen over hun campagnes zonder handmatig in te grijpen. De AI-tools analyseren prestaties continu en passen strategieën aan om de ROI te verhogen. Experimentele functies zoals 'Smart Unsubscribe' worden getest om gebruikers sneller te laten stoppen met irrelevante advertenties.
+      </p>
+      <p>
+        Ook wordt de integratie met Google Analytics uitgebreid, waardoor marketeers gedetailleerdere meetdata krijgen over de impact van hun campagnes. Deze veranderingen volgen op eerdere kritiek over gebrek aan transparantie in biedingsalgoritmes.
+      </p>
+    </>
+  ),
   'google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage': (
     <>
       <p className="lead-para">
@@ -5031,6 +5044,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-updates-en-annuleerknop-verplicht':
+    "Voor bureau-eigenaars en in-house teams betekent dit dat campagnes flexibeler worden beheerd, maar ook dat AI-gestuurde optimalisatie een grotere rol gaat spelen. Het is raadzaam om bestaande workflows aan te passen en medewerkers te trainen in het interpreteren van deze nieuwe meetdata. De verplichte annuleerknop kan leiden tot minder zichtbaarheid voor sommige campagnes, dus plan campagnes strategisch in om pieken en dalen in bereik te voorkomen.",
   'google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage':
     "Voor bureaus en merken die sterk leunen op automatisering binnen Google Ads is deze update relevant. De extra transparantie helpt bij het begrijpen van AI-gestuurde beslissingen, wat essentieel wordt naarmate algoritmes complexer worden. Tegelijkertijd vraagt de strengere beveiliging om aandacht voor nieuwe instellingen en toegangsbeheer.",
   'apple-verhoogt-prijzen-door-ram-schaarste':
