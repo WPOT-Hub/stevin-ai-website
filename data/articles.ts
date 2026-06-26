@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage',
+    format: 'dispatch' as const,
+    edition: '282',
+    category: 'Platform',
+    title: "Google Ads API krijgt AI-transparantie, strengere security en nieuwe PMax-metrics",
+    dek: "De nieuwe Google Ads API v24.2 biedt betere inzichten in AI-gestuurde campagnes, strengere beveiliging en uitgebreidere rapportagemogelijkheden voor PMax.",
+    publishedAt: '2026-06-26',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads API krijgt AI-transparantie, strengere security en nieuwe PMax-metrics",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'apple-verhoogt-prijzen-door-ram-schaarste',
     format: 'dispatch' as const,
     edition: '281',
