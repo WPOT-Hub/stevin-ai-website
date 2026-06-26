@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'apple-verhoogt-prijzen-door-ram-schaarste',
+    format: 'dispatch' as const,
+    edition: '281',
+    category: 'Markt',
+    title: "Apple verhoogt prijzen door schaarste aan RAM-geheugen",
+    dek: "De prijsstijging bij Apple door een tekort aan werkgeheugen zet de markt voor consumentenelektronica onder druk.",
+    publishedAt: '2026-06-26',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Apple verhoogt prijzen door schaarste aan RAM-geheugen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-agents-manipulatie-onderzoek',
     format: 'dispatch' as const,
     edition: '280',
