@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-updates-en-annuleerknop-verplicht',
+    format: 'dispatch' as const,
+    edition: '283',
+    category: 'Platform',
+    title: "Google introduceert verplichte annuleerknop en nieuwe AI-functies in Ads",
+    dek: "Google voegt een verplichte annuleerknop toe aan advertenties en lanceert nieuwe AI-gestuurde tools voor campagnes.",
+    publishedAt: '2026-06-26',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google introduceert verplichte annuleerknop en nieuwe AI-functies in Ads",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage',
     format: 'dispatch' as const,
     edition: '282',
