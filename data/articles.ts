@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'van-campagnes-naar-continue-groei-hoe-ai-marketing-transformeert',
+    format: 'dispatch' as const,
+    edition: '284',
+    category: 'Platform',
+    title: "AI maakt marketing niet meer een kwestie van campagnes maar van dagelijkse groei",
+    dek: "Bedrijven die campagnes nog als losse acties zien, verliezen straks klanten aan concurrenten die AI gebruiken om elke interactie te optimaliseren.",
+    publishedAt: '2026-06-29',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI maakt marketing niet meer een kwestie van campagnes maar van dagelijkse groei",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-updates-en-annuleerknop-verplicht',
     format: 'dispatch' as const,
     edition: '283',
