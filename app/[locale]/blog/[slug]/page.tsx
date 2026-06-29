@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'australie-onderzoekt-social-media-giganten-op-kinderverbod': (
+    <>
+      <p className="lead-para">
+        De Australische regering heeft een formeel onderzoek gelanceerd naar Meta, TikTok, X (voorheen Twitter), Snap en Discord. Deze platforms moeten sinds vorig jaar de toegang voor gebruikers onder de 16 jaar blokkeren, maar volgens de autoriteiten gebeurt dat onvoldoende of inconsistent. De handhaving ligt bij de eSafety Commissioner, die nu gedetailleerde informatie en documentatie opvraagt van de bedrijven.
+      </p>
+      <p>
+        Het onderzoek volgt op eerdere waarschuwingen en boetes die waren opgelegd aan enkele platforms. Toch blijkt uit klachten en eigen controles dat minderjarigen nog steeds accounts kunnen aanmaken of bestaande accounts blijven gebruiken zonder adequate leeftijdsverificatie. De overheid dreigt met verdere sancties als de platforms niet snel aanpassingen doorvoeren.
+      </p>
+      <p>
+        Australië is niet het enige land dat strengere regels oplegt voor online veiligheid van kinderen. Ook in Europa en de VS lopen vergelijkbare initiatieven om de bescherming van jongeren op social media te verbeteren.
+      </p>
+    </>
+  ),
   'ford-herinzet-experts-na-ai-teleurstelling': (
     <>
       <p className="lead-para">
@@ -5085,6 +5098,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'australie-onderzoekt-social-media-giganten-op-kinderverbod':
+    "Voor bedrijven die actief zijn op internationale markten is het belangrijk om lokale regelgeving nauwlettend te volgen. Dit soort ontwikkelingen laat zien dat overheden steeds vaker ingrijpen in digitale diensten, vooral waar het gaat om bescherming van kwetsbare groepen zoals kinderen. Het kan raadzaam zijn om interne compliance-teams te versterken of externe adviseurs in te schakelen om voorbereid te zijn op nieuwe wetgeving.",
   'ford-herinzet-experts-na-ai-teleurstelling':
     "Voor bedrijven die AI implementeren betekent dit dat technologie een hulpmiddel blijft, geen vervanging. Ervaring en vakmanschap blijven cruciaal bij het nemen van strategische beslissingen. Het is verstandig om investeringen in AI af te wegen tegen de noodzaak van menselijke expertise, vooral bij kernprocessen waar fouten grote gevolgen kunnen hebben.",
   'van-campagnes-naar-continue-groei-hoe-ai-marketing-transformeert':
