@@ -1456,6 +1456,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'van-campagnes-naar-continue-groei-hoe-ai-marketing-transformeert': (
+    <>
+      <p className="lead-para">
+        Stel je voor: een klant bezoekt je webshop, bekijkt drie producten en verlaat de site zonder iets te kopen. Voor veel bedrijven is dit een verloren zaak. Maar wat als je diezelfde klant binnen een uur een gepersonaliseerde aanbieding stuurt, gebaseerd op zijn surfgedrag en voorkeuren? En wat als je dat niet één keer doet, maar elke dag opnieuw? Dat is precies waar AI in marketing vandaag de standaard wordt. Niet langer draait het om het plannen van campagnes in Excel of het hopen op een goed resultaat. Het gaat om het creëren van een systeem dat continu leert, anticipeert en handelt.
+      </p>
+      <p>
+        Deze verschuiving is geen toekomstmuziek meer. Bedrijven zoals bol.com en Coolblue zetten al jaren algoritmen in die niet alleen productaanbevelingen doen, maar ook de timing en inhoud van marketingboodschappen dynamisch aanpassen. Het verschil met traditionele campagnes is fundamenteel: waar vroeger marketeers maandenlang werkten aan een campagne die na vier weken afgelopen was, draait het nu om realtime beslissingen. AI analyseert gedrag, voorspelt intenties en past boodschappen aan voordat de klant zelfs maar weet dat hij een keuze moet maken. Dit is geen upgrade van bestaande tools, maar een complete herdefinitie van hoe marketing werkt.
+      </p>
+      <p>
+        Toch blijft er een groep ondernemers die deze transitie negeren of zelfs bagatelliseren. Ze wijzen naar de kosten, de complexiteit of het gebrek aan meetbare resultaten op korte termijn. Maar wie denkt dat AI alleen voor grote spelers is, vergist zich. Zelfs kleine webshops kunnen met tools zoals Shopify’s AI-aangedreven marketing of HubSpot’s automation functies dezelfde principes toepassen – vaak tegen lagere kosten dan traditionele advertentiecampagnes. De kernvraag is niet of je het kunt betalen, maar of je het kunt missen als concurrenten wel meegaan en jij niet.
+      </p>
+      <p>
+        Een veelgehoorde tegenwerping is dat AI te onvoorspelbaar is of dat klanten er afstand van nemen als ze merken dat hun gedrag wordt gevolgd. Maar deze angst is gebaseerd op een misvatting over hoe moderne AI werkt. Goed geïmplementeerde systemen gebruiken anonimiteit en transparantie: ze tonen niet zomaar willekeurige producten, maar bieden oplossingen die aansluiten bij eerdere keuzes en behoeften. Klanten waarderen dit juist – mits het relevant en niet opdringerig voelt. De sleutel ligt in balans: te veel personalisatie voelt als stalking, te weinig als spam.
+      </p>
+      <p>
+        De praktijk leert dat bedrijven die deze stap zetten vaak binnen enkele maanden een meetbare uplift zien in conversie én klanttevredenheid. Neem bijvoorbeeld een middelgroot e-commercebedrijf uit België dat vorig jaar overstapte naar een AI-gedreven platform voor dynamische pricing en content-personalisatie. Binnen zes maanden steeg de omzet met 23 procent terwijl de acquisitiekosten met 15 procent daalden. Niet omdat ze meer geld uitgaven aan advertenties, maar omdat elke euro efficiënter werd besteed – precies daar waar de klant op dat moment was.
+      </p>
+      <p>
+        Dit roept natuurlijk de vraag op: waar begin je? De eerste stap is niet het kopen van dure software, maar het in kaart brengen van je huidige data-infrastructuur. Welke meetdata heb je al? Hoe consistent zijn ze? Vaak ontbreekt het niet aan tools, maar aan schone en bruikbare data. Vervolgens kies je voor een gefaseerde implementatie: start met één pijnpunt – zoals verlaten winkelwagens of lage terugkerende bezoekers – en test oplossingen voordat je alles overhoop haalt.
+      </p>
+      <p>
+        De grootste valkuil ligt echter in denken dat AI alles zelf doet. Succesvolle implementaties vereisen menselijke supervisie: marketeers moeten blijven sturen op merkwaarden, ethiek en strategische doelen. AI kan patronen herkennen die wij overzien, maar het begrijpt niet wat ‘goed’ betekent voor jouw bedrijf – tenzij jij dat definieert.
+      </p>
+      <p>
+        Uiteindelijk gaat deze revolutie niet over technologie alleen. Het gaat over mentaliteit: loslaten van de campagnegedachte waarin marketing een project is met begin- en einddatum, en omarmen van continuïteit waarin elke interactie kansen biedt.
+      </p>
+    </>
+  ),
   'google-ads-updates-en-annuleerknop-verplicht': (
     <>
       <p className="lead-para">
@@ -5044,6 +5072,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'van-campagnes-naar-continue-groei-hoe-ai-marketing-transformeert':
+    "Bij Stevin zien we dagelijks hoe bedrijven worstelen met deze transitie omdat ze vasthouden aan oude paradigma’s zoals ‘campagneplanning’ of ‘budgetallocatie’. Onze benadering is simpel: begin klein maar denk groot. Kies één proces waar inefficiëntie duidelijk is – bijvoorbeeld lead nurturing of productaanbevelingen – en test daar eerst AI-gestuurde oplossingen op uitvoeren voordat je schaalt naar andere kanalen.\n\nWat ons verbaast is hoe vaak organisaties vergeten om hun eigen data eerst goed te structureren voordat ze externe tools integreren. Een schoon CRM-systeem met consistente tags levert vaak al direct betere resultaten op dan dure nieuwe software.\n\nTot slot merken we dat succesvolle adoptie begint met training: medewerkers moeten snappen wat AI kan én kan *niet* doen binnen hun rol. Pas als teams begrijpen hoe algoritmen werken (bijvoorbeeld door middel van simpele A/B-testcases), durven ze echt los te laten.\n\nOnze ervaring leert dat bedrijven die deze stap zetten niet alleen groeicijfers zien stijgen, maar ook teams ontwikkelen die proactief nieuwe kansen ontdekken – iets wat campagnes nooit kunnen opleveren.",
   'google-ads-updates-en-annuleerknop-verplicht':
     "Voor bureau-eigenaars en in-house teams betekent dit dat campagnes flexibeler worden beheerd, maar ook dat AI-gestuurde optimalisatie een grotere rol gaat spelen. Het is raadzaam om bestaande workflows aan te passen en medewerkers te trainen in het interpreteren van deze nieuwe meetdata. De verplichte annuleerknop kan leiden tot minder zichtbaarheid voor sommige campagnes, dus plan campagnes strategisch in om pieken en dalen in bereik te voorkomen.",
   'google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage':
