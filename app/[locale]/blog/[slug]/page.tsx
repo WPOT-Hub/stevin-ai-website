@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ford-herinzet-experts-na-ai-teleurstelling': (
+    <>
+      <p className="lead-para">
+        Ford haalt oudere, ervaren ingenieurs terug in dienst om cruciale ontwikkelprojecten te leiden. De stap volgt op problemen met AI-gestuurde processen die niet de gewenste kwaliteit of efficiëntie opleverden.
+      </p>
+      <p>
+        Volgens CEO Jim Farley was de verwachting dat AI alleen al zou zorgen voor betere producten. In de praktijk bleken menselijke kennis en intuïtie nog steeds onmisbaar, vooral bij complexe ontwerp- en fabricagevraagstukken.
+      </p>
+      <p>
+        De auto-industrie is niet de enige sector die deze les leert. Bedrijven die volledig vertrouwen op geautomatiseerde oplossingen zonder voldoende menselijke controle lopen risico op fouten en vertragingen.
+      </p>
+    </>
+  ),
   'van-campagnes-naar-continue-groei-hoe-ai-marketing-transformeert': (
     <>
       <p className="lead-para">
@@ -5072,6 +5085,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ford-herinzet-experts-na-ai-teleurstelling':
+    "Voor bedrijven die AI implementeren betekent dit dat technologie een hulpmiddel blijft, geen vervanging. Ervaring en vakmanschap blijven cruciaal bij het nemen van strategische beslissingen. Het is verstandig om investeringen in AI af te wegen tegen de noodzaak van menselijke expertise, vooral bij kernprocessen waar fouten grote gevolgen kunnen hebben.",
   'van-campagnes-naar-continue-groei-hoe-ai-marketing-transformeert':
     "Bij Stevin zien we dagelijks hoe bedrijven worstelen met deze transitie omdat ze vasthouden aan oude paradigma’s zoals ‘campagneplanning’ of ‘budgetallocatie’. Onze benadering is simpel: begin klein maar denk groot. Kies één proces waar inefficiëntie duidelijk is – bijvoorbeeld lead nurturing of productaanbevelingen – en test daar eerst AI-gestuurde oplossingen op uitvoeren voordat je schaalt naar andere kanalen.\n\nWat ons verbaast is hoe vaak organisaties vergeten om hun eigen data eerst goed te structureren voordat ze externe tools integreren. Een schoon CRM-systeem met consistente tags levert vaak al direct betere resultaten op dan dure nieuwe software.\n\nTot slot merken we dat succesvolle adoptie begint met training: medewerkers moeten snappen wat AI kan én kan *niet* doen binnen hun rol. Pas als teams begrijpen hoe algoritmen werken (bijvoorbeeld door middel van simpele A/B-testcases), durven ze echt los te laten.\n\nOnze ervaring leert dat bedrijven die deze stap zetten niet alleen groeicijfers zien stijgen, maar ook teams ontwikkelen die proactief nieuwe kansen ontdekken – iets wat campagnes nooit kunnen opleveren.",
   'google-ads-updates-en-annuleerknop-verplicht':
