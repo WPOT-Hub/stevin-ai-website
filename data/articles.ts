@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ford-herinzet-experts-na-ai-teleurstelling',
+    format: 'dispatch' as const,
+    edition: '287',
+    category: 'Operations',
+    title: "Ford haalt ervaren ingenieurs terug na teleurstellende AI-resultaten",
+    dek: "Het automerk ziet de beperkingen van kunstmatige intelligentie en schakelt weer meer menselijke expertise in bij complexe technische projecten.",
+    publishedAt: '2026-06-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Ford haalt ervaren ingenieurs terug na teleurstellende AI-resultaten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'australie-onderzoekt-social-media-giganten-op-kinderverbod',
     format: 'dispatch' as const,
     edition: '286',
