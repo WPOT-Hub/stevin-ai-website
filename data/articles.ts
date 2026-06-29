@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'suno-lanceert-spark-incubator-programma-voor-onafhankelijke-artiesten',
+    format: 'dispatch' as const,
+    edition: '288',
+    category: 'Markt',
+    title: "Suno start incubator voor nieuwe artiesten met AI-machine",
+    dek: "Suno lanceert het Spark-programma om onafhankelijke muzikanten te ondersteunen met beurzen, coaching en marketing.",
+    publishedAt: '2026-06-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Suno start incubator voor nieuwe artiesten met AI-machine",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ford-herinzet-experts-na-ai-teleurstelling',
     format: 'dispatch' as const,
     edition: '287',
