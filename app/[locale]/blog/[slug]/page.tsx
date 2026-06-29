@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'suno-lanceert-spark-incubator-programma-voor-onafhankelijke-artiesten': (
+    <>
+      <p className="lead-para">
+        Suno, bekend van zijn AI-g gegenereerde muziek, introduceert het Spark-programma om nieuwe artiesten te ontdekken en te ontwikkelen. Het programma richt zich op ongetekende zangers, songwriters en producers die hun werk willen uitbrengen via Suno’s platform.
+      </p>
+      <p>
+        Deelnemers krijgen financiële steun in de vorm van beurzen, begeleiding van ervaren professionals en hulp bij het opbouwen van een publiek. Suno hoopt zo een streamingbestemming te worden waar zowel AI-g gegenereerde als originele muziek centraal staat.
+      </p>
+      <p>
+        Aanmelden kan voorlopig alleen via een selectieproces. De focus ligt op artiesten die nog geen contract hebben bij een platenlabel of managementbureau.
+      </p>
+    </>
+  ),
   'australie-onderzoekt-social-media-giganten-op-kinderverbod': (
     <>
       <p className="lead-para">
@@ -5098,6 +5111,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'suno-lanceert-spark-incubator-programma-voor-onafhankelijke-artiesten':
+    "Voor bedrijven die creatieve tools ontwikkelen, toont dit hoe AI-platforms kunnen uitbreiden naar traditionele markten zoals de muziekindustrie. Het benadrukt de noodzaak om zowel technologie als menselijke creativiteit te combineren om waarde te creëren. Voor bureaus die in contentcreatie werken, kan dit een signaal zijn dat hybride modellen tussen AI en menselijke input steeds belangrijker worden.",
   'australie-onderzoekt-social-media-giganten-op-kinderverbod':
     "Voor bedrijven die actief zijn op internationale markten is het belangrijk om lokale regelgeving nauwlettend te volgen. Dit soort ontwikkelingen laat zien dat overheden steeds vaker ingrijpen in digitale diensten, vooral waar het gaat om bescherming van kwetsbare groepen zoals kinderen. Het kan raadzaam zijn om interne compliance-teams te versterken of externe adviseurs in te schakelen om voorbereid te zijn op nieuwe wetgeving.",
   'ford-herinzet-experts-na-ai-teleurstelling':
