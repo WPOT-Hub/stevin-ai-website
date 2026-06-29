@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'waarom-tech-marketeers-nu-drie-stappen-vooruitmoeten-denken',
+    format: 'dispatch' as const,
+    edition: '285',
+    category: 'Markt',
+    title: "De techrecessie die niemand ziet aankomen: tijd voor een radicaal andere blik",
+    dek: "Wie nu alleen maar bespaart op marketingbudget, loopt straks achter de feiten aan als de techsector weer opschiet.",
+    publishedAt: '2026-06-29',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "De techrecessie die niemand ziet aankomen: tijd voor een radicaal andere blik",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'van-campagnes-naar-continue-groei-hoe-ai-marketing-transformeert',
     format: 'dispatch' as const,
     edition: '284',
