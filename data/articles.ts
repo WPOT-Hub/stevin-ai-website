@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'australie-onderzoekt-social-media-giganten-op-kinderverbod',
+    format: 'dispatch' as const,
+    edition: '286',
+    category: 'Beleid',
+    title: "Australië onderzoekt vijf social media-reuzen op schending kinderverbod",
+    dek: "De Australische overheid start een onderzoek naar vijf grote social media-platforms omdat ze de verboden toegang voor kinderen onder de 16 jaar niet afdwingen.",
+    publishedAt: '2026-06-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Australië onderzoekt vijf social media-reuzen op schending kinderverbod",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'waarom-tech-marketeers-nu-drie-stappen-vooruitmoeten-denken',
     format: 'dispatch' as const,
     edition: '285',
