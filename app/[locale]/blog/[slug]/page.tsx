@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'turbine-unit-stroom-uit-kanalen': (
+    <>
+      <p className="lead-para">
+        Een Nederlandse uitvinding maakt het mogelijk om stroom te winnen uit kanalen, rivieren of irrigatiesystemen met een compacte turbine die in een dag geplaatst kan worden. De unit werkt als een soort ‘slagroomklopper’ die de bewegingsenergie van water omzet in elektriciteit, aldus de ontwikkelaars. Er zijn geen dammen of stuwmeren nodig, wat de techniek geschikt maakt voor locaties waar grootschalige hydro-energie niet haalbaar is. De turbine is nu genomineerd voor de European Inventor Award 2026.
+      </p>
+      <p>
+        De installatie vereist alleen een hijskraan om de unit te plaatsen en een aansluiting op het stroomnet. Volgens de makers levert een gemiddelde turbine tussen de 50 en 200 kilowatt per uur op, afhankelijk van de waterstroomsnelheid. Dat is voldoende om bijvoorbeeld een boerderij of klein bedrijf van stroom te voorzien. De kosten liggen lager dan bij traditionele waterkrachtcentrales, omdat er geen dure bouwwerken nodig zijn.
+      </p>
+      <p>
+        De technologie past binnen de groeiende vraag naar lokale en duurzame energiebronnen. Overheden en bedrijven zoeken steeds vaker naar oplossingen die passen bij bestaande infrastructuur, zonder ingrijpende aanpassingen. De turbine-unit biedt hiervoor een praktische optie, zeker in gebieden met veel water maar weinig ruimte voor grote projecten.
+      </p>
+    </>
+  ),
   'zuid-korea-investeert-900-miljard-in-ai-en-semiconductor-plan': (
     <>
       <p className="lead-para">
@@ -5150,6 +5163,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'turbine-unit-stroom-uit-kanalen':
+    "Voor ondernemers die investeren in duurzame oplossingen biedt deze technologie een laagdrempelig alternatief voor traditionele energieopwekking. Het toont aan dat innovatie niet altijd grootschalig hoeft te zijn: kleine, slimme oplossingen kunnen net zo effectief zijn. Tegelijkertijd vraagt het wel om samenwerking met lokale overheden of netbeheerders om aansluitingen en vergunningen rond te krijgen.",
   'zuid-korea-investeert-900-miljard-in-ai-en-semiconductor-plan':
     "Voor Europese bedrijven die actief zijn in tech of supply chains betekent dit dat de druk op innovatie verder zal toenemen. Concurrentie komt niet alleen uit Azië, maar ook uit overheden die massaal investeren in strategische sectoren. Dit vraagt om samenwerking binnen Europa om schaalvoordeel te behalen en niet achterop te raken.",
   'oracle-stopt-met-java-ondersteuning-intel-macs-na-jdk-27':
