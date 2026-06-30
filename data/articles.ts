@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'zuid-koreaanse-techgiganten-investeren-meer-dan-550-miljard-in-geheugenfabrieken',
+    format: 'dispatch' as const,
+    edition: '296',
+    category: 'Markt',
+    title: "Zuid-Korea investeert meer dan 550 miljard in geheugenchips voor AI",
+    dek: "De twee grootste geheugenchipfabrikanten ter wereld zeggen minimaal 550 miljard dollar te investeren in nieuwe fabrieken, om de wereldwijde vraag naar RAM-chips voor AI toe te spitsen.",
+    publishedAt: '2026-06-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Zuid-Korea investeert meer dan 550 miljard in geheugenchips voor AI",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'denkspellen-ruimteoorlog-scenario-s',
     format: 'dispatch' as const,
     edition: '295',
