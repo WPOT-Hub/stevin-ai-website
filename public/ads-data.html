@@ -17,6 +17,17 @@
 <meta name="twitter:title" content="Je betaalt voor de ads. Je bureau bezit de data.">
 <meta name="twitter:description" content="Stevin geeft je grip op je marketing en je data.">
 <meta name="twitter:image" content="https://stevin.ai/ads-data-og.png">
+<script>
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=window.gtag||function(){dataLayer.push(arguments);};
+  gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'denied',personalization_storage:'denied',security_storage:'granted',wait_for_update:500});
+  gtag('set','ads_data_redaction',true);
+  gtag('set','url_passthrough',true);
+  window.stevinConsentState=function(c){var a=(c==='all'||c==='analytics'||c==='analytics_and_marketing');var m=(c==='all'||c==='marketing'||c==='analytics_and_marketing');return{analytics_storage:a?'granted':'denied',ad_storage:m?'granted':'denied',ad_user_data:m?'granted':'denied',ad_personalization:m?'granted':'denied',functionality_storage:a?'granted':'denied',personalization_storage:a?'granted':'denied'};};
+  window.stevinApplyConsent=function(c){gtag('consent','update',window.stevinConsentState(c));};
+  try{var _sc=localStorage.getItem('stevin_consent');if(_sc){window.stevinApplyConsent(_sc);}}catch(e){}
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://data.stevin.ai/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WHSXRR29');</script>
 <style>
 /* =========================================================
    Stevin — Colors & Type
@@ -559,6 +570,24 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
   .foot-col .t{font-family:var(--font-display);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px;font-weight:700}
   .foot-col a{display:block;font-size:14px;color:rgba(255,255,255,.78);margin-bottom:8px}
   .foot-bot{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(255,255,255,.5)}
+  .foot-legal a{color:rgba(255,255,255,.6);text-decoration:none}
+  .foot-legal a:hover{color:#fff;text-decoration:underline}
+  .foot-legal span{margin:0 4px;opacity:.5}
+  .ckb{position:fixed;left:0;right:0;bottom:0;z-index:80;padding:16px;display:flex;justify-content:center}
+  .ckb[hidden]{display:none}
+  .ckb-card{background:var(--navy);color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.4);max-width:560px;width:100%;padding:22px 24px}
+  .ckb-t{font-family:var(--font-display);font-weight:700;font-size:16px;margin:0 0 6px}
+  .ckb-d{font-size:13.5px;line-height:1.55;color:rgba(255,255,255,.72);margin:0 0 16px}
+  .ckb-d a{color:var(--accent-light);text-decoration:underline}
+  .ckb-btns{display:flex;gap:10px;flex-wrap:wrap}
+  .ckb-b{font-family:var(--font-display);font-weight:600;font-size:13.5px;padding:10px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;cursor:pointer;transition:all .2s}
+  .ckb-b:hover{background:rgba(255,255,255,.08)}
+  .ckb-b.ckb-pri{background:var(--neon);color:var(--navy);border-color:var(--neon)}
+  .ckb-b.ckb-pri:hover{background:var(--neon-dark)}
+  .ckb-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;border-top:1px solid rgba(255,255,255,.1);font-size:13px}
+  .ckb-row small{color:rgba(255,255,255,.55);font-size:12px}
+  .ckb-row input{width:18px;height:18px;accent-color:var(--accent);flex:0 0 auto}
+  .ckb-prefs[hidden],.ckb-main[hidden]{display:none}
   .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
   .rv.in{opacity:1;transform:none}
   @media(max-width:920px){.hero-grid,.proof,.price-wrap,.closing-grid{grid-template-columns:1fr;gap:36px}.feat,.steps{grid-template-columns:1fr 1fr}.nav-links a{display:none}.foot-top{grid-template-columns:1fr 1fr}
@@ -582,6 +611,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
 </style>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHSXRR29" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav id="nav" class="dark">
   <div class="wrap nav-in">
@@ -879,9 +909,41 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
       <div class="foot-col"><div class="t">Product</div><a href="#waarom">Werkwijze</a><a href="#hoe">Hoe het werkt</a><a href="#koppelingen">Koppelingen</a><a href="#start">Demo</a></div>
       <div class="foot-col"><div class="t">Stevin</div><a href="#verhaal">Het verhaal</a><a href="#start">Contact</a></div>
     </div>
-    <div class="foot-bot"><div>© 2026 Stevin, alle rechten voorbehouden.</div><div>Breda · Antwerpen</div></div>
+    <div class="foot-bot"><div>© 2026 Stevin, alle rechten voorbehouden.</div><div class="foot-legal"><a href="https://stevin.ai/privacy" target="_blank" rel="noopener">Privacybeleid</a> <span>·</span> <a href="#" onclick="window.openConsent&&window.openConsent();return false;">Cookie-instellingen</a></div><div>Breda · Antwerpen</div></div>
   </div>
 </footer>
+
+<div class="ckb" id="ckb" hidden>
+  <div class="ckb-card">
+    <div class="ckb-main" id="ckbMain">
+      <p class="ckb-t">Cookies en metingen</p>
+      <p class="ckb-d">Wij gebruiken cookies om de site te meten en onze campagnes te verbeteren. Kies wat je toestaat. Meer in ons <a href="https://stevin.ai/privacy" target="_blank" rel="noopener">privacybeleid</a>.</p>
+      <div class="ckb-btns">
+        <button class="ckb-b ckb-pri" data-c="all">Alles accepteren</button>
+        <button class="ckb-b" data-c="necessary">Alleen noodzakelijk</button>
+        <button class="ckb-b" id="ckbPrefBtn">Voorkeuren</button>
+      </div>
+    </div>
+    <div class="ckb-prefs" id="ckbPrefs" hidden>
+      <label class="ckb-row"><span><b>Analyse</b><br><small>Meten hoe de site gebruikt wordt (GA4, Clarity).</small></span><input type="checkbox" id="ckbA"></label>
+      <label class="ckb-row"><span><b>Marketing</b><br><small>Campagne- en conversiemeting (Google Ads, Meta).</small></span><input type="checkbox" id="ckbM"></label>
+      <div class="ckb-btns" style="margin-top:14px"><button class="ckb-b ckb-pri" id="ckbSave">Bewaren</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var ckb=document.getElementById('ckb');if(!ckb)return;
+    function choose(c){try{localStorage.setItem('stevin_consent',c);}catch(e){}if(window.stevinApplyConsent)window.stevinApplyConsent(c);ckb.setAttribute('hidden','');}
+    var stored=null;try{stored=localStorage.getItem('stevin_consent');}catch(e){}
+    if(!stored)ckb.removeAttribute('hidden');
+    [].forEach.call(ckb.querySelectorAll('[data-c]'),function(b){b.addEventListener('click',function(){choose(b.getAttribute('data-c'));});});
+    document.getElementById('ckbPrefBtn').addEventListener('click',function(){document.getElementById('ckbMain').setAttribute('hidden','');document.getElementById('ckbPrefs').removeAttribute('hidden');});
+    document.getElementById('ckbSave').addEventListener('click',function(){var a=document.getElementById('ckbA').checked,m=document.getElementById('ckbM').checked;choose(a&&m?'analytics_and_marketing':a?'analytics':m?'marketing':'necessary');});
+    window.openConsent=function(){document.getElementById('ckbPrefs').setAttribute('hidden','');document.getElementById('ckbMain').removeAttribute('hidden');ckb.removeAttribute('hidden');};
+  })();
+</script>
 
 <script>
   (function(){
@@ -889,7 +951,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
     function navTheme(){var light=window.scrollY>60;nav.classList.toggle('light',light);nav.classList.toggle('dark',!light);}
     window.addEventListener('scroll',navTheme,{passive:true});navTheme();
     var df=document.getElementById('demoForm');
-    if(df){df.addEventListener('submit',function(e){e.preventDefault();df.classList.add('done');});}
+    if(df){df.addEventListener('submit',function(e){e.preventDefault();try{(window.dataLayer=window.dataLayer||[]).push({event:'generate_lead',form:'ads-data'});}catch(_e){}df.classList.add('done');});}
     var steps=[].slice.call(document.querySelectorAll('#stage .dk-step'));
     var rails=[].slice.call(document.querySelectorAll('#rail .r'));
     var win=document.getElementById('anim');
