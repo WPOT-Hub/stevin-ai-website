@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'oracle-stopt-met-java-ondersteuning-intel-macs-na-jdk-27': (
+    <>
+      <p className="lead-para">
+        Oracle heeft aangekondigd dat na de release van JDK 27, die gepland staat voor september 2026, er geen nieuwe versies van Java meer beschikbaar zullen zijn voor Macs met Intel-processors. Dit betekent dat ontwikkelaars op deze apparaten niet meer kunnen updaten naar latere Java-versies, aldus het bedrijf.
+      </p>
+      <p>
+        De beslissing volgt op Apple’s eigen overstap naar eigen siliconen in Macs en de daarbij horende afbouw van Intel-compatibiliteit. Sinds de overgang naar Apple Silicon in 2020 is de vraag naar Java-ondersteuning op oudere hardware gestaag afgenomen. Oracle sluit nu definitief de deur voor deze groep gebruikers.
+      </p>
+      <p>
+        Voor bedrijven met legacy-systemen of applicaties die afhankelijk zijn van oudere Java-versies, kan dit gevolgen hebben. Zij moeten nu bepalen of ze hun systemen migreren of alternatieven zoeken om compatibiliteitsproblemen te voorkomen.
+      </p>
+    </>
+  ),
   'rocket-lab-koopt-iridium-satellietnetwerk': (
     <>
       <p className="lead-para">
@@ -5124,6 +5137,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'oracle-stopt-met-java-ondersteuning-intel-macs-na-jdk-27':
+    "Deze stap benadrukt het belang van toekomstbestendige IT-infrastructuur. Voor bedrijven die nog afhankelijk zijn van oudere hardware of software is het zaak om nu actie te ondernemen. Een migratietraject kost tijd en middelen, dus een proactieve aanpak is verstandig. Daarnaast kan dit soort ontwikkelingen ook een signaal zijn om kritisch te kijken naar afhankelijkheid van specifieke technologieën en leveranciers.",
   'rocket-lab-koopt-iridium-satellietnetwerk':
     "Voor bedrijven die afhankelijk zijn van betrouwbare communicatie op plekken zonder mobiel bereik, zoals bouwprojecten, scheepvaart of logistiek, kan deze ontwikkeling nieuwe mogelijkheden bieden. De concurrentie tussen ruimtevaartbedrijven leidt tot lagere kosten en betere dienstverlening, wat uiteindelijk ten goede komt aan eindgebruikers. Voor Nederlandse en Belgische ondernemingen is het goed om te monitoren hoe deze markt zich ontwikkelt, vooral als ze actief zijn in sectoren waar continue connectiviteit cruciaal is.",
   'suno-lanceert-spark-incubator-programma-voor-onafhankelijke-artiesten':
