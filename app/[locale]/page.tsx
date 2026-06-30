@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation'
 import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import MeetlatRuler from '@/components/MeetlatRuler'
+import SignalFlowDemo from '@/components/SignalFlowDemo'
 import TrustBadges from '@/components/TrustBadges'
 import { getHomepageFaqs, type FAQ } from '@/data/faqs'
 import { nativeConnectors } from '@/data/connectors'
@@ -359,15 +360,9 @@ export default async function HomePage({ params }: Props) {
             </Link>
           </div>
 
-          <MeetlatRuler color="rgba(255,255,255,.3)" />
-          <div className="mt-3 grid grid-cols-4 font-mono text-[11px] text-white/35 tracking-[0.04em]">
-            <span>01 / KOPPELEN</span>
-            <span>02 / VERGELIJKEN</span>
-            <span>03 / ACTIVEREN</span>
-            <span>04 / VERBETEREN</span>
-          </div>
+          <SignalFlowDemo />
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { step: t('step1_num'), title: t('step1_title'), desc: t('step1_desc'), claim: t('step1_claim') },
               { step: t('step2_num'), title: t('step2_title'), desc: t('step2_desc'), claim: t('step2_claim') },
