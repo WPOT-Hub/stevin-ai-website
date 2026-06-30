@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'denkspellen-ruimteoorlog-scenario-s': (
+    <>
+      <p className="lead-para">
+        Een internationale denktank heeft deze maand scenario’s uitgewerkt waarin landen moeten bepalen hoe ze reageren op provocaties in de ruimte. Doel is om duidelijke kaders te schetsen voor escalatiebeheersing, aldus de organisatoren. Tijdens de oefeningen kwamen vragen naar voren over welke acties een directe tegenreactie rechtvaardigen en welke niet.
+      </p>
+      <p>
+        De scenario’s omvatten onder meer het uitschakelen van satellieten, cyberaanvallen op ruimtevaartuigen en het blokkeren van communicatiekanalen. Experts benadrukken dat de ruimte steeds vaker een strijdtoneel wordt, maar dat er nog geen bindende regels zijn voor hoe staten moeten handelen. Dit vergroot het risico op onbedoelde escalatie tussen landen.
+      </p>
+      <p>
+        De uitkomsten van de simulatie worden gedeeld met overheden en defensie-instanties wereldwijd. Een van de belangrijkste lessen is dat transparantie en communicatie cruciaal zijn om misverstanden te voorkomen. Daarnaast wordt gepleit voor internationale afspraken over wat wel en niet toelaatbaar is in de ruimte.
+      </p>
+    </>
+  ),
   'rocket-lab-krijgt-toegang-tot-globale-satellietmarkt-met-8-miljard-deal': (
     <>
       <p className="lead-para">
@@ -5176,6 +5189,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'denkspellen-ruimteoorlog-scenario-s':
+    "Voor bedrijven die afhankelijk zijn van satellietdata of ruimtetechnologie kan dit beleidsmatige ontwikkelingen hebben. Onvoorspelbare conflicten in de ruimte kunnen leiden tot verstoring van kritieke infrastructuur zoals gps, communicatienetwerken of weersvoorspellingssystemen. Het is verstandig om nu al na te denken over back-upplannen en risicobeheersing rond deze afhankelijkheden.",
   'rocket-lab-krijgt-toegang-tot-globale-satellietmarkt-met-8-miljard-deal':
     "Voor ondernemers die actief zijn in technologische sectoren toont deze deal hoe snel markten kunnen verschuiven door grote overnames. Het benadrukt het belang van schaalvergroting en verticale integratie om concurrentievoordeel te behalen. Tegelijkertijd laat het zien dat ruimtevaart niet langer alleen toegankelijk is voor gevestigde spelers, maar ook voor gespecialiseerde bedrijven die durven te investeren in groei.",
   'turbine-unit-stroom-uit-kanalen':
