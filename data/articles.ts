@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'turbine-unit-stroom-uit-kanalen',
+    format: 'dispatch' as const,
+    edition: '293',
+    category: 'Innovatie',
+    title: "Kant-en-klare turbine haalt stroom uit kanalen en rivieren",
+    dek: "Een nieuwe kant-en-klare turbine-unit kan direct energie opwekken in bestaande waterstromen zonder grote infrastructurele aanpassingen.",
+    publishedAt: '2026-06-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'INNOVATIE',
+    posterTopic: "Kant-en-klare turbine haalt stroom uit kanalen en rivieren",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'llm-beveiliging-prompt-injection-risico-snel-groeiend',
     format: 'dispatch' as const,
     edition: '292',
