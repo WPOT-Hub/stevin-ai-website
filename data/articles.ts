@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'zuid-korea-investeert-1-biljoen-in-chipproductie-en-humanoide-robots',
+    format: 'dispatch' as const,
+    edition: '298',
+    category: 'Technologie',
+    title: "Zuid-Korea investeert 1 biljoen dollar in chipfabrieken en humanoïde robots",
+    dek: "De Zuid-Koreaanse overheid zet fors in op eigen productie van geheugenchips en humanoïde robots, met een budget van ruim 1 biljoen dollar tot 2028.",
+    publishedAt: '2026-06-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECHNOLOGIE',
+    posterTopic: "Zuid-Korea investeert 1 biljoen dollar in chipfabrieken en humanoïde robots",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-coding-startup-135m-series-a-palihapitiya',
     format: 'dispatch' as const,
     edition: '297',
