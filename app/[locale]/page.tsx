@@ -431,7 +431,7 @@ export default async function HomePage({ params }: Props) {
                 style={{ padding: '40px 32px' }}
               >
                 <span
-                  className="font-display font-extrabold text-pink leading-none"
+                  className="font-display font-extrabold text-accent leading-none"
                   style={{ fontSize: '48px', letterSpacing: '-0.04em' }}
                 >
                   {item.num}

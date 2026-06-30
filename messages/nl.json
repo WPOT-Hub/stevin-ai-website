@@ -190,11 +190,11 @@
   "diensten": {
     "eyebrow": "DIENSTEN",
     "h1_line1": "We doen een ding.",
-    "h1_line2": "De meetlat bouwen.",
+    "h1_line2": "Grip teruggeven.",
     "sub": "Geen pakkettenlijst. Geen modules met checkboxes. Een werkend platform dat spend en resultaat met elkaar laat kloppen. in combinaties die bij jou passen.",
     "tracks_eyebrow": "DRIE TRACKS",
     "tracks_h2": "Een platform. Drie manieren waarop het naast je komt staan.",
-    "tracks_sub": "Kies wat past. Combineer, schuif, switch. de meetlat blijft dezelfde.",
+    "tracks_sub": "Kies wat past. Combineer, schuif, switch. je grip blijft dezelfde.",
     "track1_num": "01",
     "track1_meta": "Self-serve · jouw stack",
     "track1_title": "Platform-licentie",
@@ -211,7 +211,7 @@
     "closing_eyebrow": "Het is geen wonder. Het is Stevin.",
     "closing_h2": "Niet zeker welke track? Dat lossen we in een gesprek op.",
     "closing_cta1": "Bespreek welke track bij jou past",
-    "closing_cta2": "Bekijk de meetlat"
+    "closing_cta2": "Bekijk hoe het werkt"
   },
   "werkwijze": {
     "eyebrow": "Werkwijze",
@@ -253,8 +253,8 @@
   },
   "platform": {
     "eyebrow": "PLATFORM",
-    "h1": "De meetlat.",
-    "h1_sub": "onder je marketing.",
+    "h1": "Grip.",
+    "h1_sub": "op je marketing.",
     "sub": "Platform-cijfers naast de werkelijkheid in je CRM. Native koppelingen op de marketing-stack, 24/7 monitoring, rapporten die spend aan resultaat koppelen.",
     "cta_demo": "Plan een demo",
     "cta_integraties": "Bekijk integraties",
@@ -334,7 +334,7 @@
     "extra7_title": "Feedback Loops",
     "extra7_desc": "Het platform leert van elke interactie. Rapporten en adviezen passen zich aan op jouw tone of voice.",
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
-    "cta_h2": "De meetlat onder je marketing. live zien werken.",
+    "cta_h2": "Grip op je marketing. live zien werken.",
     "cta_sub": "Plan een demo en zie hoe Stevin je volledige marketingstack in een systeem samenbrengt."
   },
   "integraties": {
@@ -1015,7 +1015,7 @@
     "feat1_title": "Merk-mentions in kaart",
     "feat1_desc": "Waar en hoe vaak wordt je merk genoemd? Social, reviews, forums en nieuws. gecentraliseerd en gefilterd op relevantie. Feitelijk, niet gevoelig.",
     "feat2_title": "Branded Search Trends",
-    "feat2_desc": "Stijgt de vraag naar jouw merk? Volg branded search volume en direct traffic over tijd. De echte meetlat voor awareness-investering.",
+    "feat2_desc": "Stijgt de vraag naar jouw merk? Volg branded search volume en direct traffic over tijd. De echte graadmeter voor awareness-investering.",
     "feat3_title": "Campagne-oorzaak en gevolg",
     "feat3_desc": "Meet het effect van awareness-campagnes op branded traffic, direct visits en conversie. Van top-funnel naar bottom. herleidbaar, niet vermoed.",
     "feat4_title": "Concurrentie Analyse",
@@ -1164,7 +1164,7 @@
     "uc6": "Je besteedt te veel tijd aan het combineren van data uit verschillende bronnen",
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Zie wat je betaalt. Zie wat het oplevert.",
-    "cta_sub": "Van online scherm tot fysiek schap. een meetlat. Plan een gesprek en we laten zien hoe Stevin jouw retail marketing verbindt.",
+    "cta_sub": "Van online scherm tot fysiek schap. een systeem. Plan een gesprek en we laten zien hoe Stevin jouw retail marketing verbindt.",
     "cta_btn": "Plan een gesprek"
   },
   "simon_stevin": {
@@ -1179,7 +1179,7 @@
     "intro_sub": "In een tijd dat Europa rekende met breuken op perkament, schreef hij De Thiende. en introduceerde decimalen. Niet omdat het mooier klonk, maar omdat het klopte.",
     "body_p2": "Zijn gedachte: wat op het eerste gezicht een wonder lijkt, is bij nader inzien gewoon logica die nog niet was doorgrond. Zwaartekracht. Valsnelheid. Getijden. Allemaal \"wonderen\" tot iemand de getallen erachter rangschikt.",
     "body_p3": "Marketing is in 2026 waar natuurkunde was in 1586. We vertrouwen dashboards die elkaar tegenspreken. We noemen het \"magie\" als iets werkt. We accepteren black boxes omdat de complexiteit ons afschrikt.",
-    "body_p4": "Wij dragen zijn naam omdat wij zijn werk voortzetten. niet in polders en zeilwagens, maar in marketingbudgetten en CRM-data. De meetlat leggen waar anderen het bij \"dat is toch niet te bewijzen\" laten.",
+    "body_p4": "Wij dragen zijn naam omdat wij zijn werk voortzetten. niet in polders en zeilwagens, maar in marketingbudgetten en CRM-data. Grip pakken waar anderen het bij \"dat is toch niet te bewijzen\" laten.",
     "closing_p": "Het is geen wonder. Het is Stevin.",
     "closing_cta": "Zie wat je betaalt. Zie wat het oplevert.",
     "closing_footer": "Gedachte uit 1586. Nog steeds bruikbaar."
