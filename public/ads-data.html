@@ -361,9 +361,10 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
   /* hero */
   .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:#fff;padding:96px 0 104px;position:relative;overflow:hidden}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero-grid>*{min-width:0}
   .hero .eyebrow{color:rgba(255,255,255,.55)}
   .hero .eyebrow .ln{background:rgba(255,255,255,.45)}
-  .hero h1{font-weight:800;font-size:clamp(40px,5.4vw,72px);line-height:1.04;color:#fff;margin:28px 0 0}
+  .hero h1{font-weight:800;font-size:clamp(24px,5.6vw,72px);line-height:1.05;color:#fff;margin:28px 0 0;overflow-wrap:break-word}
   .hero h1 .hl{color:var(--accent-light)}
   .hero .sub{font-size:19px;line-height:1.55;color:rgba(255,255,255,.78);max-width:540px;margin:26px 0 0}
   .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
@@ -556,7 +557,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
   .foot-bot{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(255,255,255,.5)}
   .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
   .rv.in{opacity:1;transform:none}
-  @media(max-width:920px){.hero-grid,.proof,.price-wrap{grid-template-columns:1fr;gap:36px}.feat,.steps{grid-template-columns:1fr 1fr}.nav-links{display:none}.foot-top{grid-template-columns:1fr 1fr}
+  @media(max-width:920px){.hero-grid,.proof,.price-wrap{grid-template-columns:1fr;gap:36px}.feat,.steps{grid-template-columns:1fr 1fr}.nav-links a{display:none}.foot-top{grid-template-columns:1fr 1fr}
     .cmp{grid-template-columns:1fr;font-size:14.5px;border:none;background:transparent}
     .cmp>div{border-bottom:none;padding:0}
     .cmp .hd,.cmp>div:first-child{display:none}
@@ -566,7 +567,13 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
     .cmp .nc{background:rgba(61,142,255,.05);border-color:var(--accent);color:var(--navy);font-weight:500}
     .cmp .oc::before{content:"Bureau: ";font-weight:600;color:var(--muted)}
     .cmp .nc::before{content:"Stevin: ";font-weight:700;color:var(--accent)}}
-  @media(max-width:560px){.feat,.steps{grid-template-columns:1fr}}
+  @media(max-width:560px){.feat,.steps{grid-template-columns:1fr}
+    .tiles{flex-wrap:wrap}
+    .tile{flex:1 1 calc(50% - 5px)}
+    .dk-stage{min-height:330px}
+    .acts{flex-wrap:wrap;gap:10px}
+    .dk-rail{flex-wrap:wrap;gap:6px}
+    .dk-rail .r{padding:4px 9px;font-size:11px}}
   @media(prefers-reduced-motion:reduce){.rv{transition:none;opacity:1;transform:none}}
 </style>
 </head>
@@ -686,7 +693,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
     <div class="feat">
       <div class="fcard rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-6 4 4 7-9" stroke="#3D8EFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Signaleert vooraf</h3><p>Een vermoeide creative, een verkeerde bidstrategie, een concurrent die opschaalt, een hittegolf die je publiek wegtrekt. Wij zien het en zeggen wat je moet doen, met de reden erbij.</p></div>
       <div class="fcard rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#3D8EFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Eén tik, dan staat het live</h3><p>Geen rapport interpreteren. Een voorstel via WhatsApp, jij of je team tikt op akkoord, wij zetten het klaar. Niks blijft liggen.</p></div>
-      <div class="fcard rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 8l7-5 7 5" stroke="#3D8EFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Jouw data werkt voor jou</h3><p>Hoe langer je Stevin gebruikt, hoe scherper het advies. Jouw data herleidt advies dat alleen voor jou klopt. Dat geeft een bureau-dashboard je nooit.</p></div>
+      <div class="fcard rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 8l7-5 7 5" stroke="#3D8EFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Jouw data werkt voor jou</h3><p>Hoe langer je Stevin gebruikt, hoe scherper het advies. Jouw data levert advies dat alleen voor jou klopt. Dat geeft een bureau-dashboard je nooit.</p></div>
     </div>
   </div>
 </section>
@@ -762,7 +769,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
     <div>
       <div class="eyebrow"><span class="ln"></span>VOOR WIE</div>
       <h2>Voor teams die willen weten wat klopt</h2>
-      <p>Of je nu een merk runt, een groeiend team aanstuurt of een bureau hebt: je wilt weten waaróm je marketing werkt, niet pas horen dat het budget op is. Stevin geeft je dat overzicht, in gewone taal, zonder dat je data-analist hoeft te zijn.</p>
+      <p>Of je nu een merk runt, een groeiend team aanstuurt of een bureau hebt: je wilt weten waarom je marketing werkt, niet pas horen dat het budget op is. Stevin geeft je dat overzicht, in gewone taal, zonder dat je data-analist hoeft te zijn.</p>
     </div>
   </div>
 </section>
