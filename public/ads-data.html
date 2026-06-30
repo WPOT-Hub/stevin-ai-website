@@ -531,6 +531,10 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
   .slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--accent);box-shadow:0 2px 6px rgba(0,0,0,.3);cursor:pointer}
   .slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--accent);box-shadow:0 2px 6px rgba(0,0,0,.3);cursor:pointer}
   .slhint{font-size:12px;color:rgba(255,255,255,.5);margin-top:9px}
+  .mtoggle{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:3px;margin:2px 0 14px}
+  .mt-opt{font-family:var(--font-display);font-size:12px;font-weight:600;color:rgba(255,255,255,.6);background:transparent;border:none;border-radius:999px;padding:5px 14px;cursor:pointer;transition:all .2s}
+  .mt-opt.on{background:#3D8EFF;color:#fff}
+  .equiv{font-family:var(--font-body);font-size:12px;font-weight:600;color:rgba(255,255,255,.45);margin-left:4px}
   .calc-foot{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:14px;color:rgba(255,255,255,.8)}
   .calc-foot b{color:var(--neon);font-weight:800}
   .info-i{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;border:1px solid var(--line-strong);color:var(--muted);font-size:11px;font-style:italic;font-weight:600;font-family:var(--font-display);cursor:pointer;position:relative;vertical-align:middle;margin-left:8px;transition:all .2s}
@@ -876,8 +880,9 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
         <span class="lab">Je mediabudget per maand</span>
         <div class="inrow"><span>&euro;</span><input id="spend" type="text" inputmode="numeric" value="5.000" aria-label="Mediabudget per maand"></div>
         <div class="slab">
-          <div class="slrow"><span class="lab2">Marge op je media-inkoop</span><span class="slval" id="pctVal">25%</span></div>
-          <input id="pct" class="slider" type="range" min="10" max="50" step="1" value="25" aria-label="Marge percentage">
+          <div class="slrow"><span class="lab2" id="mTypeLabel">Markup op je media-inkoop</span><span class="slval"><span id="pctVal">25%</span> <span class="equiv" id="equiv">= 20% marge</span></span></div>
+          <div class="mtoggle"><button type="button" class="mt-opt on" data-m="markup">Markup</button><button type="button" class="mt-opt" data-m="marge">Marge</button></div>
+          <input id="pct" class="slider" type="range" min="10" max="50" step="1" value="25" aria-label="Percentage">
           <div class="slhint">In de markt meestal 10 tot 25%, soms hoger. En dat bovenop de uren die je al betaalt.</div>
         </div>
         <div class="out">
@@ -1009,16 +1014,23 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
     var pct=document.getElementById('pct');
     function fmt(n){return n.toLocaleString('nl-NL');}
     function fillSlider(){var p=(pct.value-pct.min)/(pct.max-pct.min)*100;pct.style.background='linear-gradient(90deg,var(--accent) '+p+'%,rgba(255,255,255,.14) '+p+'%)';}
+    var mode='markup';
+    var mTypeLabel=document.getElementById('mTypeLabel'),equiv=document.getElementById('equiv');
     function calc(){
       var v=parseInt((sp.value||'0').replace(/[^0-9]/g,''),10)||0;
-      var r=+pct.value;
-      document.getElementById('pctVal').textContent=r+'%';
-      document.getElementById('pctInline').textContent=r+'%';
-      var mnd=Math.round(v*r/100);
+      var p=+pct.value, r=p/100;
+      // markup = opslag op de netto media-inkoop (budget=totaal). marge = % van het totaal.
+      var mnd = mode==='markup' ? Math.round(v*r/(1+r)) : Math.round(v*r);
+      document.getElementById('pctVal').textContent=p+'%';
+      document.getElementById('pctInline').textContent=p+'% '+(mode==='markup'?'markup':'marge');
+      mTypeLabel.textContent=(mode==='markup'?'Markup':'Marge')+' op je media-inkoop';
+      if(mode==='markup'){equiv.textContent='= '+Math.round(r/(1+r)*100)+'% marge';}
+      else{equiv.textContent='= '+Math.round(r/(1-r)*100)+'% markup';}
       document.getElementById('mkMnd').innerHTML='€ '+fmt(mnd)+' / maand';
       document.getElementById('mkJaar').innerHTML='€ '+fmt(mnd*12);
       fillSlider();
     }
+    [].forEach.call(document.querySelectorAll('.mt-opt'),function(b){b.addEventListener('click',function(){mode=b.getAttribute('data-m');[].forEach.call(document.querySelectorAll('.mt-opt'),function(x){x.classList.toggle('on',x===b);});calc();});});
     if(sp&&pct){sp.addEventListener('input',calc);pct.addEventListener('input',calc);calc();}
     var track=document.getElementById('track');
     if(track){
