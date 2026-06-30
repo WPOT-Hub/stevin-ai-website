@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'oracle-stopt-met-java-ondersteuning-intel-macs-na-jdk-27',
+    format: 'dispatch' as const,
+    edition: '290',
+    category: 'Tech',
+    title: "Oracle stopt met Java voor Intel-Macs na JDK 27",
+    dek: "Oracle stopt na versie 27 van de Java Development Kit (JDK) met ondersteuning voor Intel-Macs.",
+    publishedAt: '2026-06-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Oracle stopt met Java voor Intel-Macs na JDK 27",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'rocket-lab-koopt-iridium-satellietnetwerk',
     format: 'dispatch' as const,
     edition: '289',
