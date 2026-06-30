@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-coding-startup-135m-series-a-palihapitiya',
+    format: 'dispatch' as const,
+    edition: '297',
+    category: 'Markt',
+    title: "AI-codegenerator haalt 135 miljoen op bij start Series A",
+    dek: "De nieuwe AI-codegenerator van Chamath Palihapitiya sluit een Series A af met 135 miljoen dollar en neemt hijzelf de rol van CEO op zich.",
+    publishedAt: '2026-06-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "AI-codegenerator haalt 135 miljoen op bij start Series A",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'zuid-koreaanse-techgiganten-investeren-meer-dan-550-miljard-in-geheugenfabrieken',
     format: 'dispatch' as const,
     edition: '296',
