@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'rocket-lab-krijgt-toegang-tot-globale-satellietmarkt-met-8-miljard-deal',
+    format: 'dispatch' as const,
+    edition: '294',
+    category: 'Markt',
+    title: "Rocket Lab koopt Iridium voor 8 miljard dollar en wordt satellietgigant",
+    dek: "Rocket Lab neemt het satellietnetwerk van Iridium over voor 8 miljard dollar, waarmee het een directe concurrent wordt van SpaceX in de ruimtevaartsector.",
+    publishedAt: '2026-06-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Rocket Lab koopt Iridium voor 8 miljard dollar en wordt satellietgigant",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'turbine-unit-stroom-uit-kanalen',
     format: 'dispatch' as const,
     edition: '293',
