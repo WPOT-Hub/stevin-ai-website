@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'rocket-lab-koopt-iridium-satellietnetwerk',
+    format: 'dispatch' as const,
+    edition: '289',
+    category: 'Markt',
+    title: "Rocket Lab koopt Iridium: ruimtevaartbedrijf stapt in satellietcommunicatie",
+    dek: "Met de overname van het satellietnetwerk Iridium breidt Rocket Lab zijn activiteiten uit naar directe communicatiediensten voor consumenten en bedrijven.",
+    publishedAt: '2026-06-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Rocket Lab koopt Iridium: ruimtevaartbedrijf stapt in satellietcommunicatie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'suno-lanceert-spark-incubator-programma-voor-onafhankelijke-artiesten',
     format: 'dispatch' as const,
     edition: '288',
