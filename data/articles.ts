@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'denkspellen-ruimteoorlog-scenario-s',
+    format: 'dispatch' as const,
+    edition: '295',
+    category: 'Beleid',
+    title: "Oorlog in de ruimte: hoe reageer je op escalatie?",
+    dek: "Een denktank simuleert hoe landen moeten reageren bij escalatie in ruimteconflicten, met als kernvraag: wat is de grens voor een passende reactie?",
+    publishedAt: '2026-06-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Oorlog in de ruimte: hoe reageer je op escalatie?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'rocket-lab-krijgt-toegang-tot-globale-satellietmarkt-met-8-miljard-deal',
     format: 'dispatch' as const,
     edition: '294',
