@@ -28,19 +28,20 @@ export default async function PrivacyPage({ params }: Props) {
   const lastUpdated = '11 mei 2026'
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16 text-foreground">
+    <main className="bg-surface text-primary">
+      <div className="mx-auto max-w-3xl px-6 py-16">
       <header className="mb-12">
         <h1 className="text-3xl font-semibold tracking-tight">
           {isEn ? 'Privacy Policy' : 'Privacyverklaring'}
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-2 text-sm text-muted">
           {isEn ? `Last updated: ${lastUpdated}` : `Laatst bijgewerkt: ${lastUpdated}`}
         </p>
       </header>
 
       {isEn ? <PrivacyEnglish /> : <PrivacyDutch />}
 
-      <footer className="mt-16 border-t border-border pt-8 text-xs text-muted-foreground space-y-2">
+      <footer className="mt-16 border-t border-border pt-8 text-xs text-muted space-y-2">
         <p>
           {isEn ? (
             <>
@@ -63,6 +64,7 @@ export default async function PrivacyPage({ params }: Props) {
           <a href="mailto:privacy@stevin.ai" className="underline">privacy@stevin.ai</a>
         </p>
       </footer>
+      </div>
     </main>
   )
 }

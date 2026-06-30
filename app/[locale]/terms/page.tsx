@@ -28,19 +28,20 @@ export default async function TermsPage({ params }: Props) {
   const lastUpdated = '28 mei 2026'
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16">
+    <main className="bg-surface text-primary">
+      <div className="mx-auto max-w-3xl px-6 py-16">
       <header className="mb-10">
         <h1 className="text-3xl font-semibold tracking-tight">
           {isEn ? 'Terms of Service' : 'Algemene Voorwaarden'}
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-2 text-sm text-muted">
           {isEn ? `Last updated: ${lastUpdated}` : `Laatst bijgewerkt: ${lastUpdated}`}
         </p>
       </header>
 
       {isEn ? <TermsEnglish /> : <TermsDutch />}
 
-      <footer className="mt-16 border-t border-border pt-8 text-xs text-muted-foreground space-y-2">
+      <footer className="mt-16 border-t border-border pt-8 text-xs text-muted space-y-2">
         <p>
           {isEn ? (
             <>
@@ -63,6 +64,7 @@ export default async function TermsPage({ params }: Props) {
           <a href="mailto:legal@stevin.ai" className="underline">legal@stevin.ai</a>
         </p>
       </footer>
+      </div>
     </main>
   )
 }

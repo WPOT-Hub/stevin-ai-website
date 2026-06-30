@@ -28,19 +28,20 @@ export default async function DPAPage({ params }: Props) {
   const lastUpdated = '1 april 2026'
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16">
+    <main className="bg-surface text-primary">
+      <div className="mx-auto max-w-3xl px-6 py-16">
       <header className="mb-10">
         <h1 className="text-3xl font-semibold tracking-tight">
           {isEn ? 'Data Processing Agreement' : 'Verwerkersovereenkomst'}
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-2 text-sm text-muted">
           {isEn ? `Last updated: ${lastUpdated}` : `Laatst bijgewerkt: ${lastUpdated}`}
         </p>
       </header>
 
       {isEn ? <DpaEnglish /> : <DpaDutch />}
 
-      <footer className="mt-16 border-t border-border pt-8 text-xs text-muted-foreground space-y-2">
+      <footer className="mt-16 border-t border-border pt-8 text-xs text-muted space-y-2">
         <p>
           {isEn
             ? <>Stevin.AI is a trade name of <strong>WPOT B.V.</strong>, KvK <strong>87774372</strong>, VAT NL864401954B01, registered office <strong>Amstenradestraat 25, 4834 JB Breda, Netherlands</strong>.</>
@@ -49,6 +50,7 @@ export default async function DPAPage({ params }: Props) {
         </p>
         <p>{isEn ? 'Contact: ' : 'Contact: '}<a className="underline" href="mailto:koen@stevin.ai">koen@stevin.ai</a></p>
       </footer>
+      </div>
     </main>
   )
 }
