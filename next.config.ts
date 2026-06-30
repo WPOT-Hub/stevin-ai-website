@@ -24,6 +24,15 @@ const nextConfig: NextConfig = {
       },
     ]
   },
+  async rewrites() {
+    return [
+      // Campagne-landingspagina als statisch bestand in /public, schone URL zonder .html
+      {
+        source: '/ads-data',
+        destination: '/ads-data.html',
+      },
+    ]
+  },
   async redirects() {
     return [
       {
