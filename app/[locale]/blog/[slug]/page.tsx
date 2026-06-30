@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'rocket-lab-koopt-iridium-satellietnetwerk': (
+    <>
+      <p className="lead-para">
+        Ruimtevaartbedrijf Rocket Lab neemt het Amerikaanse Iridium over, een van de grootste spelers in satellietcommunicatie. De deal kost ongeveer 750 miljoen dollar en geeft Rocket Lab toegang tot een wereldwijd netwerk van 66 satellieten. Dit netwerk biedt onder meer spraak- en datadiensten voor gebruikers op afgelegen locaties waar reguliere mobiele netwerken niet beschikbaar zijn.
+      </p>
+      <p>
+        De overname past in de strategie van Rocket Lab om zich te ontwikkelen tot een volledig geïntegreerd ruimtevaartbedrijf. Naast lanceringen gaat het nu ook zelf communicatiediensten aanbieden, waarmee het concurreert met partijen als SpaceX en Starlink. Met deze stap hoopt Rocket Lab nieuwe inkomstenbronnen aan te boren, waaronder zakelijke klanten en overheden die betrouwbare communicatie nodig hebben.
+      </p>
+      <p>
+        Iridium blijft voorlopig onder eigen naam opereren, maar zal volledig worden geïntegreerd in de activiteiten van Rocket Lab. De transactie moet voor het vierde kwartaal van 2026 worden afgerond, aldus een woordvoerder van het bedrijf.
+      </p>
+    </>
+  ),
   'suno-lanceert-spark-incubator-programma-voor-onafhankelijke-artiesten': (
     <>
       <p className="lead-para">
@@ -5111,6 +5124,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'rocket-lab-koopt-iridium-satellietnetwerk':
+    "Voor bedrijven die afhankelijk zijn van betrouwbare communicatie op plekken zonder mobiel bereik, zoals bouwprojecten, scheepvaart of logistiek, kan deze ontwikkeling nieuwe mogelijkheden bieden. De concurrentie tussen ruimtevaartbedrijven leidt tot lagere kosten en betere dienstverlening, wat uiteindelijk ten goede komt aan eindgebruikers. Voor Nederlandse en Belgische ondernemingen is het goed om te monitoren hoe deze markt zich ontwikkelt, vooral als ze actief zijn in sectoren waar continue connectiviteit cruciaal is.",
   'suno-lanceert-spark-incubator-programma-voor-onafhankelijke-artiesten':
     "Voor bedrijven die creatieve tools ontwikkelen, toont dit hoe AI-platforms kunnen uitbreiden naar traditionele markten zoals de muziekindustrie. Het benadrukt de noodzaak om zowel technologie als menselijke creativiteit te combineren om waarde te creëren. Voor bureaus die in contentcreatie werken, kan dit een signaal zijn dat hybride modellen tussen AI en menselijke input steeds belangrijker worden.",
   'australie-onderzoekt-social-media-giganten-op-kinderverbod':
