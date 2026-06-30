@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'zuid-korea-investeert-900-miljard-in-ai-en-semiconductor-plan',
+    format: 'dispatch' as const,
+    edition: '291',
+    category: 'Beleid',
+    title: "Zuid-Korea investeert 900 miljard dollar in AI en chipindustrie",
+    dek: "Seoel zet een ambitieus plan in om de wereldwijde leider te worden op het gebied van chips en kunstmatige intelligentie.",
+    publishedAt: '2026-06-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Zuid-Korea investeert 900 miljard dollar in AI en chipindustrie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'oracle-stopt-met-java-ondersteuning-intel-macs-na-jdk-27',
     format: 'dispatch' as const,
     edition: '290',
