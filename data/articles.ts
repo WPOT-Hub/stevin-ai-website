@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'llm-beveiliging-prompt-injection-risico-snel-groeiend',
+    format: 'dispatch' as const,
+    edition: '292',
+    category: 'Tech',
+    title: "LLM’s manipuleren via rolmodellen: een groeiend beveiligingsrisico",
+    dek: "Onderzoekers omzeilen veiligheidsmaatregelen van grote taalmodellen door misbruik te maken van rolmodellen in prompt-injectie.",
+    publishedAt: '2026-06-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "LLM’s manipuleren via rolmodellen: een groeiend beveiligingsrisico",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'zuid-korea-investeert-900-miljard-in-ai-en-semiconductor-plan',
     format: 'dispatch' as const,
     edition: '291',
