@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'rocket-lab-krijgt-toegang-tot-globale-satellietmarkt-met-8-miljard-deal': (
+    <>
+      <p className="lead-para">
+        Lanceringsspecialist Rocket Lab zet een grote stap met de overname van Iridiums wereldwijde satellietnetwerk voor 8 miljard dollar. De deal maakt Rocket Lab niet alleen tot een volwaardige speler in de ruimtevaart, maar geeft het bedrijf ook directe toegang tot een breed scala aan commerciële en overheidscontracten. Met deze overname kan Rocket Lab zowel lanceringen als communicatienetwerken zelf leveren, wat de concurrentie met bedrijven als SpaceX versterkt.
+      </p>
+      <p>
+        De transactie is onderdeel van een grotere trend waarin ruimtevaartbedrijven verticaal integreren om hun marktaandeel te vergroten. Iridiums netwerk van meer dan duizend satellieten biedt nu zowel spraak- als datacommunicatie wereldwijd, wat Rocket Lab een unieke positie geeft. Analisten zien dit als een strategische zet om klanten volledige oplossingen aan te bieden, van lancering tot operationeel gebruik.
+      </p>
+      <p>
+        De overname moet binnen twee jaar rond zijn, mits goedkeuringen van toezichthouders worden verkregen. Voor concurrenten zoals SpaceX betekent dit dat ze hun focus moeten verleggen naar innovatie en kostenbesparing om hun voorsprong te behouden.
+      </p>
+    </>
+  ),
   'turbine-unit-stroom-uit-kanalen': (
     <>
       <p className="lead-para">
@@ -5163,6 +5176,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'rocket-lab-krijgt-toegang-tot-globale-satellietmarkt-met-8-miljard-deal':
+    "Voor ondernemers die actief zijn in technologische sectoren toont deze deal hoe snel markten kunnen verschuiven door grote overnames. Het benadrukt het belang van schaalvergroting en verticale integratie om concurrentievoordeel te behalen. Tegelijkertijd laat het zien dat ruimtevaart niet langer alleen toegankelijk is voor gevestigde spelers, maar ook voor gespecialiseerde bedrijven die durven te investeren in groei.",
   'turbine-unit-stroom-uit-kanalen':
     "Voor ondernemers die investeren in duurzame oplossingen biedt deze technologie een laagdrempelig alternatief voor traditionele energieopwekking. Het toont aan dat innovatie niet altijd grootschalig hoeft te zijn: kleine, slimme oplossingen kunnen net zo effectief zijn. Tegelijkertijd vraagt het wel om samenwerking met lokale overheden of netbeheerders om aansluitingen en vergunningen rond te krijgen.",
   'zuid-korea-investeert-900-miljard-in-ai-en-semiconductor-plan':
