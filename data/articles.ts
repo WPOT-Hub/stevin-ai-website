@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'base44-lanceert-eigen-ai-model',
+    format: 'dispatch' as const,
+    edition: '299',
+    category: 'Tech',
+    title: "Base44 lanceert eigen AI-model om klanten te binden",
+    dek: "De vibe coding tool Base44, eigendom van Wix, introduceert een eigen AI-model om de afhankelijkheid van externe modellen te verminderen.",
+    publishedAt: '2026-06-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Base44 lanceert eigen AI-model om klanten te binden",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'zuid-korea-investeert-1-biljoen-in-chipproductie-en-humanoide-robots',
     format: 'dispatch' as const,
     edition: '298',
