@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'base44-lanceert-eigen-ai-model': (
+    <>
+      <p className="lead-para">
+        Het platform Base44, dat bekend staat om zijn visuele programmeeromgeving voor het maken van websites en apps, heeft een eigen AI-model uitgebracht. Dit model moet op termijn betere prestaties leveren dan de huidige toonaangevende modellen en zo de concurrentiepositie versterken.
+      </p>
+      <p>
+        Met deze stap volgt Base44 een trend waarbij AI-startups hun eigen modellen ontwikkelen om zich te onderscheiden en klanten aan zich te binden. De introductie van het model is bedoeld om de afhankelijkheid van externe partijen te verminderen en meer controle te krijgen over de technologie die achter hun producten zit.
+      </p>
+      <p>
+        De lancering komt op een moment waarop veel bedrijven zoeken naar manieren om hun AI-gebaseerde oplossingen robuuster en unieker te maken. Base44 hoopt met dit model niet alleen de prestaties van hun tools te verbeteren, maar ook de loyaliteit van gebruikers te vergroten door zelfstandigheid in technologieontwikkeling.
+      </p>
+    </>
+  ),
   'zuid-korea-investeert-1-biljoen-in-chipproductie-en-humanoide-robots': (
     <>
       <p className="lead-para">
@@ -5215,6 +5228,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'base44-lanceert-eigen-ai-model':
+    "Voor bedrijven die afhankelijk zijn van AI-tools kan het ontwikkelen of integreren van eigen modellen een strategische zet zijn. Het geeft meer controle over functionaliteit en kosten, maar vereist wel investeringen in kennis en infrastructuur. Tegelijkertijd kan het een manier zijn om zich te onderscheiden in een markt waar standaardoplossingen snel gemeengoed worden.",
   'zuid-korea-investeert-1-biljoen-in-chipproductie-en-humanoide-robots':
     "Voor Nederlandse ondernemers biedt dit een interessante blik op hoe landen met hoge loonkosten toch concurrentievoordeel kunnen behalen door te investeren in geavanceerde technologie. Het benadrukt het belang van langetermijnvisie: waar Zuid-Korea kiest voor fysieke AI en robotica, kunnen Nederlandse bedrijven zich richten op niches zoals slimme productielijnen of duurzame automatisering. Beide benaderingen tonen aan dat innovatie vaak begint met durfkapitaal en beleid, niet alleen met marktvraag.",
   'ai-coding-startup-135m-series-a-palihapitiya':
