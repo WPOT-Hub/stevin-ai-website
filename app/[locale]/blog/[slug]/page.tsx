@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'zuid-korea-investeert-1-biljoen-in-chipproductie-en-humanoide-robots': (
+    <>
+      <p className="lead-para">
+        Zuid-Korea stelt de komende jaren ruim een biljoen dollar beschikbaar voor de uitbreiding van geheugenchipfabrieken en de ontwikkeling van commerciële humanoïde robots. Het land wil hiermee een leidende positie innemen in fysieke kunstmatige intelligentie en robotica. De investeringen moeten bijdragen aan lokale werkgelegenheid en technologische zelfvoorziening, aldus het plan dat deze week werd aangekondigd.
+      </p>
+      <p>
+        Een belangrijk deel van het budget gaat naar de productiecapaciteit van DRAM- en NAND-chips, waarbij Zuid-Korea aansluit bij de groeiende vraag naar geheugenopslag in AI-toepassingen. Daarnaast wordt er fors geïnvesteerd in onderzoek naar humanoïde robots die binnen vijf jaar klaar moeten zijn voor commerciële toepassingen. De overheid werkt hierbij samen met bedrijven als Samsung Electronics en Hyundai Motor Group.
+      </p>
+      <p>
+        De ambitie is om Zuid-Korea niet alleen een hub te maken voor chipproductie, maar ook voor robotica. De focus ligt op toepassingen in industriële automatisering, gezondheidszorg en logistiek. Experts wijzen erop dat deze stap past bij een bredere strategie om afhankelijkheid van buitenlandse technologie te verminderen.
+      </p>
+    </>
+  ),
   'ai-coding-startup-135m-series-a-palihapitiya': (
     <>
       <p className="lead-para">
@@ -5202,6 +5215,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'zuid-korea-investeert-1-biljoen-in-chipproductie-en-humanoide-robots':
+    "Voor Nederlandse ondernemers biedt dit een interessante blik op hoe landen met hoge loonkosten toch concurrentievoordeel kunnen behalen door te investeren in geavanceerde technologie. Het benadrukt het belang van langetermijnvisie: waar Zuid-Korea kiest voor fysieke AI en robotica, kunnen Nederlandse bedrijven zich richten op niches zoals slimme productielijnen of duurzame automatisering. Beide benaderingen tonen aan dat innovatie vaak begint met durfkapitaal en beleid, niet alleen met marktvraag.",
   'ai-coding-startup-135m-series-a-palihapitiya':
     "Voor bedrijven die software ontwikkelen of onderhouden, biedt deze technologie kansen om sneller te itereren en minder afhankelijk te zijn van schaarse ontwikkelaars. Tegelijkertijd roept het vragen op over de balans tussen automatisering en kwaliteitsborging: wie draagt straks verantwoordelijkheid als AI gegenereerde code fouten bevat? Dat wordt een belangrijk aandachtspunt bij de implementatie.",
   'denkspellen-ruimteoorlog-scenario-s':
