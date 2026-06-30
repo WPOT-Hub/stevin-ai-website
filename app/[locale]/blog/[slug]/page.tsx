@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'zuid-korea-investeert-900-miljard-in-ai-en-semiconductor-plan': (
+    <>
+      <p className="lead-para">
+        De Zuid-Koreaanse overheid heeft een investeringsplan van ongeveer 900 miljard dollar aangekondigd om het land uit te bouwen tot een wereldwijde koploper in halfgeleiders en AI-technologie. Het zogeheten '3S+1F'-plan (Semiconductors, Software, Systems en Future industries) moet de komende jaren leiden tot een verdubbeling van de productiecapaciteit en innovatie in deze sectoren.
+      </p>
+      <p>
+        Het plan richt zich op drie pijlers: het versterken van de eigen chipproductie, het ontwikkelen van toonaangevende AI-toepassingen en het stimuleren van nieuwe industrieën zoals quantum computing. Daarnaast wordt er geïnvesteerd in opleidingen om voldoende geschoolde werknemers te kunnen leveren aan de groeiende sector.
+      </p>
+      <p>
+        De Zuid-Koreaanse regering ziet dit als een cruciale stap om de concurrentie met landen als de VS en China aan te gaan. Met name op het gebied van geheugenchips en high-end processors wil Seoel zijn positie verstevigen.
+      </p>
+    </>
+  ),
   'oracle-stopt-met-java-ondersteuning-intel-macs-na-jdk-27': (
     <>
       <p className="lead-para">
@@ -5137,6 +5150,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'zuid-korea-investeert-900-miljard-in-ai-en-semiconductor-plan':
+    "Voor Europese bedrijven die actief zijn in tech of supply chains betekent dit dat de druk op innovatie verder zal toenemen. Concurrentie komt niet alleen uit Azië, maar ook uit overheden die massaal investeren in strategische sectoren. Dit vraagt om samenwerking binnen Europa om schaalvoordeel te behalen en niet achterop te raken.",
   'oracle-stopt-met-java-ondersteuning-intel-macs-na-jdk-27':
     "Deze stap benadrukt het belang van toekomstbestendige IT-infrastructuur. Voor bedrijven die nog afhankelijk zijn van oudere hardware of software is het zaak om nu actie te ondernemen. Een migratietraject kost tijd en middelen, dus een proactieve aanpak is verstandig. Daarnaast kan dit soort ontwikkelingen ook een signaal zijn om kritisch te kijken naar afhankelijkheid van specifieke technologieën en leveranciers.",
   'rocket-lab-koopt-iridium-satellietnetwerk':
