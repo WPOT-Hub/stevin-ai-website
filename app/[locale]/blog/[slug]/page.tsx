@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-coding-startup-135m-series-a-palihapitiya': (
+    <>
+      <p className="lead-para">
+        De AI-codegenerator van Chamath Palihapitiya, voormalig investeerder en nu CEO, heeft een Series A-rondgang afgesloten met 135 miljoen dollar. Het fonds wordt geleid door a16z, met deelname van bestaande investeerders zoals Greylock en Founders Fund.
+      </p>
+      <p>
+        Het bedrijf richt zich op het automatiseren van softwareontwikkeling met een platform dat natuurlijke taal omzet in werkende code. Volgens de oprichter moet dit de productiviteit van ontwikkelaars aanzienlijk verhogen door repetitieve taken te elimineren.
+      </p>
+      <p>
+        De investering komt op een moment dat venture capitalists massaal inzetten op AI-gedreven oplossingen voor softwareontwikkeling. Concurrenten zoals GitHub Copilot en Cursor hebben al bewezen dat er grote vraag is naar tools die coderen versnellen.
+      </p>
+    </>
+  ),
   'denkspellen-ruimteoorlog-scenario-s': (
     <>
       <p className="lead-para">
@@ -5189,6 +5202,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-coding-startup-135m-series-a-palihapitiya':
+    "Voor bedrijven die software ontwikkelen of onderhouden, biedt deze technologie kansen om sneller te itereren en minder afhankelijk te zijn van schaarse ontwikkelaars. Tegelijkertijd roept het vragen op over de balans tussen automatisering en kwaliteitsborging: wie draagt straks verantwoordelijkheid als AI gegenereerde code fouten bevat? Dat wordt een belangrijk aandachtspunt bij de implementatie.",
   'denkspellen-ruimteoorlog-scenario-s':
     "Voor bedrijven die afhankelijk zijn van satellietdata of ruimtetechnologie kan dit beleidsmatige ontwikkelingen hebben. Onvoorspelbare conflicten in de ruimte kunnen leiden tot verstoring van kritieke infrastructuur zoals gps, communicatienetwerken of weersvoorspellingssystemen. Het is verstandig om nu al na te denken over back-upplannen en risicobeheersing rond deze afhankelijkheden.",
   'rocket-lab-krijgt-toegang-tot-globale-satellietmarkt-met-8-miljard-deal':
