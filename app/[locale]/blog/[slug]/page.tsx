@@ -1456,6 +1456,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'claude-sonnet-5-de-goedkopere-agent-revolutie': (
+    <>
+      <p className="lead-para">
+        Stel je voor: je bedrijf loopt al maanden te stuntelen met een klantenservice die halfslachtig antwoord geeft. De chatbot die je vorig jaar lanceerde, werkt soms wel, soms niet. Klanten klagen, medewerkers zitten uren met handmatige afhandeling. Dan komt er een model dat niet alleen beter luistert, maar ook handelt: Claude Sonnet 5 van Anthropic.
+      </p>
+      <p>
+        De boodschap is glashelder. Voor het eerst betaal je geen premium voor topprestaties. Waar GPT-5.5 of Gemini Pro nog altijd een flinke factuur met zich meebrengen, kost Sonnet 5 zo’n veertig procent minder per call. Dat klinkt als een detail, maar voor bureaus en in-house teams die tientallen agents tegelijk draaien, maakt het het verschil tussen ‘leuk experiment’ en ‘structurele kostenbesparing’. De vraag is niet langer of AI agents werken, maar hoe snel je ze kunt opschalen zonder failliet te gaan.
+      </p>
+      <p>
+        Deze prijsdaling is geen toeval. Anthropic heeft bewust gekozen voor een agressieve strategie om marktaandeel te veroveren in de steeds volwassener wordende agentenmarkt. Terwijl concurrenten nog worstelen met veiligheidsissues en onvoorspelbare output, belooft Sonnet 5 betere hallucinatiecontrole en consistente actieplannen. Een agent die niet alleen praat, maar ook doet – en dat tegen lagere kosten dan ooit.
+      </p>
+      <p>
+        Toch blijft er een schaduwkant. Goedkopere tools betekenen vaak minder exclusiviteit. Als iedereen straks dezelfde agent kan draaien tegen lagere prijzen, wordt differentiëren lastiger. Bureaus die nu nog denken met ‘unieke’ AI-oplossingen te kunnen scoren, zullen merken dat de barrière naar binnen lopen steeds lager wordt.
+      </p>
+      <p>
+        Daarnaast blijft de vraag: wat gebeurt er als de prijs verder daalt? Techcrunch meldt dat Anthropic werkt aan nog goedkopere varianten voor later dit jaar. Dat betekent dat de race naar beneden nog niet gestopt is – en dat organisaties die nu al investeren in eigen agent-technologie straks opnieuw moeten upgraden.
+      </p>
+      <p>
+        Voor marketingteams en bureau-eigenaars is dit het moment om keuzes te maken. Wil je wachten tot de markt nog verder stabiliseert? Of grijp je nu in voordat de concurrentie dezelfde stap zet? De technologie is er klaar voor – de vraag is of jij het ook bent.
+      </p>
+      <p>
+        Er zijn drie dingen die deze release duidelijk maakt. Ten eerste: AI-agents zijn geen hype meer, maar een noodzaak voor efficiëntie. Ten tweede: de prijsdaling versnelt de adoptie bij kleinere spelers die tot nu toe buiten beeld bleven.
+      </p>
+      <p>
+        En ten derde: wie nu niet experimenteert met agents, mist straks niet alleen kansen, maar ook tijd om fouten te maken voordat het echt kritiek wordt.
+      </p>
+    </>
+  ),
   'side-events-techcrunch-disrupt-2026': (
     <>
       <p className="lead-para">
@@ -5267,6 +5295,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'claude-sonnet-5-de-goedkopere-agent-revolutie':
+    "Bij Stevin zien we deze ontwikkeling als een cruciale versneller voor de adoptie van AI-agents in Nederland en België. Veel bureaus en merken worstelen nog met de vraag hoe ze agents slim kunnen integreren zonder direct grote investeringen te doen of afhankelijk te worden van dure externe partijen. Sonnet 5 biedt hier een pragmatische oplossing: lagere drempels betekenen dat teams sneller kunnen oefenen met echte use cases zoals geautomatiseerde leadkwalificatie of zelflerende klantenservice. Tegelijkertijd waarschuwen we voor valkuilen zoals overmatige afhankelijkheid van standaardmodellen – juist in markten waar differentiatie cruciaal is (denk aan lokale retail of gespecialiseerde dienstverlening) blijft maatwerk essentieel. Onze benadering is om eerst kleine pilots uit te voeren met tools zoals Sonnet 5 om meetdata op te bouwen over uplift in conversies of klanttevredenheid voordat volledige schaalvergroting plaatsvindt.",
   'side-events-techcrunch-disrupt-2026':
     "Voor Nederlandse en Belgische ondernemers biedt dit een unieke kans om internationale aandacht te trekken zonder de kosten van een volwaardig eigen congres. Het is een manier om gericht in contact te komen met relevante spelers in de techsector, wat vooral waardevol kan zijn voor bedrijven die actief zijn in innovatieve markten zoals AI of duurzame technologie. Het loont om vroeg te boeken, gezien de beperkte capaciteit.",
   'tesla-test-robotaxi-zonder-stuur-en-pedalen-in-austin':
