@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Draai je je ads met een bureau of zelf? | Stevin</title>
+<meta name="description" content="Kies je situatie, dan laat Stevin je het juiste verhaal zien: werk je met een bureau, of doe je je advertenties zelf.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="https://stevin.ai/ads-data-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1628; --navy-light:#111f38; --accent:#3D8EFF; --accent-dark:#2B7AEE;
+    --line:rgba(255,255,255,.12); --muted:rgba(255,255,255,.62);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--navy);color:#fff;
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 22px}
+  .wrap{width:100%;max-width:920px;text-align:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+  .eyebrow .ln{width:26px;height:2px;background:var(--accent);display:inline-block}
+  h1{font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;letter-spacing:-.02em;text-wrap:balance}
+  .sub{color:var(--muted);font-size:clamp(16px,2.2vw,19px);margin:16px auto 0;max-width:520px;line-height:1.55}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+  @media(max-width:640px){.cards{grid-template-columns:1fr}}
+  .card{display:flex;flex-direction:column;text-align:left;background:var(--navy-light);border:1px solid var(--line);
+    border-radius:16px;padding:28px 26px;text-decoration:none;color:#fff;transition:border-color .18s,transform .18s,background .18s}
+  .card:hover{border-color:var(--accent);transform:translateY(-3px);background:#152848}
+  .card .tag{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .card h2{font-size:22px;font-weight:700;line-height:1.2;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15px;line-height:1.6;flex:1}
+  .card .go{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:600;color:var(--accent)}
+  .card:hover .go{color:#fff}
+  .card .go svg{transition:transform .18s}
+  .card:hover .go svg{transform:translateX(4px)}
+  .foot{margin-top:38px;color:rgba(255,255,255,.4);font-size:13px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow"><span class="ln"></span>Stevin</div>
+    <h1>Draai je je ads met een bureau, of zelf?</h1>
+    <p class="sub">Kies je situatie, dan laat ik je het juiste verhaal zien.</p>
+    <div class="cards">
+      <a class="card" href="/ads-data?utm_source=kies&utm_medium=referral&utm_campaign=kies&utm_content=bureau">
+        <span class="tag">Met een bureau</span>
+        <h2>Jij betaalt voor de ads. Je bureau bezit de data.</h2>
+        <p>Je huurt een bureau in voor je advertenties. Zie wat dat je kost aan marge en eigendom, en hoe het anders kan.</p>
+        <span class="go">Bekijk dit
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+      <a class="card" href="/inhouse?utm_source=kies&utm_medium=referral&utm_campaign=kies&utm_content=inhouse">
+        <span class="tag">Zelf, in-house</span>
+        <h2>Je draait je ads zelf. Zie je het op tijd?</h2>
+        <p>Je team doet de advertenties zelf. Stevin kijkt mee op je eigen accounts en seint voordat het in de maandrapportage staat.</p>
+        <span class="go">Bekijk dit
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+    <div class="foot">Stevin, marketing-intelligence voor je paid en owned media.</div>
+  </div>
+</body>
+</html>

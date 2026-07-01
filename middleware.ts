@@ -110,5 +110,5 @@ export default async function middleware(request: NextRequest) {
 export const config = {
   // ads-data en inhouse uitgesloten: statische campagne-landingspagina's uit /public,
   // mogen niet door de i18n-middleware (anders 404 voor de rewrite kan grijpen).
-  matcher: ['/((?!api|_next|_vercel|ads-data|inhouse|.*\\..*).*)'],
+  matcher: ['/((?!api|_next|_vercel|ads-data|inhouse|kies|.*\\..*).*)'],
 }

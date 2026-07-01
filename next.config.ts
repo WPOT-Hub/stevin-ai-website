@@ -35,6 +35,10 @@ const nextConfig: NextConfig = {
         source: '/inhouse',
         destination: '/inhouse.html',
       },
+      {
+        source: '/kies',
+        destination: '/kies.html',
+      },
     ]
   },
   async redirects() {
