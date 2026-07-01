@@ -31,6 +31,10 @@ const nextConfig: NextConfig = {
         source: '/ads-data',
         destination: '/ads-data.html',
       },
+      {
+        source: '/inhouse',
+        destination: '/inhouse.html',
+      },
     ]
   },
   async redirects() {
