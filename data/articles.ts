@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'claude-sonnet-5-de-goedkopere-agent-revolutie',
+    format: 'dispatch' as const,
+    edition: '303',
+    category: 'Platform',
+    title: "De agent komt eraan en hij is goedkoper dan je denkt",
+    dek: "Anthropic gooit met Claude Sonnet 5 de prijs van AI-agents op zijn kop: sterker, veiliger én 40% goedkoper dan concurrenten. Wie nu niet meeschaalt, loopt straks achter.",
+    publishedAt: '2026-07-01',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "De agent komt eraan en hij is goedkoper dan je denkt",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'side-events-techcrunch-disrupt-2026',
     format: 'dispatch' as const,
     edition: '302',
