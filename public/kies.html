@@ -10,6 +10,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=window.gtag||function(){dataLayer.push(arguments);};
+  gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'denied',personalization_storage:'denied',security_storage:'granted',wait_for_update:500});
+  gtag('set','ads_data_redaction',true);
+  gtag('set','url_passthrough',true);
+  window.stevinConsentState=function(c){var a=(c==='all'||c==='analytics'||c==='analytics_and_marketing');var m=(c==='all'||c==='marketing'||c==='analytics_and_marketing');return{analytics_storage:a?'granted':'denied',ad_storage:m?'granted':'denied',ad_user_data:m?'granted':'denied',ad_personalization:m?'granted':'denied',functionality_storage:a?'granted':'denied',personalization_storage:a?'granted':'denied'};};
+  window.stevinApplyConsent=function(c){gtag('consent','update',window.stevinConsentState(c));};
+  try{var _sc=localStorage.getItem('stevin_consent');if(_sc){window.stevinApplyConsent(_sc);}}catch(e){}
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://data.stevin.ai/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WHSXRR29');</script>
+<script>
+  (function(){var loaded=false;function ok(c){return c==='all'||c==='analytics'||c==='analytics_and_marketing';}
+    window.loadClarity=function(){if(loaded)return;loaded=true;(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wmggc0voks");};
+    var _c=null;try{_c=localStorage.getItem('stevin_consent');}catch(e){}if(ok(_c))window.loadClarity();
+    var _p=window.stevinApplyConsent;window.stevinApplyConsent=function(cc){if(_p)_p(cc);if(ok(cc))window.loadClarity();};})();
+</script>
 <style>
   :root{
     --navy:#0A1628; --navy-light:#111f38; --accent:#3D8EFF; --accent-dark:#2B7AEE;
@@ -37,9 +54,30 @@
   .card .go svg{transition:transform .18s}
   .card:hover .go svg{transform:translateX(4px)}
   .foot{margin-top:38px;color:rgba(255,255,255,.4);font-size:13px}
+  .ckb{position:fixed;left:0;right:0;bottom:0;z-index:80;padding:16px;display:flex;justify-content:center}
+  .ckb[hidden]{display:none}
+  .ckb-card{background:#111f38;color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.4);max-width:560px;width:100%;padding:22px 24px;text-align:left}
+  .ckb-t{font-weight:700;font-size:16px;margin:0 0 6px}
+  .ckb-d{font-size:13.5px;line-height:1.55;color:rgba(255,255,255,.72);margin:0 0 16px}
+  .ckb-d a{color:#6BA9FF;text-decoration:underline}
+  .ckb-btns{display:flex;gap:10px;flex-wrap:wrap}
+  .ckb-b{font-weight:600;font-size:13.5px;padding:10px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;cursor:pointer;transition:all .2s}
+  .ckb-b:hover{background:rgba(255,255,255,.08)}
+  .ckb-b.ckb-pri{background:#00D4A0;color:#0A1628;border-color:#00D4A0}
 </style>
 </head>
 <body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHSXRR29" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <div class="ckb" id="ckb" hidden>
+    <div class="ckb-card">
+      <p class="ckb-t">Cookies en metingen</p>
+      <p class="ckb-d">Wij gebruiken cookies om de site te meten. Meer in ons <a href="https://stevin.ai/privacy" target="_blank" rel="noopener">privacybeleid</a>.</p>
+      <div class="ckb-btns">
+        <button class="ckb-b ckb-pri" data-c="all">Alles accepteren</button>
+        <button class="ckb-b" data-c="necessary">Alleen noodzakelijk</button>
+      </div>
+    </div>
+  </div>
   <div class="wrap">
     <div class="eyebrow"><span class="ln"></span>Stevin</div>
     <h1>Draai je je ads met een bureau, of zelf?</h1>
@@ -64,5 +102,23 @@
     </div>
     <div class="foot">Stevin is de AI-werklaag boven je marketing. Het ziet wat er speelt, wat ontbreekt en wat nu moet gebeuren.</div>
   </div>
+  <script>
+    (function(){
+      var ckb=document.getElementById('ckb');
+      if(ckb){
+        function choose(c){try{localStorage.setItem('stevin_consent',c);}catch(e){}if(window.stevinApplyConsent)window.stevinApplyConsent(c);ckb.setAttribute('hidden','');}
+        var stored=null;try{stored=localStorage.getItem('stevin_consent');}catch(e){}
+        if(!stored)ckb.removeAttribute('hidden');
+        [].forEach.call(ckb.querySelectorAll('[data-c]'),function(b){b.addEventListener('click',function(){choose(b.getAttribute('data-c'));});});
+      }
+      // Keuze bureau/in-house als event naar de dataLayer
+      [].forEach.call(document.querySelectorAll('a.card'),function(a){
+        a.addEventListener('click',function(){
+          var tag=a.querySelector('.tag');
+          try{(window.dataLayer=window.dataLayer||[]).push({event:'kies_choice',choice:tag?tag.textContent.trim():a.getAttribute('href')});}catch(e){}
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
