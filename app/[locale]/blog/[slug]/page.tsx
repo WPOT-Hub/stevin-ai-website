@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'tesla-test-robotaxi-zonder-stuur-en-pedalen-in-austin': (
+    <>
+      <p className="lead-para">
+        De proefritten vinden plaats in Austin, Texas, en markeren een belangrijke stap in de ontwikkeling van het lang beloofde robotaxi-netwerk. Volgens TechCrunch zijn de voertuigen uitgerust met camera’s en sensoren om verkeer en obstakels te detecteren zonder menselijke tussenkomst. Elon Musk heeft eerder aangegeven dat deze technologie binnen enkele jaren commercieel beschikbaar moet zijn.
+      </p>
+      <p>
+        De tests volgen na eerdere mislukte pogingen om volledig autonome voertuigen te certificeren voor gebruik op de openbare weg. Tesla benadrukt dat er nog geen passagiers worden vervoerd, maar dat de systemen worden getest onder realistische omstandigheden. De autoriteiten in Texas hebben toestemming verleend voor deze fase van het experiment.
+      </p>
+      <p>
+        Analisten wijzen erop dat succesvolle implementatie grote gevolgen kan hebben voor de taxibranche en mobiliteitssector. Concurrenten zoals Waymo en Cruise werken ook aan vergelijkbare technologieën, maar Tesla probeert hiermee een voorsprong te nemen door direct op schaal te testen.
+      </p>
+    </>
+  ),
   'acti-smartphone-keyboard-met-ai-agents': (
     <>
       <p className="lead-para">
@@ -5241,6 +5254,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'tesla-test-robotaxi-zonder-stuur-en-pedalen-in-austin':
+    "Voor bedrijven die afhankelijk zijn van fysieke mobiliteit of chauffeursdiensten is dit een ontwikkeling om nauwlettend te volgen. De komst van volledig autonome voertuigen kan leiden tot lagere operationele kosten, maar brengt ook juridische en ethische vraagstukken met zich mee. Ondernemers doen er goed aan om nu al na te denken over hoe deze technologie hun sector kan beïnvloeden en welke aanpassingen nodig zijn.",
   'acti-smartphone-keyboard-met-ai-agents':
     "Voor ondernemers en marketingteams biedt dit soort tools kansen om klantinteracties te vereenvoudigen. Denk aan snellere reactietijden op vragen via chat of automatische verwerking van feedback in berichten. De uitdaging wordt wel om de juiste balans te vinden tussen gemak en privacy: gebruikers delen persoonlijke data met een derde partij via hun toetsenbordinvoer.",
   'base44-lanceert-eigen-ai-model':
