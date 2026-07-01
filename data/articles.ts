@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'acti-smartphone-keyboard-met-ai-agents',
+    format: 'dispatch' as const,
+    edition: '300',
+    category: 'Tech',
+    title: "Acti brengt AI-assistenten naar je toetsenbord",
+    dek: "De nieuwe app van Acti voegt een slimme toetsenbordlaag toe aan iOS en Android, met eigen AI-agenten die via natuurlijke taal commando's uitvoeren.",
+    publishedAt: '2026-07-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Acti brengt AI-assistenten naar je toetsenbord",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'base44-lanceert-eigen-ai-model',
     format: 'dispatch' as const,
     edition: '299',
