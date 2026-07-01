@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'side-events-techcrunch-disrupt-2026': (
+    <>
+      <p className="lead-para">
+        TechCrunch opent de mogelijkheid voor bedrijven om tijdens Disrupt 2026 een eigen Side Event te organiseren. Deze evenementen vinden plaats in de week van het hoofdfestival en bieden een podium om specifieke doelgroepen te bereiken of producten te lanceren.
+      </p>
+      <p>
+        De Side Events worden gehouden in dezelfde stad als TechCrunch Disrupt, maar op afzonderlijke locaties. Bedrijven kunnen hiermee hun zichtbaarheid vergroten zonder afhankelijk te zijn van het hoofdprogramma.
+      </p>
+      <p>
+        Registratie voor deze Side Events is nu open, met beperkte capaciteit per evenement. TechCrunch benadrukt dat deze optie vooral interessant is voor startups en scale-ups die hun netwerk willen uitbreiden of investeerders willen ontmoeten.
+      </p>
+    </>
+  ),
   'tesla-test-robotaxi-zonder-stuur-en-pedalen-in-austin': (
     <>
       <p className="lead-para">
@@ -5254,6 +5267,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'side-events-techcrunch-disrupt-2026':
+    "Voor Nederlandse en Belgische ondernemers biedt dit een unieke kans om internationale aandacht te trekken zonder de kosten van een volwaardig eigen congres. Het is een manier om gericht in contact te komen met relevante spelers in de techsector, wat vooral waardevol kan zijn voor bedrijven die actief zijn in innovatieve markten zoals AI of duurzame technologie. Het loont om vroeg te boeken, gezien de beperkte capaciteit.",
   'tesla-test-robotaxi-zonder-stuur-en-pedalen-in-austin':
     "Voor bedrijven die afhankelijk zijn van fysieke mobiliteit of chauffeursdiensten is dit een ontwikkeling om nauwlettend te volgen. De komst van volledig autonome voertuigen kan leiden tot lagere operationele kosten, maar brengt ook juridische en ethische vraagstukken met zich mee. Ondernemers doen er goed aan om nu al na te denken over hoe deze technologie hun sector kan beïnvloeden en welke aanpassingen nodig zijn.",
   'acti-smartphone-keyboard-met-ai-agents':
