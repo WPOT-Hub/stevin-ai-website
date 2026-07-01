@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'tesla-test-robotaxi-zonder-stuur-en-pedalen-in-austin',
+    format: 'dispatch' as const,
+    edition: '301',
+    category: 'Technologie',
+    title: "Tesla test robotaxi zonder stuur en pedalen in Austin",
+    dek: "Het Amerikaanse Tesla begint met proefritten van een volledig autonoom voertuig zonder stuur of pedalen op openbare wegen.",
+    publishedAt: '2026-07-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECHNOLOGIE',
+    posterTopic: "Tesla test robotaxi zonder stuur en pedalen in Austin",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'acti-smartphone-keyboard-met-ai-agents',
     format: 'dispatch' as const,
     edition: '300',
