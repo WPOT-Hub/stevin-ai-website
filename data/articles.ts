@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'side-events-techcrunch-disrupt-2026',
+    format: 'dispatch' as const,
+    edition: '302',
+    category: 'Distributie',
+    title: "TechCrunch Disrupt 2026 biedt ruimte voor merk-eigen evenementen",
+    dek: "Tijdens TechCrunch Disrupt 2026, van 10 tot 16 oktober, kunnen bedrijven een Side Event organiseren om hun merk centraal te stellen.",
+    publishedAt: '2026-07-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "TechCrunch Disrupt 2026 biedt ruimte voor merk-eigen evenementen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'tesla-test-robotaxi-zonder-stuur-en-pedalen-in-austin',
     format: 'dispatch' as const,
     edition: '301',
