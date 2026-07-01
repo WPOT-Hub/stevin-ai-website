@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'acti-smartphone-keyboard-met-ai-agents': (
+    <>
+      <p className="lead-para">
+        Acti lanceert een vervangend toetsenbord voor smartphones dat werkt in elke app. Gebruikers kunnen met natuurlijke taal korte opdrachten geven, zoals 'stuur een bericht aan Jan met de afspraak om 3 uur' of 'vind mijn laatste bon van de supermarkt'.
+      </p>
+      <p>
+        De AI-agenten in het toetsenbord voeren taken uit zonder dat gebruikers hoeven te schakelen tussen apps of handmatig gegevens moeten invoeren. De app is beschikbaar voor iOS en Android en werkt offline voor basisopdrachten.
+      </p>
+      <p>
+        Het bedrijf positioneert het toetsenbord als een manier om productiviteit te verhogen, vooral voor mensen die veel notities maken of herhalende taken automatiseren. Acti stelt dat de integratie van AI direct op het toetsenbord de drempel verlaagt om slimme assistentie te gebruiken.
+      </p>
+    </>
+  ),
   'base44-lanceert-eigen-ai-model': (
     <>
       <p className="lead-para">
@@ -5228,6 +5241,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'acti-smartphone-keyboard-met-ai-agents':
+    "Voor ondernemers en marketingteams biedt dit soort tools kansen om klantinteracties te vereenvoudigen. Denk aan snellere reactietijden op vragen via chat of automatische verwerking van feedback in berichten. De uitdaging wordt wel om de juiste balans te vinden tussen gemak en privacy: gebruikers delen persoonlijke data met een derde partij via hun toetsenbordinvoer.",
   'base44-lanceert-eigen-ai-model':
     "Voor bedrijven die afhankelijk zijn van AI-tools kan het ontwikkelen of integreren van eigen modellen een strategische zet zijn. Het geeft meer controle over functionaliteit en kosten, maar vereist wel investeringen in kennis en infrastructuur. Tegelijkertijd kan het een manier zijn om zich te onderscheiden in een markt waar standaardoplossingen snel gemeengoed worden.",
   'zuid-korea-investeert-1-biljoen-in-chipproductie-en-humanoide-robots':
