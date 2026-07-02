@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit': (
+    <>
+      <p className="lead-para">
+        Stel je voor: een hele industrie verzamelt zich in een stad waar de temperatuur hoog is, niet alleen buiten maar ook in de discussies. Terwijl de zon brandt op de Croisette, branden de gesprekken over kunstmatige intelligentie los – maar dan wel op het verkeerde niveau. Sir Martin Sorrell had het al door tijdens zijn speech bij C Wire’s Street Talk: Cannes draait nog steeds om vragen als 'Kan AI een betere reclame maken?' of 'Schrijft AI straks alle copy?'. De werkelijke revolutie speelt zich echter af op een niveau dat minder zichtbaar is voor het oog van de camera: media planning en buying.
+      </p>
+      <p>
+        De ironie is niet te missen. Terwijl marketeers en bureaus uren steken in brainstormsessies over AI-g gegenereerde advertenties, sluipen algoritmes al stilletjes binnen in de systemen die bepalen waar, wanneer en hoe die advertenties überhaupt verschijnen. Het gaat niet om creativiteit, maar om efficiëntie, schaal en vooral: controle. Want wie bepaalt straks welke doelgroep welk bericht krijgt? Wie stelt de prijs vast als machines in milliseconden kunnen inschatten hoeveel een impressie waard is? En wat gebeurt er met menselijke planners als machines sneller en nauwkeuriger kunnen voorspellen dan zij ooit kunnen?
+      </p>
+      <p>
+        Neem het voorbeeld van Coca-Cola’s James Quincey. Hij wees erop dat personalisering een valkuil heeft: als iedereen dezelfde geavanceerde targetingtools gebruikt, wie wint er dan nog? De consument wordt overspoeld met gepersonaliseerde boodschappen die allemaal hetzelfde klinken. Het antwoord ligt niet in meer technologie, maar in minder – of beter gezegd: in slimme toepassing ervan. Menselijke planners moeten zich richten op strategische keuzes, terwijl machines de uitvoering doen. Maar dat vergt wel een fundamentele shift in denken.
+      </p>
+      <p>
+        Dat brengt ons bij een tegenwerping die vaak wordt genegeerd: waarom zou media planning überhaupt veranderen? De argumenten zijn bekend – programmatic advertising bestaat al jaren – maar de snelheid en schaal van verandering zijn nu pas echt voelbaar. Waar eerst menselijke tussenpersonen nodig waren om deals te sluiten tussen adverteerders en publishers, nemen nu platforms als Google en Meta die rol over. En zij doen dat met data die niemand anders heeft. Het gevolg? Adverteerders betalen steeds vaker voor uitgangsprijzen (CPM) zonder te weten waar hun budget precies naartoe gaat.
+      </p>
+      <p>
+        Toch is er hoop. Niet omdat technologie ineens slecht is geworden, maar omdat ze eindelijk haar ware potentieel laat zien. Voor bureaus betekent dit dat ze zich moeten herpositioneren van uitvoerders naar strategische partners die weten hoe ze technologie moeten inzetten zonder hun eigen waarde te verliezen. Voor marketeers betekent dit dat ze moeten leren vertrouwen op systemen die hen helpen beter te plannen – maar wel met menselijke controlepunten.
+      </p>
+      <p>
+        De grootste uitdaging ligt misschien wel in het accepteren dat technologie niet alles kan oplossen. Quincey’s opmerking over personalisering onthult een fundamentele waarheid: zelfs met AI blijft marketing mensenwerk. De beste algoritmes kunnen patronen herkennen, maar ze begrijpen niet wat consumenten echt willen of nodig hebben. Dat blijft de taak van mensen.
+      </p>
+      <p>
+        Dus terwijl Cannes nog steeds praat over AI-g gegenereerde advertenties, zou het beter moeten luisteren naar Sorrells waarschuwing: focus op media planning en buying voordat het te laat is. Want wie straks controle heeft over hoe media wordt gekocht en geprijsd, heeft straks ook controle over hoe merken worden gezien.
+      </p>
+    </>
+  ),
   'bending-spoons-18-miljard-ipo-minimaliseren-geluk': (
     <>
       <p className="lead-para">
@@ -5347,6 +5372,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit':
+    "Bij Stevin zien we deze verschuiving al jaren aankomen. Onze klanten worstelen vaak met dezelfde vraag: hoe blijven we relevant als technologie alles verandert? Onze antwoord is simpel: focus op wat technologie niet kan vervangen – strategisch denken en menselijke connectie. Wij geloven dat bureaus en marketeers zich moeten richten op het bouwen van systemen waarin AI ondersteunt in plaats van vervangt. Dat betekent investeren in tools die transparantie bieden over mediabestedingen, zodat adverteerders weer grip krijgen op hun budgetten. Maar bovenal betekent het durven loslaten van oude gewoontes en accepteren dat de toekomst ligt in samenwerking tussen mens en machine.",
   'bending-spoons-18-miljard-ipo-minimaliseren-geluk':
     "Voor ondernemers die actief zijn in overnames of portefeuillebeheer kan de aanpak van Bending Spoons inspirerend zijn. Het benadrukt het belang van een gestructureerde methodiek bij het evalueren en transformeren van bedrijven, waarbij toeval zoveel mogelijk wordt uitgesloten. Tegelijkertijd laat het zien dat langetermijnwaarde vaak belangrijker is dan snelle groei of marktaandeel.",
   'ai-in-accountancy-evolutie-in-plaats-van-revolutie':
