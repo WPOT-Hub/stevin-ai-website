@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-in-accountancy-evolutie-in-plaats-van-revolutie',
+    format: 'dispatch' as const,
+    edition: '305',
+    category: 'Operations',
+    title: "AI in de accountancy: geleidelijke groei in plaats van plotselinge verandering",
+    dek: "AI verandert de accountancy stap voor stap, niet in één keer volgens experts.",
+    publishedAt: '2026-07-02',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "AI in de accountancy: geleidelijke groei in plaats van plotselinge verandering",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'un-waarschuwt-voor-gebrek-aan-globale-regels-ai',
     format: 'dispatch' as const,
     edition: '304',
