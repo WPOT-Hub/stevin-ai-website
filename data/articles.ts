@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'un-waarschuwt-voor-gebrek-aan-globale-regels-ai',
+    format: 'dispatch' as const,
+    edition: '304',
+    category: 'Beleid',
+    title: "VN dringt aan op wereldwijde regels voor AI om ‘apocalyps’ te voorkomen",
+    dek: "Een VN-panel waarschuwt dat de technologische vooruitgang van AI sneller gaat dan de ontwikkeling van veiligheidsmaatregelen.",
+    publishedAt: '2026-07-02',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "VN dringt aan op wereldwijde regels voor AI om ‘apocalyps’ te voorkomen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'claude-sonnet-5-de-goedkopere-agent-revolutie',
     format: 'dispatch' as const,
     edition: '303',
