@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'bending-spoons-18-miljard-ipo-minimaliseren-geluk',
+    format: 'dispatch' as const,
+    edition: '307',
+    category: 'Markt',
+    title: "Bending Spoons haalt $18 miljard bij beursgang door geluk te minimaliseren",
+    dek: "Het Italiaanse techbedrijf Bending Spoons gaat met een waardering van $18 miljard naar de beurs, met een strategie gebaseerd op het reduceren van afhankelijkheid van toeval.",
+    publishedAt: '2026-07-02',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Bending Spoons haalt $18 miljard bij beursgang door geluk te minimaliseren",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-in-directierollen-experiment-loopt-uit-op-mislukking',
     format: 'dispatch' as const,
     edition: '306',
