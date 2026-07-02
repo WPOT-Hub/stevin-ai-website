@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'un-waarschuwt-voor-gebrek-aan-globale-regels-ai': (
+    <>
+      <p className="lead-para">
+        De capaciteiten van kunstmatige intelligentie groeien zo snel dat de huidige regels ontoereikend zijn, aldus een wetenschappelijk panel van de Verenigde Naties. Volgens het rapport dreigt er een situatie waarin AI-systemen buiten controle raken, met mogelijk ernstige gevolgen voor de mensheid. De auteurs pleiten voor internationale samenwerking om risico’s te beperken en transparante kaders op te stellen.
+      </p>
+      <p>
+        Het panel wijst op concrete bedreigingen, zoals autonome wapens en grootschalige manipulatie via deepfakes. Ook benadrukt men het risico op oneerlijke toegang tot deze technologie, wat bestaande machtsongelijkheden kan versterken. Landen worden opgeroepen om gezamenlijk normen vast te stellen voordat het te laat is.
+      </p>
+      <p>
+        Tot nu toe blijven veel landen hangen in discussies over verantwoordelijkheid en aansprakelijkheid. Het rapport suggereert dat zonder snelle actie de wereld geconfronteerd kan worden met een onomkeerbare crisis, waarbij bedrijven en overheden niet meer in staat zijn om de technologie te beheersen.
+      </p>
+    </>
+  ),
   'claude-sonnet-5-de-goedkopere-agent-revolutie': (
     <>
       <p className="lead-para">
@@ -5295,6 +5308,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'un-waarschuwt-voor-gebrek-aan-globale-regels-ai':
+    "Voor ondernemers is dit een wake-upcall om niet alleen naar winst te kijken, maar ook naar de langetermijngevolgen van hun innovaties. Bedrijven die AI toepassen, doen er goed aan om zelf proactief ethische richtlijnen op te stellen en mee te denken over regulering. Want als overheden straks noodmaatregelen opleggen, kunnen die onverwachte impact hebben op businessmodellen en markttoegang.",
   'claude-sonnet-5-de-goedkopere-agent-revolutie':
     "Bij Stevin zien we deze ontwikkeling als een cruciale versneller voor de adoptie van AI-agents in Nederland en België. Veel bureaus en merken worstelen nog met de vraag hoe ze agents slim kunnen integreren zonder direct grote investeringen te doen of afhankelijk te worden van dure externe partijen. Sonnet 5 biedt hier een pragmatische oplossing: lagere drempels betekenen dat teams sneller kunnen oefenen met echte use cases zoals geautomatiseerde leadkwalificatie of zelflerende klantenservice. Tegelijkertijd waarschuwen we voor valkuilen zoals overmatige afhankelijkheid van standaardmodellen – juist in markten waar differentiatie cruciaal is (denk aan lokale retail of gespecialiseerde dienstverlening) blijft maatwerk essentieel. Onze benadering is om eerst kleine pilots uit te voeren met tools zoals Sonnet 5 om meetdata op te bouwen over uplift in conversies of klanttevredenheid voordat volledige schaalvergroting plaatsvindt.",
   'side-events-techcrunch-disrupt-2026':
