@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-in-directierollen-experiment-loopt-uit-op-mislukking',
+    format: 'dispatch' as const,
+    edition: '306',
+    category: 'Tech',
+    title: "AI als directeur: experiment loopt uit op mislukking",
+    dek: "Een Amsterdamse AI-professor bouwde een bedrijf zonder mensen, maar het experiment strandde binnen een jaar.",
+    publishedAt: '2026-07-02',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AI als directeur: experiment loopt uit op mislukking",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-in-accountancy-evolutie-in-plaats-van-revolutie',
     format: 'dispatch' as const,
     edition: '305',
