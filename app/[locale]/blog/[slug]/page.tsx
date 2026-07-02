@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'data-infrastructuur-bepaalt-ai-race': (
+    <>
+      <p className="lead-para">
+        Een negentienjarige student verliet MIT om een bedrijf te starten waar Silicon Valley geen interesse in had: betrouwbare data-infrastructuur. Terwijl anderen investeerden in chatbots en deepfakes, legde Alexandr Wang de focus op de onzichtbare laag die alles draagt. Zijn aanpak maakte Scale AI nu $25 miljard waard en leverde opdrachten op voor overheden, autonome voertuigen en toonaangevende AI-labs aldus een analyse van Forbes.
+      </p>
+      <p>
+        Wang zag data niet als olie of goud, maar als beton: lastig te storten en te onderhouden. Een slecht gestructureerde dataset is als een fundering van zand: je kunt er wel een toren op bouwen, maar bij de eerste storm stort alles in. Zijn benadering was simpel: begin met kwaliteit, niet met snelheid. Geen indrukwekkende demo’s voor investeerders, maar systemen die jarenlang meegaan zonder opvallen.
+      </p>
+      <p>
+        Deze keuze verschuift macht van wie de meeste parameters heeft naar wie de meest betrouwbare data beheert. Een model kan nog zo slim zijn, als de invoerdata vervuild of onevenwichtig is, wordt het resultaat onbruikbaar. Scale AI bewijst dat door data niet alleen te verzamelen, maar ook te standaardiseren en toegankelijk te maken voor ontwikkelaars wereldwijd.
+      </p>
+    </>
+  ),
   'cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit': (
     <>
       <p className="lead-para">
@@ -5372,6 +5385,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'data-infrastructuur-bepaalt-ai-race':
+    "Bij Stevin zien we dezelfde trend terug bij klanten die volwassen willen worden in hun AI-strategieën. Veel organisaties beginnen met pilots rond generatieve AI of automatisering zonder eerst hun datahuishouding op orde te brengen. Dat werkt net zomin als een huis bouwen zonder fundering: tijdelijk resultaat is mogelijk, maar langetermijnsucces zit in geduldige investeringen in structuur en kwaliteit.\n\nSuccesvolle implementaties beginnen altijd met een grondige audit van bestaande datasets en processen waarbinnen deze worden gegenereerd. Daarna volgt het uitrollen van tools die meetdata verzamelen én oorzaak-en-gevolgrelaties blootleggen tussen acties en uitkomsten.",
   'cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit':
     "Bij Stevin zien we deze verschuiving al jaren aankomen. Onze klanten worstelen vaak met dezelfde vraag: hoe blijven we relevant als technologie alles verandert? Onze antwoord is simpel: focus op wat technologie niet kan vervangen – strategisch denken en menselijke connectie. Wij geloven dat bureaus en marketeers zich moeten richten op het bouwen van systemen waarin AI ondersteunt in plaats van vervangt. Dat betekent investeren in tools die transparantie bieden over mediabestedingen, zodat adverteerders weer grip krijgen op hun budgetten. Maar bovenal betekent het durven loslaten van oude gewoontes en accepteren dat de toekomst ligt in samenwerking tussen mens en machine.",
   'bending-spoons-18-miljard-ipo-minimaliseren-geluk':
