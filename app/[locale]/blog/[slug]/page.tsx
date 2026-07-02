@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-in-accountancy-evolutie-in-plaats-van-revolutie': (
+    <>
+      <p className="lead-para">
+        De verwachting dat artificiële intelligentie de accountancy in korte tijd volledig zal herdefiniëren, is volgens hoogleraar Lineke Sneller te optimistisch. In een recent interview benadrukt ze dat AI een evolutionair proces is: "Voordat we het allemaal echt goed gaan gebruiken, moeten we het ook leren." De adoptie van nieuwe technologieën vereist tijd, training en aanpassing van processen binnen organisaties.
+      </p>
+      <p>
+        Sneller wijst erop dat veel toepassingen van AI nu nog beperkt zijn tot specifieke taken, zoals data-analyse of automatisering van administratieve processen. Volledige integratie in complexe financiële controlesystemen vraagt om betrouwbare technologie en goed opgeleide professionals die weten hoe ze AI-tools moeten toepassen en interpreteren.
+      </p>
+      <p>
+        Ook de afhankelijkheid van externe partijen speelt een rol: veel accountantskantoren werken met softwareleveranciers die AI-functionaliteiten aanbieden. Dit betekent dat de snelheid van innovatie ook afhangt van de prioriteiten en roadmaps van deze bedrijven.
+      </p>
+    </>
+  ),
   'ai-in-directierollen-experiment-loopt-uit-op-mislukking': (
     <>
       <p className="lead-para">
@@ -5321,6 +5334,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-in-accountancy-evolutie-in-plaats-van-revolutie':
+    "Voor ondernemers en bedrijven die met financiële processen werken, is dit een belangrijke reminder dat digitale transformatie geen magische oplossing is. Succesvolle implementatie hangt af van realistische verwachtingen, investeringen in kennis en samenwerking met betrouwbare partners. Het is verstandig om kleine stappen te zetten en eerst te experimenteren met laagdrempelige toepassingen voordat grote systemen worden vervangen.",
   'ai-in-directierollen-experiment-loopt-uit-op-mislukking':
     "Voor ondernemers en organisaties betekent dit dat AI nog lang geen vervanging is voor menselijke expertise in leidinggevende functies. Wel biedt het kansen om processen efficiënter te maken door AI in te zetten voor routinematige taken. De les uit dit experiment is duidelijk: technologie moet menselijke besluitvorming aanvullen, niet overnemen.",
   'un-waarschuwt-voor-gebrek-aan-globale-regels-ai':
