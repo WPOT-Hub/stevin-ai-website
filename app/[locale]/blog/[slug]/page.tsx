@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-in-directierollen-experiment-loopt-uit-op-mislukking': (
+    <>
+      <p className="lead-para">
+        Sander Klous, hoogleraar AI &amp; Audit aan de UvA en partner bij KPMG, startte vorig jaar een radicaal project: een organisatie waarin alleen AI-agents operationele en directierollen vervulden. Het doel was om te testen hoever autonomie van kunstmatige intelligentie kan gaan in bedrijfsvoering.
+      </p>
+      <p>
+        Binnen twaalf maanden bleek dat de Zero Person Organization niet levensvatbaar was. De AI-agenten bleken onvoldoende in staat om complexe beslissingen te nemen die normaal door mensen worden genomen, aldus Klous. Financiële afhandeling, strategische keuzes en communicatie met stakeholders liepen stuk op gebrek aan menselijk oordeel.
+      </p>
+      <p>
+        Klous waarschuwt dat de hype rondom AI als volwaardige vervanger van menselijke rollen voorbarig is. Volgens hem moet AI vooral worden ingezet als ondersteunend instrument, niet als vervanger van kritisch denken en ethische afwegingen.
+      </p>
+    </>
+  ),
   'un-waarschuwt-voor-gebrek-aan-globale-regels-ai': (
     <>
       <p className="lead-para">
@@ -5308,6 +5321,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-in-directierollen-experiment-loopt-uit-op-mislukking':
+    "Voor ondernemers en organisaties betekent dit dat AI nog lang geen vervanging is voor menselijke expertise in leidinggevende functies. Wel biedt het kansen om processen efficiënter te maken door AI in te zetten voor routinematige taken. De les uit dit experiment is duidelijk: technologie moet menselijke besluitvorming aanvullen, niet overnemen.",
   'un-waarschuwt-voor-gebrek-aan-globale-regels-ai':
     "Voor ondernemers is dit een wake-upcall om niet alleen naar winst te kijken, maar ook naar de langetermijngevolgen van hun innovaties. Bedrijven die AI toepassen, doen er goed aan om zelf proactief ethische richtlijnen op te stellen en mee te denken over regulering. Want als overheden straks noodmaatregelen opleggen, kunnen die onverwachte impact hebben op businessmodellen en markttoegang.",
   'claude-sonnet-5-de-goedkopere-agent-revolutie':
