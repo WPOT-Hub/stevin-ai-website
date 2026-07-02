@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'bending-spoons-18-miljard-ipo-minimaliseren-geluk': (
+    <>
+      <p className="lead-para">
+        Bending Spoons, bekend om het overnemen en herstellen van aantrekkelijke maar verliesgevende internetmerken, heeft een IPO aangekondigd met een initiële marktwaarde van $18 miljard. De oprichters benadrukken dat hun succes voortkomt uit het systematisch vermijden van afhankelijkheid van geluk of externe omstandigheden, aldus TechCrunch. Hun aanpak combineert data-gedreven besluitvorming met een focus op operationele efficiëntie.
+      </p>
+      <p>
+        De strategie van Bending Spoons draait om het identificeren van merken met potentieel maar structurele problemen, zoals lage gebruikersgroei of verouderde technologie. Vervolgens worden deze merken overgenomen en omgevormd tot winstgevende onderdelen binnen hun portfolio. Dit proces wordt herhaaldelijk toegepast, waarbij elk project wordt geanalyseerd op basis van meetbare criteria voordat er wordt geïnvesteerd.
+      </p>
+      <p>
+        De beursgang volgt op jarenlange groei zonder externe financiering, wat de stabiliteit en voorspelbaarheid van hun bedrijfsmodel onderstreept. De oprichters wijzen erop dat hun aanpak niet alleen gericht is op schaalvergroting, maar ook op het creëren van duurzame waarde voor aandeelhouders en klanten.
+      </p>
+    </>
+  ),
   'ai-in-accountancy-evolutie-in-plaats-van-revolutie': (
     <>
       <p className="lead-para">
@@ -5334,6 +5347,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'bending-spoons-18-miljard-ipo-minimaliseren-geluk':
+    "Voor ondernemers die actief zijn in overnames of portefeuillebeheer kan de aanpak van Bending Spoons inspirerend zijn. Het benadrukt het belang van een gestructureerde methodiek bij het evalueren en transformeren van bedrijven, waarbij toeval zoveel mogelijk wordt uitgesloten. Tegelijkertijd laat het zien dat langetermijnwaarde vaak belangrijker is dan snelle groei of marktaandeel.",
   'ai-in-accountancy-evolutie-in-plaats-van-revolutie':
     "Voor ondernemers en bedrijven die met financiële processen werken, is dit een belangrijke reminder dat digitale transformatie geen magische oplossing is. Succesvolle implementatie hangt af van realistische verwachtingen, investeringen in kennis en samenwerking met betrouwbare partners. Het is verstandig om kleine stappen te zetten en eerst te experimenteren met laagdrempelige toepassingen voordat grote systemen worden vervangen.",
   'ai-in-directierollen-experiment-loopt-uit-op-mislukking':
