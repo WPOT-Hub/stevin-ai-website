@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'data-infrastructuur-bepaalt-ai-race',
+    format: 'dispatch' as const,
+    edition: '309',
+    category: 'Tech',
+    title: "Wie de data-infrastructuur beheerst, wint de AI-race",
+    dek: "Alexandr Wang bouwde Scale AI op door betrouwbare data-infrastructuur centraal te stellen en toont zo dat wie de basis legt, de hele industrie domineert.",
+    publishedAt: '2026-07-02',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Wie de data-infrastructuur beheerst, wint de AI-race",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit',
     format: 'dispatch' as const,
     edition: '308',
