@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit',
+    format: 'dispatch' as const,
+    edition: '308',
+    category: 'Markt',
+    title: "Cannes mist de échte AI-revolutie: het gaat niet om scripts, maar om media",
+    dek: "Terwijl de reclamewereld in Cannes nog debatteert over AI die advertenties schrijft, verandert de echte disruptie al onder onze neus: hoe media wordt gepland, gekocht en geprijsd.",
+    publishedAt: '2026-07-02',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Cannes mist de échte AI-revolutie: het gaat niet om scripts, maar om media",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'bending-spoons-18-miljard-ipo-minimaliseren-geluk',
     format: 'dispatch' as const,
     edition: '307',
