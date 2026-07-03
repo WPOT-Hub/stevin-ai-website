@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         default: 'Stevin · de AI-laag over je marketing en sales',
         template: '%s | Stevin.AI',
       },
-      description: 'Stevin brengt je eigen marketingdata samen, ziet wat aandacht nodig heeft voordat je rapportage het oppikt en beweegt je campagnes mee. Jouw data blijft van jou. Een marketing intelligence platform voor bureaus, merken en in-house teams.',
+      description: 'Stevin brengt je eigen marketingdata samen, ziet wat aandacht nodig heeft voordat je rapportage het oppikt en beweegt je campagnes mee. Jouw data blijft van jou. Marketing-intelligence voor bureaus, merken en in-house teams.',
       openGraph: {
         type: 'website',
         locale: 'nl_NL',
