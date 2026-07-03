@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'europas-eerste-quantum-bedrijf-bewerkt-onzekerheid-over-toekomst': (
+    <>
+      <p className="lead-para">
+        Het Finse bedrijf IQM, dat volledige quantum-oplossingen levert, noteerde vandaag op de Amerikaanse techbeurs. De startprijs lag in lijn met de verwachtingen, maar de toekomst van quantumcomputers blijft onduidelijk aldus het management zelf.
+      </p>
+      <p>
+        De beursgang moet kapitaal aantrekken om productontwikkeling te versnellen. Toch erkent IQM dat commerciële toepassingen nog jaren verwijderd zijn. Grote techbedrijven zoals IBM en Google investeren weliswaar miljarden, maar praktische doorbraken blijven uit.
+      </p>
+      <p>
+        De waardering van bijna 1,9 miljard euro is gebaseerd op potentieel in plaats van huidige inkomsten. Analisten vragen zich af of de markt niet te vroeg wordt ingeschat. Concurrentie uit China en de VS blijft een constante dreiging.
+      </p>
+    </>
+  ),
   'data-infrastructuur-bepaalt-ai-race': (
     <>
       <p className="lead-para">
@@ -5385,6 +5398,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'europas-eerste-quantum-bedrijf-bewerkt-onzekerheid-over-toekomst':
+    "Quantumtechnologie staat nog in de kinderschoenen, maar de hype rondom AI en supercomputing dwingt bedrijven om nu al strategieën te ontwikkelen. Voor ondernemers betekent dit dat ze moeten anticiperen op disruptieve veranderingen zonder direct rendement te verwachten. De komende jaren zal duidelijk worden welke sectoren het meest baat hebben bij deze technologie.",
   'data-infrastructuur-bepaalt-ai-race':
     "Bij Stevin zien we dezelfde trend terug bij klanten die volwassen willen worden in hun AI-strategieën. Veel organisaties beginnen met pilots rond generatieve AI of automatisering zonder eerst hun datahuishouding op orde te brengen. Dat werkt net zomin als een huis bouwen zonder fundering: tijdelijk resultaat is mogelijk, maar langetermijnsucces zit in geduldige investeringen in structuur en kwaliteit.\n\nSuccesvolle implementaties beginnen altijd met een grondige audit van bestaande datasets en processen waarbinnen deze worden gegenereerd. Daarna volgt het uitrollen van tools die meetdata verzamelen én oorzaak-en-gevolgrelaties blootleggen tussen acties en uitkomsten.",
   'cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit':
