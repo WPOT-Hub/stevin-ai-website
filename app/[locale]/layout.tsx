@@ -94,16 +94,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     metadataBase: new URL('https://stevin.ai'),
     title: {
-      default: 'Stevin · the AI layer over your operation',
+      default: 'Stevin · the AI layer over your marketing and sales',
       template: '%s | Stevin.AI',
     },
-    description: 'The AI layer over your operation. Results in marketing and sales first, then broader. For agencies, multi-location and multi-market businesses and in-house teams.',
+    description: 'Your own data, your own marketing brain. Stevin sees what needs attention and moves your campaigns with it, on data that stays yours. For agencies, multi-location and multi-market businesses and in-house teams.',
     openGraph: {
       type: 'website',
       locale: 'en_GB',
       siteName: 'Stevin.AI',
-      title: 'Stevin · the AI layer over your operation',
-      description: 'The AI layer over your operation. Results in marketing and sales first, then broader.',
+      title: 'Stevin · the AI layer over your marketing and sales',
+      description: 'Your own data, your own marketing brain. Stevin sees what needs attention and moves with it.',
       url: 'https://stevin.ai/en',
       images: [
         {

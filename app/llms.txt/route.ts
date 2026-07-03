@@ -30,9 +30,9 @@ export async function GET() {
   const body = lines(
     '# Stevin.AI',
     '',
-    '> AI-driven marketing-platform voor MKB. Maakt zichtbaar wat marketing echte extra omzet oplevert via uplift-meting, Marketing Mix Modeling (Google Meridian), en geautomatiseerde signalen uit 245+ marketing-tools.',
+    '> De AI-laag over je marketing en sales. Je eigen data, je eigen marketing-brein: Stevin koppelt je paid en owned kanalen op data die van jou blijft, ziet wat aandacht nodig heeft voordat het in de maandrapportage staat, en beweegt je campagnes mee.',
     '',
-    'Stevin biedt een meetlaag bovenop versnipperde marketing-data (Google Ads, Meta Ads, GA4, HubSpot, Klaviyo, Shopify, etc.). De aanpak: niet credit verdelen achteraf (last-click attribution), maar oorzaak-en-gevolg meten via experimenten en MMM. Doelgroep: MKB-DGA, D2C-founders, agency-eigenaars en in-house marketing-teams in Nederland en Belgie.',
+    'Stevin legt een slimme laag over versnipperde marketing-data (Google Ads, Meta Ads, GA4, HubSpot, Klaviyo, Shopify, en 245+ meer). Kernidee: je adverteert, maar je data staat vaak bij het bureau. Stevin haalt die data naar je toe, zodat je eigenaar bent en klaar voor wat AI ermee kan. Het bureau blijft de uitvoerder, jij houdt het zicht en het geheugen. Doelgroep: bureaus, merken met een mediabureau, merkbouwers en in-house marketing-teams in Nederland en Belgie.',
     '',
     'Toon van content: feitelijk, geattribueerd, geen academisch jargon. "Accountant die toevallig kan designen". Schrijftaal Nederlands.',
     '',
