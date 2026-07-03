@@ -151,7 +151,7 @@ export default async function AgencyScanPage({ params }: Props) {
             <div className="bg-[#0A1628] rounded-2xl p-6 space-y-3">
               <div className="flex items-center gap-2 mb-4">
                 <span className="w-2 h-2 rounded-full bg-[#F4216A] animate-pulse" />
-                <span className="text-[11px] font-mono text-white/40 uppercase tracking-widest">Live · Stevin FactEngine</span>
+                <span className="text-[11px] font-mono text-white/40 uppercase tracking-widest">Live · Stevin</span>
               </div>
               {[
                 {

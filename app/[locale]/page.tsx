@@ -134,6 +134,18 @@ export default async function HomePage({ params }: Props) {
             </Link>
           </div>
 
+          {/* Proof boven de vouw (geanonimiseerd) */}
+          <div className="flex flex-wrap gap-2.5 mt-9">
+            {[t('proof_1'), t('proof_2'), t('proof_3')].map((p) => (
+              <span
+                key={p}
+                className="text-[12px] text-white/70 border border-white/15 rounded-full px-3.5 py-1.5 leading-none"
+              >
+                {p}
+              </span>
+            ))}
+          </div>
+
           {/* Multi-market teaser */}
           <Link
             href="/multi-market"
