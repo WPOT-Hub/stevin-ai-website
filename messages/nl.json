@@ -1489,7 +1489,9 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een overzicht over alles wat je groep doet.",
     "cta_sub": "Ontworpen voor groepen met meerdere merken en vestigingen. Boek een demo en we laten zien hoe Stevin per regio adviseert wat werkt.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Boek een demo",
+    "proof_stat": "-50%",
+    "proof_label": "kosten per klant, per vestiging bijgestuurd zonder te wachten op het bureau."
   },
   "fmcg": {
     "eyebrow": "VOOR FMCG-MERKEN",
@@ -1540,7 +1542,9 @@
     "cta_eyebrow": "Geen MMM-vervanger. De laag ertussen.",
     "cta_h3": "Wekelijks drie dingen die ertoe doen. Per merk.",
     "cta_sub": "Ontworpen voor FMCG-merken in NL en BE die tussen kwartaalrapporten door blind zijn. Boek een demo en we laten zien hoe Stevin de gaten dicht zonder dat je dashboards hoeft te lezen.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Boek een demo",
+    "proof_stat": "+45%",
+    "proof_label": "aanvragen bij een merk onder concurrentiedruk, bijgestuurd voor het de omzet raakte."
   },
   "automotive": {
     "eyebrow": "VOOR AUTOMOTIVE",
@@ -1591,7 +1595,9 @@
     "cta_eyebrow": "Geen brand-bureau. Geen dealer-bureau. Een brein over allebei.",
     "cta_h3": "Merk en dealer, eindelijk in een beeld.",
     "cta_sub": "Ontworpen voor importeurs, dealerorganisaties en individuele dealers. Boek een demo, dan laten we zien hoe Stevin op jouw eigen data op merk- en dealerniveau tegelijk meedenkt.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Boek een demo",
+    "proof_stat": "-50%",
+    "proof_label": "kosten per klant bij een aanbieder met meerdere vestigingen, scherper getarget waar de koper kiest."
   },
   "verhuur": {
     "eyebrow": "VOOR VERHUURBEDRIJVEN",
@@ -1642,7 +1648,9 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een beeld over voorraad, vraag en marketing.",
     "cta_sub": "Ontworpen voor verhuurbedrijven met meerdere vestigingen en machinetypes. Boek een demo en we laten zien hoe Stevin per regio en seizoen meedenkt.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Boek een demo",
+    "proof_stat": "-35%",
+    "proof_label": "kosten per lead bij een seizoensbedrijf, budget naar de weken die er echt toe doen."
   },
   "voorNonProfit": {
     "eyebrow": "VOOR NON-PROFITS",
@@ -1693,7 +1701,9 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een beeld over alles wat steun oplevert.",
     "cta_sub": "Ontworpen voor non-profits met kleine teams. Boek een demo en we laten zien hoe Stevin Google Ad Grants en je hele communicatie-stack samenbrengt.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Boek een demo",
+    "proof_stat": "-43%",
+    "proof_label": "klikprijs bij een organisatie die dezelfde ads te lang liet draaien, op tijd ververst."
   },
   "autodealerCampagnes": {
     "eyebrow": "CAMPAGNE-MANAGEMENT VOOR DEALERS",
@@ -1795,7 +1805,9 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een beeld over alles wat omzet brengt.",
     "cta_sub": "Ontworpen voor retail-ketens met meerdere winkels. Boek een demo en we laten zien hoe Stevin online en offline samenbrengt per vestiging.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Boek een demo",
+    "proof_stat": "250%",
+    "proof_label": "meer conversies bij een retailer met 30+ winkels, advertenties die meebewegen met de voorraad."
   },
   "musea": {
     "eyebrow": "VOOR MUSEA EN CULTUUR",
@@ -1846,7 +1858,9 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een beeld over alles wat bezoekers brengt.",
     "cta_sub": "Ontworpen voor musea en cultuurinstellingen met kleine teams. Boek een demo, dan laten we zien hoe Stevin Google Ad Grants en je hele media-stack samenbrengt op je eigen data. Denk aan een grootschalig evenement dat zo 11 miljoen euro ticketomzet haalde.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Boek een demo",
+    "proof_stat": "11 mln",
+    "proof_label": "euro ticketomzet bij een grootschalig evenement, meebewegende urgentie naar de ticketflow."
   },
   "websites": {
     "eyebrow": "Websites",

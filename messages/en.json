@@ -1489,7 +1489,9 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een overzicht over alles wat je groep doet.",
     "cta_sub": "Ontworpen voor groepen met meerdere merken en vestigingen. Plan een gesprek en we laten zien hoe Stevin per regio adviseert wat werkt.",
-    "cta_btn": "Plan een gesprek"
+    "cta_btn": "Plan een gesprek",
+    "proof_stat": "-50%",
+    "proof_label": "cost per customer, adjusted per location without waiting on the agency."
   },
   "fmcg": {
     "eyebrow": "FOR FMCG BRANDS",
@@ -1540,7 +1542,9 @@
     "cta_eyebrow": "Not an MMM replacement. The layer in between.",
     "cta_h3": "Three things that matter weekly. Per brand.",
     "cta_sub": "...that go blind between quarterly trackers. Book a demo and we'll show how Stevin fills...",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Book a demo",
+    "proof_stat": "+45%",
+    "proof_label": "more leads at a brand under competitive pressure, adjusted before it hit revenue."
   },
   "automotive": {
     "eyebrow": "FOR AUTOMOTIVE",
@@ -1591,7 +1595,9 @@
     "cta_eyebrow": "Not a brand agency. Not a dealer agency. One brain over both.",
     "cta_h3": "Brand and dealer, finally in one view.",
     "cta_sub": "Built for importers, dealer groups and individual dealers. Book a demo and we'll show how Stevin thinks along at brand and dealer level at once, on your own data.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Book a demo",
+    "proof_stat": "-50%",
+    "proof_label": "cost per customer at a multi-location provider, targeting sharpened where buyers decide."
   },
   "verhuur": {
     "eyebrow": "VOOR VERHUURBEDRIJVEN",
@@ -1642,7 +1648,9 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een beeld over voorraad, vraag en marketing.",
     "cta_sub": "Ontworpen voor verhuurbedrijven met meerdere vestigingen en machinetypes. Plan een gesprek en we laten zien hoe Stevin per regio en seizoen meedenkt.",
-    "cta_btn": "Plan een gesprek"
+    "cta_btn": "Plan een gesprek",
+    "proof_stat": "-35%",
+    "proof_label": "cost per lead at a seasonal business, budget moved to the weeks that matter."
   },
   "musea": {
     "eyebrow": "VOOR MUSEA EN CULTUUR",
@@ -1693,7 +1701,9 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een beeld over alles wat bezoekers brengt.",
     "cta_sub": "Built for museums and cultural institutions with small teams. Book a demo and we'll show how Stevin brings Google Ad Grants and your whole media stack together on your own data. Think of a large-scale event that reached 11 million euro in ticket sales this way.",
-    "cta_btn": "Plan een gesprek"
+    "cta_btn": "Plan een gesprek",
+    "proof_stat": "11M",
+    "proof_label": "euro in ticket sales at a large-scale event, shifting urgency into the ticket flow."
   },
   "voorNonProfit": {
     "eyebrow": "VOOR NON-PROFITS",
@@ -1744,7 +1754,9 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een beeld over alles wat steun oplevert.",
     "cta_sub": "Ontworpen voor non-profits met kleine teams. Plan een gesprek en we laten zien hoe Stevin Google Ad Grants en je hele communicatie-stack samenbrengt.",
-    "cta_btn": "Plan een gesprek"
+    "cta_btn": "Plan een gesprek",
+    "proof_stat": "-43%",
+    "proof_label": "cost per click at an organization running the same ads too long, refreshed in time."
   },
   "voorRetail": {
     "eyebrow": "VOOR RETAIL-KETENS",
@@ -1795,7 +1807,9 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "One view over everything that drives revenue.",
     "cta_sub": "Ontworpen voor retail-ketens met meerdere winkels. Plan een gesprek en we laten zien hoe Stevin online en offline samenbrengt per vestiging.",
-    "cta_btn": "Plan een gesprek"
+    "cta_btn": "Plan een gesprek",
+    "proof_stat": "250%",
+    "proof_label": "more conversions at a retailer with 30+ stores, ads that move with stock."
   },
   "autodealerCampagnes": {
     "eyebrow": "CAMPAGNE-MANAGEMENT VOOR DEALERS",
