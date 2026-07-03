@@ -6,7 +6,6 @@ import StickyMobileCTA from '@/components/StickyMobileCTA'
 import SignalFlowDemo from '@/components/SignalFlowDemo'
 import TrustBadges from '@/components/TrustBadges'
 import { getHomepageFaqs, type FAQ } from '@/data/faqs'
-import { nativeConnectors } from '@/data/connectors'
 import { editorials } from '@/data/articles'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -292,10 +291,27 @@ export default async function HomePage({ params }: Props) {
           <p className="text-[11px] font-display font-bold text-muted uppercase tracking-[0.08em] text-center mb-5">
             {t('connectors_label')}
           </p>
-          <div className="flex items-center justify-center gap-4 sm:gap-8 flex-wrap opacity-45">
-            {nativeConnectors.map((c) => (
-              <span key={c.slug} className="text-[10px] sm:text-xs font-bold text-muted tracking-wide">{c.name}</span>
+          <div className="flex items-center justify-center gap-7 sm:gap-10 flex-wrap">
+            {[
+              { s: 'google-ads', n: 'Google Ads' },
+              { s: 'meta', n: 'Meta' },
+              { s: 'instagram', n: 'Instagram' },
+              { s: 'tiktok', n: 'TikTok' },
+              { s: 'youtube', n: 'YouTube' },
+              { s: 'linkedin', n: 'LinkedIn' },
+              { s: 'google-analytics', n: 'Google Analytics' },
+            ].map((l) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={l.s}
+                src={`/logos/tools/${l.s}.svg`}
+                alt={l.n}
+                style={{ height: '26px', width: 'auto', opacity: 0.5 }}
+              />
             ))}
+            <Link href="/integraties" className="text-[13px] font-display font-semibold text-accent hover:opacity-80 transition-opacity">
+              en 245+ andere &rarr;
+            </Link>
           </div>
         </div>
       </div>
