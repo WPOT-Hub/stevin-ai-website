@@ -128,6 +128,18 @@ export default async function MkbPage({ params }: Props) {
         </div>
       </Section>
 
+      {/* Website-templates (koppeling naar /websites) */}
+      <Section>
+        <div className="max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary">{t('websites_h2')}</h2>
+          <p className="mt-4 text-muted leading-relaxed">{t('websites_desc')}</p>
+          <Link href="/websites" className="mt-6 inline-flex items-center gap-2 font-semibold text-accent hover:gap-3 transition-all">
+            {t('websites_link')}
+            <span aria-hidden="true">&rarr;</span>
+          </Link>
+        </div>
+      </Section>
+
       {/* Closing CTA */}
       <Section bg="surface">
         <CTABlock title={t('cta_h2')} description={t('cta_desc')} buttonText={t('cta')} buttonHref="/contact" />

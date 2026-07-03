@@ -110,14 +110,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
           url: '/en/opengraph-image',
           width: 1200,
           height: 630,
-          alt: 'Stevin · the AI layer over your operation.',
+          alt: 'Stevin · the AI layer over your marketing and sales.',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Stevin · the AI layer over your operation',
-      description: 'The AI layer over your operation. Results in marketing and sales first, then broader.',
+      title: 'Stevin · the AI layer over your marketing and sales',
+      description: 'Your own data, your own marketing brain. Stevin sees what needs attention and moves with it.',
       images: ['/en/opengraph-image'],
     },
   }

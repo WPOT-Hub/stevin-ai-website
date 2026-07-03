@@ -18,7 +18,7 @@ const body = `# Pricing, Stevin
 Stevin werkt met prijs op aanvraag, afgestemd op het aantal advertentie-accounts, koppelingen en de gewenste diepte. Er is bewust geen vaste publieke prijslijst: de prijs schaalt mee met de omvang van de marketing-stack.
 
 ## Wat je krijgt
-- AI-laag over je operatie: connectors, signalen voordat de reguliere rapportage het oppikt, AI-rapportages.
+- AI-laag over je marketing en sales: connectors, signalen voordat de reguliere rapportage het oppikt, AI-rapportages.
 - Read-only koppelingen met je bestaande tools (Google Ads, Meta, GA4, en meer).
 - Geschikt voor bureaus (meerdere klant-accounts) en in-house marketing-teams.
 
