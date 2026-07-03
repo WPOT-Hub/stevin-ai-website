@@ -3,7 +3,6 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
-import MeetlatRuler from '@/components/MeetlatRuler'
 import SignalFlowDemo from '@/components/SignalFlowDemo'
 import TrustBadges from '@/components/TrustBadges'
 import { getHomepageFaqs, type FAQ } from '@/data/faqs'
@@ -159,10 +158,6 @@ export default async function HomePage({ params }: Props) {
             &ldquo;{t('quote')}&rdquo; &middot; {t('quote_author')}
           </p>
 
-          {/* Meetlat */}
-          <div className="mt-20">
-            <MeetlatRuler color="rgba(255,255,255,.35)" />
-          </div>
         </div>
       </section>
 
@@ -342,6 +337,46 @@ export default async function HomePage({ params }: Props) {
                 </h3>
                 <p className="text-muted leading-[1.6]" style={{ fontSize: '15px' }}>{item.desc}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── DE OUDE MANIER VS STEVIN ── */}
+      <section className="bg-surface" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1000px]">
+          <div className="mb-12">
+            <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+              <span className="inline-block w-6 h-px bg-accent flex-shrink-0" aria-hidden="true" />
+              {t('compare_eyebrow')}
+            </p>
+            <h2
+              className="font-display font-extrabold text-primary m-0 mb-4"
+              style={{ fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '20ch' }}
+            >
+              {t('compare_h2')}
+            </h2>
+            <p className="text-muted leading-[1.6]" style={{ fontSize: '16px', maxWidth: '540px' }}>{t('compare_sub')}</p>
+          </div>
+
+          <div className="rounded-[14px] border border-border overflow-hidden bg-white">
+            <div className="grid grid-cols-[0.9fr_1fr_1fr] border-b border-border">
+              <div className="p-3 sm:p-4" aria-hidden="true" />
+              <div className="p-3 sm:p-4 font-display font-bold uppercase tracking-wide text-muted" style={{ fontSize: '12px' }}>{t('compare_col_old')}</div>
+              <div className="p-3 sm:p-4 font-display font-bold uppercase tracking-wide text-accent" style={{ fontSize: '12px', backgroundColor: 'rgba(93,163,255,0.06)' }}>{t('compare_col_stevin')}</div>
+            </div>
+            {[
+              { l: t('compare_r1_label'), o: t('compare_r1_old'), n: t('compare_r1_new') },
+              { l: t('compare_r2_label'), o: t('compare_r2_old'), n: t('compare_r2_new') },
+              { l: t('compare_r3_label'), o: t('compare_r3_old'), n: t('compare_r3_new') },
+              { l: t('compare_r4_label'), o: t('compare_r4_old'), n: t('compare_r4_new') },
+              { l: t('compare_r5_label'), o: t('compare_r5_old'), n: t('compare_r5_new') },
+            ].map((row, i, arr) => (
+              <div key={row.l} className={`grid grid-cols-[0.9fr_1fr_1fr] ${i < arr.length - 1 ? 'border-b border-border' : ''}`}>
+                <div className="p-3 sm:p-4 font-display font-semibold text-primary" style={{ fontSize: '14px' }}>{row.l}</div>
+                <div className="p-3 sm:p-4 text-muted leading-[1.45]" style={{ fontSize: '13.5px' }}>{row.o}</div>
+                <div className="p-3 sm:p-4 text-primary leading-[1.45]" style={{ fontSize: '13.5px', backgroundColor: 'rgba(93,163,255,0.06)' }}>{row.n}</div>
+              </div>
             ))}
           </div>
         </div>
