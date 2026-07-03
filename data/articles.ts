@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'europas-eerste-quantum-bedrijf-bewerkt-onzekerheid-over-toekomst',
+    format: 'dispatch' as const,
+    edition: '310',
+    category: 'Tech',
+    title: "Europese quantum-pionier IQM gaat naar de beurs met onzekere toekomst",
+    dek: "IQM, het eerste Europese quantumbedrijf dat naar de beurs ging, debuteerde op Nasdaq met een waardering van bijna 1,9 miljard euro.",
+    publishedAt: '2026-07-03',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Europese quantum-pionier IQM gaat naar de beurs met onzekere toekomst",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'data-infrastructuur-bepaalt-ai-race',
     format: 'dispatch' as const,
     edition: '309',
