@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'spookreferenties-in-wetenschap-door-ai-hoe-verder',
+    format: 'dispatch' as const,
+    edition: '311',
+    category: 'Markt',
+    title: "Als een bron niet bestaat: wie controleert de controleurs?",
+    dek: "AI creëert spookreferenties in wetenschappelijke artikelen – en niemand weet wie erop let.",
+    publishedAt: '2026-07-03',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Als een bron niet bestaat: wie controleert de controleurs?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'europas-eerste-quantum-bedrijf-bewerkt-onzekerheid-over-toekomst',
     format: 'dispatch' as const,
     edition: '310',
