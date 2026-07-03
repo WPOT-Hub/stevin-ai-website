@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spookreferenties-in-wetenschap-door-ai-hoe-verder': (
+    <>
+      <p className="lead-para">
+        Een wetenschapper schrijft een artikel over hersenkanker en citeert een baanbrekend onderzoek uit *The Lancet*. Het onderzoek blijkt nergens te vinden. De auteur heeft het zelf verzonnen met behulp van een AI-chatbot, maar de fout sluipt door de peer review heen. Dit is geen zeldzame uitzondering meer: uit onderzoek van de Groene Amsterdammer blijkt dat het aantal wetenschappelijke artikelen met niet-bestaande referenties in drie jaar tijd is verzevenvoudigd. Waar in 2023 nog één op de 1400 publicaties een spookcitaten bevatte, is dat nu één op de 200. De oorzaak ligt voor de hand: onderzoekers gebruiken AI om referentielijsten te genereren of te verfijnen, maar controleren die niet altijd kritisch genoeg.
+      </p>
+      <p>
+        De gevolgen zijn groter dan een ongemakkelijk gevoel bij coauteurs. Een enkele spookreferentie kan zich als een virus verspreiden: andere wetenschappers citeren het niet-bestaande onderzoek opnieuw, waardoor een schijnbare consensus ontstaat die op drijfzand rust. Bijvoorbeeld bij een artikel over hersenkankerbehandeling waar zowel bestaande als niet-bestaande bronnen werden gebruikt om een bepaalde therapie te onderbouwen. De implicaties zijn duidelijk: verkeerde conclusies kunnen leiden tot misleidende behandeladviezen, beleidsbeslissingen of zelfs farmaceutische ontwikkelingen die gebaseerd zijn op lucht.
+      </p>
+      <p>
+        Waarom gebeurt dit zo vaak? De publicatiedruk speelt een grote rol. Hoe meer een wetenschapper publiceert, hoe groter de kans op carrièresucces, beurzen en erkenning. Onderzoek naar wetenschappelijke integriteit toont aan dat druk om te scoren leidt tot slordigheid, ook voordat AI in beeld kwam. Maar AI maakt het probleem erger: chatbots produceren sneller referenties dan mensen ze kunnen controleren, en de verleiding om AI te vertrouwen is groot.
+      </p>
+      <p>
+        Universiteiten en onderzoeksinstellingen reageren verschillend. Sommige noemen het onderzoek ‘een belangrijk signaal’ en zeggen intern mechanismen aan te willen scherpen, zoals Wageningen Universiteit. Anderen, zoals het Erasmus MC, hebben richtlijnen voor wetenschappelijke integriteit en AI, maar geven toe dat centrale controlesystemen ontbreken. Het probleem is dat er simpelweg geen goede tools bestaan om alle publicaties automatisch te scannen op spookreferenties. En zelfs als die er zouden zijn, wie draagt dan de eindverantwoordelijkheid? De onderzoeker? De coauteurs? De uitgever?
+      </p>
+      <p>
+        Peer review zou moeten voorkomen dat dergelijke fouten doordringen tot gepubliceerde artikelen, maar ook dat systeem staat onder druk. Het proces kan traag zijn en wordt niet altijd even grondig uitgevoerd. Bovendien weten veel reviewers zelf niet hoe ze AI-gegenereerde inhoud moeten herkennen in citaties of tekst. Uitgevers als Springer Nature en Elsevier breiden hun integriteitsteams uit en ontwikkelen detectiesystemen voor AI-gebruik, maar ook zij geven toe dat traditionele controles ontoereikend zijn geworden.
+      </p>
+      <p>
+        Er is dringend behoefte aan nieuwe richtlijnen en standaarden die specifiek gericht zijn op het gebruik van AI in wetenschappelijk werk. Bert Seghers van Enrio werkt aan een mondiale rapporteringsstandaard over AI in de wetenschap, omdat er momenteel geen gemeenschappelijke regels zijn voor hoe om te gaan met door AI gegenereerde inhoud. Maar zelfs als die standaarden er komen, blijft de vraag: wie controleert of ze worden nageleefd?
+      </p>
+      <p>
+        Het probleem illustreert bredere ethische kwesties rondom technologie in onderzoeksprocessen. Als we AI volledig vertrouwen zonder kritische blik, riskeren we niet alleen onjuiste conclusies in wetenschap, maar ook verlies van vertrouwen in het hele systeem. Want wie gelooft nog in een bron als die zelf niet eens bestaat?
+      </p>
+    </>
+  ),
   'europas-eerste-quantum-bedrijf-bewerkt-onzekerheid-over-toekomst': (
     <>
       <p className="lead-para">
@@ -5398,6 +5423,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spookreferenties-in-wetenschap-door-ai-hoe-verder':
+    "Bij Stevin zien we dit probleem als symptoom van een grotere trend: technologie versnelt processen zonder dat we altijd meekomen met de noodzakelijke kaders voor kwaliteitscontrole. Onze klanten in marketing en bedrijfsvoering worstelen met soortgelijke uitdagingen wanneer ze generatieve AI gebruiken voor contentcreatie of data-analyse – denk aan hallucinaties in rapportages of onbetrouwbare meetdata door slechte prompts of gebrek aan menselijke validatie.\n\nDe les is duidelijk: automatisering moet gepaard gaan met transparantie en verantwoordelijkheid. Net zoals wetenschappers hun referenties moeten checken voordat ze publiceren, moeten bedrijven hun AI-gegenereerde output laten valideren door mensen die begrijpen waarom data belangrijk is – niet alleen hoe je het genereert.\n\nVoor ons betekent dit dat we onze klanten helpen bij het implementeren van robuuste controlemechanismen rondom AI-toepassingen: van dubbele checks tot duidelijke governance-structuren die voorkomen dat onjuiste informatie doorsijpelt naar besluitvorming.\n\nWant uiteindelijk gaat het niet om technologie zelf, maar om hoe wij haar gebruiken – en wie er verantwoordelijk wordt gehouden als het misgaat.",
   'europas-eerste-quantum-bedrijf-bewerkt-onzekerheid-over-toekomst':
     "Quantumtechnologie staat nog in de kinderschoenen, maar de hype rondom AI en supercomputing dwingt bedrijven om nu al strategieën te ontwikkelen. Voor ondernemers betekent dit dat ze moeten anticiperen op disruptieve veranderingen zonder direct rendement te verwachten. De komende jaren zal duidelijk worden welke sectoren het meest baat hebben bij deze technologie.",
   'data-infrastructuur-bepaalt-ai-race':
