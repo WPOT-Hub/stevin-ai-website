@@ -227,59 +227,48 @@ export default async function HomePage({ params }: Props) {
             </Link>
           </div>
 
-          {/* Twee sporen: vakmensen/MKB en marketing (artiesten leeft in footer) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Vakmensen en MKB */}
-            <Link
-              href="/mkb"
-              className="group block rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200"
-              style={{ padding: '48px 44px 44px' }}
-            >
-              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
-                <span className="inline-block w-5 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-                {t('domain_vakman_eyebrow')}
-              </p>
-              <h3
-                className="font-display font-bold text-primary mb-4"
-                style={{ fontSize: 'clamp(24px, 2.2vw, 32px)', lineHeight: '1.1', letterSpacing: '-0.025em' }}
+          {/* Intro die het hele-bedrijf-verhaal vervangt, marketing-eerst */}
+          <p className="text-muted leading-[1.6] mb-12" style={{ fontSize: '17px', maxWidth: '620px' }}>
+            {t('domain_intro')}
+          </p>
+
+          {/* Drie marketing-segmenten */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { h: t('domain_c1_h3'), d: t('domain_c1_desc'), href: '/marketing' },
+              { h: t('domain_c2_h3'), d: t('domain_c2_desc'), href: '/marketing' },
+              { h: t('domain_c3_h3'), d: t('domain_c3_desc'), href: '/merken' },
+            ].map((c) => (
+              <Link
+                key={c.h}
+                href={c.href}
+                className="group block rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200"
+                style={{ padding: '40px 36px 36px' }}
               >
-                {t('domain_vakman_h3')}
-              </h3>
-              <p className="text-muted leading-[1.6]" style={{ fontSize: '16px' }}>
-                {t('domain_vakman_desc')}
-              </p>
-              <div className="mt-8 pt-5 border-t border-border">
-                <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                  {t('domain_vakman_link')}
-                  <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
-                </span>
-              </div>
-            </Link>
-            {/* Marketing */}
-            <Link
-              href="/marketing"
-              className="group block rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200"
-              style={{ padding: '48px 44px 44px' }}
-            >
-              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
-                <span className="inline-block w-5 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-                {t('domain_marketing_eyebrow')}
-              </p>
-              <h3
-                className="font-display font-bold text-primary mb-4"
-                style={{ fontSize: 'clamp(24px, 2.2vw, 32px)', lineHeight: '1.1', letterSpacing: '-0.025em' }}
-              >
-                {t('domain_marketing_h3')}
-              </h3>
-              <p className="text-muted leading-[1.6]" style={{ fontSize: '16px' }}>
-                {t('domain_marketing_desc')}
-              </p>
-              <div className="mt-8 pt-5 border-t border-border">
-                <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                  {t('domain_marketing_link')}
-                  <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
-                </span>
-              </div>
+                <h3
+                  className="font-display font-bold text-primary mb-4"
+                  style={{ fontSize: 'clamp(20px, 2vw, 26px)', lineHeight: '1.12', letterSpacing: '-0.02em' }}
+                >
+                  {c.h}
+                </h3>
+                <p className="text-muted leading-[1.6]" style={{ fontSize: '15px' }}>
+                  {c.d}
+                </p>
+                <div className="mt-7 pt-5 border-t border-border">
+                  <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+                    {t('domain_card_link')}
+                    <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Vakman-spoor bewust secundair: een regel, geen kaart */}
+          <div className="mt-8 text-center">
+            <Link href="/mkb" className="text-sm text-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+              {t('domain_vakman_linktext')}
+              <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
