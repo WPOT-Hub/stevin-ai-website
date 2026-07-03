@@ -124,12 +124,12 @@ export default async function HomePage({ params }: Props) {
             >
               {t('cta_demo')}
             </Link>
-            <Link
-              href="/werkwijze"
+            <a
+              href="#hoe-het-werkt"
               className="inline-flex items-center gap-2 border border-white/20 text-white font-display font-semibold text-[15px] px-7 py-3.5 rounded-lg hover:border-white/40 hover:bg-white/5 transition-colors"
             >
               {t('cta_platform')}
-            </Link>
+            </a>
           </div>
 
           {/* Proof boven de vouw (geanonimiseerd) */}
@@ -388,7 +388,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ── DE ENGINE ── */}
-      <section className="bg-primary" style={{ padding: '112px 24px' }}>
+      <section id="hoe-het-werkt" className="bg-primary scroll-mt-24" style={{ padding: '112px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
 
           <div className="flex justify-between items-end gap-12 mb-14 flex-col lg:flex-row">
@@ -572,24 +572,22 @@ export default async function HomePage({ params }: Props) {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="rounded-[14px] border border-border bg-white p-8">
-                <p
-                  className="font-display font-extrabold text-neon"
-                  style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.04em', lineHeight: '1' }}
-                >
-                  {t('stat1_value')}
-                </p>
-                <p className="text-muted mt-3 leading-[1.4]" style={{ fontSize: '13px' }}>{t('stat1_label')}</p>
-              </div>
-              <div className="rounded-[14px] border border-border bg-white p-8">
-                <p
-                  className="font-display font-extrabold text-accent"
-                  style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.04em', lineHeight: '1' }}
-                >
-                  {t('stat2_value')}
-                </p>
-                <p className="text-muted mt-3 leading-[1.4]" style={{ fontSize: '13px' }}>{t('stat2_label')}</p>
-              </div>
+              {[
+                { value: t('case1_value'), label: t('case1_label') },
+                { value: t('case2_value'), label: t('case2_label') },
+                { value: t('case3_value'), label: t('case3_label') },
+                { value: t('case4_value'), label: t('case4_label') },
+              ].map((c, i) => (
+                <div key={i} className="rounded-[14px] border border-border bg-white p-8">
+                  <p
+                    className="font-display font-extrabold text-accent"
+                    style={{ fontSize: 'clamp(32px, 4vw, 48px)', letterSpacing: '-0.04em', lineHeight: '1' }}
+                  >
+                    {c.value}
+                  </p>
+                  <p className="text-muted mt-3 leading-[1.45]" style={{ fontSize: '13px' }}>{c.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
