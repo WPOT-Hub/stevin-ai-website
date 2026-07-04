@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-tactiek-vermindert-ongewenste-klikken-met-50-procent': (
+    <>
+      <p className="lead-para">
+        Een marketeer meldt dat een gerichte tactiek in Google Ads het aantal ongewenste klikken met de helft verminderde, ondanks eerdere claims van Google dat verdachte activiteit al was gefilterd. De aanpak bestond uit het uitsluiten van specifieke IP-adressen en locaties waar abnormale klikpatronen werden waargenomen. Dit leidde direct tot een meetbare uplift in de campagne-efficiëntie, aldus de betrokkene.
+      </p>
+      <p>
+        De tactiek richt zich op zogeheten 'invalid traffic': kliks die geen echte interesse vertegenwoordigen, zoals automatische bots of concurrentie die campagnes saboteert. Door deze kliks te blokkeren, bleef alleen meetdata over die daadwerkelijk leidt tot conversies of sales. De kosten per acquisitie daalden hierdoor significant.
+      </p>
+      <p>
+        Het gebruik van IP-exclusies is niet nieuw, maar de combinatie met locatiegebaseerde filters bleek effectiever dan verwacht. Experts wijzen erop dat dit soort maatregelen vooral nuttig is voor campagnes met hoge budgets of in sectoren waar fraude vaker voorkomt.
+      </p>
+    </>
+  ),
   'anthropic-samsung-custom-ai-chip': (
     <>
       <p className="lead-para">
@@ -5436,6 +5449,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-tactiek-vermindert-ongewenste-klikken-met-50-procent':
+    "Voor bureaus en marketingteams is dit een reminder om niet blind te vertrouwen op standaardfilters van platforms. Actieve monitoring en handmatige aanpassingen kunnen een groot verschil maken in de kosten en resultaten van campagnes. Het benadrukt ook het belang van regelmatige controle van meetdata: als campagnes plotseling minder presteren zonder duidelijke oorzaak, kan dat wijzen op onzichtbare problemen zoals invalid traffic.",
   'anthropic-samsung-custom-ai-chip':
     "Voor bedrijven die afhankelijk zijn van externe AI-infrastructuur kan deze ontwikkeling interessant zijn. Het toont aan dat grote techspelers proberen hun kosten en risico’s te spreiden door eigen hardware te ontwikkelen. Tegelijkertijd blijft Nvidia voorlopig de dominante speler in het chiplandschap.",
   'spookreferenties-in-wetenschap-door-ai-hoe-verder':
