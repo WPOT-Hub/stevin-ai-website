@@ -3,17 +3,23 @@
 import { useRef, useState, useEffect } from 'react'
 import { pushConversionEvent } from '@/lib/tracking'
 
-export default function ContactForm({ nextUrl, subject }: { nextUrl?: string; subject?: string } = {}) {
+// Alle stevin.ai-formulieren lopen via het eigen Hub-endpoint zodat elke lead op
+// een plek binnenkomt: Slack + Supabase + mail naar Koen + bevestiging aan de
+// aanvrager. Vervangt de eerdere FormSubmit-koppeling (die alleen mailde en
+// niets opsloeg).
+const HUB_ENDPOINT = 'https://hub.stevin.ai/api/demo-request'
+
+export default function ContactForm({ subject }: { nextUrl?: string; subject?: string } = {}) {
   const formRef = useRef<HTMLFormElement>(null)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
+    // Backwards-compat: oude FormSubmit-redirect kwam terug met ?verzonden=1.
     const params = new URLSearchParams(window.location.search)
     if (params.get('verzonden') === '1') {
       setSubmitted(true)
-      // Clarity: markeer de afgeronde inzending, zo wordt de funnel
-      // demo-intentie -> inzending filterbaar in het dashboard.
       try {
         window.clarity?.('set', 'form_submit', 'contact')
       } catch {
@@ -26,16 +32,37 @@ export default function ContactForm({ nextUrl, subject }: { nextUrl?: string; su
     e.preventDefault()
     if (!formRef.current || loading) return
     setLoading(true)
+    setError(false)
 
     const data = new FormData(formRef.current)
     const email = (data.get('email') as string) ?? ''
     const phone = (data.get('phone') as string) ?? ''
     const name = (data.get('name') as string) ?? ''
+    const company = (data.get('company') as string) ?? ''
+    const message = (data.get('message') as string) ?? ''
+    const honey = (data.get('_honey') as string) ?? ''
+    // Bron = het meegegeven subject-label (bv. "Agency Scan aanvraag"), of
+    // anders de pagina waar het formulier staat (locale-prefix eraf), zodat je
+    // in Slack/mail ziet waar de lead vandaan komt.
+    const path = window.location.pathname.replace(/^\/(nl|en)(?=\/|$)/, '')
+    const source = subject?.trim() || path.replace(/^\//, '') || 'contact'
+
+    try {
+      const res = await fetch(HUB_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, company, phone, message, source, _honey: honey }),
+      })
+      if (!res.ok) throw new Error('http ' + res.status)
+    } catch {
+      setLoading(false)
+      setError(true)
+      return
+    }
+
+    // Tracking pas na een geslaagde inzending, zodat generate_lead echt telt.
     const [firstName, ...rest] = name.trim().split(' ')
     const lastName = rest.join(' ')
-
-    // Push gehashte user_data naar dataLayer voor form submit
-    // SHA-256 hashing gebeurt client-side, geen plaintext PII verlaat de browser
     try {
       await pushConversionEvent('generate_lead', {
         email,
@@ -44,18 +71,15 @@ export default function ContactForm({ nextUrl, subject }: { nextUrl?: string; su
         ...(lastName ? { lastName } : {}),
       })
     } catch {
-      // Tracking fout mag formulier niet blokkeren
+      /* tracking mag de flow niet blokkeren */
     }
-
-    // Clarity-tag vlak voor navigatie (best-effort op de vertrekkende sessie)
     try {
       window.clarity?.('set', 'form_submit', 'contact')
     } catch {
       /* clarity optioneel */
     }
 
-    // Native form submit na tracking push
-    formRef.current.submit()
+    setSubmitted(true)
   }
 
   if (submitted) {
@@ -71,15 +95,11 @@ export default function ContactForm({ nextUrl, subject }: { nextUrl?: string; su
   return (
     <form
       ref={formRef}
-      action="https://formsubmit.co/koen@stevin.ai"
-      method="POST"
       onSubmit={handleSubmit}
       className="rounded-2xl border border-border bg-white p-8 sm:p-12"
     >
-      <input type="hidden" name="_subject" value={subject ?? 'Nieuwe aanvraag via stevin.ai'} />
-      <input type="hidden" name="_next" value={nextUrl ?? 'https://stevin.ai/contact?verzonden=1'} />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="text" name="_honey" style={{ display: 'none' }} />
+      {/* Honeypot: verborgen veld dat een mens nooit invult (bot-filter op de Hub). */}
+      <input type="text" name="_honey" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">
@@ -152,6 +172,12 @@ export default function ContactForm({ nextUrl, subject }: { nextUrl?: string; su
       >
         {loading ? 'Verzenden...' : 'Verstuur bericht'}
       </button>
+      {error && (
+        <p className="mt-4 text-sm text-red-600">
+          Er ging iets mis bij het verzenden. Mail ons gerust direct op{' '}
+          <a href="mailto:koen@stevin.ai" className="underline">koen@stevin.ai</a>.
+        </p>
+      )}
     </form>
   )
 }
