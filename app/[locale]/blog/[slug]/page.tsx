@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'anthropic-samsung-custom-ai-chip': (
+    <>
+      <p className="lead-para">
+        Anthropic is in gesprek met Samsung over de ontwikkeling van een op maat gemaakte AI-chip. Dit zou het bedrijf meer controle moeten geven over de hardware die nodig is voor zijn grote taalmodellen. De besprekingen volgen kort op de aankondiging dat OpenAI samenwerkt met chipfabrikant Broadcom voor een vergelijkbaar project.
+      </p>
+      <p>
+        De samenwerking met Samsung zou kunnen leiden tot snellere en efficiëntere training van AI-modellen. Een eigen chip kan ook de afhankelijkheid van externe leveranciers zoals Nvidia verminderen. TechCrunch meldt dat de onderhandelingen nog in een vroeg stadium verkeren.
+      </p>
+      <p>
+        Als dit doorgaat, zou het een belangrijke stap zijn in de race om zelfvoorzienendheid in AI-hardware. Beide partijen hebben nog geen officiële reactie gegeven op de berichten.
+      </p>
+    </>
+  ),
   'spookreferenties-in-wetenschap-door-ai-hoe-verder': (
     <>
       <p className="lead-para">
@@ -5423,6 +5436,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'anthropic-samsung-custom-ai-chip':
+    "Voor bedrijven die afhankelijk zijn van externe AI-infrastructuur kan deze ontwikkeling interessant zijn. Het toont aan dat grote techspelers proberen hun kosten en risico’s te spreiden door eigen hardware te ontwikkelen. Tegelijkertijd blijft Nvidia voorlopig de dominante speler in het chiplandschap.",
   'spookreferenties-in-wetenschap-door-ai-hoe-verder':
     "Bij Stevin zien we dit probleem als symptoom van een grotere trend: technologie versnelt processen zonder dat we altijd meekomen met de noodzakelijke kaders voor kwaliteitscontrole. Onze klanten in marketing en bedrijfsvoering worstelen met soortgelijke uitdagingen wanneer ze generatieve AI gebruiken voor contentcreatie of data-analyse – denk aan hallucinaties in rapportages of onbetrouwbare meetdata door slechte prompts of gebrek aan menselijke validatie.\n\nDe les is duidelijk: automatisering moet gepaard gaan met transparantie en verantwoordelijkheid. Net zoals wetenschappers hun referenties moeten checken voordat ze publiceren, moeten bedrijven hun AI-gegenereerde output laten valideren door mensen die begrijpen waarom data belangrijk is – niet alleen hoe je het genereert.\n\nVoor ons betekent dit dat we onze klanten helpen bij het implementeren van robuuste controlemechanismen rondom AI-toepassingen: van dubbele checks tot duidelijke governance-structuren die voorkomen dat onjuiste informatie doorsijpelt naar besluitvorming.\n\nWant uiteindelijk gaat het niet om technologie zelf, maar om hoe wij haar gebruiken – en wie er verantwoordelijk wordt gehouden als het misgaat.",
   'europas-eerste-quantum-bedrijf-bewerkt-onzekerheid-over-toekomst':
