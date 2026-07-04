@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'anthropic-samsung-custom-ai-chip',
+    format: 'dispatch' as const,
+    edition: '313',
+    category: 'Tech',
+    title: "Anthropic en Samsung in gesprek over nieuwe AI-chip",
+    dek: "Techbedrijf Anthropic onderhandelt met Samsung over een eigen AI-chip, na OpenAI’s deal met Broadcom.",
+    publishedAt: '2026-07-04',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Anthropic en Samsung in gesprek over nieuwe AI-chip",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-tactiek-vermindert-ongewenste-klikken-met-50-procent',
     format: 'dispatch' as const,
     edition: '312',
