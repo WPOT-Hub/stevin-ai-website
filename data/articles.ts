@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'de-ruimte-als-een-normale-business',
+    format: 'dispatch' as const,
+    edition: '314',
+    category: 'Markt',
+    title: "Van lab tot lancering: waarom ruimtevaart nu gewoon een supply chain is",
+    dek: "Rocket Lab, SpaceX en een Indiase startup laten zien dat de ruimte niet langer een exclusief clubje is, maar een logistieke uitdaging die marketingteams en bureau’s moeten begrijpen.",
+    publishedAt: '2026-07-04',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Van lab tot lancering: waarom ruimtevaart nu gewoon een supply chain is",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'anthropic-samsung-custom-ai-chip',
     format: 'dispatch' as const,
     edition: '313',
