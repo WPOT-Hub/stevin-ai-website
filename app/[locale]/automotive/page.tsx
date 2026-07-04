@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
-import MeetlatRuler from '@/components/MeetlatRuler'
 import { Search, MapPin, ShieldAlert, Radio, Calendar, Radar } from 'lucide-react'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -9,11 +9,7 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'automotive' })
-  return {
-    title: `Stevin ${t('eyebrow')}, ${t('h1')}`,
-    description: t('sub'),
-    robots: { index: false, follow: false },
-  }
+  return localizedMetadata({ path: '/automotive', locale, title: `Stevin ${t('eyebrow')}, ${t('h1')}`, description: t('sub') })
 }
 
 const featureIcons = [
@@ -78,8 +74,9 @@ export default async function AutomotivePage({ params }: Props) {
               {t('cta_secondary')}
             </Link>
           </div>
-          <div className="mt-20">
-            <MeetlatRuler color="rgba(255,255,255,.35)" />
+          <div className="mt-14 inline-flex items-baseline gap-3 rounded-xl border border-white/15 bg-white/5 px-5 py-4">
+            <span className="font-display font-extrabold text-neon" style={{ fontSize: '30px', lineHeight: '1' }}>{t('proof_stat')}</span>
+            <span className="text-white/65 text-sm leading-[1.45]" style={{ maxWidth: '360px' }}>{t('proof_label')}</span>
           </div>
         </div>
       </section>

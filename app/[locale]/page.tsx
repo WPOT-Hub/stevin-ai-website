@@ -3,11 +3,9 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
-import MeetlatRuler from '@/components/MeetlatRuler'
 import SignalFlowDemo from '@/components/SignalFlowDemo'
 import TrustBadges from '@/components/TrustBadges'
 import { getHomepageFaqs, type FAQ } from '@/data/faqs'
-import { nativeConnectors } from '@/data/connectors'
 import { editorials } from '@/data/articles'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -126,12 +124,24 @@ export default async function HomePage({ params }: Props) {
             >
               {t('cta_demo')}
             </Link>
-            <Link
-              href="/werkwijze"
+            <a
+              href="#hoe-het-werkt"
               className="inline-flex items-center gap-2 border border-white/20 text-white font-display font-semibold text-[15px] px-7 py-3.5 rounded-lg hover:border-white/40 hover:bg-white/5 transition-colors"
             >
               {t('cta_platform')}
-            </Link>
+            </a>
+          </div>
+
+          {/* Proof boven de vouw (geanonimiseerd) */}
+          <div className="flex flex-wrap gap-2.5 mt-9">
+            {[t('proof_1'), t('proof_2'), t('proof_3')].map((p) => (
+              <span
+                key={p}
+                className="text-[12px] text-white/70 border border-white/15 rounded-full px-3.5 py-1.5 leading-none"
+              >
+                {p}
+              </span>
+            ))}
           </div>
 
           {/* Multi-market teaser */}
@@ -147,10 +157,6 @@ export default async function HomePage({ params }: Props) {
             &ldquo;{t('quote')}&rdquo; &middot; {t('quote_author')}
           </p>
 
-          {/* Meetlat */}
-          <div className="mt-20">
-            <MeetlatRuler color="rgba(255,255,255,.35)" />
-          </div>
         </div>
       </section>
 
@@ -221,59 +227,48 @@ export default async function HomePage({ params }: Props) {
             </Link>
           </div>
 
-          {/* Twee sporen: vakmensen/MKB en marketing (artiesten leeft in footer) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Vakmensen en MKB */}
-            <Link
-              href="/mkb"
-              className="group block rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200"
-              style={{ padding: '48px 44px 44px' }}
-            >
-              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
-                <span className="inline-block w-5 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-                {t('domain_vakman_eyebrow')}
-              </p>
-              <h3
-                className="font-display font-bold text-primary mb-4"
-                style={{ fontSize: 'clamp(24px, 2.2vw, 32px)', lineHeight: '1.1', letterSpacing: '-0.025em' }}
+          {/* Intro die het hele-bedrijf-verhaal vervangt, marketing-eerst */}
+          <p className="text-muted leading-[1.6] mb-12" style={{ fontSize: '17px', maxWidth: '620px' }}>
+            {t('domain_intro')}
+          </p>
+
+          {/* Drie marketing-segmenten */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { h: t('domain_c1_h3'), d: t('domain_c1_desc'), href: '/marketing' },
+              { h: t('domain_c2_h3'), d: t('domain_c2_desc'), href: '/marketing' },
+              { h: t('domain_c3_h3'), d: t('domain_c3_desc'), href: '/merken' },
+            ].map((c) => (
+              <Link
+                key={c.h}
+                href={c.href}
+                className="group block rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200"
+                style={{ padding: '40px 36px 36px' }}
               >
-                {t('domain_vakman_h3')}
-              </h3>
-              <p className="text-muted leading-[1.6]" style={{ fontSize: '16px' }}>
-                {t('domain_vakman_desc')}
-              </p>
-              <div className="mt-8 pt-5 border-t border-border">
-                <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                  {t('domain_vakman_link')}
-                  <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
-                </span>
-              </div>
-            </Link>
-            {/* Marketing */}
-            <Link
-              href="/marketing"
-              className="group block rounded-[14px] border border-border bg-white hover:shadow-lg hover:border-accent/30 transition-all duration-200"
-              style={{ padding: '48px 44px 44px' }}
-            >
-              <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center gap-[10px]">
-                <span className="inline-block w-5 h-px bg-accent flex-shrink-0" aria-hidden="true" />
-                {t('domain_marketing_eyebrow')}
-              </p>
-              <h3
-                className="font-display font-bold text-primary mb-4"
-                style={{ fontSize: 'clamp(24px, 2.2vw, 32px)', lineHeight: '1.1', letterSpacing: '-0.025em' }}
-              >
-                {t('domain_marketing_h3')}
-              </h3>
-              <p className="text-muted leading-[1.6]" style={{ fontSize: '16px' }}>
-                {t('domain_marketing_desc')}
-              </p>
-              <div className="mt-8 pt-5 border-t border-border">
-                <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                  {t('domain_marketing_link')}
-                  <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
-                </span>
-              </div>
+                <h3
+                  className="font-display font-bold text-primary mb-4"
+                  style={{ fontSize: 'clamp(20px, 2vw, 26px)', lineHeight: '1.12', letterSpacing: '-0.02em' }}
+                >
+                  {c.h}
+                </h3>
+                <p className="text-muted leading-[1.6]" style={{ fontSize: '15px' }}>
+                  {c.d}
+                </p>
+                <div className="mt-7 pt-5 border-t border-border">
+                  <span className="font-display font-semibold text-accent text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+                    {t('domain_card_link')}
+                    <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Vakman-spoor bewust secundair: een regel, geen kaart */}
+          <div className="mt-8 text-center">
+            <Link href="/mkb" className="text-sm text-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+              {t('domain_vakman_linktext')}
+              <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
@@ -285,10 +280,27 @@ export default async function HomePage({ params }: Props) {
           <p className="text-[11px] font-display font-bold text-muted uppercase tracking-[0.08em] text-center mb-5">
             {t('connectors_label')}
           </p>
-          <div className="flex items-center justify-center gap-4 sm:gap-8 flex-wrap opacity-45">
-            {nativeConnectors.map((c) => (
-              <span key={c.slug} className="text-[10px] sm:text-xs font-bold text-muted tracking-wide">{c.name}</span>
+          <div className="flex items-center justify-center gap-7 sm:gap-10 flex-wrap">
+            {[
+              { s: 'google-ads', n: 'Google Ads' },
+              { s: 'meta', n: 'Meta' },
+              { s: 'instagram', n: 'Instagram' },
+              { s: 'tiktok', n: 'TikTok' },
+              { s: 'youtube', n: 'YouTube' },
+              { s: 'linkedin', n: 'LinkedIn' },
+              { s: 'google-analytics', n: 'Google Analytics' },
+            ].map((l) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={l.s}
+                src={`/logos/tools/${l.s}.svg`}
+                alt={l.n}
+                style={{ height: '26px', width: 'auto', opacity: 0.5 }}
+              />
             ))}
+            <Link href="/integraties" className="text-[13px] font-display font-semibold text-accent hover:opacity-80 transition-opacity">
+              en 245+ andere &rarr;
+            </Link>
           </div>
         </div>
       </div>
@@ -335,8 +347,48 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
+      {/* ── DE OUDE MANIER VS STEVIN ── */}
+      <section className="bg-surface" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1000px]">
+          <div className="mb-12">
+            <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+              <span className="inline-block w-6 h-px bg-accent flex-shrink-0" aria-hidden="true" />
+              {t('compare_eyebrow')}
+            </p>
+            <h2
+              className="font-display font-extrabold text-primary m-0 mb-4"
+              style={{ fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '20ch' }}
+            >
+              {t('compare_h2')}
+            </h2>
+            <p className="text-muted leading-[1.6]" style={{ fontSize: '16px', maxWidth: '540px' }}>{t('compare_sub')}</p>
+          </div>
+
+          <div className="rounded-[14px] border border-border overflow-hidden bg-white">
+            <div className="grid grid-cols-[0.9fr_1fr_1fr] border-b border-border">
+              <div className="p-3 sm:p-4" aria-hidden="true" />
+              <div className="p-3 sm:p-4 font-display font-bold uppercase tracking-wide text-muted" style={{ fontSize: '12px' }}>{t('compare_col_old')}</div>
+              <div className="p-3 sm:p-4 font-display font-bold uppercase tracking-wide text-accent" style={{ fontSize: '12px', backgroundColor: 'rgba(93,163,255,0.06)' }}>{t('compare_col_stevin')}</div>
+            </div>
+            {[
+              { l: t('compare_r1_label'), o: t('compare_r1_old'), n: t('compare_r1_new') },
+              { l: t('compare_r2_label'), o: t('compare_r2_old'), n: t('compare_r2_new') },
+              { l: t('compare_r3_label'), o: t('compare_r3_old'), n: t('compare_r3_new') },
+              { l: t('compare_r4_label'), o: t('compare_r4_old'), n: t('compare_r4_new') },
+              { l: t('compare_r5_label'), o: t('compare_r5_old'), n: t('compare_r5_new') },
+            ].map((row, i, arr) => (
+              <div key={row.l} className={`grid grid-cols-[0.9fr_1fr_1fr] ${i < arr.length - 1 ? 'border-b border-border' : ''}`}>
+                <div className="p-3 sm:p-4 font-display font-semibold text-primary" style={{ fontSize: '14px' }}>{row.l}</div>
+                <div className="p-3 sm:p-4 text-muted leading-[1.45]" style={{ fontSize: '13.5px' }}>{row.o}</div>
+                <div className="p-3 sm:p-4 text-primary leading-[1.45]" style={{ fontSize: '13.5px', backgroundColor: 'rgba(93,163,255,0.06)' }}>{row.n}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── DE ENGINE ── */}
-      <section className="bg-primary" style={{ padding: '112px 24px' }}>
+      <section id="hoe-het-werkt" className="bg-primary scroll-mt-24" style={{ padding: '112px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
 
           <div className="flex justify-between items-end gap-12 mb-14 flex-col lg:flex-row">
@@ -520,24 +572,22 @@ export default async function HomePage({ params }: Props) {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="rounded-[14px] border border-border bg-white p-8">
-                <p
-                  className="font-display font-extrabold text-neon"
-                  style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.04em', lineHeight: '1' }}
-                >
-                  {t('stat1_value')}
-                </p>
-                <p className="text-muted mt-3 leading-[1.4]" style={{ fontSize: '13px' }}>{t('stat1_label')}</p>
-              </div>
-              <div className="rounded-[14px] border border-border bg-white p-8">
-                <p
-                  className="font-display font-extrabold text-accent"
-                  style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.04em', lineHeight: '1' }}
-                >
-                  {t('stat2_value')}
-                </p>
-                <p className="text-muted mt-3 leading-[1.4]" style={{ fontSize: '13px' }}>{t('stat2_label')}</p>
-              </div>
+              {[
+                { value: t('case1_value'), label: t('case1_label') },
+                { value: t('case2_value'), label: t('case2_label') },
+                { value: t('case3_value'), label: t('case3_label') },
+                { value: t('case4_value'), label: t('case4_label') },
+              ].map((c, i) => (
+                <div key={i} className="rounded-[14px] border border-border bg-white p-8">
+                  <p
+                    className="font-display font-extrabold text-accent"
+                    style={{ fontSize: 'clamp(32px, 4vw, 48px)', letterSpacing: '-0.04em', lineHeight: '1' }}
+                  >
+                    {c.value}
+                  </p>
+                  <p className="text-muted mt-3 leading-[1.45]" style={{ fontSize: '13px' }}>{c.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

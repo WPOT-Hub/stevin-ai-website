@@ -15,7 +15,7 @@ const organization = {
   name: 'Stevin',
   legalName: 'Stevin.AI',
   description:
-    'Stevin is de AI-laag over je operatie. Het levert eerst resultaat in marketing en sales en bouwt van daaruit verder. Voor agencies, multi-vestiging en multi-market bedrijven en in-house teams, werkzaam vanuit Breda en Antwerpen.',
+    'Stevin is de AI-laag over je marketing en sales. Je eigen data, je eigen marketing-brein: Stevin ziet wat aandacht nodig heeft en beweegt je campagnes mee. Voor bureaus, multi-vestiging en multi-market bedrijven en in-house teams, werkzaam vanuit Breda en Antwerpen.',
   url: 'https://stevin.ai',
   logo: {
     '@type': 'ImageObject',
@@ -32,9 +32,9 @@ const organization = {
     { '@type': 'Country', name: 'Belgium' },
   ],
   knowsAbout: [
-    'Marketing Mix Modeling',
-    'Uplift Measurement',
-    'Marketing Attribution',
+    'Marketing Data Ownership',
+    'First-party Marketing Data',
+    'Marketing Intelligence',
     'Online Marketing',
     'Paid Media',
     'Search Engine Optimization',

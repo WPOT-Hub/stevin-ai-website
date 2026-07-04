@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import IntegrationFilter from '@/components/IntegrationFilter'
 import { integrations } from '@/data/integrations'
@@ -10,10 +11,12 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'integraties' })
-  return {
+  return localizedMetadata({
+    path: '/integraties',
+    locale,
     title: 'Integraties als meetlat onder je marketing',
     description: t('sub'),
-  }
+  })
 }
 
 const stackLayers = [

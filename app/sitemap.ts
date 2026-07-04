@@ -32,7 +32,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/google-ad-grants-nederland',
     '/non-profit-marketing-belgie',
     '/non-profit-marketing-nederland',
-    // /voor-dealers, /voor-verhuur, /voor-musea, uit sitemap tot vendor-claims gechecked zijn (noindex op pages)
+    // Verticals nu geindexeerd (besluit 4 jul): eigen belofte + data-spine per sector
+    '/automotive',
+    '/fmcg',
+    '/voor-retail',
+    '/voor-musea',
+    '/voor-dealers',
+    '/voor-verhuur',
+    '/voor-non-profit',
     '/platform',
     '/diensten',
     '/werkwijze',
