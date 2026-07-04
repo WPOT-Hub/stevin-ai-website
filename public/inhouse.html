@@ -927,9 +927,10 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
         <p style="color:rgba(255,255,255,.72);font-size:17px;max-width:440px;margin-top:18px">Laat je gegevens achter, dan plannen we een demo op jouw eigen accounts. Geen verplichtingen.</p>
       </div>
       <form class="cform" id="demoForm">
-        <div class="ff"><label>Naam</label><input type="text" placeholder="Voor- en achternaam" required></div>
-        <div class="ff"><label>E-mail</label><input type="email" placeholder="naam@bedrijf.nl" required></div>
-        <div class="ff"><label>Bedrijf</label><input type="text" placeholder="Je bedrijfsnaam"></div>
+        <div class="ff"><label>Naam</label><input type="text" name="name" placeholder="Voor- en achternaam" required></div>
+        <div class="ff"><label>E-mail</label><input type="email" name="email" placeholder="naam@bedrijf.nl" required></div>
+        <div class="ff"><label>Bedrijf</label><input type="text" name="company" placeholder="Je bedrijfsnaam"></div>
+        <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden"><input type="text" name="company_url" tabindex="-1" autocomplete="off"></div>
         <button type="submit" class="btn btn-convert" style="width:100%;justify-content:center">Vraag demo aan</button>
         <p class="fnote">We nemen binnen een werkdag contact op.</p>
         <div class="fok">Bedankt. We nemen snel contact met je op.</div>
@@ -991,7 +992,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
     function navTheme(){var light=window.scrollY>60;nav.classList.toggle('light',light);nav.classList.toggle('dark',!light);}
     window.addEventListener('scroll',navTheme,{passive:true});navTheme();
     var df=document.getElementById('demoForm');
-    if(df){df.addEventListener('submit',function(e){e.preventDefault();try{(window.dataLayer=window.dataLayer||[]).push({event:'generate_lead',form:'ads-data'});}catch(_e){}df.classList.add('done');});}
+    if(df){df.addEventListener('submit',function(e){e.preventDefault();var b=df.querySelector('button[type=submit]');var g=function(sel){var el=df.querySelector(sel);return el?el.value.trim():'';};var payload={name:g('input[name=name]'),email:g('input[name=email]'),company:g('input[name=company]'),company_url:g('input[name=company_url]'),source:'inhouse'};if(b)b.disabled=true;fetch('https://hub.stevin.ai/api/demo-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(function(r){if(!r.ok)throw new Error('http');return r.json();}).then(function(){try{(window.dataLayer=window.dataLayer||[]).push({event:'generate_lead',form:'inhouse'});}catch(_e){}df.classList.add('done');}).catch(function(){if(b)b.disabled=false;var fn=df.querySelector('.fnote');if(fn){fn.textContent='Er ging iets mis. Mail ons gerust direct op koen@stevin.ai.';fn.style.color='#ff9a9a';}});});}
     var steps=[].slice.call(document.querySelectorAll('#stage .dk-step'));
     var rails=[].slice.call(document.querySelectorAll('#rail .r'));
     var win=document.getElementById('anim');
