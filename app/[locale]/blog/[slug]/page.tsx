@@ -1456,6 +1456,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'de-ruimte-als-een-normale-business': (
+    <>
+      <p className="lead-para">
+        Een raket die opstijgt vanaf een verlaten eiland in Nieuw-Zeeland of een lanceerbasis in India voelt als sciencefiction. Toch is het vandaag de dag meer een kwestie van vraag en aanbod dan van wetenschap. Rocket Lab heeft deze week drie nieuwe contracten binnengehaald van NASA voor lanceringen met hun Electron-raket. Niet omdat NASA plotseling meer geld heeft, maar omdat de vraag naar kleine satellieten explodeert: van klimaatmetingen tot internet voor afgelegen dorpen. De ruimte is geen verre droom meer, het is een markt waar bedrijven als Rocket Lab concurreren op prijs en betrouwbaarheid – net als bij elke andere supply chain.
+      </p>
+      <p>
+        Voor bureau’s en marketingteams die gewend zijn aan digitale campagnes, lijkt dit misschien ver van hun bed. Maar de parallel is opvallend: waar marketeers vroeger adverteerden via billboards en tv-spots, kiezen ze nu voor satellietdata om campagnes te optimaliseren. Een boerderij in Drenthe kan met behulp van satellietbeelden precies zien wanneer zijn gewassen water nodig hebben. Een retailketen gebruikt GPS-data om de beste locatie voor een nieuw filiaal te vinden. De ruimte is geen decor meer voor reclameslogans, het is een bron van meetdata die direct invloed heeft op bedrijfsbeslissingen.
+      </p>
+      <p>
+        De opkomst van private ruimtevaartbedrijven zoals SpaceX toont aan dat innovatie niet langer afhankelijk is van overheden. Elon Musk’s bedrijf vierde recentelijk zijn duizendste lancering – een mijlpaal die niet alleen technisch indrukwekkend is, maar vooral economisch relevant. SpaceX heeft de kosten om iets in de ruimte te brengen met tientallen procenten verlaagd door herbruikbare raketten. Dat betekent dat kleine bedrijven nu ook toegang hebben tot technologie die voorheen alleen grote corporates konden betalen. Voor marketingteams betekent dit dat ze niet meer afhankelijk hoeven te zijn van dure traditionele methodes om data te verzamelen.
+      </p>
+      <p>
+        Toch kleven er ook risico’s aan deze nieuwe realiteit. De ruimtevaartsector kampt met dezelfde problemen als elke snelgroeiende industrie: schaarste aan talent, bureaucratische rompslomp en ethische vraagstukken over wie toegang krijgt tot welke data. Een Indiase startup die binnenkort haar eerste lancering plant, doet dat bijvoorbeeld met beperkte middelen en onder strenge regelgeving. Voor Nederlandse en Belgische bedrijven betekent dit dat ze moeten leren navigeren in een wereld waar wetgeving achterloopt bij technologische mogelijkheden.
+      </p>
+      <p>
+        Een tegenwerping die vaak wordt gehoord: ‘Ruimtevaart is nog steeds duur en riskant.’ Dat klopt – maar dezelfde redenering gold twintig jaar geleden ook voor cloud computing of big data-analyse. Toch zijn we inmiddels allemaal afhankelijk geworden van die technologieën zonder erbij stil te staan hoe complex ze ooit waren. De ruimtevaart volgt dezelfde curve: de eerste stappen zijn kostbaar en onzeker, maar zodra de infrastructuur er ligt, wordt het mainstream.
+      </p>
+      <p>
+        De echte gamechanger ligt echter niet in de technologie zelf, maar in hoe we ermee omgaan. De komende jaren zullen we zien dat bedrijven die sneller adaptief zijn dan hun concurrenten nieuwe kansen grijpen. Stel je voor: een marketingteam dat realtime data uit de ruimte gebruikt om campagnes te personaliseren op basis van weerpatronen of luchtvervuiling in specifieke steden. Of een retailer die met behulp van satellietbeelden voorspelt waar de vraag naar bepaalde producten zal stijgen voordat lokale winkels het zelf doorhebben.
+      </p>
+      <p>
+        De les hieruit? Ruimtevaart is geen niche meer – het is een domein dat direct raakt aan hoe bedrijven opereren en groeien in 2026 en daarna. Wie denkt dat dit alleen gaat over raketten of astronauten, mist het grotere plaatje: dit gaat over efficiëntie, data en concurrentievoordeel in een wereld waar grenzen tussen aarde en hemel steeds verder vervagen.
+      </p>
+    </>
+  ),
   'google-ads-tactiek-vermindert-ongewenste-klikken-met-50-procent': (
     <>
       <p className="lead-para">
@@ -5449,6 +5474,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'de-ruimte-als-een-normale-business':
+    "Bij Stevin zien we deze verschuiving al jaren aankomen in onze samenwerkingen met klanten uit zowel B2B als B2C-sectoren. De integratie van ruimtedata in strategische besluitvorming is geen toekomstmuziek meer, maar een praktische noodzaak geworden voor bedrijven die hun marktpositie willen verstevigen.\n\nWaar traditionele marketing zich vaak beperkt tot historische data of lokale trends, biedt satelliettechnologie nu causale meetdata die oorzaak en gevolg direct zichtbaar maakt – denk aan het effect van extreme weersomstandigheden op consumentengedrag of de impact van luchtkwaliteit op verkoopcijfers in stedelijke gebieden.\n\nVoor bureau’s betekent dit dat ze hun dienstenaanbod moeten uitbreiden met specialistische kennis over hoe deze data vertaald kan worden naar actiegerichte campagnes. Het gaat niet om technologische poespas, maar om pragmatische oplossingen die daadwerkelijk uplift genereren.\n\nDe grootste valkuil? Denken dat deze ontwikkeling alleen relevant is voor grote spelers met hoge budgetten. Juist kleinere teams kunnen door slimme samenwerkingen met startups of gespecialiseerde platforms profiteren van dezelfde kansen – zonder zelf miljoenen te hoeven investeren.\n\nUiteindelijk draait het om één principe: wie als eerste begrijpt hoe ruimtedata kan worden ingezet als onderdeel van een bredere bedrijfsstrategie, heeft morgen een voorsprong.",
   'google-ads-tactiek-vermindert-ongewenste-klikken-met-50-procent':
     "Voor bureaus en marketingteams is dit een reminder om niet blind te vertrouwen op standaardfilters van platforms. Actieve monitoring en handmatige aanpassingen kunnen een groot verschil maken in de kosten en resultaten van campagnes. Het benadrukt ook het belang van regelmatige controle van meetdata: als campagnes plotseling minder presteren zonder duidelijke oorzaak, kan dat wijzen op onzichtbare problemen zoals invalid traffic.",
   'anthropic-samsung-custom-ai-chip':
