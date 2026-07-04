@@ -929,6 +929,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
         <div class="ff"><label>Naam</label><input type="text" name="name" placeholder="Voor- en achternaam" required></div>
         <div class="ff"><label>E-mail</label><input type="email" name="email" placeholder="naam@bedrijf.nl" required></div>
         <div class="ff"><label>Bedrijf</label><input type="text" name="company" placeholder="Je bedrijfsnaam"></div>
+        <div class="ff"><label>Telefoon (optioneel)</label><input type="tel" name="phone" placeholder="06 12345678"></div>
         <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden"><input type="text" name="company_url" tabindex="-1" autocomplete="off"></div>
         <button type="submit" class="btn btn-convert" style="width:100%;justify-content:center">Vraag demo aan</button>
         <p class="fnote">We nemen binnen één werkdag contact op.</p>
@@ -991,7 +992,21 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
     function navTheme(){var light=window.scrollY>60;nav.classList.toggle('light',light);nav.classList.toggle('dark',!light);}
     window.addEventListener('scroll',navTheme,{passive:true});navTheme();
     var df=document.getElementById('demoForm');
-    if(df){df.addEventListener('submit',function(e){e.preventDefault();var b=df.querySelector('button[type=submit]');var g=function(sel){var el=df.querySelector(sel);return el?el.value.trim():'';};var payload={name:g('input[name=name]'),email:g('input[name=email]'),company:g('input[name=company]'),company_url:g('input[name=company_url]'),source:'ads-data'};if(b)b.disabled=true;fetch('https://hub.stevin.ai/api/demo-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(function(r){if(!r.ok)throw new Error('http');return r.json();}).then(function(){try{(window.dataLayer=window.dataLayer||[]).push({event:'generate_lead',form:'ads-data'});}catch(_e){}df.classList.add('done');}).catch(function(){if(b)b.disabled=false;var fn=df.querySelector('.fnote');if(fn){fn.textContent='Er ging iets mis. Mail ons gerust direct op koen@stevin.ai.';fn.style.color='#ff9a9a';}});});}
+    // Enhanced-conversion push: hasht email/telefoon/naam client-side (geen plain
+    // PII de deur uit; consent wordt op tag-niveau afgedwongen via Consent Mode),
+    // net als lib/tracking.ts op de hoofdsite. Tracking-fout blokkeert de flow niet.
+    function pushLead(form,name,email,phone){
+      function sha(v){return crypto.subtle.digest('SHA-256',new TextEncoder().encode(String(v).trim().toLowerCase())).then(function(buf){return Array.prototype.map.call(new Uint8Array(buf),function(x){return x.toString(16).padStart(2,'0');}).join('');});}
+      var parts=(name||'').trim().split(/\s+/),first=parts.shift()||'',last=parts.join(' ');
+      var ud={},addr={},jobs=[];
+      if(email)jobs.push(sha(email).then(function(h){ud.email_address=h;}));
+      if(phone)jobs.push(sha(phone.replace(/\D/g,'')).then(function(h){ud.phone_number=h;}));
+      if(first)jobs.push(sha(first).then(function(h){addr.first_name=h;}));
+      if(last)jobs.push(sha(last).then(function(h){addr.last_name=h;}));
+      var eid=Date.now()+'-'+Math.random().toString(36).slice(2,11);
+      Promise.all(jobs).then(function(){if(addr.first_name||addr.last_name)ud.address=addr;try{(window.dataLayer=window.dataLayer||[]).push({event:'generate_lead',event_id:eid,form:form,user_data:ud});}catch(_e){}}).catch(function(){try{(window.dataLayer=window.dataLayer||[]).push({event:'generate_lead',form:form});}catch(_e){}});
+    }
+    if(df){df.addEventListener('submit',function(e){e.preventDefault();var b=df.querySelector('button[type=submit]');var g=function(sel){var el=df.querySelector(sel);return el?el.value.trim():'';};var name=g('input[name=name]'),email=g('input[name=email]'),company=g('input[name=company]'),phone=g('input[name=phone]');var payload={name:name,email:email,company:company,phone:phone,company_url:g('input[name=company_url]'),source:'ads-data'};if(b)b.disabled=true;fetch('https://hub.stevin.ai/api/demo-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(function(r){if(!r.ok)throw new Error('http');return r.json();}).then(function(){df.classList.add('done');pushLead('ads-data',name,email,phone);}).catch(function(){if(b)b.disabled=false;var fn=df.querySelector('.fnote');if(fn){fn.textContent='Er ging iets mis. Mail ons gerust direct op koen@stevin.ai.';fn.style.color='#ff9a9a';}});});}
     var steps=[].slice.call(document.querySelectorAll('#stage .dk-step'));
     var rails=[].slice.call(document.querySelectorAll('#rail .r'));
     var win=document.getElementById('anim');
