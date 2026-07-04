@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-tactiek-vermindert-ongewenste-klikken-met-50-procent',
+    format: 'dispatch' as const,
+    edition: '312',
+    category: 'Platform',
+    title: "Nieuwe Google Ads-tactiek vermindert ongewenste klikken met de helft",
+    dek: "Een onverwachte aanpak in Google Ads herstelt de winstgevendheid van campagnes door verdachte activiteit met 50% te reduceren.",
+    publishedAt: '2026-07-04',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Nieuwe Google Ads-tactiek vermindert ongewenste klikken met de helft",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spookreferenties-in-wetenschap-door-ai-hoe-verder',
     format: 'dispatch' as const,
     edition: '311',
