@@ -62,7 +62,7 @@ export default function ConsentBanner() {
               Cookies en privacy
             </h3>
             <p className="text-sm text-muted leading-relaxed mb-6">
-              We gebruiken cookies om de website te verbeteren en resultaten te meten. Je kunt zelf kiezen welke cookies je toestaat.
+              We gebruiken cookies om de website te verbeteren, gedrag te begrijpen en leads beter te herleiden. Je kunt zelf kiezen welke cookies je toestaat.
             </p>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
@@ -105,7 +105,7 @@ export default function ConsentBanner() {
               <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-surface">
                 <div>
                   <p className="text-sm font-semibold text-primary">Statistieken</p>
-                  <p className="text-xs text-muted mt-0.5">Helpt ons begrijpen hoe bezoekers de site gebruiken (Google Analytics).</p>
+                  <p className="text-xs text-muted mt-0.5">Helpt ons begrijpen hoe bezoekers de site gebruiken (Google Analytics, Microsoft Clarity).</p>
                 </div>
                 <Toggle checked={analyticsChecked} onChange={setAnalyticsChecked} />
               </div>
@@ -114,7 +114,7 @@ export default function ConsentBanner() {
               <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-surface">
                 <div>
                   <p className="text-sm font-semibold text-primary">Marketing</p>
-                  <p className="text-xs text-muted mt-0.5">Advertentiemeting en remarketing (Google Ads, Meta). Nodig voor het meten van campagne-effectiviteit.</p>
+                  <p className="text-xs text-muted mt-0.5">Campagne- en conversiemeting (Google Ads, Meta). Nodig om leadkwaliteit en campagne-effectiviteit te meten.</p>
                 </div>
                 <Toggle checked={marketingChecked} onChange={setMarketingChecked} />
               </div>

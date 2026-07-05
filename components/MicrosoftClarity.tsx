@@ -1,36 +1,84 @@
-/**
- * Microsoft Clarity: gratis heatmaps + session recordings.
- *
- * Geen event-limiet (anders dan GA4's 10M/maand). Geen aparte cookie-consent
- * nodig wanneer je Clarity in "consent-pending" mode draait. Clarity
- * registreert dan alleen als de gebruiker analytics-cookies heeft toegestaan.
- *
- * Project-ID is GEEN secret (staat sowieso client-side in de HTML), dus de
- * waarde van het live "Stevin.AI"-project staat hardcoded als default. De
- * env-var NEXT_PUBLIC_CLARITY_PROJECT_ID kan dit overschrijven (bijv. voor een
- * staging-project), maar een lege of ontbrekende env-var kan Clarity nooit
- * meer per ongeluk uitzetten. Live project: clarity.microsoft.com, "Stevin.AI".
- */
-import Script from 'next/script'
+'use client'
 
-// Default = het live Stevin.AI Clarity-project. Env-var overschrijft indien gezet.
+/**
+ * Microsoft Clarity: heatmaps + session recordings.
+ *
+ * Clarity is intentionally loaded only after analytics consent. This keeps the
+ * Next.js site consistent with the static landing pages and avoids recording
+ * behavior before the visitor has allowed statistics cookies.
+ *
+ * Project ID is not secret. It is visible client-side by design.
+ */
+import { useEffect } from 'react'
+import {
+  choiceToConsentState,
+  getStoredConsent,
+  hasAnalyticsConsent,
+  type ConsentUpdatedDetail,
+} from '@/lib/consent'
+
 const PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'wmggc0voks'
 
+function sendClarityConsent(choice = getStoredConsent()) {
+  if (typeof window === 'undefined' || !window.clarity) return
+
+  const state = choiceToConsentState(choice)
+  window.clarity('consentv2', {
+    ad_Storage: state.ad_storage,
+    analytics_Storage: state.analytics_storage,
+    ad_storage: state.ad_storage,
+    analytics_storage: state.analytics_storage,
+  })
+}
+
+function loadClarity() {
+  if (typeof window === 'undefined' || !PROJECT_ID || window.__stevinClarityLoaded) return
+
+  window.__stevinClarityLoaded = true
+  if (!window.clarity) {
+    const clarityQueue = ((...args: unknown[]) => {
+      clarityQueue.q = clarityQueue.q || []
+      clarityQueue.q.push(args)
+    }) as ((...args: unknown[]) => void) & { q?: unknown[] }
+    window.clarity = clarityQueue
+  }
+
+  const script = document.createElement('script')
+  script.async = true
+  script.src = `https://www.clarity.ms/tag/${PROJECT_ID}`
+  script.onload = () => sendClarityConsent()
+  document.head.appendChild(script)
+
+  sendClarityConsent()
+}
+
 export function MicrosoftClarity() {
-  if (!PROJECT_ID) return null
-  return (
-    <Script
-      id="microsoft-clarity"
-      strategy="afterInteractive"
-      dangerouslySetInnerHTML={{
-        __html: `
-          (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "${PROJECT_ID}");
-        `,
-      }}
-    />
-  )
+  useEffect(() => {
+    if (!PROJECT_ID) return
+
+    const applyCurrentConsent = (choice = getStoredConsent()) => {
+      if (!hasAnalyticsConsent(choice)) return
+      loadClarity()
+      sendClarityConsent(choice)
+    }
+
+    applyCurrentConsent()
+
+    const handleConsentUpdate = (event: Event) => {
+      const detail = (event as CustomEvent<ConsentUpdatedDetail>).detail
+      applyCurrentConsent(detail?.choice ?? getStoredConsent())
+    }
+
+    window.addEventListener('stevin:consent-updated', handleConsentUpdate)
+    return () => window.removeEventListener('stevin:consent-updated', handleConsentUpdate)
+  }, [])
+
+  return null
+}
+
+declare global {
+  interface Window {
+    __stevinClarityLoaded?: boolean
+    clarity?: (...args: unknown[]) => void
+  }
 }

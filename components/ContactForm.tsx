@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useState, useEffect } from 'react'
-import { pushConversionEvent } from '@/lib/tracking'
+import { generateEventId, getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/tracking'
 
 // Alle stevin.ai-formulieren lopen via het eigen Hub-endpoint zodat elke lead op
 // een plek binnenkomt: Slack + Supabase + mail naar Koen + bevestiging aan de
@@ -14,6 +14,7 @@ export default function ContactForm({ subject }: { nextUrl?: string; subject?: s
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
+  const formStarted = useRef(false)
 
   useEffect(() => {
     // Backwards-compat: oude FormSubmit-redirect kwam terug met ?verzonden=1.
@@ -46,12 +47,18 @@ export default function ContactForm({ subject }: { nextUrl?: string; subject?: s
     // in Slack/mail ziet waar de lead vandaan komt.
     const path = window.location.pathname.replace(/^\/(nl|en)(?=\/|$)/, '')
     const source = subject?.trim() || path.replace(/^\//, '') || 'contact'
+    const eventId = generateEventId()
+    const context = getLeadContext({
+      event_id: eventId,
+      form_id: 'contact',
+      form_source: source,
+    })
 
     try {
       const res = await fetch(HUB_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, company, phone, message, source, _honey: honey }),
+        body: JSON.stringify({ name, email, company, phone, message, source, _honey: honey, context }),
       })
       if (!res.ok) throw new Error('http ' + res.status)
     } catch {
@@ -69,7 +76,12 @@ export default function ContactForm({ subject }: { nextUrl?: string; subject?: s
         ...(phone ? { phone } : {}),
         ...(firstName ? { firstName } : {}),
         ...(lastName ? { lastName } : {}),
+      }, {
+        event_id: eventId,
+        form: 'contact',
+        source,
       })
+      rememberInteraction('form_submit', { label: source, page_path: window.location.pathname, placement: 'contact_form' })
     } catch {
       /* tracking mag de flow niet blokkeren */
     }
@@ -96,6 +108,21 @@ export default function ContactForm({ subject }: { nextUrl?: string; subject?: s
     <form
       ref={formRef}
       onSubmit={handleSubmit}
+      onFocusCapture={() => {
+        if (formStarted.current) return
+        formStarted.current = true
+        rememberInteraction('form_start', {
+          label: subject || 'contact',
+          page_path: window.location.pathname,
+          placement: 'contact_form',
+        })
+        window.dataLayer = window.dataLayer || []
+        window.dataLayer.push({
+          event: 'form_start',
+          form: 'contact',
+          page_path: window.location.pathname,
+        })
+      }}
       className="rounded-2xl border border-border bg-white p-8 sm:p-12"
     >
       {/* Honeypot: verborgen veld dat een mens nooit invult (bot-filter op de Hub). */}

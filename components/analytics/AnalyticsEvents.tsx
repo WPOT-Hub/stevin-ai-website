@@ -19,6 +19,7 @@
 
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import { deriveEntryChannel, getPageType, rememberInteraction, updateLeadContextPage } from '@/lib/tracking'
 
 declare global {
   interface Window {
@@ -50,34 +51,6 @@ function tagClarity(key: string, value: string) {
   }, 300)
 }
 
-// Entry-kanaal afleiden uit UTM of referrer. Een grove indeling is genoeg om
-// recordings per kanaal terug te kijken; de exacte attributie zit in GA4.
-function deriveChannel(): string {
-  try {
-    const utm = new URLSearchParams(window.location.search).get('utm_source')
-    if (utm) return utm.toLowerCase().slice(0, 40)
-    const ref = document.referrer
-    if (!ref) return 'direct'
-    const host = new URL(ref).hostname.replace(/^www\./, '')
-    if (host === window.location.hostname) return 'internal'
-    if (/google\.|bing\.|duckduckgo|ecosia|yahoo/.test(host)) return 'organic'
-    if (/linkedin|t\.co|twitter|x\.com|facebook|instagram|reddit/.test(host)) return 'social'
-    return 'referral'
-  } catch {
-    return 'direct'
-  }
-}
-
-function pageType(pathname: string): string {
-  const p = pathname.replace(/^\/en/, '') || '/'
-  if (p === '/') return 'home'
-  if (p.startsWith('/integraties/')) return 'integration'
-  if (p.startsWith('/blog/')) return 'blog'
-  if (p.startsWith('/producten')) return 'product'
-  if (p.startsWith('/woordenboek/') || p.startsWith('/vergelijken/') || p.startsWith('/alternatief/')) return 'longtail'
-  return 'page'
-}
-
 export function AnalyticsEvents() {
   const pathname = usePathname()
 
@@ -86,11 +59,12 @@ export function AnalyticsEvents() {
 
     // Clarity-segmentatie. Taal en page-type per pagina, kanaal alleen op de
     // eerste sessie-load (de echte entry-bron, niet een interne navigatie).
+    updateLeadContextPage(pathname)
     tagClarity('locale', pathname.startsWith('/en') ? 'en' : 'nl')
-    tagClarity('page_type', pageType(pathname))
+    tagClarity('page_type', getPageType(pathname))
     try {
       if (!sessionStorage.getItem('clarity_channel')) {
-        const channel = deriveChannel()
+        const channel = deriveEntryChannel()
         sessionStorage.setItem('clarity_channel', channel)
         tagClarity('channel', channel)
       }
@@ -119,6 +93,10 @@ export function AnalyticsEvents() {
             scroll_depth_threshold: threshold,
             page_path: pathname,
           })
+          rememberInteraction('scroll_depth', {
+            scroll_depth_threshold: threshold,
+            page_path: pathname,
+          })
         }
       }
     }
@@ -140,6 +118,8 @@ export function AnalyticsEvents() {
 
       const href = target.getAttribute('href') ?? ''
       if (!href) return
+      const label = target.textContent?.replace(/\s+/g, ' ').trim().slice(0, 160) || target.getAttribute('aria-label') || ''
+      const isPrimaryCta = target.matches('[data-cta], .btn, .nav-btn') || /demo|contact|gesprek|audit|scan|aanvraag|apply|pricing|prijzen/i.test(label)
 
       // Mailto / Tel: contact-conversies
       if (href.startsWith('mailto:')) {
@@ -148,6 +128,7 @@ export function AnalyticsEvents() {
           contact_value: href.replace('mailto:', ''),
           page_path: pathname,
         })
+        rememberInteraction('contact_click', { href, label, page_path: pathname, placement: 'mailto' })
         return
       }
       if (href.startsWith('tel:')) {
@@ -156,6 +137,7 @@ export function AnalyticsEvents() {
           contact_value: href.replace('tel:', ''),
           page_path: pathname,
         })
+        rememberInteraction('contact_click', { href, label, page_path: pathname, placement: 'phone' })
         return
       }
 
@@ -169,10 +151,22 @@ export function AnalyticsEvents() {
               outbound_host: url.hostname,
               page_path: pathname,
             })
+            rememberInteraction('outbound_click', { href, label, page_path: pathname, placement: 'external' })
           }
         } catch {
           /* invalid URL, skip */
         }
+      }
+
+      if (isPrimaryCta) {
+        pushEvent('cta_click', {
+          cta_label: label,
+          cta_href: href,
+          page_path: pathname,
+        })
+        rememberInteraction('cta_click', { href, label, page_path: pathname, placement: 'cta' })
+      } else if (href.startsWith('/') || href.startsWith('#')) {
+        rememberInteraction('internal_click', { href, label, page_path: pathname, placement: 'internal' })
       }
 
       // Plan-een-gesprek button click (heeft geen href naar mailto/tel,
@@ -181,6 +175,7 @@ export function AnalyticsEvents() {
         pushEvent('demo_intent', {
           source_page: pathname,
         })
+        rememberInteraction('demo_intent', { href, label, page_path: pathname, placement: 'contact_route' })
         // Clarity: markeer de sessie als demo-intentie, zodat je later kunt
         // filteren op wie wel intentie toonde maar het formulier niet afrondde.
         tagClarity('demo_intent', 'yes')

@@ -24,16 +24,16 @@
   gtag('set','ads_data_redaction',true);
   gtag('set','url_passthrough',true);
   window.stevinConsentState=function(c){var a=(c==='all'||c==='analytics'||c==='analytics_and_marketing');var m=(c==='all'||c==='marketing'||c==='analytics_and_marketing');return{analytics_storage:a?'granted':'denied',ad_storage:m?'granted':'denied',ad_user_data:m?'granted':'denied',ad_personalization:m?'granted':'denied',functionality_storage:a?'granted':'denied',personalization_storage:a?'granted':'denied'};};
-  window.stevinApplyConsent=function(c){gtag('consent','update',window.stevinConsentState(c));};
+  window.stevinApplyConsent=function(c){var s=window.stevinConsentState(c);gtag('consent','update',s);try{window.dispatchEvent(new CustomEvent('stevin:consent-updated',{detail:{choice:c,state:s}}));}catch(e){}};
   try{var _sc=localStorage.getItem('stevin_consent');if(_sc){window.stevinApplyConsent(_sc);}}catch(e){}
 </script>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://data.stevin.ai/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WHSXRR29');</script>
 <script>
   // Microsoft Clarity, consent-gated (laadt pas bij analytics-toestemming)
-  (function(){var loaded=false;function ok(c){return c==='all'||c==='analytics'||c==='analytics_and_marketing';}
-    window.loadClarity=function(){if(loaded)return;loaded=true;(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wmggc0voks");};
+  (function(){var loaded=false;function ok(c){return c==='all'||c==='analytics'||c==='analytics_and_marketing';}function send(c){if(!window.clarity)return;var s=window.stevinConsentState(c);window.clarity('consentv2',{ad_Storage:s.ad_storage,analytics_Storage:s.analytics_storage,ad_storage:s.ad_storage,analytics_storage:s.analytics_storage});}
+    window.loadClarity=function(){if(loaded)return;loaded=true;(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wmggc0voks");send(_c);};
     var _c=null;try{_c=localStorage.getItem('stevin_consent');}catch(e){}if(ok(_c))window.loadClarity();
-    var _p=window.stevinApplyConsent;window.stevinApplyConsent=function(cc){if(_p)_p(cc);if(ok(cc))window.loadClarity();};})();
+    var _p=window.stevinApplyConsent;window.stevinApplyConsent=function(cc){if(_p)_p(cc);if(ok(cc)){window.loadClarity();send(cc);}};})();
 </script>
 <style>
 /* =========================================================
@@ -626,7 +626,6 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
 </style>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHSXRR29" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav id="nav" class="dark">
   <div class="wrap nav-in">
@@ -958,7 +957,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
   <div class="ckb-card">
     <div class="ckb-main" id="ckbMain">
       <p class="ckb-t">Cookies en metingen</p>
-      <p class="ckb-d">Wij gebruiken cookies om de site te meten en onze campagnes te verbeteren. Kies wat je toestaat. Meer in ons <a href="https://stevin.ai/privacy" target="_blank" rel="noopener">privacybeleid</a>.</p>
+      <p class="ckb-d">Wij gebruiken cookies om de site te meten, gedrag te begrijpen en leads beter te herleiden. Kies wat je toestaat. Meer in ons <a href="https://stevin.ai/privacy" target="_blank" rel="noopener">privacybeleid</a>.</p>
       <div class="ckb-btns">
         <button class="ckb-b ckb-pri" data-c="all">Alles accepteren</button>
         <button class="ckb-b" data-c="necessary">Alleen noodzakelijk</button>
@@ -967,7 +966,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
     </div>
     <div class="ckb-prefs" id="ckbPrefs" hidden>
       <label class="ckb-row"><span><b>Analyse</b><br><small>Meten hoe de site gebruikt wordt (GA4, Clarity).</small></span><input type="checkbox" id="ckbA"></label>
-      <label class="ckb-row"><span><b>Marketing</b><br><small>Campagne- en conversiemeting (Google Ads, Meta).</small></span><input type="checkbox" id="ckbM"></label>
+      <label class="ckb-row"><span><b>Marketing</b><br><small>Campagne- en conversiemeting (Google Ads, Meta), inclusief leadkwaliteit.</small></span><input type="checkbox" id="ckbM"></label>
       <div class="ckb-btns" style="margin-top:14px"><button class="ckb-b ckb-pri" id="ckbSave">Bewaren</button></div>
     </div>
   </div>
@@ -992,10 +991,18 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
     function navTheme(){var light=window.scrollY>60;nav.classList.toggle('light',light);nav.classList.toggle('dark',!light);}
     window.addEventListener('scroll',navTheme,{passive:true});navTheme();
     var df=document.getElementById('demoForm');
-    // Enhanced-conversion push: hasht email/telefoon/naam client-side (geen plain
-    // PII de deur uit; consent wordt op tag-niveau afgedwongen via Consent Mode),
-    // net als lib/tracking.ts op de hoofdsite. Tracking-fout blokkeert de flow niet.
-    function pushLead(form,name,email,phone){
+    var leadCtx=(function(){var p=new URLSearchParams(location.search),utm={};['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','gbraid','wbraid','fbclid','li_fat_id'].forEach(function(k){var v=p.get(k);if(v)utm[k]=v.slice(0,300);});var ref=document.referrer||'',ch='direct';try{if(p.get('utm_source'))ch=p.get('utm_source').toLowerCase().slice(0,40);else if(ref){var h=new URL(ref).hostname.replace(/^www\./,'');ch=h===location.hostname?'internal':(/google\.|bing\.|duckduckgo|ecosia|yahoo/.test(h)?'organic':(/linkedin|t\.co|twitter|x\.com|facebook|instagram|reddit/.test(h)?'social':'referral'));}}catch(e){}return{session_started_at:new Date().toISOString(),landing_page:location.href.slice(0,500),referrer:ref.slice(0,500)||null,entry_channel:ch,utm_params:utm,page_path:location.pathname,page_type:'landing_page',locale:'nl',interaction_summary:{},last_clicks:[]};})();
+    function remember(kind,p){try{leadCtx.interaction_summary[kind]=(leadCtx.interaction_summary[kind]||0)+1;leadCtx.last_interaction_at=new Date().toISOString();if(kind!=='scroll_depth'){leadCtx.last_clicks.push({kind:kind,at:new Date().toISOString(),page_path:location.pathname,href:(p&&p.href||'').slice(0,500),label:(p&&p.label||'').replace(/\s+/g,' ').trim().slice(0,160),placement:p&&p.placement||null});leadCtx.last_clicks=leadCtx.last_clicks.slice(-12);}}catch(e){}}
+    document.addEventListener('click',function(e){var el=e.target&&e.target.closest?e.target.closest('a,button'):null;if(!el)return;var href=el.getAttribute('href')||el.getAttribute('onclick')||'',label=(el.textContent||el.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim();if(/demo|contact|aanvraag|prijzen|werkwijze/i.test(label+href))remember('cta_click',{href:href,label:label,placement:'landing_page'});else if(href)remember(/^https?:/.test(href)?'outbound_click':'internal_click',{href:href,label:label,placement:'landing_page'});},{passive:true});
+    function getLeadContext(eid,form){leadCtx.event_id=eid;leadCtx.form_id=form;leadCtx.current_url=location.href.slice(0,500);leadCtx.page_path=location.pathname;return leadCtx;}
+    if(df){df.addEventListener('focusin',function(){if(df.dataset.started)return;df.dataset.started='1';remember('form_start',{label:'ads-data',placement:'demo_form'});try{(window.dataLayer=window.dataLayer||[]).push({event:'form_start',form:'ads-data',page_path:location.pathname});}catch(e){};});}
+    // Lead-event altijd pushen; enhanced-conversion user_data alleen bij marketing-consent.
+    // Tracking-fout blokkeert de flow niet.
+    function pushLead(form,name,email,phone,eid){
+      function push(evt){try{(window.dataLayer=window.dataLayer||[]).push(evt);}catch(_e){}}
+      function marketingOk(){try{var c=localStorage.getItem('stevin_consent');return c==='all'||c==='marketing'||c==='analytics_and_marketing';}catch(_e){return false;}}
+      var base={event:'generate_lead',event_id:eid,form:form};
+      if(!marketingOk()){push(base);return;}
       function sha(v){return crypto.subtle.digest('SHA-256',new TextEncoder().encode(String(v).trim().toLowerCase())).then(function(buf){return Array.prototype.map.call(new Uint8Array(buf),function(x){return x.toString(16).padStart(2,'0');}).join('');});}
       var parts=(name||'').trim().split(/\s+/),first=parts.shift()||'',last=parts.join(' ');
       var ud={},addr={},jobs=[];
@@ -1003,10 +1010,9 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
       if(phone)jobs.push(sha(phone.replace(/\D/g,'')).then(function(h){ud.phone_number=h;}));
       if(first)jobs.push(sha(first).then(function(h){addr.first_name=h;}));
       if(last)jobs.push(sha(last).then(function(h){addr.last_name=h;}));
-      var eid=Date.now()+'-'+Math.random().toString(36).slice(2,11);
-      Promise.all(jobs).then(function(){if(addr.first_name||addr.last_name)ud.address=addr;try{(window.dataLayer=window.dataLayer||[]).push({event:'generate_lead',event_id:eid,form:form,user_data:ud});}catch(_e){}}).catch(function(){try{(window.dataLayer=window.dataLayer||[]).push({event:'generate_lead',form:form});}catch(_e){}});
+      Promise.all(jobs).then(function(){if(addr.first_name||addr.last_name)ud.address=addr;if(Object.keys(ud).length)base.user_data=ud;push(base);}).catch(function(){push(base);});
     }
-    if(df){df.addEventListener('submit',function(e){e.preventDefault();var b=df.querySelector('button[type=submit]');var g=function(sel){var el=df.querySelector(sel);return el?el.value.trim():'';};var name=g('input[name=name]'),email=g('input[name=email]'),company=g('input[name=company]'),phone=g('input[name=phone]');var payload={name:name,email:email,company:company,phone:phone,company_url:g('input[name=company_url]'),source:'ads-data'};if(b)b.disabled=true;fetch('https://hub.stevin.ai/api/demo-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(function(r){if(!r.ok)throw new Error('http');return r.json();}).then(function(){df.classList.add('done');pushLead('ads-data',name,email,phone);}).catch(function(){if(b)b.disabled=false;var fn=df.querySelector('.fnote');if(fn){fn.textContent='Er ging iets mis. Mail ons gerust direct op koen@stevin.ai.';fn.style.color='#ff9a9a';}});});}
+    if(df){df.addEventListener('submit',function(e){e.preventDefault();var b=df.querySelector('button[type=submit]');var g=function(sel){var el=df.querySelector(sel);return el?el.value.trim():'';};var name=g('input[name=name]'),email=g('input[name=email]'),company=g('input[name=company]'),phone=g('input[name=phone]'),eid=Date.now()+'-'+Math.random().toString(36).slice(2,11);var payload={name:name,email:email,company:company,phone:phone,company_url:g('input[name=company_url]'),source:'ads-data',context:getLeadContext(eid,'ads-data')};if(b)b.disabled=true;fetch('https://hub.stevin.ai/api/demo-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(function(r){if(!r.ok)throw new Error('http');return r.json();}).then(function(){df.classList.add('done');remember('form_submit',{label:'ads-data',placement:'demo_form'});pushLead('ads-data',name,email,phone,eid);}).catch(function(){if(b)b.disabled=false;var fn=df.querySelector('.fnote');if(fn){fn.textContent='Er ging iets mis. Mail ons gerust direct op koen@stevin.ai.';fn.style.color='#ff9a9a';}});});}
     var steps=[].slice.call(document.querySelectorAll('#stage .dk-step'));
     var rails=[].slice.call(document.querySelectorAll('#rail .r'));
     var win=document.getElementById('anim');

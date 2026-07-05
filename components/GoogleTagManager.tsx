@@ -67,14 +67,7 @@ export function GoogleTagManagerHead() {
 }
 
 export function GoogleTagManagerBody() {
-  return (
-    <noscript>
-      <iframe
-        src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-        height="0"
-        width="0"
-        style={{ display: 'none', visibility: 'hidden' }}
-      />
-    </noscript>
-  )
+  // No noscript iframe: without JavaScript the visitor cannot interact with
+  // our consent banner, so a GTM fallback would have no consent update path.
+  return null
 }

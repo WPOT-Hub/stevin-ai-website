@@ -9,6 +9,11 @@ export interface ConsentState {
   personalization_storage: 'granted' | 'denied'
 }
 
+export interface ConsentUpdatedDetail {
+  choice: ConsentChoice
+  state: ConsentState
+}
+
 const CONSENT_KEY = 'stevin_consent'
 
 export function getStoredConsent(): ConsentChoice {
@@ -45,6 +50,14 @@ export function choiceToConsentState(choice: ConsentChoice): ConsentState {
   }
 }
 
+export function hasAnalyticsConsent(choice: ConsentChoice): boolean {
+  return choice === 'all' || choice === 'analytics' || choice === 'analytics_and_marketing'
+}
+
+export function hasMarketingConsent(choice: ConsentChoice): boolean {
+  return choice === 'all' || choice === 'marketing' || choice === 'analytics_and_marketing'
+}
+
 export function updateGoogleConsent(choice: ConsentChoice): void {
   if (typeof window === 'undefined') return
 
@@ -52,6 +65,9 @@ export function updateGoogleConsent(choice: ConsentChoice): void {
 
   // Push consent update to dataLayer (gtag is globally defined in GoogleTagManager.tsx)
   window.gtag?.('consent', 'update', state)
+  window.dispatchEvent(new CustomEvent<ConsentUpdatedDetail>('stevin:consent-updated', {
+    detail: { choice, state },
+  }))
 }
 
 // Extend Window for gtag

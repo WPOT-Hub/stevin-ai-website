@@ -25,7 +25,7 @@ export default async function PrivacyPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = '11 mei 2026'
+  const lastUpdated = isEn ? '4 July 2026' : '4 juli 2026'
 
   return (
     <main className="bg-surface text-primary">
@@ -101,6 +101,13 @@ function PrivacyDutch() {
             <strong>Technische data</strong>: IP-adres, browser-type, apparaattype voor
             beveiligings- en debugdoeleinden.
           </li>
+          <li>
+            <strong>Website- en leadcontext</strong>: wanneer je een contact- of
+            demoformulier invult, bewaren wij de formuliergegevens samen met beperkte
+            context zoals landingspagina, referrer, UTM-parameters, campagneklikken en
+            de laatst bezochte pagina&apos;s. Dit gebruiken wij om aanvragen goed op te
+            volgen en te begrijpen welke content en campagnes kwalitatieve leads opleveren.
+          </li>
         </ul>
       </section>
 
@@ -111,6 +118,7 @@ function PrivacyDutch() {
           <li>Om signalen, alerts en aanbevelingen te genereren voor jouw campagnes.</li>
           <li>Om beveiligingsincidenten te detecteren en op te lossen.</li>
           <li>Om de dienst te verbeteren op basis van anonieme gebruikspatronen.</li>
+          <li>Om website-aanvragen te kwalificeren en de juiste opvolging te geven.</li>
         </ul>
         <p>
           Wij verkopen geen persoonsgegevens. Wij delen jouw campagnedata niet met andere
@@ -164,9 +172,21 @@ function PrivacyDutch() {
       <section>
         <h2 className="text-xl font-semibold">Cookies</h2>
         <p>
-          Op stevin.ai gebruiken wij alleen functionele cookies (login-sessie, taalkeuze) en
-          geanonimiseerde analytics. Wij plaatsen geen marketing- of tracking-cookies van
-          derden zonder expliciete toestemming.
+          Op stevin.ai gebruiken wij noodzakelijke cookies voor basisfuncties zoals
+          sessie, taalkeuze en beveiliging. Zonder toestemming laden wij geen Microsoft
+          Clarity en geven wij Google en advertentieplatformen geen toestemming voor
+          analytics- of advertentiecookies.
+        </p>
+        <p>
+          Kies je voor statistieken, dan gebruiken wij Google Analytics en Microsoft
+          Clarity om paginabezoeken, interacties, scrollgedrag, klikken, heatmaps en
+          sessie-opnames te analyseren. Kies je voor marketing, dan gebruiken wij Google
+          Ads en Meta voor campagne- en conversiemeting. Waar relevant sturen wij
+          formuliergegevens alleen gehasht door voor enhanced conversion meting.
+        </p>
+        <p>
+          Je kunt via de cookie-instellingen kiezen tussen noodzakelijk, statistieken,
+          marketing of alles accepteren. Wij verkopen geen persoonsgegevens.
         </p>
       </section>
 
@@ -222,6 +242,13 @@ function PrivacyEnglish() {
             <strong>Technical data</strong>: IP address, browser type, device type for security
             and debugging.
           </li>
+          <li>
+            <strong>Website and lead context</strong>: when you submit a contact or demo
+            form, we store the form details with limited context such as landing page,
+            referrer, UTM parameters, campaign clicks and recently visited pages. We use
+            this to follow up properly and understand which content and campaigns create
+            qualified leads.
+          </li>
         </ul>
       </section>
 
@@ -232,6 +259,7 @@ function PrivacyEnglish() {
           <li>To generate signals, alerts and recommendations for your campaigns.</li>
           <li>To detect and resolve security incidents.</li>
           <li>To improve the service based on anonymous usage patterns.</li>
+          <li>To qualify website requests and follow up with the right context.</li>
         </ul>
         <p>
           We do not sell personal data. We do not share your campaign data with other Stevin
@@ -282,9 +310,21 @@ function PrivacyEnglish() {
       <section>
         <h2 className="text-xl font-semibold">Cookies</h2>
         <p>
-          On stevin.ai we use only functional cookies (login session, language preference)
-          and anonymous analytics. We do not place third-party marketing or tracking cookies
-          without explicit consent.
+          On stevin.ai we use necessary cookies for basic functions such as session,
+          language preference and security. Without consent, we do not load Microsoft
+          Clarity and we do not grant Google or advertising platforms permission to use
+          analytics or advertising cookies.
+        </p>
+        <p>
+          If you choose statistics, we use Google Analytics and Microsoft Clarity to
+          analyze page views, interactions, scroll behavior, clicks, heatmaps and session
+          recordings. If you choose marketing, we use Google Ads and Meta for campaign
+          and conversion measurement. Where relevant, form data is only sent in hashed
+          form for enhanced conversion measurement.
+        </p>
+        <p>
+          You can choose between necessary, statistics, marketing or accept all through
+          the cookie settings. We do not sell personal data.
         </p>
       </section>
 
