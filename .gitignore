@@ -4,5 +4,5 @@ node_modules
 .DS_Store
 .vercel
 tsconfig.tsbuildinfo
-tools/
+/tools/
 docs/journal-drafts*.md
