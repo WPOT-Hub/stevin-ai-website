@@ -28,7 +28,7 @@ export interface SeoLandingPageContent {
 export const seoLandingPages: SeoLandingPageContent[] = [
   {
     slug: 'marketing-intelligence',
-    metaTitle: 'Marketing intelligence: van data naar besluit | Stevin',
+    metaTitle: 'Marketing intelligence: van data naar besluit',
     metaDescription:
       'Marketing intelligence brengt je ads, GA4, CRM en tracking samen in een helder verhaal. Zie wat aandacht nodig heeft voordat je rapportage het oppikt.',
     eyebrow: 'Marketing intelligence',
@@ -125,7 +125,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
   },
   {
     slug: 'leadopvolging',
-    metaTitle: 'Leadopvolging automatiseren zonder leads te missen | Stevin',
+    metaTitle: 'Leadopvolging automatiseren zonder leads te missen',
     metaDescription:
       'Leadopvolging automatiseren: elk formulier, elke call en elk signaal op een plek, direct doorgestuurd naar je team of CRM. Geen warme lead blijft liggen.',
     eyebrow: 'Leadopvolging',
@@ -222,7 +222,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
   },
   {
     slug: 'marketing-voor-bureaus',
-    metaTitle: 'Marketing voor bureaus: grip op alle klanten | Stevin',
+    metaTitle: 'Marketing voor bureaus: grip op alle klanten',
     metaDescription:
       'Marketing voor bureaus: een plek voor data, signalen en rapportage van al je klanten. Minder tijd kwijt aan rapporten, sneller schakelen per account.',
     eyebrow: 'Voor bureaus',
@@ -319,7 +319,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
   },
   {
     slug: 'website-met-crm',
-    metaTitle: 'Website met CRM-koppeling: leads direct bruikbaar | Stevin',
+    metaTitle: 'Website met CRM-koppeling: leads direct bruikbaar',
     metaDescription:
       'Een website met CRM-koppeling maakt van elk formulier een opvolgbare lead: capture, verrijking, routing en tracking in een route. Netjes met consent.',
     eyebrow: 'Website met CRM',
@@ -416,7 +416,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
   },
   {
     slug: 'google-ads-ga4',
-    metaTitle: 'Google Ads en GA4 goed koppelen en meten | Stevin',
+    metaTitle: 'Google Ads en GA4 goed koppelen en meten',
     metaDescription:
       'Google Ads en GA4 die echt op elkaar aansluiten: key events, consent mode v2 en attributie zonder tracking-gaten. Stuur campagnes op echte conversies.',
     eyebrow: 'Google Ads en GA4',
@@ -514,7 +514,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
   },
   {
     slug: 'first-party-data',
-    metaTitle: 'First-party data als basis voor je marketing | Stevin',
+    metaTitle: 'First-party data als basis voor je marketing',
     metaDescription:
       'First-party data strategie: eigen data verzamelen met consent, koppelen aan je CRM en activeren in campagnes. Minder afhankelijk van platformen.',
     eyebrow: 'First-party data',
@@ -611,7 +611,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
   },
   {
     slug: 'lead-generatie',
-    metaTitle: 'Lead generatie die meer oplevert dan traffic | Stevin',
+    metaTitle: 'Lead generatie die meer oplevert dan traffic',
     metaDescription:
       'Lead generatie draait om drie dingen: de juiste bron, goede data en snelle opvolging. Zo haal je meer gekwalificeerde leads uit dezelfde campagnes.',
     eyebrow: 'Lead generatie',
