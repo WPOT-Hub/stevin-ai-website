@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-commercial-ai-founding-fathers',
+    format: 'dispatch' as const,
+    edition: '315',
+    category: 'Cultuur',
+    title: "Google toont founding fathers als AI-pioniers in nieuwe reclame",
+    dek: "Een nieuwe Google-reclame laat zien hoe de Amerikaanse grondleggers hun Declaration of Independence zouden hebben geschreven met Google Workspace en AI.",
+    publishedAt: '2026-07-06',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "Google toont founding fathers als AI-pioniers in nieuwe reclame",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'de-ruimte-als-een-normale-business',
     format: 'dispatch' as const,
     edition: '314',
