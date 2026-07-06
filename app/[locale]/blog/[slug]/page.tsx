@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-commercial-ai-founding-fathers': (
+    <>
+      <p className="lead-para">
+        In een verrassende reclame voor Google Workspace en Gemini stelt het techbedrijf zich voor hoe Benjamin Franklin, Thomas Jefferson en andere founding fathers hun Declaration of Independence zouden hebben opgesteld met moderne tools. De spot volgt de historische figuren die via tekstberichten en samenwerkingssoftware tot een gezamenlijke versie komen. Het filmpje eindigt met een knipoog naar de huidige tijd: 'Some things never change. Except the tools.'
+      </p>
+      <p>
+        De commercial speelt in op de groeiende rol van AI in kantoorsoftware en samenwerking, aldus Google. Hoewel de uitvoering vooral humoristisch bedoeld lijkt, benadrukt het wel hoe technologie steeds meer wordt geïntegreerd in traditionele werkprocessen. Critici wijzen echter op de onwerkelijke setting en vragen zich af of zo’n campagne niet te ver gaat in het vermenselijken van AI.
+      </p>
+      <p>
+        Voor bedrijven die al gebruikmaken van Google’s tools kan de spot herkenbaar zijn, maar voor anderen voelt het misschien geforceerd aan. Toch laat het zien hoe groot de invloed van AI is geworden op zelfs de meest iconische historische momenten.
+      </p>
+    </>
+  ),
   'vizio-mini-led-quantum-tv-budget-optie': (
     <>
       <p className="lead-para">
@@ -5487,6 +5500,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-commercial-ai-founding-fathers':
+    "Deze campagne past binnen een bredere trend waarbij techbedrijven proberen technologie te koppelen aan cultuurhistorische momenten. Voor ondernemers is het interessant om te zien hoe innovatie niet alleen gaat om functionaliteit, maar ook om storytelling. Het laat zien dat zelfs traditionele sectoren zoals overheid en wetenschap niet immuun zijn voor digitale transformatie.",
   'vizio-mini-led-quantum-tv-budget-optie':
     "Voor bedrijven die technologie integreren in hun productaanbod kan dit een signaal zijn dat betaalbaarheid en toegankelijkheid steeds belangrijker worden. Het toont aan dat innovatie niet altijd gepaard hoeft te gaan met hoge prijzen, wat ook relevant is bij de aanschaf van apparatuur of systemen voor zakelijk gebruik.",
   'de-ruimte-als-een-normale-business':
