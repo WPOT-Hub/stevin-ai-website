@@ -6,6 +6,7 @@ import { comparisons } from '@/data/comparisons'
 import { glossary } from '@/data/glossary'
 import { alternatives } from '@/data/alternatives'
 import { products } from '@/data/products'
+import { seoLandingPages } from '@/data/seo-landing-pages'
 import { isPublishableArticle } from './[locale]/blog/[slug]/page'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -117,5 +118,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: altLangs(path) },
   }))
 
-  return [...nlEntries, ...enEntries, ...blogEntries]
+  // SEO-landingspagina's: NL-only content, canonical naar NL, dus geen /en-entry
+  // (zelfde regel als blogposts: geen duplicate-signaal, geen crawl-verspilling).
+  const landingEntries: MetadataRoute.Sitemap = seoLandingPages.map((p) => ({
+    url: `${baseUrl}/${p.slug}`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+    alternates: { languages: { 'nl-NL': `${baseUrl}/${p.slug}`, 'x-default': `${baseUrl}/${p.slug}` } },
+  }))
+
+  return [...nlEntries, ...enEntries, ...landingEntries, ...blogEntries]
 }

@@ -16,6 +16,15 @@ export default function Footer() {
       { label: t('svc_automation'), href: '/marketing-automation' },
       { label: t('svc_crm'), href: '/diensten#crm-leadopvolging' },
       { label: t('svc_tracking'), href: '/diensten#tracking-inzicht' },
+      // NL-only SEO-landingspagina's (data/seo-landing-pages.ts), sitewide
+      // interne links voor discovery
+      { label: 'Marketing intelligence', href: '/marketing-intelligence' },
+      { label: 'Leadopvolging', href: '/leadopvolging' },
+      { label: 'Marketing voor bureaus', href: '/marketing-voor-bureaus' },
+      { label: 'Lead generatie', href: '/lead-generatie' },
+      { label: 'Website met CRM', href: '/website-met-crm' },
+      { label: 'Google Ads en GA4', href: '/google-ads-ga4' },
+      { label: 'First-party data', href: '/first-party-data' },
     ],
     bedrijf: [
       { label: t('bedrijf_werkwijze'), href: '/werkwijze' },
