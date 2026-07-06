@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'vizio-mini-led-quantum-tv-budget-optie',
+    format: 'dispatch' as const,
+    edition: '316',
+    category: 'Tech',
+    title: "Vizio brengt goedkoopste quantum-dot tv van de markt voor 398 euro",
+    dek: "De nieuwe 65-inch Mini LED Quantum TV van Vizio kost slechts 398 euro en biedt een opvallend goede prijs-kwaliteitverhouding.",
+    publishedAt: '2026-07-06',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Vizio brengt goedkoopste quantum-dot tv van de markt voor 398 euro",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-commercial-ai-founding-fathers',
     format: 'dispatch' as const,
     edition: '315',
