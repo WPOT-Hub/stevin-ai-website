@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'reddit-gebruikt-llms-tegen-spam-gecreeerd-door-llms',
+    format: 'dispatch' as const,
+    edition: '318',
+    category: 'Platform',
+    title: "Reddit gebruikt AI om spam te bestrijden die AI zelf veroorzaakt",
+    dek: "De platformgigant Reddit voert grote taalmodellen in om de groeiende stroom aan nepaccounts en spam te filteren die door deze modellen wordt gegenereerd.",
+    publishedAt: '2026-07-07',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Reddit gebruikt AI om spam te bestrijden die AI zelf veroorzaakt",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'paid-media-wordt-seo-investering-door-ai-search',
     format: 'dispatch' as const,
     edition: '317',
