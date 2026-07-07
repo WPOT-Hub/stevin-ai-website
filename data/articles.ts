@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'paid-media-wordt-seo-investering-door-ai-search',
+    format: 'dispatch' as const,
+    edition: '317',
+    category: 'Platform',
+    title: "Betaalde content beïnvloedt AI-zichtbaarheid van merken",
+    dek: "Reviews, samenwerkingen met creators en gesponsorde content worden steeds belangrijker voor hoe AI-systemen merken beoordelen en aanbevelen.",
+    publishedAt: '2026-07-07',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Betaalde content beïnvloedt AI-zichtbaarheid van merken",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'vizio-mini-led-quantum-tv-budget-optie',
     format: 'dispatch' as const,
     edition: '316',
