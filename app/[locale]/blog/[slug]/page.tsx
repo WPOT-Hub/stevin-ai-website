@@ -6972,7 +6972,7 @@ function ArticleTransparencyBody() {
   return (
     <>
       <p className="lead-para">
-        Draai je je advertenties via een extern bureau, dan is de kans groot dat de accounts, de pixels en de opgebouwde data op naam van dat bureau staan, niet op die van jou. Je betaalt dan voor de media, maar het geheugen (de data en de leercurve) bouwt zich op buiten je bedrijf. Dat weegt zwaarder nu marketing steeds meer op AI draait: een AI-laag kan alleen goede beslissingen voor je nemen als ze op jouw eigen data leert. Is die data niet van jou, dan bouw je geen eigen marketing-brein op. Sinds de Europese Digital Services Act laten Google, Meta, LinkedIn, TikTok en Microsoft in een <a href="#platforms" style={extLink}>openbare advertentiebibliotheek</a> zien wie een advertentie betaalt. In twee minuten controleer je of dat bij jou de eigen naam is, of die van je bureau.
+        Draai je je advertenties via een extern bureau, dan is de kans groot dat de accounts, de pixels en de opgebouwde data op naam van dat bureau staan, niet op die van jou. Je betaalt dan voor de media, maar het geheugen (de data en de leercurve) bouwt zich op buiten je bedrijf. Dat weegt zwaarder nu marketing steeds meer op AI draait: een AI-laag kan alleen goede beslissingen voor je nemen als ze op jouw eigen data leert. Is die data niet van jou, dan bouw je geen eigen marketing-brein op. Sinds de Europese Digital Services Act laten Google, Meta, LinkedIn, TikTok en Microsoft zien wie een advertentie betaalt. <a href="#platforms" style={extLink}>In twee minuten controleer je in de openbare advertentiebibliotheek</a> of dat bij jou de eigen naam is, of die van je bureau.
       </p>
 
       <Callout
