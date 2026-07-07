@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'oudste-amerikaans-object-in-ruimte-ontdekt',
+    format: 'dispatch' as const,
+    edition: '320',
+    category: 'Cultuur',
+    title: "Vlag uit de Amerikaanse Revolutie vloog al in 1961 de ruimte in",
+    dek: "Een vlag uit de Amerikaanse Revolutie uit 1776 werd in 1961 meegenomen tijdens een suborbitale vlucht van NASA, zo blijkt uit nieuw onderzoek.",
+    publishedAt: '2026-07-07',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "Vlag uit de Amerikaanse Revolutie vloog al in 1961 de ruimte in",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'uber-vertraagt-expansie-europa-na-plannen-2026',
     format: 'dispatch' as const,
     edition: '319',
