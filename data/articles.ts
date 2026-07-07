@@ -4241,6 +4241,21 @@ export const articles: Article[] = [
 
   /* ─── EDITORIALS ─── */
   {
+    slug: 'wie-betaalt-je-google-advertenties',
+    format: 'editorial' as const,
+    edition: '020',
+    category: 'Transparantie',
+    title: 'Wie betaalt jouw Google-advertenties? Zo zie je het zelf',
+    dek: 'Sinds 2023 kan iedereen in het openbare transparantiecentrum van Google opzoeken wie de advertenties van een bedrijf betaalt. Bij bedrijven die via een bureau adverteren, staat daar vaak de naam van dat bureau. In twee minuten controleer je waar jouw data en historie landen.',
+    publishedAt: '2026-07-07',
+    readMinutes: 6,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TRANSPARANTIE',
+    posterTopic: 'Wie betaalt jouw Google-advertenties?',
+    source: { url: 'https://adstransparency.google.com', name: 'Google Ads Transparency Center' },
+  },
+  {
     slug: 'lecun-miljard-tegen-het-taalmodel',
     format: 'editorial' as const,
     edition: '019',

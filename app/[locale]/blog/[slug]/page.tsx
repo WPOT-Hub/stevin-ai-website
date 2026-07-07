@@ -308,6 +308,9 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'lecun-miljard-tegen-het-taalmodel' && (
             <ArticleLeCunBody />
           )}
+          {article.format === 'editorial' && article.slug === 'wie-betaalt-je-google-advertenties' && (
+            <ArticleTransparencyBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
@@ -320,6 +323,7 @@ export default async function ArticlePage({
             article.slug !== 'ai-tool-werkt-echt-holdout-bureau' &&
             article.slug !== 'zichtbaar-in-ai-antwoorden-aeo-geo' &&
             article.slug !== 'lecun-miljard-tegen-het-taalmodel' &&
+            article.slug !== 'wie-betaalt-je-google-advertenties' &&
             article.slug !== 'wk-2026-campagne-data-voorbereiding' && (
               <ArticleStubBody article={article} />
             )}
@@ -6910,6 +6914,161 @@ function ArticleStubBody({ article }: { article: { title: string; dek: string; e
       </p>
       <EndRule />
       <EndSig>Editie {article.edition} / 052 · in voorbereiding</EndSig>
+    </>
+  )
+}
+
+function ArticleTransparencyBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Sinds 2023 heeft Google een openbaar Advertentietransparantie-centrum. Iedereen kan daar opzoeken welke advertenties een bedrijf draait, in welke landen, en wie ervoor betaalt. Dat laatste veld, &quot;Betaald door&quot;, is het interessante. Bij bedrijven die hun advertenties via een extern bureau laten draaien, staat daar vaak de naam van dat bureau, niet die van het bedrijf zelf. Dat is in twee minuten te controleren, en het zegt iets over waar je data en je opgebouwde historie landen.
+      </p>
+
+      <Callout
+        big="2 min"
+        label="Zolang duurt het om zelf op te zoeken wie jouw Google-advertenties betaalt. Ga naar adstransparency.google.com, typ je bedrijfsnaam, open een advertentie en kijk bij &quot;Betaald door&quot;. Geen account nodig, geen kosten."
+      />
+
+      <H2 num="01">Wat is het Advertentietransparantie-centrum?</H2>
+
+      <p>
+        Het Advertentietransparantie-centrum is een openbare database van Google waarin je per adverteerder ziet welke advertenties actief zijn, in welke landen ze draaien, en wie de rekening betaalt. Google lanceerde het in maart 2023, deels onder druk van Europese regelgeving over politieke en commerciele advertenties. Je vindt het op adstransparency.google.com. Je hebt geen account nodig en het kost niets.
+      </p>
+
+      <p>
+        Het veld dat telt heet in het Nederlands &quot;Betaald door&quot; (in het Engels &quot;Paid for by&quot;). Google vult dat met de geverifieerde betaler achter de advertentie. Bij een bedrijf dat zelf adverteert, staat daar de eigen bedrijfsnaam. Bij een bedrijf dat via een bureau adverteert, staat daar vaak de naam van dat bureau.
+      </p>
+
+      <H2 num="02">Hoe zie je wie jouw advertenties betaalt?</H2>
+
+      <Takeaways
+        label="IN VIER STAPPEN"
+        title="Zelf opzoeken wie de betaler is"
+        items={[
+          {
+            pct: '01',
+            text: (
+              <>
+                <b>Ga naar adstransparency.google.com.</b> Er is geen inlog of account nodig. Het werkt op elke browser, ook op je telefoon.
+              </>
+            ),
+          },
+          {
+            pct: '02',
+            text: (
+              <>
+                <b>Typ je eigen bedrijfsnaam in de zoekbalk.</b> Verschijnen er meerdere vestigingen, kies dan de juiste. Zet het land op Nederland of Belgie.
+              </>
+            ),
+          },
+          {
+            pct: '03',
+            text: (
+              <>
+                <b>Open een van je actieve advertenties.</b> Klik op de advertentie of op het menu met de drie puntjes ernaast.
+              </>
+            ),
+          },
+          {
+            pct: '04',
+            text: (
+              <>
+                <b>Kijk bij &quot;Betaald door&quot;.</b> Staat daar jouw eigen bedrijfsnaam, of die van een ander?
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <p>
+        Wil je eerst zien hoe het eruitziet zonder je eigen cijfers erbij, zoek dan een groot merk dat je kent. Typ bijvoorbeeld Coolblue. Je ziet hun lopende advertenties, en bij &quot;Betaald door&quot; staat hun eigen naam. Zo hoort het: het merk dat adverteert, is ook de betaler. De vraag is of dat bij jou ook zo is.
+      </p>
+
+      <H2 num="03">Wat betekent het als er een bureaunaam staat?</H2>
+
+      <p>
+        Staat bij &quot;Betaald door&quot; de naam van je bureau, dan draaien de advertenties op het advertentieaccount van dat bureau, niet op dat van jou. Dat is niet per definitie fout. Veel bureaus werken zo, en voor een deel van de klanten is dat prima. Maar het heeft drie gevolgen die je zelf zelden ziet.
+      </p>
+
+      <Takeaways
+        label="DE DRIE GEVOLGEN"
+        title="Wat het betekent als je bureau de betaler is"
+        items={[
+          {
+            pct: 'DATA',
+            text: (
+              <>
+                <b>De historie zit in hun account.</b> De opgebouwde campagnedata en leercurve staan op naam van het bureau. Bij een overstap of een nieuwe website begin je vaak opnieuw.
+              </>
+            ),
+          },
+          {
+            pct: 'ALGO',
+            text: (
+              <>
+                <b>Het algoritme leert op accountniveau.</b> Google optimaliseert binnen het account waarin de campagnes draaien. Die leercurve neem je niet mee als je weggaat.
+              </>
+            ),
+          },
+          {
+            pct: 'MEET',
+            text: (
+              <>
+                <b>Wie de data beheert, bepaalt wat je meet.</b> Je bent voor je rapportage afhankelijk van wat het bureau uit hun account deelt.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <p>
+        Dit is geen bewijs dat er iets mis is. Het is een startpunt voor een gesprek. De enige manier om zeker te weten hoe het bij jou zit, is het je bureau vragen.
+      </p>
+
+      <H2 num="04">Welke vragen stel je je bureau?</H2>
+
+      <p>
+        Drie vragen zijn genoeg om te weten waar je staat. Ze zijn redelijk, en een goed bureau beantwoordt ze zonder aarzelen.
+      </p>
+
+      <Takeaways
+        label="HET GESPREK"
+        title="Drie vragen aan je bureau"
+        items={[
+          {
+            pct: '01',
+            text: (
+              <>
+                <b>Op wiens naam staat het advertentieaccount?</b> Staat het op ons bedrijf of op dat van jullie, en kunnen wij beheerderstoegang krijgen?
+              </>
+            ),
+          },
+          {
+            pct: '02',
+            text: (
+              <>
+                <b>Wat gebeurt er als we stoppen?</b> Houden we dan de opgebouwde historie en de data, of blijft die bij jullie?
+              </>
+            ),
+          },
+          {
+            pct: '03',
+            text: (
+              <>
+                <b>Waar landt onze lead-data?</b> Is er een verwerkersovereenkomst, en weten we welke systemen onze klantgegevens verwerken?
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <p>
+        Het punt is niet dat bureaus onbetrouwbaar zijn. Het punt is dat eigenaarschap van je eigen marketingdata een keuze hoort te zijn die je bewust maakt, niet een die je overkomt omdat je nooit in dat ene veld hebt gekeken. Twee minuten op adstransparency.google.com, en je weet waar je staat.
+      </p>
+
+      <EndRule />
+      <EndSig>&quot;Wonder en is gheen wonder.&quot; · Editie 020 / 052</EndSig>
     </>
   )
 }
