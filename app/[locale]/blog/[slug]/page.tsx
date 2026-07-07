@@ -6948,83 +6948,95 @@ function ArticleTransparencyBody() {
       <H2 num="02">Op welke platforms kun je het opzoeken?</H2>
 
       <p>
-        Vijf platforms hebben een bruikbare, openbare bibliotheek waarin je zonder inloggen kunt zoeken. Klik, typ je bedrijfsnaam en zet het land op Nederland of Belgie.
+        De grote advertentieplatforms hebben een openbare bibliotheek waarin je zonder inloggen kunt zoeken. Klik op een van de vier hieronder, typ je bedrijfsnaam en zet het land op Nederland of Belgie. Kijk daarna bij het veld met de betaler.
       </p>
 
-      <Takeaways
-        label="DE ADVERTENTIEBIBLIOTHEKEN"
-        title="Waar je de betaler opzoekt, per platform"
-        items={[
+      <div
+        style={{
+          margin: '40px 0',
+          border: '1px solid var(--border)',
+          borderRadius: '14px',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            padding: '16px 24px',
+            background: 'var(--surface)',
+            borderBottom: '1px solid var(--border)',
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '11px',
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: 'var(--muted)',
+          }}
+        >
+          De advertentiebibliotheken
+        </div>
+        {[
           {
-            pct: 'GOOGLE',
-            text: (
-              <>
-                <b>
-                  <a href="https://adstransparency.google.com" target="_blank" rel="noopener noreferrer" style={extLink}>
-                    adstransparency.google.com
-                  </a>
-                </b>{' '}
-                Het Advertentietransparantie-centrum. Dekt Search, YouTube, Display en Shopping. Veld: &quot;Betaald door&quot;.
-              </>
-            ),
+            logo: 'google-ads',
+            alt: 'Google Ads',
+            url: 'https://adstransparency.google.com',
+            label: 'adstransparency.google.com',
+            desc: <>Het Advertentietransparantie-centrum. Dekt Search, YouTube, Display en Shopping. Veld: &quot;Betaald door&quot;.</>,
           },
           {
-            pct: 'META',
-            text: (
-              <>
-                <b>
-                  <a href="https://www.facebook.com/ads/library" target="_blank" rel="noopener noreferrer" style={extLink}>
-                    facebook.com/ads/library
-                  </a>
-                </b>{' '}
-                De Meta Ad Library, voor Facebook en Instagram. Veld: &quot;Advertiser and payer&quot; (adverteerder en betaler).
-              </>
-            ),
+            logo: 'meta',
+            alt: 'Meta',
+            url: 'https://www.facebook.com/ads/library',
+            label: 'facebook.com/ads/library',
+            desc: <>De Meta Ad Library, voor Facebook en Instagram. Veld: &quot;Advertiser and payer&quot;.</>,
           },
           {
-            pct: 'LINKEDIN',
-            text: (
-              <>
-                <b>
-                  <a href="https://www.linkedin.com/ad-library" target="_blank" rel="noopener noreferrer" style={extLink}>
-                    linkedin.com/ad-library
-                  </a>
-                </b>{' '}
-                De LinkedIn Ad Library, met alle advertenties sinds juni 2023. Veld: &quot;Paid for by&quot;.
-              </>
-            ),
+            logo: 'linkedin',
+            alt: 'LinkedIn',
+            url: 'https://www.linkedin.com/ad-library',
+            label: 'linkedin.com/ad-library',
+            desc: <>De LinkedIn Ad Library, met alle advertenties sinds juni 2023. Veld: &quot;Paid for by&quot;.</>,
           },
           {
-            pct: 'TIKTOK',
-            text: (
-              <>
-                <b>
-                  <a href="https://library.tiktok.com/ads" target="_blank" rel="noopener noreferrer" style={extLink}>
-                    library.tiktok.com/ads
-                  </a>
-                </b>{' '}
-                De TikTok-advertentiebibliotheek voor de EU. Veld: &quot;Advertentie betaald door&quot;.
-              </>
-            ),
+            logo: 'tiktok',
+            alt: 'TikTok',
+            url: 'https://library.tiktok.com/ads',
+            label: 'library.tiktok.com/ads',
+            desc: <>De TikTok-advertentiebibliotheek voor de EU. Veld: &quot;Advertentie betaald door&quot;.</>,
           },
-          {
-            pct: 'MICROSOFT',
-            text: (
-              <>
-                <b>
-                  <a href="https://adlibrary.ads.microsoft.com" target="_blank" rel="noopener noreferrer" style={extLink}>
-                    adlibrary.ads.microsoft.com
-                  </a>
-                </b>{' '}
-                De Microsoft Ad Library, voor zoekadvertenties op Bing in de EU en EER.
-              </>
-            ),
-          },
-        ]}
-      />
+        ].map((p, i) => (
+          <div
+            key={p.logo}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '20px',
+              padding: '20px 24px',
+              borderTop: i === 0 ? 'none' : '1px solid var(--border)',
+            }}
+          >
+            <span style={{ width: '104px', flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/logos/tools/${p.logo}.svg`}
+                alt={p.alt}
+                style={{ height: '26px', width: 'auto', maxWidth: '104px' }}
+              />
+            </span>
+            <span style={{ fontSize: '15px', lineHeight: 1.5 }}>
+              <a href={p.url} target="_blank" rel="noopener noreferrer" style={extLink}>
+                {p.label}
+              </a>{' '}
+              {p.desc}
+            </span>
+          </div>
+        ))}
+      </div>
 
       <p>
-        Ook Pinterest, Snapchat, X en retailmedia zoals Amazon houden onder dezelfde regels een repository bij. Die zijn wisselend in kwaliteit en detail, maar voor de meeste bedrijven zijn de vijf hierboven het startpunt.
+        Ook Microsoft houdt voor zoekadvertenties op Bing een{' '}
+        <a href="https://adlibrary.ads.microsoft.com" target="_blank" rel="noopener noreferrer" style={extLink}>
+          advertentiebibliotheek
+        </a>{' '}
+        bij, en Pinterest, Snapchat, X en retailmedia zoals Amazon doen dat onder dezelfde regels. Die zijn wisselend in kwaliteit en detail, maar voor de meeste bedrijven zijn de vier hierboven het startpunt.
       </p>
 
       <H2 num="03">Hoe zoek je het stap voor stap op?</H2>
