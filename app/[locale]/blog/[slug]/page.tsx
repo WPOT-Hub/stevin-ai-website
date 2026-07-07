@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'uber-vertraagt-expansie-europa-na-plannen-2026': (
+    <>
+      <p className="lead-para">
+        Uber heeft in februari aangekondigd zeven nieuwe Europese markten te willen betreden in 2026. Nu blijkt dat vijf van deze lanceringen op de lange baan worden geschoven. Alleen Polen en Tsjechië blijven volgens berichten op schema voor een start dit jaar.
+      </p>
+      <p>
+        De vertraging komt naar verluidt door tegenvallende resultaten in vergelijkbare markten en logistieke uitdagingen. In sommige landen blijkt de vraag naar ritten lager dan verwacht, terwijl concurrentie van lokale aanbieders toeneemt. Uber zou nu eerst de bestaande activiteiten willen optimaliseren voordat verdere expansie volgt.
+      </p>
+      <p>
+        De twee landen die wel doorgaan, Polen en Tsjechië, moeten dienen als testcase voor de rest van Europa. Uber hoopt hiermee te leren hoe lokale concurrentie en regelgeving het beste kunnen worden aangepakt.
+      </p>
+    </>
+  ),
   'reddit-gebruikt-llms-tegen-spam-gecreeerd-door-llms': (
     <>
       <p className="lead-para">
@@ -5526,6 +5539,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'uber-vertraagt-expansie-europa-na-plannen-2026':
+    "Voor bedrijven die internationale groei ambiëren, laat deze ontwikkeling zien hoe belangrijk het is om niet alleen op schaal uit te breiden, maar ook om lokale marktdynamieken goed te begrijpen. Een gefaseerde aanpak met ruimte voor aanpassingen kan uiteindelijk duurzamer zijn dan een snelle, grootschalige expansie.",
   'reddit-gebruikt-llms-tegen-spam-gecreeerd-door-llms':
     "Voor bedrijven die afhankelijk zijn van online platforms of eigen digitale kanalen wordt duidelijk dat AI niet alleen een tool is voor groei, maar ook een uitdaging op het gebied van beheer en authenticiteit. Het laat zien dat investeringen in moderatietechnologie net zo belangrijk zijn als in marketing of productontwikkeling. Tegelijkertijd onderstreept het de noodzaak om systemen zo in te richten dat ze zich kunnen aanpassen aan nieuwe vormen van manipulatie zonder zelf nieuwe problemen te creëren.",
   'paid-media-wordt-seo-investering-door-ai-search':
