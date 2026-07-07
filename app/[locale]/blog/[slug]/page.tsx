@@ -1456,6 +1456,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'reddit-gebruikt-llms-tegen-spam-gecreeerd-door-llms': (
+    <>
+      <p className="lead-para">
+        Reddit heeft een nieuwe verdedigingslinie geïntroduceerd tegen de toename van nepaccounts en gespamde berichten op het platform. Het bedrijf gebruikt nu grote taalmodellen (LLMs) om automatisch content en gedrag te scannen dat afwijkt van legitieme gebruikers. De stap is een directe reactie op de explosieve groei van door AI gegenereerde spam, die handmatige moderatie onhaalbaar maakt.
+      </p>
+      <p>
+        De aanpak combineert patroonherkenning met contextuele analyse om niet alleen bekende spamvormen te detecteren, maar ook nieuwe varianten die zich snel verspreiden. Reddit meldt dat de technologie al leidt tot een daling van valse accounts met meer dan 40% in de eerste maand na implementatie. Voor moderators betekent dit minder tijd kwijt zijn aan het handmatig verwijderen van ongewenste content.
+      </p>
+      <p>
+        De keuze voor LLMs als oplossing is opmerkelijk, omdat deze modellen zelf vaak worden ingezet om spam te genereren. TechCrunch schrijft dat Reddit hiermee een vicieuze cirkel doorbreekt waarin zowel kwaadwillenden als legitieme gebruikers last ondervinden van de gevolgen van AI-gedreven manipulatie.
+      </p>
+    </>
+  ),
   'paid-media-wordt-seo-investering-door-ai-search': (
     <>
       <p className="lead-para">
@@ -5513,6 +5526,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'reddit-gebruikt-llms-tegen-spam-gecreeerd-door-llms':
+    "Voor bedrijven die afhankelijk zijn van online platforms of eigen digitale kanalen wordt duidelijk dat AI niet alleen een tool is voor groei, maar ook een uitdaging op het gebied van beheer en authenticiteit. Het laat zien dat investeringen in moderatietechnologie net zo belangrijk zijn als in marketing of productontwikkeling. Tegelijkertijd onderstreept het de noodzaak om systemen zo in te richten dat ze zich kunnen aanpassen aan nieuwe vormen van manipulatie zonder zelf nieuwe problemen te creëren.",
   'paid-media-wordt-seo-investering-door-ai-search':
     "Voor marketeers vraagt dit om een andere benadering van zowel SEO als betaalde media. Het gaat niet meer alleen om directe conversies of kliks, maar om het opbouwen van een consistente aanwezigheid in systemen die buiten de directe controle van Google liggen. Dit vereist samenwerking tussen SEO-specialisten, PR-teams en betaalde mediaplanners om een gecoördineerde strategie te ontwikkelen die zowel menselijke als algoritmische gebruikers aanspreekt.",
   'google-commercial-ai-founding-fathers':
