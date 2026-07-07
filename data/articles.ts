@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'kremlin-drone-vluchten-europa-shadow-fleet',
+    format: 'dispatch' as const,
+    edition: '321',
+    category: 'Beleid',
+    title: "Drones boven Europa mogelijk afkomstig van Russische schepen",
+    dek: "Ongeïdentificeerde drones boven Europese luchtruimen blijken mogelijk opgestegen vanaf Russische schepen die onder valse vlag varen.",
+    publishedAt: '2026-07-07',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Drones boven Europa mogelijk afkomstig van Russische schepen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'oudste-amerikaans-object-in-ruimte-ontdekt',
     format: 'dispatch' as const,
     edition: '320',
