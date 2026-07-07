@@ -6927,7 +6927,7 @@ function ArticleTransparencyBody() {
   return (
     <>
       <p className="lead-para">
-        Draai je je advertenties via een extern bureau, dan is de kans groot dat de accounts, de pixels en de opgebouwde data op naam van dat bureau staan, niet op die van jou. Je betaalt dan voor de media, maar het geheugen (de data en de leercurve) bouwt zich op buiten je bedrijf. Sinds de Europese Digital Services Act laten Google, Meta, LinkedIn, TikTok en Microsoft in een openbare advertentiebibliotheek zien wie een advertentie betaalt. In twee minuten controleer je of dat bij jou de eigen naam is, of die van je bureau.
+        Draai je je advertenties via een extern bureau, dan is de kans groot dat de accounts, de pixels en de opgebouwde data op naam van dat bureau staan, niet op die van jou. Je betaalt dan voor de media, maar het geheugen (de data en de leercurve) bouwt zich op buiten je bedrijf. Dat weegt zwaarder nu marketing steeds meer op AI draait: een AI-laag kan alleen goede beslissingen voor je nemen als ze op jouw eigen data leert. Is die data niet van jou, dan bouw je geen eigen marketing-brein op. Sinds de Europese Digital Services Act laten Google, Meta, LinkedIn, TikTok en Microsoft in een openbare advertentiebibliotheek zien wie een advertentie betaalt. In twee minuten controleer je of dat bij jou de eigen naam is, of die van je bureau.
       </p>
 
       <Callout
@@ -7184,6 +7184,14 @@ function ArticleTransparencyBody() {
               </>
             ),
           },
+          {
+            pct: 'AI',
+            text: (
+              <>
+                <b>Je eigen AI kan er niet van leren.</b> Een AI-laag heeft je spend, leads, marge en klantwaarde nodig, aan elkaar gekoppeld. Blijft die data in het account van je bureau, dan kan een systeem dat voor jou leert er niet bij.
+              </>
+            ),
+          },
         ]}
       />
 
@@ -7236,7 +7244,21 @@ function ArticleTransparencyBody() {
         ]}
       />
 
-      <H2 num="06">Welke vragen stel je je bureau?</H2>
+      <H2 num="06">Wat betekent dit voor je AI-positie?</H2>
+
+      <p>
+        Marketing schuift naar AI. De advertentieplatforms sturen er zelf al op: Google en Meta optimaliseren op de data in het account waarin je campagnes draaien. En steeds meer bedrijven bouwen een eigen AI-laag bovenop hun marketing, om te sturen op omzet en klantwaarde in plaats van op klikken.
+      </p>
+
+      <p>
+        Beide leunen op data. Wie zijn eigen data bezit, kan die AI voeden en de voorsprong meenemen. Wie de data bij het bureau laat, begint bij een overstap opnieuw, of blijft afhankelijk van wat het bureau deelt. De voorsprong is cumulatief: elke maand eigen data maakt een model beter en een benchmark scherper. Die tijd haal je later niet in.
+      </p>
+
+      <p>
+        Dat is geen reden om morgen je bureau op te zeggen. Het is een reden om nu te zorgen dat de accounts en de data van jou zijn. Dan is de keuze straks aan jou, niet aan het account waarop je campagnes toevallig staan.
+      </p>
+
+      <H2 num="07">Welke vragen stel je je bureau?</H2>
 
       <p>
         Drie vragen zijn genoeg om te weten waar je staat. Ze zijn redelijk, en een goed bureau beantwoordt ze zonder aarzelen.
