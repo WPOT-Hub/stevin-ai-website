@@ -1460,6 +1460,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'oudste-amerikaans-object-in-ruimte-ontdekt': (
+    <>
+      <p className="lead-para">
+        De vlag, die oorspronkelijk hing in een herberg in Maryland, werd meegegeven aan astronaut Alan Shepard tijdens zijn eerste vlucht met Freedom 7. Dit maakt het waarschijnlijk het oudste door mensen gemaakte object dat ooit de ruimte bereikte.
+      </p>
+      <p>
+        Onderzoekers ontdekten de historische context na bestudering van archiefmateriaal en persoonlijke aantekeningen van Shepard. De vlag was een cadeau van een lokale verzetsgroep tijdens de Revolutie en belandde later in handen van een verzamelaar.
+      </p>
+      <p>
+        NASA bevestigde dat de vlag niet alleen symbolisch belangrijk is, maar ook technisch functioneel was: hij diende als isolatiemateriaal in het ruimtevaartuig om extreme temperaturen te weerstaan.
+      </p>
+    </>
+  ),
   'uber-vertraagt-expansie-europa-na-plannen-2026': (
     <>
       <p className="lead-para">
@@ -5543,6 +5556,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'oudste-amerikaans-object-in-ruimte-ontdekt':
+    "Voor ondernemers die met erfgoed of symboliek werken, toont dit voorbeeld hoe historische objecten een tweede leven kunnen krijgen door innovatieve toepassingen. Het benadrukt ook het belang van archiefonderzoek en duurzame conservering, zelfs voor items die niet direct commercieel waardevol lijken.",
   'uber-vertraagt-expansie-europa-na-plannen-2026':
     "Voor bedrijven die internationale groei ambiëren, laat deze ontwikkeling zien hoe belangrijk het is om niet alleen op schaal uit te breiden, maar ook om lokale marktdynamieken goed te begrijpen. Een gefaseerde aanpak met ruimte voor aanpassingen kan uiteindelijk duurzamer zijn dan een snelle, grootschalige expansie.",
   'reddit-gebruikt-llms-tegen-spam-gecreeerd-door-llms':
