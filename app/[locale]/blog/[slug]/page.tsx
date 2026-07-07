@@ -1460,6 +1460,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'kremlin-drone-vluchten-europa-shadow-fleet': (
+    <>
+      <p className="lead-para">
+        De afgelopen maanden zijn er meerdere meldingen geweest van drones die boven verschillende Europese landen vlogen. Uit onderzoek blijkt dat deze drones mogelijk zijn opgestegen vanaf Russische schepen, aldus bronnen uit de veiligheidssector.
+      </p>
+      <p>
+        Deze schepen varen onder zogenaamde 'schaduwvlaggen', waardoor ze moeilijk te traceren zijn. Het gaat om schepen die niet officieel geregistreerd staan in Rusland, maar wel banden met het Kremlin hebben. Hierdoor ontstaat een situatie waarin de oorsprong van deze vluchten lastig te achterhalen is.
+      </p>
+      <p>
+        Europese landen worstelen met hoe om te gaan met deze dreiging. Er is nog geen eenduidige aanpak, laat staan een gecoördineerde reactie vanuit de EU. Experts waarschuwen voor de risico’s van dergelijke activiteiten, die kunnen leiden tot verstoorde luchtverkeersleiding en potentiële veiligheidsrisico’s voor burgers.
+      </p>
+    </>
+  ),
   'oudste-amerikaans-object-in-ruimte-ontdekt': (
     <>
       <p className="lead-para">
@@ -5556,6 +5569,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'kremlin-drone-vluchten-europa-shadow-fleet':
+    "Voor bedrijven met internationale activiteiten of logistieke ketens kan deze situatie extra risico’s met zich meebrengen. Het is belangrijk om alert te blijven op onverwachte verstoringen in transport- en communicatienetwerken. Daarnaast benadrukt dit incident het belang van robuuste beveiligingsprotocollen voor kritieke infrastructuur, ook als deze niet direct onderdeel uitmaken van de eigen organisatie.",
   'oudste-amerikaans-object-in-ruimte-ontdekt':
     "Voor ondernemers die met erfgoed of symboliek werken, toont dit voorbeeld hoe historische objecten een tweede leven kunnen krijgen door innovatieve toepassingen. Het benadrukt ook het belang van archiefonderzoek en duurzame conservering, zelfs voor items die niet direct commercieel waardevol lijken.",
   'uber-vertraagt-expansie-europa-na-plannen-2026':
