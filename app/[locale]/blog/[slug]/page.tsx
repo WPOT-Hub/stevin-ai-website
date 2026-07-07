@@ -6948,7 +6948,7 @@ function ArticleTransparencyBody() {
       <H2 num="02">Op welke platforms kun je het opzoeken?</H2>
 
       <p>
-        De grote advertentieplatforms hebben een openbare bibliotheek waarin je zonder inloggen kunt zoeken. Klik op een van de vier hieronder, typ je bedrijfsnaam en zet het land op Nederland of Belgie. Kijk daarna bij het veld met de betaler.
+        De platforms waar de meeste bedrijven adverteren hebben een openbare bibliotheek waarin je zonder inloggen kunt zoeken. Klik op een van de vier hieronder, typ je bedrijfsnaam en zet het land op Nederland of Belgie. Kijk daarna bij het veld met de betaler. Daaronder staat de volledige lijst.
       </p>
 
       <div
@@ -7032,12 +7032,78 @@ function ArticleTransparencyBody() {
       </div>
 
       <p>
-        Ook Microsoft houdt voor zoekadvertenties op Bing een{' '}
-        <a href="https://adlibrary.ads.microsoft.com" target="_blank" rel="noopener noreferrer" style={extLink}>
-          advertentiebibliotheek
+        De Digital Services Act verplicht alle aangewezen zeer grote platforms en zoekmachines tot zo&apos;n openbare advertentierepository. De Europese Commissie houdt de{' '}
+        <a href="https://digital-strategy.ec.europa.eu/en/policies/list-designated-vlops-and-slops" target="_blank" rel="noopener noreferrer" style={extLink}>
+          actuele lijst
         </a>{' '}
-        bij, en Pinterest, Snapchat, X en retailmedia zoals Amazon doen dat onder dezelfde regels. Die zijn wisselend in kwaliteit en detail, maar voor de meeste bedrijven zijn de vier hierboven het startpunt.
+        bij. Naast de vier hierboven zijn dit de andere plekken waar je kunt zoeken. De kwaliteit wisselt: sommige werken alleen via een API, tonen alleen EU-advertenties, of laden traag.
       </p>
+
+      <p style={{ marginBottom: '8px' }}>
+        <b>Advertentieplatforms</b>
+      </p>
+      <ul style={{ margin: '0 0 24px', paddingLeft: '20px', lineHeight: 1.55 }}>
+        <li style={{ marginBottom: '10px' }}>
+          <a href="https://ads.twitter.com/ads-repository" target="_blank" rel="noopener noreferrer" style={extLink}>
+            X Ads Repository
+          </a>{' '}
+          Voor EU-advertenties met adverteerder, financierende partij, targeting, impressies en bereik.
+        </li>
+        <li style={{ marginBottom: '10px' }}>
+          <a href="https://adlibrary.ads.microsoft.com" target="_blank" rel="noopener noreferrer" style={extLink}>
+            Microsoft Ad Library
+          </a>{' '}
+          Zoekadvertenties op Bing in de EU en EER.
+        </li>
+        <li style={{ marginBottom: '10px' }}>
+          <a href="https://ads.pinterest.com/ads-repository/" target="_blank" rel="noopener noreferrer" style={extLink}>
+            Pinterest Ads Repository
+          </a>{' '}
+          EU-advertenties, openbaar maar leunt sterk op JavaScript.
+        </li>
+        <li style={{ marginBottom: '10px' }}>
+          <a href="https://adsgallery.snap.com/" target="_blank" rel="noopener noreferrer" style={extLink}>
+            Snap Ads Gallery
+          </a>{' '}
+          EU-advertenties van de laatste twaalf maanden.
+        </li>
+        <li style={{ marginBottom: '10px' }}>
+          <a href="https://adrepository.apple.com/" target="_blank" rel="noopener noreferrer" style={extLink}>
+            Apple App Store Ad Repository
+          </a>{' '}
+          Advertenties in de App Store in EU-landen.
+        </li>
+      </ul>
+
+      <p style={{ marginBottom: '8px' }}>
+        <b>Marktplaatsen en retailmedia</b>
+      </p>
+      <ul style={{ margin: '0 0 8px', paddingLeft: '20px', lineHeight: 1.55 }}>
+        <li style={{ marginBottom: '10px' }}>
+          <a href="https://www.booking.com/ad-repository.html" target="_blank" rel="noopener noreferrer" style={extLink}>
+            Booking.com Ad Repository
+          </a>{' '}
+          Advertenties getoond op Booking.com in Europa.
+        </li>
+        <li style={{ marginBottom: '10px' }}>
+          <a href="https://www.amazon.de/adlibrary" target="_blank" rel="noopener noreferrer" style={extLink}>
+            Amazon EU Store Ad Library
+          </a>{' '}
+          Advertenties en affiliate-content van het afgelopen jaar. Loopt via Amazon.de en laadt soms traag.
+        </li>
+        <li style={{ marginBottom: '10px' }}>
+          <a href="https://www.aliexpress.com/p/ad-search-page/index.html" target="_blank" rel="noopener noreferrer" style={extLink}>
+            AliExpress
+          </a>{' '}
+          Aangewezen als zeer groot platform onder de DSA.
+        </li>
+        <li style={{ marginBottom: '10px' }}>
+          <a href="https://www.zalando.nl/ads-repository/" target="_blank" rel="noopener noreferrer" style={extLink}>
+            Zalando Ads Repository
+          </a>{' '}
+          Openbare repository, ook via de Nederlandse winkel.
+        </li>
+      </ul>
 
       <H2 num="03">Hoe zoek je het stap voor stap op?</H2>
 
