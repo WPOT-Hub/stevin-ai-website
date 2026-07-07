@@ -6972,7 +6972,7 @@ function ArticleTransparencyBody() {
   return (
     <>
       <p className="lead-para">
-        Draai je je advertenties via een extern bureau, dan is de kans groot dat de accounts, de pixels en de opgebouwde data op naam van dat bureau staan, niet op die van jou. Je betaalt dan voor de media, maar het geheugen (de data en de leercurve) bouwt zich op buiten je bedrijf. Dat weegt zwaarder nu marketing steeds meer op AI draait: een AI-laag kan alleen goede beslissingen voor je nemen als ze op jouw eigen data leert. Is die data niet van jou, dan bouw je geen eigen marketing-brein op. Sinds de Europese Digital Services Act laten Google, Meta, LinkedIn, TikTok en Microsoft in een openbare advertentiebibliotheek zien wie een advertentie betaalt. In twee minuten controleer je of dat bij jou de eigen naam is, of die van je bureau.
+        Draai je je advertenties via een extern bureau, dan is de kans groot dat de accounts, de pixels en de opgebouwde data op naam van dat bureau staan, niet op die van jou. Je betaalt dan voor de media, maar het geheugen (de data en de leercurve) bouwt zich op buiten je bedrijf. Dat weegt zwaarder nu marketing steeds meer op AI draait: een AI-laag kan alleen goede beslissingen voor je nemen als ze op jouw eigen data leert. Is die data niet van jou, dan bouw je geen eigen marketing-brein op. Sinds de Europese Digital Services Act laten Google, Meta, LinkedIn, TikTok en Microsoft in een <a href="#platforms" style={extLink}>openbare advertentiebibliotheek</a> zien wie een advertentie betaalt. In twee minuten controleer je of dat bij jou de eigen naam is, of die van je bureau.
       </p>
 
       <Callout
@@ -6990,7 +6990,7 @@ function ArticleTransparencyBody() {
         Het veld dat telt heet meestal &quot;Betaald door&quot; of in het Engels &quot;Paid for by&quot;. Het platform vult dat met de geverifieerde betaler achter de advertentie. Bij een bedrijf dat zelf adverteert, staat daar de eigen bedrijfsnaam. Bij een bedrijf dat via een bureau adverteert, staat daar soms de naam van dat bureau.
       </p>
 
-      <H2 num="02">Op welke platforms kun je het opzoeken?</H2>
+      <H2 num="02" id="platforms">Op welke platforms kun je het opzoeken?</H2>
 
       <p>
         De platforms waar de meeste bedrijven adverteren hebben een openbare bibliotheek waarin je zonder inloggen kunt zoeken. Klik op een van de vier hieronder, typ je bedrijfsnaam en zet het land op Nederland of Belgie. Kijk daarna bij het veld met de betaler. Daaronder staat de volledige lijst.
@@ -7353,9 +7353,9 @@ function ArticleTransparencyBody() {
 /* ────────────────────────────────────────────────────────────
    Editorial atoms
    ──────────────────────────────────────────────────────────── */
-function H2({ num, children }: { num: string; children: React.ReactNode }) {
+function H2({ num, children, id }: { num: string; children: React.ReactNode; id?: string }) {
   return (
-    <h2>
+    <h2 id={id} style={id ? { scrollMarginTop: '90px' } : undefined}>
       <span
         style={{
           fontFamily: 'JetBrains Mono, monospace',
