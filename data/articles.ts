@@ -4241,18 +4241,18 @@ export const articles: Article[] = [
 
   /* ─── EDITORIALS ─── */
   {
-    slug: 'wie-betaalt-je-google-advertenties',
+    slug: 'wie-is-eigenaar-van-je-advertentiedata',
     format: 'editorial' as const,
     edition: '020',
-    category: 'Transparantie',
-    title: 'Wie betaalt jouw Google-advertenties? Zo zie je het zelf',
-    dek: 'Sinds 2023 kan iedereen in het openbare transparantiecentrum van Google opzoeken wie de advertenties van een bedrijf betaalt. Bij bedrijven die via een bureau adverteren, staat daar vaak de naam van dat bureau. In twee minuten controleer je waar jouw data en historie landen.',
+    category: 'Data-eigenaarschap',
+    title: 'Wie is eigenaar van jouw advertentiedata? Zo controleer je het',
+    dek: 'Draai je advertenties via een bureau, dan staan de accounts, de pixels en de opgebouwde data vaak op hun naam, niet op die van jou. Google, Meta, LinkedIn en TikTok laten in hun openbare advertentiebibliotheek zien wie betaalt. In twee minuten controleer je het zelf. Waarom het uitmaakt, en hoe het hoort.',
     publishedAt: '2026-07-07',
-    readMinutes: 6,
+    readMinutes: 9,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
-    posterTag: 'TRANSPARANTIE',
-    posterTopic: 'Wie betaalt jouw Google-advertenties?',
+    posterTag: 'DATA-EIGENAARSCHAP',
+    posterTopic: 'Wie is eigenaar van jouw advertentiedata?',
     source: { url: 'https://adstransparency.google.com', name: 'Google Ads Transparency Center' },
   },
   {

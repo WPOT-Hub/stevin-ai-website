@@ -308,7 +308,7 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'lecun-miljard-tegen-het-taalmodel' && (
             <ArticleLeCunBody />
           )}
-          {article.format === 'editorial' && article.slug === 'wie-betaalt-je-google-advertenties' && (
+          {article.format === 'editorial' && article.slug === 'wie-is-eigenaar-van-je-advertentiedata' && (
             <ArticleTransparencyBody />
           )}
           {article.format === 'editorial' &&
@@ -323,7 +323,7 @@ export default async function ArticlePage({
             article.slug !== 'ai-tool-werkt-echt-holdout-bureau' &&
             article.slug !== 'zichtbaar-in-ai-antwoorden-aeo-geo' &&
             article.slug !== 'lecun-miljard-tegen-het-taalmodel' &&
-            article.slug !== 'wie-betaalt-je-google-advertenties' &&
+            article.slug !== 'wie-is-eigenaar-van-je-advertentiedata' &&
             article.slug !== 'wk-2026-campagne-data-voorbereiding' && (
               <ArticleStubBody article={article} />
             )}
@@ -6919,38 +6919,125 @@ function ArticleStubBody({ article }: { article: { title: string; dek: string; e
 }
 
 function ArticleTransparencyBody() {
+  const extLink = {
+    color: 'var(--accent)',
+    fontWeight: 600,
+    textDecoration: 'none',
+  }
   return (
     <>
       <p className="lead-para">
-        Sinds 2023 heeft Google een openbaar Advertentietransparantie-centrum. Iedereen kan daar opzoeken welke advertenties een bedrijf draait, in welke landen, en wie ervoor betaalt. Dat laatste veld, &quot;Betaald door&quot;, is het interessante. Bij bedrijven die hun advertenties via een extern bureau laten draaien, staat daar vaak de naam van dat bureau, niet die van het bedrijf zelf. Dat is in twee minuten te controleren, en het zegt iets over waar je data en je opgebouwde historie landen.
+        Draai je je advertenties via een extern bureau, dan is de kans groot dat de accounts, de pixels en de opgebouwde data op naam van dat bureau staan, niet op die van jou. Je betaalt dan voor de media, maar het geheugen (de data en de leercurve) bouwt zich op buiten je bedrijf. Sinds de Europese Digital Services Act laten Google, Meta, LinkedIn, TikTok en Microsoft in een openbare advertentiebibliotheek zien wie een advertentie betaalt. In twee minuten controleer je of dat bij jou de eigen naam is, of die van je bureau.
       </p>
 
       <Callout
         big="2 min"
-        label="Zolang duurt het om zelf op te zoeken wie jouw Google-advertenties betaalt. Ga naar adstransparency.google.com, typ je bedrijfsnaam, open een advertentie en kijk bij &quot;Betaald door&quot;. Geen account nodig, geen kosten."
+        label="Zolang duurt het om zelf op te zoeken wie jouw advertenties betaalt. Ga naar de advertentiebibliotheek van het platform, typ je bedrijfsnaam, open een advertentie en kijk bij het veld &quot;Betaald door&quot;. Geen account nodig, geen kosten."
       />
 
-      <H2 num="01">Wat is het Advertentietransparantie-centrum?</H2>
+      <H2 num="01">Waarom kun je publiek zien wie je advertenties betaalt?</H2>
 
       <p>
-        Het Advertentietransparantie-centrum is een openbare database van Google waarin je per adverteerder ziet welke advertenties actief zijn, in welke landen ze draaien, en wie de rekening betaalt. Google lanceerde het in maart 2023, deels onder druk van Europese regelgeving over politieke en commerciele advertenties. Je vindt het op adstransparency.google.com. Je hebt geen account nodig en het kost niets.
+        De Europese Digital Services Act verplicht grote platforms om een openbare advertentiebibliotheek bij te houden. Daarin staat per advertentie wie adverteert, wie betaalt, in welke periode de advertentie liep en in welke landen. Die verplichting geldt voor advertenties die aan gebruikers in de Europese Unie worden getoond. Draait een campagne alleen buiten de EU, dan verschijnt die niet.
       </p>
 
       <p>
-        Het veld dat telt heet in het Nederlands &quot;Betaald door&quot; (in het Engels &quot;Paid for by&quot;). Google vult dat met de geverifieerde betaler achter de advertentie. Bij een bedrijf dat zelf adverteert, staat daar de eigen bedrijfsnaam. Bij een bedrijf dat via een bureau adverteert, staat daar vaak de naam van dat bureau.
+        Het veld dat telt heet meestal &quot;Betaald door&quot; of in het Engels &quot;Paid for by&quot;. Het platform vult dat met de geverifieerde betaler achter de advertentie. Bij een bedrijf dat zelf adverteert, staat daar de eigen bedrijfsnaam. Bij een bedrijf dat via een bureau adverteert, staat daar soms de naam van dat bureau.
       </p>
 
-      <H2 num="02">Hoe zie je wie jouw advertenties betaalt?</H2>
+      <H2 num="02">Op welke platforms kun je het opzoeken?</H2>
+
+      <p>
+        Vijf platforms hebben een bruikbare, openbare bibliotheek waarin je zonder inloggen kunt zoeken. Klik, typ je bedrijfsnaam en zet het land op Nederland of Belgie.
+      </p>
+
+      <Takeaways
+        label="DE ADVERTENTIEBIBLIOTHEKEN"
+        title="Waar je de betaler opzoekt, per platform"
+        items={[
+          {
+            pct: 'GOOGLE',
+            text: (
+              <>
+                <b>
+                  <a href="https://adstransparency.google.com" target="_blank" rel="noopener noreferrer" style={extLink}>
+                    adstransparency.google.com
+                  </a>
+                </b>{' '}
+                Het Advertentietransparantie-centrum. Dekt Search, YouTube, Display en Shopping. Veld: &quot;Betaald door&quot;.
+              </>
+            ),
+          },
+          {
+            pct: 'META',
+            text: (
+              <>
+                <b>
+                  <a href="https://www.facebook.com/ads/library" target="_blank" rel="noopener noreferrer" style={extLink}>
+                    facebook.com/ads/library
+                  </a>
+                </b>{' '}
+                De Meta Ad Library, voor Facebook en Instagram. Veld: &quot;Advertiser and payer&quot; (adverteerder en betaler).
+              </>
+            ),
+          },
+          {
+            pct: 'LINKEDIN',
+            text: (
+              <>
+                <b>
+                  <a href="https://www.linkedin.com/ad-library" target="_blank" rel="noopener noreferrer" style={extLink}>
+                    linkedin.com/ad-library
+                  </a>
+                </b>{' '}
+                De LinkedIn Ad Library, met alle advertenties sinds juni 2023. Veld: &quot;Paid for by&quot;.
+              </>
+            ),
+          },
+          {
+            pct: 'TIKTOK',
+            text: (
+              <>
+                <b>
+                  <a href="https://library.tiktok.com/ads" target="_blank" rel="noopener noreferrer" style={extLink}>
+                    library.tiktok.com/ads
+                  </a>
+                </b>{' '}
+                De TikTok-advertentiebibliotheek voor de EU. Veld: &quot;Advertentie betaald door&quot;.
+              </>
+            ),
+          },
+          {
+            pct: 'MICROSOFT',
+            text: (
+              <>
+                <b>
+                  <a href="https://adlibrary.ads.microsoft.com" target="_blank" rel="noopener noreferrer" style={extLink}>
+                    adlibrary.ads.microsoft.com
+                  </a>
+                </b>{' '}
+                De Microsoft Ad Library, voor zoekadvertenties op Bing in de EU en EER.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <p>
+        Ook Pinterest, Snapchat, X en retailmedia zoals Amazon houden onder dezelfde regels een repository bij. Die zijn wisselend in kwaliteit en detail, maar voor de meeste bedrijven zijn de vijf hierboven het startpunt.
+      </p>
+
+      <H2 num="03">Hoe zoek je het stap voor stap op?</H2>
 
       <Takeaways
         label="IN VIER STAPPEN"
-        title="Zelf opzoeken wie de betaler is"
+        title="Zelf de betaler achterhalen"
         items={[
           {
             pct: '01',
             text: (
               <>
-                <b>Ga naar adstransparency.google.com.</b> Er is geen inlog of account nodig. Het werkt op elke browser, ook op je telefoon.
+                <b>Open de advertentiebibliotheek van het platform.</b> Er is geen inlog of account nodig. Het werkt op elke browser, ook op je telefoon.
               </>
             ),
           },
@@ -6966,7 +7053,7 @@ function ArticleTransparencyBody() {
             pct: '03',
             text: (
               <>
-                <b>Open een van je actieve advertenties.</b> Klik op de advertentie of op het menu met de drie puntjes ernaast.
+                <b>Open een van je actieve advertenties.</b> Klik op de advertentie of op het menu ernaast om de details te zien.
               </>
             ),
           },
@@ -6974,7 +7061,7 @@ function ArticleTransparencyBody() {
             pct: '04',
             text: (
               <>
-                <b>Kijk bij &quot;Betaald door&quot;.</b> Staat daar jouw eigen bedrijfsnaam, of die van een ander?
+                <b>Kijk bij het veld met de betaler.</b> Staat daar jouw eigen bedrijfsnaam, of die van een ander?
               </>
             ),
           },
@@ -6982,17 +7069,17 @@ function ArticleTransparencyBody() {
       />
 
       <p>
-        Wil je eerst zien hoe het eruitziet zonder je eigen cijfers erbij, zoek dan een groot merk dat je kent. Typ bijvoorbeeld Coolblue. Je ziet hun lopende advertenties, en bij &quot;Betaald door&quot; staat hun eigen naam. Zo hoort het: het merk dat adverteert, is ook de betaler. De vraag is of dat bij jou ook zo is.
+        Wil je eerst zien hoe het eruitziet zonder je eigen cijfers erbij, zoek dan een groot merk dat je kent. Typ bijvoorbeeld Coolblue. Je ziet hun lopende advertenties, en bij de betaler staat hun eigen naam. Zo hoort het: het merk dat adverteert, is ook de betaler. De vraag is of dat bij jou ook zo is.
       </p>
 
-      <H2 num="03">Wat betekent het als er een bureaunaam staat?</H2>
+      <H2 num="04">Wat betekent het als de betaler je bureau is?</H2>
 
       <p>
-        Staat bij &quot;Betaald door&quot; de naam van je bureau, dan draaien de advertenties op het advertentieaccount van dat bureau, niet op dat van jou. Dat is niet per definitie fout. Veel bureaus werken zo, en voor een deel van de klanten is dat prima. Maar het heeft drie gevolgen die je zelf zelden ziet.
+        Staat bij de betaler de naam van je bureau, dan draaien de advertenties op het advertentieaccount van dat bureau, niet op dat van jou. Dat is niet per definitie fout. Veel bureaus werken zo, en voor een deel van de klanten is dat prima. Maar het heeft gevolgen die je zelf zelden ziet.
       </p>
 
       <Takeaways
-        label="DE DRIE GEVOLGEN"
+        label="DE GEVOLGEN"
         title="Wat het betekent als je bureau de betaler is"
         items={[
           {
@@ -7007,7 +7094,7 @@ function ArticleTransparencyBody() {
             pct: 'ALGO',
             text: (
               <>
-                <b>Het algoritme leert op accountniveau.</b> Google optimaliseert binnen het account waarin de campagnes draaien. Die leercurve neem je niet mee als je weggaat.
+                <b>Het algoritme leert op accountniveau.</b> De platforms optimaliseren binnen het account waarin de campagnes draaien. Die leercurve neem je niet mee als je weggaat.
               </>
             ),
           },
@@ -7015,7 +7102,7 @@ function ArticleTransparencyBody() {
             pct: 'MEET',
             text: (
               <>
-                <b>Wie de data beheert, bepaalt wat je meet.</b> Je bent voor je rapportage afhankelijk van wat het bureau uit hun account deelt.
+                <b>Wie de data beheert, bepaalt wat je meet.</b> Je bent voor je rapportage afhankelijk van wat het bureau uit hun account deelt. Koppelen aan je eigen omzet en klantwaarde wordt lastig.
               </>
             ),
           },
@@ -7026,7 +7113,52 @@ function ArticleTransparencyBody() {
         Dit is geen bewijs dat er iets mis is. Het is een startpunt voor een gesprek. De enige manier om zeker te weten hoe het bij jou zit, is het je bureau vragen.
       </p>
 
-      <H2 num="04">Welke vragen stel je je bureau?</H2>
+      <H2 num="05">Hoe hoort het te zijn ingericht?</H2>
+
+      <p>
+        De nette route is simpel: jij bent eigenaar van de accounts, het bureau krijgt toegang. Niet andersom. Zowel Google als Meta hebben dat ingebouwd.
+      </p>
+
+      <p>
+        Bij Google kan een bureau via een manager-account (MCC) jouw account beheren. De eigenaar van dat manager-account heeft volledige toegang, inclusief persoonsgegevens die aan het account hangen. Het klantaccount blijft wel eigenaar van zijn data en kan de koppeling verbreken. Zorg dat jouw bedrijf het account bezit en dat het bureau als beheerder is gekoppeld.
+      </p>
+
+      <p>
+        Bij Meta werkt het via partnertoegang in je eigen Business Portfolio. Je wijst het bureau specifieke assets toe, zoals je advertentieaccount, pagina en pixel, zonder dat het bureau er eigenaar van wordt. Volgens Meta blijft je Business Portfolio eigenaar van de assets, ook als het bureau ze beheert.
+      </p>
+
+      <Takeaways
+        label="DE JUISTE SETUP"
+        title="Jij bent eigenaar, het bureau krijgt toegang"
+        items={[
+          {
+            pct: 'JIJ',
+            text: (
+              <>
+                <b>Op naam van jouw bedrijf.</b> Advertentieaccounts, Meta Business Portfolio, pixel en conversie-API, GA4, Tag Manager, Merchant Center en je CRM. Dit is jouw eigendom.
+              </>
+            ),
+          },
+          {
+            pct: 'BUREAU',
+            text: (
+              <>
+                <b>Het bureau krijgt toegang.</b> Via manager-toegang bij Google of partnertoegang bij Meta. Ze beheren, jij bezit. Stopt de samenwerking, dan trek je de toegang in en houd jij de historie.
+              </>
+            ),
+          },
+          {
+            pct: 'GELD',
+            text: (
+              <>
+                <b>Facturatie op jouw betaalmethode.</b> Zo houd je zicht op de werkelijke mediakosten en zit de spend niet verstopt in een bureau-account.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <H2 num="06">Welke vragen stel je je bureau?</H2>
 
       <p>
         Drie vragen zijn genoeg om te weten waar je staat. Ze zijn redelijk, en een goed bureau beantwoordt ze zonder aarzelen.
@@ -7040,7 +7172,7 @@ function ArticleTransparencyBody() {
             pct: '01',
             text: (
               <>
-                <b>Op wiens naam staat het advertentieaccount?</b> Staat het op ons bedrijf of op dat van jullie, en kunnen wij beheerderstoegang krijgen?
+                <b>Op wiens naam staan de accounts en de pixel?</b> Staan ze op ons bedrijf of op dat van jullie, en kunnen wij beheerderstoegang krijgen?
               </>
             ),
           },
@@ -7064,7 +7196,7 @@ function ArticleTransparencyBody() {
       />
 
       <p>
-        Het punt is niet dat bureaus onbetrouwbaar zijn. Het punt is dat eigenaarschap van je eigen marketingdata een keuze hoort te zijn die je bewust maakt, niet een die je overkomt omdat je nooit in dat ene veld hebt gekeken. Twee minuten op adstransparency.google.com, en je weet waar je staat.
+        Het punt is niet dat bureaus onbetrouwbaar zijn. Het punt is dat eigenaarschap van je eigen marketingdata een keuze hoort te zijn die je bewust maakt, niet een die je overkomt omdat je nooit in dat ene veld hebt gekeken. Twee minuten in de advertentiebibliotheek, en je weet waar je staat.
       </p>
 
       <EndRule />
