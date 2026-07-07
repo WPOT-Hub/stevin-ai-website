@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'uber-vertraagt-expansie-europa-na-plannen-2026',
+    format: 'dispatch' as const,
+    edition: '319',
+    category: 'Markt',
+    title: "Uber stelt vijf Europese markten uit tot na 2026",
+    dek: "De geplande lancering in vijf nieuwe Europese landen wordt uitgesteld, terwijl twee andere wel doorgaan.",
+    publishedAt: '2026-07-07',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Uber stelt vijf Europese markten uit tot na 2026",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'reddit-gebruikt-llms-tegen-spam-gecreeerd-door-llms',
     format: 'dispatch' as const,
     edition: '318',
