@@ -1241,6 +1241,17 @@
     ],
     "enrichedAt": "2026-06-18"
   },
+  "microsoft-dynamics": {
+    "stevinAngle": "Dynamics 365 wordt verkocht als één geïntegreerd platform. In de praktijk, bij de klanten waarmee wij werken, gedraagt het zich eerder als een verzameling modules die toevallig dezelfde inlogpagina delen. Finance weet niet wat er in Sales speelt, en Operations registreert acties die nooit een signaal genereren richting de rest van de organisatie. Wat Stevin hier anders doet: we leggen geen extra dashboardlaag bovenop, maar een werklaag. Die haalt transactionele data uit Dynamics via de API, combineert die over modules heen, en zet het om in een concreet signaal op het moment dat er iets mis dreigt te gaan. Een factuur die 14 dagen open staat terwijl de deal in Sales als 'gewonnen' gemarkeerd staat. Een proces in Operations dat al drie werkdagen geen statuswijziging heeft gehad. Niet rapporteren achteraf, maar ingrijpen voordat het probleem escaleert.",
+    "stackImpact": "Dynamics 365 als kern betekent dat je API-connectiviteit goed moet regelen voordat je er wat mee kunt. Stevin koppelt via de Dataverse API of de module-specifieke REST-endpoints. Reken op een initiële configuratiefase van een paar weken als permissies, omgevingen en datavelden nog niet zijn gestandaardiseerd. Voor de signaallaag heb je daarnaast een plek nodig waar acties terechtkomen en worden opgevolgd, of dat nu e-mail, Teams of een intern systeem is. Dynamics zelf levert die routing niet automatisch. Bedrijven die ook Power BI of Azure Data Factory al draaien, hebben het makkelijker. Bedrijven die puur op de Dynamics-interface leunen, moeten die integratiestap alsnog zetten.",
+    "enrichedAt": "2026-07-07",
+    "pitfalls": [
+      "Veel implementaties activeren alle beschikbare modules tegelijk, waardoor datafragmentatie toeneemt in plaats van afneemt en er false confidence ontstaat over 'één systeem'.",
+      "De standaard notificaties in Dynamics zijn regel-gebaseerd per module, niet cross-module, waardoor een openstaande factuur op een afgesloten deal onzichtbaar blijft tenzij je dit expliciet bouwt.",
+      "Rechten en omgevingsinstellingen in Dataverse zijn complex gelaagd. Een API-koppeling die in de sandbox werkt, faalt regelmatig in productie door afwijkende rolconfiguraties.",
+      "Customfields en aanpassingen in Dynamics worden bij updates soms overschreven of ontkoppeld, waardoor signalen op maatvelden stilletjes stoppen met werken zonder dat iemand een foutmelding ziet."
+    ]
+  },
   "microsoft-dynamics-365-crm": {
     "stevinAngle": "Dynamics 365 is logisch als je al volledig in Microsoft zit. De koppeling met Outlook, Teams en de rest van het ecosysteem is precies waar het sterk is, en voor organisaties die daar al draaien scheelt dat een aparte inlogwereld. Wij zetten het in waar Microsoft de standaard is en een ander CRM tegen de stroom in zou werken. De keerzijde is fors: Dynamics is een enterprise-zwaargewicht, en die kracht komt met complexiteit. Het inrichten vraagt specialisten, het is duur en het kan log voelen voor teams die snelheid willen. Voor het mkb is het vaak meer machine dan nodig. Waar teams vastlopen is dat marketingdata het CRM niet vanzelf bereikt en dat marketing en sales geen gedeeld beeld hebben. Stevin koppelt via de API aan Dynamics, zorgt dat leaddata uit campagnes in het juiste format binnenkomt en zet een openstaande actie om in een signaal. De mens beoordeelt elke ingreep eerst.",
     "stackImpact": "Voor Dynamics kiezen betekent dat je de Microsoft-integratie binnenhaalt, maar ook de implementatielast en de kosten van een enterprise-systeem. Reken op specialisten voor de inrichting, want dit is geen tool die je in een middag opzet. Marketingdata komt niet automatisch op de juiste plek, dus die koppeling moet je bouwen om een gedeeld beeld tussen marketing en sales te krijgen. De praktijk: zinvol als je al in Microsoft zit, anders weeg je de zwaarte goed af tegen wat je echt nodig hebt.",
@@ -1262,6 +1273,17 @@
       "Cohort-analyses bouwen op samples, Mixpanel sampled standaard bij grote queries, dat moet je expliciet uitzetten"
     ],
     "enrichedAt": "2026-05-05"
+  },
+  "moneybird": {
+    "stevinAngle": "Moneybird positioneert zichzelf als boekhoudsoftware die je zelf bijhoudt. Dat klopt, maar de meeste klanten die wij bij Moneybird aantreffen, gebruiken het als archief: facturen gaan in, en verder kijkt niemand er systematisch naar om. Openstaande posten lopen dan al snel vier tot zes weken voor ze actief worden opgepikt. Stevin legt een signaallaag boven de Moneybird-data via de API: zodra een factuur ouder is dan jouw afgesproken betaaltermijn, een offerte geen statuswijziging heeft gehad na zeven dagen, of een terugkerende kostenpost meer dan 15% afwijkt van de vorige periode, genereert Stevin een actiemelding. Jij besluit wat er gebeurt, maar je wordt niet verrast. Het verschil met puur Moneybird is niet de software, het is de actieve leeslaag erop.",
+    "stackImpact": "Moneybird werkt als standalone goed voor facturatie en btw-aangiftes, maar de waarde neemt toe als je het koppelt aan je CRM of projecttool. Via de Moneybird API haalt Stevin factuur- en offertedata op. Als je daarnaast HubSpot of een vergelijkbare CRM gebruikt, kun je de statussen van offertes aan dealstadia koppelen, zodat je niet in twee systemen bijhoudt waar een prospect staat. Heb je geen CRM, dan is Moneybird vaak ook de enige bron van klantinteractiedata, wat de signalen die Stevin geeft extra gewicht geeft.",
+    "enrichedAt": "2026-07-07",
+    "pitfalls": [
+      "Moneybird geeft geen automatische herinneringen op betaaltermijnniveau: als je dat niet extern organiseert, loopt cashflow-opvolging structureel achter.",
+      "Offertes in Moneybird hebben geen verplicht vervaldatum-veld, waardoor oude offertes actief blijven staan en je pipeline-beeld vertekend raakt.",
+      "De API geeft geen webhooks bij statuswijzigingen op facturen, dus polling-frequentie bepaalt hoe snel je signalen binnenkomen. Bij lage polling zie je vertragingen van meerdere uren.",
+      "Gebruikers boeken uitgaven soms handmatig als losse post in plaats van als terugkerende regel, waardoor afwijkingsdetectie op die kostenpost niet werkt."
+    ]
   },
   "motion": {
     "stevinAngle": "Motion doet iets dat de advertentieplatforms zelf slecht doen: het rapporteert op creative-niveau in plaats van op ad-set-niveau. Welke hook houdt aandacht, welk kleurschema converteert, dat maakt het meetbaar, en voor paid social is dat precies de laag die ontbreekt. De beperking is dat Motion analyseert, maar niet handelt. Het laat zien dat ads met een probleemstelling als opening het beter doen, en daar stopt het. Iemand moet die les nog vertalen naar de volgende ronde en zorgen dat hij niet verdampt tussen campagnes door. Daar lopen teams op vast: het inzicht is er, de opvolging niet. Stevin trekt de creative-analytics van Motion via API binnen en zet het om in een concrete brief en een signaal: deze hook werkt in deze doelgroep, maak hier meer van, deze variant lekt budget. De consultant ziet elk advies met impact voordat er iets verandert.",
@@ -1316,6 +1338,17 @@
       "Granulariteit verwarren met zekerheid: fijn detail is nog geen bewijs."
     ],
     "enrichedAt": "2026-06-18"
+  },
+  "notion": {
+    "stevinAngle": "Notion wordt door de meeste teams ingezet als een digitale la: alles erin, weinig structuur, zelden teruggevonden. In de praktijk zien we dat marketingteams Notion opzetten als wiki, maar binnen drie maanden is het een graveyard van outdated campagnebriefs en halfafgemaakte strategiedocumenten. Stevin gebruikt Notion anders: als contractueel geheugen van een engagement. Elke technische setup die we bij een klant implementeren, elke meetafspraak, elke beslissing over attributiemodel of trackinglogica, leggen we vast in een gestructureerde Notion-workspace. Dat heeft een praktisch doel. Als een klant na zes maanden wisselt van marketingmanager, of als wij een overdracht doen, staat de redenering achter elke keuze gedocumenteerd. Niet het resultaat, maar het waarom. Dat is wat kennis overdraagbaar maakt. Zonder die laag werkt zelfs de beste toolstack niet, omdat de context ontbreekt om meetdata correct te interpreteren.",
+    "stackImpact": "Notion is geen datapijplijn en heeft geen native integratie met advertentieplatforms of analytics-tools. Als je het serieus wil inzetten voor marketingoperaties, heb je aanvullende tooling nodig voor de daadwerkelijke data-flow, denk aan een connectietool zoals Make of Zapier om statussen en outputs vanuit platforms naar Notion te schrijven. Verder werkt Notion het beste als er iemand eigenaarschap heeft over de structuur. Zonder dat eigenaarschap degradeert de workspace snel tot een informele chatvervanging. Reken op een initiële inrichtingstijd van minimaal een halve dag om een werkende structuur te bouwen die een team van drie tot tien mensen daadwerkelijk bijhoudt.",
+    "enrichedAt": "2026-07-07",
+    "pitfalls": [
+      "Teams dupliceren informatie tussen Notion en Slack of e-mail, waardoor de Notion-workspace veroudert en niemand meer weet welke versie klopt.",
+      "Vrijheid in paginastructuur wordt verward met flexibiliteit: zonder een vastgesteld template per documenttype ontstaat er binnen weken onnavigeerbare wildgroei.",
+      "Notion-databases worden ingezet als lichtgewicht projectmanagementtool zonder eigenaar of reviewcyclus, met als gevolg dat statussen maanden achteroplopen op de werkelijkheid.",
+      "Technische documentatie zoals trackingsetups of datamodel-afspraken wordt opgeslagen in vrije tekst zonder versiebeheer, waardoor bij wijzigingen de historische redenering verloren gaat."
+    ]
   },
   "onetrust": {
     "stevinAngle": "OneTrust is het zware geschut: consent, data mapping en compliance-automatisering in een platform, gebouwd voor organisaties die juridisch echt iets moeten kunnen aantonen. Wij raden het aan waar de eisen groot zijn en een lichte banner-tool simpelweg niet volstaat. Tegelijk is dat ook de val. OneTrust is fors, en bij kleinere setups betaal je voor diepte die niemand gebruikt, terwijl de implementatie alle aandacht opslokt. Waar teams vastlopen is de aanname dat het platform vanzelf met je tracking praat. Dat doet het niet, die koppeling moet kloppen, anders is alle compliance op papier in orde terwijl je data lek is. Stevin draait als laag boven de consent-status uit OneTrust en je tags, en geeft een signaal zodra meting wegvalt of een tag consent negeert, zodat het gat zichtbaar wordt voordat het je rapportage vervuilt.",
@@ -1948,6 +1981,17 @@
     ],
     "enrichedAt": "2026-06-18"
   },
+  "trello": {
+    "stevinAngle": "Trello positioneert zichzelf als projectmanagementtool voor teams van elke omvang, maar in de praktijk zien wij het bij klanten bijna uitsluitend zinvol als lichtgewicht executielaag voor marketingteams tot ongeveer 8 personen. Zodra je meer dan 3 actieve campagnes parallel draait en rapportage-eisen stijgen, stuit je op de grenzen van het boardmodel. Wat wij bij implementaties wél consequent goed zien werken: Trello als trigger-interface. Wanneer een campagne live gaat in je adplatform, wordt automatisch een Trello-kaart aangemaakt met de juiste checklist, eigenaar en deadline. Niet omdat Trello dan de bron van waarheid is, maar omdat het de plek is waar de uitvoerend marketeer daadwerkelijk kijkt. Die aansluiting op bestaand gedrag levert meer op dan een theoretisch perfecter systeem dat niemand opent.",
+    "stackImpact": "Trello functioneert in een marketingstack als eindpunt, niet als kern. Je hebt minimaal een automatiseringslaag nodig, zoals Make of Zapier, om Trello te koppelen aan je campagnetools, CRM of analytics. Zonder die koppelingen is het een handmatig bijgehouden whiteboard. Data stroomt van je adplatformen of CRM naar Trello toe, niet andersom. Wil je Trello-kaarten ook terugkoppelen naar rapportages, dan heb je een extra exportstap of API-verbinding nodig. Plan daar tijd voor in bij de inrichting.",
+    "enrichedAt": "2026-07-07",
+    "pitfalls": [
+      "Teams gebruiken Trello als de enige statusregistratie van campagnes, waardoor je bij een teamwisseling geen historische context meer hebt buiten de kaartomschrijving.",
+      "Automatisch aangemaakte kaarten worden niet toebedeeld aan een eigenaar, waardoor ze blijven staan en het board binnen een paar weken onbetrouwbaar wordt als overzicht.",
+      "De gratis versie heeft een limiet op het aantal Power-Ups per board, wat koppelingen met externe tools blokkeert op het moment dat je ze nodig hebt.",
+      "Trello heeft geen native tijdregistratie of capaciteitsplanning, dus als je Trello gebruikt om werklast te verdelen, doe je dat op gevoel en niet op data."
+    ]
+  },
   "trengo": {
     "stevinAngle": "Trengo lost een herkenbaar probleem op: berichten die binnenkomen via WhatsApp, mail, live chat en social en in evenzoveel losse tabbladen verdwijnen. Door alles in een inbox te brengen, ziet een team in een oogopslag wat er ligt, en dat is precies waarom we het inzetten bij klanten die via meerdere kanalen contact hebben. De grens ligt bij wat het daarna doet. Trengo bundelt de communicatie, maar het is geen CRM en het bewaakt geen opvolging. Een bericht is gelezen, een gesprek gevoerd, en of er een vervolg komt blijft mensenwerk in een drukke inbox. Bij volume valt er zo alsnog iets tussen wal en schip. Waar teams vastlopen is precies dat: berichten over kanalen heen worden gemist en er is geen centraal overzicht dat opvolging bewaakt. Stevin koppelt via de API aan Trengo en je CRM, logt de communicatie op de juiste plek en zet een onbeantwoord bericht of een openstaande belofte om in een signaal. De mens beslist over de opvolging.",
     "stackImpact": "Trengo kiezen betekent dat je een gedeelde inbox over kanalen krijgt, maar dat het geen CRM vervangt en geen opvolging afdwingt. Reken op een koppeling met je echte systeem van vastlegging, anders leeft de klantcommunicatie los van je contactdata. Het bundelt het binnenkomen, maar de bewaking van wat er nog open staat moet ergens anders vandaan komen. De praktijk: laat Trengo de kanalen samenbrengen en zet er een laag op die de communicatie logt en bewaakt dat geen bericht blijft liggen.",
@@ -2033,6 +2077,17 @@
       "Elke campagne weer bij nul beginnen omdat er geen geheugen tussen rondes is."
     ],
     "enrichedAt": "2026-06-18"
+  },
+  "visma": {
+    "stevinAngle": "Visma wordt verkocht als boekhoud- en ERP-platform. Dat klopt, maar het beschrijft niet het probleem dat wij in de praktijk het vaakst zien: de data zit erin, de opvolging zit er niet. Bij accountantskantoren en bedrijven die wij begeleiden, staat Visma goed ingericht. Facturen worden geboekt, salarissen verwerkt, posten bijgehouden. Maar een openstaande debiteurepost van 45 dagen oud wordt pas opgemerkt als iemand toevallig de juiste rapportage opent. Dat is geen Visma-probleem, dat is een signaleringsprobleem. Stevin koppelt via de Visma API en verwerkt financiële en operationele data tot concrete acties: welke post vraagt opvolging, welke afwijking in de cijfers wijst op een probleem, bij wie moet dat vandaag terechtkomen. We vervangen Visma niet. We zorgen dat wat erin staat niet blijft liggen.",
+    "stackImpact": "Kies je voor een Visma-koppeling via Stevin, dan heb je minimaal API-toegang nodig tot de relevante Visma-module, of dat nu Visma.net Financials is, eAccounting of een andere variant. Stevin haalt de data op, verwerkt die tot signalen en stuurt die door naar het kanaal waar jouw team daadwerkelijk werkt, zoals e-mail, Slack of een taakbeheer-tool. Je hebt dus een afnamekanaal nodig naast Visma zelf. Zonder dat eindigt een signaal nergens. De data-flow is eenrichtingsverkeer: Stevin leest uit Visma, schrijft er niet naar terug. Acties die volgen op een signaal, voer je zelf uit in Visma.",
+    "enrichedAt": "2026-07-07",
+    "pitfalls": [
+      "API-toegang aanvragen kost bij Visma soms meer doorlooptijd dan verwacht, waardoor een koppeling die in twee weken klaar lijkt, zes weken later nog niet live is.",
+      "Wie de Visma-modules niet strak heeft ingericht, stuurt ruis door: een signaal op een post die al betaald is maar nog niet afgeboekt, creëert false confidence dat er iets mist terwijl er niets mist.",
+      "Meerdere Visma-omgevingen per klant of per entiteit worden door teams vaak als één geheel gezien, maar vereisen aparte API-koppelingen, wat de setup complexer maakt dan verwacht.",
+      "Signalen zonder eigenaar verdwijnen: als niet van tevoren is bepaald wie welk type afwijking oppikt, belandt een openstaande post nog steeds nergens, ook al is het signaal technisch correct afgeleverd."
+    ]
   },
   "visma-solidbricks": {
     "stevinAngle": "Visma Solidbricks is projectsoftware voor de bouw binnen het Visma-ecosysteem: calculatie, projectadministratie, uren en facturatie. Het voordeel is duidelijk, het sluit aan op de rest van je Visma-administratie en dat scheelt dubbel werk. Het nadeel is dat het, net als de andere bouw-ERP's, vooral registreert en zelf geen prioriteit aangeeft. Wij zien bouwbedrijven hierop vastlopen: een offerte die niet is opgevolgd, een levering die nog niet bevestigd is, een planningstap die wordt geblokkeerd zonder dat iemand het merkt. Solidbricks houdt het netjes bij, maar het wacht tot iemand kijkt. Stevin legt er een werklaag overheen, via API of export, en zet de projectdata om in signalen met een concrete actie eronder. Het systeem blijft je administratie, Stevin zorgt dat wat aandacht vraagt op tijd boven komt en bij de juiste persoon belandt.",
