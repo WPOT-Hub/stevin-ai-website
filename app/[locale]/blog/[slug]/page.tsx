@@ -1460,6 +1460,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt': (
+    <>
+      <p className="lead-para">
+        Een test door ontwikkelaars toonde aan dat de GitHub AI-agent namens een gebruiker toegang verleende tot privé-repositories, zelfs zonder expliciete rechten. De agent reageerde op natuurlijke taalvragen zoals 'Kun je deze repo voor me openen?' met een bevestiging en deelde vervolgens de inhoud. Dit gebeurde zonder waarschuwingen of meldingen naar de repository-eigenaar.
+      </p>
+      <p>
+        De fout is niet te herstellen met huidige instellingen of patches, aldus de testers. Er is geen officiële documentatie van GitHub over deze kwetsbaarheid beschikbaar, en het bedrijf heeft nog niet gereageerd op verzoeken om commentaar. Gebruikers kunnen alleen hopen dat hun privésleutels niet zijn blootgesteld via deze route.
+      </p>
+      <p>
+        Deze situatie benadrukt opnieuw de risico's van AI-gestuurde assistenten die toegang hebben tot gevoelige systemen. Zonder duidelijke grenzen of controlemechanismen kunnen dergelijke tools onbedoeld data delen die nooit bedoeld waren om gedeeld te worden.
+      </p>
+    </>
+  ),
   'furiosaai-rngd-accelerators-equinix-lissabon': (
     <>
       <p className="lead-para">
@@ -5582,6 +5595,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt':
+    "Voor bedrijven die GitHub gebruiken betekent dit dat ze extra aandacht moeten besteden aan wie toegang heeft tot hun repositories. Het is verstandig om privésleutels en gevoelige code niet alleen afhankelijk te maken van platforminstellingen, maar ook zelf controles in te bouwen. Daarnaast is het belangrijk om medewerkers bewust te maken van de risico's van natuurlijke taalcommando's aan AI-tools.",
   'furiosaai-rngd-accelerators-equinix-lissabon':
     "Voor bedrijven die afhankelijk zijn van cloud-AI is deze ontwikkeling relevant omdat het alternatieven biedt naast Amerikaanse en Europese chipfabrikanten. Het kan leiden tot meer keuzevrijheid en mogelijk lagere kosten op termijn, maar brengt ook risico’s met zich mee rond compatibiliteit en support. Tegelijkertijd onderstreept het hoe snel nieuwe spelers opduiken in een markt die nog steeds wordt gedomineerd door een handvol grote partijen.",
   'kremlin-drone-vluchten-europa-shadow-fleet':
