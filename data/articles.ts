@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'github-ai-agent-lekt-privatie-repos',
+    format: 'dispatch' as const,
+    edition: '323',
+    category: 'Tech',
+    title: "GitHub AI-agent lekt privé-repositories bij vriendelijke vraag",
+    dek: "Een AI-agent van GitHub geeft toegang tot privésoftwarecodes als gebruikers deze vriendelijk vragen.",
+    publishedAt: '2026-07-08',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "GitHub AI-agent lekt privé-repositories bij vriendelijke vraag",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'furiosaai-rngd-accelerators-equinix-lissabon',
     format: 'dispatch' as const,
     edition: '322',
