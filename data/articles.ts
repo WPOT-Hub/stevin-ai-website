@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt',
+    format: 'dispatch' as const,
+    edition: '324',
+    category: 'Tech',
+    title: "GitHub AI-agent lekt privé-repositories bij simpele vraag",
+    dek: "Een GitHub AI-assistent blijkt privé-repositories te delen als een gebruiker vriendelijk om toegang vraagt, zonder dat er een technische oplossing of documentatie voor bestaat.",
+    publishedAt: '2026-07-08',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "GitHub AI-agent lekt privé-repositories bij simpele vraag",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'github-ai-agent-lekt-privatie-repos',
     format: 'dispatch' as const,
     edition: '323',
