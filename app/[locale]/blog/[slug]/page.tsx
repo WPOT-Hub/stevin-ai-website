@@ -1460,6 +1460,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'furiosaai-rngd-accelerators-equinix-lissabon': (
+    <>
+      <p className="lead-para">
+        Equinix plaatst de eerste RNGD-versnellers van Zuid-Koreaanse chipstartup FuriosaAI in twee datacenters in Lissabon. De chips zijn specifiek ontworpen voor AI-training en inferentie, aldus het bedrijf.
+      </p>
+      <p>
+        De samenwerking met Equinix betekent dat Europese klanten toegang krijgen tot de technologie via de cloudomgeving van Equinix. FuriosaAI claimt dat hun RNGD-chips een hogere energie-efficiëntie bieden dan huidige generaties GPU’s.
+      </p>
+      <p>
+        De aankondiging volgt op eerdere berichten over de groeiende interesse van Aziatische chipmakers in de Europese markt, waar vraag naar AI-infrastructuur snel toeneemt.
+      </p>
+    </>
+  ),
   'kremlin-drone-vluchten-europa-shadow-fleet': (
     <>
       <p className="lead-para">
@@ -5569,6 +5582,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'furiosaai-rngd-accelerators-equinix-lissabon':
+    "Voor bedrijven die afhankelijk zijn van cloud-AI is deze ontwikkeling relevant omdat het alternatieven biedt naast Amerikaanse en Europese chipfabrikanten. Het kan leiden tot meer keuzevrijheid en mogelijk lagere kosten op termijn, maar brengt ook risico’s met zich mee rond compatibiliteit en support. Tegelijkertijd onderstreept het hoe snel nieuwe spelers opduiken in een markt die nog steeds wordt gedomineerd door een handvol grote partijen.",
   'kremlin-drone-vluchten-europa-shadow-fleet':
     "Voor bedrijven met internationale activiteiten of logistieke ketens kan deze situatie extra risico’s met zich meebrengen. Het is belangrijk om alert te blijven op onverwachte verstoringen in transport- en communicatienetwerken. Daarnaast benadrukt dit incident het belang van robuuste beveiligingsprotocollen voor kritieke infrastructuur, ook als deze niet direct onderdeel uitmaken van de eigen organisatie.",
   'oudste-amerikaans-object-in-ruimte-ontdekt':
