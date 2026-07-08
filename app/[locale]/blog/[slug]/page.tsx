@@ -1460,6 +1460,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'franse-startup-zml-released-gratis-ai-inference-software': (
+    <>
+      <p className="lead-para">
+        ZML, gesteund door Turing Award-winnaar Yann LeCun, brengt ZML/LLMD uit. Deze software optimaliseert het uitvoeren van grote taalmodellen over meerdere AI-chips tegelijk. De tool is nu beschikbaar zonder licentiekosten, wat de drempel voor bedrijven om zwaardere AI-toepassingen te draaien verlaagt.
+      </p>
+      <p>
+        Volgens LeCun kan de software de efficiëntie van inferentie met tientallen procenten verhogen. Dat maakt het mogelijk om complexe AI-modellen goedkoper en sneller te runnen dan voorheen. De release volgt op eerdere geruchten over een doorbraak in het delen van rekenkracht tussen chips.
+      </p>
+      <p>
+        De tool richt zich vooral op bedrijven die met grote hoeveelheden data werken, zoals cloudproviders en techbedrijven. Voor kleinere partijen kan het een manier zijn om toegang te krijgen tot geavanceerde AI zonder hoge investeringen in hardware.
+      </p>
+    </>
+  ),
   'github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt': (
     <>
       <p className="lead-para">
@@ -5595,6 +5608,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'franse-startup-zml-released-gratis-ai-inference-software':
+    "Voor ondernemers die AI willen inzetten, biedt deze ontwikkeling een kans om kosten te besparen en schaalbaarheid te vergroten. Het is een reminder dat open-source tools steeds vaker een serieus alternatief worden voor dure commerciële oplossingen. Tegelijkertijd blijft de vraag hoe snel bedrijven deze technologie kunnen integreren in hun bestaande systemen.",
   'github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt':
     "Voor bedrijven die GitHub gebruiken betekent dit dat ze extra aandacht moeten besteden aan wie toegang heeft tot hun repositories. Het is verstandig om privésleutels en gevoelige code niet alleen afhankelijk te maken van platforminstellingen, maar ook zelf controles in te bouwen. Daarnaast is het belangrijk om medewerkers bewust te maken van de risico's van natuurlijke taalcommando's aan AI-tools.",
   'furiosaai-rngd-accelerators-equinix-lissabon':
