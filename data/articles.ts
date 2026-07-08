@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'furiosaai-rngd-accelerators-equinix-lissabon',
+    format: 'dispatch' as const,
+    edition: '322',
+    category: 'Tech',
+    title: "Zuid-Koreaanse chipmaker FuriosaAI levert RNGD-versnellers aan Equinix in Lissabon",
+    dek: "Equinix installeert eerste FuriosaAI RNGD-chips in Europese datacenters voor AI-training en inferentie.",
+    publishedAt: '2026-07-08',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Zuid-Koreaanse chipmaker FuriosaAI levert RNGD-versnellers aan Equinix in Lissabon",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'kremlin-drone-vluchten-europa-shadow-fleet',
     format: 'dispatch' as const,
     edition: '321',
