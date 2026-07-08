@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'franse-startup-zml-released-gratis-ai-inference-software',
+    format: 'dispatch' as const,
+    edition: '325',
+    category: 'Tech',
+    title: "Franse startup ZML lanceert gratis software om AI-berekeningen sneller te maken",
+    dek: "De Franse AI-startup ZML heeft een gratis tool uitgebracht die de kosten van AI-inferentie op meerdere chips verlaagt.",
+    publishedAt: '2026-07-08',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Franse startup ZML lanceert gratis software om AI-berekeningen sneller te maken",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt',
     format: 'dispatch' as const,
     edition: '324',
