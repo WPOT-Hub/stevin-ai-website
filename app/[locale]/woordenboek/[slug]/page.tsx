@@ -15,13 +15,13 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
+  const { locale, slug } = await params
   const term = getGlossaryTerm(slug)
   if (!term) return {}
 
   const title = `${term.term}: Stevin Woordenboek`
   const canonical = `https://stevin.ai/woordenboek/${slug}`
-  const ogImage = `https://stevin.ai/og-image.png`
+  const ogImage = `https://stevin.ai${locale === 'en' ? '/en' : ''}/opengraph-image`
   return {
     title,
     description: term.shortDefinition.slice(0, 155),
@@ -45,9 +45,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function GlossaryTermPage({ params }: Props) {
-  const { slug } = await params
+  const { locale, slug } = await params
   const term = getGlossaryTerm(slug)
   if (!term) notFound()
+  const image = `https://stevin.ai${locale === 'en' ? '/en' : ''}/opengraph-image`
 
   // DefinedTerm schema voor woordenboek-termen, Schema.org's primaire
   // type voor terminologie. Helpt LLM-citation en Google's Knowledge
@@ -72,7 +73,7 @@ export default async function GlossaryTermPage({ params }: Props) {
     '@type': 'Article',
     headline: term.term,
     description: term.shortDefinition,
-    image: 'https://stevin.ai/og-image.png',
+    image,
     datePublished: term.publishedAt,
     dateModified: term.updatedAt ?? term.publishedAt,
     author: { '@type': 'Organization', name: 'Stevin' },

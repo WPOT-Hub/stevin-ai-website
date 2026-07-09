@@ -17,12 +17,12 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
+  const { locale, slug } = await params
   const alt = getAlternative(slug)
   if (!alt) return {}
 
   const canonical = `https://stevin.ai/alternatief/${slug}`
-  const ogImage = `https://stevin.ai/og-image.png`
+  const ogImage = `https://stevin.ai${locale === 'en' ? '/en' : ''}/opengraph-image`
   return {
     title: alt.title,
     description: alt.dek,
@@ -46,18 +46,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function AlternativePage({ params }: Props) {
-  const { slug } = await params
+  const { locale, slug } = await params
   const alt = getAlternative(slug)
   if (!alt) notFound()
 
   const integration = alt.toolSlug ? getIntegrationBySlug(alt.toolSlug) : undefined
+  const image = `https://stevin.ai${locale === 'en' ? '/en' : ''}/opengraph-image`
 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: alt.title,
     description: alt.dek,
-    image: 'https://stevin.ai/og-image.png',
+    image,
     datePublished: alt.publishedAt,
     dateModified: alt.updatedAt ?? alt.publishedAt,
     author: { '@type': 'Organization', name: 'Stevin' },

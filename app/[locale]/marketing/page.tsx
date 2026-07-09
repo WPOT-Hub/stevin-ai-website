@@ -18,6 +18,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: isEn
       ? 'For marketing teams and agencies that don\'t want to wait for the monthly report. Stevin connects paid and owned media and signals where revenue, margin or attention is leaking.'
       : 'Voor marketing-teams en bureaus die niet willen wachten op het maandrapport. Stevin verbindt paid en owned media en signaleert waar omzet, marge of aandacht weglekt.',
+    image: isEn
+      ? 'https://stevin.ai/en/marketing/opengraph-image'
+      : 'https://stevin.ai/marketing/opengraph-image',
   })
 }
 

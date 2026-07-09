@@ -17,12 +17,12 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
+  const { locale, slug } = await params
   const comparison = getComparison(slug)
   if (!comparison) return {}
 
   const canonical = `https://stevin.ai/vergelijken/${slug}`
-  const ogImage = `https://stevin.ai/og-image.png`
+  const ogImage = `https://stevin.ai${locale === 'en' ? '/en' : ''}/opengraph-image`
   return {
     title: comparison.title,
     description: comparison.dek,
@@ -46,12 +46,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ComparisonPage({ params }: Props) {
-  const { slug } = await params
+  const { locale, slug } = await params
   const comparison = getComparison(slug)
   if (!comparison) notFound()
 
   const integrationA = getIntegrationBySlug(comparison.slugA)
   const integrationB = getIntegrationBySlug(comparison.slugB)
+  const image = `https://stevin.ai${locale === 'en' ? '/en' : ''}/opengraph-image`
 
   // Article schema voor de comparison-page (Article ipv Product, want
   // we vergelijken redactioneel, geen review-rating).
@@ -60,7 +61,7 @@ export default async function ComparisonPage({ params }: Props) {
     '@type': 'Article',
     headline: comparison.title,
     description: comparison.dek,
-    image: 'https://stevin.ai/og-image.png',
+    image,
     datePublished: comparison.publishedAt,
     dateModified: comparison.updatedAt ?? comparison.publishedAt,
     author: { '@type': 'Organization', name: 'Stevin' },

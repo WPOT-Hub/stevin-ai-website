@@ -36,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const title = `${category.name} integraties${count > 0 ? ` (${count} platforms)` : ''}`
     const description = (category.description ?? '').slice(0, 155)
     const canonical = `https://stevin.ai/integraties/${slug}`
+    const ogImage = `https://stevin.ai${locale === 'en' ? '/en' : ''}/opengraph-image`
     return {
       title,
       description,
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title,
         description,
         url: canonical,
-        images: [{ url: 'https://stevin.ai/og-image.png', width: 1200, height: 630, alt: title }],
+        images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
       },
       twitter: { card: 'summary_large_image', title, description },
     }
@@ -61,6 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : `${integration.name} koppeling en integratie`
     const description = (en?.shortDescription ?? integration.shortDescription).slice(0, 155)
     const canonical = `https://stevin.ai/integraties/${slug}`
+    const ogImage = `https://stevin.ai${locale === 'en' ? '/en' : ''}/opengraph-image`
     return {
       title,
       description,
@@ -71,7 +73,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title,
         description,
         url: canonical,
-        images: [{ url: 'https://stevin.ai/og-image.png', width: 1200, height: 630, alt: title }],
+        images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
       },
       twitter: { card: 'summary_large_image', title, description },
     }

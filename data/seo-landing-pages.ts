@@ -706,6 +706,103 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       { label: 'Diensten', href: '/diensten' },
     ],
   },
+  {
+    slug: 'ai-briefing',
+    metaTitle: 'AI-briefing voor je volgende campagne',
+    metaDescription:
+      'Een campagne-briefing die weet wat er eerder gebeurde: cijfers uit vorige campagnes, wat werkte en wat niet, concurrent-hooks en concrete eerste acties.',
+    eyebrow: 'AI-briefing',
+    h1: 'Een campagne-briefing die weet wat er',
+    h1Accent: 'eerder al gebeurde',
+    sub: 'Brief mijn volgende campagne is geen los prompt-veld. Stevin haalt cijfers uit vergelijkbare eerdere campagnes, eerder gegeven advies en de uitkomst daarvan, en concurrent-hooks erbij, en zet dat om in een concrete briefing met hooks, creatieve concepten en eerste acties.',
+    ctaPrimary: { label: 'Plan een demo', href: '/contact' },
+    ctaSecondary: { label: 'Platform', href: '/platform' },
+    pain: {
+      eyebrow: 'Het probleem',
+      h2: 'Waarom een lege pagina de briefing vertraagt',
+      items: [
+        {
+          title: 'Elke briefing begint opnieuw',
+          desc: 'Wat er vorige campagne gebeurde zit in iemands hoofd of in een oud rapport. Bij de volgende briefing wordt dat zelden er echt bij gepakt.',
+        },
+        {
+          title: 'Oude campagnes blind kopieren',
+          desc: 'Het WK is niet de Olympische Spelen, en vorig kwartaal is niet dit kwartaal. Zonder context wordt een succesvolle aanpak klakkeloos herhaald op een moment dat niet vergelijkbaar is.',
+        },
+        {
+          title: 'Concurrent-signalen blijven liggen',
+          desc: 'Wat concurrenten nu testen in hun advertenties is vaak wel zichtbaar, maar niemand heeft tijd om dat structureel te vertalen naar een eigen, veilige hoek.',
+        },
+      ],
+    },
+    solution: {
+      eyebrow: 'Hoe het werkt',
+      h2: 'Van campagne-geheugen naar concrete briefing',
+      sub: 'De AI-briefing redeneert over drie lagen: wat je eigen data laat zien, wat er extern speelt, en welk marktmoment relevant is. Elk advies krijgt een bron of wordt expliciet als hypothese benoemd.',
+      steps: [
+        {
+          title: 'Campagne-geheugen',
+          desc: 'Kosten, conversies en CPA van vergelijkbare eerdere campagnes, plus eerder gegeven advies en of dat wel of niet werkte.',
+        },
+        {
+          title: 'Concurrent-hooks',
+          desc: 'Wat concurrenten nu testen in hun advertenties, vertaald naar een veilige eigen invalshoek. Nooit letterlijk gekopieerd.',
+        },
+        {
+          title: 'Externe signalen',
+          desc: 'Platform-storingen, beleidswijzigingen en marktmomenten die relevant zijn voor dit product of deze doelgroep, met een reden en een vervaldatum.',
+        },
+        {
+          title: 'Concrete briefing',
+          desc: 'Hooks, adcopy-angles, creatieve concepten per kanaal en eerste acties, met per punt de bron of de hypothese erbij.',
+        },
+      ],
+    },
+    list: {
+      eyebrow: 'Wat de briefing bevat',
+      h2: 'Geen los advies, een compleet startpunt',
+      items: [
+        'Wat eerder wel en niet werkte, met cijfers erbij',
+        'Wat nu anders is dan de vorige keer, expliciet benoemd',
+        'Creatieve concepten per format en kanaal, met hook en cta',
+        'Concurrent-inzichten met een veilige eigen vertaling, nooit een kopie',
+        "Eerste acties en risico's, zodat je team direct kan starten",
+      ],
+    },
+    ctaSlot: {
+      eyebrow: 'Zelf zien',
+      h3: 'Genereer een briefing op je eigen data',
+      sub: 'In een demo laten we zien hoe de briefing wordt opgebouwd uit jouw eerdere campagnes en welke controle je daarop hebt.',
+      btn: 'Plan een demo',
+    },
+    faq: [
+      {
+        question: 'Hoe haalt de AI data op uit vorige campagnes?',
+        answer:
+          'Zodra Google Ads, Meta of je CRM gekoppeld zijn, herkent Stevin vergelijkbare eerdere campagnes op basis van product, doelgroep of kanaal en haalt daar kosten, conversies en CPA uit. Ook eerder gegeven advies en of dat wel of niet werkte, telt mee.',
+      },
+      {
+        question: 'Kopieert de AI gewoon een oude campagne?',
+        answer:
+          'Nee, dat is een harde regel in de briefing zelf. Bij elke vergelijking benoemt de briefing waarom iets lijkt, waarom het nu anders is, en waar onzekerheid zit. Een sterk moment uit het verleden wordt nooit klakkeloos herhaald.',
+      },
+      {
+        question: 'Gaat er iets automatisch de deur uit?',
+        answer:
+          'Nee. De briefing is altijd een concept dat een consultant bekijkt. Bij alles wat budget, pauzeren of klantcommunicatie raakt, markeert het systeem zelf dat er eerst een menselijke check nodig is.',
+      },
+      {
+        question: 'Werkt dit ook met concurrentie-inzichten?',
+        answer:
+          'Ja. Hooks die concurrenten testen in hun advertenties worden meegenomen, maar altijd vertaald naar een veilige eigen invalshoek voor jouw merk. Letterlijk overnemen gebeurt niet.',
+      },
+    ],
+    related: [
+      { label: 'Marketing intelligence', href: '/marketing-intelligence' },
+      { label: 'Marketing voor bureaus', href: '/marketing-voor-bureaus' },
+      { label: 'Platform', href: '/platform' },
+    ],
+  },
 ]
 
 export function getSeoLandingPage(slug: string): SeoLandingPageContent | undefined {

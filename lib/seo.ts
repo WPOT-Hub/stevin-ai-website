@@ -41,7 +41,12 @@ export function localizedMetadata(opts: LocalizedMetadataOpts): Metadata {
     ? { 'nl-NL': nlUrl, en: enUrl, 'x-default': nlUrl }
     : { 'nl-NL': nlUrl, 'x-default': nlUrl }
 
-  const image = opts.image ?? `${SITE_URL}/og-image.png`
+  const defaultImage = `${SITE_URL}${isEn ? '/en' : ''}/opengraph-image`
+  const image = opts.image
+    ? opts.image.startsWith('http')
+      ? opts.image
+      : `${SITE_URL}${opts.image}`
+    : defaultImage
 
   return {
     title,

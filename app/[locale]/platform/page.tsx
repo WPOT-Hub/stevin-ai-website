@@ -287,6 +287,9 @@ export default async function PlatformPage({ params }: Props) {
                 </div>
                 <div className="border-t border-border pt-8">
                   <p className="text-[13px] text-muted">{t('briefing_caption')}</p>
+                  <Link href="/ai-briefing" className="inline-flex mt-4 text-[13px] font-semibold text-accent hover:text-accent-dark transition-colors">
+                    Hoe de AI-briefing werkt &rarr;
+                  </Link>
                 </div>
               </div>
             </div>

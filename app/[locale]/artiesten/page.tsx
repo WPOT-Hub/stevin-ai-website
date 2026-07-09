@@ -18,6 +18,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: isEn
       ? 'Stevin tracks mentions, streams and attention across channels and pinpoints which moments build real momentum. For artists, managers and promoters.'
       : 'Stevin volgt mentions, streams en aandacht over alle kanalen en wijst aan welke momenten echt momentum bouwen. Voor artiesten, hun managers en promotors.',
+    image: isEn
+      ? 'https://stevin.ai/en/artiesten/opengraph-image'
+      : 'https://stevin.ai/artiesten/opengraph-image',
   })
 }
 

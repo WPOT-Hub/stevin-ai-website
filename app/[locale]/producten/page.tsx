@@ -11,11 +11,13 @@ interface Props {
   params: Promise<{ locale: string }>
 }
 
-export function generateMetadata(): Metadata {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
   const title = 'Producten, de Stevin-suite'
   const description =
     'De producten van Stevin: van dynamische campagnes en content tot signalen, opvolging en uplift-meting. Een AI-laag over je hele bedrijf.'
   const canonical = 'https://stevin.ai/producten'
+  const ogImage = `https://stevin.ai${locale === 'en' ? '/en' : ''}/opengraph-image`
   return {
     title,
     description,
@@ -25,7 +27,7 @@ export function generateMetadata(): Metadata {
       title,
       description,
       url: canonical,
-      images: [{ url: 'https://stevin.ai/og-image.png', width: 1200, height: 630, alt: title }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
     twitter: { card: 'summary_large_image', title, description },
   }

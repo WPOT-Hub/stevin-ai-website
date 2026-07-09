@@ -25,6 +25,7 @@ export default function Footer() {
       { label: 'Website met CRM', href: '/website-met-crm' },
       { label: 'Google Ads en GA4', href: '/google-ads-ga4' },
       { label: 'First-party data', href: '/first-party-data' },
+      { label: 'AI-briefing', href: '/ai-briefing' },
     ],
     bedrijf: [
       { label: t('bedrijf_werkwijze'), href: '/werkwijze' },
