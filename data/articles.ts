@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'outlook-mac-bug-verandert-lettertype-keuze-in-decoratie',
+    format: 'dispatch' as const,
+    edition: '333',
+    category: 'Tech',
+    title: "Bug in Outlook voor Mac maakt lettertypekeuze decoratief",
+    dek: "Een bug in Outlook voor Mac zorgt ervoor dat gekozen lettertypes niet worden toegepast, waardoor codefragmenten en teksten onleesbaar kunnen worden.",
+    publishedAt: '2026-07-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Bug in Outlook voor Mac maakt lettertypekeuze decoratief",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'gratis-waymo-ritten-californië-regelgeving-kwetsbaarheid',
     format: 'dispatch' as const,
     edition: '332',
