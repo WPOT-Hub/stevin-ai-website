@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-in-google-ads-mens-en-machine-samen',
+    format: 'dispatch' as const,
+    edition: '331',
+    category: 'Platform',
+    title: "AI neemt het werk over, maar mensen sturen nog steeds de strategie",
+    dek: "Uit een test met Google Ads blijkt dat AI-campagnes beter presteren als mensen de doelen en richtlijnen bepalen.",
+    publishedAt: '2026-07-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI neemt het werk over, maar mensen sturen nog steeds de strategie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-als-keuzemaker-hoe-merken-voorkeursstatus-krijgen',
     format: 'dispatch' as const,
     edition: '330',
