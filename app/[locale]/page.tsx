@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation'
 import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import SignalFlowDemo from '@/components/SignalFlowDemo'
+import StevinBrainVisual from '@/components/StevinBrainVisual'
 import TrustBadges from '@/components/TrustBadges'
 import { getHomepageFaqs, type FAQ } from '@/data/faqs'
 import { editorials } from '@/data/articles'
@@ -85,12 +86,29 @@ export default async function HomePage({ params }: Props) {
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
-        {/* Hero-achtergrond: VR-studio render met navy-overlay zodat de tekst leesbaar blijft */}
-        <div className="absolute inset-0 z-0" aria-hidden="true">
-          <div className="absolute inset-0 bg-cover" style={{ backgroundImage: 'url(/hero-studio.jpg)', backgroundPosition: 'right center' }} />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, #0A1628 0%, #0A1628 36%, rgba(10,22,40,0.6) 64%, rgba(10,22,40,0.3) 100%)' }} />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(10,22,40,0.35) 0%, rgba(10,22,40,0) 35%, rgba(10,22,40,0.55) 100%)' }} />
+        {/* Hero-visual: het Stevin Brain als sfeer-constellatie, transparant en
+            kaderloos, rechts inzwevend in het navy (ongeveer 3:4). Vervangt de
+            oude VR-render. Alleen op groot scherm; mobiel blijft rustig navy. */}
+        <div
+          className="absolute inset-y-0 right-0 z-0 hidden lg:flex items-center justify-end overflow-hidden pointer-events-none"
+          aria-hidden="true"
+        >
+          <div className="w-[52vw] max-w-[600px] translate-x-[4%]">
+            <StevinBrainVisual aspect="3:4" brand={false} claim="" ariaLabel="" />
+          </div>
         </div>
+        {/* Navy fade: links opaak zodat de koptekst leesbaar blijft, naar rechts
+            transparant zodat het brein inzweeft zonder harde rand. */}
+        <div
+          className="absolute inset-0 z-0"
+          aria-hidden="true"
+          style={{ background: 'linear-gradient(90deg, #0A1628 0%, #0A1628 30%, rgba(10,22,40,0.6) 56%, rgba(10,22,40,0) 84%)' }}
+        />
+        <div
+          className="absolute inset-0 z-0"
+          aria-hidden="true"
+          style={{ background: 'linear-gradient(180deg, rgba(10,22,40,0.3) 0%, rgba(10,22,40,0) 35%, rgba(10,22,40,0.5) 100%)' }}
+        />
         <div className="relative z-10 mx-auto max-w-[1200px]">
 
           {/* Eyebrow */}
