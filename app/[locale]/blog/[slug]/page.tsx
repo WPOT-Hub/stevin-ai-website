@@ -1460,6 +1460,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-agent-startup-haalt-100-miljoen-met-zichzelf': (
+    <>
+      <p className="lead-para">
+        Het bedrijf Lyzr, dat AI-agents voor bedrijven bouwt, heeft zijn eigen technologie ingezet om een Series B-financiering van 100 miljoen dollar veilig te stellen. De AI-agent nam zelf contact op met investeerders, voerde gesprekken en rondde de deal af zonder menselijke tussenkomst. Volgens de oprichters toont dit aan dat hun product daadwerkelijk werkt in complexe zakelijke processen.
+      </p>
+      <p>
+        Deze aanpak is niet alleen een demonstratie van de capaciteiten van hun software, maar ook een strategische zet om vertrouwen te winnen bij nieuwe klanten. Potentiële investeerders kregen zo direct zicht op hoe de AI-agent functioneert in een realistisch scenario. Het bedrijf stelt dat deze methode efficiënter was dan traditionele manieren van fondsenwerving.
+      </p>
+      <p>
+        Lyzr richt zich op het automatiseren van repetitieve taken binnen organisaties, zoals klantenservice of data-analyse. De succesvolle fundraising laat zien dat bedrijven bereid zijn te investeren in technologie die zelfstandig complexe processen kan uitvoeren.
+      </p>
+    </>
+  ),
   'franse-startup-zml-released-gratis-ai-inference-software': (
     <>
       <p className="lead-para">
@@ -5608,6 +5621,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-agent-startup-haalt-100-miljoen-met-zichzelf':
+    "Voor ondernemers die overwegen om AI-tools in te zetten, toont dit voorbeeld aan dat automatisering niet alleen kostenbesparend kan zijn, maar ook nieuwe kansen creëert. Het benadrukt het belang van betrouwbare meetdata: als een AI-agent zelf een deal kan sluiten, moet je erop kunnen vertrouwen dat deze systemen ook andere kritieke processen kunnen overnemen. Tegelijkertijd roept het vragen op over de risico’s van volledige automatisering in strategische beslissingen.",
   'franse-startup-zml-released-gratis-ai-inference-software':
     "Voor ondernemers die AI willen inzetten, biedt deze ontwikkeling een kans om kosten te besparen en schaalbaarheid te vergroten. Het is een reminder dat open-source tools steeds vaker een serieus alternatief worden voor dure commerciële oplossingen. Tegelijkertijd blijft de vraag hoe snel bedrijven deze technologie kunnen integreren in hun bestaande systemen.",
   'github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt':
