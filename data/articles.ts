@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-als-keuzemaker-hoe-merken-voorkeursstatus-krijgen',
+    format: 'dispatch' as const,
+    edition: '330',
+    category: 'Markt',
+    title: "AI kiest nu al merken: zes stappen om voorkeursstatus te bereiken",
+    dek: "AI-systemen bepalen welke merken worden aanbevolen, vertrouwd en gekocht: zes concrete stappen om als merk bovenaan te eindigen.",
+    publishedAt: '2026-07-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "AI kiest nu al merken: zes stappen om voorkeursstatus te bereiken",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'humanoide-robots-voeren-eerste-operaties-uit-op-levende-varkens',
     format: 'dispatch' as const,
     edition: '329',
