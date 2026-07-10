@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'openai-leiderschapsvacature-na-stap-fidji-simo',
+    format: 'dispatch' as const,
+    edition: '328',
+    category: 'Tech',
+    title: "Fidji Simo stapt op bij OpenAI: leiderschapsvacature ontstaat",
+    dek: "OpenAI’s nummer twee, Fidji Simo, verlaat haar voltijdse rol na een langere ziekteverlofperiode dan gepland.",
+    publishedAt: '2026-07-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Fidji Simo stapt op bij OpenAI: leiderschapsvacature ontstaat",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-agent-startup-haalt-100-miljoen-met-zichzelf',
     format: 'dispatch' as const,
     edition: '327',
