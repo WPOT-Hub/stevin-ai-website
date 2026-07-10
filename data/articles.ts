@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'gratis-waymo-ritten-californië-regelgeving-kwetsbaarheid',
+    format: 'dispatch' as const,
+    edition: '332',
+    category: 'Tech',
+    title: "Gratis Waymo-ritten in Californië door vertraging bij regelgever",
+    dek: "Een vertraging bij de Californische regelgever maakt gratis robotaxi-ritten mogelijk in Ojai totdat de goedkeuring definitief is.",
+    publishedAt: '2026-07-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Gratis Waymo-ritten in Californië door vertraging bij regelgever",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-in-google-ads-mens-en-machine-samen',
     format: 'dispatch' as const,
     edition: '331',
