@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'openai-sluit-atlas-browser-maar-ai-browsing-leeft-door',
+    format: 'dispatch' as const,
+    edition: '326',
+    category: 'Tech | Markt',
+    title: "OpenAI stopt met AI-browser Atlas, maar agenten gaan door",
+    dek: "OpenAI sluit zijn AI-browser Atlas na minder dan een jaar, maar verplaatst agentfuncties naar de desktopapp en Chrome-extensie.",
+    publishedAt: '2026-07-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH | MARKT',
+    posterTopic: "OpenAI stopt met AI-browser Atlas, maar agenten gaan door",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'franse-startup-zml-released-gratis-ai-inference-software',
     format: 'dispatch' as const,
     edition: '325',
