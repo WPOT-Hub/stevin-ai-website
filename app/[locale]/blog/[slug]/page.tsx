@@ -1460,6 +1460,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-sluit-atlas-browser-maar-ai-browsing-leeft-door': (
+    <>
+      <p className="lead-para">
+        OpenAI maakt een einde aan zijn browser Atlas, die gebruikers hielp bij zoekopdrachten met behulp van grote taalmodellen. Na minder dan een jaar actief te zijn geweest, wordt de dienst op 1 september 2026 stopgezet. Gebruikers worden gevraagd om over te stappen naar alternatieven of de functies via andere kanalen te blijven gebruiken.
+      </p>
+      <p>
+        De agentfuncties die Atlas uniek maakten, zoals automatische acties op webpagina’s, verhuizen naar de desktopversie van OpenAI en een nieuwe Chrome-extensie. Hiermee hoopt het bedrijf de kernfunctionaliteit van Atlas te behouden zonder zelf een aparte browser aan te bieden. De overstap moet voor gebruikers soepel verlopen, aldus OpenAI.
+      </p>
+      <p>
+        De beslissing past in een bredere strategie waarbij OpenAI zich richt op integratie van AI in bestaande tools in plaats van nieuwe platformen te bouwen. Concurrenten als Google en Microsoft experimenteren ook met AI-gestuurde browsers en zoekfuncties, wat de druk op OpenAI vergroot om innovatief te blijven.
+      </p>
+    </>
+  ),
   'ai-agent-startup-haalt-100-miljoen-met-zichzelf': (
     <>
       <p className="lead-para">
@@ -5621,6 +5634,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-sluit-atlas-browser-maar-ai-browsing-leeft-door':
+    "Voor bedrijven die experimenteren met AI-tools is deze stap een herinnering dat technologische ambities niet altijd direct vertaald moeten worden naar nieuwe producten. Het is vaak effectiever om bestaande systemen uit te breiden met slimme toevoegingen. Dit geldt niet alleen voor browsers, maar ook voor marketingtools of klantplatforms waar AI-functionaliteit steeds vaker wordt geïntegreerd.",
   'ai-agent-startup-haalt-100-miljoen-met-zichzelf':
     "Voor ondernemers die overwegen om AI-tools in te zetten, toont dit voorbeeld aan dat automatisering niet alleen kostenbesparend kan zijn, maar ook nieuwe kansen creëert. Het benadrukt het belang van betrouwbare meetdata: als een AI-agent zelf een deal kan sluiten, moet je erop kunnen vertrouwen dat deze systemen ook andere kritieke processen kunnen overnemen. Tegelijkertijd roept het vragen op over de risico’s van volledige automatisering in strategische beslissingen.",
   'franse-startup-zml-released-gratis-ai-inference-software':
