@@ -1460,6 +1460,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'outlook-mac-bug-verandert-lettertype-keuze-in-decoratie': (
+    <>
+      <p className="lead-para">
+        Gebruikers van Outlook voor Mac melden dat hun geselecteerde lettertypes niet worden doorgevoerd. Het probleem treft zowel standaardtekst als monospace lettertypes, die normaal gesproken gebruikt worden voor codefragmenten.
+      </p>
+      <p>
+        De bug lijkt vooral op te treden bij het openen of bewerken van e-mails met specifieke lettertype-instellingen. Sommige gebruikers zien zelfs hele alinea’s weergegeven in een standaardlettertype, ongeacht de ingestelde opties.
+      </p>
+      <p>
+        Microsoft heeft het probleem nog niet officieel erkend of een oplossing aangekondigd. Totdat er een patch beschikbaar is, blijven gebruikers afhankelijk van tijdelijke werkarounds zoals het handmatig aanpassen van lettertypes per bericht.
+      </p>
+    </>
+  ),
   'ai-in-google-ads-mens-en-machine-samen': (
     <>
       <p className="lead-para">
@@ -5667,6 +5680,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'outlook-mac-bug-verandert-lettertype-keuze-in-decoratie':
+    "Voor bedrijven die Outlook voor Mac gebruiken in hun communicatie is dit een risico voor de professionaliteit van uitgaande e-mails. Het is verstandig om medewerkers te wijzen op het controleren van lettertypes voordat ze berichten verzenden. Daarnaast kan dit probleem de samenwerking bemoeilijken als code of technische details niet correct worden weergegeven.",
   'ai-in-google-ads-mens-en-machine-samen':
     "Voor bedrijven betekent dit dat AI-tools zoals Google Ads niet zelfstandig moeten worden ingezet zonder menselijke sturing. Het is verstandig om eerst te experimenteren met hybride modellen waarbij mensen de kaders aangeven en AI het uitvoert. Zo voorkom je blinde vlekken in de meting en misallocatie van budget. Investeer ook in training voor je team om optimaal gebruik te maken van deze tools.",
   'ai-als-keuzemaker-hoe-merken-voorkeursstatus-krijgen':
