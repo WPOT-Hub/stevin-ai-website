@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'humanoide-robots-voeren-eerste-operaties-uit-op-levende-varkens',
+    format: 'dispatch' as const,
+    edition: '329',
+    category: 'Tech',
+    title: "Chirurgen besturen humanoïde robots bij eerste operaties op levende varkens",
+    dek: "Humanoïde robots voerden onder leiding van chirurgen de eerste geslaagde operaties uit op levende varkens, als test voor toekomstige medische toepassingen.",
+    publishedAt: '2026-07-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Chirurgen besturen humanoïde robots bij eerste operaties op levende varkens",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'openai-leiderschapsvacature-na-stap-fidji-simo',
     format: 'dispatch' as const,
     edition: '328',
