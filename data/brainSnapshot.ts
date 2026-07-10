@@ -12,6 +12,7 @@
  */
 
 import rawSnapshot from './brainSnapshot.json'
+import rawSnapshotEn from './brainSnapshot.en.json'
 
 export type BrainNodeType = 'campagne' | 'creatie' | 'outcome' | 'kennis'
 
@@ -69,25 +70,32 @@ function isValidType(t: string): t is BrainNodeType {
   return (VALID_TYPES as string[]).includes(t)
 }
 
-const raw = rawSnapshot as unknown as RawSnapshot
+function sanitize(input: unknown): BrainSnapshot {
+  const raw = input as RawSnapshot
+  const nodes: BrainNode[] = raw.nodes
+    .filter((n) => isValidType(n.type) && !isBanned(n))
+    .map((n) => ({
+      id: n.id,
+      label: n.label,
+      type: n.type as BrainNodeType,
+      period_label: n.period_label ?? null,
+      tags: n.tags ?? [],
+      why: n.why ?? null,
+      delta: typeof n.delta === 'number' ? n.delta : null,
+    }))
+  const kept = new Set(nodes.map((n) => n.id))
+  const edges: Array<[string, string]> = raw.edges.filter(
+    ([a, b]) => kept.has(a) && kept.has(b),
+  )
+  return { nodes, edges }
+}
 
-const nodes: BrainNode[] = raw.nodes
-  .filter((n) => isValidType(n.type) && !isBanned(n))
-  .map((n) => ({
-    id: n.id,
-    label: n.label,
-    type: n.type as BrainNodeType,
-    period_label: n.period_label ?? null,
-    tags: n.tags ?? [],
-    why: n.why ?? null,
-    delta: typeof n.delta === 'number' ? n.delta : null,
-  }))
+export const brainSnapshot: BrainSnapshot = sanitize(rawSnapshot)
+export const brainSnapshotEn: BrainSnapshot = sanitize(rawSnapshotEn)
 
-const kept = new Set(nodes.map((n) => n.id))
-const edges: Array<[string, string]> = raw.edges.filter(
-  ([a, b]) => kept.has(a) && kept.has(b),
-)
-
-export const brainSnapshot: BrainSnapshot = { nodes, edges }
+/** Kies het snapshot bij de paginataal; onbekende locales vallen terug op NL. */
+export function getBrainSnapshot(locale?: string): BrainSnapshot {
+  return locale === 'en' ? brainSnapshotEn : brainSnapshot
+}
 
 export default brainSnapshot

@@ -11,25 +11,26 @@ import { editorials } from '@/data/articles'
 
 type Props = { params: Promise<{ locale: string }> }
 
-// Brede capability-sectie (de werklaag), domein-onafhankelijk. Inline copy per
-// taal zodat dit los staat van de marketing-i18n en makkelijk te itereren is.
+// Capability-sectie, uitgelijnd met de hero-belofte (je eigen marketing-brein).
+// Inline copy per taal zodat dit los staat van de marketing-i18n en makkelijk
+// te itereren is.
 const CAPABILITIES = {
   nl: {
-    eyebrow: 'EEN LAAG OVER JE SYSTEMEN',
-    h2: 'Wat Stevin doet, voor je hele bedrijf.',
+    eyebrow: 'EEN LAAG OVER JE MARKETING EN SALES',
+    h2: 'Wat het brein voor je doet.',
     cards: [
-      { t: 'Structuur in je data', d: 'Al je losse systemen, van mail en CRM tot planning en boekhouding, komen samen op een plek. Geen middleware, geen losse eilanden.', href: '/data-verrijking' },
-      { t: 'Agents in je afdeling', d: 'Niet een chatbot, maar agents die echt werk uit handen nemen, elk met eigen rechten en context. Van opvolging tot rapportage.', href: '/ai-agents' },
+      { t: 'Jouw data, een geheugen', d: 'Campagnes, creatives, resultaten en klantsignalen komen samen in een brein dat van jou blijft. Data ownership, geen los eiland per platform.', href: '/data-verrijking' },
+      { t: 'Onthoudt wat werkte', d: 'Stevin bewaart per seizoen, kanaal en hook wat het opleverde. Je volgende briefing begint niet bij nul, maar bij wat vorig jaar bewezen werkte.', href: null },
       { t: 'Human in the loop', d: 'Elke actie met impact gaat eerst langs een mens, met de bron erbij. AI die meewerkt zonder dat je grip verliest.', href: null },
     ],
   },
   en: {
-    eyebrow: 'ONE LAYER OVER YOUR SYSTEMS',
-    h2: 'What Stevin does, for your whole business.',
+    eyebrow: 'ONE LAYER OVER YOUR MARKETING AND SALES',
+    h2: 'What the brain does for you.',
     cards: [
-      { t: 'Structure in your data', d: 'All your separate systems, from email and CRM to planning and accounting, come together in one place. No middleware, no islands.', href: '/data-verrijking' },
-      { t: 'Agents in your department', d: 'Not a chatbot, but agents that genuinely take work off your hands, each with their own permissions and context. From follow-up to reporting.', href: '/ai-agents' },
-      { t: 'Human in the loop', d: 'Every action with impact passes by a person first, with the source attached. AI that works with you without you losing control.', href: null },
+      { t: 'Your data, one memory', d: 'Campaigns, creatives, results and customer signals come together in a brain that stays yours. Data ownership, no separate island per platform.', href: '/data-verrijking' },
+      { t: 'Remembers what worked', d: 'Stevin keeps track of what every season, channel and hook delivered. Your next briefing does not start from zero, it starts from what was proven to work last year.', href: null },
+      { t: 'Human in the loop', d: 'Every action with impact passes a person first, with the source attached. AI that works alongside you, without you losing control.', href: null },
     ],
   },
 } as const
@@ -90,11 +91,17 @@ export default async function HomePage({ params }: Props) {
             kaderloos, rechts inzwevend in het navy (ongeveer 3:4). Vervangt de
             oude VR-render. Alleen op groot scherm; mobiel blijft rustig navy. */}
         <div
-          className="absolute inset-y-0 right-0 z-0 hidden lg:flex items-center justify-end overflow-hidden pointer-events-none"
+          className="absolute inset-y-0 right-0 z-20 hidden lg:flex items-center justify-end overflow-hidden"
           aria-hidden="true"
+          style={{
+            // Zachte fade aan de linkerrand zodat het brein in het navy oplost
+            // (masker i.p.v. overlay, zodat de nodes klikbaar en sleepbaar zijn).
+            maskImage: 'linear-gradient(90deg, transparent 0%, black 26%)',
+            WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, black 26%)',
+          }}
         >
           <div className="w-[52vw] max-w-[600px] translate-x-[4%]">
-            <StevinBrainVisual aspect="3:4" brand={false} claim="" ariaLabel="" />
+            <StevinBrainVisual aspect="3:4" brand={false} claim="" ariaLabel="" locale={locale} />
           </div>
         </div>
         {/* Navy fade: links opaak zodat de koptekst leesbaar blijft, naar rechts

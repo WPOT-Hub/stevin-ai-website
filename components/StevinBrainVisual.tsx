@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import brainSnapshot, { type BrainNode, type BrainNodeType } from '@/data/brainSnapshot'
+import { getBrainSnapshot, type BrainNode, type BrainNodeType } from '@/data/brainSnapshot'
 
 /**
  * Stevin Brain, sfeervolle merk-visual.
@@ -21,6 +21,8 @@ import brainSnapshot, { type BrainNode, type BrainNodeType } from '@/data/brainS
 export type BrainAspect = '1:1' | '3:4' | '9:16'
 
 interface StevinBrainVisualProps {
+  /** Paginataal: 'en' laadt het vertaalde snapshot, al het andere NL. */
+  locale?: string
   /** Verhouding van het vlak. Bepaalt de vorm van het canvas. */
   aspect?: BrainAspect
   /** Extra classes op de wrapper (bijvoorbeeld voor breedte). */
@@ -124,6 +126,7 @@ function buildGlowSprites(): GlowSprites {
 }
 
 export default function StevinBrainVisual({
+  locale,
   aspect = '1:1',
   className,
   brand = true,
@@ -154,7 +157,7 @@ export default function StevinBrainVisual({
       typeof window !== 'undefined' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    const { nodes, edges } = brainSnapshot
+    const { nodes, edges } = getBrainSnapshot(locale)
 
     // Graad per node bepaalt de plek: hubs naar het midden, losse sterren naar de rand.
     const degree = new Map<string, number>()
@@ -427,6 +430,11 @@ export default function StevinBrainVisual({
 
     // Uitlicht-cyclus, tijdgestuurd zodat pauzeren netjes meeloopt.
     const HL_PERIOD = 9000
+    // Klik-selectie: een aangeklikte node houdt de spotlight vast (forced)
+    // en pauzeert de auto-cyclus; klik in de leegte laat de cyclus hervatten.
+    const FORCED_HOLD = 14000
+    let forced: number | null = null
+    let forcedAt = 0
     const hl = { pos: -1, startedAt: 0 }
     let visShown = false
 
@@ -460,15 +468,29 @@ export default function StevinBrainVisual({
       }
     }
 
+    function selectNode(i: number, now: number) {
+      forced = i
+      forcedAt = now
+      const b = bodies[i]
+      setHlPlace(b.y < H / 2 ? 'below' : 'above')
+      setHlText({ title: b.title, sub: b.sub, type: b.node.type })
+      setHlVisible(true)
+      visShown = true
+    }
+
     let rafId = 0
     let running = false
 
     function frame(now: number) {
       step(now)
-      const idx = hl.pos >= 0 ? highlightOrder[hl.pos] : -1
+      if (forced !== null && now - forcedAt >= FORCED_HOLD) {
+        forced = null
+        hl.startedAt = now - HL_PERIOD // cyclus meteen laten doorschuiven
+      }
+      const idx = forced !== null ? forced : hl.pos >= 0 ? highlightOrder[hl.pos] : -1
       draw(idx)
-      updateHighlight(now)
-      positionLabel(hl.pos >= 0 ? highlightOrder[hl.pos] : -1)
+      if (forced === null) updateHighlight(now)
+      positionLabel(idx)
       rafId = requestAnimationFrame(frame)
     }
 
@@ -489,14 +511,21 @@ export default function StevinBrainVisual({
     const ro = new ResizeObserver(() => resize())
     ro.observe(wrapper)
 
-    // Drag als bonus: pak de dichtstbijzijnde node en pin hem tijdens het slepen.
+    // Slepen + selecteren: pak de dichtstbijzijnde node; een tik (nauwelijks
+    // beweging) selecteert hem en houdt de spotlight vast, slepen verplaatst.
     let dragging: number | null = null
+    let moved = 0
+    let lastPX = 0
+    let lastPY = 0
     function toLocal(e: PointerEvent): { x: number; y: number } {
       const rect = canvas.getBoundingClientRect()
       return { x: e.clientX - rect.left, y: e.clientY - rect.top }
     }
     function onPointerDown(e: PointerEvent) {
       const p = toLocal(e)
+      moved = 0
+      lastPX = e.clientX
+      lastPY = e.clientY
       let best = -1
       let bestD = Infinity
       for (let i = 0; i < bodies.length; i++) {
@@ -513,12 +542,17 @@ export default function StevinBrainVisual({
       if (best >= 0) {
         dragging = best
         bodies[best].pinned = true
-        bodies[best].x = p.x
-        bodies[best].y = p.y
         canvas.setPointerCapture(e.pointerId)
+      } else if (forced !== null) {
+        // Klik in de leegte: selectie loslaten, cyclus hervat vanzelf.
+        forced = null
+        hl.startedAt = performance.now() - HL_PERIOD
       }
     }
     function onPointerMove(e: PointerEvent) {
+      moved += Math.abs(e.clientX - lastPX) + Math.abs(e.clientY - lastPY)
+      lastPX = e.clientX
+      lastPY = e.clientY
       if (dragging === null) return
       const p = toLocal(e)
       bodies[dragging].x = p.x
@@ -529,6 +563,7 @@ export default function StevinBrainVisual({
     function onPointerUp(e: PointerEvent) {
       if (dragging === null) return
       bodies[dragging].pinned = false
+      if (moved < 6) selectNode(dragging, performance.now())
       dragging = null
       if (canvas.hasPointerCapture(e.pointerId)) canvas.releasePointerCapture(e.pointerId)
     }
@@ -604,6 +639,7 @@ export default function StevinBrainVisual({
           inset: 0,
           display: 'block',
           touchAction: 'pan-y',
+          cursor: 'grab',
         }}
       />
 
