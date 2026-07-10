@@ -5,6 +5,7 @@ import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import SignalFlowDemo from '@/components/SignalFlowDemo'
 import StevinBrainVisual from '@/components/StevinBrainVisual'
+import BrainEdgeStrip from '@/components/BrainEdgeStrip'
 import TrustBadges from '@/components/TrustBadges'
 import { getHomepageFaqs, type FAQ } from '@/data/faqs'
 import { editorials } from '@/data/articles'
@@ -118,28 +119,53 @@ export default async function HomePage({ params }: Props) {
         />
         <div className="relative z-10 mx-auto max-w-[1200px]">
 
-          {/* Eyebrow */}
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            {t('eyebrow')}
-          </p>
+          {/* Headline-blok krijgt zijn eigen relative wrapper zodat de mobiele
+              brein-sliver hieronder precies zo hoog is als eyebrow+H1+sub en
+              nooit tot in de CTA-knoppen doorloopt. */}
+          <div className="relative">
+            {/* Brein-sliver mobiel: een dun strookje scherpe nodes langs de
+                rechterrand dat van het scherm af bloedt (geen rechthoek, geen
+                vage wolk). Alleen op klein scherm; lg heeft de grote
+                3:4-versie verderop in dit bestand. Feather links + boven/onder,
+                rechts loopt door tot buiten beeld. */}
+            <div
+              className="absolute inset-y-0 right-0 z-0 flex lg:hidden items-stretch justify-end overflow-hidden pointer-events-none w-[30vw] max-w-[132px]"
+              aria-hidden="true"
+              style={{
+                maskImage:
+                  'linear-gradient(90deg, transparent 0%, black 58%), linear-gradient(180deg, transparent 0%, black 12%, black 88%, transparent 100%)',
+                WebkitMaskImage:
+                  'linear-gradient(90deg, transparent 0%, black 58%), linear-gradient(180deg, transparent 0%, black 12%, black 88%, transparent 100%)',
+                maskComposite: 'intersect',
+                WebkitMaskComposite: 'source-in',
+              }}
+            >
+              <BrainEdgeStrip className="w-full h-full" />
+            </div>
 
-          {/* H1 */}
-          <h1
-            className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]"
-            style={{ fontSize: 'clamp(36px, 5vw, 76px)', maxWidth: '16ch' }}
-          >
-            {t('hero_h1')}{' '}
-            <span className="text-[#5DA3FF]">{t('hero_h1_accent')}</span>
-          </h1>
+            {/* Eyebrow */}
+            <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+              <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+              {t('eyebrow')}
+            </p>
 
-          {/* Sub */}
-          <p
-            className="text-white/60 leading-[1.55]"
-            style={{ fontSize: '20px', maxWidth: '520px', marginTop: '32px' }}
-          >
-            {t('hero_sub')}
-          </p>
+            {/* H1 */}
+            <h1
+              className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]"
+              style={{ fontSize: 'clamp(36px, 5vw, 76px)', maxWidth: '16ch' }}
+            >
+              {t('hero_h1')}{' '}
+              <span className="text-[#5DA3FF]">{t('hero_h1_accent')}</span>
+            </h1>
+
+            {/* Sub */}
+            <p
+              className="text-white/60 leading-[1.55]"
+              style={{ fontSize: '20px', maxWidth: '520px', marginTop: '32px' }}
+            >
+              {t('hero_sub')}
+            </p>
+          </div>
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-4 mt-10">
