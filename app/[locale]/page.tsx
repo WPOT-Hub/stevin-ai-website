@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation'
 import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import SignalFlowDemo from '@/components/SignalFlowDemo'
+import BrainConstellation from '@/components/BrainConstellation'
 import TrustBadges from '@/components/TrustBadges'
 import { getHomepageFaqs, type FAQ } from '@/data/faqs'
 import { editorials } from '@/data/articles'
@@ -33,6 +34,35 @@ const CAPABILITIES = {
   },
 } as const
 
+// Stevin Brain constellatie-sectie. Zelfde inline-per-taal patroon als
+// CAPABILITIES: los van de marketing-i18n, makkelijk te itereren.
+const BRAIN_SECTION = {
+  nl: {
+    eyebrow: 'STEVIN BRAIN',
+    h2_line1: 'Elke bron een ster.',
+    h2_line2: 'Samen een brein.',
+    sub: 'Los van elkaar zijn het losse sterren: een advertentieplatform hier, analytics daar, mail en CRM ernaast. Stevin knoopt paid en owned aan elkaar en leest alles in samenhang. Zo ontstaat een geheugen dat elke week slimmer wordt.',
+    legend: [
+      { t: 'Data in', d: 'Je kanalen en systemen voeden het brein continu. Jouw data blijft van jou.' },
+      { t: 'Het brein', d: 'Leest alles in samenhang, onthoudt wat werkt en ziet wat aandacht nodig heeft.' },
+      { t: 'Terug naar jou', d: 'Signalen, wekelijkse briefings en acties. Alles met impact gaat eerst langs een mens.' },
+    ],
+    cta: 'Bekijk het platform',
+  },
+  en: {
+    eyebrow: 'STEVIN BRAIN',
+    h2_line1: 'Every source a star.',
+    h2_line2: 'One brain.',
+    sub: 'On their own they are scattered stars: an ad platform here, analytics there, email and CRM next to it. Stevin ties paid and owned together and reads everything in context. The result is a memory that gets smarter every week.',
+    legend: [
+      { t: 'Data in', d: 'Your channels and systems feed the brain continuously. Your data stays yours.' },
+      { t: 'The brain', d: 'Reads everything in context, remembers what works and sees what needs attention.' },
+      { t: 'Back to you', d: 'Signals, weekly briefings and actions. Anything with impact passes by a person first.' },
+    ],
+    cta: 'See the platform',
+  },
+} as const
+
 // Homepage self-canonical + hreflang. De layout zet titel/description/OG al,
 // maar geen canonical of taalkoppeling. De belangrijkste URL van de site hoort
 // die expliciet te dragen. types (RSS) hier meenemen, anders overschrijft deze
@@ -58,6 +88,7 @@ export default async function HomePage({ params }: Props) {
   const tr = await getTranslations('trust')
   const homepageFaqs = getHomepageFaqs(locale)
   const cap = locale === 'en' ? CAPABILITIES.en : CAPABILITIES.nl
+  const brain = locale === 'en' ? BRAIN_SECTION.en : BRAIN_SECTION.nl
 
   // Organization + WebSite JSON-LD staan nu sitewide via components/SiteJsonLd.tsx
   // (in de gedeelde layout), zodat de #organization-referenties op alle long-tail
@@ -304,6 +335,63 @@ export default async function HomePage({ params }: Props) {
           </div>
         </div>
       </div>
+
+      {/* ── STEVIN BRAIN CONSTELLATIE ── */}
+      <section className="bg-primary overflow-hidden" style={{ padding: '112px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-14 lg:gap-16 items-center">
+            <div>
+              <p className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+                <span className="inline-block w-6 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+                {brain.eyebrow}
+              </p>
+              <h2
+                className="font-display font-extrabold text-white m-0"
+                style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '20ch' }}
+              >
+                {brain.h2_line1}<br />
+                {brain.h2_line2}
+              </h2>
+              <p className="text-white/55 leading-[1.6] mt-6" style={{ fontSize: '16px', maxWidth: '440px' }}>
+                {brain.sub}
+              </p>
+
+              <div className="mt-10 flex flex-col gap-6">
+                {brain.legend.map((item, i) => (
+                  <div key={item.t} className="flex gap-3.5 items-start pt-5 border-t border-white/10">
+                    <span
+                      className="w-2.5 h-2.5 rounded-full flex-shrink-0 mt-[5px]"
+                      style={{
+                        background: i === 0 ? '#E9F1FF' : '#5DA3FF',
+                        boxShadow: i === 1 ? '0 0 12px rgba(93,163,255,0.8)' : 'none',
+                      }}
+                      aria-hidden="true"
+                    />
+                    <div>
+                      <h3 className="font-display font-bold text-white m-0 mb-1" style={{ fontSize: '15px', letterSpacing: '-0.01em' }}>
+                        {item.t}
+                      </h3>
+                      <p className="text-white/50 leading-[1.55] m-0" style={{ fontSize: '14px' }}>
+                        {item.d}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <Link
+                href="/platform"
+                className="inline-flex items-center gap-2 mt-10 font-display font-semibold text-[14px] text-[#5DA3FF] hover:text-[#7BB8FF] transition-colors"
+              >
+                {brain.cta}
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </div>
+
+            <BrainConstellation lang={locale === 'en' ? 'en' : 'nl'} />
+          </div>
+        </div>
+      </section>
 
       {/* ── HET PROBLEEM ── */}
       <section className="bg-white" style={{ padding: '112px 24px 96px' }}>
