@@ -1460,6 +1460,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-in-google-ads-mens-en-machine-samen': (
+    <>
+      <p className="lead-para">
+        Een proef met Google Ads laat zien dat campagnes die volledig door AI worden beheerd, vaak onderpresteren ten opzichte van campagnes waar mensen de strategie bepalen. De beste resultaten ontstaan wanneer mensen de doelen, doelgroepen en budgetten vastleggen. De AI voert vervolgens de aanpassingen uit op basis van realtime data.
+      </p>
+      <p>
+        Tijdens de test bleken mens-gestuurde campagnes gemiddeld 20% meer conversies te genereren dan volledig geautomatiseerde campagnes. De uplift ontstond vooral door betere keuzes in targeting en biedstrategieën, aldus de onderzoekers. Mensen bleken ook sneller te reageren op marktveranderingen dan AI-systemen.
+      </p>
+      <p>
+        De grootste valkuil bij volledig geautomatiseerde campagnes is het ontbreken van context. AI optimaliseert op korte termijn, maar mist soms de langetermijnvisie die marketeers wel hebben. Zo werden er bij een van de geteste campagnes onbedoeld concurrenten als doelgroep geselecteerd omdat de AI geen rekening hield met merkwaarden.
+      </p>
+    </>
+  ),
   'ai-als-keuzemaker-hoe-merken-voorkeursstatus-krijgen': (
     <>
       <p className="lead-para">
@@ -5654,6 +5667,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-in-google-ads-mens-en-machine-samen':
+    "Voor bedrijven betekent dit dat AI-tools zoals Google Ads niet zelfstandig moeten worden ingezet zonder menselijke sturing. Het is verstandig om eerst te experimenteren met hybride modellen waarbij mensen de kaders aangeven en AI het uitvoert. Zo voorkom je blinde vlekken in de meting en misallocatie van budget. Investeer ook in training voor je team om optimaal gebruik te maken van deze tools.",
   'ai-als-keuzemaker-hoe-merken-voorkeursstatus-krijgen':
     "Voor bedrijven betekent deze verschuiving dat investeren in AI-vriendelijke data en interacties niet langer een optie is, maar een noodzaak. Het gaat niet alleen om techniek, maar ook om het creëren van betrouwbare, herhaalbare ervaringen die AI kan belonen met voorkeursstatus. Wie hier nu al mee begint, bouwt niet alleen aan korte-termijn zichtbaarheid, maar ook aan langdurige concurrentievoordeel.",
   'humanoide-robots-voeren-eerste-operaties-uit-op-levende-varkens':
