@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-agent-startup-haalt-100-miljoen-met-zichzelf',
+    format: 'dispatch' as const,
+    edition: '327',
+    category: 'Tech',
+    title: "AI-agent startup haalt 100 miljoen dollar op met eigen technologie",
+    dek: "Het Amerikaanse Lyzr gebruikte een door henzelf ontwikkelde AI-agent om een investeringsronde van 100 miljoen dollar te regelen.",
+    publishedAt: '2026-07-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AI-agent startup haalt 100 miljoen dollar op met eigen technologie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'openai-sluit-atlas-browser-maar-ai-browsing-leeft-door',
     format: 'dispatch' as const,
     edition: '326',
