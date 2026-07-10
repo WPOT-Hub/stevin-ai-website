@@ -1460,6 +1460,13 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'humanoide-robots-voeren-eerste-operaties-uit-op-levende-varkens': (
+    <>
+      <p className="lead-para">
+        Tijdens een preclinical trial zijn vier humanoïde robots door chirurgen op afstand bestuurd om complexe buikoperaties uit te voeren op levende varkens. De operaties, die onder algemene narcose werden uitgevoerd, duurden gemiddeld twee uur en verliepen zonder complicaties. Volgens de onderzoekers toont dit aan dat de technologie in principe veilig en haalbaar is voor verder onderzoek naar menselijke patiënten. Het project wordt gezien als een mijlpaal in de ontwikkeling van robotgestuurde chirurgie, aldus de betrokken wetenschappers.
+      </p>
+    </>
+  ),
   'openai-sluit-atlas-browser-maar-ai-browsing-leeft-door': (
     <>
       <p className="lead-para">
@@ -5634,6 +5641,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'humanoide-robots-voeren-eerste-operaties-uit-op-levende-varkens':
+    "Voor ondernemers in tech of gezondheidszorg is dit een signaal dat investeringen in robotica voor medische toepassingen nu serieus genomen kunnen worden. De komende jaren zullen veel partijen proberen om hun positie in deze markt te versterken, wat kan leiden tot snelle schaalvergroting zodra regulering en praktijkervaring meewerken. Tegelijkertijd vraagt het om een strategie die niet alleen techniek centraal stelt, maar ook rekening houdt met ethiek, regelgeving en publieke acceptatie.",
   'openai-sluit-atlas-browser-maar-ai-browsing-leeft-door':
     "Voor bedrijven die experimenteren met AI-tools is deze stap een herinnering dat technologische ambities niet altijd direct vertaald moeten worden naar nieuwe producten. Het is vaak effectiever om bestaande systemen uit te breiden met slimme toevoegingen. Dit geldt niet alleen voor browsers, maar ook voor marketingtools of klantplatforms waar AI-functionaliteit steeds vaker wordt geïntegreerd.",
   'ai-agent-startup-haalt-100-miljoen-met-zichzelf':
