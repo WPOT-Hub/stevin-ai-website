@@ -233,7 +233,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     ctaSecondary: { label: 'Voor agencies', href: '/voor-agencies' },
     pain: {
       eyebrow: 'Het probleem',
-      h2: 'Waar bureau-uren nu weglekken',
+      h2: 'Waar bureau-uren nu verloren gaan',
       items: [
         {
           title: 'Te veel losse tools',

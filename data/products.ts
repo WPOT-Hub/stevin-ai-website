@@ -98,7 +98,7 @@ export const products: Product[] = [
     problemsSolved: [
       'Advertenties die blijven draaien terwijl hun moment voorbij is',
       'Een boodschap die niet meebeweegt met de actuele vraag',
-      'Budget dat weglekt naar wat niet meer converteert',
+      'Budget dat wordt verspild aan wat niet meer converteert',
       'Pas in de maandrapportage zien dat iets niet werkte',
     ],
     inPractice:

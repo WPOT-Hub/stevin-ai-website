@@ -270,7 +270,7 @@ export const integrations: Integration[] = [
     slug: 'google-ads',
     category: 'advertising',
     shortDescription: 'Adverteren op Google Search, Display, Shopping en YouTube.',
-    description: 'Google Ads is het grootste advertentieplatform ter wereld. Van zoekadvertenties tot shopping en display: het biedt directe toegang tot koopintentie. Maar zonder goede tracking, landingspagina\'s en opvolging is het ook een platform waar budget snel weglekt.',
+    description: 'Google Ads is het grootste advertentieplatform ter wereld. Van zoekadvertenties tot shopping en display: het biedt directe toegang tot koopintentie. Maar zonder goede tracking, landingspagina\'s en opvolging is het ook een platform waar budget snel wordt verspild.',
     useCase: 'Leads en klanten genereren via zoekintentie, remarketing en shopping-campagnes.',
     howWeUseIt: 'Stevin.AI koppelt Google Ads aan je CRM, tracking en automation. We zorgen dat conversies correct worden doorgemeten, dat leads automatisch worden opgepakt en dat je campagnes worden geoptimaliseerd op basis van echte klantwaarde, niet alleen klikken.',
     problemsSolved: [

@@ -26,7 +26,7 @@ export function getArticleFaqs(slug: string): FAQ[] | null {
 const homepageFaqsNL: FAQ[] = [
   {
     question: 'Wat doet Stevin precies?',
-    answer: 'Stevin is een AI-laag over je hele bedrijf. Een dashboard toont wat gebeurde, Stevin ziet wat nu speelt en zet de volgende stap. Het begint in marketing en sales, waar het al bewezen is en als eerste resultaat levert. Daar signaleert het waar omzet of marge weglekt voordat je het zelf doorhebt. Een advertentie die geld kostte maar niets opleverde, zag Stevin al op 4 april, niet pas in het maandoverzicht. Vanuit dat bewezen punt komen er stap voor stap agents bij voor de rest van je bedrijf, van eerste klantcontact tot offerte en opvolging. In de praktijk merk je het eerst in marketing en sales.',
+    answer: 'Stevin is een AI-laag over je hele bedrijf. Een dashboard toont wat gebeurde, Stevin ziet wat nu speelt en zet de volgende stap. Het begint in marketing en sales, waar het al bewezen is en als eerste resultaat levert. Daar signaleert het waar omzet of marge verloren gaat voordat je het zelf doorhebt. Een advertentie die geld kostte maar niets opleverde, zag Stevin al op 4 april, niet pas in het maandoverzicht. Vanuit dat bewezen punt komen er stap voor stap agents bij voor de rest van je bedrijf, van eerste klantcontact tot offerte en opvolging. In de praktijk merk je het eerst in marketing en sales.',
   },
   {
     question: 'Voor wie is Stevin bedoeld?',
