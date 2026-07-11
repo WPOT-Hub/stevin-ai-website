@@ -19,9 +19,12 @@ export default function LanguageSwitcher({ dark }: { dark?: boolean }) {
 
   return (
     <div className="flex items-center gap-1.5">
+      {/* Actieve taal is uitgeschakeld: klikken op de huidige taal deed een
+          replace naar dezelfde pagina en registreerde als dead click in Clarity. */}
       <button
         onClick={() => switchLocale('nl')}
-        className={`${baseClass} ${locale === 'nl' ? activeClass : inactiveClass}`}
+        disabled={locale === 'nl'}
+        className={`${baseClass} ${locale === 'nl' ? `${activeClass} cursor-default` : `${inactiveClass} cursor-pointer`}`}
         aria-label="Nederlands"
         aria-current={locale === 'nl' ? 'true' : undefined}
       >
@@ -30,7 +33,8 @@ export default function LanguageSwitcher({ dark }: { dark?: boolean }) {
       <span className={`text-[11px] ${dividerClass}`} aria-hidden="true">|</span>
       <button
         onClick={() => switchLocale('en')}
-        className={`${baseClass} ${locale === 'en' ? activeClass : inactiveClass}`}
+        disabled={locale === 'en'}
+        className={`${baseClass} ${locale === 'en' ? `${activeClass} cursor-default` : `${inactiveClass} cursor-pointer`}`}
         aria-label="English"
         aria-current={locale === 'en' ? 'true' : undefined}
       >

@@ -77,7 +77,7 @@ export default async function ArticlePage({
 }: {
   params: Promise<{ slug: string; locale: string }>
 }) {
-  const { slug } = await params
+  const { slug, locale } = await params
   const article = getArticle(slug)
   if (!article) notFound()
   // Vangrail: een dispatch zonder echte body mag niet live (thin content).
@@ -329,6 +329,58 @@ export default async function ArticlePage({
             )}
         </div>
       </article>
+
+      {/* ── PRODUCT-CTA ──
+          Clarity (jul 2026): het Journal trok vrijwel al het verkeer maar de
+          doorstroom naar productpagina's was bijna nul; blogartikelen hadden
+          geen enkel product-CTA-blok. Compact en journal-stijlvast houden. */}
+      <section className="bg-white" style={{ padding: '0 24px 80px' }}>
+        <div className="mx-auto" style={{ maxWidth: '680px' }}>
+          <div
+            className="rounded-2xl"
+            style={{
+              background: 'var(--navy, #0A1628)',
+              padding: '36px 32px',
+            }}
+          >
+            <p
+              className="m-0 mb-2"
+              style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '10px',
+                letterSpacing: '0.10em',
+                textTransform: 'uppercase',
+                color: 'rgba(255,255,255,0.55)',
+              }}
+            >
+              Stevin
+            </p>
+            <h3
+              className="font-display font-bold text-white m-0"
+              style={{ fontSize: '22px', lineHeight: 1.3, letterSpacing: '-0.015em' }}
+            >
+              {locale === 'en'
+                ? 'Know what your campaigns are doing, while it happens'
+                : 'Weten wat je campagnes doen, terwijl het gebeurt'}
+            </h3>
+            <p
+              className="m-0 mt-3"
+              style={{ fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}
+            >
+              {locale === 'en'
+                ? 'Stevin connects your advertising data, signals and results into your own marketing brain. Works on the stack you already have.'
+                : 'Stevin verbindt je advertentiedata, signalen en resultaten in je eigen marketing-brein. Werkt op de stack die je al hebt.'}
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center mt-6 px-6 py-3 font-semibold no-underline rounded-xl transition-colors"
+              style={{ fontSize: '15px', background: 'var(--accent, #3D8EFF)', color: '#fff' }}
+            >
+              {locale === 'en' ? 'Book an intro call' : 'Plan een kennismaking'}
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ── MORE FROM JOURNAL ── */}
       <section
