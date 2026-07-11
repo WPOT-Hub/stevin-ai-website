@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'meta-haalt-instagram-ai-deepfake-functie-weer-weg-na-kritiek',
+    format: 'dispatch' as const,
+    edition: '334',
+    category: 'Platform',
+    title: "Meta draait terug op Instagram AI-functie die deepfakes maakte van openbare accounts",
+    dek: "Meta schakelt een nieuwe Instagram-functie uit waarmee gebruikers AI-beelden konden genereren van content van openbare accounts zonder toestemming.",
+    publishedAt: '2026-07-11',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Meta draait terug op Instagram AI-functie die deepfakes maakte van openbare accounts",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'outlook-mac-bug-verandert-lettertype-keuze-in-decoratie',
     format: 'dispatch' as const,
     edition: '333',
