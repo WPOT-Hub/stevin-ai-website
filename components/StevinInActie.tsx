@@ -48,7 +48,7 @@ const HEADING_COPY: Record<Locale, {
     outcome: [
       {
         label: '24/7 monitoring',
-        body: 'Geen dashboard om te openen. Stevin scant continu en tikt je zodra het ergens weglekt.',
+        body: 'Geen dashboard om te openen. Stevin scant continu en tikt je zodra er ergens budget wordt verspild.',
       },
       {
         label: 'Diagnose met bewijs',

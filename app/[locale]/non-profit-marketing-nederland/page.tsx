@@ -211,7 +211,7 @@ export default async function NonProfitNederlandPage({ params }: Props) {
                 Bezoekers-flows, ticket-verkoop, programma-promotie per tentoonstelling, school-uitstap-targeting, partnerships en sponsoring. Stevin volgt zoekvraag rond locatie en programma en signaleert pieken die je live kan benutten.
               </p>
               <p className="text-muted leading-relaxed mb-4">
-                Plus: alerts wanneer ticket-resellers of derde partijen op jullie merknaam adverteren in Google. Stevin detecteert brand-bidding door externe partijen zodat jullie marges niet weglekken naar tussenhandel.
+                Plus: alerts wanneer ticket-resellers of derde partijen op jullie merknaam adverteren in Google. Stevin detecteert brand-bidding door externe partijen zodat jullie geen marge verliezen aan tussenhandel.
               </p>
               <p className="text-sm text-muted/80">
                 Voor: musea, theaters, festivals, erfgoed-organisaties, kunsteducatie.
