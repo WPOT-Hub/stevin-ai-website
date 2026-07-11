@@ -1460,6 +1460,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'meta-haalt-instagram-ai-deepfake-functie-weer-weg-na-kritiek': (
+    <>
+      <p className="lead-para">
+        De functie, deze week nog aangekondigd, liet gebruikers AI-beelden maken op basis van foto’s en video’s van openbare Instagram-profielen. Alleen door het account te taggen in de prompt kon de tool direct aan de slag. Gebruikers hoefden geen toestemming te vragen aan de makers van de originele content.
+      </p>
+      <p>
+        De terugdraaiing komt na forse kritiek vanuit creatieve gemeenschappen en privacy-organisaties. Zij wezen erop dat de functie auteursrecht en portretrecht kon schenden, omdat het werk zonder controle of kennis van de oorspronkelijke maker werd gebruikt. Ook ontstond er ongerustheid over misbruik voor het verspreiden van nepnieuws of deepfakes.
+      </p>
+      <p>
+        Meta heeft niet bevestigd of de functie ooit weer wordt geactiveerd. Het bedrijf geeft aan dat het eerst feedback wil verwerken en mogelijk alternatieven gaat onderzoeken die wel rekening houden met rechten van makers.
+      </p>
+    </>
+  ),
   'outlook-mac-bug-verandert-lettertype-keuze-in-decoratie': (
     <>
       <p className="lead-para">
@@ -5680,6 +5693,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'meta-haalt-instagram-ai-deepfake-functie-weer-weg-na-kritiek':
+    "Voor merken en creators betekent deze stap dat ze nog meer alert moeten zijn op hoe hun content online wordt gebruikt. Het toont aan dat platforms snel moeten schakelen bij publieke druk, wat soms ten koste gaat van functionaliteit. Tegelijkertijd benadrukt het dat merken zelf ook actief moeten controleren waar hun content verschijnt en eventueel juridische stappen kunnen zetten bij onrechtmatig gebruik.",
   'outlook-mac-bug-verandert-lettertype-keuze-in-decoratie':
     "Voor bedrijven die Outlook voor Mac gebruiken in hun communicatie is dit een risico voor de professionaliteit van uitgaande e-mails. Het is verstandig om medewerkers te wijzen op het controleren van lettertypes voordat ze berichten verzenden. Daarnaast kan dit probleem de samenwerking bemoeilijken als code of technische details niet correct worden weergegeven.",
   'ai-in-google-ads-mens-en-machine-samen':
