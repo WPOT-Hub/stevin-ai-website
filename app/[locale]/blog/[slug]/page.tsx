@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'reed-jobs-yosemite-ai-biotech-groei': (
+    <>
+      <p className="lead-para">
+        Yosemite, het fonds van de kleinzoon van Steve Jobs, heeft zich in korte tijd ontwikkeld tot een relevante speler in de biotechsector. Met een team van zeventien werknemers richt het fonds zich nu op het benutten van kansen die ontstaan door het gelijktijdig vervallen van patenten op blockbuster-geneesmiddelen. Deze patentkliffen creëren ruimte voor generieke varianten en nieuwe behandelingen, aldus de investeerder.
+      </p>
+      <p>
+        De opkomst van artificiële intelligentie speelt een sleutelrol in de strategie van Yosemite. AI wordt ingezet om sneller en nauwkeuriger potentiële medicijnen te identificeren en te ontwikkelen. Jobs zelf noemt AI zelfs een "groot deel" van wat het fonds nu doet, na een periode waarin biotechsector nog worstelde met de nasleep van de pandemie.
+      </p>
+      <p>
+        Het fonds combineert traditionele farmaceutische kennis met moderne technologieën om risico’s te spreiden en de kans op succesvolle uitvindingen te vergroten. Yosemite richt zich daarbij niet alleen op kleine startups, maar ook op gevestigde spelers die hun portfolio willen vernieuwen.
+      </p>
+    </>
+  ),
   'meta-haalt-instagram-ai-deepfake-functie-weer-weg-na-kritiek': (
     <>
       <p className="lead-para">
@@ -5745,6 +5758,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'reed-jobs-yosemite-ai-biotech-groei':
+    "Voor ondernemers die actief zijn in innovatieve sectoren zoals biotech of tech, laat Yosemites groei zien hoe snel marktkansen kunnen veranderen door externe factoren zoals patentverval of technologische sprongen. Het benadrukt het belang van flexibiliteit en het vermogen om strategieën aan te passen aan nieuwe realiteiten. Tegelijkertijd illustreert het hoe investeerders steeds vaker technologie integreren in traditionele sectoren om hun rendement te verhogen.",
   'meta-haalt-instagram-ai-deepfake-functie-weer-weg-na-kritiek':
     "Voor merken en creators betekent deze stap dat ze nog meer alert moeten zijn op hoe hun content online wordt gebruikt. Het toont aan dat platforms snel moeten schakelen bij publieke druk, wat soms ten koste gaat van functionaliteit. Tegelijkertijd benadrukt het dat merken zelf ook actief moeten controleren waar hun content verschijnt en eventueel juridische stappen kunnen zetten bij onrechtmatig gebruik.",
   'outlook-mac-bug-verandert-lettertype-keuze-in-decoratie':
