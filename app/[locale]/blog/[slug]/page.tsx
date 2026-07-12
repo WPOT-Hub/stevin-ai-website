@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'irland-datacenters-stroomverbruik-23-procent': (
+    <>
+      <p className="lead-para">
+        De groeiende vraag naar digitale infrastructuur drijft het energiegebruik in Ierland verder op. Datacenters namen vorig jaar 23% van de totale nationale stroomproductie voor hun rekening. De toename van 10% ten opzichte van het voorgaande jaar komt vooral door uitbreidingen bij bestaande faciliteiten.
+      </p>
+      <p>
+        Ondanks strenge regels rondom nieuwe aansluitingen rond Dublin blijft de vraag hoog. De overheid probeert met restricties de druk op het elektriciteitsnet te beperken, maar de capaciteit blijkt onvoldoende om de groei te stuiten. Lokale bedrijven en huishoudens merken inmiddels de gevolgen, met stijgende energieprijzen en regelmatige stroomstoringen.
+      </p>
+      <p>
+        Experts wijzen erop dat de situatie niet uniek is voor Ierland. In andere Europese landen waar techbedrijven zich concentreren, zoals Nederland en België, groeit het datacenterpark eveneens snel. De vraag is of de huidige netinfrastructuur deze groei langdurig kan dragen zonder ingrijpende aanpassingen.
+      </p>
+    </>
+  ),
   'reed-jobs-yosemite-ai-biotech-groei': (
     <>
       <p className="lead-para">
@@ -5758,6 +5771,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'irland-datacenters-stroomverbruik-23-procent':
+    "Voor ondernemers die afhankelijk zijn van betrouwbare energievoorziening wordt dit een steeds groter risico. Het is verstandig om nu al na te denken over back-upoplossingen of alternatieve locaties voor kritieke systemen. Daarnaast kan het slim zijn om samenwerking te zoeken met lokale overheden of energieleveranciers om toekomstige knelpunten tijdig te signaleren en aan te pakken.",
   'reed-jobs-yosemite-ai-biotech-groei':
     "Voor ondernemers die actief zijn in innovatieve sectoren zoals biotech of tech, laat Yosemites groei zien hoe snel marktkansen kunnen veranderen door externe factoren zoals patentverval of technologische sprongen. Het benadrukt het belang van flexibiliteit en het vermogen om strategieën aan te passen aan nieuwe realiteiten. Tegelijkertijd illustreert het hoe investeerders steeds vaker technologie integreren in traditionele sectoren om hun rendement te verhogen.",
   'meta-haalt-instagram-ai-deepfake-functie-weer-weg-na-kritiek':
