@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'reed-jobs-yosemite-ai-biotech-groei',
+    format: 'dispatch' as const,
+    edition: '335',
+    category: 'Finance',
+    title: "Yosemite verdubbelt in drie jaar: AI en patentklif sturen biotech-investeringen",
+    dek: "Het biotech-investeringsfonds Yosemite van Reed Jobs is in drie jaar gegroeid tot een team van zeventien medewerkers, gedreven door AI-toepassingen en een golf van patentverval.",
+    publishedAt: '2026-07-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "Yosemite verdubbelt in drie jaar: AI en patentklif sturen biotech-investeringen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'meta-haalt-instagram-ai-deepfake-functie-weer-weg-na-kritiek',
     format: 'dispatch' as const,
     edition: '334',
