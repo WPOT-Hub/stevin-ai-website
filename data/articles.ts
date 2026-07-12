@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'irland-datacenters-stroomverbruik-23-procent',
+    format: 'dispatch' as const,
+    edition: '336',
+    category: 'Operations',
+    title: "Ierse datacenters slokken 23% van landelijke stroom op",
+    dek: "Het stroomverbruik van datacenters in Ierland steeg vorig jaar met nog eens 10%, ondanks beperkingen op nieuwe aansluitingen in de hoofdstad.",
+    publishedAt: '2026-07-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Ierse datacenters slokken 23% van landelijke stroom op",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'reed-jobs-yosemite-ai-biotech-groei',
     format: 'dispatch' as const,
     edition: '335',
