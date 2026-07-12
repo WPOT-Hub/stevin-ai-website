@@ -127,5 +127,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: { 'nl-NL': `${baseUrl}/${p.slug}`, 'x-default': `${baseUrl}/${p.slug}` } },
   }))
 
-  return [...nlEntries, ...enEntries, ...landingEntries, ...blogEntries]
+  // Standalone EN outreach-editorial (bewust GEEN journal-item: het Journal is
+  // NL-only). Alleen de /en-URL is canoniek en indexeerbaar; de prefix-loze
+  // NL-variant canonicalt naar /en en hoort dus niet in de sitemap.
+  const standaloneEnEntries: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/en/who-owns-your-advertising-data`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/en/who-owns-your-advertising-data`,
+          'x-default': `${baseUrl}/en/who-owns-your-advertising-data`,
+        },
+      },
+    },
+  ]
+
+  return [...nlEntries, ...enEntries, ...landingEntries, ...blogEntries, ...standaloneEnEntries]
 }
