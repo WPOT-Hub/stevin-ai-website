@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'apples-failed-self-driving-car-program-legde-basis-voor-krachtige-ai-chips',
+    format: 'dispatch' as const,
+    edition: '338',
+    category: 'Tech',
+    title: "Apple’s mislukte zelfrijdende auto-programma legde basis voor krachtige AI-chips",
+    dek: "Apple’s afgebroken zelfrijdende autoproject leidde tot de ontwikkeling van geavanceerde AI-chips, zoals de M7 Ultra.",
+    publishedAt: '2026-07-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Apple’s mislukte zelfrijdende auto-programma legde basis voor krachtige AI-chips",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'geheugenproducenten-geblokkeerd-door-ai-boom',
     format: 'dispatch' as const,
     edition: '337',
