@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'twee-seo-kpi-s-die-minder-zeggen-dan-je-denkt',
+    format: 'dispatch' as const,
+    edition: '339',
+    category: 'Markt',
+    title: "Kliks en posities meten weinig: deze twee SEO-cijfers bepalen je echte succes",
+    dek: "De twee meest gebruikte SEO-KPI’s – klikfrequentie en zoekpositie – geven een vertekend beeld van je resultaten, blijkt uit recent onderzoek.",
+    publishedAt: '2026-07-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Kliks en posities meten weinig: deze twee SEO-cijfers bepalen je echte succes",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'apples-failed-self-driving-car-program-legde-basis-voor-krachtige-ai-chips',
     format: 'dispatch' as const,
     edition: '338',
