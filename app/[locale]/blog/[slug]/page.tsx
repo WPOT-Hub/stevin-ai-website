@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'twee-seo-kpi-s-die-minder-zeggen-dan-je-denkt': (
+    <>
+      <p className="lead-para">
+        Uit een analyse van meer dan 10.000 zoekopdrachten blijkt dat de gemiddelde klikfrequentie (CTR) op de eerste positie in Google de afgelopen twee jaar met 15% is gedaald, aldus het rapport. Posities alleen zeggen niets over of je doelgroep daadwerkelijk actie onderneemt na een bezoek. Een hoge positie kan zelfs leiden tot irrelevante verkeer als de zoekintentie niet aansluit bij je aanbod.
+      </p>
+      <p>
+        De tweede veelgehoorde KPI, het aantal organische bezoeken, meet evenmin succes. Onderzoekers tonen aan dat bedrijven met een stijging van 30% in organisch verkeer vaak geen hogere omzet of leadkwaliteit zien. Het probleem: zonder meetdata van conversies of klantwaarde blijft onduidelijk of het verkeer waarde toevoegt.
+      </p>
+      <p>
+        Twee alternatieve cijfers geven wel inzicht: de gemiddelde tijd op pagina en het percentage terugkerende bezoekers. Een langere tijd op pagina wijst op relevante content, terwijl terugkerende bezoekers aangeven dat je site waardevol genoeg is om opnieuw te bezoeken.
+      </p>
+    </>
+  ),
   'apples-failed-self-driving-car-program-legde-basis-voor-krachtige-ai-chips': (
     <>
       <p className="lead-para">
@@ -5797,6 +5810,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'twee-seo-kpi-s-die-minder-zeggen-dan-je-denkt':
+    "Voor bureau-eigenaars en in-house teams betekent dit dat SEO-strategieën moeten verschuiven van ‘meer zichtbaarheid’ naar ‘betere kwaliteit’. Focus eerst op het optimaliseren van landingspagina’s voor conversie in plaats van alleen rankings te jagen. Meet daarnaast niet alleen traffic, maar ook gedrag zoals scrollgedrag en interacties die leiden tot actie.",
   'apples-failed-self-driving-car-program-legde-basis-voor-krachtige-ai-chips':
     "Voor bedrijven die investeren in technologieontwikkeling is dit een duidelijke les: soms leiden mislukte projecten tot onverwachte innovaties met bredere toepassingen. Het benadrukt het belang van flexibiliteit en het vermogen om bestaande technologieën her te gebruiken voor nieuwe doelen. Voor techbedrijven kan het slim zijn om tijdens ontwikkeltrajecten ruimte te houden voor alternatieve toepassingen van gegenereerde kennis.",
   'geheugenproducenten-geblokkeerd-door-ai-boom':
