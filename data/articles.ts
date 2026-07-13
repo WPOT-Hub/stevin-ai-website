@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'geheugenproducenten-geblokkeerd-door-ai-boom',
+    format: 'dispatch' as const,
+    edition: '337',
+    category: 'Markt',
+    title: "Geheugenproducenten blokkeren door AI-boom: schaarste en prijsexplosie",
+    dek: "De vraag naar geheugenchips voor AI-systemen leidt tot forse productieproblemen en prijsstijgingen bij fabrikanten.",
+    publishedAt: '2026-07-13',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Geheugenproducenten blokkeren door AI-boom: schaarste en prijsexplosie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'irland-datacenters-stroomverbruik-23-procent',
     format: 'dispatch' as const,
     edition: '336',
