@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'geheugenproducenten-geblokkeerd-door-ai-boom': (
+    <>
+      <p className="lead-para">
+        Fabrikanten van RAM- en SSD-chips kampen met extreme vraag naar hun producten door de groeiende AI-infrastructuur. De productiecapaciteit blijft achter bij de snel stijgende behoefte, aldus analisten. Dit leidt tot langere levertijden en hogere prijzen voor bedrijven die servers of hardware aanschaffen. Kleine en middelgrote ondernemers voelen de impact het sterkst, omdat ze minder onderhandelingsruimte hebben.
+      </p>
+      <p>
+        De huidige situatie doet denken aan eerdere cycli in de chipindustrie, zoals de 'RAMpocalypse' van begin jaren 2020. Toch is de druk nu groter door de snelle adoptie van AI-toepassingen in sectoren als logistiek, gezondheidszorg en financiële dienstverlening. Experts waarschuwen dat deze schaarste nog maanden kan aanhouden, zelfs als producenten hun capaciteit verhogen.
+      </p>
+      <p>
+        Ondertussen proberen techbedrijven alternatieven te vinden, zoals het hergebruiken van oudere chips of het uitstellen van uitbreidingen. Voor organisaties die afhankelijk zijn van snelle data-verwerking wordt de zoektocht naar betrouwbare leveranciers een steeds grotere uitdaging.
+      </p>
+    </>
+  ),
   'irland-datacenters-stroomverbruik-23-procent': (
     <>
       <p className="lead-para">
@@ -5771,6 +5784,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'geheugenproducenten-geblokkeerd-door-ai-boom':
+    "Voor bedrijven die afhankelijk zijn van IT-infrastructuur is dit een signaal om kritisch te kijken naar hun afhankelijkheid van externe leveranciers. Het is verstandig om bufferstrategieën te overwegen, zoals het opbouwen van een kleine voorraad of het diversifiëren van toeleveranciers. Daarnaast kan het helpen om langetermijncontracten af te sluiten waar mogelijk, om onverwachte kostenstijgingen te beperken.",
   'irland-datacenters-stroomverbruik-23-procent':
     "Voor ondernemers die afhankelijk zijn van betrouwbare energievoorziening wordt dit een steeds groter risico. Het is verstandig om nu al na te denken over back-upoplossingen of alternatieve locaties voor kritieke systemen. Daarnaast kan het slim zijn om samenwerking te zoeken met lokale overheden of energieleveranciers om toekomstige knelpunten tijdig te signaleren en aan te pakken.",
   'reed-jobs-yosemite-ai-biotech-groei':
