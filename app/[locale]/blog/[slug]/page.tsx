@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'apples-failed-self-driving-car-program-legde-basis-voor-krachtige-ai-chips': (
+    <>
+      <p className="lead-para">
+        De ontwikkeling van Apple’s zelfrijdende auto-project, dat nooit van de grond kwam, zorgde ervoor dat het bedrijf inzicht kreeg in de behoefte aan krachtige on-board AI-verwerking. Om complexe berekeningen lokaal uit te voeren zonder afhankelijk te zijn van cloudoplossingen, begon Apple met het ontwerpen van high-performance chips.
+      </p>
+      <p>
+        Deze inspanningen leidden uiteindelijk tot de M-serie chips, waaronder de M7 Ultra die vandaag wordt gebruikt in Macs en andere apparaten. De chips bleken zo succesvol dat ze niet alleen werden ingezet in consumentenproducten, maar ook als basis dienden voor latere AI-toepassingen binnen Apple’s ecosysteem.
+      </p>
+      <p>
+        Hoewel het autoproject zelf werd stopgezet, blijkt nu dat de technologische doorbraken die eruit voortkwamen een blijvend effect hebben gehad op Apple’s hardware-strategie. De investering in lokale AI-verwerking bleek uiteindelijk waardevoller dan het oorspronkelijke doel.
+      </p>
+    </>
+  ),
   'geheugenproducenten-geblokkeerd-door-ai-boom': (
     <>
       <p className="lead-para">
@@ -5784,6 +5797,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'apples-failed-self-driving-car-program-legde-basis-voor-krachtige-ai-chips':
+    "Voor bedrijven die investeren in technologieontwikkeling is dit een duidelijke les: soms leiden mislukte projecten tot onverwachte innovaties met bredere toepassingen. Het benadrukt het belang van flexibiliteit en het vermogen om bestaande technologieën her te gebruiken voor nieuwe doelen. Voor techbedrijven kan het slim zijn om tijdens ontwikkeltrajecten ruimte te houden voor alternatieve toepassingen van gegenereerde kennis.",
   'geheugenproducenten-geblokkeerd-door-ai-boom':
     "Voor bedrijven die afhankelijk zijn van IT-infrastructuur is dit een signaal om kritisch te kijken naar hun afhankelijkheid van externe leveranciers. Het is verstandig om bufferstrategieën te overwegen, zoals het opbouwen van een kleine voorraad of het diversifiëren van toeleveranciers. Daarnaast kan het helpen om langetermijncontracten af te sluiten waar mogelijk, om onverwachte kostenstijgingen te beperken.",
   'irland-datacenters-stroomverbruik-23-procent':
