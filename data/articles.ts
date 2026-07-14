@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'india-ruimtemissie-gaganyaan-vertraging',
+    format: 'dispatch' as const,
+    edition: '342',
+    category: 'Tech',
+    title: "India stelt bemande ruimtemissie Gaganyaan uit, lancering nu pas in 2027",
+    dek: "India's eerste bemande ruimtevlucht Gaganyaan is vertraagd tot 2027, waardoor het land niet langer in 2026 de vierde natie wordt met een orbitale missie.",
+    publishedAt: '2026-07-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "India stelt bemande ruimtemissie Gaganyaan uit, lancering nu pas in 2027",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-lanceert-video-campaign-groups-voor-betere-reach-en-frequency',
     format: 'dispatch' as const,
     edition: '341',
