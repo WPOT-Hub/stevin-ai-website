@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spacex-starship-13e-testvlucht-deze-week-met-starlink-satellieten': (
+    <>
+      <p className="lead-para">
+        SpaceX plant deze week de dertiende testvlucht van zijn Starship-raket. Tijdens deze missie wordt het ruimtevaartuig onderworpen aan hogere druk en complexere manoeuvres dan bij eerdere vluchten. Het doel is om de betrouwbaarheid en veiligheid van het systeem verder te vergroten voordat commerciële vluchten mogelijk worden.
+      </p>
+      <p>
+        Naast technische uitdagingen neemt SpaceX ook nieuwe Starlink-satellieten mee naar de ruimte. Deze satellieten moeten worden getest op hun functionaliteit in een operationele omgeving. De lancering vindt plaats vanaf de Starbase-faciliteit in Texas, waar SpaceX al meerdere testvluchten heeft uitgevoerd.
+      </p>
+      <p>
+        Deze testvlucht komt op een moment dat concurrenten zoals Blue Origin en internationale ruimtevaartorganisaties ook stappen zetten in de ontwikkeling van herbruikbare raketten. De resultaten van deze missie kunnen daarom bredere implicaties hebben voor de toekomst van ruimtetransport.
+      </p>
+    </>
+  ),
   'google-lanceert-video-campaign-groups-voor-betere-reach-en-frequency': (
     <>
       <p className="lead-para">
@@ -5823,6 +5836,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spacex-starship-13e-testvlucht-deze-week-met-starlink-satellieten':
+    "Voor bedrijven die afhankelijk zijn van technologische innovatie, zoals logistieke partijen of telecomaanbieders, toont deze ontwikkeling aan hoe snel nieuwe technologieën beschikbaar kunnen komen. Het benadrukt het belang van flexibiliteit en bereidheid om te investeren in onzekere maar potentieel revolutionaire ontwikkelingen. Tegelijkertijd vraagt het om een scherp oog voor risicomanagement, zeker als je afhankelijk bent van externe leveranciers zoals SpaceX.",
   'google-lanceert-video-campaign-groups-voor-betere-reach-en-frequency':
     "Voor bureaus betekent dit meer flexibiliteit bij het beheren van grote campagnesets. Het is een praktische oplossing om blind spots in de meting te voorkomen en de uplift van videocampagnes te optimaliseren. De toevoeging past binnen Googles bredere trend om adverteerders meer controle te geven over hun advertentiestrategieën.",
   'twee-seo-kpi-s-die-minder-zeggen-dan-je-denkt':
