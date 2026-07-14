@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'india-ruimtemissie-gaganyaan-vertraging': (
+    <>
+      <p className="lead-para">
+        De ruimtevaartorganisatie ISRO heeft bekendgemaakt dat de lancering van de bemande Gaganyaan-missie naar achteren wordt geschoven. Oorspronkelijk gepland voor 2022, moet de missie nu wachten tot begin 2027. Het doel blijft om India als vierde land na Rusland, de VS en China mensen in een baan om de aarde te brengen.
+      </p>
+      <p>
+        Technische uitdagingen en strenge veiligheidseisen liggen ten grondslag aan de vertraging. ISRO test momenteel onbemande vluchten en subsystemen, maar belangrijke mijlpalen zoals het testen van het ontsnappingssysteem voor astronauten moeten nog worden afgerond. Een mislukte test in mei dit jaar onderstreepte de noodzaak van extra voorbereiding.
+      </p>
+      <p>
+        India zet ondanks de tegenslag door op zijn ruimtevaartprogramma. Het land investeert fors in eigen technologie om minder afhankelijk te zijn van buitenlandse lanceersystemen. De focus ligt nu op het veiligstellen van betrouwbare terugkeer van bemanning en lading voordat de eerste bemande vlucht plaatsvindt.
+      </p>
+    </>
+  ),
   'spacex-starship-13e-testvlucht-deze-week-met-starlink-satellieten': (
     <>
       <p className="lead-para">
@@ -5836,6 +5849,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'india-ruimtemissie-gaganyaan-vertraging':
+    "Voor bedrijven die innovatie hoog in het vaandel dragen, toont deze vertraging hoe belangrijk geduld en grondige voorbereiding zijn bij complexe projecten. Zelfs met ambitieuze doelstellingen kan technische perfectie soms meer tijd vergen dan gepland. Het benadrukt ook dat risicobeheer en falen onderdeel uitmaken van vooruitgang, zolang er maar geleerd wordt.",
   'spacex-starship-13e-testvlucht-deze-week-met-starlink-satellieten':
     "Voor bedrijven die afhankelijk zijn van technologische innovatie, zoals logistieke partijen of telecomaanbieders, toont deze ontwikkeling aan hoe snel nieuwe technologieën beschikbaar kunnen komen. Het benadrukt het belang van flexibiliteit en bereidheid om te investeren in onzekere maar potentieel revolutionaire ontwikkelingen. Tegelijkertijd vraagt het om een scherp oog voor risicomanagement, zeker als je afhankelijk bent van externe leveranciers zoals SpaceX.",
   'google-lanceert-video-campaign-groups-voor-betere-reach-en-frequency':
