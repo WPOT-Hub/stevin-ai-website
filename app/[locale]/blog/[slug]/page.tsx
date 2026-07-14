@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-lanceert-video-campaign-groups-voor-betere-reach-en-frequency': (
+    <>
+      <p className="lead-para">
+        Google breidt de mogelijkheden van video-advertenties uit met video-campaign groups. Met deze functie kunnen bureaus en adverteerders meerdere campagnes combineren om een consistent bereik en frequentie te waarborgen. Elke campagne behoudt echter wel zijn eigen instellingen, zoals doelgroepen, budgetten en biedstrategieën.
+      </p>
+      <p>
+        De nieuwe tool is vooral nuttig voor merken die op grote schaal video-advertenties inzetten. Door campagnes te groeperen, kunnen ze voorkomen dat dezelfde gebruiker dezelfde advertentie te vaak ziet. Dit vermindert irritatie en verhoogt de effectiviteit van campagnes aldus Google.
+      </p>
+      <p>
+        De functie is beschikbaar in Google Ads voor alle adverteerders die gebruikmaken van video-campagnes. Momenteel wordt het stapsgewijs uitgerold, zodat bedrijven de tijd hebben om zich vertrouwd te maken met de nieuwe mogelijkheden.
+      </p>
+    </>
+  ),
   'twee-seo-kpi-s-die-minder-zeggen-dan-je-denkt': (
     <>
       <p className="lead-para">
@@ -5810,6 +5823,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-lanceert-video-campaign-groups-voor-betere-reach-en-frequency':
+    "Voor bureaus betekent dit meer flexibiliteit bij het beheren van grote campagnesets. Het is een praktische oplossing om blind spots in de meting te voorkomen en de uplift van videocampagnes te optimaliseren. De toevoeging past binnen Googles bredere trend om adverteerders meer controle te geven over hun advertentiestrategieën.",
   'twee-seo-kpi-s-die-minder-zeggen-dan-je-denkt':
     "Voor bureau-eigenaars en in-house teams betekent dit dat SEO-strategieën moeten verschuiven van ‘meer zichtbaarheid’ naar ‘betere kwaliteit’. Focus eerst op het optimaliseren van landingspagina’s voor conversie in plaats van alleen rankings te jagen. Meet daarnaast niet alleen traffic, maar ook gedrag zoals scrollgedrag en interacties die leiden tot actie.",
   'apples-failed-self-driving-car-program-legde-basis-voor-krachtige-ai-chips':
