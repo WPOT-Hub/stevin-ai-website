@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-lanceert-video-campaign-groups-voor-betere-reach-en-frequency',
+    format: 'dispatch' as const,
+    edition: '341',
+    category: 'Platform',
+    title: "Google introduceert video-campaign groups voor betere controle over bereik en frequentie",
+    dek: "Adverteerders kunnen nu video-campagnes groeperen om bereik en frequentie beter af te stemmen zonder individuele instellingen te verliezen.",
+    publishedAt: '2026-07-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google introduceert video-campaign groups voor betere controle over bereik en frequentie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spacex-starship-13e-testvlucht-deze-week-met-starlink-satellieten',
     format: 'dispatch' as const,
     edition: '340',
