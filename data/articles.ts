@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'spacex-starship-13e-testvlucht-deze-week-met-starlink-satellieten',
+    format: 'dispatch' as const,
+    edition: '340',
+    category: 'Tech',
+    title: "SpaceX lanceert Starship voor 13e testvlucht deze week",
+    dek: "De komende Starship-testvlucht van SpaceX gaat hogere risico’s testen en nieuwe Starlink-satellieten in een baan om de aarde brengen.",
+    publishedAt: '2026-07-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "SpaceX lanceert Starship voor 13e testvlucht deze week",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'twee-seo-kpi-s-die-minder-zeggen-dan-je-denkt',
     format: 'dispatch' as const,
     edition: '339',
