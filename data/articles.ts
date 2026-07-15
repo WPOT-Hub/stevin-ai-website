@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'agentschap-web-nieuwe-hoop-publishers',
+    format: 'dispatch' as const,
+    edition: '348',
+    category: 'Platform',
+    title: "Nieuwe regels nodig voor het agentschap-web: hoe publishers zichzelf weren tegen techgiganten",
+    dek: "De klassieke 'We don't serve their kind here'-mentaliteit van publishers beschermt nu hun belangen, maar blokkeert innovatie in een markt gedomineerd door Google en Meta.",
+    publishedAt: '2026-07-15',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Nieuwe regels nodig voor het agentschap-web: hoe publishers zichzelf weren tegen techgiganten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'eu-sap-maintenance-fee-bargaining-chip',
     format: 'dispatch' as const,
     edition: '347',
