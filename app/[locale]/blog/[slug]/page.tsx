@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'boston-dynamics-test-robot-honden-voor-leveringen': (
+    <>
+      <p className="lead-para">
+        Boston Dynamics voegt een transportband toe aan zijn robot-hond Spot, zodat deze pakketten kan oppakken en afleveren bij klanten. Het systeem moet vooral helpen bij last-mile bezorging, waar menselijke bezorgers vaak nog handmatig werken. De robot navigeert zelfstandig en kan meerdere stops maken tijdens één route.
+      </p>
+      <p>
+        Momenteel wordt de technologie getest in beperkte omgevingen, zoals fabrieksterreinen en bedrijventerreinen. De focus ligt op efficiëntie: minder handmatige handelingen betekent snellere bezorging en lagere kosten. Voorlopig blijft de robot wel afhankelijk van een voertuig voor het oppakken van de pakketten.
+      </p>
+      <p>
+        De ontwikkeling past in een bredere trend waarbij robots steeds vaker worden ingezet voor logistieke taken. Eerdere toepassingen van Spot betroffen onder meer inspecties en veiligheidscontroles in gevaarlijke omgevingen.
+      </p>
+    </>
+  ),
   'spacexai-grok-build-code-upload-geblokkeerd': (
     <>
       <p className="lead-para">
@@ -5875,6 +5888,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'boston-dynamics-test-robot-honden-voor-leveringen':
+    "Voor bedrijven die afhankelijk zijn van logistiek kan dit soort technologie op termijn interessante besparingen opleveren. Toch blijft de vraag hoe snel deze oplossingen schaalbaar zijn en of klanten bereid zijn om robots als bezorgers te accepteren. Voor nu lijkt het vooral een innovatie voor gespecialiseerde sectoren, zoals fabrieken of grote distributiecentra.",
   'spacexai-grok-build-code-upload-geblokkeerd':
     "Voor bedrijven die AI-gestuurde ontwikkeltools inzetten, is dit een waarschuwing om niet alleen naar functionaliteit te kijken, maar ook naar databeheer. Zorg voor duidelijke afspraken over welke data wel en niet gedeeld mag worden met externe partijen. Een interne review van bestaande AI-tools kan onverwachte risico’s aan het licht brengen.",
   'ai-geneesmiddelen-startup-waardering-2-miljard':
