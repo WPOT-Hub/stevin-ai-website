@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'agentschap-web-nieuwe-hoop-publishers': (
+    <>
+      <p className="lead-para">
+        De Star Wars-cantina uit de films symboliseert vandaag de dag hoe traditionele publishers reageren op externe partijen die hun businessmodel bedreigen. Door toegang te weigeren aan adverteerders buiten hun ecosysteem, behouden ze controle, maar sluiten ze ook de deur voor nieuwe kansen in een wereld waar agentschap en automatisering centraal staan.
+      </p>
+      <p>
+        Techgiganten als Google en Meta hebben die controle echter al overgenomen door hun dominante positie in adtech en datamarkten. Publishers die vasthouden aan oude afweermechanismen lopen het risico om buiten spel te staan wanneer de volgende generatie digitale handel – zoals programmatic direct deals of AI-gestuurde advertentieplaatsing – volledig door algoritmes wordt bepaald.
+      </p>
+      <p>
+        Een gebrek aan samenwerking tussen publishers onderling versterkt dit probleem. Zonder gemeenschappelijke standaarden of open systemen kunnen individuele partijen moeilijk concurreren met de schaalvoordelen van de grote platforms, aldus critici.
+      </p>
+    </>
+  ),
   'eu-sap-maintenance-fee-bargaining-chip': (
     <>
       <p className="lead-para">
@@ -5901,6 +5914,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'agentschap-web-nieuwe-hoop-publishers':
+    "Voor bedrijven die afhankelijk zijn van digitale inkomstenbronnen is deze situatie herkenbaar: wie niet meebeweegt met technologische verschuivingen, loopt achter bij concurrenten die wel inzetten op flexibiliteit. De uitdaging ligt niet alleen in het beschermen van bestaande modellen, maar ook in het verkennen van nieuwe wegen om waarde te creëren binnen een steeds complexere digitale infrastructuur. Dat vraagt om investeringen in technologie én samenwerking, zonder afhankelijk te blijven van partijen die de regels bepalen.",
   'eu-sap-maintenance-fee-bargaining-chip':
     "Voor bedrijven die al jaren vastzitten aan dure SAP-contracten biedt deze uitspraak een unieke kans om de kosten te herzien. Het is echter belangrijk om niet alleen naar de prijs te kijken, maar ook naar de risico’s van een overstap naar externe partijen. Een gedegen analyse van de totale kosten en operationele impact is essentieel voordat een beslissing wordt genomen.",
   'boston-dynamics-test-robot-honden-voor-leveringen':
