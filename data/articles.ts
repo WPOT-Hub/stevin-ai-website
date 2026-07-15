@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'boston-dynamics-test-robot-honden-voor-leveringen',
+    format: 'dispatch' as const,
+    edition: '346',
+    category: 'Tech',
+    title: "Boston Dynamics test robot-honden voor pakketbezorging",
+    dek: "De robot-hond Spot krijgt een nieuw accessoire om zelfstandig pakketten van een voertuig naar de deur te brengen.",
+    publishedAt: '2026-07-15',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Boston Dynamics test robot-honden voor pakketbezorging",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spacexai-grok-build-code-upload-geblokkeerd',
     format: 'dispatch' as const,
     edition: '345',
