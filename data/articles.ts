@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'spacexai-grok-build-code-upload-geblokkeerd',
+    format: 'dispatch' as const,
+    edition: '345',
+    category: 'Operations',
+    title: "Grok Build van SpaceXAI stuurde codebases automatisch naar de cloud",
+    dek: "De AI-codingtool Grok Build van SpaceXAI uploadde zonder toestemming volledige codebases van gebruikers naar Google Cloud, tot het systeem werd uitgeschakeld.",
+    publishedAt: '2026-07-15',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Grok Build van SpaceXAI stuurde codebases automatisch naar de cloud",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'deepseek-1-5-miljard-dollar-investering-en-ipo-plannen',
     format: 'dispatch' as const,
     edition: '344',
