@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-geneesmiddelen-startup-waardering-2-miljard': (
+    <>
+      <p className="lead-para">
+        Miles Wang, voormalig medewerker van OpenAI, is in gesprek om een eigen bedrijf op te richten dat zich richt op het ontdekken van nieuwe geneesmiddelen met behulp van kunstmatige intelligentie. De startup zou een waardering kunnen krijgen van $2 miljard, aldus insiders.
+      </p>
+      <p>
+        De interesse van investeerders in deze technologie blijkt groot. AI-toepassingen in de life sciences worden gezien als een veelbelovende manier om de ontwikkeling van medicijnen sneller en goedkoper te maken. Wang heeft ervaring binnen het team dat werkte aan geavanceerde taalmodellen.
+      </p>
+      <p>
+        Het bedrijf zal zich richten op het analyseren van grote hoeveelheden biomedische data om patronen te ontdekken die kunnen leiden tot nieuwe behandelingen. Dit past in een bredere trend waarbij techbedrijven steeds vaker samenwerken met farmaceutische sectoren.
+      </p>
+    </>
+  ),
   'india-ruimtemissie-gaganyaan-vertraging': (
     <>
       <p className="lead-para">
@@ -5849,6 +5862,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-geneesmiddelen-startup-waardering-2-miljard':
+    "Deze ontwikkeling laat zien hoe kunstmatige intelligentie steeds meer terrein wint in sectoren waar traditioneel veel tijd en geld werd gestoken in research en ontwikkeling. Voor ondernemers betekent dit dat ze moeten nadenken over hoe ze AI kunnen integreren in hun eigen processen, ook buiten de techsector. Het kan leiden tot efficiencywinst of nieuwe businessmodellen, maar vraagt wel om specifieke kennis en samenwerkingen.",
   'india-ruimtemissie-gaganyaan-vertraging':
     "Voor bedrijven die innovatie hoog in het vaandel dragen, toont deze vertraging hoe belangrijk geduld en grondige voorbereiding zijn bij complexe projecten. Zelfs met ambitieuze doelstellingen kan technische perfectie soms meer tijd vergen dan gepland. Het benadrukt ook dat risicobeheer en falen onderdeel uitmaken van vooruitgang, zolang er maar geleerd wordt.",
   'spacex-starship-13e-testvlucht-deze-week-met-starlink-satellieten':
