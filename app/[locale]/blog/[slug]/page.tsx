@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'eu-sap-maintenance-fee-bargaining-chip': (
+    <>
+      <p className="lead-para">
+        De Europese Commissie heeft SAP verplicht om klanten meer zeggenschap te geven over onderhoudskosten. Dit volgt op een eerdere rechtszaak waarin SAP werd beschuldigd van oneerlijke prijsstelling voor softwareonderhoud. Klanten die vasthouden aan de officiële SAP-ondersteuning krijgen nu meer mogelijkheden om lagere tarieven af te dwingen of zelfs over te stappen naar externe partijen.
+      </p>
+      <p>
+        Toch is een snelle exodus naar derde-partijondersteuners niet direct in zicht. Veel bedrijven blijven afhankelijk van de integratie en stabiliteit die SAP biedt, terwijl externe ondersteuners vaak minder garanties bieden. Daarnaast zijn er praktische belemmeringen, zoals compatibiliteitsproblemen tussen systemen en de complexiteit van migratieprocessen.
+      </p>
+      <p>
+        De beslissing betekent vooral dat klanten nu beter gepositioneerd zijn om betere voorwaarden af te dwingen binnen hun bestaande contracten. Voor bedrijven die al jaren met hoge onderhoudskosten kampten, kan dit een welkome adempauze betekenen zonder dat ze direct hoeven te switchen.
+      </p>
+    </>
+  ),
   'boston-dynamics-test-robot-honden-voor-leveringen': (
     <>
       <p className="lead-para">
@@ -5888,6 +5901,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'eu-sap-maintenance-fee-bargaining-chip':
+    "Voor bedrijven die al jaren vastzitten aan dure SAP-contracten biedt deze uitspraak een unieke kans om de kosten te herzien. Het is echter belangrijk om niet alleen naar de prijs te kijken, maar ook naar de risico’s van een overstap naar externe partijen. Een gedegen analyse van de totale kosten en operationele impact is essentieel voordat een beslissing wordt genomen.",
   'boston-dynamics-test-robot-honden-voor-leveringen':
     "Voor bedrijven die afhankelijk zijn van logistiek kan dit soort technologie op termijn interessante besparingen opleveren. Toch blijft de vraag hoe snel deze oplossingen schaalbaar zijn en of klanten bereid zijn om robots als bezorgers te accepteren. Voor nu lijkt het vooral een innovatie voor gespecialiseerde sectoren, zoals fabrieken of grote distributiecentra.",
   'spacexai-grok-build-code-upload-geblokkeerd':
