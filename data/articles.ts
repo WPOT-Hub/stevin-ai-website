@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'deepseek-1-5-miljard-dollar-investering-en-ipo-plannen',
+    format: 'dispatch' as const,
+    edition: '344',
+    category: 'Tech | Markt',
+    title: "DeepSeek zoekt $1,5 miljard op voor IPO in 2027",
+    dek: "Het Chinese AI-bedrijf DeepSeek bereidt een beursgang voor in 2027 en zoekt nu $1,5 miljard op bij investeerders tegen een waardering van $71 miljard.",
+    publishedAt: '2026-07-15',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH | MARKT',
+    posterTopic: "DeepSeek zoekt $1,5 miljard op voor IPO in 2027",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-geneesmiddelen-startup-waardering-2-miljard',
     format: 'dispatch' as const,
     edition: '343',
