@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-geneesmiddelen-startup-waardering-2-miljard',
+    format: 'dispatch' as const,
+    edition: '343',
+    category: 'Tech',
+    title: "Ex-OpenAI-medewerker lanceert AI-geneesmiddelenstartup met $2 miljard waardering",
+    dek: "Een voormalig onderzoeker van OpenAI werkt aan de lancering van een startup die met kunstmatige intelligentie nieuwe geneesmiddelen moet ontdekken.",
+    publishedAt: '2026-07-15',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Ex-OpenAI-medewerker lanceert AI-geneesmiddelenstartup met $2 miljard waardering",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'india-ruimtemissie-gaganyaan-vertraging',
     format: 'dispatch' as const,
     edition: '342',
