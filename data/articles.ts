@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'eu-sap-maintenance-fee-bargaining-chip',
+    format: 'dispatch' as const,
+    edition: '347',
+    category: 'Finance',
+    title: "EU geeft SAP-klanten meer onderhandelingskracht over onderhoudskosten",
+    dek: "Een recente mededingingsbeslissing van de EU zorgt voor meer ruimte bij contractonderhandelingen, maar een massale overstap naar derde partijen blijft onwaarschijnlijk.",
+    publishedAt: '2026-07-15',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "EU geeft SAP-klanten meer onderhandelingskracht over onderhoudskosten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'boston-dynamics-test-robot-honden-voor-leveringen',
     format: 'dispatch' as const,
     edition: '346',
