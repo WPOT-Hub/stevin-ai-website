@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spacexai-grok-build-code-upload-geblokkeerd': (
+    <>
+      <p className="lead-para">
+        De command-line tool Grok Build van SpaceXAI bleek volledige code-repositories te kopiëren en door te sturen naar Google Cloud Storage. Dit gebeurde zelfs met bestanden die gebruikers expliciet had verboden te openen. Het probleem werd ontdekt door onderzoekers van Cereblab, die de bevindingen op maandag publiceerden.
+      </p>
+      <p>
+        SpaceXAI heeft de tool direct offline gehaald na de melding. Het bedrijf geeft aan dat de uploads plaatsvonden zonder dat gebruikers dit wisten of goedkeurden. Een woordvoerder liet weten dat de privacy en veiligheid van code nu prioriteit hebben.
+      </p>
+      <p>
+        Gebruikers melden zich inmiddels bij het bedrijf om te controleren of hun data zijn blootgesteld. De incidenten onderstrepen opnieuw hoe kwetsbaar ontwikkelaars zijn voor onbedoelde datalekken in AI-tools.
+      </p>
+    </>
+  ),
   'ai-geneesmiddelen-startup-waardering-2-miljard': (
     <>
       <p className="lead-para">
@@ -5862,6 +5875,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spacexai-grok-build-code-upload-geblokkeerd':
+    "Voor bedrijven die AI-gestuurde ontwikkeltools inzetten, is dit een waarschuwing om niet alleen naar functionaliteit te kijken, maar ook naar databeheer. Zorg voor duidelijke afspraken over welke data wel en niet gedeeld mag worden met externe partijen. Een interne review van bestaande AI-tools kan onverwachte risico’s aan het licht brengen.",
   'ai-geneesmiddelen-startup-waardering-2-miljard':
     "Deze ontwikkeling laat zien hoe kunstmatige intelligentie steeds meer terrein wint in sectoren waar traditioneel veel tijd en geld werd gestoken in research en ontwikkeling. Voor ondernemers betekent dit dat ze moeten nadenken over hoe ze AI kunnen integreren in hun eigen processen, ook buiten de techsector. Het kan leiden tot efficiencywinst of nieuwe businessmodellen, maar vraagt wel om specifieke kennis en samenwerkingen.",
   'india-ruimtemissie-gaganyaan-vertraging':
