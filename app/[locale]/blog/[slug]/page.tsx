@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-maakt-seo-en-ppc-complementair-in-plaats-van-competitie': (
+    <>
+      <p className="lead-para">
+        De traditionele discussie tussen SEO en PPC als elkaars tegenstanders is achterhaald door de invloed van AI op zoekgedrag. Waar voorheen organisaties moesten kiezen tussen organische groei of directe acquisitie via advertenties, blijkt nu dat beide kanalen elkaar aanvullen. AI-gestuurde zoekopdrachten maken gebruik van zowel organische als betaalde resultaten, waardoor een geïntegreerde aanpak noodzakelijk wordt om zichtbaarheid te garanderen. Dit geldt met name voor complexe aankoopbeslissingen die meerdere touchpoints vereisen voordat een klant overgaat tot actie.
+      </p>
+      <p>
+        Uit meetdata blijkt dat campagnes die zowel SEO als PPC combineren, een hogere totale conversie opleveren dan wanneer ze apart worden ingezet. Dit komt doordat AI-algoritmes zoals Google’s Search Generative Experience (SGE) zowel organische als gesponsorde content integreren in antwoorden. Bedrijven die beide kanalen optimaal benutten, zien niet alleen een stijging in directe verkopen via PPC, maar ook een langetermijnvoordeel door betere organische rankings door verhoogde click-through rates (CTR).
+      </p>
+      <p>
+        De verschuiving betekent dat marketeers hun strategie moeten aanpassen: waar voorheen budgetten vaak verdeeld werden over beide kanalen op basis van historische prestaties, wordt nu gefocust op synergie. Zo kan een sterke organische aanwezigheid de kosten per klik (CPC) verlagen door hogere kwaliteitsscores, terwijl PPC direct verkeer kan genereren naar pagina’s die nog niet hoog scoren in de organische resultaten.
+      </p>
+    </>
+  ),
   'apple-sluit-thuisvakkers-uit-van-maps-advertenties': (
     <>
       <p className="lead-para">
@@ -5968,6 +5981,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-maakt-seo-en-ppc-complementair-in-plaats-van-competitie':
+    "Voor organisaties die al jaren worstelen met de vraag waar ze hun marketingbudget het beste kunnen investeren, biedt deze ontwikkeling duidelijkheid: de tijd van ‘of-of’ is voorbij. Het gaat niet meer om welk kanaal beter presteert, maar om hoe ze elkaar versterken. Dit vraagt wel om een andere manier van werken: teams moeten nauwer samenwerken en meetdata delen om de impact van beide kanalen goed te kunnen inschatten. Voor bureaus betekent dit dat zij hun klanten moeten helpen bij het integreren van deze kanalen in plaats van alleen advies te geven over één specifiek vakgebied.",
   'apple-sluit-thuisvakkers-uit-van-maps-advertenties':
     "Dit beleid van Apple laat zien hoe kwetsbaar MKB-bedrijven zijn wanneer ze afhankelijk worden van externe platforms die hun eigen regels bepalen. Bij Stevin geloven we dat diversificatie essentieel is: bouw naast platforms als Google en Apple ook eigen kanalen zoals je website, reviewsites en sociale media uit. Zo behoud je controle over je vindbaarheid en vermijd je kunstmatige beperkingen die buiten jouw invloed liggen.",
   'wat-not-doet-wel-en-shoped-niet':
