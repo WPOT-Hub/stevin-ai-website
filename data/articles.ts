@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ophef-door-slecht-onderhouden-merkwaarden',
+    format: 'dispatch' as const,
+    edition: '354',
+    category: 'Markt',
+    title: "Ophef volgt slecht onderhouden merkwaarden direct",
+    dek: "Bedrijven die hun merkwaarden niet actief bijhouden, krijgen binnen een jaar te maken met publieke kritiek of reputatieschade.",
+    publishedAt: '2026-07-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Ophef volgt slecht onderhouden merkwaarden direct",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'de-onzichtbare-kracht-van-technologie-trends-die-je-nu-mist',
     format: 'dispatch' as const,
     edition: '353',
