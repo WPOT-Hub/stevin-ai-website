@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'de-onzichtbare-kracht-van-technologie-trends-die-je-nu-mist',
+    format: 'dispatch' as const,
+    edition: '353',
+    category: 'Platform',
+    title: "Technologie verandert sneller dan jij denkt: waarom bureau-eigenaren nu moeten handelen",
+    dek: "De komende maanden zullen beslissend zijn voor wie de regels van de markt gaat bepalen.",
+    publishedAt: '2026-07-16',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Technologie verandert sneller dan jij denkt: waarom bureau-eigenaren nu moeten handelen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-maakt-seo-en-ppc-complementair-in-plaats-van-competitie',
     format: 'dispatch' as const,
     edition: '352',
