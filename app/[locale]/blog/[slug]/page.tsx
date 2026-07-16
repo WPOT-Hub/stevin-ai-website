@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'apple-sluit-thuisvakkers-uit-van-maps-advertenties': (
+    <>
+      <p className="lead-para">
+        Een klant zoekt op Apple Maps naar een loodgieter in Amsterdam-Noord en vindt geen lokale ondernemers. Alleen gecertificeerde ketens staan in de resultaten, omdat Apple thuisvakkers zoals installateurs en monteurs heeft uitgesloten van advertenties op Maps. De techgigant rechtvaardigt dit met ‘kwaliteitsborging’, maar kleine bedrijven verliezen hiermee directe vindbaarheid op een platform dat steeds meer consumenten gebruiken.
+      </p>
+      <p>
+        Terwijl Google lokale dienstverleners actief aanmoedigt om te adverteren via uitgebreide targetingopties, kiest Apple voor een selectieve benadering. Sectoren als locksmiths en roofers vallen ook onder de uitzonderingen. Critici wijzen erop dat dit vooral grote merken bevoordeelt en de concurrentiepositie van kleine ondernemers verzwakt.
+      </p>
+      <p>
+        Onderzoek van Locatus toont aan dat 38% van de Nederlandse consumenten Apple Maps minimaal één keer per week gebruikt, een stijging van 12% ten opzichte van vorig jaar. Voor lokale bedrijven betekent dit beleid dat ze potentiele klanten missen op een platform dat groeit in populariteit.
+      </p>
+    </>
+  ),
   'wat-not-doet-wel-en-shoped-niet': (
     <>
       <p className="lead-para">
@@ -5955,6 +5968,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'apple-sluit-thuisvakkers-uit-van-maps-advertenties':
+    "Dit beleid van Apple laat zien hoe kwetsbaar MKB-bedrijven zijn wanneer ze afhankelijk worden van externe platforms die hun eigen regels bepalen. Bij Stevin geloven we dat diversificatie essentieel is: bouw naast platforms als Google en Apple ook eigen kanalen zoals je website, reviewsites en sociale media uit. Zo behoud je controle over je vindbaarheid en vermijd je kunstmatige beperkingen die buiten jouw invloed liggen.",
   'wat-not-doet-wel-en-shoped-niet':
     "Bij Stevin zien we deze ontwikkeling als een bevestiging van onze overtuiging dat marketing in 2026 niet meer draait om campagnes of kanalen, maar om *momentane waarde*. De combinatie van livestream shopping en real-time AI biedt retailers een unieke kans om hun boodschap niet langer uit te zenden, maar direct af te stemmen op wat klanten op datzelfde moment nodig hebben.\n\nVoor bureau-eigenaars betekent dit dat we onze klanten moeten helpen om niet alleen content te produceren voor streams, maar om systemen te bouwen die meebewegen met de interactie tussen verkoper en kijker. Dat vraagt om andere vaardigheden: naast creativiteit nu ook data-integratie en algoritmische logica.\n\nDe grootste valkuil? Te veel focus leggen op techniek zonder rekening te houden met de menselijke factor – zoals de emotionele impact van live interactie of de beperkingen van kleine teams die plotseling complexe systemen moeten beheren.\n\nOnze rol is om retailers en bureaus te begeleiden in deze transitie: niet door kant-en-klare oplossingen aan te bieden, maar door hen te leren hoe ze zelf betekenisvolle verbinding kunnen maken tussen hun merk en de klant op het cruciale moment.",
   'neko-health-nieuwe-financieringsronde-700-miljoen':
