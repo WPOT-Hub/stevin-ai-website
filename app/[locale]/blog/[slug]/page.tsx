@@ -1512,6 +1512,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'wat-not-doet-wel-en-shoped-niet': (
+    <>
+      <p className="lead-para">
+        Een winkelier in Tilburg die ’s avonds live gaat met een nieuwe collectie hoeden, heeft straks niets aan statische productoverzichten. Zijn klanten swipen niet meer door eindeloze categorieën, ze willen op het moment zelf zien wat bij hen past – en dat terwijl de stream loopt. Watnot begrijpt dat als geen ander. Met de overname van Shaped, een AI-bedrijf gespecialiseerd in real-time aanbevelingen, sluit het platform nu de laatste ontbrekende schakel in zijn ecosysteem: een systeem dat niet alleen kijkt *wat* iemand eerder kocht, maar ook *hoe* iemand nu reageert op prijs, kleur of zelfs de intonatie van de verkoper.
+      </p>
+      <p>
+        Dit is geen toeval. Livestream shopping groeit harder dan ooit, maar de grootste uitdaging ligt niet in het aantal kijkers, maar in hun geduld. Onderzoek van McKinsey uit 2025 laat zien dat consumenten binnen 12 seconden afhaken als een aanbeveling niet direct relevant voelt. Dat is korter dan de tijd die nodig is om ‘volgende slide’ te tikken. Watnot lost dit op door Shaped’s technologie te integreren: een algoritme dat niet alleen historische data gebruikt, maar ook live signalen oppikt – zoals welke items het meest worden bekeken of waarnaar wordt gezocht tijdens de stream.
+      </p>
+      <p>
+        Toch is er een kanttekening. Real-time personalisatie werkt alleen als de data *direct* bruikbaar is. Veel retailers hebben nog steeds silo’s tussen hun online shop en fysieke voorraad, waardoor een ‘live’ aanbeveling soms leidt tot frustratie als het product niet beschikbaar blijkt. Watnot’s concurrent TikTok Shop worstelde hier vorig jaar mee: klanten raakten geïrriteerd toen ze na een perfecte livestream-aanbeveling ontdekten dat het item uitverkocht was. De les? Technologie alleen is niet genoeg; je hebt ook *operational excellence* nodig.
+      </p>
+      <p>
+        Sommigen zullen zeggen dat deze ontwikkeling vooral interessant is voor grote spelers met diepe zakken en geavanceerde IT-systemen. Maar niets is minder waar. Steeds meer middelgrote retailers experimenteren met tools zoals Shaped’s open-source varianten of kant-en-klare plugins voor platforms als Shopify Live of Instagram Live Shopping. De drempel om mee te doen wordt lager, terwijl de verwachtingen van consumenten juist stijgen.
+      </p>
+      <p>
+        Watnot’s zet past in een bredere trend: de verschuiving van ‘mass personalization’ naar ‘contextual commerce’. Waar traditionele e-commerce draait om ‘wie ben je?’ (demografie, koopgedrag), gaat het nu om ‘wat doe je nu?’ (real-time intent). Een voorbeeld: tijdens Valentijnsdag ziet een verkoper live dat veel kijkers naar rood fluweel zoeken, maar ook naar cadeauverpakkingen. Het algoritme kan dan binnen seconden suggesties doen die passen bij beide behoeften – zonder dat de verkoper zelf alles hoeft te bedienen.
+      </p>
+      <p>
+        Critici wijzen erop dat zulke systemen ook risico’s met zich meebrengen. Zo kan overmatige personalisatie leiden tot ‘filter bubbles’, waarbij klanten alleen nog maar dezelfde soort producten te zien krijgen en daardoor minder openstaan voor verrassingen. Een studie van Deloitte uit begin 2026 toont aan dat consumenten na verloop van tijd juist *minder* geneigd zijn om nieuwe merken uit te proberen als ze alleen maar herhaling zien.
+      </p>
+      <p>
+        Maar er is een tegenargument: goed ontworpen real-time systemen kunnen juist *diversiteit* stimuleren door subtiel grenzen te verleggen. Stel je voor dat een verkoper tijdens een livestream ziet dat iemand vaak zwart draagt, maar ook regelmatig naar kleurrijke accessoires zoekt. Het algoritme kan dan voorzichtig nieuwe suggesties introduceren die net buiten de comfortzone liggen – mits de data dit ondersteunt.
+      </p>
+      <p>
+        De kernvraag is niet óf livestream shopping real-time personalisatie nodig heeft, maar wie het als eerste goed genoeg implementeert. Watnot bewijst met deze deal dat ze sneller willen zijn dan hun concurrentie in het vertalen van data naar directe actie – en daarmee niet alleen verkopen stimuleren, maar ook vertrouwen opbouwen bij consumenten die steeds kritischer worden op irrelevante aanbevelingen.
+      </p>
+    </>
+  ),
   'neko-health-nieuwe-financieringsronde-700-miljoen': (
     <>
       <p className="lead-para">
@@ -5927,6 +5955,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'wat-not-doet-wel-en-shoped-niet':
+    "Bij Stevin zien we deze ontwikkeling als een bevestiging van onze overtuiging dat marketing in 2026 niet meer draait om campagnes of kanalen, maar om *momentane waarde*. De combinatie van livestream shopping en real-time AI biedt retailers een unieke kans om hun boodschap niet langer uit te zenden, maar direct af te stemmen op wat klanten op datzelfde moment nodig hebben.\n\nVoor bureau-eigenaars betekent dit dat we onze klanten moeten helpen om niet alleen content te produceren voor streams, maar om systemen te bouwen die meebewegen met de interactie tussen verkoper en kijker. Dat vraagt om andere vaardigheden: naast creativiteit nu ook data-integratie en algoritmische logica.\n\nDe grootste valkuil? Te veel focus leggen op techniek zonder rekening te houden met de menselijke factor – zoals de emotionele impact van live interactie of de beperkingen van kleine teams die plotseling complexe systemen moeten beheren.\n\nOnze rol is om retailers en bureaus te begeleiden in deze transitie: niet door kant-en-klare oplossingen aan te bieden, maar door hen te leren hoe ze zelf betekenisvolle verbinding kunnen maken tussen hun merk en de klant op het cruciale moment.",
   'neko-health-nieuwe-financieringsronde-700-miljoen':
     "Voor ondernemers die actief zijn in gezondheidsdata of preventieve zorg biedt Neko Health een interessante blik op de toekomst. De combinatie van fysieke scans en bloedanalyse kan nieuwe mogelijkheden creëren voor gepersonaliseerde diensten. Tegelijkertijd roept het vragen op over privacy en databeheer, zeker als deze data straks door verzekeraars of werkgevers worden gebruikt.",
   'agentschap-web-nieuwe-hoop-publishers':
