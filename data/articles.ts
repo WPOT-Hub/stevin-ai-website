@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'neko-health-nieuwe-financieringsronde-700-miljoen',
+    format: 'dispatch' as const,
+    edition: '349',
+    category: 'Tech',
+    title: "Neko Health haalt opnieuw 700 miljoen op voor lichaamsscans",
+    dek: "Het bedrijf van Daniel Ek combineert scans met bloedonderzoek om gezondheidsdata te verzamelen.",
+    publishedAt: '2026-07-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Neko Health haalt opnieuw 700 miljoen op voor lichaamsscans",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'agentschap-web-nieuwe-hoop-publishers',
     format: 'dispatch' as const,
     edition: '348',
