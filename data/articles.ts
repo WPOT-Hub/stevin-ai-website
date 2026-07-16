@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-maakt-seo-en-ppc-complementair-in-plaats-van-competitie',
+    format: 'dispatch' as const,
+    edition: '352',
+    category: 'Platform',
+    title: "AI verandert SEO en PPC van concurrenten in bondgenoten",
+    dek: "Door de opkomst van AI in zoekgedrag zijn SEO en PPC niet langer tegenstrijdig, maar versterken ze elkaar in een gezamenlijke strategie.",
+    publishedAt: '2026-07-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI verandert SEO en PPC van concurrenten in bondgenoten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'apple-sluit-thuisvakkers-uit-van-maps-advertenties',
     format: 'dispatch' as const,
     edition: '351',
