@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'apple-sluit-thuisvakkers-uit-van-maps-advertenties',
+    format: 'dispatch' as const,
+    edition: '351',
+    category: 'Platform',
+    title: "Apple sluit thuisvakkers uit van Maps-advertenties: lokale bedrijven verliezen zichtbaarheid",
+    dek: "Apple blokkeert advertenties voor thuisvakkers op Maps, terwijl Google deze sector actief stimuleert.",
+    publishedAt: '2026-07-16',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Apple sluit thuisvakkers uit van Maps-advertenties: lokale bedrijven verliezen zichtbaarheid",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'wat-not-doet-wel-en-shoped-niet',
     format: 'dispatch' as const,
     edition: '350',
