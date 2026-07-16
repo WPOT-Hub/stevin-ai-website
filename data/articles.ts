@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'wat-not-doet-wel-en-shoped-niet',
+    format: 'dispatch' as const,
+    edition: '350',
+    category: 'Markt',
+    title: "Watnot koopt Shaped: de stille revolutie in live shopping die niemand ziet aankomen",
+    dek: "De aankoop van een AI-startup door een livestream-platform toont hoe real-time personalisatie binnenkort geen luxe meer is, maar een voorwaarde om klanten vast te houden.",
+    publishedAt: '2026-07-16',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Watnot koopt Shaped: de stille revolutie in live shopping die niemand ziet aankomen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'neko-health-nieuwe-financieringsronde-700-miljoen',
     format: 'dispatch' as const,
     edition: '349',
