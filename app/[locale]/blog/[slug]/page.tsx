@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'neko-health-nieuwe-financieringsronde-700-miljoen': (
+    <>
+      <p className="lead-para">
+        Neko Health, het bedrijf achter geavanceerde lichaamsscantechnologie, heeft een nieuwe financieringsronde van 700 miljoen dollar opgehaald. Het geld wordt gebruikt om de technologie verder te ontwikkelen en uit te rollen in nieuwe markten.
+      </p>
+      <p>
+        De scantechnologie van Neko Health meet niet alleen externe factoren zoals botdichtheid of vetpercentage, maar combineert dit met bloedanalyse. Zo ontstaat een completer beeld van iemands gezondheidstoestand dan met traditionele methodes mogelijk is.
+      </p>
+      <p>
+        Het bedrijf richt zich eerst op consumentenmarkten, maar overweegt ook samenwerkingen met zorgverzekeraars en werkgevers. De data zouden kunnen worden ingezet voor preventieve gezondheidszorg of zelfs voor het aanpassen van verzekeringspremies.
+      </p>
+    </>
+  ),
   'agentschap-web-nieuwe-hoop-publishers': (
     <>
       <p className="lead-para">
@@ -5914,6 +5927,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'neko-health-nieuwe-financieringsronde-700-miljoen':
+    "Voor ondernemers die actief zijn in gezondheidsdata of preventieve zorg biedt Neko Health een interessante blik op de toekomst. De combinatie van fysieke scans en bloedanalyse kan nieuwe mogelijkheden creëren voor gepersonaliseerde diensten. Tegelijkertijd roept het vragen op over privacy en databeheer, zeker als deze data straks door verzekeraars of werkgevers worden gebruikt.",
   'agentschap-web-nieuwe-hoop-publishers':
     "Voor bedrijven die afhankelijk zijn van digitale inkomstenbronnen is deze situatie herkenbaar: wie niet meebeweegt met technologische verschuivingen, loopt achter bij concurrenten die wel inzetten op flexibiliteit. De uitdaging ligt niet alleen in het beschermen van bestaande modellen, maar ook in het verkennen van nieuwe wegen om waarde te creëren binnen een steeds complexere digitale infrastructuur. Dat vraagt om investeringen in technologie én samenwerking, zonder afhankelijk te blijven van partijen die de regels bepalen.",
   'eu-sap-maintenance-fee-bargaining-chip':
