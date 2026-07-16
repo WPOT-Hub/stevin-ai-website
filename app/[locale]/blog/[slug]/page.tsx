@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ophef-door-slecht-onderhouden-merkwaarden': (
+    <>
+      <p className="lead-para">
+        Uit onderzoek blijkt dat bedrijven die hun merkwaarden niet regelmatig evalueren en aanpassen, binnen twaalf maanden te maken krijgen met negatieve reacties van consumenten of media. Zo’n ophef ontstaat vaak door kleine inconsistenties die groeien tot grotere issues, zoals campagnes die niet aansluiten bij de kernwaarden of productaanpassingen die afwijken van de beloofde kwaliteit.
+      </p>
+      <p>
+        Een voorbeeld is een retailer die recentelijk een duurzaamheidsclaim introduceerde zonder de bijbehorende certificeringen in orde te hebben. Binnen weken volgden berichten over greenwashing, wat leidde tot boycotacties en een daling in klantvertrouwen. Dergelijke gevallen tonen aan dat merkwaarden niet alleen moeten worden geformuleerd, maar ook continu moeten worden getoetst en gecommuniceerd.
+      </p>
+      <p>
+        Ook interne inconsistenties spelen een rol: medewerkers die niet weten hoe ze de merkwaarden moeten toepassen, creëren onbedoeld tegenstrijdige boodschappen. Dit leidt tot verwarring bij klanten en kan zelfs leiden tot juridische stappen als claims niet waar kunnen worden gemaakt.
+      </p>
+    </>
+  ),
   'de-onzichtbare-kracht-van-technologie-trends-die-je-nu-mist': (
     <>
       <p className="lead-para">
@@ -6006,6 +6019,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ophef-door-slecht-onderhouden-merkwaarden':
+    "Merkwaarden zijn geen statisch document maar een levend onderdeel van je bedrijfsvoering. Het is verstandig om jaarlijks een audit uit te voeren waarbij je meet of de waarden nog aansluiten bij de praktijk en de verwachtingen van je doelgroep. Betrek hierbij niet alleen het management, maar ook medewerkers uit verschillende afdelingen om draagvlak te creëren. Een sterke merkidentiteit begint met consistentie tussen wat je zegt en wat je doet.",
   'de-onzichtbare-kracht-van-technologie-trends-die-je-nu-mist':
     "Bij Stevin zien we dagelijks hoe bureaus worstelen met de kloof tussen technologische mogelijkheden en praktische toepassing. Onze benadering is simpel: we helpen teams niet alleen om trends te herkennen, maar ook om ze direct meetbaar toe te passen binnen hun bestaande workflows. Of het nu gaat om AI-gestuurde contentoptimalisatie of geautomatiseerde lead scoring, onze focus ligt op oplossingen die vandaag werken en morgen schaalbaar zijn. Want technologie verandert snel – maar wie slimme keuzes maakt vandaag, bouwt aan een concurrentievoordeel dat jaren standhoudt.",
   'ai-maakt-seo-en-ppc-complementair-in-plaats-van-competitie':
