@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees',
+    format: 'dispatch' as const,
+    edition: '356',
+    category: 'Platform',
+    title: "Beehiiv voegt AI en groepschat toe aan nieuwsbriefplatform",
+    dek: "Het nieuwsbriefplatform Beehiiv introduceert een AI Copilot voor publishers en een nieuwe chatfunctie tussen abonnees.",
+    publishedAt: '2026-07-17',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Beehiiv voegt AI en groepschat toe aan nieuwsbriefplatform",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'back-to-school-trends-2026',
     format: 'dispatch' as const,
     edition: '355',
