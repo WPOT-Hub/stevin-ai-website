@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'back-to-school-trends-2026': (
+    <>
+      <p className="lead-para">
+        Uit Google Searchdata blijkt dat studenten dit jaar massaal zoeken naar tijdelijke behangoplossingen en strandgerelateerde decoraties om hun kamers een persoonlijke touch te geven. De vraag naar ‘beach vibes’ in interieurs is met 40% gestegen ten opzichte van vorig jaar, terwijl ‘temporary wallpaper’ een groei van 35% laat zien. Ook kleuren zoals zandkleur en lichtblauw scoren hoog in de zoekopdrachten.
+      </p>
+      <p>
+        Daarnaast blijkt uit de data dat studenten niet alleen letten op esthetiek, maar ook op functionaliteit. Zoeken naar meubels die makkelijk te verplaatsen zijn, zoals vouwtafels of stapelbare stoelen, zijn verdubbeld. Ook accessoires zoals verlichting met warmere tinten en multifunctionele opbergsystemen worden vaker bekeken dan vorig jaar.
+      </p>
+      <p>
+        De trend past bij een bredere beweging waarbij studenten hun leefruimte willen aanpassen aan hun persoonlijke stijl zonder grote investeringen te doen. Tijdelijke decoraties bieden flexibiliteit, vooral nu veel studenten nog niet weten hoe lang ze op dezelfde plek blijven wonen.
+      </p>
+    </>
+  ),
   'ophef-door-slecht-onderhouden-merkwaarden': (
     <>
       <p className="lead-para">
@@ -6019,6 +6032,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'back-to-school-trends-2026':
+    "Voor ondernemers in de interieurbranche is deze trend een signaal om flexibele oplossingen aan te bieden die aansluiten bij de behoeften van jongeren. Tijdelijke producten en modulair meubilair kunnen een stabiele markt vormen, zeker als ze gemakkelijk online te bestellen zijn. Daarnaast toont het aan dat duurzaamheid en herbruikbaarheid steeds belangrijker worden voor deze doelgroep.",
   'ophef-door-slecht-onderhouden-merkwaarden':
     "Merkwaarden zijn geen statisch document maar een levend onderdeel van je bedrijfsvoering. Het is verstandig om jaarlijks een audit uit te voeren waarbij je meet of de waarden nog aansluiten bij de praktijk en de verwachtingen van je doelgroep. Betrek hierbij niet alleen het management, maar ook medewerkers uit verschillende afdelingen om draagvlak te creëren. Een sterke merkidentiteit begint met consistentie tussen wat je zegt en wat je doet.",
   'de-onzichtbare-kracht-van-technologie-trends-die-je-nu-mist':
