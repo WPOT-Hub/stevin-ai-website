@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'spacex-starship-lancering-geannuleerd-door-motorproblemen': (
+    <>
+      <p className="lead-para">
+        Tijdens de countdown voor de lancering van Starship op donderdagavond bleven enkele van de 33 Raptor-motoren in de eerste trap niet starten. Dat maakte een veilige vlucht onmogelijk, aldus SpaceX. Het bedrijf startte direct met het leegpompen van brandstof en oxidatiemiddel uit de raket om verdere risico’s te voorkomen.
+      </p>
+      <p>
+        Een nieuwe lanceerpoging wordt binnen enkele dagen verwacht, maar hangt af van de oorzaak van het probleem en reparaties. SpaceX benadrukt dat dergelijke vertragingen normaal zijn in de testfase van complexe ruimtevaartuigen. De vorige poging om Starship in een baan om de aarde te brengen mislukte ook al in april vorig jaar.
+      </p>
+      <p>
+        Het Starship-programma is cruciaal voor NASA’s maanmissies en Elon Musks ambitie om Mars te koloniseren. Een succesvolle vlucht zou de weg vrijmaken voor regelmatige ruimtevluchten met hoge capaciteit.
+      </p>
+    </>
+  ),
   'web-push-advertising-2026-trends': (
     <>
       <p className="lead-para">
@@ -6058,6 +6071,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'spacex-starship-lancering-geannuleerd-door-motorproblemen':
+    "Voor bedrijven die innovatie hoog in het vaandel dragen, toont dit incident aan dat falen inherent is aan grensverleggend onderzoek. Het vermogen om snel te herstellen en lessen te trekken uit mislukkingen bepaalt uiteindelijk het succes. Ruimtevaartbedrijven zoals SpaceX investeren bewust in testcycli om betrouwbaarheid op te bouwen, een les die ook toepasbaar is op technologische doorbraken in andere sectoren.",
   'web-push-advertising-2026-trends':
     "Voor bedrijven die Web Push inzetten, betekent dit dat campagnes niet langer alleen gericht moeten zijn op volume maar op relevantie. De focus op compliantie dwingt marketeers om transparanter te werken, wat uiteindelijk de ROI kan verhogen. Tegelijkertijd is het zaak om de gebruikerservaring centraal te stellen: te veel meldingen leiden tot irritatie en lagere effectiviteit.",
   'beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees':
