@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'web-push-advertising-2026-trends',
+    format: 'dispatch' as const,
+    edition: '357',
+    category: 'Markt',
+    title: "Web Push-advertenties groeien in 2026 met strengere regels en betere data",
+    dek: "De markt voor Web Push-advertenties wordt volwassener door strengere compliantie-eisen en minder ruis in de meetdata.",
+    publishedAt: '2026-07-17',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Web Push-advertenties groeien in 2026 met strengere regels en betere data",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees',
     format: 'dispatch' as const,
     edition: '356',
