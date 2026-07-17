@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'web-push-advertising-2026-trends': (
+    <>
+      <p className="lead-para">
+        In 2026 is de Web Push-markt aanzienlijk gegroeid, maar met meer focus op kwaliteit dan volume. Adverteerders krijgen te maken met strengere regels rond gebruikersconsent en databescherming, wat leidt tot minder spam en hogere engagementcijfers. Uit onderzoek blijkt dat campagnes nu gemiddeld 23% meer conversies opleveren dan in 2024, aldus RollerAds.
+      </p>
+      <p>
+        De verbeterde traffic quality komt voort uit betere targeting en het filteren van valse of frauduleuze clicks. Platforms zoals RollerAds investeren in realtime monitoring om verlies van meetdata te voorkomen en blinde vlekken in de meting te beperken. Dit maakt het makkelijker om oorzaak en gevolg tussen campagnes en resultaten vast te stellen.
+      </p>
+      <p>
+        Ondanks de groei blijft er onzekerheid over de langetermijnwaarde van Web Push. Sommige adverteerders melden dalende open rates naarmate gebruikers vaker dezelfde meldingen zien. Experts wijzen op het belang van variatie in content en timing om bannerblindheid te voorkomen.
+      </p>
+    </>
+  ),
   'beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees': (
     <>
       <p className="lead-para">
@@ -6045,6 +6058,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'web-push-advertising-2026-trends':
+    "Voor bedrijven die Web Push inzetten, betekent dit dat campagnes niet langer alleen gericht moeten zijn op volume maar op relevantie. De focus op compliantie dwingt marketeers om transparanter te werken, wat uiteindelijk de ROI kan verhogen. Tegelijkertijd is het zaak om de gebruikerservaring centraal te stellen: te veel meldingen leiden tot irritatie en lagere effectiviteit.",
   'beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees':
     "Voor bureaus die nieuwsbrieven beheren biedt dit meer mogelijkheden om klanten te binden door communities te faciliteren. De AI Copilot kan helpen bij het automatiseren van taken die normaal veel tijd kosten, zoals A/B-testen of doelgroepanalyse. Het is vooral interessant voor kleinere uitgevers die zelf minder capaciteit hebben om dit uit te voeren.",
   'back-to-school-trends-2026':
