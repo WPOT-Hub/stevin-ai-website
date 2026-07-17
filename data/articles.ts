@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'back-to-school-trends-2026',
+    format: 'dispatch' as const,
+    edition: '355',
+    category: 'Markt',
+    title: "Studenten kiezen voor tijdelijke behangpatronen en strandvibes in huis",
+    dek: "Tijdelijke behangpatronen en strandthema’s winnen terrein als studenten hun studentenkamers opfleuren voor het nieuwe collegejaar.",
+    publishedAt: '2026-07-17',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Studenten kiezen voor tijdelijke behangpatronen en strandvibes in huis",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ophef-door-slecht-onderhouden-merkwaarden',
     format: 'dispatch' as const,
     edition: '354',
