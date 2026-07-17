@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees': (
+    <>
+      <p className="lead-para">
+        Met de nieuwe AI Copilot kunnen publishers automatisch groeiadvies krijgen en inzicht in hun publiek. De tool analyseert lezersgedrag en geeft suggesties voor optimalisatie van content en verzendmomenten.
+      </p>
+      <p>
+        Daarnaast lanceert Beehiiv een groepschatfunctie waarmee abonnees met elkaar kunnen communiceren binnen de nieuwsbriefomgeving. Dit moet de betrokkenheid verhogen en communities rondom nieuwsbrieven versterken.
+      </p>
+      <p>
+        De updates zijn beschikbaar voor alle gebruikers van het platform, zonder extra kosten. Beehiiv positioneert zich hiermee als een completer ecosysteem voor digitale uitgevers.
+      </p>
+    </>
+  ),
   'back-to-school-trends-2026': (
     <>
       <p className="lead-para">
@@ -6032,6 +6045,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees':
+    "Voor bureaus die nieuwsbrieven beheren biedt dit meer mogelijkheden om klanten te binden door communities te faciliteren. De AI Copilot kan helpen bij het automatiseren van taken die normaal veel tijd kosten, zoals A/B-testen of doelgroepanalyse. Het is vooral interessant voor kleinere uitgevers die zelf minder capaciteit hebben om dit uit te voeren.",
   'back-to-school-trends-2026':
     "Voor ondernemers in de interieurbranche is deze trend een signaal om flexibele oplossingen aan te bieden die aansluiten bij de behoeften van jongeren. Tijdelijke producten en modulair meubilair kunnen een stabiele markt vormen, zeker als ze gemakkelijk online te bestellen zijn. Daarnaast toont het aan dat duurzaamheid en herbruikbaarheid steeds belangrijker worden voor deze doelgroep.",
   'ophef-door-slecht-onderhouden-merkwaarden':
