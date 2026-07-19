@@ -3,7 +3,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
-import SignalFlowDemo from '@/components/SignalFlowDemo'
+import MarketingMemoryDemo from '@/components/MarketingMemoryDemo'
 import StevinBrainVisual from '@/components/StevinBrainVisual'
 import BrainEdgeStrip from '@/components/BrainEdgeStrip'
 import HeroHeadline from '@/components/HeroHeadline'
@@ -81,6 +81,10 @@ const COPY = {
         b: ['Volledige toegang en exporteerbare data', 'Een overdraagbaar dossier met elk besluit', 'Kennis die bij je bedrijf blijft, wie er ook vertrekt'],
       },
     ],
+
+    demo_eyebrow: 'Je marketinggeheugen',
+    demo_h2: 'Typ "zomer". Kijk wat er gebeurt.',
+    demo_lede: 'Alles wat er ooit gebeurde in jouw marketing blijft vindbaar. En bruikbaar.',
 
     who_eyebrow: 'Voor wie',
     who: [
@@ -206,6 +210,10 @@ const COPY = {
         b: ['Full access and exportable data', 'A transferable file with every decision', 'Knowledge that stays with your company, whoever leaves'],
       },
     ],
+
+    demo_eyebrow: 'Your marketing memory',
+    demo_h2: 'Type "summer". Watch what happens.',
+    demo_lede: 'Everything that ever happened in your marketing stays findable. And usable.',
 
     who_eyebrow: 'Who it is for',
     who: [
@@ -563,7 +571,7 @@ export default async function HomePage({ params }: Props) {
             </Link>
           </div>
 
-          <div className="mb-20 max-w-[860px]">
+          <div className="max-w-[860px]">
             {c.steps.map((item, i) => (
               <article
                 key={item.num}
@@ -584,8 +592,20 @@ export default async function HomePage({ params }: Props) {
               </article>
             ))}
           </div>
+        </div>
+      </section>
 
-          <SignalFlowDemo />
+      {/* ── DEMO: marketinggeheugen ── */}
+      <section className="bg-white" style={{ padding: '112px 24px 96px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className={eyebrowLight}>{dashLight}{c.demo_eyebrow}</p>
+          <h2 className="font-display font-extrabold text-primary m-0 mb-4" style={{ ...h2Style, maxWidth: '20ch' }}>
+            {c.demo_h2}
+          </h2>
+          <p className="text-muted leading-[1.6] mb-14" style={{ fontSize: '16px', maxWidth: '540px' }}>
+            {c.demo_lede}
+          </p>
+          <MarketingMemoryDemo locale={locale} />
         </div>
       </section>
 
@@ -816,22 +836,25 @@ export default async function HomePage({ params }: Props) {
       })()}
 
       {/* ── PRIJS ── */}
-      <section className="bg-white" style={{ padding: '96px 24px' }}>
-        <div className="mx-auto max-w-[1000px]">
-          <div className="rounded-[14px] border border-border p-10 lg:p-14 grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] items-center gap-10" style={{ background: 'var(--color-surface)' }}>
-            <div>
-              <p className={eyebrowLight}>{dashLight}{c.price_eyebrow}</p>
-              <p className="font-display font-extrabold text-primary m-0" style={{ fontSize: 'clamp(40px, 4.6vw, 60px)', letterSpacing: '-0.04em', lineHeight: '1' }}>
-                {c.price_value}
-              </p>
-              <p className="text-muted text-[14px] mt-2 m-0">{c.price_period}</p>
-            </div>
-            <p className="text-muted leading-[1.6] m-0" style={{ fontSize: '15px', maxWidth: '440px' }}>
-              {c.price_body}
-            </p>
+      <section className="bg-white" style={{ padding: '112px 24px' }}>
+        <div className="mx-auto max-w-[680px] text-center">
+          <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center justify-center gap-[14px]">
+            <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
+            {c.price_eyebrow}
+          </p>
+          <p className="font-display font-extrabold text-primary m-0" style={{ fontSize: 'clamp(44px, 5vw, 68px)', letterSpacing: '-0.04em', lineHeight: '1' }}>
+            {c.price_value}
+            <span className="text-muted font-semibold align-baseline" style={{ fontSize: '18px', letterSpacing: '0', marginLeft: '12px' }}>
+              {c.price_period}
+            </span>
+          </p>
+          <p className="text-muted leading-[1.65] mx-auto" style={{ fontSize: '16px', maxWidth: '46ch', marginTop: '24px' }}>
+            {c.price_body}
+          </p>
+          <div className="mt-9">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-accent text-white font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-accent-dark transition-colors flex-shrink-0 justify-self-start lg:justify-self-end"
+              className="inline-flex items-center gap-2 bg-accent text-white font-display font-bold text-[15px] px-8 py-3.5 rounded-lg hover:bg-accent-dark transition-colors"
             >
               {c.cta_primary}
             </Link>

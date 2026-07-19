@@ -63,7 +63,6 @@ async function logBotCrawl(bot: string, path: string): Promise<void> {
       method: 'POST',
       headers: {
         apikey: SUPABASE_ANON,
-        Authorization: `Bearer ${SUPABASE_ANON}`,
         'Content-Type': 'application/json',
         Prefer: 'return=minimal',
       },
