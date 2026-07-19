@@ -563,29 +563,24 @@ export default async function HomePage({ params }: Props) {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {c.steps.map((item) => (
-              <article key={item.num} className="pt-2">
-                <div className="flex items-baseline gap-3">
-                  <span className="font-display font-extrabold text-accent leading-none" style={{ fontSize: '56px', letterSpacing: '-0.04em' }}>
-                    {item.num}
-                  </span>
-                  <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/45">{item.kop}</span>
+          <div className="mb-20 max-w-[860px]">
+            {c.steps.map((item, i) => (
+              <article
+                key={item.num}
+                className={`grid grid-cols-[56px_1fr] gap-6 py-9 ${i > 0 ? 'border-t border-white/10' : ''}`}
+              >
+                <span className="font-display font-extrabold text-accent leading-none pt-1" style={{ fontSize: '26px', letterSpacing: '-0.02em' }}>
+                  {item.num}
+                </span>
+                <div>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mb-2.5 m-0">{item.kop}</p>
+                  <h3 className="font-display font-bold text-white mb-2.5" style={{ fontSize: '21px', letterSpacing: '-0.02em', lineHeight: '1.2' }}>
+                    {item.t}
+                  </h3>
+                  <p className="text-white/55 leading-[1.6] m-0" style={{ fontSize: '15px', maxWidth: '58ch' }}>
+                    {item.d}
+                  </p>
                 </div>
-                <h3 className="font-display font-bold text-white mt-4 mb-3" style={{ fontSize: '18px', letterSpacing: '-0.02em', lineHeight: '1.25' }}>
-                  {item.t}
-                </h3>
-                <p className="text-white/55 leading-[1.6] mb-5" style={{ fontSize: '14px' }}>
-                  {item.d}
-                </p>
-                <ul className="m-0 p-0 list-none border-t border-white/10 pt-4 flex flex-col gap-2.5">
-                  {item.b.map((line) => (
-                    <li key={line} className="flex items-start gap-2.5 text-white/70" style={{ fontSize: '13px', lineHeight: '1.45' }}>
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0 mt-[6px]" aria-hidden="true" />
-                      {line}
-                    </li>
-                  ))}
-                </ul>
               </article>
             ))}
           </div>
