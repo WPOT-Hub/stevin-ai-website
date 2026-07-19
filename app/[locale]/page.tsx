@@ -110,7 +110,6 @@ const COPY = {
     name_link: 'Het hele verhaal achter de naam',
     founder_quote: 'Twintig jaar zat ik aan de andere kant van de factuur. Ik weet hoe uren en mediamarges werken, want ik heb er zelf aan verdiend. Daarom is Stevin andersom gebouwd.',
     founder_role: 'Oprichter van Stevin',
-    founder_foto: 'foto volgt',
 
     research_eyebrow: 'Ons onderzoek',
     research_h2: 'Wij wijzen je op wat er al die tijd te zien was.',
@@ -239,7 +238,6 @@ const COPY = {
     name_link: 'The full story behind the name',
     founder_quote: 'For twenty years I sat on the other side of the invoice. I know how hours and media margins work, because I earned from them myself. That is why Stevin is built the other way around.',
     founder_role: 'Founder of Stevin',
-    founder_foto: 'photo to follow',
 
     research_eyebrow: 'Our research',
     research_h2: 'We point you to what was there to see all along.',
@@ -666,12 +664,12 @@ export default async function HomePage({ params }: Props) {
           </div>
 
           <div className="grid grid-cols-[auto_1fr] items-start gap-6 max-w-[760px]">
-            <div
-              className="w-16 h-16 rounded-full flex items-center justify-center border border-border flex-shrink-0"
-              style={{ background: 'var(--color-surface)' }}
-            >
-              <span className="font-mono text-[9px] uppercase tracking-[0.08em] text-muted text-center leading-tight">{c.founder_foto}</span>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/oprichter.png"
+              alt={c.founder_role}
+              className="w-20 h-20 flex-shrink-0"
+            />
             <figure className="m-0">
               <blockquote className="m-0 font-display font-semibold text-primary leading-[1.45]" style={{ fontSize: '18px', letterSpacing: '-0.01em' }}>
                 &ldquo;{c.founder_quote}&rdquo;
