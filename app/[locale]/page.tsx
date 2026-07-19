@@ -91,12 +91,12 @@ const COPY = {
       {
         k: 'Voor ondernemers', t: 'Je wilt er geen omkijken naar hebben, maar wel grip.',
         d: 'Wij regelen het, en jij kunt altijd controleren of het klopt. Wij bouwen je exit in vanaf dag een: je zit nergens aan vast.',
-        link: 'Zo werkt managed', href: '/diensten', foto: 'Foto volgt: echte klant, geen stock',
+        link: 'Zo werkt managed', href: '/diensten', img: '/images/voor-ondernemers.jpg', alt: 'Team van een Stevin-klant tijdens een overleg',
       },
       {
         k: 'Voor marketingteams', t: 'Je team houdt de regie. Stevin houdt het overzicht.',
         d: 'Sneller dan je bureau, elk besluit vastgelegd, inzicht tot op de marge. En vertrekt er iemand, dan vertrekt de kennis niet mee.',
-        link: 'Zo werkt het voor teams', href: '/marketing', foto: 'Foto volgt: echt team, geen stock',
+        link: 'Zo werkt het voor teams', href: '/marketing', img: '/images/voor-teams.jpg', alt: 'Marketingteam in overleg',
       },
     ],
 
@@ -220,12 +220,12 @@ const COPY = {
       {
         k: 'For business owners', t: 'You want it off your plate, but with grip.',
         d: 'We handle it, and you can always check that it is right. We build in your exit from day one: you are never locked in.',
-        link: 'How managed works', href: '/diensten', foto: 'Photo to follow: real client, no stock',
+        link: 'How managed works', href: '/diensten', img: '/images/voor-ondernemers.jpg', alt: 'Team at a Stevin client during a meeting',
       },
       {
         k: 'For marketing teams', t: 'Your team keeps the lead. Stevin keeps the overview.',
         d: 'Faster than your agency, every decision recorded, insight down to the margin. And when someone leaves, the knowledge does not leave with them.',
-        link: 'How it works for teams', href: '/marketing', foto: 'Photo to follow: real team, no stock',
+        link: 'How it works for teams', href: '/marketing', img: '/images/voor-teams.jpg', alt: 'Marketing team in a meeting',
       },
     ],
 
@@ -616,12 +616,13 @@ export default async function HomePage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             {c.who.map((card) => (
               <article key={card.k} className="rounded-[14px] bg-white border border-border overflow-hidden flex flex-col">
-                <div
-                  className="flex items-center justify-center border-b border-border"
-                  style={{ minHeight: '150px', background: 'var(--color-surface-alt)' }}
-                >
-                  <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-muted m-0">{card.foto}</p>
-                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={card.img}
+                  alt={card.alt}
+                  className="w-full border-b border-border"
+                  style={{ aspectRatio: '2.26 / 1', objectFit: 'cover' }}
+                />
                 <div className="p-8 lg:p-10 flex flex-col flex-1">
                   <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-muted mb-4">{card.k}</p>
                   <h3 className="font-display font-bold text-primary mb-4" style={{ fontSize: 'clamp(20px, 2vw, 26px)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
