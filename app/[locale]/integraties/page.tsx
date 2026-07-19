@@ -137,20 +137,23 @@ export default async function IntegratiesPage({ params }: Props) {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-[14px] border border-[#D9E0EB] bg-white shadow-[0_18px_50px_rgba(10,22,40,0.08),0_2px_8px_rgba(10,22,40,0.04)] lg:grid lg:grid-cols-5">
+          <div className="max-w-[860px]">
             {stackLayers.map((layer, index) => (
-              <article key={layer.num} className={`relative p-6 ${index > 0 ? 'border-t border-[#D9E0EB] lg:border-l lg:border-t-0' : ''}`}>
-                <div className="mb-14 text-[38px] font-extrabold leading-none tracking-[-0.04em] text-[#0A0A0A]">
+              <article
+                key={layer.num}
+                className={`grid grid-cols-[56px_1fr] gap-6 py-8 ${index > 0 ? 'border-t border-[#D9E0EB]' : ''}`}
+              >
+                <span className="pt-0.5 text-[26px] font-extrabold leading-none tracking-[-0.02em] text-[#3C8EFF]">
                   {layer.num}
+                </span>
+                <div>
+                  <h3 className="mb-2 text-[21px] font-extrabold leading-[1.2] tracking-[-0.02em] text-[#1F2933]">
+                    {layer.title}
+                  </h3>
+                  <p className="m-0 max-w-[58ch] text-[15px] leading-[1.6] text-[#6B7280]">
+                    {layer.body}
+                  </p>
                 </div>
-                <div className="pointer-events-none absolute left-6 right-6 top-[78px] hidden h-0.5 bg-[#0A1628] lg:block" />
-                <div className="pointer-events-none absolute left-6 top-[72px] hidden h-3.5 w-0.5 bg-[#0A1628] opacity-80 shadow-[42px_0_0_#0A1628,84px_0_0_#0A1628,126px_0_0_#0A1628] lg:block" />
-                <h3 className="mb-3 text-xl font-extrabold leading-[1.08] tracking-[-0.02em] text-[#1F2933]">
-                  {layer.title}
-                </h3>
-                <p className="m-0 text-sm leading-[1.52] text-[#6B7280]">
-                  {layer.body}
-                </p>
               </article>
             ))}
           </div>
