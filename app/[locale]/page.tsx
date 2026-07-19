@@ -27,7 +27,7 @@ const COPY = {
     connectors_label: 'Leest mee op al je kanalen',
 
     herken_eyebrow: 'Herken je dit?',
-    herken_h2: 'Zes zinnen die wij elke week horen.',
+    herken_h2: 'Zes dingen die wij elke week horen.',
     quotes: [
       { q: 'Elke maand een factuur van het bureau. Maar wat ze nou precies gedaan hebben? Geen idee.', a: 'Eigenaar, handelsbedrijf' },
       { q: '1.100 euro aan gekochte leads. Nul opdrachten.', a: 'Installatiebedrijf' },
@@ -155,7 +155,7 @@ const COPY = {
     connectors_label: 'Reads along on all your channels',
 
     herken_eyebrow: 'Sound familiar?',
-    herken_h2: 'Six sentences we hear every week.',
+    herken_h2: 'Six things we hear every week.',
     quotes: [
       { q: 'An agency invoice every month. But what exactly did they do? No idea.', a: 'Owner, trading company' },
       { q: '1,100 euros on purchased leads. Zero jobs.', a: 'Installation company' },
