@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react'
 
 /**
  * H1 met kop-varianten voor de homepage-test (doc 12/16, onderzoek jul 2026):
- * A = factuur (herkenning), C = groei (winst-frame), B = transparantie (ads-hook).
+ * C = groei (winst-frame, DEFAULT per Koen 19 jul), A = factuur (herkenning,
+ * tevens vaste ads-opener), B = transparantie (ads-hook).
  * De zwevende switcher is een review-instrument en verschijnt alleen op
  * preview-hosts (new.stevin.ai, *.vercel.app, localhost); productie toont
  * altijd de default of de ?kop= querystring.
@@ -28,7 +29,7 @@ const H1: Record<'nl' | 'en', Record<Variant, { line: string; accent: string }>>
 const LABELS: Record<Variant, string> = { a: 'A factuur', b: 'B transparantie', c: 'C groei' }
 
 export default function HeroHeadline({ locale }: { locale: string }) {
-  const [variant, setVariant] = useState<Variant>('a')
+  const [variant, setVariant] = useState<Variant>('c')
   const [showSwitch, setShowSwitch] = useState(false)
 
   useEffect(() => {
