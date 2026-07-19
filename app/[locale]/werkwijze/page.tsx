@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import MeetlatRuler from '@/components/MeetlatRuler'
+import SignalFlowDemo from '@/components/SignalFlowDemo'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -254,6 +255,23 @@ export default async function WerkwijzePage({ params }: Props) {
             ))}
           </div>
 
+        </div>
+      </section>
+
+      {/* ── Signaal in de praktijk (verplaatst van de homepage, 19 jul 2026) ── */}
+      <section className="bg-primary" style={{ padding: '112px 24px 96px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+            <span className="inline-block w-6 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+            {locale === 'en' ? 'In practice' : 'In de praktijk'}
+          </p>
+          <h2
+            className="font-display font-extrabold text-white m-0 mb-14"
+            style={{ fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '20ch' }}
+          >
+            {locale === 'en' ? 'One signal, from alert to done.' : 'Een signaal, van melding tot afgehandeld.'}
+          </h2>
+          <SignalFlowDemo />
         </div>
       </section>
 

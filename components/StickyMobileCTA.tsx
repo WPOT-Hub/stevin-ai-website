@@ -23,14 +23,14 @@ export default function StickyMobileCTA() {
     >
       <div className="bg-white/95 backdrop-blur-md border-t border-border px-4 py-3 flex items-center justify-between gap-3">
         <p className="text-xs text-muted leading-tight">
-          Vrijblijvend gesprek<br />
-          <span className="font-semibold text-primary">Binnen 30 min inzicht</span>
+          Eerst de diagnose, dan een voorstel<br />
+          <span className="font-semibold text-primary">Zwart op wit waar je staat</span>
         </p>
         <Link
           href="/contact"
-          className="flex-shrink-0 inline-flex items-center px-5 py-2.5 text-sm font-bold text-[#0A1628] bg-neon rounded-lg hover:bg-neon-dark transition-all"
+          className="flex-shrink-0 inline-flex items-center px-5 py-2.5 text-sm font-bold text-[#0A1628] bg-[#5DA3FF] rounded-lg hover:bg-[#7BB8FF] transition-all"
         >
-          Plan een gesprek
+          Start de diagnose
         </Link>
       </div>
     </div>
