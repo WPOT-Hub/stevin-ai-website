@@ -161,7 +161,7 @@ export default function MarketingMemoryDemo({ locale }: { locale: string }) {
           >
             <span
               className="absolute -left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full font-display font-extrabold text-[15px] grid place-items-center"
-              style={{ background: 'rgba(93,163,255,0.16)', color: 'var(--color-primary)', boxShadow: '0 6px 18px rgba(10,22,40,.10)' }}
+              style={{ background: '#E9F1FF', color: 'var(--color-primary)', boxShadow: '0 6px 18px rgba(10,22,40,.10)' }}
               aria-hidden="true"
             >
               {i + 1}
