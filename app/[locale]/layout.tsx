@@ -57,8 +57,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
 
+  // Preview-deploys (new.stevin.ai en *.vercel.app) mogen nooit geindexeerd
+  // worden; productie behoudt het normale gedrag.
+  const previewRobots: Pick<Metadata, 'robots'> =
+    process.env.VERCEL_ENV !== 'production' ? { robots: { index: false, follow: false } } : {}
+
   if (locale === 'nl') {
     return {
+      ...previewRobots,
       metadataBase: new URL('https://stevin.ai'),
       alternates: { types: { 'application/rss+xml': 'https://stevin.ai/feed.xml' } },
       title: {
@@ -92,6 +98,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 
   return {
+    ...previewRobots,
     metadataBase: new URL('https://stevin.ai'),
     title: {
       default: 'Stevin · the AI layer over your marketing and sales',
