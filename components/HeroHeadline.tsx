@@ -13,16 +13,16 @@ import { useEffect, useState } from 'react'
 
 type Variant = 'a' | 'b' | 'c'
 
-const H1: Record<'nl' | 'en', Record<Variant, { line: string; accent: string }>> = {
+const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; accent: string }>> = {
   nl: {
-    a: { line: 'Elke maand een marketingfactuur.', accent: 'Geen idee wat ze ervoor gedaan hebben.' },
-    b: { line: 'Google weet wie de eigenaar is van jouw data.', accent: 'Jij ook?' },
-    c: { line: 'Marketing die elke maand beter wordt.', accent: 'En alles blijft van jou.' },
+    a: { eyebrow: 'Voor bedrijven die betalen voor marketing', line: 'Elke maand een marketingfactuur.', accent: 'Geen idee wat ze ervoor gedaan hebben.' },
+    b: { eyebrow: 'Kijk zelf mee, het staat er gewoon', line: 'Google weet wie de eigenaar is van jouw data.', accent: 'Jij ook?' },
+    c: { eyebrow: 'Voor bedrijven die willen groeien zonder de grip te verliezen', line: 'Marketing die elke maand beter wordt.', accent: 'En alles blijft van jou.' },
   },
   en: {
-    a: { line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
-    b: { line: 'Google knows who owns your data.', accent: 'Do you?' },
-    c: { line: 'Marketing that gets better every month.', accent: 'And everything stays yours.' },
+    a: { eyebrow: 'For companies that pay for marketing', line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
+    b: { eyebrow: 'See for yourself, it is right there', line: 'Google knows who owns your data.', accent: 'Do you?' },
+    c: { eyebrow: 'For companies that want to grow without losing grip', line: 'Marketing that gets better every month.', accent: 'And everything stays yours.' },
   },
 }
 
@@ -43,6 +43,10 @@ export default function HeroHeadline({ locale }: { locale: string }) {
 
   return (
     <>
+      <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+        <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+        {c.eyebrow}
+      </p>
       <h1
         className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]"
         style={{ fontSize: 'clamp(34px, 4.6vw, 68px)', maxWidth: '18ch' }}

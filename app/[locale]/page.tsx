@@ -361,13 +361,8 @@ export default async function HomePage({ params }: Props) {
               <BrainEdgeStrip className="w-full h-full" />
             </div>
 
-            {/* Eyebrow */}
-            <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
-              <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-              {c.eyebrow}
-            </p>
-
-            {/* H1 met kop-varianten (A default; ?kop=b/c; switcher alleen op preview) */}
+            {/* Eyebrow + H1 schakelen samen per kop-variant (C default; ?kop=a/b;
+                switcher alleen op preview) */}
             <HeroHeadline locale={locale} />
 
             {/* Sub */}
