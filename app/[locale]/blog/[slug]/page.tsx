@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-integreert-local-services-ads-in-performance-max': (
+    <>
+      <p className="lead-para">
+        Adverteerders in Nederland en België kunnen vanaf deze week Local Services Ads (LSA) direct beheren via Google Ads. De campagnes worden geïntegreerd in Performance Max, waardoor er één centraal dashboard ontstaat voor alle advertentieactiviteiten.
+      </p>
+      <p>
+        De automatische synchronisatie met het Google Bedrijfsprofiel zorgt ervoor dat openingstijden, locaties en klantbeoordelingen altijd up-to-date blijven. Dit maakt handmatige updates overbodig en vermindert de kans op fouten in de weergave van bedrijfsinformatie.
+      </p>
+      <p>
+        De integratie geldt voor alle sectoren die gebruikmaken van LSA, zoals loodgieters, elektriciens en schoonmaakbedrijven. Google geeft aan dat adverteerders hiermee meer controle krijgen over hun lokale zichtbaarheid zonder extra campagnes te hoeven opzetten.
+      </p>
+    </>
+  ),
   'space-force-30-miljard-rocket-launches': (
     <>
       <p className="lead-para">
@@ -6112,6 +6125,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-integreert-local-services-ads-in-performance-max':
+    "Voor bureau-eigenaars en in-house teams betekent deze integratie vooral efficiëntie: minder handmatig werk en een betere overzichtelijkheid. Het is een logische stap van Google om de drempel voor lokale adverteerders te verlagen. Voor bedrijven die nu nog niet actief zijn met LSA kan dit een reden zijn om alsnog te starten, nu het beheer vereenvoudigd wordt.",
   'space-force-30-miljard-rocket-launches':
     "Bij Stevin zien we twee directe implicaties voor onze klanten in Nederland en België. Ten eerste biedt deze ontwikkeling kansen om nieuwe kanalen te verkennen die minder afhankelijk zijn van traditionele digitale platforms – denk aan direct-to-consumer communicatie via satellietverbindingen of IoT-apparaten in afgelegen gebieden waar glasvezel ontbreekt. Ten tweede onderstreept het belang van flexibele IT-infrastructuur die meegroeit met technologische revoluties zoals deze; starre systemen zullen snel achterlopen op concurrenten die wel kunnen inspelen op nieuwe mogelijkheden.\nDe uitdaging ligt niet zozeer in het gebrek aan technologie, maar in het vermogen om snel te schakelen tussen verschillende datastrategieën zonder afbreuk te doen aan compliance of veiligheid. Wie nu al werkt met modulaire cloud-oplossingen en API-gedreven integraties, staat straks sterker dan wie vastzit aan verouderde systemen.",
   'world-of-wow-influencer-marketing-verbinden-in-plaats-van-bereiken':
