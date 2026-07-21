@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-integreert-local-services-ads-in-performance-max',
+    format: 'dispatch' as const,
+    edition: '362',
+    category: 'Platform',
+    title: "Google Ads integreert Local Services Ads in Performance Max-campagnes",
+    dek: "Adverteerders kunnen vanaf nu Local Services Ads (LSA) beheren via Google Ads met automatische synchronisatie met hun Google Bedrijfsprofiel.",
+    publishedAt: '2026-07-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads integreert Local Services Ads in Performance Max-campagnes",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'space-force-30-miljard-rocket-launches',
     format: 'dispatch' as const,
     edition: '361',
