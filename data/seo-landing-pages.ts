@@ -230,7 +230,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     h1Accent: 'opvolging en rapportage',
     sub: 'Een marketingbureau dat tien of vijftig klanten draait, verliest tijd aan tool-gehop en rapportages. Stevin geeft bureaus een plek voor alle klantdata, met signalen per account en rapportage die zichzelf schrijft.',
     ctaPrimary: { label: 'Plan een bureau-demo', href: '/contact' },
-    ctaSecondary: { label: 'Voor agencies', href: '/voor-agencies' },
+    ctaSecondary: { label: 'Voor marketingteams', href: '/voor-marketingteams' },
     pain: {
       eyebrow: 'Het probleem',
       h2: 'Waar bureau-uren nu verloren gaan',
@@ -314,7 +314,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     related: [
       { label: 'Marketing intelligence', href: '/marketing-intelligence' },
       { label: 'Lead generatie', href: '/lead-generatie' },
-      { label: 'Voor agencies', href: '/voor-agencies' },
+      { label: 'Voor marketingteams', href: '/voor-marketingteams' },
     ],
   },
   {
@@ -327,7 +327,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     h1Accent: 'direct bruikbaar maakt',
     sub: 'Wie zoekt naar een website met CRM wil af van losse formulieren die in een mailbox belanden. De route hoort te zijn: bezoeker vult in, lead staat verrijkt in je CRM, opvolging start meteen. Dat is precies wat Stevin bouwt.',
     ctaPrimary: { label: 'Plan een demo', href: '/contact' },
-    ctaSecondary: { label: 'Bekijk websites', href: '/websites' },
+    ctaSecondary: { label: 'Bekijk diensten', href: '/diensten' },
     pain: {
       eyebrow: 'Het probleem',
       h2: 'Website en sales werken los van elkaar',
@@ -410,7 +410,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     ],
     related: [
       { label: 'Leadopvolging', href: '/leadopvolging' },
-      { label: 'Websites', href: '/websites' },
+      { label: 'Diensten', href: '/diensten' },
       { label: 'Google Ads en GA4', href: '/google-ads-ga4' },
     ],
   },
@@ -606,7 +606,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     related: [
       { label: 'Google Ads en GA4', href: '/google-ads-ga4' },
       { label: 'Marketing intelligence', href: '/marketing-intelligence' },
-      { label: 'Data-verrijking', href: '/data-verrijking' },
+      { label: 'Platform', href: '/platform' },
     ],
   },
   {

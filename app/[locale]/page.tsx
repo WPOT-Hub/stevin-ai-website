@@ -91,12 +91,12 @@ const COPY = {
       {
         k: 'Voor ondernemers', t: 'Je wilt er geen omkijken naar hebben, maar wel grip.',
         d: 'Wij regelen het, en jij kunt altijd controleren of het klopt. Wij bouwen je exit in vanaf dag een: je zit nergens aan vast.',
-        link: 'Zo werkt managed', href: '/diensten', img: '/images/voor-ondernemers.jpg', alt: 'Team van een Stevin-klant tijdens een overleg',
+        link: 'Zo werkt managed', href: '/voor-ondernemers', img: '/images/voor-ondernemers.jpg', alt: 'Team van een Stevin-klant tijdens een overleg',
       },
       {
         k: 'Voor marketingteams', t: 'Je team houdt de regie. Stevin houdt het overzicht.',
         d: 'Sneller dan je bureau, elk besluit vastgelegd, inzicht tot op de marge. En vertrekt er iemand, dan vertrekt de kennis niet mee.',
-        link: 'Zo werkt het voor teams', href: '/marketing', img: '/images/voor-teams.jpg', alt: 'Marketingteam in overleg',
+        link: 'Zo werkt het voor teams', href: '/voor-marketingteams', img: '/images/voor-teams.jpg', alt: 'Marketingteam in overleg',
       },
     ],
 
@@ -219,12 +219,12 @@ const COPY = {
       {
         k: 'For business owners', t: 'You want it off your plate, but with grip.',
         d: 'We handle it, and you can always check that it is right. We build in your exit from day one: you are never locked in.',
-        link: 'How managed works', href: '/diensten', img: '/images/voor-ondernemers.jpg', alt: 'Team at a Stevin client during a meeting',
+        link: 'How managed works', href: '/voor-ondernemers', img: '/images/voor-ondernemers.jpg', alt: 'Team at a Stevin client during a meeting',
       },
       {
         k: 'For marketing teams', t: 'Your team keeps the lead. Stevin keeps the overview.',
         d: 'Faster than your agency, every decision recorded, insight down to the margin. And when someone leaves, the knowledge does not leave with them.',
-        link: 'How it works for teams', href: '/marketing', img: '/images/voor-teams.jpg', alt: 'Marketing team in a meeting',
+        link: 'How it works for teams', href: '/voor-marketingteams', img: '/images/voor-teams.jpg', alt: 'Marketing team in a meeting',
       },
     ],
 

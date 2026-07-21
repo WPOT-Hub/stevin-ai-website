@@ -67,19 +67,16 @@ export default function Header() {
   ]
 
   const voorWieItems = [
-    { label: t('voor_mkb'), href: '/mkb' },
-    { label: t('voor_marketing'), href: '/marketing' },
-    { label: t('voor_creatieve'), href: '/creatieve-bureaus' },
-    { label: t('voor_media'), href: '/mediabureaus' },
-    { label: t('voor_ecommerce'), href: '/e-commerce' },
-    { label: t('voor_healthcare'), href: '/healthcare-marketing' },
+    { label: t('voor_ondernemers'), href: '/voor-ondernemers' },
+    { label: t('voor_teams'), href: '/voor-marketingteams' },
     { label: t('voor_retail'), href: '/retail' },
-    { label: t('voor_merken'), href: '/merken' },
-    { label: t('voor_pr'), href: '/pr-bureaus' },
-    { label: t('voor_b2b'), href: '/b2b' },
+    { label: t('voor_dealers'), href: '/voor-dealers' },
+    { label: t('voor_musea'), href: '/voor-musea' },
+    { label: t('voor_mkb'), href: '/mkb' },
   ]
 
   const navItems = [
+    { label: t('controle'), href: '/controle' },
     { label: t('werkwijze'), href: '/werkwijze' },
     { label: t('producten'), href: '/producten' },
     { label: t('integraties'), href: '/integraties' },
