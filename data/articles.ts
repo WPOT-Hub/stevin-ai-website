@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'openai-vrees-open-weight-modellen',
+    format: 'dispatch' as const,
+    edition: '364',
+    category: 'Tech',
+    title: "OpenAI vreest Chinese open-source modellen: risico of concurrentie?",
+    dek: "OpenAI waarschuwt voor de groei van Chinese open-weight LLMs en overweegt beperkende maatregelen, terwijl concurrentie en innovatie juist toenemen.",
+    publishedAt: '2026-07-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "OpenAI vreest Chinese open-source modellen: risico of concurrentie?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-tag-manager-voert-gestuurde-opzet-in-voor-google-ads-aankoop-tracking',
     format: 'dispatch' as const,
     edition: '363',
