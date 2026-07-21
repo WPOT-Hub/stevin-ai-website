@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'space-force-30-miljard-rocket-launches',
+    format: 'dispatch' as const,
+    edition: '361',
+    category: 'Markt',
+    title: "De Space Force koopt voor 30 miljard aan raketlanceringen: een wake-upcall voor wie nog denkt dat ruimtevaart een niche is",
+    dek: "Terwijl veel bedrijven nog twijfelen tussen cloud en on-premise, toont de Amerikaanse overheid aan hoe serieus ruimtevaart inmiddels is – en wat dat betekent voor de toekomst van data, logistiek en zelfs marketing.",
+    publishedAt: '2026-07-21',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "De Space Force koopt voor 30 miljard aan raketlanceringen: een wake-upcall voor wie nog denkt dat ruimtevaart een niche is",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-breidt-brand-lift-studies-uit-met-verbeterde-meetoptie',
     format: 'dispatch' as const,
     edition: '360',
