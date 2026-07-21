@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'f1-belgie-2026-machine-learning-verpest-racen',
+    format: 'dispatch' as const,
+    edition: '367',
+    category: 'Cultuur',
+    title: "F1 in België: algoritmes maken racen onherkenbaar",
+    dek: "De nieuwe F1-wagens van 2026 rijden op de beste circuits, waaronder Spa-Francorchamps, beduidend langzamer door overmatig gebruik van machine learning.",
+    publishedAt: '2026-07-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "F1 in België: algoritmes maken racen onherkenbaar",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'hugging-face-ai-agents-fraude',
     format: 'dispatch' as const,
     edition: '366',
