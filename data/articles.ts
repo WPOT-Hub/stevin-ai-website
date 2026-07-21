@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'world-of-wow-influencer-marketing-verbinden-in-plaats-van-bereiken',
+    format: 'dispatch' as const,
+    edition: '359',
+    category: 'Markt',
+    title: "World of WOW kiest voor verbinding in plaats van alleen bereik bij influencer marketing",
+    dek: "Het Nederlandse platform World of WOW focust op duurzame relaties tussen merken en influencers in plaats van op korte-termijn bereikcijfers.",
+    publishedAt: '2026-07-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "World of WOW kiest voor verbinding in plaats van alleen bereik bij influencer marketing",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spacex-starship-lancering-geannuleerd-door-motorproblemen',
     format: 'dispatch' as const,
     edition: '358',
