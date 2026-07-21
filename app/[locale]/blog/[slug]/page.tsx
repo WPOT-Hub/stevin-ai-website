@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'microsoft-365-calendders-hollowgraph-spionage': (
+    <>
+      <p className="lead-para">
+        De HollowGraph-campagne richt zich op Microsoft 365-gebruikers door kwaadaardige code te verspreiden via schijnbaar onschuldige agenda-items. De malware plant afspraken voor het jaar 2050, een datum die zelden wordt gecontroleerd, en verbergt daarin commando’s voor data-exfiltratie. Via de Microsoft-cloud worden deze commando’s uitgevoerd zonder dat gebruikers of beheerders het direct opmerken.
+      </p>
+      <p>
+        Het risico is vooral groot voor organisaties die standaard integraties met Microsoft 365 gebruiken, zoals Outlook en Teams. De aanvallers maken gebruik van legitieme communicatiekanalen om malware te verspreiden, waardoor traditionele beveiligingsmaatregelen zoals spamfilters minder effectief zijn. Uitgebreide logbestanden zijn nodig om verdachte activiteiten rondom agenda-items te detecteren.
+      </p>
+      <p>
+        Microsoft heeft nog geen publieke reactie gegeven op de campagne, maar de aanpak sluit aan bij eerdere aanvallen waarbij cloud-diensten werden misbruikt voor cybercrime. Gebruikers worden aangeraden om agenda-items regelmatig te controleren en onbekende afzenders van uitnodigingen te verifiëren.
+      </p>
+    </>
+  ),
   'openai-vrees-open-weight-modellen': (
     <>
       <p className="lead-para">
@@ -6138,6 +6151,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'microsoft-365-calendders-hollowgraph-spionage':
+    "Voor bedrijven betekent dit dat vertrouwen in standaard cloud-oplossingen niet vanzelfsprekend is. Het is belangrijk om naast technische beveiliging ook processen in te richten voor continue monitoring van ongebruikelijke activiteiten binnen zakelijke software. Een cultuur waarin medewerkers alert zijn op kleine afwijkingen kan net zo cruciaal zijn als automatische detectiesystemen.",
   'openai-vrees-open-weight-modellen':
     "Voor bedrijven die AI toepassen betekent deze ontwikkeling dat keuzes tussen gesloten en open systemen belangrijker worden dan ooit. Gesloten modellen bieden vaak betere integratiemogelijkheden met bestaande systemen, maar tegen hogere kosten. Open alternatieven kunnen flexibiliteit bieden, maar vereisen meer technische expertise en interne capaciteit om veilig toe te passen. De komende jaren zal blijken of innovatie of controle de bovenhand haalt in deze sector.",
   'google-ads-integreert-local-services-ads-in-performance-max':
