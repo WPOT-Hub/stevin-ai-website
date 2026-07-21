@@ -78,10 +78,6 @@ export default function Header() {
   const navItems = [
     { label: t('controle'), href: '/controle' },
     { label: t('werkwijze'), href: '/werkwijze' },
-    { label: t('producten'), href: '/producten' },
-    { label: t('integraties'), href: '/integraties' },
-    { label: t('case_studies'), href: '/case-studies' },
-    { label: t('journal'), href: '/blog' },
     { label: t('contact'), href: '/contact' },
   ]
 

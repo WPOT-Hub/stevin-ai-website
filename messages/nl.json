@@ -77,7 +77,10 @@
     "svc_tracking": "Tracking & Inzicht",
     "voor_ondernemers": "Voor ondernemers",
     "voor_teams": "Voor marketingteams",
-    "controle": "Controle"
+    "controle": "Controle",
+    "producten": "Producten",
+    "cases": "Case studies",
+    "journal": "Journal"
   },
   "trust": {
     "heading": "Veilig by default.",

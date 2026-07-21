@@ -77,7 +77,10 @@
     "svc_tracking": "Tracking & Insights",
     "voor_ondernemers": "For business owners",
     "voor_teams": "For marketing teams",
-    "controle": "Control"
+    "controle": "Control",
+    "producten": "Products",
+    "cases": "Case studies",
+    "journal": "Journal"
   },
   "trust": {
     "heading": "Secure by default.",
