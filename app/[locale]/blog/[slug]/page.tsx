@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'world-of-wow-influencer-marketing-verbinden-in-plaats-van-bereiken': (
+    <>
+      <p className="lead-para">
+        World of WOW introduceert een nieuw model waarbij merken niet langer alleen kijken naar het aantal volgers van een influencer. Het platform meet de echte impact door te analyseren hoe vaak een boodschap wordt gedeeld, besproken en toegepast door de doelgroep. Zo ontstaat er volgens het bedrijf een beter beeld van de effectiviteit van campagnes aldus oprichter Mark van der Meer.
+      </p>
+      <p>
+        Het systeem werkt met een scoring die verder gaat dan likes en views. Het kijkt naar de kwaliteit van de interactie, zoals het aantal unieke reacties en de mate waarin content wordt opgeslagen of gedeeld via directe berichten. Dit moet voorkomen dat merken geld uitgeven aan influencers met ogenschijnlijk groot bereik maar weinig betrokkenheid.
+      </p>
+      <p>
+        Voor kleine en middelgrote bedrijven biedt dit model een kans om efficiënter budget te besteden. Door te focussen op relevante micro-influencers met een hechte community kunnen merken hun boodschap gerichter verspreiden zonder hoge kosten per post.
+      </p>
+    </>
+  ),
   'spacex-starship-lancering-geannuleerd-door-motorproblemen': (
     <>
       <p className="lead-para">
@@ -6071,6 +6084,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'world-of-wow-influencer-marketing-verbinden-in-plaats-van-bereiken':
+    "Voor bureaus en in-house teams is dit een signaal om kritischer te kijken naar de meetdata die ze gebruiken voor influencer campagnes. Het traditionele bereikcijfer zegt weinig over de daadwerkelijke impact, terwijl verbindingsdata zoals shares en opslaan juist wel inzicht geven in de werkelijke waarde. Dit vraagt om nieuwe tools of samenwerkingen met platforms die deze data kunnen leveren.",
   'spacex-starship-lancering-geannuleerd-door-motorproblemen':
     "Voor bedrijven die innovatie hoog in het vaandel dragen, toont dit incident aan dat falen inherent is aan grensverleggend onderzoek. Het vermogen om snel te herstellen en lessen te trekken uit mislukkingen bepaalt uiteindelijk het succes. Ruimtevaartbedrijven zoals SpaceX investeren bewust in testcycli om betrouwbaarheid op te bouwen, een les die ook toepasbaar is op technologische doorbraken in andere sectoren.",
   'web-push-advertising-2026-trends':
