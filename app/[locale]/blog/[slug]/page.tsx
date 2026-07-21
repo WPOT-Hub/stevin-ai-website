@@ -1512,6 +1512,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'space-force-30-miljard-rocket-launches': (
+    <>
+      <p className="lead-para">
+        Een contract van 30 miljard dollar voor raketlanceringen. Dat is geen klein bedrag, maar ook geen verrassing. De Space Force heeft er simpelweg genoeg van om afhankelijk te zijn van een handvol commerciële spelers die lanceringen uitstellen of annuleren omdat hun eigen klanten prioriteit krijgen. Terwijl bedrijven in Nederland en België nog discussiëren over de ROI van satellietdata, heeft de Amerikaanse defensie allang door dat wie de ruimte controleert, de aarde bestuurt. Dit is geen sciencefiction meer, maar een strategische realiteit die elke sector raakt.
+      </p>
+      <p>
+        Wat betekent dit voor marketeers? Allereerst dat de kosten voor het bereiken van consumenten via satellietcommunicatie drastisch dalen. Waar nu nog dure grondstations nodig zijn om signalen op te vangen, zullen binnenkort goedkopere alternatieven beschikbaar komen via nieuwe constellaties. Dat opent deuren voor hyperlokale targeting op basis van GPS-gegevens, zelfs in gebieden waar traditionele netwerken zwak zijn. Stel je voor: een winkelcentrum in Antwerpen dat via directe satellietverbindingen realtime aanbiedingen stuurt naar smartphones van bezoekers, zonder tussenkomst van mobiele providers.
+      </p>
+      <p>
+        Maar er is een keerzijde. De vraag naar lanceringen zal leiden tot schaarste en hogere prijzen op korte termijn. Bedrijven die nu nog denken dat ze met een paar microsatellieten kunnen volstaan, zullen merken dat ze moeten opschalen – of achteropraken. De Space Force investeert niet alleen in capaciteit, maar ook in betrouwbaarheid. Wie straks geen toegang heeft tot stabiele verbindingen, loopt het risico om buiten de boot te vallen bij klanten die wel profiteren van deze nieuwe infrastructuur.
+      </p>
+      <p>
+        Critici wijzen erop dat zo’n enorme uitgave vooral dient als werkverschaffing voor defensiecontractors. Toch gaat het hier niet om geldverspilling, maar om een fundamentele verschuiving in hoe we technologie waarderen. De overheid neemt het voortouw omdat de private sector te traag is geweest om de noodzakelijke schaalvergroting te realiseren. In Europa zien we soortgelijke bewegingen bij ESA en commerciële partijen zoals Arianespace, maar zonder dezelfde urgentie. Het verschil? In Amerika wordt ruimtevaart niet gezien als een kostenpost, maar als een investering in economische en militaire superioriteit.
+      </p>
+      <p>
+        Toch is er hoop voor Europese spelers. De vraag naar lanceringen zal zo groot worden dat zelfs kleinere landen zich kunnen profileren als betrouwbare partners. Denk aan Nederland met zijn sterke positie in micro-elektronica of België met zijn expertise in ruimtevaarttechniek. Maar dan moeten bedrijven wel bereid zijn om mee te bewegen met de snelheid van deze ontwikkelingen. Wie wacht tot alles uitontwikkeld is, mist de boot – letterlijk.
+      </p>
+      <p>
+        Een andere uitdaging ligt in de ethiek. Satellieten brengen niet alleen data terug naar aarde, maar ook verantwoordelijkheid. Wie controleert wie er toegang toe krijgt? En hoe voorkomen we dat commerciële belangen ten koste gaan van privacy of veiligheid? De Space Force koopt niet zomaar lanceringen; ze creëert een systeem waarin gegevensstromen net zo belangrijk zijn als fysieke goederenstromen.
+      </p>
+      <p>
+        Voor marketeers betekent dit dat ze zich moeten verdiepen in nieuwe vormen van data-inwinning en -gebruik. Het traditionele idee van ‘targeting’ wordt vervangen door iets dynamischer: realtime interactie op basis van locatie en gedrag, zonder tussenkomst van derde partijen zoals Facebook of Google. Maar dan moeten ze wel eerst begrijpen hoe deze systemen werken – en wat de implicaties zijn voor consumentenvertrouwen.
+      </p>
+      <p>
+        Uiteindelijk draait het om één ding: adaptatie. De ruimte is geen verre droom meer, maar een operationeel domein waar elke seconde telt.
+      </p>
+    </>
+  ),
   'world-of-wow-influencer-marketing-verbinden-in-plaats-van-bereiken': (
     <>
       <p className="lead-para">
@@ -6084,6 +6112,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'space-force-30-miljard-rocket-launches':
+    "Bij Stevin zien we twee directe implicaties voor onze klanten in Nederland en België. Ten eerste biedt deze ontwikkeling kansen om nieuwe kanalen te verkennen die minder afhankelijk zijn van traditionele digitale platforms – denk aan direct-to-consumer communicatie via satellietverbindingen of IoT-apparaten in afgelegen gebieden waar glasvezel ontbreekt. Ten tweede onderstreept het belang van flexibele IT-infrastructuur die meegroeit met technologische revoluties zoals deze; starre systemen zullen snel achterlopen op concurrenten die wel kunnen inspelen op nieuwe mogelijkheden.\nDe uitdaging ligt niet zozeer in het gebrek aan technologie, maar in het vermogen om snel te schakelen tussen verschillende datastrategieën zonder afbreuk te doen aan compliance of veiligheid. Wie nu al werkt met modulaire cloud-oplossingen en API-gedreven integraties, staat straks sterker dan wie vastzit aan verouderde systemen.",
   'world-of-wow-influencer-marketing-verbinden-in-plaats-van-bereiken':
     "Voor bureaus en in-house teams is dit een signaal om kritischer te kijken naar de meetdata die ze gebruiken voor influencer campagnes. Het traditionele bereikcijfer zegt weinig over de daadwerkelijke impact, terwijl verbindingsdata zoals shares en opslaan juist wel inzicht geven in de werkelijke waarde. Dit vraagt om nieuwe tools of samenwerkingen met platforms die deze data kunnen leveren.",
   'spacex-starship-lancering-geannuleerd-door-motorproblemen':
