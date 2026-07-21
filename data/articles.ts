@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-tag-manager-voert-gestuurde-opzet-in-voor-google-ads-aankoop-tracking',
+    format: 'dispatch' as const,
+    edition: '363',
+    category: 'Platform',
+    title: "Google Tag Manager voert gestuurde opzet in voor Google Ads aankoop-tracking",
+    dek: "GTM introduceert een nieuwe functie die automatisch de belangrijkste meetcomponenten voor Google Ads conversies configureert.",
+    publishedAt: '2026-07-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Tag Manager voert gestuurde opzet in voor Google Ads aankoop-tracking",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-integreert-local-services-ads-in-performance-max',
     format: 'dispatch' as const,
     edition: '362',
