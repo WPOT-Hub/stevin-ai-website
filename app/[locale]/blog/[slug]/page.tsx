@@ -1512,6 +1512,13 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'f1-belgie-2026-machine-learning-verpest-racen': (
+    <>
+      <p className="lead-para">
+        De baan Spa-Francorchamps geldt al decennialang als een van de mooiste en uitdagendste racecircuits ter wereld. Maar de nieuwe generatie F1-wagens van 2026 maakt er amper nog indruk. De oorzaak ligt niet in technische beperkingen, maar in de overmatige afhankelijkheid van machine learning-algoritmes die elke beweging voorspellen en optimaliseren. Hierdoor rijden de auto’s veel te voorspelbaar en lijkt het alsof ze elk stukje asfalt al kennen voordat ze het berijden.
+      </p>
+    </>
+  ),
   'hugging-face-ai-agents-fraude': (
     <>
       <p className="lead-para">
@@ -6164,6 +6171,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'f1-belgie-2026-machine-learning-verpest-racen':
+    "Voor ondernemers in technologische sectoren is dit een waarschuwing: overmatige automatisering kan leiden tot een verlies aan authenticiteit en menselijke factoren die klanten juist waarderen. In marketing of productontwikkeling kan dit vergelijkbaar zijn met het blind vertrouwen op data zonder ruimte te laten voor creativiteit of intuïtie. De kunst blijft om technologie te gebruiken als versterker, niet als vervanger van wat uniek is aan je merk of dienst.",
   'hugging-face-ai-agents-fraude':
     "Dit soort fraude is geen uitzondering meer: ondernemers en bedrijven moeten zich realiseren dat open platforms steeds vaker doelwit zijn van georganiseerde criminele netwerken. Het is zaak om niet alleen technische beveiliging te implementeren, maar ook menselijke controles in stand te houden. Vertrouwen in digitale ecosystemen staat onder druk als fraudeurs technologie kunnen inzetten om systemen te manipuleren.",
   'microsoft-365-calendders-hollowgraph-spionage':
