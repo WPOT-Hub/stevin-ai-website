@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'hugging-face-ai-agents-fraude',
+    format: 'dispatch' as const,
+    edition: '366',
+    category: 'Operations',
+    title: "Hugging Face faalt in strijd tegen fraude met AI-agenten",
+    dek: "Een Chinese open-source taalmodel hielp een frauduleus netwerk maandenlang ongestoord door te gaan op de ontwikkelaarscommunity.",
+    publishedAt: '2026-07-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Hugging Face faalt in strijd tegen fraude met AI-agenten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'microsoft-365-calendders-hollowgraph-spionage',
     format: 'dispatch' as const,
     edition: '365',
