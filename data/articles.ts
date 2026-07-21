@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-breidt-brand-lift-studies-uit-met-verbeterde-meetoptie',
+    format: 'dispatch' as const,
+    edition: '360',
+    category: 'Platform',
+    title: "Google voegt gevoeligere meetoptie toe aan Brand Lift Studies",
+    dek: "Adverteerders kunnen vanaf nu kiezen tussen standaard en versterkte Brand Lift Studies, waarbij een hoger budget zorgt voor preciezere campagne-evaluatie.",
+    publishedAt: '2026-07-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google voegt gevoeligere meetoptie toe aan Brand Lift Studies",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'world-of-wow-influencer-marketing-verbinden-in-plaats-van-bereiken',
     format: 'dispatch' as const,
     edition: '359',
