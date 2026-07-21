@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-vrees-open-weight-modellen': (
+    <>
+      <p className="lead-para">
+        OpenAI ziet Chinese open-weight taalmodellen als een bedreiging voor de eigen marktpositie en pleit voor restricties, aldus een interne memo die vorige week uitlekte. De modellen, zoals Qwen van Alibaba of GLM van Zhipu AI, worden gratis gedeeld en kunnen lokaal draaien zonder afhankelijkheid van Amerikaanse cloudproviders. Dat maakt ze moeilijk te reguleren en te controleren op veiligheidsrisico’s, zo stelt OpenAI in het document.
+      </p>
+      <p>
+        De vrees van OpenAI lijkt vooral commercieel gedreven: open-source modellen ondermijnen de noodzaak om dure API-abonnementen af te nemen. Volgens analisten bij Goldman Sachs kan dit leiden tot een prijsoorlog waarbij de marges op generatieve AI-diensten verder dalen. Tegelijkertijd waarschuwen tech-experts dat volledige openheid ook nieuwe risico’s met zich meebrengt, zoals het gebruik voor desinformatie of cyberaanvallen.
+      </p>
+      <p>
+        De discussie raakt aan een breder debat over de balans tussen innovatie en controle in de AI-sector. Terwijl de VS overweegt om importverboden of exportbeperkingen in te voeren, pleiten Europese beleidsmakers juist voor meer transparantie en open standaarden. China zelf stimuleert actief de ontwikkeling van open-weight modellen als onderdeel van zijn strategie om technologische onafhankelijkheid te bereiken.
+      </p>
+    </>
+  ),
   'google-ads-integreert-local-services-ads-in-performance-max': (
     <>
       <p className="lead-para">
@@ -6125,6 +6138,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-vrees-open-weight-modellen':
+    "Voor bedrijven die AI toepassen betekent deze ontwikkeling dat keuzes tussen gesloten en open systemen belangrijker worden dan ooit. Gesloten modellen bieden vaak betere integratiemogelijkheden met bestaande systemen, maar tegen hogere kosten. Open alternatieven kunnen flexibiliteit bieden, maar vereisen meer technische expertise en interne capaciteit om veilig toe te passen. De komende jaren zal blijken of innovatie of controle de bovenhand haalt in deze sector.",
   'google-ads-integreert-local-services-ads-in-performance-max':
     "Voor bureau-eigenaars en in-house teams betekent deze integratie vooral efficiëntie: minder handmatig werk en een betere overzichtelijkheid. Het is een logische stap van Google om de drempel voor lokale adverteerders te verlagen. Voor bedrijven die nu nog niet actief zijn met LSA kan dit een reden zijn om alsnog te starten, nu het beheer vereenvoudigd wordt.",
   'space-force-30-miljard-rocket-launches':
