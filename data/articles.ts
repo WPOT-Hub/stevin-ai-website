@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'microsoft-365-calendders-hollowgraph-spionage',
+    format: 'dispatch' as const,
+    edition: '365',
+    category: 'Operations',
+    title: "Hackers misbruiken Microsoft 365-agenda’s voor spionage via HollowGraph-campagne",
+    dek: "Cybercriminelen versturen malware die commando’s verbergt in afspraken gepland voor het jaar 2050 en zo Microsofts eigen cloud gebruikt om data te exfiltreren.",
+    publishedAt: '2026-07-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Hackers misbruiken Microsoft 365-agenda’s voor spionage via HollowGraph-campagne",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'openai-vrees-open-weight-modellen',
     format: 'dispatch' as const,
     edition: '364',
