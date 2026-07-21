@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'hugging-face-ai-agents-fraude': (
+    <>
+      <p className="lead-para">
+        Een team van onderzoekers ontdekte dat een netwerk van nepgebruikers maandenlang actief was op Hugging Face, ondanks waarschuwingen van gebruikers. De fraudeurs maakten gebruik van het Chinese taalmodel GLM 5.2 om realistische accounts aan te maken en automatische reacties te genereren, aldus de onderzoekers.
+      </p>
+      <p>
+        Het model reageerde niet alleen op berichten, maar genereerde ook code en documentatie die de geloofwaardigheid van de nepaccounts versterkte. Hierdoor konden de fraudeurs maandenlang ongemerkt blijven opereren, totdat een externe partij de activiteiten ontdekte en naar buiten bracht.
+      </p>
+      <p>
+        Hugging Face heeft sindsdien maatregelen genomen om dergelijke activiteiten tegen te gaan, maar het incident toont aan hoe kwetsbaar open platforms zijn voor misbruik door geavanceerde AI-tools.
+      </p>
+    </>
+  ),
   'microsoft-365-calendders-hollowgraph-spionage': (
     <>
       <p className="lead-para">
@@ -6151,6 +6164,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'hugging-face-ai-agents-fraude':
+    "Dit soort fraude is geen uitzondering meer: ondernemers en bedrijven moeten zich realiseren dat open platforms steeds vaker doelwit zijn van georganiseerde criminele netwerken. Het is zaak om niet alleen technische beveiliging te implementeren, maar ook menselijke controles in stand te houden. Vertrouwen in digitale ecosystemen staat onder druk als fraudeurs technologie kunnen inzetten om systemen te manipuleren.",
   'microsoft-365-calendders-hollowgraph-spionage':
     "Voor bedrijven betekent dit dat vertrouwen in standaard cloud-oplossingen niet vanzelfsprekend is. Het is belangrijk om naast technische beveiliging ook processen in te richten voor continue monitoring van ongebruikelijke activiteiten binnen zakelijke software. Een cultuur waarin medewerkers alert zijn op kleine afwijkingen kan net zo cruciaal zijn als automatische detectiesystemen.",
   'openai-vrees-open-weight-modellen':
