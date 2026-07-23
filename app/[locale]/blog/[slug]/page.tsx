@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'passionfroot-15m-us-expansion': (
+    <>
+      <p className="lead-para">
+        Passionfroot, een Duits platform dat bedrijven koppelt aan creators voor marketing en contentproductie, heeft $15 miljoen opgehaald in een Series A-financieringsronde. De ronde wordt geleid door Insight Partners.
+      </p>
+      <p>
+        Met het geld wil het bedrijf zijn activiteiten in de Verenigde Staten uitbreiden. Passionfroot richt zich momenteel vooral op de Europese markt.
+      </p>
+      <p>
+        Het platform werkt met een abonnementsmodel waarbij merken creators kunnen inhuren voor projecten. Creators krijgen zo toegang tot betaalde opdrachten zonder zelf actief op zoek te hoeven gaan naar klanten.
+      </p>
+    </>
+  ),
   'yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk': (
     <>
       <p className="lead-para">
@@ -6197,6 +6210,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'passionfroot-15m-us-expansion':
+    "Voor bureaus en merken biedt dit platform een nieuwe manier om creators in te zetten zonder zelf een groot netwerk te hoeven onderhouden. Het is een signaal dat de vraag naar flexibele contentpartnerschap alleen maar groeit. Tegelijkertijd daagt het de traditionele rol van bureaus uit: waarom zou je vaste krachten houden als je direct toegang hebt tot gespecialiseerde creators?",
   'yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk':
     "Voor ondernemers die zelf een community rond hun merk of doelgroep willen bouwen biedt Yope’s aanpak een interessant alternatief. Een privégroep waar klanten of partners direct met elkaar kunnen communiceren, zonder tussenkomst van algoritmen of advertenties, kan de betrokkenheid verhogen. Tegelijkertijd vraagt dit om een duidelijke strategie: hoe zorg je dat zo’n groep levendig blijft zonder dat het een ‘spookgemeenschap’ wordt? De vraag is niet alleen technisch, maar ook organisatorisch.",
   'google-ads-lanceert-video-campagnegroepen-wereldwijd':
