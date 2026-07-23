@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'uk-investeert-708-miljoen-in-toekomstig-straaljagerproject': (
+    <>
+      <p className="lead-para">
+        Het Britse ministerie van Defensie heeft een bedrag van 708 miljoen pond toegewezen aan de ontwikkeling van de Tempest-straaljager. Deze investering maakt deel uit van een breder programma om de luchtvaartcapaciteiten van het VK uit te breiden. Daarnaast is er een contract getekend voor hypersonische doeltesten, aldus officiële bronnen.
+      </p>
+      <p>
+        BAE Systems onthulde tijdens dezelfde aankondiging een nieuw concept voor een 'loyale wingman'-drone. Deze onbemande vliegtuigen moeten samenwerken met bemande straaljagers en kunnen worden ingezet voor verkenning of als escorte. De technologie moet rond 2035 operationeel zijn.
+      </p>
+      <p>
+        De investering volgt op eerdere toezeggingen om de defensie-industrie te versterken na de Brexit en geopolitieke spanningen. Het VK werkt hierbij nauw samen met internationale partners, waaronder Japan en Italië.
+      </p>
+    </>
+  ),
   'doelgroep-validatie-voor-bidding-strategieen': (
     <>
       <p className="lead-para">
@@ -6236,6 +6249,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'uk-investeert-708-miljoen-in-toekomstig-straaljagerproject':
+    "Voor bedrijven in hightech-sectoren laat deze investering zien hoe overheden grote risico’s nemen bij strategische projecten. Het benadrukt het belang van langetermijnplanning en samenwerking tussen overheid en industrie. Tegelijkertijd roept het vragen op over de balans tussen defensie-uitgaven en andere maatschappelijke prioriteiten.",
   'doelgroep-validatie-voor-bidding-strategieen':
     "Voor marketeers is het cruciaal om regelmatig te valideren of de gekozen bieddoelen nog haalbaar zijn binnen de huidige marktomstandigheden. Automatisering bespaart tijd, maar zonder periodieke controle loop je het risico op verspilling of gemiste kansen. Begin met kleine aanpassingen en meet het effect over minimaal twee weken voor je ingrijpende wijzigingen doorvoert.",
   'meta-invoert-onzichtbare-watermerken-voor-ai-content':
