@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'passionfroot-15m-us-expansion',
+    format: 'dispatch' as const,
+    edition: '370',
+    category: 'Markt',
+    title: "Duits platform Passionfroot haalt $15 miljoen op voor Amerikaanse expansie",
+    dek: "Het Duitse Passionfroot, een marktplaats voor B2B-creators, haalt $15 miljoen op om naar de VS uit te breiden.",
+    publishedAt: '2026-07-23',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Duits platform Passionfroot haalt $15 miljoen op voor Amerikaanse expansie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk',
     format: 'dispatch' as const,
     edition: '369',
