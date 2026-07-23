@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'uk-investeert-708-miljoen-in-toekomstig-straaljagerproject',
+    format: 'dispatch' as const,
+    edition: '373',
+    category: 'Markt',
+    title: "VK pompt 708 miljoen pond in toekomstige straaljager",
+    dek: "Het Verenigd Koninkrijk investeert fors in de ontwikkeling van de Tempest-straaljager, inclusief een hypersonische doeltest en een nieuw 'loyale wingman'-droneconcept.",
+    publishedAt: '2026-07-23',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "VK pompt 708 miljoen pond in toekomstige straaljager",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'doelgroep-validatie-voor-bidding-strategieen',
     format: 'dispatch' as const,
     edition: '372',
