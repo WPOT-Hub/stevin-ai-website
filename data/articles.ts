@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-lanceert-video-campagnegroepen-wereldwijd',
+    format: 'dispatch' as const,
+    edition: '368',
+    category: 'Platform',
+    title: "Google Ads breidt video-campagnegroepen uit naar alle adverteerders",
+    dek: "Adverteerders kunnen nu YouTube-reach en -frequentie beter sturen door campagnes in groepen te bundelen.",
+    publishedAt: '2026-07-23',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads breidt video-campagnegroepen uit naar alle adverteerders",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'f1-belgie-2026-machine-learning-verpest-racen',
     format: 'dispatch' as const,
     edition: '367',
