@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'doelgroep-validatie-voor-bidding-strategieen': (
+    <>
+      <p className="lead-para">
+        Een biedstrategie in Google Ads of Meta is afhankelijk van de targets die je instelt. Als die targets niet kloppen, werkt zelfs de beste automatisering niet goed. Een eenvoudige formule om je doelstellingen te checken is: *(huidige kosten / conversies) x gewenste uplift*. Als het resultaat hoger is dan je huidige CPA of ROAS, moet je de doelen bijstellen.
+      </p>
+      <p>
+        Meetdata uit campagnes laten zien dat veel bedrijven hun targets baseren op gemiddelden zonder rekening te houden met seizoenale schommelingen of marktveranderingen. Een praktijkvoorbeeld: een webshop die vorig jaar een ROAS van 3,5 haalde, stelde dit jaar hetzelfde doel in. Door stijgende acquisitiekosten bleek de werkelijke ROAS echter gedaald naar 2,8. De oplossing lag in het aanpassen van de targets op basis van actuele data.
+      </p>
+      <p>
+        Google’s Smart Bidding kan alleen optimaliseren als de input correct is. Te hoge doelen leiden tot minder volume, te lage doelen tot inefficiënte uitgaven. Experts adviseren om maandelijks een health check uit te voeren met behulp van historische data en marktontwikkelingen.
+      </p>
+    </>
+  ),
   'meta-invoert-onzichtbare-watermerken-voor-ai-content': (
     <>
       <p className="lead-para">
@@ -6223,6 +6236,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'doelgroep-validatie-voor-bidding-strategieen':
+    "Voor marketeers is het cruciaal om regelmatig te valideren of de gekozen bieddoelen nog haalbaar zijn binnen de huidige marktomstandigheden. Automatisering bespaart tijd, maar zonder periodieke controle loop je het risico op verspilling of gemiste kansen. Begin met kleine aanpassingen en meet het effect over minimaal twee weken voor je ingrijpende wijzigingen doorvoert.",
   'meta-invoert-onzichtbare-watermerken-voor-ai-content':
     "Voor bedrijven die afhankelijk zijn van sociale media voor hun merkcommunicatie wordt het steeds belangrijker om rekening te houden met de authenticiteit van content. Het is verstandig om nu al afspraken te maken over hoe om te gaan met door AI gegenereerde materialen in campagnes of klantcommunicatie. Bedrijven die zelf transparantie bieden over het gebruik van AI, kunnen hiermee vertrouwen opbouwen bij hun doelgroep.",
   'passionfroot-15m-us-expansion':
