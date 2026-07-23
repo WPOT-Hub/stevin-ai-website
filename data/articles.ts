@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk',
+    format: 'dispatch' as const,
+    edition: '369',
+    category: 'Tech',
+    title: "Yope haalt 12,3 miljoen op voor privénetwerk zonder algoritmen",
+    dek: "Het Nederlandse Yope verzamelt 12,3 miljoen dollar om een sociaal netwerk te bouwen op basis van privéschatten en kleine groepen.",
+    publishedAt: '2026-07-23',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Yope haalt 12,3 miljoen op voor privénetwerk zonder algoritmen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-ads-lanceert-video-campagnegroepen-wereldwijd',
     format: 'dispatch' as const,
     edition: '368',
