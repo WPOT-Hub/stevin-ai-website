@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk': (
+    <>
+      <p className="lead-para">
+        Yope, een app die draait om privésgroepen met vrienden en familie, heeft 12,3 miljoen dollar opgehaald bij investeerders. Het geld gaat naar de uitbouw van een platform waar gebruikers foto’s delen, berichten sturen en AI-functies gebruiken om echte relaties te versterken. In tegenstelling tot grote sociale media zoals Facebook of Instagram kiest Yope voor kleinschaligheid zonder algoritmische feeds of advertenties.
+      </p>
+      <p>
+        De app richt zich op gebruiksgemak: privéberichten staan centraal, met extra tools zoals gezamenlijke fotoalbums en herinneringen. Gebruikers kunnen zelf groepen aanmaken met maximaal honderd deelnemers, wat de dynamiek anders maakt dan openbare netwerken. De ontwikkelaars zien hierin een antwoord op de toenemende onrust over privacy en datahandel in traditionele social media.
+      </p>
+      <p>
+        Yope is al actief in Nederland en België, maar veruit het grootste deel van de gebruikers komt uit de VS. Met het kapitaal wil het team de technologie verder opschalen en nieuwe functies introduceren, zoals automatische samenvattingen van groepsgesprekken. De focus blijft echter liggen op intimiteit en controle over wie toegang heeft tot welke informatie.
+      </p>
+    </>
+  ),
   'google-ads-lanceert-video-campagnegroepen-wereldwijd': (
     <>
       <p className="lead-para">
@@ -6184,6 +6197,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk':
+    "Voor ondernemers die zelf een community rond hun merk of doelgroep willen bouwen biedt Yope’s aanpak een interessant alternatief. Een privégroep waar klanten of partners direct met elkaar kunnen communiceren, zonder tussenkomst van algoritmen of advertenties, kan de betrokkenheid verhogen. Tegelijkertijd vraagt dit om een duidelijke strategie: hoe zorg je dat zo’n groep levendig blijft zonder dat het een ‘spookgemeenschap’ wordt? De vraag is niet alleen technisch, maar ook organisatorisch.",
   'google-ads-lanceert-video-campagnegroepen-wereldwijd':
     "Voor marketeers die veel met YouTube werken, biedt deze update meer controle zonder extra complexiteit toe te voegen. Het is een logische stap in de richting van geavanceerdere targeting, vooral nu video-inhoud steeds belangrijker wordt in marketingstrategieën. Bureaus kunnen deze functie gebruiken om klanten sneller resultaatgerichte campagnes op te leveren.",
   'f1-belgie-2026-machine-learning-verpest-racen':
