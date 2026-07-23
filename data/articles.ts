@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'meta-invoert-onzichtbare-watermerken-voor-ai-content',
+    format: 'dispatch' as const,
+    edition: '371',
+    category: 'Platform',
+    title: "Meta voegt onzichtbare watermerken toe aan AI-beelden",
+    dek: "Meta lanceert Content Seal, een systeem dat beelden van eigen AI modellen automatisch voorziet van een onzichtbaar watermerk om desinformatie tegen te gaan.",
+    publishedAt: '2026-07-23',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Meta voegt onzichtbare watermerken toe aan AI-beelden",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'passionfroot-15m-us-expansion',
     format: 'dispatch' as const,
     edition: '370',
