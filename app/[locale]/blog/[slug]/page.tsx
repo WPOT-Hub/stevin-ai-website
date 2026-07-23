@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'meta-invoert-onzichtbare-watermerken-voor-ai-content': (
+    <>
+      <p className="lead-para">
+        Meta introduceert vanaf deze maand Content Seal, een technologie die afbeeldingen gegenereerd door het bedrijf zijn nieuwe AI-modellen automatisch voorziet van een onzichtbaar watermerk. Dit moet helpen om nepnieuws en misleidende content sneller te herkennen en te beperken op sociale media. De Oversight Board van Meta riep het bedrijf eerder op om eigen tools in te zetten voor dit doel, aldus de organisatie zelf in een statement.
+      </p>
+      <p>
+        De watermerken zijn niet zichtbaar voor gebruikers maar wel detecteerbaar door Meta’s systemen en externe partijen die samenwerken met het bedrijf. Hiermee volgt Meta een trend waarbij techbedrijven zelf actief bijdragen aan het markeren van synthetische content, in plaats van alleen op externe oplossingen te vertrouwen. Het systeem werkt momenteel alleen voor beelden maar zou later kunnen worden uitgebreid naar video en tekst.
+      </p>
+      <p>
+        Critici wijzen erop dat dergelijke systemen nog steeds omzeild kunnen worden door kwaadwillenden, bijvoorbeeld door de beelden eerst te bewerken voordat ze worden gedeeld. Toch hoopt Meta met Content Seal de betrouwbaarheid van content op haar platformen te vergroten en de druk op moderators te verminderen.
+      </p>
+    </>
+  ),
   'passionfroot-15m-us-expansion': (
     <>
       <p className="lead-para">
@@ -6210,6 +6223,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'meta-invoert-onzichtbare-watermerken-voor-ai-content':
+    "Voor bedrijven die afhankelijk zijn van sociale media voor hun merkcommunicatie wordt het steeds belangrijker om rekening te houden met de authenticiteit van content. Het is verstandig om nu al afspraken te maken over hoe om te gaan met door AI gegenereerde materialen in campagnes of klantcommunicatie. Bedrijven die zelf transparantie bieden over het gebruik van AI, kunnen hiermee vertrouwen opbouwen bij hun doelgroep.",
   'passionfroot-15m-us-expansion':
     "Voor bureaus en merken biedt dit platform een nieuwe manier om creators in te zetten zonder zelf een groot netwerk te hoeven onderhouden. Het is een signaal dat de vraag naar flexibele contentpartnerschap alleen maar groeit. Tegelijkertijd daagt het de traditionele rol van bureaus uit: waarom zou je vaste krachten houden als je direct toegang hebt tot gespecialiseerde creators?",
   'yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk':
