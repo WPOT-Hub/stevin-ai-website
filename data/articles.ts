@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'doelgroep-validatie-voor-bidding-strategieen',
+    format: 'dispatch' as const,
+    edition: '372',
+    category: 'Platform',
+    title: "Zonder goede doelen werkt bieden niet",
+    dek: "Biedstrategieën in campagnes falen vaak door verkeerde of onrealistische doelstellingen, blijkt uit meetdata.",
+    publishedAt: '2026-07-23',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Zonder goede doelen werkt bieden niet",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'meta-invoert-onzichtbare-watermerken-voor-ai-content',
     format: 'dispatch' as const,
     edition: '371',
