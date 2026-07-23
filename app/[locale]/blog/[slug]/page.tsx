@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-lanceert-video-campagnegroepen-wereldwijd': (
+    <>
+      <p className="lead-para">
+        Google Ads introduceert video-campagnegroepen, waardoor adverteerders meerdere campagnes tegelijk kunnen beheren en hun YouTube-investeringen efficiënter inzetten. Deze functie is nu wereldwijd beschikbaar voor alle accounts. Met campagnegroepen kunnen marketeers bijvoorbeeld eenvoudig de frequentie van advertenties aanpassen of campagnes met vergelijkbare doelstellingen combineren.
+      </p>
+      <p>
+        De nieuwe optie moet helpen om de zichtbaarheid en impact van video-advertenties op YouTube te vergroten zonder handmatig elke campagne apart aan te passen. Zo hoeven adverteerders niet langer apart te optimaliseren voor bereik of herhaling, wat tijd bespaart en de resultaten verbetert. De campagnegroepen werken zowel voor standaard als voor slimme campagnes binnen Google Ads.
+      </p>
+      <p>
+        Voor bureaus en in-house teams betekent dit dat ze strategieën sneller kunnen aanpassen en beter kunnen schalen. Ook is het mogelijk om met deze groepen A/B-tests uit te voeren op campagneniveau, wat helpt bij het vinden van de beste instellingen voor specifieke doelgroepen.
+      </p>
+    </>
+  ),
   'f1-belgie-2026-machine-learning-verpest-racen': (
     <>
       <p className="lead-para">
@@ -6171,6 +6184,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-lanceert-video-campagnegroepen-wereldwijd':
+    "Voor marketeers die veel met YouTube werken, biedt deze update meer controle zonder extra complexiteit toe te voegen. Het is een logische stap in de richting van geavanceerdere targeting, vooral nu video-inhoud steeds belangrijker wordt in marketingstrategieën. Bureaus kunnen deze functie gebruiken om klanten sneller resultaatgerichte campagnes op te leveren.",
   'f1-belgie-2026-machine-learning-verpest-racen':
     "Voor ondernemers in technologische sectoren is dit een waarschuwing: overmatige automatisering kan leiden tot een verlies aan authenticiteit en menselijke factoren die klanten juist waarderen. In marketing of productontwikkeling kan dit vergelijkbaar zijn met het blind vertrouwen op data zonder ruimte te laten voor creativiteit of intuïtie. De kunst blijft om technologie te gebruiken als versterker, niet als vervanger van wat uniek is aan je merk of dienst.",
   'hugging-face-ai-agents-fraude':
