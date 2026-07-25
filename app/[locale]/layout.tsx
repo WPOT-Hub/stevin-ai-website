@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       metadataBase: new URL('https://stevin.ai'),
       alternates: { types: { 'application/rss+xml': 'https://stevin.ai/feed.xml' } },
       title: {
-        default: 'Stevin · Wij regelen je marketing goed. Alles blijft van jou.',
+        default: 'Stevin.AI · Wij regelen je marketing goed. Alles blijft van jou.',
         template: '%s | Stevin.AI',
       },
       description: 'Stevin zet je marketing goed en let er dag en nacht op. Eerst een diagnose op jouw eigen data, daarna pas een voorstel. Je accounts, je data en je kennis blijven van jou.',
@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         type: 'website',
         locale: 'nl_NL',
         siteName: 'Stevin.AI',
-        title: 'Stevin · Wij regelen je marketing goed. Alles blijft van jou.',
+        title: 'Stevin.AI · Wij regelen je marketing goed. Alles blijft van jou.',
         description: 'Stevin zet je marketing goed en let er dag en nacht op. En alles blijft van jou: je accounts, je data, je kennis.',
         url: 'https://stevin.ai',
         images: [
@@ -90,7 +90,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'Stevin · Wij regelen je marketing goed. Alles blijft van jou.',
+        title: 'Stevin.AI · Wij regelen je marketing goed. Alles blijft van jou.',
         description: 'Stevin zet je marketing goed en let er dag en nacht op. En alles blijft van jou: je accounts, je data, je kennis.',
         images: ['/opengraph-image'],
       },
@@ -101,7 +101,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ...previewRobots,
     metadataBase: new URL('https://stevin.ai'),
     title: {
-      default: 'Stevin · We set your marketing right. Everything stays yours.',
+      default: 'Stevin.AI · We set your marketing right. Everything stays yours.',
       template: '%s | Stevin.AI',
     },
     description: 'Stevin sets your marketing up right and watches it day and night. First a diagnosis on your own data, then a proposal. Your accounts, data and knowledge stay yours.',
@@ -109,7 +109,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       type: 'website',
       locale: 'en_GB',
       siteName: 'Stevin.AI',
-      title: 'Stevin · We set your marketing right. Everything stays yours.',
+      title: 'Stevin.AI · We set your marketing right. Everything stays yours.',
       description: 'Stevin sets your marketing up right and watches it day and night. Everything stays yours.',
       url: 'https://stevin.ai/en',
       images: [
@@ -117,13 +117,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
           url: '/en/opengraph-image',
           width: 1200,
           height: 630,
-          alt: 'Stevin · We set your marketing right. Everything stays yours.',
+          alt: 'Stevin.AI · We set your marketing right. Everything stays yours.',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Stevin · We set your marketing right. Everything stays yours.',
+      title: 'Stevin.AI · We set your marketing right. Everything stays yours.',
       description: 'Stevin sets your marketing up right and watches it day and night. Everything stays yours.',
       images: ['/en/opengraph-image'],
     },

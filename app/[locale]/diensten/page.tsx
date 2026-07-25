@@ -9,10 +9,13 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'diensten' })
+  const isNl = locale !== 'en'
   return localizedMetadata({
     path: '/diensten',
     locale,
-    title: `${t('eyebrow')}, Stevin`,
+    title: isNl
+      ? 'Diensten, van diagnose tot dagelijks beheer'
+      : 'Services, from diagnosis to daily management',
     description: t('sub'),
   })
 }
