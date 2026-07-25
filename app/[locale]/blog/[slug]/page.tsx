@@ -7797,6 +7797,14 @@ function ArticleTransparencyBody() {
         label="Zolang duurt het om zelf op te zoeken wie jouw advertenties betaalt. Ga naar de advertentiebibliotheek van het platform, typ je bedrijfsnaam, open een advertentie en kijk bij het veld &quot;Betaald door&quot;. Geen account nodig, geen kosten."
       />
 
+      <p>
+        Hoe vaak komt dit voor? Wij zijn die registers gaan doorzoeken. Op 25 juli 2026 hadden we 1,9 miljoen advertenties bekeken in de openbare bibliotheken van Google en Meta. Bij 3.658 adverteerders in Nederland en Belgie staat een andere partij dan het bedrijf zelf geregistreerd als betaler, verdeeld over 857 verschillende betalende partijen. Die teller loopt door, want we scannen nog steeds.
+      </p>
+
+      <p>
+        Wat dat betekent, hangt af van de afspraken die eronder liggen. Een bureau dat de media vooruitbetaalt en later doorbelast is doodnormaal, en daar is niets mis mee. Het wordt een ander verhaal wanneer de ondernemer niet weet dat het zo staat, en er pas bij een overstap achter komt dat de geschiedenis niet meeverhuist. Dit is trouwens geen percentage van de markt: hoeveel Nederlandse bedrijven er in totaal adverteren is niet bekend, dus dat zou giswerk zijn. Het is een telling van wat er in het register staat.
+      </p>
+
       <H2 num="01">Waarom kun je publiek zien wie je advertenties betaalt?</H2>
 
       <p>
