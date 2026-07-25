@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'klanten-vragen-naar-chatgpt-zichtbaarheid',
+    format: 'dispatch' as const,
+    edition: '374',
+    category: 'Platform',
+    title: "Klanten vragen naar zichtbaarheid in ChatGPT: hoe meet je dat?",
+    dek: "Een groeiend aantal klanten wil weten of hun merk in ChatGPT verschijnt, maar de meeste bureaus kunnen dat niet met data onderbouwen.",
+    publishedAt: '2026-07-25',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Klanten vragen naar zichtbaarheid in ChatGPT: hoe meet je dat?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'uk-investeert-708-miljoen-in-toekomstig-straaljagerproject',
     format: 'dispatch' as const,
     edition: '373',
