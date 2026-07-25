@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import { nativeConnectors } from '@/data/connectors'
-import MeetlatRuler from '@/components/MeetlatRuler'
+import HairlineRule from '@/components/HairlineRule'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -110,7 +110,7 @@ export default async function PlatformPage({ params }: Props) {
             </Link>
           </div>
           <div className="mt-20">
-            <MeetlatRuler color="rgba(255,255,255,.35)" />
+            <HairlineRule color="rgba(255,255,255,.35)" />
           </div>
         </div>
       </section>

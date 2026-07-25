@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return localizedMetadata({
     path: '/integraties',
     locale,
-    title: 'Integraties als meetlat onder je marketing',
+    title: 'Integraties: alle bronnen onder je marketing',
     description: t('sub'),
   })
 }
@@ -81,21 +81,12 @@ export default async function IntegratiesPage({ params }: Props) {
               Niet om een toollijst te tonen, maar om te bewijzen welke bron welk resultaat veroorzaakt.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#meetlat" className="inline-flex min-h-12 items-center justify-center rounded-[10px] bg-[#3C8EFF] px-5 text-sm font-extrabold text-white transition-colors hover:bg-[#2B7AEE]">
-                Bekijk de meetlat
+              <a href="#lagen" className="inline-flex min-h-12 items-center justify-center rounded-[10px] bg-[#3C8EFF] px-5 text-sm font-extrabold text-white transition-colors hover:bg-[#2B7AEE]">
+                Bekijk de vijf lagen
               </a>
               <a href="#koppelingen" className="inline-flex min-h-12 items-center justify-center rounded-[10px] border border-white/20 px-5 text-sm font-extrabold text-white transition-colors hover:bg-white/5">
                 Zoek een koppeling
               </a>
-            </div>
-            <div className="relative mt-14 h-6 max-w-md text-white/45 before:absolute before:left-0 before:right-0 before:top-0 before:h-0.5 before:bg-current">
-              {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((position) => (
-                <span
-                  key={position}
-                  className={`absolute top-0 w-0.5 bg-current ${position === 0 || position === 50 || position === 100 ? 'h-4' : 'h-2'}`}
-                  style={{ left: `${position}%` }}
-                />
-              ))}
             </div>
           </div>
 
@@ -121,12 +112,12 @@ export default async function IntegratiesPage({ params }: Props) {
         </div>
       </section>
 
-      <section id="meetlat" className="bg-[#F7F8FA] py-16 sm:py-20 lg:py-24">
+      <section id="lagen" className="bg-[#F7F8FA] py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-9 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="mb-4 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3C8EFF] before:h-px before:w-7 before:bg-current">
-                Meetlat onder je stack
+                Onder je stack
               </p>
               <h2 className="max-w-3xl text-[clamp(2.125rem,4.2vw,3.625rem)] font-extrabold leading-[1.02] tracking-[-0.04em] text-[#0A0A0A]">
                 Vijf lagen. Een werkelijkheid.
@@ -204,7 +195,7 @@ export default async function IntegratiesPage({ params }: Props) {
               Ontbreekt er iets?
             </p>
             <h2 className="max-w-3xl text-[clamp(2.125rem,4.2vw,3.625rem)] font-extrabold leading-[1.02] tracking-[-0.04em] text-white">
-              Als het een API heeft, kan het meestal in de meetlat.
+              Als het een API heeft, kan het er meestal bij.
             </h2>
             <p className="mt-5 max-w-xl text-[17px] leading-[1.55] text-white/65">
               We beginnen met de bronnen die je beslissingen raken: media, tracking, CRM, commerce en finance.

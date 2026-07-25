@@ -2,7 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
-import MeetlatRuler from '@/components/MeetlatRuler'
+import HairlineRule from '@/components/HairlineRule'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -107,7 +107,7 @@ export default async function DienstenPage({ params }: Props) {
           </p>
 
           <div className="mt-16">
-            <MeetlatRuler color="rgba(255,255,255,.35)" />
+            <HairlineRule color="rgba(255,255,255,.35)" />
           </div>
         </div>
       </section>

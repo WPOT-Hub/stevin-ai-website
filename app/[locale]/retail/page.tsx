@@ -2,7 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
-import MeetlatRuler from '@/components/MeetlatRuler'
+import HairlineRule from '@/components/HairlineRule'
 import { Search, GitBranch, Database, Plug, Eye, Radar } from 'lucide-react'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -88,7 +88,7 @@ export default async function RetailPage({ params }: Props) {
             </Link>
           </div>
           <div className="mt-20">
-            <MeetlatRuler color="rgba(255,255,255,.35)" />
+            <HairlineRule color="rgba(255,255,255,.35)" />
           </div>
         </div>
       </section>

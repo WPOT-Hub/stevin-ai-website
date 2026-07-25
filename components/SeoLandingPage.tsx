@@ -1,5 +1,5 @@
 import { Link } from '@/i18n/navigation'
-import MeetlatRuler from '@/components/MeetlatRuler'
+import HairlineRule from '@/components/HairlineRule'
 import FAQAccordion from '@/components/FAQAccordion'
 import type { SeoLandingPageContent } from '@/data/seo-landing-pages'
 
@@ -59,7 +59,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
             )}
           </div>
           <div className="mt-20">
-            <MeetlatRuler color="rgba(255,255,255,.35)" />
+            <HairlineRule color="rgba(255,255,255,.35)" />
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
-import MeetlatRuler from '@/components/MeetlatRuler'
+import HairlineRule from '@/components/HairlineRule'
 import SignalFlowDemo from '@/components/SignalFlowDemo'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -172,9 +172,9 @@ export default async function WerkwijzePage({ params }: Props) {
             </aside>
           </div>
 
-          {/* Meetlat-ruler + labels */}
+          {/* Haarlijn + labels */}
           <div className="mt-24 text-white/55">
-            <MeetlatRuler color="rgba(255,255,255,.55)" />
+            <HairlineRule color="rgba(255,255,255,.55)" />
             <div className="mt-3.5 flex justify-between font-mono text-[11px] text-white/45 tracking-[0.04em]">
               <span>{t('ruler_label0')}</span>
               <span>01</span>
@@ -211,7 +211,7 @@ export default async function WerkwijzePage({ params }: Props) {
           </div>
 
           {/* Ruler + fase-labels */}
-          <MeetlatRuler color="#0A1628" />
+          <HairlineRule color="#0A1628" />
           <div className="mt-3 grid grid-cols-4 font-mono text-[11px] text-muted tracking-[0.04em]">
             {phaseLabels.map((l) => <span key={l}>{l}</span>)}
           </div>
