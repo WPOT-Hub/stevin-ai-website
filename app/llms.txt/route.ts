@@ -30,7 +30,7 @@ export async function GET() {
   const body = lines(
     '# Stevin.AI',
     '',
-    '> De AI-laag over je marketing en sales. Je eigen data, je eigen marketing-brein: Stevin koppelt je paid en owned kanalen op data die van jou blijft, ziet wat aandacht nodig heeft voordat het in de maandrapportage staat, en beweegt je campagnes mee.',
+    '> Wij regelen je marketing goed, en alles blijft van jou. Stevin beheert paid en owned media voor Nederlandse en Belgische bedrijven, met de accounts op naam van de klant zelf. Elke wijziging staat in een logboek met de reden erbij, en een deel van het bewijs staat buiten ons om: het wijzigingslogboek van het advertentie-account en het transparantieregister zijn van Google, niet van ons.',
     '',
     'Stevin legt een slimme laag over versnipperde marketing-data (Google Ads, Meta Ads, GA4, HubSpot, Klaviyo, Shopify, en 245+ meer). Kernidee: je adverteert, maar je data staat vaak bij het bureau. Stevin haalt die data naar je toe, zodat je eigenaar bent en klaar voor wat AI ermee kan. Het bureau blijft de uitvoerder, jij houdt het zicht en het geheugen. Doelgroep: bureaus, merken met een mediabureau, merkbouwers en in-house marketing-teams in Nederland en Belgie.',
     '',
