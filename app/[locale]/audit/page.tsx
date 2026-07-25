@@ -181,8 +181,8 @@ export default async function AuditPage({ params }: Props) {
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-[13px] text-muted">
                   {t('form_email_label')}{' '}
-                  <a href="mailto:koen@stevin.ai" className="text-accent hover:underline font-medium">
-                    koen@stevin.ai
+                  <a href="mailto:info@stevin.ai" className="text-accent hover:underline font-medium">
+                    info@stevin.ai
                   </a>
                 </p>
               </div>

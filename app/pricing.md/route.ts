@@ -28,7 +28,7 @@ Stevin werkt met prijs op aanvraag, afgestemd op het aantal advertentie-accounts
 - Bureau-setup (meerdere klanten) versus in-house (een organisatie).
 
 ## Een prijs krijgen
-Plan een gesprek via https://stevin.ai/contact of mail koen@stevin.ai. Je krijgt een voorstel op maat, meestal binnen een werkdag.
+Plan een gesprek via https://stevin.ai/contact of mail info@stevin.ai. Je krijgt een voorstel op maat, meestal binnen een werkdag.
 `
 
 export async function GET() {

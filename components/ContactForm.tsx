@@ -202,7 +202,7 @@ export default function ContactForm({ subject }: { nextUrl?: string; subject?: s
       {error && (
         <p className="mt-4 text-sm text-red-600">
           Er ging iets mis bij het verzenden. Mail ons gerust direct op{' '}
-          <a href="mailto:koen@stevin.ai" className="underline">koen@stevin.ai</a>.
+          <a href="mailto:info@stevin.ai" className="underline">info@stevin.ai</a>.
         </p>
       )}
     </form>

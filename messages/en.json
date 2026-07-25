@@ -776,7 +776,7 @@
     "submitting": "Signing up...",
     "success_title": "You're on the waitlist.",
     "success_body": "Thanks for signing up. We've sent a confirmation by email. As soon as a spot opens up, you'll hear from Koen directly.",
-    "error_generic": "Something went wrong. Please try again or email koen@stevin.ai.",
+    "error_generic": "Something went wrong. Please try again or email info@stevin.ai.",
     "error_email": "Please enter a valid email address.",
     "email_fallback_label": "Prefer to email directly?"
   },

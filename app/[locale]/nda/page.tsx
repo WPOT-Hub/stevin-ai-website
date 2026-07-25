@@ -48,7 +48,7 @@ export default async function NDAPage({ params }: Props) {
             : <>Stevin.AI is een handelsnaam van <strong>WPOT B.V.</strong>, KvK <strong>87774372</strong>, btw NL864401954B01, statutair gevestigd te <strong>Amstenradestraat 25, 4834 JB Breda</strong>.</>
           }
         </p>
-        <p>{isEn ? 'Contact: ' : 'Contact: '}<a className="underline" href="mailto:koen@stevin.ai">koen@stevin.ai</a></p>
+        <p>{isEn ? 'Contact: ' : 'Contact: '}<a className="underline" href="mailto:info@stevin.ai">info@stevin.ai</a></p>
       </footer>
       </div>
     </main>

@@ -54,7 +54,7 @@ const organization = {
     {
       '@type': 'ContactPoint',
       contactType: 'sales',
-      email: 'koen@stevin.ai',
+      email: 'info@stevin.ai',
       url: 'https://stevin.ai/contact',
       areaServed: ['NL', 'BE'],
       availableLanguage: ['Dutch', 'English'],

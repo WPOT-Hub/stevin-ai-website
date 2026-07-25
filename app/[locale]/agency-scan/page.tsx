@@ -221,8 +221,8 @@ export default async function AgencyScanPage({ params }: Props) {
               <div className="pt-8 border-t border-border">
                 <p className="text-[13px] text-muted">
                   {t('direct_email')}{' '}
-                  <a href="mailto:koen@stevin.ai" className="text-accent hover:underline font-medium">
-                    koen@stevin.ai
+                  <a href="mailto:info@stevin.ai" className="text-accent hover:underline font-medium">
+                    info@stevin.ai
                   </a>
                 </p>
                 <p className="text-[12px] text-muted/60 mt-3 italic">

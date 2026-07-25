@@ -776,7 +776,7 @@
     "submitting": "Bezig met aanmelden...",
     "success_title": "Je staat op de wachtlijst.",
     "success_body": "Bedankt voor je aanmelding. We sturen je een bevestiging per mail. Zodra er plek is, hoor je persoonlijk van Koen.",
-    "error_generic": "Er ging iets mis. Probeer opnieuw of mail koen@stevin.ai.",
+    "error_generic": "Er ging iets mis. Probeer opnieuw of mail info@stevin.ai.",
     "error_email": "Vul een geldig e-mailadres in.",
     "email_fallback_label": "Liever direct mailen?"
   },
