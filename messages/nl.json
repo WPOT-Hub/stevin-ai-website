@@ -36,7 +36,12 @@
     "cta": "Start de diagnose",
     "lang_nl": "NL",
     "lang_en": "EN",
-    "voor_mkb": "Voor MKB en vakmensen"
+    "voor_mkb": "Voor MKB en vakmensen",
+    "voor_ondernemers": "Voor ondernemers",
+    "voor_teams": "Voor marketingteams",
+    "voor_dealers": "Voor autodealers",
+    "voor_musea": "Voor musea",
+    "controle": "Controle"
   },
   "footer": {
     "tagline": "De AI-laag over je marketing en sales. Je eigen data, je eigen marketing-brein: Stevin ziet wat aandacht nodig heeft en beweegt mee. Voor bureaus, merken en in-house teams.",
@@ -69,7 +74,14 @@
     "svc_landing": "Landing Pages & CRO",
     "svc_automation": "Marketing Automation",
     "svc_crm": "CRM & Leadopvolging",
-    "svc_tracking": "Tracking & Inzicht"
+    "svc_tracking": "Tracking & Inzicht",
+    "voor_ondernemers": "Voor ondernemers",
+    "voor_teams": "Voor marketingteams",
+    "controle": "Controle",
+    "producten": "Producten",
+    "cases": "Case studies",
+    "journal": "Journal",
+    "platform": "Platform"
   },
   "trust": {
     "heading": "Veilig by default.",

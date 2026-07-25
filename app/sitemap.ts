@@ -13,34 +13,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://stevin.ai'
 
   const staticPages = [
+    '/voor-ondernemers',
+    '/voor-marketingteams',
+    '/controle',
     '/blog',
     '',
     '/mkb',
-    '/marketing',
-    '/artiesten',
-    '/influencers',
-    '/promotoren',
-    '/merken',
-    '/pr-bureaus',
-    '/b2b',
-    '/creatieve-bureaus',
-    '/mediabureaus',
-    '/e-commerce',
-    '/healthcare-marketing',
     '/retail',
-    '/voor-agencies',
     '/google-ad-grants-belgie',
     '/google-ad-grants-nederland',
-    '/non-profit-marketing-belgie',
-    '/non-profit-marketing-nederland',
     // Verticals nu geindexeerd (besluit 4 jul): eigen belofte + data-spine per sector
-    '/automotive',
-    '/fmcg',
-    '/voor-retail',
     '/voor-musea',
     '/voor-dealers',
-    '/voor-verhuur',
-    '/voor-non-profit',
     '/platform',
     '/diensten',
     '/werkwijze',
@@ -65,8 +49,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Woordenboek (programmatic SEO playbook "wat is X")
     '/woordenboek',
     ...glossary.map((t) => `/woordenboek/${t.slug}`),
-    '/ai-agents',
-    '/data-verrijking',
     '/case-studies',
     '/case-studies/e-commerce',
     '/contact',
@@ -77,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const priorityFor = (path: string) => {
     if (path === '') return 1
-    if (path === '/marketing' || path === '/artiesten' || path === '/platform') return 0.9
+    if (path === '/voor-ondernemers' || path === '/voor-marketingteams' || path === '/platform') return 0.9
     return 0.7
   }
 

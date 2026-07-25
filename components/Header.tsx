@@ -67,24 +67,17 @@ export default function Header() {
   ]
 
   const voorWieItems = [
-    { label: t('voor_mkb'), href: '/mkb' },
-    { label: t('voor_marketing'), href: '/marketing' },
-    { label: t('voor_creatieve'), href: '/creatieve-bureaus' },
-    { label: t('voor_media'), href: '/mediabureaus' },
-    { label: t('voor_ecommerce'), href: '/e-commerce' },
-    { label: t('voor_healthcare'), href: '/healthcare-marketing' },
+    { label: t('voor_ondernemers'), href: '/voor-ondernemers' },
+    { label: t('voor_teams'), href: '/voor-marketingteams' },
     { label: t('voor_retail'), href: '/retail' },
-    { label: t('voor_merken'), href: '/merken' },
-    { label: t('voor_pr'), href: '/pr-bureaus' },
-    { label: t('voor_b2b'), href: '/b2b' },
+    { label: t('voor_dealers'), href: '/voor-dealers' },
+    { label: t('voor_musea'), href: '/voor-musea' },
+    { label: t('voor_mkb'), href: '/mkb' },
   ]
 
   const navItems = [
+    { label: t('controle'), href: '/controle' },
     { label: t('werkwijze'), href: '/werkwijze' },
-    { label: t('producten'), href: '/producten' },
-    { label: t('integraties'), href: '/integraties' },
-    { label: t('case_studies'), href: '/case-studies' },
-    { label: t('journal'), href: '/blog' },
     { label: t('contact'), href: '/contact' },
   ]
 
@@ -132,8 +125,12 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {dienstenOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-border shadow-lg py-2">
+              {/* Altijd in de DOM (crawlbaar), zichtbaarheid via CSS. */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-border shadow-lg py-2 transition-opacity ${
+                  dienstenOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
+                }`}
+              >
                   {dienstenItems.map((item) => (
                     <Link
                       key={item.href}
@@ -144,8 +141,7 @@ export default function Header() {
                       {item.label}
                     </Link>
                   ))}
-                </div>
-              )}
+              </div>
             </div>
 
             {/* Platform dropdown */}
@@ -163,8 +159,12 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {platformOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-border shadow-lg py-2">
+              {/* Altijd in de DOM (crawlbaar), zichtbaarheid via CSS. */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-border shadow-lg py-2 transition-opacity ${
+                  platformOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
+                }`}
+              >
                   {platformItems.map((item) => (
                     <Link
                       key={item.href}
@@ -175,8 +175,7 @@ export default function Header() {
                       {item.label}
                     </Link>
                   ))}
-                </div>
-              )}
+              </div>
             </div>
 
             {/* Voor wie dropdown */}
@@ -194,8 +193,12 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {voorWieOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl border border-border shadow-lg py-2">
+              {/* Altijd in de DOM (crawlbaar), zichtbaarheid via CSS. */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-xl border border-border shadow-lg py-2 transition-opacity ${
+                  voorWieOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
+                }`}
+              >
                   {voorWieItems.map((item) => (
                     <Link
                       key={item.href}
@@ -206,8 +209,7 @@ export default function Header() {
                       {item.label}
                     </Link>
                   ))}
-                </div>
-              )}
+              </div>
             </div>
 
             {navItems.map((item) => (

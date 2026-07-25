@@ -36,7 +36,12 @@
     "cta": "Start the diagnosis",
     "lang_nl": "NL",
     "lang_en": "EN",
-    "voor_mkb": "For SMBs and trades"
+    "voor_mkb": "For SMBs and trades",
+    "voor_ondernemers": "For business owners",
+    "voor_teams": "For marketing teams",
+    "voor_dealers": "For car dealers",
+    "voor_musea": "For museums",
+    "controle": "Control"
   },
   "footer": {
     "tagline": "The AI layer across your marketing and sales. Your own data, your own marketing brain: Stevin sees what needs attention and moves with it. For agencies, brands and in-house teams.",
@@ -69,7 +74,14 @@
     "svc_landing": "Landing Pages & CRO",
     "svc_automation": "Marketing Automation",
     "svc_crm": "CRM & Lead Follow-up",
-    "svc_tracking": "Tracking & Insights"
+    "svc_tracking": "Tracking & Insights",
+    "voor_ondernemers": "For business owners",
+    "voor_teams": "For marketing teams",
+    "controle": "Control",
+    "producten": "Products",
+    "cases": "Case studies",
+    "journal": "Journal",
+    "platform": "Platform"
   },
   "trust": {
     "heading": "Secure by default.",
