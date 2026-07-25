@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'klanten-vragen-naar-chatgpt-zichtbaarheid': (
+    <>
+      <p className="lead-para">
+        Het is de meest gestelde vraag van klanten dit jaar: komt ons merk voor in antwoorden van ChatGPT. Toch hebben de meeste marketingbureaus geen manier om dat te meten. Zelfs als je weet dat je website gecrawld wordt door AI-modellen, zegt dat niets over hoe vaak je merk daadwerkelijk genoemd wordt in antwoorden.
+      </p>
+      <p>
+        Er zijn wel indirecte manieren om een inschatting te maken. Zo kun je zoekopdrachten simuleren die klanten zouden kunnen stellen en kijken of jouw merk of producten in de gegenereerde antwoorden verschijnen. Ook tools zoals Google’s Search Console of derdepartij-API’s kunnen helpen om te zien welke pagina’s van jouw site door AI-systemen worden gebruikt als bron.
+      </p>
+      <p>
+        Voorlopig blijft het lastig om harde data te krijgen over zichtbaarheid in grote taalmodellen. De meeste systemen geven geen inzage in hun interne werking, waardoor blinde vlekken in de meting blijven bestaan.
+      </p>
+    </>
+  ),
   'uk-investeert-708-miljoen-in-toekomstig-straaljagerproject': (
     <>
       <p className="lead-para">
@@ -6249,6 +6262,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'klanten-vragen-naar-chatgpt-zichtbaarheid':
+    "Voor bedrijven die hun merkpositie willen behouden of verbeteren, is het verstandig om nu al na te denken over een strategie voor AI-zichtbaarheid. Dat betekent niet alleen optimaliseren voor traditionele zoekmachines, maar ook nadenken over hoe je content zo maakt dat hij waardevol is voor zowel mensen als AI-systemen. Het gaat hierbij vooral om heldere, unieke informatie die direct antwoord geeft op veelgestelde vragen binnen jouw vakgebied.",
   'uk-investeert-708-miljoen-in-toekomstig-straaljagerproject':
     "Voor bedrijven in hightech-sectoren laat deze investering zien hoe overheden grote risico’s nemen bij strategische projecten. Het benadrukt het belang van langetermijnplanning en samenwerking tussen overheid en industrie. Tegelijkertijd roept het vragen op over de balans tussen defensie-uitgaven en andere maatschappelijke prioriteiten.",
   'doelgroep-validatie-voor-bidding-strategieen':
