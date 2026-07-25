@@ -66,7 +66,7 @@ export default async function IntegratiesPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="relative overflow-hidden bg-[#0A1628] py-20 text-white sm:py-24 lg:py-28">
+      <section className="relative -mt-[72px] overflow-hidden bg-primary pb-20 pt-[152px] text-white sm:pb-24 sm:pt-[168px] lg:pb-28 lg:pt-[184px]">
         <div className="pointer-events-none absolute -bottom-40 left-[36%] right-[-10%] h-64 bg-[radial-gradient(ellipse_at_center,rgba(61,142,255,0.18),transparent_64%)]" />
         <div className="relative mx-auto grid max-w-7xl items-end gap-12 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 lg:px-8">
           <div>

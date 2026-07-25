@@ -18,8 +18,14 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
-  // Pages with a light/white hero, header stays white on these
-  const lightHeroPages = ['/seo', '/geo', '/contact', '/integraties']
+  // Pagina's met een lichte hero: daar blijft de header wit, anders staat er
+  // witte tekst op een witte achtergrond.
+  // Let op bij het toevoegen van een pagina: een DONKERE hero hoort hier NIET
+  // in en moet zelf `-mt-[72px]` dragen met 72px extra top-padding, zodat hij
+  // onder de transparante header door schuift. Staat een donkere hero hier wel
+  // in, dan krijg je een witte glasband bovenop de hero (fout op /integraties,
+  // gevonden 25 jul 2026).
+  const lightHeroPages = ['/seo', '/geo', '/contact']
   const isLightHero = lightHeroPages.some(p => pathname === p || pathname.startsWith(p + '/'))
   const dropdownRef = useRef<HTMLDivElement>(null)
 

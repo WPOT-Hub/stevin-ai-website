@@ -11,7 +11,8 @@
     "validate:schema": "npx tsx scripts/validate-jsonld.ts",
     "faq:generate": "npx tsx scripts/generate-faqs.ts",
     "related:generate": "npx tsx scripts/generate-related.ts",
-    "vendor:enrich": "npx tsx scripts/generate-vendor-enrichments.ts"
+    "vendor:enrich": "npx tsx scripts/generate-vendor-enrichments.ts",
+    "check:header": "npx tsx scripts/check-header-contrast.ts"
   },
   "dependencies": {
     "lucide-react": "^1.7.0",
