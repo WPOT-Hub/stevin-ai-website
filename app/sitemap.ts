@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://stevin.ai'
 
   const staticPages = [
+    '/google-ads-uitbesteden',
     '/voor-ondernemers',
     '/voor-marketingteams',
     '/controle',
@@ -59,7 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const priorityFor = (path: string) => {
     if (path === '') return 1
-    if (path === '/voor-ondernemers' || path === '/voor-marketingteams' || path === '/platform') return 0.9
+    if (path === '/google-ads-uitbesteden' || path === '/voor-ondernemers' || path === '/voor-marketingteams' || path === '/platform') return 0.9
     return 0.7
   }
 

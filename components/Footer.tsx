@@ -12,6 +12,7 @@ export default function Footer() {
   const footerLinks = {
     diensten: [
       { label: t('svc_paid'), href: '/diensten#paid-media' },
+      { label: t('svc_ads_uitbesteden'), href: '/google-ads-uitbesteden' },
       { label: t('svc_landing'), href: '/diensten#landing-pages-cro' },
       { label: t('svc_automation'), href: '/marketing-automation' },
       { label: t('svc_crm'), href: '/diensten#crm-leadopvolging' },
