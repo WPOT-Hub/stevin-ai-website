@@ -102,7 +102,7 @@
     "hero_h1": "Your own data.",
     "hero_h1_accent": "Your own marketing brain.",
     "hero_sub": "Stevin lays a smart layer over all your channels, puts your own data at the centre and sees what needs attention. Then it moves your campaigns with demand. Your data stays yours, ready for whatever AI can do with it.",
-    "cta_demo": "Book a demo",
+    "cta_demo": "Start the diagnosis",
     "cta_platform": "See how it works",
     "multimarket_teaser": "Operating in multiple markets? See how we model across borders →",
     "quote": "Wonder en is gheen wonder.",
@@ -110,7 +110,7 @@
     "domain_eyebrow": "WHO IT'S FOR",
     "domain_h2": "Your marketing runs. But whose data is underneath it?",
     "domain_intro": "Not a layer across your whole business. A marketing brain on your own data: paid and owned, connected and yours.",
-    "domain_cta": "Book a demo",
+    "domain_cta": "Start the diagnosis",
     "domain_c1_h3": "In-house teams",
     "domain_c1_desc": "You know there is more to measure, but it never gets connected. Stevin watches 24/7 and flags things early, no report after the fact.",
     "domain_c2_h3": "Brands with a media agency",
@@ -209,7 +209,7 @@
     "closing_eyebrow": "It's not a wonder. It's Stevin.",
     "closing_h2_line1": "You do the work.",
     "closing_h2_line2": "Stevin does the rest.",
-    "closing_cta": "Book a demo",
+    "closing_cta": "Start the diagnosis",
     "closing_link_marketing": "For Marketing →",
     "closing_link_artists": "For Artists →"
   },
@@ -290,7 +290,7 @@
     "ruler_label4": "04. result",
     "closing_h3_line1": "It's not a wonder.",
     "closing_h3_line2": "It's Stevin.",
-    "closing_cta": "Book a demo",
+    "closing_cta": "Start the diagnosis",
     "closing_quote": "Wonder en is gheen wonder.",
     "closing_quote_author": "Simon Stevin, 1586"
   },
@@ -299,7 +299,7 @@
     "h1": "Your marketing brain.",
     "h1_sub": "On your own data.",
     "sub": "Platform figures next to reality in your CRM. Native integrations across the marketing stack, 24/7 monitoring, reports that tie spend to result.",
-    "cta_demo": "Book a demo",
+    "cta_demo": "Start the diagnosis",
     "cta_integraties": "View integrations",
     "features_eyebrow": "WHAT IT CAN DO",
     "features_h2": "Everything you need",
@@ -391,7 +391,7 @@
     "search_placeholder": "Search for a tool or platform...",
     "cta_h2": "Using tools you don't see here?",
     "cta_sub": "We work with any platform that offers an API or integration.",
-    "cta_btn": "Book a demo",
+    "cta_btn": "Start the diagnosis",
     "view_tools": "View tools",
     "other_categories": "Other categories",
     "use_case_heading": "Where do we use {name}?",
@@ -403,7 +403,7 @@
     "faqs_heading": "Frequently asked questions about {name}",
     "sidebar_cta_heading": "Connect {name}?",
     "sidebar_cta_desc": "We'll help you connect {name} to the systems you already use.",
-    "sidebar_cta_btn": "Book a demo",
+    "sidebar_cta_btn": "Start the diagnosis",
     "sidebar_related_heading": "Related integrations",
     "sidebar_category_heading": "Category",
     "sidebar_category_link": "View all {name} integrations →",
@@ -411,10 +411,10 @@
     "category_count_label": "{count} {category} integrations",
     "connect_cta_title": "Need help connecting your tools?",
     "connect_cta_desc": "We'll make your systems work as one. Book a demo and find out what's possible.",
-    "connect_cta_btn": "Book a demo",
+    "connect_cta_btn": "Start the diagnosis",
     "detail_cta_title": "Connect {name} to your systems?",
     "detail_cta_desc": "Book a demo and discover how we make your tools work together for better results.",
-    "detail_cta_btn": "Book a demo"
+    "detail_cta_btn": "Start the diagnosis"
   },
   "seo": {
     "meta_title": "SEO for agencies and SMBs, Stevin",
@@ -460,7 +460,7 @@
     "faq5_a": "Yes. We use data from paid campaigns to determine which keywords are most valuable organically. In turn we use organic data to sharpen paid campaigns. Both channels reinforce each other.",
     "cta_title": "It's not a wonder. It's Stevin.",
     "cta_desc": "Organic traffic that genuinely converts, measurable to the euro. Book a demo and we'll show you how SEO within your marketing system delivers more leads and clients.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "geo": {
     "eyebrow": "GEO",
@@ -509,7 +509,7 @@
     "faq5_a": "We monitor whether and how your content is cited in AI answers, which pages are used as sources and how your visibility develops relative to competitors. We also measure the direct effect on traffic and leads through our tracking infrastructure.",
     "cta_title": "It's not a wonder. It's Stevin.",
     "cta_desc": "Staying visible in AI search experiences requires structure, not guesswork. Book a demo and we'll show you how your content and site structure can be optimised.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "voor_agencies": {
     "eyebrow": "FOR AGENCIES",
@@ -556,7 +556,7 @@
     "eyebrow": "CASE STUDIES",
     "h1": "Proven in practice.",
     "sub": "Concrete results from teams using Stevin to make their data work.",
-    "cta": "Book a demo",
+    "cta": "Start the diagnosis",
     "cs1_industry": "E-commerce",
     "cs1_title": "From fragmented campaigns to an integrated marketing system",
     "cs1_subtitle": "How a fast-growing e-commerce business generated 42% more leads and saved 8 hours per week",
@@ -601,7 +601,7 @@
     "quote_author": "Marketing Manager",
     "cta_h2": "Similar results for your business?",
     "cta_sub": "Book a demo and discover what Stevin can do for you.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "artiesten": {
     "eyebrow": "FOR ARTISTS",
@@ -666,7 +666,7 @@
     "sub": "On your own data. Stevin centralises your marketing data, watches 24/7 for what needs attention and delivers concrete actions. Your data stays yours.",
     "hero_h1": "Your own data.",
     "hero_h1_accent": "Your own marketing brain.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "View the platform",
     "pain_eyebrow": "THE PROBLEM",
     "pain_h2": "Recognise this?",
@@ -711,7 +711,7 @@
     "cta_eyebrow": "It's not a wonder. It's Stevin.",
     "cta_h3": "See what you pay. See what it returns.",
     "cta_sub": "Every euro traceable to results. Book a demo and we'll show you how Stevin turns your marketing data into evidenced growth.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "audit": {
     "eyebrow": "AUDIT",
@@ -784,7 +784,7 @@
     "eyebrow": "FOR B2B",
     "h1": "Your own pipeline brain for B2B teams.",
     "sub": "From anonymous website visit to qualified deals. Stevin connects marketing and sales in one overview.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "View the platform",
     "features_eyebrow": "THE PLATFORM",
     "features_h2": "The full funnel, one system",
@@ -809,13 +809,13 @@
     "uc5": "You want account-based marketing but have no data infrastructure",
     "cta_eyebrow": "It's not a wonder. It's Stevin.",
     "cta_sub": "From lead to client, every euro traceable in your own data. Book a demo and discover how Stevin makes your B2B marketing measurable down to the client.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "creatieve_bureaus": {
     "eyebrow": "FOR CREATIVE AGENCIES",
     "h1": "Stop starting campaigns in the dark.",
     "sub": "You build the concept, your media partner buys the packages, and they rarely align. Stevin is the AI layer with your own data underneath, so you win that conversation and start your next campaign better.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "See the platform",
     "pain_eyebrow": "THE REALITY",
     "pain_h2": "Sound familiar?",
@@ -860,13 +860,13 @@
     "cta_eyebrow": "It's not magic. It's Stevin.",
     "cta_h3": "See what you pay. See what it delivers.",
     "cta_sub": "Stevin is built from twenty years of agency practice. Book a demo and we'll show you how it fits your creative process.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "e_commerce": {
     "eyebrow": "FOR E-COMMERCE",
     "h1": "Your own data. Every euro traceable.",
     "sub": "From product feed to checkout, on your own data. Stevin connects your ad data with your shop performance, so every order traces back to the right source.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "View the platform",
     "pain_eyebrow": "THE REALITY",
     "pain_h2": "Recognise this?",
@@ -911,13 +911,13 @@
     "cta_eyebrow": "It's not a wonder. It's Stevin.",
     "cta_h3": "See what you pay. See what it returns.",
     "cta_sub": "Every order traceable to the right source. Book a demo and we'll show you how Stevin makes your e-commerce marketing measurable.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "healthcare": {
     "eyebrow": "FOR HEALTHCARE & PHARMA",
     "h1": "Compliant. Effective. Scalable.",
     "sub": "Marketing intelligence on your own data, for the regulated healthcare and pharma sector. GDPR-proof, AI Act-ready.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "View the platform",
     "pain_eyebrow": "THE REALITY",
     "pain_h2": "Recognise this?",
@@ -962,7 +962,7 @@
     "cta_eyebrow": "It's not a wonder. It's Stevin.",
     "cta_h3": "See what you pay. See what it returns.",
     "cta_sub": "Compliant and measurable. without sacrificing speed. Book a demo and we'll show you how Stevin accelerates your healthcare marketing.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "influencers": {
     "eyebrow": "FOR INFLUENCERS",
@@ -999,7 +999,7 @@
     "eyebrow": "FOR MEDIA AGENCIES",
     "h1": "Media results you can prove.",
     "sub": "See what your money does across every channel, with automated reporting and creative performance in one system.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "View the platform",
     "pain_eyebrow": "THE REALITY",
     "pain_h2": "Recognise this?",
@@ -1044,13 +1044,13 @@
     "cta_eyebrow": "It's not a wonder. It's Stevin.",
     "cta_h3": "See what you pay. See what it returns.",
     "cta_sub": "The sharpest agencies run on evidence. Book a demo and we'll show you how Stevin makes your media agency faster and more profitable.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "merken": {
     "eyebrow": "FOR BRANDS",
     "h1": "Your own brand data. That works.",
     "sub": "Share of search, brand perception and campaign performance in one place, in your own data and yours to keep. For in-house marketing teams.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "View the platform",
     "features_eyebrow": "THE PLATFORM",
     "features_h2": "Control over your brand",
@@ -1075,13 +1075,13 @@
     "uc5": "You want to back branding campaigns with hard data",
     "cta_eyebrow": "It's not a wonder. It's Stevin.",
     "cta_sub": "Measure brand value with the only numbers that are honest, your own. Book a demo and discover how Stevin tracks, analyses and protects your brand.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "pr_bureaus": {
     "eyebrow": "FOR PR AGENCIES",
     "h1": "PR you can prove.",
     "sub": "Journalists want stories with real data. Clients want proof that PR works. Stevin gives you both: the data for your pitch and the evidence for your invoice.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "See the platform",
     "pain_eyebrow": "THE REALITY",
     "pain_h2": "Sound familiar?",
@@ -1126,13 +1126,13 @@
     "cta_eyebrow": "It's not magic. It's Stevin.",
     "cta_h3": "Data for your pitch. Proof for your client.",
     "cta_sub": "Stevin is built from twenty years of agency practice. Book a demo and we'll show you how it fits your PR workflow.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "promotoren": {
     "eyebrow": "FOR PROMOTERS",
     "h1": "Events. Data. Results.",
     "sub": "From ticket sales to post-event analysis. Stevin connects all your event data in one platform.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "View the platform",
     "features_eyebrow": "THE PLATFORM",
     "features_h2": "From booking to after-movie",
@@ -1157,13 +1157,13 @@
     "uc5": "You want to make data-driven decisions about line-ups and venues",
     "cta_eyebrow": "It's not a wonder. It's Stevin.",
     "cta_sub": "Booking on evidence, not gut feeling. Book a demo and discover how Stevin helps you plan the right events at the right time.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "retail": {
     "eyebrow": "FOR RETAIL",
     "h1": "From shelf to screen.",
     "sub": "Your own retail data, connected to your marketing. See which campaigns truly move your revenue, online and in-store.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "View the platform",
     "pain_eyebrow": "THE REALITY",
     "pain_h2": "Recognise this?",
@@ -1208,7 +1208,7 @@
     "cta_eyebrow": "It's not a wonder. It's Stevin.",
     "cta_h3": "See what you pay. See what it returns.",
     "cta_sub": "From digital screen to physical shelf. one system. Book a demo and we'll show you how Stevin connects your retail marketing.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "simon_stevin": {
     "eyebrow": "SIMON STEVIN",
@@ -1397,7 +1397,7 @@
     "cta_title": "Show us your markets. We'll show you the math.",
     "cta_body_1": "30 minutes. Your data. Your channels. Live in the dashboard.",
     "cta_body_2": "No slide deck. No procurement form. No mystery.",
-    "cta_button": "Book a demo",
+    "cta_button": "Start the diagnosis",
     "cta_note": "If we can't show you something useful in the first session, you don't owe us a follow-up.",
     "faq_eyebrow": "FAQ",
     "faq_title": "FAQ",
@@ -1421,7 +1421,7 @@
     "hero_h1": "Automation that doesn’t smell like",
     "hero_h1_accent": "automation.",
     "sub": "No drip campaigns with \"Hi first_name\". We build flows that run on actual signals: a conversation that just ended, a calendar event, a deviation in a KPI. This is how we run our own sales flow, and how we build it for you.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "See the three tracks",
     "pain_eyebrow": "WHY IT USUALLY FAILS",
     "pain_h2": "Marketing automation is usually bad because the input is bad.",
@@ -1453,7 +1453,7 @@
     "cta_eyebrow": "WE’LL BUILD IT FOR YOU TOO",
     "cta_h3": "One conversation, then we know if it fits.",
     "cta_sub": "We don't sell automation licenses. We build flows that run on your signals: calendar, phone, KPIs, customer data. And make sure the output feels like you. Short conversation, you tell us where you lose time, we sketch how Stevin catches that.",
-    "cta_btn": "Book a demo"
+    "cta_btn": "Start the diagnosis"
   },
   "autodealers": {
     "eyebrow": "VOOR DEALER GROEPEN",
@@ -1512,7 +1512,7 @@
     "eyebrow": "FOR FMCG BRANDS",
     "h1": "What shifts in your category, you see on Wednesday. Not in the quarterly tracker.",
     "sub": "Marketing tooling for FMCG brands in NL and BE. Stevin connects retail media, share of search and category mentions, and sends a short weekly briefing per brand. The layer between your quarterly tracker and your MMM.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "See the platform",
     "pain_eyebrow": "THE REALITY",
     "pain_h2": "Sound familiar?",
@@ -1557,7 +1557,7 @@
     "cta_eyebrow": "Not an MMM replacement. The layer in between.",
     "cta_h3": "Three things that matter weekly. Per brand.",
     "cta_sub": "...that go blind between quarterly trackers. Book a demo and we'll show how Stevin fills...",
-    "cta_btn": "Book a demo",
+    "cta_btn": "Start the diagnosis",
     "proof_stat": "+45%",
     "proof_label": "more leads at a brand under competitive pressure, adjusted before it hit revenue."
   },
@@ -1565,7 +1565,7 @@
     "eyebrow": "FOR AUTOMOTIVE",
     "h1": "Two routes, one platform. Brand and dealer.",
     "sub": "The AI layer over your marketing and sales, at brand and dealer level at once. Built on your own data, Stevin sees what the brand is doing, what the dealer needs in their region, and where the two get in each other's way.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "See the platform",
     "pain_eyebrow": "THE REALITY",
     "pain_h2": "Sound familiar?",
@@ -1610,7 +1610,7 @@
     "cta_eyebrow": "Not a brand agency. Not a dealer agency. One brain over both.",
     "cta_h3": "Brand and dealer, finally in one view.",
     "cta_sub": "Built for importers, dealer groups and individual dealers. Book a demo and we'll show how Stevin thinks along at brand and dealer level at once, on your own data.",
-    "cta_btn": "Book a demo",
+    "cta_btn": "Start the diagnosis",
     "proof_stat": "-50%",
     "proof_label": "cost per customer at a multi-location provider, targeting sharpened where buyers decide."
   },
@@ -1881,7 +1881,7 @@
     "eyebrow": "Websites",
     "h1": "Websites that do more than just sit online",
     "sub": "Stevin builds websites that are ready to grow. With clear services, strong reviews, direct contact buttons and a structure that can later connect to email, CRM, calendar, WhatsApp and AI.",
-    "cta_primary": "Book a demo",
+    "cta_primary": "Start the diagnosis",
     "cta_secondary": "How we work",
     "problem_eyebrow": "The problem",
     "problem_intro": "Plenty of websites look nice, but sit still.",
@@ -1905,7 +1905,7 @@
     "grow_h2": "The first layer of your commercial system",
     "grow_1": "Your website can later be extended with SEO content, lead follow-up, a review flow, calendar or CRM integrations.",
     "grow_2": "That way your site is not a one-off project, but the first layer of your commercial system.",
-    "grow_cta": "Book a demo"
+    "grow_cta": "Start the diagnosis"
   },
   "mkb": {
     "meta_title": "Stevin for SMBs and trades, your whole business in order",
@@ -1914,7 +1914,7 @@
     "hero_h1": "You do the work.",
     "hero_h1_accent": "Stevin does the rest.",
     "hero_sub": "A missed call, a quote left waiting, a follow-up you forgot. Stevin handles the paperwork around your business, so you stay busy with the real work.",
-    "cta": "Book a demo",
+    "cta": "Start the diagnosis",
     "pains_h2": "The work behind the work costs you the most",
     "pain1_title": "Requests pile up",
     "pain1_desc": "A message, a missed call, an email. By the time you get to it, the customer has already moved on to someone else.",

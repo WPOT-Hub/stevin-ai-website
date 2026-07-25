@@ -102,7 +102,7 @@
     "hero_h1": "Je eigen data.",
     "hero_h1_accent": "Je eigen marketing-brein.",
     "hero_sub": "Stevin legt een slimme laag over al je kanalen, zet je eigen data centraal en ziet wat aandacht nodig heeft. Vervolgens beweegt het je campagnes mee met de vraag. Jouw data blijft van jou, klaar voor wat AI ermee kan.",
-    "cta_demo": "Boek een demo",
+    "cta_demo": "Start de diagnose",
     "cta_platform": "Zie hoe het werkt",
     "proof_1": "Retailer met 30+ winkels: 250% meer conversies",
     "proof_2": "Grootschalig evenement: 11 miljoen euro ticketomzet",
@@ -113,7 +113,7 @@
     "domain_eyebrow": "VOOR WIE",
     "domain_h2": "Je marketing draait. Van wie is de data eronder?",
     "domain_intro": "Geen laag over je hele bedrijf. Een marketing-brein op je eigen data: paid en owned, aan elkaar geknoopt en van jou.",
-    "domain_cta": "Boek een demo",
+    "domain_cta": "Start de diagnose",
     "domain_c1_h3": "In-house teams",
     "domain_c1_desc": "Je weet dat er meer te meten valt, maar het wordt nooit aan elkaar geknoopt. Stevin kijkt 24/7 mee en seint vooraf, geen rapportage achteraf.",
     "domain_c2_h3": "Merken met een mediabureau",
@@ -209,7 +209,7 @@
     "closing_eyebrow": "Het is geen wonder. Het is Stevin.",
     "closing_h2_line1": "Jij doet het werk.",
     "closing_h2_line2": "Stevin doet de rest.",
-    "closing_cta": "Boek een demo",
+    "closing_cta": "Start de diagnose",
     "closing_link_marketing": "Voor Marketing →",
     "closing_link_artists": "Voor Artiesten →"
   },
@@ -290,7 +290,7 @@
     "ruler_label4": "04. resultaat",
     "closing_h3_line1": "Het is geen wonder.",
     "closing_h3_line2": "Het is Stevin.",
-    "closing_cta": "Boek een demo",
+    "closing_cta": "Start de diagnose",
     "closing_quote": "Wonder en is gheen wonder.",
     "closing_quote_author": "Simon Stevin, 1586"
   },
@@ -299,7 +299,7 @@
     "h1": "Je marketing-brein.",
     "h1_sub": "Op je eigen data.",
     "sub": "Platform-cijfers naast de werkelijkheid in je CRM. Native koppelingen op de marketing-stack, 24/7 monitoring, rapporten die spend aan resultaat koppelen.",
-    "cta_demo": "Boek een demo",
+    "cta_demo": "Start de diagnose",
     "cta_integraties": "Bekijk integraties",
     "features_eyebrow": "WAT HET KAN",
     "features_h2": "Alles wat je nodig hebt",
@@ -391,7 +391,7 @@
     "search_placeholder": "Zoek naar een tool of platform...",
     "cta_h2": "Werk je met tools die je hier niet ziet?",
     "cta_sub": "We werken met elk platform dat een API of koppeling biedt.",
-    "cta_btn": "Boek een demo",
+    "cta_btn": "Start de diagnose",
     "view_tools": "Bekijk tools",
     "other_categories": "Andere categorieen",
     "use_case_heading": "Waar zetten we {name} voor in?",
@@ -403,7 +403,7 @@
     "faqs_heading": "Veelgestelde vragen over {name}",
     "sidebar_cta_heading": "{name} koppelen?",
     "sidebar_cta_desc": "We helpen je {name} te koppelen aan de systemen die je al gebruikt.",
-    "sidebar_cta_btn": "Boek een demo",
+    "sidebar_cta_btn": "Start de diagnose",
     "sidebar_related_heading": "Gerelateerde integraties",
     "sidebar_category_heading": "Categorie",
     "sidebar_category_link": "Bekijk alle {name} integraties →",
@@ -411,10 +411,10 @@
     "category_count_label": "{count} {category} integraties",
     "connect_cta_title": "Hulp nodig bij het koppelen van je tools?",
     "connect_cta_desc": "We zorgen dat je systemen samenwerken als een geheel. Boek een demo en ontdek wat er mogelijk is.",
-    "connect_cta_btn": "Boek een demo",
+    "connect_cta_btn": "Start de diagnose",
     "detail_cta_title": "{name} koppelen aan je systemen?",
     "detail_cta_desc": "Boek een demo en ontdek hoe we je tools laten samenwerken voor betere resultaten.",
-    "detail_cta_btn": "Boek een demo"
+    "detail_cta_btn": "Start de diagnose"
   },
   "seo": {
     "meta_title": "SEO voor bureaus en MKB, Stevin",
@@ -460,7 +460,7 @@
     "faq5_a": "Ja. We gebruiken data uit paid campagnes om te bepalen welke zoektermen organisch het meest waardevol zijn. Andersom gebruiken we organische data om paid campagnes scherper in te richten. Zo versterken beide kanalen elkaar.",
     "cta_title": "Het is geen wonder. Het is Stevin.",
     "cta_desc": "Organisch verkeer dat daadwerkelijk converteert, meetbaar tot op de euro. Boek een demo en we laten zien hoe SEO binnen jouw marketingsysteem meer leads en klanten oplevert.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "geo": {
     "eyebrow": "GEO",
@@ -509,13 +509,13 @@
     "faq5_a": "We monitoren of en hoe je content wordt geciteerd in AI-antwoorden, welke pagina's als bron worden gebruikt en hoe je zichtbaarheid zich ontwikkelt ten opzichte van concurrenten. Daarnaast meten we het directe effect op verkeer en leads via onze tracking-infrastructuur.",
     "cta_title": "Het is geen wonder. Het is Stevin.",
     "cta_desc": "Zichtbaar blijven in AI-zoekervaringen vereist structuur, geen gok. Boek een demo en we laten zien hoe je content en sitestructuur geoptimaliseerd kunnen worden.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "voor_agencies": {
     "eyebrow": "VOOR AGENCIES",
     "h1": "Je eigen data. Je marketing-brein onder de dienst.",
     "sub": "Stevin is de AI-laag over de marketing en sales van je klanten: je eigen data, wekelijkse briefings en een brein dat ziet wat aandacht nodig heeft. Jij blijft de uitvoerder.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "features_eyebrow": "HET PLATFORM",
     "features_h2": "Wat je krijgt als Agency Partner",
@@ -550,13 +550,13 @@
     "inc6": "Jouw bureau blijft het gezicht",
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h2": "De AI-laag voor bureaus die op eigen data willen bouwen, niet op cijfers van een ander. Boek een demo.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "case_studies": {
     "eyebrow": "CASE STUDIES",
     "h1": "Bewezen in de praktijk.",
     "sub": "Concrete resultaten van teams die Stevin gebruiken om hun data te laten werken.",
-    "cta": "Boek een demo",
+    "cta": "Start de diagnose",
     "cs1_industry": "E-commerce",
     "cs1_title": "Van losse campagnes naar een geintegreerd marketing systeem",
     "cs1_subtitle": "Hoe een snelgroeiend e-commerce bedrijf 42% meer leads genereerde en 8 uur per week bespaarde",
@@ -601,7 +601,7 @@
     "quote_author": "Marketing Manager",
     "cta_h2": "Vergelijkbare resultaten voor jouw bedrijf?",
     "cta_sub": "Boek een demo en ontdek wat Stevin voor jou kan betekenen.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "artiesten": {
     "eyebrow": "VOOR ARTIESTEN",
@@ -666,7 +666,7 @@
     "sub": "Op je eigen data. Stevin centraliseert je marketingdata, ziet 24/7 wat aandacht nodig heeft en levert concrete acties. Jouw data blijft van jou.",
     "hero_h1": "Je eigen data.",
     "hero_h1_accent": "Je eigen marketing-brein.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "HET PROBLEEM",
     "pain_h2": "Herkenbaar?",
@@ -711,7 +711,7 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Zie wat je betaalt. Zie wat het oplevert.",
     "cta_sub": "Elke euro herleidbaar naar resultaat. Boek een demo en we laten zien hoe Stevin jouw marketingdata omzet in onderbouwde groei.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "audit": {
     "eyebrow": "AUDIT",
@@ -784,7 +784,7 @@
     "eyebrow": "VOOR B2B",
     "h1": "Je eigen pipeline-brein voor B2B teams.",
     "sub": "Van anoniem websitebezoek tot gekwalificeerde deals. Stevin koppelt marketing en sales in een overzicht.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "features_eyebrow": "HET PLATFORM",
     "features_h2": "De hele funnel, een systeem",
@@ -809,13 +809,13 @@
     "uc5": "Je wilt account-based marketing maar hebt geen data-infrastructuur",
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_sub": "Van lead tot klant, elke euro herleidbaar op je eigen data. Boek een demo en ontdek hoe Stevin je B2B marketing meetbaar maakt tot op klantniveau.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "creatieve_bureaus": {
     "eyebrow": "VOOR CREATIEVE BUREAUS",
     "h1": "Stop met campagnes starten in het donker.",
     "sub": "Jij bouwt het concept, je mediapartner koopt de pakketten en ze sluiten zelden op elkaar aan. Stevin is de AI-laag met je eigen data eronder, zodat je dat gesprek wint en je volgende campagne beter begint.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -860,13 +860,13 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Zie wat je betaalt. Zie wat het oplevert.",
     "cta_sub": "Stevin is gebouwd vanuit twintig jaar agency-praktijk. Boek een demo en we laten zien hoe het past bij jouw creatieve proces.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "e_commerce": {
     "eyebrow": "VOOR E-COMMERCE",
     "h1": "Je eigen data. Elke euro herleidbaar.",
     "sub": "Van product feed tot checkout, op je eigen data. Stevin verbindt je advertentiedata met je shop-prestaties, zodat elke bestelling herleidbaar is naar de juiste bron.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -911,13 +911,13 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Zie wat je betaalt. Zie wat het oplevert.",
     "cta_sub": "Elke bestelling herleidbaar naar de juiste bron. Boek een demo en we laten zien hoe Stevin jouw e-commerce marketing meetbaar maakt.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "healthcare": {
     "eyebrow": "VOOR HEALTHCARE & FARMA",
     "h1": "Compliant. Effectief. Schaalbaar.",
     "sub": "Marketing-intelligentie op je eigen data, voor de gereguleerde zorg- en farmasector. GDPR-proof, AI Act-ready.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -962,7 +962,7 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Zie wat je betaalt. Zie wat het oplevert.",
     "cta_sub": "Compliant en meetbaar. zonder snelheid in te leveren. Boek een demo en we laten zien hoe Stevin jouw healthcare marketing versnelt.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "influencers": {
     "eyebrow": "VOOR INFLUENCERS",
@@ -999,7 +999,7 @@
     "eyebrow": "VOOR MEDIABUREAUS",
     "h1": "Mediaresultaten die je kunt bewijzen.",
     "sub": "Zie over alle kanalen heen wat je geld doet, met automatische rapportage en creatieve performance in een systeem.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -1044,13 +1044,13 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Zie wat je betaalt. Zie wat het oplevert.",
     "cta_sub": "De scherpste bureaus draaien op bewijs. Boek een demo en we laten zien hoe Stevin jouw mediabureau sneller en winstgevender maakt.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "merken": {
     "eyebrow": "VOOR MERKEN",
     "h1": "Je eigen merkdata. Die werkt.",
     "sub": "Share of search, merkperceptie en campagne-prestaties op een plek, in jouw eigen data en van jou. Voor inhouse-marketingteams.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "features_eyebrow": "HET PLATFORM",
     "features_h2": "Grip op je merk",
@@ -1075,13 +1075,13 @@
     "uc5": "Je wilt brandingcampagnes onderbouwen met harde data",
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_sub": "Meet merkwaarde met de enige getallen die eerlijk zijn, die van jezelf. Boek een demo en ontdek hoe Stevin je merk volgt, analyseert en beschermt.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "pr_bureaus": {
     "eyebrow": "VOOR PR-BUREAUS",
     "h1": "PR die je kunt bewijzen.",
     "sub": "Journalisten willen verhalen met echte data. Klanten willen bewijs dat PR werkt. Stevin geeft je beide: de data voor je pitch en het bewijs voor je factuur.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -1126,13 +1126,13 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Data voor je pitch. Bewijs voor je klant.",
     "cta_sub": "Stevin is gebouwd vanuit twintig jaar bureau-praktijk. Boek een demo en we laten zien hoe het past bij jouw PR-workflow.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "promotoren": {
     "eyebrow": "VOOR PROMOTOREN",
     "h1": "Events. Data. Resultaat.",
     "sub": "Van ticketverkoop tot post-event analyse. Stevin verbindt al je eventdata in een platform.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "features_eyebrow": "HET PLATFORM",
     "features_h2": "Van booking tot after-movie",
@@ -1157,13 +1157,13 @@
     "uc5": "Je wilt data-gedreven beslissingen nemen over line-ups en venues",
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_sub": "Booking op bewijs, niet op buikgevoel. Boek een demo en ontdek hoe Stevin je helpt de juiste events op het juiste moment te plannen.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "retail": {
     "eyebrow": "VOOR RETAIL",
     "h1": "Van schap tot scherm.",
     "sub": "Je eigen retail-data, gekoppeld aan je marketing. Zie welke campagnes werkelijk impact hebben op je omzet, online en in de winkel.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -1208,7 +1208,7 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Zie wat je betaalt. Zie wat het oplevert.",
     "cta_sub": "Van online scherm tot fysiek schap, een systeem. Boek een demo en we laten zien hoe Stevin jouw retail marketing verbindt.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "simon_stevin": {
     "eyebrow": "SIMON STEVIN",
@@ -1397,7 +1397,7 @@
     "cta_title": "Laat ons je markten zien. Wij laten de wiskunde zien.",
     "cta_body_1": "30 minuten. Jouw data. Jouw kanalen. Live in het dashboard.",
     "cta_body_2": "Geen slidedeck. Geen procurement-formulier. Geen mysterie.",
-    "cta_button": "Boek een demo",
+    "cta_button": "Start de diagnose",
     "cta_note": "Als we je in de eerste sessie niets nuttigs kunnen tonen, ben je ons geen vervolg verschuldigd.",
     "faq_eyebrow": "FAQ",
     "faq_title": "FAQ",
@@ -1421,7 +1421,7 @@
     "hero_h1": "Automation die niet ruikt naar",
     "hero_h1_accent": "automation.",
     "sub": "Geen drip-campagnes met \"Hi voornaam\". Wij bouwen flows die op echte signalen draaien: een gesprek dat net afliep, een agenda-event, een afwijking in een KPI. Dit is hoe we het zelf voor onze sales-flow doen, en hoe we het ook voor jou bouwen.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk de drie tracks",
     "pain_eyebrow": "WAAROM HET MEESTAL FAALT",
     "pain_h2": "Marketing-automation is meestal slecht omdat de input slecht is.",
@@ -1453,13 +1453,13 @@
     "cta_eyebrow": "VOOR JOU OOK BOUWEN",
     "cta_h3": "Een gesprek, dan weten we of het past.",
     "cta_sub": "Wij verkopen geen automation-licenties. Wij bouwen flows die op jouw signalen draaien: agenda, telefoon, KPI's, klant-data. En zorgen dat de uitvoer voelt als jij. Kort gesprek, je legt uit waar je tijd verliest, wij schetsen hoe Stevin dat opvangt.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "autodealers": {
     "eyebrow": "VOOR DEALER GROEPEN",
     "h1": "Per merk, per vestiging, per regio.",
     "sub": "De AI-laag over je marketing en sales, voor dealergroepen met meerdere merken en vestigingen. Stevin koppelt je ads, DMS, voorraad en CRM tot je eigen databeeld en signaleert dezelfde dag waar performance afwijkt, zonder te wachten op de maandrapportage van het bureau.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -1504,7 +1504,7 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een overzicht over alles wat je groep doet.",
     "cta_sub": "Ontworpen voor groepen met meerdere merken en vestigingen. Boek een demo en we laten zien hoe Stevin per regio adviseert wat werkt.",
-    "cta_btn": "Boek een demo",
+    "cta_btn": "Start de diagnose",
     "proof_stat": "-50%",
     "proof_label": "kosten per klant, per vestiging bijgestuurd zonder te wachten op het bureau."
   },
@@ -1512,7 +1512,7 @@
     "eyebrow": "VOOR FMCG-MERKEN",
     "h1": "Wat in jouw categorie verschuift, zie je op woensdag. Niet in het kwartaalrapport.",
     "sub": "Marketing-tooling voor FMCG-merken in NL en BE. Stevin verbindt retail-media, share of search en categorie-mentions, en stuurt elke woensdag een korte briefing per merk. De laag tussen jouw kwartaaltracker en jouw MMM.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -1557,7 +1557,7 @@
     "cta_eyebrow": "Geen MMM-vervanger. De laag ertussen.",
     "cta_h3": "Wekelijks drie dingen die ertoe doen. Per merk.",
     "cta_sub": "Ontworpen voor FMCG-merken in NL en BE die tussen kwartaalrapporten door blind zijn. Boek een demo en we laten zien hoe Stevin de gaten dicht zonder dat je dashboards hoeft te lezen.",
-    "cta_btn": "Boek een demo",
+    "cta_btn": "Start de diagnose",
     "proof_stat": "+45%",
     "proof_label": "aanvragen bij een merk onder concurrentiedruk, bijgestuurd voor het de omzet raakte."
   },
@@ -1565,7 +1565,7 @@
     "eyebrow": "VOOR AUTOMOTIVE",
     "h1": "Twee routes onder een dak. Merk en dealer.",
     "sub": "De AI-laag over je marketing en sales, op merk- en dealerniveau tegelijk. Op jouw eigen data ziet Stevin wat het merk doet, wat de dealer in zijn regio nodig heeft, en waar de twee elkaar in de weg zitten.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -1610,7 +1610,7 @@
     "cta_eyebrow": "Geen brand-bureau. Geen dealer-bureau. Een brein over allebei.",
     "cta_h3": "Merk en dealer, eindelijk in een beeld.",
     "cta_sub": "Ontworpen voor importeurs, dealerorganisaties en individuele dealers. Boek een demo, dan laten we zien hoe Stevin op jouw eigen data op merk- en dealerniveau tegelijk meedenkt.",
-    "cta_btn": "Boek een demo",
+    "cta_btn": "Start de diagnose",
     "proof_stat": "-50%",
     "proof_label": "kosten per klant bij een aanbieder met meerdere vestigingen, scherper getarget waar de koper kiest."
   },
@@ -1618,7 +1618,7 @@
     "eyebrow": "VOOR VERHUURBEDRIJVEN",
     "h1": "Vraag schommelt. Voorraad ook. Je ads niet.",
     "sub": "De AI-laag over je marketing en sales, voor verhuurbedrijven met meerdere vestigingen en machinetypes. Stevin koppelt je rental-management, ads, CRM en site tot je eigen databeeld, signaleert dezelfde dag waar performance of voorraad afwijkt en adviseert per regio en seizoen.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -1663,7 +1663,7 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een beeld over voorraad, vraag en marketing.",
     "cta_sub": "Ontworpen voor verhuurbedrijven met meerdere vestigingen en machinetypes. Boek een demo en we laten zien hoe Stevin per regio en seizoen meedenkt.",
-    "cta_btn": "Boek een demo",
+    "cta_btn": "Start de diagnose",
     "proof_stat": "-35%",
     "proof_label": "kosten per lead bij een seizoensbedrijf, budget naar de weken die er echt toe doen."
   },
@@ -1671,7 +1671,7 @@
     "eyebrow": "VOOR NON-PROFITS",
     "h1": "Klein team, veel kanalen.",
     "sub": "De AI-laag over je marketing en communicatie, voor stichtingen, verenigingen en gezondheidsfondsen. Stevin verbindt fondsenwerving, communicatie en bezoek-data tot je eigen databeeld, en houdt Google Ad Grants in de lucht.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -1716,7 +1716,7 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een beeld over alles wat steun oplevert.",
     "cta_sub": "Ontworpen voor non-profits met kleine teams. Boek een demo en we laten zien hoe Stevin Google Ad Grants en je hele communicatie-stack samenbrengt.",
-    "cta_btn": "Boek een demo",
+    "cta_btn": "Start de diagnose",
     "proof_stat": "-43%",
     "proof_label": "klikprijs bij een organisatie die dezelfde ads te lang liet draaien, op tijd ververst."
   },
@@ -1724,7 +1724,7 @@
     "eyebrow": "CAMPAGNE-MANAGEMENT VOOR DEALERS",
     "h1": "Honderden campagnes. Per vestiging. Onder controle.",
     "sub": "Voor dealergroepen die per merk en per vestiging tegelijk willen adverteren zonder het bureau-uurtje voor elke creative-aanpassing. Als AI-laag over je marketing stuurt Stevin je Google Ads, Meta en voorraadfeed aan in 1 flow, op je eigen data.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -1769,13 +1769,13 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Per vestiging adverteren, zonder wachten op je bureau.",
     "cta_sub": "Ontworpen voor dealergroepen met meerdere merken en vestigingen. Boek een demo en we laten zien hoe Stevin honderden campagnes parallel orchestreert met advies per regio.",
-    "cta_btn": "Boek een demo"
+    "cta_btn": "Start de diagnose"
   },
   "voorRetail": {
     "eyebrow": "VOOR RETAIL-KETENS",
     "h1": "Online en offline. In een beeld.",
     "sub": "Marketing-tooling voor retail-ketens met meerdere winkels. Stevin koppelt online ads, winkelbezoek, CRM en weersdata, en stuurt per vestiging op wat werkt.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -1820,7 +1820,7 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een beeld over alles wat omzet brengt.",
     "cta_sub": "Ontworpen voor retail-ketens met meerdere winkels. Boek een demo en we laten zien hoe Stevin online en offline samenbrengt per vestiging.",
-    "cta_btn": "Boek een demo",
+    "cta_btn": "Start de diagnose",
     "proof_stat": "250%",
     "proof_label": "meer conversies bij een retailer met 30+ winkels, advertenties die meebewegen met de voorraad."
   },
@@ -1828,7 +1828,7 @@
     "eyebrow": "VOOR MUSEA EN CULTUUR",
     "h1": "Bezoekers, leden, donaties, in 1 beeld.",
     "sub": "De AI-laag over je marketing en communicatie, voor musea, cultuurinstellingen en non-profits. Stevin koppelt ticketing, donatiesysteem, CRM en je media-kanalen tot je eigen databeeld, signaleert dezelfde dag waar bezoek of fondsenwerving afwijkt en gebruikt Google Ad Grants zoals het hoort.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
     "pain_h2": "Herkenbaar?",
@@ -1873,7 +1873,7 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Een beeld over alles wat bezoekers brengt.",
     "cta_sub": "Ontworpen voor musea en cultuurinstellingen met kleine teams. Boek een demo, dan laten we zien hoe Stevin Google Ad Grants en je hele media-stack samenbrengt op je eigen data. Denk aan een grootschalig evenement dat zo 11 miljoen euro ticketomzet haalde.",
-    "cta_btn": "Boek een demo",
+    "cta_btn": "Start de diagnose",
     "proof_stat": "11 mln",
     "proof_label": "euro ticketomzet bij een grootschalig evenement, meebewegende urgentie naar de ticketflow."
   },
@@ -1881,7 +1881,7 @@
     "eyebrow": "Websites",
     "h1": "Websites die meer doen dan online staan",
     "sub": "Stevin bouwt websites die klaar zijn voor groei. Met duidelijke diensten, sterke reviews, directe contactknoppen en een structuur die later kan koppelen met mail, CRM, agenda, WhatsApp en AI.",
-    "cta_primary": "Boek een demo",
+    "cta_primary": "Start de diagnose",
     "cta_secondary": "Zo werken we",
     "problem_eyebrow": "Het probleem",
     "problem_intro": "Veel websites zijn mooi, maar statisch.",
@@ -1905,7 +1905,7 @@
     "grow_h2": "De eerste laag van je commerciele systeem",
     "grow_1": "Je website kan later worden uitgebreid met SEO-content, leadopvolging, reviewflow, agenda of CRM-koppelingen.",
     "grow_2": "Zo wordt je site geen los project, maar de eerste laag van je commerciele systeem.",
-    "grow_cta": "Boek een demo"
+    "grow_cta": "Start de diagnose"
   },
   "mkb": {
     "meta_title": "Stevin voor MKB en vakmensen, je hele bedrijf op orde",
@@ -1914,7 +1914,7 @@
     "hero_h1": "Jij doet het werk.",
     "hero_h1_accent": "Stevin doet de rest.",
     "hero_sub": "Een gemiste oproep, een offerte die blijft liggen, opvolging die je vergeet. Stevin pakt het papierwerk rond je bedrijf, zodat jij bezig blijft met het echte werk.",
-    "cta": "Boek een demo",
+    "cta": "Start de diagnose",
     "pains_h2": "Het werk achter het werk kost je het meest",
     "pain1_title": "Aanvragen blijven liggen",
     "pain1_desc": "Een appje, een gemiste oproep, een mail. Tegen de tijd dat je eraan toekomt, is de klant alweer verder bij iemand anders.",
