@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages = [
     '/google-ads-uitbesteden',
+    '/social-media-uitbesteden',
     '/voor-ondernemers',
     '/voor-marketingteams',
     '/controle',
@@ -60,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const priorityFor = (path: string) => {
     if (path === '') return 1
-    if (path === '/google-ads-uitbesteden' || path === '/voor-ondernemers' || path === '/voor-marketingteams' || path === '/platform') return 0.9
+    if (path === '/google-ads-uitbesteden' || path === '/social-media-uitbesteden' || path === '/voor-ondernemers' || path === '/voor-marketingteams' || path === '/platform') return 0.9
     return 0.7
   }
 

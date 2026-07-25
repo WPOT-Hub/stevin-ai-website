@@ -85,7 +85,8 @@
     "vergelijken": "Vergelijken",
     "alternatief": "Alternatieven",
     "woordenboek": "Woordenboek",
-    "svc_ads_uitbesteden": "Google Ads uitbesteden"
+    "svc_ads_uitbesteden": "Google Ads uitbesteden",
+    "svc_social_uitbesteden": "Social media uitbesteden"
   },
   "trust": {
     "heading": "Veilig by default.",
@@ -418,10 +419,10 @@
     "detail_cta_btn": "Start de diagnose"
   },
   "seo": {
-    "meta_title": "SEO voor bureaus en MKB, Stevin",
-    "eyebrow": "SEO",
-    "h1": "Organisch groeien met data die klopt.",
-    "sub": "Stevin monitort je organisch verkeer, keyword-posities en technische SEO, en signaleert afwijkingen voordat je rankings dalen.",
+    "meta_title": "SEO uitbesteden zonder je vindbaarheid uit handen te geven",
+    "eyebrow": "SEO uitbesteden",
+    "h1": "SEO uitbesteden. Zonder blind te varen.",
+    "sub": "Je wilt hoger in Google komen zonder maandelijks een rapport te krijgen dat je niet kunt narekenen. Wij zetten je organische vindbaarheid goed, letten er dag en nacht op, en alles wat we bouwen blijft van jou: je content, je data, je posities.",
     "tech_h2": "Technische basis, contentstructuur en landingspagina's",
     "tech_p": "Goede SEO begint bij een technisch gezonde website. Snelle laadtijden, correcte indexering, gestructureerde data en een logische sitestructuur. Stevin ziet waar je content aansluit op wat je doelgroep zoekt, en waar niet, niet op volume maar op relevantie.",
     "tech_box1_h3": "Technische SEO",

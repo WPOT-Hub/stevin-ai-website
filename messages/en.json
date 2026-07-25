@@ -85,7 +85,8 @@
     "vergelijken": "Comparisons",
     "alternatief": "Alternatives",
     "woordenboek": "Glossary",
-    "svc_ads_uitbesteden": "Outsource Google Ads"
+    "svc_ads_uitbesteden": "Outsource Google Ads",
+    "svc_social_uitbesteden": "Outsource social media"
   },
   "trust": {
     "heading": "Secure by default.",
@@ -418,10 +419,10 @@
     "detail_cta_btn": "Start the diagnosis"
   },
   "seo": {
-    "meta_title": "SEO for agencies and SMBs, Stevin",
-    "eyebrow": "SEO",
-    "h1": "Grow organically with data that works.",
-    "sub": "Stevin monitors your organic traffic, keyword rankings and technical SEO, and flags anomalies before your rankings drop.",
+    "meta_title": "Outsource SEO without handing over your visibility",
+    "eyebrow": "Outsourcing SEO",
+    "h1": "Outsource SEO. Without flying blind.",
+    "sub": "You want to rank higher in Google without a monthly report you cannot verify. We set your organic visibility up right, watch it day and night, and everything we build stays yours: your content, your data, your positions.",
     "tech_h2": "Technical foundation, content structure and landing pages",
     "tech_p": "Good SEO starts with a technically healthy website. Fast load times, correct indexing, structured data and a logical site structure. Stevin sees where your content matches what your audience is searching for, and where it doesn't, not on volume but on relevance.",
     "tech_box1_h3": "Technical SEO",
