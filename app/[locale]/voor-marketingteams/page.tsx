@@ -177,6 +177,32 @@ export default async function MarketingPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Dashboard versus iemand die het regelt (doc 27) */}
+      <section className="bg-surface" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1000px]">
+          <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+            <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
+            {t('dash_eyebrow')}
+          </p>
+          <h2 className="font-display font-extrabold text-primary m-0 mb-5" style={{ fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '20ch' }}>
+            {t('dash_h2')}
+          </h2>
+          <p className="text-muted leading-[1.65] mb-10" style={{ fontSize: '16px', maxWidth: '620px' }}>
+            {t('dash_body')}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
+            {[1, 2, 3, 4].map((i) => (
+              <article key={i} className="pt-5 border-t border-border">
+                <h3 className="font-display font-bold text-primary mb-2.5" style={{ fontSize: '16.5px', letterSpacing: '-0.01em' }}>
+                  {t(`dash_p${i}_t`)}
+                </h3>
+                <p className="text-muted leading-[1.6] m-0" style={{ fontSize: '14.5px' }}>{t(`dash_p${i}_d`)}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Use cases */}
       <section className="bg-primary" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1200px]">

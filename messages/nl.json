@@ -713,7 +713,18 @@
     "cta_eyebrow": "Het is geen wonder. Het is Stevin.",
     "cta_h3": "Zie wat je betaalt. Zie wat het oplevert.",
     "cta_sub": "Elke euro herleidbaar naar resultaat. Boek een demo en we laten zien hoe Stevin jouw marketingdata omzet in onderbouwde groei.",
-    "cta_btn": "Start de diagnose"
+    "cta_btn": "Start de diagnose",
+    "dash_eyebrow": "Dashboard of iemand die het regelt",
+    "dash_h2": "Een dashboard laat zien wat er gebeurd is. Meer niet.",
+    "dash_body": "Bouw je nu zelf dashboards in Looker Studio of Databox, dan ken je het patroon: de cijfers staan er, maar iemand moet er nog steeds naar kijken, de conclusie trekken en het laten uitvoeren. Dat is niet de schuld van die tools, dat is hun ontwerp. Stevin zit een laag daarboven.",
+    "dash_p1_t": "Je hoeft niet te kijken",
+    "dash_p1_d": "Signalen melden wat aandacht nodig heeft op het moment dat het speelt, in plaats van dat je het maandag in een rapport terugvindt.",
+    "dash_p2_t": "Er komt een advies bij, niet alleen een cijfer",
+    "dash_p2_d": "Wat er aan de hand is, waarom het ertoe doet en welke actie erbij hoort. Met de bron erbij, zodat je het kunt nakijken.",
+    "dash_p3_t": "Het onthoudt wat werkte",
+    "dash_p3_d": "Een dashboard begint elke keer opnieuw. Het marketinggeheugen weet wat vorig jaar in dezelfde week werkte, wat het kostte en wat je ervan geleerd hebt.",
+    "dash_p4_t": "En het kan het ook uitvoeren",
+    "dash_p4_d": "Wij regelen het werk als je dat wilt, met elk besluit in een logboek. Een dashboard kan alleen tonen; wij kunnen tonen en doen."
   },
   "audit": {
     "eyebrow": "AUDIT",

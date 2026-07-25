@@ -713,7 +713,18 @@
     "cta_eyebrow": "It's not a wonder. It's Stevin.",
     "cta_h3": "See what you pay. See what it returns.",
     "cta_sub": "Every euro traceable to results. Book a demo and we'll show you how Stevin turns your marketing data into evidenced growth.",
-    "cta_btn": "Start the diagnosis"
+    "cta_btn": "Start the diagnosis",
+    "dash_eyebrow": "A dashboard or someone who handles it",
+    "dash_h2": "A dashboard shows what happened. Nothing more.",
+    "dash_body": "If you build your own dashboards in Looker Studio or Databox, you know the pattern: the numbers are there, but someone still has to look at them, draw the conclusion and get it executed. That is not the fault of those tools, that is their design. Stevin sits a layer above.",
+    "dash_p1_t": "You do not have to look",
+    "dash_p1_d": "Signals report what needs attention at the moment it happens, instead of you finding it in a report on Monday.",
+    "dash_p2_t": "Advice comes with it, not just a number",
+    "dash_p2_d": "What is going on, why it matters and which action belongs to it. With the source attached, so you can check it.",
+    "dash_p3_t": "It remembers what worked",
+    "dash_p3_d": "A dashboard starts over every time. The marketing memory knows what worked in the same week last year, what it cost and what you learned.",
+    "dash_p4_t": "And it can execute too",
+    "dash_p4_d": "We do the work if you want, with every decision in a log. A dashboard can only show; we can show and do."
   },
   "audit": {
     "eyebrow": "AUDIT",
