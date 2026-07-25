@@ -81,7 +81,10 @@
     "producten": "Products",
     "cases": "Case studies",
     "journal": "Journal",
-    "platform": "Platform"
+    "platform": "Platform",
+    "vergelijken": "Comparisons",
+    "alternatief": "Alternatives",
+    "woordenboek": "Glossary"
   },
   "trust": {
     "heading": "Secure by default.",

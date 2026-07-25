@@ -81,7 +81,10 @@
     "producten": "Producten",
     "cases": "Case studies",
     "journal": "Journal",
-    "platform": "Platform"
+    "platform": "Platform",
+    "vergelijken": "Vergelijken",
+    "alternatief": "Alternatieven",
+    "woordenboek": "Woordenboek"
   },
   "trust": {
     "heading": "Veilig by default.",
