@@ -80,7 +80,8 @@
     "controle": "Control",
     "producten": "Products",
     "cases": "Case studies",
-    "journal": "Journal"
+    "journal": "Journal",
+    "platform": "Platform"
   },
   "trust": {
     "heading": "Secure by default.",

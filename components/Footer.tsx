@@ -37,6 +37,7 @@ export default function Footer() {
       { label: t('voor_ondernemers'), href: '/voor-ondernemers' },
       { label: t('voor_teams'), href: '/voor-marketingteams' },
       { label: t('controle'), href: '/controle' },
+      { label: t('platform'), href: '/platform' },
       { label: t('producten'), href: '/producten' },
       { label: t('cases'), href: '/case-studies' },
       { label: t('journal'), href: '/blog' },

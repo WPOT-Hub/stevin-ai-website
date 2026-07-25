@@ -125,8 +125,12 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {dienstenOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-border shadow-lg py-2">
+              {/* Altijd in de DOM (crawlbaar), zichtbaarheid via CSS. */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-border shadow-lg py-2 transition-opacity ${
+                  dienstenOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
+                }`}
+              >
                   {dienstenItems.map((item) => (
                     <Link
                       key={item.href}
@@ -137,8 +141,7 @@ export default function Header() {
                       {item.label}
                     </Link>
                   ))}
-                </div>
-              )}
+              </div>
             </div>
 
             {/* Platform dropdown */}
@@ -156,8 +159,12 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {platformOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-border shadow-lg py-2">
+              {/* Altijd in de DOM (crawlbaar), zichtbaarheid via CSS. */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-border shadow-lg py-2 transition-opacity ${
+                  platformOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
+                }`}
+              >
                   {platformItems.map((item) => (
                     <Link
                       key={item.href}
@@ -168,8 +175,7 @@ export default function Header() {
                       {item.label}
                     </Link>
                   ))}
-                </div>
-              )}
+              </div>
             </div>
 
             {/* Voor wie dropdown */}
@@ -187,8 +193,12 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {voorWieOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl border border-border shadow-lg py-2">
+              {/* Altijd in de DOM (crawlbaar), zichtbaarheid via CSS. */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-xl border border-border shadow-lg py-2 transition-opacity ${
+                  voorWieOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
+                }`}
+              >
                   {voorWieItems.map((item) => (
                     <Link
                       key={item.href}
@@ -199,8 +209,7 @@ export default function Header() {
                       {item.label}
                     </Link>
                   ))}
-                </div>
-              )}
+              </div>
             </div>
 
             {navItems.map((item) => (

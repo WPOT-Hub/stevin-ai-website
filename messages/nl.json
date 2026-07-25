@@ -80,7 +80,8 @@
     "controle": "Controle",
     "producten": "Producten",
     "cases": "Case studies",
-    "journal": "Journal"
+    "journal": "Journal",
+    "platform": "Platform"
   },
   "trust": {
     "heading": "Veilig by default.",
