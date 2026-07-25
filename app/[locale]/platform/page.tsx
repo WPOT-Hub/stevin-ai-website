@@ -98,7 +98,7 @@ export default async function PlatformPage({ params }: Props) {
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link
               href="/contact"
-              className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
+              className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#5DA3FF] text-primary rounded-xl hover:bg-[#7BB8FF] transition-colors"
             >
               {t('cta_demo')}
             </Link>
@@ -339,7 +339,7 @@ export default async function PlatformPage({ params }: Props) {
           </p>
           <Link
             href="/contact"
-            className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
+            className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#5DA3FF] text-primary rounded-xl hover:bg-[#7BB8FF] transition-colors"
           >
             {t('cta_demo')}
           </Link>

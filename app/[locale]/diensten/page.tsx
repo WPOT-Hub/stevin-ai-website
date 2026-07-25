@@ -205,8 +205,8 @@ export default async function DienstenPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
 
           {/* Eyebrow */}
-          <p className="text-neon text-[14px] font-display font-bold tracking-[0.14em] uppercase mb-7 flex items-center gap-[14px]">
-            <span className="inline-block w-6 h-px bg-neon flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#5DA3FF] text-[14px] font-display font-bold tracking-[0.14em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-6 h-px bg-[#5DA3FF] flex-shrink-0" aria-hidden="true" />
             {t('closing_eyebrow')}
           </p>
 
@@ -220,7 +220,7 @@ export default async function DienstenPage({ params }: Props) {
           <div className="flex gap-3 flex-wrap items-center">
             <Link
               href="/contact"
-              className="inline-flex font-display font-bold text-base bg-neon text-primary rounded-[10px] hover:bg-neon-dark transition-colors"
+              className="inline-flex font-display font-bold text-base bg-[#5DA3FF] text-primary rounded-[10px] hover:bg-[#7BB8FF] transition-colors"
               style={{ padding: '16px 26px', letterSpacing: '-0.005em' }}
             >
               {t('closing_cta1')}

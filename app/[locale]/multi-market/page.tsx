@@ -97,7 +97,7 @@ export default async function MultiMarketPage({ params }: Props) {
           <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 font-display font-bold text-[15px] bg-neon text-primary rounded-[10px] hover:bg-neon-dark transition-colors neon-glow w-fit"
+              className="inline-flex items-center gap-2 px-6 py-3.5 font-display font-bold text-[15px] bg-[#5DA3FF] text-primary rounded-[10px] hover:bg-[#7BB8FF] transition-colors w-fit"
             >
               {t('hero_cta')}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -443,7 +443,7 @@ export default async function MultiMarketPage({ params }: Props) {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-7 py-4 font-display font-bold text-[16px] bg-neon text-primary rounded-[10px] hover:bg-neon-dark transition-colors neon-glow"
+            className="inline-flex items-center gap-2 px-7 py-4 font-display font-bold text-[16px] bg-accent text-white rounded-[10px] hover:bg-accent-dark transition-colors"
           >
             {t('cta_button')}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

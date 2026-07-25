@@ -45,7 +45,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link
               href={page.ctaPrimary.href}
-              className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
+              className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#5DA3FF] text-primary rounded-xl hover:bg-[#7BB8FF] transition-colors"
             >
               {page.ctaPrimary.label}
             </Link>
@@ -155,7 +155,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
               </p>
               <Link
                 href="/contact"
-                className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
+                className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#5DA3FF] text-primary rounded-xl hover:bg-[#7BB8FF] transition-colors"
               >
                 {page.ctaSlot.btn}
               </Link>

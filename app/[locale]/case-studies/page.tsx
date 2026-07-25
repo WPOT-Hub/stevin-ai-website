@@ -84,7 +84,7 @@ export default async function CaseStudiesPage({ params }: Props) {
             <p className="text-muted mb-4 text-[15px]">{t('more_soon')}</p>
             <Link
               href="/contact"
-              className="inline-flex px-6 py-3 text-sm font-semibold text-white bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
+              className="inline-flex px-6 py-3 text-sm font-semibold text-white bg-accent text-white rounded-xl hover:bg-accent-dark transition-colors"
             >
               {t('be_next')}
             </Link>

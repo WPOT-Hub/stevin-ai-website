@@ -144,7 +144,7 @@ export default async function EcommerceCaseStudy({ params }: Props) {
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
             {t('cta_sub')}
           </p>
-          <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
+          <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#5DA3FF] text-primary rounded-xl hover:bg-[#7BB8FF] transition-colors">
             {t('cta_btn')}
           </Link>
         </div>

@@ -229,13 +229,6 @@ section {
 }
 
 /* CTA glow effect */
-.neon-glow {
-  box-shadow: 0 0 30px rgba(0, 212, 160, 0.3), 0 0 60px rgba(0, 212, 160, 0.1);
-}
-.neon-glow:hover {
-  box-shadow: 0 0 40px rgba(0, 212, 160, 0.4), 0 0 80px rgba(0, 212, 160, 0.15);
-}
-
 /* Video blob glow */
 .video-blob-glow {
   filter: drop-shadow(0 0 40px rgba(61, 142, 255, 0.25)) drop-shadow(0 0 80px rgba(61, 142, 255, 0.1));

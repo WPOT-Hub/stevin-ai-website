@@ -226,7 +226,7 @@ export default function PricingTabs() {
               href="/contact"
               className={`block w-full text-center py-3 rounded-xl text-sm font-semibold transition-all duration-200 mb-6 ${
                 pkg.popular
-                  ? 'bg-neon text-[#0A1628] hover:bg-neon-dark neon-glow'
+                  ? 'bg-accent text-white hover:bg-accent-dark'
                   : 'bg-surface text-primary border border-border hover:border-accent/30 hover:shadow-md'
               }`}
             >
@@ -241,7 +241,7 @@ export default function PricingTabs() {
                   }`}
                 >
                   <svg
-                    className={`w-4 h-4 mt-0.5 flex-shrink-0 ${pkg.popular ? 'text-neon' : 'text-accent'}`}
+                    className={`w-4 h-4 mt-0.5 flex-shrink-0 ${pkg.popular ? 'text-[#5DA3FF]' : 'text-accent'}`}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >

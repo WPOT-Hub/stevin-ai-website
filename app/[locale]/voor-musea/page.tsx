@@ -67,7 +67,7 @@ export default async function MuseaPage({ params }: Props) {
             {t('sub')}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
-            <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
+            <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#5DA3FF] text-primary rounded-xl hover:bg-[#7BB8FF] transition-colors">
               {t('cta_primary')}
             </Link>
             <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
@@ -75,7 +75,7 @@ export default async function MuseaPage({ params }: Props) {
             </Link>
           </div>
           <div className="mt-14 inline-flex items-baseline gap-3 rounded-xl border border-white/15 bg-white/5 px-5 py-4">
-            <span className="font-display font-extrabold text-neon" style={{ fontSize: '30px', lineHeight: '1' }}>{t('proof_stat')}</span>
+            <span className="font-display font-extrabold text-accent" style={{ fontSize: '30px', lineHeight: '1' }}>{t('proof_stat')}</span>
             <span className="text-white/65 text-sm leading-[1.45]" style={{ maxWidth: '360px' }}>{t('proof_label')}</span>
           </div>
         </div>
@@ -198,7 +198,7 @@ export default async function MuseaPage({ params }: Props) {
               <p className="text-white/50 mb-8 leading-[1.6] text-[15px]">{t('cta_sub')}</p>
               <Link
                 href="/contact"
-                className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow"
+                className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#5DA3FF] text-primary rounded-xl hover:bg-[#7BB8FF] transition-colors"
               >
                 {t('cta_btn')}
               </Link>
