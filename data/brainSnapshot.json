@@ -1,1914 +1,1754 @@
 {
- "nodes": [
-  {
-   "id": "brief-1a016ef6-010f-4ba0-909d-2190698278ba",
-   "label": "Winter 2026 Gift Guide voorbereiding",
-   "type": "campagne",
-   "period_start": "2026-11-20",
-   "period_end": "2026-12-24",
-   "period_label": "20 nov 2026 t/m 24 dec 2026",
-   "tags": [
-    "email",
-    "meta",
-    "pinterest",
-    "het cadeau dat een avond wordt"
-   ],
-   "why": "Cadeauhoek voorbereiden voor de winterrun: gift guide email plus drie paid-varianten, hook verschuift eind november van sfeer naar cadeau.",
-   "delta": null,
-   "lineage_node_id": "brief-96da1b95-2f3c-4d29-9a22-5a14def361d2"
-  },
-  {
-   "id": "brief-48d50ca0-8783-4b2f-9ef4-a5e08b029c76",
-   "label": "Noctilia Last Days aan Zee",
-   "type": "campagne",
-   "period_start": "2026-08-10",
-   "period_end": "2026-09-06",
-   "period_label": "10 aug 2026 t/m 6 sep 2026",
-   "tags": [
-    "meta",
-    "google_ads",
-    "radio",
-    "ooh"
-   ],
-   "why": "De slotweken van de jubileumzomer uitverkopen richting 6 september.",
-   "delta": null,
-   "lineage_node_id": "brief-c3f64031-e9b9-477a-affb-aebf1cd826dc"
-  },
-  {
-   "id": "brief-c2e8db49-8eb7-49fe-b949-27830e60d0e7",
-   "label": "Noctilia Last Days",
-   "type": "campagne",
-   "period_start": "2026-08-10",
-   "period_end": "2026-09-06",
-   "period_label": "10 aug 2026 t/m 6 sep 2026",
-   "tags": [
-    "meta",
-    "google_ads",
-    "radio",
-    "ooh"
-   ],
-   "why": "De slotweken tot en met 6 september uitverkopen met stapsgewijs opgevoerde urgentie.",
-   "delta": null,
-   "lineage_node_id": "brief-c3f64031-e9b9-477a-affb-aebf1cd826dc"
-  },
-  {
-   "id": "kennis-2ec03b9b-fc4c-440c-804e-c66c749b17d2",
-   "label": "Weekcijfers wk 27 2026 Noctilia",
-   "type": "kennis",
-   "period_start": "2026-07-06T10:00:00+00:00",
-   "period_end": "2026-07-06T10:00:00+00:00",
-   "period_label": "6 jul 2026",
-   "tags": [
-    "manual"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-e4a611c4-c82d-4651-bbcc-494d83eda711",
-   "label": "Weekcijfers wk 27 2026 NOCTILIA",
-   "type": "kennis",
-   "period_start": "2026-07-06T10:00:00+00:00",
-   "period_end": "2026-07-06T10:00:00+00:00",
-   "period_label": "6 jul 2026",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-9f9830c3-bc18-4753-8fc5-410308704406",
-   "label": "Noctilia Zomer Maintain",
-   "type": "campagne",
-   "period_start": "2026-06-25",
-   "period_end": "2026-08-09",
-   "period_label": "25 jun 2026 t/m 9 aug 2026",
-   "tags": [
-    "meta",
-    "tiktok",
-    "snapchat",
-    "google_ads"
-   ],
-   "why": "Perscitaten, castcontent en strandactivatie inzetten om de zomervakantieweken op target te houden.",
-   "delta": null,
-   "lineage_node_id": "brief-bcf9edf6-f139-40cc-9755-2df1b206869b"
-  },
-  {
-   "id": "brief-5da26654-66f1-4bc2-b483-9bd0bc20f114",
-   "label": "Lumos zomer 2026 Scheveningen + Brussel",
-   "type": "campagne",
-   "period_start": "2026-06-22T20:13:38.250292+00:00",
-   "period_end": "2026-06-22T20:13:38.250292+00:00",
-   "period_label": "22 jun 2026 t/m 22 jun 2026",
-   "tags": [
-    "meta",
-    "youtube",
-    "google",
-    "tiktok"
-   ],
-   "why": "ticketverkoop opbouwen voor beide tenten",
-   "delta": null,
-   "lineage_node_id": "brief-bcf9edf6-f139-40cc-9755-2df1b206869b"
-  },
-  {
-   "id": "kennis-395729ee-6f1a-4824-b760-34ec0937dee0",
-   "label": "Source: Finale business memory (Koen)",
-   "type": "kennis",
-   "period_start": "2026-06-22T19:08:35.726393+00:00",
-   "period_end": "2026-06-22T19:08:35.726393+00:00",
-   "period_label": "22 jun 2026",
-   "tags": [
-    "manual"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-7a8c980a-d845-46eb-b1c2-9adc206a5c05",
-   "label": "Source: Interim agency deck (tussentijds)",
-   "type": "kennis",
-   "period_start": "2026-06-22T19:08:35.674205+00:00",
-   "period_end": "2026-06-22T19:08:35.674205+00:00",
-   "period_label": "22 jun 2026",
-   "tags": [
-    "manual"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-bcb2d97b-f234-49be-9e46-0a5b066be82e",
-   "label": "Source: Strategy targets (merkstrategie-deck)",
-   "type": "kennis",
-   "period_start": "2026-06-22T19:08:35.623177+00:00",
-   "period_end": "2026-06-22T19:08:35.623177+00:00",
-   "period_label": "22 jun 2026",
-   "tags": [
-    "manual"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-13c6f132-e8db-44c2-99c8-5e186aea1a62",
-   "label": "Weekcijfers wk 25 2026 NOCTILIA",
-   "type": "kennis",
-   "period_start": "2026-06-22T10:00:00+00:00",
-   "period_end": "2026-06-22T10:00:00+00:00",
-   "period_label": "22 jun 2026",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-25ac9019-5502-48da-9fa8-94c964c1eb49",
-   "label": "Sell-through notitie premiere NOCTILIA",
-   "type": "kennis",
-   "period_start": "2026-06-12T10:00:00+00:00",
-   "period_end": "2026-06-12T10:00:00+00:00",
-   "period_label": "12 jun 2026",
-   "tags": [
-    "manual"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-f4df3f77-25b5-4b0a-977b-8f32d92ab97e",
-   "label": "Persbericht: jubileumzomer geopend",
-   "type": "kennis",
-   "period_start": "2026-06-12T10:00:00+00:00",
-   "period_end": "2026-06-12T10:00:00+00:00",
-   "period_label": "12 jun 2026",
-   "tags": [
-    "pdf"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-6d67d9f2-4400-4245-bf66-b717c5fc1ce5",
-   "label": "Noctilia Premiere Nachtlicht",
-   "type": "campagne",
-   "period_start": "2026-06-01",
-   "period_end": "2026-06-24",
-   "period_label": "1 jun 2026 t/m 24 jun 2026",
-   "tags": [
-    "pr",
-    "dv360",
-    "youtube",
-    "meta"
-   ],
-   "why": "Premiere-PR, homepage takeover en talkshow-optredens omzetten in de grootste verkoopweek van de run.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "briefing-7643c08f-058c-415b-9536-5ca78eec4267",
-   "label": "Briefing 15 mei 2026",
-   "type": "campagne",
-   "period_start": "2026-05-15T19:49:39.186804+00:00",
-   "period_end": "2026-05-15T19:49:39.186804+00:00",
-   "period_label": "15 mei 2026",
-   "tags": [
-    "briefing"
-   ],
-   "why": "Historische briefing in het geheugen.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "briefing-4b5b30ca-0c5c-4367-a314-8f1c9b533776",
-   "label": "Briefing 15 mei 2026",
-   "type": "campagne",
-   "period_start": "2026-05-15T19:49:38.945341+00:00",
-   "period_end": "2026-05-15T19:49:38.945341+00:00",
-   "period_label": "15 mei 2026",
-   "tags": [
-    "briefing"
-   ],
-   "why": "Historische briefing in het geheugen.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "briefing-6b0cca63-8f4a-46db-9ffe-6e3fd1788c70",
-   "label": "Briefing 15 mei 2026",
-   "type": "campagne",
-   "period_start": "2026-05-15T19:49:38.598967+00:00",
-   "period_end": "2026-05-15T19:49:38.598967+00:00",
-   "period_label": "15 mei 2026",
-   "tags": [
-    "briefing"
-   ],
-   "why": "Historische briefing in het geheugen.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "briefing-7748dc86-2047-4d1d-be71-052185354f82",
-   "label": "Briefing 15 mei 2026",
-   "type": "campagne",
-   "period_start": "2026-05-15T19:49:38.160005+00:00",
-   "period_end": "2026-05-15T19:49:38.160005+00:00",
-   "period_label": "15 mei 2026",
-   "tags": [
-    "briefing"
-   ],
-   "why": "Historische briefing in het geheugen.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "briefing-309716d0-3e7f-45c6-9e5e-5a05ce664abb",
-   "label": "Briefing 12 mei 2026",
-   "type": "campagne",
-   "period_start": "2026-05-12T05:37:41.045537+00:00",
-   "period_end": "2026-05-12T05:37:41.045537+00:00",
-   "period_label": "12 mei 2026",
-   "tags": [
-    "briefing"
-   ],
-   "why": "Historische briefing in het geheugen.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-61609f64-d76d-4d01-bfde-76a818d6b454",
-   "label": "Brussel-tent zomertour-dossier (Lyon + Köln)",
-   "type": "kennis",
-   "period_start": "2026-05-11T23:53:49.628785+00:00",
-   "period_end": "2026-05-11T23:53:49.628785+00:00",
-   "period_label": "11 mei 2026",
-   "tags": [
-    "manual"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-af43d9ef-a235-4267-8c25-90646a8ab7ae",
-   "label": "LUMOS Brand Foundation 2026",
-   "type": "kennis",
-   "period_start": "2026-05-11T23:53:49.628785+00:00",
-   "period_end": "2026-05-11T23:53:49.628785+00:00",
-   "period_label": "11 mei 2026",
-   "tags": [
-    "briefing"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-26229ec4-b482-4d9a-9d80-c5a960bba3a8",
-   "label": "Weather-creative-playbook",
-   "type": "kennis",
-   "period_start": "2026-05-11T23:53:49.628785+00:00",
-   "period_end": "2026-05-11T23:53:49.628785+00:00",
-   "period_label": "11 mei 2026",
-   "tags": [
-    "manual"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-337d659e-ad2e-4150-86e8-61756ab5f9ae",
-   "label": "Mediamix-strategie Q3 2026 — strategy session 24 april",
-   "type": "kennis",
-   "period_start": "2026-05-11T23:53:49.628785+00:00",
-   "period_end": "2026-05-11T23:53:49.628785+00:00",
-   "period_label": "11 mei 2026",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-e632bf2e-42b7-4718-89c7-6b54a92a07a2",
-   "label": "Per-vestiging-advisor: gids voor Stevin-output",
-   "type": "kennis",
-   "period_start": "2026-05-11T23:53:49.628785+00:00",
-   "period_end": "2026-05-11T23:53:49.628785+00:00",
-   "period_label": "11 mei 2026",
-   "tags": [
-    "briefing"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "briefing-0cfe30fd-3620-48e3-b3e1-c437c0fe61fd",
-   "label": "Briefing 11 mei 2026",
-   "type": "campagne",
-   "period_start": "2026-05-11T23:45:18.766034+00:00",
-   "period_end": "2026-05-11T23:45:18.766034+00:00",
-   "period_label": "11 mei 2026",
-   "tags": [
-    "briefing"
-   ],
-   "why": "Historische briefing in het geheugen.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "briefing-9ccefdac-fc25-46de-a319-dbd24b33c741",
-   "label": "Briefing 11 mei 2026",
-   "type": "campagne",
-   "period_start": "2026-05-11T23:45:18.766034+00:00",
-   "period_end": "2026-05-11T23:45:18.766034+00:00",
-   "period_label": "11 mei 2026",
-   "tags": [
-    "briefing"
-   ],
-   "why": "Historische briefing in het geheugen.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-Display, Remarketing site-visitors",
-   "label": "Display, Remarketing site-visitors",
-   "type": "campagne",
-   "period_start": "2026-04-23",
-   "period_end": "2026-07-23",
-   "period_label": "23 apr 2026 t/m 23 jul 2026",
-   "tags": [
-    "google_ads",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 58 besteed over 45.300 vertoningen.",
-   "delta": "1 conversies, ROAS 1.5",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "creatie-2356",
-   "label": "LUMIOS, The Wonder Machine",
-   "type": "creatie",
-   "period_start": "2026-04-16",
-   "period_end": "2026-05-16",
-   "period_label": "16 apr 2026 t/m 16 mei 2026",
-   "tags": [
-    "meta",
-    "GET_TICKETS"
-   ],
-   "why": "Acrobatiek, muziek en pure verwondering. Deze zomer in Scheveningen onder de big top.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "creatie-2357",
-   "label": "Ontsnap aan de hitte",
-   "type": "creatie",
-   "period_start": "2026-04-16",
-   "period_end": "2026-05-16",
-   "period_label": "16 apr 2026 t/m 16 mei 2026",
-   "tags": [
-    "meta",
-    "GET_TICKETS"
-   ],
-   "why": "Warm buiten, magisch binnen. Stap de gekoelde big top in en beleef Lumios.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "creatie-2358",
-   "label": "Een dag die ze niet vergeten",
-   "type": "creatie",
-   "period_start": "2026-04-16",
-   "period_end": "2026-05-16",
-   "period_label": "16 apr 2026 t/m 16 mei 2026",
-   "tags": [
-    "meta",
-    "GET_TICKETS"
-   ],
-   "why": "Een magische liveshow voor het hele gezin. Deze zomer in Scheveningen.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "creatie-2359",
-   "label": "Ontsnap aan de hitte (variant)",
-   "type": "creatie",
-   "period_start": "2026-04-16",
-   "period_end": "2026-05-16",
-   "period_label": "16 apr 2026 t/m 16 mei 2026",
-   "tags": [
-    "meta",
-    "GET_TICKETS"
-   ],
-   "why": "Koel binnen, pure verwondering. Stap de gekoelde big top binnen.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "creatie-2360",
-   "label": "Familiepakket, 4 tickets vanaf 119 euro",
-   "type": "creatie",
-   "period_start": "2026-04-16",
-   "period_end": "2026-05-16",
-   "period_label": "16 apr 2026 t/m 16 mei 2026",
-   "tags": [
-    "meta",
-    "GET_TICKETS"
-   ],
-   "why": "Magie, lachen en verwondering voor het hele gezin. Incl. servicekosten.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "creatie-2361",
-   "label": "POV: jij bent de schaatser",
-   "type": "creatie",
-   "period_start": "2026-04-16",
-   "period_end": "2026-05-16",
-   "period_label": "16 apr 2026 t/m 16 mei 2026",
-   "tags": [
-    "tiktok",
-    "WATCH_MORE"
-   ],
-   "why": "GoPro op het ijs. Vijftien seconden, een sprong, applaus dat door je hoofd blijft galmen.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "creatie-2362",
-   "label": "De kleedkamer voor de show",
-   "type": "creatie",
-   "period_start": "2026-04-16",
-   "period_end": "2026-05-16",
-   "period_label": "16 apr 2026 t/m 16 mei 2026",
-   "tags": [
-    "tiktok",
-    "GET_TICKETS"
-   ],
-   "why": "Twintig artiesten, een minuut, dezelfde adem. Dit is wat performance kost.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "creatie-2363",
-   "label": "Pukkelpop Counter-stage",
-   "type": "creatie",
-   "period_start": "2026-04-16",
-   "period_end": "2026-05-16",
-   "period_label": "16 apr 2026 t/m 16 mei 2026",
-   "tags": [
-    "tiktok",
-    "LEARN_MORE"
-   ],
-   "why": "De tegen-line-up. Vijf acts die je niet op de hoofdaffiche vond. Hashtag Counterstage.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "creatie-2364",
-   "label": "ENCORE Trailer (30s)",
-   "type": "creatie",
-   "period_start": "2026-04-16",
-   "period_end": "2026-05-16",
-   "period_label": "16 apr 2026 t/m 16 mei 2026",
-   "tags": [
-    "youtube",
-    "GET_TICKETS"
-   ],
-   "why": "Bumper-trailer voor Holiday on Ice ENCORE. Pre-roll voor entertainment-vertical.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "creatie-2365",
-   "label": "Symphony Nights teaser",
-   "type": "creatie",
-   "period_start": "2026-04-16",
-   "period_end": "2026-05-16",
-   "period_label": "16 apr 2026 t/m 16 mei 2026",
-   "tags": [
-    "youtube",
-    "LEARN_MORE"
-   ],
-   "why": "Skippable 15s. Cellist trekt de eerste strijkstreek, beat valt in.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "creatie-2366",
-   "label": "Wondervrijdag, 15% voordeel",
-   "type": "creatie",
-   "period_start": "2026-04-16",
-   "period_end": "2026-05-16",
-   "period_label": "16 apr 2026 t/m 16 mei 2026",
-   "tags": [
-    "google_ads",
-    "GET_TICKETS"
-   ],
-   "why": "Alleen vandaag op geselecteerde voorstellingen in Scheveningen.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "creatie-2367",
-   "label": "Lumios komt naar Brussels",
-   "type": "creatie",
-   "period_start": "2026-04-16",
-   "period_end": "2026-05-16",
-   "period_label": "16 apr 2026 t/m 16 mei 2026",
-   "tags": [
-    "google_ads",
-    "GET_TICKETS"
-   ],
-   "why": "Na Scheveningen reist Lumios door naar een nieuwe stad. Binnenkort onder de big top.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-TikTok, Van Koningsbrugge Spark Ads",
-   "label": "TikTok, Van Koningsbrugge Spark Ads",
-   "type": "campagne",
-   "period_start": "2026-03-26",
-   "period_end": "2026-07-23",
-   "period_label": "26 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "tiktok",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 2.539 besteed over 1.015.951 vertoningen.",
-   "delta": "461 conversies, ROAS 17.5",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-TikTok, Van Koningsbrugge Spark Ads",
-   "label": "461 conversies, ROAS 17.5",
-   "type": "outcome",
-   "period_start": "2026-03-26",
-   "period_end": "2026-07-23",
-   "period_label": "26 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "tiktok"
-   ],
-   "why": "Gemeten resultaat van \"TikTok, Van Koningsbrugge Spark Ads\".",
-   "delta": "ROAS 17.5",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-Search, Brand LUMOS NL+BE",
-   "label": "Search, Brand LUMOS NL+BE",
-   "type": "campagne",
-   "period_start": "2026-03-19",
-   "period_end": "2026-07-22",
-   "period_label": "19 mrt 2026 t/m 22 jul 2026",
-   "tags": [
-    "google_ads",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 726 besteed over 226.100 vertoningen.",
-   "delta": "654 conversies, ROAS 88.6",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-Search, Brand LUMOS NL+BE",
-   "label": "654 conversies, ROAS 88.6",
-   "type": "outcome",
-   "period_start": "2026-03-19",
-   "period_end": "2026-07-22",
-   "period_label": "19 mrt 2026 t/m 22 jul 2026",
-   "tags": [
-    "google_ads"
-   ],
-   "why": "Gemeten resultaat van \"Search, Brand LUMOS NL+BE\".",
-   "delta": "ROAS 88.6",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-Snap, Last-minute tickets",
-   "label": "Snap, Last-minute tickets",
-   "type": "campagne",
-   "period_start": "2026-03-16",
-   "period_end": "2026-07-23",
-   "period_label": "16 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "snapchat",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 2.156 besteed over 667.821 vertoningen.",
-   "delta": "152 conversies, ROAS 5.5",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-Snap, Last-minute tickets",
-   "label": "152 conversies, ROAS 5.5",
-   "type": "outcome",
-   "period_start": "2026-03-16",
-   "period_end": "2026-07-23",
-   "period_label": "16 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "snapchat"
-   ],
-   "why": "Gemeten resultaat van \"Snap, Last-minute tickets\".",
-   "delta": "ROAS 5.5",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-DV360, Premium display",
-   "label": "DV360, Premium display",
-   "type": "campagne",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "dv360",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 6.211 besteed over 771.260 vertoningen.",
-   "delta": "7 conversies, ROAS 0.4",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-DV360, Premium display",
-   "label": "7 conversies, ROAS 0.4",
-   "type": "outcome",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "dv360"
-   ],
-   "why": "Gemeten resultaat van \"DV360, Premium display\".",
-   "delta": "ROAS 0.4",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-PMax, Scheveningen Q3",
-   "label": "PMax, Scheveningen Q3",
-   "type": "campagne",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "google_ads",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 4.736 besteed over 929.053 vertoningen.",
-   "delta": "323 conversies, ROAS 6.4",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-PMax, Scheveningen Q3",
-   "label": "323 conversies, ROAS 6.4",
-   "type": "outcome",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "google_ads"
-   ],
-   "why": "Gemeten resultaat van \"PMax, Scheveningen Q3\".",
-   "delta": "ROAS 6.4",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-Meta, Aircon-relief video",
-   "label": "Meta, Aircon-relief video",
-   "type": "campagne",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "meta",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 4.509 besteed over 1.128.036 vertoningen.",
-   "delta": "231 conversies, ROAS 4.7",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-Meta, Aircon-relief video",
-   "label": "231 conversies, ROAS 4.7",
-   "type": "outcome",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "meta"
-   ],
-   "why": "Gemeten resultaat van \"Meta, Aircon-relief video\".",
-   "delta": "ROAS 4.7",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-DV360, YouTube prime-time",
-   "label": "DV360, YouTube prime-time",
-   "type": "campagne",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "dv360",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 4.429 besteed over 731.009 vertoningen.",
-   "delta": "77 conversies, ROAS 1.1",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-DV360, YouTube prime-time",
-   "label": "77 conversies, ROAS 1.1",
-   "type": "outcome",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "dv360"
-   ],
-   "why": "Gemeten resultaat van \"DV360, YouTube prime-time\".",
-   "delta": "ROAS 1.1",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-TikTok, Brand awareness",
-   "label": "TikTok, Brand awareness",
-   "type": "campagne",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-24",
-   "period_label": "15 mrt 2026 t/m 24 jul 2026",
-   "tags": [
-    "tiktok",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 3.834 besteed over 1.773.339 vertoningen.",
-   "delta": "357 conversies, ROAS 7.8",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-TikTok, Brand awareness",
-   "label": "357 conversies, ROAS 7.8",
-   "type": "outcome",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-24",
-   "period_label": "15 mrt 2026 t/m 24 jul 2026",
-   "tags": [
-    "tiktok"
-   ],
-   "why": "Gemeten resultaat van \"TikTok, Brand awareness\".",
-   "delta": "ROAS 7.8",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-PMax, Brussel Q4-Q1",
-   "label": "PMax, Brussel Q4-Q1",
-   "type": "campagne",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "google_ads",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 3.171 besteed over 501.162 vertoningen.",
-   "delta": "154 conversies, ROAS 4.0",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-PMax, Brussel Q4-Q1",
-   "label": "154 conversies, ROAS 4.0",
-   "type": "outcome",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "google_ads"
-   ],
-   "why": "Gemeten resultaat van \"PMax, Brussel Q4-Q1\".",
-   "delta": "ROAS 4.0",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-Meta, Brussel FR creative",
-   "label": "Meta, Brussel FR creative",
-   "type": "campagne",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-24",
-   "period_label": "15 mrt 2026 t/m 24 jul 2026",
-   "tags": [
-    "meta",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 2.720 besteed over 568.582 vertoningen.",
-   "delta": "74 conversies, ROAS 2.1",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-Meta, Brussel FR creative",
-   "label": "74 conversies, ROAS 2.1",
-   "type": "outcome",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-24",
-   "period_label": "15 mrt 2026 t/m 24 jul 2026",
-   "tags": [
-    "meta"
-   ],
-   "why": "Gemeten resultaat van \"Meta, Brussel FR creative\".",
-   "delta": "ROAS 2.1",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-YouTube, Trailer in-stream",
-   "label": "YouTube, Trailer in-stream",
-   "type": "campagne",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "youtube",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 1.986 besteed over 507.199 vertoningen.",
-   "delta": "77 conversies, ROAS 2.6",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-YouTube, Trailer in-stream",
-   "label": "77 conversies, ROAS 2.6",
-   "type": "outcome",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "youtube"
-   ],
-   "why": "Gemeten resultaat van \"YouTube, Trailer in-stream\".",
-   "delta": "ROAS 2.6",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-Meta, VIP retargeting",
-   "label": "Meta, VIP retargeting",
-   "type": "campagne",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "meta",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 677 besteed over 201.758 vertoningen.",
-   "delta": "574 conversies, ROAS 71.0",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-Meta, VIP retargeting",
-   "label": "574 conversies, ROAS 71.0",
-   "type": "outcome",
-   "period_start": "2026-03-15",
-   "period_end": "2026-07-23",
-   "period_label": "15 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "meta"
-   ],
-   "why": "Gemeten resultaat van \"Meta, VIP retargeting\".",
-   "delta": "ROAS 71.0",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-YouTube, Shorts promotion",
-   "label": "YouTube, Shorts promotion",
-   "type": "campagne",
-   "period_start": "2026-03-14",
-   "period_end": "2026-07-24",
-   "period_label": "14 mrt 2026 t/m 24 jul 2026",
-   "tags": [
-    "youtube",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 2.064 besteed over 1.148.590 vertoningen.",
-   "delta": "84 conversies, ROAS 3.1",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "outcome-YouTube, Shorts promotion",
-   "label": "84 conversies, ROAS 3.1",
-   "type": "outcome",
-   "period_start": "2026-03-14",
-   "period_end": "2026-07-24",
-   "period_label": "14 mrt 2026 t/m 24 jul 2026",
-   "tags": [
-    "youtube"
-   ],
-   "why": "Gemeten resultaat van \"YouTube, Shorts promotion\".",
-   "delta": "ROAS 3.1",
-   "lineage_node_id": null
-  },
-  {
-   "id": "metric-camp-Pinterest, Show inspiration",
-   "label": "Pinterest, Show inspiration",
-   "type": "campagne",
-   "period_start": "2026-03-14",
-   "period_end": "2026-07-23",
-   "period_label": "14 mrt 2026 t/m 23 jul 2026",
-   "tags": [
-    "pinterest",
-    "live"
-   ],
-   "why": "Echte campagne die draaide, EUR 951 besteed over 394.512 vertoningen.",
-   "delta": "ROAS 1.7",
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "kennis-de750bb0-0a8b-472a-847f-289ec9f89529",
-   "label": "Persbericht: 25.000 tickets voor NOCTILIA in vier dagen",
-   "type": "kennis",
-   "period_start": "2026-02-23T10:00:00+00:00",
-   "period_end": "2026-02-23T10:00:00+00:00",
-   "period_label": "23 feb 2026",
-   "tags": [
-    "pdf"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-ffad9fa8-231e-436d-aa71-093a8ec6d1da",
-   "label": "Resultaat fanclub pre-sale NOCTILIA",
-   "type": "kennis",
-   "period_start": "2026-02-18T10:00:00+00:00",
-   "period_end": "2026-02-18T10:00:00+00:00",
-   "period_label": "18 feb 2026",
-   "tags": [
-    "email"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-235145f6-860c-4f0f-bfd1-1cad54aabdc6",
-   "label": "Noctilia On-sale Jubileum",
-   "type": "campagne",
-   "period_start": "2026-02-17",
-   "period_end": "2026-04-15",
-   "period_label": "17 feb 2026 t/m 15 apr 2026",
-   "tags": [
-    "meta",
-    "google_ads",
-    "youtube",
-    "dv360"
-   ],
-   "why": "Nationale on-sale met jubileum-hook van het Lumos-merk, gericht op opening op 50 procent capaciteit.",
-   "delta": null,
-   "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  },
-  {
-   "id": "kennis-57ebb9bb-b3ae-4972-9f5e-23e77119d25b",
-   "label": "Persbericht: kaartverkoop NOCTILIA start dinsdag 17 februari",
-   "type": "kennis",
-   "period_start": "2026-02-10T10:00:00+00:00",
-   "period_end": "2026-02-10T10:00:00+00:00",
-   "period_label": "10 feb 2026",
-   "tags": [
-    "pdf"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-108768b4-36a8-4c50-9a9b-d1466dc8003a",
-   "label": "Noctilia Fanclub Pre-sale",
-   "type": "campagne",
-   "period_start": "2026-02-09",
-   "period_end": "2026-02-16",
-   "period_label": "9 feb 2026 t/m 16 feb 2026",
-   "tags": [
-    "email",
-    "meta",
-    "fanclub boekt eerst"
-   ],
-   "why": "Fanclub en loyaltydatabase 72 uur eerder laten boeken voor de jubileumshow en de database laten groeien.",
-   "delta": null,
-   "lineage_node_id": "brief-f4ac59c1-27d5-4d13-9b3e-7474f9f017c4"
-  },
-  {
-   "id": "kennis-60614183-7064-437a-a9a8-ec0595434085",
-   "label": "Digitaal faseplan NOCTILIA: launch tot showtime",
-   "type": "kennis",
-   "period_start": "2026-01-28T10:00:00+00:00",
-   "period_end": "2026-01-28T10:00:00+00:00",
-   "period_label": "28 jan 2026",
-   "tags": [
-    "briefing"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-dc362402-a2c8-42d1-92a1-9a97879cfcc5",
-   "label": "Persbericht: Lumos kondigt NOCTILIA aan in Scheveningen",
-   "type": "kennis",
-   "period_start": "2026-01-20T10:00:00+00:00",
-   "period_end": "2026-01-20T10:00:00+00:00",
-   "period_label": "20 jan 2026",
-   "tags": [
-    "pdf"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-d224772a-bc4d-4970-949f-2e4228e58fb9",
-   "label": "Benchmark last time played: NOCTILIA vs AURIVA Scheveningen",
-   "type": "kennis",
-   "period_start": "2025-12-03T10:00:00+00:00",
-   "period_end": "2025-12-03T10:00:00+00:00",
-   "period_label": "3 dec 2025",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-37df8aab-a335-4409-a419-499808164536",
-   "label": "SWOT planning NOCTILIA",
-   "type": "kennis",
-   "period_start": "2025-11-12T10:00:00+00:00",
-   "period_end": "2025-11-12T10:00:00+00:00",
-   "period_label": "12 nov 2025",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-ed0a3765-1ca5-4f0a-95d3-12e85535c7b7",
-   "label": "Auriva Brussel Last Days",
-   "type": "campagne",
-   "period_start": "2025-09-29",
-   "period_end": "2025-10-19",
-   "period_label": "29 sep 2025 t/m 19 okt 2025",
-   "tags": [
-    "meta",
-    "google_ads",
-    "ooh",
-    "radio"
-   ],
-   "why": "De laatste drie Brusselse speelweken uitverkopen met pure urgentie-messaging.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-6fab0c0a-0789-444e-ac10-cb54710b69b4",
-   "label": "Castcontent verslaat influencer-campagnes bij jong publiek",
-   "type": "kennis",
-   "period_start": "2025-09-15T10:00:00+00:00",
-   "period_end": "2025-09-15T10:00:00+00:00",
-   "period_label": "15 sep 2025",
-   "tags": [
-    "manual"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-2e3c2cfe-252c-413d-a739-57b9bd4538c6",
-   "label": "Learning (tegenstrijdig): premium-hoek vs familie-hoek aan d",
-   "type": "kennis",
-   "period_start": "2025-09-10T10:00:00+00:00",
-   "period_end": "2025-09-10T10:00:00+00:00",
-   "period_label": "10 sep 2025",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-76b73e54-dd4c-496a-9b89-b9b07d802e02",
-   "label": "Learning: slecht weer = last-minute zoekpiek",
-   "type": "kennis",
-   "period_start": "2025-08-12T10:00:00+00:00",
-   "period_end": "2025-08-12T10:00:00+00:00",
-   "period_label": "12 aug 2025",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-4923c25f-f67a-48b0-af5c-201bfbca444c",
-   "label": "Weekcijfers wk 31 2025 AURIVA Brussel",
-   "type": "kennis",
-   "period_start": "2025-07-28T10:00:00+00:00",
-   "period_end": "2025-07-28T10:00:00+00:00",
-   "period_label": "28 jul 2025",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-cbf5cdc8-978a-4b6b-93c1-9b92b1134e83",
-   "label": "Persbericht: Brussel geeft AURIVA de sleutel van de stad",
-   "type": "kennis",
-   "period_start": "2025-07-25T10:00:00+00:00",
-   "period_end": "2025-07-25T10:00:00+00:00",
-   "period_label": "25 jul 2025",
-   "tags": [
-    "pdf"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-e26fca5b-9b82-4036-8215-8d4d8a91461e",
-   "label": "Auriva Brussel Premiere",
-   "type": "campagne",
-   "period_start": "2025-07-14",
-   "period_end": "2025-08-06",
-   "period_label": "14 jul 2025 t/m 6 aug 2025",
-   "tags": [
-    "pr",
-    "dv360",
-    "youtube",
-    "meta"
-   ],
-   "why": "Brusselse premiere lanceren op het momentum van de Scheveningse perscitaten en de sleuteloverdracht met de stad.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-602f40a2-3d31-44d8-a889-1c751a83b4d0",
-   "label": "Auriva Scheveningen Last Days",
-   "type": "campagne",
-   "period_start": "2025-06-16",
-   "period_end": "2025-07-06",
-   "period_label": "16 jun 2025 t/m 6 jul 2025",
-   "tags": [
-    "meta",
-    "google_ads",
-    "radio",
-    "ooh"
-   ],
-   "why": "Slotweken in Scheveningen uitverkopen en restvraag doorleiden naar de Brusselse reeks.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-c0084b19-e9cd-47f1-97aa-78649dcfb183",
-   "label": "Stadspartnership Brussel AURIVA: rituelen en toerismebureau",
-   "type": "kennis",
-   "period_start": "2025-06-10T10:00:00+00:00",
-   "period_end": "2025-06-10T10:00:00+00:00",
-   "period_label": "10 jun 2025",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-0f12c098-862d-43de-9167-d3dd8437fea8",
-   "label": "Weekcijfers wk 19 2025 AURIVA Scheveningen",
-   "type": "kennis",
-   "period_start": "2025-05-12T10:00:00+00:00",
-   "period_end": "2025-05-12T10:00:00+00:00",
-   "period_label": "12 mei 2025",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-438a64be-b5b7-4bcc-84f7-f924ad2c4d99",
-   "label": "Learning: lokale copy wint in theatersteden",
-   "type": "kennis",
-   "period_start": "2025-04-15T10:00:00+00:00",
-   "period_end": "2025-04-15T10:00:00+00:00",
-   "period_label": "15 apr 2025",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-b915596c-140c-4409-ae4c-c94b91fa6f09",
-   "label": "Notitie premiere-avond (incompleet)",
-   "type": "kennis",
-   "period_start": "2025-04-11T10:00:00+00:00",
-   "period_end": "2025-04-11T10:00:00+00:00",
-   "period_label": "11 apr 2025",
-   "tags": [
-    "manual"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1",
-   "label": "Vento Last Days Tour",
-   "type": "campagne",
-   "period_start": "2025-04-11",
-   "period_end": "2025-04-30",
-   "period_label": "11 apr 2025 t/m 30 apr 2025",
-   "tags": [
-    "meta",
-    "google_ads",
-    "email",
-    "laatste steden, laatste kaarten"
-   ],
-   "why": "Slotweken van de tour vullen; urgentie alleen op warme doelgroepen.",
-   "delta": null,
-   "lineage_node_id": "brief-dccc94b0-37a7-45e0-af84-37658313000e"
-  },
-  {
-   "id": "brief-9b4c7ca1-a1de-4333-8e32-f7c30b7468c2",
-   "label": "Auriva Scheveningen Premiere",
-   "type": "campagne",
-   "period_start": "2025-03-31",
-   "period_end": "2025-04-23",
-   "period_label": "31 mrt 2025 t/m 23 apr 2025",
-   "tags": [
-    "pr",
-    "dv360",
-    "youtube",
-    "meta"
-   ],
-   "why": "De Scheveningse premiere als landelijk event neerzetten en reviews verzamelen die later Brussel aanjagen.",
-   "delta": null,
-   "lineage_node_id": "brief-f6d9b471-a3b5-459d-b867-30e12d267040"
-  },
-  {
-   "id": "brief-dde2495e-1091-4790-82ea-ca60cf11f3a3",
-   "label": "Vento Lokale Push Luik en Charleroi",
-   "type": "campagne",
-   "period_start": "2025-03-05",
-   "period_end": "2025-04-10",
-   "period_label": "5 mrt 2025 t/m 10 apr 2025",
-   "tags": [
-    "meta",
-    "google_ads",
-    "email",
-    "la magie, tout pres de chez vous"
-   ],
-   "why": "Achterblijvende kaartverkoop in de Franstalige steden herstellen met lokale copy en Franstalige proof.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-f4ac59c1-27d5-4d13-9b3e-7474f9f017c4",
-   "label": "Vento Premiere Brugge en Gent",
-   "type": "campagne",
-   "period_start": "2025-02-20",
-   "period_end": "2025-03-15",
-   "period_label": "20 feb 2025 t/m 15 mrt 2025",
-   "tags": [
-    "pr",
-    "meta",
-    "google_ads",
-    "radio"
-   ],
-   "why": "Premiereweek in Brugge en Gent uitverkopen met lokale pers en partners.",
-   "delta": null,
-   "lineage_node_id": "brief-89a669b8-202f-4022-8649-ad11889c9da2"
-  },
-  {
-   "id": "brief-943efee3-4ef6-452c-861a-6e3e1c990e44",
-   "label": "Auriva Brussel On-sale Drip",
-   "type": "campagne",
-   "period_start": "2025-02-04",
-   "period_end": "2025-04-10",
-   "period_label": "4 feb 2025 t/m 10 apr 2025",
-   "tags": [
-    "meta",
-    "google_ads",
-    "youtube",
-    "radio"
-   ],
-   "why": "Gefaseerde inventory-release: eerst vijf weken in verkoop, uitbreidingen gekoppeld aan de premieres in beide steden.",
-   "delta": null,
-   "lineage_node_id": "brief-89a669b8-202f-4022-8649-ad11889c9da2"
-  },
-  {
-   "id": "kennis-be45eac8-e893-44b2-af20-a2201abb17f8",
-   "label": "Inventory-drip afspraak AURIVA Brussel",
-   "type": "kennis",
-   "period_start": "2025-01-14T10:00:00+00:00",
-   "period_end": "2025-01-14T10:00:00+00:00",
-   "period_label": "14 jan 2025",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-534917dd-3cfe-4754-8290-1f567b940d0c",
-   "label": "Vento Theatertour On-sale",
-   "type": "campagne",
-   "period_start": "2025-01-07",
-   "period_end": "2025-02-15",
-   "period_label": "7 jan 2025 t/m 15 feb 2025",
-   "tags": [
-    "meta",
-    "google_ads",
-    "email",
-    "pr"
-   ],
-   "why": "Vier Belgische theatersteden tegelijk on-sale brengen voor de voorjaarstour.",
-   "delta": null,
-   "lineage_node_id": "brief-e5c0c730-86f0-42ef-b0bb-1c99abc1ab71"
-  },
-  {
-   "id": "kennis-842a728b-4f5a-4925-a6ba-dd6729337e39",
-   "label": "Learning: gift guide email is het sterkste owned-asset",
-   "type": "kennis",
-   "period_start": "2024-12-28T10:00:00+00:00",
-   "period_end": "2024-12-28T10:00:00+00:00",
-   "period_label": "28 dec 2024",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-8e7c3a7c-fa49-4d4c-bcfe-03b29b2e3592",
-   "label": "Learning: Black Friday schaadde het premium-gevoel",
-   "type": "kennis",
-   "period_start": "2024-12-09T10:00:00+00:00",
-   "period_end": "2024-12-09T10:00:00+00:00",
-   "period_label": "9 dec 2024",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-96da1b95-2f3c-4d29-9a22-5a14def361d2",
-   "label": "Auriva Black Friday vroegboek-experiment",
-   "type": "campagne",
-   "period_start": "2024-11-25",
-   "period_end": "2024-12-02",
-   "period_label": "25 nov 2024 t/m 2 dec 2024",
-   "tags": [
-    "meta",
-    "google_ads",
-    "email",
-    "48 uur vroegboek-voordeel"
-   ],
-   "why": "Testen of een gecontroleerde vroegboek-actie de on-sale versnelt zonder het premium-merk te schaden.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-e5c0c730-86f0-42ef-b0bb-1c99abc1ab71",
-   "label": "Auriva Dubbelstad On-sale",
-   "type": "campagne",
-   "period_start": "2024-11-12",
-   "period_end": "2025-01-15",
-   "period_label": "12 nov 2024 t/m 15 jan 2025",
-   "tags": [
-    "meta",
-    "google_ads",
-    "youtube",
-    "dv360"
-   ],
-   "why": "Beide speelsteden tegelijk nationaal pushen zodat Scheveningen op 50 procent capaciteit opent en Brussel een vliegende start krijgt.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-de0df4d6-88e1-4ae1-9dd3-a8ea6422a962",
-   "label": "TV-spot briefing AURIVA on-sale flight",
-   "type": "kennis",
-   "period_start": "2024-11-03T10:00:00+00:00",
-   "period_end": "2024-11-03T10:00:00+00:00",
-   "period_label": "3 nov 2024",
-   "tags": [
-    "briefing"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-c0b7862b-d042-4581-9d03-32a464f2a6dc",
-   "label": "Learning: last chance werkt alleen warm",
-   "type": "kennis",
-   "period_start": "2024-10-10T10:00:00+00:00",
-   "period_end": "2024-10-10T10:00:00+00:00",
-   "period_label": "10 okt 2024",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-206ba55e-fe10-4231-8fd0-97f10e9f5c0a",
-   "label": "Asset-les Meta: 30 seconden werkt niet, 15-20 sec verticaal ",
-   "type": "kennis",
-   "period_start": "2024-09-02T10:00:00+00:00",
-   "period_end": "2024-09-02T10:00:00+00:00",
-   "period_label": "2 sep 2024",
-   "tags": [
-    "manual"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-c3f64031-e9b9-477a-affb-aebf1cd826dc",
-   "label": "Solstra Last Days",
-   "type": "campagne",
-   "period_start": "2024-08-05",
-   "period_end": "2024-08-25",
-   "period_label": "5 aug 2024 t/m 25 aug 2024",
-   "tags": [
-    "meta",
-    "google_ads",
-    "radio",
-    "ooh"
-   ],
-   "why": "Laatste drie weken maximaal vullen met urgentie als dominant mechaniek.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-33060933-39b9-43f4-a8a1-fef0b9215a07",
-   "label": "Restplaatsen en jongerentarief mechaniek",
-   "type": "kennis",
-   "period_start": "2024-07-08T10:00:00+00:00",
-   "period_end": "2024-07-08T10:00:00+00:00",
-   "period_label": "8 jul 2024",
-   "tags": [
-    "manual"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-bcf9edf6-f139-40cc-9755-2df1b206869b",
-   "label": "Solstra Zomervakantie Showstad",
-   "type": "campagne",
-   "period_start": "2024-07-06",
-   "period_end": "2024-08-10",
-   "period_label": "6 jul 2024 t/m 10 aug 2024",
-   "tags": [
-    "ooh",
-    "meta",
-    "tiktok",
-    "snapchat"
-   ],
-   "why": "Scheveningen tijdens de schoolvakantie omtoveren tot showstad met strandactivatie en stads-OOH.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-eaa77647-ff31-43e7-a957-c7402b14dfe4",
-   "label": "Weekcijfers wk 21 2024 SOLSTRA",
-   "type": "kennis",
-   "period_start": "2024-05-27T10:00:00+00:00",
-   "period_end": "2024-05-27T10:00:00+00:00",
-   "period_label": "27 mei 2024",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-9bfff1a3-0968-4f55-a3cf-f1519c3a6342",
-   "label": "Afspraak radio-winactie SOLSTRA landelijke zender",
-   "type": "kennis",
-   "period_start": "2024-05-13T10:00:00+00:00",
-   "period_end": "2024-05-13T10:00:00+00:00",
-   "period_label": "13 mei 2024",
-   "tags": [
-    "email"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-dccc94b0-37a7-45e0-af84-37658313000e",
-   "label": "Solstra Premiere aan Zee",
-   "type": "campagne",
-   "period_start": "2024-05-06",
-   "period_end": "2024-05-29",
-   "period_label": "6 mei 2024 t/m 29 mei 2024",
-   "tags": [
-    "pr",
-    "dv360",
-    "youtube",
-    "meta"
-   ],
-   "why": "Premiere-PR, homepage takeover en pre-roll combineren tot de piekweek van de campagne.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-f6d9b471-a3b5-459d-b867-30e12d267040",
-   "label": "Solstra Moederdag",
-   "type": "campagne",
-   "period_start": "2024-04-22",
-   "period_end": "2024-05-12",
-   "period_label": "22 apr 2024 t/m 12 mei 2024",
-   "tags": [
-    "meta",
-    "pinterest",
-    "email",
-    "google_ads"
-   ],
-   "why": "Moederdag-matinees vullen met cadeaugerichte display en social inzet.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-82240e39-5db1-4348-bbcc-ad3f2ab25755",
-   "label": "Kuststad-partnership Scheveningen: showstad-draaiboek",
-   "type": "kennis",
-   "period_start": "2024-03-18T10:00:00+00:00",
-   "period_end": "2024-03-18T10:00:00+00:00",
-   "period_label": "18 mrt 2024",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-b1cf95d0-06bc-494f-b963-1fae0150d3ab",
-   "label": "Learning: cadeauhoek verslaat korting bij Valentijn",
-   "type": "kennis",
-   "period_start": "2024-02-20T10:00:00+00:00",
-   "period_end": "2024-02-20T10:00:00+00:00",
-   "period_label": "20 feb 2024",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-89a669b8-202f-4022-8649-ad11889c9da2",
-   "label": "Solstra On-sale Voorjaar",
-   "type": "campagne",
-   "period_start": "2024-01-30",
-   "period_end": "2024-03-15",
-   "period_label": "30 jan 2024 t/m 15 mrt 2024",
-   "tags": [
-    "meta",
-    "google_ads",
-    "youtube",
-    "dv360"
-   ],
-   "why": "Nationale on-sale met exact on-sale moment en drie campagnegolven richting de meipremiere.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "kennis-0e8deebf-76e9-44e9-8c18-f3ff2d61b592",
-   "label": "Ticketingpartner als marketingkanaal",
-   "type": "kennis",
-   "period_start": "2024-01-22T10:00:00+00:00",
-   "period_end": "2024-01-22T10:00:00+00:00",
-   "period_label": "22 jan 2024",
-   "tags": [
-    "meeting_notes"
-   ],
-   "why": "Geuploade kennisbron; voedt briefings als context.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-d8dd8e75-4b0a-4ed7-a264-43626fcc08bd",
-   "label": "Emberia Valentijn, samen in het donker",
-   "type": "campagne",
-   "period_start": "2024-01-18",
-   "period_end": "2024-02-11",
-   "period_label": "18 jan 2024 t/m 11 feb 2024",
-   "tags": [
-    "meta",
-    "email",
-    "google_ads",
-    "geef een avond, geen spullen"
-   ],
-   "why": "Koppels en cadeaukopers naar de slotweken trekken zonder korting.",
-   "delta": null,
-   "lineage_node_id": null
-  },
-  {
-   "id": "brief-230b9f49-efda-45b2-9b6d-d7edb300d1c6",
-   "label": "Emberia Last Days",
-   "type": "campagne",
-   "period_start": "2024-01-15",
-   "period_end": "2024-02-11",
-   "period_label": "15 jan 2024 t/m 11 feb 2024",
-   "tags": [
-    "meta",
-    "google_ads",
-    "ooh",
-    "radio"
-   ],
-   "why": "De verlengde slotreeks tot 11 februari uitverkopen met een harde einddatum-boodschap.",
-   "delta": null,
-   "lineage_node_id": null
-  }
- ],
- "edges": [
-  [
-   "metric-camp-DV360, Premium display",
-   "outcome-DV360, Premium display"
+  "nodes": [
+    {
+      "id": "brief-1a016ef6-010f-4ba0-909d-2190698278ba",
+      "label": "Winter 2026 Gift Guide voorbereiding",
+      "type": "campagne",
+      "period_start": "2026-11-20",
+      "period_end": "2026-12-24",
+      "period_label": "20 nov 2026 t/m 24 dec 2026",
+      "tags": [
+        "email",
+        "meta",
+        "pinterest",
+        "het cadeau dat een avond wordt"
+      ],
+      "why": "Cadeauhoek voorbereiden voor de winterrun: gift guide email plus drie paid-varianten, hook verschuift eind november van sfeer naar cadeau.",
+      "delta": null,
+      "lineage_node_id": "brief-96da1b95-2f3c-4d29-9a22-5a14def361d2"
+    },
+    {
+      "id": "brief-48d50ca0-8783-4b2f-9ef4-a5e08b029c76",
+      "label": "Noctilia Last Days aan Zee",
+      "type": "campagne",
+      "period_start": "2026-08-10",
+      "period_end": "2026-09-06",
+      "period_label": "10 aug 2026 t/m 6 sep 2026",
+      "tags": [
+        "meta",
+        "google_ads",
+        "radio",
+        "ooh"
+      ],
+      "why": "De slotweken van de jubileumzomer uitverkopen richting 6 september.",
+      "delta": null,
+      "lineage_node_id": "brief-c3f64031-e9b9-477a-affb-aebf1cd826dc"
+    },
+    {
+      "id": "brief-c2e8db49-8eb7-49fe-b949-27830e60d0e7",
+      "label": "Noctilia Last Days",
+      "type": "campagne",
+      "period_start": "2026-08-10",
+      "period_end": "2026-09-06",
+      "period_label": "10 aug 2026 t/m 6 sep 2026",
+      "tags": [
+        "meta",
+        "google_ads",
+        "radio",
+        "ooh"
+      ],
+      "why": "De slotweken tot en met 6 september uitverkopen met stapsgewijs opgevoerde urgentie.",
+      "delta": null,
+      "lineage_node_id": "brief-c3f64031-e9b9-477a-affb-aebf1cd826dc"
+    },
+    {
+      "id": "kennis-2ec03b9b-fc4c-440c-804e-c66c749b17d2",
+      "label": "Weekcijfers wk 27 2026 Noctilia",
+      "type": "kennis",
+      "period_start": "2026-07-06T10:00:00+00:00",
+      "period_end": "2026-07-06T10:00:00+00:00",
+      "period_label": "6 jul 2026",
+      "tags": [
+        "manual"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-e4a611c4-c82d-4651-bbcc-494d83eda711",
+      "label": "Weekcijfers wk 27 2026 NOCTILIA",
+      "type": "kennis",
+      "period_start": "2026-07-06T10:00:00+00:00",
+      "period_end": "2026-07-06T10:00:00+00:00",
+      "period_label": "6 jul 2026",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-9f9830c3-bc18-4753-8fc5-410308704406",
+      "label": "Noctilia Zomer Maintain",
+      "type": "campagne",
+      "period_start": "2026-06-25",
+      "period_end": "2026-08-09",
+      "period_label": "25 jun 2026 t/m 9 aug 2026",
+      "tags": [
+        "meta",
+        "tiktok",
+        "snapchat",
+        "google_ads"
+      ],
+      "why": "Perscitaten, castcontent en strandactivatie inzetten om de zomervakantieweken op target te houden.",
+      "delta": null,
+      "lineage_node_id": "brief-bcf9edf6-f139-40cc-9755-2df1b206869b"
+    },
+    {
+      "id": "brief-5da26654-66f1-4bc2-b483-9bd0bc20f114",
+      "label": "Lumos zomer 2026 Scheveningen + Brussel",
+      "type": "campagne",
+      "period_start": "2026-06-22T20:13:38.250292+00:00",
+      "period_end": "2026-06-22T20:13:38.250292+00:00",
+      "period_label": "22 jun 2026 t/m 22 jun 2026",
+      "tags": [
+        "meta",
+        "youtube",
+        "google",
+        "tiktok"
+      ],
+      "why": "ticketverkoop opbouwen voor beide tenten",
+      "delta": null,
+      "lineage_node_id": "brief-bcf9edf6-f139-40cc-9755-2df1b206869b"
+    },
+    {
+      "id": "kennis-395729ee-6f1a-4824-b760-34ec0937dee0",
+      "label": "Source: Finale business memory (Koen)",
+      "type": "kennis",
+      "period_start": "2026-06-22T19:08:35.726393+00:00",
+      "period_end": "2026-06-22T19:08:35.726393+00:00",
+      "period_label": "22 jun 2026",
+      "tags": [
+        "manual"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-7a8c980a-d845-46eb-b1c2-9adc206a5c05",
+      "label": "Source: Interim agency deck (tussentijds)",
+      "type": "kennis",
+      "period_start": "2026-06-22T19:08:35.674205+00:00",
+      "period_end": "2026-06-22T19:08:35.674205+00:00",
+      "period_label": "22 jun 2026",
+      "tags": [
+        "manual"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-bcb2d97b-f234-49be-9e46-0a5b066be82e",
+      "label": "Source: Strategy targets (merkstrategie-deck)",
+      "type": "kennis",
+      "period_start": "2026-06-22T19:08:35.623177+00:00",
+      "period_end": "2026-06-22T19:08:35.623177+00:00",
+      "period_label": "22 jun 2026",
+      "tags": [
+        "manual"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-13c6f132-e8db-44c2-99c8-5e186aea1a62",
+      "label": "Weekcijfers wk 25 2026 NOCTILIA",
+      "type": "kennis",
+      "period_start": "2026-06-22T10:00:00+00:00",
+      "period_end": "2026-06-22T10:00:00+00:00",
+      "period_label": "22 jun 2026",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-25ac9019-5502-48da-9fa8-94c964c1eb49",
+      "label": "Sell-through notitie premiere NOCTILIA",
+      "type": "kennis",
+      "period_start": "2026-06-12T10:00:00+00:00",
+      "period_end": "2026-06-12T10:00:00+00:00",
+      "period_label": "12 jun 2026",
+      "tags": [
+        "manual"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-f4df3f77-25b5-4b0a-977b-8f32d92ab97e",
+      "label": "Persbericht: jubileumzomer geopend",
+      "type": "kennis",
+      "period_start": "2026-06-12T10:00:00+00:00",
+      "period_end": "2026-06-12T10:00:00+00:00",
+      "period_label": "12 jun 2026",
+      "tags": [
+        "pdf"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-6d67d9f2-4400-4245-bf66-b717c5fc1ce5",
+      "label": "Noctilia Premiere Nachtlicht",
+      "type": "campagne",
+      "period_start": "2026-06-01",
+      "period_end": "2026-06-24",
+      "period_label": "1 jun 2026 t/m 24 jun 2026",
+      "tags": [
+        "pr",
+        "dv360",
+        "youtube",
+        "meta"
+      ],
+      "why": "Premiere-PR, homepage takeover en talkshow-optredens omzetten in de grootste verkoopweek van de run.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "briefing-7643c08f-058c-415b-9536-5ca78eec4267",
+      "label": "Briefing 15 mei 2026",
+      "type": "campagne",
+      "period_start": "2026-05-15T19:49:39.186804+00:00",
+      "period_end": "2026-05-15T19:49:39.186804+00:00",
+      "period_label": "15 mei 2026",
+      "tags": [
+        "briefing"
+      ],
+      "why": "Historische briefing in het geheugen.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "briefing-4b5b30ca-0c5c-4367-a314-8f1c9b533776",
+      "label": "Briefing 15 mei 2026",
+      "type": "campagne",
+      "period_start": "2026-05-15T19:49:38.945341+00:00",
+      "period_end": "2026-05-15T19:49:38.945341+00:00",
+      "period_label": "15 mei 2026",
+      "tags": [
+        "briefing"
+      ],
+      "why": "Historische briefing in het geheugen.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "briefing-6b0cca63-8f4a-46db-9ffe-6e3fd1788c70",
+      "label": "Briefing 15 mei 2026",
+      "type": "campagne",
+      "period_start": "2026-05-15T19:49:38.598967+00:00",
+      "period_end": "2026-05-15T19:49:38.598967+00:00",
+      "period_label": "15 mei 2026",
+      "tags": [
+        "briefing"
+      ],
+      "why": "Historische briefing in het geheugen.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "briefing-7748dc86-2047-4d1d-be71-052185354f82",
+      "label": "Briefing 15 mei 2026",
+      "type": "campagne",
+      "period_start": "2026-05-15T19:49:38.160005+00:00",
+      "period_end": "2026-05-15T19:49:38.160005+00:00",
+      "period_label": "15 mei 2026",
+      "tags": [
+        "briefing"
+      ],
+      "why": "Historische briefing in het geheugen.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "briefing-309716d0-3e7f-45c6-9e5e-5a05ce664abb",
+      "label": "Briefing 12 mei 2026",
+      "type": "campagne",
+      "period_start": "2026-05-12T05:37:41.045537+00:00",
+      "period_end": "2026-05-12T05:37:41.045537+00:00",
+      "period_label": "12 mei 2026",
+      "tags": [
+        "briefing"
+      ],
+      "why": "Historische briefing in het geheugen.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-61609f64-d76d-4d01-bfde-76a818d6b454",
+      "label": "Brussel-tent zomertour-dossier (Lyon + Köln)",
+      "type": "kennis",
+      "period_start": "2026-05-11T23:53:49.628785+00:00",
+      "period_end": "2026-05-11T23:53:49.628785+00:00",
+      "period_label": "11 mei 2026",
+      "tags": [
+        "manual"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-af43d9ef-a235-4267-8c25-90646a8ab7ae",
+      "label": "LUMOS Brand Foundation 2026",
+      "type": "kennis",
+      "period_start": "2026-05-11T23:53:49.628785+00:00",
+      "period_end": "2026-05-11T23:53:49.628785+00:00",
+      "period_label": "11 mei 2026",
+      "tags": [
+        "briefing"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-26229ec4-b482-4d9a-9d80-c5a960bba3a8",
+      "label": "Weather-creative-playbook",
+      "type": "kennis",
+      "period_start": "2026-05-11T23:53:49.628785+00:00",
+      "period_end": "2026-05-11T23:53:49.628785+00:00",
+      "period_label": "11 mei 2026",
+      "tags": [
+        "manual"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-337d659e-ad2e-4150-86e8-61756ab5f9ae",
+      "label": "Mediamix-strategie Q3 2026 — strategy session 24 april",
+      "type": "kennis",
+      "period_start": "2026-05-11T23:53:49.628785+00:00",
+      "period_end": "2026-05-11T23:53:49.628785+00:00",
+      "period_label": "11 mei 2026",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-e632bf2e-42b7-4718-89c7-6b54a92a07a2",
+      "label": "Per-vestiging-advisor: gids voor Stevin-output",
+      "type": "kennis",
+      "period_start": "2026-05-11T23:53:49.628785+00:00",
+      "period_end": "2026-05-11T23:53:49.628785+00:00",
+      "period_label": "11 mei 2026",
+      "tags": [
+        "briefing"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "briefing-0cfe30fd-3620-48e3-b3e1-c437c0fe61fd",
+      "label": "Briefing 11 mei 2026",
+      "type": "campagne",
+      "period_start": "2026-05-11T23:45:18.766034+00:00",
+      "period_end": "2026-05-11T23:45:18.766034+00:00",
+      "period_label": "11 mei 2026",
+      "tags": [
+        "briefing"
+      ],
+      "why": "Historische briefing in het geheugen.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "briefing-9ccefdac-fc25-46de-a319-dbd24b33c741",
+      "label": "Briefing 11 mei 2026",
+      "type": "campagne",
+      "period_start": "2026-05-11T23:45:18.766034+00:00",
+      "period_end": "2026-05-11T23:45:18.766034+00:00",
+      "period_label": "11 mei 2026",
+      "tags": [
+        "briefing"
+      ],
+      "why": "Historische briefing in het geheugen.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "creatie-2356",
+      "label": "LUMIOS, The Wonder Machine",
+      "type": "creatie",
+      "period_start": "2026-04-16",
+      "period_end": "2026-05-16",
+      "period_label": "16 apr 2026 t/m 16 mei 2026",
+      "tags": [
+        "meta",
+        "GET_TICKETS"
+      ],
+      "why": "Acrobatiek, muziek en pure verwondering. Deze zomer in Scheveningen onder de big top.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "creatie-2357",
+      "label": "Ontsnap aan de hitte",
+      "type": "creatie",
+      "period_start": "2026-04-16",
+      "period_end": "2026-05-16",
+      "period_label": "16 apr 2026 t/m 16 mei 2026",
+      "tags": [
+        "meta",
+        "GET_TICKETS"
+      ],
+      "why": "Warm buiten, magisch binnen. Stap de gekoelde big top in en beleef Lumios.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "creatie-2358",
+      "label": "Een dag die ze niet vergeten",
+      "type": "creatie",
+      "period_start": "2026-04-16",
+      "period_end": "2026-05-16",
+      "period_label": "16 apr 2026 t/m 16 mei 2026",
+      "tags": [
+        "meta",
+        "GET_TICKETS"
+      ],
+      "why": "Een magische liveshow voor het hele gezin. Deze zomer in Scheveningen.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "creatie-2359",
+      "label": "Ontsnap aan de hitte (variant)",
+      "type": "creatie",
+      "period_start": "2026-04-16",
+      "period_end": "2026-05-16",
+      "period_label": "16 apr 2026 t/m 16 mei 2026",
+      "tags": [
+        "meta",
+        "GET_TICKETS"
+      ],
+      "why": "Koel binnen, pure verwondering. Stap de gekoelde big top binnen.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "creatie-2360",
+      "label": "Familiepakket, 4 tickets vanaf 119 euro",
+      "type": "creatie",
+      "period_start": "2026-04-16",
+      "period_end": "2026-05-16",
+      "period_label": "16 apr 2026 t/m 16 mei 2026",
+      "tags": [
+        "meta",
+        "GET_TICKETS"
+      ],
+      "why": "Magie, lachen en verwondering voor het hele gezin. Incl. servicekosten.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "creatie-2361",
+      "label": "POV: jij bent de schaatser",
+      "type": "creatie",
+      "period_start": "2026-04-16",
+      "period_end": "2026-05-16",
+      "period_label": "16 apr 2026 t/m 16 mei 2026",
+      "tags": [
+        "tiktok",
+        "WATCH_MORE"
+      ],
+      "why": "GoPro op het ijs. Vijftien seconden, een sprong, applaus dat door je hoofd blijft galmen.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "creatie-2362",
+      "label": "De kleedkamer voor de show",
+      "type": "creatie",
+      "period_start": "2026-04-16",
+      "period_end": "2026-05-16",
+      "period_label": "16 apr 2026 t/m 16 mei 2026",
+      "tags": [
+        "tiktok",
+        "GET_TICKETS"
+      ],
+      "why": "Twintig artiesten, een minuut, dezelfde adem. Dit is wat performance kost.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "creatie-2363",
+      "label": "Pukkelpop Counter-stage",
+      "type": "creatie",
+      "period_start": "2026-04-16",
+      "period_end": "2026-05-16",
+      "period_label": "16 apr 2026 t/m 16 mei 2026",
+      "tags": [
+        "tiktok",
+        "LEARN_MORE"
+      ],
+      "why": "De tegen-line-up. Vijf acts die je niet op de hoofdaffiche vond. Hashtag Counterstage.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "creatie-2364",
+      "label": "ENCORE Trailer (30s)",
+      "type": "creatie",
+      "period_start": "2026-04-16",
+      "period_end": "2026-05-16",
+      "period_label": "16 apr 2026 t/m 16 mei 2026",
+      "tags": [
+        "youtube",
+        "GET_TICKETS"
+      ],
+      "why": "Bumper-trailer voor Holiday on Ice ENCORE. Pre-roll voor entertainment-vertical.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "creatie-2365",
+      "label": "Symphony Nights teaser",
+      "type": "creatie",
+      "period_start": "2026-04-16",
+      "period_end": "2026-05-16",
+      "period_label": "16 apr 2026 t/m 16 mei 2026",
+      "tags": [
+        "youtube",
+        "LEARN_MORE"
+      ],
+      "why": "Skippable 15s. Cellist trekt de eerste strijkstreek, beat valt in.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "creatie-2366",
+      "label": "Wondervrijdag, 15% voordeel",
+      "type": "creatie",
+      "period_start": "2026-04-16",
+      "period_end": "2026-05-16",
+      "period_label": "16 apr 2026 t/m 16 mei 2026",
+      "tags": [
+        "google_ads",
+        "GET_TICKETS"
+      ],
+      "why": "Alleen vandaag op geselecteerde voorstellingen in Scheveningen.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "creatie-2367",
+      "label": "Lumios komt naar Brussels",
+      "type": "creatie",
+      "period_start": "2026-04-16",
+      "period_end": "2026-05-16",
+      "period_label": "16 apr 2026 t/m 16 mei 2026",
+      "tags": [
+        "google_ads",
+        "GET_TICKETS"
+      ],
+      "why": "Na Scheveningen reist Lumios door naar een nieuwe stad. Binnenkort onder de big top.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "metric-camp-TikTok, Van Koningsbrugge Spark Ads",
+      "label": "TikTok, Van Koningsbrugge Spark Ads",
+      "type": "campagne",
+      "period_start": "2026-03-26",
+      "period_end": "2026-07-23",
+      "period_label": "26 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "tiktok",
+        "live"
+      ],
+      "why": "Echte campagne die draaide, EUR 2.539 besteed over 1.015.951 vertoningen.",
+      "delta": "461 conversies, ROAS 17,5",
+      "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    },
+    {
+      "id": "outcome-TikTok, Van Koningsbrugge Spark Ads",
+      "label": "461 conversies, ROAS 17,5",
+      "type": "outcome",
+      "period_start": "2026-03-26",
+      "period_end": "2026-07-23",
+      "period_label": "26 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "tiktok"
+      ],
+      "why": "Gemeten resultaat van \"TikTok, Van Koningsbrugge Spark Ads\".",
+      "delta": "ROAS 17,5",
+      "lineage_node_id": null
+    },
+    {
+      "id": "metric-camp-Search, Brand LUMOS NL+BE",
+      "label": "Search, Brand LUMOS NL+BE",
+      "type": "campagne",
+      "period_start": "2026-03-19",
+      "period_end": "2026-07-22",
+      "period_label": "19 mrt 2026 t/m 22 jul 2026",
+      "tags": [
+        "google_ads",
+        "live"
+      ],
+      "why": "Echte campagne die draaide, EUR 726 besteed over 226.100 vertoningen.",
+      "delta": "654 conversies, ROAS 24,8",
+      "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    },
+    {
+      "id": "outcome-Search, Brand LUMOS NL+BE",
+      "label": "654 conversies, ROAS 24,8",
+      "type": "outcome",
+      "period_start": "2026-03-19",
+      "period_end": "2026-07-22",
+      "period_label": "19 mrt 2026 t/m 22 jul 2026",
+      "tags": [
+        "google_ads"
+      ],
+      "why": "Gemeten resultaat van \"Search, Brand LUMOS NL+BE\".",
+      "delta": "ROAS 24,8",
+      "lineage_node_id": null
+    },
+    {
+      "id": "metric-camp-Snap, Last-minute tickets",
+      "label": "Snap, Last-minute tickets",
+      "type": "campagne",
+      "period_start": "2026-03-16",
+      "period_end": "2026-07-23",
+      "period_label": "16 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "snapchat",
+        "live"
+      ],
+      "why": "Echte campagne die draaide, EUR 2.156 besteed over 667.821 vertoningen.",
+      "delta": "152 conversies, ROAS 12,1",
+      "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    },
+    {
+      "id": "outcome-Snap, Last-minute tickets",
+      "label": "152 conversies, ROAS 12,1",
+      "type": "outcome",
+      "period_start": "2026-03-16",
+      "period_end": "2026-07-23",
+      "period_label": "16 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "snapchat"
+      ],
+      "why": "Gemeten resultaat van \"Snap, Last-minute tickets\".",
+      "delta": "ROAS 12,1",
+      "lineage_node_id": null
+    },
+    {
+      "id": "metric-camp-PMax, Scheveningen Q3",
+      "label": "PMax, Scheveningen Q3",
+      "type": "campagne",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-23",
+      "period_label": "15 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "google_ads",
+        "live"
+      ],
+      "why": "Echte campagne die draaide, EUR 4.736 besteed over 929.053 vertoningen.",
+      "delta": "323 conversies, ROAS 14,8",
+      "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    },
+    {
+      "id": "outcome-PMax, Scheveningen Q3",
+      "label": "323 conversies, ROAS 14,8",
+      "type": "outcome",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-23",
+      "period_label": "15 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "google_ads"
+      ],
+      "why": "Gemeten resultaat van \"PMax, Scheveningen Q3\".",
+      "delta": "ROAS 14,8",
+      "lineage_node_id": null
+    },
+    {
+      "id": "metric-camp-Meta, Aircon-relief video",
+      "label": "Meta, Aircon-relief video",
+      "type": "campagne",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-23",
+      "period_label": "15 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "meta",
+        "live"
+      ],
+      "why": "Echte campagne die draaide, EUR 4.509 besteed over 1.128.036 vertoningen.",
+      "delta": "231 conversies, ROAS 21,3",
+      "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    },
+    {
+      "id": "outcome-Meta, Aircon-relief video",
+      "label": "231 conversies, ROAS 21,3",
+      "type": "outcome",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-23",
+      "period_label": "15 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "meta"
+      ],
+      "why": "Gemeten resultaat van \"Meta, Aircon-relief video\".",
+      "delta": "ROAS 21,3",
+      "lineage_node_id": null
+    },
+    {
+      "id": "metric-camp-TikTok, Brand awareness",
+      "label": "TikTok, Brand awareness",
+      "type": "campagne",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-24",
+      "period_label": "15 mrt 2026 t/m 24 jul 2026",
+      "tags": [
+        "tiktok",
+        "live"
+      ],
+      "why": "Echte campagne die draaide, EUR 3.834 besteed over 1.773.339 vertoningen.",
+      "delta": "357 conversies, ROAS 16,2",
+      "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    },
+    {
+      "id": "outcome-TikTok, Brand awareness",
+      "label": "357 conversies, ROAS 16,2",
+      "type": "outcome",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-24",
+      "period_label": "15 mrt 2026 t/m 24 jul 2026",
+      "tags": [
+        "tiktok"
+      ],
+      "why": "Gemeten resultaat van \"TikTok, Brand awareness\".",
+      "delta": "ROAS 16,2",
+      "lineage_node_id": null
+    },
+    {
+      "id": "metric-camp-PMax, Brussel Q4-Q1",
+      "label": "PMax, Brussel Q4-Q1",
+      "type": "campagne",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-23",
+      "period_label": "15 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "google_ads",
+        "live"
+      ],
+      "why": "Echte campagne die draaide, EUR 3.171 besteed over 501.162 vertoningen.",
+      "delta": "154 conversies, ROAS 9,7",
+      "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    },
+    {
+      "id": "outcome-PMax, Brussel Q4-Q1",
+      "label": "154 conversies, ROAS 9,7",
+      "type": "outcome",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-23",
+      "period_label": "15 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "google_ads"
+      ],
+      "why": "Gemeten resultaat van \"PMax, Brussel Q4-Q1\".",
+      "delta": "ROAS 9,7",
+      "lineage_node_id": null
+    },
+    {
+      "id": "metric-camp-Meta, Brussel FR creative",
+      "label": "Meta, Brussel FR creative",
+      "type": "campagne",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-24",
+      "period_label": "15 mrt 2026 t/m 24 jul 2026",
+      "tags": [
+        "meta",
+        "live"
+      ],
+      "why": "Echte campagne die draaide, EUR 2.720 besteed over 568.582 vertoningen.",
+      "delta": "74 conversies, ROAS 11,6",
+      "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    },
+    {
+      "id": "outcome-Meta, Brussel FR creative",
+      "label": "74 conversies, ROAS 11,6",
+      "type": "outcome",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-24",
+      "period_label": "15 mrt 2026 t/m 24 jul 2026",
+      "tags": [
+        "meta"
+      ],
+      "why": "Gemeten resultaat van \"Meta, Brussel FR creative\".",
+      "delta": "ROAS 11,6",
+      "lineage_node_id": null
+    },
+    {
+      "id": "metric-camp-YouTube, Trailer in-stream",
+      "label": "YouTube, Trailer in-stream",
+      "type": "campagne",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-23",
+      "period_label": "15 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "youtube",
+        "live"
+      ],
+      "why": "Echte campagne die draaide, EUR 1.986 besteed over 507.199 vertoningen.",
+      "delta": "77 conversies, ROAS 6,8",
+      "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    },
+    {
+      "id": "outcome-YouTube, Trailer in-stream",
+      "label": "77 conversies, ROAS 6,8",
+      "type": "outcome",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-23",
+      "period_label": "15 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "youtube"
+      ],
+      "why": "Gemeten resultaat van \"YouTube, Trailer in-stream\".",
+      "delta": "ROAS 6,8",
+      "lineage_node_id": null
+    },
+    {
+      "id": "metric-camp-Meta, VIP retargeting",
+      "label": "Meta, VIP retargeting",
+      "type": "campagne",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-23",
+      "period_label": "15 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "meta",
+        "live"
+      ],
+      "why": "Echte campagne die draaide, EUR 677 besteed over 201.758 vertoningen.",
+      "delta": "574 conversies, ROAS 29,4",
+      "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    },
+    {
+      "id": "outcome-Meta, VIP retargeting",
+      "label": "574 conversies, ROAS 29,4",
+      "type": "outcome",
+      "period_start": "2026-03-15",
+      "period_end": "2026-07-23",
+      "period_label": "15 mrt 2026 t/m 23 jul 2026",
+      "tags": [
+        "meta"
+      ],
+      "why": "Gemeten resultaat van \"Meta, VIP retargeting\".",
+      "delta": "ROAS 29,4",
+      "lineage_node_id": null
+    },
+    {
+      "id": "metric-camp-YouTube, Shorts promotion",
+      "label": "YouTube, Shorts promotion",
+      "type": "campagne",
+      "period_start": "2026-03-14",
+      "period_end": "2026-07-24",
+      "period_label": "14 mrt 2026 t/m 24 jul 2026",
+      "tags": [
+        "youtube",
+        "live"
+      ],
+      "why": "Echte campagne die draaide, EUR 2.064 besteed over 1.148.590 vertoningen.",
+      "delta": "84 conversies, ROAS 7,4",
+      "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    },
+    {
+      "id": "outcome-YouTube, Shorts promotion",
+      "label": "84 conversies, ROAS 7,4",
+      "type": "outcome",
+      "period_start": "2026-03-14",
+      "period_end": "2026-07-24",
+      "period_label": "14 mrt 2026 t/m 24 jul 2026",
+      "tags": [
+        "youtube"
+      ],
+      "why": "Gemeten resultaat van \"YouTube, Shorts promotion\".",
+      "delta": "ROAS 7,4",
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-de750bb0-0a8b-472a-847f-289ec9f89529",
+      "label": "Persbericht: 25.000 tickets voor NOCTILIA in vier dagen",
+      "type": "kennis",
+      "period_start": "2026-02-23T10:00:00+00:00",
+      "period_end": "2026-02-23T10:00:00+00:00",
+      "period_label": "23 feb 2026",
+      "tags": [
+        "pdf"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-ffad9fa8-231e-436d-aa71-093a8ec6d1da",
+      "label": "Resultaat fanclub pre-sale NOCTILIA",
+      "type": "kennis",
+      "period_start": "2026-02-18T10:00:00+00:00",
+      "period_end": "2026-02-18T10:00:00+00:00",
+      "period_label": "18 feb 2026",
+      "tags": [
+        "email"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-235145f6-860c-4f0f-bfd1-1cad54aabdc6",
+      "label": "Noctilia On-sale Jubileum",
+      "type": "campagne",
+      "period_start": "2026-02-17",
+      "period_end": "2026-04-15",
+      "period_label": "17 feb 2026 t/m 15 apr 2026",
+      "tags": [
+        "meta",
+        "google_ads",
+        "youtube",
+        "dv360"
+      ],
+      "why": "Nationale on-sale met jubileum-hook van het Lumos-merk, gericht op opening op 50 procent capaciteit.",
+      "delta": null,
+      "lineage_node_id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    },
+    {
+      "id": "kennis-57ebb9bb-b3ae-4972-9f5e-23e77119d25b",
+      "label": "Persbericht: kaartverkoop NOCTILIA start dinsdag 17 februari",
+      "type": "kennis",
+      "period_start": "2026-02-10T10:00:00+00:00",
+      "period_end": "2026-02-10T10:00:00+00:00",
+      "period_label": "10 feb 2026",
+      "tags": [
+        "pdf"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-108768b4-36a8-4c50-9a9b-d1466dc8003a",
+      "label": "Noctilia Fanclub Pre-sale",
+      "type": "campagne",
+      "period_start": "2026-02-09",
+      "period_end": "2026-02-16",
+      "period_label": "9 feb 2026 t/m 16 feb 2026",
+      "tags": [
+        "email",
+        "meta",
+        "fanclub boekt eerst"
+      ],
+      "why": "Fanclub en loyaltydatabase 72 uur eerder laten boeken voor de jubileumshow en de database laten groeien.",
+      "delta": null,
+      "lineage_node_id": "brief-f4ac59c1-27d5-4d13-9b3e-7474f9f017c4"
+    },
+    {
+      "id": "kennis-60614183-7064-437a-a9a8-ec0595434085",
+      "label": "Digitaal faseplan NOCTILIA: launch tot showtime",
+      "type": "kennis",
+      "period_start": "2026-01-28T10:00:00+00:00",
+      "period_end": "2026-01-28T10:00:00+00:00",
+      "period_label": "28 jan 2026",
+      "tags": [
+        "briefing"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-dc362402-a2c8-42d1-92a1-9a97879cfcc5",
+      "label": "Persbericht: Lumos kondigt NOCTILIA aan in Scheveningen",
+      "type": "kennis",
+      "period_start": "2026-01-20T10:00:00+00:00",
+      "period_end": "2026-01-20T10:00:00+00:00",
+      "period_label": "20 jan 2026",
+      "tags": [
+        "pdf"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-d224772a-bc4d-4970-949f-2e4228e58fb9",
+      "label": "Benchmark last time played: NOCTILIA vs AURIVA Scheveningen",
+      "type": "kennis",
+      "period_start": "2025-12-03T10:00:00+00:00",
+      "period_end": "2025-12-03T10:00:00+00:00",
+      "period_label": "3 dec 2025",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-37df8aab-a335-4409-a419-499808164536",
+      "label": "SWOT planning NOCTILIA",
+      "type": "kennis",
+      "period_start": "2025-11-12T10:00:00+00:00",
+      "period_end": "2025-11-12T10:00:00+00:00",
+      "period_label": "12 nov 2025",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-ed0a3765-1ca5-4f0a-95d3-12e85535c7b7",
+      "label": "Auriva Brussel Last Days",
+      "type": "campagne",
+      "period_start": "2025-09-29",
+      "period_end": "2025-10-19",
+      "period_label": "29 sep 2025 t/m 19 okt 2025",
+      "tags": [
+        "meta",
+        "google_ads",
+        "ooh",
+        "radio"
+      ],
+      "why": "De laatste drie Brusselse speelweken uitverkopen met pure urgentie-messaging.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-6fab0c0a-0789-444e-ac10-cb54710b69b4",
+      "label": "Castcontent verslaat influencer-campagnes bij jong publiek",
+      "type": "kennis",
+      "period_start": "2025-09-15T10:00:00+00:00",
+      "period_end": "2025-09-15T10:00:00+00:00",
+      "period_label": "15 sep 2025",
+      "tags": [
+        "manual"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-2e3c2cfe-252c-413d-a739-57b9bd4538c6",
+      "label": "Learning (tegenstrijdig): premium-hoek vs familie-hoek aan d",
+      "type": "kennis",
+      "period_start": "2025-09-10T10:00:00+00:00",
+      "period_end": "2025-09-10T10:00:00+00:00",
+      "period_label": "10 sep 2025",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-76b73e54-dd4c-496a-9b89-b9b07d802e02",
+      "label": "Learning: slecht weer = last-minute zoekpiek",
+      "type": "kennis",
+      "period_start": "2025-08-12T10:00:00+00:00",
+      "period_end": "2025-08-12T10:00:00+00:00",
+      "period_label": "12 aug 2025",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-4923c25f-f67a-48b0-af5c-201bfbca444c",
+      "label": "Weekcijfers wk 31 2025 AURIVA Brussel",
+      "type": "kennis",
+      "period_start": "2025-07-28T10:00:00+00:00",
+      "period_end": "2025-07-28T10:00:00+00:00",
+      "period_label": "28 jul 2025",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-cbf5cdc8-978a-4b6b-93c1-9b92b1134e83",
+      "label": "Persbericht: Brussel geeft AURIVA de sleutel van de stad",
+      "type": "kennis",
+      "period_start": "2025-07-25T10:00:00+00:00",
+      "period_end": "2025-07-25T10:00:00+00:00",
+      "period_label": "25 jul 2025",
+      "tags": [
+        "pdf"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-e26fca5b-9b82-4036-8215-8d4d8a91461e",
+      "label": "Auriva Brussel Premiere",
+      "type": "campagne",
+      "period_start": "2025-07-14",
+      "period_end": "2025-08-06",
+      "period_label": "14 jul 2025 t/m 6 aug 2025",
+      "tags": [
+        "pr",
+        "dv360",
+        "youtube",
+        "meta"
+      ],
+      "why": "Brusselse premiere lanceren op het momentum van de Scheveningse perscitaten en de sleuteloverdracht met de stad.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-602f40a2-3d31-44d8-a889-1c751a83b4d0",
+      "label": "Auriva Scheveningen Last Days",
+      "type": "campagne",
+      "period_start": "2025-06-16",
+      "period_end": "2025-07-06",
+      "period_label": "16 jun 2025 t/m 6 jul 2025",
+      "tags": [
+        "meta",
+        "google_ads",
+        "radio",
+        "ooh"
+      ],
+      "why": "Slotweken in Scheveningen uitverkopen en restvraag doorleiden naar de Brusselse reeks.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-c0084b19-e9cd-47f1-97aa-78649dcfb183",
+      "label": "Stadspartnership Brussel AURIVA: rituelen en toerismebureau",
+      "type": "kennis",
+      "period_start": "2025-06-10T10:00:00+00:00",
+      "period_end": "2025-06-10T10:00:00+00:00",
+      "period_label": "10 jun 2025",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-0f12c098-862d-43de-9167-d3dd8437fea8",
+      "label": "Weekcijfers wk 19 2025 AURIVA Scheveningen",
+      "type": "kennis",
+      "period_start": "2025-05-12T10:00:00+00:00",
+      "period_end": "2025-05-12T10:00:00+00:00",
+      "period_label": "12 mei 2025",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-438a64be-b5b7-4bcc-84f7-f924ad2c4d99",
+      "label": "Learning: lokale copy wint in theatersteden",
+      "type": "kennis",
+      "period_start": "2025-04-15T10:00:00+00:00",
+      "period_end": "2025-04-15T10:00:00+00:00",
+      "period_label": "15 apr 2025",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-b915596c-140c-4409-ae4c-c94b91fa6f09",
+      "label": "Notitie premiere-avond (incompleet)",
+      "type": "kennis",
+      "period_start": "2025-04-11T10:00:00+00:00",
+      "period_end": "2025-04-11T10:00:00+00:00",
+      "period_label": "11 apr 2025",
+      "tags": [
+        "manual"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-65723332-2da2-4e9f-8c02-2496e0453ff1",
+      "label": "Vento Last Days Tour",
+      "type": "campagne",
+      "period_start": "2025-04-11",
+      "period_end": "2025-04-30",
+      "period_label": "11 apr 2025 t/m 30 apr 2025",
+      "tags": [
+        "meta",
+        "google_ads",
+        "email",
+        "laatste steden, laatste kaarten"
+      ],
+      "why": "Slotweken van de tour vullen; urgentie alleen op warme doelgroepen.",
+      "delta": null,
+      "lineage_node_id": "brief-dccc94b0-37a7-45e0-af84-37658313000e"
+    },
+    {
+      "id": "brief-9b4c7ca1-a1de-4333-8e32-f7c30b7468c2",
+      "label": "Auriva Scheveningen Premiere",
+      "type": "campagne",
+      "period_start": "2025-03-31",
+      "period_end": "2025-04-23",
+      "period_label": "31 mrt 2025 t/m 23 apr 2025",
+      "tags": [
+        "pr",
+        "dv360",
+        "youtube",
+        "meta"
+      ],
+      "why": "De Scheveningse premiere als landelijk event neerzetten en reviews verzamelen die later Brussel aanjagen.",
+      "delta": null,
+      "lineage_node_id": "brief-f6d9b471-a3b5-459d-b867-30e12d267040"
+    },
+    {
+      "id": "brief-dde2495e-1091-4790-82ea-ca60cf11f3a3",
+      "label": "Vento Lokale Push Luik en Charleroi",
+      "type": "campagne",
+      "period_start": "2025-03-05",
+      "period_end": "2025-04-10",
+      "period_label": "5 mrt 2025 t/m 10 apr 2025",
+      "tags": [
+        "meta",
+        "google_ads",
+        "email",
+        "la magie, tout pres de chez vous"
+      ],
+      "why": "Achterblijvende kaartverkoop in de Franstalige steden herstellen met lokale copy en Franstalige proof.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-f4ac59c1-27d5-4d13-9b3e-7474f9f017c4",
+      "label": "Vento Premiere Brugge en Gent",
+      "type": "campagne",
+      "period_start": "2025-02-20",
+      "period_end": "2025-03-15",
+      "period_label": "20 feb 2025 t/m 15 mrt 2025",
+      "tags": [
+        "pr",
+        "meta",
+        "google_ads",
+        "radio"
+      ],
+      "why": "Premiereweek in Brugge en Gent uitverkopen met lokale pers en partners.",
+      "delta": null,
+      "lineage_node_id": "brief-89a669b8-202f-4022-8649-ad11889c9da2"
+    },
+    {
+      "id": "brief-943efee3-4ef6-452c-861a-6e3e1c990e44",
+      "label": "Auriva Brussel On-sale Drip",
+      "type": "campagne",
+      "period_start": "2025-02-04",
+      "period_end": "2025-04-10",
+      "period_label": "4 feb 2025 t/m 10 apr 2025",
+      "tags": [
+        "meta",
+        "google_ads",
+        "youtube",
+        "radio"
+      ],
+      "why": "Gefaseerde inventory-release: eerst vijf weken in verkoop, uitbreidingen gekoppeld aan de premieres in beide steden.",
+      "delta": null,
+      "lineage_node_id": "brief-89a669b8-202f-4022-8649-ad11889c9da2"
+    },
+    {
+      "id": "kennis-be45eac8-e893-44b2-af20-a2201abb17f8",
+      "label": "Inventory-drip afspraak AURIVA Brussel",
+      "type": "kennis",
+      "period_start": "2025-01-14T10:00:00+00:00",
+      "period_end": "2025-01-14T10:00:00+00:00",
+      "period_label": "14 jan 2025",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-534917dd-3cfe-4754-8290-1f567b940d0c",
+      "label": "Vento Theatertour On-sale",
+      "type": "campagne",
+      "period_start": "2025-01-07",
+      "period_end": "2025-02-15",
+      "period_label": "7 jan 2025 t/m 15 feb 2025",
+      "tags": [
+        "meta",
+        "google_ads",
+        "email",
+        "pr"
+      ],
+      "why": "Vier Belgische theatersteden tegelijk on-sale brengen voor de voorjaarstour.",
+      "delta": null,
+      "lineage_node_id": "brief-e5c0c730-86f0-42ef-b0bb-1c99abc1ab71"
+    },
+    {
+      "id": "kennis-842a728b-4f5a-4925-a6ba-dd6729337e39",
+      "label": "Learning: gift guide email is het sterkste owned-asset",
+      "type": "kennis",
+      "period_start": "2024-12-28T10:00:00+00:00",
+      "period_end": "2024-12-28T10:00:00+00:00",
+      "period_label": "28 dec 2024",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-8e7c3a7c-fa49-4d4c-bcfe-03b29b2e3592",
+      "label": "Learning: Black Friday schaadde het premium-gevoel",
+      "type": "kennis",
+      "period_start": "2024-12-09T10:00:00+00:00",
+      "period_end": "2024-12-09T10:00:00+00:00",
+      "period_label": "9 dec 2024",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-96da1b95-2f3c-4d29-9a22-5a14def361d2",
+      "label": "Auriva Black Friday vroegboek-experiment",
+      "type": "campagne",
+      "period_start": "2024-11-25",
+      "period_end": "2024-12-02",
+      "period_label": "25 nov 2024 t/m 2 dec 2024",
+      "tags": [
+        "meta",
+        "google_ads",
+        "email",
+        "48 uur vroegboek-voordeel"
+      ],
+      "why": "Testen of een gecontroleerde vroegboek-actie de on-sale versnelt zonder het premium-merk te schaden.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-e5c0c730-86f0-42ef-b0bb-1c99abc1ab71",
+      "label": "Auriva Dubbelstad On-sale",
+      "type": "campagne",
+      "period_start": "2024-11-12",
+      "period_end": "2025-01-15",
+      "period_label": "12 nov 2024 t/m 15 jan 2025",
+      "tags": [
+        "meta",
+        "google_ads",
+        "youtube",
+        "dv360"
+      ],
+      "why": "Beide speelsteden tegelijk nationaal pushen zodat Scheveningen op 50 procent capaciteit opent en Brussel een vliegende start krijgt.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-de0df4d6-88e1-4ae1-9dd3-a8ea6422a962",
+      "label": "TV-spot briefing AURIVA on-sale flight",
+      "type": "kennis",
+      "period_start": "2024-11-03T10:00:00+00:00",
+      "period_end": "2024-11-03T10:00:00+00:00",
+      "period_label": "3 nov 2024",
+      "tags": [
+        "briefing"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-c0b7862b-d042-4581-9d03-32a464f2a6dc",
+      "label": "Learning: last chance werkt alleen warm",
+      "type": "kennis",
+      "period_start": "2024-10-10T10:00:00+00:00",
+      "period_end": "2024-10-10T10:00:00+00:00",
+      "period_label": "10 okt 2024",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-206ba55e-fe10-4231-8fd0-97f10e9f5c0a",
+      "label": "Asset-les Meta: 30 seconden werkt niet, 15-20 sec verticaal ",
+      "type": "kennis",
+      "period_start": "2024-09-02T10:00:00+00:00",
+      "period_end": "2024-09-02T10:00:00+00:00",
+      "period_label": "2 sep 2024",
+      "tags": [
+        "manual"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-c3f64031-e9b9-477a-affb-aebf1cd826dc",
+      "label": "Solstra Last Days",
+      "type": "campagne",
+      "period_start": "2024-08-05",
+      "period_end": "2024-08-25",
+      "period_label": "5 aug 2024 t/m 25 aug 2024",
+      "tags": [
+        "meta",
+        "google_ads",
+        "radio",
+        "ooh"
+      ],
+      "why": "Laatste drie weken maximaal vullen met urgentie als dominant mechaniek.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-33060933-39b9-43f4-a8a1-fef0b9215a07",
+      "label": "Restplaatsen en jongerentarief mechaniek",
+      "type": "kennis",
+      "period_start": "2024-07-08T10:00:00+00:00",
+      "period_end": "2024-07-08T10:00:00+00:00",
+      "period_label": "8 jul 2024",
+      "tags": [
+        "manual"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-bcf9edf6-f139-40cc-9755-2df1b206869b",
+      "label": "Solstra Zomervakantie Showstad",
+      "type": "campagne",
+      "period_start": "2024-07-06",
+      "period_end": "2024-08-10",
+      "period_label": "6 jul 2024 t/m 10 aug 2024",
+      "tags": [
+        "ooh",
+        "meta",
+        "tiktok",
+        "snapchat"
+      ],
+      "why": "Scheveningen tijdens de schoolvakantie omtoveren tot showstad met strandactivatie en stads-OOH.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-eaa77647-ff31-43e7-a957-c7402b14dfe4",
+      "label": "Weekcijfers wk 21 2024 SOLSTRA",
+      "type": "kennis",
+      "period_start": "2024-05-27T10:00:00+00:00",
+      "period_end": "2024-05-27T10:00:00+00:00",
+      "period_label": "27 mei 2024",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-9bfff1a3-0968-4f55-a3cf-f1519c3a6342",
+      "label": "Afspraak radio-winactie SOLSTRA landelijke zender",
+      "type": "kennis",
+      "period_start": "2024-05-13T10:00:00+00:00",
+      "period_end": "2024-05-13T10:00:00+00:00",
+      "period_label": "13 mei 2024",
+      "tags": [
+        "email"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-dccc94b0-37a7-45e0-af84-37658313000e",
+      "label": "Solstra Premiere aan Zee",
+      "type": "campagne",
+      "period_start": "2024-05-06",
+      "period_end": "2024-05-29",
+      "period_label": "6 mei 2024 t/m 29 mei 2024",
+      "tags": [
+        "pr",
+        "dv360",
+        "youtube",
+        "meta"
+      ],
+      "why": "Premiere-PR, homepage takeover en pre-roll combineren tot de piekweek van de campagne.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-f6d9b471-a3b5-459d-b867-30e12d267040",
+      "label": "Solstra Moederdag",
+      "type": "campagne",
+      "period_start": "2024-04-22",
+      "period_end": "2024-05-12",
+      "period_label": "22 apr 2024 t/m 12 mei 2024",
+      "tags": [
+        "meta",
+        "pinterest",
+        "email",
+        "google_ads"
+      ],
+      "why": "Moederdag-matinees vullen met cadeaugerichte display en social inzet.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-82240e39-5db1-4348-bbcc-ad3f2ab25755",
+      "label": "Kuststad-partnership Scheveningen: showstad-draaiboek",
+      "type": "kennis",
+      "period_start": "2024-03-18T10:00:00+00:00",
+      "period_end": "2024-03-18T10:00:00+00:00",
+      "period_label": "18 mrt 2024",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-b1cf95d0-06bc-494f-b963-1fae0150d3ab",
+      "label": "Learning: cadeauhoek verslaat korting bij Valentijn",
+      "type": "kennis",
+      "period_start": "2024-02-20T10:00:00+00:00",
+      "period_end": "2024-02-20T10:00:00+00:00",
+      "period_label": "20 feb 2024",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-89a669b8-202f-4022-8649-ad11889c9da2",
+      "label": "Solstra On-sale Voorjaar",
+      "type": "campagne",
+      "period_start": "2024-01-30",
+      "period_end": "2024-03-15",
+      "period_label": "30 jan 2024 t/m 15 mrt 2024",
+      "tags": [
+        "meta",
+        "google_ads",
+        "youtube",
+        "dv360"
+      ],
+      "why": "Nationale on-sale met exact on-sale moment en drie campagnegolven richting de meipremiere.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "kennis-0e8deebf-76e9-44e9-8c18-f3ff2d61b592",
+      "label": "Ticketingpartner als marketingkanaal",
+      "type": "kennis",
+      "period_start": "2024-01-22T10:00:00+00:00",
+      "period_end": "2024-01-22T10:00:00+00:00",
+      "period_label": "22 jan 2024",
+      "tags": [
+        "meeting_notes"
+      ],
+      "why": "Geuploade kennisbron; voedt briefings als context.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-d8dd8e75-4b0a-4ed7-a264-43626fcc08bd",
+      "label": "Emberia Valentijn, samen in het donker",
+      "type": "campagne",
+      "period_start": "2024-01-18",
+      "period_end": "2024-02-11",
+      "period_label": "18 jan 2024 t/m 11 feb 2024",
+      "tags": [
+        "meta",
+        "email",
+        "google_ads",
+        "geef een avond, geen spullen"
+      ],
+      "why": "Koppels en cadeaukopers naar de slotweken trekken zonder korting.",
+      "delta": null,
+      "lineage_node_id": null
+    },
+    {
+      "id": "brief-230b9f49-efda-45b2-9b6d-d7edb300d1c6",
+      "label": "Emberia Last Days",
+      "type": "campagne",
+      "period_start": "2024-01-15",
+      "period_end": "2024-02-11",
+      "period_label": "15 jan 2024 t/m 11 feb 2024",
+      "tags": [
+        "meta",
+        "google_ads",
+        "ooh",
+        "radio"
+      ],
+      "why": "De verlengde slotreeks tot 11 februari uitverkopen met een harde einddatum-boodschap.",
+      "delta": null,
+      "lineage_node_id": null
+    }
   ],
-  [
-   "metric-camp-PMax, Scheveningen Q3",
-   "outcome-PMax, Scheveningen Q3"
-  ],
-  [
-   "metric-camp-Meta, Aircon-relief video",
-   "outcome-Meta, Aircon-relief video"
-  ],
-  [
-   "metric-camp-DV360, YouTube prime-time",
-   "outcome-DV360, YouTube prime-time"
-  ],
-  [
-   "metric-camp-TikTok, Brand awareness",
-   "outcome-TikTok, Brand awareness"
-  ],
-  [
-   "metric-camp-PMax, Brussel Q4-Q1",
-   "outcome-PMax, Brussel Q4-Q1"
-  ],
-  [
-   "metric-camp-Meta, Brussel FR creative",
-   "outcome-Meta, Brussel FR creative"
-  ],
-  [
-   "metric-camp-TikTok, Van Koningsbrugge Spark Ads",
-   "outcome-TikTok, Van Koningsbrugge Spark Ads"
-  ],
-  [
-   "metric-camp-Snap, Last-minute tickets",
-   "outcome-Snap, Last-minute tickets"
-  ],
-  [
-   "metric-camp-YouTube, Shorts promotion",
-   "outcome-YouTube, Shorts promotion"
-  ],
-  [
-   "metric-camp-YouTube, Trailer in-stream",
-   "outcome-YouTube, Trailer in-stream"
-  ],
-  [
-   "metric-camp-Search, Brand LUMOS NL+BE",
-   "outcome-Search, Brand LUMOS NL+BE"
-  ],
-  [
-   "metric-camp-Meta, VIP retargeting",
-   "outcome-Meta, VIP retargeting"
-  ],
-  [
-   "creatie-2356",
-   "metric-camp-DV360, Premium display"
-  ],
-  [
-   "creatie-2357",
-   "metric-camp-DV360, Premium display"
-  ],
-  [
-   "creatie-2358",
-   "metric-camp-DV360, Premium display"
-  ],
-  [
-   "creatie-2359",
-   "metric-camp-DV360, Premium display"
-  ],
-  [
-   "creatie-2360",
-   "metric-camp-DV360, Premium display"
-  ],
-  [
-   "creatie-2361",
-   "metric-camp-DV360, Premium display"
-  ],
-  [
-   "creatie-2362",
-   "metric-camp-DV360, Premium display"
-  ],
-  [
-   "creatie-2363",
-   "metric-camp-DV360, Premium display"
-  ],
-  [
-   "creatie-2364",
-   "metric-camp-DV360, Premium display"
-  ],
-  [
-   "creatie-2365",
-   "metric-camp-DV360, Premium display"
-  ],
-  [
-   "creatie-2366",
-   "metric-camp-DV360, Premium display"
-  ],
-  [
-   "creatie-2367",
-   "metric-camp-DV360, Premium display"
-  ],
-  [
-   "brief-1a016ef6-010f-4ba0-909d-2190698278ba",
-   "brief-96da1b95-2f3c-4d29-9a22-5a14def361d2"
-  ],
-  [
-   "brief-48d50ca0-8783-4b2f-9ef4-a5e08b029c76",
-   "brief-c3f64031-e9b9-477a-affb-aebf1cd826dc"
-  ],
-  [
-   "brief-c2e8db49-8eb7-49fe-b949-27830e60d0e7",
-   "brief-c3f64031-e9b9-477a-affb-aebf1cd826dc"
-  ],
-  [
-   "brief-9f9830c3-bc18-4753-8fc5-410308704406",
-   "brief-bcf9edf6-f139-40cc-9755-2df1b206869b"
-  ],
-  [
-   "brief-5da26654-66f1-4bc2-b483-9bd0bc20f114",
-   "brief-bcf9edf6-f139-40cc-9755-2df1b206869b"
-  ],
-  [
-   "brief-235145f6-860c-4f0f-bfd1-1cad54aabdc6",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "brief-108768b4-36a8-4c50-9a9b-d1466dc8003a",
-   "brief-f4ac59c1-27d5-4d13-9b3e-7474f9f017c4"
-  ],
-  [
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1",
-   "brief-dccc94b0-37a7-45e0-af84-37658313000e"
-  ],
-  [
-   "brief-9b4c7ca1-a1de-4333-8e32-f7c30b7468c2",
-   "brief-f6d9b471-a3b5-459d-b867-30e12d267040"
-  ],
-  [
-   "brief-f4ac59c1-27d5-4d13-9b3e-7474f9f017c4",
-   "brief-89a669b8-202f-4022-8649-ad11889c9da2"
-  ],
-  [
-   "brief-943efee3-4ef6-452c-861a-6e3e1c990e44",
-   "brief-89a669b8-202f-4022-8649-ad11889c9da2"
-  ],
-  [
-   "brief-534917dd-3cfe-4754-8290-1f567b940d0c",
-   "brief-e5c0c730-86f0-42ef-b0bb-1c99abc1ab71"
-  ],
-  [
-   "metric-camp-DV360, Premium display",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-PMax, Scheveningen Q3",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-Meta, Aircon-relief video",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-DV360, YouTube prime-time",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-TikTok, Brand awareness",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-PMax, Brussel Q4-Q1",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-Meta, Brussel FR creative",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-TikTok, Van Koningsbrugge Spark Ads",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-Snap, Last-minute tickets",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-YouTube, Shorts promotion",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-YouTube, Trailer in-stream",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-Pinterest, Show inspiration",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-Search, Brand LUMOS NL+BE",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-Meta, VIP retargeting",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
-  ],
-  [
-   "metric-camp-Display, Remarketing site-visitors",
-   "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+  "edges": [
+    [
+      "metric-camp-PMax, Scheveningen Q3",
+      "outcome-PMax, Scheveningen Q3"
+    ],
+    [
+      "metric-camp-Meta, Aircon-relief video",
+      "outcome-Meta, Aircon-relief video"
+    ],
+    [
+      "metric-camp-TikTok, Brand awareness",
+      "outcome-TikTok, Brand awareness"
+    ],
+    [
+      "metric-camp-PMax, Brussel Q4-Q1",
+      "outcome-PMax, Brussel Q4-Q1"
+    ],
+    [
+      "metric-camp-Meta, Brussel FR creative",
+      "outcome-Meta, Brussel FR creative"
+    ],
+    [
+      "metric-camp-TikTok, Van Koningsbrugge Spark Ads",
+      "outcome-TikTok, Van Koningsbrugge Spark Ads"
+    ],
+    [
+      "metric-camp-Snap, Last-minute tickets",
+      "outcome-Snap, Last-minute tickets"
+    ],
+    [
+      "metric-camp-YouTube, Shorts promotion",
+      "outcome-YouTube, Shorts promotion"
+    ],
+    [
+      "metric-camp-YouTube, Trailer in-stream",
+      "outcome-YouTube, Trailer in-stream"
+    ],
+    [
+      "metric-camp-Search, Brand LUMOS NL+BE",
+      "outcome-Search, Brand LUMOS NL+BE"
+    ],
+    [
+      "metric-camp-Meta, VIP retargeting",
+      "outcome-Meta, VIP retargeting"
+    ],
+    [
+      "brief-1a016ef6-010f-4ba0-909d-2190698278ba",
+      "brief-96da1b95-2f3c-4d29-9a22-5a14def361d2"
+    ],
+    [
+      "brief-48d50ca0-8783-4b2f-9ef4-a5e08b029c76",
+      "brief-c3f64031-e9b9-477a-affb-aebf1cd826dc"
+    ],
+    [
+      "brief-c2e8db49-8eb7-49fe-b949-27830e60d0e7",
+      "brief-c3f64031-e9b9-477a-affb-aebf1cd826dc"
+    ],
+    [
+      "brief-9f9830c3-bc18-4753-8fc5-410308704406",
+      "brief-bcf9edf6-f139-40cc-9755-2df1b206869b"
+    ],
+    [
+      "brief-5da26654-66f1-4bc2-b483-9bd0bc20f114",
+      "brief-bcf9edf6-f139-40cc-9755-2df1b206869b"
+    ],
+    [
+      "brief-235145f6-860c-4f0f-bfd1-1cad54aabdc6",
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    ],
+    [
+      "brief-108768b4-36a8-4c50-9a9b-d1466dc8003a",
+      "brief-f4ac59c1-27d5-4d13-9b3e-7474f9f017c4"
+    ],
+    [
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1",
+      "brief-dccc94b0-37a7-45e0-af84-37658313000e"
+    ],
+    [
+      "brief-9b4c7ca1-a1de-4333-8e32-f7c30b7468c2",
+      "brief-f6d9b471-a3b5-459d-b867-30e12d267040"
+    ],
+    [
+      "brief-f4ac59c1-27d5-4d13-9b3e-7474f9f017c4",
+      "brief-89a669b8-202f-4022-8649-ad11889c9da2"
+    ],
+    [
+      "brief-943efee3-4ef6-452c-861a-6e3e1c990e44",
+      "brief-89a669b8-202f-4022-8649-ad11889c9da2"
+    ],
+    [
+      "brief-534917dd-3cfe-4754-8290-1f567b940d0c",
+      "brief-e5c0c730-86f0-42ef-b0bb-1c99abc1ab71"
+    ],
+    [
+      "metric-camp-PMax, Scheveningen Q3",
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    ],
+    [
+      "metric-camp-Meta, Aircon-relief video",
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    ],
+    [
+      "metric-camp-TikTok, Brand awareness",
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    ],
+    [
+      "metric-camp-PMax, Brussel Q4-Q1",
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    ],
+    [
+      "metric-camp-Meta, Brussel FR creative",
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    ],
+    [
+      "metric-camp-TikTok, Van Koningsbrugge Spark Ads",
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    ],
+    [
+      "metric-camp-Snap, Last-minute tickets",
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    ],
+    [
+      "metric-camp-YouTube, Shorts promotion",
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    ],
+    [
+      "metric-camp-YouTube, Trailer in-stream",
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    ],
+    [
+      "metric-camp-Search, Brand LUMOS NL+BE",
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    ],
+    [
+      "metric-camp-Meta, VIP retargeting",
+      "brief-65723332-2da2-4e9f-8c02-2496e0453ff1"
+    ]
   ]
- ]
 }
