@@ -70,8 +70,8 @@ export default async function ProductenPage({ params }: Props) {
             <div className="px-8 sm:px-12 max-w-2xl">
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">De Stevin-suite</h1>
               <p className="mt-5 text-lg text-white/85 leading-relaxed">
-                Stevin is een AI-laag over je hele bedrijf, van dynamische campagnes en content tot signalen,
-                opvolging en uplift-meting. Je begint waar het pijn doet en bouwt van daaruit verder.
+                Van dynamische campagnes en content tot signalen, opvolging en uplift-meting.
+                Je begint waar het pijn doet en bouwt van daaruit verder.
               </p>
             </div>
           </div>
