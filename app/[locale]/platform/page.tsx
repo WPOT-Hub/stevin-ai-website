@@ -13,7 +13,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return localizedMetadata({
     path: '/platform',
     locale,
-    title: 'Het platform, de AI-laag over je operatie',
+    // "operatie" was de oude formulering. Koen heeft die op 4 juli 2026 al
+    // vervangen door "marketing en sales" (commit 3a5752e), maar deze titel is
+    // toen blijven staan. Geen nieuwe positioneringskeuze, alleen het doortrekken
+    // van een keuze die al gemaakt was.
+    title: 'Het platform, de AI-laag over je marketing en sales',
     description: t('sub'),
   })
 }
