@@ -277,7 +277,7 @@ export const integrations: Integration[] = [
       'Conversies worden niet goed doorgemeten',
       'Leads uit Google Ads worden niet snel genoeg opgevolgd',
       'Geen inzicht in welke campagnes echt klanten opleveren',
-      'Budget lekt weg door slechte aansluiting met de rest van de funnel',
+      'Budget gaat naar klikken die verderop in de funnel niets opleveren',
     ],
     relatedSlugs: ['google-analytics-4', 'google-tag-manager', 'hubspot', 'looker-studio'],
     faqs: [
