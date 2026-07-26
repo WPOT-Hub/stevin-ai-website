@@ -12,7 +12,8 @@
     "faq:generate": "npx tsx scripts/generate-faqs.ts",
     "related:generate": "npx tsx scripts/generate-related.ts",
     "vendor:enrich": "npx tsx scripts/generate-vendor-enrichments.ts",
-    "check:header": "npx tsx scripts/check-header-contrast.ts"
+    "check:header": "npx tsx scripts/check-header-contrast.ts",
+    "check:sitemap": "tsx scripts/check-sitemap-canonicals.ts"
   },
   "dependencies": {
     "lucide-react": "^1.7.0",

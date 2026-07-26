@@ -12,18 +12,29 @@ import { isPublishableArticle } from './[locale]/blog/[slug]/page'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://stevin.ai'
 
-  const staticPages = [
+  // DE REGEL (26 jul 2026): een URL hoort alleen in de sitemap als hij naar
+  // zichzelf canonicalt. Stond een pagina er wel in maar wees zijn canonical
+  // ergens anders heen, dan vraag je Google om te crawlen en zeg je daarna dat
+  // hij het resultaat moet weggooien. Dat kostte 284 van de 901 sitemap-URLs,
+  // op een domein waar Google zichtbaar op crawlbudget beknibbelt: twee
+  // landingspagina's van 6 juli waren op 26 juli nog nooit gecrawld.
+  //
+  // Vandaar twee lijsten. Alleen wat echt vertaald is krijgt een /en-entry.
+  // Nieuwe pagina toevoegen: staat de Engelse versie op /en met een canonical
+  // naar zichzelf, dan hier; serveert /en Nederlandse tekst of canonicalt hij
+  // naar NL, dan in nlOnlyPages. `npm run check:sitemap` toetst dat live.
+
+  // Echt vertaald via messages/en.json, /en canonicalt naar zichzelf.
+  // Geverifieerd tegen productie op 26 juli 2026.
+  const translatedPages = [
+    '',
     '/google-ads-uitbesteden',
     '/social-media-uitbesteden',
     '/voor-ondernemers',
     '/voor-marketingteams',
     '/controle',
-    '/blog',
-    '',
     '/mkb',
     '/retail',
-    '/google-ad-grants-belgie',
-    '/google-ad-grants-nederland',
     // Verticals nu geindexeerd (besluit 4 jul): eigen belofte + data-spine per sector
     '/voor-musea',
     '/voor-dealers',
@@ -34,10 +45,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/marketing-automation',
     '/seo',
     '/geo',
+    '/integraties',
+    '/case-studies',
+    '/contact',
+    '/simon-stevin',
+  ]
+
+  // NL-only: /en serveert hier dezelfde Nederlandse tekst en canonicalt naar
+  // de NL-URL. Alleen de NL-entry, en ook geen en-hreflang.
+  const nlOnlyPages = [
+    '/blog',
+    '/google-ad-grants-belgie',
+    '/google-ad-grants-nederland',
+    '/case-studies/e-commerce',
     // Productpagina's (de Stevin-suite)
     '/producten',
     ...products.map((p) => `/producten/${p.slug}`),
-    '/integraties',
     // Categorie-hub pagina's, alleen de indexeerbare (zie NOINDEX_INTEGRATION_CATEGORIES)
     ...categories.filter((c) => isIndexableIntegrationCategory(c.slug)).map((c) => `/integraties/${c.slug}`),
     // Vendor-detail pagina's, alleen de indexeerbare (off-topic categorieen eruit)
@@ -51,10 +74,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Woordenboek (programmatic SEO playbook "wat is X")
     '/woordenboek',
     ...glossary.map((t) => `/woordenboek/${t.slug}`),
-    '/case-studies',
-    '/case-studies/e-commerce',
-    '/contact',
-    '/simon-stevin',
     // /agency-scan en /audit weggelaten, hebben noindex
     // /llms.txt weggelaten, is geen HTML-pagina
   ]
@@ -68,6 +87,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const altLangs = (path: string) => ({
     'nl-NL': `${baseUrl}${path}`,
     'en': `${baseUrl}/en${path}`,
+    'x-default': `${baseUrl}${path}`,
+  })
+
+  // NL-only pagina's mogen geen en-hreflang adverteren: dat wijst naar een URL
+  // die terugcanonicalt naar deze pagina, en dat is hetzelfde rondje.
+  const nlAlleen = (path: string) => ({
+    'nl-NL': `${baseUrl}${path}`,
     'x-default': `${baseUrl}${path}`,
   })
 
@@ -88,18 +114,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Statische pagina's: geen lastModified (voorkomt dat crawlers het veld negeren)
-  const nlEntries: MetadataRoute.Sitemap = staticPages.map((path) => ({
+  const nlEntries: MetadataRoute.Sitemap = translatedPages.map((path) => ({
     url: `${baseUrl}${path}`,
     changeFrequency: (path === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
     priority: priorityFor(path),
     alternates: { languages: altLangs(path) },
   }))
 
-  const enEntries: MetadataRoute.Sitemap = staticPages.map((path) => ({
+  const enEntries: MetadataRoute.Sitemap = translatedPages.map((path) => ({
     url: `${baseUrl}/en${path}`,
     changeFrequency: (path === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
     priority: Math.max(0.3, priorityFor(path) - 0.1),
     alternates: { languages: altLangs(path) },
+  }))
+
+  const nlOnlyEntries: MetadataRoute.Sitemap = nlOnlyPages.map((path) => ({
+    url: `${baseUrl}${path}`,
+    changeFrequency: 'monthly' as const,
+    priority: priorityFor(path),
+    alternates: { languages: nlAlleen(path) },
   }))
 
   // SEO-landingspagina's: NL-only content, canonical naar NL, dus geen /en-entry
@@ -128,5 +161,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  return [...nlEntries, ...enEntries, ...landingEntries, ...blogEntries, ...standaloneEnEntries]
+  return [...nlEntries, ...enEntries, ...nlOnlyEntries, ...landingEntries, ...blogEntries, ...standaloneEnEntries]
 }
