@@ -191,6 +191,36 @@ export const glossary: GlossaryTerm[] = [
     relatedTerms: ['agentic-ai', 'rpa'],
     publishedAt: '2026-05-05',
   },
+  {
+    slug: 'first-party-data',
+    term: 'First-party data',
+    category: 'meetbaarheid',
+    shortDefinition:
+      'First-party data is de data die je zelf verzamelt bij je eigen klanten en bezoekers, op je eigen website, in je eigen CRM en je eigen advertentieaccounts, zonder tussenpartij.',
+    fullDefinition:
+      'First-party data is alles wat je zelf hebt opgehaald: bestellingen in je webshop, aanvragen via je formulier, gesprekken in je CRM, gedrag op je eigen site. Daarnaast bestaat second-party data (de first-party data van een partner, gedeeld met jou) en third-party data (gekocht bij een partij die het elders verzamelde). Die laatste categorie loopt snel terug, want browsers blokkeren cookies van derden en de privacywetgeving stelt zwaardere eisen. Het gevolg is dat de kwaliteit van je advertenties steeds meer afhangt van wat je zelf hebt. Twee dingen bepalen of first-party data iets waard is. Ten eerste: staat het op jouw naam? Een advertentieaccount of meetopstelling die van je bureau is, betekent dat de opgebouwde geschiedenis daar blijft als je weggaat. Ten tweede: is het aan elkaar geknoopt? Losse data in vijf systemen die elkaar niet kennen levert geen beeld op, alleen vijf halve beelden.',
+    example:
+      'Een installatiebedrijf adverteert op Google, krijgt aanvragen via een formulier en verwerkt die in een CRM. De advertenties melden dertig conversies. In het CRM staan achttien echte aanvragen, waarvan zeven een offerte werden en twee een opdracht. Alleen door die twee bronnen aan elkaar te knopen zie je welke zoektermen omzet opleverden en welke alleen formulieren. Dat koppelen kan alleen met first-party data, want de advertentieplatformen weten niet wat er in je CRM gebeurt.',
+    stevinView:
+      'Wij zetten de accounts en de meetopstelling op naam van de klant zelf, ook als wij ze beheren. Dat klinkt als een detail tot iemand wil wisselen: dan gaat de opgebouwde geschiedenis mee in plaats van achter te blijven. Begin klein. Zorg eerst dat aanvragen uit je site in je CRM landen met de bron erbij, en dat je advertentieaccounts op je eigen naam staan. Dat zijn twee middagen werk en het is de basis waar al het meten daarna op rust.',
+    relatedTerms: ['attribution', 'last-click', 'uplift-meting'],
+    publishedAt: '2026-07-27',
+  },
+  {
+    slug: 'feed-management',
+    term: 'Feed management',
+    category: 'platforms',
+    shortDefinition:
+      'Feed management is het klaarmaken en actueel houden van je productgegevens voor advertentie- en verkoopkanalen, zodat titel, prijs, voorraad en beeld overal kloppen.',
+    fullDefinition:
+      'Een productfeed is het bestand waarmee je webshop zijn artikelen doorgeeft aan kanalen als Google Shopping, Meta, Bol of een vergelijkingssite. Feed management is het werk eromheen: velden vullen die je shop niet standaard levert, titels herschrijven naar wat mensen echt zoeken, categorieen toewijzen, artikelen zonder voorraad eruit halen en de prijs synchroon houden. Het is onzichtbaar werk dat direct doorwerkt in wat je advertenties kosten. Een product met een slechte titel wordt getoond op de verkeerde zoekopdracht, en dan betaal je voor een klik die nooit een klant wordt. Een product dat uitverkocht is maar nog in de feed staat, kost je geld en een teleurgestelde bezoeker. De meeste winst zit niet in het bieden maar in de feed: welke artikelen doen mee, hoe heten ze, en klopt wat erin staat.',
+    example:
+      'Een webshop in autoaccessoires heeft 4.000 artikelen met titels uit het magazijnsysteem, zoals "ART-4471 mat zw". Niemand zoekt daarop. Na het herschrijven van de titels naar "rubberen automat zwart, set van vier" gaan dezelfde artikelen meedoen op zoekopdrachten die mensen werkelijk intypen. Er is geen euro extra budget nodig; de advertenties komen alleen op de goede plek terecht.',
+    stevinView:
+      'Wij behandelen de feed als onderdeel van de campagne, niet als techniek die iemand anders doet. Bij een webshop kijken we eerst naar de feed voordat we aan biedingen beginnen, want een verkeerde titel of een ontbrekende maat kost meer dan een verkeerd bod. En net als bij de rest: de feed en de regels eromheen blijven van de klant, zodat een overstap geen herbouw is.',
+    relatedTerms: ['performance-max', 'roas'],
+    publishedAt: '2026-07-27',
+  },
 ]
 
 export function getGlossaryTerm(slug: string): GlossaryTerm | undefined {
