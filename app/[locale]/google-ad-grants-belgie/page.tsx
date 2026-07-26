@@ -8,7 +8,7 @@ import FAQAccordion from '@/components/FAQAccordion'
 type Props = { params: Promise<{ locale: string }> }
 
 export const metadata: Metadata = {
-  title: 'Google Ad Grants aanvragen voor VZW\'s en stichtingen | Stevin',
+  title: 'Google Ad Grants aanvragen voor VZW\'s',
   description:
     'Check of je VZW, IVZW of stichting in aanmerking komt voor Google Ad Grants. Stevin scant je website en helpt je aanvraag voorbereiden.',
   alternates: { canonical: 'https://stevin.ai/google-ad-grants-belgie' },

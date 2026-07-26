@@ -144,10 +144,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: '/social-media-uitbesteden',
     locale,
     title: isNl
-      ? 'Social media uitbesteden met cijfers die iets betekenen'
+      ? 'Social media uitbesteden, gemeten op aanvragen'
       : 'Outsource social media with numbers that mean something',
     description: isNl
-      ? 'Social media en Meta Ads uitbesteden vanaf 399 per maand. Eerst een diagnose op je eigen data, accounts op je eigen naam, en meten op aanvragen in plaats van bereik.'
+      ? 'Social en Meta Ads vanaf 399 per maand. Accounts op je eigen naam, en meten op aanvragen in plaats van bereik.'
       : 'Outsource social media and Meta Ads from 399 per month. First a diagnosis on your own data, accounts in your own name, measured on enquiries instead of reach.',
   })
 }

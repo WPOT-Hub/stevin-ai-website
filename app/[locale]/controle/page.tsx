@@ -94,9 +94,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return localizedMetadata({
     path: '/controle',
     locale,
-    title: isNl ? 'Controle · elke wijziging heeft een naam, een moment en een reden' : 'Control · every change has a name, a moment and a reason',
+    title: isNl ? 'Controle: elke wijziging met naam en reden' : 'Control · every change has a name, a moment and a reason',
     description: isNl
-      ? 'Vertrouw ons niet op ons woord: elk besluit staat in een logboek, accounts en data blijven van jou, en het bewijs staat deels buiten ons om. Zo controleer je het zelf.'
+      ? 'Elk besluit staat in een logboek, je accounts en data blijven van jou, en een deel van het bewijs staat buiten ons om.'
       : 'Do not take our word for it: every decision is logged, accounts and data stay yours, and part of the proof sits outside of us. Here is how to check it yourself.',
   })
 }

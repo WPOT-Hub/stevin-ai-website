@@ -217,7 +217,7 @@
   },
   "contact": {
     "title": "Plan een gesprek",
-    "desc": "Vertel ons waar je tegenaan loopt of wat je wilt bereiken. We denken graag mee over hoe je systemen, data en opvolging beter op elkaar kunnen aansluiten, en waar Stevin het werk uit handen kan nemen.",
+    "desc": "Vertel waar je tegenaan loopt. We kijken mee naar je systemen, je data en je opvolging, en waar Stevin werk kan overnemen.",
     "location_label": "Locaties",
     "location_value": "Werkzaam vanuit Breda en Antwerpen.",
     "response_label": "Reactietijd",
@@ -386,7 +386,7 @@
     "hero_badge": "tools en platforms",
     "h1_line1": "Integraties voor een",
     "h1_accent": "werkend systeem",
-    "sub": "Van marketing en sales tot finance, ERP, planning, HR en bouw. Stevin koppelt met de systemen die je al gebruikt. Staat jouw systeem er niet bij? Vaak kunnen we de koppeling alsnog realiseren.",
+    "sub": "Stevin koppelt met de systemen die je al gebruikt, van marketing en sales tot ERP, planning en bouw. Staat het jouwe er niet bij, vaak kan het alsnog.",
     "categories_eyebrow": "Categorieen",
     "categories_h2": "Ontdek per categorie",
     "all_eyebrow": "Alle tools",
@@ -419,10 +419,10 @@
     "detail_cta_btn": "Start de diagnose"
   },
   "seo": {
-    "meta_title": "SEO uitbesteden zonder je vindbaarheid uit handen te geven",
+    "meta_title": "SEO uitbesteden, je vindbaarheid blijft van jou",
     "eyebrow": "SEO uitbesteden",
     "h1": "SEO uitbesteden. Zonder blind te varen.",
-    "sub": "Je wilt hoger in Google komen zonder maandelijks een rapport te krijgen dat je niet kunt narekenen. Wij zetten je organische vindbaarheid goed, letten er dag en nacht op, en alles wat we bouwen blijft van jou: je content, je data, je posities.",
+    "sub": "Hoger in Google zonder een rapport dat je niet kunt narekenen. Je content, je data en je posities blijven van jou.",
     "tech_h2": "Technische basis, contentstructuur en landingspagina's",
     "tech_p": "Goede SEO begint bij een technisch gezonde website. Snelle laadtijden, correcte indexering, gestructureerde data en een logische sitestructuur. Stevin ziet waar je content aansluit op wat je doelgroep zoekt, en waar niet, niet op volume maar op relevantie.",
     "tech_box1_h3": "Technische SEO",
@@ -1305,7 +1305,7 @@
   },
   "multiMarket": {
     "meta_title": "Multi-market marketing mix modeling | Stevin",
-    "meta_description": "Een Bayesiaans model, elke markt, wekelijkse recommendations. Cross-market budgetherallocatie in 2-4 weken. Geen jaarcontract. Gebouwd op het idee dat marketingwiskunde niet stopt bij een grens.",
+    "meta_description": "Een model per markt, elke week bijgewerkt. Budget herverdelen over markten in twee tot vier weken, zonder jaarcontract.",
     "eyebrow": "Multi-market",
     "hero_headline_1": "Een model.",
     "hero_headline_2": "Elke markt.",
@@ -1428,8 +1428,8 @@
     "faq_6_a": "Allebei, en geen van beide doet alsof het de ander is. Het platform doet de wiskunde. Mensen bij Stevin pakken de recommendations op en zijn samen met jou eigenaar van de uitkomst."
   },
   "marketingAutomation": {
-    "meta_title": "Marketing Automation, automation die ruikt naar mens, niet naar template | Stevin",
-    "meta_description": "Wij bouwen marketing-automation die niet voelt als marketing-automation. Geen drip-campagnes, geen template-trein, maar flows die op echte signalen draaien (gesprekken, agenda, gedrag). Dit is hoe we het zelf doen.",
+    "meta_title": "Marketing automation die naar mens klinkt | Stevin",
+    "meta_description": "Geen drip-campagnes en geen template-trein, maar flows die op echte signalen draaien: gesprekken, agenda, gedrag.",
     "eyebrow": "MARKETING AUTOMATION",
     "hero_h1": "Automation die niet ruikt naar",
     "hero_h1_accent": "automation.",
@@ -1471,7 +1471,7 @@
   "autodealers": {
     "eyebrow": "VOOR DEALER GROEPEN",
     "h1": "Per merk, per vestiging, per regio.",
-    "sub": "De AI-laag over je marketing en sales, voor dealergroepen met meerdere merken en vestigingen. Stevin koppelt je ads, DMS, voorraad en CRM tot je eigen databeeld en signaleert dezelfde dag waar performance afwijkt, zonder te wachten op de maandrapportage van het bureau.",
+    "sub": "Ads, DMS, voorraad en CRM in een beeld, per merk en per vestiging. Zelfde dag een signaal als het afwijkt, niet pas in de maandrapportage.",
     "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",
@@ -1840,7 +1840,7 @@
   "musea": {
     "eyebrow": "VOOR MUSEA EN CULTUUR",
     "h1": "Bezoekers, leden, donaties, in 1 beeld.",
-    "sub": "De AI-laag over je marketing en communicatie, voor musea, cultuurinstellingen en non-profits. Stevin koppelt ticketing, donatiesysteem, CRM en je media-kanalen tot je eigen databeeld, signaleert dezelfde dag waar bezoek of fondsenwerving afwijkt en gebruikt Google Ad Grants zoals het hoort.",
+    "sub": "Ticketing, donaties, CRM en je kanalen in een beeld. Zelfde dag een signaal als bezoek of fondsenwerving afwijkt, en Google Ad Grants zoals het hoort.",
     "cta_primary": "Start de diagnose",
     "cta_secondary": "Bekijk het platform",
     "pain_eyebrow": "DE REALITEIT",

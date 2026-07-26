@@ -147,10 +147,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: '/google-ads-uitbesteden',
     locale,
     title: isNl
-      ? 'Google Ads uitbesteden zonder je data en controle kwijt te raken'
+      ? 'Google Ads uitbesteden, alles blijft van jou'
       : 'Outsource Google Ads without losing your data and control',
     description: isNl
-      ? 'Google Ads uitbesteden vanaf 399 per maand, met je accounts op je eigen naam, elke wijziging in een logboek en geen marge op je mediabudget. Eerst een diagnose op je eigen cijfers.'
+      ? 'Vanaf 399 per maand, accounts op je eigen naam, elke wijziging in een logboek en geen marge op je mediabudget.'
       : 'Outsource Google Ads from 399 per month, with accounts in your own name, every change logged and no margin on your media budget. First a diagnosis on your own numbers.',
   })
 }

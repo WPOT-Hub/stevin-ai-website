@@ -14,10 +14,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     locale,
     title: isEn
       ? 'Stevin for Marketing · One intelligence layer over your full stack'
-      : 'Stevin voor Marketing · Een intelligentie-laag boven je hele stack',
+      : 'Stevin voor marketingteams',
     description: isEn
       ? 'For marketing teams and agencies that don\'t want to wait for the monthly report. Stevin connects paid and owned media and signals where revenue, margin or attention is leaking.'
-      : 'Voor marketing-teams en bureaus die niet willen wachten op het maandrapport. Stevin verbindt paid en owned media en signaleert waar je omzet, marge of aandacht misloopt.',
+      : 'Voor teams en bureaus die niet op het maandrapport willen wachten. Paid en owned media in een beeld, met een signaal zodra het afwijkt.',
     image: isEn
       ? 'https://stevin.ai/en/marketing/opengraph-image'
       : 'https://stevin.ai/marketing/opengraph-image',

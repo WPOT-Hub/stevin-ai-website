@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         default: 'Stevin.AI · Wij regelen je marketing goed. Alles blijft van jou.',
         template: '%s | Stevin.AI',
       },
-      description: 'Stevin zet je marketing goed en let er dag en nacht op. Eerst een diagnose op jouw eigen data, daarna pas een voorstel. Je accounts, je data en je kennis blijven van jou.',
+      description: 'Je marketing goed geregeld, met dag en nacht een oog erop. Je accounts, je data en je kennis blijven van jou.',
       openGraph: {
         type: 'website',
         locale: 'nl_NL',

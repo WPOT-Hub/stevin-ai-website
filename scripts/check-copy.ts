@@ -138,3 +138,7 @@ async function main() {
 }
 
 main().catch((e) => { console.error('Mislukt:', e.message); process.exit(1) })
+
+// Losse scripts zonder import/export delen anders de globale scope,
+// waardoor TypeScript klaagt over dubbele namen zoals BASIS.
+export {}

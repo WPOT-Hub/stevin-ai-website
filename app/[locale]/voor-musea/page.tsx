@@ -9,7 +9,7 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'musea' })
-  return localizedMetadata({ path: '/voor-musea', locale, title: `Stevin ${t('eyebrow')}, ${t('h1')}`, description: t('sub') })
+  return localizedMetadata({ path: '/voor-musea', locale, title: 'Stevin voor musea en cultuur', description: t('sub') })
 }
 
 const featureIcons = [

@@ -14,10 +14,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: '/werkwijze',
     locale,
     title: isNl
-      ? 'Hoe Stevin werkt · van marketing-data naar concrete acties'
+      ? 'Hoe Stevin werkt: van data naar concrete acties'
       : 'How Stevin works · from marketing data to concrete actions',
     description: isNl
-      ? 'We koppelen je marketing-stack, lezen 24/7 mee en signaleren wat lekt. In plaats van een rapport krijg je een actie met de oorzaak erbij.'
+      ? 'Je stack gekoppeld, dag en nacht meegelezen. Geen rapport maar een actie, met de oorzaak erbij.'
       : 'We connect your marketing stack, read along 24/7, and signal what\'s leaking. Instead of a report you get an action with the cause attached.',
   })
 }
