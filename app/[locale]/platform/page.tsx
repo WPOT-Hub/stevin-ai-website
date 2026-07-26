@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // vervangen door "marketing en sales" (commit 3a5752e), maar deze titel is
     // toen blijven staan. Geen nieuwe positioneringskeuze, alleen het doortrekken
     // van een keuze die al gemaakt was.
-    title: 'Het platform, de AI-laag over je marketing en sales',
+    title: 'Het platform: je marketing en sales in een beeld',
     description: t('sub'),
   })
 }
