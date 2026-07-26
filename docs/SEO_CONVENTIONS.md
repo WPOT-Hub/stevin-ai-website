@@ -79,3 +79,29 @@ Twee filters om te kennen:
 - NOOIT em-dash of en-dash. Komma, punt, dubbele punt of haakjes.
 - Geen accenten in NL copy (echte, Belgie, categorieen), ook niet in JSON-LD.
 - Simon Stevin altijd "Vlaams-Nederlandse", nooit alleen Vlaams of Nederlands.
+
+## Controles die je kunt draaien (27 juli 2026)
+
+| Commando | Wat het toetst | Wanneer |
+|---|---|---|
+| `npm run build` | draait automatisch `check:sitemap:structuur` als prebuild | elke build |
+| `npm run check:sitemap` | haalt elke sitemap-URL op en eist zelf-canonical | na een deploy |
+| `npm run check:copy` | 39 pagina's op titel, omschrijving, H1 en verboden woorden | na copy-wijzigingen |
+
+De harde sitemap-regel: **een URL hoort alleen in de sitemap als hij naar zichzelf canonicalt.** Nieuwe pagina toevoegen in `app/sitemap.ts`: staat de Engelse versie op `/en` met een canonical naar zichzelf, dan in `translatedPages`; serveert `/en` Nederlandse tekst, dan in `nlOnlyPages`.
+
+Titelbudget: het sjabloon plakt er ` | Stevin.AI` achter (12 tekens). Houd de paginatitel zelf onder de 48 en schrijf er nooit zelf `| Stevin` bij.
+
+## Lokale dev-server geeft 500 met een JSON-parsefout
+
+Symptoom: pagina's geven lokaal een 500 met `SyntaxError: Unexpected non-whitespace character after JSON`, terwijl productie ze gewoon serveert. De positie in de melding verschuift per run.
+
+Oorzaak, voor zover vastgesteld: `npm run build` en `npm run dev` op dezelfde `.next`-map. Een productiebuild en de dev-server delen die map en laten elkaars artefacten staan.
+
+Remedie:
+
+```bash
+rm -rf .next && npm run dev
+```
+
+Draai een productiebuild en de dev-server niet door elkaar in dezelfde werkmap.
