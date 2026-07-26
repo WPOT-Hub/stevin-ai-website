@@ -36,10 +36,12 @@ const VERBODEN: Array<{ patroon: RegExp; waarom: string; hard: boolean }> = [
   { patroon: /–/, waarom: 'en-dash', hard: true },
   { patroon: /weglek|lekt weg|lekken weg/i, waarom: '"weglekt" over geld', hard: true },
   { patroon: /meetlat/i, waarom: 'meetlat, door Koen geschrapt motief (25 jul 2026)', hard: true },
-  // Bewust "let op" en niet "fout": Koen heeft de MEETLAT geschrapt, over
-  // "black box" heeft hij zich nooit uitgesproken. Dat het daarbij hoorde is
-  // een aanname, en die hoort niet als feit in een controle te staan.
-  { patroon: /black.?box/i, waarom: 'black box, hoorde bij het meetlat-verhaal; Koen moet zeggen of dit ook weg moet', hard: false },
+  // "black box" alleen melden als het NAAST "meetlat" staat. Dat koppel was de
+  // oude positionering. Los gebruikt, als beschrijving van een dichtgetimmerd
+  // vendorplatform, is het gewoon accuraat en past het bij controle en logboek.
+  // Een controle die op elk voorkomen aanslaat wordt genegeerd, en dan vang je
+  // ook de echte fouten niet meer.
+  { patroon: /black.?box[\s\S]{0,200}meetlat|meetlat[\s\S]{0,200}black.?box/i, waarom: 'black box naast meetlat, het gepensioneerde koppel', hard: true },
   { patroon: /AI-laag over je (operatie|hele bedrijf)/i, waarom: 'oude of te brede scope-claim', hard: true },
   { patroon: /data-eigenaarschap|eigenaarschap van data/i, waarom: 'moet "data ownership" zijn', hard: true },
   { patroon: /\b(B\.?V\.?|V\.?O\.?F\.?|N\.?V\.?|BVBA)\b/, waarom: 'rechtsvorm in copy', hard: false },

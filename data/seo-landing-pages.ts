@@ -607,6 +607,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       { label: 'Google Ads en GA4', href: '/google-ads-ga4' },
       { label: 'Marketing intelligence', href: '/marketing-intelligence' },
       { label: 'Platform', href: '/platform' },
+      { label: 'Wat is first-party data?', href: '/woordenboek/first-party-data' },
     ],
   },
   {
