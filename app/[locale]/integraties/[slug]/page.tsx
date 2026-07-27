@@ -60,7 +60,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const title = locale === 'en'
       ? `${integration.name} integration and connection`
       : `${integration.name} koppeling en integratie`
-    const description = (en?.shortDescription ?? integration.shortDescription).slice(0, 155)
+    // De omschrijving beschreef alleen de leverancier: "Drupal koppeling en
+    // integratie" met daaronder "Enterprise CMS voor complexe websites". Wie op
+    // "drupal koppeling" zoekt heeft Drupal al en leest daar geen enkele reden
+    // in om te klikken. Deze pagina's staan op posities 9 tot 24 en haalden
+    // samen 1 klik in vier weken (GSC, 27 jul 2026).
+    // Nu: eerst wat het is (blijft uniek per leverancier, geen dubbele
+    // omschrijvingen over 222 pagina's), dan wat wij ermee doen.
+    // De belofte staat vooraan, want dat is wat een klik oplevert, en hij blijft
+    // uniek per pagina door de naam. De leveranciersomschrijving komt er alleen
+    // achter als hij nog past; zo wordt nooit midden in een zin afgekapt.
+    const wat = (en?.shortDescription ?? integration.shortDescription).replace(/\s*$/, '')
+    const belofte = locale === 'en'
+      ? `Stevin connects ${integration.name} to your ads, analytics and CRM, with the accounts in your own name.`
+      : `Stevin koppelt ${integration.name} aan je advertenties, meting en CRM, met de accounts op je eigen naam.`
+    const description =
+      belofte.length + 1 + wat.length <= 155 ? `${belofte} ${wat}` : belofte.slice(0, 155)
     const canonical = `https://stevin.ai/integraties/${slug}`
     const ogImage = `https://stevin.ai${locale === 'en' ? '/en' : ''}/opengraph-image`
     return {
