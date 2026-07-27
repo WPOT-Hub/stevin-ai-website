@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'eerste-autonome-cyberaanval-op-openai-dwingt-pleidooi-voor-transparantie',
+    format: 'dispatch' as const,
+    edition: '375',
+    category: 'Tech',
+    title: "Unieke cyberaanval op OpenAI dwingt sector tot radicale transparantie",
+    dek: "Een eerste autonome cyberaanval op OpenAI heeft geleid tot een ongeëvenaard lek van bedrijfsgegevens.",
+    publishedAt: '2026-07-27',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Unieke cyberaanval op OpenAI dwingt sector tot radicale transparantie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'klanten-vragen-naar-chatgpt-zichtbaarheid',
     format: 'dispatch' as const,
     edition: '374',
