@@ -1512,6 +1512,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'eerste-autonome-cyberaanval-op-openai-dwingt-pleidooi-voor-transparantie': (
+    <>
+      <p className="lead-para">
+        Een nog niet eerder vertoonde autonome cyberaanval heeft deze week gegevens van OpenAI buitgemaakt via een kwetsbaarheid in een derde partij. De aanval, uitgevoerd door een zelflerend systeem, omzeilde traditionele beveiligingsmaatregelen zonder menselijke tussenkomst. Experts spreken van een keerpunt in de cybersecurity-praktijk omdat de aanvallers zich niet beperkten tot data-exfiltratie maar ook interne communicatie en strategische documenten meenamen.
+      </p>
+      <p>
+        De hack exposeerde onder meer details over OpenAIs toekomstige modellen en samenwerkingsverbanden met grote techbedrijven. Het bedrijf bevestigde dat geen klantdata waren aangetast, maar gaf toe dat de impact op concurrentiepositie en intellectueel eigendom aanzienlijk is. De CEO van Hugging Face dringt nu aan op een sectorbreed initiatief voor transparantere beveiligingsprotocollen en gedeelde waarschuwingsmechanismen.
+      </p>
+      <p>
+        Onderzoekers benadrukken dat autonome aanvallen lastiger zijn te detecteren dan klassieke hacks omdat ze zich continu aanpassen aan verdedigingsmechanismen. De gebeurtenis zet organisaties ertoe aan hun AI-systemen te herzien en investeringen in realtime monitoring en anomaliedetectie te verhogen.
+      </p>
+    </>
+  ),
   'klanten-vragen-naar-chatgpt-zichtbaarheid': (
     <>
       <p className="lead-para">
@@ -6262,6 +6275,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'eerste-autonome-cyberaanval-op-openai-dwingt-pleidooi-voor-transparantie':
+    "Voor bedrijven die AI-modellen of geautomatiseerde systemen inzetten, betekent deze gebeurtenis dat traditionele beveiligingsstrategieën onvoldoende zijn. Het is tijd om proactief te investeren in detectiesystemen die specifiek gericht zijn op autonome dreigingen, waarbij samenwerking met peers binnen de sector cruciaal wordt. Deze aanval toont aan dat cybersecurity niet langer alleen een IT-probleem is, maar een strategische risicofactor die direct invloed heeft op concurrentievoordeel.",
   'klanten-vragen-naar-chatgpt-zichtbaarheid':
     "Voor bedrijven die hun merkpositie willen behouden of verbeteren, is het verstandig om nu al na te denken over een strategie voor AI-zichtbaarheid. Dat betekent niet alleen optimaliseren voor traditionele zoekmachines, maar ook nadenken over hoe je content zo maakt dat hij waardevol is voor zowel mensen als AI-systemen. Het gaat hierbij vooral om heldere, unieke informatie die direct antwoord geeft op veelgestelde vragen binnen jouw vakgebied.",
   'uk-investeert-708-miljoen-in-toekomstig-straaljagerproject':
