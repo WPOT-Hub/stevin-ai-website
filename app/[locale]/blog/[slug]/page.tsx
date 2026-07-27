@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation'
 import { articles, getArticle, getRelatedArticles, type Article } from '@/data/articles'
 import { getArticleFaqs } from '@/data/faqs'
 import ReadingProgress from '@/components/blog/ReadingProgress'
+import { metaOmschrijving } from '@/lib/seo'
 
 // ── Publicatie-vangrail ─────────────────────────────────────────────────────
 // De auto-publish doet het in twee stappen: eerst het artikel-record, daarna
@@ -39,11 +40,11 @@ export async function generateMetadata({
   const ogImage = `https://stevin.ai/blog/${a.slug}/opengraph-image`
   return {
     title: `${a.title} | Stevin Journal`,
-    description: a.dek,
+    description: metaOmschrijving(a.dek),
     openGraph: {
       type: 'article',
       title: a.title,
-      description: a.dek,
+      description: metaOmschrijving(a.dek),
       publishedTime: a.publishedAt,
       modifiedTime: a.updatedAt ?? a.publishedAt,
       authors: [a.author.name],
@@ -52,7 +53,7 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: a.title,
-      description: a.dek,
+      description: metaOmschrijving(a.dek),
       images: [ogImage],
     },
     alternates: {
@@ -95,7 +96,7 @@ export default async function ArticlePage({
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.title,
-    description: article.dek,
+    description: metaOmschrijving(article.dek),
     image: `https://stevin.ai/blog/${article.slug}/opengraph-image`,
     datePublished: article.publishedAt,
     dateModified: article.updatedAt ?? article.publishedAt,

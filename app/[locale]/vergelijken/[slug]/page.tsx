@@ -7,6 +7,7 @@ import CTABlock from '@/components/CTABlock'
 import FAQAccordion from '@/components/FAQAccordion'
 import { comparisons, getComparison } from '@/data/comparisons'
 import { getIntegrationBySlug } from '@/lib/utils'
+import { metaOmschrijving } from '@/lib/seo'
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>
@@ -25,12 +26,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ogImage = `https://stevin.ai${locale === 'en' ? '/en' : ''}/opengraph-image`
   return {
     title: comparison.title,
-    description: comparison.dek,
+    description: metaOmschrijving(comparison.dek),
     alternates: { canonical },
     openGraph: {
       type: 'article',
       title: comparison.title,
-      description: comparison.dek,
+      description: metaOmschrijving(comparison.dek),
       url: canonical,
       publishedTime: comparison.publishedAt,
       modifiedTime: comparison.updatedAt ?? comparison.publishedAt,
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: comparison.title,
-      description: comparison.dek,
+      description: metaOmschrijving(comparison.dek),
       images: [ogImage],
     },
   }
@@ -60,7 +61,7 @@ export default async function ComparisonPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: comparison.title,
-    description: comparison.dek,
+    description: metaOmschrijving(comparison.dek),
     image,
     datePublished: comparison.publishedAt,
     dateModified: comparison.updatedAt ?? comparison.publishedAt,

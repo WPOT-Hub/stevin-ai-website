@@ -76,3 +76,26 @@ export function localizedMetadata(opts: LocalizedMetadataOpts): Metadata {
     },
   }
 }
+
+/**
+ * Kapt een omschrijving af op een lengte die Google niet zelf afkapt.
+ *
+ * Deks van artikelen en vergelijkingen zijn geschreven om te lezen, niet om in
+ * een zoekresultaat te passen: op 27 juli 2026 waren ze tot 316 tekens lang,
+ * over 325 blogpagina's. Google toont er ongeveer 155 van en breekt de rest
+ * middenin een woord af.
+ *
+ * Liever op een zinseinde stoppen dan op een woordgrens, want een halve zin
+ * leest als een fout. Geen beletselteken: Google zet er zelf al een.
+ */
+export function metaOmschrijving(tekst: string, max = 155): string {
+  const t = (tekst ?? '').replace(/\s+/g, ' ').trim()
+  if (t.length <= max) return t
+
+  const kort = t.slice(0, max)
+  const zinEinde = Math.max(kort.lastIndexOf('. '), kort.lastIndexOf('! '), kort.lastIndexOf('? '))
+  if (zinEinde > max * 0.45) return kort.slice(0, zinEinde + 1)
+
+  const woordGrens = kort.lastIndexOf(' ')
+  return kort.slice(0, woordGrens > 0 ? woordGrens : max).replace(/[,;:.]$/, '')
+}
