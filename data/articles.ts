@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'microsofts-ai-bom-in-cybersecurity-hoe-agenten-de-battle-gaan-winnen',
+    format: 'dispatch' as const,
+    edition: '378',
+    category: 'Platform',
+    title: "Microsoft gooit een AI-bom in cybersecurity: de agenten zijn los",
+    dek: "Met een nieuw AI-model en een agentensysteem zet Microsoft de standaard voor cyberverdediging op scherp, maar wie draait straks de kraan dicht als de systemen zelf te slim worden?",
+    publishedAt: '2026-07-28',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Microsoft gooit een AI-bom in cybersecurity: de agenten zijn los",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-infrastructuur-onder-druk-door-energievraag-techcrunch-disrupt-2026',
     format: 'dispatch' as const,
     edition: '377',
