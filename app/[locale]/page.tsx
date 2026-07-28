@@ -63,6 +63,7 @@ const COPY = {
     fig_after_ticks: ['W1', 'W2', 'W3', 'W4'],
     fig_caption: 'Geanonimiseerd voorbeeld uit een echte diagnose. Elke wijziging die wij doen staat in ditzelfde logboek, en jij kijkt altijd mee.',
     checks_cta: 'Wij lopen deze checks met je door',
+    checks_link: 'Zo controleer je ons',
 
     how_eyebrow: 'Hoe het werkt',
     how_h2: 'Eerst bewijzen, dan pas beheren.',
@@ -190,6 +191,7 @@ const COPY = {
     fig_after_ticks: ['W1', 'W2', 'W3', 'W4'],
     fig_caption: 'Anonymised example from a real diagnosis. Every change we make lands in this same log, and you always look along.',
     checks_cta: 'We will walk these checks through with you',
+    checks_link: 'How to check up on us',
 
     how_eyebrow: 'How it works',
     how_h2: 'Prove it first, then manage it.',
@@ -479,81 +481,53 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── KIJK ZELF MEE ── */}
-      <section id="kijk-zelf-mee" className="bg-surface scroll-mt-24" style={{ padding: '96px 24px' }}>
+      {/* ── KIJK ZELF MEE (compact) ── */}
+      {/* Was drie kaarten plus een logboekfiguur: een volle schermhoogte
+          voordat iemand zag wat we verkopen. Die checks zijn sterk IN een
+          gesprek, waar je het scherm deelt en hij het live ziet gebeuren. Los
+          op een pagina is het huiswerk: inloggen bij Google Ads, een logboek
+          openen, aanvragen tellen. Vrijwel niemand doet dat, en wie het wel
+          doet, doet het in plaats van contact opnemen.
+          De blauwdruk noteert het zelf bij check 01: "faalde de hardop-test
+          omdat iedereen denkt dat hij dat weet."
+          Uitgebreide versie plus de logboekfiguur staan op /controle. */}
+      <section id="kijk-zelf-mee" className="bg-surface scroll-mt-24" style={{ padding: '80px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <div className="flex justify-between items-end gap-12 mb-14 flex-col lg:flex-row">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] lg:items-center">
             <div>
               <p className={eyebrowLight}>{dashLight}{c.checks_eyebrow}</p>
-              <h2 className="font-display font-extrabold text-primary m-0" style={{ ...h2Style, maxWidth: '18ch' }}>
+              <h2 className="font-display font-extrabold text-primary m-0" style={{ ...h2Style, maxWidth: '16ch' }}>
                 {c.checks_h2}
               </h2>
+              <p className="text-muted leading-[1.6]" style={{ fontSize: '16px', maxWidth: '46ch', marginTop: '18px' }}>
+                {c.checks_sub}
+              </p>
             </div>
-            <p className="text-muted leading-[1.55] max-w-[340px]" style={{ fontSize: '15px' }}>
-              {c.checks_sub}
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {c.checks.map((item, i) => (
-              <article key={item.t} className="rounded-[14px] bg-white border border-border p-8">
-                <p className="font-mono text-[11px] text-muted mb-5">{String(i + 1).padStart(2, '0')}</p>
-                <h3 className="font-display font-bold text-primary mb-3" style={{ fontSize: '19px', letterSpacing: '-0.01em', lineHeight: '1.25' }}>
-                  {item.t}
-                </h3>
-                <p className="text-muted leading-[1.6] mb-5" style={{ fontSize: '14.5px' }}>{item.d}</p>
-                <p className="text-primary font-display font-semibold pt-4 border-t border-border" style={{ fontSize: '14px' }}>
-                  {item.r}
-                </p>
-              </article>
-            ))}
-          </div>
-
-          {/* fig. 01: logboek voor/na */}
-          <div className="rounded-[14px] bg-white border border-border p-8 lg:p-10">
-            <p className="font-mono text-[11px] text-muted uppercase tracking-[0.1em] mb-8">
-              {c.fig_label} &middot; {c.fig_title}
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {[
-                { label: c.fig_before, ticks: c.fig_before_ticks, bars: [10, 4, 0, 7, 0, 4], dim: true },
-                { label: c.fig_after, ticks: c.fig_after_ticks, bars: [34, 26, 38, 30], dim: false },
-              ].map((chart) => (
-                <div key={chart.label}>
-                  <p className="font-display font-semibold text-primary text-[14px] mb-5">{chart.label}</p>
-                  <div className="flex items-end gap-3" style={{ height: '64px' }}>
-                    {chart.bars.map((h, i) => (
-                      <div key={i} className="flex-1 flex flex-col items-center justify-end h-full gap-2">
-                        <div
-                          className="w-full rounded-t-[3px]"
-                          style={{
-                            height: `${Math.max(h, 2)}px`,
-                            backgroundColor: chart.dim ? 'var(--color-border)' : 'var(--color-accent-light)',
-                          }}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex gap-3 mt-2">
-                    {chart.ticks.map((tick) => (
-                      <span key={tick} className="flex-1 text-center font-mono text-[10px] text-muted">{tick}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
+            <div>
+              <ol className="m-0 p-0 list-none">
+                {c.checks.map((item, i) => (
+                  <li
+                    key={item.t}
+                    className="flex items-baseline gap-4 border-t border-border"
+                    style={{ padding: '16px 0' }}
+                  >
+                    <span className="font-mono text-[11px] text-muted flex-shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="font-display font-semibold text-primary" style={{ fontSize: '16px', lineHeight: '1.4' }}>
+                      {item.t}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              <div className="flex flex-wrap items-center gap-x-7 gap-y-3" style={{ marginTop: '26px' }}>
+                <Link href="/contact" className="font-display font-semibold text-accent inline-flex items-center gap-2" style={{ fontSize: '15px' }}>
+                  {c.checks_cta} &rarr;
+                </Link>
+                <Link href="/controle" className="font-display font-semibold text-muted hover:text-primary transition-colors inline-flex items-center gap-2" style={{ fontSize: '15px' }}>
+                  {c.checks_link} &rarr;
+                </Link>
+              </div>
             </div>
-            <p className="text-muted text-[13px] leading-[1.55] mt-8 m-0" style={{ maxWidth: '560px' }}>
-              {c.fig_caption}
-            </p>
-          </div>
-
-          <div className="mt-10">
-            <Link
-              href="/contact"
-              className="font-display font-semibold text-accent text-[15px] inline-flex items-center gap-2 hover:gap-3 transition-all"
-            >
-              {c.checks_cta} <span aria-hidden="true">&rarr;</span>
-            </Link>
           </div>
         </div>
       </section>
