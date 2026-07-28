@@ -75,7 +75,20 @@ const COPY: Record<Locale, {
   },
 }
 
-export default function DeskProof({ locale }: { locale: string }) {
+export default function DeskProof({
+  locale,
+  toonBrein = true,
+}: {
+  locale: string
+  /**
+   * Het brein-blok aan of uit. Op de homepage uit: daar staat het brein al in
+   * de hero, en de sectie eronder ("Typ zomer") doet het geheugen beter, want
+   * daar zoek je zelf. Drie keer hetzelfde onderwerp op een pagina is precies
+   * de drukte die we bij Aizy nog net vermijden. Op de landingspagina's aan,
+   * want daar is geen hero-brein en geen geheugen-demo.
+   */
+  toonBrein?: boolean
+}) {
   const c = COPY[(locale === 'en' ? 'en' : 'nl') as Locale]
 
   return (
@@ -191,6 +204,7 @@ export default function DeskProof({ locale }: { locale: string }) {
             nu aandacht", de brein-kaart beantwoordt "en hoeveel weet dit ding
             eigenlijk". Twee vragen, dus twee objecten onder elkaar, niet twee
             beelden naast elkaar in een blok. */}
+        {toonBrein && (
         <div style={{ marginTop: '104px' }}>
           <div className="max-w-[640px]">
             <h3
@@ -228,6 +242,7 @@ export default function DeskProof({ locale }: { locale: string }) {
             <span className="text-accent font-semibold">{c.breinHint}</span>
           </p>
         </div>
+        )}
       </div>
     </section>
   )
