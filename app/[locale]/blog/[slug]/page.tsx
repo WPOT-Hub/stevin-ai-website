@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-infrastructuur-onder-druk-door-energievraag-techcrunch-disrupt-2026': (
+    <>
+      <p className="lead-para">
+        Op TechCrunch Disrupt 2026 staat de Smart Systems Stage in het teken van de spanning tussen technologische vooruitgang en energietransitie. De agenda belicht hoe AI niet alleen nieuwe kansen biedt, maar ook een ongekende druk legt op de bestaande energie-infrastructuur. Experts waarschuwen dat de vraag naar stroom voor datacenters binnen vijf jaar kan verdubbelen, aldus het rapport van de International Energy Agency (IEA).
+      </p>
+      <p>
+        Tijdens sessies wordt duidelijk dat bedrijven nu al moeten anticiperen op schaarste en prijsstijgingen. Lokale netbeheerders in Nederland en België melden dat sommige gebieden al tegen hun limieten aanlopen, vooral waar nieuwe datacenters gevestigd worden. Dit leidt tot vertragingen in projecten of zelfs afkeuringen van plannen door overheden die prioriteit geven aan huishoudens en industrie.
+      </p>
+      <p>
+        De discussie richt zich niet alleen op de technische uitdagingen, maar ook op de economische gevolgen. Investeerders staan voor een dilemma: blijven ze inzetten op AI-gestuurde innovatie of zoeken ze naar alternatieve oplossingen zoals groene energieprojecten of lokale opslagsystemen?
+      </p>
+    </>
+  ),
   'google-verplicht-passkeys-voor-google-ads-api': (
     <>
       <p className="lead-para">
@@ -6289,6 +6302,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-infrastructuur-onder-druk-door-energievraag-techcrunch-disrupt-2026':
+    "Voor ondernemers betekent dit dat de energievraag van AI een strategisch risico wordt dat meegenomen moet worden in langetermijnplanning. Bedrijven die nu al investeren in duurzame energiebronnen of samenwerken met netbeheerders, kunnen zich onderscheiden. Daarnaast wordt het belang van diversificatie van infrastructuur steeds duidelijker: wie afhankelijk is van één energiebron of locatie loopt extra risico.",
   'google-verplicht-passkeys-voor-google-ads-api':
     "Voor teams die dagelijks met de Google Ads API werken, is dit een signaal om authenticatieprocessen te herzien. Passkeys vereenvoudigen inloggen en verminderen risico’s op datalekken, maar vragen wel om eenmalige investering in implementatie. Het is verstandig om nu al actie te ondernemen, voordat bestaande tokens verlopen of nieuwe restricties volgen.",
   'eerste-autonome-cyberaanval-op-openai-dwingt-pleidooi-voor-transparantie':
