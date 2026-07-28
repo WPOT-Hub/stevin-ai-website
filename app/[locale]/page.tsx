@@ -126,6 +126,7 @@ const COPY = {
     price_eyebrow: 'Tarieven',
     price_value: 'Vanaf 399',
     price_period: 'per maand',
+    price_link: 'Bekijk alle tarieven',
     price_body: 'Alles laten beheren kan ook, op maat en altijd na de diagnose. Geen verborgen marges op je mediabudget, geen instaptarief dat stiekem verdubbelt. En stoppen kan altijd, met alles wat van jou is.',
 
     faq_eyebrow: 'Veelgestelde vragen',
@@ -254,6 +255,7 @@ const COPY = {
     price_eyebrow: 'Pricing',
     price_value: 'From 399',
     price_period: 'per month',
+    price_link: 'See all pricing',
     price_body: 'Full management is available too, tailored and always after the diagnosis. No hidden margins on your media budget, no entry price that quietly doubles. And you can always stop, with everything that is yours.',
 
     faq_eyebrow: 'Frequently asked questions',
@@ -852,6 +854,18 @@ export default async function HomePage({ params }: Props) {
           </p>
           <p className="text-muted leading-[1.65] mx-auto" style={{ fontSize: '16px', maxWidth: '46ch', marginTop: '24px' }}>
             {c.price_body}
+          </p>
+          {/* Doorklikken naar de tarievenpagina. Stond er tot 28 jul 2026 niet:
+              de homepage noemde een bedrag en de knop ging naar /contact, dus
+              wie wilde weten wat het kost kwam nergens. */}
+          <p style={{ marginTop: '18px' }}>
+            <Link
+              href="/tarieven"
+              className="font-display font-semibold text-accent inline-flex items-center gap-2"
+              style={{ fontSize: '15px' }}
+            >
+              {c.price_link}
+            </Link>
           </p>
           <div className="mt-9">
             <Link

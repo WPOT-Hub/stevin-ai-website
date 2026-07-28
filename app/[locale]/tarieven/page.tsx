@@ -4,9 +4,10 @@ import { Link } from '@/i18n/navigation'
 
 type Props = { params: Promise<{ locale: string }> }
 
-// VOORBEELDPAGINA, niet gelinkt en op noindex. Hier staat de tariefsectie zoals
-// die eruit zou zien na D-019 (28 jul 2026), tweede versie na Koens correctie
-// van 18:36:
+// De tarievenpagina. Was tot 28 jul 2026 een voorbeeld op /preview-tarieven
+// met noindex; nu de echte pagina waar "Vanaf 399" op de homepage naartoe
+// wijst. Model na D-019 (28 jul 2026), tweede versie na Koens correctie van
+// 18:36:
 //
 //   - De diagnose is geen keuze en dus geen prijskaart. Daar begint iedereen.
 //   - "Wij draaien het" is geen tijdelijke fase maar een blijvende optie. Uit de
@@ -19,12 +20,14 @@ type Props = { params: Promise<{ locale: string }> }
 // in de herken-sectie van de homepage staat: "Onze marketeer is weg. Alles zat
 // in zijn hoofd."
 //
-// Zodra dit akkoord is verhuist het naar de PRIJS-sectie in app/[locale]/page.tsx
-// en kan deze map weg.
+// Wat hier nog NIET staat, bewust: wat een losse fix kost. Dat bedrag is niet
+// gezet, en "prijs vooraf" is wel waar. Zodra het er is hoort het in de derde
+// kaart.
 
 export const metadata: Metadata = {
-  title: 'Voorbeeld tarieven',
-  robots: { index: false, follow: false },
+  title: 'Tarieven',
+  description:
+    'Iedereen begint met de diagnose. Daarna kies je: wij draaien het, wij draaien het en dragen over, of je doet het zelf met Stevin erbij. Vanaf 399 per maand.',
 }
 
 const COPY = {
@@ -57,7 +60,7 @@ const COPY = {
     {
       nr: '01',
       label: 'Voor wie er niet naar om wil kijken',
-      titel: 'Wij draaien het, punt',
+      titel: 'Wij doen alles',
       prijs: 'vanaf 798',
       prijsPer: 'per maand',
       prijsSub: 'doorlopend. Opstart vanaf 1.000 eenmalig.',
@@ -75,18 +78,18 @@ const COPY = {
       // Een looptijd is geen doelgroep. Aizy kwalificeert zijn kaarten op
       // mediabudget, waardoor je binnen twee seconden weet waar je hoort. Dat
       // werkt, dus benoem hier de persoon en zet de looptijd eronder.
-      label: 'Voor wie het straks zelf wil kunnen',
-      titel: 'Wij draaien het, en dragen over',
+      label: 'Voor wie het straks zelf wil doen',
+      titel: 'Wij starten je op',
       prijs: 'vanaf 798',
       prijsPer: 'per maand',
-      prijsSub: 'zes tot twaalf maanden, daarna 399',
+      prijsSub: 'zolang we meedraaien. Opstart vanaf 1.000 eenmalig.',
       body:
-        'Wij draaien het, en werken er ondertussen naartoe dat jij het kunt. Wat we doen en waarom komt in een dossier dat van jou is. Aan het eind schakel je over naar het abonnement en raak je niets kwijt.',
+        'Wij zetten het goed en draaien mee tot het staat. Wat we doen en waarom komt in een dossier dat van jou is, zodat je eigen mensen meeleren. Daarna ga je over op het abonnement.',
       punten: [
         'Alles uit de eerste optie',
         'Overdracht zit erin vanaf dag een',
         'Je eigen mensen leren mee',
-        'Daarna 399 per maand, zonder opnieuw beginnen',
+        'Daarna 399 per maand, met pay per fix erbij',
       ],
       accent: true,
       badge: 'Meest gekozen',
@@ -94,7 +97,7 @@ const COPY = {
     {
       nr: '03',
       label: 'Voor wie het werk elders belegt',
-      titel: 'Je doet het zelf',
+      titel: 'Je doet het zelf, met Stevin',
       prijs: '399',
       prijsPer: 'per maand',
       prijsSub: 'bij jaarbetaling, 499 per maand bij maandbetaling',
@@ -104,17 +107,17 @@ const COPY = {
       // het de sterkste zin van deze kaart. Zelfde regel als bij de scan: niets
       // beweren wat je niet kunt laten zien.
       body:
-        'Stevin kijkt mee op al je kanalen, ziet wat er misgaat en zet de oplossing klaar. Uitvoeren doet je eigen team, een freelancer of een ander bureau. Wil je het door ons laten doen, dan spreken we de prijs af voordat we beginnen.',
+        'Stevin kijkt mee op al je kanalen, ziet wat er misgaat en zet de oplossing klaar. Uitvoeren doet je eigen team, een freelancer of een ander bureau. Wil je een klus toch door ons laten doen, dan spreken we de prijs af voordat we beginnen.',
       punten: [
         'Signalen dag en nacht, met de reden erbij',
         'Acties klaargezet, jij kiest wie ze uitvoert',
-        'Door ons uitgevoerd: prijs vooraf, geen abonnement erop',
+        'Pay per fix: los een klus door ons, prijs vooraf',
         'Alsnog door ons laten draaien kan altijd',
       ],
     },
   ],
   keuzeMicro:
-    'De eerste twee kosten hetzelfde. Het verschil zit in waar je uitkomt, en je mag onderweg nog van gedachten veranderen.',
+    'De eerste twee kosten hetzelfde per maand. Het verschil is of het doorloopt of dat het ergens ophoudt, en je mag onderweg nog van gedachten veranderen.',
   // Zonder grens is 399 een onbeperkt abonnement op paid, owned, je winkel en
   // je merk, en dat is niet vol te houden. De grens schaalt mee met hoe groot
   // de klant is, niet met zijn mediabudget. Dat laatste is precies wat Aizy
@@ -144,13 +147,6 @@ export default async function PreviewTarieven({ params }: Props) {
 
   return (
     <main className="bg-white">
-      <div
-        className="bg-[#0A1628] text-white text-center"
-        style={{ padding: '10px 24px', fontSize: '13px', letterSpacing: '0.04em' }}
-      >
-        Voorbeeld, staat niet online en is niet gelinkt
-      </div>
-
       <section style={{ padding: '112px 24px 48px' }}>
         <div className="mx-auto max-w-[780px] text-center">
           <p className="text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-6 flex items-center justify-center gap-[14px]">

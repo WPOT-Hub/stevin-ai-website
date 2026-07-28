@@ -55,6 +55,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // de NL-URL. Alleen de NL-entry, en ook geen en-hreflang.
   const nlOnlyPages = [
     '/blog',
+    // Tarieven. Stond tot 28 jul 2026 als voorbeeld op /preview-tarieven met
+    // noindex; er was dus geen prijspagina terwijl de homepage wel een bedrag
+    // noemde. NL-only zolang de Engelse copy niet apart is nagelopen.
+    '/tarieven',
     '/google-ad-grants-belgie',
     '/google-ad-grants-nederland',
     // Deze gaf even een 308 naar een niet-bestaande pagina, doordat de
