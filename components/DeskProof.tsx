@@ -37,8 +37,8 @@ const COPY: Record<Locale, {
 }> = {
   nl: {
     eyebrow: 'Zo ziet dat eruit',
-    h2: 'Wat er misgaat, waarom, en wat je eraan doet. Op een scherm.',
-    sub: 'Geen rapport achteraf. Stevin kijkt mee op je kanalen en zet de bevinding klaar met de reden erbij. Wie hem oppakt bepaal jij.',
+    h2: 'Wat er misgaat, wat er wel werkt, en waarom. Op een scherm.',
+    sub: 'Geen rapport achteraf. Stevin kijkt mee op wat vandaag binnenkomt en op wat je merk over een jaar waard is. Dat zijn twee verschillende dingen, en ze staan zelden in hetzelfde overzicht.',
     melding: {
       nr: '01',
       titel: '[Scheveningen] KNMI hittegolf wk28, strand wint, tenzij wij contra-acten',
@@ -50,14 +50,14 @@ const COPY: Record<Locale, {
     bijschrift: 'Uit de Stevin Desk. LUMIOS is onze demo-omgeving, geen klantdata.',
     breinKop: 'En alles wat geprobeerd is, staat er nog.',
     breinBody:
-      'Elke campagne, elk besluit, elk resultaat en wat de concurrent ondertussen deed. Wie hier morgen begint leest zich in, in plaats van dat jij het opnieuw gaat vertellen.',
+      'Elke campagne, elk besluit, elk resultaat en wat de concurrent ondertussen deed. Ook het werk dat pas over maanden betaalt, want dat is het eerste dat uit beeld verdwijnt. Wie hier morgen begint leest zich in, in plaats van dat jij het opnieuw gaat vertellen.',
     breinBijschrift: 'Het geheugen van een klant, zoals het in de Desk staat.',
     breinHint: 'Sleep gerust aan de knopen.',
   },
   en: {
     eyebrow: 'What that looks like',
-    h2: 'What is going wrong, why, and what to do about it. On one screen.',
-    sub: 'Not a report after the fact. Stevin watches your channels and prepares the finding with the reasoning attached. You decide who picks it up.',
+    h2: 'What is going wrong, what is working, and why. On one screen.',
+    sub: 'Not a report after the fact. Stevin watches what comes in today and what your brand is worth a year from now. Those are two different things, and they rarely sit in the same overview.',
     melding: {
       nr: '01',
       titel: '[The Hague] Heatwave week 28, the beach wins unless we counter',
@@ -69,7 +69,7 @@ const COPY: Record<Locale, {
     bijschrift: 'From the Stevin Desk. LUMIOS is our demo environment, not client data.',
     breinKop: 'And everything that was tried is still there.',
     breinBody:
-      'Every campaign, every decision, every result, and what the competition was doing at the time. Whoever starts here tomorrow reads up, instead of you explaining it all over again.',
+      'Every campaign, every decision, every result, and what the competition was doing at the time. Including the work that only pays off months later, which is the first thing to drop out of sight. Whoever starts here tomorrow reads up, instead of you explaining it all over again.',
     breinBijschrift: 'One client memory, the way it sits in the Desk.',
     breinHint: 'Drag the nodes around.',
   },
@@ -208,18 +208,19 @@ export default function DeskProof({ locale }: { locale: string }) {
               (canvas, physics, bevroren Lumos-snapshot) en kon al gesleept
               worden; alleen stond hij nergens waar een bezoeker hem tegenkomt
               behalve als sfeerbeeld in de hero. Hier mag hij zijn werk doen.
-              De visual heeft een doorzichtige achtergrond voor navy, vandaar
-              het donkere paneel binnen deze witte sectie. */}
+              Lichte variant, zoals de brein-kaart in de Desk zelf: die staat
+              ook op licht. Het paneel is een tint donkerder dan wit zodat de
+              kaart een vlak is en niet in de pagina wegvalt. */}
           <div
             className="rounded-2xl overflow-hidden"
             style={{
               marginTop: '36px',
-              background: '#0A1628',
+              background: '#F7F9FC',
               border: '1px solid rgba(10,22,40,0.10)',
               boxShadow: '0 32px 70px -30px rgba(10,22,40,0.36)',
             }}
           >
-            <StevinBrainVisual aspect="21:9" brand={false} claim="" ariaLabel="" locale={locale} />
+            <StevinBrainVisual aspect="21:9" theme="light" brand={false} claim="" ariaLabel="" locale={locale} />
           </div>
 
           <p className="text-muted flex flex-wrap items-center gap-x-2 gap-y-1" style={{ fontSize: '13px', marginTop: '20px' }}>

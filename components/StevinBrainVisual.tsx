@@ -28,6 +28,8 @@ interface StevinBrainVisualProps {
   locale?: string
   /** Verhouding van het vlak. Bepaalt de vorm van het canvas. */
   aspect?: BrainAspect
+  /** 'light' voor een wit vlak; standaard donker, zoals in de hero. */
+  theme?: BrainTheme
   /** Extra classes op de wrapper (bijvoorbeeld voor breedte). */
   className?: string
   /** Subtiel merk-teken linksonder tonen. */
@@ -46,12 +48,65 @@ const ASPECT_RATIO: Record<BrainAspect, string> = {
   '21:9': '21 / 9',
 }
 
-const TYPE_COLOR: Record<BrainNodeType, string> = {
-  campagne: '#5DA3FF',
-  creatie: '#3fd0c9',
-  outcome: '#5fd39a',
-  kennis: '#e0a94a',
+// Lichte variant toegevoegd 28 jul 2026. De visual was gemaakt om op navy te
+// vallen: additieve halo's, witte lijnen, wit label. Op een licht vlak wast dat
+// helemaal weg. De brein-kaart in de Desk staat wel op licht, en dat is de kant
+// waar het meeste van de site staat.
+//
+// Alles wat kleur is zit hierin, zodat er nergens anders in het bestand een
+// losse rgba(255,255,255,...) blijft rondslingeren.
+export type BrainTheme = 'dark' | 'light'
+
+interface BrainPalet {
+  node: Record<BrainNodeType, string>
+  /** Kern in het midden van de stip. */
+  kern: string
+  edge: string
+  edgeHot: string
+  ring: string
+  /** Additief oplichten kan alleen op donker; op licht wordt het grijze soep. */
+  halo: GlobalCompositeOperation
+  haloAlpha: number
+  kaart: { bg: string; rand: string; schaduw: string; titel: string; sub: string }
 }
+
+const PALET: Record<BrainTheme, BrainPalet> = {
+  dark: {
+    node: { campagne: '#5DA3FF', creatie: '#3fd0c9', outcome: '#5fd39a', kennis: '#e0a94a' },
+    kern: 'rgba(255,255,255,0.92)',
+    edge: 'rgba(255, 255, 255, 0.14)',
+    edgeHot: 'rgba(147, 197, 253, 0.42)',
+    ring: 'rgba(255, 255, 255, 0.5)',
+    halo: 'lighter',
+    haloAlpha: 1,
+    kaart: {
+      bg: 'rgba(9, 20, 38, 0.74)',
+      rand: '1px solid rgba(255, 255, 255, 0.12)',
+      schaduw: '0 8px 30px rgba(0, 0, 0, 0.35)',
+      titel: '#F4F8FF',
+      sub: 'rgba(255, 255, 255, 0.62)',
+    },
+  },
+  light: {
+    // Verzadigder dan de donkere set: dezelfde tinten zijn op wit te bleek.
+    node: { campagne: '#2F7FE8', creatie: '#12a89f', outcome: '#1f9d63', kennis: '#c07f16' },
+    kern: 'rgba(255,255,255,0.95)',
+    edge: 'rgba(10, 22, 40, 0.16)',
+    edgeHot: 'rgba(47, 127, 232, 0.55)',
+    ring: 'rgba(10, 22, 40, 0.42)',
+    halo: 'source-over',
+    haloAlpha: 0.42,
+    kaart: {
+      bg: 'rgba(255, 255, 255, 0.94)',
+      rand: '1px solid rgba(10, 22, 40, 0.10)',
+      schaduw: '0 8px 30px rgba(10, 22, 40, 0.16)',
+      titel: '#0A1628',
+      sub: 'rgba(10, 22, 40, 0.60)',
+    },
+  },
+}
+
+const TYPE_COLOR = PALET.dark.node
 
 interface Rgb {
   r: number
@@ -108,16 +163,16 @@ interface GlowSprites {
   byType: Record<BrainNodeType, HTMLCanvasElement>
 }
 
-function buildGlowSprites(): GlowSprites {
+function buildGlowSprites(kleuren: Record<BrainNodeType, string>): GlowSprites {
   const size = 128
   const byType = {} as Record<BrainNodeType, HTMLCanvasElement>
-  ;(Object.keys(TYPE_COLOR) as BrainNodeType[]).forEach((type) => {
+  ;(Object.keys(kleuren) as BrainNodeType[]).forEach((type) => {
     const c = document.createElement('canvas')
     c.width = size
     c.height = size
     const g = c.getContext('2d')
     if (g) {
-      const rgb = hexToRgb(TYPE_COLOR[type])
+      const rgb = hexToRgb(kleuren[type])
       const grad = g.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2)
       grad.addColorStop(0, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.55)`)
       grad.addColorStop(0.45, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.14)`)
@@ -133,6 +188,7 @@ function buildGlowSprites(): GlowSprites {
 export default function StevinBrainVisual({
   locale,
   aspect = '1:1',
+  theme = 'dark',
   className,
   brand = true,
   claim = 'Elke bron een ster. Samen een brein.',
@@ -157,6 +213,7 @@ export default function StevinBrainVisual({
     const wrapper: HTMLDivElement = wrapperEl
     const canvas: HTMLCanvasElement = canvasEl
     const ctx: CanvasRenderingContext2D = context
+    const pal = PALET[theme]
 
     const reduceMotion =
       typeof window !== 'undefined' &&
@@ -177,13 +234,13 @@ export default function StevinBrainVisual({
       .sort((p, q) => q.d - p.d)
 
     const bodies: Body[] = nodes.map((n) => {
-      const rgb = hexToRgb(TYPE_COLOR[n.type])
+      const rgb = hexToRgb(pal.node[n.type])
       const deg = degree.get(n.id) ?? 0
       const title = n.label
       const sub = n.why ? shorten(n.why, 108) : n.period_label ?? ''
       return {
         node: n,
-        color: TYPE_COLOR[n.type],
+        color: pal.node[n.type],
         coreColor: mixToWhite(rgb, 0.5),
         x: 0,
         y: 0,
@@ -229,7 +286,7 @@ export default function StevinBrainVisual({
       .sort(() => Math.random() - 0.5)
     if (highlightOrder.length === 0) highlightOrder.push(0)
 
-    const glow = buildGlowSprites()
+    const glow = buildGlowSprites(pal.node)
 
     let W = 0
     let H = 0
@@ -390,20 +447,23 @@ export default function StevinBrainVisual({
         const a = bodies[ia]
         const c = bodies[ib]
         const isHot = ia === highlightIdx || ib === highlightIdx
-        ctx.strokeStyle = isHot ? 'rgba(147, 197, 253, 0.42)' : 'rgba(255, 255, 255, 0.14)'
+        ctx.strokeStyle = isHot ? pal.edgeHot : pal.edge
         ctx.beginPath()
         ctx.moveTo(a.x, a.y)
         ctx.lineTo(c.x, c.y)
         ctx.stroke()
       }
 
-      // Glow-halos, additief zodat overlap oplicht.
-      ctx.globalCompositeOperation = 'lighter'
+      // Glow-halos. Additief op donker zodat overlap oplicht; op licht gewoon
+      // overtekenen met minder dekking, anders wordt het grijze soep.
+      ctx.globalCompositeOperation = pal.halo
+      ctx.globalAlpha = pal.haloAlpha
       for (const b of bodies) {
         const glowD = b.baseR * 7.5
         const sprite = glow.byType[b.node.type]
         ctx.drawImage(sprite, b.x - glowD / 2, b.y - glowD / 2, glowD, glowD)
       }
+      ctx.globalAlpha = 1
       ctx.globalCompositeOperation = 'source-over'
 
       // Kernen: gekleurde stip met lichte kern.
@@ -421,12 +481,14 @@ export default function StevinBrainVisual({
       // Uitgelichte node krijgt een zachte ring en extra halo.
       if (highlightIdx >= 0 && highlightIdx < bodies.length) {
         const b = bodies[highlightIdx]
-        ctx.globalCompositeOperation = 'lighter'
+        ctx.globalCompositeOperation = pal.halo
+        ctx.globalAlpha = pal.haloAlpha
         const glowD = b.baseR * 12
         ctx.drawImage(glow.byType[b.node.type], b.x - glowD / 2, b.y - glowD / 2, glowD, glowD)
+        ctx.globalAlpha = 1
         ctx.globalCompositeOperation = 'source-over'
         ctx.beginPath()
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)'
+        ctx.strokeStyle = pal.ring
         ctx.lineWidth = 1
         ctx.arc(b.x, b.y, b.baseR + 6, 0, Math.PI * 2)
         ctx.stroke()
@@ -622,7 +684,8 @@ export default function StevinBrainVisual({
     }
   }, [])
 
-  const dotColor = hlText ? TYPE_COLOR[hlText.type] : '#5DA3FF'
+  const pal = PALET[theme]
+  const dotColor = hlText ? pal.node[hlText.type] : pal.node.campagne
 
   return (
     <div
@@ -672,9 +735,9 @@ export default function StevinBrainVisual({
             maxWidth: 'min(240px, 78vw)',
             padding: '10px 12px',
             borderRadius: '12px',
-            background: 'rgba(9, 20, 38, 0.74)',
-            border: '1px solid rgba(255, 255, 255, 0.12)',
-            boxShadow: '0 8px 30px rgba(0, 0, 0, 0.35)',
+            background: pal.kaart.bg,
+            border: pal.kaart.rand,
+            boxShadow: pal.kaart.schaduw,
             backdropFilter: 'blur(6px)',
             WebkitBackdropFilter: 'blur(6px)',
           }}
@@ -696,7 +759,7 @@ export default function StevinBrainVisual({
                 fontSize: '13px',
                 fontWeight: 700,
                 lineHeight: 1.25,
-                color: '#F4F8FF',
+                color: pal.kaart.titel,
                 letterSpacing: '-0.01em',
               }}
             >
@@ -711,7 +774,7 @@ export default function StevinBrainVisual({
                 fontFamily: 'var(--font-display, system-ui, sans-serif)',
                 fontSize: '11.5px',
                 lineHeight: 1.4,
-                color: 'rgba(255, 255, 255, 0.62)',
+                color: pal.kaart.sub,
               }}
             >
               {hlText.sub}
@@ -737,7 +800,7 @@ export default function StevinBrainVisual({
               fontSize: '12.5px',
               fontWeight: 700,
               letterSpacing: '0.01em',
-              color: 'rgba(255, 255, 255, 0.85)',
+              color: theme === 'light' ? 'rgba(10, 22, 40, 0.80)' : 'rgba(255, 255, 255, 0.85)',
             }}
           >
             Stevin Brain
@@ -747,7 +810,7 @@ export default function StevinBrainVisual({
               fontFamily: 'var(--font-display, system-ui, sans-serif)',
               fontSize: '11px',
               lineHeight: 1.4,
-              color: 'rgba(255, 255, 255, 0.42)',
+              color: theme === 'light' ? 'rgba(10, 22, 40, 0.45)' : 'rgba(255, 255, 255, 0.42)',
               marginTop: '1px',
             }}
           >
