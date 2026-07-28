@@ -1,6 +1,7 @@
 import { Link } from '@/i18n/navigation'
 import HairlineRule from '@/components/HairlineRule'
 import FAQAccordion from '@/components/FAQAccordion'
+import DeskProof from '@/components/DeskProof'
 import type { SeoLandingPageContent } from '@/data/seo-landing-pages'
 
 // Gedeelde template voor de SEO-landingspagina's (docs/SEO_PAGE_STRUCTURES_2026-07-05.md).
@@ -115,6 +116,11 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
           </div>
         </div>
       </section>
+
+      {/* Zo ziet dat eruit: een echte opname uit de Desk. Staat bewust hier,
+          direct na de werkwijze: eerst uitleggen hoe het werkt, dan laten zien.
+          Deze pagina's zijn NL-only (canonical naar NL), vandaar de vaste taal. */}
+      <DeskProof locale="nl" />
 
       {/* Lijstblok + CTA */}
       <section className="bg-primary" style={{ padding: '96px 24px' }}>
