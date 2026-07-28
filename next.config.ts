@@ -89,8 +89,6 @@ const nextConfig: NextConfig = {
       { source: '/:locale(nl|en)/ai-agents', destination: '/:locale(nl|en)/platform', permanent: true },
       { source: '/data-verrijking', destination: '/platform', permanent: true },
       { source: '/:locale(nl|en)/data-verrijking', destination: '/:locale(nl|en)/platform', permanent: true },
-      { source: '/websites', destination: '/diensten', permanent: true },
-      { source: '/:locale(nl|en)/websites', destination: '/:locale(nl|en)/diensten', permanent: true },
       {
         source: '/voor-artiesten',
         destination: '/voor-ondernemers',
