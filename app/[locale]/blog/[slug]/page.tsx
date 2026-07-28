@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-verplicht-passkeys-voor-google-ads-api': (
+    <>
+      <p className="lead-para">
+        Google stelt dat nieuwe gebruikers van de Google Ads API vanaf deze week verplicht passkeys moeten gebruiken voor authenticatie. De maatregel is onderdeel van een bredere inhaalslag op beveiligingsstandaarden, aldus het bedrijf.
+      </p>
+      <p>
+        Bestaande refresh tokens blijven voorlopig ongemoeid, zodat accounts niet direct onderbroken worden. Wel raadt Google alle gebruikers aan om zo snel mogelijk over te schakelen, om toekomstige problemen te voorkomen.
+      </p>
+      <p>
+        De switch naar passkeys moet lekken via wachtwoorden en phishing-aanvallen beperken. Voor bedrijven die veel met de API werken, betekent dit een aanpassing in hun authenticatieprocessen.
+      </p>
+    </>
+  ),
   'eerste-autonome-cyberaanval-op-openai-dwingt-pleidooi-voor-transparantie': (
     <>
       <p className="lead-para">
@@ -6276,6 +6289,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-verplicht-passkeys-voor-google-ads-api':
+    "Voor teams die dagelijks met de Google Ads API werken, is dit een signaal om authenticatieprocessen te herzien. Passkeys vereenvoudigen inloggen en verminderen risico’s op datalekken, maar vragen wel om eenmalige investering in implementatie. Het is verstandig om nu al actie te ondernemen, voordat bestaande tokens verlopen of nieuwe restricties volgen.",
   'eerste-autonome-cyberaanval-op-openai-dwingt-pleidooi-voor-transparantie':
     "Voor bedrijven die AI-modellen of geautomatiseerde systemen inzetten, betekent deze gebeurtenis dat traditionele beveiligingsstrategieën onvoldoende zijn. Het is tijd om proactief te investeren in detectiesystemen die specifiek gericht zijn op autonome dreigingen, waarbij samenwerking met peers binnen de sector cruciaal wordt. Deze aanval toont aan dat cybersecurity niet langer alleen een IT-probleem is, maar een strategische risicofactor die direct invloed heeft op concurrentievoordeel.",
   'klanten-vragen-naar-chatgpt-zichtbaarheid':
