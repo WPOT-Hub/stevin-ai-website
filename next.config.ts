@@ -46,51 +46,51 @@ const nextConfig: NextConfig = {
       // Sanering Fase 1 (21 jul 2026, doc 24): doelgroep-duplicaten en dode
       // feature-pagina's 301 naar de dichtstbijzijnde overlevende pagina.
       { source: '/creatieve-bureaus', destination: '/voor-marketingteams', permanent: true },
-      { source: '/:locale/creatieve-bureaus', destination: '/:locale/voor-marketingteams', permanent: true },
+      { source: '/:locale(nl|en)/creatieve-bureaus', destination: '/:locale(nl|en)/voor-marketingteams', permanent: true },
       { source: '/mediabureaus', destination: '/voor-marketingteams', permanent: true },
-      { source: '/:locale/mediabureaus', destination: '/:locale/voor-marketingteams', permanent: true },
+      { source: '/:locale(nl|en)/mediabureaus', destination: '/:locale(nl|en)/voor-marketingteams', permanent: true },
       { source: '/pr-bureaus', destination: '/voor-marketingteams', permanent: true },
-      { source: '/:locale/pr-bureaus', destination: '/:locale/voor-marketingteams', permanent: true },
+      { source: '/:locale(nl|en)/pr-bureaus', destination: '/:locale(nl|en)/voor-marketingteams', permanent: true },
       { source: '/voor-agencies', destination: '/voor-marketingteams', permanent: true },
-      { source: '/:locale/voor-agencies', destination: '/:locale/voor-marketingteams', permanent: true },
+      { source: '/:locale(nl|en)/voor-agencies', destination: '/:locale(nl|en)/voor-marketingteams', permanent: true },
       { source: '/marketing', destination: '/voor-marketingteams', permanent: true },
-      { source: '/:locale/marketing', destination: '/:locale/voor-marketingteams', permanent: true },
+      { source: '/:locale(nl|en)/marketing', destination: '/:locale(nl|en)/voor-marketingteams', permanent: true },
       { source: '/automotive', destination: '/voor-dealers', permanent: true },
-      { source: '/:locale/automotive', destination: '/:locale/voor-dealers', permanent: true },
+      { source: '/:locale(nl|en)/automotive', destination: '/:locale(nl|en)/voor-dealers', permanent: true },
       { source: '/autodealer-campagnes', destination: '/voor-dealers', permanent: true },
-      { source: '/:locale/autodealer-campagnes', destination: '/:locale/voor-dealers', permanent: true },
+      { source: '/:locale(nl|en)/autodealer-campagnes', destination: '/:locale(nl|en)/voor-dealers', permanent: true },
       { source: '/non-profit-marketing-nederland', destination: '/google-ad-grants-nederland', permanent: true },
-      { source: '/:locale/non-profit-marketing-nederland', destination: '/:locale/google-ad-grants-nederland', permanent: true },
+      { source: '/:locale(nl|en)/non-profit-marketing-nederland', destination: '/:locale(nl|en)/google-ad-grants-nederland', permanent: true },
       { source: '/non-profit-marketing-belgie', destination: '/google-ad-grants-belgie', permanent: true },
-      { source: '/:locale/non-profit-marketing-belgie', destination: '/:locale/google-ad-grants-belgie', permanent: true },
+      { source: '/:locale(nl|en)/non-profit-marketing-belgie', destination: '/:locale(nl|en)/google-ad-grants-belgie', permanent: true },
       { source: '/voor-non-profit', destination: '/google-ad-grants-nederland', permanent: true },
-      { source: '/:locale/voor-non-profit', destination: '/:locale/google-ad-grants-nederland', permanent: true },
+      { source: '/:locale(nl|en)/voor-non-profit', destination: '/:locale(nl|en)/google-ad-grants-nederland', permanent: true },
       { source: '/voor-retail', destination: '/retail', permanent: true },
-      { source: '/:locale/voor-retail', destination: '/:locale/retail', permanent: true },
+      { source: '/:locale(nl|en)/voor-retail', destination: '/:locale(nl|en)/retail', permanent: true },
       { source: '/fmcg', destination: '/voor-ondernemers', permanent: true },
-      { source: '/:locale/fmcg', destination: '/:locale/voor-ondernemers', permanent: true },
+      { source: '/:locale(nl|en)/fmcg', destination: '/:locale(nl|en)/voor-ondernemers', permanent: true },
       { source: '/healthcare-marketing', destination: '/voor-ondernemers', permanent: true },
-      { source: '/:locale/healthcare-marketing', destination: '/:locale/voor-ondernemers', permanent: true },
+      { source: '/:locale(nl|en)/healthcare-marketing', destination: '/:locale(nl|en)/voor-ondernemers', permanent: true },
       { source: '/e-commerce', destination: '/voor-ondernemers', permanent: true },
-      { source: '/:locale/e-commerce', destination: '/:locale/voor-ondernemers', permanent: true },
+      { source: '/:locale(nl|en)/e-commerce', destination: '/:locale(nl|en)/voor-ondernemers', permanent: true },
       { source: '/b2b', destination: '/voor-ondernemers', permanent: true },
-      { source: '/:locale/b2b', destination: '/:locale/voor-ondernemers', permanent: true },
+      { source: '/:locale(nl|en)/b2b', destination: '/:locale(nl|en)/voor-ondernemers', permanent: true },
       { source: '/artiesten', destination: '/voor-ondernemers', permanent: true },
-      { source: '/:locale/artiesten', destination: '/:locale/voor-ondernemers', permanent: true },
+      { source: '/:locale(nl|en)/artiesten', destination: '/:locale(nl|en)/voor-ondernemers', permanent: true },
       { source: '/influencers', destination: '/voor-ondernemers', permanent: true },
-      { source: '/:locale/influencers', destination: '/:locale/voor-ondernemers', permanent: true },
+      { source: '/:locale(nl|en)/influencers', destination: '/:locale(nl|en)/voor-ondernemers', permanent: true },
       { source: '/promotoren', destination: '/voor-ondernemers', permanent: true },
-      { source: '/:locale/promotoren', destination: '/:locale/voor-ondernemers', permanent: true },
+      { source: '/:locale(nl|en)/promotoren', destination: '/:locale(nl|en)/voor-ondernemers', permanent: true },
       { source: '/merken', destination: '/voor-ondernemers', permanent: true },
-      { source: '/:locale/merken', destination: '/:locale/voor-ondernemers', permanent: true },
+      { source: '/:locale(nl|en)/merken', destination: '/:locale(nl|en)/voor-ondernemers', permanent: true },
       { source: '/voor-verhuur', destination: '/voor-ondernemers', permanent: true },
-      { source: '/:locale/voor-verhuur', destination: '/:locale/voor-ondernemers', permanent: true },
+      { source: '/:locale(nl|en)/voor-verhuur', destination: '/:locale(nl|en)/voor-ondernemers', permanent: true },
       { source: '/ai-agents', destination: '/platform', permanent: true },
-      { source: '/:locale/ai-agents', destination: '/:locale/platform', permanent: true },
+      { source: '/:locale(nl|en)/ai-agents', destination: '/:locale(nl|en)/platform', permanent: true },
       { source: '/data-verrijking', destination: '/platform', permanent: true },
-      { source: '/:locale/data-verrijking', destination: '/:locale/platform', permanent: true },
+      { source: '/:locale(nl|en)/data-verrijking', destination: '/:locale(nl|en)/platform', permanent: true },
       { source: '/websites', destination: '/diensten', permanent: true },
-      { source: '/:locale/websites', destination: '/:locale/diensten', permanent: true },
+      { source: '/:locale(nl|en)/websites', destination: '/:locale(nl|en)/diensten', permanent: true },
       {
         source: '/voor-artiesten',
         destination: '/voor-ondernemers',
@@ -116,8 +116,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/openai-brengt-conversie-gerichte-ads-voor-chatgpt',
-        destination: '/:locale/blog/openai-introduceert-conversiegericht-adverteren-in-chatgpt',
+        source: '/:locale(nl|en)/blog/openai-brengt-conversie-gerichte-ads-voor-chatgpt',
+        destination: '/:locale(nl|en)/blog/openai-introduceert-conversiegericht-adverteren-in-chatgpt',
         permanent: true,
       },
       {
@@ -126,8 +126,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/seo-changelogs-ondermijnd-door-onzichtbare-updates',
-        destination: '/:locale/blog/seo-changelogs-ondergewaardeerde-spil-in-enterprise-governance',
+        source: '/:locale(nl|en)/blog/seo-changelogs-ondermijnd-door-onzichtbare-updates',
+        destination: '/:locale(nl|en)/blog/seo-changelogs-ondergewaardeerde-spil-in-enterprise-governance',
         permanent: true,
       },
       {
@@ -136,8 +136,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/tiktok-shop-lanceert-in-nederland-en-belgie-op-15-juni',
-        destination: '/:locale/blog/tiktok-shop-lanceert-in-nederland-op-15-juni',
+        source: '/:locale(nl|en)/blog/tiktok-shop-lanceert-in-nederland-en-belgie-op-15-juni',
+        destination: '/:locale(nl|en)/blog/tiktok-shop-lanceert-in-nederland-op-15-juni',
         permanent: true,
       },
       {
@@ -146,8 +146,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/google-ads-kosten-stijgen-conversies-verbeteren-2025',
-        destination: '/:locale/blog/google-ads-kosten-stijgen-conversie-efficientie-2025',
+        source: '/:locale(nl|en)/blog/google-ads-kosten-stijgen-conversies-verbeteren-2025',
+        destination: '/:locale(nl|en)/blog/google-ads-kosten-stijgen-conversie-efficientie-2025',
         permanent: true,
       },
       {
@@ -156,8 +156,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/ai-print-on-demand-spelers-moeten-fundament-leggen',
-        destination: '/:locale/blog/ai-verandert-print-on-demand-ecommerce',
+        source: '/:locale(nl|en)/blog/ai-print-on-demand-spelers-moeten-fundament-leggen',
+        destination: '/:locale(nl|en)/blog/ai-verandert-print-on-demand-ecommerce',
         permanent: true,
       },
       // 301-redirects voor geschrapte off-topic dispatches (geen marketing-hoek).
@@ -170,8 +170,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/social-media-opgeblazen-drone-algoritme-claim',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/social-media-opgeblazen-drone-algoritme-claim',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -180,8 +180,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/softbank-investeert-tientallen-miljarden-in-franse-ai-data-centers',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/softbank-investeert-tientallen-miljarden-in-franse-ai-data-centers',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -190,8 +190,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/robotaxis-in-de-vs-komen-onder-druk-door-onveilige-incidenten',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/robotaxis-in-de-vs-komen-onder-druk-door-onveilige-incidenten',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -200,8 +200,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/tno-defensie-samenwerken-innovatie',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/tno-defensie-samenwerken-innovatie',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -210,8 +210,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/amerika-budget-9-miljard-voor-ai-spionage',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/amerika-budget-9-miljard-voor-ai-spionage',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -220,8 +220,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/cerebras-beursgang-ai-chipsector',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/cerebras-beursgang-ai-chipsector',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -230,8 +230,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/btw-fraude-netwerk-europa-operatie-admiral',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/btw-fraude-netwerk-europa-operatie-admiral',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -240,8 +240,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/mistral-overname-emmi-ai-versterkt-europese-chip-en-auto-sector',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -250,8 +250,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/mazda-centraliseert-ai-ready-dataplatform-met-dell-technologies',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -260,8 +260,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/spotify-lanceert-ai-remixes-voor-premium-gebruikers',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/spotify-lanceert-ai-remixes-voor-premium-gebruikers',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -270,8 +270,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/ai-gemaakte-boeken-zonder-waarschuwing-te-koop',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/ai-gemaakte-boeken-zonder-waarschuwing-te-koop',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -280,8 +280,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/vodafone-batterijgarantie-drie-jaar-accuvervanging',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/vodafone-batterijgarantie-drie-jaar-accuvervanging',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -290,8 +290,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/alibaba-omzet-kwartaal-stijgt-maar-blijft-achter-verwachtingen',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -300,8 +300,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/openai-race-naar-agi-onthuld',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/openai-race-naar-agi-onthuld',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -310,8 +310,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/ai-presentatrice-kids-top-20-wekt-teleurstelling',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/ai-presentatrice-kids-top-20-wekt-teleurstelling',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -320,8 +320,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/microsoft-verbergt-copilot-knop-in-office-na-kritiek',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/microsoft-verbergt-copilot-knop-in-office-na-kritiek',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -330,8 +330,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/new-york-pizza-toont-macht-van-lokale-marketing',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/new-york-pizza-toont-macht-van-lokale-marketing',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
       {
@@ -340,8 +340,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/:locale/blog/beardbrand-expansion-plan-na-groeistagnatie',
-        destination: '/:locale/blog',
+        source: '/:locale(nl|en)/blog/beardbrand-expansion-plan-na-groeistagnatie',
+        destination: '/:locale(nl|en)/blog',
         permanent: true,
       },
     ]
