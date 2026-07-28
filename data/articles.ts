@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-verplicht-passkeys-voor-google-ads-api',
+    format: 'dispatch' as const,
+    edition: '376',
+    category: 'Platform',
+    title: "Google verplicht passkeys voor Google Ads API",
+    dek: "Nieuwe gebruikers van de Google Ads API moeten vanaf nu passkeys gebruiken voor authenticatie.",
+    publishedAt: '2026-07-28',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google verplicht passkeys voor Google Ads API",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'eerste-autonome-cyberaanval-op-openai-dwingt-pleidooi-voor-transparantie',
     format: 'dispatch' as const,
     edition: '375',
