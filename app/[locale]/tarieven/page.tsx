@@ -54,6 +54,11 @@ const COPY = {
   // (Boersma) tot 1.000 (VOCA). Het abonnement staat vast, het beheer schaalt
   // mee met het werk. Vandaar "vanaf 798" in plaats van "op maat".
   //
+  // De opstart krijgt bewust GEEN bedrag. Hij liep van 1.000 (VOCA) tot 3.200
+  // (Boersma vol tarief, verstuurd met 50% Founding Partner-korting), en een
+  // "vanaf 1.000" ankert iemand dan op de bodem van een band die drie keer zo
+  // breed is. Dat is precies de verrassing waar deze positionering tegen is.
+  //
   // Optie 1 en 2 kosten hetzelfde. Het verschil is waar je uitkomt, en dat is
   // precies wat een bureau nooit als keuze aanbiedt.
   keuzes: [
@@ -63,7 +68,7 @@ const COPY = {
       titel: 'Wij doen alles',
       prijs: 'vanaf 798',
       prijsPer: 'per maand',
-      prijsSub: 'doorlopend. Opstart vanaf 1.000 eenmalig.',
+      prijsSub: 'doorlopend. De opstart is maatwerk, want die hangt af van wat er staat.',
       body:
         'Sommige ondernemers willen er niets van weten, en dat is een prima antwoord. Wij richten in, sturen bij en ruimen op. Zolang je wilt, ook als dat jaren is.',
       punten: [
@@ -82,7 +87,7 @@ const COPY = {
       titel: 'Wij starten je op',
       prijs: 'vanaf 798',
       prijsPer: 'per maand',
-      prijsSub: 'zolang we meedraaien. Opstart vanaf 1.000 eenmalig.',
+      prijsSub: 'zolang we meedraaien. De opstart is maatwerk.',
       body:
         'Wij zetten het goed en draaien mee tot het staat. Wat we doen en waarom komt in een dossier dat van jou is, zodat je eigen mensen meeleren. Daarna ga je over op het abonnement.',
       punten: [
