@@ -5,6 +5,7 @@ import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import MarketingMemoryDemo from '@/components/MarketingMemoryDemo'
 import StevinBrainVisual from '@/components/StevinBrainVisual'
+import DeskProof from '@/components/DeskProof'
 import BrainEdgeStrip from '@/components/BrainEdgeStrip'
 import HeroHeadline from '@/components/HeroHeadline'
 import { editorials } from '@/data/articles'
@@ -587,6 +588,13 @@ export default async function HomePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* ── ZO ZIET DAT ERUIT: echte opname uit de Desk ── */}
+      {/* Staat hier bewust: eerst uitleggen hoe het werkt, dan laten zien. En
+          dan zitten de twee demo's bij elkaar, het echte scherm en daarna het
+          geheugen waar je zelf in kunt zoeken. Zelfde component als op de
+          SEO-landingspagina's. */}
+      <DeskProof locale={locale} />
 
       {/* ── DEMO: marketinggeheugen ── */}
       <section className="bg-white" style={{ padding: '112px 24px 96px' }}>
