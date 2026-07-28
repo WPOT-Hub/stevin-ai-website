@@ -558,6 +558,15 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
+      {/* ── ZO ZIET DAT ERUIT: echte opname uit de Desk ── */}
+      {/* Staat VOOR "Hoe het werkt", niet erna. Anders scrol je langs zes
+          secties voordat je ziet wat je koopt: hero, kanalen, vier citaten,
+          drie checks, een logboekfiguur, en dan pas vier tekststappen.
+          Andersom legt het scherm zichzelf uit, en lezen die vier stappen
+          daarna concreter omdat je weet waar ze naartoe werken.
+          Zelfde component als op de SEO-landingspagina's. */}
+      <DeskProof locale={locale} />
+
       {/* ── HOE HET WERKT ── */}
       <section id="hoe-het-werkt" className="bg-primary scroll-mt-24" style={{ padding: '112px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
@@ -599,13 +608,6 @@ export default async function HomePage({ params }: Props) {
           </div>
         </div>
       </section>
-
-      {/* ── ZO ZIET DAT ERUIT: echte opname uit de Desk ── */}
-      {/* Staat hier bewust: eerst uitleggen hoe het werkt, dan laten zien. En
-          dan zitten de twee demo's bij elkaar, het echte scherm en daarna het
-          geheugen waar je zelf in kunt zoeken. Zelfde component als op de
-          SEO-landingspagina's. */}
-      <DeskProof locale={locale} />
 
       {/* ── DEMO: marketinggeheugen ── */}
       <section className="bg-white" style={{ padding: '112px 24px 96px' }}>
