@@ -28,14 +28,21 @@ const COPY = {
     connectors_label: 'Leest mee op al je kanalen',
 
     herken_eyebrow: 'Herken je dit?',
-    herken_h2: 'Zes dingen die wij elke week horen.',
+    // Vier in plaats van zes, en letterlijk uit de gesprekken
+    // (04_KLANTTAAL_BIBLIOTHEEK.md, 89 citaten uit 54 Plaud-gesprekken). De
+    // blauwdruk vroeg om vier; er waren er later twee bijgekomen, allebei van
+    // dezelfde creatief directeur. Twee keer dezelfde stem in een muur van zes
+    // leest alsof je mensen tekortkwam, en het waren bureau-citaten terwijl de
+    // lezer hier de ondernemer is. Die horen op /marketing-voor-bureaus.
+    //
+    // Deze vier dekken vier hoeken: geld weg, geen zicht, geen eigendom, geen
+    // geheugen. Vier verschillende stemmen, vier verschillende schaalgroottes.
+    herken_h2: 'Vier dingen die wij elke week horen.',
     quotes: [
-      { q: 'Elke maand een factuur van het bureau. Maar wat ze nou precies gedaan hebben? Geen idee.', a: 'Eigenaar, handelsbedrijf' },
-      { q: '1.100 euro aan gekochte leads. Nul opdrachten.', a: 'Installatiebedrijf' },
-      { q: 'Het rapport staat vol marketingpraat. Ik wil gewoon weten waar mijn geld heengaat.', a: 'Directeur, retail' },
-      { q: 'Onze marketeer is weg. Alles zat in zijn hoofd.', a: 'Evenementenbedrijf' },
-      { q: 'Wij starten soms nog te veel in het donker aan een campagne.', a: 'Creatief directeur, reclamebureau' },
-      { q: 'De mediapartner heeft zijn eigen winkel, en wij de onze.', a: 'Creatief directeur, reclamebureau' },
+      { q: 'Op een maand tijd had ik voor bijna 1100 euro leads en ik heb er geen een.', a: 'Installatiebedrijf' },
+      { q: 'Nee, dat is allemaal op gevoel. En in het hoofd.', a: 'Eigenaar, handelsbedrijf' },
+      { q: 'Hij kon mijn marge ook bepalen, want hij wist mijn inkoopprijs. En dat wil ik niet.', a: 'Reparatiebedrijf' },
+      { q: 'Dat zijn allemaal aparte systemen met bepaalde toegangen. Maar er zit nergens een link of een centraal geheugen.', a: 'Marketingverantwoordelijke, internationaal merk' },
     ],
     herken_close: 'Dit zijn geen uitzonderingen. Zo werkt de markt, zolang niemand meekijkt. Zelfs bureaus zeggen het zelf.',
     herken_bron: 'Uit echte diagnosegesprekken, geanonimiseerd.',
@@ -157,14 +164,12 @@ const COPY = {
     connectors_label: 'Reads along on all your channels',
 
     herken_eyebrow: 'Sound familiar?',
-    herken_h2: 'Six things we hear every week.',
+    herken_h2: 'Four things we hear every week.',
     quotes: [
-      { q: 'An agency invoice every month. But what exactly did they do? No idea.', a: 'Owner, trading company' },
-      { q: '1,100 euros on purchased leads. Zero jobs.', a: 'Installation company' },
-      { q: 'The report is full of marketing talk. I just want to know where my money goes.', a: 'Director, retail' },
-      { q: 'Our marketer left. Everything was in his head.', a: 'Events company' },
-      { q: 'We still start too many campaigns in the dark.', a: 'Creative director, ad agency' },
-      { q: 'The media partner runs their own shop, and we run ours.', a: 'Creative director, ad agency' },
+      { q: 'In one month I bought nearly 1,100 euro of leads. I got not a single job out of it.', a: 'Installation company' },
+      { q: 'No, that is all on gut feeling. And in my head.', a: 'Owner, trading company' },
+      { q: 'He could work out my margin, because he knew what I paid. And I do not want that.', a: 'Repair company' },
+      { q: 'Those are all separate systems with their own logins. But there is no link anywhere, no central memory.', a: 'Marketing lead, international brand' },
     ],
     herken_close: 'These are not exceptions. This is how the market works, as long as nobody is watching. Even agencies say it themselves.',
     herken_bron: 'From real diagnosis conversations, anonymised.',
@@ -450,7 +455,11 @@ export default async function HomePage({ params }: Props) {
             {c.herken_h2}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border rounded-[14px] overflow-hidden">
+          {/* Twee kolommen, niet drie: vier citaten in een raster van drie laat
+              een leeg vak achter. Twee bij twee geeft ze bovendien de breedte
+              die ze nodig hebben, want dit zijn letterlijke zinnen uit een
+              gesprek en die zijn langer dan een geredigeerde kreet. */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border rounded-[14px] overflow-hidden">
             {c.quotes.map((item) => (
               <figure key={item.q} className="bg-white p-8 lg:p-9 m-0 flex flex-col justify-between gap-6">
                 <blockquote className="m-0 font-display font-semibold text-primary leading-[1.4]" style={{ fontSize: '17px', letterSpacing: '-0.01em' }}>
