@@ -57,10 +57,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog',
     '/google-ad-grants-belgie',
     '/google-ad-grants-nederland',
-    // /case-studies/e-commerce redirect (308) naar voor-ondernemers. Een
-    // omleiding hoort niet in een sitemap: je vraagt Google te crawlen en
-    // stuurt hem dan meteen door.
-    '/case-studies/voor-ondernemers',
+    // Deze gaf even een 308 naar een niet-bestaande pagina, doordat de
+    // :locale-parameter in next.config.ts elk padstuk matchte. Dat is gefixt,
+    // de pagina bestaat gewoon.
+    '/case-studies/e-commerce',
     // Productpagina's (de Stevin-suite)
     '/producten',
     ...products.map((p) => `/producten/${p.slug}`),
