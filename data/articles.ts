@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-infrastructuur-onder-druk-door-energievraag-techcrunch-disrupt-2026',
+    format: 'dispatch' as const,
+    edition: '377',
+    category: 'Tech',
+    title: "AI-infrastructuur dreigt stroomnet te overbelasten: TechCrunch Disrupt 2026 waarschuwt",
+    dek: "De groeiende vraag naar energie door AI-datacenters zet het elektriciteitsnet onder druk en dwingt bedrijven tot keuzes tussen innovatie en stabiliteit.",
+    publishedAt: '2026-07-28',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AI-infrastructuur dreigt stroomnet te overbelasten: TechCrunch Disrupt 2026 waarschuwt",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-verplicht-passkeys-voor-google-ads-api',
     format: 'dispatch' as const,
     edition: '376',
