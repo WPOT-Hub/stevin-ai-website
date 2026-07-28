@@ -1513,6 +1513,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'microsofts-ai-bom-in-cybersecurity-hoe-agenten-de-battle-gaan-winnen': (
+    <>
+      <p className="lead-para">
+        Stel je voor: een hacker probeert binnen te dringen in jouw bedrijfsnetwerk. Normaal duurt dat minuten tot uren voordat je het merkt. Maar stel dat er plotseling een onzichtbare verdediger opstaat die niet alleen de aanval blokkeert, maar ook direct de zwakke plekken herstelt voordat er iets misgaat. Dat is precies wat Microsoft deze week aankondigde: het eerste AI-gestuurde cybersecurity model dat niet alleen reageert op bedreigingen, maar ook zelfstandig actie onderneemt.
+      </p>
+      <p>
+        De kern van de lancering ligt in twee pijlers. Ten eerste introduceert Microsoft een nieuw AI-model dat specifiek is getraind om kwetsbaarheden in netwerken te detecteren en prioriteren. Dit model werkt niet met statische regels, maar leert continu bij van nieuwe dreigingen en past zich aan zonder handmatige updates. Ten tweede lanceert het bedrijf een zogenaamd *agentic cybersecurity system*: autonome software die niet alleen waarschuwt, maar ook direct ingrijpt. Denk aan het sluiten van poorten, het patchen van software of zelfs het isoleren van besmette apparaten—zonder tussenkomst van een mens.
+      </p>
+      <p>
+        De vraag is niet óf deze technologie komt, maar wannéér bedrijven ermee moeten werken. Want terwijl Microsoft beweert dat hun systeem de reactietijd verkort tot seconden, ontstaat er een nieuw probleem: vertrouwen. Hoe weet je zeker dat die agent niet te ver gaat? Stel dat hij per ongeluk kritieke systemen uitschakelt of juist nieuwe kwetsbaarheden introduceert omdat hij ‘denkt’ dat iets veilig is.
+      </p>
+      <p>
+        Critici wijzen al op de risico’s van autonome beveiligingssystemen. Een recent rapport van het Dutch Institute for Vulnerability Disclosure (DIVD) waarschuwde vorige maand nog voor de gevaren van overmatig vertrouwen in AI-gestuurde verdediging. Volgens hen kan een te agressieve agent juist leiden tot meer downtime en financiële schade dan de dreigingen zelf. Bovendien rijst de vraag wie aansprakelijk is als zo’n systeem faalt: de ontwikkelaar, de gebruiker of misschien zelfs de AI zelf?
+      </p>
+      <p>
+        Toch is er ook optimisme. Voor MKB-bedrijven en grote organisaties die moeite hebben met het aantrekken van gespecialiseerd IT-personeel, biedt deze technologie uitkomst. Waar vroeger teams 24/7 moesten monitoren op verdachte activiteiten, kan nu een agent dat werk doen—mits goed ingesteld en beheerd. Het sleutelwoord hier is ‘goed ingesteld’. Want zonder duidelijke kaders en menselijke controle wordt elke automatisering al snel een tijdbom.
+      </p>
+      <p>
+        De realiteit is dat cybercriminelen al jaren gebruikmaken van geautomatiseerde tools om aanvallen uit te voeren. Waarom zouden verdedigers dan achterblijven? De race tussen aanvallers en verdedigers wordt steeds meer een race tussen algoritmes onderling. Wie wint? Degene die het beste leert anticiperen op elkaars gedrag.
+      </p>
+      <p>
+        Maar hier schuilt ook een paradox: hoe intelligenter de verdedigingssystemen worden, hoe groter de afhankelijkheid wordt van technologie die niemand volledig begrijpt. En juist daar ligt het gevaar. Want als we blind vertrouwen op systemen die zichzelf optimaliseren, verliezen we grip op wat écht belangrijk is: onze eigen data en processen.
+      </p>
+      <p>
+        Uiteindelijk gaat het niet om technologie alleen, maar om balans. Technologie moet ons helpen veilig te blijven zonder ons afhankelijk te maken van systemen die we niet meer kunnen controleren.
+      </p>
+    </>
+  ),
   'ai-infrastructuur-onder-druk-door-energievraag-techcrunch-disrupt-2026': (
     <>
       <p className="lead-para">
@@ -6302,6 +6330,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'microsofts-ai-bom-in-cybersecurity-hoe-agenten-de-battle-gaan-winnen':
+    "Bij Stevin zien we deze ontwikkeling als een noodzakelijke stap in cybersecurity, maar wel één die met grote zorg moet worden ingevoerd. Onze klanten vragen steeds vaker om robuuste oplossingen die zowel proactief als adaptief zijn—zonder dat ze daarbij hun autonomie verliezen over hun eigen infrastructuur. Wij adviseren om autonome beveiligingssystemen altijd te combineren met menselijke supervisie en strikte governance-modellen. Een agent kan immers nooit verantwoordelijkheid dragen; dat doet uiteindelijk altijd iemand binnen je organisatie. Daarnaast benadrukken we het belang van transparante meetdata: alleen als je precies kunt terugzien waarom een agent bepaalde keuzes maakt, kun je vertrouwen opbouwen in deze systemen.",
   'ai-infrastructuur-onder-druk-door-energievraag-techcrunch-disrupt-2026':
     "Voor ondernemers betekent dit dat de energievraag van AI een strategisch risico wordt dat meegenomen moet worden in langetermijnplanning. Bedrijven die nu al investeren in duurzame energiebronnen of samenwerken met netbeheerders, kunnen zich onderscheiden. Daarnaast wordt het belang van diversificatie van infrastructuur steeds duidelijker: wie afhankelijk is van één energiebron of locatie loopt extra risico.",
   'google-verplicht-passkeys-voor-google-ads-api':
