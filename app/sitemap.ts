@@ -57,7 +57,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog',
     '/google-ad-grants-belgie',
     '/google-ad-grants-nederland',
-    '/case-studies/e-commerce',
+    // /case-studies/e-commerce redirect (308) naar voor-ondernemers. Een
+    // omleiding hoort niet in een sitemap: je vraagt Google te crawlen en
+    // stuurt hem dan meteen door.
+    '/case-studies/voor-ondernemers',
     // Productpagina's (de Stevin-suite)
     '/producten',
     ...products.map((p) => `/producten/${p.slug}`),

@@ -722,7 +722,7 @@ export const articles: Article[] = [
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
-    slug: 'gratis-waymo-ritten-californië-regelgeving-kwetsbaarheid',
+    slug: 'gratis-waymo-ritten-californie-regelgeving-kwetsbaarheid',
     format: 'dispatch' as const,
     edition: '332',
     category: 'Tech',
@@ -2177,7 +2177,7 @@ export const articles: Article[] = [
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
   },
   {
-    slug: 'ai-en-bci-maken-volledige-baan-mogelijk-voor-spraakloze-als-patiënt',
+    slug: 'ai-en-bci-maken-volledige-baan-mogelijk-voor-spraakloze-als-patient',
     format: 'dispatch' as const,
     edition: '235',
     category: 'Tech',

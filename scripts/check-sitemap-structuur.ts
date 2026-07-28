@@ -59,6 +59,19 @@ function main() {
     }
   }
 
+
+  // Geen accenten of andere niet-ASCII tekens in een URL. Op 28 jul 2026 waren
+  // twee blogartikelen onbereikbaar (404) doordat er een "e-umlaut" in de slug
+  // stond: de browser codeert dat percent-gewijs en de route matcht niet meer.
+  // Ze stonden wel in de sitemap en waren wel gelinkt vanaf /blog.
+  for (const e of entries) {
+    const pad = e.url.replace(BASIS, '')
+    // eslint-disable-next-line no-control-regex
+    if (/[^\x00-\x7F]/.test(pad)) {
+      fouten.push(`niet-ASCII teken in de URL: ${pad}`)
+    }
+  }
+
   const en = enUrls.length
   const totaal = entries.length
   console.log(`Sitemap-structuur: ${totaal} URL's, waarvan ${en} op /en.`)
