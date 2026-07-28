@@ -18,7 +18,10 @@ import { getBrainSnapshot, type BrainNode, type BrainNodeType } from '@/data/bra
  * frame. Buiten beeld pauzeert de animatie (IntersectionObserver).
  */
 
-export type BrainAspect = '1:1' | '3:4' | '9:16'
+// 16:9 en 21:9 toegevoegd 28 jul 2026 voor het bewijsblok op de
+// landingspagina's (DeskProof). De bestaande verhoudingen zijn allemaal staand
+// of vierkant, want die zijn gemaakt voor de hero-kolom en voor social.
+export type BrainAspect = '1:1' | '3:4' | '9:16' | '16:9' | '21:9'
 
 interface StevinBrainVisualProps {
   /** Paginataal: 'en' laadt het vertaalde snapshot, al het andere NL. */
@@ -39,6 +42,8 @@ const ASPECT_RATIO: Record<BrainAspect, string> = {
   '1:1': '1 / 1',
   '3:4': '3 / 4',
   '9:16': '9 / 16',
+  '16:9': '16 / 9',
+  '21:9': '21 / 9',
 }
 
 const TYPE_COLOR: Record<BrainNodeType, string> = {

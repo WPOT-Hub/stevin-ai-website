@@ -1,3 +1,4 @@
+import StevinBrainVisual from '@/components/StevinBrainVisual'
 /**
  * DeskProof, de tweede hero: een echte opname uit de Stevin Desk met een
  * melding eroverheen.
@@ -32,6 +33,7 @@ const COPY: Record<Locale, {
   breinKop: string
   breinBody: string
   breinBijschrift: string
+  breinHint: string
 }> = {
   nl: {
     eyebrow: 'Zo ziet dat eruit',
@@ -50,6 +52,7 @@ const COPY: Record<Locale, {
     breinBody:
       'Elke campagne, elk besluit, elk resultaat en wat de concurrent ondertussen deed. Wie hier morgen begint leest zich in, in plaats van dat jij het opnieuw gaat vertellen.',
     breinBijschrift: 'Het geheugen van een klant, zoals het in de Desk staat.',
+    breinHint: 'Sleep gerust aan de knopen.',
   },
   en: {
     eyebrow: 'What that looks like',
@@ -68,6 +71,7 @@ const COPY: Record<Locale, {
     breinBody:
       'Every campaign, every decision, every result, and what the competition was doing at the time. Whoever starts here tomorrow reads up, instead of you explaining it all over again.',
     breinBijschrift: 'One client memory, the way it sits in the Desk.',
+    breinHint: 'Drag the nodes around.',
   },
 }
 
@@ -200,24 +204,27 @@ export default function DeskProof({ locale }: { locale: string }) {
             </p>
           </div>
 
+          {/* Geen schermafdruk maar het echte ding. StevinBrainVisual bestond al
+              (canvas, physics, bevroren Lumos-snapshot) en kon al gesleept
+              worden; alleen stond hij nergens waar een bezoeker hem tegenkomt
+              behalve als sfeerbeeld in de hero. Hier mag hij zijn werk doen.
+              De visual heeft een doorzichtige achtergrond voor navy, vandaar
+              het donkere paneel binnen deze witte sectie. */}
           <div
             className="rounded-2xl overflow-hidden"
             style={{
               marginTop: '36px',
+              background: '#0A1628',
               border: '1px solid rgba(10,22,40,0.10)',
               boxShadow: '0 32px 70px -30px rgba(10,22,40,0.36)',
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/product/brein-kaart.png"
-              alt="De brein-kaart in de Stevin Desk: campagnes, acties, signalen, resultaten, concurrent-advertenties, kennis en creaties als een netwerk"
-              style={{ display: 'block', width: '100%' }}
-            />
+            <StevinBrainVisual aspect="21:9" brand={false} claim="" ariaLabel="" locale={locale} />
           </div>
 
-          <p className="text-muted" style={{ fontSize: '13px', marginTop: '20px' }}>
-            {c.breinBijschrift}
+          <p className="text-muted flex flex-wrap items-center gap-x-2 gap-y-1" style={{ fontSize: '13px', marginTop: '20px' }}>
+            <span>{c.breinBijschrift}</span>
+            <span className="text-accent font-semibold">{c.breinHint}</span>
           </p>
         </div>
       </div>
