@@ -29,6 +29,9 @@ const COPY: Record<Locale, {
   melding: { nr: string; titel: string; tags: string[]; waarom: string; advies: string }
   knoppen: string[]
   bijschrift: string
+  breinKop: string
+  breinBody: string
+  breinBijschrift: string
 }> = {
   nl: {
     eyebrow: 'Zo ziet dat eruit',
@@ -43,6 +46,10 @@ const COPY: Record<Locale, {
     },
     knoppen: ['Oppakken', 'Meer info', 'Niet relevant'],
     bijschrift: 'Uit de Stevin Desk. LUMIOS is onze demo-omgeving, geen klantdata.',
+    breinKop: 'En alles wat geprobeerd is, staat er nog.',
+    breinBody:
+      'Elke campagne, elk besluit, elk resultaat en wat de concurrent ondertussen deed. Wie hier morgen begint leest zich in, in plaats van dat jij het opnieuw gaat vertellen.',
+    breinBijschrift: 'Het geheugen van een klant, zoals het in de Desk staat.',
   },
   en: {
     eyebrow: 'What that looks like',
@@ -57,6 +64,10 @@ const COPY: Record<Locale, {
     },
     knoppen: ['Pick up', 'More info', 'Not relevant'],
     bijschrift: 'From the Stevin Desk. LUMIOS is our demo environment, not client data.',
+    breinKop: 'And everything that was tried is still there.',
+    breinBody:
+      'Every campaign, every decision, every result, and what the competition was doing at the time. Whoever starts here tomorrow reads up, instead of you explaining it all over again.',
+    breinBijschrift: 'One client memory, the way it sits in the Desk.',
   },
 }
 
@@ -171,6 +182,44 @@ export default function DeskProof({ locale }: { locale: string }) {
         <p className="text-muted" style={{ fontSize: '13px', marginTop: '24px' }}>
           {c.bijschrift}
         </p>
+
+        {/* Tweede blok, en bewust apart. De meldingen beantwoorden "wat vraagt
+            nu aandacht", de brein-kaart beantwoordt "en hoeveel weet dit ding
+            eigenlijk". Twee vragen, dus twee objecten onder elkaar, niet twee
+            beelden naast elkaar in een blok. */}
+        <div style={{ marginTop: '104px' }}>
+          <div className="max-w-[640px]">
+            <h3
+              className="font-display font-extrabold text-primary m-0"
+              style={{ fontSize: 'clamp(24px, 2.6vw, 34px)', letterSpacing: '-0.03em', lineHeight: '1.15', textWrap: 'balance' }}
+            >
+              {c.breinKop}
+            </h3>
+            <p className="text-muted leading-[1.65]" style={{ fontSize: '16px', maxWidth: '54ch', marginTop: '16px' }}>
+              {c.breinBody}
+            </p>
+          </div>
+
+          <div
+            className="rounded-2xl overflow-hidden"
+            style={{
+              marginTop: '36px',
+              border: '1px solid rgba(10,22,40,0.10)',
+              boxShadow: '0 32px 70px -30px rgba(10,22,40,0.36)',
+            }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/product/brein-kaart.png"
+              alt="De brein-kaart in de Stevin Desk: campagnes, acties, signalen, resultaten, concurrent-advertenties, kennis en creaties als een netwerk"
+              style={{ display: 'block', width: '100%' }}
+            />
+          </div>
+
+          <p className="text-muted" style={{ fontSize: '13px', marginTop: '20px' }}>
+            {c.breinBijschrift}
+          </p>
+        </div>
       </div>
     </section>
   )
