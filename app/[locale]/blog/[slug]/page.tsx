@@ -3369,7 +3369,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
-  'ai-en-bci-maken-volledige-baan-mogelijk-voor-spraakloze-als-patiënt': (
+  'ai-en-bci-maken-volledige-baan-mogelijk-voor-spraakloze-als-patient': (
     <>
       <p className="lead-para">
         Voor het eerst kan een persoon met amyotrofische laterale sclerose (ALS), die niet meer kan spreken of typen, via een hersen-computerinterface (BCI) communiceren. De patiënt gebruikt de technologie nu om een fulltime administratieve baan uit te voeren. Het systeem registreert hersensignalen en zet deze met behulp van machine learning om in vloeiende tekst of spraak, aldus de onderzoekers.
