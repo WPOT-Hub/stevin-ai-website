@@ -67,9 +67,12 @@ export default function Footer() {
   return (
     <footer className="bg-[#0A1628] text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        {/* Op mobiel twee kolommen naast elkaar. Onder elkaar was de footer
+            2.355px, bijna drie schermen, en daarmee het grootste blok van de
+            hele site. Niets verbergen, alleen anders neerzetten. */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-12">
           {/* Brand */}
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block">
               <Logo variant="mono-white" width={130} height={21} />
             </Link>

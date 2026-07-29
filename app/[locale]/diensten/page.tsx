@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import HairlineRule from '@/components/HairlineRule'
+import DeskProof from '@/components/DeskProof'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -186,7 +187,7 @@ export default async function DienstenPage({ params }: Props) {
                   style={{ borderColor: track.featured ? 'rgba(255,255,255,.12)' : '#E1E7EF' }}
                 >
                   <Link
-                    href="/contact"
+                    href="/tarieven"
                     className="font-display text-sm font-semibold tracking-[-0.005em] inline-flex items-center gap-2 group transition-colors duration-200"
                     style={{ color: track.featured ? '#5DA3FF' : '#3D8EFF' }}
                   >
@@ -199,6 +200,10 @@ export default async function DienstenPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Wie het werk ook doet, hij kijkt naar dit scherm. Daarom staat het
+          bewijs tussen de drie manieren en de afsluiting. */}
+      <DeskProof locale={locale} />
 
       {/* ── Closing, navy ── */}
       <section className="bg-primary" style={{ padding: '128px 24px 144px' }}>
@@ -226,7 +231,7 @@ export default async function DienstenPage({ params }: Props) {
               {t('closing_cta1')}
             </Link>
             <Link
-              href="/platform"
+              href="/tarieven"
               className="inline-flex font-display font-semibold text-base text-white border rounded-[10px] hover:bg-white/5 transition-colors"
               style={{ padding: '16px 22px', letterSpacing: '-0.005em', borderColor: 'rgba(255,255,255,.25)' }}
             >

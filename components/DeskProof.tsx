@@ -92,7 +92,7 @@ export default function DeskProof({
   const c = COPY[(locale === 'en' ? 'en' : 'nl') as Locale]
 
   return (
-    <section className="bg-white" style={{ padding: '104px 24px' }}>
+    <section className="bg-white" style={{ padding: 'clamp(64px, 8vw, 104px) 24px' }}>
       {/* Geen scroll-animatie hier. Een view()-timeline blijft halverwege
           hangen zodra de hele sectie in een keer in beeld staat, bijvoorbeeld op
           een hoog scherm of in een schermafdruk, en dan ziet de bezoeker een
@@ -118,7 +118,7 @@ export default function DeskProof({
         {/* Een object: de opname, met de melding over de ONDERrand heen. Ruimte
             eronder gereserveerd, zodat de kaart in die marge hangt en niet over
             de grafiek in de opname valt. */}
-        <div className="relative md:pb-[120px]" style={{ marginTop: '52px' }}>
+        <div className="relative md:pb-[120px]" style={{ marginTop: '40px' }}>
           <div
             className="rounded-2xl overflow-hidden"
             style={{
@@ -143,8 +143,8 @@ export default function DeskProof({
               background: '#fff',
               border: '1px solid rgba(10,22,40,0.08)',
               boxShadow: '0 24px 50px -18px rgba(10,22,40,0.42)',
-              padding: '20px 22px',
-              marginTop: '20px',
+              padding: '16px 18px',
+              marginTop: '14px',
             }}
           >
             <div className="flex items-start gap-3.5">
@@ -205,7 +205,7 @@ export default function DeskProof({
             eigenlijk". Twee vragen, dus twee objecten onder elkaar, niet twee
             beelden naast elkaar in een blok. */}
         {toonBrein && (
-        <div style={{ marginTop: '104px' }}>
+        <div style={{ marginTop: 'clamp(56px, 7vw, 104px)' }}>
           <div className="max-w-[640px]">
             <h3
               className="font-display font-extrabold text-primary m-0"
@@ -228,7 +228,7 @@ export default function DeskProof({
           <div
             className="rounded-2xl overflow-hidden"
             style={{
-              marginTop: '36px',
+              marginTop: 'clamp(24px, 3vw, 36px)',
               background: '#F7F9FC',
               border: '1px solid rgba(10,22,40,0.10)',
               boxShadow: '0 32px 70px -30px rgba(10,22,40,0.36)',

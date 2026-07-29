@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
+import DeskProof from '@/components/DeskProof'
 import { nativeConnectors } from '@/data/connectors'
 import HairlineRule from '@/components/HairlineRule'
 
@@ -149,6 +150,10 @@ export default async function PlatformPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Zo ziet dat eruit: het platform zelf. Deze pagina had 355 regels tekst
+          over het platform zonder een enkel beeld ervan. */}
+      <DeskProof locale={locale} />
 
       {/* Native Connectors */}
       <section id="connectors" className="bg-surface" style={{ padding: '96px 24px' }}>

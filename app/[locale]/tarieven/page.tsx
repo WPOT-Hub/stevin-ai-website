@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import StevinBrainVisual from '@/components/StevinBrainVisual'
+import DeskProof from '@/components/DeskProof'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -134,6 +136,7 @@ const COPY = {
   breinH2: 'Wie er ook werkt, plugt in op hetzelfde brein.',
   breinBody:
     'Een nieuw bureau kost normaal een maand of drie inwerken, en de helft van wat je vorige partij wist komt nooit meer boven. Bij Stevin staat het vast: wat er geprobeerd is, wat werkte, wat niet en waarom. Een freelancer, je eigen team of een volgend bureau leest zich in, in plaats van dat jij het opnieuw gaat vertellen.',
+  breinOnder: 'Het geheugen van een klant, zoals het in de Desk staat. Sleep gerust aan de knopen.',
   breinPunten: [
     { t: 'Geen lange briefings meer', d: 'De context staat er al. Iemand die maandag begint, weet maandag wat er speelt.' },
     { t: 'Geen campagnes die iemand vergeet', d: 'Wat er loopt en waarom staat vast, ook als de persoon die het bedacht er niet meer is.' },
@@ -322,6 +325,10 @@ export default async function PreviewTarieven({ params }: Props) {
 
       {/* Het echte onderscheid. Niet wie het werk doet, maar dat de kennis blijft
           liggen als die persoon wisselt. */}
+      {/* Het scherm zelf, zonder brein-blok: het brein staat hieronder in de
+          band die de claim maakt. */}
+      <DeskProof locale={locale} toonBrein={false} />
+
       <section className="bg-[#0A1628] text-white" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[980px]">
           <div className="max-w-[640px]">
@@ -342,6 +349,19 @@ export default async function PreviewTarieven({ params }: Props) {
               {COPY.breinBody}
             </p>
           </div>
+
+          {/* De claim stond hier alleen als tekst. Een netwerkkaart waar je zelf
+              aan kunt trekken laat het zien; een zin erover niet. De donkere
+              variant, want deze band is al navy. */}
+          <div
+            className="rounded-2xl overflow-hidden"
+            style={{ marginTop: '44px', border: '1px solid rgba(255,255,255,0.10)' }}
+          >
+            <StevinBrainVisual aspect="21:9" brand={false} claim="" ariaLabel="" locale={locale} />
+          </div>
+          <p className="text-slate-400" style={{ fontSize: '13px', marginTop: '16px' }}>
+            {COPY.breinOnder}
+          </p>
 
           <div className="grid gap-8 md:grid-cols-3" style={{ marginTop: '52px' }}>
             {COPY.breinPunten.map((p) => (
