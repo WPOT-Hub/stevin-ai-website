@@ -1513,6 +1513,45 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'smx-advanced-2027-twee-locaties': (
+    <>
+      <p className="lead-para">
+        De SMX Advanced-conferentie breidt zich in 2027 uit naar twee locaties. De eerste editie vindt plaats van 1 tot 3 juni in San Diego, de tweede van 14 tot 16 juli in Boston. Beide evenementen bieden ruimte voor diepgaande sessies, workshops en netwerkgelegenheden met experts uit SEO en PPC aldus de organisatie.
+      </p>
+      <p>
+        De conferenties richten zich op actuele thema’s zoals zoekmachineoptimalisatie, betaalde zoekcampagnes en geavanceerde analysetechnieken. Deelnemers kunnen reageren op vragen aan sprekers tijdens Q&amp;A-sessies en direct ervaringen uitwisselen met andere professionals.
+      </p>
+      <p>
+        Tickets zijn nu beschikbaar via de officiële website van SMX. De organisatie benadrukt dat beide locaties een vergelijkbaar aanbod zullen hebben, maar adviseert om tijdig te boeken vanwege beperkte capaciteit.
+      </p>
+    </>
+  ),
+  'seo-verlaagt-blended-customer-acquisition-costs': (
+    <>
+      <p className="lead-para">
+        Uit meetdata blijkt dat bedrijven met een goed uitgevoerde SEO-aanpak hun blended customer acquisition cost (CAC) met gemiddeld 15 tot 30 procent kunnen verlagen. Dit komt doordat organische zoekresultaten niet alleen directe conversies opleveren, maar ook de effectiviteit van betaalde campagnes verhogen. Zo zien merken dat zoekopdrachten via SEO leiden tot betere kwaliteit in leads, wat de kosten per acquisitie drukt.
+      </p>
+      <p>
+        Deze uplift ontstaat omdat SEO zorgt voor een constante stroom van relevante bezoekers zonder directe kosten per klik of impressie. Daarnaast verbetert het de vindbaarheid in combinatie met andere kanalen, zoals social media of e-mailmarketing. Dat leidt tot een betere positionering in de customer journey en minder afhankelijkheid van dure betaalde advertenties.
+      </p>
+      <p>
+        Voor bureau-eigenaars en in-house teams betekent dit dat investeren in SEO niet alleen een kostenpost is, maar een strategische keuze die andere acquisitiekanalen versterkt. Door data te koppelen tussen organische en betaalde campagnes wordt duidelijk waar de grootste winst ligt.
+      </p>
+    </>
+  ),
+  'cyera-acquire-oasis-security-1-miljard': (
+    <>
+      <p className="lead-para">
+        Cyera neemt Oasis Security over voor één miljard dollar. Het Amerikaanse bedrijf wil hiermee de veiligheid van AI-agenten versterken, die steeds vaker worden ingezet in bedrijfsprocessen. De deal volgt op eerdere overnames dit jaar, waarmee Cyera zijn positie in de markt voor databeveiliging verder uitbouwt.
+      </p>
+      <p>
+        De groei van AI-agenten brengt nieuwe beveiligingsuitdagingen met zich mee. Via deze agenten kunnen ongeautoriseerde toegang tot systemen of datalekken ontstaan, aldus experts binnen het veld. Oasis Security biedt technologie die deze risico’s moet beperken door realtime monitoring en detectie van bedreigingen.
+      </p>
+      <p>
+        De transactie sluit aan bij een bredere trend waarin bedrijven investeren in bescherming tegen cyberdreigingen. Met name organisaties die veel gebruikmaken van autonome systemen lopen risico, zo blijkt uit recente rapportages.
+      </p>
+    </>
+  ),
   'microsofts-ai-bom-in-cybersecurity-hoe-agenten-de-battle-gaan-winnen': (
     <>
       <p className="lead-para">
@@ -6330,6 +6369,12 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'smx-advanced-2027-twee-locaties':
+    "Voor bureaus en marketingteams is het goed om deze gelegenheid te benutten om kennis op te doen van de nieuwste trends in zoekmarketing. Het bijwonen van dergelijke conferenties kan helpen om interne teams up-to-date te houden en strategieën aan te passen aan veranderende marktomstandigheden.",
+  'seo-verlaagt-blended-customer-acquisition-costs':
+    "Voor ondernemers is dit een reminder dat langetermijninvesteringen in SEO vaak meer opleveren dan kortetermijnacties. Het gaat niet alleen om ranking, maar om het creëren van een robuuste digitale aanwezigheid die andere kanalen ondersteunt. Dat vraagt om geduld en consistentie, maar de meetdata laat zien dat het zich terugbetaalt.",
+  'cyera-acquire-oasis-security-1-miljard':
+    "Voor bedrijven die AI-agenten implementeren, wordt het belangrijker om niet alleen de functionaliteit maar ook de veiligheid goed te regelen. Een gebrek aan adequate beveiliging kan leiden tot reputatieschade of financiële verliezen. Het is verstandig om nu al na te denken over hoe je deze risico’s kunt mitigeren, voordat ze zich voordoen.",
   'microsofts-ai-bom-in-cybersecurity-hoe-agenten-de-battle-gaan-winnen':
     "Bij Stevin zien we deze ontwikkeling als een noodzakelijke stap in cybersecurity, maar wel één die met grote zorg moet worden ingevoerd. Onze klanten vragen steeds vaker om robuuste oplossingen die zowel proactief als adaptief zijn—zonder dat ze daarbij hun autonomie verliezen over hun eigen infrastructuur. Wij adviseren om autonome beveiligingssystemen altijd te combineren met menselijke supervisie en strikte governance-modellen. Een agent kan immers nooit verantwoordelijkheid dragen; dat doet uiteindelijk altijd iemand binnen je organisatie. Daarnaast benadrukken we het belang van transparante meetdata: alleen als je precies kunt terugzien waarom een agent bepaalde keuzes maakt, kun je vertrouwen opbouwen in deze systemen.",
   'ai-infrastructuur-onder-druk-door-energievraag-techcrunch-disrupt-2026':
