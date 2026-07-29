@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'pangram-verzamelt-9-miljoen-voor-ai-detectie-tools': (
+    <>
+      <p className="lead-para">
+        Het Amerikaanse Pangram heeft $9 miljoen opgehaald om zijn AI-detectiesoftware verder uit te breiden. Daarnaast introduceert het bedrijf Pangram 4, een verbeterde versie van zijn tekstdetectiemodel. Ook wordt een onderzoeksversie van een AI-beeldherkenningstool beschikbaar gesteld.
+      </p>
+      <p>
+        De tools moeten helpen om geautomatiseerde content te onderscheiden van door mensen gemaakte teksten en beelden. Dit komt voort uit de groeiende zorgen over de hoeveelheid AI-gegenereerde content op het internet. Pangram claimt dat zijn modellen accurater presteren dan bestaande oplossingen.
+      </p>
+      <p>
+        De financieringsronde wordt geleid door Nexus Venture Partners, met deelname van andere investeerders zoals Y Combinator. Het geld gaat vooral naar het opschalen van de technologie en het uitbreiden van het team.
+      </p>
+    </>
+  ),
   'smx-advanced-2027-twee-locaties': (
     <>
       <p className="lead-para">
@@ -6369,6 +6382,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'pangram-verzamelt-9-miljoen-voor-ai-detectie-tools':
+    "Voor bedrijven die veel content produceren of beheren, wordt het steeds belangrijker om de oorsprong van teksten en beelden te kunnen achterhalen. Betrouwbare detectie kan helpen bij kwaliteitscontrole, compliance of zelfs juridische kwesties. Tegelijkertijd is het goed om kritisch te blijven: geen enkele tool is perfect en nieuwe technieken maken het detecteren alleen maar complexer.",
   'smx-advanced-2027-twee-locaties':
     "Voor bureaus en marketingteams is het goed om deze gelegenheid te benutten om kennis op te doen van de nieuwste trends in zoekmarketing. Het bijwonen van dergelijke conferenties kan helpen om interne teams up-to-date te houden en strategieën aan te passen aan veranderende marktomstandigheden.",
   'seo-verlaagt-blended-customer-acquisition-costs':
