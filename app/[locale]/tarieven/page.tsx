@@ -91,9 +91,13 @@ const COPY = {
       // werkt, dus benoem hier de persoon en zet de looptijd eronder.
       label: 'Voor wie het straks zelf wil doen',
       titel: 'Wij starten je op',
-      prijs: 'vanaf 1.399',
+      // Geen jaartarief hier, en dat is geen slordigheid. Je kunt geen jaar
+      // vooruit vragen voor iets dat na zes maanden klaar kan zijn. De
+      // tijdelijke fase is dus per maand; pas als het blijvend wordt (kaart 1
+      // of 3) mag er een jaarprijs tegenover staan.
+      prijs: 'vanaf 1.499',
       prijsPer: 'per maand',
-      prijsSub: 'bij jaarbetaling, 1.499 bij maandbetaling. Zolang we meedraaien.',
+      prijsSub: 'per maand, want dit is tijdelijk. Meestal zes tot twaalf maanden, daarna 399.',
       body:
         'Wij zetten het goed en draaien mee tot het staat. Wat we doen en waarom komt in een dossier dat van jou is, zodat je eigen mensen meeleren. Daarna ga je over op het abonnement.',
       punten: [
@@ -128,7 +132,7 @@ const COPY = {
     },
   ],
   keuzeMicro:
-    'De eerste twee kosten hetzelfde per maand. Het verschil is of het doorloopt of dat het ergens ophoudt, en je mag onderweg nog van gedachten veranderen.',
+    'Per maand kosten de eerste twee hetzelfde. Alleen wat doorloopt heeft een jaartarief, en daar komt dat verschil van honderd euro vandaan: je gaat niet vooruitbetalen voor iets dat we samen willen beeindigen.',
   // Zonder grens is 399 een onbeperkt abonnement op paid, owned, je winkel en
   // je merk, en dat is niet vol te houden. De grens schaalt mee met hoe groot
   // de klant is, niet met zijn mediabudget. Dat laatste is precies wat Aizy
