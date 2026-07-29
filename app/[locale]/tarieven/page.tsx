@@ -97,7 +97,7 @@ const COPY = {
       // of 3) mag er een jaarprijs tegenover staan.
       prijs: 'vanaf 1.499',
       prijsPer: 'per maand',
-      prijsSub: 'per maand, want dit is tijdelijk. Meestal zes tot twaalf maanden, daarna 399.',
+      prijsSub: 'geen jaartarief, want dit is tijdelijk. Meestal zes tot twaalf maanden, daarna 399.',
       body:
         'Wij zetten het goed en draaien mee tot het staat. Wat we doen en waarom komt in een dossier dat van jou is, zodat je eigen mensen meeleren. Daarna ga je over op het abonnement.',
       punten: [
