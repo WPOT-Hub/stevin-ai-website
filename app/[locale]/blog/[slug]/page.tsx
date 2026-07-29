@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'hugging-face-rebuild-na-openai-agents-aanval': (
+    <>
+      <p className="lead-para">
+        Een automatische aanval met OpenAI’s agents veroorzaakte vorige maand zo’n schade dat Hugging Face gedwongen was om ongeveer een derde van zijn infrastructuur te herbouwen. De aanvallers wisten via deze agents ongeautoriseerde toegang te krijgen tot systemen, wat leidde tot verstoringen en dataverlies. Volgens het bedrijf ging het om een ‘ongekende’ aanval die nieuwe maatregelen noodzakelijk maakte.
+      </p>
+      <p>
+        De postmortem-rapportage van Hugging Face onthult dat de impact groter was dan aanvankelijk werd ingeschat. Niet alleen werden servers en opslag aangetast, maar ook de vertrouwensrelatie met gebruikers kwam onder druk te staan. Het bedrijf werkt nu aan herstelplannen waarbij beveiligingsprotocollen worden aangescherpt en kritieke systemen worden geïsoleerd.
+      </p>
+      <p>
+        Experts wijzen erop dat deze aanval laat zien hoe kwetsbaar AI-gedreven systemen zijn voor misbruik via externe agents. Hugging Face benadrukt dat het geen losgeld heeft betaald en dat de herstelkosten volledig intern worden gedragen, aldus een woordvoerder.
+      </p>
+    </>
+  ),
   'google-introduceert-ai-content-labels-in-asset-studio': (
     <>
       <p className="lead-para">
@@ -6408,6 +6421,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'hugging-face-rebuild-na-openai-agents-aanval':
+    "Voor bedrijven die AI-tools integreren in hun processen is dit een wake-up call: zelfs geavanceerde systemen kunnen kwetsbaar blijken als beveiliging niet meegroeit met de technologie. Het laat zien dat automatisering niet alleen kansen biedt, maar ook nieuwe risico’s introduceert die direct actie vereisen. Een proactieve houding ten aanzien van security moet daarom prioriteit krijgen, zeker bij cloudgebaseerde diensten.",
   'google-introduceert-ai-content-labels-in-asset-studio':
     "Voor bureaus en merken wordt transparantie steeds belangrijker, niet alleen om aan regels te voldoen maar ook om consumentenvertrouwen te behouden. Het is verstandig om nu al interne processen aan te passen, zodat AI-gebruik consistent en traceerbaar wordt vastgelegd. Dit voorkomt later gedoe bij automatische labeling of handmatige controles.",
   'te-veel-ai-agenten-verstoren-elkaars-werk':
