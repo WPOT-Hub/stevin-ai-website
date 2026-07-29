@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'pangram-verzamelt-9-miljoen-voor-ai-detectie-tools',
+    format: 'dispatch' as const,
+    edition: '382',
+    category: 'Tech',
+    title: "Pangram haalt $9 miljoen op voor AI-detectietools",
+    dek: "De startup Pangram lanceert een nieuwe versie van zijn detectiesoftware en krijgt daarvoor $9 miljoen aan financiering.",
+    publishedAt: '2026-07-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Pangram haalt $9 miljoen op voor AI-detectietools",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'smx-advanced-2027-twee-locaties',
     format: 'dispatch' as const,
     edition: '381',
