@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-introduceert-ai-content-labels-in-asset-studio': (
+    <>
+      <p className="lead-para">
+        Google voegt een optie toe aan Asset Studio waarmee gebruikers kunnen aangeven of advertentiemateriaal volledig of gedeeltelijk met AI is gemaakt. Deze labels worden zichtbaar in de zoekresultaten en op andere Google-netwerken, aldus het bedrijf.
+      </p>
+      <p>
+        De verplichte disclosures zijn onderdeel van bredere transparantie-eisen die wereldwijd toenemen, zoals eerder aangekondigd door de Europese Commissie en andere regelgevers. Voor adverteerders betekent dit dat ze bij het uploaden van creatives direct kunnen selecteren of ze AI hebben gebruikt.
+      </p>
+      <p>
+        De labels zijn optioneel maar sterk aanbevolen, omdat niet-gemelde AI-content kan leiden tot afkeuring of beperkte zichtbaarheid. Google werkt hiervoor samen met partners om de implementatie soepel te laten verlopen.
+      </p>
+    </>
+  ),
   'te-veel-ai-agenten-verstoren-elkaars-werk': (
     <>
       <p className="lead-para">
@@ -6395,6 +6408,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-introduceert-ai-content-labels-in-asset-studio':
+    "Voor bureaus en merken wordt transparantie steeds belangrijker, niet alleen om aan regels te voldoen maar ook om consumentenvertrouwen te behouden. Het is verstandig om nu al interne processen aan te passen, zodat AI-gebruik consistent en traceerbaar wordt vastgelegd. Dit voorkomt later gedoe bij automatische labeling of handmatige controles.",
   'te-veel-ai-agenten-verstoren-elkaars-werk':
     "Voor organisaties die AI-agenten implementeren is het zaak om eerst kleine, goed gedefinieerde use cases uit te proberen voordat ze opschalen. Te veel autonomie zonder heldere kaders kan juist contraproductief werken. Het is verstandig om de interactie tussen agenten te monitoren en bij te sturen waar nodig.",
   'pangram-verzamelt-9-miljoen-voor-ai-detectie-tools':
