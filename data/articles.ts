@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'cyera-acquire-oasis-security-1-miljard',
+    format: 'dispatch' as const,
+    edition: '379',
+    category: 'Tech',
+    title: "Cyera koopt Oasis Security voor $1 miljard om AI-agenten te beveiligen",
+    dek: "De overname is de derde acquisitie van Cyera in 2026 en richt zich op de groeiende risico’s rond AI-agenten.",
+    publishedAt: '2026-07-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Cyera koopt Oasis Security voor $1 miljard om AI-agenten te beveiligen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'microsofts-ai-bom-in-cybersecurity-hoe-agenten-de-battle-gaan-winnen',
     format: 'dispatch' as const,
     edition: '378',
