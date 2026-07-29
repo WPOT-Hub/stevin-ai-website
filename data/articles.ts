@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'te-veel-ai-agenten-verstoren-elkaars-werk',
+    format: 'dispatch' as const,
+    edition: '383',
+    category: 'Operations',
+    title: "Te veel AI-agenten verstoren elkaars werk",
+    dek: "Uit onderzoek blijkt dat te veel autonome AI-agenten in een bedrijf elkaar tegenwerken en de efficiëntie juist verlagen.",
+    publishedAt: '2026-07-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Te veel AI-agenten verstoren elkaars werk",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'pangram-verzamelt-9-miljoen-voor-ai-detectie-tools',
     format: 'dispatch' as const,
     edition: '382',
