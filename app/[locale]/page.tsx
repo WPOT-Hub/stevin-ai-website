@@ -126,6 +126,7 @@ const COPY = {
     research_stats: [
       { v: '3.667', l: 'Nederlandse en Belgische adverteerders die geen eigenaar zijn van hun eigen campagnedata' },
       { v: '1,9 mln', l: 'advertenties van die bedrijven, doorlopend gevolgd in het openbare register van Google' },
+      { v: '600+', l: 'concurrent-advertenties in beeld via Radar, doorlopend gevolgd' },
     ],
     research_bron: 'Bron: doorlopend Stevin-onderzoek op het openbare transparantieregister van Google, Nederland en Belgie, stand 29 juli 2026. Wat dit wel en niet bewijst leggen we uit in de methode.',
     research_body: 'En dit is alleen nog maar Google. Meta, LinkedIn en TikTok tellen we hierna mee. Dit onderzoek loopt elke week door, en alles wat we vinden publiceren we met methode en al. Zo bouwen we het bewijs dat de markt anders kan.',
@@ -684,19 +685,19 @@ export default async function HomePage({ params }: Props) {
             {c.research_h2}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5 mb-8">
             {c.research_stats.map((stat, i) => (
-              <div key={stat.v} className="rounded-[14px] border border-white/12 p-8 lg:p-10" style={{ background: 'rgba(255,255,255,0.04)' }}>
+              <div key={stat.v} className="rounded-[14px] border border-white/12 p-6 lg:p-7" style={{ background: 'rgba(255,255,255,0.04)' }}>
                 {i === 0 && (
-                  <span className="inline-flex items-center gap-2 text-[11px] font-display font-semibold text-[#5DA3FF] border border-[#5DA3FF]/30 rounded-full px-3 py-1 mb-5">
+                  <span className="inline-flex items-center gap-2 text-[10.5px] font-display font-semibold text-[#5DA3FF] border border-[#5DA3FF]/30 rounded-full px-2.5 py-0.5 mb-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#5DA3FF] flex-shrink-0" aria-hidden="true" />
                     {c.research_chip}
                   </span>
                 )}
-                <p className="font-display font-extrabold text-white" style={{ fontSize: 'clamp(44px, 5vw, 64px)', letterSpacing: '-0.04em', lineHeight: '1' }}>
+                <p className="font-display font-extrabold text-white" style={{ fontSize: 'clamp(30px, 3.4vw, 42px)', letterSpacing: '-0.035em', lineHeight: '1.05' }}>
                   {stat.v}
                 </p>
-                <p className="text-white/55 mt-4 leading-[1.55] m-0" style={{ fontSize: '14px', maxWidth: '420px' }}>{stat.l}</p>
+                <p className="text-white/55 mt-3 leading-[1.5] m-0" style={{ fontSize: '13px' }}>{stat.l}</p>
               </div>
             ))}
           </div>
