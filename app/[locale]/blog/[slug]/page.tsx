@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'seo-verlaagt-blended-customer-acquisition-costs': (
+    <>
+      <p className="lead-para">
+        Uit meetdata blijkt dat bedrijven met een goed uitgevoerde SEO-aanpak hun blended customer acquisition cost (CAC) met gemiddeld 15 tot 30 procent kunnen verlagen. Dit komt doordat organische zoekresultaten niet alleen directe conversies opleveren, maar ook de effectiviteit van betaalde campagnes verhogen. Zo zien merken dat zoekopdrachten via SEO leiden tot betere kwaliteit in leads, wat de kosten per acquisitie drukt.
+      </p>
+      <p>
+        Deze uplift ontstaat omdat SEO zorgt voor een constante stroom van relevante bezoekers zonder directe kosten per klik of impressie. Daarnaast verbetert het de vindbaarheid in combinatie met andere kanalen, zoals social media of e-mailmarketing. Dat leidt tot een betere positionering in de customer journey en minder afhankelijkheid van dure betaalde advertenties.
+      </p>
+      <p>
+        Voor bureau-eigenaars en in-house teams betekent dit dat investeren in SEO niet alleen een kostenpost is, maar een strategische keuze die andere acquisitiekanalen versterkt. Door data te koppelen tussen organische en betaalde campagnes wordt duidelijk waar de grootste winst ligt.
+      </p>
+    </>
+  ),
   'cyera-acquire-oasis-security-1-miljard': (
     <>
       <p className="lead-para">
@@ -6343,6 +6356,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'seo-verlaagt-blended-customer-acquisition-costs':
+    "Voor ondernemers is dit een reminder dat langetermijninvesteringen in SEO vaak meer opleveren dan kortetermijnacties. Het gaat niet alleen om ranking, maar om het creëren van een robuuste digitale aanwezigheid die andere kanalen ondersteunt. Dat vraagt om geduld en consistentie, maar de meetdata laat zien dat het zich terugbetaalt.",
   'cyera-acquire-oasis-security-1-miljard':
     "Voor bedrijven die AI-agenten implementeren, wordt het belangrijker om niet alleen de functionaliteit maar ook de veiligheid goed te regelen. Een gebrek aan adequate beveiliging kan leiden tot reputatieschade of financiële verliezen. Het is verstandig om nu al na te denken over hoe je deze risico’s kunt mitigeren, voordat ze zich voordoen.",
   'microsofts-ai-bom-in-cybersecurity-hoe-agenten-de-battle-gaan-winnen':
