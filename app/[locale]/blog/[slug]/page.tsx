@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'te-veel-ai-agenten-verstoren-elkaars-werk': (
+    <>
+      <p className="lead-para">
+        Onderzoek van het Massachusetts Institute of Technology toont aan dat bedrijven met meer dan vijf autonome AI-agenten per proces vaak een daling zien in productiviteit. De agenten raken met elkaar in conflict over taken, data en prioriteiten, wat leidt tot vertragingen en fouten in uitvoering.
+      </p>
+      <p>
+        De problemen ontstaan vooral wanneer agenten verschillende doelstellingen hebben of onvoldoende met elkaar communiceren. Bijvoorbeeld: de ene agent optimaliseert voor kosten, terwijl een andere juist voor snelheid gaat. Dit veroorzaakt inefficiënties die handmatig moeten worden opgelost.
+      </p>
+      <p>
+        Oplossingen liggen in striktere coördinatie tussen agenten en duidelijke afbakening van taken. Bedrijven die hun AI-agenten beperken tot specifieke, geïsoleerde taken scoren beter op betrouwbaarheid en doorlooptijd.
+      </p>
+    </>
+  ),
   'pangram-verzamelt-9-miljoen-voor-ai-detectie-tools': (
     <>
       <p className="lead-para">
@@ -6382,6 +6395,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'te-veel-ai-agenten-verstoren-elkaars-werk':
+    "Voor organisaties die AI-agenten implementeren is het zaak om eerst kleine, goed gedefinieerde use cases uit te proberen voordat ze opschalen. Te veel autonomie zonder heldere kaders kan juist contraproductief werken. Het is verstandig om de interactie tussen agenten te monitoren en bij te sturen waar nodig.",
   'pangram-verzamelt-9-miljoen-voor-ai-detectie-tools':
     "Voor bedrijven die veel content produceren of beheren, wordt het steeds belangrijker om de oorsprong van teksten en beelden te kunnen achterhalen. Betrouwbare detectie kan helpen bij kwaliteitscontrole, compliance of zelfs juridische kwesties. Tegelijkertijd is het goed om kritisch te blijven: geen enkele tool is perfect en nieuwe technieken maken het detecteren alleen maar complexer.",
   'smx-advanced-2027-twee-locaties':
