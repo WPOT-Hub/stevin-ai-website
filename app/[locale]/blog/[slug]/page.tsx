@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'cyera-acquire-oasis-security-1-miljard': (
+    <>
+      <p className="lead-para">
+        Cyera neemt Oasis Security over voor één miljard dollar. Het Amerikaanse bedrijf wil hiermee de veiligheid van AI-agenten versterken, die steeds vaker worden ingezet in bedrijfsprocessen. De deal volgt op eerdere overnames dit jaar, waarmee Cyera zijn positie in de markt voor databeveiliging verder uitbouwt.
+      </p>
+      <p>
+        De groei van AI-agenten brengt nieuwe beveiligingsuitdagingen met zich mee. Via deze agenten kunnen ongeautoriseerde toegang tot systemen of datalekken ontstaan, aldus experts binnen het veld. Oasis Security biedt technologie die deze risico’s moet beperken door realtime monitoring en detectie van bedreigingen.
+      </p>
+      <p>
+        De transactie sluit aan bij een bredere trend waarin bedrijven investeren in bescherming tegen cyberdreigingen. Met name organisaties die veel gebruikmaken van autonome systemen lopen risico, zo blijkt uit recente rapportages.
+      </p>
+    </>
+  ),
   'microsofts-ai-bom-in-cybersecurity-hoe-agenten-de-battle-gaan-winnen': (
     <>
       <p className="lead-para">
@@ -6330,6 +6343,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'cyera-acquire-oasis-security-1-miljard':
+    "Voor bedrijven die AI-agenten implementeren, wordt het belangrijker om niet alleen de functionaliteit maar ook de veiligheid goed te regelen. Een gebrek aan adequate beveiliging kan leiden tot reputatieschade of financiële verliezen. Het is verstandig om nu al na te denken over hoe je deze risico’s kunt mitigeren, voordat ze zich voordoen.",
   'microsofts-ai-bom-in-cybersecurity-hoe-agenten-de-battle-gaan-winnen':
     "Bij Stevin zien we deze ontwikkeling als een noodzakelijke stap in cybersecurity, maar wel één die met grote zorg moet worden ingevoerd. Onze klanten vragen steeds vaker om robuuste oplossingen die zowel proactief als adaptief zijn—zonder dat ze daarbij hun autonomie verliezen over hun eigen infrastructuur. Wij adviseren om autonome beveiligingssystemen altijd te combineren met menselijke supervisie en strikte governance-modellen. Een agent kan immers nooit verantwoordelijkheid dragen; dat doet uiteindelijk altijd iemand binnen je organisatie. Daarnaast benadrukken we het belang van transparante meetdata: alleen als je precies kunt terugzien waarom een agent bepaalde keuzes maakt, kun je vertrouwen opbouwen in deze systemen.",
   'ai-infrastructuur-onder-druk-door-energievraag-techcrunch-disrupt-2026':
