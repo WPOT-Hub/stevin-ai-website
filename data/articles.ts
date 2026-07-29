@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'seo-verlaagt-blended-customer-acquisition-costs',
+    format: 'dispatch' as const,
+    edition: '380',
+    category: 'Markt',
+    title: "SEO verlaagt blended customer acquisition costs met 15 tot 30 procent",
+    dek: "Een sterke SEO-strategie verlaagt de totale kosten voor klantacquisitie door andere kanalen te versterken en organische groei te stimuleren.",
+    publishedAt: '2026-07-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "SEO verlaagt blended customer acquisition costs met 15 tot 30 procent",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'cyera-acquire-oasis-security-1-miljard',
     format: 'dispatch' as const,
     edition: '379',
