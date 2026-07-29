@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import DeskProof from '@/components/DeskProof'
 import { localizedMetadata } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -188,6 +189,9 @@ export default async function ControlePage({ params }: Props) {
           </div>
         </div>
       </section>
+      {/* Controle betekent dat je het hoort voordat je factuur het vertelt. */}
+      <DeskProof locale={locale} toonBrein={false} melding="meta-storing" />
+
     </>
   )
 }

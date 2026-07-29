@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
+import DeskProof from '@/components/DeskProof'
 import HairlineRule from '@/components/HairlineRule'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -250,6 +251,9 @@ export default async function MarketingPage({ params }: Props) {
           </div>
         </div>
       </section>
+      {/* Twee talen, twee resultaten. Werk voor een team, niet voor een tool. */}
+      <DeskProof locale={locale} toonBrein={false} melding="fr-creatives" />
+
     </main>
   )
 }

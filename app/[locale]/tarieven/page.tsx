@@ -51,10 +51,11 @@ const COPY = {
     'Een marketing-brein werkt pas als het de juiste dingen weet, en dat is meer dan je advertenties: ook je vindbaarheid, je winkel, je mail en je merk. Klopt wat er gemeten wordt, en staat ergens vast wat werkte en wat niet. Je krijgt de lijst van wat daarvoor moet gebeuren, op je eigen cijfers, binnen twee weken.',
 
   keuzeLabel: 'Daarna kies je',
-  // De prijzen komen uit de twee verstuurde voorstellen (Boersma 20 jul, VOCA
-  // 13 jul): abonnement 499, of 399 bij jaarbetaling, en beheer vanaf 399
-  // (Boersma) tot 1.000 (VOCA). Het abonnement staat vast, het beheer schaalt
-  // mee met het werk. Vandaar "vanaf 798" in plaats van "op maat".
+  // Beheer start op 1.499 (Koen, 29 jul). Dat is het VOCA-niveau: abonnement
+  // 399 bij jaarbetaling plus 1.000 beheer. Het Boersma-voorstel stond op 798
+  // (399 + 399), maar dat ging eruit als Founding Partner en is dus geen
+  // ondergrens die je publiek moet noemen. Het abonnement staat vast, het
+  // beheer schaalt mee met het werk.
   //
   // De opstart krijgt bewust GEEN bedrag. Hij liep van 1.000 (VOCA) tot 3.200
   // (Boersma vol tarief, verstuurd met 50% Founding Partner-korting), en een
@@ -68,7 +69,7 @@ const COPY = {
       nr: '01',
       label: 'Voor wie er niet naar om wil kijken',
       titel: 'Wij doen alles',
-      prijs: 'vanaf 798',
+      prijs: 'vanaf 1.499',
       prijsPer: 'per maand',
       prijsSub: 'doorlopend. De opstart is maatwerk, want die hangt af van wat er staat.',
       body:
@@ -87,7 +88,7 @@ const COPY = {
       // werkt, dus benoem hier de persoon en zet de looptijd eronder.
       label: 'Voor wie het straks zelf wil doen',
       titel: 'Wij starten je op',
-      prijs: 'vanaf 798',
+      prijs: 'vanaf 1.499',
       prijsPer: 'per maand',
       prijsSub: 'zolang we meedraaien. De opstart is maatwerk.',
       body:

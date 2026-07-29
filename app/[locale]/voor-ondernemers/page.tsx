@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import DeskProof from '@/components/DeskProof'
 import { localizedMetadata } from '@/lib/seo'
 import FAQAccordion from '@/components/FAQAccordion'
 
@@ -214,6 +215,9 @@ export default async function VoorOndernemersPage({ params }: Props) {
           </div>
         </div>
       </section>
+      {/* Er ging iets stuk en niemand die het je vertelde. Dat is de deur voor de ondernemer. */}
+      <DeskProof locale={locale} toonBrein={false} melding="meta-storing" />
+
     </>
   )
 }

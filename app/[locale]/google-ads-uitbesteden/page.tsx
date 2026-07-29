@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import DeskProof from '@/components/DeskProof'
 import { localizedMetadata } from '@/lib/seo'
 import FAQAccordion from '@/components/FAQAccordion'
 
@@ -307,6 +308,9 @@ export default async function GoogleAdsUitbestedenPage({ params }: Props) {
           </div>
         </div>
       </section>
+      {/* Consent-verlies raakt je Google-meting; het advies gaat over modeled conversions. */}
+      <DeskProof locale={locale} toonBrein={false} melding="consent-be" />
+
     </>
   )
 }

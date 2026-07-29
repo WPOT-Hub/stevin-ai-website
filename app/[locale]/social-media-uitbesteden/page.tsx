@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import DeskProof from '@/components/DeskProof'
 import { localizedMetadata } from '@/lib/seo'
 import FAQAccordion from '@/components/FAQAccordion'
 
@@ -301,6 +302,9 @@ export default async function SocialMediaUitbestedenPage({ params }: Props) {
           </div>
         </div>
       </section>
+      {/* Pagina over social, dus de Meta-storing. */}
+      <DeskProof locale={locale} toonBrein={false} melding="meta-storing" />
+
     </>
   )
 }

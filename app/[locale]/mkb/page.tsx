@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
+import DeskProof from '@/components/DeskProof'
 import Section from '@/components/Section'
 import CTABlock from '@/components/CTABlock'
 import FAQAccordion from '@/components/FAQAccordion'
@@ -143,6 +144,9 @@ export default async function MkbPage({ params }: Props) {
       <Section bg="surface">
         <CTABlock title={t('cta_h2')} description={t('cta_desc')} buttonText={t('cta')} buttonHref="/contact" />
       </Section>
+      {/* Concreet en herkenbaar, geen abstractie. */}
+      <DeskProof locale={locale} toonBrein={false} melding="hittegolf" />
+
     </main>
   )
 }

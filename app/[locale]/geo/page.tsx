@@ -5,6 +5,7 @@ import Section from '@/components/Section'
 import SectionHeader from '@/components/SectionHeader'
 import CTABlock from '@/components/CTABlock'
 import FAQAccordion from '@/components/FAQAccordion'
+import DeskProof from '@/components/DeskProof'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -188,6 +189,9 @@ export default async function GEOPage({ params }: Props) {
           buttonHref="/contact"
         />
       </Section>
+      {/* Bereik dat ergens anders ontstaat dan in je eigen kanalen. */}
+      <DeskProof locale={locale} toonBrein={false} melding="influencer" />
+
     </>
   )
 }

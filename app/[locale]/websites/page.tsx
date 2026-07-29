@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
+import DeskProof from '@/components/DeskProof'
 import TemplateSlider from '@/components/TemplateSlider'
 import { TEMPLATES, FEATURED } from '@/data/templates'
 import { ArrowUpRight } from 'lucide-react'
@@ -142,6 +143,9 @@ export default async function WebsitesPage({ params }: Props) {
           </div>
         </div>
       </section>
+      {/* Cookiebanner en consent-flow zitten op de website zelf. */}
+      <DeskProof locale={locale} toonBrein={false} melding="consent-be" />
+
     </main>
   )
 }

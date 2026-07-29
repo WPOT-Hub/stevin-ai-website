@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
+import DeskProof from '@/components/DeskProof'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -484,6 +485,9 @@ export default async function MultiMarketPage({ params }: Props) {
           </div>
         </div>
       </section>
+      {/* Twee vestigingen, en het weer raakt er maar een. Precies waar deze pagina over gaat. */}
+      <DeskProof locale={locale} toonBrein={false} melding="hittegolf" />
+
     </>
   )
 }

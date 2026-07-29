@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
+import DeskProof from '@/components/DeskProof'
 import { ShieldCheck, Ticket, GitMerge, CalendarClock, Mail, Radar } from 'lucide-react'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -206,6 +207,9 @@ export default async function MuseaPage({ params }: Props) {
           </div>
         </div>
       </section>
+      {/* Warm weer stuurt bezoek weg van binnen naar buiten. */}
+      <DeskProof locale={locale} toonBrein={false} melding="hittegolf" />
+
     </main>
   )
 }

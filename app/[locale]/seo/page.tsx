@@ -5,6 +5,7 @@ import Section from '@/components/Section'
 import SectionHeader from '@/components/SectionHeader'
 import CTABlock from '@/components/CTABlock'
 import FAQAccordion from '@/components/FAQAccordion'
+import DeskProof from '@/components/DeskProof'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -150,6 +151,9 @@ export default async function SEOPage({ params }: Props) {
           buttonHref="/contact"
         />
       </Section>
+      {/* Meting die wegzakt raakt ook wat je over organisch kunt zeggen. */}
+      <DeskProof locale={locale} toonBrein={false} melding="consent-be" />
+
     </>
   )
 }

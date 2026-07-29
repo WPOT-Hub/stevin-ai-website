@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
+import DeskProof from '@/components/DeskProof'
 import HairlineRule from '@/components/HairlineRule'
 import { Search, GitBranch, Database, Plug, Eye, Radar } from 'lucide-react'
 
@@ -222,6 +223,9 @@ export default async function RetailPage({ params }: Props) {
           </div>
         </div>
       </section>
+      {/* Weer stuurt winkelverkeer. */}
+      <DeskProof locale={locale} toonBrein={false} melding="hittegolf" />
+
     </main>
   )
 }
