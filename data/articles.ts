@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-introduceert-ai-content-labels-in-asset-studio',
+    format: 'dispatch' as const,
+    edition: '384',
+    category: 'Platform',
+    title: "Google voegt AI-contentlabels toe in Asset Studio",
+    dek: "Adverteerders kunnen vanaf nu automatisch AI gegenereerde of bewerkte advertenties markeren in Google Ads.",
+    publishedAt: '2026-07-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google voegt AI-contentlabels toe in Asset Studio",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'te-veel-ai-agenten-verstoren-elkaars-werk',
     format: 'dispatch' as const,
     edition: '383',
