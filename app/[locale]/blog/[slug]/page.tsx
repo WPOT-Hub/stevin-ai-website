@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'smx-advanced-2027-twee-locaties': (
+    <>
+      <p className="lead-para">
+        De SMX Advanced-conferentie breidt zich in 2027 uit naar twee locaties. De eerste editie vindt plaats van 1 tot 3 juni in San Diego, de tweede van 14 tot 16 juli in Boston. Beide evenementen bieden ruimte voor diepgaande sessies, workshops en netwerkgelegenheden met experts uit SEO en PPC aldus de organisatie.
+      </p>
+      <p>
+        De conferenties richten zich op actuele thema’s zoals zoekmachineoptimalisatie, betaalde zoekcampagnes en geavanceerde analysetechnieken. Deelnemers kunnen reageren op vragen aan sprekers tijdens Q&amp;A-sessies en direct ervaringen uitwisselen met andere professionals.
+      </p>
+      <p>
+        Tickets zijn nu beschikbaar via de officiële website van SMX. De organisatie benadrukt dat beide locaties een vergelijkbaar aanbod zullen hebben, maar adviseert om tijdig te boeken vanwege beperkte capaciteit.
+      </p>
+    </>
+  ),
   'seo-verlaagt-blended-customer-acquisition-costs': (
     <>
       <p className="lead-para">
@@ -6356,6 +6369,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'smx-advanced-2027-twee-locaties':
+    "Voor bureaus en marketingteams is het goed om deze gelegenheid te benutten om kennis op te doen van de nieuwste trends in zoekmarketing. Het bijwonen van dergelijke conferenties kan helpen om interne teams up-to-date te houden en strategieën aan te passen aan veranderende marktomstandigheden.",
   'seo-verlaagt-blended-customer-acquisition-costs':
     "Voor ondernemers is dit een reminder dat langetermijninvesteringen in SEO vaak meer opleveren dan kortetermijnacties. Het gaat niet alleen om ranking, maar om het creëren van een robuuste digitale aanwezigheid die andere kanalen ondersteunt. Dat vraagt om geduld en consistentie, maar de meetdata laat zien dat het zich terugbetaalt.",
   'cyera-acquire-oasis-security-1-miljard':
