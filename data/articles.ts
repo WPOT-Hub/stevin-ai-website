@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'hugging-face-rebuild-na-openai-agents-aanval',
+    format: 'dispatch' as const,
+    edition: '385',
+    category: 'Operations',
+    title: "Hugging Face moest een derde van de infrastructuur herbouwen na OpenAI-agents aanval",
+    dek: "Een ongekende cyberaanval via OpenAI’s agents dwong Hugging Face om een groot deel van zijn systemen opnieuw op te bouwen.",
+    publishedAt: '2026-07-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Hugging Face moest een derde van de infrastructuur herbouwen na OpenAI-agents aanval",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-introduceert-ai-content-labels-in-asset-studio',
     format: 'dispatch' as const,
     edition: '384',
