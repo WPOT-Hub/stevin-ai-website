@@ -1513,6 +1513,58 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'hugging-face-rebuild-na-openai-agents-aanval': (
+    <>
+      <p className="lead-para">
+        Een automatische aanval met OpenAI’s agents veroorzaakte vorige maand zo’n schade dat Hugging Face gedwongen was om ongeveer een derde van zijn infrastructuur te herbouwen. De aanvallers wisten via deze agents ongeautoriseerde toegang te krijgen tot systemen, wat leidde tot verstoringen en dataverlies. Volgens het bedrijf ging het om een ‘ongekende’ aanval die nieuwe maatregelen noodzakelijk maakte.
+      </p>
+      <p>
+        De postmortem-rapportage van Hugging Face onthult dat de impact groter was dan aanvankelijk werd ingeschat. Niet alleen werden servers en opslag aangetast, maar ook de vertrouwensrelatie met gebruikers kwam onder druk te staan. Het bedrijf werkt nu aan herstelplannen waarbij beveiligingsprotocollen worden aangescherpt en kritieke systemen worden geïsoleerd.
+      </p>
+      <p>
+        Experts wijzen erop dat deze aanval laat zien hoe kwetsbaar AI-gedreven systemen zijn voor misbruik via externe agents. Hugging Face benadrukt dat het geen losgeld heeft betaald en dat de herstelkosten volledig intern worden gedragen, aldus een woordvoerder.
+      </p>
+    </>
+  ),
+  'google-introduceert-ai-content-labels-in-asset-studio': (
+    <>
+      <p className="lead-para">
+        Google voegt een optie toe aan Asset Studio waarmee gebruikers kunnen aangeven of advertentiemateriaal volledig of gedeeltelijk met AI is gemaakt. Deze labels worden zichtbaar in de zoekresultaten en op andere Google-netwerken, aldus het bedrijf.
+      </p>
+      <p>
+        De verplichte disclosures zijn onderdeel van bredere transparantie-eisen die wereldwijd toenemen, zoals eerder aangekondigd door de Europese Commissie en andere regelgevers. Voor adverteerders betekent dit dat ze bij het uploaden van creatives direct kunnen selecteren of ze AI hebben gebruikt.
+      </p>
+      <p>
+        De labels zijn optioneel maar sterk aanbevolen, omdat niet-gemelde AI-content kan leiden tot afkeuring of beperkte zichtbaarheid. Google werkt hiervoor samen met partners om de implementatie soepel te laten verlopen.
+      </p>
+    </>
+  ),
+  'te-veel-ai-agenten-verstoren-elkaars-werk': (
+    <>
+      <p className="lead-para">
+        Onderzoek van het Massachusetts Institute of Technology toont aan dat bedrijven met meer dan vijf autonome AI-agenten per proces vaak een daling zien in productiviteit. De agenten raken met elkaar in conflict over taken, data en prioriteiten, wat leidt tot vertragingen en fouten in uitvoering.
+      </p>
+      <p>
+        De problemen ontstaan vooral wanneer agenten verschillende doelstellingen hebben of onvoldoende met elkaar communiceren. Bijvoorbeeld: de ene agent optimaliseert voor kosten, terwijl een andere juist voor snelheid gaat. Dit veroorzaakt inefficiënties die handmatig moeten worden opgelost.
+      </p>
+      <p>
+        Oplossingen liggen in striktere coördinatie tussen agenten en duidelijke afbakening van taken. Bedrijven die hun AI-agenten beperken tot specifieke, geïsoleerde taken scoren beter op betrouwbaarheid en doorlooptijd.
+      </p>
+    </>
+  ),
+  'pangram-verzamelt-9-miljoen-voor-ai-detectie-tools': (
+    <>
+      <p className="lead-para">
+        Het Amerikaanse Pangram heeft $9 miljoen opgehaald om zijn AI-detectiesoftware verder uit te breiden. Daarnaast introduceert het bedrijf Pangram 4, een verbeterde versie van zijn tekstdetectiemodel. Ook wordt een onderzoeksversie van een AI-beeldherkenningstool beschikbaar gesteld.
+      </p>
+      <p>
+        De tools moeten helpen om geautomatiseerde content te onderscheiden van door mensen gemaakte teksten en beelden. Dit komt voort uit de groeiende zorgen over de hoeveelheid AI-gegenereerde content op het internet. Pangram claimt dat zijn modellen accurater presteren dan bestaande oplossingen.
+      </p>
+      <p>
+        De financieringsronde wordt geleid door Nexus Venture Partners, met deelname van andere investeerders zoals Y Combinator. Het geld gaat vooral naar het opschalen van de technologie en het uitbreiden van het team.
+      </p>
+    </>
+  ),
   'smx-advanced-2027-twee-locaties': (
     <>
       <p className="lead-para">
@@ -6369,6 +6421,14 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'hugging-face-rebuild-na-openai-agents-aanval':
+    "Voor bedrijven die AI-tools integreren in hun processen is dit een wake-up call: zelfs geavanceerde systemen kunnen kwetsbaar blijken als beveiliging niet meegroeit met de technologie. Het laat zien dat automatisering niet alleen kansen biedt, maar ook nieuwe risico’s introduceert die direct actie vereisen. Een proactieve houding ten aanzien van security moet daarom prioriteit krijgen, zeker bij cloudgebaseerde diensten.",
+  'google-introduceert-ai-content-labels-in-asset-studio':
+    "Voor bureaus en merken wordt transparantie steeds belangrijker, niet alleen om aan regels te voldoen maar ook om consumentenvertrouwen te behouden. Het is verstandig om nu al interne processen aan te passen, zodat AI-gebruik consistent en traceerbaar wordt vastgelegd. Dit voorkomt later gedoe bij automatische labeling of handmatige controles.",
+  'te-veel-ai-agenten-verstoren-elkaars-werk':
+    "Voor organisaties die AI-agenten implementeren is het zaak om eerst kleine, goed gedefinieerde use cases uit te proberen voordat ze opschalen. Te veel autonomie zonder heldere kaders kan juist contraproductief werken. Het is verstandig om de interactie tussen agenten te monitoren en bij te sturen waar nodig.",
+  'pangram-verzamelt-9-miljoen-voor-ai-detectie-tools':
+    "Voor bedrijven die veel content produceren of beheren, wordt het steeds belangrijker om de oorsprong van teksten en beelden te kunnen achterhalen. Betrouwbare detectie kan helpen bij kwaliteitscontrole, compliance of zelfs juridische kwesties. Tegelijkertijd is het goed om kritisch te blijven: geen enkele tool is perfect en nieuwe technieken maken het detecteren alleen maar complexer.",
   'smx-advanced-2027-twee-locaties':
     "Voor bureaus en marketingteams is het goed om deze gelegenheid te benutten om kennis op te doen van de nieuwste trends in zoekmarketing. Het bijwonen van dergelijke conferenties kan helpen om interne teams up-to-date te houden en strategieën aan te passen aan veranderende marktomstandigheden.",
   'seo-verlaagt-blended-customer-acquisition-costs':
