@@ -51,11 +51,14 @@ const COPY = {
     'Een marketing-brein werkt pas als het de juiste dingen weet, en dat is meer dan je advertenties: ook je vindbaarheid, je winkel, je mail en je merk. Klopt wat er gemeten wordt, en staat ergens vast wat werkte en wat niet. Je krijgt de lijst van wat daarvoor moet gebeuren, op je eigen cijfers, binnen twee weken.',
 
   keuzeLabel: 'Daarna kies je',
-  // Beheer start op 1.499 (Koen, 29 jul). Dat is het VOCA-niveau: abonnement
-  // 399 bij jaarbetaling plus 1.000 beheer. Het Boersma-voorstel stond op 798
-  // (399 + 399), maar dat ging eruit als Founding Partner en is dus geen
-  // ondergrens die je publiek moet noemen. Het abonnement staat vast, het
-  // beheer schaalt mee met het werk.
+  // Beheer start op 1.399 (Koen, 29 jul). Dat is het VOCA-niveau: 399
+  // abonnement bij jaarbetaling plus 1.000 beheer. Bij maandbetaling wordt het
+  // 1.499, want dan is het abonnement 499. Dat is geen korting maar hetzelfde
+  // verschil dat ook op de derde kaart staat.
+  //
+  // Het Boersma-voorstel stond op 798 (399 + 399), maar dat ging eruit als
+  // Founding Partner en is dus geen ondergrens die je publiek moet noemen.
+  // Het abonnement staat vast, het beheer schaalt mee met het werk.
   //
   // De opstart krijgt bewust GEEN bedrag. Hij liep van 1.000 (VOCA) tot 3.200
   // (Boersma vol tarief, verstuurd met 50% Founding Partner-korting), en een
@@ -69,9 +72,9 @@ const COPY = {
       nr: '01',
       label: 'Voor wie er niet naar om wil kijken',
       titel: 'Wij doen alles',
-      prijs: 'vanaf 1.499',
+      prijs: 'vanaf 1.399',
       prijsPer: 'per maand',
-      prijsSub: 'doorlopend. De opstart is maatwerk, want die hangt af van wat er staat.',
+      prijsSub: 'bij jaarbetaling, 1.499 per maand bij maandbetaling. Doorlopend, en de opstart is maatwerk.',
       body:
         'Sommige ondernemers willen er niets van weten, en dat is een prima antwoord. Wij richten in, sturen bij en ruimen op. Zolang je wilt, ook als dat jaren is.',
       punten: [
@@ -88,9 +91,9 @@ const COPY = {
       // werkt, dus benoem hier de persoon en zet de looptijd eronder.
       label: 'Voor wie het straks zelf wil doen',
       titel: 'Wij starten je op',
-      prijs: 'vanaf 1.499',
+      prijs: 'vanaf 1.399',
       prijsPer: 'per maand',
-      prijsSub: 'zolang we meedraaien. De opstart is maatwerk.',
+      prijsSub: 'bij jaarbetaling, 1.499 bij maandbetaling. Zolang we meedraaien.',
       body:
         'Wij zetten het goed en draaien mee tot het staat. Wat we doen en waarom komt in een dossier dat van jou is, zodat je eigen mensen meeleren. Daarna ga je over op het abonnement.',
       punten: [
