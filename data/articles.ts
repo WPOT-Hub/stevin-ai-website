@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'smx-advanced-2027-twee-locaties',
+    format: 'dispatch' as const,
+    edition: '381',
+    category: 'Markt',
+    title: "SMX Advanced 2027 vindt plaats in San Diego én Boston",
+    dek: "In 2027 organiseert SMX Advanced twee conferenties: een in San Diego en een in Boston, met focus op SEO en PPC.",
+    publishedAt: '2026-07-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "SMX Advanced 2027 vindt plaats in San Diego én Boston",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'seo-verlaagt-blended-customer-acquisition-costs',
     format: 'dispatch' as const,
     edition: '380',
