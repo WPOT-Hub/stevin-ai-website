@@ -24,7 +24,7 @@ const COPY = {
     cta_primary: 'Start de diagnose',
     cta_secondary: 'Kijk zelf mee',
     cta_micro: 'Eerst de diagnose op jouw eigen data. Daarna pas een voorstel.',
-    chips: ['1.598+ gescande adverteerders', 'Signalen, dag en nacht'],
+    chips: ['3.667 adverteerders in beeld', 'Signalen, dag en nacht'],
     connectors_label: 'Leest mee op al je kanalen',
 
     herken_eyebrow: 'Herken je dit?',
@@ -124,10 +124,10 @@ const COPY = {
     research_h2: 'Wij wijzen je op wat er al die tijd te zien was.',
     research_chip: 'Teller loopt door',
     research_stats: [
-      { v: '1.598', l: 'Nederlandse adverteerders met een ander bedrijf als geregistreerde betaler, volgens het openbare transparantieregister van Google' },
-      { v: '600+', l: 'concurrent-advertenties in beeld via Radar, doorlopend gevolgd' },
+      { v: '3.667', l: 'Nederlandse en Belgische adverteerders die geen eigenaar zijn van hun eigen campagnedata' },
+      { v: '1,9 mln', l: 'advertenties van die bedrijven, doorlopend gevolgd in het openbare register van Google' },
     ],
-    research_bron: 'Bron: doorlopend Stevin-onderzoek, stand juli 2026. Wat dit wel en niet bewijst leggen we uit in de methode.',
+    research_bron: 'Bron: doorlopend Stevin-onderzoek op het openbare transparantieregister van Google, Nederland en Belgie, stand 29 juli 2026. Wat dit wel en niet bewijst leggen we uit in de methode.',
     research_body: 'En dit is alleen nog maar Google. Meta, LinkedIn en TikTok tellen we hierna mee. Dit onderzoek loopt elke week door, en alles wat we vinden publiceren we met methode en al. Zo bouwen we het bewijs dat de markt anders kan.',
     research_link: 'Naar het onderzoek',
 
@@ -161,7 +161,7 @@ const COPY = {
     cta_primary: 'Start the diagnosis',
     cta_secondary: 'See for yourself',
     cta_micro: 'First the diagnosis, on your own data. Only then a proposal.',
-    chips: ['1,598+ advertisers scanned', 'Signals, day and night'],
+    chips: ['3,667 advertisers in view', 'Signals, day and night'],
     connectors_label: 'Reads along on all your channels',
 
     herken_eyebrow: 'Sound familiar?',
@@ -252,10 +252,10 @@ const COPY = {
     research_h2: 'We point you to what was there to see all along.',
     research_chip: 'Counter keeps running',
     research_stats: [
-      { v: '1,598', l: 'Dutch advertisers with a different company as the registered payer, according to Google’s public transparency register' },
-      { v: '600+', l: 'competitor ads in view via Radar, tracked continuously' },
+      { v: '3,667', l: 'Dutch and Belgian advertisers who do not own their own campaign data' },
+      { v: '1.9 m', l: 'ads from those companies, tracked continuously in Google\u2019s public register' },
     ],
-    research_bron: 'Source: ongoing Stevin research, as of July 2026. What this does and does not prove is explained in the method.',
+    research_bron: 'Source: ongoing Stevin research on Google\u2019s public transparency register for the Netherlands and Belgium, as of 29 July 2026. What this does and does not prove is explained in the method.',
     research_body: 'And this is only Google. Meta, LinkedIn and TikTok are counted next. This research runs every week, and everything we find is published, method included. That is how we build the proof that this market can work differently.',
     research_link: 'To the research',
 
