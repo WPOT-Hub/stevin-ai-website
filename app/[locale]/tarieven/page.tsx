@@ -132,13 +132,13 @@ const COPY = {
     },
   ],
   keuzeMicro:
-    'Per maand kosten de eerste twee hetzelfde. Alleen wat doorloopt heeft een jaartarief, en daar komt dat verschil van honderd euro vandaan: je gaat niet vooruitbetalen voor iets dat we samen willen beeindigen.',
+    'Per maand kosten de eerste twee opties hetzelfde. Alleen de doorlopende optie heeft een jaartarief. Daar komt het verschil van honderd euro vandaan: je gaat niet vooruitbetalen voor iets dat we samen willen beeindigen.',
   // Zonder grens is 399 een onbeperkt abonnement op paid, owned, je winkel en
   // je merk, en dat is niet vol te houden. De grens schaalt mee met hoe groot
   // de klant is, niet met zijn mediabudget. Dat laatste is precies wat Aizy
   // doet (850 tot 2.000 spend, 1.850 daarboven) en waar Stevin tegenover staat.
   keuzeGrens:
-    'Alle tarieven gelden voor een bedrijf met een merk en een winkel. Meer vestigingen, merken of webshops kost meer. Nooit meer omdat je mediabudget groeit.',
+    'Alle tarieven gelden voor een bedrijf met een merk en een winkel. Meer vestigingen, merken of webshops kosten meer. Meer mediabudget betekent niet automatisch een hogere prijs.',
 
   breinEyebrow: 'Wat er onder blijft liggen',
   breinH2: 'Wie er ook werkt, plugt in op hetzelfde brein.',
