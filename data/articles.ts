@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-leert-van-verkoopgesprekken-met-30-miljoen',
+    format: 'dispatch' as const,
+    edition: '388',
+    category: 'Agents',
+    title: "AI leert van verkoopgesprekken met 30 miljoen dollar",
+    dek: "Het Amerikaanse Encore AI haalt 30 miljoen dollar op om AI-agenten te trainen met echte klantgesprekken en CRM-data.",
+    publishedAt: '2026-07-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'AGENTS',
+    posterTopic: "AI leert van verkoopgesprekken met 30 miljoen dollar",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-stage-techcrunch-disrupt-2026',
     format: 'dispatch' as const,
     edition: '387',
