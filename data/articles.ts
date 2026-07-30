@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'microsoft-bouwt-copilot-super-app-voor-2026',
+    format: 'dispatch' as const,
+    edition: '386',
+    category: 'Tech',
+    title: "Microsoft lanceert Copilot-superapp in 2026",
+    dek: "De nieuwe Copilot-superapp van Microsoft bundelt chat, codering en autonome taken in één platform.",
+    publishedAt: '2026-07-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Microsoft lanceert Copilot-superapp in 2026",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'hugging-face-rebuild-na-openai-agents-aanval',
     format: 'dispatch' as const,
     edition: '385',
