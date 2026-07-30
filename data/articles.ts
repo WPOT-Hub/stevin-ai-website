@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-stage-techcrunch-disrupt-2026',
+    format: 'dispatch' as const,
+    edition: '387',
+    category: 'Tech',
+    title: "AI Stage keert terug op TechCrunch Disrupt 2026 met focus op SaaS en agent-beveiliging",
+    dek: "De AI Stage van TechCrunch Disrupt 2026 richt zich op de meest urgente vraagstukken rond AI, waaronder de impact op SaaS-bedrijven en beveiligingsrisico's van autonome agents.",
+    publishedAt: '2026-07-30',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AI Stage keert terug op TechCrunch Disrupt 2026 met focus op SaaS en agent-beveiliging",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'microsoft-bouwt-copilot-super-app-voor-2026',
     format: 'dispatch' as const,
     edition: '386',
