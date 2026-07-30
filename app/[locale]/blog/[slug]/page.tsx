@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-leert-van-verkoopgesprekken-met-30-miljoen': (
+    <>
+      <p className="lead-para">
+        Het bedrijf Encore AI ontwikkelt software die verkoopgesprekken, chatberichten en klantdata analyseert om succesvolle technieken te destilleren. Deze inzichten worden gebruikt om AI-agenten aan te sturen die zelfstandig salesgesprekken kunnen voeren of ondersteunen. De technologie richt zich op het herkennen van patronen die leiden tot conversie of hogere klanttevredenheid.
+      </p>
+      <p>
+        De nieuwe financieringsronde van 30 miljoen dollar moet de ontwikkeling versnellen en de uitrol naar markten buiten de VS mogelijk maken. Encore AI claimt dat hun systemen tot 40% meer conversies opleveren door direct in te spelen op de taal en behoeften van prospects. Klanten kunnen de AI-agenten integreren met bestaande CRM-systemen zoals Salesforce of HubSpot.
+      </p>
+      <p>
+        De startup positioneert zich als een bridge tussen menselijke verkopers en geautomatiseerde systemen, waarbij de focus ligt op leren uit echte interacties in plaats van vooraf ingestelde scripts. Concurrenten zoals Chorus.ai en Gong richten zich ook op call-analytics, maar Encore AI onderscheidt zich door directe actiegerichtheid voor AI-toepassingen.
+      </p>
+    </>
+  ),
   'ai-stage-techcrunch-disrupt-2026': (
     <>
       <p className="lead-para">
@@ -6447,6 +6460,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-leert-van-verkoopgesprekken-met-30-miljoen':
+    "Voor bedrijven die salesprocessen willen optimaliseren is dit een interessante ontwikkeling: het laat zien hoe AI niet alleen data analyseert, maar ook direct kan ingrijpen in gesprekken. Het risico ligt echter in het vertrouwen op één bron voor training – als de data niet representatief is of vooroordelen bevat, kan dat leiden tot suboptimale resultaten. Het is verstandig om dergelijke systemen eerst te testen met kleine teams voordat je ze breed uitrolt.",
   'ai-stage-techcrunch-disrupt-2026':
     "Voor Nederlandse en Belgische ondernemers is dit een moment om stil te staan bij hoe AI niet alleen een technologische, maar ook een strategische uitdaging wordt. De combinatie van SaaS-herstructureringen en agent-beveiliging vraagt om een proactieve aanpak, waarbij risico’s vroegtijdig worden geïdentificeerd. Wie nu investeert in robuuste governance rond AI, voorkomt later dure aanpassingen of zelfs juridische valkuilen.",
   'microsoft-bouwt-copilot-super-app-voor-2026':
