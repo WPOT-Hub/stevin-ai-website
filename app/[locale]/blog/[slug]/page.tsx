@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-stage-techcrunch-disrupt-2026': (
+    <>
+      <p className="lead-para">
+        De AI Stage keert volgend jaar terug tijdens TechCrunch Disrupt 2026, met een programma dat draait om de meest prangende ontwikkelingen in kunstmatige intelligentie. Centraal staan de gevolgen van AI voor SaaS-bedrijven, die momenteel een fundamentele heroverweging doormaken van hun businessmodellen. Daarnaast wordt aandacht besteed aan de groeiende zorgen over beveiliging rond autonome AI-agents, die steeds vaker zelfstandig acties ondernemen binnen bedrijfsprocessen.
+      </p>
+      <p>
+        Tijdens het evenement staat ook de integratie van AI in bestaande systemen centraal. Experts waarschuwen voor de risico's van onbedoelde interacties tussen AI-agents en kritieke infrastructuur, zoals API's en databases. De discussie spitst zich toe op hoe organisaties deze technologie veilig kunnen implementeren zonder innovatie te remmen.
+      </p>
+      <p>
+        Google for Startups presenteert dit jaar het onderdeel, wat benadrukt dat startups een sleutelrol spelen in het vormgeven van de toekomst van AI. Het programma belooft praktische inzichten en casestudies die direct toepasbaar zijn voor bedrijven die met deze uitdagingen te maken krijgen.
+      </p>
+    </>
+  ),
   'microsoft-bouwt-copilot-super-app-voor-2026': (
     <>
       <p className="lead-para">
@@ -6434,6 +6447,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-stage-techcrunch-disrupt-2026':
+    "Voor Nederlandse en Belgische ondernemers is dit een moment om stil te staan bij hoe AI niet alleen een technologische, maar ook een strategische uitdaging wordt. De combinatie van SaaS-herstructureringen en agent-beveiliging vraagt om een proactieve aanpak, waarbij risico’s vroegtijdig worden geïdentificeerd. Wie nu investeert in robuuste governance rond AI, voorkomt later dure aanpassingen of zelfs juridische valkuilen.",
   'microsoft-bouwt-copilot-super-app-voor-2026':
     "Voor ondernemers betekent deze ontwikkeling dat investeren in AI-tools niet langer optioneel is, maar noodzakelijk om relevant te blijven. De integratie van verschillende functies in één app kan de efficiëntie binnen teams aanzienlijk verhogen, mits medewerkers goed worden getraind. Tegelijkertijd vraagt dit om een kritische blik op vendor lock-in: afhankelijkheid van één platform brengt risico's met zich mee bij toekomstige migraties of prijsveranderingen.",
   'hugging-face-rebuild-na-openai-agents-aanval':
