@@ -1513,6 +1513,45 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-leert-van-verkoopgesprekken-met-30-miljoen': (
+    <>
+      <p className="lead-para">
+        Het bedrijf Encore AI ontwikkelt software die verkoopgesprekken, chatberichten en klantdata analyseert om succesvolle technieken te destilleren. Deze inzichten worden gebruikt om AI-agenten aan te sturen die zelfstandig salesgesprekken kunnen voeren of ondersteunen. De technologie richt zich op het herkennen van patronen die leiden tot conversie of hogere klanttevredenheid.
+      </p>
+      <p>
+        De nieuwe financieringsronde van 30 miljoen dollar moet de ontwikkeling versnellen en de uitrol naar markten buiten de VS mogelijk maken. Encore AI claimt dat hun systemen tot 40% meer conversies opleveren door direct in te spelen op de taal en behoeften van prospects. Klanten kunnen de AI-agenten integreren met bestaande CRM-systemen zoals Salesforce of HubSpot.
+      </p>
+      <p>
+        De startup positioneert zich als een bridge tussen menselijke verkopers en geautomatiseerde systemen, waarbij de focus ligt op leren uit echte interacties in plaats van vooraf ingestelde scripts. Concurrenten zoals Chorus.ai en Gong richten zich ook op call-analytics, maar Encore AI onderscheidt zich door directe actiegerichtheid voor AI-toepassingen.
+      </p>
+    </>
+  ),
+  'ai-stage-techcrunch-disrupt-2026': (
+    <>
+      <p className="lead-para">
+        De AI Stage keert volgend jaar terug tijdens TechCrunch Disrupt 2026, met een programma dat draait om de meest prangende ontwikkelingen in kunstmatige intelligentie. Centraal staan de gevolgen van AI voor SaaS-bedrijven, die momenteel een fundamentele heroverweging doormaken van hun businessmodellen. Daarnaast wordt aandacht besteed aan de groeiende zorgen over beveiliging rond autonome AI-agents, die steeds vaker zelfstandig acties ondernemen binnen bedrijfsprocessen.
+      </p>
+      <p>
+        Tijdens het evenement staat ook de integratie van AI in bestaande systemen centraal. Experts waarschuwen voor de risico's van onbedoelde interacties tussen AI-agents en kritieke infrastructuur, zoals API's en databases. De discussie spitst zich toe op hoe organisaties deze technologie veilig kunnen implementeren zonder innovatie te remmen.
+      </p>
+      <p>
+        Google for Startups presenteert dit jaar het onderdeel, wat benadrukt dat startups een sleutelrol spelen in het vormgeven van de toekomst van AI. Het programma belooft praktische inzichten en casestudies die direct toepasbaar zijn voor bedrijven die met deze uitdagingen te maken krijgen.
+      </p>
+    </>
+  ),
+  'microsoft-bouwt-copilot-super-app-voor-2026': (
+    <>
+      <p className="lead-para">
+        Microsoft CEO Satya Nadella heeft bevestigd dat het bedrijf dit jaar een AI-superapp introduceert. Deze app combineert de bestaande Copilot-functies voor chat, samenwerken en autonome taken in één gebruiksvriendelijk platform. Volgens Nadella evolueert Copilot snel van een simpele chatbot naar een volwaardig hulpmiddel voor zowel consumenten als bedrijven. De app wordt beschikbaar gesteld via zowel web als mobiele apparaten.
+      </p>
+      <p>
+        De superapp moet de manier waarop gebruikers met AI omgaan fundamenteel veranderen. Microsoft richt zich met deze lancering expliciet op zowel particuliere als zakelijke markten. De integratie van coding- en autopilot-functies maakt het mogelijk om complexe taken direct binnen de app uit te voeren zonder externe tools. Dit sluit aan bij de trend waarbij AI steeds meer zelfstandig taken overneemt.
+      </p>
+      <p>
+        De aankondiging komt tijdens een earnings call waarin Microsoft ook de groei van zijn cloud- en AI-diensten benadrukte. De superapp wordt gezien als een strategische zet om concurrenten zoals Google en Apple voor te blijven in de race om AI-gestuurde applicaties. Gebruikers kunnen vanaf nu inschrijven voor early access via de officiële Microsoft-kanalen.
+      </p>
+    </>
+  ),
   'hugging-face-rebuild-na-openai-agents-aanval': (
     <>
       <p className="lead-para">
@@ -6421,6 +6460,12 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-leert-van-verkoopgesprekken-met-30-miljoen':
+    "Voor bedrijven die salesprocessen willen optimaliseren is dit een interessante ontwikkeling: het laat zien hoe AI niet alleen data analyseert, maar ook direct kan ingrijpen in gesprekken. Het risico ligt echter in het vertrouwen op één bron voor training – als de data niet representatief is of vooroordelen bevat, kan dat leiden tot suboptimale resultaten. Het is verstandig om dergelijke systemen eerst te testen met kleine teams voordat je ze breed uitrolt.",
+  'ai-stage-techcrunch-disrupt-2026':
+    "Voor Nederlandse en Belgische ondernemers is dit een moment om stil te staan bij hoe AI niet alleen een technologische, maar ook een strategische uitdaging wordt. De combinatie van SaaS-herstructureringen en agent-beveiliging vraagt om een proactieve aanpak, waarbij risico’s vroegtijdig worden geïdentificeerd. Wie nu investeert in robuuste governance rond AI, voorkomt later dure aanpassingen of zelfs juridische valkuilen.",
+  'microsoft-bouwt-copilot-super-app-voor-2026':
+    "Voor ondernemers betekent deze ontwikkeling dat investeren in AI-tools niet langer optioneel is, maar noodzakelijk om relevant te blijven. De integratie van verschillende functies in één app kan de efficiëntie binnen teams aanzienlijk verhogen, mits medewerkers goed worden getraind. Tegelijkertijd vraagt dit om een kritische blik op vendor lock-in: afhankelijkheid van één platform brengt risico's met zich mee bij toekomstige migraties of prijsveranderingen.",
   'hugging-face-rebuild-na-openai-agents-aanval':
     "Voor bedrijven die AI-tools integreren in hun processen is dit een wake-up call: zelfs geavanceerde systemen kunnen kwetsbaar blijken als beveiliging niet meegroeit met de technologie. Het laat zien dat automatisering niet alleen kansen biedt, maar ook nieuwe risico’s introduceert die direct actie vereisen. Een proactieve houding ten aanzien van security moet daarom prioriteit krijgen, zeker bij cloudgebaseerde diensten.",
   'google-introduceert-ai-content-labels-in-asset-studio':
