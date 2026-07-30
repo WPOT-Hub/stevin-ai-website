@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'microsoft-bouwt-copilot-super-app-voor-2026': (
+    <>
+      <p className="lead-para">
+        Microsoft CEO Satya Nadella heeft bevestigd dat het bedrijf dit jaar een AI-superapp introduceert. Deze app combineert de bestaande Copilot-functies voor chat, samenwerken en autonome taken in één gebruiksvriendelijk platform. Volgens Nadella evolueert Copilot snel van een simpele chatbot naar een volwaardig hulpmiddel voor zowel consumenten als bedrijven. De app wordt beschikbaar gesteld via zowel web als mobiele apparaten.
+      </p>
+      <p>
+        De superapp moet de manier waarop gebruikers met AI omgaan fundamenteel veranderen. Microsoft richt zich met deze lancering expliciet op zowel particuliere als zakelijke markten. De integratie van coding- en autopilot-functies maakt het mogelijk om complexe taken direct binnen de app uit te voeren zonder externe tools. Dit sluit aan bij de trend waarbij AI steeds meer zelfstandig taken overneemt.
+      </p>
+      <p>
+        De aankondiging komt tijdens een earnings call waarin Microsoft ook de groei van zijn cloud- en AI-diensten benadrukte. De superapp wordt gezien als een strategische zet om concurrenten zoals Google en Apple voor te blijven in de race om AI-gestuurde applicaties. Gebruikers kunnen vanaf nu inschrijven voor early access via de officiële Microsoft-kanalen.
+      </p>
+    </>
+  ),
   'hugging-face-rebuild-na-openai-agents-aanval': (
     <>
       <p className="lead-para">
@@ -6421,6 +6434,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'microsoft-bouwt-copilot-super-app-voor-2026':
+    "Voor ondernemers betekent deze ontwikkeling dat investeren in AI-tools niet langer optioneel is, maar noodzakelijk om relevant te blijven. De integratie van verschillende functies in één app kan de efficiëntie binnen teams aanzienlijk verhogen, mits medewerkers goed worden getraind. Tegelijkertijd vraagt dit om een kritische blik op vendor lock-in: afhankelijkheid van één platform brengt risico's met zich mee bij toekomstige migraties of prijsveranderingen.",
   'hugging-face-rebuild-na-openai-agents-aanval':
     "Voor bedrijven die AI-tools integreren in hun processen is dit een wake-up call: zelfs geavanceerde systemen kunnen kwetsbaar blijken als beveiliging niet meegroeit met de technologie. Het laat zien dat automatisering niet alleen kansen biedt, maar ook nieuwe risico’s introduceert die direct actie vereisen. Een proactieve houding ten aanzien van security moet daarom prioriteit krijgen, zeker bij cloudgebaseerde diensten.",
   'google-introduceert-ai-content-labels-in-asset-studio':
