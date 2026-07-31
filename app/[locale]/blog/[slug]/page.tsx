@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'oracle-integreert-google-gemini-in-automatiseringsplatform': (
+    <>
+      <p className="lead-para">
+        Oracle breidt zijn Fusion-automatiseringsplatform uit met integratie van Google’s Gemini-modellen. Bedrijven kunnen vanaf nu direct gebruikmaken van de AI-assistent voor taken zoals data-analyse, klantenservice en workflowautomatisering binnen het platform.
+      </p>
+      <p>
+        De samenwerking maakt het mogelijk om Gemini’s taalverwerkende capaciteiten in te zetten voor complexe bedrijfsprocessen. Gebruikers hoeven niet langer tussen tools te schakelen, wat de efficiëntie zou moeten verhogen en fouten door handmatige overdracht kan verminderen.
+      </p>
+      <p>
+        De integratie is beschikbaar voor bestaande Fusion-klanten en nieuwe abonnees. Oracle benadrukt dat de AI-modellen lokaal of in de cloud kunnen draaien, afhankelijk van de compliance-eisen van organisaties.
+      </p>
+    </>
+  ),
   'ai-leert-van-verkoopgesprekken-met-30-miljoen': (
     <>
       <p className="lead-para">
@@ -6460,6 +6473,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'oracle-integreert-google-gemini-in-automatiseringsplatform':
+    "Voor bedrijven die al investeren in Oracle’s ecosysteem, biedt deze stap een logische uitbreiding naar AI-gestuurde automatisering. Het reduceert de complexiteit van het combineren van losse tools en kan leiden tot snellere adoptie van generatieve AI binnen bedrijfsprocessen. Tegelijkertijd blijft kritisch om de governance en datacontrole goed in te regelen, zeker bij cloudgebaseerde AI-modellen.",
   'ai-leert-van-verkoopgesprekken-met-30-miljoen':
     "Voor bedrijven die salesprocessen willen optimaliseren is dit een interessante ontwikkeling: het laat zien hoe AI niet alleen data analyseert, maar ook direct kan ingrijpen in gesprekken. Het risico ligt echter in het vertrouwen op één bron voor training – als de data niet representatief is of vooroordelen bevat, kan dat leiden tot suboptimale resultaten. Het is verstandig om dergelijke systemen eerst te testen met kleine teams voordat je ze breed uitrolt.",
   'ai-stage-techcrunch-disrupt-2026':
