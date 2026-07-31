@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'multi-location-seo-structureer-je-geo-pagina-s-op-basis-van-realiteit': (
+    <>
+      <p className="lead-para">
+        Een nieuwe vestiging of servicegebied moet je niet vertalen naar een aparte URL voor elk zoekwoord. Focus in plaats daarvan op structuren die aansluiten bij je werkelijke aanwezigheid: per fysieke locatie, regio of markt. Dit voorkomt dat Google je ziet als een netwerk van losse ‘zoeksnelwegen’ zonder echte waarde, aldus Search Engine Land.
+      </p>
+      <p>
+        Pagina’s die alleen bestaan om lokale zoekopdrachten te vangen, scoren vaak slecht omdat ze geen duidelijke relevantie hebben. Een betere aanpak is om per locatie of gebied één centrale pagina te maken met daarin de belangrijkste informatie: adressen, openingstijden, contactgegevens en specifieke diensten. Voeg waar mogelijk lokale content toe, zoals verwijzingen naar nabijgelegen bezienswaardigheden of evenementen.
+      </p>
+      <p>
+        Verder helpt het om interne links slim te gebruiken. Link vanuit elke lokale pagina door naar gerelateerde content en zorg dat de navigatie consistent blijft. Zo bouw je een logische structuur die zowel gebruikers als zoekmachines begrijpen.
+      </p>
+    </>
+  ),
   'oracle-integreert-google-gemini-in-automatiseringsplatform': (
     <>
       <p className="lead-para">
@@ -6473,6 +6486,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'multi-location-seo-structureer-je-geo-pagina-s-op-basis-van-realiteit':
+    "Voor bedrijven met meerdere vestigingen is dit vooral een kwestie van realisme in plaats van optimalisatie-hacks. De beste SEO-strategie begint met een heldere organisatiestructuur die klanten ook herkennen. Dat betekent soms keuzes maken: niet elke ‘zoekterm’ verdient een eigen pagina als er geen echte locatie of dienst achter zit.",
   'oracle-integreert-google-gemini-in-automatiseringsplatform':
     "Voor bedrijven die al investeren in Oracle’s ecosysteem, biedt deze stap een logische uitbreiding naar AI-gestuurde automatisering. Het reduceert de complexiteit van het combineren van losse tools en kan leiden tot snellere adoptie van generatieve AI binnen bedrijfsprocessen. Tegelijkertijd blijft kritisch om de governance en datacontrole goed in te regelen, zeker bij cloudgebaseerde AI-modellen.",
   'ai-leert-van-verkoopgesprekken-met-30-miljoen':
