@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'multi-location-seo-structureer-je-geo-pagina-s-op-basis-van-realiteit',
+    format: 'dispatch' as const,
+    edition: '390',
+    category: 'Platform',
+    title: "SEO voor meerdere vestigingen: bouw pagina’s op echte locaties, niet op zoekwoorden",
+    dek: "Google waardeert geografische pagina’s die gebaseerd zijn op daadwerkelijk bestaande vestigingen of servicegebieden, niet op losse zoektermen.",
+    publishedAt: '2026-07-31',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "SEO voor meerdere vestigingen: bouw pagina’s op echte locaties, niet op zoekwoorden",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'oracle-integreert-google-gemini-in-automatiseringsplatform',
     format: 'dispatch' as const,
     edition: '389',
