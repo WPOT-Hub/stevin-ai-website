@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'oracle-integreert-google-gemini-in-automatiseringsplatform',
+    format: 'dispatch' as const,
+    edition: '389',
+    category: 'Platform',
+    title: "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+    dek: "Automatiseringsplatform Oracle Fusion krijgt direct toegang tot Google’s AI-assistent voor bedrijfsprocessen.",
+    publishedAt: '2026-07-31',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-leert-van-verkoopgesprekken-met-30-miljoen',
     format: 'dispatch' as const,
     edition: '388',
