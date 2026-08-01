@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-startup-ellis-ai-haalt-10-miljoen-seed-op-met-focus-op-privaat-krediet',
+    format: 'dispatch' as const,
+    edition: '393',
+    category: 'Finance',
+    title: "AI-startup Ellis AI haalt $10 miljoen seed op voor privaat krediet",
+    dek: "Ellis AI, een in stealth opererende AI-startup voor private credit managers, komt naar buiten met $10 miljoen seedfinanciering.",
+    publishedAt: '2026-08-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "AI-startup Ellis AI haalt $10 miljoen seed op voor privaat krediet",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'scheiden-brand-en-non-brand-campagnes-verbetert-roas',
     format: 'dispatch' as const,
     edition: '392',
