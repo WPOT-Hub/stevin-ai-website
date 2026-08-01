@@ -91,7 +91,7 @@ export default async function ArticlePage({
   // omdat het de redactie als geheel is. Per-auteur Person-schema komt
   // wanneer auteurs een eigen profielpagina krijgen (EEAT-versterking).
   const isPersonAuthor =
-    article.author.name !== 'Stevin Journal' && article.author.name !== 'Stevin'
+    !['Stevin Journal', 'Stevin Redactie', 'Stevin'].includes(article.author.name)
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
