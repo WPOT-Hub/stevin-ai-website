@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'creativiteit-is-geen-kostenpost-maar-de-kern',
+    format: 'dispatch' as const,
+    edition: '397',
+    category: 'Markt',
+    title: "Creativiteit is geen kostenpost maar de brandstof van je merk",
+    dek: "De beste campagnes groeien niet uit spreadsheets, maar uit verhalen die mensen raken en gedrag veranderen.",
+    publishedAt: '2026-08-01',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Creativiteit is geen kostenpost maar de brandstof van je merk",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-analytics-campagne-diagnostiek-missing-parameters',
     format: 'dispatch' as const,
     edition: '396',
