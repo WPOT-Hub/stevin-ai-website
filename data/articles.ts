@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-telefonie-turing-test-nabij-met-13-miljoen',
+    format: 'dispatch' as const,
+    edition: '394',
+    category: 'Tech',
+    title: "AI-telefonie die onherkenbaar is als mens komt dichterbij na $13 miljoen",
+    dek: "Een Nederlands-Belgisch fonds investeert mee in een startup die AI-gesprekken onafscheidelijk maakt van menselijke stemmen.",
+    publishedAt: '2026-08-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AI-telefonie die onherkenbaar is als mens komt dichterbij na $13 miljoen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-startup-ellis-ai-haalt-10-miljoen-seed-op-met-focus-op-privaat-krediet',
     format: 'dispatch' as const,
     edition: '393',
