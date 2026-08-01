@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-telefonie-turing-test-nabij-met-13-miljoen': (
+    <>
+      <p className="lead-para">
+        De Amerikaanse startup Smallest.ai heeft $13 miljoen opgehaald om stemmodellen te ontwikkelen die AI-telefoongesprekken onmogelijk van echte gesprekken te onderscheiden maken. De modellen zijn gericht op real-time gesprekken en moeten voldoen aan de Turing-test, aldus het bedrijf zelf.
+      </p>
+      <p>
+        Het geld komt onder meer uit een fonds met Nederlandse en Belgische investeerders, wat de betrokkenheid van de regio benadrukt. De technologie richt zich op callcenters, klantenservice en automatisering van telefoongesprekken zonder dat gebruikers doorhebben dat ze met een machine praten.
+      </p>
+      <p>
+        Smallest.ai claimt dat hun modellen sneller reageren dan bestaande oplossingen en minder rekenkracht vereisen, wat kostenbesparing mogelijk maakt. De eerste toepassingen worden binnen een jaar verwacht, zo blijkt uit interne planningen.
+      </p>
+    </>
+  ),
   'ai-startup-ellis-ai-haalt-10-miljoen-seed-op-met-focus-op-privaat-krediet': (
     <>
       <p className="lead-para">
@@ -6525,6 +6538,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-telefonie-turing-test-nabij-met-13-miljoen':
+    "Voor bedrijven die klantcontact via telefoon automatiseren, biedt deze ontwikkeling kansen om efficiënter te werken zonder kwaliteitsverlies. Tegelijkertijd roept het ethische vragen op over transparantie: moeten klanten altijd weten dat ze met een machine praten? Een duidelijke communicatiestrategie wordt daarmee steeds belangrijker.",
   'ai-startup-ellis-ai-haalt-10-miljoen-seed-op-met-focus-op-privaat-krediet':
     "Voor Nederlandse en Belgische bureaus die actief zijn in fintech of financiële dienstverlening biedt dit een signaal dat AI-toepassingen in niche-segmenten zoals private credit kansen bieden. De focus op efficiëntie en datagedreven besluitvorming sluit aan bij bredere trends in de sector. Het is de moeite waard om te onderzoeken hoe dergelijke technologieën ook binnen bestaande bedrijfsmodellen kunnen worden toegepast.",
   'scheiden-brand-en-non-brand-campagnes-verbetert-roas':
