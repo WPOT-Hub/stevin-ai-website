@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'scheiden-brand-en-non-brand-campagnes-verbetert-roas',
+    format: 'dispatch' as const,
+    edition: '392',
+    category: 'Platform',
+    title: "Splits brand en non-brand campagnes voor betere ROAS",
+    dek: "Uit elkaar halen van brand- en non-brand campagnes leidt tot hogere omzetgroei en nieuwe klanten.",
+    publishedAt: '2026-08-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Splits brand en non-brand campagnes voor betere ROAS",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-earth-ai-tool-een-dag-actief',
     format: 'dispatch' as const,
     edition: '391',
