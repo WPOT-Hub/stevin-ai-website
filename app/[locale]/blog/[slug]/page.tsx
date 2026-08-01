@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'scheiden-brand-en-non-brand-campagnes-verbetert-roas': (
+    <>
+      <p className="lead-para">
+        Een hoge ROAS kan verbergen waar je budget precies naartoe gaat. Door brand- en non-brand campagnes strikt te scheiden, zie je beter welke investeringen daadwerkelijk nieuwe klanten opleveren. Zo voorkom je dat bestaande klanten onnodig veel budget opslokken zonder extra omzet op te leveren.
+      </p>
+      <p>
+        Non-brand campagnes richten zich op zoekintentie zonder merknaam, waardoor ze vaak duurder zijn maar wel nieuwe leads genereren. Brand campagnes daarentegen zijn goedkoper maar bereiken vooral mensen die toch al bekend zijn met je bedrijf. Door deze apart te meten, kun je de uplift per type campagne precies bepalen.
+      </p>
+      <p>
+        Google Ads biedt sinds kort betere tools om dit onderscheid te maken in rapportages. Met deze data kun je budget herverdelen naar de campagnes die daadwerkelijk nieuwe klanten aantrekken, aldus Search Engine Land.
+      </p>
+    </>
+  ),
   'google-earth-ai-tool-een-dag-actief': (
     <>
       <p className="lead-para">
@@ -6499,6 +6512,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'scheiden-brand-en-non-brand-campagnes-verbetert-roas':
+    "Voor bureaus en in-house teams is dit een praktische stap om efficiënter om te gaan met mediabudget. Door campagnes te splitsen, krijg je heldere meetdata over waar het geld echt werkt. Dat maakt het makkelijker om strategische keuzes te maken en niet alleen op korte-termijn resultaten te sturen.",
   'google-earth-ai-tool-een-dag-actief':
     "Voor bedrijven die met satellietdata of AI werken, is dit een waarschuwing om dergelijke tools eerst grondig te testen voordat ze breed beschikbaar komen. De combinatie van realistische beelden en AI kan immers snel tot verspreiding van onjuiste informatie leiden. Het is zaak om nu al afspraken te maken over verantwoordelijkheden bij het gebruik van dergelijke technologieën.",
   'multi-location-seo-structureer-je-geo-pagina-s-op-basis-van-realiteit':
