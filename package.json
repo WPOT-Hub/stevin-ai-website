@@ -15,6 +15,7 @@
     "check:header": "npx tsx scripts/check-header-contrast.ts",
     "check:sitemap": "npx tsx scripts/check-sitemap-canonicals.ts",
     "check:sitemap:structuur": "npx tsx scripts/check-sitemap-structuur.ts",
+    "verify:production": "npx tsx scripts/verify-production-release.ts",
     "prebuild": "npx tsx scripts/check-sitemap-structuur.ts",
     "check:copy": "npx tsx scripts/check-copy.ts"
   },

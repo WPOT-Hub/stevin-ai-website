@@ -24,6 +24,7 @@ on:
       - 'components/**'
       - 'lib/**'
       - 'public/**'
+      - 'scripts/verify-production-release.ts'
       - 'package.json'
       - 'package-lock.json'
       - 'next.config.ts'
@@ -36,7 +37,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
@@ -45,13 +46,16 @@ jobs:
           node-version: '20'
 
       - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+        run: npm install --global vercel@58.4.4
 
       - name: Pull Vercel project config
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build for production
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Bewaar sitemap van vóór de release
+        run: curl --fail --silent --show-error https://stevin.ai/sitemap.xml --output /tmp/sitemap-before.xml
 
       - name: Deploy prebuilt artifact (auto-promote naar production domain)
         id: deploy
@@ -69,3 +73,8 @@ jobs:
             exit 1
           fi
           echo "Homepage 200 OK"
+
+      - name: Controleer volledige productie-release en meld nieuwe URL's bij IndexNow
+        env:
+          PREVIOUS_SITEMAP_FILE: /tmp/sitemap-before.xml
+        run: npm run verify:production -- --all

@@ -4,14 +4,22 @@ on:
   pull_request:
     paths:
       - 'data/articles.ts'
+      - 'data/**'
+      - 'app/sitemap.ts'
+      - 'app/robots.ts'
       - 'app/**/page.tsx'
       - 'scripts/validate-jsonld.ts'
+      - 'scripts/verify-production-release.ts'
   push:
     branches: [main]
     paths:
       - 'data/articles.ts'
+      - 'data/**'
+      - 'app/sitemap.ts'
+      - 'app/robots.ts'
       - 'app/**/page.tsx'
       - 'scripts/validate-jsonld.ts'
+      - 'scripts/verify-production-release.ts'
 
 jobs:
   validate-jsonld:
@@ -27,3 +35,4 @@ jobs:
       # validator hangt alleen op data/articles.ts en tsx (geen runtime deps)
       - run: npm install --no-audit --no-fund
       - run: npm run validate:schema
+      - run: npm run check:sitemap:structuur

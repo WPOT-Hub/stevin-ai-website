@@ -26,10 +26,21 @@ type Props = { params: Promise<{ locale: string }> }
 // gezet, en "prijs vooraf" is wel waar. Zodra het er is hoort het in de derde
 // kaart.
 
-export const metadata: Metadata = {
-  title: 'Tarieven',
-  description:
-    'Iedereen begint met de diagnose. Daarna kies je: wij draaien het, wij draaien het en dragen over, of je doet het zelf met Stevin erbij. Vanaf 399 per maand.',
+export async function generateMetadata(): Promise<Metadata> {
+  const title = 'Tarieven'
+  const description =
+    'Iedereen begint met de diagnose. Daarna kies je: wij draaien het, wij draaien het en dragen over, of je doet het zelf met Stevin erbij. Vanaf 399 per maand.'
+  const canonical = 'https://stevin.ai/tarieven'
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages: { 'nl-NL': canonical, 'x-default': canonical },
+    },
+    openGraph: { title, description, url: canonical, type: 'website' },
+    twitter: { card: 'summary_large_image', title, description },
+  }
 }
 
 const COPY = {
@@ -169,12 +180,12 @@ export default async function PreviewTarieven({ params }: Props) {
             <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
             {COPY.eyebrow}
           </p>
-          <h2
+          <h1
             className="font-display font-extrabold text-primary m-0"
             style={{ fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.035em', lineHeight: '1.08', textWrap: 'balance' }}
           >
             {COPY.h2}
-          </h2>
+          </h1>
           <p
             className="text-muted leading-[1.65] mx-auto"
             style={{ fontSize: '17px', maxWidth: '54ch', marginTop: '24px' }}

@@ -361,23 +361,23 @@ export default async function ArticlePage({
               style={{ fontSize: '22px', lineHeight: 1.3, letterSpacing: '-0.015em' }}
             >
               {locale === 'en'
-                ? 'We run your marketing properly. And it all stays yours.'
-                : 'Wij regelen je marketing goed. En alles blijft van jou.'}
+                ? 'How Stevin approaches marketing decisions'
+                : 'Hoe Stevin marketingbeslissingen benadert'}
             </h3>
             <p
               className="m-0 mt-3"
               style={{ fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}
             >
               {locale === 'en'
-                ? 'Accounts in your own name, every change logged with a reason, and part of the proof sits outside us. Works on the stack you already have.'
-                : 'Accounts op naam van je eigen bedrijf, elke wijziging in een logboek met de reden erbij, en een deel van het bewijs staat buiten ons om. Werkt op de stack die je al hebt.'}
+                ? 'Read how we substantiate decisions, preserve context and keep our working method current as the tooling changes.'
+                : 'Lees hoe we beslissingen onderbouwen, context bewaren en onze werkwijze actueel houden terwijl de tooling verandert.'}
             </p>
             <Link
-              href="/contact"
+              href="/werkwijze"
               className="inline-flex items-center mt-6 px-6 py-3 font-semibold no-underline rounded-xl transition-colors"
               style={{ fontSize: '15px', background: 'var(--accent, #3D8EFF)', color: '#fff' }}
             >
-              {locale === 'en' ? 'Start the diagnosis' : 'Start de diagnose'}
+              {locale === 'en' ? 'View our approach' : 'Bekijk onze werkwijze'}
             </Link>
           </div>
         </div>
