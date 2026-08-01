@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-analytics-campagne-diagnostiek-missing-parameters': (
+    <>
+      <p className="lead-para">
+        Google Analytics introduceert een nieuwe diagnostische functie die marketeers helpt ontbrekende URL-parameters in campagnes op te sporen. Deze parameters zijn essentieel voor het correct toewijzen van verkeer en conversies aan specifieke campagnes, zo blijkt uit Search Engine Land. De tool geeft direct inzicht in waar meetdata onvolledig wordt doorgegeven, waardoor blinde vlekken in de meting ontstaan.
+      </p>
+      <p>
+        De waarschuwingen verschijnen in de gebruikersinterface en geven aan welke parameters ontbreken of niet correct zijn ingesteld. Dit geldt vooral voor UTM-parameters zoals utm_source, utm_medium en utm_campaign, die vaak handmatig worden ingevoerd. Door deze fouten kan de uplift van campagnes verkeerd worden geïnterpreteerd, wat leidt tot suboptimale beslissingen over budgetverdeling.
+      </p>
+      <p>
+        Het probleem treedt vooral op bij complexe campagnes met veel verschillende kanalen en partners. Kleine fouten in parameterinstellingen kunnen grote gevolgen hebben voor de data-kwaliteit, aldus de bron.
+      </p>
+    </>
+  ),
   'openai-test-ad-format-met-ai-agent': (
     <>
       <p className="lead-para">
@@ -6551,6 +6564,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-analytics-campagne-diagnostiek-missing-parameters':
+    "Voor bureaus en marketingteams is dit een reminder om periodiek de campagne-instellingen te controleren. Een gestructureerde werkwijze voor het testen van nieuwe campagnes vooraf kan veel frustratie achteraf voorkomen. Daarnaast blijft het belangrijk om medewerkers die betrokken zijn bij campagneopzet goed te trainen in het gebruik van URL-builders en parameterconventies.",
   'openai-test-ad-format-met-ai-agent':
     "Dit soort innovaties laat zien hoe snel digitale platforms evolueren en hoe adverteerders moeten meebewegen. Voor bedrijven betekent het dat ze hun klantcommunicatie opnieuw moeten inrichten: niet alleen websites optimaliseren, maar ook gespreksstromen ontwerpen die passen bij AI-interacties. Wie hier nu al mee experimenteert, loopt voor op concurrenten die nog vastzitten in traditionele funnel-modellen.",
   'ai-telefonie-turing-test-nabij-met-13-miljoen':
