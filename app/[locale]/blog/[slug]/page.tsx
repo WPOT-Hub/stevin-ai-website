@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-chrome-ai-bugfixes-juni-2026': (
+    <>
+      <p className="lead-para">
+        Google heeft met behulp van interne AI-systemen in juni meer beveiligingslekken in Chrome gedicht dan in de voorgaande twee jaar samen. Het bedrijf herstelde 1.072 bugs in de laatste twee versies van de browser, terwijl dat er in de 23 eerdere versies tussen juni 2024 en mei 2026 slechts 1.036 waren. Dit duidt op een exponentiële stijging sinds de invoering van grote taalmodellen (LLMs) binnen het ontwikkelproces.
+      </p>
+      <p>
+        De technologische shift wordt door cybersecurity-experts al langer voorspeld. AI maakt het mogelijk om kwetsbaarheden sneller en op grotere schaal te detecteren, waardoor ontwikkelaars eerder kunnen ingrijpen. Google gebruikt modellen zoals Gemini om beveiligingsrisico’s proactief aan te pakken en zo concurrentie met kwaadwillenden te winnen.
+      </p>
+      <p>
+        Ook Microsoft meldde recent een recordaantal gepatchte bugs, met name tijdens Patch Tuesday. Apple lijkt deze trend niet te volgen: het bedrijf herstelde dit jaar tot nu toe ongeveer evenveel lekken als vorig jaar, wat neerkomt op een stabielere maar minder explosieve groei.
+      </p>
+    </>
+  ),
   'ai-act-meldplicht-misverstanden-creatieve-sector': (
     <>
       <p className="lead-para">
@@ -6617,6 +6630,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-chrome-ai-bugfixes-juni-2026':
+    "Voor bedrijven die software of digitale producten onderhouden, toont deze ontwikkeling aan dat AI niet alleen productiviteit verhoogt, maar ook risico’s meetbaar reduceert. Wie nog geen geautomatiseerde security-tools gebruikt, loopt achter op partijen die wel investeren in proactieve oplossingen. De komende jaren zal deze kloof waarschijnlijk alleen maar groter worden.",
   'ai-act-meldplicht-misverstanden-creatieve-sector':
     "Bij Stevin zien we regelmatig hoe complexe wetgeving zoals de AI Act leidt tot oversimplificatie in adviezen aan bedrijven. Bureaus lopen risico door generieke labels toe te passen zonder rekening te houden met de context waarin AI wordt ingezet. Onze benadering is helder: analyseer eerst het doel en type content voordat je beslist over compliance-maatregelen.\n\nDaarnaast merken we dat veel organisaties onterecht aannemen dat menselijke controle automatisch voldoende is voor transparantie. In werkelijkheid eist artikel 50 bewuste beoordeling door professionals met kennis van zaken – iets wat vaak ontbreekt in standaard workflows.\n\nTot slot zien we kansen voor bureaus die klanten kunnen helpen bij risicobeoordeling in plaats van alleen labels toevoegen. Door samen te werken aan duidelijke richtlijnen per projecttype kunnen bedrijven compliant blijven zonder onnodige beperkingen in hun creativiteit.",
   'creativiteit-is-geen-kostenpost-maar-de-kern':

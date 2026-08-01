@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-chrome-ai-bugfixes-juni-2026',
+    format: 'dispatch' as const,
+    edition: '399',
+    category: 'Tech',
+    title: "Google repareert in één maand meer Chrome-bugs dan in twee jaar",
+    dek: "Met AI-tools vond Google afgelopen juni ruim 1.000 beveiligingslekken in Chrome, bijna gelijk aan de totale hoeveelheid van de voorgaande twee jaar.",
+    publishedAt: '2026-08-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Redactie', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Google repareert in één maand meer Chrome-bugs dan in twee jaar",
+    source: { url: "https://techcrunch.com/2026/07/30/google-says-it-fixed-more-chrome-bugs-in-june-than-over-the-past-two-years-thanks-to-ai/", name: "TechCrunch" },
+  },
+  {
     slug: 'ai-act-meldplicht-misverstanden-creatieve-sector',
     format: 'dispatch' as const,
     edition: '398',
