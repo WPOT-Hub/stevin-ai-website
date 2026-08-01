@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-test-ad-format-met-ai-agent': (
+    <>
+      <p className="lead-para">
+        OpenAI test een nieuw advertentieformaat voor ChatGPT waarbij kliks niet naar een website leiden, maar direct een gesprek starten met een bedrijfsgerichte AI-agent. Deze agents kunnen vragen beantwoorden, producten voorstellen of zelfs transacties uitvoeren binnen de chatomgeving. De test wordt momenteel alleen in de VS uitgevoerd en richt zich op bedrijven met een actieve API-integratie.
+      </p>
+      <p>
+        Het nieuwe format sluit aan bij de groeiende vraag naar conversational commerce, waarbij gebruikers via spraak of tekst interacties aangaan met merken. Voor adverteerders biedt dit de kans om klantvragen direct te beantwoorden en zo de stap tussen interesse en conversie te verkleinen. Tegelijkertijd zorgt het voor een completer beeld van de customer journey, omdat alle interacties binnen één platform blijven.
+      </p>
+      <p>
+        Experts wijzen erop dat dit format vooral effectief kan zijn voor diensten met lage aankoopfrictie, zoals abonnementen of informatieproducten. Voor complexe aankopen blijft het echter onduidelijk of gebruikers bereid zijn om via een chatbot advies te ontvangen zonder verdere context.
+      </p>
+    </>
+  ),
   'ai-telefonie-turing-test-nabij-met-13-miljoen': (
     <>
       <p className="lead-para">
@@ -6538,6 +6551,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-test-ad-format-met-ai-agent':
+    "Dit soort innovaties laat zien hoe snel digitale platforms evolueren en hoe adverteerders moeten meebewegen. Voor bedrijven betekent het dat ze hun klantcommunicatie opnieuw moeten inrichten: niet alleen websites optimaliseren, maar ook gespreksstromen ontwerpen die passen bij AI-interacties. Wie hier nu al mee experimenteert, loopt voor op concurrenten die nog vastzitten in traditionele funnel-modellen.",
   'ai-telefonie-turing-test-nabij-met-13-miljoen':
     "Voor bedrijven die klantcontact via telefoon automatiseren, biedt deze ontwikkeling kansen om efficiënter te werken zonder kwaliteitsverlies. Tegelijkertijd roept het ethische vragen op over transparantie: moeten klanten altijd weten dat ze met een machine praten? Een duidelijke communicatiestrategie wordt daarmee steeds belangrijker.",
   'ai-startup-ellis-ai-haalt-10-miljoen-seed-op-met-focus-op-privaat-krediet':
