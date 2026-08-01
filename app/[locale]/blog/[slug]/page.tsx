@@ -1513,6 +1513,43 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-ads-ai-max-advertentieteksten-test': (
+    <>
+      <p className="lead-para">
+        Google Ads AI Max leverde in een test de meeste waarde op in long-tailcampagnes die vooraf minder redactionele aandacht kregen. In sterk beheerde campagnes bleven door mensen geschreven advertentieteksten beter presteren. Bij B2B-leadgeneratie pakte de automatisering zelfs verkeerd uit: meer kliks gingen samen met een lagere conversieratio.
+      </p>
+      <p>
+        Brad Geddes beschrijft in Search Engine Land een proef bij drie bedrijven: een ecommercebedrijf, een B2B-leadgenerator en een B2C-leadgenerator. Alleen non-brandcampagnes met minimaal 20.000 dollar maandbudget en minstens 100 advertentiegroepen deden mee. Per account werden twee sterk beheerde campagnes en twee minder intensief beheerde campagnes gekozen. Final URL expansion bleef buiten de test, zodat alleen de automatisch gemaakte teksten werden beoordeeld.
+      </p>
+      <h2>
+        De eerste winst bleek niet altijd echte groei
+      </h2>
+      <p>
+        Bij ecommerce zagen de cijfers er aanvankelijk sterk uit. AI Max won vertoningen, klikken en conversies, maar trok een deel daarvan weg uit andere campagnes binnen hetzelfde account. De totale omzet daalde. Na aanpassingen met extra zoekwoorden, negatieve zoekwoorden en doelgroeplijsten hielp text customization vooral de long-tailcampagne, terwijl de sterk geoptimaliseerde campagnes beter bleven draaien op menselijke assets.
+      </p>
+      <p>
+        De B2B-uitkomst was scherper. De automatisch gemaakte teksten verhoogden de CTR, maar selecteerden onvoldoende op zakelijke zoekers. Daardoor daalde de conversieratio sterk. Het bedrijf stopte de test na drie weken, keerde terug naar vastgezette en handmatig geschreven assets en zag de resultaten binnen een week terugkeren naar het niveau van voor de proef.
+      </p>
+      <h2>
+        Long-tail bood meer ruimte voor automatisering
+      </h2>
+      <p>
+        Bij B2C werkte de functie beter in de campagne waar dezelfde teksten vaker over advertentiegroepen werden hergebruikt. De automatisering overtrof niet de campagnes waarin het team de tekst al nauwkeurig op zoekwoorden had afgestemd. Buiten de B2B-proef verwijderden de deelnemende bedrijven ongeveer 19 procent van de automatisch gemaakte assets voordat die veel vertoningen kregen.
+      </p>
+      <p>
+        Messaging restrictions speelden daarom een centrale rol in de opzet. Daarmee werden ongewenste promoties, beloften en afwijkingen van merkrichtlijnen begrensd. De test laat tegelijk zien dat zo'n regelset geen vervanging is voor beoordeling: vooral bij B2B kan een losse advertentieregel grammaticaal kloppen en toch de verkeerde zoeker aantrekken.
+      </p>
+      <h2>
+        De nuttige vraag is waar menselijk werk nog ontbreekt
+      </h2>
+      <p>
+        Deze proef is geen algemene benchmark voor iedere Google Ads-campagne. Zij omvat drie bedrijven, hoge budgetten en grote accountstructuren. De uitkomst maakt wel een concreet onderscheid zichtbaar: automatisering vulde vooral achterstallig redactiewerk aan, maar versloeg geen menselijke assets waaraan al veel test- en optimalisatiewerk was besteed.
+      </p>
+      <p>
+        Voor een team dat AI Max overweegt, ligt de redactionele vraag daardoor niet alleen bij aan of uit. Relevanter is welk deel van het account al sterke, doelgroepgerichte copy heeft en waar advertentiegroepen nog op herhaalde standaardteksten leunen. Ook het verschil tussen meer klikken en betere klanten blijft belangrijk: de B2B-proef liet zien dat een hogere CTR zonder goede voorselectie juist minder waarde kan opleveren.
+      </p>
+    </>
+  ),
   'google-chrome-ai-bugfixes-juni-2026': (
     <>
       <p className="lead-para">
@@ -6630,6 +6667,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-ads-ai-max-advertentieteksten-test':
+    "De Stevin-lezing begint bij copy als hypothese, niet bij automatisering als doel. Letterlijke klanttaal uit reviews, comments en directe feedback kan een sterker vertrekpunt zijn dan een nieuwe tekstvariant die alleen logisch klinkt. AI kan die hypotheses sneller vermenigvuldigen, maar de bron van de boodschap en de kwaliteit van de respons blijven afzonderlijke vragen. De test van Geddes ondersteunt vooral dat onderscheid: schaalbaarheid hielp waar aandacht ontbrak, niet waar menselijke keuzes al aantoonbaar waren aangescherpt.",
   'google-chrome-ai-bugfixes-juni-2026':
     "Voor bedrijven die software of digitale producten onderhouden, toont deze ontwikkeling aan dat AI niet alleen productiviteit verhoogt, maar ook risico’s meetbaar reduceert. Wie nog geen geautomatiseerde security-tools gebruikt, loopt achter op partijen die wel investeren in proactieve oplossingen. De komende jaren zal deze kloof waarschijnlijk alleen maar groter worden.",
   'ai-act-meldplicht-misverstanden-creatieve-sector':

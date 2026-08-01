@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-ads-ai-max-advertentieteksten-test',
+    format: 'dispatch' as const,
+    edition: '400',
+    category: 'Platform',
+    title: "Google Ads AI Max hielp vooral minder beheerde long-tailcampagnes",
+    dek: "Een test bij drie adverteerders laat zien waar automatische advertentieteksten werk uit handen namen en waar menselijke copy beter bleef.",
+    publishedAt: '2026-08-01',
+    readMinutes: 2,
+    author: { name: 'Stevin Redactie', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Ads AI Max hielp vooral minder beheerde long-tailcampagnes",
+    source: { url: "https://searchengineland.com/google-ads-ai-maxs-automated-ad-copy-test-483557", name: "Search Engine Land" },
+  },
+  {
     slug: 'google-chrome-ai-bugfixes-juni-2026',
     format: 'dispatch' as const,
     edition: '399',
