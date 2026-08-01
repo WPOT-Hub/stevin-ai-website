@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-startup-ellis-ai-haalt-10-miljoen-seed-op-met-focus-op-privaat-krediet': (
+    <>
+      <p className="lead-para">
+        Ellis AI, opgericht door herstartondernemer Ryan Williams, komt uit de schaduw met een seedronde van $10 miljoen. Het bedrijf richt zich op het automatiseren van risicoanalyses en portefeuillebeheer voor private credit fondsen. Met de financiering wil Ellis AI hun technologie verder opschalen en nieuwe markten betreden.
+      </p>
+      <p>
+        De startup positioneert zich als een specialist in het verwerken van ongestructureerde data voor private credit managers. Hun platform zou volgens Williams tot 30% efficiëntieverbetering opleveren in portefeuillebeheer en risicomodellering. Private credit als assetklasse groeit snel, maar blijft achter in digitalisering ten opzichte van traditionele kredietverlening.
+      </p>
+      <p>
+        Williams heeft eerder succesvolle exits gerealiseerd in de fintech-sector. Zijn ervaring met schaalbare oplossingen speelt mogelijk een rol in de aantrekkingskracht van deze fundingronde. Investeerders tonen vertrouwen in de combinatie van AI en private credit, een combinatie die nog relatief weinig is beproefd.
+      </p>
+    </>
+  ),
   'scheiden-brand-en-non-brand-campagnes-verbetert-roas': (
     <>
       <p className="lead-para">
@@ -6512,6 +6525,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-startup-ellis-ai-haalt-10-miljoen-seed-op-met-focus-op-privaat-krediet':
+    "Voor Nederlandse en Belgische bureaus die actief zijn in fintech of financiële dienstverlening biedt dit een signaal dat AI-toepassingen in niche-segmenten zoals private credit kansen bieden. De focus op efficiëntie en datagedreven besluitvorming sluit aan bij bredere trends in de sector. Het is de moeite waard om te onderzoeken hoe dergelijke technologieën ook binnen bestaande bedrijfsmodellen kunnen worden toegepast.",
   'scheiden-brand-en-non-brand-campagnes-verbetert-roas':
     "Voor bureaus en in-house teams is dit een praktische stap om efficiënter om te gaan met mediabudget. Door campagnes te splitsen, krijg je heldere meetdata over waar het geld echt werkt. Dat maakt het makkelijker om strategische keuzes te maken en niet alleen op korte-termijn resultaten te sturen.",
   'google-earth-ai-tool-een-dag-actief':
