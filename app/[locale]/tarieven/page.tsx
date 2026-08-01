@@ -31,6 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const description =
     'Iedereen begint met de diagnose. Daarna kies je: wij draaien het, wij draaien het en dragen over, of je doet het zelf met Stevin erbij. Vanaf 399 per maand.'
   const canonical = 'https://stevin.ai/tarieven'
+  const image = 'https://stevin.ai/opengraph-image'
   return {
     title,
     description,
@@ -38,8 +39,8 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical,
       languages: { 'nl-NL': canonical, 'x-default': canonical },
     },
-    openGraph: { title, description, url: canonical, type: 'website' },
-    twitter: { card: 'summary_large_image', title, description },
+    openGraph: { title, description, url: canonical, type: 'website', images: [image] },
+    twitter: { card: 'summary_large_image', title, description, images: [image] },
   }
 }
 
