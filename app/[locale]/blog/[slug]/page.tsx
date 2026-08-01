@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-earth-ai-tool-een-dag-actief': (
+    <>
+      <p className="lead-para">
+        De tool, die donderdag live ging, liet gebruikers met tekstcommando’s elementen toevoegen of verwijderen uit satellietfoto’s. Zo kon bijvoorbeeld een fictieve groep vluchtelingen bij de Mexicaanse grens worden gegenereerd, aldus onderzoeker Henk van Ess.
+      </p>
+      <p>
+        Google gaf geen officiële reden voor de snelle intrekking, maar het bedrijf liet weten dat de functie nog niet klaar was voor gebruik. Gebruikers meldden problemen met de betrouwbaarheid en risico’s op misleidende beelden.
+      </p>
+      <p>
+        Deze stap benadrukt de spanning tussen technologische innovatie en ethische overwegingen rond deepfake-beeldmateriaal. Het laat zien hoe snel onverwachte toepassingen kunnen ontstaan en waar grenzen moeten worden gesteld.
+      </p>
+    </>
+  ),
   'multi-location-seo-structureer-je-geo-pagina-s-op-basis-van-realiteit': (
     <>
       <p className="lead-para">
@@ -6486,6 +6499,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-earth-ai-tool-een-dag-actief':
+    "Voor bedrijven die met satellietdata of AI werken, is dit een waarschuwing om dergelijke tools eerst grondig te testen voordat ze breed beschikbaar komen. De combinatie van realistische beelden en AI kan immers snel tot verspreiding van onjuiste informatie leiden. Het is zaak om nu al afspraken te maken over verantwoordelijkheden bij het gebruik van dergelijke technologieën.",
   'multi-location-seo-structureer-je-geo-pagina-s-op-basis-van-realiteit':
     "Voor bedrijven met meerdere vestigingen is dit vooral een kwestie van realisme in plaats van optimalisatie-hacks. De beste SEO-strategie begint met een heldere organisatiestructuur die klanten ook herkennen. Dat betekent soms keuzes maken: niet elke ‘zoekterm’ verdient een eigen pagina als er geen echte locatie of dienst achter zit.",
   'oracle-integreert-google-gemini-in-automatiseringsplatform':
