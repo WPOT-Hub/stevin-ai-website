@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-earth-ai-tool-een-dag-actief',
+    format: 'dispatch' as const,
+    edition: '391',
+    category: 'Tech',
+    title: "Google haalt AI-functie in Google Earth na één dag offline",
+    dek: "Google heeft een nieuwe functie in Google Earth verwijderd die met AI satellietbeelden kon aanpassen op basis van tekstinvoer.",
+    publishedAt: '2026-08-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Google haalt AI-functie in Google Earth na één dag offline",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'multi-location-seo-structureer-je-geo-pagina-s-op-basis-van-realiteit',
     format: 'dispatch' as const,
     edition: '390',
