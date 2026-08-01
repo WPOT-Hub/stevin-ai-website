@@ -1513,6 +1513,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-act-meldplicht-misverstanden-creatieve-sector': (
+    <>
+      <p className="lead-para">
+        Een LinkedIn-post met de kop ‘Gebruik je AI? Dan moet je dat melden’ haalt duizenden likes. Maar wie klanten adviseert over de Europese AI Act, doet er beter aan de tekst van artikel 50 zelf te lezen. Want de realiteit is minder zwart-wit dan veel marketingberichten doen voorkomen.
+      </p>
+      <p>
+        De kern van het misverstand ligt in de aanname dat ieder gebruik van AI automatisch een meldingsplicht met zich meebrengt. Dat klopt niet. Artikel 50 richt zich op specifieke situaties: systemen die direct met mensen communiceren, teksten over onderwerpen van algemeen belang, en deepfakes in beeld, audio of video. Voor creatieve sectoren zoals marketingbureaus, ontwerpers of videomakers betekent dit dat niet elk project onder dezelfde regels valt.
+      </p>
+      <p>
+        Neem chatbots. Volgens lid 1 van artikel 50 moeten gebruikers duidelijk weten wanneer ze met AI praten. Maar dat hoeft niet als het voor een gemiddelde gebruiker al duidelijk is, bijvoorbeeld door een duidelijke naam als ‘digitale assistent’. Een simpele melding volstaat dan. Het antwoord zelf hoeft niet per se gelabeld te worden als ‘AI-gegenereerd’.
+      </p>
+      <p>
+        Voor teksten geldt een nog beperktere regel. Alleen wanneer AI wordt gebruikt om het publiek te informeren over zaken als verkiezingen, volksgezondheid of veiligheid, kan er een meldplicht gelden. Een commerciële e-mail, producttekst of vertaling valt hier niet onder. Toch zien we bureaus vaak adviseren om standaard ‘AI gegenereerd’ toe te voegen aan content – zonder onderscheid te maken in het doel of de context.
+      </p>
+      <p>
+        Bij afbeeldingen, audio en video draait het vooral om deepfakes: nagebootste content die lijkt op echte personen, gebeurtenissen of locaties en als waarheidsgetrouw kan worden gezien. Een realistische video waarin een bestuurder een product aanbeveelt terwijl die nooit heeft gesproken, valt hier onder. Een fictieve animatie met verzonnen personages echter niet. De vraag is dus niet alleen of AI is gebruikt, maar ook wat er wordt nagebootst en hoe het publiek het interpreteert.
+      </p>
+      <p>
+        Een vaak overgeslagen detail is menselijke controle. Zelfs bij teksten over onderwerpen van algemeen belang vervalt de meldplicht als de tekst door een professional is beoordeeld en deze redactionele verantwoordelijkheid draagt. Een snelle spellingcheck volstaat niet; er moet inhoudelijk toezicht zijn geweest en duidelijk wie eindverantwoordelijk is.
+      </p>
+      <p>
+        Creatief werk krijgt ruimte binnen de regels. Satire, fictie of artistieke uitingen vallen onder uitzonderingen, mits duidelijk is dat het om fictie gaat. Een deepfake in een film hoeft niet expliciet gelabeld te worden als het publiek weet dat het om een verzonnen scenario gaat.
+      </p>
+      <p>
+        Voor bureaus betekent dit: adviseren op basis van de letterlijke tekst van artikel 50, niet op basis van vereenvoudigde samenvattingen op sociale media. Wie klanten helpt met compliantie, moet uitleggen wanneer welke regel geldt – en vooral wanneer niets hoeft te gebeuren.
+      </p>
+    </>
+  ),
   'creativiteit-is-geen-kostenpost-maar-de-kern': (
     <>
       <p className="lead-para">
@@ -6589,6 +6617,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-act-meldplicht-misverstanden-creatieve-sector':
+    "Bij Stevin zien we regelmatig hoe complexe wetgeving zoals de AI Act leidt tot oversimplificatie in adviezen aan bedrijven. Bureaus lopen risico door generieke labels toe te passen zonder rekening te houden met de context waarin AI wordt ingezet. Onze benadering is helder: analyseer eerst het doel en type content voordat je beslist over compliance-maatregelen.\n\nDaarnaast merken we dat veel organisaties onterecht aannemen dat menselijke controle automatisch voldoende is voor transparantie. In werkelijkheid eist artikel 50 bewuste beoordeling door professionals met kennis van zaken – iets wat vaak ontbreekt in standaard workflows.\n\nTot slot zien we kansen voor bureaus die klanten kunnen helpen bij risicobeoordeling in plaats van alleen labels toevoegen. Door samen te werken aan duidelijke richtlijnen per projecttype kunnen bedrijven compliant blijven zonder onnodige beperkingen in hun creativiteit.",
   'creativiteit-is-geen-kostenpost-maar-de-kern':
     "Bij Stevin zien we dagelijks hoe klanten worstelen met deze tegenstrijdigheid: ze willen creatieve impact met harde cijfers onderbouwen, terwijl juist creativiteit vaak pas achteraf meetbaar wordt. Onze ervaring leert dat een sterk concept altijd uplift genereert – of dat nu komt uit betaalde media, organische verspreiding of mond-tot-mondreclame. We geloven niet in campagnes die alleen draaien om salescijfers; we geloven in merken die mensen inspireren tot actie buiten de meetbare kanalen om. Want wie echt snapt hoe creativiteit werkt in 2026 weet één ding zeker: de beste ROI komt vaak uit plekken waar niemand ooit naar keek.",
   'google-analytics-campagne-diagnostiek-missing-parameters':
