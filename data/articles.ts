@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'openai-test-ad-format-met-ai-agent',
+    format: 'dispatch' as const,
+    edition: '395',
+    category: 'Platform',
+    title: "OpenAI test advertenties die direct een AI-agent starten",
+    dek: "ChatGPT introduceert een nieuw advertentieformaat waarbij gebruikers direct in gesprek gaan met een AI-bedrijfsagent",
+    publishedAt: '2026-08-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "OpenAI test advertenties die direct een AI-agent starten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-telefonie-turing-test-nabij-met-13-miljoen',
     format: 'dispatch' as const,
     edition: '394',
