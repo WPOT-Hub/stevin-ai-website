@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-act-meldplicht-misverstanden-creatieve-sector',
+    format: 'dispatch' as const,
+    edition: '398',
+    category: 'Beleid',
+    title: "AI Act: waarom de meldplicht voor AI niet zo simpel is als LinkedIn doet voorkomen",
+    dek: "Van chatbots tot productteksten: de regels uit artikel 50 van de AI Act zijn complexer dan een bericht op LinkedIn suggereert – en dat heeft gevolgen voor bureaus die klanten adviseren.",
+    publishedAt: '2026-08-01',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "AI Act: waarom de meldplicht voor AI niet zo simpel is als LinkedIn doet voorkomen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'creativiteit-is-geen-kostenpost-maar-de-kern',
     format: 'dispatch' as const,
     edition: '397',
