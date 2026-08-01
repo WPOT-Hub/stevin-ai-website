@@ -1513,6 +1513,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'creativiteit-is-geen-kostenpost-maar-de-kern': (
+    <>
+      <p className="lead-para">
+        Een man opent zijn laptop en ziet een spreadsheet vol ROI-cijfers. Zijn blik gaat naar een poster met een lachende klant: ‘Dit is waar we het voor doen’. Tussen cijfers en emotie ontstaat de vraag wat creativiteit écht oplevert als het niet alleen om likes draait, maar om loyaliteit.
+      </p>
+      <p>
+        De antwoorden liggen niet in KPI’s, maar in praktijkervaringen. Organische aandacht blijkt net zo waardevol als betaalde media. Klantbeleving is geen marketingtaak meer, maar een bedrijfsbrede opdracht. Reputatie wordt niet gekocht, maar verdiend door consistentie en authenticiteit. Wie creativiteit afdoet als ‘mooie toeters’ mist de kern van wat een merk drijft.
+      </p>
+      <p>
+        Toch blijft scepsis bestaan. Veel bedrijven meten succes nog in directe conversies, terwijl de grootste impact vaak pas maanden later zichtbaar wordt. Een campagne die nu weinig kliks genereert, kan over een jaar de basis vormen voor een loyale community. Het probleem is niet dat creativiteit moeilijk te meten is, maar dat we te snel opgeven als de meetdata niet direct aansluiten bij onze verwachtingen.
+      </p>
+      <p>
+        Neem Patagonia. Het outdoormerk investeert al jaren in campagnes over duurzaamheid en activisme, niet over productfeatures. De meetdata laten zien dat hun klanten niet alleen kopen wat ze nodig hebben, maar ook bereid zijn meer te betalen voor merken die hun waarden delen. Dat is geen marketingtruc, maar een strategie die aansluit bij hoe consumenten vandaag denken: ze willen weten waar je voor staat voordat ze beslissen waar ze hun geld uitgeven.
+      </p>
+      <p>
+        Hier zit wel een valkuil. Niet elke campagne hoeft wereldveranderend te zijn om effectief te zijn. Soms gaat het om kleine aanpassingen: een heldere boodschap, een consistente toon of gewoon het durven loslaten van de spreadsheetlogica. De kunst is om creativiteit niet als luxe te zien, maar als noodzaak – net zoals cashflow of leverbetrouwbaarheid dat zijn.
+      </p>
+      <p>
+        De realiteit is dat veel bureaus en in-house teams nog steeds vechten voor budgetten door te beloven wat ze kunnen meten, in plaats van wat ze kunnen bereiken. Maar wie alleen focust op meetbare resultaten mist de kans om iets blijvends op te bouwen. Creativiteit is geen kostenpost; het is de brandstof die je merk laat branden wanneer anderen al uitgeblust zijn.
+      </p>
+      <p>
+        Het mooiste aan deze discussie is dat ze niet gaat over trends of theorieën, maar over iets fundamentelers: hoe maak je mensen écht raken? Want uiteindelijk draait alles om aandacht – en die verdien je niet door algoritmes te manipuleren, maar door verhalen te vertellen die mensen willen delen.
+      </p>
+    </>
+  ),
   'google-analytics-campagne-diagnostiek-missing-parameters': (
     <>
       <p className="lead-para">
@@ -6564,6 +6589,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'creativiteit-is-geen-kostenpost-maar-de-kern':
+    "Bij Stevin zien we dagelijks hoe klanten worstelen met deze tegenstrijdigheid: ze willen creatieve impact met harde cijfers onderbouwen, terwijl juist creativiteit vaak pas achteraf meetbaar wordt. Onze ervaring leert dat een sterk concept altijd uplift genereert – of dat nu komt uit betaalde media, organische verspreiding of mond-tot-mondreclame. We geloven niet in campagnes die alleen draaien om salescijfers; we geloven in merken die mensen inspireren tot actie buiten de meetbare kanalen om. Want wie echt snapt hoe creativiteit werkt in 2026 weet één ding zeker: de beste ROI komt vaak uit plekken waar niemand ooit naar keek.",
   'google-analytics-campagne-diagnostiek-missing-parameters':
     "Voor bureaus en marketingteams is dit een reminder om periodiek de campagne-instellingen te controleren. Een gestructureerde werkwijze voor het testen van nieuwe campagnes vooraf kan veel frustratie achteraf voorkomen. Daarnaast blijft het belangrijk om medewerkers die betrokken zijn bij campagneopzet goed te trainen in het gebruik van URL-builders en parameterconventies.",
   'openai-test-ad-format-met-ai-agent':
