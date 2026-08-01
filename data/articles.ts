@@ -32,6 +32,21 @@ export interface Article {
 export const articles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-analytics-campagne-diagnostiek-missing-parameters',
+    format: 'dispatch' as const,
+    edition: '396',
+    category: 'Platform',
+    title: "Google Analytics waarschuwt voor ontbrekende campagneparameters",
+    dek: "Nieuwe diagnostische tool in Google Analytics detecteert ontbrekende URL-parameters die de meetnauwkeurigheid van campagnes beïnvloeden.",
+    publishedAt: '2026-08-01',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google Analytics waarschuwt voor ontbrekende campagneparameters",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'openai-test-ad-format-met-ai-agent',
     format: 'dispatch' as const,
     edition: '395',
