@@ -1,0 +1,62 @@
+[
+  {
+    "from": "github-ai-agent-lekt-privatie-repos",
+    "to": "github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt",
+    "reason": "Dezelfde GitLost-kwetsbaarheid, op dezelfde dag gepubliceerd; de doel-URL heeft de volledige body.",
+    "auditedAt": "2026-08-02"
+  },
+  {
+    "from": "rocket-lab-koopt-iridium-satellietnetwerk",
+    "to": "rocket-lab-krijgt-toegang-tot-globale-satellietmarkt-met-8-miljard-deal",
+    "reason": "Dezelfde Iridium-overname; de doel-URL gebruikt de bevestigde ondernemingswaarde van 8 miljard dollar.",
+    "auditedAt": "2026-08-02"
+  },
+  {
+    "from": "apple-siri-ai-toegang-en-privacy-centraal-in-update",
+    "to": "apple-siri-ai-update-2026",
+    "reason": "Dezelfde WWDC26-aankondiging op dezelfde publicatiedag; privacy en toegankelijkheid zijn in het hoofddossier opgenomen.",
+    "auditedAt": "2026-08-02"
+  },
+  {
+    "from": "tiktok-shop-nederland-logistieke-uitdagingen",
+    "to": "tiktok-shop-lanceert-in-nederland-op-15-juni",
+    "reason": "Dezelfde Nederlandse en Belgische lancering op 15 juni; de logistieke invalshoek is in het hoofddossier opgenomen.",
+    "auditedAt": "2026-08-02"
+  },
+  {
+    "from": "nasa-kiest-relativity-space-voor-marsmissie-tegen-spacex",
+    "to": "mars-2028-relativity-space-nasa-partnerschap",
+    "reason": "Dezelfde NASA-Aeolus-samenwerking; de doel-URL bevat het uitgebreidere dossier en is feitelijk gecorrigeerd.",
+    "auditedAt": "2026-08-02"
+  },
+  {
+    "from": "mistral-ai-breidt-uit-naar-fysieke-wereld",
+    "to": "mistral-breidt-uit-naar-industrie-en-infrastructuur",
+    "reason": "Twee stukken over dezelfde Mistral-strategie op dezelfde dag; de unieke fysieke-AI-invalshoek is samengevoegd.",
+    "auditedAt": "2026-08-02"
+  },
+  {
+    "from": "waymo-lanceert-premium-abonnement-voor-autonoom-vervoer",
+    "to": "waymo-lanceert-loyalty-program-met-cashback-en-gratis-annuleringen",
+    "reason": "Dezelfde Waymo Premier-lancering op dezelfde dag; de doel-URL beschrijft de concrete abonnementsvoorwaarden.",
+    "auditedAt": "2026-08-02"
+  },
+  {
+    "from": "google-ads-lanceert-video-campagnegroepen-wereldwijd",
+    "to": "google-lanceert-video-campaign-groups-voor-betere-reach-en-frequency",
+    "reason": "Dezelfde wereldwijde uitrol van video campaign groups; de doel-URL verscheen als eerste en sluit aan op de productnaam.",
+    "auditedAt": "2026-08-02"
+  },
+  {
+    "from": "zuid-koreaanse-techgiganten-investeren-meer-dan-550-miljard-in-geheugenfabrieken",
+    "to": "zuid-korea-investeert-1-biljoen-in-chipproductie-en-humanoide-robots",
+    "reason": "Onderdeel van hetzelfde Zuid-Koreaanse megaproject; geconsolideerd in het bredere dossier met chips, datacenters en robots.",
+    "auditedAt": "2026-08-02"
+  },
+  {
+    "from": "zuid-korea-investeert-900-miljard-in-ai-en-semiconductor-plan",
+    "to": "zuid-korea-investeert-1-biljoen-in-chipproductie-en-humanoide-robots",
+    "reason": "Dezelfde investeringsronde met een verwarrende won/dollar-weergave; de doel-URL gebruikt de totale omvang en volledige scope.",
+    "auditedAt": "2026-08-02"
+  }
+]

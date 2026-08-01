@@ -1,147 +1,269 @@
 /**
- * Related-articles generator, kiest per editorial 3 meest-relevante
- * andere artikelen via Claude API, op basis van title + dek + category.
+ * Deterministische related-articles generator voor het volledige Journal.
  *
- * Output gaat naar data/related-articles.json. Wordt gelezen door
- * getRelatedArticles() in data/articles.ts.
+ * Geen API of credits nodig. De score combineert zeldzame inhoudswoorden,
+ * titeloverlap, expliciete topiclabels, categorie en bestemmingskwaliteit.
+ * Na de eerste selectie repareert de generator het linknetwerk totdat ieder
+ * actief artikel exact drie uitgaande en minimaal één inkomende link heeft.
  *
- * Usage:
- *   ANTHROPIC_API_KEY=sk-... npm run related:generate
- *   ANTHROPIC_API_KEY=sk-... npm run related:generate -- --all
- *   ANTHROPIC_API_KEY=sk-... npm run related:generate -- last-click-is-een-gewoonte
- *
- * Defaults:
- *   - Zonder argumenten: alleen artikelen die nog géén related-mapping hebben
- *   - --all: regenerate álles
- *   - <slug>: alleen die ene
- *
- * Niet automatisch in CI: kost API-tokens, je wil de output reviewen.
+ * Gebruik: npm run related:generate
  */
 
-import Anthropic from '@anthropic-ai/sdk'
-import * as fs from 'node:fs'
-import * as path from 'node:path'
-import { articles } from '../data/articles'
+import fs from 'node:fs'
+import path from 'node:path'
+import { articles, type Article } from '../data/articles'
 
-const RELATED_JSON = path.join(__dirname, '..', 'data', 'related-articles.json')
-const MODEL = 'claude-opus-4-7'
+const PAGE_PATH = path.join(process.cwd(), 'app/[locale]/blog/[slug]/page.tsx')
+const OUTPUT_PATH = path.join(process.cwd(), 'data/related-articles.json')
 
-const PROMPT_TEMPLATE = `Je bent de redactie van Stevin Journal. Kies voor het hieronder gegeven CURRENT-artikel exact 3 meest-relevante andere artikelen uit de lijst CANDIDATES.
+const STOPWORDS = new Set([
+  'aan', 'als', 'bij', 'dan', 'dat', 'de', 'deze', 'die', 'dit', 'door', 'een', 'en', 'er', 'gaan',
+  'gaat', 'geen', 'heeft', 'het', 'hoe', 'hun', 'in', 'is', 'je', 'kan', 'maar', 'meer', 'met',
+  'naar', 'niet', 'nog', 'nu', 'of', 'om', 'ook', 'op', 'over', 'te', 'tot', 'uit', 'van', 'voor',
+  'waar', 'waarom', 'wat', 'wel', 'wordt', 'worden', 'zijn', 'the', 'and', 'for', 'from', 'into',
+  'new', 'that', 'this', 'with', 'your', 'miljoen', 'miljard', 'dollar', 'euro', '2026', '2027',
+  '2028', 'lanceert', 'introduceert', 'voegt', 'nieuwe', 'nieuw', 'bedrijven', 'bedrijf',
+  'januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september',
+  'oktober', 'november', 'december',
+])
 
-Relevantie betekent: zelfde topic-cluster, complementaire invalshoek, of expliciete tematische overlap. NIET op datum, NIET op format. Bij twijfel: kies een artikel dat een lezer van CURRENT logischerwijs daarna óók wil lezen.
+const TOPIC_PATTERNS: Array<[string, RegExp]> = [
+  ['google-ads', /google ads|ai max|performance max|pmax|demand gen|merchant center|campaign groups|target roas|target cpa/i],
+  ['measurement', /attribut|increment|marketing mix|\bmmm\b|\bga4\b|google analytics|brand lift|meetdata|meting|uplift|roas/i],
+  ['seo', /\bseo\b|organisch|organic|zoekresult|search console|indexe|zero.click|zoekverkeer/i],
+  ['ai-search', /chatgpt|perplexity|ai.overview|ai.antwoord|llms\.txt|ai.zichtbaarheid|aeo|generative engine|zoekzichtbaarheid/i],
+  ['brand', /merk|brand|creativ|campagne|advertentie|marketing/i],
+  ['commerce', /e.?commerce|retail|shopping|shop|winkel|checkout|verkoop/i],
+  ['agents', /agent|agentic|autonoom|copilot/i],
+  ['security', /security|beveilig|cyber|hack|lek|fraude|prompt.?inject/i],
+  ['policy', /ai act|beleid|regelgeving|toezicht|wetgeving|europese unie|overheid/i],
+  ['infrastructure', /datacenter|data.center|infrastructuur|chip|semiconductor|geheugen|compute|cloud/i],
+  ['robotics', /robot|robotaxi|humano|autonome voertuig|zelfrijd/i],
+  ['space', /nasa|spacex|rocket lab|ruimtevaart|satelliet|mars|raket/i],
+  ['openai', /openai|chatgpt/i],
+  ['anthropic', /anthropic|claude/i],
+  ['google', /google|youtube|gemini|waymo/i],
+  ['microsoft', /microsoft|copilot|outlook/i],
+  ['meta', /meta|instagram|threads/i],
+  ['apple', /apple|siri|iphone|ios|mac/i],
+  ['amazon', /amazon|alexa|aws/i],
+  ['tiktok', /tiktok/i],
+  ['mistral', /mistral/i],
+  ['finance', /financier|investe|overname|beurs|ipo|waardering|funding|acquisitie/i],
+]
 
-Output: alleen een JSON-array van 3 slug-strings. Geen markdown, geen uitleg.
+const PREFERRED_PAIRS = [
+  ['lecun-ami-labs-jepa-tegen-llms', 'lecun-miljard-tegen-het-taalmodel'],
+  ['amazon-alexa-wordt-shopping-agent-en-advertentieplatform', 'alexa-agentic-ads-veranderen-de-regels-van-conversational-marketing'],
+  ['europa-verspeelt-ai-kansen-door-een-kaart-te-spelen', 'europa-moet-asml-inzetten-als-strategische-onderhandelingskaart'],
+  ['nieuwe-ecommerce-tools-mei-2026', 'nieuwe-ecommerce-tools-juni-2026'],
+  ['google-demand-gen-integratie-commerce-media', 'google-breidt-demand-gen-uit-met-youtube-creator-tools'],
+  ['klanten-vragen-naar-chatgpt-zichtbaarheid', 'zichtbaar-in-ai-antwoorden-aeo-geo'],
+  ['tiktok-shop-lanceert-in-nederland-op-15-juni', 'wat-not-doet-wel-en-shoped-niet'],
+  ['tiktok-shop-lanceert-in-nederland-op-15-juni', 'nieuwe-ecommerce-tools-juni-2026'],
+  ['barclays-koopt-gohenry-voor-180-miljoen', 'informer-money-genomineerd-voor-best-fintech-startup-belgie'],
+  ['barclays-koopt-gohenry-voor-180-miljoen', 'flutter-verlaat-london-stock-exchange'],
+  ['kleding-en-accessoires-om-facial-recognition-te-misleiden', 'meta-gezichtsherkenning-ai-brillen'],
+  ['kleding-en-accessoires-om-facial-recognition-te-misleiden', 'ai-leeftijdsschatting-asielzoekers-bias-onbetrouwbaar'],
+  ['magnetic-networking-evolutie-personal-branding', 'branding-versus-marketing-wat-is-het-verschil'],
+  ['magnetic-networking-evolutie-personal-branding', 'klantmerk-en-werkgeversmerk-moeten-hetzelfde-verhaal-vertellen'],
+  ['ai-in-accountancy-evolutie-in-plaats-van-revolutie', 'autoboeker-haalt-12-miljoen-in-voor-ai-platform-accountants'],
+  ['politieke-targeting-en-visuele-aandacht-eye-tracking', 'meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit'],
+  ['deezer-lanceert-fan-remix-functie-met-artiestentoestemming', 'deezer-lanceert-ai-muziekdetector-voor-andere-streamingdiensten'],
+  ['deezer-lanceert-fan-remix-functie-met-artiestentoestemming', 'spotify-ai-muziek-verificatie'],
+  ['tno-biobuilt-centrum-versnelt-opschaling-biobased-materialen', 'watercongestie-nodigt-uit-tot-verplichte-waterbesparing'],
+  ['tno-biobuilt-centrum-versnelt-opschaling-biobased-materialen', 'turbine-unit-stroom-uit-kanalen'],
+  ['informer-money-genomineerd-voor-best-fintech-startup-belgie', 'afm-beboet-bunq-trage-fraudeafhandeling'],
+  ['watercongestie-nodigt-uit-tot-verplichte-waterbesparing', 'netbeheerders-investeren-meer-in-netcongestie-met-verschillen-tussen-bedrijven'],
+  ['ai-leeftijdsschatting-asielzoekers-bias-onbetrouwbaar', 'politieke-targeting-en-visuele-aandacht-eye-tracking'],
+  ['uk-civil-service-ai-influencer-aan-stellen', 'karamo-brown-ai-wellness-app-ke'],
+  ['eu-sap-maintenance-fee-bargaining-chip', 'erp-gebruikers-kiezen-voor-headless-oplossingen'],
+] as const
 
-Voorbeeld output:
-["mmm-is-een-hypothese", "95-procent-ai-pilots-mislukt", "autonome-agents-90-dagen"]
-
-CURRENT:
-- slug: {{CURRENT_SLUG}}
-- titel: {{CURRENT_TITLE}}
-- dek: {{CURRENT_DEK}}
-- categorie: {{CURRENT_CATEGORY}}
-- format: {{CURRENT_FORMAT}}
-
-CANDIDATES (kies hier 3 uit):
-{{CANDIDATES}}`
-
-function formatCandidates(currentSlug: string): string {
-  return articles
-    .filter((a) => a.slug !== currentSlug)
-    .map(
-      (a) =>
-        `- slug: ${a.slug} | format: ${a.format} | categorie: ${a.category} | titel: ${a.title} | dek: ${a.dek}`,
-    )
-    .join('\n')
+interface Document {
+  article: Article
+  weighted: Map<string, number>
+  titleTokens: Set<string>
+  topics: Set<string>
 }
 
-async function pickRelatedForArticle(client: Anthropic, slug: string): Promise<string[]> {
-  const article = articles.find((a) => a.slug === slug)
-  if (!article) throw new Error(`Article ${slug} niet gevonden in articles.ts`)
+function extractBodies(source: string): Map<string, string> {
+  const bodies = new Map<string, string>()
+  const pattern = /^  '([^']+)': \(\n    <>\n([\s\S]*?)\n    <\/>\n  \),/gm
+  for (const match of source.matchAll(pattern)) {
+    bodies.set(match[1], match[2].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim())
+  }
+  return bodies
+}
 
-  const prompt = PROMPT_TEMPLATE.replace('{{CURRENT_SLUG}}', article.slug)
-    .replace('{{CURRENT_TITLE}}', article.title)
-    .replace('{{CURRENT_DEK}}', article.dek)
-    .replace('{{CURRENT_CATEGORY}}', article.category)
-    .replace('{{CURRENT_FORMAT}}', article.format)
-    .replace('{{CANDIDATES}}', formatCandidates(slug))
+function tokenize(value: string): string[] {
+  return value
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[^a-z0-9\s-]/g, ' ')
+    .split(/\s+/)
+    .map((token) => token.replace(/^-+|-+$/g, ''))
+    .filter((token) => token.length >= 3 && !STOPWORDS.has(token))
+}
 
-  console.log(`  → Claude API call (${prompt.length} chars input)...`)
-  const res = await client.messages.create({
-    model: MODEL,
-    max_tokens: 500,
-    messages: [{ role: 'user', content: prompt }],
+function addTokens(target: Map<string, number>, values: string[], weight: number): void {
+  for (const value of values) target.set(value, (target.get(value) ?? 0) + weight)
+}
+
+function jaccard(left: Set<string>, right: Set<string>): number {
+  if (!left.size || !right.size) return 0
+  let shared = 0
+  for (const value of left) if (right.has(value)) shared++
+  return shared / (left.size + right.size - shared)
+}
+
+function cosine(left: Map<string, number>, right: Map<string, number>, idf: Map<string, number>): number {
+  let dot = 0
+  let leftNorm = 0
+  let rightNorm = 0
+  for (const [term, count] of left) {
+    const weighted = count * (idf.get(term) ?? 1)
+    leftNorm += weighted * weighted
+    const other = right.get(term)
+    if (other) dot += weighted * other * (idf.get(term) ?? 1)
+  }
+  for (const [term, count] of right) {
+    const weighted = count * (idf.get(term) ?? 1)
+    rightNorm += weighted * weighted
+  }
+  return leftNorm && rightNorm ? dot / Math.sqrt(leftNorm * rightNorm) : 0
+}
+
+function hasRealSource(article: Article): boolean {
+  if (!article.source?.url) return false
+  try {
+    const url = new URL(article.source.url)
+    return url.hostname !== 'stevin.ai' && url.pathname !== '/'
+  } catch {
+    return false
+  }
+}
+
+function pairKey(left: string, right: string): string {
+  return [left, right].sort().join('|')
+}
+
+function main(): void {
+  const bodies = extractBodies(fs.readFileSync(PAGE_PATH, 'utf8'))
+  const preferred = new Set(PREFERRED_PAIRS.map(([left, right]) => pairKey(left, right)))
+  const publishableArticles = articles.filter((article) => article.format !== 'dispatch' || bodies.has(article.slug))
+  const documents: Document[] = publishableArticles.map((article) => {
+    const fullText = `${article.title} ${article.dek} ${bodies.get(article.slug) ?? ''}`
+    const title = tokenize(article.title)
+    const dek = tokenize(article.dek)
+    const body = tokenize(bodies.get(article.slug) ?? '')
+    const weighted = new Map<string, number>()
+    addTokens(weighted, title, 6)
+    addTokens(weighted, dek, 3)
+    addTokens(weighted, body, 1)
+    return {
+      article,
+      weighted,
+      titleTokens: new Set(title),
+      topics: new Set(TOPIC_PATTERNS.filter(([, pattern]) => pattern.test(fullText)).map(([topic]) => topic)),
+    }
   })
 
-  const text = res.content
-    .filter((b): b is Anthropic.TextBlock => b.type === 'text')
-    .map((b) => b.text)
-    .join('\n')
-    .trim()
-
-  const cleaned = text.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/i, '').trim()
-
-  let parsed: unknown
-  try {
-    parsed = JSON.parse(cleaned)
-  } catch {
-    throw new Error(`Claude output is geen geldige JSON. Ruw:\n${cleaned.slice(0, 200)}`)
+  const frequency = new Map<string, number>()
+  for (const document of documents) {
+    for (const term of document.weighted.keys()) frequency.set(term, (frequency.get(term) ?? 0) + 1)
   }
-  if (!Array.isArray(parsed)) throw new Error(`Output is geen array`)
+  const idf = new Map([...frequency].map(([term, count]) => [term, Math.log((documents.length + 1) / (count + 1)) + 1]))
 
-  const slugs = parsed.filter((s): s is string => typeof s === 'string')
-  // Validate: alle slugs moeten bestaan en zijn niet currentSlug
-  const validSlugs = slugs.filter((s) => articles.find((a) => a.slug === s) && s !== slug)
-  if (validSlugs.length < 3) {
-    console.warn(`  ⚠ Verwacht 3 valid slugs, kreeg ${validSlugs.length}, toch opnemen`)
+  const scoreCache = new Map<string, number>()
+  const score = (left: Document, right: Document): number => {
+    const key = `${left.article.slug}>${right.article.slug}`
+    const cached = scoreCache.get(key)
+    if (cached !== undefined) return cached
+    const semantic = cosine(left.weighted, right.weighted, idf)
+    const title = jaccard(left.titleTokens, right.titleTokens)
+    const topics = jaccard(left.topics, right.topics)
+    const category = left.article.category === right.article.category ? 0.035 : 0
+    const destinationQuality = Math.min(right.article.readMinutes, 10) * 0.003 + (hasRealSource(right.article) ? 0.018 : 0)
+    const preferredBoost = preferred.has(pairKey(left.article.slug, right.article.slug)) ? 0.6 : 0
+    const value = semantic * 0.58 + title * 0.22 + topics * 0.28 + category + destinationQuality + preferredBoost
+    scoreCache.set(key, value)
+    return value
   }
-  return validSlugs.slice(0, 3)
-}
 
-async function main(): Promise<void> {
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('ANTHROPIC_API_KEY niet gezet')
-    process.exit(1)
+  const documentBySlug = new Map(documents.map((document) => [document.article.slug, document]))
+  const rankedBySlug = new Map<string, string[]>()
+  for (const document of documents) {
+    rankedBySlug.set(
+      document.article.slug,
+      documents
+        .filter((candidate) => candidate.article.slug !== document.article.slug)
+        .sort((left, right) => {
+          const delta = score(document, right) - score(document, left)
+          return delta || left.article.slug.localeCompare(right.article.slug)
+        })
+        .map((candidate) => candidate.article.slug),
+    )
   }
-  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
 
-  const args = process.argv.slice(2)
-  const all = args.includes('--all')
-  const slugArgs = args.filter((a) => !a.startsWith('--'))
+  const mapping = new Map<string, string[]>(
+    documents.map((document) => [document.article.slug, rankedBySlug.get(document.article.slug)!.slice(0, 3)]),
+  )
+  const incoming = new Map(documents.map((document) => [document.article.slug, 0]))
+  for (const targets of mapping.values()) for (const target of targets) incoming.set(target, incoming.get(target)! + 1)
+  const repairs: Array<{ source: string; removed: string; target: string }> = []
 
-  const existing: Record<string, string[]> = JSON.parse(fs.readFileSync(RELATED_JSON, 'utf8'))
+  // Geef elk artikel een crawlbaar inkomend pad. Vervang alleen een link naar
+  // een artikel dat daarnaast nog minimaal één andere inkomende link behoudt.
+  for (const target of documents.map((document) => document.article.slug).filter((slug) => incoming.get(slug) === 0)) {
+    const targetDocument = documentBySlug.get(target)!
+    const sourceCandidates = documents
+      .filter((document) => document.article.slug !== target && !mapping.get(document.article.slug)!.includes(target))
+      .sort((left, right) => score(right, targetDocument) - score(left, targetDocument))
 
-  const allSlugs = articles.map((a) => a.slug)
-  let targets: string[]
-  if (slugArgs.length > 0) targets = slugArgs
-  else if (all) targets = allSlugs
-  else targets = allSlugs.filter((s) => !existing[s] || existing[s].length === 0)
-
-  if (targets.length === 0) {
-    console.log('[Related generator] Niets te doen. Gebruik --all om te regenereren.')
-    return
-  }
-  console.log(`[Related generator] Targets: ${targets.length}`)
-
-  for (const slug of targets) {
-    console.log(`\n[Related generator] ${slug}`)
-    try {
-      const picks = await pickRelatedForArticle(client, slug)
-      existing[slug] = picks
-      console.log(`  ✓ ${picks.length} picks: ${picks.join(', ')}`)
-    } catch (err: any) {
-      console.error(`  ✗ ${slug}: ${err.message}`)
+    let repaired = false
+    for (const source of sourceCandidates) {
+      const current = mapping.get(source.article.slug)!
+      const replaceable = current
+        .map((slug, index) => ({ slug, index, value: score(source, documentBySlug.get(slug)!) }))
+        .filter(({ slug }) => incoming.get(slug)! > 1)
+        .sort((left, right) => left.value - right.value)[0]
+      if (!replaceable) continue
+      current[replaceable.index] = target
+      incoming.set(replaceable.slug, incoming.get(replaceable.slug)! - 1)
+      incoming.set(target, 1)
+      repairs.push({ source: source.article.slug, removed: replaceable.slug, target })
+      repaired = true
+      break
     }
+    if (!repaired) throw new Error(`Kon geen inkomende related-link maken voor ${target}`)
   }
 
-  // Schrijven (gesorteerd voor stabiele diffs)
-  const sorted: Record<string, string[]> = {}
-  for (const k of Object.keys(existing).sort()) sorted[k] = existing[k]
-  fs.writeFileSync(RELATED_JSON, JSON.stringify(sorted, null, 2) + '\n')
-  console.log(`\n[Related generator] ✓ ${RELATED_JSON} bijgewerkt`)
+  const output: Record<string, string[]> = {}
+  for (const slug of [...mapping.keys()].sort()) output[slug] = mapping.get(slug)!
+  const invalid = Object.entries(output).filter(([slug, targets]) =>
+    targets.length !== 3 || new Set(targets).size !== 3 || targets.includes(slug) || targets.some((target) => !documentBySlug.has(target)),
+  )
+  const withoutIncoming = [...incoming].filter(([, count]) => count === 0)
+  if (invalid.length || withoutIncoming.length) {
+    throw new Error(`Related-validatie faalde: ${invalid.length} ongeldige mappings, ${withoutIncoming.length} zonder inkomende link`)
+  }
+
+  fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`)
+  const weakest = documents
+    .map((document) => {
+      const targets = output[document.article.slug]
+      return {
+        slug: document.article.slug,
+        weakestScore: Math.min(...targets.map((target) => score(document, documentBySlug.get(target)!))),
+      }
+    })
+    .sort((left, right) => left.weakestScore - right.weakestScore)
+    .slice(0, 10)
+  console.log(`[Related generator] ${publishableArticles.length} publiceerbare artikelen, ${publishableArticles.length * 3} links, 100% uitgaand en inkomend gedekt.`)
+  console.log(`[Related generator] ${repairs.length} inkomende links gerepareerd.`)
+  console.log(`[Related generator] Laagste clusters ter redactionele controle: ${weakest.map(({ slug }) => slug).join(', ')}`)
+  console.log(`[Related generator] Geschreven: ${OUTPUT_PATH}`)
 }
 
-main().catch((err) => {
-  console.error('[Related generator] fatal:', err)
-  process.exit(1)
-})
+main()

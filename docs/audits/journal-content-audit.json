@@ -1,0 +1,4023 @@
+{
+  "generatedAt": "2026-08-01T23:06:57.819Z",
+  "inventory": {
+    "activeRecords": 365,
+    "publishable": 343,
+    "dispatches": 330,
+    "editorials": 13,
+    "consolidations": 10,
+    "dormantWithoutBody": 22,
+    "dispatchesWithThreeH2": 10,
+    "withExplicitRelatedMapping": 343,
+    "withoutIncomingExplicitLink": 0,
+    "invalidRelated": []
+  },
+  "dormantDispatches": [
+    {
+      "slug": "google-tag-manager-voert-gestuurde-opzet-in-voor-google-ads-aankoop-tracking",
+      "title": "Google Tag Manager voert gestuurde opzet in voor Google Ads aankoop-tracking"
+    },
+    {
+      "slug": "google-breidt-brand-lift-studies-uit-met-verbeterde-meetoptie",
+      "title": "Google voegt gevoeligere meetoptie toe aan Brand Lift Studies"
+    },
+    {
+      "slug": "deepseek-1-5-miljard-dollar-investering-en-ipo-plannen",
+      "title": "DeepSeek zoekt $1,5 miljard op voor IPO in 2027"
+    },
+    {
+      "slug": "gratis-waymo-ritten-californie-regelgeving-kwetsbaarheid",
+      "title": "Gratis Waymo-ritten in Californië door vertraging bij regelgever"
+    },
+    {
+      "slug": "openai-leiderschapsvacature-na-stap-fidji-simo",
+      "title": "Fidji Simo stapt op bij OpenAI: leiderschapsvacature ontstaat"
+    },
+    {
+      "slug": "llm-beveiliging-prompt-injection-risico-snel-groeiend",
+      "title": "LLM’s manipuleren via rolmodellen: een groeiend beveiligingsrisico"
+    },
+    {
+      "slug": "waarom-tech-marketeers-nu-drie-stappen-vooruitmoeten-denken",
+      "title": "De techrecessie die niemand ziet aankomen: tijd voor een radicaal andere blik"
+    },
+    {
+      "slug": "deezer-lanceert-fan-remix-functie-met-artiestentoestemming",
+      "title": "Deezer laat fans nummers remixen met toestemming van artiesten"
+    },
+    {
+      "slug": "moengage-koopt-ai-agent-platform",
+      "title": "MoEngage koopt platform voor miljoenen AI-marketingagenten"
+    },
+    {
+      "slug": "youtube-introduceert-gemini-gebaseerde-inzichten-tools",
+      "title": "YouTube voegt AI-gestuurde inzichten toe voor creators en marketeers"
+    },
+    {
+      "slug": "karamo-brown-ai-wellness-app-ke",
+      "title": "De app die je niet meer laat gaan: waarom Karamo Brown’s AI-clone de wellness-markt op z’n kop zet"
+    },
+    {
+      "slug": "top-100-ldv-innovatie-award-nominaties-2026",
+      "title": "Vijf logistieke mkb’ers genomineerd voor Top 100 LDV Innovatie Award"
+    },
+    {
+      "slug": "rocket-engines-als-geothermische-krachtcentrales",
+      "title": "SpaceX-alumnus haalt 22 miljoen op om raketmotoren in te zetten als geothermische centrales"
+    },
+    {
+      "slug": "google-ontkracht-mythes-over-llms-txt-bestanden",
+      "title": "Google ontkracht mythes over LLMS.txt-bestanden in zoekresultaten"
+    },
+    {
+      "slug": "barclays-koopt-gohenry-voor-180-miljoen",
+      "title": "Barclays pakt GoHenry voor £180 miljoen over"
+    },
+    {
+      "slug": "waymo-ontwikkelt-model-voor-menselijk-gedrag-in-botsingen",
+      "title": "Waymo creeert model voor betere vergelijking robottaxi’s met menselijke bestuurders"
+    },
+    {
+      "slug": "iranese-drone-stort-25-miljoen-helicopter",
+      "title": "Goedkope Iraanse drone raakt Amerikaanse helikopter van 25 miljoen dollar"
+    },
+    {
+      "slug": "11-ppc-fouten-ontdekt-in-b2b-audits",
+      "title": "Elf veelvoorkomende PPC-fouten kosten B2B-bedrijven geld en leads"
+    },
+    {
+      "slug": "marshall-stockwell-iii-speaker-met-vervangbare-batterij",
+      "title": "Marshall Stockwell III met vervangbare batterij en dubbele looptijd"
+    },
+    {
+      "slug": "openai-confidentieel-ipo-aanvraag",
+      "title": "OpenAI dient vertrouwelijke IPO-aanvraag in"
+    },
+    {
+      "slug": "waymo-koopt-apple-testcentrum-voor-zelfrijdende-auto-s",
+      "title": "Waymo koopt Apple’s testcentrum voor zelfrijdende auto’s voor 220 miljoen dollar"
+    },
+    {
+      "slug": "google-ads-verwijdert-historische-data-na-37-maanden",
+      "title": "Google Ads verwijdert historische data na 37 maanden: actie vereist"
+    }
+  ],
+  "sourceGaps": [
+    {
+      "slug": "ai-act-meldplicht-misverstanden-creatieve-sector",
+      "title": "AI Act: waarom de meldplicht voor AI niet zo simpel is als LinkedIn doet voorkomen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "creativiteit-is-geen-kostenpost-maar-de-kern",
+      "title": "Creativiteit is geen kostenpost maar de brandstof van je merk",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-analytics-campagne-diagnostiek-missing-parameters",
+      "title": "Google Analytics waarschuwt voor ontbrekende campagneparameters",
+      "format": "dispatch"
+    },
+    {
+      "slug": "openai-test-ad-format-met-ai-agent",
+      "title": "OpenAI test advertenties die direct een AI-agent starten",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-telefonie-turing-test-nabij-met-13-miljoen",
+      "title": "AI-telefonie die onherkenbaar is als mens komt dichterbij na $13 miljoen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-startup-ellis-ai-haalt-10-miljoen-seed-op-met-focus-op-privaat-krediet",
+      "title": "AI-startup Ellis AI haalt $10 miljoen seed op voor privaat krediet",
+      "format": "dispatch"
+    },
+    {
+      "slug": "scheiden-brand-en-non-brand-campagnes-verbetert-roas",
+      "title": "Splits brand en non-brand campagnes voor betere ROAS",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-earth-ai-tool-een-dag-actief",
+      "title": "Google haalt AI-functie in Google Earth na één dag offline",
+      "format": "dispatch"
+    },
+    {
+      "slug": "multi-location-seo-structureer-je-geo-pagina-s-op-basis-van-realiteit",
+      "title": "SEO voor meerdere vestigingen: bouw pagina’s op echte locaties, niet op zoekwoorden",
+      "format": "dispatch"
+    },
+    {
+      "slug": "oracle-integreert-google-gemini-in-automatiseringsplatform",
+      "title": "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-leert-van-verkoopgesprekken-met-30-miljoen",
+      "title": "AI leert van verkoopgesprekken met 30 miljoen dollar",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-stage-techcrunch-disrupt-2026",
+      "title": "AI Stage keert terug op TechCrunch Disrupt 2026 met focus op SaaS en agent-beveiliging",
+      "format": "dispatch"
+    },
+    {
+      "slug": "microsoft-bouwt-copilot-super-app-voor-2026",
+      "title": "Microsoft lanceert Copilot-superapp in 2026",
+      "format": "dispatch"
+    },
+    {
+      "slug": "hugging-face-rebuild-na-openai-agents-aanval",
+      "title": "Hugging Face moest een derde van de infrastructuur herbouwen na OpenAI-agents aanval",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-introduceert-ai-content-labels-in-asset-studio",
+      "title": "Google voegt AI-contentlabels toe in Asset Studio",
+      "format": "dispatch"
+    },
+    {
+      "slug": "te-veel-ai-agenten-verstoren-elkaars-werk",
+      "title": "Te veel AI-agenten verstoren elkaars werk",
+      "format": "dispatch"
+    },
+    {
+      "slug": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "title": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "format": "dispatch"
+    },
+    {
+      "slug": "smx-advanced-2027-twee-locaties",
+      "title": "SMX Advanced 2027 vindt plaats in San Diego én Boston",
+      "format": "dispatch"
+    },
+    {
+      "slug": "seo-verlaagt-blended-customer-acquisition-costs",
+      "title": "SEO verlaagt blended customer acquisition costs met 15 tot 30 procent",
+      "format": "dispatch"
+    },
+    {
+      "slug": "cyera-acquire-oasis-security-1-miljard",
+      "title": "Cyera koopt Oasis Security voor $1 miljard om AI-agenten te beveiligen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "microsofts-ai-bom-in-cybersecurity-hoe-agenten-de-battle-gaan-winnen",
+      "title": "Microsoft gooit een AI-bom in cybersecurity: de agenten zijn los",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-infrastructuur-onder-druk-door-energievraag-techcrunch-disrupt-2026",
+      "title": "AI-infrastructuur dreigt stroomnet te overbelasten: TechCrunch Disrupt 2026 waarschuwt",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-verplicht-passkeys-voor-google-ads-api",
+      "title": "Google verplicht passkeys voor Google Ads API",
+      "format": "dispatch"
+    },
+    {
+      "slug": "eerste-autonome-cyberaanval-op-openai-dwingt-pleidooi-voor-transparantie",
+      "title": "Unieke cyberaanval op OpenAI dwingt sector tot radicale transparantie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "klanten-vragen-naar-chatgpt-zichtbaarheid",
+      "title": "Klanten vragen naar zichtbaarheid in ChatGPT: hoe meet je dat?",
+      "format": "dispatch"
+    },
+    {
+      "slug": "uk-investeert-708-miljoen-in-toekomstig-straaljagerproject",
+      "title": "VK pompt 708 miljoen pond in toekomstige straaljager",
+      "format": "dispatch"
+    },
+    {
+      "slug": "doelgroep-validatie-voor-bidding-strategieen",
+      "title": "Zonder goede doelen werkt bieden niet",
+      "format": "dispatch"
+    },
+    {
+      "slug": "meta-invoert-onzichtbare-watermerken-voor-ai-content",
+      "title": "Meta voegt onzichtbare watermerken toe aan AI-beelden",
+      "format": "dispatch"
+    },
+    {
+      "slug": "passionfroot-15m-us-expansion",
+      "title": "Duits platform Passionfroot haalt $15 miljoen op voor Amerikaanse expansie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk",
+      "title": "Yope haalt 12,3 miljoen op voor privénetwerk zonder algoritmen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "f1-belgie-2026-machine-learning-verpest-racen",
+      "title": "F1 in België: algoritmes maken racen onherkenbaar",
+      "format": "dispatch"
+    },
+    {
+      "slug": "hugging-face-ai-agents-fraude",
+      "title": "Hugging Face faalt in strijd tegen fraude met AI-agenten",
+      "format": "dispatch"
+    },
+    {
+      "slug": "microsoft-365-calendders-hollowgraph-spionage",
+      "title": "Hackers misbruiken Microsoft 365-agenda’s voor spionage via HollowGraph-campagne",
+      "format": "dispatch"
+    },
+    {
+      "slug": "openai-vrees-open-weight-modellen",
+      "title": "OpenAI vreest Chinese open-source modellen: risico of concurrentie?",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-integreert-local-services-ads-in-performance-max",
+      "title": "Google Ads integreert Local Services Ads in Performance Max-campagnes",
+      "format": "dispatch"
+    },
+    {
+      "slug": "space-force-30-miljard-rocket-launches",
+      "title": "Space Force koopt voor 30 miljard dollar aan raketlanceringen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "world-of-wow-influencer-marketing-verbinden-in-plaats-van-bereiken",
+      "title": "World of WOW kiest voor verbinding in plaats van alleen bereik bij influencer marketing",
+      "format": "dispatch"
+    },
+    {
+      "slug": "spacex-starship-lancering-geannuleerd-door-motorproblemen",
+      "title": "Starship-lancering SpaceX geannuleerd door motorstoring",
+      "format": "dispatch"
+    },
+    {
+      "slug": "web-push-advertising-2026-trends",
+      "title": "Web Push-advertenties groeien in 2026 met strengere regels en betere data",
+      "format": "dispatch"
+    },
+    {
+      "slug": "beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees",
+      "title": "Beehiiv voegt AI en groepschat toe aan nieuwsbriefplatform",
+      "format": "dispatch"
+    },
+    {
+      "slug": "back-to-school-trends-2026",
+      "title": "Studenten kiezen voor tijdelijke behangpatronen en strandvibes in huis",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ophef-door-slecht-onderhouden-merkwaarden",
+      "title": "Ophef volgt slecht onderhouden merkwaarden direct",
+      "format": "dispatch"
+    },
+    {
+      "slug": "de-onzichtbare-kracht-van-technologie-trends-die-je-nu-mist",
+      "title": "Technologie verandert sneller dan jij denkt: waarom bureau-eigenaren nu moeten handelen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-maakt-seo-en-ppc-complementair-in-plaats-van-competitie",
+      "title": "AI verandert SEO en PPC van concurrenten in bondgenoten",
+      "format": "dispatch"
+    },
+    {
+      "slug": "apple-sluit-thuisvakkers-uit-van-maps-advertenties",
+      "title": "Apple sluit thuisvakkers uit van Maps-advertenties: lokale bedrijven verliezen zichtbaarheid",
+      "format": "dispatch"
+    },
+    {
+      "slug": "wat-not-doet-wel-en-shoped-niet",
+      "title": "Watnot koopt Shaped: de stille revolutie in live shopping die niemand ziet aankomen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "neko-health-nieuwe-financieringsronde-700-miljoen",
+      "title": "Neko Health haalt opnieuw 700 miljoen op voor lichaamsscans",
+      "format": "dispatch"
+    },
+    {
+      "slug": "agentschap-web-nieuwe-hoop-publishers",
+      "title": "Nieuwe regels nodig voor het agentschap-web: hoe publishers zichzelf weren tegen techgiganten",
+      "format": "dispatch"
+    },
+    {
+      "slug": "eu-sap-maintenance-fee-bargaining-chip",
+      "title": "EU geeft SAP-klanten meer onderhandelingskracht over onderhoudskosten",
+      "format": "dispatch"
+    },
+    {
+      "slug": "boston-dynamics-test-robot-honden-voor-leveringen",
+      "title": "Boston Dynamics test robot-honden voor pakketbezorging",
+      "format": "dispatch"
+    },
+    {
+      "slug": "spacexai-grok-build-code-upload-geblokkeerd",
+      "title": "Grok Build van SpaceXAI stuurde codebases automatisch naar de cloud",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-geneesmiddelen-startup-waardering-2-miljard",
+      "title": "Ex-OpenAI-medewerker lanceert AI-geneesmiddelenstartup met $2 miljard waardering",
+      "format": "dispatch"
+    },
+    {
+      "slug": "india-ruimtemissie-gaganyaan-vertraging",
+      "title": "India stelt bemande ruimtemissie Gaganyaan uit, lancering nu pas in 2027",
+      "format": "dispatch"
+    },
+    {
+      "slug": "spacex-starship-13e-testvlucht-deze-week-met-starlink-satellieten",
+      "title": "SpaceX lanceert Starship voor 13e testvlucht deze week",
+      "format": "dispatch"
+    },
+    {
+      "slug": "twee-seo-kpi-s-die-minder-zeggen-dan-je-denkt",
+      "title": "Kliks en posities meten weinig: deze twee SEO-cijfers bepalen je echte succes",
+      "format": "dispatch"
+    },
+    {
+      "slug": "apples-failed-self-driving-car-program-legde-basis-voor-krachtige-ai-chips",
+      "title": "Apple’s mislukte zelfrijdende auto-programma legde basis voor krachtige AI-chips",
+      "format": "dispatch"
+    },
+    {
+      "slug": "geheugenproducenten-geblokkeerd-door-ai-boom",
+      "title": "Geheugenproducenten blokkeren door AI-boom: schaarste en prijsexplosie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "irland-datacenters-stroomverbruik-23-procent",
+      "title": "Ierse datacenters slokken 23% van landelijke stroom op",
+      "format": "dispatch"
+    },
+    {
+      "slug": "reed-jobs-yosemite-ai-biotech-groei",
+      "title": "Yosemite verdubbelt in drie jaar: AI en patentklif sturen biotech-investeringen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "meta-haalt-instagram-ai-deepfake-functie-weer-weg-na-kritiek",
+      "title": "Meta draait terug op Instagram AI-functie die deepfakes maakte van openbare accounts",
+      "format": "dispatch"
+    },
+    {
+      "slug": "outlook-mac-bug-verandert-lettertype-keuze-in-decoratie",
+      "title": "Bug in Outlook voor Mac maakt lettertypekeuze decoratief",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-in-google-ads-mens-en-machine-samen",
+      "title": "AI neemt het werk over, maar mensen sturen nog steeds de strategie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-als-keuzemaker-hoe-merken-voorkeursstatus-krijgen",
+      "title": "AI kiest nu al merken: zes stappen om voorkeursstatus te bereiken",
+      "format": "dispatch"
+    },
+    {
+      "slug": "humanoide-robots-voeren-eerste-operaties-uit-op-levende-varkens",
+      "title": "Chirurgen besturen humanoïde robots bij eerste operaties op levende varkens",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-agent-startup-haalt-100-miljoen-met-zichzelf",
+      "title": "AI-agent startup haalt 100 miljoen dollar op met eigen technologie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "openai-sluit-atlas-browser-maar-ai-browsing-leeft-door",
+      "title": "OpenAI stopt met AI-browser Atlas, maar agenten gaan door",
+      "format": "dispatch"
+    },
+    {
+      "slug": "franse-startup-zml-released-gratis-ai-inference-software",
+      "title": "Franse startup ZML lanceert gratis software om AI-berekeningen sneller te maken",
+      "format": "dispatch"
+    },
+    {
+      "slug": "furiosaai-rngd-accelerators-equinix-lissabon",
+      "title": "Zuid-Koreaanse chipmaker FuriosaAI levert RNGD-versnellers aan Equinix in Lissabon",
+      "format": "dispatch"
+    },
+    {
+      "slug": "kremlin-drone-vluchten-europa-shadow-fleet",
+      "title": "Drones boven Europa mogelijk afkomstig van Russische schepen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "oudste-amerikaans-object-in-ruimte-ontdekt",
+      "title": "Vlag uit de Amerikaanse Revolutie vloog al in 1961 de ruimte in",
+      "format": "dispatch"
+    },
+    {
+      "slug": "uber-vertraagt-expansie-europa-na-plannen-2026",
+      "title": "Uber stelt vijf Europese markten uit tot na 2026",
+      "format": "dispatch"
+    },
+    {
+      "slug": "reddit-gebruikt-llms-tegen-spam-gecreeerd-door-llms",
+      "title": "Reddit gebruikt AI om spam te bestrijden die AI zelf veroorzaakt",
+      "format": "dispatch"
+    },
+    {
+      "slug": "paid-media-wordt-seo-investering-door-ai-search",
+      "title": "Betaalde content beïnvloedt AI-zichtbaarheid van merken",
+      "format": "dispatch"
+    },
+    {
+      "slug": "vizio-mini-led-quantum-tv-budget-optie",
+      "title": "Vizio brengt goedkoopste quantum-dot tv van de markt voor 398 euro",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-commercial-ai-founding-fathers",
+      "title": "Google toont founding fathers als AI-pioniers in nieuwe reclame",
+      "format": "dispatch"
+    },
+    {
+      "slug": "de-ruimte-als-een-normale-business",
+      "title": "Van lab tot lancering: waarom ruimtevaart nu gewoon een supply chain is",
+      "format": "dispatch"
+    },
+    {
+      "slug": "anthropic-samsung-custom-ai-chip",
+      "title": "Anthropic en Samsung in gesprek over nieuwe AI-chip",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-tactiek-vermindert-ongewenste-klikken-met-50-procent",
+      "title": "Nieuwe Google Ads-tactiek vermindert ongewenste klikken met de helft",
+      "format": "dispatch"
+    },
+    {
+      "slug": "spookreferenties-in-wetenschap-door-ai-hoe-verder",
+      "title": "Als een bron niet bestaat: wie controleert de controleurs?",
+      "format": "dispatch"
+    },
+    {
+      "slug": "europas-eerste-quantum-bedrijf-bewerkt-onzekerheid-over-toekomst",
+      "title": "Europese quantum-pionier IQM gaat naar de beurs met onzekere toekomst",
+      "format": "dispatch"
+    },
+    {
+      "slug": "data-infrastructuur-bepaalt-ai-race",
+      "title": "Wie de data-infrastructuur beheerst, wint de AI-race",
+      "format": "dispatch"
+    },
+    {
+      "slug": "cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit",
+      "title": "Cannes mist de échte AI-revolutie: het gaat niet om scripts, maar om media",
+      "format": "dispatch"
+    },
+    {
+      "slug": "bending-spoons-18-miljard-ipo-minimaliseren-geluk",
+      "title": "Bending Spoons haalt $18 miljard bij beursgang door geluk te minimaliseren",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-in-directierollen-experiment-loopt-uit-op-mislukking",
+      "title": "AI als directeur: experiment loopt uit op mislukking",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-in-accountancy-evolutie-in-plaats-van-revolutie",
+      "title": "AI in de accountancy: geleidelijke groei in plaats van plotselinge verandering",
+      "format": "dispatch"
+    },
+    {
+      "slug": "un-waarschuwt-voor-gebrek-aan-globale-regels-ai",
+      "title": "VN dringt aan op wereldwijde regels voor AI om ‘apocalyps’ te voorkomen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "claude-sonnet-5-de-goedkopere-agent-revolutie",
+      "title": "De agent komt eraan en hij is goedkoper dan je denkt",
+      "format": "dispatch"
+    },
+    {
+      "slug": "side-events-techcrunch-disrupt-2026",
+      "title": "TechCrunch Disrupt 2026 biedt ruimte voor merk-eigen evenementen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "tesla-test-robotaxi-zonder-stuur-en-pedalen-in-austin",
+      "title": "Tesla test robotaxi zonder stuur en pedalen in Austin",
+      "format": "dispatch"
+    },
+    {
+      "slug": "acti-smartphone-keyboard-met-ai-agents",
+      "title": "Acti brengt AI-assistenten naar je toetsenbord",
+      "format": "dispatch"
+    },
+    {
+      "slug": "base44-lanceert-eigen-ai-model",
+      "title": "Base44 lanceert eigen AI-model om klanten te binden",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-coding-startup-135m-series-a-palihapitiya",
+      "title": "AI-codegenerator haalt 135 miljoen op bij start Series A",
+      "format": "dispatch"
+    },
+    {
+      "slug": "denkspellen-ruimteoorlog-scenario-s",
+      "title": "Oorlog in de ruimte: hoe reageer je op escalatie?",
+      "format": "dispatch"
+    },
+    {
+      "slug": "turbine-unit-stroom-uit-kanalen",
+      "title": "Kant-en-klare turbine haalt stroom uit kanalen en rivieren",
+      "format": "dispatch"
+    },
+    {
+      "slug": "oracle-stopt-met-java-ondersteuning-intel-macs-na-jdk-27",
+      "title": "Oracle stopt met Java voor Intel-Macs na JDK 27",
+      "format": "dispatch"
+    },
+    {
+      "slug": "suno-lanceert-spark-incubator-programma-voor-onafhankelijke-artiesten",
+      "title": "Suno start incubator voor nieuwe artiesten met AI-machine",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ford-herinzet-experts-na-ai-teleurstelling",
+      "title": "Ford haalt ervaren ingenieurs terug na teleurstellende AI-resultaten",
+      "format": "dispatch"
+    },
+    {
+      "slug": "australie-onderzoekt-social-media-giganten-op-kinderverbod",
+      "title": "Australië onderzoekt vijf social media-reuzen op schending kinderverbod",
+      "format": "dispatch"
+    },
+    {
+      "slug": "van-campagnes-naar-continue-groei-hoe-ai-marketing-transformeert",
+      "title": "AI maakt marketing niet meer een kwestie van campagnes maar van dagelijkse groei",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-updates-en-annuleerknop-verplicht",
+      "title": "Google introduceert verplichte annuleerknop en nieuwe AI-functies in Ads",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage",
+      "title": "Google Ads API krijgt AI-transparantie, strengere security en nieuwe PMax-metrics",
+      "format": "dispatch"
+    },
+    {
+      "slug": "apple-verhoogt-prijzen-door-ram-schaarste",
+      "title": "Apple verhoogt prijzen door schaarste aan RAM-geheugen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-agents-manipulatie-onderzoek",
+      "title": "Manipulatie van AI-onderzoeksagenten leidt tot valse bronnen in 62% van de gevallen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "openai-lanceert-eigen-ai-chip-samen-met-broadcom",
+      "title": "OpenAI onthult eerste eigen AI-chip voor inferentie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "europa-tegen-washington-chip-exportbeperkingen",
+      "title": "Europa blokkeert Amerikaanse chip-beperkingen voor oudere machines",
+      "format": "dispatch"
+    },
+    {
+      "slug": "merkloyaliteit-ai-tijdperk-oud-antwoord",
+      "title": "AI dreigt merkloyaliteit te ondermijnen: terug naar de basis",
+      "format": "dispatch"
+    },
+    {
+      "slug": "cerebras-ai-chipmaker-margeverwachting-verkeerd-geinterpreteerd",
+      "title": "Cerebras daalt met 20% na eerste kwartaalcijfers",
+      "format": "dispatch"
+    },
+    {
+      "slug": "flipkart-breidt-snelle-levering-uit-in-india-als-amazon-versnelt",
+      "title": "Flipkart opent meer dan 1.000 micro-opslagpunten voor snelle levering in India",
+      "format": "dispatch"
+    },
+    {
+      "slug": "alexa-agentic-ads-veranderen-de-regels-van-conversational-marketing",
+      "title": "Alexa koopt voor je: hoe agentic ads de marketinggame voorgoed veranderen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-werkt-voortdurend-in-de-achtergrond",
+      "title": "AI-systemen werken nu zelfstandig door in de achtergrond",
+      "format": "dispatch"
+    },
+    {
+      "slug": "vs-dwingt-techbedrijven-tot-amerikaanse-quantumcomputer-binnen-2028",
+      "title": "VS eist Amerikaanse quantumcomputer tegen 2028",
+      "format": "dispatch"
+    },
+    {
+      "slug": "groq-haalt-650-miljoen-op-na-nvidia-deal",
+      "title": "AI-chipmaker Groq haalt 650 miljoen op na Nvidia-deal",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen",
+      "title": "Google Ads past target-based bidding aan bij budgetbeperkte campagnes",
+      "format": "dispatch"
+    },
+    {
+      "slug": "spacex-reflection-ai-compute-deal",
+      "title": "SpaceX sluit $6 miljard AI-chipdeal met open source-lab Reflection AI",
+      "format": "dispatch"
+    },
+    {
+      "slug": "superhuman-verwerft-gptzero",
+      "title": "Superhuman koopt AI-detectietool GPTZero",
+      "format": "dispatch"
+    },
+    {
+      "slug": "digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026",
+      "title": "Digitale vrachtbrief mag vanaf juli 2026 op schepen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ruimtepuin-aarde-naar-maan",
+      "title": "Ruimtevaartsector overweegt maan als opslagplaats voor ruimteafval",
+      "format": "dispatch"
+    },
+    {
+      "slug": "sendcloud-boekt-eerste-winst-na-jaren-verlies",
+      "title": "Sendcloud draait voor het eerst winst na jaren verlies",
+      "format": "dispatch"
+    },
+    {
+      "slug": "van-met-en-actie-de-nieuwe-standaard-voor-bedrijven",
+      "title": "Waarom de beste bedrijven niet meer meten, maar ingrijpen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "go-ipo-japan-robotaxis-en-acquisities-nederlandse-marktaanpak",
+      "title": "Een IPO dat meer doet dan geld ophalen: de les van Go’s Japanse recordbeursgang voor Nederlandse marketeers",
+      "format": "dispatch"
+    },
+    {
+      "slug": "film-over-sam-altman-dropt-door-amazon-mgm",
+      "title": "Film over Sam Altman geschrapt door Amazon MGM",
+      "format": "dispatch"
+    },
+    {
+      "slug": "fusion-startups-7-miljard-dollar-investeringen",
+      "title": "Fusion-startups trekken 7,1 miljard dollar aan investeringen aan",
+      "format": "dispatch"
+    },
+    {
+      "slug": "van-video-speler-naar-robots-infrastructuur",
+      "title": "Oprichter VLC bouwt nu realtime besturing voor robots",
+      "format": "dispatch"
+    },
+    {
+      "slug": "aura-ink-e-ink-fotolijst-zonder-digitaal-uiterlijk",
+      "title": "Aura lanceert fotolijst met e-ink: lijkt op traditioneel papier",
+      "format": "dispatch"
+    },
+    {
+      "slug": "klantervaring-drijft-expert-weg-van-google-ads",
+      "title": "Klant die niet luisterde drijft expert weg bij Google Ads",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-automatisch-conversiegebaseerde-audience-lists-activeren",
+      "title": "Google Ads activeert automatisch conversiegebaseerde klantlijsten",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-herstelt-target-cpa-en-target-roas-naamgeving",
+      "title": "Google Ads brengt Target CPA en Target ROAS terug in naamgeving",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-leeftijdsschatting-asielzoekers-bias-onbetrouwbaar",
+      "title": "Brits AI-systeem voor leeftijdscheck asielzoekers faalt betrouwbaarheidstest",
+      "format": "dispatch"
+    },
+    {
+      "slug": "waymo-recall-4000-robotaxis-na-missen-verkeersborden-bouwstroken",
+      "title": "Waymo haalt 4.000 robottaxi’s terug na herhaaldelijk negeren van bouwstroken",
+      "format": "dispatch"
+    },
+    {
+      "slug": "asml-chipmachines-china-ontkennend",
+      "title": "VS vermoedt ASML-chipmachines in China, ASML ontkent",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ad-manager-ai-agent-verandert-de-krant",
+      "title": "De krant van de toekomst wordt geschreven door een AI: wat betekent dat voor jouw advertentie-inkomsten?",
+      "format": "dispatch"
+    },
+    {
+      "slug": "meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit",
+      "title": "Meta voert AI-disclosure optie in en breidt creatieve testmogelijkheden uit",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-supplemental-conversion-data-beta",
+      "title": "Waarom die ‘supplementen’ van Google je ROI een boost kunnen geven",
+      "format": "dispatch"
+    },
+    {
+      "slug": "rivian-eigenaren-dagvaarden-over-zelfrijdende-beloften",
+      "title": "Rivian-eigenaren dagvaarden over onware beloften zelfrijdende technologie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "uk-civil-service-ai-influencer-aan-stellen",
+      "title": "Verenigd Koninkrijk stelt AI-influencer aan voor ambtenarenapparaat",
+      "format": "dispatch"
+    },
+    {
+      "slug": "intel-18a-p-chip-prototype",
+      "title": "Intel toont eerste proefchips van 18A-P-technologie met 9% snelheidswinst",
+      "format": "dispatch"
+    },
+    {
+      "slug": "uber-robotaxi-houston-2027",
+      "title": "Uber lanceert premium robotaxi’s in Houston vanaf 2027",
+      "format": "dispatch"
+    },
+    {
+      "slug": "van-shuttle-torens-naar-spacex-raketten-hoe-flexibiliteit-de-ruimtevaart-herdefinieert",
+      "title": "De torens van gisteren, de raketten van morgen: waarom starre systemen falen en flexibiliteit wint",
+      "format": "dispatch"
+    },
+    {
+      "slug": "quantum-error-correctie-2028-belofte",
+      "title": "Quantumfoutcorrectie mogelijk vanaf 2028, blijkt uit nieuwe belofte",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-en-bci-maken-volledige-baan-mogelijk-voor-spraakloze-als-patient",
+      "title": "AI en hersen-computerinterface maken fulltime baan mogelijk voor spraakloze ALS-patiënt",
+      "format": "dispatch"
+    },
+    {
+      "slug": "mobileye-lanceert-robotaxi-service-in-us-met-moovit",
+      "title": "Mobileye start in 2027 met robotaxi’s in Amerikaanse stad",
+      "format": "dispatch"
+    },
+    {
+      "slug": "arvato-mikt-op-10-000-robots-in-2030",
+      "title": "Arvato wil in 2030 tienduizend robots inzetten",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-agents-als-gamechanger-in-customer-service",
+      "title": "Wanneer klanten vragen stellen aan een AI, betaal je niet per medewerker maar per gesprek",
+      "format": "dispatch"
+    },
+    {
+      "slug": "zte-day-2026-almaty-digitaal-kazachstan",
+      "title": "Kazachstan toont op ZTE Day 2026 hoe AI en supercomputing de telecomsector veranderen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "erp-gebruikers-kiezen-voor-headless-oplossingen",
+      "title": "Headless ERP wint terrein: minder afhankelijk van leveranciers",
+      "format": "dispatch"
+    },
+    {
+      "slug": "commodore-komt-terug-met-flipphone",
+      "title": "Commodore brengt retro flipphone op markt",
+      "format": "dispatch"
+    },
+    {
+      "slug": "cloud-compute-verschuift-naar-arm-en-agentic-ai",
+      "title": "Cloudproviders bouwen nieuwe generatie AI-ready servers op Arm-chips",
+      "format": "dispatch"
+    },
+    {
+      "slug": "kodak-chamera-nieuwe-y2k-designs",
+      "title": "Kodak brengt Charmera terug met Y2K-designs",
+      "format": "dispatch"
+    },
+    {
+      "slug": "threads-passeert-half-miljard-maandelijkse-gebruikers",
+      "title": "Threads passeert half miljard gebruikers per maand",
+      "format": "dispatch"
+    },
+    {
+      "slug": "salesforce-koopt-fin-voor-36-miljard",
+      "title": "Salesforce koopt Fin voor 3,6 miljard dollar voor klantenservice-AI",
+      "format": "dispatch"
+    },
+    {
+      "slug": "watercongestie-nodigt-uit-tot-verplichte-waterbesparing",
+      "title": "Tweede Kamer roept op: verplicht waterbesparing bij nieuwbouw",
+      "format": "dispatch"
+    },
+    {
+      "slug": "india-ai-startup-sarvam-haalt-234-miljoen-op-met-hcltech-leidend",
+      "title": "Indiase AI-startup Sarvam wordt unicorn na 234 miljoen dollar financering",
+      "format": "dispatch"
+    },
+    {
+      "slug": "kpmg-haalt-ai-rapport-na-betwiste-voorbeelden",
+      "title": "KPMG verwijdert AI-rapport na klachten over onjuiste voorbeelden",
+      "format": "dispatch"
+    },
+    {
+      "slug": "prc-spionnen-ontdekt-in-medische-en-militaire-netwerken",
+      "title": "Spionnen gekoppeld aan China bleven een jaar in medische en militaire netwerken",
+      "format": "dispatch"
+    },
+    {
+      "slug": "geopolitiek-drukt-nederlandse-ecommerce-omzet",
+      "title": "Nederlandse e-commerce daalt met 6% door geopolitieke spanningen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "europa-verspeelt-ai-kansen-door-een-kaart-te-spelen",
+      "title": "Europa speelt pokeren met één kaart: de ASML-kaart",
+      "format": "dispatch"
+    },
+    {
+      "slug": "tno-biobuilt-centrum-versnelt-opschaling-biobased-materialen",
+      "title": "Nieuw TNO-centrum versnelt doorbraak biobased bouwmaterialen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-startups-ipo-hype-wie-profiteert",
+      "title": "AI-startups racen naar beursgang: wie profiteert mee?",
+      "format": "dispatch"
+    },
+    {
+      "slug": "spacex-raketten-passen-tesla-in-mobiliteitsmarkt",
+      "title": "SpaceX lanceert raketten als nieuwe speler in mobiliteit",
+      "format": "dispatch"
+    },
+    {
+      "slug": "reddit-voor-merken-7-stappen-succes",
+      "title": "Zeven stappen om succesvol te adverteren op Reddit voor merken",
+      "format": "dispatch"
+    },
+    {
+      "slug": "brand-legt-google-cloud-india-netwerk-langs-en-gevolgen-blijven-zichtbaar",
+      "title": "Brand legt Google Cloud India’s netwerk lam: trage diensten blijven een week later",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-experts-denken-over-economische-gevolgen-van-ai-in-2030",
+      "title": "Experts waarschuwen voor sociale onrust door AI-gedreven economie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-citeert-merken-via-onafhankelijke-bronnen",
+      "title": "AI-antwoorden citeren merken via derden, niet via eigen site",
+      "format": "dispatch"
+    },
+    {
+      "slug": "machine-leesbaar-maken-ai-vindbaarheid",
+      "title": "AI ziet je site anders dan mensen: deze signalen bepalen of je wordt gelezen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "slecht-geindexeerd-is-zelden-een-schrijfprobleem",
+      "title": "Honderden pagina’s online maar Google ziet er maar een paar? Begin dan niet met herschrijven",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-rationering-dwingt-techbedrijven-tot-budgetdiscipline",
+      "title": "AI-rationering dwingt techbedrijven tot budgetdiscipline",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-in-film-industrie-2026-geen-revolutie",
+      "title": "AI in de filmindustrie levert nog geen echte hits op",
+      "format": "dispatch"
+    },
+    {
+      "slug": "neuralink-tussen-hoop-en-hype-wat-bureaus-ervan-moeten-weten",
+      "title": "Neuralink: de volgende marketingrevolutie of een medische niche?",
+      "format": "dispatch"
+    },
+    {
+      "slug": "yang-ziet-kans-in-kostenverlaging-als-startup-goudkoorts",
+      "title": "Startups die kosten van levensonderhoud verlagen winnen aan populariteit",
+      "format": "dispatch"
+    },
+    {
+      "slug": "afm-kritiek-op-ai-toezicht-verdeling-met-dnb",
+      "title": "AFM krijgt nieuwe AI-toezichttaken, maar kritiek op samenwerking met DNB",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-agents-veiligheid-jfrog-nanoclaw",
+      "title": "AI-agents krijgen veiligere downloads via JFrog",
+      "format": "dispatch"
+    },
+    {
+      "slug": "politiek-dreigt-wetenschap-bij-nationale-academies-te-beinvloeden",
+      "title": "Eerste klimaatrapport van Amerikaanse wetenschappers mogelijk gepolitiseerd",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ukraine-ai-drones-autonoom-oorlogsvoering",
+      "title": "Oekraine test volledig autonome drones in oorlogsvoering",
+      "format": "dispatch"
+    },
+    {
+      "slug": "pokemongo-data-militaire-toepassingen",
+      "title": "Pokemon Go-data gebruikt voor militaire drone-training",
+      "format": "dispatch"
+    },
+    {
+      "slug": "spacex-tesla-merger-2026",
+      "title": "SpaceX-president duidt op mogelijke Tesla-fusie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "mistral-waardering-verdubbeld-rond-e20-miljard",
+      "title": "Mistral haalt mogelijk €3 miljard op bij €20 miljard waardering",
+      "format": "dispatch"
+    },
+    {
+      "slug": "robinhood-record-verkeer-na-spacex-introductie",
+      "title": "Robinhood verwerkt recordaantal klanten na SpaceX-beursgang",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren",
+      "title": "Google Analytics voegt bron-groepering en hostname-filter toe",
+      "format": "dispatch"
+    },
+    {
+      "slug": "attributie-impact-niet-meer-gelijk-aan-meetdata-in-ppc",
+      "title": "Attributie en impact in PPC zijn niet hetzelfde",
+      "format": "dispatch"
+    },
+    {
+      "slug": "elon-musk-wordt-eerste-biljonair-door-spacex-ipo",
+      "title": "Elon Musk wordt eerste biljonair na SpaceX-beursgang",
+      "format": "dispatch"
+    },
+    {
+      "slug": "nova-en-de-toekomst-van-ruimtevaart",
+      "title": "De Nova-raket en de vraag die elke sector zich moet stellen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "europa-moet-asml-inzetten-als-strategische-onderhandelingskaart",
+      "title": "Als Amerika AI afsluit, moet Europa ASML serieus nemen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-chip-startups-netwerkversnelling-rack-scale",
+      "title": "Delos Data versnelt netwerkintegratie voor AI-chipstartups",
+      "format": "dispatch"
+    },
+    {
+      "slug": "europa-loopt-ten-opzichte-van-vs-achter-op-ai-investeringen",
+      "title": "Europa loopt achter op VS in AI-investeringen, waarschuwen techbazen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "flutter-verlaat-london-stock-exchange",
+      "title": "Flutter haalt beursnotering in Londen weg",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-bouwt-zichzelf-het-einde-van-de-menselijke-controle",
+      "title": "De dag dat AI zichzelf bouwt: wie houdt dan nog de regie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "aws-graviton-5-geen-ai-chips",
+      "title": "AWS Graviton 5 is krachtig, maar geen 'AI-chip': waarom de term misleidend is",
+      "format": "dispatch"
+    },
+    {
+      "slug": "katalyst-link-ruimtevaartuig-geintegreerd-voor-lancering",
+      "title": "Ruimtevaartuig Katalyst LINK is klaar voor lancering",
+      "format": "dispatch"
+    },
+    {
+      "slug": "dutch-chip-startup-european-fab-flow-met-amerikaanse-hulp",
+      "title": "Nederlandse chipstart-up produceert EU-onderdelen bij Amerikaanse fabriek",
+      "format": "dispatch"
+    },
+    {
+      "slug": "nasa-deep-space-network-artemis-ii",
+      "title": "NASA’s Deep Space Network hield Artemis II draaiend ondanks piekbelasting",
+      "format": "dispatch"
+    },
+    {
+      "slug": "spacex-start-ipo-met-aandeelprijs-van-135-dollar",
+      "title": "SpaceX start beursgang met aandeelprijs van $135",
+      "format": "dispatch"
+    },
+    {
+      "slug": "spacex-spv-investors-risico-na-ipo",
+      "title": "SpaceX-investeerders in SPV’s lopen risico op verborgen kosten en fraude na beursgang",
+      "format": "dispatch"
+    },
+    {
+      "slug": "amazon-alexa-wordt-shopping-agent-en-advertentieplatform",
+      "title": "Amazon laat Alexa shoppen en adverteren tijdens gesprekken",
+      "format": "dispatch"
+    },
+    {
+      "slug": "instagram-geeft-gebruikers-meer-invloed-op-algoritme",
+      "title": "Instagram geeft gebruikers meer invloed op wat ze zien",
+      "format": "dispatch"
+    },
+    {
+      "slug": "zte-wint-drie-selular-awards-2026-voor-ai-gedreven-netwerkinnovaties",
+      "title": "ZTE wint drie Selular Awards 2026 voor AI-gedreven netwerkinnovaties",
+      "format": "dispatch"
+    },
+    {
+      "slug": "endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen",
+      "title": "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+      "format": "dispatch"
+    },
+    {
+      "slug": "enterprises-frustrated-by-llm-makers-says-palantir-ceo",
+      "title": "Bedrijven gefrustreerd door LLM-makers: focus ligt op tokens, niet op oplossingen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots",
+      "title": "Theker haalt 85 miljoen op voor robots die zichzelf heruitvinden",
+      "format": "dispatch"
+    },
+    {
+      "slug": "prometheus-12-miljard-ai-fysieke-wereld",
+      "title": "Fysieke AI-startup Prometheus haalt 12 miljard op voor 'algemene ingenieur'",
+      "format": "dispatch"
+    },
+    {
+      "slug": "b2b-content-geo-chatgpt-ai-tools",
+      "title": "B2B-content die werkt in AI-tools: wat scoort in ChatGPT, Google AIO en Perplexity?",
+      "format": "dispatch"
+    },
+    {
+      "slug": "apple-ios-27-automatische-wachtwoordvervanging",
+      "title": "Apple voegt een-tik-wachtwoordvervanging toe in iOS 27",
+      "format": "dispatch"
+    },
+    {
+      "slug": "droneboot-redt-neergestorte-helicopterpiloten-eerste-zee-reddingsactie",
+      "title": "Droneboot redt voor het eerst neergestorte helikopterpiloten op zee",
+      "format": "dispatch"
+    },
+    {
+      "slug": "wat-klanten-echt-willen-van-persoonlijke-ai",
+      "title": "Klanten willen een AI-assistent, maar niet als vervanging",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-overname-aecom-consigli-bouwsector-scherp",
+      "title": "AECOM koopt AI-startup voor 390 miljoen: bouwsector moet nu schakelen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "deezer-lanceert-ai-muziekdetector-voor-andere-streamingdiensten",
+      "title": "Deezer scant nu playlists van andere streamingdiensten op AI-muziek",
+      "format": "dispatch"
+    },
+    {
+      "slug": "bluesky-lanceert-communities-voor-gedeelde-interesses",
+      "title": "Bluesky introduceert groepen om gerichter te discussieren",
+      "format": "dispatch"
+    },
+    {
+      "slug": "india-blokkeert-starlink-voor-spacex-beursgang",
+      "title": "India blokkeert Starlink-licentie vlak voor SpaceX IPO",
+      "format": "dispatch"
+    },
+    {
+      "slug": "spacex-ipo-afhankelijk-van-ruimte-data-centers",
+      "title": "SpaceX IPO draait om ruimte-datacenters",
+      "format": "dispatch"
+    },
+    {
+      "slug": "enterprise-ai-centraal-op-vivatech-2026",
+      "title": "Enterprise AI staat centraal op VivaTech 2026",
+      "format": "dispatch"
+    },
+    {
+      "slug": "yang-automatisering-ai-ondernemen-inplaats-van-wachten-op-beleid",
+      "title": "Automatisering en AI: ondernemers kiezen voor actie in plaats van wachten op beleid",
+      "format": "dispatch"
+    },
+    {
+      "slug": "nasa-selecteert-bemanningsleden-voor-artemis-iii-maanlander-repetitie",
+      "title": "NASA kiest bemanning voor maanlander-repetitie Artemis III",
+      "format": "dispatch"
+    },
+    {
+      "slug": "informer-money-genomineerd-voor-best-fintech-startup-belgie",
+      "title": "Informer Money genomineerd voor Best FinTech Startup van Belgie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "jedify-24-miljoen-voor-ai-agent-context",
+      "title": "JEDIFY haalt 24 miljoen dollar op voor AI-assistenten met bedrijfsspecifieke kennis",
+      "format": "dispatch"
+    },
+    {
+      "slug": "drone-leveringen-wing-uitbreiding-walmart",
+      "title": "Wing breidt drone-leveringen uit met Walmart in zeven nieuwe Amerikaanse steden",
+      "format": "dispatch"
+    },
+    {
+      "slug": "spacemit-risc-v-mini-desktop-2026",
+      "title": "Eerste bruikbare RISC-V mini-pc met Vast op de markt",
+      "format": "dispatch"
+    },
+    {
+      "slug": "rekentool-helpt-e-commerce-keuze-verpakking",
+      "title": "E-commerce krijgt tool om herbruikbare verpakkingen te vergelijken",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-zero-click-searches-stijgen-naar-68-procent-in-2026",
+      "title": "Google AI-overzichten leiden tot recordaantal zero-click searches",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc",
+      "title": "Investeerder steekt $500 miljoen in startups via eigen netwerk, zonder VC",
+      "format": "dispatch"
+    },
+    {
+      "slug": "tech-industrie-krijgt-mangos-in-plaats-van-faang",
+      "title": "Techgiganten krijgen nieuw acroniem: MANGOS verdrijft FAANG",
+      "format": "dispatch"
+    },
+    {
+      "slug": "starlink-verhoogt-kosten-hardware-en-service",
+      "title": "Starlink voert maandelijkse hardwarekosten in en verhoogt abonnementsprijs",
+      "format": "dispatch"
+    },
+    {
+      "slug": "van-turing-naar-devotion-hoe-een-nieuwe-lab-de-ai-kaart-in-europa-kan-verleggen",
+      "title": "Het einde van de ivoren toren: waarom een Brits AI-lab de markt op zijn kop zet",
+      "format": "dispatch"
+    },
+    {
+      "slug": "rivian-r2-marktintroductie-2027",
+      "title": "Rivian lanceert R2 in 2027: EV voor de massa met focus op rijplezier",
+      "format": "dispatch"
+    },
+    {
+      "slug": "evotrex-30-miljoen-voor-rv-met-hybride-stroom",
+      "title": "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+      "format": "dispatch"
+    },
+    {
+      "slug": "tools-for-humanity-legt-medewerkers-ont",
+      "title": "Tools for Humanity ontslaat medewerkers door tegenvallende inkomsten",
+      "format": "dispatch"
+    },
+    {
+      "slug": "merkcampagnes-niet-klaar-voor-ai-max",
+      "title": "Merkcampagnes niet direct geschikt voor AI Max: waar begin je wel?",
+      "format": "dispatch"
+    },
+    {
+      "slug": "netbeheerders-investeren-meer-in-netcongestie-met-verschillen-tussen-bedrijven",
+      "title": "Netbeheerders verdubbelen investeringen in elektriciteitsnet door congestie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "autoboeker-haalt-12-miljoen-in-voor-ai-platform-accountants",
+      "title": "AI-platform voor accountants trekt €1,2 miljoen op",
+      "format": "dispatch"
+    },
+    {
+      "slug": "europa-usa-ai-dominantie-london-tech-week",
+      "title": "Europa en UK willen eigen AI-macht opbouwen tegen Amerikaanse dominantie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "osborne-ai-zelfvoorzienendheid-is-weggegooid-geld",
+      "title": "Osborne: zelfvoorzienendheid in AI is een onhaalbaar streven",
+      "format": "dispatch"
+    },
+    {
+      "slug": "afm-beboet-bunq-trage-fraudeafhandeling",
+      "title": "AFM legt bunq boete op voor trage fraudeafhandeling",
+      "format": "dispatch"
+    },
+    {
+      "slug": "verkoopfraude-e-commerce-samenwerking-keten",
+      "title": "Verkoopfraude bij webshops stijgt: wie is verantwoordelijk?",
+      "format": "dispatch"
+    },
+    {
+      "slug": "voormalig-engineer-start-online-kunstacademie",
+      "title": "Voormalig engineer start online kunstacademie na burn-out",
+      "format": "dispatch"
+    },
+    {
+      "slug": "persoonlijke-prijzen-personalisatie-fair-pricing",
+      "title": "Persoonlijke prijzen groeien: waar ligt de grens tussen slim en oneerlijk?",
+      "format": "dispatch"
+    },
+    {
+      "slug": "amerika-breidt-zwartelijst-chinese-techbedrijven-uit",
+      "title": "VS voegt Alibaba, Baidu en BYD toe aan militaire zwartelijst",
+      "format": "dispatch"
+    },
+    {
+      "slug": "amazon-verkoopt-geen-producten-maar-ervaringen",
+      "title": "Amazon verkoopt geen producten, maar ervaringen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "nokia-verhoogt-jaarverwachting-door-vraag-naar-ai-en-datacenters",
+      "title": "Nokia verhoogt jaarverwachting met 12-14% door sterke vraag AI en datacenters",
+      "format": "dispatch"
+    },
+    {
+      "slug": "klantmerk-en-werkgeversmerk-moeten-hetzelfde-verhaal-vertellen",
+      "title": "Klantmerk en werkgeversmerk: een verhaal, twee kanalen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-waarschuwt-voor-derde-partij-seo-tools",
+      "title": "Google waarschuwt tegen derde-partij SEO-tools en -advies",
+      "format": "dispatch"
+    },
+    {
+      "slug": "meta-gezichtsherkenning-ai-brillen",
+      "title": "Meta bouwt gezichtsherkenning in AI-brillen in",
+      "format": "dispatch"
+    },
+    {
+      "slug": "content-marketing-ideeen-juli-2026",
+      "title": "Vijf contentmarketing-ideeen voor juli 2026",
+      "format": "dispatch"
+    },
+    {
+      "slug": "vier-manieren-om-ai-zoekzichtbaarheid-te-tracken",
+      "title": "AI zoekzichtbaarheid meten blijft lastig: vier concrete oplossingen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-demands-striktere-audience-targeting-regels-demand-gen",
+      "title": "Google verduidelijkt striktere regels voor gevoelige doelgroep-targeting in Demand Gen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "seo-autoriteit-distributie-en-brand-zijn-nu-de-drijvers-voor-organische-groei",
+      "title": "SEO draait nu om autoriteit, distributie en merkzichtbaarheid",
+      "format": "dispatch"
+    },
+    {
+      "slug": "customer-match-voordeel-in-google-ads",
+      "title": "Klantenbestand uploaden geeft voorsprong in Google Ads",
+      "format": "dispatch"
+    },
+    {
+      "slug": "seo-en-affiliate-teams-samenbrengen-voor-meer-omzet",
+      "title": "SEO en affiliate teams samenbrengen levert 20% lagere acquisitiekosten op",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "title": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "format": "dispatch"
+    },
+    {
+      "slug": "hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga",
+      "title": "Hof Den Haag: bv mag cryptotokens niet afwaarderen bij priverekening dga",
+      "format": "dispatch"
+    },
+    {
+      "slug": "nieuwe-ecommerce-tools-juni-2026",
+      "title": "Nieuwe tools voor e-commerce: van Reddit tot last-mile delivery",
+      "format": "dispatch"
+    },
+    {
+      "slug": "microsoft-scout-enterprise-ai-agent",
+      "title": "Microsoft lanceert altijd-actieve AI-agent Scout voor bedrijven",
+      "format": "dispatch"
+    },
+    {
+      "slug": "hoog-roas-campagnes-budget-verhogen",
+      "title": "Meer budget voor hoge ROAS-campagnes? Pas op voor de valkuil",
+      "format": "dispatch"
+    },
+    {
+      "slug": "seo-dominante-factor-in-ai-aanbevelingen",
+      "title": "SEO bepaalt steeds meer welke merken AI-systemen aanbevelen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-verandert-servicevoorwaarden-voor-juli-2026",
+      "title": "Google Ads past servicevoorwaarden aan voor AI-gestuurde automatisering",
+      "format": "dispatch"
+    },
+    {
+      "slug": "branding-versus-marketing-wat-is-het-verschil",
+      "title": "Branding en marketing zijn niet hetzelfde: dit zijn de verschillen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-content-met-client-memory-beter-gegrond-in-markt",
+      "title": "AI-content met ‘client memory’ blijft dichter bij merk en campagne",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-demand-gen-integratie-commerce-media",
+      "title": "Google breidt Demand Gen uit met retailerdata voor cross-platform campagnes",
+      "format": "dispatch"
+    },
+    {
+      "slug": "kessels-kramer-failliet-na-60-jaar",
+      "title": "Reclamebureau KesselsKramer failliet verklaard",
+      "format": "dispatch"
+    },
+    {
+      "slug": "brand-strategie-2026-coca-cola-focus-features-coinbase",
+      "title": "Coca-Cola, Focus Features en Coinbase zetten in op vernieuwende brand strategieen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "kleding-en-accessoires-om-facial-recognition-te-misleiden",
+      "title": "Kleding en accessoires die gezichtsherkenning omzeilen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "instagram-gaat-naar-connected-tv-wat-merken-nu-moeten-doen",
+      "title": "Instagram gaat naar de tv: merken moeten contentstrategie aanpassen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "europese-cloud-marketingvraagstuk-datasoevereiniteit",
+      "title": "Europese cloud wordt een marketingvraagstuk: waar staat jouw data?",
+      "format": "dispatch"
+    },
+    {
+      "slug": "b2b-ppc-metingen-meten-niet-altijd-uplift",
+      "title": "Meer leads en hogere ROAS zeggen niet altijd iets over groei",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-test-branded-search-controls-ai-max",
+      "title": "Google test nieuwe branded search controls in AI Max campagnes",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "title": "Google Ads voegt leadmanagement toe aan dashboard",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-zoekgedrag-verandert-internet",
+      "title": "AI verandert hoe mensen zoeken op internet: minder klikken, meer directe antwoorden",
+      "format": "dispatch"
+    },
+    {
+      "slug": "culturele-sector-eist-duidelijke-regels-voor-ai-gebruik",
+      "title": "Culturele en creatieve sector vraagt om heldere AI-regels",
+      "format": "dispatch"
+    },
+    {
+      "slug": "real-brand-is-de-kern-van-seo-in-ai-tijdperk",
+      "title": "AI zoekt op merk, niet op zoekwoord",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-lanceert-prospects-mode-voor-nieuwe-klanten",
+      "title": "Google voegt ‘nieuwe prospects’ toe aan klantwerving",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-zichtbaar-in-ai-overviews",
+      "title": "Google Ads zichtbaarder maken in AI Overviews met feeds en signalen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-lanceert-realtime-policy-reviews-voor-snellere-ad-goedkeuringen",
+      "title": "Google versnelt advertentiegoedkeuringen met realtime feedback",
+      "format": "dispatch"
+    },
+    {
+      "slug": "visuele-identiteit-niet-start-met-blanco",
+      "title": "Visuele identiteit lijkt simpel, maar begint niet met een blanco blad",
+      "format": "dispatch"
+    },
+    {
+      "slug": "magnetic-networking-evolutie-personal-branding",
+      "title": "Magnetic Networking: nieuwe kijk op zakelijk netwerken",
+      "format": "dispatch"
+    },
+    {
+      "slug": "seo-changelogs-ondergewaardeerde-spil-in-enterprise-governance",
+      "title": "SEO-changelogs voorkomen onzichtbare site-updates bij grote bedrijven",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-in-de-creative-industrie",
+      "title": "AI neemt creatie over in reclame-industrie van 422 miljard dollar",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-herdefinieert-creativiteit-bij-bureaus",
+      "title": "AI herdefinieert creativiteit bij bureaus: minder repetitief werk, meer focus op strategie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-washing-bedrijven-rebranden-zich-als-tech",
+      "title": "Bedrijven smeren ‘AI’ over elke dienst, ook als het niets met kunstmatige intelligentie te maken heeft",
+      "format": "dispatch"
+    },
+    {
+      "slug": "buitenlandse-merken-in-afrika",
+      "title": "Buitenlandse merken groeien sneller in Afrika via lokale partners en directe verkoop",
+      "format": "dispatch"
+    },
+    {
+      "slug": "organische-traffic-alleen-als-business-impact",
+      "title": "Organische bezoekers tellen alleen als ze impact hebben",
+      "format": "dispatch"
+    },
+    {
+      "slug": "signaalverval-bedreigt-top-of-funnel-prestaties",
+      "title": "Top-of-funnel campagnes krijgen te weinig credit in de meting",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-breidt-demand-gen-uit-met-youtube-creator-tools",
+      "title": "Google breidt Demand Gen uit met YouTube creator tools en AI-campagnes",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-integreert-meridian-in-analytics-360",
+      "title": "Google voegt Meridian marketing mix modeling toe aan Analytics 360",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-marketing-live-2026-gemini-drijft-search-advertising-en-commerce",
+      "title": "Gemini transformeert Search, ads en commerce naar AI-gestuurd model",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-lanceert-ask-advisor-in-ads-analytics-en-merchant-center",
+      "title": "Google introduceert Ask Advisor voor campagnes, analytics en Merchant Center",
+      "format": "dispatch"
+    },
+    {
+      "slug": "nieuw-raamwerk-zichtbaarheid-ai-tijden",
+      "title": "Nieuw model meet zichtbaarheid in AI-gedreven zoekomgevingen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "retail-crm-pos-integratie-klaviyo-aankoophistorie",
+      "title": "De meeste retail-CRMs zijn B2B-software met een retail-labeltje",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ga4-ai-verkeer-custom-channel-group-geo",
+      "title": "GA4 ziet AI-verkeer niet. Dit is de fix.",
+      "format": "dispatch"
+    },
+    {
+      "slug": "organisaties-bouwen-merkbeelden-in-plaats-van-merken",
+      "title": "Veel bedrijven focussen op uiterlijk in plaats van merkidentiteit",
+      "format": "dispatch"
+    },
+    {
+      "slug": "middelmatige-ai-content-schadelijk-voor-merk",
+      "title": "Middelmatige AI-content kan je merk schaden",
+      "format": "dispatch"
+    },
+    {
+      "slug": "nieuwe-ecommerce-tools-mei-2026",
+      "title": "Nieuwe e-commerce tools: AI, autonome marketing en cross-border oplossingen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "merkidentiteit-niet-gebaseerd-op-meningen",
+      "title": "Merkidentiteit bouwen: feiten boven meningen",
+      "format": "dispatch"
+    },
+    {
+      "slug": "boekhouder-als-verborgen-dealbreaker",
+      "title": "De boekhouder als verborgen dealbreaker in B2B-campagnes",
+      "format": "dispatch"
+    },
+    {
+      "slug": "kmo-doelgroep-segmenteren",
+      "title": "Zelfstandige is geen persona",
+      "format": "dispatch"
+    },
+    {
+      "slug": "regionale-context-campagne-optimalisatie",
+      "title": "Regionale contextdata: het verschil tussen geotargeting en geografisch inzicht",
+      "format": "dispatch"
+    },
+    {
+      "slug": "juni-2026-contentkansen-emotionele-thema-s",
+      "title": "Juni 2026 biedt kansen voor emotionele content",
+      "format": "dispatch"
+    },
+    {
+      "slug": "ai-verandert-print-on-demand-ecommerce",
+      "title": "AI dwingt print-on-demand spelers tot fundamentelere keuzes",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-introduceert-drie-ai-max-updates",
+      "title": "Google Ads voegt drie AI Max-updates toe voor betere prestaties",
+      "format": "dispatch"
+    },
+    {
+      "slug": "politieke-targeting-en-visuele-aandacht-eye-tracking",
+      "title": "Politieke targeting beinvloedt visuele aandacht, eye-tracking toont aan",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-kosten-stijgen-conversie-efficientie-2025",
+      "title": "Google Ads-kosten stijgen, maar conversies verbeteren in 2025",
+      "format": "dispatch"
+    },
+    {
+      "slug": "marketing-enters-air-traffic-control-era",
+      "title": "Marketing wordt een 'luchtverkeersleiding': realtime sturen op vertrouwen en intentie",
+      "format": "dispatch"
+    },
+    {
+      "slug": "google-ads-gemini-dashboards-real-time",
+      "title": "Google Ads krijgt Gemini-aangedreven dashboards voor real-time inzicht.",
+      "format": "dispatch"
+    },
+    {
+      "slug": "conde-nast-search-onder-tien-procent",
+      "title": "Conde Nast verwacht dat search nog minder dan tien procent van zijn traffic levert.",
+      "format": "dispatch"
+    },
+    {
+      "slug": "wie-is-eigenaar-van-je-advertentiedata",
+      "title": "Je bureau draait je ads. Maar wie traint straks de AI met jouw data?",
+      "format": "editorial"
+    },
+    {
+      "slug": "zichtbaar-in-ai-antwoorden-aeo-geo",
+      "title": "Zichtbaar zijn in AI-antwoorden: wat werkt en wat tijdverspilling is",
+      "format": "editorial"
+    },
+    {
+      "slug": "ai-tool-werkt-echt-holdout-bureau",
+      "title": "Werkt je AI-marketingtool echt? Er is maar een manier om het te weten.",
+      "format": "editorial"
+    },
+    {
+      "slug": "mmm-attributie-incrementality-welke-meet-wat",
+      "title": "MMM, multi-touch attributie en incrementality: welke meet wat echt?",
+      "format": "editorial"
+    },
+    {
+      "slug": "ai-tools-organisatielaag-marketing",
+      "title": "Nieuwe tools maken mensen sneller. Maar bedrijven worden er niet automatisch slimmer van.",
+      "format": "editorial"
+    },
+    {
+      "slug": "wk-2026-campagne-data-voorbereiding",
+      "title": "WK staat voor de deur. Met welke data gaan jullie de voorbereiding in?",
+      "format": "editorial"
+    },
+    {
+      "slug": "ai-cowboys-marketing-2026",
+      "title": "AI in marketing is fantastisch. En dit jaar gaan er bedrijven aan ten onder.",
+      "format": "editorial"
+    },
+    {
+      "slug": "beste-transcriptietool-2026",
+      "title": "We hebben acht transcriptietools getest. Plaud wint.",
+      "format": "editorial"
+    },
+    {
+      "slug": "95-procent-ai-pilots-mislukt",
+      "title": "95% van de AI-pilots in marketing mislukt. We lazen het MIT-rapport zo dat jij het niet hoeft.",
+      "format": "editorial"
+    },
+    {
+      "slug": "autonome-agents-90-dagen",
+      "title": "Autonome agents in logistiek: wat werkt en wat niet.",
+      "format": "editorial"
+    },
+    {
+      "slug": "last-click-is-een-gewoonte",
+      "title": "Last-click is geen attributiemodel. Het is een gewoonte.",
+      "format": "editorial"
+    },
+    {
+      "slug": "mmm-is-een-hypothese",
+      "title": "Een MMM-model is een hypothese, geen rapport.",
+      "format": "editorial"
+    }
+  ],
+  "thinBodies": [
+    {
+      "slug": "spacemit-risc-v-mini-desktop-2026",
+      "title": "Eerste bruikbare RISC-V mini-pc met Vast op de markt",
+      "words": 40
+    },
+    {
+      "slug": "persoonlijke-prijzen-personalisatie-fair-pricing",
+      "title": "Persoonlijke prijzen groeien: waar ligt de grens tussen slim en oneerlijk?",
+      "words": 52
+    },
+    {
+      "slug": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "title": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "words": 64
+    },
+    {
+      "slug": "amazon-verkoopt-geen-producten-maar-ervaringen",
+      "title": "Amazon verkoopt geen producten, maar ervaringen",
+      "words": 67
+    },
+    {
+      "slug": "f1-belgie-2026-machine-learning-verpest-racen",
+      "title": "F1 in België: algoritmes maken racen onherkenbaar",
+      "words": 70
+    },
+    {
+      "slug": "ai-werkt-voortdurend-in-de-achtergrond",
+      "title": "AI-systemen werken nu zelfstandig door in de achtergrond",
+      "words": 73
+    },
+    {
+      "slug": "beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees",
+      "title": "Beehiiv voegt AI en groepschat toe aan nieuwsbriefplatform",
+      "words": 76
+    },
+    {
+      "slug": "humanoide-robots-voeren-eerste-operaties-uit-op-levende-varkens",
+      "title": "Chirurgen besturen humanoïde robots bij eerste operaties op levende varkens",
+      "words": 76
+    },
+    {
+      "slug": "digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026",
+      "title": "Digitale vrachtbrief mag vanaf juli 2026 op schepen",
+      "words": 76
+    },
+    {
+      "slug": "mobileye-lanceert-robotaxi-service-in-us-met-moovit",
+      "title": "Mobileye start in 2027 met robotaxi’s in Amerikaanse stad",
+      "words": 79
+    },
+    {
+      "slug": "ai-rationering-dwingt-techbedrijven-tot-budgetdiscipline",
+      "title": "AI-rationering dwingt techbedrijven tot budgetdiscipline",
+      "words": 79
+    },
+    {
+      "slug": "passionfroot-15m-us-expansion",
+      "title": "Duits platform Passionfroot haalt $15 miljoen op voor Amerikaanse expansie",
+      "words": 80
+    },
+    {
+      "slug": "furiosaai-rngd-accelerators-equinix-lissabon",
+      "title": "Zuid-Koreaanse chipmaker FuriosaAI levert RNGD-versnellers aan Equinix in Lissabon",
+      "words": 80
+    },
+    {
+      "slug": "ai-citeert-merken-via-onafhankelijke-bronnen",
+      "title": "AI-antwoorden citeren merken via derden, niet via eigen site",
+      "words": 84
+    },
+    {
+      "slug": "google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage",
+      "title": "Google Ads API krijgt AI-transparantie, strengere security en nieuwe PMax-metrics",
+      "words": 85
+    },
+    {
+      "slug": "google-lanceert-realtime-policy-reviews-voor-snellere-ad-goedkeuringen",
+      "title": "Google versnelt advertentiegoedkeuringen met realtime feedback",
+      "words": 85
+    },
+    {
+      "slug": "india-ai-startup-sarvam-haalt-234-miljoen-op-met-hcltech-leidend",
+      "title": "Indiase AI-startup Sarvam wordt unicorn na 234 miljoen dollar financering",
+      "words": 86
+    },
+    {
+      "slug": "bluesky-lanceert-communities-voor-gedeelde-interesses",
+      "title": "Bluesky introduceert groepen om gerichter te discussieren",
+      "words": 86
+    },
+    {
+      "slug": "google-verplicht-passkeys-voor-google-ads-api",
+      "title": "Google verplicht passkeys voor Google Ads API",
+      "words": 88
+    },
+    {
+      "slug": "mistral-waardering-verdubbeld-rond-e20-miljard",
+      "title": "Mistral haalt mogelijk €3 miljard op bij €20 miljard waardering",
+      "words": 88
+    },
+    {
+      "slug": "google-lanceert-ask-advisor-in-ads-analytics-en-merchant-center",
+      "title": "Google introduceert Ask Advisor voor campagnes, analytics en Merchant Center",
+      "words": 88
+    },
+    {
+      "slug": "ford-herinzet-experts-na-ai-teleurstelling",
+      "title": "Ford haalt ervaren ingenieurs terug na teleurstellende AI-resultaten",
+      "words": 90
+    },
+    {
+      "slug": "europa-usa-ai-dominantie-london-tech-week",
+      "title": "Europa en UK willen eigen AI-macht opbouwen tegen Amerikaanse dominantie",
+      "words": 90
+    },
+    {
+      "slug": "outlook-mac-bug-verandert-lettertype-keuze-in-decoratie",
+      "title": "Bug in Outlook voor Mac maakt lettertypekeuze decoratief",
+      "words": 91
+    },
+    {
+      "slug": "kpmg-haalt-ai-rapport-na-betwiste-voorbeelden",
+      "title": "KPMG verwijdert AI-rapport na klachten over onjuiste voorbeelden",
+      "words": 92
+    },
+    {
+      "slug": "oracle-integreert-google-gemini-in-automatiseringsplatform",
+      "title": "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+      "words": 93
+    },
+    {
+      "slug": "google-ads-herstelt-target-cpa-en-target-roas-naamgeving",
+      "title": "Google Ads brengt Target CPA en Target ROAS terug in naamgeving",
+      "words": 93
+    },
+    {
+      "slug": "certe-mijnadviseur-chatgpt-koppeling",
+      "title": "Certe koppelt ChatGPT-gebruikers aan financieel adviseurs via AI-app.",
+      "words": 93
+    },
+    {
+      "slug": "suno-lanceert-spark-incubator-programma-voor-onafhankelijke-artiesten",
+      "title": "Suno start incubator voor nieuwe artiesten met AI-machine",
+      "words": 95
+    },
+    {
+      "slug": "spotify-ai-muziek-verificatie",
+      "title": "Spotify voert verificatiesysteem in tegen AI-muziek.",
+      "words": 95
+    },
+    {
+      "slug": "google-earth-ai-tool-een-dag-actief",
+      "title": "Google haalt AI-functie in Google Earth na één dag offline",
+      "words": 96
+    },
+    {
+      "slug": "google-ads-kosten-stijgen-conversie-efficientie-2025",
+      "title": "Google Ads-kosten stijgen, maar conversies verbeteren in 2025",
+      "words": 96
+    },
+    {
+      "slug": "neko-health-nieuwe-financieringsronde-700-miljoen",
+      "title": "Neko Health haalt opnieuw 700 miljoen op voor lichaamsscans",
+      "words": 97
+    },
+    {
+      "slug": "ai-zoekgedrag-verandert-internet",
+      "title": "AI verandert hoe mensen zoeken op internet: minder klikken, meer directe antwoorden",
+      "words": 97
+    },
+    {
+      "slug": "groq-haalt-650-miljoen-op-na-nvidia-deal",
+      "title": "AI-chipmaker Groq haalt 650 miljoen op na Nvidia-deal",
+      "words": 98
+    },
+    {
+      "slug": "juni-2026-contentkansen-emotionele-thema-s",
+      "title": "Juni 2026 biedt kansen voor emotionele content",
+      "words": 98
+    },
+    {
+      "slug": "oudste-amerikaans-object-in-ruimte-ontdekt",
+      "title": "Vlag uit de Amerikaanse Revolutie vloog al in 1961 de ruimte in",
+      "words": 99
+    },
+    {
+      "slug": "apple-verhoogt-prijzen-door-ram-schaarste",
+      "title": "Apple verhoogt prijzen door schaarste aan RAM-geheugen",
+      "words": 99
+    },
+    {
+      "slug": "uk-civil-service-ai-influencer-aan-stellen",
+      "title": "Verenigd Koninkrijk stelt AI-influencer aan voor ambtenarenapparaat",
+      "words": 99
+    },
+    {
+      "slug": "spacex-raketten-passen-tesla-in-mobiliteitsmarkt",
+      "title": "SpaceX lanceert raketten als nieuwe speler in mobiliteit",
+      "words": 100
+    },
+    {
+      "slug": "google-ads-integreert-local-services-ads-in-performance-max",
+      "title": "Google Ads integreert Local Services Ads in Performance Max-campagnes",
+      "words": 101
+    },
+    {
+      "slug": "side-events-techcrunch-disrupt-2026",
+      "title": "TechCrunch Disrupt 2026 biedt ruimte voor merk-eigen evenementen",
+      "words": 101
+    },
+    {
+      "slug": "google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen",
+      "title": "Google Ads past target-based bidding aan bij budgetbeperkte campagnes",
+      "words": 101
+    },
+    {
+      "slug": "spacex-spv-investors-risico-na-ipo",
+      "title": "SpaceX-investeerders in SPV’s lopen risico op verborgen kosten en fraude na beursgang",
+      "words": 101
+    },
+    {
+      "slug": "endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen",
+      "title": "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+      "words": 102
+    },
+    {
+      "slug": "oscars-ai-acteerprestaties-niet-toegestaan",
+      "title": "Acteerprestaties met AI komen niet in aanmerking voor een Oscar.",
+      "words": 102
+    },
+    {
+      "slug": "google-test-branded-search-controls-ai-max",
+      "title": "Google test nieuwe branded search controls in AI Max campagnes",
+      "words": 103
+    },
+    {
+      "slug": "europas-eerste-quantum-bedrijf-bewerkt-onzekerheid-over-toekomst",
+      "title": "Europese quantum-pionier IQM gaat naar de beurs met onzekere toekomst",
+      "words": 104
+    },
+    {
+      "slug": "intel-18a-p-chip-prototype",
+      "title": "Intel toont eerste proefchips van 18A-P-technologie met 9% snelheidswinst",
+      "words": 104
+    },
+    {
+      "slug": "google-introduceert-ai-content-labels-in-asset-studio",
+      "title": "Google voegt AI-contentlabels toe in Asset Studio",
+      "words": 105
+    },
+    {
+      "slug": "ai-coding-startup-135m-series-a-palihapitiya",
+      "title": "AI-codegenerator haalt 135 miljoen op bij start Series A",
+      "words": 105
+    },
+    {
+      "slug": "politiek-dreigt-wetenschap-bij-nationale-academies-te-beinvloeden",
+      "title": "Eerste klimaatrapport van Amerikaanse wetenschappers mogelijk gepolitiseerd",
+      "words": 105
+    },
+    {
+      "slug": "nieuw-raamwerk-zichtbaarheid-ai-tijden",
+      "title": "Nieuw model meet zichtbaarheid in AI-gedreven zoekomgevingen",
+      "words": 105
+    },
+    {
+      "slug": "ai-in-de-creative-industrie",
+      "title": "AI neemt creatie over in reclame-industrie van 422 miljard dollar",
+      "words": 106
+    },
+    {
+      "slug": "superhuman-verwerft-gptzero",
+      "title": "Superhuman koopt AI-detectietool GPTZero",
+      "words": 107
+    },
+    {
+      "slug": "prometheus-12-miljard-ai-fysieke-wereld",
+      "title": "Fysieke AI-startup Prometheus haalt 12 miljard op voor 'algemene ingenieur'",
+      "words": 107
+    },
+    {
+      "slug": "google-demands-striktere-audience-targeting-regels-demand-gen",
+      "title": "Google verduidelijkt striktere regels voor gevoelige doelgroep-targeting in Demand Gen",
+      "words": 107
+    },
+    {
+      "slug": "organisaties-bouwen-merkbeelden-in-plaats-van-merken",
+      "title": "Veel bedrijven focussen op uiterlijk in plaats van merkidentiteit",
+      "words": 107
+    },
+    {
+      "slug": "te-veel-ai-agenten-verstoren-elkaars-werk",
+      "title": "Te veel AI-agenten verstoren elkaars werk",
+      "words": 108
+    },
+    {
+      "slug": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "title": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "words": 108
+    },
+    {
+      "slug": "meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit",
+      "title": "Meta voert AI-disclosure optie in en breidt creatieve testmogelijkheden uit",
+      "words": 108
+    },
+    {
+      "slug": "spacex-tesla-merger-2026",
+      "title": "SpaceX-president duidt op mogelijke Tesla-fusie",
+      "words": 108
+    },
+    {
+      "slug": "deezer-lanceert-ai-muziekdetector-voor-andere-streamingdiensten",
+      "title": "Deezer scant nu playlists van andere streamingdiensten op AI-muziek",
+      "words": 108
+    },
+    {
+      "slug": "magnetic-networking-evolutie-personal-branding",
+      "title": "Magnetic Networking: nieuwe kijk op zakelijk netwerken",
+      "words": 108
+    },
+    {
+      "slug": "middelmatige-ai-content-schadelijk-voor-merk",
+      "title": "Middelmatige AI-content kan je merk schaden",
+      "words": 108
+    },
+    {
+      "slug": "google-demand-gen-integratie-commerce-media",
+      "title": "Google breidt Demand Gen uit met retailerdata voor cross-platform campagnes",
+      "words": 109
+    },
+    {
+      "slug": "ai-telefonie-turing-test-nabij-met-13-miljoen",
+      "title": "AI-telefonie die onherkenbaar is als mens komt dichterbij na $13 miljoen",
+      "words": 110
+    },
+    {
+      "slug": "hugging-face-ai-agents-fraude",
+      "title": "Hugging Face faalt in strijd tegen fraude met AI-agenten",
+      "words": 110
+    },
+    {
+      "slug": "erp-gebruikers-kiezen-voor-headless-oplossingen",
+      "title": "Headless ERP wint terrein: minder afhankelijk van leveranciers",
+      "words": 110
+    },
+    {
+      "slug": "yang-automatisering-ai-ondernemen-inplaats-van-wachten-op-beleid",
+      "title": "Automatisering en AI: ondernemers kiezen voor actie in plaats van wachten op beleid",
+      "words": 110
+    },
+    {
+      "slug": "politieke-targeting-en-visuele-aandacht-eye-tracking",
+      "title": "Politieke targeting beinvloedt visuele aandacht, eye-tracking toont aan",
+      "words": 110
+    },
+    {
+      "slug": "ai-agents-veiligheid-jfrog-nanoclaw",
+      "title": "AI-agents krijgen veiligere downloads via JFrog",
+      "words": 111
+    },
+    {
+      "slug": "smx-advanced-2027-twee-locaties",
+      "title": "SMX Advanced 2027 vindt plaats in San Diego én Boston",
+      "words": 112
+    },
+    {
+      "slug": "ai-startups-ipo-hype-wie-profiteert",
+      "title": "AI-startups racen naar beursgang: wie profiteert mee?",
+      "words": 112
+    },
+    {
+      "slug": "afm-beboet-bunq-trage-fraudeafhandeling",
+      "title": "AFM legt bunq boete op voor trage fraudeafhandeling",
+      "words": 112
+    },
+    {
+      "slug": "voormalig-engineer-start-online-kunstacademie",
+      "title": "Voormalig engineer start online kunstacademie na burn-out",
+      "words": 112
+    },
+    {
+      "slug": "seo-dominante-factor-in-ai-aanbevelingen",
+      "title": "SEO bepaalt steeds meer welke merken AI-systemen aanbevelen",
+      "words": 112
+    },
+    {
+      "slug": "google-ads-verandert-servicevoorwaarden-voor-juli-2026",
+      "title": "Google Ads past servicevoorwaarden aan voor AI-gestuurde automatisering",
+      "words": 112
+    },
+    {
+      "slug": "buitenlandse-merken-in-afrika",
+      "title": "Buitenlandse merken groeien sneller in Afrika via lokale partners en directe verkoop",
+      "words": 112
+    },
+    {
+      "slug": "google-ads-introduceert-drie-ai-max-updates",
+      "title": "Google Ads voegt drie AI Max-updates toe voor betere prestaties",
+      "words": 112
+    },
+    {
+      "slug": "spacexai-grok-build-code-upload-geblokkeerd",
+      "title": "Grok Build van SpaceXAI stuurde codebases automatisch naar de cloud",
+      "words": 113
+    },
+    {
+      "slug": "prc-spionnen-ontdekt-in-medische-en-militaire-netwerken",
+      "title": "Spionnen gekoppeld aan China bleven een jaar in medische en militaire netwerken",
+      "words": 113
+    },
+    {
+      "slug": "robinhood-record-verkeer-na-spacex-introductie",
+      "title": "Robinhood verwerkt recordaantal klanten na SpaceX-beursgang",
+      "words": 113
+    },
+    {
+      "slug": "informer-money-genomineerd-voor-best-fintech-startup-belgie",
+      "title": "Informer Money genomineerd voor Best FinTech Startup van Belgie",
+      "words": 113
+    },
+    {
+      "slug": "starlink-verhoogt-kosten-hardware-en-service",
+      "title": "Starlink voert maandelijkse hardwarekosten in en verhoogt abonnementsprijs",
+      "words": 113
+    },
+    {
+      "slug": "evotrex-30-miljoen-voor-rv-met-hybride-stroom",
+      "title": "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+      "words": 113
+    },
+    {
+      "slug": "signaalverval-bedreigt-top-of-funnel-prestaties",
+      "title": "Top-of-funnel campagnes krijgen te weinig credit in de meting",
+      "words": 113
+    },
+    {
+      "slug": "rivian-eigenaren-dagvaarden-over-zelfrijdende-beloften",
+      "title": "Rivian-eigenaren dagvaarden over onware beloften zelfrijdende technologie",
+      "words": 114
+    },
+    {
+      "slug": "threads-passeert-half-miljard-maandelijkse-gebruikers",
+      "title": "Threads passeert half miljard gebruikers per maand",
+      "words": 114
+    },
+    {
+      "slug": "zte-wint-drie-selular-awards-2026-voor-ai-gedreven-netwerkinnovaties",
+      "title": "ZTE wint drie Selular Awards 2026 voor AI-gedreven netwerkinnovaties",
+      "words": 114
+    },
+    {
+      "slug": "anthropic-samsung-custom-ai-chip",
+      "title": "Anthropic en Samsung in gesprek over nieuwe AI-chip",
+      "words": 115
+    },
+    {
+      "slug": "flipkart-breidt-snelle-levering-uit-in-india-als-amazon-versnelt",
+      "title": "Flipkart opent meer dan 1.000 micro-opslagpunten voor snelle levering in India",
+      "words": 115
+    },
+    {
+      "slug": "tech-industrie-krijgt-mangos-in-plaats-van-faang",
+      "title": "Techgiganten krijgen nieuw acroniem: MANGOS verdrijft FAANG",
+      "words": 115
+    },
+    {
+      "slug": "kessels-kramer-failliet-na-60-jaar",
+      "title": "Reclamebureau KesselsKramer failliet verklaard",
+      "words": 115
+    },
+    {
+      "slug": "google-integreert-meridian-in-analytics-360",
+      "title": "Google voegt Meridian marketing mix modeling toe aan Analytics 360",
+      "words": 115
+    },
+    {
+      "slug": "nieuwe-ecommerce-tools-mei-2026",
+      "title": "Nieuwe e-commerce tools: AI, autonome marketing en cross-border oplossingen",
+      "words": 115
+    },
+    {
+      "slug": "us-defense-ai-deals-zonder-anthropic",
+      "title": "Defensie VS sluit deals met acht techreuzen voor 'AI-first leger', zonder Anthropic.",
+      "words": 115
+    },
+    {
+      "slug": "uk-investeert-708-miljoen-in-toekomstig-straaljagerproject",
+      "title": "VK pompt 708 miljoen pond in toekomstige straaljager",
+      "words": 116
+    },
+    {
+      "slug": "boston-dynamics-test-robot-honden-voor-leveringen",
+      "title": "Boston Dynamics test robot-honden voor pakketbezorging",
+      "words": 116
+    },
+    {
+      "slug": "acti-smartphone-keyboard-met-ai-agents",
+      "title": "Acti brengt AI-assistenten naar je toetsenbord",
+      "words": 116
+    },
+    {
+      "slug": "india-blokkeert-starlink-voor-spacex-beursgang",
+      "title": "India blokkeert Starlink-licentie vlak voor SpaceX IPO",
+      "words": 116
+    },
+    {
+      "slug": "verkoopfraude-e-commerce-samenwerking-keten",
+      "title": "Verkoopfraude bij webshops stijgt: wie is verantwoordelijk?",
+      "words": 116
+    },
+    {
+      "slug": "apple-ios-27-automatische-wachtwoordvervanging",
+      "title": "Apple voegt een-tik-wachtwoordvervanging toe in iOS 27",
+      "words": 117
+    },
+    {
+      "slug": "cyera-acquire-oasis-security-1-miljard",
+      "title": "Cyera koopt Oasis Security voor $1 miljard om AI-agenten te beveiligen",
+      "words": 118
+    },
+    {
+      "slug": "uber-vertraagt-expansie-europa-na-plannen-2026",
+      "title": "Uber stelt vijf Europese markten uit tot na 2026",
+      "words": 118
+    },
+    {
+      "slug": "merkloyaliteit-ai-tijdperk-oud-antwoord",
+      "title": "AI dreigt merkloyaliteit te ondermijnen: terug naar de basis",
+      "words": 118
+    },
+    {
+      "slug": "uber-robotaxi-houston-2027",
+      "title": "Uber lanceert premium robotaxi’s in Houston vanaf 2027",
+      "words": 119
+    },
+    {
+      "slug": "google-breidt-demand-gen-uit-met-youtube-creator-tools",
+      "title": "Google breidt Demand Gen uit met YouTube creator tools en AI-campagnes",
+      "words": 119
+    }
+  ],
+  "possibleDuplicatePairs": [
+    {
+      "left": "google-demand-gen-integratie-commerce-media",
+      "right": "google-breidt-demand-gen-uit-met-youtube-creator-tools",
+      "leftTitle": "Google breidt Demand Gen uit met retailerdata voor cross-platform campagnes",
+      "rightTitle": "Google breidt Demand Gen uit met YouTube creator tools en AI-campagnes",
+      "combinedScore": 0.359,
+      "titleSimilarity": 0.364,
+      "contentSimilarity": 0.425,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "right": "google-ads-introduceert-drie-ai-max-updates",
+      "leftTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "rightTitle": "Google Ads voegt drie AI Max-updates toe voor betere prestaties",
+      "combinedScore": 0.326,
+      "titleSimilarity": 0.4,
+      "contentSimilarity": 0.301,
+      "bodyShingleSimilarity": 0.007,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren",
+      "right": "google-integreert-meridian-in-analytics-360",
+      "leftTitle": "Google Analytics voegt bron-groepering en hostname-filter toe",
+      "rightTitle": "Google voegt Meridian marketing mix modeling toe aan Analytics 360",
+      "combinedScore": 0.32,
+      "titleSimilarity": 0.364,
+      "contentSimilarity": 0.327,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-demands-striktere-audience-targeting-regels-demand-gen",
+      "right": "google-breidt-demand-gen-uit-met-youtube-creator-tools",
+      "leftTitle": "Google verduidelijkt striktere regels voor gevoelige doelgroep-targeting in Demand Gen",
+      "rightTitle": "Google breidt Demand Gen uit met YouTube creator tools en AI-campagnes",
+      "combinedScore": 0.3,
+      "titleSimilarity": 0.231,
+      "contentSimilarity": 0.427,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-verplicht-passkeys-voor-google-ads-api",
+      "right": "google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage",
+      "leftTitle": "Google verplicht passkeys voor Google Ads API",
+      "rightTitle": "Google Ads API krijgt AI-transparantie, strengere security en nieuwe PMax-metrics",
+      "combinedScore": 0.295,
+      "titleSimilarity": 0.273,
+      "contentSimilarity": 0.368,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-introduceert-ai-content-labels-in-asset-studio",
+      "right": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "leftTitle": "Google voegt AI-contentlabels toe in Asset Studio",
+      "rightTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "combinedScore": 0.275,
+      "titleSimilarity": 0.333,
+      "contentSimilarity": 0.25,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-demands-striktere-audience-targeting-regels-demand-gen",
+      "right": "google-demand-gen-integratie-commerce-media",
+      "leftTitle": "Google verduidelijkt striktere regels voor gevoelige doelgroep-targeting in Demand Gen",
+      "rightTitle": "Google breidt Demand Gen uit met retailerdata voor cross-platform campagnes",
+      "combinedScore": 0.262,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.312,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-stage-techcrunch-disrupt-2026",
+      "right": "side-events-techcrunch-disrupt-2026",
+      "leftTitle": "AI Stage keert terug op TechCrunch Disrupt 2026 met focus op SaaS en agent-beveiliging",
+      "rightTitle": "TechCrunch Disrupt 2026 biedt ruimte voor merk-eigen evenementen",
+      "combinedScore": 0.253,
+      "titleSimilarity": 0.231,
+      "contentSimilarity": 0.373,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "right": "google-lanceert-prospects-mode-voor-nieuwe-klanten",
+      "leftTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "rightTitle": "Google voegt ‘nieuwe prospects’ toe aan klantwerving",
+      "combinedScore": 0.248,
+      "titleSimilarity": 0.333,
+      "contentSimilarity": 0.183,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-introduceert-ai-content-labels-in-asset-studio",
+      "right": "google-lanceert-prospects-mode-voor-nieuwe-klanten",
+      "leftTitle": "Google voegt AI-contentlabels toe in Asset Studio",
+      "rightTitle": "Google voegt ‘nieuwe prospects’ toe aan klantwerving",
+      "combinedScore": 0.247,
+      "titleSimilarity": 0.333,
+      "contentSimilarity": 0.179,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-verplicht-passkeys-voor-google-ads-api",
+      "right": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "leftTitle": "Google verplicht passkeys voor Google Ads API",
+      "rightTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "combinedScore": 0.246,
+      "titleSimilarity": 0.286,
+      "contentSimilarity": 0.231,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren",
+      "right": "google-lanceert-prospects-mode-voor-nieuwe-klanten",
+      "leftTitle": "Google Analytics voegt bron-groepering en hostname-filter toe",
+      "rightTitle": "Google voegt ‘nieuwe prospects’ toe aan klantwerving",
+      "combinedScore": 0.243,
+      "titleSimilarity": 0.333,
+      "contentSimilarity": 0.171,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "right": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "leftTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "rightTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "combinedScore": 0.243,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.265,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-infrastructuur-onder-druk-door-energievraag-techcrunch-disrupt-2026",
+      "right": "side-events-techcrunch-disrupt-2026",
+      "leftTitle": "AI-infrastructuur dreigt stroomnet te overbelasten: TechCrunch Disrupt 2026 waarschuwt",
+      "rightTitle": "TechCrunch Disrupt 2026 biedt ruimte voor merk-eigen evenementen",
+      "combinedScore": 0.241,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.321,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-stage-techcrunch-disrupt-2026",
+      "right": "ai-infrastructuur-onder-druk-door-energievraag-techcrunch-disrupt-2026",
+      "leftTitle": "AI Stage keert terug op TechCrunch Disrupt 2026 met focus op SaaS en agent-beveiliging",
+      "rightTitle": "AI-infrastructuur dreigt stroomnet te overbelasten: TechCrunch Disrupt 2026 waarschuwt",
+      "combinedScore": 0.24,
+      "titleSimilarity": 0.214,
+      "contentSimilarity": 0.294,
+      "bodyShingleSimilarity": 0.005,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren",
+      "right": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "leftTitle": "Google Analytics voegt bron-groepering en hostname-filter toe",
+      "rightTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "combinedScore": 0.24,
+      "titleSimilarity": 0.333,
+      "contentSimilarity": 0.161,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-introduceert-ai-content-labels-in-asset-studio",
+      "right": "google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren",
+      "leftTitle": "Google voegt AI-contentlabels toe in Asset Studio",
+      "rightTitle": "Google Analytics voegt bron-groepering en hostname-filter toe",
+      "combinedScore": 0.238,
+      "titleSimilarity": 0.333,
+      "contentSimilarity": 0.159,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-integreert-local-services-ads-in-performance-max",
+      "right": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "leftTitle": "Google Ads integreert Local Services Ads in Performance Max-campagnes",
+      "rightTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "combinedScore": 0.238,
+      "titleSimilarity": 0.182,
+      "contentSimilarity": 0.329,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-integreert-local-services-ads-in-performance-max",
+      "right": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "leftTitle": "Google Ads integreert Local Services Ads in Performance Max-campagnes",
+      "rightTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "combinedScore": 0.237,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.28,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "oracle-integreert-google-gemini-in-automatiseringsplatform",
+      "right": "google-introduceert-ai-content-labels-in-asset-studio",
+      "leftTitle": "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+      "rightTitle": "Google voegt AI-contentlabels toe in Asset Studio",
+      "combinedScore": 0.233,
+      "titleSimilarity": 0.333,
+      "contentSimilarity": 0.145,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "oracle-integreert-google-gemini-in-automatiseringsplatform",
+      "right": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "leftTitle": "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+      "rightTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "combinedScore": 0.233,
+      "titleSimilarity": 0.333,
+      "contentSimilarity": 0.145,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-introduceert-ai-content-labels-in-asset-studio",
+      "right": "google-ads-introduceert-drie-ai-max-updates",
+      "leftTitle": "Google voegt AI-contentlabels toe in Asset Studio",
+      "rightTitle": "Google Ads voegt drie AI Max-updates toe voor betere prestaties",
+      "combinedScore": 0.232,
+      "titleSimilarity": 0.273,
+      "contentSimilarity": 0.211,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-analytics-campagne-diagnostiek-missing-parameters",
+      "right": "google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren",
+      "leftTitle": "Google Analytics waarschuwt voor ontbrekende campagneparameters",
+      "rightTitle": "Google Analytics voegt bron-groepering en hostname-filter toe",
+      "combinedScore": 0.231,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.263,
+      "bodyShingleSimilarity": 0.006,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "oracle-integreert-google-gemini-in-automatiseringsplatform",
+      "right": "google-lanceert-prospects-mode-voor-nieuwe-klanten",
+      "leftTitle": "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+      "rightTitle": "Google voegt ‘nieuwe prospects’ toe aan klantwerving",
+      "combinedScore": 0.228,
+      "titleSimilarity": 0.333,
+      "contentSimilarity": 0.133,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "hugging-face-rebuild-na-openai-agents-aanval",
+      "right": "hugging-face-ai-agents-fraude",
+      "leftTitle": "Hugging Face moest een derde van de infrastructuur herbouwen na OpenAI-agents aanval",
+      "rightTitle": "Hugging Face faalt in strijd tegen fraude met AI-agenten",
+      "combinedScore": 0.228,
+      "titleSimilarity": 0.154,
+      "contentSimilarity": 0.335,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-geneesmiddelen-startup-waardering-2-miljard",
+      "right": "mistral-waardering-verdubbeld-rond-e20-miljard",
+      "leftTitle": "Ex-OpenAI-medewerker lanceert AI-geneesmiddelenstartup met $2 miljard waardering",
+      "rightTitle": "Mistral haalt mogelijk €3 miljard op bij €20 miljard waardering",
+      "combinedScore": 0.228,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.288,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "nasa-deep-space-network-artemis-ii",
+      "right": "nasa-selecteert-bemanningsleden-voor-artemis-iii-maanlander-repetitie",
+      "leftTitle": "NASA’s Deep Space Network hield Artemis II draaiend ondanks piekbelasting",
+      "rightTitle": "NASA kiest bemanning voor maanlander-repetitie Artemis III",
+      "combinedScore": 0.228,
+      "titleSimilarity": 0.154,
+      "contentSimilarity": 0.335,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen",
+      "right": "google-ads-verandert-servicevoorwaarden-voor-juli-2026",
+      "leftTitle": "Google Ads past target-based bidding aan bij budgetbeperkte campagnes",
+      "rightTitle": "Google Ads past servicevoorwaarden aan voor AI-gestuurde automatisering",
+      "combinedScore": 0.226,
+      "titleSimilarity": 0.3,
+      "contentSimilarity": 0.165,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "microsoft-bouwt-copilot-super-app-voor-2026",
+      "right": "microsoft-scout-enterprise-ai-agent",
+      "leftTitle": "Microsoft lanceert Copilot-superapp in 2026",
+      "rightTitle": "Microsoft lanceert altijd-actieve AI-agent Scout voor bedrijven",
+      "combinedScore": 0.225,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.282,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "oracle-integreert-google-gemini-in-automatiseringsplatform",
+      "right": "google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren",
+      "leftTitle": "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+      "rightTitle": "Google Analytics voegt bron-groepering en hostname-filter toe",
+      "combinedScore": 0.224,
+      "titleSimilarity": 0.333,
+      "contentSimilarity": 0.122,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "india-blokkeert-starlink-voor-spacex-beursgang",
+      "right": "spacex-ipo-afhankelijk-van-ruimte-data-centers",
+      "leftTitle": "India blokkeert Starlink-licentie vlak voor SpaceX IPO",
+      "rightTitle": "SpaceX IPO draait om ruimte-datacenters",
+      "combinedScore": 0.224,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.279,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-lanceert-prospects-mode-voor-nieuwe-klanten",
+      "right": "google-ads-introduceert-drie-ai-max-updates",
+      "leftTitle": "Google voegt ‘nieuwe prospects’ toe aan klantwerving",
+      "rightTitle": "Google Ads voegt drie AI Max-updates toe voor betere prestaties",
+      "combinedScore": 0.222,
+      "titleSimilarity": 0.273,
+      "contentSimilarity": 0.186,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "right": "google-ads-verandert-servicevoorwaarden-voor-juli-2026",
+      "leftTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "rightTitle": "Google Ads past servicevoorwaarden aan voor AI-gestuurde automatisering",
+      "combinedScore": 0.22,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.207,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-verplicht-passkeys-voor-google-ads-api",
+      "right": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "leftTitle": "Google verplicht passkeys voor Google Ads API",
+      "rightTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "combinedScore": 0.216,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.228,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "alexa-agentic-ads-veranderen-de-regels-van-conversational-marketing",
+      "right": "amazon-alexa-wordt-shopping-agent-en-advertentieplatform",
+      "leftTitle": "Alexa koopt voor je: hoe agentic ads de marketinggame voorgoed veranderen",
+      "rightTitle": "Amazon laat Alexa shoppen en adverteren tijdens gesprekken",
+      "combinedScore": 0.216,
+      "titleSimilarity": 0.077,
+      "contentSimilarity": 0.391,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "space-force-30-miljard-rocket-launches",
+      "right": "rocket-lab-krijgt-toegang-tot-globale-satellietmarkt-met-8-miljard-deal",
+      "leftTitle": "Space Force koopt voor 30 miljard dollar aan raketlanceringen",
+      "rightTitle": "Rocket Lab koopt Iridium voor 8 miljard dollar en wordt satellietgigant",
+      "combinedScore": 0.215,
+      "titleSimilarity": 0.3,
+      "contentSimilarity": 0.137,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren",
+      "right": "google-ads-introduceert-drie-ai-max-updates",
+      "leftTitle": "Google Analytics voegt bron-groepering en hostname-filter toe",
+      "rightTitle": "Google Ads voegt drie AI Max-updates toe voor betere prestaties",
+      "combinedScore": 0.215,
+      "titleSimilarity": 0.273,
+      "contentSimilarity": 0.168,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "customer-match-voordeel-in-google-ads",
+      "right": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "leftTitle": "Klantenbestand uploaden geeft voorsprong in Google Ads",
+      "rightTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "combinedScore": 0.215,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.193,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "lecun-ami-labs-jepa-tegen-llms",
+      "right": "lecun-miljard-tegen-het-taalmodel",
+      "leftTitle": "Yann LeCun verlaat Meta en haalt een miljard op voor een AI-richting tegen LLMs.",
+      "rightTitle": "Een miljard tegen het taalmodel",
+      "combinedScore": 0.215,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.312,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-automatisch-conversiegebaseerde-audience-lists-activeren",
+      "right": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "leftTitle": "Google Ads activeert automatisch conversiegebaseerde klantlijsten",
+      "rightTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "combinedScore": 0.21,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.238,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "nieuwe-ecommerce-tools-juni-2026",
+      "right": "nieuwe-ecommerce-tools-mei-2026",
+      "leftTitle": "Nieuwe tools voor e-commerce: van Reddit tot last-mile delivery",
+      "rightTitle": "Nieuwe e-commerce tools: AI, autonome marketing en cross-border oplossingen",
+      "combinedScore": 0.21,
+      "titleSimilarity": 0.3,
+      "contentSimilarity": 0.188,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-automatisch-conversiegebaseerde-audience-lists-activeren",
+      "right": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "leftTitle": "Google Ads activeert automatisch conversiegebaseerde klantlijsten",
+      "rightTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "combinedScore": 0.209,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.179,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "right": "google-ads-gemini-dashboards-real-time",
+      "leftTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "rightTitle": "Google Ads krijgt Gemini-aangedreven dashboards voor real-time inzicht.",
+      "combinedScore": 0.207,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.206,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "right": "google-ads-introduceert-drie-ai-max-updates",
+      "leftTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "rightTitle": "Google Ads voegt drie AI Max-updates toe voor betere prestaties",
+      "combinedScore": 0.206,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.229,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-verplicht-passkeys-voor-google-ads-api",
+      "right": "google-ads-integreert-local-services-ads-in-performance-max",
+      "leftTitle": "Google verplicht passkeys voor Google Ads API",
+      "rightTitle": "Google Ads integreert Local Services Ads in Performance Max-campagnes",
+      "combinedScore": 0.204,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.222,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "klanten-vragen-naar-chatgpt-zichtbaarheid",
+      "right": "chatgpt-wordt-advertentieplatform",
+      "leftTitle": "Klanten vragen naar zichtbaarheid in ChatGPT: hoe meet je dat?",
+      "rightTitle": "ChatGPT wordt een advertentieplatform",
+      "combinedScore": 0.202,
+      "titleSimilarity": 0.167,
+      "contentSimilarity": 0.254,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-leert-van-verkoopgesprekken-met-30-miljoen",
+      "right": "jedify-24-miljoen-voor-ai-agent-context",
+      "leftTitle": "AI leert van verkoopgesprekken met 30 miljoen dollar",
+      "rightTitle": "JEDIFY haalt 24 miljoen dollar op voor AI-assistenten met bedrijfsspecifieke kennis",
+      "combinedScore": 0.201,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.19,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "klanten-vragen-naar-chatgpt-zichtbaarheid",
+      "right": "nieuw-raamwerk-zichtbaarheid-ai-tijden",
+      "leftTitle": "Klanten vragen naar zichtbaarheid in ChatGPT: hoe meet je dat?",
+      "rightTitle": "Nieuw model meet zichtbaarheid in AI-gedreven zoekomgevingen",
+      "combinedScore": 0.201,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.189,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-coding-startup-135m-series-a-palihapitiya",
+      "right": "spacex-start-ipo-met-aandeelprijs-van-135-dollar",
+      "leftTitle": "AI-codegenerator haalt 135 miljoen op bij start Series A",
+      "rightTitle": "SpaceX start beursgang met aandeelprijs van $135",
+      "combinedScore": 0.201,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.252,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "mistral-waardering-verdubbeld-rond-e20-miljard",
+      "right": "prometheus-12-miljard-ai-fysieke-wereld",
+      "leftTitle": "Mistral haalt mogelijk €3 miljard op bij €20 miljard waardering",
+      "rightTitle": "Fysieke AI-startup Prometheus haalt 12 miljard op voor 'algemene ingenieur'",
+      "combinedScore": 0.2,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.275,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "bending-spoons-18-miljard-ipo-minimaliseren-geluk",
+      "right": "mistral-waardering-verdubbeld-rond-e20-miljard",
+      "leftTitle": "Bending Spoons haalt $18 miljard bij beursgang door geluk te minimaliseren",
+      "rightTitle": "Mistral haalt mogelijk €3 miljard op bij €20 miljard waardering",
+      "combinedScore": 0.199,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.211,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage",
+      "right": "google-ads-gemini-dashboards-real-time",
+      "leftTitle": "Google Ads API krijgt AI-transparantie, strengere security en nieuwe PMax-metrics",
+      "rightTitle": "Google Ads krijgt Gemini-aangedreven dashboards voor real-time inzicht.",
+      "combinedScore": 0.199,
+      "titleSimilarity": 0.231,
+      "contentSimilarity": 0.176,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "oracle-integreert-google-gemini-in-automatiseringsplatform",
+      "right": "google-ads-introduceert-drie-ai-max-updates",
+      "leftTitle": "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+      "rightTitle": "Google Ads voegt drie AI Max-updates toe voor betere prestaties",
+      "combinedScore": 0.198,
+      "titleSimilarity": 0.273,
+      "contentSimilarity": 0.125,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "spacex-starship-13e-testvlucht-deze-week-met-starlink-satellieten",
+      "right": "spacex-raketten-passen-tesla-in-mobiliteitsmarkt",
+      "leftTitle": "SpaceX lanceert Starship voor 13e testvlucht deze week",
+      "rightTitle": "SpaceX lanceert raketten als nieuwe speler in mobiliteit",
+      "combinedScore": 0.198,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.271,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-updates-en-annuleerknop-verplicht",
+      "right": "google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage",
+      "leftTitle": "Google introduceert verplichte annuleerknop en nieuwe AI-functies in Ads",
+      "rightTitle": "Google Ads API krijgt AI-transparantie, strengere security en nieuwe PMax-metrics",
+      "combinedScore": 0.198,
+      "titleSimilarity": 0.231,
+      "contentSimilarity": 0.172,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-updates-en-annuleerknop-verplicht",
+      "right": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "leftTitle": "Google introduceert verplichte annuleerknop en nieuwe AI-functies in Ads",
+      "rightTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "combinedScore": 0.196,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.177,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-introduceert-drie-ai-max-updates",
+      "right": "google-ai-max-uit-beta-ai-brief-shopping",
+      "leftTitle": "Google Ads voegt drie AI Max-updates toe voor betere prestaties",
+      "rightTitle": "Google AI Max verlaat beta met AI Brief en uitbreiding naar Shopping.",
+      "combinedScore": 0.196,
+      "titleSimilarity": 0.071,
+      "contentSimilarity": 0.347,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "right": "google-integreert-meridian-in-analytics-360",
+      "leftTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "rightTitle": "Google voegt Meridian marketing mix modeling toe aan Analytics 360",
+      "combinedScore": 0.195,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.145,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-verandert-servicevoorwaarden-voor-juli-2026",
+      "right": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "leftTitle": "Google Ads past servicevoorwaarden aan voor AI-gestuurde automatisering",
+      "rightTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "combinedScore": 0.194,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.196,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "space-force-30-miljard-rocket-launches",
+      "right": "salesforce-koopt-fin-voor-36-miljard",
+      "leftTitle": "Space Force koopt voor 30 miljard dollar aan raketlanceringen",
+      "rightTitle": "Salesforce koopt Fin voor 3,6 miljard dollar voor klantenservice-AI",
+      "combinedScore": 0.193,
+      "titleSimilarity": 0.333,
+      "contentSimilarity": 0.108,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-introduceert-ai-content-labels-in-asset-studio",
+      "right": "google-integreert-meridian-in-analytics-360",
+      "leftTitle": "Google voegt AI-contentlabels toe in Asset Studio",
+      "rightTitle": "Google voegt Meridian marketing mix modeling toe aan Analytics 360",
+      "combinedScore": 0.192,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.137,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "customer-match-voordeel-in-google-ads",
+      "right": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "leftTitle": "Klantenbestand uploaden geeft voorsprong in Google Ads",
+      "rightTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "combinedScore": 0.19,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.187,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-verplicht-passkeys-voor-google-ads-api",
+      "right": "google-ads-verandert-servicevoorwaarden-voor-juli-2026",
+      "leftTitle": "Google verplicht passkeys voor Google Ads API",
+      "rightTitle": "Google Ads past servicevoorwaarden aan voor AI-gestuurde automatisering",
+      "combinedScore": 0.189,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.159,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026",
+      "right": "content-marketing-ideeen-juli-2026",
+      "leftTitle": "Digitale vrachtbrief mag vanaf juli 2026 op schepen",
+      "rightTitle": "Vijf contentmarketing-ideeen voor juli 2026",
+      "combinedScore": 0.189,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.222,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-leert-van-verkoopgesprekken-met-30-miljoen",
+      "right": "ai-agent-startup-haalt-100-miljoen-met-zichzelf",
+      "leftTitle": "AI leert van verkoopgesprekken met 30 miljoen dollar",
+      "rightTitle": "AI-agent startup haalt 100 miljoen dollar op met eigen technologie",
+      "combinedScore": 0.188,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.245,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-verplicht-passkeys-voor-google-ads-api",
+      "right": "google-ads-automatisch-conversiegebaseerde-audience-lists-activeren",
+      "leftTitle": "Google verplicht passkeys voor Google Ads API",
+      "rightTitle": "Google Ads activeert automatisch conversiegebaseerde klantlijsten",
+      "combinedScore": 0.188,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.157,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-verplicht-passkeys-voor-google-ads-api",
+      "right": "customer-match-voordeel-in-google-ads",
+      "leftTitle": "Google verplicht passkeys voor Google Ads API",
+      "rightTitle": "Klantenbestand uploaden geeft voorsprong in Google Ads",
+      "combinedScore": 0.187,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.154,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "right": "groq-haalt-650-miljoen-op-na-nvidia-deal",
+      "leftTitle": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "rightTitle": "AI-chipmaker Groq haalt 650 miljoen op na Nvidia-deal",
+      "combinedScore": 0.186,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.12,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-agent-startup-haalt-100-miljoen-met-zichzelf",
+      "right": "jedify-24-miljoen-voor-ai-agent-context",
+      "leftTitle": "AI-agent startup haalt 100 miljoen dollar op met eigen technologie",
+      "rightTitle": "JEDIFY haalt 24 miljoen dollar op voor AI-assistenten met bedrijfsspecifieke kennis",
+      "combinedScore": 0.186,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.185,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-herstelt-target-cpa-en-target-roas-naamgeving",
+      "right": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "leftTitle": "Google Ads brengt Target CPA en Target ROAS terug in naamgeving",
+      "rightTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "combinedScore": 0.185,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.176,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "uber-vertraagt-expansie-europa-na-plannen-2026",
+      "right": "content-marketing-ideeen-juli-2026",
+      "leftTitle": "Uber stelt vijf Europese markten uit tot na 2026",
+      "rightTitle": "Vijf contentmarketing-ideeen voor juli 2026",
+      "combinedScore": 0.184,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.115,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-automatisch-conversiegebaseerde-audience-lists-activeren",
+      "right": "google-ads-verandert-servicevoorwaarden-voor-juli-2026",
+      "leftTitle": "Google Ads activeert automatisch conversiegebaseerde klantlijsten",
+      "rightTitle": "Google Ads past servicevoorwaarden aan voor AI-gestuurde automatisering",
+      "combinedScore": 0.184,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.17,
+      "bodyShingleSimilarity": 0.006,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-lanceert-prospects-mode-voor-nieuwe-klanten",
+      "right": "google-integreert-meridian-in-analytics-360",
+      "leftTitle": "Google voegt ‘nieuwe prospects’ toe aan klantwerving",
+      "rightTitle": "Google voegt Meridian marketing mix modeling toe aan Analytics 360",
+      "combinedScore": 0.184,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.117,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-verplicht-passkeys-voor-google-ads-api",
+      "right": "google-ads-gemini-dashboards-real-time",
+      "leftTitle": "Google verplicht passkeys voor Google Ads API",
+      "rightTitle": "Google Ads krijgt Gemini-aangedreven dashboards voor real-time inzicht.",
+      "combinedScore": 0.183,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.17,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "right": "endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen",
+      "leftTitle": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "rightTitle": "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+      "combinedScore": 0.182,
+      "titleSimilarity": 0.286,
+      "contentSimilarity": 0.133,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "rocket-lab-krijgt-toegang-tot-globale-satellietmarkt-met-8-miljard-deal",
+      "right": "salesforce-koopt-fin-voor-36-miljard",
+      "leftTitle": "Rocket Lab koopt Iridium voor 8 miljard dollar en wordt satellietgigant",
+      "rightTitle": "Salesforce koopt Fin voor 3,6 miljard dollar voor klantenservice-AI",
+      "combinedScore": 0.18,
+      "titleSimilarity": 0.3,
+      "contentSimilarity": 0.112,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "customer-match-voordeel-in-google-ads",
+      "right": "google-ads-verandert-servicevoorwaarden-voor-juli-2026",
+      "leftTitle": "Klantenbestand uploaden geeft voorsprong in Google Ads",
+      "rightTitle": "Google Ads past servicevoorwaarden aan voor AI-gestuurde automatisering",
+      "combinedScore": 0.18,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.162,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "right": "google-ads-zichtbaar-in-ai-overviews",
+      "leftTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "rightTitle": "Google Ads zichtbaarder maken in AI Overviews met feeds en signalen",
+      "combinedScore": 0.18,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.139,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "right": "theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots",
+      "leftTitle": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "rightTitle": "Theker haalt 85 miljoen op voor robots die zichzelf heruitvinden",
+      "combinedScore": 0.179,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.103,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-verplicht-passkeys-voor-google-ads-api",
+      "right": "google-ads-updates-en-annuleerknop-verplicht",
+      "leftTitle": "Google verplicht passkeys voor Google Ads API",
+      "rightTitle": "Google introduceert verplichte annuleerknop en nieuwe AI-functies in Ads",
+      "combinedScore": 0.179,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.16,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen",
+      "right": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "leftTitle": "Google Ads past target-based bidding aan bij budgetbeperkte campagnes",
+      "rightTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "combinedScore": 0.179,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.135,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-content-met-client-memory-beter-gegrond-in-markt",
+      "right": "middelmatige-ai-content-schadelijk-voor-merk",
+      "leftTitle": "AI-content met ‘client memory’ blijft dichter bij merk en campagne",
+      "rightTitle": "Middelmatige AI-content kan je merk schaden",
+      "combinedScore": 0.179,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.198,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "oracle-integreert-google-gemini-in-automatiseringsplatform",
+      "right": "google-integreert-meridian-in-analytics-360",
+      "leftTitle": "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+      "rightTitle": "Google voegt Meridian marketing mix modeling toe aan Analytics 360",
+      "combinedScore": 0.178,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.101,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "klantervaring-drijft-expert-weg-van-google-ads",
+      "right": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "leftTitle": "Klant die niet luisterde drijft expert weg bij Google Ads",
+      "rightTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "combinedScore": 0.178,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.196,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "right": "ai-agent-startup-haalt-100-miljoen-met-zichzelf",
+      "leftTitle": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "rightTitle": "AI-agent startup haalt 100 miljoen dollar op met eigen technologie",
+      "combinedScore": 0.176,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.153,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-integreert-meridian-in-analytics-360",
+      "right": "google-ads-introduceert-drie-ai-max-updates",
+      "leftTitle": "Google voegt Meridian marketing mix modeling toe aan Analytics 360",
+      "rightTitle": "Google Ads voegt drie AI Max-updates toe voor betere prestaties",
+      "combinedScore": 0.176,
+      "titleSimilarity": 0.214,
+      "contentSimilarity": 0.135,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "right": "evotrex-30-miljoen-voor-rv-met-hybride-stroom",
+      "leftTitle": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "rightTitle": "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+      "combinedScore": 0.175,
+      "titleSimilarity": 0.286,
+      "contentSimilarity": 0.116,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "europa-verspeelt-ai-kansen-door-een-kaart-te-spelen",
+      "right": "europa-moet-asml-inzetten-als-strategische-onderhandelingskaart",
+      "leftTitle": "Europa speelt pokeren met één kaart: de ASML-kaart",
+      "rightTitle": "Als Amerika AI afsluit, moet Europa ASML serieus nemen",
+      "combinedScore": 0.175,
+      "titleSimilarity": 0.091,
+      "contentSimilarity": 0.335,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-leert-van-verkoopgesprekken-met-30-miljoen",
+      "right": "india-ai-startup-sarvam-haalt-234-miljoen-op-met-hcltech-leidend",
+      "leftTitle": "AI leert van verkoopgesprekken met 30 miljoen dollar",
+      "rightTitle": "Indiase AI-startup Sarvam wordt unicorn na 234 miljoen dollar financering",
+      "combinedScore": 0.172,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.205,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "right": "yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk",
+      "leftTitle": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "rightTitle": "Yope haalt 12,3 miljoen op voor privénetwerk zonder algoritmen",
+      "combinedScore": 0.171,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.116,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "right": "neko-health-nieuwe-financieringsronde-700-miljoen",
+      "leftTitle": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "rightTitle": "Neko Health haalt opnieuw 700 miljoen op voor lichaamsscans",
+      "combinedScore": 0.168,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.108,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-analytics-campagne-diagnostiek-missing-parameters",
+      "right": "google-waarschuwt-voor-derde-partij-seo-tools",
+      "leftTitle": "Google Analytics waarschuwt voor ontbrekende campagneparameters",
+      "rightTitle": "Google waarschuwt tegen derde-partij SEO-tools en -advies",
+      "combinedScore": 0.167,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.103,
+      "bodyShingleSimilarity": 0.006,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "right": "passionfroot-15m-us-expansion",
+      "leftTitle": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "rightTitle": "Duits platform Passionfroot haalt $15 miljoen op voor Amerikaanse expansie",
+      "combinedScore": 0.166,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.163,
+      "bodyShingleSimilarity": 0.009,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-automatisch-conversiegebaseerde-audience-lists-activeren",
+      "right": "customer-match-voordeel-in-google-ads",
+      "leftTitle": "Google Ads activeert automatisch conversiegebaseerde klantlijsten",
+      "rightTitle": "Klantenbestand uploaden geeft voorsprong in Google Ads",
+      "combinedScore": 0.166,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.127,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-ads-ai-max-advertentieteksten-test",
+      "right": "ai-aangedreven-google-ads-verandert-ppc-rol",
+      "leftTitle": "Google Ads AI Max hielp vooral minder beheerde long-tailcampagnes",
+      "rightTitle": "AI in Google Ads: van zoekwoorden naar systeemontwerp",
+      "combinedScore": 0.165,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.125,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk",
+      "right": "ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc",
+      "leftTitle": "Yope haalt 12,3 miljoen op voor privénetwerk zonder algoritmen",
+      "rightTitle": "Investeerder steekt $500 miljoen in startups via eigen netwerk, zonder VC",
+      "combinedScore": 0.164,
+      "titleSimilarity": 0.231,
+      "contentSimilarity": 0.15,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "right": "ai-coding-startup-135m-series-a-palihapitiya",
+      "leftTitle": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "rightTitle": "AI-codegenerator haalt 135 miljoen op bij start Series A",
+      "combinedScore": 0.163,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.127,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-verplicht-passkeys-voor-google-ads-api",
+      "right": "google-ads-zichtbaar-in-ai-overviews",
+      "leftTitle": "Google verplicht passkeys voor Google Ads API",
+      "rightTitle": "Google Ads zichtbaarder maken in AI Overviews met feeds en signalen",
+      "combinedScore": 0.163,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.121,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-verplicht-passkeys-voor-google-ads-api",
+      "right": "google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen",
+      "leftTitle": "Google verplicht passkeys voor Google Ads API",
+      "rightTitle": "Google Ads past target-based bidding aan bij budgetbeperkte campagnes",
+      "combinedScore": 0.162,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.118,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees",
+      "right": "google-lanceert-prospects-mode-voor-nieuwe-klanten",
+      "leftTitle": "Beehiiv voegt AI en groepschat toe aan nieuwsbriefplatform",
+      "rightTitle": "Google voegt ‘nieuwe prospects’ toe aan klantwerving",
+      "combinedScore": 0.16,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.089,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees",
+      "right": "google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren",
+      "leftTitle": "Beehiiv voegt AI en groepschat toe aan nieuwsbriefplatform",
+      "rightTitle": "Google Analytics voegt bron-groepering en hostname-filter toe",
+      "combinedScore": 0.159,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.084,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-introduceert-ai-content-labels-in-asset-studio",
+      "right": "beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees",
+      "leftTitle": "Google voegt AI-contentlabels toe in Asset Studio",
+      "rightTitle": "Beehiiv voegt AI en groepschat toe aan nieuwsbriefplatform",
+      "combinedScore": 0.158,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.082,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-introduceert-ai-content-labels-in-asset-studio",
+      "right": "meta-invoert-onzichtbare-watermerken-voor-ai-content",
+      "leftTitle": "Google voegt AI-contentlabels toe in Asset Studio",
+      "rightTitle": "Meta voegt onzichtbare watermerken toe aan AI-beelden",
+      "combinedScore": 0.155,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.101,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "oracle-integreert-google-gemini-in-automatiseringsplatform",
+      "right": "beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees",
+      "leftTitle": "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+      "rightTitle": "Beehiiv voegt AI en groepschat toe aan nieuwsbriefplatform",
+      "combinedScore": 0.154,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.072,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees",
+      "right": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "leftTitle": "Beehiiv voegt AI en groepschat toe aan nieuwsbriefplatform",
+      "rightTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "combinedScore": 0.154,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.073,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "fusion-startups-7-miljard-dollar-investeringen",
+      "right": "ai-in-de-creative-industrie",
+      "leftTitle": "Fusion-startups trekken 7,1 miljard dollar aan investeringen aan",
+      "rightTitle": "AI neemt creatie over in reclame-industrie van 422 miljard dollar",
+      "combinedScore": 0.153,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.132,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "meta-invoert-onzichtbare-watermerken-voor-ai-content",
+      "right": "beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees",
+      "leftTitle": "Meta voegt onzichtbare watermerken toe aan AI-beelden",
+      "rightTitle": "Beehiiv voegt AI en groepschat toe aan nieuwsbriefplatform",
+      "combinedScore": 0.152,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.066,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "space-force-30-miljard-rocket-launches",
+      "right": "ai-in-de-creative-industrie",
+      "leftTitle": "Space Force koopt voor 30 miljard dollar aan raketlanceringen",
+      "rightTitle": "AI neemt creatie over in reclame-industrie van 422 miljard dollar",
+      "combinedScore": 0.152,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.091,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-verplicht-passkeys-voor-google-ads-api",
+      "right": "klantervaring-drijft-expert-weg-van-google-ads",
+      "leftTitle": "Google verplicht passkeys voor Google Ads API",
+      "rightTitle": "Klant die niet luisterde drijft expert weg bij Google Ads",
+      "combinedScore": 0.151,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.153,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "space-force-30-miljard-rocket-launches",
+      "right": "fusion-startups-7-miljard-dollar-investeringen",
+      "leftTitle": "Space Force koopt voor 30 miljard dollar aan raketlanceringen",
+      "rightTitle": "Fusion-startups trekken 7,1 miljard dollar aan investeringen aan",
+      "combinedScore": 0.151,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.127,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen",
+      "right": "evotrex-30-miljoen-voor-rv-met-hybride-stroom",
+      "leftTitle": "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+      "rightTitle": "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+      "combinedScore": 0.15,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.094,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-startup-ellis-ai-haalt-10-miljoen-seed-op-met-focus-op-privaat-krediet",
+      "right": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "leftTitle": "AI-startup Ellis AI haalt $10 miljoen seed op voor privaat krediet",
+      "rightTitle": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "combinedScore": 0.149,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.122,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "groq-haalt-650-miljoen-op-na-nvidia-deal",
+      "right": "theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots",
+      "leftTitle": "AI-chipmaker Groq haalt 650 miljoen op na Nvidia-deal",
+      "rightTitle": "Theker haalt 85 miljoen op voor robots die zichzelf heruitvinden",
+      "combinedScore": 0.148,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.081,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots",
+      "right": "evotrex-30-miljoen-voor-rv-met-hybride-stroom",
+      "leftTitle": "Theker haalt 85 miljoen op voor robots die zichzelf heruitvinden",
+      "rightTitle": "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+      "combinedScore": 0.148,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.12,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "meta-invoert-onzichtbare-watermerken-voor-ai-content",
+      "right": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "leftTitle": "Meta voegt onzichtbare watermerken toe aan AI-beelden",
+      "rightTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "combinedScore": 0.146,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.076,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "meta-invoert-onzichtbare-watermerken-voor-ai-content",
+      "right": "google-lanceert-prospects-mode-voor-nieuwe-klanten",
+      "leftTitle": "Meta voegt onzichtbare watermerken toe aan AI-beelden",
+      "rightTitle": "Google voegt ‘nieuwe prospects’ toe aan klantwerving",
+      "combinedScore": 0.146,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.078,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "pangram-verzamelt-9-miljoen-voor-ai-detectie-tools",
+      "right": "jedify-24-miljoen-voor-ai-agent-context",
+      "leftTitle": "Pangram haalt $9 miljoen op voor AI-detectietools",
+      "rightTitle": "JEDIFY haalt 24 miljoen dollar op voor AI-assistenten met bedrijfsspecifieke kennis",
+      "combinedScore": 0.145,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.112,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-als-keuzemaker-hoe-merken-voorkeursstatus-krijgen",
+      "right": "reddit-voor-merken-7-stappen-succes",
+      "leftTitle": "AI kiest nu al merken: zes stappen om voorkeursstatus te bereiken",
+      "rightTitle": "Zeven stappen om succesvol te adverteren op Reddit voor merken",
+      "combinedScore": 0.144,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.135,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "fusion-startups-7-miljard-dollar-investeringen",
+      "right": "salesforce-koopt-fin-voor-36-miljard",
+      "leftTitle": "Fusion-startups trekken 7,1 miljard dollar aan investeringen aan",
+      "rightTitle": "Salesforce koopt Fin voor 3,6 miljard dollar voor klantenservice-AI",
+      "combinedScore": 0.144,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.111,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "meta-invoert-onzichtbare-watermerken-voor-ai-content",
+      "right": "google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren",
+      "leftTitle": "Meta voegt onzichtbare watermerken toe aan AI-beelden",
+      "rightTitle": "Google Analytics voegt bron-groepering en hostname-filter toe",
+      "combinedScore": 0.143,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.069,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees",
+      "right": "apple-ios-27-automatische-wachtwoordvervanging",
+      "leftTitle": "Beehiiv voegt AI en groepschat toe aan nieuwsbriefplatform",
+      "rightTitle": "Apple voegt een-tik-wachtwoordvervanging toe in iOS 27",
+      "combinedScore": 0.143,
+      "titleSimilarity": 0.25,
+      "contentSimilarity": 0.075,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "rocket-lab-krijgt-toegang-tot-globale-satellietmarkt-met-8-miljard-deal",
+      "right": "fusion-startups-7-miljard-dollar-investeringen",
+      "leftTitle": "Rocket Lab koopt Iridium voor 8 miljard dollar en wordt satellietgigant",
+      "rightTitle": "Fusion-startups trekken 7,1 miljard dollar aan investeringen aan",
+      "combinedScore": 0.143,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.133,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-introduceert-ai-content-labels-in-asset-studio",
+      "right": "apple-ios-27-automatische-wachtwoordvervanging",
+      "leftTitle": "Google voegt AI-contentlabels toe in Asset Studio",
+      "rightTitle": "Apple voegt een-tik-wachtwoordvervanging toe in iOS 27",
+      "combinedScore": 0.142,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.106,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "passionfroot-15m-us-expansion",
+      "right": "endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen",
+      "leftTitle": "Duits platform Passionfroot haalt $15 miljoen op voor Amerikaanse expansie",
+      "rightTitle": "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+      "combinedScore": 0.139,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.124,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "oracle-integreert-google-gemini-in-automatiseringsplatform",
+      "right": "meta-invoert-onzichtbare-watermerken-voor-ai-content",
+      "leftTitle": "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+      "rightTitle": "Meta voegt onzichtbare watermerken toe aan AI-beelden",
+      "combinedScore": 0.138,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.057,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": true,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-coding-startup-135m-series-a-palihapitiya",
+      "right": "groq-haalt-650-miljoen-op-na-nvidia-deal",
+      "leftTitle": "AI-codegenerator haalt 135 miljoen op bij start Series A",
+      "rightTitle": "AI-chipmaker Groq haalt 650 miljoen op na Nvidia-deal",
+      "combinedScore": 0.137,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.117,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-coding-startup-135m-series-a-palihapitiya",
+      "right": "theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots",
+      "leftTitle": "AI-codegenerator haalt 135 miljoen op bij start Series A",
+      "rightTitle": "Theker haalt 85 miljoen op voor robots die zichzelf heruitvinden",
+      "combinedScore": 0.137,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.117,
+      "bodyShingleSimilarity": 0.006,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-coding-startup-135m-series-a-palihapitiya",
+      "right": "endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen",
+      "leftTitle": "AI-codegenerator haalt 135 miljoen op bij start Series A",
+      "rightTitle": "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+      "combinedScore": 0.136,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.089,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "groq-haalt-650-miljoen-op-na-nvidia-deal",
+      "right": "endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen",
+      "leftTitle": "AI-chipmaker Groq haalt 650 miljoen op na Nvidia-deal",
+      "rightTitle": "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+      "combinedScore": 0.136,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.09,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-coding-startup-135m-series-a-palihapitiya",
+      "right": "evotrex-30-miljoen-voor-rv-met-hybride-stroom",
+      "leftTitle": "AI-codegenerator haalt 135 miljoen op bij start Series A",
+      "rightTitle": "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+      "combinedScore": 0.135,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.088,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen",
+      "right": "theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots",
+      "leftTitle": "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+      "rightTitle": "Theker haalt 85 miljoen op voor robots die zichzelf heruitvinden",
+      "combinedScore": 0.135,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.087,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "jedify-24-miljoen-voor-ai-agent-context",
+      "right": "evotrex-30-miljoen-voor-rv-met-hybride-stroom",
+      "leftTitle": "JEDIFY haalt 24 miljoen dollar op voor AI-assistenten met bedrijfsspecifieke kennis",
+      "rightTitle": "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+      "combinedScore": 0.135,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.11,
+      "bodyShingleSimilarity": 0.014,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "passionfroot-15m-us-expansion",
+      "right": "evotrex-30-miljoen-voor-rv-met-hybride-stroom",
+      "leftTitle": "Duits platform Passionfroot haalt $15 miljoen op voor Amerikaanse expansie",
+      "rightTitle": "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+      "combinedScore": 0.134,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.111,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "groq-haalt-650-miljoen-op-na-nvidia-deal",
+      "right": "evotrex-30-miljoen-voor-rv-met-hybride-stroom",
+      "leftTitle": "AI-chipmaker Groq haalt 650 miljoen op na Nvidia-deal",
+      "rightTitle": "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+      "combinedScore": 0.134,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.082,
+      "bodyShingleSimilarity": 0.008,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "salesforce-koopt-fin-voor-36-miljard",
+      "right": "ai-in-de-creative-industrie",
+      "leftTitle": "Salesforce koopt Fin voor 3,6 miljard dollar voor klantenservice-AI",
+      "rightTitle": "AI neemt creatie over in reclame-industrie van 422 miljard dollar",
+      "combinedScore": 0.134,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.111,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren",
+      "right": "apple-ios-27-automatische-wachtwoordvervanging",
+      "leftTitle": "Google Analytics voegt bron-groepering en hostname-filter toe",
+      "rightTitle": "Apple voegt een-tik-wachtwoordvervanging toe in iOS 27",
+      "combinedScore": 0.134,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.084,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "apple-ios-27-automatische-wachtwoordvervanging",
+      "right": "google-lanceert-prospects-mode-voor-nieuwe-klanten",
+      "leftTitle": "Apple voegt een-tik-wachtwoordvervanging toe in iOS 27",
+      "rightTitle": "Google voegt ‘nieuwe prospects’ toe aan klantwerving",
+      "combinedScore": 0.134,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.084,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk",
+      "right": "evotrex-30-miljoen-voor-rv-met-hybride-stroom",
+      "leftTitle": "Yope haalt 12,3 miljoen op voor privénetwerk zonder algoritmen",
+      "rightTitle": "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+      "combinedScore": 0.133,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.102,
+      "bodyShingleSimilarity": 0.017,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen",
+      "right": "jedify-24-miljoen-voor-ai-agent-context",
+      "leftTitle": "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+      "rightTitle": "JEDIFY haalt 24 miljoen dollar op voor AI-assistenten met bedrijfsspecifieke kennis",
+      "combinedScore": 0.133,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.107,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "apple-ios-27-automatische-wachtwoordvervanging",
+      "right": "google-ads-introduceert-ingebouwd-lead-management-dashboard",
+      "leftTitle": "Apple voegt een-tik-wachtwoordvervanging toe in iOS 27",
+      "rightTitle": "Google Ads voegt leadmanagement toe aan dashboard",
+      "combinedScore": 0.133,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.082,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "meta-invoert-onzichtbare-watermerken-voor-ai-content",
+      "right": "apple-ios-27-automatische-wachtwoordvervanging",
+      "leftTitle": "Meta voegt onzichtbare watermerken toe aan AI-beelden",
+      "rightTitle": "Apple voegt een-tik-wachtwoordvervanging toe in iOS 27",
+      "combinedScore": 0.13,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.076,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "oracle-integreert-google-gemini-in-automatiseringsplatform",
+      "right": "apple-ios-27-automatische-wachtwoordvervanging",
+      "leftTitle": "Oracle voegt Google Gemini toe aan automatiseringsplatform",
+      "rightTitle": "Apple voegt een-tik-wachtwoordvervanging toe in iOS 27",
+      "combinedScore": 0.126,
+      "titleSimilarity": 0.222,
+      "contentSimilarity": 0.064,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk",
+      "right": "endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen",
+      "leftTitle": "Yope haalt 12,3 miljoen op voor privénetwerk zonder algoritmen",
+      "rightTitle": "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+      "combinedScore": 0.125,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.088,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "neko-health-nieuwe-financieringsronde-700-miljoen",
+      "right": "evotrex-30-miljoen-voor-rv-met-hybride-stroom",
+      "leftTitle": "Neko Health haalt opnieuw 700 miljoen op voor lichaamsscans",
+      "rightTitle": "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+      "combinedScore": 0.125,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.086,
+      "bodyShingleSimilarity": 0.008,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-startup-ellis-ai-haalt-10-miljoen-seed-op-met-focus-op-privaat-krediet",
+      "right": "endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen",
+      "leftTitle": "AI-startup Ellis AI haalt $10 miljoen seed op voor privaat krediet",
+      "rightTitle": "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+      "combinedScore": 0.124,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.086,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "ai-startup-ellis-ai-haalt-10-miljoen-seed-op-met-focus-op-privaat-krediet",
+      "right": "evotrex-30-miljoen-voor-rv-met-hybride-stroom",
+      "leftTitle": "AI-startup Ellis AI haalt $10 miljoen seed op voor privaat krediet",
+      "rightTitle": "Evotrex haalt 30 miljoen op voor autonoom rvsysteem",
+      "combinedScore": 0.124,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.084,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "neko-health-nieuwe-financieringsronde-700-miljoen",
+      "right": "endurance-energy-haalt-54-miljoen-op-om-oceaanwarmte-te-tappen",
+      "leftTitle": "Neko Health haalt opnieuw 700 miljoen op voor lichaamsscans",
+      "rightTitle": "Endurance Energy haalt $54 miljoen op voor oceaanwarmte-projecten",
+      "combinedScore": 0.123,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.082,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "vizio-mini-led-quantum-tv-budget-optie",
+      "right": "commodore-komt-terug-met-flipphone",
+      "leftTitle": "Vizio brengt goedkoopste quantum-dot tv van de markt voor 398 euro",
+      "rightTitle": "Commodore brengt retro flipphone op markt",
+      "combinedScore": 0.11,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.051,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "spacex-raketten-passen-tesla-in-mobiliteitsmarkt",
+      "right": "apple-siri-ai-update-2026",
+      "leftTitle": "SpaceX lanceert raketten als nieuwe speler in mobiliteit",
+      "rightTitle": "Apple lanceert nieuwe Siri AI na jaren achterlopen",
+      "combinedScore": 0.106,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.041,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "apple-ios-27-automatische-wachtwoordvervanging",
+      "right": "amerika-breidt-zwartelijst-chinese-techbedrijven-uit",
+      "leftTitle": "Apple voegt een-tik-wachtwoordvervanging toe in iOS 27",
+      "rightTitle": "VS voegt Alibaba, Baidu en BYD toe aan militaire zwartelijst",
+      "combinedScore": 0.106,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.04,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    },
+    {
+      "left": "beehiiv-lanceert-ai-copilot-en-chatfunctie-voor-abonnees",
+      "right": "amerika-breidt-zwartelijst-chinese-techbedrijven-uit",
+      "leftTitle": "Beehiiv voegt AI en groepschat toe aan nieuwsbriefplatform",
+      "rightTitle": "VS voegt Alibaba, Baidu en BYD toe aan militaire zwartelijst",
+      "combinedScore": 0.105,
+      "titleSimilarity": 0.2,
+      "contentSimilarity": 0.038,
+      "bodyShingleSimilarity": 0,
+      "sameCategory": false,
+      "sameSourceUrl": false
+    }
+  ]
+}

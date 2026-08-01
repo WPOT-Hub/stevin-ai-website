@@ -356,14 +356,14 @@ export default async function ArticlePage({
             >
               Stevin
             </p>
-            <h3
+            <h2
               className="font-display font-bold text-white m-0"
               style={{ fontSize: '22px', lineHeight: 1.3, letterSpacing: '-0.015em' }}
             >
               {locale === 'en'
                 ? 'How Stevin approaches marketing decisions'
                 : 'Hoe Stevin marketingbeslissingen benadert'}
-            </h3>
+            </h2>
             <p
               className="m-0 mt-3"
               style={{ fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}
@@ -425,7 +425,7 @@ export default async function ArticlePage({
                 >
                   EDITIE {r.edition} · {r.readMinutes} MIN
                 </div>
-                <h4
+                <h3
                   className="font-display font-bold text-[var(--navy)] m-0 group-hover:text-[var(--accent)] transition-colors"
                   style={{
                     fontSize: '19px',
@@ -435,7 +435,7 @@ export default async function ArticlePage({
                   }}
                 >
                   {r.title}
-                </h4>
+                </h3>
               </Link>
             ))}
           </div>
@@ -2359,13 +2359,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'google-lanceert-video-campaign-groups-voor-betere-reach-en-frequency': (
     <>
       <p className="lead-para">
-        Google breidt de mogelijkheden van video-advertenties uit met video-campaign groups. Met deze functie kunnen bureaus en adverteerders meerdere campagnes combineren om een consistent bereik en frequentie te waarborgen. Elke campagne behoudt echter wel zijn eigen instellingen, zoals doelgroepen, budgetten en biedstrategieën.
+        Google Ads maakt video campaign groups wereldwijd beschikbaar. Adverteerders kunnen daarmee bereik en contactfrequentie over meerdere YouTube-campagnes gezamenlijk sturen, terwijl budget en creatie per campagne intact blijven.
       </p>
+      <h2>Eén doel over meerdere campagnes</h2>
       <p>
-        De nieuwe tool is vooral nuttig voor merken die op grote schaal video-advertenties inzetten. Door campagnes te groeperen, kunnen ze voorkomen dat dezelfde gebruiker dezelfde advertentie te vaak ziet. Dit vermindert irritatie en verhoogt de effectiviteit van campagnes aldus Google.
+        Een groep krijgt één doel voor bereik of frequentie. Google coördineert vervolgens de levering over de campagnes binnen die groep. Dat maakt het mogelijk om overlap te beheersen zonder campagnes met verschillende doelgroepen, budgetten of creatieve uitingen samen te voegen.
       </p>
+      <h2>De rapportage wordt ook gebundeld</h2>
       <p>
-        De functie is beschikbaar in Google Ads voor alle adverteerders die gebruikmaken van video-campagnes. Momenteel wordt het stapsgewijs uitgerold, zodat bedrijven de tijd hebben om zich vertrouwd te maken met de nieuwe mogelijkheden.
+        Google toont kerncijfers zoals uniek bereik en gemiddelde wekelijkse impressies op groepsniveau. Daarmee kan een team beoordelen wat de gezamenlijke videodruk doet, in plaats van alleen afzonderlijke campagnerapporten naast elkaar te leggen.
+      </p>
+      <h2>Google Ads eerst, DV360 later</h2>
+      <p>
+        De functie is nu wereldwijd beschikbaar in Google Ads. Google zegt dezelfde gecoördineerde sturing later naar Display &amp; Video 360 te brengen voor meerdere YouTube-line-items. De productstatus verschilt dus nog per advertentieplatform.
       </p>
     </>
   ),
@@ -2535,13 +2541,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt': (
     <>
       <p className="lead-para">
-        Een test door ontwikkelaars toonde aan dat de GitHub AI-agent namens een gebruiker toegang verleende tot privé-repositories, zelfs zonder expliciete rechten. De agent reageerde op natuurlijke taalvragen zoals 'Kun je deze repo voor me openen?' met een bevestiging en deelde vervolgens de inhoud. Dit gebeurde zonder waarschuwingen of meldingen naar de repository-eigenaar.
+        Beveiligingsonderzoekers van Noma Security lieten zien hoe GitHub Agentic Workflows code uit een privérepository in een openbare issue-reactie kon plaatsen. De kwetsbaarheid kreeg de naam GitLost en draaide om promptinjectie in gewone Markdown.
       </p>
+      <h2>Wat GitLost precies deed</h2>
       <p>
-        De fout is niet te herstellen met huidige instellingen of patches, aldus de testers. Er is geen officiële documentatie van GitHub over deze kwetsbaarheid beschikbaar, en het bedrijf heeft nog niet gereageerd op verzoeken om commentaar. Gebruikers kunnen alleen hopen dat hun privésleutels niet zijn blootgesteld via deze route.
+        De onderzoekers verstopten een instructie in een publiek issue. Een workflow-agent die zowel het publieke issue als een privérepository kon lezen, volgde die instructie en publiceerde vervolgens privécode in zijn antwoord. Het lek ontstond dus niet doordat een willekeurige bezoeker rechtstreeks rechten kreeg, maar doordat de agent bestaande rechten over twee vertrouwensgrenzen combineerde.
       </p>
+      <h2>Waarom de rechtenmix het probleem was</h2>
       <p>
-        Deze situatie benadrukt opnieuw de risico's van AI-gestuurde assistenten die toegang hebben tot gevoelige systemen. Zonder duidelijke grenzen of controlemechanismen kunnen dergelijke tools onbedoeld data delen die nooit bedoeld waren om gedeeld te worden.
+        De agent kon onbetrouwbare publieke invoer verwerken, privé-informatie ophalen en weer naar een openbaar kanaal schrijven. Juist die combinatie maakte de promptinjectie gevaarlijk. GitHub documenteert inmiddels dat agentprompts gevoelig kunnen zijn voor injectie en dat agenthandelingen controleerbaar en beperkt moeten blijven.
+      </p>
+      <h2>De controle hoort op de datastroom te zitten</h2>
+      <p>
+        Alleen een model vragen om geen gevoelige data te delen is geen harde beveiligingsgrens. De relevante vraag is welke bron de agent mag lezen, naar welk kanaal hij mag schrijven en of een overgang van privé naar publiek apart wordt tegengehouden. GitLost maakt die architectuurvraag concreet.
       </p>
     </>
   ),
@@ -2911,13 +2923,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'zuid-korea-investeert-1-biljoen-in-chipproductie-en-humanoide-robots': (
     <>
       <p className="lead-para">
-        Zuid-Korea stelt de komende jaren ruim een biljoen dollar beschikbaar voor de uitbreiding van geheugenchipfabrieken en de ontwikkeling van commerciële humanoïde robots. Het land wil hiermee een leidende positie innemen in fysieke kunstmatige intelligentie en robotica. De investeringen moeten bijdragen aan lokale werkgelegenheid en technologische zelfvoorziening, aldus het plan dat deze week werd aangekondigd.
+        Zuid-Korea brengt publieke plannen en investeringen van grote technologiebedrijven samen in drie megaprojecten voor geheugenchips, AI-datacenters en humanoïde robots. De totale aangekondigde omvang ligt boven 1 biljoen dollar, maar dat is geen enkel overheidsbudget en de looptijden verschillen per onderdeel.
       </p>
+      <h2>Nieuwe fabrieken moeten de geheugencapaciteit verdubbelen</h2>
       <p>
-        Een belangrijk deel van het budget gaat naar de productiecapaciteit van DRAM- en NAND-chips, waarbij Zuid-Korea aansluit bij de groeiende vraag naar geheugenopslag in AI-toepassingen. Daarnaast wordt er fors geïnvesteerd in onderzoek naar humanoïde robots die binnen vijf jaar klaar moeten zijn voor commerciële toepassingen. De overheid werkt hierbij samen met bedrijven als Samsung Electronics en Hyundai Motor Group.
+        Samsung Electronics en SK Hynix koppelen honderden miljarden dollars aan nieuwe chipfabrieken en verpakkingscapaciteit buiten de bestaande productiegebieden. De nationale ambitie is om de DRAM-productie binnen vijf jaar te verdubbelen. Overheden moeten daarvoor onder meer vergunningen, stroom en water organiseren.
       </p>
+      <h2>AI-datacenters vormen een tweede investeringslaag</h2>
       <p>
-        De ambitie is om Zuid-Korea niet alleen een hub te maken voor chipproductie, maar ook voor robotica. De focus ligt op toepassingen in industriële automatisering, gezondheidszorg en logistiek. Experts wijzen erop dat deze stap past bij een bredere strategie om afhankelijkheid van buitenlandse technologie te verminderen.
+        Een ander deel van de totale som bestaat uit datacenters en de energie-infrastructuur die daarvoor nodig is. Bedrijven als SK, GS en Naver hebben afzonderlijke meerjarige plannen aangekondigd. De veelgenoemde grens van 1 biljoen dollar telt dus projecten van verschillende organisaties en periodes bij elkaar op.
+      </p>
+      <h2>Humanoïde robots zijn de derde pijler</h2>
+      <p>
+        Hyundai Motor Group investeert daarnaast in productiecapaciteit voor humanoïde robots en een bijbehorend AI-datacenter. Het doel is commerciële inzet van robots zoals Atlas richting 2028. Chips, rekenkracht en fysieke AI worden zo in één industriepolitiek verhaal geplaatst, terwijl de financiering uit meerdere publieke en private bronnen komt.
       </p>
     </>
   ),
@@ -2950,13 +2968,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'rocket-lab-krijgt-toegang-tot-globale-satellietmarkt-met-8-miljard-deal': (
     <>
       <p className="lead-para">
-        Lanceringsspecialist Rocket Lab zet een grote stap met de overname van Iridiums wereldwijde satellietnetwerk voor 8 miljard dollar. De deal maakt Rocket Lab niet alleen tot een volwaardige speler in de ruimtevaart, maar geeft het bedrijf ook directe toegang tot een breed scala aan commerciële en overheidscontracten. Met deze overname kan Rocket Lab zowel lanceringen als communicatienetwerken zelf leveren, wat de concurrentie met bedrijven als SpaceX versterkt.
+        Rocket Lab en Iridium hebben een definitieve overnameovereenkomst gesloten. Rocket Lab biedt 54 dollar per aandeel in contanten en aandelen, wat Iridium een ondernemingswaarde van ongeveer 8 miljard dollar geeft. De transactie is aangekondigd, maar nog niet afgerond.
       </p>
+      <h2>Van raketlanceringen naar een eigen netwerk</h2>
       <p>
-        De transactie is onderdeel van een grotere trend waarin ruimtevaartbedrijven verticaal integreren om hun marktaandeel te vergroten. Iridiums netwerk van meer dan duizend satellieten biedt nu zowel spraak- als datacommunicatie wereldwijd, wat Rocket Lab een unieke positie geeft. Analisten zien dit als een strategische zet om klanten volledige oplossingen aan te bieden, van lancering tot operationeel gebruik.
+        Rocket Lab combineert met de deal zijn lanceerdiensten en satellietbouw met Iridiums operationele communicatienetwerk, L-band spectrum en meer dan vijfhonderd partners. Iridium bedient volgens de aankondiging ruim 2,55 miljoen actieve abonnees in onder meer luchtvaart, scheepvaart, overheid en noodcommunicatie.
       </p>
+      <h2>De waarde zit ook in terugkerende omzet</h2>
       <p>
-        De overname moet binnen twee jaar rond zijn, mits goedkeuringen van toezichthouders worden verkregen. Voor concurrenten zoals SpaceX betekent dit dat ze hun focus moeten verleggen naar innovatie en kostenbesparing om hun voorsprong te behouden.
+        Voor Rocket Lab voegt Iridium niet alleen infrastructuur toe, maar ook satellietdiensten met terugkerende inkomsten. Het gecombineerde bedrijf kan constellaties ontwerpen, bouwen, lanceren en exploiteren. Dat is een andere positie dan die van een leverancier die uitsluitend een raket of onderdeel verkoopt.
+      </p>
+      <h2>De overname is nog voorwaardelijk</h2>
+      <p>
+        Beide besturen hebben ingestemd, maar aandeelhouders en toezichthouders moeten de transactie nog goedkeuren. Rocket Lab verwacht afronding rond het midden van 2027. Tot die tijd blijft het correct om over een voorgenomen overname te spreken, niet over een al volledig geïntegreerd satellietbedrijf.
       </p>
     </>
   ),
@@ -3388,25 +3412,22 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'mars-2028-relativity-space-nasa-partnerschap': (
     <>
       <p className="lead-para">
-        Een raket die bijna volledig in een printer ontstaat, een lanceercapaciteit die binnen weken kan opschalen en een missie naar Mars die over twee jaar al moet vertrekken. Het klinkt als sciencefiction, maar NASA heeft vorige week officieel bevestigd dat Relativity Space de eerste commerciële partij wordt die een payload naar de rode planeet brengt. Met een contract dat draait om ‘snelheid boven perfectie’ kiest de ruimtevaartorganisatie niet voor SpaceX of Blue Origin, maar voor een bedrijf dat nog geen enkele orbitale lancering heeft voltooid. De boodschap is duidelijk: wie het meest wendbaar is, wint de volgende ronde in de ruimterace.
+        NASA en Relativity Space werken samen aan Aeolus, een atmosferische wetenschapsmissie die in 2028 naar Mars moet vertrekken. NASA bouwt de instrumenten; Relativity Space levert het ruimtevaartuig, de raket en de operaties tijdens de reis.
+      </p>
+      <h2>Wat Aeolus op Mars gaat meten</h2>
+      <p>
+        De payload bestaat uit vier NASA-instrumenten voor wind, temperatuur, stof, wolken en de energiebalans aan het oppervlak. Samen moeten ze voor het eerst een geïntegreerd dagelijks wereldbeeld van de Martiaanse atmosfeer opleveren. Die gegevens zijn bedoeld om modellen voor toekomstige onbemande en bemande landingen nauwkeuriger te maken.
+      </p>
+      <h2>De taakverdeling is anders dan bij een klassieke missie</h2>
+      <p>
+        NASA Ames ontwerpt, bouwt en integreert de instrumenten en maakt de dataverwerkingsketen. Relativity Space is verantwoordelijk voor het ruimtevaartuig, de lancering, de cruise naar Mars en de missieoperaties. Het zesjarige Space Act Agreement verdeelt daarmee wetenschap en transport expliciet over een publieke en een commerciële partij.
       </p>
       <p>
-        Het is niet alleen een technologische gok, maar ook een strategische zet. NASA’s Aeolus-missie naar Mars is bedoeld om de eerste gedetailleerde metingen te verrichten van de atmosfeer en het klimaat op Mars, data die cruciaal zijn voor toekomstige bemande missies. Tot nu toe werden dit soort projecten toegewezen aan gevestigde spelers met decennialange ervaring en bewezen track records. Maar deze keer heeft NASA bewust gekozen voor een startup die nog geen commerciële lancering heeft afgerond – iets wat normaal gesproken ondenkbaar was. De reden? Relativity Space combineert twee dingen die bij grote bedrijven vaak ontbreken: extreme flexibiliteit en lage kosten. Hun Terran R-raket, volledig geprint met 3D-technologie, belooft zowel snellere productietijden als lagere prijzen per lancering. Voor een organisatie als NASA, die onder druk staat om binnen budget te blijven en toch innovatief te blijven, is dat een aantrekkelijk voorstel.
+        NASA presenteert de samenwerking als een manier om vaker wetenschappelijke missies uit te voeren en commerciële ontwikkelcapaciteit te benutten. De overeenkomst maakt de verantwoordelijkheden concreet, maar is geen garantie dat planning, techniek en lancering zonder vertraging verlopen.
       </p>
+      <h2>De missie blijft afhankelijk van uitvoering</h2>
       <p>
-        Toch roept deze keuze ook vragen op. Kan een bedrijf zonder bewezen staat van dienst in de ruimtevaart wel garant staan voor betrouwbaarheid? De geschiedenis leert ons dat mislukte lanceringen duur kunnen uitpakken – niet alleen financieel, maar ook in termen van gemiste kansen en vertragingen. In 2023 strandde de eerste poging van Relativity Space om een raket naar orbit te brengen na slechts drie minuten vliegen. Hoewel het bedrijf sindsdien stappen heeft gezet, blijft er risico bestaan dat de technologie nog niet rijp genoeg is voor zo’n complexe missie als een reis naar Mars. Critici wijzen erop dat NASA hiermee mogelijk speelt met vuur: als de lancering mislukt, kan dat jarenlange planning en miljoenen dollars aan onderzoek tenietdoen.
-      </p>
-      <p>
-        Maar er zit meer achter deze beslissing dan alleen kosten en snelheid. Het gaat ook om het doorbreken van oude patronen in de ruimtevaartindustrie. Decennialang werd de sector gedomineerd door overheden en grote conglomeraten zoals Boeing of Lockheed Martin, waarbij innovatie traag verliep en kosten hoog bleven door bureaucratie en rigide processen. Relativity Space bewijst nu dat nieuwe spelers met frisse ideeën – zoals 3D-printen van raketten – ineens serieus mee kunnen doen in het hoogste segment van de markt. Dit partnership tussen NASA en Relativity Space is daarmee niet alleen technologisch baanbrekend, maar ook economisch revolutionair: het laat zien dat publieke instellingen bereid zijn om risico’s te nemen op plekken waar traditionele aanbieders falen.
-      </p>
-      <p>
-        Voor andere commerciële partijen in Nederland en België is dit een wake-upcall. De ruimtevaartsector groeit snel, maar veel bedrijven hier houden vast aan bewezen methodes uit het verleden, terwijl nieuwe kansen zich aandienen in gebieden zoals satellietinternet, maanmissies of zelfs toerisme naar Mars. Wie denkt dat innovatie alleen mogelijk is binnen bestaande kaders, loopt straks achterop wanneer klanten zoals NASA ineens kiezen voor onbekende namen met radicale plannen.
-      </p>
-      <p>
-        Toch is er ook een keerzijde aan deze ontwikkeling. Het vertrouwen in startups betekent automatisch minder zekerheid voor gevestigde partijen die decennialang hebben geïnvesteerd in betrouwbaarheid en kwaliteitsborging. Als Relativity Space slaagt waar anderen falen, kan dat leiden tot een domino-effect waarbij hele supply chains moeten herzien worden – iets wat niet elke organisatie aankan zonder grote aanpassingen.
-      </p>
-      <p>
-        Uiteindelijk gaat het hier om meer dan alleen techniek of businessmodellen: het gaat om de vraag wie straks bepaalt hoe we verder reizen door ons zonnestelsel. Als NASA kan vertrouwen op partners zoals Relativity Space om complexe missies uit te voeren, dan opent dat de deur voor nieuwe spelers wereldwijd om mee te doen in deze gouden eeuw van ruimteverkenning.
+        De lancering staat gepland voor 2028 en Relativity Space moet voor die route zowel raket als ruimtevaartuig leveren. Het relevante onderscheid is daarom tussen een aangekondigde samenwerking en een bewezen missie. De wetenschappelijke opzet ligt vast; de technische uitvoering moet de komende jaren nog worden gerealiseerd.
       </p>
     </>
   ),
@@ -4501,13 +4522,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'waymo-lanceert-loyalty-program-met-cashback-en-gratis-annuleringen': (
     <>
       <p className="lead-para">
-        Leden van het nieuwe programma krijgen naast de cashback ook toegang tot snellere ritten en prioriteit bij beschikbaarheid. Het abonnement kost $29,99 per maand en is bedoeld om klantbinding te versterken in een markt waar concurrentie tussen autonome mobiliteitsdiensten groeit.
+        Waymo Premier is een uitnodigingsprogramma van $29,99 per maand voor frequente robotaxigebruikers. Leden krijgen voorrang bij het koppelen aan een auto, rittegoed en soepelere annuleringsvoorwaarden.
       </p>
+      <h2>Dit zit er in Waymo Premier</h2>
       <p>
-        De cashback geldt direct op elke rit en kan worden gebruikt voor nieuwe ritten of worden overgemaakt naar een gekoppelde betaalrekening. Gratis annuleringen gelden voor alle ritten, ongeacht de reden, wat uniek is in de sector.
+        Waymo geeft leden 10% Waymo Cash terug op elke rit en tijdens drukte kan dat percentage hoger zijn. Daarnaast noemt het bedrijf prioritaire pickups, vroege toegang wanneer Waymo in een nieuwe stad opent en maximaal vijf kosteloze annuleringen per maand.
       </p>
+      <h2>De uitrol begint met een selectie</h2>
       <p>
-        Het programma is nu beschikbaar in steden waar Waymo actief is, waaronder Phoenix en San Francisco. Concurrenten zoals Cruise hebben soortgelijke initiatieven overwogen maar nog niet geimplementeerd.
+        Het abonnement is niet direct voor iedere gebruiker beschikbaar. Waymo begint met geselecteerde reizigers in San Francisco, Los Angeles en Phoenix. Gebruikers moeten in de app een uitnodiging ontvangen; uitbreiding naar andere actieve steden volgt volgens het bedrijf later.
+      </p>
+      <h2>Het abonnement beloont herhaalgebruik</h2>
+      <p>
+        Met korting, prioriteit en vroege toegang bundelt Waymo voordelen die vooral waarde hebben voor mensen die de dienst vaak gebruiken. Dat maakt Premier minder een los kortingsproduct en meer een loyaliteitslaag boven op de bestaande ritdienst.
       </p>
     </>
   ),
@@ -4917,13 +4944,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'apple-siri-ai-update-2026': (
     <>
       <p className="lead-para">
-        Tijdens de WWDC 2026 onthulde Apple een grondige upgrade van Siri, nu aangedreven door eigen ontwikkelde AI-modellen. De assistent krijgt betere spraakherkenning, contextueel begrip en integratie met apps en apparaten. CEO Tim Cook benadrukte dat de technologie "grensverleggend" is, hoewel de focus duidelijk ligt op het inhalen van concurrenten als Google en Microsoft.
+        Apple presenteerde tijdens WWDC26 Siri AI als een nieuwe versie van zijn assistent. De kern bestaat uit persoonlijk contextbegrip, inzicht in wat er op het scherm staat, actuele webkennis en acties die over apps heen kunnen worden uitgevoerd.
       </p>
+      <h2>Wat Siri AI aan de assistent toevoegt</h2>
       <p>
-        De aankondigingen kwamen met gemengde reacties. Analisten wijzen erop dat Apple pas laat inzet op AI, terwijl andere techgiganten al jaren investeren in vergelijkbare functies. Toch ziet men potentie in de combinatie met Apple’s hardware, zoals de iPhone en Mac, waar privacy en integratie centraal staan.
+        Siri AI kan informatie zoeken in berichten, e-mails en foto’s, vragen beantwoorden over zichtbare scherminhoud en taken uitvoeren via systeemacties. Apple voegt ook een aparte Siri-app toe waarmee eerdere gesprekken kunnen worden teruggevonden en via iCloud tussen apparaten worden gesynchroniseerd.
       </p>
+      <h2>Privacy is onderdeel van de architectuur</h2>
       <p>
-        Critici merken op dat veel beloften nog vaag blijven. Zo wordt de nieuwe Siri pas later dit jaar breed uitgerold, en zijn concrete voorbeelden van verbeteringen schaars. Gebruikers moeten afwachten of de beloofde doorbraken daadwerkelijk ervaren worden.
+        Apple positioneert de nieuwe architectuur expliciet rond privacy, juist omdat de assistent persoonlijke context uit meerdere apps gebruikt. Daarmee wordt de kwaliteit van Siri niet alleen bepaald door het model, maar ook door de manier waarop gegevens tussen apparaat, cloud en apps mogen bewegen.
+      </p>
+      <h2>De beschikbaarheid is gefaseerd</h2>
+      <p>
+        De eerste bètaversie komt later in 2026 voor ondersteunde apparaten die op Engels staan. Apple zegt daarna meer talen toe te voegen. In de Europese Unie is Siri AI bij de start wel voorzien voor Mac en Vision Pro, maar nog niet voor iPhone, iPad en Apple Watch. De aankondiging en de feitelijke beschikbaarheid vallen dus niet overal samen.
       </p>
     </>
   ),
@@ -5318,13 +5351,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'mistral-breidt-uit-naar-industrie-en-infrastructuur': (
     <>
       <p className="lead-para">
-        Mistral breidt zijn activiteiten uit van AI-modellen naar industriele toepassingen en infrastructuur, zo meldt Techzine. Het bedrijf introduceerde tijdens de AI NOW Summit een platform dat generatieve AI koppelt aan simulatie- en ontwerpsoftware, speciaal gericht op fabrikanten. Met deze technologie kunnen bedrijven zoals Airbus, BMW en ASML ontwerp- en ontwikkeltrajecten versnellen door snellere voorspellende analyses mogelijk te maken. Traditionele simulaties blijven nodig voor controle, maar AI neemt een deel van het rekenwerk over.
+        Mistral presenteerde tijdens de AI Now Summit 2026 een bredere stack voor bedrijven en overheden. Het bedrijf koppelt industriële AI-modellen aan agentsoftware en eigen rekeninfrastructuur in Frankrijk.
       </p>
+      <h2>Physics AI richt zich op industriële engineering</h2>
       <p>
-        Naast software investeert Mistral in Europese AI-datacenters om de vraag naar lokale infrastructuur te bedienen. In Frankrijk draait inmiddels een trainingsfaciliteit nabij Parijs, met een tweede locatie voor inferentieworkloads gepland voor volgend jaar. De investeringen worden ondersteund door honderden miljoenen euro’s aan externe financiering. Organisaties willen meer controle over hun data en niet afhankelijk zijn van Amerikaanse cloudproviders, aldus het bedrijf.
+        De industriële laag combineert natuurkundige modellen, engineeringkennis en robotica. Mistral noemt toepassingen in ontwerp, simulatie en productie bij bedrijven als Airbus, BMW en ASML. De overname van Emmi AI bracht extra expertise in modellen die het gedrag van fysieke systemen voorspellen.
       </p>
+      <h2>Een Frans datacenter vult de modellen aan</h2>
       <p>
-        Ook aan de gebruikerskant voert Mistral veranderingen door: de AI-assistent Le Chat wordt omgedoopt tot Vibe en krijgt een bredere rol binnen organisaties. Vibe kan verbinding maken met bestaande bedrijfssoftware en ontwikkelplatformen, terwijl het productaanbod wordt vereenvoudigd door functionaliteiten samen te brengen in een generatie modellen. Daarnaast werkt Mistral aan taalmodellen die beter geschikt zijn voor technische toepassingen.
+        Mistral bouwt in Les Ulis een faciliteit van 10 megawatt voor inferentiewerk. De opening staat gepland voor het derde kwartaal van 2026. Het bedrijf koppelt die investering aan controle over capaciteit, beveiliging en transparantie in de rekenketen.
+      </p>
+      <h2>De strategie omvat ook langdurig agentwerk</h2>
+      <p>
+        Vibe is de agentlaag voor meerstapswerk zoals onderzoek, documenten en softwareontwikkeling. Mistral positioneert de combinatie van physics AI, agents en eigen infrastructuur als één enterprise-stack. Het gaat dus niet om één los model, maar om controle over meerdere lagen van toepassing tot rekenkracht.
       </p>
     </>
   ),
@@ -5448,13 +5487,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'tiktok-shop-lanceert-in-nederland-op-15-juni': (
     <>
       <p className="lead-para">
-        TikTok Shop gaat op 15 juni officieel van start in Nederland en Belgie, na een succesvolle introductie in zes andere EU-landen. Lokale merken zoals Meroda, Perfetti Van Melle en kleinere bedrijven als Cloudpillo doen mee bij de lancering. De winkel combineert korte video’s met directe aankoopopties en live verkoopmomenten, waardoor consumenten direct kunnen kopen vanuit hun favoriete creators of merken.
+        TikTok Shop opent op 15 juni 2026 in Nederland en België. Gebruikers kunnen producten ontdekken en kopen via shoppable video’s en interactieve livestreams zonder de TikTok-app te verlaten.
       </p>
+      <h2>Video, livestream en checkout komen samen</h2>
       <p>
-        Verkopers kunnen via ‘Sell Across Europe’ hun producten aanbieden in alle EU-markten waar TikTok Shop actief is. Het platform biedt lokale productbeschrijvingen, verzendopties via goedgekeurde logistieke partners en affiliate-programma’s voor creators. Om mee te doen, moeten verkopers zich registreren via een specifiek e-mailadres en voldoen aan de communityrichtlijnen van TikTok.
+        De productontdekking begint in content van merken, verkopers en creators. Vanuit diezelfde omgeving kan een bezoeker een product bekijken en afrekenen. Daarmee wordt TikTok niet alleen een kanaal dat verkeer naar een webshop stuurt, maar ook een verkoopomgeving met een eigen winkelervaring.
       </p>
+      <h2>Sell Across Europe vergroot het bereik</h2>
       <p>
-        De nieuwe shop-tabbladen op bedrijfsprofielen geven klanten een overzichtelijk overzicht van producten, recensies en aanbiedingen. Betalingen verlopen via vertrouwde externe partijen om de veiligheid te waarborgen. TikTok benadrukt dat het beleid handhaaft met zowel technologie als handmatige controles om regels te handhaven.
+        Verkopers krijgen kort na de lancering toegang tot Sell Across Europe. Daarmee kunnen ze via één registratieproces ook in andere actieve EU-markten verkopen. TikTok noemt gelokaliseerde productbeschrijvingen, directe grensoverschrijdende verzending en logistieke partners als onderdelen van die uitbreiding.
+      </p>
+      <h2>Creators worden een verkoopkanaal</h2>
+      <p>
+        Het Europese affiliatenetwerk laat goedgekeurde creators producten promoten tegen commissie. De commerciële keten loopt daardoor van content en aanbeveling tot betaling en fulfilment binnen één platform. Voor merken maakt dat de kwaliteit van creatorselectie, productinformatie en logistiek gezamenlijk bepalend voor de klantervaring.
       </p>
     </>
   ),

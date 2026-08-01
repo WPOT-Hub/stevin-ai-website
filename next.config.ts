@@ -1,7 +1,17 @@
 import type { NextConfig } from 'next'
 import createNextIntlPlugin from 'next-intl/plugin'
+import retiredArticles from './data/retired-articles.json'
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts')
+
+const journalConsolidationRedirects = retiredArticles.flatMap(({ from, to }) => [
+  { source: `/blog/${from}`, destination: `/blog/${to}`, permanent: true },
+  {
+    source: `/:locale(nl|en)/blog/${from}`,
+    destination: `/:locale(nl|en)/blog/${to}`,
+    permanent: true,
+  },
+])
 
 const nextConfig: NextConfig = {
   // Cache-Control voor static marketing-pages.
@@ -108,6 +118,7 @@ const nextConfig: NextConfig = {
       // Per duplicaat twee varianten: kaal /blog/-pad (NL default, geen
       // locale-prefix bij next-intl 'as-needed') plus /:locale/blog/-vorm
       // zodat /en/ (en eventuele /nl/) URLs ook redirecten.
+      ...journalConsolidationRedirects,
       {
         source: '/blog/openai-brengt-conversie-gerichte-ads-voor-chatgpt',
         destination: '/blog/openai-introduceert-conversiegericht-adverteren-in-chatgpt',

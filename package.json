@@ -11,12 +11,13 @@
     "validate:schema": "npx tsx scripts/validate-jsonld.ts",
     "faq:generate": "npx tsx scripts/generate-faqs.ts",
     "related:generate": "npx tsx scripts/generate-related.ts",
+    "journal:audit": "npx tsx scripts/audit-journal-content.ts",
     "vendor:enrich": "npx tsx scripts/generate-vendor-enrichments.ts",
     "check:header": "npx tsx scripts/check-header-contrast.ts",
     "check:sitemap": "npx tsx scripts/check-sitemap-canonicals.ts",
     "check:sitemap:structuur": "npx tsx scripts/check-sitemap-structuur.ts",
     "verify:production": "npx tsx scripts/verify-production-release.ts",
-    "prebuild": "npx tsx scripts/check-sitemap-structuur.ts",
+    "prebuild": "npx tsx scripts/check-sitemap-structuur.ts && npx tsx scripts/audit-journal-content.ts --check",
     "check:copy": "npx tsx scripts/check-copy.ts"
   },
   "dependencies": {

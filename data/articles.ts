@@ -8,6 +8,8 @@
  *   gebeurtenis + 1 paragraaf Stevin-duiding ("Wat dit betekent voor jou").
  *   Schrijf-regels: zie /docs/WRITING.md.
  */
+import retiredArticles from './retired-articles.json'
+
 export type ArticleFormat = 'editorial' | 'dispatch'
 
 export interface Article {
@@ -29,7 +31,7 @@ export interface Article {
   source?: { url: string; name: string }
 }
 
-export const articles: Article[] = [
+const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
     slug: 'google-ads-ai-max-advertentieteksten-test',
@@ -922,14 +924,15 @@ export const articles: Article[] = [
     edition: '341',
     category: 'Platform',
     title: "Google introduceert video-campaign groups voor betere controle over bereik en frequentie",
-    dek: "Adverteerders kunnen nu video-campagnes groeperen om bereik en frequentie beter af te stemmen zonder individuele instellingen te verliezen.",
+    dek: "Video campaign groups zijn wereldwijd beschikbaar in Google Ads en sturen bereik en frequentie over meerdere YouTube-campagnes als één geheel.",
     publishedAt: '2026-07-14',
-    readMinutes: 1,
+    updatedAt: '2026-08-02',
+    readMinutes: 2,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'PLATFORM',
     posterTopic: "Google introduceert video-campaign groups voor betere controle over bereik en frequentie",
-    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+    source: { url: 'https://blog.google/products/ads-commerce/video-campaign-groups/', name: 'Google Ads & Commerce' },
   },
   {
     slug: 'spacex-starship-13e-testvlucht-deze-week-met-starlink-satellieten',
@@ -1177,14 +1180,15 @@ export const articles: Article[] = [
     edition: '324',
     category: 'Tech',
     title: "GitHub AI-agent lekt privé-repositories bij simpele vraag",
-    dek: "Een GitHub AI-assistent blijkt privé-repositories te delen als een gebruiker vriendelijk om toegang vraagt, zonder dat er een technische oplossing of documentatie voor bestaat.",
+    dek: "Onderzoekers kregen GitHub Agentic Workflows via promptinjectie zover om code uit een privérepository in een openbare issue-reactie te plaatsen.",
     publishedAt: '2026-07-08',
-    readMinutes: 1,
+    updatedAt: '2026-08-02',
+    readMinutes: 2,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'TECH',
     posterTopic: "GitHub AI-agent lekt privé-repositories bij simpele vraag",
-    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+    source: { url: 'https://expertinsights.com/news/researchers-trick-misconfigured-github-ai-agent-into-leaking-a-private-repo', name: 'Expert Insights' },
   },
   {
     slug: 'github-ai-agent-lekt-privatie-repos',
@@ -1566,15 +1570,16 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '298',
     category: 'Technologie',
-    title: "Zuid-Korea investeert 1 biljoen dollar in chipfabrieken en humanoïde robots",
-    dek: "De Zuid-Koreaanse overheid zet fors in op eigen productie van geheugenchips en humanoïde robots, met een budget van ruim 1 biljoen dollar tot 2028.",
+    title: "Zuid-Korea bundelt 1 biljoen dollar voor chips, AI-datacenters en robots",
+    dek: "Overheid en techbedrijven bundelen megaprojecten voor geheugenchips, AI-datacenters en humanoïde robots; niet één overheidsbudget, maar meerdere publieke en private investeringen.",
     publishedAt: '2026-06-30',
-    readMinutes: 1,
+    updatedAt: '2026-08-02',
+    readMinutes: 2,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'TECHNOLOGIE',
-    posterTopic: "Zuid-Korea investeert 1 biljoen dollar in chipfabrieken en humanoïde robots",
-    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+    posterTopic: "Zuid-Korea bundelt 1 biljoen dollar voor chips, AI-datacenters en robots",
+    source: { url: 'https://arstechnica.com/ai/2026/06/south-korea-to-spend-1t-on-more-memory-chip-production-and-humanoid-robots/', name: 'Ars Technica' },
   },
   {
     slug: 'ai-coding-startup-135m-series-a-palihapitiya',
@@ -1627,14 +1632,15 @@ export const articles: Article[] = [
     edition: '294',
     category: 'Markt',
     title: "Rocket Lab koopt Iridium voor 8 miljard dollar en wordt satellietgigant",
-    dek: "Rocket Lab neemt het satellietnetwerk van Iridium over voor 8 miljard dollar, waarmee het een directe concurrent wordt van SpaceX in de ruimtevaartsector.",
+    dek: "Rocket Lab wil Iridium overnemen in een transactie met een ondernemingswaarde van circa 8 miljard dollar en combineert daarmee lanceringen, ruimtehardware en satellietcommunicatie.",
     publishedAt: '2026-06-30',
-    readMinutes: 1,
+    updatedAt: '2026-08-02',
+    readMinutes: 2,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'MARKT',
     posterTopic: "Rocket Lab koopt Iridium voor 8 miljard dollar en wordt satellietgigant",
-    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+    source: { url: 'https://rocketlabcorp.com/updates/rocket-lab-to-acquire-iridium-in-historic-deal-creating-a-fully-vertically-integrated-space-powerhouse-primed-for-growth/', name: 'Rocket Lab' },
   },
   {
     slug: 'turbine-unit-stroom-uit-kanalen',
@@ -2151,15 +2157,16 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '259',
     category: 'Markt',
-    title: "De Marsrace is begonnen: waarom NASA kiest voor een startup in plaats van de gevestigde orde",
-    dek: "NASA’s keuze voor Relativity Space om een Marsmissie te vliegen bewijst dat innovatie niet langer wacht op bureaucratie.",
+    title: "NASA kiest Relativity Space voor Aeolus-missie naar Mars in 2028",
+    dek: "NASA levert de Aeolus-instrumenten; Relativity Space verzorgt de raket, het ruimtevaartuig en de reis naar Mars binnen een publiek-private samenwerking.",
     publishedAt: '2026-06-20',
-    readMinutes: 3,
+    updatedAt: '2026-08-02',
+    readMinutes: 4,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'MARKT',
-    posterTopic: "De Marsrace is begonnen: waarom NASA kiest voor een startup in plaats van de gevestigde orde",
-    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+    posterTopic: "NASA kiest Relativity Space voor Aeolus-missie naar Mars in 2028",
+    source: { url: 'https://www.nasa.gov/news-release/nasa-announces-public-private-partnership-to-advance-mars-science/', name: 'NASA' },
   },
   {
     slug: 'film-over-sam-altman-dropt-door-amazon-mgm',
@@ -3351,15 +3358,16 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '179',
     category: 'Platform',
-    title: "Waymo introduceert loyalty-program met 10% cashback en gratis annuleringen",
-    dek: "Waymo start een betaald loyalty-program genaamd 'Waymo Premier' waarbij leden maandelijks $29,99 betalen voor 10% cashback en onbeperkt gratis ritten kunnen annuleren.",
+    title: "Waymo Premier kost $29,99 per maand en geeft 10% rittegoed",
+    dek: "Het betaalde robotaxi-abonnement combineert 10% Waymo Cash, voorrang bij drukte en maximaal vijf kosteloze annuleringen per maand.",
     publishedAt: '2026-06-12',
-    readMinutes: 1,
+    updatedAt: '2026-08-02',
+    readMinutes: 2,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'PLATFORM',
-    posterTopic: "Waymo introduceert loyalty-program met 10% cashback en gratis annuleringen",
-    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+    posterTopic: "Waymo Premier kost $29,99 per maand en geeft 10% rittegoed",
+    source: { url: 'https://waymo.com/blog/2026/06/waymo-premier/', name: 'Waymo' },
   },
   {
     slug: 'amazon-alexa-wordt-shopping-agent-en-advertentieplatform',
@@ -3907,14 +3915,15 @@ export const articles: Article[] = [
     edition: '142',
     category: 'Tech',
     title: "Apple lanceert nieuwe Siri AI na jaren achterlopen",
-    dek: "Apple introduceert een vernieuwde Siri met AI-kracht, maar blijft vooral achterstand inhalen ten opzichte van concurrenten.",
+    dek: "Siri AI krijgt persoonlijk contextbegrip, schermbewustzijn en app-acties; Apple bouwt de assistent rond een nieuwe privacy-architectuur en een gefaseerde uitrol.",
     publishedAt: '2026-06-09',
-    readMinutes: 1,
+    updatedAt: '2026-08-02',
+    readMinutes: 2,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'TECH',
     posterTopic: "Apple lanceert nieuwe Siri AI na jaren achterlopen",
-    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+    source: { url: 'https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/', name: 'Apple' },
   },
   {
     slug: 'tools-for-humanity-legt-medewerkers-ont',
@@ -4416,15 +4425,16 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '108',
     category: 'Platform',
-    title: "Mistral lanceert AI-platform voor industrie en Europese datacenters",
-    dek: "Het Franse Mistral introduceert een nieuw AI-platform voor industriele toepassingen en breidt uit met Europese datacenters om lokale data-controle te bieden.",
+    title: "Mistral bouwt een Europese AI-stack voor industrie en infrastructuur",
+    dek: "Mistral combineert physics AI voor industriële engineering met een eigen Frans datacenter om klanten meer grip te geven op modellen, data en rekenkracht.",
     publishedAt: '2026-06-02',
-    readMinutes: 1,
+    updatedAt: '2026-08-02',
+    readMinutes: 2,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'PLATFORM',
-    posterTopic: "Mistral lanceert AI-platform voor industrie en Europese datacenters",
-    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+    posterTopic: "Mistral bouwt een Europese AI-stack voor industrie en infrastructuur",
+    source: { url: 'https://mistral.ai/news/ai-now-summit-2026/', name: 'Mistral AI' },
   },
   {
     slug: 'mistral-ai-breidt-uit-naar-fysieke-wereld',
@@ -4536,15 +4546,16 @@ export const articles: Article[] = [
     format: 'dispatch' as const,
     edition: '100',
     category: 'Platform',
-    title: "TikTok Shop lanceert op 15 juni in Nederland en Belgie",
-    dek: "Vanaf 15 juni kunnen Nederlandse en Belgische ondernemers producten verkopen via TikTok Shop, met directe integratie in shoppable video’s en livestreams.",
+    title: "TikTok Shop lanceert op 15 juni in Nederland en België",
+    dek: "TikTok Shop brengt shoppable video’s, livestreams, affiliateverkoop en grensoverschrijdende logistiek vanaf 15 juni samen in Nederland en België.",
     publishedAt: '2026-05-31',
-    readMinutes: 1,
+    updatedAt: '2026-08-02',
+    readMinutes: 2,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
     posterTag: 'PLATFORM',
-    posterTopic: "TikTok Shop lanceert op 15 juni in Nederland en Belgie",
-    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+    posterTopic: "TikTok Shop lanceert op 15 juni in Nederland en België",
+    source: { url: 'https://newsroom.tiktok.com/tiktok-introduceert-tiktok-shop-in-nederland?lang=nl-NL', name: 'TikTok Newsroom' },
   },
   {
     slug: 'instagram-gaat-naar-connected-tv-wat-merken-nu-moeten-doen',
@@ -5695,6 +5706,15 @@ export const articles: Article[] = [
     posterTopic: 'MMM is geen rapport.',
   },
 ]
+
+const RETIRED_SLUGS = new Set(retiredArticles.map((article) => article.from))
+
+/**
+ * Alleen canonieke artikelen zijn publiek. De bronrecords blijven bewust in dit
+ * bestand staan zodat een consolidatie controleerbaar en via git herstelbaar is;
+ * permanente redirects staan centraal in retired-articles.json.
+ */
+export const articles: Article[] = allArticles.filter((article) => !RETIRED_SLUGS.has(article.slug))
 
 export function getArticle(slug: string) {
   return articles.find((a) => a.slug === slug)
