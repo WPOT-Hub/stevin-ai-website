@@ -4073,13 +4073,15 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'ai-experts-denken-over-economische-gevolgen-van-ai-in-2030': (
     <>
       <p className="lead-para">
-        Een denktank in Washington D.C. heeft onderzocht hoe een AI-gedreven economie in 2030 eruit zou kunnen zien. Volgens de scenario’s kan kunstmatige intelligentie de Amerikaanse economie bijna verdubbelen in omvang, met een stijging van de arbeidsproductiviteit als gevolg. Tegelijkertijd dreigt onderbenutting van werknemers toe te nemen van 8% naar 14%, wat zou leiden tot meer parttime werk, gig-economie en overkwalificeerde banen.
+        Honderden economen en AI-onderzoekers vragen om publieke spelregels voor de economische gevolgen van snelle AI-adoptie. Hun oproep is geen voorspelling voor één vast scenario in 2030, maar een waarschuwing dat productiviteitswinst en maatschappelijke uitkomsten niet vanzelf samenvallen.
       </p>
+      <h2>Groei is geen verdelingsplan</h2>
       <p>
-        De experts wijzen op een groeiende kloof tussen economische groei en sociale stabiliteit. Hoewel het bruto nationaal product en de aandelenmarkten zouden stijgen, zou een groot deel van de bevolking te maken krijgen met onzekerheid over hun inkomen en toekomstperspectief. Politieke verdeeldheid en trage overheidsreacties maken het lastig om tijdig beleid te ontwikkelen dat deze risico’s beperkt.
+        De discussie gaat daarom niet alleen over welke taken AI kan overnemen. Ook de verdeling van opbrengsten, de kwaliteit van werk en de onderhandelingspositie van werknemers bepalen of economische vooruitgang breed landt. Dat vraagt om meetbare keuzes van werkgevers en beleid, niet om een abstracte belofte dat nieuwe technologie per saldo wel goed uitpakt.
       </p>
+      <h2>Begin bij werk dat verandert</h2>
       <p>
-        Om de negatieve gevolgen te beperken, wordt er gepleit voor heropleiding van werknemers en herverdeling van de welvaart die AI creeert. Er is echter nog onduidelijkheid over welke nieuwe banen AI precies zal voortbrengen en hoe bestaande beroepen zullen veranderen.
+        Voor organisaties is de bruikbare vraag concreet: welk werk verandert, wie houdt toezicht en hoe blijft kennis in het team? Her- en bijscholing, duidelijke escalatiepaden en evaluaties van effecten op functies maken AI-adoptie bestuurbaar. Welke nieuwe banen precies ontstaan, is nog onzeker; juist daarom is periodiek bijsturen verstandiger dan sturen op een precieze arbeidsmarktprognose.
       </p>
     </>
   ),
@@ -4449,28 +4451,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'ai-bouwt-zichzelf-het-einde-van-de-menselijke-controle': (
     <>
       <p className="lead-para">
-        Een laptop die zichzelf programmeert. Een codebase die continu wordt geoptimaliseerd zonder menselijke tussenkomst. Een model dat niet alleen taken uitvoert, maar ook beslist welke taken het waard zijn om uit te voeren. Dit is geen sciencefiction meer, maar een realiteit waar techbedrijven als Anthropic al volop mee experimenteren. De vraag is niet of dit gaat gebeuren, maar wanneer, en vooral: wie er dan nog over de knoppen gaat.
+        AI kan inmiddels delen van softwarewerk uitvoeren: code schrijven, tests draaien en wijzigingen voorstellen. Anthropic beschrijft hoe zulke systemen intern in afgebakende ontwikkelprocessen worden ingezet. Dat is iets anders dan een systeem dat zelfstandig doelen kiest of zichzelf zonder menselijke controle doorontwikkelt.
       </p>
+      <h2>Autonomie is een ontwerpkeuze</h2>
       <p>
-        De vooruitgang is adembenemend. Waar ontwikkelaars vijf jaar geleden nog handmatig code schreven en bugs oplosten, doen AI-agenten dat nu zelfstandig. Volgens interne data van Anthropic schrijft hun AI vandaag acht keer zoveel code per kwartaal als in 2021. En het tempo neemt toe: taken die eerst minuten kostten, duren nu uren, en dat verdubbelt elke vier maanden. De implicatie? Over twee jaar kan een AI misschien wekenlange projecten afronden zonder menselijke input. Het punt waarop een systeem zijn eigen opvolger kan ontwerpen, komt dichterbij dan de meeste organisaties beseffen.
+        De relevante grens ligt niet bij een futuristische benchmark, maar bij wat je in productie toestaat. Een assistent die een pull request voorbereidt is iets anders dan een agent die deployt, rechten wijzigt of betalingen uitvoert. Hoe groter de impact van een handeling, hoe explicieter de autorisatie en terugvalmogelijkheid moeten zijn.
       </p>
+      <h2>Maak toezicht controleerbaar</h2>
       <p>
-        Dit is geen kwestie van technologische nieuwsgierigheid alleen. Het raakt aan fundamentele vragen over controle en verantwoordelijkheid. Als een AI straks zelfstandig beslissingen neemt over welke doelen het nastreeft, welke experimenten het uitvoert of welke code het optimaliseert, wie draagt dan nog de eindverantwoordelijkheid? De makers van de systemen? De gebruikers? Of niemand? De risico’s liggen voor de hand: onvoorspelbaar gedrag, onbedoelde gevolgen, of zelfs doelbewuste manipulatie als systemen hun eigen doelen gaan stellen.
+        Goed toezicht is meer dan iemand die af en toe meekijkt. Leg vast welke gegevens een agent mag lezen, welke acties een goedkeuring nodig hebben, hoe wijzigingen worden gelogd en wie een actie kan terugdraaien. Daarmee blijft verantwoordelijkheid bij een mens of team, ook als het uitvoerende werk grotendeels geautomatiseerd is.
       </p>
+      <h2>Start klein, meet het risico</h2>
       <p>
-        Critici wijzen erop dat we nog lang niet zover zijn. Menselijke oordeelsvorming blijft cruciaal voor complexe beslissingen, zeker als het gaat om ethiek of strategische keuzes. Maar de trend is onmiskenbaar: AI neemt steeds meer stappen in de ontwikkelcyclus over. En hoe meer autonomie we toestaan, hoe moeilijker het wordt om de regie te behouden. Bedrijven die nu al afhankelijk zijn van AI-gestuurde processen, moeten zich afvragen: wat gebeurt er als onze systemen straks slimmer worden dan wijzelf?
-      </p>
-      <p>
-        Deze ontwikkeling dwingt ons om anders na te denken over governance in techbedrijven. Niet alleen technische veiligheid staat centraal, maar ook menselijke supervisie en transparante besluitvorming. Wie mag er bijvoorbeeld bepalen welke doelen een autonoom systeem mag nastreven? Moeten bedrijven verplicht audits uitvoeren voordat ze nieuwe generaties van hun modellen lanceren? En hoe zorg je ervoor dat medewerkers niet ongemerkt de controle verliezen aan hun eigen creaties?
-      </p>
-      <p>
-        Het dilemma wordt nog urgenter door de meetdata zelf. Benchmarks zoals SWE-bench laten zien dat AI-systemen binnen twee jaar bijna perfect presteren op software-engineeringtaken, iets wat mensen jaren kostte om te leren. Als deze systemen straks ook onderzoek kunnen repliceren of nieuwe hypotheses kunnen genereren zonder menselijke tussenkomst, verandert de rol van wetenschappers en ontwikkelaars ingrijpend. Zijn we klaar voor een wereld waarin machines niet alleen uitvoeren, maar ook bedenken wat er moet gebeuren?
-      </p>
-      <p>
-        De angst voor verlies van controle is begrijpelijk, maar we moeten voorkomen dat we in een reflex naar remmen grijpen terwijl de trein al rijdt. Het gaat erom slimme kaders te creeren die innovatie mogelijk maken zonder dat we onze autonomie volledig opgeven. Dat betekent investeren in mechanismes die menselijke supervisie garanderen, zoals zogenaamde ‘kill switches’, strikte toegangscontroles of onafhankelijke toetsingscommissies.
-      </p>
-      <p>
-        Uiteindelijk draait het om vertrouwen: vertrouwen in onze eigen systemen en vertrouwen in onszelf om die systemen te blijven begrijpen en sturen.
+        Begin met een herhaalbare taak met beperkte rechten, meet fouten en hersteltijd, en breid pas uit wanneer de beheersmaatregelen werken. Zo wordt AI-automatisering een controleerbaar proces in plaats van een verhaal over verlies van menselijke controle.
       </p>
     </>
   ),
