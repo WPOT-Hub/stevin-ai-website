@@ -88,7 +88,7 @@ export default async function MarketingAutomationPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
           >
             {t('pain_h2')}
           </h2>
@@ -112,7 +112,7 @@ export default async function MarketingAutomationPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
           >
             {t('how_h2')}
           </h2>
@@ -142,7 +142,7 @@ export default async function MarketingAutomationPage({ params }: Props) {
               </p>
               <h2
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10"
-                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+                style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
               >
                 {t('usecases_h2')}
               </h2>

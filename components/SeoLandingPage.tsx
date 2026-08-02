@@ -74,7 +74,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
           >
             {page.pain.h2}
           </h2>
@@ -98,7 +98,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
           >
             {page.solution.h2}
           </h2>
@@ -133,7 +133,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
               </p>
               <h2
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10"
-                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+                style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
               >
                 {page.list.h2}
               </h2>
@@ -175,7 +175,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
         <div className="mx-auto max-w-[1200px]">
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-12 text-center"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
           >
             Veelgestelde vragen
           </h2>

@@ -18,6 +18,13 @@ eronder.** Dat bindt een kop aan de tekst die hij aankondigt.
 Aanleiding: de Journal-H2 stond op 32/800, hetzelfde gewicht als de H1.
 In de smalle kolom las elke tussenkop daardoor als een tweede titel.
 
+Besluit 2 aug 2026 (Koen, na live beoordeling): de landingssecties
+HOUDEN hun oorspronkelijke massa (48/800). Een verlaging naar 34/600 en
+40/700 is geprobeerd en viel weg tegen de rest van de pagina. De regel
+geldt dus letterlijk: alleen in de smalle leeskolom kalmeert de kop;
+in de brede kolom doet massa het werk. H2 "nooit zwaarder dan 600"
+geldt ALLEEN binnen .journal-body.
+
 ## De letter
 
 **InterDisplay voor alle koppen, InterVariable voor alle lopende tekst.**
@@ -41,7 +48,7 @@ Google Fonts-import toe.
 | H1 | hero | 64px | 700 | 1.05 | -0.035em | 0 / 24px |
 | H1 | pagina zonder hero | 48px | 700 | 1.08 | -0.03em | 0 / 20px |
 | H1 | Journal-titel | clamp(36,4.6vw,56) | 700 | 1.06 | -0.03em | 0 / 24px |
-| H2 | landing, dienst, product | 34px | 600 | 1.15 | -0.025em | 96px / 20px |
+| H2 | landing, dienst, product | clamp(30,3.4vw,48) | 800 | 1.08 | -0.03em | sectie-padding / 20px |
 | H2 | Journal-body | 27px | 600 | 1.25 | -0.02em | 48px / 16px |
 | H3 | subsectie, kaart | 21px | 600 | 1.30 | -0.01em | 32px / 8px |
 | H3 | Journal-body | 21px | 600 | 1.35 | -0.01em | 32px / 8px |
@@ -75,9 +82,9 @@ Google Fonts-import toe.
 - **Geen enkele heading-TAG wijzigen.** Dit is presentatie. De regels
   van de release-audit (precies een H1, drie H2's per Journal-dispatch,
   Article/Breadcrumb-schema) staan los hiervan en blijven gelden.
-- Gewicht 800/900 is voorbehouden aan de hero-H1 als daar ooit bewust
-  voor gekozen wordt; standaard is de ladder hierboven. H2 is nooit
-  zwaarder dan 600.
+- Binnen `.journal-body` is de H2 nooit zwaarder dan 600. Buiten de
+  Journal dragen sectiekoppen bewust massa (800), zie het besluit
+  hierboven.
 - Overshoot, optische correcties en per-pagina uitzonderingen: eerst
   hier vastleggen, dan bouwen.
 

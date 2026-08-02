@@ -308,7 +308,7 @@ const dashLight = <span className="inline-block w-6 h-px bg-accent opacity-60 fl
 const dashDark = <span className="inline-block w-6 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
 // Ladder-waarden, zie docs/TYPOGRAFIE.md. fontWeight hier wint bewust van de
 // font-extrabold-klassen die nog op de h2's staan.
-const h2Style = { fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15', fontWeight: 600 } as const
+const h2Style = { fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', fontWeight: 800 } as const
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params
@@ -795,10 +795,10 @@ export default async function HomePage({ params }: Props) {
                   <h2
                     className="font-display font-bold text-[var(--navy)] m-0 group-hover:text-[var(--accent)] transition-colors"
                     style={{
-                      fontSize: 'clamp(28px, 2.6vw, 34px)',
-                      lineHeight: '1.15',
-                      letterSpacing: '-0.025em',
-                      fontWeight: 600,
+                      fontSize: 'clamp(30px, 3.4vw, 48px)',
+                      lineHeight: '1.08',
+                      letterSpacing: '-0.03em',
+                      fontWeight: 800,
                       marginBottom: '20px',
                     }}
                   >
@@ -873,7 +873,7 @@ export default async function HomePage({ params }: Props) {
           <div className="flex justify-between items-end gap-12 mb-12 flex-col lg:flex-row">
             <div>
               <p className={eyebrowLight}>{dashLight}{c.faq_eyebrow}</p>
-              <h2 className="font-display font-extrabold text-primary m-0" style={{ fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15', fontWeight: 600 }}>
+              <h2 className="font-display font-extrabold text-primary m-0" style={{ fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', fontWeight: 800 }}>
                 {c.faq_h2}
               </h2>
             </div>
@@ -892,7 +892,7 @@ export default async function HomePage({ params }: Props) {
           <div className="flex items-end justify-between gap-12 flex-col lg:flex-row">
             <h2
               className="font-display font-extrabold text-white m-0"
-              style={{ fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em', fontWeight: 600, maxWidth: '15ch' }}
+              style={{ fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em', fontWeight: 800, maxWidth: '15ch' }}
             >
               {c.closing_l1}<br />
               <span className="text-[#5DA3FF]">{c.closing_l2}</span>

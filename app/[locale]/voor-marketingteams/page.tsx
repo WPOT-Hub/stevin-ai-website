@@ -103,7 +103,7 @@ export default async function MarketingPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
           >
             {t('pain_h2')}
           </h2>
@@ -127,7 +127,7 @@ export default async function MarketingPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
           >
             {t('features_h2')}
           </h2>
@@ -158,7 +158,7 @@ export default async function MarketingPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
           >
             {t('audiences_h2')}
           </h2>
@@ -185,7 +185,7 @@ export default async function MarketingPage({ params }: Props) {
             <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('dash_eyebrow')}
           </p>
-          <h2 className="font-display font-extrabold text-primary m-0 mb-5" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15', maxWidth: '20ch' }}>
+          <h2 className="font-display font-extrabold text-primary m-0 mb-5" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '20ch' }}>
             {t('dash_h2')}
           </h2>
           <p className="text-muted leading-[1.65] mb-10" style={{ fontSize: '16px', maxWidth: '620px' }}>
@@ -215,7 +215,7 @@ export default async function MarketingPage({ params }: Props) {
               </p>
               <h2
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10"
-                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+                style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
               >
                 {t('usecases_h2')}
               </h2>

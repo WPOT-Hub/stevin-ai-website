@@ -117,7 +117,7 @@ export default async function MultiMarketPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('problem_eyebrow')}
           </p>
-          <h2 className="font-display font-bold text-primary m-0 mb-8" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em', maxWidth: '20ch' }}>
+          <h2 className="font-display font-bold text-primary m-0 mb-8" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em', maxWidth: '20ch' }}>
             {t('problem_title')}
           </h2>
           <p className="font-display font-bold text-primary text-[22px] leading-[1.4] mb-6" style={{ maxWidth: '40ch' }}>
@@ -140,7 +140,7 @@ export default async function MultiMarketPage({ params }: Props) {
               <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
               {t('solution_eyebrow')}
             </p>
-            <h2 className="font-display font-bold text-primary m-0" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em', maxWidth: '18ch' }}>
+            <h2 className="font-display font-bold text-primary m-0" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em', maxWidth: '18ch' }}>
               {t('solution_title')}
             </h2>
           </div>
@@ -206,7 +206,7 @@ export default async function MultiMarketPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('compare_eyebrow')}
           </p>
-          <h2 className="font-display font-bold text-primary m-0 mb-6" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em', maxWidth: '20ch' }}>
+          <h2 className="font-display font-bold text-primary m-0 mb-6" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em', maxWidth: '20ch' }}>
             {t('compare_title')}
           </h2>
           <p className="text-[#2A3A54] leading-[1.6] mb-12" style={{ fontSize: '17px', maxWidth: '60ch' }}>
@@ -247,7 +247,7 @@ export default async function MultiMarketPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('get_eyebrow')}
           </p>
-          <h2 className="font-display font-bold text-primary m-0 mb-12" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em', maxWidth: '20ch' }}>
+          <h2 className="font-display font-bold text-primary m-0 mb-12" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em', maxWidth: '20ch' }}>
             {t('get_title')}
           </h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-5">
@@ -268,7 +268,7 @@ export default async function MultiMarketPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('connects_eyebrow')}
           </p>
-          <h2 className="font-display font-bold text-white m-0 mb-5" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em', maxWidth: '24ch' }}>
+          <h2 className="font-display font-bold text-white m-0 mb-5" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em', maxWidth: '24ch' }}>
             {t('connects_title')}
           </h2>
           <p className="text-white/60 leading-[1.6] mb-14" style={{ fontSize: '16px', maxWidth: '58ch' }}>
@@ -316,7 +316,7 @@ export default async function MultiMarketPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('pilot_eyebrow')}
           </p>
-          <h2 className="font-display font-bold text-primary m-0 mb-12" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em', maxWidth: '18ch' }}>
+          <h2 className="font-display font-bold text-primary m-0 mb-12" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em', maxWidth: '18ch' }}>
             {t('pilot_title')}
           </h2>
 
@@ -349,7 +349,7 @@ export default async function MultiMarketPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('proof_eyebrow')}
           </p>
-          <h2 className="font-display font-bold text-primary m-0 mb-6" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em' }}>
+          <h2 className="font-display font-bold text-primary m-0 mb-6" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em' }}>
             {t('proof_title')}
           </h2>
 
@@ -385,7 +385,7 @@ export default async function MultiMarketPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('comp_eyebrow')}
           </p>
-          <h2 className="font-display font-bold text-primary m-0 mb-10" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em', maxWidth: '24ch' }}>
+          <h2 className="font-display font-bold text-primary m-0 mb-10" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em', maxWidth: '24ch' }}>
             {t('comp_title')}
           </h2>
           <div className="space-y-5 mb-10" style={{ maxWidth: '62ch' }}>
@@ -412,7 +412,7 @@ export default async function MultiMarketPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('stevin_eyebrow')}
           </p>
-          <h2 className="font-display font-bold text-white m-0 mb-10" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em' }}>
+          <h2 className="font-display font-bold text-white m-0 mb-10" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em' }}>
             {t('stevin_title')}
           </h2>
           <p className="text-white/75 leading-[1.65] mb-6" style={{ fontSize: '18px' }}>
@@ -433,7 +433,7 @@ export default async function MultiMarketPage({ params }: Props) {
       {/* Final CTA, surface */}
       <section className="bg-surface" style={{ padding: '128px 24px' }}>
         <div className="mx-auto max-w-[900px] text-center">
-          <h2 className="font-display font-extrabold text-primary m-0 mb-8" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em' }}>
+          <h2 className="font-display font-extrabold text-primary m-0 mb-8" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em' }}>
             {t('cta_title')}
           </h2>
           <p className="text-[#2A3A54] leading-[1.5]" style={{ fontSize: '19px' }}>
@@ -462,7 +462,7 @@ export default async function MultiMarketPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('faq_eyebrow')}
           </p>
-          <h2 className="font-display font-bold text-primary m-0 mb-12" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em' }}>
+          <h2 className="font-display font-bold text-primary m-0 mb-12" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em' }}>
             {t('faq_title')}
           </h2>
 

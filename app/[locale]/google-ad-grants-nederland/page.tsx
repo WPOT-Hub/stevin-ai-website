@@ -129,7 +129,7 @@ export default async function GoogleAdGrantsNederlandPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary mb-8"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
           >
             Veel non-profits laten Google Ad Grants liggen.
           </h2>
@@ -150,7 +150,7 @@ export default async function GoogleAdGrantsNederlandPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary mb-12"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
           >
             Van eligibility-check tot eerste resultaten.
           </h2>
@@ -182,7 +182,7 @@ export default async function GoogleAdGrantsNederlandPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary mb-8"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
           >
             Wat Google verwacht.
           </h2>
@@ -238,7 +238,7 @@ export default async function GoogleAdGrantsNederlandPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary mb-6"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
           >
             Laat Stevin je aanvraag voorbereiden.
           </h2>
@@ -263,7 +263,7 @@ export default async function GoogleAdGrantsNederlandPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary mb-10"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
           >
             Wat je moet weten over Google Ad Grants.
           </h2>

@@ -76,7 +76,7 @@ export default async function ApplyPage({ params }: Props) {
       {/* VERWACHTING */}
       <section className="bg-white" style={{ padding: '0 24px 110px' }}>
         <div className="mx-auto max-w-[680px]">
-          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-6" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
+          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-6" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}>
             {c.afterH}
           </h2>
           <div className="space-y-5">

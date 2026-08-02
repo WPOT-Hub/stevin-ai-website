@@ -97,7 +97,7 @@ export default async function BedrijvenPage({ params }: Props) {
       {/* INTRO */}
       <section className="bg-surface" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[760px]">
-          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-6" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
+          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-6" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}>
             {c.introH}
           </h2>
           <div className="space-y-5">
@@ -111,7 +111,7 @@ export default async function BedrijvenPage({ params }: Props) {
       {/* HOE WE HELPEN */}
       <section className="bg-white" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[760px]">
-          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-5" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
+          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-5" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}>
             {c.helpH}
           </h2>
           <p className="text-[17px] text-muted leading-[1.7] mb-8">{c.helpIntro}</p>
@@ -127,7 +127,7 @@ export default async function BedrijvenPage({ params }: Props) {
       {/* SAMENWERKINGEN */}
       <section className="bg-surface" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1120px]">
-          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-12" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
+          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-12" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}>
             {c.samenH}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden">
@@ -144,7 +144,7 @@ export default async function BedrijvenPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-primary text-center" style={{ padding: '110px 24px' }}>
         <div className="mx-auto max-w-[760px]">
-          <h2 className="font-display font-extrabold text-white tracking-[-0.025em] mb-5" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
+          <h2 className="font-display font-extrabold text-white tracking-[-0.025em] mb-5" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}>
             {c.ctaH}
           </h2>
           <p className="text-white/55 leading-[1.6] mb-9 mx-auto" style={{ fontSize: '18px', maxWidth: '460px' }}>

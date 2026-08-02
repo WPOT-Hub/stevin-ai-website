@@ -179,13 +179,13 @@ export default async function ProgrammaPage({ params }: Props) {
       <section className="bg-white" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1120px] grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-5" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
+            <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-5" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}>
               {c.werkwijzeH}
             </h2>
             <p className="text-[17px] text-muted leading-[1.7]">{c.werkwijze}</p>
           </div>
           <div>
-            <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-6" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
+            <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-6" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}>
               {c.selectieH}
             </h2>
             <ul className="space-y-3">
@@ -205,7 +205,7 @@ export default async function ProgrammaPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-primary text-center" style={{ padding: '110px 24px' }}>
         <div className="mx-auto max-w-[760px]">
-          <h2 className="font-display font-extrabold text-white tracking-[-0.025em] mb-5" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
+          <h2 className="font-display font-extrabold text-white tracking-[-0.025em] mb-5" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}>
             {c.ctaH}
           </h2>
           <p className="text-white/55 leading-[1.6] mb-9 mx-auto" style={{ fontSize: '18px', maxWidth: '520px' }}>

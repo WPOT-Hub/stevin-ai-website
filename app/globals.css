@@ -186,10 +186,13 @@ h1, h2, h3 {
   text-wrap: balance;
 }
 .h-section {
-  font-size: 34px;
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
+  /* 2 aug, besluit Koen: de landingssecties houden hun oorspronkelijke
+     maat en massa. In de brede kolom mag gewicht het werk doen; alleen
+     de Journal-leeskolom staat rustig op 27/600 (docs/TYPOGRAFIE.md). */
+  font-size: clamp(30px, 3.4vw, 48px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
   text-wrap: balance;
 }
 .h-sub {

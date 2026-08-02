@@ -281,7 +281,7 @@ export default async function SocialMediaUitbestedenPage({ params }: Props) {
       {/* FAQ */}
       <section className="bg-surface" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1000px]">
-          <h2 className="font-display font-extrabold text-primary m-0 mb-10" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15' }}>
+          <h2 className="font-display font-extrabold text-primary m-0 mb-10" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}>
             {c.faq_h2}
           </h2>
           <FAQAccordion faqs={[...c.faqs]} />
@@ -291,7 +291,7 @@ export default async function SocialMediaUitbestedenPage({ params }: Props) {
       {/* Slot */}
       <section className="bg-primary" style={{ padding: '96px 24px 112px' }}>
         <div className="mx-auto max-w-[1200px] flex items-end justify-between gap-12 flex-col lg:flex-row">
-          <h2 className="font-display font-extrabold text-white m-0" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em', maxWidth: '18ch' }}>
+          <h2 className="font-display font-extrabold text-white m-0" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', lineHeight: '1.08', letterSpacing: '-0.03em', maxWidth: '18ch' }}>
             {c.closing_l1}
           </h2>
           <div className="flex flex-col items-start lg:items-end gap-5">

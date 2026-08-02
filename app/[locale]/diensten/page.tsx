@@ -126,7 +126,7 @@ export default async function DienstenPage({ params }: Props) {
               </p>
               <h2
                 className="font-display font-extrabold text-primary m-0"
-                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15', maxWidth: '720px' }}
+                style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '720px' }}
               >
                 {t('tracks_h2')}
               </h2>
@@ -217,7 +217,7 @@ export default async function DienstenPage({ params }: Props) {
 
           <h2
             className="font-display font-extrabold text-white mb-11"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15', maxWidth: '880px' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '880px' }}
           >
             {t('closing_h2')}
           </h2>

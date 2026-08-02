@@ -97,7 +97,7 @@ export default async function AuditPage({ params }: Props) {
               </p>
               <h2
                 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
-                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+                style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
               >
                 {t('signals_h2')}
               </h2>
@@ -169,7 +169,7 @@ export default async function AuditPage({ params }: Props) {
               </p>
               <h2
                 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
-                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
+                style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
               >
                 {t('form_h2_line1')}<br />{t('form_h2_line2')}<br />
                 <span className="text-accent">{t('form_h2_line3')}</span>

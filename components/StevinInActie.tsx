@@ -287,7 +287,7 @@ export default function StevinInActie() {
           </p>
           <h2
             className="font-display font-extrabold text-white m-0 mb-6"
-            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15' }}
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
           >
             {copy.h2Line1}
             <br />
