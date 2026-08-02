@@ -2044,13 +2044,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'openai-vrees-open-weight-modellen': (
     <>
       <p className="lead-para">
-        OpenAI ziet Chinese open-weight taalmodellen als een bedreiging voor de eigen marktpositie en pleit voor restricties, aldus een interne memo die vorige week uitlekte. De modellen, zoals Qwen van Alibaba of GLM van Zhipu AI, worden gratis gedeeld en kunnen lokaal draaien zonder afhankelijkheid van Amerikaanse cloudproviders. Dat maakt ze moeilijk te reguleren en te controleren op veiligheidsrisico’s, zo stelt OpenAI in het document.
+        De snelle opkomst van Chinese open-weight modellen heeft het debat over AI-beleid op scherp gezet. TechCrunch beschrijft hoe de discussie niet alleen over veiligheid gaat, maar ook over wat goedkopere, lokaal draaiende modellen betekenen voor bedrijven die veel investeren in gesloten modellen en API’s.
       </p>
+      <h2>Open-weight is iets anders dan ongereguleerd</h2>
       <p>
-        De vrees van OpenAI lijkt vooral commercieel gedreven: open-source modellen ondermijnen de noodzaak om dure API-abonnementen af te nemen. Volgens analisten bij Goldman Sachs kan dit leiden tot een prijsoorlog waarbij de marges op generatieve AI-diensten verder dalen. Tegelijkertijd waarschuwen tech-experts dat volledige openheid ook nieuwe risico’s met zich meebrengt, zoals het gebruik voor desinformatie of cyberaanvallen.
+        Open-weight betekent dat modelgewichten beschikbaar zijn om zelf te draaien of aan te passen. Dat zegt op zichzelf weinig over waar een organisatie het model host, welke data erin gaan of welke beveiligingsmaatregelen zij kiest. Die vragen verdienen een aparte beoordeling, in plaats van een snelle gelijkstelling van open met onveilig.
       </p>
+      <h2>De economische prikkel is reëel</h2>
       <p>
-        De discussie raakt aan een breder debat over de balans tussen innovatie en controle in de AI-sector. Terwijl de VS overweegt om importverboden of exportbeperkingen in te voeren, pleiten Europese beleidsmakers juist voor meer transparantie en open standaarden. China zelf stimuleert actief de ontwikkeling van open-weight modellen als onderdeel van zijn strategie om technologische onafhankelijkheid te bereiken.
+        Als een team een bruikbaar model op eigen infrastructuur kan draaien, verschuift de onderhandelingspositie tegenover aanbieders van gesloten API’s. Dat kan kosten en afhankelijkheid verlagen, maar brengt ook verantwoordelijkheid mee voor evaluatie, updates, logging en toegangsbeheer. De concurrentievraag en de veiligheidsvraag lopen dus door elkaar, maar zijn niet hetzelfde.
+      </p>
+      <h2>Wat een marketingteam hiermee moet</h2>
+      <p>
+        Kies een model niet op geopolitieke krantenkoppen alleen. Leg voor elke toepassing vast welke gegevens het model ziet, waar verwerking plaatsvindt, wie de output controleert en wat er gebeurt als een leverancier of modelversie verandert. Voor klantcommunicatie en campagnecontent blijft menselijke review de grens; een goedkoper model maakt die verantwoordelijkheid niet kleiner.
       </p>
     </>
   ),
@@ -2111,13 +2117,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'spacex-starship-lancering-geannuleerd-door-motorproblemen': (
     <>
       <p className="lead-para">
-        Tijdens de countdown voor de lancering van Starship op donderdagavond bleven enkele van de 33 Raptor-motoren in de eerste trap niet starten. Dat maakte een veilige vlucht onmogelijk, aldus SpaceX. Het bedrijf startte direct met het leegpompen van brandstof en oxidatiemiddel uit de raket om verdere risico’s te voorkomen.
+        SpaceX brak op 16 juli een Starship-lancering vlak voor vertrek af nadat niet alle motoren ontbrandden. Associated Press meldde dat de automatische lanceersequentie de raket op het platform hield en dat het team daarna de brandstof afvoerde. Dat is precies het soort veiligheidsstop waarvoor zo’n systeem bestaat.
       </p>
+      <h2>Een afgebroken lancering is niet hetzelfde als een mislukte vlucht</h2>
       <p>
-        Een nieuwe lanceerpoging wordt binnen enkele dagen verwacht, maar hangt af van de oorzaak van het probleem en reparaties. SpaceX benadrukt dat dergelijke vertragingen normaal zijn in de testfase van complexe ruimtevaartuigen. De vorige poging om Starship in een baan om de aarde te brengen mislukte ook al in april vorig jaar.
+        Een abort voor liftoff betekent dat de veiligheidslogica ingreep voordat het voertuig vertrok. Dat zegt nog niet wat de precieze oorzaak was of hoe snel een volgend venster volgt. De juiste lezing is daarom: de start werd veilig afgebroken, niet dat een vlucht “bijna lukte” of dat het probleem al opgelost is.
       </p>
+      <h2>Complexe systemen vragen om terughoudende duiding</h2>
       <p>
-        Het Starship-programma is cruciaal voor NASA’s maanmissies en Elon Musks ambitie om Mars te koloniseren. Een succesvolle vlucht zou de weg vrijmaken voor regelmatige ruimtevluchten met hoge capaciteit.
+        Bij een testprogramma veranderen hardware, procedures en planning voortdurend. Een nieuwsbericht moet onderscheid houden tussen waargenomen feiten, een verklaring van het bedrijf en onafhankelijke conclusies. Zonder dat onderscheid wordt een technische vertraging te snel een verhaal over het hele programma.
+      </p>
+      <h2>De les voor operationele teams</h2>
+      <p>
+        De waarde van een automatische stop zit niet in snelheid, maar in een gecontroleerde grens. Voor marketing- en dataprocessen geldt hetzelfde: bouw een duidelijke stopconditie, leg het incident vast en hervat pas wanneer de oorzaak is beoordeeld. Automatisering zonder veilige stop maakt fouten sneller, niet beter.
       </p>
     </>
   ),
@@ -2227,28 +2239,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'wat-not-doet-wel-en-shoped-niet': (
     <>
       <p className="lead-para">
-        Een winkelier in Tilburg die ’s avonds live gaat met een nieuwe collectie hoeden, heeft straks niets aan statische productoverzichten. Zijn klanten swipen niet meer door eindeloze categorieën, ze willen op het moment zelf zien wat bij hen past – en dat terwijl de stream loopt. Watnot begrijpt dat als geen ander. Met de overname van Shaped, een AI-bedrijf gespecialiseerd in real-time aanbevelingen, sluit het platform nu de laatste ontbrekende schakel in zijn ecosysteem: een systeem dat niet alleen kijkt *wat* iemand eerder kocht, maar ook *hoe* iemand nu reageert op prijs, kleur of zelfs de intonatie van de verkoper.
+        Livestream-shoppingplatform Whatnot heeft Shaped overgenomen, een bedrijf voor realtime aanbevelingen en zoeken. Volgens TechCrunch wil Whatnot de technologie gebruiken om ontdekking en personalisatie sneller te laten reageren op voorraad, veilingen en veranderende koopintentie tijdens een live uitzending.
       </p>
+      <h2>Live commerce heeft een ander ritme dan een gewone catalogus</h2>
       <p>
-        Dit is geen toeval. Livestream shopping groeit harder dan ooit, maar de grootste uitdaging ligt niet in het aantal kijkers, maar in hun geduld. Onderzoek van McKinsey uit 2025 laat zien dat consumenten binnen 12 seconden afhaken als een aanbeveling niet direct relevant voelt. Dat is korter dan de tijd die nodig is om ‘volgende slide’ te tikken. Watnot lost dit op door Shaped’s technologie te integreren: een algoritme dat niet alleen historische data gebruikt, maar ook live signalen oppikt – zoals welke items het meest worden bekeken of waarnaar wordt gezocht tijdens de stream.
+        In een vaste webshop kan een aanbeveling leunen op een relatief stabiele catalogus. In een live verkoop wisselen aanbod, prijs, kijkgedrag en beschikbaarheid sneller. Whatnot zegt zijn aanbevelingen al van ongeveer een dag naar minuten te hebben teruggebracht; Shaped moet die respons nog verder richting realtime brengen.
       </p>
+      <h2>De data moet aansluiten op de operatie</h2>
       <p>
-        Toch is er een kanttekening. Real-time personalisatie werkt alleen als de data *direct* bruikbaar is. Veel retailers hebben nog steeds silo’s tussen hun online shop en fysieke voorraad, waardoor een ‘live’ aanbeveling soms leidt tot frustratie als het product niet beschikbaar blijkt. Watnot’s concurrent TikTok Shop worstelde hier vorig jaar mee: klanten raakten geïrriteerd toen ze na een perfecte livestream-aanbeveling ontdekten dat het item uitverkocht was. De les? Technologie alleen is niet genoeg; je hebt ook *operational excellence* nodig.
+        Een snelle aanbeveling helpt alleen wanneer prijs, voorraad en fulfillment even actueel zijn. Als een systeem een uitverkocht product blijft tonen, wordt personalisatie juist frustrerend. Daarom zijn voorraadkwaliteit, eventtracking en een duidelijke foutafhandeling minstens zo belangrijk als het aanbevelingsmodel.
       </p>
+      <h2>Wat retailers hiervan kunnen toepassen</h2>
       <p>
-        Sommigen zullen zeggen dat deze ontwikkeling vooral interessant is voor grote spelers met diepe zakken en geavanceerde IT-systemen. Maar niets is minder waar. Steeds meer middelgrote retailers experimenteren met tools zoals Shaped’s open-source varianten of kant-en-klare plugins voor platforms als Shopify Live of Instagram Live Shopping. De drempel om mee te doen wordt lager, terwijl de verwachtingen van consumenten juist stijgen.
-      </p>
-      <p>
-        Watnot’s zet past in een bredere trend: de verschuiving van ‘mass personalization’ naar ‘contextual commerce’. Waar traditionele e-commerce draait om ‘wie ben je?’ (demografie, koopgedrag), gaat het nu om ‘wat doe je nu?’ (real-time intent). Een voorbeeld: tijdens Valentijnsdag ziet een verkoper live dat veel kijkers naar rood fluweel zoeken, maar ook naar cadeauverpakkingen. Het algoritme kan dan binnen seconden suggesties doen die passen bij beide behoeften – zonder dat de verkoper zelf alles hoeft te bedienen.
-      </p>
-      <p>
-        Critici wijzen erop dat zulke systemen ook risico’s met zich meebrengen. Zo kan overmatige personalisatie leiden tot ‘filter bubbles’, waarbij klanten alleen nog maar dezelfde soort producten te zien krijgen en daardoor minder openstaan voor verrassingen. Een studie van Deloitte uit begin 2026 toont aan dat consumenten na verloop van tijd juist *minder* geneigd zijn om nieuwe merken uit te proberen als ze alleen maar herhaling zien.
-      </p>
-      <p>
-        Maar er is een tegenargument: goed ontworpen real-time systemen kunnen juist *diversiteit* stimuleren door subtiel grenzen te verleggen. Stel je voor dat een verkoper tijdens een livestream ziet dat iemand vaak zwart draagt, maar ook regelmatig naar kleurrijke accessoires zoekt. Het algoritme kan dan voorzichtig nieuwe suggesties introduceren die net buiten de comfortzone liggen – mits de data dit ondersteunt.
-      </p>
-      <p>
-        De kernvraag is niet óf livestream shopping real-time personalisatie nodig heeft, maar wie het als eerste goed genoeg implementeert. Watnot bewijst met deze deal dat ze sneller willen zijn dan hun concurrentie in het vertalen van data naar directe actie – en daarmee niet alleen verkopen stimuleren, maar ook vertrouwen opbouwen bij consumenten die steeds kritischer worden op irrelevante aanbevelingen.
+        Begin niet met een groot personalisatieprogramma, maar met één stroom waarin product-ID, voorraad en gebeurtenissen betrouwbaar samenkomen. Meet vervolgens of aanbevelingen leiden tot meer relevante clicks, minder teleurstelling en een betere marge. Realtime technologie is pas nuttig wanneer een team de uitkomst kan verklaren én corrigeren.
       </p>
     </>
   ),
@@ -2625,13 +2628,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'paid-media-wordt-seo-investering-door-ai-search': (
     <>
       <p className="lead-para">
-        Uit onderzoek blijkt dat AI zoekmachines zoals Google en Bing niet alleen traditionele SEO-signalen gebruiken, maar ook betaalde content als input voor hun aanbevelingen. Reviews op platforms als Trustpilot of Google Reviews, samenwerkingen met influencers en gesponsorde artikelen kunnen de manier waarop een merk wordt gepresenteerd in AI-antwoorden beïnvloeden.
+        Een betaalde plek of gesponsorde publicatie maakt een merk niet automatisch tot bron in een AI-antwoord. Berichtgeving over de opkomst van GEO wijst juist op het belang van onafhankelijke, controleerbare informatie: AI-systemen kunnen verschillende bronnen gebruiken en geven niet publiek prijs hoe iedere aanbeveling tot stand komt.
       </p>
+      <h2>Betaald bereik en bronstatus zijn verschillende dingen</h2>
       <p>
-        Voor bedrijven betekent dit dat de grens tussen SEO en betaalde media vervaagt. Waar vroeger vooral organische zoekresultaten belangrijk waren, spelen nu ook externe signalen een rol in hoe een merk wordt waargenomen door algoritmes. Dit geldt met name voor sectoren waar vertrouwen en autoriteit cruciaal zijn, zoals finance of gezondheidszorg.
+        Advertising koopt distributie op een bepaald moment. Een bronvermelding in een gegenereerd antwoord is een keuze van het systeem voor informatie die het relevant of betrouwbaar acht. Die twee kunnen elkaar versterken wanneer een campagne leidt tot echte, redactionele aandacht, maar de tweede volgt niet vanzelf uit de eerste.
       </p>
+      <h2>Investeer in bewijs dat buiten je eigen kanaal standhoudt</h2>
       <p>
-        De uitdaging ligt in het integreren van deze nieuwe dynamiek in bestaande marketingstrategieën. Het is niet langer voldoende om alleen te focussen op keywords of backlinks: merken moeten ook nadenken over hoe ze hun reputatie en zichtbaarheid in AI-systemen kunnen versterken via betaalde kanalen.
+        Voor merken zijn heldere productinformatie, onafhankelijke reviews, actuele documentatie en consistente feiten op partner- en mediasites waardevoller dan een truc om een model te sturen. Betaalde media kan een goed verhaal verspreiden, maar mag geen vervanging worden voor controleerbare inhoud.
+      </p>
+      <h2>Hoe je dit meet zonder een effect te verzinnen</h2>
+      <p>
+        Leg vooraf een vaste set vragen, markten en concurrenten vast. Meet vermeldingen en citaten periodiek, naast branded search, referralverkeer en conversies. Verander vervolgens één duidelijke factor tegelijk. Daarmee voorkom je dat een tijdelijke campagne of een wisselend modelantwoord als bewezen AI-effect wordt verkocht.
       </p>
     </>
   ),
@@ -2910,13 +2919,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'base44-lanceert-eigen-ai-model': (
     <>
       <p className="lead-para">
-        Het platform Base44, dat bekend staat om zijn visuele programmeeromgeving voor het maken van websites en apps, heeft een eigen AI-model uitgebracht. Dit model moet op termijn betere prestaties leveren dan de huidige toonaangevende modellen en zo de concurrentiepositie versterken.
+        Base44 is begonnen met de uitrol van Base1, een eigen model voor het bouwen van apps vanuit natuurlijke taal. Volgens TechCrunch wil het Wix-bedrijf daarmee meer invloed krijgen op kosten, snelheid en de kwaliteit van taken die specifiek bij appbouw horen.
       </p>
+      <h2>Een eigen model is vooral een keuze voor controle</h2>
       <p>
-        Met deze stap volgt Base44 een trend waarbij AI-startups hun eigen modellen ontwikkelen om zich te onderscheiden en klanten aan zich te binden. De introductie van het model is bedoeld om de afhankelijkheid van externe partijen te verminderen en meer controle te krijgen over de technologie die achter hun producten zit.
+        Een product dat volledig leunt op externe modellen blijft afhankelijk van prijzen, capaciteit en productkeuzes van die aanbieders. Base44 traint Base1 op interacties uit het eigen platform. Dat is geen bewijs dat een gespecialiseerd model altijd beter is dan een frontiermodel, maar wel een manier om het model op eigen taken en feedbackloops af te stemmen.
       </p>
+      <h2>Specialisatie moet zich nog bewijzen in gebruik</h2>
       <p>
-        De lancering komt op een moment waarop veel bedrijven zoeken naar manieren om hun AI-gebaseerde oplossingen robuuster en unieker te maken. Base44 hoopt met dit model niet alleen de prestaties van hun tools te verbeteren, maar ook de loyaliteit van gebruikers te vergroten door zelfstandigheid in technologieontwikkeling.
+        De relevante maatstaf is niet de aankondiging, maar of gebruikers sneller tot een werkende, onderhoudbare applicatie komen tegen voorspelbare kosten. Generalistische modellen blijven sterk voor brede redeneertaken; een verticaal model moet laten zien dat het voor de gekozen workflow daadwerkelijk nauwkeuriger of efficiënter werkt.
+      </p>
+      <h2>Wat dit betekent voor teams die AI inkopen</h2>
+      <p>
+        Vraag niet alleen welk model onder een tool zit. Vraag welke gegevens voor training worden gebruikt, hoe je output controleert, welke exportmogelijkheden er zijn en wat er gebeurt wanneer een model wisselt. De beste keuze is de tool die aantoonbaar past bij de workflow, niet de tool met de meest indrukwekkende modelnaam.
       </p>
     </>
   ),
@@ -3132,26 +3147,38 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'apple-verhoogt-prijzen-door-ram-schaarste': (
     <>
       <p className="lead-para">
-        Apple verhoogt de prijzen van Macs, iPhones en andere apparaten als gevolg van een wereldwijd tekort aan RAM-geheugen. Het bedrijf past de prijzen aan om de hogere inkoopkosten door te berekenen, aldus analisten die de supply chain volgen.
+        Apple verhoogde in juni de prijzen van verschillende Macs en iPads in reactie op hogere kosten voor geheugencomponenten. Associated Press meldde later dat de prijsdruk samenhing met de bredere geheugenschaarste rond de AI-boom; de iPhone viel niet onder elke prijsaanpassing.
       </p>
+      <h2>Geheugen is een gewone kostprijs, maar geen kleine</h2>
       <p>
-        De schaarste aan werkgeheugen wordt veroorzaakt door een combinatie van vraagstijging en productieproblemen bij chipfabrikanten. Vooral high-end apparaten met grote geheugencapaciteit worden getroffen, waardoor consumenten hogere prijzen moeten betalen voor nieuwe toestellen.
+        Fabrikanten van laptops, tablets en servers kopen dezelfde categorieën geheugen in. Als de vraag vanuit datacenters stijgt, komen langlopende inkoopcontracten, voorraad en productmarges allemaal onder druk te staan. Dat verklaart niet automatisch elke prijswijziging, maar wel waarom een componentprobleem doorwerkt tot een consumentenproduct.
       </p>
+      <h2>Let op welke productlijn daadwerkelijk verandert</h2>
       <p>
-        Ook andere grote techbedrijven overwegen prijsverhogingen, maar Apple loopt hierin voorop door zijn afhankelijkheid van specifieke geheugenleveranciers. De markt reageert met zorgen over verdere stijgingen in de komende maanden.
+        Een kop als “Apple verhoogt prijzen” is te grof wanneer prijs, land en productlijn verschillen. Vergelijk daarom de adviesprijs van precies hetzelfde model, de configuratie en de datum van de wijziging. Alleen dan zie je of het om een hogere basisprijs, een duurdere geheugenconfiguratie of een nieuw model gaat.
+      </p>
+      <h2>Wat inkopers hieruit kunnen meenemen</h2>
+      <p>
+        Voor een team dat hardware plant is dit een reden om capaciteit en vervangmomenten eerder vast te leggen, niet om op geruchten vooruit te kopen. Maak onderscheid tussen noodzakelijke werkgeheugenbehoefte, gewenste upgrades en tijdelijke prijsbewegingen. Zo blijft een chiptekort een inkoopvraag in plaats van een oncontroleerbare verrassing.
       </p>
     </>
   ),
   'ai-agents-manipulatie-onderzoek': (
     <>
       <p className="lead-para">
-        Onderzoekers tonen aan dat zelfs een minimale wijziging in een webpagina ervoor zorgt dat AI-onderzoeksagenten deze als betrouwbare bron gebruiken. In tests verschenen valse entiteiten in 38% tot 51% van de rapporten wanneer één gemanipuleerde pagina werd opgehaald. Bij het combineren van meerdere pagina’s steeg dit percentage naar 62%, aldus de onderzoekers.
+        Onderzoekers beschrijven hoe deep-researchsystemen kunnen worden beïnvloed wanneer zij herhaaldelijk dezelfde bewerkbare webpagina’s ophalen. In hun gesimuleerde tests leidde één vergiftigde URL tot 38 tot 51 procent vermeldingen na blootstelling; meerdere doel-URL’s kwamen uit op 42 tot 62 procent. Het gaat om onderzoek op open systemen, niet om een aanval op commerciële diensten.
       </p>
+      <h2>Herhaald opgehaalde UGC-pagina’s vormen het zwakke punt</h2>
       <p>
-        De manipulatie richtte zich op pagina’s met gebruikersgegenereerde content (UGC), zoals forums of reviewwebsites. Een kleine tekstuele aanpassing, zoals een extra zin of een verkeerd feit, was voldoende om agenten te misleiden. Dit roept vragen op over de kwetsbaarheid van AI-systemen die afhankelijk zijn van externe data.
+        De auteurs richten zich op user-generated content zoals forums en discussiedraden. Juist omdat zulke pagina’s vaak terugkomen bij verwante vragen, kan een kleine toevoeging breder doorwerken dan de originele pagina doet vermoeden. De studie noemt dit een risico van de ophaal- en synthesestap, niet alleen van het taalmodel zelf.
       </p>
+      <h2>Een bronvermelding is nog geen verificatie</h2>
       <p>
-        De bevindingen benadrukken het belang van validatie en cross-checking bij het gebruik van AI voor diepgaand onderzoek. Zonder adequate controles kunnen dergelijke systemen onbedoeld valse informatie verspreiden, wat gevolgen heeft voor besluitvorming en reputaties.
+        Een agent kan een bron netjes citeren en toch een onjuist detail doorgeven. Bij belangrijke besluiten hoort daarom een menselijke controle: open de primaire bron, controleer datum, auteur en context, en toets opvallende claims tegen een onafhankelijke tweede bron. Dat geldt extra voor cijfers, veiligheid, beleid en beschuldigingen.
+      </p>
+      <h2>Praktische grens voor een team</h2>
+      <p>
+        Gebruik een research-agent voor het vinden en ordenen van materiaal, niet als eindredacteur voor feitelijke claims. Leg vast welke bronnen zijn geopend, welke claims zijn gecontroleerd en welke onzekerheden overblijven. Daarmee wordt een snelle eerste verkenning geen oncontroleerbaar eindrapport.
       </p>
     </>
   ),
@@ -3307,13 +3334,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026': (
     <>
       <p className="lead-para">
-        Vanaf 1 juli 2026 is een digitaal cognossement voldoende voor schepen in Nederland. De papieren kopie hoeft niet langer mee aan boord, zo meldt de KVNR.
+        De digitale vrachtbrief heeft onder voorwaarden dezelfde juridische functie als een papieren vrachtbrief. Voor wegvervoer bestaat daarvoor het e-CMR-kader; Belgische en Nederlandse instanties benadrukken dat betrouwbaarheid, integriteit en controleerbaarheid voorwaarden blijven. De eerdere formulering over één algemene Nederlandse regel voor alle schepen was te ruim.
       </p>
+      <h2>Digitaal kan, maar niet zonder afspraken</h2>
       <p>
-        De maritieme sector pleitte al jaren voor deze wijziging om de logistiek te versnellen en papierwerk te verminderen. Elektronische cognossementen moeten nu dezelfde rechtsgeldigheid krijgen als fysieke documenten.
+        Een e-vrachtbrief moet dezelfde relevante gegevens bevatten als de papieren versie en de integriteit van die gegevens kunnen waarborgen. Dat betekent dat betrokken partijen vooraf vastleggen welke oplossing zij gebruiken, wie mag wijzigen en hoe een toezichthouder of ontvanger de informatie controleert.
       </p>
+      <h2>Verwar wegtransport en maritieme documenten niet</h2>
       <p>
-        De nieuwe regel geldt voor zowel binnenlandse als internationale scheepvaart. Schepen die nog met papieren werken, kunnen geleidelijk overschakelen naar digitale systemen.
+        CMR, e-CMR en een elektronisch cognossement zijn geen synoniemen. Ze horen bij verschillende transportvormen en juridische regimes. Wie digitaliseert, moet daarom eerst bepalen welk document voor de eigen vervoersstroom geldt en welke landen, vervoerders en klanten de gekozen werkwijze accepteren.
+      </p>
+      <h2>Wat een logistiek team nu controleert</h2>
+      <p>
+        Maak een ketentest met afzender, vervoerder, ontvanger en eventuele douane- of inspectiepartij. Controleer toegang, audittrail, offline beschikbaarheid en het proces bij een storing. Pas na die test levert een digitale vrachtbrief werkelijk minder papierwerk én minder risico op.
       </p>
     </>
   ),
@@ -4645,13 +4678,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'apple-ios-27-automatische-wachtwoordvervanging': (
     <>
       <p className="lead-para">
-        In de aankomende iOS 27-update introduceert Apple een nieuwe functie die gecompromitteerde wachtwoorden direct vervangt door sterke, unieke alternatieven. De vervanging gebeurt automatisch zodra het systeem een beveiligingsrisico detecteert, zonder dat gebruikers handmatig actie hoeven te ondernemen.
+        Apple presenteert iOS 27 als een release met nieuwe Apple Intelligence-, communicatie- en privacyfuncties. De openbare preview bevestigt niet de eerdere claim dat gecompromitteerde wachtwoorden met één tik automatisch voor alle accounts worden vervangen; die claim is daarom uit dit dossier verwijderd.
       </p>
+      <h2>Een preview is geen belofte voor ieder toestel</h2>
       <p>
-        De functie werkt via de ingebouwde wachtwoordmanager en is gekoppeld aan het controlepaneel voor beveiligingswaarschuwingen. Gebruikers krijgen een melding wanneer er wijzigingen plaatsvinden, maar de daadwerkelijke vervanging verloopt achter de schermen. Apple claimt dat deze aanpak de beveiliging aanzienlijk verbetert zonder extra handelingen van de gebruiker te vereisen.
+        Apple koppelt functies aan taal, regio, hardware en uitrolmoment. Kijk daarom niet alleen naar een keynote of gerucht, maar naar de actuele iOS-preview en de ondersteuningspagina’s voor jouw apparaat. Dat voorkomt dat een team een proces inricht rond een mogelijkheid die lokaal nog niet beschikbaar is.
       </p>
+      <h2>Wachtwoordhygiëne blijft een apart proces</h2>
       <p>
-        De update sluit aan bij eerdere initiatieven zoals automatische tweefactor-authenticatie en wachtwoordgeneratie. Analisten zien dit als een praktische toepassing van AI in consumententechnologie, gericht op alledaagse problemen zoals hergebruikte of zwakke wachtwoorden.
+        Automatisch ingevulde sterke wachtwoorden, passkeys en waarschuwingen over gelekte gegevens helpen, maar vervangen geen toegangsbeleid. Gebruik unieke inloggegevens, activeer multifactorauthenticatie en zorg dat zakelijke accounts via een beheerde wachtwoordkluis of identity-provider lopen.
+      </p>
+      <h2>Wat je nu kunt controleren</h2>
+      <p>
+        Inventariseer welke Apple-apparaten toegang hebben tot bedrijfsaccounts en welke beveiligingsmeldingen al aanstaan. Test nieuwe functies eerst met een kleine groep, documenteer wat werkelijk werkt en pas daarna een breder beleid aan. Zo blijft een productrelease een gecontroleerde verbetering in plaats van een aanname over beveiliging.
       </p>
     </>
   ),
@@ -5002,13 +5041,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'autoboeker-haalt-12-miljoen-in-voor-ai-platform-accountants': (
     <>
       <p className="lead-para">
-        Het Nederlandse Autoboeker heeft een investering van €1,2 miljoen opgehaald om de ontwikkeling van zijn AI-platform voor accountants en administratiekantoren te versnellen. Het geld wordt gebruikt om administratieve werkzaamheden in de pre-accountingfase verder te automatiseren en efficienter te maken. Denk aan het verwerken, controleren en valideren van bonnen, facturen en andere documenten.
+        Autoboeker heeft volgens Accountancy Vanmorgen €1,2 miljoen opgehaald voor de verdere ontwikkeling van zijn AI-platform voor pre-accounting. De investering is bedoeld voor productontwikkeling, teamgroei en koppelingen met boekhoud- en administratiesoftware.
       </p>
+      <h2>Pre-accounting is een concrete, maar gevoelige workflow</h2>
       <p>
-        Met de nieuwe fondsen wil Autoboeker de functionaliteit uitbreiden en integraties met boekhoudsoftware verbeteren. Het platform moet kantoren helpen tijd te besparen en fouten in de voorfase van de boekhouding te verminderen. Momenteel werkt het bedrijf al samen met meerdere grote administratiekantoren in Nederland.
+        Het platform richt zich op taken vóór de boeking: documenten herkennen, gegevens voorbereiden, controles uitvoeren en transacties helpen matchen. Dat zijn processen met veel herhaling, maar ook met financiële en persoonsgegevens. Automatisering is daarom pas waardevol wanneer een medewerker uitzonderingen kan beoordelen en de herkomst van een voorstel kan terugzien.
       </p>
+      <h2>Integratie bepaalt meer dan de AI-laag</h2>
       <p>
-        De investering komt van verschillende partijen, waaronder bestaande investeerders en nieuwe partners. Autoboeker geeft aan dat de groei van het aantal klanten en de vraag naar automatisering hierin een belangrijke rol hebben gespeeld.
+        Een accountancykantoor heeft weinig aan een slimme losse inbox als de uitkomst niet betrouwbaar in het bestaande pakket terechtkomt. Vraag dus naar de koppeling, foutafhandeling, audittrail, bewaartermijnen en de rolverdeling tussen leverancier, kantoor en klant. Dat zijn de voorwaarden waaronder tijdwinst niet omslaat in herstelwerk.
+      </p>
+      <h2>Waar je een implementatie op toetst</h2>
+      <p>
+        Begin met één afgebakende documentstroom en meet niet alleen verwerkte aantallen, maar ook correcties, doorlooptijd en uitzonderingen. Leg vast wie een voorstel mag goedkeuren en wanneer een dossier terug moet naar menselijke beoordeling. Dan wordt AI in pre-accounting een gecontroleerde procesverbetering, geen automatische boekingsmachine.
       </p>
     </>
   ),
