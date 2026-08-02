@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Inter:wght@400;500;600;700&display=swap');
+/* Fonts zijn zelf-gehost via next/font in app/[locale]/layout.tsx
+   (InterVariable + InterDisplay). De Google-import (Plus Jakarta Sans) is
+   2 aug 2026 verwijderd: koppen renderen nu InterDisplay, en er is geen
+   blokkerend extern verzoek meer. */
 @import "tailwindcss";
 
 @theme {
@@ -24,8 +27,8 @@
   --color-muted: #5A6B82;
 
   /* Typography */
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: var(--font-body-inter), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-display-inter), "InterDisplay", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* ---------------------------------------------------------------
@@ -122,8 +125,8 @@
   --container: 1200px;
   --gutter: 24px;
 
-  /* Self-hosted font aliases — exposed naast de bestaande Plus Jakarta Sans.
-     Niet in plaats van. Ronde 1.5 swapt globaal. */
+  /* Self-hosted font aliases. Sinds 2 aug 2026 zijn dit ook de families
+     achter --font-sans en --font-display; de globale swap is gebeurd. */
   --font-display-stevin: var(--font-display-inter), 'InterDisplay', 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
   --font-body-stevin:    var(--font-body-inter), 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
   --font-mono-stevin:    var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -257,7 +260,7 @@ section {
    Match: Claude Design article.html .body
    ─────────────────────────────────────────────────────────── */
 .journal-body p {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   font-size: 19px;
   line-height: 1.65;
   color: var(--fg);
@@ -283,24 +286,26 @@ section {
 }
 
 .journal-body h2 {
+  /* 2 aug 2026: van 32/800 naar 27/600. In een leeskolom van 680px maakt
+     ruimte de hierarchie, niet massa; op 800 las dit als een tweede H1. */
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 32px;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   color: var(--navy);
-  margin: 56px 0 20px;
+  margin: 48px 0 16px;
   text-wrap: balance;
 }
 
 .journal-body h3 {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
   color: var(--navy);
-  margin: 36px 0 14px;
+  margin: 32px 0 8px;
 }
 
 .journal-body strong {
@@ -318,7 +323,7 @@ section {
 
 .journal-body ul,
 .journal-body ol {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   font-size: 19px;
   line-height: 1.65;
   color: var(--fg);
@@ -329,7 +334,7 @@ section {
 .journal-body li::marker { color: var(--accent); }
 
 .journal-body .body-figure-cap {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   font-style: italic;
   font-size: 13px;
   color: var(--muted);
@@ -340,4 +345,6 @@ section {
   .journal-body p { font-size: 18px; }
   .journal-body p.lead-para { font-size: 20px; }
   .journal-body p.lead-para::first-letter { font-size: 3.4em; }
+  .journal-body h2 { font-size: 24px; line-height: 1.28; letter-spacing: -0.018em; margin: 40px 0 14px; }
+  .journal-body h3 { font-size: 19px; }
 }
