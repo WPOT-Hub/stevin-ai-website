@@ -120,7 +120,7 @@ export default async function ControlePage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {c.eyebrow}
           </p>
-          <h1 className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]" style={{ fontSize: 'clamp(34px, 4.6vw, 64px)', maxWidth: '18ch' }}>
+          <h1 className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]" style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '18ch' }}>
             {c.h1_line} <span className="text-[#5DA3FF]">{c.h1_accent}</span>
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '18px', maxWidth: '540px', marginTop: '28px' }}>
@@ -178,7 +178,7 @@ export default async function ControlePage({ params }: Props) {
       {/* Slot */}
       <section className="bg-primary" style={{ padding: '96px 24px 112px' }}>
         <div className="mx-auto max-w-[1200px] flex items-end justify-between gap-12 flex-col lg:flex-row">
-          <h2 className="font-display font-extrabold text-white m-0" style={{ fontSize: 'clamp(34px, 4.2vw, 58px)', lineHeight: '1.04', letterSpacing: '-0.03em', maxWidth: '16ch' }}>
+          <h2 className="font-display font-extrabold text-white m-0" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', letterSpacing: '-0.025em', maxWidth: '16ch' }}>
             {c.closing_l1}
           </h2>
           <div className="flex flex-col items-start lg:items-end gap-5">

@@ -97,7 +97,7 @@ export default async function DienstenPage({ params }: Props) {
 
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
-            style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '14ch' }}
+            style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '14ch' }}
           >
             {t('h1_line1')}<br />
             <span className="text-[#5DA3FF]">{t('h1_line2')}</span>
@@ -126,7 +126,7 @@ export default async function DienstenPage({ params }: Props) {
               </p>
               <h2
                 className="font-display font-extrabold text-primary m-0"
-                style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '720px' }}
+                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15', maxWidth: '720px' }}
               >
                 {t('tracks_h2')}
               </h2>
@@ -217,7 +217,7 @@ export default async function DienstenPage({ params }: Props) {
 
           <h2
             className="font-display font-extrabold text-white mb-11"
-            style={{ fontSize: 'clamp(40px, 5vw, 72px)', letterSpacing: '-0.032em', lineHeight: '1.05', maxWidth: '880px' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15', maxWidth: '880px' }}
           >
             {t('closing_h2')}
           </h2>

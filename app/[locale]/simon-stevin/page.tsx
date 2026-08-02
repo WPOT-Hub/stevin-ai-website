@@ -210,7 +210,7 @@ export default async function SimonStevinPage({ params }: Props) {
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.05] tracking-[-0.03em] text-wrap-balance"
-            style={{ fontSize: 'clamp(44px, 6vw, 104px)', maxWidth: '900px', marginBottom: '72px' }}
+            style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '900px', marginBottom: '72px' }}
           >
             {c.h1}
           </h1>
@@ -266,7 +266,7 @@ export default async function SimonStevinPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary tracking-[-0.02em]"
-            style={{ fontSize: 'clamp(24px, 3vw, 34px)', paddingTop: '24px' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', paddingTop: '24px' }}
           >
             {c.namesakeH}
           </h2>
@@ -306,7 +306,7 @@ export default async function SimonStevinPage({ params }: Props) {
         <div className="mx-auto max-w-[820px] px-6 text-center">
           <h2
             className="font-display font-extrabold text-primary tracking-[-0.03em] text-wrap-balance mx-auto"
-            style={{ fontSize: 'clamp(30px, 4vw, 52px)', lineHeight: '1.1', maxWidth: '640px' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', maxWidth: '640px' }}
           >
             {c.statement}
           </h2>
@@ -347,7 +347,7 @@ export default async function SimonStevinPage({ params }: Props) {
         <div className="mx-auto max-w-3xl px-6" style={{ marginTop: '80px' }}>
           <h2
             className="font-display font-extrabold text-primary tracking-[-0.02em] text-center"
-            style={{ fontSize: 'clamp(24px, 3vw, 34px)', marginBottom: '40px' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', marginBottom: '40px' }}
           >
             {c.faqH}
           </h2>

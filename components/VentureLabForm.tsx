@@ -110,7 +110,7 @@ export default function VentureLabForm({ locale = 'nl' }: { locale?: string }) {
     return (
       <div className="rounded-2xl border border-border bg-white p-8 sm:p-12 text-center">
         <div className="mb-4 text-3xl text-accent">✓</div>
-        <h3 className="text-xl font-display font-bold text-primary">{t.thanksH}</h3>
+        <h3 className="h-sub font-display text-primary">{t.thanksH}</h3>
         <p className="mt-2 text-muted">{t.thanksP}</p>
       </div>
     )

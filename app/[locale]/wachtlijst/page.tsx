@@ -31,7 +31,7 @@ export default async function WaitlistPage({ params }: Props) {
 
           <h1
             className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]"
-            style={{ fontSize: 'clamp(36px, 5vw, 72px)', maxWidth: '16ch' }}
+            style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '16ch' }}
           >
             {t('hero_h1')}{' '}
             <span className="text-[#5DA3FF]">{t('hero_h1_accent')}</span>
@@ -57,7 +57,7 @@ export default async function WaitlistPage({ params }: Props) {
               </p>
               <h2
                 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
-                style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
+                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
               >
                 {t('form_h2')}
               </h2>

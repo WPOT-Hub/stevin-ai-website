@@ -79,8 +79,8 @@ export default function HeroHeadline({ locale }: { locale: string }) {
         {c.eyebrow}
       </p>
       <h1
-        className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]"
-        style={{ fontSize: 'clamp(34px, 4.6vw, 68px)', maxWidth: '18ch' }}
+        className="font-display font-bold text-white leading-[1.05] tracking-[-0.035em]"
+        style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '18ch' }}
       >
         {c.line} <span className="text-[#5DA3FF]">{c.accent}</span>
       </h1>

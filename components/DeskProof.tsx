@@ -199,7 +199,7 @@ export default function DeskProof({
           </p>
           <h2
             className="font-display font-extrabold text-primary m-0"
-            style={{ fontSize: 'clamp(28px, 3.2vw, 44px)', letterSpacing: '-0.035em', lineHeight: '1.1', textWrap: 'balance' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15', textWrap: 'balance' }}
           >
             {c.h2}
           </h2>

@@ -59,7 +59,7 @@ export default function GlossaryHub() {
       />
 
       <div className="max-w-3xl mb-12">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">
+        <h1 className="h-hero text-primary">
           Stevin Woordenboek
         </h1>
         <p className="mt-6 text-lg text-muted leading-relaxed">
@@ -75,7 +75,7 @@ export default function GlossaryHub() {
           if (terms.length === 0) return null
           return (
             <div key={cat}>
-              <h2 className="text-2xl font-bold text-primary mb-6">{CATEGORY_LABELS[cat]}</h2>
+              <h2 className="h-section text-primary mb-6">{CATEGORY_LABELS[cat]}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {terms.map((t) => (
                   <Link

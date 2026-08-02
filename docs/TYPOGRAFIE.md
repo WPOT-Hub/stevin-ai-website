@@ -86,5 +86,20 @@ Google Fonts-import toe.
 | Stap | Wat | Status |
 |---|---|---|
 | 1 | Font-swap naar InterDisplay + Journal-H2/H3-waarden | LIVE, commit `1cdb242`, 2 aug 2026 |
-| 2 | Tokens + `.h-hero` / `.h-section` / `.h-sub` in globals.css | open |
-| 3 | Pagina voor pagina omzetten, beginnend bij home en /tarieven | open, per pagina reviewen |
+| 2 | Ladder-klassen `.h-hero` / `.h-page` / `.h-section` / `.h-sub` in globals.css | gedaan, 2 aug 2026 |
+| 3 | Pagina's omgezet (185+ koppen, drie geautomatiseerde passes plus homepage handmatig) | gedaan, 2 aug 2026 |
+
+Aantekeningen bij stap 3:
+
+- **De klassen zetten bewust geen marges.** Ongelaagde CSS wint van
+  Tailwinds utility-layer; marges zouden elke mb-* overrulen. Verticaal
+  ritme blijft bij secties en spacing-utilities.
+- **Juridische pagina's (terms, dpa, privacy, nda) zijn bewust niet
+  omgezet**: documentmaten zijn daar correct.
+- **Kleine label-koppen** (footerkopjes, eyebrows) zonder display-maat
+  zijn bewust ongemoeid.
+- **Legacy**: op veel koppen staat nog `font-extrabold` in de className
+  terwijl inline `fontWeight: 600` wint. Rendert correct; de klasse is
+  dode tekst. Opruimen mag, maar is cosmetisch.
+- H1-onderscheid: wit-op-donker = hero (64), donker-op-licht =
+  paginatitel (48).

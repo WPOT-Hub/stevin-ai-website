@@ -26,7 +26,7 @@ export default function ComparisonsHub() {
       />
 
       <div className="max-w-3xl mb-12">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">
+        <h1 className="h-hero text-primary">
           Tool-vergelijkingen
         </h1>
         <p className="mt-6 text-lg text-muted leading-relaxed">

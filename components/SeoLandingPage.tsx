@@ -35,7 +35,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
-            style={{ fontSize: 'clamp(44px, 6vw, 88px)', maxWidth: '20ch' }}
+            style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '20ch' }}
           >
             {page.h1}<br />
             <span className="text-[#5DA3FF]">{page.h1Accent}</span>
@@ -74,7 +74,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16"
-            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
           >
             {page.pain.h2}
           </h2>
@@ -98,7 +98,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
-            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
           >
             {page.solution.h2}
           </h2>
@@ -133,7 +133,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
               </p>
               <h2
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10"
-                style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
+                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
               >
                 {page.list.h2}
               </h2>
@@ -175,7 +175,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
         <div className="mx-auto max-w-[1200px]">
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-12 text-center"
-            style={{ fontSize: 'clamp(28px, 3.5vw, 44px)' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
           >
             Veelgestelde vragen
           </h2>

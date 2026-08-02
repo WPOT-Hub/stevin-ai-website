@@ -132,7 +132,7 @@ export default async function PreviewHero({ params }: Props) {
 
             <h1
               className="stv-tekst font-display font-extrabold text-white m-0"
-              style={{ fontSize: 'clamp(34px, 4vw, 60px)', letterSpacing: '-0.04em', lineHeight: '1.04', textWrap: 'balance', animationDelay: '0.12s' }}
+              style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', letterSpacing: '-0.035em', lineHeight: '1.05', textWrap: 'balance', animationDelay: '0.12s' }}
             >
               {COPY.h1a}
               <br />

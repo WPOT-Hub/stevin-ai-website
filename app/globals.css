@@ -163,6 +163,48 @@ h1, h2, h3 {
   letter-spacing: -0.02em;
 }
 
+/* ── De heading-ladder ─────────────────────────────────────────
+   Bron van waarheid: docs/TYPOGRAFIE.md. Drie semantische klassen;
+   losse text-, font- en tracking-combinaties op koppen zijn legacy en
+   worden pagina voor pagina hierdoor vervangen. Waarden niet inline
+   overschrijven: eerst het doc, dan hier.
+   Bewust GEEN marges hier: ongelaagde CSS wint van Tailwinds
+   utility-layer en zou elke mb-* op de pagina's overrulen. Verticaal
+   ritme blijft bij de secties en de bestaande spacing-utilities. */
+.h-hero {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.h-page {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+.h-section {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+.h-sub {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 640px) {
+  .h-hero { font-size: 40px; line-height: 1.08; letter-spacing: -0.03em; }
+  .h-page { font-size: 34px; line-height: 1.1; letter-spacing: -0.028em; }
+  .h-section { font-size: 28px; line-height: 1.18; letter-spacing: -0.022em; }
+  .h-sub { font-size: 19px; }
+}
+
 /* Increased section spacing */
 section {
   scroll-margin-top: 80px;

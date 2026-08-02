@@ -54,7 +54,7 @@ export default async function MkbPage({ params }: Props) {
           <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-4">
             {t('hero_eyebrow')}
           </p>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
+          <h1 className="h-hero">
             {t('hero_h1')} <span className="text-accent">{t('hero_h1_accent')}</span>
           </h1>
           <p className="mt-6 text-lg text-white/80 leading-relaxed">{t('hero_sub')}</p>
@@ -69,7 +69,7 @@ export default async function MkbPage({ params }: Props) {
 
       {/* Pains */}
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary max-w-2xl">
+        <h2 className="h-section text-primary max-w-2xl">
           {t('pains_h2')}
         </h2>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -85,7 +85,7 @@ export default async function MkbPage({ params }: Props) {
       {/* How it works */}
       <Section bg="surface">
         <div className="max-w-2xl">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary">{t('how_h2')}</h2>
+          <h2 className="h-section text-primary">{t('how_h2')}</h2>
           <p className="mt-4 text-muted leading-relaxed">{t('how_sub')}</p>
         </div>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -101,7 +101,7 @@ export default async function MkbPage({ params }: Props) {
 
       {/* Products */}
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary">{t('prod_h2')}</h2>
+        <h2 className="h-section text-primary">{t('prod_h2')}</h2>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           {products.map((p) => (
             <div key={p.title} className="p-6 rounded-xl border border-border">
@@ -115,14 +115,14 @@ export default async function MkbPage({ params }: Props) {
       {/* Proof */}
       <Section bg="surface">
         <div className="max-w-2xl">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary">{t('proof_h2')}</h2>
+          <h2 className="h-section text-primary">{t('proof_h2')}</h2>
           <p className="mt-4 text-muted leading-relaxed">{t('proof_desc')}</p>
         </div>
       </Section>
 
       {/* FAQ */}
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary mb-8">{t('faq_h2')}</h2>
+        <h2 className="h-section text-primary mb-8">{t('faq_h2')}</h2>
         <div className="max-w-3xl">
           <FAQAccordion faqs={faqs} />
         </div>
@@ -131,7 +131,7 @@ export default async function MkbPage({ params }: Props) {
       {/* Website-templates (koppeling naar /websites) */}
       <Section>
         <div className="max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary">{t('websites_h2')}</h2>
+          <h2 className="h-section text-primary">{t('websites_h2')}</h2>
           <p className="mt-4 text-muted leading-relaxed">{t('websites_desc')}</p>
           <Link href="/websites" className="mt-6 inline-flex items-center gap-2 font-semibold text-accent hover:gap-3 transition-all">
             {t('websites_link')}

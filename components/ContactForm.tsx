@@ -98,7 +98,7 @@ export default function ContactForm({ subject }: { nextUrl?: string; subject?: s
     return (
       <div className="rounded-2xl border border-border bg-white p-8 sm:p-12 text-center">
         <div className="text-4xl mb-4">✓</div>
-        <h3 className="text-xl font-bold text-primary">Bedankt voor je bericht</h3>
+        <h3 className="h-sub text-primary">Bedankt voor je bericht</h3>
         <p className="mt-2 text-muted">We nemen zo snel mogelijk contact met je op.</p>
       </div>
     )

@@ -53,7 +53,7 @@ export default async function ContactPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left: info */}
           <div>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">
+            <h1 className="h-hero text-primary">
               {t('title')}
             </h1>
             <p className="mt-6 text-lg text-muted leading-relaxed">

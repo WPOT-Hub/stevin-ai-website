@@ -110,10 +110,10 @@ export default async function WhoOwnsYourAdvertisingDataPage({
           {/* H1 */}
           <h1
             className="font-display font-extrabold text-white m-0 mb-6"
-            style={{
-              fontSize: 'clamp(36px, 4.6vw, 60px)',
-              lineHeight: '1.06',
-              letterSpacing: '-0.03em',
+            style={{ fontWeight: 700,
+              fontSize: 'clamp(40px, 4.6vw, 64px)',
+              lineHeight: '1.05',
+              letterSpacing: '-0.035em',
               textWrap: 'balance',
               maxWidth: '22ch',
             }}

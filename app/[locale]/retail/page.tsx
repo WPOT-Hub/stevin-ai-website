@@ -74,7 +74,7 @@ export default async function RetailPage({ params }: Props) {
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
-            style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '16ch' }}>
+            style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '16ch' }}>
             {t('h1')}
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '560px', marginTop: '32px' }}>
@@ -103,7 +103,7 @@ export default async function RetailPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16"
-            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
           >
             {t('pain_h2')}
           </h2>
@@ -127,7 +127,7 @@ export default async function RetailPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
-            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
           >
             {t('features_h2')}
           </h2>
@@ -155,7 +155,7 @@ export default async function RetailPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
-            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
           >
             {t('audiences_h2')}
           </h2>
@@ -187,7 +187,7 @@ export default async function RetailPage({ params }: Props) {
               </p>
               <h2
                 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10"
-                style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
+                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
               >
                 {t('usecases_h2')}
               </h2>

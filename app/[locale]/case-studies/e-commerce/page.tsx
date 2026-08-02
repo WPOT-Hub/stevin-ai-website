@@ -56,7 +56,7 @@ export default async function EcommerceCaseStudy({ params }: Props) {
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
-            style={{ fontSize: 'clamp(36px, 5vw, 72px)', maxWidth: '18ch' }}
+            style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '18ch' }}
           >
             {t('ecomm_h1')}
           </h1>
@@ -83,7 +83,7 @@ export default async function EcommerceCaseStudy({ params }: Props) {
       {/* De klant */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <h2 className="text-2xl font-bold text-primary mb-4">{t('client_h2')}</h2>
+          <h2 className="h-section text-primary mb-4">{t('client_h2')}</h2>
           <p className="text-muted leading-relaxed">
             {t('client_p')}
           </p>
@@ -93,7 +93,7 @@ export default async function EcommerceCaseStudy({ params }: Props) {
       {/* De uitdaging */}
       <section className="py-16 bg-surface">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <h2 className="text-2xl font-bold text-primary mb-6">{t('challenge_h2')}</h2>
+          <h2 className="h-section text-primary mb-6">{t('challenge_h2')}</h2>
           <ul className="space-y-4">
             {challenges.map((c, i) => (
               <li key={i} className="flex items-start gap-3">
@@ -110,7 +110,7 @@ export default async function EcommerceCaseStudy({ params }: Props) {
       {/* De aanpak */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <h2 className="text-2xl font-bold text-primary mb-6">{t('approach_h2')}</h2>
+          <h2 className="h-section text-primary mb-6">{t('approach_h2')}</h2>
           <div className="space-y-6">
             {approach.map((a, i) => (
               <div key={a.step} className="flex items-start gap-4">
@@ -140,7 +140,7 @@ export default async function EcommerceCaseStudy({ params }: Props) {
       {/* CTA */}
       <section className="py-20 bg-primary">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">{t('cta_h2')}</h2>
+          <h2 className="h-section text-white mb-4">{t('cta_h2')}</h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
             {t('cta_sub')}
           </p>

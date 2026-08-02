@@ -117,7 +117,7 @@ export default async function ProductPage({ params }: Props) {
                     {product.acronym}
                   </span>
                 )}
-                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">{product.name}</h1>
+                <h1 className="h-page text-white">{product.name}</h1>
                 <p className="mt-4 text-lg text-white/85 leading-relaxed">{product.tagline}</p>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default async function ProductPage({ params }: Props) {
                     {product.acronym}
                   </span>
                 )}
-                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">{product.name}</h1>
+                <h1 className="h-page text-primary">{product.name}</h1>
                 <p className="mt-5 text-lg text-muted leading-relaxed">{product.tagline}</p>
               </>
             )}

@@ -92,7 +92,7 @@ export default async function PlatformPage({ params }: Props) {
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
-            style={{ fontSize: 'clamp(52px, 7vw, 108px)', maxWidth: '16ch' }}
+            style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '16ch' }}
           >
             {t('h1')}<br />
             <span className="text-[#5DA3FF]">{t('h1_sub')}</span>
@@ -129,7 +129,7 @@ export default async function PlatformPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
-            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
           >
             {t('features_h2')}
           </h2>
@@ -164,7 +164,7 @@ export default async function PlatformPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
-            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
           >
             {t('connectors_h2')}
           </h2>
@@ -202,7 +202,7 @@ export default async function PlatformPage({ params }: Props) {
               </p>
               <h2
                 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
-                style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
+                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
               >
                 {t('leadgen_h2')}
               </h2>
@@ -241,7 +241,7 @@ export default async function PlatformPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-4"
-            style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
           >
             {t('monitoring_h2')}
           </h2>
@@ -270,7 +270,7 @@ export default async function PlatformPage({ params }: Props) {
               </p>
               <h2
                 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
-                style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
+                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
               >
                 {t('reports_h2')}
               </h2>
@@ -315,7 +315,7 @@ export default async function PlatformPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
-            style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}
           >
             {t('extras_h2')}
           </h2>
@@ -339,7 +339,7 @@ export default async function PlatformPage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-6"
-            style={{ fontSize: 'clamp(32px, 4vw, 54px)', maxWidth: '16ch' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', maxWidth: '16ch' }}
           >
             {t('cta_h2')}
           </h2>

@@ -151,7 +151,7 @@ export default async function WerkwijzePage({ params }: Props) {
               {/* H1 */}
               <h1
                 className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em] mb-6"
-                style={{ fontSize: 'clamp(44px, 6.4vw, 96px)', maxWidth: '16ch' }}
+                style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '16ch' }}
               >
                 <span className="linebreak">{t('h1_line1')}</span>
                 <span className="linebreak">{t('h1_line2')}</span>
@@ -200,7 +200,7 @@ export default async function WerkwijzePage({ params }: Props) {
               </p>
               <h2
                 className="font-display font-bold text-primary m-0"
-                style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', lineHeight: '1.2', maxWidth: '18ch' }}
+                style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', lineHeight: '1.15', maxWidth: '18ch' }}
               >
                 {t('phases_h2')}
               </h2>
@@ -267,7 +267,7 @@ export default async function WerkwijzePage({ params }: Props) {
           </p>
           <h2
             className="font-display font-extrabold text-white m-0 mb-14"
-            style={{ fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '20ch' }}
+            style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15', maxWidth: '20ch' }}
           >
             {locale === 'en' ? 'One signal, from alert to done.' : 'Een signaal, van melding tot afgehandeld.'}
           </h2>

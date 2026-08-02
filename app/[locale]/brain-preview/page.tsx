@@ -49,8 +49,8 @@ export default async function BrainPreviewPage({ params }: Props) {
           style={{
             color: '#fff',
             fontFamily: 'var(--font-display, system-ui, sans-serif)',
-            fontSize: 'clamp(28px, 4vw, 44px)',
-            fontWeight: 800,
+            fontSize: 'clamp(34px, 3.4vw, 48px)',
+            fontWeight: 700,
             letterSpacing: '-0.03em',
             lineHeight: 1.08,
             margin: '0 0 16px',

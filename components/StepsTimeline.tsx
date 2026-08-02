@@ -91,7 +91,7 @@ export default function StepsTimeline() {
                 i <= activeStep ? 'opacity-100 translate-y-0' : 'opacity-40 translate-y-2'
               }`}
             >
-              <h3 className="text-lg font-bold text-primary mb-1">{item.title}</h3>
+              <h3 className="h-sub text-primary mb-1">{item.title}</h3>
               <p className="text-sm text-muted">{item.desc}</p>
             </div>
           ))}

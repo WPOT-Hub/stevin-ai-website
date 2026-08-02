@@ -11,7 +11,7 @@ export default function ServiceCard({ title, description, icon, href }: ServiceC
   const content = (
     <div className="group relative rounded-2xl border border-border bg-white p-8 hover:border-accent/30 hover:shadow-lg transition-all duration-200">
       <div className="text-3xl mb-4">{icon}</div>
-      <h3 className="text-lg font-bold text-primary mb-2">{title}</h3>
+      <h3 className="h-sub text-primary mb-2">{title}</h3>
       <p className="text-sm text-muted leading-relaxed">{description}</p>
       {href && (
         <span className="mt-4 inline-flex items-center text-sm font-medium text-accent group-hover:text-accent-dark transition-colors">

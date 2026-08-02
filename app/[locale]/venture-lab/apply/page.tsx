@@ -57,7 +57,7 @@ export default async function ApplyPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {c.eyebrow}
           </p>
-          <h1 className="font-display font-extrabold text-white leading-[1.05] tracking-[-0.03em]" style={{ fontSize: 'clamp(32px, 4.4vw, 60px)', maxWidth: '18ch' }}>
+          <h1 className="font-display font-extrabold text-white leading-[1.05] tracking-[-0.03em]" style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '18ch' }}>
             {c.h1}
           </h1>
           <p className="text-white/60 leading-[1.6] mt-7" style={{ fontSize: '19px', maxWidth: '600px' }}>
@@ -76,7 +76,7 @@ export default async function ApplyPage({ params }: Props) {
       {/* VERWACHTING */}
       <section className="bg-white" style={{ padding: '0 24px 110px' }}>
         <div className="mx-auto max-w-[680px]">
-          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-6" style={{ fontSize: 'clamp(24px, 3vw, 36px)' }}>
+          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-6" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
             {c.afterH}
           </h2>
           <div className="space-y-5">

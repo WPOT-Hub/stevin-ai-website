@@ -165,7 +165,7 @@ export default async function VentureLabPage({ params }: Props) {
               </p>
               <h1
                 className="font-display font-extrabold text-white leading-[1.04] tracking-[-0.03em]"
-                style={{ fontSize: 'clamp(40px, 5.4vw, 78px)', maxWidth: '15ch' }}
+                style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '15ch' }}
               >
                 {c.heroH1a}<span className="text-[#5DA3FF]">{c.heroH1b}</span>
               </h1>
@@ -263,7 +263,7 @@ export default async function VentureLabPage({ params }: Props) {
                 <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
                 {c.waaromEyebrow}
               </p>
-              <h2 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em]" style={{ fontSize: 'clamp(30px, 3.6vw, 48px)' }}>
+              <h2 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em]" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
                 {c.waaromH2}
               </h2>
             </div>
@@ -283,7 +283,7 @@ export default async function VentureLabPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
             {c.bouwenEyebrow}
           </p>
-          <h2 className="font-display font-extrabold text-primary leading-[1.1] tracking-[-0.025em] mb-4" style={{ fontSize: 'clamp(28px, 3.4vw, 44px)', maxWidth: '20ch' }}>
+          <h2 className="font-display font-extrabold text-primary leading-[1.1] tracking-[-0.025em] mb-4" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', maxWidth: '20ch' }}>
             {c.bouwenH2}
           </h2>
           <p className="text-[17px] text-muted leading-[1.6] max-w-xl mb-12">{c.bouwenSub}</p>
@@ -304,7 +304,7 @@ export default async function VentureLabPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
             {c.hoeEyebrow}
           </p>
-          <h2 className="font-display font-extrabold text-primary leading-[1.1] tracking-[-0.025em] mb-16" style={{ fontSize: 'clamp(28px, 3.4vw, 48px)' }}>
+          <h2 className="font-display font-extrabold text-primary leading-[1.1] tracking-[-0.025em] mb-16" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
             {c.hoeH2}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-border">
@@ -332,7 +332,7 @@ export default async function VentureLabPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
             {c.voorEyebrow}
           </p>
-          <h2 className="font-display font-extrabold text-primary leading-[1.1] tracking-[-0.025em] mb-16" style={{ fontSize: 'clamp(28px, 3.4vw, 48px)' }}>
+          <h2 className="font-display font-extrabold text-primary leading-[1.1] tracking-[-0.025em] mb-16" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
             {c.voorH2}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden">
@@ -359,7 +359,7 @@ export default async function VentureLabPage({ params }: Props) {
                 <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
                 {c.stevinEyebrow}
               </p>
-              <h2 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em]" style={{ fontSize: 'clamp(30px, 3.6vw, 50px)', maxWidth: '16ch' }}>
+              <h2 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em]" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', maxWidth: '16ch' }}>
                 {c.stevinH2}
               </h2>
             </div>
@@ -376,7 +376,7 @@ export default async function VentureLabPage({ params }: Props) {
       <section id="interesse" className="bg-surface scroll-mt-24" style={{ padding: '110px 24px' }}>
         <div className="mx-auto max-w-[760px]">
           <div className="text-center mb-12">
-            <h2 className="font-display font-extrabold text-primary leading-[1.1] tracking-[-0.025em] mb-5" style={{ fontSize: 'clamp(28px, 3.6vw, 48px)' }}>
+            <h2 className="font-display font-extrabold text-primary leading-[1.1] tracking-[-0.025em] mb-5" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
               {c.ctaH2}
             </h2>
             <p className="text-[18px] text-muted leading-[1.6] max-w-xl mx-auto">{c.ctaSub}</p>

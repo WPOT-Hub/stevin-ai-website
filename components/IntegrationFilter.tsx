@@ -30,7 +30,7 @@ export default function IntegrationFilter({ integrations }: IntegrationFilterPro
       {/* Search */}
       <div className="flex flex-col gap-5 border-b border-[#D9E0EB] px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-7 sm:py-6">
         <div>
-          <h2 className="text-3xl font-extrabold leading-[1.05] tracking-[-0.035em] text-[#0A0A0A] sm:text-4xl">
+          <h2 className="h-section leading-[1.05] tracking-[-0.035em] text-[#0A0A0A]">
             Koppelingen
           </h2>
           <p className="mt-2 max-w-xl text-[15px] leading-[1.55] text-[#6B7280]">

@@ -131,17 +131,17 @@ export default async function GlossaryTermPage({ params }: Props) {
           <div className="text-xs font-mono uppercase tracking-wider text-accent mb-3">
             {term.category}
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">{term.term}</h1>
+          <h1 className="h-hero text-primary">{term.term}</h1>
           <p className="mt-6 text-lg text-muted leading-relaxed">{term.shortDefinition}</p>
         </div>
 
         <div className="max-w-3xl mb-12">
-          <h2 className="text-2xl font-bold text-primary mb-4">Definitie</h2>
+          <h2 className="h-section text-primary mb-4">Definitie</h2>
           <p className="text-muted leading-relaxed whitespace-pre-line">{term.fullDefinition}</p>
         </div>
 
         <div className="max-w-3xl mb-12">
-          <h2 className="text-2xl font-bold text-primary mb-4">Concreet voorbeeld</h2>
+          <h2 className="h-section text-primary mb-4">Concreet voorbeeld</h2>
           <p className="text-muted leading-relaxed whitespace-pre-line">{term.example}</p>
         </div>
 
@@ -154,7 +154,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
         {relatedArticles.length > 0 && (
           <div className="max-w-3xl mb-10">
-            <h2 className="text-2xl font-bold text-primary mb-4">Meer hierover in het Journal</h2>
+            <h2 className="h-section text-primary mb-4">Meer hierover in het Journal</h2>
             <ul className="space-y-3">
               {relatedArticles.map((a) => (
                 <li key={a.slug}>
@@ -172,7 +172,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
         {relatedTerms.length > 0 && (
           <div className="max-w-3xl mb-10">
-            <h2 className="text-2xl font-bold text-primary mb-4">Verwante termen</h2>
+            <h2 className="h-section text-primary mb-4">Verwante termen</h2>
             <div className="flex flex-wrap gap-2">
               {relatedTerms.map((t) => (
                 <Link

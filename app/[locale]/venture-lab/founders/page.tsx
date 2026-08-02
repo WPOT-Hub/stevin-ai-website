@@ -91,7 +91,7 @@ export default async function FoundersPage({ params }: Props) {
             <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {c.eyebrow}
           </p>
-          <h1 className="font-display font-extrabold text-white leading-[1.04] tracking-[-0.03em]" style={{ fontSize: 'clamp(36px, 5vw, 70px)', maxWidth: '16ch' }}>
+          <h1 className="font-display font-extrabold text-white leading-[1.04] tracking-[-0.03em]" style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '16ch' }}>
             {c.h1}
           </h1>
           <p className="text-white/60 leading-[1.6] mt-7" style={{ fontSize: '19px', maxWidth: '560px' }}>
@@ -103,7 +103,7 @@ export default async function FoundersPage({ params }: Props) {
       {/* HERKENBAAR */}
       <section className="bg-surface" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[760px]">
-          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-6" style={{ fontSize: 'clamp(26px, 3.2vw, 40px)' }}>
+          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-6" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
             {c.herkenbaarH}
           </h2>
           <div className="space-y-5">
@@ -117,7 +117,7 @@ export default async function FoundersPage({ params }: Props) {
       {/* WAT JE KRIJGT */}
       <section className="bg-white" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1120px]">
-          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-12" style={{ fontSize: 'clamp(26px, 3.2vw, 44px)' }}>
+          <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-12" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
             {c.krijgH}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-border">
@@ -136,7 +136,7 @@ export default async function FoundersPage({ params }: Props) {
       <section className="bg-surface" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1120px] grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-5" style={{ fontSize: 'clamp(24px, 2.8vw, 34px)' }}>
+            <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-5" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
               {c.zoekenH}
             </h2>
             <p className="text-[16px] text-muted leading-[1.7] mb-6">{c.zoekenIntro}</p>
@@ -152,7 +152,7 @@ export default async function FoundersPage({ params }: Props) {
             </ul>
           </div>
           <div>
-            <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-5" style={{ fontSize: 'clamp(24px, 2.8vw, 34px)' }}>
+            <h2 className="font-display font-extrabold text-primary tracking-[-0.025em] mb-5" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
               {c.nietH}
             </h2>
             <p className="text-[17px] text-muted leading-[1.7]">{c.niet}</p>
@@ -163,7 +163,7 @@ export default async function FoundersPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-primary text-center" style={{ padding: '110px 24px' }}>
         <div className="mx-auto max-w-[760px]">
-          <h2 className="font-display font-extrabold text-white tracking-[-0.025em] mb-5" style={{ fontSize: 'clamp(28px, 3.6vw, 48px)' }}>
+          <h2 className="font-display font-extrabold text-white tracking-[-0.025em] mb-5" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
             {c.ctaH}
           </h2>
           <p className="text-white/55 leading-[1.6] mb-9 mx-auto" style={{ fontSize: '18px', maxWidth: '480px' }}>

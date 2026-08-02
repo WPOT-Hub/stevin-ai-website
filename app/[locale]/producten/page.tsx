@@ -68,7 +68,7 @@ export default async function ProductenPage({ params }: Props) {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628] via-[#0A1628]/85 to-[#0A1628]/40" />
           <div className="absolute inset-0 flex items-center">
             <div className="px-8 sm:px-12 max-w-2xl">
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">De Stevin-suite</h1>
+              <h1 className="h-hero text-white">De Stevin-suite</h1>
               <p className="mt-5 text-lg text-white/85 leading-relaxed">
                 Van dynamische campagnes en content tot signalen, opvolging en uplift-meting.
                 Je begint waar het pijn doet en bouwt van daaruit verder.

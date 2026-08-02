@@ -150,7 +150,7 @@ async function CategoryView({ slug, locale }: { slug: string; locale: string }) 
         />
 
         <div className="max-w-3xl mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">
+          <h1 className="h-hero text-primary">
             {category.name}
           </h1>
           <p className="mt-6 text-lg text-muted leading-relaxed">
@@ -296,7 +296,7 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
             <div className="flex items-center gap-4 mb-6">
               <IntegrationGlyph />
               <div>
-                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">
+                <h1 className="h-page text-primary">
                   {integration.name}
                 </h1>
                 {category && (

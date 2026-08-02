@@ -39,7 +39,7 @@ export default async function WebsitesPage({ params }: Props) {
       <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
         <div className="mx-auto max-w-[1200px]">
           <Eyebrow light>{t('eyebrow')}</Eyebrow>
-          <h1 className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)', maxWidth: '15ch' }}>
+          <h1 className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]" style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '15ch' }}>
             {t('h1')}
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '620px', marginTop: '32px' }}>
@@ -60,7 +60,7 @@ export default async function WebsitesPage({ params }: Props) {
       <section className="bg-white" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
           <Eyebrow>{t('problem_eyebrow')}</Eyebrow>
-          <h2 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-12" style={{ fontSize: 'clamp(32px, 4vw, 54px)', maxWidth: '20ch' }}>
+          <h2 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-12" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', maxWidth: '20ch' }}>
             {t('problem_intro')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-border">
@@ -78,7 +78,7 @@ export default async function WebsitesPage({ params }: Props) {
       <section className="bg-surface" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
           <Eyebrow>{t('get_eyebrow')}</Eyebrow>
-          <h2 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16" style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}>
+          <h2 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-16" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
             {t('get_h2')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 border-t border-border">
@@ -96,7 +96,7 @@ export default async function WebsitesPage({ params }: Props) {
       <section className="bg-white" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
           <Eyebrow>{t('templates_eyebrow')}</Eyebrow>
-          <h2 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4" style={{ fontSize: 'clamp(32px, 4vw, 54px)' }}>
+          <h2 className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
             {t('templates_h2')}
           </h2>
           <p className="text-[17px] text-muted mb-14 max-w-2xl leading-[1.55]">{t('templates_sub')}</p>
@@ -129,7 +129,7 @@ export default async function WebsitesPage({ params }: Props) {
       <section className="bg-primary" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
           <Eyebrow light>{t('grow_eyebrow')}</Eyebrow>
-          <h2 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10 max-w-[18ch]" style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}>
+          <h2 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-10 max-w-[18ch]" style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)' }}>
             {t('grow_h2')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6 max-w-4xl">

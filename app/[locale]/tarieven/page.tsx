@@ -183,7 +183,7 @@ export default async function PreviewTarieven({ params }: Props) {
           </p>
           <h1
             className="font-display font-extrabold text-primary m-0"
-            style={{ fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.035em', lineHeight: '1.08', textWrap: 'balance' }}
+            style={{ fontWeight: 700, fontSize: 'clamp(34px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', textWrap: 'balance' }}
           >
             {COPY.h2}
           </h1>
@@ -361,7 +361,7 @@ export default async function PreviewTarieven({ params }: Props) {
             </p>
             <h2
               className="font-display font-extrabold m-0"
-              style={{ fontSize: 'clamp(26px, 3vw, 40px)', letterSpacing: '-0.03em', lineHeight: '1.12', textWrap: 'balance' }}
+              style={{ fontWeight: 600, fontSize: 'clamp(28px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15', textWrap: 'balance' }}
             >
               {COPY.breinH2}
             </h2>

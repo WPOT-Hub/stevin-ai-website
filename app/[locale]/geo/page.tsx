@@ -63,7 +63,7 @@ export default async function GEOPage({ params }: Props) {
       <section className="bg-white pt-12 sm:pt-16 lg:pt-20 pb-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">
+            <h1 className="h-hero text-primary">
               {t('h1')}
             </h1>
             <p className="mt-6 text-lg text-muted leading-relaxed">
@@ -77,7 +77,7 @@ export default async function GEOPage({ params }: Props) {
       <Section bg="surface" id="wat-is-geo">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-primary">
+            <h2 className="h-section text-primary">
               {t('what_h2')}
             </h2>
             <p className="mt-4 text-lg text-muted leading-relaxed">
@@ -107,7 +107,7 @@ export default async function GEOPage({ params }: Props) {
       {/* Why it matters alongside classic SEO */}
       <Section bg="white" id="waarom-geo">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary text-center">
+          <h2 className="h-section text-primary text-center">
             {t('why_h2')}
           </h2>
           <p className="mt-6 text-lg text-muted leading-relaxed text-center">
@@ -128,7 +128,7 @@ export default async function GEOPage({ params }: Props) {
       <Section bg="surface" id="aanpak">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-primary">
+            <h2 className="h-section text-primary">
               {t('how_h2')}
             </h2>
             <p className="mt-4 text-lg text-muted leading-relaxed">

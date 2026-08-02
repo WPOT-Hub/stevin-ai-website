@@ -43,7 +43,7 @@ export default async function CaseStudiesPage({ params }: Props) {
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
-            style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}
+            style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)' }}
           >
             {t('h1')}
           </h1>

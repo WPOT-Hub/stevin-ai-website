@@ -125,7 +125,7 @@ export default async function ComparisonPage({ params }: Props) {
         />
 
         <div className="max-w-3xl mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary">
+          <h1 className="h-hero text-primary">
             {comparison.title}
           </h1>
           <p className="mt-6 text-lg text-muted leading-relaxed">{comparison.dek}</p>
@@ -140,7 +140,7 @@ export default async function ComparisonPage({ params }: Props) {
         {/* Twee-kolom: wanneer kies je A | wanneer kies je B */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mb-16">
           <div>
-            <h2 className="text-2xl font-bold text-primary mb-4">
+            <h2 className="h-section text-primary mb-4">
               Wanneer kies je {comparison.nameA}
             </h2>
             <p className="text-muted leading-relaxed whitespace-pre-line">{comparison.whenA}</p>
@@ -154,7 +154,7 @@ export default async function ComparisonPage({ params }: Props) {
             )}
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-primary mb-4">
+            <h2 className="h-section text-primary mb-4">
               Wanneer kies je {comparison.nameB}
             </h2>
             <p className="text-muted leading-relaxed whitespace-pre-line">{comparison.whenB}</p>
@@ -171,7 +171,7 @@ export default async function ComparisonPage({ params }: Props) {
 
         {/* Kosten-vergelijking */}
         <div className="max-w-3xl mb-16">
-          <h2 className="text-2xl font-bold text-primary mb-4">Kosten</h2>
+          <h2 className="h-section text-primary mb-4">Kosten</h2>
           <p className="text-muted leading-relaxed whitespace-pre-line">{comparison.costs}</p>
         </div>
 
@@ -186,7 +186,7 @@ export default async function ComparisonPage({ params }: Props) {
         {/* FAQs */}
         {comparison.faqs && comparison.faqs.length > 0 && (
           <div className="max-w-3xl mb-16">
-            <h2 className="text-2xl font-bold text-primary mb-6">Veelgestelde vragen</h2>
+            <h2 className="h-section text-primary mb-6">Veelgestelde vragen</h2>
             <FAQAccordion faqs={comparison.faqs} />
           </div>
         )}

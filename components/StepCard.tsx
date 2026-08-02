@@ -12,7 +12,7 @@ export default function StepCard({ number, title, description }: StepCardProps) 
           {number}
         </div>
         <div>
-          <h3 className="text-lg font-bold text-primary">{title}</h3>
+          <h3 className="h-sub text-primary">{title}</h3>
           <p className="mt-2 text-sm text-muted leading-relaxed">{description}</p>
         </div>
       </div>
