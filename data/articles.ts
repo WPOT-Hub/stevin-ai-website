@@ -5532,7 +5532,7 @@ const allArticles: Article[] = [
     format: 'editorial' as const,
     edition: '020',
     category: 'Data ownership',
-    title: 'Je bureau draait je ads. Maar wie traint straks de AI met jouw data?',
+    title: 'Wie is eigenaar van je advertentiedata?',
     dek: 'Draai je je advertenties via een bureau, dan staan de accounts en de opgebouwde data vaak op hun naam, niet op die van jou. Juist nu AI leert van die data, wil je weten van wie ze is. In twee minuten controleer je in de openbare advertentiebibliotheek van Google, Meta, LinkedIn, TikTok en meer wie jouw ads betaalt.',
     publishedAt: '2026-07-07',
     readMinutes: 9,
@@ -5541,6 +5541,7 @@ const allArticles: Article[] = [
     posterTag: 'DATA OWNERSHIP',
     posterTopic: 'Wie traint straks de AI met jouw data?',
     source: { url: 'https://adstransparency.google.com', name: 'Google Ads Transparency Center' },
+    updatedAt: '2026-08-02',
   },
   {
     slug: 'lecun-miljard-tegen-het-taalmodel',
