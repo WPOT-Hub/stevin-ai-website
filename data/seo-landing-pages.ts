@@ -513,6 +513,67 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     ],
   },
   {
+    slug: 'feed-management',
+    metaTitle: 'Feed management voor winstgevende productadvertenties',
+    metaDescription:
+      'Feed management verbindt productdata, voorraad en campagneprestaties. Zie welke producten budget vragen, welke data ontbreekt en waar je kunt bijsturen.',
+    eyebrow: 'Feed management',
+    h1: 'Feed management dat productdata',
+    h1Accent: 'aan resultaat koppelt',
+    sub: 'Feed management is meer dan titels en categorieen naar Google Shopping sturen. Je productfeed moet kloppen met voorraad, marge en campagneprestaties, zodat je niet blind budget uitgeeft aan producten die niet kunnen of niet hoeven verkopen.',
+    ctaPrimary: { label: 'Plan een demo', href: '/contact' },
+    ctaSecondary: { label: 'Bekijk integraties', href: '/integraties' },
+    pain: {
+      eyebrow: 'Het probleem',
+      h2: 'Een technisch correcte feed is nog geen winstgevende feed',
+      items: [
+        { title: 'Productdata raakt achter', desc: 'Prijs, voorraad of levertijd wijzigt in de webshop, maar bereikt je advertentiefeed niet op tijd. Dan stuur je verkeer naar een product dat niet klopt.' },
+        { title: 'Budget volgt niet vanzelf de waarde', desc: 'Een feedtool kan velden aanpassen, maar weet niet vanzelf welke producten omzet, marge of retouren veroorzaken. Zonder die terugkoppeling blijft prioriteren handwerk.' },
+        { title: 'Fouten komen pas boven na verlies', desc: 'Afgekeurde producten, ontbrekende attributen of een gestopte import vallen vaak pas op als bereik of omzet al is weggevallen.' },
+      ],
+    },
+    solution: {
+      eyebrow: 'De aanpak',
+      h2: 'Van productbron naar gecontroleerde campagnefeed',
+      sub: 'Stevin verbindt de productbron, de feedroute en de meetlaag. Zo kun je technisch herstel, commerciële keuzes en controle van afwijkingen als een proces behandelen.',
+      steps: [
+        { title: 'Bron en velden bepalen', desc: 'We leggen vast welke webshop- of PIM-data leidend is en welke productvelden nodig zijn per kanaal.' },
+        { title: 'Feedroute inrichten', desc: 'De koppeling naar Merchant Center, advertentieplatform of feedtool krijgt duidelijke transformaties en eigenaarschap.' },
+        { title: 'Resultaat terugkoppelen', desc: 'Product-, voorraad- en campagnedata worden naast elkaar gelegd, zodat je kunt onderzoeken waar budget en uitkomst uiteenlopen.' },
+        { title: 'Afwijkingen bewaken', desc: 'Een gestopte import, datagap of opvallende productafwijking wordt een controlepunt, niet een verrassing in de maandrapportage.' },
+      ],
+    },
+    list: {
+      eyebrow: 'Waar je op stuurt',
+      h2: 'Feed management voor de hele productketen',
+      items: [
+        'Producttitels, categorieen en kenmerken die aansluiten op het verkoopkanaal',
+        'Voorraad, prijs en beschikbaarheid die op tijd doorstromen',
+        'Merchant Center- en feedfouten die een eigenaar en opvolging krijgen',
+        'Campagneprestaties naast product- en omzetdata, niet alleen naast klikken',
+        'Een controleerbare route tussen webshop, feedtool, advertising en rapportage',
+      ],
+    },
+    ctaSlot: {
+      eyebrow: 'Feed-check',
+      h3: 'Zie waar je productdata nu budget kost',
+      sub: 'We brengen de productbron, feedroute en belangrijkste controlepunten in kaart. Daarna weet je welke verbetering technisch en commercieel het eerst telt.',
+      btn: 'Plan een feed-check',
+    },
+    faq: [
+      { question: 'Wat is feed management?', answer: 'Feed management is het beheren van productdata voor verkoop- en advertentiekanalen. Het gaat om de route van brondata naar een bruikbare, actuele productfeed en om de controles die fouten en afwijkingen zichtbaar maken.' },
+      { question: 'Werkt dit alleen voor Google Shopping?', answer: 'Nee. Dezelfde productdata kan relevant zijn voor Google, Meta, marketplaces, e-mail en rapportage. Welke velden en controles nodig zijn, verschilt per kanaal.' },
+      { question: 'Heb ik een feedtool nodig?', answer: 'Niet altijd. Dat hangt af van de webshop, het aantal producten, de gewenste kanalen en de benodigde transformaties. We kiezen pas een route nadat de bestaande productbron en datastroom duidelijk zijn.' },
+      { question: 'Kunnen jullie ook de prestatie per product meenemen?', answer: 'Ja. We koppelen product- en campagnedata waar de beschikbare data dat toelaat, zodat feedbeslissingen niet alleen op technische volledigheid maar ook op uitkomst kunnen worden getoetst.' },
+    ],
+    related: [
+      { label: 'Google Ads en GA4', href: '/google-ads-ga4' },
+      { label: 'Marketing intelligence', href: '/marketing-intelligence' },
+      { label: 'First-party data', href: '/first-party-data' },
+      { label: 'E-commerce integraties', href: '/integraties/cms-ecommerce' },
+    ],
+  },
+  {
     slug: 'first-party-data',
     metaTitle: 'First-party data als basis voor je marketing',
     metaDescription:
