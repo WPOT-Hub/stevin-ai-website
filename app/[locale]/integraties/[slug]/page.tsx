@@ -57,9 +57,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const integration = getIntegrationBySlug(slug)
   if (integration) {
     const en = locale === 'en' ? getVendorContentEn(slug) : null
+    const seoTitles: Record<string, string> = {
+      'google-sheets': 'Google Sheets koppeling voor marketingdata',
+      'drupal': 'Drupal koppeling voor tracking en CRM',
+      'bigcommerce': 'BigCommerce koppeling voor e-commerce data',
+      'microsoft-dynamics-365-crm': 'Dynamics 365 koppeling voor marketing en CRM',
+    }
     const title = locale === 'en'
       ? `${integration.name} integration and connection`
-      : `${integration.name} koppeling en integratie`
+      : seoTitles[slug] ?? `${integration.name} koppeling en integratie`
     // De omschrijving beschreef alleen de leverancier: "Drupal koppeling en
     // integratie" met daaronder "Enterprise CMS voor complexe websites". Wie op
     // "drupal koppeling" zoekt heeft Drupal al en leest daar geen enkele reden
