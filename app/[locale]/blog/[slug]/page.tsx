@@ -1513,6 +1513,88 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'marketing-brein-waarom-nu': (
+    <>
+      <p className="lead-para">
+        Vraag een ondernemer wat er vorig jaar september met zijn advertenties gebeurde en je krijgt zelden een antwoord. Niet omdat het onbelangrijk was, maar omdat het nergens staat. De campagne is gestopt, de mensen die eraan werkten zijn verder gegaan, en wat er is geleerd zit in een hoofd, een oude mailwisseling of een spreadsheet die niemand meer opent.
+      </p>
+      <p>
+        Dat was jarenlang vervelend maar niet fataal. Je begon elk seizoen een beetje opnieuw, net als je concurrent. Iedereen had hetzelfde geheugenprobleem, dus het kostte niemand een voorsprong.
+      </p>
+      <p>
+        Dat evenwicht is dit jaar geklapt.
+      </p>
+      <h2>
+        Wat er veranderde
+      </h2>
+      <p>
+        De modellen zijn gelijk geworden. Jij, je concurrent en het bureau om de hoek gebruiken dezelfde handvol AI-systemen, tegen ongeveer dezelfde prijs. Wie vandaag betere teksten of scherpere analyses maakt, doet dat niet omdat hij een beter model heeft. Dat kun je niet meer kopen.
+      </p>
+      <p>
+        Tegelijk nemen de platforms steeds meer beslissingen over. Google en Meta schrijven de teksten, kiezen de doelgroep, verdelen het budget en rapporteren daarna zelf hoe goed het ging. Ze zijn er goed in ook: Meta meldde over het tweede kwartaal van 2025 dat AI-aanbevelingen mensen 5 procent langer op Facebook hielden en 6 procent langer op Instagram. Samen met Amazon pakken die twee inmiddels ongeveer 72 procent van de Amerikaanse advertentiemarkt.
+      </p>
+      <p>
+        Al is die overname niet overal even geslaagd. In een test bij drie adverteerders bleek automatisering vooral te helpen bij campagnes die toch al weinig aandacht kregen, terwijl [bij scherp beheerde campagnes de door mensen geschreven teksten beter presteerden](/blog/google-ads-ai-max-advertentieteksten-test). Precies het verschil tussen die twee situaties is iets dat je alleen ziet als je je eigen historie kunt raadplegen.
+      </p>
+      <p>
+        Samen maken die twee ontwikkelingen het probleem zichtbaar. Het model dat jouw campagne stuurt is niet van jou. De uitleg over hoe het ging komt van dezelfde partij die de beslissing nam. En het enige dat je daar tegenover kunt zetten, je eigen kennis van wat er bij jou werkt en waarom, is precies het ding dat nergens is opgeschreven.
+      </p>
+      <h2>
+        Wat een marketing-brein wel is, en wat niet
+      </h2>
+      <p>
+        Het is geen dashboard. Een dashboard toont wat er nu gebeurt en vergeet het morgen. Een marketing-brein onthoudt.
+      </p>
+      <p>
+        Concreet: elke campagne die draaide en waarom hij is gestopt. Elk besluit met de reden erbij. Wat de concurrent ondertussen deed. Welke aanname klopte en welke niet. Wat een klant vorig jaar zei toen hij afhaakte. Niet als archief dat je doorzoekt als je toevallig weet dat het er is, maar als iets dat meepraat op het moment dat je een keuze maakt.
+      </p>
+      <p>
+        Het verschil merk je pas bij de vraag die nu onbeantwoord blijft. Waarom deed die ene actie het in maart wel en in september niet? Wat hebben we drie jaar geleden geprobeerd dat we nu bijna opnieuw gaan doen? Wat weet die medewerker die volgende maand vertrekt, dat niemand anders weet?
+      </p>
+      <h2>
+        Een geheugen dat je huurt, is geen geheugen
+      </h2>
+      <p>
+        Hier zit de voorwaarde die het vaakst wordt overgeslagen. Een marketing-brein werkt alleen als de data waar het op draait van jou is. [Wie de eigenaar is van je advertentiedata](/blog/wie-is-eigenaar-van-je-advertentiedata) is daarmee geen aparte discussie, maar dezelfde.
+      </p>
+      <p>
+        Staat je advertentie-account op naam van je bureau, dan vertrekt je historie mee zodra de samenwerking eindigt. Zit je meting in een property die iemand anders beheert, dan is je geheugen precies zo lang beschikbaar als die relatie duurt. En draait je klantenlijst in een systeem waar je hem niet uit krijgt, dan heb je hem niet, hoe vol hij ook zit.
+      </p>
+      <p>
+        Dat is geen theoretisch risico. Google ging er vorig jaar toe over om [conversiegebaseerde klantlijsten automatisch te activeren in bestaande accounts](/blog/google-ads-automatisch-conversiegebaseerde-audience-lists-activeren). Wie de infrastructuur beheert, bepaalt wat ermee gebeurt, en [dat patroon loopt door de hele AI-keten](/blog/data-infrastructuur-bepaalt-ai-race).
+      </p>
+      <p>
+        Eigendom is daarmee geen juridische bijzaak maar de bodem waar het brein op rust. Zonder die bodem verzamel je aantekeningen in een schrift dat van iemand anders is.
+      </p>
+      <h2>
+        Waarom uitgerekend nu
+      </h2>
+      <p>
+        Drie dingen zijn tegelijk waar geworden.
+      </p>
+      <p>
+        **Je context is het enige dat nog onderscheidt.** Als het model voor iedereen hetzelfde is, wint degene die hem beter voedt. Je eigen historie is het enige stuk gereedschap dat een concurrent niet kan kopen, hoeveel hij ook uitgeeft.
+      </p>
+      <p>
+        **De platforms vragen erom.** Hoe meer het systeem zelf beslist, hoe belangrijker het wordt dat je een eigen meetlaag hebt om die beslissingen tegen af te zetten. Anders beoordeel je Google met cijfers van Google.
+      </p>
+      <p>
+        **Het kan opeens.** Wat twee jaar geleden een datateam en een half jaar kostte, draait nu op iets dat je in weken inricht. De reden om het niet te doen was altijd de prijs. Die reden is weg.
+      </p>
+      <h2>
+        De tegenwerping
+      </h2>
+      <p>
+        Je kunt hier prima tegenin brengen dat dit klinkt als een oplossing die op zoek is naar een probleem. Veel bedrijven groeien jaren zonder dat iemand vastlegt waarom iets werkte. Dat klopt.
+      </p>
+      <p>
+        Maar het loont pas als er iets misgaat of iets verandert: een campagne die het ineens niet meer doet, een medewerker die vertrekt, een bureau dat je overneemt van een ander, een markt die kantelt. Op zo'n moment is het verschil tussen een bedrijf dat kan terugkijken en een bedrijf dat opnieuw begint, ineens groot. En dat moment plan je niet.
+      </p>
+      <p>
+        Er is nog een reden om het nu te doen in plaats van straks. Een brein is pas iets waard als er iets in zit. Wie vandaag begint met vastleggen, heeft over een jaar een jaar aan geheugen. Wie wacht tot hij het nodig heeft, begint op het slechtst denkbare moment met een leeg vel.
+      </p>
+    </>
+  ),
   'google-ads-ai-max-advertentieteksten-test': (
     <>
       <p className="lead-para">
@@ -6750,6 +6832,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'marketing-brein-waarom-nu':
+    "Je hebt er geen platform voor nodig om te starten. Leg vanaf nu bij elke wijziging vast wat je deed en waarom, met datum. Zorg dat je advertentie-accounts en je meetdata op jouw naam staan, want een geheugen dat bij een ander in beheer is, is geen geheugen van jou. En controleer of je meting klopt voordat je hem gebruikt om iets te beoordelen: een event dat op het verkeerde moment vuurt maakt elke conclusie waardeloos, hoe goed je archief verder ook is.\n\nDat is geen groot project. Het is een gewoonte. Het brein komt vanzelf zodra er genoeg in zit.",
   'google-ads-ai-max-advertentieteksten-test':
     "De Stevin-lezing begint bij copy als hypothese, niet bij automatisering als doel. Letterlijke klanttaal uit reviews, comments en directe feedback kan een sterker vertrekpunt zijn dan een nieuwe tekstvariant die alleen logisch klinkt. AI kan die hypotheses sneller vermenigvuldigen, maar de bron van de boodschap en de kwaliteit van de respons blijven afzonderlijke vragen. De test van Geddes ondersteunt vooral dat onderscheid: schaalbaarheid hielp waar aandacht ontbrak, niet waar menselijke keuzes al aantoonbaar waren aangescherpt.",
   'google-chrome-ai-bugfixes-juni-2026':

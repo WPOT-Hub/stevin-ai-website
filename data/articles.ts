@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'marketing-brein-waarom-nu',
+    format: 'dispatch' as const,
+    edition: '401',
+    category: 'Platform',
+    title: "Iedereen heeft nu dezelfde AI. Het verschil zit in wat jij erin stopt.",
+    dek: "Een marketing-brein was twee jaar geleden een luxe. Nu is het het enige dat je nog onderscheidt.",
+    publishedAt: '2026-08-03',
+    readMinutes: 5,
+    author: { name: 'Stevin Redactie', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Iedereen heeft nu dezelfde AI. Het verschil zit in wat jij erin stopt.",
+    source: { url: "https://techcrunch.com/2025/07/30/zuckerberg-ai-increased-the-time-spent-on-facebook-and-instagram-in-q2/", name: "techcrunch.com" },
+  },
+  {
     slug: 'google-ads-ai-max-advertentieteksten-test',
     format: 'dispatch' as const,
     edition: '400',
