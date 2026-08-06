@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'meta-lanceert-muse-code-ai-agent-grote-codebases',
+    format: 'dispatch' as const,
+    edition: '402',
+    category: 'Agents',
+    title: "Meta lanceert Muse Code: AI-agent voor complexe softwareprojecten",
+    dek: "Meta introduceert Muse Code, een terminal-gebaseerde AI-agent die complete software-engineeringstaken kan uitvoeren over grote codebases.",
+    publishedAt: '2026-08-06',
+    readMinutes: 1,
+    author: { name: 'Stevin Redactie', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'AGENTS',
+    posterTopic: "Meta lanceert Muse Code: AI-agent voor complexe softwareprojecten",
+    source: { url: "https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/", name: "TechCrunch" },
+  },
+  {
     slug: 'marketing-brein-waarom-nu',
     format: 'dispatch' as const,
     edition: '401',

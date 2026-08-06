@@ -1513,6 +1513,28 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'meta-lanceert-muse-code-ai-agent-grote-codebases': (
+    <>
+      <h2>
+        Wat kan Muse Code precies doen
+      </h2>
+      <p className="lead-para">
+        Muse Code is een terminal-gebaseerde AI-agent die ontwikkelaars helpt bij complexe taken in grote softwareprojecten. Volgens Meta CEO Mark Zuckerberg voert de agent "planning van wijzigingen, het schrijven van code en validatie van resultaten" uit. De tool is beschikbaar in beta en installeerbaar met één commando.
+      </p>
+      <h2>
+        Hoe werkt de agent binnen grote projecten
+      </h2>
+      <p>
+        De agent splitst grote taken op in kleinere sub-taken die parallel worden uitgevoerd in geïsoleerde werkomgevingen. Zo blijft de werkende kopie van de code ongewijzigd en kunnen meerdere features tegelijk worden gebouwd zonder conflicten. Meta testte dit met het gelijktijdig bouwen van zes features voor een game.
+      </p>
+      <h2>
+        Waarom Meta deze stap zet
+      </h2>
+      <p>
+        Meta positioneert zich met Muse Code tegen concurrenten als OpenAI (Codex) en Anthropic (Claude Code), vooral op kostenefficiëntie. Het bedrijf streeft naar een betaalbaardere optie voor ontwikkelteams die AI-assistentie nodig hebben bij grote codebases.
+      </p>
+    </>
+  ),
   'marketing-brein-waarom-nu': (
     <>
       <p className="lead-para">
@@ -6832,6 +6854,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'meta-lanceert-muse-code-ai-agent-grote-codebases':
+    "Voor organisaties met technische afdelingen of bureaus die softwareontwikkeling begeleiden, biedt dit nieuws een concrete optie om productiviteit te verhogen. De parallelle aanpak van Muse Code kan helpen om doorlooptijden te verkorten, mits de integratie met bestaande workflows soepel verloopt. Het is wel zaak om te testen of de agent voldoende nauwkeurigheid levert bij specifieke projectvereisten.",
   'marketing-brein-waarom-nu':
     "Je hebt er geen platform voor nodig om te starten. Leg vanaf nu bij elke wijziging vast wat je deed en waarom, met datum. Zorg dat je advertentie-accounts en je meetdata op jouw naam staan, want een geheugen dat bij een ander in beheer is, is geen geheugen van jou. En controleer of je meting klopt voordat je hem gebruikt om iets te beoordelen: een event dat op het verkeerde moment vuurt maakt elke conclusie waardeloos, hoe goed je archief verder ook is.\n\nDat is geen groot project. Het is een gewoonte. Het brein komt vanzelf zodra er genoeg in zit.",
   'google-ads-ai-max-advertentieteksten-test':

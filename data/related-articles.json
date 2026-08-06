@@ -1060,14 +1060,19 @@
     "meta-gezichtsherkenning-ai-brillen"
   ],
   "meta-invoert-onzichtbare-watermerken-voor-ai-content": [
+    "meta-lanceert-muse-code-ai-agent-grote-codebases",
     "instagram-geeft-gebruikers-meer-invloed-op-algoritme",
-    "meta-haalt-instagram-ai-deepfake-functie-weer-weg-na-kritiek",
-    "meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit"
+    "meta-haalt-instagram-ai-deepfake-functie-weer-weg-na-kritiek"
+  ],
+  "meta-lanceert-muse-code-ai-agent-grote-codebases": [
+    "openai-test-ad-format-met-ai-agent",
+    "meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit",
+    "meta-invoert-onzichtbare-watermerken-voor-ai-content"
   ],
   "meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit": [
+    "meta-lanceert-muse-code-ai-agent-grote-codebases",
     "politieke-targeting-en-visuele-aandacht-eye-tracking",
-    "meta-invoert-onzichtbare-watermerken-voor-ai-content",
-    "threads-passeert-half-miljard-maandelijkse-gebruikers"
+    "meta-invoert-onzichtbare-watermerken-voor-ai-content"
   ],
   "microsoft-365-calendders-hollowgraph-spionage": [
     "microsofts-ai-bom-in-cybersecurity-hoe-agenten-de-battle-gaan-winnen",
@@ -1185,9 +1190,9 @@
     "us-defense-ai-deals-zonder-anthropic"
   ],
   "openai-test-ad-format-met-ai-agent": [
+    "meta-lanceert-muse-code-ai-agent-grote-codebases",
     "chatgpt-wordt-advertentieplatform",
-    "klanten-vragen-naar-chatgpt-zichtbaarheid",
-    "openai-sluit-atlas-browser-maar-ai-browsing-leeft-door"
+    "klanten-vragen-naar-chatgpt-zichtbaarheid"
   ],
   "openai-vrees-open-weight-modellen": [
     "openai-lanceert-eigen-ai-chip-samen-met-broadcom",
