@@ -1513,6 +1513,28 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'bingers-nieuwe-tv-tracker-met-sociale-elementen-van-tv-time': (
+    <>
+      <h2>
+        Wat is Bingers en waarom is het relevant
+      </h2>
+      <p className="lead-para">
+        Bingers is een nieuwe app voor het bijhouden van tv-series en films die de sociale functies van TV Time nieuw leven inblaast. De app biedt gebruikers de mogelijkheid om hun kijkgedrag te registreren, maar voegt daar een actieve community aan toe. Gebruikers kunnen profielen aanmaken, discussiëren over afleveringen, memes delen en zelfs stemmen op favoriete personages. Deze interactieve elementen waren kenmerkend voor TV Time en ontbraken bij andere trackers.
+      </p>
+      <h2>
+        Hoe verschilt Bingers van bestaande trackers
+      </h2>
+      <p>
+        In tegenstelling tot statische trackers die alleen aangeven of een aflevering is bekeken, richt Bingers zich op sociale betrokkenheid. De app implementeert ook een manier om historische kijkdata van TV Time te importeren. Dit gebeurt via een GDPR-compliante exportfunctie die TV Time kort voor sluiting beschikbaar stelde. Daarnaast werkt de app lokaal op apparaten om serverkosten te verlagen.
+      </p>
+      <h2>
+        Wat zijn de plannen voor monetarisatie
+      </h2>
+      <p>
+        Bingers start met een donatiemodel waarbij gebruikers direct kunnen bijdragen aan serverkosten. Dit was een veelgehoorde wens onder voormalige TV Time-gebruikers. Op termijn overweegt de ontwikkelaar andere inkomstenbronnen, zoals real-life bijeenkomsten voor fans, maar details zijn nog niet bekendgemaakt.
+      </p>
+    </>
+  ),
   'meta-lanceert-muse-code-ai-agent-grote-codebases': (
     <>
       <h2>
@@ -6854,6 +6876,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'bingers-nieuwe-tv-tracker-met-sociale-elementen-van-tv-time':
+    "Voor bedrijven die klantcommunities of engagement-strategieën beheren, toont dit hoe een niche-app met sterke sociale functies kan terugkeren na een sluiting. Het benadrukt dat waardevolle gebruikersgroepen vaak bereid zijn om zelf bij te dragen aan continuïteit als ze zich verbonden voelen met het product. Dit roept de vraag op hoe organisaties loyaliteit kunnen behouden of herstellen wanneer ze keuzes maken die gebruikers raken.",
   'meta-lanceert-muse-code-ai-agent-grote-codebases':
     "Voor organisaties met technische afdelingen of bureaus die softwareontwikkeling begeleiden, biedt dit nieuws een concrete optie om productiviteit te verhogen. De parallelle aanpak van Muse Code kan helpen om doorlooptijden te verkorten, mits de integratie met bestaande workflows soepel verloopt. Het is wel zaak om te testen of de agent voldoende nauwkeurigheid levert bij specifieke projectvereisten.",
   'marketing-brein-waarom-nu':

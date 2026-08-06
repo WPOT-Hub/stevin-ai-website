@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'bingers-nieuwe-tv-tracker-met-sociale-elementen-van-tv-time',
+    format: 'dispatch' as const,
+    edition: '403',
+    category: 'Platform',
+    title: "Nieuwe app Bingers brengt sociale TV-tracking terug na sluiting TV Time",
+    dek: "De app Bingers herintroduceert de sociale functies van het populaire TV Time, inclusief import van kijkgeschiedenis en interactieve community-elementen.",
+    publishedAt: '2026-08-06',
+    readMinutes: 1,
+    author: { name: 'Stevin Redactie', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Nieuwe app Bingers brengt sociale TV-tracking terug na sluiting TV Time",
+    source: { url: "https://techcrunch.com/2026/08/04/tv-time-co-founder-launches-bingers-to-revive-the-beloved-tv-tracking-app/", name: "TechCrunch" },
+  },
+  {
     slug: 'meta-lanceert-muse-code-ai-agent-grote-codebases',
     format: 'dispatch' as const,
     edition: '402',
