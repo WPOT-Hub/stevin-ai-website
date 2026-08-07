@@ -1513,6 +1513,28 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'amd-koopt-taalas-voor-sneller-ai-model-inferentie': (
+    <>
+      <h2>
+        Wat betekent de overname van Taalas voor AMD’s AI-strategie
+      </h2>
+      <p className="lead-para">
+        AMD heeft de Canadese AI-chipstartup Taalas overgenomen om zijn positie in high-performance AI-inferentie te versterken. Taalas ontwikkelt model-specifieke geïntegreerde schakelingen (MSICs) die modelgewichten direct in silicium etsen, in plaats van deze op te slaan in geheugen zoals bij traditionele GPU’s. Volgens eerste tests presteert een dergelijke chip tot wel 48 keer sneller dan Nvidia’s GPU’s en 8,5 keer sneller dan Cerebras’ waferscale accelerators bij het verwerken van Meta’s Llama 3.1.
+      </p>
+      <h2>
+        Hoe werkt de technologie van Taalas
+      </h2>
+      <p>
+        Taalas’ chips bestaan uit twee hoofdcomponenten: een mask-ROM-fabriek waar modelgewichten permanent worden opgeslagen en een SRAM-fabriek voor tijdelijke opslag van KV-caches en fine-tuning-adapters. De tweede generatie chip, de HC2, moet tot 20 miljard parameters kunnen ondersteunen door gewichten te verdelen over meerdere accelerators met behulp van pipeline-parallelisme. AMD plant deze chips te combineren met zijn Instinct-gebaseerde Helios-racks, waarbij zware promptverwerking op GPU’s gebeurt en tokenproductie wordt uitbesteed aan Taalas-chips.
+      </p>
+      <h2>
+        Welke beperkingen kleven aan deze aanpak
+      </h2>
+      <p>
+        Een belangrijk nadeel is dat de chips na fabricage vastzitten aan één specifiek model. Aanpassingen, zelfs kleine zoals LoRA-adapters, vereisen een hernieuwde productieronde, hoewel dit volgens Taalas beperkt blijft tot het wijzigen van twee metaallagen. Dit maakt de technologie minder flexibel voor snel evoluerende modellen, maar kan voor grote infrastructurele partijen met stabiele modellen wel aantrekkelijk zijn.
+      </p>
+    </>
+  ),
   'bingers-nieuwe-tv-tracker-met-sociale-elementen-van-tv-time': (
     <>
       <h2>
@@ -6876,6 +6898,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'amd-koopt-taalas-voor-sneller-ai-model-inferentie':
+    "Voor bedrijven die afhankelijk zijn van hoge inferentiesnelheden kan deze techniek kostenbesparend werken als ze langdurig hetzelfde model gebruiken. Tegelijkertijd vraagt het om een zorgvuldige afweging: wie niet zeker weet welk model langdurig nodig is of regelmatig updates wil doorvoeren, loopt het risico vast te zitten aan verouderde hardware. Voor marketeers en sales-teams die AI-oplossingen verkopen of implementeren kan dit betekenen dat klantenbewustwording nodig is over deze trade-offs.",
   'bingers-nieuwe-tv-tracker-met-sociale-elementen-van-tv-time':
     "Voor bedrijven die klantcommunities of engagement-strategieën beheren, toont dit hoe een niche-app met sterke sociale functies kan terugkeren na een sluiting. Het benadrukt dat waardevolle gebruikersgroepen vaak bereid zijn om zelf bij te dragen aan continuïteit als ze zich verbonden voelen met het product. Dit roept de vraag op hoe organisaties loyaliteit kunnen behouden of herstellen wanneer ze keuzes maken die gebruikers raken.",
   'meta-lanceert-muse-code-ai-agent-grote-codebases':

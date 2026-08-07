@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'amd-koopt-taalas-voor-sneller-ai-model-inferentie',
+    format: 'dispatch' as const,
+    edition: '404',
+    category: 'Technologie',
+    title: "AMD koopt chipstartup Taalas voor 17.000 tokens per seconde",
+    dek: "AMD neemt Taalas over om AI-modelinferentie met geëtste modelgewichten in silicium tot tien keer sneller te maken.",
+    publishedAt: '2026-08-07',
+    readMinutes: 1,
+    author: { name: 'Stevin Redactie', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECHNOLOGIE',
+    posterTopic: "AMD koopt chipstartup Taalas voor 17.000 tokens per seconde",
+    source: { url: "https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344", name: "The Register" },
+  },
+  {
     slug: 'bingers-nieuwe-tv-tracker-met-sociale-elementen-van-tv-time',
     format: 'dispatch' as const,
     edition: '403',
