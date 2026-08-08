@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'walmart-sponsort-gaming-site-restart-schrapt-redactie',
+    format: 'dispatch' as const,
+    edition: '405',
+    category: 'Markt',
+    title: "Walmart-sponsort gaming-site Restart schrapt gehele redactie",
+    dek: "De door Walmart gesponsorde gaming-site Restart heeft zijn volledige redactie ontslagen, zo meldt de voormalige hoofdredacteur.",
+    publishedAt: '2026-08-08',
+    readMinutes: 1,
+    author: { name: 'Stevin Redactie', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Walmart-sponsort gaming-site Restart schrapt gehele redactie",
+    source: { url: "https://www.theverge.com/games/977056/restart-gaming-site-walmart-moonrock-layoffs", name: "The Verge" },
+  },
+  {
     slug: 'amd-koopt-taalas-voor-sneller-ai-model-inferentie',
     format: 'dispatch' as const,
     edition: '404',

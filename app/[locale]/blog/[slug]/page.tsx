@@ -1513,6 +1513,28 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'walmart-sponsort-gaming-site-restart-schrapt-redactie': (
+    <>
+      <h2>
+        Hoe ontstond Restart en wat was de rol van Walmart
+      </h2>
+      <p className="lead-para">
+        Restart werd eind 2024 gelanceerd als een onafhankelijk gaming-mediakanaal met een missie om spelers te helpen bij aankoopbeslissingen. Walmart fungeerde als sponsor via partnerlinks op artikelen: klikten bezoekers door naar Walmart voor een aankoop, kreeg de retailer meetdata over het verkeer. De site benadrukte dat Walmart geen invloed had op de redactionele koers, aldus de eigen missiepagina.
+      </p>
+      <h2>
+        Wat betekenen de ontslagen voor de toekomst van Restart
+      </h2>
+      <p>
+        De hele redactie is ontslagen, zo bevestigt voormalig hoofdredacteur Brandy Berthelson in een bericht. Ook andere medewerkers meldden op sociale media dat ze hun baan kwijtraakten. Een ontslagen medewerker zegt tegen The Verge dat hij een vertrekregeling tekende met Moonrock, het contentmarketingbureau achter Restart.
+      </p>
+      <h2>
+        Is er nog een toekomst voor Restart zonder redactie
+      </h2>
+      <p>
+        Restart is nog steeds online, maar het is onduidelijk of Walmart en Moonrock de site voortzetten. De site functioneerde als een soort Game Informer-variant, gericht op koopgidsen met affiliate-links. Zonder redactie rest alleen nog de technische infrastructuur en eventuele automatische content.
+      </p>
+    </>
+  ),
   'amd-koopt-taalas-voor-sneller-ai-model-inferentie': (
     <>
       <h2>
@@ -6898,6 +6920,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'walmart-sponsort-gaming-site-restart-schrapt-redactie':
+    "Dit soort experimenten laat zien hoe moeilijk het is om commerciële sponsoring en journalistieke onafhankelijkheid in balans te houden. Voor bureaus die zelf contentproducties maken voor klanten kan dit een waarschuwing zijn: transparantie over redactionele vrijheid wordt snel onder druk gezet wanneer meetdata en salesdoelen centraal staan. Het risico is dat lezers het verschil tussen advertorial en onafhankelijke content niet meer kunnen maken.",
   'amd-koopt-taalas-voor-sneller-ai-model-inferentie':
     "Voor bedrijven die afhankelijk zijn van hoge inferentiesnelheden kan deze techniek kostenbesparend werken als ze langdurig hetzelfde model gebruiken. Tegelijkertijd vraagt het om een zorgvuldige afweging: wie niet zeker weet welk model langdurig nodig is of regelmatig updates wil doorvoeren, loopt het risico vast te zitten aan verouderde hardware. Voor marketeers en sales-teams die AI-oplossingen verkopen of implementeren kan dit betekenen dat klantenbewustwording nodig is over deze trade-offs.",
   'bingers-nieuwe-tv-tracker-met-sociale-elementen-van-tv-time':
