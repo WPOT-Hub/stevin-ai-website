@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'openai-acquire-nextslide-presentation-startup',
+    format: 'dispatch' as const,
+    edition: '406',
+    category: 'Agents',
+    title: "OpenAI koopt presentatiestartup NextSlide en richt team in op ChatGPT",
+    dek: "Het team van de presentatiesoftware NextSlide werkt vanaf nu aan ChatGPT na overname door OpenAI.",
+    publishedAt: '2026-08-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Redactie', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'AGENTS',
+    posterTopic: "OpenAI koopt presentatiestartup NextSlide en richt team in op ChatGPT",
+    source: { url: "https://techcrunch.com/2026/08/08/openai-acquires-presentation-startup-nextslide/", name: "TechCrunch" },
+  },
+  {
     slug: 'walmart-sponsort-gaming-site-restart-schrapt-redactie',
     format: 'dispatch' as const,
     edition: '405',

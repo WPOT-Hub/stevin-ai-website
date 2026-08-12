@@ -1513,6 +1513,28 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-acquire-nextslide-presentation-startup': (
+    <>
+      <h2>
+        Wat betekent de overname voor NextSlide en zijn product
+      </h2>
+      <p className="lead-para">
+        NextSlide, een startup die presentaties automatisch genereert uit tekst of documenten, is overgenomen door OpenAI. Het team van NextSlide werkt nu mee aan de ontwikkeling van ChatGPT. Founder Ahmed Beshry stelt dat het doel van NextSlide was "visuele communicatie toegankelijker maken en mensen helpen hun ideeën duidelijk uit te drukken".
+      </p>
+      <h2>
+        Hoe past dit in OpenAI’s strategie met AI-agents
+      </h2>
+      <p>
+        De overname sluit aan bij OpenAI’s focus op het verbeteren van conversatie en interactie via AI. Beshry benadrukt dat het team dezelfde missie blijft nastreven: "producten bouwen die mensen helpen creëren, communiceren en hun ideeën omzetten in betekenisvol werk". Financiële details van de deal zijn niet bekendgemaakt.
+      </p>
+      <h2>
+        Wat gebeurt er met de bestaande NextSlide-producten
+      </h2>
+      <p>
+        De website van NextSlide toont een melding dat het bedrijf zich heeft aangesloten bij OpenAI. Het is onduidelijk of de bestaande presentatietool wordt geïntegreerd in ChatGPT of verder wordt ontwikkeld binnen OpenAI. De acquisitie vond eerder dit jaar plaats, aldus Beshry.
+      </p>
+    </>
+  ),
   'walmart-sponsort-gaming-site-restart-schrapt-redactie': (
     <>
       <h2>
@@ -6920,6 +6942,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-acquire-nextslide-presentation-startup':
+    "Voor bedrijven die zelf AI-tools ontwikkelen of integreren, laat deze stap zien hoe gespecialiseerde startups worden opgenomen in grotere ecosystemen. Het kan nuttig zijn om te onderzoeken welke nichefuncties binnen jouw sector aansluiten bij bestaande AI-platforms. Tegelijkertijd roept het vragen op over de toekomst van onafhankelijke tools: wanneer is integratie voordelig en wanneer blijft een eigen oplossing relevant?",
   'walmart-sponsort-gaming-site-restart-schrapt-redactie':
     "Dit soort experimenten laat zien hoe moeilijk het is om commerciële sponsoring en journalistieke onafhankelijkheid in balans te houden. Voor bureaus die zelf contentproducties maken voor klanten kan dit een waarschuwing zijn: transparantie over redactionele vrijheid wordt snel onder druk gezet wanneer meetdata en salesdoelen centraal staan. Het risico is dat lezers het verschil tussen advertorial en onafhankelijke content niet meer kunnen maken.",
   'amd-koopt-taalas-voor-sneller-ai-model-inferentie':
