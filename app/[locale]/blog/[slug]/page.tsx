@@ -1513,6 +1513,28 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-maakt-nieuwe-pixel-apparaten-bekend': (
+    <>
+      <h2>
+        Welke nieuwe apparaten komen er aan van Google
+      </h2>
+      <p className="lead-para">
+        Google gaat woensavond vier nieuwe smartphones uitbrengen: de Pixel 11, Pixel 11 Pro, Pixel 11 Pro XL en de opgevouwen Pixel 11 Pro Fold. De toestellen lijken visueel sterk op hun voorgangers, maar krijgen een zwarte camerabalk en mogelijk een regenbooglicht genaamd HiLight voor meldingen. Intern wordt gewerkt met een nieuwe Tensor G6-chip op basis van TSMC’s 2nm-proces, wat betere prestaties en efficiëntie belooft.
+      </p>
+      <h2>
+        Wat verandert er aan de Pixel Watch en accessoires
+      </h2>
+      <p>
+        De Pixel Watch 5 komt met grotere schermformaten (41mm en 45mm) en een batterijduur die vergelijkbaar is met de vorige generatie. Het model krijgt standaard dubbel zoveel opslag (64GB) en introduceert verbeterde slaapregistratie. Daarnaast verschijnt er een nieuwe kleur voor de Pixel Buds Pro 2 in olijfgroen, terwijl andere specificaties gelijk blijven.
+      </p>
+      <h2>
+        Wordt er ook een item tracker gelanceerd
+      </h2>
+      <p>
+        Een nieuw product is de Pixel Tag: een ovaal gevormde tracker die lijkt op Apples AirTag. Deze zou integreren met Androids Find Hub-netwerk voor het terugvinden van verloren spullen. Gedetailleerde specificaties of prijs zijn nog niet bekendgemaakt.
+      </p>
+    </>
+  ),
   'openai-acquire-nextslide-presentation-startup': (
     <>
       <h2>
@@ -6942,6 +6964,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-maakt-nieuwe-pixel-apparaten-bekend':
+    "Voor bedrijven die afhankelijk zijn van hardware-updates of software-integratie met consumentenapparaten, biedt deze lancering vooral kleine verbeteringen in plaats van baanbrekende innovaties. De focus ligt op stabiliteit in ontwerp en gebruikerservaring, wat past bij Googles strategie om bestaande ecosystemen te verstevigen in plaats van nieuwe markten te openen.",
   'openai-acquire-nextslide-presentation-startup':
     "Voor bedrijven die zelf AI-tools ontwikkelen of integreren, laat deze stap zien hoe gespecialiseerde startups worden opgenomen in grotere ecosystemen. Het kan nuttig zijn om te onderzoeken welke nichefuncties binnen jouw sector aansluiten bij bestaande AI-platforms. Tegelijkertijd roept het vragen op over de toekomst van onafhankelijke tools: wanneer is integratie voordelig en wanneer blijft een eigen oplossing relevant?",
   'walmart-sponsort-gaming-site-restart-schrapt-redactie':

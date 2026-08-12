@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-maakt-nieuwe-pixel-apparaten-bekend',
+    format: 'dispatch' as const,
+    edition: '407',
+    category: 'Distributie',
+    title: "Google onthult Pixel 11, Watch 5 en nieuwe item tracker bij hardware-event",
+    dek: "Google presenteert woensdag nieuwe smartphones, een opgefrist Pixel Watch-model en mogelijk een AirTag-achtige item tracker tijdens het Made by Google-evenement.",
+    publishedAt: '2026-08-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Redactie', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "Google onthult Pixel 11, Watch 5 en nieuwe item tracker bij hardware-event",
+    source: { url: "https://www.theverge.com/tech/977448/made-by-google-2026-pixel-hardware-launch-event", name: "The Verge" },
+  },
+  {
     slug: 'openai-acquire-nextslide-presentation-startup',
     format: 'dispatch' as const,
     edition: '406',
