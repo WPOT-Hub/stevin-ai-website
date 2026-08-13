@@ -1513,6 +1513,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'de-ai-race-is-een-marathon-nu-de-startblokken-verdwenen': (
+    <>
+      <p className="lead-para">
+        In Silicon Valley staat deze week een onopvallend kantoorgebouw vol servers te trillen op zijn grondvesten. Niet door een aardbeving, maar door de koelingssystemen die op volle toeren draaien voor een nieuwe generatie AI-modellen. De luchtvochtigheid in het gebouw is zo hoog dat medewerkers hun brillenglazen regelmatig moeten afnemen. Dit is geen scène uit een dystopische film, maar de dagelijkse realiteit bij techbedrijven die vechten om de beste AI-infrastructuur te bouwen. De race om wie straks de dominante speler wordt in artificiële intelligentie is allang begonnen, maar niemand heeft nog door dat de finishlijn nog jaren ver weg ligt.
+      </p>
+      <p>
+        De afgelopen maanden zagen we tientallen bedrijven met grote beloftes en nog grotere investeringen naar voren stappen. Van traditionele techgiganten tot startups die in een garage zijn begonnen: allemaal claimen ze dé oplossing te hebben voor wat AI voor hun sector kan betekenen. Maar achter die schermen speelt zich iets anders af. Het gaat niet langer om wie het snelste model kan trainen of wie het meeste geld ophaalt. Het gaat erom wie straks kan laten zien dat hun technologie daadwerkelijk werkt in de praktijk: bij klanten die niet geïnteresseerd zijn in hype, maar in resultaat.
+      </p>
+      <p>
+        Neem bijvoorbeeld de recente aankondiging van een Europees bedrijf dat beweert een AI-model te hebben ontwikkeld dat 90% nauwkeuriger is dan bestaande oplossingen. Op papier klinkt dat indrukwekkend, maar wat gebeurt er als je dat model loslaat op een gemiddeld Nederlands MKB-bedrijf? De kans is groot dat de eerste tests leiden tot meer vragen dan antwoorden. Want juist die praktijktoepassingen blijken vaak het lastigste onderdeel. Bedrijven willen niet alleen weten wat AI kan doen, maar ook hoe ze het kunnen integreren zonder hun hele IT-infrastructuur overhoop te gooien.
+      </p>
+      <p>
+        Er is nog een andere kant aan deze race die we vaak over het hoofd zien: de menselijke factor. Achter elk succesvol AI-model staan teams van engineers, datawetenschappers en productmanagers die jarenlang hebben gewerkt aan iets wat uiteindelijk misschien wel nooit wordt gebruikt. De druk om te scoren is enorm, maar de realiteit is dat veel van deze projecten zullen falen omdat ze simpelweg niet aansluiten bij wat bedrijven écht nodig hebben. Het is niet genoeg om alleen technisch beter te zijn; je moet ook begrijpen hoe organisaties werken en waar de pijnpunten liggen.
+      </p>
+      <p>
+        Deze dynamiek verklaart waarom we nu steeds vaker zien dat bedrijven niet zelf proberen om het beste model te bouwen, maar juist kiezen voor samenwerking met bestaande spelers. Een Nederlandse retailer koos er bijvoorbeeld voor om samen te werken met een cloudprovider in plaats van zelf een eigen team op te zetten. De reden? Ze wilden snel schaalbaarheid en betrouwbaarheid, zonder maandenlang te hoeven investeren in R&amp;D. Dit fenomeen zien we ook terug in sectoren als zorg en logistiek, waar bedrijven liever gebruikmaken van bewezen oplossingen dan risico’s nemen met onbeproefde technologie.
+      </p>
+      <p>
+        Toch blijft er een groep ondernemers die vasthoudt aan het idee dat ze zelf alles moeten doen om concurrerend te blijven. Zij bouwen eigen teams op en investeren miljoenen in interne capaciteit, in de hoop dat zij straks als winnaar uit de bus komen. Maar hier schuilt een groot risico: terwijl zij bezig zijn met het trainen van modellen, veranderen de regels van het spel continu. Wat vandaag state-of-the-art lijkt, kan morgen al achterhaald zijn door nieuwe ontwikkelingen of wetgeving.
+      </p>
+      <p>
+        Uiteindelijk draait deze race niet om wie het eerst over de finish komt, maar om wie er na vijf jaar nog overeind staat. De bedrijven die slagen zullen degene zijn die niet alleen technisch sterk zijn, maar ook flexibel genoeg om mee te bewegen met veranderende marktomstandigheden en klantbehoeften. Het gaat niet om snelheid, maar om duurzaamheid: wie kan zorgen voor consistente uplift zonder afhankelijk te worden van één enkele technologie of leverancier?
+      </p>
+      <p>
+        De les hieruit is duidelijk: wie denkt dat dit een sprint is, heeft het mis. Dit is een marathon waarbij elke stap telt – en waarbij alleen degene die goed voorbereid is aan het eind nog overeind staat.
+      </p>
+    </>
+  ),
   'google-maakt-nieuwe-pixel-apparaten-bekend': (
     <>
       <h2>
@@ -6964,6 +6992,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'de-ai-race-is-een-marathon-nu-de-startblokken-verdwenen':
+    "Bij Stevin zien we dagelijks hoe organisaties worstelen met deze dynamiek tussen haast en duurzaamheid bij AI-implementaties. Onze benadering begint altijd met twee vragen: wat wil je écht bereiken en hoe meet je of je daar komt? Te vaak zien we bedrijven investeren in complexe oplossingen zonder helder doel voor ogen of meetbare criteria. Wij geloven dat succesvolle AI-integratie begint bij kleine, meetbare stappen waarbij oorzaak en gevolg direct zichtbaar zijn voor decision-makers binnen je organisatie.\n\nDit betekent ook dat we kritisch kijken naar trends zoals 'eigen modellen bouwen'. Voor veel bedrijven is samenwerken met gevestigde partijen simpelweg slimmer dan zelf iets nieuws uitvinden – mits je kiest voor partners die transparant zijn over hun beperkingen én mogelijkheden.\n\nTot slot merken we dat organisaties vaak onderschatten hoeveel tijd en energie nodig is om medewerkers mee te krijgen in veranderingen rondom AI-tools. Training en adoptie zijn net zo belangrijk als technologische innovatie zelf.\n\nOns advies? Begin klein, meet hard en bouw pas op als je zeker weet dat je oplossing werkt – want uiteindelijk gaat het niet om wie als eerste finishtechnologie lanceert, maar wie als laatste nog betrouwbaar blijft.",
   'google-maakt-nieuwe-pixel-apparaten-bekend':
     "Voor bedrijven die afhankelijk zijn van hardware-updates of software-integratie met consumentenapparaten, biedt deze lancering vooral kleine verbeteringen in plaats van baanbrekende innovaties. De focus ligt op stabiliteit in ontwerp en gebruikerservaring, wat past bij Googles strategie om bestaande ecosystemen te verstevigen in plaats van nieuwe markten te openen.",
   'openai-acquire-nextslide-presentation-startup':
