@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'de-ai-race-is-een-marathon-nu-de-startblokken-verdwenen',
+    format: 'dispatch' as const,
+    edition: '408',
+    category: 'Platform',
+    title: "De AI-race is een marathon: nu de startblokken verdwenen zijn",
+    dek: "Wie denkt dat de strijd om AI-leiderschap snel beslecht wordt, heeft het mis: de echte uitdaging begint pas als de eerste hype voorbij is.",
+    publishedAt: '2026-08-13',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "De AI-race is een marathon: nu de startblokken verdwenen zijn",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-maakt-nieuwe-pixel-apparaten-bekend',
     format: 'dispatch' as const,
     edition: '407',
