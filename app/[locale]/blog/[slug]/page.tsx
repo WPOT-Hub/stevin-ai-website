@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'anthropic-2-triljoen-waard-voor-ipo': (
+    <>
+      <p className="lead-para">
+        Anthropic, het bedrijf achter het populaire taalmodel Claude, zou bij een toekomstige beursgang een waardering van ruim 2 biljoen dollar kunnen halen. Dat blijkt uit insiderberichten die rekenen op een omzetstijging van meer dan 400% in twee jaar tijd. De schatting overtreft de huidige hoogste marktwaarderingen en zou de grootste beursgang ooit betekenen, aldus betrokken partijen.
+      </p>
+      <p>
+        De snelle groei van Anthropic komt voort uit de vraag naar geavanceerde AI-oplossingen bij grote techbedrijven en overheden. Concurrenten als OpenAI en Mistral lopen tegen dezelfde groeicijfers aan, maar Anthropics focus op veiligheid en transparantie lijkt investeerders te overtuigen. Een deel van de waardering is gebaseerd op verwachte contracten met Fortune 500-bedrijven die Claude integreren in hun systemen.
+      </p>
+      <p>
+        De aankomende IPO zou niet alleen een record betekenen voor de techsector, maar ook de druk op andere AI-startups vergroten om soortgelijke groeicijfers te tonen. Analisten wijzen erop dat de markt voor generatieve AI nog steeds volatiel is, ondanks de hoge verwachtingen. Of de waardering houdbaar blijft na de beursgang hangt af van hoe snel Anthropic winstgevend wordt.
+      </p>
+    </>
+  ),
   'de-ai-race-is-een-marathon-nu-de-startblokken-verdwenen': (
     <>
       <p className="lead-para">
@@ -6992,6 +7005,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'anthropic-2-triljoen-waard-voor-ipo':
+    "Voor ondernemers die AI-technologie inzetten of overwegen, toont deze ontwikkeling aan dat investeerders bereid zijn om forse bedragen neer te leggen voor schaalbare oplossingen. Tegelijkertijd benadrukt het risico’s: hoge waarderingen vergen vaak snelle groei om gerechtvaardigd te blijven. Het is verstandig om niet alleen naar marktwaarde te kijken, maar ook naar duurzame businessmodellen die winstgevendheid garanderen.",
   'de-ai-race-is-een-marathon-nu-de-startblokken-verdwenen':
     "Bij Stevin zien we dagelijks hoe organisaties worstelen met deze dynamiek tussen haast en duurzaamheid bij AI-implementaties. Onze benadering begint altijd met twee vragen: wat wil je écht bereiken en hoe meet je of je daar komt? Te vaak zien we bedrijven investeren in complexe oplossingen zonder helder doel voor ogen of meetbare criteria. Wij geloven dat succesvolle AI-integratie begint bij kleine, meetbare stappen waarbij oorzaak en gevolg direct zichtbaar zijn voor decision-makers binnen je organisatie.\n\nDit betekent ook dat we kritisch kijken naar trends zoals 'eigen modellen bouwen'. Voor veel bedrijven is samenwerken met gevestigde partijen simpelweg slimmer dan zelf iets nieuws uitvinden – mits je kiest voor partners die transparant zijn over hun beperkingen én mogelijkheden.\n\nTot slot merken we dat organisaties vaak onderschatten hoeveel tijd en energie nodig is om medewerkers mee te krijgen in veranderingen rondom AI-tools. Training en adoptie zijn net zo belangrijk als technologische innovatie zelf.\n\nOns advies? Begin klein, meet hard en bouw pas op als je zeker weet dat je oplossing werkt – want uiteindelijk gaat het niet om wie als eerste finishtechnologie lanceert, maar wie als laatste nog betrouwbaar blijft.",
   'google-maakt-nieuwe-pixel-apparaten-bekend':
