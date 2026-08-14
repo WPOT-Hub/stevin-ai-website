@@ -1513,6 +1513,13 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'stralingsschild-maanmissie-werkt': (
+    <>
+      <p className="lead-para">
+        Het prototype vest, ontwikkeld door een consortium van ruimtevaartbedrijven en onderzoeksinstituten, blokkeerde tijdens de Artemis II-missie gemiddeld 20% meer kosmische straling dan verwacht. De metingen tonen aan dat de technologie levensvatbaar is voor langdurige missies naar de maan en Mars. Astronauten rapporteerden geen hinder bij het dragen van het vest tijdens de vlucht. De test werd uitgevoerd met slechts twee prototypes, aldus NASA-medewerkers die betrokken waren bij het project.
+      </p>
+    </>
+  ),
   'virgin-galactic-zoekt-hulp-bij-naamgeving-nieuwe-ruimteschipklasse': (
     <>
       <p className="lead-para">
@@ -7018,6 +7025,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'stralingsschild-maanmissie-werkt':
+    "Voor bedrijven die werken met complexe technologische innovaties is deze doorbraak een reminder dat soms kleine aanpassingen grote impact hebben. Het verschuiven van focus van hardware naar mensgerichte oplossingen kan nieuwe markten openen. Tegelijkertijd laat dit zien hoe cruciale tests in extreme omstandigheden vaak pas na jarenlange voorbereiding mogelijk zijn.",
   'virgin-galactic-zoekt-hulp-bij-naamgeving-nieuwe-ruimteschipklasse':
     "Ruimtetoerisme groeit gestaag als niche voor bedrijven die durven investeren in innovatie buiten de traditionele markten. Voor ondernemers die kijken naar disruptieve sectoren kan dit een inspirerend voorbeeld zijn van hoe merkengagement en productontwikkeling hand in hand kunnen gaan. Tegelijkertijd blijft de vraag of dergelijke projecten ooit echt rendabel zullen worden, een risicofactor die niet over het hoofd mag worden gezien.",
   'anthropic-2-triljoen-waard-voor-ipo':
