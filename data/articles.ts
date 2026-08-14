@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'virgin-galactic-zoekt-hulp-bij-naamgeving-nieuwe-ruimteschipklasse',
+    format: 'dispatch' as const,
+    edition: '411',
+    category: 'Cultuur',
+    title: "Virgin Galactic vraagt publiek om naam te kiezen voor nieuwe Delta-class spaceship",
+    dek: "Publiek kan stemmen op vijf namen voor het volgende commerciële ruimtevaartuig van Virgin Galactic.",
+    publishedAt: '2026-08-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'CULTUUR',
+    posterTopic: "Virgin Galactic vraagt publiek om naam te kiezen voor nieuwe Delta-class spaceship",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'anthropic-2-triljoen-waard-voor-ipo',
     format: 'dispatch' as const,
     edition: '410',
