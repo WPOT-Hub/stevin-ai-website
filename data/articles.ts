@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'x-open-source-ranking-algoritme-met-transparantie-tools',
+    format: 'dispatch' as const,
+    edition: '413',
+    category: 'Platform',
+    title: "X opent ranking-algoritme en voegt tools toe voor zichtbare ‘shadowban’",
+    dek: "X maakt de broncode van zijn ‘For You’-feed openbaar en introduceert nieuwe meetinstrumenten die gebruikers laten zien hoe het algoritme hun bereik beïnvloedt.",
+    publishedAt: '2026-08-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "X opent ranking-algoritme en voegt tools toe voor zichtbare ‘shadowban’",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'stralingsschild-maanmissie-werkt',
     format: 'dispatch' as const,
     edition: '412',
