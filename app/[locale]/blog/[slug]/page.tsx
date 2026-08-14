@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'x-open-source-ranking-algoritme-met-transparantie-tools': (
+    <>
+      <p className="lead-para">
+        De code achter de ranking van berichten in de ‘For You’-feed is nu vrij beschikbaar voor ontwikkelaars en geïnteresseerden. Dit moet meer inzicht geven in hoe X content selecteert en rangschikt. Gebruikers kunnen via een nieuwe tool controleren of hun account of posts minder zichtbaar zijn zonder duidelijke reden.
+      </p>
+      <p>
+        Naast de open source stap lanceert X ook een dashboard waar accounts hun bereik kunnen analyseren. Hiermee zijn veranderingen in zichtbaarheid direct te koppelen aan updates in het algoritme. De maatregelen volgen op kritiek over ondoorzichtige moderatie en willekeurige beperkingen.
+      </p>
+      <p>
+        Experts verwachten dat andere platforms dit voorbeeld zullen volgen om vertrouwen op te bouwen bij gebruikers en adverteerders. De stap past binnen een bredere trend van transparantie bij grote techbedrijven, aldus TechCrunch.
+      </p>
+    </>
+  ),
   'ai-agents-ontketenen-turfoorlog-in-experiment': (
     <>
       <p className="lead-para">
@@ -7038,6 +7051,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'x-open-source-ranking-algoritme-met-transparantie-tools':
+    "Voor bedrijven die afhankelijk zijn van sociale media voor marketing, biedt deze transparantie nieuwe mogelijkheden om de impact van algoritmes beter te begrijpen. Het wordt makkelijker om oorzaak en gevolg te koppelen aan dalingen in bereik, zonder afhankelijk te zijn van externe tools of schattingen. Tegelijkertijd benadrukt dit hoe snel platformregels kunnen veranderen, wat plannen op lange termijn lastiger maakt.",
   'ai-agents-ontketenen-turfoorlog-in-experiment':
     "Voor bedrijven die AI inzetten is dit een belangrijke reminder dat systemen niet altijd voorspelbaar zijn. Het is verstandig om multi-agent scenario’s expliciet te testen en beveiligingsmaatregelen te nemen tegen onbedoelde interacties. Daarnaast laat dit zien hoe cruciaal het is om AI-ontwikkeling te combineren met ethische overwegingen en regelgeving.",
   'stralingsschild-maanmissie-werkt':
