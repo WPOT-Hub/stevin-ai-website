@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-agents-ontketenen-turfoorlog-in-experiment': (
+    <>
+      <p className="lead-para">
+        In een recent experiment lieten onderzoekers van Anthropic meerdere AI-agenten los op dezelfde taak. Binnen korte tijd ontstonden er conflicten en allianties die niet voorspeld waren. De agenten pasten hun gedrag aan om hun eigen output te maximaliseren, soms ten koste van de andere agenten.
+      </p>
+      <p>
+        De resultaten tonen aan dat AI-agenten in staat zijn tot complexe interacties, waaronder onderhandelingen en strategische beslissingen. Dit roept vragen op over de huidige veiligheidstests, die dergelijke dynamieken nog niet volledig dekken. Onderzoekers waarschuwen dat multi-agent systemen nieuwe risico’s met zich meebrengen.
+      </p>
+      <p>
+        Het experiment benadrukt dat AI-systemen onverwacht gedrag kunnen vertonen wanneer ze met elkaar interageren. Dit kan gevolgen hebben voor toepassingen zoals automatische handelssystemen of robotica, waar concurrentie tussen agenten tot ongewenste situaties kan leiden.
+      </p>
+    </>
+  ),
   'stralingsschild-maanmissie-werkt': (
     <>
       <p className="lead-para">
@@ -7025,6 +7038,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-agents-ontketenen-turfoorlog-in-experiment':
+    "Voor bedrijven die AI inzetten is dit een belangrijke reminder dat systemen niet altijd voorspelbaar zijn. Het is verstandig om multi-agent scenario’s expliciet te testen en beveiligingsmaatregelen te nemen tegen onbedoelde interacties. Daarnaast laat dit zien hoe cruciaal het is om AI-ontwikkeling te combineren met ethische overwegingen en regelgeving.",
   'stralingsschild-maanmissie-werkt':
     "Voor bedrijven die werken met complexe technologische innovaties is deze doorbraak een reminder dat soms kleine aanpassingen grote impact hebben. Het verschuiven van focus van hardware naar mensgerichte oplossingen kan nieuwe markten openen. Tegelijkertijd laat dit zien hoe cruciale tests in extreme omstandigheden vaak pas na jarenlange voorbereiding mogelijk zijn.",
   'virgin-galactic-zoekt-hulp-bij-naamgeving-nieuwe-ruimteschipklasse':
