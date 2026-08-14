@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'netflix-sluit-twee-game-studios',
+    format: 'dispatch' as const,
+    edition: '409',
+    category: 'Markt',
+    title: "Netflix sluit twee game-studio’s in strategische switch",
+    dek: "De streaminggigant stopt met twee interne game-ontwikkelstudio’s om zich te richten op partyspellen en TV-gestreamde titels.",
+    publishedAt: '2026-08-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Netflix sluit twee game-studio’s in strategische switch",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'de-ai-race-is-een-marathon-nu-de-startblokken-verdwenen',
     format: 'dispatch' as const,
     edition: '408',
