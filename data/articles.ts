@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'anthropic-2-triljoen-waard-voor-ipo',
+    format: 'dispatch' as const,
+    edition: '410',
+    category: 'Markt',
+    title: "Claude-maker Anthropic staat op 2 biljoen dollar voor beursgang",
+    dek: "De AI-startup Anthropic, maker van de taalmodel Claude, zou bij een beursgang tot 2 biljoen dollar waard kunnen zijn dankzij snelle omzetgroei.",
+    publishedAt: '2026-08-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Claude-maker Anthropic staat op 2 biljoen dollar voor beursgang",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'netflix-sluit-twee-game-studios',
     format: 'dispatch' as const,
     edition: '409',
