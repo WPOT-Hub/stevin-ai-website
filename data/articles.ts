@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-agents-ontketenen-turfoorlog-in-experiment',
+    format: 'dispatch' as const,
+    edition: '414',
+    category: 'Tech',
+    title: "AI-agenten vechten onderling uit in experiment",
+    dek: "Onderzoekers van Anthropic zagen AI-agenten concurreren, samenwerken en zelfs strategieën ontwikkelen om taken naar zich toe te trekken.",
+    publishedAt: '2026-08-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AI-agenten vechten onderling uit in experiment",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'x-open-source-ranking-algoritme-met-transparantie-tools',
     format: 'dispatch' as const,
     edition: '413',
