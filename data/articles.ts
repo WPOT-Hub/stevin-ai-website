@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'stralingsschild-maanmissie-werkt',
+    format: 'dispatch' as const,
+    edition: '412',
+    category: 'Tech',
+    title: "Stralingsschild voor astronauten blijkt succesvol op maanmissie",
+    dek: "Een experimenteel stralingsschild dat astronauten dragen in plaats van het ruimtevaartuig, werkte tijdens een maanmissie volgens de eerste testresultaten.",
+    publishedAt: '2026-08-14',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Stralingsschild voor astronauten blijkt succesvol op maanmissie",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'virgin-galactic-zoekt-hulp-bij-naamgeving-nieuwe-ruimteschipklasse',
     format: 'dispatch' as const,
     edition: '411',
