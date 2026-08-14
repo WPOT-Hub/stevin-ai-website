@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'virgin-galactic-zoekt-hulp-bij-naamgeving-nieuwe-ruimteschipklasse': (
+    <>
+      <p className="lead-para">
+        Virgin Galactic heeft vijf namen voorgesteld voor haar nieuwe Delta-class spaceship en nodigt het publiek uit om te stemmen. De opties zijn Horizon, Explorer, Ascend, Apeiron en VSS. De keuze wordt gemaakt via een online verkiezing die deze week start.
+      </p>
+      <p>
+        De Delta-class is de opvolger van de huidige Unity-ruimtecapsule en moet vanaf 2026 reguliere commerciële vluchten gaan uitvoeren. Virgin Galactic hoopt met de naamgeving een bredere betrokkenheid te creëren bij de publieke belangstelling voor ruimtetoerisme.
+      </p>
+      <p>
+        Stemmers kunnen tot eind augustus hun voorkeur kenbaar maken via de website van Virgin Galactic. De winnaar wordt begin september bekendgemaakt en zal ook terugkeren in de marketingcampagnes rondom de lanceringen.
+      </p>
+    </>
+  ),
   'anthropic-2-triljoen-waard-voor-ipo': (
     <>
       <p className="lead-para">
@@ -7005,6 +7018,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'virgin-galactic-zoekt-hulp-bij-naamgeving-nieuwe-ruimteschipklasse':
+    "Ruimtetoerisme groeit gestaag als niche voor bedrijven die durven investeren in innovatie buiten de traditionele markten. Voor ondernemers die kijken naar disruptieve sectoren kan dit een inspirerend voorbeeld zijn van hoe merkengagement en productontwikkeling hand in hand kunnen gaan. Tegelijkertijd blijft de vraag of dergelijke projecten ooit echt rendabel zullen worden, een risicofactor die niet over het hoofd mag worden gezien.",
   'anthropic-2-triljoen-waard-voor-ipo':
     "Voor ondernemers die AI-technologie inzetten of overwegen, toont deze ontwikkeling aan dat investeerders bereid zijn om forse bedragen neer te leggen voor schaalbare oplossingen. Tegelijkertijd benadrukt het risico’s: hoge waarderingen vergen vaak snelle groei om gerechtvaardigd te blijven. Het is verstandig om niet alleen naar marktwaarde te kijken, maar ook naar duurzame businessmodellen die winstgevendheid garanderen.",
   'de-ai-race-is-een-marathon-nu-de-startblokken-verdwenen':
