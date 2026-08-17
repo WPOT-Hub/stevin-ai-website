@@ -109,5 +109,13 @@ export default async function middleware(request: NextRequest) {
 export const config = {
   // ads-data en inhouse uitgesloten: statische campagne-landingspagina's uit /public,
   // mogen niet door de i18n-middleware (anders 404 voor de rewrite kan grijpen).
-  matcher: ['/((?!api|_next|_vercel|ads-data|inhouse|kies|.*\\..*).*)'],
+  // opengraph-image valt buiten de middleware. Reden: localePrefix staat op
+  // 'as-needed', dus /nl/... wordt doorgestuurd naar /..., en Next zet in de
+  // og:image-tag juist de URL MET locale (/nl/opengraph-image). Elke app die
+  // een preview ophaalt kreeg daardoor eerst een 307. De meeste volgen die,
+  // maar niet allemaal, en dan mist je link zijn afbeelding. Zonder middleware
+  // serveert de route zichzelf en is er niets meer om te volgen.
+  // Alleen het nl-pad uitsluiten: de kale /opengraph-image bestaat juist
+  // dankzij de rewrite van deze middleware, en daar wijst de Twitter-kaart naar.
+  matcher: ['/((?!api|_next|_vercel|ads-data|inhouse|kies|nl/opengraph-image|.*\\..*).*)'],
 }
