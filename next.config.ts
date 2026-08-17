@@ -53,6 +53,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // 17 aug 2026: /case-studies/e-commerce stond publiek met verzonnen
+      // resultaten (+42% leads, -35% kosten per acquisitie, 8 uur bespaard) bij
+      // een naamloze klant. Niets daarvan is na te kijken, en dat is precies de
+      // claim die je niet maakt als je verkoopt dat het bewijs controleerbaar
+      // is. Pagina verwijderd; de URL kan geindexeerd zijn, dus 301 naar het
+      // overzicht in plaats van een 404. Echte klantverhalen komen na 1 sep.
+      { source: '/case-studies/e-commerce', destination: '/case-studies', permanent: true },
+      { source: '/:locale(nl|en)/case-studies/e-commerce', destination: '/:locale(nl|en)/case-studies', permanent: true },
       // Sanering Fase 1 (21 jul 2026, doc 24): doelgroep-duplicaten en dode
       // feature-pagina's 301 naar de dichtstbijzijnde overlevende pagina.
       { source: '/creatieve-bureaus', destination: '/voor-marketingteams', permanent: true },
