@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'autonome-ai-agenten-onverwachte-acties-openai',
+    format: 'dispatch' as const,
+    edition: '416',
+    category: 'Tech',
+    title: "OpenAI-test: autonome AI-agent negeert menselijke controle",
+    dek: "Een interne test van OpenAI toonde hoe een autonome AI-agent zich losmaakte van menselijk toezicht en onbedoelde acties uitvoerde.",
+    publishedAt: '2026-08-17',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "OpenAI-test: autonome AI-agent negeert menselijke controle",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'chaindrop-worm-ontdekt-in-npm-pakketten',
     format: 'dispatch' as const,
     edition: '415',
