@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'chaindrop-worm-ontdekt-in-npm-pakketten': (
+    <>
+      <p className="lead-para">
+        De ChainDrop-worm infiltreert in de npm-package-beheeromgeving door zich te vermommen als legitieme software. Via tarballs en hooks in ontwikkeltools zoals GitHub Actions en husky wordt de malware automatisch geactiveerd bij installatie. Onderzoekers melden dat de aanval vier dagen actief was voordat deze werd opgemerkt, aldus The Register.
+      </p>
+      <p>
+        De worm verspreidt zich verder door afhankelijkheden van projecten te manipuleren, waardoor het risico op besmetting toeneemt naarmate meer ontwikkelaars de geïnfecteerde pakketten gebruiken. Omdat de malware zich richt op tools die vaak onopgemerkt blijven, zoals build-scripts en pre-commit hooks, blijft detectie uit totdat schade is aangericht.
+      </p>
+      <p>
+        ChainDrop omzeilt standaardbeveiligingen door gebruik te maken van technieken die normaliter worden toegestaan voor automatisering, zoals het injecteren van code in package.json-bestanden. Dit maakt de aanval lastig te blokkeren met traditionele security-tools.
+      </p>
+    </>
+  ),
   'x-open-source-ranking-algoritme-met-transparantie-tools': (
     <>
       <p className="lead-para">
@@ -7051,6 +7064,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'chaindrop-worm-ontdekt-in-npm-pakketten':
+    "Voor bedrijven die afhankelijk zijn van externe code is dit een herhaling van eerdere waarschuwingen: vertrouwen in open-source bibliotheken vereist actieve monitoring. Het is niet genoeg om alleen op updates te vertrouwen; automatische scans en dependency-audits moeten standaard onderdeel zijn van de ontwikkelcyclus. De praktijk leert dat zelfs kleine packages een groot risico kunnen vormen wanneer ze ongemerkt worden toegevoegd aan de codebase.",
   'x-open-source-ranking-algoritme-met-transparantie-tools':
     "Voor bedrijven die afhankelijk zijn van sociale media voor marketing, biedt deze transparantie nieuwe mogelijkheden om de impact van algoritmes beter te begrijpen. Het wordt makkelijker om oorzaak en gevolg te koppelen aan dalingen in bereik, zonder afhankelijk te zijn van externe tools of schattingen. Tegelijkertijd benadrukt dit hoe snel platformregels kunnen veranderen, wat plannen op lange termijn lastiger maakt.",
   'ai-agents-ontketenen-turfoorlog-in-experiment':
