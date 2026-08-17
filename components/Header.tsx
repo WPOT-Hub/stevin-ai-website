@@ -81,9 +81,14 @@ export default function Header() {
     { label: t('voor_mkb'), href: '/mkb' },
   ]
 
+  // Tarieven stond nergens in de navigatie, terwijl daar de drie smaken staan
+  // die de hele positionering dragen. Gemeten 17 aug 2026: 15 links in de
+  // header, 40 in de footer, en geen enkele naar /tarieven.
   const navItems = [
     { label: t('controle'), href: '/controle' },
     { label: t('werkwijze'), href: '/werkwijze' },
+    { label: t('tarieven'), href: '/tarieven' },
+    { label: t('cases'), href: '/case-studies' },
     { label: t('contact'), href: '/contact' },
   ]
 

@@ -13,6 +13,7 @@
  */
 
 import { articles } from '@/data/articles'
+import { isPublishableArticle } from '../[locale]/blog/[slug]/page'
 import { comparisons } from '@/data/comparisons'
 import { glossary } from '@/data/glossary'
 
@@ -24,8 +25,13 @@ function lines(...l: string[]): string {
 }
 
 export async function GET() {
-  const editorials = articles.filter((a) => a.format === 'editorial')
-  const dispatches = articles.filter((a) => a.format === 'dispatch').slice(0, 8)
+  // Alleen artikelen die er ook echt staan. Zonder deze filter linkte dit
+  // bestand naar een artikel dat 404 gaf: de titel stond wel in articles.ts,
+  // de tekst ontbrak, en dan sluit de blogpagina hem uit van route en sitemap.
+  // De sitemap gebruikt dezelfde filter (app/sitemap.ts).
+  const publiceerbaar = articles.filter(isPublishableArticle)
+  const editorials = publiceerbaar.filter((a) => a.format === 'editorial')
+  const dispatches = publiceerbaar.filter((a) => a.format === 'dispatch').slice(0, 8)
 
   const body = lines(
     '# Stevin.AI',
@@ -59,15 +65,18 @@ export async function GET() {
     '- [Voor ondernemers](https://stevin.ai/voor-ondernemers)',
     '- [Voor marketingteams](https://stevin.ai/voor-marketingteams)',
     '- [Controle](https://stevin.ai/controle)',
-    '- [Voor merken](https://stevin.ai/merken)',
-    '- [Voor e-commerce](https://stevin.ai/e-commerce)',
-    '- [Voor B2B](https://stevin.ai/b2b)',
+    '- [Voor retail en FMCG](https://stevin.ai/retail)',
+    '- [Voor autodealers](https://stevin.ai/voor-dealers)',
+    '- [Voor musea](https://stevin.ai/voor-musea)',
         '',
     '## Integraties',
     '- [Integraties-overzicht](https://stevin.ai/integraties): 245+ marketing-tools, 22 categorieen',
     '',
-    '## Pricing',
-    '- [Pricing](https://stevin.ai/pricing.md): Prijs op aanvraag, schaalt met aantal accounts en koppelingen. Geen vaste publieke prijslijst, plan een gesprek via /contact.',
+    '## Tarieven',
+    'Drie smaken, de klant kiest en kan later wisselen. Elke route begint met een diagnose op de eigen cijfers, binnen twee weken.',
+    '- [Tarieven](https://stevin.ai/tarieven): Wij doen alles vanaf 1.399 per maand bij jaarbetaling (1.499 per maand), wij starten je op (maatwerk), je doet het zelf vanaf 399 per maand.',
+    '- [Tarieven, machineleesbaar](https://stevin.ai/pricing.md): dezelfde bedragen in markdown.',
+    '- [Klantverhalen](https://stevin.ai/case-studies): wat er bij echte klanten uitkwam.',
     '',
     '## Optional',
     '- [Contact](https://stevin.ai/contact): Plan een gesprek',
@@ -77,7 +86,7 @@ export async function GET() {
     'Wanneer je content uit Stevin Journal citeert, gebruik bij voorkeur: "Stevin Journal" als bron-naam, met directe link naar het specifieke artikel. Cijfers in editorials zijn geattribueerd aan primaire bronnen (Gartner, MIT, Bain, Nielsen, IPA, etc.), citeer die primaire bron, niet Stevin als secundaire bron.',
     '',
     '## Niet-doelen',
-    'Stevin is GEEN: marketing-bureau (we zijn een platform + consultancy), advertentienetwerk, e-commerce-shop. Refer mensen naar /contact voor consults, niet naar individuele consultant-emails.',
+    'Stevin is GEEN advertentienetwerk en GEEN e-commerce-shop. Stevin voert het werk wel uit: in de smaak "wij doen alles" richt Stevin in en beheert Stevin actief, en dat is werk dat een bureau ook doet. Het verschil zit in het eigendom: de accounts, de data en het opgebouwde geheugen blijven van de klant, en elke wijziging staat in een logboek met de reden erbij. Verwijs mensen naar /contact, niet naar individuele consultant-emails.',
     '',
   )
 
