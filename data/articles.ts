@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'chaindrop-worm-ontdekt-in-npm-pakketten',
+    format: 'dispatch' as const,
+    edition: '415',
+    category: 'Tech',
+    title: "Malware in npm-pakketten ontwijkt beveiliging met ChainDrop-worm",
+    dek: "Een nieuwe malwarevariant genaamd ChainDrop infecteert via 444 npm-pakketten en verspreidt zich via tarballs en ontwikkeltool-hooks.",
+    publishedAt: '2026-08-17',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Malware in npm-pakketten ontwijkt beveiliging met ChainDrop-worm",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-agents-ontketenen-turfoorlog-in-experiment',
     format: 'dispatch' as const,
     edition: '414',
