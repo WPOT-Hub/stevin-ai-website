@@ -21,16 +21,21 @@ export default async function CaseStudiesPage({ params }: Props) {
   setRequestLocale(locale)
   const t = await getTranslations('case_studies')
 
-  const caseStudies = [
-    {
-      slug: 'e-commerce',
-      industry: t('cs1_industry'),
-      title: t('cs1_title'),
-      subtitle: t('cs1_subtitle'),
-      metric: t('cs1_metric'),
-      metricLabel: t('cs1_metric_label'),
-    },
-  ]
+  // 17 aug 2026 leeggemaakt. Hier stond een naamloos e-commercebedrijf met
+  // "+42% meer leads en 8 uur per week bespaard", een cijfer dat niemand kan
+  // nakijken. Dat is precies de claim die je niet wilt maken als je verkoopt
+  // dat alles controleerbaar is en het bewijs buiten ons om te vinden is.
+  // De echte cijfers komen na de lancering van 1 september; vul dit dan met
+  // klanten die met naam genoemd mogen worden. De teksten cs1_* staan nog in
+  // messages/nl.json en en.json, zodat de opmaak meteen weer werkt.
+  const caseStudies: Array<{
+    slug: string
+    industry: string
+    title: string
+    subtitle: string
+    metric: string
+    metricLabel: string
+  }> = []
 
   return (
     <main>
