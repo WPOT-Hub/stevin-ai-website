@@ -49,16 +49,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/case-studies',
     '/contact',
     '/simon-stevin',
+    // Tarieven. Stond tot 28 jul 2026 als voorbeeld op /preview-tarieven met
+    // noindex, en daarna als NL-only in de lijst hieronder omdat de Engelse
+    // copy nog niet apart was nagelopen. Sinds 17 aug 2026 heeft de pagina een
+    // eigen EN-kolom (geen vertaling maar copy), dus canonicalt /en/tarieven
+    // naar zichzelf en hoort hij hier.
+    '/tarieven',
   ]
 
   // NL-only: /en serveert hier dezelfde Nederlandse tekst en canonicalt naar
   // de NL-URL. Alleen de NL-entry, en ook geen en-hreflang.
   const nlOnlyPages = [
     '/blog',
-    // Tarieven. Stond tot 28 jul 2026 als voorbeeld op /preview-tarieven met
-    // noindex; er was dus geen prijspagina terwijl de homepage wel een bedrag
-    // noemde. NL-only zolang de Engelse copy niet apart is nagelopen.
-    '/tarieven',
     '/google-ad-grants-belgie',
     '/google-ad-grants-nederland',
     // Deze gaf even een 308 naar een niet-bestaande pagina, doordat de

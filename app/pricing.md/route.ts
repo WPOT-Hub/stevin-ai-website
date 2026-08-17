@@ -35,12 +35,14 @@ Iedereen begint op dezelfde plek: uitzoeken wat er nodig is. Niet alleen de adve
 Vanaf 1.399 euro per maand bij jaarbetaling, 1.499 euro per maand bij maandbetaling. Doorlopend, de opstart is maatwerk. Volledige inrichting en actief beheer, met elk besluit vastgelegd. Voor ondernemers die er zelf niet naar om willen kijken.
 
 ### Wij starten je op
-Stevin richt in en draagt daarna over aan je eigen team of aan een bureau naar keuze.
+Vanaf 1.499 euro per maand, geen jaartarief want dit is tijdelijk. Meestal zes tot twaalf maanden, daarna 399 euro per maand. Stevin zet het goed neer en draait mee tot het staat, en draagt daarna over aan je eigen team of aan een bureau naar keuze.
 
 ### Je doet het zelf
-Vanaf 399 euro per maand. Je krijgt de software en het geheugen, het werk doe je zelf.
+399 euro per maand bij jaarbetaling, 499 euro per maand bij maandbetaling. Je krijgt de software en het geheugen, het werk doe je zelf of je laat het elders doen.
 
 Je keuze is later om te draaien zonder dat je iets kwijtraakt.
+
+Alle tarieven gelden voor een bedrijf met een merk en een winkel. Meer vestigingen, merken of webshops kosten meer. Een groter mediabudget betekent niet automatisch een hogere prijs.
 
 ## Voor wie
 
@@ -52,7 +54,7 @@ Elk kanaal met een API sluit erop aan, betaald en eigen: Google Ads, Meta, YouTu
 
 ## Contact
 
-Plan een gesprek via https://stevin.ai/contact of mail info@stevin.ai. De volledige tarievenpagina staat op https://stevin.ai/tarieven.
+Plan een gesprek via https://stevin.ai/contact of mail info@stevin.ai. De volledige tarievenpagina staat op https://stevin.ai/tarieven, in het Engels op https://stevin.ai/en/tarieven.
 `
 
 export async function GET() {

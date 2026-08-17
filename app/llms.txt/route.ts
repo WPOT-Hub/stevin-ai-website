@@ -74,7 +74,7 @@ export async function GET() {
     '',
     '## Tarieven',
     'Drie smaken, de klant kiest en kan later wisselen. Elke route begint met een diagnose op de eigen cijfers, binnen twee weken.',
-    '- [Tarieven](https://stevin.ai/tarieven): Wij doen alles vanaf 1.399 per maand bij jaarbetaling (1.499 per maand), wij starten je op (maatwerk), je doet het zelf vanaf 399 per maand.',
+    '- [Tarieven](https://stevin.ai/tarieven): Wij doen alles vanaf 1.399 per maand bij jaarbetaling (1.499 bij maandbetaling), wij starten je op vanaf 1.499 per maand (tijdelijk, daarna 399), je doet het zelf voor 399 per maand bij jaarbetaling (499 bij maandbetaling). Alle tarieven gelden voor een bedrijf met een merk en een winkel.',
     '- [Tarieven, machineleesbaar](https://stevin.ai/pricing.md): dezelfde bedragen in markdown.',
     '- [Klantverhalen](https://stevin.ai/case-studies): wat er bij echte klanten uitkwam.',
     '',

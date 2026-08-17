@@ -10,7 +10,9 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'autodealers' })
-  return localizedMetadata({ path: '/voor-dealers', locale, title: 'Stevin voor dealergroepen', description: t('sub') })
+  // Titel uit de namespace, niet hardcoded: anders kreeg /en/voor-dealers een
+  // Nederlandse <title> boven Engelse content (audit 17 aug 2026).
+  return localizedMetadata({ path: '/voor-dealers', locale, title: t('meta_title'), description: t('sub') })
 }
 
 const featureIcons = [

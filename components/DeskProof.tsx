@@ -131,6 +131,12 @@ const COPY: Record<Locale, {
   h2: string
   sub: string
   knoppen: string[]
+  // Deze twee stonden tot 17 aug 2026 hardgecodeerd in het Nederlands in de
+  // JSX, waardoor elke Engelse pagina die de Desk toont "Waarom:" en "Advies:"
+  // liet zien boven verder Engelse meldingtekst. Gevonden op /en/tarieven.
+  labelWaarom: string
+  labelAdvies: string
+  altScreenshot: string
   bijschrift: string
   breinKop: string
   breinBody: string
@@ -142,6 +148,9 @@ const COPY: Record<Locale, {
     h2: 'Wat er misgaat, wat er wel werkt, en waarom. Op een scherm.',
     sub: 'Geen rapport achteraf. Stevin kijkt mee op wat vandaag binnenkomt en op wat je merk over een jaar waard is. Dat zijn twee verschillende dingen, en ze staan zelden in hetzelfde overzicht.',
     knoppen: ['Oppakken', 'Meer info', 'Niet relevant'],
+    labelWaarom: 'Waarom:',
+    labelAdvies: 'Advies:',
+    altScreenshot: 'De Stevin Desk: meldingen met reden en advies, cijfers per kanaal en de markt-radar',
     bijschrift: 'Uit de Stevin Desk. LUMIOS is onze demo-omgeving, geen klantdata.',
     breinKop: 'En alles wat geprobeerd is, staat er nog.',
     breinBody:
@@ -154,11 +163,14 @@ const COPY: Record<Locale, {
     h2: 'What is going wrong, what is working, and why. On one screen.',
     sub: 'Not a report after the fact. Stevin watches what comes in today and what your brand is worth a year from now. Those are two different things, and they rarely sit in the same overview.',
     knoppen: ['Pick up', 'More info', 'Not relevant'],
+    labelWaarom: 'Why:',
+    labelAdvies: 'Advice:',
+    altScreenshot: 'The Stevin Desk: alerts with the reason and the advice, numbers per channel and the market radar',
     bijschrift: 'From the Stevin Desk. LUMIOS is our demo environment, not client data.',
     breinKop: 'And everything that was tried is still there.',
     breinBody:
       'Every campaign, every decision, every result, and what the competition was doing at the time. Including the work that only pays off months later, which is the first thing to drop out of sight. Whoever starts here tomorrow reads up, instead of you explaining it all over again.',
-    breinBijschrift: 'One client memory, the way it sits in the Desk.',
+    breinBijschrift: 'A single client memory, the way it sits in the Desk.',
     breinHint: 'Drag the nodes around.',
   },
 }
@@ -222,7 +234,7 @@ export default function DeskProof({
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/product/desk-dashboard.png"
-              alt="De Stevin Desk: meldingen met reden en advies, cijfers per kanaal en de markt-radar"
+              alt={c.altScreenshot}
               style={{ display: 'block', width: '100%' }}
             />
           </div>
@@ -262,10 +274,10 @@ export default function DeskProof({
                   ))}
                 </p>
                 <p className="text-muted m-0" style={{ fontSize: '13px', lineHeight: '1.55', marginTop: '11px' }}>
-                  <strong className="text-primary font-semibold">Waarom:</strong> {m.waarom}
+                  <strong className="text-primary font-semibold">{c.labelWaarom}</strong> {m.waarom}
                 </p>
                 <p className="text-muted m-0" style={{ fontSize: '13px', lineHeight: '1.55', marginTop: '5px' }}>
-                  <strong className="text-primary font-semibold">Advies:</strong> {m.advies}
+                  <strong className="text-primary font-semibold">{c.labelAdvies}</strong> {m.advies}
                 </p>
                 <div className="flex flex-wrap gap-1.5" style={{ marginTop: '14px' }}>
                   {c.knoppen.map((k, i) => (

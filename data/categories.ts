@@ -3,6 +3,19 @@ export interface Category {
   slug: string
   description: string
   intro: string
+  /**
+   * Engelse categorienaam. Alleen invullen wanneer `name` Nederlands is: de
+   * meeste namen zijn al taalneutraal ("CRM & Sales", "Feed Management") en
+   * horen in beide talen hetzelfde te blijven. Zonder dit veld toonde
+   * /en/integraties een Nederlandse categorienaam in de tabel en de
+   * categorie-navigatie.
+   */
+  nameEn?: string
+}
+
+/** Categorienaam voor de actieve taal, met de NL-naam als terugval. */
+export function categoryName(category: Category, locale: string): string {
+  return locale === 'en' ? category.nameEn ?? category.name : category.name
 }
 
 export const categories: Category[] = [
@@ -140,6 +153,7 @@ export const categories: Category[] = [
   },
   {
     name: 'Bouw & Techniek',
+    nameEn: 'Construction & Engineering',
     slug: 'bouw-techniek',
     description: 'Bouw-, installatie- en techniek-software: projectadministratie, calculatie, werkbonnen en aanbesteding.',
     intro: 'In de bouw en techniek staat informatie verspreid over mail, WhatsApp, planning, calculatie en de projectsoftware. Stevin legt een werklaag boven die systemen. Het leest projecten, offertes, leveringen en planning, en zet losse informatie om in signalen en acties, voordat kleine problemen groot worden. Niet om de bestaande software te vervangen, maar om te zorgen dat wat erin staat op tijd bij de juiste persoon komt.',
