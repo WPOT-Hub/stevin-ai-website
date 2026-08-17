@@ -17,7 +17,7 @@
     "check:sitemap": "npx tsx scripts/check-sitemap-canonicals.ts",
     "check:sitemap:structuur": "npx tsx scripts/check-sitemap-structuur.ts",
     "verify:production": "npx tsx scripts/verify-production-release.ts",
-    "prebuild": "npx tsx scripts/check-sitemap-structuur.ts && npx tsx scripts/audit-journal-content.ts --check",
+    "prebuild": "npx tsx scripts/generate-related.ts && npx tsx scripts/check-sitemap-structuur.ts && npx tsx scripts/audit-journal-content.ts --check",
     "check:copy": "npx tsx scripts/check-copy.ts"
   },
   "dependencies": {
