@@ -44,8 +44,12 @@ export default async function DPAPage({ params }: Props) {
       <footer className="mt-16 border-t border-border pt-8 text-xs text-muted space-y-2">
         <p>
           {isEn
-            ? <>Stevin.AI is a trade name of <strong>WPOT B.V.</strong>, KvK <strong>87774372</strong>, VAT NL864401954B01, registered office <strong>Amstenradestraat 25, 4834 JB Breda, Netherlands</strong>.</>
-            : <>Stevin.AI is een handelsnaam van <strong>WPOT B.V.</strong>, KvK <strong>87774372</strong>, btw NL864401954B01, statutair gevestigd te <strong>Amstenradestraat 25, 4834 JB Breda</strong>.</>
+            ? <>Stevin.AI is the trade name of <strong>Stevin.AI B.V.</strong>, registered
+              with the Dutch Chamber of Commerce (KvK) under number <strong>42138941</strong>,
+              with its registered seat in <strong>Breda, the Netherlands</strong>.</>
+            : <>Stevin.AI is de handelsnaam van <strong>Stevin.AI B.V.</strong>, ingeschreven
+              bij de Kamer van Koophandel onder nummer <strong>42138941</strong>, statutair
+              gevestigd te <strong>Breda</strong>.</>
           }
         </p>
         <p>{isEn ? 'Contact: ' : 'Contact: '}<a className="underline" href="mailto:info@stevin.ai">info@stevin.ai</a></p>
@@ -60,7 +64,7 @@ function DpaDutch() {
     <article className="prose prose-sm dark:prose-invert max-w-none">
       <h2>1. Partijen en kader</h2>
       <p>
-        Deze verwerkersovereenkomst is gesloten tussen WPOT B.V., handelend onder de naam
+        Deze verwerkersovereenkomst is gesloten tussen Stevin.AI B.V., handelend onder de naam
         Stevin.AI (de Verwerker), en de Klant die gebruik maakt van het Stevin platform
         (de Verwerkingsverantwoordelijke). Deze overeenkomst maakt onlosmakelijk
         onderdeel uit van de Algemene Voorwaarden en regelt de verwerking van
@@ -172,7 +176,7 @@ function DpaEnglish() {
     <article className="prose prose-sm dark:prose-invert max-w-none">
       <h2>1. Parties and scope</h2>
       <p>
-        This Data Processing Agreement is entered into between WPOT B.V., trading as
+        This Data Processing Agreement is entered into between Stevin.AI B.V., trading as
         Stevin.AI (the Processor), and the Customer using the Stevin platform (the
         Controller). It forms an integral part of the Terms of Service and governs the
         processing of personal data under Article 28 of the GDPR.

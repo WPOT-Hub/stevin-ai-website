@@ -44,8 +44,12 @@ export default async function NDAPage({ params }: Props) {
       <footer className="mt-16 border-t border-border pt-8 text-xs text-muted space-y-2">
         <p>
           {isEn
-            ? <>Stevin.AI is a trade name of <strong>WPOT B.V.</strong>, KvK <strong>87774372</strong>, VAT NL864401954B01, registered office <strong>Amstenradestraat 25, 4834 JB Breda, Netherlands</strong>.</>
-            : <>Stevin.AI is een handelsnaam van <strong>WPOT B.V.</strong>, KvK <strong>87774372</strong>, btw NL864401954B01, statutair gevestigd te <strong>Amstenradestraat 25, 4834 JB Breda</strong>.</>
+            ? <>Stevin.AI is the trade name of <strong>Stevin.AI B.V.</strong>, registered
+              with the Dutch Chamber of Commerce (KvK) under number <strong>42138941</strong>,
+              with its registered seat in <strong>Breda, the Netherlands</strong>.</>
+            : <>Stevin.AI is de handelsnaam van <strong>Stevin.AI B.V.</strong>, ingeschreven
+              bij de Kamer van Koophandel onder nummer <strong>42138941</strong>, statutair
+              gevestigd te <strong>Breda</strong>.</>
           }
         </p>
         <p>{isEn ? 'Contact: ' : 'Contact: '}<a className="underline" href="mailto:info@stevin.ai">info@stevin.ai</a></p>
@@ -60,7 +64,7 @@ function NdaDutch() {
     <article className="prose prose-sm dark:prose-invert max-w-none">
       <h2>1. Partijen</h2>
       <p>
-        WPOT B.V., handelend onder de naam Stevin.AI (Stevin), en de Klant die de Stevin
+        Stevin.AI B.V., handelend onder de naam Stevin.AI (Stevin), en de Klant die de Stevin
         diensten gebruikt of overweegt te gebruiken. Beide partijen worden hierna
         aangeduid als de Partijen en ieder afzonderlijk als een Partij.
       </p>
@@ -151,7 +155,7 @@ function NdaEnglish() {
     <article className="prose prose-sm dark:prose-invert max-w-none">
       <h2>1. Parties</h2>
       <p>
-        WPOT B.V., trading as Stevin.AI (Stevin), and the Customer using or considering
+        Stevin.AI B.V., trading as Stevin.AI (Stevin), and the Customer using or considering
         the Stevin services. Together referred to as the Parties.
       </p>
 

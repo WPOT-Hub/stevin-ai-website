@@ -45,17 +45,15 @@ export default async function TermsPage({ params }: Props) {
         <p>
           {isEn ? (
             <>
-              Stevin.AI is a trade name of <strong>WPOT B.V.</strong>, registered with the
-              Dutch Chamber of Commerce (KvK) under number <strong>87774372</strong>,
-              VAT number NL864401954B01. Registered office:{' '}
-              <strong>Amstenradestraat 25, 4834 JB Breda, Netherlands</strong>.
+              Stevin.AI is the trade name of <strong>Stevin.AI B.V.</strong>, registered
+              with the Dutch Chamber of Commerce (KvK) under number <strong>42138941</strong>,
+              with its registered seat in <strong>Breda, the Netherlands</strong>.
             </>
           ) : (
             <>
-              Stevin.AI is een handelsnaam van <strong>WPOT B.V.</strong>, ingeschreven bij
-              de Kamer van Koophandel onder nummer <strong>87774372</strong>,
-              BTW-nummer NL864401954B01. Vestigingsadres:{' '}
-              <strong>Amstenradestraat 25, 4834 JB Breda, Nederland</strong>.
+              Stevin.AI is de handelsnaam van <strong>Stevin.AI B.V.</strong>, ingeschreven
+              bij de Kamer van Koophandel onder nummer <strong>42138941</strong>, statutair
+              gevestigd te <strong>Breda</strong>.
             </>
           )}
         </p>
@@ -76,8 +74,8 @@ function TermsDutch() {
         <h2 className="text-xl font-semibold">1. Wie zijn wij</h2>
         <p>
           Stevin.AI (&quot;Stevin&quot;, &quot;wij&quot;, &quot;ons&quot;) is een marketing
-          intelligence platform geleverd door WPOT B.V., gevestigd in Breda, Nederland
-          (KvK 87774372). Wij helpen marketingteams en bureaus om campagne-issues eerder
+          intelligence platform geleverd door Stevin.AI B.V., gevestigd in Breda,
+          Nederland (KvK 42138941). Wij helpen marketingteams en bureaus om campagne-issues eerder
           te signaleren dan reguliere rapportage doet, door paid en owned media data
           continu te monitoren en te interpreteren.
         </p>
@@ -145,7 +143,7 @@ function TermsDutch() {
           uitsluitend voor zover noodzakelijk voor het leveren van de dienst.
           Details staan in onze{' '}
           <a href="/privacy" className="underline">privacyverklaring</a>. Voor
-          klantopdrachten geldt een verwerkersovereenkomst (DPA) tussen jou en WPOT B.V.,
+          klantopdrachten geldt een verwerkersovereenkomst (DPA) tussen jou en Stevin.AI B.V.,
           beschikbaar op verzoek.
         </p>
       </section>
@@ -167,7 +165,7 @@ function TermsDutch() {
         <h2 className="text-xl font-semibold">9. Intellectueel eigendom</h2>
         <p>
           Het Stevin-platform, inclusief code, design, AI-prompts en datamodellen,
-          is eigendom van WPOT B.V. Je krijgt een niet-exclusieve, niet-overdraagbare
+          is eigendom van Stevin.AI B.V. Je krijgt een niet-exclusieve, niet-overdraagbare
           gebruikslicentie voor de duur van het abonnement. Data die jij in Stevin
           inbrengt (jouw klantdata, campagnes, briefings) blijft van jou.
         </p>
@@ -222,8 +220,8 @@ function TermsEnglish() {
         <h2 className="text-xl font-semibold">1. Who we are</h2>
         <p>
           Stevin.AI (&quot;Stevin&quot;, &quot;we&quot;, &quot;us&quot;) is a marketing
-          intelligence platform operated by WPOT B.V., registered in Breda, the
-          Netherlands (KvK 87774372). We help marketing teams and agencies catch
+          intelligence platform operated by Stevin.AI B.V., registered in Breda, the
+          Netherlands (KvK 42138941). We help marketing teams and agencies catch
           campaign issues earlier than regular reporting does, by continuously
           monitoring and interpreting paid and owned media data.
         </p>
@@ -287,7 +285,7 @@ function TermsEnglish() {
           only to the extent necessary to deliver the service. Details are in
           our <a href="/privacy" className="underline">privacy policy</a>. For
           client engagements a Data Processing Agreement (DPA) applies between
-          you and WPOT B.V., available on request.
+          you and Stevin.AI B.V., available on request.
         </p>
       </section>
 
@@ -308,7 +306,7 @@ function TermsEnglish() {
         <h2 className="text-xl font-semibold">9. Intellectual property</h2>
         <p>
           The Stevin platform, including code, design, AI prompts and data
-          models, is owned by WPOT B.V. You receive a non-exclusive,
+          models, is owned by Stevin.AI B.V. You receive a non-exclusive,
           non-transferable usage licence for the duration of the subscription.
           Data you bring into Stevin (your client data, campaigns, briefings)
           remains yours.

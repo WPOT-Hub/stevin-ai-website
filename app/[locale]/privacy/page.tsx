@@ -45,17 +45,15 @@ export default async function PrivacyPage({ params }: Props) {
         <p>
           {isEn ? (
             <>
-              Stevin.AI is a trade name of <strong>WPOT B.V.</strong>, registered with the
-              Dutch Chamber of Commerce (KvK) under number <strong>87774372</strong>,
-              VAT number NL864401954B01. Registered office:{' '}
-              <strong>Amstenradestraat 25, 4834 JB Breda, Netherlands</strong>.
+              Stevin.AI is the trade name of <strong>Stevin.AI B.V.</strong>, registered
+              with the Dutch Chamber of Commerce (KvK) under number <strong>42138941</strong>,
+              with its registered seat in <strong>Breda, the Netherlands</strong>.
             </>
           ) : (
             <>
-              Stevin.AI is een handelsnaam van <strong>WPOT B.V.</strong>, ingeschreven bij
-              de Kamer van Koophandel onder nummer <strong>87774372</strong>,
-              BTW-nummer NL864401954B01. Vestigingsadres:{' '}
-              <strong>Amstenradestraat 25, 4834 JB Breda, Nederland</strong>.
+              Stevin.AI is de handelsnaam van <strong>Stevin.AI B.V.</strong>, ingeschreven
+              bij de Kamer van Koophandel onder nummer <strong>42138941</strong>, statutair
+              gevestigd te <strong>Breda</strong>.
             </>
           )}
         </p>
@@ -76,7 +74,7 @@ function PrivacyDutch() {
         <h2 className="text-xl font-semibold">Wie zijn wij</h2>
         <p>
           Stevin.AI (&quot;Stevin&quot;) is een AI-platform geleverd door
-          WPOT B.V., gevestigd in Nederland. Wij helpen marketingteams en bureaus om
+          Stevin.AI B.V., gevestigd in Breda. Wij helpen marketingteams en bureaus om
           campagne-issues eerder te signaleren dan de reguliere rapportage doet.
         </p>
       </section>
@@ -217,7 +215,7 @@ function PrivacyEnglish() {
         <h2 className="text-xl font-semibold">Who we are</h2>
         <p>
           Stevin.AI (&quot;Stevin&quot;) is an AI platform operated by
-          WPOT B.V., a company registered in the Netherlands. We help marketing teams and
+          Stevin.AI B.V., a company registered in Breda, the Netherlands. We help marketing teams and
           agencies detect campaign issues earlier than regular reporting does.
         </p>
       </section>
