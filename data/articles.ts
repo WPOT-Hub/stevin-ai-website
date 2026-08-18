@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'faa-radar-uitval-palantir-profiteert',
+    format: 'dispatch' as const,
+    edition: '418',
+    category: 'Platform',
+    title: "FAA-radarstoring duurt twee uur: ruim 1.100 vluchten verstoord",
+    dek: "Een storing in het Amerikaanse luchtverkeersleidingsysteem legde op 6 augustus ruim 1.100 vluchten stil gedurende twee uur.",
+    publishedAt: '2026-08-18',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "FAA-radarstoring duurt twee uur: ruim 1.100 vluchten verstoord",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'apple-stop-met-angstaanjagende-prompt-voor-third-party-apps',
     format: 'dispatch' as const,
     edition: '417',
