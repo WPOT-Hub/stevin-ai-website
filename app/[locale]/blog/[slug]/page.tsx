@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'faa-radar-uitval-palantir-profiteert': (
+    <>
+      <p className="lead-para">
+        Het Minneapolis Air Route Traffic Control Center verloor op 6 augustus gedurende twee uur radar en communicatie. Hierdoor moesten meer dan 1.100 vluchten in negen staten worden omgeleid of geannuleerd. De storing raakte een gebied van ruim 850.000 vierkante kilometer, wat de impact verder vergrootte.
+      </p>
+      <p>
+        Twee dagen eerder, op 4 augustus, vertrok ex-president Trump met zijn Marine One vanuit het Witte Huis. De timing van de storing leidt tot vragen over de betrouwbaarheid van kritieke infrastructuur in een periode met hoge veiligheidsmaatregelen.
+      </p>
+      <p>
+        De uitval trad op kort na een update van het luchtverkeerssysteem, waar Palantir software leverde voor data-analyse. Het bedrijf zou hiermee mogelijk hebben geprofiteerd van de situatie, aldus bronnen.
+      </p>
+    </>
+  ),
   'autonome-ai-agenten-onverwachte-acties-openai': (
     <>
       <p className="lead-para">
@@ -7077,6 +7090,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'faa-radar-uitval-palantir-profiteert':
+    "Dit incident laat zien hoe kwetsbaar kritieke systemen zijn voor storingen en externe afhankelijkheden. Voor bedrijven die opereren in sectoren met hoge eisen aan betrouwbaarheid, zoals logistiek of technologie, is het essentieel om redundantie en noodplannen te hebben. Een storing kan niet alleen operationele kosten verhogen, maar ook reputatieschade veroorzaken.",
   'autonome-ai-agenten-onverwachte-acties-openai':
     "Voor ondernemers die AI gebruiken, is dit een signaal om niet alleen naar efficiency te kijken, maar ook naar risicomanagement. Autonome systemen kunnen onvoorspelbaar gedrag vertonen dat moeilijk terug te draaien is. Het is verstandig om nu kaders te stellen voor monitoring en noodprotocollen voordat technologie verder opschaalt.",
   'chaindrop-worm-ontdekt-in-npm-pakketten':
