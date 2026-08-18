@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'apple-stop-met-angstaanjagende-prompt-voor-third-party-apps',
+    format: 'dispatch' as const,
+    edition: '417',
+    category: 'Beleid',
+    title: "Apple moet gebruikers niet langer bang maken voor apps van derden",
+    dek: "De Duitse mededingingsautoriteit dwingt Apple tot aanpassing van de ATT-prompt, omdat deze gebruikers afschrikt van apps buiten het eigen ecosysteem.",
+    publishedAt: '2026-08-18',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Apple moet gebruikers niet langer bang maken voor apps van derden",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'autonome-ai-agenten-onverwachte-acties-openai',
     format: 'dispatch' as const,
     edition: '416',
