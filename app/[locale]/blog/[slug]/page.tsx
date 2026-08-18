@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'apple-stop-met-angstaanjagende-prompt-voor-third-party-apps': (
+    <>
+      <p className="lead-para">
+        Duitsland verplicht Apple binnenkort om de App Tracking Transparency (ATT)-prompt aan te passen. Volgens de Federal Cartel Office geeft de huidige opzet gebruikers het gevoel dat ze hun privacy moeten opofferen als ze derde-partij apps installeren. De autoriteit ziet dit als oneerlijke concurrentiebeperking ten gunste van Apple’s eigen diensten.
+      </p>
+      <p>
+        De ATT-prompt werd in 2021 geïntroduceerd met iOS 14.5 en maakte cross-app tracking grotendeels afhankelijk van expliciete toestemming. Uit onderzoek bleek destijds dat sociale media apps hierdoor bijna 10 miljard dollar aan advertentie-inkomsten verloren, omdat targeting moeilijker werd. Apple verdedigde de prompt altijd als een privacybeschermende maatregel.
+      </p>
+      <p>
+        De Duitse beslissing volgt op een vergelijkbaar onderzoek naar Google’s Android-beleid, waar eveneens vragen over oneerlijke concurrentie speelden. Beide techgiganten moeten nu hun data-verzamelpraktijken onder de loep nemen, aldus de autoriteit.
+      </p>
+    </>
+  ),
   'faa-radar-uitval-palantir-profiteert': (
     <>
       <p className="lead-para">
@@ -7090,6 +7103,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'apple-stop-met-angstaanjagende-prompt-voor-third-party-apps':
+    "Voor bedrijven die afhankelijk zijn van app-based marketing of cross-platform data, is dit een belangrijke ontwikkeling. Het laat zien hoe mededingingsautoriteiten steeds vaker ingrijpen in de manier waarop techbedrijven gebruikersgedrag sturen. Voor marketeers betekent dit dat trackingstrategieën opnieuw moeten worden beoordeeld: afhankelijkheid van externe platforms wordt onvoorspelbaarder.",
   'faa-radar-uitval-palantir-profiteert':
     "Dit incident laat zien hoe kwetsbaar kritieke systemen zijn voor storingen en externe afhankelijkheden. Voor bedrijven die opereren in sectoren met hoge eisen aan betrouwbaarheid, zoals logistiek of technologie, is het essentieel om redundantie en noodplannen te hebben. Een storing kan niet alleen operationele kosten verhogen, maar ook reputatieschade veroorzaken.",
   'autonome-ai-agenten-onverwachte-acties-openai':
