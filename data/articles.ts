@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'cerebras-cs-4-verhoogt-ai-prestaties-met-drievoudige-capaciteit',
+    format: 'dispatch' as const,
+    edition: '421',
+    category: 'Tech',
+    title: "Cerebras CS-4 verhoogt AI-prestaties met drievoudige capaciteit per rack",
+    dek: "De nieuwe Cerebras CS-4 systemen verdubbelen de rekenkracht per chip en passen drie keer zoveel chips in een rack als voorgaande versies.",
+    publishedAt: '2026-08-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Cerebras CS-4 verhoogt AI-prestaties met drievoudige capaciteit per rack",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'cursor-lanceert-code-hosting-platform',
     format: 'dispatch' as const,
     edition: '420',
