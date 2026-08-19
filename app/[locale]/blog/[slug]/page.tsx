@@ -1513,6 +1513,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'van-cluster-naar-laptop-de-revolutie-in-ai-inference': (
+    <>
+      <p className="lead-para">
+        Stel je voor: je hebt een AI-model met meer parameters dan er sterren staan in de Melkweg, dat draait op een gewone laptop met amper 8 GB RAM. Geen GPU, geen framework, geen BLAS-bibliotheken. Alleen een C99-codebase die het model letterlijk uit de harde schijf laadt, token voor token, en toch precies dezelfde output produceert als wanneer het in geheugen zou zitten. Dit is geen sciencefiction. Dit is de realiteit van Kimi K3, een model van 2,78 biljoen parameters dat nu draait op een laptop dankzij Fareed Khan’s open-source implementatie.
+      </p>
+      <p>
+        De crux zit hem niet in de grootte van het model, maar in hoe het wordt uitgevoerd. Traditioneel vereisen grote taalmodellen massale hoeveelheden geheugen en rekenkracht omdat ze volledig in RAM moeten passen om efficiënt te werken. Maar hier wordt het model gestreamd vanaf de schijf, waarbij alleen het noodzakelijke deel in geheugen wordt gehouden. Het resultaat? Een model dat draait op een budgetlaptop met 8 GB RAM net zo goed presteert als op een high-end workstation – alleen langzamer naarmate de hardware beperkter is. De output blijft identiek.
+      </p>
+      <p>
+        Dit is geen kleine stap. Het doorbreekt een fundamentele aanname in AI-ontwikkeling: dat grote taalmodellen alleen haalbaar zijn met dure cloudinfrastructuur of gespecialiseerde hardware. Voor bedrijven betekent dit dat ze plotseling zonder enorme investeringen kunnen experimenteren met state-of-the-art modellen. Geen wachtrijen meer voor cloud-API’s, geen onvoorspelbare kosten bij piekbelasting. Je kunt nu lokaal testen, itereren en implementeren zoals je altijd al wilde doen – maar dan zonder de beperkingen.
+      </p>
+      <p>
+        Toch roept deze doorbraak ook vragen op over de praktische toepasbaarheid. Een model dat zo traag antwoordt op een laptop (26 seconden per token) is niet direct geschikt voor productieomgevingen waar snelheid cruciaal is. Maar dit is slechts het begin. De codebase is modulair gebouwd: meer geheugen betekent snellere responstijden zonder kwaliteitsverlies. Voor ontwikkelteams biedt dit de vrijheid om eerst lokaal te prototypen voordat ze opschalen naar krachtigere machines of zelfs edge-devices.
+      </p>
+      <p>
+        De implicaties voor marketingteams zijn even groot als voor developers. Stel je voor: je wilt een chatbot testen die gebaseerd is op het meest geavanceerde model ter wereld, maar je hebt geen budget voor cloudkosten of IT-infrastructuur. Met deze aanpak kun je binnen uren lokale A/B-tests uitvoeren met echte gebruikersdata, zonder afhankelijk te zijn van externe partijen. Dat versnelt innovatie én verlaagt drempels drastisch.
+      </p>
+      <p>
+        Natuurlijk zijn er nog haken en ogen. De huidige implementatie vereist wel degelijk technische kennis om te bouwen en te onderhouden – iets wat niet elke marketingafdeling zelf kan doen. Maar de trend is duidelijk: open-source AI-modellen worden steeds toegankelijker en efficiënter. Bedrijven die nu al experimenteren met lokale AI-uitvoering bouwen aan een voorsprong die straks doorslaggevend kan zijn.
+      </p>
+      <p>
+        Het mooiste aan deze ontwikkeling? Ze toont aan dat innovatie niet altijd komt van grotere servers of duurdere hardware, maar vaak van slimme softwarearchitectuur die bestaande beperkingen doorbreekt. Voor wie durft te kijken naar nieuwe manieren om AI in te zetten, liggen er kansen die we nog maar net beginnen te ontdekken.
+      </p>
+    </>
+  ),
   'cerebras-cs-4-verhoogt-ai-prestaties-met-drievoudige-capaciteit': (
     <>
       <p className="lead-para">
@@ -7129,6 +7154,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'van-cluster-naar-laptop-de-revolutie-in-ai-inference':
+    "Bij Stevin zien we deze doorbraak als een bevestiging van onze overtuiging dat technologie pas echt waarde toevoegt als ze toegankelijk wordt voor iedereen – niet alleen voor techgiganten of goed gefinancierde startups.\nDeze aanpak van lokale inference sluit perfect aan bij onze visie op duurzame digitalisering: minder afhankelijkheid van externe partijen betekent meer controle over data, kosten en snelheid.\nVoor marketingteams biedt dit niet alleen technische vrijheid, maar ook strategische onafhankelijkheid.\nHet belangrijkste innoverende element zit hem niet in het model zelf, maar in de manier waarop het wordt ingezet: als bouwsteen voor lokale oplossingen die schaalbaar zijn zonder afhankelijkheid van cloudproviders.\nWij verwachten dan ook dat deze trend zich zal doorzetten – niet omdat grote taalmodellen kleiner worden, maar omdat software slimmer wordt omgaan met hun beperkingen.\nVoor organisaties die nu al nadenken over hoe ze AI kunnen integreren zonder vast te lopen in kosten of complexiteit, is dit een wake-up call om vandaag al stappen te zetten richting lokale experimenten.",
   'cerebras-cs-4-verhoogt-ai-prestaties-met-drievoudige-capaciteit':
     "Voor bedrijven die zwaar investeren in AI-infrastructuur biedt deze technologie een manier om kosten te besparen door schaalvergroting binnen bestaande ruimtes. Tegelijkertijd zet het de deur open voor kleinere spelers om toegang te krijgen tot high-end AI-capaciteiten, wat de drempel verlaagt om geavanceerde toepassingen te ontwikkelen. Het is een ontwikkeling die past bij de groeiende vraag naar efficiëntere en krachtigere computing-oplossingen in een tijd waarin data-intensieve processen steeds normaler worden.",
   'cursor-lanceert-code-hosting-platform':
