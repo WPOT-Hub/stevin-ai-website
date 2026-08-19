@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'cursor-lanceert-code-hosting-platform': (
+    <>
+      <p className="lead-para">
+        Cursor introduceert deze week een nieuw platform om softwarecode op te slaan en te delen. Het systeem is direct gekoppeld aan de gelijknamige code-editor, aldus het bedrijf. Ontwikkelaars kunnen hiermee hun projecten opslaan, beheren en samenwerken zonder gebruik te maken van externe diensten zoals GitHub.
+      </p>
+      <p>
+        Het nieuwe platform richt zich op ontwikkelaars die ontevreden zijn over de prijs, beperkingen of functionaliteit van bestaande oplossingen. Cursor belooft betere integratie met hun editor, snellere prestaties en meer controle over de broncode. De dienst is nu beschikbaar in een gesloten beta-fase.
+      </p>
+      <p>
+        De lancering volgt op groeiende frustratie bij ontwikkelaars over de dominantie van GitHub in de markt. Critici wijzen op hoge kosten voor privé-repositories en zorgen over monopolievorming in de softwareontwikkeling.
+      </p>
+    </>
+  ),
   'apple-stop-met-angstaanjagende-prompt-voor-third-party-apps': (
     <>
       <p className="lead-para">
@@ -7103,6 +7116,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'cursor-lanceert-code-hosting-platform':
+    "Voor bedrijven die afhankelijk zijn van open source of interne softwareontwikkeling biedt dit meer keuzevrijheid. Het is echter nog afwachten of ontwikkelaars massaal zullen switchen naar een nieuw platform. Concurrentie in deze markt kan uiteindelijk leiden tot betere tools en lagere kosten voor alle partijen.",
   'apple-stop-met-angstaanjagende-prompt-voor-third-party-apps':
     "Voor bedrijven die afhankelijk zijn van app-based marketing of cross-platform data, is dit een belangrijke ontwikkeling. Het laat zien hoe mededingingsautoriteiten steeds vaker ingrijpen in de manier waarop techbedrijven gebruikersgedrag sturen. Voor marketeers betekent dit dat trackingstrategieën opnieuw moeten worden beoordeeld: afhankelijkheid van externe platforms wordt onvoorspelbaarder.",
   'faa-radar-uitval-palantir-profiteert':
