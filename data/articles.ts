@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'cursor-lanceert-code-hosting-platform',
+    format: 'dispatch' as const,
+    edition: '420',
+    category: 'Tech',
+    title: "Cursor lanceert eigen code-hosting als alternatief voor GitHub",
+    dek: "Cursor, maker van een populaire AI-code-editor, brengt een eigen platform uit voor het hosten van softwareprojecten.",
+    publishedAt: '2026-08-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Cursor lanceert eigen code-hosting als alternatief voor GitHub",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'spacex-starship-redding-na-24-dagen-zee',
     format: 'dispatch' as const,
     edition: '419',
