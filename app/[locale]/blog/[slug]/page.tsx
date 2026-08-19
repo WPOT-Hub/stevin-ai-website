@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'cerebras-cs-4-verhoogt-ai-prestaties-met-drievoudige-capaciteit': (
+    <>
+      <p className="lead-para">
+        De Amerikaanse chipfabrikant Cerebras introduceert de CS-4, een reeks rack-systemen die de rekenkracht van AI-chips maximaal benut. Elke chip levert nu twee keer zoveel prestaties als zijn voorganger, terwijl een enkel rack drie keer zoveel chips kan huisvesten. Dit maakt het mogelijk om grotere en complexere AI-modellen sneller te trainen dan voorheen mogelijk was.
+      </p>
+      <p>
+        De systemen zijn ontworpen voor datacenters die hoge eisen stellen aan AI-berekeningen, zoals bedrijven die werken met grote taalmodellen of realtime beeldherkenning. Door de efficiëntie te verhogen, kunnen organisaties hun AI-infrastructuur compact houden zonder in te leveren op snelheid of capaciteit. De technologie maakt gebruik van een unieke architectuur waarbij elke chip rechtstreeks communiceert met het geheugen, wat vertraging minimaliseert.
+      </p>
+      <p>
+        De CS-4-systemen zijn vanaf september beschikbaar voor zakelijke klanten en worden geleverd met software die de prestaties verder optimaliseert. Cerebras benadrukt dat de systemen geschikt zijn voor zowel cloud- als on-premise toepassingen, waardoor ze flexibel inzetbaar zijn voor verschillende bedrijfsbehoeften.
+      </p>
+    </>
+  ),
   'cursor-lanceert-code-hosting-platform': (
     <>
       <p className="lead-para">
@@ -7116,6 +7129,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'cerebras-cs-4-verhoogt-ai-prestaties-met-drievoudige-capaciteit':
+    "Voor bedrijven die zwaar investeren in AI-infrastructuur biedt deze technologie een manier om kosten te besparen door schaalvergroting binnen bestaande ruimtes. Tegelijkertijd zet het de deur open voor kleinere spelers om toegang te krijgen tot high-end AI-capaciteiten, wat de drempel verlaagt om geavanceerde toepassingen te ontwikkelen. Het is een ontwikkeling die past bij de groeiende vraag naar efficiëntere en krachtigere computing-oplossingen in een tijd waarin data-intensieve processen steeds normaler worden.",
   'cursor-lanceert-code-hosting-platform':
     "Voor bedrijven die afhankelijk zijn van open source of interne softwareontwikkeling biedt dit meer keuzevrijheid. Het is echter nog afwachten of ontwikkelaars massaal zullen switchen naar een nieuw platform. Concurrentie in deze markt kan uiteindelijk leiden tot betere tools en lagere kosten voor alle partijen.",
   'apple-stop-met-angstaanjagende-prompt-voor-third-party-apps':
