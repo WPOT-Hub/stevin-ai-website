@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'van-cluster-naar-laptop-de-revolutie-in-ai-inference',
+    format: 'dispatch' as const,
+    edition: '422',
+    category: 'Platform',
+    title: "Een AI-model van 2,78 biljoen parameters draait nu op een laptop: wat betekent dat voor jou?",
+    dek: "Een ontwikkelaar laat zien dat de zwaarste AI-modellen niet langer afhankelijk zijn van dure hardware – en dat verandert alles voor marketeers, developers en bedrijven.",
+    publishedAt: '2026-08-19',
+    readMinutes: 2,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Een AI-model van 2,78 biljoen parameters draait nu op een laptop: wat betekent dat voor jou?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'cerebras-cs-4-verhoogt-ai-prestaties-met-drievoudige-capaciteit',
     format: 'dispatch' as const,
     edition: '421',
