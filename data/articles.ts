@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'spacex-starship-redding-na-24-dagen-zee',
+    format: 'dispatch' as const,
+    edition: '419',
+    category: 'Tech',
+    title: "SpaceX redt Starship na 24 dagen op zee",
+    dek: "Het herbruikbare ruimteschip van SpaceX is na een mislukte landing in de Indische Oceaan geborgen door een team van ingenieurs.",
+    publishedAt: '2026-08-19',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "SpaceX redt Starship na 24 dagen op zee",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'faa-radar-uitval-palantir-profiteert',
     format: 'dispatch' as const,
     edition: '418',
