@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'openai-schrapt-ontwikkeling-voor-beveiliging',
+    format: 'dispatch' as const,
+    edition: '425',
+    category: 'Tech',
+    title: "OpenAI schrapt tempo AI-ontwikkeling voor veiligheid",
+    dek: "OpenAI pauzeert de ontwikkeling van nieuwe AI-modellen om beveiliging en veiligheidsmaatregelen te versterken.",
+    publishedAt: '2026-08-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "OpenAI schrapt tempo AI-ontwikkeling voor veiligheid",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'rillet-wordt-eenhoorn-met-100-miljoen-investeringsronde',
     format: 'dispatch' as const,
     edition: '424',
