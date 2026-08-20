@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'asml-geopolitieke-speelbal-china-vs-amerika',
+    format: 'dispatch' as const,
+    edition: '423',
+    category: 'Politiek',
+    title: "ASML wordt niet door China bedreigd, maar door de VS",
+    dek: "De Nederlandse chipmachinebouwer ASML is geen slachtoffer van Chinese agressie, maar van een Amerikaanse strategie die Europa economisch en technologisch uitschakelt.",
+    publishedAt: '2026-08-20',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'POLITIEK',
+    posterTopic: "ASML wordt niet door China bedreigd, maar door de VS",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'van-cluster-naar-laptop-de-revolutie-in-ai-inference',
     format: 'dispatch' as const,
     edition: '422',
