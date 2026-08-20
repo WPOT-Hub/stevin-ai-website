@@ -21,7 +21,7 @@ export function CalInline({ domain, angle, eventSlug }: CalInlineProps) {
   const elementId = `cal-inline-${namespace}`
   const inlineConfig = {
     elementOrSelector: `#${elementId}`,
-    calLink: `stevin/${eventSlug}`,
+    calLink: `koen-hoogenboom/${eventSlug}`,
     config: {
       layout: 'month_view',
       utm_source: 'lp',
