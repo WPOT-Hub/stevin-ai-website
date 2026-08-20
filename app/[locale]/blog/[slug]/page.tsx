@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'rillet-wordt-eenhoorn-met-100-miljoen-investeringsronde': (
+    <>
+      <p className="lead-para">
+        Het Nederlandse AI-startup Rillet heeft een Series C-investeringsronde van 100 miljoen dollar opgehaald, waarmee het bedrijf een waardering van meer dan een miljard dollar bereikt. De financiering werd geleid door Iconiq Capital en kwam slechts twee jaar na de stille start van het bedrijf. Rillet meldt dat de jaarlijkse terugkerende omzet (ARR) in de afgelopen drie maanden verdubbeld is, aldus het management.
+      </p>
+      <p>
+        Rillet richt zich op geautomatiseerde boekhoudoplossingen voor bedrijven met complexe financiële processen. Het platform gebruikt AI om facturen, belastingen en cashflow te beheren, wat volgens het bedrijf tijdwinst en minder fouten oplevert. Klanten kunnen zo hun financiële administratie sneller en nauwkeuriger afhandelen, zo blijkt uit voorbeelden van gebruikers.
+      </p>
+      <p>
+        De investering komt op een moment dat er meer aandacht is voor AI-toepassingen in financiële dienstverlening. Rillet concurreert met gevestigde spelers zoals Dext en QuickBooks, maar onderscheidt zich door een sterke focus op automatisering en schaalbaarheid. Het bedrijf geeft aan de komende jaren fors te willen groeien in zowel Europa als Noord-Amerika.
+      </p>
+    </>
+  ),
   'asml-geopolitieke-speelbal-china-vs-amerika': (
     <>
       <p className="lead-para">
@@ -7182,6 +7195,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'rillet-wordt-eenhoorn-met-100-miljoen-investeringsronde':
+    "Voor ondernemers die kijken naar AI-oplossingen in hun financiële processen, toont Rillets groei aan dat er ruimte is voor gespecialiseerde tools die traditionele boekhoudsoftware overtreffen. Het succes van het bedrijf benadrukt het belang van automatisering in sectoren waar nauwkeurigheid en snelheid cruciaal zijn. Tegelijkertijd is de vraag hoe lang deze groei volgehouden kan worden nu concurrentie toeneemt.",
   'asml-geopolitieke-speelbal-china-vs-amerika':
     "Bij Stevin zien we dit conflict niet als een technologisch of economisch vraagstuk, maar als een structurele zwakte in Europa’s innovatiestrategie: we produceren toptechnologie (zoals ASML doet), maar we controleren noch de markten noch de toeleveringsketens die daarbij horen. Terwijl de VS en China hun eigen ecosystemen bouwen met staatssteun en protectionisme, blijft Europa hangen in halfslachtige compromissen tussen vrijhandel en veiligheidsbelangen.\nDe oplossing ligt niet in meer lobbywerk in Washington of afhankelijkheid van Brusselse rugdekking, maar in twee dingen: ten eerste moet Europa haar eigen toeleveringsketens versterken zodat bedrijven zoals ASML minder kwetsbaar zijn voor Amerikaanse chantage – denk aan lokale productie van kritieke componenten of samenwerking met gelijkgestemde partners zoals Japan of Zuid-Korea buiten China om.\nTen tweede moet Nederland (én België) stoppen met denken in termen van ‘exportbeleid’ en beginnen met ‘innovatiebeleid’: waarom investeren we niet massaal in alternatieve afzetmarkten voor onze techsector? Waarom creëren we geen Europese equivalent van NVIDIA of TSMC voordat we gedwongen worden toe te kijken hoe anderen onze troeven inpikken?\nDit is geen zaak voor politici alleen – ook ondernemers moeten hun modellen herzien voordat ze net als ASML wakker worden met een verbod waarvoor ze geen back-upplan hadden.",
   'van-cluster-naar-laptop-de-revolutie-in-ai-inference':
