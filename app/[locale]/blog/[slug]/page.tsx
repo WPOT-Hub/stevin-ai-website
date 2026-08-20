@@ -1513,6 +1513,60 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-schrapt-ontwikkeling-voor-beveiliging': (
+    <>
+      <p className="lead-para">
+        OpenAI heeft tijdelijk de ontwikkelsnelheid van sommige AI-modellen verlaagd om extra beveiligingsmaatregelen en veiligheidsprotocollen te implementeren. Dit besluit volgt op een twee weken durende pauze, zo meldt het bedrijf zelf. De stap komt op een moment dat OpenAI onder druk staat van concurrenten zoals Anthropic en Chinese ontwikkelaars van open-source modellen.
+      </p>
+      <p>
+        De maatregel is bedoeld om risico’s op misbruik of onbedoelde gevolgen van AI-technologie te minimaliseren. Volgens het bedrijf gaat het om een vrijwillige aanpak, waarbij prioriteit wordt gegeven aan verantwoorde innovatie. Het is nog niet duidelijk hoe lang deze periode zal duren of welke specifieke projecten worden vertraagd.
+      </p>
+      <p>
+        De beslissing past in een bredere trend waarbij techbedrijven hun AI-strategieën heroverwegen na kritiek op gebrek aan transparantie en veiligheidsrisico’s. OpenAI benadrukt dat de stap geen afzwakking van ambities betekent, maar een noodzakelijke aanpassing in de huidige fase.
+      </p>
+    </>
+  ),
+  'rillet-wordt-eenhoorn-met-100-miljoen-investeringsronde': (
+    <>
+      <p className="lead-para">
+        Het Nederlandse AI-startup Rillet heeft een Series C-investeringsronde van 100 miljoen dollar opgehaald, waarmee het bedrijf een waardering van meer dan een miljard dollar bereikt. De financiering werd geleid door Iconiq Capital en kwam slechts twee jaar na de stille start van het bedrijf. Rillet meldt dat de jaarlijkse terugkerende omzet (ARR) in de afgelopen drie maanden verdubbeld is, aldus het management.
+      </p>
+      <p>
+        Rillet richt zich op geautomatiseerde boekhoudoplossingen voor bedrijven met complexe financiële processen. Het platform gebruikt AI om facturen, belastingen en cashflow te beheren, wat volgens het bedrijf tijdwinst en minder fouten oplevert. Klanten kunnen zo hun financiële administratie sneller en nauwkeuriger afhandelen, zo blijkt uit voorbeelden van gebruikers.
+      </p>
+      <p>
+        De investering komt op een moment dat er meer aandacht is voor AI-toepassingen in financiële dienstverlening. Rillet concurreert met gevestigde spelers zoals Dext en QuickBooks, maar onderscheidt zich door een sterke focus op automatisering en schaalbaarheid. Het bedrijf geeft aan de komende jaren fors te willen groeien in zowel Europa als Noord-Amerika.
+      </p>
+    </>
+  ),
+  'asml-geopolitieke-speelbal-china-vs-amerika': (
+    <>
+      <p className="lead-para">
+        Een lithografiemachine van ASML kost meer dan een Boeing 747. Het apparaat is zo groot dat het in onderdelen per vrachtvliegtuig naar China wordt vervoerd. Toch weegt het bedrijf uit Veldhoven al jaren zwaarder dan welk vliegtuig dan ook in termen van geopolitieke impact. Want wie de meest geavanceerde chips kan maken, bepaalt wie de toekomst van AI, defensie en digitale economieën domineert. Dat is precies waarom de VS er alles aan doen om ASML uit China te weren – niet omdat Nederlandse machines een directe militaire bedreiging vormen, maar omdat Washington bang is voor Chinese zelfredzaamheid.
+      </p>
+      <p>
+        De Match Act, het wetsvoorstel dat nu in het Amerikaanse Congres ligt, dwingt bondgenoten tot een exportverbod op *alle* chipmachines van ASML naar China. Niet alleen de ultrageavanceerde EUV-modellen, maar ook de oudere DUV-machines die al jaren veilig werden geacht. Het argument? Die technologie zou indirect kunnen bijdragen aan Chinese militaire capaciteiten. Maar het echte doel is simpel: voorkomen dat China onafhankelijk wordt in chipproductie. De VS willen hun eigen dominantie behouden door elke concurrent buiten spel te zetten – zelfs als die concurrent een Nederlands bedrijf is.
+      </p>
+      <p>
+        Nederland protesteert luidkeels tegen deze inmenging in haar soevereiniteit over exportbeleid. Maar Den Haag heeft weinig speelruimte. De VS dreigen met sancties als Nederland weigert mee te werken, en ASML is voor zijn productie afhankelijk van Amerikaanse componenten. In het verleden hebben die dreigementen al geleid tot strenge Nederlandse exportregels. De realiteit is dat Europa geen alternatief heeft: Brussel biedt hooguit symbolische steun, terwijl Washington zijn wil oplegt via economische dwang.
+      </p>
+      <p>
+        Het ironische is dat de VS zelf jarenlang Chinese bedrijven hebben laten profiteren van Amerikaanse etstechnologie – technologie die net zo goed gebruikt kan worden voor militaire toepassingen als lithografiemachines van ASML. Pas toen China hiermee chips produceerde die normaal EUV vereisen, greep Washington in. Nu eist Amerika dat Europa hetzelfde doet, terwijl Amerikaanse bedrijven gewoon mogen verkopen wat ze willen. Het gaat niet om veiligheid, maar om concurrentievervalsing.
+      </p>
+      <p>
+        ASML heeft zichzelf in deze positie gebracht door jarenlang afhankelijk te blijven van zowel de Chinese markt als Amerikaanse technologie. Toen de verkoop aan China nog lucratief was, investeerde het bedrijf nauwelijks in alternatieve afzetmarkten of lokale productiecapaciteit in Europa of Azië buiten China. Nu dreigt het een derde van zijn omzet te verliezen zonder dat er een concreet plan ligt om die leegte op te vullen. De les? Zelfs een monopolist kan kwetsbaar worden als hij blind vertrouwt op één klant én één leverancier.
+      </p>
+      <p>
+        Voor bureau-eigenaren en marketingteams in Nederland en België is dit verhaal meer dan een politiek conflict – het is een waarschuwing over afhankelijkheid en strategische blindheid. Wie zijn businessmodellen baseert op één markt of één technologiepartner loopt hetzelfde risico: plotseling staat je hele model onder druk door krachten waar je geen grip op hebt. Diversificatie is geen marketingtruc, maar een noodzaak voor overleven.
+      </p>
+      <p>
+        De Match Act zal waarschijnlijk aangenomen worden, want zowel Republikeinen als Democraten staan achter deze aanpak. Nederland kan protesteren zoveel het wil, maar Washington heeft al bewezen bereid te zijn om economische pijn toe te brengen voor strategisch gewin. De vraag is niet óf ASML zal moeten stoppen met leveren aan China, maar hoe snel Europa zich kan herstellen zonder deze cruciale technologiepartner.
+      </p>
+      <p>
+        Uiteindelijk gaat dit niet over chips of AI – het gaat over wie straks de regels bepaalt voor de digitale wereld van morgen.
+      </p>
+    </>
+  ),
   'van-cluster-naar-laptop-de-revolutie-in-ai-inference': (
     <>
       <p className="lead-para">
@@ -7154,6 +7208,12 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-schrapt-ontwikkeling-voor-beveiliging':
+    "Voor bedrijven die AI inzetten, toont dit voorbeeld hoe snel de balans tussen innovatie en verantwoordelijkheid kan kantelen. Het is belangrijk om niet alleen te focussen op snelle lanceringen, maar ook op robuuste systemen die risico’s beperken. Een dergelijke aanpak kan uiteindelijk zelfs vertrouwen bij klanten en stakeholders vergroten.",
+  'rillet-wordt-eenhoorn-met-100-miljoen-investeringsronde':
+    "Voor ondernemers die kijken naar AI-oplossingen in hun financiële processen, toont Rillets groei aan dat er ruimte is voor gespecialiseerde tools die traditionele boekhoudsoftware overtreffen. Het succes van het bedrijf benadrukt het belang van automatisering in sectoren waar nauwkeurigheid en snelheid cruciaal zijn. Tegelijkertijd is de vraag hoe lang deze groei volgehouden kan worden nu concurrentie toeneemt.",
+  'asml-geopolitieke-speelbal-china-vs-amerika':
+    "Bij Stevin zien we dit conflict niet als een technologisch of economisch vraagstuk, maar als een structurele zwakte in Europa’s innovatiestrategie: we produceren toptechnologie (zoals ASML doet), maar we controleren noch de markten noch de toeleveringsketens die daarbij horen. Terwijl de VS en China hun eigen ecosystemen bouwen met staatssteun en protectionisme, blijft Europa hangen in halfslachtige compromissen tussen vrijhandel en veiligheidsbelangen.\nDe oplossing ligt niet in meer lobbywerk in Washington of afhankelijkheid van Brusselse rugdekking, maar in twee dingen: ten eerste moet Europa haar eigen toeleveringsketens versterken zodat bedrijven zoals ASML minder kwetsbaar zijn voor Amerikaanse chantage – denk aan lokale productie van kritieke componenten of samenwerking met gelijkgestemde partners zoals Japan of Zuid-Korea buiten China om.\nTen tweede moet Nederland (én België) stoppen met denken in termen van ‘exportbeleid’ en beginnen met ‘innovatiebeleid’: waarom investeren we niet massaal in alternatieve afzetmarkten voor onze techsector? Waarom creëren we geen Europese equivalent van NVIDIA of TSMC voordat we gedwongen worden toe te kijken hoe anderen onze troeven inpikken?\nDit is geen zaak voor politici alleen – ook ondernemers moeten hun modellen herzien voordat ze net als ASML wakker worden met een verbod waarvoor ze geen back-upplan hadden.",
   'van-cluster-naar-laptop-de-revolutie-in-ai-inference':
     "Bij Stevin zien we deze doorbraak als een bevestiging van onze overtuiging dat technologie pas echt waarde toevoegt als ze toegankelijk wordt voor iedereen – niet alleen voor techgiganten of goed gefinancierde startups.\nDeze aanpak van lokale inference sluit perfect aan bij onze visie op duurzame digitalisering: minder afhankelijkheid van externe partijen betekent meer controle over data, kosten en snelheid.\nVoor marketingteams biedt dit niet alleen technische vrijheid, maar ook strategische onafhankelijkheid.\nHet belangrijkste innoverende element zit hem niet in het model zelf, maar in de manier waarop het wordt ingezet: als bouwsteen voor lokale oplossingen die schaalbaar zijn zonder afhankelijkheid van cloudproviders.\nWij verwachten dan ook dat deze trend zich zal doorzetten – niet omdat grote taalmodellen kleiner worden, maar omdat software slimmer wordt omgaan met hun beperkingen.\nVoor organisaties die nu al nadenken over hoe ze AI kunnen integreren zonder vast te lopen in kosten of complexiteit, is dit een wake-up call om vandaag al stappen te zetten richting lokale experimenten.",
   'cerebras-cs-4-verhoogt-ai-prestaties-met-drievoudige-capaciteit':
