@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-schrapt-ontwikkeling-voor-beveiliging': (
+    <>
+      <p className="lead-para">
+        OpenAI heeft tijdelijk de ontwikkelsnelheid van sommige AI-modellen verlaagd om extra beveiligingsmaatregelen en veiligheidsprotocollen te implementeren. Dit besluit volgt op een twee weken durende pauze, zo meldt het bedrijf zelf. De stap komt op een moment dat OpenAI onder druk staat van concurrenten zoals Anthropic en Chinese ontwikkelaars van open-source modellen.
+      </p>
+      <p>
+        De maatregel is bedoeld om risico’s op misbruik of onbedoelde gevolgen van AI-technologie te minimaliseren. Volgens het bedrijf gaat het om een vrijwillige aanpak, waarbij prioriteit wordt gegeven aan verantwoorde innovatie. Het is nog niet duidelijk hoe lang deze periode zal duren of welke specifieke projecten worden vertraagd.
+      </p>
+      <p>
+        De beslissing past in een bredere trend waarbij techbedrijven hun AI-strategieën heroverwegen na kritiek op gebrek aan transparantie en veiligheidsrisico’s. OpenAI benadrukt dat de stap geen afzwakking van ambities betekent, maar een noodzakelijke aanpassing in de huidige fase.
+      </p>
+    </>
+  ),
   'rillet-wordt-eenhoorn-met-100-miljoen-investeringsronde': (
     <>
       <p className="lead-para">
@@ -7195,6 +7208,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-schrapt-ontwikkeling-voor-beveiliging':
+    "Voor bedrijven die AI inzetten, toont dit voorbeeld hoe snel de balans tussen innovatie en verantwoordelijkheid kan kantelen. Het is belangrijk om niet alleen te focussen op snelle lanceringen, maar ook op robuuste systemen die risico’s beperken. Een dergelijke aanpak kan uiteindelijk zelfs vertrouwen bij klanten en stakeholders vergroten.",
   'rillet-wordt-eenhoorn-met-100-miljoen-investeringsronde':
     "Voor ondernemers die kijken naar AI-oplossingen in hun financiële processen, toont Rillets groei aan dat er ruimte is voor gespecialiseerde tools die traditionele boekhoudsoftware overtreffen. Het succes van het bedrijf benadrukt het belang van automatisering in sectoren waar nauwkeurigheid en snelheid cruciaal zijn. Tegelijkertijd is de vraag hoe lang deze groei volgehouden kan worden nu concurrentie toeneemt.",
   'asml-geopolitieke-speelbal-china-vs-amerika':
