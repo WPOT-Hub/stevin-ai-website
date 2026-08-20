@@ -16,33 +16,39 @@ export const CAMPAIGN_ANGLES = {
   },
   'marketing-in-eigen-beheer': {
     id: 'marketing-in-eigen-beheer',
-    headline: 'TODO: Marketing in eigen beheer',
-    subheadline: 'TODO: Copy voor deze campagnehoek wordt nog uitgewerkt.',
+    headline: 'Je marketing zelf draaien, zonder vanaf nul te beginnen.',
+    subheadline:
+      'De opzet kost de meeste tijd: accounts, tracking en rapportage goed neerzetten. Wij zetten dat neer op jouw naam, daarna draai je het zelf of laat je AI-agents het meeste werk doen.',
     bullets: [
-      'TODO: Eerste voordeel van marketing in eigen beheer.',
-      'TODO: Tweede voordeel van marketing in eigen beheer.',
+      'De basis staat op jouw naam: accounts, tracking en rapportage.',
+      'Daarna draai je het zelf, of je laat AI-agents het zware werk doen.',
+      'Nooit meer een bureau nodig om te weten hoe je ervoor staat.',
     ],
     ctaText: 'Boek een kennismaking',
     eventSlug: 'kennismaking',
   },
   'marketing-brein': {
     id: 'marketing-brein',
-    headline: 'TODO: Jouw marketingbrein',
-    subheadline: 'TODO: Copy voor deze campagnehoek wordt nog uitgewerkt.',
+    headline: 'Je cijfers staan verspreid, en niemand houdt het geheel bij.',
+    subheadline:
+      'Campagnes, kosten en resultaten leven in losse dashboards bij losse partijen. Een marketingbrein brengt ze samen in een laag die van jou blijft, zodat je in een oogopslag ziet wat werkt.',
     bullets: [
-      'TODO: Eerste voordeel van een marketingbrein.',
-      'TODO: Tweede voordeel van een marketingbrein.',
+      'Je campagnes, cijfers en historie in een laag die van jou is.',
+      'Zie wat werkt en wat geld kost, zonder in tien dashboards te zoeken.',
+      'Advies dat meebeweegt met je eigen cijfers, niet met een standaardverhaal.',
     ],
     ctaText: 'Boek een sales-scan',
     eventSlug: 'sales-scan',
   },
   'ai-brein': {
     id: 'ai-brein',
-    headline: 'TODO: Jouw AI-brein',
-    subheadline: 'TODO: Copy voor deze campagnehoek wordt nog uitgewerkt.',
+    headline: 'AI in je marketing, zonder je data aan een blackbox te geven.',
+    subheadline:
+      'De meeste AI-tools draaien op een algemeen model en zien je data als voer. Dit werkt andersom: EU-gehoste AI bovenop jouw eigen cijfers, waarbij de data en de controle bij jou blijven.',
     bullets: [
-      'TODO: Eerste voordeel van een AI-brein.',
-      'TODO: Tweede voordeel van een AI-brein.',
+      'EU-gehoste AI die op jouw eigen cijfers werkt, niet op een algemeen model.',
+      'Van analyse naar concrete acties, elke week, op je eigen data.',
+      'Je houdt de data en de controle, de AI doet het werk.',
     ],
     ctaText: 'Boek een AI-scan',
     eventSlug: 'ai-scan',
