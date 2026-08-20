@@ -92,7 +92,15 @@ export default async function middleware(request: NextRequest) {
   const hostname = (request.headers.get('host') ?? request.nextUrl.hostname)
     .split(':', 1)[0]
     .toLowerCase()
-  const campaignDomain = getCampaignDomain(hostname)
+  // Dev-only preview: op localhost is de hostname nooit een campagnedomein, dus
+  // dan zie je de gewone site. Met ?__campaign=<domein> kun je in development
+  // toch de campagne-LP bekijken. Werkt ALLEEN buiten productie; op de echte
+  // hostess-gated productie doet deze query niets.
+  const devPreview =
+    process.env.NODE_ENV !== 'production'
+      ? request.nextUrl.searchParams.get('__campaign')
+      : null
+  const campaignDomain = getCampaignDomain(hostname) ?? (devPreview ? getCampaignDomain(devPreview.toLowerCase()) : null)
 
   if (campaignDomain && request.nextUrl.pathname === '/') {
     const destination = request.nextUrl.clone()
