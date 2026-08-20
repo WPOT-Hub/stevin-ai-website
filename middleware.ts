@@ -1,6 +1,7 @@
-import { type NextRequest } from 'next/server'
+import { NextResponse, type NextRequest } from 'next/server'
 import createMiddleware from 'next-intl/middleware'
 import { routing } from './i18n/routing'
+import { getCampaignDomain } from './content/campaign-landings/domains'
 
 const intlMiddleware = createMiddleware(routing)
 
@@ -86,6 +87,32 @@ export default async function middleware(request: NextRequest) {
   const aiBot = detectAIBot(ua)
   if (aiBot) {
     logBotCrawl(aiBot, request.nextUrl.pathname).catch(() => {})
+  }
+
+  const hostname = (request.headers.get('host') ?? request.nextUrl.hostname)
+    .split(':', 1)[0]
+    .toLowerCase()
+  const campaignDomain = getCampaignDomain(hostname)
+
+  if (campaignDomain && request.nextUrl.pathname === '/') {
+    const destination = request.nextUrl.clone()
+    destination.pathname = `/_campaign/${campaignDomain}`
+
+    const response = NextResponse.rewrite(destination)
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow')
+    response.headers.set(
+      'cache-control',
+      'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+    )
+    return response
+  }
+
+  // De OG-afbeelding gebruikt het interne campagnepad. Laat dat pad alleen
+  // op een toegestane campagnehost buiten next-intl om door naar Next.js.
+  if (campaignDomain && request.nextUrl.pathname.startsWith('/_campaign/')) {
+    const response = NextResponse.next()
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow')
+    return response
   }
 
   const response = intlMiddleware(request)
