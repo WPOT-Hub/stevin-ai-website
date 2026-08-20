@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'rillet-wordt-eenhoorn-met-100-miljoen-investeringsronde',
+    format: 'dispatch' as const,
+    edition: '424',
+    category: 'Finance',
+    title: "Rillet haalt 100 miljoen op en wordt eenhoorn",
+    dek: "De AI-gestuurde boekhoudoplossing Rillet behaalt een miljardwaardering na een Series C van 100 miljoen dollar.",
+    publishedAt: '2026-08-20',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "Rillet haalt 100 miljoen op en wordt eenhoorn",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'asml-geopolitieke-speelbal-china-vs-amerika',
     format: 'dispatch' as const,
     edition: '423',
