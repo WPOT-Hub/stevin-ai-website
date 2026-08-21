@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-lanceert-ai-max-tools-voor-search-campagnes': (
+    <>
+      <p className="lead-para">
+        Google introduceert deze week nieuwe functionaliteit in AI Max, bestaande uit A/B-testmogelijkheden en een performance planner voor budget- en bodemschalingen. Met deze tools kunnen marketeers direct zien welke aanpassingen leiden tot betere resultaten, aldus het bedrijf.
+      </p>
+      <p>
+        De A/B-tests laten adverteerders verschillende versies van campagnes vergelijken zonder dat dit extra handmatig werk vereist. De performance planner analyseert automatisch de impact van budgetwijzigingen of bodinstellingen op de campagneprestaties, zodat optimalisaties sneller en data-gedreven kunnen plaatsvinden.
+      </p>
+      <p>
+        De tools zijn direct beschikbaar voor alle gebruikers van AI Max in Google Ads. Volgens Google helpt dit vooral kleinere teams om met beperkte middelen toch effectief campagnes te beheren.
+      </p>
+    </>
+  ),
   'openai-schrapt-ontwikkeling-voor-beveiliging': (
     <>
       <p className="lead-para">
@@ -7208,6 +7221,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-lanceert-ai-max-tools-voor-search-campagnes':
+    "Voor bureau-eigenaars en in-house teams biedt deze vernieuwing een kans om campagnes sneller te testen en aan te passen zonder extra complexiteit. Het is een logische stap in de richting van meer automatisering, maar vraagt wel om heldere afspraken over wie verantwoordelijk is voor de interpretatie van de testresultaten en de uiteindelijke besluitvorming.",
   'openai-schrapt-ontwikkeling-voor-beveiliging':
     "Voor bedrijven die AI inzetten, toont dit voorbeeld hoe snel de balans tussen innovatie en verantwoordelijkheid kan kantelen. Het is belangrijk om niet alleen te focussen op snelle lanceringen, maar ook op robuuste systemen die risico’s beperken. Een dergelijke aanpak kan uiteindelijk zelfs vertrouwen bij klanten en stakeholders vergroten.",
   'rillet-wordt-eenhoorn-met-100-miljoen-investeringsronde':
