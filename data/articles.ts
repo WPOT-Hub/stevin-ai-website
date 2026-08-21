@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-lanceert-ai-max-tools-voor-search-campagnes',
+    format: 'dispatch' as const,
+    edition: '426',
+    category: 'Platform',
+    title: "Google voegt A/B-testing en budgetplanners toe aan AI Max",
+    dek: "Adverteerders kunnen vanaf nu met nieuwe tools binnen AI Max hun Search-campagnes beter optimaliseren via directe tests en geautomatiseerde budgetaanpassingen.",
+    publishedAt: '2026-08-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google voegt A/B-testing en budgetplanners toe aan AI Max",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'openai-schrapt-ontwikkeling-voor-beveiliging',
     format: 'dispatch' as const,
     edition: '425',
