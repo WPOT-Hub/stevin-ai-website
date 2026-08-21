@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-model-router-zonder-poespas',
+    format: 'dispatch' as const,
+    edition: '427',
+    category: 'Platform',
+    title: "Wie kiest jouw AI? De ongemakkelijke waarheid over model routers",
+    dek: "Ramp gooit een nieuwe tool in de strijd: een AI-modelrouter die keuzes voor je maakt. Maar wie controleert eigenlijk de regels?",
+    publishedAt: '2026-08-21',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Wie kiest jouw AI? De ongemakkelijke waarheid over model routers",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-lanceert-ai-max-tools-voor-search-campagnes',
     format: 'dispatch' as const,
     edition: '426',
