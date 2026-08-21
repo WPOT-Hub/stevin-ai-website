@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'hoe-ai-agenten-ceo-s-veranderen-meer-dan-technologie',
+    format: 'dispatch' as const,
+    edition: '430',
+    category: 'Platform',
+    title: "AI-agenten dwingen CEO’s tot een mentale reset: technologie is het makkelijke deel",
+    dek: "De grootste uitdaging van AI is niet de implementatie, maar de fundamentele herijking van hoe een organisatie werkt en wie daarin beslissingen neemt.",
+    publishedAt: '2026-08-21',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI-agenten dwingen CEO’s tot een mentale reset: technologie is het makkelijke deel",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'groq-350-miljoen-neocloud-pivot',
     format: 'dispatch' as const,
     edition: '429',
