@@ -1513,6 +1513,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'hoe-ai-agenten-ceo-s-veranderen-meer-dan-technologie': (
+    <>
+      <p className="lead-para">
+        Een CEO die deze week zijn board informeert over de AI-strategie van zijn bedrijf, kan maar beter twee dingen voorbereiden: een uitleg over waarom mensen straks niet meer met machines praten, maar met agenten. En een plan om zijn eigen rol te herdefiniëren nu die agenten taken overnemen die decennialang bij hem lagen. AWS’ recente aankondiging dat hun klanten nu direct kunnen communiceren met AI-agenten in plaats van via tussenpersonen zoals consultants of accountmanagers, is geen technologische doorbraak. Het is het begin van een organisatorische aardbeving. Want als een machine zelfstandig deals sluit, contracten opstelt of klantvragen beantwoordt, wat blijft er dan nog over voor de menselijke medewerker?
+      </p>
+      <p>
+        De vraag is niet of AI dit kan, maar of organisaties bereid zijn om hun bestaande processen op te blazen. Veel bedrijven zitten nog vast in een structuur waarin technologie dienstbaar is aan de mens: systemen ondersteunen medewerkers in hun werk. Maar agentic AI draait die logica om. Deze systemen nemen beslissingen op basis van realtime data en voeren handelingen uit zonder menselijke tussenkomst. Dat betekent dat rollen zoals salesmanager, inkoper of zelfs financieel directeur niet langer functioneren zoals we ze kennen. Een agent kan onderhandelen over prijzen, risico’s inschatten en betalingen initiëren – en dat sneller en accurater dan elke mens ooit zou kunnen.
+      </p>
+      <p>
+        Neem het voorbeeld van AWS zelf: hun klanten gebruiken nu agenten om cloudservices automatisch te beheren, kosten te optimaliseren en zelfs nieuwe productlijnen te lanceren zonder dat er een projectteam aan te pas komt. De implicatie is duidelijk: als je als bedrijf denkt dat je AI alleen nodig hebt om je huidige processen efficiënter te maken, mis je de kern. Efficiëntie is secundair aan effectiviteit. De echte waarde zit in het vermogen om nieuwe businessmodellen te creëren die voorheen onmogelijk waren omdat ze te complex of tijdrovend waren voor mensen.
+      </p>
+      <p>
+        Toch is er een valkuil waar bijna elke organisatie intrapt: het idee dat technologie eerst ‘klaar’ moet zijn voordat je de organisatie erop kunt aanpassen. Dat is precies andersom. De beste AI-implementaties ontstaan wanneer bedrijven hun processen zo radicaal vereenvoudigen dat machines ze kunnen overnemen. Neem de supply chain: traditioneel wordt elk stapje in de logistiek bewaakt door verschillende afdelingen met eigen systemen en prioriteiten. Een agent ziet dit als één doorlopend proces waarin elke vertraging direct wordt gecompenseerd door alternatieve routes of leveranciers te activeren. Maar zo’n systeem bouwen vraagt om een cultuur waarin medewerkers bereid zijn om controle af te staan – iets wat veel leiders nog altijd als bedreigend ervaren.
+      </p>
+      <p>
+        Een andere misvatting is dat AI-agenten vooral nuttig zijn voor grote techbedrijven met enorme budgetten. Niets is minder waar. Juist mkb-bedrijven kunnen profiteren van deze shift omdat zij minder gebonden zijn aan oude structuren en sneller kunnen experimenteren met nieuwe werkwijzen. Een lokale groothandel in bouwmaterialen kan bijvoorbeeld een agent inzetten om automatisch offertes op te stellen op basis van actuele prijzen en voorraadniveaus – iets wat handmatig uren werk kostte en vaak foutgevoelig was. Het resultaat? Lagere kosten, hogere marges en klanten die sneller antwoord krijgen.
+      </p>
+      <p>
+        Maar hier schuilt ook het grootste risico: als organisaties niet snel genoeg schakelen naar deze nieuwe realiteit, lopen ze niet alleen concurrentievoordeel mis, maar riskeren ze ook dat hun beste mensen vertrekken naar bedrijven die wel bereid zijn om los te laten. Medewerkers die gewend zijn aan autonomie en impact zullen zich niet langer laten leiden door hiërarchieën waarin beslissingen dagen duren om uiteindelijk toch verkeerd uit te pakken.
+      </p>
+      <p>
+        De les voor CEO’s is simpel: AI-agenten dwingen ons om terug naar de basis te gaan. Niet ‘hoe passen we technologie toe?’ maar ‘wat maakt onze organisatie uniek?’ Als je antwoord daarop ligt in menselijke relaties, creativiteit of intuïtie – prima, houd die gebieden beschermd tegen automatisering. Maar alles wat gebaseerd is op patronenherkenning, data-analyse of repetitieve handelingen? Dat gaat binnen vijf jaar volledig worden overgenomen door machines.
+      </p>
+      <p>
+        En dan blijft er één cruciale vraag over: wie neemt straks nog de strategische beslissingen? Als agenten alles regelen wat operationeel moet gebeuren, blijft er weinig over dan visie en koersbepaling – taken waarvoor geen algoritme ooit zal worden geprogrammeerd.
+      </p>
+    </>
+  ),
   'groq-350-miljoen-neocloud-pivot': (
     <>
       <p className="lead-para">
@@ -7287,6 +7315,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'hoe-ai-agenten-ceo-s-veranderen-meer-dan-technologie':
+    "Bij Stevin zien we dagelijks hoe organisaties worstelen met deze transitie omdat ze vasthouden aan oude paradigma’s over controle en verantwoordelijkheid. Onze benadering is simpel: begin niet met technologie, maar met vragen als ‘welke taken willen we écht automatiseren?’ en ‘wat betekent dit voor onze medewerkers?’ Een succesvolle AI-strategie begint bij het erkennen dat agentic systemen geen tools zijn, maar collega’s die dezelfde rechten hebben op toegang tot data en besluitvorming als elke andere stakeholder binnen je organisatie.\n\nWij adviseren bedrijven om eerst kleine pilots uit te voeren waarbij menselijke rollen stap voor stap worden vervangen door agent-based alternatieven – niet omdat we denken dat dit direct schaalbaar is, maar omdat het helpt om weerstand weg te nemen bij teams die bang zijn hun baan kwijt te raken.\n\nHet moeilijkste onderdeel blijft echter altijd hetzelfde: durven loslaten wat ooit waardevol was omdat het nu juist een remmende factor wordt in een wereld waar snelheid en adaptiviteit bepalend zijn voor succes.\n\nOns standpunt? De beste AI-strategieën ontstaan wanneer technologie niet wordt gezien als vervanging van mensenwerk, maar als katalysator voor werk dat écht verschil maakt.",
   'groq-350-miljoen-neocloud-pivot':
     "Bij Stevin zien we deze pivot als onderdeel van een bredere trend waarin technologiebedrijven steeds vaker kiezen voor hybride businessmodellen die software en infrastructuur combineren. Voor bureau-eigenaars betekent dit dat ze niet alleen moeten nadenken over welke tools ze gebruiken, maar ook over hoe ze deze tools kunnen integreren in hun eigen dienstverlening. Een neocloud-aanpak zoals Groq’s kan inspiratie bieden voor marketingteams die op zoek zijn naar manieren om hun campagnes sneller en efficiënter uit te voeren zonder afhankelijk te zijn van externe partijen. Tegelijkertijd waarschuwen we voor de valkuil van overmatige complexiteit: niet elke organisatie heeft baat bij het zelf beheren van cloudinfrastructuur – soms is het beter om samen te werken met gespecialiseerde partners.",
   'ai-versterkt-merkwaarde':
