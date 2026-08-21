@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-versterkt-merkwaarde',
+    format: 'dispatch' as const,
+    edition: '428',
+    category: 'Markt',
+    title: "AI maakt merken relevanter dan ooit",
+    dek: "AI dwingt merken tot scherpere positionering, waardoor investeren in merkidentiteit nu meer oplevert.",
+    publishedAt: '2026-08-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "AI maakt merken relevanter dan ooit",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-model-router-zonder-poespas',
     format: 'dispatch' as const,
     edition: '427',
