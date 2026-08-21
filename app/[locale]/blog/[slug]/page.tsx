@@ -1513,6 +1513,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-model-router-zonder-poespas': (
+    <>
+      <p className="lead-para">
+        Stel je voor: je logt in op een platform, typt een vraag en krijgt direct een antwoord. Geen gedoe met verschillende modellen, geen gezoek naar de juiste API-sleutel. Dat is precies wat Ramp belooft met zijn nieuwe Router. Het bedrijf positioneert het als een soort verkeersregelaar voor AI-modellen, die automatisch de beste optie kiest op basis van kosten, snelheid of kwaliteit. Voor bedrijven die tientallen modellen tegelijk willen gebruiken, klinkt dat als muziek in de oren. Maar achter die simpele belofte schuilt een vraag die niemand lijkt te stellen: wie bepaalt eigenlijk welk model het beste is?
+      </p>
+      <p>
+        De gedachte dat software zelfstandig beslist welk model wordt ingezet, is fascinerend en eng tegelijk. Aan de ene kant ontlast het teams van handmatige keuzes en technisch gedoe. Een marketingteam dat snel content wil genereren hoeft niet meer te weten dat Llama 3 beter presteert op creativiteit dan Mistral, maar wel duurder is dan Phi-3. De router doet het werk voor ze. Aan de andere kant introduceert dit een nieuw afhankelijkheidsprobleem: wie programmeert de logica achter die keuzes? En wat gebeurt er als die logica niet transparant is?
+      </p>
+      <p>
+        Dit is geen theoretisch debat. We hebben al gezien hoe algoritmen van techgiganten soms verborgen biases bevatten of onverwachte kostenverrassingen veroorzaken. Stel je voor dat een router ineens alle vragen naar het duurste model stuurt omdat er een kortingsdeal loopt met de aanbieder van dat model. Of dat het systeem per ongeluk alleen maar commerciële modellen selecteert omdat die beter presteren op marketingteksten – ten koste van open-source alternatieven. Zonder heldere regels wordt Router al snel een black box waar bedrijven blind op vertrouwen.
+      </p>
+      <p>
+        Critici zullen zeggen dat dit gewoon de volgende stap is in automatisering, net zoals cloud computing en SaaS ons eerder hebben verlost van serverbeheer. Maar er is een cruciaal verschil: bij cloudopslag of CRM-systemen gaat het om infrastructuur, terwijl hier sprake is van inhoudelijke beslissingen die direct impact hebben op merkcommunicatie en klantinteractie. Een slechte keuze kan leiden tot inconsistentie in messaging, hogere kosten of zelfs reputatieschade als modellen onbedoeld bevooroordeeld raken.
+      </p>
+      <p>
+        De oplossing ligt niet in nog meer automatisering zonder toezicht, maar in transparantie en keuzevrijheid. Bedrijven zouden moeten kunnen instellen onder welke voorwaarden welk model wordt gebruikt: prijsplafonds per maand, voorkeur voor bepaalde modellen per type vraag (bijvoorbeeld juridische teksten versus social media posts), of zelfs handmatige goedkeuring bij kritieke communicatie. Ramp’s Router zou daardoor niet alleen een tool moeten zijn om modellen te switchen, maar ook om controle terug te winnen over de tools die we gebruiken.
+      </p>
+      <p>
+        Toch blijft er een fundamentele vraag staan: waarom zou je überhaupt afhankelijk willen zijn van één partij die beslist welk model wanneer wordt ingezet? De markt voor taalmodellen groeit explosief en diversiteit aan aanbieders zorgt juist voor innovatie en concurrentie. Een router die alleen maar werkt binnen het ecosysteem van één bedrijf beperkt die dynamiek en dwingt gebruikers in een afhankelijkheidsspiraal.
+      </p>
+      <p>
+        Uiteindelijk gaat het om vertrouwen – niet alleen in de technologie zelf, maar ook in wie deze technologie beheerst en welke belangen daarbij spelen. Als Ramp echt wil dat bedrijven deze tool massaal adopteren, zal het moeten bewijzen dat Router niet alleen slimme keuzes maakt, maar ook heldere kaders biedt waar gebruikers zich veilig bij voelen.
+      </p>
+    </>
+  ),
   'google-lanceert-ai-max-tools-voor-search-campagnes': (
     <>
       <p className="lead-para">
@@ -7221,6 +7246,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-model-router-zonder-poespas':
+    "Bij Stevin zien we deze ontwikkeling als symptoom van een groter probleem: de illusie van gemak versus de noodzaak van controle. Wij geloven dat AI-tools pas echt waardevol worden wanneer ze organisaties helpen hun eigen strategie uit te voeren – niet wanneer ze hen dwingen afhankelijk te worden van externe logica zonder contextuele kennis over hun merk of doelen.\n\nEen router zoals Ramp’s kan nuttig zijn als tussenstap naar volledige integratie van meerdere modellen binnen bestaande workflows, mits bedrijven zelf kunnen sturen op criteria zoals kostenbewustzijn en merkconsistentie. Maar we waarschuwen voor het risico dat organisaties hun agency verliezen door blind te vertrouwen op geautomatiseerde systemen.\n\nOns advies? Begin klein: test Router binnen één team of project met duidelijke meetbare doelen (bijvoorbeeld kostenbesparing of kwaliteitsverbetering). Bouw daarna geleidelijk aan transparante richtlijnen op basis waarvan beslissingen worden genomen – zodat je altijd weet waarom welk model wordt gekozen.\n\nUiteindelijk gaat het erom dat technologie dienstbaar blijft aan mensen, niet andersom.",
   'google-lanceert-ai-max-tools-voor-search-campagnes':
     "Voor bureau-eigenaars en in-house teams biedt deze vernieuwing een kans om campagnes sneller te testen en aan te passen zonder extra complexiteit. Het is een logische stap in de richting van meer automatisering, maar vraagt wel om heldere afspraken over wie verantwoordelijk is voor de interpretatie van de testresultaten en de uiteindelijke besluitvorming.",
   'openai-schrapt-ontwikkeling-voor-beveiliging':
