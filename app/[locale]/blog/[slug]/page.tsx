@@ -1513,6 +1513,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'groq-350-miljoen-neocloud-pivot': (
+    <>
+      <p className="lead-para">
+        In een wereld waar elke techgigant zich vastklampt aan zijn core business, kiest Groq ervoor om los te laten. Het bedrijf dat ooit furore maakte met blazend snelle AI-chips, gooit nu alles in de strijd voor ‘neocloud’: een cloudinfrastructuur die draait op Nvidia-hardware maar wordt geoptimaliseerd voor ultrahoge prestaties. Met een frisse $350 miljoen en een waardering van $3,5 miljard toont Groq aan dat groei niet per se komt van betere producten, maar van slimme herpositionering.
+      </p>
+      <p>
+        De vraag is waarom een chipfabrikant plotseling kiest voor de cloud. Het antwoord ligt in de marktrealiteit: AI-chips verkopen is hard werken geworden. Concurrenten als Nvidia domineren met hun eigen ecosystemen, terwijl klanten steeds vaker klagen over hoge kosten en complexe integratie. Groq ziet hierin geen kans om mee te doen in de hardwarerace, maar wel om in te haken op de vraag naar flexibele, schaalbare oplossingen die zonder gedoe werken.
+      </p>
+      <p>
+        Dit is geen uniek verhaal. In de afgelopen jaren hebben tientallen startups en gevestigde namen ontdekt dat hardware alleen niet genoeg is als je concurrentie wilt overleven. Neem bijvoorbeeld het Nederlandse Scaleflux: ze begonnen als acceleratorfabrikant maar pivoten naar software-defined storage omdat klanten liever geen fysieke upgrades doen. Of kijk naar de talloze SaaS-bedrijven die hun eigen data-infrastructuur bouwen om afhankelijkheid van hyperscalers te verminderen.
+      </p>
+      <p>
+        Toch zit er ook risico in deze strategie. Een neocloud-aanpak vereist namelijk dat je vertrouwt op andermans hardware – in dit geval Nvidia’s chips – wat je afhankelijk maakt van prijspolitiek en leveringscapaciteit. Bovendien moet je concurreren met bedrijven die zelf al een sterke cloudpositie hebben, zoals AWS of Azure. Groq claimt dat hun neocloud tot wel 10 keer sneller is dan standaardoplossingen, maar dergelijke claims zijn moeilijk hard te maken zonder onafhankelijke meetdata.
+      </p>
+      <p>
+        Voor bureau-eigenaars en marketingteams in Nederland en België is dit verhaal vooral interessant omdat het laat zien hoe snel technologiecycli veranderen. Wat vandaag nog een revolutionaire chip lijkt, kan morgen al achterhaald zijn door software of nieuwe businessmodellen. De les? Blijf niet hangen in wat je verkoopt, maar focus op wat klanten écht nodig hebben – zelfs als dat betekent dat je je eigen product moet loslaten.
+      </p>
+      <p>
+        Ook voor organisaties die zelf cloudoplossingen ontwikkelen of beheren, biedt Groqs pivot een waarschuwing. De cloudmarkt wordt steeds gefragmenteerder: hyperscalers domineren de basisinfrastructuur, terwijl gespecialiseerde aanbieders zoals neoclouds proberen niches te bedienen met hogere prestaties of lagere kosten. Wie hierin stapt, moet bereid zijn om te investeren in zowel technologie als klantenservice – want zonder differentiator verdrink je in het volume.
+      </p>
+      <p>
+        Tot slot roept dit verhaal een bredere vraag op over innovatie in de techsector. Moeten we blijven streven naar betere hardware, of moeten we ons richten op systemen die bestaande hardware optimaal benutten? Groqs keuze suggereert het laatste: misschien is de echte revolutie niet het bouwen van nieuwe chips, maar het slim gebruiken van wat er al ligt.
+      </p>
+      <p>
+        Voor wie denkt dat dit alleen gaat over techbedrijven met enorme budgetten: denk opnieuw. De principes achter deze pivot gelden ook voor kleinere spelers. Of je nu een marketingbureau runt of een e-commerceplatform beheert: blijf flexibel, durf te experimenteren met nieuwe modellen en wees bereid om oude gewoontes los te laten als de markt dat vraagt.
+      </p>
+    </>
+  ),
   'ai-versterkt-merkwaarde': (
     <>
       <p className="lead-para">
@@ -7259,6 +7287,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'groq-350-miljoen-neocloud-pivot':
+    "Bij Stevin zien we deze pivot als onderdeel van een bredere trend waarin technologiebedrijven steeds vaker kiezen voor hybride businessmodellen die software en infrastructuur combineren. Voor bureau-eigenaars betekent dit dat ze niet alleen moeten nadenken over welke tools ze gebruiken, maar ook over hoe ze deze tools kunnen integreren in hun eigen dienstverlening. Een neocloud-aanpak zoals Groq’s kan inspiratie bieden voor marketingteams die op zoek zijn naar manieren om hun campagnes sneller en efficiënter uit te voeren zonder afhankelijk te zijn van externe partijen. Tegelijkertijd waarschuwen we voor de valkuil van overmatige complexiteit: niet elke organisatie heeft baat bij het zelf beheren van cloudinfrastructuur – soms is het beter om samen te werken met gespecialiseerde partners.",
   'ai-versterkt-merkwaarde':
     "Voor bedrijven betekent deze ontwikkeling dat de balans tussen korte-termijn tactieken en lange-termijn merkopbouw verder doorslaat naar het laatste. Waar veel organisaties nog steeds gefocust zijn op direct meetbare campagnes, wordt het belang van een herkenbare en authentieke merkidentiteit onmiskenbaar. Dit vraagt om een strategische keuze: ofwel blijf je vechten in de algoritmische arena met zwakke positionering, of je bouwt een merk dat AI-systemen zelfstandig oppakken.",
   'ai-model-router-zonder-poespas':
