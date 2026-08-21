@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'groq-350-miljoen-neocloud-pivot',
+    format: 'dispatch' as const,
+    edition: '429',
+    category: 'Platform',
+    title: "De chipmaker die geen chips meer wil verkopen",
+    dek: "Groq schuift van hardware naar de cloud en bewijst dat zelfs een techreus moet buigen voor de realiteit: chips verkopen is niet meer genoeg.",
+    publishedAt: '2026-08-21',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "De chipmaker die geen chips meer wil verkopen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-versterkt-merkwaarde',
     format: 'dispatch' as const,
     edition: '428',
