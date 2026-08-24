@@ -149,8 +149,9 @@ function TermsDutch() {
         <p>
           Tarieven en betaalvoorwaarden worden vastgelegd in een aparte
           dienstverleningsovereenkomst per klant. Bij gebrek aan specifieke afspraken
-          geldt: facturatie maandelijks vooraf, betalingstermijn 14 dagen, BTW
-          inbegrepen waar van toepassing.
+          geldt: facturatie maandelijks vooraf, betalingstermijn 14 dagen. Alle
+          genoemde bedragen zijn exclusief btw. Je advertentiebudget staat nooit op
+          onze factuur, dat betaal je rechtstreeks aan het advertentieplatform.
         </p>
       </section>
 
@@ -320,7 +321,9 @@ function TermsEnglish() {
         <p>
           Fees and payment terms are set out in a separate service agreement per
           client. Absent specific arrangements: monthly invoicing in advance,
-          payment term 14 days, VAT included where applicable.
+          payment term 14 days. All amounts stated are exclusive of VAT. Your
+          advertising budget never appears on our invoice; you pay that directly to
+          the advertising platform.
         </p>
       </section>
 
