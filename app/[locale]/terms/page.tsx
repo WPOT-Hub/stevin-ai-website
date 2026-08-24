@@ -95,12 +95,40 @@ function TermsDutch() {
       <section>
         <h2 className="text-xl font-semibold">3. Wat Stevin doet (en niet doet)</h2>
         <p>
-          Stevin signaleert en adviseert op basis van gekoppelde marketingdata. Stevin
-          is <strong>read-only</strong> waar het kan: wij voeren standaard geen
-          wijzigingen door in jouw ad-accounts. Beslissingen blijven bij jou of je
-          consultant. Waar Stevin wel acties kan uitvoeren (bijvoorbeeld een
-          compensatie-email opstellen), gebeurt dit pas na expliciete consultant- of
-          gebruiker-review.
+          Stevin levert twee dingen, en het verschil bepaalt wie waarvoor
+          verantwoordelijk is.
+        </p>
+        <p>
+          <strong>Het platform</strong> signaleert en adviseert op basis van
+          gekoppelde marketingdata. Daar is Stevin <strong>read-only</strong> waar het
+          kan: het platform wijzigt uit zichzelf niets in je advertentieaccounts. Waar
+          het wel een actie kan voorbereiden, bijvoorbeeld het opstellen van een
+          e-mail, gebeurt dat pas na expliciete review door een mens.
+        </p>
+        <p>
+          <strong>Beheer</strong>, als je dat bij ons afneemt, betekent dat wij in
+          jouw opdracht wel wijzigingen doorvoeren in je accounts: campagnes,
+          budgetten, zoekwoorden, advertenties en de bijbehorende meetinrichting. Dat
+          gebeurt binnen wat we vooraf hebben afgesproken. Je blijft eigenaar van de
+          accounts en kunt onze toegang op elk moment intrekken.
+        </p>
+        <p>
+          <strong>Advertentiebudget.</strong> Je advertentiebudget betaal je
+          rechtstreeks aan het advertentieplatform, niet aan ons, en wij rekenen daar
+          geen opslag over. Het budget en een dagmaximum spreken we vooraf af en
+          leggen we schriftelijk vast; wijzigen doen we alleen met jouw akkoord.
+          Kosten die het platform in rekening brengt blijven voor jouw rekening, ook
+          bij klikfraude, een geschorst account of een tariefwijziging van het
+          platform, tenzij die kosten het gevolg zijn van opzet of bewuste
+          roekeloosheid van ons.
+        </p>
+        <p>
+          <strong>Wat we wel en niet beloven.</strong> We spannen ons in om je
+          resultaten te verbeteren, maar we garanderen geen aantal aanvragen, geen
+          kosten per aanvraag, geen omzet, geen positie in zoekresultaten en geen
+          goedkeuring van advertenties door het platform. Die uitkomsten hangen mede
+          af van je markt, je aanbod, je eigen opvolging, en van beslissingen van
+          derden zoals Google en Meta waar wij geen zeggenschap over hebben.
         </p>
       </section>
 
@@ -240,11 +268,39 @@ function TermsEnglish() {
       <section>
         <h2 className="text-xl font-semibold">3. What Stevin does (and does not)</h2>
         <p>
-          Stevin signals and advises based on connected marketing data. Stevin is
-          <strong> read-only</strong> wherever possible: we do not modify your ad
-          accounts by default. Decisions stay with you or your consultant. Where
-          Stevin can perform actions (such as drafting a compensation email), it
-          happens only after explicit consultant or user review.
+          Stevin delivers two things, and the difference determines who is
+          responsible for what.
+        </p>
+        <p>
+          <strong>The platform</strong> signals and advises based on connected
+          marketing data. There Stevin is <strong>read-only</strong> wherever
+          possible: the platform does not change anything in your advertising accounts
+          on its own. Where it can prepare an action, such as drafting an email, that
+          happens only after explicit human review.
+        </p>
+        <p>
+          <strong>Management</strong>, if you buy that from us, means we do make
+          changes in your accounts on your instruction: campaigns, budgets, keywords,
+          ads and the related measurement setup. That happens within what we agreed
+          beforehand. You remain the owner of the accounts and can withdraw our access
+          at any time.
+        </p>
+        <p>
+          <strong>Advertising budget.</strong> You pay your advertising budget
+          directly to the advertising platform, not to us, and we do not add a markup.
+          We agree the budget and a daily cap beforehand and record it in writing;
+          changes happen only with your approval. Costs charged by the platform remain
+          for your account, including in cases of click fraud, a suspended account or a
+          platform pricing change, unless those costs result from our intent or
+          conscious recklessness.
+        </p>
+        <p>
+          <strong>What we do and do not promise.</strong> We make every effort to
+          improve your results, but we do not guarantee any number of enquiries, any
+          cost per enquiry, any revenue, any position in search results, or approval of
+          ads by the platform. Those outcomes also depend on your market, your offer,
+          your own follow-up, and on decisions by third parties such as Google and Meta
+          over which we have no control.
         </p>
       </section>
 
