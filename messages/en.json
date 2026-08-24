@@ -93,11 +93,11 @@
   "trust": {
     "heading": "Secure by default.",
     "subheading": "Your client data never leaves the EU. Built for the European market from day one.",
-    "copy": "EU-hosted infrastructure. GDPR-compliant and AI Act-ready. All data stored and transmitted encrypted. Connections are always read-only. Stevin never writes back to your platforms.",
+    "copy": "EU-hosted infrastructure. GDPR-compliant and AI Act-ready. All data stored and transmitted encrypted. The platform changes nothing in your advertising accounts on its own.",
     "pillar1_title": "Per-client data isolation",
     "pillar1_desc": "Every client account runs in its own secure environment. No cross-contamination, ever.",
     "pillar2_title": "Read-only connections",
-    "pillar2_desc": "Stevin reads, never writes. We have no access to modify anything in your ad accounts.",
+    "pillar2_desc": "The platform reads and signals. We only make changes if you asked us to manage your accounts, and then only after a person approves.",
     "pillar3_title": "No black boxes",
     "pillar3_desc": "You always see why a signal was generated and on what data it is based."
   },

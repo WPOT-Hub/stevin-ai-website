@@ -25,7 +25,7 @@ export default async function PrivacyPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = isEn ? '4 July 2026' : '4 juli 2026'
+  const lastUpdated = isEn ? '24 August 2026' : '24 augustus 2026'
 
   return (
     <main className="bg-surface text-primary">
@@ -88,8 +88,10 @@ function PrivacyDutch() {
           </li>
           <li>
             <strong>Campagne- en analytics-data</strong>: alleen via expliciete OAuth-koppelingen
-            die jij zelf initieert (zoals Google Ads, Meta, GA4). Wij ontvangen alleen
-            leesrechten op campagne-metrics, geen creditcard- of betalingsgegevens.
+            die jij zelf initieert (zoals Google Ads, Meta, GA4). Voor het platform ontvangen
+            wij leesrechten op campagne-metrics. Neem je beheer af, dan krijgen wij daarnaast
+            de rechten die nodig zijn om je campagnes aan te passen. Creditcard- en
+            betalingsgegevens ontvangen wij nooit.
           </li>
           <li>
             <strong>Gebruiksdata van het platform</strong>: paginabezoeken, gebruikte features,
@@ -229,7 +231,7 @@ function PrivacyEnglish() {
           </li>
           <li>
             <strong>Campaign and analytics data</strong>: only through OAuth integrations that
-            you initiate (Google Ads, Meta, GA4, etc.). We receive read-only access to campaign
+            you initiate (Google Ads, Meta, GA4, etc.). We receive read access to campaign
             metrics, no payment or billing information.
           </li>
           <li>

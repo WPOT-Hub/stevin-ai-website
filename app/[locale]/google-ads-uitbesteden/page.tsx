@@ -71,7 +71,7 @@ const COPY = {
       { question: 'Kan de diagnose naast mijn huidige bureau?', answer: 'Ja, en dat is vaak juist verstandig. Het is een tweede blik op je eigen cijfers. Staat het goed, dan weet je dat nu zeker. Staat het niet goed, dan heb je iets concreets om te bespreken.' },
       { question: 'Doen jullie ook SEA, Shopping en Microsoft Ads?', answer: 'Ja. Google Ads is meestal het zwaartepunt, maar Shopping, YouTube, Microsoft Ads en de sociale kanalen horen bij hetzelfde werk. Wat er zinvol is volgt uit de diagnose, niet uit een standaardpakket.' },
       { question: 'Hoe snel gaat het van start?', answer: 'De diagnose levert binnen twee weken een uitkomst op. Daarna gaat het fundament eerst goed staan voordat er extra budget naar campagnes gaat. Hoe lang dat duurt hangt af van wat er te repareren valt, en dat weet je na de diagnose.' },
-      { question: 'Verlies ik controle als AI meekijkt?', answer: 'Nee, je krijgt er controle bij. De koppelingen zijn read-only, elk voorstel gaat langs een mens voordat er iets verandert, en alles wat er gebeurt staat in een logboek waar jij altijd in kunt kijken.' },
+      { question: 'Verlies ik controle als AI meekijkt?', answer: 'Nee, je krijgt er controle bij. Het platform verandert uit zichzelf niets, en beheren we je campagnes, dan gaat elk voorstel langs een mens voordat er iets verandert, en alles wat er gebeurt staat in een logboek waar jij altijd in kunt kijken.' },
     ],
 
     closing_l1: 'Uitbesteden hoeft geen overdracht te zijn.',
@@ -133,7 +133,7 @@ const COPY = {
       { question: 'Can the diagnosis run alongside my current agency?', answer: 'Yes, and it is often sensible. It is a second opinion on your own numbers. If things are right, you now know for sure. If not, you have something concrete to discuss.' },
       { question: 'Do you also handle SEA, Shopping and Microsoft Ads?', answer: 'Yes. Google Ads is usually the centre of gravity, but Shopping, YouTube, Microsoft Ads and the social channels are part of the same work. What makes sense follows from the diagnosis, not from a standard package.' },
       { question: 'How quickly does it start?', answer: 'The diagnosis delivers an outcome within two weeks. After that the foundation is set right before extra budget goes to campaigns. How long that takes depends on what needs repairing, and you will know that after the diagnosis.' },
-      { question: 'Do I lose control when AI reads along?', answer: 'No, you gain control. Connections are read-only, every proposal passes a person before anything changes, and everything that happens sits in a log you can always open.' },
+      { question: 'Do I lose control when AI reads along?', answer: 'No, you gain control. The platform changes nothing on its own, and if we manage your campaigns, every proposal passes a person before anything changes, and everything that happens sits in a log you can always open.' },
     ],
 
     closing_l1: 'Outsourcing does not have to mean handing over.',

@@ -40,7 +40,7 @@ const COPY = {
 
     faq_h2: 'Wat eigenaren ons eerst vragen.',
     faqs: [
-      { question: 'Verlies ik controle als AI meekijkt?', answer: 'Nee, je krijgt er juist controle bij. Koppelingen zijn read-only, elk voorstel gaat langs een mens, en alles wat er gebeurt staat in een logboek waar jij altijd in kunt kijken.' },
+      { question: 'Verlies ik controle als AI meekijkt?', answer: 'Nee, je krijgt er juist controle bij. Het platform verandert uit zichzelf niets, elk voorstel gaat langs een mens, en alles wat er gebeurt staat in een logboek waar jij altijd in kunt kijken.' },
       { question: 'Ik heb al een bureau. Kan dit ernaast?', answer: 'Ja. De diagnose is een tweede blik op jouw eigen data. Staat het goed, dan weet je dat nu zeker. Staat het niet goed, dan heb je iets om te bespreken.' },
       { question: 'Hoeveel tijd kost mij dit?', answer: 'De diagnose vraagt een uur van jou en toegang tot je cijfers. Daarna zie je binnen twee weken zwart op wit waar je staat. Beheer daarna is onze taak, meekijken kan altijd, moeten hoeft nooit.' },
       { question: 'Wat kost het?', answer: 'Vanaf 399 per maand. Alles laten beheren kan ook, op maat en altijd na de diagnose. Geen verborgen marges op je mediabudget.' },
@@ -78,7 +78,7 @@ const COPY = {
 
     faq_h2: 'What owners ask us first.',
     faqs: [
-      { question: 'Do I lose control when AI reads along?', answer: 'No, you gain control. Connections are read-only, every proposal passes a person, and everything that happens sits in a log you can always open.' },
+      { question: 'Do I lose control when AI reads along?', answer: 'No, you gain control. The platform changes nothing on its own, every proposal passes a person, and everything that happens sits in a log you can always open.' },
       { question: 'I already have an agency. Can this run alongside?', answer: 'Yes. The diagnosis is a second opinion on your own data. If things are right, you now know for sure. If not, you have something to discuss.' },
       { question: 'How much of my time does this take?', answer: 'The diagnosis takes an hour of your time and access to your numbers. Within two weeks you see in black and white where you stand. Management after that is our job; looking along is always possible, never required.' },
       { question: 'What does it cost?', answer: 'From 399 per month. Full management is available too, tailored and always after the diagnosis. No hidden margins on your media budget.' },

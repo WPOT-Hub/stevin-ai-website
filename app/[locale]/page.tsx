@@ -146,7 +146,7 @@ const COPY = {
       { question: 'Doen jullie ook de uitvoering, of alleen software?', answer: 'Allebei. De meeste klanten kiezen managed: wij richten in en beheren actief, het systeem let er dag en nacht op. Jij kunt altijd meekijken en controleren.' },
       { question: 'Kan dit naast mijn huidige bureau?', answer: 'Ja. De diagnose is juist een goede tweede blik: staat het goed, dan weet je dat nu zeker. Staat het niet goed, dan heb je iets om te bespreken.' },
       { question: 'Wat kost het?', answer: 'Vanaf 399 per maand. Alles laten beheren kan ook, op maat na de diagnose. Je weet vooraf precies wat je krijgt en wat het kost.' },
-      { question: 'Wat doen jullie met AI, en is dat veilig?', answer: 'AI leest mee en signaleert, mensen beslissen. Koppelingen zijn read-only, data staat in de EU, en niets gaat de deur uit zonder dat een mens ernaar keek.' },
+      { question: 'Wat doen jullie met AI, en is dat veilig?', answer: 'AI leest mee en signaleert, mensen beslissen. Het platform verandert uit zichzelf niets, data staat in de EU, en niets gaat de deur uit zonder dat een mens ernaar keek.' },
     ],
 
     closing_eyebrow: 'De volgende stap',
@@ -274,7 +274,7 @@ const COPY = {
       { question: 'Do you do the work, or is it software only?', answer: 'Both. Most clients choose managed: we set up and actively manage, the system watches day and night. You can always look along and verify.' },
       { question: 'Can this run alongside my current agency?', answer: 'Yes. The diagnosis is a good second opinion: if things are right, you now know for sure. If they are not, you have something to discuss.' },
       { question: 'What does it cost?', answer: 'From 399 per month. Full management is available too, tailored after the diagnosis. You know exactly what you get and what it costs, upfront.' },
-      { question: 'What do you do with AI, and is it safe?', answer: 'AI reads along and signals, people decide. Connections are read-only, data stays in the EU, and nothing leaves the door without a human looking at it.' },
+      { question: 'What do you do with AI, and is it safe?', answer: 'AI reads along and signals, people decide. The platform changes nothing on its own, data stays in the EU, and nothing leaves the door without a human looking at it.' },
     ],
 
     closing_eyebrow: 'The next step',

@@ -86,8 +86,10 @@ export default function TrustBadges({ className = '', small = false }: { classNa
           fill={C3} letterSpacing="0.8" fontFamily={FF}>AI ACT READY</text>
       </Badge>
 
-      {/* 4: READ ONLY */}
-      <Badge label="Read Only" small={small}>
+      {/* 4: JIJ BESLIST. Stond hier als "READ ONLY", maar dat is een absolute
+          belofte en wij voeren voor beheerklanten wel wijzigingen door. Wat wel
+          altijd waar is: er verandert niets zonder akkoord van de klant. */}
+      <Badge label="Jij beslist" small={small}>
         <path d="M22 42 Q36 27 50 27 Q64 27 78 42 Q64 57 50 57 Q36 57 22 42 Z"
           stroke={C1} strokeWidth="1.4" fill="none" strokeLinejoin="round" />
         <circle cx="50" cy="42" r="7.5" stroke={C1} strokeWidth="1.3" fill="none" />
@@ -96,7 +98,7 @@ export default function TrustBadges({ className = '', small = false }: { classNa
         <path d="M62 49 L62 45 Q62 41 66 41 Q70 41 70 45 L70 49"
           stroke={C1} strokeWidth="1.3" fill="none" strokeLinecap="round" />
         <circle cx="66" cy="55.5" r="1.8" fill={C2} />
-        <Lbl text="READ ONLY" />
+        <Lbl text="JIJ BESLIST" />
       </Badge>
 
       {/* 5: API ACCESS */}

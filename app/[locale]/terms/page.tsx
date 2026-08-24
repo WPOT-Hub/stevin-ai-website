@@ -25,7 +25,7 @@ export default async function TermsPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = '28 mei 2026'
+  const lastUpdated = isEn ? '24 August 2026' : '24 augustus 2026'
 
   return (
     <main className="bg-surface text-primary">

@@ -93,11 +93,11 @@
   "trust": {
     "heading": "Veilig by default.",
     "subheading": "Jouw klantdata verlaat nooit de EU. Gebouwd voor de Europese markt, van dag een.",
-    "copy": "EU-gehoste infrastructuur. GDPR-conform en AI Act-ready. Alle data versleuteld opgeslagen en verzonden. Koppelingen zijn altijd read-only. Stevin schrijft nooit terug naar je platformen.",
+    "copy": "EU-gehoste infrastructuur. GDPR-conform en AI Act-ready. Alle data versleuteld opgeslagen en verzonden. Het platform verandert uit zichzelf niets in je advertentieaccounts.",
     "pillar1_title": "Per-klant data-isolatie",
     "pillar1_desc": "Elk klantaccount draait in een eigen beveiligde omgeving. Geen cross-contaminatie, nooit.",
     "pillar2_title": "Read-only koppelingen",
-    "pillar2_desc": "Stevin leest, nooit schrijft. We hebben geen toegang om iets te wijzigen in je advertentieaccounts.",
+    "pillar2_desc": "Het platform leest en signaleert. Wijzigen doen we alleen als je ons beheer hebt gevraagd, en dan pas na akkoord van een mens.",
     "pillar3_title": "Geen black boxes",
     "pillar3_desc": "Je ziet altijd waarom een signaal is gegenereerd en op welke data het gebaseerd is."
   },
