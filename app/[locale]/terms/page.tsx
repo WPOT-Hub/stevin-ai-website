@@ -85,10 +85,13 @@ function TermsDutch() {
         <h2 className="text-xl font-semibold">2. Toepasselijkheid</h2>
         <p>
           Deze algemene voorwaarden gelden voor elk gebruik van het Stevin-platform,
-          inclusief de website stevin.ai, de Stevin Hub backend (hub.stevin.ai), het
-          Stevin Desk consultant-dashboard (desk.stevin.ai) en bijbehorende API&apos;s,
-          Slack-integraties en bots. Door het platform te gebruiken accepteer je deze
-          voorwaarden.
+          inclusief de website stevin.ai, het klantportaal (app.stevin.ai), de Stevin
+          Hub backend (hub.stevin.ai), het Stevin Desk consultant-dashboard
+          (desk.stevin.ai en crm.stevin.ai) en bijbehorende API&apos;s, Slack-integraties
+          en bots. De opsomming is een toelichting en geen beperking: de voorwaarden
+          gelden voor het platform als geheel, ook voor onderdelen die later worden
+          toegevoegd of onder een ander adres bereikbaar zijn. Door het platform te
+          gebruiken accepteer je deze voorwaarden.
         </p>
       </section>
 
@@ -260,9 +263,12 @@ function TermsEnglish() {
         <h2 className="text-xl font-semibold">2. Applicability</h2>
         <p>
           These terms apply to any use of the Stevin platform, including the
-          website stevin.ai, the Stevin Hub backend (hub.stevin.ai), the Stevin
-          Desk consultant dashboard (desk.stevin.ai) and related APIs, Slack
-          integrations and bots. By using the platform you accept these terms.
+          website stevin.ai, the client portal (app.stevin.ai), the Stevin Hub
+          backend (hub.stevin.ai), the Stevin Desk consultant dashboard
+          (desk.stevin.ai and crm.stevin.ai) and related APIs, Slack integrations
+          and bots. This list is illustrative and not limiting: the terms apply to
+          the platform as a whole, including parts added later or reachable at a
+          different address. By using the platform you accept these terms.
         </p>
       </section>
 
