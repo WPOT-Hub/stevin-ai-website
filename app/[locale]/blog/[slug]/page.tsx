@@ -1513,6 +1513,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'black-friday-2026-de-perfecte-storm-voor-marketeers': (
+    <>
+      <p className="lead-para">
+        Stel je voor: een scherm vol banners, waar elk merk dezelfde slogan roept. ‘Vandaag alleen!’ ‘Laatste kans!’ ‘Exclusief voor jou.’ Maar niemand klikt meer. Niet omdat de aanbiedingen slecht zijn, maar omdat ze allemaal hetzelfde zijn. Zo begint Black Friday 2026 voor veel merken die blind vertrouwen op geautomatiseerde advertentiecampagnes. De perfecte storm is al gaande: chatbots genereren advertenties in bulk, marges worden opgesoupeerd door AI-gedreven biedingen en de consument raakt overspoeld met identieke aanbiedingen die geen enkele emotionele waarde meer hebben.
+      </p>
+      <p>
+        De kern van het probleem ligt in de overmatige afhankelijkheid van automatisering. Waar PPC-teams vroeger wekenlang campagne-instellingen verfijnden, laten ze nu de meeste beslissingen over aan systemen die leren van historische data – data die steeds minder relevant wordt. Consumentengedrag verandert sneller dan ooit, maar algoritmes blijven hangen in patronen van vorig jaar. Het resultaat? Een race naar de bodem waar alleen de grootste spelers met diepste zakken kunnen meedoen. Kleine en middelgrote merken zien hun ROI dalen tot onder het kritieke punt, terwijl techgiganten als Amazon en Google hun marges juist zien stijgen dankzij schaalvoordelen.
+      </p>
+      <p>
+        Wat gebeurt er als iedereen dezelfde tools gebruikt? De markt wordt een echo-kamer waar verschil maken alleen nog kan door buiten de gebaande paden te treden. Toch doen veel merken het tegenovergestelde: ze kopiëren elkaars strategieën, hopen dat automatisering hun problemen oplost en vergeten dat consumenten niet zozeer prijsgevoelig zijn als wel prijsbewust. Een aanbieding moet voelen als een deal, niet als een noodzakelijk kwaad. Maar hoe meet je dat met algoritmes die alleen kijken naar CTR en conversie?
+      </p>
+      <p>
+        Er is een hardnekkige mythe dat automatisering tijd bespaart én resultaten verbetert. In werkelijkheid creëert het een vicieuze cirkel: teams besteden minder tijd aan strategie en meer aan het managen van tools die hen vertellen wat ze al wisten. De echte uitdaging ligt niet in het optimaliseren van bestaande campagnes, maar in het ontwerpen van campagnes die nog steeds menselijk voelen in een wereld waar machines domineren. Wie durft nog te experimenteren met creatieve uitingen of unieke aanbiedingsstructuren als alles draait om A/B-testen volgens de regels van Silicon Valley?
+      </p>
+      <p>
+        De druk op marges komt niet alleen door automatisering, maar ook door de timing van productlanceringen. Merken lanceren hun kerstcollecties al in oktober om mee te liften op de Black Friday-hype, waardoor de periode tussen ‘Black November’ en ‘Cyber Monday’ overvol raakt met identieke producten. Consumenten krijgen zoveel keuze dat ze uiteindelijk niets kiezen – tenzij het merk een verhaal heeft dat boven de massa uitsteekt. Maar verhalen schrijven is geen taak voor algoritmes; het vereist creativiteit, timing en moed om anders te zijn.
+      </p>
+      <p>
+        Een tegenwerping is dat automatisering juist zorgt voor efficiëntie en schaalbaarheid. Dat klopt voor wie zich richt op volume, maar niet voor wie waarde wil creëren. Neem bijvoorbeeld een kledingmerk dat via dynamische advertenties zijn winterjas probeert te verkopen tegen elke prijs onder €150. Het algoritme optimaliseert voor conversies, maar wat als de jas eigenlijk €179 waard is? De klant betaalt uiteindelijk de prijs – letterlijk – voor deze kortetermijnstrategie wanneer het merk later moet terugschalen of zelfs failliet gaat omdat marges structureel te laag zijn.
+      </p>
+      <p>
+        De synthese ligt in balans: gebruik automatisering waar het werkt – bij routinematige taken zoals keyword-bidding of budgetallocatie – maar behoud menselijke controle over strategie en creativiteit. De beste PPC-teams van 2026 zullen niet diegene zijn met de meest geavanceerde AI-tools, maar degene die weten wanneer ze moeten ingrijpen om hun merk relevant te houden. Consumenten willen geen perfecte deals; ze willen eerlijke deals die passen bij hun behoeften en waarden.
+      </p>
+      <p>
+        Uiteindelijk gaat Black Friday 2026 niet over technologie of tools, maar over menselijkheid in een gedigitaliseerde wereld. Merken die dit begrijpen zullen niet alleen overleven, maar sterker uit deze storm komen.
+      </p>
+    </>
+  ),
   'europese-digitale-soevereiniteit-is-geen-ideologie-maar-een-businessrisico': (
     <>
       <p className="lead-para">
@@ -7356,6 +7384,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'black-friday-2026-de-perfecte-storm-voor-marketeers':
+    "Bij Stevin zien we deze ontwikkelingen al jaren aankomen: merken die blind varen op geautomatiseerde systemen zonder zelf nog grip te hebben op hun positionering verliezen niet alleen marges, maar ook hun unieke stem in de markt. Onze benadering is simpel: technologie moet dienen als verlengstuk van strategie, niet als vervanging ervan. We adviseren klanten om eerst helder te definiëren welke emotionele waarde zij willen overbrengen voordat zij investeren in tools of automatiseringstrajecten.\nWaar veel bureaus zich richten op korte-termijn KPI’s zoals CTR of ROAS, kijken wij naar langetermijnimpact: bouwt dit merk autoriteit op? Creëert dit duurzame klantloyaliteit? In een markt waar iedere euro telt, is het cruciaal om te investeren in campagnes die niet alleen converteren vandaag, maar ook morgen nog relevant zijn.\nOnze ervaring leert dat merken met een sterke propositie en creatieve vrijheid vaak beter presteren dan hun geautomatiseerde concurrentie – zelfs bij lagere budgetten.",
   'europese-digitale-soevereiniteit-is-geen-ideologie-maar-een-businessrisico':
     "Bij Stevin zien we dagelijks hoe organisaties worstelen met vendor lock-in, vooral nu AI een steeds grotere rol speelt in hun operatie. Onze benadering is simpel: technologie moet werken voor jouw bedrijf, niet andersom. Dat betekent dat we systemen ontwerpen waarbij data altijd eigendom blijven van onze klanten en waarbij AI-modellen flexibel kunnen worden uitgewisseld zonder impact op de rest van de workflow.\n\nWe geloven niet in het volledig vermijden van grote techbedrijven – integendeel, hun innovatiekracht is vaak onmisbaar. Maar we pleiten wel voor een architectuur waarin keuzevrijheid centraal staat: waar data en proceskennis los staan van specifieke leveranciers en waar systemen modulair genoeg zijn om snel aan te passen als externe factoren veranderen.\n\nDigitale soevereiniteit is geen doel op zich, maar een bijproduct van slimme systeemdesigns die toekomstbestendig zijn. Onze klanten merken al hoe deze aanpak hen beschermt tegen onverwachte verstoringen – of het nu gaat om exportbeperkingen of prijsverhogingen door leveranciers.\n\nUiteindelijk gaat het erom dat technologie dienstbaar blijft aan je bedrijfsdoelen, in plaats van andersom.",
   'ai-modellen-getraind-op-copyright-teksten-wettelijk-grijs':
