@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ibm-chip-arm-z-instructies-gelijktijdig': (
+    <>
+      <p className="lead-para">
+        IBM introduceert een chip die tegelijkertijd Arm- en Z-instructies kan verwerken. Dit is de eerste keer dat een processor beide instructiesets natively ondersteunt, aldus het bedrijf.
+      </p>
+      <p>
+        De stap komt voort uit de groeiende vraag naar flexibiliteit in mainframes, die traditioneel draaien op IBM's eigen Z-architectuur. Veel onafhankelijke softwareleveranciers (ISV's) richten zich echter steeds meer op andere platforms zoals x86 en Arm.
+      </p>
+      <p>
+        Met deze chip hoopt IBM de kloof te dichten tussen legacy-systemen en moderne toepassingen. Het bedrijf benadrukt dat de technologie vooral interessant is voor ondernemingen met grote mainframe-omgevingen die toch gebruik willen maken van nieuwe softwareontwikkelingen.
+      </p>
+    </>
+  ),
   'geheugenprijs-record-2026': (
     <>
       <p className="lead-para">
@@ -7397,6 +7410,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ibm-chip-arm-z-instructies-gelijktijdig':
+    "Voor bedrijven met mainframes biedt deze ontwikkeling een manier om bestaande systemen te moderniseren zonder volledige vervanging. Het laat zien hoe hardwareleveranciers inspelen op de verschuivende behoeften van ISV's. Tegelijkertijd onderstreept het de uitdagingen van het behouden van compatibiliteit in een snel veranderend technologielandschap.",
   'geheugenprijs-record-2026':
     "Voor bedrijven die afhankelijk zijn van IT-infrastructuur betekent dit een forse kostenpost die direct doorwerkt in marges of eindproducten. Tegelijkertijd biedt het kansen voor spelers die flexibel kunnen schakelen tussen leveranciers of alternatieve opslagoplossingen overwegen. De marktdynamiek toont aan hoe kwetsbaar supply chains zijn voor onverwachte schokken, zelfs bij ogenschijnlijk stabiele grondstoffen.",
   'black-friday-2026-de-perfecte-storm-voor-marketeers':
