@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'europese-digitale-soevereiniteit-is-geen-ideologie-maar-een-businessrisico',
+    format: 'dispatch' as const,
+    edition: '432',
+    category: 'Platform',
+    title: "Als je leverancier morgen de deur dichtgooit",
+    dek: "Europa bouwt aan digitale autonomie, maar bedrijven lopen nog steeds in op de risico’s van vendor lock-in – vooral nu AI de afhankelijkheid vergroot.",
+    publishedAt: '2026-08-25',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Als je leverancier morgen de deur dichtgooit",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-modellen-getraind-op-copyright-teksten-wettelijk-grijs',
     format: 'dispatch' as const,
     edition: '431',
