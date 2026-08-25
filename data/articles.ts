@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'geheugenprijs-record-2026',
+    format: 'dispatch' as const,
+    edition: '434',
+    category: 'Markt',
+    title: "Geheugenprijzen breken records: chipmakers verdienen miljarden",
+    dek: "De prijs van computergeheugen is in 2026 op een historisch hoogtepunt aangekomen, met jaaromzetten die Gartner nu al op 1,6 biljoen dollar schat.",
+    publishedAt: '2026-08-25',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Geheugenprijzen breken records: chipmakers verdienen miljarden",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'black-friday-2026-de-perfecte-storm-voor-marketeers',
     format: 'dispatch' as const,
     edition: '433',
