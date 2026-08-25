@@ -92,8 +92,8 @@
   },
   "trust": {
     "heading": "Secure by default.",
-    "subheading": "Your client data never leaves the EU. Built for the European market from day one.",
-    "copy": "EU-hosted infrastructure. GDPR-compliant and AI Act-ready. All data stored and transmitted encrypted. The platform changes nothing in your advertising accounts on its own.",
+    "subheading": "Your data is stored in the EU and stays yours. Built for the European market from day one.",
+    "copy": "Your data is stored and processed within the EU. Where an AI provider computes outside the EU, it does so under European Standard Contractual Clauses, and your data is never used to train models. GDPR-compliant and AI Act-ready, everything stored and transmitted encrypted.",
     "pillar1_title": "Per-client data isolation",
     "pillar1_desc": "Every client account runs in its own secure environment. No cross-contamination, ever.",
     "pillar2_title": "Read-only connections",

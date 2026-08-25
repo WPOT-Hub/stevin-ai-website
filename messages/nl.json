@@ -92,8 +92,8 @@
   },
   "trust": {
     "heading": "Veilig by default.",
-    "subheading": "Jouw klantdata verlaat nooit de EU. Gebouwd voor de Europese markt, van dag een.",
-    "copy": "EU-gehoste infrastructuur. GDPR-conform en AI Act-ready. Alle data versleuteld opgeslagen en verzonden. Het platform verandert uit zichzelf niets in je advertentieaccounts.",
+    "subheading": "Jouw data staat in de EU en blijft van jou. Gebouwd voor de Europese markt, van dag een.",
+    "copy": "Je gegevens worden opgeslagen en verwerkt binnen de EU. Waar een AI-leverancier buiten de EU rekent, gebeurt dat onder Europese standaardcontractbepalingen, en je gegevens worden nooit gebruikt om modellen te trainen. GDPR-conform en AI Act-ready, alles versleuteld opgeslagen en verzonden.",
     "pillar1_title": "Per-klant data-isolatie",
     "pillar1_desc": "Elk klantaccount draait in een eigen beveiligde omgeving. Geen cross-contaminatie, nooit.",
     "pillar2_title": "Read-only koppelingen",
