@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'black-friday-2026-de-perfecte-storm-voor-marketeers',
+    format: 'dispatch' as const,
+    edition: '433',
+    category: 'Markt',
+    title: "De onzichtbare crisis van Black Friday 2026",
+    dek: "Automatisering slokt marges op, concurrentie wordt een algoritmisch gevecht en consumenten betalen de prijs – wie wint deze Black Friday?",
+    publishedAt: '2026-08-25',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "De onzichtbare crisis van Black Friday 2026",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'europese-digitale-soevereiniteit-is-geen-ideologie-maar-een-businessrisico',
     format: 'dispatch' as const,
     edition: '432',
