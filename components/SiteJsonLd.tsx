@@ -16,7 +16,7 @@ const organization = {
   alternateName: 'Stevin',
   legalName: 'Stevin.AI',
   description:
-    'Stevin.AI regelt de marketing van Nederlandse en Belgische bedrijven, met de accounts op naam van de klant zelf. Elke wijziging staat in een logboek met de reden erbij, en een deel van het bewijs staat buiten ons om. Voor ondernemers, marketingteams en bureaus, werkzaam vanuit Breda en Antwerpen.',
+    'Stevin.AI regelt de marketing van Nederlandse en Belgische bedrijven, met de accounts op naam van de klant zelf. Elke wijziging staat in een logboek met de reden erbij, en een deel van het bewijs staat buiten ons om. Voor ondernemers, marketingteams en bureaus, werkzaam vanuit Breda.',
   url: 'https://stevin.ai',
   logo: {
     '@type': 'ImageObject',
