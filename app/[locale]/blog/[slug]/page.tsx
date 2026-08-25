@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'geheugenprijs-record-2026': (
+    <>
+      <p className="lead-para">
+        De afgelopen maanden zijn de prijzen voor DRAM en NAND-flash met gemiddeld 40% gestegen ten opzichte van vorig jaar. Dit komt door een combinatie van vraagstijging uit AI-toepassingen, krappe productiecapaciteit en logistieke knelpunten in de toeleveringsketen. Techbedrijven betalen nu tientallen euro’s per GB geheugen, terwijl dat voorheen rond de vijf euro lag.
+      </p>
+      <p>
+        Ook voor eindgebruikers worden de gevolgen merkbaar. Fabrikanten van laptops, servers en smartphones verwerken deze kosten door naar hun klanten, wat leidt tot hogere verkoopprijzen. Analisten verwachten dat deze trend nog jaren aanhoudt, omdat nieuwe fabrieken pas over twee tot drie jaar operationeel zijn.
+      </p>
+      <p>
+        De huidige situatie contrasteert sterk met eerdere cycli waarin geheugenprijzen na pieken snel instortten. Dit keer blijft de vraag structureel hoog door de groeiende behoefte aan dataopslag en rekenkracht in cloudinfrastructuur en AI-systemen.
+      </p>
+    </>
+  ),
   'black-friday-2026-de-perfecte-storm-voor-marketeers': (
     <>
       <p className="lead-para">
@@ -7384,6 +7397,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'geheugenprijs-record-2026':
+    "Voor bedrijven die afhankelijk zijn van IT-infrastructuur betekent dit een forse kostenpost die direct doorwerkt in marges of eindproducten. Tegelijkertijd biedt het kansen voor spelers die flexibel kunnen schakelen tussen leveranciers of alternatieve opslagoplossingen overwegen. De marktdynamiek toont aan hoe kwetsbaar supply chains zijn voor onverwachte schokken, zelfs bij ogenschijnlijk stabiele grondstoffen.",
   'black-friday-2026-de-perfecte-storm-voor-marketeers':
     "Bij Stevin zien we deze ontwikkelingen al jaren aankomen: merken die blind varen op geautomatiseerde systemen zonder zelf nog grip te hebben op hun positionering verliezen niet alleen marges, maar ook hun unieke stem in de markt. Onze benadering is simpel: technologie moet dienen als verlengstuk van strategie, niet als vervanging ervan. We adviseren klanten om eerst helder te definiëren welke emotionele waarde zij willen overbrengen voordat zij investeren in tools of automatiseringstrajecten.\nWaar veel bureaus zich richten op korte-termijn KPI’s zoals CTR of ROAS, kijken wij naar langetermijnimpact: bouwt dit merk autoriteit op? Creëert dit duurzame klantloyaliteit? In een markt waar iedere euro telt, is het cruciaal om te investeren in campagnes die niet alleen converteren vandaag, maar ook morgen nog relevant zijn.\nOnze ervaring leert dat merken met een sterke propositie en creatieve vrijheid vaak beter presteren dan hun geautomatiseerde concurrentie – zelfs bij lagere budgetten.",
   'europese-digitale-soevereiniteit-is-geen-ideologie-maar-een-businessrisico':
