@@ -1513,6 +1513,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'europese-digitale-soevereiniteit-is-geen-ideologie-maar-een-businessrisico': (
+    <>
+      <p className="lead-para">
+        Een ambtenaar in Parijs die plotseling geen videogesprek meer kan voeren omdat Zoom offline gaat. Een Deense gemeente die haar mailboxen niet meer kan openen omdat Microsoft een licentie intrekt. Dit zijn geen fictieve scenario’s, maar realiteit voor organisaties die blind vertrouwen op Amerikaanse tech. Frankrijk en Duitsland laten zien dat digitale soevereiniteit geen abstract concept is, maar een noodzaak als je niet wilt eindigen als gijzelaar van een leverancier. Maar de vraag is: waarom duurt het zo lang voordat bedrijven deze les ook écht ter harte nemen?
+      </p>
+      <p>
+        De kern van het probleem ligt niet in de technologie zelf, maar in de architectuur eromheen. Een organisatie die al haar data, processen en kennis opslaat in één cloudomgeving of AI-model bouwt ongemerkt een muur om zich heen. Die muur lijkt eerst veilig – totdat de leverancier besluit zijn tarieven te verhogen, exportbeperkingen oplegt of zelfs volledig stopt met leveren. Het recentste voorbeeld is Anthropic, dat tijdelijk toegang tot nieuwe AI-modellen blokkeerde voor buitenlandse gebruikers. Voor overheden was dit een wake-upcall. Voor bedrijven zou het een waarschuwing moeten zijn: afhankelijkheid is geen kwestie van ‘als’, maar van ‘wanneer’.
+      </p>
+      <p>
+        De oplossing ligt niet in het vermijden van Amerikaanse tech, maar in het doorbreken van vendor lock-in. Organisaties moeten hun data en processen zo organiseren dat ze loskoppelen wat losgekoppeld kan worden. Dat betekent niet alleen kiezen voor open standaarden, maar ook investeren in systemen die onafhankelijk blijven van één provider. Denemarken laat zien hoe dit werkt: door mailboxen te migreren naar Open-Xchange en LibreOffice te adopteren bespaart de deelstaat jaarlijks miljoenen aan licentiekosten én verkleint het de afhankelijkheid van Microsoft aanzienlijk.
+      </p>
+      <p>
+        Toch blijft er weerstand bestaan tegen deze aanpak. Veel bedrijven argumenteren dat open source-oplossingen minder gebruiksvriendelijk zijn of minder functionaliteit bieden dan hun commerciële tegenhangers. Maar deze redenering mist de kern: het gaat niet om functionaliteit op korte termijn, maar om continuïteit op lange termijn. Een organisatie die haar hele workflow heeft gebouwd rondom één AI-model loopt het risico dat ze morgen moet herbouwen als dat model plotseling wordt aangepast of vervangen.
+      </p>
+      <p>
+        De geopolitieke spanningen tussen de VS en Europa verergeren dit probleem alleen maar. Exportregels zoals ITAR of EAR kunnen ervoor zorgen dat Amerikaanse techbedrijven bepaalde producten of diensten niet meer mogen leveren aan Europese klanten. Bedrijven die hier niet op anticiperen lopen het risico dat ze plotseling zonder kritieke software komen te zitten – zonder dat ze daar iets tegen kunnen doen.
+      </p>
+      <p>
+        Het antwoord ligt in modulariteit en keuzevrijheid. Organisaties moeten hun systemen zo inrichten dat ze gemakkelijk kunnen schakelen tussen verschillende providers zonder hun hele operatie te verstoren. Dat betekent bijvoorbeeld data opslaan in eigen beheer, bedrijfskennis vastleggen buiten AI-modellen en kritieke processen modular ontwerpen zodat onderdelen vervangen kunnen worden zonder het hele systeem opnieuw te bouwen.
+      </p>
+      <p>
+        Digitale soevereiniteit is geen ideologisch statement, maar een pragmatische noodzaak voor elk bedrijf dat serieus genomen wil worden in een wereld waarin technologie steeds meer geopolitiek wordt ingezet als wapen. De vraag is niet óf je hiermee te maken krijgt, maar wanneer.
+      </p>
+      <p>
+        De grootste valkuil is denken dat dit probleem alleen overheidsorganisaties raakt. Bedrijven zijn net zo kwetsbaar – misschien zelfs kwetsbaarder, omdat ze vaak minder buffers hebben om plotselinge veranderingen op te vangen.
+      </p>
+    </>
+  ),
   'ai-modellen-getraind-op-copyright-teksten-wettelijk-grijs': (
     <>
       <p className="lead-para">
@@ -7328,6 +7356,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'europese-digitale-soevereiniteit-is-geen-ideologie-maar-een-businessrisico':
+    "Bij Stevin zien we dagelijks hoe organisaties worstelen met vendor lock-in, vooral nu AI een steeds grotere rol speelt in hun operatie. Onze benadering is simpel: technologie moet werken voor jouw bedrijf, niet andersom. Dat betekent dat we systemen ontwerpen waarbij data altijd eigendom blijven van onze klanten en waarbij AI-modellen flexibel kunnen worden uitgewisseld zonder impact op de rest van de workflow.\n\nWe geloven niet in het volledig vermijden van grote techbedrijven – integendeel, hun innovatiekracht is vaak onmisbaar. Maar we pleiten wel voor een architectuur waarin keuzevrijheid centraal staat: waar data en proceskennis los staan van specifieke leveranciers en waar systemen modulair genoeg zijn om snel aan te passen als externe factoren veranderen.\n\nDigitale soevereiniteit is geen doel op zich, maar een bijproduct van slimme systeemdesigns die toekomstbestendig zijn. Onze klanten merken al hoe deze aanpak hen beschermt tegen onverwachte verstoringen – of het nu gaat om exportbeperkingen of prijsverhogingen door leveranciers.\n\nUiteindelijk gaat het erom dat technologie dienstbaar blijft aan je bedrijfsdoelen, in plaats van andersom.",
   'ai-modellen-getraind-op-copyright-teksten-wettelijk-grijs':
     "Voor bedrijven die AI-tools inzetten, is het zaak om de bronnen van trainingsdata goed te documenteren en waar mogelijk expliciete toestemming te regelen. Auteursrechten blijven een dynamisch veld, en wie nu investeert in compliance loopt minder risico op latere claims. Tegelijkertijd illustreert dit probleem hoe snel wetgeving achterloopt bij technologische ontwikkelingen – een les die breder geldt voor ondernemers bij het omgaan met nieuwe technologieën.",
   'hoe-ai-agenten-ceo-s-veranderen-meer-dan-technologie':
