@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-modellen-getraind-op-copyright-teksten-wettelijk-grijs',
+    format: 'dispatch' as const,
+    edition: '431',
+    category: 'Platform',
+    title: "AI-modellen trainen op copyright-teksten blijft juridisch grijs",
+    dek: "De meeste auteurs dragen zonder toestemming bij aan AI-training, maar de wetgeving loopt achter op de praktijk.",
+    publishedAt: '2026-08-25',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI-modellen trainen op copyright-teksten blijft juridisch grijs",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'hoe-ai-agenten-ceo-s-veranderen-meer-dan-technologie',
     format: 'dispatch' as const,
     edition: '430',
