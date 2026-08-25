@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-modellen-getraind-op-copyright-teksten-wettelijk-grijs': (
+    <>
+      <p className="lead-para">
+        Uit onderzoek blijkt dat de teksten van de meeste gepubliceerde auteurs zijn gebruikt om AI-modellen te trainen, zonder dat zij daar toestemming voor hebben gegeven. Dit roept vragen op over schending van auteursrechten en mogelijke aansprakelijkheid voor bedrijven die deze modellen ontwikkelen. Tot nu toe is er weinig jurisprudentie die duidelijkheid biedt over wat wel en niet mag in deze situatie.
+      </p>
+      <p>
+        Juridisch experts wijzen erop dat het oordeel per rechtsgebied verschilt: in sommige landen wordt training op copyrightmateriaal als 'fair use' gezien, terwijl andere landen strengere regels hanteren. De EU werkt aan nieuwe regelgeving, maar deze is nog niet van kracht. Ondertussen blijven bedrijven risico lopen op rechtszaken van auteurs die hun werk ongevraagd gebruikt zien.
+      </p>
+      <p>
+        Ook voor gebruikers van AI-tools ontstaat onduidelijkheid: mogen zij content genereren die gebaseerd is op getrainde copyright-teksten? De antwoorden variëren per platform en per land, wat handhaving extra complex maakt.
+      </p>
+    </>
+  ),
   'hoe-ai-agenten-ceo-s-veranderen-meer-dan-technologie': (
     <>
       <p className="lead-para">
@@ -7315,6 +7328,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-modellen-getraind-op-copyright-teksten-wettelijk-grijs':
+    "Voor bedrijven die AI-tools inzetten, is het zaak om de bronnen van trainingsdata goed te documenteren en waar mogelijk expliciete toestemming te regelen. Auteursrechten blijven een dynamisch veld, en wie nu investeert in compliance loopt minder risico op latere claims. Tegelijkertijd illustreert dit probleem hoe snel wetgeving achterloopt bij technologische ontwikkelingen – een les die breder geldt voor ondernemers bij het omgaan met nieuwe technologieën.",
   'hoe-ai-agenten-ceo-s-veranderen-meer-dan-technologie':
     "Bij Stevin zien we dagelijks hoe organisaties worstelen met deze transitie omdat ze vasthouden aan oude paradigma’s over controle en verantwoordelijkheid. Onze benadering is simpel: begin niet met technologie, maar met vragen als ‘welke taken willen we écht automatiseren?’ en ‘wat betekent dit voor onze medewerkers?’ Een succesvolle AI-strategie begint bij het erkennen dat agentic systemen geen tools zijn, maar collega’s die dezelfde rechten hebben op toegang tot data en besluitvorming als elke andere stakeholder binnen je organisatie.\n\nWij adviseren bedrijven om eerst kleine pilots uit te voeren waarbij menselijke rollen stap voor stap worden vervangen door agent-based alternatieven – niet omdat we denken dat dit direct schaalbaar is, maar omdat het helpt om weerstand weg te nemen bij teams die bang zijn hun baan kwijt te raken.\n\nHet moeilijkste onderdeel blijft echter altijd hetzelfde: durven loslaten wat ooit waardevol was omdat het nu juist een remmende factor wordt in een wereld waar snelheid en adaptiviteit bepalend zijn voor succes.\n\nOns standpunt? De beste AI-strategieën ontstaan wanneer technologie niet wordt gezien als vervanging van mensenwerk, maar als katalysator voor werk dat écht verschil maakt.",
   'groq-350-miljoen-neocloud-pivot':
