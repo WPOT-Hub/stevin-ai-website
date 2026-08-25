@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ibm-chip-arm-z-instructies-gelijktijdig',
+    format: 'dispatch' as const,
+    edition: '435',
+    category: 'Tech',
+    title: "IBM onthult chip die Arm- en Z-instructies gelijktijdig uitvoert",
+    dek: "De nieuwe IBM-processor moet mainframes geschikter maken voor moderne software door native ondersteuning van twee instructiesets.",
+    publishedAt: '2026-08-25',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "IBM onthult chip die Arm- en Z-instructies gelijktijdig uitvoert",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'geheugenprijs-record-2026',
     format: 'dispatch' as const,
     edition: '434',
