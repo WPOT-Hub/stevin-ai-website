@@ -60,21 +60,35 @@ Je legt vast wat je hebt gedaan en waarom, op de plek die wij aanwijzen. Ga je b
 Je schakelt geen derden in zonder onze voorafgaande schriftelijke toestemming. Geven wij die, dan leg je hun schriftelijk dezelfde verplichtingen op als in dit document staan en blijf je volledig verantwoordelijk voor hun werk.
 
 ## 8. Eigendom van je werk
-Alle intellectuele-eigendomsrechten op wat je in opdracht maakt, waaronder teksten, ontwerpen, code, configuraties en documentatie, komen toe aan Stevin of aan de door Stevin aangewezen gelieerde vennootschap. Voor zover overdracht een aparte handeling vereist, draag je die rechten hierbij bij voorbaat over en werk je mee aan wat daarvoor nog nodig is. Stevin mag deze rechten binnen haar groep overdragen zonder dat daarvoor jouw toestemming nodig is. De vergoeding voor het werk omvat de vergoeding voor deze overdracht.
+Je draagt hierbij, telkens op het moment dat ze ontstaan, exclusief aan Stevin.AI B.V., die deze overdracht aanvaardt, alle overdraagbare auteursrechten, databankrechten en model- en ontwerprechten over op wat je maakt en wat in de opdrachtbevestiging concreet is omschreven. Wereldwijd en voor de volledige beschermingsduur. **Deze door beide partijen ondertekende overeenkomst is mede bedoeld als akte van overdracht.** Stevin mag deze rechten binnen haar groep overdragen zonder dat daarvoor jouw toestemming nodig is.
 
-Je doet, voor zover toegestaan, afstand van persoonlijkheidsrechten voor zover dat nodig is om het werk te gebruiken en aan te passen.
+Is een recht niet overdraagbaar, dan verleen je Stevin daarop een exclusieve, eeuwigdurende en overdraagbare licentie. De vergoeding voor het werk omvat de vergoeding voor deze overdracht.
+
+Materiaal dat je al had voordat de opdracht begon, vermeld je vooraf schriftelijk. Dat blijft van jou, en je verleent daarop aan Stevin en haar klanten een licentie die ruim genoeg is om het opgeleverde te gebruiken, aan te passen en te onderhouden.
+
+Van persoonlijkheidsrechten doe je afstand voor zover de wet dat toestaat en voor zover dat nodig is om het werk aan te passen en te gebruiken.
+
+> **Gewijzigd 25 aug na vijandige lezing.** De eerste versie droeg "alle intellectuele-eigendomsrechten bij voorbaat" over zonder akte en zonder de werken te bepalen. Voor auteursrecht eist de wet een akte en een voldoende bepaalde omschrijving; zonder dat kan een freelancer later alsnog rechten claimen op wat hij bouwde. Dat raakt direct de belofte aan de klant in M3.3, want dan verlenen wij een gebruiksrecht op iets wat niet van ons is. Ook toegevoegd: databank-, model- en ontwerprechten vallen niet vanzelf onder "auteursrecht", en vooraf bestaand materiaal moet apart worden benoemd.
 
 Kennis en ervaring die je opdoet blijven van jou, zolang je die gebruikt zonder vertrouwelijke informatie van Stevin of van een klant te openbaren of te hergebruiken.
 
 ## 9. Geen benadering van klanten
-Gedurende de opdracht en twaalf maanden daarna benader je klanten van Stevin waarvoor je hebt gewerkt niet met een aanbod voor vergelijkbare diensten, en neem je hen niet over, tenzij wij daar schriftelijk mee instemmen.
+Gedurende de opdracht en zes maanden daarna benader je een klant die in de opdrachtbevestiging staat en met wie je inhoudelijk of commercieel contact hebt gehad niet actief en gericht met als doel de lopende opdracht van Stevin te beëindigen of wezenlijk te verkleinen en dezelfde opdracht rechtstreeks over te nemen.
 
-> **Voor de jurist:** de reikwijdte en duur van dit beding toetsen. Beperkt tot klanten waarvoor de opdrachtnemer daadwerkelijk heeft gewerkt, wat de houdbaarheid vergroot, maar een non-concurrentiebeding richting zzp'ers vraagt aandacht, zeker in combinatie met de kwalificatievraag onder 12.
+Dit verbod geldt niet voor algemene reclame, voor een benadering die niet van jou uitgaat, voor werk dat niet concurreert met de opdracht van Stevin, en niet voor een arbeidsverhouding waarvoor de wet een belemmering verbiedt.
+
+> **Gewijzigd 25 aug na vijandige lezing.** De eerste versie verbood twaalf maanden lang elk aanbod voor "vergelijkbare diensten" zonder uitzonderingen. Twee problemen: het ving ook een klant die zelf belt en gewone reclame, en het kan geheel wegvallen. Werkt een freelancer onder toezicht en leiding van een klant, dan kan het belemmeringsverbod uit de Waadi gelden, en dan is een beding dat een latere arbeidsverhouding blokkeert nietig. Precies op het moment dat je het wilt inroepen. Smaller en met uitzonderingen houdt beter stand.
+>
+> **Voor de jurist:** toetsen of de Waadi hier speelt, en of zes maanden en deze afbakening houdbaar zijn.
 
 ## 10. Aansprakelijkheid
-Je bent aansprakelijk voor schade die het gevolg is van het niet nakomen van dit document, in het bijzonder van de artikelen 3, 4 en 5. Wij zijn tegenover onze klanten volledig verantwoordelijk voor jouw werk; wat wij op grond daarvan aan een klant moeten vergoeden en aan jou is toe te rekenen, kunnen wij op jou verhalen.
+Je bent aansprakelijk voor directe schade die het toerekenbare en aantoonbare gevolg is van jouw tekortkoming. Je totale aansprakelijkheid per twaalf maanden is beperkt tot het bedrag waarop je beroepsaansprakelijkheidsverzekering in dat geval aanspraak geeft, vermeerderd met het eigen risico. Keert die verzekering niet uit om een andere reden dan dat je haar niet had of niet in stand hield, dan geldt als maximum wat wij je in de voorafgaande twaalf maanden hebben betaald.
 
-> **Voor de jurist:** een onbeperkte doorbelasting is voor een zzp'er zwaar en mogelijk niet houdbaar. Overwegen: een plafond met een uitzondering voor opzet, bewuste roekeloosheid en schending van geheimhouding, en de eis van een beroepsaansprakelijkheidsverzekering.
+Voor schending van geheimhouding, van de regels over persoonsgegevens of van de beveiligingsregels geldt tweemaal dat maximum. Deze beperkingen gelden niet bij opzet of bewuste roekeloosheid.
+
+Moeten wij een klant iets vergoeden, dan verhalen wij dat alleen voor zover het aan jou is toe te rekenen. Wij stellen je tijdig in staat verweer te voeren, treffen geen schikking zonder redelijk overleg met jou, en houden rekening met eigen schuld van onszelf, van de klant of van anderen.
+
+> **Gewijzigd 25 aug na vijandige lezing.** De eerste versie liet ons onbeperkt alles doorbelasten wat wij aan een klant moeten vergoeden. Dat is voor een zzp'er niet in verhouding tot de opdracht en niet verzekerbaar, en nodigt uit tot een discussie over de geldigheid van het hele beding. Een plafond dat aan de verzekering hangt is verdedigbaar en werkt in de praktijk beter: het dwingt bovendien af dat de verzekering er ís.
 
 ## 11. Duur en einde
 Deze afspraken gelden zolang je voor ons werkt. De artikelen 3 (geheimhouding), 4 (persoonsgegevens, voor zover het teruggave en verwijdering betreft), 8 (eigendom), 9 (geen benadering) en 10 (aansprakelijkheid) blijven daarna gelden.

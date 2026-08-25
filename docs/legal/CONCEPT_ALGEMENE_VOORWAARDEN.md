@@ -26,7 +26,11 @@ Hoofdstuk A geldt altijd. Daarnaast geldt per geleverde dienst de bijbehorende m
 Bij tegenstrijdigheid geldt deze volgorde: (1) de ondertekende opdrachtbevestiging of dienstverleningsovereenkomst, (2) de Verwerkersovereenkomst voor alles wat persoonsgegevens raakt, (3) de Geheimhoudingsovereenkomst voor alles wat vertrouwelijkheid raakt, (4) de module die op de betreffende dienst ziet, (5) dit hoofdstuk A.
 
 ### A4. Hoe de overeenkomst tot stand komt
-De overeenkomst komt tot stand door ondertekening van een opdrachtbevestiging of door schriftelijke aanvaarding van een aanbod. Wij stellen deze voorwaarden, de Verwerkersovereenkomst en, indien van toepassing, de Geheimhoudingsovereenkomst met versiedatum voor of bij het sluiten aan je ter beschikking, als bijlage of als downloadbaar bestand. Aanvaarding van een nieuwe versie vragen wij opnieuw wanneer wij een nieuwe versie van kracht laten worden.
+De overeenkomst komt tot stand door ondertekening van een opdrachtbevestiging of door schriftelijke aanvaarding van een aanbod. De opdrachtbevestiging vermeldt de versiedatum van deze Algemene Voorwaarden, van de Verwerkersovereenkomst en, indien van toepassing, van de Geheimhoudingsovereenkomst. Deze documenten gelden pas nadat wij ze voor of bij het sluiten als downloadbaar bestand aan je hebben verstrekt en je ze uitdrukkelijk hebt aanvaard.
+
+Bij aanvaarding vervangt deze set de eerder tussen ons geldende Algemene Voorwaarden, Verwerkersovereenkomst en Geheimhoudingsovereenkomst. Publicatie op onze website of het enkele feit dat je het platform blijft gebruiken geldt niet als aanvaarding van een wezenlijke wijziging.
+
+> **Waarom dit erin staat:** de huidige praktijk is dat gebruik van het platform als aanvaarding geldt en dat de documenten alleen op een webpagina staan. Zonder een expliciete vervangingsclausule blijft bij bestaande klanten onduidelijk welke versie is overeengekomen, en die versies spreken elkaar op wezenlijke punten tegen (alleen-lezen tegenover zelfstandige acties, drie maanden en 5.000 euro tegenover twaalf maanden, dertig tegenover zestig dagen).
 
 > **Voor de jurist:** de huidige praktijk is dat gebruik van het platform als aanvaarding geldt en dat de documenten op een webpagina staan. Onder Nederlands recht moeten algemene voorwaarden voor of bij het sluiten ter hand worden gesteld, anders zijn bedingen vernietigbaar (artikel 6:233 en 6:234 BW), en MKB-klanten kunnen zich daarop beroepen (artikel 6:235 lid 1 BW). Dit artikel repareert dat op papier; de uitvoering (bijlage bij elke offerte) moet in het verkoopproces geregeld worden.
 
@@ -39,14 +43,20 @@ Jij zorgt voor tijdige toegang tot de accounts, systemen en gegevens die wij nod
 Wij kunnen in jouw systemen en accounts drie dingen doen, en jij bepaalt per koppeling welke van de drie geldt:
 
 1. **Voorstellen.** Wij tonen een advies of een klaargezette actie en jij voert die zelf uit.
-2. **Uitvoeren na goedkeuring.** Wij bereiden een actie voor en voeren die pas uit nadat een mens aan jouw kant of, indien overeengekomen, een van onze consultants die heeft goedgekeurd.
-3. **Zelfstandig uitvoeren binnen grenzen.** Wij voeren een actie zelfstandig uit binnen de accounts, budgetten, drempelwaarden en soorten acties die vooraf schriftelijk zijn vastgelegd.
+2. **Uitvoeren na goedkeuring.** Wij bereiden een actie voor en voeren die pas uit nadat een door jou aangewezen persoon die heeft goedgekeurd. Een medewerker, ingeschakelde derde of geautomatiseerd systeem van ons kan een door ons voorbereide actie niet zelf goedkeuren.
+3. **Zelfstandig uitvoeren binnen grenzen.** Wij voeren een actie zelfstandig uit binnen de accounts, budgetten, drempelwaarden en soorten acties die vooraf schriftelijk zijn vastgelegd. Alleen op dit niveau mag een AI-agent zelfstandig handelen.
+
+**De bevoegdhedenmatrix.** Per koppeling leggen wij samen vast: de accounts, de soorten acties, de kanalen, de dag- en totaalbudgetten, de maximale procentuele wijziging, wat is uitgesloten, wie mag goedkeuren, en hoe je alles kunt stilzetten. Je kunt een bevoegdheid op elk moment intrekken.
+
+Ongeacht wat er is vastgelegd, vragen wij altijd afzonderlijk jouw goedkeuring voor: het verhogen van budgetten, publiceren of verzenden namens jou, het verwijderen van gegevens, het wijzigen van facturatie, en het aangaan van verplichtingen namens jou. Tenzij die handeling met een uitdrukkelijke grens in de matrix staat.
 
 Deze acties kunnen worden uitgevoerd door onze medewerkers, door door ons ingeschakelde derden (zie A7) en door geautomatiseerde systemen, waaronder AI-agents. Wat er is vastgelegd, geldt ongeacht wie of wat de actie uitvoert.
 
-Wij leggen van elke actie vast wat er is gedaan, wanneer, op grond waarvan, en wie of wat het heeft uitgevoerd en goedgekeurd. Dat overzicht is voor jou opvraagbaar. Een actie buiten de vastgelegde bevoegdheid is een tekortkoming van ons: wij draaien die waar mogelijk terug en vergoeden de redelijke directe herstelkosten volgens A12.
+Wij leggen van elke actie vast wat er is gedaan, wanneer, op grond waarvan, en wie of wat het heeft uitgevoerd en goedgekeurd. Je hebt daar tijdens de samenwerking doorlopend toegang toe. Voeren wij een actie uit buiten de vastgelegde bevoegdheid, dan is dat een tekortkoming van ons: wij zetten de automatisering stil, melden het je onmiddellijk, draaien de actie waar mogelijk terug, en vergoeden het daardoor rechtstreeks veroorzaakte extra mediabudget en de redelijke herstelkosten volgens A12.
 
 Zolang niets anders is vastgelegd, geldt niveau 1 voor advertentie-accounts en niveau 2 voor communicatie namens jou.
+
+> **Wat hier is gerepareerd (25 aug, na vijandige lezing):** in de eerste versie mocht bij niveau 2 ook "een van onze consultants" goedkeuren. Daarmee kon Stevin haar eigen voorstel goedkeuren en was de hele goedkeuringslaag betekenisloos. Bij een fout zou de klant stellen dat wij zelfstandig handelden en wij dat hij verantwoordelijk bleef. Goedkeuring ligt nu altijd bij de klant.
 
 > **Voor de jurist:** dit artikel is bewust geschreven op wat het platform KAN, zodat het aanzetten van een functie een instelling per klant is en geen wijziging van deze voorwaarden. Op 25 aug 2026 stond er feitelijk geen zelfstandige ingreep in advertentie-accounts aan.
 
@@ -58,14 +68,20 @@ Voor derden die daarbij persoonsgegevens verwerken geldt de meld- en bezwaarrege
 ### A8. Jouw gegevens, en wat wij ervan leren
 Alle rechten op de gegevens die jij inbrengt of die namens jou worden verzameld blijven bij jou of bij de oorspronkelijke rechthebbende. Gegevens die herleidbaar zijn tot jou, tot een van je accounts of tot een persoon gelden als jouw gegevens, ook wanneer wij die hebben afgeleid of verrijkt.
 
-Wij gebruiken jouw gegevens, de voor jou gegenereerde output en de feedback daarop **niet** voor het trainen of fijnslijpen van modellen, en niet buiten jouw omgeving in een vorm die tot jou herleidbaar is. Onze AI-leveranciers doen dat evenmin; dat is met hen vastgelegd.
+Wij gebruiken jouw gegevens, de daarvan afgeleide gegevens, de voor jou gegenereerde output en de feedback daarop uitsluitend voor de uitvoering van deze overeenkomst en volgens jouw instructies. Wij gebruiken die informatie **niet** buiten jouw omgeving voor het trainen, fijnslijpen, evalueren of benchmarken van modellen, prompts, regels, embeddings, zoeksystemen of andere gedeelde systemen. Onze AI-leveranciers doen dat evenmin; dat is met hen vastgelegd, en subverwerkers mogen jouw gegevens alleen gebruiken voor de dienstverlening aan jou.
 
-Wij ontwikkelen wel algemene kennis: methoden, regels, benchmarks, playbooks en verbeteringen aan onze software, mede op basis van de ervaring die wij in ons werk opdoen. Die algemene kennis blijft van ons en mogen wij blijven gebruiken, mits die niet herleidbaar is tot jou, tot een van je accounts of tot een persoon. Wij zullen geanonimiseerde gegevens niet opnieuw herleidbaar maken.
+Onze mensen mogen wel de algemene vakkennis en vaardigheid toepassen die zij in hun werk opdoen, mits daaruit geen informatie over jou, je accounts, je campagnes, een persoon of een vertrouwelijk bedrijfsgegeven te herleiden is.
 
-> **Toelichting, niet voor de klanttekst:** dit is het onderscheid tussen data en lessen. "Campagnes met dit patroon lopen vast" is een les en mag reizen. "Bureau X rekende bij klant Y zoveel opslag" is data en mag dat niet. Dit artikel maakt het mogelijk dat het platform van eerdere fouten leert zonder de belofte "je data blijft van jou" te breken.
+Willen wij systematisch benchmarks, datasets, regels of playbooks maken uit klantgegevens, dan doen wij dat alleen op basis van een afzonderlijke schriftelijke afspraak waarin doel, rollen, rechtsgrond, gegevenscategorieën, bewaartermijn en de wijze van anonimiseren staan. Gegevens gelden pas als anoniem nadat aantoonbaar is getoetst dat een record niet kan worden geïsoleerd, niet aan andere gegevens kan worden gekoppeld en er niets over een persoon uit kan worden afgeleid. Tot dat moment blijven de bronbestanden en tussenproducten jouw gegevens, met dezelfde bewaartermijnen. Wij maken geanonimiseerde gegevens niet opnieuw herleidbaar.
+
+> **Waarom deze scherpere formulering (25 aug, na vijandige lezing):** de eerste versie stond toe dat wij "algemene kennis" ontwikkelden op basis van ervaring, mits niet herleidbaar. Dat is te ruim, om twee redenen. Ten eerste is anonimiseren zelf een verwerking, waarvoor een doel en een rechtsgrond nodig zijn. Ten tweede: zodra wij zelf besluiten klantgegevens te gebruiken om ons eigen product of een benchmark te verbeteren, handelen wij voor dat gebruik als verwerkingsverantwoordelijke en niet meer als verwerker. Dat botst met de verwerkersovereenkomst, waarin staat dat wij alleen op instructie van de klant verwerken.
+>
+> De grens ligt daarom niet bij "herleidbaar of niet", maar bij het verschil tussen **wat mensen leren** en **wat je uit data haalt**. Dat een consultant leert dat campagnes met een bepaald patroon vastlopen, en die kennis meeneemt, is normaal en blijft toegestaan. Uit klantgegevens systematisch een benchmark of dataset bouwen is iets anders en vraagt een eigen afspraak. Zonder dat onderscheid is dit artikel een deur waar een vrachtwagen doorheen past, en precies daar vraagt een klantjurist naar.
 
 ### A9. Wat wij van jou mogen gebruiken
-Wij mogen je naam en logo noemen als klant op onze website en in verkoopmateriaal, tenzij je daar schriftelijk bezwaar tegen maakt. Voor het delen van resultaten of cijfers vragen wij vooraf toestemming.
+Wij gebruiken je naam, je logo en het feit dat je klant bent alleen extern nadat je daar vooraf schriftelijk toestemming voor hebt gegeven. Dat geldt ook voor het delen van resultaten of cijfers.
+
+> **Gewijzigd 25 aug:** de eerste versie stond gebruik toe tenzij je bezwaar maakte. Dat botst met A14 en met de Geheimhoudingsovereenkomst, waarin de klantrelatie zelf vertrouwelijk kan zijn. Vragen is hier eenvoudiger dan uitleggen.
 
 ### A10. Tarieven, betaling en wijziging
 Tarieven staan in de opdrachtbevestiging. Alle bedragen zijn exclusief btw. Facturatie is maandelijks vooraf met een betalingstermijn van veertien dagen, tenzij anders overeengekomen.
@@ -83,16 +99,22 @@ De overeenkomst gaat in op de datum in de opdrachtbevestiging. Tenzij daarin een
 
 Elk van beide partijen kan de overeenkomst beëindigen als de ander wezenlijk tekortschiet en dat niet binnen dertig dagen na een schriftelijke ingebrekestelling herstelt. Wij mogen de dienst opschorten als je na een aanmaning en een redelijke termijn niet betaalt.
 
-Na beëindiging kun je gedurende dertig dagen je gegevens exporteren. Daarna verwijderen wij ze uit onze actieve omgeving binnen zeven dagen, tenzij je vóór het einde van die termijn om teruggave vraagt. Geïsoleerde back-ups gebruiken wij niet opnieuw voor gewone doeleinden en worden uiterlijk negentig dagen na beëindiging overschreven. Wat wij wettelijk moeten bewaren, zoals facturatiegegevens, bewaren wij gedurende de wettelijke termijn.
+**Eén bewaarschema.** Na beëindiging bewaren wij je gegevens dertig dagen, uitsluitend zodat je ze kunt exporteren of terugkrijgen. Je kiest zelf tussen teruggave en verwijdering. Uiterlijk op dag zevenendertig verwijderen wij ze uit onze actieve systemen, inclusief de daarvan afgeleide gegevens en tussenbestanden. Geïsoleerde back-ups zetten wij niet terug voor andere doeleinden en worden uiterlijk negentig dagen na beëindiging overschreven. Beveiligings- en auditlogs bewaren wij maximaal twaalf maanden. Contracten, facturen en andere gegevens die onder een wettelijke administratieplicht vallen, bewaren wij uitsluitend gedurende die wettelijke termijn.
+
+> **Let op bij invoering:** dit schema moet woordelijk hetzelfde staan in de Verwerkersovereenkomst, de Privacyverklaring en de Geheimhoudingsovereenkomst. Op 25 aug stonden er vijf verschillende schema's naast elkaar (dertig dagen, zestig dagen, negentig dagen, zeven tot dertig dagen, twaalf maanden). Die kunnen niet alle vijf tegelijk worden nagekomen, en een klant mag zich dan op de kortste beroepen.
 
 **Overdracht.** Bij beëindiging of bij overstap naar een andere vorm van samenwerking leveren wij je, zonder aanvullende kosten, je gegevens in een gangbaar bestandsformaat, plus het dossier en de vastgelegde besluiten zoals bedoeld in Module 2. Doel is dat je zonder ons verder kunt.
 
 ### A12. Aansprakelijkheid
-Onze totale aansprakelijkheid per contractjaar is beperkt tot het bedrag dat je in de twaalf maanden daarvoor aan ons hebt betaald. Voor schending van geheimhouding, van gegevensbescherming, van beveiligingsverplichtingen en van intellectuele-eigendomsrechten geldt een afzonderlijk maximum van tweemaal dat bedrag.
+Onze totale aansprakelijkheid voor samenhangende gebeurtenissen in één contractjaar is beperkt tot de vergoedingen die voor de getroffen diensten in de twaalf maanden daarvoor zijn betaald of verschuldigd. Valt de gebeurtenis binnen de eerste twaalf maanden, dan geldt het bedrag dat voor die eerste twaalf contractmaanden is betaald of verschuldigd.
 
-Deze beperkingen gelden niet bij opzet of bewuste roekeloosheid, en niet voor zover beperking wettelijk niet is toegestaan. Redelijke kosten voor het herstellen van een actie die buiten de vastgelegde bevoegdheid is uitgevoerd (A6) gelden als directe schade.
+Voor schending van geheimhouding, van gegevensbescherming, van beveiligingsverplichtingen en van rechten van derden geldt in plaats daarvan een maximum van tweemaal dat bedrag.
 
-Wij zijn niet aansprakelijk voor gevolgschade, gederfde winst of gemiste omzet, noch voor gevolgen van wijzigingen in de platforms van derden, afkeuringen door die platforms, of beslissingen die jij neemt op basis van onze adviezen.
+Deze beperkingen gelden niet bij fraude, opzet of zware fout van ons of van onze leiding, niet bij overlijden of letsel, en niet voor zover beperking wettelijk niet is toegestaan.
+
+Wij zijn niet aansprakelijk voor gevolgschade, gederfde winst of gemiste omzet. Wij zijn evenmin aansprakelijk voor wijzigingen in of afkeuringen door platforms van derden, of voor beslissingen die jij neemt op basis van onze adviezen, tenzij die gevolgen zijn toe te rekenen aan een tekortkoming van ons, bijvoorbeeld een onzorgvuldige inrichting of een te trage reactie.
+
+Extra mediakosten en redelijke herstelkosten die rechtstreeks voortvloeien uit een actie buiten de bevoegdhedenmatrix (A6) gelden als directe schade. Beide partijen beperken schade waar dat redelijkerwijs kan.
 
 > **Voor de jurist:** de huidige tekst hanteert drie maanden met een maximum van 5.000 euro, wat in de eerste maanden vrijwel nul is en ook geldt bij een datalek. Dit voorstel verhoogt naar twaalf maanden met een verdubbeling voor de zware categorieën. Toetsen op houdbaarheid, in het bijzonder voor Belgische zakelijke klanten, waar bedingen die aansprakelijkheid bij zware fout uitsluiten of het risico buitensporig afwentelen onrechtmatig kunnen zijn.
 
@@ -110,7 +132,26 @@ Op de verwerking van persoonsgegevens is de Verwerkersovereenkomst van toepassin
 ### A16. Wijziging van deze voorwaarden
 Wij kunnen deze voorwaarden aanpassen. Wezenlijke wijzigingen melden wij ten minste dertig dagen voor inwerkingtreding en vragen wij opnieuw ter aanvaarding. Ben je het niet eens met een wezenlijke wijziging, dan kun je opzeggen tegen de datum waarop die ingaat.
 
-### A17. Toepasselijk recht
+### A17. Overmacht
+Overmacht schort alleen de getroffen verplichting op. De getroffen partij meldt de oorzaak en de verwachte duur onmiddellijk en beperkt de gevolgen. Betaling voor wat al is geleverd blijft verschuldigd. Duurt overmacht langer dan dertig dagen, dan mag elk van beide partijen de getroffen dienst beëindigen.
+
+### A18. Te late betaling
+Bij te late betaling ben je de wettelijke handelsrente en een redelijke vergoeding voor buitengerechtelijke incassokosten verschuldigd. Wij schorten pas op na een schriftelijke aanmaning en een redelijke hersteltermijn.
+
+### A19. Jouw materiaal
+Je staat ervoor in dat je het materiaal, de gegevens en de claims die je aanlevert rechtmatig mag gebruiken. Je vrijwaart ons voor aanspraken die aantoonbaar voortvloeien uit onrechtmatig materiaal van jou, voor zover wij daarvan niet wisten en niet hoefden te weten.
+
+### A20. Slotbepalingen
+**Geheimhouding en duur.** De geheimhouding uit A14 geldt vijf jaar na beëindiging, en voor bedrijfsgeheimen zolang die als bedrijfsgeheim gelden. Zij geldt niet voor informatie die aantoonbaar openbaar is, al rechtmatig bekend was, onafhankelijk is ontwikkeld, of wettelijk verstrekt moet worden.
+
+**Uitzonderingen, overdracht en deelbaarheid.** Deze overeenkomst bevat wat partijen zijn overeengekomen en vervangt eerdere afspraken over hetzelfde onderwerp. Wij mogen onze rechten en verplichtingen overdragen aan een groepsvennootschap of bij overname van onze onderneming; jij mag dat met onze voorafgaande schriftelijke toestemming. Is een bepaling ongeldig, dan blijven de overige bepalingen gelden en vervangen partijen die door een geldige bepaling die er zo dicht mogelijk bij komt. Kennisgevingen gebeuren schriftelijk of per e-mail aan de in de opdrachtbevestiging genoemde adressen. Dat een partij een recht niet inroept, betekent niet dat zij daarvan afstand doet.
+
+**Wat blijft gelden.** Na beëindiging blijven in ieder geval gelden: A8 (gegevens en lessen), A11 (bewaarschema en overdracht), A12 (aansprakelijkheid), A14 (geheimhouding), A19 (vrijwaring) en M3.3 (gebruiksrechten).
+
+### A21. Taal
+Bij verschil tussen de Nederlandse tekst en een vertaling is de Nederlandse tekst leidend.
+
+### A22. Toepasselijk recht
 Op deze overeenkomst is Nederlands recht van toepassing. Geschillen leggen wij voor aan de bevoegde rechter te Breda.
 
 ---
@@ -172,3 +213,13 @@ Materiaal dat jij aanlevert blijft van jou. Teksten, beeld en merkuitingen die s
 3. **De opzegtermijn aan onze kant (A11).** Voorstel is twee maanden. Nu staat er niets.
 4. **De beschikbaarheidsbelofte (M1.3).** 99,5 procent is een keuze, geen meting. Vastleggen wat we echt aankunnen, inclusief of we een vergoeding koppelen aan het niet halen ervan.
 5. **De verwerkersaddenda met Anthropic, OpenAI en Mistral.** A8 stelt dat met hen is vastgelegd dat zij niet op klantdata trainen. Controleren of die addenda daadwerkelijk getekend zijn, anders belooft dit artikel iets namens een ander.
+
+## Wat nog niet in dit concept is verwerkt
+
+Uit de vijandige lezing van 25 aug kwamen drie dingen die niet met een tekstwijziging in dit document op te lossen zijn. Ze horen bij de volgende ronde:
+
+6. **De Verwerkersovereenkomst moet mee.** Die beschrijft nu alleen het platform. Er moet een bijlage bij met per dienst het doel, de handelingen, de gegevenscategorieën, de betrokkenen, de bewaartermijnen en de toegestane actiebevoegdheid. Daarin horen ook campagnebeheer, acties door mensen en agents, bouw en hosting van pagina's, meetinrichting, e-mailkoppelingen en het werk van ingeschakelde externen. Zonder die bijlage verwerken wij buiten het beschreven doel.
+7. **De rollen in de Privacyverklaring lopen door elkaar.** Voor klantdata zijn wij verwerker, maar voor onze eigen websiteleads, facturatie, beveiligingslogging en gebruikersbeheer zijn wij verwerkingsverantwoordelijke. Nu staat dat door elkaar, waardoor betrokkenen bij ons aankloppen voor rechten die de klant moet afhandelen. Dat moeten twee gescheiden delen worden.
+8. **De subverwerkerslijsten verschillen.** Mistral en Slack staan in de Verwerkersovereenkomst maar niet in de Privacyverklaring, en freelancers en externe leveranciers staan in geen van beide. Eén lijst maken, met per partij de rechtsvorm, het land, de dienst, de gegevenscategorieën en de doorgiftegrondslag. Of iemand subverwerker is of onder ons gezag werkt, bepaalt de feitelijke werkwijze en niet zijn rechtsvorm.
+9. **De commerciële modules missen invulling.** Per module moet in de opdrachtbevestiging staan: welke werkzaamheden erin zitten, hoeveel uren of capaciteit, hoe AI-verbruik buiten het platform wordt behandeld, reactietijden, wat is uitgesloten, tarieven voor aanvullend werk, hostingkosten, en de oplevercriteria. Nu kan een klant niet vooraf bepalen wat 399 of 499 euro werkelijk omvat, terwijl de aanbodpagina wel harde beloften doet.
+10. **Acceptatie en wijzigingsbeheer voor projecten (Module 3).** Er is geen procedure voor het goedkeuren van een oplevering en geen procedure voor wijzigingen tijdens een project.
