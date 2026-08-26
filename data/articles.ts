@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'gamma-acquires-lica',
+    format: 'dispatch' as const,
+    edition: '436',
+    category: 'Platform',
+    title: "Gamma neemt design-startup Lica over voor onderzoeksteam",
+    dek: "De Nederlandse design-tool Gamma breidt haar activiteiten uit met de overname van Lica, een startup gespecialiseerd in AI-gestuurde ontwerphulpmiddelen.",
+    publishedAt: '2026-08-26',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Gamma neemt design-startup Lica over voor onderzoeksteam",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ibm-chip-arm-z-instructies-gelijktijdig',
     format: 'dispatch' as const,
     edition: '435',
