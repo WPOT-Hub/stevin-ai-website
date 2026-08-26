@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ux-belangrijker-voor-seo-dan-gedacht',
+    format: 'dispatch' as const,
+    edition: '439',
+    category: 'Platform',
+    title: "Google beloont goede UX: hoe pagina’s sneller stijgen in zoekresultaten",
+    dek: "Een betere gebruikerservaring leidt direct tot hogere rankings, zo blijkt uit recente meetdata van Google.",
+    publishedAt: '2026-08-26',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google beloont goede UX: hoe pagina’s sneller stijgen in zoekresultaten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'perplexity-lokale-ai-actie',
     format: 'dispatch' as const,
     edition: '438',
