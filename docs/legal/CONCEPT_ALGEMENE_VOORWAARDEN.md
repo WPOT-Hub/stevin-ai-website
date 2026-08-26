@@ -204,6 +204,26 @@ Materiaal dat jij aanlevert blijft van jou. Teksten, beeld en merkuitingen die s
 
 **M3.5 Wat wij niet garanderen.** Wij garanderen niet dat een pagina, campagne of meting tot een bepaald resultaat leidt. Wij herstellen wel kosteloos gebreken in wat wij hebben opgeleverd, mits je die binnen dertig dagen na oplevering meldt.
 
+**M3.6 Acceptatie van opgeleverd werk.**
+
+Bij oplevering van een tussenresultaat of eindresultaat sturen wij een opleveringsmelding. Je hebt vijf werkdagen om te reageren.
+
+Binnen die vijf werkdagen beoordeel je of het opgeleverde voldoet aan wat in de opdrachtbevestiging staat. Gebreken meld je schriftelijk, zo specifiek mogelijk beschreven. Reageer je niet binnen vijf werkdagen, dan geldt het opgeleverde als aanvaard.
+
+Wij herstellen gemelde gebreken kosteloos en opnieuw, mits ze voortkomen uit een tekortkoming van ons. Gebreken die voortkomen uit aanpassingen door jou of door een derde na de opleveringsmelding komen voor jouw rekening.
+
+Aanvaarding van een tussenresultaat geldt alleen voor dat resultaat en niet voor latere fases of voor het geheel.
+
+**M3.7 Wijzigingen tijdens een project.**
+
+Je kunt tijdens een project een wijzigingsverzoek indienen. Wij beoordelen de impact op scope, prijs en planning en sturen je binnen vijf werkdagen een wijzigingsvoorstel met de kosten en de gevolgen voor de planning.
+
+Wij voeren een wijziging pas uit na jouw schriftelijke aanvaarding van het voorstel. Zonder akkoord gaan wij door op de oorspronkelijke opdrachtbevestiging.
+
+Redactionele correcties (type-fouten, kleine tekstuele aanpassingen) die het overeengekomen resultaat niet raken, voeren wij zonder apart voorstel uit. Twijfelen wij of iets een redactionele correctie of een scopewijziging is, dan vragen wij het je eerst.
+
+> **TODO-KOEN:** Is vijf werkdagen voor de reactietermijn (acceptatie) en het wijzigingsvoorstel de termijn die wij in de praktijk kunnen waarmaken? Pas deze aan als een andere termijn beter past.
+
 ---
 
 ## Nog te beslissen voordat dit definitief wordt
@@ -216,10 +236,14 @@ Materiaal dat jij aanlevert blijft van jou. Teksten, beeld en merkuitingen die s
 
 ## Wat nog niet in dit concept is verwerkt
 
-Uit de vijandige lezing van 25 aug kwamen drie dingen die niet met een tekstwijziging in dit document op te lossen zijn. Ze horen bij de volgende ronde:
+Uit de vijandige lezing van 25 aug kwamen vijf punten die niet met een tekstwijziging in dit document alleen op te lossen zijn. Status na 26 aug:
 
-6. **De Verwerkersovereenkomst moet mee.** Die beschrijft nu alleen het platform. Er moet een bijlage bij met per dienst het doel, de handelingen, de gegevenscategorieën, de betrokkenen, de bewaartermijnen en de toegestane actiebevoegdheid. Daarin horen ook campagnebeheer, acties door mensen en agents, bouw en hosting van pagina's, meetinrichting, e-mailkoppelingen en het werk van ingeschakelde externen. Zonder die bijlage verwerken wij buiten het beschreven doel.
-7. **De rollen in de Privacyverklaring lopen door elkaar.** Voor klantdata zijn wij verwerker, maar voor onze eigen websiteleads, facturatie, beveiligingslogging en gebruikersbeheer zijn wij verwerkingsverantwoordelijke. Nu staat dat door elkaar, waardoor betrokkenen bij ons aankloppen voor rechten die de klant moet afhandelen. Dat moeten twee gescheiden delen worden.
-8. **De subverwerkerslijsten verschillen.** Mistral en Slack staan in de Verwerkersovereenkomst maar niet in de Privacyverklaring, en freelancers en externe leveranciers staan in geen van beide. Eén lijst maken, met per partij de rechtsvorm, het land, de dienst, de gegevenscategorieën en de doorgiftegrondslag. Of iemand subverwerker is of onder ons gezag werkt, bepaalt de feitelijke werkwijze en niet zijn rechtsvorm.
-9. **De commerciële modules missen invulling.** Per module moet in de opdrachtbevestiging staan: welke werkzaamheden erin zitten, hoeveel uren of capaciteit, hoe AI-verbruik buiten het platform wordt behandeld, reactietijden, wat is uitgesloten, tarieven voor aanvullend werk, hostingkosten, en de oplevercriteria. Nu kan een klant niet vooraf bepalen wat 399 of 499 euro werkelijk omvat, terwijl de aanbodpagina wel harde beloften doet.
-10. **Acceptatie en wijzigingsbeheer voor projecten (Module 3).** Er is geen procedure voor het goedkeuren van een oplevering en geen procedure voor wijzigingen tijdens een project.
+6. **Verwerkersovereenkomst bijgewerkt.** KLAAR. Het bestand CONCEPT_VERWERKERSOVEREENKOMST.md bevat nu een volledige verwerkersovereenkomst met bijlage 1 (verwerkingsregister per dienst) en een verwijzing naar bijlage 2 (SUBVERWERKERS.md). Daarin zijn opgenomen: platform, campagnebeheer, acties door mensen en agents, bouw en hosting, meetinrichting, CRM- en e-mailkoppelingen, telefonie en gesprekstranscripten, en werk door ingeschakelde externen.
+
+7. **Rollen gescheiden in de Privacyverklaring.** KLAAR. Het bestand CONCEPT_PRIVACYVERKLARING.md heeft twee duidelijk gescheiden delen: deel A (Stevin als verwerkingsverantwoordelijke) en deel B (Stevin als verwerker voor klantdata). Per doel in deel A staat de rechtsgrond. Deel B verwijst betrokkenen naar de klant.
+
+8. **Subverwerkerslijst gecombineerd.** KLAAR. SUBVERWERKERS.md bevat de uniforme lijst met per partij: rechtsvorm, land, dienst, gegevenscategorieën en doorgiftegrondslag. De lijst is afgeleid uit de code en omgevingsvariabelen van Stevin-Hub. Toelichting waarom bepaalde diensten (advertentieplatforms, eigen operationele tools) niet op de lijst staan.
+
+9. **De commerciële modules missen invulling.** NOG OPEN. Per module moet in de opdrachtbevestiging staan: welke werkzaamheden erin zitten, hoeveel uren of capaciteit, hoe AI-verbruik buiten het platform wordt behandeld, reactietijden, wat is uitgesloten, tarieven voor aanvullend werk, hostingkosten, en de oplevercriteria. Nu kan een klant niet vooraf bepalen wat 399 of 499 euro werkelijk omvat, terwijl de aanbodpagina wel harde beloften doet. Dit is per klant in te vullen in de opdrachtbevestiging; de voorwaarden bieden daarvoor het kader.
+
+10. **Acceptatie en wijzigingsbeheer voor Module 3.** KLAAR. M3.6 (acceptatie) en M3.7 (wijzigingen) zijn toegevoegd aan module 3 hierboven.
