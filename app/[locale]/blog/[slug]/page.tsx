@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'runable-haalt-21-miljoen-op-met-ai-agents-die-bedrijven-doen-groeien': (
+    <>
+      <p className="lead-para">
+        Sinds de lancering drie jaar geleden verwerkte Runable meer dan een biljoen tokens in de afgelopen drie maanden. Daarvan kwam tussen de zestig en zeventig procent van betalende klanten, aldus het bedrijf zelf. De focus ligt op het automatiseren van repetitieve taken en het optimaliseren van processen binnen bedrijven.
+      </p>
+      <p>
+        De nieuwe investeringsronde moet Runable helpen om haar AI-agents verder te ontwikkelen en schaalbaar te maken. Het geld wordt onder meer gebruikt om het team uit te breiden en nieuwe markten aan te boren. Met name de Europese markt staat hoog op de agenda.
+      </p>
+      <p>
+        Runable positioneert zich als een oplossing voor ondernemers die tijd willen besparen op operationele taken. De technologie richt zich op zowel startups als gevestigde bedrijven die hun efficiëntie willen vergroten.
+      </p>
+    </>
+  ),
   'gamma-acquires-lica': (
     <>
       <p className="lead-para">
@@ -7423,6 +7436,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'runable-haalt-21-miljoen-op-met-ai-agents-die-bedrijven-doen-groeien':
+    "AI-tools zoals die van Runable kunnen voor ondernemers een waardevolle bijdrage leveren aan het automatiseren van processen. Toch blijft het belangrijk om kritisch te blijven kijken naar de kosten en baten: niet elke automatisering levert direct meetbare groei op. Voor bedrijven die overwegen om dergelijke tools in te zetten, is een duidelijke strategie essentieel om teleurstellingen te voorkomen.",
   'gamma-acquires-lica':
     "Voor bureaus en in-house designteams kan deze stap interessant zijn als indicatie dat Gamma haar platform verder wil ontwikkelen richting geautomatiseerde ontwerpoplossingen. Dit sluit aan bij een bredere trend waarbij softwarebedrijven AI integreren om workflows te versnellen. Het is verstandig om deze ontwikkelingen in de gaten te houden, zeker als jouw team afhankelijk is van tools voor visuele communicatie.",
   'ibm-chip-arm-z-instructies-gelijktijdig':
