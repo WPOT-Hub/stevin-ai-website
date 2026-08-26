@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'runable-haalt-21-miljoen-op-met-ai-agents-die-bedrijven-doen-groeien',
+    format: 'dispatch' as const,
+    edition: '437',
+    category: 'Tech',
+    title: "Runable haalt 21 miljoen op voor AI die bedrijven niet alleen bouwt, maar ook laat groeien",
+    dek: "Het Nederlandse Runable, gespecialiseerd in AI-agents voor ondernemers, haalt 21 miljoen dollar op om haar technologie uit te breiden.",
+    publishedAt: '2026-08-26',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Runable haalt 21 miljoen op voor AI die bedrijven niet alleen bouwt, maar ook laat groeien",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'gamma-acquires-lica',
     format: 'dispatch' as const,
     edition: '436',
