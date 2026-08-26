@@ -84,7 +84,11 @@ Wij gebruiken je naam, je logo en het feit dat je klant bent alleen extern nadat
 > **Gewijzigd 25 aug:** de eerste versie stond gebruik toe tenzij je bezwaar maakte. Dat botst met A14 en met de Geheimhoudingsovereenkomst, waarin de klantrelatie zelf vertrouwelijk kan zijn. Vragen is hier eenvoudiger dan uitleggen.
 
 ### A10. Tarieven, betaling en wijziging
-Tarieven staan in de opdrachtbevestiging. Alle bedragen zijn exclusief btw. Facturatie is maandelijks vooraf met een betalingstermijn van veertien dagen, tenzij anders overeengekomen.
+Tarieven staan in de opdrachtbevestiging. Alle bedragen zijn exclusief btw.
+
+**Vooruitbetaling is de regel.** Wij factureren vooraf, met een betalingstermijn van veertien dagen. Een opstart, een project en een campagne beginnen pas nadat de betaling daarvoor is ontvangen. Loopt een betaling voor een doorlopende dienst achter, dan mogen wij die dienst opschorten volgens A18. Wij zijn niet aansprakelijk voor gevolgen van vertraging die ontstaat doordat een betaling uitblijft, bijvoorbeeld een campagne die later start dan gepland.
+
+**Hoe je betaalt.** Wij kunnen betaling laten lopen via een bankoverboeking of via een betaaldienstverlener, waaronder een automatische incasso of een betaallink. Welke wijze geldt, staat in de opdrachtbevestiging of wordt bij facturatie aangegeven. Kiezen wij voor een automatische incasso, dan vragen wij je daarvoor eerst een machtiging. Wisselen wij van betaaldienstverlener, dan melden wij dat vooraf; dat is geen wijziging van deze voorwaarden.
 
 **Advertentiebudget.** Je advertentiebudget staat nooit op onze factuur; dat betaal je rechtstreeks aan het advertentieplatform. Wij rekenen geen opslag, commissie of marge over je mediabudget, en ontvangen daarover geen vergoeding van derden.
 
@@ -106,9 +110,9 @@ Elk van beide partijen kan de overeenkomst beëindigen als de ander wezenlijk te
 **Overdracht.** Bij beëindiging of bij overstap naar een andere vorm van samenwerking leveren wij je, zonder aanvullende kosten, je gegevens in een gangbaar bestandsformaat, plus het dossier en de vastgelegde besluiten zoals bedoeld in Module 2. Doel is dat je zonder ons verder kunt.
 
 ### A12. Aansprakelijkheid
-Onze totale aansprakelijkheid voor samenhangende gebeurtenissen in één contractjaar is beperkt tot de vergoedingen die voor de getroffen diensten in de twaalf maanden daarvoor zijn betaald of verschuldigd. Valt de gebeurtenis binnen de eerste twaalf maanden, dan geldt het bedrag dat voor die eerste twaalf contractmaanden is betaald of verschuldigd.
+Onze totale aansprakelijkheid voor samenhangende gebeurtenissen in één contractjaar is beperkt tot de vergoedingen die voor de getroffen diensten in de twaalf maanden daarvoor zijn betaald of verschuldigd, en in geen geval meer dan 25.000 euro. Valt de gebeurtenis binnen de eerste twaalf maanden, dan geldt het bedrag dat voor die eerste twaalf contractmaanden is betaald of verschuldigd.
 
-Voor schending van geheimhouding, van gegevensbescherming, van beveiligingsverplichtingen en van rechten van derden geldt in plaats daarvan een maximum van tweemaal dat bedrag.
+Voor schending van geheimhouding, van gegevensbescherming, van beveiligingsverplichtingen en van rechten van derden geldt in plaats daarvan een maximum van tweemaal dat bedrag, en in geen geval meer dan 50.000 euro.
 
 Deze beperkingen gelden niet bij fraude, opzet of zware fout van ons of van onze leiding, niet bij overlijden of letsel, en niet voor zover beperking wettelijk niet is toegestaan.
 
@@ -116,7 +120,11 @@ Wij zijn niet aansprakelijk voor gevolgschade, gederfde winst of gemiste omzet. 
 
 Extra mediakosten en redelijke herstelkosten die rechtstreeks voortvloeien uit een actie buiten de bevoegdhedenmatrix (A6) gelden als directe schade. Beide partijen beperken schade waar dat redelijkerwijs kan.
 
-> **Voor de jurist:** de huidige tekst hanteert drie maanden met een maximum van 5.000 euro, wat in de eerste maanden vrijwel nul is en ook geldt bij een datalek. Dit voorstel verhoogt naar twaalf maanden met een verdubbeling voor de zware categorieën. Toetsen op houdbaarheid, in het bijzonder voor Belgische zakelijke klanten, waar bedingen die aansprakelijkheid bij zware fout uitsluiten of het risico buitensporig afwentelen onrechtmatig kunnen zijn.
+> **Waarom deze hoogte (afweging 26 aug 2026, uitgangspunt: zo min mogelijk risico voor een startup).** De live tekst hanteert drie maanden met een absoluut maximum van 5.000 euro. Dat lijkt veiliger maar is het niet: een plafond dat in geen verhouding staat tot de mogelijke schade wordt terzijde geschoven, en dan geldt er helemaal geen beperking meer. Twaalf maanden vergoedingen is de gangbare en verdedigbare maat. Het absolute dak van 25.000 respectievelijk 50.000 euro begrenst de staartrisico's bij een grote klant zonder het beding onredelijk te maken; bij de huidige klantomvang bijt dat dak nog niet.
+>
+> **Voor de jurist:** toetsen op houdbaarheid, in het bijzonder voor Belgische zakelijke klanten, waar bedingen die aansprakelijkheid bij zware fout uitsluiten of het economische risico buitensporig afwentelen onrechtmatig kunnen zijn. Toets ook of de absolute daken standhouden naast de fee-gebaseerde limiet.
+>
+> **Belangrijker dan dit artikel:** een contractueel plafond bepaalt wat je maximaal verschuldigd bent, niet wie het betaalt. De werkelijke bescherming voor een startup is een beroepsaansprakelijkheidsverzekering met cyberdekking. Zonder die verzekering komt ook 25.000 euro uit eigen zak. Dit hoort op de actielijst te staan naast de juridische toetsing.
 
 ### A13. AI in onze dienstverlening
 Adviezen, signalen, briefings, rapportages en teksten binnen Stevin worden mede door AI gegenereerd. Waar je rechtstreeks met een AI-systeem communiceert, maken wij dat bij de eerste interactie zichtbaar. Je verwijdert of verbergt die aanduiding niet wanneer je het systeem aan derden beschikbaar stelt.
@@ -188,7 +196,7 @@ Op deze overeenkomst is Nederlands recht van toepassing. Geschillen leggen wij v
 
 **M3.1 Wat je krijgt.** Een afgebakend project met een eigen prijs, bijvoorbeeld het opzetten van een kanaal: het bouwen van een landingspagina, het inrichten van campagnes en het opzetten van de meting.
 
-**M3.2 Oplevering.** Wij leveren op wat in de opdrachtbevestiging staat, binnen de daarin genoemde termijn. Termijnen zijn streeftermijnen tenzij uitdrukkelijk anders overeengekomen. Loopt een termijn uit door iets aan onze kant, dan melden wij dat en spreken wij een nieuwe datum af. Levert de vertraging op dat het project zijn doel verliest, dan kun je het beëindigen en betaal je alleen wat tot dat moment is opgeleverd.
+**M3.2 Start en oplevering.** Een project start nadat de betaling daarvoor is ontvangen (A10). Een genoemde termijn gaat pas lopen vanaf dat moment. Wij leveren op wat in de opdrachtbevestiging staat, binnen de daarin genoemde termijn. Termijnen zijn streeftermijnen tenzij uitdrukkelijk anders overeengekomen. Loopt een termijn uit door iets aan onze kant, dan melden wij dat en spreken wij een nieuwe datum af. Levert de vertraging op dat het project zijn doel verliest, dan kun je het beëindigen en betaal je alleen wat tot dat moment is opgeleverd.
 
 **M3.3 Wat je krijgt aan rechten.** De intellectuele-eigendomsrechten op wat wij bouwen blijven bij ons of bij een aan ons gelieerde vennootschap. Dat geldt voor de code, het ontwerp, de bouwstenen, sjablonen, configuraties en de achterliggende software, ook wanneer die specifiek voor jou zijn gemaakt.
 
