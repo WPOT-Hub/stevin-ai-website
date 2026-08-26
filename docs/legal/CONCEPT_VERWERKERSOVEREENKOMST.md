@@ -64,7 +64,11 @@ De Klant is verwerkingsverantwoordelijke en daarmee het eerste aanspreekpunt voo
 
 **Doorleggen.** Stevin legt subverwerkers dezelfde verplichtingen op als die in deze overeenkomst staan, en in ieder geval de verplichtingen die artikel 28 lid 3 AVG vereist. Stevin blijft tegenover de Klant volledig aansprakelijk voor de nakoming door subverwerkers.
 
-**Externen.** Een freelancer of externe leverancier die persoonsgegevens van de Klant verwerkt, geldt als subverwerker. Stevin meldt de inschakeling minimaal dertig dagen vooraf. De Klant kan bezwaar maken zoals hierboven beschreven.
+**Externen.** Hier geldt een onderscheid dat de feitelijke werkwijze volgt en niet de rechtsvorm.
+
+Werkt iemand onder onze instructie, in onze omgeving en op de accounts die wij beheren (een freelancer met een eigen inlog in onze systemen), dan verwerkt die persoon onder onze verantwoordelijkheid en is geen subverwerker. Zo iemand wordt niet afzonderlijk aan de Klant gemeld. Hij is via onze overeenkomst voor freelancers en externe leveranciers gebonden aan dezelfde geheimhouding, beveiliging en verwerkingsplichten, en wij houden intern bij wie tot welke klantomgeving toegang heeft.
+
+Verwerkt een externe partij persoonsgegevens op haar eigen systemen en met eigen middelen, dan is dat wel een subverwerker. Die komt op de subverwerkerslijst, en wij melden de inschakeling minimaal dertig dagen vooraf zodat de Klant bezwaar kan maken.
 
 ---
 
@@ -266,6 +270,8 @@ Stevin kan een actie buiten de vastgelegde bevoegdheid niet delegeren aan een AI
 
 ## G. Telefonie en gesprekstranscripten
 
+> **NOG NIET VAN TOEPASSING (besluit Koen, 26 aug 2026).** Wij leveren deze dienst vandaag niet. Waar een klant telefonie afneemt, loopt dat via zijn eigen leverancier en buiten ons om (bij Boersma: Enreach via AVH Tech). Deze sectie blijft hieronder staan als voorbereiding en wordt geactiveerd voordat de dienst bij een klant wordt aangezet, niet erna. Zolang dat niet is gebeurd, verwerken wij geen telefoniegegevens of transcripten.
+
 **Doel:** Integreren van telefoongespreksdata via de Cloudtalk-koppeling, voor analyse, opvolging en kwaliteitsbeheer.
 
 **Verwerkingshandelingen:** Ophalen van gespreksmetadata en transcripten; opslaan in het portaal; analyseren met AI voor samenvatting of signalering.
@@ -279,7 +285,7 @@ Stevin kan een actie buiten de vastgelegde bevoegdheid niet delegeren aan een AI
 
 **Betrokkenen:** Klanten en prospects van de Klant die telefonisch contact opnemen; medewerkers van de Klant die de gesprekken voeren.
 
-**Bewaartermijn:** Gespreksmetadata: maximaal twaalf maanden. Gesprekstranscripten: TODO-KOEN: hoeveel maanden bewaren wij gesprekstranscripten? Geluidsopnames: TODO-KOEN: bewaren wij de audiobestanden zelf, of alleen de transcripten? Welke bewaartermijn geldt dan? Afgeleide data: maximaal twaalf maanden.
+**Bewaartermijn:** Gespreksmetadata: maximaal twaalf maanden. Gesprekstranscripten: vast te stellen zodra de dienst wordt geactiveerd, zie de aantekening bovenaan deze sectie.
 
 **Actiebevoegdheid:** Niveau 1 (lezen en presenteren). Stevin voert geen acties uit in het telefoniesysteem zonder uitdrukkelijke opdracht van de Klant.
 
