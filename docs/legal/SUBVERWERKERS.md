@@ -58,7 +58,7 @@ De volgende diensten staan in de omgevingsvariabelen van Stevin-Hub maar verwerk
 - **HubSpot, GoHighLevel, Mailchimp, Asana, ClickUp, Trello, Reply.io, Apollo.io, Apify, DuxSoup, Maildoso, Reoon**: operationele tools van Stevin voor eigen gebruik (CRM, outbound, project management, e-mailinfrastructuur, data-enrichment voor eigen acquisitie). Deze tools verwerken geen klantpersoonsgegevens namens Stevin als verwerker.
 - **Gmail (koen@stevin.ai)**: Stevin-intern e-mailverkeer; geen klantgegensverwerking als subverwerker.
 
-> **TODO-KOEN:** Verifieer of GoHighLevel wordt gebruikt voor het beheren van klantrelaties van Stevin (Stevin als controller) of ook voor het verwerken van persoonsgegevens van eindklanten van die klanten (dan wordt GHL subverwerker). Als dat laatste het geval is, moet GHL aan deze lijst worden toegevoegd.
+> **Vastgesteld 26 aug 2026 uit de code:** GoHighLevel is de CRM-backend van een klant (de Van Gestel-location). Stevin haalt daar leads en opportunities uit via de connector in `src/connectors/gohighlevel/`. Wij verwerken die gegevens dus namens de klant en handelen daarbij als verwerker, waarmee GoHighLevel een subverwerker is. Het is geen tool voor onze eigen klantrelaties.
 
 ---
 

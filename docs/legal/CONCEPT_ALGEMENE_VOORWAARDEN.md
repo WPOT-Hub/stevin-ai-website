@@ -206,9 +206,9 @@ Materiaal dat jij aanlevert blijft van jou. Teksten, beeld en merkuitingen die s
 
 **M3.6 Acceptatie van opgeleverd werk.**
 
-Bij oplevering van een tussenresultaat of eindresultaat sturen wij een opleveringsmelding. Je hebt vijf werkdagen om te reageren.
+Bij oplevering van een tussenresultaat of eindresultaat sturen wij een opleveringsmelding. De termijn waarbinnen je reageert staat in de opdrachtbevestiging. Is daar niets over afgesproken, dan geldt tien werkdagen.
 
-Binnen die vijf werkdagen beoordeel je of het opgeleverde voldoet aan wat in de opdrachtbevestiging staat. Gebreken meld je schriftelijk, zo specifiek mogelijk beschreven. Reageer je niet binnen vijf werkdagen, dan geldt het opgeleverde als aanvaard.
+Binnen die termijn beoordeel je of het opgeleverde voldoet aan wat in de opdrachtbevestiging staat. Gebreken meld je schriftelijk, zo specifiek mogelijk beschreven. Reageer je niet binnen de in de opdrachtbevestiging afgesproken termijn, dan geldt het opgeleverde als aanvaard.
 
 Wij herstellen gemelde gebreken kosteloos en opnieuw, mits ze voortkomen uit een tekortkoming van ons. Gebreken die voortkomen uit aanpassingen door jou of door een derde na de opleveringsmelding komen voor jouw rekening.
 
@@ -216,13 +216,13 @@ Aanvaarding van een tussenresultaat geldt alleen voor dat resultaat en niet voor
 
 **M3.7 Wijzigingen tijdens een project.**
 
-Je kunt tijdens een project een wijzigingsverzoek indienen. Wij beoordelen de impact op scope, prijs en planning en sturen je binnen vijf werkdagen een wijzigingsvoorstel met de kosten en de gevolgen voor de planning.
+Je kunt tijdens een project een wijzigingsverzoek indienen. Wij beoordelen de impact op scope, prijs en planning en sturen je binnen de in de opdrachtbevestiging afgesproken termijn een wijzigingsvoorstel met de kosten en de gevolgen voor de planning.
 
 Wij voeren een wijziging pas uit na jouw schriftelijke aanvaarding van het voorstel. Zonder akkoord gaan wij door op de oorspronkelijke opdrachtbevestiging.
 
 Redactionele correcties (type-fouten, kleine tekstuele aanpassingen) die het overeengekomen resultaat niet raken, voeren wij zonder apart voorstel uit. Twijfelen wij of iets een redactionele correctie of een scopewijziging is, dan vragen wij het je eerst.
 
-> **TODO-KOEN:** Is vijf werkdagen voor de reactietermijn (acceptatie) en het wijzigingsvoorstel de termijn die wij in de praktijk kunnen waarmaken? Pas deze aan als een andere termijn beter past.
+> **Vastgesteld 26 aug 2026:** geen vaste termijn in deze voorwaarden, maar per opdracht in de opdrachtbevestiging. Let op het vangnet hieronder: zonder afgesproken termijn zou een oplevering onbepaald open blijven staan, en dat is precies wat je niet wilt.
 
 ---
 

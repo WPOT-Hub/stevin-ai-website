@@ -36,7 +36,7 @@ Wij verwerken persoonsgegevens voor eigen doeleinden in de situaties hieronder. 
 
 **Rechtsgrond:** Gerechtvaardigd belang van Stevin: het opvolgen van zakelijke aanvragen en het bijhouden van onze marketingeffectiviteit.
 
-**Bewaartermijn:** Wij bewaren aanvraaggegevens zolang de opvolgingsdialoog actief is. Wordt een aanvraag geen klant, dan verwijderen wij de gegevens na TODO-KOEN: hoeveel maanden bewaren wij leads die niet klant worden? Wordt een aanvraag wel klant, dan vallen de gegevens voortaan onder A3.
+**Bewaartermijn:** Wij bewaren aanvraaggegevens zolang de opvolgingsdialoog actief is. Wordt een aanvraag geen klant, dan verwijderen wij de gegevens na zesendertig maanden. Die termijn hangt aan een doel: een aanvraag die nu niet doorgaat kan later alsnog leiden tot een gesprek, en dan willen wij weten wat er eerder is besproken zodat je je verhaal niet opnieuw hoeft te doen. Wil je eerder verwijderd worden, dan kan dat altijd op verzoek.
 
 ---
 
@@ -151,7 +151,7 @@ Wij kunnen deze privacyverklaring aanpassen. Bij wezenlijke wijzigingen sturen w
 
 > **Aandachtspunten voor de jurist:**
 > 1. De rechtsgronden in deel A moeten worden getoetst op de precieze invulling van het gerechtvaardigd belang (met name A1 voor websiteaanvragen: is er een legitiem doel, is het proportioneel, kan de betrokkene bezwaar verwachten?).
-> 2. De bewaarperiode voor niet-geconverteerde leads (TODO-KOEN in A1) moet worden vastgesteld voordat dit document live gaat.
+> 2. De bewaarperiode voor niet-geconverteerde leads is vastgesteld op zesendertig maanden (besluit Koen, 26 aug 2026).
 > 3. Als Stevin e-mailmarketing verzendt aan prospecten die geen expliciete toestemming hebben gegeven, moet de juridische grondslag voor dat specifieke gebruik worden onderbouwd.
 
 *Opgesteld: 26 aug 2026. Versie bij publicatie: afstemmen met versienummer van de Algemene Voorwaarden.*
