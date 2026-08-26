@@ -110,7 +110,7 @@ Elk van beide partijen kan de overeenkomst beëindigen als de ander wezenlijk te
 **Overdracht.** Bij beëindiging of bij overstap naar een andere vorm van samenwerking leveren wij je, zonder aanvullende kosten, je gegevens in een gangbaar bestandsformaat, plus het dossier en de vastgelegde besluiten zoals bedoeld in Module 2. Doel is dat je zonder ons verder kunt.
 
 ### A12. Aansprakelijkheid
-Onze totale aansprakelijkheid voor samenhangende gebeurtenissen in één contractjaar is beperkt tot de vergoedingen die voor de getroffen diensten in de twaalf maanden daarvoor zijn betaald of verschuldigd, en in geen geval meer dan 25.000 euro. Valt de gebeurtenis binnen de eerste twaalf maanden, dan geldt het bedrag dat voor die eerste twaalf contractmaanden is betaald of verschuldigd.
+Onze aansprakelijkheid is in alle gevallen beperkt tot het bedrag dat je voor de betreffende dienst aan ons hebt betaald in de twaalf maanden voorafgaand aan de gebeurtenis. Gaat het om een eenmalige opdracht, dan is dat het voor die opdracht betaalde bedrag. Samenhangende gebeurtenissen gelden als één gebeurtenis.
 
 Voor schending van geheimhouding, van gegevensbescherming, van beveiligingsverplichtingen en van rechten van derden geldt in plaats daarvan een maximum van tweemaal dat bedrag, en in geen geval meer dan 50.000 euro.
 
@@ -120,7 +120,9 @@ Wij zijn niet aansprakelijk voor gevolgschade, gederfde winst of gemiste omzet. 
 
 Extra mediakosten en redelijke herstelkosten die rechtstreeks voortvloeien uit een actie buiten de bevoegdhedenmatrix (A6) gelden als directe schade. Beide partijen beperken schade waar dat redelijkerwijs kan.
 
-> **Waarom deze hoogte (afweging 26 aug 2026, uitgangspunt: zo min mogelijk risico voor een startup).** De live tekst hanteert drie maanden met een absoluut maximum van 5.000 euro. Dat lijkt veiliger maar is het niet: een plafond dat in geen verhouding staat tot de mogelijke schade wordt terzijde geschoven, en dan geldt er helemaal geen beperking meer. Twaalf maanden vergoedingen is de gangbare en verdedigbare maat. Het absolute dak van 25.000 respectievelijk 50.000 euro begrenst de staartrisico's bij een grote klant zonder het beding onredelijk te maken; bij de huidige klantomvang bijt dat dak nog niet.
+> **Waarom deze hoogte (afweging 26 aug 2026, uitgangspunt: zo min mogelijk risico voor een startup).** Het plafond is per dienst en per opdracht, dus in de praktijk laag: bij een opstart van 1.600 euro is dat 1.600 euro, bij een retainer de betaalde vergoeding over dat jaar. Dat is een gangbaar beding ("maximaal de factuurwaarde") in Nederlandse zakelijke voorwaarden.
+>
+> Bewust NIET verder verlaagd, en bewust geen algehele uitsluiting. Een beding dat in geen verhouding staat tot de mogelijke schade wordt terzijde geschoven, en dan geldt er helemaal geen beperking meer en val je terug op volledige wettelijke aansprakelijkheid. De live tekst (drie maanden, maximaal 5.000 euro) loopt dat risico. Hoe lager het plafond, hoe meer het ervan afhangt of een rechter het redelijk vindt; een verzekering erachter maakt een laag plafond juist beter verdedigbaar, omdat de klant dan alsnog schadeloos kan worden gesteld.
 >
 > **Voor de jurist:** toetsen op houdbaarheid, in het bijzonder voor Belgische zakelijke klanten, waar bedingen die aansprakelijkheid bij zware fout uitsluiten of het economische risico buitensporig afwentelen onrechtmatig kunnen zijn. Toets ook of de absolute daken standhouden naast de fee-gebaseerde limiet.
 >
