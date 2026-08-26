@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'perplexity-lokale-ai-actie': (
+    <>
+      <p className="lead-para">
+        Perplexity overweegt een samenwerking met Nvidia om lokale AI-modellen te ontwikkelen en te implementeren. Dit past in een bredere trend waarbij bedrijven zoeken naar manieren om afhankelijkheid van grote cloudproviders te verminderen.
+      </p>
+      <p>
+        Lokale AI-modellen bieden organisaties meer controle over data en kunnen de snelheid van zoekopdrachten verbeteren. Voor bedrijven betekent dit dat ze sneller kunnen inspelen op vragen zonder vertraging door externe servers.
+      </p>
+      <p>
+        De stap van Perplexity volgt op eerdere initiatieven van andere techbedrijven die ook experimenteren met on-premise of edge-AI-oplossingen. Dit kan de drempel verlagen voor organisaties die tot nu toe aarzelden door complexiteit of kosten.
+      </p>
+    </>
+  ),
   'runable-haalt-21-miljoen-op-met-ai-agents-die-bedrijven-doen-groeien': (
     <>
       <p className="lead-para">
@@ -7436,6 +7449,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'perplexity-lokale-ai-actie':
+    "Voor organisaties die gevoelige data hanteren, zoals zorginstellingen of financiële dienstverleners, biedt lokale AI een aantrekkelijk alternatief. Het vermindert risico’s rond datalekken en voldoet aan strenge privacyregels zoals GDPR. Tegelijkertijd vraagt het om investeringen in hardware en expertise, wat voor kleinere teams een uitdaging kan zijn.",
   'runable-haalt-21-miljoen-op-met-ai-agents-die-bedrijven-doen-groeien':
     "AI-tools zoals die van Runable kunnen voor ondernemers een waardevolle bijdrage leveren aan het automatiseren van processen. Toch blijft het belangrijk om kritisch te blijven kijken naar de kosten en baten: niet elke automatisering levert direct meetbare groei op. Voor bedrijven die overwegen om dergelijke tools in te zetten, is een duidelijke strategie essentieel om teleurstellingen te voorkomen.",
   'gamma-acquires-lica':
