@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'perplexity-lokale-ai-actie',
+    format: 'dispatch' as const,
+    edition: '438',
+    category: 'Tech',
+    title: "Perplexity zet lokale AI in op de agenda",
+    dek: "Het AI-searchbedrijf Perplexity onderzoekt mogelijkheden voor lokale AI-modellen, los van cloudoplossingen.",
+    publishedAt: '2026-08-26',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Perplexity zet lokale AI in op de agenda",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'runable-haalt-21-miljoen-op-met-ai-agents-die-bedrijven-doen-groeien',
     format: 'dispatch' as const,
     edition: '437',
