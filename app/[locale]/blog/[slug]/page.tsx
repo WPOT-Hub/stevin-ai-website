@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'gamma-acquires-lica': (
+    <>
+      <p className="lead-para">
+        Gamma, bekend van de populaire ontwerpsoftware voor presentaties en documenten, neemt Lica over. De twee oprichters van Lica, die eerder steun kregen van investeringsfonds Accel, gaan aan de slag in het nieuwe onderzoeksteam van Gamma.
+      </p>
+      <p>
+        Lica richtte zich op het automatiseren van ontwerpprocessen met behulp van kunstmatige intelligentie. Met de overname wil Gamma haar aanbod verrijken met geavanceerde tools die gebruikers helpen bij het sneller en efficiënter maken van visuele content.
+      </p>
+      <p>
+        De financiële details van de deal zijn niet bekendgemaakt. Gamma geeft aan dat de samenwerking zal leiden tot betere integratie tussen ontwerp en productiviteitstools binnen hun ecosysteem.
+      </p>
+    </>
+  ),
   'ibm-chip-arm-z-instructies-gelijktijdig': (
     <>
       <p className="lead-para">
@@ -7410,6 +7423,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'gamma-acquires-lica':
+    "Voor bureaus en in-house designteams kan deze stap interessant zijn als indicatie dat Gamma haar platform verder wil ontwikkelen richting geautomatiseerde ontwerpoplossingen. Dit sluit aan bij een bredere trend waarbij softwarebedrijven AI integreren om workflows te versnellen. Het is verstandig om deze ontwikkelingen in de gaten te houden, zeker als jouw team afhankelijk is van tools voor visuele communicatie.",
   'ibm-chip-arm-z-instructies-gelijktijdig':
     "Voor bedrijven met mainframes biedt deze ontwikkeling een manier om bestaande systemen te moderniseren zonder volledige vervanging. Het laat zien hoe hardwareleveranciers inspelen op de verschuivende behoeften van ISV's. Tegelijkertijd onderstreept het de uitdagingen van het behouden van compatibiliteit in een snel veranderend technologielandschap.",
   'geheugenprijs-record-2026':
