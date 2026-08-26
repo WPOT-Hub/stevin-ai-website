@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ux-belangrijker-voor-seo-dan-gedacht': (
+    <>
+      <p className="lead-para">
+        Sinds 2021 speelt de Core Web Vitals een grotere rol bij het bepalen van zoekresultaten. Ladepagina’s die snel laden, stabiel blijven en binnen drie seconden interactief zijn, scoren beter. Dat geldt niet alleen voor mobiele versies, maar ook voor desktoppagina’s. Sites met trage interactietijden of veel verschuivende elementen vallen hierdoor terug in de ranking, aldus Google zelf.
+      </p>
+      <p>
+        Niet alleen techniek telt: ook de manier waarop gebruikers een pagina ervaren is cruciaal. Een duidelijke navigatiestructuur, logische contentopbouw en een prettige leeservaring zorgen voor lagere bouncepercentages. Zoekmachines zien dit als teken van relevantie en kwaliteit. Het gevolg: organisch verkeer stijgt wanneer UX verbetert, zelfs zonder extra linkbuilding.
+      </p>
+      <p>
+        Deze trend wordt versterkt door AI-gestuurde zoekalgoritmes die steeds beter menselijk gedrag voorspellen. Een slechte UX leidt niet alleen tot lagere rankings, maar ook tot verlies van meetdata omdat gebruikers eerder afhaken. Bedrijven die nu investeren in UX zien daarom vaak een dubbele uplift: zowel in organische zichtbaarheid als in conversie.
+      </p>
+    </>
+  ),
   'perplexity-lokale-ai-actie': (
     <>
       <p className="lead-para">
@@ -7449,6 +7462,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ux-belangrijker-voor-seo-dan-gedacht':
+    "Voor bedrijven betekent dit dat SEO niet langer alleen draait om keywords en backlinks. Een sterke UX wordt een directe rankingfactor die je concurrentievoordeel kan opleveren. Het loont om regelmatig de Core Web Vitals te checken en gebruikersgedrag in tools zoals Hotjar of GA4 te analyseren. Kleine aanpassingen aan laadtijden of navigatie kunnen al snel leiden tot meetbare resultaten.",
   'perplexity-lokale-ai-actie':
     "Voor organisaties die gevoelige data hanteren, zoals zorginstellingen of financiële dienstverleners, biedt lokale AI een aantrekkelijk alternatief. Het vermindert risico’s rond datalekken en voldoet aan strenge privacyregels zoals GDPR. Tegelijkertijd vraagt het om investeringen in hardware en expertise, wat voor kleinere teams een uitdaging kan zijn.",
   'runable-haalt-21-miljoen-op-met-ai-agents-die-bedrijven-doen-groeien':
