@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'nieuwe-ecommerce-tools-augustus-2026',
+    format: 'dispatch' as const,
+    edition: '442',
+    category: 'Distributie',
+    title: "Pop-ups, dronebezorging en virtuele paskamers: nieuwe e-commerce gereedschappen",
+    dek: "Een overzicht van tools voor pop-upwinkels, site-builders, abonneelijsten, dronebezorging en virtuele try-ons landt deze week op de markt.",
+    publishedAt: '2026-08-27',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "Pop-ups, dronebezorging en virtuele paskamers: nieuwe e-commerce gereedschappen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'flipboard-neemt-graze-over',
     format: 'dispatch' as const,
     edition: '441',
