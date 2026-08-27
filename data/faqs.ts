@@ -26,7 +26,7 @@ export function getArticleFaqs(slug: string): FAQ[] | null {
 const homepageFaqsNL: FAQ[] = [
   {
     question: 'Wat doet Stevin precies?',
-    answer: 'Stevin is een AI-laag over je marketing en sales. Een dashboard toont wat gebeurde, Stevin ziet wat nu speelt en zet de volgende stap. Het begint in marketing en sales, waar het al bewezen is en als eerste resultaat levert. Daar signaleert het waar omzet of marge verloren gaat voordat je het zelf doorhebt. Een advertentie die geld kostte maar niets opleverde, zag Stevin al op 4 april, niet pas in het maandoverzicht. Vanuit dat bewezen punt komen er stap voor stap agents bij voor de rest van je bedrijf, van eerste klantcontact tot offerte en opvolging. In de praktijk merk je het eerst in marketing en sales.',
+    answer: 'Stevin doet het commerciele werk van je bedrijf: je website, je advertenties, je eigen kanalen en het opvolgen van leads. Software doet het werk waar een bureau uren voor rekent, en het platform onthoudt wat is gedaan, wat het opleverde en welk besluit daarop volgde. Daardoor wordt het advies scherper naarmate het langer draait. Een advertentie die geld kostte maar niets opleverde, zag Stevin al op 4 april, niet pas in het maandoverzicht. Het verschil met een bureau zit in het eigendom: je advertentie-accounts, je data en het opgebouwde geheugen blijven van jou, ook als je stopt. Elke wijziging staat in een logboek met de reden erbij.',
   },
   {
     question: 'Voor wie is Stevin bedoeld?',
@@ -46,7 +46,7 @@ const homepageFaqsNL: FAQ[] = [
   },
   {
     question: 'Wat kost het?',
-    answer: 'Vaste maandprijzen, afgestemd op je bedrijf en het aantal koppelingen, vanaf een paar honderd euro per maand. Geen verborgen kosten. Werk je ook met advertentiebudget, dan rekenen we daar geen percentage of marge overheen. Plan een gesprek voor een voorstel op maat.',
+    answer: 'Drie smaken, je kiest zelf. Wij doen alles vanaf 1.399 euro per maand bij jaarbetaling. Wij starten je op vanaf 1.499 euro per maand zolang het duurt, meestal zes tot twaalf maanden, daarna 399 euro per maand. Je doet het zelf voor 399 euro per maand bij jaarbetaling. Die keuze is later om te draaien zonder dat je iets kwijtraakt. Werk je met advertentiebudget, dan rekenen we daar geen percentage of marge overheen. Alle bedragen en wat erin zit staan op de tarievenpagina.',
   },
   {
     question: 'Hoe snel ben ik operationeel?',
@@ -57,7 +57,7 @@ const homepageFaqsNL: FAQ[] = [
 const homepageFaqsEN: FAQ[] = [
   {
     question: 'What exactly does Stevin do?',
-    answer: 'Stevin is an AI layer across your whole business. A dashboard shows what happened, Stevin sees what is going on right now and takes the next step. It starts in marketing and sales, where it is already proven and delivers results first. There it spots where revenue or margin is leaking away before you notice it yourself. An ad that cost money but returned nothing, Stevin saw it on April 4th, not weeks later in the monthly overview. From that proven starting point, agents are added step by step for the rest of your business, from first customer contact to quote and follow-up. In practice, you notice it first in marketing and sales.',
+    answer: 'Stevin runs the commercial side of your business: your website, your advertising, your own channels and following up on leads. Software does the work an agency bills hours for, and the platform records what was done, what it returned and which decision followed. That is why the advice gets sharper the longer it runs. An ad that cost money but returned nothing, Stevin saw it on April 4th, not weeks later in the monthly overview. The difference with an agency is ownership: your ad accounts, your data and the memory built up along the way stay yours, even if you stop. Every change is logged with the reason behind it.',
   },
   {
     question: 'Who is Stevin for?',
@@ -77,7 +77,7 @@ const homepageFaqsEN: FAQ[] = [
   },
   {
     question: 'What does it cost?',
-    answer: 'Fixed monthly prices, matched to your business and the number of connections, starting from a few hundred euros per month. No hidden costs. If you also work with advertising budget, we do not charge any percentage or margin on top of it. Schedule a call for a tailored proposal.',
+    answer: 'Three flavours, you choose. We do everything from 1,399 euros per month on annual billing. We get you started from 1,499 euros per month for as long as it takes, usually six to twelve months, after which it is 399 euros per month. You do it yourself for 399 euros per month on annual billing. You can switch later without losing anything you built up. If you work with advertising budget, we do not charge any percentage or margin on top of it. All amounts and what they include are on the pricing page.',
   },
   {
     question: 'How quickly am I up and running?',
