@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'flipboard-neemt-graze-over': (
+    <>
+      <p className="lead-para">
+        De Nederlandse en Belgische markt voor sociale media en contentdistributie krijgt er een nieuwe speler bij. Flipboard, bekend van zijn nieuwsaggregator, breidt uit met de overname van Graze. Dit bedrijf ontwikkelt tools die adverteerders helpen om zonder gedetailleerde persoonsgegevens doelgroepen te bereiken. Voor bedrijven die zich richten op contentcreatie en -distributie biedt deze stap nieuwe kansen om inkomsten te genereren via open sociale netwerken.
+      </p>
+      <p>
+        Graze richt zich op het zogeheten ‘open social web’, waar gebruikers meer controle hebben over hun data. Door de technologie van Graze toe te voegen, wil Flipboard zijn ecosysteem versterken met privacygerichte advertentiemogelijkheden. Dit sluit aan bij de groeiende vraag naar transparantie in online advertising, vooral onder Europese gebruikers en adverteerders.
+      </p>
+      <p>
+        De deal kan ook gevolgen hebben voor Nederlandse en Belgische bureaus die actief zijn in social media marketing. Zij krijgen mogelijk toegang tot nieuwe tools voor het monetariseren van content, zonder afhankelijk te zijn van traditionele platformen zoals Facebook of Instagram.
+      </p>
+    </>
+  ),
   'amazon-verdubbelt-nvidia-chiporders-door-explosieve-vraag-naar-ai-infrastructuur': (
     <>
       <p className="lead-para">
@@ -7475,6 +7488,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'flipboard-neemt-graze-over':
+    "Voor bedrijven die werken met open sociale netwerken biedt deze overname een kans om hun strategie aan te passen. Het benadrukt het belang van privacyvriendelijke advertentietechnieken, een trend die zich de komende jaren alleen maar zal versterken. Bedrijven doen er goed aan om nu al na te denken over hoe ze hun data- en contentstrategie kunnen aanpassen aan deze ontwikkelingen.",
   'amazon-verdubbelt-nvidia-chiporders-door-explosieve-vraag-naar-ai-infrastructuur':
     "Voor bedrijven die afhankelijk zijn van cloudinfrastructuur of AI-toepassingen wordt het belang van schaalbare rekenkracht duidelijk. De keuze voor leveranciers als Nvidia en AWS kan een strategische beslissing worden die jarenlang meegaat. Tegelijkertijd neemt de druk toe om investeringen in technologie af te stemmen op werkelijke groeikansen, zonder overcapaciteit.",
   'ux-belangrijker-voor-seo-dan-gedacht':
