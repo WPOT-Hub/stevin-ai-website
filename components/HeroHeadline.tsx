@@ -4,7 +4,10 @@ import { useEffect, useState } from 'react'
 
 /**
  * H1 met kop-varianten voor de homepage-test (doc 12/16, onderzoek jul 2026).
- * Rotatie-pool per Koen 19 jul (avond): C groei, B transparantie, D brein.
+ * Rotatie-pool: C grip en B transparantie. D brein is er 27 aug uit: die
+ * opende met "de AI-laag over je marketing en sales", een omschrijving van
+ * het product in plaats van de wereld van de klant, en hij botste met de
+ * gelockte belofte (grip, en alles blijft van jou).
  * Vaste toewijzing per bezoeker via localStorage (geen per-pageview-rotatie,
  * anders wordt de meting troebel); de gekozen variant gaat als event naar de
  * dataLayer zodat GA4 per kop kan meten. A factuur draait niet mee in de
@@ -12,9 +15,9 @@ import { useEffect, useState } from 'react'
  * De zwevende switcher verschijnt alleen op preview-hosts.
  */
 
-type Variant = 'a' | 'b' | 'c' | 'd'
+type Variant = 'a' | 'b' | 'c'
 
-const ROTATION: Variant[] = ['c', 'b', 'd']
+const ROTATION: Variant[] = ['c', 'b']
 const STORAGE_KEY = 'stevin_kop_variant'
 
 const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; accent: string }>> = {
@@ -22,17 +25,15 @@ const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; a
     a: { eyebrow: 'Voor bedrijven die betalen voor marketing', line: 'Elke maand een marketingfactuur.', accent: 'Geen idee wat ze ervoor gedaan hebben.' },
     b: { eyebrow: 'Kijk zelf mee, het staat er gewoon', line: 'Google weet wie de eigenaar is van jouw data.', accent: 'Jij ook?' },
     c: { eyebrow: 'Grip op je marketing', line: 'Marketing die elke maand beter wordt.', accent: 'En alles blijft van jou.' },
-    d: { eyebrow: 'De AI-laag over je marketing en sales', line: 'Je eigen data.', accent: 'Je eigen marketing-brein.' },
   },
   en: {
     a: { eyebrow: 'For companies that pay for marketing', line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
     b: { eyebrow: 'See for yourself, it is right there', line: 'Google knows who owns your data.', accent: 'Do you?' },
     c: { eyebrow: 'Grip on your marketing', line: 'Marketing that gets better every month.', accent: 'And everything stays yours.' },
-    d: { eyebrow: 'The AI layer over your marketing and sales', line: 'Your own data.', accent: 'Your own marketing brain.' },
   },
 }
 
-const LABELS: Record<Variant, string> = { a: 'A factuur', b: 'B transparantie', c: 'C groei', d: 'D brein' }
+const LABELS: Record<Variant, string> = { a: 'A factuur', b: 'B transparantie', c: 'C grip' }
 
 declare global {
   interface Window {
@@ -41,7 +42,7 @@ declare global {
 }
 
 function isVariant(v: string | null): v is Variant {
-  return v === 'a' || v === 'b' || v === 'c' || v === 'd'
+  return v === 'a' || v === 'b' || v === 'c'
 }
 
 export default function HeroHeadline({ locale }: { locale: string }) {
@@ -92,7 +93,7 @@ export default function HeroHeadline({ locale }: { locale: string }) {
           aria-label="Kop-variant (alleen preview)"
         >
           <span className="text-[10px] font-display font-bold uppercase tracking-[0.1em] text-muted px-1">Kop</span>
-          {(['a', 'b', 'c', 'd'] as Variant[]).map((v) => (
+          {(['a', 'b', 'c'] as Variant[]).map((v) => (
             <button
               key={v}
               type="button"
