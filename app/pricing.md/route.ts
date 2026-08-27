@@ -16,45 +16,28 @@
  * Endpoint: https://stevin.ai/pricing.md (text/markdown)
  */
 
+import { audience, channels, companyIdentity, positioning, pricingMarkdown } from '@/data/company'
+
 export const dynamic = 'force-static'
 export const revalidate = 3600
 
 const body = `# Tarieven, Stevin.AI
 
-Stevin.AI voert het commerciele werk van een bedrijf uit met software in plaats van uren: de website, de advertenties, de eigen kanalen en het opvolgen van leads. Het platform legt per klant vast wat is gedaan, wat het opleverde en welk besluit daarop volgde, en meet die uitkomst terug. Daardoor wordt het advies scherper naarmate het langer draait.
+${positioning}
 
-Accounts, data en het opgebouwde geheugen blijven eigendom van de klant. Er komt geen nieuw centraal systeem voor in de plaats: de bestaande accounts bij Google, Meta en de rest blijven bestaan.
-
-## Het begint met een diagnose
-
-Iedereen begint op dezelfde plek: uitzoeken wat er nodig is. Niet alleen de advertenties, ook de vindbaarheid, de webshop, de mail en het merk. Klopt wat er gemeten wordt, en ligt ergens vast wat werkte en wat niet. Je krijgt de lijst van wat daarvoor moet gebeuren, op je eigen cijfers, binnen twee weken.
-
-## Drie smaken, je kiest zelf
-
-### Wij doen alles
-Vanaf 1.399 euro per maand bij jaarbetaling, 1.499 euro per maand bij maandbetaling. Doorlopend, de opstart is maatwerk. Volledige inrichting en actief beheer, met elk besluit vastgelegd. Voor ondernemers die er zelf niet naar om willen kijken.
-
-### Wij starten je op
-Vanaf 1.499 euro per maand, geen jaartarief want dit is tijdelijk. Meestal zes tot twaalf maanden, daarna 399 euro per maand. Stevin zet het goed neer en draait mee tot het staat, en draagt daarna over aan je eigen team of aan een bureau naar keuze.
-
-### Je doet het zelf
-399 euro per maand bij jaarbetaling, 499 euro per maand bij maandbetaling. Je krijgt de software en het geheugen, het werk doe je zelf of je laat het elders doen.
-
-Je keuze is later om te draaien zonder dat je iets kwijtraakt.
-
-Alle tarieven gelden voor een bedrijf met een merk en een winkel. Meer vestigingen, merken of webshops kosten meer. Een groter mediabudget betekent niet automatisch een hogere prijs.
+${pricingMarkdown}
 
 ## Voor wie
 
-Zakelijke klanten, vooral in Nederland en Belgie, en incidenteel daarbuiten. Van eenmanszaken en vakmensen tot bedrijven met een eigen marketingteam, en bureaus die het voor hun klanten inzetten.
+${audience}
 
 ## Kanalen
 
-Elk kanaal met een API sluit erop aan, betaald en eigen: Google Ads, Meta, YouTube, TikTok, LinkedIn, Google Business Profile, Google Analytics, Search Console, en webshops als Shopify en WooCommerce.
+${channels}
 
 ## Contact
 
-Plan een gesprek via https://stevin.ai/contact of mail info@stevin.ai. De volledige tarievenpagina staat op https://stevin.ai/tarieven, in het Engels op https://stevin.ai/en/tarieven.
+Plan een gesprek via https://stevin.ai/contact of mail ${companyIdentity.email}. De volledige tarievenpagina staat op https://stevin.ai/tarieven, in het Engels op https://stevin.ai/en/tarieven. Uitgebreide bedrijfscontext: https://stevin.ai/llms-full.txt
 `
 
 export async function GET() {

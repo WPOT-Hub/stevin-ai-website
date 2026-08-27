@@ -145,6 +145,13 @@ function TermsDutch() {
           rapportage. Wij delen tokens niet met derden buiten de beschreven
           platform-API&apos;s.
         </p>
+        <p>
+          Het platform is bedoeld voor normaal gebruik binnen de afgesproken omvang.
+          Voor onderdelen die op AI draaien geldt een gebruiksruimte die daarbij
+          past. Is die voor een periode bereikt, dan zie je dat in het portaal en
+          kijken we samen wat er nodig is. Gebruik dat daar structureel van afwijkt
+          stemmen we vooraf met je af.
+        </p>
       </section>
 
       <section>
@@ -320,7 +327,14 @@ function TermsEnglish() {
           used only for data sync supporting your reporting. We do not share
           tokens with third parties outside the described platform APIs.
         </p>
-      </section>
+        <p>
+          The platform is meant for normal use within the agreed scope. Parts that
+          run on AI come with a usage allowance that matches that scope. If it is
+          reached for a period, you will see this in the portal and we will look at
+          what you need. Use that structurally deviates from this is agreed with you
+          in advance.
+        </p>
+        </section>
 
       <section>
         <h2 className="text-xl font-semibold">5. Fees and billing</h2>

@@ -74,15 +74,19 @@ Twee filters om te kennen:
 - `app/feed.xml/route.ts`: RSS-feed van het Journal.
 - `robots.txt` staat alle AI-bots toe (Claude, ChatGPT, Perplexity, Gemini).
 
-### Roadmap: /llms-full.txt (nog te bouwen)
+### /llms-full.txt
 
-`/llms.txt` staat live (200) en is het korte manifest. Nog toe te voegen:
-`app/llms-full.txt/route.ts` met de uitgebreide bedrijfscontext in een
-bestand, zodat een model niet hoeft door te klikken. Inhoud: wat Stevin doet,
-de drie smaken van /tarieven, de werkwijze (accounts op naam van de klant,
-wijzigingslogboek met reden), veelgestelde vragen, en de volledige tekst van
-de belangrijkste pagina's plus de editorials. Zelfde patroon als llms.txt:
-dynamisch uit `data/*`, `force-static`, `text/plain`, geen footerlink nodig.
+`app/llms-full.txt/route.ts`: de volledige bedrijfscontext in een bestand,
+zodat een model niet hoeft door te klikken. Bevat wat Stevin doet, de
+werkwijze, de drie smaken met bedragen, de veelgestelde vragen, diensten en
+producten voluit, het hele woordenboek, de tool-vergelijkingen en een index
+van het Journal. Ongeveer 175 kB, dynamisch uit `data/*`.
+
+De tekst die op meerdere machine-leesbare plekken hoort te kloppen staat in
+`data/company.ts` (positionering, werkwijze, tarieven, kanalen, doelgroep,
+bedrijfsgegevens). `pricing.md` en `llms-full.txt` lezen daaruit, zodat ze
+niet meer uit elkaar kunnen lopen. Wijzigt /tarieven of /werkwijze, dan pas
+je `data/company.ts` aan, niet de routes.
 
 ## 6. Schrijfregels (gelden ook in schema en meta)
 
