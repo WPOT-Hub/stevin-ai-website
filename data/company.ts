@@ -16,6 +16,7 @@ export const companyIdentity = {
   kvk: '42138941',
   vat: 'NL869893610B01',
   seat: 'Breda, Nederland',
+  address: 'Claudius Prinsenlaan 12, 4811 DK Breda, Nederland',
   founded: '14 augustus 2026',
   activities:
     "Het voeren van een onderneming op het gebied van AI, softwareontwikkeling, marketing en bedrijfsautomatisering.",

@@ -24,9 +24,24 @@ const organization = {
     contentUrl: 'https://stevin.ai/icon.png',
   },
   image: 'https://stevin.ai/og-image.png',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Claudius Prinsenlaan 12',
+    postalCode: '4811 DK',
+    addressLocality: 'Breda',
+    addressRegion: 'Noord-Brabant',
+    addressCountry: 'NL',
+  },
   foundingLocation: {
     '@type': 'Place',
-    address: { '@type': 'PostalAddress', addressCountry: 'NL' },
+    address: { '@type': 'PostalAddress', addressLocality: 'Breda', addressCountry: 'NL' },
+  },
+  vatID: 'NL869893610B01',
+  taxID: '869893610',
+  identifier: {
+    '@type': 'PropertyValue',
+    name: 'KvK',
+    value: '42138941',
   },
   areaServed: [
     { '@type': 'Country', name: 'Netherlands' },

@@ -79,9 +79,9 @@ export default function Footer() {
             <p className="mt-5 text-sm text-slate-400 leading-relaxed">
               {t('tagline')}
             </p>
-            <p className="mt-5 text-xs text-slate-500">
+            <address className="mt-5 text-sm text-slate-400 not-italic leading-relaxed whitespace-pre-line">
               {t('location')}
-            </p>
+            </address>
             <TrustBadges className="mt-7 justify-start gap-2" small />
           </div>
 

@@ -31,6 +31,14 @@ export default async function ContactPage({ params }: Props) {
     '@type': 'Organization',
     name: 'Stevin.AI',
     url: 'https://stevin.ai',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Claudius Prinsenlaan 12',
+      postalCode: '4811 DK',
+      addressLocality: 'Breda',
+      addressRegion: 'Noord-Brabant',
+      addressCountry: 'NL',
+    },
     areaServed: {
       '@type': 'Country',
       name: 'Netherlands',

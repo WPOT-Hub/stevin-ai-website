@@ -170,6 +170,7 @@ export async function GET() {
     `- KvK: ${companyIdentity.kvk}`,
     `- Btw-nummer: ${companyIdentity.vat}`,
     `- Statutaire zetel: ${companyIdentity.seat}`,
+    `- Bezoekadres: ${companyIdentity.address}`,
     `- Opgericht: ${companyIdentity.founded}`,
     `- Activiteiten: ${companyIdentity.activities}`,
     `- Markten: ${companyIdentity.markets}`,

@@ -47,13 +47,13 @@ export default async function TermsPage({ params }: Props) {
             <>
               Stevin.AI is the trade name of <strong>Stevin.AI B.V.</strong>, registered
               with the Dutch Chamber of Commerce (KvK) under number <strong>42138941</strong>,
-              with its registered seat in <strong>Breda, the Netherlands</strong>, VAT number <strong>NL869893610B01</strong>.
+              with its registered seat in <strong>Breda, the Netherlands</strong>, offices at <strong>Claudius Prinsenlaan 12, 4811 DK Breda</strong>, VAT number <strong>NL869893610B01</strong>.
             </>
           ) : (
             <>
               Stevin.AI is de handelsnaam van <strong>Stevin.AI B.V.</strong>, ingeschreven
               bij de Kamer van Koophandel onder nummer <strong>42138941</strong>, statutair
-              gevestigd te <strong>Breda</strong>, btw-nummer <strong>NL869893610B01</strong>.
+              gevestigd te <strong>Breda</strong>, kantoor aan de <strong>Claudius Prinsenlaan 12, 4811 DK Breda</strong>, btw-nummer <strong>NL869893610B01</strong>.
             </>
           )}
         </p>
