@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'amazon-verdubbelt-nvidia-chiporders-door-explosieve-vraag-naar-ai-infrastructuur': (
+    <>
+      <p className="lead-para">
+        De Amerikaanse techreus Amazon heeft besloten om de komende twee jaar nog eens 2 miljoen Nvidia GPU-chips aan te schaffen. Dit brengt het totale ordervolume op ruim drie keer meer dan eerder gepland, aldus interne bronnen bij Nvidia en Amazon zelf.
+      </p>
+      <p>
+        De uitbreiding is niet alleen een kwestie van meer chips, maar ook van langdurige samenwerking. Amazon investeert daarnaast in aangepaste infrastructuur om de chips optimaal te benutten voor eigen AI-diensten en externe klanten. Concurrenten zoals Microsoft en Google volgen deze beweging met vergelijkbare strategieën.
+      </p>
+      <p>
+        De vraag naar rekenkracht voor AI-modellen groeit harder dan verwacht. Experts wijzen op de snelle adoptie van generatieve AI in sectoren als gezondheidszorg, logistiek en retail, wat deze investeringen noodzakelijk maakt.
+      </p>
+    </>
+  ),
   'ux-belangrijker-voor-seo-dan-gedacht': (
     <>
       <p className="lead-para">
@@ -7462,6 +7475,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'amazon-verdubbelt-nvidia-chiporders-door-explosieve-vraag-naar-ai-infrastructuur':
+    "Voor bedrijven die afhankelijk zijn van cloudinfrastructuur of AI-toepassingen wordt het belang van schaalbare rekenkracht duidelijk. De keuze voor leveranciers als Nvidia en AWS kan een strategische beslissing worden die jarenlang meegaat. Tegelijkertijd neemt de druk toe om investeringen in technologie af te stemmen op werkelijke groeikansen, zonder overcapaciteit.",
   'ux-belangrijker-voor-seo-dan-gedacht':
     "Voor bedrijven betekent dit dat SEO niet langer alleen draait om keywords en backlinks. Een sterke UX wordt een directe rankingfactor die je concurrentievoordeel kan opleveren. Het loont om regelmatig de Core Web Vitals te checken en gebruikersgedrag in tools zoals Hotjar of GA4 te analyseren. Kleine aanpassingen aan laadtijden of navigatie kunnen al snel leiden tot meetbare resultaten.",
   'perplexity-lokale-ai-actie':
