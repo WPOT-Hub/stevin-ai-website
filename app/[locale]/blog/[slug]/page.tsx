@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'nieuwe-ecommerce-tools-augustus-2026': (
+    <>
+      <p className="lead-para">
+        Drie nieuwe tools richten zich specifiek op pop-upwinkels: een plug-and-play kassasysteem voor tijdelijke locaties, een module om klantgegevens direct te synchroniseren met CRM-systemen en een oplossing om voorraadniveaus realtime te monitoren via een dashboard. Daarnaast lanceert een ontwikkelaar een service die abonneelijsten automatisch opschont en valideert om bouncepercentages te verlagen.
+      </p>
+      <p>
+        Voor webshops komen er drie nieuwe site-builders beschikbaar: één met ingebouwde A/B-testtools voor prijsstrategieën, een tweede met drag-and-drop functionaliteit voor AR-productvisualisaties en een derde die gebruikmaakt van AI om productbeschrijvingen automatisch te genereren. Dronebezorgingsdiensten breiden uit met geïntegreerde tracking voor lokale winkels, terwijl livestreaming-platforms nu ook directe aankoopknoppen in video’s integreren.
+      </p>
+      <p>
+        Virtuele try-on technologie krijgt een upgrade met tools die niet alleen gezichtsherkenning gebruiken maar ook lichaamsmetingen kunnen doorgeven aan shoppers. Daarnaast introduceert een bedrijf een oplossing om retourzendingen te automatiseren via geavanceerde barcode-scanners die direct labels genereren. Tot slot komt er een betaalde dienst die bedrijven helpt bij het opzetten van hybride verkoopmodellen, zoals click-and-collect of afhalen bij lokale partners.
+      </p>
+    </>
+  ),
   'flipboard-neemt-graze-over': (
     <>
       <p className="lead-para">
@@ -7488,6 +7501,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'nieuwe-ecommerce-tools-augustus-2026':
+    "Voor ondernemers die hun online verkoop willen opschalen of verbeteren, biedt deze bundel tools vooral praktische oplossingen voor knelpunten zoals retourbeheer, klantdata en fysieke verkoopmomenten. De focus op automatisering en integratie met bestaande systemen kan helpen om operationele kosten te verlagen en de klantreis soepeler te maken. Tegelijkertijd is het belangrijk om de meetdata achter deze tools goed te monitoren: niet elke oplossing levert direct meetbare uplift op zonder aanpassingen in de strategie.",
   'flipboard-neemt-graze-over':
     "Voor bedrijven die werken met open sociale netwerken biedt deze overname een kans om hun strategie aan te passen. Het benadrukt het belang van privacyvriendelijke advertentietechnieken, een trend die zich de komende jaren alleen maar zal versterken. Bedrijven doen er goed aan om nu al na te denken over hoe ze hun data- en contentstrategie kunnen aanpassen aan deze ontwikkelingen.",
   'amazon-verdubbelt-nvidia-chiporders-door-explosieve-vraag-naar-ai-infrastructuur':
