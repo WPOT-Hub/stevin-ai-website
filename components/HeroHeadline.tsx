@@ -21,13 +21,13 @@ const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; a
   nl: {
     a: { eyebrow: 'Voor bedrijven die betalen voor marketing', line: 'Elke maand een marketingfactuur.', accent: 'Geen idee wat ze ervoor gedaan hebben.' },
     b: { eyebrow: 'Kijk zelf mee, het staat er gewoon', line: 'Google weet wie de eigenaar is van jouw data.', accent: 'Jij ook?' },
-    c: { eyebrow: 'Groeien met grip', line: 'Marketing die elke maand beter wordt.', accent: 'En alles blijft van jou.' },
+    c: { eyebrow: 'Grip op je marketing', line: 'Marketing die elke maand beter wordt.', accent: 'En alles blijft van jou.' },
     d: { eyebrow: 'De AI-laag over je marketing en sales', line: 'Je eigen data.', accent: 'Je eigen marketing-brein.' },
   },
   en: {
     a: { eyebrow: 'For companies that pay for marketing', line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
     b: { eyebrow: 'See for yourself, it is right there', line: 'Google knows who owns your data.', accent: 'Do you?' },
-    c: { eyebrow: 'Growth with grip', line: 'Marketing that gets better every month.', accent: 'And everything stays yours.' },
+    c: { eyebrow: 'Grip on your marketing', line: 'Marketing that gets better every month.', accent: 'And everything stays yours.' },
     d: { eyebrow: 'The AI layer over your marketing and sales', line: 'Your own data.', accent: 'Your own marketing brain.' },
   },
 }
