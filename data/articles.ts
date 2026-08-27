@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'amazon-verdubbelt-nvidia-chiporders-door-explosieve-vraag-naar-ai-infrastructuur',
+    format: 'dispatch' as const,
+    edition: '440',
+    category: 'Tech',
+    title: "Amazon verdubbelt Nvidia-chiporders door AI-groei",
+    dek: "Amazon bestelt 2 miljoen extra Nvidia-chips voor haar datacenters om aan de groeiende vraag naar AI-toepassingen te voldoen.",
+    publishedAt: '2026-08-27',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Amazon verdubbelt Nvidia-chiporders door AI-groei",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ux-belangrijker-voor-seo-dan-gedacht',
     format: 'dispatch' as const,
     edition: '439',
