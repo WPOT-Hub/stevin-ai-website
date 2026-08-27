@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'flipboard-neemt-graze-over',
+    format: 'dispatch' as const,
+    edition: '441',
+    category: 'Platform',
+    title: "Flipboard koopt Graze om open social web te monetariseren",
+    dek: "Flipboard neemt de feed-builder Graze over, om privacyvriendelijke advertentietechnieken en creator-monetizatiemogelijkheden toe te voegen aan zijn netwerk.",
+    publishedAt: '2026-08-27',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Flipboard koopt Graze om open social web te monetariseren",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'amazon-verdubbelt-nvidia-chiporders-door-explosieve-vraag-naar-ai-infrastructuur',
     format: 'dispatch' as const,
     edition: '440',
