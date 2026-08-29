@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'neocloud-lambda-haalt-1-miljard-op-voor-chips',
+    format: 'dispatch' as const,
+    edition: '448',
+    category: 'Finance',
+    title: "Neocloud Lambda haalt $1 miljard op om Nvidia-chips te kopen",
+    dek: "Neocloud Lambda leent $1 miljard om duizenden Nvidia AI-chips te kopen en door te verkopen aan Microsoft.",
+    publishedAt: '2026-08-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'FINANCE',
+    posterTopic: "Neocloud Lambda haalt $1 miljard op om Nvidia-chips te kopen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'anthropic-plaatst-specificatie-voor-koppeling-ai-agenten-aan-labapparatuur-en-robots',
     format: 'dispatch' as const,
     edition: '447',
