@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'anthropic-lanceert-hardware-standaard-voor-ai-agenten': (
+    <>
+      <p className="lead-para">
+        Anthropic heeft een nieuwe standaard geïntroduceerd die als interface fungeert tussen AI-agenten en fysieke apparaten. Deze driver-interface maakt het mogelijk dat AI-systemen apparaten zoals robots, sensoren of industriële machines kunnen aansturen zonder handmatige tussenkomst. De standaard is ontworpen om compatibiliteit te garanderen tussen verschillende merken en systemen, aldus het bedrijf.
+      </p>
+      <p>
+        De technologie richt zich op het overbruggen van de kloof tussen software en hardware. Met deze standaard kunnen AI-agenten niet alleen commando’s geven, maar ook realtime data uit apparaten ontvangen en verwerken. Dit opent mogelijkheden voor automatisering in sectoren als logistiek, productie en zorg, waar snelle besluitvorming essentieel is.
+      </p>
+      <p>
+        De standaard wordt openbaar gemaakt, zodat ontwikkelaars en fabrikanten deze kunnen integreren in hun eigen systemen. Anthropic hoopt hiermee een ecosysteem te creëren waarin AI-agenten naadloos samenwerken met fysieke infrastructuur.
+      </p>
+    </>
+  ),
   'nieuwe-ecommerce-tools-augustus-2026': (
     <>
       <p className="lead-para">
@@ -7501,6 +7514,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'anthropic-lanceert-hardware-standaard-voor-ai-agenten':
+    "Voor bedrijven die werken met automatisering of robotica biedt deze standaard een concrete stap voorwaarts. Het vermindert de complexiteit van integratie tussen verschillende systemen en kan leiden tot efficiënter beheer van apparatuur. Tegelijkertijd roept het vragen op over veiligheid en controle: wie is verantwoordelijk als een AI-agent een apparaat verkeerd aanstuurt? Dit zal in de praktijk moeten worden uitgezocht.",
   'nieuwe-ecommerce-tools-augustus-2026':
     "Voor ondernemers die hun online verkoop willen opschalen of verbeteren, biedt deze bundel tools vooral praktische oplossingen voor knelpunten zoals retourbeheer, klantdata en fysieke verkoopmomenten. De focus op automatisering en integratie met bestaande systemen kan helpen om operationele kosten te verlagen en de klantreis soepeler te maken. Tegelijkertijd is het belangrijk om de meetdata achter deze tools goed te monitoren: niet elke oplossing levert direct meetbare uplift op zonder aanpassingen in de strategie.",
   'flipboard-neemt-graze-over':
