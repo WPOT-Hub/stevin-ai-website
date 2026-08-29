@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'meta-sluit-privacy-lek-in-smartglasses-en-start-nieuwe-campagne',
+    format: 'dispatch' as const,
+    edition: '446',
+    category: 'Tech',
+    title: "Meta sluit privacylek in smartglasses en lanceert nieuwe campagne",
+    dek: "Meta lost een privacylek op in de AI-glasses door de camera direct uit te schakelen als de LED wordt afgedekt tijdens opname.",
+    publishedAt: '2026-08-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Meta sluit privacylek in smartglasses en lanceert nieuwe campagne",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'hugging-face-lanceert-microduck-open-source-robot-voor-399',
     format: 'dispatch' as const,
     edition: '445',
