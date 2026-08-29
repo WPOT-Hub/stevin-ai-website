@@ -1513,6 +1513,31 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-tools-onveilig-door-blind-trust-in-repositories': (
+    <>
+      <p className="lead-para">
+        Stel je voor: je opent een nieuw project in je favoriete AI-assistent, typt een simpele opdracht en gaat koffie halen. Ondertussen stuurt die tool stiekem je API-sleutels naar een onbekende server, zonder dat jij er iets van doorhebt. Dat is precies wat er gebeurde met gebruikers van Claude Code tot vorige maand. Een kwetsbaarheid in de manier waarop het programma repositories laadt, maakte het mogelijk dat kwaadwillende ontwikkelaars met een paar regels code toegang kregen tot gevoelige informatie – voordat de gebruiker überhaupt de kans kreeg om de tool te vertrouwen.
+      </p>
+      <p>
+        De fout zat niet in de AI zelf, maar in het proces van vertrouwen. Als je een repository opent waarin een aanvaller een malafide instellingenbestand heeft geplaatst, kon Claude Code al API-verzoeken doen voordat het schermpje verscheen met de vraag: "Vertrouw je dit project?". In die paar seconden tussen het openen van de map en het bevestigen van vertrouwen, werden niet alleen commando’s uitgevoerd, maar ook gevoelige sleutels doorgestuurd. Het ergste? Gebruikers die automatisch updaten hadden niets te duchten – zij kregen de patch al binnen voordat ze er zelf erg in hadden.
+      </p>
+      <p>
+        Dit voorval laat zien hoe snel automatisering en gemak kunnen leiden tot blind vertrouwen. Ontwikkelaars die dagelijks met tientallen tools werken, hebben niet altijd tijd om elke update of instelling te checken. Toch is dat precies wat hier misging: software die zo intuïtief is ontworpen dat gebruikers denken veilig te zijn, terwijl achter de schermen hun data al wordt afgevoerd. Het is alsof je een deur op slot doet maar vergeet te controleren of het raam openstaat.
+      </p>
+      <p>
+        De kwetsbaarheid had ernstiger kunnen zijn als meer tools zo’n automatische uitvoering hadden gehad. Gelukkig was de impact beperkt tot API-sleutels – geen geheime bedrijfsdata of klantinformatie – maar dat neemt niet weg dat het principe zorgwekkend is. Hoeveel andere AI-tools lopen rond met vergelijkbare blinde vlekken? En hoe vaak wordt er wel eens een cruciale update overgeslagen omdat iemand denkt dat "het wel goed zit"?
+      </p>
+      <p>
+        Het probleem ligt niet alleen bij de makers van deze tools. Ook organisaties dragen verantwoordelijkheid door medewerkers te trainen in securitybewustzijn zonder hen daadwerkelijk toegang te geven tot de juiste mechanismes om risico’s te mitigeren. Veel bedrijven vertrouwen blind op automatische updates of standaardinstellingen, terwijl juist zij zouden moeten eisen dat elke tool – zeker degene die code genereert of data verwerkt – onderworpen wordt aan strikte audits.
+      </p>
+      <p>
+        Er is nog een andere kant aan dit verhaal: de cultuur binnen tech-teams. Als ontwikkelaars gewend zijn aan tools die "snel resultaat" leveren zonder gedoe, dan is de drempel om kritisch te blijven laag. Maar juist daarom moeten leidinggevenden en IT-afdelingen deze discussie prioriteren. Niet alleen door patches uit te rollen, maar door medewerkers bewust te maken van de risico’s van blind vertrouwen in technologie.
+      </p>
+      <p>
+        Tot slot blijft er één harde les hangen: automatisering vervangt geen menselijke controle. Zelfs als een tool beweert veilig te zijn omdat hij "vertrouwd" moet worden, betekent dat niet dat er geen ruimte is voor misbruik. De vraag is niet óf er ooit weer zo’n kwetsbaarheid opduikt, maar wanneer – en of we dan klaar zijn om ermee om te gaan.
+      </p>
+    </>
+  ),
   'neocloud-lambda-haalt-1-miljard-op-voor-chips': (
     <>
       <p className="lead-para">
@@ -7553,6 +7578,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-tools-onveilig-door-blind-trust-in-repositories':
+    "Bij Stevin zien we deze kwetsbaarheid als symptoom van een groter probleem: het onkritisch adopteren van AI-tools zonder adequate governance. Onze klanten merken steeds vaker dat teams zich laten verleiden door snelle oplossingen die uiteindelijk meer risico dan winst opleveren. Het gaat niet om technologie zelf, maar om het gebrek aan structuur rondom implementatie en monitoring.\n\nWij adviseren organisaties om allereerst een strikte policy op te stellen voor AI-gebruik binnen development workflows. Dat betekent niet alleen technische checks zoals dependency scanning en regelmatige audits, maar ook heldere afspraken over wie verantwoordelijk is voor updates en wie toegang mag verlenen tot bedrijfskritieke data.\n\nDaarnaast pleiten we voor transparantie in tooling: als een AI-assistent gevoelige informatie kan verwerken zonder duidelijke waarschuwingen vooraf, dan moet dat onderdeel zijn van de keuzeprocedure bij aanschaf of implementatie.\n\nTot slot benadrukken we het belang van menselijke tussenkomst in processen waar dataflow cruciaal is. Automatisering mag efficiënt zijn, maar bij beslissingen met impact – zoals toegang tot API’s of interne systemen – moet altijd sprake zijn van expliciete goedkeuring door bevoegden.\n\nKortom: technologie moet dienen als hulpmiddel, niet als vervanging voor verstandig handelen.",
   'neocloud-lambda-haalt-1-miljard-op-voor-chips':
     "Voor ondernemers die actief zijn in tech of financiële dienstverlening laat deze deal zien hoe snel kapitaalstromen kunnen verschuiven naar nieuwe markten. Het benadrukt ook het belang van risicomanagement: wie meegaat in deze hype, moet zich bewust zijn van de mogelijke valkuilen, zoals overcapaciteit of plotselinge marktverschuivingen. Voor bedrijven die afhankelijk zijn van zeldzame hardware kan samenwerking met gespecialiseerde partijen zoals Neocloud Lambda een strategische oplossing bieden.",
   'anthropic-plaatst-specificatie-voor-koppeling-ai-agenten-aan-labapparatuur-en-robots':
