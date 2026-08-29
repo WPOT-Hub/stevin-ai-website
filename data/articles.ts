@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-agents-performance-management',
+    format: 'dispatch' as const,
+    edition: '444',
+    category: 'Operations',
+    title: "Je AI-agent is een werknemer die je moet managen",
+    dek: "Zonder prestatiemetingen en feedbackloop draait je AI-agent straks op automatische piloot, met onverwachte kosten en risico’s.",
+    publishedAt: '2026-08-29',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'OPERATIONS',
+    posterTopic: "Je AI-agent is een werknemer die je moet managen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'anthropic-lanceert-hardware-standaard-voor-ai-agenten',
     format: 'dispatch' as const,
     edition: '443',
