@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'meta-sluit-privacy-lek-in-smartglasses-en-start-nieuwe-campagne': (
+    <>
+      <p className="lead-para">
+        De camera in Meta’s AI-ondersteunde smartglasses stopt nu automatisch met filmen zodra de voorste LED wordt afgedekt. Dit ondanks dat het apparaat nog draait, waardoor gebruikers tot nu toe ongemerkt konden blijven opnemen. De aanpassing volgt na kritiek over de zogeheten ‘pervert glasses’-reputatie van het product.
+      </p>
+      <p>
+        Meta introduceert daarnaast een nieuwe marketingcampagne om het imago van de glasses te verbeteren. De campagne benadrukt vooral privacy en controle, aldus Alex Himel, vicepresident augmented reality bij Meta. Hij schrijft in een bericht op Threads dat gebruikers nu beter beschermd zijn tegen onbedoelde opnames.
+      </p>
+      <p>
+        De update geldt voor alle bestaande modellen van de smartglasses en is beschikbaar via een software-update. Gebruikers hoeven geen nieuwe hardware aan te schaffen.
+      </p>
+    </>
+  ),
   'anthropic-lanceert-hardware-standaard-voor-ai-agenten': (
     <>
       <p className="lead-para">
@@ -7514,6 +7527,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'meta-sluit-privacy-lek-in-smartglasses-en-start-nieuwe-campagne':
+    "Voor bedrijven die innovatieve technologie introduceren, is dit een duidelijke les over het belang van proactieve aanpassingen bij ethische of juridische kwesties. Een snelle reactie kan reputatieschade beperken en vertrouwen herstellen. Tegelijkertijd laat Meta zien hoe marketing kan worden ingezet om negatieve perceptie te keren – mits de beloftes ook daadwerkelijk worden nageleefd.",
   'anthropic-lanceert-hardware-standaard-voor-ai-agenten':
     "Voor bedrijven die werken met automatisering of robotica biedt deze standaard een concrete stap voorwaarts. Het vermindert de complexiteit van integratie tussen verschillende systemen en kan leiden tot efficiënter beheer van apparatuur. Tegelijkertijd roept het vragen op over veiligheid en controle: wie is verantwoordelijk als een AI-agent een apparaat verkeerd aanstuurt? Dit zal in de praktijk moeten worden uitgezocht.",
   'nieuwe-ecommerce-tools-augustus-2026':
