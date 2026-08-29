@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-tools-onveilig-door-blind-trust-in-repositories',
+    format: 'dispatch' as const,
+    edition: '449',
+    category: 'Platform',
+    title: "Wie controleert de AI die jouw code schrijft?",
+    dek: "Een kwetsbaarheid in Claude Code laat zien hoe gemakkelijk ontwikkelaars hun gegevens prijsgeven aan kwaadwillenden – en waarom automatische updates geen garantie zijn voor veiligheid.",
+    publishedAt: '2026-08-29',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Wie controleert de AI die jouw code schrijft?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'neocloud-lambda-haalt-1-miljard-op-voor-chips',
     format: 'dispatch' as const,
     edition: '448',
