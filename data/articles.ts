@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'anthropic-lanceert-hardware-standaard-voor-ai-agenten',
+    format: 'dispatch' as const,
+    edition: '443',
+    category: 'Tech',
+    title: "Anthropic introduceert standaard om AI-agenten fysieke apparaten te laten besturen",
+    dek: "Een nieuwe hardware-standaard van Anthropic moet AI-agenten in staat stellen apparaten direct te besturen en met elkaar te laten communiceren.",
+    publishedAt: '2026-08-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Anthropic introduceert standaard om AI-agenten fysieke apparaten te laten besturen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'nieuwe-ecommerce-tools-augustus-2026',
     format: 'dispatch' as const,
     edition: '442',
