@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'hugging-face-lanceert-microduck-open-source-robot-voor-399',
+    format: 'dispatch' as const,
+    edition: '445',
+    category: 'Tech',
+    title: "Hugging Face brengt open-source robot Microduck uit voor 399 euro",
+    dek: "De Microduck van Hugging Face is een goedkope, programmeerbare robot die bedrijven kunnen inzetten voor prototyping en educatieve doeleinden.",
+    publishedAt: '2026-08-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Hugging Face brengt open-source robot Microduck uit voor 399 euro",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-agents-performance-management',
     format: 'dispatch' as const,
     edition: '444',
