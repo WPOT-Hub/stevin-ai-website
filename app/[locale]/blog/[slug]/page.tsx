@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'anthropic-plaatst-specificatie-voor-koppeling-ai-agenten-aan-labapparatuur-en-robots': (
+    <>
+      <p className="lead-para">
+        Anthropic heeft een open specificatie gepubliceerd waarmee AI-agenten rechtstreeks kunnen praten met lab-apparatuur, robots en andere fysieke systemen. De zogeheten *Plumbing Specification* werkt als een universele adapter: het vertaalt commando’s van de AI naar de juiste acties op machines zoals centrifuges, pompen of industriële armen.
+      </p>
+      <p>
+        Met deze standaard hoeven bedrijven geen maatwerkoplossingen meer te bouwen om AI in te zetten voor taken zoals procesoptimalisatie, onderhoudsvoorspelling of automatische kalibratie. De specificatie is ontworpen voor betrouwbaarheid en veiligheid, zodat AI niet onbedoeld schade kan aanrichten in gevoelige omgevingen.
+      </p>
+      <p>
+        De aankondiging volgt op groeiende vraag naar snellere integratie van AI in operationele processen. Bedrijven experimenteren nu al met AI voor taken variërend van chemische analyse tot logistieke robotica, maar vaak blijft de koppeling tussen software en hardware een drempel.
+      </p>
+    </>
+  ),
   'meta-sluit-privacy-lek-in-smartglasses-en-start-nieuwe-campagne': (
     <>
       <p className="lead-para">
@@ -7527,6 +7540,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'anthropic-plaatst-specificatie-voor-koppeling-ai-agenten-aan-labapparatuur-en-robots':
+    "Voor ondernemers die werken met geautomatiseerde systemen biedt dit een kans om sneller nieuwe toepassingen te testen zonder hoge ontwikkelkosten. Tegelijkertijd roept het vragen op over controle: wie is verantwoordelijk als een AI-agent een machine verkeerd aanstuurt? Bedrijven doen er goed aan nu al afspraken te maken over governance voordat ze deze technologie breed inzetten.",
   'meta-sluit-privacy-lek-in-smartglasses-en-start-nieuwe-campagne':
     "Voor bedrijven die innovatieve technologie introduceren, is dit een duidelijke les over het belang van proactieve aanpassingen bij ethische of juridische kwesties. Een snelle reactie kan reputatieschade beperken en vertrouwen herstellen. Tegelijkertijd laat Meta zien hoe marketing kan worden ingezet om negatieve perceptie te keren – mits de beloftes ook daadwerkelijk worden nageleefd.",
   'anthropic-lanceert-hardware-standaard-voor-ai-agenten':
