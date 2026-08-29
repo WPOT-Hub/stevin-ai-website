@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'neocloud-lambda-haalt-1-miljard-op-voor-chips': (
+    <>
+      <p className="lead-para">
+        Het Nederlandse Neocloud Lambda heeft een lening van $1 miljard afgesloten om extra Nvidia AI-chips aan te schaffen. De chips worden vervolgens verhuurd aan Microsoft, dat ze gebruikt voor zijn datacenters en cloudinfrastructuur. Deze deal is onderdeel van een grotere trend waarbij bedrijven massaal investeren in AI-hardware, ondanks de hoge kosten.
+      </p>
+      <p>
+        De lening is de nieuwste in een reeks van soortgelijke financiële transacties die de afgelopen maanden zijn afgesloten. Neocloud Lambda specialiseert zich in het faciliteren van toegang tot dure AI-chips voor grote techbedrijven zonder dat zij zelf de volledige aanschafkosten hoeven te dragen. Dit model maakt het mogelijk om snel te schalen naar de groeiende vraag naar AI-capaciteit.
+      </p>
+      <p>
+        De transactie benadrukt de financiële druk die gepaard gaat met de AI-race. Ondanks de hoge rente en risico’s op overcapaciteit blijven investeerders bereid om geld te steken in deze sector, omdat de verwachting is dat de vraag naar AI-diensten verder zal toenemen.
+      </p>
+    </>
+  ),
   'anthropic-plaatst-specificatie-voor-koppeling-ai-agenten-aan-labapparatuur-en-robots': (
     <>
       <p className="lead-para">
@@ -7540,6 +7553,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'neocloud-lambda-haalt-1-miljard-op-voor-chips':
+    "Voor ondernemers die actief zijn in tech of financiële dienstverlening laat deze deal zien hoe snel kapitaalstromen kunnen verschuiven naar nieuwe markten. Het benadrukt ook het belang van risicomanagement: wie meegaat in deze hype, moet zich bewust zijn van de mogelijke valkuilen, zoals overcapaciteit of plotselinge marktverschuivingen. Voor bedrijven die afhankelijk zijn van zeldzame hardware kan samenwerking met gespecialiseerde partijen zoals Neocloud Lambda een strategische oplossing bieden.",
   'anthropic-plaatst-specificatie-voor-koppeling-ai-agenten-aan-labapparatuur-en-robots':
     "Voor ondernemers die werken met geautomatiseerde systemen biedt dit een kans om sneller nieuwe toepassingen te testen zonder hoge ontwikkelkosten. Tegelijkertijd roept het vragen op over controle: wie is verantwoordelijk als een AI-agent een machine verkeerd aanstuurt? Bedrijven doen er goed aan nu al afspraken te maken over governance voordat ze deze technologie breed inzetten.",
   'meta-sluit-privacy-lek-in-smartglasses-en-start-nieuwe-campagne':
