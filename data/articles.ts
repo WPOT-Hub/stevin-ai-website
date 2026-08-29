@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'anthropic-plaatst-specificatie-voor-koppeling-ai-agenten-aan-labapparatuur-en-robots',
+    format: 'dispatch' as const,
+    edition: '447',
+    category: 'Tech',
+    title: "Anthropic stelt standaard voor om AI direct in te zetten bij labwerk en robots",
+    dek: "Een nieuwe specificatie van Anthropic maakt het mogelijk om AI-agenten direct te laten communiceren met laboratoriumapparatuur en industriële robots.",
+    publishedAt: '2026-08-29',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Anthropic stelt standaard voor om AI direct in te zetten bij labwerk en robots",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'meta-sluit-privacy-lek-in-smartglasses-en-start-nieuwe-campagne',
     format: 'dispatch' as const,
     edition: '446',
