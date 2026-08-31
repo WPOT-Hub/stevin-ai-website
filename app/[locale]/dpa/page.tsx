@@ -25,7 +25,7 @@ export default async function DPAPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = isEn ? '24 August 2026' : '24 augustus 2026'
+  const lastUpdated = isEn ? '31 August 2026' : '31 augustus 2026'
 
   return (
     <main className="bg-surface text-primary">
@@ -141,9 +141,10 @@ function DpaDutch() {
 
       <h2>8. Datalekken</h2>
       <p>
-        Stevin meldt elk vermoed of vastgesteld datalek binnen 24 uur aan de Klant via
-        het opgegeven contactadres, met de informatie nodig voor een eventuele melding
-        aan de AP en aan betrokkenen.
+        Stevin meldt elk vermoed of vastgesteld datalek zonder onredelijke vertraging
+        na kennisname aan de Klant, via het opgegeven contactadres, met de informatie
+        die de Klant nodig heeft voor een eventuele melding aan de Autoriteit
+        Persoonsgegevens en aan betrokkenen.
       </p>
 
       <h2>9. Audit</h2>
@@ -245,8 +246,9 @@ function DpaEnglish() {
       <h2>8. Data breaches</h2>
       <p>
         Stevin notifies Customer of any suspected or confirmed personal data breach
-        within 24 hours, with the information required for any onward notification to
-        the supervisory authority or data subjects.
+        without undue delay after becoming aware of it, via the designated contact
+        address, with the information Customer needs for any onward notification to the
+        Dutch Data Protection Authority or to data subjects.
       </p>
 
       <h2>9. Audit</h2>

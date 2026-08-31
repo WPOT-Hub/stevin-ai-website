@@ -88,7 +88,13 @@
     "alternatief": "Alternatieven",
     "woordenboek": "Woordenboek",
     "svc_ads_uitbesteden": "Google Ads uitbesteden",
-    "svc_social_uitbesteden": "Social media uitbesteden"
+    "svc_social_uitbesteden": "Social media uitbesteden",
+    "juridisch_heading": "Juridisch",
+    "legal_terms": "Algemene Voorwaarden",
+    "legal_dpa": "Verwerkersovereenkomst",
+    "legal_privacy": "Privacyverklaring",
+    "legal_nda": "Geheimhoudingsovereenkomst",
+    "company_details": "Stevin.AI B.V. · KVK 42138941 · Btw NL869893610B01"
   },
   "trust": {
     "heading": "Veilig by default.",

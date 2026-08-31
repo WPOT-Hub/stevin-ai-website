@@ -50,6 +50,16 @@ export default function Footer() {
       { label: 'Google Ad Grants (NL)', href: '/google-ad-grants-nederland' },
       { label: t('bedrijf_contact'), href: '/contact' },
     ],
+    // Juridisch. Deze pagina's bestonden al maar waren alleen bereikbaar als je
+    // de URL kende. Voor "ter hand stellen" bij het sluiten van een overeenkomst
+    // (art. 6:233 sub b en 6:234 BW) en voor de clickwrap in het klantportaal is
+    // dat te mager: ze horen sitewide vindbaar te zijn.
+    juridisch: [
+      { label: t('legal_terms'), href: '/terms' },
+      { label: t('legal_dpa'), href: '/dpa' },
+      { label: t('legal_privacy'), href: '/privacy' },
+      { label: t('legal_nda'), href: '/nda' },
+    ],
     integraties: [
       { label: t('int_advertising'), href: '/integraties/advertising' },
       { label: t('int_analytics'), href: '/integraties/analytics-tracking' },
@@ -70,7 +80,7 @@ export default function Footer() {
         {/* Op mobiel twee kolommen naast elkaar. Onder elkaar was de footer
             2.355px, bijna drie schermen, en daarmee het grootste blok van de
             hele site. Niets verbergen, alleen anders neerzetten. */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-10 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block">
@@ -132,6 +142,27 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Juridisch */}
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
+              {t('juridisch_heading')}
+            </h4>
+            <ul className="space-y-3">
+              {footerLinks.juridisch.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors duration-200">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              {/* Cookie-instellingen hoort inhoudelijk bij dit rijtje en stond
+                  los onderin. */}
+              <li>
+                <ConsentSettingsButton />
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -139,7 +170,12 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Stevin.AI, {t('copyright')}
           </p>
           <div className="flex items-center gap-4">
-            <ConsentSettingsButton />
+            {/* Artikel 3:15d BW: naam, KVK- en btw-nummer horen op een zakelijke
+                site makkelijk, rechtstreeks en permanent vindbaar te zijn. De
+                onderbalk staat op elke pagina, dus daar. */}
+            <p className="text-xs text-slate-500">
+              {t('company_details')}
+            </p>
             <span className="text-xs text-slate-600">|</span>
             <p className="text-xs text-slate-500">
               {t('cities')}

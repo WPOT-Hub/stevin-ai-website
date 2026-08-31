@@ -88,7 +88,13 @@
     "alternatief": "Alternatives",
     "woordenboek": "Glossary",
     "svc_ads_uitbesteden": "Outsource Google Ads",
-    "svc_social_uitbesteden": "Outsource social media"
+    "svc_social_uitbesteden": "Outsource social media",
+    "juridisch_heading": "Legal",
+    "legal_terms": "Terms of Service",
+    "legal_dpa": "Data Processing Agreement",
+    "legal_privacy": "Privacy Statement",
+    "legal_nda": "Non-Disclosure Agreement",
+    "company_details": "Stevin.AI B.V. · CoC 42138941 · VAT NL869893610B01"
   },
   "trust": {
     "heading": "Secure by default.",
