@@ -110,7 +110,7 @@ function DpaDutch() {
         <li><strong>Supabase</strong> (database hosting, EU regio)</li>
         <li><strong>AWS</strong> (compute en object storage, EU-Frankfurt)</li>
         <li><strong>Vercel</strong> (frontend hosting, EU regio waar mogelijk)</li>
-        <li><strong>Anthropic, OpenAI, Mistral</strong> (AI inference, met data-processing addenda; geen training op klantdata)</li>
+        <li><strong>Anthropic, OpenAI, Mistral, Google</strong> (AI inference, met data-processing addenda; geen training op klantdata)</li>
         <li><strong>Resend</strong> (transactionele e-mail)</li>
         <li><strong>Slack</strong> (notificatiekanaal)</li>
       </ul>
@@ -218,7 +218,7 @@ function DpaEnglish() {
         <li><strong>Supabase</strong> (database hosting, EU region)</li>
         <li><strong>AWS</strong> (compute and object storage, EU-Frankfurt)</li>
         <li><strong>Vercel</strong> (frontend hosting, EU region where possible)</li>
-        <li><strong>Anthropic, OpenAI, Mistral</strong> (AI inference, under data-processing addenda; no training on Customer data)</li>
+        <li><strong>Anthropic, OpenAI, Mistral, Google</strong> (AI inference, under data-processing addenda; no training on Customer data)</li>
         <li><strong>Resend</strong> (transactional email)</li>
         <li><strong>Slack</strong> (notification channel)</li>
       </ul>
