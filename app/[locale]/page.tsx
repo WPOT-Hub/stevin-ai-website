@@ -24,7 +24,7 @@ const COPY = {
     cta_primary: 'Start de diagnose',
     cta_secondary: 'Kijk zelf mee',
     cta_micro: 'Eerst de diagnose op jouw eigen data. Daarna pas een voorstel.',
-    chips: ['3.667 adverteerders in beeld', 'Signalen, dag en nacht'],
+    chips: ['1,9 mln advertenties in beeld', 'Signalen, dag en nacht'],
     connectors_label: 'Leest mee op al je kanalen',
 
     herken_eyebrow: 'Herken je dit?',
@@ -124,10 +124,11 @@ const COPY = {
     research_h2: 'Wij wijzen je op wat er al die tijd te zien was.',
     research_chip: 'Teller loopt door',
     research_stats: [
-      { v: '3.667', l: 'Nederlandse en Belgische adverteerders die geen eigenaar zijn van hun eigen campagnedata' },
-      { v: '1,9 mln', l: 'advertenties van die bedrijven, doorlopend gevolgd in het openbare register van Google' },
-      { v: '600+', l: 'concurrent-advertenties in beeld via Radar, doorlopend gevolgd' },
+      { v: '1,9 mln', l: 'advertenties van Nederlandse en Belgische bedrijven, doorlopend gevolgd in het openbare register van Google' },
     ],
+    research_cta_h: 'Wil je weten hoe het bij jullie zit?',
+    research_cta_b: 'Wij kijken na wie er in het register als betaler achter jouw advertenties staat, en wat dat betekent voor wie je data bezit.',
+    research_cta_link: 'Neem contact op',
     research_bron: 'Bron: doorlopend Stevin-onderzoek op het openbare transparantieregister van Google, Nederland en Belgie, stand 29 juli 2026. Wat dit wel en niet bewijst leggen we uit in de methode.',
     research_body: 'En dit is alleen nog maar Google. Meta, LinkedIn en TikTok tellen we hierna mee. Dit onderzoek loopt elke week door, en alles wat we vinden publiceren we met methode en al. Zo bouwen we het bewijs dat de markt anders kan.',
     research_link: 'Naar het onderzoek',
@@ -162,7 +163,7 @@ const COPY = {
     cta_primary: 'Start the diagnosis',
     cta_secondary: 'See for yourself',
     cta_micro: 'First the diagnosis, on your own data. Only then a proposal.',
-    chips: ['3,667 advertisers in view', 'Signals, day and night'],
+    chips: ['1.9 m ads in view', 'Signals, day and night'],
     connectors_label: 'Reads along on all your channels',
 
     herken_eyebrow: 'Sound familiar?',
@@ -253,9 +254,11 @@ const COPY = {
     research_h2: 'We point you to what was there to see all along.',
     research_chip: 'Counter keeps running',
     research_stats: [
-      { v: '3,667', l: 'Dutch and Belgian advertisers who do not own their own campaign data' },
-      { v: '1.9 m', l: 'ads from those companies, tracked continuously in Google\u2019s public register' },
+      { v: '1.9 m', l: 'ads from Dutch and Belgian companies, tracked continuously in Google\u2019s public register' },
     ],
+    research_cta_h: 'Want to know where you stand?',
+    research_cta_b: 'We check who the register lists as the payer behind your ads, and what that means for who owns your data.',
+    research_cta_link: 'Get in touch',
     research_bron: 'Source: ongoing Stevin research on Google\u2019s public transparency register for the Netherlands and Belgium, as of 29 July 2026. What this does and does not prove is explained in the method.',
     research_body: 'And this is only Google. Meta, LinkedIn and TikTok are counted next. This research runs every week, and everything we find is published, method included. That is how we build the proof that this market can work differently.',
     research_link: 'To the research',
@@ -687,21 +690,28 @@ export default async function HomePage({ params }: Props) {
             {c.research_h2}
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5 mb-8">
-            {c.research_stats.map((stat, i) => (
-              <div key={stat.v} className="rounded-[14px] border border-white/12 p-6 lg:p-7" style={{ background: 'rgba(255,255,255,0.04)' }}>
-                {i === 0 && (
-                  <span className="inline-flex items-center gap-2 text-[10.5px] font-display font-semibold text-[#5DA3FF] border border-[#5DA3FF]/30 rounded-full px-2.5 py-0.5 mb-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#5DA3FF] flex-shrink-0" aria-hidden="true" />
-                    {c.research_chip}
-                  </span>
-                )}
-                <p className="font-display font-extrabold text-white" style={{ fontSize: 'clamp(30px, 3.4vw, 42px)', letterSpacing: '-0.035em', lineHeight: '1.05' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 mb-8">
+            {c.research_stats.map((stat) => (
+              <div key={stat.v} className="rounded-[14px] border border-white/12 p-6 lg:p-8" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                <span className="inline-flex items-center gap-2 text-[10.5px] font-display font-semibold text-[#5DA3FF] border border-[#5DA3FF]/30 rounded-full px-2.5 py-0.5 mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#5DA3FF] flex-shrink-0" aria-hidden="true" />
+                  {c.research_chip}
+                </span>
+                <p className="font-display font-extrabold text-white" style={{ fontSize: 'clamp(44px, 6vw, 76px)', letterSpacing: '-0.04em', lineHeight: '1' }}>
                   {stat.v}
                 </p>
-                <p className="text-white/55 mt-3 leading-[1.5] m-0" style={{ fontSize: '13px' }}>{stat.l}</p>
+                <p className="text-white/55 mt-4 leading-[1.5] m-0" style={{ fontSize: '14px', maxWidth: '34ch' }}>{stat.l}</p>
               </div>
             ))}
+            <div className="rounded-[14px] border border-white/12 p-6 lg:p-8 flex flex-col justify-center" style={{ background: 'rgba(255,255,255,0.04)' }}>
+              <p className="font-display font-extrabold text-white m-0" style={{ fontSize: 'clamp(22px, 2.4vw, 28px)', letterSpacing: '-0.02em', lineHeight: '1.2' }}>
+                {c.research_cta_h}
+              </p>
+              <p className="text-white/55 mt-3 mb-6 leading-[1.5] m-0" style={{ fontSize: '14px' }}>{c.research_cta_b}</p>
+              <Link href="/contact" className="font-display font-semibold text-[#5DA3FF] text-[15px] inline-flex items-center gap-2 hover:gap-3 transition-all self-start">
+                {c.research_cta_link} <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </div>
           </div>
 
           <p className="text-white/35 text-[12.5px] mb-8 m-0">{c.research_bron}</p>
