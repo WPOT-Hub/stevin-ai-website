@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'anthropic-pledge-beter-modelbeheer',
+    format: 'dispatch' as const,
+    edition: '452',
+    category: 'Agents',
+    title: "Anthropic vraagt partners mee te werken aan strengere AI-controle",
+    dek: "Anthropic belooft strengere veiligheidsmaatregelen voor AI-modellen en roept partners op om mee te investeren in controlemechanismen.",
+    publishedAt: '2026-09-02',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'AGENTS',
+    posterTopic: "Anthropic vraagt partners mee te werken aan strengere AI-controle",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'anthropic-claude-fable-5-1-goedkoper-maar-is-het-beter',
     format: 'dispatch' as const,
     edition: '451',
