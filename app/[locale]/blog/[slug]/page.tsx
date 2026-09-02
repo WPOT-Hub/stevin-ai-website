@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'artifactory-cve-onder-aanval-door-ai-of-mensen': (
+    <>
+      <p className="lead-para">
+        Een nieuwe, onbeveiligde kwetsbaarheid in Artifactory maakt het mogelijk voor ongeauthenticeerde gebruikers om admin-tokens te genereren. Dit geeft volledige controle over de softwareopslagomgeving, aldus beveiligingsonderzoekers.
+      </p>
+      <p>
+        Sinds de ontdekking van de kwetsbaarheid zijn er al meerdere servers wereldwijd aangevallen. De aanvallen komen zowel van menselijke als van geautomatiseerde bronnen, mogelijk via AI-gestuurde tools die bekende kwetsbaarheden scannen.
+      </p>
+      <p>
+        De risico’s zijn hoog: via deze route kunnen aanvallers code manipuleren, data stelen of systemen platleggen. Bedrijven die Artifactory gebruiken wordt aangeraden direct updates uit te voeren en toegangscontroles te versterken.
+      </p>
+    </>
+  ),
   'ai-tools-onveilig-door-blind-trust-in-repositories': (
     <>
       <p className="lead-para">
@@ -7578,6 +7591,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'artifactory-cve-onder-aanval-door-ai-of-mensen':
+    "Dit incident laat zien hoe snel geautomatiseerde tools kwetsbaarheden opsporen en misbruiken. Voor bedrijven betekent dit dat beveiliging niet langer een ‘soms’-taak is, maar een continue prioriteit moet worden. Zeker bij software die essentieel is voor ontwikkelprocessen, zoals Artifactory, is proactieve monitoring noodzakelijk om blinde vlekken te voorkomen.",
   'ai-tools-onveilig-door-blind-trust-in-repositories':
     "Bij Stevin zien we deze kwetsbaarheid als symptoom van een groter probleem: het onkritisch adopteren van AI-tools zonder adequate governance. Onze klanten merken steeds vaker dat teams zich laten verleiden door snelle oplossingen die uiteindelijk meer risico dan winst opleveren. Het gaat niet om technologie zelf, maar om het gebrek aan structuur rondom implementatie en monitoring.\n\nWij adviseren organisaties om allereerst een strikte policy op te stellen voor AI-gebruik binnen development workflows. Dat betekent niet alleen technische checks zoals dependency scanning en regelmatige audits, maar ook heldere afspraken over wie verantwoordelijk is voor updates en wie toegang mag verlenen tot bedrijfskritieke data.\n\nDaarnaast pleiten we voor transparantie in tooling: als een AI-assistent gevoelige informatie kan verwerken zonder duidelijke waarschuwingen vooraf, dan moet dat onderdeel zijn van de keuzeprocedure bij aanschaf of implementatie.\n\nTot slot benadrukken we het belang van menselijke tussenkomst in processen waar dataflow cruciaal is. Automatisering mag efficiënt zijn, maar bij beslissingen met impact – zoals toegang tot API’s of interne systemen – moet altijd sprake zijn van expliciete goedkeuring door bevoegden.\n\nKortom: technologie moet dienen als hulpmiddel, niet als vervanging voor verstandig handelen.",
   'neocloud-lambda-haalt-1-miljard-op-voor-chips':
