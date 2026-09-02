@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'anthropic-claude-fable-5-1-goedkoper-maar-is-het-beter',
+    format: 'dispatch' as const,
+    edition: '451',
+    category: 'Platform',
+    title: "Goedkoper AI is niet altijd slimmer: waarom Fable 5.1 een valse belofte kan zijn",
+    dek: "Anthropic claimt met zijn nieuwe AI-modellen tot 45% goedkoper te zijn, maar de vraag is of bedrijven daarmee ook daadwerkelijk meer waarde halen uit hun agenten.",
+    publishedAt: '2026-09-02',
+    readMinutes: 3,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Goedkoper AI is niet altijd slimmer: waarom Fable 5.1 een valse belofte kan zijn",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'artifactory-cve-onder-aanval-door-ai-of-mensen',
     format: 'dispatch' as const,
     edition: '450',
