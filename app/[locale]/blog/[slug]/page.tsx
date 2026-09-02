@@ -1513,6 +1513,34 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'anthropic-claude-fable-5-1-goedkoper-maar-is-het-beter': (
+    <>
+      <p className="lead-para">
+        Stel je voor: een werknemer die nooit moe wordt, geen koffiepauze neemt en in no-time honderden taken afhandelt. Dat is precies wat AI-agenten beloven te worden voor bedrijven. Maar wat gebeurt er als die agenten ineens veel goedkoper worden? Anthropic gooit de prijs van zijn Claude-modellen omlaag met Fable 5.1 en Mythos 5.1, met claims tot wel 45% besparing op complexe agententaken. Een aantrekkelijk verhaal voor elke marketingmanager of bureau-eigenaar die kosten wil drukken. Toch ligt er een addertje onder het gras.
+      </p>
+      <p>
+        De prijsdaling is niet zomaar een marketingtruc. Anthropic wijst erop dat de nieuwe modellen minder overdreven beschermingsmaatregelen hebben en klanten meer controle geven over hun data. Dat laatste is geen luxe: veel bedrijven worstelen met black-box-modellen die hun gegevens opslaan zonder duidelijke afspraken. Toch is het de vraag of deze aanpassingen ook leiden tot betere prestaties. De claim dat Fable 5.1 sterker presteert dan zijn voorganger terwijl hij goedkoper is, klinkt bijna te mooi om waar te zijn.
+      </p>
+      <p>
+        Neem nu de zogenaamde ‘agentic work’: taken waarbij AI zelfstandig acties onderneemt, zoals het plannen van campagnes of het verwerken van klantverzoeken. Hier zou Fable 5.1 tot wel 45% goedkoper moeten zijn dan eerdere versies. Maar wat betekent ‘goedkoper’ in de praktijk? Voor bedrijven draait het niet om de prijs per se, maar om de uplift in efficiëntie en resultaat. Als een model minder goed presteert, moet je misschien meer prompts sturen of handmatig corrigeren – en dan betaal je uiteindelijk toch weer meer voor menselijke tussenkomst.
+      </p>
+      <p>
+        Er zit nog een addertje onder het gras: de lagere kosten gaan gepaard met minder strikte veiligheidsmaatregelen. Anthropic heeft enkele beperkingen versoepeld, zoals het blokkeren van bepaalde acties die eerder werden tegengehouden uit voorzorg. Dat kan handig zijn als je snel wilt schalen, maar het brengt ook risico’s met zich mee. Stel dat een AI-agent per ongeluk gevoelige data naar buiten brengt of onjuiste beslissingen neemt omdat het minder wordt tegengehouden? Dan kunnen de besparingen snel omslaan in reputatieschade of juridische kosten.
+      </p>
+      <p>
+        Voor marketingteams en bureaus die al werken met AI-agenten is dit nieuws vooral een signaal om kritisch te blijven kijken naar de trade-offs tussen kosten en kwaliteit. Een lagere prijs is aantrekkelijk, maar alleen als de output hetzelfde blijft – of beter wordt. De realiteit is dat veel organisaties nog steeds worstelen met het meten van echte uplift uit AI-toepassingen. Zonder goede meetdata weet je niet of je echt bespaart of gewoon minder betaalt voor slechtere resultaten.
+      </p>
+      <p>
+        Ook de dataretentie-aspecten verdienen aandacht. Bedrijven willen graag weten waar hun data naartoe gaat en hoe lang ze worden opgeslagen. Anthropics belofte dat klanten meer controle krijgen, lijkt op papier positief, maar in de praktijk hangt dit af van hoe goed organisaties zelf hun contracten en instellingen managen. Een model dat goedkoper is maar waar je geen grip op hebt, is net zo riskant als een duur model zonder transparantie.
+      </p>
+      <p>
+        Uiteindelijk komt het neer op een simpele vraag: wil je betalen voor snelheid of voor betrouwbaarheid? Als je kiest voor goedkopere modellen zoals Fable 5.1, moet je bereid zijn om extra tijd te investeren in testen en valideren van de output. Anders loop je het risico dat je besparingen teniet worden gedaan door foutieve acties of inefficiënt gebruik.
+      </p>
+      <p>
+        De markt zal deze nieuwe modellen snel oppakken – zeker nu concurrenten zoals Mistral en OpenAI ook druk uitoefenen op prijzen en prestaties. Maar pas op: goedkoop is niet altijd beter.
+      </p>
+    </>
+  ),
   'artifactory-cve-onder-aanval-door-ai-of-mensen': (
     <>
       <p className="lead-para">
@@ -7591,6 +7619,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'anthropic-claude-fable-5-1-goedkoper-maar-is-het-beter':
+    "Bij Stevin zien we dagelijks hoe organisaties worstelen met de balans tussen kosten en kwaliteit bij AI-implementaties. De aankondiging van Anthropic toont aan dat prijsdruk een serieuze factor wordt in deze markt, maar wij waarschuwen onze klanten om niet blind te varen op lagere tarieven zonder eerst grondig te testen wat dit betekent voor hun workflows.\n\nOnze ervaring leert dat agent-based AI pas echt waardevol wordt wanneer het naadloos aansluit op bestaande processen – iets wat nog steeds lastig meetbaar is met huidige tools zoals Google Analytics of HubSpot alleen.\n\nWij adviseren bedrijven om eerst kleine pilots uit te voeren waarin ze zowel kosten als output strikt monitoren voordat ze opschalen naar bredere implementatie.\n\nDaarnaast zien we dat transparantie over dataretentie net zo belangrijk wordt als performanceclaims – iets waar veel aanbieders nog steeds tekortschieten door complexe licentiemodellen of onduidelijke privacybeleid.\n\nTot slot benadrukken we dat succesvolle AI-integratie begint bij duidelijke doelenstellingen: wil je efficiëntie verhogen, foutmarges verminderen of juist nieuwe diensten ontwikkelen? Pas dan kun je bepalen of een model zoals Fable 5.1 daadwerkelijk past in jouw strategie.",
   'artifactory-cve-onder-aanval-door-ai-of-mensen':
     "Dit incident laat zien hoe snel geautomatiseerde tools kwetsbaarheden opsporen en misbruiken. Voor bedrijven betekent dit dat beveiliging niet langer een ‘soms’-taak is, maar een continue prioriteit moet worden. Zeker bij software die essentieel is voor ontwikkelprocessen, zoals Artifactory, is proactieve monitoring noodzakelijk om blinde vlekken te voorkomen.",
   'ai-tools-onveilig-door-blind-trust-in-repositories':
