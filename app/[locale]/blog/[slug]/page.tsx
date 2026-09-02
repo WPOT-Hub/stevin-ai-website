@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'anthropic-pledge-beter-modelbeheer': (
+    <>
+      <p className="lead-para">
+        Anthropic, maker van de AI-chatbot Claude, heeft bekendgemaakt de komende jaren meer te zullen investeren in het beperken van risico’s van haar modellen. Het bedrijf erkent dat eerdere pogingen onvoldoende waren en wil nu samenwerken met partners om betere controlemechanismen te ontwikkelen.
+      </p>
+      <p>
+        Het bedrijf vraagt andere techbedrijven, onderzoeksinstellingen en overheden om financieel bij te dragen aan deze inspanningen. Anthropic stelt dat alleen een collectieve aanpak kan voorkomen dat AI-modellen buiten controle raken of worden misbruikt voor schadelijke doeleinden.
+      </p>
+      <p>
+        De aankondiging komt na herhaalde waarschuwingen van experts over de risico’s van ongecontroleerde AI-ontwikkeling. Anthropic benadrukt dat het niet gaat om een tijdelijke maatregel, maar om een structurele verandering in hoe het bedrijf met veiligheid omgaat.
+      </p>
+    </>
+  ),
   'anthropic-claude-fable-5-1-goedkoper-maar-is-het-beter': (
     <>
       <p className="lead-para">
@@ -7619,6 +7632,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'anthropic-pledge-beter-modelbeheer':
+    "Voor bedrijven die gebruikmaken van AI-modellen is deze ontwikkeling relevant omdat het laat zien dat ook grote spelers als Anthropic de noodzaak inzien van strengere kaders. Het roept de vraag op hoe organisaties zelf invulling kunnen geven aan verantwoord gebruik van AI, bijvoorbeeld door interne richtlijnen of samenwerking met derden. De oproep tot collectieve actie onderstreept dat veiligheid in de AI-keten geen zaak is die alleen bij ontwikkelaars ligt.",
   'anthropic-claude-fable-5-1-goedkoper-maar-is-het-beter':
     "Bij Stevin zien we dagelijks hoe organisaties worstelen met de balans tussen kosten en kwaliteit bij AI-implementaties. De aankondiging van Anthropic toont aan dat prijsdruk een serieuze factor wordt in deze markt, maar wij waarschuwen onze klanten om niet blind te varen op lagere tarieven zonder eerst grondig te testen wat dit betekent voor hun workflows.\n\nOnze ervaring leert dat agent-based AI pas echt waardevol wordt wanneer het naadloos aansluit op bestaande processen – iets wat nog steeds lastig meetbaar is met huidige tools zoals Google Analytics of HubSpot alleen.\n\nWij adviseren bedrijven om eerst kleine pilots uit te voeren waarin ze zowel kosten als output strikt monitoren voordat ze opschalen naar bredere implementatie.\n\nDaarnaast zien we dat transparantie over dataretentie net zo belangrijk wordt als performanceclaims – iets waar veel aanbieders nog steeds tekortschieten door complexe licentiemodellen of onduidelijke privacybeleid.\n\nTot slot benadrukken we dat succesvolle AI-integratie begint bij duidelijke doelenstellingen: wil je efficiëntie verhogen, foutmarges verminderen of juist nieuwe diensten ontwikkelen? Pas dan kun je bepalen of een model zoals Fable 5.1 daadwerkelijk past in jouw strategie.",
   'artifactory-cve-onder-aanval-door-ai-of-mensen':
