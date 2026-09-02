@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'artifactory-cve-onder-aanval-door-ai-of-mensen',
+    format: 'dispatch' as const,
+    edition: '450',
+    category: 'Tech',
+    title: "Nieuwe Artifactory-kwetsbaarheid wordt actief misbruikt",
+    dek: "Via een onbeveiligde kwetsbaarheid kunnen aanvallers admin-tokens maken, servers worden nu al aangevallen.",
+    publishedAt: '2026-09-02',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Nieuwe Artifactory-kwetsbaarheid wordt actief misbruikt",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-tools-onveilig-door-blind-trust-in-repositories',
     format: 'dispatch' as const,
     edition: '449',
