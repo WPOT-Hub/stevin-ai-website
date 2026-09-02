@@ -142,6 +142,9 @@ export default async function middleware(request: NextRequest) {
 }
 
 export const config = {
+  // c/ uitgesloten: /c/<slug> is de placement-ingang voor QR en drukwerk, een
+  // route handler die meteen doorstuurt. Door next-intl zou daar een
+  // taal-redirect voor komen: een extra hop op een telefoon bij een stand.
   // ads-data en inhouse uitgesloten: statische campagne-landingspagina's uit /public,
   // mogen niet door de i18n-middleware (anders 404 voor de rewrite kan grijpen).
   // opengraph-image valt buiten de middleware. Reden: localePrefix staat op
@@ -152,5 +155,5 @@ export const config = {
   // serveert de route zichzelf en is er niets meer om te volgen.
   // Alleen het nl-pad uitsluiten: de kale /opengraph-image bestaat juist
   // dankzij de rewrite van deze middleware, en daar wijst de Twitter-kaart naar.
-  matcher: ['/((?!api|_next|_vercel|ads-data|inhouse|kies|nl/opengraph-image|.*\\..*).*)'],
+  matcher: ['/((?!api|_next|_vercel|ads-data|inhouse|kies|c/|nl/opengraph-image|.*\\..*).*)'],
 }
