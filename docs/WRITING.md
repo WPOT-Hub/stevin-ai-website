@@ -128,3 +128,4 @@ Niet alle vier — kies er één. Maximaal 4 zinnen.
 - Memory: `feedback_journal_writing_style.md`
 - Memory: `feedback_no_academic_jargon.md`
 - Code: `data/articles.ts` (format-veld bepaalt render-mode)
+- Verboden woorden en AI-buzzwoorden (em-dash, "weglekt", "state-of-the-art", zelf-ondermijnende hedges, etc): `Stevin-Hub/docs/copy/VERBODEN_WOORDEN.json`, canoniek voor alle Stevin-kanalen (mail, LinkedIn, journal). Niet los bijhouden, daar toevoegen (W-041, 3 sep 2026).
