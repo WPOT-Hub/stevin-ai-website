@@ -24,12 +24,27 @@ type Props = { params: Promise<{ locale: string }> }
 // 3. De meetleemte is de kern, en die mag Koen uit eigen ervaring benoemen.
 //
 // Databronnen in de kaart "Wat je al betaalt gaat er ook in" zijn nagekeken op
-// 4 sep 2026. GWI (dus niet IWG) is survey-onderzoek, geen verkoopmeting: 50+
-// markten, 2 mln interviews per jaar, vier golven. Drie koppelroutes staan
-// publiek gedocumenteerd op api.globalwebindex.com/docs/platform-api, en de
-// MCP-connector is volgens hun eigen helpcentrum beschikbaar voor iedereen op
-// een betaald plan. Of de Platform API in een standaardabonnement zit
-// publiceren ze niet; daarom dekt de kaart bewust beide gevallen.
+// 4 sep 2026, in de documentatie en licentievoorwaarden van de aanbieders zelf.
+// - NielsenIQ en Circana zijn de twee parallelle retailmeetstandaarden in NL.
+// - Het FMCG-huishoudpanel in NL en BE is sinds 9 jan 2024 van YouGov, niet
+//   meer van GfK: dat panel moest verkocht worden als voorwaarde van de
+//   Europese Commissie bij de fusie NIQ-GfK. GfK noemen dateert je meteen.
+// - Kantar Worldpanel heet sinds 2025 Worldpanel by Numerator en staat niet
+//   met een NL- of BE-markt op de eigen site. Niet als NL/BE-panel noemen.
+//   Kantar heeft wel een API, maar die is voor advertentie- en contenttesten.
+// - GWI (dus niet IWG) is survey-onderzoek, geen verkoopmeting: 50+ markten,
+//   2 mln interviews per jaar. Drie koppelroutes gedocumenteerd op
+//   api.globalwebindex.com/docs/platform-api; de MCP-connector zit volgens hun
+//   helpcentrum bij elk betaald plan.
+// - De regel over een getekende afspraak is geen slag om de arm maar feit.
+//   NIQ (online license terms SA&I, v1.0 per 15 jan 2026): openbaarmaking aan
+//   derden is beperkt tot consultants met een getekende Third Party Access
+//   Agreement, en modellen trainen op NIQ-data is expliciet verboden. Circana
+//   (Master T&C Europe, sectie 3): licentie niet overdraagbaar en niet
+//   sublicentieerbaar, derden krijgen alleen "limited excerpts". Beloof dus
+//   nooit "stuur je export, wij doen de rest".
+// - Brandwatch staat het juist wel toe: Service Appendix 7.2 laat de klant de
+//   API-sleutel delen met een geautoriseerde derde partij voor intern gebruik.
 // GEEN klantnamen, geen cijfers van merken uit eerder bureauwerk. Dat is werk van
 // andere partijen voor hun klanten; alleen de methode en het patroon zijn van hem.
 
@@ -71,7 +86,7 @@ const COPY = {
       },
       {
         t: 'Wat je al betaalt gaat er ook in',
-        d: 'NielsenIQ, Circana, GfK, Kantar, GWI, je merktracker, je listening-tool, je eigen exports uit de retailerportalen. Is er een API, dan koppelen we die; bij GWI sluit die zelfs rechtstreeks op een AI-systeem aan, dus daar is de route kort. Zit een koppeling achter een module waar je voor bijbetaalt, dan weet je dat van ons voordat je tekent. En is er alleen een export, dan lezen we het bestand in. Alle routes eindigen op dezelfde plek: jouw cijfers naast je mediadata, met een definitie eronder, in plaats van in een map die niemand opent.',
+        d: 'NielsenIQ, Circana, YouGov, GWI, je merktracker, je listening-tool, je eigen exports uit de retailerportalen. Is er een API, dan koppelen we die; bij GWI sluit die zelfs rechtstreeks op een AI-systeem aan. Is er alleen een export, dan lezen we het bestand in. En vraagt je leverancier een getekende afspraak voordat een derde partij meekijkt, zoals NielsenIQ en Circana doen, dan hoor je dat van ons voordat je tekent en niet erna. Wat er ook uitkomt, het eindigt naast je mediadata met een definitie eronder.',
       },
       {
         t: 'Vastleggen wat je probeerde',
@@ -148,7 +163,7 @@ const COPY = {
       },
       {
         t: 'What you already pay for goes in too',
-        d: 'NielsenIQ, Circana, GfK, Kantar, GWI, your brand tracker, your listening tool, your own exports from the retailer portals. If there is an API, we connect it; GWI even has one that plugs straight into an AI system, so that route is short. If a connection sits behind a paid module, you hear that from us before you sign anything. And if there is only an export, we read the file. Every route ends in the same place: your numbers next to your media data, with a definition underneath, instead of in a folder nobody opens.',
+        d: 'NielsenIQ, Circana, YouGov, GWI, your brand tracker, your listening tool, your own exports from the retailer portals. If there is an API, we connect it; GWI even has one that plugs straight into an AI system. If there is only an export, we read the file. And if your provider wants a signed agreement before a third party looks in, as NielsenIQ and Circana do, you hear that from us before you sign and not after. Whatever the route, it ends next to your media data with a definition underneath.',
       },
       {
         t: 'Record what you tried',
