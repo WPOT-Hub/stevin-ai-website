@@ -23,6 +23,13 @@ type Props = { params: Promise<{ locale: string }> }
 //    staat er expliciet bij.
 // 3. De meetleemte is de kern, en die mag Koen uit eigen ervaring benoemen.
 //
+// Databronnen in de kaart "Wat je al betaalt gaat er ook in" zijn nagekeken op
+// 4 sep 2026. GWI (dus niet IWG) is survey-onderzoek, geen verkoopmeting: 50+
+// markten, 2 mln interviews per jaar, vier golven. Drie koppelroutes staan
+// publiek gedocumenteerd op api.globalwebindex.com/docs/platform-api, en de
+// MCP-connector is volgens hun eigen helpcentrum beschikbaar voor iedereen op
+// een betaald plan. Of de Platform API in een standaardabonnement zit
+// publiceren ze niet; daarom dekt de kaart bewust beide gevallen.
 // GEEN klantnamen, geen cijfers van merken uit eerder bureauwerk. Dat is werk van
 // andere partijen voor hun klanten; alleen de methode en het patroon zijn van hem.
 
@@ -64,7 +71,7 @@ const COPY = {
       },
       {
         t: 'Wat je al betaalt gaat er ook in',
-        d: 'NielsenIQ, Circana, GfK, Kantar, je merktracker, je listening-tool, je eigen exports uit de retailerportalen. Is er een API, dan koppelen we die. Zit die achter een module waar je voor bijbetaalt, dan weet je dat van ons voordat je tekent. En is er alleen een export, dan lezen we het bestand in. Alle routes eindigen op dezelfde plek: jouw cijfers naast je mediadata, met een definitie eronder, in plaats van in een map die niemand opent.',
+        d: 'NielsenIQ, Circana, GfK, Kantar, GWI, je merktracker, je listening-tool, je eigen exports uit de retailerportalen. Is er een API, dan koppelen we die; bij GWI sluit die zelfs rechtstreeks op een AI-systeem aan, dus daar is de route kort. Zit een koppeling achter een module waar je voor bijbetaalt, dan weet je dat van ons voordat je tekent. En is er alleen een export, dan lezen we het bestand in. Alle routes eindigen op dezelfde plek: jouw cijfers naast je mediadata, met een definitie eronder, in plaats van in een map die niemand opent.',
       },
       {
         t: 'Vastleggen wat je probeerde',
@@ -141,7 +148,7 @@ const COPY = {
       },
       {
         t: 'What you already pay for goes in too',
-        d: 'NielsenIQ, Circana, GfK, Kantar, your brand tracker, your listening tool, your own exports from the retailer portals. If there is an API, we connect it. If it sits behind a paid module, you hear that from us before you sign anything. And if there is only an export, we read the file. Every route ends in the same place: your numbers next to your media data, with a definition underneath, instead of in a folder nobody opens.',
+        d: 'NielsenIQ, Circana, GfK, Kantar, GWI, your brand tracker, your listening tool, your own exports from the retailer portals. If there is an API, we connect it; GWI even has one that plugs straight into an AI system, so that route is short. If a connection sits behind a paid module, you hear that from us before you sign anything. And if there is only an export, we read the file. Every route ends in the same place: your numbers next to your media data, with a definition underneath, instead of in a folder nobody opens.',
       },
       {
         t: 'Record what you tried',
