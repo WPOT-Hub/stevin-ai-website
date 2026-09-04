@@ -108,8 +108,6 @@ const nextConfig: NextConfig = {
       { source: '/:locale(nl|en)/voor-non-profit', destination: '/:locale(nl|en)/google-ad-grants-nederland', permanent: true },
       { source: '/voor-retail', destination: '/retail', permanent: true },
       { source: '/:locale(nl|en)/voor-retail', destination: '/:locale(nl|en)/retail', permanent: true },
-      { source: '/fmcg', destination: '/voor-ondernemers', permanent: true },
-      { source: '/:locale(nl|en)/fmcg', destination: '/:locale(nl|en)/voor-ondernemers', permanent: true },
       { source: '/healthcare-marketing', destination: '/voor-ondernemers', permanent: true },
       { source: '/:locale(nl|en)/healthcare-marketing', destination: '/:locale(nl|en)/voor-ondernemers', permanent: true },
       { source: '/e-commerce', destination: '/voor-ondernemers', permanent: true },

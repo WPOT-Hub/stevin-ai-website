@@ -29,14 +29,19 @@ function Lbl({ text }: { text: string }) {
   )
 }
 
+const round = (n: number) => Number(n.toFixed(3))
+
 const EU_STARS = Array.from({ length: 12 }, (_, i) => {
   const a = (i * 30 - 90) * (Math.PI / 180)
-  return { x: 50 + 27 * Math.cos(a), y: 43 + 27 * Math.sin(a), key: i }
+  // Afgerond op drie decimalen. Onafgerond serialiseert Node de float anders
+  // dan de browser (19.61731409782016 tegen 19.617314097820163), en dat gaf op
+  // elke pagina een hydration-mismatch in de console. 4 sep 2026.
+  return { x: round(50 + 27 * Math.cos(a)), y: round(43 + 27 * Math.sin(a)), key: i }
 })
 
 const AI_STARS = Array.from({ length: 8 }, (_, i) => {
   const a = ((i * 25) - 87.5 - 90) * (Math.PI / 180)
-  return { x: 50 + 31 * Math.cos(a), y: 44 + 31 * Math.sin(a), key: i }
+  return { x: round(50 + 31 * Math.cos(a)), y: round(44 + 31 * Math.sin(a)), key: i }
 })
 
 export default function TrustBadges({ className = '', small = false }: { className?: string; small?: boolean }) {

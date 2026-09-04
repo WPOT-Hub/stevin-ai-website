@@ -35,12 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/controle',
     '/mkb',
     '/retail',
+    '/fmcg',
     // Verticals nu geindexeerd (besluit 4 jul): eigen belofte + data-spine per sector
     '/voor-musea',
     '/voor-dealers',
     '/platform',
     '/diensten',
-    '/werkwijze',
     '/multi-market',
     '/marketing-automation',
     '/seo',
@@ -67,7 +67,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // :locale-parameter in next.config.ts elk padstuk matchte. Dat is gefixt,
     // de pagina bestaat gewoon.
     // Productpagina's (de Stevin-suite)
-    '/producten',
     ...products.map((p) => `/producten/${p.slug}`),
     // Categorie-hub pagina's, alleen de indexeerbare (zie NOINDEX_INTEGRATION_CATEGORIES)
     ...categories.filter((c) => isIndexableIntegrationCategory(c.slug)).map((c) => `/integraties/${c.slug}`),
