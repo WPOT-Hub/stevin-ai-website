@@ -50,13 +50,13 @@ const COPY = {
     scan_cijfers: [
       { n: '7 van 12', t: 'keer werd de eigen site als bron gebruikt, en dat is een goede score' },
       { n: '0 van 3', t: 'vragen van iemand die het museum nog niet kende noemde het museum' },
-      { n: 'quiltmuseum.org', t: 'en twee andere buitenlandse instellingen gaven die antwoorden' },
+      { n: 'quiltmuseum.org', t: 'en twee andere buitenlandse sites gaven die antwoorden' },
     ],
     scan_slot: 'Dat is het patroon, en het is het omgekeerde van wat je zou verwachten. Op je naam sta je er prima op. Op de vraag van een gezin dat een dagje uit zoekt rond jouw thema stond er een museum in Londen en een in New York. Die groep is precies waar je bezoekersgroei uit moet komen, en daar ben je onzichtbaar.',
     scan_cta: 'Deze scan draait in een kwartier op jouw instelling, voordat je klant bent.',
 
     eerlijk_h2: 'Wat wij hier niet doen.',
-    eerlijk_sub: 'Twee dingen vooraf, want hier stond tot voor kort iets anders, en dat klopte niet.',
+    eerlijk_sub: 'Twee dingen vooraf, want dit is precies waar in deze sector standaard overheen wordt beloofd.',
     eerlijk: [
       {
         t: 'Wij koppelen je ticketsysteem niet',
@@ -102,14 +102,14 @@ const COPY = {
     principes: [
       {
         p: 'Bereik de hele categoriekoper: lichte en incidentele bezoekers leveren een groot deel van het volume.',
-        u: 'Zelfs sterke merken halen de helft van hun publiek uit mensen die een of twee keer per jaar komen. Groei komt van meer nieuwe bezoekers, niet van je vrienden nog loyaler maken.',
+        u: 'Zelfs sterke merken halen de helft van hun kopers uit mensen die een of twee keer per jaar kopen. Dat onderzoek komt uit de supermarkt, maar het patroon is hetzelfde: groei komt van de dagjesmens, niet van je vrienden nog loyaler maken.',
         bron: 'Ehrenberg-Bass',
         grens: 'Betekent niet dat targeting nooit zinvol is. Bij een klein, identificeerbaar segment kan het wel, en vriendenwerving heeft een eigen functie.',
       },
       {
         p: 'Zoek eerst de frictie voordat je een overtuigingscampagne adviseert.',
         u: 'De echte drempel is meestal gemak: een ticketflow met te veel stappen, onduidelijkheid over parkeren of over wat er nu te zien is. Gedrag makkelijker maken werkt vaker en goedkoper dan een houding veranderen.',
-        bron: 'Kernprincipe 13',
+        bron: 'Praktijkprincipe uit de kennislaag',
         grens: 'Betekent niet dat communicatie nooit een houding raakt. Wel dat je de drempel eerst wegneemt voordat je hem overschreeuwt.',
       },
       {
@@ -121,8 +121,8 @@ const COPY = {
     ],
 
     ervaring_h2: 'Waarom wij dit weten.',
-    ervaring_p1: 'Dit systeem is gebouwd door iemand die twintig jaar aan de andere kant van de factuur zat, als oprichter van een bureau. Culturele instellingen zijn daar altijd een aparte klant: het budget is klein, het team is klein, en de verantwoording is groot, want er zit vaak publiek geld in.',
-    ervaring_p2: 'Wat daar opvalt: er wordt hard gewerkt aan zichtbaarheid bij mensen die de instelling al kennen, en bijna niets aan de vraag van iemand die nog nergens aan dacht. Dat is geen luiheid, dat is een gebrek aan tijd en aan meting die die kant op kijkt.',
+    ervaring_p1: 'Dit systeem is gebouwd door iemand die twintig jaar aan de andere kant van de factuur zat, als oprichter van een bureau. Niet in de cultuursector, en dat zeggen we er eerlijk bij. Wat wel overal hetzelfde is: een klein team, een klein budget en een grote verantwoording.',
+    ervaring_p2: 'Wat in de gesprekken met instellingen opvalt: er wordt hard gewerkt aan zichtbaarheid bij mensen die de instelling al kennen, en bijna niets aan de vraag van iemand die nog nergens aan dacht. Dat is geen luiheid, dat is een gebrek aan tijd en aan meting die die kant op kijkt.',
     ervaring_p3: 'Daarom begint dit bij meten wat er nu gebeurt, ook als de uitkomst is dat het goed zit, en bij vastleggen wat je probeerde zodat de volgende persoon niet opnieuw begint.',
 
     slot_h2: 'Begin bij wat er nu gemeten wordt.',
@@ -142,13 +142,13 @@ const COPY = {
     scan_cijfers: [
       { n: '7 of 12', t: 'times its own site was used as a source, which is a good score' },
       { n: '0 of 3', t: 'questions from someone who did not know the museum named it' },
-      { n: 'quiltmuseum.org', t: 'and two other foreign institutions gave those answers' },
+      { n: 'quiltmuseum.org', t: 'and two other foreign sites gave those answers' },
     ],
     scan_slot: 'That is the pattern, and it is the opposite of what you would expect. On your name you do fine. On the question from a family looking for a day out around your theme, the answer named a museum in London and one in New York. That group is exactly where visitor growth has to come from, and there you are invisible.',
     scan_cta: 'We run this scan on your institution in fifteen minutes, before you are a client.',
 
     eerlijk_h2: 'What we do not do here.',
-    eerlijk_sub: 'Two things up front, because this page used to say something else, and that was not true.',
+    eerlijk_sub: 'Two things up front, because this is exactly where the overpromising starts in this sector.',
     eerlijk: [
       {
         t: 'We do not connect your ticketing system',
@@ -194,14 +194,14 @@ const COPY = {
     principes: [
       {
         p: 'Reach the whole category buyer: light and occasional visitors deliver a large share of the volume.',
-        u: 'Even strong brands draw half their audience from people who come once or twice a year. Growth comes from more new visitors, not from making your friends even more loyal.',
+        u: 'Even strong brands draw half their buyers from people who buy once or twice a year. That research comes from the supermarket, but the pattern is the same: growth comes from the day-tripper, not from making your friends even more loyal.',
         bron: 'Ehrenberg-Bass',
         grens: 'Does not mean targeting is never useful. With a small, identifiable segment it can be, and membership schemes have a function of their own.',
       },
       {
         p: 'Look for friction before you advise a persuasion campaign.',
         u: 'The real barrier is usually convenience: a ticket flow with too many steps, unclear parking, unclear what is on right now. Making behaviour easier works more often and more cheaply than changing an attitude.',
-        bron: 'Core principle 13',
+        bron: 'Practice principle from the knowledge layer',
         grens: 'Does not mean communication never shifts an attitude. It means you remove the barrier before shouting over it.',
       },
       {
@@ -213,8 +213,8 @@ const COPY = {
     ],
 
     ervaring_h2: 'Why we know this.',
-    ervaring_p1: 'This system was built by someone who spent twenty years on the other side of the invoice, as the founder of an agency. Cultural institutions are always a particular kind of client there: the budget is small, the team is small, and the accountability is large, because public money is often involved.',
-    ervaring_p2: 'What stands out: a lot of effort goes into visibility among people who already know the institution, and almost none into the question of someone who was not thinking about it at all. That is not laziness, it is a lack of time and of measurement pointing that way.',
+    ervaring_p1: 'This system was built by someone who spent twenty years on the other side of the invoice, as the founder of an agency. Not in the cultural sector, and we say so plainly. What is the same everywhere: a small team, a small budget and a large accountability.',
+    ervaring_p2: 'What stands out in conversations with institutions: a lot of effort goes into visibility among people who already know the institution, and almost none into the question of someone who was not thinking about it at all. That is not laziness, it is a lack of time and of measurement pointing that way.',
     ervaring_p3: 'So this starts with measuring what happens now, even when the answer is that things are fine, and with recording what you tried so the next person does not start over.',
 
     slot_h2: 'Start with what is being measured now.',
@@ -230,7 +230,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: '/voor-musea',
     title: nl ? 'Marketing voor musea en cultuur' : 'Marketing for museums and culture',
     description: nl
-      ? 'Op je eigen naam vind men je wel. Wij meten waar je staat bij de bezoeker die je nog niet kent, beheren Google Ad Grants binnen de regels, en zeggen erbij wat we niet koppelen.'
+      ? 'Op je eigen naam vindt men je wel. Wij meten waar je staat bij de bezoeker die je nog niet kent, beheren Google Ad Grants binnen de regels, en zeggen erbij wat we niet koppelen.'
       : 'On your own name people find you. We measure where you stand with the visitor who does not know you yet, manage Google Ad Grants within the rules, and say what we do not connect.',
   })
 }

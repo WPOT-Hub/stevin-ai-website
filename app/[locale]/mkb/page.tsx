@@ -55,7 +55,7 @@ const COPY = {
     scan_cta: 'Deze scan draait in een kwartier op jouw bedrijf, voordat je klant bent.',
 
     eerlijk_h2: 'Wat wij hier niet doen.',
-    eerlijk_sub: 'Twee dingen vooraf, want op deze pagina stond tot voor kort iets dat mooier was dan de werkelijkheid.',
+    eerlijk_sub: 'Twee dingen vooraf, want dit is precies wat je overal beloofd krijgt.',
     eerlijk: [
       {
         t: 'Wij maken geen offertes voor je',
@@ -102,7 +102,7 @@ const COPY = {
       {
         p: 'Haal eerst de drempel weg voordat je harder gaat overtuigen.',
         u: 'De echte reden dat iemand niet belt is meestal gemak: een formulier dat te lang is, geen prijsindicatie, onduidelijkheid over wanneer je kunt komen. Dat oplossen werkt vaker en goedkoper dan een campagne.',
-        bron: 'Kernprincipe 13',
+        bron: 'Praktijkprincipe uit de kennislaag',
         grens: 'Betekent niet dat je nooit hoeft te vertellen wat je goed doet. Wel dat je het pas hoeft te roepen als bellen makkelijk is.',
       },
       {
@@ -121,7 +121,7 @@ const COPY = {
 
     ervaring_h2: 'Waarom wij dit weten.',
     ervaring_p1: 'Dit systeem is gebouwd door iemand die twintig jaar in online marketing zat en zelf een bureau had. De bedrijven waar dit voor bedoeld is, zijn precies de bedrijven die zo\'n bureau meestal niet kunnen betalen.',
-    ervaring_p2: 'Wat we in gesprekken telkens terugzien: geld naar gekochte leads die aan vijf bedrijven tegelijk verkocht worden, en niets dat blijft. Elf honderd euro aan leads en geen enkele opdracht, dat is een echt cijfer uit zo\'n gesprek. Volgend jaar betaal je opnieuw, want je hebt niets opgebouwd.',
+    ervaring_p2: 'Wat we in gesprekken telkens terugzien: geld naar gekochte leads die aan vijf bedrijven tegelijk verkocht worden, en niets dat blijft. Elfhonderd euro aan leads en geen enkele opdracht, dat is een echt cijfer uit zo\'n gesprek. Volgend jaar betaal je opnieuw, want je hebt niets opgebouwd.',
     ervaring_p3: 'Daarom begint dit bij je eigen site, je eigen vindbaarheid en je eigen aanvragen. Alles wat je opbouwt blijft van jou, ook als je met ons stopt.',
 
     slot_h2: 'Begin bij wat er nu gebeurt.',
@@ -147,7 +147,7 @@ const COPY = {
     scan_cta: 'We run this scan on your business in fifteen minutes, before you are a client.',
 
     eerlijk_h2: 'What we do not do here.',
-    eerlijk_sub: 'Two things up front, because this page used to promise something prettier than reality.',
+    eerlijk_sub: 'Two things up front, because this is exactly what you get promised everywhere.',
     eerlijk: [
       {
         t: 'We do not write your quotes',
@@ -194,7 +194,7 @@ const COPY = {
       {
         p: 'Remove the barrier before you try harder to persuade.',
         u: 'The real reason someone does not call is usually convenience: a form that is too long, no price indication, no clarity about when you could come. Fixing that works more often and more cheaply than a campaign.',
-        bron: 'Core principle 13',
+        bron: 'Practice principle from the knowledge layer',
         grens: 'Does not mean you never need to say what you are good at. It means you say it once calling is easy.',
       },
       {

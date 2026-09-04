@@ -38,8 +38,8 @@ type Props = { params: Promise<{ locale: string }> }
 const COPY = {
   nl: {
     eyebrow: 'Voor retailketens en winkelformules',
-    h1_line: 'Het meeste wordt in de winkel gekocht.',
-    h1_accent: 'Vrijwel alles wat je meet komt van een scherm.',
+    h1_line: 'Verkocht in de winkel.',
+    h1_accent: 'Gemeten op een scherm.',
     sub: 'Daar zit het gat. Je weet tot achter de komma wat een klik kostte, en je weet niet of de campagne iemand de winkel in heeft gekregen. Aan het eind van het jaar onderbouw je een mediabudget met de helft van het verhaal.',
     cta: 'Start de diagnose',
     cta_sec: 'Wat het platform doet',
@@ -50,7 +50,7 @@ const COPY = {
     scan_cijfers: [
       { n: '0 van 13', t: 'keer werd de site van de keten als bron gebruikt' },
       { n: '1 van 12', t: 'open vragen noemde de keten uberhaupt' },
-      { n: 'kookwinkel.nl', t: 'en vier andere speciaalzaken leverden de antwoorden' },
+      { n: 'kookwinkel.nl', t: 'en andere kleine speciaalzaken leverden de antwoorden' },
     ],
     scan_slot: 'De pijnlijkste vraag was de laatste. Die ging expliciet over de acties van de keten zelf, en zelfs daar kwam het antwoord niet van de eigen site maar van twee foldersites die de folder doorplaatsen. Een keten met honderden winkels en tientallen jaren naamsbekendheid verliest de vraag van een kookwinkel met een goede productpagina. Dat is geen mediabudgetprobleem.',
     scan_cta: 'Deze scan draait in een kwartier op jouw formule, voordat je klant bent.',
@@ -121,7 +121,7 @@ const COPY = {
     ],
 
     ervaring_h2: 'Waarom wij dit weten.',
-    ervaring_p1: 'Dit systeem is gebouwd door iemand die twintig jaar aan de andere kant van de factuur zat, als oprichter van een bureau. Retail zat daar altijd tussen, want retail heeft het grootste mediabudget en de zwakste meetketen van alle sectoren waar je aan tafel komt.',
+    ervaring_p1: 'Dit systeem is gebouwd door iemand die twintig jaar aan de andere kant van de factuur zat, als oprichter van een bureau. Wat je daar bij elke klant met een winkelvloer ziet: een groot mediabudget en een meetketen die stopt bij de website.',
     ervaring_p2: 'Wat in al die jaren opviel: het plan was meestal in orde. Er lag een jaarkalender, een verdeling over merk en actie, een folderritme. Wat er niet lag, was een meting die de vraag beantwoordde of het gewerkt had, want de verkoop gebeurde in een winkel en de meting stopte bij de website. Iedereen wist dat, en iedereen rapporteerde toch op wat wel gemeten kon worden.',
     ervaring_p3: 'Dat is geen verwijt aan de mensen die het deden, want zo werkte de hele markt. Het is wel de reden dat dit systeem bestaat, en waarom het begint bij meten, benoemen wat je niet weet, en vastleggen wat je probeerde.',
 
@@ -130,8 +130,8 @@ const COPY = {
   },
   en: {
     eyebrow: 'For retail chains and store formats',
-    h1_line: 'Most of it is bought in the store.',
-    h1_accent: 'Almost everything you measure comes from a screen.',
+    h1_line: 'Sold in the store.',
+    h1_accent: 'Measured on a screen.',
     sub: 'That is the gap. You know to the cent what a click cost, and you do not know whether the campaign got anyone through the door. At the end of the year you defend a media budget with half the story.',
     cta: 'Start the diagnosis',
     cta_sec: 'What the platform does',
@@ -142,7 +142,7 @@ const COPY = {
     scan_cijfers: [
       { n: '0 of 13', t: 'times the site of the chain was used as a source' },
       { n: '1 of 12', t: 'open questions named the chain at all' },
-      { n: 'kookwinkel.nl', t: 'and four other specialist shops supplied the answers' },
+      { n: 'kookwinkel.nl', t: 'and other small specialist shops supplied the answers' },
     ],
     scan_slot: 'The last question was the painful one. It was explicitly about the promotions of the chain itself, and even there the answer came not from its own site but from two leaflet sites that republish the leaflet. A chain with hundreds of stores and decades of name recognition loses the question to a cookware shop with a good product page. That is not a media budget problem.',
     scan_cta: 'We run this scan on your format in fifteen minutes, before you are a client.',
@@ -213,7 +213,7 @@ const COPY = {
     ],
 
     ervaring_h2: 'Why we know this.',
-    ervaring_p1: 'This system was built by someone who spent twenty years on the other side of the invoice, as the founder of an agency. Retail was always in the mix, because retail has the largest media budget and the weakest measurement chain of any sector you sit down with.',
+    ervaring_p1: 'This system was built by someone who spent twenty years on the other side of the invoice, as the founder of an agency. What you see there with every client that has a shop floor: a large media budget and a measurement chain that stops at the website.',
     ervaring_p2: 'What stood out across those years: the plan was usually fine. There was an annual calendar, a split between brand and promotion, a leaflet rhythm. What was missing was a measurement that answered whether it had worked, because the sale happened in a store and the measurement stopped at the website. Everyone knew that, and everyone still reported on what could be measured.',
     ervaring_p3: 'That is not a reproach to the people who did it, because that was how the whole market worked. It is the reason this system exists, and why it starts with measuring, naming what you do not know, and recording what you tried.',
 

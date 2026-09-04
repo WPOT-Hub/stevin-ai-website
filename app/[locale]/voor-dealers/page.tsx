@@ -38,7 +38,7 @@ const COPY = {
     cta_sec: 'Wat het platform doet',
 
     scan_eyebrow: 'Een echte meting, 4 september',
-    scan_h2: 'Zes koopvragen uit een regio. De grootste groep van het gebied kwam niet voor.',
+    scan_h2: 'Zes koopvragen uit een regio. De landelijke groep met vestigingen daar kwam niet voor.',
     scan_p: 'Wij stelden zes vragen aan een AI-antwoordmachine met live zoekresultaten, over een regio waar een landelijke dealergroep meerdere vestigingen heeft. Vragen zoals een koper ze stelt: welke dealers hier hebben een goede keuze in nieuwe auto\'s met lease, waar koop ik een betrouwbare occasion met garantie, wie biedt onderhoudspakketten aan.',
     scan_cijfers: [
       { n: '0 van 6', t: 'keer werd de groep genoemd, op geen enkele vraag' },
@@ -49,7 +49,7 @@ const COPY = {
     scan_cta: 'Deze scan draait in een kwartier op jouw groep, per vestiging, voordat je klant bent.',
 
     eerlijk_h2: 'Wat wij hier niet doen.',
-    eerlijk_sub: 'Twee dingen vooraf, want hier stonden tot voor kort tien koppelingen die niet bestaan.',
+    eerlijk_sub: 'Twee dingen vooraf, want dit is precies waar in deze sector standaard overheen wordt beloofd.',
     eerlijk: [
       {
         t: 'Wij koppelen je DMS en je voorraad niet',
@@ -96,25 +96,25 @@ const COPY = {
       {
         p: 'Voed biedalgoritmes uitsluitend met voltooide, gekwalificeerde conversies en echte waarde.',
         u: 'De bedankpagina of het gevoerde gesprek, nooit de knopklik of een verzonnen waarde. Algoritmes zoeken meer van wat jij succes noemt, dus een vervuild signaal traint de verkeerde koper naar je showroom.',
-        bron: 'Kernprincipe 2',
+        bron: 'Praktijkprincipe uit de kennislaag',
         grens: 'Betekent niet dat kliks niet geregistreerd mogen worden. Ze verhuizen naar de meetlaag, niet naar de stuurlaag.',
       },
       {
         p: 'Beoordeel resultaten pas na een volledige conversiecyclus.',
         u: 'Kosten zijn direct compleet, conversies druppelen na. Bij een aankoop met een lange orientatie laat een kort venster je kosten per klant kunstmatig verdubbelen, en wie dan bijstuurt stuurt op ruis.',
-        bron: 'Kernprincipe 3',
+        bron: 'Praktijkprincipe uit de kennislaag',
         grens: 'Betekent niet dat recente cijfers waardeloos zijn. De kostenkant is wel compleet, en die mag je meteen beoordelen.',
       },
       {
         p: 'Zoek eerst de frictie voordat je een overtuigingscampagne adviseert.',
         u: 'De echte drempel is meestal gemak: een proefritformulier met te veel velden, geen prijs bij de occasion, geen antwoord binnen een dag. Gedrag makkelijker maken werkt vaker en goedkoper dan attitudes veranderen.',
-        bron: 'Kernprincipe 13',
+        bron: 'Praktijkprincipe uit de kennislaag',
         grens: 'Betekent niet dat communicatie nooit een houding raakt. Wel dat je de drempel eerst wegneemt.',
       },
     ],
 
     ervaring_h2: 'Waarom wij dit weten.',
-    ervaring_p1: 'Dit systeem is gebouwd door iemand die twintig jaar aan de andere kant van de factuur zat, als oprichter van een bureau. Groepen met meerdere vestigingen zijn daar een bekend patroon: het budget wordt centraal verdeeld, de verantwoording is lokaal, en de cijfers komen op de tiende van de maand binnen.',
+    ervaring_p1: 'Dit systeem is gebouwd door iemand die twintig jaar aan de andere kant van de factuur zat, als oprichter van een bureau. Bij elke klant met meerdere vestigingen zie je hetzelfde: het budget wordt centraal verdeeld, de verantwoording is lokaal, en de cijfers komen op de tiende van de maand binnen.',
     ervaring_p2: 'Wat daardoor gebeurt: de vestiging met de beste locatie lijkt de beste marketing te hebben, en de vestiging in een lastig gebied krijgt de schuld van iets dat aan het gebied ligt. Zonder meting per verzorgingsgebied is dat gesprek niet te voeren.',
     ervaring_p3: 'Daarom begint dit bij meten per vestiging, bij een definitie die over alle merken heen geldt, en bij vastleggen wat je probeerde.',
 
@@ -130,7 +130,7 @@ const COPY = {
     cta_sec: 'What the platform does',
 
     scan_eyebrow: 'A real measurement, 4 September',
-    scan_h2: 'Six buying questions from one region. The largest group in the area did not appear.',
+    scan_h2: 'Six buying questions from one region. The national group with locations there did not appear.',
     scan_p: 'We put six questions to an AI answer engine with live search, about a region where a national dealer group has several locations. The questions a buyer asks: which dealers here have a good choice of new cars with leasing, where do I buy a reliable used car with warranty, who offers maintenance packages.',
     scan_cijfers: [
       { n: '0 of 6', t: 'times the group was named, on any question' },
@@ -141,7 +141,7 @@ const COPY = {
     scan_cta: 'We run this scan on your group, per location, in fifteen minutes, before you are a client.',
 
     eerlijk_h2: 'What we do not do here.',
-    eerlijk_sub: 'Two things up front, because this page listed ten integrations that do not exist.',
+    eerlijk_sub: 'Two things up front, because this is exactly where the overpromising starts in this sector.',
     eerlijk: [
       {
         t: 'We do not connect your DMS or your stock',
@@ -188,25 +188,25 @@ const COPY = {
       {
         p: 'Feed bidding algorithms only completed, qualified conversions and real value.',
         u: 'The thank-you page or the conversation that happened, never the button click or an invented value. Algorithms look for more of whatever you call success, so a polluted signal trains the wrong buyer towards your showroom.',
-        bron: 'Core principle 2',
+        bron: 'Practice principle from the knowledge layer',
         grens: 'Does not mean clicks cannot be recorded. They move to the measurement layer, not the steering layer.',
       },
       {
         p: 'Judge results only after a full conversion cycle.',
         u: 'Costs are complete immediately, conversions trickle in afterwards. With a long consideration purchase, a short window makes your cost per customer look artificially doubled, and anyone correcting then is steering on noise.',
-        bron: 'Core principle 3',
+        bron: 'Practice principle from the knowledge layer',
         grens: 'Does not mean recent numbers are worthless. The cost side is complete, and you can judge that straight away.',
       },
       {
         p: 'Look for friction before advising a persuasion campaign.',
         u: 'The real barrier is usually convenience: a test-drive form with too many fields, no price on the used car, no answer within a day. Making behaviour easier works more often and more cheaply than changing attitudes.',
-        bron: 'Core principle 13',
+        bron: 'Practice principle from the knowledge layer',
         grens: 'Does not mean communication never shifts an attitude. It means you remove the barrier first.',
       },
     ],
 
     ervaring_h2: 'Why we know this.',
-    ervaring_p1: 'This system was built by someone who spent twenty years on the other side of the invoice, as the founder of an agency. Multi-location groups are a familiar pattern there: budget divided centrally, accountability local, and the numbers arriving on the tenth of the month.',
+    ervaring_p1: 'This system was built by someone who spent twenty years on the other side of the invoice, as the founder of an agency. With every multi-location client you see the same thing: budget divided centrally, accountability local, and the numbers arriving on the tenth of the month.',
     ervaring_p2: 'What that produces: the location with the best address appears to have the best marketing, and the location in a difficult area gets blamed for something the area is doing. Without measurement per catchment area, that conversation cannot be had.',
     ervaring_p3: 'So this starts with measuring per location, with a definition that holds across all brands, and with recording what you tried.',
 

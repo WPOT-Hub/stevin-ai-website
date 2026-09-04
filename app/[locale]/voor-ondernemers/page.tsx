@@ -45,13 +45,13 @@ const COPY = {
       {
         p: 'Controleer de meting voordat je iets anders beoordeelt.',
         u: 'Een conversie die op het verkeerde moment wordt geteld maakt elk oordeel over je marketing waardeloos. Wij beginnen daar, en dat is meestal ook waar het misgaat.',
-        bron: 'Kernprincipe 1',
+        bron: 'Praktijkprincipe uit de kennislaag',
         grens: 'Betekent niet dat je zonder perfecte meting niet mag adverteren. Wel dat je je cijfers dan niet blind gelooft.',
       },
       {
         p: 'Weeg aanbevelingen van Google en Meta als verkoopsignaal.',
         u: 'De optimalisatiescore in je account is een verkoopmetric, geen rapportcijfer. Een aanbeveling gaat pas door als het bewijs erbij past.',
-        bron: 'Kernprincipe 5',
+        bron: 'Praktijkprincipe uit de kennislaag',
         grens: 'Betekent niet dat die functies nooit werken. Met een goed conversiesignaal eronder kunnen ze prima zijn.',
       },
       {
@@ -107,13 +107,13 @@ const COPY = {
       {
         p: 'Check the measurement before judging anything else.',
         u: 'A conversion counted at the wrong moment makes every judgement about your marketing worthless. We start there, and that is usually where it goes wrong.',
-        bron: 'Core principle 1',
+        bron: 'Practice principle from the knowledge layer',
         grens: 'Does not mean you cannot advertise without perfect measurement. It means you do not believe your numbers blindly.',
       },
       {
         p: 'Treat recommendations from Google and Meta as a sales signal.',
         u: 'The optimisation score in your account is a sales metric, not a report card. A recommendation goes through when the evidence supports it.',
-        bron: 'Core principle 5',
+        bron: 'Practice principle from the knowledge layer',
         grens: 'Does not mean those features never work. With a sound conversion signal underneath they can be perfectly good.',
       },
       {
