@@ -116,27 +116,30 @@ export default async function AuditPage({ params }: Props) {
             {/* Signal card example */}
             <div className="bg-[#0A1628] rounded-2xl p-6 space-y-3">
               <div className="flex items-center gap-2 mb-4">
-                <span className="w-2 h-2 rounded-full bg-[#F4216A] animate-pulse" />
-                <span className="text-[11px] font-mono text-white/40 uppercase tracking-widest">Live · Stevin Advisor</span>
+                {/* Was gelabeld "Live" met een pulserend stipje, terwijl de
+                    bedragen en percentages erin verzonnen waren. Nu benoemd als
+                    voorbeeld (W-042, 4 sep 2026). */}
+                <span className="w-2 h-2 rounded-full bg-white/30" />
+                <span className="text-[11px] font-mono text-white/40 uppercase tracking-widest">Voorbeeld · zo ziet een signaal eruit</span>
               </div>
               {[
                 {
                   label: 'CRITICAL',
                   color: '#F4216A',
                   title: '[FAKE CONVERSION] Meta optimaliseert op soft events',
-                  body: 'Pixel: 229 conversies · GA4: 32. De €660 spend traint het algoritme op bouncers, niet op klanten.',
+                  body: 'De pixel telt veel meer conversies dan GA4. Dan traint het algoritme op bezoekers die meteen weggaan, niet op klanten.',
                 },
                 {
                   label: 'HIGH',
                   color: '#F5A623',
-                  title: '[CREATIVE FATIGUE] CTR -48% na 17 dagen',
-                  body: 'CA_Linkad_v4 presteert significant onder baseline. CPC gestegen met 34%.',
+                  title: '[CREATIVE FATIGUE] Advertentie raakt uitgekeken',
+                  body: 'De doorklikratio zakt weg ten opzichte van de eigen basislijn, terwijl de klikprijs oploopt. Tijd om te verversen.',
                 },
                 {
                   label: 'HIGH',
                   color: '#5DA3FF',
-                  title: '[BUDGET WASTE] €173 spend, 0 conversies',
-                  body: 'NON-BRAND campagne trekt verkeer zonder intentie. 92% bounce rate.',
+                  title: '[BUDGET WASTE] Uitgaven zonder resultaat',
+                  body: 'Een campagne buiten je merknaam trekt verkeer zonder koopintentie: bijna iedereen klikt weg zonder iets te doen.',
                 },
               ].map((signal) => (
                 <div key={signal.title} className="bg-white/5 rounded-lg p-4 border border-white/8">

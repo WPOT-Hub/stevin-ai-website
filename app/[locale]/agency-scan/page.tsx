@@ -150,27 +150,36 @@ export default async function AgencyScanPage({ params }: Props) {
             {/* Signal card */}
             <div className="bg-[#0A1628] rounded-2xl p-6 space-y-3">
               <div className="flex items-center gap-2 mb-4">
-                <span className="w-2 h-2 rounded-full bg-[#F4216A] animate-pulse" />
-                <span className="text-[11px] font-mono text-white/40 uppercase tracking-widest">Live · Stevin</span>
+                {/* Was gelabeld "Live" met een pulserend stipje, terwijl de
+                    bedragen erin verzonnen waren. Dat leest als echte
+                    systeemuitvoer. Nu benoemd als voorbeeld, zoals de homepage
+                    het ook doet bij de demo-omgeving (W-042, 4 sep 2026). */}
+                <span className="w-2 h-2 rounded-full bg-white/30" />
+                <span className="text-[11px] font-mono text-white/40 uppercase tracking-widest">Voorbeeld · zo ziet een signaal eruit</span>
               </div>
               {[
                 {
                   label: 'CRITICAL',
                   color: '#F4216A',
                   title: '[FAKE CONVERSION] Meta optimaliseert op soft events',
-                  body: 'Pixel: 229 conversies · GA4: 32. De €660 spend traint het algoritme op bouncers, niet op klanten.',
+                  body: 'De pixel telt bijna zeven keer zoveel conversies als GA4. Dan traint het algoritme op bezoekers die meteen weggaan, niet op klanten.',
                 },
                 {
                   label: 'HIGH',
                   color: '#F5A623',
                   title: '[BUDGET WASTE] Brand-term kannibalisatie gedetecteerd',
-                  body: '€2.140 spend op merknaam-campagne. 78% van dit verkeer zou organisch binnenkomen.',
+                  body: 'Er loopt budget op je eigen merknaam, terwijl het grootste deel van dat verkeer ook zonder advertentie was gekomen.',
                 },
+                // De derde kaart, [MARKUP] met een verzonnen factuurverschil van
+                // 28 procent, is weggehaald. Dat is een beschuldiging aan het
+                // adres van een bureau, opgemaakt uit bedragen die niemand kan
+                // nakijken. D-014: het markup-signaal is een gespreksopener,
+                // nooit een beschuldiging.
                 {
                   label: 'HIGH',
                   color: '#5DA3FF',
-                  title: '[MARKUP] Media-spend vs. facturatie mismatch',
-                  body: 'Werkelijke Google-spend: €3.200. Gefactureerd: €4.100. Verschil: €900 (28%).',
+                  title: '[TRACKING] Meting en werkelijkheid lopen uiteen',
+                  body: 'Wat het platform rapporteert komt niet overeen met wat er in je eigen administratie binnenkomt. Zolang dat verschil er is, stuur je op het verkeerde getal.',
                 },
               ].map((signal) => (
                 <div key={signal.title} className="bg-white/5 rounded-lg p-4 border border-white/[0.08]">
