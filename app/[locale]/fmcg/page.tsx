@@ -5,6 +5,7 @@ import Section from '@/components/Section'
 import SectionHeader from '@/components/SectionHeader'
 import { localizedMetadata } from '@/lib/seo'
 import DeskProof from '@/components/DeskProof'
+import IntelligenceFeed from '@/components/IntelligenceFeed'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -250,14 +251,24 @@ export default async function FmcgPage({ params }: Props) {
     <>
       <section className="bg-primary text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-          <p className="text-xs font-mono uppercase tracking-[0.14em] text-white/50">{t.eyebrow}</p>
-          <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight max-w-4xl text-balance">
-            {t.h1_line} <span className="text-accent">{t.h1_accent}</span>
-          </h1>
-          <p className="mt-6 text-lg text-white/70 max-w-2xl leading-relaxed">{t.sub}</p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold text-primary bg-white rounded-xl hover:bg-white/90 transition-colors">{t.cta}</Link>
-            <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">{t.cta_sec}</Link>
+          {/* Twee kolommen: het verhaal links, de feed rechts. De rechterhelft
+              stond leeg, en een stockfoto van een supermarktschap zegt niets dat
+              een concurrent niet ook kan plakken. Wat wel iets zegt is het
+              systeem zelf aan het werk. IntelligenceFeed bestond al maar werd
+              nergens gebruikt; de fmcg-variant is er 4 sep bij geschreven. */}
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,440px)] gap-12 lg:gap-16 items-center">
+            <div>
+              <p className="text-xs font-mono uppercase tracking-[0.14em] text-white/50">{t.eyebrow}</p>
+              <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
+                {t.h1_line} <span className="text-accent">{t.h1_accent}</span>
+              </h1>
+              <p className="mt-6 text-lg text-white/70 max-w-2xl leading-relaxed">{t.sub}</p>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold text-primary bg-white rounded-xl hover:bg-white/90 transition-colors">{t.cta}</Link>
+                <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">{t.cta_sec}</Link>
+              </div>
+            </div>
+            <IntelligenceFeed variant="fmcg" />
           </div>
         </div>
       </section>

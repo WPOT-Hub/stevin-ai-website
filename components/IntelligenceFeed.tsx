@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 
 // ── Types ──
 
@@ -12,7 +12,7 @@ interface FeedLine {
   mono?: boolean
 }
 
-export type FeedVariant = 'all' | 'marketing' | 'artist'
+export type FeedVariant = 'all' | 'marketing' | 'artist' | 'fmcg'
 
 // ── Scenario pools ──
 
@@ -115,10 +115,48 @@ const ARTIST_SCENARIOS: FeedLine[][] = [
 // Homepage mixes both
 const ALL_SCENARIOS = [...MARKETING_SCENARIOS.slice(0, 3), ...ARTIST_SCENARIOS.slice(0, 2), ...MARKETING_SCENARIOS.slice(3)]
 
+
+// FMCG-scenario's, geschreven 4 sep 2026 voor /fmcg.
+// BEWUST GEEN verzonnen eurobedragen, anders dan de oudere scenario's hierboven.
+// Die pagina staat of valt met controleerbaarheid, en scenario 1 is letterlijk
+// de scan die op 4 sep gedraaid heeft (docs/research/vindbaarheidsscans/).
+// Ook bewust geen regel die suggereert dat we retailerportalen koppelen: twee
+// secties lager op die pagina staat expliciet dat we dat niet doen.
+const FMCG_SCENARIOS: FeedLine[][] = [
+  [
+    { text: 'AI-zichtbaarheid, categorie supermarkt...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: '7 koopvragen, geen merknaam erin', color: 'muted', prefix: '>', delay: 1000, mono: true },
+    { text: 'Eigen site als bron: 0 van 7', color: 'pink', prefix: '!', delay: 2000 },
+    { text: 'Wel geciteerd: ah.nl, jumbo.com', color: 'pink', delay: 3000 },
+    { text: 'De retailer geeft het antwoord', color: 'blue', prefix: '~', delay: 4000 },
+    { text: 'Bouw op de vragen die zij stellen', color: 'neon', prefix: '\u2192', delay: 5000 },
+    { text: 'Nulmeting vast, over 90 dagen opnieuw', color: 'neon', prefix: '\u2713', delay: 6000 },
+  ],
+  [
+    { text: 'Zoekvraag: categorie versus merk...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: 'Categorievolume loopt 3 weken op', color: 'blue', prefix: '~', delay: 1000 },
+    { text: 'Jouw merkvolume blijft vlak', color: 'pink', prefix: '!', delay: 2000 },
+    { text: '2 concurrenten nieuw in het register', color: 'pink', delay: 3000 },
+    { text: 'Zij bieden op categorie, niet op merk', color: 'blue', prefix: '~', delay: 4000 },
+    { text: 'Meelopen met de piek, niet erna', color: 'neon', prefix: '\u2192', delay: 5000 },
+    { text: 'Besluit en reden vastgelegd', color: 'neon', prefix: '\u2713', delay: 6000 },
+  ],
+  [
+    { text: 'Kwartaalcijfers samenvoegen...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: '7 rapportages van de klant', color: 'muted', prefix: '>', delay: 1000, mono: true },
+    { text: '7 verschillende attributievensters', color: 'pink', prefix: '!', delay: 2000 },
+    { text: 'Optellen geeft een leeg getal', color: 'pink', delay: 3000 },
+    { text: 'Omgerekend naar een definitie', color: 'blue', prefix: '~', delay: 4000 },
+    { text: 'Verschil per retailer, met de reden', color: 'neon', prefix: '\u2192', delay: 5000 },
+    { text: 'Definitie blijft, ook na ons', color: 'neon', prefix: '\u2713', delay: 6000 },
+  ],
+]
+
 const SCENARIO_MAP: Record<FeedVariant, FeedLine[][]> = {
   all: ALL_SCENARIOS,
   marketing: MARKETING_SCENARIOS,
   artist: ARTIST_SCENARIOS,
+  fmcg: FMCG_SCENARIOS,
 }
 
 // ── Color mapping ──
@@ -155,28 +193,46 @@ export default function IntelligenceFeed({ variant = 'all' }: IntelligenceFeedPr
 
   const scenario = scenarios[scenarioIndex]
 
+  // De timers werden nooit opgeruimd: bij een scenariowissel of een remount
+  // bleven de oude lopen en zetten ze de typeteller van het nieuwe scenario op
+  // nul. Opgeruimd op 4 sep 2026. Let op bij het testen: in een tab die niet
+  // vooraan staat knijpt de browser setTimeout af tot een per seconde, en dan
+  // lijkt de feed stuk terwijl er niets aan de hand is.
+  const timersRef = useRef<ReturnType<typeof setTimeout>[]>([])
+  const clearTimers = useCallback(() => {
+    timersRef.current.forEach(clearTimeout)
+    timersRef.current = []
+  }, [])
+
   const startScenario = useCallback(() => {
+    clearTimers()
     setVisibleLines(0)
     setTypingLine(-1)
     setTypedChars(0)
     setFading(false)
 
     scenario.forEach((line, i) => {
-      setTimeout(() => {
-        setTypingLine(i)
-        setTypedChars(0)
-      }, line.delay)
+      timersRef.current.push(
+        setTimeout(() => {
+          setTypingLine(i)
+          setTypedChars(0)
+        }, line.delay),
+      )
     })
 
     const lastDelay = scenario[scenario.length - 1].delay
-    setTimeout(() => {
-      setFading(true)
-    }, lastDelay + 3000)
+    timersRef.current.push(
+      setTimeout(() => {
+        setFading(true)
+      }, lastDelay + 3000),
+    )
 
-    setTimeout(() => {
-      setScenarioIndex((prev) => (prev + 1) % scenarios.length)
-    }, lastDelay + 3800)
-  }, [scenario, scenarios.length])
+    timersRef.current.push(
+      setTimeout(() => {
+        setScenarioIndex((prev) => (prev + 1) % scenarios.length)
+      }, lastDelay + 3800),
+    )
+  }, [scenario, scenarios.length, clearTimers])
 
   // Typewriter effect
   useEffect(() => {
@@ -201,7 +257,8 @@ export default function IntelligenceFeed({ variant = 'all' }: IntelligenceFeedPr
   // Start/restart scenario cycle
   useEffect(() => {
     startScenario()
-  }, [scenarioIndex, startScenario])
+    return clearTimers
+  }, [scenarioIndex, startScenario, clearTimers])
 
   return (
     <div
