@@ -16,8 +16,9 @@ type Props = { params: Promise<{ locale: string }> }
 // Principes woordelijk uit de kennislaag: kern 2, kern 3, kern 13.
 // De mix-claim in de hero is gemeten op 5 sep 2026 via Google Keyword Planner
 // (Ads API generateKeywordHistoricalMetrics, tien Mercedes-modeltermen,
-// gemiddeld maandelijks zoekvolume): A+C-klasse 32% van de som in Friesland
-// tegen 23% in Amsterdam, GLE+EQA 12% tegen 17%. Grootste term is in beide
+// gemiddeld maandelijks zoekvolume): Groningen A+C-klasse 29% van de som,
+// bestelwagens 18%, GLB 13%; Amsterdam 23%, 14%, 19%. Provincies bevestigen
+// het (Friesland 32%, Gelderland 30%, Limburg 29%, Noord-Holland 23%). Grootste term is in beide
 // de GLC, dus geen "ander model" maar een andere mix, en zo staat het er ook.
 // Heerenveen en Wijchen zelf zijn te klein voor een uitspraak (Google rondt op
 // 10 tot 30); Gelderland geeft dezelfde mix als Friesland (A+C 30%).
@@ -33,7 +34,7 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     eyebrow: 'Voor dealergroepen',
     h1_line: 'Landelijk ben je groot.',
     h1_accent: 'Op de koopvraag om de hoek besta je niet.',
-    sub: 'Het budget staat centraal, de verantwoording is per vestiging, en niemand kan zeggen welke regio meelift op de naam en welke er alleen geld in stopt. En de mix verschilt per regio: in Friesland en Gelderland is bijna een derde van de zoekvraag naar een premium merk de A- of C-klasse, in Amsterdam minder dan een kwart, en daar zoekt men naar verhouding vaker de grote SUV en de elektrische. Beide vestigingen krijgen dezelfde campagne. Wij meten het per verzorgingsgebied, per model.',
+    sub: 'Het budget staat centraal, de verantwoording is per vestiging, en niemand kan zeggen welke regio meelift op de naam en welke er alleen geld in stopt. En de mix verschilt per stad: in Groningen is bijna een op de drie zoekopdrachten naar een premium merk een A- of C-klasse en bijna een op de vijf een bestelwagen, in Amsterdam is dat een kwart en een op de zeven, en daar wordt naar verhouding vaker de compacte SUV gezocht. Beide vestigingen krijgen dezelfde campagne. Wij meten het per verzorgingsgebied, per model.',
     cta: 'Vraag de gratis scan aan',
     cta_reason: 'Een kwartier werk aan onze kant, per vestiging, geen verplichting. Je ziet meteen op welke koopvragen in jouw regio je groep ontbreekt.',
     cta_sec: 'Bekijk de tarieven',
@@ -91,7 +92,7 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     eyebrow: 'For dealer groups',
     h1_line: 'Nationally you are large.',
     h1_accent: 'On the buying question around the corner you do not exist.',
-    sub: 'Budget is decided centrally, accountability is per location, and nobody can say which region rides on the name and which one only spends. And the mix differs by region: outside the Randstad almost a third of the search demand for a premium brand is the compact saloon, in Amsterdam less than a quarter, and there people search relatively more for the large SUV and the electric one. Both locations get the same campaign. We measure it per catchment area, per model.',
+    sub: 'Budget is decided centrally, accountability is per location, and nobody can say which region rides on the name and which one only spends. And the mix differs by city: in Groningen almost one in three searches for a premium brand is the compact saloon and almost one in five a van, in Amsterdam it is a quarter and one in seven, and there people search relatively more for the compact SUV. Both locations get the same campaign. We measure it per catchment area, per model.',
     cta: 'Request the free scan',
     cta_reason: 'Fifteen minutes of work on our side, per location, no commitment. You see straight away which buying questions in your region your group is missing from.',
     cta_sec: 'See pricing',
