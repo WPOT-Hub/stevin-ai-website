@@ -25,7 +25,12 @@ const COPY = {
       { t: 'Elke wijziging heeft een reden', d: 'Je ziet waarom. Niet "optimalisatie", maar de echte overweging, terug te lezen in gewone taal.' },
     ],
     mech: [
-      { t: 'AI stelt voor, een mens keurt goed', d: 'Altijd, zonder uitzondering. Het systeem leest mee en signaleert; besluiten met impact gaan eerst langs een mens.' },
+      // "Altijd, zonder uitzondering" en "besluiten MET IMPACT gaan langs een
+      // mens" stonden in dezelfde zin, en dat tweede suggereert dat andere
+      // besluiten dat niet doen. De code is strikter dan de copy: er bestaat
+      // geen enkele schrijfaanroep naar Google of Meta, dus het systeem voert
+      // sowieso niets uit. Gelijkgetrokken met /platform (W-042, 4 sep 2026).
+      { t: 'AI stelt voor, een mens voert uit', d: 'Altijd, zonder uitzondering. Het systeem leest mee en signaleert, en zet het voorstel klaar. Er gaat geen enkele opdracht vanuit ons naar je advertentieaccounts; dat doet een mens, of jij.' },
       { t: 'Ook teruggedraaide keuzes blijven zichtbaar', d: 'Een besluit dat achteraf niet goed uitpakte verdwijnt niet. Het staat er, met wat we ervan geleerd hebben.' },
       { t: 'Wij loggen ook onszelf', d: 'Ons eigen werk staat in hetzelfde logboek waar jij in meekijkt. De signalen draaien ook op ons werk, dag en nacht.' },
       { t: 'Het bewijs staat deels buiten ons om', d: 'Het wijzigingslogboek van je advertentie-account en het transparantieregister zijn van Google, niet van ons. Je hoeft ons dus niet te geloven.' },
@@ -63,7 +68,7 @@ const COPY = {
       { t: 'Every change has a reason', d: 'You see why. Not "optimisation", but the actual consideration, readable in plain language.' },
     ],
     mech: [
-      { t: 'AI proposes, a person approves', d: 'Always, without exception. The system reads along and signals; decisions with impact pass a person first.' },
+      { t: 'AI proposes, a person executes', d: 'Always, without exception. The system reads along, signals, and prepares the proposal. Not a single instruction runs from us to your ad accounts; a person does that, or you do.' },
       { t: 'Reversed decisions stay visible', d: 'A decision that did not work out does not disappear. It stays, with what we learned from it.' },
       { t: 'We log ourselves too', d: 'Our own work sits in the same log you look into. The signals run on our work as well, day and night.' },
       { t: 'Part of the proof sits outside of us', d: 'Your ad account change history and the transparency register belong to Google, not to us. So you do not have to believe us.' },
