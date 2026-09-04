@@ -71,6 +71,26 @@ const COPY = {
     ],
     nu_slot: 'Vandaar de volgorde: eerst weten of je cijfers kloppen, dan pas erop sturen. Niet omdat het spannend klinkt, maar omdat de rest anders op zand staat.',
 
+    // De volgorde uit de master brief, die nergens op de site stond terwijl hij
+    // de hele propositie draagt: eigenaarschap, meting, een bron, geheugen, en
+    // pas daarna automatiseren en AI. Het punt is de breuklijn: de eerste vier
+    // zijn voorwaarden, de laatste twee zijn wat je erop bouwt. Wie stap drie
+    // overslaat, laat AI rekenen met cijfers die niet kloppen.
+    ladder_eyebrow: 'De volgorde',
+    ladder_h2: 'Wat er moet kloppen voordat AI iets voor je kan betekenen.',
+    ladder_sub: 'Niet omdat het braaf is, maar omdat elke stap de volgende mogelijk maakt. Sla er een over en alles daarboven is gokwerk met meer rekenkracht.',
+    ladder_grip: 'Eerst grip',
+    ladder_dan: 'Dan pas dit',
+    ladder: [
+      { n: '01', t: 'Eigenaarschap', d: 'De accounts staan op naam van je bedrijf en jij bepaalt wie erbij mag. Zonder dit kun je morgen niet wisselen van uitvoerder, hoe goed de rest ook staat.' },
+      { n: '02', t: 'Meting', d: 'Een conversie is een echte aanvraag, geen knopklik. Vuurt je meting op het verkeerde moment, dan is elk cijfer erboven onbruikbaar.' },
+      { n: '03', t: 'Een bron', d: 'Een plek waar de cijfers samenkomen, in plaats van vier dashboards die elkaar tegenspreken. Anders discussieer je over wie gelijk heeft in plaats van over wat je doet.' },
+      { n: '04', t: 'Geheugen', d: 'Wat is er geprobeerd, waarom, en wat kwam eruit. Zonder dat begint elke nieuwe partij weer bij nul, en betaal je twee keer voor dezelfde les.' },
+      { n: '05', t: 'Automatiseren', d: 'Pas hier. Wat vier keer hetzelfde gaat, kan zichzelf doen. Daarvoor is het gokken welk werk je automatiseert.' },
+      { n: '06', t: 'AI', d: 'Bovenop, niet eronder. Met de vier stappen hierboven op orde is dit een vliegwiel. Zonder is het een dure manier om sneller de verkeerde kant op te sturen.' },
+    ],
+    ladder_slot: 'Wij beginnen altijd onderaan. Niet omdat het de leukste kant is, maar omdat de rest daar op rust.',
+
     checks_eyebrow: 'Kijk zelf mee',
     checks_h2: 'Vertrouw ons niet op ons woord.',
     checks_sub: 'Je kunt vandaag zelf controleren hoe jouw marketing ervoor staat. Drie checks. De meeste ondernemers hebben ze nog nooit gedaan, omdat bijna niemand weet dat het kan.',
@@ -211,6 +231,21 @@ const COPY = {
       { t: 'So the basics weigh more, not less', d: 'The cheaper execution gets, the more expensive a flaw in the foundation becomes. It multiplies along.' },
     ],
     nu_slot: 'Hence the order: first know whether your numbers are right, then steer on them. Not because it sounds exciting, but because everything else stands on sand otherwise.',
+
+    ladder_eyebrow: 'The order',
+    ladder_h2: 'What has to be right before AI can do anything for you.',
+    ladder_sub: 'Not out of tidiness, but because each step makes the next one possible. Skip one and everything above it is guesswork with more compute.',
+    ladder_grip: 'Grip first',
+    ladder_dan: 'Only then this',
+    ladder: [
+      { n: '01', t: 'Ownership', d: 'The accounts are in your company name and you decide who gets access. Without this you cannot switch executor tomorrow, however good the rest is.' },
+      { n: '02', t: 'Measurement', d: 'A conversion is a real enquiry, not a button click. If your tracking fires at the wrong moment, every number above it is unusable.' },
+      { n: '03', t: 'One source', d: 'One place where the numbers meet, instead of four dashboards contradicting each other. Otherwise you argue about who is right instead of what to do.' },
+      { n: '04', t: 'Memory', d: 'What was tried, why, and what came of it. Without it every new party starts from zero and you pay twice for the same lesson.' },
+      { n: '05', t: 'Automation', d: 'Only here. What happens the same way four times can do itself. Before this you are guessing which work to automate.' },
+      { n: '06', t: 'AI', d: 'On top, not underneath. With the four steps above in place this is a flywheel. Without them it is an expensive way to go the wrong way faster.' },
+    ],
+    ladder_slot: 'We always start at the bottom. Not because it is the fun part, but because the rest rests on it.',
 
     checks_eyebrow: 'See for yourself',
     checks_h2: 'Do not take our word for it.',
@@ -544,6 +579,58 @@ export default async function HomePage({ params }: Props) {
             ))}
           </div>
           <p className="text-muted text-[15px] leading-[1.65] mt-8 mb-0 max-w-[64ch]">{c.nu_slot}</p>
+        </div>
+      </section>
+
+      {/* ── DE VOLGORDE ── */}
+      {/* De kern van de propositie, en hij stond nergens: eigenaarschap,
+          meting, een bron, geheugen, en pas dan automatiseren en AI. De
+          breuklijn tussen 04 en 05 is het hele punt, dus die is zichtbaar
+          gemaakt in plaats van weggewerkt. */}
+      <section className="bg-primary text-white" style={{ padding: '112px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/40 m-0 mb-4">{c.ladder_eyebrow}</p>
+          <h2 className="font-display font-extrabold m-0 mb-5" style={{ ...h2Style, maxWidth: '26ch' }}>
+            {c.ladder_h2}
+          </h2>
+          <p className="text-white/60 leading-[1.65] m-0 mb-14" style={{ fontSize: '17px', maxWidth: '62ch' }}>
+            {c.ladder_sub}
+          </p>
+
+          <div className="max-w-[900px]">
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-accent m-0 mb-6">{c.ladder_grip}</p>
+            {c.ladder.map((stap, i) => (
+              <Fragment key={stap.n}>
+                {i === 4 && (
+                  <div className="my-10 grid grid-cols-[1fr_auto_1fr] items-center gap-5">
+                    <span className="h-px bg-white/15" />
+                    <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">{c.ladder_dan}</span>
+                    <span className="h-px bg-white/15" />
+                  </div>
+                )}
+                <article className={`grid grid-cols-[44px_1fr] gap-6 py-6 ${i !== 0 && i !== 4 ? 'border-t border-white/10' : ''}`}>
+                  <span
+                    className="font-mono text-[13px] pt-1"
+                    style={{ color: i < 4 ? 'var(--color-accent)' : 'rgba(255,255,255,0.35)' }}
+                  >
+                    {stap.n}
+                  </span>
+                  <div>
+                    <h3 className="font-display font-bold text-white m-0 mb-2" style={{ fontSize: '19px', letterSpacing: '-0.01em' }}>
+                      {stap.t}
+                    </h3>
+                    <p className="text-white/60 leading-[1.6] m-0" style={{ fontSize: '15px', maxWidth: '62ch' }}>
+                      {stap.d}
+                    </p>
+                  </div>
+                </article>
+              </Fragment>
+            ))}
+          </div>
+
+          <p className="text-white/50 leading-[1.65] mt-12 mb-0" style={{ fontSize: '15px', maxWidth: '58ch' }}>
+            {c.ladder_slot}
+          </p>
         </div>
       </section>
 
