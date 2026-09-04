@@ -17,6 +17,8 @@ type Props = { params: Promise<{ locale: string }> }
 // sublicentie toe, Brandwatch laat API-sleutel delen met een derde wel toe.
 // Principes woordelijk uit de kennislaag: kern 9, kern 10, kern 11.
 // Geen klantnamen of cijfers uit eerder bureauwerk (Addurance): dat is van hen.
+// De categorieen in de bio zijn Koens eigen klanten daar (bevestigd 5 sep 2026,
+// zie memory koen-fmcg-ervaring), dus de claim is van hem; de namen niet.
 
 const COPY: Record<'nl' | 'en', VoorWieCopy> = {
   nl: {
@@ -64,7 +66,7 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     ],
 
     waarom_h2: 'Waarom wij dit weten.',
-    waarom_p1: 'Gebouwd door iemand die twintig jaar aan de andere kant van de factuur zat, een flink deel daarvan in FMCG. Mediaplannen voor merken in zuivel, fruit, dranken, verzorging en diervoeding.',
+    waarom_p1: 'Gebouwd door iemand die twintig jaar aan de andere kant van de factuur zat, een flink deel daarvan in FMCG. Mediaplannen voor merken in zuivel, groente en fruit, dranken, snacks, verzorging en dierverzorging.',
     waarom_p2: 'De strategie was meestal in orde: een model, een jaarkalender, een verdeling over merk en activatie. Wat er niet lag, was een meetplan dat de vraag beantwoordde of het gewerkt had. Na tientallen merken kon niemand met zekerheid zeggen of een merkcampagne een extra pak had verkocht. Daarom bestaat dit.',
 
     faq_h2: 'Wat merkteams ons eerst vragen.',
@@ -122,7 +124,7 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     ],
 
     waarom_h2: 'Why we know this.',
-    waarom_p1: 'Built by someone who spent twenty years on the other side of the invoice, a good part of it in FMCG. Media plans for brands in dairy, fruit, drinks, personal care and pet food.',
+    waarom_p1: 'Built by someone who spent twenty years on the other side of the invoice, a good part of it in FMCG. Media plans for brands in dairy, fruit and vegetables, drinks, snacks, personal care and pet care.',
     waarom_p2: 'The strategy was usually fine: a model, an annual calendar, a split between brand and activation. What was missing was a measurement plan that answered whether it had worked. After dozens of brands, nobody could say with certainty whether a brand campaign had sold one extra pack. That is why this exists.',
 
     faq_h2: 'What brand teams ask us first.',
