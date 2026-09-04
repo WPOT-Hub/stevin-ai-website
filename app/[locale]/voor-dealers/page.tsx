@@ -25,7 +25,7 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     eyebrow: 'Voor dealergroepen',
     h1_line: 'Landelijk ben je groot.',
     h1_accent: 'Op de koopvraag om de hoek besta je niet.',
-    sub: 'Het budget staat centraal, de verantwoording is per vestiging, en niemand kan zeggen welke regio meelift op de naam en welke er alleen geld in stopt. Wij meten het per verzorgingsgebied.',
+    sub: 'Het budget staat centraal, de verantwoording is per vestiging, en niemand kan zeggen welke regio meelift op de naam en welke er alleen geld in stopt. En in Amsterdam wordt naar een ander model gezocht dan in Heerenveen, terwijl beide vestigingen dezelfde campagne krijgen. Wij meten het per verzorgingsgebied, per model.',
     cta: 'Vraag de gratis scan aan',
     cta_reason: 'Een kwartier werk aan onze kant, per vestiging, geen verplichting. Je ziet meteen op welke koopvragen in jouw regio je groep ontbreekt.',
     cta_sec: 'Bekijk de tarieven',
@@ -52,7 +52,7 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
 
     krijg_h2: 'Wat je wel krijgt.',
     krijg: [
-      { t: 'Per vestiging, niet per land', d: 'Zoekvraag, zichtbaarheid en advertentiedruk per verzorgingsgebied. Waar je meelift op de naam en waar je betaalt zonder dat het beweegt. Een gesprek dat je met een landelijk gemiddelde niet kunt voeren.' },
+      { t: 'Per vestiging en per model, niet per land', d: 'Zoekvraag, zichtbaarheid en advertentiedruk per verzorgingsgebied, uitgesplitst naar model. Waar de SUV loopt en waar de stationwagen, waar je meelift op de naam en waar je betaalt zonder dat het beweegt. Een gesprek dat je met een landelijk gemiddelde niet kunt voeren.' },
       { t: 'Een definitie over alle merken heen', d: 'Elk merk zijn eigen bureau is meestal elk merk zijn eigen definitie van een lead. Wij leggen er een vast, met de reden, zodat je merken naast elkaar kunt leggen.' },
       { t: 'Wie er in jouw gebied adverteert', d: 'De advertentieregisters van Google en Meta zijn openbaar. Welke dealers en merken in jouw regio adverteren en waarmee, doorlopend. Dit werkt al voordat je klant bent.' },
     ],
@@ -83,7 +83,7 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     eyebrow: 'For dealer groups',
     h1_line: 'Nationally you are large.',
     h1_accent: 'On the buying question around the corner you do not exist.',
-    sub: 'Budget is decided centrally, accountability is per location, and nobody can say which region rides on the name and which one only spends. We measure it per catchment area.',
+    sub: 'Budget is decided centrally, accountability is per location, and nobody can say which region rides on the name and which one only spends. And Amsterdam searches for a different model than a town in the north, while both locations get the same campaign. We measure it per catchment area, per model.',
     cta: 'Request the free scan',
     cta_reason: 'Fifteen minutes of work on our side, per location, no commitment. You see straight away which buying questions in your region your group is missing from.',
     cta_sec: 'See pricing',
@@ -110,7 +110,7 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
 
     krijg_h2: 'What you do get.',
     krijg: [
-      { t: 'Per location, not per country', d: 'Search demand, visibility and advertising pressure per catchment area. Where you ride on the name and where you pay without anything moving. A conversation you cannot have with a national average.' },
+      { t: 'Per location and per model, not per country', d: 'Search demand, visibility and advertising pressure per catchment area, split by model. Where the SUV sells and where the estate does, where you ride on the name and where you pay without anything moving. A conversation you cannot have with a national average.' },
       { t: 'One definition across all brands', d: 'Every brand with its own agency usually means every brand with its own definition of a lead. We fix one, with the reason, so you can put brands side by side.' },
       { t: 'Who advertises in your area', d: 'The ad registers of Google and Meta are public. Which dealers and brands advertise in your region and with what, continuously. This works before you are a client.' },
     ],
