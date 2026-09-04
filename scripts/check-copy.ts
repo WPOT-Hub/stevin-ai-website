@@ -18,7 +18,7 @@ const BASIS = process.argv[2]?.replace(/\/$/, '') ?? 'https://stevin.ai'
 /** De pagina's die tellen. Programmatic long tail zit er als steekproef in. */
 const PADEN = [
   '/', '/platform', '/diensten', '/werkwijze', '/controle', '/contact',
-  '/mkb', '/retail', '/voor-ondernemers', '/voor-marketingteams', '/voor-musea', '/voor-dealers',
+  '/mkb', '/retail', '/voor-ondernemers', '/voor-marketingteams', '/musea', '/podia', '/evenementen', '/cultuur', '/voor-dealers',
   '/producten', '/integraties', '/multi-market', '/marketing-automation', '/seo', '/geo',
   '/google-ads-uitbesteden', '/social-media-uitbesteden',
   '/google-ad-grants-nederland', '/google-ad-grants-belgie',

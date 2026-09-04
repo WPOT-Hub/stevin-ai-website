@@ -78,7 +78,9 @@ export default function Header() {
     { label: t('voor_retail'), href: '/retail' },
     { label: t('voor_fmcg'), href: '/fmcg' },
     { label: t('voor_dealers'), href: '/voor-dealers' },
-    { label: t('voor_musea'), href: '/voor-musea' },
+    { label: t('voor_musea'), href: '/musea' },
+    { label: t('voor_podia'), href: '/podia' },
+    { label: t('voor_evenementen'), href: '/evenementen' },
     { label: t('voor_mkb'), href: '/mkb' },
   ]
 

@@ -41,10 +41,12 @@
     "voor_ondernemers": "For business owners",
     "voor_teams": "For marketing teams",
     "voor_dealers": "For car dealers",
-    "voor_musea": "For museums",
+    "voor_musea": "Museums",
     "controle": "Control",
     "tarieven": "Pricing",
-    "cases": "Cases"
+    "cases": "Cases",
+    "voor_podia": "Venues and concert halls",
+    "voor_evenementen": "Events and touring shows"
   },
   "footer": {
     "tagline": "The AI layer across your marketing and sales. Your own data, your own marketing brain: Stevin sees what needs attention and moves with it. For agencies, brands and in-house teams.",

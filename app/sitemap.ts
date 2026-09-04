@@ -37,7 +37,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/retail',
     '/fmcg',
     // Verticals nu geindexeerd (besluit 4 jul): eigen belofte + data-spine per sector
-    '/voor-musea',
+    '/musea',
+    '/podia',
+    '/evenementen',
+    '/cultuur',
     '/voor-dealers',
     '/platform',
     '/diensten',

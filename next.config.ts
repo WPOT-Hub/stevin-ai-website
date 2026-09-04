@@ -70,6 +70,11 @@ const nextConfig: NextConfig = {
       // valt niets te verliezen; /producten had er 35, vandaar een 301 en geen
       // 404. De twee producten die echt bestaan, Signals en Ads Radar, staan nu
       // als eigenschap op /platform in plaats van als los product.
+      // 5 sep 2026 (W-042): de cultuursector is drie pagina's geworden. /voor-musea
+      // heette naar de helft van de doelgroep; wie van een podium komt las "niet
+      // voor mij". Nu /musea, /podia, /evenementen, met /cultuur als verdeler.
+      { source: '/voor-musea', destination: '/musea', permanent: true },
+      { source: '/:locale(nl|en)/voor-musea', destination: '/:locale(nl|en)/musea', permanent: true },
       { source: '/werkwijze', destination: '/platform', permanent: true },
       { source: '/:locale(nl|en)/werkwijze', destination: '/:locale(nl|en)/platform', permanent: true },
       { source: '/producten', destination: '/platform', permanent: true },

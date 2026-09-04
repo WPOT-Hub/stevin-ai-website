@@ -6,6 +6,10 @@ import VoorWiePage, { type VoorWieCopy } from '@/components/VoorWiePage'
 type Props = { params: Promise<{ locale: string }> }
 
 // Herbouwd 4 sep 2026, herschreven 5 sep (W-042). Opbouw: components/VoorWiePage.tsx.
+// URL 5 sep van /voor-musea naar /musea (301 in next.config), als een van drie
+// cultuurpagina's naast /podia en /evenementen, met /cultuur als verdeler.
+// Een pagina voor de hele sector zou de kernbelofte verwateren: een museum,
+// een podium en een tourshow hebben elk een ander probleem.
 // Het "11 mln euro ticketomzet" dat hier stond klopt wel (Koen, 5 sep), maar
 // hoort hier niet: een museum met een ton marketingbudget herkent zich niet in
 // een evenement van die schaal, en het zegt niets over wat wij voor dat museum
@@ -154,7 +158,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const nl = locale !== 'en'
   return localizedMetadata({
     locale,
-    path: '/voor-musea',
+    path: '/musea',
     title: nl ? 'Marketing voor musea en cultuur' : 'Marketing for museums and culture',
     description: nl
       ? 'Wie je kent, vindt je. Wie je nog niet kent, vindt een ander. Gratis scan in een kwartier op de vragen van een nieuwe bezoeker, en Google Ad Grants binnen de regels.'

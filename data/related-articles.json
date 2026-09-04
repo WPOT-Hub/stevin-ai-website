@@ -275,9 +275,14 @@
     "asml-geopolitieke-speelbal-china-vs-amerika"
   ],
   "anthropic-2-triljoen-waard-voor-ipo": [
+    "anthropic-pledge-beter-modelbeheer",
     "mistral-waardering-verdubbeld-rond-e20-miljard",
-    "anthropic-samsung-custom-ai-chip",
-    "ai-startups-ipo-hype-wie-profiteert"
+    "anthropic-samsung-custom-ai-chip"
+  ],
+  "anthropic-claude-fable-5-1-goedkoper-maar-is-het-beter": [
+    "claude-sonnet-5-de-goedkopere-agent-revolutie",
+    "b2b-ppc-metingen-meten-niet-altijd-uplift",
+    "anthropic-2-triljoen-waard-voor-ipo"
   ],
   "anthropic-claude-small-business-vijftien-workflows": [
     "klaviyo-anthropic-claude-mcp-agentic-workflows",
@@ -293,6 +298,11 @@
     "anthropic-lanceert-hardware-standaard-voor-ai-agenten",
     "ai-agents-ontketenen-turfoorlog-in-experiment",
     "acti-smartphone-keyboard-met-ai-agents"
+  ],
+  "anthropic-pledge-beter-modelbeheer": [
+    "anthropic-2-triljoen-waard-voor-ipo",
+    "ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc",
+    "jedify-24-miljoen-voor-ai-agent-context"
   ],
   "anthropic-samsung-custom-ai-chip": [
     "openai-lanceert-eigen-ai-chip-samen-met-broadcom",
@@ -328,6 +338,11 @@
     "apple-verhoogt-prijzen-door-ram-schaarste",
     "amerika-breidt-zwartelijst-chinese-techbedrijven-uit",
     "data-infrastructuur-bepaalt-ai-race"
+  ],
+  "artifactory-cve-onder-aanval-door-ai-of-mensen": [
+    "x-open-source-ranking-algoritme-met-transparantie-tools",
+    "github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt",
+    "ai-tools-onveilig-door-blind-trust-in-repositories"
   ],
   "arvato-mikt-op-10-000-robots-in-2030": [
     "zuid-korea-investeert-1-biljoen-in-chipproductie-en-humanoide-robots",
@@ -490,9 +505,9 @@
     "marketing-brein-waarom-nu"
   ],
   "claude-sonnet-5-de-goedkopere-agent-revolutie": [
+    "anthropic-claude-fable-5-1-goedkoper-maar-is-het-beter",
     "anthropic-claude-small-business-vijftien-workflows",
-    "klaviyo-anthropic-claude-mcp-agentic-workflows",
-    "marketing-brein-waarom-nu"
+    "klaviyo-anthropic-claude-mcp-agentic-workflows"
   ],
   "cloud-compute-verschuift-naar-arm-en-agentic-ai": [
     "microsoft-bouwt-copilot-super-app-voor-2026",
@@ -582,7 +597,7 @@
   "drone-leveringen-wing-uitbreiding-walmart": [
     "verkoopfraude-e-commerce-samenwerking-keten",
     "digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026",
-    "x-open-source-ranking-algoritme-met-transparantie-tools"
+    "artifactory-cve-onder-aanval-door-ai-of-mensen"
   ],
   "droneboot-redt-neergestorte-helicopterpiloten-eerste-zee-reddingsactie": [
     "dutch-chip-startup-european-fab-flow-met-amerikaanse-hulp",
@@ -621,8 +636,8 @@
   ],
   "ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc": [
     "spacex-start-ipo-met-aandeelprijs-van-135-dollar",
-    "robinhood-record-verkeer-na-spacex-introductie",
-    "spacex-spv-investors-risico-na-ipo"
+    "anthropic-pledge-beter-modelbeheer",
+    "robinhood-record-verkeer-na-spacex-introductie"
   ],
   "erp-gebruikers-kiezen-voor-headless-oplossingen": [
     "eu-sap-maintenance-fee-bargaining-chip",
@@ -851,8 +866,8 @@
   ],
   "google-ads-zichtbaar-in-ai-overviews": [
     "google-ads-introduceert-drie-ai-max-updates",
-    "google-ads-ai-max-advertentieteksten-test",
-    "google-ai-max-uit-beta-ai-brief-shopping"
+    "google-ai-max-uit-beta-ai-brief-shopping",
+    "google-ads-ai-max-advertentieteksten-test"
   ],
   "google-ai-max-uit-beta-ai-brief-shopping": [
     "google-ads-introduceert-drie-ai-max-updates",
@@ -1212,7 +1227,7 @@
   "meta-lanceert-muse-code-ai-agent-grote-codebases": [
     "autonome-ai-agenten-onverwachte-acties-openai",
     "ai-tools-onveilig-door-blind-trust-in-repositories",
-    "google-antigravity-2-claude-code-cursor-gratis"
+    "meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit"
   ],
   "meta-sluit-privacy-lek-in-smartglasses-en-start-nieuwe-campagne": [
     "meta-invoert-onzichtbare-watermerken-voor-ai-content",
@@ -1502,7 +1517,7 @@
   "rekentool-helpt-e-commerce-keuze-verpakking": [
     "geopolitiek-drukt-nederlandse-ecommerce-omzet",
     "nieuwe-ecommerce-tools-mei-2026",
-    "retail-crm-pos-integratie-klaviyo-aankoophistorie"
+    "persoonlijke-prijzen-personalisatie-fair-pricing"
   ],
   "retail-crm-pos-integratie-klaviyo-aankoophistorie": [
     "regionale-context-campagne-optimalisatie",
@@ -1647,7 +1662,7 @@
   "spacex-start-ipo-met-aandeelprijs-van-135-dollar": [
     "spacex-ipo-afhankelijk-van-ruimte-data-centers",
     "spacex-spv-investors-risico-na-ipo",
-    "ernest-investeert-500-miljoen-met-netwerk-in-plaats-van-vc"
+    "robinhood-record-verkeer-na-spacex-introductie"
   ],
   "spacex-tesla-merger-2026": [
     "spacex-raketten-passen-tesla-in-mobiliteitsmarkt",
@@ -1812,7 +1827,7 @@
   "verkoopfraude-e-commerce-samenwerking-keten": [
     "drone-leveringen-wing-uitbreiding-walmart",
     "geopolitiek-drukt-nederlandse-ecommerce-omzet",
-    "persoonlijke-prijzen-personalisatie-fair-pricing"
+    "artifactory-cve-onder-aanval-door-ai-of-mensen"
   ],
   "vier-manieren-om-ai-zoekzichtbaarheid-te-tracken": [
     "klanten-vragen-naar-chatgpt-zichtbaarheid",
@@ -1895,9 +1910,9 @@
     "ai-cowboys-marketing-2026"
   ],
   "x-open-source-ranking-algoritme-met-transparantie-tools": [
+    "artifactory-cve-onder-aanval-door-ai-of-mensen",
     "ai-tools-onveilig-door-blind-trust-in-repositories",
-    "github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt",
-    "digitale-vrachtbrief-gelijkgesteld-aan-papieren-vanaf-2026"
+    "github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt"
   ],
   "yang-automatisering-ai-ondernemen-inplaats-van-wachten-op-beleid": [
     "enterprise-ai-centraal-op-vivatech-2026",
