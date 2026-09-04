@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation'
 import Section from '@/components/Section'
 import SectionHeader from '@/components/SectionHeader'
 import { localizedMetadata } from '@/lib/seo'
+import DeskProof from '@/components/DeskProof'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -302,6 +303,8 @@ export default async function FmcgPage({ params }: Props) {
           ))}
         </div>
       </Section>
+
+      <DeskProof locale={locale} melding="fmcg-categorie" />
 
       <Section bg="surface">
         <SectionHeader title={t.canon_h2} subtitle={t.canon_sub} />

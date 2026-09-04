@@ -33,7 +33,7 @@ type Locale = 'nl' | 'en'
  * Allemaal echt weggeschreven in de demo-omgeving, tag demo_only. Geen
  * klantdata.
  */
-export type MeldingSleutel = 'meta-storing' | 'hittegolf' | 'consent-be' | 'influencer' | 'fr-creatives'
+export type MeldingSleutel = 'meta-storing' | 'hittegolf' | 'consent-be' | 'influencer' | 'fr-creatives' | 'fmcg-categorie'
 
 interface Melding {
   nr: string
@@ -44,6 +44,27 @@ interface Melding {
 }
 
 const MELDINGEN: Record<MeldingSleutel, Record<Locale, Melding>> = {
+  // Voor /fmcg. Bewust gebouwd op de twee bronnen die op die pagina beloofd
+  // worden en die we echt hebben: zoekvraag en het openbare advertentieregister.
+  // NIET op retailerportaal-data, want diezelfde pagina zegt expliciet dat we
+  // die portalen niet koppelen. Een melding die dat tegenspreekt sloopt de
+  // pratfall twee secties hoger.
+  'fmcg-categorie': {
+    nl: {
+      nr: '06',
+      titel: '[Categorie] Je categorie trekt aan, jouw merk beweegt niet mee',
+      tags: ['zoekvraag', 'categorie', 'concurrentie'],
+      waarom: 'Categoriezoekvolume loopt drie weken op, jouw merkzoekvolume blijft vlak. In dezelfde periode zijn twee concurrenten in het openbare advertentieregister van Google gaan adverteren op categorietermen.',
+      advies: 'Zet je merk op die categorietermen voordat de piek voorbij is, en leg vast wat je deed en waarom, zodat de volgende piek iets heeft om mee te vergelijken.',
+    },
+    en: {
+      nr: '06',
+      titel: '[Category] Your category is picking up, your brand is not moving with it',
+      tags: ['search demand', 'category', 'competition'],
+      waarom: 'Category search volume has been rising for three weeks while your brand search volume stays flat. In the same period two competitors started advertising on category terms in the public Google ad register.',
+      advies: 'Get your brand onto those category terms before the peak passes, and record what you did and why, so the next peak has something to compare against.',
+    },
+  },
   'meta-storing': {
     nl: {
       nr: '01',
