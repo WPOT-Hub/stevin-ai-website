@@ -77,10 +77,11 @@ export default async function AutodealersPage({ params }: Props) {
               {t('cta_secondary')}
             </Link>
           </div>
-          <div className="mt-14 inline-flex items-baseline gap-3 rounded-xl border border-white/15 bg-white/5 px-5 py-4">
-            <span className="font-display font-extrabold text-accent" style={{ fontSize: '30px', lineHeight: '1' }}>{t('proof_stat')}</span>
-            <span className="text-white/65 text-sm leading-[1.45]" style={{ maxWidth: '360px' }}>{t('proof_label')}</span>
-          </div>
+          {/* Hier stond "-50% cost per customer". Dat cijfer had geen case eronder,
+              en op 4 sep 2026 is vastgesteld dat er geen publiek bewijsbare klantcase
+              bestaat. Een cijfer zonder bron hoort niet op een commerciele pagina,
+              zeker niet bij een propositie die om controleerbaarheid draait.
+              Zie docs/research/SITE_CLAIMS_AUDIT_2026-09-04.md in Stevin-Hub (W-042). */}
         </div>
       </section>
 

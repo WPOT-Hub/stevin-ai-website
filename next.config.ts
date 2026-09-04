@@ -53,6 +53,25 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // 4 sep 2026 (W-042): van de tien producten op /producten bestonden er
+      // twee. Getoetst aan draaiende code, tabellen met rijen en cronjobs, niet
+      // aan documentatie. Ads Radar en Signals blijven; de andere acht zijn
+      // roadmap, dormant of helemaal afwezig. Bij dynamic-optimization,
+      // dynamic-pages en dynamic-ads is de oorzaak dezelfde: er bestaat geen
+      // enkel schrijfpad naar Google of Meta, en dat was met D-019 een bewuste
+      // keuze, inclusief de afspraak het niet in de copy te zetten voordat het
+      // bestaat. De URL's kunnen geindexeerd zijn (35 vertoningen in 90 dagen),
+      // dus 301 naar het overzicht in plaats van een 404.
+      // Zie docs/research/SITE_CLAIMS_AUDIT_2026-09-04.md in Stevin-Hub.
+      { source: '/producten/dynamic-optimization', destination: '/producten', permanent: true },
+      { source: '/producten/dynamic-pages', destination: '/producten', permanent: true },
+      { source: '/producten/dynamic-ads', destination: '/producten', permanent: true },
+      { source: '/producten/content-optimization', destination: '/producten', permanent: true },
+      { source: '/producten/blog-automation', destination: '/producten', permanent: true },
+      { source: '/producten/follow-up', destination: '/producten', permanent: true },
+      { source: '/producten/quote', destination: '/producten', permanent: true },
+      { source: '/producten/uplift', destination: '/producten', permanent: true },
+      { source: '/:locale(nl|en)/producten/:slug(dynamic-optimization|dynamic-pages|dynamic-ads|content-optimization|blog-automation|follow-up|quote|uplift)', destination: '/:locale(nl|en)/producten', permanent: true },
       // 17 aug 2026: /case-studies/e-commerce stond publiek met verzonnen
       // resultaten (+42% leads, -35% kosten per acquisitie, 8 uur bespaard) bij
       // een naamloze klant. Niets daarvan is na te kijken, en dat is precies de
