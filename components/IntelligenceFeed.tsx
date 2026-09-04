@@ -12,7 +12,7 @@ interface FeedLine {
   mono?: boolean
 }
 
-export type FeedVariant = 'all' | 'marketing' | 'artist' | 'fmcg'
+export type FeedVariant = 'all' | 'marketing' | 'artist' | 'fmcg' | 'retail'
 
 // ── Scenario pools ──
 
@@ -152,11 +152,47 @@ const FMCG_SCENARIOS: FeedLine[][] = [
   ],
 ]
 
+// Retail-scenario's, geschreven 4 sep 2026 voor /retail. Zelfde regel als bij
+// FMCG: geen verzonnen eurobedragen en geen regel die suggereert dat we
+// kassadata of retailmedia-portalen koppelen, want de pagina zelf zegt twee
+// secties lager dat we dat niet doen. Scenario 1 is de scan die op 4 sep echt
+// gedraaid heeft (docs/research/vindbaarheidsscans/blokker-nl-2026-09-04.json).
+const RETAIL_SCENARIOS: FeedLine[][] = [
+  [
+    { text: 'AI-zichtbaarheid, winkelketen huishoud...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: '13 koopvragen, 12 zonder merknaam', color: 'muted', prefix: '>', delay: 1000, mono: true },
+    { text: 'Eigen site als bron: 0 van 13', color: 'pink', prefix: '!', delay: 2000 },
+    { text: 'Wel geciteerd: vier kleine kookwinkels', color: 'pink', delay: 3000 },
+    { text: 'Zelfs de vraag over eigen acties: foldersites', color: 'blue', prefix: '~', delay: 4000 },
+    { text: 'Bouw op de vragen die kopers stellen', color: 'neon', prefix: '\u2192', delay: 5000 },
+    { text: 'Nulmeting vast, over 90 dagen opnieuw', color: 'neon', prefix: '\u2713', delay: 6000 },
+  ],
+  [
+    { text: 'Zoekvraag per regio vergeleken...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: 'Categorievraag stijgt in twee regio\'s', color: 'blue', prefix: '~', delay: 1000 },
+    { text: 'Budget staat landelijk gelijk verdeeld', color: 'pink', prefix: '!', delay: 2000 },
+    { text: 'Vestigingen daar draaien onder bereik', color: 'pink', delay: 3000 },
+    { text: 'Verschuif naar waar de vraag beweegt', color: 'neon', prefix: '\u2192', delay: 4000 },
+    { text: 'Eerst een vestiging, dan pas breder', color: 'neon', prefix: '\u2192', delay: 5000 },
+    { text: 'Besluit en reden vastgelegd', color: 'neon', prefix: '\u2713', delay: 6000 },
+  ],
+  [
+    { text: 'Actieweek nagerekend, webshop...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: 'Omzet in de actieweek: fors omhoog', color: 'blue', prefix: '~', delay: 1000 },
+    { text: 'Grotendeels terugkerende kopers', color: 'pink', prefix: '!', delay: 2000 },
+    { text: 'Week erna zakt de omzet onder normaal', color: 'pink', delay: 3000 },
+    { text: 'Marge erbij gezet, niet alleen omzet', color: 'blue', prefix: '~', delay: 4000 },
+    { text: 'Volgende keer een niet-prijsactie ernaast', color: 'neon', prefix: '\u2192', delay: 5000 },
+    { text: 'Vastgelegd, inclusief wat niet werkte', color: 'neon', prefix: '\u2713', delay: 6000 },
+  ],
+]
+
 const SCENARIO_MAP: Record<FeedVariant, FeedLine[][]> = {
   all: ALL_SCENARIOS,
   marketing: MARKETING_SCENARIOS,
   artist: ARTIST_SCENARIOS,
   fmcg: FMCG_SCENARIOS,
+  retail: RETAIL_SCENARIOS,
 }
 
 // ── Color mapping ──

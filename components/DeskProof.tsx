@@ -33,7 +33,7 @@ type Locale = 'nl' | 'en'
  * Allemaal echt weggeschreven in de demo-omgeving, tag demo_only. Geen
  * klantdata.
  */
-export type MeldingSleutel = 'meta-storing' | 'hittegolf' | 'consent-be' | 'influencer' | 'fr-creatives' | 'fmcg-categorie'
+export type MeldingSleutel = 'meta-storing' | 'hittegolf' | 'consent-be' | 'influencer' | 'fr-creatives' | 'fmcg-categorie' | 'retail-regio'
 
 interface Melding {
   nr: string
@@ -63,6 +63,26 @@ const MELDINGEN: Record<MeldingSleutel, Record<Locale, Melding>> = {
       tags: ['search demand', 'category', 'competition'],
       waarom: 'Category search volume has been rising for three weeks while your brand search volume stays flat. In the same period two competitors started advertising on category terms in the public Google ad register.',
       advies: 'Get your brand onto those category terms before the peak passes, and record what you did and why, so the next peak has something to compare against.',
+    },
+  },
+  // Voor /retail. Gebouwd op wat we voor een keten echt zien: zoekvraag per
+  // regio en de verdeling van het mediabudget over vestigingen. Bewust NIET op
+  // winkelbezoek of kassa-omzet, want diezelfde pagina zegt expliciet dat we
+  // geen kassadata hebben en de brug naar de winkelvloer niet dichtrekenen.
+  'retail-regio': {
+    nl: {
+      nr: '07',
+      titel: '[Regio Zuid] De vraag trekt aan waar het budget niet staat',
+      tags: ['zoekvraag', 'regio', 'budget'],
+      waarom: 'Het zoekvolume op je hoofdcategorie loopt in twee regio\'s al drie weken op, terwijl het budget landelijk gelijk verdeeld staat. Op de vestigingen daar sta je onder je normale vertoningsaandeel, dus je mist vraag die er nu is.',
+      advies: 'Verschuif budget naar de regio waar de vraag beweegt, begin bij een vestiging zodat je het effect kunt afzetten tegen de rest, en leg vast wat je deed en waarom.',
+    },
+    en: {
+      nr: '07',
+      titel: '[South region] Demand is rising where the budget is not',
+      tags: ['search demand', 'region', 'budget'],
+      waarom: 'Search volume for your main category has been rising in two regions for three weeks, while the budget is spread evenly across the country. At the stores there you are below your usual impression share, so you are missing demand that exists right now.',
+      advies: 'Shift budget to the region where demand is moving, start with one store so you can measure it against the rest, and record what you did and why.',
     },
   },
   'meta-storing': {
