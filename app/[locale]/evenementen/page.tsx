@@ -48,7 +48,7 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     ],
     scan_slot: 'En het vierde getal: bij on-sale wil je een deel van de zaal al vol hebben, want een lege eerste week is het duurste wat je kunt kopen. Elke stad heeft die vier getallen, en bijna nooit staan ze in een systeem naast het mediaplan. Dan stuur je op het gevoel van de promotor, en die heeft meestal gelijk, tot de keer dat hij het niet heeft.',
 
-    kost_h2: 'Een tournee betaalt elke week dezelfde media, terwijl de vraag elke week een ander ding vraagt.',
+    kost_h2: 'Elke week hetzelfde mediaplan, terwijl de koper elke week iets anders nodig heeft.',
     kost_p: 'Voor on-sale koop je bekendheid, rond de premiere praat de stad, in de laatste dagen koop je urgentie. Wie een vlak mediaplan draait, geeft in week twee te veel uit aan mensen die pas in week acht beslissen, en houdt in week negen te weinig over voor wie nu wil kopen.',
     kost_uitweg: 'De scan laat in een kwartier zien wie er nu op de koopvragen rond je show staat. Daarna beslis jij.',
 
@@ -106,7 +106,7 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     ],
     scan_slot: 'And the fourth number: at on-sale you want part of the house sold already, because an empty first week is the most expensive thing you can buy. Every city has those four numbers, and almost never do they sit in a system next to the media plan. Then you steer on the gut of the promoter, who is usually right, until the one time he is not.',
 
-    kost_h2: 'A tour pays for the same media every week, while demand asks for something different every week.',
+    kost_h2: 'The same media plan every week, while the buyer needs something different every week.',
     kost_p: 'Before on-sale you buy awareness, around the premiere the city talks, in the last days you buy urgency. A flat media plan spends too much in week two on people who decide in week eight, and has too little left in week nine for the people who want to buy now.',
     kost_uitweg: 'The scan shows in fifteen minutes who sits on the buying questions around your show. Then you decide.',
 
