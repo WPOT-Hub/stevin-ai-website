@@ -187,12 +187,85 @@ const RETAIL_SCENARIOS: FeedLine[][] = [
   ],
 ]
 
+// Engelse pools. De feed stond op /en in het Nederlands (gemeld 4 sep 2026).
+// Alleen fmcg en retail zijn echt vertaald, want alleen die twee varianten
+// staan op een pagina; de rest valt terug op de Nederlandse pool zolang hij
+// nergens gebruikt wordt. Zet je zo'n variant wel op een pagina, vertaal hem
+// dan hier eerst.
+const FMCG_SCENARIOS_EN: FeedLine[][] = [
+  [
+    { text: 'AI visibility, supermarket category...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: '7 buying questions, no brand name in them', color: 'muted', prefix: '>', delay: 1000, mono: true },
+    { text: 'Own site as a source: 0 of 7', color: 'pink', prefix: '!', delay: 2000 },
+    { text: 'Cited instead: ah.nl, jumbo.com', color: 'pink', delay: 3000 },
+    { text: 'The retailer gives the answer', color: 'blue', prefix: '~', delay: 4000 },
+    { text: 'Build on the questions they ask', color: 'neon', prefix: '\u2192', delay: 5000 },
+    { text: 'Baseline fixed, repeat in 90 days', color: 'neon', prefix: '\u2713', delay: 6000 },
+  ],
+  [
+    { text: 'Search demand: category versus brand...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: 'Category volume rising for 3 weeks', color: 'blue', prefix: '~', delay: 1000 },
+    { text: 'Your brand volume stays flat', color: 'pink', prefix: '!', delay: 2000 },
+    { text: '2 competitors new in the ad register', color: 'pink', delay: 3000 },
+    { text: 'They bid on category, not on brand', color: 'blue', prefix: '~', delay: 4000 },
+    { text: 'Ride the peak, not the week after', color: 'neon', prefix: '\u2192', delay: 5000 },
+    { text: 'Decision and reason recorded', color: 'neon', prefix: '\u2713', delay: 6000 },
+  ],
+  [
+    { text: 'Merging quarterly numbers...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: '7 reports from the client', color: 'muted', prefix: '>', delay: 1000, mono: true },
+    { text: '7 different attribution windows', color: 'pink', prefix: '!', delay: 2000 },
+    { text: 'Adding them up gives an empty number', color: 'pink', delay: 3000 },
+    { text: 'Converted to one definition', color: 'blue', prefix: '~', delay: 4000 },
+    { text: 'Difference per retailer, with the reason', color: 'neon', prefix: '\u2192', delay: 5000 },
+    { text: 'The definition stays, also after us', color: 'neon', prefix: '\u2713', delay: 6000 },
+  ],
+]
+
+const RETAIL_SCENARIOS_EN: FeedLine[][] = [
+  [
+    { text: 'AI visibility, household goods chain...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: '13 buying questions, 12 without the name', color: 'muted', prefix: '>', delay: 1000, mono: true },
+    { text: 'Own site as a source: 0 of 13', color: 'pink', prefix: '!', delay: 2000 },
+    { text: 'Cited instead: four small cookware shops', color: 'pink', delay: 3000 },
+    { text: 'Even its own promotions: leaflet sites', color: 'blue', prefix: '~', delay: 4000 },
+    { text: 'Build on the questions buyers ask', color: 'neon', prefix: '\u2192', delay: 5000 },
+    { text: 'Baseline fixed, repeat in 90 days', color: 'neon', prefix: '\u2713', delay: 6000 },
+  ],
+  [
+    { text: 'Search demand compared by region...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: 'Category demand rising in two regions', color: 'blue', prefix: '~', delay: 1000 },
+    { text: 'Budget is spread evenly nationwide', color: 'pink', prefix: '!', delay: 2000 },
+    { text: 'Stores there run below their reach', color: 'pink', delay: 3000 },
+    { text: 'Shift to where demand is moving', color: 'neon', prefix: '\u2192', delay: 4000 },
+    { text: 'One store first, then wider', color: 'neon', prefix: '\u2192', delay: 5000 },
+    { text: 'Decision and reason recorded', color: 'neon', prefix: '\u2713', delay: 6000 },
+  ],
+  [
+    { text: 'Promotion week recalculated, webshop...', color: 'muted', prefix: '>', delay: 0, mono: true },
+    { text: 'Revenue in the promotion week: well up', color: 'blue', prefix: '~', delay: 1000 },
+    { text: 'Largely returning buyers', color: 'pink', prefix: '!', delay: 2000 },
+    { text: 'Week after drops below normal', color: 'pink', delay: 3000 },
+    { text: 'Margin added, not revenue alone', color: 'blue', prefix: '~', delay: 4000 },
+    { text: 'Next time a non-price promotion beside it', color: 'neon', prefix: '\u2192', delay: 5000 },
+    { text: 'Recorded, including what did not work', color: 'neon', prefix: '\u2713', delay: 6000 },
+  ],
+]
+
 const SCENARIO_MAP: Record<FeedVariant, FeedLine[][]> = {
   all: ALL_SCENARIOS,
   marketing: MARKETING_SCENARIOS,
   artist: ARTIST_SCENARIOS,
   fmcg: FMCG_SCENARIOS,
   retail: RETAIL_SCENARIOS,
+}
+
+const SCENARIO_MAP_EN: Record<FeedVariant, FeedLine[][]> = {
+  all: ALL_SCENARIOS,
+  marketing: MARKETING_SCENARIOS,
+  artist: ARTIST_SCENARIOS,
+  fmcg: FMCG_SCENARIOS_EN,
+  retail: RETAIL_SCENARIOS_EN,
 }
 
 // ── Color mapping ──
@@ -217,10 +290,11 @@ const PREFIX_COLOR_MAP = {
 
 interface IntelligenceFeedProps {
   variant?: FeedVariant
+  locale?: string
 }
 
-export default function IntelligenceFeed({ variant = 'all' }: IntelligenceFeedProps) {
-  const scenarios = SCENARIO_MAP[variant]
+export default function IntelligenceFeed({ variant = 'all', locale = 'nl' }: IntelligenceFeedProps) {
+  const scenarios = locale === 'en' ? SCENARIO_MAP_EN[variant] : SCENARIO_MAP[variant]
   const [scenarioIndex, setScenarioIndex] = useState(0)
   const [visibleLines, setVisibleLines] = useState<number>(0)
   const [typingLine, setTypingLine] = useState<number>(-1)

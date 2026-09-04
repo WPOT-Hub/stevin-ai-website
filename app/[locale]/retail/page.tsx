@@ -256,7 +256,7 @@ export default async function RetailPage({ params }: Props) {
                 <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">{t.cta_sec}</Link>
               </div>
             </div>
-            <IntelligenceFeed variant="retail" />
+            <IntelligenceFeed variant="retail" locale={locale} />
           </div>
         </div>
       </section>

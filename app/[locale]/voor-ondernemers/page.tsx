@@ -38,6 +38,30 @@ const COPY = {
     own_body: 'Accounts op naam van jouw bedrijf. Data die je kunt exporteren. Een dossier met elk besluit en de reden erbij. Wij bouwen je exit in vanaf dag een, en juist daarom durven we het te zeggen: de meeste klanten blijven omdat het goed geregeld is, niet omdat ze vastzitten.',
     own_link: 'Zo werkt de controle',
 
+    canon_eyebrow: 'Waarom ons advies klopt',
+    canon_h2: 'Ons advies komt niet uit onze onderbuik.',
+    canon_sub: 'Onder elk advies ligt een kennislaag van 105 principes uit gepubliceerd onderzoek, met bij elk principe de grens van wat het betekent. Drie ervan, zoals ze in het systeem staan.',
+    principes: [
+      {
+        p: 'Controleer de meting voordat je iets anders beoordeelt.',
+        u: 'Een conversie die op het verkeerde moment wordt geteld maakt elk oordeel over je marketing waardeloos. Wij beginnen daar, en dat is meestal ook waar het misgaat.',
+        bron: 'Kernprincipe 1',
+        grens: 'Betekent niet dat je zonder perfecte meting niet mag adverteren. Wel dat je je cijfers dan niet blind gelooft.',
+      },
+      {
+        p: 'Weeg aanbevelingen van Google en Meta als verkoopsignaal.',
+        u: 'De optimalisatiescore in je account is een verkoopmetric, geen rapportcijfer. Een aanbeveling gaat pas door als het bewijs erbij past.',
+        bron: 'Kernprincipe 5',
+        grens: 'Betekent niet dat die functies nooit werken. Met een goed conversiesignaal eronder kunnen ze prima zijn.',
+      },
+      {
+        p: 'Groei komt vooral van nieuwe klanten, niet van bestaande klanten loyaler maken.',
+        u: 'Merken van gelijke grootte hebben vrijwel gelijke loyaliteit. Wie groeit, groeit door meer mensen te bereiken die nog niet kochten.',
+        bron: 'Ehrenberg-Bass',
+        grens: 'Betekent niet dat je bestaande klanten mag verwaarlozen, of dat dit opgaat als je je markt al vrijwel volledig bedient.',
+      },
+    ],
+
     faq_h2: 'Wat eigenaren ons eerst vragen.',
     faqs: [
       { question: 'Verlies ik controle als AI meekijkt?', answer: 'Nee, je krijgt er juist controle bij. Het platform verandert uit zichzelf niets, elk voorstel gaat langs een mens, en alles wat er gebeurt staat in een logboek waar jij altijd in kunt kijken.' },
@@ -75,6 +99,30 @@ const COPY = {
     own_h2: 'Grip means: you can always leave.',
     own_body: 'Accounts in your company name. Data you can export. A file with every decision and its reason. We build in your exit from day one, and that is exactly why we dare to say it: most clients stay because things are well arranged, not because they are stuck.',
     own_link: 'How the control works',
+
+    canon_eyebrow: 'Why the advice holds',
+    canon_h2: 'Our advice does not come from a hunch.',
+    canon_sub: 'Under every piece of advice sits a knowledge layer of 105 principles from published research, each with the limit of what it means. Three of them, as they sit in the system.',
+    principes: [
+      {
+        p: 'Check the measurement before judging anything else.',
+        u: 'A conversion counted at the wrong moment makes every judgement about your marketing worthless. We start there, and that is usually where it goes wrong.',
+        bron: 'Core principle 1',
+        grens: 'Does not mean you cannot advertise without perfect measurement. It means you do not believe your numbers blindly.',
+      },
+      {
+        p: 'Treat recommendations from Google and Meta as a sales signal.',
+        u: 'The optimisation score in your account is a sales metric, not a report card. A recommendation goes through when the evidence supports it.',
+        bron: 'Core principle 5',
+        grens: 'Does not mean those features never work. With a sound conversion signal underneath they can be perfectly good.',
+      },
+      {
+        p: 'Growth comes mostly from new customers, not from making existing ones more loyal.',
+        u: 'Brands of similar size have almost identical loyalty. The ones that grow, grow by reaching more people who have not bought yet.',
+        bron: 'Ehrenberg-Bass',
+        grens: 'Does not mean you may neglect existing customers, or that this holds when you already serve nearly your whole market.',
+      },
+    ],
 
     faq_h2: 'What owners ask us first.',
     faqs: [
@@ -187,6 +235,29 @@ export default async function VoorOndernemersPage({ params }: Props) {
             <Link href="/controle" className="font-display font-semibold text-[#5DA3FF] text-[15px] inline-flex items-center gap-2 hover:gap-3 transition-all">
               {c.own_link} <span aria-hidden="true">&rarr;</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Kennislaag. Toegevoegd 4 sep 2026 (W-042) zodat deze pagina hetzelfde
+          bewijsstuk draagt als /fmcg, /retail en de andere voor-wie-paginas:
+          drie principes uit docs/knowledge/ADVISOR_KNOWLEDGE.md met hun grens.
+          Kern 1, kern 5 en kern 8, woordelijk overgenomen inclusief het
+          "betekent niet". */}
+      <section className="bg-surface" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1000px]">
+          <p className={eyebrowCls}>{dash}{c.canon_eyebrow}</p>
+          <h2 className="font-display font-extrabold text-primary m-0 mb-5" style={h2Style}>{c.canon_h2}</h2>
+          <p className="text-muted leading-[1.65] m-0 mb-12" style={{ fontSize: '16px', maxWidth: '640px' }}>{c.canon_sub}</p>
+          <div className="flex flex-col gap-5">
+            {c.principes.map((pr) => (
+              <div key={pr.p} className="rounded-[14px] border border-border bg-white p-6 border-l-[3px] border-l-accent">
+                <p className="text-base font-semibold text-primary leading-snug m-0">{pr.p}</p>
+                <p className="mt-2 text-sm text-muted leading-relaxed m-0">{pr.u}</p>
+                <p className="mt-4 text-xs font-mono uppercase tracking-[0.1em] text-muted/70 m-0">{pr.bron}</p>
+                <p className="mt-3 text-sm text-primary/80 leading-relaxed border-t border-border pt-3 m-0">{pr.grens}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
