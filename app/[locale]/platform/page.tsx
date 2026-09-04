@@ -28,15 +28,15 @@ type Props = { params: Promise<{ locale: string }> }
 const COPY = {
   nl: {
     eyebrow: 'Wat het doet',
-    h1_line: 'Het kijkt mee, legt vast,',
-    h1_accent: 'en laat zien waarop het steunt.',
-    sub: 'Geen dashboard erbij. Een laag op je eigen data die ziet wanneer er iets verschuift, uitlegt waarom dat volgens onderzoek uitmaakt, en vastlegt wat er is besloten.',
+    h1_line: 'Je ziet het vandaag.',
+    h1_accent: 'Niet pas in de maandrapportage.',
+    sub: 'Vier weken doorbetalen op een campagne die al drie weken stukloopt, dat is het echte prijskaartje van te laat kijken. Stevin ziet het dezelfde dag, zegt erbij waarom het volgens onderzoek uitmaakt, en legt vast wat je ermee deed.',
     cta: 'Start de diagnose',
     cta_sec: 'Zo controleer je ons',
 
     doet_eyebrow: 'Drie dingen, elke dag',
-    doet_h2: 'Wat er draait.',
-    doet_sub: 'Dit is wat er vandaag werkt, niet wat er op de planning staat.',
+    doet_h2: 'Drie dingen. Vandaag al.',
+    doet_sub: 'Geen roadmap, geen binnenkort. Dit draait, en je kunt het nakijken.',
     doet: [
       {
         t: 'Signalen op je eigen data',
@@ -53,8 +53,8 @@ const COPY = {
     ],
 
     niet_eyebrow: 'Even zo belangrijk',
-    niet_h2: 'Wat het niet doet.',
-    niet_sub: 'Een systeem dat alles zelf mag, kun je niet controleren. Daarom mag dit dat niet.',
+    niet_h2: 'En dit doet het expres niet.',
+    niet_sub: 'Omdat een systeem dat alles zelf mag, precies het systeem is dat je niet meer kunt narekenen.',
     niet: [
       {
         t: 'Het verandert niets aan je campagnes',
@@ -67,7 +67,7 @@ const COPY = {
     ],
 
     kennis_eyebrow: 'Waarom het advies klopt',
-    kennis_h2: 'Elk advies heeft een bron. En een grens.',
+    kennis_h2: 'Vraag maar waarom. Er ligt een bron onder.',
     kennis_sub: 'Onder het systeem ligt een kennislaag van 105 principes, opgebouwd uit gepubliceerd onderzoek. Ze wegen mee bij elke analyse. Hieronder drie ervan, zoals ze in het systeem staan.',
     principes: [
       {
@@ -96,15 +96,15 @@ const COPY = {
   },
   en: {
     eyebrow: 'What it does',
-    h1_line: 'It watches, records,',
-    h1_accent: 'and shows what it rests on.',
-    sub: 'Not another dashboard. A layer on your own data that spots when something shifts, explains why research says that matters, and records what was decided.',
+    h1_line: 'You see it today.',
+    h1_accent: 'Not in next month report.',
+    sub: 'Four weeks of paying for a campaign that broke three weeks ago: that is the real price of looking too late. Stevin sees it the same day, tells you why research says it matters, and records what you did about it.',
     cta: 'Start the diagnosis',
     cta_sec: 'How to check us',
 
     doet_eyebrow: 'Three things, every day',
-    doet_h2: 'What actually runs.',
-    doet_sub: 'This is what works today, not what is on the roadmap.',
+    doet_h2: 'Three things. Today already.',
+    doet_sub: 'No roadmap, no coming soon. This runs, and you can check it.',
     doet: [
       {
         t: 'Signals on your own data',
@@ -121,8 +121,8 @@ const COPY = {
     ],
 
     niet_eyebrow: 'Just as important',
-    niet_h2: 'What it does not do.',
-    niet_sub: 'A system allowed to do everything by itself cannot be checked. So this one is not allowed to.',
+    niet_h2: 'And this it deliberately does not do.',
+    niet_sub: 'Because a system allowed to do everything by itself is exactly the system you can no longer check.',
     niet: [
       {
         t: 'It changes nothing in your campaigns',
@@ -135,7 +135,7 @@ const COPY = {
     ],
 
     kennis_eyebrow: 'Why the advice holds',
-    kennis_h2: 'Every piece of advice has a source. And a limit.',
+    kennis_h2: 'Ask why. There is a source underneath.',
     kennis_sub: 'Underneath sits a knowledge layer of 105 principles, built from published research. They weigh in on every analysis. Three of them below, as they sit in the system.',
     principes: [
       {
