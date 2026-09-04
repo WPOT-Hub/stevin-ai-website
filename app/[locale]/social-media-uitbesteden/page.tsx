@@ -54,9 +54,9 @@ const COPY = {
 
     kosten_eyebrow: 'Wat het kost',
     kosten_h2: 'Social media uitbesteden: de kosten.',
-    kosten_body: 'Beheer begint bij 399 euro per maand. Wat je daarboven nodig hebt volgt uit de diagnose, niet uit een pakketkeuze. Je advertentiebudget staat daar los van en betaal je rechtstreeks aan het platform, vanaf je eigen account.',
+    kosten_body: 'Uitbesteden begint bij 1.399 euro per maand bij jaarbetaling, 1.499 bij maandbetaling. Wil je het op termijn zelf doen, dan draaien we mee tot het staat, meestal zes tot twaalf maanden, en daarna ga je over op 399 per maand. Wil je er juist nooit naar omkijken, dan blijft het doorlopend. Wat er nooit gebeurt: een percentage over je mediabudget, een marge die je niet kunt narekenen, of een instaptarief dat na drie maanden stilletjes verdubbelt.',
     kosten_punten: [
-      'Vanaf 399 euro per maand voor beheer',
+      'Vanaf 1.399 per maand, of 399 als je het zelf gaat doen',
       'Geen marge op je advertentiebudget',
       'De diagnose is vrijblijvend en je houdt het rapport',
       'Geen langlopend contract',
@@ -64,7 +64,7 @@ const COPY = {
 
     faq_h2: 'Wat ondernemers ons vragen.',
     faqs: [
-      { question: 'Wat kost het om social media uit te besteden?', answer: 'Beheer begint bij 399 euro per maand. Daarbovenop komt je advertentiebudget, dat je rechtstreeks aan Meta, LinkedIn of TikTok betaalt vanaf je eigen account. Wij pakken daar geen marge op. Wat je precies nodig hebt bepalen we na de diagnose.' },
+      { question: 'Wat kost het om social media uit te besteden?', answer: 'Uitbesteden begint bij 1.399 euro per maand bij jaarbetaling. Ga je het op termijn zelf doen, dan zakt dat naar 399 zodra het staat, meestal na zes tot twaalf maanden. Daarbovenop komt je advertentiebudget, dat je rechtstreeks aan Meta, LinkedIn of TikTok betaalt vanaf je eigen account. Wij pakken daar geen marge op. Wat je precies nodig hebt bepalen we na de diagnose.' },
       { question: 'Doen jullie ook Meta Ads en Facebook advertenties?', answer: 'Ja, Meta (Facebook en Instagram) is voor de meeste Nederlandse bedrijven het zwaartepunt. We draaien ook LinkedIn en TikTok waar dat past. Welke kanalen zinvol zijn volgt uit de diagnose, niet uit een standaardpakket.' },
       { question: 'Is TikTok iets voor mijn bedrijf?', answer: 'Alleen als je iets te laten zien hebt en creatie kunt volhouden. TikTok vraagt veel meer nieuwe video dan Meta. Past dat niet bij je, dan zeggen we dat liever nu dan na drie maanden.' },
       { question: 'Blijven mijn social accounts van mij?', answer: 'Ja. Bedrijfspagina en advertentieaccount staan op naam van jouw bedrijf, jij houdt beheerdersrechten, en de opgebouwde doelgroepen en historie blijven bij je als je stopt.' },
@@ -115,9 +115,9 @@ const COPY = {
 
     kosten_eyebrow: 'What it costs',
     kosten_h2: 'Outsourcing social media: the costs.',
-    kosten_body: 'Management starts at 399 euros per month. What you need above that follows from the diagnosis, not from picking a package. Your ad budget is separate and you pay it directly to the platform, from your own account.',
+    kosten_body: 'Outsourcing starts at 1,399 euros per month on annual billing, 1,499 monthly. If you want to run it yourself later, we work alongside you until it stands, usually six to twelve months, and then you move to 399 per month. If you would rather never think about it, it simply continues. What never happens: a percentage of your media budget, a margin you cannot verify, or an entry price that quietly doubles after three months.',
     kosten_punten: [
-      'From 399 euros per month for management',
+      'From 1,399 per month, or 399 if you run it yourself',
       'No margin on your ad budget',
       'The diagnosis is free of obligation and you keep the report',
       'No long-term contract',
@@ -125,7 +125,7 @@ const COPY = {
 
     faq_h2: 'What business owners ask us.',
     faqs: [
-      { question: 'What does it cost to outsource social media?', answer: 'Management starts at 399 euros per month. On top of that comes your ad budget, which you pay directly to Meta, LinkedIn or TikTok from your own account. We take no margin on it. What you need exactly is determined after the diagnosis.' },
+      { question: 'What does it cost to outsource social media?', answer: 'Outsourcing starts at 1,399 euros per month on annual billing. If you take it over yourself later, that drops to 399 once it stands, usually after six to twelve months. On top of that comes your ad budget, which you pay directly to Meta, LinkedIn or TikTok from your own account. We take no margin on it. What you need exactly is determined after the diagnosis.' },
       { question: 'Do you also do Meta Ads and Facebook advertising?', answer: 'Yes, Meta (Facebook and Instagram) is the centre of gravity for most Dutch companies. We also run LinkedIn and TikTok where it fits. Which channels make sense follows from the diagnosis, not from a standard package.' },
       { question: 'Is TikTok right for my business?', answer: 'Only if you have something to show and can keep up the creative. TikTok demands far more new video than Meta. If that does not fit you, we would rather say so now than after three months.' },
       { question: 'Do my social accounts stay mine?', answer: 'Yes. Business page and ad account are in your company name, you keep admin rights, and the audiences and history you build stay with you if you leave.' },

@@ -54,9 +54,9 @@ const COPY = {
 
     kosten_eyebrow: 'Wat het kost',
     kosten_h2: 'Google Ads uitbesteden: de kosten.',
-    kosten_body: 'Beheer begint bij 399 euro per maand. Wat daarboven nodig is hangt af van wat de diagnose laat zien, en dat bespreken we pas als je weet wat er te doen valt. Wat er nooit gebeurt: een percentage over je mediabudget, een marge die je niet kunt narekenen, of een instaptarief dat na drie maanden verdubbelt.',
+    kosten_body: 'Uitbesteden begint bij 1.399 euro per maand bij jaarbetaling, 1.499 bij maandbetaling. Wil je het op termijn zelf doen, dan draaien we mee tot het staat, meestal zes tot twaalf maanden, en daarna ga je over op 399 per maand. Wil je er juist nooit naar omkijken, dan blijft het doorlopend. Wat er nooit gebeurt: een percentage over je mediabudget, een marge die je niet kunt narekenen, of een instaptarief dat na drie maanden stilletjes verdubbelt.',
     kosten_punten: [
-      'Vanaf 399 euro per maand voor beheer',
+      'Vanaf 1.399 per maand, of 399 als je het zelf gaat doen',
       'Je mediabudget gaat volledig naar Google, wij pakken er niets van af',
       'De diagnose is vrijblijvend en je houdt het rapport',
       'Geen langlopend contract, opzeggen kan altijd',
@@ -65,7 +65,7 @@ const COPY = {
 
     faq_h2: 'Wat ondernemers ons vragen.',
     faqs: [
-      { question: 'Wat kost het om Google Ads uit te besteden?', answer: 'Bij Stevin.AI begint beheer bij 399 euro per maand. Daarbovenop komt je advertentiebudget, dat je rechtstreeks aan Google betaalt vanaf je eigen account. Wij pakken geen marge op je mediabudget. Wat je precies nodig hebt bepalen we na de diagnose, niet ervoor.' },
+      { question: 'Wat kost het om Google Ads uit te besteden?', answer: 'Uitbesteden begint bij 1.399 euro per maand bij jaarbetaling. Ga je het op termijn zelf doen, dan zakt dat naar 399 zodra het staat, meestal na zes tot twaalf maanden. Daarbovenop komt je advertentiebudget, dat je rechtstreeks aan Google betaalt vanaf je eigen account. Wij pakken geen marge op je mediabudget. Wat je precies nodig hebt bepalen we na de diagnose, niet ervoor.' },
       { question: 'Blijft mijn Google Ads-account van mij?', answer: 'Ja. Het account staat op naam van jouw bedrijf, jij houdt beheerdersrechten, en je kunt de data exporteren. Als je stopt neem je de historie en de opgebouwde leerdata mee. Vraag dit bij elke partij expliciet na en laat het op papier zetten.' },
       { question: 'Hoe weet ik of mijn huidige bureau het goed doet?', answer: 'Drie dingen kun je vandaag zelf controleren. Open de wijzigingsgeschiedenis van je account en kijk wat er de afgelopen 90 dagen is gedaan. Zoek je bedrijf op in het openbare transparantieregister van Google en kijk wie er als betaler staat. En tel je aanvragen van vorige maand, en vergelijk dat met je dashboard.' },
       { question: 'Kan de diagnose naast mijn huidige bureau?', answer: 'Ja, en dat is vaak juist verstandig. Het is een tweede blik op je eigen cijfers. Staat het goed, dan weet je dat nu zeker. Staat het niet goed, dan heb je iets concreets om te bespreken.' },
@@ -116,9 +116,9 @@ const COPY = {
 
     kosten_eyebrow: 'What it costs',
     kosten_h2: 'Outsourcing Google Ads: the costs.',
-    kosten_body: 'Management starts at 399 euros per month. What is needed above that depends on what the diagnosis shows, and we discuss that only once you know what there is to do. What never happens: a percentage of your media budget, a margin you cannot verify, or an entry price that doubles after three months.',
+    kosten_body: 'Outsourcing starts at 1,399 euros per month on annual billing, 1,499 monthly. If you want to run it yourself later, we work alongside you until it stands, usually six to twelve months, and then you move to 399 per month. If you would rather never think about it, it simply continues. What never happens: a percentage of your media budget, a margin you cannot verify, or an entry price that quietly doubles after three months.',
     kosten_punten: [
-      'From 399 euros per month for management',
+      'From 1,399 per month, or 399 if you run it yourself',
       'Your media budget goes entirely to Google, we take none of it',
       'The diagnosis is free of obligation and you keep the report',
       'No long-term contract, you can always cancel',
@@ -127,7 +127,7 @@ const COPY = {
 
     faq_h2: 'What business owners ask us.',
     faqs: [
-      { question: 'What does it cost to outsource Google Ads?', answer: 'At Stevin.AI management starts at 399 euros per month. On top of that comes your ad budget, which you pay directly to Google from your own account. We take no margin on your media budget. What you actually need is determined after the diagnosis, not before.' },
+      { question: 'What does it cost to outsource Google Ads?', answer: 'Outsourcing starts at 1,399 euros per month on annual billing. If you take it over yourself later, that drops to 399 once it stands, usually after six to twelve months. On top of that comes your ad budget, which you pay directly to Google from your own account. We take no margin on your media budget. What you actually need is determined after the diagnosis, not before.' },
       { question: 'Does my Google Ads account stay mine?', answer: 'Yes. The account is in your company name, you keep admin rights, and you can export the data. If you leave you take the history and the accumulated learning data with you. Ask any party this explicitly and have it put in writing.' },
       { question: 'How do I know if my current agency is doing a good job?', answer: 'Three things you can check yourself today. Open your account change history and see what happened in the past 90 days. Look up your company in Google’s public transparency register and check who is listed as the payer. And count last month’s enquiries and compare that with your dashboard.' },
       { question: 'Can the diagnosis run alongside my current agency?', answer: 'Yes, and it is often sensible. It is a second opinion on your own numbers. If things are right, you now know for sure. If not, you have something concrete to discuss.' },
