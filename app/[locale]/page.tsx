@@ -1,6 +1,8 @@
+import { Fragment } from 'react'
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import { Ruler, ClipboardCheck, KeyRound, ChevronRight } from 'lucide-react'
 import FAQAccordion from '@/components/FAQAccordion'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import MarketingMemoryDemo from '@/components/MarketingMemoryDemo'
@@ -640,6 +642,26 @@ export default async function HomePage({ params }: Props) {
                   <p className="text-white/55 leading-[1.6] m-0" style={{ fontSize: '15px', maxWidth: '58ch' }}>
                     {item.d}
                   </p>
+                  {/* Deze drie bullets stonden al in de data maar werden nooit
+                      uitgelezen: dode copy, en juist het concreetste van de hele
+                      pagina. Zichtbaar gemaakt 4 sep 2026 (W-042). Ze doen wat
+                      de rest van de sectie niet doet, namelijk het abstracte
+                      ("de basis staat") vervangen door iets wat je kunt nakijken
+                      ("staat alles op jouw naam?"). */}
+                  {item.b?.length ? (
+                    <ul className="mt-5 mb-0 p-0 list-none grid gap-2.5" style={{ maxWidth: '58ch' }}>
+                      {item.b.map((punt) => (
+                        <li key={punt} className="grid grid-cols-[14px_1fr] gap-3 items-start">
+                          <span
+                            aria-hidden="true"
+                            className="mt-[7px] w-[6px] h-[6px] rounded-full"
+                            style={{ background: 'var(--color-accent)' }}
+                          />
+                          <span className="text-white/70 leading-[1.55]" style={{ fontSize: '14px' }}>{punt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </div>
               </article>
             ))}
@@ -701,20 +723,35 @@ export default async function HomePage({ params }: Props) {
             {c.name_h2}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border rounded-[14px] overflow-hidden mb-14">
-            {c.name_cards.map((card) => (
-              <div key={card.t} className="bg-white p-8 lg:p-10">
-                <span
-                  className="inline-flex items-center justify-center w-11 h-11 rounded-full font-display font-bold text-[18px] mb-6"
-                  style={{ background: 'rgba(93,163,255,0.12)', color: 'var(--color-primary)' }}
-                  aria-hidden="true"
-                >
-                  {card.g}
-                </span>
-                <h3 className="font-display font-bold text-primary mb-3" style={{ fontSize: '19px', letterSpacing: '-0.01em' }}>{card.t}</h3>
-                <p className="text-muted leading-[1.6] m-0" style={{ fontSize: '14.5px' }}>{card.d}</p>
-              </div>
-            ))}
+          {/* Was drie gelijke vakjes met losse tekens als icoon (een S, een zwart
+              blokje, een pijl). Dat leest als een lijstje, terwijl het een keten
+              is: de naam, wat die betekent voor hoe we werken, en wat jij
+              overhoudt. Nu met Lucide-iconen zoals de huisregel voorschrijft, en
+              met een pijl ertussen zodat de opeenvolging zichtbaar wordt. */}
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] items-stretch gap-px md:gap-0 bg-border md:bg-transparent border md:border-0 border-border rounded-[14px] md:rounded-none overflow-hidden md:overflow-visible mb-14">
+            {c.name_cards.map((card, i) => {
+              const Icoon = [Ruler, ClipboardCheck, KeyRound][i] ?? Ruler
+              return (
+                <Fragment key={card.t}>
+                  <div className="bg-white p-8 lg:p-10 md:border md:border-border md:rounded-[14px] h-full">
+                    <span
+                      className="inline-flex items-center justify-center w-11 h-11 rounded-full mb-6"
+                      style={{ background: 'rgba(93,163,255,0.12)', color: 'var(--color-primary)' }}
+                      aria-hidden="true"
+                    >
+                      <Icoon size={20} strokeWidth={1.75} />
+                    </span>
+                    <h3 className="font-display font-bold text-primary mb-3" style={{ fontSize: '19px', letterSpacing: '-0.01em' }}>{card.t}</h3>
+                    <p className="text-muted leading-[1.6] m-0" style={{ fontSize: '14.5px' }}>{card.d}</p>
+                  </div>
+                  {i < 2 && (
+                    <div className="hidden md:flex items-center justify-center px-3" aria-hidden="true">
+                      <ChevronRight size={20} strokeWidth={2} style={{ color: 'var(--color-border)' }} />
+                    </div>
+                  )}
+                </Fragment>
+              )
+            })}
           </div>
 
           <div className="grid grid-cols-[auto_1fr] items-start gap-6 max-w-[760px]">
