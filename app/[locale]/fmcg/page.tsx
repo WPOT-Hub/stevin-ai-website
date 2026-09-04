@@ -261,6 +261,24 @@ export default async function FmcgPage({ params }: Props) {
         </div>
       </section>
 
+      <Section bg="white">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-xs font-mono uppercase tracking-[0.14em] text-muted/70">{t.scan_eyebrow}</p>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-balance text-primary">{t.scan_h2}</h2>
+          <p className="mt-5 text-muted leading-relaxed">{t.scan_p}</p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {t.scan_cijfers.map((c) => (
+              <div key={c.n} className="border-t border-border pt-4">
+                <p className="text-xl font-bold text-accent leading-tight">{c.n}</p>
+                <p className="mt-2 text-sm text-muted leading-relaxed">{c.t}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 text-primary leading-relaxed">{t.scan_slot}</p>
+          <p className="mt-6 text-sm font-medium text-accent">{t.scan_cta}</p>
+        </div>
+      </Section>
+
       <Section bg="surface">
         <SectionHeader title={t.eerlijk_h2} subtitle={t.eerlijk_sub} />
         <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
@@ -282,24 +300,6 @@ export default async function FmcgPage({ params }: Props) {
               <p className="mt-3 text-sm text-muted leading-relaxed">{i.d}</p>
             </div>
           ))}
-        </div>
-      </Section>
-
-      <Section bg="primary">
-        <div className="mx-auto max-w-3xl">
-          <p className="text-xs font-mono uppercase tracking-[0.14em] text-white/40">{t.scan_eyebrow}</p>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-balance">{t.scan_h2}</h2>
-          <p className="mt-5 text-white/65 leading-relaxed">{t.scan_p}</p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            {t.scan_cijfers.map((c) => (
-              <div key={c.n} className="border-t border-white/15 pt-4">
-                <p className="text-xl font-bold text-accent leading-tight">{c.n}</p>
-                <p className="mt-2 text-sm text-white/55 leading-relaxed">{c.t}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-10 text-white/80 leading-relaxed">{t.scan_slot}</p>
-          <p className="mt-6 text-sm font-medium text-accent">{t.scan_cta}</p>
         </div>
       </Section>
 
