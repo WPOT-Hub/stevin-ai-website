@@ -64,7 +64,7 @@ const COPY = {
       },
       {
         t: 'Wat je al betaalt gaat er ook in',
-        d: 'Je panel, je merktracker, je listening-tool, je eigen exports uit de retailerportalen. Is er een API, dan koppelen we die. Is er alleen een export, dan lezen we het bestand in. Beide routes eindigen op dezelfde plek: jouw cijfers naast je mediadata, met een definitie eronder, in plaats van in een aparte map die niemand opent.',
+        d: 'NielsenIQ, Circana, GfK, Kantar, je merktracker, je listening-tool, je eigen exports uit de retailerportalen. Is er een API, dan koppelen we die. Zit die achter een module waar je voor bijbetaalt, dan weet je dat van ons voordat je tekent. En is er alleen een export, dan lezen we het bestand in. Alle routes eindigen op dezelfde plek: jouw cijfers naast je mediadata, met een definitie eronder, in plaats van in een map die niemand opent.',
       },
       {
         t: 'Vastleggen wat je probeerde',
@@ -141,7 +141,7 @@ const COPY = {
       },
       {
         t: 'What you already pay for goes in too',
-        d: 'Your panel, your brand tracker, your listening tool, your own exports from the retailer portals. If there is an API, we connect it. If there is only an export, we read the file. Both routes end in the same place: your numbers next to your media data, with a definition underneath, instead of in a separate folder nobody opens.',
+        d: 'NielsenIQ, Circana, GfK, Kantar, your brand tracker, your listening tool, your own exports from the retailer portals. If there is an API, we connect it. If it sits behind a paid module, you hear that from us before you sign anything. And if there is only an export, we read the file. Every route ends in the same place: your numbers next to your media data, with a definition underneath, instead of in a folder nobody opens.',
       },
       {
         t: 'Record what you tried',
