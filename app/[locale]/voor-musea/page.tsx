@@ -22,6 +22,13 @@ type Props = { params: Promise<{ locale: string }> }
 // maand op accountniveau, twee maanden onder elkaar is tijdelijke deactivatie,
 // losse woorden als zoekwoord niet toegestaan op enkele uitzonderingen na.
 // Principes woordelijk uit de kennislaag: kern 9, kern 13, kern 17.
+// Bio-alinea's (5 sep): Koen had bij Addurance musea en een concertzaal als
+// klant (kennismakingsdeck 2022 van zijn hand, mediapitch 2022, intake
+// concertzaal 2019 met Koen als laatste bewerker). Alleen het patroon staat
+// hier, geen namen en geen cijfers: dat werk is van dat bureau voor die klanten.
+// Het patroon zelf komt letterlijk uit die intake: loyaliteitslabels in het
+// ticketsysteem zonder uitgetekende flow, jong publiek groot in bezoek maar
+// 65+ beter in conversie, retargeting als best lopende campagne, Grant uit.
 
 const COPY: Record<'nl' | 'en', VoorWieCopy> = {
   nl: {
@@ -69,8 +76,8 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     ],
 
     waarom_h2: 'Waarom wij dit weten.',
-    waarom_p1: 'Gebouwd door iemand die twintig jaar aan de andere kant van de factuur zat, als oprichter van een bureau. Niet in de cultuursector, dat zeggen we er eerlijk bij. Wat overal hetzelfde is: een klein team, een klein budget en een grote verantwoording.',
-    waarom_p2: 'Wat in gesprekken met instellingen opvalt: er wordt hard gewerkt aan zichtbaarheid bij wie je al kent, en bijna niets aan de vraag van wie nog nergens aan dacht. Geen luiheid, een gebrek aan tijd en aan meting die die kant op kijkt.',
+    waarom_p1: 'Gebouwd door iemand die twintig jaar aan de andere kant van de factuur zat, als oprichter van een bureau, en daar musea en een concertzaal onder zijn klanten had. Hetzelfde patroon elke keer: een klein team, veel kanalen, en een ticketsysteem dat wel labels als "nieuw", "frequent" en "slaper" bijhoudt, maar niemand die de route van eerste contact naar trouwe bezoeker kan uittekenen.',
+    waarom_p2: 'En elke keer dezelfde ontdekking in de cijfers: het jonge publiek is het grootste deel van het bezoek, maar de conversie zit bij 65-plus, en de campagne die het beste loopt is de retargeting op wie al geweest is. Alles wijst naar de bezoeker die je al kent. Daarom begint dit bij de vraag van wie je nog niet kent, en bij een Ad Grant dat aan blijft staan.',
 
     faq_h2: 'Wat instellingen ons eerst vragen.',
     faqs: [
@@ -127,8 +134,8 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     ],
 
     waarom_h2: 'Why we know this.',
-    waarom_p1: 'Built by someone who spent twenty years on the other side of the invoice, as the founder of an agency. Not in the cultural sector, and we say so plainly. What is the same everywhere: a small team, a small budget and a large accountability.',
-    waarom_p2: 'What stands out in conversations with institutions: a lot of effort goes into visibility among people who already know you, and almost none into the question of someone who was not thinking about it. Not laziness, a lack of time and of measurement pointing that way.',
+    waarom_p1: 'Built by someone who spent twenty years on the other side of the invoice, as the founder of an agency, with museums and a concert hall among the clients. The same pattern every time: a small team, many channels, and a ticketing system that keeps labels like "new", "frequent" and "dormant", but nobody who can draw the route from first contact to loyal visitor.',
+    waarom_p2: 'And every time the same discovery in the numbers: the young audience is the largest share of visits, but conversion sits with the over-65s, and the best performing campaign is the retargeting of people who already came. Everything points at the visitor you already know. So this starts with the question of the one you do not know yet, and with an Ad Grant that stays switched on.',
 
     faq_h2: 'What institutions ask us first.',
     faqs: [
