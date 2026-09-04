@@ -14,6 +14,11 @@ type Props = { params: Promise<{ locale: string }> }
 // (tweede run van die dag; de eerste had onbruikbare vragen). Alle zes met
 // web-search actief, groep nergens genoemd. Niet bij naam: geen klant.
 // Principes woordelijk uit de kennislaag: kern 2, kern 3, kern 13.
+// Bio (5 sep): Koen draaide bij Addurance de online dealercampagnes voor een
+// automerk in NL en BE (deck 2020 met Koen als laatste bewerker: 90 dealers,
+// 90 campagnes per geolocatie, per dealer rapportage en budgetverdeling;
+// planningssheet per dealer op inwoners en bereik per postcode). Geen merk-
+// of dealernamen hier: dat werk is van dat bureau voor die klant.
 
 const COPY: Record<'nl' | 'en', VoorWieCopy> = {
   nl: {
@@ -61,8 +66,8 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     ],
 
     waarom_h2: 'Waarom wij dit weten.',
-    waarom_p1: 'Gebouwd door iemand die twintig jaar aan de andere kant van de factuur zat, als oprichter van een bureau. Bij elke klant met meerdere vestigingen zie je hetzelfde: budget centraal verdeeld, verantwoording lokaal, cijfers op de tiende van de maand.',
-    waarom_p2: 'Zonder meting per verzorgingsgebied is het gesprek over welke vestiging het goed doet niet te voeren. Daarom begint dit daar, en bij een definitie die over alle merken heen geldt.',
+    waarom_p1: 'Gebouwd door iemand die twintig jaar aan de andere kant van de factuur zat, als oprichter van een bureau, en daar voor een automerk de dealercampagnes draaide in Nederland en Belgie. Negentig dealers, negentig campagnes, elk met een eigen boodschap in het eigen werkgebied, en per dealer een eigen rapportage en budgetverdeling op inwoners en bereik per postcode.',
+    waarom_p2: 'Dat werkte, en het leerde een ding: het importeursbudget was landelijk, de vraag was lokaal, en de enige manier om het gesprek over een vestiging eerlijk te voeren was meten per verzorgingsgebied. Daarom begint dit daar, en bij een definitie van een lead die over alle merken en alle bureaus heen hetzelfde is.',
 
     faq_h2: 'Wat dealergroepen ons eerst vragen.',
     faqs: [
@@ -119,8 +124,8 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     ],
 
     waarom_h2: 'Why we know this.',
-    waarom_p1: 'Built by someone who spent twenty years on the other side of the invoice, as the founder of an agency. With every multi-location client you see the same thing: budget divided centrally, accountability local, numbers on the tenth of the month.',
-    waarom_p2: 'Without measurement per catchment area, the conversation about which location is doing well cannot be had. So this starts there, and with a definition that holds across all brands.',
+    waarom_p1: 'Built by someone who spent twenty years on the other side of the invoice, as the founder of an agency, running the dealer campaigns for a car brand in the Netherlands and Belgium. Ninety dealers, ninety campaigns, each with its own message in its own area, and per dealer its own report and a budget split on inhabitants and reach per postcode.',
+    waarom_p2: 'It worked, and it taught one thing: the importer\'s budget was national, demand was local, and the only way to have an honest conversation about one location was to measure per catchment area. So this starts there, and with a definition of a lead that is the same across all brands and all agencies.',
 
     faq_h2: 'What dealer groups ask us first.',
     faqs: [
