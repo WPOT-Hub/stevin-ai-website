@@ -36,15 +36,15 @@ const COPY = {
     cta_sec: 'Wat het platform doet',
 
     eerlijk_h2: 'Wat wij hier niet doen.',
-    eerlijk_sub: 'Beginnen met wat we niet kunnen, want daar loopt deze categorie vol mee.',
+    eerlijk_sub: 'Twee dingen vooraf, want in deze categorie wordt daar standaard overheen beloofd.',
     eerlijk: [
       {
         t: 'Wij koppelen die portalen niet',
         d: 'Er is geen koppeling met Ahold Delhaize, bol, Albert Heijn, Picnic, Amazon, Lidl of Carrefour, en wij gaan niet doen alsof. Wie belooft dat hij die zeven achter een inlog samenbrengt, verkoopt je iets wat niemand goed heeft opgelost.',
       },
       {
-        t: 'Wij zien je verkoopdata niet',
-        d: 'Afzet per SKU zit bij de retailer en die deelt hem niet met jouw bureau. Alles wat wij zeggen over effect gaat over wat wel meetbaar is: zoekvraag, vindbaarheid, en wat je zelf in je eigen kanalen ziet.',
+        t: 'Wij zijn geen databron',
+        d: 'Wij hebben geen eigen panel en wij verkopen je geen licentie. Wat wij doen is lezen wat jij al hebt. Je betaalt waarschijnlijk al voor een panel, een merktracker en een listening-tool, en die cijfers staan alleen zelden naast je mediadata.',
       },
     ],
 
@@ -59,12 +59,16 @@ const COPY = {
         d: 'Beweegt je merkzoekvolume en dat van je categorie, en hoe verhoudt dat zich tot elkaar. Dat zie je binnen dagen, niet in de volgende kwartaalrapportage, en het loopt vooruit op wat er in het schap gebeurt.',
       },
       {
-        t: 'Zien wie er in jouw categorie adverteert',
-        d: 'Uit het openbare advertentieregister van Google en Meta halen we op welke merken in jouw categorie adverteren en waarmee. Publieke data, dus dit werkt ook voordat je klant bent.',
+        t: 'Zien wat je concurrent doet',
+        d: 'De advertentieregisters van Google en Meta zijn openbaar, dus daar beginnen we: welke merken adverteren in jouw categorie, en waarmee. Dat is waar we starten, niet waar het ophoudt. Elk kanaal met een publieke bron komt erbij. En dit werkt al voordat je klant bent.',
+      },
+      {
+        t: 'Wat je al betaalt gaat er ook in',
+        d: 'Je panel, je merktracker, je listening-tool, je eigen exports uit de retailerportalen. Is er een API, dan koppelen we die. Is er alleen een export, dan lezen we het bestand in. Beide routes eindigen op dezelfde plek: jouw cijfers naast je mediadata, met een definitie eronder, in plaats van in een aparte map die niemand opent.',
       },
       {
         t: 'Vastleggen wat je probeerde',
-        d: 'Welke flight, welke belofte, welk resultaat, en wat je ervan leerde. Ook de dingen die niet werkten. Zodat je over twee jaar niet dezelfde test opnieuw betaalt omdat niemand meer weet dat hij al liep.',
+        d: 'Welke flight, welke belofte, welk resultaat, en wat je ervan leerde. Ook de dingen die niet werkten. Zodat je over twee jaar niet dezelfde test opnieuw betaalt omdat niemand meer weet dat we dat al probeerden.',
       },
     ],
 
@@ -109,15 +113,15 @@ const COPY = {
     cta_sec: 'What the platform does',
 
     eerlijk_h2: 'What we do not do here.',
-    eerlijk_sub: 'Starting with what we cannot, because this category is full of people who will not.',
+    eerlijk_sub: 'Two things up front, because in this category that is exactly where the overpromising starts.',
     eerlijk: [
       {
         t: 'We do not connect those portals',
         d: 'There is no integration with Ahold Delhaize, bol, Albert Heijn, Picnic, Amazon, Lidl or Carrefour, and we will not pretend otherwise. Anyone promising to bring those seven behind one login is selling you something nobody has solved well.',
       },
       {
-        t: 'We do not see your sales data',
-        d: 'Volume per SKU sits with the retailer and they do not share it with your agency. Everything we say about effect concerns what is measurable: search demand, findability, and what you see in your own channels.',
+        t: 'We are not a data vendor',
+        d: 'We have no panel of our own and we will not sell you a licence. What we do is read what you already have. You are probably already paying for a panel, a brand tracker and a listening tool, and those numbers simply never sit next to your media data.',
       },
     ],
 
@@ -132,12 +136,16 @@ const COPY = {
         d: 'Whether your brand search volume and your category volume are moving, and how they relate. You see that within days, not in the next quarterly report, and it runs ahead of what happens at the shelf.',
       },
       {
-        t: 'See who advertises in your category',
-        d: 'From the public ad registers of Google and Meta we pull which brands advertise in your category and with what. Public data, so this works before you are a client.',
+        t: 'See what your competitor is doing',
+        d: 'The ad registers of Google and Meta are public, so that is where we start: which brands advertise in your category, and with what. That is the starting point, not the limit. Any channel with a public source can be added. And it works before you are a client.',
+      },
+      {
+        t: 'What you already pay for goes in too',
+        d: 'Your panel, your brand tracker, your listening tool, your own exports from the retailer portals. If there is an API, we connect it. If there is only an export, we read the file. Both routes end in the same place: your numbers next to your media data, with a definition underneath, instead of in a separate folder nobody opens.',
       },
       {
         t: 'Record what you tried',
-        d: 'Which flight, which promise, which result, and what you learned. Including the things that did not work. So that in two years you do not pay for the same test again because nobody remembers it ran.',
+        d: 'Which flight, which promise, which result, and what you learned. Including the things that did not work. So that in two years you do not pay for the same test again because nobody remembers you already tried it.',
       },
     ],
 
@@ -213,7 +221,7 @@ export default async function FmcgPage({ params }: Props) {
         <SectionHeader title={t.eerlijk_h2} subtitle={t.eerlijk_sub} />
         <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
           {t.eerlijk.map((i) => (
-            <div key={i.t} className="rounded-xl border border-slate-300 bg-white p-6">
+            <div key={i.t} className="rounded-xl border border-border bg-white p-6">
               <h3 className="text-base font-semibold text-primary">{i.t}</h3>
               <p className="mt-3 text-sm text-muted leading-relaxed">{i.d}</p>
             </div>
@@ -225,7 +233,7 @@ export default async function FmcgPage({ params }: Props) {
         <SectionHeader title={t.wel_h2} />
         <div className="grid gap-6 md:grid-cols-2">
           {t.wel.map((i) => (
-            <div key={i.t} className="rounded-xl border border-slate-200 bg-white p-6">
+            <div key={i.t} className="rounded-xl border border-border bg-white p-6">
               <h3 className="text-base font-semibold text-primary">{i.t}</h3>
               <p className="mt-3 text-sm text-muted leading-relaxed">{i.d}</p>
             </div>
@@ -237,11 +245,11 @@ export default async function FmcgPage({ params }: Props) {
         <SectionHeader title={t.canon_h2} subtitle={t.canon_sub} />
         <div className="mx-auto max-w-3xl flex flex-col gap-5">
           {t.principes.map((p) => (
-            <div key={p.p} className="rounded-xl border border-slate-200 bg-white p-6 border-l-[3px] border-l-accent">
+            <div key={p.p} className="rounded-xl border border-border bg-white p-6 border-l-[3px] border-l-accent">
               <p className="text-base font-semibold text-primary leading-snug">{p.p}</p>
               <p className="mt-2 text-sm text-muted leading-relaxed">{p.u}</p>
               <p className="mt-4 text-xs font-mono uppercase tracking-[0.1em] text-muted/70">{p.bron}</p>
-              <p className="mt-3 text-sm text-primary/80 leading-relaxed border-t border-slate-200 pt-3">{p.grens}</p>
+              <p className="mt-3 text-sm text-primary/80 leading-relaxed border-t border-border pt-3">{p.grens}</p>
             </div>
           ))}
         </div>

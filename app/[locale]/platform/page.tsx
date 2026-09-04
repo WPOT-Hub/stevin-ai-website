@@ -218,7 +218,7 @@ export default async function PlatformPage({ params }: Props) {
         <SectionHeader title={t.doet_h2} subtitle={t.doet_sub} />
         <div className="grid gap-6 md:grid-cols-3">
           {t.doet.map((item) => (
-            <div key={item.t} className="rounded-xl border border-slate-200 bg-white p-6">
+            <div key={item.t} className="rounded-xl border border-border bg-white p-6">
               <h3 className="text-base font-semibold text-primary">{item.t}</h3>
               <p className="mt-3 text-sm text-muted leading-relaxed">{item.d}</p>
             </div>
@@ -231,7 +231,7 @@ export default async function PlatformPage({ params }: Props) {
         <SectionHeader title={t.niet_h2} subtitle={t.niet_sub} />
         <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
           {t.niet.map((item) => (
-            <div key={item.t} className="rounded-xl border border-slate-300 bg-white p-6">
+            <div key={item.t} className="rounded-xl border border-border bg-white p-6">
               <h3 className="text-base font-semibold text-primary">{item.t}</h3>
               <p className="mt-3 text-sm text-muted leading-relaxed">{item.d}</p>
             </div>
@@ -244,11 +244,11 @@ export default async function PlatformPage({ params }: Props) {
         <SectionHeader title={t.kennis_h2} subtitle={t.kennis_sub} />
         <div className="mx-auto max-w-3xl flex flex-col gap-5">
           {t.principes.map((p) => (
-            <div key={p.p} className="rounded-xl border border-slate-200 bg-white p-6 border-l-[3px] border-l-accent">
+            <div key={p.p} className="rounded-xl border border-border bg-white p-6 border-l-[3px] border-l-accent">
               <p className="text-base font-semibold text-primary leading-snug">{p.p}</p>
               <p className="mt-2 text-sm text-muted leading-relaxed">{p.u}</p>
               <p className="mt-4 text-xs font-mono uppercase tracking-[0.1em] text-muted/70">{p.bron}</p>
-              <p className="mt-3 text-sm text-primary/80 leading-relaxed border-t border-slate-200 pt-3">
+              <p className="mt-3 text-sm text-primary/80 leading-relaxed border-t border-border pt-3">
                 {p.grens}
               </p>
             </div>
