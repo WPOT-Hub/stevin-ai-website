@@ -94,6 +94,17 @@ const COPY = {
       },
     ],
 
+    scan_eyebrow: 'Een echte meting, 4 september',
+    scan_h2: 'Vraag een AI welke crackers goed zijn. Je merk staat er niet bij.',
+    scan_p: 'Wij stelden zeven koopvragen uit een Nederlandse supermarktcategorie aan een AI-antwoordmachine met live zoekresultaten. Vragen zoals een lichte koper ze stelt: welke merken bieden koekjes met volle granen, wie verkoopt crackers zonder toegevoegde suiker, wat zijn de beste merken beschuit. Geen merknaam in de vraag.',
+    scan_cijfers: [
+      { n: '0 van 7', t: 'keer werd de site van het merk als bron gebruikt' },
+      { n: '1 van 5', t: 'open categorievragen noemde het merk uberhaupt' },
+      { n: 'ah.nl, jumbo.com', t: 'plus.nl en hoogvliet.com leverden de antwoorden' },
+    ],
+    scan_slot: 'Bij een vraag over volkoren koekjes werd een webshop uit Nieuw-Zeeland geciteerd, en een uit Brazilie. Het merk dat die koekjes in Nederland maakt, niet. Dezelfde retailer die in het schap tussen jou en de shopper staat, staat nu ook tussen jou en het antwoord, en hier kun je je niet inkopen.',
+    scan_cta: 'Deze scan draait in een kwartier op jouw merk, voordat je klant bent.',
+
     canon_eyebrow: 'Waarom ons advies klopt',
     canon_h2: 'De canon van jouw vak zit in het systeem.',
     canon_sub: 'Onder elk advies ligt een kennislaag van 105 principes uit gepubliceerd onderzoek. Voor FMCG komen die uit Ehrenberg-Bass en de IPA Databank van Binet en Field, dus uit precies de hoek waar jouw categorie al decennia op stuurt. Drie ervan, zoals ze in het systeem staan, met hun grens erbij.',
@@ -170,6 +181,17 @@ const COPY = {
         d: 'Which flight, which promise, which result, and what you learned. Including the things that did not work. So that in two years you do not pay for the same test again because nobody remembers you already tried it.',
       },
     ],
+
+    scan_eyebrow: 'A real measurement, 4 September',
+    scan_h2: 'Ask an AI which crackers are good. Your brand is not in the answer.',
+    scan_p: 'We put seven category buying questions from a Dutch supermarket category to an AI answer engine with live search. The questions a light buyer asks: which brands offer wholegrain biscuits, who sells crackers without added sugar, what are the best rusk brands. No brand name in the question.',
+    scan_cijfers: [
+      { n: '0 of 7', t: 'times the brand site was used as a source' },
+      { n: '1 of 5', t: 'open category questions named the brand at all' },
+      { n: 'ah.nl, jumbo.com', t: 'plus.nl and hoogvliet.com supplied the answers' },
+    ],
+    scan_slot: 'On a question about wholegrain biscuits it cited a webshop in New Zealand, and one in Brazil. The brand that actually makes those biscuits in the Netherlands, it did not. The same retailer that stands between you and the shopper at the shelf now stands between you and the answer, and here you cannot buy your way in.',
+    scan_cta: 'We run this scan on your brand in fifteen minutes, before you are a client.',
 
     canon_eyebrow: 'Why the advice holds',
     canon_h2: 'The canon of your trade sits in the system.',
@@ -260,6 +282,24 @@ export default async function FmcgPage({ params }: Props) {
               <p className="mt-3 text-sm text-muted leading-relaxed">{i.d}</p>
             </div>
           ))}
+        </div>
+      </Section>
+
+      <Section bg="primary">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-xs font-mono uppercase tracking-[0.14em] text-white/40">{t.scan_eyebrow}</p>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-balance">{t.scan_h2}</h2>
+          <p className="mt-5 text-white/65 leading-relaxed">{t.scan_p}</p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {t.scan_cijfers.map((c) => (
+              <div key={c.n} className="border-t border-white/15 pt-4">
+                <p className="text-xl font-bold text-accent leading-tight">{c.n}</p>
+                <p className="mt-2 text-sm text-white/55 leading-relaxed">{c.t}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 text-white/80 leading-relaxed">{t.scan_slot}</p>
+          <p className="mt-6 text-sm font-medium text-accent">{t.scan_cta}</p>
         </div>
       </Section>
 
