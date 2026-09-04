@@ -44,8 +44,30 @@ const COPY = {
       { q: 'Hij kon mijn marge ook bepalen, want hij wist mijn inkoopprijs. En dat wil ik niet.', a: 'Reparatiebedrijf' },
       { q: 'Dat zijn allemaal aparte systemen met bepaalde toegangen. Maar er zit nergens een link of een centraal geheugen.', a: 'Marketingverantwoordelijke, internationaal merk' },
     ],
-    herken_close: 'Dit zijn geen uitzonderingen. Zo werkt de markt, zolang niemand meekijkt. Zelfs bureaus zeggen het zelf.',
+    // "Zelfs bureaus zeggen het zelf" is er 4 sep 2026 uit (W-042). Onnagekeken
+    // bewering over derden, zonder bron, en het schuurt tegen de generieke
+    // anti-bureau-framing die D-038 verbiedt. De rest van dit blok is
+    // onaantastbaar omdat elk woord uit een echt gesprek komt; die ene zin was
+    // het enige wat niet hard te maken viel.
+    herken_close: 'Dit zijn geen uitzonderingen. Zo werkt het zolang niemand meekijkt.',
     herken_bron: 'Uit echte diagnosegesprekken, geanonimiseerd.',
+
+    // Beat 2, toegevoegd 4 sep 2026 (W-042). Deze stap ontbrak: de pagina ging
+    // van herkenning meteen naar de checks, zonder ooit te beantwoorden waarom
+    // dit NU speelt. Bewust geen aanval op wie met AI bouwt: het punt is dat er
+    // meer gebouwd wordt dan ooit, en dat een betrouwbare basis daardoor
+    // zwaarder telt, niet lichter. Toon volgt proof_rules uit de canonieke
+    // copyconfig: een concrete vraag verslaat een abstracte belofte.
+    nu_eyebrow: 'Waarom nu',
+    nu_h2: 'Iedereen kan nu iets bouwen. Dat is het punt niet.',
+    nu_intro: 'Een campagne opzetten, een landingspagina maken, een meting inrichten: het kost nog een middag. Dat is winst, en wij gebruiken het zelf ook. Alleen verandert er iets wat minder opvalt.',
+    nu_kern: 'Wie sneller bouwt, bouwt ook sneller op een verkeerd fundament. Een meting die niet klopt, viel vroeger op omdat iemand er weken aan rekende. Nu rolt er in een middag een campagne uit die op datzelfde verkeerde cijfer stuurt.',
+    nu_punten: [
+      { t: 'Het maakt slechte data niet beter', d: 'Het rekent er alleen sneller mee door. Worden je conversies dubbel geteld, dan wordt daar nu ook automatisch budget op verdeeld.' },
+      { t: 'Bouwen is iets anders dan weten wat je meet', d: 'Iemand kan een prima meetscript schrijven zonder te weten welke conversie zakelijk telt. Dat is geen verwijt, het zijn twee vakken.' },
+      { t: 'Daarom telt de basis zwaarder, niet lichter', d: 'Hoe goedkoper uitvoeren wordt, hoe duurder een fout in het fundament. Die vermenigvuldigt namelijk mee.' },
+    ],
+    nu_slot: 'Vandaar de volgorde: eerst weten of je cijfers kloppen, dan pas erop sturen. Niet omdat het spannend klinkt, maar omdat de rest anders op zand staat.',
 
     checks_eyebrow: 'Kijk zelf mee',
     checks_h2: 'Vertrouw ons niet op ons woord.',
@@ -174,8 +196,19 @@ const COPY = {
       { q: 'He could work out my margin, because he knew what I paid. And I do not want that.', a: 'Repair company' },
       { q: 'Those are all separate systems with their own logins. But there is no link anywhere, no central memory.', a: 'Marketing lead, international brand' },
     ],
-    herken_close: 'These are not exceptions. This is how the market works, as long as nobody is watching. Even agencies say it themselves.',
+    herken_close: 'These are not exceptions. This is how it works as long as nobody is watching.',
     herken_bron: 'From real diagnosis conversations, anonymised.',
+
+    nu_eyebrow: 'Why now',
+    nu_h2: 'Anyone can build something now. That is not the point.',
+    nu_intro: 'Setting up a campaign, building a landing page, wiring up measurement: it takes an afternoon. That is progress, and we use it ourselves. But something less visible changed with it.',
+    nu_kern: 'Building faster also means building faster on the wrong foundation. Measurement that was off used to surface, because someone spent weeks working with it. Now an afternoon produces a campaign that steers on that same wrong number.',
+    nu_punten: [
+      { t: 'It does not improve bad data', d: 'It just computes with it faster. If your conversions are counted twice, budget now gets allocated on that automatically.' },
+      { t: 'Building is not the same as knowing what you measure', d: 'Someone can write a perfectly good tracking script without knowing which conversion matters commercially. That is not a reproach, they are two trades.' },
+      { t: 'So the basics weigh more, not less', d: 'The cheaper execution gets, the more expensive a flaw in the foundation becomes. It multiplies along.' },
+    ],
+    nu_slot: 'Hence the order: first know whether your numbers are right, then steer on them. Not because it sounds exciting, but because everything else stands on sand otherwise.',
 
     checks_eyebrow: 'See for yourself',
     checks_h2: 'Do not take our word for it.',
@@ -484,6 +517,31 @@ export default async function HomePage({ params }: Props) {
             </p>
             <p className="text-muted text-[13px] m-0">{c.herken_bron}</p>
           </div>
+        </div>
+      </section>
+
+      {/* ── WAAROM NU ── */}
+      {/* Staat tussen de herkenning en de checks: pas als iemand zijn eigen
+          situatie heeft herkend, is de vraag "waarom nu" beantwoordbaar. */}
+      <section className="bg-surface" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className={eyebrowLight}>{dashLight}{c.nu_eyebrow}</p>
+          <h2 className="font-display font-extrabold text-primary m-0 mb-8" style={{ ...h2Style, maxWidth: '24ch' }}>
+            {c.nu_h2}
+          </h2>
+          <div className="max-w-[68ch] flex flex-col gap-4 mb-12">
+            <p className="text-muted text-[17px] leading-[1.65] m-0">{c.nu_intro}</p>
+            <p className="text-primary text-[17px] leading-[1.65] m-0 font-medium">{c.nu_kern}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border rounded-[14px] overflow-hidden">
+            {c.nu_punten.map((p) => (
+              <div key={p.t} className="bg-white p-7">
+                <h3 className="font-display font-bold text-primary text-[17px] m-0 mb-3 leading-snug">{p.t}</h3>
+                <p className="text-muted text-[15px] leading-[1.6] m-0">{p.d}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-muted text-[15px] leading-[1.65] mt-8 mb-0 max-w-[64ch]">{c.nu_slot}</p>
         </div>
       </section>
 
