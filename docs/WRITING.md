@@ -59,17 +59,21 @@ Als een organisatie zelf een term gebruikt — "AI-first leger",
 "eerste-lijns-advies", "performance" — citeer letterlijk met
 aanhalingstekens. De lezer hoort dat het hun woord is, niet het onze.
 
-### 6. Geen em-dash voor pauze
+### 6. Geen em-dash, geen en-dash, geen enkele uitzondering
 
-Stevin gebruikt geen `—` als rust-streep in zinnen. Dat is een AI-tell. Gebruik
-in plaats daarvan: een punt, dubbele punt, of haakjes.
+Stevin gebruikt geen `—` of `–` in tekst. Dat is een AI-tell. Gebruik in plaats
+daarvan: een punt, dubbele punt, komma, of haakjes.
 
 > **Wel:** "Het probleem zit niet in het model. Het zit eronder."
 >
 > **Niet:** "Het probleem zit niet in het model — het zit eronder."
 
-Uitzondering: typografische streepjes in citaten en namen (Stevin–Brabant) zijn
-prima. Em-dash in proza: nooit.
+Geen uitzondering, ook niet in citaten of samengestelde namen: dat gold hier
+eerder wel (zie git-historie), maar is per 4 sep 2026 gelijkgetrokken met de
+canonieke regel in `Stevin-Hub/docs/copy/VERBODEN_WOORDEN.json` (`gedachtestreepje`,
+hardheid blok, "geen enkele uitzondering"). Kom je een samengestelde naam met een
+streepje tegen, schrijf het om (spatie, of aan elkaar) in plaats van een dash te
+gebruiken.
 
 ### 7. Neutrale toon, geen activistisch register
 
