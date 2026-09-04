@@ -63,15 +63,19 @@ const nextConfig: NextConfig = {
       // bestaat. De URL's kunnen geindexeerd zijn (35 vertoningen in 90 dagen),
       // dus 301 naar het overzicht in plaats van een 404.
       // Zie docs/research/SITE_CLAIMS_AUDIT_2026-09-04.md in Stevin-Hub.
-      { source: '/producten/dynamic-optimization', destination: '/producten', permanent: true },
-      { source: '/producten/dynamic-pages', destination: '/producten', permanent: true },
-      { source: '/producten/dynamic-ads', destination: '/producten', permanent: true },
-      { source: '/producten/content-optimization', destination: '/producten', permanent: true },
-      { source: '/producten/blog-automation', destination: '/producten', permanent: true },
-      { source: '/producten/follow-up', destination: '/producten', permanent: true },
-      { source: '/producten/quote', destination: '/producten', permanent: true },
-      { source: '/producten/uplift', destination: '/producten', permanent: true },
-      { source: '/:locale(nl|en)/producten/:slug(dynamic-optimization|dynamic-pages|dynamic-ads|content-optimization|blog-automation|follow-up|quote|uplift)', destination: '/:locale(nl|en)/producten', permanent: true },
+      // 4 sep 2026 (W-042): /platform, /producten en /werkwijze vertelden elk
+      // een eigen versie van wat Stevin is. /platform is herbouwd tot een
+      // verhaal (wat het doet, wat het niet doet, waarop het advies steunt) en
+      // neemt de andere twee over. /werkwijze had nul zoekvertoningen, dus daar
+      // valt niets te verliezen; /producten had er 35, vandaar een 301 en geen
+      // 404. De twee producten die echt bestaan, Signals en Ads Radar, staan nu
+      // als eigenschap op /platform in plaats van als los product.
+      { source: '/werkwijze', destination: '/platform', permanent: true },
+      { source: '/:locale(nl|en)/werkwijze', destination: '/:locale(nl|en)/platform', permanent: true },
+      { source: '/producten', destination: '/platform', permanent: true },
+      { source: '/:locale(nl|en)/producten', destination: '/:locale(nl|en)/platform', permanent: true },
+      { source: '/producten/:slug', destination: '/platform', permanent: true },
+      { source: '/:locale(nl|en)/producten/:slug', destination: '/:locale(nl|en)/platform', permanent: true },
       // 17 aug 2026: /case-studies/e-commerce stond publiek met verzonnen
       // resultaten (+42% leads, -35% kosten per acquisitie, 8 uur bespaard) bij
       // een naamloze klant. Niets daarvan is na te kijken, en dat is precies de

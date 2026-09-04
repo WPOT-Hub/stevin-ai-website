@@ -64,13 +64,13 @@ export default function Header() {
     { label: t('diensten_tracking'), href: '/diensten#tracking-inzicht' },
   ]
 
-  const platformItems = [
-    { label: t('platform_overview'), href: '/platform' },
-    { label: t('platform_integrations'), href: '/platform#connectors' },
-    { label: t('platform_leads'), href: '/platform#lead-generation' },
-    { label: t('platform_monitoring'), href: '/platform#monitoring' },
-    { label: t('platform_reports'), href: '/platform#ai-reports' },
-  ]
+  // 4 sep 2026 (W-042): de dropdown wees naar vier ankers die na de herbouw van
+  // /platform niet meer bestaan, waaronder #lead-generation. Dat anker hoorde
+  // bij de claim "van anoniem websitebezoek naar gekwalificeerde pipeline",
+  // en die is weggehaald omdat er geen bezoeker-identificatie in de code zit.
+  // De pagina vertelt nu een verhaal in plaats van een featurelijst, dus een
+  // dropdown die dat weer opknipt werkt tegen. Een link.
+  const platformItems: { label: string; href: string }[] = []
 
   const voorWieItems = [
     { label: t('voor_ondernemers'), href: '/voor-ondernemers' },
@@ -86,9 +86,12 @@ export default function Header() {
   // header, 40 in de footer, en geen enkele naar /tarieven.
   // Klantverhalen hoort hier ook thuis, maar pas als er iets op staat dat een
   // prospect kan nakijken. De echte cijfers komen na 1 september.
+  // Werkwijze is er 4 sep 2026 uit (W-042). Die pagina vertelde een tweede,
+  // afwijkend verhaal (koppelen, vergelijken, activeren, verbeteren) dat de
+  // homepage tegensprak, en had nul zoekvertoningen, dus omgooien kon zonder
+  // SEO-risico. De inhoud zit nu in /platform, de URL redirect daarheen.
   const navItems = [
     { label: t('controle'), href: '/controle' },
-    { label: t('werkwijze'), href: '/werkwijze' },
     { label: t('tarieven'), href: '/tarieven' },
     { label: t('contact'), href: '/contact' },
   ]
@@ -156,39 +159,19 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Platform dropdown */}
-            <div ref={platformDropdownRef} className="relative">
-              <button
-                onClick={() => setPlatformOpen(!platformOpen)}
-                className={`flex flex-none items-center gap-1 whitespace-nowrap text-[13px] font-medium transition-colors ${
-                  showDark
-                    ? 'text-white/70 hover:text-white'
-                    : 'text-slate-600 hover:text-primary'
-                }`}
-              >
-                {t('platform')}
-                <svg className={`w-3.5 h-3.5 transition-transform ${platformOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {/* Altijd in de DOM (crawlbaar), zichtbaarheid via CSS. */}
-              <div
-                className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-border shadow-lg py-2 transition-opacity ${
-                  platformOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
-                }`}
-              >
-                  {platformItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-surface transition-colors"
-                      onClick={() => setPlatformOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-              </div>
-            </div>
+            {/* Platform: gewone link, geen dropdown meer (W-042). De pagina is
+                een verhaal geworden; hem in de nav weer opknippen in vier ankers
+                werkt daartegen, en die ankers bestonden na de herbouw niet meer. */}
+            <Link
+              href="/platform"
+              className={`flex-none whitespace-nowrap text-[13px] font-medium transition-colors ${
+                showDark
+                  ? 'text-white/70 hover:text-white'
+                  : 'text-slate-600 hover:text-primary'
+              }`}
+            >
+              {t('platform')}
+            </Link>
 
             {/* Voor wie dropdown */}
             <div ref={voorWieDropdownRef} className="relative">
@@ -295,30 +278,14 @@ export default function Header() {
               </div>
             )}
 
-            {/* Platform accordion */}
-            <button
-              onClick={() => setMobilePlatformOpen(!mobilePlatformOpen)}
-              className="flex items-center justify-between w-full text-base font-medium text-primary py-3 border-b border-border/50"
+            {/* Platform: gewone link, geen accordeon meer (W-042). */}
+            <Link
+              href="/platform"
+              className="block w-full text-base font-medium text-primary py-3 border-b border-border/50"
+              onClick={() => setMobileOpen(false)}
             >
               {t('platform')}
-              <svg className={`w-4 h-4 transition-transform ${mobilePlatformOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {mobilePlatformOpen && (
-              <div className="pl-4 space-y-0">
-                {platformItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block text-sm text-slate-600 py-2.5 border-b border-border/30"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            )}
+            </Link>
 
             {/* Voor wie accordion */}
             <button
