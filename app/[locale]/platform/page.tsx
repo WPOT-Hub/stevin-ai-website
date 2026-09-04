@@ -1,359 +1,275 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
-import { localizedMetadata } from '@/lib/seo'
+import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
-import DeskProof from '@/components/DeskProof'
-import { nativeConnectors } from '@/data/connectors'
-import HairlineRule from '@/components/HairlineRule'
+import Section from '@/components/Section'
+import SectionHeader from '@/components/SectionHeader'
+import { localizedMetadata } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: string }> }
 
+// Herbouwd 4 sep 2026 (W-042). Deze pagina was een opsomming van alles wat het
+// systeem zou kunnen, met daarin een claim die niet klopte: "van anoniem
+// websitebezoek naar gekwalificeerde pipeline, volledig geautomatiseerd, zonder
+// cookies". Er is geen bezoeker-identificatie in de codebase; het enige bestand
+// in die richting anonimiseert juist.
+//
+// Wat hier nu staat is getoetst aan draaiende code, tabellen met rijen en
+// cronjobs, niet aan documentatie. Zie docs/research/SITE_CLAIMS_AUDIT_2026-09-04.md
+// in Stevin-Hub.
+//
+// Twee keuzes die de pagina dragen:
+// 1. "Wat het niet doet" staat er expliciet in. Het systeem voert niets uit op
+//    een advertentieaccount; dat is met D-019 een bewuste keuze geweest. Bij een
+//    propositie over controle is dat geen tekort maar het punt zelf.
+// 2. De kennislaag staat er voor het eerst op. 105 principes, waarvan er hier
+//    drie als voorbeeld staan met bron EN grens. Niet alle 105: dat leest
+//    niemand, het is de moat, en maar 27 ervan zijn publiek citeerbaar.
+
+const COPY = {
+  nl: {
+    eyebrow: 'Wat het doet',
+    h1_line: 'Het kijkt mee, legt vast,',
+    h1_accent: 'en laat zien waarop het steunt.',
+    sub: 'Geen dashboard erbij. Een laag op je eigen data die ziet wanneer er iets verschuift, uitlegt waarom dat volgens onderzoek uitmaakt, en vastlegt wat er is besloten.',
+    cta: 'Start de diagnose',
+    cta_sec: 'Zo controleer je ons',
+
+    doet_eyebrow: 'Drie dingen, elke dag',
+    doet_h2: 'Wat er draait.',
+    doet_sub: 'Dit is wat er vandaag werkt, niet wat er op de planning staat.',
+    doet: [
+      {
+        t: 'Signalen op je eigen data',
+        d: 'Elke dag gecontroleerd op afwijkingen in je advertenties, je budgetten en je meting. Je hoort het als er iets scheefloopt, met de reden erbij, niet pas in de maandrapportage.',
+      },
+      {
+        t: 'Zien wie er in jouw markt adverteert',
+        d: 'Uit het openbare advertentieregister van Google en Meta halen we doorlopend op welke partijen in jouw markt adverteren en waarmee. Publieke data, dus dit werkt ook voordat je klant bent.',
+      },
+      {
+        t: 'Een logboek dat blijft',
+        d: 'Elke wijziging met naam, moment en reden. Ook de besluiten die achteraf verkeerd uitpakten, met wat eruit geleerd is. Wie hier volgend jaar begint leest zich in.',
+      },
+    ],
+
+    niet_eyebrow: 'Even zo belangrijk',
+    niet_h2: 'Wat het niet doet.',
+    niet_sub: 'Een systeem dat alles zelf mag, kun je niet controleren. Daarom mag dit dat niet.',
+    niet: [
+      {
+        t: 'Het verandert niets aan je campagnes',
+        d: 'Er loopt geen enkele opdracht van ons systeem naar Google of Meta. Het signaleert en zet een voorstel klaar; een mens beslist en voert uit. Dat is een keuze, geen fase.',
+      },
+      {
+        t: 'Het koppelt niet met alles',
+        d: 'Advertentieplatforms en analytics wel. Je kassasysteem, je ERP, je DMS of een retailerportaal niet. Die cijfers leg je er zelf naast, en dat zeggen we liever dan dat we het beloven.',
+      },
+    ],
+
+    kennis_eyebrow: 'Waarom het advies klopt',
+    kennis_h2: 'Elk advies heeft een bron. En een grens.',
+    kennis_sub: 'Onder het systeem ligt een kennislaag van 105 principes, opgebouwd uit gepubliceerd onderzoek. Ze wegen mee bij elke analyse. Hieronder drie ervan, zoals ze in het systeem staan.',
+    principes: [
+      {
+        p: 'Groei komt vooral van nieuwe kopers, niet van loyaler maken.',
+        u: 'Merken van gelijke grootte hebben vrijwel gelijke loyaliteit. Wie groeit, groeit door acquisitie.',
+        bron: 'Ehrenberg-Bass',
+        grens: 'Betekent niet dat retentie er niet toe doet, en het geldt niet voor merken die hun categorie al vrijwel volledig bedienen.',
+      },
+      {
+        p: 'Merk en activatie horen samen, rond 60/40.',
+        u: 'Losse kortetermijncampagnes stapelen niet op tot groei op lange termijn.',
+        bron: 'IPA Databank, Binet en Field',
+        grens: 'Betekent niet dat 60/40 een wet is. Het is een kalibratiepunt dat verschuift met categorie, groeifase, budget en koopfrequentie. En niet dat elk MKB-budget naar dure merkkanalen moet.',
+      },
+      {
+        p: 'Controleer je meting voordat je iets anders beoordeelt.',
+        u: 'Een event dat op het verkeerde moment vuurt maakt elke diagnose ongeldig. Klassiekers: een aankoop-event dat bij het laden van de pagina afgaat, of UTM-tags die onderweg sneuvelen.',
+        bron: 'Kernprincipe, weegt altijd mee',
+        grens: 'Betekent niet dat je zonder perfecte meting niet mag adverteren. Wel dat je je cijfers dan niet blind interpreteert.',
+      },
+    ],
+    kennis_slot: 'Wij bepalen niet welk model jij gebruikt. Werk je met STDC, met See Think Do Care of met 5A, dan volgt het advies jouw fasen en de bijbehorende maatstaven. Het model is van jou; wat wij toevoegen is wat er per fase aantoonbaar werkt.',
+
+    slot_h2: 'Kijk eerst, beslis daarna.',
+    slot_sub: 'De diagnose draait op je eigen cijfers en levert zwart op wit op waar je staat. Daarna pas een voorstel.',
+  },
+  en: {
+    eyebrow: 'What it does',
+    h1_line: 'It watches, records,',
+    h1_accent: 'and shows what it rests on.',
+    sub: 'Not another dashboard. A layer on your own data that spots when something shifts, explains why research says that matters, and records what was decided.',
+    cta: 'Start the diagnosis',
+    cta_sec: 'How to check us',
+
+    doet_eyebrow: 'Three things, every day',
+    doet_h2: 'What actually runs.',
+    doet_sub: 'This is what works today, not what is on the roadmap.',
+    doet: [
+      {
+        t: 'Signals on your own data',
+        d: 'Checked daily for drift in your ads, your budgets and your measurement. You hear about it with the reason attached, not in next month report.',
+      },
+      {
+        t: 'See who advertises in your market',
+        d: 'From the public ad registers of Google and Meta we track who advertises in your market and with what. Public data, so this works before you are a client.',
+      },
+      {
+        t: 'A logbook that stays',
+        d: 'Every change with a name, a moment and a reason. Including the decisions that turned out wrong, with what we learned. Whoever starts here next year reads up.',
+      },
+    ],
+
+    niet_eyebrow: 'Just as important',
+    niet_h2: 'What it does not do.',
+    niet_sub: 'A system allowed to do everything by itself cannot be checked. So this one is not allowed to.',
+    niet: [
+      {
+        t: 'It changes nothing in your campaigns',
+        d: 'Not a single instruction runs from our system to Google or Meta. It flags and prepares a proposal; a person decides and executes. That is a choice, not a phase.',
+      },
+      {
+        t: 'It does not connect to everything',
+        d: 'Ad platforms and analytics, yes. Your point of sale, your ERP, your DMS or a retailer portal, no. You put those numbers alongside yourself, and we would rather say so than promise it.',
+      },
+    ],
+
+    kennis_eyebrow: 'Why the advice holds',
+    kennis_h2: 'Every piece of advice has a source. And a limit.',
+    kennis_sub: 'Underneath sits a knowledge layer of 105 principles, built from published research. They weigh in on every analysis. Three of them below, as they sit in the system.',
+    principes: [
+      {
+        p: 'Growth comes mostly from new buyers, not from making existing ones more loyal.',
+        u: 'Brands of similar size have near identical loyalty. Those that grow, grow through acquisition.',
+        bron: 'Ehrenberg-Bass',
+        grens: 'Does not mean retention is irrelevant, and it does not hold for brands already serving nearly their whole category.',
+      },
+      {
+        p: 'Brand building and activation belong together, around 60/40.',
+        u: 'Isolated short term campaigns do not add up to long term growth.',
+        bron: 'IPA Databank, Binet and Field',
+        grens: 'Does not mean 60/40 is a law. It is a calibration point that shifts with category, growth stage, budget and purchase frequency. And not that every small business budget belongs in expensive brand channels.',
+      },
+      {
+        p: 'Check your measurement before judging anything else.',
+        u: 'An event firing at the wrong moment invalidates any diagnosis. Classics: a purchase event firing on page load, or UTM tags lost along the way.',
+        bron: 'Core principle, always weighed',
+        grens: 'Does not mean you cannot advertise without perfect measurement. It means you do not read your numbers blindly.',
+      },
+    ],
+    kennis_slot: 'We do not decide which model you use. Work with STDC, with See Think Do Care or with 5A, and the advice follows your phases and their measures. The model is yours; what we add is what demonstrably works per phase.',
+
+    slot_h2: 'Look first, decide after.',
+    slot_sub: 'The diagnosis runs on your own numbers and puts in black and white where you stand. A proposal comes after that.',
+  },
+} as const
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'platform' })
+  const nl = locale !== 'en'
   return localizedMetadata({
-    path: '/platform',
     locale,
-    // "operatie" was de oude formulering. Koen heeft die op 4 juli 2026 al
-    // vervangen door "marketing en sales" (commit 3a5752e), maar deze titel is
-    // toen blijven staan. Geen nieuwe positioneringskeuze, alleen het doortrekken
-    // van een keuze die al gemaakt was.
-    title: 'Het platform: je marketing en sales in een beeld',
-    description: t('sub'),
+    path: '/platform',
+    // Geen merknaam hier: localizedMetadata plakt " | Stevin.AI" er zelf achter.
+    title: nl
+      ? 'Wat het platform doet, en waar het advies op steunt'
+      : 'What the platform does, and what the advice rests on',
+    description: nl
+      ? 'Signalen op je eigen data, zien wie er in je markt adverteert, en een logboek dat blijft. Met per advies de bron en de grens erbij.'
+      : 'Signals on your own data, seeing who advertises in your market, and a logbook that stays. With the source and the limit behind every piece of advice.',
   })
 }
 
 export default async function PlatformPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  const t = await getTranslations('platform')
-
-  const features = [
-    { label: '01', title: t('feat1_title'), desc: t('feat1_desc') },
-    { label: '02', title: t('feat2_title'), desc: t('feat2_desc') },
-    { label: '03', title: t('feat3_title'), desc: t('feat3_desc') },
-    { label: '04', title: t('feat4_title'), desc: t('feat4_desc') },
-    { label: '05', title: t('feat5_title'), desc: t('feat5_desc') },
-    { label: '06', title: t('feat6_title'), desc: t('feat6_desc') },
-  ]
-
-  const extras = [
-    { title: t('extra1_title'), desc: t('extra1_desc') },
-    { title: t('extra2_title'), desc: t('extra2_desc') },
-    { title: t('extra3_title'), desc: t('extra3_desc') },
-    { title: t('extra4_title'), desc: t('extra4_desc') },
-    { title: t('extra5_title'), desc: t('extra5_desc') },
-    { title: t('extra6_title'), desc: t('extra6_desc') },
-    { title: t('extra7_title'), desc: t('extra7_desc') },
-  ]
-
-  const monitoringChecks = [
-    t('monitor1'), t('monitor2'), t('monitor3'), t('monitor4'),
-    t('monitor5'), t('monitor6'), t('monitor7'), t('monitor8'),
-  ]
-
-  const leadGenItems = [
-    t('leadgen_item1'), t('leadgen_item2'), t('leadgen_item3'),
-    t('leadgen_item4'), t('leadgen_item5'),
-  ]
-
-  const reportItems = [
-    t('report1'), t('report2'), t('report3'), t('report4'), t('report5'),
-  ]
+  const t = locale === 'en' ? COPY.en : COPY.nl
 
   return (
-    <main>
-      {/* SoftwareApplication: dit is de pagina die LLMs gebruiken om te bepalen
-          WAT Stevin is. Verwijst naar de sitewide #organization-node. offers
-          weggelaten zolang pricing niet publiek is (voorkomt incomplete-offer). */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'SoftwareApplication',
-            '@id': 'https://stevin.ai/#software',
-            name: 'Stevin',
-            applicationCategory: 'BusinessApplication',
-            applicationSubCategory: 'Marketing Intelligence',
-            operatingSystem: 'Web',
-            url: 'https://stevin.ai/platform',
-            description: t('sub'),
-            publisher: { '@id': 'https://stevin.ai/#organization' },
-          }),
-        }}
-      />
+    <>
       {/* Hero */}
-      <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
-        <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            {t('eyebrow')}
-          </p>
-          <h1
-            className="font-display font-extrabold text-white leading-[1.02] tracking-[-0.035em]"
-            style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '16ch' }}
-          >
-            {t('h1')}<br />
-            <span className="text-[#5DA3FF]">{t('h1_sub')}</span>
+      <section className="bg-primary text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+          <p className="text-xs font-mono uppercase tracking-[0.14em] text-white/50">{t.eyebrow}</p>
+          <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight max-w-4xl text-balance">
+            {t.h1_line}{' '}
+            <span className="text-accent">{t.h1_accent}</span>
           </h1>
-          <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '580px', marginTop: '32px' }}>
-            {t('sub')}
-          </p>
-          <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
+          <p className="mt-6 text-lg text-white/70 max-w-2xl leading-relaxed">{t.sub}</p>
+          <div className="mt-10 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#5DA3FF] text-primary rounded-xl hover:bg-[#7BB8FF] transition-colors"
+              className="inline-flex px-8 py-3.5 text-sm font-semibold text-primary bg-white rounded-xl hover:bg-white/90 transition-colors"
             >
-              {t('cta_demo')}
+              {t.cta}
             </Link>
             <Link
-              href="#connectors"
+              href="/controle"
               className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors"
             >
-              {t('cta_integraties')}
+              {t.cta_sec}
             </Link>
           </div>
-          <div className="mt-20">
-            <HairlineRule color="rgba(255,255,255,.35)" />
-          </div>
         </div>
       </section>
 
-      {/* Core Features */}
-      <section className="bg-white" style={{ padding: '96px 24px' }}>
-        <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            {t('features_eyebrow')}
-          </p>
-          <h2
-            className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
-            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
-          >
-            {t('features_h2')}
-          </h2>
-          <p className="text-[17px] text-muted mb-16 max-w-xl leading-[1.55]">
-            {t('features_sub')}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-border">
-            {features.map((f) => (
-              <div
-                key={f.title}
-                className="border-b border-border py-10 lg:px-10 lg:first:pl-0 lg:[&:nth-child(3n)]:pr-0 lg:[&:nth-child(3n+1)]:pl-0"
-              >
-                <p className="font-mono text-[11px] text-muted mb-4">{f.label}</p>
-                <h3 className="text-[17px] font-display font-bold text-primary mb-3 leading-tight">{f.title}</h3>
-                <p className="text-[15px] text-muted leading-[1.6]">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Zo ziet dat eruit: het platform zelf. Deze pagina had 355 regels tekst
-          over het platform zonder een enkel beeld ervan. */}
-      <DeskProof locale={locale} />
-
-      {/* Native Connectors */}
-      <section id="connectors" className="bg-surface" style={{ padding: '96px 24px' }}>
-        <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            {t('connectors_eyebrow')}
-          </p>
-          <h2
-            className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
-            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
-          >
-            {t('connectors_h2')}
-          </h2>
-          <p className="text-[17px] text-muted mb-12 max-w-xl leading-[1.55]">
-            {t('connectors_sub')}
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
-            {nativeConnectors.map((c) => (
-              <div key={c.slug} className="rounded-xl bg-white border border-border p-4 text-center hover:border-[#5DA3FF]/30 transition-colors">
-                <p className="text-sm font-semibold text-primary">{c.name}</p>
-                <p className="text-[11px] text-muted mt-1 leading-snug">
-                  {c.category === 'advertising' ? 'Advertising' : c.category === 'analytics' ? 'Analytics' : c.category === 'ecommerce' ? 'E-commerce' : 'E-mail'}
-                </p>
-              </div>
-            ))}
-          </div>
-          <p className="text-sm text-muted mt-8 border-t border-border pt-8">
-            {t('connectors_more')}{' '}
-            <Link href="/integraties" className="text-[#5DA3FF] hover:underline">{t('connectors_more_link')}</Link>
-            {t('connectors_more_rest')}{' '}
-            <Link href="/contact" className="text-[#5DA3FF] hover:underline">{t('connectors_contact')}</Link>
-            {t('connectors_contact_rest')}
-          </p>
-        </div>
-      </section>
-
-      {/* Lead Generation */}
-      <section id="lead-generation" className="bg-white" style={{ padding: '96px 24px' }}>
-        <div className="mx-auto max-w-[1200px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-            <div>
-              <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
-                <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-                {t('leadgen_eyebrow')}
-              </p>
-              <h2
-                className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
-                style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
-              >
-                {t('leadgen_h2')}
-              </h2>
-              <p className="text-[15px] text-muted leading-[1.6] mb-8">
-                {t('leadgen_sub')}
-              </p>
-              <ul className="space-y-0 border-t border-border">
-                {leadGenItems.map((item) => (
-                  <li key={item} className="flex items-center gap-4 py-4 border-b border-border">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#5DA3FF] flex-shrink-0" />
-                    <span className="text-[15px] text-muted">{item}</span>
-                  </li>
-                ))}
-              </ul>
+      {/* Wat het doet */}
+      <Section bg="white">
+        <SectionHeader title={t.doet_h2} subtitle={t.doet_sub} />
+        <div className="grid gap-6 md:grid-cols-3">
+          {t.doet.map((item) => (
+            <div key={item.t} className="rounded-xl border border-slate-200 bg-white p-6">
+              <h3 className="text-base font-semibold text-primary">{item.t}</h3>
+              <p className="mt-3 text-sm text-muted leading-relaxed">{item.d}</p>
             </div>
-            <div className="lg:pt-[120px] space-y-4">
-              {[t('leadgen_step1'), t('leadgen_step2'), t('leadgen_step3'), t('leadgen_step4')].map((step, i) => (
-                <div key={step} className="flex items-center gap-4 border-t border-border pt-4">
-                  <span className="font-mono text-[11px] text-muted w-6">0{i + 1}</span>
-                  <span className="text-[15px] font-display font-bold text-primary">{step}</span>
-                  {i < 3 && <span className="ml-auto text-muted">↓</span>}
-                </div>
-              ))}
-              <p className="text-[13px] text-muted pt-2">{t('leadgen_pipeline')}</p>
+          ))}
+        </div>
+      </Section>
+
+      {/* Wat het NIET doet */}
+      <Section bg="surface">
+        <SectionHeader title={t.niet_h2} subtitle={t.niet_sub} />
+        <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+          {t.niet.map((item) => (
+            <div key={item.t} className="rounded-xl border border-slate-300 bg-white p-6">
+              <h3 className="text-base font-semibold text-primary">{item.t}</h3>
+              <p className="mt-3 text-sm text-muted leading-relaxed">{item.d}</p>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </Section>
 
-      {/* 24/7 Monitoring */}
-      <section id="monitoring" className="bg-primary" style={{ padding: '96px 24px' }}>
-        <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            {t('monitoring_eyebrow')}
-          </p>
-          <h2
-            className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-4"
-            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
-          >
-            {t('monitoring_h2')}
-          </h2>
-          <p className="text-[17px] text-white/50 mb-16 max-w-xl leading-[1.55]">
-            {t('monitoring_sub')}
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-white/10">
-            {monitoringChecks.map((check) => (
-              <div key={check} className="border-b border-r border-white/10 py-8 px-6 last:border-r-0 sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(4n)]:border-r-0">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#00D4A0] mb-4" />
-                <p className="text-[15px] text-white/80 font-medium leading-tight">{check}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* AI Reports */}
-      <section id="ai-reports" className="bg-white" style={{ padding: '96px 24px' }}>
-        <div className="mx-auto max-w-[1200px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-            <div>
-              <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
-                <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-                {t('reports_eyebrow')}
+      {/* De kennislaag */}
+      <Section bg="white">
+        <SectionHeader title={t.kennis_h2} subtitle={t.kennis_sub} />
+        <div className="mx-auto max-w-3xl flex flex-col gap-5">
+          {t.principes.map((p) => (
+            <div key={p.p} className="rounded-xl border border-slate-200 bg-white p-6 border-l-[3px] border-l-accent">
+              <p className="text-base font-semibold text-primary leading-snug">{p.p}</p>
+              <p className="mt-2 text-sm text-muted leading-relaxed">{p.u}</p>
+              <p className="mt-4 text-xs font-mono uppercase tracking-[0.1em] text-muted/70">{p.bron}</p>
+              <p className="mt-3 text-sm text-primary/80 leading-relaxed border-t border-slate-200 pt-3">
+                {p.grens}
               </p>
-              <h2
-                className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-6"
-                style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
-              >
-                {t('reports_h2')}
-              </h2>
-              <p className="text-[15px] text-muted leading-[1.6] mb-8">
-                {t('reports_sub')}
-              </p>
-              <ul className="space-y-0 border-t border-border">
-                {reportItems.map((item) => (
-                  <li key={item} className="flex items-center gap-4 py-4 border-b border-border">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#5DA3FF] flex-shrink-0" />
-                    <span className="text-[15px] text-muted">{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
-            <div className="lg:pt-[120px]">
-              <div className="border-t border-border pt-10 space-y-8">
-                <div>
-                  <p className="font-mono text-[11px] text-muted mb-2">{t('briefing_label')}</p>
-                  <p className="text-[15px] text-muted leading-[1.7] italic">
-                    &ldquo;{t('briefing_quote')}&rdquo;
-                  </p>
-                </div>
-                <div className="border-t border-border pt-8">
-                  <p className="text-[13px] text-muted">{t('briefing_caption')}</p>
-                  <Link href="/ai-briefing" className="inline-flex mt-4 text-[13px] font-semibold text-accent hover:text-accent-dark transition-colors">
-                    Hoe de AI-briefing werkt &rarr;
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
+          <p className="mt-4 text-sm text-muted leading-relaxed">{t.kennis_slot}</p>
         </div>
-      </section>
+      </Section>
 
-      {/* More capabilities */}
-      <section className="bg-surface" style={{ padding: '96px 24px' }}>
-        <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            {t('extras_eyebrow')}
-          </p>
-          <h2
-            className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-4"
-            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)' }}
-          >
-            {t('extras_h2')}
-          </h2>
-          <p className="text-[17px] text-muted mb-16 max-w-xl leading-[1.55]">{t('extras_sub')}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-border">
-            {extras.map((e) => (
-              <div key={e.title} className="border-b border-r border-border py-8 px-6 sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0">
-                <h3 className="text-[15px] font-display font-bold text-primary mb-2">{e.title}</h3>
-                <p className="text-[14px] text-muted leading-[1.6]">{e.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-primary" style={{ padding: '112px 24px 128px' }}>
-        <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#00D4A0] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6">
-            {t('cta_eyebrow')}
-          </p>
-          <h2
-            className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em] mb-6"
-            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', maxWidth: '16ch' }}
-          >
-            {t('cta_h2')}
-          </h2>
-          <p className="text-white/50 mb-10 leading-[1.6] text-[17px] max-w-lg">
-            {t('cta_sub')}
-          </p>
+      {/* Slot */}
+      <Section bg="primary">
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-balance">{t.slot_h2}</h2>
+          <p className="mt-4 text-lg text-white/70 leading-relaxed">{t.slot_sub}</p>
           <Link
             href="/contact"
-            className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#5DA3FF] text-primary rounded-xl hover:bg-[#7BB8FF] transition-colors"
+            className="mt-8 inline-flex px-8 py-3.5 text-sm font-semibold text-primary bg-white rounded-xl hover:bg-white/90 transition-colors"
           >
-            {t('cta_demo')}
+            {t.cta}
           </Link>
         </div>
-      </section>
-    </main>
+      </Section>
+    </>
   )
 }
