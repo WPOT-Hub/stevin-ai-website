@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-lanceert-ai-weermodel-voor-consumenten',
+    format: 'dispatch' as const,
+    edition: '454',
+    category: 'Tech',
+    title: "Google stelt AI-weermodel beschikbaar voor consumententoepassingen",
+    dek: "Google introduceert WeatherNext 3, een nieuw AI-gestuurd weermodel dat direct wordt geïntegreerd in zoekresultaten, Google Maps en Gemini.",
+    publishedAt: '2026-09-07',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Google stelt AI-weermodel beschikbaar voor consumententoepassingen",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'nvidia-hugging-face-overname-split-ai-markt',
     format: 'dispatch' as const,
     edition: '453',
