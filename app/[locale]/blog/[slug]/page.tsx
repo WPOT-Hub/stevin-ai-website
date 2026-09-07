@@ -1513,6 +1513,22 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'nvidia-hugging-face-overname-split-ai-markt': (
+    <>
+      <p className="lead-para">
+        Nvidia nam deze week Hugging Face over voor een bedrag van naar schatting 2 miljard dollar. Het platform is een van de grootste open-source hubs voor AI-modellen en datasets.
+      </p>
+      <p>
+        Met de deal krijgt Nvidia directe toegang tot miljoenen ontwikkelaars en bedrijven die gebruikmaken van Hugging Face. Concurrenten als AMD en Intel vrezen dat dit hun positie verzwakt.
+      </p>
+      <p>
+        Ook de Europese Commissie kijkt met argusogen naar de overname, omdat het zou kunnen leiden tot minder keuzevrijheid voor Europese bedrijven die afhankelijk zijn van Amerikaanse techgiganten.
+      </p>
+      <p>
+        Critici wijzen erop dat de deal de trend versterkt waarbij grote spelers steeds meer controle krijgen over cruciale AI-infrastructuur.
+      </p>
+    </>
+  ),
   'anthropic-pledge-beter-modelbeheer': (
     <>
       <p className="lead-para">
@@ -7632,6 +7648,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'nvidia-hugging-face-overname-split-ai-markt':
+    "Voor ondernemers betekent deze ontwikkeling dat ze zich moeten afvragen of ze nog wel volledig kunnen vertrouwen op open-source oplossingen. Een gesloten ecosysteem kan innovatie vertragen en afhankelijkheid vergroten. Het is verstandig om nu al te verkennen hoe je alternatieven kunt inzetten of juist samenwerkt met meerdere partijen om risico’s te spreiden.",
   'anthropic-pledge-beter-modelbeheer':
     "Voor bedrijven die gebruikmaken van AI-modellen is deze ontwikkeling relevant omdat het laat zien dat ook grote spelers als Anthropic de noodzaak inzien van strengere kaders. Het roept de vraag op hoe organisaties zelf invulling kunnen geven aan verantwoord gebruik van AI, bijvoorbeeld door interne richtlijnen of samenwerking met derden. De oproep tot collectieve actie onderstreept dat veiligheid in de AI-keten geen zaak is die alleen bij ontwikkelaars ligt.",
   'anthropic-claude-fable-5-1-goedkoper-maar-is-het-beter':
