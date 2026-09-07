@@ -1513,6 +1513,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-lanceert-ai-weermodel-voor-consumenten': (
+    <>
+      <p className="lead-para">
+        Google zet een stap verder in de automatisering van weersvoorspellingen met WeatherNext 3, een model dat gebaseerd is op deep learning-technieken. Het systeem analyseert grote datasets sneller en nauwkeuriger dan traditionele methoden aldus Google zelf.
+      </p>
+      <p>
+        Het nieuwe model wordt vanaf nu gebruikt voor consumententoepassingen zoals zoekopdrachten, navigatie via Google Maps en interacties binnen de AI-chatbot Gemini. Gebruikers zien daardoor direct betere en actuele weersinformatie zonder extra stappen te hoeven zetten.
+      </p>
+      <p>
+        De integratie betekent dat lokale weersvoorspellingen in realtime beschikbaar komen op basis van locatiegegevens. Dit kan vooral handig zijn voor bedrijven die afhankelijk zijn van weeromstandigheden, zoals horeca of outdoor evenementenorganisatoren.
+      </p>
+    </>
+  ),
   'nvidia-hugging-face-overname-split-ai-markt': (
     <>
       <p className="lead-para">
@@ -7648,6 +7661,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-lanceert-ai-weermodel-voor-consumenten':
+    "Voor bedrijven die afhankelijk zijn van weergerelateerde beslissingen biedt deze ontwikkeling nieuwe kansen om operaties beter af te stemmen op weersomstandigheden. Het is echter nog maar de vraag hoe snel andere landen buiten de Verenigde Staten en Europa dit model zullen adopteren. Voorlopig blijft het afwachten of de nauwkeurigheid daadwerkelijk verbetert ten opzichte van bestaande systemen zoals KNMI of MeteoGroup.",
   'nvidia-hugging-face-overname-split-ai-markt':
     "Voor ondernemers betekent deze ontwikkeling dat ze zich moeten afvragen of ze nog wel volledig kunnen vertrouwen op open-source oplossingen. Een gesloten ecosysteem kan innovatie vertragen en afhankelijkheid vergroten. Het is verstandig om nu al te verkennen hoe je alternatieven kunt inzetten of juist samenwerkt met meerdere partijen om risico’s te spreiden.",
   'anthropic-pledge-beter-modelbeheer':
