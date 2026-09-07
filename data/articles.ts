@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'nvidia-hugging-face-overname-split-ai-markt',
+    format: 'dispatch' as const,
+    edition: '453',
+    category: 'Markt',
+    title: "Nvidia koopt Hugging Face: een scheurtje in de AI-markt?",
+    dek: "De overname van het AI-platform Hugging Face door Nvidia kan leiden tot een meer versnipperde en gesloten AI-markt, waarschuwen analisten.",
+    publishedAt: '2026-09-07',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Nvidia koopt Hugging Face: een scheurtje in de AI-markt?",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'anthropic-pledge-beter-modelbeheer',
     format: 'dispatch' as const,
     edition: '452',
