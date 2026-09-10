@@ -378,16 +378,10 @@ export default async function SimonStevinPage({ params }: Props) {
                 viewBox={CLOOTCRANS_VIEWBOX}
                 role="img"
                 aria-label={c.krachtenH}
-                style={{ width: '100%', maxWidth: '420px', height: 'auto', opacity: 0.62 }}
+                style={{ width: '100%', maxWidth: '340px', height: 'auto', opacity: 0.62 }}
               >
                 <Clootcrans kleur="var(--navy)" strook={1.5} />
               </svg>
-              <figcaption
-                className="font-body text-[#5A6B85] leading-[1.6]"
-                style={{ fontSize: '13px', maxWidth: '420px', marginTop: '20px' }}
-              >
-                {c.krachtenBijschrift}
-              </figcaption>
             </figure>
 
             <div className="lg:col-span-6 lg:col-start-7">
@@ -399,9 +393,15 @@ export default async function SimonStevinPage({ params }: Props) {
               </p>
               <p
                 className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty"
-                style={{ fontSize: '19px', maxWidth: '520px' }}
+                style={{ fontSize: '19px', maxWidth: '520px', marginBottom: '28px' }}
               >
                 {c.krachten2}
+              </p>
+              <p
+                className="font-body text-[#5A6B85] leading-[1.6]"
+                style={{ fontSize: '13px', maxWidth: '520px', paddingTop: '20px', borderTop: '1px solid var(--border)' }}
+              >
+                {c.krachtenBijschrift}
               </p>
             </div>
           </div>
