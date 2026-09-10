@@ -9631,7 +9631,7 @@ function ArticleTransparencyBody() {
       </p>
 
       <p>
-        Bij Google kan een bureau via een manager-account (MCC) jouw account beheren zonder het te bezitten. Google schrijft dat een manager die een bestaand account koppelt daarmee standaard geen eigenaarschap krijgt: dat moet het klantaccount zelf aanzetten. Een account kan aan <a href="https://support.google.com/google-ads/answer/7456530" target="_blank" rel="noopener noreferrer" style={extLink}>maximaal vijf managers tegelijk</a> hangen, en de klant kan altijd ontkoppelen. Zorg dus dat jouw bedrijf het account bezit en dat het bureau als beheerder is gekoppeld.
+        Bij Google kan een bureau via een manager-account (MCC) jouw account beheren zonder het te bezitten. Google schrijft dat een manager die een bestaand account koppelt, daarmee standaard geen eigenaarschap krijgt: dat moet het klantaccount zelf aanzetten. Een account kan aan <a href="https://support.google.com/google-ads/answer/7456530" target="_blank" rel="noopener noreferrer" style={extLink}>maximaal vijf managers tegelijk</a> hangen, en de klant kan altijd ontkoppelen. Zorg dus dat jouw bedrijf het account bezit en dat het bureau als beheerder is gekoppeld.
       </p>
 
       <p>
@@ -9639,7 +9639,7 @@ function ArticleTransparencyBody() {
       </p>
 
       <p>
-        Bij Meta is er wel haast bij. Is een advertentieaccount eenmaal bevestigd eigendom van een bedrijf, dan kan dat bedrijf het niet meer uit zijn portfolio halen. Er is dus geen knop die het van je bureau naar jou verplaatst. Dit regel je vooraf, want achteraf is het vaak opnieuw beginnen. Wat je bureau hier vaak op antwoordt, en wat ervan klopt, staat in <a href="/blog/bureau-geen-toegang-advertentieaccount" style={extLink}>het vervolgstuk</a>.
+        Daar zit wel haast bij. Is een advertentieaccount eenmaal bevestigd eigendom van een bedrijf, dan kan dat bedrijf het niet meer uit zijn portfolio halen. Er is dus geen knop die het van je bureau naar jou verplaatst. Dit regel je vooraf, want achteraf is het vaak opnieuw beginnen. Wat je bureau hier vaak op antwoordt, en wat ervan klopt, staat in <a href="/blog/bureau-geen-toegang-advertentieaccount" style={extLink}>het vervolgstuk</a>.
       </p>
 
       <Takeaways
@@ -9756,18 +9756,18 @@ function ArticleTegenwerpingenBody() {
   return (
     <>
       <p className="lead-para">
-        Vraag je je bureau om het advertentieaccount op naam van je eigen bedrijf te zetten, dan komt er zelden een kaal nee. Er komt een technische reden. Wij hebben acht van die redenen, zoals we ze in gesprekken met adverteerders terugkregen, naast de eigen documentatie van Google en Meta gelegd. Zeven houden geen stand. Een klopt wel, en dat is net de reden die het minst wordt genoemd. Dit stuk is het vervolg op <a href="/blog/wie-is-eigenaar-van-je-advertentiedata" style={extLink}>de vraag wie eigenaar is van je advertentiedata</a>: daar zoek je op wie er als betaler staat, hier lees je wat je terugkrijgt als je er iets van zegt.
+        Vraag je je bureau om het advertentieaccount op naam van je eigen bedrijf te zetten, dan komt er zelden een kaal nee. Er komt een technische reden. Wij hebben acht van die redenen, zoals we ze in gesprekken met adverteerders terugkregen, naast de eigen documentatie van Google en Meta gelegd. Zeven houden geen stand. Een klopt wel, en dat is juist de reden die het minst genoemd wordt. Dit stuk is het vervolg op <a href="/blog/wie-is-eigenaar-van-je-advertentiedata" style={extLink}>de vraag wie eigenaar is van je advertentiedata</a>: daar zoek je op wie er als betaler staat, hier lees je wat je terugkrijgt als je er iets van zegt.
       </p>
 
       <Callout
         big="7 van 8"
-        label="Zoveel van de tegenwerpingen houden geen stand tegen wat Google en Meta zelf in hun handleiding schrijven. Onder elk antwoord staat de brontekst, zodat je het kunt nalezen of meesturen."
+        label="Zoveel van de tegenwerpingen houden geen stand tegen wat Google en Meta zelf in hun handleiding schrijven. Onder elk antwoord staat de brontekst, zodat je die kunt nalezen of meesturen."
       />
 
       <H2 num="01">&quot;Dan heb je toegang tot al onze advertentieaccounts&quot;</H2>
 
       <p>
-        Dit klopt niet. Meta deelt per asset, niet per portfolio. Wie een partner toevoegt, kiest zelf welke assets hij deelt en met welke rechten. Die partner ziet vervolgens alleen wat hij gedeeld heeft gekregen. Een bureau kan dus een enkel advertentieaccount delen en de rest van zijn portfolio dicht houden.
+        Dit klopt niet. Meta deelt per asset, niet per portfolio. Wie een partner toevoegt, kiest zelf welke assets hij deelt en met welke rechten. Die partner ziet vervolgens alleen wat er met hem gedeeld is. Een bureau kan dus een enkel advertentieaccount delen en de rest van zijn portfolio dicht houden.
       </p>
 
       <Bron bron="Meta Business Help Center" url="https://www.facebook.com/business/help/1717412048538897">
@@ -9791,7 +9791,7 @@ function ArticleTegenwerpingenBody() {
       </p>
 
       <p>
-        <b>De eerlijke kanttekening:</b>{' '}toegang is geen eigendom. Alleen het portfolio dat een asset bezit kan die met een ander portfolio delen. Zelfs een partner met volledige rechten kan dat niet. Je kunt dus meekijken en meewerken in het account van je bureau, maar je kunt het niet meenemen. Toegang lost de inzage op. Het eigenaarschap is een aparte vraag.
+        <b>De eerlijke kanttekening:</b>{' '}toegang is geen eigendom. Alleen het portfolio dat eigenaar van een asset is, kan die asset met een ander portfolio delen. Zelfs een partner met volledige rechten kan dat niet. Je kunt dus meekijken en meewerken in het account van je bureau, maar je kunt het niet meenemen. Toegang lost de inzage op. Het eigenaarschap is een aparte vraag.
       </p>
 
       <Bron bron="Meta Business Help Center" url="https://www.facebook.com/business/help/1717412048538897">
@@ -9799,13 +9799,13 @@ function ArticleTegenwerpingenBody() {
       </Bron>
 
       <p style={zeg}>
-        <b>Zo zeg je het:</b>{' '}&quot;Ik vraag niet of je je hele portfolio openzet. Meta laat je per advertentieaccount delen. Deel alleen die van ons.&quot;
+        <b>Zo zeg je het:</b>{' '}&quot;Ik vraag niet of je je hele portfolio openzet. Meta laat je per advertentieaccount delen. Deel alleen dat van ons.&quot;
       </p>
 
       <H2 num="02">&quot;Het moet via onze accounts, anders werken onze rapportagetools niet&quot;</H2>
 
       <p>
-        Dit klopt niet. Rapportagekoppelingen loggen in als een gebruiker met toegang, niet als eigenaar. Supermetrics, een van de meest gebruikte koppelingen, vraagt voor Google Ads niet meer dan leestoegang. Voor Facebook Ads volstaat werknemerstoegang met inzage in de prestaties, of de analistenrol op het advertentieaccount. In geen van beide staat iets over eigenaarschap.
+        Dit klopt niet. Rapportagekoppelingen loggen in als een gebruiker met toegang, niet als eigenaar. Supermetrics, een van de meest gebruikte koppelingen, vraagt voor Google Ads niet meer dan leestoegang. Voor Facebook Ads volstaat werknemerstoegang met inzage in de prestaties, of de analistenrol op het advertentieaccount. Over eigenaarschap staat er in geen van beide iets.
       </p>
 
       <Bron bron="Supermetrics, aansluitgids Google Ads" url="https://docs.supermetrics.com/docs/google-ads-connection-guide">
@@ -9821,7 +9821,7 @@ function ArticleTegenwerpingenBody() {
       </Bron>
 
       <p style={zeg}>
-        <b>Zo zeg je het:</b>{' '}&quot;Koppel ons account aan jullie manager-account. Dan lopen jullie rapportages gewoon door en staat het account op ons.&quot;
+        <b>Zo zeg je het:</b>{' '}&quot;Koppel ons account aan jullie manager-account. Dan lopen jullie rapportages gewoon door en staat het account op onze naam.&quot;
       </p>
 
       <H2 num="03">&quot;Bij een overstap ben je je historie kwijt, dus laat het maar zo staan&quot;</H2>
@@ -9835,7 +9835,7 @@ function ArticleTegenwerpingenBody() {
       </Bron>
 
       <p>
-        Wat wel historie kost, is een nieuw account moeten openen omdat je het oude niet mee kunt nemen. Bij Meta is dat een reeel risico. Is een advertentieaccount eenmaal bevestigd eigendom van een bedrijf, dan kan dat bedrijf het niet meer uit zijn portfolio halen. Er is geen knop die het naar jou verplaatst.
+        Wat wel historie kost, is een nieuw account moeten openen omdat je het oude niet mee kunt nemen. Bij Meta is dat een echt risico. Is een advertentieaccount eenmaal bevestigd eigendom van een bedrijf, dan kan dat bedrijf het niet meer uit zijn portfolio halen. Er is geen knop die het naar jou verplaatst.
       </p>
 
       <Bron bron="Meta, technische documentatie voor advertentieaccounts" url="https://developers.facebook.com/docs/marketing-api/business-asset-management/guides/ad-accounts/">
@@ -9857,7 +9857,7 @@ function ArticleTegenwerpingenBody() {
         <a href="https://support.google.com/google-ads/answer/2375377" target="_blank" rel="noopener noreferrer" style={extLink}>
           3 van de laatste 12 maanden minstens 5.000 dollar
         </a>{' '}
-        hebben uitgegeven. Een adverteerder met twee mille per maand haalt dat niet en betaalt dus per kaart of incasso. Dat een bureau voorschiet, scheelt geld en gedoe.
+        hebben uitgegeven. Een adverteerder die 2.000 euro per maand uitgeeft, haalt dat niet en betaalt dus per kaart of incasso. Dat een bureau voorschiet, scheelt geld en gedoe.
       </p>
 
       <p>
@@ -9897,13 +9897,13 @@ function ArticleTegenwerpingenBody() {
       </Bron>
 
       <p>
-        Wat we niet hebben kunnen nakijken, is of Google of Meta een vaste vertegenwoordiger koppelen aan bezit in plaats van aan beheer. Dat staat niet in de publieke documentatie. Noemt je bureau dit, vraag dan of ze het op papier kunnen laten zien.
+        Over een vaste vertegenwoordiger kunnen we niets zeggen: of Google en Meta die aan bezit koppelen of aan beheer, staat nergens publiek beschreven. Noemt je bureau dat als reden, vraag dan of ze het op papier kunnen laten zien.
       </p>
 
-      <H2 num="07">&quot;Onze scripts, biedstrategieen en templates zijn ons eigendom&quot;</H2>
+      <H2 num="07">&quot;Onze scripts, biedmethodes en templates zijn ons eigendom&quot;</H2>
 
       <p>
-        Dit is geen platformfeit maar een contractafspraak, en daarmee is het meteen beantwoord. Een bureau mag zijn werkwijze als eigen werk beschouwen. Dat bijt niet met een account op naam van de klant, want het gaat over twee verschillende dingen: het ene over hoe er gewerkt wordt, het andere over waar de data landt.
+        Dit is geen platformfeit maar een contractafspraak, en daarmee is het meteen beantwoord. Een bureau mag zijn werkwijze als eigen werk beschouwen. Dat botst niet met een account op naam van de klant, want het gaat over twee verschillende dingen: het ene over hoe er gewerkt wordt, het andere over waar de data landt.
       </p>
 
       <p style={zeg}>
@@ -9932,15 +9932,11 @@ function ArticleTegenwerpingenBody() {
       <H2 num="09">Wat we niet hebben kunnen nakijken</H2>
 
       <p>
-        Drie dingen zijn we niet rond gekregen, en die staan hier omdat je ze niet als argument moet gebruiken.
+        Twee dingen zijn we niet rondgekregen, en die staan hier omdat je ze niet als argument moet gebruiken.
       </p>
 
       <p>
         Of een bureau-account goedkopere klikken krijgt. Google beschrijft de prijs als uitkomst van de veiling, uit bod en kwaliteit, maar een expliciete uitspraak dat er geen kortingen op accountniveau bestaan hebben we niet gevonden.
-      </p>
-
-      <p>
-        Of Google of Meta een vaste vertegenwoordiger aan bezit koppelen in plaats van aan beheer. Staat niet publiek.
       </p>
 
       <p>
@@ -9973,7 +9969,7 @@ function ArticleTegenwerpingenBody() {
             pct: '03',
             text: (
               <>
-                <b>Koppelen kost geen historie en geeft geen eigenaarschap.</b>{' '}Een Google-account kan aan vijf managers tegelijk hangen en blijft ondertussen van jou.
+                <b>Koppelen kost geen historie en geeft geen eigenaarschap.</b>{' '}Een Google-account kan aan maximaal vijf managers tegelijk hangen en blijft ondertussen van jou.
               </>
             ),
           },
@@ -9997,7 +9993,7 @@ function ArticleTegenwerpingenBody() {
       />
 
       <p>
-        Een bureau dat hier ontspannen op reageert, is geen bureau dat iets te verbergen heeft. De meeste doen dit gewoon zo omdat het ooit zo begon, en zetten het zonder morren recht. Het antwoord dat je zoekt is niet ja of nee, maar of het antwoord ergens op slaat. Weet je nog niet hoe het bij jou staat, dan begin je{' '}
+        Een bureau dat hier ontspannen op reageert, is geen bureau dat iets te verbergen heeft. De meeste doen dit gewoon zo omdat het ooit zo begon, en zetten het zonder morren recht. Wat je zoekt is niet ja of nee, maar of het antwoord ergens op slaat. Weet je nog niet hoe het bij jou staat, dan begin je{' '}
         <a href="/blog/wie-is-eigenaar-van-je-advertentiedata" style={extLink}>
           bij het veld met de betaler
         </a>
