@@ -9353,7 +9353,7 @@ function ArticleTransparencyBody() {
       />
 
       <p>
-        Hoe vaak komt dit voor? Wij zijn die registers gaan doorzoeken. Op 25 juli 2026 hadden we 1,9 miljoen advertenties bekeken in de openbare bibliotheken van Google en Meta. Bij 3.389 bedrijven in Nederland en Belgie staat een andere partij dan het bedrijf zelf geregistreerd als betaler, waarvan 2.305 in Nederland, verdeeld over 857 verschillende betalende partijen. Dat is de stand van die dag, niet van vandaag. We scannen door.
+        Hoe vaak komt dit voor? Wij lezen daarvoor de openbare dataset van Google Ads Transparency voor Nederland en Belgie uit, aangevuld met gerichte scans op Meta. Op 10 september 2026 stond bij 2.774 bedrijven een andere partij dan het bedrijf zelf geregistreerd als betaler, waarvan 1.804 in Nederland, verdeeld over 855 verschillende betalende partijen. Samen goed voor bijna 273.000 advertenties. Dat is de stand van die dag. We scannen door.
       </p>
 
       <p>

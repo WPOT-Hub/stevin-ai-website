@@ -6366,7 +6366,7 @@ const allArticles: Article[] = [
     posterTag: 'DATA OWNERSHIP',
     posterTopic: 'Wie traint straks de AI met jouw data?',
     source: { url: 'https://adstransparency.google.com', name: 'Google Ads Transparency Center' },
-    updatedAt: '2026-08-02',
+    updatedAt: '2026-09-10',
   },
   {
     slug: 'lecun-miljard-tegen-het-taalmodel',
