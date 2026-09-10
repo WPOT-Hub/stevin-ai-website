@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-automatiseert-vrouwelijke-marketeers',
+    format: 'dispatch' as const,
+    edition: '455',
+    category: 'Platform',
+    title: "AI neemt creatieve taken over: marketeers voelen de druk",
+    dek: "Een groeiend aantal marketeers ervaart dat AI tools hun traditionele taken overnemen, vooral op creatief vlak.",
+    publishedAt: '2026-09-10',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "AI neemt creatieve taken over: marketeers voelen de druk",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-lanceert-ai-weermodel-voor-consumenten',
     format: 'dispatch' as const,
     edition: '454',
