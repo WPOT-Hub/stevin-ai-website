@@ -20,35 +20,40 @@ const COPY = {
     portraitAlt: 'Portret van Simon Stevin',
     portraitCaption: 'Simon Stevin, 1548 tot 1620, wetenschapper uit de Lage Landen.',
     introSub:
-      'Stevin dankt zijn naam aan een combinatie van oorsprong, ambitie en geschiedenis. Het eerste idee ontstond in Belgie, bij mijn eigen bureau, op zoek naar een slimmere manier om processen, systemen en data met elkaar te verbinden.',
+      'Het eerste idee ontstond bij mijn eigen bureau in Belgie. We kwamen klanten tegen waar drie bureaus na elkaar aan de meting hadden gezeten, elk met een eigen tag erbij. Wat overbleef was dubbel gemeten verkeer in GA4 en niemand die nog kon zeggen welk getal klopte. Daar begon dit.',
     origin1:
-      'Als oprichter was ik op zoek naar een slimme manier om processen binnen ons eigen bureau beter te organiseren. We werkten met verschillende systemen, veel informatie en steeds meer data, maar er ontbrak een laag die alles met elkaar verbond en actief meedacht.',
+      'Ik zocht geen nieuw systeem. Alles was er al: campagnedata, CRM, agenda, offertes, projectinformatie. Wat ontbrak was een laag eroverheen die het aan elkaar knoopte en op tijd iets zei. De juiste informatie kwam bijna altijd te laat bij de juiste persoon.',
     origin2:
       'Wat begon als een interne oplossing, werd de basis van Stevin. De verdere ontwikkeling vond plaats vanuit Breda, waar het platform werd uitgebouwd tot een bredere AI-oplossing voor bedrijven.',
     namesakeH: 'Vernoemd naar Simon Stevin',
     namesake1:
-      'De naam verwijst naar Simon Stevin, een van de belangrijkste wetenschappers uit de Lage Landen. Hij werd geboren in Brugge, Belgie, en groeide uit tot een invloedrijke denker in Nederland. Zijn werk stond bekend om het praktisch toepasbaar maken van kennis. Hij maakte zelfs het rekenen met kommagetallen en het boekhouden bruikbaar voor de praktijk, en gaf zo abstracte wiskunde een plek in het dagelijks werk.',
+      'De naam verwijst naar Simon Stevin, een van de belangrijkste wetenschappers uit de Lage Landen. Hij werd geboren in Brugge, in het huidige Belgie, en werkte later in Nederland. Zijn werk ging over kennis bruikbaar maken. In De Thiende uit 1585 legde hij uit hoe je met decimale breuken kon rekenen in het dagelijks werk. Hij schreef het niet voor wiskundigen, maar voor sterrenkijkers, landmeters, tapijtmakers, wijnroeiers, muntmeesters en kooplieden.',
     quote: 'Wonder en is gheen wonder.',
     quoteAttr: 'Simon Stevin, 1586',
     bridge:
       'Die gedachte past precies bij wat wij met Stevin willen bereiken. Net zoals Simon Stevin wetenschap toegankelijk maakte voor de praktijk, maken wij data, systemen en informatie bruikbaar voor dagelijkse bedrijfsbeslissingen. Niet door alles te vervangen, maar door bestaande kennis slimmer met elkaar te verbinden.',
     statement: 'Stevin is de AI-werklaag boven je bedrijf.',
-    ziet: ['Het ziet wat er speelt.', 'Het ziet wat ontbreekt.', 'Het ziet wat nu moet gebeuren.'],
+    ziet: ['Het brengt bij elkaar wat verspreid staat.', 'Het merkt op wat ontbreekt.', 'Het stelt de volgende stap voor.'],
     problem:
       'Elk bedrijf werkt met systemen die naast elkaar bestaan. Mail, WhatsApp, agenda, CRM, boekhouding, planning, offertes en projectdata. De informatie is er vaak wel. Alleen komt die te laat bij de juiste persoon. Daar ontstaan fouten, vertragingen en gemiste kansen.',
     solution:
-      'Stevin legt een slimme laag over de systemen die je al gebruikt. We vervangen niets. We koppelen wat er al staat. Stevin begrijpt de context, herkent signalen en stelt acties voor voordat kleine problemen groot worden.',
+      'Stevin legt een laag over de systemen die je al gebruikt. In de regel vervangen we niets: we koppelen wat er al staat. Het platform krijgt twee dingen mee, jouw eigen cijfers en wat er buiten je bedrijf gebeurt, en signaleert op basis daarvan een vervolgstap. Voorstellen dus, geen besluiten.',
     trustH: 'Jij houdt controle',
     trust:
-      'Een actie met impact gaat langs een mens. Elk advies toont waar het op gebaseerd is. Alles wordt gelogd. Zo kan AI meewerken zonder dat je grip verliest.',
+      'Stevin stuurt niets naar buiten zonder dat een mens het heeft gezien. Geen mail, geen bericht, geen wijziging bij een klant. Ophalen, samenvatten en signaleren doet het zelf, want daar valt niets mee stuk. Bij elk advies staat op welke cijfers het rust, en wat het platform doet wordt vastgelegd.',
     broadening:
-      'We zijn begonnen in marketing, omdat we het daar zelf twintig jaar hebben gedaan. Dat is ook de reden dat we de AI eromheen durfden te bouwen: je moet weten hoe het werk werkt om te zien wanneer een model ernaast zit. Daarom staat er bij ons altijd een mens tussen het model en de beslissing. Wat eronder ligt is niet marketing-specifiek: informatie die verspreid zit, beslissingen die blijven liggen, opvolging die beter kan. Dat probleem is overal hetzelfde.',
+      'We zijn begonnen in marketing, omdat we het daar zelf twintig jaar hebben gedaan. Dat is ook de reden dat we de AI eromheen durfden te bouwen: je moet weten hoe het werk werkt om te zien wanneer een model ernaast zit. En om diezelfde reden zijn we voorzichtig met andere vakgebieden. Dat informatie verspreid zit is overal zo, maar wat die informatie betekent en wat een fout kost verschilt per vak. Dat leren we pas als we er echt in zitten.',
+    voorbeeldH: 'Een voorbeeld',
+    voorbeeld1:
+      'Elke nacht haalt Stevin op wat er buiten je bedrijf gebeurt. Schoolvakanties in Nederland en Belgie, en in Duitsland per deelstaat, alle zestien. Het weer afgezet tegen het tienjarig gemiddelde voor die dag, per land, met neerslag en zonuren erbij.',
+    voorbeeld2:
+      'Wordt het over drie weken uitzonderlijk warm in het gebied waar je adverteert, dan is dat geen weetje. Dan is dat een reden om een campagne naar voren te halen, of juist niet. Je krijgt het als signaal, met de cijfers eronder. Wat je ermee doet, beslis jij.',
     krachtenH: 'Zichtbaar maken hoe krachten samen werken',
     krachten1: 'Simon Stevin maakte zichtbaar hoe krachten samen werken.',
     krachten2:
       'Met Stevin.AI maken wij zichtbaar hoe marketing, data en opvolging samen werken. Zodat je begrijpt wat er gebeurt en waarop je beslissingen baseert.',
     krachtenBijschrift:
-      'De clootcrans, 1586. Een gesloten ketting van even zware bollen over een hellend vlak blijft hangen. De lange helling is twee keer zo lang als de korte en draagt twee keer zo veel bollen, dus ze houden elkaar in evenwicht. Zou de ketting uit zichzelf gaan draaien, dan draaide hij eeuwig door, en dat kan niet.',
+      'De clootcrans, 1586. Over twee hellingen hangt een gesloten snoer van even zware bollen, op gelijke afstand. Op de lange, flauwe helling liggen er twee keer zo veel. Toch trekt die kant niet harder, want per bol is de kracht langs de helling kleiner. Het deel dat eronder hangt trekt naar beide kanten even hard en valt tegen elkaar weg. Zou het snoer uit zichzelf gaan draaien, dan draaide het eeuwig door, en dat kan niet.',
     close1: 'Stevin verbindt data, context en actie.',
     close2:
       'Van campagne tot bouwplaats. Van aanvraag tot offerte. Van planning tot factuur. Van signaal tot uitvoering.',
@@ -96,22 +101,27 @@ const COPY = {
     bridge:
       'That idea fits exactly what we want to achieve with Stevin. Just as Simon Stevin made science accessible for practice, we make data, systems and information usable for everyday business decisions. Not by replacing everything, but by connecting existing knowledge more intelligently.',
     statement: 'Stevin is the AI work layer on top of your business.',
-    ziet: ['It sees what is going on.', 'It sees what is missing.', 'It sees what needs to happen now.'],
+    ziet: ['It brings together what sits apart.', 'It notices what is missing.', 'It proposes the next step.'],
     problem:
       'Every business runs on systems that sit side by side. Email, WhatsApp, calendar, CRM, accounting, planning, quotes and project data. The information is usually there. It just reaches the right person too late. That is where mistakes, delays and missed chances begin.',
     solution:
-      'Stevin adds a smart layer over the systems you already use. We replace nothing. We connect what is already there. Stevin understands the context, recognises signals and proposes actions before small problems become big ones.',
+      'Stevin adds a layer over the systems you already use. As a rule we replace nothing: we connect what is already there. The platform gets two things, your own numbers and what is happening outside your company, and flags a next step on that basis. Proposals, not decisions.',
     trustH: 'You stay in control',
     trust:
-      'Any action with impact passes by a human. Every recommendation shows what it is based on. Everything is logged. That way AI can do the work without you losing your grip.',
+      'Stevin sends nothing out without a person having seen it. No email, no message, no change at a client. Collecting, summarising and flagging it does on its own, because nothing breaks there. Every recommendation states which numbers it rests on, and what the platform does is recorded.',
     broadening:
-      'We started in marketing because we did the work ourselves for twenty years. That is also why we dared to build the AI around it: you have to know how the work works to see when a model is wrong. Which is why there is always a person between the model and the decision. What sits underneath is not specific to marketing: information scattered across systems, decisions left hanging, follow-up that could be better. That problem is the same everywhere.',
+      'We started in marketing because we did the work ourselves for twenty years. That is also why we dared to build the AI around it: you have to know how the work works to see when a model is wrong. And for that same reason we are careful about other fields. Information sitting scattered is true everywhere, but what that information means and what a mistake costs differs per trade. We only learn that once we are properly in it.',
+    voorbeeldH: 'An example',
+    voorbeeld1:
+      'Every night Stevin collects what is happening outside your company. School holidays in the Netherlands and Belgium, and in Germany per federal state, all sixteen. The weather measured against the ten-year average for that day, per country, with rainfall and hours of sun.',
+    voorbeeld2:
+      'If it turns unusually warm in three weeks in the area where you advertise, that is not a piece of trivia. It is a reason to bring a campaign forward, or to hold it back. You get it as a signal, with the numbers underneath. What you do with it is your call.',
     krachtenH: 'Making visible how forces work together',
     krachten1: 'Simon Stevin made visible how forces work together.',
     krachten2:
       'With Stevin.AI we make visible how marketing, data and follow-up work together. So you understand what is happening, and what you are basing your decisions on.',
     krachtenBijschrift:
-      'The wreath of spheres, 1586. A closed chain of equal spheres draped over an inclined plane stays put. The long slope is twice the short one and carries twice as many spheres, so they balance. If the chain moved on its own it would move forever, which cannot be.',
+      'The wreath of spheres, 1586. A closed string of equally heavy spheres hangs over two slopes, evenly spaced. The long, shallow slope carries twice as many. Even so it does not pull harder, because the force along the slope is smaller per sphere. The part hanging underneath pulls equally to both sides and cancels out. If the string started turning on its own it would turn forever, which cannot be.',
     close1: 'Stevin connects data, context and action.',
     close2:
       'From campaign to construction site. From request to quote. From planning to invoice. From signal to execution.',
@@ -355,20 +365,24 @@ export default async function SimonStevinPage({ params }: Props) {
           <p className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty" style={{ fontSize: '18px' }}>
             {c.broadening}
           </p>
-        </div>
 
-        <div className="mx-auto max-w-3xl px-6" style={{ marginTop: '80px' }}>
-          <h2
-            className="font-display font-extrabold text-primary tracking-[-0.02em] text-center"
-            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', marginBottom: '40px' }}
-          >
-            {c.faqH}
-          </h2>
-          <FAQAccordion faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))} />
+          <div style={{ marginTop: '56px', paddingTop: '40px', borderTop: '1px solid var(--border)' }}>
+            <p
+              className="font-display font-bold text-[#0A1628] tracking-[-0.01em]"
+              style={{ fontSize: '13px', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '18px' }}
+            >
+              {c.voorbeeldH}
+            </p>
+            <p className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty" style={{ fontSize: '18px', marginBottom: '18px' }}>
+              {c.voorbeeld1}
+            </p>
+            <p className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty" style={{ fontSize: '18px' }}>
+              {c.voorbeeld2}
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* ── SECTIE 4: NAVY CLOSE ── */}
       {/* ── SECTIE: KRACHTEN SAMEN (wit, met de clootcrans) ── */}
       <section className="bg-white" style={{ padding: '112px 24px' }}>
         <div className="mx-auto max-w-[1120px]">
@@ -408,6 +422,20 @@ export default async function SimonStevinPage({ params }: Props) {
         </div>
       </section>
 
+      {/* ── SECTIE: VEELGESTELDE VRAGEN ── */}
+      <section className="bg-surface" style={{ paddingTop: '96px', paddingBottom: '112px' }}>
+        <div className="mx-auto max-w-3xl px-6">
+          <h2
+            className="font-display font-extrabold text-primary tracking-[-0.02em] text-center"
+            style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', marginBottom: '40px' }}
+          >
+            {c.faqH}
+          </h2>
+          <FAQAccordion faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))} />
+        </div>
+      </section>
+
+      {/* ── SECTIE 4: NAVY CLOSE ── */}
       <section className="bg-primary text-center" style={{ padding: '112px 24px' }}>
         <div className="mx-auto max-w-[880px]">
           <p
