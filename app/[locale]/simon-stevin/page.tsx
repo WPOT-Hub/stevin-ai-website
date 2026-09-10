@@ -4,6 +4,7 @@ import { localizedMetadata } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import FAQAccordion from '@/components/FAQAccordion'
+import { Clootcrans, CLOOTCRANS_VIEWBOX } from '@/components/blog/PosterWatermark'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -42,6 +43,12 @@ const COPY = {
       'Een actie met impact gaat langs een mens. Elk advies toont waar het op gebaseerd is. Alles wordt gelogd. Zo kan AI meewerken zonder dat je grip verliest.',
     broadening:
       'We zijn begonnen in marketing. Daar kennen we de praktijk en daar ligt het eerste bewijs. Maar Stevin is niet alleen marketing. Dezelfde motor is gemaakt om net zo goed te werken voor bouw, techniek, installatie, onderhoud en finance. Overal waar informatie verspreid zit, beslissingen blijven liggen en opvolging beter kan.',
+    krachtenH: 'Zichtbaar maken hoe krachten samen werken',
+    krachten1: 'Simon Stevin maakte zichtbaar hoe krachten samen werken.',
+    krachten2:
+      'Met Stevin.AI maken wij zichtbaar hoe marketing, data en opvolging samen werken. Zodat je begrijpt wat er gebeurt en waarop je beslissingen baseert.',
+    krachtenBijschrift:
+      'De clootcrans, 1586. Een gesloten ketting van even zware bollen over een hellend vlak blijft hangen. De lange helling is twee keer zo lang als de korte en draagt twee keer zo veel bollen, dus ze houden elkaar in evenwicht. Zou de ketting uit zichzelf gaan draaien, dan draaide hij eeuwig door, en dat kan niet.',
     close1: 'Stevin verbindt data, context en actie.',
     close2:
       'Van campagne tot bouwplaats. Van aanvraag tot offerte. Van planning tot factuur. Van signaal tot uitvoering.',
@@ -99,6 +106,12 @@ const COPY = {
       'Any action with impact passes by a human. Every recommendation shows what it is based on. Everything is logged. That way AI can do the work without you losing your grip.',
     broadening:
       'We started in marketing. That is where we know the practice and where the first proof lies. But Stevin is not only marketing. The same engine is built to work just as well for construction, engineering, installation, maintenance and finance. Anywhere information is scattered, decisions get stuck and follow-up can be better.',
+    krachtenH: 'Making visible how forces work together',
+    krachten1: 'Simon Stevin made visible how forces work together.',
+    krachten2:
+      'With Stevin.AI we make visible how marketing, data and follow-up work together. So you understand what is happening, and what you are basing your decisions on.',
+    krachtenBijschrift:
+      'The wreath of spheres, 1586. A closed chain of equal spheres draped over an inclined plane stays put. The long slope is twice the short one and carries twice as many spheres, so they balance. If the chain moved on its own it would move forever, which cannot be.',
     close1: 'Stevin connects data, context and action.',
     close2:
       'From campaign to construction site. From request to quote. From planning to invoice. From signal to execution.',
@@ -356,6 +369,45 @@ export default async function SimonStevinPage({ params }: Props) {
       </section>
 
       {/* ── SECTIE 4: NAVY CLOSE ── */}
+      {/* ── SECTIE: KRACHTEN SAMEN (wit, met de clootcrans) ── */}
+      <section className="bg-white" style={{ padding: '112px 24px' }}>
+        <div className="mx-auto max-w-[1120px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
+            <figure className="lg:col-span-5 m-0">
+              <svg
+                viewBox={CLOOTCRANS_VIEWBOX}
+                role="img"
+                aria-label={c.krachtenH}
+                style={{ width: '100%', maxWidth: '420px', height: 'auto', opacity: 0.62 }}
+              >
+                <Clootcrans kleur="var(--navy)" strook={1.5} />
+              </svg>
+              <figcaption
+                className="font-body text-[#5A6B85] leading-[1.6]"
+                style={{ fontSize: '13px', maxWidth: '420px', marginTop: '20px' }}
+              >
+                {c.krachtenBijschrift}
+              </figcaption>
+            </figure>
+
+            <div className="lg:col-span-6 lg:col-start-7">
+              <p
+                className="font-display font-extrabold text-[#0A1628] tracking-[-0.02em] text-wrap-balance"
+                style={{ fontSize: 'clamp(26px, 3vw, 38px)', lineHeight: 1.15, marginBottom: '24px' }}
+              >
+                {c.krachten1}
+              </p>
+              <p
+                className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty"
+                style={{ fontSize: '19px', maxWidth: '520px' }}
+              >
+                {c.krachten2}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-primary text-center" style={{ padding: '112px 24px' }}>
         <div className="mx-auto max-w-[880px]">
           <p

@@ -24,6 +24,9 @@
  * lengte precies de acht resterende bollen opneemt (198,3 graden, straal 92,5),
  * zodat de bollen over de hele ketting even ver uit elkaar liggen. Verander een
  * van die getallen en de telling klopt niet meer.
+ *
+ * De bollen hebben straal 13 bij een afstand van 40, zodat er koord tussen zichtbaar
+ * blijft zoals in de houtsnede. Groter en ze lopen door de driehoek heen.
  */
 
 type Punt = { x: number; y: number }
@@ -105,12 +108,33 @@ const KETTING_PAD =
 const DRIEHOEK =
   `M${APEX.x.toFixed(1)} ${APEX.y} L${BL.x.toFixed(1)} ${BL.y} L${BR.x.toFixed(1)} ${BR.y} Z`
 
+/** De figuur zelf, los van de poster. Dezelfde geometrie op elke plek waar we
+ *  hem tonen, zodat de telling maar op een plaats wordt bijgehouden. */
+export function Clootcrans({
+  kleur = 'var(--navy)',
+  strook = 1.6,
+}: {
+  kleur?: string
+  strook?: number
+}) {
+  return (
+    <g fill="none" stroke={kleur} strokeWidth={strook} strokeLinejoin="round">
+      <path d={DRIEHOEK} />
+      <path d={KETTING_PAD} strokeWidth={strook * 0.7} />
+      {BOLLEN.map((b, i) => (
+        <circle key={i} cx={b.x.toFixed(2)} cy={b.y.toFixed(2)} r="13" />
+      ))}
+    </g>
+  )
+}
+
+export const CLOOTCRANS_VIEWBOX = '-22 128 227 204'
+
 export function PosterWatermark({ style }: { style: 'solid' | 'gradient' | 'surface' }) {
-  const lijn = style === 'surface' ? 'var(--navy)' : '#fff'
   return (
     <svg
       aria-hidden="true"
-      viewBox="-22 128 227 204"
+      viewBox={CLOOTCRANS_VIEWBOX}
       preserveAspectRatio="xMaxYMax meet"
       style={{
         position: 'absolute',
@@ -122,13 +146,7 @@ export function PosterWatermark({ style }: { style: 'solid' | 'gradient' | 'surf
         pointerEvents: 'none',
       }}
     >
-      <g fill="none" stroke={lijn} strokeWidth="1.6" strokeLinejoin="round">
-        <path d={DRIEHOEK} />
-        <path d={KETTING_PAD} strokeWidth="1.1" />
-        {BOLLEN.map((b, i) => (
-          <circle key={i} cx={b.x.toFixed(2)} cy={b.y.toFixed(2)} r="17" />
-        ))}
-      </g>
+      <Clootcrans kleur={style === 'surface' ? 'var(--navy)' : '#fff'} />
     </svg>
   )
 }
