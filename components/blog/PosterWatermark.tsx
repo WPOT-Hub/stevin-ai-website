@@ -108,7 +108,37 @@ function bollen(pad: Punt[]): Punt[] {
   return uit.slice(0, 14)
 }
 
-const BOLLEN = bollen(ketting())
+const STRAAL_BOL = 13
+const PAD = ketting()
+const BOLLEN = bollen(PAD)
+
+/** De viewBox wordt uitgerekend uit de werkelijke uiterste punten van de ketting
+ *  en de bollen, niet met de hand gezet. Anders kapt de figuur af zodra er iets
+ *  aan de meetkunde verandert. */
+const KADER = (() => {
+  const marge = 6
+  let minX = Infinity
+  let minY = Infinity
+  let maxX = -Infinity
+  let maxY = -Infinity
+  const raak = (x: number, y: number) => {
+    if (x < minX) minX = x
+    if (y < minY) minY = y
+    if (x > maxX) maxX = x
+    if (y > maxY) maxY = y
+  }
+  for (const p of PAD) raak(p.x, p.y)
+  for (const b of BOLLEN) {
+    raak(b.x - STRAAL_BOL, b.y - STRAAL_BOL)
+    raak(b.x + STRAAL_BOL, b.y + STRAAL_BOL)
+  }
+  return {
+    x: minX - marge,
+    y: minY - marge,
+    breedte: maxX - minX + 2 * marge,
+    hoogte: maxY - minY + 2 * marge,
+  }
+})()
 const KETTING_PAD =
   `M${BL.x.toFixed(1)} ${BL.y} L${APEX.x.toFixed(1)} ${APEX.y} L${BR.x.toFixed(1)} ${BR.y} ` +
   `A${STRAAL.toFixed(1)} ${STRAAL.toFixed(1)} 0 1 1 ${BL.x.toFixed(1)} ${BL.y}`
@@ -129,13 +159,13 @@ export function Clootcrans({
       <path d={DRIEHOEK} />
       <path d={KETTING_PAD} strokeWidth={strook * 0.7} />
       {BOLLEN.map((b, i) => (
-        <circle key={i} cx={b.x.toFixed(2)} cy={b.y.toFixed(2)} r="13" />
+        <circle key={i} cx={b.x.toFixed(2)} cy={b.y.toFixed(2)} r={STRAAL_BOL} />
       ))}
     </g>
   )
 }
 
-export const CLOOTCRANS_VIEWBOX = '-22 128 227 204'
+export const CLOOTCRANS_VIEWBOX = `${KADER.x.toFixed(1)} ${KADER.y.toFixed(1)} ${KADER.breedte.toFixed(1)} ${KADER.hoogte.toFixed(1)}`
 
 export function PosterWatermark({ style }: { style: 'solid' | 'gradient' | 'surface' }) {
   return (
