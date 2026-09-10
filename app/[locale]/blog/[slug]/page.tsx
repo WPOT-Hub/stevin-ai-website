@@ -9756,7 +9756,7 @@ function ArticleTegenwerpingenBody() {
   return (
     <>
       <p className="lead-para">
-        Vraag je je bureau om het advertentieaccount op naam van je eigen bedrijf te zetten, dan komt er zelden een kaal nee. Er komt een technische reden. Wij hebben acht van die redenen, zoals we ze in gesprekken met adverteerders terugkregen, naast de eigen documentatie van Google en Meta gelegd. Zeven houden geen stand. Een klopt wel, en dat is juist de reden die het minst genoemd wordt. Dit stuk is het vervolg op <a href="/blog/wie-is-eigenaar-van-je-advertentiedata" style={extLink}>de vraag wie eigenaar is van je advertentiedata</a>: daar zoek je op wie er als betaler staat, hier lees je wat je terugkrijgt als je er iets van zegt.
+        Vraag je je bureau om het advertentieaccount op naam van je eigen bedrijf te zetten, dan hoor je zelden gewoon nee. Je krijgt een technische reden. Wij hebben acht van die redenen, zoals we ze in gesprekken met adverteerders terugkregen, naast de eigen documentatie van Google en Meta gelegd. Zeven houden geen stand. Een klopt wel, en dat is juist de reden die het minst genoemd wordt. Dit stuk is het vervolg op <a href="/blog/wie-is-eigenaar-van-je-advertentiedata" style={extLink}>de vraag wie eigenaar is van je advertentiedata</a>: daar zoek je op wie er als betaler staat, hier lees je wat je terugkrijgt als je er iets van zegt.
       </p>
 
       <Callout
@@ -9775,7 +9775,7 @@ function ArticleTegenwerpingenBody() {
       </Bron>
 
       <p>
-        Meta zegt hetzelfde in de omgekeerde richting. In het artikel over adverteren namens een ander bedrijf staat dat het bedrijf waarvoor je adverteert het advertentieaccount niet kan zien tenzij jij daar toestemming voor geeft. Of jij je eigen campagnes mag inzien, is dus een keuze van je bureau. Het platform staat er niet tussen.
+        Meta zegt hetzelfde in de omgekeerde richting. In het artikel over adverteren namens een ander bedrijf staat dat het bedrijf waarvoor je adverteert het advertentieaccount niet kan zien tenzij jij daar toestemming voor geeft. Of jij je eigen campagnes mag inzien, is dus een keuze van je bureau. Het platform houdt dat niet tegen.
       </p>
 
       <Bron bron="Meta, over adverteren namens een ander bedrijf" url="https://www.facebook.com/business/help/350066115746201">
@@ -9791,7 +9791,7 @@ function ArticleTegenwerpingenBody() {
       </p>
 
       <p>
-        <b>De eerlijke kanttekening:</b>{' '}toegang is geen eigendom. Alleen het portfolio dat eigenaar van een asset is, kan die asset met een ander portfolio delen. Zelfs een partner met volledige rechten kan dat niet. Je kunt dus meekijken en meewerken in het account van je bureau, maar je kunt het niet meenemen. Toegang lost de inzage op. Het eigenaarschap is een aparte vraag.
+        <b>De eerlijke kanttekening:</b>{' '}toegang is geen eigendom. Alleen het portfolio dat eigenaar van een asset is, kan die asset met een ander portfolio delen. Zelfs een partner met volledige rechten kan dat niet. Je kunt dus meekijken en meewerken in het account van je bureau, maar je kunt het niet meenemen. Met toegang los je het meekijken op, niet het eigenaarschap. Dat blijft een aparte vraag.
       </p>
 
       <Bron bron="Meta Business Help Center" url="https://www.facebook.com/business/help/1717412048538897">
@@ -9808,7 +9808,7 @@ function ArticleTegenwerpingenBody() {
         Dit klopt niet. Rapportagekoppelingen loggen in als een gebruiker met toegang, niet als eigenaar. Supermetrics, een van de meest gebruikte koppelingen, vraagt voor Google Ads niet meer dan leestoegang. Voor Facebook Ads volstaat werknemerstoegang met inzage in de prestaties, of de analistenrol op het advertentieaccount. Over eigenaarschap staat er in geen van beide iets.
       </p>
 
-      <Bron bron="Supermetrics, aansluitgids Google Ads" url="https://docs.supermetrics.com/docs/google-ads-connection-guide">
+      <Bron bron="Supermetrics, handleiding Google Ads" url="https://docs.supermetrics.com/docs/google-ads-connection-guide">
         You need a Google Ads or manager account with Read Only access.
       </Bron>
 
@@ -9843,7 +9843,7 @@ function ArticleTegenwerpingenBody() {
       </Bron>
 
       <p>
-        Dat maakt dit de duurste zin van het hele onderwerp: <b>bij Meta regel je eigenaarschap vooraf, want achteraf is het vaak opnieuw beginnen.</b>{' '}Google is soepeler. Daar houdt het klantaccount zijn data en kan het altijd zelf de koppeling verbreken.
+        Daarmee is dit het belangrijkste punt van dit hele stuk: <b>bij Meta regel je eigenaarschap vooraf, want achteraf is het vaak opnieuw beginnen.</b>{' '}Google is soepeler. Daar houdt het klantaccount zijn data en kan het altijd zelf de koppeling verbreken.
       </p>
 
       <p style={zeg}>
@@ -9861,7 +9861,7 @@ function ArticleTegenwerpingenBody() {
       </p>
 
       <p>
-        Alleen: betalen en bezitten zijn twee dingen. Bij een verzamelfactuur eist Google dat alle accounts aan een gemeenschappelijk manager-account hangen, de betalende manager. Gekoppeld, niet bezeten. Je bureau kan dus blijven betalen terwijl het account op jouw naam staat.
+        Alleen: betalen en bezitten zijn twee dingen. Bij een verzamelfactuur eist Google dat alle accounts aan een gemeenschappelijk manager-account hangen, de betalende manager. Gekoppeld, niet in eigendom. Je bureau kan dus blijven betalen terwijl het account op jouw naam staat.
       </p>
 
       <Bron bron="Google Ads Help, over verzamelfacturatie" url="https://support.google.com/google-ads/answer/2375371">
@@ -9875,7 +9875,7 @@ function ArticleTegenwerpingenBody() {
       <H2 num="05">&quot;Dan ga jij zelf in de campagnes zitten rommelen&quot;</H2>
 
       <p>
-        Dit is geen argument tegen toegang, want beide platforms hebben er een knop voor. Google zet read-only apart als eigen niveau: zo iemand kan campagnes bekijken en rapportages over de prestaties draaien, maar kan niets wijzigen, geen toegang beheren en geen betaalgegevens aanpassen. Meta werkt met dezelfde gedachte en laat je{' '}
+        Dit is geen argument tegen toegang, want beide platforms hebben er een knop voor. Google heeft read-only als apart niveau: wie dat heeft kan campagnes bekijken en rapportages over de prestaties draaien, maar kan niets wijzigen, geen toegang beheren en geen betaalgegevens aanpassen. Meta werkt met dezelfde gedachte en laat je{' '}
         <a href="https://www.facebook.com/business/help/1717412048538897" target="_blank" rel="noopener noreferrer" style={extLink}>
           gedeeltelijke toegang
         </a>{' '}
@@ -9903,7 +9903,7 @@ function ArticleTegenwerpingenBody() {
       <H2 num="07">&quot;Onze scripts, biedmethodes en templates zijn ons eigendom&quot;</H2>
 
       <p>
-        Dit is geen platformfeit maar een contractafspraak, en daarmee is het meteen beantwoord. Een bureau mag zijn werkwijze als eigen werk beschouwen. Dat botst niet met een account op naam van de klant, want het gaat over twee verschillende dingen: het ene over hoe er gewerkt wordt, het andere over waar de data landt.
+        Dit gaat niet over wat het platform toestaat, maar over wat je met elkaar afspreekt. Daarmee is het meteen beantwoord. Een bureau mag zijn werkwijze als eigen werk beschouwen. Dat botst niet met een account op naam van de klant, want het gaat over twee verschillende dingen: het ene over hoe er gewerkt wordt, het andere over waar de data landt.
       </p>
 
       <p style={zeg}>

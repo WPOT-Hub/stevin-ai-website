@@ -6343,7 +6343,7 @@ const allArticles: Article[] = [
     edition: '021',
     category: 'Data ownership',
     title: 'Wat je bureau zegt als je om toegang vraagt, en wat ervan klopt',
-    dek: 'Vraag je om het advertentieaccount op naam van je eigen bedrijf, dan komt er zelden een kaal nee. Er komt een technische reden. Acht van die redenen, naast de eigen documentatie van Google en Meta gelegd. Zeven houden geen stand. Een klopt wel.',
+    dek: 'Vraag je om het advertentieaccount op naam van je eigen bedrijf, dan hoor je zelden gewoon nee. Je krijgt een technische reden. Acht van die redenen, naast de eigen documentatie van Google en Meta gelegd. Zeven houden geen stand. Een klopt wel.',
     publishedAt: '2026-09-10',
     readMinutes: 8,
     author: { name: 'Stevin Journal', role: 'Redactie' },
