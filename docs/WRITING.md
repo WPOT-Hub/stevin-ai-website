@@ -1,22 +1,22 @@
-# Stevin Journal — Schrijfgids
+# Stevin Journal, Schrijfgids
 
 Dit document is de canonieke stem-gids voor alles wat onder Stevin Journal wordt
 gepubliceerd. Twee formats, één toon.
 
 ## Formats
 
-### Editorial — lange stukken (8-14 min)
+### Editorial, lange stukken (8-14 min)
 
 - 1.500-3.500 woorden
 - Drop-cap, body-figure, takeaways, pull-quote, callout, end-rule
-- Stevin-mening expliciet — wij vinden hier iets van
+- Stevin-mening expliciet, wij vinden hier iets van
 - Eindigt met een praktische conclusie of een vraag
 - Frequentie: wekelijks
 
-### Dispatch — kort nieuws (2-4 min)
+### Dispatch, kort nieuws (2-4 min)
 
 - 300-500 woorden
-- Geen drop-cap, geen poster — tekst-only
+- Geen drop-cap, geen poster, tekst-only
 - Externe gebeurtenis + één paragraaf Stevin-duiding ("Wat dit betekent voor jou")
 - Bron-attributie verplicht (via NU.nl, Tweakers, Emerce, etc.)
 - Frequentie: dagelijks tijdens werkdagen
@@ -40,7 +40,7 @@ context-vooraf. De lezer weet binnen drie zinnen waar het over gaat.
 "Tienduizenden uploads per maand", "94,7%", "drie maanden lang", "€50.000 per
 maand". Niet: "veel", "een hoop", "flink wat", "groot aantal".
 
-Als een getal er niet is — laat het weg. Verzin niets.
+Als een getal er niet is, laat het weg. Verzin niets.
 
 ### 3. Korte alinea's, één gedachte per stuk
 
@@ -55,18 +55,18 @@ zelf-evident is.
 
 ### 5. Letterlijke termen tussen aanhalingstekens
 
-Als een organisatie zelf een term gebruikt — "AI-first leger",
-"eerste-lijns-advies", "performance" — citeer letterlijk met
+Als een organisatie zelf een term gebruikt, "AI-first leger",
+"eerste-lijns-advies", "performance", citeer letterlijk met
 aanhalingstekens. De lezer hoort dat het hun woord is, niet het onze.
 
 ### 6. Geen em-dash, geen en-dash, geen enkele uitzondering
 
-Stevin gebruikt geen `—` of `–` in tekst. Dat is een AI-tell. Gebruik in plaats
+Stevin gebruikt geen `,` of `-` in tekst. Dat is een AI-tell. Gebruik in plaats
 daarvan: een punt, dubbele punt, komma, of haakjes.
 
 > **Wel:** "Het probleem zit niet in het model. Het zit eronder."
 >
-> **Niet:** "Het probleem zit niet in het model — het zit eronder."
+> **Niet:** "Het probleem zit niet in het model, het zit eronder."
 
 Geen uitzondering, ook niet in citaten of samengestelde namen: dat gold hier
 eerder wel (zie git-historie), maar is per 4 sep 2026 gelijkgetrokken met de
@@ -89,9 +89,9 @@ designen.
 - "We weten dat" → niet "het is bekend dat"
 - "Niemand weet of het werkt" → niet "het is niet bekend of het functioneert"
 
-Als een zin met "het is bekend dat" of "men kan stellen dat" begint — herschrijven.
+Als een zin met "het is bekend dat" of "men kan stellen dat" begint, herschrijven.
 
-## Vocabulaire — NOOIT gebruiken
+## Vocabulaire, NOOIT gebruiken
 
 Bewust niet-elitair. Stevin-doelgroep is breed MKB: installateur 50+ DGA,
 D2C-founder 30-45, bureau-eigenaar, freelancer. Academisch
@@ -104,13 +104,13 @@ marketing-jargon breekt het leesritme.
 | incrementaliteit              | uplift / wat een kanaal extra oplevert              |
 | incrementaliteitsmeting       | uplift-meting / het verschil meten                  |
 | incrementaliteitsanalyse      | uplift-analyse                                      |
-| attribution gap               | meetlat-discrepantie (Stevin-eigen term)            |
+| attribution gap               | het verschil tussen wat het platform meldt en wat er werkelijk gebeurde |
 | holdout-groep / geo-test      | alleen als context het ondersteunt                  |
 
-## Wat dit betekent voor jou — de Stevin-paragraaf
+## Wat dit betekent voor jou, de Stevin-paragraaf
 
 Elke dispatch eindigt met een box "Wat dit betekent voor jou". Eén alinea.
-Geen conclusie van het nieuws — een toepassing voor de lezer. Antwoord op
+Geen conclusie van het nieuws, een toepassing voor de lezer. Antwoord op
 één van deze vier vragen:
 
 1. Wat verandert hier voor jouw budget of pijplijn?
@@ -118,14 +118,14 @@ Geen conclusie van het nieuws — een toepassing voor de lezer. Antwoord op
 3. Welk meetpatroon wordt hierdoor zichtbaar?
 4. Wat zou een Stevin-consultant op maandagochtend doen met dit nieuws?
 
-Niet alle vier — kies er één. Maximaal 4 zinnen.
+Niet alle vier, kies er één. Maximaal 4 zinnen.
 
 ## Tone-of-voice samenvatting
 
 > Accountant die toevallig kan designen. Brabander van geboorte: direct, warm,
 > niet uit op gelijk hebben. Schrijft alsof hij een collega aan tafel uitlegt
 > wat er aan de hand is. Geen verkooppraat. Geen meningen waar feiten kunnen.
-> Als de feiten een mening uitlokken — ja dan, maar pas op het einde.
+> Als de feiten een mening uitlokken, ja dan, maar pas op het einde.
 
 ## Source of truth
 
