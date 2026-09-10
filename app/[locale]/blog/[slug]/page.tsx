@@ -5,6 +5,7 @@ import { articles, getArticle, getRelatedArticles, type Article } from '@/data/a
 import { getArticleFaqs } from '@/data/faqs'
 import ReadingProgress from '@/components/blog/ReadingProgress'
 import { metaOmschrijving } from '@/lib/seo'
+import { PosterWatermark } from '@/components/blog/PosterWatermark'
 
 // ── Publicatie-vangrail ─────────────────────────────────────────────────────
 // De auto-publish doet het in twee stappen: eerst het artikel-record, daarna
@@ -474,8 +475,9 @@ function Poster({
   return (
     <div
       className="w-full h-full p-[22px] flex flex-col justify-between"
-      style={{ background: bgStyle, color: txtColor, border }}
+      style={{ background: bgStyle, color: txtColor, border, position: 'relative', overflow: 'hidden' }}
     >
+      <PosterWatermark style={style} />
       <span
         style={{
           fontFamily: 'JetBrains Mono, monospace',
@@ -487,6 +489,7 @@ function Poster({
           padding: '5px 10px',
           borderRadius: '4px',
           alignSelf: 'flex-start',
+          position: 'relative',
         }}
       >
         {tag}
@@ -498,6 +501,7 @@ function Poster({
           lineHeight: '1.1',
           letterSpacing: '-0.02em',
           maxWidth: '14ch',
+          position: 'relative',
         }}
       >
         {topic}

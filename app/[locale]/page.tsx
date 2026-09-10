@@ -11,6 +11,7 @@ import DeskProof from '@/components/DeskProof'
 import BrainEdgeStrip from '@/components/BrainEdgeStrip'
 import HeroHeadline from '@/components/HeroHeadline'
 import { editorials } from '@/data/articles'
+import { PosterWatermark } from '@/components/blog/PosterWatermark'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -942,8 +943,10 @@ export default async function HomePage({ params }: Props) {
                     borderRadius: '14px',
                     aspectRatio: '4 / 3',
                     padding: 'clamp(28px, 5vw, 44px)',
+                    position: 'relative',
                   }}
                 >
+                  <PosterWatermark style={featured.posterStyle} />
                   <span
                     style={{
                       fontFamily: 'JetBrains Mono, monospace',
@@ -955,6 +958,7 @@ export default async function HomePage({ params }: Props) {
                       padding: '6px 10px',
                       borderRadius: '4px',
                       alignSelf: 'flex-start',
+                      position: 'relative',
                     }}
                   >
                     {featured.posterTag}
@@ -966,6 +970,7 @@ export default async function HomePage({ params }: Props) {
                       lineHeight: '1.05',
                       letterSpacing: '-0.025em',
                       maxWidth: '14ch',
+                      position: 'relative',
                     }}
                   >
                     {featured.posterTopic}
