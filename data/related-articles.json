@@ -16,13 +16,13 @@
   ],
   "afm-kritiek-op-ai-toezicht-verdeling-met-dnb": [
     "ai-experts-denken-over-economische-gevolgen-van-ai-in-2030",
-    "uk-civil-service-ai-influencer-aan-stellen",
-    "afm-beboet-bunq-trage-fraudeafhandeling"
+    "afm-beboet-bunq-trage-fraudeafhandeling",
+    "uk-civil-service-ai-influencer-aan-stellen"
   ],
   "agentschap-web-nieuwe-hoop-publishers": [
+    "bureau-geen-toegang-advertentieaccount",
     "gemini-spark-proactief-zoeken-intent-verdwijnt",
-    "meta-invoert-onzichtbare-watermerken-voor-ai-content",
-    "wie-is-eigenaar-van-je-advertentiedata"
+    "meta-invoert-onzichtbare-watermerken-voor-ai-content"
   ],
   "ai-aangedreven-google-ads-verandert-ppc-rol": [
     "google-ads-automatisch-conversiegebaseerde-audience-lists-activeren",
@@ -265,9 +265,9 @@
     "amazon-verdubbelt-nvidia-chiporders-door-explosieve-vraag-naar-ai-infrastructuur"
   ],
   "amd-koopt-taalas-voor-sneller-ai-model-inferentie": [
+    "nvidia-hugging-face-overname-split-ai-markt",
     "van-cluster-naar-laptop-de-revolutie-in-ai-inference",
-    "theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots",
-    "asml-chipmachines-china-ontkennend"
+    "theker-haalt-85-miljoen-op-voor-reconfigureerbare-fabrieksrobots"
   ],
   "amerika-breidt-zwartelijst-chinese-techbedrijven-uit": [
     "apples-failed-self-driving-car-program-legde-basis-voor-krachtige-ai-chips",
@@ -425,9 +425,9 @@
     "side-events-techcrunch-disrupt-2026"
   ],
   "beste-transcriptietool-2026": [
+    "bureau-geen-toegang-advertentieaccount",
     "waymo-lanceert-loyalty-program-met-cashback-en-gratis-annuleringen",
-    "oracle-integreert-google-gemini-in-automatiseringsplatform",
-    "wat-klanten-echt-willen-van-persoonlijke-ai"
+    "oracle-integreert-google-gemini-in-automatiseringsplatform"
   ],
   "bingers-nieuwe-tv-tracker-met-sociale-elementen-van-tv-time": [
     "kodak-chamera-nieuwe-y2k-designs",
@@ -474,10 +474,15 @@
     "insider-one-koopt-bluecore-retail-martech-ipo",
     "side-events-techcrunch-disrupt-2026"
   ],
-  "cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit": [
-    "black-friday-2026-de-perfecte-storm-voor-marketeers",
+  "bureau-geen-toegang-advertentieaccount": [
     "wie-is-eigenaar-van-je-advertentiedata",
-    "ai-versterkt-merkwaarde"
+    "cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit",
+    "meta-invoert-onzichtbare-watermerken-voor-ai-content"
+  ],
+  "cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit": [
+    "bureau-geen-toegang-advertentieaccount",
+    "black-friday-2026-de-perfecte-storm-voor-marketeers",
+    "wie-is-eigenaar-van-je-advertentiedata"
   ],
   "cerebras-ai-chipmaker-margeverwachting-verkeerd-geinterpreteerd": [
     "intel-18a-p-chip-prototype",
@@ -517,7 +522,7 @@
   "commodore-komt-terug-met-flipphone": [
     "groq-haalt-650-miljoen-op-na-nvidia-deal",
     "publicis-liveramp-22-miljard-wat-bureau-eigenaars-nu-moeten-weten",
-    "passionfroot-15m-us-expansion"
+    "nvidia-hugging-face-overname-split-ai-markt"
   ],
   "conde-nast-search-onder-tien-procent": [
     "slecht-geindexeerd-is-zelden-een-schrijfprobleem",
@@ -535,9 +540,9 @@
     "ai-herdefinieert-creativiteit-bij-bureaus"
   ],
   "culturele-sector-eist-duidelijke-regels-voor-ai-gebruik": [
+    "bureau-geen-toegang-advertentieaccount",
     "ai-experts-denken-over-economische-gevolgen-van-ai-in-2030",
-    "nova-en-de-toekomst-van-ruimtevaart",
-    "eu-ai-act-omnibus-akkoord-deadlines-uitgesteld"
+    "nova-en-de-toekomst-van-ruimtevaart"
   ],
   "cursor-lanceert-code-hosting-platform": [
     "github-ai-agent-lekt-priv-repos-door-vriendelijke-prompt",
@@ -827,7 +832,7 @@
   "google-ads-introduceert-drie-ai-max-updates": [
     "google-ai-max-uit-beta-ai-brief-shopping",
     "google-ads-zichtbaar-in-ai-overviews",
-    "google-introduceert-ai-content-labels-in-asset-studio"
+    "google-ads-introduceert-ingebouwd-lead-management-dashboard"
   ],
   "google-ads-introduceert-ingebouwd-lead-management-dashboard": [
     "google-ads-updates-en-annuleerknop-verplicht",
@@ -866,8 +871,8 @@
   ],
   "google-ads-zichtbaar-in-ai-overviews": [
     "google-ads-introduceert-drie-ai-max-updates",
-    "google-ai-max-uit-beta-ai-brief-shopping",
-    "google-ads-ai-max-advertentieteksten-test"
+    "google-ads-ai-max-advertentieteksten-test",
+    "google-ai-max-uit-beta-ai-brief-shopping"
   ],
   "google-ai-max-uit-beta-ai-brief-shopping": [
     "google-ads-introduceert-drie-ai-max-updates",
@@ -920,9 +925,9 @@
     "google-lanceert-prospects-mode-voor-nieuwe-klanten"
   ],
   "google-earth-ai-tool-een-dag-actief": [
+    "google-lanceert-ai-weermodel-voor-consumenten",
     "google-chrome-ai-bugfixes-juni-2026",
-    "google-verplicht-passkeys-voor-google-ads-api",
-    "google-io-2026-marketing-teams-gemini-search-ads"
+    "google-verplicht-passkeys-voor-google-ads-api"
   ],
   "google-integreert-meridian-in-analytics-360": [
     "google-analytics-verbetert-attributie-met-bron-groepering-en-hostname-filteren",
@@ -943,6 +948,11 @@
     "google-test-branded-search-controls-ai-max",
     "google-ai-max-uit-beta-ai-brief-shopping",
     "google-lanceert-prospects-mode-voor-nieuwe-klanten"
+  ],
+  "google-lanceert-ai-weermodel-voor-consumenten": [
+    "google-earth-ai-tool-een-dag-actief",
+    "google-marketing-live-2026-gemini-drijft-search-advertising-en-commerce",
+    "google-introduceert-ai-content-labels-in-asset-studio"
   ],
   "google-lanceert-ask-advisor-in-ads-analytics-en-merchant-center": [
     "google-ads-wijzigt-target-based-bidding-door-budgetbeperkingen",
@@ -982,7 +992,7 @@
   "google-verplicht-passkeys-voor-google-ads-api": [
     "google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage",
     "google-ads-integreert-local-services-ads-in-performance-max",
-    "google-earth-ai-tool-een-dag-actief"
+    "ai-aangedreven-google-ads-verandert-ppc-rol"
   ],
   "google-waarschuwt-voor-derde-partij-seo-tools": [
     "google-analytics-campagne-diagnostiek-missing-parameters",
@@ -1021,13 +1031,13 @@
   ],
   "hugging-face-ai-agents-fraude": [
     "hugging-face-rebuild-na-openai-agents-aanval",
-    "ai-agents-veiligheid-jfrog-nanoclaw",
-    "microsofts-ai-bom-in-cybersecurity-hoe-agenten-de-battle-gaan-winnen"
+    "nvidia-hugging-face-overname-split-ai-markt",
+    "ai-agents-veiligheid-jfrog-nanoclaw"
   ],
   "hugging-face-rebuild-na-openai-agents-aanval": [
     "hugging-face-ai-agents-fraude",
-    "eerste-autonome-cyberaanval-op-openai-dwingt-pleidooi-voor-transparantie",
-    "ai-stage-techcrunch-disrupt-2026"
+    "nvidia-hugging-face-overname-split-ai-markt",
+    "eerste-autonome-cyberaanval-op-openai-dwingt-pleidooi-voor-transparantie"
   ],
   "humanoide-robots-voeren-eerste-operaties-uit-op-levende-varkens": [
     "boston-dynamics-test-robot-honden-voor-leveringen",
@@ -1227,7 +1237,7 @@
   "meta-lanceert-muse-code-ai-agent-grote-codebases": [
     "autonome-ai-agenten-onverwachte-acties-openai",
     "ai-tools-onveilig-door-blind-trust-in-repositories",
-    "meta-voert-ai-disclosure-optie-in-en-breidt-creatieve-testmogelijkheden-uit"
+    "google-antigravity-2-claude-code-cursor-gratis"
   ],
   "meta-sluit-privacy-lek-in-smartglasses-en-start-nieuwe-campagne": [
     "meta-invoert-onzichtbare-watermerken-voor-ai-content",
@@ -1310,9 +1320,9 @@
     "rillet-wordt-eenhoorn-met-100-miljoen-investeringsronde"
   ],
   "neocloud-lambda-haalt-1-miljard-op-voor-chips": [
+    "nvidia-hugging-face-overname-split-ai-markt",
     "groq-haalt-650-miljoen-op-na-nvidia-deal",
-    "franse-startup-zml-released-gratis-ai-inference-software",
-    "cerebras-ai-chipmaker-margeverwachting-verkeerd-geinterpreteerd"
+    "franse-startup-zml-released-gratis-ai-inference-software"
   ],
   "netbeheerders-investeren-meer-in-netcongestie-met-verschillen-tussen-bedrijven": [
     "watercongestie-nodigt-uit-tot-verplichte-waterbesparing",
@@ -1353,6 +1363,11 @@
     "de-ruimte-als-een-normale-business",
     "spacex-starship-lancering-geannuleerd-door-motorproblemen",
     "culturele-sector-eist-duidelijke-regels-voor-ai-gebruik"
+  ],
+  "nvidia-hugging-face-overname-split-ai-markt": [
+    "hugging-face-rebuild-na-openai-agents-aanval",
+    "intel-18a-p-chip-prototype",
+    "amd-koopt-taalas-voor-sneller-ai-model-inferentie"
   ],
   "openai-acquire-nextslide-presentation-startup": [
     "openai-test-ad-format-met-ai-agent",
@@ -1402,7 +1417,7 @@
   "organisaties-bouwen-merkbeelden-in-plaats-van-merken": [
     "world-of-wow-influencer-marketing-verbinden-in-plaats-van-bereiken",
     "visuele-identiteit-niet-start-met-blanco",
-    "branding-versus-marketing-wat-is-het-verschil"
+    "ai-versterkt-merkwaarde"
   ],
   "organische-traffic-alleen-als-business-impact": [
     "attributie-impact-niet-meer-gelijk-aan-meetdata-in-ppc",
@@ -1802,7 +1817,7 @@
   "van-cluster-naar-laptop-de-revolutie-in-ai-inference": [
     "van-met-en-actie-de-nieuwe-standaard-voor-bedrijven",
     "marketing-brein-waarom-nu",
-    "amd-koopt-taalas-voor-sneller-ai-model-inferentie"
+    "neuralink-tussen-hoop-en-hype-wat-bureaus-ervan-moeten-weten"
   ],
   "van-met-en-actie-de-nieuwe-standaard-voor-bedrijven": [
     "van-cluster-naar-laptop-de-revolutie-in-ai-inference",
@@ -1895,9 +1910,9 @@
     "de-onzichtbare-kracht-van-technologie-trends-die-je-nu-mist"
   ],
   "wie-is-eigenaar-van-je-advertentiedata": [
+    "bureau-geen-toegang-advertentieaccount",
     "google-ads-gemini-dashboards-real-time",
-    "cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit",
-    "marketing-brein-waarom-nu"
+    "cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit"
   ],
   "wk-2026-campagne-data-voorbereiding": [
     "ai-cowboys-marketing-2026",

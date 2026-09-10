@@ -3,6 +3,7 @@ import { Link } from '@/i18n/navigation'
 import { editorials, dispatches } from '@/data/articles'
 import ItemListJsonLd from '@/components/ItemListJsonLd'
 import { hasDispatchBody } from './[slug]/page'
+import { PosterWatermark } from '@/components/blog/PosterWatermark'
 
 export const metadata: Metadata = {
   title: 'Stevin Journal, Marketing-intelligence redactie',
@@ -291,8 +292,11 @@ function FeaturedPoster({
         color: txtColor,
         border,
         padding: 'clamp(22px, 4vw, 36px)',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
+      <PosterWatermark style={style} />
       <span
         style={{
           fontFamily: 'JetBrains Mono, monospace',
@@ -304,6 +308,7 @@ function FeaturedPoster({
           padding: '6px 10px',
           borderRadius: '4px',
           alignSelf: 'flex-start',
+          position: 'relative',
         }}
       >
         {tag}

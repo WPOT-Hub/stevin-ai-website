@@ -5,6 +5,7 @@ import { articles, getArticle, getRelatedArticles, type Article } from '@/data/a
 import { getArticleFaqs } from '@/data/faqs'
 import ReadingProgress from '@/components/blog/ReadingProgress'
 import { metaOmschrijving } from '@/lib/seo'
+import { PosterWatermark } from '@/components/blog/PosterWatermark'
 
 // ── Publicatie-vangrail ─────────────────────────────────────────────────────
 // De auto-publish doet het in twee stappen: eerst het artikel-record, daarna
@@ -312,6 +313,9 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'wie-is-eigenaar-van-je-advertentiedata' && (
             <ArticleTransparencyBody />
           )}
+          {article.format === 'editorial' && article.slug === 'bureau-geen-toegang-advertentieaccount' && (
+            <ArticleTegenwerpingenBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
@@ -325,6 +329,7 @@ export default async function ArticlePage({
             article.slug !== 'zichtbaar-in-ai-antwoorden-aeo-geo' &&
             article.slug !== 'lecun-miljard-tegen-het-taalmodel' &&
             article.slug !== 'wie-is-eigenaar-van-je-advertentiedata' &&
+            article.slug !== 'bureau-geen-toegang-advertentieaccount' &&
             article.slug !== 'wk-2026-campagne-data-voorbereiding' && (
               <ArticleStubBody article={article} />
             )}
@@ -470,8 +475,9 @@ function Poster({
   return (
     <div
       className="w-full h-full p-[22px] flex flex-col justify-between"
-      style={{ background: bgStyle, color: txtColor, border }}
+      style={{ background: bgStyle, color: txtColor, border, position: 'relative', overflow: 'hidden' }}
     >
+      <PosterWatermark style={style} />
       <span
         style={{
           fontFamily: 'JetBrains Mono, monospace',
@@ -483,6 +489,7 @@ function Poster({
           padding: '5px 10px',
           borderRadius: '4px',
           alignSelf: 'flex-start',
+          position: 'relative',
         }}
       >
         {tag}
@@ -494,6 +501,7 @@ function Poster({
           lineHeight: '1.1',
           letterSpacing: '-0.02em',
           maxWidth: '14ch',
+          position: 'relative',
         }}
       >
         {topic}
@@ -9349,7 +9357,7 @@ function ArticleTransparencyBody() {
       />
 
       <p>
-        Hoe vaak komt dit voor? Wij zijn die registers gaan doorzoeken. Op 25 juli 2026 hadden we 1,9 miljoen advertenties bekeken in de openbare bibliotheken van Google en Meta. Bij 3.389 bedrijven in Nederland en Belgie staat een andere partij dan het bedrijf zelf geregistreerd als betaler, waarvan 2.305 in Nederland, verdeeld over 857 verschillende betalende partijen. Die teller loopt door, want we scannen nog steeds.
+        Hoe vaak komt dit voor? Wij lezen daarvoor de openbare dataset van Google Ads Transparency voor Nederland en Belgie uit, aangevuld met gerichte scans op Meta. Op 10 september 2026 stond bij 2.774 bedrijven een andere partij dan het bedrijf zelf geregistreerd als betaler, waarvan 1.804 in Nederland, verdeeld over 855 verschillende betalende partijen. Samen goed voor bijna 273.000 advertenties. Dat is de stand van die dag. We scannen door.
       </p>
 
       <p>
@@ -9407,7 +9415,7 @@ function ArticleTransparencyBody() {
             alt: 'Meta',
             url: 'https://www.facebook.com/ads/library',
             label: 'facebook.com/ads/library',
-            desc: <>De Meta Ad Library, voor Facebook en Instagram. Veld: &quot;Advertiser and payer&quot;.</>,
+            desc: <>De Meta Ad Library, voor Facebook en Instagram. Veld: &quot;Advertiser and payer&quot;, dat Meta ook in het Nederlandse scherm in het Engels toont.</>,
           },
           {
             logo: 'linkedin',
@@ -9574,7 +9582,7 @@ function ArticleTransparencyBody() {
       <H2 num="04">Wat betekent het als de betaler je bureau is?</H2>
 
       <p>
-        Staat bij de betaler de naam van je bureau, dan draaien de advertenties op het advertentieaccount van dat bureau, niet op dat van jou. Dat is niet per definitie fout. Veel bureaus werken zo, en voor een deel van de klanten is dat prima. Maar het heeft gevolgen die je zelf zelden ziet.
+        Staat bij de betaler de naam van je bureau, dan draaien de advertenties op het advertentieaccount van dat bureau, niet op dat van jou. Dat is niet per definitie fout. Veel bureaus werken zo. Maar het heeft gevolgen die je zelf zelden ziet.
       </p>
 
       <Takeaways
@@ -9617,7 +9625,7 @@ function ArticleTransparencyBody() {
       />
 
       <p>
-        Dit is geen bewijs dat er iets mis is. Het is een startpunt voor een gesprek. De enige manier om zeker te weten hoe het bij jou zit, is het je bureau vragen.
+        Het is een startpunt voor een gesprek, geen aanklacht. De enige manier om zeker te weten hoe het bij jou zit, is het je bureau vragen.
       </p>
 
       <H2 num="05">Hoe hoort het te zijn ingericht?</H2>
@@ -9627,11 +9635,15 @@ function ArticleTransparencyBody() {
       </p>
 
       <p>
-        Bij Google kan een bureau via een manager-account (MCC) jouw account beheren. De eigenaar van dat manager-account heeft volledige toegang, inclusief persoonsgegevens die aan het account hangen. Het klantaccount blijft wel eigenaar van zijn data en kan de koppeling verbreken. Zorg dat jouw bedrijf het account bezit en dat het bureau als beheerder is gekoppeld.
+        Bij Google kan een bureau via een manager-account (MCC) jouw account beheren zonder het te bezitten. Google schrijft dat een manager die een bestaand account koppelt, daarmee standaard geen eigenaarschap krijgt: dat moet het klantaccount zelf aanzetten. Een account kan aan <a href="https://support.google.com/google-ads/answer/7456530" target="_blank" rel="noopener noreferrer" style={extLink}>maximaal vijf managers tegelijk</a> hangen, en de klant kan altijd ontkoppelen. Zorg dus dat jouw bedrijf het account bezit en dat het bureau als beheerder is gekoppeld.
       </p>
 
       <p>
-        Bij Meta werkt het via partnertoegang in je eigen Business Portfolio. Je wijst het bureau specifieke assets toe, zoals je advertentieaccount, pagina en pixel, zonder dat het bureau er eigenaar van wordt. Volgens Meta blijft je Business Portfolio eigenaar van de assets, ook als het bureau ze beheert.
+        Bij Meta werkt het via partnertoegang in je eigen Business Portfolio. Je wijst het bureau specifieke assets toe, zoals je advertentieaccount, pagina en pixel, zonder dat het bureau er eigenaar van wordt. Meta beschrijft die route zelf als de normale gang van zaken bij een bureau: het account blijft in het portfolio van de klant, alleen de toegang wordt met het bureau gedeeld.
+      </p>
+
+      <p>
+        Daar zit wel haast bij. Is een advertentieaccount eenmaal bevestigd eigendom van een bedrijf, dan kan dat bedrijf het niet meer uit zijn portfolio halen. Er is dus geen knop die het van je bureau naar jou verplaatst. Dit regel je vooraf, want achteraf is het vaak opnieuw beginnen. Wat je bureau hier vaak op antwoordt, en wat ervan klopt, staat in <a href="/blog/bureau-geen-toegang-advertentieaccount" style={extLink}>het vervolgstuk</a>.
       </p>
 
       <Takeaways
@@ -9717,12 +9729,311 @@ function ArticleTransparencyBody() {
       />
 
       <p>
+        Op alle drie komt vaak een technische reden terug in plaats van een antwoord. Wij hebben de acht die we het vaakst horen naast de documentatie van Google en Meta gelegd: <a href="/blog/bureau-geen-toegang-advertentieaccount" style={extLink}>wat je bureau zegt als je om toegang vraagt, en wat ervan klopt</a>. Zeven houden geen stand. Een klopt wel.
+      </p>
+
+      <p>
         Het punt is niet dat bureaus onbetrouwbaar zijn. Het punt is dat eigenaarschap van je eigen marketingdata een keuze hoort te zijn die je bewust maakt, niet een die je overkomt omdat je nooit in dat ene veld hebt gekeken. Twee minuten in de advertentiebibliotheek, en je weet waar je staat.
       </p>
 
       <EndRule />
       <EndSig>&quot;Wonder en is gheen wonder.&quot; · Editie 020 / 052</EndSig>
     </>
+  )
+}
+
+function ArticleTegenwerpingenBody() {
+  const extLink = {
+    color: 'var(--accent)',
+    fontWeight: 600,
+    textDecoration: 'none',
+  }
+  const zeg = {
+    margin: '28px 0 40px',
+    padding: '18px 24px',
+    background: 'var(--surface)',
+    borderLeft: '3px solid var(--accent)',
+    borderRadius: '0 10px 10px 0',
+    fontSize: '16px',
+    lineHeight: 1.6,
+  }
+  return (
+    <>
+      <p className="lead-para">
+        Vraag je je bureau om het advertentieaccount op naam van je eigen bedrijf te zetten, dan hoor je zelden gewoon nee. Je krijgt een technische reden. Wij hebben acht van die redenen, zoals we ze in gesprekken met adverteerders terugkregen, naast de eigen documentatie van Google en Meta gelegd. Zeven houden geen stand. Een klopt wel, en dat is juist de reden die het minst genoemd wordt. Dit stuk is het vervolg op <a href="/blog/wie-is-eigenaar-van-je-advertentiedata" style={extLink}>de vraag wie eigenaar is van je advertentiedata</a>: daar zoek je op wie er als betaler staat, hier lees je wat je terugkrijgt als je er iets van zegt.
+      </p>
+
+      <Callout
+        big="7 van 8"
+        label="Zoveel van de tegenwerpingen houden geen stand tegen wat Google en Meta zelf in hun handleiding schrijven. Onder elk antwoord staat de brontekst, zodat je die kunt nalezen of meesturen."
+      />
+
+      <H2 num="01">&quot;Dan heb je toegang tot al onze advertentieaccounts&quot;</H2>
+
+      <p>
+        Dit klopt niet. Meta deelt per asset, niet per portfolio. Wie een partner toevoegt, kiest zelf welke assets hij deelt en met welke rechten. Die partner ziet vervolgens alleen wat er met hem gedeeld is. Een bureau kan dus een enkel advertentieaccount delen en de rest van zijn portfolio dicht houden.
+      </p>
+
+      <Bron bron="Meta Business Help Center" url="https://www.facebook.com/business/help/1717412048538897">
+        Choose which business assets you want to share with your partner and the level of access you want to provide.
+      </Bron>
+
+      <p>
+        Meta zegt hetzelfde in de omgekeerde richting. In het artikel over adverteren namens een ander bedrijf staat dat het bedrijf waarvoor je adverteert het advertentieaccount niet kan zien tenzij jij daar toestemming voor geeft. Of jij je eigen campagnes mag inzien, is dus een keuze van je bureau. Het platform houdt dat niet tegen.
+      </p>
+
+      <Bron bron="Meta, over adverteren namens een ander bedrijf" url="https://www.facebook.com/business/help/350066115746201">
+        The business you advertise on behalf of can&apos;t see the ad account unless you grant it permission.
+      </Bron>
+
+      <p>
+        Bij Google werkt het net zo per account. Google kent{' '}
+        <a href="https://support.google.com/google-ads/answer/9978556" target="_blank" rel="noopener noreferrer" style={extLink}>
+          vijf toegangsniveaus
+        </a>
+        : email-only, billing, read-only, standard en admin. Iemand op read-only kan campagnes bekijken en rapportages draaien, en verder niets.
+      </p>
+
+      <p>
+        <b>De eerlijke kanttekening:</b>{' '}toegang is geen eigendom. Alleen het portfolio dat eigenaar van een asset is, kan die asset met een ander portfolio delen. Zelfs een partner met volledige rechten kan dat niet. Je kunt dus meekijken en meewerken in het account van je bureau, maar je kunt het niet meenemen. Met toegang los je het meekijken op, niet het eigenaarschap. Dat blijft een aparte vraag.
+      </p>
+
+      <Bron bron="Meta Business Help Center" url="https://www.facebook.com/business/help/1717412048538897">
+        Only the organization that owns the asset can share it with another business portfolio.
+      </Bron>
+
+      <p style={zeg}>
+        <b>Zo zeg je het:</b>{' '}&quot;Ik vraag niet of je je hele portfolio openzet. Meta laat je per advertentieaccount delen. Deel alleen dat van ons.&quot;
+      </p>
+
+      <H2 num="02">&quot;Het moet via onze accounts, anders werken onze rapportagetools niet&quot;</H2>
+
+      <p>
+        Dit klopt niet. Rapportagekoppelingen loggen in als een gebruiker met toegang, niet als eigenaar. Supermetrics, een van de meest gebruikte koppelingen, vraagt voor Google Ads niet meer dan leestoegang. Voor Facebook Ads volstaat werknemerstoegang met inzage in de prestaties, of de analistenrol op het advertentieaccount. Over eigenaarschap staat er in geen van beide iets.
+      </p>
+
+      <Bron bron="Supermetrics, handleiding Google Ads" url="https://docs.supermetrics.com/docs/google-ads-connection-guide">
+        You need a Google Ads or manager account with Read Only access.
+      </Bron>
+
+      <p>
+        Bovendien kan je bureau een account dat op jouw naam staat gewoon aan zijn eigen manager-account koppelen. Een Google Ads-account kan door maximaal vijf manager-accounts tegelijk beheerd worden. En koppelen is niet bezitten: een manager die een bestaand account koppelt, krijgt daarmee standaard geen eigenaarschap. Dat moet het klantaccount zelf aanzetten.
+      </p>
+
+      <Bron bron="Google Ads Help, over eigenaarschap van klantaccounts" url="https://support.google.com/google-ads/answer/7456532">
+        If a manager links an existing account, it won&apos;t have ownership of that newly linked client account by default. The client account must enable ownership for the manager account.
+      </Bron>
+
+      <p style={zeg}>
+        <b>Zo zeg je het:</b>{' '}&quot;Koppel ons account aan jullie manager-account. Dan lopen jullie rapportages gewoon door en staat het account op onze naam.&quot;
+      </p>
+
+      <H2 num="03">&quot;Bij een overstap ben je je historie kwijt, dus laat het maar zo staan&quot;</H2>
+
+      <p>
+        Half waar, en het pleit voor het tegendeel. Koppel je een bestaand account aan een manager-account, dan blijft dat account ongewijzigd en blijft de opgebouwde historie intact. Dat schrijft Google zelf.
+      </p>
+
+      <Bron bron="Google Ads Help, over koppelen aan een manager-account" url="https://support.google.com/google-ads/answer/7456530">
+        When you link your manager account to an existing Google Ads account, the original client account remains unchanged and its account history remains intact.
+      </Bron>
+
+      <p>
+        Wat wel historie kost, is een nieuw account moeten openen omdat je het oude niet mee kunt nemen. Bij Meta is dat een echt risico. Is een advertentieaccount eenmaal bevestigd eigendom van een bedrijf, dan kan dat bedrijf het niet meer uit zijn portfolio halen. Er is geen knop die het naar jou verplaatst.
+      </p>
+
+      <Bron bron="Meta, technische documentatie voor advertentieaccounts" url="https://developers.facebook.com/docs/marketing-api/business-asset-management/guides/ad-accounts/">
+        You cannot remove ad accounts from your business if you&apos;re OWNER and if the accounts are CONFIRMED.
+      </Bron>
+
+      <p>
+        Daarmee is dit het belangrijkste punt van dit hele stuk: <b>bij Meta regel je eigenaarschap vooraf, want achteraf is het vaak opnieuw beginnen.</b>{' '}Google is soepeler. Daar houdt het klantaccount zijn data en kan het altijd zelf de koppeling verbreken.
+      </p>
+
+      <p style={zeg}>
+        <b>Zo zeg je het:</b>{' '}&quot;Precies daarom wil ik dit nu geregeld hebben, en niet op het moment dat we uit elkaar gaan.&quot;
+      </p>
+
+      <H2 num="04">&quot;Wij schieten de mediakosten voor, jij hebt geen kredietlimiet&quot;</H2>
+
+      <p>
+        Dit klopt vaak wel, en het is een echte dienst. Voor maandfacturatie stelt Google eisen: het bedrijf moet minstens een jaar ingeschreven staan en in{' '}
+        <a href="https://support.google.com/google-ads/answer/2375377" target="_blank" rel="noopener noreferrer" style={extLink}>
+          3 van de laatste 12 maanden minstens 5.000 dollar
+        </a>{' '}
+        hebben uitgegeven. Een adverteerder die 2.000 euro per maand uitgeeft, haalt dat niet en betaalt dus per kaart of incasso. Dat een bureau voorschiet, scheelt geld en gedoe.
+      </p>
+
+      <p>
+        Alleen: betalen en bezitten zijn twee dingen. Bij een verzamelfactuur eist Google dat alle accounts aan een gemeenschappelijk manager-account hangen, de betalende manager. Gekoppeld, niet in eigendom. Je bureau kan dus blijven betalen terwijl het account op jouw naam staat.
+      </p>
+
+      <Bron bron="Google Ads Help, over verzamelfacturatie" url="https://support.google.com/google-ads/answer/2375371">
+        All accounts appearing on one consolidated invoice need to be linked to one common manager account, known as the paying manager.
+      </Bron>
+
+      <p style={zeg}>
+        <b>Zo zeg je het:</b>{' '}&quot;Blijf de mediakosten gerust voorschieten. Dat verandert niets aan wiens naam op het account staat.&quot;
+      </p>
+
+      <H2 num="05">&quot;Dan ga jij zelf in de campagnes zitten rommelen&quot;</H2>
+
+      <p>
+        Dit is geen argument tegen toegang, want beide platforms hebben er een knop voor. Google heeft read-only als apart niveau: wie dat heeft kan campagnes bekijken en rapportages over de prestaties draaien, maar kan niets wijzigen, geen toegang beheren en geen betaalgegevens aanpassen. Meta werkt met dezelfde gedachte en laat je{' '}
+        <a href="https://www.facebook.com/business/help/1717412048538897" target="_blank" rel="noopener noreferrer" style={extLink}>
+          gedeeltelijke toegang
+        </a>{' '}
+        geven voor alleen de taken die je aanwijst.
+      </p>
+
+      <p style={zeg}>
+        <b>Zo zeg je het:</b>{' '}&quot;Zet me op read-only. Ik wil kunnen kijken, niet aan knoppen zitten.&quot;
+      </p>
+
+      <H2 num="06">&quot;Onze partnerstatus en ons contact bij Google werken alleen op onze accounts&quot;</H2>
+
+      <p>
+        Voor de partnervoordelen klopt dit niet. Google schrijft dat elk account dat door een manager-account beheerd wordt de aanbieding krijgt, zolang dat manager-account Partner of Premier Partner is. Beheerd, dus gekoppeld. En koppelen vereist geen eigenaarschap, zoals hierboven bij punt 02.
+      </p>
+
+      <Bron bron="Google Ads Help, over aanbiedingen via Google Partners" url="https://support.google.com/google-ads/answer/7624810">
+        Any account managed by a Google Ads manager account will have a promotional offer applied if the manager account is a Premier Partner or Partner.
+      </Bron>
+
+      <p>
+        Over een vaste vertegenwoordiger kunnen we niets zeggen: of Google en Meta die aan bezit koppelen of aan beheer, staat nergens publiek beschreven. Noemt je bureau dat als reden, vraag dan of ze het op papier kunnen laten zien.
+      </p>
+
+      <H2 num="07">&quot;Onze scripts, biedmethodes en templates zijn ons eigendom&quot;</H2>
+
+      <p>
+        Dit gaat niet over wat het platform toestaat, maar over wat je met elkaar afspreekt. Daarmee is het meteen beantwoord. Een bureau mag zijn werkwijze als eigen werk beschouwen. Dat botst niet met een account op naam van de klant, want het gaat over twee verschillende dingen: het ene over hoe er gewerkt wordt, het andere over waar de data landt.
+      </p>
+
+      <p style={zeg}>
+        <b>Zo zeg je het:</b>{' '}&quot;Jullie methode blijft van jullie. De data en het account zijn van ons. Dat kan allebei tegelijk.&quot;
+      </p>
+
+      <H2 num="08">&quot;Je hebt niet eens een eigen Business Manager&quot;</H2>
+
+      <p>
+        Dan maak je die aan. Het kost niets, en Meta beschrijft de nette route zelf, met het bureau-scenario er letterlijk in als voorbeeld.
+      </p>
+
+      <PullQuote
+        text="Gebruik deze optie als je bedrijf een advertentieaccount moet gebruiken namens een ander bedrijf. Bijvoorbeeld: je werkt bij een bureau en het advertentieaccount is van een klant. Het account blijft in hun portfolio, maar de toegang wordt gedeeld met dat van jou."
+        cite="Meta Business Help Center, over het toevoegen van een advertentieaccount"
+      />
+
+      <Bron bron="De oorspronkelijke tekst bij Meta" url="https://www.facebook.com/business/help/915885887059947">
+        Use this option if your business needs to use an ad account on behalf of another business. For example, you work for an agency, and the ad account belongs to a client. The account will remain in their portfolio, but access will be shared with your portfolio.
+      </Bron>
+
+      <p>
+        Dat is dus Meta&apos;s eigen omschrijving van hoe het hoort: de klant bezit het account, het bureau vraagt toegang. Het omgekeerde is niet verboden, maar het is niet het patroon dat het platform beschrijft.
+      </p>
+
+      <H2 num="09">Wat we niet hebben kunnen nakijken</H2>
+
+      <p>
+        Twee dingen zijn we niet rondgekregen, en die staan hier omdat je ze niet als argument moet gebruiken.
+      </p>
+
+      <p>
+        Of een bureau-account goedkopere klikken krijgt. Google beschrijft de prijs als uitkomst van de veiling, uit bod en kwaliteit, maar een expliciete uitspraak dat er geen kortingen op accountniveau bestaan hebben we niet gevonden.
+      </p>
+
+      <p>
+        Of Meta ergens schrijft dat een advertentieaccount nooit naar een ander portfolio kan verhuizen. De technische documentatie zegt alleen dat de eigenaar het niet kan verwijderen. Dat is streng genoeg om je gedrag op aan te passen, en het is minder streng dan &quot;nooit&quot;.
+      </p>
+
+      <H2 num="10">Wat je onthoudt voor het gesprek</H2>
+
+      <Takeaways
+        label="VIJF ZINNEN"
+        title="Genoeg om het gesprek te voeren"
+        items={[
+          {
+            pct: '01',
+            text: (
+              <>
+                <b>Toegang gaat per account, niet per portfolio.</b>{' '}Dat staat bij Google en bij Meta in de handleiding. Een bureau dat zijn hele portfolio als reden noemt, geeft geen reden.
+              </>
+            ),
+          },
+          {
+            pct: '02',
+            text: (
+              <>
+                <b>Rapportagetools vragen leestoegang, geen eigendom.</b>{' '}De grote koppelingen schrijven dat zelf op hun documentatiepagina.
+              </>
+            ),
+          },
+          {
+            pct: '03',
+            text: (
+              <>
+                <b>Koppelen kost geen historie en geeft geen eigenaarschap.</b>{' '}Een Google-account kan aan maximaal vijf managers tegelijk hangen en blijft ondertussen van jou.
+              </>
+            ),
+          },
+          {
+            pct: '04',
+            text: (
+              <>
+                <b>Voorschieten mag blijven.</b>{' '}Wie de mediakosten betaalt, is een andere vraag dan op wiens naam het account staat.
+              </>
+            ),
+          },
+          {
+            pct: '05',
+            text: (
+              <>
+                <b>Bij Meta is dit vooraf te regelen en achteraf vaak niet meer.</b>{' '}Dat is de enige reden dat dit gesprek haast heeft.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <p>
+        Een bureau dat hier ontspannen op reageert, is geen bureau dat iets te verbergen heeft. De meeste doen dit gewoon zo omdat het ooit zo begon, en zetten het zonder morren recht. Wat je zoekt is niet ja of nee, maar of het antwoord ergens op slaat. Weet je nog niet hoe het bij jou staat, dan begin je{' '}
+        <a href="/blog/wie-is-eigenaar-van-je-advertentiedata" style={extLink}>
+          bij het veld met de betaler
+        </a>
+        . Dat kost twee minuten.
+      </p>
+
+      <EndRule />
+      <EndSig>&quot;Wonder en is gheen wonder.&quot; &middot; Editie 021 / 052</EndSig>
+    </>
+  )
+}
+
+/** Brontekst onder een alinea: de claim staat in het Nederlands in de lopende
+ *  tekst, het letterlijke citaat staat hier zodat een lezer het kan nalezen of
+ *  meesturen zonder er doorheen te moeten lezen. */
+function Bron({ children, bron, url }: { children: React.ReactNode; bron: string; url: string }) {
+  return (
+    <div style={{ margin: '-12px 0 36px', paddingLeft: '20px', borderLeft: '2px solid var(--border)' }}>
+      <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.55, color: 'var(--muted)', fontStyle: 'italic' }}>
+        &quot;{children}&quot;
+      </p>
+      <p
+        style={{
+          margin: '8px 0 0',
+          fontFamily: 'JetBrains Mono, monospace',
+          fontSize: '11px',
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          color: 'var(--muted)',
+        }}
+      >
+        <a href={url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'none' }}>
+          {bron}
+        </a>
+      </p>
+    </div>
   )
 }
 
