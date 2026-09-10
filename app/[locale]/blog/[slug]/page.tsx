@@ -1521,6 +1521,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-automatiseert-vrouwelijke-marketeers': (
+    <>
+      <p className="lead-para">
+        Uit een recente analyse blijkt dat bijna een derde van de marketingteams in Nederland en België al merkt dat AI gegenereerde content hun eigen werk vervangt. Vooral op het gebied van copywriting en grafische ontwerpen zien professionals hun rol krimpen, aldus een peiling onder 200 marketeers.
+      </p>
+      <p>
+        De grootste zorgen gaan niet alleen over automatisering, maar ook over de kwaliteit van de output. Terwijl AI snel teksten en beelden produceert, blijft de menselijke controle vaak achterwege door tijdgebrek of onvoldoende kennis. Dit leidt tot herhaling in campagnes en een verlies aan unieke merkstem.
+      </p>
+      <p>
+        Experts wijzen erop dat veel bedrijven nog geen duidelijke strategie hebben voor het omgaan met deze verandering. Waar sommige teams AI inzetten als ondersteuning, gebruiken anderen het als vervanging zonder de risico's te wegen.
+      </p>
+    </>
+  ),
   'google-lanceert-ai-weermodel-voor-consumenten': (
     <>
       <p className="lead-para">
@@ -7669,6 +7682,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-automatiseert-vrouwelijke-marketeers':
+    "Voor bureaus en in-house teams betekent dit dat ze nu moeten investeren in hybride vaardigheden: niet alleen technisch begrip van AI-tools, maar ook een scherp oog voor wat wel en niet past bij hun merk. De komende jaren zal blijken of creativiteit nog wel als onderscheidend vermogen wordt gezien, of dat het vooral gaat om slimme toepassing van bestaande templates. Wie nu te lang wacht met experimenteren, loopt straks achter de feiten aan.",
   'google-lanceert-ai-weermodel-voor-consumenten':
     "Voor bedrijven die afhankelijk zijn van weergerelateerde beslissingen biedt deze ontwikkeling nieuwe kansen om operaties beter af te stemmen op weersomstandigheden. Het is echter nog maar de vraag hoe snel andere landen buiten de Verenigde Staten en Europa dit model zullen adopteren. Voorlopig blijft het afwachten of de nauwkeurigheid daadwerkelijk verbetert ten opzichte van bestaande systemen zoals KNMI of MeteoGroup.",
   'nvidia-hugging-face-overname-split-ai-markt':
