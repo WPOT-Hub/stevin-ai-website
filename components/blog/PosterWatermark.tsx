@@ -78,10 +78,16 @@ function ketting(): Punt[] {
   return pad
 }
 
-/** Bollen op gelijke boogafstand over de hele gesloten ketting. */
+/** Bollen op gelijke boogafstand over de hele gesloten ketting.
+ *
+ *  Begint op nul, niet op een halve afstand. De ketting is precies 14 keer de
+ *  bolafstand lang en de drie hoekpunten liggen op 0, 160 en 240, allemaal een
+ *  veelvoud van 40. Daardoor valt er een bol op de top en op beide hoeken, zoals
+ *  in de houtsnede, en sluit de krans rond. Begin je op een halve afstand, dan
+ *  liggen de bollen naast de hoeken en loopt de ketting scheef. */
 function bollen(pad: Punt[]): Punt[] {
   const uit: Punt[] = []
-  let over = AFSTAND / 2
+  let over = 0
   for (let i = 1; i < pad.length; i++) {
     const dx = pad[i].x - pad[i - 1].x
     const dy = pad[i].y - pad[i - 1].y
@@ -98,7 +104,8 @@ function bollen(pad: Punt[]): Punt[] {
     }
     over -= rest
   }
-  return uit
+  // De laatste stap komt weer op het beginpunt uit; die bol staat er al.
+  return uit.slice(0, 14)
 }
 
 const BOLLEN = bollen(ketting())
