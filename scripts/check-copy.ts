@@ -28,7 +28,7 @@ const PADEN = [
   '/google-ads-ga4', '/first-party-data', '/lead-generatie', '/ai-briefing',
   // Steekproef uit de programmatic sets
   '/integraties/google-ads', '/woordenboek/roas', '/producten/signals',
-  '/blog/wie-is-eigenaar-van-je-advertentiedata', '/vergelijken/shopify-vs-woocommerce',
+  '/blog/wie-is-eigenaar-van-je-advertentiedata', '/blog/bureau-geen-toegang-advertentieaccount', '/vergelijken/shopify-vs-woocommerce',
   '/alternatief/windsor-ai', '/woordenboek/first-party-data',
 ]
 

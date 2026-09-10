@@ -6338,6 +6338,21 @@ const allArticles: Article[] = [
 
   /* ─── EDITORIALS ─── */
   {
+    slug: 'bureau-geen-toegang-advertentieaccount',
+    format: 'editorial' as const,
+    edition: '021',
+    category: 'Data ownership',
+    title: 'Wat je bureau zegt als je om toegang vraagt, en wat ervan klopt',
+    dek: 'Vraag je om het advertentieaccount op naam van je eigen bedrijf, dan komt er zelden een kaal nee. Er komt een technische reden. Acht van die redenen, naast de eigen documentatie van Google en Meta gelegd. Zeven houden geen stand. Een klopt wel.',
+    publishedAt: '2026-09-10',
+    readMinutes: 8,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid' as const,
+    posterTag: 'DATA OWNERSHIP',
+    posterTopic: 'Zeven van de acht houden geen stand.',
+    source: { url: 'https://www.facebook.com/business/help/915885887059947', name: 'Meta Business Help Center' },
+  },
+  {
     slug: 'wie-is-eigenaar-van-je-advertentiedata',
     format: 'editorial' as const,
     edition: '020',
