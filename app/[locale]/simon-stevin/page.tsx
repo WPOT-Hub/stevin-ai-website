@@ -42,7 +42,7 @@ const COPY = {
     trust:
       'Een actie met impact gaat langs een mens. Elk advies toont waar het op gebaseerd is. Alles wordt gelogd. Zo kan AI meewerken zonder dat je grip verliest.',
     broadening:
-      'We zijn begonnen in marketing. Daar kennen we de praktijk en daar ligt het eerste bewijs. Maar Stevin is niet alleen marketing. Dezelfde motor is gemaakt om net zo goed te werken voor bouw, techniek, installatie, onderhoud en finance. Overal waar informatie verspreid zit, beslissingen blijven liggen en opvolging beter kan.',
+      'We zijn begonnen in marketing, omdat we het daar zelf twintig jaar hebben gedaan. Dat is ook de reden dat we de AI eromheen durfden te bouwen: je moet weten hoe het werk werkt om te zien wanneer een model ernaast zit. Daarom staat er bij ons altijd een mens tussen het model en de beslissing. Wat eronder ligt is niet marketing-specifiek: informatie die verspreid zit, beslissingen die blijven liggen, opvolging die beter kan. Dat probleem is overal hetzelfde.',
     krachtenH: 'Zichtbaar maken hoe krachten samen werken',
     krachten1: 'Simon Stevin maakte zichtbaar hoe krachten samen werken.',
     krachten2:
@@ -105,7 +105,7 @@ const COPY = {
     trust:
       'Any action with impact passes by a human. Every recommendation shows what it is based on. Everything is logged. That way AI can do the work without you losing your grip.',
     broadening:
-      'We started in marketing. That is where we know the practice and where the first proof lies. But Stevin is not only marketing. The same engine is built to work just as well for construction, engineering, installation, maintenance and finance. Anywhere information is scattered, decisions get stuck and follow-up can be better.',
+      'We started in marketing because we did the work ourselves for twenty years. That is also why we dared to build the AI around it: you have to know how the work works to see when a model is wrong. Which is why there is always a person between the model and the decision. What sits underneath is not specific to marketing: information scattered across systems, decisions left hanging, follow-up that could be better. That problem is the same everywhere.',
     krachtenH: 'Making visible how forces work together',
     krachten1: 'Simon Stevin made visible how forces work together.',
     krachten2:
