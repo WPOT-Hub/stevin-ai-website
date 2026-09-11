@@ -6,6 +6,7 @@ import { getArticleFaqs } from '@/data/faqs'
 import ReadingProgress from '@/components/blog/ReadingProgress'
 import { metaOmschrijving } from '@/lib/seo'
 import { PosterWatermark } from '@/components/blog/PosterWatermark'
+import DomeinCheckAnimatie from '@/components/blog/DomeinCheckAnimatie'
 
 // ── Publicatie-vangrail ─────────────────────────────────────────────────────
 // De auto-publish doet het in twee stappen: eerst het artikel-record, daarna
@@ -40,7 +41,10 @@ export async function generateMetadata({
   // app/[locale]/blog/[slug]/opengraph-image.tsx)
   const ogImage = `https://stevin.ai/blog/${a.slug}/opengraph-image`
   return {
-    title: `${a.title} | Stevin Journal`,
+    // De layout plakt er via het template al " | Stevin.AI" achter. Zelf ook
+    // nog " | Stevin Journal" toevoegen gaf een dubbele staart en titels van 68
+    // tot 92 tekens, terwijl Google rond de 60 afkapt.
+    title: a.title,
     description: metaOmschrijving(a.dek),
     openGraph: {
       type: 'article',
@@ -316,6 +320,9 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'bureau-geen-toegang-advertentieaccount' && (
             <ArticleTegenwerpingenBody />
           )}
+          {article.format === 'editorial' && article.slug === 'wie-is-eigenaar-van-je-domeinnaam' && (
+            <ArticleDomeinBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
@@ -330,6 +337,7 @@ export default async function ArticlePage({
             article.slug !== 'lecun-miljard-tegen-het-taalmodel' &&
             article.slug !== 'wie-is-eigenaar-van-je-advertentiedata' &&
             article.slug !== 'bureau-geen-toegang-advertentieaccount' &&
+            article.slug !== 'wie-is-eigenaar-van-je-domeinnaam' &&
             article.slug !== 'wk-2026-campagne-data-voorbereiding' && (
               <ArticleStubBody article={article} />
             )}
@@ -9348,7 +9356,11 @@ function ArticleTransparencyBody() {
   return (
     <>
       <p className="lead-para">
-        Draai je je advertenties via een extern bureau, dan is de kans groot dat de accounts, de pixels en de opgebouwde data op naam van dat bureau staan, niet op die van jou. Je betaalt dan voor de media, maar het geheugen (de data en de leercurve) bouwt zich op buiten je bedrijf. Dat weegt zwaarder nu marketing steeds meer op AI draait: een AI-laag kan alleen goede beslissingen voor je nemen als ze op jouw eigen data leert. Is die data niet van jou, dan bouw je geen eigen marketing-brein op. Sinds de Europese Digital Services Act laten Google, Meta, LinkedIn, TikTok en Microsoft zien wie een advertentie betaalt. <a href="#platforms" style={extLink}>In twee minuten controleer je in de openbare advertentiebibliotheek</a> of dat bij jou de eigen naam is, of die van je bureau.
+        Draai je je advertenties via een extern bureau, dan is de kans groot dat de accounts, de pixels en de opgebouwde data op naam van dat bureau staan en niet op die van jou. Je kunt dat zelf nakijken, zonder in te loggen en zonder het aan iemand te vragen. Sinds de Europese Digital Services Act laten Google, Meta, LinkedIn, TikTok en Microsoft bij elke advertentie zien wie hem betaalt. <a href="#platforms" style={extLink}>In twee minuten zoek je in de openbare advertentiebibliotheek op</a> of daar jouw eigen naam staat of die van je bureau.
+      </p>
+
+      <p>
+        Waarom dat uitmaakt: je betaalt wel voor de media, maar alles wat de campagnes ondertussen leren bouwt zich op buiten je eigen bedrijf. Stap je over, dan verhuist die geschiedenis meestal niet mee. En een AI-laag kan pas goede beslissingen voor je nemen als ze op jouw eigen data heeft geleerd.
       </p>
 
       <Callout
@@ -9736,6 +9748,14 @@ function ArticleTransparencyBody() {
         Het punt is niet dat bureaus onbetrouwbaar zijn. Het punt is dat eigenaarschap van je eigen marketingdata een keuze hoort te zijn die je bewust maakt, niet een die je overkomt omdat je nooit in dat ene veld hebt gekeken. Twee minuten in de advertentiebibliotheek, en je weet waar je staat.
       </p>
 
+      <p>
+        Staat daar een andere naam dan die van jou, en wil je het niet alleen uitzoeken? Laat je website achter bij de{' '}
+        <a href="/marketing-check" style={extLink}>
+          marketing check
+        </a>
+        . Dan kijken we mee en zeggen we wat we zien.
+      </p>
+
       <EndRule />
       <EndSig>&quot;Wonder en is gheen wonder.&quot; · Editie 020 / 052</EndSig>
     </>
@@ -9760,13 +9780,17 @@ function ArticleTegenwerpingenBody() {
   return (
     <>
       <p className="lead-para">
-        Vraag je je bureau om het advertentieaccount op naam van je eigen bedrijf te zetten, dan hoor je zelden gewoon nee. Je krijgt een technische reden. Wij hebben acht van die redenen, zoals we ze in gesprekken met adverteerders terugkregen, naast de eigen documentatie van Google en Meta gelegd. Zeven houden geen stand. Een klopt wel, en dat is juist de reden die het minst genoemd wordt. Dit stuk is het vervolg op <a href="/blog/wie-is-eigenaar-van-je-advertentiedata" style={extLink}>de vraag wie eigenaar is van je advertentiedata</a>: daar zoek je op wie er als betaler staat, hier lees je wat je terugkrijgt als je er iets van zegt.
+        De meeste adverteerders hebben er nooit naar gevraagd. Dat is ook niet zo gek: zolang de campagnes lopen is er geen aanleiding. Maar vraag je wel of het advertentieaccount op naam van je eigen bedrijf kan, dan hoor je zelden gewoon nee. Je krijgt een technische reden. Wij hebben acht van die redenen, zoals we ze in gesprekken met adverteerders terugkregen, naast de eigen documentatie van Google en Meta gelegd. Zeven houden geen stand als reden om het niet te doen. Een klopt wel, en dat is juist de reden die het minst genoemd wordt. Dit stuk is het vervolg op <a href="/blog/wie-is-eigenaar-van-je-advertentiedata" style={extLink}>de vraag wie eigenaar is van je advertentiedata</a>: daar zoek je op wie er als betaler staat, hier lees je wat je terugkrijgt als je er iets van zegt.
       </p>
 
       <Callout
         big="7 van 8"
-        label="Zoveel van de tegenwerpingen houden geen stand tegen wat Google en Meta zelf in hun handleiding schrijven. Onder elk antwoord staat de brontekst, zodat je die kunt nalezen of meesturen."
+        label="Zoveel van de tegenwerpingen houden geen stand als reden om het account niet op jouw naam te zetten. Bij zes staat het antwoord in de handleiding van Google of Meta zelf, en die brontekst staat er onder. De zevende gaat niet over het platform maar over je contract."
       />
+
+      <p>
+        Een ding vooraf, want anders leest de rest verkeerd. Dit is geen stuk tegen bureaus. De meeste doen het zo omdat het ooit zo begonnen is, niet omdat ze iets willen vasthouden, en zetten het zonder morren recht als je erom vraagt. Wat je zoekt is dan ook niet ja of nee, maar of het antwoord ergens op slaat.
+      </p>
 
       <H2 num="01">&quot;Dan heb je toegang tot al onze advertentieaccounts&quot;</H2>
 
@@ -9997,15 +10021,159 @@ function ArticleTegenwerpingenBody() {
       />
 
       <p>
-        Een bureau dat hier ontspannen op reageert, is geen bureau dat iets te verbergen heeft. De meeste doen dit gewoon zo omdat het ooit zo begon, en zetten het zonder morren recht. Wat je zoekt is niet ja of nee, maar of het antwoord ergens op slaat. Weet je nog niet hoe het bij jou staat, dan begin je{' '}
+        Weet je nog niet hoe het bij jou staat, dan begin je{' '}
         <a href="/blog/wie-is-eigenaar-van-je-advertentiedata" style={extLink}>
           bij het veld met de betaler
         </a>
-        . Dat kost twee minuten.
+        . Dat kost twee minuten en je hebt er niemand voor nodig.
+      </p>
+
+      <p>
+        Staat daar een andere naam dan die van jou, en wil je dit gesprek niet alleen voeren? Laat je website achter bij de{' '}
+        <a href="/marketing-check" style={extLink}>
+          marketing check
+        </a>
+        . Dan kijken we mee en zeggen we wat we zien.
       </p>
 
       <EndRule />
       <EndSig>&quot;Wonder en is gheen wonder.&quot; &middot; Editie 021 / 052</EndSig>
+    </>
+  )
+}
+
+function ArticleDomeinBody() {
+  const extLink = { color: 'var(--accent)', fontWeight: 600, textDecoration: 'none' }
+  return (
+    <>
+      <p className="lead-para">
+        Je domeinnaam is het enige onderdeel van je bedrijf waar alles aan hangt: je website, je mail, je inloggegevens bij half het internet. En bij veel ondernemers staat hij niet op naam van hun eigen bedrijf, maar op die van de partij die ooit de site heeft gebouwd. Je kunt in twee minuten zelf opzoeken hoe het bij jou staat, zonder in te loggen en zonder het aan iemand te vragen.
+      </p>
+
+      <Callout
+        big="2 min"
+        label="Zolang duurt het om op te zoeken wie de houder van je domein is. Bij .nl, .be en .eu staat de naam er meestal gewoon bij. Geen account nodig, geen kosten."
+      />
+
+      <p>
+        Een ding vooraf, want anders leest de rest verkeerd. Dit gebeurt zelden met opzet. Er moest snel een site komen, iemand registreerde het domein even op zijn eigen account om door te kunnen, en daarna heeft niemand er meer naar gekeken. Dat is geen kwade wil, dat is haast. Het punt is alleen dat het zo blijft staan tot iemand het rechtzet, en dat je dat het liefst doet op een moment dat het niet uitmaakt.
+      </p>
+
+      <H2 num="01">Drie dingen die mensen door elkaar halen</H2>
+
+      <p>
+        Bij een domeinnaam horen verschillende rollen, en die worden vaak op een hoop gegooid. Het helpt om ze te zien als een huis.
+      </p>
+
+      <p>
+        De <b>houder</b> is de eigenaar. Dat zijn de eigendomspapieren. Het <b>administratief contact</b> is wie wijzigingen mag doorvoeren: die heeft een sleutel laten bijmaken. En de <b>nameservers</b> bepalen waar het domein naartoe wijst, dus welke deur er opengaat als iemand aanbelt. Je kunt prima een bureau een sleutel geven. Je wilt alleen niet dat de papieren op hun naam staan.
+      </p>
+
+      <H2 num="02">Waar je het opzoekt</H2>
+
+      <p>
+        Elke extensie heeft zijn eigen register, en die registers zijn openbaar. Zoek op je eigen domein, zonder www ervoor.
+      </p>
+
+      <Takeaways
+        label="DE REGISTERS"
+        title="Vier plekken, een per extensie"
+        items={[
+          { pct: '.nl', text: (<><b>sidn.nl/whois</b>{' '}De beheerder van .nl. Kijk bij het veld Houder.</>) },
+          { pct: '.be', text: (<><b>dnsbelgium.be/nl/whois</b>{' '}De beheerder van .be.</>) },
+          { pct: '.eu', text: (<><b>whois.eurid.eu</b>{' '}EURid, ook in het Nederlands.</>) },
+          { pct: '.com', text: (<><b>lookup.icann.org</b>{' '}De officiele opzoekdienst van ICANN, werkt ook voor .net en .org.</>) },
+        ]}
+      />
+
+      <H2 num="03">Zo ziet dat eruit</H2>
+
+      <p>
+        Hieronder staan allebei de schermen nagebouwd, met een domein dat iedereen kent. Let bij .nl op de derde stap: SIDN laat de gegevens pas zien nadat je akkoord gaat met hun voorwaarden. Zonder dat vinkje krijg je niets, en dan denk je ten onrechte dat het niet werkt.
+      </p>
+
+      <DomeinCheckAnimatie />
+
+      <p>
+        Bij nu.nl klopt het zoals het hoort: de houder is DPG Media Group, het administratief contact is een adres van datzelfde bedrijf. Papieren en sleutel liggen allebei op de goede plek. Dat is waar je naar op zoek bent in je eigen resultaat.
+      </p>
+
+      <H2 num="04">Bij een .com zie je de eigenaar meestal niet</H2>
+
+      <p>
+        Sinds de privacyregels tonen de registers achter .com, .net en .org de naam van de houder niet meer. In het scherm van apple.com staat bij de eigenaar letterlijk dat de gegevens zijn afgeschermd. Dat is geen storing en het zegt ook niets over of het goed of fout staat.
+      </p>
+
+      <p>
+        Wat je bij een .com wel ziet, is de registrar, het land, de datums en de status. En juist die status is interessant. Apple heeft zijn domein op slot gezet: er staat zes keer een verbod op, op verhuizen, wijzigen en verwijderen, op twee niveaus tegelijk. Er kan niets met dat domein gebeuren zonder dat Apple het zelf openzet. Dat slot kun jij bij je eigen registrar ook aanzetten, en het kost niets.
+      </p>
+
+      <H2 num="05">De echte test is niet de whois</H2>
+
+      <p>
+        Hier zit de valkuil die bijna niemand ziet aankomen. In het register kan gewoon jouw eigen bedrijfsnaam staan terwijl je er niet bij kunt. De whois toont de eigendomspapieren, niet wie de sleutel in zijn zak heeft. De echte test is simpeler: kun jij zelf inloggen bij de partij waar het domein geregistreerd staat?
+      </p>
+
+      <p>
+        Probeer het, en let dan op een detail dat veel mensen pas ontdekken als het te laat is. Het herstelmailadres van zo'n account is vaak iets als info@jouwbedrijf.nl. Draait die mailbox bij dezelfde partij die je buiten wilt zetten, dan kun je niet eens een wachtwoord opvragen zonder hun hulp. Zet daar een adres neer dat losstaat van dat domein.
+      </p>
+
+      <H2 num="06">Staat het niet goed, dan zet je het rustig recht</H2>
+
+      <p>
+        Begin met vragen. In verreweg de meeste gevallen is er niets aan de hand en regelt de andere partij het gewoon. Wat je dan nodig hebt heet een verhuistoken: een code die je opvraagt bij de huidige registrar en waarmee het domein naar jouw eigen account gaat, desnoods bij een andere partij.
+      </p>
+
+      <p>
+        <b>Neem eerst je DNS-instellingen over, voordat de verhuizing loopt.</b> Dat is de stap die vergeten wordt en die het meeste kapotmaakt. In die instellingen staat waar je mail heen gaat en waar je website staat. Verhuis je zonder ze eerst te noteren en opnieuw te zetten, dan ligt je mail er een halve dag uit terwijl niemand snapt waarom.
+      </p>
+
+      <p>
+        Bij een .com of .net levert een verhuizing meteen een extra jaar registratie op, dat is de regel van ICANN. Bij .nl loopt de looptijd via het abonnement bij je registrar; vraag dus even wat er met de einddatum gebeurt. Duur is het in geen van beide gevallen.
+      </p>
+
+      <H2 num="07">En daarna: sleutel en papieren apart</H2>
+
+      <p>
+        Staat het eenmaal goed, dan houd je het goed met vier dingen. Het domein staat in een account van je eigen bedrijf. Het herstelmailadres van dat account staat niet op datzelfde domein. Er staat tweestapsverificatie op. En je bureau krijgt toegang als technisch of administratief contact, niet als houder.
+      </p>
+
+      <p>
+        Dat laatste is geen wantrouwen, het is gewoon hoe je het regelt met iets waar je bedrijf aan hangt. Je geeft de aannemer ook een sleutel van de voordeur zonder het huis op zijn naam te zetten.
+      </p>
+
+      <H2 num="08">Wat je onthoudt</H2>
+
+      <Takeaways
+        label="VIJF ZINNEN"
+        title="Genoeg om het na te kijken"
+        items={[
+          { pct: '01', text: (<><b>Kijk bij Houder.</b> Staat daar je eigen bedrijfsnaam, dan zijn de papieren van jou. Bij .nl, .be en .eu staat die naam er meestal gewoon.</>) },
+          { pct: '02', text: (<><b>Bij .com zie je de eigenaar niet.</b> Dat is de privacyregel en geen fout. Kijk daar naar de status en naar je eigen inlog.</>) },
+          { pct: '03', text: (<><b>De whois is niet de echte test.</b> Die is: kun jij zelf inloggen bij de registrar.</>) },
+          { pct: '04', text: (<><b>Let op je herstelmailadres.</b> Staat dat op het domein zelf, dan kun je jezelf niet helpen als het misgaat.</>) },
+          { pct: '05', text: (<><b>Rechtzetten gaat met een verhuistoken.</b> Neem eerst je DNS-instellingen over, anders ligt je mail eruit.</>) },
+        ]}
+      />
+
+      <p>
+        Weet je niet hoe het bij jou staat, dan is dat geen slecht teken. Bijna niemand weet het. Zoek je domein op bij het register van je extensie en kijk bij de houder. Dat kost twee minuten en je hebt er niemand voor nodig.
+      </p>
+
+      <p>
+        Staat daar een andere naam dan die van jou, en wil je het niet alleen uitzoeken? Laat je website achter bij de{' '}
+        <a href="/marketing-check" style={extLink}>
+          marketing check
+        </a>
+        . Dan kijken we mee en zeggen we wat we zien. Hoort je advertentiedata ook bij dit rijtje, dan begin je{' '}
+        <a href="/blog/wie-is-eigenaar-van-je-advertentiedata" style={extLink}>
+          bij het veld met de betaler
+        </a>
+        .
+      </p>
+
+      <EndRule />
+      <EndSig>&quot;Wonder en is gheen wonder.&quot; &middot; Editie 022 / 052</EndSig>
     </>
   )
 }

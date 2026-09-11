@@ -6338,11 +6338,26 @@ const allArticles: Article[] = [
 
   /* ─── EDITORIALS ─── */
   {
+    slug: 'wie-is-eigenaar-van-je-domeinnaam',
+    format: 'editorial' as const,
+    edition: '022',
+    category: 'Data ownership',
+    title: 'Wie is eigenaar van je domeinnaam?',
+    dek: 'Staat je domein niet op naam van je eigen bedrijf, dan heb je de sleutel van je onderneming aan iemand anders gegeven. Je kunt in twee minuten zelf opzoeken hoe het bij jou staat, bij .nl, .be, .eu en .com. En als het niet klopt, zet je het rustig recht.',
+    publishedAt: '2026-09-11',
+    readMinutes: 7,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DATA OWNERSHIP',
+    posterTopic: 'De sleutel van je bedrijf.',
+    source: { url: 'https://www.sidn.nl/whois', name: 'SIDN Whois' },
+  },
+  {
     slug: 'bureau-geen-toegang-advertentieaccount',
     format: 'editorial' as const,
     edition: '021',
     category: 'Data ownership',
-    title: 'Wat je bureau zegt als je om toegang vraagt, en wat ervan klopt',
+    title: 'Wat je bureau zegt als je om toegang vraagt',
     dek: 'Vraag je om het advertentieaccount op naam van je eigen bedrijf, dan hoor je zelden gewoon nee. Je krijgt een technische reden. Acht van die redenen, naast de eigen documentatie van Google en Meta gelegd. Zeven houden geen stand. Een klopt wel.',
     publishedAt: '2026-09-10',
     readMinutes: 8,
