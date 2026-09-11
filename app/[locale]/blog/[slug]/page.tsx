@@ -9404,7 +9404,23 @@ function ArticleTransparencyBody() {
       <H2 num="02" id="platforms">Op welke platforms kun je het opzoeken?</H2>
 
       <p>
-        De platforms waar de meeste bedrijven adverteren hebben een openbare bibliotheek waarin je zonder inloggen kunt zoeken. Klik op een van de vier hieronder, typ je bedrijfsnaam en zet het land op Nederland of Belgie. Kijk daarna bij het veld met de betaler. Daaronder staat de volledige lijst.
+        De platforms waar de meeste bedrijven adverteren hebben een openbare bibliotheek waarin je zonder inloggen kunt zoeken. Klik op een van de vier hieronder en zet het land op Nederland of Belgie. Daaronder staat de volledige lijst.
+      </p>
+
+      <p>
+        <b>Zoek daarbij op je website, niet op je bedrijfsnaam.</b> Dat is het verschil tussen wel en niet vinden waar het om gaat. Zoek je op je naam, dan krijg je je eigen advertentieaccount te zien, constateer je dat alles er normaal uitziet en ben je klaar. Zoek je op je domein, dan verzamelt Google alle accounts waarvan advertenties naar jouw site wijzen, en staat dat eigen account daar gewoon tussen. Lopen er meerdere, dan waarschuwt Google daar zelf voor boven de resultaten.
+      </p>
+
+      <Bron bron="Google Centrum voor advertentietransparantie" url="https://adstransparency.google.com">
+        Dit domein bevat resultaten voor meerdere adverteerdersaccounts met advertenties die omleiden naar dit domein. Je kunt hieronder filteren op individuele adverteerders.
+      </Bron>
+
+      <p>
+        Filter dan per adverteerder. Staat daar een naam die niet van jou is, dan draaien er advertenties naar jouw website vanaf het account van een ander bedrijf. Dat is het geval dat je zoekt, en het sluit niet uit dat je er daarnaast ook gewoon zelf staat. Allebei tegelijk komt vaak voor, en juist daarom kom je er met zoeken op je eigen naam niet achter.
+      </p>
+
+      <p>
+        Schrijf op waar je het gevonden hebt: in welke bibliotheek, voor welk land, op welke zoekterm en onder welke adverteerder. Zonder die vier is het later niet terug te vinden, en je wilt precies kunnen aanwijzen wat je gezien hebt als je het gesprek erover voert.
       </p>
 
       <div
