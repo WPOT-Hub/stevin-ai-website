@@ -393,3 +393,122 @@ section {
   .journal-body h2 { font-size: 24px; line-height: 1.28; letter-spacing: -0.018em; margin: 40px 0 14px; }
   .journal-body h3 { font-size: 19px; }
 }
+
+/* ── Domeincheck-animatie (blog, editie 022) ─────────────────────────────────
+   Nagebouwde whois-schermen in plaats van een schermopname: scherp op elk
+   scherm, kleurt mee in donkere modus, weegt bijna niets en veroudert niet
+   als SIDN of ICANN hun site verft. Component: components/blog/DomeinCheckAnimatie.tsx */
+
+.dca { margin: 40px 0; padding: 0; }
+
+.dca-tabs { display: flex; border-bottom: 1px solid var(--border); }
+.dca-tab {
+  appearance: none; background: none; border: 0; border-bottom: 2px solid transparent;
+  font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.06em;
+  color: var(--muted); padding: 10px 16px; cursor: pointer; margin-bottom: -1px;
+}
+.dca-tab[aria-selected='true'] { color: var(--accent); border-bottom-color: var(--accent); }
+.dca-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.dca-venster {
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  background: var(--bg); margin-top: 20px;
+}
+.dca-balk {
+  display: flex; align-items: center; gap: 8px; padding: 9px 14px;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+}
+.dca-bol { width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
+.dca-url {
+  flex: 1; margin-left: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
+  color: var(--muted); background: var(--bg); border: 1px solid var(--border);
+  border-radius: 5px; padding: 4px 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.dca-scherm {
+  padding: 26px 22px; min-height: 268px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+.dca-stap { animation: dca-op 0.34s ease-out; }
+@keyframes dca-op { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.dca-zoek { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; align-items: stretch; }
+.dca-veld {
+  flex: 1; border: 1px solid var(--border); border-radius: 7px; padding: 11px 14px;
+  font-family: 'JetBrains Mono', monospace; font-size: 15px; background: var(--bg); color: var(--fg);
+}
+.dca-caret {
+  display: inline-block; width: 1px; height: 1.05em; background: var(--accent);
+  vertical-align: -2px; margin-left: 1px; animation: dca-knipper 1s steps(1) infinite;
+}
+@keyframes dca-knipper { 50% { opacity: 0; } }
+.dca-knop {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 7px; background: var(--accent); color: #fff;
+  font-weight: 600; font-size: 14px; padding: 11px 20px; white-space: nowrap;
+}
+.dca-spook { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+
+.dca-melding { text-align: center; }
+.dca-dom { font-family: var(--font-serif, Georgia), serif; font-size: 26px; margin: 0 0 4px; }
+.dca-dom b { color: var(--accent); font-weight: 500; }
+.dca-sub { color: var(--muted); margin: 0 0 20px; font-size: 14px; }
+
+.dca-modal { max-width: 380px; margin: 0 auto; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.dca-modalkop { background: #123a6b; color: #fff; padding: 13px 18px; font-weight: 600; font-size: 15px; }
+.dca-modallijf { padding: 18px; text-align: center; }
+.dca-modallijf p { margin: 0 0 16px; font-size: 13.5px; color: var(--muted); }
+.dca-vink { display: flex; align-items: center; justify-content: center; gap: 9px; font-size: 13px; margin-bottom: 16px; }
+.dca-vak {
+  width: 15px; height: 15px; border: 1.5px solid var(--accent); border-radius: 3px;
+  display: inline-block; position: relative; background: var(--accent);
+}
+.dca-vak::after {
+  content: ''; position: absolute; left: 4px; top: 1px; width: 4px; height: 8px;
+  border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(42deg);
+}
+
+.dca-tabel { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.dca-tabel td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.dca-tabel tr:last-child td { border-bottom: 0; }
+.dca-k {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--muted); width: 44%; white-space: nowrap;
+}
+.dca-v { color: var(--fg); }
+.dca-licht td { background: var(--surface); border-bottom-color: transparent; }
+.dca-licht .dca-k { color: var(--accent); }
+.dca-licht .dca-v { font-weight: 600; }
+.dca-licht td:first-child { border-radius: 6px 0 0 6px; }
+.dca-licht td:last-child { border-radius: 0 6px 6px 0; }
+.dca-redact { color: var(--muted); font-style: italic; }
+.dca-slot { color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 12px; display: block; }
+
+.dca-onder {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 11px 16px; border-top: 1px solid var(--border); background: var(--surface);
+}
+.dca-bij { font-size: 12.5px; color: var(--muted); flex: 1; min-height: 1.5em; }
+.dca-bij b { color: var(--fg); font-weight: 600; }
+.dca-stippen { display: flex; gap: 6px; }
+.dca-stip { width: 22px; height: 3px; border-radius: 2px; background: var(--border); border: 0; padding: 0; cursor: pointer; }
+.dca-stip[aria-current='true'] { background: var(--accent); }
+.dca-stip:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.dca-les {
+  margin: 22px 0 0; padding: 16px 18px; border-left: 2px solid var(--accent);
+  border-radius: 0 8px 8px 0; font-size: 14.5px; color: var(--muted); background: var(--surface);
+}
+.dca-les b { color: var(--fg); }
+
+@media (max-width: 560px) {
+  .dca-scherm { padding: 20px 16px; min-height: 300px; }
+  .dca-tabel .dca-k { width: 100%; display: block; border: 0; padding-bottom: 2px; }
+  .dca-tabel .dca-v { display: block; padding-top: 0; }
+  .dca-licht td:first-child { border-radius: 6px 6px 0 0; }
+  .dca-licht td:last-child { border-radius: 0 0 6px 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dca-stap { animation: none; }
+  .dca-caret { animation: none; }
+}
