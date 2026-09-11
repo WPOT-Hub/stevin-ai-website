@@ -9380,7 +9380,7 @@ function ArticleTransparencyBody() {
 
       <Callout
         big="2 min"
-        label="Zolang duurt het om zelf op te zoeken wie jouw advertenties betaalt. Ga naar de advertentiebibliotheek van het platform, typ je bedrijfsnaam, open een advertentie en kijk bij het veld &quot;Betaald door&quot;. Geen account nodig, geen kosten."
+        label="Zolang duurt het om zelf op te zoeken wie jouw advertenties betaalt. Ga naar de advertentiebibliotheek van het platform, typ het adres van je website, open een advertentie en kijk bij het veld &quot;Betaald door&quot;. Geen account nodig, geen kosten."
       />
 
       <p>
