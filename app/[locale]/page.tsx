@@ -84,7 +84,7 @@ const COPY = {
     ladder_grip: 'Eerst grip',
     ladder_dan: 'Dan pas dit',
     ladder: [
-      { n: '01', t: 'Eigenaarschap', d: 'De accounts staan op naam van je bedrijf en jij bepaalt wie erbij mag. Zonder dit kun je morgen niet wisselen van uitvoerder, hoe goed de rest ook staat.' },
+      { n: '01', t: 'Op jouw naam', d: 'De accounts staan op naam van je bedrijf en jij bepaalt wie erbij mag. Zonder dit kun je morgen niet wisselen van uitvoerder, hoe goed de rest ook staat.' },
       { n: '02', t: 'Meting', d: 'Een conversie is een echte aanvraag, geen knopklik. Vuurt je meting op het verkeerde moment, dan is elk cijfer erboven onbruikbaar.' },
       { n: '03', t: 'Een bron', d: 'Een plek waar de cijfers samenkomen, in plaats van vier dashboards die elkaar tegenspreken. Anders discussieer je over wie gelijk heeft in plaats van over wat je doet.' },
       { n: '04', t: 'Geheugen', d: 'Wat is er geprobeerd, waarom, en wat kwam eruit. Zonder dat begint elke nieuwe partij weer bij nul, en betaal je twee keer voor dezelfde les.' },
@@ -496,36 +496,15 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── KANALEN ── */}
-      <div className="bg-white border-y border-border">
-        <div className="mx-auto max-w-[1200px] px-6 py-8">
-          <p className="text-[11px] font-display font-bold text-muted uppercase tracking-[0.08em] text-center mb-5">
-            {c.connectors_label}
-          </p>
-          <div className="flex items-center justify-center gap-7 sm:gap-10 flex-wrap">
-            {[
-              { s: 'google-ads', n: 'Google Ads' },
-              { s: 'meta', n: 'Meta' },
-              { s: 'instagram', n: 'Instagram' },
-              { s: 'tiktok', n: 'TikTok' },
-              { s: 'youtube', n: 'YouTube' },
-              { s: 'linkedin', n: 'LinkedIn' },
-              { s: 'google-analytics', n: 'Google Analytics' },
-            ].map((l) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                key={l.s}
-                src={`/logos/tools/${l.s}.svg`}
-                alt={l.n}
-                style={{ height: '26px', width: 'auto', opacity: 0.5 }}
-              />
-            ))}
-            <Link href="/integraties" className="text-[13px] font-display font-semibold text-accent hover:opacity-80 transition-opacity">
-              en 245+ andere &rarr;
-            </Link>
-          </div>
-        </div>
-      </div>
+      {/* ── KLANTLOGOS (W-078, 13 sep 2026) ──
+          Stond hier eerst de strook met platformlogo's en "en 245+ andere".
+          Die zegt "wij koppelen met alles", en dat is de taal van een
+          datapijplijn terwijl /platform juist zegt dat we NIET met je kassa of
+          ERP koppelen. De koper die hier landt kan niet bij zijn eigen account;
+          die wordt niet overtuigd door 245 tools maar door bedrijven zoals hij.
+          De platformlogo's staan nu verderop, teruggebracht tot wat echt
+          dagelijks meeleest. */}
+      <KlantLogos locale={locale} />
 
       {/* ── HERKEN JE DIT ── */}
       <section className="bg-white" style={{ padding: '112px 24px 96px' }}>
@@ -695,9 +674,6 @@ export default async function HomePage({ params }: Props) {
           daarna concreter omdat je weet waar ze naartoe werken.
           Zelfde component als op de SEO-landingspagina's. */}
       <DeskProof locale={locale} />
-
-      {/* ── KLANTLOGOS (W-078) ── */}
-      <KlantLogos locale={locale} />
 
       {/* ── HOE HET WERKT ── */}
       <section id="hoe-het-werkt" className="bg-primary scroll-mt-24" style={{ padding: '112px 24px' }}>
