@@ -56,7 +56,12 @@ function isVariant(v: string | null): v is Variant {
 }
 
 export default function HeroHeadline({ locale }: { locale: string }) {
-  const [variant, setVariant] = useState<Variant>('c')
+  // Serverkant rendert deze variant, en dat is ook wat een crawler en de eerste
+  // verf te zien krijgen. Stond op 'c' ("marketing die elke maand beter wordt"),
+  // een belofte die we niet kunnen bewijzen en die op 13 sep 2026 uit de rotatie
+  // is gehaald. Nu de eerste uit ROTATION, zodat de standaard automatisch
+  // meeverhuist als de rotatie verandert.
+  const [variant, setVariant] = useState<Variant>(ROTATION[0])
   const [showSwitch, setShowSwitch] = useState(false)
 
   useEffect(() => {

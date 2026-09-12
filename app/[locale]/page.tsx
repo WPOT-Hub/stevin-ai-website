@@ -148,21 +148,24 @@ const COPY = {
       },
     ],
 
-    demo_eyebrow: 'Je marketinggeheugen',
-    demo_h2: 'Typ "zomer". Kijk wat er gebeurt.',
-    demo_lede: 'Alles wat er ooit gebeurde in jouw marketing blijft vindbaar. En bruikbaar.',
+    // 13 sep 2026 (W-078): 'je marketinggeheugen' is onze term. De winst voor
+    // hem staat in de gesprekken: bij een wissel begon alles weer bij nul en
+    // moest hij het opnieuw vertellen. Dat staat er nu boven, de demo blijft.
+    demo_eyebrow: 'Alles blijft terug te vinden',
+    demo_h2: 'Je hoeft het niet elk jaar opnieuw uit te leggen.',
+    demo_lede: 'Elke campagne, elk besluit en wat eruit kwam blijft staan. Wie hier volgend jaar begint, leest zich in. Typ \"zomer\" en kijk wat er tevoorschijn komt.',
 
     who_eyebrow: 'Voor wie',
     who: [
       {
-        k: 'Voor ondernemers', t: 'Je wilt er geen omkijken naar hebben, maar wel grip.',
-        d: 'Wij regelen het, en jij kunt altijd controleren of het klopt. Wij bouwen je exit in vanaf dag een: je zit nergens aan vast.',
-        link: 'Zo werkt managed', href: '/voor-ondernemers', img: '/images/voor-ondernemers.jpg', alt: 'Team van een Stevin-klant tijdens een overleg',
+        k: 'Wij doen het werk', t: 'Je wilt er geen omkijken naar hebben, maar wel kunnen zien wat er gebeurt.',
+        d: 'Wij richten in, draaien de campagnes en houden het bij. Jij kunt op elk moment nakijken wat er is gedaan en waarom. En je haalt ons er zelf af, zonder te bellen.',
+        link: 'Zo werkt dat', href: '/voor-ondernemers', img: '/images/voor-ondernemers.jpg', alt: 'Team van een Stevin-klant tijdens een overleg',
       },
       {
-        k: 'Voor marketingteams', t: 'Je team houdt de regie. Stevin houdt het overzicht.',
-        d: 'Sneller dan je bureau, elk besluit vastgelegd, inzicht tot op de marge. En vertrekt er iemand, dan vertrekt de kennis niet mee.',
-        link: 'Zo werkt het voor teams', href: '/voor-marketingteams', img: '/images/voor-teams.jpg', alt: 'Marketingteam in overleg',
+        k: 'Je doet het straks zelf', t: 'Wij zetten het goed en draaien mee tot het staat.',
+        d: 'Meestal zes tot twaalf maanden. Wat we doen en waarom komt in een dossier dat van jou is, zodat je eigen mensen meeleren. Daarna heb je ons alleen nog nodig om mee te kijken.',
+        link: 'Zo werkt de overdracht', href: '/voor-marketingteams', img: '/images/voor-teams.jpg', alt: 'Marketingteam in overleg',
       },
     ],
 
@@ -171,20 +174,20 @@ const COPY = {
     name_cards: [
       { g: 'S', t: 'Simon Stevin', d: 'De ingenieur uit Brugge die wiskunde naar gewone taal bracht.' },
       { g: '■', t: 'Goed gezet', d: 'Alles gemeten, alles vastgelegd, alles controleerbaar. Vakwerk in plaats van verkooppraatjes.' },
-      { g: '↓', t: 'Van jou', d: 'Kennis hoort bij de eigenaar. Jouw accounts, jouw data, jouw marketing-brein, wat er ook wisselt.' },
+      { g: '↓', t: 'Van jou', d: 'Wat er is geprobeerd en wat eruit kwam hoort bij jouw bedrijf. Je accounts, je cijfers en je geschiedenis, wie er ook wisselt.' },
     ],
     name_link: 'Het hele verhaal achter de naam',
     founder_quote: 'Twintig jaar zat ik aan de andere kant van de factuur. Ik weet hoe uren en mediamarges werken, want ik heb er zelf aan verdiend. Daarom is Stevin andersom gebouwd.',
     founder_role: 'Oprichter van Stevin',
 
     research_eyebrow: 'Ons onderzoek',
-    research_h2: 'Wij wijzen je op wat er al die tijd te zien was.',
+    research_h2: 'Staat jouw bedrijf er als betaler, of iemand anders?',
     research_chip: 'Teller loopt door',
     research_stats: [
       { v: '1,9 mln', l: 'advertenties van Nederlandse en Belgische bedrijven, doorlopend gevolgd in het openbare register van Google' },
     ],
-    research_cta_h: 'Wil je weten hoe het bij jullie zit?',
-    research_cta_b: 'Wij kijken na wie er in het register als betaler achter jouw advertenties staat, en wat dat betekent voor wie je data bezit.',
+    research_cta_h: 'Wij zoeken het voor je op',
+    research_cta_b: 'Google en Meta zetten openbaar online wie er voor een advertentie betaalt. Wij kijken na wat er bij jouw bedrijf staat. Daar heb je geen inlog voor nodig en het kost je niets.',
     research_cta_link: 'Neem contact op',
     research_bron: 'Bron: doorlopend Stevin-onderzoek op het openbare transparantieregister van Google, Nederland en Belgie, stand 12 september 2026: 4.610 bedrijven, waarvan er 2.624 een andere betaler hebben dan adverteerder.',
     research_body: 'Dit is Google en Meta. LinkedIn en TikTok tellen we hierna mee. Dit onderzoek loopt elke week door, en alles wat we vinden publiceren we met methode en al. Zo bouwen we het bewijs dat de markt anders kan.',
@@ -194,7 +197,7 @@ const COPY = {
     price_value: 'Vanaf 399',
     price_period: 'per maand',
     price_link: 'Bekijk alle tarieven',
-    price_body: 'Alles laten beheren kan ook, op maat en altijd na de diagnose. Geen verborgen marges op je mediabudget, geen instaptarief dat stiekem verdubbelt. En stoppen kan altijd, met alles wat van jou is.',
+    price_body: 'Wij doen het werk vanaf 1.399 per maand. Wil je het op termijn zelf kunnen, dan draaien we mee tot het staat, meestal zes tot twaalf maanden, en daarna zak je naar 399. Geen marge op je mediabudget, geen instaptarief dat stiekem verdubbelt, en stoppen kan altijd met alles wat van jou is.',
 
     faq_eyebrow: 'Veelgestelde vragen',
     faq_h2: 'Wat iedereen eerst wil weten.',
@@ -228,7 +231,7 @@ const COPY = {
     quotes: [
       { q: 'In one month I bought nearly 1,100 euro of leads. I got not a single job out of it.', a: 'Installation company' },
       { q: 'No, that is all on gut feeling. And in my head.', a: 'Owner, trading company' },
-      { q: 'He could work out my margin, because he knew what I paid. And I do not want that.', a: 'Repair company' },
+      { q: 'We pay a fortune for that every month and nothing happens.', a: 'Roofing and facade company' },
       { q: 'Those are all separate systems with their own logins. But there is no link anywhere, no central memory.', a: 'Marketing lead, international brand' },
     ],
     herken_close: 'These are not exceptions. This is how it works as long as nobody is watching.',
@@ -304,21 +307,21 @@ const COPY = {
       },
     ],
 
-    demo_eyebrow: 'Your marketing memory',
-    demo_h2: 'Type "summer". Watch what happens.',
-    demo_lede: 'Everything that ever happened in your marketing stays findable. And usable.',
+    demo_eyebrow: 'It all stays findable',
+    demo_h2: 'You do not have to explain it all over again every year.',
+    demo_lede: 'Every campaign, every decision and what came of it stays on record. Whoever starts here next year reads up. Type \"summer\" and see what comes up.',
 
     who_eyebrow: 'Who it is for',
     who: [
       {
-        k: 'For business owners', t: 'You want it off your plate, but with grip.',
-        d: 'We handle it, and you can always check that it is right. We build in your exit from day one: you are never locked in.',
-        link: 'How managed works', href: '/voor-ondernemers', img: '/images/voor-ondernemers.jpg', alt: 'Team at a Stevin client during a meeting',
+        k: 'We do the work', t: 'You want it off your plate, but you want to see what is happening.',
+        d: 'We set it up, run the campaigns and keep it up to date. You can check at any moment what was done and why. And you remove us yourself, without having to call.',
+        link: 'How that works', href: '/voor-ondernemers', img: '/images/voor-ondernemers.jpg', alt: 'Team at a Stevin client during a meeting',
       },
       {
-        k: 'For marketing teams', t: 'Your team keeps the lead. Stevin keeps the overview.',
-        d: 'Faster than your agency, every decision recorded, insight down to the margin. And when someone leaves, the knowledge does not leave with them.',
-        link: 'How it works for teams', href: '/voor-marketingteams', img: '/images/voor-teams.jpg', alt: 'Marketing team in a meeting',
+        k: 'You take it over later', t: 'We set it up properly and stay on until it stands.',
+        d: 'Usually six to twelve months. What we do and why goes into a file that is yours, so your own people learn along. After that you only need us to look over your shoulder.',
+        link: 'How the handover works', href: '/voor-marketingteams', img: '/images/voor-teams.jpg', alt: 'Marketing team in a meeting',
       },
     ],
 
@@ -327,7 +330,7 @@ const COPY = {
     name_cards: [
       { g: 'S', t: 'Simon Stevin', d: 'The engineer from Bruges who brought mathematics into plain language.' },
       { g: '■', t: 'Set right', d: 'Everything measured, everything recorded, everything verifiable. Craftsmanship instead of sales talk.' },
-      { g: '↓', t: 'Yours', d: 'Knowledge belongs to the owner. Your accounts, your data, your marketing brain, whoever comes or goes.' },
+      { g: '↓', t: 'Yours', d: 'What was tried and what came of it belongs to your company. Your accounts, your numbers and your history, whoever comes or goes.' },
     ],
     name_link: 'The full story behind the name',
     founder_quote: 'For twenty years I sat on the other side of the invoice. I know how hours and media margins work, because I earned from them myself. That is why Stevin is built the other way around.',
@@ -350,7 +353,7 @@ const COPY = {
     price_value: 'From 399',
     price_period: 'per month',
     price_link: 'See all pricing',
-    price_body: 'Full management is available too, tailored and always after the diagnosis. No hidden margins on your media budget, no entry price that quietly doubles. And you can always stop, with everything that is yours.',
+    price_body: 'We do the work from 1,399 per month. If you want to run it yourself later, we stay on until it stands, usually six to twelve months, and after that it drops to 399. No margin on your media budget, no entry price that quietly doubles, and you can stop at any time with everything that is yours.',
 
     faq_eyebrow: 'Frequently asked questions',
     faq_h2: 'What everyone wants to know first.',
@@ -574,57 +577,16 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── DE VOLGORDE ── */}
-      {/* De kern van de propositie, en hij stond nergens: eigenaarschap,
-          meting, een bron, geheugen, en pas dan automatiseren en AI. De
-          breuklijn tussen 04 en 05 is het hele punt, dus die is zichtbaar
-          gemaakt in plaats van weggewerkt. */}
-      <section className="bg-primary text-white" style={{ padding: '112px 24px' }}>
-        <div className="mx-auto max-w-[1200px]">
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/40 m-0 mb-4">{c.ladder_eyebrow}</p>
-          <h2 className="font-display font-extrabold m-0 mb-5" style={{ ...h2Style, maxWidth: '26ch' }}>
-            {c.ladder_h2}
-          </h2>
-          <p className="text-white/60 leading-[1.65] m-0 mb-14" style={{ fontSize: '17px', maxWidth: '62ch' }}>
-            {c.ladder_sub}
-          </p>
-
-          <div className="max-w-[900px]">
-            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-accent m-0 mb-6">{c.ladder_grip}</p>
-            {c.ladder.map((stap, i) => (
-              <Fragment key={stap.n}>
-                {i === 4 && (
-                  <div className="my-10 grid grid-cols-[1fr_auto_1fr] items-center gap-5">
-                    <span className="h-px bg-white/15" />
-                    <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">{c.ladder_dan}</span>
-                    <span className="h-px bg-white/15" />
-                  </div>
-                )}
-                <article className={`grid grid-cols-[44px_1fr] gap-6 py-6 ${i !== 0 && i !== 4 ? 'border-t border-white/10' : ''}`}>
-                  <span
-                    className="font-mono text-[13px] pt-1"
-                    style={{ color: i < 4 ? 'var(--color-accent)' : 'rgba(255,255,255,0.35)' }}
-                  >
-                    {stap.n}
-                  </span>
-                  <div>
-                    <h3 className="font-display font-bold text-white m-0 mb-2" style={{ fontSize: '19px', letterSpacing: '-0.01em' }}>
-                      {stap.t}
-                    </h3>
-                    <p className="text-white/60 leading-[1.6] m-0" style={{ fontSize: '15px', maxWidth: '62ch' }}>
-                      {stap.d}
-                    </p>
-                  </div>
-                </article>
-              </Fragment>
-            ))}
-          </div>
-
-          <p className="text-white/50 leading-[1.65] mt-12 mb-0" style={{ fontSize: '15px', maxWidth: '58ch' }}>
-            {c.ladder_slot}
-          </p>
-        </div>
-      </section>
+      {/* ── DE VOLGORDE ── van de homepage gehaald op 13 sep 2026 (W-078).
+          Zes stappen die eindigden bij "AI", met als kop "wat er moet kloppen
+          voordat AI iets voor je kan betekenen". Maatstaf van deze ronde: zou
+          de ondernemer die hier landt dit snappen en zou het hem iets schelen.
+          Nee op allebei. Hij besteedt zijn marketing uit en AI is zijn vraag
+          niet; zijn vraag is of hij kan zien wat er met zijn geld gebeurt. Het
+          blok dubbelde bovendien met "Hoe het werkt", dat hetzelfde zegt in
+          concrete stappen die hij wel herkent (diagnose, goed zetten, erop
+          letten). De copy (c.ladder_*) blijft in dit bestand staan en hoort
+          thuis op /platform, waar de lezer wel de marketeer is. */}
 
       {/* ── KIJK ZELF MEE (compact) ── */}
       {/* Was drie kaarten plus een logboekfiguur: een volle schermhoogte
