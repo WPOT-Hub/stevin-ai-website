@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-ontdekt-oplossing-millennium-probleem-navier-stokes',
+    format: 'dispatch' as const,
+    edition: '456',
+    category: 'Tech',
+    title: "AI lost millenniumprobleem op: wat betekent dit voor wetenschap en bedrijfsleven",
+    dek: "OpenAI beweert met behulp van kunstmatige intelligentie een oplossing te hebben gevonden voor het millenniumprobleem van de Navier-Stokes-vergelijkingen.",
+    publishedAt: '2026-09-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AI lost millenniumprobleem op: wat betekent dit voor wetenschap en bedrijfsleven",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-automatiseert-vrouwelijke-marketeers',
     format: 'dispatch' as const,
     edition: '455',
