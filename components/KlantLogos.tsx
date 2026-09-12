@@ -8,15 +8,19 @@
 // Totaallobby staat er bewust NIET bij: dat is een boektitel van Parrhesia,
 // geen apart bedrijf, en twee logo's zou als twee klanten lezen.
 
-type Klant = { src: string; naam: string; h: number }
+type Klant = { src: string; naam: string; h: number; o: number }
 
-// Hoogte per logo met de hand gezet, want optisch even groot is iets anders dan
-// even veel pixels: een woordmerk mag hoger dan een rond beeldmerk.
+// Hoogte EN dekking per logo met de hand gezet. Optisch even zwaar is iets
+// anders dan even veel pixels: Tonissteiner is zwart en breed en drukt de rij
+// plat, Antwerp Drone is lichtgrijs en valt juist weg. Daarom staat het zwarte
+// woordmerk lager en lichter, en het grijze beeldmerk hoger en voller.
+// mix-blend-mode multiply haalt de witte achtergrond uit de bestanden die er
+// een hebben (Parrhesia), zonder de originelen te bewerken.
 const KLANTEN: Klant[] = [
-  { src: '/logos/klanten/boersma-witgoed.png', naam: 'Boersma Witgoed', h: 36 },
-  { src: '/logos/klanten/antwerp-drone-company.png', naam: 'Antwerp Drone Company', h: 40 },
-  { src: '/logos/klanten/tonissteiner.svg', naam: 'Tonissteiner', h: 26 },
-  { src: '/logos/klanten/parrhesia.png', naam: 'Parrhesia', h: 44 },
+  { src: '/logos/klanten/boersma-witgoed.png', naam: 'Boersma Witgoed', h: 42, o: 0.8 },
+  { src: '/logos/klanten/antwerp-drone-company.png', naam: 'Antwerp Drone Company', h: 44, o: 1 },
+  { src: '/logos/klanten/tonissteiner.svg', naam: 'Tonissteiner', h: 23, o: 0.62 },
+  { src: '/logos/klanten/parrhesia.png', naam: 'Parrhesia', h: 40, o: 0.82 },
 ]
 
 const COPY = {
@@ -33,7 +37,7 @@ export default function KlantLogos({ locale }: { locale: string }) {
         <p className="text-[11px] font-display font-bold text-muted uppercase tracking-[0.08em] text-center mb-6">
           {c.label}
         </p>
-        <div className="flex items-center justify-center gap-10 sm:gap-14 flex-wrap">
+        <div className="flex items-center justify-center gap-12 sm:gap-16 flex-wrap">
           {KLANTEN.map((k) => (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -44,10 +48,11 @@ export default function KlantLogos({ locale }: { locale: string }) {
               style={{
                 height: `${k.h}px`,
                 width: 'auto',
-                maxWidth: '160px',
+                maxWidth: '170px',
                 objectFit: 'contain',
                 filter: 'grayscale(1)',
-                opacity: 0.72,
+                opacity: k.o,
+                mixBlendMode: 'multiply',
               }}
             />
           ))}
