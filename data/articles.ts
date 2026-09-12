@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'chinese-ai-bedrijven-gebruiken-distillatie-tegen-anthropic',
+    format: 'dispatch' as const,
+    edition: '458',
+    category: 'Tech',
+    title: "Chinese AI-bedrijven voeren stille oorlog met gestolen kennis",
+    dek: "Via gestolen trainingsdata en geheime modelaanpassingen proberen Alibaba, Moonshot AI en DeepSeek een concurrentievoordeel te behalen op Anthropic.",
+    publishedAt: '2026-09-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Chinese AI-bedrijven voeren stille oorlog met gestolen kennis",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-agenten-haten-captchas-zoals-mensen',
     format: 'dispatch' as const,
     edition: '457',
