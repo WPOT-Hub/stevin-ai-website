@@ -1,6 +1,14 @@
 export interface Integration {
   name: string
   slug: string
+  /**
+   * 13 sep 2026 (W-078): 'live' betekent dat er in de Hub een connector bestaat
+   * die deze bron daadwerkelijk uitleest, en dat er klantdata mee is opgehaald.
+   * Ontbreekt het veld, dan zegt de pagina daar bewust niets over: we hebben
+   * geen koppeling draaien, maar we beweren ook niet dat het niet kan.
+   * Nooit 'live' zetten zonder dat er een module in src/connectors/ staat.
+   */
+  status?: 'live'
   category: string
   shortDescription: string
   description: string
@@ -268,6 +276,7 @@ export const integrations: Integration[] = [
   {
     name: 'Google Ads',
     slug: 'google-ads',
+    status: 'live',
     category: 'advertising',
     shortDescription: 'Adverteren op Google Search, Display, Shopping en YouTube.',
     description: 'Google Ads is het grootste advertentieplatform ter wereld. Van zoekadvertenties tot shopping en display: het biedt directe toegang tot koopintentie. Maar zonder goede tracking, landingspagina\'s en opvolging is het ook een platform waar budget snel wordt verspild.',
@@ -288,6 +297,7 @@ export const integrations: Integration[] = [
   {
     name: 'Meta Ads',
     slug: 'meta-ads',
+    status: 'live',
     category: 'advertising',
     shortDescription: 'Adverteren op Facebook en Instagram voor bereik en leadgeneratie.',
     description: 'Meta Ads biedt toegang tot Facebook en Instagram. Ideaal voor bereik, retargeting en leadgeneratie. De kracht zit in de targeting en het volume, maar zonder goede tracking en opvolging zie je niet wat het oplevert.',
@@ -303,6 +313,7 @@ export const integrations: Integration[] = [
   {
     name: 'LinkedIn Ads',
     slug: 'linkedin-ads',
+    status: 'live',
     category: 'advertising',
     shortDescription: 'B2B-advertenties op LinkedIn voor gerichte leadgeneratie.',
     description: 'LinkedIn Ads is het belangrijkste B2B-advertentieplatform. De kosten per klik zijn hoger, maar de kwaliteit van leads is vaak beter. Dat maakt goede opvolging en tracking extra belangrijk.',
@@ -318,6 +329,7 @@ export const integrations: Integration[] = [
   {
     name: 'TikTok Ads',
     slug: 'tiktok-ads',
+    status: 'live',
     category: 'advertising',
     shortDescription: 'Adverteren op TikTok voor bereik bij jongere doelgroepen.',
     description: 'TikTok Ads groeit snel als advertentiekanaal, vooral voor merken die jongere doelgroepen willen bereiken. Het platform biedt unieke creatieve mogelijkheden maar vraagt om goede tracking en meetbaarheid.',
@@ -333,6 +345,7 @@ export const integrations: Integration[] = [
   {
     name: 'Pinterest Ads',
     slug: 'pinterest-ads',
+    status: 'live',
     category: 'advertising',
     shortDescription: 'Visuele advertenties op Pinterest voor inspiratie en aankoop.',
     description: 'Pinterest Ads richt zich op gebruikers in de inspiratie- en planningsfase. Ideaal voor e-commerce en merken met visuele producten. De intentie is hoog, maar tracking is essentieel om resultaat te meten.',
@@ -362,6 +375,7 @@ export const integrations: Integration[] = [
   {
     name: 'YouTube Ads',
     slug: 'youtube-ads',
+    status: 'live',
     category: 'advertising',
     shortDescription: 'Video-advertenties op YouTube voor bereik en conversie.',
     description: 'YouTube Ads is onderdeel van het Google-ecosysteem en biedt krachtige mogelijkheden voor video-advertising. Van awareness tot conversie: video is een steeds belangrijker onderdeel van de marketingmix.',
@@ -404,6 +418,7 @@ export const integrations: Integration[] = [
   {
     name: 'DV360',
     slug: 'dv360',
+    status: 'live',
     category: 'advertising',
     shortDescription: 'Programmatic advertising via Google Display & Video 360.',
     description: 'DV360 is Google\'s demand-side platform voor programmatic advertising. Het biedt toegang tot premium inventaris en geavanceerde targeting op grote schaal.',
@@ -687,6 +702,7 @@ export const integrations: Integration[] = [
   {
     name: 'Snapchat Ads',
     slug: 'snapchat-ads',
+    status: 'live',
     category: 'advertising',
     shortDescription: 'Adverteren op Snapchat voor jongere doelgroepen en AR-formats.',
     description: 'Snapchat Ads biedt toegang tot een jongere doelgroep via Stories, Spotlight en AR Lenses. Sterk voor merken met visueel sterke creatives en consumentengericht aanbod.',
@@ -731,6 +747,7 @@ export const integrations: Integration[] = [
   {
     name: 'Google Analytics 4',
     slug: 'google-analytics-4',
+    status: 'live',
     category: 'analytics-tracking',
     shortDescription: 'Websiteanalyse en conversietracking van Google.',
     description: 'Google Analytics 4 is de standaard voor websiteanalyse. Het biedt inzicht in gebruikersgedrag, verkeersbronnen en conversies. Maar alleen als het goed is ingericht, en dat is bij veel bedrijven niet het geval.',
@@ -750,6 +767,7 @@ export const integrations: Integration[] = [
   {
     name: 'Google Tag Manager',
     slug: 'google-tag-manager',
+    status: 'live',
     category: 'analytics-tracking',
     shortDescription: 'Tagmanagement voor het beheren van tracking en pixels.',
     description: 'Google Tag Manager is het centrale punt voor al je tracking. Pixels, events, conversies: alles wordt via GTM beheerd. Goed ingericht bespaart het tijd en voorkomt fouten. Slecht ingericht veroorzaakt dataverlies.',
@@ -766,6 +784,7 @@ export const integrations: Integration[] = [
   {
     name: 'Google Search Console',
     slug: 'google-search-console',
+    status: 'live',
     category: 'analytics-tracking',
     shortDescription: 'Inzicht in je organische zoekprestaties in Google.',
     description: 'Google Search Console laat zien hoe je website presteert in organische zoekresultaten. Van indexering tot zoekwoorden en technische problemen.',
@@ -866,6 +885,7 @@ export const integrations: Integration[] = [
   {
     name: 'Google Sheets',
     slug: 'google-sheets',
+    status: 'live',
     category: 'analytics-tracking',
     shortDescription: 'Google Sheets koppeling voor marketingdata, rapportages en workflows.',
     description: 'Een Google Sheets koppeling brengt marketingdata, leadlijsten en rapportage-exports samen zonder handmatig kopieren. Sheets werkt goed als flexibele tussenlaag, mits de bron, eigenaar en controles per datastroom duidelijk zijn.',
@@ -1250,6 +1270,7 @@ export const integrations: Integration[] = [
   {
     name: 'Mailchimp',
     slug: 'mailchimp',
+    status: 'live',
     category: 'email-automation',
     shortDescription: 'E-mailmarketing en basisautomation voor mkb.',
     description: 'Mailchimp is een van de bekendste e-mailmarketingplatformen. Eenvoudig te gebruiken, met mogelijkheden voor nieuwsbrieven, automations en landingspagina\'s.',
@@ -1264,6 +1285,7 @@ export const integrations: Integration[] = [
   {
     name: 'Klaviyo',
     slug: 'klaviyo',
+    status: 'live',
     category: 'email-automation',
     shortDescription: 'E-mailmarketing en automation specifiek voor e-commerce.',
     description: 'Klaviyo is de standaard voor e-commerce e-mailmarketing. Krachtige segmentatie, automation en integraties met webshopplatformen.',
@@ -1557,6 +1579,7 @@ export const integrations: Integration[] = [
   {
     name: 'Shopify',
     slug: 'shopify',
+    status: 'live',
     category: 'cms-ecommerce',
     shortDescription: 'Populair e-commerceplatform voor webshops.',
     description: 'Shopify is het meest populaire e-commerceplatform voor mkb. Gebruiksvriendelijk, schaalbaar en met uitgebreide integratiemogelijkheden.',
@@ -1572,6 +1595,7 @@ export const integrations: Integration[] = [
   {
     name: 'WooCommerce',
     slug: 'woocommerce',
+    status: 'live',
     category: 'cms-ecommerce',
     shortDescription: 'E-commerce plugin voor WordPress.',
     description: 'WooCommerce maakt van elke WordPress-site een webshop. Flexibel en open-source, met volledige controle over je data.',
@@ -2983,6 +3007,7 @@ export const integrations: Integration[] = [
   {
     name: 'Instagram Graph API',
     slug: 'instagram-graph-api',
+    status: 'live',
     category: 'social-community',
     shortDescription: 'Organische Instagram metrics, comment monitoring en engagement analyse.',
     description: 'Instagram is de visuele etalage voor artiesten, merken en creators. De Graph API geeft toegang tot reach, impressions, follower groei en comment data op account- en postniveau.',
@@ -2998,6 +3023,7 @@ export const integrations: Integration[] = [
   {
     name: 'Facebook Graph',
     slug: 'facebook-graph',
+    status: 'live',
     category: 'social-community',
     shortDescription: 'Facebook Page insights, post engagement en community management.',
     description: 'Facebook Pages blijven een belangrijk kanaal voor communities, events en directe communicatie met fans. De Graph API biedt toegang tot page-level metrics en post performance.',
@@ -3797,6 +3823,7 @@ export const integrations: Integration[] = [
   {
     name: 'Google Merchant Center',
     slug: 'google-merchant-center',
+    status: 'live',
     category: 'feed-management',
     shortDescription: 'Productdata voor Google Shopping, Free Listings en Performance Max.',
     description: 'Google Merchant Center is het hart van je Google Shopping strategie. Producttitels, beschrijvingen, prijzen en beschikbaarheid bepalen hoe en of je producten verschijnen in Shopping resultaten.',

@@ -399,13 +399,13 @@
     "hero_badge": "tools en platforms",
     "h1_line1": "Integraties voor een",
     "h1_accent": "werkend systeem",
-    "sub": "Stevin koppelt met de systemen die je al gebruikt, van marketing en sales tot ERP, planning en bouw. Staat het jouwe er niet bij, vaak kan het alsnog.",
+    "sub": "Wij lezen vandaag je advertentie-, analytics- en webshopdata uit. Staat jouw systeem er niet bij, dan kijken we wat er via een API of een export mogelijk is.",
     "meta_title": "Integraties: alle bronnen onder je marketing",
     "jsonld_name": "Integraties - Stevin.AI",
     "jsonld_desc": "Overzicht van alle tools en platforms die Stevin.AI koppelt en implementeert.",
     "hero_eyebrow": "Integraties",
     "hero_h1": "Eerst koppelen. Dan pas meten.",
-    "hero_sub": "Stevin legt platform-cijfers naast CRM, commerce, finance en opvolging. Niet om een toollijst te tonen, maar om te bewijzen welke bron welk resultaat veroorzaakt.",
+    "hero_sub": "Wat een advertentieplatform een conversie noemt, leggen wij naast wat er in je eigen systemen staat. Niet om een toollijst te tonen, maar om te zien welke bron echt klanten oplevert.",
     "hero_cta_layers": "Bekijk de vijf lagen",
     "hero_cta_search": "Zoek een koppeling",
     "hero_card_h2": "Een werkende meting heeft meer nodig dan advertentiekanalen.",
@@ -472,7 +472,8 @@
     "connect_cta_btn": "Start de diagnose",
     "detail_cta_title": "{name} koppelen aan je systemen?",
     "detail_cta_desc": "Boek een demo en ontdek hoe we je tools laten samenwerken voor betere resultaten.",
-    "detail_cta_btn": "Start de diagnose"
+    "detail_cta_btn": "Start de diagnose",
+    "filter_status_live": "Draait vandaag"
   },
   "seo": {
     "meta_title": "SEO uitbesteden, je vindbaarheid blijft van jou",
