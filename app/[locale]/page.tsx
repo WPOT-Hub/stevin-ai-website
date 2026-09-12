@@ -79,6 +79,7 @@ const COPY = {
       { t: '"Er gebeurt niks"', d: 'Letterlijk gezegd door twee ondernemers in twee weken tijd, over een rekening van duizend euro per maand. Of het waar was, wisten ze geen van beiden. Dat is het punt.' },
       { t: '"Ik ben het overzicht helemaal kwijt"', d: 'Vier systemen, drie inloggegevens en een bureau dat via jouw naam inlogt. Niemand houdt dat bij, en dat hoeft ook niet als iemand anders het netjes bijhoudt.' },
       { t: '"Alle telefoontjes die binnenkomen moet ik betalen"', d: 'Bij de een zijn het telefoontjes, bij de ander verkochte tickets of stoelen in de zaak. Als niemand telt welke daarvan uit welke campagne kwam, stuurt elk systeem op een cijfer dat er naast zit.' },
+      { t: 'Bouwen is iets anders dan weten wat je meet', d: 'Iemand kan een prima meetscript schrijven zonder te weten welke aanvraag zakelijk telt. Dat is geen verwijt, het zijn twee vakken. Wil je weten wie er in jouw account heeft gewerkt en wanneer: vraag om het wijzigingslogboek. Elke aanpassing staat daar met naam en tijdstip in.' },
     ],
     nu_slot: 'Wij zorgen eerst dat klopt wat er binnenkomt, en geven die cijfers terug aan de platformen: welke aanvraag een klant werd en wat die waard was. Dan gaan Google en Meta harder voor je werken. En het telt zwaarder dan vroeger, want wat zo\'n systeem voor jou kan uitrekenen hangt af van wat het van jou weet. Die geschiedenis bouwt zich op in het account waar hij staat. Staat dat op naam van iemand anders, dan begin je bij een overstap weer bij nul, en die maanden koop je later niet terug.',
 
