@@ -80,7 +80,7 @@ const COPY = {
       { t: '"Ik ben het overzicht helemaal kwijt"', d: 'Vier systemen, drie inloggegevens en een bureau dat via jouw naam inlogt. Niemand houdt dat bij, en dat hoeft ook niet als iemand anders het netjes bijhoudt.' },
       { t: '"Alle telefoontjes die binnenkomen moet ik betalen"', d: 'Bij de een zijn het telefoontjes, bij de ander verkochte tickets of stoelen in de zaak. Als niemand telt welke daarvan uit welke campagne kwam, stuurt elk systeem op een cijfer dat er naast zit.' },
     ],
-    nu_slot: 'Wij zorgen eerst dat er klopt wat er binnenkomt, en geven die cijfers terug aan de platformen: welke aanvraag een klant werd en wat die waard was. Dan gaan Google en Meta harder voor je werken in plaats van voor zichzelf. En jij kunt het nakijken, want dat is waar het bij iedereen op stukliep.',
+    nu_slot: 'Wij zorgen eerst dat klopt wat er binnenkomt, en geven die cijfers terug aan de platformen: welke aanvraag een klant werd en wat die waard was. Dan gaan Google en Meta harder voor je werken. En het telt zwaarder dan vroeger, want wat zo\'n systeem voor jou kan uitrekenen hangt af van wat het van jou weet. Die geschiedenis bouwt zich op in het account waar hij staat. Staat dat op naam van iemand anders, dan begin je bij een overstap weer bij nul, en die maanden koop je later niet terug.',
 
     ladder_eyebrow: 'De volgorde',
     ladder_h2: 'Wat er moet kloppen voordat AI iets voor je kan betekenen.',
@@ -236,7 +236,7 @@ const COPY = {
       { t: 'Google cannot see your margin', d: 'An enquiry you make a hundred euro on and one you make five thousand on count the same there. Not to you.' },
       { t: 'Google does not look outside Google', d: 'Whether that customer would have come anyway, or simply phoned, is not in that account. With us it is, and we send it back.' },
     ],
-    nu_slot: 'We are not against those systems, quite the opposite. Feed them the right numbers, which enquiry became a customer and what it was worth, and they start working harder for you. That is where our work begins.',
+    nu_slot: 'First we make sure what comes in is right, and we feed those numbers back to the platforms: which enquiry became a customer and what it was worth. Then Google and Meta start working harder for you. And it counts for more than it used to, because what such a system can work out for you depends on what it knows about you. That history builds up in whichever account it sits in. If that account is in someone else\'s name, you start from zero when you switch, and those months cannot be bought back later.',
 
     ladder_eyebrow: 'The order',
     ladder_h2: 'What has to be right before AI can do anything for you.',
