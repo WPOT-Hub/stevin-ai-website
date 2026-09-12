@@ -44,7 +44,7 @@ const COPY = {
       { t: 'Inzicht in elke wijziging', c: 'Open de wijzigingsgeschiedenis van je account en kijk wat er de afgelopen 90 dagen is gebeurd, en door wie.' },
       { t: 'Exporteerbare data', c: 'Vraag een export. Bij ons is dat een knop, geen verzoek dat weken duurt.' },
       { t: 'Geen verborgen marges op mediabudget', c: 'Zoek je bedrijf op in het transparantieregister van Google en kijk wie er als betaler geregistreerd staat.' },
-      { t: 'Heldere tarieven', c: 'Uitbesteden begint bij 1.399 per maand, zelf doen met Stevin erbij kost 399. Welke route bij je past volgt uit de diagnose, en je kunt later wisselen. Je weet vooraf wat je krijgt en wat het kost.' },
+      { t: 'Heldere tarieven', c: 'Uitbesteden begint bij 1.399 per maand bij jaarbetaling, zelf doen met Stevin erbij bij 399, en bij maandbetaling ligt het honderd euro hoger. Welke route bij je past volgt uit de diagnose, en je kunt later wisselen. Je weet vooraf wat je krijgt en wat het kost.' },
       { t: 'Vastgelegde besluiten', c: 'Vraag bij elk advies naar het waarom. Bij ons staat het er al bij.' },
       { t: 'Inzicht in wat werkt', c: 'Tel je aanvragen van vorige maand en vergelijk met je dashboard. Kloppen die niet, dan stuurt iedereen op de verkeerde cijfers.' },
       { t: 'Geen lock-in', c: 'Lees je contract. Als opzeggen betekent dat je accounts, data of kennis kwijtraakt, zit je vast.' },

@@ -179,8 +179,8 @@ const COPY = {
     research_cta_h: 'Wil je weten hoe het bij jullie zit?',
     research_cta_b: 'Wij kijken na wie er in het register als betaler achter jouw advertenties staat, en wat dat betekent voor wie je data bezit.',
     research_cta_link: 'Neem contact op',
-    research_bron: 'Bron: doorlopend Stevin-onderzoek op het openbare transparantieregister van Google, Nederland en Belgie, stand 29 juli 2026. Wat dit wel en niet bewijst leggen we uit in de methode.',
-    research_body: 'En dit is alleen nog maar Google. Meta, LinkedIn en TikTok tellen we hierna mee. Dit onderzoek loopt elke week door, en alles wat we vinden publiceren we met methode en al. Zo bouwen we het bewijs dat de markt anders kan.',
+    research_bron: 'Bron: doorlopend Stevin-onderzoek op het openbare transparantieregister van Google, Nederland en Belgie, stand 12 september 2026: 4.610 bedrijven, waarvan er 2.624 een andere betaler hebben dan adverteerder.',
+    research_body: 'Dit is Google en Meta. LinkedIn en TikTok tellen we hierna mee. Dit onderzoek loopt elke week door, en alles wat we vinden publiceren we met methode en al. Zo bouwen we het bewijs dat de markt anders kan.',
     research_link: 'Naar het onderzoek',
 
     price_eyebrow: 'Tarieven',
