@@ -147,7 +147,7 @@ const COPY = {
       {
         num: '04', kop: 'Alles blijft van jou', t: 'Stoppen kan altijd. Zonder iets kwijt te raken',
         d: 'Wij bouwen je exit in vanaf dag een. Daarom durven we het ook te zeggen.',
-        b: ['Volledige toegang en exporteerbare data', 'Een overdraagbaar dossier met elk besluit', 'Kennis die bij je bedrijf blijft, wie er ook vertrekt'],
+        b: ['Je accounts staan op jouw naam, dus je kunt er altijd zelf bij', 'Een overdraagbaar dossier met elk besluit', 'Kennis die bij je bedrijf blijft, wie er ook vertrekt'],
       },
     ],
 
@@ -205,7 +205,7 @@ const COPY = {
     faq_eyebrow: 'Veelgestelde vragen',
     faq_h2: 'Wat iedereen eerst wil weten.',
     faqs: [
-      { question: 'Wie is eigenaar van mijn accounts en data?', answer: 'Jij. Altijd. Accounts staan op naam van jouw bedrijf, data is exporteerbaar en elk besluit staat in een dossier dat van jou is.' },
+      { question: 'Wie is eigenaar van mijn accounts en data?', answer: 'Jij. Altijd. Accounts staan op naam van jouw bedrijf, je accounts staan op naam van jouw bedrijf, dus je kunt er zelf alles uit halen, en elk besluit staat in een dossier dat van jou is.' },
       { question: 'Wat gebeurt er als ik stop?', answer: 'Dan houd je alles: accounts, data, kennis en het volledige dossier. De overdracht zit er vanaf dag een in, dus stoppen kost je niets. Behalve ons.' },
       { question: 'Doen jullie het werk, of moet ik zelf nog iets?', answer: 'Wij doen het werk. Inrichten, campagnes draaien, bijhouden. Jij kunt op elk moment nakijken wat er is gedaan en waarom. Wil je het later zelf doen, dan draaien we mee tot je eigen mensen het kunnen.' },
       { question: 'Kan dit naast mijn huidige bureau?', answer: 'Ja. De diagnose is juist een goede tweede blik: staat het goed, dan weet je dat nu zeker. Staat het niet goed, dan heb je iets om te bespreken.' },
@@ -306,7 +306,7 @@ const COPY = {
       {
         num: '04', kop: 'Everything stays yours', t: 'You can always stop. Without losing anything',
         d: 'We build in your exit from day one. That is why we dare to say it.',
-        b: ['Full access and exportable data', 'A transferable file with every decision', 'Knowledge that stays with your company, whoever leaves'],
+        b: ['Your accounts are in your name, so you can always get to them yourself', 'A transferable file with every decision', 'Knowledge that stays with your company, whoever leaves'],
       },
     ],
 
@@ -660,7 +660,11 @@ export default async function HomePage({ params }: Props) {
           Andersom legt het scherm zichzelf uit, en lezen die vier stappen
           daarna concreter omdat je weet waar ze naartoe werken.
           Zelfde component als op de SEO-landingspagina's. */}
-      <DeskProof locale={locale} />
+      {/* W-078: toonBrein stond hier op de default true, terwijl elke andere
+          pagina hem expliciet uitzet en DeskProof.tsx zelf schrijft dat het blok op
+          de homepage uit hoort. Het geheugenverhaal staat verderop al met een eigen
+          demo, dus het stond er twee keer. */}
+      <DeskProof locale={locale} toonBrein={false} />
 
       {/* ── HOE HET WERKT ── */}
       <section id="hoe-het-werkt" className="bg-primary scroll-mt-24" style={{ padding: '112px 24px' }}>

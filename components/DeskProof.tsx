@@ -187,7 +187,7 @@ const COPY: Record<Locale, {
   nl: {
     eyebrow: 'Zo ziet dat eruit',
     h2: 'Wat er misgaat, wat er wel werkt, en waarom. Op een scherm.',
-    sub: 'Geen rapport achteraf. Stevin kijkt mee op wat vandaag binnenkomt en op wat je merk over een jaar waard is. Dat zijn twee verschillende dingen, en ze staan zelden in hetzelfde overzicht.',
+    sub: 'Geen rapport achteraf. Je ziet wat er vandaag binnenkomt en wat er is gedaan, op het moment dat het gebeurt.',
     knoppen: ['Oppakken', 'Meer info', 'Niet relevant'],
     labelWaarom: 'Waarom:',
     labelAdvies: 'Advies:',

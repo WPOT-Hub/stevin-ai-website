@@ -29,7 +29,7 @@ const COPY: Record<Locale, {
   nl: {
     word: 'zomer',
     steps: [
-      { t: 'Typ waar je mee zit', d: 'Bijvoorbeeld: zomer. Het brein licht op wat het weet.' },
+      { t: 'Typ waar je mee zit', d: 'Bijvoorbeeld: zomer. Je ziet meteen wat er over die periode bekend is.' },
       { t: 'Zelfde moment, andere jaren', d: 'Wat werkte vorig jaar, en wat de concurrent deed.' },
       { t: 'Open een oude campagne', d: 'Waarom hij liep, wat hij kostte, wat hij opleverde.' },
       { t: 'Stuur door naar je briefing', d: 'Een klik, en je volgende campagne begint niet bij nul.' },
