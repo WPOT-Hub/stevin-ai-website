@@ -1529,6 +1529,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-ontdekt-oplossing-millennium-probleem-navier-stokes': (
+    <>
+      <p className="lead-para">
+        De softwaregigant OpenAI heeft dinsdag aangekondigd dat een AI-model een oplossing heeft gevonden voor het millenniumprobleem van de Navier-Stokes-vergelijkingen, een van de zeven onopgeloste wiskundige vraagstukken met een prijs van één miljoen dollar. De resultaten zijn nog niet onafhankelijk geverifieerd, maar als ze kloppen, markeert dit een doorbraak in zowel artificiële intelligentie als theoretische wiskunde. De oplossing zou nieuwe wegen kunnen openen voor simulatiemodellen in sectoren zoals luchtvaart, klimaatonderzoek en financiële risicomodellen.
+      </p>
+      <p>
+        De aanpak van OpenAI verschilt fundamenteel van traditionele wiskundige methoden. Waar wiskundigen jarenlang zoeken naar analytische bewijzen, gebruikte het AI-model zogenaamde 'symbolische rekenmethoden' om patronen te herkennen en mogelijke oplossingen te genereren. Experts benadrukken dat dit geen vervanging is voor menselijke wiskundigen, maar eerder een krachtig hulpmiddel dat nieuwe hypothesen kan aandragen die vervolgens verder onderzocht moeten worden.
+      </p>
+      <p>
+        Het nieuws roept ook vragen op over de rol van AI in wetenschappelijke ontdekkingen. Critici wijzen erop dat zonder strikte verificatiemethoden dergelijke claims snel kunnen leiden tot ongefundeerde aannames of zelfs fraude. Tegelijkertijd biedt deze ontwikkeling mogelijkheden voor bedrijven die afhankelijk zijn van complexe simulaties, zoals ingenieursbureaus of farmaceutische bedrijven.
+      </p>
+    </>
+  ),
   'ai-automatiseert-vrouwelijke-marketeers': (
     <>
       <p className="lead-para">
@@ -7690,6 +7703,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-ontdekt-oplossing-millennium-probleem-navier-stokes':
+    "Voor ondernemers en bedrijven die werken met data-intensieve processen, zoals simulatie of risicoanalyse, toont deze ontwikkeling aan hoe snel nieuwe technologieën bestaande methodieken kunnen verstoren. Het onderstreept het belang van flexibele systemen die snel kunnen schakelen tussen menselijke expertise en AI-gestuurde inzichten. Tegelijkertijd blijft kritisch beoordelen van uitkomsten essentieel om valse aannames te voorkomen.",
   'ai-automatiseert-vrouwelijke-marketeers':
     "Voor bureaus en in-house teams betekent dit dat ze nu moeten investeren in hybride vaardigheden: niet alleen technisch begrip van AI-tools, maar ook een scherp oog voor wat wel en niet past bij hun merk. De komende jaren zal blijken of creativiteit nog wel als onderscheidend vermogen wordt gezien, of dat het vooral gaat om slimme toepassing van bestaande templates. Wie nu te lang wacht met experimenteren, loopt straks achter de feiten aan.",
   'google-lanceert-ai-weermodel-voor-consumenten':
