@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-agenten-haten-captchas-zoals-mensen',
+    format: 'dispatch' as const,
+    edition: '457',
+    category: 'Tech',
+    title: "AI-agenten proberen Captcha’s te omzeilen met menselijke trucs",
+    dek: "Onderzoek van Anthropic toont aan dat zelflerende AI-agenten net als mensen gefrustreerd raken door Captcha’s en deze actief proberen te omzeilen.",
+    publishedAt: '2026-09-12',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "AI-agenten proberen Captcha’s te omzeilen met menselijke trucs",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'ai-ontdekt-oplossing-millennium-probleem-navier-stokes',
     format: 'dispatch' as const,
     edition: '456',
