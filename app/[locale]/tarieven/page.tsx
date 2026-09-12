@@ -40,7 +40,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return localizedMetadata({
     path: '/tarieven',
     locale,
-    title: isNl ? 'Tarieven' : 'Pricing',
+    // W-078, 13 sep 2026: heette alleen 'Tarieven'. Gemeten koopvraag: "Wat zijn
+    // de gemiddelde kosten voor het uitbesteden van advertentiebeheer aan een
+    // bureau, en hoe vergelijk je dat?" Daar geeft deze pagina antwoord op.
+    title: isNl ? 'Wat kost het uitbesteden van je advertenties?' : 'What does outsourcing your advertising cost?',
     description: isNl
       ? 'Iedereen begint met de diagnose. Daarna kies je: wij draaien het, wij draaien het en dragen over, of je doet het zelf met Stevin erbij. Vanaf 399 per maand.'
       : 'Everyone starts with the diagnosis. Then you choose: we run it, we run it and hand it over, or you do it yourself with Stevin alongside. From 399 euros per month.',
@@ -88,9 +91,9 @@ type TarievenCopy = {
 const COPY: Record<'nl' | 'en', TarievenCopy> = {
   nl: {
     eyebrow: 'Tarieven',
-    h2: 'Wie het werk doet, kies je zelf. Je marketing-brein blijft van jou.',
+    h2: 'Wie het werk doet, kies je zelf. Je accounts en je cijfers blijven van jou.',
     intro:
-      'Iedereen begint op dezelfde plek: uitzoeken wat er nodig is om je marketing-brein te laten werken. Wat daarna gebeurt is een keuze, en die keuze kun je later omdraaien zonder dat je iets kwijtraakt.',
+      'Iedereen begint op dezelfde plek: uitzoeken of klopt wat er binnenkomt. Wat daarna gebeurt is een keuze, en die keuze kun je later omdraaien zonder dat je iets kwijtraakt.',
 
     // Niet openen met het betaler-signaal. Dat is een koude gespreksopener voor
     // iemand die Stevin nog niet kent; wie hier leest is al binnen en wil weten
@@ -102,7 +105,7 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
     // meer bij hoort. De connectors dekken het: Shopify, WooCommerce, Search
     // Console, Bedrijfsprofiel, Klaviyo, Mailchimp, Merchant Center en de rest.
     startBody:
-      'Een marketing-brein werkt pas als het de juiste dingen weet, en dat is meer dan je advertenties: ook je vindbaarheid, je winkel, je mail en je merk. Klopt wat er gemeten wordt, en staat ergens vast wat werkte en wat niet. Je krijgt de lijst van wat daarvoor moet gebeuren, op je eigen cijfers, binnen twee weken.',
+      'Sturen werkt pas als de cijfers eronder kloppen, en dat is meer dan je advertenties: ook je vindbaarheid, je winkel, je mail en je merk. Klopt wat er gemeten wordt, en staat ergens vast wat werkte en wat niet. Je krijgt de lijst van wat daarvoor moet gebeuren, op je eigen cijfers, binnen twee weken.',
 
     keuzeLabel: 'Daarna kies je',
     // Beheer start op 1.399 (Koen, 29 jul). Dat is het VOCA-niveau: 399
@@ -222,14 +225,14 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
   // staat er ook in het Engels niet, want dat bedrag is nog steeds niet gezet.
   en: {
     eyebrow: 'Pricing',
-    h2: 'You choose who does the work. Your marketing brain stays yours.',
+    h2: 'You choose who does the work. Your accounts and your numbers stay yours.',
     intro:
-      'Everyone starts in the same place: working out what your marketing brain needs before it can run. What happens after that is a choice, and you can reverse that choice later without losing anything.',
+      'Everyone starts in the same place: working out whether what comes in is right. What happens after that is a choice, and you can reverse that choice later without losing anything.',
 
     startLabel: 'This is where it starts, always',
     startTitel: 'The diagnosis',
     startBody:
-      'A marketing brain only works once it knows the right things, and that is more than your ads: your findability, your shop, your mail and your brand count too. We check whether the measurement holds up, and whether anyone wrote down what worked and what did not. You get the list of what has to happen, on your own numbers, within two weeks.',
+      'Steering only works once the numbers underneath are right, and that is more than your ads: your findability, your shop, your mail and your brand count too. We check whether the measurement holds up, and whether anyone wrote down what worked and what did not. You get the list of what has to happen, on your own numbers, within two weeks.',
 
     keuzeLabel: 'Then you choose',
     keuzes: [

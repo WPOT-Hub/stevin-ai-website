@@ -87,7 +87,7 @@ const COPY = {
       { t: '"Alle telefoontjes die binnenkomen moet ik betalen"', d: 'Bij de een zijn het telefoontjes, bij de ander verkochte tickets of stoelen in de zaak. Als niemand telt welke daarvan uit welke campagne kwam, stuurt elk systeem op een cijfer dat er naast zit.' },
       { t: 'Bouwen is iets anders dan weten wat je meet', d: 'Iemand kan een prima meetscript schrijven zonder te weten welke aanvraag zakelijk telt. Dat is geen verwijt, het zijn twee vakken. Wil je weten wie er in jouw account heeft gewerkt en wanneer: vraag om het wijzigingslogboek. Elke aanpassing staat daar met naam en tijdstip in.' },
     ],
-    nu_slot: 'Wij zorgen eerst dat klopt wat er binnenkomt, en geven die cijfers terug aan de platformen: welke aanvraag een klant werd en wat die waard was. Dan gaan Google en Meta harder voor je werken. En het telt zwaarder dan vroeger, want wat zo\'n systeem voor jou kan uitrekenen hangt af van wat het van jou weet. Die geschiedenis bouwt zich op in het account waar hij staat, dus hoe langer je wacht, hoe duurder de overstap wordt. Een keer de pleister eraf. En bij ons gaat er niets uit de lucht: geen dag zonder site, geen dag zonder mail.',
+    nu_slot: 'Wij zorgen eerst dat klopt wat er binnenkomt, zodat Google en Meta echte aanvragen te zien krijgen in plaats van knopklikken. Dan gaan ze harder voor je werken. En het telt zwaarder dan vroeger, want wat zo\'n systeem voor jou kan uitrekenen hangt af van wat het van jou weet. Die geschiedenis bouwt zich op in het account waar hij staat, dus hoe langer je wacht, hoe duurder de overstap wordt. Een keer de pleister eraf. En bij ons gaat er niets uit de lucht: geen dag zonder site, geen dag zonder mail.',
 
     ladder_eyebrow: 'De volgorde',
     ladder_h2: 'Wat er moet kloppen voordat AI iets voor je kan betekenen.',
@@ -110,7 +110,7 @@ const COPY = {
     checks: [
       { t: 'Wie betaalt jouw advertenties?', d: 'Google zet het gewoon openbaar online. Zoek je bedrijf op in het transparantieregister.', r: 'Staat daar een andere naam dan de jouwe?' },
       { t: 'Wist je dat je advertentie-account een logboek heeft?', d: 'Elke wijziging staat erin, met datum en gebruiker. Open het en kijk wat er de afgelopen 90 dagen echt is gedaan.', r: 'De meeste eigenaren hebben het nog nooit geopend.' },
-      { t: 'Klopt je meting?', d: 'Tel je aanvragen van vorige maand. Staat hetzelfde aantal in je dashboard?', r: 'Vaak niet. En dan stuurt iedereen op de verkeerde cijfers.' },
+      { t: 'Klopt je meting?', d: 'Tel je aanvragen van vorige maand. Staat hetzelfde aantal in het rapport dat je krijgt?', r: 'Vaak niet. En dan stuurt iedereen op de verkeerde cijfers.' },
     ],
     fig_label: 'fig. 01',
     fig_title: 'logboek van een advertentie-account',
@@ -139,7 +139,7 @@ const COPY = {
       {
         num: '03', kop: 'Erop letten', t: 'Signalen dag en nacht. Ook op ons eigen werk',
         d: 'Elk besluit wordt vastgelegd, en jij kijkt altijd mee in hetzelfde logboek.',
-        b: ['Hittebericht op vrijdag? Campagne voor gekoelde zalen staat maandag klaar', 'Concurrent start iets nieuws? Jij hoort het eerst', 'Meting valt uit? Wij zien het dezelfde dag'],
+        b: ['Hittebericht op vrijdag? Campagne voor gekoelde zalen staat maandag klaar', 'Concurrent start iets nieuws? Jij hoort het eerst', 'Meting valt uit? Wij controleren het elke dag'],
       },
       {
         num: '04', kop: 'Alles blijft van jou', t: 'Stoppen kan altijd. Zonder iets kwijt te raken',
@@ -189,7 +189,7 @@ const COPY = {
     research_cta_h: 'Wij zoeken het voor je op',
     research_cta_b: 'Google en Meta zetten openbaar online wie er voor een advertentie betaalt. Wij kijken na wat er bij jouw bedrijf staat. Daar heb je geen inlog voor nodig en het kost je niets.',
     research_cta_link: 'Neem contact op',
-    research_bron: 'Bron: doorlopend Stevin-onderzoek op het openbare transparantieregister van Google, Nederland en Belgie, stand 12 september 2026: 4.610 bedrijven, waarvan er 2.624 een andere betaler hebben dan adverteerder.',
+    research_bron: 'Bron: doorlopend Stevin-onderzoek op het openbare transparantieregister van Google, Nederland en Belgie, stand 12 september 2026: 4.610 bedrijven in Nederland en Belgie waar een ander dan het bedrijf zelf als betaler van de advertenties geregistreerd staat.',
     research_body: 'Dit is Google en Meta. LinkedIn en TikTok tellen we hierna mee. Dit onderzoek loopt elke week door, en alles wat we vinden publiceren we met methode en al. Zo bouwen we het bewijs dat de markt anders kan.',
     research_link: 'Naar het onderzoek',
 
@@ -246,7 +246,7 @@ const COPY = {
       { t: 'Google cannot see your margin', d: 'An enquiry you make a hundred euro on and one you make five thousand on count the same there. Not to you.' },
       { t: 'Google does not look outside Google', d: 'Whether that customer would have come anyway, or simply phoned, is not in that account. With us it is, and we send it back.' },
     ],
-    nu_slot: 'First we make sure what comes in is right, and we feed those numbers back to the platforms: which enquiry became a customer and what it was worth. Then Google and Meta start working harder for you. And it counts for more than it used to, because what such a system can work out for you depends on what it knows about you. That history builds up in whichever account it sits in, so the longer you wait, the more the switch costs. Rip the plaster off once. And with us nothing goes offline: not a day without your site, not a day without your mail.',
+    nu_slot: 'First we make sure what comes in is right, so Google and Meta see real enquiries instead of button clicks. Then they start working harder for you. And it counts for more than it used to, because what such a system can work out for you depends on what it knows about you. That history builds up in whichever account it sits in, so the longer you wait, the more the switch costs. Rip the plaster off once. And with us nothing goes offline: not a day without your site, not a day without your mail.',
 
     ladder_eyebrow: 'The order',
     ladder_h2: 'What has to be right before AI can do anything for you.',
@@ -620,8 +620,19 @@ export default async function HomePage({ params }: Props) {
                     style={{ padding: '16px 0' }}
                   >
                     <span className="font-mono text-[11px] text-muted flex-shrink-0">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="font-display font-semibold text-primary" style={{ fontSize: '16px', lineHeight: '1.4' }}>
-                      {item.t}
+                    {/* W-078, 13 sep 2026: d en r stonden wel in de data maar werden
+                        nergens uitgelezen, dus het blok beloofde drie checks en toonde
+                        drie kale vragen. Zelfde fout als bij de stap-bullets op 4 sep. */}
+                    <span className="flex flex-col gap-1">
+                      <span className="font-display font-semibold text-primary" style={{ fontSize: '16px', lineHeight: '1.4' }}>
+                        {item.t}
+                      </span>
+                      <span className="text-muted" style={{ fontSize: '14.5px', lineHeight: '1.55' }}>
+                        {item.d}
+                      </span>
+                      <span className="text-primary font-medium" style={{ fontSize: '14.5px', lineHeight: '1.55' }}>
+                        {item.r}
+                      </span>
                     </span>
                   </li>
                 ))}

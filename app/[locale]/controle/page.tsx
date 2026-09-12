@@ -100,9 +100,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return localizedMetadata({
     path: '/controle',
     locale,
-    title: isNl ? 'Controle: elke wijziging met naam en reden' : 'Control · every change has a name, a moment and a reason',
+    // W-078, 13 sep 2026: titel sloot niet aan op de vraag die kopers echt
+    // stellen. Uit de vindbaarheidsscan van 12 sep: "Op welke punten moet ik
+    // letten wanneer ik op zoek ben naar een agentschap voor advertentiebeheer?"
+    // Die vraag beantwoordt deze pagina met tien controleerbare afspraken, maar
+    // de titel ging over ons logboek. Nu de vraag zelf.
+    title: isNl ? 'Waar let je op bij een partij die je advertenties beheert?' : 'What to check when someone else runs your ads',
     description: isNl
-      ? 'Elk besluit staat in een logboek, je accounts en data blijven van jou, en een deel van het bewijs staat buiten ons om.'
+      ? 'Tien afspraken die je zelf kunt nakijken: op wiens naam de accounts staan, wie er als betaler in het register staat, wat er de afgelopen negentig dagen is gewijzigd en door wie. Met bij elke afspraak hoe je hem controleert.'
       : 'Do not take our word for it: every decision is logged, accounts and data stay yours, and part of the proof sits outside of us. Here is how to check it yourself.',
   })
 }
