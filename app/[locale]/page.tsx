@@ -81,7 +81,7 @@ const COPY = {
       { t: '"Alle telefoontjes die binnenkomen moet ik betalen"', d: 'Bij de een zijn het telefoontjes, bij de ander verkochte tickets of stoelen in de zaak. Als niemand telt welke daarvan uit welke campagne kwam, stuurt elk systeem op een cijfer dat er naast zit.' },
       { t: 'Bouwen is iets anders dan weten wat je meet', d: 'Iemand kan een prima meetscript schrijven zonder te weten welke aanvraag zakelijk telt. Dat is geen verwijt, het zijn twee vakken. Wil je weten wie er in jouw account heeft gewerkt en wanneer: vraag om het wijzigingslogboek. Elke aanpassing staat daar met naam en tijdstip in.' },
     ],
-    nu_slot: 'Wij zorgen eerst dat klopt wat er binnenkomt, en geven die cijfers terug aan de platformen: welke aanvraag een klant werd en wat die waard was. Dan gaan Google en Meta harder voor je werken. En het telt zwaarder dan vroeger, want wat zo\'n systeem voor jou kan uitrekenen hangt af van wat het van jou weet. Die geschiedenis bouwt zich op in het account waar hij staat, dus vanaf de dag dat het op jouw naam staat, bouwt hij zich op voor jou.',
+    nu_slot: 'Wij zorgen eerst dat klopt wat er binnenkomt, en geven die cijfers terug aan de platformen: welke aanvraag een klant werd en wat die waard was. Dan gaan Google en Meta harder voor je werken. En het telt zwaarder dan vroeger, want wat zo\'n systeem voor jou kan uitrekenen hangt af van wat het van jou weet. Die geschiedenis bouwt zich op in het account waar hij staat, dus hoe langer je wacht, hoe duurder de overstap wordt. Een keer de pleister eraf. En bij ons gaat er niets uit de lucht: geen dag zonder site, geen dag zonder mail.',
 
     ladder_eyebrow: 'De volgorde',
     ladder_h2: 'Wat er moet kloppen voordat AI iets voor je kan betekenen.',
@@ -237,7 +237,7 @@ const COPY = {
       { t: 'Google cannot see your margin', d: 'An enquiry you make a hundred euro on and one you make five thousand on count the same there. Not to you.' },
       { t: 'Google does not look outside Google', d: 'Whether that customer would have come anyway, or simply phoned, is not in that account. With us it is, and we send it back.' },
     ],
-    nu_slot: 'First we make sure what comes in is right, and we feed those numbers back to the platforms: which enquiry became a customer and what it was worth. Then Google and Meta start working harder for you. And it counts for more than it used to, because what such a system can work out for you depends on what it knows about you. That history builds up in whichever account it sits in, so from the day it is in your name, it starts building for you.',
+    nu_slot: 'First we make sure what comes in is right, and we feed those numbers back to the platforms: which enquiry became a customer and what it was worth. Then Google and Meta start working harder for you. And it counts for more than it used to, because what such a system can work out for you depends on what it knows about you. That history builds up in whichever account it sits in, so the longer you wait, the more the switch costs. Rip the plaster off once. And with us nothing goes offline: not a day without your site, not a day without your mail.',
 
     ladder_eyebrow: 'The order',
     ladder_h2: 'What has to be right before AI can do anything for you.',
