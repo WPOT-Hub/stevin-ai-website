@@ -49,7 +49,13 @@ const COPY = {
     quotes: [
       { q: 'Op een maand tijd had ik voor bijna 1100 euro leads en ik heb er geen een.', a: 'Installatiebedrijf' },
       { q: 'Nee, dat is allemaal op gevoel. En in het hoofd.', a: 'Eigenaar, handelsbedrijf' },
-      { q: 'Hij kon mijn marge ook bepalen, want hij wist mijn inkoopprijs. En dat wil ik niet.', a: 'Reparatiebedrijf' },
+      // 13 sep 2026 (W-078): het marge-citaat is eruit. Bij het herlezen van
+      // transcript 42e784ac bleek de passage 00:13:40 tot 00:14:22 te gaan over
+      // een groothandelaar die zijn inkoopprijs kende bij zijn bol.com-handel.
+      // Geen woord over data, accounts of bureaus. Stond hier dus in een
+      // betekenis die de spreker niet bedoelde. Vervangen door een citaat dat
+      // wel over dit onderwerp gaat, uit het gesprek van 30 juli.
+      { q: 'Daar betalen wij maandelijks een godsvermogen voor en er gebeurt niks.', a: 'Dak- en gevelbedrijf' },
       { q: 'Dat zijn allemaal aparte systemen met bepaalde toegangen. Maar er zit nergens een link of een centraal geheugen.', a: 'Marketingverantwoordelijke, internationaal merk' },
     ],
     // "Zelfs bureaus zeggen het zelf" is er 4 sep 2026 uit (W-042). Onnagekeken

@@ -31,19 +31,19 @@ const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; a
     a: { eyebrow: 'Voor bedrijven die betalen voor marketing', line: 'Elke maand een marketingfactuur.', accent: 'Geen idee wat ze ervoor gedaan hebben.' },
     b: { eyebrow: 'Kijk zelf mee, het staat er gewoon', line: 'Google weet wie de eigenaar is van jouw data.', accent: 'Jij ook?' },
     c: { eyebrow: 'Groeien met grip', line: 'Marketing die elke maand beter wordt.', accent: 'En alles blijft van jou.' },
-    d: { eyebrow: 'De AI-laag over je marketing en sales', line: 'Je eigen data.', accent: 'Je eigen marketing-brein.' },
+    d: { eyebrow: 'Voor merken en marketingteams', line: 'Wat een systeem voor je kan uitrekenen,', accent: 'hangt af van wat het van jou weet.' },
     e: { eyebrow: 'Voor bedrijven die marketing uitbesteden', line: 'Je betaalt elke maand.', accent: 'Maar je kunt niet nakijken wat er gebeurd is.' },
   },
   en: {
     a: { eyebrow: 'For companies that pay for marketing', line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
     b: { eyebrow: 'See for yourself, it is right there', line: 'Google knows who owns your data.', accent: 'Do you?' },
     c: { eyebrow: 'Growth with grip', line: 'Marketing that gets better every month.', accent: 'And everything stays yours.' },
-    d: { eyebrow: 'The AI layer over your marketing and sales', line: 'Your own data.', accent: 'Your own marketing brain.' },
+    d: { eyebrow: 'For brands and marketing teams', line: 'What a system can work out for you', accent: 'depends on what it knows about you.' },
     e: { eyebrow: 'For companies that outsource their marketing', line: 'You pay every month.', accent: 'But you cannot check what actually happened.' },
   },
 }
 
-const LABELS: Record<Variant, string> = { a: 'A factuur', b: 'B transparantie', c: 'C groei', d: 'D brein', e: 'E basis' }
+const LABELS: Record<Variant, string> = { a: 'A factuur', b: 'B transparantie', c: 'C groei', d: 'D data', e: 'E basis' }
 
 declare global {
   interface Window {
