@@ -27,7 +27,7 @@ const COPY = {
     // duidelijk zijn dat we ook begeleiden en campagnes draaien waar nodig.
     // Wat we meten hangt af van wat het bedrijf verkoopt: telefoontjes voor wie
     // daarvan leeft, merkprestatie voor wie via de winkel verkoopt.
-    hero_sub_1: 'Leef je van de telefoon, dan meten we de telefoontjes. Verkoop je via de winkel, dan kijken we naar je merk. Daarna draaien we je campagnes, of we begeleiden je eigen mensen. En ',
+    hero_sub_1: 'Leef je van de telefoon, dan meten we de telefoontjes. Verkoop je via de winkel, dan kijken we naar je merk en naar wat je concurrenten doen. Daarna draaien we je campagnes, of we begeleiden je eigen mensen. En ',
     hero_sub_bold: 'alles blijft van jou.',
     cta_primary: 'Start de diagnose',
     cta_secondary: 'Kijk zelf mee',
@@ -208,7 +208,7 @@ const COPY = {
   },
   en: {
     eyebrow: 'For companies that pay for marketing',
-    hero_sub_1: 'If you live off the phone, we measure the calls. If you sell through shops, we look at your brand. After that we run your campaigns, or we coach your own people. And ',
+    hero_sub_1: 'If you live off the phone, we measure the calls. If you sell through shops, we look at your brand and at what your competitors are doing. After that we run your campaigns, or we coach your own people. And ',
     hero_sub_bold: 'everything stays yours.',
     cta_primary: 'Start the diagnosis',
     cta_secondary: 'See for yourself',
