@@ -854,7 +854,15 @@ export default async function HomePage({ params }: Props) {
           <p className="text-white/65 leading-[1.6] m-0" style={{ fontSize: '16px', maxWidth: '640px' }}>{c.research_body}</p>
 
           <div className="mt-8">
-            <Link href="/who-owns-your-advertising-data" className="font-display font-semibold text-[#5DA3FF] text-[15px] inline-flex items-center gap-2 hover:gap-3 transition-all">
+            {/* W-078, 13 sep 2026: stond hard op de Engelse pagina, ook in de
+                Nederlandse versie. Een Nederlandse lezer klikte vanuit
+                Nederlandse tekst op "Naar het onderzoek" en kreeg Engels, en het
+                Nederlandse origineel (editorial 020, 7 juli) kreeg geen enkele
+                interne link vanaf de homepage. Nu per taal naar de juiste versie.
+                Gevonden bij de vindbaarheidsscan op onze eigen naam: op elf van
+                de twaalf koopvragen wordt stevin.ai niet geciteerd, ook niet op
+                de vraag welke bedrijven je je eigen data laten houden. */}
+            <Link href={locale === 'en' ? '/who-owns-your-advertising-data' : '/blog/wie-is-eigenaar-van-je-advertentiedata'} className="font-display font-semibold text-[#5DA3FF] text-[15px] inline-flex items-center gap-2 hover:gap-3 transition-all">
               {c.research_link} <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
