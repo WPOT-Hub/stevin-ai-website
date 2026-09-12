@@ -16,7 +16,14 @@ type Variant = 'a' | 'b' | 'c' | 'd' | 'e'
 
 // E toegevoegd 13 sep 2026 (W-078), Koens eigen formulering: eerst de basis,
 // daarna de campagnes, en wat we meten hangt af van wat jouw bedrijf verkoopt.
-const ROTATION: Variant[] = ['e', 'c', 'b', 'd']
+// 13 sep 2026 (W-078): terug naar twee koppen, allebei uit de uitgelezen
+// verkoopgesprekken. B (eigenaar van je data) en D (AI-laag, marketing-brein)
+// zijn ons frame, niet dat van de klant, en C belooft iets dat we niet kunnen
+// bewijzen. Let op: A was tot nu toe de vaste opener voor advertenties en
+// outreach; die draait nu mee, dus een bezoeker uit een advertentie ziet niet
+// meer gegarandeerd dezelfde kop als in de advertentie. Een regel terugdraaien
+// als dat een probleem blijkt.
+const ROTATION: Variant[] = ['a', 'e']
 const STORAGE_KEY = 'stevin_kop_variant'
 
 const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; accent: string }>> = {

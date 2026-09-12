@@ -66,22 +66,22 @@ const COPY = {
     // meer gebouwd wordt dan ooit, en dat een betrouwbare basis daardoor
     // zwaarder telt, niet lichter. Toon volgt proof_rules uit de canonieke
     // copyconfig: een concrete vraag verslaat een abstracte belofte.
-    nu_eyebrow: 'Waarom nu',
-    nu_h2: 'Iedereen kan nu iets bouwen. Dat is het punt niet.',
-    nu_intro: 'Een campagne opzetten, een landingspagina maken, een meting inrichten: het kost nog een middag. Dat is winst, en wij gebruiken het zelf ook. Alleen verandert er iets wat minder opvalt.',
-    nu_kern: 'Wie sneller bouwt, bouwt ook sneller op een verkeerd fundament. Een meting die niet klopt, viel vroeger op omdat iemand er weken aan rekende. Nu rolt er in een middag een campagne uit die op datzelfde verkeerde cijfer stuurt.',
+    // Herschreven 13 sep 2026 (W-078) uit de uitgelezen verkoopgesprekken, niet
+    // uit onze eigen woorden. Elke regel hieronder staat letterlijk zo in een
+    // transcript, geanonimiseerd naar branche zoals het blok "Herken je dit".
+    // Panman 18 aug 00:09:38, VOCA 18 jun 00:09:30, Nancy Schepers 9 sep 06:30
+    // en 42:12, Hans Schepers 9 sep 20:33, Panman 30 jul 00:03:00.
+    nu_eyebrow: 'Waarom wij',
+    nu_h2: 'Je krijgt een factuur en een rapportje. Wat er gebeurd is, zie je niet.',
+    nu_intro: '"Ik heb hier wel alle facturen, maar niet echt direct een rapportage." En: "Daar krijgen we inderdaad een rapportje van achteraf." Twee ondernemers, twee verschillende branches, dezelfde zin. Zo begint bijna elk gesprek dat wij voeren.',
+    nu_kern: '"Dan moet ik maar vooropvertrouwen, want ik kan het niet zien." Dat is het echte probleem. Niet dat er te weinig gebeurt, maar dat je het niet kunt nakijken. En wie het niet kan nakijken, kan ook niet zien of het volgende voorstel klopt.',
     nu_punten: [
-      { t: 'Het maakt slechte data niet beter', d: 'Het rekent er alleen sneller mee door. Worden je conversies dubbel geteld, dan wordt daar nu ook automatisch budget op verdeeld.' },
-      { t: 'Bouwen is iets anders dan weten wat je meet', d: 'Iemand kan een prima meetscript schrijven zonder te weten welke conversie zakelijk telt. Dat is geen verwijt, het zijn twee vakken.' },
-      { t: 'Daarom telt de basis zwaarder, niet lichter', d: 'Hoe goedkoper uitvoeren wordt, hoe duurder een fout in het fundament. Die vermenigvuldigt namelijk mee.' },
+      { t: '"Er gebeurt niks"', d: 'Letterlijk gezegd door twee ondernemers in twee weken tijd, over een rekening van duizend euro per maand. Of het waar was, wisten ze geen van beiden. Dat is het punt.' },
+      { t: '"Ik ben het overzicht helemaal kwijt"', d: 'Vier systemen, drie inloggegevens en een bureau dat via jouw naam inlogt. Niemand houdt dat bij, en dat hoeft ook niet als iemand anders het netjes bijhoudt.' },
+      { t: '"Alle telefoontjes die binnenkomen moet ik betalen"', d: 'Bij de een zijn het telefoontjes, bij de ander verkochte tickets of stoelen in de zaak. Als niemand telt welke daarvan uit welke campagne kwam, stuurt elk systeem op een cijfer dat er naast zit.' },
     ],
-    nu_slot: 'Vandaar de volgorde: eerst weten of je cijfers kloppen, dan pas erop sturen. Niet omdat het spannend klinkt, maar omdat de rest anders op zand staat.',
+    nu_slot: 'Wij zorgen eerst dat er klopt wat er binnenkomt, en geven die cijfers terug aan de platformen: welke aanvraag een klant werd en wat die waard was. Dan gaan Google en Meta harder voor je werken in plaats van voor zichzelf. En jij kunt het nakijken, want dat is waar het bij iedereen op stukliep.',
 
-    // De volgorde uit de master brief, die nergens op de site stond terwijl hij
-    // de hele propositie draagt: eigenaarschap, meting, een bron, geheugen, en
-    // pas daarna automatiseren en AI. Het punt is de breuklijn: de eerste vier
-    // zijn voorwaarden, de laatste twee zijn wat je erop bouwt. Wie stap drie
-    // overslaat, laat AI rekenen met cijfers die niet kloppen.
     ladder_eyebrow: 'De volgorde',
     ladder_h2: 'Wat er moet kloppen voordat AI iets voor je kan betekenen.',
     ladder_sub: 'Niet omdat het braaf is, maar omdat elke stap de volgende mogelijk maakt. Sla er een over en alles daarboven is gokwerk met meer rekenkracht.',
@@ -227,16 +227,16 @@ const COPY = {
     herken_close: 'These are not exceptions. This is how it works as long as nobody is watching.',
     herken_bron: 'From real diagnosis conversations, anonymised.',
 
-    nu_eyebrow: 'Why now',
-    nu_h2: 'Anyone can build something now. That is not the point.',
-    nu_intro: 'Setting up a campaign, building a landing page, wiring up measurement: it takes an afternoon. That is progress, and we use it ourselves. But something less visible changed with it.',
-    nu_kern: 'Building faster also means building faster on the wrong foundation. Measurement that was off used to surface, because someone spent weeks working with it. Now an afternoon produces a campaign that steers on that same wrong number.',
+    nu_eyebrow: 'Why us',
+    nu_h2: 'Google gives advice too. Only Google sells the ads.',
+    nu_intro: 'Every ad account has a list of recommendations. Raise this budget, switch on that campaign, add these keywords. Meant to help, and sometimes right. It just comes from the party selling you the ads.',
+    nu_kern: 'We look at the same account and ask a different question: what earns you a customer, and what is wasted money. That answer is not in the list, because it is not in the numbers Google has.',
     nu_punten: [
-      { t: 'It does not improve bad data', d: 'It just computes with it faster. If your conversions are counted twice, budget now gets allocated on that automatically.' },
-      { t: 'Building is not the same as knowing what you measure', d: 'Someone can write a perfectly good tracking script without knowing which conversion matters commercially. That is not a reproach, they are two trades.' },
-      { t: 'So the basics weigh more, not less', d: 'The cheaper execution gets, the more expensive a flaw in the foundation becomes. It multiplies along.' },
+      { t: 'Google works with what you give it', d: 'The system steers on the conversions in your account. If that count is wrong, your budget gets neatly spread across the wrong things.' },
+      { t: 'Google cannot see your margin', d: 'An enquiry you make a hundred euro on and one you make five thousand on count the same there. Not to you.' },
+      { t: 'Google does not look outside Google', d: 'Whether that customer would have come anyway, or simply phoned, is not in that account. With us it is, and we send it back.' },
     ],
-    nu_slot: 'Hence the order: first know whether your numbers are right, then steer on them. Not because it sounds exciting, but because everything else stands on sand otherwise.',
+    nu_slot: 'We are not against those systems, quite the opposite. Feed them the right numbers, which enquiry became a customer and what it was worth, and they start working harder for you. That is where our work begins.',
 
     ladder_eyebrow: 'The order',
     ladder_h2: 'What has to be right before AI can do anything for you.',
