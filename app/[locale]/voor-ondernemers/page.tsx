@@ -22,16 +22,16 @@ const COPY = {
     rows: [
       { t: 'De factuur', before: 'Je betaalt elke maand en hoopt dat er iets voor gebeurd is.', after: 'Je ziet elk besluit in het logboek, met de reden erbij.' },
       { t: 'De cijfers', before: 'Je stuurt op het dashboard van het bureau.', after: 'Je meting telt echte aanvragen, gecontroleerd, op jouw naam.' },
-      { t: 'De kennis', before: 'Alles zit in het hoofd van een persoon die kan vertrekken.', after: 'Alles staat in een marketinggeheugen dat van je bedrijf blijft.' },
+      { t: 'De kennis', before: 'Alles zit in het hoofd van een persoon die kan vertrekken.', after: 'Alles staat vast bij je eigen bedrijf, ook als er iemand vertrekt.' },
       { t: 'Het contract', before: 'Opzeggen voelt als opnieuw beginnen.', after: 'Je exit is ingebouwd vanaf dag een. Stoppen kost je niets, behalve ons.' },
     ],
     before_label: 'Nu', after_label: 'Met Stevin',
 
     leads_eyebrow: 'Herken je dit?',
-    leads_h2: 'Leads kopen is geen marketing.',
+    leads_h2: 'Aanvragen kopen is geen marketing.',
     leads_quote: '1.100 euro aan gekochte leads. Nul opdrachten.',
     leads_quote_a: 'Installatiebedrijf, uit een diagnosegesprek',
-    leads_body: 'Leadplatforms verkopen dezelfde aanvraag aan vijf bedrijven tegelijk, en volgend jaar betaal je opnieuw. Marketing die van jou is werkt andersom: je eigen vindbaarheid, je eigen aanvragen, en alles wat je opbouwt blijft van jou. De diagnose laat zien waar je nu staat en wat je laat liggen.',
+    leads_body: 'Aanvraagsites verkopen dezelfde aanvraag aan vijf bedrijven tegelijk, en volgend jaar betaal je opnieuw. Marketing die van jou is werkt andersom: je eigen vindbaarheid, je eigen aanvragen, en alles wat je opbouwt blijft van jou. De diagnose laat zien waar je nu staat en wat je laat liggen.',
 
     own_eyebrow: 'Alles blijft van jou',
     own_h2: 'Grip betekent: je kunt altijd weg.',
@@ -44,7 +44,7 @@ const COPY = {
     principes: [
       {
         p: 'Controleer de meting voordat je iets anders beoordeelt.',
-        u: 'Een conversie die op het verkeerde moment wordt geteld maakt elk oordeel over je marketing waardeloos. Wij beginnen daar, en dat is meestal ook waar het misgaat.',
+        u: 'Een aanvraag die op het verkeerde moment geteld wordt maakt elk oordeel over je marketing waardeloos. Wij beginnen daar, en dat is meestal ook waar het misgaat.',
         bron: 'Praktijkprincipe uit de kennislaag',
         grens: 'Betekent niet dat je zonder perfecte meting niet mag adverteren. Wel dat je je cijfers dan niet blind gelooft.',
       },

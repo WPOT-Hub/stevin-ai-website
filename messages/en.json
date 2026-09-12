@@ -423,7 +423,7 @@
     "layer3_title": "CRM",
     "layer3_body": "Leads, appointments, deals and follow-up. This is usually where the claim and the reality stop matching.",
     "layer4_title": "Revenue",
-    "layer4_body": "Commerce, finance and ticketing show what actually comes in, not what a platform claims.",
+    "layer4_body": "Your webshop shows what was actually sold, not what an ad platform claims. Till systems, bookkeeping and ticketing we do not read today.",
     "layer5_title": "Work",
     "layer5_body": "Signals turn into tasks, briefings, approvals or reporting. No stray chart without an owner.",
     "categories_aria": "Integration categories",
@@ -473,7 +473,8 @@
     "detail_cta_title": "Connect {name} to your systems?",
     "detail_cta_desc": "Book a demo and discover how we make your tools work together for better results.",
     "detail_cta_btn": "Start the diagnosis",
-    "filter_status_live": "Live today"
+    "filter_status_live": "Live today",
+    "hero_card_search": "search visibility"
   },
   "seo": {
     "meta_title": "Outsource SEO without handing over your visibility",

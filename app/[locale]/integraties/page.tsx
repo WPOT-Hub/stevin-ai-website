@@ -33,11 +33,15 @@ export default async function IntegratiesPage({ params }: Props) {
     body: t(`layer${n}_body`),
   }))
 
+  // W-078, 13 sep 2026: HubSpot en Exact stonden hier als voorbeeld van wat we
+  // naast elkaar leggen, terwijl /platform twee klikken verderop zegt dat we
+  // juist geen kassa, ERP of boekhouding uitlezen. Vervangen door bronnen die
+  // we vandaag echt uitlezen (zie status 'live' in data/integrations.ts).
   const heroRows: [string, string, string][] = [
     ['Google Ads', t('hero_card_spend'), '82%'],
     ['GA4', t('hero_card_events'), '64%'],
-    ['HubSpot', t('hero_card_deals'), '48%'],
-    ['Exact', t('hero_card_revenue'), '58%'],
+    ['Search Console', t('hero_card_search'), '48%'],
+    ['WooCommerce', t('hero_card_revenue'), '58%'],
   ]
 
   const jsonLd = {

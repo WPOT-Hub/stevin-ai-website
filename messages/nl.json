@@ -423,7 +423,7 @@
     "layer3_title": "CRM",
     "layer3_body": "Leads, afspraken, deals en opvolging. Hier verdwijnt vaak het verschil tussen claim en werkelijkheid.",
     "layer4_title": "Omzet",
-    "layer4_body": "Commerce, finance en ticketing laten zien wat er werkelijk binnenkomt, niet wat een platform claimt.",
+    "layer4_body": "Je webshop laat zien wat er werkelijk is verkocht, niet wat een advertentieplatform claimt. Kassa, boekhouding en ticketing lezen wij vandaag niet uit.",
     "layer5_title": "Werk",
     "layer5_body": "Signalen worden taken, briefings, goedkeuringen of rapportage. Geen losse grafiek zonder eigenaar.",
     "categories_aria": "Integratiecategorieen",
@@ -473,7 +473,8 @@
     "detail_cta_title": "{name} koppelen aan je systemen?",
     "detail_cta_desc": "Boek een demo en ontdek hoe we je tools laten samenwerken voor betere resultaten.",
     "detail_cta_btn": "Start de diagnose",
-    "filter_status_live": "Draait vandaag"
+    "filter_status_live": "Draait vandaag",
+    "hero_card_search": "vindbaarheid"
   },
   "seo": {
     "meta_title": "SEO uitbesteden, je vindbaarheid blijft van jou",
