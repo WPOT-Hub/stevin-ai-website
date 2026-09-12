@@ -1529,6 +1529,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'chinese-ai-bedrijven-gebruiken-distillatie-tegen-anthropic': (
+    <>
+      <p className="lead-para">
+        Een nieuw rapport van Anthropic beschuldigt drie grote Chinese AI-bedrijven ervan systematisch trainingsdata en modeltechnieken te stelen via zogeheten 'distillatie-aanvallen'. Deze aanvallen vinden al maanden plaats en zijn volgens Anthropic opgeschroefd nu de concurrentie in de sector harder wordt. De bedrijven zouden via tussenpersonen en gespecialiseerde diensten toegang hebben gekregen tot gevoelige ontwikkelingsdata van Anthropic’s modellen.
+      </p>
+      <p>
+        Deze vorm van intellectuele diefstal werkt door kleine aanpassingen in openbare modellen te maken, waardoor de originele trainingsdata indirect gereconstrueerd kan worden. Volgens het rapport zijn de aanvallen zo verfijnd dat ze moeilijk te detecteren zijn zonder diepgaande analyse. Anthropic benadrukt dat de schade niet alleen financieel is, maar ook de innovatiesnelheid in de sector vertraagt omdat bedrijven minder bereid zijn om kennis te delen.
+      </p>
+      <p>
+        De betrokken Chinese bedrijven ontkennen elke betrokkenheid bij deze praktijken. Toch wijst Anthropic op vergelijkbare gevallen in het verleden, waarbij Europese en Amerikaanse bedrijven slachtoffer werden van soortgelijke aanvallen. De vraag is nu hoe de industrie hierop zal reageren, vooral nu regulering rondom AI-trainingsdata nog in ontwikkeling is.
+      </p>
+    </>
+  ),
   'ai-agenten-haten-captchas-zoals-mensen': (
     <>
       <p className="lead-para">
@@ -7716,6 +7729,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'chinese-ai-bedrijven-gebruiken-distillatie-tegen-anthropic':
+    "Voor bedrijven die met AI-modellen werken, onderstreept dit incident het belang van robuuste beveiliging van trainingsdata en modellogica. Het laat zien dat concurrentievoordeel niet alleen ligt in innovatie, maar ook in het beschermen van wat al bestaat. Tegelijkertijd maakt het duidelijk dat grensoverschrijdende samenwerking rondom AI-ontwikkeling complex blijft door juridische en ethische verschillen tussen regio's.",
   'ai-agenten-haten-captchas-zoals-mensen':
     "Voor bedrijven die afhankelijk zijn van Captcha’s voor beveiliging of fraudepreventie is dit een wake-upcall. Het laat zien dat statische beveiligingsmaatregelen snel achterhaald kunnen raken door slimme automatisering. Een meervoudige aanpak, waarbij Captcha’s worden gecombineerd met andere authenticatiemethodes zoals biometrie of gedragsanalyse, wordt daarom steeds belangrijker.",
   'ai-ontdekt-oplossing-millennium-probleem-navier-stokes':
