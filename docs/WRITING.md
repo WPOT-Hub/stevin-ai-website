@@ -70,8 +70,11 @@ daarvan: een punt, dubbele punt, komma, of haakjes.
 
 Geen uitzondering, ook niet in citaten of samengestelde namen: dat gold hier
 eerder wel (zie git-historie), maar is per 4 sep 2026 gelijkgetrokken met de
-canonieke regel in `Stevin-Hub/docs/copy/VERBODEN_WOORDEN.json` (`gedachtestreepje`,
-hardheid blok, "geen enkele uitzondering"). Kom je een samengestelde naam met een
+canonieke regel in `Stevin-Hub/scripts/outbound_copy_gate.py` (regel
+`gedachtestreepje`, hardheid blok, "geen enkele uitzondering"). Nagekeken op 13 sep
+2026: het eerder genoemde `docs/copy/VERBODEN_WOORDEN.json` bestaat niet, niet
+lokaal en niet op main. De poort is de enige plek waar deze regels ook echt
+worden getoetst, dus die is de canon. Kom je een samengestelde naam met een
 streepje tegen, schrijf het om (spatie, of aan elkaar) in plaats van een dash te
 gebruiken.
 
