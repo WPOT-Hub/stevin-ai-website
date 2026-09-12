@@ -217,7 +217,7 @@ const COPY = {
     closing_l1: 'Wij regelen het nu goed.',
     closing_l2: 'Alles blijft van jou.',
     closing_body: 'Start de diagnose. Binnen twee weken zie je zwart op wit hoe je marketing ervoor staat. Op jouw eigen cijfers.',
-    closing_micro: 'We nemen een beperkt aantal nieuwe klanten per maand aan, omdat elke start met een volledige inrichting begint.',
+    closing_micro: 'In die twee weken kijken wij na wie er als betaler achter je advertenties staat, op wiens naam je accounts en je domein staan, en of je meting echte aanvragen telt. Je krijgt het op papier, ook als je verder niets met ons doet.',
   },
   en: {
     eyebrow: 'For companies that pay for marketing',
@@ -373,7 +373,7 @@ const COPY = {
     closing_l1: 'We set it right now.',
     closing_l2: 'Everything stays yours.',
     closing_body: 'Start the diagnosis. Within two weeks you see in black and white where your marketing stands. On your own numbers.',
-    closing_micro: 'We take on a limited number of new clients per month, because every start begins with a full setup.',
+    closing_micro: 'In those two weeks we check who is registered as the payer behind your ads, whose name your accounts and domain are in, and whether your measurement counts real enquiries. You get it on paper, even if you never work with us.',
   },
 } as const
 

@@ -26,11 +26,12 @@ export default function Footer() {
       { label: 'Lead generatie', href: '/lead-generatie' },
       { label: 'Website met CRM', href: '/website-met-crm' },
       { label: 'Google Ads en GA4', href: '/google-ads-ga4' },
-      { label: 'First-party data', href: '/first-party-data' },
+      // W-078: label was 'First-party data', een vakterm die deze lezer niet
+      // gebruikt. De URL blijft staan voor bestaande links.
+      { label: 'Je eigen data', href: '/first-party-data' },
       { label: 'AI-briefing', href: '/ai-briefing' },
     ],
     bedrijf: [
-      { label: t('bedrijf_werkwijze'), href: '/werkwijze' },
       { label: t('bedrijf_simon'), href: '/simon-stevin' },
       { label: t('bedrijf_multimarket'), href: '/multi-market' },
       { label: t('bedrijf_integraties'), href: '/integraties' },
@@ -40,7 +41,6 @@ export default function Footer() {
       { label: t('voor_teams'), href: '/voor-marketingteams' },
       { label: t('controle'), href: '/controle' },
       { label: t('platform'), href: '/platform' },
-      { label: t('producten'), href: '/producten' },
       { label: t('cases'), href: '/case-studies' },
       { label: t('journal'), href: '/blog' },
       { label: t('vergelijken'), href: '/vergelijken' },
