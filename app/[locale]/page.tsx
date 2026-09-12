@@ -23,8 +23,12 @@ type Props = { params: Promise<{ locale: string }> }
 const COPY = {
   nl: {
     eyebrow: 'Voor bedrijven die betalen voor marketing',
-    hero_sub_1: 'Stevin zet je marketing goed en let er dag en nacht op. En alles blijft van jou: ',
-    hero_sub_bold: 'je accounts, je data, je kennis.',
+    // Herschreven 13 sep 2026 (W-078). Koen: het moet simpeler, en het moet
+    // duidelijk zijn dat we ook begeleiden en campagnes draaien waar nodig.
+    // Wat we meten hangt af van wat het bedrijf verkoopt: telefoontjes voor wie
+    // daarvan leeft, merkprestatie voor wie via de winkel verkoopt.
+    hero_sub_1: 'Leef je van de telefoon, dan meten we de telefoontjes. Verkoop je via de winkel, dan kijken we naar je merk. Daarna draaien we je campagnes, of we begeleiden je eigen mensen. En ',
+    hero_sub_bold: 'alles blijft van jou.',
     cta_primary: 'Start de diagnose',
     cta_secondary: 'Kijk zelf mee',
     cta_micro: 'Eerst de diagnose op jouw eigen data. Daarna pas een voorstel.',
@@ -204,8 +208,8 @@ const COPY = {
   },
   en: {
     eyebrow: 'For companies that pay for marketing',
-    hero_sub_1: 'Stevin sets your marketing up right and watches it day and night. And everything stays yours: ',
-    hero_sub_bold: 'your accounts, your data, your knowledge.',
+    hero_sub_1: 'If you live off the phone, we measure the calls. If you sell through shops, we look at your brand. After that we run your campaigns, or we coach your own people. And ',
+    hero_sub_bold: 'everything stays yours.',
     cta_primary: 'Start the diagnosis',
     cta_secondary: 'See for yourself',
     cta_micro: 'First the diagnosis, on your own data. Only then a proposal.',

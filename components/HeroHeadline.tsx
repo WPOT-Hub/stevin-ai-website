@@ -12,9 +12,11 @@ import { useEffect, useState } from 'react'
  * De zwevende switcher verschijnt alleen op preview-hosts.
  */
 
-type Variant = 'a' | 'b' | 'c' | 'd'
+type Variant = 'a' | 'b' | 'c' | 'd' | 'e'
 
-const ROTATION: Variant[] = ['c', 'b', 'd']
+// E toegevoegd 13 sep 2026 (W-078), Koens eigen formulering: eerst de basis,
+// daarna de campagnes, en wat we meten hangt af van wat jouw bedrijf verkoopt.
+const ROTATION: Variant[] = ['e', 'c', 'b', 'd']
 const STORAGE_KEY = 'stevin_kop_variant'
 
 const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; accent: string }>> = {
@@ -23,16 +25,18 @@ const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; a
     b: { eyebrow: 'Kijk zelf mee, het staat er gewoon', line: 'Google weet wie de eigenaar is van jouw data.', accent: 'Jij ook?' },
     c: { eyebrow: 'Groeien met grip', line: 'Marketing die elke maand beter wordt.', accent: 'En alles blijft van jou.' },
     d: { eyebrow: 'De AI-laag over je marketing en sales', line: 'Je eigen data.', accent: 'Je eigen marketing-brein.' },
+    e: { eyebrow: 'Voor bedrijven die marketing uitbesteden', line: 'Eerst zorgen dat alles binnenkomt en geteld wordt.', accent: 'Daarna de campagnes.' },
   },
   en: {
     a: { eyebrow: 'For companies that pay for marketing', line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
     b: { eyebrow: 'See for yourself, it is right there', line: 'Google knows who owns your data.', accent: 'Do you?' },
     c: { eyebrow: 'Growth with grip', line: 'Marketing that gets better every month.', accent: 'And everything stays yours.' },
     d: { eyebrow: 'The AI layer over your marketing and sales', line: 'Your own data.', accent: 'Your own marketing brain.' },
+    e: { eyebrow: 'For companies that outsource their marketing', line: 'First make sure every enquiry arrives and gets counted.', accent: 'Then the campaigns.' },
   },
 }
 
-const LABELS: Record<Variant, string> = { a: 'A factuur', b: 'B transparantie', c: 'C groei', d: 'D brein' }
+const LABELS: Record<Variant, string> = { a: 'A factuur', b: 'B transparantie', c: 'C groei', d: 'D brein', e: 'E basis' }
 
 declare global {
   interface Window {
@@ -41,7 +45,7 @@ declare global {
 }
 
 function isVariant(v: string | null): v is Variant {
-  return v === 'a' || v === 'b' || v === 'c' || v === 'd'
+  return v === 'a' || v === 'b' || v === 'c' || v === 'd' || v === 'e'
 }
 
 export default function HeroHeadline({ locale }: { locale: string }) {
