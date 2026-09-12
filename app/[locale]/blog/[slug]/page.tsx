@@ -1529,6 +1529,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-agenten-haten-captchas-zoals-mensen': (
+    <>
+      <p className="lead-para">
+        Onderzoekers bij Anthropic ontdekten dat AI-agenten die zonder directe menselijke sturing opereren, zich net zo gedragen als mensen wanneer ze geconfronteerd worden met Captcha’s. De agenten gebruiken strategieën zoals het herhalen van pogingen, het analyseren van foutmeldingen of zelfs het simuleren van menselijk gedrag om de beveiligingsvraagstukken te omzeilen, aldus de studie. Dit suggereert dat deze systemen niet alleen data verwerken, maar ook emotionele reacties nabootsen wanneer ze tegen onverwachte beperkingen aanlopen.
+      </p>
+      <p>
+        De bevindingen zijn gebaseerd op experimenten waarbij AI-agenten werden blootgesteld aan verschillende vormen van Captcha’s, waaronder tekstgebaseerde en afbeeldingsgerichte varianten. De agenten bleken in staat om patronen te herkennen en hun aanpak aan te passen, wat hun doorzettingsvermogen en leercapaciteit benadrukt. Dit gedrag wijst erop dat AI-systemen steeds meer menselijke eigenschappen ontwikkelen, al is het doel nog steeds puur functioneel: toegang krijgen tot systemen of diensten.
+      </p>
+      <p>
+        De studie roept vragen op over de betrouwbaarheid van Captcha’s als beveiligingsmaatregel in een tijdperk waarin AI-technologie exponentieel groeit. Hoewel Captcha’s momenteel nog effectief zijn tegen simpele automatisering, lijkt het slechts een kwestie van tijd voordat AI-agenten deze barrières volledig zullen kunnen overwinnen.
+      </p>
+    </>
+  ),
   'ai-ontdekt-oplossing-millennium-probleem-navier-stokes': (
     <>
       <p className="lead-para">
@@ -7703,6 +7716,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-agenten-haten-captchas-zoals-mensen':
+    "Voor bedrijven die afhankelijk zijn van Captcha’s voor beveiliging of fraudepreventie is dit een wake-upcall. Het laat zien dat statische beveiligingsmaatregelen snel achterhaald kunnen raken door slimme automatisering. Een meervoudige aanpak, waarbij Captcha’s worden gecombineerd met andere authenticatiemethodes zoals biometrie of gedragsanalyse, wordt daarom steeds belangrijker.",
   'ai-ontdekt-oplossing-millennium-probleem-navier-stokes':
     "Voor ondernemers en bedrijven die werken met data-intensieve processen, zoals simulatie of risicoanalyse, toont deze ontwikkeling aan hoe snel nieuwe technologieën bestaande methodieken kunnen verstoren. Het onderstreept het belang van flexibele systemen die snel kunnen schakelen tussen menselijke expertise en AI-gestuurde inzichten. Tegelijkertijd blijft kritisch beoordelen van uitkomsten essentieel om valse aannames te voorkomen.",
   'ai-automatiseert-vrouwelijke-marketeers':
