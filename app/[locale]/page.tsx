@@ -1106,7 +1106,7 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      <StickyMobileCTA />
+      <StickyMobileCTA locale={locale} />
     </>
   )
 }

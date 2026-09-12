@@ -103,7 +103,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.diensten.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors duration-200">
+                  <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors duration-200 [overflow-wrap:anywhere]">
                     {link.label}
                   </Link>
                 </li>
@@ -119,7 +119,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.bedrijf.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors duration-200">
+                  <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors duration-200 [overflow-wrap:anywhere]">
                     {link.label}
                   </Link>
                 </li>
@@ -135,7 +135,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.integraties.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors duration-200">
+                  <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors duration-200 [overflow-wrap:anywhere]">
                     {link.label}
                   </Link>
                 </li>
@@ -151,7 +151,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.juridisch.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors duration-200">
+                  <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors duration-200 [overflow-wrap:anywhere]">
                     {link.label}
                   </Link>
                 </li>
