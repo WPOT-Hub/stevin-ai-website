@@ -8,6 +8,7 @@ import StickyMobileCTA from '@/components/StickyMobileCTA'
 import MarketingMemoryDemo from '@/components/MarketingMemoryDemo'
 import StevinBrainVisual from '@/components/StevinBrainVisual'
 import DeskProof from '@/components/DeskProof'
+import KlantLogos from '@/components/KlantLogos'
 import BrainEdgeStrip from '@/components/BrainEdgeStrip'
 import HeroHeadline from '@/components/HeroHeadline'
 import { editorials } from '@/data/articles'
@@ -694,6 +695,9 @@ export default async function HomePage({ params }: Props) {
           daarna concreter omdat je weet waar ze naartoe werken.
           Zelfde component als op de SEO-landingspagina's. */}
       <DeskProof locale={locale} />
+
+      {/* ── KLANTLOGOS (W-078) ── */}
+      <KlantLogos locale={locale} />
 
       {/* ── HOE HET WERKT ── */}
       <section id="hoe-het-werkt" className="bg-primary scroll-mt-24" style={{ padding: '112px 24px' }}>
