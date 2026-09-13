@@ -222,7 +222,9 @@ const COPY = {
     price_value: '1.399',
     price_period: 'per maand, en na zes tot twaalf maanden 399',
     price_link: 'Bekijk alle tarieven',
-    price_body: 'Wij doen het werk en draaien mee tot het staat. Zodra je eigen mensen het kunnen, zak je naar 399. Bij ons gaat het bedrag dus omlaag als het werkt, in plaats van omhoog. Geen marge op je mediabudget, en stoppen kan altijd met alles wat van jou is.',
+    // Koen 13 sep 12:28: 399 is ook bij ons de prijs om het zelf te draaien,
+    // dus die mag genoemd worden. Als tweede regel, 1.399 blijft het grote getal.
+    price_body: 'Wij doen het werk en draaien mee tot het staat. Zodra je eigen mensen het kunnen, zak je naar 399. Bij ons gaat het bedrag dus omlaag als het werkt, in plaats van omhoog. Wil je het meteen zelf draaien, met Stevin erbij: vanaf 399 per maand. Geen marge op je mediabudget, en stoppen kan altijd met alles wat van jou is.',
 
     faq_eyebrow: 'Veelgestelde vragen',
     faq_h2: 'Wat iedereen eerst wil weten.',
@@ -383,7 +385,7 @@ const COPY = {
     price_value: '1,399',
     price_period: 'per month, and 399 after six to twelve months',
     price_link: 'See all pricing',
-    price_body: 'We do the work and stay on until it stands. Once your own people can run it, you drop to 399. With us the amount goes down when it works, instead of up. No margin on your media budget, and you can stop at any time with everything that is yours.',
+    price_body: 'We do the work and stay on until it stands. Once your own people can run it, you drop to 399. With us the amount goes down when it works, instead of up. Want to run it yourself from day one, with Stevin alongside: from 399 a month. No margin on your media budget, and you can stop at any time with everything that is yours.',
 
     faq_eyebrow: 'Frequently asked questions',
     faq_h2: 'What everyone wants to know first.',
