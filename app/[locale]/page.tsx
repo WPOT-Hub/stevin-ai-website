@@ -94,10 +94,13 @@ const COPY = {
     nu_intro: '"Ik heb hier wel alle facturen, maar niet echt direct een rapportage." En: "Daar krijgen we inderdaad een rapportje van achteraf." Twee ondernemers, twee verschillende branches, dezelfde zin. Zo begint bijna elk gesprek dat wij voeren.',
     nu_kern: '"Dan moet ik maar vooropvertrouwen, want ik kan het niet zien." Dat is het echte probleem. Niet dat er te weinig gebeurt, maar dat je het niet kunt nakijken. En wie het niet kan nakijken, kan ook niet zien of het volgende voorstel klopt.',
     nu_punten: [
-      { t: '"Er gebeurt niks"', d: 'Letterlijk gezegd door twee ondernemers in twee weken tijd, over een rekening van duizend euro per maand. Of het waar was, wisten ze geen van beiden. Dat is het punt.' },
-      { t: '"Ik ben het overzicht helemaal kwijt"', d: 'Vier systemen, drie inloggegevens en een bureau dat via jouw naam inlogt. Niemand houdt dat bij, en dat hoeft ook niet als iemand anders het netjes bijhoudt.' },
-      { t: '"Alle telefoontjes die binnenkomen moet ik betalen"', d: 'Bij de een zijn het telefoontjes, bij de ander verkochte tickets of stoelen in de zaak. Als niemand telt welke daarvan uit welke campagne kwam, stuurt elk systeem op een cijfer dat er naast zit.' },
-      { t: 'Bouwen is iets anders dan weten wat je meet', d: 'Iemand kan een prima meetscript schrijven zonder te weten welke aanvraag zakelijk telt. Dat is geen verwijt, het zijn twee vakken. Wil je weten wie er in jouw account heeft gewerkt en wanneer: vraag om het wijzigingslogboek. Elke aanpassing staat daar met naam en tijdstip in.' },
+      // W-078, Koen 13 sep 11:41: "bekt niet helemaal lekker, 4 past ook net
+      // niet mooi". Drie kaarten in een raster van drie, allemaal een citaat,
+      // korter. De vierde (meetscript, wijzigingslogboek) was geen citaat en
+      // zei wat check 02 onder "Kijk zelf mee" al zegt.
+      { t: '"Er gebeurt niks"', d: 'Twee ondernemers, twee weken na elkaar, allebei over een rekening van duizend euro per maand. Of het waar was, wisten ze geen van beiden. Dat is precies het punt.' },
+      { t: '"Ik ben het overzicht helemaal kwijt"', d: 'Vier systemen, drie inlogs, en een bureau dat onder jouw naam inlogt. Dat hoef je niet zelf bij te houden. Iemand moet het wel doen.' },
+      { t: '"Alle telefoontjes die binnenkomen moet ik betalen"', d: 'Bij de een telefoontjes, bij de ander verkochte tickets of stoelen in de zaak. Zolang niemand telt welke uit welke campagne kwam, stuurt elk systeem op een cijfer dat ernaast zit.' },
     ],
     nu_slot: 'Wij zorgen eerst dat klopt wat er binnenkomt, zodat Google en Meta echte aanvragen te zien krijgen in plaats van knopklikken. Dan gaan ze harder voor je werken. En het telt zwaarder dan vroeger, want wat zo\'n systeem voor jou kan uitrekenen hangt af van wat het van jou weet. Die geschiedenis bouwt zich op in het account waar hij staat, dus hoe langer je wacht, hoe duurder de overstap wordt. Een keer de pleister eraf. En bij ons gaat er niets uit de lucht: geen dag zonder site, geen dag zonder mail.',
 
@@ -252,13 +255,13 @@ const COPY = {
     herken_bron: 'From real diagnosis conversations, anonymised.',
 
     nu_eyebrow: 'Why us',
-    nu_h2: 'Google gives advice too. Only Google sells the ads.',
-    nu_intro: 'Every ad account has a list of recommendations. Raise this budget, switch on that campaign, add these keywords. Meant to help, and sometimes right. It just comes from the party selling you the ads.',
-    nu_kern: 'We look at the same account and ask a different question: what earns you a customer, and what is wasted money. That answer is not in the list, because it is not in the numbers Google has.',
+    nu_h2: 'You get an invoice and a little report. What actually happened, you cannot see.',
+    nu_intro: '"I do have all the invoices here, but not really a report." And: "We do get a little report afterwards, yes." Two business owners, two different trades, the same sentence. That is how almost every conversation we have begins.',
+    nu_kern: '"So I just have to trust them, because I cannot see it." That is the real problem. Not that too little happens, but that you cannot check it. And whoever cannot check it, cannot see whether the next proposal is right either.',
     nu_punten: [
-      { t: 'Google works with what you give it', d: 'The system steers on the conversions in your account. If that count is wrong, your budget gets neatly spread across the wrong things.' },
-      { t: 'Google cannot see your margin', d: 'An enquiry you make a hundred euro on and one you make five thousand on count the same there. Not to you.' },
-      { t: 'Google does not look outside Google', d: 'Whether that customer would have come anyway, or simply phoned, is not in that account. With us it is, and we send it back.' },
+      { t: '"Nothing happens"', d: 'Two business owners, two weeks apart, both about a bill of a thousand euro a month. Neither knew whether it was true. That is exactly the point.' },
+      { t: '"I have completely lost the overview"', d: 'Four systems, three logins, and an agency signing in under your name. You should not have to track that yourself. Someone has to, though.' },
+      { t: '"Every phone call that comes in, I pay for"', d: 'For one it is phone calls, for another tickets sold or seats filled. As long as nobody counts which came from which campaign, every system steers on a number that is off.' },
     ],
     nu_slot: 'First we make sure what comes in is right, so Google and Meta see real enquiries instead of button clicks. Then they start working harder for you. And it counts for more than it used to, because what such a system can work out for you depends on what it knows about you. That history builds up in whichever account it sits in, so the longer you wait, the more the switch costs. Rip the plaster off once. And with us nothing goes offline: not a day without your site, not a day without your mail.',
 
