@@ -45,7 +45,7 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     eerlijk_h2: 'Twee dingen die wij niet doen.',
     eerlijk: [
       { t: 'Wij veranderen niets in je accounts', d: 'Er zit geen schrijfpad naar Google of Meta in dit systeem, met opzet. Elk voorstel wordt een taak met een naam eronder, en een mens voert het uit of legt uit waarom niet. Geen tweede hand die zonder overleg aan je budgetten zit.' },
-      { t: 'Wij zijn geen dashboard erbij', d: 'Je hebt er al twee. Hier hoef je niet te kijken: je krijgt een melding als iets afwijkt, met de reden, het voorstel en de bron, zodat je het kunt nakijken.' },
+      { t: 'Wij zijn geen dashboard erbij', d: 'Je hebt er al twee. Je hoeft hier niet dagelijks in te kijken: je krijgt een melding als iets afwijkt, met de reden, het voorstel en de bron, zodat je het kunt nakijken.' },
     ],
 
     krijg_h2: 'Wat je wel krijgt.',
@@ -70,8 +70,8 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     faq_h2: 'Wat teams ons eerst vragen.',
     faqs: [
       { question: 'Wij zijn zelf een bureau. Is dit concurrentie?', answer: 'Nee. Wij nemen geen accounts over en wij veranderen niets in de jouwe. Wij zijn de laag die elke dag meekijkt en onthoudt, zodat jij je tijd aan je klant besteedt in plaats van aan het rapport. Je klant ziet jouw naam, niet de onze.' },
-      { question: 'Welke koppelingen zijn er echt?', answer: 'Google Ads, Meta, GA4, Search Console, Tag Manager, Merchant Center, Shopify, WooCommerce, Klaviyo, Mailchimp, TikTok, LinkedIn, Pinterest en YouTube. Geen andere. Staat er iets niet bij, dan lezen we de export in en zeggen we dat erbij.' },
-      { question: 'Wat kost het?', answer: 'De scan is gratis. Daarna kies je: alleen meekijken vanaf 399 per maand per klant, of de volledige diagnose. Je houdt het rapport, ook als je daarna niets met ons doet.' },
+      { question: 'Welke koppelingen zijn er echt?', answer: 'Google Ads, Meta, Instagram, GA4, Search Console, Tag Manager, Merchant Center, Shopify, WooCommerce, Klaviyo, Mailchimp, TikTok, LinkedIn, Pinterest, Snapchat, DV360 en YouTube lezen we dagelijks uit. Staat jouw systeem er niet tussen: als de vraag er is, koppelen we.' },
+      { question: 'Wat kost het?', answer: 'De scan is gratis, de diagnose ook: je houdt het rapport, ook als je daarna niets met ons doet. Meekijken kost daarna 399 per maand per klant.' },
     ],
 
     slot_h2: 'Begin met de scan.',
@@ -103,7 +103,7 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     eerlijk_h2: 'Two things we do not do.',
     eerlijk: [
       { t: 'We change nothing in your accounts', d: 'There is no write path to Google or Meta in this system, by design. Every proposal becomes a task with a name under it, and a person carries it out or explains why not. No second pair of hands touching your budgets without a conversation.' },
-      { t: 'We are not another dashboard', d: 'You already have two. Here you do not have to look: you get a notification when something deviates, with the reason, the proposal and the source, so you can check it.' },
+      { t: 'We are not another dashboard', d: 'You already have two. You do not have to check this one every day: you get a notification when something deviates, with the reason, the proposal and the source, so you can verify it.' },
     ],
 
     krijg_h2: 'What you do get.',
@@ -128,8 +128,8 @@ const COPY: Record<'nl' | 'en', VoorWieCopy> = {
     faq_h2: 'What teams ask us first.',
     faqs: [
       { question: 'We are an agency ourselves. Is this competition?', answer: 'No. We take over no accounts and change nothing in yours. We are the layer that watches and remembers every day, so you spend your time on your client instead of on the report. Your client sees your name, not ours.' },
-      { question: 'Which integrations actually exist?', answer: 'Google Ads, Meta, GA4, Search Console, Tag Manager, Merchant Center, Shopify, WooCommerce, Klaviyo, Mailchimp, TikTok, LinkedIn, Pinterest and YouTube. No others. If something is not on the list, we read the export and say so.' },
-      { question: 'What does it cost?', answer: 'The scan is free. After that you choose: monitoring only from 399 a month per client, or the full diagnosis. You keep the report, even if you do nothing further with us.' },
+      { question: 'Which integrations actually exist?', answer: 'Google Ads, Meta, Instagram, GA4, Search Console, Tag Manager, Merchant Center, Shopify, WooCommerce, Klaviyo, Mailchimp, TikTok, LinkedIn, Pinterest, Snapchat, DV360 and YouTube we read daily. Your system not listed: if there is demand, we connect it.' },
+      { question: 'What does it cost?', answer: 'The scan is free, and so is the diagnosis: you keep the report, even if you do nothing further with us. Monitoring after that is 399 a month per client.' },
     ],
 
     slot_h2: 'Start with the scan.',

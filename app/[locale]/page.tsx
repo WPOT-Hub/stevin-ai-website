@@ -209,7 +209,7 @@ const COPY = {
       { question: 'Wat gebeurt er als ik stop?', answer: 'Dan houd je alles: accounts, data, kennis en het volledige dossier. De overdracht zit er vanaf dag een in, dus stoppen kost je niets. Behalve ons.' },
       { question: 'Doen jullie het werk, of moet ik zelf nog iets?', answer: 'Wij doen het werk. Inrichten, campagnes draaien, bijhouden. Jij kunt op elk moment nakijken wat er is gedaan en waarom. Wil je het later zelf doen, dan draaien we mee tot je eigen mensen het kunnen.' },
       { question: 'Kan dit naast mijn huidige bureau?', answer: 'Ja. De diagnose is juist een goede tweede blik: staat het goed, dan weet je dat nu zeker. Staat het niet goed, dan heb je iets om te bespreken.' },
-      { question: 'Wat kost het?', answer: 'Vanaf 399 per maand. Alles laten beheren kan ook, op maat na de diagnose. Je weet vooraf precies wat je krijgt en wat het kost.' },
+      { question: 'Wat kost het?', answer: 'Alles laten beheren: 1.399 per maand, en zodra je eigen mensen het kunnen zak je naar 399. Zelf doen met Stevin erbij: vanaf 399. Altijd pas na de diagnose, en geen marge op je mediabudget.' },
       { question: 'Wat doen jullie met AI, en is dat veilig?', answer: 'AI leest mee en signaleert, mensen beslissen. Het platform verandert uit zichzelf niets, data staat in de EU, en niets gaat de deur uit zonder dat een mens ernaar keek.' },
     ],
 
@@ -365,7 +365,7 @@ const COPY = {
       { question: 'What happens if I stop?', answer: 'You keep everything: accounts, data, knowledge and the full file. The handover is built in from day one, so stopping costs you nothing. Except us.' },
       { question: 'Do you do the work, or do I still have to?', answer: 'We do the work. Setting it up, running the campaigns, keeping it current. You can check at any moment what was done and why. If you want to run it yourself later, we stay on until your own people can.' },
       { question: 'Can this run alongside my current agency?', answer: 'Yes. The diagnosis is a good second opinion: if things are right, you now know for sure. If they are not, you have something to discuss.' },
-      { question: 'What does it cost?', answer: 'From 399 per month. Full management is available too, tailored after the diagnosis. You know exactly what you get and what it costs, upfront.' },
+      { question: 'What does it cost?', answer: 'Full management: 1,399 per month, and once your own people can run it you drop to 399. Doing it yourself with Stevin alongside: from 399. Always after the diagnosis, and no margin on your media budget.' },
       { question: 'What do you do with AI, and is it safe?', answer: 'AI reads along and signals, people decide. The platform changes nothing on its own, data stays in the EU, and nothing leaves the door without a human looking at it.' },
     ],
 

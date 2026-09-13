@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import DeskProof from '@/components/DeskProof'
+import KlantLogos from '@/components/KlantLogos'
 import { localizedMetadata } from '@/lib/seo'
 import FAQAccordion from '@/components/FAQAccordion'
 
@@ -35,7 +36,7 @@ const COPY = {
 
     own_eyebrow: 'Alles blijft van jou',
     own_h2: 'Grip betekent: je kunt altijd weg.',
-    own_body: 'Accounts op naam van jouw bedrijf. Data die je kunt exporteren. Een dossier met elk besluit en de reden erbij. Wij bouwen je exit in vanaf dag een, en juist daarom durven we het te zeggen: de meeste klanten blijven omdat het goed geregeld is, niet omdat ze vastzitten.',
+    own_body: 'Accounts op naam van jouw bedrijf. Data die je kunt exporteren. Een dossier met elk besluit en de reden erbij. Wij bouwen je exit in vanaf dag een, en juist daarom durven we het te zeggen. Een klant die zo kan weglopen, moet je elke maand opnieuw verdienen.',
     own_link: 'Zo werkt de controle',
 
     canon_eyebrow: 'Waarom ons advies klopt',
@@ -67,7 +68,7 @@ const COPY = {
       { question: 'Verlies ik controle als AI meekijkt?', answer: 'Nee, je krijgt er juist controle bij. Het platform verandert uit zichzelf niets, elk voorstel gaat langs een mens, en alles wat er gebeurt staat in een logboek waar jij altijd in kunt kijken.' },
       { question: 'Ik heb al een bureau. Kan dit ernaast?', answer: 'Ja. De diagnose is een tweede blik op jouw eigen data. Staat het goed, dan weet je dat nu zeker. Staat het niet goed, dan heb je iets om te bespreken.' },
       { question: 'Hoeveel tijd kost mij dit?', answer: 'De diagnose vraagt een uur van jou en toegang tot je cijfers. Daarna zie je binnen twee weken zwart op wit waar je staat. Beheer daarna is onze taak, meekijken kan altijd, moeten hoeft nooit.' },
-      { question: 'Wat kost het?', answer: 'Vanaf 399 per maand. Alles laten beheren kan ook, op maat en altijd na de diagnose. Geen verborgen marges op je mediabudget.' },
+      { question: 'Wat kost het?', answer: 'Alles laten beheren: 1.399 per maand, en zodra je eigen mensen het kunnen zak je naar 399. Zelf doen met Stevin erbij: vanaf 399. Altijd pas na de diagnose, en geen marge op je mediabudget.' },
     ],
 
     closing_l1: 'Wij regelen het nu goed.', closing_l2: 'Alles blijft van jou.',
@@ -97,7 +98,7 @@ const COPY = {
 
     own_eyebrow: 'Everything stays yours',
     own_h2: 'Grip means: you can always leave.',
-    own_body: 'Accounts in your company name. Data you can export. A file with every decision and its reason. We build in your exit from day one, and that is exactly why we dare to say it: most clients stay because things are well arranged, not because they are stuck.',
+    own_body: 'Accounts in your company name. Data you can export. A file with every decision and its reason. We build in your exit from day one, and that is exactly why we dare to say it. A client who can walk away like that, you have to earn again every month.',
     own_link: 'How the control works',
 
     canon_eyebrow: 'Why the advice holds',
@@ -129,7 +130,7 @@ const COPY = {
       { question: 'Do I lose control when AI reads along?', answer: 'No, you gain control. The platform changes nothing on its own, every proposal passes a person, and everything that happens sits in a log you can always open.' },
       { question: 'I already have an agency. Can this run alongside?', answer: 'Yes. The diagnosis is a second opinion on your own data. If things are right, you now know for sure. If not, you have something to discuss.' },
       { question: 'How much of my time does this take?', answer: 'The diagnosis takes an hour of your time and access to your numbers. Within two weeks you see in black and white where you stand. Management after that is our job; looking along is always possible, never required.' },
-      { question: 'What does it cost?', answer: 'From 399 per month. Full management is available too, tailored and always after the diagnosis. No hidden margins on your media budget.' },
+      { question: 'What does it cost?', answer: 'Full management: 1,399 per month, and once your own people can run it you drop to 399. Doing it yourself with Stevin alongside: from 399. Always after the diagnosis, and no margin on your media budget.' },
     ],
 
     closing_l1: 'We set it right now.', closing_l2: 'Everything stays yours.',
@@ -182,6 +183,11 @@ export default async function VoorOndernemersPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* W-078, 13 sep: dezelfde logostrook als op de homepage. Dit is de pagina
+          voor precies de bedrijven die erop staan, en het enige bewijs dat de
+          site nu heeft. */}
+      <KlantLogos locale={locale} />
 
       {/* Taak-tabel voor/na */}
       <section className="bg-white" style={{ padding: '96px 24px' }}>
@@ -272,6 +278,11 @@ export default async function VoorOndernemersPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Er ging iets stuk en niemand die het je vertelde. Dat is de deur voor de ondernemer.
+          W-078: stond onder de slot-CTA, waardoor de pagina eindigde met een demo
+          in plaats van met de knop. Nu ervoor. */}
+      <DeskProof locale={locale} toonBrein={false} melding="meta-storing" />
+
       {/* Slot */}
       <section className="bg-primary" style={{ padding: '96px 24px 112px' }}>
         <div className="mx-auto max-w-[1200px] flex items-end justify-between gap-12 flex-col lg:flex-row">
@@ -286,9 +297,6 @@ export default async function VoorOndernemersPage({ params }: Props) {
           </div>
         </div>
       </section>
-      {/* Er ging iets stuk en niemand die het je vertelde. Dat is de deur voor de ondernemer. */}
-      <DeskProof locale={locale} toonBrein={false} melding="meta-storing" />
-
     </>
   )
 }
