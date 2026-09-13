@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { localizedMetadata, SITE_URL } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import IntegrationFilter from '@/components/IntegrationFilter'
+import KanalenStrip from '@/components/KanalenStrip'
 import { integrations } from '@/data/integrations'
 import { categories, categoryName } from '@/data/categories'
 
@@ -101,6 +102,10 @@ export default async function IntegratiesPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* W-078: de bronnen die echt draaien eerst in beeld, voor de vijf lagen
+          en de tabel van 264. Zie components/KanalenStrip.tsx. */}
+      <KanalenStrip locale={locale} />
 
       <section id="lagen" className="bg-[#F7F8FA] py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

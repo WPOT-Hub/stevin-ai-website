@@ -30,12 +30,18 @@ export default function IntegrationFilter({ integrations, locale }: IntegrationF
       ? getVendorShortDescriptionEn(integration.slug, integration.shortDescription)
       : integration.shortDescription
 
+  // W-078: de bronnen die vandaag draaien staan bovenaan, in de volgorde van
+  // data/integrations.ts. Daarvoor begon de tabel met elf bouw-ERP's en stond
+  // Google Ads op regel vijftien.
   const filtered = useMemo(() => {
-    return integrations.filter((i) => {
+    const rows = integrations.filter((i) => {
       const matchesSearch = search === '' || i.name.toLowerCase().includes(search.toLowerCase())
       const matchesCategory = !activeCategory || i.category === activeCategory
       return matchesSearch && matchesCategory
     })
+    const live = rows.filter((i) => i.status === 'live')
+    const rest = rows.filter((i) => i.status !== 'live')
+    return [...live, ...rest]
   }, [integrations, search, activeCategory])
 
   return (
