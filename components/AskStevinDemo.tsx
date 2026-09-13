@@ -12,6 +12,12 @@ import { Bot, User } from 'lucide-react'
 // Daarom kun je in de demo ook alleen deze drie vragen stellen, en dat staat
 // erbij. De grens van de echte Vraag Stevin (rapporteert, adviseert niet,
 // verandert niets) is de grens van de antwoorden hieronder.
+// Koen 13 sep 12:53: "dv360 is vaak branding". Klopt ook in de data: de
+// DV360-campagnes staan op DISPLAY en VIDEO_VIEW, YouTube op VIDEO_VIEW,
+// Pinterest op AWARENESS. Die kanalen dus niet op kosten per conversie
+// afrekenen (kennislaag: bereikkanalen zie je in merkzoekvraag, niet in de
+// laatste klik). De eerste versie deed dat wel en noemde Pinterest een
+// meetprobleem; dat was de verkeerde maat.
 
 type Locale = 'nl' | 'en'
 type QA = { q: string; a: string[] }
@@ -45,7 +51,7 @@ const COPY: Record<Locale, {
         q: 'Hoe gaat het met mijn campagnes?',
         a: [
           'Er draaien 15 campagnes op zeven kanalen. Augustus, de laatste volledige maand: 4,6 miljoen vertoningen, 89.498 klikken en **1.363 conversies voor €14.924**, dat is €10,95 per conversie. Tegenover juli: spend 4 procent lager, conversies vrijwel gelijk (1.373 naar 1.363).',
-          'Een ding wil ik eerst noemen voordat je kanalen vergelijkt: **Pinterest heeft in 90 dagen €1.318 besteed en 0 geregistreerde conversies.** Dat is eerder een meetprobleem dan een prestatie. Laatste dag met gemeten data: gisteren.',
+          'Drie van de zeven kanalen draaien op bereik, niet op verkoop: **DV360, YouTube en Pinterest** staan ingesteld op display, video en awareness. Die reken je niet af op conversies, maar op wat ze doen met je merkzoekvraag. Laatste dag met gemeten data: gisteren.',
         ],
       },
       {
@@ -59,8 +65,8 @@ const COPY: Record<Locale, {
         q: 'Waar gaat het meeste budget naartoe?',
         a: [
           'Laatste 90 dagen, €62.347 in totaal:',
-          '- **DV360**: €14.620, 120 conversies (€122 per conversie)\n- **Google Ads**: €13.524, 2.202 conversies (€6)\n- **TikTok**: €12.445, 1.690 conversies (€7)\n- **Meta**: €11.842, 1.324 conversies (€9)\n- **YouTube**: €5.199, 218 conversies (€24)\n- **Snapchat**: €3.399, 235 conversies (€14)\n- **Pinterest**: €1.318, 0 conversies',
-          'Het grootste budget zit op DV360, met de hoogste kosten per conversie. Wijkt een kanaal zo sterk af, dan is de meting de eerste verdachte, niet het kanaal. Wat je ermee doet, bespreek je met je consultant. Ik verander niets in je campagnes.',
+          '- **DV360**: €14.620, bereik (display en video), 2,3 miljoen vertoningen\n- **Google Ads**: €13.524, 2.202 conversies (€6 per conversie)\n- **TikTok**: €12.445, 1.690 conversies (€7)\n- **Meta**: €11.842, 1.324 conversies (€9)\n- **YouTube**: €5.199, bereik (video), 2,1 miljoen vertoningen\n- **Snapchat**: €3.399, 235 conversies (€14)\n- **Pinterest**: €1.318, bereik (awareness), 506 duizend vertoningen',
+          'Het grootste budget zit op DV360, en dat is een bereikkanaal: ingekocht om gezien te worden, niet om te klikken. Kosten per conversie is daar niet de maat, je merkzoekvraag wel. De verkoop komt van Google Ads, TikTok en Meta, tussen €6 en €9 per conversie. Wat je ermee doet, bespreek je met je consultant. Ik verander niets in je campagnes.',
         ],
       },
     ],
@@ -81,7 +87,7 @@ const COPY: Record<Locale, {
         q: 'How are my campaigns doing?',
         a: [
           '15 campaigns are running across seven channels. August, the last full month: 4.6 million impressions, 89,498 clicks and **1,363 conversions for €14,924**, that is €10.95 per conversion. Against July: spend 4 percent lower, conversions almost equal (1,373 to 1,363).',
-          'One thing first, before you compare channels: **Pinterest spent €1,318 in 90 days with 0 recorded conversions.** That is more likely a measurement problem than a performance. Last day with measured data: yesterday.',
+          'Three of the seven channels run on reach, not sales: **DV360, YouTube and Pinterest** are set to display, video and awareness. You do not judge those on conversions, but on what they do to your brand search. Last day with measured data: yesterday.',
         ],
       },
       {
@@ -95,8 +101,8 @@ const COPY: Record<Locale, {
         q: 'Where does most of the budget go?',
         a: [
           'Last 90 days, €62,347 in total:',
-          '- **DV360**: €14,620, 120 conversions (€122 per conversion)\n- **Google Ads**: €13,524, 2,202 conversions (€6)\n- **TikTok**: €12,445, 1,690 conversions (€7)\n- **Meta**: €11,842, 1,324 conversions (€9)\n- **YouTube**: €5,199, 218 conversions (€24)\n- **Snapchat**: €3,399, 235 conversions (€14)\n- **Pinterest**: €1,318, 0 conversions',
-          'The largest budget sits on DV360, with the highest cost per conversion. When a channel deviates this much, measurement is the first suspect, not the channel. What you do with it, you discuss with your consultant. I change nothing in your campaigns.',
+          '- **DV360**: €14,620, reach (display and video), 2.3 million impressions\n- **Google Ads**: €13,524, 2,202 conversions (€6 per conversion)\n- **TikTok**: €12,445, 1,690 conversions (€7)\n- **Meta**: €11,842, 1,324 conversions (€9)\n- **YouTube**: €5,199, reach (video), 2.1 million impressions\n- **Snapchat**: €3,399, 235 conversions (€14)\n- **Pinterest**: €1,318, reach (awareness), 506 thousand impressions',
+          'The largest budget sits on DV360, and that is a reach channel: bought to be seen, not to be clicked. Cost per conversion is not the yardstick there, your brand search is. Sales come from Google Ads, TikTok and Meta, at €6 to €9 per conversion. What you do with it, you discuss with your consultant. I change nothing in your campaigns.',
         ],
       },
     ],
