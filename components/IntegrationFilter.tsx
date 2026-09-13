@@ -129,24 +129,16 @@ export default function IntegrationFilter({ integrations, locale }: IntegrationF
                   <td className="max-w-xl border-b border-[#D9E0EB] px-5 py-5 align-top leading-[1.45] text-[#6B7280]">
                     {readsLabel(integration)}
                   </td>
-                  {/* W-078, 13 sep 2026: alle 264 regels droegen dezelfde status
-                      "Koppelbaar", dus een lezer kon niet zien welke koppeling er
-                      vandaag echt draait. De bronnen met status 'live' hebben een
-                      connector in de Hub die ze aantoonbaar uitleest. Bij de rest
-                      zeggen we er bewust niets over: we hebben er geen draaien,
-                      maar we beweren ook niet dat het niet kan. */}
+                  {/* W-078, 13 sep 2026: vanochtend stond hier kort een tweedeling
+                      "Draait vandaag" / "Koppelbaar". Koen 10:39: "dat draait vandaag
+                      weghalen, we kunnen toch alles koppelen". Een label voor alles
+                      dus. Welke bronnen we dagelijks uitlezen staat in KanalenStrip
+                      boven de tabel, en die staan hier bovenaan. */}
                   <td className="border-b border-[#D9E0EB] px-5 py-5 align-top sm:px-7">
-                    {integration.status === 'live' ? (
-                      <span className="inline-flex items-center gap-2 whitespace-nowrap font-bold text-[#1F9D55]">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#1F9D55]" />
-                        {t('filter_status_live')}
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-2 whitespace-nowrap font-bold text-[#6B7280]">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#B6BFCC]" />
-                        {t('filter_status')}
-                      </span>
-                    )}
+                    <span className="inline-flex items-center gap-2 whitespace-nowrap font-bold text-[#1F2933]">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#3C8EFF]" />
+                      {t('filter_status')}
+                    </span>
                   </td>
                 </tr>
               ))}

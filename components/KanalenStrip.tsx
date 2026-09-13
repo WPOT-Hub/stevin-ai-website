@@ -45,13 +45,13 @@ const COPY = {
   nl: {
     eyebrow: 'Wat we vandaag uitlezen',
     h2: 'De kanalen waar je geld heen gaat.',
-    sub: 'Advertenties, meting en webshop. Dit lezen wij elke dag uit, per account, met de wijzigingsgeschiedenis erbij. Klik op een kanaal voor wat we er precies uit halen.',
+    sub: 'Advertenties, meting en webshop. Dit lezen wij elke dag uit, per account, met de wijzigingsgeschiedenis erbij. Staat jouw systeem er niet tussen: als de vraag er is, koppelen we.',
     aria: 'Kanalen die Stevin vandaag uitleest',
   },
   en: {
     eyebrow: 'What we read today',
     h2: 'The channels your money goes to.',
-    sub: 'Ads, measurement and your shop. We read these every day, per account, change history included. Click a channel to see exactly what we pull from it.',
+    sub: 'Ads, measurement and your shop. We read these every day, per account, change history included. Your system not listed: if there is demand, we connect it.',
     aria: 'Channels Stevin reads today',
   },
 } as const
