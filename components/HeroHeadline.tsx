@@ -12,7 +12,9 @@ import { useEffect, useState } from 'react'
  * De zwevende switcher verschijnt alleen op preview-hosts.
  */
 
-type Variant = 'a' | 'b' | 'c' | 'd' | 'e'
+// 13 sep 2026 (W-078), Koen 12:18 over B ("Google weet wie de eigenaar is van
+// jouw data. Jij ook?"): "deze moet er echt uit". Weg, ook via ?kop=b.
+type Variant = 'a' | 'c' | 'd' | 'e'
 
 // E toegevoegd 13 sep 2026 (W-078), Koens eigen formulering: eerst de basis,
 // daarna de campagnes, en wat we meten hangt af van wat jouw bedrijf verkoopt.
@@ -29,21 +31,19 @@ const STORAGE_KEY = 'stevin_kop_variant'
 const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; accent: string }>> = {
   nl: {
     a: { eyebrow: 'Voor bedrijven die betalen voor marketing', line: 'Elke maand een marketingfactuur.', accent: 'Geen idee wat ze ervoor gedaan hebben.' },
-    b: { eyebrow: 'Kijk zelf mee, het staat er gewoon', line: 'Google weet wie de eigenaar is van jouw data.', accent: 'Jij ook?' },
     c: { eyebrow: 'Groeien met grip', line: 'Marketing die elke maand beter wordt.', accent: 'En alles blijft van jou.' },
     d: { eyebrow: 'Voor merken en marketingteams', line: 'Wat een systeem voor je kan uitrekenen,', accent: 'hangt af van wat het van jou weet.' },
     e: { eyebrow: 'Voor bedrijven die marketing uitbesteden', line: 'Je betaalt elke maand.', accent: 'Maar je kunt niet nakijken wat er gebeurd is.' },
   },
   en: {
     a: { eyebrow: 'For companies that pay for marketing', line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
-    b: { eyebrow: 'See for yourself, it is right there', line: 'Google knows who owns your data.', accent: 'Do you?' },
     c: { eyebrow: 'Growth with grip', line: 'Marketing that gets better every month.', accent: 'And everything stays yours.' },
     d: { eyebrow: 'For brands and marketing teams', line: 'What a system can work out for you', accent: 'depends on what it knows about you.' },
     e: { eyebrow: 'For companies that outsource their marketing', line: 'You pay every month.', accent: 'But you cannot check what actually happened.' },
   },
 }
 
-const LABELS: Record<Variant, string> = { a: 'A factuur', b: 'B transparantie', c: 'C groei', d: 'D data', e: 'E basis' }
+const LABELS: Record<Variant, string> = { a: 'A factuur', c: 'C groei', d: 'D data', e: 'E basis' }
 
 declare global {
   interface Window {
@@ -52,7 +52,7 @@ declare global {
 }
 
 function isVariant(v: string | null): v is Variant {
-  return v === 'a' || v === 'b' || v === 'c' || v === 'd' || v === 'e'
+  return v === 'a' || v === 'c' || v === 'd' || v === 'e'
 }
 
 export default function HeroHeadline({ locale }: { locale: string }) {
@@ -108,7 +108,7 @@ export default function HeroHeadline({ locale }: { locale: string }) {
           aria-label="Kop-variant (alleen preview)"
         >
           <span className="text-[10px] font-display font-bold uppercase tracking-[0.1em] text-muted px-1">Kop</span>
-          {(['a', 'b', 'c', 'd'] as Variant[]).map((v) => (
+          {(['a', 'e', 'c', 'd'] as Variant[]).map((v) => (
             <button
               key={v}
               type="button"
