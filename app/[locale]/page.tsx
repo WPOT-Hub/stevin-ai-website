@@ -9,6 +9,7 @@ import MarketingMemoryDemo from '@/components/MarketingMemoryDemo'
 import StevinBrainVisual from '@/components/StevinBrainVisual'
 import DeskProof from '@/components/DeskProof'
 import KlantLogos from '@/components/KlantLogos'
+import QuoteRotator from '@/components/QuoteRotator'
 import BrainEdgeStrip from '@/components/BrainEdgeStrip'
 import HeroHeadline from '@/components/HeroHeadline'
 import { editorials } from '@/data/articles'
@@ -60,6 +61,14 @@ const COPY = {
       // wel over dit onderwerp gaat, uit het gesprek van 30 juli.
       { q: 'Daar betalen wij maandelijks een godsvermogen voor en er gebeurt niks.', a: 'Dak- en gevelbedrijf' },
       { q: 'Dat zijn allemaal aparte systemen met bepaalde toegangen. Maar er zit nergens een link of een centraal geheugen.', a: 'Marketingverantwoordelijke, internationaal merk' },
+      // Vanaf hier de pool waaruit de vier vakken om de zoveel seconden een
+      // citaat wisselen (components/QuoteRotator.tsx). Sector wel, naam nooit:
+      // niet de instelling, niet het bureau waar het over gaat.
+      { q: 'Heb het gevoel dat we altijd weer opnieuw beginnen.', a: 'Concertzaal, over hun bureau' },
+      // Strekking van Koen (13 sep 11:23), gesprek van 30 juli: het bureau zei
+      // dat het op hun accounts moest draaien, anders konden ze niet bij alle
+      // gegevens. LETTERLIJKE ZIN NOG NAKIJKEN in het transcript voor deploy.
+      { q: 'Het moest op hun accounts draaien, anders konden ze niet bij alle gegevens.', a: 'Bouwbedrijf, over hun bureau' },
     ],
     // "Zelfs bureaus zeggen het zelf" is er 4 sep 2026 uit (W-042). Onnagekeken
     // bewering over derden, zonder bron, en het schuurt tegen de generieke
@@ -236,6 +245,8 @@ const COPY = {
       { q: 'No, that is all on gut feeling. And in my head.', a: 'Owner, trading company' },
       { q: 'We pay a fortune for that every month and nothing happens.', a: 'Roofing and facade company' },
       { q: 'Those are all separate systems with their own logins. But there is no link anywhere, no central memory.', a: 'Marketing lead, international brand' },
+      { q: 'It feels like we keep starting over, every single time.', a: 'Concert hall, about their agency' },
+      { q: 'It had to run on their accounts, otherwise they could not get at all the data.', a: 'Construction company, about their agency' },
     ],
     herken_close: 'These are not exceptions. This is how it works as long as nobody is watching.',
     herken_bron: 'From real diagnosis conversations, anonymised.',
@@ -535,16 +546,7 @@ export default async function HomePage({ params }: Props) {
               een leeg vak achter. Twee bij twee geeft ze bovendien de breedte
               die ze nodig hebben, want dit zijn letterlijke zinnen uit een
               gesprek en die zijn langer dan een geredigeerde kreet. */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border rounded-[14px] overflow-hidden">
-            {c.quotes.map((item) => (
-              <figure key={item.q} className="bg-white p-8 lg:p-9 m-0 flex flex-col justify-between gap-6">
-                <blockquote className="m-0 font-display font-semibold text-primary leading-[1.4]" style={{ fontSize: '17px', letterSpacing: '-0.01em' }}>
-                  &ldquo;{item.q}&rdquo;
-                </blockquote>
-                <figcaption className="text-muted text-[13px]">{item.a}</figcaption>
-              </figure>
-            ))}
-          </div>
+          <QuoteRotator quotes={c.quotes} />
 
           <div className="mt-8 flex flex-wrap items-baseline justify-between gap-3">
             <p className="text-primary font-display font-semibold m-0" style={{ fontSize: '16px', maxWidth: '620px' }}>
