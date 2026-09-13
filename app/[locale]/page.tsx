@@ -103,7 +103,7 @@ const COPY = {
       // Koen 13 sep 12:14, gesprek van 30 juli. Cijfers uit dat gesprek, niet
       // zuiver vergelijkbaar (nieuwe naam, nieuw domein ertussen), en dat
       // staat er dan ook bij.
-      { t: '"Sinds het bureau het heeft overgenomen komt er niks meer binnen"', d: 'Zelf gedaan: een paar honderd euro per maand, vier tot vijf aanvragen per dag. Via het bureau: tweeduizend per maand, vier tot vijf per week. Niet zuiver vergelijkbaar, er zat een nieuwe naam en een nieuwe site tussen. Maar niemand die het kon uitleggen.' },
+      { t: '"Sinds het bureau het heeft overgenomen komt er niks meer binnen"', d: 'Zelf gedaan: een paar honderd euro per maand, vier tot vijf aanvragen per dag. Via het bureau: tweeduizend per maand, vier tot vijf per week. Niet zuiver vergelijkbaar, er zat een nieuwe naam en een nieuwe site tussen. Maar de conversiemeting stond aan en telde niet wat er echt binnenkwam, dus stuurde Google op het verkeerde cijfer.' },
     ],
     nu_slot: 'Wij zorgen eerst dat klopt wat er binnenkomt, zodat Google en Meta echte aanvragen te zien krijgen in plaats van knopklikken. Dan gaan ze harder voor je werken. En het telt zwaarder dan vroeger, want wat zo\'n systeem voor jou kan uitrekenen hangt af van wat het van jou weet. Die geschiedenis bouwt zich op in het account waar hij staat, dus hoe langer je wacht, hoe duurder de overstap wordt. Een keer de pleister eraf. En bij ons gaat er niets uit de lucht: geen dag zonder site, geen dag zonder mail.',
 
@@ -264,7 +264,7 @@ const COPY = {
     nu_punten: [
       { t: '"Nothing happens"', d: 'Two business owners, two weeks apart, both about a bill of a thousand euro a month. Neither knew whether it was true. That is exactly the point.' },
       { t: '"I have completely lost the overview"', d: 'Four systems, three logins, and an agency signing in under your name. You should not have to track that yourself. Someone has to, though.' },
-      { t: '"Since the agency took over, nothing comes in anymore"', d: 'Doing it himself: a few hundred euro a month, four to five enquiries a day. Through the agency: two thousand a month, four to five a week. Not a clean comparison, a new name and a new site came in between. But nobody could explain it.' },
+      { t: '"Since the agency took over, nothing comes in anymore"', d: 'Doing it himself: a few hundred euro a month, four to five enquiries a day. Through the agency: two thousand a month, four to five a week. Not a clean comparison, a new name and a new site came in between. But conversion tracking was on and did not count what actually came in, so Google steered on the wrong number.' },
     ],
     nu_slot: 'First we make sure what comes in is right, so Google and Meta see real enquiries instead of button clicks. Then they start working harder for you. And it counts for more than it used to, because what such a system can work out for you depends on what it knows about you. That history builds up in whichever account it sits in, so the longer you wait, the more the switch costs. Rip the plaster off once. And with us nothing goes offline: not a day without your site, not a day without your mail.',
 
