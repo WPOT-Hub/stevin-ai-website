@@ -30,13 +30,15 @@ const STORAGE_KEY = 'stevin_kop_variant'
 
 const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; accent: string }>> = {
   nl: {
-    a: { eyebrow: 'Voor bedrijven die betalen voor marketing', line: 'Elke maand een marketingfactuur.', accent: 'Geen idee wat ze ervoor gedaan hebben.' },
+    // Eyebrow van A was "Voor bedrijven die betalen voor marketing". Koen 13 sep
+    // 12:19: rare tekst, iedereen betaalt. Nu dezelfde als E.
+    a: { eyebrow: 'Voor bedrijven die marketing uitbesteden', line: 'Elke maand een marketingfactuur.', accent: 'Geen idee wat ze ervoor gedaan hebben.' },
     c: { eyebrow: 'Groeien met grip', line: 'Marketing die elke maand beter wordt.', accent: 'En alles blijft van jou.' },
     d: { eyebrow: 'Voor merken en marketingteams', line: 'Wat een systeem voor je kan uitrekenen,', accent: 'hangt af van wat het van jou weet.' },
     e: { eyebrow: 'Voor bedrijven die marketing uitbesteden', line: 'Je betaalt elke maand.', accent: 'Maar je kunt niet nakijken wat er gebeurd is.' },
   },
   en: {
-    a: { eyebrow: 'For companies that pay for marketing', line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
+    a: { eyebrow: 'For companies that outsource their marketing', line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
     c: { eyebrow: 'Growth with grip', line: 'Marketing that gets better every month.', accent: 'And everything stays yours.' },
     d: { eyebrow: 'For brands and marketing teams', line: 'What a system can work out for you', accent: 'depends on what it knows about you.' },
     e: { eyebrow: 'For companies that outsource their marketing', line: 'You pay every month.', accent: 'But you cannot check what actually happened.' },
