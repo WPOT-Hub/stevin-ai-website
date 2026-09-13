@@ -91,6 +91,21 @@ const COPY = {
     ],
     kennis_slot: 'Wij bepalen niet welk model jij gebruikt. Werk je met STDC, met See Think Do Care of met 5A, dan volgt het advies jouw fasen en de bijbehorende maatstaven. Het model is van jou; wat wij toevoegen is wat er per fase aantoonbaar werkt.',
 
+    ladder_eyebrow: 'De volgorde',
+    ladder_h2: 'Wat er moet kloppen voordat AI iets voor je kan betekenen.',
+    ladder_sub: 'Niet omdat het braaf is, maar omdat elke stap de volgende mogelijk maakt. Sla er een over en alles daarboven is gokwerk met meer rekenkracht.',
+    ladder_grip: 'Eerst grip',
+    ladder_dan: 'Dan pas dit',
+    ladder: [
+      { n: '01', t: 'Op jouw naam', d: 'De accounts staan op naam van je bedrijf en jij bepaalt wie erbij mag. Zonder dit kun je morgen niet wisselen van uitvoerder, hoe goed de rest ook staat.' },
+      { n: '02', t: 'Meting', d: 'Een conversie is een echte aanvraag, geen knopklik. Vuurt je meting op het verkeerde moment, dan is elk cijfer erboven onbruikbaar.' },
+      { n: '03', t: 'Een bron', d: 'Een plek waar de cijfers samenkomen, in plaats van vier dashboards die elkaar tegenspreken. Anders discussieer je over wie gelijk heeft in plaats van over wat je doet.' },
+      { n: '04', t: 'Geheugen', d: 'Wat is er geprobeerd, waarom, en wat kwam eruit. Zonder dat begint elke nieuwe partij weer bij nul, en betaal je twee keer voor dezelfde les.' },
+      { n: '05', t: 'Automatiseren', d: 'Pas hier. Wat vier keer hetzelfde gaat, kan zichzelf doen. Daarvoor is het gokken welk werk je automatiseert.' },
+      { n: '06', t: 'AI', d: 'Bovenop, niet eronder. Met de vier stappen hierboven op orde is dit een vliegwiel. Zonder is het een dure manier om sneller de verkeerde kant op te sturen.' },
+    ],
+    ladder_slot: 'Wij beginnen altijd onderaan. Niet omdat het de leukste kant is, maar omdat de rest daar op rust.',
+
     slot_h2: 'Kijk eerst, beslis daarna.',
     slot_sub: 'De diagnose draait op je eigen cijfers en levert zwart op wit op waar je staat. Daarna pas een voorstel.',
   },
@@ -158,6 +173,21 @@ const COPY = {
       },
     ],
     kennis_slot: 'We do not decide which model you use. Work with STDC, with See Think Do Care or with 5A, and the advice follows your phases and their measures. The model is yours; what we add is what demonstrably works per phase.',
+
+    ladder_eyebrow: 'The order',
+    ladder_h2: 'What has to be right before AI can do anything for you.',
+    ladder_sub: 'Not out of tidiness, but because each step makes the next one possible. Skip one and everything above it is guesswork with more compute.',
+    ladder_grip: 'Grip first',
+    ladder_dan: 'Only then this',
+    ladder: [
+      { n: '01', t: 'Ownership', d: 'The accounts are in your company name and you decide who gets access. Without this you cannot switch executor tomorrow, however good the rest is.' },
+      { n: '02', t: 'Measurement', d: 'A conversion is a real enquiry, not a button click. If your tracking fires at the wrong moment, every number above it is unusable.' },
+      { n: '03', t: 'One source', d: 'One place where the numbers meet, instead of four dashboards contradicting each other. Otherwise you argue about who is right instead of what to do.' },
+      { n: '04', t: 'Memory', d: 'What was tried, why, and what came of it. Without it every new party starts from zero and you pay twice for the same lesson.' },
+      { n: '05', t: 'Automation', d: 'Only here. What happens the same way four times can do itself. Before this you are guessing which work to automate.' },
+      { n: '06', t: 'AI', d: 'On top, not underneath. With the four steps above in place this is a flywheel. Without them it is an expensive way to go the wrong way faster.' },
+    ],
+    ladder_slot: 'We always start at the bottom. Not because it is the fun part, but because the rest rests on it.',
 
     slot_h2: 'Look first, decide after.',
     slot_sub: 'The diagnosis runs on your own numbers and puts in black and white where you stand. A proposal comes after that.',
@@ -236,6 +266,39 @@ export default async function PlatformPage({ params }: Props) {
               <p className="mt-3 text-sm text-muted leading-relaxed">{item.d}</p>
             </div>
           ))}
+        </div>
+      </Section>
+
+      {/* De volgorde. Stond tot 13 sep 2026 op de homepage en is daar weggehaald:
+          het blok eindigt bij AI en dat is niet de vraag van de ondernemer die
+          daar landt, en het zei in abstracte vorm hetzelfde als "Hoe het werkt".
+          Hier is de lezer wel iemand die zo'n volgorde leest. */}
+      <Section bg="primary">
+        <SectionHeader title={t.ladder_h2} subtitle={t.ladder_sub} light />
+        <div className="mx-auto max-w-4xl">
+          <p className="text-xs font-mono uppercase tracking-[0.14em] text-white/40 mb-5">{t.ladder_grip}</p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {t.ladder.slice(0, 4).map((stap) => (
+              <div key={stap.n} className="rounded-xl border border-white/10 bg-white/[0.04] p-6">
+                <p className="font-mono text-xs text-accent">{stap.n}</p>
+                <h3 className="mt-3 text-base font-semibold text-white">{stap.t}</h3>
+                <p className="mt-2 text-sm text-white/60 leading-relaxed">{stap.d}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-xs font-mono uppercase tracking-[0.14em] text-white/40 mt-10 mb-5">{t.ladder_dan}</p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {t.ladder.slice(4).map((stap) => (
+              <div key={stap.n} className="rounded-xl border border-white/10 bg-white/[0.04] p-6">
+                <p className="font-mono text-xs text-accent">{stap.n}</p>
+                <h3 className="mt-3 text-base font-semibold text-white">{stap.t}</h3>
+                <p className="mt-2 text-sm text-white/60 leading-relaxed">{stap.d}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-10 text-sm text-white/50 leading-relaxed max-w-[58ch]">{t.ladder_slot}</p>
         </div>
       </Section>
 
