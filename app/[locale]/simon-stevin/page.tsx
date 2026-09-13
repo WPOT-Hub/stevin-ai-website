@@ -24,7 +24,7 @@ const COPY = {
     origin1:
       'Ik zocht geen nieuw systeem. Alles was er al: campagnedata, CRM, agenda, offertes, projectinformatie. Wat ontbrak was een laag eroverheen die het aan elkaar knoopte en op tijd iets zei. De juiste informatie kwam bijna altijd te laat bij de juiste persoon.',
     origin2:
-      'Wat begon als een interne oplossing, werd de basis van Stevin. De verdere ontwikkeling vond plaats vanuit Breda, waar het platform werd uitgebouwd tot een bredere AI-oplossing voor bedrijven.',
+      'Wat begon als een interne oplossing, werd de basis van Stevin. De verdere ontwikkeling vond plaats vanuit Breda, waar het platform werd uitgebouwd tot wat het nu is: de laag die elke dag meekijkt op je marketing en onthoudt wat er gebeurde.',
     namesakeH: 'Vernoemd naar Simon Stevin',
     namesake1:
       'De naam verwijst naar Simon Stevin, een van de belangrijkste wetenschappers uit de Lage Landen. Hij werd geboren in Brugge, in het huidige Belgie, en werkte later in Nederland. Zijn werk ging over kennis bruikbaar maken. In De Thiende uit 1585 legde hij uit hoe je met decimale breuken kon rekenen in het dagelijks werk. Hij schreef het niet voor wiskundigen, maar voor sterrenkijkers, landmeters, tapijtmakers, wijnroeiers, muntmeesters en kooplieden.',
@@ -32,12 +32,15 @@ const COPY = {
     quoteAttr: 'Simon Stevin, 1586',
     bridge:
       'Die gedachte past precies bij wat wij met Stevin willen bereiken. Net zoals Simon Stevin wetenschap toegankelijk maakte voor de praktijk, maken wij data, systemen en informatie bruikbaar voor dagelijkse bedrijfsbeslissingen. Niet door alles te vervangen, maar door bestaande kennis slimmer met elkaar te verbinden.',
-    statement: 'Stevin is de AI-werklaag boven je bedrijf.',
+    // W-078, 13 sep 2026: deze pagina zei "de AI-werklaag boven je bedrijf, van
+    // campagne tot bouwplaats". Dat is een ander bedrijf dan de homepage verkoopt.
+    // Terug naar wat het is: marketing.
+    statement: 'Stevin kijkt mee op je marketing en onthoudt wat er gebeurde.',
     ziet: ['Het brengt bij elkaar wat verspreid staat.', 'Het merkt op wat ontbreekt.', 'Het stelt de volgende stap voor.'],
     problem:
-      'Elk bedrijf werkt met systemen die naast elkaar bestaan. Mail, WhatsApp, agenda, CRM, boekhouding, planning, offertes en projectdata. De informatie is er vaak wel. Alleen komt die te laat bij de juiste persoon. Daar ontstaan fouten, vertragingen en gemiste kansen.',
+      'Je marketing zit in systemen die naast elkaar bestaan: advertentieaccounts, analytics, je webshop, je aanvragen. De informatie is er vaak wel. Alleen ziet niemand hem op tijd. Daar ontstaan verspild budget en gemiste aanvragen.',
     solution:
-      'Stevin legt een laag over de systemen die je al gebruikt. In de regel vervangen we niets: we koppelen wat er al staat. Het platform krijgt twee dingen mee, jouw eigen cijfers en wat er buiten je bedrijf gebeurt, en signaleert op basis daarvan een vervolgstap. Voorstellen dus, geen besluiten.',
+      'Stevin legt een laag over de systemen die je al gebruikt. We vervangen niets: we lezen wat er al staat. Het platform krijgt twee dingen mee, jouw eigen cijfers en wat er buiten je bedrijf gebeurt, en signaleert op basis daarvan een volgende stap. Voorstellen dus, geen besluiten.',
     trustH: 'Jij houdt controle',
     trust:
       'Stevin stuurt niets naar buiten zonder dat een mens het heeft gezien. Geen mail, geen bericht, geen wijziging bij een klant. Ophalen, samenvatten en signaleren doet het zelf, want daar valt niets mee stuk. Bij elk advies staat op welke cijfers het rust, en wat het platform doet wordt vastgelegd.',
@@ -56,9 +59,9 @@ const COPY = {
       'De clootcrans, 1586. Over twee hellingen hangt een gesloten snoer van even zware bollen, op gelijke afstand. Op de lange, flauwe helling liggen er twee keer zo veel. Toch trekt die kant niet harder, want per bol is de kracht langs de helling kleiner. Het deel dat eronder hangt trekt naar beide kanten even hard en valt tegen elkaar weg. Zou het snoer uit zichzelf gaan draaien, dan draaide het eeuwig door, en dat kan niet.',
     close1: 'Stevin verbindt data, context en actie.',
     close2:
-      'Van campagne tot bouwplaats. Van aanvraag tot offerte. Van planning tot factuur. Van signaal tot uitvoering.',
+      'Van advertentie tot aanvraag. Van meting tot besluit. Van signaal tot uitvoering.',
     payoff: 'Kennis die werkt.',
-    cta: 'Plan een kennismaking',
+    cta: 'Start de diagnose',
     footer: 'Simon Stevin, 1548 tot 1620.',
     faqH: 'Veelgestelde vragen',
     faqs: [
@@ -75,7 +78,7 @@ const COPY = {
       {
         question: 'Waar komt Stevin vandaan?',
         answer:
-          'Het eerste idee ontstond in Belgie, bij het eigen bureau van de oprichter, op zoek naar een slimmere manier om processen, systemen en data te verbinden. De verdere ontwikkeling vond plaats vanuit Breda, waar het platform werd uitgebouwd tot een bredere AI-oplossing voor bedrijven.',
+          'Het eerste idee ontstond in Belgie, bij het eigen bureau van de oprichter, bij klanten waar drie bureaus na elkaar aan de meting hadden gezeten. De verdere ontwikkeling vond plaats vanuit Breda, waar het platform werd uitgebouwd tot de laag die nu op de marketing van klanten meekijkt.',
       },
     ],
   },
@@ -92,7 +95,7 @@ const COPY = {
     origin1:
       'As a founder, I was looking for a smart way to better organise the processes inside our own agency. We worked with different systems, a lot of information and ever more data, but a layer was missing that tied everything together and actively thought along.',
     origin2:
-      'What started as an internal solution became the foundation of Stevin. The platform was further developed from Breda and grew into a broader AI solution for businesses.',
+      'What started as an internal solution became the foundation of Stevin. The platform was further developed from Breda into what it is now: the layer that watches your marketing every day and remembers what happened.',
     namesakeH: 'Named after Simon Stevin',
     namesake1:
       'The name refers to Simon Stevin, one of the most important scientists of the Low Countries. He was born in Bruges, Belgium, and became an influential thinker in the Netherlands. His work was known for making knowledge practical. He even made decimal arithmetic and bookkeeping usable in everyday practice, giving abstract mathematics a place in daily work.',
@@ -100,12 +103,12 @@ const COPY = {
     quoteAttr: 'Simon Stevin, 1586',
     bridge:
       'That idea fits exactly what we want to achieve with Stevin. Just as Simon Stevin made science accessible for practice, we make data, systems and information usable for everyday business decisions. Not by replacing everything, but by connecting existing knowledge more intelligently.',
-    statement: 'Stevin is the AI work layer on top of your business.',
+    statement: 'Stevin watches your marketing and remembers what happened.',
     ziet: ['It brings together what sits apart.', 'It notices what is missing.', 'It proposes the next step.'],
     problem:
-      'Every business runs on systems that sit side by side. Email, WhatsApp, calendar, CRM, accounting, planning, quotes and project data. The information is usually there. It just reaches the right person too late. That is where mistakes, delays and missed chances begin.',
+      'Your marketing sits in systems that live side by side: ad accounts, analytics, your shop, your enquiries. The information is usually there. Nobody sees it in time. That is where wasted budget and missed enquiries begin.',
     solution:
-      'Stevin adds a layer over the systems you already use. As a rule we replace nothing: we connect what is already there. The platform gets two things, your own numbers and what is happening outside your company, and flags a next step on that basis. Proposals, not decisions.',
+      'Stevin adds a layer over the systems you already use. We replace nothing: we read what is already there. The platform gets two things, your own numbers and what is happening outside your company, and flags a next step on that basis. Proposals, not decisions.',
     trustH: 'You stay in control',
     trust:
       'Stevin sends nothing out without a person having seen it. No email, no message, no change at a client. Collecting, summarising and flagging it does on its own, because nothing breaks there. Every recommendation states which numbers it rests on, and what the platform does is recorded.',
@@ -124,9 +127,9 @@ const COPY = {
       'The wreath of spheres, 1586. A closed string of equally heavy spheres hangs over two slopes, evenly spaced. The long, shallow slope carries twice as many. Even so it does not pull harder, because the force along the slope is smaller per sphere. The part hanging underneath pulls equally to both sides and cancels out. If the string started turning on its own it would turn forever, which cannot be.',
     close1: 'Stevin connects data, context and action.',
     close2:
-      'From campaign to construction site. From request to quote. From planning to invoice. From signal to execution.',
+      'From ad to enquiry. From measurement to decision. From signal to execution.',
     payoff: 'Knowledge that works.',
-    cta: 'Plan an introduction',
+    cta: 'Start the diagnosis',
     footer: 'Simon Stevin, 1548 to 1620.',
     faqH: 'Frequently asked questions',
     faqs: [
@@ -143,7 +146,7 @@ const COPY = {
       {
         question: 'Where does Stevin come from?',
         answer:
-          'The first idea was born in Belgium, at the founder’s own agency, while looking for a smarter way to connect processes, systems and data. The platform was further developed from Breda into a broader AI solution for businesses.',
+          'The first idea was born in Belgium, at the founder’s own agency, with clients where three agencies in a row had worked on the measurement. The platform was further developed from Breda into the layer that now watches the marketing of clients.',
       },
     ],
   },
