@@ -61,8 +61,10 @@ const COPY = {
         d: 'Er loopt geen enkele opdracht van ons systeem naar Google of Meta. Het signaleert en zet een voorstel klaar; een mens beslist en voert uit. Dat is een keuze, geen fase.',
       },
       {
-        t: 'Het koppelt niet met alles',
-        d: 'Advertentieplatforms en analytics wel. Je kassasysteem, je ERP, je DMS of een retailerportaal niet. Die cijfers leg je er zelf naast, en dat zeggen we liever dan dat we het beloven.',
+        // W-078, Koen 13 sep 10:40: "als de vraag er is koppelen we". Het blok
+        // blijft eerlijk over wat er vandaag draait, maar sluit niets meer uit.
+        t: 'Het koppelt niet alvast met alles',
+        d: 'Advertentieplatforms, analytics en je webshop lezen we vandaag uit. Je kassasysteem, je ERP of je DMS koppelen we pas als jouw vraag erom vraagt, niet omdat het op een lijst mooi staat. Als de vraag er is, koppelen we.',
       },
     ],
 
@@ -144,8 +146,8 @@ const COPY = {
         d: 'Not a single instruction runs from our system to Google or Meta. It flags and prepares a proposal; a person decides and executes. That is a choice, not a phase.',
       },
       {
-        t: 'It does not connect to everything',
-        d: 'Ad platforms and analytics, yes. Your point of sale, your ERP, your DMS or a retailer portal, no. You put those numbers alongside yourself, and we would rather say so than promise it.',
+        t: 'It does not connect to everything up front',
+        d: 'Ad platforms, analytics and your shop we read today. Your point of sale, your ERP or your DMS we connect when your question calls for it, not because it looks good on a list. If there is demand, we connect it.',
       },
     ],
 
