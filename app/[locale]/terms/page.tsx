@@ -11,6 +11,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: isEn
       ? 'Terms of service for Stevin.AI: the conditions under which we provide our AI platform.'
       : 'Algemene voorwaarden van Stevin.AI: onder welke voorwaarden wij ons AI-platform leveren.',
+    // W-078: zonder openGraph erfde deze pagina de og:title van de homepage.
+    openGraph: {
+      title: isEn ? 'Terms of Service | Stevin.AI' : 'Algemene Voorwaarden | Stevin.AI',
+      description: isEn
+        ? 'Terms of service for Stevin.AI: the conditions under which we provide our AI platform.'
+        : 'Algemene voorwaarden van Stevin.AI: onder welke voorwaarden wij ons AI-platform leveren.',
+    },
     alternates: {
       canonical: 'https://stevin.ai/terms',
       languages: {

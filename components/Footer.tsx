@@ -11,13 +11,13 @@ export default function Footer() {
 
   const footerLinks = {
     diensten: [
-      { label: t('svc_paid'), href: '/diensten#paid-media' },
+      { label: t('svc_paid'), href: '/google-ads-uitbesteden' },
       { label: t('svc_ads_uitbesteden'), href: '/google-ads-uitbesteden' },
       { label: t('svc_social_uitbesteden'), href: '/social-media-uitbesteden' },
-      { label: t('svc_landing'), href: '/diensten#landing-pages-cro' },
+      { label: t('svc_landing'), href: '/websites' },
       { label: t('svc_automation'), href: '/marketing-automation' },
-      { label: t('svc_crm'), href: '/diensten#crm-leadopvolging' },
-      { label: t('svc_tracking'), href: '/diensten#tracking-inzicht' },
+      { label: t('svc_crm'), href: '/leadopvolging' },
+      { label: t('svc_tracking'), href: '/google-ads-ga4' },
       // NL-only SEO-landingspagina's (data/seo-landing-pages.ts), sitewide
       // interne links voor discovery
       { label: 'Marketing intelligence', href: '/marketing-intelligence' },
@@ -41,7 +41,8 @@ export default function Footer() {
       { label: t('voor_teams'), href: '/voor-marketingteams' },
       { label: t('controle'), href: '/controle' },
       { label: t('platform'), href: '/platform' },
-      { label: t('cases'), href: '/case-studies' },
+      // W-078, 13 sep 2026: /case-studies is leeg ("volgen binnenkort") en heet
+      // "Bewezen in de praktijk". Uit de footer en noindex tot er een case staat.
       { label: t('journal'), href: '/blog' },
       { label: t('vergelijken'), href: '/vergelijken' },
       { label: t('alternatief'), href: '/alternatief' },

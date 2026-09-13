@@ -11,9 +11,11 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'websites' })
+  // W-078: zonder openGraph erfde deze pagina de og:title van de homepage.
   return {
     title: t('h1'),
     description: t('sub'),
+    openGraph: { title: t('h1'), description: t('sub') },
     robots: { index: false, follow: false },
   }
 }

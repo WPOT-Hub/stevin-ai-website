@@ -56,12 +56,12 @@ export default function Header() {
 
   const dienstenItems = [
     { label: t('diensten_overview'), href: '/diensten' },
-    { label: t('diensten_paid'), href: '/diensten#paid-media' },
+    { label: t('diensten_paid'), href: '/google-ads-uitbesteden' },
     { label: t('diensten_seo'), href: '/seo' },
     { label: t('diensten_geo'), href: '/geo' },
     { label: t('diensten_automation'), href: '/marketing-automation' },
-    { label: t('diensten_crm'), href: '/diensten#crm-leadopvolging' },
-    { label: t('diensten_tracking'), href: '/diensten#tracking-inzicht' },
+    { label: t('diensten_crm'), href: '/leadopvolging' },
+    { label: t('diensten_tracking'), href: '/google-ads-ga4' },
   ]
 
   // 4 sep 2026 (W-042): de dropdown wees naar vier ankers die na de herbouw van
