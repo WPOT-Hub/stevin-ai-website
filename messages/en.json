@@ -468,10 +468,10 @@
     "count_label": "{count} integrations",
     "category_count_label": "{count} {category} integrations",
     "connect_cta_title": "Need help connecting your tools?",
-    "connect_cta_desc": "We'll make your systems work as one. Book a demo and find out what's possible.",
+    "connect_cta_desc": "We make your systems work as one. Start the diagnosis and within two weeks you see, on your own numbers, what is already connected and what is still missing.",
     "connect_cta_btn": "Start the diagnosis",
     "detail_cta_title": "Connect {name} to your systems?",
-    "detail_cta_desc": "Book a demo and discover how we make your tools work together for better results.",
+    "detail_cta_desc": "Start the diagnosis and within two weeks you see, on your own numbers, what is already connected and what is still missing.",
     "detail_cta_btn": "Start the diagnosis",
     "filter_status_live": "Live today",
     "hero_card_search": "search visibility"
@@ -660,7 +660,7 @@
     "quote": "We never expected to save this much time. The dashboard gives us instant insight into everything, from campaign performance to CRM pipeline.",
     "quote_author": "Marketing Manager",
     "cta_h2": "Similar results for your business?",
-    "cta_sub": "Book a demo and discover what Stevin can do for you.",
+    "cta_sub": "Start the diagnosis and within two weeks you see in black and white where you stand.",
     "cta_btn": "Start the diagnosis"
   },
   "artiesten": {
