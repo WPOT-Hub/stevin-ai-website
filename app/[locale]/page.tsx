@@ -132,7 +132,7 @@ const COPY = {
       {
         num: '01', kop: 'Diagnose', t: 'Zwart op wit waar je staat',
         d: 'We beginnen niet met een contract, maar met jouw data. Je ziet zwart op wit wat er goed staat en wat niet. Vrijblijvend, en je houdt het rapport.',
-        b: ['Meting: telt je dashboard echte aanvragen?', 'Accounts: staat alles op jouw naam?', 'Advertenties: wie staat er als betaler geregistreerd?'],
+        b: ['Meting: telt je rapportage echte aanvragen?', 'Accounts: staat alles op jouw naam?', 'Advertenties: wie staat er als betaler geregistreerd?'],
       },
       {
         num: '02', kop: 'Goed zetten', t: 'De basis waar elk bureau ooit "geen tijd" voor had',
@@ -291,7 +291,7 @@ const COPY = {
       {
         num: '01', kop: 'Diagnosis', t: 'Where you stand, in black and white',
         d: 'We do not start with a contract, we start with your data. You see in black and white what is right and what is not. No strings attached, and you keep the report.',
-        b: ['Measurement: does your dashboard count real enquiries?', 'Accounts: is everything in your name?', 'Ads: who is registered as the payer?'],
+        b: ['Measurement: does your report count real enquiries?', 'Accounts: is everything in your name?', 'Ads: who is registered as the payer?'],
       },
       {
         num: '02', kop: 'Set it right', t: 'The foundation every agency never had time for',
