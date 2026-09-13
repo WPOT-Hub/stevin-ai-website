@@ -369,15 +369,15 @@ const COPY = {
     founder_role: 'Founder of Stevin',
 
     research_eyebrow: 'Our research',
-    research_h2: 'We point you to what was there to see all along.',
+    research_h2: 'Is your company listed as the payer, or someone else?',
     research_chip: 'Counter keeps running',
     research_stats: [
       { v: '1.9 m', l: 'ads from Dutch and Belgian companies, tracked continuously in Google\u2019s public register' },
     ],
-    research_cta_h: 'Want to know where you stand?',
-    research_cta_b: 'We check who the register lists as the payer behind your ads, and what that means for who owns your data.',
+    research_cta_h: 'We look it up for you',
+    research_cta_b: 'Google and Meta publish who pays for an advertisement. We check what it says for your company. No login needed, and it costs you nothing.',
     research_cta_link: 'Get in touch',
-    research_bron: 'Source: ongoing Stevin research on Google\u2019s public transparency register for the Netherlands and Belgium, as of 29 July 2026. What this does and does not prove is explained in the method.',
+    research_bron: 'Source: ongoing Stevin research on Google\u2019s public transparency register for the Netherlands and Belgium, as of 12 September 2026: 4,610 companies in the Netherlands and Belgium where someone other than the company itself is registered as the payer of the ads.',
     research_body: 'And this is only Google. Meta, LinkedIn and TikTok are counted next. This research runs every week, and everything we find is published, method included. That is how we build the proof that this market can work differently.',
     research_link: 'To the research',
 
@@ -910,7 +910,9 @@ export default async function HomePage({ params }: Props) {
       {/* ── JOURNAL FEATURED ── */}
       {(() => {
         const featured = editorials()[0]
-        if (!featured) return null
+        // W-078: het Journal is Nederlandstalig, dus op /en stond hier een
+        // Nederlandse kop tussen Engelse blokken. Op /en geen teaser.
+        if (!featured || locale === 'en') return null
         const bgStyle =
           featured.posterStyle === 'gradient'
             ? 'linear-gradient(135deg, var(--navy) 0%, #1a2f52 100%)'

@@ -115,7 +115,7 @@ const COPY = {
   en: {
     eyebrow: 'What it does',
     h1_line: 'You see it today.',
-    h1_accent: 'Not in next month report.',
+    h1_accent: 'Not in next month\'s report.',
     sub: 'Four weeks of paying for a campaign that broke three weeks ago: that is the real price of looking too late. Stevin sees it the same day, tells you why research says it matters, and records what you did about it.',
     cta: 'Start the diagnosis',
     cta_sec: 'How to check us',
@@ -126,7 +126,7 @@ const COPY = {
     doet: [
       {
         t: 'Signals on your own data',
-        d: 'Checked daily for drift in your ads, your budgets and your measurement. You hear about it with the reason attached, not in next month report.',
+        d: 'Checked daily for drift in your ads, your budgets and your measurement. You hear about it with the reason attached, not in next month\'s report.',
       },
       {
         t: 'See who advertises in your market',
