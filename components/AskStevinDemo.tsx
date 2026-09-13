@@ -18,6 +18,12 @@ import { Bot, User } from 'lucide-react'
 // afrekenen (kennislaag: bereikkanalen zie je in merkzoekvraag, niet in de
 // laatste klik). De eerste versie deed dat wel en noemde Pinterest een
 // meetprobleem; dat was de verkeerde maat.
+// Koen 13:01: merkzoekvraag erbij en waarom. Cijfers: metrics_keywords,
+// is_branded, weken van 25 mei tot 15 juni: 10.892, 10.687, 10.876, 10.703
+// vertoningen per week, vlak. DV360 (campaign_metrics) ging in de week van
+// 8 juni van 144.038 naar 180.319 vertoningen. Merkcijfers lopen in de demo
+// tot 23 juni; dat staat er dan ook bij, zoals de echte chat dataleeftijd
+// meldt. Het waarom staat niet in de data, dus zegt de demo dat ook.
 
 type Locale = 'nl' | 'en'
 type QA = { q: string; a: string[] }
@@ -66,7 +72,8 @@ const COPY: Record<Locale, {
         a: [
           'Laatste 90 dagen, €62.347 in totaal:',
           '- **DV360**: €14.620, bereik (display en video), 2,3 miljoen vertoningen\n- **Google Ads**: €13.524, 2.202 conversies (€6 per conversie)\n- **TikTok**: €12.445, 1.690 conversies (€7)\n- **Meta**: €11.842, 1.324 conversies (€9)\n- **YouTube**: €5.199, bereik (video), 2,1 miljoen vertoningen\n- **Snapchat**: €3.399, 235 conversies (€14)\n- **Pinterest**: €1.318, bereik (awareness), 506 duizend vertoningen',
-          'Het meeste geld gaat naar DV360. Dat is een bereikkanaal: je koopt vertoningen, geen klikken. Of dat werkt zie je niet aan de kosten per conversie, maar aan hoeveel vaker mensen daarna je merk opzoeken. De verkoop komt uit Google Ads, TikTok en Meta, voor 6 tot 9 euro per conversie. Wat je hiermee doet, bespreek je met je consultant. Ik pas niets aan in je campagnes.',
+          'Het meeste geld gaat naar DV360. Dat is een bereikkanaal: je koopt vertoningen, geen klikken. Of dat werkt zie je aan je merkzoekvraag: hoe vaak mensen "Lumos" intypen. Die stond op **zo\'n 10.800 vertoningen per week op je eigen naam** en bleef vlak, ook in de week dat DV360 van 144 duizend naar 180 duizend vertoningen ging. Waar dat aan ligt kan ik niet uit de cijfers halen. Het kan zijn dat die vertoningen niet landen in Den Haag en Brussel, waar je publiek zoekt. Let op: de merkzoekcijfers zijn voor het laatst gemeten op 23 juni.',
+          'De verkoop komt uit Google Ads, TikTok en Meta, voor 6 tot 9 euro per conversie. Meer bereik zonder extra merkzoekers is de vraag voor je consultant. Ik pas niets aan in je campagnes.',
         ],
       },
     ],
@@ -102,7 +109,8 @@ const COPY: Record<Locale, {
         a: [
           'Last 90 days, €62,347 in total:',
           '- **DV360**: €14,620, reach (display and video), 2.3 million impressions\n- **Google Ads**: €13,524, 2,202 conversions (€6 per conversion)\n- **TikTok**: €12,445, 1,690 conversions (€7)\n- **Meta**: €11,842, 1,324 conversions (€9)\n- **YouTube**: €5,199, reach (video), 2.1 million impressions\n- **Snapchat**: €3,399, 235 conversions (€14)\n- **Pinterest**: €1,318, reach (awareness), 506 thousand impressions',
-          'The largest budget sits on DV360, and that is a reach channel: bought to be seen, not to be clicked. Cost per conversion is not the yardstick there, your brand search is. Sales come from Google Ads, TikTok and Meta, at €6 to €9 per conversion. What you do with it, you discuss with your consultant. I change nothing in your campaigns.',
+          'Most of the money goes to DV360. That is a reach channel: you buy impressions, not clicks. Whether it works you see in your brand search: how often people type in "Lumos". That stood at **about 10,800 impressions a week on your own name** and stayed flat, also in the week DV360 went from 144 thousand to 180 thousand impressions. Why, I cannot tell from the numbers. It may be that those impressions do not land in The Hague and Brussels, where your audience searches. Note: the brand search figures were last measured on 23 June.',
+          'Sales come from Google Ads, TikTok and Meta, at €6 to €9 per conversion. More reach without extra brand searchers is the question for your consultant. I change nothing in your campaigns.',
         ],
       },
     ],
