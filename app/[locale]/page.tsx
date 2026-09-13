@@ -197,10 +197,10 @@ const COPY = {
     research_link: 'Naar het onderzoek',
 
     price_eyebrow: 'Tarieven',
-    price_value: 'Vanaf 399',
-    price_period: 'per maand',
+    price_value: '1.399',
+    price_period: 'per maand, en na zes tot twaalf maanden 399',
     price_link: 'Bekijk alle tarieven',
-    price_body: 'Wij doen het werk vanaf 1.399 per maand. Wil je het op termijn zelf kunnen, dan draaien we mee tot het staat, meestal zes tot twaalf maanden, en daarna zak je naar 399. Geen marge op je mediabudget, geen instaptarief dat stiekem verdubbelt, en stoppen kan altijd met alles wat van jou is.',
+    price_body: 'Wij doen het werk en draaien mee tot het staat. Zodra je eigen mensen het kunnen, zak je naar 399. Bij ons gaat het bedrag dus omlaag als het werkt, in plaats van omhoog. Geen marge op je mediabudget, en stoppen kan altijd met alles wat van jou is.',
 
     faq_eyebrow: 'Veelgestelde vragen',
     faq_h2: 'Wat iedereen eerst wil weten.',
@@ -353,10 +353,10 @@ const COPY = {
     research_link: 'To the research',
 
     price_eyebrow: 'Pricing',
-    price_value: 'From 399',
-    price_period: 'per month',
+    price_value: '1,399',
+    price_period: 'per month, and 399 after six to twelve months',
     price_link: 'See all pricing',
-    price_body: 'We do the work from 1,399 per month. If you want to run it yourself later, we stay on until it stands, usually six to twelve months, and after that it drops to 399. No margin on your media budget, no entry price that quietly doubles, and you can stop at any time with everything that is yours.',
+    price_body: 'We do the work and stay on until it stands. Once your own people can run it, you drop to 399. With us the amount goes down when it works, instead of up. No margin on your media budget, and you can stop at any time with everything that is yours.',
 
     faq_eyebrow: 'Frequently asked questions',
     faq_h2: 'What everyone wants to know first.',
@@ -1013,7 +1013,10 @@ export default async function HomePage({ params }: Props) {
           </p>
           <p className="font-display font-extrabold text-primary m-0" style={{ fontSize: 'clamp(44px, 5vw, 68px)', letterSpacing: '-0.04em', lineHeight: '1' }}>
             {c.price_value}
-            <span className="text-muted font-semibold align-baseline" style={{ fontSize: '18px', letterSpacing: '0', marginLeft: '12px' }}>
+            {/* W-078: het periodelabel draagt nu de tweede prijs, dus het mag
+                afbreken op een smal scherm in plaats van naast het bedrag te
+                blijven plakken. */}
+            <span className="text-muted font-semibold align-baseline block sm:inline mt-2 sm:mt-0 sm:ml-3" style={{ fontSize: '18px', letterSpacing: '0' }}>
               {c.price_period}
             </span>
           </p>
