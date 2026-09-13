@@ -117,6 +117,31 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
         </div>
       </section>
 
+      {/* W-078, 13 sep 2026: "Twee dingen die wij niet doen", zoals op de
+          sectorpagina's. Deze negen pagina's beloofden alles en sloten niets
+          uit, terwijl dat blok elders op de site het meest verkopende stuk is.
+          Tekst per pagina in data/seo-landing-pages.ts. */}
+      {page.nietDoen && (
+        <section className="bg-white" style={{ padding: '96px 24px' }}>
+          <div className="mx-auto max-w-[1200px]">
+            <h2
+              className="font-display font-extrabold text-primary leading-[1.08] tracking-[-0.025em] mb-10"
+              style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', maxWidth: '20ch' }}
+            >
+              {page.nietDoen.h2}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border rounded-[14px] overflow-hidden">
+              {page.nietDoen.items.map((it) => (
+                <div key={it.t} className="bg-white p-8 lg:p-9">
+                  <h3 className="text-[19px] font-display font-bold text-primary mb-3 leading-tight">{it.t}</h3>
+                  <p className="text-[15px] text-muted leading-[1.6] m-0">{it.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Zo ziet dat eruit: een echte opname uit de Desk. Staat bewust hier,
           direct na de werkwijze: eerst uitleggen hoe het werkt, dan laten zien.
           Deze pagina's zijn NL-only (canonical naar NL), vandaar de vaste taal. */}

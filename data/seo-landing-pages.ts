@@ -21,6 +21,8 @@ export interface SeoLandingPageContent {
   solution: { eyebrow: string; h2: string; sub: string; steps: { title: string; desc: string }[] }
   list: { eyebrow: string; h2: string; items: string[] }
   ctaSlot: { eyebrow: string; h3: string; sub: string; btn: string }
+  // W-078: twee dingen die wij niet doen, per pagina. Zie SeoLandingPage.tsx.
+  nietDoen?: { h2: string; items: { t: string; d: string }[] }
   faq: { question: string; answer: string }[]
   related: { label: string; href: string }[]
 }
@@ -35,8 +37,8 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     h1: 'Marketing intelligence die besluitvorming',
     h1Accent: 'sneller maakt',
     sub: 'Marketing intelligence is het samenbrengen van data uit ads, GA4, CRM en tracking in een verhaal waar je op kunt sturen. Geen dashboard dat vertelt wat er gebeurd is, maar signalen die zeggen wat er nu aandacht nodig heeft.',
-    ctaPrimary: { label: 'Plan een demo', href: '/contact' },
-    ctaSecondary: { label: 'Bekijk de aanpak', href: '/werkwijze' },
+    ctaPrimary: { label: 'Start de diagnose', href: '/contact' },
+    ctaSecondary: { label: 'Bekijk het platform', href: '/platform' },
     pain: {
       eyebrow: 'Het probleem',
       h2: 'Waarom dashboards alleen niet genoeg zijn',
@@ -90,10 +92,17 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       ],
     },
     ctaSlot: {
-      eyebrow: 'Zien hoe het werkt',
-      h3: 'Bekijk je eigen data in Stevin',
-      sub: 'In een demo van 30 minuten koppelen we een bron en zie je welke signalen Stevin uit jouw data haalt.',
-      btn: 'Plan een demo',
+      eyebrow: "Eerst de diagnose",
+      h3: "Zwart op wit waar je staat",
+      sub: "Binnen twee weken een rapport op je eigen cijfers: wie er als betaler achter je advertenties staat, op wiens naam je accounts staan, of je meting echte aanvragen telt, en wat je als eerste moet repareren. Vrijblijvend, en je houdt het.",
+      btn: "Start de diagnose",
+    },
+    nietDoen: {
+      h2: "Twee dingen die wij niet doen.",
+      items: [
+        { t: "Wij zijn geen dashboard erbij", d: "Je hebt er al twee. Je krijgt een melding als iets afwijkt, met de reden en de bron erbij, zodat je het kunt nakijken." },
+        { t: "Wij veranderen niets in je accounts", d: "Er loopt geen opdracht van ons systeem naar Google of Meta. Het signaleert en zet een voorstel klaar. Een mens voert uit, of legt uit waarom niet." },
+      ],
     },
     faq: [
       {
@@ -132,7 +141,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     h1: 'Leadopvolging die geen warme lead',
     h1Accent: 'laat liggen',
     sub: 'Wie zijn leadopvolging wil automatiseren, wil twee dingen: sneller reageren en niets missen. Stevin brengt formulieren, calls en signalen uit al je bronnen samen en stuurt ze direct naar de juiste persoon of je CRM.',
-    ctaPrimary: { label: 'Vraag een demo aan', href: '/contact' },
+    ctaPrimary: { label: 'Start de diagnose', href: '/contact' },
     ctaSecondary: { label: 'Website met CRM', href: '/website-met-crm' },
     pain: {
       eyebrow: 'Het probleem',
@@ -187,10 +196,17 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       ],
     },
     ctaSlot: {
-      eyebrow: 'Direct starten',
-      h3: 'Laat geen lead meer liggen',
-      sub: 'We zetten de route van formulier naar opvolging in een week staand. Je ziet per lead waar die vandaan komt en wie hem oppakt.',
-      btn: 'Vraag een demo aan',
+      eyebrow: "Eerst de diagnose",
+      h3: "Zwart op wit waar je staat",
+      sub: "Binnen twee weken een rapport op je eigen cijfers: wie er als betaler achter je advertenties staat, op wiens naam je accounts staan, of je meting echte aanvragen telt, en wat je als eerste moet repareren. Vrijblijvend, en je houdt het.",
+      btn: "Start de diagnose",
+    },
+    nietDoen: {
+      h2: "Twee dingen die wij niet doen.",
+      items: [
+        { t: "Er gaat niets naar je klant zonder dat jij het zag", d: "Het opvolgbericht ligt klaar met wat er besproken is. Jij leest en drukt op verzenden. Nooit andersom." },
+        { t: "Wij bouwen geen CRM", d: "Heb je er een, dan koppelen we. Heb je er geen, dan begint het met een simpele lijst die van jou is. Geen nieuw systeem erbij om te leren." },
+      ],
     },
     faq: [
       {
@@ -229,7 +245,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     h1: 'Marketing voor bureaus met grip op data,',
     h1Accent: 'opvolging en rapportage',
     sub: 'Een marketingbureau dat tien of vijftig klanten draait, verliest tijd aan tool-gehop en rapportages. Stevin geeft bureaus een plek voor alle klantdata, met signalen per account en rapportage die zichzelf schrijft.',
-    ctaPrimary: { label: 'Plan een bureau-demo', href: '/contact' },
+    ctaPrimary: { label: 'Start de diagnose', href: '/contact' },
     ctaSecondary: { label: 'Voor marketingteams', href: '/voor-marketingteams' },
     pain: {
       eyebrow: 'Het probleem',
@@ -284,10 +300,17 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       ],
     },
     ctaSlot: {
-      eyebrow: 'Voor jouw bureau',
-      h3: 'Zie je eigen klantportfolio in Stevin',
-      sub: 'In een bureau-demo koppelen we een of twee accounts en zie je hoe signalen, reviews en rapportage per klant werken.',
-      btn: 'Plan een bureau-demo',
+      eyebrow: "Eerst de diagnose",
+      h3: "Zwart op wit waar je staat",
+      sub: "Binnen twee weken een rapport op je eigen cijfers: wie er als betaler achter je advertenties staat, op wiens naam je accounts staan, of je meting echte aanvragen telt, en wat je als eerste moet repareren. Vrijblijvend, en je houdt het.",
+      btn: "Start de diagnose",
+    },
+    nietDoen: {
+      h2: "Twee dingen die wij niet doen.",
+      items: [
+        { t: "Wij nemen geen accounts over", d: "Je klant ziet jouw naam, niet de onze. Wij zijn de laag die elke dag meekijkt en onthoudt. Jij blijft het bureau." },
+        { t: "Wij schrijven het verhaal aan je klant niet", d: "De cijfers, de signalen en wat ermee gedaan is staan per klant klaar. Wat je daarvan aan je klant vertelt, blijft jouw werk." },
+      ],
     },
     faq: [
       {
@@ -326,7 +349,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     h1: 'Een website met CRM-koppeling die leads',
     h1Accent: 'direct bruikbaar maakt',
     sub: 'Wie zoekt naar een website met CRM wil af van losse formulieren die in een mailbox belanden. De route hoort te zijn: bezoeker vult in, lead staat verrijkt in je CRM, opvolging start meteen. Dat is precies wat Stevin bouwt.',
-    ctaPrimary: { label: 'Plan een demo', href: '/contact' },
+    ctaPrimary: { label: 'Start de diagnose', href: '/contact' },
     ctaSecondary: { label: 'Bekijk diensten', href: '/diensten' },
     pain: {
       eyebrow: 'Het probleem',
@@ -381,10 +404,17 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       ],
     },
     ctaSlot: {
-      eyebrow: 'Van website naar systeem',
-      h3: 'Laat je website voor sales werken',
-      sub: 'We bekijken je huidige route van formulier naar opvolging en laten zien waar leads en data nu verloren gaan.',
-      btn: 'Plan een demo',
+      eyebrow: "Eerst de diagnose",
+      h3: "Zwart op wit waar je staat",
+      sub: "Binnen twee weken een rapport op je eigen cijfers: wie er als betaler achter je advertenties staat, op wiens naam je accounts staan, of je meting echte aanvragen telt, en wat je als eerste moet repareren. Vrijblijvend, en je houdt het.",
+      btn: "Start de diagnose",
+    },
+    nietDoen: {
+      h2: "Twee dingen die wij niet doen.",
+      items: [
+        { t: "Wij bouwen geen webshop", d: "Een site die aanvragen binnenhaalt en netjes doorzet, ja. Voorraad en betalingen zijn een ander vak. Dat koppelen we als de vraag er is, dat bouwen we niet." },
+        { t: "Wij houden je domein niet", d: "Domein, hosting en de site zelf staan op naam van jouw bedrijf, niet op de onze. Stop je met ons, dan houd je alles." },
+      ],
     },
     faq: [
       {
@@ -405,7 +435,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       {
         question: 'Wat kost een website met CRM-koppeling?',
         answer:
-          'Dat hangt af van wat er al staat: alleen de koppeling en tracking inrichten is dagen werk, een volledige website met CRM-route is een project. Plan een demo en je krijgt een eerlijke inschatting op basis van je huidige situatie.',
+          'Dat hangt af van wat er al staat: alleen de koppeling en tracking inrichten is dagen werk, een volledige website met CRM-route is een project. Start de diagnose en je krijgt een eerlijke inschatting op basis van je huidige situatie.',
       },
     ],
     related: [
@@ -423,7 +453,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     h1: 'Google Ads en GA4 die echt',
     h1Accent: 'op elkaar aansluiten',
     sub: 'Google Ads en GA4 samen goed laten meten is de basis onder elke campagnebeslissing. Toch wijken de cijfers bij de meeste accounts af: andere conversies, ontbrekende key events en consent die half is ingericht. Dat is te fixen.',
-    ctaPrimary: { label: 'Vraag een tracking-check aan', href: '/contact' },
+    ctaPrimary: { label: 'Start de diagnose', href: '/contact' },
     ctaSecondary: { label: 'Onze diensten', href: '/diensten' },
     pain: {
       eyebrow: 'Het probleem',
@@ -479,10 +509,17 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       ],
     },
     ctaSlot: {
-      eyebrow: 'Tracking-check',
-      h3: 'Weet binnen een week waar je meting breekt',
-      sub: 'We lopen de hele keten na van advertentieklik tot conversie in GA4 en Google Ads, en je krijgt een concrete fixlijst.',
-      btn: 'Vraag een tracking-check aan',
+      eyebrow: "Eerst de diagnose",
+      h3: "Zwart op wit waar je staat",
+      sub: "Binnen twee weken een rapport op je eigen cijfers: wie er als betaler achter je advertenties staat, op wiens naam je accounts staan, of je meting echte aanvragen telt, en wat je als eerste moet repareren. Vrijblijvend, en je houdt het.",
+      btn: "Start de diagnose",
+    },
+    nietDoen: {
+      h2: "Twee dingen die wij niet doen.",
+      items: [
+        { t: "Wij tellen geen knopklikken als aanvraag", d: "Een conversie is een echte aanvraag of een echt telefoontje. Een klik op een knop zonder bevestiging tellen we niet mee, ook niet als het cijfer daar mooier van wordt." },
+        { t: "Wij koppelen je kassa niet standaard", d: "Google Ads, GA4, Tag Manager en je webshop lezen we uit. Kassa en boekhouding komen erbij als de vraag er is, niet omdat het op een lijst mooi staat." },
+      ],
     },
     faq: [
       {
@@ -521,7 +558,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     h1: 'Feed management dat productdata',
     h1Accent: 'aan resultaat koppelt',
     sub: 'Feed management is meer dan titels en categorieen naar Google Shopping sturen. Je productfeed moet kloppen met voorraad, marge en campagneprestaties, zodat je niet blind budget uitgeeft aan producten die niet kunnen of niet hoeven verkopen.',
-    ctaPrimary: { label: 'Plan een demo', href: '/contact' },
+    ctaPrimary: { label: 'Start de diagnose', href: '/contact' },
     ctaSecondary: { label: 'Bekijk integraties', href: '/integraties' },
     pain: {
       eyebrow: 'Het probleem',
@@ -555,10 +592,17 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       ],
     },
     ctaSlot: {
-      eyebrow: 'Feed-check',
-      h3: 'Zie waar je productdata nu budget kost',
-      sub: 'We brengen de productbron, feedroute en belangrijkste controlepunten in kaart. Daarna weet je welke verbetering technisch en commercieel het eerst telt.',
-      btn: 'Plan een feed-check',
+      eyebrow: "Eerst de diagnose",
+      h3: "Zwart op wit waar je staat",
+      sub: "Binnen twee weken een rapport op je eigen cijfers: wie er als betaler achter je advertenties staat, op wiens naam je accounts staan, of je meting echte aanvragen telt, en wat je als eerste moet repareren. Vrijblijvend, en je houdt het.",
+      btn: "Start de diagnose",
+    },
+    nietDoen: {
+      h2: "Twee dingen die wij niet doen.",
+      items: [
+        { t: "Wij zijn geen feedtool", d: "Je feedtool of je eigen export blijft gewoon draaien. Wij leggen de uitkomst naast je campagnes en zeggen waar het knelt." },
+        { t: "Wij bepalen je marge niet", d: "Welk product geld verdient, weet jij. Wij zetten je campagnecijfers ernaast, zodat het budget die kant op kan." },
+      ],
     },
     faq: [
       { question: 'Wat is feed management?', answer: 'Feed management is het beheren van productdata voor verkoop- en advertentiekanalen. Het gaat om de route van brondata naar een bruikbare, actuele productfeed en om de controles die fouten en afwijkingen zichtbaar maken.' },
@@ -582,7 +626,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     h1: 'First-party data als basis voor',
     h1Accent: 'schaalbare marketing',
     sub: 'First-party data is de data die klanten en bezoekers rechtstreeks aan jou geven: formulieren, aankopen, gedrag op je eigen site. Wie die data netjes verzamelt en activeert, is minder afhankelijk van platformen en advertentieprijzen.',
-    ctaPrimary: { label: 'Plan een demo', href: '/contact' },
+    ctaPrimary: { label: 'Start de diagnose', href: '/contact' },
     ctaSecondary: { label: 'Marketing intelligence', href: '/marketing-intelligence' },
     pain: {
       eyebrow: 'Het probleem',
@@ -637,10 +681,17 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       ],
     },
     ctaSlot: {
-      eyebrow: 'Strategie-sessie',
-      h3: 'Bouw je eigen datafundament',
-      sub: 'We brengen in kaart welke first-party data je al hebt, wat er mist en wat activatie per kanaal oplevert.',
-      btn: 'Plan een demo',
+      eyebrow: "Eerst de diagnose",
+      h3: "Zwart op wit waar je staat",
+      sub: "Binnen twee weken een rapport op je eigen cijfers: wie er als betaler achter je advertenties staat, op wiens naam je accounts staan, of je meting echte aanvragen telt, en wat je als eerste moet repareren. Vrijblijvend, en je houdt het.",
+      btn: "Start de diagnose",
+    },
+    nietDoen: {
+      h2: "Twee dingen die wij niet doen.",
+      items: [
+        { t: "Wij verkopen geen data en kopen er geen", d: "Alles wat verzameld wordt is van jou, met toestemming van je bezoeker, en verlaat je eigen systemen niet." },
+        { t: "Wij bouwen geen datawarehouse", d: "Voor de meeste bedrijven is dat te zwaar. Wij beginnen bij je formulieren, je CRM en je meting, en koppelen groter als de vraag er is." },
+      ],
     },
     faq: [
       {
@@ -680,7 +731,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     h1: 'Lead generatie die meer oplevert',
     h1Accent: 'dan alleen traffic',
     sub: 'Lead generatie verbeteren begint zelden bij meer budget. De winst zit in de keten: de juiste bronnen, formulieren die converteren, data die klopt en opvolging die snel is. Stevin pakt die keten als geheel.',
-    ctaPrimary: { label: 'Plan een demo', href: '/contact' },
+    ctaPrimary: { label: 'Start de diagnose', href: '/contact' },
     ctaSecondary: { label: 'Onze diensten', href: '/diensten' },
     pain: {
       eyebrow: 'Het probleem',
@@ -735,10 +786,17 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       ],
     },
     ctaSlot: {
-      eyebrow: 'Meer uit je funnel',
-      h3: 'Zie waar jouw leadketen lekt',
-      sub: 'We lopen de route van campagne tot opvolging na en laten zien waar de meeste winst zit: bron, pagina, data of snelheid.',
-      btn: 'Plan een demo',
+      eyebrow: "Eerst de diagnose",
+      h3: "Zwart op wit waar je staat",
+      sub: "Binnen twee weken een rapport op je eigen cijfers: wie er als betaler achter je advertenties staat, op wiens naam je accounts staan, of je meting echte aanvragen telt, en wat je als eerste moet repareren. Vrijblijvend, en je houdt het.",
+      btn: "Start de diagnose",
+    },
+    nietDoen: {
+      h2: "Twee dingen die wij niet doen.",
+      items: [
+        { t: "Wij kopen geen leads voor je", d: "Leadplatforms verkopen dezelfde aanvraag aan vijf bedrijven tegelijk. Wij bouwen je eigen vindbaarheid en je eigen aanvragen, en die blijven van jou." },
+        { t: "Wij beloven geen aantal aanvragen", d: "Wat een campagne oplevert hangt af van je markt, je aanbod en je opvolging. Wij zorgen dat elke aanvraag geteld wordt, zodat je het zelf ziet." },
+      ],
     },
     faq: [
       {
@@ -777,7 +835,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     h1: 'Een campagne-briefing die weet wat er',
     h1Accent: 'eerder al gebeurde',
     sub: 'Brief mijn volgende campagne is geen los prompt-veld. Stevin haalt cijfers uit vergelijkbare eerdere campagnes, eerder gegeven advies en de uitkomst daarvan, en concurrent-hooks erbij, en zet dat om in een concrete briefing met hooks, creatieve concepten en eerste acties.',
-    ctaPrimary: { label: 'Plan een demo', href: '/contact' },
+    ctaPrimary: { label: 'Start de diagnose', href: '/contact' },
     ctaSecondary: { label: 'Platform', href: '/platform' },
     pain: {
       eyebrow: 'Het probleem',
@@ -832,10 +890,17 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       ],
     },
     ctaSlot: {
-      eyebrow: 'Zelf zien',
-      h3: 'Genereer een briefing op je eigen data',
-      sub: 'In een demo laten we zien hoe de briefing wordt opgebouwd uit jouw eerdere campagnes en welke controle je daarop hebt.',
-      btn: 'Plan een demo',
+      eyebrow: "Eerst de diagnose",
+      h3: "Zwart op wit waar je staat",
+      sub: "Binnen twee weken een rapport op je eigen cijfers: wie er als betaler achter je advertenties staat, op wiens naam je accounts staan, of je meting echte aanvragen telt, en wat je als eerste moet repareren. Vrijblijvend, en je houdt het.",
+      btn: "Start de diagnose",
+    },
+    nietDoen: {
+      h2: "Twee dingen die wij niet doen.",
+      items: [
+        { t: "De briefing verstuurt zichzelf niet", d: "Hij ligt klaar met cijfers, hooks en eerste acties. Wie ermee aan de slag gaat, en of hij klopt, beslis jij." },
+        { t: "Wij kopieren geen concurrent", d: "Wat een concurrent test, zie je in het openbare advertentieregister. Wij vertalen het naar een eigen hoek. Overnemen doen we niet." },
+      ],
     },
     faq: [
       {
