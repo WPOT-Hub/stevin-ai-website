@@ -51,7 +51,7 @@ const COPY: Record<Locale, {
         q: 'Hoe gaat het met mijn campagnes?',
         a: [
           'Er draaien 15 campagnes op zeven kanalen. Augustus, de laatste volledige maand: 4,6 miljoen vertoningen, 89.498 klikken en **1.363 conversies voor €14.924**, dat is €10,95 per conversie. Tegenover juli: spend 4 procent lager, conversies vrijwel gelijk (1.373 naar 1.363).',
-          'Drie van de zeven kanalen draaien op bereik, niet op verkoop: **DV360, YouTube en Pinterest** staan ingesteld op display, video en awareness. Die reken je niet af op conversies, maar op wat ze doen met je merkzoekvraag. Laatste dag met gemeten data: gisteren.',
+          'Drie van de zeven kanalen zijn er om gezien te worden, niet om te verkopen: **DV360, YouTube en Pinterest**. Die beoordeel je niet op conversies, maar op hoeveel vaker mensen daarna je merk opzoeken. Laatste dag met gemeten data: gisteren.',
         ],
       },
       {
@@ -66,7 +66,7 @@ const COPY: Record<Locale, {
         a: [
           'Laatste 90 dagen, €62.347 in totaal:',
           '- **DV360**: €14.620, bereik (display en video), 2,3 miljoen vertoningen\n- **Google Ads**: €13.524, 2.202 conversies (€6 per conversie)\n- **TikTok**: €12.445, 1.690 conversies (€7)\n- **Meta**: €11.842, 1.324 conversies (€9)\n- **YouTube**: €5.199, bereik (video), 2,1 miljoen vertoningen\n- **Snapchat**: €3.399, 235 conversies (€14)\n- **Pinterest**: €1.318, bereik (awareness), 506 duizend vertoningen',
-          'Het grootste budget zit op DV360, en dat is een bereikkanaal: ingekocht om gezien te worden, niet om te klikken. Kosten per conversie is daar niet de maat, je merkzoekvraag wel. De verkoop komt van Google Ads, TikTok en Meta, tussen €6 en €9 per conversie. Wat je ermee doet, bespreek je met je consultant. Ik verander niets in je campagnes.',
+          'Het meeste geld gaat naar DV360. Dat is een bereikkanaal: je koopt vertoningen, geen klikken. Of dat werkt zie je niet aan de kosten per conversie, maar aan hoeveel vaker mensen daarna je merk opzoeken. De verkoop komt uit Google Ads, TikTok en Meta, voor 6 tot 9 euro per conversie. Wat je hiermee doet, bespreek je met je consultant. Ik pas niets aan in je campagnes.',
         ],
       },
     ],
