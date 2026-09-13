@@ -11,13 +11,14 @@ export default function Footer() {
 
   const footerLinks = {
     diensten: [
-      { label: t('svc_paid'), href: '/google-ads-uitbesteden' },
+      // W-078: 'Paid Media', 'CRM & Leadopvolging' en 'Tracking & Inzicht' wezen
+      // naar ankers die niet bestonden. Doorgezet naar de echte pagina's gaf
+      // dubbele regels (zelfde href, en de lijst is gekeyd op href). Weg dus;
+      // de specifieke pagina's staan hieronder al.
       { label: t('svc_ads_uitbesteden'), href: '/google-ads-uitbesteden' },
       { label: t('svc_social_uitbesteden'), href: '/social-media-uitbesteden' },
       { label: t('svc_landing'), href: '/websites' },
       { label: t('svc_automation'), href: '/marketing-automation' },
-      { label: t('svc_crm'), href: '/leadopvolging' },
-      { label: t('svc_tracking'), href: '/google-ads-ga4' },
       // NL-only SEO-landingspagina's (data/seo-landing-pages.ts), sitewide
       // interne links voor discovery
       { label: 'Marketing intelligence', href: '/marketing-intelligence' },
