@@ -65,10 +65,17 @@ const COPY = {
       // citaat wisselen (components/QuoteRotator.tsx). Sector wel, naam nooit:
       // niet de instelling, niet het bureau waar het over gaat.
       { q: 'Heb het gevoel dat we altijd weer opnieuw beginnen.', a: 'Concertzaal, over hun bureau' },
-      // Strekking van Koen (13 sep 11:23), gesprek van 30 juli: het bureau zei
-      // dat het op hun accounts moest draaien, anders konden ze niet bij alle
-      // gegevens. LETTERLIJKE ZIN NOG NAKIJKEN in het transcript voor deploy.
-      { q: 'Het moest op hun accounts draaien, anders konden ze niet bij alle gegevens.', a: 'Bouwbedrijf, over hun bureau' },
+      // Hieronder letterlijk uit de Plaud-opnames, met opname-id en tijdstip,
+      // zodat het na te kijken is. Sector wel, naam nooit.
+      // 1ea24abb, 1 sep 2026, 01:17: de klant leest de mail van het bureau voor,
+      // op haar vraag om toegang tot de advertentieaccounts.
+      { q: 'Wij zitten namelijk met meerdere klanten gekoppeld aan onze accounts.', a: 'Het bureau van een dak- en gevelbedrijf, per mail, op de vraag om toegang' },
+      // 1ea24abb, 1 sep 2026, 06:52.
+      { q: 'Ze hebben alles. En ze reageren nergens op. Facturen sturen, dat kunnen ze wel.', a: 'Dak- en gevelbedrijf, over hun bureau' },
+      // a34ba614, 10 sep 2026, 06:14: het bureau had het domein op eigen naam gezet.
+      { q: 'Dat mijn website daar zat, dat wisten wij pas achteraf. Daar hebben wij nooit aan gedacht.', a: 'Stoffeerderij, over het domein op naam van het bureau' },
+      // c0cdb4db, 9 sep 2026, 19:25: de conversiemeting stond aan en telde het verkeerde.
+      { q: 'De laatste jaren zijn we zwaar achteruitgeboerd. Maar dat heb ik niet gezien, omdat ik daar ook nooit naar kijk.', a: 'Stoffeerderij' },
     ],
     // "Zelfs bureaus zeggen het zelf" is er 4 sep 2026 uit (W-042). Onnagekeken
     // bewering over derden, zonder bron, en het schuurt tegen de generieke
@@ -252,7 +259,10 @@ const COPY = {
       { q: 'We pay a fortune for that every month and nothing happens.', a: 'Roofing and facade company' },
       { q: 'Those are all separate systems with their own logins. But there is no link anywhere, no central memory.', a: 'Marketing lead, international brand' },
       { q: 'It feels like we keep starting over, every single time.', a: 'Concert hall, about their agency' },
-      { q: 'It had to run on their accounts, otherwise they could not get at all the data.', a: 'Construction company, about their agency' },
+      { q: 'We have several clients linked to our accounts, you see.', a: 'The agency of a roofing and facade company, by email, when asked for access' },
+      { q: 'They have everything. And they respond to nothing. Sending invoices, that they can do.', a: 'Roofing and facade company, about their agency' },
+      { q: 'That my website was sitting there, we only found out afterwards. We never gave it a thought.', a: 'Upholstery business, about the domain in the agency\'s name' },
+      { q: 'The last few years we have gone badly downhill. But I never saw it, because I never look at that.', a: 'Upholstery business' },
     ],
     herken_close: 'These are not exceptions. This is how it works as long as nobody is watching.',
     herken_bron: 'From real diagnosis conversations, anonymised.',
