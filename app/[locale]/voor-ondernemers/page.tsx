@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import DeskProof from '@/components/DeskProof'
 import KlantLogos from '@/components/KlantLogos'
+import AskStevinDemo from '@/components/AskStevinDemo'
 import { localizedMetadata } from '@/lib/seo'
 import FAQAccordion from '@/components/FAQAccordion'
 
@@ -244,6 +245,10 @@ export default async function VoorOndernemersPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* W-078: "meekijken kan altijd" uit de FAQ, maar dan te zien. De klantportal
+          als gescripte demo, zie components/AskStevinDemo.tsx. */}
+      <AskStevinDemo locale={locale} />
 
       {/* Kennislaag. Toegevoegd 4 sep 2026 (W-042) zodat deze pagina hetzelfde
           bewijsstuk draagt als /fmcg, /retail en de andere voor-wie-paginas:

@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import Section from '@/components/Section'
 import SectionHeader from '@/components/SectionHeader'
+import AskStevinDemo from '@/components/AskStevinDemo'
 import { localizedMetadata } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -257,6 +258,10 @@ export default async function PlatformPage({ params }: Props) {
           ))}
         </div>
       </Section>
+
+      {/* W-078: de klantportal als gescripte demo, zie components/AskStevinDemo.tsx.
+          Na "wat het doet", voor "wat het niet doet": eerst zien, dan de grens. */}
+      <AskStevinDemo locale={locale} />
 
       {/* Wat het NIET doet */}
       <Section bg="surface">
