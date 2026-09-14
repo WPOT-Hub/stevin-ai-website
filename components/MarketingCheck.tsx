@@ -49,12 +49,13 @@ interface Uitkomst {
   bevinding_bron?: 'scan' | 'verdieping' | null
   /** Tellers van de lopende verdieping, uit de Hub. */
   voortgang?: {
-    stap: 'lezen' | 'advertenties' | 'afwegen' | 'toetsen'
+    stap: 'lezen' | 'advertenties' | 'bronnen' | 'afwegen' | 'toetsen'
     paginas_gelezen: number
     tekens_gelezen: number
     tokens_geschat: number
     tokens_in?: number
     tokens_uit?: number
+    bronnen_klaar?: string[]
   } | null
   meetprobleem: string | null
   bevinding: Bevinding | null
@@ -141,6 +142,7 @@ export default function MarketingCheck() {
   const [vStatus, setVStatus] = useState<string>('skipped')
   const [verdiepingLiepNog, setVerdiepingLiepNog] = useState(false)
   const [tokens, setTokens] = useState(0)
+  const [voortgang, setVoortgang] = useState<NonNullable<Uitkomst['voortgang']> | null>(null)
 
   const params = useRef<{ p: string | null; s: string | null }>({ p: null, s: null })
   const pollTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -204,7 +206,10 @@ export default function MarketingCheck() {
       const status = huidig.verdieping ?? 'skipped'
       setVStatus(status)
       const v = huidig.voortgang
-      if (v) setTokens(v.tokens_in != null ? v.tokens_in + (v.tokens_uit ?? 0) : v.tokens_geschat)
+      if (v) {
+        setVoortgang(v)
+        setTokens(v.tokens_in != null ? v.tokens_in + (v.tokens_uit ?? 0) : v.tokens_geschat)
+      }
       const klaar = status !== 'running' && huidig.deep_scan !== 'queued' && huidig.deep_scan !== 'running'
       if (klaar) {
         toon(huidig, false)
@@ -226,6 +231,7 @@ export default function MarketingCheck() {
     setSeconden(0)
     setKaart(0)
     setTokens(0)
+    setVoortgang(null)
     startTijd.current = Date.now()
 
     try {
@@ -294,7 +300,32 @@ export default function MarketingCheck() {
    * register nakijken (het antwoord op de scan), dan de verdieping, dan kiezen.
    * Niets loopt op een timer.
    */
-  const statusRegel = !aGereed ? 'Website ophalen' : !vGereed ? 'Agent aan het werk' : 'Bevinding kiezen'
+  /**
+   * Wat de agent nu doet, in zijn woorden, met de echte tellers uit de Hub.
+   * Koen, 15 sep: "dit wel iets aandikken". Aangedikt met wat er gebeurt,
+   * niet met wat er niet gebeurt: elke regel hier komt uit een echte stap.
+   */
+  const BRONNAAM: Record<string, string> = {
+    wayback: 'webarchief', mail: 'mailbeveiliging', pagespeed: 'snelheid', bedrijfsprofiel: 'Google-profiel',
+  }
+  const stap = voortgang?.stap
+  const paginas = voortgang?.paginas_gelezen ?? 0
+  const statusRegel = !aGereed
+    ? 'Website ophalen'
+    : vGereed
+      ? 'Bevinding kiezen'
+      : stap === 'lezen'
+        ? `Agent leest je site${paginas ? ` · ${paginas} pagina's` : ''}`
+        : stap === 'advertenties'
+          ? 'Agent zoekt je advertenties op'
+          : stap === 'bronnen'
+            ? 'Agent kijkt buiten je site'
+            : stap === 'afwegen'
+              ? 'Agent weegt de aanknopingspunten'
+              : stap === 'toetsen'
+                ? 'Agent toetst het bewijs'
+                : 'Agent aan het werk'
+  const bronnenKlaar = (voortgang?.bronnen_klaar ?? []).map((b) => BRONNAAM[b] ?? b)
 
   return (
     <div className="mx-auto w-full max-w-[680px] px-5 py-10 sm:py-16">
@@ -373,6 +404,11 @@ export default function MarketingCheck() {
               </>
             )}
           </p>
+          {bronnenKlaar.length > 0 && (
+            <p className="mt-2 text-[13px] text-[var(--color-muted)]">
+              Gelezen: {bronnenKlaar.join(' · ')}
+            </p>
+          )}
 
           <div key={kaart} className="mt-12 max-w-[520px] animate-[fadein_700ms_ease-out]">
             <p className="font-display text-[clamp(20px,4vw,26px)] font-bold leading-snug text-[var(--color-primary)]">
