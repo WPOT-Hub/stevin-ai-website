@@ -344,9 +344,13 @@ export default function MarketingCheck() {
           </form>
 
           {fout && (
-            <p className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] px-4 py-3 text-[15px] text-[var(--color-primary)]">
-              {fout}
-            </p>
+            <div className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] px-4 py-3">
+              <p className="text-[15px] text-[var(--color-primary)]">{fout}</p>
+              {/* Een foutmelding die een gesprek noemt hoort een knop te hebben. */}
+              <button onClick={naarGesprek} className="mt-2 text-[14px] font-semibold text-[var(--color-primary)] underline underline-offset-2">
+                Of plan meteen een kennismaking van twintig minuten
+              </button>
+            </div>
           )}
         </>
       )}
