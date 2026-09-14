@@ -352,7 +352,7 @@ export default function MarketingCheck() {
       )}
 
       {fase === 'bezig' && (
-        <div className="flex flex-col items-center py-6 text-center">
+        <div className="flex flex-col items-center rounded-2xl border border-[var(--color-border)] bg-white px-6 py-12 text-center shadow-[0_1px_2px_rgba(10,22,40,0.04),0_8px_24px_-12px_rgba(10,22,40,0.12)] sm:px-10">
           {/* Rustig. Wat wij precies nalopen boeit de bezoeker niet; dat hij ziet
               dat er echt gewerkt wordt wel. Koen, 14 sep: "veel leuker om de
               heartbeat en wat quotes te tonen". */}
