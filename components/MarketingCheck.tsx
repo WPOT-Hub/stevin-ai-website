@@ -5,8 +5,8 @@ import { ArrowRight, Check, ExternalLink, Globe } from 'lucide-react'
 
 const HUB_LIVE = 'https://hub.stevin.ai/api/marketing-check'
 const CAL = 'https://cal.com/koen-hoogenboom/kennismaking'
-/** De Stevin-hartslag. Bestaand asset uit brand/, nooit nagetekend. */
-const HEARTBEAT = '/logos/stevin-heartbeat.gif'
+/** De Stevin-hartslag: het blauwe merk op transparant, voor lichte vlakken. Bestaand asset, nooit nagetekend; de variant zonder -white staat op een navy tegel. */
+const HEARTBEAT = '/logos/stevin-heartbeat-white.gif'
 
 /**
  * Welke Hub dit scherm aanspreekt. Op localhost mag je met ?hub=... naar een
