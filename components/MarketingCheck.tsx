@@ -399,11 +399,19 @@ export default function MarketingCheck() {
           </div>
 
           {uitkomst.meetprobleem && (
-            <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 sm:p-7">
-              <h2 className="font-display text-[20px] font-bold text-[var(--color-primary)]">
-                We konden deze site niet doorlichten
+            <div className="rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
+              <h2 className="font-display text-[clamp(22px,5vw,28px)] font-extrabold leading-[1.15] text-[var(--color-primary)]">
+                Deze site kregen we niet te zien
               </h2>
-              <p className="mt-2 text-[16px] leading-relaxed text-[var(--color-muted)]">{uitkomst.meetprobleem}</p>
+              <p className="mt-3 text-[16px] leading-relaxed text-[var(--color-muted)]">{uitkomst.meetprobleem}</p>
+              {/* Geen boekingsknop onder een mislukte scan. Een andere site proberen
+                  is de logische stap; wie toch wil praten vindt de link eronder. */}
+              <button
+                onClick={() => { setUitkomst(null); setFase('invoer'); setDomein('') }}
+                className="mt-6 w-full rounded-xl bg-[var(--color-primary)] px-5 py-4 text-[16px] font-semibold text-white transition-colors hover:bg-[var(--color-primary-light)]"
+              >
+                Probeer een andere site
+              </button>
             </div>
           )}
 
@@ -491,33 +499,32 @@ export default function MarketingCheck() {
             </p>
           )}
 
-          {uitkomst.ook_gezien.length > 0 && (
-            <div className="mt-6">
-              <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-muted)]">Dit zagen we ook</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {uitkomst.ook_gezien.map((n) => (
-                  <span
-                    key={n}
-                    className="rounded-full border border-[var(--color-border)] bg-white px-3 py-1 text-[13px] text-[var(--color-muted)]"
-                  >
-                    {n}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
+          {/* "Dit zagen we ook" (de taginventaris uit fase A) staat niet meer op het
+              scherm. Koen, 14 sep: de meeste klanten boeit het niet wat we nalopen.
+              Het blijft in de database staan, voor ons. */}
 
-          <button
-            onClick={naarGesprek}
-            className="mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)]"
-          >
-            Plan een kennismaking van twintig minuten
-            <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
-          </button>
-          <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
-            Deze check kijkt van buitenaf; we hebben nog niet onder de motorkap kunnen kijken.
-            We lopen samen door wat hier staat, en daarna kunnen we dieper in je situatie duiken.
-          </p>
+          {uitkomst.meetprobleem ? (
+            <p className="mt-6 text-center text-[13px] text-[var(--color-muted)]">
+              Liever meteen praten?{' '}
+              <button onClick={naarGesprek} className="font-semibold text-[var(--color-primary)] underline underline-offset-2">
+                Plan een kennismaking van twintig minuten
+              </button>
+            </p>
+          ) : (
+            <>
+              <button
+                onClick={naarGesprek}
+                className="mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)]"
+              >
+                Plan een kennismaking van twintig minuten
+                <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+              </button>
+              <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
+                Deze check kijkt van buitenaf; we hebben nog niet onder de motorkap kunnen kijken.
+                We lopen samen door wat hier staat, en daarna kunnen we dieper in je situatie duiken.
+              </p>
+            </>
+          )}
         </>
       )}
     </div>
