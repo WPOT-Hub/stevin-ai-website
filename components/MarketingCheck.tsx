@@ -305,11 +305,11 @@ export default function MarketingCheck() {
             onClick={naarGesprek}
             className="mt-8 w-full rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)]"
           >
-            Plan een vrijblijvende vervolgscan
+            Plan een kennismaking van twintig minuten
           </button>
           <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
             Deze check kijkt van buitenaf; we hebben nog niet onder de motorkap kunnen kijken.
-            Voor de vervolgscan vragen we leesrechten op de accounts die ertoe doen.
+            We lopen samen door wat hier staat, en daarna kunnen we dieper in je situatie duiken.
           </p>
         </>
       )}
