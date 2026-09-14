@@ -79,7 +79,62 @@ async function logBotCrawl(bot: string, path: string): Promise<void> {
   }
 }
 
+/**
+ * Codepoort voor /marketing-check (W-134, 15 sep). Staat alleen aan als
+ * MARKETING_CHECK_TOEGANGSCODE is gezet in de omgeving; haal die weg en de
+ * check is open. Bedoeld om een nieuwe uitrol eerst zelf te testen voordat
+ * bezoekers hem zien.
+ *
+ * Werkt zonder route handler: ?code=<x> zet een cookie met de hash van de code
+ * en stuurt door naar het schone pad; zonder geldige cookie wordt de pagina
+ * herschreven naar het codescherm, met de URL onveranderd.
+ */
+const MC_PAD = /^\/(?:nl|en)?\/?marketing-check\/?$/
+const MC_COOKIE = 'mc_toegang'
+
+async function sha256Hex(s: string): Promise<string> {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s))
+  return Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, '0')).join('')
+}
+
+async function marketingCheckPoort(request: NextRequest): Promise<NextResponse | null> {
+  const code = process.env.MARKETING_CHECK_TOEGANGSCODE
+  if (!code) return null
+  if (!MC_PAD.test(request.nextUrl.pathname)) return null
+
+  const verwacht = await sha256Hex(`${code}:${MC_COOKIE}`)
+  const ingevoerd = request.nextUrl.searchParams.get('code')
+  if (ingevoerd !== null) {
+    if (ingevoerd.trim() === code) {
+      const schoon = request.nextUrl.clone()
+      schoon.searchParams.delete('code')
+      const r = NextResponse.redirect(schoon)
+      r.cookies.set(MC_COOKIE, verwacht, { httpOnly: true, sameSite: 'lax', secure: true, path: '/', maxAge: 60 * 60 * 24 * 14 })
+      return r
+    }
+    // Verkeerde code: naar het codescherm met een melding, zonder de code in de URL te laten staan.
+    const terug = request.nextUrl.clone()
+    terug.searchParams.delete('code')
+    terug.searchParams.set('fout', '1')
+    return NextResponse.redirect(terug)
+  }
+  if (request.cookies.get(MC_COOKIE)?.value === verwacht) return null
+
+  // Rechtstreeks naar de route onder /[locale]/, want deze rewrite gaat buiten
+  // de next-intl-middleware om en die zou anders de taal niet meer invullen.
+  const locale = request.nextUrl.pathname.startsWith('/en') ? 'en' : 'nl'
+  const scherm = request.nextUrl.clone()
+  scherm.pathname = `/${locale}/marketing-check-toegang`
+  const r = NextResponse.rewrite(scherm)
+  r.headers.set('X-Robots-Tag', 'noindex, nofollow')
+  r.headers.set('cache-control', 'no-store')
+  return r
+}
+
 export default async function middleware(request: NextRequest) {
+  const poort = await marketingCheckPoort(request)
+  if (poort) return poort
+
   // AI-bot crawl logging, fire-and-forget zodat middleware niet blokkeert.
   // Edge runtime kapt losse fetches af na response, maar logBotCrawl()
   // wacht intern al op de fetch, .catch() zorgt dat fouten stil blijven.
