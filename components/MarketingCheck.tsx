@@ -16,6 +16,10 @@ interface Bevinding {
   bewijs: string[]
   vervolgstap: string
   fase: 'a' | 'b'
+  /** De vraag van de ondernemer die deze bevinding beantwoordt. Vervangt de ernst-label. */
+  ondernemersvraag: string | null
+  /** Openbare bron om dit zelf na te kijken. Wordt een link, nooit een kale regel. */
+  bron_url: string | null
 }
 
 interface Uitkomst {
@@ -149,7 +153,7 @@ export default function MarketingCheck() {
             Laat een Stevin Agent je marketing checken
           </h1>
           <p className="mt-4 text-[17px] leading-relaxed text-[var(--color-muted)]">
-            Vul je bedrijfswebsite in. Binnen een paar seconden zie je wat wij zien.
+            Vul je bedrijfswebsite in en je ziet wat wij van buitenaf kunnen zien.
             Geen naam, geen e-mailadres.
           </p>
 
@@ -219,8 +223,10 @@ export default function MarketingCheck() {
 
           {b && (
             <div className="rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
+              {/* Zijn vraag boven onze bevinding. "Hier valt winst te halen" suggereerde
+                  een gevonden fout, ook waar we alleen een controlepunt hebben. */}
               <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-accent)]">
-                {b.ernst === 'issue' ? 'Dit valt op' : b.ernst === 'opportunity' ? 'Hier valt winst te halen' : 'Dit zagen we'}
+                {b.ondernemersvraag || (b.ernst === 'issue' ? 'Dit valt op' : 'Dit zagen we')}
               </p>
               <h2 className="mt-3 font-display text-[clamp(22px,5vw,28px)] font-extrabold leading-[1.15] tracking-[-0.01em] text-[var(--color-primary)]">
                 {b.titel}
@@ -236,13 +242,36 @@ export default function MarketingCheck() {
                   ))}
                 </ul>
               )}
+
+              {/* Koen, 14 sep: "klanten weten toch niet waar ze moeten zoeken." Dus
+                  geen verwijzing naar een register, maar een link die er meteen staat. */}
+              {b.bron_url && (
+                <a
+                  href={b.bron_url}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="mt-5 inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)]"
+                >
+                  Kijk het zelf na bij de bron
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              )}
+
+              {b.vervolgstap && (
+                <div className="mt-5 border-t border-[var(--color-border)] pt-5">
+                  <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-muted)]">
+                    Wat je zelf kunt doen
+                  </p>
+                  <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-primary)]">{b.vervolgstap}</p>
+                </div>
+              )}
             </div>
           )}
 
           {!b && !uitkomst.meetprobleem && uitkomst.geen_bevinding_tekst && (
             <div className="rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
               <h2 className="font-display text-[clamp(22px,5vw,28px)] font-extrabold leading-[1.15] text-[var(--color-primary)]">
-                Niets geks gevonden
+                Van buitenaf zien we te weinig voor een oordeel
               </h2>
               <p className="mt-3 text-[16px] leading-relaxed text-[var(--color-muted)]">
                 {uitkomst.geen_bevinding_tekst}
@@ -276,10 +305,11 @@ export default function MarketingCheck() {
             onClick={naarGesprek}
             className="mt-8 w-full rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)]"
           >
-            Plan een vrijblijvend gesprek
+            Plan een vrijblijvende vervolgscan
           </button>
-          <p className="mt-3 text-center text-[13px] text-[var(--color-muted)]">
-            Twintig minuten, we lopen samen door wat hier staat.
+          <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
+            Deze check kijkt van buitenaf; we hebben nog niet onder de motorkap kunnen kijken.
+            Voor de vervolgscan vragen we leesrechten op de accounts die ertoe doen.
           </p>
         </>
       )}
