@@ -47,6 +47,15 @@ interface Uitkomst {
   verdieping?: string
   /** Waar de getoonde bevinding vandaan komt. */
   bevinding_bron?: 'scan' | 'verdieping' | null
+  /** Tellers van de lopende verdieping, uit de Hub. */
+  voortgang?: {
+    stap: 'lezen' | 'advertenties' | 'afwegen' | 'toetsen'
+    paginas_gelezen: number
+    tekens_gelezen: number
+    tokens_geschat: number
+    tokens_in?: number
+    tokens_uit?: number
+  } | null
   meetprobleem: string | null
   bevinding: Bevinding | null
   geen_bevinding_tekst: string | null
@@ -105,6 +114,17 @@ function datumVandaag(): string {
   return new Date().toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })
 }
 
+function tijdRegel(sec: number): string {
+  if (sec < 60) return `${sec} s`
+  const m = Math.floor(sec / 60)
+  const r = sec % 60
+  return r === 0 ? `${m} min` : `${m} min ${r} s`
+}
+
+function kTokens(n: number): string {
+  return n >= 1000 ? `${(n / 1000).toFixed(1).replace('.', ',')}k` : String(n)
+}
+
 function kaalDomein(s: string): string {
   return s.trim().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '')
 }
@@ -120,6 +140,7 @@ export default function MarketingCheck() {
   const [aGereed, setAGereed] = useState(false)
   const [vStatus, setVStatus] = useState<string>('skipped')
   const [verdiepingLiepNog, setVerdiepingLiepNog] = useState(false)
+  const [tokens, setTokens] = useState(0)
 
   const params = useRef<{ p: string | null; s: string | null }>({ p: null, s: null })
   const pollTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -182,6 +203,8 @@ export default function MarketingCheck() {
       const huidig = data ?? laatste
       const status = huidig.verdieping ?? 'skipped'
       setVStatus(status)
+      const v = huidig.voortgang
+      if (v) setTokens(v.tokens_in != null ? v.tokens_in + (v.tokens_uit ?? 0) : v.tokens_geschat)
       const klaar = status !== 'running' && huidig.deep_scan !== 'queued' && huidig.deep_scan !== 'running'
       if (klaar) {
         toon(huidig, false)
@@ -202,6 +225,7 @@ export default function MarketingCheck() {
     setVerdiepingLiepNog(false)
     setSeconden(0)
     setKaart(0)
+    setTokens(0)
     startTijd.current = Date.now()
 
     try {
@@ -266,18 +290,11 @@ export default function MarketingCheck() {
   const vGereed = aGereed && vStatus !== 'running'
 
   /**
-   * Vijf stappen die op echte gebeurtenissen aftikken. De eerste twee zitten
-   * in het antwoord op de scan zelf, de volgende twee in de verdieping, de
-   * laatste in het tonen. Er tikt niets af op een timer.
+   * Een regel, gekoppeld aan wat er echt gebeurt: eerst de site ophalen en het
+   * register nakijken (het antwoord op de scan), dan de verdieping, dan kiezen.
+   * Niets loopt op een timer.
    */
-  const STAPPEN: Array<{ label: string; klaar: boolean }> = [
-    { label: 'Website ophalen', klaar: aGereed },
-    { label: 'Advertentieregister nakijken', klaar: aGereed },
-    { label: 'Je site verder lezen', klaar: vGereed },
-    { label: 'Advertenties opzoeken', klaar: vGereed },
-    { label: 'Bevinding kiezen', klaar: false },
-  ]
-  const actief = STAPPEN.findIndex((s) => !s.klaar)
+  const statusRegel = !aGereed ? 'Website ophalen' : !vGereed ? 'Agent aan het werk' : 'Bevinding kiezen'
 
   return (
     <div className="mx-auto w-full max-w-[680px] px-5 py-10 sm:py-16">
@@ -335,68 +352,40 @@ export default function MarketingCheck() {
       )}
 
       {fase === 'bezig' && (
-        <>
-          <div className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-[var(--color-muted)]">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-white px-3 py-1 font-semibold text-[var(--color-primary)]">
-              <Globe className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" />
-              {kaalDomein(domein)}
-            </span>
-            <span aria-live="polite">Bezig, {seconden} s</span>
-          </div>
-
-          <div className="rounded-2xl border border-[var(--color-border)] bg-white p-5 shadow-[0_1px_2px_rgba(10,22,40,0.04),0_8px_24px_-12px_rgba(10,22,40,0.12)] sm:p-7">
-            <div className="flex items-start gap-5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={HEARTBEAT} alt="" width={64} height={64} className="h-16 w-16 flex-shrink-0" aria-hidden="true" />
-              <div className="min-w-0 flex-1">
-                <h2 className="font-display text-[20px] font-bold leading-snug text-[var(--color-primary)]">
-                  We kijken naar je marketing
-                </h2>
-                <ol className="mt-3 space-y-2">
-                  {STAPPEN.map((s, i) => {
-                    const isActief = i === actief
-                    return (
-                      <li
-                        key={s.label}
-                        className={`flex items-center gap-3 text-[15px] ${s.klaar || isActief ? 'text-[var(--color-primary)]' : 'text-[var(--color-muted)] opacity-50'}`}
-                      >
-                        {s.klaar ? (
-                          <Check className="h-4 w-4 flex-shrink-0 text-[var(--color-accent)]" strokeWidth={2.5} aria-hidden="true" />
-                        ) : (
-                          <span
-                            className={`inline-block h-2 w-2 flex-shrink-0 rounded-full ${isActief ? 'animate-pulse bg-[var(--color-accent)]' : 'bg-[var(--color-border)]'}`}
-                            aria-hidden="true"
-                          />
-                        )}
-                        {s.label}
-                      </li>
-                    )
-                  })}
-                </ol>
-              </div>
-            </div>
-
-            <div key={kaart} className="mt-6 border-t border-[var(--color-border)] pt-5 animate-[fadein_600ms_ease-out]">
-              <p className="font-display text-[17px] font-bold leading-snug text-[var(--color-primary)]">
-                &ldquo;{STEVIN_KAARTEN[kaart].kop}&rdquo;
-              </p>
-              <p className="mt-1 text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">
-                {STEVIN_KAARTEN[kaart].bron}
-              </p>
-              <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-muted)]">{STEVIN_KAARTEN[kaart].brug}</p>
-            </div>
-            <style jsx>{`
-              @keyframes fadein {
-                from { opacity: 0; transform: translateY(4px); }
-                to { opacity: 1; transform: translateY(0); }
-              }
-            `}</style>
-          </div>
-
-          <p className="mt-4 text-center text-[13px] text-[var(--color-muted)]">
-            Dit duurt tot een minuut. We lezen een paar pagina&rsquo;s van je site en kijken in de openbare advertentieregisters.
+        <div className="flex flex-col items-center py-6 text-center">
+          {/* Rustig. Wat wij precies nalopen boeit de bezoeker niet; dat hij ziet
+              dat er echt gewerkt wordt wel. Koen, 14 sep: "veel leuker om de
+              heartbeat en wat quotes te tonen". */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={HEARTBEAT} alt="" width={96} height={96} className="h-24 w-24" aria-hidden="true" />
+          <p className="mt-5 text-[15px] text-[var(--color-muted)]" aria-live="polite">
+            <span className="font-semibold text-[var(--color-primary)]">{statusRegel}</span>
+            <span className="mx-2 opacity-50">&middot;</span>
+            {tijdRegel(seconden)}
+            {tokens > 0 && (
+              <>
+                <span className="mx-2 opacity-50">&middot;</span>
+                {kTokens(tokens)} tokens
+              </>
+            )}
           </p>
-        </>
+
+          <div key={kaart} className="mt-12 max-w-[520px] animate-[fadein_700ms_ease-out]">
+            <p className="font-display text-[clamp(20px,4vw,26px)] font-bold leading-snug text-[var(--color-primary)]">
+              &ldquo;{STEVIN_KAARTEN[kaart].kop}&rdquo;
+            </p>
+            <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">
+              {STEVIN_KAARTEN[kaart].bron}
+            </p>
+            <p className="mt-3 text-[15px] leading-relaxed text-[var(--color-muted)]">{STEVIN_KAARTEN[kaart].brug}</p>
+          </div>
+          <style jsx>{`
+            @keyframes fadein {
+              from { opacity: 0; transform: translateY(6px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+          `}</style>
+        </div>
       )}
 
       {fase === 'klaar' && uitkomst && (
