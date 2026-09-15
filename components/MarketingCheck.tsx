@@ -158,6 +158,24 @@ const AI_ZAGEN: Record<string, string> = {
   SITE_TRAAG_OP_TELEFOON: 'Jullie site is traag op de telefoon, waar de meeste aanvragen vandaan komen.',
   MAIL_DOMEIN_ONBESCHERMD: 'Mail uit jullie naam is niet beschermd.',
 }
+/**
+ * Geel is een waargenomen aanwijzing, rood een vastgesteld probleem. Geen
+ * bronnaam, geen tag, geen link voor de keuze (Koen, 15 sep 14:26); dat is
+ * voor de uitgebreide scan.
+ */
+const AI_MARK: Record<string, { geel: string; rood: string }> = {
+  CONSENT_MEASUREMENT_BEFORE_INTERACTION: { geel: 'Meting voor toestemming vastgesteld', rood: 'Meting wacht niet op toestemming' },
+  MEASUREMENT_NOTHING_AFTER_CONSENT: { geel: 'Toestemming gegeven, geen meting gezien', rood: 'Na toestemming wordt niets gemeten' },
+  ADVERTISING_FUNDER_MISMATCH: { geel: 'Betaling door een andere partij vastgesteld', rood: 'Geen koppeling tussen advertentie en aanvraag zichtbaar' },
+  ADVERTISING_ACTIVE_CONVERSION_UNKNOWN: { geel: 'Lopende advertenties vastgesteld', rood: 'Geen koppeling tussen advertentie en aanvraag zichtbaar' },
+  CONVERSION_LEADPATHS_UNVERIFIED: { geel: 'Meerdere contactroutes vastgesteld', rood: 'Geen koppeling tussen aanvraag en advertentie zichtbaar' },
+  CONVERSION_LEADPATHS_UNCOUNTED: { geel: 'Meerdere contactroutes vastgesteld', rood: 'Aanvragen worden niet geteld' },
+  PROFIEL_REVIEWS_STILGEVALLEN: { geel: 'Google-profiel gevonden', rood: 'Geen recente review' },
+  PROFIEL_WEINIG_REVIEWS: { geel: 'Google-profiel gevonden', rood: 'Te weinig reviews' },
+  SITE_TRAAG_OP_TELEFOON: { geel: 'Laadtijd op telefoon gemeten', rood: 'Site laadt te traag op de telefoon' },
+  MAIL_DOMEIN_ONBESCHERMD: { geel: 'Maildomein gecontroleerd', rood: 'Mail uit jullie naam is niet beschermd' },
+}
+
 /** De klap: wat AI wel en niet kan met deze meetlaag, in zijn eigen situatie. */
 function aiKlap(a: { gebruik: string; belang: string }): [string, string] {
   if (a.gebruik === 'ja') return ['Jullie werken al met AI.', 'Maar kunnen jullie website en marketingdata betrouwbaar aangeven wat een aanvraag is?']
@@ -774,7 +792,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
       {fase === 'invoer' && (
         <>
           <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--color-accent)]">
-            {variant === 'ai' ? 'De Stevin AI-meetproef' : 'Marketing Check'}
+            {variant === 'ai' ? 'AI-Ready Scan' : 'Marketing Check'}
           </p>
           <h1 className="mt-3 font-display text-[clamp(30px,7vw,44px)] font-extrabold leading-[1.08] tracking-[-0.02em] text-[var(--color-primary)]">
             {variant === 'ai' ? <>Eerst meten.<br />Dan met AI bouwen.</> : 'Laat een Stevin Agent je marketing checken'}
@@ -833,7 +851,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
 
       {fase === 'vragen' && (
         <div className="rounded-2xl border border-[var(--color-border)] bg-white p-5 shadow-[0_1px_2px_rgba(10,22,40,0.04),0_8px_24px_-12px_rgba(10,22,40,0.12)] sm:p-8">
-          <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">We zetten je AI-meetproef klaar</p>
+          <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">We zetten je scan klaar</p>
           <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">Tijdens de voorbereiding stellen we twee korte vragen.</p>
 
           <p className="mt-7 font-display text-[clamp(19px,4.5vw,23px)] font-bold leading-[1.25] text-[var(--color-primary)]">Werken jullie al met AI binnen de organisatie?</p>
@@ -954,40 +972,66 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
             const bewijs = b.bewijs && b.bewijs.length > 0 ? b.bewijs : null
             return (
               <article className="border-t border-[var(--color-primary)] pt-5">
+                {variant === 'ai' && uitkomst.antwoorden ? (
+                  <>
+                    <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">
+                      AI-Ready Scan <span className="font-normal normal-case tracking-normal">&middot; De proef op de som</span>
+                    </p>
+
+                    {/* Beide antwoorden, in zijn woorden, naast wat wij zien. */}
+                    <div className="mt-6 grid gap-6 sm:grid-cols-2 sm:gap-10">
+                      <div>
+                        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Jullie zeggen</p>
+                        <p className="mt-2 font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.25] text-[var(--color-primary)]">
+                          {BELANG_TEKST[uitkomst.antwoorden.belang]}<br />{GEBRUIK_TEKST[uitkomst.antwoorden.gebruik]}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Wij zien</p>
+                        <p className="mt-2 font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.25] text-[var(--color-primary)]">
+                          {AI_ZAGEN[b.code] ?? b.titel}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Geel: waargenomen aanwijzing. Rood: vastgesteld probleem. Geen bron, geen tag. */}
+                    <div className="mt-8 border-t border-[var(--color-border)] pt-4">
+                      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Wat de buitenmeting vaststelde</p>
+                      <p className="mt-3 text-[16px] leading-relaxed text-[var(--color-primary)]">
+                        <mark className="bg-[#ffe86b] px-0.5">{(AI_MARK[b.code] ?? { geel: 'Aanwijzing van buitenaf vastgesteld' }).geel}</mark>
+                      </p>
+                      <p className="mt-2 text-[17px] font-semibold leading-snug text-[#d23f57]">
+                        {(AI_MARK[b.code] ?? { rood: d.rood }).rood}
+                      </p>
+                    </div>
+
+                    {/* De klap. */}
+                    <div className="mt-10 border-t border-[var(--color-primary)] pt-6">
+                      <p className="font-display text-[clamp(22px,5.2vw,30px)] font-extrabold leading-[1.25] tracking-[-0.015em] text-[var(--color-primary)]">
+                        AI repareert een verkeerde meetlaag niet.
+                      </p>
+                      <p className="mt-3 max-w-[40ch] text-[17px] leading-relaxed text-[var(--color-primary)]">Het gebruikt de signalen die je doorgeeft.</p>
+                      <p className="mt-5 font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--color-muted)]">Eerst de meetlaag. Dan het model.</p>
+                    </div>
+
+                    {/* Stevin. */}
+                    <div className="mt-10 border-t-2 border-[var(--color-primary)] pt-6">
+                      <p className="font-display text-[19px] font-bold leading-snug text-[var(--color-primary)]">
+                        Stevin bouwt het marketingbrein van jouw bedrijf.
+                      </p>
+                      <p className="mt-3 max-w-[54ch] text-[16px] leading-relaxed text-[var(--color-primary)]">
+                        De eerste stap is zorgen dat het betrouwbare signalen krijgt.
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                <>
                 <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">
                   De proef op de som
                 </p>
 
-                {/* W-135: zijn woorden naast wat wij zagen, en dan de klap. */}
-                {variant === 'ai' && uitkomst.antwoorden && (
-                  <div className="mt-6 grid gap-6 sm:grid-cols-2 sm:gap-10">
-                    <div>
-                      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Jullie zeggen</p>
-                      <p className="mt-2 font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.25] text-[var(--color-primary)]">
-                        {uitkomst.antwoorden.gebruik === 'ja' ? GEBRUIK_TEKST.ja : BELANG_TEKST[uitkomst.antwoorden.belang] ?? GEBRUIK_TEKST[uitkomst.antwoorden.gebruik]}
-                      </p>
-                    </div>
-                    <div>
-                      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Wij zagen</p>
-                      <p className="mt-2 font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.25] text-[var(--color-primary)]">
-                        {AI_ZAGEN[b.code] ?? b.titel}
-                      </p>
-                    </div>
-                  </div>
-                )}
-                {variant === 'ai' && uitkomst.antwoorden && (() => {
-                  const [k1, k2] = aiKlap(uitkomst.antwoorden)
-                  return (
-                    <div className="mt-10 border-t border-[var(--color-primary)] pt-6">
-                      <p className="font-display text-[clamp(22px,5.2vw,30px)] font-extrabold leading-[1.25] tracking-[-0.015em] text-[var(--color-primary)]">{k1}</p>
-                      <p className="mt-3 max-w-[40ch] text-[17px] leading-relaxed text-[var(--color-primary)]">{k2}</p>
-                      <p className="mt-5 font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--color-muted)]">Eerst de meetlaag. Dan het model.</p>
-                    </div>
-                  )
-                })()}
-
                 {/* Geen neutraal feit als eerste zin. */}
-                <h2 className={`font-display text-[clamp(23px,5.4vw,32px)] font-extrabold leading-[1.25] tracking-[-0.015em] text-[var(--color-primary)] ${variant === 'ai' && uitkomst.antwoorden ? 'mt-10 text-[clamp(19px,4.5vw,24px)]' : 'mt-6'}`}>
+                <h2 className="mt-6 font-display text-[clamp(23px,5.4vw,32px)] font-extrabold leading-[1.25] tracking-[-0.015em] text-[var(--color-primary)]">
                   {dos
                     ? rel === 'bureau'
                       ? <>Je kunt morgen van bureau wisselen.<br />Maar kun je je marketingkennis meenemen?</>
@@ -1045,15 +1089,6 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                   </p>
                 </div>
 
-                {variant === 'ai' && uitkomst.serverside === 'niet_gezien' && (
-                  <div className="mt-6 border-t border-[var(--color-border)] pt-4">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Ook gezien</p>
-                    <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-primary)]">
-                      <mark className="bg-[#ffe86b] px-0.5">Geen server-side meting zichtbaar.</mark> Geen fout, wel een kans op meer controle over wat je doorgeeft; of het nodig is, hangt af van wat je meet.
-                    </p>
-                  </div>
-                )}
-
                 {/* De spanning: de vraag die hij zichzelf gaat stellen. */}
                 <p className="mt-10 max-w-[32ch] font-display text-[clamp(21px,4.8vw,28px)] font-bold leading-[1.3] tracking-[-0.01em] text-[var(--color-primary)]">
                   {dos
@@ -1071,25 +1106,21 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                     Stevin zorgt dat jij dit antwoord zelf kunt geven.
                   </p>
                   <p className="mt-3 max-w-[54ch] text-[16px] leading-relaxed text-[var(--color-primary)]">
-                    {variant === 'ai'
-                      ? 'Stevin bouwt het marketingbrein van jouw bedrijf. Wij brengen toestemming, meting, advertenties, aanvragen en CRM samen. Zodat AI niet op aannames werkt, maar op signalen die je kunt controleren.'
-                      : rel === 'groep' && dos
-                        ? 'Stevin maakt die meetketen controleerbaar voor de mensen die op de marketinguitkomst moeten sturen.'
-                        : 'Stevin bouwt het marketingbrein van jouw bedrijf. Wij verbinden advertenties, meting en aanvragen, zodat de kennis over wat werkt niet buiten je bedrijf blijft hangen.'}
+                    {rel === 'groep' && dos
+                      ? 'Stevin maakt die meetketen controleerbaar voor de mensen die op de marketinguitkomst moeten sturen.'
+                      : 'Stevin bouwt het marketingbrein van jouw bedrijf. Wij verbinden advertenties, meting en aanvragen, zodat de kennis over wat werkt niet buiten je bedrijf blijft hangen.'}
                   </p>
-                  {variant === 'ai' && (
-                    <p className="mt-4 max-w-[46ch] font-display text-[17px] font-bold leading-snug text-[var(--color-primary)]">
-                      Je kunt al AI gebruiken. Maar als je niet weet welke signalen je website doorgeeft, weet je ook niet waarop je marketingbrein leert.
-                    </p>
-                  )}
                 </div>
+
+                </>
+                )}
 
                 {/* Twee keuzes; kennismaking is de hoofdactie. */}
                 {!wens && (
                   <div className="mt-10">
                     <p className="text-[15px] leading-relaxed text-[var(--color-muted)]">
                       {variant === 'ai'
-                        ? 'Dit is een van de signalen uit de buitenmeting. Wil je de uitgebreide scan ontvangen, of zullen we vrijblijvend kennismaken?'
+                        ? 'Dit is een uitkomst uit de AI-Ready Scan. Wil je de uitgebreide scan ontvangen, of zullen we vrijblijvend kennismaken?'
                         : 'Dit is een van de signalen uit je scan. Wil je de uitgebreide scan eerst zelf ontvangen, of zullen we de uitkomst vrijblijvend samen doornemen?'}
                     </p>
                     <div className="mt-5 flex flex-col gap-3 sm:flex-row">
