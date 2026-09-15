@@ -72,6 +72,35 @@ interface Uitkomst {
   ook_gezien: string[]
   /** Per gebied een woord. Koen, 15 sep: scorecards in plaats van tekst. */
   scorecard?: ScorecardRegel[]
+  /** De registerfeiten uit de Hub, zie dossierVan in src/routes/marketingCheck.ts. */
+  dossier?: Dossier | null
+}
+
+/**
+ * Het dossier: de harde feiten uit het openbare advertentieregister. Koen,
+ * 15 sep 11:17: "Maak geen scanpagina. Maak een persoonlijk Stevin-dossier.
+ * Gebruik het echte bewijs uit de scan als visueel middelpunt." De Hub
+ * stuurt ze mee als `dossier`; zolang die uitrol er niet is, lezen we ze uit
+ * de tekst van de bevinding, die uit een vast sjabloon komt (markupSignal.ts).
+ */
+interface Dossier {
+  bedrijf: string
+  advertenties: number | null
+  betaler: string
+  register_url: string | null
+  gecontroleerd_op: string
+}
+function dossierUit(u: Uitkomst): Dossier | null {
+  if (u.dossier) return u.dossier
+  const f = (u.bevindingen ?? (u.bevinding ? [u.bevinding] : [])).find((x) => x.code === 'ADVERTISING_FUNDER_MISMATCH')
+  if (!f) return null
+  const m = f.tekst.match(/staan (?:(\d+) )?advertenties op naam van (.+?) Als betaler staat daar (.+?) bij\./)
+  if (!m) return null
+  return { bedrijf: m[2].trim(), advertenties: m[1] ? Number(m[1]) : null, betaler: m[3].trim(), register_url: null, gecontroleerd_op: new Date().toISOString().slice(0, 10) }
+}
+function datumLang(iso: string): string {
+  const d = new Date(`${iso}T00:00:00`)
+  return isNaN(d.getTime()) ? iso : d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })
 }
 
 type Fase = 'invoer' | 'bezig' | 'klaar'
@@ -265,41 +294,12 @@ function diagnoseVan(f: Bevinding): Diagnose {
   }
 }
 
-type Antwoord = 'ja' | 'nee' | 'weet_niet'
-
-/** De meetketen: de schakels van deze bevinding, met het kruis op de kapotte. */
-function Keten({ keten, kapot, woord }: { keten: string[]; kapot: number; woord: string }) {
-  return (
-    <div className="mt-5 rounded-xl bg-[var(--color-surface)] px-3 pb-6 pt-9 sm:px-5" aria-label={`Meetketen: tussen ${keten[kapot]} en ${keten[kapot + 1]} ${woord}`}>
-      <div className="flex items-center">
-        {keten.map((naam, i) => (
-          <div key={naam} className="contents">
-            <div className={`rounded-lg border px-2 py-2 text-center text-[11px] font-bold leading-tight sm:px-3 sm:text-[13px] ${i === kapot || i === kapot + 1 ? 'border-[var(--color-primary)] bg-white text-[var(--color-primary)]' : 'border-[var(--color-border)] bg-white text-[var(--color-muted)]'}`}>
-              {naam}
-            </div>
-            {i < keten.length - 1 && (
-              <div className="relative flex min-w-[18px] flex-1 items-center justify-center sm:min-w-[28px]">
-                {i === kapot ? (
-                  <>
-                    <svg className="h-[2px] w-full" aria-hidden="true">
-                      <line x1="0" y1="1" x2="100%" y2="1" stroke="#d23f57" strokeWidth="2" strokeDasharray="4 4" />
-                    </svg>
-                    <span className="absolute -top-[28px] flex h-6 w-6 items-center justify-center rounded-full bg-[#d23f57] text-[13px] font-black text-white" aria-hidden="true">&#x2715;</span>
-                    <span className="absolute top-[10px] whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.06em] text-[#d23f57] sm:text-[11px]">{woord}</span>
-                  </>
-                ) : (
-                  <svg className="h-[2px] w-full" aria-hidden="true">
-                    <line x1="0" y1="1" x2="100%" y2="1" stroke="var(--color-border)" strokeWidth="2" />
-                  </svg>
-                )}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
+/**
+ * Geen meetketen met pijlen en geen ja/nee/weet-ik-niet meer. Koen, 15 sep
+ * 11:17: "ronde SaaS-kaarten, rode en blauwe randjes, generieke pijlen, de
+ * quiz: eruit. De vorm moet zeggen: Stevin heeft mijn situatie onderzocht en
+ * laat precies zien waar ik controle verlies." Het bewijs draagt de pagina.
+ */
 
 /**
  * Hooguit twee zinnen op het scherm. Koen, 15 sep 10:13: "weer kei veel
@@ -325,8 +325,9 @@ export default function MarketingCheck() {
   const [aGereed, setAGereed] = useState(false)
   /** Token van de scan zodra fase A terug is; het contactblok tijdens het wachten hangt eraan. */
   const [scanToken, setScanToken] = useState<string | null>(null)
-  /** Zijn antwoord op de diagnosevraag; daarna pas naam en nummer. */
-  const [antwoord, setAntwoord] = useState<Antwoord | null>(null)
+  /** Hij drukte op "Laat Stevin mij bellen"; dan pas naam en nummer. */
+  const [wilBellen, setWilBellen] = useState(false)
+  const belRef = useRef<HTMLDivElement>(null)
   /** Fase B (de mini in een echte browser): queued, running, done, skipped. */
   const [bStatus, setBStatus] = useState<string>('skipped')
   const [vStatus, setVStatus] = useState<string>('skipped')
@@ -424,7 +425,7 @@ export default function MarketingCheck() {
     setFout(null)
     setUitkomst(null)
     setScanToken(null)
-    setAntwoord(null)
+    setWilBellen(false)
     setBStatus('skipped')
     setAGereed(false)
     setVStatus('skipped')
@@ -507,9 +508,7 @@ export default function MarketingCheck() {
         body: JSON.stringify({
           wens: 'gesprek',
           naam: cNaam, email: cEmail, telefoon: cTel,
-          bericht: antwoord && uitkomst?.bevinding
-            ? `Antwoord op "${diagnoseVan(uitkomst.bevinding).vraag}": ${antwoord === 'ja' ? 'ja' : antwoord === 'nee' ? 'nee' : 'weet ik niet'}`
-            : cBericht,
+          bericht: cBericht || (uitkomst?.bevinding ? `Wil gebeld worden over: ${diagnoseVan(uitkomst.bevinding).label.toLowerCase()}` : ''),
           session_token: params.current.s,
         }),
       })
@@ -583,7 +582,7 @@ export default function MarketingCheck() {
                     Dank, we bellen je
                   </p>
                   <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
-                    We laten je zien wat er moet worden aangepast. Wil je niet wachten, plan dan zelf een moment.
+                    We laten zien wat er ontbreekt en hoe we dit voor je herstellen. Wil je niet wachten, plan dan zelf een moment.
                   </p>
                   <button
                     onClick={naarGesprek}
@@ -596,12 +595,12 @@ export default function MarketingCheck() {
               ) : (
                 <form onSubmit={stuurContact} className="mt-8 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
                   <h2 className="font-display text-[clamp(20px,4.5vw,24px)] font-extrabold leading-[1.15] text-[var(--color-primary)]">
-                    {variant === 'wachten' ? 'De agent is nog bezig' : 'Plan je herstelgesprek'}
+                    {variant === 'wachten' ? 'De agent is nog bezig' : 'Laat Stevin je bellen'}
                   </h2>
                   <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
                     {variant === 'wachten'
                       ? 'Wil je straks meteen weten wat er moet worden aangepast? Laat alvast je nummer achter.'
-                      : 'We bellen je en laten zien wat er moet worden aangepast.'}
+                      : 'We laten zien wat er ontbreekt en hoe we dit voor je herstellen.'}
                   </p>
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     <input
@@ -625,7 +624,7 @@ export default function MarketingCheck() {
                     type="submit" disabled={cStatus === 'bezig'}
                     className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] disabled:opacity-60"
                   >
-                    {cStatus === 'bezig' ? 'Een moment' : 'Plan mijn herstelgesprek'}
+                    {cStatus === 'bezig' ? 'Een moment' : 'Laat Stevin mij bellen'}
                     {cStatus !== 'bezig' && <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />}
                   </button>
                   <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
@@ -754,7 +753,7 @@ export default function MarketingCheck() {
               <Globe className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" />
               {kaalDomein(domein)}
             </span>
-            <span>Van buitenaf bekeken op {datumVandaag()}</span>
+            <span>Stevin-dossier · van buitenaf bekeken op {datumVandaag()}</span>
           </div>
 
           {uitkomst.meetprobleem && (
@@ -774,65 +773,118 @@ export default function MarketingCheck() {
             </div>
           )}
 
-          {/* Een pijn per scan, in een oogopslag: oorzaak, meetketen met het kruis,
-              drie bewijspunten, gevolg. Dan wat Stevin herstelt, dan de vraag,
-              dan pas het nummer. Koen, 15 sep 10:46. */}
+          {/* Het dossier. Koen, 15 sep 11:17: probleem, gat, gevolg, oplossing,
+              in die volgorde, met het echte bewijs als middelpunt. Geen kaarten,
+              geen randjes, geen pijlen, geen quiz. Eerst de feiten, dan de pijn
+              in drie regels, dan een donkere strook met wat Stevin doet en een
+              knop. */}
           {b && (() => {
             const d = diagnoseVan(b)
+            const dos = dossierUit(uitkomst)
+            const feiten: [string, string][] = dos
+              ? [
+                  [dos.advertenties != null ? String(dos.advertenties) : 'Advertenties', dos.advertenties != null ? `advertenties op naam van ${dos.bedrijf}` : `op naam van ${dos.bedrijf}`],
+                  [dos.betaler.toUpperCase(), 'staat als betaler vermeld'],
+                  ['?', 'aanvragen niet zelfstandig herleidbaar'],
+                ]
+              : d.punten.map(([label, waarde]) => [waarde, label.toLowerCase()] as [string, string])
+            const kop = dos
+              ? (dos.advertenties != null ? `${dos.advertenties} advertenties op jouw naam.` : 'Advertenties op jouw naam.')
+              : d.kop
+            const kop2 = dos ? 'Jij kunt niet zien welke aanvraag eruit komt.' : null
             return (
-              <>
-                <div className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[0_1px_2px_rgba(10,22,40,0.04),0_8px_24px_-12px_rgba(10,22,40,0.12)]">
-                  <div className="border-l-4 border-[#d23f57] p-5 sm:p-7">
-                    <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#d23f57]">{d.label}</p>
-                    <h2 className="mt-2 font-display text-[clamp(22px,5vw,30px)] font-extrabold leading-[1.15] tracking-[-0.01em] text-[var(--color-primary)]">
-                      {d.kop}
-                    </h2>
-                    <p className="mt-3 text-[16px] font-semibold leading-snug text-[var(--color-primary)]">{d.gevolg}</p>
+              <div className="border-t-2 border-[var(--color-primary)] pt-6">
+                <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[var(--color-accent)]">
+                  {dos ? 'De proef op de som' : d.label}
+                </p>
+                <h2 className="mt-3 font-display text-[clamp(28px,7vw,44px)] font-extrabold leading-[1.05] tracking-[-0.02em] text-[var(--color-primary)]">
+                  {kop}
+                  {kop2 && <><br />{kop2}</>}
+                </h2>
 
-                    <Keten keten={d.keten} kapot={d.kapot} woord={d.woord} />
-
-                    {d.punten.length > 0 && (
-                      <div className="mt-4 grid gap-2 sm:grid-cols-3">
-                        {d.punten.map(([label, waarde], i) => (
-                          <div key={label} className={`rounded-lg border px-3 py-2.5 ${i === d.punten.length - 1 ? 'border-[#d23f57]/40 bg-[#d23f57]/5' : 'border-[var(--color-border)] bg-white'}`}>
-                            <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-[var(--color-muted)]">{label}</p>
-                            <p className={`mt-0.5 text-[14px] font-semibold leading-snug ${i === d.punten.length - 1 ? 'text-[#d23f57]' : 'text-[var(--color-primary)]'}`}>{waarde}</p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-
-                    <p className="mt-4 text-[13px] leading-relaxed text-[var(--color-muted)]">{kort(b.tekst, 1)}</p>
-                  </div>
-                </div>
-
-                <div className="mt-4 rounded-2xl border border-[var(--color-accent)] bg-white p-5 sm:p-7">
-                  <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-accent)]">Dit kan Stevin voor je herstellen</p>
-                  <p className="mt-2 text-[16px] leading-relaxed text-[var(--color-primary)]">{d.herstel}</p>
-                </div>
-
-                <div className="mt-4 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
-                  <p className="font-display text-[clamp(18px,4.5vw,22px)] font-extrabold leading-[1.2] text-[var(--color-primary)]">{d.vraag}</p>
-                  {!antwoord ? (
-                    <div className="mt-4 grid grid-cols-3 gap-2">
-                      {([['ja', 'Ja'], ['nee', 'Nee'], ['weet_niet', 'Weet ik niet']] as [Antwoord, string][]).map(([w, label]) => (
-                        <button
-                          key={w} type="button" onClick={() => setAntwoord(w)}
-                          className="rounded-xl border border-[var(--color-border)] bg-white px-3 py-3.5 text-[15px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-                        >
-                          {label}
-                        </button>
-                      ))}
+                {/* Drie feiten, groot. Geen kaarten: een lijn erboven en de cijfers zelf. */}
+                <div className="mt-10 grid gap-8 sm:grid-cols-3 sm:gap-6">
+                  {feiten.map(([groot, klein], i) => (
+                    <div key={i} className="border-t border-[var(--color-border)] pt-4">
+                      <p className={`font-display font-extrabold leading-none tracking-[-0.03em] text-[var(--color-primary)] ${/^[0-9?]+$/.test(groot) ? 'text-[clamp(40px,10vw,56px)]' : 'text-[clamp(22px,5vw,28px)] leading-tight'}`}>{groot}</p>
+                      <p className="mt-3 text-[15px] leading-snug text-[var(--color-muted)]">{klein}</p>
                     </div>
-                  ) : (
-                    <p className="mt-3 text-[15px] leading-relaxed text-[var(--color-primary)]">
-                      {antwoord === 'ja'
-                        ? 'Mooi, dan ben je verder dan de meeste. De vraag is dan of het klopt wat je ziet, en dat is precies wat een herstelgesprek nakijkt.'
-                        : 'Dan heb je zojuist je blinde vlek gevonden. Stevin kan die voor je herstellen.'}
+                  ))}
+                </div>
+
+                {/* De uitsnede uit het register. Echte velden, geen decoratie: adverteerder,
+                    betaler met markering, aantal, en de link naar de bron. Een
+                    schermafdruk van het register zelf maakt de mini nog niet; tot die
+                    tijd zijn dit de velden zoals ze daar staan. */}
+                {dos && (
+                  <figure className="mt-10 border border-[var(--color-primary)]/20 bg-white">
+                    <figcaption className="flex items-center justify-between gap-3 border-b border-[var(--color-border)] px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--color-muted)] sm:px-5">
+                      <span>Advertentieregister van Google</span>
+                      <span className="hidden sm:inline">Openbaar</span>
+                    </figcaption>
+                    <dl className="divide-y divide-[var(--color-border)] font-mono text-[13.5px] sm:text-[14px]">
+                      {([
+                        ['Adverteerder', dos.bedrijf, false],
+                        ['Betaler', dos.betaler, true],
+                        ['Advertenties', dos.advertenties != null ? String(dos.advertenties) : 'in het register', false],
+                        ['Regio', 'Nederland', false],
+                      ] as [string, string, boolean][]).map(([k, v, mark]) => (
+                        <div key={k} className={`grid grid-cols-[120px_1fr] gap-3 px-4 py-3 sm:grid-cols-[160px_1fr] sm:px-5 ${mark ? 'bg-[#fff3c4]' : ''}`}>
+                          <dt className="text-[var(--color-muted)]">{k}</dt>
+                          <dd className={`text-[var(--color-primary)] ${mark ? 'font-bold' : ''}`}>{v}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[var(--color-border)] px-4 py-2.5 text-[12.5px] text-[var(--color-muted)] sm:px-5">
+                      <span>Gecontroleerd op {datumLang(dos.gecontroleerd_op)}.</span>
+                      {dos.register_url && (
+                        <a href={dos.register_url} target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--color-primary)] underline underline-offset-2">
+                          Bekijk het zelf in het register
+                        </a>
+                      )}
+                    </div>
+                  </figure>
+                )}
+
+                {/* De pijn, in drie regels. Koen: "Je hebt de rekening. Je hebt de
+                    advertenties. Je hebt niet zelfstandig de uitkomst." */}
+                <div className="mt-12 border-l-2 border-[var(--color-primary)] pl-5">
+                  {dos ? (
+                    <p className="font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.3] text-[var(--color-primary)]">
+                      Je hebt de rekening.<br />Je hebt de advertenties.<br />Je hebt niet zelfstandig de uitkomst.
                     </p>
+                  ) : (
+                    <p className="font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.3] text-[var(--color-primary)]">{d.gevolg}</p>
+                  )}
+                  {!dos && <p className="mt-3 text-[14px] leading-relaxed text-[var(--color-muted)]">{kort(b.tekst, 1)}</p>}
+                </div>
+
+                {/* Stevin als oplossing: een donkere strook, een zin, een knop. */}
+                <div className="mt-12 bg-[var(--color-primary)] px-6 py-8 text-white sm:px-9 sm:py-10">
+                  <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[var(--color-accent-light)]">
+                    {dos ? 'Stevin brengt de uitkomst terug naar jou' : 'Wat Stevin herstelt'}
+                  </p>
+                  <p className="mt-4 font-display text-[clamp(19px,4.4vw,24px)] font-bold leading-[1.3]">
+                    {dos
+                      ? 'Wij zorgen dat je zelf kunt zien welke advertentie een aanvraag oplevert. Op jouw accounts. Met jouw meetgegevens. Zonder afhankelijk te zijn van een bureau.'
+                      : d.herstel}
+                  </p>
+                  {!wilBellen && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => { setWilBellen(true); setTimeout(() => belRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50) }}
+                        className="mt-7 inline-flex w-full items-center justify-center gap-2 bg-[var(--color-accent)] px-5 py-4 text-[16px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] sm:w-auto"
+                      >
+                        {dos ? 'Laat Stevin mij bellen over mijn advertentieaccount' : 'Laat Stevin mij bellen'}
+                        <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+                      </button>
+                      <p className="mt-3 text-[13px] text-white/60">We laten zien wat er ontbreekt en hoe we dit kunnen herstellen.</p>
+                    </>
                   )}
                 </div>
-              </>
+                <div ref={belRef}>{wilBellen && contactBlok('klaar')}</div>
+              </div>
             )
           })()}
 
@@ -875,7 +927,7 @@ export default function MarketingCheck() {
                   staan, wordt gebeld; wie meteen wil, plant zelf. Zonder dit
                   blok kenden we alleen het domein en hielden dertig scans per
                   dag nul namen over. */}
-              {(antwoord || !b) && contactBlok('klaar')}
+              {!b && contactBlok('klaar')}
             </>
           )}
         </>
