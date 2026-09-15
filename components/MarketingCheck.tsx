@@ -244,6 +244,9 @@ function kTokens(n: number): string {
   return n >= 1000 ? `${(n / 1000).toFixed(1).replace('.', ',')}k` : String(n)
 }
 
+/** Onze eigen domeinen, met of zonder www. */
+const EIGEN_SITE = /^(www\.)?stevin\.(ai|io|nl)$/
+
 function kaalDomein(s: string): string {
   return s.trim().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '')
 }
@@ -410,6 +413,8 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
   const [fase, setFase] = useState<Fase>('invoer')
   const [uitkomst, setUitkomst] = useState<Uitkomst | null>(null)
   const [fout, setFout] = useState<string | null>(null)
+  /** Koen, 15 sep 14:57: wie stevin.ai invoert krijgt een knipoog, geen scan. */
+  const [eigenSite, setEigenSite] = useState(false)
   const [kaart, setKaart] = useState(0)
   const [seconden, setSeconden] = useState(0)
   /** Wat er echt klaar is aan de serverkant. De stappenlijst leest hieruit. */
@@ -520,8 +525,15 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
   async function start(e: React.FormEvent) {
     e.preventDefault()
     if (fase === 'bezig' || !domein.trim()) return
-    setFase('bezig')
+    // Onze eigen site (stevin.ai, stevin.io, stevin.nl): een knipoog, geen scan.
+    // Geldt voor elke scan die dit component gebruikt; de Hub weigert hem ook.
+    setEigenSite(false)
     setFout(null)
+    if (EIGEN_SITE.test(kaalDomein(domein))) {
+      setEigenSite(true)
+      return
+    }
+    setFase('bezig')
     setUitkomst(null)
     setScanToken(null)
     setWens(null)
@@ -836,6 +848,20 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
               Check mijn marketing
             </button>
           </form>
+
+          {eigenSite && (
+            <div className="mt-6 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
+              <p className="font-display text-[clamp(20px,4.5vw,24px)] font-extrabold leading-[1.2] text-[var(--color-primary)]">
+                Deze website is van Stevin.
+              </p>
+              <p className="mt-3 text-[16px] leading-relaxed text-[var(--color-primary)]">
+                De proef op de som doen we liever bij iemand anders.
+              </p>
+              <p className="mt-2 text-[16px] font-semibold leading-relaxed">
+                <mark className="bg-[var(--color-accent)] px-1 text-white">We bewaren onze tokens graag voor jouw marketing.</mark>
+              </p>
+            </div>
+          )}
 
           {fout && (
             <div className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] px-4 py-3">
