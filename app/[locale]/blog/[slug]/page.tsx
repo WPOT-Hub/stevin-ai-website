@@ -9826,7 +9826,7 @@ function ArticleTransparencyBody() {
 
       <p>
         Staat daar een andere naam dan die van jou, en wil je het niet alleen uitzoeken? Laat je website achter bij de{' '}
-        <a href="/marketing-check" style={extLink}>
+        <a href="/marketing-scan" style={extLink}>
           marketing check
         </a>
         . Dan kijken we mee en zeggen we wat we zien.
@@ -10106,7 +10106,7 @@ function ArticleTegenwerpingenBody() {
 
       <p>
         Staat daar een andere naam dan die van jou, en wil je dit gesprek niet alleen voeren? Laat je website achter bij de{' '}
-        <a href="/marketing-check" style={extLink}>
+        <a href="/marketing-scan" style={extLink}>
           marketing check
         </a>
         . Dan kijken we mee en zeggen we wat we zien.
@@ -10238,7 +10238,7 @@ function ArticleDomeinBody() {
 
       <p>
         Staat daar een andere naam dan die van jou, en wil je het niet alleen uitzoeken? Laat je website achter bij de{' '}
-        <a href="/marketing-check" style={extLink}>
+        <a href="/marketing-scan" style={extLink}>
           marketing check
         </a>
         . Dan kijken we mee en zeggen we wat we zien. Hoort je advertentiedata ook bij dit rijtje, dan begin je{' '}

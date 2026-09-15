@@ -5,7 +5,7 @@ import MarketingCheck from '@/components/MarketingCheck'
 type Props = { params: Promise<{ locale: string }> }
 
 export const metadata: Metadata = {
-  title: 'Marketing Check, Stevin.AI',
+  title: 'Marketing Scan, Stevin.AI',
   description: 'Vul je bedrijfswebsite in en zie binnen een paar seconden wat wij zien.',
   // Noindex: dit is de bestemming van QR-codes en placement-links, geen
   // pagina die we in zoekresultaten willen hebben.
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'nl_NL',
     siteName: 'Stevin.AI',
-    title: 'Marketing Check: laat een Stevin Agent je marketing checken',
+    title: 'Marketing Scan: laat een Stevin Agent je marketing scannen',
     description: 'Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat we van buitenaf kunnen zien. Geen naam, geen e-mailadres.',
-    url: 'https://stevin.ai/marketing-check',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Marketing Check: laat een Stevin Agent je marketing checken' }],
+    url: 'https://stevin.ai/marketing-scan',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Marketing Scan: laat een Stevin Agent je marketing scannen' }],
   },
-  twitter: { card: 'summary_large_image', title: 'Marketing Check: laat een Stevin Agent je marketing checken', description: 'Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat we van buitenaf kunnen zien. Geen naam, geen e-mailadres.', images: ['/opengraph-image'] },
+  twitter: { card: 'summary_large_image', title: 'Marketing Scan: laat een Stevin Agent je marketing scannen', description: 'Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat we van buitenaf kunnen zien. Geen naam, geen e-mailadres.', images: ['/opengraph-image'] },
 }
 
-export default async function MarketingCheckPage({ params }: Props) {
+export default async function MarketingScanPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   return (
