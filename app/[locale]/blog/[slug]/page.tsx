@@ -1529,6 +1529,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'obama-pleit-voor-duidelijke-ai-regels-democraten': (
+    <>
+      <p className="lead-para">
+        Ex-president Barack Obama heeft Democraten opgeroepen om kunstmatige intelligentie hoog op de politieke agenda te zetten. Hij benadrukt dat partijen een ‘zeer duidelijk plan’ moeten hebben om de risico’s van AI voor de economie en maatschappij aan te pakken. Volgens Obama is het essentieel om nu actie te ondernemen, voordat de technologie verder ontspoort zonder adequate kaders. Zijn oproep volgt op groeiende zorgen over banenverlies, discriminatie door algoritmes en onvoorspelbare systemen.
+      </p>
+      <p>
+        Obama wijst specifiek op de noodzaak om zowel de positieve als negatieve effecten van AI in kaart te brengen. Hij pleit voor strikte regelgeving die innovatie niet remt, maar wel misbruik voorkomt. Zijn standpunt sluit aan bij eerdere waarschuwingen van tech-experts en beleidsmakers over de snelle ontwikkeling van AI zonder toezicht. De ex-president suggereert dat een gebrek aan regels kan leiden tot ongelijkheid en onveilige situaties.
+      </p>
+      <p>
+        De oproep komt op een moment dat landen wereldwijd worstelen met hoe ze AI moeten reguleren. In Europa zijn al strengere regels vooropgesteld, terwijl de VS achterloopt in wetgeving. Obama’s pleidooi kan druk zetten op zowel Democraten als Republikeinen om snel met een gezamenlijk voorstel te komen.
+      </p>
+    </>
+  ),
   'chinese-ai-bedrijven-gebruiken-distillatie-tegen-anthropic': (
     <>
       <p className="lead-para">
@@ -7729,6 +7742,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'obama-pleit-voor-duidelijke-ai-regels-democraten':
+    "Voor bedrijven betekent dit dat ze zich moeten voorbereiden op mogelijke nieuwe regels rond AI-toepassingen. Het is verstandig om nu al interne richtlijnen vast te leggen voor ethisch gebruik van AI, zodat je niet achteraf moet bijsturen. Daarnaast kan proactieve deelname aan sectorbrede discussies helpen om invloed uit te oefenen op toekomstige wetgeving.",
   'chinese-ai-bedrijven-gebruiken-distillatie-tegen-anthropic':
     "Voor bedrijven die met AI-modellen werken, onderstreept dit incident het belang van robuuste beveiliging van trainingsdata en modellogica. Het laat zien dat concurrentievoordeel niet alleen ligt in innovatie, maar ook in het beschermen van wat al bestaat. Tegelijkertijd maakt het duidelijk dat grensoverschrijdende samenwerking rondom AI-ontwikkeling complex blijft door juridische en ethische verschillen tussen regio's.",
   'ai-agenten-haten-captchas-zoals-mensen':
