@@ -77,6 +77,11 @@ interface Uitkomst {
   scorecard?: ScorecardRegel[]
   /** De registerfeiten uit de Hub, zie dossierVan in src/routes/marketingCheck.ts. */
   dossier?: Dossier | null
+  /** W-135: marketing of ai, met de twee antwoorden zodra ze er zijn. */
+  variant?: 'marketing' | 'ai'
+  antwoorden?: { gebruik: string; belang: string } | null
+  /** Server-side meting: gezien, niet_gezien (fase B klaar, niets gezien), onbekend. */
+  serverside?: 'gezien' | 'niet_gezien' | 'onbekend'
 }
 
 /**
@@ -126,7 +131,39 @@ function Markeer({ tekst }: { tekst: string }) {
   return <>{delen}</>
 }
 
-type Fase = 'invoer' | 'bezig' | 'klaar'
+type Fase = 'invoer' | 'vragen' | 'bezig' | 'klaar'
+
+/**
+ * De AI-meetproef (W-135, Koen 15 sep 12:40): dezelfde motor, een ander
+ * verhaal. Twee vragen voordat de meting start; zijn antwoorden in zijn woorden
+ * naast wat wij zagen. Geen modelcall zolang een antwoord ontbreekt.
+ */
+type AiGebruik = 'nee' | 'test' | 'ja'
+type AiBelang = 'beperkt' | 'belangrijk' | 'zeer'
+const GEBRUIK_OPTIES: [AiGebruik, string][] = [['nee', 'Nee, nog niet'], ['test', 'We testen ermee'], ['ja', 'Ja, in meerdere processen']]
+const BELANG_OPTIES: [AiBelang, string][] = [['beperkt', 'Beperkt'], ['belangrijk', 'Belangrijk'], ['zeer', 'Zeer belangrijk']]
+const GEBRUIK_TEKST: Record<string, string> = { nee: 'Jullie werken nog niet met AI.', test: 'Jullie testen met AI.', ja: 'Jullie werken al met AI in meerdere processen.' }
+const BELANG_TEKST: Record<string, string> = { beperkt: 'AI wordt beperkt belangrijk.', belangrijk: 'AI wordt belangrijk.', zeer: 'AI wordt zeer belangrijk.' }
+
+/** Wat wij zagen, in een regel, voor naast zijn eigen woorden. */
+const AI_ZAGEN: Record<string, string> = {
+  CONSENT_MEASUREMENT_BEFORE_INTERACTION: 'De meetlaag op jullie website wacht niet op toestemming.',
+  MEASUREMENT_NOTHING_AFTER_CONSENT: 'De meetlaag op jullie website geeft na toestemming niets door.',
+  ADVERTISING_FUNDER_MISMATCH: 'Jullie advertenties worden door een andere partij betaald; welke aanvraag daaruit komt, is niet zichtbaar.',
+  ADVERTISING_ACTIVE_CONVERSION_UNKNOWN: 'Jullie adverteren, maar of een aanvraag daaruit geteld wordt, is niet te zien.',
+  CONVERSION_LEADPATHS_UNVERIFIED: 'Jullie site krijgt aanvragen, maar of ze als aanvraag geteld worden is niet te zien.',
+  CONVERSION_LEADPATHS_UNCOUNTED: 'Jullie site krijgt aanvragen, maar of ze geteld worden is niet te zien.',
+  PROFIEL_REVIEWS_STILGEVALLEN: 'Jullie Google-profiel staat stil; dat is wat een klant als eerste ziet.',
+  PROFIEL_WEINIG_REVIEWS: 'Jullie Google-profiel heeft bijna geen reviews.',
+  SITE_TRAAG_OP_TELEFOON: 'Jullie site is traag op de telefoon, waar de meeste aanvragen vandaan komen.',
+  MAIL_DOMEIN_ONBESCHERMD: 'Mail uit jullie naam is niet beschermd.',
+}
+/** De klap: wat AI wel en niet kan met deze meetlaag, in zijn eigen situatie. */
+function aiKlap(a: { gebruik: string; belang: string }): [string, string] {
+  if (a.gebruik === 'ja') return ['Jullie werken al met AI.', 'Maar kunnen jullie website en marketingdata betrouwbaar aangeven wat een aanvraag is?']
+  if (a.belang === 'beperkt') return ['Ook zonder AI geldt dit.', 'Wie niet weet welke signalen zijn site doorgeeft, stuurt op aannames.']
+  return ['AI maakt een verkeerd ingestelde meetlaag niet betrouwbaar.', 'Het kan alleen sneller gaan sturen op de signalen die je doorgeeft.']
+}
 
 /**
  * Wachttijd tijdens de verdieping: pollen met oplopende tussenpozen, in
@@ -350,7 +387,7 @@ function kort(tekst: string, maxZinnen = 2): string {
   return zinnen.slice(0, maxZinnen).join(' ')
 }
 
-export default function MarketingCheck() {
+export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'marketing' | 'ai' } = {}) {
   const [domein, setDomein] = useState('')
   const [fase, setFase] = useState<Fase>('invoer')
   const [uitkomst, setUitkomst] = useState<Uitkomst | null>(null)
@@ -361,6 +398,10 @@ export default function MarketingCheck() {
   const [aGereed, setAGereed] = useState(false)
   /** Token van de scan zodra fase A terug is; het contactblok tijdens het wachten hangt eraan. */
   const [scanToken, setScanToken] = useState<string | null>(null)
+  /** W-135: de twee antwoorden van de AI-meetproef, voor de meting start. */
+  const [aiGebruik, setAiGebruik] = useState<AiGebruik | null>(null)
+  const [aiBelang, setAiBelang] = useState<AiBelang | null>(null)
+  const [aiFout, setAiFout] = useState<string | null>(null)
   /**
    * Wat hij wil, en pas daarna zijn gegevens. Koen, 15 sep 11:37: "daarna niet
    * meteen hard verkopen". Twee even grote keuzes: de scan rustig nalezen, of
@@ -482,6 +523,7 @@ export default function MarketingCheck() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           domain: domein.trim(),
+          variant,
           placement_slug: params.current.p,
           session_token: params.current.s,
         }),
@@ -503,6 +545,14 @@ export default function MarketingCheck() {
         body: JSON.stringify({ event: 'finding_viewed', session_token: params.current.s }),
       }).catch(() => undefined)
 
+      if (variant === 'ai' && !data.antwoorden && !data.meetprobleem) {
+        // Eerst de twee vragen; de browsermeting en het model wachten daarop.
+        // Kregen we de site niet te zien, dan zeggen we dat meteen en stellen
+        // we geen vragen: de voorcontrole is precies daarvoor.
+        setUitkomst(data)
+        setFase('vragen')
+        return
+      }
       if (data.verdieping === 'running' || data.deep_scan === 'queued') {
         pollTotKlaar(data.token, data)
       } else {
@@ -511,6 +561,37 @@ export default function MarketingCheck() {
     } catch {
       setFout('We konden de scan niet starten. Controleer je verbinding en probeer het nog eens.')
       setFase('invoer')
+    }
+  }
+
+  /** W-135: beide antwoorden binnen, dan pas de echte meting. */
+  async function stuurAntwoorden(gebruik: AiGebruik, belang: AiBelang) {
+    if (!scanToken) return
+    setAiFout(null)
+    startTijd.current = Date.now()
+    setFase('bezig')
+    try {
+      const res = await fetch(`${hub.current}/result/${scanToken}/antwoorden`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ai_gebruik: gebruik, ai_belang: belang, session_token: params.current.s }),
+      })
+      const data = (await res.json()) as Uitkomst & { ok: boolean; error?: string }
+      if (!res.ok || !data?.ok) {
+        setAiFout(data?.error || 'Dat lukte niet. Probeer het nog eens.')
+        setFase('vragen')
+        return
+      }
+      setBStatus(data.deep_scan ?? 'skipped')
+      setVStatus(data.verdieping ?? 'skipped')
+      if (data.verdieping === 'running' || data.deep_scan === 'queued') {
+        pollTotKlaar(data.token, data)
+      } else {
+        toon(data, false)
+      }
+    } catch {
+      setAiFout('Dat lukte niet. Controleer je verbinding en probeer het nog eens.')
+      setFase('vragen')
     }
   }
 
@@ -692,13 +773,16 @@ export default function MarketingCheck() {
     <div className="mx-auto w-full max-w-[680px] px-5 py-10 sm:py-16">
       {fase === 'invoer' && (
         <>
-          <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--color-accent)]">Marketing Check</p>
+          <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--color-accent)]">
+            {variant === 'ai' ? 'De Stevin AI-meetproef' : 'Marketing Check'}
+          </p>
           <h1 className="mt-3 font-display text-[clamp(30px,7vw,44px)] font-extrabold leading-[1.08] tracking-[-0.02em] text-[var(--color-primary)]">
-            Laat een Stevin Agent je marketing checken
+            {variant === 'ai' ? <>Eerst meten.<br />Dan met AI bouwen.</> : 'Laat een Stevin Agent je marketing checken'}
           </h1>
           <p className="mt-4 text-[17px] leading-relaxed text-[var(--color-muted)]">
-            Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat
-            we van buitenaf kunnen zien. Geen naam, geen e-mailadres. Reken op een minuut.
+            {variant === 'ai'
+              ? 'Jullie willen met AI werken. Kan jullie meetlaag dat dragen? Vul je bedrijfswebsite in; wij meten van buitenaf welke signalen je site doorgeeft. Geen naam, geen e-mailadres.'
+              : 'Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat we van buitenaf kunnen zien. Geen naam, geen e-mailadres. Reken op een minuut.'}
           </p>
 
           <form onSubmit={start} className="mt-8">
@@ -745,6 +829,41 @@ export default function MarketingCheck() {
             </div>
           )}
         </>
+      )}
+
+      {fase === 'vragen' && (
+        <div className="rounded-2xl border border-[var(--color-border)] bg-white p-5 shadow-[0_1px_2px_rgba(10,22,40,0.04),0_8px_24px_-12px_rgba(10,22,40,0.12)] sm:p-8">
+          <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">We zetten je AI-meetproef klaar</p>
+          <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">Tijdens de voorbereiding stellen we twee korte vragen.</p>
+
+          <p className="mt-7 font-display text-[clamp(19px,4.5vw,23px)] font-bold leading-[1.25] text-[var(--color-primary)]">Werken jullie al met AI binnen de organisatie?</p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+            {GEBRUIK_OPTIES.map(([w, label]) => (
+              <button key={w} type="button" onClick={() => setAiGebruik(w)}
+                className={`rounded-xl border px-3 py-3.5 text-[15px] font-semibold transition-colors ${aiGebruik === w ? 'border-[var(--color-primary)] bg-[var(--color-primary)] text-white' : 'border-[var(--color-border)] bg-white text-[var(--color-primary)] hover:border-[var(--color-primary)]'}`}>
+                {label}
+              </button>
+            ))}
+          </div>
+
+          <p className="mt-7 font-display text-[clamp(19px,4.5vw,23px)] font-bold leading-[1.25] text-[var(--color-primary)]">Hoe belangrijk denk je dat AI wordt voor jullie werk?</p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+            {BELANG_OPTIES.map(([w, label]) => (
+              <button key={w} type="button" onClick={() => setAiBelang(w)}
+                className={`rounded-xl border px-3 py-3.5 text-[15px] font-semibold transition-colors ${aiBelang === w ? 'border-[var(--color-primary)] bg-[var(--color-primary)] text-white' : 'border-[var(--color-border)] bg-white text-[var(--color-primary)] hover:border-[var(--color-primary)]'}`}>
+                {label}
+              </button>
+            ))}
+          </div>
+
+          {aiFout && <p className="mt-4 text-[14px] text-[var(--color-pink)]">{aiFout}</p>}
+          <button type="button" disabled={!aiGebruik || !aiBelang}
+            onClick={() => { if (aiGebruik && aiBelang) void stuurAntwoorden(aiGebruik, aiBelang) }}
+            className="mt-7 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-primary)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-primary-light)] disabled:opacity-40">
+            Start de meting
+            <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+          </button>
+        </div>
       )}
 
       {fase === 'bezig' && (
@@ -839,8 +958,36 @@ export default function MarketingCheck() {
                   De proef op de som
                 </p>
 
+                {/* W-135: zijn woorden naast wat wij zagen, en dan de klap. */}
+                {variant === 'ai' && uitkomst.antwoorden && (
+                  <div className="mt-6 grid gap-6 sm:grid-cols-2 sm:gap-10">
+                    <div>
+                      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Jullie zeggen</p>
+                      <p className="mt-2 font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.25] text-[var(--color-primary)]">
+                        {uitkomst.antwoorden.gebruik === 'ja' ? GEBRUIK_TEKST.ja : BELANG_TEKST[uitkomst.antwoorden.belang] ?? GEBRUIK_TEKST[uitkomst.antwoorden.gebruik]}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Wij zagen</p>
+                      <p className="mt-2 font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.25] text-[var(--color-primary)]">
+                        {AI_ZAGEN[b.code] ?? b.titel}
+                      </p>
+                    </div>
+                  </div>
+                )}
+                {variant === 'ai' && uitkomst.antwoorden && (() => {
+                  const [k1, k2] = aiKlap(uitkomst.antwoorden)
+                  return (
+                    <div className="mt-10 border-t border-[var(--color-primary)] pt-6">
+                      <p className="font-display text-[clamp(22px,5.2vw,30px)] font-extrabold leading-[1.25] tracking-[-0.015em] text-[var(--color-primary)]">{k1}</p>
+                      <p className="mt-3 max-w-[40ch] text-[17px] leading-relaxed text-[var(--color-primary)]">{k2}</p>
+                      <p className="mt-5 font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--color-muted)]">Eerst de meetlaag. Dan het model.</p>
+                    </div>
+                  )
+                })()}
+
                 {/* Geen neutraal feit als eerste zin. */}
-                <h2 className="mt-6 font-display text-[clamp(23px,5.4vw,32px)] font-extrabold leading-[1.25] tracking-[-0.015em] text-[var(--color-primary)]">
+                <h2 className={`font-display text-[clamp(23px,5.4vw,32px)] font-extrabold leading-[1.25] tracking-[-0.015em] text-[var(--color-primary)] ${variant === 'ai' && uitkomst.antwoorden ? 'mt-10 text-[clamp(19px,4.5vw,24px)]' : 'mt-6'}`}>
                   {dos
                     ? rel === 'bureau'
                       ? <>Je kunt morgen van bureau wisselen.<br />Maar kun je je marketingkennis meenemen?</>
@@ -898,6 +1045,15 @@ export default function MarketingCheck() {
                   </p>
                 </div>
 
+                {variant === 'ai' && uitkomst.serverside === 'niet_gezien' && (
+                  <div className="mt-6 border-t border-[var(--color-border)] pt-4">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Ook gezien</p>
+                    <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-primary)]">
+                      <mark className="bg-[#ffe86b] px-0.5">Geen server-side meting zichtbaar.</mark> Geen fout, wel een kans op meer controle over wat je doorgeeft; of het nodig is, hangt af van wat je meet.
+                    </p>
+                  </div>
+                )}
+
                 {/* De spanning: de vraag die hij zichzelf gaat stellen. */}
                 <p className="mt-10 max-w-[32ch] font-display text-[clamp(21px,4.8vw,28px)] font-bold leading-[1.3] tracking-[-0.01em] text-[var(--color-primary)]">
                   {dos
@@ -915,17 +1071,26 @@ export default function MarketingCheck() {
                     Stevin zorgt dat jij dit antwoord zelf kunt geven.
                   </p>
                   <p className="mt-3 max-w-[54ch] text-[16px] leading-relaxed text-[var(--color-primary)]">
-                    {rel === 'groep' && dos
-                      ? 'Stevin maakt die meetketen controleerbaar voor de mensen die op de marketinguitkomst moeten sturen.'
-                      : 'Stevin bouwt het marketingbrein van jouw bedrijf. Wij verbinden advertenties, meting en aanvragen, zodat de kennis over wat werkt niet buiten je bedrijf blijft hangen.'}
+                    {variant === 'ai'
+                      ? 'Stevin bouwt het marketingbrein van jouw bedrijf. Wij brengen toestemming, meting, advertenties, aanvragen en CRM samen. Zodat AI niet op aannames werkt, maar op signalen die je kunt controleren.'
+                      : rel === 'groep' && dos
+                        ? 'Stevin maakt die meetketen controleerbaar voor de mensen die op de marketinguitkomst moeten sturen.'
+                        : 'Stevin bouwt het marketingbrein van jouw bedrijf. Wij verbinden advertenties, meting en aanvragen, zodat de kennis over wat werkt niet buiten je bedrijf blijft hangen.'}
                   </p>
+                  {variant === 'ai' && (
+                    <p className="mt-4 max-w-[46ch] font-display text-[17px] font-bold leading-snug text-[var(--color-primary)]">
+                      Je kunt al AI gebruiken. Maar als je niet weet welke signalen je website doorgeeft, weet je ook niet waarop je marketingbrein leert.
+                    </p>
+                  )}
                 </div>
 
                 {/* Twee keuzes; kennismaking is de hoofdactie. */}
                 {!wens && (
                   <div className="mt-10">
                     <p className="text-[15px] leading-relaxed text-[var(--color-muted)]">
-                      Dit is een van de signalen uit je scan. Wil je de uitgebreide scan eerst zelf ontvangen, of zullen we de uitkomst vrijblijvend samen doornemen?
+                      {variant === 'ai'
+                        ? 'Dit is een van de signalen uit de buitenmeting. Wil je de uitgebreide scan ontvangen, of zullen we vrijblijvend kennismaken?'
+                        : 'Dit is een van de signalen uit je scan. Wil je de uitgebreide scan eerst zelf ontvangen, of zullen we de uitkomst vrijblijvend samen doornemen?'}
                     </p>
                     <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                       <button

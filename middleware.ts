@@ -89,7 +89,7 @@ async function logBotCrawl(bot: string, path: string): Promise<void> {
  * en stuurt door naar het schone pad; zonder geldige cookie wordt de pagina
  * herschreven naar het codescherm, met de URL onveranderd.
  */
-const MC_PAD = /^\/(?:nl|en)?\/?marketing-check\/?$/
+const MC_PAD = /^\/(?:nl|en)?\/?(?:marketing-check|ai-meetproef)\/?$/
 const MC_COOKIE = 'mc_toegang'
 
 async function sha256Hex(s: string): Promise<string> {
