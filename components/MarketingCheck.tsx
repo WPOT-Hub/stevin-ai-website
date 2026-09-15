@@ -144,6 +144,10 @@ export default function MarketingCheck() {
   const [seconden, setSeconden] = useState(0)
   /** Wat er echt klaar is aan de serverkant. De stappenlijst leest hieruit. */
   const [aGereed, setAGereed] = useState(false)
+  /** Token van de scan zodra fase A terug is; het contactblok tijdens het wachten hangt eraan. */
+  const [scanToken, setScanToken] = useState<string | null>(null)
+  /** Fase B (de mini in een echte browser): queued, running, done, skipped. */
+  const [bStatus, setBStatus] = useState<string>('skipped')
   const [vStatus, setVStatus] = useState<string>('skipped')
   const [verdiepingLiepNog, setVerdiepingLiepNog] = useState(false)
   const [tokens, setTokens] = useState(0)
@@ -217,6 +221,7 @@ export default function MarketingCheck() {
       const huidig = data ?? laatste
       const status = huidig.verdieping ?? 'skipped'
       setVStatus(status)
+      setBStatus(huidig.deep_scan ?? 'skipped')
       const v = huidig.voortgang
       if (v) {
         setVoortgang(v)
@@ -237,6 +242,8 @@ export default function MarketingCheck() {
     setFase('bezig')
     setFout(null)
     setUitkomst(null)
+    setScanToken(null)
+    setBStatus('skipped')
     setAGereed(false)
     setVStatus('skipped')
     setVerdiepingLiepNog(false)
@@ -263,6 +270,8 @@ export default function MarketingCheck() {
         return
       }
       setAGereed(true)
+      setScanToken(data.token)
+      setBStatus(data.deep_scan ?? 'skipped')
       setVStatus(data.verdieping ?? 'skipped')
 
       fetch(`${hub.current}/result/${data.token}/event`, {
@@ -305,11 +314,12 @@ export default function MarketingCheck() {
 
   async function stuurContact(e: React.FormEvent) {
     e.preventDefault()
-    if (!uitkomst?.token || cStatus === 'bezig') return
+    const token = uitkomst?.token ?? scanToken
+    if (!token || cStatus === 'bezig') return
     setCStatus('bezig')
     setCFout(null)
     try {
-      const res = await fetch(`${hub.current}/result/${uitkomst.token}/contact`, {
+      const res = await fetch(`${hub.current}/result/${token}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -352,8 +362,14 @@ export default function MarketingCheck() {
   }
   const stap = voortgang?.stap
   const paginas = voortgang?.paginas_gelezen ?? 0
+  // Koen, 15 sep: "mag je best aangeven dat we iets dieper graven". De mini
+  // opent de site in een echte browser en klikt de cookiebanner weg; dat is
+  // precies wat een tagscanner niet doet, dus dat mag de bezoeker lezen.
+  const bInBrowser = bStatus === 'queued' || bStatus === 'running'
   const statusRegel = !aGereed
     ? 'Website ophalen'
+    : !stap && bInBrowser
+      ? 'Agent opent je site in een echte browser'
     : vGereed
       ? 'Bevinding kiezen'
       : stap === 'lezen'
@@ -368,6 +384,79 @@ export default function MarketingCheck() {
                 ? 'Agent toetst het bewijs'
                 : 'Agent aan het werk'
   const bronnenKlaar = (voortgang?.bronnen_klaar ?? []).map((b) => BRONNAAM[b] ?? b)
+
+  /**
+   * Het contactblok, op twee plekken: tijdens het wachten (Koen, 15 sep: "in de
+   * tussentijd kunnen ze alvast hun gegevens achterlaten") en onder de uitkomst.
+   * Zelfde formulier, zelfde state; alleen de kop en de eerste zin verschillen.
+   */
+  function contactBlok(variant: 'wachten' | 'klaar') {
+    return cStatus === 'klaar' ? (
+                <div className="mt-8 rounded-2xl border border-[var(--color-accent)] bg-white p-5 sm:p-7">
+                  <p className="font-display text-[20px] font-extrabold text-[var(--color-primary)]">
+                    Dank, we hebben je gegevens
+                  </p>
+                  <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
+                    We nemen contact met je op om dit samen door te lopen. Wil je niet wachten, plan dan zelf een moment.
+                  </p>
+                  <button
+                    onClick={naarGesprek}
+                    className="mt-5 inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-3 text-[15px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)]"
+                  >
+                    Plan een kennismaking van twintig minuten
+                    <ArrowRight className="h-4 w-4" strokeWidth={2.25} aria-hidden="true" />
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={stuurContact} className="mt-8 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
+                  <h2 className="font-display text-[clamp(20px,4.5vw,24px)] font-extrabold leading-[1.15] text-[var(--color-primary)]">
+                    {variant === 'wachten' ? 'Wil je de uitkomst besproken hebben?' : 'Zullen we dit samen nakijken?'}
+                  </h2>
+                  <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
+                    {variant === 'wachten'
+                      ? 'De agent is nog bezig. Laat alvast je nummer achter, dan bellen we je met wat hij vond en lopen we het samen door.'
+                      : 'Deze check kijkt van buitenaf. Wat er in je advertentie- en meetaccounts gebeurt, zien we hier niet. Laat je nummer achter, dan bellen we je en lopen we het samen door.'}
+                  </p>
+                  <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                    <input
+                      value={cNaam} onChange={(e) => setCNaam(e.target.value)}
+                      placeholder="Je naam" autoComplete="name" required
+                      className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
+                    />
+                    <input
+                      value={cTel} onChange={(e) => setCTel(e.target.value)}
+                      placeholder="Telefoonnummer" type="tel" autoComplete="tel"
+                      className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
+                    />
+                  </div>
+                  <input
+                    value={cEmail} onChange={(e) => setCEmail(e.target.value)}
+                    placeholder="Mailadres" type="email" autoComplete="email" required
+                    className="mt-3 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
+                  />
+                  <textarea
+                    value={cBericht} onChange={(e) => setCBericht(e.target.value)}
+                    placeholder="Iets wat we moeten weten? (niet verplicht)" rows={2}
+                    className="mt-3 w-full resize-none rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
+                  />
+                  {cFout && <p className="mt-3 text-[14px] text-[var(--color-pink)]">{cFout}</p>}
+                  <button
+                    type="submit" disabled={cStatus === 'bezig'}
+                    className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] disabled:opacity-60"
+                  >
+                    {cStatus === 'bezig' ? 'Een moment' : 'Bel me hierover'}
+                    {cStatus !== 'bezig' && <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />}
+                  </button>
+                  <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
+                    We gebruiken je gegevens alleen om over deze scan contact met je op te nemen.{' '}
+                    <button type="button" onClick={naarGesprek} className="font-semibold text-[var(--color-primary)] underline underline-offset-2">
+                      Liever zelf een moment plannen
+                    </button>
+                  </p>
+                </form>
+              )
+  }
+
 
   return (
     <div className="mx-auto w-full max-w-[680px] px-5 py-10 sm:py-16">
@@ -470,6 +559,13 @@ export default function MarketingCheck() {
         </div>
       )}
 
+      {/* Wie wacht kan alvast zijn nummer achterlaten: de scan is het excuus, het
+          nummer het doel. Pas zodra fase A klaar is, want het endpoint hangt aan
+          het token van de scan. */}
+      {fase === 'bezig' && scanToken && (
+        <div className="text-left">{contactBlok('wachten')}</div>
+      )}
+
       {fase === 'klaar' && uitkomst && (
         <>
           <div className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-[var(--color-muted)]">
@@ -489,7 +585,7 @@ export default function MarketingCheck() {
               {/* Geen boekingsknop onder een mislukte scan. Een andere site proberen
                   is de logische stap; wie toch wil praten vindt de link eronder. */}
               <button
-                onClick={() => { setUitkomst(null); setFase('invoer'); setDomein('') }}
+                onClick={() => { setUitkomst(null); setScanToken(null); setFase('invoer'); setDomein('') }}
                 className="mt-6 w-full rounded-xl bg-[var(--color-primary)] px-5 py-4 text-[16px] font-semibold text-white transition-colors hover:bg-[var(--color-primary-light)]"
               >
                 Probeer een andere site
@@ -592,69 +688,7 @@ export default function MarketingCheck() {
                   staan, wordt gebeld; wie meteen wil, plant zelf. Zonder dit
                   blok kenden we alleen het domein en hielden dertig scans per
                   dag nul namen over. */}
-              {cStatus === 'klaar' ? (
-                <div className="mt-8 rounded-2xl border border-[var(--color-accent)] bg-white p-5 sm:p-7">
-                  <p className="font-display text-[20px] font-extrabold text-[var(--color-primary)]">
-                    Dank, we hebben je gegevens
-                  </p>
-                  <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
-                    We nemen contact met je op om dit samen door te lopen. Wil je niet wachten, plan dan zelf een moment.
-                  </p>
-                  <button
-                    onClick={naarGesprek}
-                    className="mt-5 inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-3 text-[15px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)]"
-                  >
-                    Plan een kennismaking van twintig minuten
-                    <ArrowRight className="h-4 w-4" strokeWidth={2.25} aria-hidden="true" />
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={stuurContact} className="mt-8 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
-                  <h2 className="font-display text-[clamp(20px,4.5vw,24px)] font-extrabold leading-[1.15] text-[var(--color-primary)]">
-                    Zullen we dit samen nakijken?
-                  </h2>
-                  <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
-                    Deze check kijkt van buitenaf. Wat er in je advertentie- en meetaccounts gebeurt, zien we hier niet.
-                    Laat je nummer achter, dan bellen we je en lopen we het samen door.
-                  </p>
-                  <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                    <input
-                      value={cNaam} onChange={(e) => setCNaam(e.target.value)}
-                      placeholder="Je naam" autoComplete="name" required
-                      className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
-                    />
-                    <input
-                      value={cTel} onChange={(e) => setCTel(e.target.value)}
-                      placeholder="Telefoonnummer" type="tel" autoComplete="tel"
-                      className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
-                    />
-                  </div>
-                  <input
-                    value={cEmail} onChange={(e) => setCEmail(e.target.value)}
-                    placeholder="Mailadres" type="email" autoComplete="email" required
-                    className="mt-3 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
-                  />
-                  <textarea
-                    value={cBericht} onChange={(e) => setCBericht(e.target.value)}
-                    placeholder="Iets wat we moeten weten? (niet verplicht)" rows={2}
-                    className="mt-3 w-full resize-none rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
-                  />
-                  {cFout && <p className="mt-3 text-[14px] text-[var(--color-pink)]">{cFout}</p>}
-                  <button
-                    type="submit" disabled={cStatus === 'bezig'}
-                    className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] disabled:opacity-60"
-                  >
-                    {cStatus === 'bezig' ? 'Een moment' : 'Bel me hierover'}
-                    {cStatus !== 'bezig' && <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />}
-                  </button>
-                  <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
-                    We gebruiken je gegevens alleen om over deze scan contact met je op te nemen.{' '}
-                    <button type="button" onClick={naarGesprek} className="font-semibold text-[var(--color-primary)] underline underline-offset-2">
-                      Liever zelf een moment plannen
-                    </button>
-                  </p>
-                </form>
-              )}
+              {contactBlok('klaar')}
             </>
           )}
         </>
