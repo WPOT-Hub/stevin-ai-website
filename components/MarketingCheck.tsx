@@ -32,6 +32,9 @@ interface Bevinding {
   tekst: string
   /** De vraag van de ondernemer die deze bevinding beantwoordt. */
   ondernemersvraag: string | null
+  /** Bewijsregels uit de scan, letterlijk. Het echte bewijs is het visuele middelpunt. */
+  bewijs?: string[]
+  bron_url?: string | null
 }
 
 type Gebied = 'advertenties' | 'meting' | 'aanvragen' | 'reputatie' | 'site'
@@ -87,6 +90,8 @@ interface Dossier {
   bedrijf: string
   advertenties: number | null
   betaler: string
+  /** bureau alleen uit onze eigen classificatie, groep bij een vastgestelde groepsrelatie, anders onbekend. */
+  relatie?: 'bureau' | 'groep' | 'onbekend'
   register_url: string | null
   gecontroleerd_op: string
 }
@@ -96,11 +101,29 @@ function dossierUit(u: Uitkomst): Dossier | null {
   if (!f) return null
   const m = f.tekst.match(/staan (?:(\d+) )?advertenties op naam van (.+?) Als betaler staat daar (.+?) bij\./)
   if (!m) return null
-  return { bedrijf: m[2].trim(), advertenties: m[1] ? Number(m[1]) : null, betaler: m[3].trim(), register_url: null, gecontroleerd_op: new Date().toISOString().slice(0, 10) }
+  return { bedrijf: m[2].trim(), advertenties: m[1] ? Number(m[1]) : null, betaler: m[3].trim(), relatie: 'onbekend', register_url: null, gecontroleerd_op: new Date().toISOString().slice(0, 10) }
 }
 function datumLang(iso: string): string {
   const d = new Date(`${iso}T00:00:00`)
   return isNaN(d.getTime()) ? iso : d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })
+}
+
+/**
+ * Geel is de markeerstift: een waargenomen feit, een naam, een waarde. Rood is
+ * de correctie: een breuk of een ontbrekende koppeling. Koen, 15 sep 12:14.
+ */
+const FEITEN_REGEX = /(Google Tag Manager|Google Analytics 4|Google Analytics|Google Ads-meting|Google Ads|Meta-pixel|Meta Pixel|LinkedIn Insight|LinkedIn|Microsoft Advertising|Microsoft|Bing|TikTok|Pinterest|Hotjar|Clarity|Cookiebot|OneTrust|Usercentrics|\d+([.,]\d+)?\s?(advertenties|reviews|seconden|s\b|%)?|[A-Z][a-z]+ \d{4})/g
+function Markeer({ tekst }: { tekst: string }) {
+  const delen: React.ReactNode[] = []
+  let laatste = 0
+  for (const m of tekst.matchAll(FEITEN_REGEX)) {
+    const i = m.index ?? 0
+    if (i > laatste) delen.push(tekst.slice(laatste, i))
+    delen.push(<mark key={i} className="bg-[#ffe86b] px-0.5 text-[var(--color-primary)]">{m[0]}</mark>)
+    laatste = i + m[0].length
+  }
+  if (laatste < tekst.length) delen.push(tekst.slice(laatste))
+  return <>{delen}</>
 }
 
 type Fase = 'invoer' | 'bezig' | 'klaar'
@@ -189,6 +212,8 @@ interface Diagnose {
   punten: [string, string][]
   herstel: string
   vraag: string
+  /** De breuk, in rood: alleen een aantoonbaar probleem of een ontbrekende koppeling. */
+  rood: string
 }
 const DIAGNOSE: Record<string, Diagnose> = {
   CONSENT_MEASUREMENT_BEFORE_INTERACTION: {
@@ -199,6 +224,7 @@ const DIAGNOSE: Record<string, Diagnose> = {
     punten: [['Cookiebanner', 'Aanwezig'], ['Meting', 'Laadt voor de klik'], ['Gevolg', 'Aanvragen niet betrouwbaar te herleiden']],
     herstel: 'Wij brengen cookiebanner, toestemming, tags en conversiemeting weer op een lijn. Je ziet daarna welke marketing contact oplevert en waar je meting hapert.',
     vraag: 'Weet jij wat er op je site al meet voordat iemand op de banner klikt?',
+    rood: 'Laadt voor toestemming',
   },
   MEASUREMENT_NOTHING_AFTER_CONSENT: {
     label: 'Aandacht voor je meetketen',
@@ -208,6 +234,7 @@ const DIAGNOSE: Record<string, Diagnose> = {
     punten: [['Cookiebanner', 'Geaccepteerd'], ['Meting', 'Geen enkele'], ['Gevolg', 'Geen cijfers over je bezoekers']],
     herstel: 'Wij koppelen de meting aan de toestemming zodat ze weer aangaat, en tellen daarna wat er binnenkomt.',
     vraag: 'Kun jij zien hoeveel bezoekers je site vorige week had?',
+    rood: 'Geen meting na toestemming',
   },
   ADVERTISING_FUNDER_MISMATCH: {
     label: 'Aandacht voor je advertenties',
@@ -217,6 +244,7 @@ const DIAGNOSE: Record<string, Diagnose> = {
     punten: [['Advertenties', 'Op jouw naam'], ['Betaler', 'Een andere partij'], ['Gevolg', 'Opbrengst niet zelf te controleren']],
     herstel: 'Wij zetten een onafhankelijke meting tussen je advertenties, je website en je aanvragen, op jouw naam. Je ziet daarna welke advertentie een aanvraag opleverde, wie er ook aan de knoppen zit.',
     vraag: 'Kun jij vandaag zelf zien welke advertentie een echte aanvraag heeft opgeleverd?',
+    rood: 'Geen koppeling met een aanvraag zichtbaar',
   },
   ADVERTISING_ACTIVE_CONVERSION_UNKNOWN: {
     label: 'Aandacht voor je advertenties',
@@ -226,6 +254,7 @@ const DIAGNOSE: Record<string, Diagnose> = {
     punten: [['Advertenties', 'In het register van Google'], ['Contact', 'Formulier of telefoon'], ['Gevolg', 'Telt Google de aanvraag mee?']],
     herstel: 'Wij koppelen elke aanvraag, formulier en telefoontje, aan de advertentie die hem opleverde. Google krijgt daarna de goede informatie om op te sturen.',
     vraag: 'Kun jij vandaag zelf zien welke advertentie een echte aanvraag heeft opgeleverd?',
+    rood: 'Geen koppeling met een aanvraag zichtbaar',
   },
   CONVERSION_LEADPATHS_UNVERIFIED: {
     label: 'Aandacht voor je aanvragen',
@@ -235,6 +264,7 @@ const DIAGNOSE: Record<string, Diagnose> = {
     punten: [['Contactroutes', 'Formulier, telefoon, mail'], ['Advertentiemeting', 'Aanwezig'], ['Gevolg', 'Aanvragen niet herleid']],
     herstel: 'Wij tellen elke aanvraag, ook het telefoontje, en koppelen hem aan waar hij vandaan kwam. Je weet daarna per maand wat je site oplevert.',
     vraag: 'Weet jij hoeveel aanvragen je site vorige maand opleverde?',
+    rood: 'Geen koppeling tussen aanvraag en advertentie zichtbaar',
   },
   CONVERSION_LEADPATHS_UNCOUNTED: {
     label: 'Aandacht voor je aanvragen',
@@ -244,6 +274,7 @@ const DIAGNOSE: Record<string, Diagnose> = {
     punten: [['Contactroutes', 'Formulier, telefoon, mail'], ['Meting', 'Aanwezig'], ['Gevolg', 'Alleen bezoek geteld']],
     herstel: 'Wij tellen elke aanvraag, ook het telefoontje, en koppelen hem aan waar hij vandaan kwam. Je weet daarna per maand wat je site oplevert.',
     vraag: 'Weet jij hoeveel aanvragen je site vorige maand opleverde?',
+    rood: 'Aanvragen worden niet geteld',
   },
   PROFIEL_REVIEWS_STILGEVALLEN: {
     label: 'Aandacht voor je reputatie',
@@ -253,6 +284,7 @@ const DIAGNOSE: Record<string, Diagnose> = {
     punten: [['Google-profiel', 'Gevonden'], ['Laatste review', 'Lang geleden'], ['Gevolg', 'Klant kiest een ander']],
     herstel: 'Wij zetten een vaste routine op voor reviews en antwoorden, en meten of je profiel weer aanvragen oplevert.',
     vraag: 'Weet jij wanneer je laatste Google-review binnenkwam?',
+    rood: 'Geen recente review',
   },
   PROFIEL_WEINIG_REVIEWS: {
     label: 'Aandacht voor je reputatie',
@@ -262,6 +294,7 @@ const DIAGNOSE: Record<string, Diagnose> = {
     punten: [['Google-profiel', 'Gevonden'], ['Reviews', 'Te weinig'], ['Gevolg', 'Klant kiest een ander']],
     herstel: 'Wij zetten een vaste routine op voor reviews en antwoorden, en meten of je profiel weer aanvragen oplevert.',
     vraag: 'Weet jij wanneer je laatste Google-review binnenkwam?',
+    rood: 'Te weinig reviews',
   },
   SITE_TRAAG_OP_TELEFOON: {
     label: 'Aandacht voor je website',
@@ -271,6 +304,7 @@ const DIAGNOSE: Record<string, Diagnose> = {
     punten: [['Snelheid op telefoon', 'Onder de maat'], ['Laden', 'Meer dan vier seconden'], ['Gevolg', 'Bezoekers haken af']],
     herstel: 'Wij laten meten wat je site traag maakt, zorgen dat het wordt opgelost en meten daarna of er meer aanvragen binnenkomen.',
     vraag: 'Heb jij je eigen site weleens op een telefoon buiten je wifi geopend?',
+    rood: 'Laadt te traag op de telefoon',
   },
   MAIL_DOMEIN_ONBESCHERMD: {
     label: 'Aandacht voor je mail',
@@ -280,6 +314,7 @@ const DIAGNOSE: Record<string, Diagnose> = {
     punten: [['Mailbeveiliging', 'Ontbreekt'], ['Formulier', 'Aanwezig'], ['Gevolg', 'Antwoorden komen niet aan']],
     herstel: 'Wij zetten de beveiliging van je maildomein goed en controleren daarna of je mail aankomt.',
     vraag: 'Komt jouw mail weleens in spam bij klanten?',
+    rood: 'Geen bescherming op je maildomein',
   },
 }
 function diagnoseVan(f: Bevinding): Diagnose {
@@ -291,6 +326,7 @@ function diagnoseVan(f: Bevinding): Diagnose {
     punten: [],
     herstel: 'Wij richten een onafhankelijke meetlaag in tussen je advertenties, je website en je aanvragen. Je ziet daarna welke marketing contact oplevert en waar je meting hapert.',
     vraag: 'Kun jij vandaag zelf narekenen wat je marketing oplevert?',
+    rood: 'Niet te controleren van buitenaf',
   }
 }
 
@@ -603,14 +639,14 @@ export default function MarketingCheck() {
               ) : (
                 <form onSubmit={stuurContact} className="mt-8 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
                   <h2 className="font-display text-[clamp(20px,4.5vw,24px)] font-extrabold leading-[1.15] text-[var(--color-primary)]">
-                    {variant === 'wachten' ? 'De agent is nog bezig' : wilMeting ? 'Waar mogen we de scan heen sturen?' : 'Waar kunnen we je bereiken?'}
+                    {variant === 'wachten' ? 'De agent is nog bezig' : wilMeting ? 'De uitgebreide scan' : 'Een kennismaking'}
                   </h2>
                   <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
                     {variant === 'wachten'
                       ? 'Wil je straks meteen weten wat er moet worden aangepast? Laat alvast je nummer achter.'
                       : wilMeting
                         ? 'Je krijgt de volledige uitkomst in je mail. Rustig nalezen, geen verplichting.'
-                        : 'We bellen je om de uitkomst samen door te nemen.'}
+                        : 'We bellen je om de uitkomst vrijblijvend samen door te nemen.'}
                   </p>
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     <input
@@ -618,11 +654,13 @@ export default function MarketingCheck() {
                       placeholder="Je naam" autoComplete="name" required
                       className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
                     />
+                    {!wilMeting && (
                     <input
                       value={cTel} onChange={(e) => setCTel(e.target.value)}
-                      placeholder={wilMeting ? 'Telefoonnummer (niet verplicht)' : 'Telefoonnummer'} type="tel" autoComplete="tel" required={!wilMeting}
+                      placeholder="Telefoonnummer" type="tel" autoComplete="tel" required
                       className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
                     />
+                    )}
                   </div>
                   <input
                     value={cEmail} onChange={(e) => setCEmail(e.target.value)}
@@ -634,7 +672,7 @@ export default function MarketingCheck() {
                     type="submit" disabled={cStatus === 'bezig'}
                     className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] disabled:opacity-60"
                   >
-                    {cStatus === 'bezig' ? 'Een moment' : wilMeting ? 'Stuur mij de scan' : 'Bel mij'}
+                    {cStatus === 'bezig' ? 'Een moment' : wilMeting ? 'Stuur mij de uitgebreide scan' : 'Plan een kennismaking'}
                     {cStatus !== 'bezig' && <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />}
                   </button>
                   <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
@@ -785,104 +823,124 @@ export default function MarketingCheck() {
             </div>
           )}
 
-          {/* De draai, niet het rapport. Koen, 15 sep 11:37: eerst denkt hij "dat een
-              bureau betaalt is normaal", en dan pas "wacht, wie kan dan aantonen wat
-              eruit komt". Dus: het feit ontkrachten, de vraag stellen, wat we wel en
-              niet zien, de pijn, Stevin, en dan zacht twee keuzes. Geen cijferblokken,
-              geen tabel, geen donker vlak. */}
+          {/* Het dossier (Koen, 15 sep 12:14): een onverwacht inzicht, het bewijs,
+              de spanning, Stevin, en dan de keuze. Geel markeert feiten, rood
+              markeert een breuk. De betaler is nooit automatisch een bureau: dat
+              zegt alleen onze eigen classificatie (dossier.relatie). */}
           {b && (() => {
             const d = diagnoseVan(b)
             const dos = dossierUit(uitkomst)
-            const betalerKort = dos ? dos.betaler.replace(/\s+(bv|b\.v\.|n\.v\.)$/i, '') : ''
+            const rel = dos?.relatie ?? 'onbekend'
+            const bedrijf = dos ? dos.bedrijf : ''
+            const bewijs = b.bewijs && b.bewijs.length > 0 ? b.bewijs : null
             return (
               <article className="border-t border-[var(--color-primary)] pt-5">
                 <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">
-                  {dos ? 'De proef op de som' : d.label}
+                  De proef op de som
                 </p>
 
-                {/* Eerst geruststellen, dan de vraag. */}
+                {/* Geen neutraal feit als eerste zin. */}
                 <h2 className="mt-6 font-display text-[clamp(23px,5.4vw,32px)] font-extrabold leading-[1.25] tracking-[-0.015em] text-[var(--color-primary)]">
-                  {dos ? <>{betalerKort} staat als betaler vermeld.<br />Dat is op zichzelf niet vreemd.</> : d.kop}
-                </h2>
-                <p className="mt-6 text-[16px] text-[var(--color-muted)]">
-                  {dos ? 'De vraag erachter is wel belangrijk:' : 'De vraag die daaronder ligt:'}
-                </p>
-                <p className="mt-3 max-w-[30ch] font-display text-[clamp(22px,5.2vw,30px)] font-bold leading-[1.3] tracking-[-0.01em] text-[var(--color-primary)]">
                   {dos
-                    ? <>Als je morgen van bureau wisselt, kun jij dan zelf aantonen welke van deze {dos.advertenties ?? ''} advertenties een aanvraag hebben opgeleverd?</>
+                    ? rel === 'bureau'
+                      ? <>Je kunt morgen van bureau wisselen.<br />Maar kun je je marketingkennis meenemen?</>
+                      : rel === 'groep'
+                        ? <>De advertenties staan op naam van jouw bedrijf.<br />De betaling loopt via een andere maatschappij binnen de groep.</>
+                        : <>Jouw advertenties. Betaald door een andere partij.<br />Zie jij zelf wat ze opleveren?</>
+                    : d.kop}
+                </h2>
+
+                {/* Het bewijs: echte bronfragmenten, geel op de feiten. */}
+                <div className="mt-10 border-t border-[var(--color-border)] pt-4">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Wat de bron laat zien</p>
+                  {dos ? (
+                    <div className="mt-4 space-y-2 text-[16px] leading-relaxed text-[var(--color-primary)]">
+                      <p>Bij <mark className="bg-[#ffe86b] px-0.5">{bedrijf}</mark> staan <mark className="bg-[#ffe86b] px-0.5">{dos.advertenties ?? 'meerdere'} advertenties</mark> op naam.</p>
+                      <p><mark className="bg-[#ffe86b] px-0.5 font-semibold">{dos.betaler}</mark> staat als betaler vermeld.</p>
+                      <p className="text-[var(--color-muted)]">
+                        {rel === 'bureau'
+                          ? 'Een extern bureau, volgens onze eigen registratie.'
+                          : rel === 'groep'
+                            ? 'Dat kan een normale groepsstructuur zijn.'
+                            : 'Van buitenaf kunnen we niet vaststellen welke relatie deze partij met jouw bedrijf heeft.'}
+                      </p>
+                    </div>
+                  ) : bewijs ? (
+                    <ul className="mt-4 space-y-1.5 text-[15.5px] leading-relaxed text-[var(--color-primary)]">
+                      {bewijs.slice(0, 4).map((regel) => (
+                        <li key={regel} className="border-l-2 border-[var(--color-border)] pl-3"><Markeer tekst={regel} /></li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="mt-4 text-[16px] leading-relaxed text-[var(--color-primary)]"><Markeer tekst={kort(b.tekst, 2)} /></p>
+                  )}
+                  <p className="mt-4 font-mono text-[11.5px] text-[var(--color-muted)]">
+                    {dos ? 'Advertentieregister van Google' : 'Eigen meting van buitenaf'}, {dos ? datumLang(dos.gecontroleerd_op) : datumVandaag()}
+                    {(dos?.register_url || b.bron_url) && (
+                      <>
+                        {' '}
+                        <a href={dos?.register_url || b.bron_url || '#'} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-[var(--color-primary)]">bron</a>
+                      </>
+                    )}
+                  </p>
+                </div>
+
+                {/* De breuk, in rood. Alleen wat er echt ontbreekt. */}
+                <div className="mt-8 border-t border-[var(--color-border)] pt-4">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Wat daar ontbreekt</p>
+                  <p className="mt-3 text-[17px] font-semibold leading-snug text-[#d23f57]">
+                    {dos ? 'Geen koppeling met een aanvraag zichtbaar' : d.rood}
+                  </p>
+                  <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
+                    {dos
+                      ? 'Dat vertelt ons wie betaalt. Niet welke advertenties aanvragen opleveren.'
+                      : 'Van buitenaf zien we niet hoe dit doorwerkt in je aanvragen. Als je dit zelf ook niet kunt controleren, stuur je op gevoel.'}
+                  </p>
+                </div>
+
+                {/* De spanning: de vraag die hij zichzelf gaat stellen. */}
+                <p className="mt-10 max-w-[32ch] font-display text-[clamp(21px,4.8vw,28px)] font-bold leading-[1.3] tracking-[-0.01em] text-[var(--color-primary)]">
+                  {dos
+                    ? rel === 'groep'
+                      ? 'Kun jij binnen je eigen organisatie zelf zien welke advertenties aanvragen opleveren?'
+                      : rel === 'bureau'
+                        ? 'Een bureau kan je advertenties beheren. Maar kun jij zelf aantonen wat ze opleveren?'
+                        : 'Als je morgen wilt weten welke advertentie een aanvraag heeft opgeleverd, waar kijk je dan?'
                     : d.vraag}
                 </p>
 
-                {/* Wat we wel zien, en wat we er niet bij zien. Twee kolommen tekst,
-                    geen kaarten. De betaler krijgt de enige markering op het scherm. */}
-                <div className="mt-11 grid gap-9 sm:grid-cols-2 sm:gap-12">
-                  <div className="border-t border-[var(--color-border)] pt-4">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Wat we openbaar kunnen zien</p>
-                    {dos ? (
-                      <div className="mt-4 space-y-2 text-[16px] leading-relaxed text-[var(--color-primary)]">
-                        <p><span className="font-display text-[28px] font-extrabold leading-none tracking-[-0.02em]">{dos.advertenties ?? ''}</span> advertenties op naam van {dos.bedrijf.replace(/\.$/, '')}.</p>
-                        <p><mark className="bg-[#ffe86b] px-1 font-semibold text-[var(--color-primary)]">{dos.betaler}</mark> staat als betaler vermeld.</p>
-                      </div>
-                    ) : (
-                      <p className="mt-4 text-[16px] leading-relaxed text-[var(--color-primary)]">{kort(b.tekst, 2)}</p>
-                    )}
-                    <p className="mt-4 font-mono text-[11.5px] text-[var(--color-muted)]">
-                      Advertentieregister van Google, {dos ? datumLang(dos.gecontroleerd_op) : datumVandaag()}
-                      {dos?.register_url && (
-                        <>
-                          {' '}
-                          <a href={dos.register_url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-[var(--color-primary)]">bekijk het zelf</a>
-                        </>
-                      )}
-                    </p>
-                  </div>
-                  <div className="border-t border-[var(--color-border)] pt-4">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Wat we daar niet bij zien</p>
-                    <p className="mt-4 text-[16px] leading-relaxed text-[var(--color-primary)]">
-                      {dos ? 'Welke advertentie een aanvraag oplevert.' : 'Of het werkt, en wat het je oplevert.'}
-                    </p>
-                  </div>
-                </div>
-
-                {/* De pijn. Drie regels, geen aanhalingstekens. */}
-                <p className="mt-12 max-w-[30ch] font-display text-[clamp(21px,4.8vw,28px)] font-bold leading-[1.3] tracking-[-0.01em] text-[var(--color-primary)]">
-                  {dos
-                    ? <>Je weet wie er adverteert.<br />Je weet wie er betaalt.<br />Maar de uitkomst ligt niet zichtbaar bij jou.</>
-                    : d.gevolg}
-                </p>
-
-                {/* Stevin, in dezelfde stroom. */}
-                <div className="mt-11 border-t border-[var(--color-primary)] pt-6">
-                  <p className="font-display text-[18px] font-bold leading-snug text-[var(--color-primary)]">
-                    Dat is precies wat Stevin voor je kan oplossen.
+                {/* Stevin, in donkerblauw. */}
+                <div className="mt-10 border-t-2 border-[var(--color-primary)] pt-6">
+                  <p className="font-display text-[19px] font-bold leading-snug text-[var(--color-primary)]">
+                    Stevin zorgt dat jij dit antwoord zelf kunt geven.
                   </p>
-                  <p className="mt-3 max-w-[54ch] text-[16px] leading-relaxed text-[var(--color-muted)]">
-                    {dos
-                      ? 'Wij brengen advertentie, meting en aanvraag terug naar jouw bedrijf. Op jouw accounts. Met jouw gegevens. Zodat je zelf kunt controleren wat er gebeurt.'
-                      : d.herstel}
+                  <p className="mt-3 max-w-[54ch] text-[16px] leading-relaxed text-[var(--color-primary)]">
+                    {rel === 'groep' && dos
+                      ? 'Stevin maakt die meetketen controleerbaar voor de mensen die op de marketinguitkomst moeten sturen.'
+                      : 'Stevin bouwt het marketingbrein van jouw bedrijf. Wij verbinden advertenties, meting en aanvragen, zodat de kennis over wat werkt niet buiten je bedrijf blijft hangen.'}
                   </p>
                 </div>
 
-                {/* En dan niet hard verkopen: twee even grote keuzes. */}
+                {/* Twee keuzes; kennismaking is de hoofdactie. */}
                 {!wens && (
                   <div className="mt-10">
                     <p className="text-[15px] leading-relaxed text-[var(--color-muted)]">
-                      Dit is een uitkomst uit je uitgebreide scan. Wil je hem eerst rustig nalezen, of zullen we hem samen kort doornemen?
+                      Dit is een van de signalen uit je scan. Wil je de uitgebreide scan eerst zelf ontvangen, of zullen we de uitkomst vrijblijvend samen doornemen?
                     </p>
                     <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-                      <button
-                        type="button"
-                        onClick={() => { setWens('meting'); setTimeout(() => belRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50) }}
-                        className="flex-1 border border-[var(--color-primary)] px-5 py-4 text-[15px] font-semibold text-[var(--color-primary)] transition-colors hover:bg-[var(--color-surface)]"
-                      >
-                        Stuur mij de uitgebreide scan
-                      </button>
                       <button
                         type="button"
                         onClick={() => { setWens('gesprek'); setTimeout(() => belRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50) }}
                         className="flex-1 bg-[var(--color-primary)] px-5 py-4 text-[15px] font-semibold text-white transition-colors hover:bg-[var(--color-primary-light)]"
                       >
                         Plan een kennismaking
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => { setWens('meting'); setTimeout(() => belRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50) }}
+                        className="flex-1 border border-[var(--color-border)] px-5 py-4 text-[15px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-primary)]"
+                      >
+                        Stuur mij de uitgebreide scan
                       </button>
                     </div>
                   </div>
