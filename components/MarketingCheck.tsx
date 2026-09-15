@@ -914,7 +914,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
               disabled={!domein.trim()}
               className="mt-3 w-full rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] disabled:opacity-50"
             >
-              Scan mijn marketing
+              {variant === 'ai' ? 'Scan mijn meetlaag' : 'Scan mijn marketing'}
             </button>
           </form>
 
