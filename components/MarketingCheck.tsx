@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, ExternalLink, Globe } from 'lucide-react'
+import { ArrowRight, Globe } from 'lucide-react'
 
 const HUB_LIVE = 'https://hub.stevin.ai/api/marketing-check'
 const CAL = 'https://cal.com/koen-hoogenboom/kennismaking'
@@ -24,19 +24,23 @@ function hubUrl(): string {
 
 interface Bevinding {
   code: string
+  /** advertenties, meting, aanvragen, reputatie, site */
+  gebied: Gebied
   categorie: string
   ernst: 'issue' | 'opportunity' | 'observation'
-  zekerheid: number
-  soort_uitspraak: 'observed' | 'absent_in_html' | 'unknown'
   titel: string
   tekst: string
-  bewijs: string[]
-  vervolgstap: string
-  fase: 'a' | 'b'
-  /** De vraag van de ondernemer die deze bevinding beantwoordt. Vervangt de ernst-label. */
+  /** De vraag van de ondernemer die deze bevinding beantwoordt. */
   ondernemersvraag: string | null
-  /** Openbare bron om dit zelf na te kijken. Wordt een link, nooit een kale regel. */
-  bron_url: string | null
+}
+
+type Gebied = 'advertenties' | 'meting' | 'aanvragen' | 'reputatie' | 'site'
+type GebiedStatus = 'aandacht' | 'niets_gevonden' | 'niet_gezien'
+interface ScorecardRegel {
+  gebied: Gebied
+  label: string
+  status: GebiedStatus
+  titel: string | null
 }
 
 interface Uitkomst {
@@ -66,6 +70,8 @@ interface Uitkomst {
   bevindingen?: Bevinding[]
   geen_bevinding_tekst: string | null
   ook_gezien: string[]
+  /** Per gebied een woord. Koen, 15 sep: scorecards in plaats van tekst. */
+  scorecard?: ScorecardRegel[]
 }
 
 type Fase = 'invoer' | 'bezig' | 'klaar'
@@ -133,6 +139,34 @@ function kTokens(n: number): string {
 
 function kaalDomein(s: string): string {
   return s.trim().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '')
+}
+
+const GEBIED_NAAM: Record<Gebied, string> = {
+  advertenties: 'Advertenties', meting: 'Meting', aanvragen: 'Aanvragen', reputatie: 'Reputatie', site: 'Website',
+}
+const STATUS_WOORD: Record<GebiedStatus, string> = {
+  aandacht: 'Aandacht', niets_gevonden: 'Niets gevonden', niet_gezien: 'Niet te zien',
+}
+const STATUS_KLEUR: Record<GebiedStatus, string> = {
+  aandacht: 'text-[var(--color-accent)]', niets_gevonden: 'text-[#1f9d55]', niet_gezien: 'text-[var(--color-muted)]',
+}
+
+/** Een ring per gebied: vol bij aandacht, dun bij niets gevonden, gestippeld bij niet gezien. */
+function Ring({ status }: { status: GebiedStatus }) {
+  const kleur = status === 'aandacht' ? 'var(--color-accent)' : status === 'niets_gevonden' ? '#1f9d55' : 'var(--color-border)'
+  return (
+    <svg viewBox="0 0 48 48" className="mx-auto h-12 w-12" aria-hidden="true">
+      <circle cx="24" cy="24" r="20" fill="none" stroke="var(--color-surface-alt)" strokeWidth="5" />
+      <circle
+        cx="24" cy="24" r="20" fill="none" stroke={kleur}
+        strokeWidth={status === 'aandacht' ? 5 : 3}
+        strokeLinecap="round"
+        strokeDasharray={status === 'niet_gezien' ? '4 6' : status === 'niets_gevonden' ? '126' : '94 126'}
+        transform="rotate(-90 24 24)"
+      />
+      {status === 'aandacht' && <circle cx="24" cy="24" r="5" fill={kleur} />}
+    </svg>
+  )
 }
 
 export default function MarketingCheck() {
@@ -323,6 +357,7 @@ export default function MarketingCheck() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          wens: 'meting',
           naam: cNaam, email: cEmail, telefoon: cTel, bericht: cBericht,
           session_token: params.current.s,
         }),
@@ -394,28 +429,28 @@ export default function MarketingCheck() {
     return cStatus === 'klaar' ? (
                 <div className="mt-8 rounded-2xl border border-[var(--color-accent)] bg-white p-5 sm:p-7">
                   <p className="font-display text-[20px] font-extrabold text-[var(--color-primary)]">
-                    Dank, we hebben je gegevens
+                    Dank, de volledige meting komt eraan
                   </p>
                   <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
-                    We nemen contact met je op om dit samen door te lopen. Wil je niet wachten, plan dan zelf een moment.
+                    Je krijgt hem op het mailadres dat je opgaf. Wil je weten wat Stevin echt voor je kan doen, plan dan een vrijblijvend gesprek.
                   </p>
                   <button
                     onClick={naarGesprek}
                     className="mt-5 inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-3 text-[15px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)]"
                   >
-                    Plan een kennismaking van twintig minuten
+                    Plan een vrijblijvend gesprek
                     <ArrowRight className="h-4 w-4" strokeWidth={2.25} aria-hidden="true" />
                   </button>
                 </div>
               ) : (
                 <form onSubmit={stuurContact} className="mt-8 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
                   <h2 className="font-display text-[clamp(20px,4.5vw,24px)] font-extrabold leading-[1.15] text-[var(--color-primary)]">
-                    {variant === 'wachten' ? 'Wil je de uitkomst besproken hebben?' : 'Zullen we dit samen nakijken?'}
+                    {variant === 'wachten' ? 'De agent is nog bezig' : 'Dit is de eerste scan'}
                   </h2>
                   <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
                     {variant === 'wachten'
-                      ? 'De agent is nog bezig. Laat alvast je nummer achter, dan bellen we je met wat hij vond en lopen we het samen door.'
-                      : 'Deze check kijkt van buitenaf. Wat er in je advertentie- en meetaccounts gebeurt, zien we hier niet. Laat je nummer achter, dan bellen we je en lopen we het samen door.'}
+                      ? 'Wil je straks de volledige meting? Stuur hem alvast naar jezelf.'
+                      : 'Wil je de volledige meting, stuur hem naar jezelf. Wil je weten wat Stevin echt voor je kan doen, plan een vrijblijvend gesprek.'}
                   </p>
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     <input
@@ -424,33 +459,28 @@ export default function MarketingCheck() {
                       className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
                     />
                     <input
-                      value={cTel} onChange={(e) => setCTel(e.target.value)}
-                      placeholder="Telefoonnummer" type="tel" autoComplete="tel"
+                      value={cEmail} onChange={(e) => setCEmail(e.target.value)}
+                      placeholder="Mailadres" type="email" autoComplete="email" required
                       className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
                     />
                   </div>
                   <input
-                    value={cEmail} onChange={(e) => setCEmail(e.target.value)}
-                    placeholder="Mailadres" type="email" autoComplete="email" required
+                    value={cTel} onChange={(e) => setCTel(e.target.value)}
+                    placeholder="Telefoonnummer (mag, hoeft niet)" type="tel" autoComplete="tel"
                     className="mt-3 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
-                  />
-                  <textarea
-                    value={cBericht} onChange={(e) => setCBericht(e.target.value)}
-                    placeholder="Iets wat we moeten weten? (niet verplicht)" rows={2}
-                    className="mt-3 w-full resize-none rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
                   />
                   {cFout && <p className="mt-3 text-[14px] text-[var(--color-pink)]">{cFout}</p>}
                   <button
                     type="submit" disabled={cStatus === 'bezig'}
                     className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] disabled:opacity-60"
                   >
-                    {cStatus === 'bezig' ? 'Een moment' : 'Bel me hierover'}
+                    {cStatus === 'bezig' ? 'Een moment' : 'Stuur de volledige meting naar mij'}
                     {cStatus !== 'bezig' && <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />}
                   </button>
                   <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
-                    We gebruiken je gegevens alleen om over deze scan contact met je op te nemen.{' '}
+                    We gebruiken je gegevens alleen voor deze scan.{' '}
                     <button type="button" onClick={naarGesprek} className="font-semibold text-[var(--color-primary)] underline underline-offset-2">
-                      Liever zelf een moment plannen
+                      Liever meteen een vrijblijvend gesprek plannen
                     </button>
                   </p>
                 </form>
@@ -593,17 +623,30 @@ export default function MarketingCheck() {
             </div>
           )}
 
-          {/* Alle bevindingen, niet alleen de kop. De eerste krijgt het accent en
-              het label uit de verdieping; de rest staat er in dezelfde vorm
-              onder, zodat je in een oogopslag ziet hoeveel er ligt. */}
+          {/* De scorecard: vijf gebieden, per gebied een woord. Koen, 15 sep:
+              "ipv tekst Stevin branded scorecards", "alles wat vager houden".
+              Geen cijfer: dat kunnen we van buitenaf niet eerlijk maken. */}
+          {!uitkomst.meetprobleem && (uitkomst.scorecard?.length ?? 0) > 0 && (
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
+              {uitkomst.scorecard!.map((r) => (
+                <div key={r.gebied} className={`rounded-xl border bg-white p-4 text-center ${r.status === 'aandacht' ? 'border-[var(--color-accent)]' : 'border-[var(--color-border)]'}`}>
+                  <Ring status={r.status} />
+                  <p className="mt-3 text-[13px] font-bold text-[var(--color-primary)]">{r.label}</p>
+                  <p className={`mt-0.5 text-[12px] font-semibold ${STATUS_KLEUR[r.status]}`}>{STATUS_WOORD[r.status]}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Per gebied hooguit een kaart: zijn vraag, onze kop, een korte tekst.
+              Geen bewijsregels, geen bronlink, geen "wat je zelf kunt doen": de
+              volgende stap is het gesprek, niet Google. */}
           {lijst.map((f, i) => (
-            <div key={f.code} className={`overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[0_1px_2px_rgba(10,22,40,0.04),0_8px_24px_-12px_rgba(10,22,40,0.12)] ${i > 0 ? 'mt-4' : ''}`}>
-              <div className={`border-l-4 p-5 sm:p-7 ${i === 0 ? 'border-[var(--color-accent)]' : 'border-[var(--color-border)]'}`}>
+            <div key={f.code} className={`overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[0_1px_2px_rgba(10,22,40,0.04),0_8px_24px_-12px_rgba(10,22,40,0.12)] ${i === 0 && !uitkomst.scorecard?.length ? '' : 'mt-4'}`}>
+              <div className={`border-l-4 p-5 sm:p-6 ${i === 0 ? 'border-[var(--color-accent)]' : 'border-[var(--color-border)]'}`}>
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  {/* Zijn vraag boven onze bevinding. "Hier valt winst te halen" suggereerde
-                      een gevonden fout, ook waar we alleen een controlepunt hebben. */}
                   <p className={`text-[12px] font-bold uppercase tracking-[0.08em] ${i === 0 ? 'text-[var(--color-accent)]' : 'text-[var(--color-muted)]'}`}>
-                    {f.ondernemersvraag || (f.ernst === 'issue' ? 'Dit valt op' : 'Dit zagen we')}
+                    {f.ondernemersvraag || GEBIED_NAAM[f.gebied]}
                   </p>
                   {i === 0 && uitVerdieping && (
                     <span className="rounded-full bg-[var(--color-surface-alt)] px-2.5 py-0.5 text-[11px] font-semibold text-[var(--color-muted)]">
@@ -611,40 +654,10 @@ export default function MarketingCheck() {
                     </span>
                   )}
                 </div>
-                <h2 className="mt-3 font-display text-[clamp(22px,5vw,28px)] font-extrabold leading-[1.15] tracking-[-0.01em] text-[var(--color-primary)]">
+                <h2 className="mt-2 font-display text-[clamp(19px,4.5vw,24px)] font-extrabold leading-[1.2] tracking-[-0.01em] text-[var(--color-primary)]">
                   {f.titel}
                 </h2>
-                <p className="mt-3 text-[16px] leading-relaxed text-[var(--color-muted)]">{f.tekst}</p>
-
-                {/* Geen "wat we zagen"-lijst meer. Koen, 15 sep 02:00: bij alle drie de
-                    bevindingen herhaalde die lijst letterlijk de zin erboven, en bij zijn
-                    eigen contactroutes vertelde hij een ondernemer wat hij zelf op zijn
-                    site heeft gezet. Dat leest als een tagscanner, niet als iemand die
-                    iets doorheeft. De feiten staan in de tekst; wie het wil narekenen
-                    krijgt de bron. Het bewijs blijft in de database, voor onze briefing. */}
-                {f.bron_url && (
-                  <a
-                    href={f.bron_url}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="mt-5 inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)]"
-                  >
-                    Kijk het zelf na bij de bron
-                    <ExternalLink className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
-                  </a>
-                )}
-
-                {f.vervolgstap && (
-                  <div className="mt-5 rounded-xl bg-[var(--color-surface)] p-4 sm:p-5">
-                    <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-muted)]">
-                      Wat je zelf kunt doen
-                    </p>
-                    <p className="mt-2 flex items-start gap-2.5 text-[15px] leading-relaxed text-[var(--color-primary)]">
-                      <ArrowRight className="mt-[3px] h-4 w-4 flex-shrink-0 text-[var(--color-accent)]" strokeWidth={2.5} aria-hidden="true" />
-                      <span>{f.vervolgstap}</span>
-                    </p>
-                  </div>
-                )}
+                <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">{f.tekst}</p>
               </div>
             </div>
           ))}
