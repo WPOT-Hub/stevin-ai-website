@@ -1022,6 +1022,15 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                       <p className="mt-3 max-w-[54ch] text-[16px] leading-relaxed text-[var(--color-primary)]">
                         De eerste stap is zorgen dat het betrouwbare signalen krijgt.
                       </p>
+                      {/* Koen, 15 sep 14:44: wat je ook met AI gaat doen en met wie, dit moet goed
+                          staan. Gemarkeerd als met een rode stift, geen rode letters. */}
+                      <p className="mt-3 max-w-[54ch] text-[16px] font-semibold leading-relaxed text-[var(--color-primary)]">
+                        Wat je ook met AI gaat doen, en welke partij ermee gaat werken: <mark className="bg-[#d23f57] px-1 text-white">dit moet goed staan.</mark>
+                      </p>
+                      {/* Koen, 15 sep 14:43: wat je ook met AI gaat doen en met wie, dit moet goed staan. */}
+                      <p className="mt-3 max-w-[54ch] text-[16px] font-semibold leading-relaxed text-[var(--color-primary)]">
+                        Wat je ook met AI gaat doen, en welke partij ermee gaat werken: <span className="text-[#d23f57]">dit moet goed staan.</span>
+                      </p>
                     </div>
                   </>
                 ) : (
