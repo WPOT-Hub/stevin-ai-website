@@ -285,6 +285,32 @@ interface Diagnose {
   /** De breuk, in rood: alleen een aantoonbaar probleem of een ontbrekende koppeling. */
   rood: string
 }
+/**
+ * Een QR-code op een visitekaartje deelt zijn link, en dus zijn sessietoken,
+ * met iedereen die hem scant. Op de wifi van een evenement delen diezelfde
+ * mensen ook nog een IP-adres. Zonder eigen teken zit de hele zaal na een paar
+ * scans achter dezelfde limiet. Dit teken zet de browser zelf, bewaart hij in
+ * zijn eigen opslag en stuurt hij alleen naar ons mee: geen cookie, geen
+ * profiel, geen advertentiegebruik, alleen genoeg om twee mensen naast elkaar
+ * uit elkaar te houden.
+ */
+function bezoekerTeken(): string | null {
+  try {
+    const sleutel = 'stevin_scan_bezoeker'
+    const bestaand = window.localStorage.getItem(sleutel)
+    if (bestaand && /^[a-z0-9-]{8,64}$/i.test(bestaand)) return bestaand
+    const nieuw =
+      typeof crypto !== 'undefined' && 'randomUUID' in crypto
+        ? crypto.randomUUID()
+        : Math.random().toString(36).slice(2) + Date.now().toString(36)
+    window.localStorage.setItem(sleutel, nieuw)
+    return nieuw
+  } catch {
+    // Privacymodus of opslag uit: dan valt de teller terug op het IP-adres.
+    return null
+  }
+}
+
 const DIAGNOSE: Record<string, Diagnose> = {
   CONSENT_MEASUREMENT_BEFORE_INTERACTION: {
     label: 'Aandacht voor je meetketen',
@@ -458,14 +484,14 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
   const [cStatus, setCStatus] = useState<'invoer' | 'bezig' | 'klaar'>('invoer')
   const [cFout, setCFout] = useState<string | null>(null)
 
-  const params = useRef<{ p: string | null; s: string | null }>({ p: null, s: null })
+  const params = useRef<{ p: string | null; s: string | null; b: string | null }>({ p: null, s: null, b: null })
   const pollTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const startTijd = useRef(0)
   const hub = useRef(HUB_LIVE)
 
   useEffect(() => {
     const q = new URLSearchParams(window.location.search)
-    params.current = { p: q.get('p'), s: q.get('s') }
+    params.current = { p: q.get('p'), s: q.get('s'), b: bezoekerTeken() }
     hub.current = hubUrl()
     return () => {
       if (pollTimer.current) clearTimeout(pollTimer.current)
@@ -568,6 +594,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
           variant,
           placement_slug: params.current.p,
           session_token: params.current.s,
+          bezoeker_token: params.current.b,
         }),
       })
       const data = (await res.json()) as Uitkomst & { ok: boolean; error?: string }
