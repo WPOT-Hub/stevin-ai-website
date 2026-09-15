@@ -325,8 +325,12 @@ export default function MarketingCheck() {
   const [aGereed, setAGereed] = useState(false)
   /** Token van de scan zodra fase A terug is; het contactblok tijdens het wachten hangt eraan. */
   const [scanToken, setScanToken] = useState<string | null>(null)
-  /** Hij drukte op "Laat Stevin mij bellen"; dan pas naam en nummer. */
-  const [wilBellen, setWilBellen] = useState(false)
+  /**
+   * Wat hij wil, en pas daarna zijn gegevens. Koen, 15 sep 11:37: "daarna niet
+   * meteen hard verkopen". Twee even grote keuzes: de scan rustig nalezen, of
+   * hem samen doornemen. De Hub kent allebei (contact.ts: wens meting of gesprek).
+   */
+  const [wens, setWens] = useState<'meting' | 'gesprek' | null>(null)
   const belRef = useRef<HTMLDivElement>(null)
   /** Fase B (de mini in een echte browser): queued, running, done, skipped. */
   const [bStatus, setBStatus] = useState<string>('skipped')
@@ -425,7 +429,7 @@ export default function MarketingCheck() {
     setFout(null)
     setUitkomst(null)
     setScanToken(null)
-    setWilBellen(false)
+    setWens(null)
     setBStatus('skipped')
     setAGereed(false)
     setVStatus('skipped')
@@ -506,9 +510,9 @@ export default function MarketingCheck() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          wens: 'gesprek',
+          wens: wens ?? 'gesprek',
           naam: cNaam, email: cEmail, telefoon: cTel,
-          bericht: cBericht || (uitkomst?.bevinding ? `Wil gebeld worden over: ${diagnoseVan(uitkomst.bevinding).label.toLowerCase()}` : ''),
+          bericht: cBericht || (uitkomst?.bevinding ? `Uit de check: ${diagnoseVan(uitkomst.bevinding).label.toLowerCase()}` : ''),
           session_token: params.current.s,
         }),
       })
@@ -576,13 +580,17 @@ export default function MarketingCheck() {
    * Zelfde formulier, zelfde state; alleen de kop en de eerste zin verschillen.
    */
   function contactBlok(variant: 'wachten' | 'klaar') {
+    // Bij "stuur mij de scan" is een nummer niet nodig; bij een gesprek wel.
+    const wilMeting = variant === 'klaar' && wens === 'meting'
     return cStatus === 'klaar' ? (
                 <div className="mt-8 rounded-2xl border border-[var(--color-accent)] bg-white p-5 sm:p-7">
                   <p className="font-display text-[20px] font-extrabold text-[var(--color-primary)]">
-                    Dank, we bellen je
+                    {wens === 'meting' ? 'Dank, hij komt eraan' : 'Dank, we bellen je'}
                   </p>
                   <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
-                    We laten zien wat er ontbreekt en hoe we dit voor je herstellen. Wil je niet wachten, plan dan zelf een moment.
+                    {wens === 'meting'
+                      ? 'De volledige uitkomst komt in je mail. Wil je hem liever samen doornemen, plan dan een moment.'
+                      : 'We nemen de uitkomst met je door. Wil je niet wachten, plan dan zelf een moment.'}
                   </p>
                   <button
                     onClick={naarGesprek}
@@ -595,12 +603,14 @@ export default function MarketingCheck() {
               ) : (
                 <form onSubmit={stuurContact} className="mt-8 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
                   <h2 className="font-display text-[clamp(20px,4.5vw,24px)] font-extrabold leading-[1.15] text-[var(--color-primary)]">
-                    {variant === 'wachten' ? 'De agent is nog bezig' : 'Laat Stevin je bellen'}
+                    {variant === 'wachten' ? 'De agent is nog bezig' : wilMeting ? 'Waar mogen we de scan heen sturen?' : 'Waar kunnen we je bereiken?'}
                   </h2>
                   <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
                     {variant === 'wachten'
                       ? 'Wil je straks meteen weten wat er moet worden aangepast? Laat alvast je nummer achter.'
-                      : 'We laten zien wat er ontbreekt en hoe we dit voor je herstellen.'}
+                      : wilMeting
+                        ? 'Je krijgt de volledige uitkomst in je mail. Rustig nalezen, geen verplichting.'
+                        : 'We bellen je om de uitkomst samen door te nemen.'}
                   </p>
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     <input
@@ -610,7 +620,7 @@ export default function MarketingCheck() {
                     />
                     <input
                       value={cTel} onChange={(e) => setCTel(e.target.value)}
-                      placeholder="Telefoonnummer" type="tel" autoComplete="tel" required
+                      placeholder={wilMeting ? 'Telefoonnummer (niet verplicht)' : 'Telefoonnummer'} type="tel" autoComplete="tel" required={!wilMeting}
                       className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
                     />
                   </div>
@@ -624,11 +634,13 @@ export default function MarketingCheck() {
                     type="submit" disabled={cStatus === 'bezig'}
                     className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] disabled:opacity-60"
                   >
-                    {cStatus === 'bezig' ? 'Een moment' : 'Laat Stevin mij bellen'}
+                    {cStatus === 'bezig' ? 'Een moment' : wilMeting ? 'Stuur mij de scan' : 'Bel mij'}
                     {cStatus !== 'bezig' && <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />}
                   </button>
                   <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
-                    We gebruiken je gegevens alleen om je hierover te bellen.{' '}
+                    {wilMeting
+                      ? 'We gebruiken je gegevens alleen om je de scan te sturen. '
+                      : 'We gebruiken je gegevens alleen om je hierover te bellen. '}
                     <button type="button" onClick={naarGesprek} className="font-semibold text-[var(--color-primary)] underline underline-offset-2">
                       Liever zelf een moment plannen
                     </button>
@@ -753,7 +765,7 @@ export default function MarketingCheck() {
               <Globe className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" />
               {kaalDomein(domein)}
             </span>
-            <span>Stevin-dossier · van buitenaf bekeken op {datumVandaag()}</span>
+            <span>Van buitenaf bekeken op {datumVandaag()}</span>
           </div>
 
           {uitkomst.meetprobleem && (
@@ -773,118 +785,110 @@ export default function MarketingCheck() {
             </div>
           )}
 
-          {/* Het dossier. Koen, 15 sep 11:17: probleem, gat, gevolg, oplossing,
-              in die volgorde, met het echte bewijs als middelpunt. Geen kaarten,
-              geen randjes, geen pijlen, geen quiz. Eerst de feiten, dan de pijn
-              in drie regels, dan een donkere strook met wat Stevin doet en een
-              knop. */}
+          {/* De draai, niet het rapport. Koen, 15 sep 11:37: eerst denkt hij "dat een
+              bureau betaalt is normaal", en dan pas "wacht, wie kan dan aantonen wat
+              eruit komt". Dus: het feit ontkrachten, de vraag stellen, wat we wel en
+              niet zien, de pijn, Stevin, en dan zacht twee keuzes. Geen cijferblokken,
+              geen tabel, geen donker vlak. */}
           {b && (() => {
             const d = diagnoseVan(b)
             const dos = dossierUit(uitkomst)
-            const feiten: [string, string][] = dos
-              ? [
-                  [dos.advertenties != null ? String(dos.advertenties) : 'Advertenties', dos.advertenties != null ? `advertenties op naam van ${dos.bedrijf}` : `op naam van ${dos.bedrijf}`],
-                  [dos.betaler.toUpperCase(), 'staat als betaler vermeld'],
-                  ['?', 'aanvragen niet zelfstandig herleidbaar'],
-                ]
-              : d.punten.map(([label, waarde]) => [waarde, label.toLowerCase()] as [string, string])
-            const kop = dos
-              ? (dos.advertenties != null ? `${dos.advertenties} advertenties op jouw naam.` : 'Advertenties op jouw naam.')
-              : d.kop
-            const kop2 = dos ? 'Jij kunt niet zien welke aanvraag eruit komt.' : null
+            const betalerKort = dos ? dos.betaler.replace(/\s+(bv|b\.v\.|n\.v\.)$/i, '') : ''
             return (
-              <div className="border-t-2 border-[var(--color-primary)] pt-6">
-                <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[var(--color-accent)]">
+              <article className="border-t border-[var(--color-primary)] pt-5">
+                <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">
                   {dos ? 'De proef op de som' : d.label}
                 </p>
-                <h2 className="mt-3 font-display text-[clamp(28px,7vw,44px)] font-extrabold leading-[1.05] tracking-[-0.02em] text-[var(--color-primary)]">
-                  {kop}
-                  {kop2 && <><br />{kop2}</>}
+
+                {/* Eerst geruststellen, dan de vraag. */}
+                <h2 className="mt-6 font-display text-[clamp(23px,5.4vw,32px)] font-extrabold leading-[1.25] tracking-[-0.015em] text-[var(--color-primary)]">
+                  {dos ? <>{betalerKort} staat als betaler vermeld.<br />Dat is op zichzelf niet vreemd.</> : d.kop}
                 </h2>
+                <p className="mt-6 text-[16px] text-[var(--color-muted)]">
+                  {dos ? 'De vraag erachter is wel belangrijk:' : 'De vraag die daaronder ligt:'}
+                </p>
+                <p className="mt-3 max-w-[30ch] font-display text-[clamp(22px,5.2vw,30px)] font-bold leading-[1.3] tracking-[-0.01em] text-[var(--color-primary)]">
+                  {dos
+                    ? <>Als je morgen van bureau wisselt, kun jij dan zelf aantonen welke van deze {dos.advertenties ?? ''} advertenties een aanvraag hebben opgeleverd?</>
+                    : d.vraag}
+                </p>
 
-                {/* Drie feiten, groot. Geen kaarten: een lijn erboven en de cijfers zelf. */}
-                <div className="mt-10 grid gap-8 sm:grid-cols-3 sm:gap-6">
-                  {feiten.map(([groot, klein], i) => (
-                    <div key={i} className="border-t border-[var(--color-border)] pt-4">
-                      <p className={`font-display font-extrabold leading-none tracking-[-0.03em] text-[var(--color-primary)] ${/^[0-9?]+$/.test(groot) ? 'text-[clamp(40px,10vw,56px)]' : 'text-[clamp(22px,5vw,28px)] leading-tight'}`}>{groot}</p>
-                      <p className="mt-3 text-[15px] leading-snug text-[var(--color-muted)]">{klein}</p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* De uitsnede uit het register. Echte velden, geen decoratie: adverteerder,
-                    betaler met markering, aantal, en de link naar de bron. Een
-                    schermafdruk van het register zelf maakt de mini nog niet; tot die
-                    tijd zijn dit de velden zoals ze daar staan. */}
-                {dos && (
-                  <figure className="mt-10 border border-[var(--color-primary)]/20 bg-white">
-                    <figcaption className="flex items-center justify-between gap-3 border-b border-[var(--color-border)] px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--color-muted)] sm:px-5">
-                      <span>Advertentieregister van Google</span>
-                      <span className="hidden sm:inline">Openbaar</span>
-                    </figcaption>
-                    <dl className="divide-y divide-[var(--color-border)] font-mono text-[13.5px] sm:text-[14px]">
-                      {([
-                        ['Adverteerder', dos.bedrijf, false],
-                        ['Betaler', dos.betaler, true],
-                        ['Advertenties', dos.advertenties != null ? String(dos.advertenties) : 'in het register', false],
-                        ['Regio', 'Nederland', false],
-                      ] as [string, string, boolean][]).map(([k, v, mark]) => (
-                        <div key={k} className={`grid grid-cols-[120px_1fr] gap-3 px-4 py-3 sm:grid-cols-[160px_1fr] sm:px-5 ${mark ? 'bg-[#fff3c4]' : ''}`}>
-                          <dt className="text-[var(--color-muted)]">{k}</dt>
-                          <dd className={`text-[var(--color-primary)] ${mark ? 'font-bold' : ''}`}>{v}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                    <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[var(--color-border)] px-4 py-2.5 text-[12.5px] text-[var(--color-muted)] sm:px-5">
-                      <span>Gecontroleerd op {datumLang(dos.gecontroleerd_op)}.</span>
-                      {dos.register_url && (
-                        <a href={dos.register_url} target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--color-primary)] underline underline-offset-2">
-                          Bekijk het zelf in het register
-                        </a>
+                {/* Wat we wel zien, en wat we er niet bij zien. Twee kolommen tekst,
+                    geen kaarten. De betaler krijgt de enige markering op het scherm. */}
+                <div className="mt-11 grid gap-9 sm:grid-cols-2 sm:gap-12">
+                  <div className="border-t border-[var(--color-border)] pt-4">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Wat we openbaar kunnen zien</p>
+                    {dos ? (
+                      <div className="mt-4 space-y-2 text-[16px] leading-relaxed text-[var(--color-primary)]">
+                        <p><span className="font-display text-[28px] font-extrabold leading-none tracking-[-0.02em]">{dos.advertenties ?? ''}</span> advertenties op naam van {dos.bedrijf.replace(/\.$/, '')}.</p>
+                        <p><mark className="bg-[#ffe86b] px-1 font-semibold text-[var(--color-primary)]">{dos.betaler}</mark> staat als betaler vermeld.</p>
+                      </div>
+                    ) : (
+                      <p className="mt-4 text-[16px] leading-relaxed text-[var(--color-primary)]">{kort(b.tekst, 2)}</p>
+                    )}
+                    <p className="mt-4 font-mono text-[11.5px] text-[var(--color-muted)]">
+                      Advertentieregister van Google, {dos ? datumLang(dos.gecontroleerd_op) : datumVandaag()}
+                      {dos?.register_url && (
+                        <>
+                          {' '}
+                          <a href={dos.register_url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-[var(--color-primary)]">bekijk het zelf</a>
+                        </>
                       )}
-                    </div>
-                  </figure>
-                )}
-
-                {/* De pijn, in drie regels. Koen: "Je hebt de rekening. Je hebt de
-                    advertenties. Je hebt niet zelfstandig de uitkomst." */}
-                <div className="mt-12 border-l-2 border-[var(--color-primary)] pl-5">
-                  {dos ? (
-                    <p className="font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.3] text-[var(--color-primary)]">
-                      Je hebt de rekening.<br />Je hebt de advertenties.<br />Je hebt niet zelfstandig de uitkomst.
                     </p>
-                  ) : (
-                    <p className="font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.3] text-[var(--color-primary)]">{d.gevolg}</p>
-                  )}
-                  {!dos && <p className="mt-3 text-[14px] leading-relaxed text-[var(--color-muted)]">{kort(b.tekst, 1)}</p>}
+                  </div>
+                  <div className="border-t border-[var(--color-border)] pt-4">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Wat we daar niet bij zien</p>
+                    <p className="mt-4 text-[16px] leading-relaxed text-[var(--color-primary)]">
+                      {dos ? 'Welke advertentie een aanvraag oplevert.' : 'Of het werkt, en wat het je oplevert.'}
+                    </p>
+                  </div>
                 </div>
 
-                {/* Stevin als oplossing: een donkere strook, een zin, een knop. */}
-                <div className="mt-12 bg-[var(--color-primary)] px-6 py-8 text-white sm:px-9 sm:py-10">
-                  <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[var(--color-accent-light)]">
-                    {dos ? 'Stevin brengt de uitkomst terug naar jou' : 'Wat Stevin herstelt'}
+                {/* De pijn. Drie regels, geen aanhalingstekens. */}
+                <p className="mt-12 max-w-[30ch] font-display text-[clamp(21px,4.8vw,28px)] font-bold leading-[1.3] tracking-[-0.01em] text-[var(--color-primary)]">
+                  {dos
+                    ? <>Je weet wie er adverteert.<br />Je weet wie er betaalt.<br />Maar de uitkomst ligt niet zichtbaar bij jou.</>
+                    : d.gevolg}
+                </p>
+
+                {/* Stevin, in dezelfde stroom. */}
+                <div className="mt-11 border-t border-[var(--color-primary)] pt-6">
+                  <p className="font-display text-[18px] font-bold leading-snug text-[var(--color-primary)]">
+                    Dat is precies wat Stevin voor je kan oplossen.
                   </p>
-                  <p className="mt-4 font-display text-[clamp(19px,4.4vw,24px)] font-bold leading-[1.3]">
+                  <p className="mt-3 max-w-[54ch] text-[16px] leading-relaxed text-[var(--color-muted)]">
                     {dos
-                      ? 'Wij zorgen dat je zelf kunt zien welke advertentie een aanvraag oplevert. Op jouw accounts. Met jouw meetgegevens. Zonder afhankelijk te zijn van een bureau.'
+                      ? 'Wij brengen advertentie, meting en aanvraag terug naar jouw bedrijf. Op jouw accounts. Met jouw gegevens. Zodat je zelf kunt controleren wat er gebeurt.'
                       : d.herstel}
                   </p>
-                  {!wilBellen && (
-                    <>
+                </div>
+
+                {/* En dan niet hard verkopen: twee even grote keuzes. */}
+                {!wens && (
+                  <div className="mt-10">
+                    <p className="text-[15px] leading-relaxed text-[var(--color-muted)]">
+                      Dit is een uitkomst uit je uitgebreide scan. Wil je hem eerst rustig nalezen, of zullen we hem samen kort doornemen?
+                    </p>
+                    <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                       <button
                         type="button"
-                        onClick={() => { setWilBellen(true); setTimeout(() => belRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50) }}
-                        className="mt-7 inline-flex w-full items-center justify-center gap-2 bg-[var(--color-accent)] px-5 py-4 text-[16px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] sm:w-auto"
+                        onClick={() => { setWens('meting'); setTimeout(() => belRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50) }}
+                        className="flex-1 border border-[var(--color-primary)] px-5 py-4 text-[15px] font-semibold text-[var(--color-primary)] transition-colors hover:bg-[var(--color-surface)]"
                       >
-                        {dos ? 'Laat Stevin mij bellen over mijn advertentieaccount' : 'Laat Stevin mij bellen'}
-                        <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+                        Stuur mij de uitgebreide scan
                       </button>
-                      <p className="mt-3 text-[13px] text-white/60">We laten zien wat er ontbreekt en hoe we dit kunnen herstellen.</p>
-                    </>
-                  )}
-                </div>
-                <div ref={belRef}>{wilBellen && contactBlok('klaar')}</div>
-              </div>
+                      <button
+                        type="button"
+                        onClick={() => { setWens('gesprek'); setTimeout(() => belRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50) }}
+                        className="flex-1 bg-[var(--color-primary)] px-5 py-4 text-[15px] font-semibold text-white transition-colors hover:bg-[var(--color-primary-light)]"
+                      >
+                        Plan een kennismaking
+                      </button>
+                    </div>
+                  </div>
+                )}
+                <div ref={belRef}>{wens && contactBlok('klaar')}</div>
+              </article>
             )
           })()}
 
