@@ -53,6 +53,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // 15 sep 2026 (W-134): de Marketing Check heet Marketing Scan. De oude
+      // URL staat op QR-codes en in placements, dus permanent doorsturen met
+      // behoud van de query (?p=, ?s=, ?scan=).
+      { source: '/marketing-check', destination: '/marketing-scan', permanent: true },
+      { source: '/:locale(nl|en)/marketing-check', destination: '/:locale(nl|en)/marketing-scan', permanent: true },
       // 4 sep 2026 (W-042): van de tien producten op /producten bestonden er
       // twee. Getoetst aan draaiende code, tabellen met rijen en cronjobs, niet
       // aan documentatie. Ads Radar en Signals blijven; de andere acht zijn

@@ -4,7 +4,7 @@ import MarketingCheck from '@/components/MarketingCheck'
 
 type Props = { params: Promise<{ locale: string }> }
 
-// W-135: de AI-Ready Scan, dezelfde scanmotor als /marketing-check met een
+// W-135: de AI-Ready Scan, dezelfde scanmotor als /marketing-scan met een
 // ander verhaal: eerst meten, dan met AI bouwen. Noindex zolang hij achter de
 // codepoort staat (middleware, MARKETING_CHECK_TOEGANGSCODE).
 export const metadata: Metadata = {

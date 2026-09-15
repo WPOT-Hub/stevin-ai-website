@@ -15,9 +15,9 @@ type Props = { params: Promise<{ locale: string }>; searchParams: Promise<{ fout
  * Open Graph als de pagina erachter; de middleware zegt via x-mc-pad welke.
  */
 export async function generateMetadata(): Promise<Metadata> {
-  const pad = (await headers()).get('x-mc-pad') ?? '/marketing-check'
+  const pad = (await headers()).get('x-mc-pad') ?? '/marketing-scan'
   const ai = pad.includes('ai-ready-scan')
-  const titel = ai ? 'Stevin AI-Ready Scan: eerst meten, dan met AI bouwen' : 'Marketing Check: laat een Stevin Agent je marketing checken'
+  const titel = ai ? 'Stevin AI-Ready Scan: eerst meten, dan met AI bouwen' : 'Marketing Scan: laat een Stevin Agent je marketing scannen'
   const beschrijving = ai
     ? 'Jullie willen met AI werken. Kan jullie meetlaag dat dragen? Vul je bedrijfswebsite in; wij meten van buitenaf welke signalen je site doorgeeft.'
     : 'Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat we van buitenaf kunnen zien. Geen naam, geen e-mailadres.'
@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
     robots: 'noindex, nofollow',
     openGraph: {
       type: 'website', locale: 'nl_NL', siteName: 'Stevin.AI', title: titel, description: beschrijving,
-      url: `https://stevin.ai${ai ? '/ai-ready-scan' : '/marketing-check'}`,
+      url: `https://stevin.ai${ai ? '/ai-ready-scan' : '/marketing-scan'}`,
       images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: titel }],
     },
     twitter: { card: 'summary_large_image', title: titel, description: beschrijving, images: ['/opengraph-image'] },
@@ -40,7 +40,7 @@ export default async function MarketingCheckToegangPage({ params, searchParams }
   const { fout } = await searchParams
   return (
     <main className="flex min-h-screen items-center justify-center bg-[var(--color-primary)] px-5">
-      <form method="get" action="/marketing-check" className="w-full max-w-[360px] text-center">
+      <form method="get" action="/marketing-scan" className="w-full max-w-[360px] text-center">
         <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--color-accent)]">Afgeschermd met een code</p>
         <h1 className="mt-3 font-display text-[24px] font-extrabold leading-tight text-white">Deze pagina is nog niet open</h1>
         <p className="mt-2 text-[14px] leading-relaxed text-slate-300">Heb je een code gekregen, vul die dan hieronder in.</p>

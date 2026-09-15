@@ -28,7 +28,7 @@ export async function GET(
   const { slug } = await params
   const veilig = /^[a-z0-9][a-z0-9-]{1,60}$/.test(slug.toLowerCase()) ? slug.toLowerCase() : null
 
-  let destination = '/marketing-check'
+  let destination = '/marketing-scan'
   let session = ''
 
   if (veilig) {

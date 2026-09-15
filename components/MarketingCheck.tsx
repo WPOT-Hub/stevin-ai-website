@@ -659,7 +659,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
         body: JSON.stringify({
           wens: wens ?? 'gesprek',
           naam: cNaam, email: cEmail, telefoon: cTel,
-          bericht: cBericht || (uitkomst?.bevinding ? `Uit de check: ${diagnoseVan(uitkomst.bevinding).label.toLowerCase()}` : ''),
+          bericht: cBericht || (uitkomst?.bevinding ? `Uit de scan: ${diagnoseVan(uitkomst.bevinding).label.toLowerCase()}` : ''),
           session_token: params.current.s,
         }),
       })
@@ -804,10 +804,10 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
       {fase === 'invoer' && (
         <>
           <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--color-accent)]">
-            {variant === 'ai' ? 'AI-Ready Scan' : 'Marketing Check'}
+            {variant === 'ai' ? 'AI-Ready Scan' : 'Marketing Scan'}
           </p>
           <h1 className="mt-3 font-display text-[clamp(30px,7vw,44px)] font-extrabold leading-[1.08] tracking-[-0.02em] text-[var(--color-primary)]">
-            {variant === 'ai' ? <>Eerst meten.<br />Dan met AI bouwen.</> : 'Laat een Stevin Agent je marketing checken'}
+            {variant === 'ai' ? <>Eerst meten.<br />Dan met AI bouwen.</> : 'Laat een Stevin Agent je marketing scannen'}
           </h1>
           <p className="mt-4 text-[17px] leading-relaxed text-[var(--color-muted)]">
             {variant === 'ai'
@@ -845,7 +845,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
               disabled={!domein.trim()}
               className="mt-3 w-full rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] disabled:opacity-50"
             >
-              Check mijn marketing
+              Scan mijn marketing
             </button>
           </form>
 
