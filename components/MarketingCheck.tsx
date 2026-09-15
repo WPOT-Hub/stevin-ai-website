@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Check, ExternalLink, Globe } from 'lucide-react'
+import { ArrowRight, ExternalLink, Globe } from 'lucide-react'
 
 const HUB_LIVE = 'https://hub.stevin.ai/api/marketing-check'
 const CAL = 'https://cal.com/koen-hoogenboom/kennismaking'
@@ -520,31 +520,22 @@ export default function MarketingCheck() {
                 </h2>
                 <p className="mt-3 text-[16px] leading-relaxed text-[var(--color-muted)]">{f.tekst}</p>
 
-                {f.bewijs.length > 0 && (
-                  <div className="mt-5 border-t border-[var(--color-border)] pt-5">
-                    <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-muted)]">Wat we zagen</p>
-                    <ul className="mt-2 space-y-2">
-                      {f.bewijs.map((e) => (
-                        <li key={e} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-[var(--color-primary)]">
-                          <Check className="mt-[3px] h-4 w-4 flex-shrink-0 text-[var(--color-accent)]" strokeWidth={2.5} aria-hidden="true" />
-                          <span>{e}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    {/* Koen, 14 sep: "klanten weten toch niet waar ze moeten zoeken." Dus
-                        geen verwijzing naar een register, maar een link die er meteen staat. */}
-                    {f.bron_url && (
-                      <a
-                        href={f.bron_url}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)]"
-                      >
-                        Kijk het zelf na bij de bron
-                        <ExternalLink className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
-                      </a>
-                    )}
-                  </div>
+                {/* Geen "wat we zagen"-lijst meer. Koen, 15 sep 02:00: bij alle drie de
+                    bevindingen herhaalde die lijst letterlijk de zin erboven, en bij zijn
+                    eigen contactroutes vertelde hij een ondernemer wat hij zelf op zijn
+                    site heeft gezet. Dat leest als een tagscanner, niet als iemand die
+                    iets doorheeft. De feiten staan in de tekst; wie het wil narekenen
+                    krijgt de bron. Het bewijs blijft in de database, voor onze briefing. */}
+                {f.bron_url && (
+                  <a
+                    href={f.bron_url}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="mt-5 inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)]"
+                  >
+                    Kijk het zelf na bij de bron
+                    <ExternalLink className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+                  </a>
                 )}
 
                 {f.vervolgstap && (
