@@ -141,15 +141,77 @@ function kaalDomein(s: string): string {
   return s.trim().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '')
 }
 
-const GEBIED_NAAM: Record<Gebied, string> = {
-  advertenties: 'Advertenties', meting: 'Meting', aanvragen: 'Aanvragen', reputatie: 'Reputatie', site: 'Website',
+/**
+ * De diagnose-laag (Koen, 15 sep 10:18, na een lezing door ChatGPT): niet
+ * "kijk wat we zagen" maar probleem, gevolg, oplossing, belactie. Per code
+ * een kop die de pijn benoemt, een gevolgzin en de vraag waarmee de bezoeker
+ * zelf zijn blinde vlek aanwijst. De feiten eronder komen uit de Hub en
+ * blijven de feiten; de kop beweert niets dat daar niet in staat.
+ */
+interface Diagnose { kop: string; gevolg: string; vraag: string }
+const DIAGNOSE: Record<string, Diagnose> = {
+  ADVERTISING_FUNDER_MISMATCH: {
+    kop: 'Je betaalt voor advertenties, maar kunt niet zelfstandig zien wat ze opleveren.',
+    gevolg: 'Je stuurt dan op vertrouwen, niet op bewijs.',
+    vraag: 'Kun jij vandaag zelf zien welke advertentie een echte aanvraag heeft opgeleverd?',
+  },
+  ADVERTISING_ACTIVE_CONVERSION_UNKNOWN: {
+    kop: 'Je adverteert, maar of een aanvraag daaruit geteld wordt, is niet te zien.',
+    gevolg: 'Google stuurt je budget dan op een deel van de werkelijkheid.',
+    vraag: 'Kun jij vandaag zelf zien welke advertentie een echte aanvraag heeft opgeleverd?',
+  },
+  CONVERSION_LEADPATHS_UNVERIFIED: {
+    kop: 'Je site krijgt aanvragen binnen, maar of ze geteld worden weet niemand.',
+    gevolg: 'Aan het eind van de maand weet je dan niet wat je site en je advertenties hebben opgeleverd.',
+    vraag: 'Weet jij hoeveel aanvragen je site vorige maand opleverde?',
+  },
+  CONVERSION_LEADPATHS_UNCOUNTED: {
+    kop: 'Je site krijgt aanvragen binnen, maar of ze geteld worden weet niemand.',
+    gevolg: 'Aan het eind van de maand weet je dan niet wat je site heeft opgeleverd.',
+    vraag: 'Weet jij hoeveel aanvragen je site vorige maand opleverde?',
+  },
+  CONSENT_MEASUREMENT_BEFORE_INTERACTION: {
+    kop: 'Je cookiebanner staat er, maar je meting wacht er niet op.',
+    gevolg: 'Wat je meet klopt dan niet met wat je belooft, en dat valt op bij wie kijkt.',
+    vraag: 'Weet jij wat er op je site al meet voordat iemand op de banner klikt?',
+  },
+  MEASUREMENT_NOTHING_AFTER_CONSENT: {
+    kop: 'Ook na toestemming meet je site niets.',
+    gevolg: 'Van iedereen die op je site komt, weet je dan niets.',
+    vraag: 'Kun jij zien hoeveel bezoekers je site vorige week had?',
+  },
+  PROFIEL_REVIEWS_STILGEVALLEN: {
+    kop: 'Wie je naam googelt, ziet een profiel dat stil staat.',
+    gevolg: 'Een nieuwe klant leest dat als een bedrijf dat stil staat, nog voor hij je site ziet.',
+    vraag: 'Weet jij wanneer je laatste Google-review binnenkwam?',
+  },
+  PROFIEL_WEINIG_REVIEWS: {
+    kop: 'Wie je naam googelt, ziet bijna geen reviews.',
+    gevolg: 'Een nieuwe klant kiest dan voor wie er wel heeft.',
+    vraag: 'Weet jij wanneer je laatste Google-review binnenkwam?',
+  },
+  SITE_TRAAG_OP_TELEFOON: {
+    kop: 'Je site is traag op de telefoon, en daar komen de meeste aanvragen vandaan.',
+    gevolg: 'Wie moet wachten, belt de volgende.',
+    vraag: 'Heb jij je eigen site weleens op een telefoon buiten je wifi geopend?',
+  },
+  MAIL_DOMEIN_ONBESCHERMD: {
+    kop: 'Mail uit jouw naam kan door iedereen verstuurd worden.',
+    gevolg: 'Je eigen mail komt daardoor vaker in spam, en je antwoord op een aanvraag ook.',
+    vraag: 'Komt jouw mail weleens in spam bij klanten?',
+  },
 }
-const STATUS_WOORD: Record<GebiedStatus, string> = {
-  aandacht: 'Aandacht', niets_gevonden: 'Niets gevonden', niet_gezien: 'Niet te zien',
+const DIAGNOSE_STANDAARD: Diagnose = {
+  kop: '',
+  gevolg: 'Zolang dat zo is, stuur je op gevoel in plaats van op bewijs.',
+  vraag: 'Kun jij vandaag zelf narekenen wat je marketing oplevert?',
 }
-const STATUS_KLEUR: Record<GebiedStatus, string> = {
-  aandacht: 'text-[var(--color-accent)]', niets_gevonden: 'text-[#1f9d55]', niet_gezien: 'text-[var(--color-muted)]',
+function diagnoseVan(f: Bevinding): Diagnose {
+  const d = DIAGNOSE[f.code]
+  return d ?? { ...DIAGNOSE_STANDAARD, kop: f.titel }
 }
+
+type Antwoord = 'ja' | 'nee' | 'weet_niet'
 
 /**
  * Hooguit twee zinnen op het scherm. Koen, 15 sep 10:13: "weer kei veel
@@ -164,24 +226,6 @@ function kort(tekst: string, maxZinnen = 2): string {
   return zinnen.slice(0, maxZinnen).join(' ')
 }
 
-/** Een ring per gebied: vol bij aandacht, dun bij niets gevonden, gestippeld bij niet gezien. */
-function Ring({ status }: { status: GebiedStatus }) {
-  const kleur = status === 'aandacht' ? 'var(--color-accent)' : status === 'niets_gevonden' ? '#1f9d55' : 'var(--color-border)'
-  return (
-    <svg viewBox="0 0 48 48" className="mx-auto h-12 w-12" aria-hidden="true">
-      <circle cx="24" cy="24" r="20" fill="none" stroke="var(--color-surface-alt)" strokeWidth="5" />
-      <circle
-        cx="24" cy="24" r="20" fill="none" stroke={kleur}
-        strokeWidth={status === 'aandacht' ? 5 : 3}
-        strokeLinecap="round"
-        strokeDasharray={status === 'niet_gezien' ? '4 6' : status === 'niets_gevonden' ? '126' : '94 126'}
-        transform="rotate(-90 24 24)"
-      />
-      {status === 'aandacht' && <circle cx="24" cy="24" r="5" fill={kleur} />}
-    </svg>
-  )
-}
-
 export default function MarketingCheck() {
   const [domein, setDomein] = useState('')
   const [fase, setFase] = useState<Fase>('invoer')
@@ -193,6 +237,8 @@ export default function MarketingCheck() {
   const [aGereed, setAGereed] = useState(false)
   /** Token van de scan zodra fase A terug is; het contactblok tijdens het wachten hangt eraan. */
   const [scanToken, setScanToken] = useState<string | null>(null)
+  /** Zijn antwoord op de diagnosevraag; daarna pas naam en nummer. */
+  const [antwoord, setAntwoord] = useState<Antwoord | null>(null)
   /** Fase B (de mini in een echte browser): queued, running, done, skipped. */
   const [bStatus, setBStatus] = useState<string>('skipped')
   const [vStatus, setVStatus] = useState<string>('skipped')
@@ -290,6 +336,7 @@ export default function MarketingCheck() {
     setFout(null)
     setUitkomst(null)
     setScanToken(null)
+    setAntwoord(null)
     setBStatus('skipped')
     setAGereed(false)
     setVStatus('skipped')
@@ -370,8 +417,11 @@ export default function MarketingCheck() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          wens: 'meting',
-          naam: cNaam, email: cEmail, telefoon: cTel, bericht: cBericht,
+          wens: 'gesprek',
+          naam: cNaam, email: cEmail, telefoon: cTel,
+          bericht: antwoord && uitkomst?.bevinding
+            ? `Antwoord op "${diagnoseVan(uitkomst.bevinding).vraag}": ${antwoord === 'ja' ? 'ja' : antwoord === 'nee' ? 'nee' : 'weet ik niet'}`
+            : cBericht,
           session_token: params.current.s,
         }),
       })
@@ -442,28 +492,28 @@ export default function MarketingCheck() {
     return cStatus === 'klaar' ? (
                 <div className="mt-8 rounded-2xl border border-[var(--color-accent)] bg-white p-5 sm:p-7">
                   <p className="font-display text-[20px] font-extrabold text-[var(--color-primary)]">
-                    Dank, de volledige meting komt eraan
+                    Dank, we bellen je
                   </p>
                   <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
-                    Je krijgt hem op het mailadres dat je opgaf. Wil je weten wat Stevin echt voor je kan doen, plan dan een vrijblijvend gesprek.
+                    Je krijgt een concrete aanpak voor jouw situatie. Wil je niet wachten, plan dan zelf een moment.
                   </p>
                   <button
                     onClick={naarGesprek}
                     className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-3.5 text-[16px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)]"
                   >
-                    Plan een vrijblijvend gesprek
+                    Plan zelf een moment
                     <ArrowRight className="h-4 w-4" strokeWidth={2.25} aria-hidden="true" />
                   </button>
                 </div>
               ) : (
                 <form onSubmit={stuurContact} className="mt-8 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
                   <h2 className="font-display text-[clamp(20px,4.5vw,24px)] font-extrabold leading-[1.15] text-[var(--color-primary)]">
-                    {variant === 'wachten' ? 'De agent is nog bezig' : 'Dit is de eerste scan'}
+                    {variant === 'wachten' ? 'De agent is nog bezig' : 'Laat Stevin dit voor je oplossen'}
                   </h2>
                   <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
                     {variant === 'wachten'
-                      ? 'Wil je straks de volledige meting? Stuur hem alvast naar jezelf.'
-                      : 'Wil je de volledige meting, stuur hem naar jezelf. Wil je weten wat Stevin echt voor je kan doen, plan een vrijblijvend gesprek.'}
+                      ? 'Wil je straks meteen een concrete aanpak? Laat alvast je nummer achter.'
+                      : 'Laat je nummer achter. We bellen je met een concrete aanpak voor jouw situatie.'}
                   </p>
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     <input
@@ -472,14 +522,14 @@ export default function MarketingCheck() {
                       className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
                     />
                     <input
-                      value={cEmail} onChange={(e) => setCEmail(e.target.value)}
-                      placeholder="Mailadres" type="email" autoComplete="email" required
+                      value={cTel} onChange={(e) => setCTel(e.target.value)}
+                      placeholder="Telefoonnummer" type="tel" autoComplete="tel" required
                       className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
                     />
                   </div>
                   <input
-                    value={cTel} onChange={(e) => setCTel(e.target.value)}
-                    placeholder="Telefoonnummer (mag, hoeft niet)" type="tel" autoComplete="tel"
+                    value={cEmail} onChange={(e) => setCEmail(e.target.value)}
+                    placeholder="Mailadres" type="email" autoComplete="email" required
                     className="mt-3 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
                   />
                   {cFout && <p className="mt-3 text-[14px] text-[var(--color-pink)]">{cFout}</p>}
@@ -487,13 +537,13 @@ export default function MarketingCheck() {
                     type="submit" disabled={cStatus === 'bezig'}
                     className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] disabled:opacity-60"
                   >
-                    {cStatus === 'bezig' ? 'Een moment' : 'Stuur de volledige meting naar mij'}
+                    {cStatus === 'bezig' ? 'Een moment' : 'Plan mijn Stevin-controle'}
                     {cStatus !== 'bezig' && <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />}
                   </button>
                   <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
-                    We gebruiken je gegevens alleen voor deze scan.{' '}
+                    We gebruiken je gegevens alleen om je hierover te bellen.{' '}
                     <button type="button" onClick={naarGesprek} className="font-semibold text-[var(--color-primary)] underline underline-offset-2">
-                      Liever meteen een vrijblijvend gesprek plannen
+                      Liever zelf een moment plannen
                     </button>
                   </p>
                 </form>
@@ -636,44 +686,59 @@ export default function MarketingCheck() {
             </div>
           )}
 
-          {/* De scorecard: vijf gebieden, per gebied een woord. Koen, 15 sep:
-              "ipv tekst Stevin branded scorecards", "alles wat vager houden".
-              Geen cijfer: dat kunnen we van buitenaf niet eerlijk maken. */}
-          {!uitkomst.meetprobleem && (uitkomst.scorecard?.length ?? 0) > 0 && (
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
-              {uitkomst.scorecard!.map((r) => (
-                <div key={r.gebied} className={`rounded-xl border bg-white p-4 text-center ${r.status === 'aandacht' ? 'border-[var(--color-accent)]' : 'border-[var(--color-border)]'}`}>
-                  <Ring status={r.status} />
-                  <p className="mt-3 text-[13px] font-bold text-[var(--color-primary)]">{r.label}</p>
-                  <p className={`mt-0.5 text-[12px] font-semibold ${STATUS_KLEUR[r.status]}`}>{STATUS_WOORD[r.status]}</p>
+          {/* Een diagnose, geen observatierapport (Koen, 15 sep 10:18): probleem,
+              gevolg, oplossing, belactie. Alleen de sterkste bevinding; de rest
+              staat in de ochtendbrief en in de volledige meting. */}
+          {b && (() => {
+            const d = diagnoseVan(b)
+            return (
+              <>
+                <div className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[0_1px_2px_rgba(10,22,40,0.04),0_8px_24px_-12px_rgba(10,22,40,0.12)]">
+                  <div className="border-l-4 border-[var(--color-accent)] p-5 sm:p-7">
+                    <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-accent)]">Wat we van buitenaf zien</p>
+                    <h2 className="mt-2 font-display text-[clamp(22px,5vw,30px)] font-extrabold leading-[1.15] tracking-[-0.01em] text-[var(--color-primary)]">
+                      {d.kop}
+                    </h2>
+                    <p className="mt-3 text-[15px] leading-relaxed text-[var(--color-muted)]">{kort(b.tekst)}</p>
+                    <p className="mt-4 text-[17px] font-semibold leading-snug text-[var(--color-primary)]">{d.gevolg}</p>
+                  </div>
                 </div>
-              ))}
-            </div>
-          )}
 
-          {/* Per gebied hooguit een kaart: zijn vraag, onze kop, een korte tekst.
-              Geen bewijsregels, geen bronlink, geen "wat je zelf kunt doen": de
-              volgende stap is het gesprek, niet Google. */}
-          {lijst.map((f, i) => (
-            <div key={f.code} className={`overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[0_1px_2px_rgba(10,22,40,0.04),0_8px_24px_-12px_rgba(10,22,40,0.12)] ${i === 0 && !uitkomst.scorecard?.length ? '' : 'mt-4'}`}>
-              <div className={`border-l-4 p-5 sm:p-6 ${i === 0 ? 'border-[var(--color-accent)]' : 'border-[var(--color-border)]'}`}>
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className={`text-[12px] font-bold uppercase tracking-[0.08em] ${i === 0 ? 'text-[var(--color-accent)]' : 'text-[var(--color-muted)]'}`}>
-                    {f.ondernemersvraag || GEBIED_NAAM[f.gebied]}
+                <div className="mt-4 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
+                  <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-muted)]">Dit is precies wat Stevin voor je oplost</p>
+                  <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
+                    Wij richten een onafhankelijke meetlaag in tussen je advertenties, je website en je aanvragen.
+                    Je ziet welke campagnes contact opleveren, waar de meting hapert en welke gegevens van jou blijven.
                   </p>
-                  {i === 0 && uitVerdieping && (
-                    <span className="rounded-full bg-[var(--color-surface-alt)] px-2.5 py-0.5 text-[11px] font-semibold text-[var(--color-muted)]">
-                      Uit de verdieping
-                    </span>
+                  <p className="mt-3 text-[16px] font-semibold leading-snug text-[var(--color-primary)]">
+                    Je hoeft je bureau niet meteen te vervangen. Je moet wel zelf kunnen controleren wat er gebeurt.
+                  </p>
+                </div>
+
+                <div className="mt-4 rounded-2xl border border-[var(--color-accent)] bg-white p-5 sm:p-7">
+                  <p className="font-display text-[clamp(18px,4.5vw,22px)] font-extrabold leading-[1.2] text-[var(--color-primary)]">{d.vraag}</p>
+                  {!antwoord ? (
+                    <div className="mt-4 grid grid-cols-3 gap-2">
+                      {([['ja', 'Ja'], ['nee', 'Nee'], ['weet_niet', 'Weet ik niet']] as [Antwoord, string][]).map(([w, label]) => (
+                        <button
+                          key={w} type="button" onClick={() => setAntwoord(w)}
+                          className="rounded-xl border border-[var(--color-border)] bg-white px-3 py-3.5 text-[15px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                        >
+                          {label}
+                        </button>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="mt-3 text-[15px] leading-relaxed text-[var(--color-primary)]">
+                      {antwoord === 'ja'
+                        ? 'Mooi, dan ben je verder dan de meeste. De vraag is dan of het klopt wat je ziet, en dat is precies wat een Stevin-controle nakijkt.'
+                        : 'Dan heb je zojuist je blinde vlek gevonden. Stevin kan die voor je oplossen.'}
+                    </p>
                   )}
                 </div>
-                <h2 className="mt-2 font-display text-[clamp(19px,4.5vw,24px)] font-extrabold leading-[1.2] tracking-[-0.01em] text-[var(--color-primary)]">
-                  {f.titel}
-                </h2>
-                <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">{kort(f.tekst)}</p>
-              </div>
-            </div>
-          ))}
+              </>
+            )
+          })()}
 
           {!b && !uitkomst.meetprobleem && uitkomst.geen_bevinding_tekst && (
             <div className="rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
@@ -714,7 +779,7 @@ export default function MarketingCheck() {
                   staan, wordt gebeld; wie meteen wil, plant zelf. Zonder dit
                   blok kenden we alleen het domein en hielden dertig scans per
                   dag nul namen over. */}
-              {contactBlok('klaar')}
+              {(antwoord || !b) && contactBlok('klaar')}
             </>
           )}
         </>
