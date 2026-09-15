@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
+import { headers } from 'next/headers'
 
 type Props = { params: Promise<{ locale: string }>; searchParams: Promise<{ fout?: string }> }
 
@@ -8,9 +9,28 @@ type Props = { params: Promise<{ locale: string }>; searchParams: Promise<{ fout
 // geldige cookie is; de URL blijft /marketing-check. Het formulier stuurt de
 // code als ?code= terug naar diezelfde URL, de middleware zet de cookie.
 // Geen klantnaam, geen uitleg wat erachter zit: een neutrale poort.
-export const metadata: Metadata = {
-  title: 'Stevin.AI',
-  robots: 'noindex, nofollow',
+/**
+ * Een crawler (LinkedIn, WhatsApp) heeft geen cookie en krijgt deze pagina op
+ * de URL van de check. Koen, 15 sep 14:12: "geen OG". Daarom hier dezelfde
+ * Open Graph als de pagina erachter; de middleware zegt via x-mc-pad welke.
+ */
+export async function generateMetadata(): Promise<Metadata> {
+  const pad = (await headers()).get('x-mc-pad') ?? '/marketing-check'
+  const ai = pad.includes('ai-meetproef')
+  const titel = ai ? 'De Stevin AI-meetproef: eerst meten, dan met AI bouwen' : 'Marketing Check: laat een Stevin Agent je marketing checken'
+  const beschrijving = ai
+    ? 'Jullie willen met AI werken. Kan jullie meetlaag dat dragen? Vul je bedrijfswebsite in; wij meten van buitenaf welke signalen je site doorgeeft.'
+    : 'Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat we van buitenaf kunnen zien. Geen naam, geen e-mailadres.'
+  return {
+    title: titel,
+    robots: 'noindex, nofollow',
+    openGraph: {
+      type: 'website', locale: 'nl_NL', siteName: 'Stevin.AI', title: titel, description: beschrijving,
+      url: `https://stevin.ai${ai ? '/ai-meetproef' : '/marketing-check'}`,
+      images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: titel }],
+    },
+    twitter: { card: 'summary_large_image', title: titel, description: beschrijving, images: ['/opengraph-image'] },
+  }
 }
 
 export default async function MarketingCheckToegangPage({ params, searchParams }: Props) {
