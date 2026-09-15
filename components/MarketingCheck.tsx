@@ -151,6 +151,19 @@ const STATUS_KLEUR: Record<GebiedStatus, string> = {
   aandacht: 'text-[var(--color-accent)]', niets_gevonden: 'text-[#1f9d55]', niet_gezien: 'text-[var(--color-muted)]',
 }
 
+/**
+ * Hooguit twee zinnen op het scherm. Koen, 15 sep 10:13: "weer kei veel
+ * tekst". De kop is de haak; de eerste twee zinnen zijn het feit. De rest van
+ * de tekst blijft in de API en de database voor de volledige meting.
+ * Afkortingen met punten (B.V., N.V., o.a., bijv.) tellen niet als zinseinde.
+ */
+function kort(tekst: string, maxZinnen = 2): string {
+  const beschermd = tekst.replace(/\b([A-Za-z]\.){2,}/g, (m) => m.replace(/\./g, '\u0000'))
+  const zinnen = beschermd.split(/(?<=[.!?])\s+(?=[A-Z0-9"\u201c])/).map((z) => z.replace(/\u0000/g, '.'))
+  if (zinnen.length <= maxZinnen) return tekst
+  return zinnen.slice(0, maxZinnen).join(' ')
+}
+
 /** Een ring per gebied: vol bij aandacht, dun bij niets gevonden, gestippeld bij niet gezien. */
 function Ring({ status }: { status: GebiedStatus }) {
   const kleur = status === 'aandacht' ? 'var(--color-accent)' : status === 'niets_gevonden' ? '#1f9d55' : 'var(--color-border)'
@@ -436,7 +449,7 @@ export default function MarketingCheck() {
                   </p>
                   <button
                     onClick={naarGesprek}
-                    className="mt-5 inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-3 text-[15px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)]"
+                    className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-3.5 text-[16px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)]"
                   >
                     Plan een vrijblijvend gesprek
                     <ArrowRight className="h-4 w-4" strokeWidth={2.25} aria-hidden="true" />
@@ -657,7 +670,7 @@ export default function MarketingCheck() {
                 <h2 className="mt-2 font-display text-[clamp(19px,4.5vw,24px)] font-extrabold leading-[1.2] tracking-[-0.01em] text-[var(--color-primary)]">
                   {f.titel}
                 </h2>
-                <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">{f.tekst}</p>
+                <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">{kort(f.tekst)}</p>
               </div>
             </div>
           ))}
