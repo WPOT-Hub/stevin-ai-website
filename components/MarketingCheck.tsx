@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Globe, Inbox, Search, User } from 'lucide-react'
+import { ArrowRight, Globe } from 'lucide-react'
 
 const HUB_LIVE = 'https://hub.stevin.ai/api/marketing-check'
 const CAL = 'https://cal.com/koen-hoogenboom/kennismaking'
@@ -142,139 +142,161 @@ function kaalDomein(s: string): string {
 }
 
 /**
- * De diagnose-laag (Koen, 15 sep 10:18, na een lezing door ChatGPT): niet
- * "kijk wat we zagen" maar probleem, gevolg, oplossing, belactie. Per code
- * een kop die de pijn benoemt, een gevolgzin en de vraag waarmee de bezoeker
- * zelf zijn blinde vlek aanwijst. De feiten eronder komen uit de Hub en
- * blijven de feiten; de kop beweert niets dat daar niet in staat.
+ * De diagnose per soort bevinding (Koen, 15 sep 10:18 en 10:46, na twee
+ * lezingen door ChatGPT): een grote pijn, de meetketen met het kruis op de
+ * schakel die kapot is, drie bewijspunten, en wat Stevin herstelt. Alles in
+ * een oogopslag onder elkaar; de bezoeker hoeft de conclusie niet zelf te
+ * bouwen. De feiten uit de Hub blijven de feiten; niets hier beweert meer dan
+ * de bevinding zelf.
  */
-interface Diagnose { kop: string; gevolg: string; vraag: string }
+interface Diagnose {
+  label: string
+  kop: string
+  gevolg: string
+  keten: string[]
+  /** Index van de schakel die kapot is: tussen keten[kapot] en keten[kapot + 1]. */
+  kapot: number
+  woord: string
+  punten: [string, string][]
+  herstel: string
+  vraag: string
+}
 const DIAGNOSE: Record<string, Diagnose> = {
-  ADVERTISING_FUNDER_MISMATCH: {
-    kop: 'Je betaalt voor advertenties, maar kunt niet zelfstandig zien wat ze opleveren.',
-    gevolg: 'Je stuurt dan op vertrouwen, niet op bewijs.',
-    vraag: 'Kun jij vandaag zelf zien welke advertentie een echte aanvraag heeft opgeleverd?',
-  },
-  ADVERTISING_ACTIVE_CONVERSION_UNKNOWN: {
-    kop: 'Je adverteert, maar of een aanvraag daaruit geteld wordt, is niet te zien.',
-    gevolg: 'Google stuurt je budget dan op een deel van de werkelijkheid.',
-    vraag: 'Kun jij vandaag zelf zien welke advertentie een echte aanvraag heeft opgeleverd?',
-  },
-  CONVERSION_LEADPATHS_UNVERIFIED: {
-    kop: 'Je site krijgt aanvragen binnen, maar of ze geteld worden weet niemand.',
-    gevolg: 'Aan het eind van de maand weet je dan niet wat je site en je advertenties hebben opgeleverd.',
-    vraag: 'Weet jij hoeveel aanvragen je site vorige maand opleverde?',
-  },
-  CONVERSION_LEADPATHS_UNCOUNTED: {
-    kop: 'Je site krijgt aanvragen binnen, maar of ze geteld worden weet niemand.',
-    gevolg: 'Aan het eind van de maand weet je dan niet wat je site heeft opgeleverd.',
-    vraag: 'Weet jij hoeveel aanvragen je site vorige maand opleverde?',
-  },
   CONSENT_MEASUREMENT_BEFORE_INTERACTION: {
-    kop: 'Je cookiebanner staat er, maar je meting wacht er niet op.',
-    gevolg: 'Wat je meet klopt dan niet met wat je belooft, en dat valt op bij wie kijkt.',
+    label: 'Aandacht voor je meetketen',
+    kop: 'Je cookiebanner vraagt toestemming. Je meting wacht daar niet op.',
+    gevolg: 'Je cijfers veranderen dan met de knop waarop een bezoeker klikt. Je hebt geen vaste meetlat voor je marketing.',
+    keten: ['Cookiebanner', 'Toestemming', 'Meting', 'Aanvraag'], kapot: 1, woord: 'meting loopt al',
+    punten: [['Cookiebanner', 'Aanwezig'], ['Meting', 'Laadt voor de klik'], ['Gevolg', 'Aanvragen niet betrouwbaar te herleiden']],
+    herstel: 'Wij brengen cookiebanner, toestemming, tags en conversiemeting weer op een lijn. Je ziet daarna welke marketing contact oplevert en waar je meting hapert.',
     vraag: 'Weet jij wat er op je site al meet voordat iemand op de banner klikt?',
   },
   MEASUREMENT_NOTHING_AFTER_CONSENT: {
+    label: 'Aandacht voor je meetketen',
     kop: 'Ook na toestemming meet je site niets.',
-    gevolg: 'Van iedereen die op je site komt, weet je dan niets.',
+    gevolg: 'Van iedereen die op je site komt, weet je dan niets. Ook niet hoeveel er een aanvraag doen.',
+    keten: ['Cookiebanner', 'Toestemming', 'Meting', 'Aanvraag'], kapot: 1, woord: 'niets gemeten',
+    punten: [['Cookiebanner', 'Geaccepteerd'], ['Meting', 'Geen enkele'], ['Gevolg', 'Geen cijfers over je bezoekers']],
+    herstel: 'Wij koppelen de meting aan de toestemming zodat ze weer aangaat, en tellen daarna wat er binnenkomt.',
     vraag: 'Kun jij zien hoeveel bezoekers je site vorige week had?',
   },
+  ADVERTISING_FUNDER_MISMATCH: {
+    label: 'Aandacht voor je advertenties',
+    kop: 'Je betaalt voor advertenties, maar kunt niet zelfstandig zien welke aanvragen ze opleveren.',
+    gevolg: 'Je stuurt dan op vertrouwen, niet op bewijs. En bij een wissel van bureau gaat de historie niet vanzelf mee.',
+    keten: ['Advertentie', 'Klik', 'Website', 'Aanvraag'], kapot: 2, woord: 'niet zelf te zien',
+    punten: [['Advertenties', 'Op jouw naam'], ['Betaler', 'Een andere partij'], ['Gevolg', 'Opbrengst niet zelf te controleren']],
+    herstel: 'Wij zetten een onafhankelijke meting tussen je advertenties, je website en je aanvragen, op jouw naam. Je ziet daarna welke advertentie een aanvraag opleverde, wie er ook aan de knoppen zit.',
+    vraag: 'Kun jij vandaag zelf zien welke advertentie een echte aanvraag heeft opgeleverd?',
+  },
+  ADVERTISING_ACTIVE_CONVERSION_UNKNOWN: {
+    label: 'Aandacht voor je advertenties',
+    kop: 'Je adverteert, maar of een aanvraag daaruit geteld wordt, is niet te zien.',
+    gevolg: 'Google stuurt je budget dan op een deel van de werkelijkheid.',
+    keten: ['Advertentie', 'Klik', 'Website', 'Aanvraag'], kapot: 2, woord: 'niet geteld',
+    punten: [['Advertenties', 'In het register van Google'], ['Contact', 'Formulier of telefoon'], ['Gevolg', 'Telt Google de aanvraag mee?']],
+    herstel: 'Wij koppelen elke aanvraag, formulier en telefoontje, aan de advertentie die hem opleverde. Google krijgt daarna de goede informatie om op te sturen.',
+    vraag: 'Kun jij vandaag zelf zien welke advertentie een echte aanvraag heeft opgeleverd?',
+  },
+  CONVERSION_LEADPATHS_UNVERIFIED: {
+    label: 'Aandacht voor je aanvragen',
+    kop: 'Je site krijgt aanvragen binnen, maar of ze geteld worden weet niemand.',
+    gevolg: 'Aan het eind van de maand weet je dan niet wat je site en je advertenties hebben opgeleverd.',
+    keten: ['Bezoeker', 'Website', 'Aanvraag', 'Jij'], kapot: 2, woord: 'niet geteld',
+    punten: [['Contactroutes', 'Formulier, telefoon, mail'], ['Advertentiemeting', 'Aanwezig'], ['Gevolg', 'Aanvragen niet herleid']],
+    herstel: 'Wij tellen elke aanvraag, ook het telefoontje, en koppelen hem aan waar hij vandaan kwam. Je weet daarna per maand wat je site oplevert.',
+    vraag: 'Weet jij hoeveel aanvragen je site vorige maand opleverde?',
+  },
+  CONVERSION_LEADPATHS_UNCOUNTED: {
+    label: 'Aandacht voor je aanvragen',
+    kop: 'Je site krijgt aanvragen binnen, maar of ze geteld worden weet niemand.',
+    gevolg: 'Aan het eind van de maand weet je dan niet wat je site heeft opgeleverd.',
+    keten: ['Bezoeker', 'Website', 'Aanvraag', 'Jij'], kapot: 2, woord: 'niet geteld',
+    punten: [['Contactroutes', 'Formulier, telefoon, mail'], ['Meting', 'Aanwezig'], ['Gevolg', 'Alleen bezoek geteld']],
+    herstel: 'Wij tellen elke aanvraag, ook het telefoontje, en koppelen hem aan waar hij vandaan kwam. Je weet daarna per maand wat je site oplevert.',
+    vraag: 'Weet jij hoeveel aanvragen je site vorige maand opleverde?',
+  },
   PROFIEL_REVIEWS_STILGEVALLEN: {
+    label: 'Aandacht voor je reputatie',
     kop: 'Wie je naam googelt, ziet een profiel dat stil staat.',
     gevolg: 'Een nieuwe klant leest dat als een bedrijf dat stil staat, nog voor hij je site ziet.',
+    keten: ['Zoeken', 'Google-profiel', 'Website', 'Aanvraag'], kapot: 1, woord: 'klant haakt af',
+    punten: [['Google-profiel', 'Gevonden'], ['Laatste review', 'Lang geleden'], ['Gevolg', 'Klant kiest een ander']],
+    herstel: 'Wij zetten een vaste routine op voor reviews en antwoorden, en meten of je profiel weer aanvragen oplevert.',
     vraag: 'Weet jij wanneer je laatste Google-review binnenkwam?',
   },
   PROFIEL_WEINIG_REVIEWS: {
+    label: 'Aandacht voor je reputatie',
     kop: 'Wie je naam googelt, ziet bijna geen reviews.',
     gevolg: 'Een nieuwe klant kiest dan voor wie er wel heeft.',
+    keten: ['Zoeken', 'Google-profiel', 'Website', 'Aanvraag'], kapot: 1, woord: 'klant haakt af',
+    punten: [['Google-profiel', 'Gevonden'], ['Reviews', 'Te weinig'], ['Gevolg', 'Klant kiest een ander']],
+    herstel: 'Wij zetten een vaste routine op voor reviews en antwoorden, en meten of je profiel weer aanvragen oplevert.',
     vraag: 'Weet jij wanneer je laatste Google-review binnenkwam?',
   },
   SITE_TRAAG_OP_TELEFOON: {
+    label: 'Aandacht voor je website',
     kop: 'Je site is traag op de telefoon, en daar komen de meeste aanvragen vandaan.',
     gevolg: 'Wie moet wachten, belt de volgende.',
+    keten: ['Zoeken', 'Klik', 'Website', 'Aanvraag'], kapot: 1, woord: 'laadt traag',
+    punten: [['Snelheid op telefoon', 'Onder de maat'], ['Laden', 'Meer dan vier seconden'], ['Gevolg', 'Bezoekers haken af']],
+    herstel: 'Wij laten meten wat je site traag maakt, zorgen dat het wordt opgelost en meten daarna of er meer aanvragen binnenkomen.',
     vraag: 'Heb jij je eigen site weleens op een telefoon buiten je wifi geopend?',
   },
   MAIL_DOMEIN_ONBESCHERMD: {
+    label: 'Aandacht voor je mail',
     kop: 'Mail uit jouw naam kan door iedereen verstuurd worden.',
     gevolg: 'Je eigen mail komt daardoor vaker in spam, en je antwoord op een aanvraag ook.',
+    keten: ['Aanvraag', 'Jouw antwoord', 'Inbox klant', 'Opdracht'], kapot: 1, woord: 'in spam',
+    punten: [['Mailbeveiliging', 'Ontbreekt'], ['Formulier', 'Aanwezig'], ['Gevolg', 'Antwoorden komen niet aan']],
+    herstel: 'Wij zetten de beveiliging van je maildomein goed en controleren daarna of je mail aankomt.',
     vraag: 'Komt jouw mail weleens in spam bij klanten?',
   },
 }
-const DIAGNOSE_STANDAARD: Diagnose = {
-  kop: '',
-  gevolg: 'Zolang dat zo is, stuur je op gevoel in plaats van op bewijs.',
-  vraag: 'Kun jij vandaag zelf narekenen wat je marketing oplevert?',
-}
 function diagnoseVan(f: Bevinding): Diagnose {
-  const d = DIAGNOSE[f.code]
-  return d ?? { ...DIAGNOSE_STANDAARD, kop: f.titel }
+  return DIAGNOSE[f.code] ?? {
+    label: 'Aandacht',
+    kop: f.titel,
+    gevolg: 'Zolang dat zo is, stuur je op gevoel in plaats van op bewijs.',
+    keten: ['Google', 'Je website', 'Aanvragen', 'Jij'], kapot: 1, woord: 'niet te zien',
+    punten: [],
+    herstel: 'Wij richten een onafhankelijke meetlaag in tussen je advertenties, je website en je aanvragen. Je ziet daarna welke marketing contact oplevert en waar je meting hapert.',
+    vraag: 'Kun jij vandaag zelf narekenen wat je marketing oplevert?',
+  }
 }
 
 type Antwoord = 'ja' | 'nee' | 'weet_niet'
 
-/**
- * De keten die elke ondernemer kent: Google, je website, aanvragen, jij. Per
- * bevinding is een schakel onzichtbaar of kapot; die tekenen we rood
- * gestippeld met een woord erop. Koen, 15 sep 10:39: "nog steeds niet heel
- * visueel". Dit is het Stevin-verhaal in een plaatje: de meetlaag zit tussen
- * die schakels. 0 = Google naar website, 1 = website naar aanvragen, 2 =
- * aanvragen naar jou.
- */
-const SCHAKEL: Record<string, { schakel: 0 | 1 | 2; woord: string }> = {
-  ADVERTISING_FUNDER_MISMATCH: { schakel: 2, woord: 'Niet te zien' },
-  ADVERTISING_ACTIVE_CONVERSION_UNKNOWN: { schakel: 1, woord: 'Niet geteld' },
-  CONVERSION_LEADPATHS_UNVERIFIED: { schakel: 1, woord: 'Niet geteld' },
-  CONVERSION_LEADPATHS_UNCOUNTED: { schakel: 1, woord: 'Niet geteld' },
-  CONSENT_MEASUREMENT_BEFORE_INTERACTION: { schakel: 0, woord: 'Meet te vroeg' },
-  MEASUREMENT_NOTHING_AFTER_CONSENT: { schakel: 1, woord: 'Niets gemeten' },
-  PROFIEL_REVIEWS_STILGEVALLEN: { schakel: 0, woord: 'Staat stil' },
-  PROFIEL_WEINIG_REVIEWS: { schakel: 0, woord: 'Bijna leeg' },
-  SITE_TRAAG_OP_TELEFOON: { schakel: 0, woord: 'Traag' },
-  MAIL_DOMEIN_ONBESCHERMD: { schakel: 2, woord: 'In spam' },
-}
-function schakelVan(f: Bevinding): { schakel: 0 | 1 | 2; woord: string } {
-  return SCHAKEL[f.code] ?? { schakel: 1, woord: 'Niet te zien' }
-}
-
-const KETEN_NODES: { naam: string; Icoon: typeof Globe }[] = [
-  { naam: 'Google', Icoon: Search },
-  { naam: 'Je website', Icoon: Globe },
-  { naam: 'Aanvragen', Icoon: Inbox },
-  { naam: 'Jij', Icoon: User },
-]
-
-function Keten({ schakel, woord }: { schakel: 0 | 1 | 2; woord: string }) {
+/** De meetketen: de schakels van deze bevinding, met het kruis op de kapotte. */
+function Keten({ keten, kapot, woord }: { keten: string[]; kapot: number; woord: string }) {
   return (
-    <div className="mt-5 flex items-start" aria-label={`Keten: de schakel ${KETEN_NODES[schakel].naam} naar ${KETEN_NODES[schakel + 1].naam} is ${woord.toLowerCase()}`}>
-      {KETEN_NODES.map(({ naam, Icoon }, i) => (
-        <div key={naam} className="contents">
-          <div className="flex w-[64px] flex-shrink-0 flex-col items-center sm:w-[84px]">
-            <div className={`flex h-11 w-11 items-center justify-center rounded-full border-2 bg-white sm:h-12 sm:w-12 ${i === schakel || i === schakel + 1 ? 'border-[var(--color-primary)]' : 'border-[var(--color-border)]'}`}>
-              <Icoon className={`h-5 w-5 ${i === schakel || i === schakel + 1 ? 'text-[var(--color-primary)]' : 'text-[var(--color-muted)]'}`} strokeWidth={2} aria-hidden="true" />
+    <div className="mt-5 rounded-xl bg-[var(--color-surface)] px-3 pb-6 pt-9 sm:px-5" aria-label={`Meetketen: tussen ${keten[kapot]} en ${keten[kapot + 1]} ${woord}`}>
+      <div className="flex items-center">
+        {keten.map((naam, i) => (
+          <div key={naam} className="contents">
+            <div className={`rounded-lg border px-2 py-2 text-center text-[11px] font-bold leading-tight sm:px-3 sm:text-[13px] ${i === kapot || i === kapot + 1 ? 'border-[var(--color-primary)] bg-white text-[var(--color-primary)]' : 'border-[var(--color-border)] bg-white text-[var(--color-muted)]'}`}>
+              {naam}
             </div>
-            <p className="mt-1.5 text-center text-[11px] font-semibold leading-tight text-[var(--color-primary)] sm:text-[12px]">{naam}</p>
-          </div>
-          {i < 3 && (
-            <div className="relative mt-[22px] flex min-w-[24px] flex-1 flex-col items-center sm:mt-6">
-              {i === schakel ? (
-                <>
-                  <span className="absolute -top-[22px] whitespace-nowrap rounded-full bg-[#d23f57] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.06em] text-white sm:-top-6 sm:text-[11px]">
-                    {woord}
-                  </span>
+            {i < keten.length - 1 && (
+              <div className="relative flex min-w-[18px] flex-1 items-center justify-center sm:min-w-[28px]">
+                {i === kapot ? (
+                  <>
+                    <svg className="h-[2px] w-full" aria-hidden="true">
+                      <line x1="0" y1="1" x2="100%" y2="1" stroke="#d23f57" strokeWidth="2" strokeDasharray="4 4" />
+                    </svg>
+                    <span className="absolute -top-[28px] flex h-6 w-6 items-center justify-center rounded-full bg-[#d23f57] text-[13px] font-black text-white" aria-hidden="true">&#x2715;</span>
+                    <span className="absolute top-[10px] whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.06em] text-[#d23f57] sm:text-[11px]">{woord}</span>
+                  </>
+                ) : (
                   <svg className="h-[2px] w-full" aria-hidden="true">
-                    <line x1="0" y1="1" x2="100%" y2="1" stroke="#d23f57" strokeWidth="2" strokeDasharray="4 4" />
+                    <line x1="0" y1="1" x2="100%" y2="1" stroke="var(--color-border)" strokeWidth="2" />
                   </svg>
-                </>
-              ) : (
-                <svg className="h-[2px] w-full" aria-hidden="true">
-                  <line x1="0" y1="1" x2="100%" y2="1" stroke="var(--color-border)" strokeWidth="2" />
-                </svg>
-              )}
-            </div>
-          )}
-        </div>
-      ))}
+                )}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -561,7 +583,7 @@ export default function MarketingCheck() {
                     Dank, we bellen je
                   </p>
                   <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
-                    Je krijgt een concrete aanpak voor jouw situatie. Wil je niet wachten, plan dan zelf een moment.
+                    We laten je zien wat er moet worden aangepast. Wil je niet wachten, plan dan zelf een moment.
                   </p>
                   <button
                     onClick={naarGesprek}
@@ -574,12 +596,12 @@ export default function MarketingCheck() {
               ) : (
                 <form onSubmit={stuurContact} className="mt-8 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
                   <h2 className="font-display text-[clamp(20px,4.5vw,24px)] font-extrabold leading-[1.15] text-[var(--color-primary)]">
-                    {variant === 'wachten' ? 'De agent is nog bezig' : 'Laat Stevin dit voor je oplossen'}
+                    {variant === 'wachten' ? 'De agent is nog bezig' : 'Plan je herstelgesprek'}
                   </h2>
                   <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
                     {variant === 'wachten'
-                      ? 'Wil je straks meteen een concrete aanpak? Laat alvast je nummer achter.'
-                      : 'Laat je nummer achter. We bellen je met een concrete aanpak voor jouw situatie.'}
+                      ? 'Wil je straks meteen weten wat er moet worden aangepast? Laat alvast je nummer achter.'
+                      : 'We bellen je en laten zien wat er moet worden aangepast.'}
                   </p>
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     <input
@@ -603,7 +625,7 @@ export default function MarketingCheck() {
                     type="submit" disabled={cStatus === 'bezig'}
                     className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] disabled:opacity-60"
                   >
-                    {cStatus === 'bezig' ? 'Een moment' : 'Plan mijn Stevin-controle'}
+                    {cStatus === 'bezig' ? 'Een moment' : 'Plan mijn herstelgesprek'}
                     {cStatus !== 'bezig' && <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />}
                   </button>
                   <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
@@ -752,37 +774,44 @@ export default function MarketingCheck() {
             </div>
           )}
 
-          {/* Een diagnose, geen observatierapport (Koen, 15 sep 10:18): probleem,
-              gevolg, oplossing, belactie. Alleen de sterkste bevinding; de rest
-              staat in de ochtendbrief en in de volledige meting. */}
+          {/* Een pijn per scan, in een oogopslag: oorzaak, meetketen met het kruis,
+              drie bewijspunten, gevolg. Dan wat Stevin herstelt, dan de vraag,
+              dan pas het nummer. Koen, 15 sep 10:46. */}
           {b && (() => {
             const d = diagnoseVan(b)
             return (
               <>
                 <div className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[0_1px_2px_rgba(10,22,40,0.04),0_8px_24px_-12px_rgba(10,22,40,0.12)]">
-                  <div className="border-l-4 border-[var(--color-accent)] p-5 sm:p-7">
-                    <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-accent)]">Wat we van buitenaf zien</p>
+                  <div className="border-l-4 border-[#d23f57] p-5 sm:p-7">
+                    <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#d23f57]">{d.label}</p>
                     <h2 className="mt-2 font-display text-[clamp(22px,5vw,30px)] font-extrabold leading-[1.15] tracking-[-0.01em] text-[var(--color-primary)]">
                       {d.kop}
                     </h2>
-                    <Keten {...schakelVan(b)} />
-                    <p className="mt-5 text-[15px] leading-relaxed text-[var(--color-muted)]">{kort(b.tekst)}</p>
-                    <p className="mt-4 text-[17px] font-semibold leading-snug text-[var(--color-primary)]">{d.gevolg}</p>
+                    <p className="mt-3 text-[16px] font-semibold leading-snug text-[var(--color-primary)]">{d.gevolg}</p>
+
+                    <Keten keten={d.keten} kapot={d.kapot} woord={d.woord} />
+
+                    {d.punten.length > 0 && (
+                      <div className="mt-4 grid gap-2 sm:grid-cols-3">
+                        {d.punten.map(([label, waarde], i) => (
+                          <div key={label} className={`rounded-lg border px-3 py-2.5 ${i === d.punten.length - 1 ? 'border-[#d23f57]/40 bg-[#d23f57]/5' : 'border-[var(--color-border)] bg-white'}`}>
+                            <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-[var(--color-muted)]">{label}</p>
+                            <p className={`mt-0.5 text-[14px] font-semibold leading-snug ${i === d.punten.length - 1 ? 'text-[#d23f57]' : 'text-[var(--color-primary)]'}`}>{waarde}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <p className="mt-4 text-[13px] leading-relaxed text-[var(--color-muted)]">{kort(b.tekst, 1)}</p>
                   </div>
                 </div>
 
-                <div className="mt-4 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
-                  <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-muted)]">Dit is precies wat Stevin voor je oplost</p>
-                  <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
-                    Wij richten een onafhankelijke meetlaag in tussen je advertenties, je website en je aanvragen.
-                    Je ziet welke campagnes contact opleveren, waar de meting hapert en welke gegevens van jou blijven.
-                  </p>
-                  <p className="mt-3 text-[16px] font-semibold leading-snug text-[var(--color-primary)]">
-                    Je hoeft je bureau niet meteen te vervangen. Je moet wel zelf kunnen controleren wat er gebeurt.
-                  </p>
+                <div className="mt-4 rounded-2xl border border-[var(--color-accent)] bg-white p-5 sm:p-7">
+                  <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-accent)]">Dit kan Stevin voor je herstellen</p>
+                  <p className="mt-2 text-[16px] leading-relaxed text-[var(--color-primary)]">{d.herstel}</p>
                 </div>
 
-                <div className="mt-4 rounded-2xl border border-[var(--color-accent)] bg-white p-5 sm:p-7">
+                <div className="mt-4 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
                   <p className="font-display text-[clamp(18px,4.5vw,22px)] font-extrabold leading-[1.2] text-[var(--color-primary)]">{d.vraag}</p>
                   {!antwoord ? (
                     <div className="mt-4 grid grid-cols-3 gap-2">
@@ -798,8 +827,8 @@ export default function MarketingCheck() {
                   ) : (
                     <p className="mt-3 text-[15px] leading-relaxed text-[var(--color-primary)]">
                       {antwoord === 'ja'
-                        ? 'Mooi, dan ben je verder dan de meeste. De vraag is dan of het klopt wat je ziet, en dat is precies wat een Stevin-controle nakijkt.'
-                        : 'Dan heb je zojuist je blinde vlek gevonden. Stevin kan die voor je oplossen.'}
+                        ? 'Mooi, dan ben je verder dan de meeste. De vraag is dan of het klopt wat je ziet, en dat is precies wat een herstelgesprek nakijkt.'
+                        : 'Dan heb je zojuist je blinde vlek gevonden. Stevin kan die voor je herstellen.'}
                     </p>
                   )}
                 </div>
