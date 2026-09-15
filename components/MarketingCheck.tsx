@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Check, ExternalLink, Globe } from 'lucide-react'
+import { ArrowRight, ExternalLink, Globe } from 'lucide-react'
 
 const HUB_LIVE = 'https://hub.stevin.ai/api/marketing-check'
 const CAL = 'https://cal.com/koen-hoogenboom/kennismaking'
@@ -59,6 +59,11 @@ interface Uitkomst {
   } | null
   meetprobleem: string | null
   bevinding: Bevinding | null
+  /**
+   * Alles wat de scan vond, in volgorde van wat de eigenaar het meest aangaat.
+   * Koen, 15 sep: "geef gewoon alle bevindingen." De eerste is `bevinding`.
+   */
+  bevindingen?: Bevinding[]
   geen_bevinding_tekst: string | null
   ook_gezien: string[]
 }
@@ -143,6 +148,13 @@ export default function MarketingCheck() {
   const [verdiepingLiepNog, setVerdiepingLiepNog] = useState(false)
   const [tokens, setTokens] = useState(0)
   const [voortgang, setVoortgang] = useState<NonNullable<Uitkomst['voortgang']> | null>(null)
+  // Het contactblok onder de uitkomst: hier wordt een scan een lead.
+  const [cNaam, setCNaam] = useState('')
+  const [cEmail, setCEmail] = useState('')
+  const [cTel, setCTel] = useState('')
+  const [cBericht, setCBericht] = useState('')
+  const [cStatus, setCStatus] = useState<'invoer' | 'bezig' | 'klaar'>('invoer')
+  const [cFout, setCFout] = useState<string | null>(null)
 
   const params = useRef<{ p: string | null; s: string | null }>({ p: null, s: null })
   const pollTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -291,7 +303,37 @@ export default function MarketingCheck() {
     window.location.href = `${CAL}?${q.toString()}`
   }
 
+  async function stuurContact(e: React.FormEvent) {
+    e.preventDefault()
+    if (!uitkomst?.token || cStatus === 'bezig') return
+    setCStatus('bezig')
+    setCFout(null)
+    try {
+      const res = await fetch(`${hub.current}/result/${uitkomst.token}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          naam: cNaam, email: cEmail, telefoon: cTel, bericht: cBericht,
+          session_token: params.current.s,
+        }),
+      })
+      const data = await res.json()
+      if (!res.ok || !data?.ok) {
+        setCFout(data?.error || 'Dat lukte niet. Probeer het nog eens.')
+        setCStatus('invoer')
+        return
+      }
+      setCStatus('klaar')
+    } catch {
+      setCFout('Dat lukte niet. Controleer je verbinding en probeer het nog eens.')
+      setCStatus('invoer')
+    }
+  }
+
   const b = uitkomst?.bevinding
+  // De hele lijst als de Hub hem meestuurt, anders de ene bevinding. Zo blijft
+  // dit scherm werken tegen een Hub die nog niet is bijgewerkt.
+  const lijst: Bevinding[] = uitkomst?.bevindingen?.length ? uitkomst.bevindingen : b ? [b] : []
   const uitVerdieping = uitkomst?.bevinding_bron === 'verdieping'
   const vGereed = aGereed && vStatus !== 'running'
 
@@ -455,67 +497,61 @@ export default function MarketingCheck() {
             </div>
           )}
 
-          {b && (
-            <div className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[0_1px_2px_rgba(10,22,40,0.04),0_8px_24px_-12px_rgba(10,22,40,0.12)]">
-              <div className="border-l-4 border-[var(--color-accent)] p-5 sm:p-7">
+          {/* Alle bevindingen, niet alleen de kop. De eerste krijgt het accent en
+              het label uit de verdieping; de rest staat er in dezelfde vorm
+              onder, zodat je in een oogopslag ziet hoeveel er ligt. */}
+          {lijst.map((f, i) => (
+            <div key={f.code} className={`overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[0_1px_2px_rgba(10,22,40,0.04),0_8px_24px_-12px_rgba(10,22,40,0.12)] ${i > 0 ? 'mt-4' : ''}`}>
+              <div className={`border-l-4 p-5 sm:p-7 ${i === 0 ? 'border-[var(--color-accent)]' : 'border-[var(--color-border)]'}`}>
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   {/* Zijn vraag boven onze bevinding. "Hier valt winst te halen" suggereerde
                       een gevonden fout, ook waar we alleen een controlepunt hebben. */}
-                  <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-accent)]">
-                    {b.ondernemersvraag || (b.ernst === 'issue' ? 'Dit valt op' : 'Dit zagen we')}
+                  <p className={`text-[12px] font-bold uppercase tracking-[0.08em] ${i === 0 ? 'text-[var(--color-accent)]' : 'text-[var(--color-muted)]'}`}>
+                    {f.ondernemersvraag || (f.ernst === 'issue' ? 'Dit valt op' : 'Dit zagen we')}
                   </p>
-                  {uitVerdieping && (
+                  {i === 0 && uitVerdieping && (
                     <span className="rounded-full bg-[var(--color-surface-alt)] px-2.5 py-0.5 text-[11px] font-semibold text-[var(--color-muted)]">
                       Uit de verdieping
                     </span>
                   )}
                 </div>
                 <h2 className="mt-3 font-display text-[clamp(22px,5vw,28px)] font-extrabold leading-[1.15] tracking-[-0.01em] text-[var(--color-primary)]">
-                  {b.titel}
+                  {f.titel}
                 </h2>
-                <p className="mt-3 text-[16px] leading-relaxed text-[var(--color-muted)]">{b.tekst}</p>
+                <p className="mt-3 text-[16px] leading-relaxed text-[var(--color-muted)]">{f.tekst}</p>
 
-                {b.bewijs.length > 0 && (
-                  <div className="mt-5 border-t border-[var(--color-border)] pt-5">
-                    <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-muted)]">Wat we zagen</p>
-                    <ul className="mt-2 space-y-2">
-                      {b.bewijs.map((e) => (
-                        <li key={e} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-[var(--color-primary)]">
-                          <Check className="mt-[3px] h-4 w-4 flex-shrink-0 text-[var(--color-accent)]" strokeWidth={2.5} aria-hidden="true" />
-                          <span>{e}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    {/* Koen, 14 sep: "klanten weten toch niet waar ze moeten zoeken." Dus
-                        geen verwijzing naar een register, maar een link die er meteen staat. */}
-                    {b.bron_url && (
-                      <a
-                        href={b.bron_url}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)]"
-                      >
-                        Kijk het zelf na bij de bron
-                        <ExternalLink className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
-                      </a>
-                    )}
-                  </div>
+                {/* Geen "wat we zagen"-lijst meer. Koen, 15 sep 02:00: bij alle drie de
+                    bevindingen herhaalde die lijst letterlijk de zin erboven, en bij zijn
+                    eigen contactroutes vertelde hij een ondernemer wat hij zelf op zijn
+                    site heeft gezet. Dat leest als een tagscanner, niet als iemand die
+                    iets doorheeft. De feiten staan in de tekst; wie het wil narekenen
+                    krijgt de bron. Het bewijs blijft in de database, voor onze briefing. */}
+                {f.bron_url && (
+                  <a
+                    href={f.bron_url}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="mt-5 inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)]"
+                  >
+                    Kijk het zelf na bij de bron
+                    <ExternalLink className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+                  </a>
                 )}
 
-                {b.vervolgstap && (
+                {f.vervolgstap && (
                   <div className="mt-5 rounded-xl bg-[var(--color-surface)] p-4 sm:p-5">
                     <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-muted)]">
                       Wat je zelf kunt doen
                     </p>
                     <p className="mt-2 flex items-start gap-2.5 text-[15px] leading-relaxed text-[var(--color-primary)]">
                       <ArrowRight className="mt-[3px] h-4 w-4 flex-shrink-0 text-[var(--color-accent)]" strokeWidth={2.5} aria-hidden="true" />
-                      <span>{b.vervolgstap}</span>
+                      <span>{f.vervolgstap}</span>
                     </p>
                   </div>
                 )}
               </div>
             </div>
-          )}
+          ))}
 
           {!b && !uitkomst.meetprobleem && uitkomst.geen_bevinding_tekst && (
             <div className="rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
@@ -552,17 +588,73 @@ export default function MarketingCheck() {
             </p>
           ) : (
             <>
-              <button
-                onClick={naarGesprek}
-                className="mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)]"
-              >
-                Plan een kennismaking van twintig minuten
-                <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
-              </button>
-              <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
-                Deze check kijkt van buitenaf; we hebben nog niet onder de motorkap kunnen kijken.
-                We lopen samen door wat hier staat, en daarna kunnen we dieper in je situatie duiken.
-              </p>
+              {/* Het punt waarop een scan een lead wordt. Wie zijn nummer laat
+                  staan, wordt gebeld; wie meteen wil, plant zelf. Zonder dit
+                  blok kenden we alleen het domein en hielden dertig scans per
+                  dag nul namen over. */}
+              {cStatus === 'klaar' ? (
+                <div className="mt-8 rounded-2xl border border-[var(--color-accent)] bg-white p-5 sm:p-7">
+                  <p className="font-display text-[20px] font-extrabold text-[var(--color-primary)]">
+                    Dank, we hebben je gegevens
+                  </p>
+                  <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
+                    We nemen contact met je op om dit samen door te lopen. Wil je niet wachten, plan dan zelf een moment.
+                  </p>
+                  <button
+                    onClick={naarGesprek}
+                    className="mt-5 inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-3 text-[15px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)]"
+                  >
+                    Plan een kennismaking van twintig minuten
+                    <ArrowRight className="h-4 w-4" strokeWidth={2.25} aria-hidden="true" />
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={stuurContact} className="mt-8 rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
+                  <h2 className="font-display text-[clamp(20px,4.5vw,24px)] font-extrabold leading-[1.15] text-[var(--color-primary)]">
+                    Zullen we dit samen nakijken?
+                  </h2>
+                  <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-muted)]">
+                    Deze check kijkt van buitenaf. Wat er in je advertentie- en meetaccounts gebeurt, zien we hier niet.
+                    Laat je nummer achter, dan bellen we je en lopen we het samen door.
+                  </p>
+                  <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                    <input
+                      value={cNaam} onChange={(e) => setCNaam(e.target.value)}
+                      placeholder="Je naam" autoComplete="name" required
+                      className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
+                    />
+                    <input
+                      value={cTel} onChange={(e) => setCTel(e.target.value)}
+                      placeholder="Telefoonnummer" type="tel" autoComplete="tel"
+                      className="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
+                    />
+                  </div>
+                  <input
+                    value={cEmail} onChange={(e) => setCEmail(e.target.value)}
+                    placeholder="Mailadres" type="email" autoComplete="email" required
+                    className="mt-3 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
+                  />
+                  <textarea
+                    value={cBericht} onChange={(e) => setCBericht(e.target.value)}
+                    placeholder="Iets wat we moeten weten? (niet verplicht)" rows={2}
+                    className="mt-3 w-full resize-none rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
+                  />
+                  {cFout && <p className="mt-3 text-[14px] text-[var(--color-pink)]">{cFout}</p>}
+                  <button
+                    type="submit" disabled={cStatus === 'bezig'}
+                    className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-4 text-[17px] font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)] disabled:opacity-60"
+                  >
+                    {cStatus === 'bezig' ? 'Een moment' : 'Bel me hierover'}
+                    {cStatus !== 'bezig' && <ArrowRight className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />}
+                  </button>
+                  <p className="mt-3 text-center text-[13px] leading-relaxed text-[var(--color-muted)]">
+                    We gebruiken je gegevens alleen om over deze scan contact met je op te nemen.{' '}
+                    <button type="button" onClick={naarGesprek} className="font-semibold text-[var(--color-primary)] underline underline-offset-2">
+                      Liever zelf een moment plannen
+                    </button>
+                  </p>
+                </form>
+              )}
             </>
           )}
         </>
