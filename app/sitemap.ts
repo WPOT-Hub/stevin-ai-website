@@ -5,7 +5,6 @@ import { integrations, isIndexableIntegration, isIndexableIntegrationCategory } 
 import { comparisons } from '@/data/comparisons'
 import { glossary } from '@/data/glossary'
 import { alternatives } from '@/data/alternatives'
-import { products } from '@/data/products'
 import { seoLandingPages } from '@/data/seo-landing-pages'
 import { isPublishableArticle } from './[locale]/blog/[slug]/page'
 
@@ -49,7 +48,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/seo',
     '/geo',
     '/integraties',
-    '/case-studies',
+    // /case-studies staat sinds 13 sep (W-078) op noindex zolang hij leeg is, en
+    // hoort dan niet in de sitemap: de release-audit viel daar sinds 7 sep op.
     '/contact',
     '/simon-stevin',
     // Tarieven. Stond tot 28 jul 2026 als voorbeeld op /preview-tarieven met
@@ -69,8 +69,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Deze gaf even een 308 naar een niet-bestaande pagina, doordat de
     // :locale-parameter in next.config.ts elk padstuk matchte. Dat is gefixt,
     // de pagina bestaat gewoon.
-    // Productpagina's (de Stevin-suite)
-    ...products.map((p) => `/producten/${p.slug}`),
+    // Productpagina's stonden hier tot 15 sep, maar /producten/* redirect sinds
+    // 4 sep (W-042) permanent naar /platform; een URL die 308 geeft hoort niet
+    // in de sitemap en liet de release-audit bij elke deploy omvallen.
     // Categorie-hub pagina's, alleen de indexeerbare (zie NOINDEX_INTEGRATION_CATEGORIES)
     ...categories.filter((c) => isIndexableIntegrationCategory(c.slug)).map((c) => `/integraties/${c.slug}`),
     // Vendor-detail pagina's, alleen de indexeerbare (off-topic categorieen eruit)
