@@ -545,8 +545,10 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
         body: JSON.stringify({ event: 'finding_viewed', session_token: params.current.s }),
       }).catch(() => undefined)
 
-      if (variant === 'ai' && !data.antwoorden) {
+      if (variant === 'ai' && !data.antwoorden && !data.meetprobleem) {
         // Eerst de twee vragen; de browsermeting en het model wachten daarop.
+        // Kregen we de site niet te zien, dan zeggen we dat meteen en stellen
+        // we geen vragen: de voorcontrole is precies daarvoor.
         setUitkomst(data)
         setFase('vragen')
         return
