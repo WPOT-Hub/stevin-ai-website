@@ -125,7 +125,10 @@ async function marketingCheckPoort(request: NextRequest): Promise<NextResponse |
   const locale = request.nextUrl.pathname.startsWith('/en') ? 'en' : 'nl'
   const scherm = request.nextUrl.clone()
   scherm.pathname = `/${locale}/marketing-check-toegang`
-  const r = NextResponse.rewrite(scherm)
+  // Het codescherm moet weten voor welke pagina het staat (Open Graph voor crawlers).
+  const doorgegeven = new Headers(request.headers)
+  doorgegeven.set('x-mc-pad', request.nextUrl.pathname)
+  const r = NextResponse.rewrite(scherm, { request: { headers: doorgegeven } })
   r.headers.set('X-Robots-Tag', 'noindex, nofollow')
   r.headers.set('cache-control', 'no-store')
   return r

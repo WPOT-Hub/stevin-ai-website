@@ -11,6 +11,16 @@ export const metadata: Metadata = {
   title: 'De Stevin AI-meetproef',
   description: 'Jullie willen met AI werken. Kan jullie meetlaag dat dragen? Eerst meten, dan met AI bouwen.',
   robots: 'noindex, nofollow',
+  openGraph: {
+    type: 'website',
+    locale: 'nl_NL',
+    siteName: 'Stevin.AI',
+    title: 'De Stevin AI-meetproef: eerst meten, dan met AI bouwen',
+    description: 'Jullie willen met AI werken. Kan jullie meetlaag dat dragen? Vul je bedrijfswebsite in; wij meten van buitenaf welke signalen je site doorgeeft.',
+    url: 'https://stevin.ai/ai-meetproef',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'De Stevin AI-meetproef: eerst meten, dan met AI bouwen' }],
+  },
+  twitter: { card: 'summary_large_image', title: 'De Stevin AI-meetproef: eerst meten, dan met AI bouwen', description: 'Jullie willen met AI werken. Kan jullie meetlaag dat dragen? Vul je bedrijfswebsite in; wij meten van buitenaf welke signalen je site doorgeeft.', images: ['/opengraph-image'] },
 }
 
 export default async function AiMeetproefPage({ params }: Props) {
