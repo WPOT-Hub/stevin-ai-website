@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'obama-pleit-voor-duidelijke-ai-regels-democraten',
+    format: 'dispatch' as const,
+    edition: '459',
+    category: 'Beleid',
+    title: "Obama roept op tot heldere AI-regels: ‘Economische impact en veiligheid staan centraal’",
+    dek: "Ex-president Obama dringt aan op een concreet plan van Democraten om AI te reguleren, met focus op economische gevolgen en veiligheid.",
+    publishedAt: '2026-09-15',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'BELEID',
+    posterTopic: "Obama roept op tot heldere AI-regels: ‘Economische impact en veiligheid staan centraal’",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'chinese-ai-bedrijven-gebruiken-distillatie-tegen-anthropic',
     format: 'dispatch' as const,
     edition: '458',
