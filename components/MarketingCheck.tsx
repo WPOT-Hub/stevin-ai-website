@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Globe } from 'lucide-react'
+import { ArrowRight, Globe, Inbox, Search, User } from 'lucide-react'
 
 const HUB_LIVE = 'https://hub.stevin.ai/api/marketing-check'
 const CAL = 'https://cal.com/koen-hoogenboom/kennismaking'
@@ -212,6 +212,72 @@ function diagnoseVan(f: Bevinding): Diagnose {
 }
 
 type Antwoord = 'ja' | 'nee' | 'weet_niet'
+
+/**
+ * De keten die elke ondernemer kent: Google, je website, aanvragen, jij. Per
+ * bevinding is een schakel onzichtbaar of kapot; die tekenen we rood
+ * gestippeld met een woord erop. Koen, 15 sep 10:39: "nog steeds niet heel
+ * visueel". Dit is het Stevin-verhaal in een plaatje: de meetlaag zit tussen
+ * die schakels. 0 = Google naar website, 1 = website naar aanvragen, 2 =
+ * aanvragen naar jou.
+ */
+const SCHAKEL: Record<string, { schakel: 0 | 1 | 2; woord: string }> = {
+  ADVERTISING_FUNDER_MISMATCH: { schakel: 2, woord: 'Niet te zien' },
+  ADVERTISING_ACTIVE_CONVERSION_UNKNOWN: { schakel: 1, woord: 'Niet geteld' },
+  CONVERSION_LEADPATHS_UNVERIFIED: { schakel: 1, woord: 'Niet geteld' },
+  CONVERSION_LEADPATHS_UNCOUNTED: { schakel: 1, woord: 'Niet geteld' },
+  CONSENT_MEASUREMENT_BEFORE_INTERACTION: { schakel: 0, woord: 'Meet te vroeg' },
+  MEASUREMENT_NOTHING_AFTER_CONSENT: { schakel: 1, woord: 'Niets gemeten' },
+  PROFIEL_REVIEWS_STILGEVALLEN: { schakel: 0, woord: 'Staat stil' },
+  PROFIEL_WEINIG_REVIEWS: { schakel: 0, woord: 'Bijna leeg' },
+  SITE_TRAAG_OP_TELEFOON: { schakel: 0, woord: 'Traag' },
+  MAIL_DOMEIN_ONBESCHERMD: { schakel: 2, woord: 'In spam' },
+}
+function schakelVan(f: Bevinding): { schakel: 0 | 1 | 2; woord: string } {
+  return SCHAKEL[f.code] ?? { schakel: 1, woord: 'Niet te zien' }
+}
+
+const KETEN_NODES: { naam: string; Icoon: typeof Globe }[] = [
+  { naam: 'Google', Icoon: Search },
+  { naam: 'Je website', Icoon: Globe },
+  { naam: 'Aanvragen', Icoon: Inbox },
+  { naam: 'Jij', Icoon: User },
+]
+
+function Keten({ schakel, woord }: { schakel: 0 | 1 | 2; woord: string }) {
+  return (
+    <div className="mt-5 flex items-start" aria-label={`Keten: de schakel ${KETEN_NODES[schakel].naam} naar ${KETEN_NODES[schakel + 1].naam} is ${woord.toLowerCase()}`}>
+      {KETEN_NODES.map(({ naam, Icoon }, i) => (
+        <div key={naam} className="contents">
+          <div className="flex w-[64px] flex-shrink-0 flex-col items-center sm:w-[84px]">
+            <div className={`flex h-11 w-11 items-center justify-center rounded-full border-2 bg-white sm:h-12 sm:w-12 ${i === schakel || i === schakel + 1 ? 'border-[var(--color-primary)]' : 'border-[var(--color-border)]'}`}>
+              <Icoon className={`h-5 w-5 ${i === schakel || i === schakel + 1 ? 'text-[var(--color-primary)]' : 'text-[var(--color-muted)]'}`} strokeWidth={2} aria-hidden="true" />
+            </div>
+            <p className="mt-1.5 text-center text-[11px] font-semibold leading-tight text-[var(--color-primary)] sm:text-[12px]">{naam}</p>
+          </div>
+          {i < 3 && (
+            <div className="relative mt-[22px] flex min-w-[24px] flex-1 flex-col items-center sm:mt-6">
+              {i === schakel ? (
+                <>
+                  <span className="absolute -top-[22px] whitespace-nowrap rounded-full bg-[#d23f57] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.06em] text-white sm:-top-6 sm:text-[11px]">
+                    {woord}
+                  </span>
+                  <svg className="h-[2px] w-full" aria-hidden="true">
+                    <line x1="0" y1="1" x2="100%" y2="1" stroke="#d23f57" strokeWidth="2" strokeDasharray="4 4" />
+                  </svg>
+                </>
+              ) : (
+                <svg className="h-[2px] w-full" aria-hidden="true">
+                  <line x1="0" y1="1" x2="100%" y2="1" stroke="var(--color-border)" strokeWidth="2" />
+                </svg>
+              )}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
 
 /**
  * Hooguit twee zinnen op het scherm. Koen, 15 sep 10:13: "weer kei veel
@@ -699,7 +765,8 @@ export default function MarketingCheck() {
                     <h2 className="mt-2 font-display text-[clamp(22px,5vw,30px)] font-extrabold leading-[1.15] tracking-[-0.01em] text-[var(--color-primary)]">
                       {d.kop}
                     </h2>
-                    <p className="mt-3 text-[15px] leading-relaxed text-[var(--color-muted)]">{kort(b.tekst)}</p>
+                    <Keten {...schakelVan(b)} />
+                    <p className="mt-5 text-[15px] leading-relaxed text-[var(--color-muted)]">{kort(b.tekst)}</p>
                     <p className="mt-4 text-[17px] font-semibold leading-snug text-[var(--color-primary)]">{d.gevolg}</p>
                   </div>
                 </div>
