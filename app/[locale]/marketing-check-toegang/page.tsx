@@ -16,8 +16,8 @@ type Props = { params: Promise<{ locale: string }>; searchParams: Promise<{ fout
  */
 export async function generateMetadata(): Promise<Metadata> {
   const pad = (await headers()).get('x-mc-pad') ?? '/marketing-check'
-  const ai = pad.includes('ai-meetproef')
-  const titel = ai ? 'De Stevin AI-meetproef: eerst meten, dan met AI bouwen' : 'Marketing Check: laat een Stevin Agent je marketing checken'
+  const ai = pad.includes('ai-ready-scan')
+  const titel = ai ? 'Stevin AI-Ready Scan: eerst meten, dan met AI bouwen' : 'Marketing Check: laat een Stevin Agent je marketing checken'
   const beschrijving = ai
     ? 'Jullie willen met AI werken. Kan jullie meetlaag dat dragen? Vul je bedrijfswebsite in; wij meten van buitenaf welke signalen je site doorgeeft.'
     : 'Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat we van buitenaf kunnen zien. Geen naam, geen e-mailadres.'
@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
     robots: 'noindex, nofollow',
     openGraph: {
       type: 'website', locale: 'nl_NL', siteName: 'Stevin.AI', title: titel, description: beschrijving,
-      url: `https://stevin.ai${ai ? '/ai-meetproef' : '/marketing-check'}`,
+      url: `https://stevin.ai${ai ? '/ai-ready-scan' : '/marketing-check'}`,
       images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: titel }],
     },
     twitter: { card: 'summary_large_image', title: titel, description: beschrijving, images: ['/opengraph-image'] },
