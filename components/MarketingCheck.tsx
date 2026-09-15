@@ -117,7 +117,19 @@ function datumLang(iso: string): string {
  * Geel is de markeerstift: een waargenomen feit, een naam, een waarde. Rood is
  * de correctie: een breuk of een ontbrekende koppeling. Koen, 15 sep 12:14.
  */
-const FEITEN_REGEX = /(Google Tag Manager|Google Analytics 4|Google Analytics|Google Ads-meting|Google Ads|Meta-pixel|Meta Pixel|LinkedIn Insight|LinkedIn|Microsoft Advertising|Microsoft|Bing|TikTok|Pinterest|Hotjar|Clarity|Cookiebot|OneTrust|Usercentrics|\d+([.,]\d+)?\s?(advertenties|reviews|seconden|s\b|%)?|[A-Z][a-z]+ \d{4})/g
+const FEITEN_REGEX = new RegExp(
+  [
+    // Namen van meet- en advertentieplatformen, zoals wij ze schrijven.
+    '(?:Google Tag Manager|Google Analytics 4|Google Analytics|Google Ads-meting|Google Ads|Meta-pixel|Meta Pixel|LinkedIn Insight|LinkedIn|Microsoft Advertising|Microsoft Clarity|Microsoft|TikTok|Pinterest|Hotjar|Clarity|Cookiebot|OneTrust|Usercentrics|CookieYes)',
+    // Een getal telt alleen mee met zijn eenheid erachter, en nooit midden in
+    // een woord of een cookienaam. Koen, 15 sep 2026: de markeerstift hakte
+    // CMSSESSIDb70c47685f94 in stukken, wat eruitzag als een fout van ons.
+    '(?<![A-Za-z0-9_])\\d+(?:[.,]\\d+)?\\s?(?:advertenties|reviews|seconden|seconde|minuten|procent|%|op 100)(?![A-Za-z0-9_])',
+    // Een maand met een jaartal: "maart 2022".
+    '(?:januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december)\\s\\d{4}',
+  ].join('|'),
+  'g',
+)
 function Markeer({ tekst }: { tekst: string }) {
   const delen: React.ReactNode[] = []
   let laatste = 0
