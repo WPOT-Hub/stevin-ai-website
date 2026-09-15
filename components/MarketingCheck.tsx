@@ -1155,16 +1155,103 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
             )
           })()}
 
-          {!b && !uitkomst.meetprobleem && uitkomst.geen_bevinding_tekst && (
-            <div className="rounded-2xl border border-[var(--color-border)] bg-white p-5 sm:p-7">
-              <h2 className="font-display text-[clamp(22px,5vw,28px)] font-extrabold leading-[1.15] text-[var(--color-primary)]">
-                Van buitenaf zien we te weinig voor een oordeel
-              </h2>
-              <p className="mt-3 text-[16px] leading-relaxed text-[var(--color-muted)]">
-                {uitkomst.geen_bevinding_tekst}
-              </p>
-            </div>
-          )}
+          {/* De derde route (Koen, 15 sep 14:53): geen bevinding, maar wel veel
+              marketing. Geen rode conclusie en geen kanaallijst; wel de vraag die
+              ertoe doet en de groene Stevin-pitch. Groen betekent hier niet "alles
+              is goed" maar "hier voegt Stevin waarde toe". Bij weinig zicht en
+              weinig kanalen blijft het een eerlijk "te weinig voor een oordeel",
+              ook zonder ruwe namen. */}
+          {!b && !uitkomst.meetprobleem && (() => {
+            const veel = (uitkomst.ook_gezien?.length ?? 0) >= 2
+            return (
+              <article className="border-t border-[var(--color-primary)] pt-5">
+                <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">
+                  {variant === 'ai' ? <>AI-Ready Scan <span className="font-normal normal-case tracking-normal">&middot; De proef op de som</span></> : 'De proef op de som'}
+                </p>
+
+                {variant === 'ai' && uitkomst.antwoorden && (
+                  <div className="mt-6 grid gap-6 sm:grid-cols-2 sm:gap-10">
+                    <div>
+                      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Jullie zeggen</p>
+                      <p className="mt-2 font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.25] text-[var(--color-primary)]">
+                        {BELANG_TEKST[uitkomst.antwoorden.belang]}<br />{GEBRUIK_TEKST[uitkomst.antwoorden.gebruik]}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Wij zien</p>
+                      <p className="mt-2 font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.25] text-[var(--color-primary)]">
+                        {veel ? 'Meerdere advertentie- en meetkanalen zichtbaar.' : 'Van buitenaf te weinig om iets over jullie meetlaag te zeggen.'}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                <h2 className={`font-display text-[clamp(23px,5.4vw,32px)] font-extrabold leading-[1.25] tracking-[-0.015em] text-[var(--color-primary)] ${variant === 'ai' && uitkomst.antwoorden ? 'mt-10' : 'mt-6'}`}>
+                  {veel ? <>Veel marketingdata.<br />Geen betrouwbare uitkomst.</> : <>Van buitenaf zien we te weinig<br />voor een oordeel.</>}
+                </h2>
+                <p className="mt-4 font-mono text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--color-muted)]">
+                  Geen fout vastgesteld. Wel te weinig zicht voor een betrouwbaar oordeel.
+                </p>
+
+                <div className="mt-8 border-t border-[var(--color-border)] pt-4">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Wat de buitenmeting vaststelde</p>
+                  {veel ? (
+                    <>
+                      <p className="mt-3 text-[16px] leading-relaxed text-[var(--color-primary)]">
+                        <mark className="bg-[#ffe86b] px-0.5">Meerdere advertentie- en meetkanalen zichtbaar.</mark>
+                      </p>
+                      <p className="mt-3 max-w-[54ch] text-[16px] leading-relaxed text-[var(--color-primary)]">
+                        Van buitenaf kunnen we niet vaststellen of de meting klopt, welke campagnes aanvragen opleveren en waar data wegvalt.
+                      </p>
+                    </>
+                  ) : (
+                    <p className="mt-3 max-w-[54ch] text-[16px] leading-relaxed text-[var(--color-primary)]">
+                      In wat de site ons liet zien stond te weinig om iets over je marketing te zeggen. Dat betekent niet dat je niets meet: veel sites laden hun meting pas na toestemming of via een eigen meetpad. Of je aanvragen goed geteld worden, zien we pas met toegang tot je eigen account.
+                    </p>
+                  )}
+                </div>
+
+                {/* De pitch. Groen: hier voegt Stevin waarde toe. */}
+                <div className="mt-10 border-t-2 border-[var(--color-primary)] pt-6">
+                  <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">Hier begint Stevin</p>
+                  <p className="mt-3 max-w-[54ch] text-[16px] leading-relaxed text-[var(--color-primary)]">
+                    Een losse scan laat zien wat er aan de buitenkant gebeurt. Stevin blijft daarna over je kanalen meekijken.
+                  </p>
+                  <p className="mt-3 max-w-[54ch] text-[16px] leading-relaxed text-[var(--color-primary)]">
+                    We verbinden advertenties, meting, aanvragen en CRM. Zo zie je niet alleen wat er staat, maar ook wanneer de uitkomst afwijkt.
+                  </p>
+                  <p className="mt-4 text-[17px] font-semibold leading-snug text-[var(--color-primary)]">
+                    <mark className="bg-[#1f9d55] px-1 text-white">Stevin kan dit doorlopend voor je bewaken.</mark>
+                  </p>
+                </div>
+
+                {!wens && (
+                  <div className="mt-10">
+                    <p className="text-[15px] leading-relaxed text-[var(--color-muted)]">
+                      Dit is waar de buitenmeting stopt. Wil je de uitgebreide scan ontvangen, of zullen we kennismaken met wat Stevin hierna voor je kan doen?
+                    </p>
+                    <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                      <button
+                        type="button"
+                        onClick={() => { setWens('gesprek'); setTimeout(() => belRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50) }}
+                        className="flex-1 bg-[var(--color-primary)] px-5 py-4 text-[15px] font-semibold text-white transition-colors hover:bg-[var(--color-primary-light)]"
+                      >
+                        Plan een kennismaking
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => { setWens('meting'); setTimeout(() => belRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50) }}
+                        className="flex-1 border border-[var(--color-border)] px-5 py-4 text-[15px] font-semibold text-[var(--color-primary)] transition-colors hover:border-[var(--color-primary)]"
+                      >
+                        Stuur mij de uitgebreide scan
+                      </button>
+                    </div>
+                  </div>
+                )}
+                <div ref={belRef}>{wens && contactBlok('klaar')}</div>
+              </article>
+            )
+          })()}
 
           {verdiepingLiepNog && (
             <p className="mt-4 text-[13px] text-[var(--color-muted)]">
@@ -1190,11 +1277,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
             </p>
           ) : (
             <>
-              {/* Het punt waarop een scan een lead wordt. Wie zijn nummer laat
-                  staan, wordt gebeld; wie meteen wil, plant zelf. Zonder dit
-                  blok kenden we alleen het domein en hielden dertig scans per
-                  dag nul namen over. */}
-              {!b && contactBlok('klaar')}
+              {/* Het contactblok zit in het artikel, na de keuze. */}
             </>
           )}
         </>
