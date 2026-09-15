@@ -23,6 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
     : 'Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat we van buitenaf kunnen zien. Geen naam, geen e-mailadres.'
   return {
     title: titel,
+    description: beschrijving,
     robots: 'noindex, nofollow',
     openGraph: {
       type: 'website', locale: 'nl_NL', siteName: 'Stevin.AI', title: titel, description: beschrijving,
