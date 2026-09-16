@@ -161,11 +161,11 @@ const BELANG_TEKST: Record<string, string> = { beperkt: 'AI wordt beperkt belang
 const AI_ZAGEN: Record<string, string> = {
   CONSENT_MEASUREMENT_BEFORE_INTERACTION: 'De meetlaag op jullie website wacht niet op toestemming.',
   MEASUREMENT_NOTHING_AFTER_CONSENT: 'De meetlaag op jullie website geeft na toestemming niets door.',
-  ADVERTISING_FUNDER_MISMATCH: 'Jullie advertenties worden door een andere partij betaald; welke aanvraag daaruit komt, is niet zichtbaar.',
+  ADVERTISING_FUNDER_MISMATCH: 'Een andere partij betaalt jullie advertenties. Wat ze opleveren is van buitenaf niet te zien.',
   ADVERTISING_ACTIVE_CONVERSION_UNKNOWN: 'Jullie adverteren, maar of een aanvraag daaruit geteld wordt, is niet te zien.',
   CONVERSION_LEADPATHS_UNVERIFIED: 'Jullie site krijgt aanvragen, maar of ze als aanvraag geteld worden is niet te zien.',
   CONVERSION_LEADPATHS_UNCOUNTED: 'Jullie site krijgt aanvragen, maar of ze geteld worden is niet te zien.',
-  PROFIEL_REVIEWS_STILGEVALLEN: 'Jullie Google-profiel staat stil; dat is wat een klant als eerste ziet.',
+  PROFIEL_REVIEWS_STILGEVALLEN: 'Jullie Google-profiel staat stil. Dat is wat een klant als eerste ziet.',
   PROFIEL_WEINIG_REVIEWS: 'Jullie Google-profiel heeft bijna geen reviews.',
   SITE_TRAAG_OP_TELEFOON: 'Jullie site is traag op de telefoon, waar de meeste aanvragen vandaan komen.',
   MAIL_DOMEIN_ONBESCHERMD: 'Mail uit jullie naam is niet beschermd.',
@@ -1086,9 +1086,12 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
 
                     {/* Beide antwoorden, in zijn woorden, naast wat wij zien. */}
                     <div className="mt-6 grid gap-6 sm:grid-cols-2 sm:gap-10">
+                      {/* Hun antwoord is de aanloop, onze bevinding de uitspraak. Even
+                          groot zetten liet de linkerkolom verdwijnen naast vijf regels
+                          rechts (Koen, 16 sep). */}
                       <div>
                         <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Jullie zeggen</p>
-                        <p className="mt-2 font-display text-[clamp(20px,4.6vw,26px)] font-bold leading-[1.25] text-[var(--color-primary)]">
+                        <p className="mt-2 text-[17px] font-medium leading-snug text-[var(--color-muted)]">
                           {BELANG_TEKST[uitkomst.antwoorden.belang]}<br />{GEBRUIK_TEKST[uitkomst.antwoorden.gebruik]}
                         </p>
                       </div>
@@ -1109,6 +1112,21 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                       <p className="mt-2 text-[17px] font-semibold leading-snug text-[#d23f57]">
                         {(AI_MARK[b.code] ?? { rood: d.rood }).rood}
                       </p>
+                      {/* Het bewijs hoorde hier ook te staan. De zwaarste bewering van
+                          het scherm stond zonder onderbouwing, terwijl de Marketing
+                          Scan zijn bronregels wel toont (Koen, 16 sep). */}
+                      {bewijs && (
+                        <div className="mt-4 space-y-1.5 border-l-2 border-[var(--color-border)] pl-3">
+                          {bewijs.slice(0, 3).map((r, i) => (
+                            <p key={i} className="text-[14px] leading-relaxed text-[var(--color-muted)]">
+                              <Markeer tekst={r} />
+                            </p>
+                          ))}
+                          <p className="pt-1 font-mono text-[11px] uppercase tracking-[0.1em] text-[var(--color-muted)]">
+                            Eigen meting van buitenaf, {datumVandaag()}
+                          </p>
+                        </div>
+                      )}
                     </div>
 
                     {/* De klap. */}
@@ -1116,8 +1134,9 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                       <p className="font-display text-[clamp(22px,5.2vw,30px)] font-extrabold leading-[1.25] tracking-[-0.015em] text-[var(--color-primary)]">
                         AI repareert een verkeerde meetlaag niet.
                       </p>
-                      <p className="mt-3 max-w-[40ch] text-[17px] leading-relaxed text-[var(--color-primary)]">Het gebruikt de signalen die je doorgeeft.</p>
-                      <p className="mt-5 font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--color-muted)]">Eerst de meetlaag. Dan het model.</p>
+                      <p className="mt-3 max-w-[44ch] text-[17px] leading-relaxed text-[var(--color-primary)]">
+                        Een model werkt met de signalen die jij doorgeeft. Kloppen die niet, dan klopt de uitkomst ook niet.
+                      </p>
                     </div>
 
                     {/* Stevin. */}
@@ -1131,7 +1150,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                       {/* Koen, 15 sep 14:44: wat je ook met AI gaat doen en met wie, dit moet goed
                           staan. Gemarkeerd als met een rode stift, geen rode letters. */}
                       <p className="mt-3 max-w-[54ch] text-[16px] font-semibold leading-relaxed text-[var(--color-primary)]">
-                        Wat je ook met AI gaat doen, en welke partij ermee gaat werken: <mark className="bg-[#d23f57] px-1 text-white">dit moet goed staan.</mark>
+                        Wat je ook met AI gaat doen, en welke partij ermee gaat werken: <mark className="bg-[#ffe86b] px-1">dit moet goed staan.</mark>
                       </p>
                     </div>
                   </>
@@ -1231,8 +1250,8 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                   <div className="mt-10">
                     <p className="text-[15px] leading-relaxed text-[var(--color-muted)]">
                       {variant === 'ai'
-                        ? 'Dit is een uitkomst uit de AI-Ready Scan. Wil je de uitgebreide scan ontvangen, of zullen we vrijblijvend kennismaken?'
-                        : 'Dit is een van de signalen uit je scan. Wil je de uitgebreide scan eerst zelf ontvangen, of zullen we de uitkomst vrijblijvend samen doornemen?'}
+                        ? 'Dit is een uitkomst uit de AI-Ready Scan. Zullen we vrijblijvend kennismaken, of wil je de uitgebreide scan eerst zelf ontvangen?'
+                        : 'Dit is een van de signalen uit je scan. Zullen we de uitkomst vrijblijvend samen doornemen, of wil je de uitgebreide scan eerst zelf ontvangen?'}
                     </p>
                     <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                       <button
@@ -1330,7 +1349,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                 {!wens && (
                   <div className="mt-10">
                     <p className="text-[15px] leading-relaxed text-[var(--color-muted)]">
-                      Dit is waar de buitenmeting stopt. Wil je de uitgebreide scan ontvangen, of zullen we kennismaken met wat Stevin hierna voor je kan doen?
+                      Dit is waar de buitenmeting stopt. Zullen we kennismaken met wat Stevin hierna voor je kan doen, of wil je de uitgebreide scan eerst zelf ontvangen?
                     </p>
                     <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                       <button
