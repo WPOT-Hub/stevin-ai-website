@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'nl_NL',
     siteName: 'Stevin.AI',
-    title: 'Marketing Scan: laat een Stevin Agent je marketing scannen',
+    title: 'Marketing Scan: laat Stevin Agents je marketing scannen',
     description: 'Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat we van buitenaf kunnen zien. Geen naam, geen e-mailadres.',
     url: 'https://stevin.ai/marketing-scan',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Marketing Scan: laat een Stevin Agent je marketing scannen' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Marketing Scan: laat Stevin Agents je marketing scannen' }],
   },
-  twitter: { card: 'summary_large_image', title: 'Marketing Scan: laat een Stevin Agent je marketing scannen', description: 'Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat we van buitenaf kunnen zien. Geen naam, geen e-mailadres.', images: ['/opengraph-image'] },
+  twitter: { card: 'summary_large_image', title: 'Marketing Scan: laat Stevin Agents je marketing scannen', description: 'Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat we van buitenaf kunnen zien. Geen naam, geen e-mailadres.', images: ['/opengraph-image'] },
 }
 
 export default async function MarketingScanPage({ params }: Props) {

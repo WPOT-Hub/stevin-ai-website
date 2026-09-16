@@ -17,7 +17,7 @@ type Props = { params: Promise<{ locale: string }>; searchParams: Promise<{ fout
 export async function generateMetadata(): Promise<Metadata> {
   const pad = (await headers()).get('x-mc-pad') ?? '/marketing-scan'
   const ai = pad.includes('ai-ready-scan')
-  const titel = ai ? 'Stevin AI-Ready Scan: eerst meten, dan met AI bouwen' : 'Marketing Scan: laat een Stevin Agent je marketing scannen'
+  const titel = ai ? 'Stevin AI-Ready Scan: eerst meten, dan met AI bouwen' : 'Marketing Scan: laat Stevin Agents je marketing scannen'
   const beschrijving = ai
     ? 'Jullie willen met AI werken. Kan jullie meetlaag dat dragen? Vul je bedrijfswebsite in; wij meten van buitenaf welke signalen je site doorgeeft.'
     : 'Vul je bedrijfswebsite in. We lezen je site, kijken in de advertentieregisters en zeggen wat we van buitenaf kunnen zien. Geen naam, geen e-mailadres.'

@@ -191,7 +191,11 @@ const AI_MARK: Record<string, { geel: string; rood: string }> = {
   ADVERTISING_FUNDER_MISMATCH: { geel: 'Betaling door een andere partij vastgesteld', rood: 'Geen koppeling tussen advertentie en aanvraag zichtbaar' },
   ADVERTISING_ACTIVE_CONVERSION_UNKNOWN: { geel: 'Lopende advertenties vastgesteld', rood: 'Geen koppeling tussen advertentie en aanvraag zichtbaar' },
   CONVERSION_LEADPATHS_UNVERIFIED: { geel: 'Meerdere contactroutes vastgesteld', rood: 'Geen koppeling tussen aanvraag en advertentie zichtbaar' },
-  CONVERSION_LEADPATHS_UNCOUNTED: { geel: 'Meerdere contactroutes vastgesteld', rood: 'Aanvragen worden niet geteld' },
+  // Was "Aanvragen worden niet geteld": een harde uitspraak die de bron niet
+  // draagt. We zien een contactroute en een meetpakket, niet of een aanvraag
+  // ook echt als conversie geteld wordt; dat weten we niet, dus zeggen we dat
+  // niet als feit (Koen, 17 sep: "hoezo weet niemand dat, staat er niet bij").
+  CONVERSION_LEADPATHS_UNCOUNTED: { geel: 'Meerdere contactroutes vastgesteld', rood: 'Niet zichtbaar of aanvragen geteld worden' },
   MEASUREMENT_MULTIPLE_ANALYTICS: { geel: 'Twee meetpakketten vastgesteld', rood: 'Twee metingen naast elkaar' },
   PROFIEL_REVIEWS_STILGEVALLEN: { geel: 'Google-profiel gevonden', rood: 'Geen recente review' },
   PROFIEL_WEINIG_REVIEWS: { geel: 'Google-profiel gevonden', rood: 'Te weinig reviews' },
@@ -223,30 +227,35 @@ const MIN_WACHT_MS = 4000
  * wetenschappelijke uitgave als bron. Er bestaan geen betrouwbare lijsten met
  * tientallen losse oneliners van Stevin; veel online citaten zijn verzinsels.
  * Hier komt niets bij dat niet op die twee bronnen terug te voeren is.
+ *
+ * kop staat in modern Nederlands (Koen, 17 sep 2026: "kun je al die stevin
+ * lijfspreuken gewoon in NL doen?"), niet in de 16e-eeuwse spelling van het
+ * origineel. bron zegt daarom "naar", niet een kale bronvermelding: dit is
+ * een eigen weergave van de gedachte, geen letterlijk citaat.
  */
 const STEVIN_KAARTEN: Array<{ kop: string; bron: string; brug: string }> = [
   {
-    kop: 'Wonder en is gheen wonder.',
-    bron: 'Simon Stevin, 1586',
+    kop: 'Een wonder is geen wonder.',
+    bron: 'naar Simon Stevin, 1586',
     brug: 'We zoeken uit wat er werkelijk gebeurt.',
   },
   {
-    kop: 'Ten is niet al waer, dat schijnt bevvesen te sijne.',
-    bron: 'Dialectike ofte Bewysconst, 1585',
+    kop: 'Niet alles wat bewezen lijkt, is ook waar.',
+    bron: 'naar de Dialectike ofte Bewysconst, 1585',
     brug: 'Een cijfer is nog geen bewijs.',
   },
   {
-    kop: "Van T'mach, tot Het is, en duecht het vervolgh niet.",
-    bron: 'Dialectike ofte Bewysconst, 1585',
+    kop: "Kunnen is geen zijn.",
+    bron: 'naar de Dialectike ofte Bewysconst, 1585',
     brug: 'Dat een meting kan, betekent niet dat hij gebeurt.',
   },
   {
-    kop: 'Ten is niet al valsch, datmen niet bewijsen en can.',
-    bron: 'Dialectike ofte Bewysconst, 1585',
+    kop: 'Niet alles wat je niet kunt bewijzen, is daarom onwaar.',
+    bron: 'naar de Dialectike ofte Bewysconst, 1585',
     brug: 'Wat we van buitenaf niet zien, is daarmee niet weg.',
   },
   {
-    kop: 'Spiegheling en daet.',
+    kop: 'Denken en doen.',
     bron: 'Simon Stevin',
     brug: 'Eerst begrijpen, dan verbeteren.',
   },
@@ -381,7 +390,12 @@ const DIAGNOSE: Record<string, Diagnose> = {
     punten: [['Contactroutes', 'Formulier, telefoon, mail'], ['Meting', 'Aanwezig'], ['Gevolg', 'Alleen bezoek geteld']],
     herstel: 'Wij tellen elke aanvraag, ook het telefoontje, en koppelen hem aan waar hij vandaan kwam. Je weet daarna per maand wat je site oplevert.',
     vraag: 'Weet jij hoeveel aanvragen je site vorige maand opleverde?',
-    rood: 'Aanvragen worden niet geteld',
+    // Was "Aanvragen worden niet geteld", een harde uitspraak die de tekst
+    // eronder ("weet niemand", "van buitenaf zien we niet") meteen tegensprak.
+    // Koen, 17 sep: "hoezo weet niemand dat, staat er niet bij, en hoe zie je
+    // dat dan?" We zien een contactroute en een meetpakket, niet of een
+    // aanvraag ook echt als conversie geteld wordt.
+    rood: 'Niet zichtbaar of aanvragen geteld worden',
   },
   CONSENT_WEIGEREN_VERSTOPT: {
     label: 'Aandacht voor je cookiebanner',
@@ -792,23 +806,25 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
   // opent de site in een echte browser en klikt de cookiebanner weg; dat is
   // precies wat een tagscanner niet doet, dus dat mag de bezoeker lezen.
   const bInBrowser = bStatus === 'queued' || bStatus === 'running'
+  // Koen, 17 sep: "daarnaast is het Agents", niet "Agent" (zie de woordenboek-
+  // categorie "AI & Agents"). Meervoud, dus ook het werkwoord mee.
   const statusRegel = !aGereed
     ? 'Website ophalen'
     : !stap && bInBrowser
-      ? 'Agent opent je site in een echte browser'
+      ? 'Agents openen je site in een echte browser'
     : vGereed
       ? 'Bevinding kiezen'
       : stap === 'lezen'
-        ? `Agent leest je site${paginas ? ` · ${paginas} pagina's` : ''}`
+        ? `Agents lezen je site${paginas ? ` · ${paginas} pagina's` : ''}`
         : stap === 'advertenties'
-          ? 'Agent zoekt je advertenties op'
+          ? 'Agents zoeken je advertenties op'
           : stap === 'bronnen'
-            ? 'Agent kijkt buiten je site'
+            ? 'Agents kijken buiten je site'
             : stap === 'afwegen'
-              ? 'Agent weegt de aanknopingspunten'
+              ? 'Agents wegen de aanknopingspunten'
               : stap === 'toetsen'
-                ? 'Agent toetst het bewijs'
-                : 'Agent aan het werk'
+                ? 'Agents toetsen het bewijs'
+                : 'Agents aan het werk'
   const bronnenKlaar = (voortgang?.bronnen_klaar ?? []).map((b) => BRONNAAM[b] ?? b)
 
   /**
@@ -897,7 +913,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
             {variant === 'ai' ? 'AI-Ready Scan' : 'Marketing Scan'}
           </p>
           <h1 className="mt-3 font-display text-[clamp(30px,7vw,44px)] font-extrabold leading-[1.08] tracking-[-0.02em] text-[var(--color-primary)]">
-            {variant === 'ai' ? <>Eerst meten.<br />Dan met AI bouwen.</> : 'Laat een Stevin Agent je marketing scannen'}
+            {variant === 'ai' ? <>Eerst meten.<br />Dan met AI bouwen.</> : 'Laat Stevin Agents je marketing scannen'}
           </h1>
           <p className="mt-4 text-[17px] leading-relaxed text-[var(--color-muted)]">
             {variant === 'ai'
