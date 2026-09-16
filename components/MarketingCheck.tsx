@@ -106,7 +106,17 @@ function dossierUit(u: Uitkomst): Dossier | null {
   if (!f) return null
   const m = f.tekst.match(/staan (?:(\d+) )?advertenties op naam van (.+?) Als betaler staat daar (.+?) bij\./)
   if (!m) return null
-  return { bedrijf: m[2].trim(), advertenties: m[1] ? Number(m[1]) : null, betaler: m[3].trim(), relatie: 'onbekend', register_url: null, gecontroleerd_op: new Date().toISOString().slice(0, 10) }
+  // Geen datum verzinnen. Zonder dossier uit de Hub weten we niet wanneer het
+  // register voor het laatst is gezien, en vandaag invullen maakt van een
+  // controle van weken geleden een controle van vanochtend (Koen, 16 sep).
+  return { bedrijf: m[2].trim(), advertenties: m[1] ? Number(m[1]) : null, betaler: m[3].trim(), relatie: 'onbekend', register_url: null, gecontroleerd_op: '' }
+}
+/** De bronregel onder het bewijs: welke bron, en alleen een datum als we die echt hebben. */
+function bronRegel(dos: Dossier | null): string {
+  if (!dos) return `Eigen meting van buitenaf, ${datumVandaag()}`
+  return dos.gecontroleerd_op
+    ? `Advertentieregister van Google, ${datumLang(dos.gecontroleerd_op)}`
+    : 'Advertentieregister van Google'
 }
 function datumLang(iso: string): string {
   const d = new Date(`${iso}T00:00:00`)
@@ -1073,7 +1083,11 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
           {b && (() => {
             const d = diagnoseVan(b)
             const dos = dossierUit(uitkomst)
-            const rel = dos?.relatie ?? 'onbekend'
+            // Geen enkele tekst hangt nog aan dossier.relatie. Wat de betaler voor
+            // jou is, kan geen enkele meting van buitenaf zien: een bureau, een
+            // holding en de vrouw van je compagnon tellen in het register precies
+            // hetzelfde (Koen, 16 sep). De site kan die bewering dus niet meer doen,
+            // ook niet als de Hub hem ooit weer meestuurt.
             const bedrijf = dos ? dos.bedrijf : ''
             const bewijs = b.bewijs && b.bewijs.length > 0 ? b.bewijs : null
             return (
@@ -1115,15 +1129,36 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                       {/* Het bewijs hoorde hier ook te staan. De zwaarste bewering van
                           het scherm stond zonder onderbouwing, terwijl de Marketing
                           Scan zijn bronregels wel toont (Koen, 16 sep). */}
-                      {bewijs && (
+                      {(dos || bewijs) && (
                         <div className="mt-4 space-y-1.5 border-l-2 border-[var(--color-border)] pl-3">
-                          {bewijs.slice(0, 3).map((r, i) => (
-                            <p key={i} className="text-[14px] leading-relaxed text-[var(--color-muted)]">
-                              <Markeer tekst={r} />
-                            </p>
-                          ))}
+                          {/* Bij een registerbevinding dezelfde drie regels als de
+                              Marketing Scan, inclusief de regel dat wij de relatie met
+                              de betaler niet kunnen vaststellen. Zonder die regel maakt
+                              deze scan de beschuldiging harder dan de andere. */}
+                          {dos ? (
+                            <>
+                              <p className="text-[14px] leading-relaxed text-[var(--color-muted)]">
+                                Bij {bedrijf} staan {dos.advertenties ?? 'meerdere'} advertenties op naam.
+                              </p>
+                              <p className="text-[14px] leading-relaxed text-[var(--color-muted)]">
+                                <span className="font-semibold text-[var(--color-primary)]">{dos.betaler}</span> staat als betaler vermeld.
+                              </p>
+                              <p className="text-[14px] leading-relaxed text-[var(--color-muted)]">
+                                Wie die partij voor je is, weet jij; van buitenaf kunnen wij dat niet vaststellen.
+                              </p>
+                            </>
+                          ) : (
+                            bewijs!.slice(0, 3).map((r, i) => (
+                              <p key={i} className="text-[14px] leading-relaxed text-[var(--color-muted)]">
+                                <Markeer tekst={r} />
+                              </p>
+                            ))
+                          )}
+                          {/* De bron moet de bron zijn. Registerregels dragen hun eigen
+                              controledatum; die afstempelen als onze eigen meting van
+                              vandaag spreekt de regel erboven tegen (Koen, 16 sep). */}
                           <p className="pt-1 font-mono text-[11px] uppercase tracking-[0.1em] text-[var(--color-muted)]">
-                            Eigen meting van buitenaf, {datumVandaag()}
+                            {bronRegel(dos)}
                           </p>
                         </div>
                       )}
@@ -1163,11 +1198,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                 {/* Geen neutraal feit als eerste zin. */}
                 <h2 className="mt-6 font-display text-[clamp(23px,5.4vw,32px)] font-extrabold leading-[1.25] tracking-[-0.015em] text-[var(--color-primary)]">
                   {dos
-                    ? rel === 'bureau'
-                      ? <>Je kunt morgen van bureau wisselen.<br />Maar kun je je marketingkennis meenemen?</>
-                      : rel === 'groep'
-                        ? <>De advertenties staan op naam van jouw bedrijf.<br />De betaling loopt via een andere maatschappij binnen de groep.</>
-                        : <>Jouw advertenties. Betaald door een andere partij.<br />Zie jij zelf wat ze opleveren?</>
+                    ? <>Jouw advertenties. Betaald door een andere partij.<br />Zie jij zelf wat ze opleveren?</>
                     : d.kop}
                 </h2>
 
@@ -1179,11 +1210,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                       <p>Bij <mark className="bg-[#ffe86b] px-0.5">{bedrijf}</mark> staan <mark className="bg-[#ffe86b] px-0.5">{dos.advertenties ?? 'meerdere'} advertenties</mark> op naam.</p>
                       <p><mark className="bg-[#ffe86b] px-0.5 font-semibold">{dos.betaler}</mark> staat als betaler vermeld.</p>
                       <p className="text-[var(--color-muted)]">
-                        {rel === 'bureau'
-                          ? 'Een extern bureau, volgens onze eigen registratie.'
-                          : rel === 'groep'
-                            ? 'Dat kan een normale groepsstructuur zijn.'
-                            : 'Van buitenaf kunnen we niet vaststellen welke relatie deze partij met jouw bedrijf heeft.'}
+                        Wie die partij voor je is, weet jij; van buitenaf kunnen wij dat niet vaststellen.
                       </p>
                     </div>
                   ) : bewijs ? (
@@ -1196,7 +1223,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                     <p className="mt-4 text-[16px] leading-relaxed text-[var(--color-primary)]"><Markeer tekst={kort(b.tekst, 2)} /></p>
                   )}
                   <p className="mt-4 font-mono text-[11.5px] text-[var(--color-muted)]">
-                    {dos ? 'Advertentieregister van Google' : 'Eigen meting van buitenaf'}, {dos ? datumLang(dos.gecontroleerd_op) : datumVandaag()}
+                    {bronRegel(dos)}
                     {(dos?.register_url || b.bron_url) && (
                       <>
                         {' '}
@@ -1222,11 +1249,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                 {/* De spanning: de vraag die hij zichzelf gaat stellen. */}
                 <p className="mt-10 max-w-[32ch] font-display text-[clamp(21px,4.8vw,28px)] font-bold leading-[1.3] tracking-[-0.01em] text-[var(--color-primary)]">
                   {dos
-                    ? rel === 'groep'
-                      ? 'Kun jij binnen je eigen organisatie zelf zien welke advertenties aanvragen opleveren?'
-                      : rel === 'bureau'
-                        ? 'Een bureau kan je advertenties beheren. Maar kun jij zelf aantonen wat ze opleveren?'
-                        : 'Als je morgen wilt weten welke advertentie een aanvraag heeft opgeleverd, waar kijk je dan?'
+                    ? 'Als je morgen wilt weten welke advertentie een aanvraag heeft opgeleverd, waar kijk je dan?'
                     : d.vraag}
                 </p>
 
@@ -1236,9 +1259,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                     Stevin zorgt dat jij dit antwoord zelf kunt geven.
                   </p>
                   <p className="mt-3 max-w-[54ch] text-[16px] leading-relaxed text-[var(--color-primary)]">
-                    {rel === 'groep' && dos
-                      ? 'Stevin maakt die meetketen controleerbaar voor de mensen die op de marketinguitkomst moeten sturen.'
-                      : 'Stevin bouwt het marketingbrein van jouw bedrijf. Wij verbinden advertenties, meting en aanvragen, zodat de kennis over wat werkt niet buiten je bedrijf blijft hangen.'}
+                    Stevin bouwt het marketingbrein van jouw bedrijf. Wij verbinden advertenties, meting en aanvragen, zodat de kennis over wat werkt niet buiten je bedrijf blijft hangen.
                   </p>
                 </div>
 
