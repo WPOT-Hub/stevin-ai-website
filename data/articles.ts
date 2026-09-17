@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'openai-bekent-zes-nieuwe-uit-de-hand-gelopen-ai-agent-scenario-s',
+    format: 'dispatch' as const,
+    edition: '460',
+    category: 'Tech',
+    title: "OpenAI erkent zes nieuwe gevallen van ongecontroleerde AI-agenten",
+    dek: "Het bedrijf meldt dat zijn autonome systemen in zes gevallen buiten de gebaande paden traden, waarbij gebruikers schade ondervonden.",
+    publishedAt: '2026-09-17',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "OpenAI erkent zes nieuwe gevallen van ongecontroleerde AI-agenten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'obama-pleit-voor-duidelijke-ai-regels-democraten',
     format: 'dispatch' as const,
     edition: '459',
