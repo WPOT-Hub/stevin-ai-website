@@ -1435,16 +1435,20 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
               <h2 id="scan-onvoldoende-zicht" className="font-display text-[19px] font-bold text-[var(--color-primary)]">
                 Wat we graag samen bekijken
               </h2>
-              <ul className="mt-4 space-y-4">
-                {uitkomst.scorecard.filter((regel) => regel.status === 'niet_gezien').map((regel) => (
-                  <li key={regel.gebied}>
-                    <h3 className="text-[15px] font-semibold text-[var(--color-primary)]">{regel.label}</h3>
-                    <p className="mt-1 text-[15px] leading-relaxed text-[var(--color-muted)]">
-                      Dit konden we van buitenaf niet vaststellen. Wil je een specialist laten meekijken die toegang heeft tot je accounts? Dat doen we graag vrijblijvend samen.
-                    </p>
-                  </li>
-                ))}
-              </ul>
+              {/* Een keer de zin, met de gebieden ervoor. Per gebied dezelfde alinea
+                  herhalen leest als een sjabloon, en dat ondermijnt precies het
+                  vertrouwen dat deze sectie moet opbouwen. */}
+              <p className="mt-3 text-[15px] leading-relaxed text-[var(--color-muted)]">
+                Van buitenaf konden we{' '}
+                <span className="font-semibold text-[var(--color-primary)]">
+                  {uitkomst.scorecard
+                    .filter((regel) => regel.status === 'niet_gezien')
+                    .map((regel) => regel.label.toLowerCase())
+                    .join(' en ')}
+                </span>{' '}
+                niet vaststellen. Dat betekent niet dat er iets mis is, maar ook niet dat het goed staat: met toegang
+                tot je eigen accounts is het in een half uur na te kijken. Dat doen we graag vrijblijvend met je samen.
+              </p>
             </section>
           )}
 
