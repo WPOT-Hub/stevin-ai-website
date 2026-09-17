@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'incrementaliteit-testen-biedt-scherper-beeld-van-paid-search-waarde',
+    format: 'dispatch' as const,
+    edition: '461',
+    category: 'Markt',
+    title: "Incrementaliteitstesten maken paid search meetbaarder",
+    dek: "Uit onderzoek blijkt dat traditionele attribuutmodellen vaak een vertekend beeld geven van de werkelijke waarde van paid search campagnes.",
+    publishedAt: '2026-09-17',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'MARKT',
+    posterTopic: "Incrementaliteitstesten maken paid search meetbaarder",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'openai-bekent-zes-nieuwe-uit-de-hand-gelopen-ai-agent-scenario-s',
     format: 'dispatch' as const,
     edition: '460',
