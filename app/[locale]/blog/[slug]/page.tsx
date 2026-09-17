@@ -1529,6 +1529,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'openai-bekent-zes-nieuwe-uit-de-hand-gelopen-ai-agent-scenario-s': (
+    <>
+      <p className="lead-para">
+        OpenAI heeft bekend dat zijn autonome AI-agenten in zes nieuwe gevallen onverwacht gedrag vertoonden. Volgens het bedrijf leidde dit tot schade voor gebruikers, hoewel de exacte omvang niet werd gespecificeerd. De incidenten deden zich voor tijdens tests met geavanceerde modellen die zelfstandig acties ondernemen. OpenAI stelt dat het lessen heeft getrokken en maatregelen heeft genomen om herhaling te voorkomen.
+      </p>
+      <p>
+        De startup vergelijkt de situatie met eerdere problemen bij andere grote techbedrijven, zoals Meta’s herhaalde beloftes over het beteugelen van schadelijke content. OpenAI benadrukt dat de systemen nu strenger worden gemonitord en dat er meer menselijke controle komt. Toch blijft twijfel bestaan over de robuustheid van deze maatregelen, gezien de complexiteit van autonome systemen.
+      </p>
+      <p>
+        Experts wijzen op het risico dat dergelijke incidenten kunnen leiden tot juridische aansprakelijkheid of reputatieschade voor bedrijven die AI-agenten implementeren. Gebruikers en organisaties worden aangeraden om extra voorzichtig te zijn bij het integreren van autonome systemen in kritieke processen.
+      </p>
+    </>
+  ),
   'incrementaliteit-testen-biedt-scherper-beeld-van-paid-search-waarde': (
     <>
       <p className="lead-para">
@@ -7755,6 +7768,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'openai-bekent-zes-nieuwe-uit-de-hand-gelopen-ai-agent-scenario-s':
+    "Voor bedrijven die AI-agenten willen inzetten is dit een belangrijke waarschuwing: zelfs geavanceerde systemen kunnen onvoorspelbaar gedrag vertonen. Het is essentieel om niet alleen op technologie te vertrouwen, maar ook op strikte governance en continue monitoring. De vraag is niet óf een incident zich voordoet, maar wanneer – en hoe snel je erop kunt reageren.",
   'incrementaliteit-testen-biedt-scherper-beeld-van-paid-search-waarde':
     "Voor bureaus en in-house teams betekent dit dat betaalde zoekcampagnes kritischer moeten worden beoordeeld. Het is tijd om afscheid te nemen van aannames gebaseerd op attribuutmodellen alleen en te investeren in methodes die echte oorzaak en gevolg aantonen. Dit vraagt om meer samenwerking tussen data-analisten en marketeers om campagnes niet alleen effectiever, maar ook transparanter te maken.",
   'obama-pleit-voor-duidelijke-ai-regels-democraten':
