@@ -41,9 +41,9 @@ export default async function MarketingCheckToegangPage({ params, searchParams }
   return (
     <main className="flex min-h-screen items-center justify-center bg-[var(--color-primary)] px-5">
       <form method="get" action="/marketing-scan" className="w-full max-w-[360px] text-center">
-        <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--color-accent)]">Afgeschermd met een code</p>
-        <h1 className="mt-3 font-display text-[24px] font-extrabold leading-tight text-white">Deze pagina is nog niet open</h1>
-        <p className="mt-2 text-[14px] leading-relaxed text-slate-300">Heb je een code gekregen, vul die dan hieronder in.</p>
+        <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--color-accent)]">Beta</p>
+        <h1 className="mt-3 font-display text-[24px] font-extrabold leading-tight text-white">De scan is nog in beta</h1>
+        <p className="mt-2 text-[14px] leading-relaxed text-slate-300">We ontwikkelen hem samen met de eerste gebruikers verder. Vraag de code aan je contactpersoon bij Stevin.</p>
         <input
           name="code"
           type="password"

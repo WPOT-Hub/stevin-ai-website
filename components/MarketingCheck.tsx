@@ -614,7 +614,9 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
       const v = huidig.voortgang
       if (v) {
         setVoortgang(v)
-        setTokens(v.tokens_in != null ? v.tokens_in + (v.tokens_uit ?? 0) : v.tokens_geschat)
+        // Nooit terugvallen: wat de agents al verwerkt hebben gaat niet weg als
+        // het model begint. Koen, 17 sep: "loopt van 7,3 naar 6,4 tokens dat is gek".
+        setTokens((t) => Math.max(t, v.tokens_geschat ?? 0, (v.tokens_in ?? 0) + (v.tokens_uit ?? 0)))
       }
       const klaar = status !== 'running' && huidig.deep_scan !== 'queued' && huidig.deep_scan !== 'running'
       if (klaar) {
@@ -1442,6 +1444,16 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
           {/* "Dit zagen we ook" (de taginventaris uit fase A) staat niet meer op het
               scherm. Koen, 14 sep: de meeste klanten boeit het niet wat we nalopen.
               Het blijft in de database staan, voor ons. */}
+
+          {/* Beta, en dat zeggen we er gewoon bij (Koen, 17 sep 2026). Deze scan
+              kijkt van buitenaf en zit er soms naast; dan willen we dat horen in
+              plaats van dat iemand hem stilletjes wegklikt. Het maakt de uitkomst
+              ook eerlijker: wat hier staat is een eerste blik, geen eindoordeel. */}
+          <p className="mt-8 rounded-xl border border-[var(--color-border)] bg-white/60 px-4 py-3 text-[13px] leading-relaxed text-[var(--color-muted)]">
+            <span className="font-semibold text-[var(--color-primary)]">Deze scan is nog in beta.</span>{' '}
+            We kijken van buitenaf, dus we zien niet alles en we kunnen er naast zitten. Klopt er iets niet,
+            of mis je juist iets? Laat het ons weten, dan ontwikkelen we hem samen verder.
+          </p>
 
           {uitkomst.meetprobleem ? (
             <p className="mt-6 text-center text-[13px] text-[var(--color-muted)]">
