@@ -1529,6 +1529,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'incrementaliteit-testen-biedt-scherper-beeld-van-paid-search-waarde': (
+    <>
+      <p className="lead-para">
+        Traditionele attribuutmodellen zoals ‘last click’ of ‘data-driven’ laten zien welke kanalen het meeste krediet krijgen, maar zeggen weinig over de echte oorzaak en gevolg van conversies. Zo blijkt uit recent onderzoek dat maar liefst 40% van de conversies die aan paid search worden toegeschreven, ook zonder deze advertenties zouden zijn ontstaan. Dit leidt tot overschatting van de effectiviteit en onnodige uitgaven in campagnes aldus experts binnen PPC Hero.
+      </p>
+      <p>
+        Incrementaliteitstesten bieden een oplossing door te meten hoeveel extra conversies een campagne genereert ten opzichte van een situatie zonder advertenties. Door groepen gebruikers willekeurig bloot te stellen aan advertenties of niet, ontstaat een helder beeld van de daadwerkelijke uplift. Deze methode is vooral waardevol voor bedrijven met grote budgets en complexe klantreizen, waar kleine fouten in attribuutmodellen snel tot grote financiële gevolgen leiden.
+      </p>
+      <p>
+        Voor kleinere organisaties kan incrementaliteitstesten lastiger zijn door beperkte resources, maar zelfs gedeeltelijke toepassing levert direct inzicht op. Het is raadzaam om eerst te testen op een subset van campagnes voordat beslissingen op basis van meetdata worden genomen, zo blijkt uit praktijkervaringen.
+      </p>
+    </>
+  ),
   'obama-pleit-voor-duidelijke-ai-regels-democraten': (
     <>
       <p className="lead-para">
@@ -7742,6 +7755,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'incrementaliteit-testen-biedt-scherper-beeld-van-paid-search-waarde':
+    "Voor bureaus en in-house teams betekent dit dat betaalde zoekcampagnes kritischer moeten worden beoordeeld. Het is tijd om afscheid te nemen van aannames gebaseerd op attribuutmodellen alleen en te investeren in methodes die echte oorzaak en gevolg aantonen. Dit vraagt om meer samenwerking tussen data-analisten en marketeers om campagnes niet alleen effectiever, maar ook transparanter te maken.",
   'obama-pleit-voor-duidelijke-ai-regels-democraten':
     "Voor bedrijven betekent dit dat ze zich moeten voorbereiden op mogelijke nieuwe regels rond AI-toepassingen. Het is verstandig om nu al interne richtlijnen vast te leggen voor ethisch gebruik van AI, zodat je niet achteraf moet bijsturen. Daarnaast kan proactieve deelname aan sectorbrede discussies helpen om invloed uit te oefenen op toekomstige wetgeving.",
   'chinese-ai-bedrijven-gebruiken-distillatie-tegen-anthropic':
