@@ -108,7 +108,7 @@ async function sha256Hex(s: string): Promise<string> {
  * MARKETING_CHECK_TOEGANGSCODE in de omgeving wint hiervan; zet die om de code
  * te wijzigen zonder deploy-diff. Leeghalen kan niet meer: de poort staat aan.
  */
-const MC_BETA_CODE = 'bob2026'
+const MC_BETA_CODE = '1585'
 
 async function marketingCheckPoort(request: NextRequest): Promise<NextResponse | null> {
   const code = process.env.MARKETING_CHECK_TOEGANGSCODE || MC_BETA_CODE
