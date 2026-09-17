@@ -884,6 +884,23 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
                     placeholder="Mailadres" type="email" autoComplete="email" required
                     className="mt-3 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
                   />
+                  {/* Koen, 17 sep: bij het boeken laten aangeven wat ze verder nog
+                      samen willen bekijken. bericht ging al mee naar Slack
+                      (contact.ts), maar cBericht kreeg nooit een invoerveld en
+                      bleef altijd leeg. Alleen bij de kennismaking, niet bij de
+                      uitgebreide scan per mail: daar is nog geen gesprek. Het
+                      voorbeeld in de placeholder noemt bewust een
+                      concurrentievergelijking, want dat is precies iets wat wij
+                      liever live in het gesprek doen dan automatisch in de scan
+                      (derde partij, geen geverifieerde match zonder adres). */}
+                  {!wilMeting && (
+                    <textarea
+                      value={cBericht} onChange={(e) => setCBericht(e.target.value)}
+                      placeholder="Wat wil je verder nog samen bekijken? Bijvoorbeeld: hoe we ervoor staan tegenover concurrenten in de regio. (optioneel)"
+                      rows={2}
+                      className="mt-3 w-full resize-none rounded-xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-[16px] text-[var(--color-primary)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
+                    />
+                  )}
                   {cFout && <p className="mt-3 text-[14px] text-[var(--color-pink)]">{cFout}</p>}
                   <button
                     type="submit" disabled={cStatus === 'bezig'}
