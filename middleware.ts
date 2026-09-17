@@ -97,8 +97,21 @@ async function sha256Hex(s: string): Promise<string> {
   return Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, '0')).join('')
 }
 
+/**
+ * De beta-code. Staat hier en niet alleen in de omgeving omdat dit geen
+ * beveiligingsgrens is maar een drempel: achter deze poort staat een scan van
+ * een openbare website, geen klantdata en geen account. Wie de code heeft mag
+ * meekijken en feedback geven, de rest niet (Koen, 17 sep 2026: "geef aan beta
+ * fase, vraag de code aan jouw contactpersoon"). De QR-code voor de beurs
+ * draagt hem in de link mee, dus een bezoeker hoeft niets te typen.
+ *
+ * MARKETING_CHECK_TOEGANGSCODE in de omgeving wint hiervan; zet die om de code
+ * te wijzigen zonder deploy-diff. Leeghalen kan niet meer: de poort staat aan.
+ */
+const MC_BETA_CODE = 'bob2026'
+
 async function marketingCheckPoort(request: NextRequest): Promise<NextResponse | null> {
-  const code = process.env.MARKETING_CHECK_TOEGANGSCODE
+  const code = process.env.MARKETING_CHECK_TOEGANGSCODE || MC_BETA_CODE
   if (!code) return null
   if (!MC_PAD.test(request.nextUrl.pathname)) return null
 
