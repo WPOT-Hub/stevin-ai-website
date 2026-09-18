@@ -108,16 +108,29 @@ async function sha256Hex(s: string): Promise<string> {
  * MARKETING_CHECK_TOEGANGSCODE in de omgeving wint hiervan; zet die om de code
  * te wijzigen zonder deploy-diff. Leeghalen kan niet meer: de poort staat aan.
  */
-const MC_BETA_CODE = '1585'
 /**
- * Codes die ook nog werken. Gedrukte QR-codes dragen hun code in de link mee,
- * en papier trek je niet terug: Koen scande op 18 sep een kaartje van de avond
- * ervoor en kreeg "die code klopt niet". Een oude code hier laten staan kost
- * niets en voorkomt dat een bezoeker voor een dichte deur staat. De eerste in
- * de rij blijft de canonieke: die bepaalt het cookie, zodat iedereen hetzelfde
- * koekje krijgt en wisselen van code niemand uitlogt.
+ * De poort staat UIT (Koen, 18 sep 2026, op de beurs).
+ *
+ * De redenering: de QR-code staat nergens anders dan op papier dat wij zelf
+ * uitdelen, en de scanpagina's staan op noindex en niet in de sitemap. Wie de
+ * QR heeft, hoort dus binnen te komen. Een code daar bovenop is dubbelop, en
+ * hij levert alleen gedoe op: een kaartje van de avond ervoor droeg de oude
+ * code en gaf "die code klopt niet", precies op het moment dat iemand wilde
+ * scannen.
+ *
+ * Wat blijft: de scan zegt zelf dat hij in beta is, op het scherm en in de
+ * mail. De quota in de Hub blijven de echte rem (300 scans per dag, 60 per
+ * QR-code). En er staan links naar /marketing-scan in drie blogartikelen, dus
+ * blogbezoekers kunnen nu ook scannen.
+ *
+ * Weer aanzetten kan met een woord: zet hier een code neer, of zet
+ * MARKETING_CHECK_TOEGANGSCODE in de omgeving. Oude gedrukte QR-codes dragen
+ * hun eigen code in de link mee; zet die er dan bij in MC_OUDE_CODES, anders
+ * staat iemand met een kaartje in zijn hand voor een dichte deur.
  */
-const MC_OUDE_CODES = ['bob2026']
+const MC_BETA_CODE = ''
+const MC_OUDE_CODES: string[] = []
+
 
 async function marketingCheckPoort(request: NextRequest): Promise<NextResponse | null> {
   const code = process.env.MARKETING_CHECK_TOEGANGSCODE || MC_BETA_CODE
