@@ -109,16 +109,26 @@ async function sha256Hex(s: string): Promise<string> {
  * te wijzigen zonder deploy-diff. Leeghalen kan niet meer: de poort staat aan.
  */
 const MC_BETA_CODE = '1585'
+/**
+ * Codes die ook nog werken. Gedrukte QR-codes dragen hun code in de link mee,
+ * en papier trek je niet terug: Koen scande op 18 sep een kaartje van de avond
+ * ervoor en kreeg "die code klopt niet". Een oude code hier laten staan kost
+ * niets en voorkomt dat een bezoeker voor een dichte deur staat. De eerste in
+ * de rij blijft de canonieke: die bepaalt het cookie, zodat iedereen hetzelfde
+ * koekje krijgt en wisselen van code niemand uitlogt.
+ */
+const MC_OUDE_CODES = ['bob2026']
 
 async function marketingCheckPoort(request: NextRequest): Promise<NextResponse | null> {
   const code = process.env.MARKETING_CHECK_TOEGANGSCODE || MC_BETA_CODE
   if (!code) return null
   if (!MC_PAD.test(request.nextUrl.pathname)) return null
 
+  const geldig = [code, ...MC_OUDE_CODES]
   const verwacht = await sha256Hex(`${code}:${MC_COOKIE}`)
   const ingevoerd = request.nextUrl.searchParams.get('code')
   if (ingevoerd !== null) {
-    if (ingevoerd.trim() === code) {
+    if (geldig.includes(ingevoerd.trim())) {
       const schoon = request.nextUrl.clone()
       schoon.searchParams.delete('code')
       const r = NextResponse.redirect(schoon)
