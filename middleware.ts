@@ -89,6 +89,38 @@ async function logBotCrawl(bot: string, path: string): Promise<void> {
  * en stuurt door naar het schone pad; zonder geldige cookie wordt de pagina
  * herschreven naar het codescherm, met de URL onveranderd.
  */
+/**
+ * Korte links voor gedrukte QR-codes (W-165, 18 sep 2026).
+ *
+ * Een QR op papier kun je niet meer wijzigen. Daarom wijst hij niet naar de
+ * scan zelf maar hierheen: stevin.ai/s/ms. Wat daarachter zit bepalen wij, en
+ * dat kan morgen iets anders zijn zonder dat er een kaartje de prullenbak in
+ * hoeft. Kortere URL betekent ook een eenvoudiger QR, en die scant makkelijker
+ * met een matige telefooncamera.
+ *
+ * ms = Marketing Scan, ar = AI-Ready Scan, cs = Competitor Scan (bestaat nog
+ * niet, wijst voorlopig naar de marketing-scan), x1 = vrij te bestemmen.
+ */
+const KORTE_LINKS: Record<string, string> = {
+  ms: '/marketing-scan?p=bob-marketing',
+  ar: '/ai-ready-scan?p=bob-ai',
+  cs: '/marketing-scan?p=kaart-cs',
+  x1: '/marketing-scan?p=kaart-x1',
+}
+
+function korteLink(request: NextRequest): NextResponse | null {
+  const m = /^\/(?:nl|en\/)?s\/([a-z0-9-]{1,12})\/?$/i.exec(request.nextUrl.pathname)
+  if (!m) return null
+  const doel = KORTE_LINKS[m[1].toLowerCase()]
+  // Onbekende code: naar de scan, niet naar een foutpagina. Een bezoeker met
+  // een kaartje in zijn hand hoort nooit voor een dichte deur te staan.
+  const url = request.nextUrl.clone()
+  const [pad, query] = (doel ?? '/marketing-scan').split('?')
+  url.pathname = pad
+  url.search = query ? `?${query}` : ''
+  return NextResponse.redirect(url)
+}
+
 const MC_PAD = /^\/(?:nl|en)?\/?(?:marketing-scan|ai-ready-scan)\/?$/
 const MC_COOKIE = 'mc_toegang'
 
@@ -171,6 +203,10 @@ async function marketingCheckPoort(request: NextRequest): Promise<NextResponse |
 }
 
 export default async function middleware(request: NextRequest) {
+  // Eerst de korte links van gedrukte QR-codes: die moeten altijd voorgaan.
+  const kort = korteLink(request)
+  if (kort) return kort
+
   const poort = await marketingCheckPoort(request)
   if (poort) return poort
 
