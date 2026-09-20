@@ -204,6 +204,21 @@ Materiaal dat jij aanlevert blijft van jou. Teksten, beeld en merkuitingen die s
 
 **M3.5 Wat wij niet garanderen.** Wij garanderen niet dat een pagina, campagne of meting tot een bepaald resultaat leidt. Wij herstellen wel kosteloos gebreken in wat wij hebben opgeleverd, mits je die binnen dertig dagen na oplevering meldt.
 
+**M3.6 Acceptatieprocedure.** Wij melden je schriftelijk wanneer wij een oplevering gereed achten. Daarna heb je vijf werkdagen om te beoordelen of het opgeleverde voldoet aan wat in de opdrachtbevestiging staat. Meld je binnen die termijn geen substantieel gebrek, dan geldt het opgeleverde als aanvaard. Je kunt ook eerder formeel accepteren. Meld je een gebrek, dan herstellen wij dat zo snel als redelijk is en leveren wij opnieuw op; de beoordelingstermijn van vijf werkdagen begint dan opnieuw. De klachtentermijn van dertig dagen uit M3.5 voor gebreken die pas na acceptatie opvallen, blijft van kracht.
+
+> **Waarom dit erin staat:** zonder een acceptatieprocedure is onduidelijk wanneer een oplevering als voltooid geldt, wanneer de garantietermijn uit M3.5 begint te lopen en wanneer de betalingsverplichting is vervuld.
+
+**M3.7 Wijzigingen tijdens het project.** Iedereen kan tijdens een project vaststellen dat de oorspronkelijke scope moet wijzigen. De procedure:
+
+1. **Verzoek.** Wij of jij leggen de gewenste wijziging schriftelijk voor.
+2. **Beoordeling.** Binnen vijf werkdagen beoordelen wij de impact op doorlooptijd, prijs en het resterende project en leggen die beoordeling schriftelijk voor.
+3. **Akkoord.** Jij bevestigt de wijziging schriftelijk. Zonder jouw schriftelijke akkoord beginnen wij geen werk buiten de afgesproken scope.
+4. **Vastlegging.** De opdrachtbevestiging wordt aangevuld met de wijziging, de nieuwe prijs en de aangepaste doorlooptijd.
+
+Wijzigingen die de scope verkleinen leiden niet automatisch tot teruggave van al betaalde bedragen, tenzij wij dat uitdrukkelijk overeenkomen.
+
+> **TODO-KOEN:** Leg per klant in de opdrachtbevestiging vast wie bevoegd is scopewijzigingen te autoriseren. Bij Boersma: is dat altijd de eigenaar zelf?
+
 ---
 
 ## Nog te beslissen voordat dit definitief wordt
@@ -216,10 +231,10 @@ Materiaal dat jij aanlevert blijft van jou. Teksten, beeld en merkuitingen die s
 
 ## Wat nog niet in dit concept is verwerkt
 
-Uit de vijandige lezing van 25 aug kwamen drie dingen die niet met een tekstwijziging in dit document op te lossen zijn. Ze horen bij de volgende ronde:
+Uit de vijandige lezing van 25 aug kwamen punten die niet met een tekstwijziging in dit document op te lossen zijn.
 
-6. **De Verwerkersovereenkomst moet mee.** Die beschrijft nu alleen het platform. Er moet een bijlage bij met per dienst het doel, de handelingen, de gegevenscategorieën, de betrokkenen, de bewaartermijnen en de toegestane actiebevoegdheid. Daarin horen ook campagnebeheer, acties door mensen en agents, bouw en hosting van pagina's, meetinrichting, e-mailkoppelingen en het werk van ingeschakelde externen. Zonder die bijlage verwerken wij buiten het beschreven doel.
-7. **De rollen in de Privacyverklaring lopen door elkaar.** Voor klantdata zijn wij verwerker, maar voor onze eigen websiteleads, facturatie, beveiligingslogging en gebruikersbeheer zijn wij verwerkingsverantwoordelijke. Nu staat dat door elkaar, waardoor betrokkenen bij ons aankloppen voor rechten die de klant moet afhandelen. Dat moeten twee gescheiden delen worden.
-8. **De subverwerkerslijsten verschillen.** Mistral en Slack staan in de Verwerkersovereenkomst maar niet in de Privacyverklaring, en freelancers en externe leveranciers staan in geen van beide. Eén lijst maken, met per partij de rechtsvorm, het land, de dienst, de gegevenscategorieën en de doorgiftegrondslag. Of iemand subverwerker is of onder ons gezag werkt, bepaalt de feitelijke werkwijze en niet zijn rechtsvorm.
-9. **De commerciële modules missen invulling.** Per module moet in de opdrachtbevestiging staan: welke werkzaamheden erin zitten, hoeveel uren of capaciteit, hoe AI-verbruik buiten het platform wordt behandeld, reactietijden, wat is uitgesloten, tarieven voor aanvullend werk, hostingkosten, en de oplevercriteria. Nu kan een klant niet vooraf bepalen wat 399 of 499 euro werkelijk omvat, terwijl de aanbodpagina wel harde beloften doet.
-10. **Acceptatie en wijzigingsbeheer voor projecten (Module 3).** Er is geen procedure voor het goedkeuren van een oplevering en geen procedure voor wijzigingen tijdens een project.
+6. **Verwerkersovereenkomst bijlage.** ~~Ontbrak.~~ **Concept gereed:** zie CONCEPT_VERWERKERSOVEREENKOMST_BIJLAGE.md. Beschrijft per dienst het doel, de handelingen, de gegevenscategorieën, de betrokkenen, de bewaartermijnen en de toegestane actiebevoegdheid. TODO-KOEN-punten staan in dat document.
+7. **Rollen in de Privacyverklaring.** ~~Liepen door elkaar.~~ **Concept gereed:** zie CONCEPT_PRIVACYVERKLARING.md. Twee gescheiden delen: Stevin als verwerker (klantdata) en Stevin als verwerkingsverantwoordelijke (eigen verwerkingen). TODO-KOEN-punten staan in dat document.
+8. **Subverwerkerslijsten.** ~~Verschilden per document.~~ **Concept gereed:** zie CONCEPT_SUBVERWERKERS.md. Eén lijst met per partij de rechtsvorm, het land, de dienst, de gegevenscategorieën en de doorgiftegrondslag. TODO-KOEN-punten staan in dat document.
+9. **De commerciële modules missen invulling.** Per module moet in de opdrachtbevestiging staan: welke werkzaamheden erin zitten, hoeveel uren of capaciteit, hoe AI-verbruik buiten het platform wordt behandeld, reactietijden, wat is uitgesloten, tarieven voor aanvullend werk, hostingkosten en de oplevercriteria. Nu kan een klant niet vooraf bepalen wat 399 of 499 euro werkelijk omvat, terwijl de aanbodpagina wel harde beloften doet. **Nog niet opgelost:** vereist invulling door Koen, daarna kan een opdrachtbevestigingstemplate worden gemaakt.
+10. **Acceptatie en wijzigingsbeheer voor Module 3.** ~~Ontbrak.~~ **Opgelost:** M3.6 (Acceptatieprocedure) en M3.7 (Wijzigingen tijdens het project) zijn toegevoegd aan dit document.
