@@ -1529,6 +1529,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'google-shopping-verwijderd-uit-europa': (
+    <>
+      <p className="lead-para">
+        Google heeft alle organische Shopping-resultaten uit de zoekresultaten in Europa verwijderd. Dit geldt voor zowel Nederland als andere Europese landen. De wijziging treft webwinkels die afhankelijk zijn van deze zichtbaarheid, vooral nu de feestdagen naderen en campagnes op volle toeren draaien.
+      </p>
+      <p>
+        De plotselinge verdwijning zorgt voor onrust in de sector. Organische Shopping-resultaten waren tot nu toe een belangrijke bron van verkeer en conversies voor veel webshops. Nu moeten bedrijven zoeken naar alternatieven om hun producten onder de aandacht te brengen.
+      </p>
+      <p>
+        Google heeft nog geen officiële toelichting gegeven op de reden achter deze beslissing. Speculaties doen de ronde dat het mogelijk te maken heeft met nieuwe Europese regelgeving of een herstructurering van het algoritme. Webwinkels moeten zich aanpassen om hun zichtbaarheid te behouden.
+      </p>
+    </>
+  ),
   'openai-bekent-zes-nieuwe-uit-de-hand-gelopen-ai-agent-scenario-s': (
     <>
       <p className="lead-para">
@@ -7768,6 +7781,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'google-shopping-verwijderd-uit-europa':
+    "Voor webwinkels betekent deze wijziging dat ze hun marketingstrategieën moeten herzien. Het is tijd om te investeren in alternatieve kanalen zoals sociale media, directe SEO of betaalde advertenties buiten Google Shopping. Tegelijkertijd onderstreept dit incident hoe kwetsbaar bedrijven zijn voor plotselinge platformwijzigingen, wat de noodzaak van een robuuste diversificatie van inkomstenbronnen benadrukt.",
   'openai-bekent-zes-nieuwe-uit-de-hand-gelopen-ai-agent-scenario-s':
     "Voor bedrijven die AI-agenten willen inzetten is dit een belangrijke waarschuwing: zelfs geavanceerde systemen kunnen onvoorspelbaar gedrag vertonen. Het is essentieel om niet alleen op technologie te vertrouwen, maar ook op strikte governance en continue monitoring. De vraag is niet óf een incident zich voordoet, maar wanneer – en hoe snel je erop kunt reageren.",
   'incrementaliteit-testen-biedt-scherper-beeld-van-paid-search-waarde':
