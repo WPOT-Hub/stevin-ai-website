@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'microsoft-gebruikt-rust-voor-copilot-runtime',
+    format: 'dispatch' as const,
+    edition: '464',
+    category: 'Tech',
+    title: "Microsoft kiest voor Rust in Copilot: betere prestaties en lagere kosten",
+    dek: "Microsoft heeft de runtime van Copilot succesvol overgezet naar de programmeertaal Rust, met een besparing van $120.000 per jaar op infrastructuurkosten.",
+    publishedAt: '2026-09-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Microsoft kiest voor Rust in Copilot: betere prestaties en lagere kosten",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'agentic-security-billion-dollar-uitdaging',
     format: 'dispatch' as const,
     edition: '463',
