@@ -1529,6 +1529,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'microsoft-gebruikt-rust-voor-copilot-runtime': (
+    <>
+      <p className="lead-para">
+        De overstap naar Rust heeft geleid tot een stabielere en efficiëntere werking van Copilot. De programmeertaal blijkt minder gevoelig voor storingen veroorzaakt door grote taalmodellen dan eerdere versies. Microsoft noemt het resultaat een 'gamechanger' voor de betrouwbaarheid van de dienst.
+      </p>
+      <p>
+        De besparing van $120.000 per jaar komt voort uit lagere serverkosten en minder onderhoud. Rust vereist minder resources om dezelfde prestaties te leveren als C++, aldus de ontwikkelaars. Daarnaast zorgt de taal voor minder crashes, wat downtime reduceert.
+      </p>
+      <p>
+        De overstap past in Microsofts strategie om veiligere en efficiëntere software te bouwen. Rust wordt steeds vaker ingezet voor kritieke systemen waar stabiliteit prioriteit heeft.
+      </p>
+    </>
+  ),
   'agentic-security-billion-dollar-uitdaging': (
     <>
       <p className="lead-para">
@@ -7794,6 +7807,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'microsoft-gebruikt-rust-voor-copilot-runtime':
+    "Voor bedrijven die afhankelijk zijn van AI-diensten zoals chatbots of automatisering, toont dit aan dat investeren in moderne programmeertalen loont. Het verminderen van storingen en kosten is direct meetbaar in operationele resultaten. Tegelijkertijd vraagt zo’n migratie om expertise die niet overal beschikbaar is, wat de drempel verhoogt.",
   'agentic-security-billion-dollar-uitdaging':
     "Voor ondernemers betekent dit dat ze nu al moeten nadenken over hoe ze hun AI-systemen veilig houden. Het is geen kwestie van 'als' er iets misgaat, maar 'wanneer'. Bedrijven die nu proactief investeren in beveiliging en bewustwording, voorkomen later hoge kosten en reputatieschade. Daarnaast kan het een concurrentievoordeel opleveren: klanten en partners hechten steeds meer waarde aan veilige systemen.",
   'google-shopping-verwijderd-uit-europa':
