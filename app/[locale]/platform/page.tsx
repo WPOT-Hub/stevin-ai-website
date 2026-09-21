@@ -101,7 +101,7 @@ const COPY = {
     ladder_dan: 'Dan pas dit',
     ladder: [
       { n: '01', t: 'Op jouw naam', d: 'De accounts staan op naam van je bedrijf en jij bepaalt wie erbij mag. Zonder dit kun je morgen niet wisselen van uitvoerder, hoe goed de rest ook staat.' },
-      { n: '02', t: 'Meting', d: 'Een conversie is een echte aanvraag, geen knopklik. Vuurt je meting op het verkeerde moment, dan is elk cijfer erboven onbruikbaar.' },
+      { n: '02', t: 'Meting', d: 'Een conversie is een echte aanvraag, geen klik. Vuurt je meting op het verkeerde moment, dan is elk cijfer erboven onbruikbaar.' },
       { n: '03', t: 'Een bron', d: 'Een plek waar de cijfers samenkomen, in plaats van vier dashboards die elkaar tegenspreken. Anders discussieer je over wie gelijk heeft in plaats van over wat je doet.' },
       { n: '04', t: 'Geheugen', d: 'Wat is er geprobeerd, waarom, en wat kwam eruit. Zonder dat begint elke nieuwe partij weer bij nul, en betaal je twee keer voor dezelfde les.' },
       { n: '05', t: 'Automatiseren', d: 'Pas hier. Wat vier keer hetzelfde gaat, kan zichzelf doen. Daarvoor is het gokken welk werk je automatiseert.' },

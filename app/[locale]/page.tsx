@@ -112,7 +112,7 @@ const COPY = {
       // staat er dan ook bij.
       { t: '"Sinds het bureau het heeft overgenomen komt er niks meer binnen"', d: 'Zelf gedaan: een paar honderd euro per maand, vier tot vijf aanvragen per dag. Via het bureau: tweeduizend per maand, vier tot vijf per week. Niet zuiver vergelijkbaar, er zat een nieuwe naam en een nieuwe site tussen. Maar niemand die het kon uitleggen.' },
     ],
-    nu_slot: 'Wij zorgen eerst dat klopt wat er binnenkomt, zodat Google en Meta echte aanvragen te zien krijgen in plaats van knopklikken. Dan gaan ze harder voor je werken. En het telt zwaarder dan vroeger, want wat zo\'n systeem voor jou kan uitrekenen hangt af van wat het van jou weet. Die geschiedenis bouwt zich op in het account waar hij staat, dus hoe langer je wacht, hoe duurder de overstap wordt. Een keer de pleister eraf. En bij ons gaat er niets uit de lucht: geen dag zonder site, geen dag zonder mail.',
+    nu_slot: 'Wij zorgen eerst dat klopt wat er binnenkomt, zodat Google en Meta echte aanvragen te zien krijgen in plaats van kliks. Dan gaan ze harder voor je werken. En het telt zwaarder dan vroeger, want wat zo\'n systeem voor jou kan uitrekenen hangt af van wat het van jou weet. Die geschiedenis bouwt zich op in het account waar hij staat, dus hoe langer je wacht, hoe duurder de overstap wordt. Een keer de pleister eraf. En bij ons gaat er niets uit de lucht: geen dag zonder site, geen dag zonder mail.',
 
     ladder_eyebrow: 'De volgorde',
     ladder_h2: 'Wat er moet kloppen voordat AI iets voor je kan betekenen.',
@@ -121,7 +121,7 @@ const COPY = {
     ladder_dan: 'Dan pas dit',
     ladder: [
       { n: '01', t: 'Op jouw naam', d: 'De accounts staan op naam van je bedrijf en jij bepaalt wie erbij mag. Zonder dit kun je morgen niet wisselen van uitvoerder, hoe goed de rest ook staat.' },
-      { n: '02', t: 'Meting', d: 'Een conversie is een echte aanvraag, geen knopklik. Vuurt je meting op het verkeerde moment, dan is elk cijfer erboven onbruikbaar.' },
+      { n: '02', t: 'Meting', d: 'Een conversie is een echte aanvraag, geen klik. Vuurt je meting op het verkeerde moment, dan is elk cijfer erboven onbruikbaar.' },
       { n: '03', t: 'Een bron', d: 'Een plek waar de cijfers samenkomen, in plaats van vier dashboards die elkaar tegenspreken. Anders discussieer je over wie gelijk heeft in plaats van over wat je doet.' },
       { n: '04', t: 'Geheugen', d: 'Wat is er geprobeerd, waarom, en wat kwam eruit. Zonder dat begint elke nieuwe partij weer bij nul, en betaal je twee keer voor dezelfde les.' },
       { n: '05', t: 'Automatiseren', d: 'Pas hier. Wat vier keer hetzelfde gaat, kan zichzelf doen. Daarvoor is het gokken welk werk je automatiseert.' },

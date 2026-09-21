@@ -37,7 +37,7 @@ const VCARD = [
   'EMAIL;TYPE=WORK:koen@stevin.ai',
   'TEL;TYPE=CELL:+31640836055',
   'URL:https://stevin.ai',
-  'ADR;TYPE=WORK:;;Claudius Prinsenlaan 12, Unit S8;Breda;;4811 DK;Nederland',
+  'ADR;TYPE=WORK:;;Claudius Prinsenlaan 12;Breda;;4811 DK;Nederland',
   'END:VCARD',
 ].join('\n')
 
