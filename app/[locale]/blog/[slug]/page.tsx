@@ -1529,6 +1529,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'agentic-security-billion-dollar-uitdaging': (
+    <>
+      <p className="lead-para">
+        De beveiliging van autonome AI-agenten wordt binnenkort een cruciaal aandachtspunt voor bedrijven wereldwijd. Volgens een investeerder in *The Register* is dit het volgende grote veiligheidsprobleem dat opgelost moet worden, met een potentiële marktwaarde van miljarden dollars. De technologie ontwikkelt zich snel, maar de beveiligingsmaatregelen blijven achter, aldus de bron.
+      </p>
+      <p>
+        Organisaties die AI-agenten inzetten voor taken als klantenservice, data-analyse of automatisering lopen risico op datalekken, misbruik of sabotage. De investeerder wijst erop dat veel bedrijven nu nog denken dat ze tijd hebben om dit probleem aan te pakken, maar dat de realiteit anders is. De kosten van een falende beveiliging kunnen enorm zijn.
+      </p>
+      <p>
+        De uitdaging ligt niet alleen in technische oplossingen, maar ook in het bewustzijn en de cultuur binnen organisaties. Veel bedrijven onderschatten nog steeds hoe kwetsbaar ze zijn voor aanvallen via AI-systemen.
+      </p>
+    </>
+  ),
   'google-shopping-verwijderd-uit-europa': (
     <>
       <p className="lead-para">
@@ -7781,6 +7794,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'agentic-security-billion-dollar-uitdaging':
+    "Voor ondernemers betekent dit dat ze nu al moeten nadenken over hoe ze hun AI-systemen veilig houden. Het is geen kwestie van 'als' er iets misgaat, maar 'wanneer'. Bedrijven die nu proactief investeren in beveiliging en bewustwording, voorkomen later hoge kosten en reputatieschade. Daarnaast kan het een concurrentievoordeel opleveren: klanten en partners hechten steeds meer waarde aan veilige systemen.",
   'google-shopping-verwijderd-uit-europa':
     "Voor webwinkels betekent deze wijziging dat ze hun marketingstrategieën moeten herzien. Het is tijd om te investeren in alternatieve kanalen zoals sociale media, directe SEO of betaalde advertenties buiten Google Shopping. Tegelijkertijd onderstreept dit incident hoe kwetsbaar bedrijven zijn voor plotselinge platformwijzigingen, wat de noodzaak van een robuuste diversificatie van inkomstenbronnen benadrukt.",
   'openai-bekent-zes-nieuwe-uit-de-hand-gelopen-ai-agent-scenario-s':
