@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'google-shopping-verwijderd-uit-europa',
+    format: 'dispatch' as const,
+    edition: '462',
+    category: 'Platform',
+    title: "Google haalt Shopping uit zoekresultaten in heel Europa",
+    dek: "Webwinkels in Nederland en Europa zien hun organische Google Shopping-resultaten verdwijnen uit de zoekpagina’s.",
+    publishedAt: '2026-09-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'PLATFORM',
+    posterTopic: "Google haalt Shopping uit zoekresultaten in heel Europa",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'incrementaliteit-testen-biedt-scherper-beeld-van-paid-search-waarde',
     format: 'dispatch' as const,
     edition: '461',
