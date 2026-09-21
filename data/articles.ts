@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'agentic-security-billion-dollar-uitdaging',
+    format: 'dispatch' as const,
+    edition: '463',
+    category: 'Security | Tech',
+    title: "Agentic security wordt de volgende miljardendollar-uitdaging voor bedrijven",
+    dek: "Een investeerder waarschuwt dat organisaties niet langer de beveiliging van AI-agenten kunnen negeren zonder grote risico's te lopen.",
+    publishedAt: '2026-09-21',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'SECURITY | TECH',
+    posterTopic: "Agentic security wordt de volgende miljardendollar-uitdaging voor bedrijven",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'google-shopping-verwijderd-uit-europa',
     format: 'dispatch' as const,
     edition: '462',
