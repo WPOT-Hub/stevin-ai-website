@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'nieuwe-ecommerce-tools-september-2026',
+    format: 'dispatch' as const,
+    edition: '465',
+    category: 'Distributie',
+    title: "Meer dan 10 nieuwe tools voor e-commerce in september",
+    dek: "Van betaaloplossingen tot AI-gestuurde klantenservice: deze week zijn er nieuwe tools voor online verkopers beschikbaar.",
+    publishedAt: '2026-09-26',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "Meer dan 10 nieuwe tools voor e-commerce in september",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'microsoft-gebruikt-rust-voor-copilot-runtime',
     format: 'dispatch' as const,
     edition: '464',
