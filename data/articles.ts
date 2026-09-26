@@ -34,6 +34,21 @@ export interface Article {
 const allArticles: Article[] = [
   /* ─── DISPATCHES ─── */
   {
+    slug: 'ai-agents-muse-oppenclaw-instinct',
+    format: 'dispatch' as const,
+    edition: '466',
+    category: 'Tech',
+    title: "Muse en Instinct duwen AI-agenten naar de consumentenmarkt",
+    dek: "Meta’s nieuwe AI-agent Muse en platform Instinct laten zien hoe AI-agents snel mainstream worden.",
+    publishedAt: '2026-09-26',
+    readMinutes: 1,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'gradient' as const,
+    posterTag: 'TECH',
+    posterTopic: "Muse en Instinct duwen AI-agenten naar de consumentenmarkt",
+    source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
+  },
+  {
     slug: 'nieuwe-ecommerce-tools-september-2026',
     format: 'dispatch' as const,
     edition: '465',
