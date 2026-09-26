@@ -2,7 +2,7 @@
 
 > **Status: concept, nog niet geldig.** Niet publiceren en niet aan klanten voorleggen voordat Koen dit heeft doorgenomen en een jurist naar de gemarkeerde onderdelen heeft gekeken. De geldende versie staat op stevin.ai.
 >
-> Opgesteld 25 aug 2026. Volgt de architectuur uit D-030: één set, modulair opgebouwd, met een rangorderegeling. Hoofdstuk A geldt altijd. De modules gelden zodra die dienst geleverd wordt.
+> Opgesteld 25 aug 2026, Module 4 (agents) toegevoegd 26 sep 2026. Volgt de architectuur uit D-030: één set, modulair opgebouwd, met een rangorderegeling. Hoofdstuk A geldt altijd. De modules gelden zodra die dienst geleverd wordt.
 >
 > Wat dit concept oplost ten opzichte van de huidige tekst: die beschrijft alleen een softwareplatform, terwijl we ook mensenwerk en bouwwerk verkopen (bij Boersma valt daarmee de helft van de maandomzet en de volledige opstart buiten het contract). Verder ontbraken een kader voor acties door mensen en agents, de inzet van externen, en de beloften van de aanbodpagina.
 
@@ -160,7 +160,7 @@ Op deze overeenkomst is Nederlands recht van toepassing. Geschillen leggen wij v
 
 **M1.1 Wat je krijgt.** Toegang tot het Stevin-platform voor de duur van het abonnement: koppelingen met je marketing- en salesbronnen, meting, signalen, dashboards, rapportage en de AI-adviseur. Het AI-verbruik binnen het platform zit bij de abonnementsprijs in.
 
-**M1.2 Licentie.** Je krijgt een niet-exclusief, niet-overdraagbaar gebruiksrecht voor de duur van het abonnement. Het platform zelf, inclusief code, ontwerp, prompts, regels, playbooks en modellen, blijft van ons of van een aan ons gelieerde vennootschap. Dit gebruiksrecht eindigt bij het einde van het abonnement; wat je daarna houdt staat in A11 (je gegevens en je dossier) en in M3.3 (wat wij voor je hebben gebouwd).
+**M1.2 Licentie.** Je krijgt een niet-exclusief, niet-overdraagbaar gebruiksrecht voor de duur van het abonnement. Het platform zelf, inclusief code, ontwerp, prompts, regels, playbooks en modellen, blijft van ons of van een aan ons gelieerde vennootschap. Dit gebruiksrecht eindigt bij het einde van het abonnement; wat je daarna houdt staat in A11 (je gegevens en je dossier) in M3.3 (wat wij voor je hebben gebouwd) en in M4.6 (agents).
 
 **M1.3 Beschikbaarheid.** Wij streven naar een beschikbaarheid van 99,5 procent per maand, gemeten over de onderdelen die je nodig hebt voor normaal gebruik, buiten aangekondigd onderhoud en buiten storingen bij derden. Wij melden gepland onderhoud vooraf.
 
@@ -206,6 +206,39 @@ Materiaal dat jij aanlevert blijft van jou. Teksten, beeld en merkuitingen die s
 
 ---
 
+## Module 4. Agents
+
+> **Toegevoegd 26 sep 2026**, na de doorlichting van de voorwaarden van Swoep (v2.1, 26 sep 2026) en het besluit van Koen van diezelfde dag: een door ons gebouwde agent blijft van ons, de klant krijgt een gebruiksrecht voor de looptijd, en zijn data, accounts en dossier blijven van hem. Deze module geldt zodra een agent voor je draait, naast Module 1 en, waar wij de agent bouwen, naast Module 3.
+
+**M4.1 Twee soorten agents.** Een agent is een geautomatiseerde workflow op het platform die op basis van je gegevens en je beslisregels adviezen geeft of handelingen uitvoert, ook in je gekoppelde systemen. Er zijn er twee:
+
+1. **Stevin-agent.** Door ons gebouwd of ingericht op basis van de taken, beslisregels en koppelingen die jij hebt goedgekeurd. In de opdrachtbevestiging staat per agent: de naam, wat hij doet, welke systemen hij raakt, welk niveau uit A6 geldt, de vergoeding per maand en een eventuele eenmalige bouwvergoeding.
+2. **Klant-Agent.** Door jou of namens jou zelf aangemaakt, ingericht of in gebruik genomen op het platform, ongeacht de naam die het platform eraan geeft en ongeacht of je daarbij onze sjablonen, voorbeelden of modellen gebruikt. Wij zijn daarvan het platform, niet de bouwer.
+
+**M4.2 Wat wij beloven bij een Stevin-agent.** Wij bouwen op inspanning, in overleg met jou en op basis van wat jij aanlevert. Voordat een Stevin-agent zelfstandig handelt, doorloopt hij een acceptatietest die wij samen vastleggen; jij activeert hem. Werkt een agent niet of niet goed, dan meld je dat via het afgesproken kanaal, wij onderzoeken de oorzaak en leveren waar mogelijk een tijdelijke oplossing en daarna een herstel. Wijzigingen aan een Stevin-agent lopen via ons.
+
+**M4.3 Wat jij beslist en bewaakt.** Voor elke agent, van welke soort ook, geldt het kader uit A6 onverkort: het niveau, de bevoegdhedenmatrix en het recht om alles stil te zetten. Jij beoordeelt de output op juistheid en bruikbaarheid voordat je die gebruikt, deelt of laat uitvoeren, en jij zorgt voor passend menselijk toezicht. Handelingen met mogelijk grote gevolgen, zoals betalingen, het aangaan van verplichtingen, publiceren of verzenden namens jou en het verwijderen van gegevens, vragen altijd afzonderlijke goedkeuring, tenzij zij met een uitdrukkelijke grens in de matrix staan. Je geeft een agent niet meer toegang dan hij nodig heeft. Jij staat in voor de juistheid, volledigheid en rechtmatigheid van de gegevens, beslisregels en instructies die je aanlevert; onjuistheden in de output die daaruit voortvloeien komen niet voor onze rekening.
+
+**M4.4 Klant-Agents.** Een Klant-Agent bouw, test en activeer je zelf en gebruik je volledig voor eigen rekening en risico. Wij beoordelen Klant-Agents niet vooraf en garanderen niet dat de output juist, volledig of geschikt is of dat de agent het beoogde resultaat oplevert. Wij mogen de functionaliteit voor Klant-Agents wijzigen, beperken of tijdelijk stilzetten als dat nodig is voor beveiliging, naleving van regels, onderhoud of bij vermoeden van misbruik; wezenlijke beperkingen melden wij vooraf waar dat redelijkerwijs kan. Je erkent dat een agent instructies kan opvolgen die verborgen zitten in gegevens, documenten of webpagina's waarmee hij in aanraking komt, en je richt hem daarop in.
+
+**M4.5 Buiten de beschikbaarheidsbelofte.** De beschikbaarheid uit M1.3 en een eventuele vergoeding bij het niet halen daarvan gelden voor het platform. Zij gelden niet voor agents, ook niet voor Stevin-agents, en niet voor hun output, hun handelingen of de koppelingen met systemen van derden waarvan zij afhankelijk zijn.
+
+**M4.6 Rechten.** Een Stevin-agent, waaronder de configuratie, de instructies, de prompts, de vertaling van je beslisregels naar de werking van de agent en de achterliggende code, blijft van ons of van een aan ons gelieerde vennootschap. Je krijgt daarop een niet-exclusief, niet-overdraagbaar gebruiksrecht voor de duur van de overeenkomst. Dat gebruiksrecht eindigt met de overeenkomst en de agent stopt dan. Van jou blijven: je gegevens, je accounts, je dossier, en de taken, beslisregels en werkwijzen in de vorm waarin jij ze hebt aangeleverd. Bij beëindiging leveren wij die mee met je dossier (A11), samen met een leesbare beschrijving van wat de agent deed en op grond waarvan, zodat je eigen mensen of een andere partij het werk kunnen voortzetten. Een Klant-Agent is van jou voor zover hij uit jouw eigen instructies en beslisregels bestaat; de onderliggende functionaliteit van het platform blijft van ons (M1.2).
+
+> **Waarom dit afwijkt van M3.3:** een pagina die wij bouwen kun je meenemen en door een ander laten onderhouden, en daarom is dat gebruiksrecht eeuwigdurend. Een agent bestaat niet buiten het platform: hij draait op onze omgeving, onze modelroute en onze logging. Een eeuwigdurend gebruiksrecht zou daar een lege belofte zijn. Wat jij nodig hebt om het werk elders voort te zetten is niet de agent maar wat erin zit: je beslisregels, je dossier en de beschrijving van wat hij deed. Dat krijg je mee. Koen, 26 sep 2026: "neem dezelfde voorwaarden als Swoep", die dezelfde scheiding maakt tussen klantdata (van de klant) en maatwerk (van de leverancier).
+
+**M4.7 Modellen van derden.** Agents gebruiken AI-modellen en diensten van derden. Wij mogen die naar eigen inzicht vervangen of wijzigen; wat A8 zegt over het niet trainen op jouw gegevens geldt ook voor die leveranciers. Verandert een leverancier zijn tarieven of zijn manier van meten zodanig dat de kosten van een agent wezenlijk stijgen, dan mogen wij de vergoeding voor die agent aanpassen met inachtneming van A10.
+
+**M4.8 Regels voor AI.** Je zet een agent niet in voor doeleinden die op grond van de AI-verordening verboden zijn, en niet voor beslissingen met rechtsgevolgen of vergelijkbaar grote gevolgen voor personen zonder passende menselijke tussenkomst. Wil je een agent inzetten op een manier die hem tot een AI-systeem met een hoog risico maakt, dan overleg je dat vooraf met ons; wij mogen dat gebruik weigeren of beëindigen. Jij bent de gebruiksverantwoordelijke van een agent zoals jij hem inzet; wij zijn de aanbieder van het platform.
+
+> **Voor de jurist:** de rolverdeling aanbieder en gebruiksverantwoordelijke onder de AI-verordening toetsen, in het bijzonder voor Stevin-agents die wij op maat inrichten en op niveau 3 van A6 zelfstandig laten handelen. Ook toetsen of M4.4 (Klant-Agents volledig voor risico van de klant) houdbaar is tegenover zakelijke klanten in België.
+
+**M4.9 Looptijd en opzegging.** Een Stevin-agent is per agent maandelijks opzegbaar, tenzij in de opdrachtbevestiging anders is afgesproken. Een eenmalige bouwvergoeding wordt niet terugbetaald. Eindigt het platformabonnement, dan eindigen alle agents op dezelfde datum.
+
+**Offerteregel per Stevin-agent (voor de opdrachtbevestiging).** Naam en doel van de agent. Systemen en accounts die hij raakt. Niveau uit A6 en de grenzen uit de bevoegdhedenmatrix. Wat hij niet mag. Vergoeding per maand. Eenmalige bouwvergoeding. Acceptatietest: wat er getest wordt en wie activeert. Opzegtermijn.
+
+---
+
 ## Nog te beslissen voordat dit definitief wordt
 
 1. **Eén overeenkomst of twee.** Dit concept behandelt platform en uitvoerend werk als één overeenkomst met modules. Gevolg: het aansprakelijkheidsplafond uit A12 rekent over het totaal van twaalf maanden, niet over twee lagere bedragen. Dat is gunstiger voor de klant en eenvoudiger uit te leggen. Dit is de open vraag uit D-030 en moet bewust worden vastgelegd.
@@ -213,6 +246,9 @@ Materiaal dat jij aanlevert blijft van jou. Teksten, beeld en merkuitingen die s
 3. **De opzegtermijn aan onze kant (A11).** Voorstel is twee maanden. Nu staat er niets.
 4. **De beschikbaarheidsbelofte (M1.3).** 99,5 procent is een keuze, geen meting. Vastleggen wat we echt aankunnen, inclusief of we een vergoeding koppelen aan het niet halen ervan.
 5. **De verwerkersaddenda met Anthropic, OpenAI en Mistral.** A8 stelt dat met hen is vastgelegd dat zij niet op klantdata trainen. Controleren of die addenda daadwerkelijk getekend zijn, anders belooft dit artikel iets namens een ander.
+11. **De vergoeding per Stevin-agent.** Voorstel in docs/research/CONCEPT_PRIJSLADDER_2026-09-26.md (Stevin-Hub): een band van 149 tot 499 per agent per maand, zonder bron, dus een keuze van Koen.
+12. **Klant-Agents in het instapabonnement.** Of een klant op de laagste laag zelf agents mag bouwen binnen redelijk gebruik (M1.4), of dat dit pas vanaf een hoger plan kan.
+13. **Dedicated omgeving.** Voor klanten die een eigen omgeving eisen (eigen agentserver, eigen modelroute, eigen subverwerkersbijlage) is er nog geen module en geen prijs. Verwacht tussen december 2026 en maart 2027.
 
 ## Wat nog niet in dit concept is verwerkt
 
