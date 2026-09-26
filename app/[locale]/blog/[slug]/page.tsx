@@ -1529,6 +1529,19 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'ai-agents-muse-oppenclaw-instinct': (
+    <>
+      <p className="lead-para">
+        Meta’s AI-agent Muse staat binnen korte tijd bovenaan de App Store-lijsten in de VS en heeft al 600.000 dagelijkse actieve gebruikers. De app lijkt sterk op OpenClaw, een open-source project dat eerder dit jaar verscheen. Muse biedt gebruikers een interactieve ervaring met een eigen ‘stem’ en persoonlijkheid, wat direct aanslaat bij consumenten. De snelle groei toont aan dat AI-agents niet langer alleen voor tech-enthousiasten zijn, maar voor een breed publiek interessant worden.
+      </p>
+      <p>
+        Ondertussen haalt Instinct, een AI-agent-platform, een fonds op met een waardering van 2,5 miljard dollar. Het platform richt zich op het bouwen van agents met specifieke vaardigheden, zoals klantenservice of automatisering van bedrijfsprocessen. Instinct positioneert zich als een alternatief voor gespecialiseerde AI-oplossingen, met een focus op gebruiksvriendelijkheid en integratie met bestaande systemen. De hoge waardering suggereert dat investeerders grote kansen zien in deze markt.
+      </p>
+      <p>
+        De opkomst van Muse en Instinct markeert een verschuiving: AI-agents worden steeds toegankelijker voor consumenten en bedrijven. Waar eerder alleen techbedrijven en ontwikkelaars met deze technologie werkten, komt er nu een stroom aan gebruiksvriendelijke tools die direct inzetbaar zijn. Voor bedrijven betekent dit dat ze sneller kunnen experimenteren met automatisering en interactieve klantcontacten, zonder grote technische investeringen.
+      </p>
+    </>
+  ),
   'nieuwe-ecommerce-tools-september-2026': (
     <>
       <p className="lead-para">
@@ -7820,6 +7833,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 }
 
 const DISPATCH_PERSPECTIVES: Record<string, string> = {
+  'ai-agents-muse-oppenclaw-instinct':
+    "Voor ondernemers is deze trend een signaal om AI-agents serieus te nemen als onderdeel van hun strategie. Het is niet langer een vraag of AI relevant is, maar hoe snel je ermee kunt beginnen. De uitdaging ligt niet in de technologie zelf, maar in het vinden van toepassingen die écht waarde toevoegen voor klanten of interne processen. Bedrijven die nu kleine pilots starten, leren sneller wat werkt en wat niet, zonder grote risico’s.",
   'nieuwe-ecommerce-tools-september-2026':
     "Voor e-commercebedrijven is het belangrijk om deze tools niet alleen als losse oplossingen te zien, maar als onderdeel van een groter ecosysteem. Een slimme combinatie van betaalgemak, AI-gestuurde interactie en betrouwbare logistiek kan de klantreis aanzienlijk verbeteren. Het loont om regelmatig te evalueren welke tools het beste passen bij de eigen bedrijfsvoering en klantbehoeften.",
   'microsoft-gebruikt-rust-voor-copilot-runtime':
