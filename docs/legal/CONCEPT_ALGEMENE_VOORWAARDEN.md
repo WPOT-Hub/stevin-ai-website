@@ -2,7 +2,7 @@
 
 > **Status: concept, nog niet geldig.** Niet publiceren en niet aan klanten voorleggen voordat Koen dit heeft doorgenomen en een jurist naar de gemarkeerde onderdelen heeft gekeken. De geldende versie staat op stevin.ai.
 >
-> Opgesteld 25 aug 2026, Module 4 (agents) toegevoegd 26 sep 2026. Volgt de architectuur uit D-030: één set, modulair opgebouwd, met een rangorderegeling. Hoofdstuk A geldt altijd. De modules gelden zodra die dienst geleverd wordt.
+> Opgesteld 25 aug 2026, Module 4 (agents) toegevoegd 26 sep 2026, Module 5 (klussen met een vaste prijs) toegevoegd 27 sep 2026. Volgt de architectuur uit D-030: één set, modulair opgebouwd, met een rangorderegeling. Hoofdstuk A geldt altijd. De modules gelden zodra die dienst geleverd wordt.
 >
 > Wat dit concept oplost ten opzichte van de huidige tekst: die beschrijft alleen een softwareplatform, terwijl we ook mensenwerk en bouwwerk verkopen (bij Boersma valt daarmee de helft van de maandomzet en de volledige opstart buiten het contract). Verder ontbraken een kader voor acties door mensen en agents, de inzet van externen, en de beloften van de aanbodpagina.
 
@@ -22,6 +22,8 @@ Hoofdstuk A geldt altijd. Daarnaast geldt per geleverde dienst de bijbehorende m
 - Module 1: het platform (abonnement)
 - Module 2: uitvoerend werk (beheer, optimalisatie en uren)
 - Module 3: projecten en bouwwerk (opstart, ontwikkeling, hosting op jouw domein)
+- Module 4: agents
+- Module 5: klussen met een vaste prijs
 
 Bij tegenstrijdigheid geldt deze volgorde: (1) de ondertekende opdrachtbevestiging of dienstverleningsovereenkomst, (2) de Verwerkersovereenkomst voor alles wat persoonsgegevens raakt, (3) de Geheimhoudingsovereenkomst voor alles wat vertrouwelijkheid raakt, (4) de module die op de betreffende dienst ziet, (5) dit hoofdstuk A.
 
@@ -239,6 +241,44 @@ Materiaal dat jij aanlevert blijft van jou. Teksten, beeld en merkuitingen die s
 
 ---
 
+## Module 5. Klussen met een vaste prijs
+
+> **Toegevoegd 27 sep 2026**, voor de dienst die intern W-232 heet (ontwerp in Stevin-Hub `docs/W232_STEVIN_COLLECTIEF_ONTWERP.md`, besluit D-058). Een goedgekeurde verbetering krijgt vooraf een vaste prijs en gaat naar de juiste uitvoerder: iemand van ons, een specialist uit ons netwerk, een Stevin-agent, of de eigen specialist van de klant. Deze module legt vast wat de klant daarbij van ons mag verwachten, en waar onze verantwoordelijkheid ophoudt. Zij geldt naast Module 2; bij tegenstrijdigheid over een klus geldt deze module.
+
+**M5.1 Wat een klus is.** Een klus is een afgebakende verbetering met een vaste prijs, bijvoorbeeld een extra vraag op een contactformulier, het herstellen van een meting of het aanpassen van een campagne-instelling. Een klus kan door ons worden voorgesteld of door jou worden gevraagd.
+
+**M5.2 Wat je vooraf ziet.** Voordat wij beginnen, leggen wij je per klus voor: wat er gedaan wordt, wat erbij hoort en wat niet, hoeveel correctierondes erin zitten, wanneer de klus klaar is, wie hem uitvoert, de prijs, en welk deel van die prijs naar de uitvoerder gaat en welk deel naar ons. Wat niet in die omschrijving staat, hoort niet bij de klus. Wij beginnen pas nadat een door jou aangewezen persoon de klus heeft goedgekeurd (A6, niveau 2).
+
+**M5.3 Wie de klus uitvoert.** Jij kiest wie een klus uitvoert: onze medewerkers, een specialist uit ons netwerk (A7), een Stevin-agent (Module 4), of je eigen specialist of bureau (M5.7). Wij doen een voorstel, met de reden erbij. Je keuze en onze reden worden vastgelegd.
+
+**M5.4 De prijs is vast.** De goedgekeurde prijs is wat je voor de klus betaalt. Kost de klus ons meer tijd of middelen dan verwacht, dan komt dat voor onze rekening.
+
+Dat geldt niet als de uitloop komt door iets aan jouw kant, zoals onjuiste of onvolledige informatie, toegang die niet op tijd komt, of een wens die na de goedkeuring verandert. Dan leggen wij je een nieuwe prijs voor, met uitleg, en werken wij pas verder nadat je die hebt goedgekeurd. Keur je die niet goed, dan stoppen wij de klus, zetten wij terug wat terug te zetten is, en betaal je alleen voor het deel dat al zelfstandig bruikbaar is opgeleverd, naar verhouding van de oorspronkelijke prijs en nooit meer dan die prijs.
+
+> **Voor Koen en de jurist:** de laatste zin (wat je betaalt bij afwijzen van een nieuwe prijs) is een voorstel. Alternatief: bij afwijzing betaal je het oorspronkelijke bedrag, omdat de uitloop aan jouw kant lag. Dat is gunstiger voor ons, maar lastiger uit te leggen tegenover "de prijs die je goedkeurt, is de prijs die je betaalt".
+
+**M5.5 Oplevering.** Waar het resultaat meetbaar is, controleren wij dat zelf voordat wij de klus als opgeleverd melden, bijvoorbeeld of het formulier werkt of de meting weer binnenkomt. De uitvoerder keurt zijn eigen werk niet goed. Na onze melding heb je veertien dagen om te laten weten wat niet klopt. Horen wij niets, dan geldt de klus als opgeleverd.
+
+**M5.6 Herstel.** Gebreken in de klus zelf, die je binnen dertig dagen na oplevering meldt, herstellen wij kosteloos. Dat geldt niet voor gevolgen van latere wijzigingen door jou, door je eigen specialist of door een platform.
+
+**M5.7 Je eigen specialist.** Kies je voor een klus je eigen specialist of bureau, dan is dat jouw opdrachtnemer en niet de onze. Wij leveren de omschrijving uit M5.2, een indicatie van prijs en doorlooptijd (M5.8), en leggen de klus vast in je dossier. Voor die coördinatie rekenen wij niets extra; zij valt onder je abonnement. Wij zijn niet verantwoordelijk voor het werk, de prijs, de planning of de facturen van jouw specialist, en A7 en M5.4 gelden voor die klus niet. Toegang tot je accounts geef je hem zelf, of wij doen dat op jouw verzoek binnen de grenzen van A6.
+
+**M5.8 De indicatie van prijs en doorlooptijd.** Bij een klus kunnen wij een indicatie geven van wat die gewoonlijk kost en hoe lang die gewoonlijk duurt. Die indicatie is gebaseerd op de prijzen die specialisten uit ons netwerk voor dezelfde omschrijving opgeven, en niet op gegevens van andere klanten (A8). Het is een hulpmiddel voor jou en geen oordeel over een specialist. Is er te weinig basis voor een indicatie, dan geven wij er geen.
+
+**M5.9 Vastlegging.** Van elke klus leggen wij vast: het voorstel, de prijs en de verdeling daarvan, de gekozen uitvoerder en de reden, de goedkeuring, een eventuele nieuwe prijs en je besluit daarover, de oplevering en je reactie. Dat hoort bij de vastlegging uit A6 en bij je dossier uit M2.3.
+
+**M5.10 Betaling.** Een klus factureren wij bij goedkeuring. Wij beginnen zodra de betaling binnen is, tenzij in de opdrachtbevestiging staat dat klussen maandelijks vooraf worden verrekend, bijvoorbeeld via een tegoed.
+
+**M5.11 Opzegging.** Loopt een klus op het moment dat je het abonnement opzegt, dan maken wij die af tegen de goedgekeurde prijs, tenzij je vraagt ermee te stoppen. Dan geldt de regeling uit het tweede deel van M5.4.
+
+> **Waarom deze module zo is opgebouwd.** De vaste prijs en het dragen van uitloop zijn de belofte; de uitzondering voor uitloop aan de kant van de klant voorkomt dat die belofte een open cheque wordt. De eigen specialist van de klant staat er apart in omdat wij die wel aansturen en in het dossier vastleggen, maar niet inschakelen: zonder M5.7 kan een klant stellen dat A7 ook voor hem geldt. De verdeling van de prijs staat in M5.2 omdat wij bureaus verwijten dat ze hun marge verbergen; wij verdienen aan uren, techniek en tokens, en dat mag de klant zien (Koen, 23 sep 2026). De indicatie in M5.8 is beperkt tot leveranciersprijzen, omdat A8 benchmarks uit klantgegevens zonder aparte afspraak verbiedt.
+>
+> **Voor de jurist:** (1) is Stevin bij een netwerkklus opdrachtnemer die het werk uitbesteedt (dan geldt A7 en A12) of bemiddelaar? Deze module gaat uit van het eerste. (2) Houdbaarheid van "zonder reactie geldt als opgeleverd" na veertien dagen, ook tegenover Belgische zakelijke klanten. (3) Specialisten uit het netwerk die persoonsgegevens verwerken: zie punt 14 hieronder over de meldplicht voor subverwerkers.
+
+**Offerteregel per klus (voor de goedkeuring in het platform).** Omschrijving en wat erbij hoort. Wat er niet bij hoort. Correctierondes. Wanneer klaar. Uitvoerder en reden. Prijs, en welk deel naar de uitvoerder gaat en welk deel naar Stevin. Bij een eigen specialist: de indicatie uit M5.8 en de vermelding dat M5.4 niet geldt.
+
+---
+
 ## Nog te beslissen voordat dit definitief wordt
 
 1. **Eén overeenkomst of twee.** Dit concept behandelt platform en uitvoerend werk als één overeenkomst met modules. Gevolg: het aansprakelijkheidsplafond uit A12 rekent over het totaal van twaalf maanden, niet over twee lagere bedragen. Dat is gunstiger voor de klant en eenvoudiger uit te leggen. Dit is de open vraag uit D-030 en moet bewust worden vastgelegd.
@@ -249,6 +289,8 @@ Materiaal dat jij aanlevert blijft van jou. Teksten, beeld en merkuitingen die s
 11. **De vergoeding per Stevin-agent.** Voorstel in docs/research/CONCEPT_PRIJSLADDER_2026-09-26.md (Stevin-Hub): een band van 149 tot 499 per agent per maand, zonder bron, dus een keuze van Koen.
 12. **Klant-Agents in het instapabonnement.** Of een klant op de laagste laag zelf agents mag bouwen binnen redelijk gebruik (M1.4), of dat dit pas vanaf een hoger plan kan.
 13. **Dedicated omgeving.** Voor klanten die een eigen omgeving eisen (eigen agentserver, eigen modelroute, eigen subverwerkersbijlage) is er nog geen module en geen prijs. Verwacht tussen december 2026 en maart 2027.
+14. **Netwerkspecialisten en de meldplicht voor subverwerkers (Module 5).** De Verwerkersovereenkomst verplicht ons een nieuwe subverwerker dertig dagen vooraf te melden, met een bezwaarrecht voor de klant. Een klus volgende week naar een nieuwe specialist sturen kan dan niet. Twee routes: (a) bij de start per klant een vaste pool van specialisten melden, zodat binnen die pool vrij kan worden gekozen; (b) specialisten werken in onze omgeving, op door ons verstrekte accounts en onder onze verantwoordelijkheid, en gelden dan niet als subverwerker (zie ook punt 3 van de praktische noot bij de leveranciersovereenkomst). Tot hierover besloten is, gaan klussen alleen naar specialisten die al gemeld zijn.
+15. **De garantietermijn van M5.6.** Dertig dagen, gelijk aan M3.5, zodat er een termijn in de voorwaarden staat en niet twee.
 
 ## Wat nog niet in dit concept is verwerkt
 

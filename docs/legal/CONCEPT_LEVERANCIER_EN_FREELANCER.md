@@ -2,7 +2,7 @@
 
 > **Status: concept, nog niet geldig.** Niet gebruiken voordat Koen dit heeft doorgenomen en een jurist naar de gemarkeerde onderdelen heeft gekeken.
 >
-> Opgesteld 25 aug 2026. Dit document bestond niet. Het is nodig omdat voor bepaalde klanten freelancers en externe leveranciers worden ingezet die daarmee toegang krijgen tot advertentie-accounts, CRM-gegevens en mogelijk e-mail van klanten.
+> Opgesteld 25 aug 2026, artikel 12a (klussen met een vaste prijs) toegevoegd 27 sep 2026. Dit document bestond niet. Het is nodig omdat voor bepaalde klanten freelancers en externe leveranciers worden ingezet die daarmee toegang krijgen tot advertentie-accounts, CRM-gegevens en mogelijk e-mail van klanten.
 >
 > **Waarom dit rug aan rug moet lopen:** in artikel A7 van de Algemene Voorwaarden beloven wij de klant dat wij derden schriftelijk dezelfde verplichtingen opleggen als wij zelf hebben, en dat wij volledig verantwoordelijk blijven voor hun werk. Zonder dit document is die belofte niet waar te maken. Bovendien eist artikel 28 lid 4 AVG dat een subverwerker dezelfde verplichtingen krijgt opgelegd.
 >
@@ -97,6 +97,19 @@ Deze afspraken gelden zolang je voor ons werkt. De artikelen 3 (geheimhouding), 
 Je werkt als zelfstandige, voor eigen rekening en risico. Je bent zelf verantwoordelijk voor je belastingen en verzekeringen. Niets in dit document beoogt een arbeidsovereenkomst.
 
 > **Voor de jurist:** de instructiebevoegdheid uit artikel 2 en de beveiligingseisen uit artikel 5 zijn nodig voor de AVG, maar wegen mee bij de vraag of er sprake is van schijnzelfstandigheid. Sinds de handhaving op dat punt is aangescherpt is dit een reëel aandachtspunt. Laten toetsen, en zo nodig de formulering van artikel 2 aanscherpen richting resultaat in plaats van werkwijze.
+
+## 12a. Klussen met een vaste prijs
+
+> **Toegevoegd 27 sep 2026**, rug aan rug met Module 5 van de Algemene Voorwaarden (W-232). Geldt voor klussen die wij via het platform aan jou toewijzen.
+
+- **Prijs vooraf.** Per klus staat vooraf vast wat je ervoor krijgt: de inkoopprijs, de omschrijving, wat erbij hoort, het aantal correctierondes en wanneer de klus klaar moet zijn. Je beoordeelt vooraf of je de klus voor die prijs kunt doen; aanvaard je hem, dan geldt die prijs.
+- **Reactietijd.** Je laat binnen de afgesproken reactietijd weten of je een toegewezen klus aanneemt. Neem je hem niet aan, dan mogen wij hem aan een ander geven.
+- **Uitloop alleen via het platform.** Verwacht je meer werk dan omschreven, dan meld je dat via het platform voordat je dat extra werk doet, met de reden. Wij beslissen of wij de uitloop dragen of aan de klant voorleggen. Extra werk dat je zonder die melding doet, vergoeden wij niet. Wij benaderen de klant daarover zelf; jij doet dat niet.
+- **Oplevering en controle.** Je meldt de klus als klaar via het platform. Wij controleren het resultaat; je keurt je eigen werk niet goed. Gebreken in je klus die binnen dertig dagen na oplevering worden gemeld, herstel je zonder extra vergoeding.
+- **Prijsopgave voor de cataloguslijst.** Vragen wij je om voor een lijst van klussen een prijs op te geven, dan mogen wij die opgave, zonder jouw naam, gebruiken als indicatie voor klanten (Module 5, M5.8).
+- **Vastlegging.** Toewijzing, aanname, uitloopmeldingen en oplevering worden vastgelegd in het logboek van de klant.
+
+> **Voor de jurist:** een vaste prijs per omschreven resultaat, met eigen beoordeling of je de klus aanneemt, weegt bij de Wet DBA richting zelfstandigheid; zie de noot bij artikel 12, die vraagt om sturing op resultaat in plaats van werkwijze. Toetsen of de combinatie met de instructie- en beveiligingseisen uit artikel 2 en 5 houdbaar blijft.
 
 ## 13. Toepasselijk recht
 Nederlands recht. Geschillen voor de bevoegde rechter te Breda.
