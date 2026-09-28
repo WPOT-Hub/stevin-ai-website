@@ -59,8 +59,17 @@ jobs:
 
       - name: Deploy prebuilt artifact (auto-promote naar production domain)
         id: deploy
+        # W-333, 28 sep 2026: de prebuilt-uitvoer telt inmiddels ~29.000 bestanden,
+        # boven de grens van 15.000 per upload, dus als archief uploaden. En
+        # pipefail: zonder die vlag nam de stap de exitcode van tail over, zodat
+        # een mislukte deploy als geslaagd gemeld werd en er niets live ging.
         run: |
-          URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} | tail -1)
+          set -o pipefail
+          URL=$(vercel deploy --prebuilt --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }} | tail -1)
+          if [[ "$URL" != https://* ]]; then
+            echo "::error::Vercel gaf geen deploy-URL terug, er is niets uitgerold"
+            exit 1
+          fi
           echo "url=$URL" >> "$GITHUB_OUTPUT"
           echo "Deployed to: $URL"
 
