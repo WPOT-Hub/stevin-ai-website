@@ -4,6 +4,17 @@
    blokkerend extern verzoek meer. */
 @import "tailwindcss";
 
+/* Italic van de broodtekst, los van next/font zodat hij niet op elke pagina
+   vooraf laadt (W-333). font-family moet gelijk blijven aan de naam van de
+   constante interBody in app/[locale]/layout.tsx. */
+@font-face {
+  font-family: interBody;
+  src: url("/fonts/InterVariable-Italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme {
   /* Brand colors from logo */
   --color-primary: #0A1628;
