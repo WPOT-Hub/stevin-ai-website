@@ -25,7 +25,7 @@ export default async function DPAPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = isEn ? '31 August 2026' : '31 augustus 2026'
+  const lastUpdated = isEn ? '28 September 2026' : '28 september 2026'
 
   return (
     <main className="bg-surface text-primary">
@@ -107,11 +107,12 @@ function DpaDutch() {
         Actuele lijst van substantiele subverwerkers:
       </p>
       <ul>
-        <li><strong>Supabase</strong> (database hosting, EU regio)</li>
+        <li><strong>Supabase</strong> (database hosting, EU-Frankfurt)</li>
         <li><strong>AWS</strong> (compute en object storage, EU-Frankfurt)</li>
         <li><strong>Vercel</strong> (frontend hosting, EU regio waar mogelijk)</li>
         <li><strong>Anthropic, OpenAI, Mistral, Google</strong> (AI inference, met data-processing addenda; geen training op klantdata)</li>
-        <li><strong>Resend</strong> (transactionele e-mail)</li>
+        <li><strong>Resend</strong> (transactionele e-mail, EU-Ierland)</li>
+        <li><strong>Microsoft</strong> (Clarity: gebruiksanalyse in het klantportaal, alleen na toestemming)</li>
         <li><strong>Slack</strong> (notificatiekanaal)</li>
       </ul>
       <p>
@@ -215,11 +216,12 @@ function DpaEnglish() {
       <h2>5. Sub-processors</h2>
       <p>Customer grants Stevin general authorisation to engage sub-processors. Current material sub-processors:</p>
       <ul>
-        <li><strong>Supabase</strong> (database hosting, EU region)</li>
+        <li><strong>Supabase</strong> (database hosting, EU-Frankfurt)</li>
         <li><strong>AWS</strong> (compute and object storage, EU-Frankfurt)</li>
         <li><strong>Vercel</strong> (frontend hosting, EU region where possible)</li>
         <li><strong>Anthropic, OpenAI, Mistral, Google</strong> (AI inference, under data-processing addenda; no training on Customer data)</li>
-        <li><strong>Resend</strong> (transactional email)</li>
+        <li><strong>Resend</strong> (transactional email, EU-Ireland)</li>
+        <li><strong>Microsoft</strong> (Clarity: usage analytics in the client portal, only with consent)</li>
         <li><strong>Slack</strong> (notification channel)</li>
       </ul>
       <p>Changes are announced at least 30 days in advance by email. Customer may object in writing within that period.</p>

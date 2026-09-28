@@ -142,13 +142,14 @@ function PrivacyDutch() {
           Wij gebruiken een beperkt aantal sub-verwerkers, allen onder verwerkersovereenkomst:
         </p>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Supabase (database hosting, EU-region): opslag van platformdata.</li>
+          <li>Supabase (database hosting, EU-Frankfurt): opslag van platformdata.</li>
           <li>AWS (EU-region): applicatie-infrastructuur.</li>
           <li>Vercel (EU-region): front-end hosting.</li>
-          <li>Resend (EU-region): transactionele e-mail.</li>
+          <li>Resend (EU-Ierland): transactionele e-mail.</li>
           <li>Anthropic, OpenAI, Mistral en Google: alleen voor AI-functies, via hun betaalde
             API's, met gestripte/anonieme prompts waar mogelijk; geen training op jouw gegevens.</li>
           <li>Slack: interne meldingen aan ons team.</li>
+          <li>Microsoft (Clarity): gebruiksanalyse in het klantportaal, alleen na jouw toestemming.</li>
         </ul>
         <p>
           De OAuth-koppelingen (zoals Google Ads, Meta, Pinterest, LinkedIn) lopen rechtstreeks
@@ -281,13 +282,14 @@ function PrivacyEnglish() {
         <h2 className="text-xl font-semibold">Subprocessors</h2>
         <p>We use a limited set of subprocessors, all under a data processing agreement:</p>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Supabase (database hosting, EU region): platform data storage.</li>
+          <li>Supabase (database hosting, EU-Frankfurt): platform data storage.</li>
           <li>AWS (EU region): application infrastructure.</li>
           <li>Vercel (EU region): front-end hosting.</li>
-          <li>Resend (EU region): transactional email.</li>
+          <li>Resend (EU-Ireland): transactional email.</li>
           <li>Anthropic, OpenAI, Mistral and Google: for AI features only, through their paid
             APIs, with stripped or anonymous prompts where possible; no training on your data.</li>
           <li>Slack: internal notifications to our team.</li>
+          <li>Microsoft (Clarity): usage analytics in the client portal, only with your consent.</li>
         </ul>
         <p>
           OAuth integrations (such as Google Ads, Meta, Pinterest, LinkedIn) run directly
