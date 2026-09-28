@@ -274,9 +274,15 @@ export default function DeskProof({
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/product/desk-dashboard.png"
+              src="/product/desk-dashboard-1100.webp"
+              srcSet="/product/desk-dashboard-1100.webp 1100w, /product/desk-dashboard-2200.webp 2200w"
+              sizes="(min-width: 1200px) 1100px, 100vw"
+              width={2200}
+              height={1328}
+              loading="lazy"
+              decoding="async"
               alt={c.altScreenshot}
-              style={{ display: 'block', width: '100%' }}
+              style={{ display: 'block', width: '100%', height: 'auto' }}
             />
           </div>
 

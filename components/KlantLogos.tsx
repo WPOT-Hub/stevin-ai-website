@@ -45,6 +45,7 @@ export default function KlantLogos({ locale }: { locale: string }) {
               src={k.src}
               alt={k.naam}
               loading="lazy"
+              decoding="async"
               style={{
                 height: `${k.h}px`,
                 width: 'auto',

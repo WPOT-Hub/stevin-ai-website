@@ -29,10 +29,15 @@ const interDisplay = localFont({
   display: 'swap',
 })
 
+// De italic staat hier bewust niet bij (W-333, 28 sep 2026). next/font laadt elk
+// bestand in src vooraf, ook als de pagina geen schuine tekst heeft, en de
+// italic was 380 KB op elke pagina. Hij staat nu als eigen @font-face in
+// app/globals.css onder dezelfde familienaam; de browser haalt hem dan pas op
+// als er echt schuine tekst staat. Die familienaam komt van de naam van deze
+// constante: hernoem je interBody, pas dan ook globals.css aan.
 const interBody = localFont({
   src: [
     { path: '../../public/fonts/InterVariable.woff2', style: 'normal', weight: '100 900' },
-    { path: '../../public/fonts/InterVariable-Italic.woff2', style: 'italic', weight: '100 900' },
   ],
   variable: '--font-body-inter',
   display: 'swap',

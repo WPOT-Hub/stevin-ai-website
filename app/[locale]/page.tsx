@@ -185,12 +185,12 @@ const COPY = {
       {
         k: 'Wij doen het werk', t: 'Je wilt er geen omkijken naar hebben, maar wel kunnen zien wat er gebeurt.',
         d: 'Wij richten in, draaien de campagnes en houden het bij. Jij kunt op elk moment nakijken wat er is gedaan en waarom. En je haalt ons er zelf af, zonder te bellen.',
-        link: 'Zo werkt dat', href: '/voor-ondernemers', img: '/images/voor-ondernemers.jpg', alt: 'Team van een Stevin-klant tijdens een overleg',
+        link: 'Zo werkt dat', href: '/voor-ondernemers', img: '/images/voor-ondernemers.webp', alt: 'Team van een Stevin-klant tijdens een overleg',
       },
       {
         k: 'Je doet het straks zelf', t: 'Wij zetten het goed en draaien mee tot het staat.',
         d: 'Meestal zes tot twaalf maanden. Wat we doen en waarom komt in een dossier dat van jou is, zodat je eigen mensen meeleren. Daarna heb je ons alleen nog nodig om mee te kijken.',
-        link: 'Zo werkt de overdracht', href: '/voor-marketingteams', img: '/images/voor-teams.jpg', alt: 'Marketingteam in overleg',
+        link: 'Zo werkt de overdracht', href: '/voor-marketingteams', img: '/images/voor-teams.webp', alt: 'Marketingteam in overleg',
       },
     ],
 
@@ -348,12 +348,12 @@ const COPY = {
       {
         k: 'We do the work', t: 'You want it off your plate, but you want to see what is happening.',
         d: 'We set it up, run the campaigns and keep it up to date. You can check at any moment what was done and why. And you remove us yourself, without having to call.',
-        link: 'How that works', href: '/voor-ondernemers', img: '/images/voor-ondernemers.jpg', alt: 'Team at a Stevin client during a meeting',
+        link: 'How that works', href: '/voor-ondernemers', img: '/images/voor-ondernemers.webp', alt: 'Team at a Stevin client during a meeting',
       },
       {
         k: 'You take it over later', t: 'We set it up properly and stay on until it stands.',
         d: 'Usually six to twelve months. What we do and why goes into a file that is yours, so your own people learn along. After that you only need us to look over your shoulder.',
-        link: 'How the handover works', href: '/voor-marketingteams', img: '/images/voor-teams.jpg', alt: 'Marketing team in a meeting',
+        link: 'How the handover works', href: '/voor-marketingteams', img: '/images/voor-teams.webp', alt: 'Marketing team in a meeting',
       },
     ],
 
@@ -773,7 +773,11 @@ export default async function HomePage({ params }: Props) {
                 <img
                   src={card.img}
                   alt={card.alt}
-                  className="w-full border-b border-border"
+                  width={1600}
+                  height={708}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto border-b border-border"
                   style={{ aspectRatio: '2.26 / 1', objectFit: 'cover' }}
                 />
                 <div className="p-8 lg:p-10 flex flex-col flex-1">
@@ -838,6 +842,10 @@ export default async function HomePage({ params }: Props) {
             <img
               src="/images/oprichter.png"
               alt={c.founder_role}
+              width={80}
+              height={80}
+              loading="lazy"
+              decoding="async"
               className="w-20 h-20 flex-shrink-0"
             />
             <figure className="m-0">
