@@ -25,7 +25,7 @@ export default async function PrivacyPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = isEn ? '24 August 2026' : '24 augustus 2026'
+  const lastUpdated = isEn ? '28 September 2026' : '28 september 2026'
 
   return (
     <main className="bg-surface text-primary">
@@ -146,8 +146,9 @@ function PrivacyDutch() {
           <li>AWS (EU-region): applicatie-infrastructuur.</li>
           <li>Vercel (EU-region): front-end hosting.</li>
           <li>Resend (EU-region): transactionele e-mail.</li>
-          <li>Anthropic / OpenAI: alleen voor AI-functies, met gestripte/anonieme prompts
-            waar mogelijk; geen persoonsgegevens in trainingsdata.</li>
+          <li>Anthropic, OpenAI, Mistral en Google: alleen voor AI-functies, via hun betaalde
+            API's, met gestripte/anonieme prompts waar mogelijk; geen training op jouw gegevens.</li>
+          <li>Slack: interne meldingen aan ons team.</li>
         </ul>
         <p>
           De OAuth-koppelingen (zoals Google Ads, Meta, Pinterest, LinkedIn) lopen rechtstreeks
@@ -284,8 +285,9 @@ function PrivacyEnglish() {
           <li>AWS (EU region): application infrastructure.</li>
           <li>Vercel (EU region): front-end hosting.</li>
           <li>Resend (EU region): transactional email.</li>
-          <li>Anthropic / OpenAI: for AI features only, with stripped or anonymous prompts
-            where possible; no personal data goes into training datasets.</li>
+          <li>Anthropic, OpenAI, Mistral and Google: for AI features only, through their paid
+            APIs, with stripped or anonymous prompts where possible; no training on your data.</li>
+          <li>Slack: internal notifications to our team.</li>
         </ul>
         <p>
           OAuth integrations (such as Google Ads, Meta, Pinterest, LinkedIn) run directly
