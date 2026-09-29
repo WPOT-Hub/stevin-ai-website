@@ -83,9 +83,20 @@ export default function HeroHeadline({ locale }: { locale: string }) {
     }
     setVariant(resolved)
     window.dataLayer?.push({ event: 'kop_variant', kop_variant: resolved })
+    // W-346 (29 sep 2026): dit event vuurt bij het laden, voor de cookiekeuze.
+    // Zonder toestemming stuurt GA4 alleen een anoniem signaal, dus wist GA4
+    // bij niemand welke kop hij zag. Na toestemming voor analytics nog een keer.
+    const naToestemming = (e: Event) => {
+      const state = (e as CustomEvent<{ state?: { analytics_storage?: string } }>).detail?.state
+      if (state?.analytics_storage === 'granted') {
+        window.dataLayer?.push({ event: 'kop_variant', kop_variant: resolved })
+      }
+    }
+    window.addEventListener('stevin:consent-updated', naToestemming, { once: true })
 
     const h = window.location.hostname
     if (h === 'localhost' || h.startsWith('new.') || h.endsWith('.vercel.app')) setShowSwitch(true)
+    return () => window.removeEventListener('stevin:consent-updated', naToestemming)
   }, [])
 
   const c = H1[locale === 'en' ? 'en' : 'nl'][variant]
