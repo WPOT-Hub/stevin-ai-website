@@ -142,7 +142,7 @@ function PrivacyDutch() {
           Wij gebruiken een beperkt aantal sub-verwerkers, allen onder verwerkersovereenkomst:
         </p>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Database en hosting in de EU: opslag van platformdata en applicatie-infrastructuur.</li>
+          <li>Database (EU, Frankfurt) en hosting: opslag van platformdata en applicatie-infrastructuur.</li>
           <li>Transactionele e-mail.</li>
           <li>Notificaties: interne meldingen aan ons team.</li>
           <li>AI-leveranciers: alleen voor AI-functies, via hun betaalde API's, met
@@ -283,7 +283,7 @@ function PrivacyEnglish() {
         <h2 className="text-xl font-semibold">Subprocessors</h2>
         <p>We use a limited set of subprocessors, all under a data processing agreement:</p>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Database and hosting in the EU: platform data storage and application infrastructure.</li>
+          <li>Database (EU, Frankfurt) and hosting: platform data storage and application infrastructure.</li>
           <li>Transactional email.</li>
           <li>Notifications: internal notifications to our team.</li>
           <li>AI providers: for AI features only, through their paid APIs, with stripped or

@@ -32,7 +32,7 @@ export default async function TermsPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = isEn ? '24 August 2026' : '24 augustus 2026'
+  const lastUpdated = isEn ? '29 September 2026' : '29 september 2026'
 
   return (
     <main className="bg-surface text-primary">
@@ -191,8 +191,8 @@ function TermsDutch() {
         <h2 className="text-xl font-semibold">8. AI-gegenereerde output</h2>
         <p>
           Adviezen, signalen, briefings en rapportages binnen Stevin worden
-          (mede)gegenereerd door AI-modellen (Anthropic Claude en in beperkte mate
-          OpenAI). Output is geen vervanging voor professioneel marketing-oordeel.
+          (mede)gegenereerd door AI-modellen van externe AI-leveranciers (zie
+          Bijlage 1 bij de verwerkersovereenkomst). Output is geen vervanging voor professioneel marketing-oordeel.
           Eindverantwoordelijkheid voor beslissingen op basis van Stevin-output
           ligt bij jou of je consultant. Stevin doet redelijke inspanningen om
           kwaliteit en relevantie te bewaken (human-in-the-loop bij taken,
@@ -365,7 +365,8 @@ function TermsEnglish() {
         <h2 className="text-xl font-semibold">8. AI-generated output</h2>
         <p>
           Advice, signals, briefings and reports within Stevin are (co-)generated
-          by AI models (Anthropic Claude and, to a limited extent, OpenAI). Output
+          by AI models from external AI providers (see Annex 1 to the data
+          processing agreement). Output
           does not replace professional marketing judgement. Final responsibility
           for decisions made based on Stevin output rests with you or your
           consultant. Stevin makes reasonable efforts to safeguard quality and

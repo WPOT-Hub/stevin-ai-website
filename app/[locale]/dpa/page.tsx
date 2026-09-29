@@ -107,7 +107,7 @@ function DpaDutch() {
         Stevin schakelt subverwerkers in voor de volgende categorieen:
       </p>
       <ul>
-        <li>database en hosting in de EU;</li>
+        <li>database (EU, Frankfurt) en hosting;</li>
         <li>transactionele e-mail;</li>
         <li>notificaties;</li>
         <li>AI-leveranciers via betaalde API's, zonder training op klantdata;</li>
@@ -218,7 +218,7 @@ function DpaEnglish() {
       <h2>5. Sub-processors</h2>
       <p>Customer grants Stevin general authorisation to engage sub-processors. Stevin engages sub-processors in the following categories:</p>
       <ul>
-        <li>database and hosting in the EU;</li>
+        <li>database (EU, Frankfurt) and hosting;</li>
         <li>transactional email;</li>
         <li>notifications;</li>
         <li>AI providers through paid APIs, without training on Customer data;</li>
