@@ -2795,21 +2795,6 @@ export const integrations: Integration[] = [
     relatedSlugs: ['recruitee', 'workable', 'google-ads', 'linkedin-ads', 'zapier'],
   },
   {
-    name: 'AFAS',
-    slug: 'afas',
-    category: 'ats-recruitment',
-    shortDescription: 'Nederlands ERP- en HR-platform met recruitmentfunctionaliteit.',
-    description: 'AFAS Software is een veelgebruikt Nederlands ERP-platform dat ook HR- en recruitmentfunctionaliteit biedt. Veel Nederlandse organisaties gebruiken AFAS voor hun complete bedrijfsvoering, inclusief het wervingsproces.',
-    useCase: 'Recruitment integreren in je bestaande AFAS-omgeving.',
-    howWeUseIt: 'Stevin.AI koppelt AFAS aan je recruitment marketing campagnes zodat kandidaten vanuit betaalde kanalen automatisch in het systeem terechtkomen met de juiste bronvermelding.',
-    problemsSolved: [
-      'Kandidaten uit campagnes worden niet automatisch verwerkt in AFAS',
-      'Geen inzicht in welke wervingskanalen het beste presteren',
-      'Recruitment marketing is niet gekoppeld aan het HR-systeem',
-    ],
-    relatedSlugs: ['personio-recruiting', 'recruitee', 'google-ads', 'linkedin-ads'],
-  },
-  {
     name: 'Connexys',
     slug: 'connexys',
     category: 'ats-recruitment',
@@ -3348,20 +3333,6 @@ export const integrations: Integration[] = [
       'Projectomzet wordt niet teruggekoppeld naar de marketingbron',
     ],
     relatedSlugs: ['afas', 'dynamics-365', 'exact-online'],
-  },
-  {
-    name: 'Teamleader',
-    slug: 'teamleader',
-    category: 'finance-erp',
-    shortDescription: 'CRM, projectmanagement en facturatie in een tool.',
-    description: 'Teamleader combineert CRM, projectmanagement en facturatie. Ideaal voor het MKB dat alles in een tool wil. De koppeling met marketing maakt de cirkel rond.',
-    useCase: 'Geintegreerd CRM, project en marketing overzicht.',
-    howWeUseIt: 'Stevin.AI synchroniseert Teamleader deal- en factuurdata voor een compleet beeld van lead tot omzet.',
-    problemsSolved: [
-      'CRM, facturatie en marketing staan los van elkaar',
-      'Geen inzicht in welke leads daadwerkelijk betalende klanten worden',
-    ],
-    relatedSlugs: ['hubspot', 'exact-online', 'salesforce'],
   },
 
   // ========== CREATIVE INTELLIGENCE ==========

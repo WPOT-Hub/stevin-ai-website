@@ -72,7 +72,7 @@ export async function GET() {
     '- [Voor evenementen en tourshows](https://stevin.ai/evenementen)',
         '',
     '## Integraties',
-    '- [Integraties-overzicht](https://stevin.ai/integraties): 245+ marketing-tools, 22 categorieen',
+    '- [Integraties-overzicht](https://stevin.ai/integraties): 262 marketing-tools, 23 categorieen',
     '',
     '## Tarieven',
     'Drie smaken, de klant kiest en kan later wisselen. Elke route begint met een diagnose op de eigen cijfers, binnen twee weken.',
