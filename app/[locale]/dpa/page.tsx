@@ -25,7 +25,7 @@ export default async function DPAPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = isEn ? '28 September 2026' : '28 september 2026'
+  const lastUpdated = isEn ? '29 September 2026' : '29 september 2026'
 
   return (
     <main className="bg-surface text-primary">
@@ -104,17 +104,19 @@ function DpaDutch() {
       <h2>5. Subverwerkers</h2>
       <p>
         De Klant geeft Stevin algemene toestemming om subverwerkers in te schakelen.
-        Actuele lijst van substantiele subverwerkers:
+        Stevin schakelt subverwerkers in voor de volgende categorieen:
       </p>
       <ul>
-        <li><strong>Supabase</strong> (database hosting, EU-Frankfurt)</li>
-        <li><strong>AWS</strong> (compute en object storage, EU-Frankfurt)</li>
-        <li><strong>Vercel</strong> (frontend hosting, EU regio waar mogelijk)</li>
-        <li><strong>Anthropic, OpenAI, Mistral, Google</strong> (AI inference, met data-processing addenda; geen training op klantdata)</li>
-        <li><strong>Resend</strong> (transactionele e-mail, EU-Ierland)</li>
-        <li><strong>Microsoft</strong> (Clarity: gebruiksanalyse in het klantportaal, alleen na toestemming)</li>
-        <li><strong>Slack</strong> (notificatiekanaal)</li>
+        <li>database en hosting in de EU;</li>
+        <li>transactionele e-mail;</li>
+        <li>notificaties;</li>
+        <li>AI-leveranciers via betaalde API's, zonder training op klantdata;</li>
+        <li>gebruiksanalyse in het klantportaal, alleen na toestemming.</li>
       </ul>
+      <p>
+        De actuele lijst met namen staat als Bijlage 1 in het Stevin-account van de Klant
+        (Desk en klantportaal) en wordt op verzoek toegestuurd.
+      </p>
       <p>
         Wijzigingen in deze lijst worden minimaal 30 dagen vooraf aangekondigd via e-mail.
         De Klant kan binnen die termijn schriftelijk bezwaar maken.
@@ -214,17 +216,19 @@ function DpaEnglish() {
       </ul>
 
       <h2>5. Sub-processors</h2>
-      <p>Customer grants Stevin general authorisation to engage sub-processors. Current material sub-processors:</p>
+      <p>Customer grants Stevin general authorisation to engage sub-processors. Stevin engages sub-processors in the following categories:</p>
       <ul>
-        <li><strong>Supabase</strong> (database hosting, EU-Frankfurt)</li>
-        <li><strong>AWS</strong> (compute and object storage, EU-Frankfurt)</li>
-        <li><strong>Vercel</strong> (frontend hosting, EU region where possible)</li>
-        <li><strong>Anthropic, OpenAI, Mistral, Google</strong> (AI inference, under data-processing addenda; no training on Customer data)</li>
-        <li><strong>Resend</strong> (transactional email, EU-Ireland)</li>
-        <li><strong>Microsoft</strong> (Clarity: usage analytics in the client portal, only with consent)</li>
-        <li><strong>Slack</strong> (notification channel)</li>
+        <li>database and hosting in the EU;</li>
+        <li>transactional email;</li>
+        <li>notifications;</li>
+        <li>AI providers through paid APIs, without training on Customer data;</li>
+        <li>usage analytics in the client portal, only with consent.</li>
       </ul>
-      <p>Changes are announced at least 30 days in advance by email. Customer may object in writing within that period.</p>
+      <p>
+        The current list of names is available as Annex 1 in Customer&apos;s Stevin account
+        (Desk and client portal) and is sent on request.
+      </p>
+      <p>Changes to this list are announced at least 30 days in advance by email. Customer may object in writing within that period.</p>
 
       <h2>6. International transfers</h2>
       <p>

@@ -25,7 +25,7 @@ export default async function PrivacyPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = isEn ? '28 September 2026' : '28 september 2026'
+  const lastUpdated = isEn ? '29 September 2026' : '29 september 2026'
 
   return (
     <main className="bg-surface text-primary">
@@ -142,15 +142,16 @@ function PrivacyDutch() {
           Wij gebruiken een beperkt aantal sub-verwerkers, allen onder verwerkersovereenkomst:
         </p>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Supabase (database hosting, EU-Frankfurt): opslag van platformdata.</li>
-          <li>AWS (EU-region): applicatie-infrastructuur.</li>
-          <li>Vercel (EU-region): front-end hosting.</li>
-          <li>Resend (EU-Ierland): transactionele e-mail.</li>
-          <li>Anthropic, OpenAI, Mistral en Google: alleen voor AI-functies, via hun betaalde
-            API's, met gestripte/anonieme prompts waar mogelijk; geen training op jouw gegevens.</li>
-          <li>Slack: interne meldingen aan ons team.</li>
-          <li>Microsoft (Clarity): gebruiksanalyse in het klantportaal, alleen na jouw toestemming.</li>
+          <li>Database en hosting in de EU: opslag van platformdata en applicatie-infrastructuur.</li>
+          <li>Transactionele e-mail.</li>
+          <li>Notificaties: interne meldingen aan ons team.</li>
+          <li>AI-leveranciers: alleen voor AI-functies, via hun betaalde API's, met
+            gestripte/anonieme prompts waar mogelijk; geen training op jouw gegevens.</li>
+          <li>Gebruiksanalyse in het klantportaal, alleen na jouw toestemming.</li>
         </ul>
+        <p>
+          Klanten vinden de namen in hun Stevin-account. Anderen sturen wij ze op verzoek toe.
+        </p>
         <p>
           De OAuth-koppelingen (zoals Google Ads, Meta, Pinterest, LinkedIn) lopen rechtstreeks
           tussen jou en het platform. Wij ontvangen alleen de tokens die jij autoriseert.
@@ -282,15 +283,16 @@ function PrivacyEnglish() {
         <h2 className="text-xl font-semibold">Subprocessors</h2>
         <p>We use a limited set of subprocessors, all under a data processing agreement:</p>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Supabase (database hosting, EU-Frankfurt): platform data storage.</li>
-          <li>AWS (EU region): application infrastructure.</li>
-          <li>Vercel (EU region): front-end hosting.</li>
-          <li>Resend (EU-Ireland): transactional email.</li>
-          <li>Anthropic, OpenAI, Mistral and Google: for AI features only, through their paid
-            APIs, with stripped or anonymous prompts where possible; no training on your data.</li>
-          <li>Slack: internal notifications to our team.</li>
-          <li>Microsoft (Clarity): usage analytics in the client portal, only with your consent.</li>
+          <li>Database and hosting in the EU: platform data storage and application infrastructure.</li>
+          <li>Transactional email.</li>
+          <li>Notifications: internal notifications to our team.</li>
+          <li>AI providers: for AI features only, through their paid APIs, with stripped or
+            anonymous prompts where possible; no training on your data.</li>
+          <li>Usage analytics in the client portal, only with your consent.</li>
         </ul>
+        <p>
+          Customers find the names in their Stevin account. Others receive them from us on request.
+        </p>
         <p>
           OAuth integrations (such as Google Ads, Meta, Pinterest, LinkedIn) run directly
           between you and the platform. We only receive the tokens you authorize.
