@@ -31,17 +31,19 @@ const STORAGE_KEY = 'stevin_kop_variant'
 const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; accent: string }>> = {
   nl: {
     // Eyebrow van A was "Voor bedrijven die betalen voor marketing". Koen 13 sep
-    // 12:19: rare tekst, iedereen betaalt. Nu dezelfde als E.
-    a: { eyebrow: 'Voor bedrijven die marketing uitbesteden', line: 'Elke maand een marketingfactuur.', accent: 'Geen idee wat ze ervoor gedaan hebben.' },
+    // 12:19: rare tekst, iedereen betaalt. Daarna dezelfde als E, en op 30 sep
+    // helemaal weg: "deze tekst wil ik van de website". Een lege eyebrow wordt
+    // niet gerenderd, dus ook het blauwe streepje ervoor verdwijnt.
+    a: { eyebrow: '', line: 'Elke maand een marketingfactuur.', accent: 'Geen idee wat ze ervoor gedaan hebben.' },
     c: { eyebrow: 'Groeien met grip', line: 'Marketing die elke maand beter wordt.', accent: 'En alles blijft van jou.' },
     d: { eyebrow: 'Voor merken en marketingteams', line: 'Wat een systeem voor je kan uitrekenen,', accent: 'hangt af van wat het van jou weet.' },
-    e: { eyebrow: 'Voor bedrijven die marketing uitbesteden', line: 'Je betaalt elke maand.', accent: 'Maar je kunt niet nakijken wat er gebeurd is.' },
+    e: { eyebrow: '', line: 'Je betaalt elke maand.', accent: 'Maar je kunt niet nakijken wat er gebeurd is.' },
   },
   en: {
-    a: { eyebrow: 'For companies that outsource their marketing', line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
+    a: { eyebrow: '', line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
     c: { eyebrow: 'Growth with grip', line: 'Marketing that gets better every month.', accent: 'And everything stays yours.' },
     d: { eyebrow: 'For brands and marketing teams', line: 'What a system can work out for you', accent: 'depends on what it knows about you.' },
-    e: { eyebrow: 'For companies that outsource their marketing', line: 'You pay every month.', accent: 'But you cannot check what actually happened.' },
+    e: { eyebrow: '', line: 'You pay every month.', accent: 'But you cannot check what actually happened.' },
   },
 }
 
@@ -103,10 +105,12 @@ export default function HeroHeadline({ locale }: { locale: string }) {
 
   return (
     <>
-      <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
-        <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
-        {c.eyebrow}
-      </p>
+      {c.eyebrow && (
+        <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+          <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          {c.eyebrow}
+        </p>
+      )}
       <h1
         className="font-display font-bold text-white leading-[1.05] tracking-[-0.035em]"
         style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '18ch' }}
