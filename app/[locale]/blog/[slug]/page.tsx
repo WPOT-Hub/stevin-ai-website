@@ -1511,19 +1511,25 @@ function DispatchPerspective({ slug }: { slug: string }) {
           margin: '0 0 12px',
         }}
       >
-        Wat dit betekent voor jou
+        Stevins perspectief
       </p>
-      <p
-        style={{
-          fontFamily: 'Inter, sans-serif',
-          fontSize: '16px',
-          lineHeight: '1.6',
-          color: 'var(--navy)',
-          margin: 0,
-        }}
-      >
-        {text}
-      </p>
+      {/* W-049: nieuwe stukken hebben drie delen (wat het bewijs zegt, wat je
+          nakijkt, wat wij doen), gescheiden door een lege regel. Oude stukken
+          hebben een alinea en blijven er precies zo uitzien. */}
+      {text.split(/\n\s*\n/).map((deel, i, delen) => (
+        <p
+          key={i}
+          style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '16px',
+            lineHeight: '1.6',
+            color: 'var(--navy)',
+            margin: i === delen.length - 1 ? 0 : '0 0 12px',
+          }}
+        >
+          {deel.trim()}
+        </p>
+      ))}
     </div>
   )
 }
