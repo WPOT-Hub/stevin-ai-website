@@ -13,13 +13,22 @@ gepubliceerd. Twee formats, één toon.
 - Eindigt met een praktische conclusie of een vraag
 - Frequentie: wekelijks
 
-### Dispatch, kort nieuws (2-4 min)
+### Journalstukken sinds W-049 (30 sep 2026)
 
-- 300-500 woorden
-- Geen drop-cap, geen poster, tekst-only
-- Externe gebeurtenis + één paragraaf Stevin-duiding ("Wat dit betekent voor jou")
-- Bron-attributie verplicht (via NU.nl, Tweakers, Emerce, etc.)
-- Frequentie: dagelijks tijdens werkdagen
+Nieuwe stukken worden in de Hub geschreven (`src/journal/draftWriter.ts`) en
+komen op de site als dispatch-record. De vorm volgt uit het onderwerp, niet uit
+de bron. Besluit D-067 in Stevin-Hub, onderbouwing in
+`Stevin-Hub/docs/BOUWPLAN_W049_EEN_JOURNAL.md`.
+
+- bericht: 400-700 woorden, een platformwijziging, deadline of storing
+- uitleg: 900-1.500 woorden, onderzoek of een meetvraag, tussenkoppen als vraag
+- uitspraak naast bewijs: 600-1.000 woorden, een bewering die rondgaat
+- Onder de 400 woorden gaat er niets live
+- Bron-attributie verplicht; de echte bron staat in `source`, niet stevin.ai
+- Frequentie: hoogstens een voorstel per werkdag
+
+De oude korte dispatch (300-500 woorden op papier, mediaan 138 in de praktijk)
+wordt niet meer geschreven. Bestaande dispatches blijven staan zoals ze zijn.
 
 ## Acht regels (gelden voor beide formats)
 
@@ -110,18 +119,20 @@ marketing-jargon breekt het leesritme.
 | attribution gap               | het verschil tussen wat het platform meldt en wat er werkelijk gebeurde |
 | holdout-groep / geo-test      | alleen als context het ondersteunt                  |
 
-## Wat dit betekent voor jou, de Stevin-paragraaf
+## Stevins perspectief
 
-Elke dispatch eindigt met een box "Wat dit betekent voor jou". Eén alinea.
-Geen conclusie van het nieuws, een toepassing voor de lezer. Antwoord op
-één van deze vier vragen:
+Elk nieuw stuk eindigt met de box "Stevins perspectief", in drie delen van elk
+een tot drie zinnen, gescheiden door een lege regel:
 
-1. Wat verandert hier voor jouw budget of pijplijn?
-2. Welke vraag moet je stellen aan je vendor of bureau?
-3. Welk meetpatroon wordt hierdoor zichtbaar?
-4. Wat zou een Stevin-consultant op maandagochtend doen met dit nieuws?
+1. Wat het bewijs zegt: officieel bevestigd, een belofte van de leverancier,
+   onafhankelijk gemeten of nog niet bewezen. En wat het niet aantoont.
+2. Wat je nakijkt: welke instelling, welk rapport, voor welke datum. De zin die
+   een ondernemer naar zijn bureau doorstuurt.
+3. Wat wij doen: alleen uit wat Stevin.AI echt doet. Past het nergens bij, dan
+   zeggen we eerlijk dat het buiten ons werk valt.
 
-Niet alle vier, kies er één. Maximaal 4 zinnen.
+Oude stukken houden hun ene alinea; de box toont die zoals voorheen, onder de
+nieuwe kop.
 
 ## Tone-of-voice samenvatting
 
