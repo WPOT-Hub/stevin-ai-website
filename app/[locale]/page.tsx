@@ -76,6 +76,15 @@ const COPY = {
       { q: 'Dat mijn website daar zat, dat wisten wij pas achteraf. Daar hebben wij nooit aan gedacht.', a: 'Stoffeerderij, over het domein op naam van het bureau' },
       // c0cdb4db, 9 sep 2026, 19:25: de conversiemeting stond aan en telde het verkeerde.
       { q: 'De laatste jaren zijn we zwaar achteruitgeboerd. Maar dat heb ik niet gezien, omdat ik daar ook nooit naar kijk.', a: 'Stoffeerderij' },
+      // W-414, 1 okt 2026: uit Simons eerste citatenronde over de gesprekken van 20
+      // minuten of langer sinds 10 sep, door Koen gekozen. Elk citaat staat
+      // letterlijk in het transcript (alleen ingekort), opname-id en tijd erbij.
+      // 4ab8ea1a, 30 sep 2026, 00:18:57: budget bijna verdubbeld, rendement gehalveerd.
+      { q: 'Ik betaal veel meer voor veel minder.', a: 'Webwinkel in witgoed' },
+      // 25468bd7, 16 sep 2026, 00:14:34: het bureau doet de SEO, al maanden live.
+      { q: 'Ik sta bovenaan in Google, dus dat is allemaal goed. Maar het levert me eigenlijk nog geen klanten op.', a: 'Uitvaartondernemer' },
+      // 6a4e56ab, 28 sep 2026, 00:20:07: drie, vier bureaus in vijf jaar.
+      { q: 'Ik heb spijtig genoeg al wat cowboys versleten.', a: "Importeur van sauna's, over eerdere bureaus" },
     ],
     // "Zelfs bureaus zeggen het zelf" is er 4 sep 2026 uit (W-042). Onnagekeken
     // bewering over derden, zonder bron, en het schuurt tegen de generieke
@@ -265,6 +274,9 @@ const COPY = {
       { q: 'They have everything. And they respond to nothing. Sending invoices, that they can do.', a: 'Roofing and facade company, about their agency' },
       { q: 'That my website was sitting there, we only found out afterwards. We never gave it a thought.', a: 'Upholstery business, about the domain in the agency\'s name' },
       { q: 'The last few years we have gone badly downhill. But I never saw it, because I never look at that.', a: 'Upholstery business' },
+      { q: 'I pay a lot more for a lot less.', a: 'Online shop for household appliances' },
+      { q: 'I am at the top in Google, so that is all fine. But it does not actually bring me any customers yet.', a: 'Funeral director' },
+      { q: 'Unfortunately I have already been through a few cowboys.', a: 'Sauna importer, about previous agencies' },
     ],
     herken_close: 'These are not exceptions. This is how it works as long as nobody is watching.',
     herken_bron: 'From real diagnosis conversations, anonymised.',
