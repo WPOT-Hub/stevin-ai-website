@@ -7,8 +7,10 @@
 // op Koens verzoek. Dat draait twee eerdere keuzes terug: Bart stond eruit om
 // de JPG met zwarte achtergrond, Totaallobby omdat het een boektitel van
 // Parrhesia is en als tweede klant kan lezen. Koen wil hem er nu wel bij.
-// - hans-schepers.png: het nieuwe icoon van 24 sep (Stevin-Hub
-//   clients/hansschepers/merk/icoon-hansschepers-2026-09.png), verkleind.
+// - hans-schepers.svg: het nieuwe logo, richting "1. Evolutie" uit Stevin-Hub
+//   clients/hansschepers/merk/logo-richtingen.html (Koen 1 okt: "hans moet
+//   echt het nieuwe logo zijn"). Stoel plus naam, tekst als paden in Plus
+//   Jakarta Sans zodat er geen font laadt.
 // - autorijschool-bart.png: stevin-sites clients/bart/logo.jpg, zwarte
 //   achtergrond omgezet naar transparant, wit en blauw beeld naar donker
 //   (het blauw viel in grijstinten weg).
@@ -29,7 +31,7 @@ const KLANTEN: Klant[] = [
   { src: '/logos/klanten/tonissteiner.svg', naam: 'Tonissteiner', h: 23, o: 0.62 },
   { src: '/logos/klanten/parrhesia.png', naam: 'Parrhesia', h: 40, o: 0.82 },
   { src: '/logos/klanten/totaallobby.svg', naam: 'Totaallobby', h: 36, o: 0.7 },
-  { src: '/logos/klanten/hans-schepers.png', naam: 'Hans Schepers Stoffering', h: 44, o: 0.72 },
+  { src: '/logos/klanten/hans-schepers.svg', naam: 'Hans Schepers Stoffering', h: 40, o: 0.75 },
   { src: '/logos/klanten/autorijschool-bart.png', naam: 'Autorijschool Bart', h: 40, o: 0.9 },
 ]
 
