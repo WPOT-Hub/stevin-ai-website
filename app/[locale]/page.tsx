@@ -276,7 +276,7 @@ const COPY = {
       { q: 'The last few years we have gone badly downhill. But I never saw it, because I never look at that.', a: 'Upholstery business' },
       { q: 'I pay a lot more for a lot less.', a: 'Online shop for household appliances' },
       { q: 'I am at the top in Google, so that is all fine. But it does not actually bring me any customers yet.', a: 'Funeral director' },
-      { q: 'Unfortunately I have already worn out a few cowboys.', a: 'Sauna importer, about previous agencies' },
+      { q: 'Unfortunately I have already been through a few cowboys.', a: 'Sauna importer, about previous agencies' },
     ],
     herken_close: 'These are not exceptions. This is how it works as long as nobody is watching.',
     herken_bron: 'From real diagnosis conversations, anonymised.',
