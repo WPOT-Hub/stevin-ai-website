@@ -148,6 +148,11 @@ Overmacht schort alleen de getroffen verplichting op. De getroffen partij meldt 
 ### A18. Te late betaling
 Bij te late betaling ben je de wettelijke handelsrente en een redelijke vergoeding voor buitengerechtelijke incassokosten verschuldigd. Wij schorten pas op na een schriftelijke aanmaning en een redelijke hersteltermijn.
 
+Een korting, waaronder het Founding Partner-tarief, geldt bij betaling binnen de termijn. Wordt een factuur niet op tijd betaald, dan vervalt de korting en is het normale tarief verschuldigd.
+
+<!-- Besluit Koen 2 okt 2026 (PRIJSMODEL.md, "Korting alleen bij betaling op tijd"). Voor de jurist: dit is vrijwel zeker een boetebeding (art. 6:91 BW), matigbaar (6:94). Vragen: (1) beter pas vervallen na aanmaning plus 14 dagen? (2) btw bij vervallen korting, aanvullende factuur voor het verschil? -->
+
+
 ### A19. Jouw materiaal
 Je staat ervoor in dat je het materiaal, de gegevens en de claims die je aanlevert rechtmatig mag gebruiken. Je vrijwaart ons voor aanspraken die aantoonbaar voortvloeien uit onrechtmatig materiaal van jou, voor zover wij daarvan niet wisten en niet hoefden te weten.
 
