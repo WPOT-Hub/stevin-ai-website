@@ -517,7 +517,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     nietDoen: {
       h2: "Twee dingen die wij niet doen.",
       items: [
-        { t: "Wij tellen geen knopklikken als aanvraag", d: "Een conversie is een echte aanvraag of een echt telefoontje. Een klik op een knop zonder bevestiging tellen we niet mee, ook niet als het cijfer daar mooier van wordt." },
+        { t: "Wij tellen geen kliks als aanvraag", d: "Een conversie is een echte aanvraag of een echt telefoontje. Een klik op een knop zonder bevestiging tellen we niet mee, ook niet als het cijfer daar mooier van wordt." },
         { t: "Wij koppelen je kassa niet standaard", d: "Google Ads, GA4, Tag Manager en je webshop lezen we uit. Kassa en boekhouding komen erbij als de vraag er is, niet omdat het op een lijst mooi staat." },
       ],
     },
@@ -775,8 +775,8 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       ],
     },
     list: {
-      eyebrow: 'Kanalen',
-      h2: 'Waar de leads vandaan komen',
+      eyebrow: 'Lead tracking per kanaal',
+      h2: 'Waar de leads vandaan komen, per kanaal geteld',
       items: [
         'Paid media: campagnes gestuurd op leads en klanten, niet op klikken',
         "Organisch: pagina's die zoekintentie beantwoorden en converteren",
@@ -799,6 +799,11 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       ],
     },
     faq: [
+      {
+        question: 'Hoe werkt lead tracking per kanaal?',
+        answer:
+          'Elke aanvraag krijgt bij binnenkomst de bron mee: de campagne, het zoekwoord of de advertentie waar hij vandaan kwam, en de pagina waarop het formulier stond. Die bron reist mee het CRM in, zodat je per kanaal ziet hoeveel aanvragen er kwamen, hoeveel daarvan klant werden en wat een klant per kanaal kostte. Zonder die koppeling tel je formulieren; met die koppeling tel je klanten, en dat is het cijfer waarop je budget verschuift.',
+      },
       {
         question: 'Wat is lead generatie?',
         answer:

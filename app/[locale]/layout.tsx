@@ -17,13 +17,15 @@ import SiteJsonLd from '@/components/SiteJsonLd'
 // Fonts staan hier (niet in de root-layout) zodat de root pass-through blijft en
 // de hele site statisch geprerenderd kan worden. Paden zijn ../../ want deze
 // layout zit een niveau dieper dan de oude root-layout.
+// W-445, 2 okt 2026: Medium en Black van InterDisplay zijn weg. Black werd nergens
+// gebruikt, Medium op vier kleine labels (de browser pakt daar nu SemiBold). Elk
+// gewicht kost 53 KiB op elke pagina; PageSpeed mobiel gaf de homepage een LCP van
+// 8,9 s met 350 KiB aan fonts voor de eerste tekst.
 const interDisplay = localFont({
   src: [
-    { path: '../../public/fonts/InterDisplay-Medium.woff2', weight: '500', style: 'normal' },
     { path: '../../public/fonts/InterDisplay-SemiBold.woff2', weight: '600', style: 'normal' },
     { path: '../../public/fonts/InterDisplay-Bold.woff2', weight: '700', style: 'normal' },
     { path: '../../public/fonts/InterDisplay-ExtraBold.woff2', weight: '800', style: 'normal' },
-    { path: '../../public/fonts/InterDisplay-Black.woff2', weight: '900', style: 'normal' },
   ],
   variable: '--font-display-inter',
   display: 'swap',
