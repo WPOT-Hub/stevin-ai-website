@@ -48,6 +48,9 @@ export async function generateMetadata({
     description: metaOmschrijving(a.dek),
     openGraph: {
       type: 'article',
+      // W-443: og:url is een verplichte OGP-tag en ontbrak op elk artikel.
+      url: `https://stevin.ai/blog/${a.slug}`,
+      siteName: 'Stevin.AI',
       title: a.title,
       description: metaOmschrijving(a.dek),
       publishedTime: a.publishedAt,
@@ -386,7 +389,7 @@ export default async function ArticlePage({
                 : 'Lees hoe we beslissingen onderbouwen, context bewaren en onze werkwijze actueel houden terwijl de tooling verandert.'}
             </p>
             <Link
-              href="/werkwijze"
+              href="/platform"
               className="inline-flex items-center mt-6 px-6 py-3 font-semibold no-underline rounded-xl transition-colors"
               style={{ fontSize: '15px', background: 'var(--accent, #3D8EFF)', color: '#fff' }}
             >

@@ -1,6 +1,6 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import Logo from './Logo'
 import { ConsentSettingsButton } from './ConsentBanner'
@@ -8,6 +8,7 @@ import TrustBadges from './TrustBadges'
 
 export default function Footer() {
   const t = useTranslations('footer')
+  const locale = useLocale()
 
   const footerLinks = {
     diensten: [
@@ -48,8 +49,15 @@ export default function Footer() {
       { label: t('vergelijken'), href: '/vergelijken' },
       { label: t('alternatief'), href: '/alternatief' },
       { label: t('woordenboek'), href: '/woordenboek' },
-      { label: 'Google Ad Grants (BE)', href: '/google-ad-grants-belgie' },
-      { label: 'Google Ad Grants (NL)', href: '/google-ad-grants-nederland' },
+      // W-443, 2 okt 2026: deze twee pagina's bestaan alleen in het Nederlands
+      // (de route geeft op /en bewust een 404). De footer linkte er vanaf elke
+      // Engelse pagina toch heen, dus 737 pagina's met twee kapotte links.
+      ...(locale === 'nl'
+        ? [
+            { label: 'Google Ad Grants (BE)', href: '/google-ad-grants-belgie' },
+            { label: 'Google Ad Grants (NL)', href: '/google-ad-grants-nederland' },
+          ]
+        : []),
       { label: t('bedrijf_contact'), href: '/contact' },
     ],
     // Juridisch. Deze pagina's bestonden al maar waren alleen bereikbaar als je

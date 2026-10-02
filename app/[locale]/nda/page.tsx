@@ -7,15 +7,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const isEn = locale === 'en'
   return {
-    title: isEn ? 'Non-Disclosure Agreement | Stevin.AI' : 'Geheimhoudingsovereenkomst | Stevin.AI',
+    title: isEn ? 'Non-Disclosure Agreement' : 'Geheimhoudingsovereenkomst',
     description: isEn
       ? 'Mutual NDA between Stevin.AI and its customers covering campaign data, business information and platform internals.'
       : 'Wederzijdse geheimhoudingsovereenkomst tussen Stevin.AI en haar klanten, voor campagnedata, bedrijfsgegevens en platforminternals.',
     alternates: {
-      canonical: 'https://stevin.ai/nda',
+      // W-443: echte EN-tekst, dus per taal een eigen canonical; en de
+      // hreflang nl wees naar /nl/nda, een 307 die niet bestaat als pagina.
+      canonical: isEn ? 'https://stevin.ai/en/nda' : 'https://stevin.ai/nda',
       languages: {
-        nl: 'https://stevin.ai/nl/nda',
+        'nl-NL': 'https://stevin.ai/nda',
         en: 'https://stevin.ai/en/nda',
+        'x-default': 'https://stevin.ai/nda',
       },
     },
   }

@@ -709,7 +709,7 @@ export default async function HomePage({ params }: Props) {
               </h2>
             </div>
             <Link
-              href="/werkwijze"
+              href="/platform"
               className="font-display font-semibold text-[14px] text-white/55 hover:text-white transition-colors flex-shrink-0"
             >
               {c.how_link} &rarr;

@@ -51,7 +51,7 @@ export default async function WebsitesPage({ params }: Props) {
             <Link href="/contact" className="inline-flex px-8 py-3.5 text-sm font-semibold bg-neon text-primary rounded-xl hover:bg-neon-dark transition-colors neon-glow">
               {t('cta_primary')}
             </Link>
-            <Link href="/werkwijze" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
+            <Link href="/platform" className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
               {t('cta_secondary')}
             </Link>
           </div>
