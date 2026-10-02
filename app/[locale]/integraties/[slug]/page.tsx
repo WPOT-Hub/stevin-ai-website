@@ -26,6 +26,24 @@ export async function generateStaticParams() {
   return [...categoryParams, ...integrationParams]
 }
 
+// Paginatitel en H1 van een leverancierspagina. Dezelfde tekst, want de kop
+// hoort te zeggen wat de titel belooft. Een paar slugs hebben een eigen titel
+// op basis van wat mensen zoeken (GSC); de rest krijgt "koppeling en
+// integratie", wat voor elke leverancier klopt. Een vaste staart als "voor
+// tracking, formulieren en CRM" klopte niet voor Bouw7 (projectadministratie)
+// of 1001Tracklists (Codex-review PR 96).
+const SEO_TITELS: Record<string, string> = {
+  'google-sheets': 'Google Sheets koppeling voor marketingdata',
+  'drupal': 'Drupal koppeling voor tracking en CRM',
+  'bigcommerce': 'BigCommerce koppeling voor e-commerce data',
+  'microsoft-dynamics-365-crm': 'Dynamics 365 koppeling voor marketing en CRM',
+}
+function vendorKop(slug: string, naam: string, locale: string): string {
+  return locale === 'en'
+    ? `${naam} integration and connection`
+    : SEO_TITELS[slug] ?? `${naam} koppeling en integratie`
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params
 
@@ -57,15 +75,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const integration = getIntegrationBySlug(slug)
   if (integration) {
     const en = locale === 'en' ? getVendorContentEn(slug) : null
-    const seoTitles: Record<string, string> = {
-      'google-sheets': 'Google Sheets koppeling voor marketingdata',
-      'drupal': 'Drupal koppeling voor tracking en CRM',
-      'bigcommerce': 'BigCommerce koppeling voor e-commerce data',
-      'microsoft-dynamics-365-crm': 'Dynamics 365 koppeling voor marketing en CRM',
-    }
-    const title = locale === 'en'
-      ? `${integration.name} integration and connection`
-      : seoTitles[slug] ?? `${integration.name} koppeling en integratie`
+    const title = vendorKop(slug, integration.name, locale)
     // De omschrijving beschreef alleen de leverancier: "Drupal koppeling en
     // integratie" met daaronder "Enterprise CMS voor complexe websites". Wie op
     // "drupal koppeling" zoekt heeft Drupal al en leest daar geen enkele reden
@@ -296,13 +306,10 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
             <div className="flex items-center gap-4 mb-6">
               <IntegrationGlyph />
               <div>
-                {/* W-445: de H1 was alleen de merknaam. Mensen zoeken op "<naam> koppelingen"
-                    (Drupal: positie 10,6 met 91 vertoningen en 0 klikken), dus de kop zegt
-                    nu wat de pagina biedt. De paginatitel deed dat al. */}
+                {/* W-445: de H1 was alleen de merknaam ("Drupal"); nu dezelfde tekst
+                    als de paginatitel, zodat kop en titel hetzelfde beloven. */}
                 <h1 className="h-page text-primary">
-                  {locale === 'en'
-                    ? `${integration.name} integrations for tracking, forms and CRM`
-                    : `${integration.name}-koppelingen voor tracking, formulieren en CRM`}
+                  {vendorKop(slug, integration.name, locale)}
                 </h1>
                 {category && (
                   <Link
