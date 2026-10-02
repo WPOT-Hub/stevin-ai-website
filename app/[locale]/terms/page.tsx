@@ -7,22 +7,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const isEn = locale === 'en'
   return {
-    title: isEn ? 'Terms of Service | Stevin.AI' : 'Algemene Voorwaarden | Stevin.AI',
+    title: isEn ? 'Terms of Service' : 'Algemene Voorwaarden',
     description: isEn
       ? 'Terms of service for Stevin.AI: the conditions under which we provide our AI platform.'
       : 'Algemene voorwaarden van Stevin.AI: onder welke voorwaarden wij ons AI-platform leveren.',
     // W-078: zonder openGraph erfde deze pagina de og:title van de homepage.
     openGraph: {
+      // De layout-template geldt niet voor openGraph.title, dus hier blijft
+      // de merknaam staan (Codex-review PR 95).
       title: isEn ? 'Terms of Service | Stevin.AI' : 'Algemene Voorwaarden | Stevin.AI',
       description: isEn
         ? 'Terms of service for Stevin.AI: the conditions under which we provide our AI platform.'
         : 'Algemene voorwaarden van Stevin.AI: onder welke voorwaarden wij ons AI-platform leveren.',
     },
     alternates: {
-      canonical: 'https://stevin.ai/terms',
+      // W-443: echte EN-tekst, dus per taal een eigen canonical; en de
+      // hreflang nl wees naar /nl/terms, een 307 die niet bestaat als pagina.
+      canonical: isEn ? 'https://stevin.ai/en/terms' : 'https://stevin.ai/terms',
       languages: {
-        nl: 'https://stevin.ai/nl/terms',
+        'nl-NL': 'https://stevin.ai/terms',
         en: 'https://stevin.ai/en/terms',
+        'x-default': 'https://stevin.ai/terms',
       },
     },
   }

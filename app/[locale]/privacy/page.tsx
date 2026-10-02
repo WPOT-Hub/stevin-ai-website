@@ -7,15 +7,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const isEn = locale === 'en'
   return {
-    title: isEn ? 'Privacy Policy | Stevin.AI' : 'Privacyverklaring | Stevin.AI',
+    title: isEn ? 'Privacy Policy' : 'Privacyverklaring',
     description: isEn
       ? 'Privacy policy for Stevin.AI: how we collect, store and use personal data.'
       : 'Privacyverklaring van Stevin.AI: hoe wij persoonsgegevens verzamelen, opslaan en gebruiken.',
     alternates: {
-      canonical: 'https://stevin.ai/privacy',
+      // W-443: echte EN-tekst, dus per taal een eigen canonical; en de
+      // hreflang nl wees naar /nl/privacy, een 307 die niet bestaat als pagina.
+      canonical: isEn ? 'https://stevin.ai/en/privacy' : 'https://stevin.ai/privacy',
       languages: {
-        nl: 'https://stevin.ai/nl/privacy',
+        'nl-NL': 'https://stevin.ai/privacy',
         en: 'https://stevin.ai/en/privacy',
+        'x-default': 'https://stevin.ai/privacy',
       },
     },
   }

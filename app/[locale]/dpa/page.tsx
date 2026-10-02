@@ -7,15 +7,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const isEn = locale === 'en'
   return {
-    title: isEn ? 'Data Processing Agreement | Stevin.AI' : 'Verwerkersovereenkomst | Stevin.AI',
+    title: isEn ? 'Data Processing Agreement' : 'Verwerkersovereenkomst',
     description: isEn
       ? 'Data Processing Agreement (GDPR Art. 28) between Stevin.AI and its customers.'
       : 'Verwerkersovereenkomst (AVG art. 28) tussen Stevin.AI en haar klanten.',
     alternates: {
-      canonical: 'https://stevin.ai/dpa',
+      // W-443: echte EN-tekst, dus per taal een eigen canonical; en de
+      // hreflang nl wees naar /nl/dpa, een 307 die niet bestaat als pagina.
+      canonical: isEn ? 'https://stevin.ai/en/dpa' : 'https://stevin.ai/dpa',
       languages: {
-        nl: 'https://stevin.ai/nl/dpa',
+        'nl-NL': 'https://stevin.ai/dpa',
         en: 'https://stevin.ai/en/dpa',
+        'x-default': 'https://stevin.ai/dpa',
       },
     },
   }
