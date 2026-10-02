@@ -296,8 +296,13 @@ async function IntegrationView({ slug, locale }: { slug: string; locale: string 
             <div className="flex items-center gap-4 mb-6">
               <IntegrationGlyph />
               <div>
+                {/* W-445: de H1 was alleen de merknaam. Mensen zoeken op "<naam> koppelingen"
+                    (Drupal: positie 10,6 met 91 vertoningen en 0 klikken), dus de kop zegt
+                    nu wat de pagina biedt. De paginatitel deed dat al. */}
                 <h1 className="h-page text-primary">
-                  {integration.name}
+                  {locale === 'en'
+                    ? `${integration.name} integrations for tracking, forms and CRM`
+                    : `${integration.name}-koppelingen voor tracking, formulieren en CRM`}
                 </h1>
                 {category && (
                   <Link
