@@ -3,13 +3,13 @@ import { setRequestLocale } from 'next-intl/server'
 
 type Props = { params: Promise<{ locale: string }> }
 
-// W-471: hier komt een klant terecht nadat hij een offerte of opdrachtbevestiging
+// W-473: hier komt een klant terecht nadat hij een offerte of opdrachtbevestiging
 // bij Signhost heeft getekend (ReturnUrl in de Hub), in plaats van op de
 // reclamepagina van Entrust. Niet in de sitemap en niet in de index: deze pagina
 // heeft alleen betekenis direct na het tekenen.
-export const metadata: Metadata = {
-  title: 'Getekend',
-  robots: 'noindex, nofollow',
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  return { title: locale === 'en' ? 'Signed' : 'Getekend', robots: 'noindex, nofollow' }
 }
 
 const TEKST = {
