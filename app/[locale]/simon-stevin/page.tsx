@@ -5,6 +5,7 @@ import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import FAQAccordion from '@/components/FAQAccordion'
 import { Clootcrans, CLOOTCRANS_VIEWBOX } from '@/components/blog/PosterWatermark'
+import { StevinOntwerp, type Ontwerp } from '@/components/stevin/StevinOntwerpen'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -14,7 +15,7 @@ const COPY = {
   nl: {
     metaTitle: 'De naam Stevin, vernoemd naar Simon Stevin',
     metaDesc:
-      'Stevin dankt zijn naam aan oorsprong, ambitie en geschiedenis. Een idee uit Belgie, gebouwd in Breda, vernoemd naar wetenschapper Simon Stevin.',
+      'Waarom Stevin.AI is vernoemd naar Simon Stevin, de Vlaams-Nederlandse wiskundige van De Thiende, de clootcrans en de zeilwagen.',
     eyebrow: 'De naam Stevin',
     h1: 'Een idee uit Belgie, gebouwd in Breda.',
     portraitAlt: 'Portret van Simon Stevin',
@@ -27,7 +28,7 @@ const COPY = {
       'Wat begon als een interne oplossing, werd de basis van Stevin. De verdere ontwikkeling vond plaats vanuit Breda, waar het platform werd uitgebouwd tot wat het nu is: de laag die elke dag meekijkt op je marketing en onthoudt wat er gebeurde.',
     namesakeH: 'Vernoemd naar Simon Stevin',
     namesake1:
-      'De naam verwijst naar Simon Stevin, een van de belangrijkste wetenschappers uit de Lage Landen. Hij werd geboren in Brugge, in het huidige Belgie, en werkte later in Nederland. Zijn werk ging over kennis bruikbaar maken. In De Thiende uit 1585 legde hij uit hoe je met decimale breuken kon rekenen in het dagelijks werk. Hij schreef het niet voor wiskundigen, maar voor sterrenkijkers, landmeters, tapijtmakers, wijnroeiers, muntmeesters en kooplieden.',
+      'De naam verwijst naar Simon Stevin, een van de belangrijkste wetenschappers uit de Lage Landen. Hij werd geboren in Brugge, in Vlaanderen, en maakte zijn naam in de Republiek, in Leiden en Den Haag. Zijn werk ging over kennis bruikbaar maken. In De Thiende uit 1585 legde hij uit hoe je met decimale breuken kon rekenen in het dagelijks werk. Hij schreef het niet voor wiskundigen, maar voor sterrenkijkers, landmeters, tapijtmeters, wijnroeiers, muntmeesters en kooplieden.',
     quote: 'Wonder en is gheen wonder.',
     quoteAttr: 'Simon Stevin, 1586',
     bridge:
@@ -57,6 +58,17 @@ const COPY = {
       'Met Stevin.AI maken wij zichtbaar hoe marketing, data en opvolging samen werken. Zodat je begrijpt wat er gebeurt en waarop je beslissingen baseert.',
     krachtenBijschrift:
       'De clootcrans, 1586. Over twee hellingen hangt een gesloten snoer van even zware bollen, op gelijke afstand. Op de lange, flauwe helling liggen er twee keer zo veel. Toch trekt die kant niet harder, want per bol is de kracht langs de helling kleiner. Het deel dat eronder hangt trekt naar beide kanten even hard en valt tegen elkaar weg. Zou het snoer uit zichzelf gaan draaien, dan draaide het eeuwig door, en dat kan niet.',
+    werkEyebrow: 'Simon Stevin in de Republiek',
+    werkH: 'Van Brugge naar Den Haag',
+    werkIntro:
+      'Stevin werd in 1548 geboren in Brugge, toen nog Habsburgse Nederlanden. In 1581 trok hij naar het noorden, naar Leiden. Daar schreef hij zich in 1583 in aan de universiteit die Willem van Oranje acht jaar eerder had gesticht, en leerde hij diens zoon Maurits kennen. Later werd hij leraar en adviseur van Maurits, die na de moord op zijn vader stadhouder was geworden. Op diens verzoek zette Stevin in 1600 in Leiden een opleiding voor ingenieurs op, en vanaf 1604 was hij kwartiermeester van het Staatse leger. Hij stierf in 1620 in Den Haag.',
+    ontwerpen: [
+      { naam: 'thiende', titel: 'De Thiende, 1585', tekst: 'Stevin liet zien hoe je met tienden, honderdsten en duizendsten rekent, voor kooplieden, landmeters en wijnroeiers. Een komma gebruikte hij nog niet: achter elk cijfer stond een getal in een cirkeltje dat de plaats aangaf.' },
+      { naam: 'hydrostatischeParadox', titel: 'De hydrostatische paradox, 1586', tekst: 'Hoe hard water op de bodem drukt, hangt alleen af van hoe hoog het staat. Niet van de vorm van het vat en niet van hoeveel water erin zit. Stevin liet het zien lang voor Pascal, aan wie het meestal wordt toegeschreven.' },
+      { naam: 'vestingbouw', titel: 'De vestingbouw, 1594', tekst: 'In De Sterctenbouwing schreef Stevin in het Nederlands hoe je een vesting bouwt: een regelmatige zeshoek met op elke hoek een bastion, zo gelegd dat elke muur vanaf een andere te verdedigen is.' },
+      { naam: 'havenvinding', titel: 'De havenvinding, 1599', tekst: 'Op zee kon je je breedte meten, maar je lengte niet. Stevin combineerde de breedte met hoeveel het kompas afweek van het noorden. Samen wezen die een plek aan, zodat schepen een haven of elkaar terugvonden.' },
+      { naam: 'zeilwagen', titel: 'De zeilwagen, rond 1600', tekst: 'Een wagen op vier wielen met twee zeilen. Stevin reed er met prins Maurits en zijn gasten mee over het strand, van Scheveningen naar Petten in zo\'n twee uur. Sneller dan een paard.' },
+    ] as { naam: Ontwerp; titel: string; tekst: string }[],
     close1: 'Stevin verbindt data, context en actie.',
     close2:
       'Van advertentie tot aanvraag. Van meting tot besluit. Van signaal tot uitvoering.',
@@ -68,7 +80,7 @@ const COPY = {
       {
         question: 'Wie was Simon Stevin?',
         answer:
-          'Simon Stevin (1548 tot 1620) was een Vlaams-Nederlandse wiskundige, natuurkundige en ingenieur, geboren in Brugge. Hij stond bekend om het praktisch toepasbaar maken van kennis: hij maakte het rekenen met kommagetallen en het dubbel boekhouden bruikbaar voor het dagelijks werk.',
+          'Simon Stevin (1548 tot 1620) was een Vlaams-Nederlandse wiskundige, natuurkundige en ingenieur, geboren in Brugge. Hij stond bekend om het praktisch toepasbaar maken van kennis: hij maakte het rekenen met kommagetallen en het dubbel boekhouden bruikbaar voor het dagelijks werk. Vanaf 1581 woonde en werkte hij in de Noordelijke Nederlanden, in Leiden en Den Haag, onder meer als leraar en adviseur van prins Maurits.',
       },
       {
         question: 'Waarom heet het platform Stevin?',
@@ -85,20 +97,20 @@ const COPY = {
   en: {
     metaTitle: 'The name Stevin, named after Simon Stevin',
     metaDesc:
-      'Stevin combines origin, ambition and history. An idea from Belgium, built in Breda, named after scientist Simon Stevin.',
+      'Why Stevin.AI is named after Simon Stevin, the Flemish-Dutch mathematician behind De Thiende, the wreath of spheres and the sailing chariot.',
     eyebrow: 'The name Stevin',
     h1: 'An idea from Belgium, built in Breda.',
     portraitAlt: 'Portrait of Simon Stevin',
     portraitCaption: 'Simon Stevin, 1548 to 1620, scientist from the Low Countries.',
     introSub:
-      'The name Stevin combines origin, ambition and history. The first idea was born in Belgium, at my own agency, while looking for a smarter way to connect processes, systems and data.',
+      'The first idea came from my own agency in Belgium. We kept meeting clients where three agencies in a row had worked on the measurement, each adding a tag of their own. What was left was double-counted traffic in GA4 and nobody who could still say which number was right. That is where this started.',
     origin1:
-      'As a founder, I was looking for a smart way to better organise the processes inside our own agency. We worked with different systems, a lot of information and ever more data, but a layer was missing that tied everything together and actively thought along.',
+      'I was not looking for a new system. Everything was already there: campaign data, CRM, calendar, quotes, project information. What was missing was a layer on top that tied it together and spoke up in time. The right information nearly always reached the right person too late.',
     origin2:
       'What started as an internal solution became the foundation of Stevin. The platform was further developed from Breda into what it is now: the layer that watches your marketing every day and remembers what happened.',
     namesakeH: 'Named after Simon Stevin',
     namesake1:
-      'The name refers to Simon Stevin, one of the most important scientists of the Low Countries. He was born in Bruges, Belgium, and became an influential thinker in the Netherlands. His work was known for making knowledge practical. He even made decimal arithmetic and bookkeeping usable in everyday practice, giving abstract mathematics a place in daily work.',
+      'The name refers to Simon Stevin, one of the most important scientists of the Low Countries. He was born in Bruges, in Flanders, and made his name in the Dutch Republic, in Leiden and The Hague. His work was about making knowledge usable. In De Thiende of 1585 he explained how to calculate with decimal fractions in everyday work. He did not write it for mathematicians but for astronomers, surveyors, cloth measurers, wine gaugers, mint masters and merchants.',
     quote: 'Wonder en is gheen wonder.',
     quoteAttr: 'Simon Stevin, 1586',
     bridge:
@@ -125,6 +137,17 @@ const COPY = {
       'With Stevin.AI we make visible how marketing, data and follow-up work together. So you understand what is happening, and what you are basing your decisions on.',
     krachtenBijschrift:
       'The wreath of spheres, 1586. A closed string of equally heavy spheres hangs over two slopes, evenly spaced. The long, shallow slope carries twice as many. Even so it does not pull harder, because the force along the slope is smaller per sphere. The part hanging underneath pulls equally to both sides and cancels out. If the string started turning on its own it would turn forever, which cannot be.',
+    werkEyebrow: 'Simon Stevin in the Republic',
+    werkH: 'From Bruges to The Hague',
+    werkIntro:
+      'Stevin was born in Bruges in 1548, then part of the Habsburg Netherlands. In 1581 he moved north to Leiden. There, in 1583, he enrolled at the university William of Orange had founded eight years earlier, and met William\'s son Maurice. He later became tutor and adviser to Maurice, who had become stadtholder after his father\'s murder. At Maurice\'s request Stevin set up a course for engineers in Leiden in 1600, and from 1604 he was quartermaster of the States Army. He died in The Hague in 1620.',
+    ontwerpen: [
+      { naam: 'thiende', titel: 'De Thiende (The Tenth), 1585', tekst: 'Stevin showed how to calculate with tenths, hundredths and thousandths, for merchants, surveyors and wine gaugers. He did not use a decimal point yet: after each digit he put a number in a small circle to mark its place.' },
+      { naam: 'hydrostatischeParadox', titel: 'The hydrostatic paradox, 1586', tekst: 'How hard water presses on the bottom depends only on how high it stands. Not on the shape of the vessel, and not on how much water is in it. Stevin showed this long before Pascal, who usually gets the credit.' },
+      { naam: 'vestingbouw', titel: 'Fortification, 1594', tekst: 'In De Sterctenbouwing Stevin explained, in Dutch, how to build a fortress: a regular hexagon with a bastion on every corner, laid out so that every wall can be defended from another.' },
+      { naam: 'havenvinding', titel: 'Haven finding, 1599', tekst: 'At sea you could measure your latitude, but not your longitude. Stevin combined latitude with how far the compass deviated from north. Together they pointed to one place, so ships could find a harbour or each other.' },
+      { naam: 'zeilwagen', titel: 'The sailing chariot, around 1600', tekst: 'A wagon on four wheels with two sails. Stevin drove it along the beach with Prince Maurice and his guests, from Scheveningen to Petten in about two hours. Faster than a horse.' },
+    ] as { naam: Ontwerp; titel: string; tekst: string }[],
     close1: 'Stevin connects data, context and action.',
     close2:
       'From ad to enquiry. From measurement to decision. From signal to execution.',
@@ -136,7 +159,7 @@ const COPY = {
       {
         question: 'Who was Simon Stevin?',
         answer:
-          'Simon Stevin (1548 to 1620) was a Flemish-Dutch mathematician, physicist and engineer, born in Bruges. He was known for making knowledge practical: he made decimal arithmetic and double-entry bookkeeping usable in everyday work.',
+          'Simon Stevin (1548 to 1620) was a Flemish-Dutch mathematician, physicist and engineer, born in Bruges. He was known for making knowledge practical: he made decimal arithmetic and double-entry bookkeeping usable in everyday work. From 1581 he lived and worked in the northern Netherlands, in Leiden and The Hague, among other things as tutor and adviser to Prince Maurice.',
       },
       {
         question: 'Why is the platform named Stevin?',
@@ -422,6 +445,54 @@ export default async function SimonStevinPage({ params }: Props) {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── SECTIE: STEVIN IN DE REPUBLIEK (W-461: geschiedenis en zijn andere ontwerpen) ── */}
+      <section className="bg-white" style={{ padding: '0 24px 112px' }}>
+        <div className="mx-auto max-w-[1120px]">
+          <div style={{ borderTop: '1px solid var(--border)', paddingTop: '72px' }}>
+            <p
+              className="font-display font-bold uppercase text-[#3C8EFF]"
+              style={{ fontSize: '13px', letterSpacing: '0.12em', marginBottom: '12px' }}
+            >
+              {c.werkEyebrow}
+            </p>
+            <h2
+              className="font-display font-extrabold text-[#0A1628] tracking-[-0.02em] text-wrap-balance"
+              style={{ fontSize: 'clamp(26px, 3vw, 38px)', lineHeight: 1.15, marginBottom: '20px' }}
+            >
+              {c.werkH}
+            </h2>
+            <p
+              className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty"
+              style={{ fontSize: '18px', maxWidth: '760px', marginBottom: '40px' }}
+            >
+              {c.werkIntro}
+            </p>
+          </div>
+          {c.ontwerpen.map((o) => (
+            <div
+              key={o.naam}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center"
+              style={{ padding: '36px 0', borderTop: '1px solid var(--border)' }}
+            >
+              <figure className="lg:col-span-5 m-0" style={{ maxWidth: '360px', opacity: 0.62 }}>
+                <StevinOntwerp naam={o.naam} label={o.titel} kleur="var(--navy)" />
+              </figure>
+              <div className="lg:col-span-6 lg:col-start-7">
+                <h3
+                  className="font-display font-bold text-[#0A1628]"
+                  style={{ fontSize: '22px', lineHeight: 1.25, marginBottom: '10px' }}
+                >
+                  {o.titel}
+                </h3>
+                <p className="font-body text-[#2A3A54] leading-[1.7] text-wrap-pretty" style={{ fontSize: '17px', maxWidth: '520px' }}>
+                  {o.tekst}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
