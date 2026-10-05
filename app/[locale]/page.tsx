@@ -31,7 +31,6 @@ const COPY = {
     hero_sub_1: 'Wij zetten alles terug op jouw naam, zorgen dat elke aanvraag geteld wordt, en laten je per week zien wat het oplevert: telefoontjes, verkopen, verkochte tickets. Daarna draaien we je campagnes, of we begeleiden je eigen mensen. En ',
     hero_sub_bold: 'alles blijft van jou.',
     cta_primary: 'Start de diagnose',
-    cta_secondary: 'Kijk zelf mee',
     cta_micro: 'Eerst de diagnose op jouw eigen data. Daarna pas een voorstel.',
     // W-078, 13 sep: 'dag en nacht' klopte niet. De signaalscan draait drie keer
     // per dag (03:00, 07:00, 13:00) en de afwijkingscontrole alleen op werkdagen.
@@ -257,7 +256,6 @@ const COPY = {
     hero_sub_1: 'We put everything back in your name, make sure every enquiry gets counted, and show you every week what it brings in: phone calls, sales, tickets sold. After that we run your campaigns, or we coach your own people. And ',
     hero_sub_bold: 'everything stays yours.',
     cta_primary: 'Start the diagnosis',
-    cta_secondary: 'See for yourself',
     cta_micro: 'First the diagnosis, on your own data. Only then a proposal.',
     chips: ['1.9 m ads in view', 'Checked every day'],
     connectors_label: 'Reads along on all your channels',
@@ -467,16 +465,26 @@ export default async function HomePage({ params }: Props) {
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
+        {/* W-462: de visual hing aan de rechterrand van het scherm terwijl de
+            tekst in een gecentreerde kolom staat. Op een ultrawide (3440px)
+            zat er ruim 1000px leegte tussen, en stond hij zelfs rechts van het
+            menu. Nu hangt hij aan hetzelfde kader als de header (1760px), dus
+            tot 1760px breed verandert er niets en daarboven schuift hij mee
+            naar het midden. Het kader zelf laat kliks door naar de knop. */}
         <div
-          className="absolute inset-y-0 right-0 z-20 hidden lg:flex items-center justify-end overflow-hidden"
+          className="pointer-events-none absolute inset-y-0 left-1/2 z-20 hidden w-full max-w-[1760px] -translate-x-1/2 lg:block"
           aria-hidden="true"
-          style={{
-            maskImage: 'linear-gradient(90deg, transparent 0%, black 26%)',
-            WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, black 26%)',
-          }}
         >
-          <div className="w-[52vw] max-w-[600px] translate-x-[4%]">
-            <StevinBrainVisual aspect="3:4" brand={false} claim="" ariaLabel="" locale={locale} />
+          <div
+            className="pointer-events-auto absolute inset-y-0 right-0 flex items-center justify-end overflow-hidden"
+            style={{
+              maskImage: 'linear-gradient(90deg, transparent 0%, black 26%)',
+              WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, black 26%)',
+            }}
+          >
+            <div className="w-[52vw] max-w-[600px] translate-x-[4%] min-[1760px]:translate-x-0">
+              <StevinBrainVisual aspect="3:4" brand={false} claim="" ariaLabel="" locale={locale} />
+            </div>
           </div>
         </div>
         <div
@@ -521,7 +529,9 @@ export default async function HomePage({ params }: Props) {
             </p>
           </div>
 
-          {/* CTAs */}
+          {/* CTA: een knop (Koen 5 okt 2026, W-462). "Kijk zelf mee" stond
+              ernaast als tweede keuze; de sectie #kijk-zelf-mee blijft bestaan
+              en is gewoon bereikbaar door te scrollen. */}
           <div className="flex flex-wrap gap-4 mt-10">
             <Link
               href="/contact"
@@ -529,12 +539,6 @@ export default async function HomePage({ params }: Props) {
             >
               {c.cta_primary}
             </Link>
-            <a
-              href="#kijk-zelf-mee"
-              className="inline-flex items-center gap-2 border border-white/20 text-white font-display font-semibold text-[15px] px-7 py-3.5 rounded-lg hover:border-white/40 hover:bg-white/5 transition-colors"
-            >
-              {c.cta_secondary}
-            </a>
           </div>
 
           {/* Microcopy: diagnose-eerst */}
