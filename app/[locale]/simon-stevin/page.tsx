@@ -61,13 +61,13 @@ const COPY = {
     werkEyebrow: 'Simon Stevin in de Republiek',
     werkH: 'Van Brugge naar Den Haag',
     werkIntro:
-      'Stevin werd in 1548 geboren in Brugge, toen nog Habsburgse Nederlanden. In 1581 trok hij naar het noorden, naar Leiden. Daar schreef hij zich in 1583 in aan de universiteit die Willem van Oranje acht jaar eerder had gesticht, en leerde hij diens zoon Maurits kennen. Later werd hij leraar en adviseur van Maurits, die na de moord op zijn vader stadhouder was geworden. Op diens verzoek zette Stevin in 1600 in Leiden een opleiding voor ingenieurs op, en vanaf 1604 was hij kwartiermeester van het Staatse leger. Hij stierf in 1620 in Den Haag.',
+      'Stevin werd in 1548 geboren in Brugge, toen nog Habsburgse Nederlanden. In 1581 trok hij naar het noorden, naar Leiden. Daar schreef hij zich in 1583 in aan de universiteit die Willem van Oranje acht jaar eerder had gesticht, en leerde hij diens zoon Maurits kennen. Later werd hij leraar en adviseur van Maurits, die na de moord op zijn vader stadhouder was geworden. Op diens verzoek zette Stevin in 1600 in Leiden een opleiding voor ingenieurs op, en vanaf 1604 was hij kwartiermeester van het Staatse leger. Hij stierf in 1620, waarschijnlijk in Den Haag.',
     ontwerpen: [
       { naam: 'thiende', titel: 'De Thiende, 1585', tekst: 'Stevin liet zien hoe je met tienden, honderdsten en duizendsten rekent, voor kooplieden, landmeters en wijnroeiers. Een komma gebruikte hij nog niet: achter elk cijfer stond een getal in een cirkeltje dat de plaats aangaf.' },
       { naam: 'hydrostatischeParadox', titel: 'De hydrostatische paradox, 1586', tekst: 'Hoe hard water op de bodem drukt, hangt alleen af van hoe hoog het staat. Niet van de vorm van het vat en niet van hoeveel water erin zit. Stevin liet het zien lang voor Pascal, aan wie het meestal wordt toegeschreven.' },
       { naam: 'vestingbouw', titel: 'De vestingbouw, 1594', tekst: 'In De Sterctenbouwing schreef Stevin in het Nederlands hoe je een vesting bouwt: een regelmatige zeshoek met op elke hoek een bastion, zo gelegd dat elke muur vanaf een andere te verdedigen is.' },
       { naam: 'havenvinding', titel: 'De havenvinding, 1599', tekst: 'Op zee kon je je breedte meten, maar je lengte niet. Stevin combineerde de breedte met hoeveel het kompas afweek van het noorden. Samen wezen die een plek aan, zodat schepen een haven of elkaar terugvonden.' },
-      { naam: 'zeilwagen', titel: 'De zeilwagen, rond 1600', tekst: 'Een wagen op vier wielen met twee zeilen. Stevin reed er met prins Maurits en zijn gasten mee over het strand, van Scheveningen naar Petten in zo\'n twee uur. Sneller dan een paard.' },
+      { naam: 'zeilwagen', titel: 'De zeilwagen, rond 1600', tekst: 'Een wagen op vier wielen met twee zeilen. Met prins Maurits aan het roer reed Stevin er met een gezelschap mee over het strand, van Scheveningen naar Petten in zo\'n twee uur. Sneller dan een paard.' },
     ] as { naam: Ontwerp; titel: string; tekst: string }[],
     close1: 'Stevin verbindt data, context en actie.',
     close2:
@@ -140,13 +140,13 @@ const COPY = {
     werkEyebrow: 'Simon Stevin in the Republic',
     werkH: 'From Bruges to The Hague',
     werkIntro:
-      'Stevin was born in Bruges in 1548, then part of the Habsburg Netherlands. In 1581 he moved north to Leiden. There, in 1583, he enrolled at the university William of Orange had founded eight years earlier, and met William\'s son Maurice. He later became tutor and adviser to Maurice, who had become stadtholder after his father\'s murder. At Maurice\'s request Stevin set up a course for engineers in Leiden in 1600, and from 1604 he was quartermaster of the States Army. He died in The Hague in 1620.',
+      'Stevin was born in Bruges in 1548, then part of the Habsburg Netherlands. In 1581 he moved north to Leiden. There, in 1583, he enrolled at the university William of Orange had founded eight years earlier, and met William\'s son Maurice. He later became tutor and adviser to Maurice, who had become stadtholder after his father\'s murder. At Maurice\'s request Stevin set up a course for engineers in Leiden in 1600, and from 1604 he was quartermaster of the States Army. He died in 1620, most probably in The Hague.',
     ontwerpen: [
       { naam: 'thiende', titel: 'De Thiende (The Tenth), 1585', tekst: 'Stevin showed how to calculate with tenths, hundredths and thousandths, for merchants, surveyors and wine gaugers. He did not use a decimal point yet: after each digit he put a number in a small circle to mark its place.' },
       { naam: 'hydrostatischeParadox', titel: 'The hydrostatic paradox, 1586', tekst: 'How hard water presses on the bottom depends only on how high it stands. Not on the shape of the vessel, and not on how much water is in it. Stevin showed this long before Pascal, who usually gets the credit.' },
       { naam: 'vestingbouw', titel: 'Fortification, 1594', tekst: 'In De Sterctenbouwing Stevin explained, in Dutch, how to build a fortress: a regular hexagon with a bastion on every corner, laid out so that every wall can be defended from another.' },
       { naam: 'havenvinding', titel: 'Haven finding, 1599', tekst: 'At sea you could measure your latitude, but not your longitude. Stevin combined latitude with how far the compass deviated from north. Together they pointed to one place, so ships could find a harbour or each other.' },
-      { naam: 'zeilwagen', titel: 'The sailing chariot, around 1600', tekst: 'A wagon on four wheels with two sails. Stevin drove it along the beach with Prince Maurice and his guests, from Scheveningen to Petten in about two hours. Faster than a horse.' },
+      { naam: 'zeilwagen', titel: 'The sailing chariot, around 1600', tekst: 'A wagon on four wheels with two sails. With Prince Maurice at the helm, Stevin and a company of guests rode it along the beach, from Scheveningen to Petten in about two hours. Faster than a horse.' },
     ] as { naam: Ontwerp; titel: string; tekst: string }[],
     close1: 'Stevin connects data, context and action.',
     close2:
