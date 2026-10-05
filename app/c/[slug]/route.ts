@@ -33,8 +33,20 @@ export async function GET(
 
   if (veilig) {
     try {
+      // W-380: deze fetch komt van de server, dus de Hub ziet anders alleen
+      // "node" en het adres van Vercel. Mailscanners halen de link in Koens
+      // handtekening vooraf op; om die achteraf van mensen te scheiden geven
+      // we de user agent en het IP van de echte bezoeker door. Vercel
+      // overschrijft x-forwarded-for zelf, dus dat adres is niet te vervalsen
+      // door de bezoeker. De Hub bewaart het IP alleen gehasht.
+      const bezoeker: Record<string, string> = {
+        'x-stevin-bezoeker-ua': (request.headers.get('user-agent') ?? '').slice(0, 300),
+      }
+      const ip = request.headers.get('x-forwarded-for')
+      if (ip) bezoeker['x-stevin-bezoeker-ip'] = ip.slice(0, 200)
+
       const res = await fetch(`${HUB}/placement/${veilig}`, {
-        headers: { accept: 'application/json' },
+        headers: { accept: 'application/json', ...bezoeker },
         cache: 'no-store',
         signal: AbortSignal.timeout(4000),
       })
