@@ -10589,7 +10589,7 @@ function ArticleCrmKoppelenBody() {
       <H2 num="05">Een valkuil bij het terugsturen</H2>
 
       <p>
-        Zodra de uitkomst teruggaat naar je advertentiesysteem, gaat dat systeem erop sturen. Dat is de bedoeling, maar het betekent ook dat een slordig ingevuld CRM direct je advertenties beinvloedt. Vult je verkoper een week lang niets in, dan leert het systeem dat er die week geen klanten waren.
+        Zodra de uitkomst teruggaat naar je advertentiesysteem, gaat dat systeem erop sturen. Dat is de bedoeling, maar het betekent ook dat een slordig ingevuld CRM direct doorwerkt in je advertenties. Vult je verkoper een week lang niets in, dan leert het systeem dat er die week geen klanten waren.
       </p>
 
       <p>
