@@ -10461,7 +10461,7 @@ function ArticleFirstPartyDataBody() {
       </p>
 
       <p>
-        Dat is zonde, want de echte winst zit ergens anders en die is er nu al. Wie weet welke aanvragen klant werden, kan zijn advertenties daarop laten sturen in plaats van op aanvragen. Dat is geen toekomstmuziek en geen cookiekwestie. Het is het verschil tussen een systeem dat leert wat jij verkoopt en een systeem dat leert wat er op een knop wordt gedrukt.
+        Dat is zonde, want de echte winst zit ergens anders en die is er nu al. Wie weet welke aanvragen klant werden, kan zijn advertenties daarop laten sturen in plaats van op aanvragen. Dat is geen toekomstmuziek, en het gaat ook niet over cookies. Het is het verschil tussen een systeem dat leert wat jij verkoopt en een systeem dat alleen leert waar geklikt wordt.
       </p>
 
       <p>
@@ -10574,7 +10574,7 @@ function ArticleCrmKoppelenBody() {
       </p>
 
       <p>
-        Wat je niet nodig hebt: het hele bezoekgedrag, een lijst van alle bekeken pagina&apos;s, of een scoringsgetal dat iemand ooit heeft bedacht. Dat vult je CRM met velden waar niemand iets mee doet.
+        Wat je niet nodig hebt: het hele bezoekgedrag, een lijst van alle bekeken pagina&apos;s, of een score die iemand ooit heeft bedacht. Dat vult je CRM met velden waar niemand iets mee doet.
       </p>
 
       <H2 num="04">Hoe je controleert of het werkt</H2>
@@ -10647,7 +10647,7 @@ function ArticleConversiesMetenBody() {
       <H2 num="02">Hij telt dubbel</H2>
 
       <p>
-        Twee oorzaken, allebei veel voorkomend. Of de conversie is twee keer ingesteld, bijvoorbeeld een keer rechtstreeks en een keer via je tagbeheer. Of de bedankpagina telt elke keer dat iemand hem opent, ook als hij vernieuwt of terugkomt via zijn geschiedenis.
+        Twee oorzaken, en ze komen allebei vaak voor. Of de conversie is twee keer ingesteld, bijvoorbeeld een keer rechtstreeks en een keer via je tagbeheer. Of de bedankpagina telt elke keer dat iemand hem opent, ook als hij vernieuwt of terugkomt via zijn geschiedenis.
       </p>
 
       <p>
@@ -10661,7 +10661,7 @@ function ArticleConversiesMetenBody() {
       </p>
 
       <p>
-        Onderweg verliezen gebeurt vaker dan je denkt. Een omleiding die de parameters afknipt, een cookiemelding die de meting pas na toestemming aanzet terwijl de bezoeker dan al doorgeklikt is, of een formulier op een ander domein.
+        Dat gebeurt vaker dan je denkt. Een omleiding die de parameters afknipt, een cookiemelding die de meting pas na toestemming aanzet terwijl de bezoeker dan al doorgeklikt is, of een formulier op een ander domein.
       </p>
 
       <p>
@@ -10671,14 +10671,14 @@ function ArticleConversiesMetenBody() {
       <H2 num="04">Je meet de verkeerde handeling</H2>
 
       <p>
-        Dit is de fout die het best verstopt zit, want technisch werkt alles. Een klik op een telefoonnummer is geen gesprek. Een verzonden formulier is geen klant. Een download is helemaal niets.
+        Deze fout zie je het minst snel, want technisch werkt alles. Een klik op een telefoonnummer is geen gesprek. Een verzonden formulier is geen klant. Een download is helemaal niets.
       </p>
 
       <p>
         Laat het biedsysteem sturen op wat je echt verkoopt, zo diep in de trechter als je aantallen toelaten. Bij genoeg volume is dat de gewonnen opdracht uit je CRM. Bij weinig volume is dat het voltooide gesprek of de aanvraag via de bedankpagina. De rest houd je als diagnose, zonder verzonnen waarde.
       </p>
 
-      <H2 num="05">Wat goed eruitziet</H2>
+      <H2 num="05">Wanneer het klopt</H2>
 
       <p>
         Een handvol conversies, niet twintig. Een primaire conversie die bij je omzet past, en de rest op secundair. Aantallen die binnen een paar procent gelijk lopen met wat je in je CRM terugvindt. En een klik-nummer dat in je CRM staat, zodat je achteraf kunt terugvertellen welke advertentie een klant opleverde.
@@ -10714,13 +10714,13 @@ function ArticleLeadformulierBody() {
   return (
     <>
       <p className="lead-para">
-        Over formulieren bestaat een hardnekkig misverstand: dat meer invulvelden betere leads opleveren omdat je de twijfelaars eruit filtert. Dat klopt zelden. Je filtert vooral op geduld, en geduld is geen koopsignaal. Tegelijk is het andere uiterste ook niet waar, want een formulier met alleen een mailadres levert je een postvak vol namen zonder bedoeling. Dit stuk gaat over wat er wel in hoort, wat eruit kan, en waarom het grootste probleem meestal niet in het formulier zit.
+        Over formulieren bestaat een hardnekkig misverstand: dat meer invulvelden betere leads opleveren omdat je de twijfelaars eruit filtert. Dat klopt zelden. Je filtert vooral op geduld, en geduld is geen koopsignaal. Tegelijk is het andere uiterste ook niet waar, want een formulier met alleen een mailadres levert je een postvak vol namen van mensen die niets willen. Dit stuk gaat over wat er wel in hoort, wat eruit kan, en waarom het grootste probleem meestal niet in het formulier zit.
       </p>
 
       <H2 num="01">Vraag wat je nodig hebt om terug te bellen</H2>
 
       <p>
-        Dat is de hele maatstaf. Elk veld dat niet nodig is om het gesprek te beginnen, kan weg. Je kunt alles wat daarna komt gewoon vragen in dat gesprek.
+        Dat is de enige maatstaf. Elk veld dat niet nodig is om het gesprek te beginnen, kan weg. Je kunt alles wat daarna komt gewoon vragen in dat gesprek.
       </p>
 
       <p>
@@ -10728,7 +10728,7 @@ function ArticleLeadformulierBody() {
       </p>
 
       <p>
-        Wat eruit kan: bedrijfsgrootte, functietitel, budgetindicatie, hoe iemand je gevonden heeft, en elk veld met een sterretje dat je zelf ook niet zou invullen. Die laatste staat er vaak omdat een systeem erom vroeg, niet omdat iemand het leest.
+        Wat eruit kan: bedrijfsgrootte, functietitel, budgetindicatie, hoe iemand je gevonden heeft, en elk veld met een sterretje dat je zelf ook niet zou invullen. Dat laatste veld staat er vaak omdat een systeem erom vroeg, niet omdat iemand het leest.
       </p>
 
       <H2 num="02">Het veld dat je wel moet toevoegen</H2>
@@ -10738,7 +10738,7 @@ function ArticleLeadformulierBody() {
       </p>
 
       <p>
-        Dit is geen formulierkwestie maar een koppelingskwestie, en het is de meest gemiste stap van allemaal.
+        Dit gaat niet over je formulier maar over de koppeling erachter, en het is de stap die het vaakst wordt overgeslagen.
       </p>
 
       <H2 num="03">Een formulier is geen lead</H2>
@@ -10758,7 +10758,7 @@ function ArticleLeadformulierBody() {
       </p>
 
       <p>
-        Komt de bezoeker uit een advertentie op een pagina die over hetzelfde gaat als die advertentie, of op de homepagina. Staat de prijs ergens, of in elk geval een orde van grootte. Staat er iets dat het risico wegneemt voor degene die moet beslissen. Werkt het op een telefoon, inclusief het toetsenbord dat opspringt bij een nummerveld.
+        Komt de bezoeker uit een advertentie op een pagina die over hetzelfde gaat, of op de homepagina? Staat de prijs ergens, of in elk geval een orde van grootte? Staat er iets dat het risico wegneemt voor degene die moet beslissen? Werkt het op een telefoon, en krijg je daar meteen een cijfertoetsenbord als je je telefoonnummer invult?
       </p>
 
       <p>
