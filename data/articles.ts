@@ -32,6 +32,82 @@ export interface Article {
 }
 
 const allArticles: Article[] = [
+  /* ─── UITLEGSTUKKEN (W-479) ─── */
+  {
+    slug: 'wat-is-first-party-data',
+    format: 'editorial',
+    edition: '017',
+    category: 'Strategie',
+    title: "First-party data: wat het is, en wat je eraan hebt",
+    dek:
+      "Bijna elk stuk hierover begint bij de cookie die verdwijnt. Dat is de verkeerde ingang. Wat first-party data wel is, de drie stukken die het werkend maken, en waar het in de praktijk strandt.",
+    publishedAt: '2026-10-06',
+    readMinutes: 6,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid',
+    posterTag: 'STRATEGIE',
+    posterTopic: "Wat first-party data echt is.",
+  },
+  {
+    slug: 'crm-koppelen-aan-je-website',
+    format: 'editorial',
+    edition: '018',
+    category: 'Operations',
+    title: "Je website koppelen aan je CRM: wat er echt moet gebeuren",
+    dek:
+      "De aanvragen binnenhalen is het makkelijke deel. De twee koppelingen die niemand bouwt bepalen of je ooit weet welke advertentie een klant opleverde.",
+    publishedAt: '2026-10-06',
+    readMinutes: 5,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid',
+    posterTag: 'OPERATIONS',
+    posterTopic: "Je website koppelen aan je CRM.",
+  },
+  {
+    slug: 'google-ads-conversies-meten',
+    format: 'editorial',
+    edition: '019',
+    category: 'Werkmethode',
+    title: "Google Ads-conversies meten: vier fouten die je cijfers waardeloos maken",
+    dek:
+      "Instellen kost een kwartier. Controleren of het klopt kost een tweede kwartier, en dat wordt bijna nooit genomen. Vier fouten, met per fout hoe je het zelf nakijkt.",
+    publishedAt: '2026-10-06',
+    readMinutes: 6,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid',
+    posterTag: 'WERKMETHODE',
+    posterTopic: "Google Ads-conversies die ergens op slaan.",
+  },
+  {
+    slug: 'leadformulier-dat-echte-aanvragen-oplevert',
+    format: 'editorial',
+    edition: '020',
+    category: 'Werkmethode',
+    title: "Een leadformulier dat echte aanvragen oplevert",
+    dek:
+      "Meer velden leveren geen betere leads op, je filtert op geduld. Wat er wel in hoort, welk veld je moet toevoegen, en waarom het probleem meestal voor het formulier zit.",
+    publishedAt: '2026-10-06',
+    readMinutes: 5,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid',
+    posterTag: 'WERKMETHODE',
+    posterTopic: "Een leadformulier dat werkt.",
+  },
+  {
+    slug: 'wat-is-feed-management',
+    format: 'editorial',
+    edition: '021',
+    category: 'Distributie',
+    title: "Feed management: wat het is en wanneer je het nodig hebt",
+    dek:
+      "Geen vakgebied en geen tool, maar onderhoud: zorgen dat de lijst met je producten klopt. Waar het misgaat, waarom titels het verschil maken, en waar je begint.",
+    publishedAt: '2026-10-06',
+    readMinutes: 5,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid',
+    posterTag: 'DISTRIBUTIE',
+    posterTopic: "Feed management, zonder de tool.",
+  },
   /* ─── DISPATCHES ─── */
   {
     slug: 'ai-agents-muse-oppenclaw-instinct',
