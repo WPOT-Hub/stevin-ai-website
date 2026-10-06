@@ -285,5 +285,8 @@ export const config = {
   // serveert de route zichzelf en is er niets meer om te volgen.
   // Alleen het nl-pad uitsluiten: de kale /opengraph-image bestaat juist
   // dankzij de rewrite van deze middleware, en daar wijst de Twitter-kaart naar.
-  matcher: ['/((?!api|_next|_vercel|ads-data|inhouse|kies|c/|nl/opengraph-image|.*\\..*).*)'],
+  // W-480: ook de preview van dieper liggende pagina's (/nl/kennismaking/
+  // opengraph-image, /nl/blog/<slug>/opengraph-image) gaf nog een 307; dezelfde
+  // reden, dus ook buiten de middleware.
+  matcher: ['/((?!api|_next|_vercel|ads-data|inhouse|kies|c/|nl/opengraph-image|nl/.+/opengraph-image|.*\\..*).*)'],
 }
