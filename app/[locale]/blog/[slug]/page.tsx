@@ -10437,7 +10437,7 @@ function ArticleFirstPartyDataBody() {
   return (
     <>
       <p className="lead-para">
-        De meeste stukken over first-party data beginnen bij het verdwijnen van de cookie van derden. Dat is de verkeerde ingang, want het maakt er een technisch probleem van waar je een leverancier voor nodig hebt. First-party data is simpeler dan dat: het is wat je zelf over je eigen klanten weet, op een plek waar je er ook iets mee kunt. De vraag die telt is niet of je het hebt, maar of het ergens aankomt waar het je iets oplevert.
+        De meeste stukken over first-party data beginnen bij het verdwijnen van third-party cookies. Dat is de verkeerde ingang, want het maakt er een technisch probleem van waar je een leverancier voor nodig hebt. First-party data is simpeler dan dat: het is wat je zelf over je eigen klanten weet, op een plek waar je er ook iets mee kunt. De vraag die telt is niet of je het hebt, maar of het ergens aankomt waar het je iets oplevert.
       </p>
 
       <H2 num="01">Wat het is</H2>
@@ -10457,7 +10457,7 @@ function ArticleFirstPartyDataBody() {
       <H2 num="02">Waarom het verhaal over cookies te klein is</H2>
 
       <p>
-        De cookie van derden verdwijnt al jaren, met uitstel na uitstel. Daardoor is first-party data in de markt een project geworden dat je kunt uitstellen tot het zover is.
+        Third-party cookies verdwijnen al jaren, met uitstel na uitstel. Daardoor is first-party data in de markt een project geworden dat je kunt uitstellen tot het zover is.
       </p>
 
       <p>
@@ -10675,7 +10675,7 @@ function ArticleConversiesMetenBody() {
       </p>
 
       <p>
-        Laat het biedsysteem sturen op wat je echt verkoopt, zo diep in de trechter als je aantallen toelaten. Bij genoeg volume is dat de gewonnen opdracht uit je CRM. Bij weinig volume is dat het voltooide gesprek of de aanvraag via de bedankpagina. De rest houd je als diagnose, zonder verzonnen waarde.
+        Laat het biedsysteem sturen op wat je echt verkoopt, zo diep in de trechter als je aantallen toelaten. Bij genoeg volume is dat de gewonnen opdracht uit je CRM. Bij weinig volume is dat het voltooide gesprek of de aanvraag via de bedankpagina. De rest gebruik je alleen om te zien waar het misgaat, zonder er een waarde aan te hangen.
       </p>
 
       <H2 num="05">Wanneer het klopt</H2>
@@ -10714,7 +10714,7 @@ function ArticleLeadformulierBody() {
   return (
     <>
       <p className="lead-para">
-        Over formulieren bestaat een hardnekkig misverstand: dat meer invulvelden betere leads opleveren omdat je de twijfelaars eruit filtert. Dat klopt zelden. Je filtert vooral op geduld, en geduld is geen koopsignaal. Tegelijk is het andere uiterste ook niet waar, want een formulier met alleen een mailadres levert je een postvak vol namen van mensen die niets willen. Dit stuk gaat over wat er wel in hoort, wat eruit kan, en waarom het grootste probleem meestal niet in het formulier zit.
+        Over formulieren bestaat een hardnekkig misverstand: dat meer invulvelden betere leads opleveren omdat je de twijfelaars eruit filtert. Dat klopt zelden. Je filtert vooral op geduld, en geduld is geen koopsignaal. Tegelijk is het andere uiterste ook niet waar, want met alleen een mailadres krijg je vooral adressen van mensen die niets van je willen. Dit stuk gaat over wat er wel in hoort, wat eruit kan, en waarom het grootste probleem meestal niet in het formulier zit.
       </p>
 
       <H2 num="01">Vraag wat je nodig hebt om terug te bellen</H2>
@@ -10744,11 +10744,11 @@ function ArticleLeadformulierBody() {
       <H2 num="03">Een formulier is geen lead</H2>
 
       <p>
-        Hier gaat het mis bij het meten. Veel accounts sturen op verzonden formulieren, en dat is precies het getal dat je niet wilt verbeteren. Je kunt dat getal verdubbelen door het formulier korter te maken en breder in te kopen, zonder een klant extra.
+        Hier gaat het mis bij het meten. Veel accounts sturen op het aantal verzonden formulieren, en juist dat getal moet je niet willen verbeteren. Je kunt dat getal verdubbelen door het formulier korter te maken en breder in te kopen, zonder een klant extra.
       </p>
 
       <p>
-        Stuur daarom op de uitkomst, zo diep als je aantallen toelaten. Weet je welke aanvraag een opdracht werd, stuur daarop. Is dat te weinig volume, stuur dan op de aanvraag die door je eigen controle komt, en houd het kale formulier als diagnose.
+        Stuur daarom op de uitkomst, zo diep als je aantallen toelaten. Weet je welke aanvraag een opdracht werd, stuur daarop. Zijn dat er te weinig, stuur dan op de aanvragen die je zelf hebt nagekeken en goed bevonden. Het aantal ingevulde formulieren kijk je dan alleen na om te zien waar het stokt.
       </p>
 
       <H2 num="04">Waar aanvragen echt stranden</H2>
@@ -10772,7 +10772,7 @@ function ArticleLeadformulierBody() {
       </p>
 
       <p>
-        Belangrijker: zorg dat spam je meting niet vervuilt. Telt elke inzending als conversie, dan leert je biedsysteem dat botverkeer goed verkeer is. Laat geweigerde aanvragen dus niet meetellen als conversie.
+        En let op wat spam met je meting doet. Telt elke inzending als conversie, dan leert je biedsysteem dat bots goede bezoekers zijn. Zorg dus dat een aanvraag die je afwijst ook niet meetelt.
       </p>
 
       <H2 num="06">Verder lezen</H2>
@@ -10863,7 +10863,7 @@ function ArticleFeedManagementBody() {
       </p>
 
       <p>
-        Herstel daarna de afkeuringen die over verplichte gegevens gaan, want dat is de snelste winst. Pak pas daarna de titels aan, en begin bij de productgroep die het meeste oplevert.
+        Los daarna eerst de producten op die zijn afgekeurd omdat er verplichte gegevens ontbreken, want dat gaat het snelst. Pak pas daarna de titels aan, en begin bij de productgroep die het meeste oplevert.
       </p>
 
       <p>
