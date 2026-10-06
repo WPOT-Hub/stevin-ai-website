@@ -39,7 +39,7 @@ export default async function GetekendPage({ params }: Props) {
         <p className="mt-3 text-[15px] leading-relaxed text-slate-300">{t.alinea}</p>
         <p className="mt-3 text-[14px] text-slate-400">
           {t.vraag}{' '}
-          <a href="mailto:koen@stevin.ai" className="text-white underline underline-offset-2">koen@stevin.ai</a>
+          <a href="mailto:sales@stevin.ai" className="text-white underline underline-offset-2">sales@stevin.ai</a>
         </p>
         <a
           href={locale === 'en' ? '/en' : '/'}
