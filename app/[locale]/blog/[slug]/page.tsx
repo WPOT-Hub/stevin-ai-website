@@ -2275,7 +2275,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'apple-stop-met-angstaanjagende-prompt-voor-third-party-apps': (
     <>
       <p className="lead-para">
-        Duitsland verplicht Apple binnenkort om de App Tracking Transparency (ATT)-prompt aan te passen. Volgens de Federal Cartel Office geeft de huidige opzet gebruikers het gevoel dat ze hun privacy moeten opofferen als ze derde-partij apps installeren. De autoriteit ziet dit als oneerlijke concurrentiebeperking ten gunste van Apple’s eigen diensten.
+        Duitsland verplicht Apple binnenkort om de App Tracking Transparency (ATT)-prompt aan te passen. Volgens de Federal Cartel Office geeft de huidige opzet gebruikers het gevoel dat ze hun privacy moeten opofferen als ze third-party apps installeren. De autoriteit ziet dit als oneerlijke concurrentiebeperking ten gunste van Apple’s eigen diensten.
       </p>
       <p>
         De ATT-prompt werd in 2021 geïntroduceerd met iOS 14.5 en maakte cross-app tracking grotendeels afhankelijk van expliciete toestemming. Uit onderzoek bleek destijds dat sociale media apps hierdoor bijna 10 miljard dollar aan advertentie-inkomsten verloren, omdat targeting moeilijker werd. Apple verdedigde de prompt altijd als een privacybeschermende maatregel.
@@ -3035,7 +3035,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Het is de meest gestelde vraag van klanten dit jaar: komt ons merk voor in antwoorden van ChatGPT. Toch hebben de meeste marketingbureaus geen manier om dat te meten. Zelfs als je weet dat je website gecrawld wordt door AI-modellen, zegt dat niets over hoe vaak je merk daadwerkelijk genoemd wordt in antwoorden.
       </p>
       <p>
-        Er zijn wel indirecte manieren om een inschatting te maken. Zo kun je zoekopdrachten simuleren die klanten zouden kunnen stellen en kijken of jouw merk of producten in de gegenereerde antwoorden verschijnen. Ook tools zoals Google’s Search Console of derdepartij-API’s kunnen helpen om te zien welke pagina’s van jouw site door AI-systemen worden gebruikt als bron.
+        Er zijn wel indirecte manieren om een inschatting te maken. Zo kun je zoekopdrachten simuleren die klanten zouden kunnen stellen en kijken of jouw merk of producten in de gegenereerde antwoorden verschijnen. Ook tools zoals Google’s Search Console of third-party API’s kunnen helpen om te zien welke pagina’s van jouw site door AI-systemen worden gebruikt als bron.
       </p>
       <p>
         Voorlopig blijft het lastig om harde data te krijgen over zichtbaarheid in grote taalmodellen. De meeste systemen geven geen inzage in hun interne werking, waardoor blinde vlekken in de meting blijven bestaan.
@@ -3399,7 +3399,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De Europese Commissie heeft SAP verplicht om klanten meer zeggenschap te geven over onderhoudskosten. Dit volgt op een eerdere rechtszaak waarin SAP werd beschuldigd van oneerlijke prijsstelling voor softwareonderhoud. Klanten die vasthouden aan de officiële SAP-ondersteuning krijgen nu meer mogelijkheden om lagere tarieven af te dwingen of zelfs over te stappen naar externe partijen.
       </p>
       <p>
-        Toch is een snelle exodus naar derde-partijondersteuners niet direct in zicht. Veel bedrijven blijven afhankelijk van de integratie en stabiliteit die SAP biedt, terwijl externe ondersteuners vaak minder garanties bieden. Daarnaast zijn er praktische belemmeringen, zoals compatibiliteitsproblemen tussen systemen en de complexiteit van migratieprocessen.
+        Toch is een snelle exodus naar externe ondersteuners niet direct in zicht. Veel bedrijven blijven afhankelijk van de integratie en stabiliteit die SAP biedt, terwijl externe ondersteuners vaak minder garanties bieden. Daarnaast zijn er praktische belemmeringen, zoals compatibiliteitsproblemen tussen systemen en de complexiteit van migratieprocessen.
       </p>
       <p>
         De beslissing betekent vooral dat klanten nu beter gepositioneerd zijn om betere voorwaarden af te dwingen binnen hun bestaande contracten. Voor bedrijven die al jaren met hoge onderhoudskosten kampten, kan dit een welkome adempauze betekenen zonder dat ze direct hoeven te switchen.
