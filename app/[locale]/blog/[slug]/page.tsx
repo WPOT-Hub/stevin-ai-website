@@ -342,6 +342,11 @@ export default async function ArticlePage({
             <ArticleFeedManagementBody />
           )}
           {article.format === 'editorial' &&
+            article.slug !== 'wat-is-first-party-data' &&
+            article.slug !== 'crm-koppelen-aan-je-website' &&
+            article.slug !== 'google-ads-conversies-meten' &&
+            article.slug !== 'leadformulier-dat-echte-aanvragen-oplevert' &&
+            article.slug !== 'wat-is-feed-management' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
             article.slug !== 'last-click-is-een-gewoonte' &&
@@ -10513,7 +10518,7 @@ function ArticleFirstPartyDataBody() {
         items={[
           {
             pct: '01',
-            text: <>Begin niet bij de techniek maar bij een vraag: van de aanvragen van vorige maand,</>,
+            text: <>Begin niet bij de techniek maar bij een vraag: van de aanvragen van vorige maand, weet je van hoeveel of het iets werd. Kun je dat niet beantwoorden, dan is dat het eerste gat, en het heeft niets met cookies te maken.</>,
           },
         ]}
       />
@@ -10608,7 +10613,7 @@ function ArticleCrmKoppelenBody() {
         items={[
           {
             pct: '01',
-            text: <>Een koppeling die alleen aanvragen binnenhaalt is een postbus. De winst zit in de</>,
+            text: <>Een koppeling die alleen aanvragen binnenhaalt is een postbus. De winst zit in de twee stappen die niemand bouwt: de herkomst meesturen, en de uitkomst terugsturen. Test het met een echte aanvraag van jezelf voordat je iemand gelooft die zegt dat het werkt.</>,
           },
         ]}
       />
@@ -10695,7 +10700,7 @@ function ArticleConversiesMetenBody() {
         items={[
           {
             pct: '01',
-            text: <>Begin elke analyse hier, niet bij de advertenties. Wordt de conversie op de goede</>,
+            text: <>Begin elke analyse hier, niet bij de advertenties. Wordt de conversie op de goede pagina geteld, telt hij een keer, komt het klik-nummer aan, en is het de handeling die geld oplevert. Vier vragen, een kwartier werk, en ze bepalen of de rest van je cijfers iets betekent.</>,
           },
         ]}
       />
@@ -10782,7 +10787,7 @@ function ArticleLeadformulierBody() {
         items={[
           {
             pct: '01',
-            text: <>Schrap elk veld dat je niet nodig hebt om terug te bellen, voeg de verborgen</>,
+            text: <>Schrap elk veld dat je niet nodig hebt om terug te bellen, voeg de verborgen herkomstvelden toe, en meet niet op verzonden formulieren maar op wat eruit komt. Loopt het dan nog niet, dan zit het probleem voor het formulier, niet erin.</>,
           },
         ]}
       />
@@ -10877,7 +10882,7 @@ function ArticleFeedManagementBody() {
         items={[
           {
             pct: '01',
-            text: <>Kijk eerst hoeveel van je producten op dit moment zijn afgekeurd, en pas daarna</>,
+            text: <>Kijk eerst hoeveel van je producten op dit moment zijn afgekeurd, en pas daarna naar tools. Afgekeurde producten kosten je omzet zonder dat er iets kapot lijkt, en dat is precies waarom het zo lang blijft staan.</>,
           },
         ]}
       />
