@@ -14,13 +14,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const TEKST = {
   nl: {
-    kop: 'Dank je, je handtekening is binnen',
+    kop: 'Dank je, je akkoord is binnen',
     alinea: 'We hebben je getekende document ontvangen. Je krijgt een kopie per mail en we nemen contact met je op over de eerste stap.',
     vraag: 'Een vraag? Mail',
     knop: 'Naar stevin.ai',
   },
   en: {
-    kop: 'Thank you, we have your signature',
+    kop: 'Thank you, we have your approval',
     alinea: 'We have received your signed document. You will get a copy by email, and we will be in touch about the first step.',
     vraag: 'A question? Email',
     knop: 'Go to stevin.ai',
