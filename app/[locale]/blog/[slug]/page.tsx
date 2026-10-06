@@ -326,6 +326,21 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'wie-is-eigenaar-van-je-domeinnaam' && (
             <ArticleDomeinBody />
           )}
+          {article.format === 'editorial' && article.slug === 'wat-is-first-party-data' && (
+            <ArticleFirstPartyDataBody />
+          )}
+          {article.format === 'editorial' && article.slug === 'crm-koppelen-aan-je-website' && (
+            <ArticleCrmKoppelenBody />
+          )}
+          {article.format === 'editorial' && article.slug === 'google-ads-conversies-meten' && (
+            <ArticleConversiesMetenBody />
+          )}
+          {article.format === 'editorial' && article.slug === 'leadformulier-dat-echte-aanvragen-oplevert' && (
+            <ArticleLeadformulierBody />
+          )}
+          {article.format === 'editorial' && article.slug === 'wat-is-feed-management' && (
+            <ArticleFeedManagementBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
@@ -10413,6 +10428,465 @@ function Bron({ children, bron, url }: { children: React.ReactNode; bron: string
 /* ────────────────────────────────────────────────────────────
    Editorial atoms
    ──────────────────────────────────────────────────────────── */
+function ArticleFirstPartyDataBody() {
+  return (
+    <>
+      <p className="lead-para">
+        De meeste stukken over first-party data beginnen bij het verdwijnen van de cookie van derden. Dat is de verkeerde ingang, want het maakt er een technisch probleem van waar je een leverancier voor nodig hebt. First-party data is simpeler dan dat: het is wat je zelf over je eigen klanten weet, op een plek waar je er ook iets mee kunt. De vraag die telt is niet of je het hebt, maar of het ergens aankomt waar het je iets oplevert.
+      </p>
+
+      <H2 num="01">Wat het is</H2>
+
+      <p>
+        First-party data is alles wat mensen jou geven en alles wat je zelf meet op je eigen kanalen. Een offerteaanvraag, een bestelling, een telefoongesprek dat je in je CRM zet, welke pagina&apos;s iemand bekeek voordat hij belde, of een klant na een jaar nog klant is.
+      </p>
+
+      <p>
+        Wat het niet is: gekochte adressenlijsten, doelgroepen die een advertentieplatform voor je samenstelt, of gegevens die een datahandelaar over jouw bezoekers heeft. Dat zijn gegevens van iemand anders over jouw publiek. Je mag ze gebruiken zolang de leverancier bestaat en de regels het toelaten, en geen dag langer.
+      </p>
+
+      <p>
+        Het onderscheid klinkt juridisch, maar het is vooral praktisch. Over je eigen gegevens kun je een besluit nemen. Over die van een ander niet.
+      </p>
+
+      <H2 num="02">Waarom het verhaal over cookies te klein is</H2>
+
+      <p>
+        De cookie van derden verdwijnt al jaren, met uitstel na uitstel. Daardoor is first-party data in de markt een project geworden dat je kunt uitstellen tot het zover is.
+      </p>
+
+      <p>
+        Dat is zonde, want de echte winst zit ergens anders en die is er nu al. Wie weet welke aanvragen klant werden, kan zijn advertenties daarop laten sturen in plaats van op aanvragen. Dat is geen toekomstmuziek en geen cookiekwestie. Het is het verschil tussen een systeem dat leert wat jij verkoopt en een systeem dat leert wat er op een knop wordt gedrukt.
+      </p>
+
+      <p>
+        Een advertentiesysteem levert letterlijk wat je vraagt. Vraag je om formulieren, dan krijg je de goedkoopste formulieren, inclusief de spam. Vraag je om klanten, dan moet het systeem weten welke aanvraag klant werd. Dat weet alleen jij.
+      </p>
+
+      <H2 num="03">De drie stukken die het werkend maken</H2>
+
+      <p>
+        <b>Toestemming die klopt.</b> Niet omdat het moet, maar omdat een meting die stilvalt zodra iemand de cookiemelding wegklikt je een vertekend beeld geeft. Je ziet dan vooral de mensen die alles accepteren, en dat is geen doorsnede van je klanten.
+      </p>
+
+      <p>
+        <b>Een koppeling naar je CRM.</b> Dit is het stuk dat het vaakst ontbreekt. Een formulier dat een mail naar info@ stuurt is geen first-party data, want de uitkomst van die aanvraag belandt nergens waar je hem kunt terugtellen. Je hebt een plek nodig waar aanvraag, offerte en opdracht aan elkaar vastzitten.
+      </p>
+
+      <p>
+        <b>Een weg terug naar je kanalen.</b> Weten welke aanvraag klant werd heeft pas zin als dat ook terugkomt bij het systeem dat je advertenties uitzet. Anders is het een rapport in plaats van sturing.
+      </p>
+
+      <H2 num="04">Waar het in de praktijk strandt</H2>
+
+      <p>
+        Bijna altijd op hetzelfde: de keten is ergens los.
+      </p>
+
+      <p>
+        De meting staat goed, maar het formulier schrijft de aanvraag niet in het CRM. Of het CRM heeft de aanvraag wel, maar niemand vult in of het iets werd. Of iemand vult het in, maar er loopt geen weg terug naar de advertentiekant. Elk van die drie breekt het geheel, en geen van drie geeft een foutmelding.
+      </p>
+
+      <p>
+        Controleer daarom niet of de onderdelen bestaan, maar of een echte aanvraag van gisteren de hele weg heeft afgelegd. Zoek hem op. Staat hij in je CRM, staat erbij waar hij vandaan kwam, en staat de uitkomst erin.
+      </p>
+
+      <H2 num="05">Wat je er niet mee oplost</H2>
+
+      <p>
+        First-party data maakt je meting eerlijker en je sturing scherper. Het maakt geen vraag waar die niet is. Als er te weinig mensen naar je zoeken, zie je dat straks alleen beter.
+      </p>
+
+      <p>
+        Het is ook geen reden om een apart gegevensplatform aan te schaffen. Voor de meeste bedrijven zit alles wat nodig is al in de website, het CRM en de advertentieaccounts. De winst zit in het aan elkaar knopen, niet in een nieuw systeem ertussen.
+      </p>
+
+      <H2 num="06">Verder lezen</H2>
+
+      <p>
+        Wat wij hierin doen staat op onze pagina over <Link href="/first-party-data">first-party data als basis voor je marketing</Link>.
+      </p>
+
+      <Takeaways
+        label="DE KERN"
+        title="Wat je hiervan onthoudt"
+        items={[
+          {
+            pct: '01',
+            text: <>Begin niet bij de techniek maar bij een vraag: van de aanvragen van vorige maand,</>,
+          },
+        ]}
+      />
+
+      <EndRule />
+    </>
+  )
+}
+
+function ArticleCrmKoppelenBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Een koppeling tussen je website en je CRM wordt vaak uitgelegd als een installatie: zet er een stukje code op en de aanvragen komen binnen. Dat is het makkelijke deel, en het levert meestal niet op wat mensen ervan verwachten. De aanvragen komen dan wel binnen, maar je weet nog steeds niet welke advertentie of welke pagina ze heeft gebracht, en je weet ook niet welke aanvraag uiteindelijk iets werd. Dit stuk gaat over de drie koppelingen die je nodig hebt, waarom de tweede altijd vergeten wordt, en hoe je controleert of het klopt.
+      </p>
+
+      <H2 num="01">Drie koppelingen, geen een</H2>
+
+      <p>
+        <b>De aanvraag erin.</b> Iemand vult een formulier in, en er komt een contact of een kans in je CRM. Dit is het deel dat iedereen bouwt.
+      </p>
+
+      <p>
+        <b>De herkomst erbij.</b> Bij diezelfde aanvraag hoort te staan waar hij vandaan kwam. Niet alleen &quot;Google&quot;, maar de campagne, de zoekterm waar dat kan, en het nummer dat het advertentiesysteem aan die klik hangt. Zonder dat nummer kun je later niet terugvertellen welke klik een klant opleverde.
+      </p>
+
+      <p>
+        <b>De uitkomst terug.</b> Zodra je weet dat een aanvraag een opdracht werd, hoort dat terug te gaan naar het systeem dat je advertenties uitzet. Pas dan kan dat systeem leren waar je echte klanten vandaan komen.
+      </p>
+
+      <p>
+        De meeste koppelingen doen alleen de eerste. Dan heb je een postbus, geen koppeling.
+      </p>
+
+      <H2 num="02">Waarom de herkomst zo vaak wegvalt</H2>
+
+      <p>
+        Technisch is het een klein ding: een paar verborgen velden in je formulier die meereizen naar je CRM. In de praktijk valt het weg omdat de drie partijen die eraan werken elkaar niet spreken. De bouwer van de site maakt het formulier, het bureau zet de advertenties aan, en het CRM is ingericht door iemand anders of door de leverancier.
+      </p>
+
+      <p>
+        Niemand van de drie merkt dat het ontbreekt, want alle drie de onderdelen doen het. De aanvragen komen binnen, de advertenties lopen, het CRM vult zich. Het gat zit precies tussen hun verantwoordelijkheden in.
+      </p>
+
+      <H2 num="03">Wat er mee moet reizen</H2>
+
+      <p>
+        Houd het kort. Meer velden betekenen meer dingen die kunnen breken.
+      </p>
+
+      <p>
+        Het klik-nummer van het advertentiesysteem, de bron en de campagne, de pagina waarop het formulier stond, en de datum. Dat is genoeg om later elke aanvraag terug te leiden naar waar hij vandaan kwam.
+      </p>
+
+      <p>
+        Wat je niet nodig hebt: het hele bezoekgedrag, een lijst van alle bekeken pagina&apos;s, of een scoringsgetal dat iemand ooit heeft bedacht. Dat vult je CRM met velden waar niemand iets mee doet.
+      </p>
+
+      <H2 num="04">Hoe je controleert of het werkt</H2>
+
+      <p>
+        Niet door te kijken of de koppeling aanstaat. Doe dit:
+      </p>
+
+      <p>
+        Vul je eigen formulier in, via een advertentie, met een herkenbare naam. Kijk daarna in je CRM of die aanvraag er staat. Kijk of de herkomstvelden gevuld zijn, en niet leeg of &quot;direct&quot;. Zet de aanvraag daarna handmatig op gewonnen, en kijk of dat ergens aankomt in je advertentieaccount.
+      </p>
+
+      <p>
+        Breekt het, dan weet je nu precies waar. Breekt het niet, dan heb je in tien minuten bewezen wat anders maanden onduidelijk blijft.
+      </p>
+
+      <H2 num="05">Een valkuil bij het terugsturen</H2>
+
+      <p>
+        Zodra de uitkomst teruggaat naar je advertentiesysteem, gaat dat systeem erop sturen. Dat is de bedoeling, maar het betekent ook dat een slordig ingevuld CRM direct je advertenties beinvloedt. Vult je verkoper een week lang niets in, dan leert het systeem dat er die week geen klanten waren.
+      </p>
+
+      <p>
+        Spreek daarom af wie wat invult en wanneer, voordat je deze stap aanzet. Dit is het enige deel van de koppeling dat een gewoonte vraagt in plaats van een instelling.
+      </p>
+
+      <H2 num="06">Verder lezen</H2>
+
+      <p>
+        Wat wij hierin doen staat op onze pagina over <Link href="/website-met-crm">een website die aan je CRM vastzit</Link>.
+      </p>
+
+      <Takeaways
+        label="DE KERN"
+        title="Wat je hiervan onthoudt"
+        items={[
+          {
+            pct: '01',
+            text: <>Een koppeling die alleen aanvragen binnenhaalt is een postbus. De winst zit in de</>,
+          },
+        ]}
+      />
+
+      <EndRule />
+    </>
+  )
+}
+
+function ArticleConversiesMetenBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Conversiemeting in Google Ads instellen is een kwartier werk. Controleren of die meting klopt is een ander kwartier, en dat tweede kwartier wordt bijna nooit genomen. Dat is duur, want een verkeerd signaal is schadelijker dan geen signaal. Meet je iets wat geen klant oplevert, dan gaat het biedsysteem precies daarop jagen en wordt je account elke week slechter terwijl de cijfers er beter uitzien. Hieronder vier fouten, met per fout hoe je in een paar minuten nakijkt of jij hem hebt.
+      </p>
+
+      <H2 num="01">De conversie wordt op de verkeerde pagina geteld</H2>
+
+      <p>
+        De klassieker: de conversie staat op de pagina met het formulier in plaats van op de bedankpagina. Dan telt elk bezoek als conversie, ook van mensen die niets hebben ingevuld.
+      </p>
+
+      <p>
+        Het systeem leert daarvan dat vrijwel elke klik converteert, en gaat op zoek naar de goedkoopste klikken. Je kosten per conversie storten in, je aantal conversies schiet omhoog, en er belt niemand.
+      </p>
+
+      <p>
+        Controleren: open je site, ga naar het formulier maar vul niets in, en kijk of er een conversie wordt geteld. Gebeurt dat, dan zit hij fout.
+      </p>
+
+      <H2 num="02">Hij telt dubbel</H2>
+
+      <p>
+        Twee oorzaken, allebei veel voorkomend. Of de conversie is twee keer ingesteld, bijvoorbeeld een keer rechtstreeks en een keer via je tagbeheer. Of de bedankpagina telt elke keer dat iemand hem opent, ook als hij vernieuwt of terugkomt via zijn geschiedenis.
+      </p>
+
+      <p>
+        Controleren: vergelijk het aantal conversies in Google Ads met het aantal echte aanvragen in je mailbox of CRM over dezelfde week. Zitten daar meer dan een paar procent tussen, dan telt er iets dubbel.
+      </p>
+
+      <H2 num="03">Het klik-nummer komt niet aan</H2>
+
+      <p>
+        Google herkent een conversie aan een nummer dat aan de klik hangt. Dat nummer reist mee in de link. Gaat het onderweg verloren, dan ziet Google de conversie wel, maar weet hij niet bij welke advertentie hij hoort.
+      </p>
+
+      <p>
+        Onderweg verliezen gebeurt vaker dan je denkt. Een omleiding die de parameters afknipt, een cookiemelding die de meting pas na toestemming aanzet terwijl de bezoeker dan al doorgeklikt is, of een formulier op een ander domein.
+      </p>
+
+      <p>
+        Controleren: klik op je eigen advertentie en kijk of er in de adresbalk een lange code achter je adres staat. Verdwijnt die na de eerste klik op je site, dan is dat je probleem.
+      </p>
+
+      <H2 num="04">Je meet de verkeerde handeling</H2>
+
+      <p>
+        Dit is de fout die het best verstopt zit, want technisch werkt alles. Een klik op een telefoonnummer is geen gesprek. Een verzonden formulier is geen klant. Een download is helemaal niets.
+      </p>
+
+      <p>
+        Laat het biedsysteem sturen op wat je echt verkoopt, zo diep in de trechter als je aantallen toelaten. Bij genoeg volume is dat de gewonnen opdracht uit je CRM. Bij weinig volume is dat het voltooide gesprek of de aanvraag via de bedankpagina. De rest houd je als diagnose, zonder verzonnen waarde.
+      </p>
+
+      <H2 num="05">Wat goed eruitziet</H2>
+
+      <p>
+        Een handvol conversies, niet twintig. Een primaire conversie die bij je omzet past, en de rest op secundair. Aantallen die binnen een paar procent gelijk lopen met wat je in je CRM terugvindt. En een klik-nummer dat in je CRM staat, zodat je achteraf kunt terugvertellen welke advertentie een klant opleverde.
+      </p>
+
+      <p>
+        Klopt dat, dan is elke volgende vraag over je account een echte vraag. Klopt het niet, dan is elk antwoord een gok.
+      </p>
+
+      <H2 num="06">Verder lezen</H2>
+
+      <p>
+        Wat wij hierin doen staat op onze pagina over <Link href="/google-ads-ga4">Google Ads en GA4 die hetzelfde vertellen</Link>.
+      </p>
+
+      <Takeaways
+        label="DE KERN"
+        title="Wat je hiervan onthoudt"
+        items={[
+          {
+            pct: '01',
+            text: <>Begin elke analyse hier, niet bij de advertenties. Wordt de conversie op de goede</>,
+          },
+        ]}
+      />
+
+      <EndRule />
+    </>
+  )
+}
+
+function ArticleLeadformulierBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Over formulieren bestaat een hardnekkig misverstand: dat meer invulvelden betere leads opleveren omdat je de twijfelaars eruit filtert. Dat klopt zelden. Je filtert vooral op geduld, en geduld is geen koopsignaal. Tegelijk is het andere uiterste ook niet waar, want een formulier met alleen een mailadres levert je een postvak vol namen zonder bedoeling. Dit stuk gaat over wat er wel in hoort, wat eruit kan, en waarom het grootste probleem meestal niet in het formulier zit.
+      </p>
+
+      <H2 num="01">Vraag wat je nodig hebt om terug te bellen</H2>
+
+      <p>
+        Dat is de hele maatstaf. Elk veld dat niet nodig is om het gesprek te beginnen, kan weg. Je kunt alles wat daarna komt gewoon vragen in dat gesprek.
+      </p>
+
+      <p>
+        Voor de meeste bedrijven blijft over: naam, een manier om contact op te nemen, en een regel over wat iemand wil. Dat laatste veld is het enige dat echt filtert, want iemand die daar iets zinnigs invult heeft een vraag, en iemand die daar &quot;info&quot; invult meestal niet.
+      </p>
+
+      <p>
+        Wat eruit kan: bedrijfsgrootte, functietitel, budgetindicatie, hoe iemand je gevonden heeft, en elk veld met een sterretje dat je zelf ook niet zou invullen. Die laatste staat er vaak omdat een systeem erom vroeg, niet omdat iemand het leest.
+      </p>
+
+      <H2 num="02">Het veld dat je wel moet toevoegen</H2>
+
+      <p>
+        Een paar verborgen velden die meereizen naar je CRM: waar de bezoeker vandaan kwam, welke campagne het was, en het nummer dat het advertentiesysteem aan die klik hangt. De bezoeker merkt er niets van, en zonder die velden kun je later nooit terugvertellen welke advertentie een klant opleverde.
+      </p>
+
+      <p>
+        Dit is geen formulierkwestie maar een koppelingskwestie, en het is de meest gemiste stap van allemaal.
+      </p>
+
+      <H2 num="03">Een formulier is geen lead</H2>
+
+      <p>
+        Hier gaat het mis bij het meten. Veel accounts sturen op verzonden formulieren, en dat is precies het getal dat je niet wilt verbeteren. Je kunt dat getal verdubbelen door het formulier korter te maken en breder in te kopen, zonder een klant extra.
+      </p>
+
+      <p>
+        Stuur daarom op de uitkomst, zo diep als je aantallen toelaten. Weet je welke aanvraag een opdracht werd, stuur daarop. Is dat te weinig volume, stuur dan op de aanvraag die door je eigen controle komt, en houd het kale formulier als diagnose.
+      </p>
+
+      <H2 num="04">Waar aanvragen echt stranden</H2>
+
+      <p>
+        Als er weinig binnenkomt, kijk dan eerst naar de weg ernaartoe en niet naar het formulier zelf.
+      </p>
+
+      <p>
+        Komt de bezoeker uit een advertentie op een pagina die over hetzelfde gaat als die advertentie, of op de homepagina. Staat de prijs ergens, of in elk geval een orde van grootte. Staat er iets dat het risico wegneemt voor degene die moet beslissen. Werkt het op een telefoon, inclusief het toetsenbord dat opspringt bij een nummerveld.
+      </p>
+
+      <p>
+        Dat zijn de dingen die aanvragen kosten. Een veld meer of minder is bijna altijd het kleinste van je problemen.
+      </p>
+
+      <H2 num="05">En de spam</H2>
+
+      <p>
+        Een kort formulier trekt meer rommel aan, dat is waar. Dat los je op met een verborgen veld dat alleen een bot invult, niet met extra vragen aan echte mensen.
+      </p>
+
+      <p>
+        Belangrijker: zorg dat spam je meting niet vervuilt. Telt elke inzending als conversie, dan leert je biedsysteem dat botverkeer goed verkeer is. Laat geweigerde aanvragen dus niet meetellen als conversie.
+      </p>
+
+      <H2 num="06">Verder lezen</H2>
+
+      <p>
+        Wat wij hierin doen staat op onze pagina over <Link href="/lead-generatie">leadgeneratie die op uitkomsten stuurt</Link>.
+      </p>
+
+      <Takeaways
+        label="DE KERN"
+        title="Wat je hiervan onthoudt"
+        items={[
+          {
+            pct: '01',
+            text: <>Schrap elk veld dat je niet nodig hebt om terug te bellen, voeg de verborgen</>,
+          },
+        ]}
+      />
+
+      <EndRule />
+    </>
+  )
+}
+
+function ArticleFeedManagementBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Feed management klinkt als een vakgebied en wordt vaak verkocht als een tool, maar het is in de kern iets eenvoudigs: ervoor zorgen dat de lijst met je producten die naar buiten gaat klopt. Die lijst bepaalt waar je producten opduiken, met welke titel, tegen welke prijs en of ze er wel bij staan. Bij de meeste webwinkels is dat de goedkoopste plek om iets te verbeteren, en tegelijk de plek waar het langst niemand kijkt.
+      </p>
+
+      <H2 num="01">Wat een feed is</H2>
+
+      <p>
+        Een bestand met daarin al je producten en hun eigenschappen: titel, omschrijving, prijs, voorraad, merk, afbeelding, en een handvol codes. Je webwinkel maakt dat bestand, en platforms als Google Shopping en vergelijkingssites lezen het uit.
+      </p>
+
+      <p>
+        Wat een bezoeker ziet is dus niet je productpagina, maar wat er in die regel stond. Staat de prijs daar verkeerd, dan adverteer je met een verkeerde prijs. Staat de voorraad verkeerd, dan betaal je voor klikken op iets dat niet te koop is.
+      </p>
+
+      <H2 num="02">Feed management is geen tool, het is onderhoud</H2>
+
+      <p>
+        Een feed is nooit af, want je aanbod verandert. Nieuwe producten, prijswijzigingen, een leverancier die zijn omschrijvingen aanpast, een maat die uitverkocht raakt.
+      </p>
+
+      <p>
+        Het werk bestaat uit drie dingen. Zorgen dat de gegevens die je webwinkel doorgeeft kloppen. Ze omvormen naar wat elk platform wil zien, want die eisen verschillen. En in de gaten houden of er producten afvallen.
+      </p>
+
+      <p>
+        Dat derde is waar het meestal misgaat. Platforms keuren producten af zonder dat iemand een melding krijgt die hij leest. Een feed die vorige maand prima liep kan nu voor een kwart afgekeurd zijn.
+      </p>
+
+      <H2 num="03">Waar je titels het verschil maken</H2>
+
+      <p>
+        De titel is in zoekresultaten en vergelijkingen het zwaarste veld, want daarop wordt gezocht. De meeste webwinkels zetten er de naam uit hun eigen systeem in, en die is geschreven voor de productpagina, niet voor iemand die zoekt.
+      </p>
+
+      <p>
+        Een titel die werkt bevat de woorden waarop mensen zoeken, in de volgorde waarin ze zoeken. Vaak is dat merk, type, en dan de eigenschap waarop iemand kiest: maat, kleur, inhoud of vermogen. Wat er niet in hoeft zijn je eigen artikelnummers en afkortingen.
+      </p>
+
+      <p>
+        Dit is handwerk per productgroep. Een regel die voor je hele assortiment geldt bestaat niet.
+      </p>
+
+      <H2 num="04">Wanneer je hier iets aan hebt</H2>
+
+      <p>
+        Heb je meer dan een paar honderd producten, dan is dit vrijwel altijd de goedkoopste verbetering die er ligt, omdat het effect over je hele assortiment werkt in plaats van over een campagne.
+      </p>
+
+      <p>
+        Heb je er tien, dan is dit het verkeerde project. Dan is je aanbod, je prijs en je productpagina belangrijker, en kun je die tien titels gewoon met de hand goed zetten.
+      </p>
+
+      <p>
+        Een los betaald systeem is pas nodig als je webwinkel het zelf niet aankan, of als je naar veel verschillende platforms levert die allemaal iets anders willen. Daaronder is het meestal een kwestie van instellingen en afspraken.
+      </p>
+
+      <H2 num="05">Waar je mee begint</H2>
+
+      <p>
+        Niet met een tool kiezen. Begin met kijken hoeveel van je producten op dit moment zijn afgekeurd en waarom. Dat getal staat in je advertentieaccount en het verrast bijna iedereen.
+      </p>
+
+      <p>
+        Herstel daarna de afkeuringen die over verplichte gegevens gaan, want dat is de snelste winst. Pak pas daarna de titels aan, en begin bij de productgroep die het meeste oplevert.
+      </p>
+
+      <p>
+        Een feed waarvan een deel al maanden is afgekeurd ziet er van buiten precies hetzelfde uit als een feed die het goed doet. Er is niets kapot, er is geen foutmelding, en de omzet die je misloopt zie je nergens terug. Het staat alleen in een scherm dat niemand opent.
+      </p>
+
+      <H2 num="06">Verder lezen</H2>
+
+      <p>
+        Wat wij hierin doen staat op onze pagina over <Link href="/integraties/feed-management">feed management</Link>.
+      </p>
+
+      <Takeaways
+        label="DE KERN"
+        title="Wat je hiervan onthoudt"
+        items={[
+          {
+            pct: '01',
+            text: <>Kijk eerst hoeveel van je producten op dit moment zijn afgekeurd, en pas daarna</>,
+          },
+        ]}
+      />
+
+      <EndRule />
+    </>
+  )
+}
+
 function H2({ num, children, id }: { num: string; children: React.ReactNode; id?: string }) {
   return (
     <h2 id={id} style={id ? { scrollMarginTop: '90px' } : undefined}>
