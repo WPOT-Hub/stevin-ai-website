@@ -10873,7 +10873,7 @@ function ArticleFeedManagementBody() {
       <H2 num="06">Verder lezen</H2>
 
       <p>
-        Wat wij hierin doen staat op onze pagina over <Link href="/integraties/feed-management">feed management</Link>.
+        Wat wij hierin doen staat op onze pagina over <Link href="/feed-management">feed management</Link>.
       </p>
 
       <Takeaways

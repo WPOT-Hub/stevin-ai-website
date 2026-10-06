@@ -36,7 +36,7 @@ const allArticles: Article[] = [
   {
     slug: 'wat-is-first-party-data',
     format: 'editorial',
-    edition: '017',
+    edition: '023',
     category: 'Strategie',
     title: "First-party data: wat het is, en wat je eraan hebt",
     dek:
@@ -51,7 +51,7 @@ const allArticles: Article[] = [
   {
     slug: 'crm-koppelen-aan-je-website',
     format: 'editorial',
-    edition: '018',
+    edition: '024',
     category: 'Operations',
     title: "Je website koppelen aan je CRM: wat er echt moet gebeuren",
     dek:
@@ -66,7 +66,7 @@ const allArticles: Article[] = [
   {
     slug: 'google-ads-conversies-meten',
     format: 'editorial',
-    edition: '019',
+    edition: '025',
     category: 'Werkmethode',
     title: "Google Ads-conversies meten: vier fouten die je cijfers waardeloos maken",
     dek:
@@ -81,7 +81,7 @@ const allArticles: Article[] = [
   {
     slug: 'leadformulier-dat-echte-aanvragen-oplevert',
     format: 'editorial',
-    edition: '020',
+    edition: '026',
     category: 'Werkmethode',
     title: "Een leadformulier dat echte aanvragen oplevert",
     dek:
@@ -96,7 +96,7 @@ const allArticles: Article[] = [
   {
     slug: 'wat-is-feed-management',
     format: 'editorial',
-    edition: '021',
+    edition: '027',
     category: 'Distributie',
     title: "Feed management: wat het is en wanneer je het nodig hebt",
     dek:
