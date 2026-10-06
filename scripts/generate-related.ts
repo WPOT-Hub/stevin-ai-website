@@ -93,6 +93,26 @@ function extractBodies(source: string): Map<string, string> {
   for (const match of source.matchAll(pattern)) {
     bodies.set(match[1], match[2].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim())
   }
+
+  // W-479: editorials staan niet in die kaart maar als eigen component
+  // (`function ArticleXBody()`), gekoppeld via een render-voorwaarde op de
+  // slug. Daardoor kende deze generator de INHOUD van geen enkel editorial en
+  // scoorde hij ze alleen op titel en dek. Gevolg, gezien op 6 okt 2026 bij
+  // vijf nieuwe uitlegstukken: het blok "Meer uit het Journal" verwees naar
+  // een stuk over AI in de filmindustrie en een transcriptietoolvergelijking.
+  // Codex wees dat aan op PR 108.
+  const koppeling = /article\.slug === '([^']+)' &&\s*\(\s*<(Article\w+Body)\s*\/>/g
+  for (const match of source.matchAll(koppeling)) {
+    const [, slug, component] = match
+    if (bodies.has(slug)) continue
+    const start = source.indexOf(`function ${component}()`)
+    if (start === -1) continue
+    const eind = source.indexOf('\nfunction ', start + 10)
+    const blok = source.slice(start, eind === -1 ? undefined : eind)
+    const tekst = blok.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+    if (tekst.length > 200) bodies.set(slug, tekst)
+  }
+
   return bodies
 }
 
