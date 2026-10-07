@@ -14,7 +14,7 @@ aanroepen. Begin je hier, dan krijg je niets van dat alles mee.
 | Wanneer | Wat |
 |---|---|
 | Voor je een pagina bouwt | skill `livegang`, deel "VOORDAT je bouwt". `docs/zoekintentie/stevin.ai.md` in de Hub moet bestaan en kloppen; `scripts/livegang_check.sh stevin.ai` weigert zonder dat bestand |
-| Nieuwe site of andere URL's | daarna pas `marketing-skills:site-architecture` voor de structuur |
+| Nieuwe site of andere URL's | pas NA het zoekintentie-bestand de skill `marketing-skills:site-architecture`, voor paginahierarchie, navigatie en interne links. Andersom bouw je een nette structuur van pagina's die niet kunnen winnen |
 | Elke wijziging aan de meting | skill `sitecheck` (REGEL #7). Een 200 of een groene tag is geen bewijs; aantonen dat het event in GA4 aankomt |
 | Elke Nederlandse tekst die iemand leest | skill `schrijfregels`. `check.sh` kijkt alleen naar tekens; de terugleesstap is het werk |
 | Elke merge of uitrol | skill `vercel-uitrol` (REGEL #9). Uitrollen met `scripts/vercel_deploy.sh`, en een merge is geen uitrol |
