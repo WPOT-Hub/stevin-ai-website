@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
 import Logo from './Logo'
-import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header() {
   const t = useTranslations('nav')
@@ -224,9 +223,6 @@ export default function Header() {
               </Link>
             ))}
 
-            {/* Language switcher */}
-            <LanguageSwitcher dark={showDark} />
-
             <Link
               href="/contact"
               className="hidden flex-none items-center whitespace-nowrap rounded-lg bg-accent px-4 py-2 text-[13px] font-semibold text-white shadow-sm shadow-accent/20 transition-all duration-200 hover:bg-accent-dark 2xl:inline-flex"
@@ -325,11 +321,6 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-
-            {/* Language switcher in mobile */}
-            <div className="py-3 border-b border-border/50">
-              <LanguageSwitcher />
-            </div>
 
             <div className="pt-4">
               <Link
