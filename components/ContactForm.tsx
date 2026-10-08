@@ -78,6 +78,7 @@ export default function ContactForm({
     const path = window.location.pathname.replace(/^\/(nl|en)(?=\/|$)/, '')
     const source = subject?.trim() || path.replace(/^\//, '') || 'contact'
     const eventId = generateEventId()
+    let echteLead = false
     const context = getLeadContext({
       event_id: eventId,
       form_id: 'contact',
@@ -91,13 +92,30 @@ export default function ContactForm({
         body: JSON.stringify({ name, email, company, phone, message, source, _honey: honey, context }),
       })
       if (!res.ok) throw new Error('http ' + res.status)
+      // W-506 (8 okt 2026): de Hub antwoordt bij geweigerde spam bewust met
+      // 200 {ok:true} zodat de bot niet leert dat hij herkend is. Daardoor las
+      // dit formulier elke geweigerde spam als een geslaagde inzending en
+      // vuurde het alsnog generate_lead, een key event in GA4. Hoe beter het
+      // spamfilter werkte, hoe onzichtbaarder die vervuiling, want Koen zag de
+      // lead dan juist niet.
+      //
+      // Een echte lead krijgt `id` terug, of `duplicate: true` als het adres al
+      // bekend is (ook een echte lead: de Hub stuurt dan wel een melding). Een
+      // geweigerde inzending krijgt geen van beide. Alleen dan meten we.
+      const antwoord = (await res.json().catch(() => ({}))) as { id?: string | null; duplicate?: boolean }
+      echteLead = antwoord.id != null || antwoord.duplicate === true
     } catch {
       setLoading(false)
       setError(true)
       return
     }
 
-    // Tracking pas na een geslaagde inzending, zodat generate_lead echt telt.
+    // Tracking pas na een geslaagde inzending die de Hub ook echt heeft
+    // opgeslagen, zodat generate_lead echt telt.
+    if (!echteLead) {
+      setSubmitted(true)
+      return
+    }
     const [firstName, ...rest] = name.trim().split(' ')
     const lastName = rest.join(' ')
     try {
