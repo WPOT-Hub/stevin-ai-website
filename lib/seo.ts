@@ -37,9 +37,15 @@ export function localizedMetadata(opts: LocalizedMetadataOpts): Metadata {
   const enUrl = `${SITE_URL}/en${path}`
   const canonical = translated ? (isEn ? enUrl : nlUrl) : nlUrl
 
-  const languages: Record<string, string> = translated
+  // W-514: een NL-only pagina op /en canonicalt naar de NL-URL en krijgt dus
+  // geen hreflang. Een hreflang op een niet-canonieke pagina is een half paar
+  // (geen verwijzing naar zichzelf, de NL-pagina verwijst niet terug) en Google
+  // negeert hem toch. Zelfde regel als /en/vergelijken en /en/blog.
+  const languages: Record<string, string> | undefined = translated
     ? { 'nl-NL': nlUrl, en: enUrl, 'x-default': nlUrl }
-    : { 'nl-NL': nlUrl, 'x-default': nlUrl }
+    : isEn
+      ? undefined
+      : { 'nl-NL': nlUrl, 'x-default': nlUrl }
 
   const defaultImage = `${SITE_URL}${isEn ? '/en' : ''}/opengraph-image`
   const image = opts.image
@@ -56,7 +62,7 @@ export function localizedMetadata(opts: LocalizedMetadataOpts): Metadata {
     // de head op elke pagina die deze helper gebruikt.
     alternates: {
       canonical,
-      languages,
+      ...(languages ? { languages } : {}),
       types: { 'application/rss+xml': `${SITE_URL}/feed.xml` },
     },
     openGraph: {
