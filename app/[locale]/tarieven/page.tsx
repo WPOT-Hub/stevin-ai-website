@@ -78,6 +78,11 @@ type TarievenCopy = {
   keuzes: Keuze[]
   keuzeMicro: string
   keuzeGrens: string
+  marktEyebrow: string
+  marktH2: string
+  marktIntro: string
+  marktPunten: { t: string; d: string }[]
+  marktSlot: string
   breinEyebrow: string
   breinH2: string
   breinBody: string
@@ -197,6 +202,32 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
     keuzeGrens:
       'Alle tarieven gelden voor een bedrijf met een merk en een winkel. Meer vestigingen, merken of webshops kosten meer. Meer mediabudget betekent niet automatisch een hogere prijs.',
 
+    // W-506, 8 okt 2026: deze pagina heet al "Wat kost het uitbesteden van je
+    // advertenties?" maar beantwoordde alleen wat WIJ kosten. De pagina's die
+    // op die vraag bovenaan staan geven eerst de marktprijs, met het bedrag in
+    // de titel. Bedragen hieronder zelf gelezen op 8 okt 2026 op de
+    // tarievenpagina's van Nederlandse bureaus in die zoekresultaten.
+    marktEyebrow: 'Wat het elders kost',
+    marktH2: 'Eerst wat de markt vraagt, dan wat wij doen.',
+    marktIntro:
+      'Nederlandse bureaus rekenen voor het beheer meestal tussen de 225 en 2.000 euro per maand, los van je advertentiebudget. Daarnaast bestaat een tweede model: een percentage van wat je bij Google of Meta uitgeeft, meestal 10 tot 20 procent. Daar zit een probleem in dat je pas later merkt.',
+    marktPunten: [
+      {
+        t: 'Een vast bedrag per maand',
+        d: 'Tussen de 225 en 2.000 euro bij de bureaus die hun prijs online zetten. Wat je daarvoor krijgt verschilt enorm, dus het bedrag zegt op zichzelf weinig. Vraag wat er precies in zit en wie het werk doet.',
+      },
+      {
+        t: 'Een percentage van je mediabudget',
+        d: 'Meestal 10 tot 20 procent. Hoe meer je uitgeeft, hoe meer je bureau verdient, ook als het verder niets extra\'s doet. Degene die adviseert hoeveel je moet uitgeven, verdient dus aan dat advies.',
+      },
+      {
+        t: 'Waar je naar moet vragen voordat je tekent',
+        d: 'Op wiens naam staan de accounts, hoe lang zit je vast, en krijg je je data mee als je weggaat. Dat zijn drie vragen die later geld kosten en nu niets.',
+      },
+    ],
+    marktSlot:
+      'Bij ons is het een vast bedrag en geen marge op je mediabudget. Wat je bij Google en Meta uitgeeft, gaat naar Google en Meta.',
+
     breinEyebrow: 'Wat er onder blijft liggen',
     breinH2: 'Wie er ook werkt, plugt in op hetzelfde brein.',
     breinBody:
@@ -291,6 +322,27 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
       'Per month the first two options cost the same. Only the ongoing option has an annual rate. That is where the hundred euro difference comes from: you do not pay ahead for something we both want to end.',
     keuzeGrens:
       'All rates apply to one company with one brand and one shop. More locations, brands or webshops cost more. A bigger media budget does not automatically mean a higher price.',
+
+    marktEyebrow: 'What it costs elsewhere',
+    marktH2: 'First what the market charges, then what we do.',
+    marktIntro:
+      'Dutch agencies usually set their management fee between 225 and 2,000 euros per month, on top of your advertising budget. There is a second model as well: a percentage of what you spend on Google or Meta, usually 10 to 20 percent. That one has a catch you only notice later.',
+    marktPunten: [
+      {
+        t: 'A fixed amount per month',
+        d: 'Between 225 and 2,000 euros at the agencies that publish their rates. What you get for it varies enormously, so the amount on its own tells you little. Ask what is included and who does the work.',
+      },
+      {
+        t: 'A percentage of your media budget',
+        d: 'Usually 10 to 20 percent. The more you spend, the more your agency earns, even when it does nothing extra. So the party advising you on how much to spend earns from that advice.',
+      },
+      {
+        t: 'What to ask before you sign',
+        d: 'Whose name the accounts are in, how long you are tied in, and whether you take your data with you when you leave. Three questions that cost money later and nothing now.',
+      },
+    ],
+    marktSlot:
+      'With us it is a fixed amount and no margin on your media budget. What you spend on Google and Meta goes to Google and Meta.',
 
     breinEyebrow: 'What stays underneath',
     breinH2: 'Whoever does the work plugs into the same brain.',
@@ -490,6 +542,51 @@ export default async function PreviewTarieven({ params }: Props) {
       {/* Het scherm zelf, zonder brein-blok: het brein staat hieronder in de
           band die de claim maakt. */}
       <DeskProof locale={locale} toonBrein={false} />
+
+      {/* W-506: de marktprijs voor de onze. Wie op "google ads uitbesteden
+          kosten" zoekt wil eerst weten wat normaal is; die vraag beantwoordden
+          we hier niet, terwijl de pagina er wel naar heet. */}
+      <section style={{ padding: '0 24px 96px' }}>
+        <div className="mx-auto max-w-[980px]">
+          <p
+            className="font-display font-bold m-0 mb-5 flex items-center gap-[14px] text-accent"
+            style={{ fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase' }}
+          >
+            <span className="inline-block w-6 h-px flex-shrink-0 bg-accent" style={{ opacity: 0.6 }} aria-hidden="true" />
+            {c.marktEyebrow}
+          </p>
+          <h2
+            className="font-display font-extrabold text-primary m-0"
+            style={{ fontWeight: 800, fontSize: 'clamp(26px, 3vw, 40px)', letterSpacing: '-0.03em', lineHeight: '1.1', textWrap: 'balance' }}
+          >
+            {c.marktH2}
+          </h2>
+          <p className="text-muted leading-[1.7]" style={{ fontSize: '16px', marginTop: '20px', maxWidth: '68ch' }}>
+            {c.marktIntro}
+          </p>
+
+          <div className="grid gap-8 md:grid-cols-3" style={{ marginTop: '44px' }}>
+            {c.marktPunten.map((p) => (
+              <div key={p.t}>
+                <div className="w-8 h-px mb-4 bg-accent" aria-hidden="true" />
+                <p className="font-display font-bold text-primary m-0 mb-2" style={{ fontSize: '16px', letterSpacing: '-0.01em' }}>
+                  {p.t}
+                </p>
+                <p className="text-muted m-0" style={{ fontSize: '14px', lineHeight: '1.6' }}>
+                  {p.d}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p
+            className="font-display font-bold text-primary"
+            style={{ fontSize: '18px', lineHeight: '1.5', marginTop: '40px', maxWidth: '62ch', textWrap: 'balance' }}
+          >
+            {c.marktSlot}
+          </p>
+        </div>
+      </section>
 
       <section className="bg-[#0A1628] text-white" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[980px]">
