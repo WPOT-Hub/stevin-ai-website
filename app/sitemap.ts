@@ -95,9 +95,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return 0.7
   }
 
+  // W-506 (8 okt 2026): /en is permanent omgeleid, dus geen en-hreflang meer
+  // in de sitemap. altLangs en nlAlleen geven nu hetzelfde; allebei blijven
+  // staan zodat de aanroepers ongemoeid blijven.
   const altLangs = (path: string) => ({
     'nl-NL': `${baseUrl}${path}`,
-    'en': `${baseUrl}/en${path}`,
     'x-default': `${baseUrl}${path}`,
   })
 
@@ -132,12 +134,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: altLangs(path) },
   }))
 
-  const enEntries: MetadataRoute.Sitemap = translatedPages.map((path) => ({
-    url: `${baseUrl}/en${path}`,
-    changeFrequency: (path === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
-    priority: Math.max(0.3, priorityFor(path) - 0.1),
-    alternates: { languages: altLangs(path) },
-  }))
+  // W-506 (8 okt 2026): de /en-varianten van de vertaalde pagina's staan niet
+  // meer in de sitemap; ze leiden permanent om naar de Nederlandse versie.
+  // Alleen de bewust Engelse outreach-pagina hieronder blijft.
+  const enEntries: MetadataRoute.Sitemap = []
 
   const nlOnlyEntries: MetadataRoute.Sitemap = nlOnlyPages.map((path) => ({
     url: `${baseUrl}${path}`,

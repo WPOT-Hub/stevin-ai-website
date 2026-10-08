@@ -34,12 +34,14 @@ export function localizedMetadata(opts: LocalizedMetadataOpts): Metadata {
   const isEn = locale === 'en'
 
   const nlUrl = `${SITE_URL}${path}`
-  const enUrl = `${SITE_URL}/en${path}`
-  const canonical = translated ? (isEn ? enUrl : nlUrl) : nlUrl
+  // W-506 (8 okt 2026): /en is permanent omgeleid naar de Nederlandse pagina,
+  // zie de toelichting in middleware.ts. Daarom nooit meer een en-canonical en
+  // geen en-hreflang: dat zou een URL aankondigen die met een 301 antwoordt.
+  // `translated` doet hierdoor niets meer; de parameter blijft staan zodat de
+  // aanroepers niet allemaal hoeven te wijzigen.
+  const canonical = nlUrl
 
-  const languages: Record<string, string> = translated
-    ? { 'nl-NL': nlUrl, en: enUrl, 'x-default': nlUrl }
-    : { 'nl-NL': nlUrl, 'x-default': nlUrl }
+  const languages: Record<string, string> = { 'nl-NL': nlUrl, 'x-default': nlUrl }
 
   const defaultImage = `${SITE_URL}${isEn ? '/en' : ''}/opengraph-image`
   const image = opts.image

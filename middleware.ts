@@ -202,10 +202,49 @@ async function marketingCheckPoort(request: NextRequest): Promise<NextResponse |
   return r
 }
 
+/**
+ * De Engelse versie gaat permanent naar de Nederlandse (W-506, 8 okt 2026).
+ *
+ * Gemeten over 90 dagen in Search Console: van de 119 Engelse pagina's die
+ * Google toonde leverden er zes een klik, samen 12. Zeven van die 12 gingen
+ * naar /en zelf en een naar /en/simon-stevin, allebei op onze eigen naam. Het
+ * hele Engelse deel leverde dus VIER klikken die niet over de merknaam gingen.
+ * De zoektermen die erop binnenkwamen waren bovendien Nederlands ("exact
+ * online ai integratie", "leadopvolging via tiktok"), dus die pagina's
+ * concurreerden met onze eigen Nederlandse pagina's om dezelfde zoekvraag.
+ *
+ * Wat het wel kostte: ruim 350 extra URL's, hreflang-onderhoud (de 736
+ * meldingen die Ahrefs in oktober gaf, W-443) en vanaf nu een vertaalslag bij
+ * elke tekst die we herschrijven. Stevin verkoopt in Nederland en Belgie.
+ *
+ * Een 301 en geen 404: Google kent die URL's, en een omleiding naar de
+ * Nederlandse tegenhanger houdt de waarde vast.
+ */
+// Deze Engelse pagina's blijven bestaan: ze zijn met opzet in het Engels
+// geschreven voor outreach, hebben geen Nederlandse tegenhanger onder dezelfde
+// naam en canonicalen naar zichzelf. De Nederlandse tweeling van de eerste
+// (/blog/wie-is-eigenaar-van-je-advertentiedata) is met 117 vertoningen op
+// positie 7,5 een van onze best presterende pagina's; die twee staan los van
+// elkaar en mogen niet naar elkaar omleiden.
+const ENGELS_BLIJFT = new Set(['/en/who-owns-your-advertising-data'])
+
+function engelsNaarNederlands(request: NextRequest): NextResponse | null {
+  const pad = request.nextUrl.pathname
+  if (pad !== '/en' && !pad.startsWith('/en/')) return null
+  if (ENGELS_BLIJFT.has(pad.replace(/\/$/, ''))) return null
+  const doel = request.nextUrl.clone()
+  doel.pathname = pad === '/en' ? '/' : pad.slice('/en'.length)
+  return NextResponse.redirect(doel, 301)
+}
+
 export default async function middleware(request: NextRequest) {
   // Eerst de korte links van gedrukte QR-codes: die moeten altijd voorgaan.
   const kort = korteLink(request)
   if (kort) return kort
+
+  // Daarna /en, voor de i18n-middleware eraan komt.
+  const engels = engelsNaarNederlands(request)
+  if (engels) return engels
 
   const poort = await marketingCheckPoort(request)
   if (poort) return poort
