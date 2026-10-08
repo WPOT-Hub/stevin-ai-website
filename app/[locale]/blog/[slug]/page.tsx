@@ -32,7 +32,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string; locale: string }>
 }): Promise<Metadata> {
-  const { slug } = await params
+  const { slug, locale } = await params
   const a = getArticle(slug)
   if (!a) return {}
   // Body-loze dispatch: niet indexeren (thin content), Google-richtlijn.
@@ -69,7 +69,12 @@ export async function generateMetadata({
       // Geen en-hreflang tot er een echte EN-vertaling per artikel is. De
       // /en/blog route toont nu nog NL-tekst, dus een en-alternate zou Google
       // een verkeerd taalsignaal geven. Canonical wijst alles naar de NL-URL.
-      languages: { 'nl-NL': `https://stevin.ai/blog/${a.slug}` },
+      //
+      // W-514: alleen op de NL-URL. /en/blog/<slug> canonicalt naar de NL-URL,
+      // en een hreflang op een niet-canonieke pagina is een half paar: hij
+      // verwijst naar /blog/<slug>, maar die verwijst niet terug en de pagina
+      // noemt zichzelf niet. Google negeert hreflang op zo'n pagina toch.
+      ...(locale === 'en' ? {} : { languages: { 'nl-NL': `https://stevin.ai/blog/${a.slug}` } }),
     },
   }
 }
