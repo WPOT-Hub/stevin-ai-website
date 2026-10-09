@@ -73,7 +73,7 @@ const COPY = {
     doen_h2: 'Stevin zorgt dat je marketing blijft werken.',
     doen: [
       { n: '01', t: 'We leggen vast wat er hoort te gebeuren.', d: 'Hoeveel telefoontjes een gewone week oplevert. Welke aanvragen iets opleveren en welke niet. Welke campagne klanten moet brengen en welke vooral je naam bekend maakt, en hoe je ziet of dat lukt. Dat staat in geen enkel systeem. Daarom doen we het in de eerste weken samen met jou.' },
-      { n: '02', t: 'We blijven kijken of het nog klopt.', d: 'We kijken of er binnenkomt wat er binnen hoort te komen, ook als alles op groen staat.' },
+      { n: '02', t: 'We blijven kijken of het nog klopt.', d: 'We kijken of er binnenkomt wat er binnen hoort te komen, ook als alles op groen staat. Komt er minder binnen dan je gewend bent, dan zien wij dat.' },
       { n: '03', t: 'We verdienen niets aan je advertentiegeld.', d: 'Google raadt je geen Meta aan, en de krant geen radio. Wie advertentieruimte verkoopt, adviseert vooral zichzelf. Wij krijgen geen percentage van je budget, waar het ook naartoe gaat. Daarom kunnen we zeggen waar je geld het meest oplevert. En levert een kanaal niet op wat het moet opleveren, dan zeggen we dat, ook als het rapport van dat kanaal iets anders laat zien.' },
     ],
     founder_quote: 'Twintig jaar zat ik aan de andere kant van de factuur. Ik weet hoe uren en mediamarges werken, want ik heb er zelf aan verdiend. Daarom is Stevin andersom gebouwd.',
@@ -82,7 +82,12 @@ const COPY = {
     // Punt 02 had een tweede zin ("komt er op een dinsdag niets binnen, dan zien
     // wij dat"). Eruit op 9 okt (W-524): de Pulse-scan vergelijkt alleen
     // platformconversies met de vorige periode, meldt in het Portal en niet bij
-    // Simon, en zag de daling hieronder niet. Terug zodra dat wel klopt.
+    // Simon, en zag de daling hieronder niet. Terug op 10 okt in deze vorm, na
+    // W-525 in Stevin-Hub (live e9af0ce): per klant GA4 en advertentieplatforms
+    // tegen de vastgelegde verwachting of de eigen weekdagen, melding via
+    // system_health naar Simon. Geen vaste dag meer in de zin: bij weinig volume
+    // heeft de ruisgrens meer dan een dag nodig. Pas mergen na de eerste echte
+    // run met melding in Telegram (maandag 12 okt 09:00).
     // Cijfers: GA4 van de klant in metrics_analytics, 41, 29, 11, 2, 1 van april
     // tot augustus 2026 bij 3.016 en 4.596 sessies. Het klantsysteem telde in
     // dezelfde periode wel aanvragen (W-121 in Stevin-Hub).
@@ -149,7 +154,7 @@ const COPY = {
     doen_h2: 'Stevin keeps your marketing working.',
     doen: [
       { n: '01', t: 'We write down what should happen.', d: 'How many calls a normal week brings in. Which enquiries are worth something and which are not. Which campaign should bring in customers and which mainly makes your name known, and how you can tell whether that works. No system holds this. So we do it with you in the first weeks.' },
-      { n: '02', t: 'We keep checking that it still holds.', d: 'We check whether what should come in actually comes in, even when everything shows green.' },
+      { n: '02', t: 'We keep checking that it still holds.', d: 'We check whether what should come in actually comes in, even when everything shows green. If less comes in than you are used to, we notice.' },
       { n: '03', t: 'We earn nothing from your ad spend.', d: 'Google will not recommend Meta to you, and the newspaper will not recommend radio. Whoever sells ad space mainly advises itself. We take no percentage of your budget, wherever it goes. So we can tell you where your money brings in the most. And if a channel does not deliver what it should, we say so, even when that channel\'s report shows something else.' },
     ],
     founder_quote: 'For twenty years I sat on the other side of the invoice. I know how hours and media margins work, because I earned from them myself. That is why Stevin is built the other way around.',
