@@ -17,6 +17,25 @@ function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean
   )
 }
 
+// Kijkt in de netwerktijdlijn van de browser of de Google-tag voor deze
+// pagina al een page_view verstuurde zonder toestemming voor analytics
+// (gcs G1x0, het vierde teken is analytics_storage). Niet gevonden of niet
+// leesbaar: niets opnieuw sturen, liever een gemiste dan een dubbele.
+function paginaweergaveAlAnoniemVerstuurd(): boolean {
+  try {
+    return performance.getEntriesByType('resource').some((r) => {
+      if (!r.name.includes('/g/collect')) return false
+      const u = new URL(r.name)
+      const gcs = u.searchParams.get('gcs') ?? ''
+      return u.searchParams.get('en') === 'page_view'
+        && gcs.length === 4 && gcs[3] === '0'
+        && u.searchParams.get('dl') === window.location.href
+    })
+  } catch {
+    return false
+  }
+}
+
 export default function ConsentBanner() {
   const [visible, setVisible] = useState(false)
   const [showPreferences, setShowPreferences] = useState(false)
@@ -43,7 +62,10 @@ export default function ConsentBanner() {
     // sessie zonder paginaweergave (landingspagina "(not set)"): 9 van 45
     // sessies in de week tot 9 okt. Alleen hier, bij de keuze in de banner,
     // niet bij een opgeslagen keuze; die wordt al voor GTM toegepast.
-    if (hasAnalyticsConsent(choice)) {
+    // Alleen als die eerste paginaweergave aantoonbaar al anoniem weg is
+    // (Codex, PR 125): kiest iemand binnen de wachttijd van wait_for_update,
+    // dan stuurt de Google-tag hem zelf met toestemming en zou dit dubbel tellen.
+    if (hasAnalyticsConsent(choice) && paginaweergaveAlAnoniemVerstuurd()) {
       window.gtag?.('event', 'page_view', {
         page_location: window.location.href,
         page_title: document.title,
