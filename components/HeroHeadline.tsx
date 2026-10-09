@@ -43,14 +43,17 @@ const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; a
     c: { eyebrow: 'Groeien met grip', line: 'Marketing die elke maand beter wordt.', accent: 'En alles blijft van jou.' },
     d: { eyebrow: 'Voor merken en marketingteams', line: 'Wat een systeem voor je kan uitrekenen,', accent: 'hangt af van wat het van jou weet.' },
     e: { eyebrow: '', line: 'Je betaalt elke maand.', accent: 'Maar je kunt niet nakijken wat er gebeurd is.' },
-    f: { eyebrow: '', line: 'Je betaalt elke maand voor je marketing.', accent: 'Wat het oplevert, weet je niet precies.' },
+    // F: "Google en Meta" in plaats van "je marketing" (Koen, 9 okt). In 399
+    // gesprekken zeggen ondernemers Google Ads, reclame, adverteren; "mijn
+    // marketing" bijna nooit. "Gaat er geld naar" klopt ook als het bureau betaalt.
+    f: { eyebrow: '', line: 'Elke maand gaat er geld naar Google en Meta.', accent: 'Wat het oplevert, weet je niet precies.' },
   },
   en: {
     a: { eyebrow: '', line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
     c: { eyebrow: 'Growth with grip', line: 'Marketing that gets better every month.', accent: 'And everything stays yours.' },
     d: { eyebrow: 'For brands and marketing teams', line: 'What a system can work out for you', accent: 'depends on what it knows about you.' },
     e: { eyebrow: '', line: 'You pay every month.', accent: 'But you cannot check what actually happened.' },
-    f: { eyebrow: '', line: 'You pay for your marketing every month.', accent: 'What it brings in, you do not really know.' },
+    f: { eyebrow: '', line: 'Every month, money goes to Google and Meta.', accent: 'What it brings in, you do not really know.' },
   },
 }
 
