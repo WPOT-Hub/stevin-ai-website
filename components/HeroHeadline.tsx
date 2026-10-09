@@ -14,7 +14,7 @@ import { useEffect, useState } from 'react'
 
 // 13 sep 2026 (W-078), Koen 12:18 over B ("Google weet wie de eigenaar is van
 // jouw data. Jij ook?"): "deze moet er echt uit". Weg, ook via ?kop=b.
-type Variant = 'a' | 'c' | 'd' | 'e'
+type Variant = 'a' | 'c' | 'd' | 'e' | 'f'
 
 // E toegevoegd 13 sep 2026 (W-078), Koens eigen formulering: eerst de basis,
 // daarna de campagnes, en wat we meten hangt af van wat jouw bedrijf verkoopt.
@@ -25,7 +25,12 @@ type Variant = 'a' | 'c' | 'd' | 'e'
 // outreach; die draait nu mee, dus een bezoeker uit een advertentie ziet niet
 // meer gegarandeerd dezelfde kop als in de advertentie. Een regel terugdraaien
 // als dat een probleem blijkt.
-const ROTATION: Variant[] = ['a', 'e']
+// W-524, 9 okt 2026: E eruit, F erin. Koen: de tweede kop moet iedereen
+// aanspreken, ook wie het zelf doet of een eigen team heeft; A gaat over een
+// partij die iets voor je doet. F gaat over wat het oplevert, zoals de
+// subregel en de slotvraag op de homepage. In de test van 13 sep tot 8 okt
+// zagen 12 bezoekers A en 13 bezoekers E, met 5 en 6 kliks: geen uitslag.
+const ROTATION: Variant[] = ['a', 'f']
 const STORAGE_KEY = 'stevin_kop_variant'
 
 const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; accent: string }>> = {
@@ -38,16 +43,18 @@ const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; a
     c: { eyebrow: 'Groeien met grip', line: 'Marketing die elke maand beter wordt.', accent: 'En alles blijft van jou.' },
     d: { eyebrow: 'Voor merken en marketingteams', line: 'Wat een systeem voor je kan uitrekenen,', accent: 'hangt af van wat het van jou weet.' },
     e: { eyebrow: '', line: 'Je betaalt elke maand.', accent: 'Maar je kunt niet nakijken wat er gebeurd is.' },
+    f: { eyebrow: '', line: 'Je betaalt elke maand voor je marketing.', accent: 'Wat het oplevert, weet je niet precies.' },
   },
   en: {
     a: { eyebrow: '', line: 'A marketing invoice every month.', accent: 'No idea what they did for it.' },
     c: { eyebrow: 'Growth with grip', line: 'Marketing that gets better every month.', accent: 'And everything stays yours.' },
     d: { eyebrow: 'For brands and marketing teams', line: 'What a system can work out for you', accent: 'depends on what it knows about you.' },
     e: { eyebrow: '', line: 'You pay every month.', accent: 'But you cannot check what actually happened.' },
+    f: { eyebrow: '', line: 'You pay for your marketing every month.', accent: 'What it brings in, you do not really know.' },
   },
 }
 
-const LABELS: Record<Variant, string> = { a: 'A factuur', c: 'C groei', d: 'D data', e: 'E basis' }
+const LABELS: Record<Variant, string> = { a: 'A factuur', c: 'C groei', d: 'D data', e: 'E basis', f: 'F oplevert' }
 
 declare global {
   interface Window {
@@ -56,7 +63,7 @@ declare global {
 }
 
 function isVariant(v: string | null): v is Variant {
-  return v === 'a' || v === 'c' || v === 'd' || v === 'e'
+  return v === 'a' || v === 'c' || v === 'd' || v === 'e' || v === 'f'
 }
 
 export default function HeroHeadline({ locale }: { locale: string }) {
@@ -125,7 +132,7 @@ export default function HeroHeadline({ locale }: { locale: string }) {
           aria-label="Kop-variant (alleen preview)"
         >
           <span className="text-[10px] font-display font-bold uppercase tracking-[0.1em] text-muted px-1">Kop</span>
-          {(['a', 'e', 'c', 'd'] as Variant[]).map((v) => (
+          {(['a', 'f', 'e', 'c', 'd'] as Variant[]).map((v) => (
             <button
               key={v}
               type="button"
