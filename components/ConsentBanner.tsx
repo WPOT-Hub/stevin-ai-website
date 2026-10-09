@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { getStoredConsent, storeConsent, updateGoogleConsent, type ConsentChoice } from '@/lib/consent'
+import { getStoredConsent, storeConsent, updateGoogleConsent, hasAnalyticsConsent, type ConsentChoice } from '@/lib/consent'
 
 function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
   return (
@@ -38,6 +38,18 @@ export default function ConsentBanner() {
     if (!choice) return
     storeConsent(choice)
     updateGoogleConsent(choice)
+    // W-346 (9 okt 2026): de paginaweergave van deze pagina ging voor de keuze
+    // als anoniem signaal weg. Zonder deze regel begint GA4 na het akkoord een
+    // sessie zonder paginaweergave (landingspagina "(not set)"): 9 van 45
+    // sessies in de week tot 9 okt. Alleen hier, bij de keuze in de banner,
+    // niet bij een opgeslagen keuze; die wordt al voor GTM toegepast.
+    if (hasAnalyticsConsent(choice)) {
+      window.gtag?.('event', 'page_view', {
+        page_location: window.location.href,
+        page_title: document.title,
+        page_referrer: document.referrer,
+      })
+    }
     setVisible(false)
     setShowPreferences(false)
   }
