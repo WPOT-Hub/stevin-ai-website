@@ -39,6 +39,27 @@ export function GoogleTagManagerHead() {
             });
             window.gtag('set', 'ads_data_redaction', true);
             window.gtag('set', 'url_passthrough', true);
+            // W-346 (9 okt 2026): een eerder gegeven keuze meteen toepassen,
+            // voordat GTM laadt. ConsentBanner deed dat pas na de hydratie van
+            // React; op een trage telefoon kan dat na de 500 ms van
+            // wait_for_update zijn, en dan gaat de eerste paginaweergave van
+            // een terugkerende bezoeker als anoniem signaal weg. Zelfde
+            // vertaling als choiceToConsentState in lib/consent.ts.
+            try {
+              var k = window.localStorage.getItem('stevin_consent');
+              var an = k === 'all' || k === 'analytics' || k === 'analytics_and_marketing';
+              var mk = k === 'all' || k === 'marketing' || k === 'analytics_and_marketing';
+              if (an || mk || k === 'necessary') {
+                window.gtag('consent', 'update', {
+                  'analytics_storage':       an ? 'granted' : 'denied',
+                  'ad_storage':              mk ? 'granted' : 'denied',
+                  'ad_user_data':            mk ? 'granted' : 'denied',
+                  'ad_personalization':      mk ? 'granted' : 'denied',
+                  'functionality_storage':   an ? 'granted' : 'denied',
+                  'personalization_storage': an ? 'granted' : 'denied'
+                });
+              }
+            } catch (e) { /* geen localStorage (privacymodus): banner beslist */ }
           `,
         }}
       />
