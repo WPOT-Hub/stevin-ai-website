@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import StevinBrainVisual from '@/components/StevinBrainVisual'
 import KlantLogos from '@/components/KlantLogos'
+import MarketingMemoryDemo from '@/components/MarketingMemoryDemo'
 import BrainEdgeStrip from '@/components/BrainEdgeStrip'
 import HeroHeadline from '@/components/HeroHeadline'
 
@@ -37,6 +38,14 @@ const COPY = {
       { q: 'Dat zijn allemaal aparte systemen met bepaalde toegangen. Maar er zit nergens een link of een centraal geheugen.', a: 'Marketingverantwoordelijke, internationaal merk' },
     ],
     herken_bron: 'Uit echte gesprekken, zonder naam.',
+
+    // Toegevoegd 9 okt 20:31 (Koen: "brein is belangrijker dan deze", over het
+    // registerblok). Het antwoord op het citaat over "nergens een centraal
+    // geheugen" hierboven. Woorden uit de voorwaarden: dossier, vastleggen.
+    geheugen_eyebrow: 'Alles blijft terug te vinden',
+    geheugen_h2: 'Wie er ook vertrekt, je begint niet opnieuw.',
+    geheugen_quote: { q: 'Heb het gevoel dat we altijd weer opnieuw beginnen.', a: 'Concertzaal, over hun bureau' },
+    geheugen_body: 'Alles wat we vastleggen, staat in een dossier op jouw naam: wat er geprobeerd is, wat het kostte en wat het opleverde. Wie na ons komt, je eigen mensen of een ander bureau, leest zich in. Typ "zomer" en kijk wat er tevoorschijn komt.',
 
     register_eyebrow: 'Kijk het zelf na',
     register_h2: 'Wie betaalt jouw advertenties?',
@@ -99,6 +108,11 @@ const COPY = {
       { q: 'Those are all separate systems with their own logins. But there is no link anywhere, no central memory.', a: 'Marketing lead, international brand' },
     ],
     herken_bron: 'From real conversations, names removed.',
+
+    geheugen_eyebrow: 'Everything stays findable',
+    geheugen_h2: 'Whoever leaves, you do not start over.',
+    geheugen_quote: { q: 'I feel like we always start over again.', a: 'Concert hall, about their agency' },
+    geheugen_body: 'Everything we record goes into a file in your name: what was tried, what it cost and what it brought in. Whoever comes after us, your own people or another agency, can read up on it. Type "summer" and see what comes up.',
 
     register_eyebrow: 'Check it yourself',
     register_h2: 'Who pays for your ads?',
@@ -270,41 +284,27 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── KIJK HET ZELF NA ── */}
-      <section id="kijk-zelf-mee" className="bg-surface scroll-mt-24" style={{ padding: '96px 24px' }}>
+      {/* ── GEHEUGEN ── */}
+      <section className="bg-surface" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end mb-12">
             <div>
-              <p className={eyebrowLight}>{dashLight}{c.register_eyebrow}</p>
-              <h2 className="font-display font-extrabold text-primary m-0" style={{ ...h2Style, maxWidth: '18ch' }}>
-                {c.register_h2}
+              <p className={eyebrowLight}>{dashLight}{c.geheugen_eyebrow}</p>
+              <h2 className="font-display font-extrabold text-primary m-0" style={{ ...h2Style, maxWidth: '20ch' }}>
+                {c.geheugen_h2}
               </h2>
               <p className="text-muted leading-[1.65]" style={{ fontSize: '17px', maxWidth: '56ch', marginTop: '20px' }}>
-                {c.register_body}
+                {c.geheugen_body}
               </p>
-              <div className="flex flex-wrap items-center gap-x-7 gap-y-3" style={{ marginTop: '26px' }}>
-                <Link href="/contact" className="font-display font-semibold text-accent inline-flex items-center gap-2" style={{ fontSize: '15px' }}>
-                  {c.register_cta} &rarr;
-                </Link>
-                <a
-                  href={REGISTER_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-display font-semibold text-muted hover:text-primary transition-colors inline-flex items-center gap-2"
-                  style={{ fontSize: '15px' }}
-                >
-                  {c.register_zelf} &#8599;
-                </a>
-              </div>
             </div>
-            <div className="rounded-[14px] bg-white border border-border p-8 lg:p-10">
-              <p className="font-display font-extrabold text-primary m-0" style={{ fontSize: 'clamp(52px, 6vw, 80px)', letterSpacing: '-0.04em', lineHeight: '1' }}>
-                {c.register_stat}
-              </p>
-              <p className="text-muted mt-4 mb-0 leading-[1.5]" style={{ fontSize: '15px', maxWidth: '34ch' }}>{c.register_stat_label}</p>
-            </div>
+            <figure className="m-0 rounded-[14px] bg-white border border-border p-8">
+              <blockquote className="m-0 font-display font-semibold text-primary leading-[1.4]" style={{ fontSize: '18px', letterSpacing: '-0.01em' }}>
+                &ldquo;{c.geheugen_quote.q}&rdquo;
+              </blockquote>
+              <figcaption className="text-muted text-[13px] mt-4">{c.geheugen_quote.a}</figcaption>
+            </figure>
           </div>
-          <p className="text-muted text-[12.5px] mt-8 mb-0">{c.register_bron}</p>
+          <MarketingMemoryDemo locale={locale} />
         </div>
       </section>
 
@@ -395,8 +395,46 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
+      {/* ── KIJK HET ZELF NA ── */}
+      <section id="kijk-zelf-mee" className="bg-surface scroll-mt-24" style={{ padding: '96px 24px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
+            <div>
+              <p className={eyebrowLight}>{dashLight}{c.register_eyebrow}</p>
+              <h2 className="font-display font-extrabold text-primary m-0" style={{ ...h2Style, maxWidth: '18ch' }}>
+                {c.register_h2}
+              </h2>
+              <p className="text-muted leading-[1.65]" style={{ fontSize: '17px', maxWidth: '56ch', marginTop: '20px' }}>
+                {c.register_body}
+              </p>
+              <div className="flex flex-wrap items-center gap-x-7 gap-y-3" style={{ marginTop: '26px' }}>
+                <Link href="/contact" className="font-display font-semibold text-accent inline-flex items-center gap-2" style={{ fontSize: '15px' }}>
+                  {c.register_cta} &rarr;
+                </Link>
+                <a
+                  href={REGISTER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-display font-semibold text-muted hover:text-primary transition-colors inline-flex items-center gap-2"
+                  style={{ fontSize: '15px' }}
+                >
+                  {c.register_zelf} &#8599;
+                </a>
+              </div>
+            </div>
+            <div className="rounded-[14px] bg-white border border-border p-8 lg:p-10">
+              <p className="font-display font-extrabold text-primary m-0" style={{ fontSize: 'clamp(52px, 6vw, 80px)', letterSpacing: '-0.04em', lineHeight: '1' }}>
+                {c.register_stat}
+              </p>
+              <p className="text-muted mt-4 mb-0 leading-[1.5]" style={{ fontSize: '15px', maxWidth: '34ch' }}>{c.register_stat_label}</p>
+            </div>
+          </div>
+          <p className="text-muted text-[12.5px] mt-8 mb-0">{c.register_bron}</p>
+        </div>
+      </section>
+
       {/* ── WIE HET WERK DOET ── */}
-      <section className="bg-surface" style={{ padding: '96px 24px' }}>
+      <section className="bg-white" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
           <p className={eyebrowLight}>{dashLight}{c.werk_eyebrow}</p>
           <h2 className="font-display font-extrabold text-primary m-0" style={{ ...h2Style, maxWidth: '20ch' }}>
