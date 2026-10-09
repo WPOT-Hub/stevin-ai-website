@@ -5,8 +5,8 @@
  * Vier stappen (zoeken, seizoen, oude campagne, naar briefing), auto-playend
  * zodra de sectie in beeld is; klikken op een stap springt ernaartoe.
  *
- * Zelfde demo-data als de Desk-demo-omgeving (LUMIOS, gefictionaliseerd):
- * niets hierin is klantdata. Canon: wit frame, navy minimap, een blauw accent;
+ * Verzonnen demo-data, niets hierin is klantdata. Sinds W-524 (9 okt 2026)
+ * een installatiebedrijf; de Desk-demo-omgeving (LUMIOS) is nog het circus. Canon: wit frame, navy minimap, een blauw accent;
  * alleen in de brein-graaf mogen nodes typekleuren hebben (uitzondering 9 jul).
  */
 
@@ -26,57 +26,62 @@ const COPY: Record<Locale, {
   briefClose: string
   demoTag: string
 }> = {
+  // W-524, 9 okt 2026: de site gebruikt hier een verzonnen installatiebedrijf
+  // in plaats van het circus uit de Desk-demo (LUMIOS). Koen: het circus past
+  // niet bij de servicebedrijven die we zoeken. Zelfde inzicht (hitte is een
+  // koopmoment, de korte advertentie werkte), geen jargon. De Desk-demo gaat
+  // later mee; tot die tijd lopen site en Desk hier uiteen.
   nl: {
     word: 'zomer',
     steps: [
       { t: 'Typ waar je mee zit', d: 'Bijvoorbeeld: zomer. Je ziet meteen wat er over die periode bekend is.' },
       { t: 'Zelfde moment, andere jaren', d: 'Wat werkte vorig jaar, en wat de concurrent deed.' },
       { t: 'Open een oude campagne', d: 'Waarom hij liep, wat hij kostte, wat hij opleverde.' },
-      { t: 'Stuur door naar je briefing', d: 'Een klik, en je volgende campagne begint niet bij nul.' },
+      { t: 'Neem het mee naar volgend jaar', d: 'Een klik, en je volgende campagne begint niet bij nul.' },
     ],
-    chips: ['Zomerseizoen 5', 'Koningsdag 44', 'Meivakantie 44', 'Pasen 33', 'Black Friday 6'],
+    chips: ['Zomer 2026', 'Zomer 2025', 'Hittegolf juli 2026', 'Voorjaar 2026', 'Winter 2025'],
     camps: [
-      { t: 'Zomer maintain Q3', m: '2025, google ads en meta', d: 'Doorlopen in de vakantieweken; urgentie alleen op warme doelgroepen.' },
-      { t: 'The Wonder Machine', m: '2026, meta', d: 'Acrobatiek, muziek en pure verwondering. Deze zomer onder de big top.', hl: true },
-      { t: 'Ontsnap aan de hitte', m: '2026, meta', d: 'Warm buiten, magisch binnen. Stap de gekoelde big top in.' },
-      { t: 'NOVA Nights', m: 'concurrent, 2025', d: 'Twee zomeradvertenties van de concurrent gezien in 2025.' },
+      { t: 'Airco zomer 2026', m: '2026, Google Ads', d: 'Liep de hele zomer door. Na elke warme dag kwamen er de dag erna twee keer zoveel aanvragen.' },
+      { t: 'Hittegolf juli', m: '2026, Google Ads en Meta', d: 'Korte advertentie: "Te warm binnen? Morgen een airco." Binnen een dag vol ingepland.', hl: true },
+      { t: 'Warmtepomp voorjaar', m: '2026, Meta', d: 'Liep in april. Veel kliks, weinig aanvragen. De vraag kwam pas in het najaar.' },
+      { t: 'Installateur uit de regio', m: 'concurrent, 2026', d: 'Twee zomeradvertenties van de concurrent gezien, vanaf half juni.' },
     ],
     detail: {
-      t: 'Ontsnap aan de hitte', m: 'meta, 16 apr t/m 16 mei',
-      whyLabel: 'Waarom:', why: 'warm buiten, magisch binnen. Stap de gekoelde big top in.',
-      learnedLabel: 'Geleerd:', learned: 'hitte is hier een koopmoment, geen dip. De 30 seconden-versie werkte niet, de korte wel.',
-      res: 'Beste zomerweek ooit gemeten', btn: 'Stuur naar briefing',
+      t: 'Hittegolf juli', m: 'Google Ads en Meta, 8 t/m 26 juli 2026',
+      whyLabel: 'Waarom:', why: 'als het warm wordt, wil iedereen tegelijk een airco.',
+      learnedLabel: 'Geleerd:', learned: 'hitte is hier een koopmoment, geen dip. De korte advertentie werkte, de lange niet. En zet hem klaar voordat het warm wordt.',
+      res: 'Drukste week van het jaar', btn: 'Neem mee naar zomer 2027',
     },
-    toast: 'Toegevoegd aan briefing "Zomer 2027"',
-    briefLabel: 'Briefing, concept.',
-    brief: 'Bouw voort op "Ontsnap aan de hitte": zelfde inzicht (hitte = koopmoment), nieuwe creatie, korte versies eerst. Concurrent NOVA Nights start rond week 25.',
+    toast: 'Toegevoegd aan het plan voor zomer 2027',
+    briefLabel: 'Plan, concept.',
+    brief: 'Begin met "Hittegolf juli": zelfde inzicht (hitte is een koopmoment), korte advertentie, klaar voor de eerste warme week. De concurrent begint rond half juni.',
     briefClose: 'Zo begint je volgende campagne niet bij nul, wie er ook aan werkt.',
     demoTag: 'demo-omgeving',
   },
   en: {
     word: 'summer',
     steps: [
-      { t: 'Type what is on your mind', d: 'For example: summer. The brain lights up what it knows.' },
+      { t: 'Type what is on your mind', d: 'For example: summer. You see right away what is known about that period.' },
       { t: 'Same moment, other years', d: 'What worked last year, and what the competitor did.' },
       { t: 'Open an old campaign', d: 'Why it ran, what it cost, what it delivered.' },
-      { t: 'Send it to your briefing', d: 'One click, and your next campaign does not start from zero.' },
+      { t: 'Take it to next year', d: 'One click, and your next campaign does not start from zero.' },
     ],
-    chips: ['Summer season 5', 'Kings Day 44', 'May holidays 44', 'Easter 33', 'Black Friday 6'],
+    chips: ['Summer 2026', 'Summer 2025', 'Heatwave July 2026', 'Spring 2026', 'Winter 2025'],
     camps: [
-      { t: 'Summer maintain Q3', m: '2025, google ads and meta', d: 'Kept running through the holiday weeks; urgency only on warm audiences.' },
-      { t: 'The Wonder Machine', m: '2026, meta', d: 'Acrobatics, music and pure wonder. This summer under the big top.', hl: true },
-      { t: 'Escape the heat', m: '2026, meta', d: 'Hot outside, magical inside. Step into the cooled big top.' },
-      { t: 'NOVA Nights', m: 'competitor, 2025', d: 'Two summer ads from the competitor spotted in 2025.' },
+      { t: 'Air conditioning summer 2026', m: '2026, Google Ads', d: 'Ran all summer. After every hot day, twice as many enquiries came in the next day.' },
+      { t: 'Heatwave July', m: '2026, Google Ads and Meta', d: 'Short ad: "Too hot inside? Air conditioning tomorrow." Fully booked within a day.', hl: true },
+      { t: 'Heat pump spring', m: '2026, Meta', d: 'Ran in April. Lots of clicks, few enquiries. Demand only came in the autumn.' },
+      { t: 'Local installer', m: 'competitor, 2026', d: 'Two summer ads from the competitor spotted, from mid June.' },
     ],
     detail: {
-      t: 'Escape the heat', m: 'meta, apr 16 to may 16',
-      whyLabel: 'Why:', why: 'hot outside, magical inside. Step into the cooled big top.',
-      learnedLabel: 'Learned:', learned: 'heat is a buying moment here, not a dip. The 30 second cut did not work, the short one did.',
-      res: 'Best summer week ever measured', btn: 'Send to briefing',
+      t: 'Heatwave July', m: 'Google Ads and Meta, 8 to 26 July 2026',
+      whyLabel: 'Why:', why: 'when it gets hot, everyone wants air conditioning at the same time.',
+      learnedLabel: 'Learned:', learned: 'heat is a buying moment here, not a dip. The short ad worked, the long one did not. And have it ready before it gets hot.',
+      res: 'Busiest week of the year', btn: 'Take to summer 2027',
     },
-    toast: 'Added to briefing "Summer 2027"',
-    briefLabel: 'Briefing, draft.',
-    brief: 'Build on "Escape the heat": same insight (heat = buying moment), new creative, short cuts first. Competitor NOVA Nights starts around week 25.',
+    toast: 'Added to the plan for summer 2027',
+    briefLabel: 'Plan, draft.',
+    brief: 'Start from "Heatwave July": same insight (heat is a buying moment), short ad, ready for the first hot week. The competitor starts around mid June.',
     briefClose: 'That is how your next campaign never starts from zero, whoever works on it.',
     demoTag: 'demo environment',
   },
@@ -149,7 +154,9 @@ export default function MarketingMemoryDemo({ locale }: { locale: string }) {
   return (
     <div ref={rootRef} className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-11 items-center">
       {/* Stappen */}
-      <div className="pl-6 max-w-[430px]">
+      {/* Op mobiel weg (W-524): het venster speelt vanzelf af, en de stappen
+          kostten een heel scherm scrollen. */}
+      <div className="hidden lg:block pl-6 max-w-[430px]">
         {c.steps.map((s, i) => (
           <button
             key={s.t}
