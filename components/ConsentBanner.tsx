@@ -65,12 +65,12 @@ export default function ConsentBanner() {
     // Alleen als die eerste paginaweergave aantoonbaar al anoniem weg is
     // (Codex, PR 125): kiest iemand binnen de wachttijd van wait_for_update,
     // dan stuurt de Google-tag hem zelf met toestemming en zou dit dubbel tellen.
+    // Via de dataLayer en niet via gtag('event'): de Google-tag in GTM negeert
+    // een losse gtag-aanroep (gemeten op stevin.ai, 9 okt). GTM-tag "GA4 Event -
+    // page_view na akkoord" (webcontainer v11) stuurt hem als page_view.
     if (hasAnalyticsConsent(choice) && paginaweergaveAlAnoniemVerstuurd()) {
-      window.gtag?.('event', 'page_view', {
-        page_location: window.location.href,
-        page_title: document.title,
-        page_referrer: document.referrer,
-      })
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({ event: 'pageview_na_akkoord' })
     }
     setVisible(false)
     setShowPreferences(false)
