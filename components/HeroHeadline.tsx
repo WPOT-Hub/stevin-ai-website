@@ -30,7 +30,10 @@ type Variant = 'a' | 'c' | 'd' | 'e' | 'f'
 // partij die iets voor je doet. F gaat over wat het oplevert, zoals de
 // subregel en de slotvraag op de homepage. In de test van 13 sep tot 8 okt
 // zagen 12 bezoekers A en 13 bezoekers E, met 5 en 6 kliks: geen uitslag.
-const ROTATION: Variant[] = ['a', 'f']
+// Later dezelfde avond (Koen, 20:23): A gaat er ook uit. Alleen F, geen test;
+// bij dit verkeer beslist een test pas over maanden. Het event kop_variant
+// blijft vuren, zodat een volgende test dezelfde meting houdt.
+const ROTATION: Variant[] = ['f']
 const STORAGE_KEY = 'stevin_kop_variant'
 
 const H1: Record<'nl' | 'en', Record<Variant, { eyebrow: string; line: string; accent: string }>> = {
