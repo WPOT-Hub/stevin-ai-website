@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import StevinBrainVisual from '@/components/StevinBrainVisual'
 import KlantLogos from '@/components/KlantLogos'
+import QuoteRotator from '@/components/QuoteRotator'
 import MarketingMemoryDemo from '@/components/MarketingMemoryDemo'
 import BrainEdgeStrip from '@/components/BrainEdgeStrip'
 import HeroHeadline from '@/components/HeroHeadline'
@@ -29,13 +30,25 @@ const COPY = {
 
     herken_eyebrow: 'Herken je dit?',
     herken_h2: 'Wat we elke week horen.',
-    // Letterlijk uit gesprekken, sector wel en naam nooit. Het rapportje-citaat
-    // stond eerder als "Twee ondernemers" in de lopende tekst; de functie
-    // "Eigenaar, handelsbedrijf" hoorde bij een ander citaat.
+    // Letterlijk uit gesprekken, sector wel en naam nooit. Vier vakken, de rest
+    // wisselt om de zoveel seconden (components/QuoteRotator.tsx). De eerste vier
+    // staan in de server-render. Koen 9 okt 20:35: citaten over het geheugen en
+    // het bureau dat geen toegang geeft horen vooraan. Opname-id's en tijden
+    // staan in de git-geschiedenis van dit bestand (versie 9b6d8a5).
     quotes: [
       { q: 'Op een maand tijd had ik voor bijna 1100 euro leads en ik heb er geen een.', a: 'Installatiebedrijf' },
-      { q: 'Daar krijgen we inderdaad een rapportje van achteraf.', a: 'Ondernemer' },
       { q: 'Dat zijn allemaal aparte systemen met bepaalde toegangen. Maar er zit nergens een link of een centraal geheugen.', a: 'Marketingverantwoordelijke, internationaal merk' },
+      // e8ae7baf, 1 sep 2026, 00:01:30: de klant leest de mail van het bureau voor.
+      { q: 'Wij zitten namelijk met meerdere klanten gekoppeld aan onze accounts.', a: 'Het bureau van een dak- en gevelbedrijf, per mail, op de vraag om toegang' },
+      { q: 'Nee, dat is allemaal op gevoel. En in het hoofd.', a: 'Eigenaar, handelsbedrijf' },
+      { q: 'Daar krijgen we inderdaad een rapportje van achteraf.', a: 'Ondernemer' },
+      { q: 'Ze hebben alles. En ze reageren nergens op. Facturen sturen, dat kunnen ze wel.', a: 'Dak- en gevelbedrijf, over hun bureau' },
+      { q: 'Ik heb spijtig genoeg al wat cowboys versleten.', a: "Importeur van sauna's, over eerdere bureaus" },
+      { q: 'Dat mijn website daar zat, dat wisten wij pas achteraf. Daar hebben wij nooit aan gedacht.', a: 'Stoffeerderij, over het domein op naam van het bureau' },
+      { q: 'Daar betalen wij maandelijks een godsvermogen voor en er gebeurt niks.', a: 'Dak- en gevelbedrijf' },
+      { q: 'Ik betaal veel meer voor veel minder.', a: 'Webwinkel in witgoed' },
+      { q: 'Ik sta bovenaan in Google, dus dat is allemaal goed. Maar het levert me eigenlijk nog geen klanten op.', a: 'Uitvaartondernemer' },
+      { q: 'De laatste jaren zijn we zwaar achteruitgeboerd. Maar dat heb ik niet gezien, omdat ik daar ook nooit naar kijk.', a: 'Stoffeerderij' },
     ],
     herken_bron: 'Uit echte gesprekken, zonder naam.',
 
@@ -45,7 +58,7 @@ const COPY = {
     geheugen_eyebrow: 'Alles blijft terug te vinden',
     geheugen_h2: 'Wie er ook vertrekt, je begint niet opnieuw.',
     geheugen_quote: { q: 'Heb het gevoel dat we altijd weer opnieuw beginnen.', a: 'Concertzaal, over hun bureau' },
-    geheugen_body: 'Alles wat we vastleggen, staat in een dossier op jouw naam: wat er geprobeerd is, wat het kostte en wat het opleverde. Wie na ons komt, je eigen mensen of een ander bureau, leest zich in. Typ "zomer" en kijk wat er tevoorschijn komt.',
+    geheugen_body: 'Alles wat we vastleggen, staat in een dossier dat van jou is: wat er geprobeerd is, wat het kostte en wat het opleverde. Wie na ons komt, je eigen mensen of een ander bureau, leest zich in. Typ "zomer" en kijk wat er tevoorschijn komt.',
 
     register_eyebrow: 'Kijk het zelf na',
     register_h2: 'Wie betaalt jouw advertenties?',
@@ -57,7 +70,7 @@ const COPY = {
     register_bron: 'Bron: eigen onderzoek op het openbare advertentieregister van Google, stand 12 september 2026.',
 
     doen_eyebrow: 'Wat we doen',
-    doen_h2: 'Stevin zorgt dat je marketing blijft werken. Op jouw naam.',
+    doen_h2: 'Stevin zorgt dat je marketing blijft werken.',
     doen: [
       { n: '01', t: 'We leggen vast wat er hoort te gebeuren.', d: 'Hoeveel telefoontjes een gewone week oplevert. Welke aanvragen iets opleveren en welke niet. Welke campagne klanten moet brengen en welke vooral je naam bekend maakt, en hoe je ziet of dat lukt. Dat staat in geen enkel systeem. Daarom doen we het in de eerste weken samen met jou.' },
       { n: '02', t: 'We blijven kijken of het nog klopt.', d: 'We kijken of er binnenkomt wat er binnen hoort te komen, ook als alles op groen staat.' },
@@ -104,15 +117,24 @@ const COPY = {
     herken_h2: 'What we hear every week.',
     quotes: [
       { q: 'In one month I bought nearly 1,100 euro of leads. I got not a single job out of it.', a: 'Installation company' },
-      { q: 'We do get a little report afterwards, yes.', a: 'Business owner' },
       { q: 'Those are all separate systems with their own logins. But there is no link anywhere, no central memory.', a: 'Marketing lead, international brand' },
+      { q: 'We have several clients linked to our accounts, you see.', a: 'The agency of a roofing and facade company, by email, when asked for access' },
+      { q: 'No, that is all on gut feeling. And in my head.', a: 'Owner, trading company' },
+      { q: 'We do get a little report afterwards, yes.', a: 'Business owner' },
+      { q: 'They have everything. And they respond to nothing. Sending invoices, that they can do.', a: 'Roofing and facade company, about their agency' },
+      { q: 'Unfortunately I have already been through a few cowboys.', a: 'Sauna importer, about previous agencies' },
+      { q: "That my website was sitting there, we only found out afterwards. We never gave it a thought.", a: "Upholstery business, about the domain in the agency's name" },
+      { q: 'We pay a fortune for that every month and nothing happens.', a: 'Roofing and facade company' },
+      { q: 'I pay a lot more for a lot less.', a: 'Online shop for household appliances' },
+      { q: 'I am at the top in Google, so that is all fine. But it does not actually bring me any customers yet.', a: 'Funeral director' },
+      { q: 'The last few years we have gone badly downhill. But I never saw it, because I never look at that.', a: 'Upholstery business' },
     ],
     herken_bron: 'From real conversations, names removed.',
 
     geheugen_eyebrow: 'Everything stays findable',
     geheugen_h2: 'Whoever leaves, you do not start over.',
     geheugen_quote: { q: 'I feel like we always start over again.', a: 'Concert hall, about their agency' },
-    geheugen_body: 'Everything we record goes into a file in your name: what was tried, what it cost and what it brought in. Whoever comes after us, your own people or another agency, can read up on it. Type "summer" and see what comes up.',
+    geheugen_body: 'Everything we record goes into a file that is yours: what was tried, what it cost and what it brought in. Whoever comes after us, your own people or another agency, can read up on it. Type "summer" and see what comes up.',
 
     register_eyebrow: 'Check it yourself',
     register_h2: 'Who pays for your ads?',
@@ -124,7 +146,7 @@ const COPY = {
     register_bron: 'Source: our own research on Google\'s public ad register, as of 12 September 2026.',
 
     doen_eyebrow: 'What we do',
-    doen_h2: 'Stevin keeps your marketing working. In your name.',
+    doen_h2: 'Stevin keeps your marketing working.',
     doen: [
       { n: '01', t: 'We write down what should happen.', d: 'How many calls a normal week brings in. Which enquiries are worth something and which are not. Which campaign should bring in customers and which mainly makes your name known, and how you can tell whether that works. No system holds this. So we do it with you in the first weeks.' },
       { n: '02', t: 'We keep checking that it still holds.', d: 'We check whether what should come in actually comes in, even when everything shows green.' },
@@ -270,16 +292,7 @@ export default async function HomePage({ params }: Props) {
           <h2 className="font-display font-extrabold text-primary m-0 mb-14" style={{ ...h2Style, maxWidth: '20ch' }}>
             {c.herken_h2}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border rounded-[14px] overflow-hidden">
-            {c.quotes.map((item) => (
-              <figure key={item.q} className="bg-white p-8 lg:p-9 m-0 flex flex-col justify-between gap-6 min-h-[200px]">
-                <blockquote className="m-0 font-display font-semibold text-primary leading-[1.4]" style={{ fontSize: '17px', letterSpacing: '-0.01em' }}>
-                  &ldquo;{item.q}&rdquo;
-                </blockquote>
-                <figcaption className="text-muted text-[13px]">{item.a}</figcaption>
-              </figure>
-            ))}
-          </div>
+          <QuoteRotator quotes={c.quotes} />
           <p className="text-muted text-[13px] mt-6 mb-0">{c.herken_bron}</p>
         </div>
       </section>
@@ -320,7 +333,7 @@ export default async function HomePage({ params }: Props) {
             {c.doen.map((item, i) => (
               <article
                 key={item.n}
-                className={`grid grid-cols-[56px_1fr] gap-6 py-9 ${i > 0 ? 'border-t border-white/10' : ''}`}
+                className={`grid grid-cols-1 sm:grid-cols-[56px_1fr] gap-3 sm:gap-6 py-9 ${i > 0 ? 'border-t border-white/10' : ''}`}
               >
                 <span className="font-display font-extrabold text-accent leading-none pt-1" style={{ fontSize: '26px', letterSpacing: '-0.02em' }}>
                   {item.n}
@@ -329,7 +342,7 @@ export default async function HomePage({ params }: Props) {
                   <h3 className="font-display font-bold text-white mb-2.5" style={{ fontSize: '21px', letterSpacing: '-0.02em', lineHeight: '1.2' }}>
                     {item.t}
                   </h3>
-                  <p className="text-white/60 leading-[1.6] m-0" style={{ fontSize: '16px', maxWidth: '60ch' }}>
+                  <p className="text-white/70 leading-[1.6] m-0" style={{ fontSize: '16px', maxWidth: '60ch' }}>
                     {item.d}
                   </p>
                 </div>
