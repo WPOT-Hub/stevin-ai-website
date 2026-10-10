@@ -244,6 +244,7 @@ export default function Header() {
             <Link
               href={ctaHref}
               data-cta={isVoorstel ? 'header_kennismaking' : undefined}
+              data-open-kennismaking={isVoorstel ? '' : undefined}
               className={`hidden flex-none items-center whitespace-nowrap rounded-lg bg-accent px-4 py-2 text-[13px] font-semibold text-white shadow-sm shadow-accent/20 transition-all duration-200 hover:bg-accent-dark ${isVoorstel ? "lg:inline-flex" : "2xl:inline-flex"}`}
             >
               {ctaLabel}
@@ -353,6 +354,7 @@ export default function Header() {
               <Link
                 href={ctaHref}
                 data-cta={isVoorstel ? 'menu_kennismaking' : undefined}
+                data-open-kennismaking={isVoorstel ? '' : undefined}
                 className="block w-full text-center px-5 py-3.5 text-sm font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors"
                 onClick={() => setMobileOpen(false)}
               >

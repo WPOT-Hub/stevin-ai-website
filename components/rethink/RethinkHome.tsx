@@ -6,6 +6,7 @@ import VraagDemo from './VraagDemo'
 import HeroUniversum from './HeroUniversum'
 import StevinUniversum from './StevinUniversum'
 import ScrollStappen from './ScrollStappen'
+import KennismakingVenster from './KennismakingVenster'
 import type { BronId } from './netwerk'
 
 /**
@@ -435,6 +436,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             <Link
               href="/kennismaking"
               data-cta="kennismaking"
+              data-open-kennismaking=""
               className="inline-flex items-center rounded-lg bg-accent-light px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-colors hover:bg-[#7BB8FF]"
             >
               Plan een kennismaking
@@ -452,6 +454,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
           </p>
         </div>
       </section>
+      <KennismakingVenster />
     </>
   )
 }
