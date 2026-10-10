@@ -523,3 +523,40 @@ section {
   .dca-stap { animation: none; }
   .dca-caret { animation: none; }
 }
+
+/* ---------------------------------------------------------------
+   W-535: nodevisual en vraagdemo van de nieuwe homepage.
+   Alleen opacity, kleur en stroke-dashoffset: geen layout-werk,
+   dus goed voor INP en CLS. Onder reduced motion staat alles stil.
+   --------------------------------------------------------------- */
+.sn-overgang { transition: fill .45s ease, stroke .45s ease, opacity .45s ease, stroke-opacity .45s ease, background-color .3s ease, color .3s ease, border-color .3s ease; }
+.sn-stroom { stroke-dasharray: 6 94; stroke-dashoffset: 100; opacity: 0; animation: sn-stroom 9s linear infinite; }
+.sn-stroom-snel { animation-duration: 1.6s; }
+@keyframes sn-stroom {
+  0% { stroke-dashoffset: 100; opacity: 0; }
+  8% { opacity: .9; }
+  18% { stroke-dashoffset: 0; opacity: 0; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+.sn-stroom-snel { animation-name: sn-stroom-snel; }
+@keyframes sn-stroom-snel {
+  0% { stroke-dashoffset: 100; opacity: 0; }
+  15% { opacity: .95; }
+  85% { opacity: .95; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+.sn-halo { opacity: .16; transform-box: fill-box; transform-origin: center; animation: sn-halo 2.4s ease-in-out infinite; }
+@keyframes sn-halo { 0%, 100% { opacity: .1; } 50% { opacity: .24; } }
+.sn-puls { transform-box: fill-box; transform-origin: center; animation: sn-puls 1.8s ease-in-out infinite; }
+@keyframes sn-puls { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+.sn-puls-zacht { animation: sn-halo 2.4s ease-in-out infinite; }
+.sn-node:focus-visible .sn-stip { stroke: #3D8EFF; stroke-width: 3; }
+.sn-node:hover .sn-stip { stroke: #3D8EFF; }
+.vd-in { animation: vd-in .4s ease-out both; }
+@keyframes vd-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .sn-stroom, .sn-stroom-snel { animation: none; opacity: 0; }
+  .sn-halo, .sn-puls, .sn-puls-zacht { animation: none; }
+  .sn-overgang { transition: none; }
+  .vd-in { animation: none; }
+}
