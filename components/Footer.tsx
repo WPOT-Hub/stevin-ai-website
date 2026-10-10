@@ -90,10 +90,11 @@ export default function Footer() {
   // blijven bestaan en staan in de sitemap; ze worden alleen niet meer vanuit
   // elke pagina gelinkt. Snoeien gaat per URL volgens de SEO-inventaris.
   if (pathname.startsWith('/voorstel-')) {
+    const kort = pathname.startsWith('/voorstel-c')
     const hoofd = [
       { label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` },
-      { label: 'In de praktijk', href: `${pathname}#in-de-praktijk` },
-      { label: 'Samenwerken', href: `${pathname}#samenwerken` },
+      ...(kort ? [] : [{ label: 'In de praktijk', href: `${pathname}#in-de-praktijk` }]),
+      { label: 'Samenwerken', href: `${pathname}#${kort ? 'kennismaken' : 'samenwerken'}` },
       { label: 'Plan een kennismaking', href: '/kennismaking' },
       { label: 'Contact', href: '/contact' },
     ]
