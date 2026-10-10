@@ -254,7 +254,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
                 Niet alleen je cijfers. Ook wat je wilt bereiken.
               </h2>
               <p className="mt-5 text-[18px] leading-[1.6] text-white/75">
-                Stevin legt je cijfers naast wat je wilt bereiken. Dat leggen we samen vast, en het blijft van jou.
+                Een cijfer zegt pas iets als je weet wat de bedoeling was.
               </p>
             </div>
           </div>
@@ -268,7 +268,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
               Niet alleen je cijfers. Ook wat je wilt bereiken.
             </h2>
             <p className={`${tekst} mt-5`}>
-              Stevin legt je cijfers naast wat je wilt bereiken. Dat leggen we samen vast, en het blijft van jou.
+              Een cijfer zegt pas iets als je weet wat de bedoeling was.
             </p>
           </div>
           <StevinNetwerk
@@ -346,7 +346,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
 
       {/* ── 7. VAN ADVIES NAAR UITVOERING ── */}
       {/* Scrollverhaal: bij elk stuk scrollen komt er een stap bij (Koen, 11 okt). */}
-      <section className="bg-white px-6" aria-label="Uitvoering">
+      <section className="bg-primary px-6 text-white" aria-label="Uitvoering">
         <div className="mx-auto max-w-[1200px]">
           <ScrollStappen
             eyebrow="Uitvoering"
