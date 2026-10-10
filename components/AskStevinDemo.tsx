@@ -3,43 +3,29 @@
 import { useEffect, useRef, useState } from 'react'
 import { Bot, User, Copy, Share2, RefreshCw, FileDown } from 'lucide-react'
 
-// W-078, 13 sep 2026. Koen: "het zou ook wel mooi zijn om een app.stevin.ai
-// voorbeeld te hebben, en dan vooral de ask stevin". Dit is de klantportal
-// (app.stevin.ai/dashboard/chat, "Stevin Assistant") als gescripte demo, met
-// de drie voorbeeldvragen die daar echt staan. De antwoorden staan vast en
-// komen uit de echte cijfers van LUMIOS, onze demo-omgeving (campaign_metrics
-// via client_campaigns en metrics_keywords, opgehaald 13 sep 2026). Geen
-// endpoint, geen AI-call. Dat staat er ook bij: in deze demo kun je alleen
-// deze drie vragen stellen, met de bron en de datum eronder.
+// W-078, 13 sep 2026, en W-524, 10 okt 2026. De klantportal
+// (app.stevin.ai/dashboard/chat, "Stevin Assistant") als gescripte demo. Geen
+// endpoint, geen AI-call: drie vaste vragen met vaste antwoorden, en dat staat
+// er ook bij.
 //
-// 22:12, Koen: "de chat is helemaal veranderd". Nagekeken op de live portal
-// (Van Gestel, ingelogd): de kop heet Stevin Assistant, elk antwoord begint
-// met "Hier is de actuele stand van zaken:", telt in resultaten en kosten per
-// resultaat, vergelijkt met de periode ervoor, heeft een staafdiagram
-// "Resultaten per maand, zoals het platform ze telt" en een rij knoppen
-// (Kopieren, Delen, Opnieuw genereren, Exporteren als PDF). En hij zegt wat
-// hij niet doet. Dat is nu ook de vorm van deze demo. De knoppen zijn hier
-// beeld, geen functie.
+// Sinds 10 okt (Koen, keuze 1): hetzelfde verzonnen installatiebedrijf als de
+// geheugendemo op de homepage (components/MarketingMemoryDemo.tsx), in plaats
+// van het circus van LUMIOS. Telefoontjes en aanvragen in plaats van
+// "resultaten", geen vaste datum (die stond een maand na dato nog op "t/m 12
+// september"), en de grafiek loopt mee met de echte maand: de waarden komen uit
+// een vast seizoensprofiel, zodat de zomerpiek altijd in de zomer valt.
 //
-// Bereikkanalen (Koen 12:53, "dv360 is vaak branding"): DV360 staat in de
-// data op DISPLAY en VIDEO_VIEW, YouTube op VIDEO_VIEW, Pinterest op
-// AWARENESS. Die niet op kosten per resultaat afrekenen. Merkzoekvraag
-// (Koen 13:01) uit metrics_keywords, is_branded, weken van 25 mei tot 15
-// juni: 10.892, 10.687, 10.876, 10.703 per week, vlak, terwijl DV360 in de
-// week van 8 juni van 144.038 naar 180.319 vertoningen ging. Merkcijfers
-// lopen in de demo tot 23 juni en dat staat erbij, zoals de echte chat
-// dataleeftijd meldt. Het waarom staat niet in de data, dus zegt de demo dat.
+// Getallen onderling nagerekend: 30 dagen 95 (64 + 31) voor 2.840 euro is 29,90
+// per stuk, ervoor 85 voor 2.703 is 31,80; 90 dagen 5.310 + 2.270 + 840 = 8.420
+// euro voor 196 + 61 + 58 = 315. De knoppen onder een antwoord zijn beeld.
 
 type Locale = 'nl' | 'en'
 type Block = { kind: 'p' | 'h' | 'ul'; text: string | string[] }
 type QA = { q: string; a: Block[]; chart?: boolean }
 
-const MAANDEN: Record<Locale, string[]> = {
-  nl: ['mrt 26', 'apr 26', 'mei 26', 'jun 26', 'jul 26', 'aug 26', 'sep 26'],
-  en: ['Mar 26', 'Apr 26', 'May 26', 'Jun 26', 'Jul 26', 'Aug 26', 'Sep 26'],
-}
-// Resultaten per maand, LUMIOS, campaign_metrics t/m 13 sep 2026.
-const RESULTATEN = [961, 1420, 1589, 1591, 1373, 1363, 579]
+// Telefoontjes en aanvragen per kalendermaand (jan tot en met dec), verzonnen,
+// met de zomerpiek van een installateur die airco's plaatst.
+const SEIZOEN = [52, 48, 61, 74, 88, 121, 138, 112, 86, 79, 66, 58]
 
 const COPY: Record<Locale, {
   eyebrow: string
@@ -62,55 +48,47 @@ const COPY: Record<Locale, {
     h2: 'Vraag het gewoon. Op je eigen cijfers.',
     sub: 'Dit is de klantportal. Geen rapport dat je moet lezen, maar een vraag die je stelt. Het antwoord komt uit jouw campagnes, met de meting erbij, en het verandert niets. Klik een vraag.',
     title: 'Stevin Assistant',
-    aiNotice: 'Je praat hier met AI, niet met je consultant. Stel je vraag over je campagnes in gewone taal.',
-    greeting: 'Hallo Lumios!',
-    intro: 'Ik ben de AI-assistent van Stevin. Ik help je de resultaten te begrijpen.',
+    aiNotice: 'Een AI-assistent, niet je consultant.',
+    greeting: 'Hallo!',
+    intro: 'Stel je vraag over je telefoontjes, aanvragen en campagnes in gewone taal.',
     demoOnly: 'In deze demo kun je alleen deze drie vragen stellen.',
     reset: 'Opnieuw',
-    bron: 'Uit de klantportal op app.stevin.ai. LUMIOS is onze demo-omgeving, geen klantdata. De antwoorden staan vast op de cijfers van 13 september; de knoppen onder een antwoord zijn hier beeld, geen functie.',
-    chartTitle: 'Resultaten per maand, zoals het platform ze telt',
-    chartNote: 'September loopt nog, gemeten t/m 12 september.',
+    bron: 'Voorbeeld van de klantportal op app.stevin.ai, met verzonnen cijfers van een installatiebedrijf. De knoppen onder een antwoord zijn hier beeld, geen functie.',
+    chartTitle: 'Telefoontjes en aanvragen per maand',
+    chartNote: 'De lopende maand is nog niet compleet.',
     actions: ['Kopieren', 'Delen', 'Opnieuw genereren', 'Exporteren als PDF'],
     qa: [
       {
         q: 'Hoe gaat het met mijn campagnes?',
-        chart: true,
         a: [
-          { kind: 'p', text: 'Hier is de actuele stand van zaken:' },
-          { kind: 'h', text: 'Afgelopen 30 dagen (t/m 12 september)' },
-          { kind: 'ul', text: ['€15.269 uitgegeven', '1.375 resultaten behaald', '€11,10 kosten per resultaat', '4,6 miljoen keer getoond, 88.350 clicks (1,9% klikpercentage)'] },
-          { kind: 'h', text: 'Vergelijking met vorige 30 dagen' },
-          { kind: 'ul', text: ['Resultaten: +3% (van 1.336 naar 1.375)', 'Kosten per resultaat: +1% (van €10,94 naar €11,10)', 'Spend: +4% (van €14.622 naar €15.269)'] },
-          { kind: 'h', text: 'Afgelopen 7 dagen' },
-          { kind: 'ul', text: ['€3.051 uitgegeven', '273 resultaten behaald', '€11,18 kosten per resultaat'] },
-          { kind: 'p', text: 'De laatste week ligt een kwart lager dan de week ervoor, in spend en in resultaten, dus de kosten per resultaat bleven gelijk. Drie van de zeven kanalen zijn er om gezien te worden, niet om te verkopen: DV360, YouTube en Pinterest. Die beoordeel je niet op resultaten, maar op hoeveel vaker mensen daarna je merk opzoeken.' },
+          { kind: 'p', text: 'Hier is de stand van zaken:' },
+          { kind: 'h', text: 'Afgelopen 30 dagen' },
+          { kind: 'ul', text: ['€2.840 uitgegeven', '64 telefoontjes en 31 aanvragen via de site, samen 95', '€29,90 per telefoontje of aanvraag'] },
+          { kind: 'h', text: 'Vergeleken met de 30 dagen ervoor' },
+          { kind: 'ul', text: ['Telefoontjes en aanvragen: +12% (van 85 naar 95)', 'Kosten per stuk: -6% (van €31,80 naar €29,90)', 'Uitgegeven: +5% (van €2.703 naar €2.840)'] },
+          { kind: 'p', text: 'Dit zijn telefoontjes en aanvragen zoals wij ze meten. Hoeveel er een opdracht werden, zie je in je eigen opvolging.' },
         ],
       },
       {
-        q: 'Wat zijn mijn resultaten deze maand?',
+        q: 'Wanneer krijg ik de meeste telefoontjes?',
         chart: true,
         a: [
-          { kind: 'p', text: 'Hier is de actuele stand van zaken:' },
-          { kind: 'h', text: 'September 2026 (t/m 12 september)' },
-          { kind: 'ul', text: ['579 resultaten behaald', '€6.663 uitgegeven', '€11,51 kosten per resultaat'] },
-          { kind: 'h', text: 'Vergelijking met dezelfde dagen in augustus' },
-          { kind: 'ul', text: ['Resultaten: +10% (van 525 naar 579)', 'Spend: +13% (van €5.904 naar €6.663)', 'Kosten per resultaat: +2% (van €11,25 naar €11,51)'] },
-          { kind: 'h', text: 'Per maand' },
-          { kind: 'ul', text: ['Juli 2026: 1.373 resultaten, €11,33 per resultaat', 'Augustus 2026: 1.363 resultaten, €10,95 per resultaat', 'September 2026: 579 resultaten, €11,51 per resultaat (loopt nog)'] },
-          { kind: 'p', text: 'September loopt nog tot eind deze maand. Dit zijn resultaten zoals Meta en Google ze tellen, geen telling van verkochte tickets.' },
+          { kind: 'p', text: 'Hier is de stand van zaken:' },
+          { kind: 'h', text: 'Per seizoen' },
+          { kind: 'ul', text: ['Zomer: de drukste maanden, met juli als piek, rond de 140 per maand', 'Voorjaar en najaar: tussen de 60 en de 90 per maand', 'Winter: rond de 50 per maand'] },
+          { kind: 'p', text: 'De piek komt met de warmte. Na een warme dag komen er de dag erna ongeveer twee keer zoveel telefoontjes binnen, vooral voor airco. Wie zijn advertenties pas aanzet als het al warm is, mist de eerste dagen.' },
         ],
       },
       {
         q: 'Waar gaat het meeste budget naartoe?',
         a: [
-          { kind: 'p', text: 'Hier is de actuele stand van zaken:' },
-          { kind: 'h', text: 'Kanaalverdeling laatste 90 dagen, €62.347 in totaal' },
-          { kind: 'ul', text: ['DV360: €14.620, bereik (display en video), 2,3 miljoen keer getoond', 'Google Ads: €13.524, 2.202 resultaten, €6,14 per resultaat', 'TikTok: €12.445, 1.690 resultaten, €7,36 per resultaat', 'Meta: €11.842, 1.324 resultaten, €8,94 per resultaat', 'YouTube: €5.199, bereik (video), 2,1 miljoen keer getoond', 'Snapchat: €3.399, 235 resultaten, €14,46 per resultaat', 'Pinterest: €1.318, bereik (awareness), 506 duizend keer getoond'] },
-          { kind: 'p', text: 'Het meeste geld gaat naar DV360. Dat is een bereikkanaal: je koopt vertoningen, geen klikken. Of dat werkt zie je aan je merkzoekvraag: hoe vaak mensen "Lumos" intypen. Die stond op zo\'n 10.800 vertoningen per week op je eigen naam en bleef vlak, ook in de week dat DV360 van 144 duizend naar 180 duizend vertoningen ging. Waar dat aan ligt kan ik niet uit de cijfers halen. Het kan zijn dat die vertoningen niet landen in Den Haag en Brussel, waar je publiek zoekt. Let op: de merkzoekcijfers zijn voor het laatst gemeten op 23 juni.' },
-          { kind: 'p', text: 'De verkoop komt uit Google Ads, TikTok en Meta, voor 6 tot 9 euro per resultaat.' },
+          { kind: 'p', text: 'Hier is de stand van zaken:' },
+          { kind: 'h', text: 'Verdeling laatste 90 dagen, €8.420 in totaal' },
+          { kind: 'ul', text: ['Google Ads, zoeken: €5.310, 196 telefoontjes en aanvragen, €27 per stuk', 'Meta: €2.270, 61 telefoontjes en aanvragen, €37 per stuk', 'Google Ads, op je eigen naam: €840, 58 telefoontjes en aanvragen, €14 per stuk'] },
+          { kind: 'p', text: 'Het meeste geld gaat naar zoeken, en daar komen ook de meeste telefoontjes en aanvragen vandaan. De campagne op je eigen naam is goedkoop per stuk, maar veel van die mensen zochten jou toch al. Meta levert minder op per euro: de advertenties over warmtepompen kregen veel kliks en weinig aanvragen.' },
           { kind: 'h', text: 'Wat ik niet doe' },
           { kind: 'ul', text: ['Strategie bepalen of budget verschuiven', 'Campagnes aanpassen of pauzeren', 'Voorspellen wat een wijziging oplevert'] },
-          { kind: 'p', text: 'Voor die zaken kan je specialist een voorstel doen. Zal ik vragen of hij naar het bereik kijkt?' },
+          { kind: 'p', text: 'Daarvoor kan je specialist een voorstel doen. Zal ik vragen of die naar Meta kijkt?' },
         ],
       },
     ],
@@ -120,55 +98,47 @@ const COPY: Record<Locale, {
     h2: 'Just ask. On your own numbers.',
     sub: 'This is the client portal. Not a report you have to read, but a question you ask. The answer comes from your campaigns, measurement included, and it changes nothing. Click a question.',
     title: 'Stevin Assistant',
-    aiNotice: 'You are talking to AI here, not to your consultant. Ask about your campaigns in plain language.',
-    greeting: 'Hello Lumios!',
-    intro: 'I am the AI assistant of Stevin. I help you understand the results.',
+    aiNotice: 'An AI assistant, not your consultant.',
+    greeting: 'Hello!',
+    intro: 'Ask about your calls, enquiries and campaigns in plain language.',
     demoOnly: 'In this demo you can only ask these three questions.',
-    reset: 'Start over',
-    bron: 'From the client portal at app.stevin.ai. LUMIOS is our demo environment, not client data. The answers are fixed on the numbers of 13 September; the buttons under an answer are for show here, not function.',
-    chartTitle: 'Results per month, as the platform counts them',
-    chartNote: 'September is still running, measured through 12 September.',
+    reset: 'Reset',
+    bron: 'Example of the client portal on app.stevin.ai, with made-up figures from an installation company. The buttons under an answer are illustration here, not function.',
+    chartTitle: 'Calls and enquiries per month',
+    chartNote: 'The current month is not complete yet.',
     actions: ['Copy', 'Share', 'Regenerate', 'Export as PDF'],
     qa: [
       {
         q: 'How are my campaigns doing?',
-        chart: true,
         a: [
-          { kind: 'p', text: 'Here is the current state of play:' },
-          { kind: 'h', text: 'Last 30 days (through 12 September)' },
-          { kind: 'ul', text: ['€15,269 spent', '1,375 results achieved', '€11.10 cost per result', '4.6 million impressions, 88,350 clicks (1.9% click-through)'] },
-          { kind: 'h', text: 'Compared with the previous 30 days' },
-          { kind: 'ul', text: ['Results: +3% (from 1,336 to 1,375)', 'Cost per result: +1% (from €10.94 to €11.10)', 'Spend: +4% (from €14,622 to €15,269)'] },
-          { kind: 'h', text: 'Last 7 days' },
-          { kind: 'ul', text: ['€3,051 spent', '273 results achieved', '€11.18 cost per result'] },
-          { kind: 'p', text: 'The last week is a quarter below the week before, in spend and in results, so cost per result stayed level. Three of the seven channels are there to be seen, not to sell: DV360, YouTube and Pinterest. You do not judge those on results, but on how much more often people look up your brand afterwards.' },
+          { kind: 'p', text: 'Here is where things stand:' },
+          { kind: 'h', text: 'Last 30 days' },
+          { kind: 'ul', text: ['€2,840 spent', '64 calls and 31 enquiries through the site, 95 in total', '€29.90 per call or enquiry'] },
+          { kind: 'h', text: 'Compared with the 30 days before' },
+          { kind: 'ul', text: ['Calls and enquiries: +12% (from 85 to 95)', 'Cost each: -6% (from €31.80 to €29.90)', 'Spent: +5% (from €2,703 to €2,840)'] },
+          { kind: 'p', text: 'These are calls and enquiries as we measure them. How many became a job, you see in your own follow-up.' },
         ],
       },
       {
-        q: 'What are my results this month?',
+        q: 'When do I get the most calls?',
         chart: true,
         a: [
-          { kind: 'p', text: 'Here is the current state of play:' },
-          { kind: 'h', text: 'September 2026 (through 12 September)' },
-          { kind: 'ul', text: ['579 results achieved', '€6,663 spent', '€11.51 cost per result'] },
-          { kind: 'h', text: 'Compared with the same days in August' },
-          { kind: 'ul', text: ['Results: +10% (from 525 to 579)', 'Spend: +13% (from €5,904 to €6,663)', 'Cost per result: +2% (from €11.25 to €11.51)'] },
-          { kind: 'h', text: 'Per month' },
-          { kind: 'ul', text: ['July 2026: 1,373 results, €11.33 per result', 'August 2026: 1,363 results, €10.95 per result', 'September 2026: 579 results, €11.51 per result (still running)'] },
-          { kind: 'p', text: 'September runs until the end of the month. These are results as Meta and Google count them, not a count of tickets sold.' },
+          { kind: 'p', text: 'Here is where things stand:' },
+          { kind: 'h', text: 'By season' },
+          { kind: 'ul', text: ['Summer: the busiest months, peaking in July at around 140 a month', 'Spring and autumn: between 60 and 90 a month', 'Winter: around 50 a month'] },
+          { kind: 'p', text: 'The peak comes with the heat. After a hot day, about twice as many calls come in the next day, mostly for air conditioning. If you only switch your ads on once it is already hot, you miss the first days.' },
         ],
       },
       {
         q: 'Where does most of the budget go?',
         a: [
-          { kind: 'p', text: 'Here is the current state of play:' },
-          { kind: 'h', text: 'Channel split, last 90 days, €62,347 in total' },
-          { kind: 'ul', text: ['DV360: €14,620, reach (display and video), 2.3 million impressions', 'Google Ads: €13,524, 2,202 results, €6.14 per result', 'TikTok: €12,445, 1,690 results, €7.36 per result', 'Meta: €11,842, 1,324 results, €8.94 per result', 'YouTube: €5,199, reach (video), 2.1 million impressions', 'Snapchat: €3,399, 235 results, €14.46 per result', 'Pinterest: €1,318, reach (awareness), 506 thousand impressions'] },
-          { kind: 'p', text: 'Most of the money goes to DV360. That is a reach channel: you buy impressions, not clicks. Whether it works you see in your brand search: how often people type in "Lumos". That stood at about 10,800 impressions a week on your own name and stayed flat, also in the week DV360 went from 144 thousand to 180 thousand impressions. Why, I cannot tell from the numbers. It may be that those impressions do not land in The Hague and Brussels, where your audience searches. Note: the brand search figures were last measured on 23 June.' },
-          { kind: 'p', text: 'Sales come from Google Ads, TikTok and Meta, at €6 to €9 per result.' },
+          { kind: 'p', text: 'Here is where things stand:' },
+          { kind: 'h', text: 'Split over the last 90 days, €8,420 in total' },
+          { kind: 'ul', text: ['Google Ads, search: €5,310, 196 calls and enquiries, €27 each', 'Meta: €2,270, 61 calls and enquiries, €37 each', 'Google Ads, on your own name: €840, 58 calls and enquiries, €14 each'] },
+          { kind: 'p', text: 'Most of the money goes to search, and that is also where most calls and enquiries come from. The campaign on your own name is cheap per enquiry, but many of those people were looking for you anyway. Meta delivers less per euro: the heat pump ads got lots of clicks and few enquiries.' },
           { kind: 'h', text: 'What I do not do' },
           { kind: 'ul', text: ['Set strategy or move budget', 'Change or pause campaigns', 'Predict what a change will deliver'] },
-          { kind: 'p', text: 'For those, your specialist can make a proposal. Shall I ask them to look at the reach channels?' },
+          { kind: 'p', text: 'For that, your specialist can make a proposal. Shall I ask them to look at Meta?' },
         ],
       },
     ],
@@ -194,24 +164,35 @@ function Blocks({ blocks }: { blocks: Block[] }) {
 }
 
 function Chart({ locale, title, note }: { locale: Locale; title: string; note: string }) {
-  const max = Math.max(...RESULTATEN)
+  // Laatste zeven maanden tot en met de lopende maand. Pas na een klik in beeld,
+  // dus alleen in de browser: geen verschil tussen server en browser.
+  const nu = new Date()
+  const fmt = new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : 'nl-NL', { month: 'short' })
+  const maanden = Array.from({ length: 7 }, (_, k) => new Date(nu.getFullYear(), nu.getMonth() - 6 + k, 1))
+  const dagenInMaand = new Date(nu.getFullYear(), nu.getMonth() + 1, 0).getDate()
+  const waarden = maanden.map((d, k) => {
+    const v = SEIZOEN[d.getMonth()]
+    return k === 6 ? Math.max(1, Math.round((v * nu.getDate()) / dagenInMaand)) : v
+  })
+  const labels = maanden.map((d) => fmt.format(d).replace('.', ''))
+  const max = Math.max(...waarden)
   const w = 520, h = 150, pad = 8, gap = 10
-  const bw = (w - pad * 2 - gap * (RESULTATEN.length - 1)) / RESULTATEN.length
+  const bw = (w - pad * 2 - gap * (waarden.length - 1)) / waarden.length
   return (
     <div className="mt-4 rounded-[10px] border border-[#d6dde8] bg-white px-4 pt-3 pb-2">
       <p className="m-0 text-[12px] font-semibold text-[#1f2933]">{title}</p>
       <p className="m-0 mb-1 text-[11px] text-[#8A94A3]">{note}</p>
       <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-auto" role="img" aria-label={title}>
-        {RESULTATEN.map((v, i) => {
+        {waarden.map((v, i) => {
           const x = pad + i * (bw + gap)
           const bh = Math.max(4, (v / max) * (h - 44))
           const y = h - 24 - bh
-          const laatste = i === RESULTATEN.length - 1
+          const laatste = i === waarden.length - 1
           return (
             <g key={i}>
               <rect x={x} y={y} width={bw} height={bh} rx="3" fill={laatste ? '#9cc4ff' : '#3c8eff'} />
               <text x={x + bw / 2} y={y - 6} textAnchor="middle" fontSize="11" fill="#1f2933" fontWeight="600">{v.toLocaleString(locale === 'en' ? 'en-GB' : 'nl-NL')}</text>
-              <text x={x + bw / 2} y={h - 8} textAnchor="middle" fontSize="11" fill="#6B7280">{MAANDEN[locale][i]}</text>
+              <text x={x + bw / 2} y={h - 8} textAnchor="middle" fontSize="11" fill="#6B7280">{labels[i]}</text>
             </g>
           )
         })}
