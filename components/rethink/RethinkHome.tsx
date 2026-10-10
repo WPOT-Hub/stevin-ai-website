@@ -34,16 +34,21 @@ const h2Stijl = { fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em'
 const eyebrow = 'text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4'
 const tekst = 'text-[18px] leading-[1.6] text-[#2A3A54]'
 
+// Echte kleurlogo's (Koen, 10 okt 23:32). Herkomst en controle:
+// docs/MERKLOGOS_W535.md.
 const LOGOS = [
-  { src: '/logos/tools/google-ads.svg', naam: 'Google Ads' },
-  { src: '/logos/tools/google-analytics.svg', naam: 'Google Analytics 4' },
-  { src: '/logos/tools/google-search-console.svg', naam: 'Google Search Console' },
-  { src: '/logos/tools/meta.svg', naam: 'Meta' },
-  { src: '/logos/tools/instagram.svg', naam: 'Instagram' },
-  { src: '/logos/tools/youtube.svg', naam: 'YouTube' },
-  { src: '/logos/tools/tiktok.svg', naam: 'TikTok' },
-  { src: '/logos/tools/linkedin.svg', naam: 'LinkedIn' },
-  { src: '/logos/tools/shopify.svg', naam: 'Shopify' },
+  { src: '/logos/merken/google-ads.svg', naam: 'Google Ads' },
+  { src: '/logos/merken/google-analytics.svg', naam: 'Google Analytics 4' },
+  { src: '/logos/merken/google-search-console.svg', naam: 'Search Console' },
+  { src: '/logos/merken/meta.svg', naam: 'Meta' },
+  { src: '/logos/merken/facebook.svg', naam: 'Facebook' },
+  { src: '/logos/merken/instagram.svg', naam: 'Instagram' },
+  { src: '/logos/merken/youtube.svg', naam: 'YouTube' },
+  { src: '/logos/merken/tiktok.svg', naam: 'TikTok' },
+  { src: '/logos/merken/linkedin.svg', naam: 'LinkedIn' },
+  { src: '/logos/merken/shopify.svg', naam: 'Shopify' },
+  { src: '/logos/merken/wordpress.svg', naam: 'WordPress' },
+  { src: '/logos/merken/hubspot.svg', naam: 'HubSpot' },
 ]
 
 // Systemen zonder vast merk: een Lucide-icoon in dezelfde tegel (CLAUDE.md:
@@ -178,13 +183,13 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
               bouwen we. In de kennismaking hoor je precies welke van de drie het bij jou is.
             </p>
           </div>
-          <ul className="m-0 mt-12 grid list-none grid-cols-3 gap-3 p-0 sm:grid-cols-4 lg:grid-cols-6">
+          <ul className="m-0 mt-12 grid list-none grid-cols-3 gap-3 p-0 sm:grid-cols-5 lg:grid-cols-5">
             {LOGOS.map((l) => (
               <li
                 key={l.naam}
                 className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-white px-2 py-5 text-center shadow-[0_1px_2px_rgba(10,22,40,0.04)] transition-shadow hover:shadow-[0_8px_24px_rgba(10,22,40,0.08)]"
               >
-                <img src={l.src} alt="" width={30} height={30} className="h-[30px] w-[30px] object-contain" loading="lazy" />
+                <img src={l.src} alt="" width={36} height={36} className="h-9 w-9 object-contain" loading="lazy" />
                 <span className="text-[12.5px] font-medium leading-tight text-[#2A3A54]">{l.naam}</span>
               </li>
             ))}
@@ -193,8 +198,8 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
                 key={naam}
                 className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-[#C8D2E0] bg-surface px-2 py-5 text-center"
               >
-                <span className="flex h-[30px] w-[30px] items-center justify-center rounded-lg bg-white text-accent">
-                  <Icoon size={18} strokeWidth={2} aria-hidden="true" />
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-accent">
+                  <Icoon size={20} strokeWidth={2} aria-hidden="true" />
                 </span>
                 <span className="text-[12.5px] font-medium leading-tight text-muted">{naam}</span>
               </li>
