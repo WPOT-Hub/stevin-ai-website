@@ -4,9 +4,9 @@ import { FileText, Phone, UsersRound } from 'lucide-react'
 import StevinNetwerk from './StevinNetwerk'
 import VraagDemo from './VraagDemo'
 import HeroUniversum from './HeroUniversum'
-import StevinUniversum from './StevinUniversum'
 import ScrollStappen from './ScrollStappen'
 import KennismakingVenster from './KennismakingVenster'
+import NodeWatermerk from './NodeWatermerk'
 import type { BronId } from './netwerk'
 
 /**
@@ -166,8 +166,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
       <KlantLogos locale="nl" />
 
       {/* ── 2. WAT WE VERBINDEN ── */}
-      <section className="border-y border-border bg-surface" style={{ padding: '64px 24px' }} aria-labelledby="koppelingen">
-        <div className="mx-auto max-w-[1200px]">
+      <section className="relative overflow-hidden border-y border-border bg-surface" style={{ padding: '64px 24px' }} aria-labelledby="koppelingen">
+        <NodeWatermerk seed={11} thema="licht" />
+        <div className="relative mx-auto max-w-[1200px]">
           <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <h2 id="koppelingen" className={h2} style={{ ...h2Stijl, fontSize: 'clamp(26px, 2.6vw, 36px)' }}>
               We verbinden wat je al gebruikt.
@@ -181,7 +182,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             namen de tegels een heel scherm in (Koen, 11 okt 01:16). De tweede
             kopie per rij is alleen voor de naadloze lus en is verborgen voor
             schermlezers. Onder reduced motion staat alles stil en loopt het af. */}
-        <div className="lb-band mt-10 space-y-3" aria-label="Systemen die we koppelen">
+        <div className="lb-band relative mt-10 space-y-3" aria-label="Systemen die we koppelen">
           {[LOGOS.slice(0, 7), [...LOGOS.slice(7)]].map((rij, ri) => (
             <div key={ri} className="lb-rij overflow-hidden">
               <div className={`lb-spoor flex w-max gap-3 ${ri === 1 ? 'lb-terug' : ''}`}>
@@ -217,8 +218,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
       </section>
 
       {/* ── 3. VRAAG HET STEVIN ── */}
-      <section id="hoe-het-werkt" className="scroll-mt-24 bg-white" style={{ padding: '112px 24px 104px' }}>
-        <div className="mx-auto max-w-[1200px]">
+      <section id="hoe-het-werkt" className="relative overflow-hidden scroll-mt-24 bg-white" style={{ padding: '112px 24px 104px' }}>
+        <NodeWatermerk seed={23} thema="licht" />
+        <div className="relative mx-auto max-w-[1200px]">
           <p className={eyebrow}>Stel een vraag</p>
           <h2 className={h2} style={{ ...h2Stijl, maxWidth: '18ch' }}>
             Vraag het Stevin.
@@ -226,7 +228,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
           <p className={`${tekst} mb-12 mt-5 max-w-[640px]`}>
             Probeer het: kies een vraag.
           </p>
-          <VraagDemo drieD={richting === 'c'} />
+          <VraagDemo zonderNetwerk={richting === 'c'} />
           <p className="mt-8 max-w-[720px] text-[14px] leading-relaxed text-muted">
             Voorbeeld met verzonnen cijfers.
           </p>
@@ -235,30 +237,24 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
 
       {/* ── 4. HET BREIN ── */}
       {richting === 'c' ? (
-        // Richting C: donker, met het 3D-brein ingezoomd op wat Stevin onthoudt.
-        // Tik op een node voor het kaartje (Koen, 11 okt 01:11: "dit kan ook beter").
+        // Richting C: donker, tekst met de nodes stilletjes als watermerk. Het
+        // 3D-brein staat alleen in de hero (Koen, 11 okt 01:35: "niet een beetje
+        // too much?").
         <section className="relative overflow-hidden bg-primary text-white" style={{ padding: '112px 24px' }} aria-labelledby="brein">
           <div
             className="pointer-events-none absolute inset-0"
             aria-hidden="true"
             style={{ background: 'radial-gradient(50% 55% at 70% 50%, rgba(61,142,255,0.16) 0%, rgba(10,22,40,0) 70%)' }}
           />
-          <div className="relative mx-auto grid grid-cols-1 max-w-[1200px] items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <NodeWatermerk seed={41} thema="donker" aantal={3} />
+          <div className="relative mx-auto max-w-[760px] text-center">
             <div>
               <p className="mb-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent-light">Het brein achter Stevin</p>
-              <h2 id="brein" className="m-0 font-display font-extrabold text-white" style={{ ...h2Stijl, maxWidth: '16ch' }}>
+              <h2 id="brein" className="mx-auto m-0 font-display font-extrabold text-white" style={{ ...h2Stijl, maxWidth: '16ch' }}>
                 Niet alleen je cijfers. Ook wat je wilt bereiken.
               </h2>
               <p className="mt-5 text-[18px] leading-[1.6] text-white/75">
                 Stevin legt je cijfers naast wat je wilt bereiken. Dat leggen we samen vast, en het blijft van jou.
-              </p>
-            </div>
-            <div>
-              <div className="relative -mx-6 h-[400px] sm:mx-0 lg:h-[600px]">
-                <StevinUniversum focus="brein" middenX={0.5} middenY={0.5} schaal={2.1} />
-              </div>
-              <p className="m-0 mt-2 text-center text-[13.5px] text-white/50">
-                Voorbeeld van een installatiebedrijf. Tik op een punt om te zien wat Stevin onthoudt.
               </p>
             </div>
           </div>
@@ -286,8 +282,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
       )}
 
       {/* ── 5. SIGNALEN ── */}
-      <section className="bg-white" style={{ padding: '112px 24px' }} aria-labelledby="signalen">
-        <div className="mx-auto max-w-[1200px]">
+      <section className="relative overflow-hidden bg-white" style={{ padding: '112px 24px' }} aria-labelledby="signalen">
+        <NodeWatermerk seed={37} thema="licht" />
+        <div className="relative mx-auto max-w-[1200px]">
           <p className={eyebrow}>Signalen</p>
           <h2 id="signalen" className={h2} style={{ ...h2Stijl, maxWidth: '18ch' }}>
             Niet alleen terugkijken.
@@ -315,8 +312,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
       </section>
 
       {/* ── 6. DE ADVISOR ── */}
-      <section className="bg-primary text-white" style={{ padding: '112px 24px' }} aria-labelledby="advisor">
-        <div className="mx-auto grid grid-cols-1 max-w-[1200px] gap-14 lg:grid-cols-[1fr_1fr]">
+      <section className="relative overflow-hidden bg-primary text-white" style={{ padding: '112px 24px' }} aria-labelledby="advisor">
+        <NodeWatermerk seed={53} thema="donker" />
+        <div className="relative mx-auto grid grid-cols-1 max-w-[1200px] gap-14 lg:grid-cols-[1fr_1fr]">
           <div>
             <p className="mb-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent-light">De Advisor</p>
             <h2 id="advisor" className="m-0 font-display font-extrabold text-white" style={{ ...h2Stijl, maxWidth: '16ch' }}>
@@ -376,8 +374,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
       </section>
 
       {/* ── 8. IN DE PRAKTIJK ── */}
-      <section id="in-de-praktijk" className="scroll-mt-24 bg-surface" style={{ padding: '112px 24px' }}>
-        <div className="mx-auto max-w-[1200px]">
+      <section id="in-de-praktijk" className="relative overflow-hidden scroll-mt-24 bg-surface" style={{ padding: '112px 24px' }}>
+        <NodeWatermerk seed={67} thema="licht" />
+        <div className="relative mx-auto max-w-[1200px]">
           <p className={eyebrow}>In de praktijk</p>
           <h2 className={h2} style={{ ...h2Stijl, maxWidth: '20ch' }}>
             Drie situaties die je misschien herkent.
@@ -400,8 +399,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
       </section>
 
       {/* ── 9. SAMENWERKEN ── */}
-      <section id="samenwerken" className="scroll-mt-24 bg-white" style={{ padding: '112px 24px' }}>
-        <div className="mx-auto grid max-w-[1200px] gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+      <section id="samenwerken" className="relative overflow-hidden scroll-mt-24 bg-white" style={{ padding: '112px 24px' }}>
+        <NodeWatermerk seed={79} thema="licht" />
+        <div className="relative mx-auto grid max-w-[1200px] gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className={eyebrow}>Samenwerken</p>
             <h2 className={h2} style={{ ...h2Stijl, maxWidth: '14ch' }}>
@@ -424,8 +424,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
       </section>
 
       {/* ── 10. KENNISMAKEN ── */}
-      <section id="kennismaken" className="scroll-mt-24 bg-primary text-white" style={{ padding: '112px 24px' }}>
-        <div className="mx-auto max-w-[880px] text-center">
+      <section id="kennismaken" className="relative overflow-hidden scroll-mt-24 bg-primary text-white" style={{ padding: '112px 24px' }}>
+        <NodeWatermerk seed={97} thema="donker" />
+        <div className="relative mx-auto max-w-[880px] text-center">
           <h2 className="m-0 font-display font-extrabold text-white" style={h2Stijl}>
             Benieuwd wat er in jouw marketing beter kan?
           </h2>

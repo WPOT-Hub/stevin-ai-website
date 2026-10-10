@@ -84,7 +84,16 @@ function push(event: string, data: Record<string, unknown>) {
   w.dataLayer.push({ event, ...data, page_path: window.location.pathname })
 }
 
-export default function VraagDemo({ thema = 'licht', drieD = false }: { thema?: 'licht' | 'donker'; drieD?: boolean }) {
+export default function VraagDemo({
+  thema = 'licht',
+  drieD = false,
+  zonderNetwerk = false,
+}: {
+  thema?: 'licht' | 'donker'
+  drieD?: boolean
+  /** Alleen het gesprek, smal en gecentreerd (richting C: het 3D-brein staat al in de hero). */
+  zonderNetwerk?: boolean
+}) {
   const [vraag, setVraag] = useState<Vraag | null>(null)
   const [fase, setFase] = useState<Fase>('rust')
   const [vastgelegd, setVastgelegd] = useState<string[]>([])
@@ -139,7 +148,13 @@ export default function VraagDemo({ thema = 'licht', drieD = false }: { thema?: 
   const donker = thema === 'donker'
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-start">
+    <div
+      className={
+        zonderNetwerk
+          ? 'mx-auto grid max-w-[720px] grid-cols-1'
+          : 'grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-start'
+      }
+    >
       {/* ── Links: het gesprek ── */}
       <div
         className={`rounded-[20px] border p-5 sm:p-7 ${donker ? 'border-white/12 bg-white/5' : 'border-border bg-white shadow-[0_10px_40px_rgba(10,22,40,0.07)]'}`}
@@ -175,7 +190,7 @@ export default function VraagDemo({ thema = 'licht', drieD = false }: { thema?: 
         <div aria-live="polite" className="mt-6 min-h-[120px]">
           {!vraag && (
             <p className={`m-0 text-[15px] ${donker ? 'text-white/60' : 'text-muted'}`}>
-              Kies een vraag. Rechts zie je welke informatie Stevin erbij pakt.
+              {zonderNetwerk ? 'Kies een vraag.' : 'Kies een vraag. Rechts zie je welke informatie Stevin erbij pakt.'}
             </p>
           )}
 
@@ -197,7 +212,7 @@ export default function VraagDemo({ thema = 'licht', drieD = false }: { thema?: 
 
       {/* ── Rechts: het netwerk dat meebeweegt ── */}
       {/* Op mobiel boven het gesprek, anders zie je de bronnen niet oplichten. */}
-      <div className="order-first lg:sticky lg:top-28 lg:order-none">
+      <div className={zonderNetwerk ? 'hidden' : 'order-first lg:sticky lg:top-28 lg:order-none'}>
         {drieD ? (
           // Richting C: hetzelfde 3D-brein als in de hero.
           <div className="relative h-[340px] overflow-hidden rounded-[20px] bg-primary sm:h-[420px] lg:h-[560px]">
