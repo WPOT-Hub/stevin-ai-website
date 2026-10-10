@@ -623,3 +623,5 @@ section {
 @media (max-width: 639px) {
   .veeg { max-width: 100vw; min-width: 0; }
 }
+/* W-535: bezet blok in de afspraakplanner, gearceerd zoals een agenda. */
+.kv-bezet { background: repeating-linear-gradient(135deg, #EEF2F7 0 6px, #F7F9FC 6px 12px); }
