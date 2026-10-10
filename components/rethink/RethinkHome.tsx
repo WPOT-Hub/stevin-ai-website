@@ -112,7 +112,7 @@ const WIE = [
 // "Less is more" (Koen, 11 okt 01:18): per situatie een kop en een zin.
 // De uitgewerkte versies (situatie en aanpak) gaan naar In de praktijk.
 const PRAKTIJK = [
-  { kop: 'Je wilt bekender worden', kort: 'We kijken niet alleen naar klikken, maar ook of meer mensen op je naam gaan zoeken.' },
+  { kop: 'Je investeert in naamsbekendheid', kort: 'We kijken niet alleen naar klikken, maar ook of meer mensen op je naam gaan zoeken.' },
   { kop: 'Veel aanvragen, weinig goede', kort: 'We leggen je campagnes naast wat verkoop met de aanvragen deed.' },
   { kop: 'Aanvragen blijven liggen', kort: 'We richten in hoe elke aanvraag wordt vastgelegd en opgevolgd.' },
 ]
