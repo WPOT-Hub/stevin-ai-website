@@ -94,7 +94,17 @@ export default function ScrollStappen({
             </div>
           </div>
 
-          <ol className="relative m-0 list-none space-y-2.5 p-0">
+          {/* De stappen als nodes op een draad van het signaal naar het doel
+              (Koen, 11 okt 01:38: losse kaarten zagen er te simpel uit). */}
+          <ol className="relative m-0 list-none space-y-7 p-0 pl-16">
+            <span aria-hidden="true" className="absolute bottom-5 left-[19px] top-5 w-0.5 rounded-full bg-border" />
+            <span
+              aria-hidden="true"
+              className="absolute left-[19px] top-5 w-0.5 rounded-full bg-gradient-to-b from-accent to-[#1D63D8] transition-[height] duration-700 ease-out"
+              style={{
+                height: `calc((100% - 40px) * ${Math.max(0, Math.min(1, (aantal - 1) / stappen.length))})`,
+              }}
+            />
             {stappen.map((s, i) => {
               const zichtbaar = i < aantal
               const nieuwste = actief && i === aantal - 1
@@ -102,37 +112,42 @@ export default function ScrollStappen({
               return (
                 <li
                   key={s}
-                  className={`flex items-center gap-3.5 rounded-2xl border bg-white px-4 py-3 transition-all duration-500 ease-out ${
-                    nieuwste
-                      ? 'border-accent/50 shadow-[0_10px_30px_rgba(61,142,255,0.16)]'
-                      : 'border-border shadow-[0_1px_2px_rgba(10,22,40,0.04)]'
-                  }`}
-                  style={{
-                    opacity: zichtbaar ? 1 : 0,
-                    transform: zichtbaar ? 'none' : 'translateY(14px) scale(0.98)',
-                  }}
+                  className="relative flex min-h-10 items-center"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
-                    <Icoon size={19} strokeWidth={2} aria-hidden="true" />
+                  <span
+                    className={`absolute -left-16 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border transition-colors duration-500 ${
+                      zichtbaar ? 'border-accent bg-accent text-white' : 'border-border bg-white text-muted/40'
+                    }`}
+                  >
+                    {nieuwste && <span aria-hidden="true" className="su-puls absolute -inset-1.5 rounded-full bg-accent/20" />}
+                    <Icoon size={18} strokeWidth={2} aria-hidden="true" className="relative" />
                   </span>
-                  <span className="flex-1 text-[16px] font-medium leading-snug text-primary">{s}</span>
-                  <span className="font-mono text-[12px] font-semibold text-muted/70">{String(i + 1).padStart(2, '0')}</span>
+                  <span
+                    className="text-[17px] font-semibold leading-snug text-primary transition-all duration-500 ease-out"
+                    style={{ opacity: zichtbaar ? 1 : 0, transform: zichtbaar ? 'none' : 'translateX(8px)' }}
+                  >
+                    {s}
+                  </span>
                 </li>
               )
             })}
             <li
-              className="flex items-center gap-3.5 rounded-2xl border border-[#17803F]/30 bg-[#17803F]/[0.06] px-4 py-3 transition-all duration-500 ease-out"
-              style={{
-                opacity: doelZichtbaar ? 1 : 0,
-                transform: doelZichtbaar ? 'none' : 'translateY(14px) scale(0.98)',
-              }}
+              className="relative flex min-h-10 items-center"
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#17803F]/12 text-[#17803F]">
-                <Target size={19} strokeWidth={2} aria-hidden="true" />
+              <span
+                className={`absolute -left-16 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border transition-colors duration-500 ${
+                  doelZichtbaar ? 'border-[#17803F] bg-[#17803F] text-white' : 'border-border bg-white text-muted/40'
+                }`}
+              >
+                {doelZichtbaar && actief && <span aria-hidden="true" className="su-puls absolute -inset-1.5 rounded-full bg-[#17803F]/20" />}
+                <Target size={18} strokeWidth={2} aria-hidden="true" className="relative" />
               </span>
-              <span className="flex-1">
+              <span
+                className="transition-all duration-500 ease-out"
+                style={{ opacity: doelZichtbaar ? 1 : 0, transform: doelZichtbaar ? 'none' : 'translateX(8px)' }}
+              >
                 <span className="block text-[11px] font-bold uppercase tracking-[0.12em] text-[#17803F]">Doel</span>
-                <span className="block text-[16px] font-semibold leading-snug text-primary">{doel}</span>
+                <span className="block text-[17px] font-semibold leading-snug text-primary">{doel}</span>
               </span>
             </li>
           </ol>
