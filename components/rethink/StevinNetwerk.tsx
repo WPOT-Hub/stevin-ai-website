@@ -67,7 +67,7 @@ interface Props {
 const KLEUR = {
   licht: {
     lijn: 'rgba(10, 22, 40, 0.13)',
-    lijnActief: '#3D8EFF',
+    lijnActief: '#2F7FE8',
     node: '#FFFFFF',
     nodeRand: '#C8D2E0',
     nodeActief: '#3D8EFF',
@@ -116,6 +116,7 @@ export default function StevinNetwerk({
   useEffect(() => () => timers.current.forEach((t) => window.clearTimeout(t)), [])
   const speelAf = () => {
     if (!demo) return
+    if (demoFase !== null && demoFase !== 'advies') return
     timers.current.forEach((t) => window.clearTimeout(t))
     timers.current = []
     setGekozen(null)
@@ -140,6 +141,9 @@ export default function StevinNetwerk({
   const isActief = (id: BronId) => bezig && actieveBronnen.includes(id)
   const isStil = (id: BronId) => bezig && !actieveBronnen.includes(id)
   const breinAan = fase === 'brein' || fase === 'signaal' || fase === 'advies'
+  // Halo's en pulsen alleen zolang de route loopt. Na het advies staat alles
+  // stil, zodat je kunt lezen zonder dat er iets blijft bewegen.
+  const loopt = fase === 'bronnen' || fase === 'brein' || fase === 'signaal'
   const signaalAan = fase === 'signaal' || fase === 'advies'
   const advisorAan = fase === 'advies'
 
@@ -193,7 +197,7 @@ export default function StevinNetwerk({
                 className="sn-overgang"
               />
               {/* Stroompje: in rust af en toe, bij een vraag over de actieve lijnen */}
-              {(aan || !bezig) && (
+              {((aan && loopt) || !bezig) && (
                 <line
                   x1={p.x}
                   y1={p.y}
@@ -221,7 +225,7 @@ export default function StevinNetwerk({
           strokeWidth={signaalAan ? 1.8 : 1.2}
           className="sn-overgang"
         />
-        {signaalAan && (
+        {signaalAan && loopt && (
           <line
             x1={MIDDEN.x}
             y1={MIDDEN.y}
@@ -260,7 +264,7 @@ export default function StevinNetwerk({
               className="sn-node cursor-pointer outline-none"
             >
               <circle cx={p.x} cy={p.y} r={18} fill="transparent" />
-              {aan && <circle cx={p.x} cy={p.y} r={15} fill={k.nodeActief} className="sn-halo" />}
+              {aan && <circle cx={p.x} cy={p.y} r={15} fill={k.nodeActief} className={loopt ? 'sn-halo' : 'sn-halo-stil'} />}
               <circle
                 cx={p.x}
                 cy={p.y}
@@ -288,7 +292,7 @@ export default function StevinNetwerk({
 
         {/* Signaal */}
         <g className="sn-overgang" opacity={signaalAan ? 1 : 0} aria-hidden={!signaalAan}>
-          <circle cx={SIGNAAL_POS.x} cy={SIGNAAL_POS.y} r={9} fill={k.nodeActief} className={signaalAan ? 'sn-puls' : ''} />
+          <circle cx={SIGNAAL_POS.x} cy={SIGNAAL_POS.y} r={9} fill={k.nodeActief} className={signaalAan && loopt ? 'sn-puls' : ''} />
           <circle cx={SIGNAAL_POS.x} cy={SIGNAAL_POS.y} r={5} fill={k.node} />
           <text
             x={SIGNAAL_POS.x}
@@ -323,6 +327,7 @@ export default function StevinNetwerk({
           r={30}
           node={BREIN}
           aan={breinAan}
+          loopt={loopt}
           kleur={k}
           gekozen={gekozen === 'brein'}
           onKies={() => kies('brein')}
@@ -336,6 +341,7 @@ export default function StevinNetwerk({
           r={24}
           node={ADVISOR}
           aan={advisorAan}
+          loopt={loopt}
           kleur={k}
           gekozen={gekozen === 'advisor'}
           onKies={() => kies('advisor')}
@@ -358,11 +364,11 @@ export default function StevinNetwerk({
                   className={[
                     'sn-overgang flex items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-left text-[13.5px] font-medium',
                     aan
-                      ? 'border-accent bg-accent text-white'
+                      ? 'border-[#1D63D8] bg-[#1D63D8] text-white'
                       : thema === 'donker'
                         ? 'border-white/20 text-white/85'
                         : 'border-border bg-white text-primary',
-                    stil ? 'opacity-45' : '',
+                    stil ? 'opacity-70' : '',
                   ].join(' ')}
                 >
                   <span
@@ -374,6 +380,20 @@ export default function StevinNetwerk({
               </li>
             )
           })}
+          {[BREIN, ADVISOR].map((n) => (
+            <li key={n.id}>
+              <button
+                type="button"
+                onClick={() => kies(n.id)}
+                aria-pressed={gekozen === n.id}
+                className={`sn-overgang flex items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-[13.5px] font-semibold ${
+                  thema === 'donker' ? 'border-white/40 bg-white text-primary' : 'border-primary bg-primary text-white'
+                }`}
+              >
+                {n.label}
+              </button>
+            </li>
+          ))}
         </ul>
         {mobielRoute && (
         <svg viewBox="0 0 320 190" className="mx-auto mt-2 block h-auto w-full max-w-[340px]" aria-hidden="true">
@@ -434,26 +454,28 @@ export default function StevinNetwerk({
             <strong className="font-semibold">{gekozenNode.label}.</strong>{' '}
             <span className={k.kaartSub}>{gekozenNode.uitleg}</span>
           </>
-        ) : demo && demoFase === 'advies' ? (
-          <>
-            <span className={k.kaartSub}>{demo.uitleg}</span>{' '}
-            {demo.verderHref && (
-              <a href={demo.verderHref} className="font-semibold text-accent underline-offset-2 hover:underline">
-                Probeer het zelf
-              </a>
-            )}
-          </>
         ) : demo ? (
           <span className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <button
               type="button"
               onClick={speelAf}
-              disabled={demoFase !== null && demoFase !== 'advies'}
-              className="rounded-full border border-accent bg-accent/10 px-3.5 py-1.5 text-[14px] font-semibold text-accent transition-colors hover:bg-accent hover:text-white"
+              aria-disabled={demoFase !== null && demoFase !== 'advies'}
+              className="rounded-full border border-[#1D63D8] bg-[#1D63D8]/10 px-3.5 py-1.5 text-[14px] font-semibold text-[#1D63D8] transition-colors hover:bg-[#1D63D8] hover:text-white"
             >
               {demo.vraag}
             </button>
-            <span className={k.kaartSub}>Stel de vraag, of tik op een onderdeel.</span>
+            {demoFase === 'advies' ? (
+              <span className={k.kaartSub}>
+                {demo.uitleg}{' '}
+                {demo.verderHref && (
+                  <a href={demo.verderHref} className="font-semibold text-[#1D63D8] underline-offset-2 hover:underline">
+                    Probeer het zelf
+                  </a>
+                )}
+              </span>
+            ) : (
+              <span className={k.kaartSub}>Stel de vraag, of tik op een onderdeel.</span>
+            )}
           </span>
         ) : (
           <span className={k.kaartSub}>Tik op een onderdeel om te zien wat Stevin ermee doet.</span>
@@ -469,6 +491,7 @@ function KernNode({
   r,
   node,
   aan,
+  loopt,
   kleur,
   gekozen,
   onKies,
@@ -479,6 +502,7 @@ function KernNode({
   r: number
   node: NetwerkNode
   aan: boolean
+  loopt: boolean
   kleur: (typeof KLEUR)[NetwerkThema]
   gekozen: boolean
   onKies: () => void
@@ -500,7 +524,7 @@ function KernNode({
       }}
       className="sn-node cursor-pointer outline-none"
     >
-      {aan && <circle cx={x} cy={y} r={r + 14} fill={kleur.nodeActief} className="sn-halo" />}
+      {aan && <circle cx={x} cy={y} r={r + 14} fill={kleur.nodeActief} className={loopt ? 'sn-halo' : 'sn-halo-stil'} />}
       <circle
         cx={x}
         cy={y}

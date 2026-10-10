@@ -89,6 +89,9 @@ export default function VraagDemo({ thema = 'licht' }: { thema?: 'licht' | 'donk
   const [vastgelegd, setVastgelegd] = useState<string[]>([])
   const timers = useRef<number[]>([])
   const afgerondGemeld = useRef(false)
+  const gestartGemeld = useRef(false)
+  const lijstRef = useRef<HTMLUListElement>(null)
+  const adviesRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => () => timers.current.forEach((t) => window.clearTimeout(t)), [])
 
@@ -96,6 +99,12 @@ export default function VraagDemo({ thema = 'licht' }: { thema?: 'licht' | 'donk
     timers.current.forEach((t) => window.clearTimeout(t))
     timers.current = []
     setVraag(v)
+    // demo_start een keer per bezoek aan de demo, demo_vraag bij elke keuze.
+    // Zo staat demo_afgerond tegenover starts, niet tegenover klikken.
+    if (!gestartGemeld.current) {
+      gestartGemeld.current = true
+      push('demo_start', { demo_vraag: v.id })
+    }
     push('demo_vraag', { demo_vraag: v.id })
     const stil = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (stil) {
@@ -116,6 +125,12 @@ export default function VraagDemo({ thema = 'licht' }: { thema?: 'licht' | 'donk
       afgerondGemeld.current = true
       push('demo_afgerond', { demo_vraag: 'resultaten_week' })
     }
+    // De knop verdwijnt; zet de focus op de volgende, of op het advies.
+    window.requestAnimationFrame(() => {
+      const volgende = lijstRef.current?.querySelector<HTMLButtonElement>('button[data-legvast]')
+      if (volgende) volgende.focus()
+      else adviesRef.current?.focus()
+    })
   }
 
   const open = AANVRAGEN.length - vastgelegd.length
@@ -145,7 +160,7 @@ export default function VraagDemo({ thema = 'licht' }: { thema?: 'licht' | 'donk
               className={[
                 'rounded-full border px-4 py-2 text-[14.5px] font-medium transition-colors',
                 vraag?.id === v.id
-                  ? 'border-accent bg-accent text-white'
+                  ? 'border-[#1D63D8] bg-[#1D63D8] text-white'
                   : donker
                     ? 'border-white/20 text-white hover:border-accent-light'
                     : 'border-border bg-surface text-primary hover:border-accent',
@@ -164,15 +179,24 @@ export default function VraagDemo({ thema = 'licht' }: { thema?: 'licht' | 'donk
           )}
 
           {vraag?.id === 'resultaten_week' && (
-            <AntwoordWeek fase={fase} open={open} vastgelegd={vastgelegd} legVast={legVast} donker={donker} />
+            <AntwoordWeek
+              fase={fase}
+              open={open}
+              vastgelegd={vastgelegd}
+              legVast={legVast}
+              donker={donker}
+              lijstRef={lijstRef}
+              adviesRef={adviesRef}
+            />
           )}
           {vraag?.id === 'welke_campagne' && <AntwoordCampagne klaar={klaar} donker={donker} />}
-          {vraag?.id === 'meer_budget' && <AntwoordBudget klaar={klaar} donker={donker} open={open} />}
+          {vraag?.id === 'meer_budget' && <AntwoordBudget klaar={klaar} donker={donker} />}
         </div>
       </div>
 
       {/* ── Rechts: het netwerk dat meebeweegt ── */}
-      <div className="lg:sticky lg:top-28">
+      {/* Op mobiel boven het gesprek, anders zie je de bronnen niet oplichten. */}
+      <div className="order-first lg:sticky lg:top-28 lg:order-none">
         <StevinNetwerk
           fase={vraag ? fase : 'rust'}
           actieveBronnen={vraag?.bronnen ?? []}
@@ -191,14 +215,18 @@ function Kaart({
   children,
   donker,
   accent,
+  kaartRef,
 }: {
   kop: string
   children: React.ReactNode
   donker: boolean
   accent?: boolean
+  kaartRef?: React.Ref<HTMLDivElement>
 }) {
   return (
     <div
+      ref={kaartRef}
+      tabIndex={kaartRef ? -1 : undefined}
       className={[
         'vd-in mt-4 rounded-2xl border p-4',
         accent
@@ -208,7 +236,7 @@ function Kaart({
             : 'border-border bg-surface',
       ].join(' ')}
     >
-      <p className={`m-0 mb-2 text-[12px] font-bold uppercase tracking-[0.1em] ${accent ? 'text-accent' : donker ? 'text-white/55' : 'text-muted'}`}>
+      <p className={`m-0 mb-2 text-[12px] font-bold uppercase tracking-[0.1em] ${accent ? 'text-[#1D63D8]' : donker ? 'text-white/55' : 'text-muted'}`}>
         {kop}
       </p>
       <div className={`text-[15px] leading-[1.55] ${donker ? 'text-white/85' : 'text-primary'}`}>{children}</div>
@@ -222,12 +250,16 @@ function AntwoordWeek({
   vastgelegd,
   legVast,
   donker,
+  lijstRef,
+  adviesRef,
 }: {
   fase: Fase
   open: number
   vastgelegd: string[]
   legVast: (id: string) => void
   donker: boolean
+  lijstRef: React.Ref<HTMLUListElement>
+  adviesRef: React.Ref<HTMLDivElement>
 }) {
   const toonSignaal = fase === 'signaal' || fase === 'advies'
   const toonAdvies = fase === 'advies'
@@ -259,30 +291,32 @@ function AntwoordWeek({
               ook niemand van een gesprek.
             </p>
           )}
-          <ul className="m-0 mt-3 list-none space-y-2 p-0">
+          <ul ref={lijstRef} className="m-0 mt-3 list-none space-y-2 p-0">
             {AANVRAGEN.map((a) => {
               const isVast = vastgelegd.includes(a.id)
               return (
                 <li
                   key={a.id}
-                  className={`flex flex-wrap items-center justify-between gap-2 rounded-xl border px-3 py-2 text-[14px] ${donker ? 'border-white/10' : 'border-border bg-white'}`}
+                  className={`flex items-center justify-between gap-3 rounded-xl border px-3 py-2 text-[14px] ${donker ? 'border-white/10' : 'border-border bg-white'}`}
                 >
-                  <span>
+                  <span className="min-w-0 flex-1">
                     <strong className="font-semibold">{a.wat}</strong>{' '}
                     <span className={donker ? 'text-white/55' : 'text-muted'}>({a.kanaal})</span>
                     <br />
-                    <span className={`text-[13px] ${a.bekend ? (donker ? 'text-white/70' : 'text-[#2A3A54]') : 'text-[#d23f57]'}`}>
+                    <span className={`text-[13px] ${a.bekend ? (donker ? 'text-white/70' : 'text-[#2A3A54]') : 'text-[#B42B43]'}`}>
                       {a.bekend ?? 'Niemand weet of hier contact is geweest'}
                     </span>
                   </span>
                   {a.bekend &&
                     (isVast ? (
-                      <span className="text-[13px] font-semibold text-[#1f9d55]">Vastgelegd</span>
+                      <span className="shrink-0 text-[13px] font-semibold text-[#17803F]">Vastgelegd</span>
                     ) : (
                       <button
                         type="button"
+                        data-legvast
                         onClick={() => legVast(a.id)}
-                        className="rounded-lg border border-accent px-3 py-1.5 text-[13px] font-semibold text-accent hover:bg-accent hover:text-white"
+                        aria-label={`Leg opvolging vast: ${a.wat}`}
+                        className="shrink-0 rounded-lg border border-[#1D63D8] px-3 py-1.5 text-[13px] font-semibold text-[#1D63D8] hover:bg-[#1D63D8] hover:text-white"
                       >
                         Leg vast
                       </button>
@@ -295,7 +329,7 @@ function AntwoordWeek({
       )}
 
       {toonAdvies && (
-        <Kaart kop="Advisor" donker={donker} accent>
+        <Kaart kop="Advisor" donker={donker} accent kaartRef={adviesRef}>
           {open === 6 && (
             <p className="m-0">
               Kijk bij deze zes na of iemand contact heeft gehad, en leg het vast. Wat dan nog openstaat, geef je vandaag aan
@@ -363,13 +397,13 @@ function AntwoordCampagne({ klaar, donker }: { klaar: boolean; donker: boolean }
   )
 }
 
-function AntwoordBudget({ klaar, donker, open }: { klaar: boolean; donker: boolean; open: number }) {
+function AntwoordBudget({ klaar, donker }: { klaar: boolean; donker: boolean }) {
   return (
     <>
       <Kaart kop="Wat Stevin ziet" donker={donker}>
         <p className="m-0">
-          De campagnes leveren genoeg aanvragen op. Maar bij <strong className="tabular-nums">{open}</strong> aanvragen weet
-          niemand wat ermee gebeurd is.
+          Er komen aanvragen binnen. Maar bij zes ervan staat in het CRM niet wat ermee gebeurd is, en bij twee daarvan weet
+          ook niemand in het team het.
         </p>
       </Kaart>
       {klaar && (
