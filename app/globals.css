@@ -560,3 +560,7 @@ section {
   .sn-overgang { transition: none; }
   .vd-in { animation: none; }
 }
+/* W-535: na het advies blijft de halo staan maar beweegt hij niet meer. De
+   stroompjes in rust lopen drie rondes en stoppen dan (WCAG 2.2.2). */
+.sn-halo-stil { opacity: .16; }
+.sn-stroom:not(.sn-stroom-snel) { animation-iteration-count: 3; }

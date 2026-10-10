@@ -22,7 +22,7 @@ const HERO_DEMO = {
   vraag: 'Resultaten deze week?',
   bronnen: ['website', 'telefonie', 'crm', 'offertes', 'verkoop'] as BronId[],
   signaal: '6 aanvragen open',
-  uitleg: 'Stevin pakt website, telefoon, CRM, offertes en verkoop erbij, en ziet dat bij zes aanvragen niet vastligt of iemand heeft gebeld.',
+  uitleg: 'Voorbeeld: met website, telefoon, CRM en offertes gekoppeld ziet Stevin dat bij zes aanvragen niet vastligt of iemand heeft gebeld.',
   verderHref: '#hoe-het-werkt',
 }
 
@@ -63,7 +63,7 @@ const SIGNAALSOORTEN = [
   'Aanvragen worden beter of slechter',
   'De opvolging blijft achter',
   'Een concurrent adverteert meer',
-  'Minder mensen zoeken op je naam',
+  'Er zoeken minder mensen op je naam',
   'Een seizoen of regeling biedt een kans',
 ]
 
@@ -96,7 +96,7 @@ const PRAKTIJK = [
     kop: 'Je wilt bekender worden',
     situatie: 'Je adverteert op zichtbaarheid. Het advertentieplatform meldt bereik en klikken.',
     aanpak:
-      'Wij kijken ook hoe vaak mensen op je naam zoeken, hoeveel mensen direct naar je site komen en wat er met de aanvragen gebeurt. Over maanden, niet over dagen. Geen van die cijfers bewijst los iets; samen geven ze een beeld.',
+      'Wij spreken vooraf af waar je naar kijkt: hoe vaak mensen op je naam zoeken, hoeveel mensen direct naar je site komen en wat er met de aanvragen gebeurt. Over maanden, niet over dagen. Geen van die cijfers bewijst los iets, en we zeggen eerlijk wanneer het beeld nog te dun is.',
   },
   {
     kop: 'Veel aanvragen, weinig goede',
@@ -142,7 +142,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
           </div>
         </section>
       ) : (
-        <section className="relative overflow-hidden bg-white" style={{ padding: '72px 24px 88px' }}>
+        // Ook de lichte hero schuift onder de header door: html is navy, en
+        // tussen de header (65px) en main (72px) bleef anders een donkere streep.
+        <section className="relative -mt-[72px] overflow-hidden bg-white" style={{ padding: 'calc(72px + 72px) 24px 88px' }}>
           <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-[1fr_1fr]">
             <div>
               <HeroTekst />
@@ -236,8 +238,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             Niet alleen terugkijken.
           </h2>
           <p className={`${tekst} mt-5 max-w-[660px]`}>
-            Stevin let op veranderingen die ertoe doen. Bij elk signaal staat wat er gezien is, waarom het belangrijk kan zijn en
-            wat nog uitgezocht moet worden. Welke signalen voor jou tellen, bepalen we samen.
+            We letten met je op veranderingen die ertoe doen. Bij elk signaal staat wat er gezien is, waarom het belangrijk kan
+            zijn en wat nog uitgezocht moet worden. Welke signalen voor jou tellen, bepalen we samen. Een deel kijken we met de
+            hand na, een deel bouwen we voor je in.
           </p>
           <div className="mt-12 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <article className="rounded-[20px] border border-border bg-white p-6 shadow-[0_10px_40px_rgba(10,22,40,0.07)] sm:p-8">
@@ -253,21 +256,22 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-[12px] font-bold uppercase tracking-[0.1em] text-muted">Waarom het telt</dt>
+                  <dt className="text-[12px] font-bold uppercase tracking-[0.1em] text-muted">Waarom dit belangrijk kan zijn</dt>
                   <dd className="m-0 mt-1 text-primary">
-                    Je betaalt voor bezoek dat niets oplevert. Of het formulier doet het niet goed.
+                    Het extra bezoek levert tot nu toe geen extra aanvragen op. Dat kan aan de campagne liggen, aan het formulier of
+                    aan de meting.
                   </dd>
                 </div>
                 <div>
                   <dt className="text-[12px] font-bold uppercase tracking-[0.1em] text-muted">Nog uitzoeken</dt>
                   <dd className="m-0 mt-1 text-primary">
-                    Komt het bezoek uit je eigen regio? Werkt het formulier op een telefoon?
+                    Wat moest de campagne doen? Komt het bezoek uit je eigen regio? Werkt het formulier op een telefoon?
                   </dd>
                 </div>
               </dl>
             </article>
             <div>
-              <p className="m-0 mb-4 font-display text-[16px] font-bold text-primary">Waar Stevin op kan letten</p>
+              <p className="m-0 mb-4 font-display text-[16px] font-bold text-primary">Waar we samen op kunnen letten</p>
               <ul className="m-0 list-none space-y-3 p-0">
                 {SIGNAALSOORTEN.map((s) => (
                   <li key={s} className="flex gap-3 text-[16px] leading-snug text-[#2A3A54]">
@@ -290,8 +294,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
               Soms luidt het advies: nog niet.
             </h2>
             <p className="mt-5 text-[18px] leading-[1.6] text-white/75">
-              De Advisor maakt van wat Stevin ziet een volgende stap. Hij houdt rekening met je doelen, met hoe betrouwbaar de
-              cijfers zijn en met de hele weg van eerste klik tot klant. Meer budget is lang niet altijd het antwoord.
+              De Advisor zegt op basis van de cijfers die er zijn wat je als volgende stap kunt doen. Hij houdt rekening met je
+              doelen en met hoe betrouwbaar die cijfers zijn. Zijn ze oud of onvolledig, dan zegt hij dat eerst. Meer budget is
+              lang niet altijd het antwoord.
             </p>
             <p className="mt-5 text-[18px] leading-[1.6] text-white/75">
               <strong className="font-semibold text-white">De Advisor verandert niets in je advertentieaccounts.</strong> Jij of je
@@ -392,8 +397,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
               Zo begint het.
             </h2>
             <p className={`${tekst} mt-5`}>
-              <strong className="font-semibold text-primary">Je accounts, je data en wat we samen opbouwen staan op jouw naam.</strong>{' '}
-              Stop je, dan neem je alles mee. Het doel is dat je ons steeds minder nodig hebt.
+              <strong className="font-semibold text-primary">Je advertentieaccounts en je meting staan op jouw naam, niet op de onze.</strong>{' '}
+              Je kunt elke maand opzeggen. Het doel is dat je ons steeds minder nodig hebt: kunnen je eigen mensen het, dan
+              gaat het bedrag omlaag.
             </p>
           </div>
           <ol className="m-0 list-none p-0">
@@ -452,11 +458,11 @@ function HeroTekst({ donker = false }: { donker?: boolean }) {
         Rethink your marketing.
       </h1>
       <p
-        className={`mt-7 max-w-[540px] text-[19px] leading-[1.55] ${donker ? 'text-white/70' : 'text-[#2A3A54]'}`}
+        className={`mt-7 max-w-[560px] text-[19px] leading-[1.55] ${donker ? 'text-white/70' : 'text-[#2A3A54]'}`}
       >
-        Je campagnes, je website, je telefoon, je CRM en de markt: wij leggen het naast elkaar. Dan zie je wat werkt, waar kansen
-        liggen en wat blijft liggen.{' '}
-        <strong className={`font-semibold ${donker ? 'text-white' : 'text-primary'}`}>En we helpen je er iets mee te doen.</strong>
+        Elke maand gaat er geld naar je marketing, en wat het oplevert weet je niet precies. Wij leggen je campagnes, je website,
+        je telefoon en je verkoop naast elkaar, kijken mee en zeggen wat er beter kan.{' '}
+        <strong className={`font-semibold ${donker ? 'text-white' : 'text-primary'}`}>En we helpen je het te doen.</strong>
       </p>
       <div className="mt-9 flex flex-wrap gap-3">
         <a
@@ -475,7 +481,7 @@ function HeroTekst({ donker = false }: { donker?: boolean }) {
         </a>
       </div>
       <p className={`mt-5 text-[13.5px] ${donker ? 'text-white/45' : 'text-muted'}`}>
-        Alles blijft op jouw naam. We verdienen niets aan je advertentiebudget.
+        Je accounts blijven op jouw naam. We verdienen niets aan je advertentiebudget.
       </p>
     </>
   )
