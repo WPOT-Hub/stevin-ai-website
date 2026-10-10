@@ -28,6 +28,7 @@ function push(event: string, data: Record<string, unknown>) {
 export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; knoppen: React.ReactNode }) {
   const [fase, setFase] = useState<UniversumFase>('rust')
   const [focus, setFocus] = useState<Kies | null>(null)
+  const [lijstOpen, setLijstOpen] = useState(false)
   const timers = useRef<number[]>([])
   useEffect(() => () => timers.current.forEach((t) => window.clearTimeout(t)), [])
 
@@ -94,7 +95,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
             actieveBronnen={fase === 'rust' ? [] : VRAAG.bronnen}
             focus={focus}
             signaal={VRAAG.signaal}
-            middenX={0.4}
+            middenX={0.36}
             middenY={0.5}
             schaal={1.15}
           />
@@ -110,9 +111,20 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
             >
               {VRAAG.tekst}
             </button>
-            <span className="hidden text-[13.5px] text-white/55 lg:inline">of kies een onderdeel:</span>
+            <button
+              type="button"
+              onClick={() => setLijstOpen((o) => !o)}
+              aria-expanded={lijstOpen}
+              aria-controls="hero-onderdelen"
+              className="hidden text-[13.5px] text-white/60 underline-offset-2 hover:text-white hover:underline lg:inline"
+            >
+              {lijstOpen ? 'Minder' : 'Of kies een onderdeel'}
+            </button>
           </div>
-          <ul className="m-0 mt-3 hidden list-none flex-wrap gap-1.5 p-0 lg:flex">
+          <ul
+            id="hero-onderdelen"
+            className={`m-0 mt-3 list-none flex-wrap gap-1.5 p-0 ${lijstOpen ? 'hidden lg:flex' : 'hidden'}`}
+          >
             {alle.map((n) => (
               <li key={n.id}>
                 <button

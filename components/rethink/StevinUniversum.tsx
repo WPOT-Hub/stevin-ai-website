@@ -102,7 +102,7 @@ function bouwKnopen(): { knopen: Knoop[]; lijnen: [number, number][] } {
     lijnen.push([hi, 0])
 
     const sats = SATELLIETEN[b.id] ?? []
-    const totaal = sats.length + 3
+    const totaal = sats.length
     for (let s = 0; s < totaal; s++) {
       const a = r() * Math.PI * 2
       const e = (r() - 0.5) * Math.PI
@@ -123,23 +123,11 @@ function bouwKnopen(): { knopen: Knoop[]; lijnen: [number, number][] } {
     }
   })
 
-  // Een paar dwarsverbanden tussen bronnen die echt met elkaar te maken hebben.
-  const idx = (id: string) => knopen.findIndex((k) => k.id === id)
-  ;(
-    [
-      ['campagnes', 'website'],
-      ['website', 'crm'],
-      ['telefonie', 'crm'],
-      ['crm', 'offertes'],
-      ['offertes', 'verkoop'],
-      ['markt', 'campagnes'],
-      ['doelen', 'verkoop'],
-      ['doelgroepen', 'campagnes'],
-    ] as const
-  ).forEach(([a, b]) => lijnen.push([idx(a), idx(b)]))
+  // Geen dwarsverbanden tussen bronnen: Koen vond het eerste 3D-beeld te druk
+  // (10 okt, 23:21). Alles loopt via het brein, en dat is ook het verhaal.
 
   // Losse stofjes ver weg, voor diepte.
-  for (let s = 0; s < 46; s++) {
+  for (let s = 0; s < 16; s++) {
     const a = r() * Math.PI * 2
     const e = (r() - 0.5) * Math.PI
     const d = 330 + r() * 170
@@ -241,6 +229,8 @@ export default function StevinUniversum({
         (n.soort === 'advisor' && f === 'advies') ||
         (bezig && n.hub !== 'brein' && n.hub !== 'advisor' && actief.includes(n.hub as BronId) && n.soort !== 'stof') ||
         (fc != null && n.hub === fc && n.soort !== 'stof')
+      // Kleine nodes (wat er in een bron zit) alleen tonen als die bron meedoet.
+      const zichtbaar = (n: Knoop) => n.soort !== 'sat' || isAan(n) || fc === n.hub
       const isStil = (n: Knoop) =>
         (fc != null && n.hub !== fc && n.soort !== 'brein') ||
         (bezig && fc == null && n.soort !== 'brein' && n.soort !== 'advisor' && !actief.includes(n.hub as BronId))
@@ -259,7 +249,8 @@ export default function StevinUniversum({
         const aan = isAan(knopen[a]) && isAan(knopen[b])
         const stil = isStil(knopen[a]) || isStil(knopen[b])
         el.setAttribute('stroke', aan ? '#5DA3FF' : '#93C5FD')
-        el.setAttribute('stroke-opacity', (aan ? 0.85 : stil ? 0.05 : 0.2 * diepte).toFixed(3))
+        const weg = !zichtbaar(knopen[a]) || !zichtbaar(knopen[b])
+        el.setAttribute('stroke-opacity', (weg ? 0 : aan ? 0.85 : stil ? 0.04 : 0.13 * diepte).toFixed(3))
         el.setAttribute('stroke-width', aan ? '1.4' : '0.8')
       })
 
@@ -272,10 +263,18 @@ export default function StevinUniversum({
         const stil = isStil(n)
         const diepte = Math.max(0.12, Math.min(1, p.s * 1.25 - 0.35))
         g.setAttribute('transform', `translate(${p.X.toFixed(1)} ${p.Y.toFixed(1)}) scale(${(p.s * k).toFixed(3)})`)
-        g.setAttribute('opacity', (stil ? 0.18 : n.soort === 'stof' ? 0.55 * diepte : Math.max(0.35, diepte)).toFixed(3))
+        g.setAttribute(
+          'opacity',
+          (!zichtbaar(n) ? 0 : stil ? 0.16 : n.soort === 'stof' ? 0.35 * diepte : Math.max(0.3, diepte)).toFixed(3),
+        )
         g.dataset.aan = aan ? '1' : '0'
+        // Labels alleen aan de voorkant van de bol, of als de node meedoet.
+        const voor = p.z < 30
         const labelZichtbaar =
-          n.soort === 'hub' || n.soort === 'brein' || n.soort === 'advisor' || (n.soort === 'sat' && (aan || fc === n.hub))
+          n.soort === 'brein' ||
+          (aan && n.soort !== 'sat') ||
+          fc === n.hub ||
+          ((n.soort === 'hub' || n.soort === 'advisor') && voor && !stil)
         g.dataset.label = labelZichtbaar ? '1' : '0'
       })
 
