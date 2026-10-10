@@ -25,8 +25,11 @@ export default function Header() {
   // onder de transparante header door schuift. Staat een donkere hero hier wel
   // in, dan krijg je een witte glasband bovenop de hero (fout op /integraties,
   // gevonden 25 jul 2026).
-  const lightHeroPages = ['/seo', '/geo', '/contact']
+  const lightHeroPages = ['/seo', '/geo', '/contact', '/voorstel-a']
   const isLightHero = lightHeroPages.some(p => pathname === p || pathname.startsWith(p + '/'))
+  // W-535: de voorstelpagina's voor de nieuwe homepage tonen alvast de nieuwe
+  // navigatie met vier onderdelen. Verdwijnt zodra het voorstel de homepage is.
+  const isVoorstel = pathname.startsWith('/voorstel-')
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -93,11 +96,19 @@ export default function Header() {
   // afwijkend verhaal (koppelen, vergelijken, activeren, verbeteren) dat de
   // homepage tegensprak, en had nul zoekvertoningen, dus omgooien kon zonder
   // SEO-risico. De inhoud zit nu in /platform, de URL redirect daarheen.
-  const navItems = [
-    { label: t('controle'), href: '/controle' },
-    { label: t('tarieven'), href: '/tarieven' },
-    { label: t('contact'), href: '/contact' },
-  ]
+  const navItems = isVoorstel
+    ? [
+        { label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` },
+        { label: 'In de praktijk', href: `${pathname}#in-de-praktijk` },
+        { label: 'Samenwerken', href: `${pathname}#samenwerken` },
+      ]
+    : [
+        { label: t('controle'), href: '/controle' },
+        { label: t('tarieven'), href: '/tarieven' },
+        { label: t('contact'), href: '/contact' },
+      ]
+  const ctaHref = isVoorstel ? '/kennismaking' : '/contact'
+  const ctaLabel = isVoorstel ? 'Plan een kennismaking' : t('cta')
 
   // Dark = transparent header with white logo+text, floats over dark navy hero
   const showDark = !isLightHero && !scrolled
@@ -128,6 +139,7 @@ export default function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden min-w-0 items-center gap-4 lg:flex 2xl:gap-6">
+            {!isVoorstel && (<>
             {/* Diensten dropdown */}
             <div ref={dropdownRef} className="relative">
               <button
@@ -210,6 +222,8 @@ export default function Header() {
               </div>
             </div>
 
+            </>)}
+
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -228,10 +242,10 @@ export default function Header() {
             <LanguageSwitcher dark={showDark} />
 
             <Link
-              href="/contact"
-              className="hidden flex-none items-center whitespace-nowrap rounded-lg bg-accent px-4 py-2 text-[13px] font-semibold text-white shadow-sm shadow-accent/20 transition-all duration-200 hover:bg-accent-dark 2xl:inline-flex"
+              href={ctaHref}
+              className={`hidden flex-none items-center whitespace-nowrap rounded-lg bg-accent px-4 py-2 text-[13px] font-semibold text-white shadow-sm shadow-accent/20 transition-all duration-200 hover:bg-accent-dark ${isVoorstel ? "lg:inline-flex" : "2xl:inline-flex"}`}
             >
-              {t('cta')}
+              {ctaLabel}
             </Link>
           </nav>
 
@@ -256,6 +270,7 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-border">
           <div className="px-6 py-6 space-y-1">
+            {!isVoorstel && (<>
             {/* Diensten accordion */}
             <button
               onClick={() => setMobileDienstenOpen(!mobileDienstenOpen)}
@@ -315,6 +330,8 @@ export default function Header() {
               </div>
             )}
 
+            </>)}
+
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -333,11 +350,11 @@ export default function Header() {
 
             <div className="pt-4">
               <Link
-                href="/contact"
+                href={ctaHref}
                 className="block w-full text-center px-5 py-3.5 text-sm font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
-                {t('cta')}
+                {ctaLabel}
               </Link>
             </div>
           </div>
