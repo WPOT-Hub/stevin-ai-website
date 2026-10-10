@@ -31,6 +31,8 @@ const COPY: Record<Locale, {
   // niet bij de servicebedrijven die we zoeken. Zelfde inzicht (hitte is een
   // koopmoment, de korte advertentie werkte), geen jargon. De Desk-demo gaat
   // later mee; tot die tijd lopen site en Desk hier uiteen.
+  // 10 okt: de subsidie van de gemeente eruit, want Stevin heeft geen
+  // subsidiesignalen. Wel de schoolvakanties uit de marktcontext (W-529).
   nl: {
     word: 'zomer',
     steps: [
@@ -39,11 +41,11 @@ const COPY: Record<Locale, {
       { t: 'Open een oude campagne', d: 'Waarom hij liep, wat hij kostte, wat hij opleverde.' },
       { t: 'Neem het mee naar volgend jaar', d: 'Een klik, en je volgende campagne begint niet bij nul.' },
     ],
-    chips: ['Zomer 2026', 'Zomer 2025', 'Hittegolf juli 2026', 'Voorjaar 2026', 'Winter 2025'],
+    chips: ['Zomer 2026', 'Zomer 2025', 'Hittegolf juli 2026', 'Meivakantie 2026', 'Winter 2025'],
     camps: [
       { t: 'Airco zomer 2026', m: '2026, Google Ads', d: 'Liep de hele zomer door. Na elke warme dag kwamen er de dag erna twee keer zoveel aanvragen.' },
       { t: 'Hittegolf juli', m: '2026, Google Ads en Meta', d: 'Korte advertentie: "Te warm binnen? Morgen een airco." Binnen een dag vol ingepland.', hl: true },
-      { t: 'Warmtepomp voorjaar', m: '2026, Meta', d: 'Liep in april. Veel kliks, weinig aanvragen. Mensen wachtten op de nieuwe subsidie van de gemeente, die pas in september kwam.' },
+      { t: 'Warmtepomp voorjaar', m: '2026, Meta', d: 'Liep in de meivakantie. Weinig aanvragen, veel mensen waren weg. De week erna kwamen er drie keer zoveel binnen.' },
       { t: 'Installateur uit de regio', m: 'concurrent, 2026', d: 'Twee zomeradvertenties van de concurrent gezien, vanaf half juni.' },
     ],
     detail: {
@@ -54,7 +56,7 @@ const COPY: Record<Locale, {
     },
     toast: 'Toegevoegd aan het plan voor zomer 2027',
     briefLabel: 'Plan, concept.',
-    brief: 'Begin met "Hittegolf juli": zelfde inzicht (hitte is een koopmoment), korte advertentie, klaar voor de eerste warme week. De concurrent begint rond half juni. Warmtepomp pas als de subsidie van de gemeente open is, die komt bovenop de landelijke.',
+    brief: 'Begin met "Hittegolf juli": zelfde inzicht (hitte is een koopmoment), korte advertentie, klaar voor de eerste warme week. De concurrent begint rond half juni. Warmtepomp niet in de meivakantie, maar de week erna, als iedereen weer thuis is.',
     briefClose: 'Zo begint je volgende campagne niet bij nul, wie er ook aan werkt.',
     demoTag: 'demo-omgeving',
   },
@@ -66,11 +68,11 @@ const COPY: Record<Locale, {
       { t: 'Open an old campaign', d: 'Why it ran, what it cost, what it delivered.' },
       { t: 'Take it to next year', d: 'One click, and your next campaign does not start from zero.' },
     ],
-    chips: ['Summer 2026', 'Summer 2025', 'Heatwave July 2026', 'Spring 2026', 'Winter 2025'],
+    chips: ['Summer 2026', 'Summer 2025', 'Heatwave July 2026', 'May holiday 2026', 'Winter 2025'],
     camps: [
       { t: 'Air conditioning summer 2026', m: '2026, Google Ads', d: 'Ran all summer. After every hot day, twice as many enquiries came in the next day.' },
       { t: 'Heatwave July', m: '2026, Google Ads and Meta', d: 'Short ad: "Too hot inside? Air conditioning tomorrow." Fully booked within a day.', hl: true },
-      { t: 'Heat pump spring', m: '2026, Meta', d: 'Ran in April. Lots of clicks, few enquiries. People were waiting for the new subsidy from the municipality, which only came in September.' },
+      { t: 'Heat pump spring', m: '2026, Meta', d: 'Ran during the May school holiday. Few enquiries, many people were away. The week after, three times as many came in.' },
       { t: 'Local installer', m: 'competitor, 2026', d: 'Two summer ads from the competitor spotted, from mid June.' },
     ],
     detail: {
@@ -81,7 +83,7 @@ const COPY: Record<Locale, {
     },
     toast: 'Added to the plan for summer 2027',
     briefLabel: 'Plan, draft.',
-    brief: 'Start from "Heatwave July": same insight (heat is a buying moment), short ad, ready for the first hot week. The competitor starts around mid June. Heat pumps only once the municipal subsidy is open, on top of the national one.',
+    brief: 'Start from "Heatwave July": same insight (heat is a buying moment), short ad, ready for the first hot week. The competitor starts around mid June. Heat pumps not during the May school holiday, but the week after, when everyone is back home.',
     briefClose: 'That is how your next campaign never starts from zero, whoever works on it.',
     demoTag: 'demo environment',
   },
