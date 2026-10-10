@@ -564,3 +564,27 @@ section {
    stroompjes in rust lopen drie rondes en stoppen dan (WCAG 2.2.2). */
 .sn-halo-stil { opacity: .16; }
 .sn-stroom:not(.sn-stroom-snel) { animation-iteration-count: 3; }
+
+/* W-535 richting C: het 3D-brein. Kleur volgt data-aan en data-label, die de
+   animatielus zet; de overgang doet CSS. */
+.su-knoop .su-stip { fill: #9CC6FF; transition: fill .4s ease; }
+.su-hub .su-stip { fill: #D6E7FF; }
+.su-stof .su-stip { fill: #7FA9E6; }
+.su-brein .su-stip { fill: #FFFFFF; }
+.su-advisor .su-stip { fill: #0F1F38; stroke: #9CC6FF; stroke-width: 2; }
+.su-knoop[data-aan="1"] .su-stip { fill: #5DA3FF; }
+.su-brein[data-aan="1"] .su-stip { fill: #FFFFFF; }
+.su-advisor[data-aan="1"] .su-stip { fill: #5DA3FF; stroke: #FFFFFF; }
+.su-halo { opacity: 0; transition: opacity .5s ease; }
+.su-knoop[data-aan="1"] .su-halo { opacity: 1; }
+.su-label { fill: rgba(255,255,255,.82); transition: opacity .4s ease, fill .4s ease; paint-order: stroke; stroke: rgba(10,22,40,.75); stroke-width: 3px; }
+.su-sat .su-label { fill: rgba(191,219,255,.9); }
+.su-knoop[data-label="0"] .su-label { opacity: 0; }
+.su-knoop[data-aan="1"] .su-label { fill: #FFFFFF; }
+.su-ademen { animation: sn-halo 3.2s ease-in-out infinite; }
+.su-brein[data-aan="1"] .su-ademen { animation-duration: 1.2s; }
+.su-puls { animation: sn-puls 1.6s ease-in-out infinite; }
+.su-overgang { transition: opacity .5s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .su-ademen, .su-puls { animation: none; }
+}

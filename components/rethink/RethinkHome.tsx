@@ -1,6 +1,7 @@
 import { Link } from '@/i18n/navigation'
 import StevinNetwerk from './StevinNetwerk'
 import VraagDemo from './VraagDemo'
+import HeroUniversum from './HeroUniversum'
 import type { BronId } from './netwerk'
 
 /**
@@ -9,6 +10,7 @@ import type { BronId } from './netwerk'
  *
  *   a: licht, rustig en zakelijk. Netwerk naast de kop.
  *   b: donkere hero met het netwerk groot in beeld, daarna lichte blokken.
+ *   c: het brein in 3D over het hele scherm (na "geen wow factor", 10 okt).
  *
  * Elke zin die iets belooft is nagekeken tegen de Hub-audit van 10 okt (zie
  * docs/research/W535_REDESIGN_STEVIN_AI.md in Stevin-Hub). Wat niet bij een
@@ -16,7 +18,7 @@ import type { BronId } from './netwerk'
  * koppeling.
  */
 
-export type Richting = 'a' | 'b'
+export type Richting = 'a' | 'b' | 'c'
 
 const HERO_DEMO = {
   vraag: 'Resultaten deze week?',
@@ -127,7 +129,12 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
   return (
     <>
       {/* ── 1. HERO ── */}
-      {donkereHero ? (
+      {richting === 'c' ? (
+        <HeroUniversum
+          kop={<HeroTekst donker deel="kop" mobielKort />}
+          knoppen={<HeroTekst donker deel="knoppen" mobielKort />}
+        />
+      ) : donkereHero ? (
         <section className="relative -mt-[72px] overflow-hidden bg-primary px-6" style={{ padding: 'calc(88px + 72px) 24px 96px' }}>
           <div
             className="pointer-events-none absolute inset-0"
@@ -448,8 +455,19 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
   )
 }
 
-function HeroTekst({ donker = false }: { donker?: boolean }) {
-  return (
+// deel: 'alles' voor richting A en B; richting C zet kop en knoppen los in de
+// hero, zodat op mobiel het brein ertussen kan. mobielKort: op mobiel een zin in
+// plaats van de alinea (Koen, 10 okt 23:08: "niet gelijk die hele tekst").
+function HeroTekst({
+  donker = false,
+  deel = 'alles',
+  mobielKort = false,
+}: {
+  donker?: boolean
+  deel?: 'alles' | 'kop' | 'knoppen'
+  mobielKort?: boolean
+}) {
+  const kop = (
     <>
       <h1
         className={`m-0 font-display font-extrabold ${donker ? 'text-white' : 'text-primary'}`}
@@ -457,32 +475,49 @@ function HeroTekst({ donker = false }: { donker?: boolean }) {
       >
         Rethink your marketing.
       </h1>
+      {mobielKort && (
+        <p className={`mt-5 text-[19px] leading-[1.45] lg:hidden ${donker ? 'text-white/75' : 'text-[#2A3A54]'}`}>
+          Zie wat je marketing oplevert, en wat er beter kan.
+        </p>
+      )}
       <p
-        className={`mt-7 max-w-[560px] text-[19px] leading-[1.55] ${donker ? 'text-white/70' : 'text-[#2A3A54]'}`}
+        className={`mt-7 max-w-[560px] text-[19px] leading-[1.55] ${mobielKort ? 'hidden lg:block' : ''} ${donker ? 'text-white/70' : 'text-[#2A3A54]'}`}
       >
         Elke maand gaat er geld naar je marketing, en wat het oplevert weet je niet precies. Wij leggen je campagnes, je website,
         je telefoon en je verkoop naast elkaar, kijken mee en zeggen wat er beter kan.{' '}
         <strong className={`font-semibold ${donker ? 'text-white' : 'text-primary'}`}>En we helpen je het te doen.</strong>
       </p>
-      <div className="mt-9 flex flex-wrap gap-3">
+    </>
+  )
+  const knoppen = (
+    <>
+      <div className={`${deel === 'knoppen' ? 'lg:mt-9' : 'mt-9'} flex flex-wrap gap-3`}>
         <a
           href="#kennismaken"
           data-cta="hero_ontdek"
-          className={`inline-flex items-center rounded-lg px-6 py-3.5 font-display text-[15px] font-bold transition-colors ${donker ? 'bg-accent-light text-primary hover:bg-[#7BB8FF]' : 'bg-accent text-white hover:bg-accent-dark'}`}
+          className={`inline-flex items-center justify-center rounded-lg px-6 py-3.5 font-display text-[15px] font-bold transition-colors ${mobielKort ? 'w-full sm:w-auto' : ''} ${donker ? 'bg-accent-light text-primary hover:bg-[#7BB8FF]' : 'bg-accent text-white hover:bg-accent-dark'}`}
         >
           Ontdek wat Stevin voor je kan doen
         </a>
         <a
           href="#hoe-het-werkt"
           data-cta="hero_hoe"
-          className={`inline-flex items-center rounded-lg border px-6 py-3.5 font-display text-[15px] font-bold transition-colors ${donker ? 'border-white/25 text-white hover:border-white/60' : 'border-border text-primary hover:border-primary'}`}
+          className={`items-center rounded-lg border px-6 py-3.5 font-display text-[15px] font-bold transition-colors ${mobielKort ? 'hidden lg:inline-flex' : 'inline-flex'} ${donker ? 'border-white/25 text-white hover:border-white/60' : 'border-border text-primary hover:border-primary'}`}
         >
           Bekijk hoe het werkt
         </a>
       </div>
-      <p className={`mt-5 text-[13.5px] ${donker ? 'text-white/45' : 'text-muted'}`}>
+      <p className={`mt-5 text-[13.5px] ${mobielKort ? 'hidden lg:block' : ''} ${donker ? 'text-white/45' : 'text-muted'}`}>
         Je accounts blijven op jouw naam. We verdienen niets aan je advertentiebudget.
       </p>
+    </>
+  )
+  if (deel === 'kop') return kop
+  if (deel === 'knoppen') return knoppen
+  return (
+    <>
+      {kop}
+      {knoppen}
     </>
   )
 }
