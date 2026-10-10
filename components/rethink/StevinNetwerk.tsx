@@ -412,7 +412,10 @@ export default function StevinNetwerk({
             />
           ))}
           <line x1={160} y1={70} x2={160} y2={152} stroke={signaalAan ? k.lijnActief : k.lijn} strokeWidth={1.6} />
-          <circle cx={160} cy={56} r={22} fill={k.kern} className={breinAan ? 'sn-puls-zacht' : ''} />
+          {/* De puls zit op een gloed erachter, niet op het brein zelf: anders
+              wordt het brein grijs (gezien door Koen, 11 okt 01:11). */}
+          {breinAan && <circle cx={160} cy={56} r={34} fill={k.nodeActief} className="sn-halo" />}
+          <circle cx={160} cy={56} r={22} fill={k.kern} />
           <g transform="translate(160 56) scale(0.6) translate(-24 -24)" fill={k.kernTekst}>
             <rect x={6} y={7} width={30} height={14} rx={4} />
             <rect x={12} y={27} width={30} height={14} rx={4} />

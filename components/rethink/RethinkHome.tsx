@@ -1,8 +1,11 @@
 import { Link } from '@/i18n/navigation'
+import KlantLogos from '@/components/KlantLogos'
 import { FileText, Phone, UsersRound } from 'lucide-react'
 import StevinNetwerk from './StevinNetwerk'
 import VraagDemo from './VraagDemo'
 import HeroUniversum from './HeroUniversum'
+import StevinUniversum from './StevinUniversum'
+import ScrollStappen from './ScrollStappen'
 import type { BronId } from './netwerk'
 
 /**
@@ -59,6 +62,8 @@ const ZONDER_LOGO = [
   { Icoon: FileText, naam: 'Offertes' },
 ]
 
+// Niet meer op de homepage ("less is more", 11 okt); bewaard voor Zo werkt Stevin.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const LAGEN = [
   { kop: 'Vakkennis', tekst: 'Wat in marketing en verkoop werkt, en wat niet.' },
   { kop: 'Je bedrijf', tekst: 'Wat je verkoopt, aan wie, en wat een goede klant is.' },
@@ -83,7 +88,7 @@ const ADVIEZEN = [
   'Zorg eerst dat elke aanvraag wordt opgevolgd.',
   'Kijk eerst of je cijfers kloppen.',
   'Zoek uit waarom offertes geen klant worden.',
-  'Werk aan je naam, niet alleen aan klikken.',
+  'Bouw aan je naamsbekendheid, niet alleen aan klikken.',
   'Verbeter de pagina waar je advertentie naartoe leidt.',
   'Laat marketing en verkoop dezelfde cijfers gebruiken.',
   'Verander nog niets. De cijfers zijn niet betrouwbaar genoeg.',
@@ -103,34 +108,18 @@ const WIE = [
   { kop: 'Je bureau', tekst: 'Je bureau blijft. Wij kijken mee en zeggen het als iets niet klopt.' },
 ]
 
+// "Less is more" (Koen, 11 okt 01:18): per situatie een kop en een zin.
+// De uitgewerkte versies (situatie en aanpak) gaan naar In de praktijk.
 const PRAKTIJK = [
-  {
-    kop: 'Je wilt bekender worden',
-    situatie: 'Je adverteert op zichtbaarheid. Het advertentieplatform meldt bereik en klikken.',
-    aanpak:
-      'Wij spreken vooraf af waar je naar kijkt: hoe vaak mensen op je naam zoeken, hoeveel mensen direct naar je site komen en wat er met de aanvragen gebeurt. Over maanden, niet over dagen. Geen van die cijfers bewijst los iets, en we zeggen eerlijk wanneer het beeld nog te dun is.',
-  },
-  {
-    kop: 'Veel aanvragen, weinig goede',
-    situatie: 'Een campagne levert veel aanvragen op. Een groot deel past niet bij je bedrijf.',
-    aanpak:
-      'Wij leggen de cijfers van je campagnes naast wat verkoop met de aanvragen deed. Dan stuur je op klanten in plaats van op aantallen.',
-  },
-  {
-    kop: 'Aanvragen blijven liggen',
-    situatie: 'Aanvragen komen binnen via de website, de telefoon en de mail. Niet alles wordt vastgelegd of opgepakt.',
-    aanpak:
-      'Wij richten in hoe een aanvraag wordt vastgelegd, beoordeeld en opgevolgd. Daarna kijken we mee of het zo blijft.',
-  },
+  { kop: 'Je wilt bekender worden', kort: 'We kijken niet alleen naar klikken, maar ook of meer mensen op je naam gaan zoeken.' },
+  { kop: 'Veel aanvragen, weinig goede', kort: 'We leggen je campagnes naast wat verkoop met de aanvragen deed.' },
+  { kop: 'Aanvragen blijven liggen', kort: 'We richten in hoe elke aanvraag wordt vastgelegd en opgevolgd.' },
 ]
 
 const STAPPEN = [
   'We leren je bedrijf en je doelen kennen.',
-  'We brengen de belangrijkste cijfers en werkwijzen bij elkaar.',
-  'We bepalen samen waar het beter kan.',
-  'We richten in wat daarvoor nodig is.',
-  'We adviseren, helpen en voeren uit.',
-  'Je organisatie gaat steeds meer zelf doen.',
+  'We richten in wat nodig is.',
+  'We helpen, en jij gaat steeds meer zelf doen.',
 ]
 
 export default function RethinkHome({ richting }: { richting: Richting }) {
@@ -171,6 +160,10 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
         </section>
       )}
 
+      {/* Voor wie we al werken: hetzelfde blok als op de huidige homepage
+          (Koen, 11 okt 01:17: "voor wie we al werken is helemaal weg"). */}
+      <KlantLogos locale="nl" />
+
       {/* ── 2. WAT WE VERBINDEN ── */}
       <section className="border-y border-border bg-surface" style={{ padding: '64px 24px' }} aria-labelledby="koppelingen">
         <div className="mx-auto max-w-[1200px]">
@@ -179,32 +172,46 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
               We verbinden wat je al gebruikt.
             </h2>
             <p className={`${tekst} m-0`}>
-              Je hoeft niets te vervangen. Sommige koppelingen staan klaar, andere richten we voor je in, en wat er nog niet is
-              bouwen we. In de kennismaking hoor je precies welke van de drie het bij jou is.
+              Je hoeft niets te vervangen. Wat nog niet gekoppeld is, richten we in.
             </p>
           </div>
-          <ul className="m-0 mt-12 grid list-none grid-cols-3 gap-3 p-0 sm:grid-cols-5 lg:grid-cols-5">
-            {LOGOS.map((l) => (
-              <li
-                key={l.naam}
-                className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-white px-2 py-5 text-center shadow-[0_1px_2px_rgba(10,22,40,0.04)] transition-shadow hover:shadow-[0_8px_24px_rgba(10,22,40,0.08)]"
-              >
-                <img src={l.src} alt="" width={36} height={36} className="h-9 w-9 object-contain" loading="lazy" />
-                <span className="text-[12.5px] font-medium leading-tight text-[#2A3A54]">{l.naam}</span>
-              </li>
-            ))}
-            {ZONDER_LOGO.map(({ Icoon, naam }) => (
-              <li
-                key={naam}
-                className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-[#C8D2E0] bg-surface px-2 py-5 text-center"
-              >
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-accent">
-                  <Icoon size={20} strokeWidth={2} aria-hidden="true" />
-                </span>
-                <span className="text-[12.5px] font-medium leading-tight text-muted">{naam}</span>
-              </li>
-            ))}
-          </ul>
+        </div>
+        {/* Logo-band: twee rijen chips die langzaam voorbij schuiven. Op mobiel
+            namen de tegels een heel scherm in (Koen, 11 okt 01:16). De tweede
+            kopie per rij is alleen voor de naadloze lus en is verborgen voor
+            schermlezers. Onder reduced motion staat alles stil en loopt het af. */}
+        <div className="lb-band mt-10 space-y-3" aria-label="Systemen die we koppelen">
+          {[LOGOS.slice(0, 7), [...LOGOS.slice(7)]].map((rij, ri) => (
+            <div key={ri} className="lb-rij overflow-hidden">
+              <div className={`lb-spoor flex w-max gap-3 ${ri === 1 ? 'lb-terug' : ''}`}>
+                {[0, 1].map((kopie) => (
+                  <ul key={kopie} className="m-0 flex list-none gap-3 p-0" aria-hidden={kopie === 1 ? true : undefined}>
+                    {rij.map((l) => (
+                      <li
+                        key={l.naam}
+                        className="flex shrink-0 items-center gap-2.5 rounded-full border border-border bg-white py-2 pl-2.5 pr-4 shadow-[0_1px_2px_rgba(10,22,40,0.04)]"
+                      >
+                        <img src={l.src} alt="" width={22} height={22} className="h-[22px] w-[22px] object-contain" loading="lazy" />
+                        <span className="whitespace-nowrap text-[14px] font-medium text-[#2A3A54]">{l.naam}</span>
+                      </li>
+                    ))}
+                    {ri === 1 &&
+                      ZONDER_LOGO.map(({ Icoon, naam }) => (
+                        <li
+                          key={naam}
+                          className="flex shrink-0 items-center gap-2 rounded-full border border-dashed border-[#C8D2E0] bg-surface py-2 pl-2.5 pr-4"
+                        >
+                          <Icoon size={18} strokeWidth={2} className="text-accent" aria-hidden="true" />
+                          <span className="whitespace-nowrap text-[14px] font-medium text-muted">{naam}</span>
+                        </li>
+                      ))}
+                  </ul>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mx-auto max-w-[1200px]">
         </div>
       </section>
 
@@ -216,37 +223,56 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             Vraag het Stevin.
           </h2>
           <p className={`${tekst} mb-12 mt-5 max-w-[640px]`}>
-            Je wilt weten hoe de week ging. Stevin pakt de cijfers van je website, je telefoon, je CRM en je offertes erbij,
-            en zegt wat opvalt. Probeer het hieronder.
+            Probeer het: kies een vraag.
           </p>
-          <VraagDemo />
+          <VraagDemo drieD={richting === 'c'} />
           <p className="mt-8 max-w-[720px] text-[14px] leading-relaxed text-muted">
-            Dit is een voorbeeld met verzonnen cijfers, van een bedrijf waar website, telefonie, CRM en offertes gekoppeld zijn.
-            Bij jou kijken we eerst wat er al is en wat we moeten inrichten.
+            Voorbeeld met verzonnen cijfers.
           </p>
         </div>
       </section>
 
       {/* ── 4. HET BREIN ── */}
+      {richting === 'c' ? (
+        // Richting C: donker, met het 3D-brein ingezoomd op wat Stevin onthoudt.
+        // Tik op een node voor het kaartje (Koen, 11 okt 01:11: "dit kan ook beter").
+        <section className="relative overflow-hidden bg-primary text-white" style={{ padding: '112px 24px' }} aria-labelledby="brein">
+          <div
+            className="pointer-events-none absolute inset-0"
+            aria-hidden="true"
+            style={{ background: 'radial-gradient(50% 55% at 70% 50%, rgba(61,142,255,0.16) 0%, rgba(10,22,40,0) 70%)' }}
+          />
+          <div className="relative mx-auto grid grid-cols-1 max-w-[1200px] items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="mb-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent-light">Het brein achter Stevin</p>
+              <h2 id="brein" className="m-0 font-display font-extrabold text-white" style={{ ...h2Stijl, maxWidth: '16ch' }}>
+                Niet alleen je cijfers. Ook wat je wilt bereiken.
+              </h2>
+              <p className="mt-5 text-[18px] leading-[1.6] text-white/75">
+                Stevin legt je cijfers naast wat je wilt bereiken. Dat leggen we samen vast, en het blijft van jou.
+              </p>
+            </div>
+            <div>
+              <div className="relative -mx-6 h-[400px] sm:mx-0 lg:h-[600px]">
+                <StevinUniversum focus="brein" middenX={0.5} middenY={0.5} schaal={2.1} />
+              </div>
+              <p className="m-0 mt-2 text-center text-[13.5px] text-white/50">
+                Voorbeeld van een installatiebedrijf. Tik op een punt om te zien wat Stevin onthoudt.
+              </p>
+            </div>
+          </div>
+        </section>
+      ) : (
       <section className="bg-surface" style={{ padding: '112px 24px' }} aria-labelledby="brein">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-14 lg:grid-cols-[1fr_1fr]">
+        <div className="mx-auto grid grid-cols-1 max-w-[1200px] items-center gap-14 lg:grid-cols-[1fr_1fr]">
           <div>
             <p className={eyebrow}>Het brein achter Stevin</p>
             <h2 id="brein" className={h2} style={{ ...h2Stijl, maxWidth: '16ch' }}>
               Niet alleen je cijfers. Ook wat je wilt bereiken.
             </h2>
             <p className={`${tekst} mt-5`}>
-              Een cijfer zegt weinig als je niet weet wat de bedoeling was. Daarom legt Stevin je resultaten naast je doelen, je
-              bedrijf en de markt. Dat leggen we bij de start samen met je vast, en het blijft van jou.
+              Stevin legt je cijfers naast wat je wilt bereiken. Dat leggen we samen vast, en het blijft van jou.
             </p>
-            <dl className="m-0 mt-8 grid gap-x-8 gap-y-4 sm:grid-cols-2">
-              {LAGEN.map((l) => (
-                <div key={l.kop} className="border-t border-border pt-3">
-                  <dt className="font-display text-[15.5px] font-bold text-primary">{l.kop}</dt>
-                  <dd className="m-0 mt-1 text-[15px] leading-snug text-muted">{l.tekst}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
           <StevinNetwerk
             fase="brein"
@@ -256,6 +282,8 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
         </div>
       </section>
 
+      )}
+
       {/* ── 5. SIGNALEN ── */}
       <section className="bg-white" style={{ padding: '112px 24px' }} aria-labelledby="signalen">
         <div className="mx-auto max-w-[1200px]">
@@ -264,41 +292,15 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             Niet alleen terugkijken.
           </h2>
           <p className={`${tekst} mt-5 max-w-[660px]`}>
-            We letten met je op veranderingen die ertoe doen. Bij elk signaal staat wat er gezien is, waarom het belangrijk kan
-            zijn en wat nog uitgezocht moet worden. Welke signalen voor jou tellen, bepalen we samen. Een deel kijken we met de
-            hand na, een deel bouwen we voor je in.
+            We letten met je op wat verandert. Welke signalen voor jou tellen, bepalen we samen.
           </p>
-          <div className="mt-12 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-            <article className="rounded-[20px] border border-border bg-white p-6 shadow-[0_10px_40px_rgba(10,22,40,0.07)] sm:p-8">
-              <div className="mb-5 flex items-center justify-between gap-3">
-                <p className="m-0 font-display text-[18px] font-bold text-primary">Bezoek omhoog, aanvragen niet</p>
-                <span className="rounded-full bg-[#FFF4DB] px-2.5 py-1 text-[11.5px] font-semibold text-[#8A5A00]">Voorbeeld</span>
-              </div>
-              <dl className="m-0 space-y-4 text-[15.5px] leading-relaxed">
-                <div>
-                  <dt className="text-[12px] font-bold uppercase tracking-[0.1em] text-muted">Gezien</dt>
-                  <dd className="m-0 mt-1 text-primary">
-                    De campagne voor warmtepompen kreeg 40 procent meer bezoek dan vorige maand. Het aantal aanvragen bleef gelijk.
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-[12px] font-bold uppercase tracking-[0.1em] text-muted">Waarom dit belangrijk kan zijn</dt>
-                  <dd className="m-0 mt-1 text-primary">
-                    Het extra bezoek levert tot nu toe geen extra aanvragen op. Dat kan aan de campagne liggen, aan het formulier of
-                    aan de meting.
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-[12px] font-bold uppercase tracking-[0.1em] text-muted">Nog uitzoeken</dt>
-                  <dd className="m-0 mt-1 text-primary">
-                    Wat moest de campagne doen? Komt het bezoek uit je eigen regio? Werkt het formulier op een telefoon?
-                  </dd>
-                </div>
-              </dl>
-            </article>
+          <div className="mt-10">
+            {/* Het uitgewerkte signaalvoorbeeld (gezien, waarom, nog uitzoeken)
+                hoort op Zo werkt Stevin, niet op de homepage (Koen, 11 okt
+                01:17). Tekst staat in docs/research/W535_REDESIGN_STEVIN_AI.md. */}
             <div>
               <p className="m-0 mb-4 font-display text-[16px] font-bold text-primary">Waar we samen op kunnen letten</p>
-              <ul className="m-0 list-none space-y-3 p-0">
+              <ul className="veeg veeg-licht m-0 list-none space-y-3 p-0">
                 {SIGNAALSOORTEN.map((s) => (
                   <li key={s} className="flex gap-3 text-[16px] leading-snug text-[#2A3A54]">
                     <span aria-hidden="true" className="mt-[7px] inline-block h-2 w-2 shrink-0 rounded-full bg-accent" />
@@ -313,16 +315,14 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
 
       {/* ── 6. DE ADVISOR ── */}
       <section className="bg-primary text-white" style={{ padding: '112px 24px' }} aria-labelledby="advisor">
-        <div className="mx-auto grid max-w-[1200px] gap-14 lg:grid-cols-[1fr_1fr]">
+        <div className="mx-auto grid grid-cols-1 max-w-[1200px] gap-14 lg:grid-cols-[1fr_1fr]">
           <div>
             <p className="mb-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent-light">De Advisor</p>
             <h2 id="advisor" className="m-0 font-display font-extrabold text-white" style={{ ...h2Stijl, maxWidth: '16ch' }}>
               Soms luidt het advies: nog niet.
             </h2>
             <p className="mt-5 text-[18px] leading-[1.6] text-white/75">
-              De Advisor zegt op basis van de cijfers die er zijn wat je als volgende stap kunt doen. Hij houdt rekening met je
-              doelen en met hoe betrouwbaar die cijfers zijn. Zijn ze oud of onvolledig, dan zegt hij dat eerst. Meer budget is
-              lang niet altijd het antwoord.
+              Meer budget is lang niet altijd het antwoord. Zijn de cijfers niet betrouwbaar, dan zegt de Advisor dat eerst.
             </p>
             <p className="mt-5 text-[18px] leading-[1.6] text-white/75">
               <strong className="font-semibold text-white">De Advisor verandert niets in je advertentieaccounts.</strong> Jij of je
@@ -331,7 +331,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
           </div>
           <div>
             <p className="m-0 mb-4 font-display text-[16px] font-bold text-white">Een advies kan ook zijn</p>
-            <ul className="m-0 list-none space-y-3 p-0">
+            <ul className="veeg m-0 list-none space-y-3 p-0">
               {ADVIEZEN.map((a, i) => (
                 <li
                   key={a}
@@ -346,45 +346,30 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
       </section>
 
       {/* ── 7. VAN ADVIES NAAR UITVOERING ── */}
-      <section className="bg-white" style={{ padding: '112px 24px' }} aria-labelledby="uitvoering">
+      {/* Scrollverhaal: bij elk stuk scrollen komt er een stap bij (Koen, 11 okt). */}
+      <section className="bg-white px-6" aria-label="Uitvoering">
         <div className="mx-auto max-w-[1200px]">
-          <p className={eyebrow}>Uitvoering</p>
-          <h2 id="uitvoering" className={h2} style={{ ...h2Stijl, maxWidth: '18ch' }}>
-            We stoppen niet bij een advies.
-          </h2>
-          <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_1fr]">
-            <div>
-              <p className="m-0 rounded-xl border-l-4 border-accent bg-surface px-5 py-4 text-[17px] font-medium text-primary">
-                We zien dat aanvragen te laat worden opgevolgd.
-              </p>
-              <ol className="m-0 mt-6 list-none space-y-4 p-0">
-                {UITVOERING.map((u, i) => (
-                  <li key={u} className="flex gap-4 text-[16.5px] leading-snug text-[#2A3A54]">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary font-display text-[13px] font-bold text-white">
-                      {i + 1}
-                    </span>
-                    <span className="pt-0.5">{u}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-            <div>
-              <p className={`${tekst} m-0`}>
-                Wij werken vanuit jouw belang. Je kiest wie het werk doet: wij, je eigen team of je bureau. Of we pakken het samen
-                op.
-              </p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                {WIE.map((w) => (
-                  <div key={w.kop} className="rounded-2xl border border-border p-5">
-                    <p className="m-0 font-display text-[17px] font-bold text-primary">{w.kop}</p>
-                    <p className="m-0 mt-2 text-[14.5px] leading-snug text-muted">{w.tekst}</p>
-                  </div>
-                ))}
+          <ScrollStappen
+            eyebrow="Uitvoering"
+            kop="We stoppen niet bij een advies."
+            vaststelling="We zien dat aanvragen te laat worden opgevolgd."
+            stappen={UITVOERING}
+            doel="Elke aanvraag binnen een werkdag opgevolgd."
+          />
+        </div>
+      </section>
+      <section className="bg-white" style={{ padding: '24px 24px 112px' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <p className={`${tekst} m-0 max-w-[640px]`}>
+            Wij werken vanuit jouw belang. Je kiest wie het werk doet: wij, je eigen team of je bureau. Of we pakken het samen op.
+          </p>
+          <div className="veeg mt-6 grid gap-3 sm:grid-cols-3">
+            {WIE.map((w) => (
+              <div key={w.kop} className="rounded-2xl border border-border p-5">
+                <p className="m-0 font-display text-[17px] font-bold text-primary">{w.kop}</p>
+                <p className="m-0 mt-2 text-[14.5px] leading-snug text-muted">{w.tekst}</p>
               </div>
-              <p className="mt-6 text-[15px] leading-relaxed text-muted">
-                Omdat we niets aan je advertentiebudget verdienen, kunnen we zeggen wat we ervan vinden.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -396,15 +381,14 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
           <h2 className={h2} style={{ ...h2Stijl, maxWidth: '20ch' }}>
             Drie situaties die je misschien herkent.
           </h2>
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          <div className="veeg veeg-breed mt-12 grid gap-5 lg:grid-cols-3">
             {PRAKTIJK.map((p) => (
               <article key={p.kop} className="flex flex-col rounded-[20px] border border-border bg-white p-6 sm:p-7">
                 <span className="mb-4 self-start rounded-full bg-[#FFF4DB] px-2.5 py-1 text-[11.5px] font-semibold text-[#8A5A00]">
                   Voorbeeldsituatie
                 </span>
                 <h3 className="m-0 font-display text-[21px] font-bold leading-tight text-primary">{p.kop}</h3>
-                <p className="m-0 mt-3 text-[15.5px] leading-relaxed text-muted">{p.situatie}</p>
-                <p className="m-0 mt-3 text-[15.5px] leading-relaxed text-primary">{p.aanpak}</p>
+                <p className="m-0 mt-3 text-[15.5px] leading-relaxed text-muted">{p.kort}</p>
               </article>
             ))}
           </div>
@@ -424,8 +408,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             </h2>
             <p className={`${tekst} mt-5`}>
               <strong className="font-semibold text-primary">Je advertentieaccounts en je meting staan op jouw naam, niet op de onze.</strong>{' '}
-              Je kunt elke maand opzeggen. Het doel is dat je ons steeds minder nodig hebt: kunnen je eigen mensen het, dan
-              gaat het bedrag omlaag.
+              Je kunt elke maand opzeggen.
             </p>
           </div>
           <ol className="m-0 list-none p-0">
@@ -446,8 +429,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             Benieuwd wat er in jouw marketing beter kan?
           </h2>
           <p className="mx-auto mt-5 max-w-[620px] text-[18px] leading-[1.6] text-white/75">
-            Laat ons meekijken naar je marketing, je verkoop en je opvolging. In de kennismaking vragen we wat je wilt bereiken en
-            wat je nu gebruikt, kijken we samen naar je cijfers, en hoor je eerlijk of we iets voor je kunnen doen.
+            We kijken samen naar je cijfers, en je hoort eerlijk of we iets voor je kunnen doen.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-4">
             <Link

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import StevinNetwerk from './StevinNetwerk'
+import StevinUniversum from './StevinUniversum'
 import type { BronId, Fase } from './netwerk'
 
 /**
@@ -83,7 +84,7 @@ function push(event: string, data: Record<string, unknown>) {
   w.dataLayer.push({ event, ...data, page_path: window.location.pathname })
 }
 
-export default function VraagDemo({ thema = 'licht' }: { thema?: 'licht' | 'donker' }) {
+export default function VraagDemo({ thema = 'licht', drieD = false }: { thema?: 'licht' | 'donker'; drieD?: boolean }) {
   const [vraag, setVraag] = useState<Vraag | null>(null)
   const [fase, setFase] = useState<Fase>('rust')
   const [vastgelegd, setVastgelegd] = useState<string[]>([])
@@ -197,14 +198,33 @@ export default function VraagDemo({ thema = 'licht' }: { thema?: 'licht' | 'donk
       {/* ── Rechts: het netwerk dat meebeweegt ── */}
       {/* Op mobiel boven het gesprek, anders zie je de bronnen niet oplichten. */}
       <div className="order-first lg:sticky lg:top-28 lg:order-none">
-        <StevinNetwerk
-          fase={vraag ? fase : 'rust'}
-          actieveBronnen={vraag?.bronnen ?? []}
-          signaal={vraag?.id === 'resultaten_week' ? `${open} aanvragen open` : vraag?.signaal}
-          thema={thema}
-          mobielRoute={false}
-          label="Welke informatie Stevin bij deze vraag gebruikt"
-        />
+        {drieD ? (
+          // Richting C: hetzelfde 3D-brein als in de hero.
+          <div className="relative h-[340px] overflow-hidden rounded-[20px] bg-primary sm:h-[420px] lg:h-[560px]">
+            <div
+              className="pointer-events-none absolute inset-0"
+              aria-hidden="true"
+              style={{ background: 'radial-gradient(60% 60% at 50% 50%, rgba(61,142,255,0.16) 0%, rgba(10,22,40,0) 70%)' }}
+            />
+            <StevinUniversum
+              fase={vraag ? (fase as 'rust' | 'bronnen' | 'brein' | 'signaal' | 'advies') : 'rust'}
+              actieveBronnen={vraag?.bronnen ?? []}
+              signaal={vraag?.id === 'resultaten_week' ? `${open} aanvragen open` : vraag?.signaal}
+              middenX={0.42}
+              middenY={0.5}
+              schaal={0.95}
+            />
+          </div>
+        ) : (
+          <StevinNetwerk
+            fase={vraag ? fase : 'rust'}
+            actieveBronnen={vraag?.bronnen ?? []}
+            signaal={vraag?.id === 'resultaten_week' ? `${open} aanvragen open` : vraag?.signaal}
+            thema={thema}
+            mobielRoute={false}
+            label="Welke informatie Stevin bij deze vraag gebruikt"
+          />
+        )}
       </div>
     </div>
   )

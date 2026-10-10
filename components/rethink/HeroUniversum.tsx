@@ -29,6 +29,9 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
   const [fase, setFase] = useState<UniversumFase>('rust')
   const [focus, setFocus] = useState<Kies | null>(null)
   const [lijstOpen, setLijstOpen] = useState(false)
+  // Gekozen in het beeld zelf: dan staat de uitleg al op het kaartje bij de
+  // node en hoeft hij niet nog een keer onder de knop.
+  const [uitBeeld, setUitBeeld] = useState(false)
   const timers = useRef<number[]>([])
   useEffect(() => () => timers.current.forEach((t) => window.clearTimeout(t)), [])
 
@@ -46,7 +49,8 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
     )
   }
 
-  const kies = (id: Kies) => {
+  const kies = (id: Kies, vanuitBeeld = false) => {
+    setUitBeeld(vanuitBeeld)
     timers.current.forEach((t) => window.clearTimeout(t))
     setFase('rust')
     setFocus((f) => (f === id ? null : id))
@@ -70,6 +74,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
           actieveBronnen={fase === 'rust' ? [] : VRAAG.bronnen}
           focus={focus}
           signaal={VRAAG.signaal}
+          onKiesHub={(id) => kies(id as Kies, true)}
           middenX={0.66}
           middenY={0.5}
           schaal={0.92}
@@ -95,6 +100,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
             actieveBronnen={fase === 'rust' ? [] : VRAAG.bronnen}
             focus={focus}
             signaal={VRAAG.signaal}
+          onKiesHub={(id) => kies(id as Kies, true)}
             middenX={0.36}
             middenY={0.5}
             schaal={1.15}
@@ -143,7 +149,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
             ))}
           </ul>
           <p aria-live="polite" className="m-0 mt-3 text-[14.5px] leading-snug text-white/70 lg:mt-4 lg:min-h-[44px]">
-            {gekozen ? (
+            {gekozen && !uitBeeld ? (
               <>
                 <strong className="font-semibold text-white">{gekozen.label}.</strong> {gekozen.uitleg}
               </>
