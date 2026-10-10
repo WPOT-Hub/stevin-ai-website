@@ -1,7 +1,7 @@
 'use client'
 
 import { useLocale, useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
+import { Link, usePathname } from '@/i18n/navigation'
 import Logo from './Logo'
 import { ConsentSettingsButton } from './ConsentBanner'
 import TrustBadges from './TrustBadges'
@@ -9,6 +9,7 @@ import TrustBadges from './TrustBadges'
 export default function Footer() {
   const t = useTranslations('footer')
   const locale = useLocale()
+  const pathname = usePathname()
 
   const footerLinks = {
     diensten: [
@@ -82,6 +83,56 @@ export default function Footer() {
       { label: t('int_mmm'), href: '/integraties/mmm-attribution' },
       { label: t('int_all'), href: '/integraties' },
     ],
+  }
+
+  // W-535: op de voorstelpagina's een korte footer. Koen, 10 okt 23:26: "we
+  // gaan heel veel pagina's snoeien, of verbergen op zijn minst". De pagina's
+  // blijven bestaan en staan in de sitemap; ze worden alleen niet meer vanuit
+  // elke pagina gelinkt. Snoeien gaat per URL volgens de SEO-inventaris.
+  if (pathname.startsWith('/voorstel-')) {
+    const hoofd = [
+      { label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` },
+      { label: 'In de praktijk', href: `${pathname}#in-de-praktijk` },
+      { label: 'Samenwerken', href: `${pathname}#samenwerken` },
+      { label: 'Plan een kennismaking', href: '/kennismaking' },
+      { label: 'Contact', href: '/contact' },
+    ]
+    return (
+      <footer className="bg-[#0A1628] text-white">
+        <div className="mx-auto max-w-[1200px] px-6 py-14">
+          <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+            <div>
+              <Link href="/" className="inline-block">
+                <Logo variant="mono-white" width={120} height={19} />
+              </Link>
+              <p className="mt-4 max-w-[320px] text-[14px] leading-relaxed text-slate-400">
+                Je accounts blijven op jouw naam. We verdienen niets aan je advertentiebudget.
+              </p>
+            </div>
+            <nav aria-label="Footer">
+              <ul className="m-0 grid list-none grid-cols-2 gap-x-10 gap-y-3 p-0 text-[15px]">
+                {hoofd.map((l) => (
+                  <li key={l.label}>
+                    <Link href={l.href} className="text-slate-300 transition-colors hover:text-white">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+          <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/10 pt-6 text-[13px] text-slate-500">
+            <span>Stevin.AI</span>
+            {footerLinks.juridisch.map((l) => (
+              <Link key={l.href} href={l.href} className="hover:text-slate-300">
+                {l.label}
+              </Link>
+            ))}
+            <ConsentSettingsButton />
+          </div>
+        </div>
+      </footer>
+    )
   }
 
   return (

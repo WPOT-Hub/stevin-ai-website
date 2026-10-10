@@ -1,4 +1,5 @@
 import { Link } from '@/i18n/navigation'
+import { FileText, Phone, UsersRound } from 'lucide-react'
 import StevinNetwerk from './StevinNetwerk'
 import VraagDemo from './VraagDemo'
 import HeroUniversum from './HeroUniversum'
@@ -43,11 +44,15 @@ const LOGOS = [
   { src: '/logos/tools/tiktok.svg', naam: 'TikTok' },
   { src: '/logos/tools/linkedin.svg', naam: 'LinkedIn' },
   { src: '/logos/tools/shopify.svg', naam: 'Shopify' },
-  { src: '/logos/tools/woocommerce.svg', naam: 'WooCommerce' },
-  { src: '/logos/tools/google-sheets.svg', naam: 'Google Sheets' },
 ]
 
-const ZONDER_LOGO = ['Je telefooncentrale', 'Je CRM', 'Je offertesoftware', 'Excel']
+// Systemen zonder vast merk: een Lucide-icoon in dezelfde tegel (CLAUDE.md:
+// iconen uit Lucide in gestylede containers).
+const ZONDER_LOGO = [
+  { Icoon: Phone, naam: 'Telefonie' },
+  { Icoon: UsersRound, naam: 'Je CRM' },
+  { Icoon: FileText, naam: 'Offertes' },
+]
 
 const LAGEN = [
   { kop: 'Vakkennis', tekst: 'Wat in marketing en verkoop werkt, en wat niet.' },
@@ -173,16 +178,25 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
               bouwen we. In de kennismaking hoor je precies welke van de drie het bij jou is.
             </p>
           </div>
-          <ul className="m-0 mt-10 flex list-none flex-wrap items-center gap-x-8 gap-y-6 p-0">
+          <ul className="m-0 mt-12 grid list-none grid-cols-3 gap-3 p-0 sm:grid-cols-4 lg:grid-cols-6">
             {LOGOS.map((l) => (
-              <li key={l.naam} className="flex items-center gap-2.5">
-                <img src={l.src} alt="" width={26} height={26} className="h-[26px] w-[26px] object-contain" loading="lazy" />
-                <span className="text-[15px] font-medium text-[#2A3A54]">{l.naam}</span>
+              <li
+                key={l.naam}
+                className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-white px-2 py-5 text-center shadow-[0_1px_2px_rgba(10,22,40,0.04)] transition-shadow hover:shadow-[0_8px_24px_rgba(10,22,40,0.08)]"
+              >
+                <img src={l.src} alt="" width={30} height={30} className="h-[30px] w-[30px] object-contain" loading="lazy" />
+                <span className="text-[12.5px] font-medium leading-tight text-[#2A3A54]">{l.naam}</span>
               </li>
             ))}
-            {ZONDER_LOGO.map((n) => (
-              <li key={n} className="rounded-full border border-border bg-white px-3 py-1 text-[14px] text-muted">
-                {n}
+            {ZONDER_LOGO.map(({ Icoon, naam }) => (
+              <li
+                key={naam}
+                className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-[#C8D2E0] bg-surface px-2 py-5 text-center"
+              >
+                <span className="flex h-[30px] w-[30px] items-center justify-center rounded-lg bg-white text-accent">
+                  <Icoon size={18} strokeWidth={2} aria-hidden="true" />
+                </span>
+                <span className="text-[12.5px] font-medium leading-tight text-muted">{naam}</span>
               </li>
             ))}
           </ul>
