@@ -17,7 +17,8 @@ import { Bot, User, Copy, Share2, RefreshCw, FileDown } from 'lucide-react'
 // zomerpiek er altijd in zit en in de zomer valt.
 //
 // Getallen onderling nagerekend: 30 dagen 95 (64 + 31) voor 2.840 euro is 29,90
-// per stuk, ervoor 85 voor 2.703 is 31,80; 90 dagen 5.310 + 2.270 + 840 = 8.420
+// per stuk, ervoor 85 voor 2.703 is 31,80; uitkomst 23 + 41 + 31 = 95 en
+// 2.840 / 23 = 123 per klant (de terugkoppeling van W-123); 90 dagen 5.310 + 2.270 + 840 = 8.420
 // euro voor 196 + 61 + 58 = 315. De knoppen onder een antwoord zijn beeld.
 
 type Locale = 'nl' | 'en'
@@ -67,7 +68,9 @@ const COPY: Record<Locale, {
           { kind: 'ul', text: ['€2.840 uitgegeven', '64 telefoontjes en 31 aanvragen via de site, samen 95', '€29,90 per telefoontje of aanvraag'] },
           { kind: 'h', text: 'Vergeleken met de 30 dagen ervoor' },
           { kind: 'ul', text: ['Telefoontjes en aanvragen: +12% (van 85 naar 95)', 'Kosten per stuk: -6% (van €31,80 naar €29,90)', 'Uitgegeven: +5% (van €2.703 naar €2.840)'] },
-          { kind: 'p', text: 'Dit zijn telefoontjes en aanvragen zoals wij ze meten. Hoeveel er een opdracht werden, zie je in je eigen opvolging.' },
+          { kind: 'h', text: 'Wat ervan werd, volgens jouw terugkoppeling' },
+          { kind: 'ul', text: ['23 klant geworden', '41 niet doorgegaan', '31 nog open', '€123 per nieuwe klant'] },
+          { kind: 'p', text: 'Elke week krijg je een korte mail met je open telefoontjes en aanvragen. Per regel zeg je wat ervan werd: klant geworden, niet doorgegaan of nog open. Zo zie je wat een klant je kost, niet alleen wat een telefoontje kost.' },
         ],
       },
       {
@@ -117,7 +120,9 @@ const COPY: Record<Locale, {
           { kind: 'ul', text: ['€2,840 spent', '64 calls and 31 enquiries through the site, 95 in total', '€29.90 per call or enquiry'] },
           { kind: 'h', text: 'Compared with the 30 days before' },
           { kind: 'ul', text: ['Calls and enquiries: +12% (from 85 to 95)', 'Cost each: -6% (from €31.80 to €29.90)', 'Spent: +5% (from €2,703 to €2,840)'] },
-          { kind: 'p', text: 'These are calls and enquiries as we measure them. How many became a job, you see in your own follow-up.' },
+          { kind: 'h', text: 'What came of them, from your feedback' },
+          { kind: 'ul', text: ['23 became a customer', '41 did not go ahead', '31 still open', '€123 per new customer'] },
+          { kind: 'p', text: 'Every week you get a short email with your open calls and enquiries. Per line you say what came of it: became a customer, did not go ahead, or still open. That way you see what a customer costs you, not just what a call costs.' },
         ],
       },
       {
