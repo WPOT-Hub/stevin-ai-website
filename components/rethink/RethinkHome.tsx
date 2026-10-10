@@ -3,6 +3,7 @@ import KlantLogos from '@/components/KlantLogos'
 import { FileText, Phone, UsersRound } from 'lucide-react'
 import StevinNetwerk from './StevinNetwerk'
 import VraagDemo from './VraagDemo'
+import VraagChat from './VraagChat'
 import HeroUniversum from './HeroUniversum'
 import ScrollStappen from './ScrollStappen'
 import KennismakingVenster from './KennismakingVenster'
@@ -226,40 +227,20 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             Vraag het Stevin.
           </h2>
           <p className={`${tekst} mb-12 mt-5 max-w-[640px]`}>
-            Probeer het: kies een vraag.
+            {richting === 'c' ? '' : 'Probeer het: kies een vraag.'}
           </p>
-          <VraagDemo zonderNetwerk={richting === 'c'} />
+          {richting === 'c' ? <VraagChat /> : <VraagDemo />}
           <p className="mt-8 max-w-[720px] text-[14px] leading-relaxed text-muted">
-            Voorbeeld met verzonnen cijfers.
+            {richting === 'c' ? '' : 'Voorbeeld met verzonnen cijfers.'}
           </p>
         </div>
       </section>
 
+      {/* Richting C: kort ("less is more", "we zijn alles aan het vertellen",
+          Koen 11 okt). Deze blokken gaan naar de verdiepingspagina's. */}
+      {richting !== 'c' && (
+        <>
       {/* ── 4. HET BREIN ── */}
-      {richting === 'c' ? (
-        // Richting C: donker, tekst met de nodes stilletjes als watermerk. Het
-        // 3D-brein staat alleen in de hero (Koen, 11 okt 01:35: "niet een beetje
-        // too much?").
-        <section className="relative overflow-hidden bg-primary text-white" style={{ padding: '112px 24px' }} aria-labelledby="brein">
-          <div
-            className="pointer-events-none absolute inset-0"
-            aria-hidden="true"
-            style={{ background: 'radial-gradient(50% 55% at 70% 50%, rgba(61,142,255,0.16) 0%, rgba(10,22,40,0) 70%)' }}
-          />
-          <NodeWatermerk seed={41} thema="donker" aantal={3} />
-          <div className="relative mx-auto max-w-[760px] text-center">
-            <div>
-              <p className="mb-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent-light">Het brein achter Stevin</p>
-              <h2 id="brein" className="mx-auto m-0 font-display font-extrabold text-white" style={{ ...h2Stijl, maxWidth: '16ch' }}>
-                Niet alleen je cijfers. Ook wat je wilt bereiken.
-              </h2>
-              <p className="mt-5 text-[18px] leading-[1.6] text-white/75">
-                Een cijfer zegt pas iets als je weet wat de bedoeling was.
-              </p>
-            </div>
-          </div>
-        </section>
-      ) : (
       <section className="bg-surface" style={{ padding: '112px 24px' }} aria-labelledby="brein">
         <div className="mx-auto grid grid-cols-1 max-w-[1200px] items-center gap-14 lg:grid-cols-[1fr_1fr]">
           <div>
@@ -279,7 +260,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
         </div>
       </section>
 
-      )}
+
 
       {/* ── 5. SIGNALEN ── */}
       <section className="relative overflow-hidden bg-white" style={{ padding: '112px 24px' }} aria-labelledby="signalen">
@@ -344,6 +325,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
         </div>
       </section>
 
+        </>
+      )}
+
       {/* ── 7. VAN ADVIES NAAR UITVOERING ── */}
       {/* Scrollverhaal: bij elk stuk scrollen komt er een stap bij (Koen, 11 okt). */}
       <section className="bg-primary px-6 text-white" aria-label="Uitvoering">
@@ -373,6 +357,10 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
         </div>
       </section>
 
+      {/* Richting C: kort ("less is more", "we zijn alles aan het vertellen",
+          Koen 11 okt). Deze blokken gaan naar de verdiepingspagina's. */}
+      {richting !== 'c' && (
+        <>
       {/* ── 8. IN DE PRAKTIJK ── */}
       <section id="in-de-praktijk" className="relative overflow-hidden scroll-mt-24 bg-surface" style={{ padding: '112px 24px' }}>
         <NodeWatermerk seed={67} thema="licht" />
@@ -422,6 +410,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
           </ol>
         </div>
       </section>
+
+        </>
+      )}
 
       {/* ── 10. KENNISMAKEN ── */}
       <section id="kennismaken" className="relative overflow-hidden scroll-mt-24 bg-primary text-white" style={{ padding: '112px 24px' }}>

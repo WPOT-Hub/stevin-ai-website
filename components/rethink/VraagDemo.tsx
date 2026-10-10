@@ -14,11 +14,11 @@ import type { BronId, Fase } from './netwerk'
  * (audit 10 okt); dat is inrichting of maatwerk, geen bestaande koppeling.
  * De tekst rond de demo zegt dat ook.
  *
- * Het punt van de demo: een ontbrekende registratie in het CRM is geen bewijs
- * dat niemand heeft gebeld. De bezoeker legt vier opvolgingen vast, het aantal
- * te controleren aanvragen gaat van zes naar twee, het advies verandert, en de
- * weekresultaten blijven gelijk. Er kwamen geen klanten bij; alleen het beeld
- * klopt nu.
+ * Het punt van de demo (Koen, 11 okt 01:46): geen CRM nodig. Net als de
+ * terugkoppelmail van W-123 (src/core/aanvragen/mail.ts in de Hub) kies je per
+ * aanvraag "Ja, opdracht", "Nee" of "Weet ik nog niet". Het aantal aanvragen
+ * zonder uitkomst gaat van zes naar twee, het advies verandert mee, de
+ * weekcijfers blijven gelijk.
  */
 
 type VraagId = 'resultaten_week' | 'welke_campagne' | 'meer_budget'
@@ -34,8 +34,8 @@ const VRAGEN: Vraag[] = [
   {
     id: 'resultaten_week',
     tekst: 'Resultaten deze week?',
-    bronnen: ['website', 'telefonie', 'crm', 'offertes', 'verkoop'],
-    signaal: 'opvolging onbekend',
+    bronnen: ['website', 'telefonie', 'offertes', 'verkoop'],
+    signaal: 'uitkomst onbekend',
   },
   {
     id: 'welke_campagne',
@@ -47,7 +47,7 @@ const VRAGEN: Vraag[] = [
     id: 'meer_budget',
     tekst: 'Moet ik meer budget uitgeven?',
     bronnen: ['doelen', 'campagnes', 'crm', 'verkoop', 'markt'],
-    signaal: 'eerst de opvolging',
+    signaal: 'eerst de uitkomsten',
   },
 ]
 
@@ -58,21 +58,21 @@ const WEEK = [
   { label: 'Nieuwe klanten', waarde: 4 },
 ]
 
+type Uitkomst = 'ja' | 'nee' | 'nog_niet'
+
 interface Aanvraag {
   id: string
   wat: string
   kanaal: string
-  /** Wat het team weet maar nog niet in het CRM staat. Leeg = niets bekend. */
-  bekend: string | null
 }
 
 const AANVRAGEN: Aanvraag[] = [
-  { id: 'a1', wat: 'Warmtepomp', kanaal: 'website, maandag', bekend: 'Ruud heeft dinsdag gebeld' },
-  { id: 'a2', wat: 'Dakkapel', kanaal: 'telefoon, maandag', bekend: 'Afspraak staat in de agenda' },
-  { id: 'a3', wat: 'Badkamer', kanaal: 'website, dinsdag', bekend: 'Teruggebeld, klant denkt na' },
-  { id: 'a4', wat: 'Zonnepanelen', kanaal: 'website, woensdag', bekend: 'Mail gestuurd met planning' },
-  { id: 'a5', wat: 'Airco', kanaal: 'telefoon, donderdag', bekend: null },
-  { id: 'a6', wat: 'Kozijnen', kanaal: 'website, vrijdag', bekend: null },
+  { id: 'a1', wat: 'Warmtepomp', kanaal: 'maandag, website' },
+  { id: 'a2', wat: 'Dakkapel', kanaal: 'maandag, telefoon' },
+  { id: 'a3', wat: 'Badkamer', kanaal: 'dinsdag, website' },
+  { id: 'a4', wat: 'Zonnepanelen', kanaal: 'woensdag, website' },
+  { id: 'a5', wat: 'Airco', kanaal: 'donderdag, telefoon' },
+  { id: 'a6', wat: 'Kozijnen', kanaal: 'vrijdag, website' },
 ]
 
 const FASEN: Fase[] = ['bronnen', 'brein', 'signaal', 'advies']
@@ -96,7 +96,7 @@ export default function VraagDemo({
 }) {
   const [vraag, setVraag] = useState<Vraag | null>(null)
   const [fase, setFase] = useState<Fase>('rust')
-  const [vastgelegd, setVastgelegd] = useState<string[]>([])
+  const [uitkomsten, setUitkomsten] = useState<Record<string, Uitkomst>>({})
   const timers = useRef<number[]>([])
   const afgerondGemeld = useRef(false)
   const gestartGemeld = useRef(false)
@@ -126,24 +126,18 @@ export default function VraagDemo({
     })
   }
 
-  const legVast = (id: string) => {
-    if (vastgelegd.includes(id)) return
-    const nieuw = [...vastgelegd, id]
-    setVastgelegd(nieuw)
-    push('demo_opvolging_vastgelegd', { demo_aantal_vastgelegd: nieuw.length })
-    if (nieuw.length === 4 && !afgerondGemeld.current) {
+  const kiesUitkomst = (id: string, u: Uitkomst) => {
+    const nieuw = { ...uitkomsten, [id]: u }
+    setUitkomsten(nieuw)
+    push('demo_uitkomst', { demo_uitkomst: u })
+    const beantwoord = Object.values(nieuw).filter((x) => x !== 'nog_niet').length
+    if (beantwoord >= 4 && !afgerondGemeld.current) {
       afgerondGemeld.current = true
       push('demo_afgerond', { demo_vraag: 'resultaten_week' })
     }
-    // De knop verdwijnt; zet de focus op de volgende, of op het advies.
-    window.requestAnimationFrame(() => {
-      const volgende = lijstRef.current?.querySelector<HTMLButtonElement>('button[data-legvast]')
-      if (volgende) volgende.focus()
-      else adviesRef.current?.focus()
-    })
   }
 
-  const open = AANVRAGEN.length - vastgelegd.length
+  const open = AANVRAGEN.filter((a) => !uitkomsten[a.id] || uitkomsten[a.id] === 'nog_niet').length
   const klaar = fase === 'advies'
   const donker = thema === 'donker'
 
@@ -198,8 +192,8 @@ export default function VraagDemo({
             <AntwoordWeek
               fase={fase}
               open={open}
-              vastgelegd={vastgelegd}
-              legVast={legVast}
+              uitkomsten={uitkomsten}
+              kiesUitkomst={kiesUitkomst}
               donker={donker}
               lijstRef={lijstRef}
               adviesRef={adviesRef}
@@ -224,7 +218,7 @@ export default function VraagDemo({
             <StevinUniversum
               fase={vraag ? (fase as 'rust' | 'bronnen' | 'brein' | 'signaal' | 'advies') : 'rust'}
               actieveBronnen={vraag?.bronnen ?? []}
-              signaal={vraag?.id === 'resultaten_week' ? `${open} aanvragen open` : vraag?.signaal}
+              signaal={vraag?.id === 'resultaten_week' ? `${open} zonder uitkomst` : vraag?.signaal}
               middenX={0.42}
               middenY={0.5}
               schaal={0.95}
@@ -234,7 +228,7 @@ export default function VraagDemo({
           <StevinNetwerk
             fase={vraag ? fase : 'rust'}
             actieveBronnen={vraag?.bronnen ?? []}
-            signaal={vraag?.id === 'resultaten_week' ? `${open} aanvragen open` : vraag?.signaal}
+            signaal={vraag?.id === 'resultaten_week' ? `${open} zonder uitkomst` : vraag?.signaal}
             thema={thema}
             mobielRoute={false}
             label="Welke informatie Stevin bij deze vraag gebruikt"
@@ -282,16 +276,16 @@ function Kaart({
 function AntwoordWeek({
   fase,
   open,
-  vastgelegd,
-  legVast,
+  uitkomsten,
+  kiesUitkomst,
   donker,
   lijstRef,
   adviesRef,
 }: {
   fase: Fase
   open: number
-  vastgelegd: string[]
-  legVast: (id: string) => void
+  uitkomsten: Record<string, Uitkomst>
+  kiesUitkomst: (id: string, u: Uitkomst) => void
   donker: boolean
   lijstRef: React.Ref<HTMLUListElement>
   adviesRef: React.Ref<HTMLDivElement>
@@ -315,47 +309,45 @@ function AntwoordWeek({
 
       {toonSignaal && (
         <Kaart kop="Wat valt op" donker={donker}>
-          {vastgelegd.length < 4 ? (
-            <p className="m-0">
-              Bij <strong className="tabular-nums">{telwoord}</strong> {open === 1 ? 'aanvraag staat' : 'aanvragen staat'} geen
-              opvolging in het CRM. Dat zegt nog niet dat niemand heeft gebeld. Het staat alleen nergens.
-            </p>
-          ) : (
-            <p className="m-0">
-              Nog bij <strong className="tabular-nums">{telwoord}</strong> aanvragen staat geen opvolging in het CRM, en daar weet
-              ook niemand van een gesprek.
-            </p>
-          )}
+          <p className="m-0">
+            Van <strong className="tabular-nums">{telwoord}</strong> {open === 1 ? 'aanvraag' : 'aanvragen'} weet je nog niet wat
+            {open === 1 ? ' hij opleverde' : ' ze opleverden'}. Werd het een opdracht?
+          </p>
           <ul ref={lijstRef} className="m-0 mt-3 list-none space-y-2 p-0">
             {AANVRAGEN.map((a) => {
-              const isVast = vastgelegd.includes(a.id)
-              return (
-                <li
-                  key={a.id}
-                  className={`flex items-center justify-between gap-3 rounded-xl border px-3 py-2 text-[14px] ${donker ? 'border-white/10' : 'border-border bg-white'}`}
+              const u = uitkomsten[a.id]
+              const knop = (waarde: Uitkomst, label: string, hoofd = false) => (
+                <button
+                  type="button"
+                  onClick={() => kiesUitkomst(a.id, waarde)}
+                  aria-pressed={u === waarde}
+                  className={`rounded-full px-3 py-1.5 text-[13px] font-semibold transition-colors ${
+                    u === waarde
+                      ? 'bg-[#1D63D8] text-white'
+                      : hoofd
+                        ? 'border border-[#1D63D8] text-[#1D63D8] hover:bg-[#1D63D8] hover:text-white'
+                        : donker
+                          ? 'border border-white/25 text-white/85'
+                          : 'border border-border text-primary hover:border-primary'
+                  }`}
                 >
-                  <span className="min-w-0 flex-1">
+                  {label}
+                </button>
+              )
+              return (
+                <li key={a.id} className={`rounded-xl border px-3 py-2.5 text-[14px] ${donker ? 'border-white/10' : 'border-border bg-white'}`}>
+                  <p className="m-0">
                     <strong className="font-semibold">{a.wat}</strong>{' '}
                     <span className={donker ? 'text-white/55' : 'text-muted'}>({a.kanaal})</span>
-                    <br />
-                    <span className={`text-[13px] ${a.bekend ? (donker ? 'text-white/70' : 'text-[#2A3A54]') : 'text-[#B42B43]'}`}>
-                      {a.bekend ?? 'Niemand weet of hier contact is geweest'}
-                    </span>
-                  </span>
-                  {a.bekend &&
-                    (isVast ? (
-                      <span className="shrink-0 text-[13px] font-semibold text-[#17803F]">Vastgelegd</span>
-                    ) : (
-                      <button
-                        type="button"
-                        data-legvast
-                        onClick={() => legVast(a.id)}
-                        aria-label={`Leg opvolging vast: ${a.wat}`}
-                        className="shrink-0 rounded-lg border border-[#1D63D8] px-3 py-1.5 text-[13px] font-semibold text-[#1D63D8] hover:bg-[#1D63D8] hover:text-white"
-                      >
-                        Leg vast
-                      </button>
-                    ))}
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-1.5" role="group" aria-label={`Uitkomst ${a.wat}`}>
+                    {knop('ja', 'Ja, opdracht', true)}
+                    {knop('nee', 'Nee')}
+                    {knop('nog_niet', 'Weet ik nog niet')}
+                  </div>
+                  {u === 'nog_niet' && (
+                    <p className={`m-0 mt-1.5 text-[12.5px] ${donker ? 'text-white/55' : 'text-muted'}`}>We vragen het volgende week opnieuw.</p>
+                  )}
                 </li>
               )
             })}
@@ -367,21 +359,17 @@ function AntwoordWeek({
         <Kaart kop="Advisor" donker={donker} accent kaartRef={adviesRef}>
           {open === 6 && (
             <p className="m-0">
-              Kijk bij deze zes na of iemand contact heeft gehad, en leg het vast. Wat dan nog openstaat, geef je vandaag aan
-              een collega.
+              Laat per aanvraag weten wat het werd. Dan zie je welke campagnes opdrachten opleveren, en niet alleen aanvragen. Het
+              is een klik per aanvraag.
             </p>
           )}
-          {open < 6 && open > 2 && (
+          {open < 6 && open > 2 && <p className="m-0">Nog {telwoord} aanvragen zonder uitkomst.</p>}
+          {open <= 2 && (
             <p className="m-0">
-              Nog {telwoord} aanvragen zonder vastgelegde opvolging. Ga door met de rest.
-            </p>
-          )}
-          {open === 2 && (
-            <p className="m-0">
-              Vier aanvragen zijn opgevolgd, dat staat nu vast. Bij twee weet niemand iets: geef de airco en de kozijnen vandaag
-              aan een collega die belt.{' '}
+              Van de {AANVRAGEN.length - open} die je invulde, {Object.values(uitkomsten).filter((x) => x === 'ja').length === 1 ? 'werd er een' : `werden er ${Object.values(uitkomsten).filter((x) => x === 'ja').length}`}{' '}
+              een opdracht. Naar de rest vragen we volgende week opnieuw.{' '}
               <span className={donker ? 'text-white/60' : 'text-muted'}>
-                De cijfers van deze week blijven gelijk. Er kwamen geen klanten bij, alleen het beeld klopt nu.
+                De cijfers van deze week blijven gelijk. Je weet nu alleen wat ze waard waren.
               </span>
             </p>
           )}
@@ -437,15 +425,13 @@ function AntwoordBudget({ klaar, donker }: { klaar: boolean; donker: boolean }) 
     <>
       <Kaart kop="Wat Stevin ziet" donker={donker}>
         <p className="m-0">
-          Er komen aanvragen binnen. Maar bij zes ervan staat in het CRM niet wat ermee gebeurd is, en bij twee daarvan weet
-          ook niemand in het team het.
+          Er komen aanvragen binnen. Maar van zes weet je nog niet of het een opdracht werd.
         </p>
       </Kaart>
       {klaar && (
         <Kaart kop="Advisor" donker={donker} accent>
           <p className="m-0">
-            Nu nog niet. Zolang je niet weet wat er met de aanvragen gebeurt, weet je ook niet wat extra budget oplevert. Eerst
-            de opvolging op orde, dan praten we over budget.
+            Nu nog niet. Zolang je niet weet welke aanvragen opdrachten worden, weet je ook niet wat extra budget oplevert. Eerst de uitkomsten, dan praten we over budget.
           </p>
         </Kaart>
       )}

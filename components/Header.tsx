@@ -96,12 +96,19 @@ export default function Header() {
   // afwijkend verhaal (koppelen, vergelijken, activeren, verbeteren) dat de
   // homepage tegensprak, en had nul zoekvertoningen, dus omgooien kon zonder
   // SEO-risico. De inhoud zit nu in /platform, de URL redirect daarheen.
+  // Richting C heeft een korte homepage zonder praktijk- en samenwerkblok;
+  // die worden eigen pagina's (11 okt).
   const navItems = isVoorstel
-    ? [
-        { label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` },
-        { label: 'In de praktijk', href: `${pathname}#in-de-praktijk` },
-        { label: 'Samenwerken', href: `${pathname}#samenwerken` },
-      ]
+    ? pathname.startsWith('/voorstel-c')
+      ? [
+          { label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` },
+          { label: 'Samenwerken', href: `${pathname}#kennismaken` },
+        ]
+      : [
+          { label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` },
+          { label: 'In de praktijk', href: `${pathname}#in-de-praktijk` },
+          { label: 'Samenwerken', href: `${pathname}#samenwerken` },
+        ]
     : [
         { label: t('controle'), href: '/controle' },
         { label: t('tarieven'), href: '/tarieven' },
