@@ -13,7 +13,8 @@ import { Bot, User, Copy, Share2, RefreshCw, FileDown } from 'lucide-react'
 // van het circus van LUMIOS. Telefoontjes en aanvragen in plaats van
 // "resultaten", geen vaste datum (die stond een maand na dato nog op "t/m 12
 // september"), en de grafiek loopt mee met de echte maand: de waarden komen uit
-// een vast seizoensprofiel, zodat de zomerpiek altijd in de zomer valt.
+// een vast seizoensprofiel over de laatste twaalf volle maanden, zodat de
+// zomerpiek er altijd in zit en in de zomer valt.
 //
 // Getallen onderling nagerekend: 30 dagen 95 (64 + 31) voor 2.840 euro is 29,90
 // per stuk, ervoor 85 voor 2.703 is 31,80; 90 dagen 5.310 + 2.270 + 840 = 8.420
@@ -55,7 +56,7 @@ const COPY: Record<Locale, {
     reset: 'Opnieuw',
     bron: 'Voorbeeld van de klantportal op app.stevin.ai, met verzonnen cijfers van een installatiebedrijf. De knoppen onder een antwoord zijn hier beeld, geen functie.',
     chartTitle: 'Telefoontjes en aanvragen per maand',
-    chartNote: 'De lopende maand is nog niet compleet.',
+    chartNote: 'De afgelopen twaalf volle maanden.',
     actions: ['Kopieren', 'Delen', 'Opnieuw genereren', 'Exporteren als PDF'],
     qa: [
       {
@@ -70,12 +71,12 @@ const COPY: Record<Locale, {
         ],
       },
       {
-        q: 'Wanneer krijg ik de meeste telefoontjes?',
+        q: 'Wanneer krijg ik de meeste telefoontjes en aanvragen?',
         chart: true,
         a: [
           { kind: 'p', text: 'Hier is de stand van zaken:' },
           { kind: 'h', text: 'Per seizoen' },
-          { kind: 'ul', text: ['Zomer: de drukste maanden, met juli als piek, rond de 140 per maand', 'Voorjaar en najaar: tussen de 60 en de 90 per maand', 'Winter: rond de 50 per maand'] },
+          { kind: 'ul', text: ['Zomer: de drukste maanden, met juli als piek, rond de 140 telefoontjes en aanvragen', 'Voorjaar en najaar: tussen de 60 en de 90 per maand', 'Winter: rond de 50 per maand'] },
           { kind: 'p', text: 'De piek komt met de warmte. Na een warme dag komen er de dag erna ongeveer twee keer zoveel telefoontjes binnen, vooral voor airco. Wie zijn advertenties pas aanzet als het al warm is, mist de eerste dagen.' },
         ],
       },
@@ -105,7 +106,7 @@ const COPY: Record<Locale, {
     reset: 'Reset',
     bron: 'Example of the client portal on app.stevin.ai, with made-up figures from an installation company. The buttons under an answer are illustration here, not function.',
     chartTitle: 'Calls and enquiries per month',
-    chartNote: 'The current month is not complete yet.',
+    chartNote: 'The last twelve full months.',
     actions: ['Copy', 'Share', 'Regenerate', 'Export as PDF'],
     qa: [
       {
@@ -120,12 +121,12 @@ const COPY: Record<Locale, {
         ],
       },
       {
-        q: 'When do I get the most calls?',
+        q: 'When do I get the most calls and enquiries?',
         chart: true,
         a: [
           { kind: 'p', text: 'Here is where things stand:' },
           { kind: 'h', text: 'By season' },
-          { kind: 'ul', text: ['Summer: the busiest months, peaking in July at around 140 a month', 'Spring and autumn: between 60 and 90 a month', 'Winter: around 50 a month'] },
+          { kind: 'ul', text: ['Summer: the busiest months, peaking in July at around 140 calls and enquiries', 'Spring and autumn: between 60 and 90 a month', 'Winter: around 50 a month'] },
           { kind: 'p', text: 'The peak comes with the heat. After a hot day, about twice as many calls come in the next day, mostly for air conditioning. If you only switch your ads on once it is already hot, you miss the first days.' },
         ],
       },
@@ -164,19 +165,17 @@ function Blocks({ blocks }: { blocks: Block[] }) {
 }
 
 function Chart({ locale, title, note }: { locale: Locale; title: string; note: string }) {
-  // Laatste zeven maanden tot en met de lopende maand. Pas na een klik in beeld,
-  // dus alleen in de browser: geen verschil tussen server en browser.
+  // De laatste twaalf volle maanden, zonder de lopende. Zo zit de zomer met de
+  // piek in juli er altijd compleet in, wanneer je ook kijkt (Codex, PR 128).
+  // Pas na een klik in beeld, dus alleen in de browser: geen verschil tussen
+  // server en browser.
   const nu = new Date()
   const fmt = new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : 'nl-NL', { month: 'short' })
-  const maanden = Array.from({ length: 7 }, (_, k) => new Date(nu.getFullYear(), nu.getMonth() - 6 + k, 1))
-  const dagenInMaand = new Date(nu.getFullYear(), nu.getMonth() + 1, 0).getDate()
-  const waarden = maanden.map((d, k) => {
-    const v = SEIZOEN[d.getMonth()]
-    return k === 6 ? Math.max(1, Math.round((v * nu.getDate()) / dagenInMaand)) : v
-  })
+  const maanden = Array.from({ length: 12 }, (_, k) => new Date(nu.getFullYear(), nu.getMonth() - 12 + k, 1))
+  const waarden = maanden.map((d) => SEIZOEN[d.getMonth()])
   const labels = maanden.map((d) => fmt.format(d).replace('.', ''))
   const max = Math.max(...waarden)
-  const w = 520, h = 150, pad = 8, gap = 10
+  const w = 520, h = 150, pad = 6, gap = 6
   const bw = (w - pad * 2 - gap * (waarden.length - 1)) / waarden.length
   return (
     <div className="mt-4 rounded-[10px] border border-[#d6dde8] bg-white px-4 pt-3 pb-2">
@@ -187,12 +186,12 @@ function Chart({ locale, title, note }: { locale: Locale; title: string; note: s
           const x = pad + i * (bw + gap)
           const bh = Math.max(4, (v / max) * (h - 44))
           const y = h - 24 - bh
-          const laatste = i === waarden.length - 1
+          const piek = v === max
           return (
             <g key={i}>
-              <rect x={x} y={y} width={bw} height={bh} rx="3" fill={laatste ? '#9cc4ff' : '#3c8eff'} />
-              <text x={x + bw / 2} y={y - 6} textAnchor="middle" fontSize="11" fill="#1f2933" fontWeight="600">{v.toLocaleString(locale === 'en' ? 'en-GB' : 'nl-NL')}</text>
-              <text x={x + bw / 2} y={h - 8} textAnchor="middle" fontSize="11" fill="#6B7280">{labels[i]}</text>
+              <rect x={x} y={y} width={bw} height={bh} rx="3" fill={piek ? '#3c8eff' : '#9cc4ff'} />
+              <text x={x + bw / 2} y={y - 6} textAnchor="middle" fontSize="10" fill="#1f2933" fontWeight="600">{v.toLocaleString(locale === 'en' ? 'en-GB' : 'nl-NL')}</text>
+              <text x={x + bw / 2} y={h - 8} textAnchor="middle" fontSize="10" fill="#6B7280">{labels[i]}</text>
             </g>
           )
         })}
