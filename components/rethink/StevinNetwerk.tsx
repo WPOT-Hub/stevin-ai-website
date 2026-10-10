@@ -413,10 +413,9 @@ export default function StevinNetwerk({
           ))}
           <line x1={160} y1={70} x2={160} y2={152} stroke={signaalAan ? k.lijnActief : k.lijn} strokeWidth={1.6} />
           <circle cx={160} cy={56} r={22} fill={k.kern} className={breinAan ? 'sn-puls-zacht' : ''} />
-          <g fill={k.kernTekst} opacity={0.95}>
-            <rect x={151} y={48} width={18} height={3.4} rx={1.7} />
-            <rect x={151} y={54.3} width={12} height={3.4} rx={1.7} />
-            <rect x={151} y={60.6} width={18} height={3.4} rx={1.7} />
+          <g transform="translate(160 56) scale(0.6) translate(-24 -24)" fill={k.kernTekst}>
+            <rect x={6} y={7} width={30} height={14} rx={4} />
+            <rect x={12} y={27} width={30} height={14} rx={4} />
           </g>
           <text x={190} y={60} fontSize={13} fontWeight={700} fill={k.tekst}>
             Stevin-brein
@@ -535,11 +534,10 @@ function KernNode({
         className="sn-overgang sn-stip"
       />
       {isBrein && (
-        // Stevin-teken: drie streepjes, zoals in het logo-icoon.
-        <g fill={kleur.kernTekst} opacity={0.95}>
-          <rect x={x - 11} y={y - 9} width={22} height={4} rx={2} />
-          <rect x={x - 11} y={y - 2} width={15} height={4} rx={2} />
-          <rect x={x - 11} y={y + 5} width={22} height={4} rx={2} />
+        // Het Stevin-icoon uit public/logos/logo-icon.svg (48x48).
+        <g transform={`translate(${x} ${y}) scale(0.82) translate(-24 -24)`} fill={kleur.kernTekst}>
+          <rect x={6} y={7} width={30} height={14} rx={4} />
+          <rect x={12} y={27} width={30} height={14} rx={4} />
         </g>
       )}
       {tekstOnder && (

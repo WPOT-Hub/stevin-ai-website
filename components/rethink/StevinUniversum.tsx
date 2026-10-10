@@ -51,10 +51,35 @@ const SATELLIETEN: Partial<Record<BronId, string[]>> = {
   doelgroepen: ['Particulier', 'Zakelijk'],
 }
 
+// Wat Stevin onthoudt van het voorbeeldbedrijf (verzonnen installatiebedrijf,
+// dezelfde als in de vraagdemo). Koen, 10 okt 23:25: "aan het brein hangt veel
+// meer, zie de oude nodes". Het oude brein (StevinBrainVisual) toonde 108
+// herinneringen; dit is dezelfde gedachte met het verhaal van deze pagina.
+// Een deel heeft een label en licht om de beurt op, de rest is massa.
+const HERINNERINGEN: { label: string; bijVraag?: boolean }[] = [
+  { label: 'Airco zomer 2026: 41 aanvragen in 6 weken' },
+  { label: 'Warmtepomp najaar: offerte gemiddeld 9 dagen' },
+  { label: 'Afspraak: elke aanvraag binnen een dag terugbellen', bijVraag: true },
+  { label: 'Vorige maand: 2 aanvragen zonder opvolging', bijVraag: true },
+  { label: 'Doel 2026: 30 procent meer zakelijke klanten' },
+  { label: 'Dakkapellen vooral uit Zwolle en Kampen' },
+  { label: 'Telefoon op maandag het drukst', bijVraag: true },
+  { label: 'Zonnepanelen: minder aanvragen dan vorig jaar' },
+  { label: 'Badkamers: 1 op de 3 offertes getekend' },
+  { label: 'Concurrent adverteert sinds september op jouw naam' },
+  { label: 'Herfstvakantie: minder aanvragen, meer bezoek' },
+  { label: 'Campagne Kozijnen voorjaar: veel klikken, weinig offertes' },
+  { label: 'Ruud volgt de telefoon op, Sanne de website', bijVraag: true },
+  { label: 'Goede klant: eigen woning, budget boven 8.000 euro' },
+  { label: 'Landingspagina Warmtepomp sinds juni vernieuwd' },
+  { label: 'Merkzoekopdrachten stabiel over 12 maanden' },
+]
+
 interface Knoop {
   id: string
   hub: HubId
-  soort: 'brein' | 'advisor' | 'hub' | 'sat' | 'stof'
+  soort: 'brein' | 'advisor' | 'hub' | 'sat' | 'stof' | 'geheugen'
+  herinnering?: number
   label?: string
   x: number
   y: number
@@ -125,6 +150,47 @@ function bouwKnopen(): { knopen: Knoop[]; lijnen: [number, number][] } {
 
   // Geen dwarsverbanden tussen bronnen: Koen vond het eerste 3D-beeld te druk
   // (10 okt, 23:21). Alles loopt via het brein, en dat is ook het verhaal.
+
+  // De geheugenwolk: dicht om het brein, binnen de bronnen. Labels alleen bij
+  // de eerste 16, en die lichten om de beurt op.
+  const WOLK = 96
+  const wolkStart = knopen.length
+  for (let s = 0; s < WOLK; s++) {
+    const a = r() * Math.PI * 2
+    const e = Math.acos(2 * r() - 1) - Math.PI / 2
+    const d = 46 + Math.pow(r(), 0.8) * 120
+    const heeftLabel = s < HERINNERINGEN.length
+    knopen.push({
+      id: `geheugen-${s}`,
+      hub: 'brein',
+      soort: 'geheugen',
+      herinnering: heeftLabel ? s : undefined,
+      label: heeftLabel ? HERINNERINGEN[s].label : undefined,
+      x: Math.cos(a) * Math.cos(e) * d,
+      y: Math.sin(e) * d * 0.85,
+      z: Math.sin(a) * Math.cos(e) * d,
+      r: heeftLabel ? 2.8 : 1.6 + r() * 1.2,
+    })
+  }
+  // Dunne verbanden tussen herinneringen die dicht bij elkaar liggen: zo voelt
+  // het als een netwerk en niet als een stofwolk.
+  for (let i = wolkStart; i < knopen.length; i++) {
+    let beste = -1
+    let afstand = Infinity
+    for (let j = wolkStart; j < knopen.length; j++) {
+      if (i === j) continue
+      const dx = knopen[i].x - knopen[j].x
+      const dy = knopen[i].y - knopen[j].y
+      const dz = knopen[i].z - knopen[j].z
+      const d = dx * dx + dy * dy + dz * dz
+      if (d < afstand) {
+        afstand = d
+        beste = j
+      }
+    }
+    if (beste > i || r() < 0.35) lijnen.push([i, beste])
+    if (r() < 0.22) lijnen.push([i, 0])
+  }
 
   // Losse stofjes ver weg, voor diepte.
   for (let s = 0; s < 16; s++) {
@@ -224,15 +290,22 @@ export default function StevinUniversum({
 
       const P = knopen.map((n) => proj(n.x, n.y, n.z))
 
+      const breinFase = f === 'brein' || f === 'signaal' || f === 'advies'
+      // Om de 3,2 seconden licht een herinnering op, in rust.
+      const uitgelicht = !bezig && fc == null ? Math.floor(tijd / 3200) % HERINNERINGEN.length : -1
       const isAan = (n: Knoop) =>
-        (n.soort === 'brein' && (f === 'brein' || f === 'signaal' || f === 'advies')) ||
+        (n.soort === 'geheugen' &&
+          n.herinnering != null &&
+          ((breinFase && HERINNERINGEN[n.herinnering].bijVraag) || n.herinnering === uitgelicht)) ||
+        (n.soort === 'brein' && breinFase) ||
         (n.soort === 'advisor' && f === 'advies') ||
         (bezig && n.hub !== 'brein' && n.hub !== 'advisor' && actief.includes(n.hub as BronId) && n.soort !== 'stof') ||
         (fc != null && n.hub === fc && n.soort !== 'stof')
       // Kleine nodes (wat er in een bron zit) alleen tonen als die bron meedoet.
       const zichtbaar = (n: Knoop) => n.soort !== 'sat' || isAan(n) || fc === n.hub
       const isStil = (n: Knoop) =>
-        (fc != null && n.hub !== fc && n.soort !== 'brein') ||
+        (fc != null && n.hub !== fc && n.soort !== 'brein' && n.soort !== 'geheugen') ||
+        (fc != null && fc !== 'brein' && n.soort === 'geheugen') ||
         (bezig && fc == null && n.soort !== 'brein' && n.soort !== 'advisor' && !actief.includes(n.hub as BronId))
 
       // Lijnen
@@ -250,7 +323,11 @@ export default function StevinUniversum({
         const stil = isStil(knopen[a]) || isStil(knopen[b])
         el.setAttribute('stroke', aan ? '#5DA3FF' : '#93C5FD')
         const weg = !zichtbaar(knopen[a]) || !zichtbaar(knopen[b])
-        el.setAttribute('stroke-opacity', (weg ? 0 : aan ? 0.85 : stil ? 0.04 : 0.13 * diepte).toFixed(3))
+        const wolk = knopen[a].soort === 'geheugen' || knopen[b].soort === 'geheugen'
+        el.setAttribute(
+          'stroke-opacity',
+          (weg ? 0 : aan ? 0.85 : stil ? 0.04 : wolk ? 0.09 * diepte : 0.13 * diepte).toFixed(3),
+        )
         el.setAttribute('stroke-width', aan ? '1.4' : '0.8')
       })
 
@@ -265,14 +342,25 @@ export default function StevinUniversum({
         g.setAttribute('transform', `translate(${p.X.toFixed(1)} ${p.Y.toFixed(1)}) scale(${(p.s * k).toFixed(3)})`)
         g.setAttribute(
           'opacity',
-          (!zichtbaar(n) ? 0 : stil ? 0.16 : n.soort === 'stof' ? 0.35 * diepte : Math.max(0.3, diepte)).toFixed(3),
+          (!zichtbaar(n)
+            ? 0
+            : stil
+              ? 0.16
+              : n.soort === 'stof'
+                ? 0.35 * diepte
+                : n.soort === 'geheugen' && !aan
+                  ? 0.3 + 0.55 * diepte
+                  : Math.max(0.3, diepte)
+          ).toFixed(3),
         )
         g.dataset.aan = aan ? '1' : '0'
         // Labels alleen aan de voorkant van de bol, of als de node meedoet.
         const voor = p.z < 30
         const labelZichtbaar =
           n.soort === 'brein' ||
-          (aan && n.soort !== 'sat') ||
+          (aan && n.soort !== 'sat' && n.soort !== 'geheugen') ||
+          (aan && n.soort === 'geheugen' && (!bezig || f === 'brein')) ||
+          (fc === 'brein' && n.soort === 'geheugen' && n.herinnering != null && n.herinnering < 6) ||
           fc === n.hub ||
           ((n.soort === 'hub' || n.soort === 'advisor') && voor && !stil)
         g.dataset.label = labelZichtbaar ? '1' : '0'
@@ -429,15 +517,15 @@ export default function StevinUniversum({
           {knopen.map((n, i) => (
             <g key={n.id} ref={(el) => { knoopEls.current[i] = el }} className={`su-knoop su-${n.soort}`} opacity={0}>
               {n.soort === 'brein' && <circle r={n.r * 3.4} fill="url(#su-brein)" className="su-ademen" />}
-              {(n.soort === 'hub' || n.soort === 'advisor' || n.soort === 'sat') && (
+              {(n.soort === 'hub' || n.soort === 'advisor' || n.soort === 'sat' || n.soort === 'geheugen') && (
                 <circle r={n.r * 3.2} fill="url(#su-gloed)" className="su-halo" />
               )}
               <circle r={n.r} className="su-stip" />
               {n.soort === 'brein' && (
-                <g fill="#0A1628">
-                  <rect x={-10} y={-8.5} width={20} height={3.8} rx={1.9} />
-                  <rect x={-10} y={-1.9} width={13.5} height={3.8} rx={1.9} />
-                  <rect x={-10} y={4.7} width={20} height={3.8} rx={1.9} />
+                // Het Stevin-icoon uit public/logos/logo-icon.svg (48x48).
+                <g transform="scale(0.78) translate(-24 -24)" fill="#3D8EFF">
+                  <rect x={6} y={7} width={30} height={14} rx={4} />
+                  <rect x={12} y={27} width={30} height={14} rx={4} />
                 </g>
               )}
               {n.label && (
@@ -446,8 +534,8 @@ export default function StevinUniversum({
                   x={n.soort === 'brein' ? 0 : n.r + 7}
                   y={n.soort === 'brein' ? n.r + 20 : 4.5}
                   textAnchor={n.soort === 'brein' ? 'middle' : 'start'}
-                  fontSize={n.soort === 'sat' ? 11 : 13.5}
-                  fontWeight={n.soort === 'sat' ? 500 : 650}
+                  fontSize={n.soort === 'sat' ? 11 : n.soort === 'geheugen' ? 12 : 13.5}
+                  fontWeight={n.soort === 'sat' || n.soort === 'geheugen' ? 500 : 650}
                 >
                   {n.label}
                 </text>

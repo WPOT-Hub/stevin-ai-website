@@ -588,3 +588,6 @@ section {
 @media (prefers-reduced-motion: reduce) {
   .su-ademen, .su-puls { animation: none; }
 }
+.su-geheugen .su-stip { fill: #8DB8F5; }
+.su-geheugen[data-aan="1"] .su-stip { fill: #FFFFFF; }
+.su-geheugen .su-label { fill: #E6F0FF; font-style: normal; }
