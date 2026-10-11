@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import DeskProof from '@/components/DeskProof'
 import { localizedMetadata } from '@/lib/seo'
+import RethinkGoogleAds from '@/components/rethink/RethinkGoogleAds'
 import FAQAccordion from '@/components/FAQAccordion'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -148,10 +149,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: '/google-ads-uitbesteden',
     locale,
     title: isNl
-      ? 'Google Ads uitbesteden, alles blijft van jou'
+      ? // W-535 (zoekwoorden 12 okt): kosten in de titel, was 'Google Ads uitbesteden, alles blijft van jou'.
+        'Google Ads uitbesteden: wat het kost en wat je krijgt'
       : 'Outsource Google Ads without losing your data and control',
     description: isNl
-      ? 'Vanaf 399 per maand, accounts op je eigen naam, elke wijziging in een logboek en geen marge op je mediabudget.'
+      ? // W-535: was 'Vanaf 399'. Uitbesteden is vanaf 1.399 (wij worden jouw bureau); 399 is zelf doen.
+        'Wij worden jouw bureau vanaf 1.399 per maand, zelf doen kan vanaf 399. Accounts op je eigen naam, meten tot omzet en geen marge op je budget.'
       : 'Outsource Google Ads from 399 per month, with accounts in your own name, every change logged and no margin on your media budget. First a diagnosis on your own numbers.',
   })
 }
@@ -163,7 +166,10 @@ const dashLight = <span className="inline-block w-6 h-px bg-accent opacity-60 fl
 export default async function GoogleAdsUitbestedenPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  const c = locale === 'en' ? COPY.en : COPY.nl
+  // W-535: de Nederlandse pagina is de nieuwe in de stijl van de homepage.
+  // /en houdt voorlopig de oude (net als de homepage en /tarieven).
+  if (locale !== 'en') return <RethinkGoogleAds />
+  const c = COPY.en
 
   return (
     <>

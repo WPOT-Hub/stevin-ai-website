@@ -44,7 +44,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // W-078, 13 sep 2026: heette alleen 'Tarieven'. Gemeten koopvraag: "Wat zijn
     // de gemiddelde kosten voor het uitbesteden van advertentiebeheer aan een
     // bureau, en hoe vergelijk je dat?" Daar geeft deze pagina antwoord op.
-    title: isNl ? 'Wat kost het uitbesteden van je advertenties?' : 'What does outsourcing your advertising cost?',
+    // W-535 (zoekwoorden 12 okt): "marketing uitbesteden" 480 per maand; de H1 zegt al marketing.
+    title: isNl ? 'Marketing uitbesteden: wat het kost' : 'What does outsourcing your advertising cost?',
     description: isNl
       ? 'Vanaf 1.399 per maand als wij jouw bureau zijn, vanaf 399 als je het zelf doet. De prijs hangt af van het werk, niet van je advertentiebudget.'
       : 'Everyone starts with the diagnosis. Then you choose: we run it, we run it and hand it over, or you do it yourself with Stevin alongside. From 399 euros per month.',

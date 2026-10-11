@@ -1,6 +1,7 @@
 import { setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { localizedMetadata } from '@/lib/seo'
+import RethinkSimonStevin from '@/components/rethink/RethinkSimonStevin'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import FAQAccordion from '@/components/FAQAccordion'
@@ -243,6 +244,18 @@ export default async function SimonStevinPage({ params }: Props) {
         })),
       },
     ],
+  }
+
+  // W-535: de Nederlandse pagina is de nieuwe in de stijl van de homepage, met
+  // hetzelfde entity-schema, dezelfde H1 en dezelfde vragen. /en houdt
+  // voorlopig de oude (net als de homepage en /tarieven).
+  if (!isEn) {
+    return (
+      <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <RethinkSimonStevin kop={c.h1} vragen={c.faqs.map((f) => ({ v: f.question, a: f.answer }))} />
+      </>
+    )
   }
 
   return (

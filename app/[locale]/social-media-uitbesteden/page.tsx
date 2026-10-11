@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import DeskProof from '@/components/DeskProof'
 import { localizedMetadata } from '@/lib/seo'
+import RethinkSocial from '@/components/rethink/RethinkSocial'
 import FAQAccordion from '@/components/FAQAccordion'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -145,10 +146,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: '/social-media-uitbesteden',
     locale,
     title: isNl
-      ? 'Social media uitbesteden, gemeten op aanvragen'
+      ? // W-535 (zoekwoorden 12 okt): Facebook en Instagram in de titel, was 'Social media uitbesteden, gemeten op aanvragen'.
+        'Social media uitbesteden: Facebook- en Instagram-advertenties'
       : 'Outsource social media with numbers that mean something',
     description: isNl
-      ? 'Social en Meta Ads vanaf 399 per maand. Accounts op je eigen naam, en meten op aanvragen in plaats van bereik.'
+      ? // W-535: was 'vanaf 399'. Uitbesteden is vanaf 1.399 (wij worden jouw bureau); 399 is zelf doen.
+        'Facebook- en Instagram-advertenties uitbesteden: wij worden jouw bureau vanaf 1.399 per maand, zelf doen kan vanaf 399. Meten tot omzet, niet tot bereik.'
       : 'Outsource social media and Meta Ads from 399 per month. First a diagnosis on your own data, accounts in your own name, measured on enquiries instead of reach.',
   })
 }
@@ -160,7 +163,10 @@ const dashLight = <span className="inline-block w-6 h-px bg-accent opacity-60 fl
 export default async function SocialMediaUitbestedenPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  const c = locale === 'en' ? COPY.en : COPY.nl
+  // W-535: de Nederlandse pagina is de nieuwe in de stijl van de homepage.
+  // /en houdt voorlopig de oude (net als de homepage en /tarieven).
+  if (locale !== 'en') return <RethinkSocial />
+  const c = COPY.en
 
   return (
     <>

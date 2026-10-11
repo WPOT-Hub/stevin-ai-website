@@ -5,6 +5,7 @@ import Section from '@/components/Section'
 import SectionHeader from '@/components/SectionHeader'
 import AskStevinDemo from '@/components/AskStevinDemo'
 import { localizedMetadata } from '@/lib/seo'
+import RethinkPlatform from '@/components/rethink/RethinkPlatform'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -216,7 +217,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PlatformPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  const t = locale === 'en' ? COPY.en : COPY.nl
+  // W-535: de Nederlandse pagina is de nieuwe in de stijl van de homepage.
+  // /en houdt voorlopig de oude (net als de homepage en /tarieven).
+  if (locale !== 'en') return <RethinkPlatform />
+  const t = COPY.en
 
   return (
     <>
