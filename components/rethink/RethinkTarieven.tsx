@@ -55,7 +55,8 @@ const BUDGET = {
   alineas: [
     'Veel bureaus rekenen 10 tot 20 procent van wat je bij Google en Meta uitgeeft. Dan verdient je bureau meer zodra jij meer uitgeeft, en het is ook je bureau dat zegt hoeveel je moet uitgeven.',
     'Bovendien zegt je budget weinig over hoeveel werk het is. Een campagne van 2.000 euro kan lastiger zijn dan een van 10.000.',
-    'Wij rekenen een vast bedrag. Wat je bij Google en Meta uitgeeft, gaat naar Google en Meta.',
+    // Geen "vast bedrag": de prijs is vanaf en hangt af van het werk (Koen, 11 okt 23:55).
+    'Wij rekenen naar het werk dat er ligt, niet naar je budget. Wat je bij Google en Meta uitgeeft, gaat naar Google en Meta.',
   ],
 }
 
@@ -113,8 +114,9 @@ export default function RethinkTarieven() {
             Wat kost het uitbesteden van je marketing?
           </h1>
           <p className="m-0 mt-6 max-w-[680px] text-[18px] leading-[1.6] text-[#2A3A54]">
-            Bij Stevin.AI betaal je een vast bedrag per maand: vanaf 1.399 als wij jouw bureau zijn, vanaf 399 als je het zelf doet of jouw
-            agents het werk laat doen. Je advertentiebudget betaal je rechtstreeks aan Google en Meta. Daar verdienen wij niets aan.
+            Bij Stevin.AI betaal je vanaf 1.399 per maand als wij jouw bureau zijn, en vanaf 399 als je het zelf doet of jouw agents het werk
+            laat doen. Wat je precies betaalt hangt af van het werk, niet van je advertentiebudget. Dat budget betaal je rechtstreeks aan Google
+            en Meta, en daar verdienen wij niets aan.
           </p>
         </div>
       </section>
