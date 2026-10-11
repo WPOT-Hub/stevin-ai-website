@@ -119,14 +119,18 @@ export function bronPositie(index: number, totaal: number) {
 //
 // Een verzonnen installatiebedrijf rond Breda, een maand. De cijfers kloppen
 // onderling:
-//   - 71 aanvragen via de website (Google 38, Meta 14, ChatGPT 4, de rest 15)
+//   - 71 aanvragen via de website (Google 38, Meta 14, ChatGPT 6, de rest 13)
 //     en 52 telefoontjes (Google 24, Meta 5, ChatGPT 1, de rest 22): samen
 //     123 in het CRM.
 //   - 31 offertes (Google 12, Meta 4, ChatGPT 2, de rest 13), 11 getekend:
 //     5 opdrachten uit een aanvraag op de website, 6 uit een telefoontje.
 //     Google 4, Meta 1, ChatGPT 1, vindbaar in Google 2, bestaande klanten 3.
 //   - Omzet 52.800 euro, gemiddeld 4.800 per opdracht; per bron opgeteld
-//     18.400 + 3.900 + 4.200 + 8.400 + 17.900.
+//     18.400 + 3.900 + 3.400 + 9.200 + 17.900.
+//   - ChatGPT Ads bewust tussen Meta en Google: een opdracht per 520 klikken,
+//     tegen 310 bij Google en 860 bij Meta. Het kanaal is nieuw in Nederland
+//     en er is nog geen bewijs dat het beter doet dan Google (Koen, 11 okt
+//     23:18: "iets minder opportunistisch").
 //   - 11 nieuwe opdrachten: 8 particulier, 3 zakelijk, 3 van eerdere klanten.
 //   - Het jaar: 468.000 van 600.000 euro begin oktober, op schema.
 export interface MeetStap {
@@ -170,12 +174,12 @@ export const METINGEN: Partial<Record<BronId, Meting>> = {
   chatgpt_ads: {
     vorm: 'keten',
     stappen: [
-      { label: 'Klikken', waarde: '210' },
-      { label: 'Aanvragen', waarde: '4' },
+      { label: 'Klikken', waarde: '520' },
+      { label: 'Aanvragen', waarde: '6' },
       { label: 'Telefoontjes', waarde: '1' },
       { label: 'Offertes', waarde: '2' },
       { label: 'Opdrachten', waarde: '1', nadruk: true },
-      { label: 'Omzet', waarde: EUR('4.200'), nadruk: true },
+      { label: 'Omzet', waarde: EUR('3.400'), nadruk: true },
     ],
   },
   website: {
@@ -216,8 +220,8 @@ export const METINGEN: Partial<Record<BronId, Meting>> = {
     stappen: [
       { label: 'Google Ads', waarde: EUR('18.400') },
       { label: 'Meta', waarde: EUR('3.900') },
-      { label: 'ChatGPT Ads', waarde: EUR('4.200') },
-      { label: 'Vindbaar in Google', waarde: EUR('8.400') },
+      { label: 'ChatGPT Ads', waarde: EUR('3.400') },
+      { label: 'Vindbaar in Google', waarde: EUR('9.200') },
       { label: 'Bestaande klanten', waarde: EUR('17.900') },
       { label: 'Omzet deze maand', waarde: EUR('52.800'), nadruk: true },
     ],
