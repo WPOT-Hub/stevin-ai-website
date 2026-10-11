@@ -113,8 +113,9 @@ export default function Footer() {
               <Link href="/" className="inline-block">
                 <Logo variant="mono-white" width={120} height={19} />
               </Link>
+              {/* De korte belofte uit D-086 (verkoopsynthese 11 okt). */}
               <p className="mt-4 max-w-[320px] text-[14px] leading-relaxed text-slate-400">
-                Wat we opzetten, staat op jouw naam. We verdienen niets aan je advertentiebudget.
+                Stevin.AI zorgt dat je marketing blijft werken. Op jouw naam.
               </p>
             </div>
             <nav aria-label="Footer">

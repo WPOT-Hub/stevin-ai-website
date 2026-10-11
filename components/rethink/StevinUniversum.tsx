@@ -35,6 +35,9 @@ interface Props {
   actieveBronnen?: BronId[]
   focus?: HubId | null
   signaal?: string
+  /** Het antwoord op de vraag, in plaats van het signaal: groter, met een eigen
+   * label en het laatste deel in accent (hero C, verkoopsynthese 11 okt). */
+  antwoord?: { label: string; tekst: string; accent?: string }
   /** Middelpunt van het brein als fractie van de breedte (ruimte voor tekst links). */
   middenX?: number
   middenY?: number
@@ -245,6 +248,7 @@ export default function StevinUniversum({
   actieveBronnen = [],
   focus = null,
   signaal,
+  antwoord,
   middenX = 0.5,
   middenY = 0.5,
   schaal = 1,
@@ -855,13 +859,34 @@ export default function StevinUniversum({
           <circle r={22} fill={`url(#${gloedId})`} className="su-puls" />
           <circle r={6} fill="#5DA3FF" />
           <circle r={2.6} fill="#FFFFFF" />
-          <text y={-34} textAnchor="middle" fontSize={11} fontWeight={700} letterSpacing="0.1em" fill="#5DA3FF">
-            SIGNAAL
-          </text>
-          {signaal && (
-            <text y={-17} textAnchor="middle" fontSize={12.5} fontWeight={600} fill="#FFFFFF" className="su-label">
-              {signaal}
-            </text>
+          {antwoord ? (
+            <>
+              <text y={-40} textAnchor="middle" fontSize={11.5} fontWeight={700} letterSpacing="0.1em" fill="#5DA3FF">
+                {antwoord.label}
+              </text>
+              <text y={-19} textAnchor="middle" fontSize={15} fontWeight={600} fill="#FFFFFF" className="su-label">
+                {antwoord.tekst}
+                {antwoord.accent && (
+                  <>
+                    {' '}
+                    <tspan fill="#5DA3FF" fontWeight={700}>
+                      {antwoord.accent}
+                    </tspan>
+                  </>
+                )}
+              </text>
+            </>
+          ) : (
+            <>
+              <text y={-34} textAnchor="middle" fontSize={11} fontWeight={700} letterSpacing="0.1em" fill="#5DA3FF">
+                SIGNAAL
+              </text>
+              {signaal && (
+                <text y={-17} textAnchor="middle" fontSize={12.5} fontWeight={600} fill="#FFFFFF" className="su-label">
+                  {signaal}
+                </text>
+              )}
+            </>
           )}
         </g>
       </svg>

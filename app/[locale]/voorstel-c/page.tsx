@@ -15,10 +15,9 @@ type Props = { params: Promise<{ locale: string }> }
 // description als hieronder, ook voor openGraph en twitter. Geen "dag en
 // nacht" zolang de Hub dat niet waarmaakt.
 
-// Past bij de hero. Zonder eigen description kreeg deze pagina de meta- en
-// OG-tekst van de oude homepage uit de layout.
-const BESCHRIJVING =
-  'Je ziet wat je marketing oplevert en wat er beter kan. Stevin.AI legt je campagnes, website, telefoon en verkoop naast elkaar en helpt bij de uitvoering.'
+// Past bij de hero (verkoopsynthese 11 okt). Zonder eigen description kreeg
+// deze pagina de meta- en OG-tekst van de oude homepage uit de layout.
+const BESCHRIJVING = 'Stevin.AI doet je marketing, en jij ziet eindelijk welke aanvraag een opdracht werd.'
 
 export async function generateMetadata(_: Props, parent: ResolvingMetadata): Promise<Metadata> {
   // openGraph en twitter vervangen die van de layout in hun geheel; daarom de
