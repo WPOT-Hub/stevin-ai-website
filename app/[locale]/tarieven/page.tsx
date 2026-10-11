@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // bureau, en hoe vergelijk je dat?" Daar geeft deze pagina antwoord op.
     title: isNl ? 'Wat kost het uitbesteden van je advertenties?' : 'What does outsourcing your advertising cost?',
     description: isNl
-      ? 'Vanaf 1.399 per maand als wij jouw bureau zijn, vanaf 399 als je het zelf doet. De prijs hangt af van het werk, niet van je advertentiebudget. Plus wat bureaus elders vragen.'
+      ? 'Vanaf 1.399 per maand als wij jouw bureau zijn, vanaf 399 als je het zelf doet. De prijs hangt af van het werk, niet van je advertentiebudget.'
       : 'Everyone starts with the diagnosis. Then you choose: we run it, we run it and hand it over, or you do it yourself with Stevin alongside. From 399 euros per month.',
   })
 }
