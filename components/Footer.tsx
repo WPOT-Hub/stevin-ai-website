@@ -91,11 +91,18 @@ export default function Footer() {
   // elke pagina gelinkt. Snoeien gaat per URL volgens de SEO-inventaris.
   if (pathname.startsWith('/voorstel-')) {
     const kort = pathname.startsWith('/voorstel-c')
-    const hoofd = [
+    // Richting C: geen Samenwerken tot die pagina bestaat. Plan een
+    // kennismaking opent hetzelfde venster als de header (een boekingsroute),
+    // met /kennismaking als terugval zonder JS.
+    const hoofd: { label: string; href: string; cta?: string }[] = [
       { label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` },
-      ...(kort ? [] : [{ label: 'In de praktijk', href: `${pathname}#in-de-praktijk` }]),
-      { label: 'Samenwerken', href: `${pathname}#${kort ? 'kennismaken' : 'samenwerken'}` },
-      { label: 'Plan een kennismaking', href: '/kennismaking' },
+      ...(kort
+        ? []
+        : [
+            { label: 'In de praktijk', href: `${pathname}#in-de-praktijk` },
+            { label: 'Samenwerken', href: `${pathname}#samenwerken` },
+          ]),
+      { label: 'Plan een kennismaking', href: '/kennismaking', cta: 'footer_kennismaking' },
       { label: 'Contact', href: '/contact' },
     ]
     return (
@@ -107,14 +114,19 @@ export default function Footer() {
                 <Logo variant="mono-white" width={120} height={19} />
               </Link>
               <p className="mt-4 max-w-[320px] text-[14px] leading-relaxed text-slate-400">
-                Je accounts blijven op jouw naam. We verdienen niets aan je advertentiebudget.
+                Wat we opzetten, staat op jouw naam. We verdienen niets aan je advertentiebudget.
               </p>
             </div>
             <nav aria-label="Footer">
               <ul className="m-0 grid list-none grid-cols-2 gap-x-10 gap-y-3 p-0 text-[15px]">
                 {hoofd.map((l) => (
                   <li key={l.label}>
-                    <Link href={l.href} className="text-slate-300 transition-colors hover:text-white">
+                    <Link
+                      href={l.href}
+                      data-cta={l.cta}
+                      data-open-kennismaking={l.cta ? '' : undefined}
+                      className="text-slate-300 transition-colors hover:text-white"
+                    >
                       {l.label}
                     </Link>
                   </li>
@@ -122,7 +134,7 @@ export default function Footer() {
               </ul>
             </nav>
           </div>
-          <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/10 pt-6 text-[13px] text-slate-500">
+          <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/10 pt-6 text-[13px] text-slate-400">
             <span>Stevin.AI</span>
             {footerLinks.juridisch.map((l) => (
               <Link key={l.href} href={l.href} className="hover:text-slate-300">

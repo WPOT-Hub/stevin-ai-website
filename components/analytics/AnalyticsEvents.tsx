@@ -10,9 +10,11 @@
  *      blog/dispatches en naar /integraties van vendors die we beschrijven)
  *   3. Outbound contact-clicks (mailto:, tel:, plan-een-gesprek)
  *
- * Geen impact op consent: events gaan via dataLayer, GTM respecteert de
- * consent-mode v2-state. Bij denied-state worden events gequeued maar
- * niet naar GA4 verzonden.
+ * Consent: events gaan via de dataLayer en GTM past consent mode v2 toe.
+ * Zonder toestemming verstuurt de Google-tag in de geavanceerde consent mode
+ * wel iets, namelijk een cookieloze ping (gcs G100; gemeten bij W-346). Een
+ * event dat aan een GA4-tag hangt zonder consentSettings 'needed' met
+ * analytics_storage, gaat dus ook voor de cookiekeuze weg.
  *
  * Mount in root layout, niet per-page (dan loopt scroll-state niet door).
  */
@@ -119,7 +121,7 @@ export function AnalyticsEvents() {
       const href = target.getAttribute('href') ?? ''
       if (!href) return
       const label = target.textContent?.replace(/\s+/g, ' ').trim().slice(0, 160) || target.getAttribute('aria-label') || ''
-      const isPrimaryCta = target.matches('[data-cta], .btn, .nav-btn') || /demo|contact|gesprek|audit|scan|aanvraag|apply|pricing|prijzen/i.test(label)
+      const isPrimaryCta = target.matches('[data-cta], .btn, .nav-btn') || /demo|contact|gesprek|kennismaking|audit|scan|aanvraag|apply|pricing|prijzen/i.test(label)
 
       // Mailto / Tel: contact-conversies
       if (href.startsWith('mailto:')) {
@@ -162,6 +164,8 @@ export function AnalyticsEvents() {
         pushEvent('cta_click', {
           cta_label: label,
           cta_href: href,
+          // De knop-id uit data-cta (hero_ontdek, kennismaking, diagnose...).
+          ...(target.dataset.cta ? { cta_id: target.dataset.cta } : {}),
           page_path: pathname,
         })
         rememberInteraction('cta_click', { href, label, page_path: pathname, placement: 'cta' })

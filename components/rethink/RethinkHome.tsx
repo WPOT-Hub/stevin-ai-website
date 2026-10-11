@@ -1,6 +1,5 @@
 import { Link } from '@/i18n/navigation'
 import KlantLogos from '@/components/KlantLogos'
-import { FileText, Phone, UsersRound } from 'lucide-react'
 import StevinNetwerk from './StevinNetwerk'
 import VraagDemo from './VraagDemo'
 import VraagChat from './VraagChat'
@@ -36,7 +35,7 @@ const HERO_DEMO = {
 
 const h2 = 'font-display font-extrabold text-primary m-0'
 const h2Stijl = { fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08' } as const
-const eyebrow = 'text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4'
+const eyebrow = 'text-[#1D63D8] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4'
 const tekst = 'text-[18px] leading-[1.6] text-[#2A3A54]'
 
 // Echte kleurlogo's (Koen, 10 okt 23:32). Herkomst en controle:
@@ -56,13 +55,9 @@ const LOGOS = [
   { src: '/logos/merken/hubspot.svg', naam: 'HubSpot' },
 ]
 
-// Systemen zonder vast merk: een Lucide-icoon in dezelfde tegel (CLAUDE.md:
-// iconen uit Lucide in gestylede containers).
-const ZONDER_LOGO = [
-  { Icoon: Phone, naam: 'Telefonie' },
-  { Icoon: UsersRound, naam: 'Je CRM' },
-  { Icoon: FileText, naam: 'Offertes' },
-]
+// Systemen zonder vast merk: alleen tekst in een gestippelde chip. Geen
+// template-icoon ernaast (Koen: "cheap", "goedkope icoontjes").
+const ZONDER_LOGO = ['Telefonie', 'Je CRM', 'Offertes']
 
 // Niet meer op de homepage ("less is more", 11 okt); bewaard voor Zo werkt Stevin.
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -97,13 +92,16 @@ const ADVIEZEN = [
 ]
 
 const UITVOERING = [
-  'We zoeken uit waar het blijft hangen.',
+  'We zoeken uit waar de aanvragen blijven liggen.',
   'We richten de opvolging in.',
   'We koppelen de systemen die nodig zijn.',
   'We helpen je team met de nieuwe werkwijze.',
-  'We kijken na of het beter gaat, en blijft gaan.',
+  'We kijken na of het beter gaat, en of dat zo blijft.',
 ]
 
+// Niet meer op de homepage (W-535, less is more); de uitleg per keuze is voor
+// de pagina Samenwerken.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const WIE = [
   { kop: 'Wij', tekst: 'We doen het werk zelf, met jou als opdrachtgever.' },
   { kop: 'Je eigen team', tekst: 'Wij zeggen wat er moet gebeuren, jouw mensen doen het.' },
@@ -175,7 +173,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
               We verbinden wat je al gebruikt.
             </h2>
             <p className={`${tekst} m-0`}>
-              Je hoeft niets te vervangen. Wat nog niet gekoppeld is, richten we in.
+              Je hoeft niets te vervangen. Een deel koppelen we meteen, de rest bouwen we erbij.
             </p>
           </div>
         </div>
@@ -199,12 +197,11 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
                       </li>
                     ))}
                     {ri === 1 &&
-                      ZONDER_LOGO.map(({ Icoon, naam }) => (
+                      ZONDER_LOGO.map((naam) => (
                         <li
                           key={naam}
-                          className="flex shrink-0 items-center gap-2 rounded-full border border-dashed border-[#C8D2E0] bg-surface py-2 pl-2.5 pr-4"
+                          className="flex shrink-0 items-center rounded-full border border-dashed border-[#C8D2E0] bg-surface px-4 py-2"
                         >
-                          <Icoon size={18} strokeWidth={2} className="text-accent" aria-hidden="true" />
                           <span className="whitespace-nowrap text-[14px] font-medium text-muted">{naam}</span>
                         </li>
                       ))}
@@ -222,17 +219,23 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
       <section id="hoe-het-werkt" className="relative overflow-hidden scroll-mt-24 bg-white" style={{ padding: '112px 24px 104px' }}>
         <NodeWatermerk seed={23} thema="licht" />
         <div className="relative mx-auto max-w-[1200px]">
-          <p className={eyebrow}>Stel een vraag</p>
+          {/* Richting C: geen eyebrow en geen lege alinea's; het label
+              Voorbeeld staat in het paneel zelf. */}
+          {richting !== 'c' && <p className={eyebrow}>Stel een vraag</p>}
           <h2 className={h2} style={{ ...h2Stijl, maxWidth: '18ch' }}>
             Vraag het Stevin.
           </h2>
-          <p className={`${tekst} mb-12 mt-5 max-w-[640px]`}>
-            {richting === 'c' ? '' : 'Probeer het: kies een vraag.'}
-          </p>
-          {richting === 'c' ? <VraagChat /> : <VraagDemo />}
-          <p className="mt-8 max-w-[720px] text-[14px] leading-relaxed text-muted">
-            {richting === 'c' ? '' : 'Voorbeeld met verzonnen cijfers.'}
-          </p>
+          {richting === 'c' ? (
+            <div className="mt-10">
+              <VraagChat />
+            </div>
+          ) : (
+            <>
+              <p className={`${tekst} mb-12 mt-5 max-w-[640px]`}>Probeer het: kies een vraag.</p>
+              <VraagDemo />
+              <p className="mt-8 max-w-[720px] text-[14px] leading-relaxed text-muted">Voorbeeld met verzonnen cijfers.</p>
+            </>
+          )}
         </div>
       </section>
 
@@ -334,7 +337,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
         <div className="mx-auto max-w-[1200px]">
           <ScrollStappen
             eyebrow="Uitvoering"
-            kop="We stoppen niet bij een advies."
+            kop="Het blijft niet bij een advies."
             vaststelling="We zien dat aanvragen te laat worden opgevolgd."
             stappen={UITVOERING}
             doel="Elke aanvraag binnen een werkdag opgevolgd."
@@ -343,17 +346,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
       </section>
       <section className="bg-white" style={{ padding: '24px 24px 112px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <p className={`${tekst} m-0 max-w-[640px]`}>
-            Wij werken vanuit jouw belang. Je kiest wie het werk doet: wij, je eigen team of je bureau. Of we pakken het samen op.
-          </p>
-          <div className="veeg mt-6 grid gap-3 sm:grid-cols-3">
-            {WIE.map((w) => (
-              <div key={w.kop} className="rounded-2xl border border-border p-5">
-                <p className="m-0 font-display text-[17px] font-bold text-primary">{w.kop}</p>
-                <p className="m-0 mt-2 text-[14.5px] leading-snug text-muted">{w.tekst}</p>
-              </div>
-            ))}
-          </div>
+          <p className={`${tekst} m-0 max-w-[640px]`}>Je kiest wie het werk doet: wij, je eigen team of je bureau.</p>
         </div>
       </section>
 
@@ -438,12 +431,10 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
               data-cta="diagnose"
               className="inline-flex items-center rounded-lg border border-white/25 px-7 py-3.5 font-display text-[15px] font-bold text-white transition-colors hover:border-white/60"
             >
-              Liever eerst de diagnose
+              Liever eerst een diagnose
             </Link>
           </div>
-          <p className="mt-5 text-[13.5px] text-white/50">
-            De diagnose: binnen twee weken weet je wat klopt en wat niet. Het rapport mag je houden.
-          </p>
+          <p className="mt-5 text-[13.5px] text-white/60">Binnen twee weken weet je wat klopt en wat niet.</p>
         </div>
       </section>
       <KennismakingVenster />
@@ -465,24 +456,28 @@ function HeroTekst({
 }) {
   const kop = (
     <>
+      {/* De kop is Engels op een Nederlandse pagina: lang="en" zodat een
+          schermlezer hem goed uitspreekt (WCAG 3.1.2). */}
       <h1
+        lang="en"
         className={`m-0 font-display font-extrabold ${donker ? 'text-white' : 'text-primary'}`}
         style={{ fontSize: 'clamp(44px, 6.2vw, 84px)', letterSpacing: '-0.045em', lineHeight: '0.98' }}
       >
         Rethink your marketing.
       </h1>
-      {mobielKort && (
-        <p className={`mt-5 text-[19px] leading-[1.45] lg:hidden ${donker ? 'text-white/75' : 'text-[#2A3A54]'}`}>
-          Zie wat je marketing oplevert, en wat er beter kan.
+      {/* Richting C: op elke schermmaat alleen de korte zin; de blokken
+          eronder vertellen de rest (W-535, less is more). */}
+      {mobielKort ? (
+        <p className={`mt-5 text-[19px] leading-[1.45] ${donker ? 'text-white/75' : 'text-[#2A3A54]'}`}>
+          Je ziet wat je marketing oplevert, en wat er beter kan.
+        </p>
+      ) : (
+        <p className={`mt-7 max-w-[560px] text-[19px] leading-[1.55] ${donker ? 'text-white/70' : 'text-[#2A3A54]'}`}>
+          Elke maand gaat er geld naar je marketing, en wat het oplevert weet je niet precies. Wij leggen je campagnes, je website,
+          je telefoon en je verkoop naast elkaar, kijken mee en zeggen wat er beter kan.{' '}
+          <strong className={`font-semibold ${donker ? 'text-white' : 'text-primary'}`}>En we helpen je het te doen.</strong>
         </p>
       )}
-      <p
-        className={`mt-7 max-w-[560px] text-[19px] leading-[1.55] ${mobielKort ? 'hidden lg:block' : ''} ${donker ? 'text-white/70' : 'text-[#2A3A54]'}`}
-      >
-        Elke maand gaat er geld naar je marketing, en wat het oplevert weet je niet precies. Wij leggen je campagnes, je website,
-        je telefoon en je verkoop naast elkaar, kijken mee en zeggen wat er beter kan.{' '}
-        <strong className={`font-semibold ${donker ? 'text-white' : 'text-primary'}`}>En we helpen je het te doen.</strong>
-      </p>
     </>
   )
   const knoppen = (
@@ -503,9 +498,12 @@ function HeroTekst({
           Bekijk hoe het werkt
         </a>
       </div>
-      <p className={`mt-5 text-[13.5px] ${mobielKort ? 'hidden lg:block' : ''} ${donker ? 'text-white/45' : 'text-muted'}`}>
-        Je accounts blijven op jouw naam. We verdienen niets aan je advertentiebudget.
-      </p>
+      {/* Richting C: deze zin staat al in de footer. */}
+      {!mobielKort && (
+        <p className={`mt-5 text-[13.5px] ${donker ? 'text-white/60' : 'text-muted'}`}>
+          Wat we opzetten, staat op jouw naam. We verdienen niets aan je advertentiebudget.
+        </p>
+      )}
     </>
   )
   if (deel === 'kop') return kop
