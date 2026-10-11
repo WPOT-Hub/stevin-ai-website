@@ -106,7 +106,9 @@ function Turnstile({
         id = window.turnstile.render(ref.current, {
           sitekey: TURNSTILE_SITEKEY,
           language: 'nl',
-          appearance: 'always',
+          // Alleen zichtbaar als Cloudflare een handeling vraagt; anders ziet de
+          // bezoeker niets (CRO-synthese 11 okt, A3).
+          appearance: 'interaction-only',
           callback: (t: string) => onToken(t),
           'expired-callback': () => onToken(''),
           // Met een error-callback gooit Turnstile zelf geen fout; true zegt
@@ -149,7 +151,7 @@ function Turnstile({
     }
   }, [onToken, onMislukt, widgetRef, actiefRef])
   if (!TURNSTILE_SITEKEY) return null
-  return <div ref={ref} className="min-h-[65px]" />
+  return <div ref={ref} />
 }
 const HUB_ENDPOINT = 'https://hub.stevin.ai/api/demo-request'
 const DUUR_MIN = 30
@@ -207,8 +209,10 @@ function nederlandseAfstand(datum: string): string {
   return m ? `${m[1]}${m[2].padStart(2, '0')}:${m[3] ?? '00'}` : '+01:00'
 }
 
-// Voorbeeldagenda: tien werkdagen volgens VENSTERS, in Nederlandse tijd, met
-// een paar vaste bezette blokken. Alleen zolang er geen echte koppeling is.
+// Voorbeeldagenda: tien werkdagen volgens VENSTERS, in Nederlandse tijd. Alleen
+// zolang er geen echte koppeling is. Geen verzonnen bezette blokken meer: een
+// agenda die drukker lijkt dan hij is, is verzonnen drukte (CRO-synthese 11
+// okt, A3; corpus kern-01).
 // Begint pas op de tweede werkdag na vandaag: een gekozen moment is dan een
 // aanvraag, en we beloven binnen een werkdag te mailen of het kan. Met de
 // eerstvolgende werkdag erbij (zondagavond kiest iemand maandag 09:00) kwam
@@ -233,10 +237,7 @@ function voorbeeldAgenda(): Dag[] {
       const uur = `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`
       const s = new Date(`${datum}T${uur}:00${afstand}`)
       const e = new Date(s.getTime() + DUUR_MIN * 60000)
-      const blok = { start: s.toISOString(), end: e.toISOString() }
-      // Vaste "bezette" momenten zodat het rooster er echt uitziet.
-      const druk = (m / 30 + dagen.length * 3) % 7 === 0 || (m >= 12 * 60 && m < 13 * 60 && wd % 2 === 0)
-      ;(druk ? bezet : slots).push(blok)
+      slots.push({ start: s.toISOString(), end: e.toISOString() })
     }
     dagen.push({ datum, slots, bezet })
   }
@@ -255,6 +256,10 @@ const metHoofdletter = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
 // Het pad zonder taalvoorvoegsel, zoals ContactForm het als source meegeeft.
 const padZonderTaal = () => window.location.pathname.replace(/^\/(nl|en)(?=\/|$)/, '') || '/'
 const FOUT_VELDEN = 'Vul je naam en een geldig e-mailadres in.'
+// Foutmeldingen per veld (CRO-synthese 11 okt, A3).
+const FOUT_NAAM = 'Vul je naam in.'
+const FOUT_EMAIL_LEEG = 'Vul je e-mailadres in.'
+const FOUT_EMAIL = 'Dit e-mailadres klopt niet. Bijvoorbeeld: naam@bedrijf.nl'
 // Zo lang wacht het formulier hoogstens op het vinkje tegen robots als dat nog
 // bezig is. Daarna gaat het zonder token weg (de server markeert het dan).
 const TOKEN_WACHT_MS = 10_000
@@ -271,12 +276,15 @@ const FOUT_VERSTUREN = 'Versturen lukte niet. Probeer het nog een keer, of mail 
 const NIET_VAST_BELLEN = 'Je aanvraag is binnen, maar het moment staat nog niet vast. We bellen je binnen een werkdag.'
 const NIET_VAST_MAILEN = 'Je aanvraag is binnen, maar het moment staat nog niet vast. We mailen je binnen een werkdag.'
 
-type Veldnaam = 'bedrijf' | 'voornaam' | 'achternaam' | 'email' | 'telefoon' | 'vraag'
+// Vier zichtbare velden: naam en e-mail verplicht, bedrijf en telefoon niet;
+// het bericht achter een knop (CRO-synthese 11 okt, A3). De Hub eist alleen
+// naam en e-mail.
+type Veldnaam = 'naam' | 'email' | 'bedrijf' | 'telefoon' | 'vraag'
 type Waarden = Record<Veldnaam, string>
-const LEEG: Waarden = { bedrijf: '', voornaam: '', achternaam: '', email: '', telefoon: '', vraag: '' }
+const LEEG: Waarden = { naam: '', email: '', bedrijf: '', telefoon: '', vraag: '' }
 // Het veld dat de server noemt bij een 400, op naam van ons invulveld.
 const SERVERVELD: Record<string, Veldnaam> = {
-  naam: 'voornaam',
+  naam: 'naam',
   email: 'email',
   bedrijf: 'bedrijf',
   telefoon: 'telefoon',
@@ -392,6 +400,7 @@ export default function KennismakingVenster() {
   // binnen maar niet in de agenda, of alleen gegevens.
   const [klaar, setKlaar] = useState<'geboekt' | 'aangevraagd' | 'nietVast' | 'gegevens'>('gegevens')
   const [metTelefoon, setMetTelefoon] = useState(false)
+  const [berichtOpen, setBerichtOpen] = useState(false)
   // De zin van de Hub bij een 202 (bewaard, niet ingepland).
   const [klaarMelding, setKlaarMelding] = useState('')
   const overlayRef = useRef<HTMLDivElement>(null)
@@ -543,17 +552,26 @@ export default function KennismakingVenster() {
     e.preventDefault()
     if (bezig) return
     const honey = String(new FormData(e.currentTarget).get('_honey') ?? '')
-    const naam = `${waarden.voornaam.trim()} ${waarden.achternaam.trim()}`.trim()
+    const naam = waarden.naam.trim()
     const email = waarden.email.trim()
     const bedrijf = waarden.bedrijf.trim()
     const telefoon = waarden.telefoon.trim()
     const vraag = waarden.vraag.trim()
     const ontbreekt: Veldnaam[] = []
-    if (!naam) ontbreekt.push('voornaam')
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) ontbreekt.push('email')
+    const meldingen: string[] = []
+    if (!naam) {
+      ontbreekt.push('naam')
+      meldingen.push(FOUT_NAAM)
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      ontbreekt.push('email')
+      meldingen.push(email ? FOUT_EMAIL : FOUT_EMAIL_LEEG)
+    }
     if (ontbreekt.length) {
       setFoutVelden(ontbreekt)
-      setFout(FOUT_VELDEN)
+      setFout(meldingen.join(' '))
+      // De focus naar het eerste veld dat niet klopt.
+      e.currentTarget.querySelector<HTMLInputElement>(`[name="${ontbreekt[0]}"]`)?.focus()
       return
     }
     const moment = modus === 'boek' && gekozen ? gekozen : null
@@ -670,7 +688,8 @@ export default function KennismakingVenster() {
   if (!open) return null
 
   const veld =
-    'w-full rounded-xl border border-border bg-white px-3.5 py-2.5 text-[15px] text-primary outline-none transition-colors focus:border-accent aria-[invalid=true]:border-[#B42B43]'
+    // 16px: kleiner zoomt iOS in bij het invullen (CRO-synthese 11 okt, A3).
+    'w-full rounded-xl border border-border bg-white px-3.5 py-2.5 text-[16px] text-primary outline-none transition-colors focus:border-accent aria-[invalid=true]:border-[#B42B43]'
 
   const label = 'mb-1.5 block font-mono text-[11.5px] font-semibold uppercase tracking-[0.08em] text-[#2A3A54]'
   // Een gecontroleerd veld: de waarde staat in waarden, en bij een fout in
@@ -713,32 +732,16 @@ export default function KennismakingVenster() {
     <form onSubmit={(e) => verstuur(e, modus)} onFocusCapture={formStart} className="grid gap-4" noValidate>
       <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <label className="block">
-        <span className={label}>Bedrijf</span>
-        <input {...invoer('bedrijf')} placeholder="Naam van je bedrijf" autoComplete="organization" className={veld} maxLength={160} />
+        <span className={label}>Naam (verplicht)</span>
+        <input {...invoer('naam')} required placeholder="Voor- en achternaam" autoComplete="name" className={veld} maxLength={160} />
       </label>
-      <div className="grid grid-cols-2 gap-3">
-        <label className="block">
-          <span className={label}>Voornaam (verplicht)</span>
-          <input
-            {...invoer('voornaam')}
-            required
-            placeholder="Voornaam"
-            autoComplete="given-name"
-            className={veld}
-            maxLength={80}
-          />
-        </label>
-        <label className="block">
-          <span className={label}>Achternaam</span>
-          <input {...invoer('achternaam')} placeholder="Achternaam" autoComplete="family-name" className={veld} maxLength={80} />
-        </label>
-      </div>
       <label className="block">
         <span className={label}>E-mail (verplicht)</span>
         <input
           {...invoer('email')}
           required
           type="email"
+          inputMode="email"
           placeholder="naam@bedrijf.nl"
           autoComplete="email"
           className={veld}
@@ -746,19 +749,44 @@ export default function KennismakingVenster() {
         />
       </label>
       <label className="block">
-        <span className={label}>Telefoon</span>
-        <input {...invoer('telefoon')} type="tel" placeholder="06 12345678" autoComplete="tel" className={veld} maxLength={40} />
+        <span className={label}>Bedrijf (niet verplicht)</span>
+        <input {...invoer('bedrijf')} placeholder="Naam van je bedrijf" autoComplete="organization" className={veld} maxLength={160} />
       </label>
       <label className="block">
-        <span className={label}>Bericht (mag leeg)</span>
-        <textarea
-          {...invoer('vraag')}
-          rows={3}
-          placeholder="Waar wil je het over hebben?"
-          className={`${veld} resize-none`}
-          maxLength={2000}
+        <span className={label}>Telefoon (niet verplicht)</span>
+        <input
+          {...invoer('telefoon')}
+          type="tel"
+          placeholder="06 12345678"
+          autoComplete="tel"
+          className={veld}
+          maxLength={40}
+          aria-describedby={foutVelden.includes('telefoon') ? 'kennismaking-fout' : 'kennismaking-tel-hulp'}
         />
+        <span id="kennismaking-tel-hulp" className="mt-1.5 block text-[13px] text-muted">
+          Liever gebeld? Zet je nummer erbij.
+        </span>
       </label>
+      {berichtOpen || waarden.vraag ? (
+        <label className="block">
+          <span className={label}>Bericht (niet verplicht)</span>
+          <textarea
+            {...invoer('vraag')}
+            rows={3}
+            placeholder="Waar wil je het over hebben?"
+            className={`${veld} resize-none`}
+            maxLength={2000}
+          />
+        </label>
+      ) : (
+        <button
+          type="button"
+          onClick={() => setBerichtOpen(true)}
+          className="justify-self-start text-[14px] font-semibold text-accent-diep underline underline-offset-2"
+        >
+          Wil je alvast iets kwijt?
+        </button>
+      )}
       <Turnstile onToken={zetToken} onMislukt={markeerMislukt} widgetRef={widgetId} actiefRef={widgetActief} />
       {wachtRegel}
       {foutRegel}
@@ -811,7 +839,7 @@ export default function KennismakingVenster() {
           Plan een kennismaking
         </h2>
         <p className="m-0 mt-1.5 text-[15px] text-muted">
-          {DUUR_MIN} minuten, online.
+          {DUUR_MIN} minuten, online. Je zit nergens aan vast.
         </p>
 
         {stap === 'klaar' ? (
@@ -830,7 +858,9 @@ export default function KennismakingVenster() {
                   ? `${metHoofdletter(fmtDagLang(gekozen.start))} om ${fmtTijd(gekozen.start)}. Je krijgt meteen een mail dat je aanvraag binnen is. Binnen een werkdag hoor je of dit moment kan.`
                   : klaar === 'nietVast'
                     ? klaarMelding || (metTelefoon ? NIET_VAST_BELLEN : NIET_VAST_MAILEN)
-                    : 'Meestal bellen of mailen we binnen een werkdag.'}
+                    : metTelefoon
+                      ? 'We bellen je binnen een werkdag.'
+                      : 'We mailen je binnen een werkdag.'}
             </p>
           </div>
         ) : (
