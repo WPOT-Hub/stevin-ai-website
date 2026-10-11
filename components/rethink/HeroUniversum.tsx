@@ -2,33 +2,25 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Pause, Play } from 'lucide-react'
-import StevinUniversum, { HERINNERINGEN, type UniversumFase } from './StevinUniversum'
+import StevinUniversum, { HERINNERINGEN } from './StevinUniversum'
 import { ADVISOR, BREIN, BRONNEN, type BronId } from './netwerk'
 
 /**
  * Hero van richting C: het 3D-brein vult het scherm, de tekst staat ervoor.
  * Bediening in gewone knoppen (toetsenbord, schermlezer), het beeld volgt.
  *
- * Mobiel blijft kop, zin, brein, vraagknop, knop (Koen, 11 okt). De lijst met
+ * Mobiel is het kop, zin, brein, knop (Koen, 11 okt). De lijst met
  * onderdelen en herinneringen is daar alleen voor toetsenbord en schermlezer:
  * onzichtbaar tot hij focus krijgt. Op desktop zijn de herinneringen dat ook.
  *
- * Ongeveer anderhalve seconde na het laden speelt de vraag een keer vanzelf af
- * (verkoopsynthese 11 okt), zodat je zonder klikken ziet wat Stevin doet. Niet
- * onder reduced motion of Beweging uit, en niet als je al zelf iets koos.
+ * Geen vraag meer in de hero (Koen, 11 okt 20:21: het beantwoorde moment was
+ * "erg druk, veel tekst, te onduidelijk"). De vraagdemo verderop laat dat al
+ * zien. Het brein toont hier alleen zichzelf: de bronnen, de stromende
+ * puntjes, de herinneringen en context om de beurt, en de hartslag. Een
+ * bron of herinnering kiezen kan nog, in het beeld of met de knoppenlijst.
  */
 
 type Kies = BronId | 'brein' | 'advisor'
-
-// Dezelfde bronnen als de vraagdemo verderop: geen CRM nodig (Koen, 11 okt).
-// Het antwoord in het brein is dezelfde week als in de demo (38 aanvragen,
-// 4 opdrachten), met de opdrachten in accent (verkoopsynthese 11 okt).
-const VRAAG = {
-  tekst: 'Resultaten deze week?',
-  bronnen: ['website', 'telefonie', 'offertes'] as BronId[],
-  antwoord: { label: 'DEZE WEEK', tekst: '38 aanvragen,', accent: '4 opdrachten' },
-  uitleg: 'Voorbeeld: installatiebedrijf.',
-}
 
 // Pauzeknop voor alle beweging die vanzelf loopt (WCAG 2.2.2): het brein, de
 // logoband en de watermerken. CSS en de lus van het brein lezen het attribuut.
@@ -38,13 +30,6 @@ function zetBewegingAttribuut(uit: boolean) {
   if (uit) document.documentElement.dataset.beweging = 'uit'
   else delete document.documentElement.dataset.beweging
 }
-
-// Zo lang na het laden speelt de vraag vanzelf af (ms), en zo lang blijft het
-// antwoord daarna staan. Dan draait het brein weer en lichten de herinneringen
-// om de beurt op; anders stond het beeld na vijf seconden voor iedereen stil.
-// Wie zelf op de vraag klikt, houdt het antwoord.
-const AUTO_NA = 1500
-const AUTO_ANTWOORD = 8000
 
 // Tekst en brein naast elkaar: vanaf 900px breed in een liggend venster.
 // Daaronder, en op een staande tablet, staat alles onder elkaar. Dezelfde
@@ -83,7 +68,6 @@ function push(event: string, data: Record<string, unknown>) {
 }
 
 export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; knoppen: React.ReactNode }) {
-  const [fase, setFase] = useState<UniversumFase>('rust')
   const [focus, setFocus] = useState<Kies | null>(null)
   const [lijstOpen, setLijstOpen] = useState(false)
   // Herinnering gekozen via de knoppenlijst (index in HERINNERINGEN).
@@ -91,10 +75,6 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
   // Gekozen in het beeld zelf: dan staat de uitleg al op het kaartje bij de
   // node en hoeft hij niet nog een keer onder de knop.
   const [uitBeeld, setUitBeeld] = useState(false)
-  const timers = useRef<number[]>([])
-  useEffect(() => () => timers.current.forEach((t) => window.clearTimeout(t)), [])
-  // Speelt de vraag nog vanzelf af? Na een eigen keuze of klik niet meer.
-  const autoKlaar = useRef(false)
   // De statusregel onder de bediening. Na een keuze met een knop schuift hij in
   // beeld als hij net onder de rand of onder de cookiebanner valt (die zet
   // scroll-padding-bottom zolang hij openstaat).
@@ -125,15 +105,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
     }
   }, [])
   const wisselBeweging = () => {
-    autoKlaar.current = true
     const uit = !bewegingUit
-    // Beweging uit stopt ook een vraag die nog afspeelt: het antwoord staat
-    // meteen en het beeld verandert daarna niet meer uit zichzelf (WCAG 2.2.2).
-    if (uit) {
-      timers.current.forEach((t) => window.clearTimeout(t))
-      timers.current = []
-      if (fase !== 'rust') setFase('advies')
-    }
     setBewegingUit(uit)
     zetBewegingAttribuut(uit)
     try {
@@ -143,31 +115,11 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
     }
   }
 
-  const vraag = (bron: 'hero_klik' | 'hero_auto' = 'hero_klik') => {
-    autoKlaar.current = true
-    timers.current.forEach((t) => window.clearTimeout(t))
-    timers.current = []
-    setFocus(null)
-    setHerinnering(null)
-    push('demo_vraag', { demo_vraag: 'hero_resultaten_week', demo_bron: bron })
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setFase('advies')
-      return
-    }
-    ;(['bronnen', 'brein', 'signaal', 'advies'] as UniversumFase[]).forEach((f, i) =>
-      timers.current.push(window.setTimeout(() => setFase(f), 300 + i * 1100)),
-    )
-    if (bron === 'hero_auto') timers.current.push(window.setTimeout(() => setFase('rust'), 300 + 3 * 1100 + AUTO_ANTWOORD))
-  }
-
   // demo_node alleen bij kiezen, niet als je dezelfde knop nog eens indrukt
   // om hem uit te zetten.
   const kies = (id: Kies, vanuitBeeld = false) => {
-    autoKlaar.current = true
     const aan = focus !== id
     setUitBeeld(vanuitBeeld)
-    timers.current.forEach((t) => window.clearTimeout(t))
-    setFase('rust')
     setHerinnering(null)
     setFocus(aan ? id : null)
     if (aan) push('demo_node', { demo_node: id })
@@ -175,11 +127,8 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
   }
 
   const kiesHerinnering = (i: number) => {
-    autoKlaar.current = true
     const aan = herinnering !== i
     setUitBeeld(false)
-    timers.current.forEach((t) => window.clearTimeout(t))
-    setFase('rust')
     setFocus(null)
     setHerinnering(aan ? i : null)
     if (aan) push('demo_node', { demo_node: `herinnering_${String(i + 1).padStart(2, '0')}` })
@@ -190,77 +139,16 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
   // mee (anders bleef een eerder gekozen knop ingedrukt en noemde de regel nog
   // de oude). De uitleg staat dan op het kaartje bij de node.
   const kiesHerinneringUitBeeld = (i: number | null) => {
-    autoKlaar.current = true
     setUitBeeld(true)
-    timers.current.forEach((t) => window.clearTimeout(t))
-    setFase('rust')
     setFocus(null)
     setHerinnering(i)
     if (i != null) push('demo_node', { demo_node: `herinnering_${String(i + 1).padStart(2, '0')}` })
   }
 
   const sluit = () => {
-    autoKlaar.current = true
     setFocus(null)
     setHerinnering(null)
   }
-
-  // De vraag speelt een keer vanzelf af, AUTO_NA na het laden, als de tab
-  // zichtbaar is en het brein nog grotendeels in beeld staat. Wie al
-  // weggescrold is, ziet hem niet; dan ook niet afspelen en niet meten. Ligt
-  // de cookiebanner er nog over (op een telefoon bijna het hele brein), dan
-  // wacht hij tot die dicht is.
-  const vraagRef = useRef(vraag)
-  vraagRef.current = vraag
-  const vlakDesktop = useRef<HTMLDivElement>(null)
-  const vlakMobiel = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    const html = document.documentElement
-    let timer = 0
-    let wacht: MutationObserver | null = null
-    const deelInBeeld = (metBanner: boolean) => {
-      const vlak = window.matchMedia(ZIJ).matches ? vlakDesktop.current : vlakMobiel.current
-      const r = vlak?.getBoundingClientRect()
-      if (!r || r.height === 0) return 0
-      const onder = window.innerHeight - (metBanner ? parseFloat(html.style.scrollPaddingBottom) || 0 : 0)
-      return (Math.min(r.bottom, onder) - Math.max(r.top, 0)) / r.height
-    }
-    const stop = () => {
-      wacht?.disconnect()
-      wacht = null
-    }
-    const speel = () => {
-      timer = 0
-      if (autoKlaar.current) return stop()
-      const stil = window.matchMedia('(prefers-reduced-motion: reduce)').matches || html.dataset.beweging === 'uit'
-      if (stil || deelInBeeld(false) < 0.5) {
-        autoKlaar.current = true
-        return stop()
-      }
-      if (deelInBeeld(true) < 0.5) {
-        if (!wacht) {
-          wacht = new MutationObserver(() => {
-            if (!html.style.scrollPaddingBottom && !timer) timer = window.setTimeout(speel, 600)
-          })
-          wacht.observe(html, { attributes: true, attributeFilter: ['style'] })
-        }
-        return
-      }
-      stop()
-      vraagRef.current('hero_auto')
-    }
-    const start = () => {
-      if (document.visibilityState !== 'visible' || timer || autoKlaar.current) return
-      timer = window.setTimeout(speel, AUTO_NA)
-    }
-    start()
-    document.addEventListener('visibilitychange', start)
-    return () => {
-      document.removeEventListener('visibilitychange', start)
-      wacht?.disconnect()
-      if (timer) window.clearTimeout(timer)
-    }
-  }, [])
 
   // Waar de tekst van de hero ophoudt (naast elkaar): rechts daarvan mag een
   // wisselend herinneringslabel staan, links ervan niet. Daaruit volgen ook
@@ -319,13 +207,10 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
       />
       <div className="pointer-events-none absolute inset-0 zij:hidden" aria-hidden="true" style={{ background: gloed('80% 42% at 50% 58%') }} />
       {/* Naast elkaar: het brein over de hele breedte, middelpunt rechts van de tekst */}
-      <div ref={vlakDesktop} className="absolute inset-0 hidden zij:block">
+      <div className="absolute inset-0 hidden zij:block">
         {desktop === true && (
           <StevinUniversum
-            fase={fase}
-            actieveBronnen={fase === 'rust' ? [] : VRAAG.bronnen}
             focus={focus}
-            antwoord={VRAAG.antwoord}
             onKiesHub={(id) => kies(id as Kies, true)}
             onSluit={sluit}
             herinnering={herinnering}
@@ -349,7 +234,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
         }}
       />
 
-      {/* Volgorde onder elkaar: kop, brein, vraag, knop. Naast elkaar: kop,
+      {/* Volgorde onder elkaar: kop, brein, knop. Naast elkaar: kop,
           knoppen, bediening, met het brein rechts op de achtergrond. De knoppen
           staan twee keer in de DOM (een per opbouw, de andere op
           display:none), zodat de tabvolgorde altijd gelijk is aan wat je ziet.
@@ -363,26 +248,21 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
         <div className="pointer-events-auto hidden zij:block zij:max-w-[min(560px,44vw)]">{knoppen}</div>
 
         {/* Onder elkaar: het brein groot onder de kop, zoals Koen vastlegde: het
-            eerste scherm is kop plus beeld. Op een telefoon mogen de vraagknop
-            en de knop onder de vouw (11 okt); het brein staat daar iets links
-            van het midden, zodat bij de vraag de Advisor en Telefonie rechts
-            nog in beeld staan. Op een staande tablet is het vlak hoger en het
-            brein bijna in het midden. */}
+            eerste scherm is kop plus beeld. Op een telefoon mag de knop onder
+            de vouw (11 okt). Het brein staat in het midden; de Advisor staat
+            rechts ervan, dus niet helemaal. Op een staande tablet is het vlak
+            hoger. */}
         <div
-          ref={vlakMobiel}
           className="pointer-events-auto relative -mx-6 mt-2 h-[min(56svh,480px)] self-stretch tablet:mt-4 tablet:h-[min(58svh,78vw,620px)] zij:hidden"
         >
           {desktop === false && (
             <StevinUniversum
-              fase={fase}
-              actieveBronnen={fase === 'rust' ? [] : VRAAG.bronnen}
               focus={focus}
-              antwoord={VRAAG.antwoord}
               onKiesHub={(id) => kies(id as Kies, true)}
               onSluit={sluit}
               herinnering={herinnering}
               onKiesHerinnering={kiesHerinneringUitBeeld}
-              middenX={vlakMaat && vlakMaat.w >= 640 ? 0.46 : 0.4}
+              middenX={vlakMaat && vlakMaat.w >= 640 ? 0.47 : 0.44}
               middenY={0.5}
               schaal={vlakMaat && vlakMaat.w >= 640 ? 1.02 : 1.25}
             />
@@ -391,15 +271,8 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
         </div>
 
         {/* Bediening */}
-        <div className="pointer-events-auto zij:mt-14 zij:max-w-[min(560px,44vw)]">
+        <div className="pointer-events-auto zij:mt-12 zij:max-w-[min(560px,44vw)]">
           <div className="flex flex-wrap items-center gap-2 tablet:justify-center">
-            <button
-              type="button"
-              onClick={() => vraag()}
-              className="rounded-full border border-[#5DA3FF] bg-[#5DA3FF]/15 px-4 py-2 text-[14.5px] font-semibold text-white transition-colors hover:bg-[#5DA3FF] hover:text-primary"
-            >
-              {VRAAG.tekst}
-            </button>
             {/* Mobiel alleen zichtbaar met toetsenbordfocus (sr-only tot focus). */}
             <button
               type="button"
@@ -408,7 +281,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               aria-controls="hero-onderdelen"
               className="sr-only text-[13.5px] text-white/60 underline-offset-2 hover:text-white hover:underline focus:not-sr-only zij:not-sr-only"
             >
-              {lijstOpen ? 'Minder' : 'Of kies een onderdeel'}
+              {lijstOpen ? 'Minder' : 'Kies een onderdeel'}
             </button>
           </div>
           {/* Open: op desktop zichtbaar, op mobiel alleen zolang de focus erin
@@ -436,7 +309,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
             </ul>
             <div role="group" aria-labelledby="hero-herinneringen" className="sr-only focus-within:not-sr-only">
               <p id="hero-herinneringen" className="m-0 mt-3 text-[12px] font-semibold uppercase tracking-[0.1em] text-white/55">
-                Wat Stevin onthoudt (voorbeeld)
+                Wat Stevin onthoudt en wat er speelt (voorbeeld)
               </p>
               <ul className="m-0 mt-2 flex list-none flex-wrap gap-1.5 p-0">
                 {HERINNERINGEN.map((h, i) => (
@@ -458,12 +331,14 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               </ul>
             </div>
           </div>
-          {/* Altijd een regel hoog: de vraag speelt vanzelf af, en dan mag
-              de knop eronder niet verspringen. */}
+          {/* Naast elkaar altijd twee regels hoog: de hero staat verticaal in
+              het midden, en dan springt de kop niet als hier tekst verschijnt.
+              Onder elkaar staat hier meestal niets (de uitleg staat dan op het
+              kaartje in het beeld), en dan neemt de regel geen ruimte. */}
           <p
             ref={uitlegRef}
             aria-live="polite"
-            className="m-0 mt-3 min-h-[20px] text-[14.5px] leading-snug text-white/70 zij:mt-4 zij:min-h-[44px]"
+            className="m-0 text-[14.5px] leading-snug text-white/70 [&:not(:empty)]:mt-3 zij:mt-3 zij:min-h-[44px]"
           >
             {gekozen && !uitBeeld ? (
               <>
@@ -471,19 +346,13 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               </>
             ) : gekozenHerinnering && !uitBeeld ? (
               <>
-                <strong className="font-semibold text-white">{gekozenHerinnering.kort}</strong> (voorbeeld,{' '}
-                {gekozenHerinnering.wanneer}). {gekozenHerinnering.uitleg}
+                <strong className="font-semibold text-white">{gekozenHerinnering.kort}</strong> (voorbeeld
+                {gekozenHerinnering.wanneer ? `, ${gekozenHerinnering.wanneer}` : ''}). {gekozenHerinnering.uitleg}
+                {gekozenHerinnering.actie && (
+                  <> Wat we doen: {gekozenHerinnering.actie.charAt(0).toLowerCase() + gekozenHerinnering.actie.slice(1)}</>
+                )}
               </>
-            ) : fase === 'advies' ? (
-              <>
-                {/* Het antwoord staat in het beeld (aria-hidden); hier ook voor
-                    een schermlezer. */}
-                <span className="sr-only">
-                  Deze week: {VRAAG.antwoord.tekst} {VRAAG.antwoord.accent}.{' '}
-                </span>
-                {VRAAG.uitleg}
-              </>
-            ) : fase !== 'rust' ? null : bewegingUit ? null : (
+            ) : bewegingUit ? null : (
               <span className="hidden zij:inline">Sleep om te draaien.</span>
             )}
           </p>

@@ -59,3 +59,25 @@ volledige Chift-rapport en het rapport van Capterra zelf heb ik niet gelezen.
 Beide bestanden nagekeken op scripts, externe verwijzingen en foreignObject:
 geen gevonden. Niet nagekeken: de merkrichtlijnen van Exact en Moneybird voor
 gebruik als "werkt met". Voor livegang alsnog navragen (Exact: media@exact.com).
+
+## Logo's in het 3D-brein van de hero (11 okt 2026, brein v2)
+
+Koen (11 okt 20:12): de bronnen in het brein worden kleine glazen rondjes met
+het echte logo erin. Keuze per bron, in `BEELD` in
+`components/rethink/StevinUniversum.tsx`:
+
+| Bron | Beeld | Waarom |
+|---|---|---|
+| Google Ads | `google-ads.svg` | was onderdeel van Campagnes; Campagnes is gesplitst zodat het logo zichtbaar is |
+| Meta | `meta.svg` | idem; Facebook en Instagram hangen eronder als kleine nodes |
+| Website | `wordpress-wit.svg` | het meest gebruikte CMS bij het mkb; in wit, want het grijze logo (#464342) verdwijnt op het donkere glas |
+| CRM | `hubspot.svg` | HubSpot is een CRM; een losse HubSpot-node naast een CRM-node zou dubbel zijn |
+| Verkoop | `exact-online.svg` | facturen en omzet komen uit de boekhouding; Exact staat ook in de logoband |
+| Bedrijfsdoelen, Doelgroepen, Klantgegevens, Telefonie, Offertes, Marktsignalen, Advisor | eigen lijn-glyph | geen merk; dunne haarlijn in dezelfde stijl als het glas |
+
+`public/logos/merken/wordpress-wit.svg` is `wordpress.svg` met de vulling op
+#FFFFFF gezet, verder ongewijzigd. Nagekeken op scripts, externe verwijzingen
+en foreignObject: geen gevonden. Niet nagekeken: of de merkrichtlijnen van
+WordPress een wit logo op donker toestaan in deze vorm (de WordPress
+Foundation biedt zelf witte varianten aan, maar die pagina heb ik niet
+geopend).
