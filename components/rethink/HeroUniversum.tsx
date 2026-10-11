@@ -63,10 +63,16 @@ const ZIJ = '(min-width: 900px) and (min-aspect-ratio: 1/1)'
 //   - Het midden staat een vast deel van de straal rechts van de tekst, zoals
 //     op 1440 (daar blijft alles op zijn plek). Op een breed scherm schuift
 //     het brein zo mee met de tekst in plaats van naar de rechterrand.
+//   - Onder 1280 breed schuift het midden verder naar rechts, tot de hele bol
+//     rechts van de tekst staat op 980 (en het brein dus iets kleiner wordt).
+//     Anders liepen bronlabels en grote stippen tijdens het draaien onder de
+//     kop en de knoppen door: gemeten 11 okt, in 60 seconden ongeveer 36
+//     procent van de tijd op 980, 31 op 1024 en 7 op 1180.
 function breinNaastTekst(W: number, H: number, rand: number) {
   const R0 = 240
-  const k = Math.max(0.6, Math.min((Math.min(H, 1180) / 620) * 0.92, (W - rand - 95) / (1.76 * R0)))
-  const cx = rand + 0.72 * R0 * k
+  const deel = 0.72 + 0.4 * Math.min(1, Math.max(0, (1280 - W) / 300))
+  const k = Math.max(0.6, Math.min((Math.min(H, 1180) / 620) * 0.92, (W - rand - 95) / ((deel + 1.04) * R0)))
+  const cx = rand + deel * R0 * k
   return { middenX: cx / W, schaal: (k * 620) / Math.min(W, H), cx, R: R0 * k }
 }
 
@@ -121,6 +127,13 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
   const wisselBeweging = () => {
     autoKlaar.current = true
     const uit = !bewegingUit
+    // Beweging uit stopt ook een vraag die nog afspeelt: het antwoord staat
+    // meteen en het beeld verandert daarna niet meer uit zichzelf (WCAG 2.2.2).
+    if (uit) {
+      timers.current.forEach((t) => window.clearTimeout(t))
+      timers.current = []
+      if (fase !== 'rust') setFase('advies')
+    }
     setBewegingUit(uit)
     zetBewegingAttribuut(uit)
     try {
@@ -212,13 +225,17 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
       const onder = window.innerHeight - (metBanner ? parseFloat(html.style.scrollPaddingBottom) || 0 : 0)
       return (Math.min(r.bottom, onder) - Math.max(r.top, 0)) / r.height
     }
+    const stop = () => {
+      wacht?.disconnect()
+      wacht = null
+    }
     const speel = () => {
       timer = 0
-      if (autoKlaar.current) return
+      if (autoKlaar.current) return stop()
       const stil = window.matchMedia('(prefers-reduced-motion: reduce)').matches || html.dataset.beweging === 'uit'
       if (stil || deelInBeeld(false) < 0.5) {
         autoKlaar.current = true
-        return
+        return stop()
       }
       if (deelInBeeld(true) < 0.5) {
         if (!wacht) {
@@ -229,7 +246,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
         }
         return
       }
-      wacht?.disconnect()
+      stop()
       vraagRef.current('hero_auto')
     }
     const start = () => {

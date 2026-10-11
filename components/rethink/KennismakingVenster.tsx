@@ -28,16 +28,22 @@ import { getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/
  * (lead.ts, zonder het moment); de tekst na versturen zegt dat ook.
  *
  * Nooit een aanvraag kwijt (besluit Koen, 11 okt 09:17, zoals Swoep en een
- * stap verder). De browser houdt niets meer tegen op het vinkje tegen robots:
- * het formulier gaat altijd weg, met het token of leeg, en de server beslist
- * (een aanvraag zonder geldig vinkje wordt daar gemarkeerd en bewaard). Wat er
- * terugkomt, lezen we volgens het antwoordcontract bovenaan
- * src/routes/kennismaking.ts in de Hub: eerst ingepland, dan bewaard, dan de
- * status, nooit alleen res.ok. Lukt boeken niet en is er niets bewaard
- * (storing, of geen verbinding met /boek), dan gaat dezelfde aanvraag met het
- * moment nog via het Hub-endpoint van "Laat je gegevens achter". Bij elke
- * melding blijven de ingevulde velden staan, ook als je een ander moment kiest
- * of van tabblad wisselt.
+ * stap verder). De browser houdt niets tegen op het vinkje tegen robots: het
+ * formulier gaat altijd weg, met het token of leeg, en de server beslist (een
+ * aanvraag zonder geldig vinkje wordt daar gemarkeerd en bewaard, zonder
+ * uitnodiging). Is de controle nog bezig, dan wachten we eerst kort op het
+ * token (tot TOKEN_WACHT_MS), zodat een snelle mens niet als verdacht
+ * binnenkomt; daarna gaat het formulier hoe dan ook weg.
+ *
+ * Wat er terugkomt, lezen we volgens het antwoordcontract bovenaan
+ * src/routes/kennismaking.ts in de Hub: eerst ingepland, dan ok met bewaard,
+ * dan 409, dan veld, anders een fout met de melding. Nooit alleen res.ok. Is
+ * er bij /boek niets bewaard (storing, 403, 413, 415, 429, 5xx, of geen
+ * verbinding), dan gaat dezelfde aanvraag met het moment nog via het
+ * Hub-endpoint van "Laat je gegevens achter". Lukt ook dat niet, dan toont het
+ * venster de melding en de knop "Laat je gegevens achter". Bij elke melding
+ * blijven de ingevulde velden staan, ook als je een ander moment kiest of van
+ * tabblad wisselt.
  *
  * Openen: elk element met data-open-kennismaking op de pagina.
  *
@@ -73,12 +79,27 @@ declare global {
 // in het widget staat), dan is er geen token en gaat het formulier zonder weg.
 // Geen melding meer en geen uitweg naar de mail: de server bewaart de
 // aanvraag en markeert hem (11 okt 09:17).
-function Turnstile({ onToken, widgetRef }: { onToken: (t: string) => void; widgetRef: React.RefObject<string> }) {
+function Turnstile({
+  onToken,
+  onMislukt,
+  widgetRef,
+  actiefRef,
+}: {
+  onToken: (t: string) => void
+  onMislukt: () => void
+  widgetRef: React.RefObject<string>
+  // Staat er een widget op het scherm (ook als het script nog laadt)?
+  actiefRef: React.RefObject<boolean>
+}) {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (!TURNSTILE_SITEKEY || !ref.current) return
     let id = ''
     let weg = false
+    actiefRef.current = true
+    const mislukt = () => {
+      if (!weg) onMislukt()
+    }
     const teken = () => {
       if (weg || !window.turnstile || !ref.current || id) return
       try {
@@ -91,9 +112,14 @@ function Turnstile({ onToken, widgetRef }: { onToken: (t: string) => void; widge
           // Met een error-callback gooit Turnstile zelf geen fout; true zegt
           // dat hij is afgehandeld (Cloudflare, Client-side errors). Turnstile
           // probeert het daarna zelf opnieuw.
-          'error-callback': () => true,
+          // Het formulier wacht dan niet meer op een token.
+          'error-callback': () => {
+            mislukt()
+            return true
+          },
         })
       } catch {
+        mislukt()
         return
       }
       widgetRef.current = id
@@ -108,16 +134,20 @@ function Turnstile({ onToken, widgetRef }: { onToken: (t: string) => void; widge
       })
       sc.setAttribute('data-turnstile', '')
       sc.addEventListener('load', teken)
+      // Script geblokkeerd of geen netwerk: niet wachten op een token.
+      sc.addEventListener('error', mislukt)
       if (!bestaand) document.head.appendChild(sc)
     }
     return () => {
       weg = true
       sc?.removeEventListener('load', teken)
+      sc?.removeEventListener('error', mislukt)
+      actiefRef.current = false
       if (id && window.turnstile) window.turnstile.remove(id)
       widgetRef.current = ''
       onToken('')
     }
-  }, [onToken, widgetRef])
+  }, [onToken, onMislukt, widgetRef, actiefRef])
   if (!TURNSTILE_SITEKEY) return null
   return <div ref={ref} className="min-h-[65px]" />
 }
@@ -225,18 +255,21 @@ const metHoofdletter = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
 // Het pad zonder taalvoorvoegsel, zoals ContactForm het als source meegeeft.
 const padZonderTaal = () => window.location.pathname.replace(/^\/(nl|en)(?=\/|$)/, '') || '/'
 const FOUT_VELDEN = 'Vul je naam en een geldig e-mailadres in.'
+// Zo lang wacht het formulier hoogstens op het vinkje tegen robots als dat nog
+// bezig is. Daarna gaat het zonder token weg (de server markeert het dan).
+const TOKEN_WACHT_MS = 10_000
+const WACHT_OP_CONTROLE = 'Even geduld, we controleren nog of je geen robot bent.'
+const AGENDA_LAADT_NIET = 'De agenda laadt nu niet. Laat je gegevens achter, dan nemen we contact op.'
 // Meldingen bij een antwoord van de server (Koen, 11 okt 09:17). Bij elk van
 // deze blijven de ingevulde velden staan.
-const FOUT_CONTROLE = 'Rond de controle af en probeer het opnieuw.'
 const FOUT_VERGEVEN = 'Dit moment is net vergeven. Kies een andere tijd.'
-const FOUT_TE_VEEL = 'Te veel pogingen. Probeer het over een paar minuten opnieuw.'
 const FOUT_VERSTUREN = 'Versturen lukte niet. Probeer het nog een keer, of mail naar info@stevin.ai.'
 // Klaarscherm als de aanvraag binnen is maar het moment niet in de agenda
-// staat. Bellen kan alleen met een telefoonnummer; zonder mailen we (zoals de
-// Hub, binnenTekst in core/crm/kennismaking.ts).
-const NIET_VAST = 'We konden dit moment niet automatisch vastzetten.'
-const NIET_VAST_BELLEN = `${NIET_VAST} We bellen je binnen een werkdag.`
-const NIET_VAST_MAILEN = `${NIET_VAST} We mailen je binnen een werkdag.`
+// staat (202). De Hub stuurt de zin mee; deze twee zijn de terugval, gelijk
+// aan binnenTekst in core/crm/kennismaking.ts. Bellen kan alleen met een
+// telefoonnummer, zonder mailen we.
+const NIET_VAST_BELLEN = 'Je aanvraag is binnen, maar het moment staat nog niet vast. We bellen je binnen een werkdag.'
+const NIET_VAST_MAILEN = 'Je aanvraag is binnen, maar het moment staat nog niet vast. We mailen je binnen een werkdag.'
 
 type Veldnaam = 'bedrijf' | 'voornaam' | 'achternaam' | 'email' | 'telefoon' | 'vraag'
 type Waarden = Record<Veldnaam, string>
@@ -251,18 +284,16 @@ const SERVERVELD: Record<string, Veldnaam> = {
 }
 
 // Wat een antwoord betekent, in de volgorde van het antwoordcontract in de
-// Hub (src/routes/kennismaking.ts): ingepland, dan bewaard, dan de status.
-// Nooit alleen op res.ok: een 202 is bewaard, geen boeking. storing is ook
-// geen antwoord: geen verbinding, of een antwoord dat de browser niet mag
-// lezen, zoals een 403 zonder CORS-kop.
+// Hub (src/routes/kennismaking.ts): ingepland, dan ok met bewaard, dan 409,
+// dan veld, anders fout. Nooit alleen op res.ok: een 202 is bewaard, geen
+// boeking. fout betekent: niets bewaard, of geen antwoord dat de browser mag
+// lezen (geen verbinding, een 403 zonder CORS-kop).
 type Uitkomst =
   | { soort: 'ingepland' }
-  | { soort: 'binnen' }
+  | { soort: 'binnen'; melding: string }
   | { soort: 'vergeven'; melding: string }
-  | { soort: 'controle' }
-  | { soort: 'teVeel' }
   | { soort: 'veld'; veld: string; melding: string }
-  | { soort: 'storing' }
+  | { soort: 'fout'; melding: string }
 async function stuur(url: string, body: Record<string, unknown>): Promise<Uitkomst> {
   let status = 0
   let a: Record<string, unknown> = {}
@@ -281,25 +312,23 @@ async function stuur(url: string, body: Record<string, unknown>): Promise<Uitkom
       /* geen JSON, bijvoorbeeld een foutpagina van de proxy */
     }
   } catch {
-    return { soort: 'storing' }
+    return { soort: 'fout', melding: '' }
   }
   const tekst = (v: unknown) => (typeof v === 'string' ? v.trim().slice(0, 300) : '')
   const melding = tekst(a.melding) || tekst(a.error)
-  const goed = status >= 200 && status < 300 && a.ok !== false
-  if (goed && a.ingepland === true) return { soort: 'ingepland' }
-  if (goed) return { soort: 'binnen' }
-  if (status === 409) return { soort: 'vergeven', melding: '' }
-  if (status === 403) return { soort: 'controle' }
-  if (status === 429) return { soort: 'teVeel' }
-  if (status === 400) {
-    const veld = tekst(a.veld)
+  const tweeHonderd = status >= 200 && status < 300
+  if (tweeHonderd && a.ok === true && a.ingepland === true) return { soort: 'ingepland' }
+  // /boek zegt ok en bewaard; het endpoint van "Laat je gegevens achter"
+  // (/api/demo-request) alleen ok, en bewaart bij een 2xx altijd.
+  if (tweeHonderd && a.ok !== false && a.bewaard !== false) return { soort: 'binnen', melding }
+  if (status === 409) return { soort: 'vergeven', melding }
+  const veld = tekst(a.veld)
+  if (status === 400 && veld) {
     // Een moment dat niet (meer) in de agenda staat: zelfde weg als 409.
     if (veld === 'start') return { soort: 'vergeven', melding }
     return { soort: 'veld', veld, melding }
   }
-  // Bijvoorbeeld een 502 waarbij het bewaren wel lukte.
-  if (a.bewaard === true) return { soort: 'binnen' }
-  return { soort: 'storing' }
+  return { soort: 'fout', melding }
 }
 
 export default function KennismakingVenster() {
@@ -313,8 +342,46 @@ export default function KennismakingVenster() {
   const [stap, setStap] = useState<'kies' | 'gegevens' | 'klaar'>('kies')
   const [bezig, setBezig] = useState(false)
   const [fout, setFout] = useState('')
-  const [token, setToken] = useState('')
+  // Het token in een ref, zodat een verzending die erop wacht het ziet zodra
+  // het er is. widgetMislukt: script geblokkeerd of fout, dan niet wachten.
+  const tokenRef = useRef('')
+  const tokenWachters = useRef<((t: string) => void)[]>([])
+  const widgetMislukt = useRef(false)
+  const widgetActief = useRef(false)
+  const [wachtOpControle, setWachtOpControle] = useState(false)
+  // Na een fout zonder bewaarde aanvraag: de knop "Laat je gegevens achter".
+  const [terugval, setTerugval] = useState(false)
   const widgetId = useRef('')
+  const zetToken = useCallback((t: string) => {
+    tokenRef.current = t
+    if (!t) return
+    widgetMislukt.current = false
+    const wachters = tokenWachters.current
+    tokenWachters.current = []
+    wachters.forEach((w) => w(t))
+  }, [])
+  const markeerMislukt = useCallback(() => {
+    widgetMislukt.current = true
+    const wachters = tokenWachters.current
+    tokenWachters.current = []
+    wachters.forEach((w) => w(''))
+  }, [])
+  // Het token als het er is; anders hoogstens ms wachten, of meteen leeg als er
+  // geen widget is of het mislukte.
+  const wachtOpToken = (ms: number) =>
+    new Promise<string>((klaar) => {
+      if (tokenRef.current) return klaar(tokenRef.current)
+      if (!TURNSTILE_SITEKEY || widgetMislukt.current || !widgetActief.current) return klaar('')
+      const wachter = (t: string) => {
+        window.clearTimeout(timer)
+        klaar(t)
+      }
+      const timer = window.setTimeout(() => {
+        tokenWachters.current = tokenWachters.current.filter((w) => w !== wachter)
+        klaar('')
+      }, ms)
+      tokenWachters.current.push(wachter)
+    })
   // De ingevulde velden staan hier en niet in het formulier zelf, zodat ze
   // blijven staan als je een ander moment kiest of van tabblad wisselt.
   const [waarden, setWaarden] = useState<Waarden>(LEEG)
@@ -325,6 +392,8 @@ export default function KennismakingVenster() {
   // binnen maar niet in de agenda, of alleen gegevens.
   const [klaar, setKlaar] = useState<'geboekt' | 'aangevraagd' | 'nietVast' | 'gegevens'>('gegevens')
   const [metTelefoon, setMetTelefoon] = useState(false)
+  // De zin van de Hub bij een 202 (bewaard, niet ingepland).
+  const [klaarMelding, setKlaarMelding] = useState('')
   const overlayRef = useRef<HTMLDivElement>(null)
   const dialoogRef = useRef<HTMLDivElement>(null)
   const vorigeFocus = useRef<HTMLElement | null>(null)
@@ -344,12 +413,15 @@ export default function KennismakingVenster() {
         return
       }
       const res = await fetch(`${API}/beschikbaarheid`, { credentials: 'omit' })
-      if (!res.ok) throw new Error(String(res.status))
-      const json = (await res.json()) as { dagen: Dag[] }
+      const json = (await res.json().catch(() => null)) as { ok?: boolean; dagen?: Dag[]; melding?: string } | null
+      if (!res.ok || !json || !Array.isArray(json.dagen)) {
+        // De Hub stuurt bij 403, 429, 500 en 503 een zin voor de bezoeker mee.
+        throw new Error(typeof json?.melding === 'string' ? json.melding.slice(0, 300) : '')
+      }
       setVoorbeeld(false)
       setDagen(json.dagen)
-    } catch {
-      setFout('De agenda laadt nu niet. Laat je gegevens achter, dan bellen we je.')
+    } catch (e) {
+      setFout((e instanceof Error && e.message) || AGENDA_LAADT_NIET)
       setTab('gegevens')
       setDagen([])
     } finally {
@@ -452,6 +524,7 @@ export default function KennismakingVenster() {
     setGekozen(s)
     setStap('gegevens')
     setFout('')
+    setTerugval(false)
     push('kennismaking_slot_gekozen')
   }
 
@@ -483,12 +556,20 @@ export default function KennismakingVenster() {
       setFout(FOUT_VELDEN)
       return
     }
-    // Geen controle op het token hier: het formulier gaat altijd weg, met het
-    // token of leeg (Koen, 11 okt 09:17). De server beslist.
     const moment = modus === 'boek' && gekozen ? gekozen : null
     setBezig(true)
     setFout('')
+    setTerugval(false)
     setFoutVelden([])
+    // Is het vinkje tegen robots nog bezig, dan eerst kort wachten. Daarna gaat
+    // het formulier altijd weg, met het token of leeg (Koen, 11 okt 09:17): de
+    // server beslist.
+    let token = tokenRef.current
+    if (!token && TURNSTILE_SITEKEY && !widgetMislukt.current && widgetActief.current) {
+      setWachtOpControle(true)
+      token = await wachtOpToken(TOKEN_WACHT_MS)
+      setWachtOpControle(false)
+    }
     // Het moment staat leesbaar in het bericht (de Hub bewaart en mailt alleen
     // het bericht) en als apart veld voor de latere koppeling.
     const viaGegevens = () =>
@@ -516,9 +597,15 @@ export default function KennismakingVenster() {
           start: moment.start, naam, email, bedrijf, telefoon, vraag, _honey: honey, turnstile: token, context: getLeadContext(),
         })
         gelukt = 'nietVast'
-        // Niets bewaard of geen antwoord: dezelfde aanvraag nog via het
-        // Hub-endpoint van "Laat je gegevens achter", met het moment erin.
-        if (uit.soort === 'storing') uit = await viaGegevens()
+        // Niets bewaard (storing, 403, 413, 415, 429, 5xx) of geen antwoord:
+        // dezelfde aanvraag nog via het Hub-endpoint van "Laat je gegevens
+        // achter", met het moment erin. Lukt dat, dan is het een aanvraag.
+        if (uit.soort === 'fout') {
+          const melding = uit.melding
+          uit = await viaGegevens()
+          if (uit.soort === 'binnen') gelukt = 'aangevraagd'
+          else if (uit.soort === 'fout') uit = { soort: 'fout', melding: melding || uit.melding }
+        }
       } else {
         uit = await viaGegevens()
         gelukt = moment ? 'aangevraagd' : 'gegevens'
@@ -540,6 +627,7 @@ export default function KennismakingVenster() {
             { form: 'kennismaking_venster', source: padZonderTaal(), lead_soort: moment ? 'moment_aangevraagd' : 'gegevens' },
           )
           setMetTelefoon(Boolean(telefoon))
+          setKlaarMelding(gelukt === 'nietVast' ? uit.melding : '')
           setKlaar(gelukt)
           break
         case 'vergeven':
@@ -550,12 +638,6 @@ export default function KennismakingVenster() {
             void laad()
           }
           return
-        case 'controle':
-          setFout(FOUT_CONTROLE)
-          return
-        case 'teVeel':
-          setFout(FOUT_TE_VEEL)
-          return
         case 'veld': {
           const veld = Object.prototype.hasOwnProperty.call(SERVERVELD, uit.veld) ? SERVERVELD[uit.veld] : undefined
           setFoutVelden(veld ? [veld] : [])
@@ -563,7 +645,10 @@ export default function KennismakingVenster() {
           return
         }
         default:
-          setFout(FOUT_VERSTUREN)
+          // Niets bewaard, ook niet via de terugval. De velden blijven staan;
+          // vanaf het tabblad met het moment kan het nog als gegevens.
+          setFout(uit.melding || FOUT_VERSTUREN)
+          setTerugval(modus === 'boek')
           return
       }
       focusNa.current = 'klaar'
@@ -571,7 +656,7 @@ export default function KennismakingVenster() {
     } finally {
       setBezig(false)
       // Een Turnstile-token is na een poging gebruikt: wissen en opnieuw laten aanvinken.
-      setToken('')
+      tokenRef.current = ''
       if (widgetId.current && window.turnstile) {
         try {
           window.turnstile.reset(widgetId.current)
@@ -600,8 +685,28 @@ export default function KennismakingVenster() {
     ...(foutVelden.includes(naam) ? { 'aria-invalid': true, 'aria-describedby': 'kennismaking-fout' } : {}),
   })
   const foutRegel = fout ? (
-    <p id="kennismaking-fout" role="alert" className="m-0 text-[14px] text-[#B42B43]">
-      {fout}
+    <div className="grid justify-items-start gap-2">
+      <p id="kennismaking-fout" role="alert" className="m-0 text-[14px] text-[#B42B43]">
+        {fout}
+      </p>
+      {terugval && (
+        <button
+          type="button"
+          onClick={() => {
+            setTab('gegevens')
+            setFout('')
+            setTerugval(false)
+          }}
+          className="text-[14px] font-semibold text-accent-diep underline underline-offset-2"
+        >
+          Laat je gegevens achter
+        </button>
+      )}
+    </div>
+  ) : null
+  const wachtRegel = wachtOpControle ? (
+    <p role="status" className="m-0 text-[14px] text-muted">
+      {WACHT_OP_CONTROLE}
     </p>
   ) : null
   const formulier = (modus: 'boek' | 'gegevens') => (
@@ -654,7 +759,8 @@ export default function KennismakingVenster() {
           maxLength={2000}
         />
       </label>
-      <Turnstile onToken={setToken} widgetRef={widgetId} />
+      <Turnstile onToken={zetToken} onMislukt={markeerMislukt} widgetRef={widgetId} actiefRef={widgetActief} />
+      {wachtRegel}
       {foutRegel}
       {/* accent-diep (app/globals.css): donker genoeg voor witte tekst (5,5:1). */}
       <button
@@ -715,9 +821,7 @@ export default function KennismakingVenster() {
                 ? 'De afspraak staat.'
                 : klaar === 'aangevraagd'
                   ? 'Je moment is aangevraagd.'
-                  : klaar === 'nietVast'
-                    ? 'Je aanvraag is binnen.'
-                    : 'Dank je, we nemen contact op.'}
+                  : 'Dank je, we nemen contact op.'}
             </p>
             <p className="m-0 mt-2 text-[15px] text-muted">
               {klaar === 'geboekt' && gekozen
@@ -725,9 +829,7 @@ export default function KennismakingVenster() {
                 : klaar === 'aangevraagd' && gekozen
                   ? `${metHoofdletter(fmtDagLang(gekozen.start))} om ${fmtTijd(gekozen.start)}. Je krijgt meteen een mail dat je aanvraag binnen is. Binnen een werkdag hoor je of dit moment kan.`
                   : klaar === 'nietVast'
-                    ? metTelefoon
-                      ? NIET_VAST_BELLEN
-                      : NIET_VAST_MAILEN
+                    ? klaarMelding || (metTelefoon ? NIET_VAST_BELLEN : NIET_VAST_MAILEN)
                     : 'Meestal bellen of mailen we binnen een werkdag.'}
             </p>
           </div>
@@ -748,6 +850,7 @@ export default function KennismakingVenster() {
                   onClick={() => {
                     setTab(id)
                     setFout('')
+                    setTerugval(false)
                     setFoutVelden([])
                   }}
                   className={`rounded-lg py-2.5 text-[14.5px] font-semibold transition-colors ${tab === id ? 'bg-white text-primary shadow-sm' : 'text-muted hover:text-primary'}`}

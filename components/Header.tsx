@@ -261,20 +261,37 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2.5 transition-colors duration-500 ${showDark ? 'text-white' : 'text-primary'}`}
-            aria-label="Menu"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+          <div className="flex items-center gap-1 lg:hidden">
+            {/* Op de nieuwe homepage ook onder lg een knop in beeld: op een
+                telefoon valt de heroknop onder de vouw, en daarna volgen twee
+                vastgezette scrollstukken (nakijkronde 11 okt, hoog). Zelfde
+                venster als de knop op desktop. */}
+            {isNieuweHome && (
+              <Link
+                href="/kennismaking"
+                data-cta="header_kennismaking_mobiel"
+                data-open-kennismaking=""
+                className="whitespace-nowrap rounded-lg bg-[#1D63D8] px-3.5 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-[#1A56BD]"
+              >
+                Kennismaken
+              </Link>
+            )}
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className={`p-2.5 transition-colors duration-500 ${showDark ? 'text-white' : 'text-primary'}`}
+              aria-label="Menu"
+              aria-expanded={mobileOpen}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
