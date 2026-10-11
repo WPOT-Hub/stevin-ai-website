@@ -1,13 +1,14 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
 import Logo from './Logo'
 import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header() {
   const t = useTranslations('nav')
+  const locale = useLocale()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [dienstenOpen, setDienstenOpen] = useState(false)
   const [platformOpen, setPlatformOpen] = useState(false)
@@ -25,11 +26,15 @@ export default function Header() {
   // onder de transparante header door schuift. Staat een donkere hero hier wel
   // in, dan krijg je een witte glasband bovenop de hero (fout op /integraties,
   // gevonden 25 jul 2026).
-  const lightHeroPages = ['/seo', '/geo', '/contact', '/voorstel-a']
+  const lightHeroPages = ['/seo', '/geo', '/contact']
   const isLightHero = lightHeroPages.some(p => pathname === p || pathname.startsWith(p + '/'))
-  // W-535: de voorstelpagina's voor de nieuwe homepage tonen alvast de nieuwe
-  // navigatie met vier onderdelen. Verdwijnt zodra het voorstel de homepage is.
-  const isVoorstel = pathname.startsWith('/voorstel-')
+  // W-535: de nieuwe Nederlandse homepage (richting C) heeft een korte
+  // navigatie. De rest van de site houdt de volledige header tot de ronde met
+  // Zo werkt Stevin, Samenwerken en de omleidingen; anders verliezen /diensten,
+  // /mkb en /voor-ondernemers hun interne links voor hun omleiding er is
+  // (vindbaarheidstoets 11 okt, A3). usePathname van next-intl geeft het pad
+  // zonder taal, dus ook op /en is dat '/': vandaar de taal erbij.
+  const isNieuweHome = locale === 'nl' && pathname === '/'
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -96,24 +101,21 @@ export default function Header() {
   // afwijkend verhaal (koppelen, vergelijken, activeren, verbeteren) dat de
   // homepage tegensprak, en had nul zoekvertoningen, dus omgooien kon zonder
   // SEO-risico. De inhoud zit nu in /platform, de URL redirect daarheen.
-  // Richting C heeft een korte homepage zonder praktijk- en samenwerkblok;
-  // die worden eigen pagina's (11 okt). Samenwerken komt terug in het menu
-  // zodra die pagina bestaat; nu zou het bij het kennismakingsblok uitkomen.
-  const navItems = isVoorstel
-    ? pathname.startsWith('/voorstel-c')
-      ? [{ label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` }]
-      : [
-          { label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` },
-          { label: 'In de praktijk', href: `${pathname}#in-de-praktijk` },
-          { label: 'Samenwerken', href: `${pathname}#samenwerken` },
-        ]
+  // Op de nieuwe homepage: Zo werkt Stevin (/platform) en Tarieven, plus de
+  // knop die het kennismakingsvenster opent. Samenwerken komt in het menu
+  // zodra die pagina bestaat.
+  const navItems = isNieuweHome
+    ? [
+        { label: 'Zo werkt Stevin', href: '/platform' },
+        { label: t('tarieven'), href: '/tarieven' },
+      ]
     : [
         { label: t('controle'), href: '/controle' },
         { label: t('tarieven'), href: '/tarieven' },
         { label: t('contact'), href: '/contact' },
       ]
-  const ctaHref = isVoorstel ? '/kennismaking' : '/contact'
-  const ctaLabel = isVoorstel ? 'Plan een kennismaking' : t('cta')
+  const ctaHref = isNieuweHome ? '/kennismaking' : '/contact'
+  const ctaLabel = isNieuweHome ? 'Plan een kennismaking' : t('cta')
 
   // Dark = transparent header with white logo+text, floats over dark navy hero
   const showDark = !isLightHero && !scrolled
@@ -144,7 +146,7 @@ export default function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden min-w-0 items-center gap-4 lg:flex 2xl:gap-6">
-            {!isVoorstel && (<>
+            {!isNieuweHome && (<>
             {/* Diensten dropdown */}
             <div ref={dropdownRef} className="relative">
               <button
@@ -248,12 +250,12 @@ export default function Header() {
 
             <Link
               href={ctaHref}
-              data-cta={isVoorstel ? 'header_kennismaking' : undefined}
-              data-open-kennismaking={isVoorstel ? '' : undefined}
-              // Op de voorstelpagina's #1D63D8: hetzelfde blauw, donker genoeg
-              // voor witte tekst (5,5:1). De huidige site verandert pas mee bij
-              // de livegang.
-              className={`hidden flex-none items-center whitespace-nowrap rounded-lg px-4 py-2 text-[13px] font-semibold text-white shadow-sm shadow-accent/20 transition-all duration-200 ${isVoorstel ? 'bg-[#1D63D8] hover:bg-[#1A56BD] lg:inline-flex' : 'bg-accent hover:bg-accent-dark 2xl:inline-flex'}`}
+              data-cta={isNieuweHome ? 'header_kennismaking' : undefined}
+              data-open-kennismaking={isNieuweHome ? '' : undefined}
+              // Op de nieuwe homepage #1D63D8: hetzelfde blauw, donker genoeg
+              // voor witte tekst (5,5:1). De rest van de site verandert mee in
+              // de volgende ronde.
+              className={`hidden flex-none items-center whitespace-nowrap rounded-lg px-4 py-2 text-[13px] font-semibold text-white shadow-sm shadow-accent/20 transition-all duration-200 ${isNieuweHome ? 'bg-[#1D63D8] hover:bg-[#1A56BD] lg:inline-flex' : 'bg-accent hover:bg-accent-dark 2xl:inline-flex'}`}
             >
               {ctaLabel}
             </Link>
@@ -280,7 +282,7 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-border">
           <div className="px-6 py-6 space-y-1">
-            {!isVoorstel && (<>
+            {!isNieuweHome && (<>
             {/* Diensten accordion */}
             <button
               onClick={() => setMobileDienstenOpen(!mobileDienstenOpen)}
@@ -361,9 +363,9 @@ export default function Header() {
             <div className="pt-4">
               <Link
                 href={ctaHref}
-                data-cta={isVoorstel ? 'menu_kennismaking' : undefined}
-                data-open-kennismaking={isVoorstel ? '' : undefined}
-                className={`block w-full text-center px-5 py-3.5 text-sm font-semibold text-white rounded-xl transition-colors ${isVoorstel ? 'bg-[#1D63D8] hover:bg-[#1A56BD]' : 'bg-accent hover:bg-accent-dark'}`}
+                data-cta={isNieuweHome ? 'menu_kennismaking' : undefined}
+                data-open-kennismaking={isNieuweHome ? '' : undefined}
+                className={`block w-full text-center px-5 py-3.5 text-sm font-semibold text-white rounded-xl transition-colors ${isNieuweHome ? 'bg-[#1D63D8] hover:bg-[#1A56BD]' : 'bg-accent hover:bg-accent-dark'}`}
                 onClick={() => setMobileOpen(false)}
               >
                 {ctaLabel}
