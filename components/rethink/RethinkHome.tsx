@@ -247,20 +247,28 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
       </section>
 
       {/* ── 3. VRAAG HET STEVIN ── */}
-      <section id="hoe-het-werkt" className="relative overflow-hidden scroll-mt-24 bg-white" style={{ padding: '112px 24px 104px' }}>
+      {/* Richting C: overflow clip in plaats van hidden, anders blijft het
+          paneel van de vraagdemo niet vaststaan tijdens het scrollen. */}
+      <section
+        id="hoe-het-werkt"
+        className={`relative scroll-mt-24 bg-white ${richting === 'c' ? 'vc-klem' : 'overflow-hidden'}`}
+        style={{ padding: '112px 24px 104px' }}
+      >
         <NodeWatermerk seed={23} thema="licht" />
         <div className="relative mx-auto max-w-[1200px]">
           {/* Richting C: geen eyebrow en geen lege alinea's; het label
-              Voorbeeld staat in het paneel zelf. */}
+              Voorbeeld staat in het paneel zelf. De kop staat mee vast met
+              het paneel, als die samen op het scherm passen. */}
           {richting !== 'c' && <p className={eyebrow}>Stel een vraag</p>}
-          <h2 className={h2} style={{ ...h2Stijl, maxWidth: '18ch' }}>
-            Geen rapportje achteraf.
-          </h2>
           {richting === 'c' ? (
             <>
-              <div className="mt-10">
-                <VraagChat />
-              </div>
+              <VraagChat
+                kop={
+                  <h2 className={h2} style={{ ...h2Stijl, maxWidth: '18ch' }}>
+                    Geen rapportje achteraf.
+                  </h2>
+                }
+              />
               {/* Onder het paneel een zin en dezelfde knop als in de hero, in
                   de hoofdstijl (accent-diep: wit haalt daarop AA). Google en
                   Meta staan hier ook voor wie de demo niet invult (Koen, 11 okt
@@ -281,6 +289,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             </>
           ) : (
             <>
+              <h2 className={h2} style={{ ...h2Stijl, maxWidth: '18ch' }}>
+                Geen rapportje achteraf.
+              </h2>
               <p className={`${tekst} mb-12 mt-5 max-w-[640px]`}>Probeer het: kies een vraag.</p>
               <VraagDemo />
               <p className="mt-8 max-w-[720px] text-[14px] leading-relaxed text-muted">Voorbeeld met verzonnen cijfers.</p>
