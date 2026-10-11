@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation'
 import StevinBrainVisual from '@/components/StevinBrainVisual'
 import DeskProof from '@/components/DeskProof'
 import { localizedMetadata } from '@/lib/seo'
+import RethinkTarieven from '@/components/rethink/RethinkTarieven'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // bureau, en hoe vergelijk je dat?" Daar geeft deze pagina antwoord op.
     title: isNl ? 'Wat kost het uitbesteden van je advertenties?' : 'What does outsourcing your advertising cost?',
     description: isNl
-      ? 'Iedereen begint met de diagnose. Daarna kies je: wij draaien het, wij draaien het en dragen over, of je doet het zelf met Stevin erbij. Vanaf 399 per maand.'
+      ? 'Een vast bedrag per maand: vanaf 1.399 als wij jouw bureau zijn, vanaf 399 als je het zelf doet. Geen percentage van je advertentiebudget. Plus wat bureaus elders vragen.'
       : 'Everyone starts with the diagnosis. Then you choose: we run it, we run it and hand it over, or you do it yourself with Stevin alongside. From 399 euros per month.',
   })
 }
@@ -314,6 +315,9 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
 export default async function PreviewTarieven({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
+  // W-535: de Nederlandse pagina is de nieuwe in de stijl van de homepage,
+  // met twee pakketten. /en houdt voorlopig de oude (net als de homepage).
+  if (locale !== 'en') return <RethinkTarieven />
   const c = locale === 'en' ? COPY.en : COPY.nl
 
   return (
