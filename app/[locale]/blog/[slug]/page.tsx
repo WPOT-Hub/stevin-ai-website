@@ -2934,7 +2934,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         De SMX Advanced-conferentie breidt zich in 2027 uit naar twee locaties. De eerste editie vindt plaats van 1 tot 3 juni in San Diego, de tweede van 14 tot 16 juli in Boston. Beide evenementen bieden ruimte voor diepgaande sessies, workshops en netwerkgelegenheden met experts uit SEO en PPC aldus de organisatie.
       </p>
       <p>
-        De conferenties richten zich op actuele thema’s zoals zoekmachineoptimalisatie, betaalde zoekcampagnes en geavanceerde analysetechnieken. Deelnemers kunnen reageren op vragen aan sprekers tijdens Q&amp;A-sessies en direct ervaringen uitwisselen met andere professionals.
+        De conferenties richten zich op actuele thema’s zoals zoekmachineoptimalisatie, Search-campagnes en geavanceerde analysetechnieken. Deelnemers kunnen reageren op vragen aan sprekers tijdens Q&amp;A-sessies en direct ervaringen uitwisselen met andere professionals.
       </p>
       <p>
         Tickets zijn nu beschikbaar via de officiële website van SMX. De organisatie benadrukt dat beide locaties een vergelijkbaar aanbod zullen hebben, maar adviseert om tijdig te boeken vanwege beperkte capaciteit.
@@ -7880,7 +7880,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'openai-bekent-zes-nieuwe-uit-de-hand-gelopen-ai-agent-scenario-s':
     "Voor bedrijven die AI-agenten willen inzetten is dit een belangrijke waarschuwing: zelfs geavanceerde systemen kunnen onvoorspelbaar gedrag vertonen. Het is essentieel om niet alleen op technologie te vertrouwen, maar ook op strikte governance en continue monitoring. De vraag is niet óf een incident zich voordoet, maar wanneer – en hoe snel je erop kunt reageren.",
   'incrementaliteit-testen-biedt-scherper-beeld-van-paid-search-waarde':
-    "Voor bureaus en in-house teams betekent dit dat betaalde zoekcampagnes kritischer moeten worden beoordeeld. Het is tijd om afscheid te nemen van aannames gebaseerd op attribuutmodellen alleen en te investeren in methodes die echte oorzaak en gevolg aantonen. Dit vraagt om meer samenwerking tussen data-analisten en marketeers om campagnes niet alleen effectiever, maar ook transparanter te maken.",
+    "Voor bureaus en in-house teams betekent dit dat Search-campagnes kritischer moeten worden beoordeeld. Het is tijd om afscheid te nemen van aannames gebaseerd op attribuutmodellen alleen en te investeren in methodes die echte oorzaak en gevolg aantonen. Dit vraagt om meer samenwerking tussen data-analisten en marketeers om campagnes niet alleen effectiever, maar ook transparanter te maken.",
   'obama-pleit-voor-duidelijke-ai-regels-democraten':
     "Voor bedrijven betekent dit dat ze zich moeten voorbereiden op mogelijke nieuwe regels rond AI-toepassingen. Het is verstandig om nu al interne richtlijnen vast te leggen voor ethisch gebruik van AI, zodat je niet achteraf moet bijsturen. Daarnaast kan proactieve deelname aan sectorbrede discussies helpen om invloed uit te oefenen op toekomstige wetgeving.",
   'chinese-ai-bedrijven-gebruiken-distillatie-tegen-anthropic':

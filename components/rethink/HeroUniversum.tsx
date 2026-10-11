@@ -67,6 +67,11 @@ function push(event: string, data: Record<string, unknown>) {
   w.dataLayer.push({ event, ...data, page_path: window.location.pathname })
 }
 
+// Na "Wat we doen:" gaat de zin verder met een kleine letter, behalve als hij
+// met een merknaam begint ("Meta rond Prinsenbeek ...").
+const naDubbelePunt = (zin: string) =>
+  /^(Meta|Google|ChatGPT|YouTube)\b/.test(zin) ? zin : zin.charAt(0).toLowerCase() + zin.slice(1)
+
 export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; knoppen: React.ReactNode }) {
   const [focus, setFocus] = useState<Kies | null>(null)
   const [lijstOpen, setLijstOpen] = useState(false)
@@ -351,7 +356,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
                 <strong className="font-semibold text-white">{gekozenHerinnering.kort}</strong> (voorbeeld
                 {gekozenHerinnering.wanneer ? `, ${gekozenHerinnering.wanneer}` : ''}). {gekozenHerinnering.uitleg}
                 {gekozenHerinnering.actie && (
-                  <> Wat we doen: {gekozenHerinnering.actie.charAt(0).toLowerCase() + gekozenHerinnering.actie.slice(1)}</>
+                  <> Wat we doen: {naDubbelePunt(gekozenHerinnering.actie)}</>
                 )}
               </>
             ) : bewegingUit ? null : (
