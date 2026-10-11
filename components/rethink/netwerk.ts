@@ -127,10 +127,14 @@ export function bronPositie(index: number, totaal: number) {
 //     Google 4, Meta 1, ChatGPT 1, vindbaar in Google 2, bestaande klanten 3.
 //   - Omzet 52.800 euro, gemiddeld 4.800 per opdracht; per bron opgeteld
 //     18.400 + 3.900 + 3.400 + 9.200 + 17.900.
-//   - ChatGPT Ads bewust tussen Meta en Google: een opdracht per 520 klikken,
-//     tegen 310 bij Google en 860 bij Meta. Het kanaal is nieuw in Nederland
-//     en er is nog geen bewijs dat het beter doet dan Google (Koen, 11 okt
-//     23:18: "iets minder opportunistisch").
+//   - ChatGPT Ads bewust onderaan: een opdracht per 940 klikken, tegen 310 bij
+//     Google en 860 bij Meta, en aanvragen per klik ongeveer vijf keer lager
+//     dan bij Google (Koen, 11 okt 23:18 en 23:30: "loopt echt minder dan
+//     google"). Bronnen, nagekeken 11 okt 2026: CTR 0,6 tot 0,75 procent in
+//     Engelstalige markten (Similarweb-panel via ppc.land, 28 sep 2026);
+//     een B2B-adverteerder 0,8 procent conversie tegen 6,64 bij Google in
+//     dezelfde periode (Stub Group, 1 okt 2026, bureau). Geen onafhankelijke
+//     conversiecijfers voor Nederland gevonden.
 //   - 11 nieuwe opdrachten: 8 particulier, 3 zakelijk, 3 van eerdere klanten.
 //   - Het jaar: 468.000 van 600.000 euro begin oktober, op schema.
 export interface MeetStap {
@@ -174,7 +178,7 @@ export const METINGEN: Partial<Record<BronId, Meting>> = {
   chatgpt_ads: {
     vorm: 'keten',
     stappen: [
-      { label: 'Klikken', waarde: '520' },
+      { label: 'Klikken', waarde: '940' },
       { label: 'Aanvragen', waarde: '6' },
       { label: 'Telefoontjes', waarde: '1' },
       { label: 'Offertes', waarde: '2' },
