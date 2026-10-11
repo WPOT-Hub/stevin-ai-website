@@ -21,6 +21,12 @@ import { BRONNEN, BREIN, ADVISOR } from './netwerk'
  * na het laden tijd over heeft. Buiten beeld stopt de lus (IntersectionObserver).
  * Onder prefers-reduced-motion, of met data-beweging="uit" op html (de knop
  * Beweging uit), draait er niets en staat er een stil beeld.
+ * Labels (11 okt): bronnen houden hun label; een herinnering niet meer. Om de
+ * beurt licht er een herinnering op die naar voren staat (stip klopt, label
+ * fadet in, staat 3,6 seconden, fadet uit), en alleen als het label niets
+ * raakt: geen ander label, het logo, het antwoord of het kaartje. Dat wordt
+ * getoetst in schermcoordinaten. Geen enkel label loopt over de rand van het
+ * vlak. Muis of tik op een herinnering toont zijn label.
  * Toegankelijkheid: de SVG is decoratie (aria-hidden); de bediening staat in
  * gewone knoppen die de ouder tekent, ook voor de herinneringen (prop
  * herinnering, een index in HERINNERINGEN). Het kaartje bij een aangetikte
@@ -56,7 +62,31 @@ interface Props {
    * laat zijn herinnering meelopen, zodat knoppen, statusregel en beeld
    * hetzelfde zeggen. */
   onKiesHerinnering?: (i: number | null) => void
+  /** Strook bovenin het vlak (px) waar geen label mag staan, bijvoorbeeld
+   * onder de kopbalk. */
+  vrijBoven?: number
+  /** Strook links (px) waar geen wisselend herinneringslabel begint, omdat
+   * daar de tekst van de hero over het beeld ligt. */
+  vrijLinks?: number
 }
+
+// Een wisselend herinneringslabel staat zo lang in beeld (ms), en na het
+// uitfaden duurt het zo lang tot de volgende (Koen, 11 okt: "label fadet in,
+// staat 3 tot 4 seconden, fadet uit, dan een volgende").
+const WISSEL_DUUR = 3600
+const WISSEL_PAUZE = 900
+// Afstand tot de rand van het vlak en tussen twee labels (px).
+const RAND = 6
+const TUSSEN = 6
+
+type Vak = { l: number; t: number; r: number; b: number }
+// Waar een label staat: rechts of links van de stip, eronder, of (het brein)
+// gecentreerd.
+type Kant = 'r' | 'l' | 'o' | 'm'
+// Afstand van een label onder de stip (eigen eenheden, onder de rand).
+const ONDER = 16
+const raakt = (a: Vak, b: Vak) =>
+  a.l < b.r + TUSSEN && a.r + TUSSEN > b.l && a.t < b.b + TUSSEN && a.b + TUSSEN > b.t
 
 const SATELLIETEN: Partial<Record<BronId, string[]>> = {
   campagnes: ['Google Ads', 'Meta', 'LinkedIn', 'TikTok', 'YouTube'],
@@ -257,11 +287,40 @@ export default function StevinUniversum({
   onSluit,
   herinnering = null,
   onKiesHerinnering,
+  vrijBoven = 0,
+  vrijLinks = 0,
 }: Props) {
   const { knopen, lijnen } = useMemo(bouwKnopen, [])
   const wrapRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const knoopEls = useRef<(SVGGElement | null)[]>([])
+  // Labels: maat gemeten in de browser (breedte, bovenkant en hoogte in
+  // eigen eenheden), en aan welke kant van de stip het label nu staat.
+  const labelEls = useRef<(SVGTextElement | null)[]>([])
+  // De stand (aan, label, puls) staat ook op de stip, de gloed en het label
+  // zelf, en de CSS kijkt daar. Een selector via de ouder (.su-knoop[data-aan]
+  // .su-stip) werd in Chrome na moveBefore soms niet bijgewerkt: dan bleef
+  // een label onzichtbaar of juist staan (gemeten 11 okt).
+  const stipEls = useRef<(SVGCircleElement | null)[]>([])
+  const haloEls = useRef<(SVGCircleElement | null)[]>([])
+  const labelMaat = useRef<({ w: number; y: number; h: number } | null)[]>([])
+  const labelKant = useRef<Kant[]>([])
+  // De tekst bij het signaal of antwoord, en hoe ver hij opzij moet om binnen
+  // het vlak te blijven.
+  const antwoordEl = useRef<SVGGElement | null>(null)
+  const antwoordMaat = useRef<{ x: number; y: number; w: number; h: number } | null>(null)
+  const antwoordDx = useRef(0)
+  // Tot wanneer de plek van het antwoord bezet blijft na het uitfaden (ms).
+  const antwoordTot = useRef(0)
+  // De herinneringslabels van het vorige beeld: een bronlabel kiest liever een
+  // kant waar het die niet raakt.
+  const geheugenVorig = useRef<Vak[]>([])
+  // Het wisselende herinneringslabel: welke knoop, tot wanneer, wanneer de
+  // volgende mag, en wanneer elke knoop voor het laatst aan de beurt was.
+  const wissel = useRef({ i: -1, eind: 0, volgende: Infinity, fase: 'rust' as UniversumFase, laatst: new Map<number, number>() })
+  // Herinnering onder de muis: die toont zijn label.
+  const zweef = useRef<number | null>(null)
+  const stilVoorkeur = useRef(false)
   const lijnEls = useRef<(SVGLineElement | null)[]>([])
   const pulsEls = useRef<(SVGCircleElement | null)[]>([])
   // Onzichtbare raakcirkel per knoop; de straal volgt de schermmaat (24px).
@@ -359,56 +418,125 @@ export default function StevinUniversum({
     return () => ro.disconnect()
   }, [])
 
+  // Knopen met een herinnering, en alle knopen met een label.
+  const geheugenIdx = useMemo(
+    () => knopen.map((n, i) => (n.soort === 'geheugen' && n.herinnering != null ? i : -1)).filter((i) => i >= 0),
+    [knopen],
+  )
+  const labelIdx = useMemo(() => knopen.map((n, i) => (n.label ? i : -1)).filter((i) => i >= 0), [knopen])
+
+  // Maat van een label in eigen eenheden, een keer gemeten. Een tekst die nog
+  // niet getekend is (display:none) geeft nul; dan de volgende keer opnieuw.
+  // De bovenkant geldt voor een grondlijn op 4,5, waar het label nu ook staat.
+  const maatVan = useCallback((i: number) => {
+    const m = labelMaat.current[i]
+    if (m) return m
+    const el = labelEls.current[i]
+    if (!el) return null
+    try {
+      const b = el.getBBox()
+      if (!b.width) return null
+      const grond = parseFloat(el.getAttribute('y') ?? '4.5')
+      const nieuw = { w: b.width, y: b.y - grond + 4.5, h: b.height }
+      labelMaat.current[i] = nieuw
+      return nieuw
+    } catch {
+      return null
+    }
+  }, [])
+
+  // Maat van de tekst bij het signaal of antwoord (alle regels samen).
+  const antwoordMaatVan = useCallback(() => {
+    if (antwoordMaat.current) return antwoordMaat.current
+    const g = antwoordEl.current
+    if (!g) return null
+    let l = Infinity
+    let t = Infinity
+    let r = -Infinity
+    let b = -Infinity
+    g.querySelectorAll('text').forEach((el) => {
+      try {
+        const bb = el.getBBox()
+        if (!bb.width) return
+        l = Math.min(l, bb.x)
+        t = Math.min(t, bb.y)
+        r = Math.max(r, bb.x + bb.width)
+        b = Math.max(b, bb.y + bb.height)
+      } catch {
+        /* nog niet getekend: later opnieuw */
+      }
+    })
+    if (l === Infinity) return null
+    antwoordMaat.current = { x: l, y: t, w: r - l, h: b - t }
+    return antwoordMaat.current
+  }, [])
+
   const teken = useCallback(
     (tijd: number) => {
-      const { yaw, pitch } = cam.current
+      const c = cam.current
       const { fase: f, actieveBronnen: actief, focus: fc, herinnering: hr } = stand.current
       const bezig = f !== 'rust'
-      const cx = maat.w * middenX
-      const cy = maat.h * middenY
-      const k = (Math.min(maat.w, maat.h) / 620) * schaal
-      const cy0 = Math.cos(yaw)
-      const sy0 = Math.sin(yaw)
-      const cp = Math.cos(pitch)
-      const sp = Math.sin(pitch)
+      const W = maat.w
+      const H = maat.h
+      const cx = W * middenX
+      const cy = H * middenY
+      const k = (Math.min(W, H) / 620) * schaal
+      const stilNu = stilVoorkeur.current || document.documentElement.dataset.beweging === 'uit'
 
-      const proj = (x: number, y: number, z: number) => {
-        const x1 = x * cy0 + z * sy0
-        const z1 = -x * sy0 + z * cy0
-        const y2 = y * cp - z1 * sp
-        const z2 = y * sp + z1 * cp
-        const s = F / (F + z2 * 1.0)
-        return { X: cx + x1 * s * k, Y: cy + y2 * s * k, s, z: z2 }
+      type Pt = { X: number; Y: number; s: number; z: number }
+      const maakProj = (yaw: number, pitch: number) => {
+        const cy0 = Math.cos(yaw)
+        const sy0 = Math.sin(yaw)
+        const cp = Math.cos(pitch)
+        const sp = Math.sin(pitch)
+        return (x: number, y: number, z: number): Pt => {
+          const x1 = x * cy0 + z * sy0
+          const z1 = -x * sy0 + z * cy0
+          const y2 = y * cp - z1 * sp
+          const z2 = y * sp + z1 * cp
+          const s = F / (F + z2 * 1.0)
+          return { X: cx + x1 * s * k, Y: cy + y2 * s * k, s, z: z2 }
+        }
       }
-
+      const proj = maakProj(c.yaw, c.pitch)
       const P = knopen.map((n) => proj(n.x, n.y, n.z))
 
       const breinFase = f === 'brein' || f === 'signaal' || f === 'advies'
-      // Om de 3,2 seconden licht een herinnering op, in rust.
-      // In de brein-stand twee tegelijk, anders een.
-      const stap = Math.floor(tijd / 3200) % HERINNERINGEN.length
-      // Is er via de knoppen een herinnering gekozen, dan licht alleen die op.
-      const uitgelicht = !bezig && hr == null && (fc == null || fc === 'brein') ? stap : -1
-      const uitgelicht2 = !bezig && fc === 'brein' ? (stap + 8) % HERINNERINGEN.length : -1
       const gk = gekozenRef.current
-      const isAan = (n: Knoop) =>
-        (gk != null && knopen[gk] === n) ||
-        (hr != null && n.soort === 'geheugen' && n.herinnering === hr) ||
-        (n.soort === 'geheugen' &&
-          n.herinnering != null &&
-          ((breinFase && HERINNERINGEN[n.herinnering].bijVraag) ||
-            n.herinnering === uitgelicht ||
-            n.herinnering === uitgelicht2)) ||
-        (n.soort === 'brein' && breinFase) ||
-        (n.soort === 'advisor' && f === 'advies') ||
-        (bezig && n.hub !== 'brein' && n.hub !== 'advisor' && actief.includes(n.hub as BronId) && n.soort !== 'stof') ||
-        (fc != null && n.hub === fc && n.soort !== 'stof' && n.soort !== 'geheugen')
+      // Het wisselende label van de vorige keer; zijn stip licht op.
+      const wi = wissel.current.i
+      const zw = zweef.current
+      const isAan = (i: number) => {
+        const n = knopen[i]
+        return (
+          gk === i ||
+          wi === i ||
+          zw === i ||
+          (hr != null && n.soort === 'geheugen' && n.herinnering === hr) ||
+          (n.soort === 'geheugen' && n.herinnering != null && breinFase && HERINNERINGEN[n.herinnering].bijVraag === true) ||
+          (n.soort === 'brein' && breinFase) ||
+          (n.soort === 'advisor' && f === 'advies') ||
+          (bezig && n.hub !== 'brein' && n.hub !== 'advisor' && actief.includes(n.hub as BronId) && n.soort !== 'stof') ||
+          (fc != null && n.hub === fc && n.soort !== 'stof' && n.soort !== 'geheugen')
+        )
+      }
       // Kleine nodes (wat er in een bron zit) alleen tonen als die bron meedoet.
-      const zichtbaar = (n: Knoop) => n.soort !== 'sat' || isAan(n) || fc === n.hub
-      const isStil = (n: Knoop) =>
-        (fc != null && n.hub !== fc && n.soort !== 'brein' && n.soort !== 'geheugen') ||
-        (fc != null && fc !== 'brein' && n.soort === 'geheugen') ||
-        (bezig && fc == null && n.soort !== 'brein' && n.soort !== 'advisor' && !actief.includes(n.hub as BronId))
+      const zichtbaar = (i: number) => knopen[i].soort !== 'sat' || isAan(i) || fc === knopen[i].hub
+      // Tijdens de vraag dimt wat niet meedoet. De herinneringen die bij de
+      // vraag horen lichten op en dimmen dus niet (ze stonden op 16 procent).
+      const isStil = (i: number) => {
+        const n = knopen[i]
+        return (
+          (fc != null && n.hub !== fc && n.soort !== 'brein' && n.soort !== 'geheugen') ||
+          (fc != null && fc !== 'brein' && n.soort === 'geheugen') ||
+          (bezig &&
+            fc == null &&
+            n.soort !== 'brein' &&
+            n.soort !== 'advisor' &&
+            !actief.includes(n.hub as BronId) &&
+            !(n.soort === 'geheugen' && isAan(i)))
+        )
+      }
 
       // Lijnen
       lijnen.forEach(([a, b], i) => {
@@ -416,7 +544,7 @@ export default function StevinUniversum({
         if (!el) return
         // Onzichtbaar (een satelliet van een bron die niet meedoet): een keer
         // display:none, en geen coordinaten meer schrijven tot hij terugkomt.
-        if (!zichtbaar(knopen[a]) || !zichtbaar(knopen[b])) {
+        if (!zichtbaar(a) || !zichtbaar(b)) {
           if (el.style.display !== 'none') el.style.display = 'none'
           return
         }
@@ -428,8 +556,8 @@ export default function StevinUniversum({
         el.setAttribute('x2', pb.X.toFixed(1))
         el.setAttribute('y2', pb.Y.toFixed(1))
         const diepte = Math.max(0.15, Math.min(1, (pa.s + pb.s) / 2 - 0.35))
-        const aan = isAan(knopen[a]) && isAan(knopen[b])
-        const stil = isStil(knopen[a]) || isStil(knopen[b])
+        const aan = isAan(a) && isAan(b)
+        const stil = isStil(a) || isStil(b)
         el.setAttribute('stroke', aan ? '#5DA3FF' : '#93C5FD')
         const wolk = knopen[a].soort === 'geheugen' || knopen[b].soort === 'geheugen'
         el.setAttribute('stroke-opacity', (aan ? 0.85 : stil ? 0.04 : wolk ? 0.09 * diepte : 0.13 * diepte).toFixed(3))
@@ -439,7 +567,8 @@ export default function StevinUniversum({
       // Het brein neemt op wat ervoor langs komt: nodes vervagen vlak bij het
       // brein, en hun labels verdwijnen al eerder. Anders bedekt een bron het
       // Stevin-icoon (Koen, 11 okt 01:22: "het Stevin-icoon verdwijnt, zouden
-      // moeten mergen").
+      // moeten mergen"). Het brein staat in de oorsprong, dus op elk moment
+      // op dezelfde plek.
       const B = P[0]
       const rBrein = knopen[0].r * B.s * k
       const opgenomen = (p: { X: number; Y: number }) => {
@@ -465,20 +594,23 @@ export default function StevinUniversum({
       const slag = t >= 0 && t <= 1 ? 0.13 * bult(t, 0.15, 0.15) + 0.08 * bult(t, 0.45, 0.15) : 0
 
       // Knopen
+      const stilL: boolean[] = []
+      const zichtL: number[] = []
       knopen.forEach((n, i) => {
         const g = knoopEls.current[i]
         if (!g) return
-        if (!zichtbaar(n)) {
+        if (!zichtbaar(i)) {
           if (g.style.display !== 'none') g.style.display = 'none'
           return
         }
         if (g.style.display === 'none') g.style.display = ''
         const p = P[i]
-        const aan = isAan(n)
-        const stil = isStil(n)
+        const aan = isAan(i)
+        const stil = isStil(i)
         const diepte = Math.max(0.12, Math.min(1, p.s * 1.25 - 0.35))
-        // De via een knop gekozen herinnering blijft altijd zichtbaar, met label.
-        const uitgekozen = hr != null && n.soort === 'geheugen' && n.herinnering === hr
+        // Een herinnering die je koos (knop, tik of muis) blijft altijd
+        // zichtbaar, ook vlak bij het brein.
+        const uitgekozen = n.soort === 'geheugen' && ((hr != null && n.herinnering === hr) || zw === i || gk === i)
         const bijBrein = n.soort === 'brein' || uitgekozen ? { zicht: 1, labelWeg: false } : opgenomen(p)
         const extra = n.soort === 'brein' ? 1 + slag : 1
         g.setAttribute('transform', `translate(${p.X.toFixed(1)} ${p.Y.toFixed(1)}) scale(${(p.s * k * extra).toFixed(3)})`)
@@ -512,19 +644,19 @@ export default function StevinUniversum({
             raak.setAttribute('r', r)
           }
         }
-        g.dataset.aan = aan ? '1' : '0'
-        // Labels alleen aan de voorkant van de bol, of als de node meedoet.
-        const voor = p.z < 30
-        const labelZichtbaar =
-          n.soort === 'brein' ||
-          (aan && n.soort !== 'sat' && n.soort !== 'geheugen') ||
-          (aan && n.soort === 'geheugen' && (!bezig || f === 'brein')) ||
-          fc === n.hub ||
-          ((n.soort === 'hub' || n.soort === 'advisor') && voor && !stil)
-        g.dataset.label = labelZichtbaar && !bijBrein.labelWeg ? '1' : '0'
+        const a = aan ? '1' : '0'
+        if (g.dataset.aan !== a) {
+          g.dataset.aan = a
+          stipEls.current[i]?.setAttribute('data-aan', a)
+          haloEls.current[i]?.setAttribute('data-aan', a)
+          labelEls.current[i]?.setAttribute('data-aan', a)
+        }
+        stilL[i] = stil
+        zichtL[i] = zicht
       })
 
       // Kaartje bij de gekozen node, binnen het vlak gehouden.
+      let kaartVak: Vak | null = null
       const kaart = kaartRef.current
       if (kaart) {
         if (gk == null) {
@@ -533,11 +665,277 @@ export default function StevinUniversum({
           const p = P[gk]
           const kb = kaart.offsetWidth || 260
           const kh = kaart.offsetHeight || 120
-          const x = Math.max(8, Math.min(maat.w - kb - 8, p.X + 14))
+          const x = Math.max(8, Math.min(W - kb - 8, p.X + 14))
           const boven = p.Y - kh - 14
-          const y = boven > 8 ? boven : Math.min(maat.h - kh - 8, p.Y + 14)
+          const y = boven > 8 ? boven : Math.min(H - kh - 8, p.Y + 14)
           kaart.style.transform = `translate(${x.toFixed(0)}px, ${y.toFixed(0)}px)`
           kaart.style.opacity = '1'
+          kaartVak = { l: x, t: y, r: x + kb, b: y + kh }
+        }
+      }
+
+      // Signaal of antwoord halverwege brein en Advisor. De tekst blijft
+      // binnen het vlak en schuift opzij als hij over de Advisor-stip zou
+      // vallen ("4 opdrachten" lag er op desktop overheen).
+      const a1 = knopen[1]
+      const sigZichtbaar = f === 'signaal' || f === 'advies'
+      // De plek van het antwoord is al bezet een stap voordat het verschijnt,
+      // en nog even nadat het weg is: dan fadet een label dat er staat uit
+      // voordat het antwoord erin komt, en komt het pas terug als het weg is.
+      if (sigZichtbaar) antwoordTot.current = tijd + 700
+      const antwoordBezet = f === 'brein' || sigZichtbaar || tijd < antwoordTot.current
+      const antwoordPlek = (Pn: Pt[], sp: Pt) => {
+        const am = antwoordBezet ? antwoordMaatVan() : null
+        if (!am) return null
+        const sc = sp.s * k
+        const vak = (dx: number): Vak => ({
+          l: sp.X + (am.x + dx) * sc,
+          r: sp.X + (am.x + am.w + dx) * sc,
+          t: sp.Y + am.y * sc,
+          b: sp.Y + (am.y + am.h) * sc,
+        })
+        let dx = 0
+        let v = vak(0)
+        const pa = Pn[1]
+        const ra = (a1.r + 4) * pa.s * k
+        const adv: Vak = { l: pa.X - ra, r: pa.X + ra, t: pa.Y - ra, b: pa.Y + ra }
+        if (raakt(v, adv)) {
+          const links = (adv.l - TUSSEN - v.r) / sc
+          const rechts = (adv.r + TUSSEN - v.l) / sc
+          dx = Math.abs(links) <= Math.abs(rechts) ? links : rechts
+          v = vak(dx)
+        }
+        if (v.l < RAND) dx += (RAND - v.l) / sc
+        else if (v.r > W - RAND) dx -= (v.r - (W - RAND)) / sc
+        return { v: vak(dx), dx }
+      }
+      const sigP = proj(a1.x * 0.5, a1.y * 0.5, a1.z * 0.5)
+      const antwoord = antwoordPlek(P, sigP)
+      if (signaalEl.current) {
+        signaalEl.current.setAttribute('transform', `translate(${sigP.X.toFixed(1)} ${sigP.Y.toFixed(1)}) scale(${(sigP.s * k).toFixed(3)})`)
+        signaalEl.current.setAttribute('opacity', sigZichtbaar ? '1' : '0')
+      }
+      if (antwoord && antwoordEl.current && Math.abs(antwoord.dx - antwoordDx.current) > 0.05) {
+        antwoordDx.current = antwoord.dx
+        antwoordEl.current.setAttribute('transform', `translate(${antwoord.dx.toFixed(1)} 0)`)
+      }
+
+      // Labels (W-535, 11 okt). Geen label over de rand van het vlak: past het
+      // rechts van de stip niet, dan links of eronder, anders niet. Eerst wat vaststaat
+      // (logo, brein, antwoord, kaartje, bronnen), dan de herinneringen. Een
+      // herinnering krijgt geen vast label meer: om de beurt licht er een op
+      // die naar voren staat en niets raakt.
+      const boven = Math.max(RAND, vrijBoven)
+      const binnen = (v: Vak) => v.l >= RAND && v.r <= W - RAND && v.t >= boven && v.b <= H - RAND
+      const vakVan = (i: number, p: Pt, kant: Kant): Vak | null => {
+        const m = maatVan(i)
+        if (!m) return null
+        const sc = p.s * k
+        const r = knopen[i].r
+        const lx = kant === 'm' || kant === 'o' ? -m.w / 2 : kant === 'r' ? r + 7 : -(r + 7) - m.w
+        const l = p.X + lx * sc
+        // Onder de stip, en bij het brein, ligt de grondlijn lager dan 4,5.
+        const grond = kant === 'o' ? r + ONDER : kant === 'm' ? r + 20 : 4.5
+        const top = p.Y + (m.y + grond - 4.5) * sc
+        return { l, t: top, r: l + m.w * sc, b: top + m.h * sc }
+      }
+      // De eerste kant waar het label binnen het vlak past en (als gevraagd)
+      // niets raakt. Het brein heeft alleen zijn eigen plek.
+      const plaats = (i: number, p: Pt, kanten: Kant[] = ['r', 'l'], ok: (v: Vak) => boolean = () => true) => {
+        for (const kant of knopen[i].soort === 'brein' ? (['m'] as Kant[]) : kanten) {
+          const v = vakVan(i, p, kant)
+          if (v && binnen(v) && ok(v)) return { v, kant }
+        }
+        return null
+      }
+      // Wil deze knoop (geen herinnering) een label?
+      const wilVast = (i: number, p: Pt) => {
+        const n = knopen[i]
+        if (!n.label || n.soort === 'geheugen' || n.soort === 'stof' || !zichtbaar(i)) return false
+        if (n.soort === 'brein') return true
+        if (opgenomen(p).labelWeg) return false
+        return (isAan(i) && n.soort !== 'sat') || fc === n.hub || ((n.soort === 'hub' || n.soort === 'advisor') && p.z < 30 && !isStil(i))
+      }
+      const logo: Vak = { l: B.X - rBrein, t: B.Y - rBrein, r: B.X + rBrein, b: B.Y + rBrein }
+      // Volgorde: brein, Advisor, bronnen die meedoen, de andere bronnen, dan
+      // wat erin zit. Een bronlabel staat rechts van de stip, of links, of
+      // eronder: waar het geen ander label, het logo of het antwoord raakt.
+      // Liefst ook niet over de stip van een andere bron of de Advisor, of
+      // over een herinneringslabel. Lukt dat nergens, dan wacht het tot het er
+      // voorbij is; een bron die meedoet of die je koos, mag dan wel over een
+      // stip, maar nooit over een ander label, het logo of het antwoord (een
+      // stapel labels leest niemand).
+      const vasteVolgorde = [0, 1, ...labelIdx.filter((i) => knopen[i].soort === 'hub' && isAan(i)),
+        ...labelIdx.filter((i) => knopen[i].soort === 'hub' && !isAan(i)),
+        ...labelIdx.filter((i) => knopen[i].soort === 'sat')]
+      const stipIdx = labelIdx.filter((i) => knopen[i].soort === 'hub' || knopen[i].soort === 'advisor')
+      const vasteVakken = (Pn: Pt[], antwoordVak: Vak | null, metToon: boolean) => {
+        const bezet: Vak[] = [logo]
+        const labels: Vak[] = []
+        if (antwoordVak) bezet.push(antwoordVak)
+        // De stippen van de bronnen en de Advisor (met de ring eromheen).
+        const stippen = stipIdx
+          .filter((i) => (zichtL[i] ?? 0) > 0.2)
+          .map((i) => {
+            const rr = (knopen[i].r + 2) * Pn[i].s * k
+            return { i, v: { l: Pn[i].X - rr, t: Pn[i].Y - rr, r: Pn[i].X + rr, b: Pn[i].Y + rr } }
+          })
+        for (const i of vasteVolgorde) {
+          const n = knopen[i]
+          if (!wilVast(i, Pn[i])) continue
+          const vastWeg = (v: Vak) => raakt(v, logo) || (antwoordVak != null && raakt(v, antwoordVak))
+          const stipWeg = (v: Vak) =>
+            stippen.some((x) => x.i !== i && raakt(v, x.v)) || (metToon && geheugenVorig.current.some((x) => raakt(v, x)))
+          const labelWeg = (v: Vak) => labels.some((x) => raakt(v, x))
+          // Eerst de kant waar het label al staat: dan springt het niet heen
+          // en weer.
+          const nu = metToon ? labelKant.current[i] : undefined
+          const kanten: Kant[] = nu && nu !== 'm' ? [nu, ...(['r', 'l', 'o'] as Kant[]).filter((x) => x !== nu)] : ['r', 'l', 'o']
+          // Het brein houdt altijd zijn naam; de rest moet ruimte vinden.
+          let pl = n.soort === 'brein' ? plaats(i, Pn[i]) : plaats(i, Pn[i], kanten, (v) => !vastWeg(v) && !stipWeg(v) && !labelWeg(v))
+          if (!pl && (isAan(i) || fc === n.hub)) pl = plaats(i, Pn[i], kanten, (v) => !vastWeg(v) && !labelWeg(v))
+          if (!pl) continue
+          bezet.push(pl.v)
+          labels.push(pl.v)
+          if (metToon) {
+            toon[i] = true
+            kantNu[i] = pl.kant
+          }
+        }
+        return bezet
+      }
+      const toon: boolean[] = []
+      const kantNu: Kant[] = []
+      const bezet = vasteVakken(P, antwoord?.v ?? null, true)
+      if (kaartVak) bezet.push(kaartVak)
+
+      // Een gekozen herinnering (tik, knop of muis) toont altijd zijn label.
+      for (const i of geheugenIdx) {
+        const n = knopen[i]
+        if (!(gk === i || zw === i || (hr != null && n.herinnering === hr))) continue
+        const nu = labelKant.current[i] ?? 'r'
+        const pl = plaats(i, P[i], [nu, ...(['r', 'l', 'o'] as Kant[]).filter((x) => x !== nu)])
+        if (!pl) continue
+        toon[i] = true
+        kantNu[i] = pl.kant
+        bezet.push(pl.v)
+      }
+      // Een herinnering is vrij voor een label als hij naar voren staat, niet
+      // in het brein opgaat, niet achter de hero-tekst valt en niets raakt.
+      const vrij = (i: number, p: Pt, ruimte: Vak[], zMax: number, marge: number, kanten: Kant[] = ['r', 'l']) => {
+        if (p.z > zMax || opgenomen(p).labelWeg) return null
+        return plaats(i, p, kanten, (v) => {
+          if (v.l < vrijLinks) return false
+          const ruim = { l: v.l - marge, t: v.t - marge, r: v.r + marge, b: v.b + marge }
+          return !ruimte.some((x) => raakt(ruim, x))
+        })
+      }
+      // Tijdens de vraag: de herinneringen die erbij horen, voor zover er plek is.
+      if (f === 'brein') {
+        for (const i of geheugenIdx) {
+          if (toon[i] || stilL[i] || !HERINNERINGEN[knopen[i].herinnering!].bijVraag) continue
+          const pl = vrij(i, P[i], bezet, -15, 0)
+          if (!pl) continue
+          toon[i] = true
+          kantNu[i] = pl.kant
+          bezet.push(pl.v)
+        }
+      }
+
+      // Het wisselende label. Niet onder reduced motion of Beweging uit, niet
+      // tijdens slepen, en niet als je zelf een bron of herinnering koos.
+      const w = wissel.current
+      const sleept = Math.abs(c.vx) + Math.abs(c.vy) > 0.004
+      const magWissel = !stilNu && !sleept && f === 'rust' && hr == null && (fc == null || fc === 'brein')
+      if (!magWissel && w.i >= 0) {
+        w.laatst.set(w.i, tijd)
+        w.i = -1
+        w.volgende = tijd + WISSEL_PAUZE
+      }
+      // Net terug in rust na de vraag: eerst even niets.
+      if (f === 'rust' && w.fase !== 'rust') w.volgende = Math.max(w.volgende, tijd + 1200)
+      w.fase = f
+      if (magWissel && w.i >= 0 && w.i !== zw) {
+        const i = w.i
+        // Met een marge, zodat het label weg is voordat iets het raakt (bij het
+        // kiezen is de marge groter, anders gaat een net gekozen label meteen
+        // weer uit). Het label blijft aan zijn kant: niet springen tijdens het
+        // lezen.
+        const pl = tijd < w.eind && !stilL[i] ? vrij(i, P[i], bezet, 5, 4, [labelKant.current[i] ?? 'r']) : null
+        if (pl) {
+          toon[i] = true
+          kantNu[i] = pl.kant
+          bezet.push(pl.v)
+        } else {
+          w.laatst.set(i, tijd)
+          w.i = -1
+          w.volgende = tijd + WISSEL_PAUZE
+        }
+      }
+      if (magWissel && w.i < 0 && tijd >= w.volgende) {
+        // Ook over WISSEL_DUUR nog vrij? Alleen na te rekenen als het brein
+        // vanzelf draait; staat de camera stil, dan is nu gelijk aan straks.
+        let straks: { P: Pt[]; bezet: Vak[] } | null = null
+        if (c.doelYaw == null && gk == null) {
+          const projT = maakProj(c.yaw + 0.00011 * WISSEL_DUUR, c.pitch)
+          const PT = knopen.map((n) => projT(n.x, n.y, n.z))
+          const ant = antwoordPlek(PT, projT(a1.x * 0.5, a1.y * 0.5, a1.z * 0.5))
+          straks = { P: PT, bezet: vasteVakken(PT, ant?.v ?? null, false) }
+        }
+        let beste = -1
+        let besteTijd = Infinity
+        let bestePl: { v: Vak; kant: Kant } | null = null
+        for (const i of geheugenIdx) {
+          if (toon[i] || stilL[i] || (zichtL[i] ?? 0) < 0.3) continue
+          const pl = vrij(i, P[i], bezet, -15, 8)
+          if (!pl) continue
+          if (straks && !vrij(i, straks.P[i], straks.bezet, -5, 4, [pl.kant])) continue
+          const vorige = w.laatst.get(i) ?? -Infinity
+          if (vorige < besteTijd) {
+            besteTijd = vorige
+            beste = i
+            bestePl = pl
+          }
+        }
+        if (beste >= 0 && bestePl) {
+          w.i = beste
+          w.eind = tijd + WISSEL_DUUR
+          toon[beste] = true
+          kantNu[beste] = bestePl.kant
+          bezet.push(bestePl.v)
+        } else {
+          w.volgende = tijd + 400
+        }
+      }
+
+      geheugenVorig.current = geheugenIdx
+        .filter((i) => toon[i] && kantNu[i])
+        .map((i) => vakVan(i, P[i], kantNu[i]))
+        .filter((v): v is Vak => v != null)
+      for (const i of labelIdx) {
+        const g = knoopEls.current[i]
+        if (!g) continue
+        const kant = kantNu[i]
+        if (toon[i] && kant && kant !== 'm' && (labelKant.current[i] ?? 'r') !== kant) {
+          const el = labelEls.current[i]
+          const r = knopen[i].r
+          if (el) {
+            el.setAttribute('x', String(kant === 'r' ? r + 7 : kant === 'l' ? -(r + 7) : 0))
+            el.setAttribute('y', String(kant === 'o' ? r + ONDER : 4.5))
+            el.setAttribute('text-anchor', kant === 'r' ? 'start' : kant === 'l' ? 'end' : 'middle')
+          }
+          labelKant.current[i] = kant
+        }
+        const label = toon[i] ? '1' : '0'
+        if (g.dataset.label !== label) {
+          g.dataset.label = label
+          labelEls.current[i]?.setAttribute('data-label', label)
+        }
+        const puls = i === w.i ? '1' : '0'
+        if (g.dataset.puls !== puls) {
+          g.dataset.puls = puls
+          stipEls.current[i]?.setAttribute('data-puls', puls)
+          haloEls.current[i]?.setAttribute('data-puls', puls)
         }
       }
 
@@ -558,15 +956,6 @@ export default function StevinUniversum({
         el.setAttribute('r', (3.2 * p.s * k).toFixed(2))
         el.setAttribute('opacity', (Math.sin(t * Math.PI) * 0.95).toFixed(2))
       })
-
-      // Signaal halverwege brein en Advisor
-      if (signaalEl.current) {
-        const a = knopen[1]
-        const p = proj(a.x * 0.5, a.y * 0.5, a.z * 0.5)
-        const zichtbaar = f === 'signaal' || f === 'advies'
-        signaalEl.current.setAttribute('transform', `translate(${p.X.toFixed(1)} ${p.Y.toFixed(1)}) scale(${(p.s * k).toFixed(3)})`)
-        signaalEl.current.setAttribute('opacity', zichtbaar ? '1' : '0')
-      }
 
       // Diepte: dichtbij bovenop. Hoogstens om de 250 ms, en alleen de knopen
       // die echt van plek wisselen. Elke verplaatsing in de DOM breekt lopende
@@ -601,7 +990,7 @@ export default function StevinUniversum({
         }
       }
     },
-    [knopen, lijnen, maat, middenX, middenY, schaal],
+    [knopen, lijnen, maat, middenX, middenY, schaal, vrijBoven, vrijLinks, geheugenIdx, labelIdx, maatVan, antwoordMaatVan],
   )
 
   // De lus. Hoogstens 30 beelden per seconde: bij deze draaisnelheid zie je
@@ -609,9 +998,9 @@ export default function StevinUniversum({
   // traagheid rekenen met de verstreken tijd, niet per beeld. De lus start pas
   // als de browser na het laden tijd over heeft (requestIdleCallback).
   useEffect(() => {
-    const stilVoorkeur = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    stilVoorkeur.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const html = document.documentElement
-    const stil = () => stilVoorkeur || html.dataset.beweging === 'uit'
+    const stil = () => stilVoorkeur.current || html.dataset.beweging === 'uit'
     let raf = 0
     let zichtbaar = true
     let gestart = false
@@ -631,7 +1020,7 @@ export default function StevinUniversum({
         const naar = 1 - Math.pow(0.95, f)
         c.yaw += d * naar
         c.pitch += ((c.doelPitch ?? 0.18) - c.pitch) * naar
-      } else if (gekozenRef.current == null && stand.current.herinnering == null) {
+      } else if (gekozenRef.current == null && stand.current.herinnering == null && zweef.current == null) {
         c.yaw += 0.00011 * dt
         c.pitch += (0.18 - c.pitch) * (1 - Math.pow(0.99, f))
       }
@@ -665,6 +1054,8 @@ export default function StevinUniversum({
     }
     const begin = () => {
       gestart = true
+      // Het eerste wisselende label even na de start, niet meteen.
+      if (wissel.current.volgende === Infinity) wissel.current.volgende = performance.now() + 1800
       draai()
     }
     const idle = w.requestIdleCallback ? w.requestIdleCallback(begin, { timeout: 1500 }) : 0
@@ -677,6 +1068,23 @@ export default function StevinUniversum({
       mo.disconnect()
     }
   }, [teken])
+
+  // Labels zijn gemeten in de lettervorm die er op dat moment was. Is het
+  // webfont binnen, dan opnieuw meten; ook als de tekst bij het signaal wijzigt.
+  useEffect(() => {
+    let weg = false
+    document.fonts?.ready.then(() => {
+      if (weg) return
+      labelMaat.current = []
+      antwoordMaat.current = null
+    })
+    return () => {
+      weg = true
+    }
+  }, [])
+  useEffect(() => {
+    antwoordMaat.current = null
+  }, [signaal, antwoord?.label, antwoord?.tekst, antwoord?.accent])
 
   // Onder reduced motion na elke wijziging een keer tekenen.
   // Ook bij een gekozen knoop, anders verschijnt het kaartje niet.
@@ -698,7 +1106,20 @@ export default function StevinUniversum({
     if (e.pointerType !== 'mouse') return
     sleep.current = { x: e.clientX, y: e.clientY }
   }
+  // Muis boven een herinnering: die toont zijn label. Draait er niets
+  // (reduced motion, Beweging uit), dan hier zelf tekenen.
+  const zetZweef = (i: number | null) => {
+    if (zweef.current === i) return
+    zweef.current = i
+    if (stilVoorkeur.current || document.documentElement.dataset.beweging === 'uit') teken(performance.now())
+  }
   const onMove = (e: React.PointerEvent) => {
+    if (e.pointerType === 'mouse' && !sleep.current) {
+      const el = (e.target as Element).closest('[data-knoop]')
+      const i = el && (el as SVGElement).style.pointerEvents !== 'none' ? Number(el.getAttribute('data-knoop')) : null
+      zetZweef(i != null && knopen[i]?.soort === 'geheugen' ? i : null)
+      return
+    }
     if (!sleep.current) return
     const dx = e.clientX - sleep.current.x
     const dy = e.clientY - sleep.current.y
@@ -765,6 +1186,7 @@ export default function StevinUniversum({
       }}
       className={`su-knoop su-${n.soort}`}
       opacity={0}
+      data-label="0"
       data-knoop={n.soort === 'stof' || (n.soort === 'geheugen' && n.herinnering == null) ? undefined : i}
     >
       {/* Groter raakvlak dan de stip, anders raak je hem op een telefoon niet */}
@@ -781,11 +1203,26 @@ export default function StevinUniversum({
       {n.soort === 'brein' && <circle r={n.r * 3.4} fill={`url(#${breinId})`} className="su-ademen" />}
       {n.soort === 'brein' && <circle r={n.r} fill="none" stroke="#9CC6FF" strokeWidth={2} opacity={0} className="su-hartslag" />}
       {(n.soort === 'hub' || n.soort === 'advisor' || n.soort === 'sat' || n.soort === 'geheugen') && (
-        <circle r={n.r * 3.2} fill={`url(#${gloedId})`} className="su-halo" />
+        <circle
+          ref={(el) => {
+            haloEls.current[i] = el
+          }}
+          r={n.r * 3.2}
+          fill={`url(#${gloedId})`}
+          className="su-halo"
+        />
       )}
       {/* Het brein heeft geen stip: het Stevin-icoon staat los op het donkere
           vlak, nooit in een gekleurd rondje. */}
-      {n.soort !== 'brein' && <circle r={n.r} className="su-stip" />}
+      {n.soort !== 'brein' && (
+        <circle
+          ref={(el) => {
+            stipEls.current[i] = el
+          }}
+          r={n.r}
+          className="su-stip"
+        />
+      )}
       {n.soort === 'brein' && (
         // Het Stevin-icoon uit public/logos/logo-icon.svg (48x48), wit op donker.
         <g transform="scale(0.78) translate(-24 -24)" fill="#FFFFFF">
@@ -795,7 +1232,12 @@ export default function StevinUniversum({
       )}
       {n.label && (
         <text
+          ref={(el) => {
+            labelEls.current[i] = el
+          }}
           className="su-label"
+          // Bij het begin staat elk label uit; anders flitsen ze bij het laden op.
+          data-label="0"
           x={n.soort === 'brein' ? 0 : n.r + 7}
           y={n.soort === 'brein' ? n.r + 20 : 4.5}
           textAnchor={n.soort === 'brein' ? 'middle' : 'start'}
@@ -820,6 +1262,7 @@ export default function StevinUniversum({
         sleep.current = null
         start.current = null
       }}
+      onPointerLeave={() => zetZweef(null)}
     >
       <svg
         ref={svgRef}
@@ -859,35 +1302,38 @@ export default function StevinUniversum({
           <circle r={22} fill={`url(#${gloedId})`} className="su-puls" />
           <circle r={6} fill="#5DA3FF" />
           <circle r={2.6} fill="#FFFFFF" />
-          {antwoord ? (
-            <>
-              <text y={-40} textAnchor="middle" fontSize={11.5} fontWeight={700} letterSpacing="0.1em" fill="#5DA3FF">
-                {antwoord.label}
-              </text>
-              <text y={-19} textAnchor="middle" fontSize={15} fontWeight={600} fill="#FFFFFF" className="su-label">
-                {antwoord.tekst}
-                {antwoord.accent && (
-                  <>
-                    {' '}
-                    <tspan fill="#5DA3FF" fontWeight={700}>
-                      {antwoord.accent}
-                    </tspan>
-                  </>
-                )}
-              </text>
-            </>
-          ) : (
-            <>
-              <text y={-34} textAnchor="middle" fontSize={11} fontWeight={700} letterSpacing="0.1em" fill="#5DA3FF">
-                SIGNAAL
-              </text>
-              {signaal && (
-                <text y={-17} textAnchor="middle" fontSize={12.5} fontWeight={600} fill="#FFFFFF" className="su-label">
-                  {signaal}
+          {/* De tekst schuift opzij als hij anders over de rand of de Advisor valt. */}
+          <g ref={antwoordEl}>
+            {antwoord ? (
+              <>
+                <text y={-40} textAnchor="middle" fontSize={11.5} fontWeight={700} letterSpacing="0.1em" fill="#5DA3FF">
+                  {antwoord.label}
                 </text>
-              )}
-            </>
-          )}
+                <text y={-19} textAnchor="middle" fontSize={15} fontWeight={600} fill="#FFFFFF" className="su-label">
+                  {antwoord.tekst}
+                  {antwoord.accent && (
+                    <>
+                      {' '}
+                      <tspan fill="#5DA3FF" fontWeight={700}>
+                        {antwoord.accent}
+                      </tspan>
+                    </>
+                  )}
+                </text>
+              </>
+            ) : (
+              <>
+                <text y={-34} textAnchor="middle" fontSize={11} fontWeight={700} letterSpacing="0.1em" fill="#5DA3FF">
+                  SIGNAAL
+                </text>
+                {signaal && (
+                  <text y={-17} textAnchor="middle" fontSize={12.5} fontWeight={600} fill="#FFFFFF" className="su-label">
+                    {signaal}
+                  </text>
+                )}
+              </>
+            )}
+          </g>
         </g>
       </svg>
 

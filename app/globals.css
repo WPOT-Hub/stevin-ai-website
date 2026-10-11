@@ -577,14 +577,17 @@ section {
 .su-hub .su-stip { fill: #D6E7FF; }
 .su-stof .su-stip { fill: #7FA9E6; }
 .su-advisor .su-stip { fill: #0F1F38; stroke: #9CC6FF; stroke-width: 2; }
-.su-knoop[data-aan="1"] .su-stip { fill: #5DA3FF; }
-.su-advisor[data-aan="1"] .su-stip { fill: #5DA3FF; stroke: #FFFFFF; }
+/* De stand staat op het element zelf (data-aan, data-label, data-puls), niet
+   alleen op de ouder: na moveBefore werkte Chrome een selector via de ouder
+   soms niet bij (11 okt). */
+.su-knoop .su-stip[data-aan="1"] { fill: #5DA3FF; }
+.su-advisor .su-stip[data-aan="1"] { fill: #5DA3FF; stroke: #FFFFFF; }
 .su-halo { opacity: 0; transition: opacity .5s ease; }
-.su-knoop[data-aan="1"] .su-halo { opacity: 1; }
+.su-halo[data-aan="1"] { opacity: 1; }
 .su-label { fill: rgba(255,255,255,.82); transition: opacity .4s ease, fill .4s ease; paint-order: stroke; stroke: rgba(10,22,40,.75); stroke-width: 3px; }
 .su-sat .su-label { fill: rgba(191,219,255,.9); }
-.su-knoop[data-label="0"] .su-label { opacity: 0; }
-.su-knoop[data-aan="1"] .su-label { fill: #FFFFFF; }
+.su-knoop .su-label[data-label="0"] { opacity: 0; }
+.su-knoop .su-label[data-aan="1"] { fill: #FFFFFF; }
 .su-ademen { animation: sn-halo 3.2s ease-in-out infinite; }
 .su-brein[data-aan="1"] .su-ademen { animation-duration: 1.2s; }
 .su-puls { animation: sn-puls 1.6s ease-in-out infinite; }
@@ -593,8 +596,16 @@ section {
   .su-ademen, .su-puls { animation: none; }
 }
 .su-geheugen .su-stip { fill: #8DB8F5; }
-.su-geheugen[data-aan="1"] .su-stip { fill: #FFFFFF; }
-.su-geheugen .su-label { fill: #E6F0FF; font-style: normal; }
+.su-geheugen .su-stip[data-aan="1"] { fill: #FFFFFF; }
+.su-geheugen .su-label { fill: #E6F0FF; font-style: normal; transition-duration: .6s; }
+/* Het wisselende herinneringslabel: zolang het staat, klopt de stip zacht. */
+.su-geheugen .su-halo[data-puls="1"] { animation: su-klop-halo 1.8s ease-in-out infinite; }
+.su-geheugen .su-stip[data-puls="1"] { transform-box: fill-box; transform-origin: center; animation: su-klop 1.8s ease-in-out infinite; }
+@keyframes su-klop-halo { 0%, 100% { opacity: .5; } 50% { opacity: 1; } }
+@keyframes su-klop { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.45); } }
+@media (prefers-reduced-motion: reduce) {
+  .su-geheugen .su-halo[data-puls="1"], .su-geheugen .su-stip[data-puls="1"] { animation: none; }
+}
 .su-kaart { transition: opacity .2s ease; will-change: transform; }
 .su-knoop[data-knoop] { cursor: pointer; }
 .su-geheugen .su-stip { pointer-events: none; }
