@@ -9,7 +9,8 @@
 export type NodeId =
   | 'doelen'
   | 'doelgroepen'
-  | 'campagnes'
+  | 'google_ads'
+  | 'meta'
   | 'website'
   | 'klantgegevens'
   | 'telefonie'
@@ -35,14 +36,17 @@ export interface NetwerkNode<Id extends NodeId = NodeId> {
 export const BRONNEN: NetwerkNode<BronId>[] = [
   { id: 'doelen', label: 'Bedrijfsdoelen', uitleg: 'Wat je dit jaar wilt bereiken: omzet, regio, soort klant.' },
   { id: 'doelgroepen', label: 'Doelgroepen', uitleg: 'Voor wie je werkt en wat die klant belangrijk vindt.' },
-  { id: 'campagnes', label: 'Campagnes', uitleg: 'Google, Meta, LinkedIn en de rest: wat je uitgeeft en wat het oplevert.' },
+  // Campagnes is gesplitst in Google Ads en Meta, zodat het brein de echte
+  // logo's toont (Koen, 11 okt 20:12).
+  { id: 'google_ads', label: 'Google Ads', uitleg: 'Wat je bij Google uitgeeft en wat het oplevert.' },
+  { id: 'meta', label: 'Meta', uitleg: 'Wat je op Facebook en Instagram uitgeeft en wat het oplevert.' },
   { id: 'website', label: 'Website', uitleg: 'Bezoek, formulieren en contactaanvragen.' },
-  { id: 'klantgegevens', label: 'Klantgegevens', uitleg: 'Wie je klanten zijn en wat ze eerder kochten.' },
+  { id: 'klantgegevens', label: 'Klantgegevens', uitleg: 'Wie jouw klanten zijn en wat ze eerder kochten.' },
   { id: 'telefonie', label: 'Telefonie', uitleg: 'Telefoontjes die uit je marketing komen.' },
   { id: 'crm', label: 'CRM', uitleg: 'Wat er met een aanvraag gebeurde en wie hem oppakte.' },
   { id: 'offertes', label: 'Offertes', uitleg: 'Welke aanvragen een offerte werden, en voor welk bedrag.' },
   { id: 'verkoop', label: 'Verkoop', uitleg: 'Welke offertes een klant werden.' },
-  { id: 'markt', label: 'Marktsignalen', uitleg: 'Zoekgedrag, seizoen en concurrenten.' },
+  { id: 'markt', label: 'Marktsignalen', uitleg: 'Wat er buiten speelt: weer, seizoen, feestdagen, de regio en concurrenten.' },
 ]
 
 export const BREIN: NetwerkNode = {
@@ -61,7 +65,7 @@ export const ADVISOR: NetwerkNode = {
 // diagonalen door het netwerk maakten het eerste ontwerp onrustig.
 export const DWARS: [BronId, BronId][] = [
   ['doelen', 'doelgroepen'],
-  ['campagnes', 'website'],
+  ['meta', 'website'],
   ['website', 'klantgegevens'],
   ['klantgegevens', 'telefonie'],
   ['telefonie', 'crm'],

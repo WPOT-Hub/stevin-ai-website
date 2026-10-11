@@ -597,33 +597,43 @@ section {
 .sn-halo-stil { opacity: .16; }
 .sn-stroom:not(.sn-stroom-snel) { animation-iteration-count: 3; }
 
-/* W-535 richting C: het 3D-brein. Kleur volgt data-aan en data-label, die de
-   animatielus zet; de overgang doet CSS. */
+/* W-535 richting C: het 3D-brein. Kleur volgt data-aan, data-label en
+   data-puls, die de animatielus op het element zelf zet (niet alleen op de
+   ouder: na moveBefore werkte Chrome een selector via de ouder soms niet bij,
+   11 okt); de overgang doet CSS. */
 .su-knoop .su-stip { fill: #9CC6FF; transition: fill .4s ease; }
-.su-hub .su-stip { fill: #D6E7FF; }
 .su-stof .su-stip { fill: #7FA9E6; }
-.su-advisor .su-stip { fill: #0F1F38; stroke: #9CC6FF; stroke-width: 2; }
-/* De stand staat op het element zelf (data-aan, data-label, data-puls), niet
-   alleen op de ouder: na moveBefore werkte Chrome een selector via de ouder
-   soms niet bij (11 okt). */
 .su-knoop .su-stip[data-aan="1"] { fill: #5DA3FF; }
-.su-advisor .su-stip[data-aan="1"] { fill: #5DA3FF; stroke: #FFFFFF; }
 .su-halo { opacity: 0; transition: opacity .5s ease; }
 .su-halo[data-aan="1"] { opacity: 1; }
-.su-label { fill: rgba(255,255,255,.82); transition: opacity .4s ease, fill .4s ease; paint-order: stroke; stroke: rgba(10,22,40,.75); stroke-width: 3px; }
-.su-sat .su-label { fill: rgba(191,219,255,.9); }
-.su-knoop .su-label[data-label="0"] { opacity: 0; }
-.su-knoop .su-label[data-aan="1"] { fill: #FFFFFF; }
+/* Versie 2 (Koen, 11 okt 20:12): bronnen en de Advisor als glazen rondjes.
+   De rand is een haarlijn die op elke diepte even dik blijft. */
+.su-glas { fill: none; stroke: rgba(214,231,255,.5); stroke-width: 1px; vector-effect: non-scaling-stroke; transition: stroke .4s ease, stroke-width .4s ease; }
+.su-glas[data-aan="1"] { stroke: #8FC0FF; stroke-width: 1.5px; }
+.su-advisor .su-glas { stroke: rgba(93,163,255,.85); }
+.su-advisor .su-glas[data-aan="1"] { stroke: #FFFFFF; }
+.su-glyph { fill: none; stroke: #D6E7FF; stroke-width: 1.4px; stroke-linecap: round; stroke-linejoin: round; }
+.su-glyph * { vector-effect: non-scaling-stroke; }
+.su-glyph .su-glyph-vol { fill: #D6E7FF; stroke: none; }
+/* Labels: klein, mono, hoofdletters met letterafstand, op elke diepte even
+   groot. Diepte alleen via opacity op de groep eromheen. Een dunne donkere
+   rand onder de letters houdt ze leesbaar op een lijn, zonder zware schaduw. */
+.su-label { font-family: var(--font-mono-stevin); font-size: 10.5px; font-weight: 500; letter-spacing: .12em; fill: rgba(214,231,255,.8); paint-order: stroke; stroke: rgba(10,22,40,.6); stroke-width: 2px; stroke-linejoin: round; transition: opacity .4s ease, fill .4s ease; }
+.su-lw-brein .su-label, .su-lw-hub .su-label, .su-lw-advisor .su-label { fill: rgba(232,241,255,.9); }
+.su-lw-sat .su-label { fill: rgba(156,198,255,.85); }
+.su-lw-geheugen .su-label { fill: #CFE1FF; transition-duration: .6s; }
+.su-label[data-label="0"] { opacity: 0; pointer-events: none; }
+.su-label[data-aan="1"] { fill: #FFFFFF; }
+.su-lw[data-knoop] { cursor: pointer; }
 .su-ademen { animation: sn-halo 3.2s ease-in-out infinite; }
 .su-brein[data-aan="1"] .su-ademen { animation-duration: 1.2s; }
+/* Ook gebruikt in ScrollStappen. */
 .su-puls { animation: sn-puls 1.6s ease-in-out infinite; }
-.su-overgang { transition: opacity .5s ease; }
 @media (prefers-reduced-motion: reduce) {
   .su-ademen, .su-puls { animation: none; }
 }
-.su-geheugen .su-stip { fill: #8DB8F5; }
+.su-geheugen .su-stip { fill: #8DB8F5; pointer-events: none; }
 .su-geheugen .su-stip[data-aan="1"] { fill: #FFFFFF; }
-.su-geheugen .su-label { fill: #E6F0FF; font-style: normal; transition-duration: .6s; }
 /* Het wisselende herinneringslabel: zolang het staat, klopt de stip zacht. */
 .su-geheugen .su-halo[data-puls="1"] { animation: su-klop-halo 1.8s ease-in-out infinite; }
 .su-geheugen .su-stip[data-puls="1"] { transform-box: fill-box; transform-origin: center; animation: su-klop 1.8s ease-in-out infinite; }
@@ -634,7 +644,6 @@ section {
 }
 .su-kaart { transition: opacity .2s ease; will-change: transform; }
 .su-knoop[data-knoop] { cursor: pointer; }
-.su-geheugen .su-stip { pointer-events: none; }
 
 /* W-535: logo-band, twee rijen die langzaam voorbij schuiven. */
 .lb-rij { mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%); -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%); }
