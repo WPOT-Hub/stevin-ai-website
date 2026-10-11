@@ -203,7 +203,7 @@ export default function RethinkHome() {
                   09:27: "tuurlijk doen we dat straks wel"). */}
               <div className="mx-auto mt-8 flex max-w-[640px] flex-col items-center gap-5 text-center">
                 <p className={`${tekst} m-0 text-balance`}>
-                  Het gaat ons om opdrachten, niet om klikken. Daarom vertellen we Google en Meta welke aanvraag een opdracht werd.
+                  Het gaat ons om opdrachten, niet om klikken.
                 </p>
                 <Link
                   href="/kennismaking"
@@ -334,7 +334,7 @@ function HeroKop() {
         Rethink your marketing.
       </h1>
       <p className="mt-5 text-balance text-[19px] leading-[1.45] text-white/75">
-        Wij doen je marketing. Jij ziet eindelijk welke aanvraag een opdracht werd.
+        Google en Meta weten niet wie je klant werd. Wij vertellen het ze.
       </p>
     </>
   )

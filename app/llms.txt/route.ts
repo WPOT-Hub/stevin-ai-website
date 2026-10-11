@@ -79,7 +79,7 @@ export async function GET() {
     '',
     '## Tarieven',
     // Zelfde bedragen als het prijsblok op de homepage.
-    'Wij doen je marketing vanaf 1.399 euro per maand. Doe je het zelf, dan vanaf 399 euro per maand. Je prijs groeit niet mee met je advertentiebudget.',
+    'Wij worden je bureau vanaf 1.399 euro per maand. Doe je het zelf, dan vanaf 399 euro per maand. Je prijs groeit niet mee met je advertentiebudget.',
     '- [Tarieven](https://stevin.ai/tarieven): alle tarieven en wat erin zit.',
     '- [Tarieven, machineleesbaar](https://stevin.ai/pricing.md): de tarieven in markdown.',
     '',
