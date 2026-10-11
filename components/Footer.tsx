@@ -1,7 +1,7 @@
 'use client'
 
 import { useLocale, useTranslations } from 'next-intl'
-import { Link, usePathname } from '@/i18n/navigation'
+import { Link } from '@/i18n/navigation'
 import Logo from './Logo'
 import { ConsentSettingsButton } from './ConsentBanner'
 import TrustBadges from './TrustBadges'
@@ -9,56 +9,20 @@ import TrustBadges from './TrustBadges'
 export default function Footer() {
   const t = useTranslations('footer')
   const locale = useLocale()
-  const pathname = usePathname()
 
+  const tNav = useTranslations('nav')
+
+  // W-535 (12 okt 2026): na het snoeien bleef van de kolommen Diensten en
+  // Integraties in het Engels niets over (/en/google-ads-uitbesteden,
+  // /en/leadopvolging en /en/integraties geven 410, de rest heeft een 301), en
+  // van Bedrijf alleen wat hieronder staat. Deze lange footer staat alleen nog
+  // op /en; de Nederlandse site heeft overal de korte footer hieronder.
   const footerLinks = {
-    diensten: [
-      // W-078: 'Paid Media', 'CRM & Leadopvolging' en 'Tracking & Inzicht' wezen
-      // naar ankers die niet bestonden. Doorgezet naar de echte pagina's gaf
-      // dubbele regels (zelfde href, en de lijst is gekeyd op href). Weg dus;
-      // de specifieke pagina's staan hieronder al.
-      { label: t('svc_ads_uitbesteden'), href: '/google-ads-uitbesteden' },
-      { label: t('svc_social_uitbesteden'), href: '/social-media-uitbesteden' },
-      { label: t('svc_landing'), href: '/websites' },
-      { label: t('svc_automation'), href: '/marketing-automation' },
-      // NL-only SEO-landingspagina's (data/seo-landing-pages.ts), sitewide
-      // interne links voor discovery
-      { label: 'Marketing intelligence', href: '/marketing-intelligence' },
-      { label: 'Leadopvolging', href: '/leadopvolging' },
-      { label: 'Marketing voor bureaus', href: '/marketing-voor-bureaus' },
-      { label: 'Lead generatie', href: '/lead-generatie' },
-      { label: 'Website met CRM', href: '/website-met-crm' },
-      { label: 'Google Ads en GA4', href: '/google-ads-ga4' },
-      // W-078: label was 'First-party data', een vakterm die deze lezer niet
-      // gebruikt. De URL blijft staan voor bestaande links.
-      { label: 'Je eigen data', href: '/first-party-data' },
-      { label: 'AI-briefing', href: '/ai-briefing' },
-    ],
     bedrijf: [
-      { label: t('bedrijf_simon'), href: '/simon-stevin' },
-      { label: t('bedrijf_multimarket'), href: '/multi-market' },
-      { label: t('bedrijf_integraties'), href: '/integraties' },
-      { label: t('bedrijf_seo'), href: '/seo' },
-      { label: t('bedrijf_geo'), href: '/geo' },
-      { label: t('voor_ondernemers'), href: '/voor-ondernemers' },
-      { label: t('voor_teams'), href: '/voor-marketingteams' },
-      { label: t('controle'), href: '/controle' },
       { label: t('platform'), href: '/platform' },
-      // W-078, 13 sep 2026: /case-studies is leeg ("volgen binnenkort") en heet
-      // "Bewezen in de praktijk". Uit de footer en noindex tot er een case staat.
+      { label: tNav('tarieven'), href: '/tarieven' },
+      { label: t('bedrijf_simon'), href: '/simon-stevin' },
       { label: t('journal'), href: '/blog' },
-      { label: t('vergelijken'), href: '/vergelijken' },
-      { label: t('alternatief'), href: '/alternatief' },
-      { label: t('woordenboek'), href: '/woordenboek' },
-      // W-443, 2 okt 2026: deze twee pagina's bestaan alleen in het Nederlands
-      // (de route geeft op /en bewust een 404). De footer linkte er vanaf elke
-      // Engelse pagina toch heen, dus 737 pagina's met twee kapotte links.
-      ...(locale === 'nl'
-        ? [
-            { label: 'Google Ad Grants (BE)', href: '/google-ad-grants-belgie' },
-            { label: 'Google Ad Grants (NL)', href: '/google-ad-grants-nederland' },
-          ]
-        : []),
       { label: t('bedrijf_contact'), href: '/contact' },
     ],
     // Juridisch. Deze pagina's bestonden al maar waren alleen bereikbaar als je
@@ -71,20 +35,12 @@ export default function Footer() {
       { label: t('legal_privacy'), href: '/privacy' },
       { label: t('legal_nda'), href: '/nda' },
     ],
-    integraties: [
-      { label: t('int_advertising'), href: '/integraties/advertising' },
-      { label: t('int_analytics'), href: '/integraties/analytics-tracking' },
-      { label: t('int_crm'), href: '/integraties/crm-sales' },
-      { label: t('int_email'), href: '/integraties/email-automation' },
-      { label: t('int_cms'), href: '/integraties/cms-ecommerce' },
-      { label: t('int_creative'), href: '/integraties/creative-intelligence' },
-      { label: t('int_dam'), href: '/integraties/dam-creative-ops' },
-      { label: t('int_feed'), href: '/integraties/feed-management' },
-      { label: t('int_mmm'), href: '/integraties/mmm-attribution' },
-      { label: t('int_all'), href: '/integraties' },
-    ],
   }
 
+  // W-535, 12 okt 2026: sinds het snoeien heeft de hele Nederlandse site deze
+  // korte footer, niet alleen de homepage. Wat hieronder over "de rest van de
+  // site" staat, is daarmee voorbij.
+  //
   // W-535: op de nieuwe Nederlandse homepage een korte footer. Koen, 10 okt
   // 23:26: "we gaan heel veel pagina's snoeien, of verbergen op zijn minst".
   // De pagina's blijven bestaan en staan in de sitemap; de rest van de site
@@ -95,14 +51,22 @@ export default function Footer() {
   // bereikbaar. Plan een kennismaking opent hetzelfde venster als de header,
   // met /kennismaking als terugval zonder JS. usePathname geeft het pad zonder
   // taal, dus ook op /en is dat '/': vandaar de taal erbij.
-  if (locale === 'nl' && pathname === '/') {
+  if (locale === 'nl') {
     const hoofd: { label: string; href: string; cta?: string }[] = [
       { label: t('svc_ads_uitbesteden'), href: '/google-ads-uitbesteden' },
       { label: t('svc_social_uitbesteden'), href: '/social-media-uitbesteden' },
+      // W-535: Leadopvolging, Marketing intelligence, Aizy vs Stevin.AI en
+      // Simon Stevin blijven en staan in de sitemap, maar na het snoeien linkte
+      // geen andere pagina er nog heen (de lange footer is weg). Zonder deze
+      // regels zouden ze los in de sitemap hangen.
+      { label: 'Leadopvolging', href: '/leadopvolging' },
+      { label: 'Marketing intelligence', href: '/marketing-intelligence' },
       { label: 'Zo werkt Stevin', href: '/platform' },
       { label: 'Tarieven', href: '/tarieven' },
       { label: t('journal'), href: '/blog' },
       { label: t('bedrijf_integraties'), href: '/integraties' },
+      { label: 'Aizy vs Stevin.AI', href: '/vergelijken/aizy-vs-stevin' },
+      { label: t('bedrijf_simon'), href: '/simon-stevin' },
       { label: t('bedrijf_contact'), href: '/contact' },
       { label: 'Plan een kennismaking', href: '/kennismaking', cta: 'footer_kennismaking' },
     ]
@@ -160,7 +124,7 @@ export default function Footer() {
         {/* Op mobiel twee kolommen naast elkaar. Onder elkaar was de footer
             2.355px, bijna drie schermen, en daarmee het grootste blok van de
             hele site. Niets verbergen, alleen anders neerzetten. */}
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-10 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block">
@@ -175,22 +139,6 @@ export default function Footer() {
             <TrustBadges className="mt-7 justify-start gap-2" small />
           </div>
 
-          {/* Diensten */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
-              {t('diensten_heading')}
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.diensten.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors duration-200 [overflow-wrap:anywhere]">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Bedrijf */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
@@ -198,22 +146,6 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {footerLinks.bedrijf.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors duration-200 [overflow-wrap:anywhere]">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Integraties */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
-              {t('integraties_heading')}
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.integraties.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors duration-200 [overflow-wrap:anywhere]">
                     {link.label}

@@ -563,15 +563,7 @@ function ArticleLeCunBody() {
       <p>
         Het opvallende zit niet in het bedrag. Het zit in de inzet. LeCun haalde dat geld op om precies
         het soort AI te vervangen waar de rest van de industrie honderden miljarden in pompt: het grote
-        taalmodel achter ChatGPT, Gemini en Claude. We schreven er in januari al een kort bericht over,
-        over{' '}
-        <Link
-          href="/blog/lecun-ami-labs-jepa-tegen-llms"
-          className="text-[var(--accent)] no-underline"
-        >
-          de aankondiging
-        </Link>
-        . Dit is de mening erachter.
+        taalmodel achter ChatGPT, Gemini en Claude.
       </p>
 
       <H2 num="01">De gok</H2>
@@ -10513,9 +10505,6 @@ function ArticleFirstPartyDataBody() {
 
       <H2 num="06">Verder lezen</H2>
 
-      <p>
-        Wat wij hierin doen staat op onze pagina over <Link href="/first-party-data">first-party data als basis voor je marketing</Link>.
-      </p>
 
       <Takeaways
         label="DE KERN"
@@ -10608,9 +10597,6 @@ function ArticleCrmKoppelenBody() {
 
       <H2 num="06">Verder lezen</H2>
 
-      <p>
-        Wat wij hierin doen staat op onze pagina over <Link href="/website-met-crm">een website die aan je CRM vastzit</Link>.
-      </p>
 
       <Takeaways
         label="DE KERN"
@@ -10695,9 +10681,6 @@ function ArticleConversiesMetenBody() {
 
       <H2 num="06">Verder lezen</H2>
 
-      <p>
-        Wat wij hierin doen staat op onze pagina over <Link href="/google-ads-ga4">Google Ads en GA4 die hetzelfde vertellen</Link>.
-      </p>
 
       <Takeaways
         label="DE KERN"
@@ -10782,9 +10765,6 @@ function ArticleLeadformulierBody() {
 
       <H2 num="06">Verder lezen</H2>
 
-      <p>
-        Wat wij hierin doen staat op onze pagina over <Link href="/lead-generatie">leadgeneratie die op uitkomsten stuurt</Link>.
-      </p>
 
       <Takeaways
         label="DE KERN"
@@ -10877,9 +10857,6 @@ function ArticleFeedManagementBody() {
 
       <H2 num="06">Verder lezen</H2>
 
-      <p>
-        Wat wij hierin doen staat op onze pagina over <Link href="/feed-management">feed management</Link>.
-      </p>
 
       <Takeaways
         label="DE KERN"

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
 import Logo from './Logo'
@@ -10,12 +10,6 @@ export default function Header() {
   const t = useTranslations('nav')
   const locale = useLocale()
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [dienstenOpen, setDienstenOpen] = useState(false)
-  const [platformOpen, setPlatformOpen] = useState(false)
-  const [voorWieOpen, setVoorWieOpen] = useState(false)
-  const [mobileDienstenOpen, setMobileDienstenOpen] = useState(false)
-  const [mobilePlatformOpen, setMobilePlatformOpen] = useState(false)
-  const [mobileVoorWieOpen, setMobileVoorWieOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
@@ -26,16 +20,15 @@ export default function Header() {
   // onder de transparante header door schuift. Staat een donkere hero hier wel
   // in, dan krijg je een witte glasband bovenop de hero (fout op /integraties,
   // gevonden 25 jul 2026).
-  const lightHeroPages = ['/seo', '/geo', '/contact']
+  const lightHeroPages = ['/contact']
   const isLightHero = lightHeroPages.some(p => pathname === p || pathname.startsWith(p + '/'))
-  // W-535: de nieuwe Nederlandse homepage (richting C) heeft een korte
-  // navigatie. De rest van de site houdt de volledige header tot de ronde met
-  // Zo werkt Stevin, Samenwerken en de omleidingen; anders verliezen /diensten,
-  // /mkb en /voor-ondernemers hun interne links voor hun omleiding er is
-  // (vindbaarheidstoets 11 okt, A3). usePathname van next-intl geeft het pad
-  // zonder taal, dus ook op /en is dat '/': vandaar de taal erbij.
-  const isNieuweHome = locale === 'nl' && pathname === '/'
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  // W-535: de korte navigatie van de nieuwe homepage (Zo werkt Stevin,
+  // Tarieven, Plan een kennismaking) geldt sinds het snoeien voor de hele
+  // Nederlandse site. De reden om dat uit te stellen (interne links naar
+  // /diensten, /mkb en /voor-ondernemers) is weg: die pagina's hebben nu een
+  // 301. De naam isNieuweHome is gebleven omdat de knopstijl en de
+  // data-cta-namen eraan hangen.
+  const isNieuweHome = locale === 'nl'
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60)
@@ -43,55 +36,11 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const platformDropdownRef = useRef<HTMLDivElement>(null)
-  const voorWieDropdownRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDienstenOpen(false)
-      }
-      if (platformDropdownRef.current && !platformDropdownRef.current.contains(e.target as Node)) {
-        setPlatformOpen(false)
-      }
-      if (voorWieDropdownRef.current && !voorWieDropdownRef.current.contains(e.target as Node)) {
-        setVoorWieOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
-
-  const dienstenItems = [
-    { label: t('diensten_overview'), href: '/diensten' },
-    { label: t('diensten_paid'), href: '/google-ads-uitbesteden' },
-    { label: t('diensten_seo'), href: '/seo' },
-    { label: t('diensten_geo'), href: '/geo' },
-    { label: t('diensten_automation'), href: '/marketing-automation' },
-    { label: t('diensten_crm'), href: '/leadopvolging' },
-    { label: t('diensten_tracking'), href: '/google-ads-ga4' },
-  ]
-
-  // 4 sep 2026 (W-042): de dropdown wees naar vier ankers die na de herbouw van
-  // /platform niet meer bestaan, waaronder #lead-generation. Dat anker hoorde
-  // bij de claim "van anoniem websitebezoek naar gekwalificeerde pipeline",
-  // en die is weggehaald omdat er geen bezoeker-identificatie in de code zit.
-  // De pagina vertelt nu een verhaal in plaats van een featurelijst, dus een
-  // dropdown die dat weer opknipt werkt tegen. Een link.
-  const platformItems: { label: string; href: string }[] = []
-
-  const voorWieItems = [
-    { label: t('voor_ondernemers'), href: '/voor-ondernemers' },
-    { label: t('voor_teams'), href: '/voor-marketingteams' },
-    { label: t('voor_retail'), href: '/retail' },
-    { label: t('voor_fmcg'), href: '/fmcg' },
-    { label: t('voor_dealers'), href: '/voor-dealers' },
-    { label: t('voor_musea'), href: '/musea' },
-    { label: t('voor_podia'), href: '/podia' },
-    { label: t('voor_evenementen'), href: '/evenementen' },
-    { label: t('voor_mkb'), href: '/mkb' },
-  ]
-
+  // W-535: de dropdowns Diensten en Voor wie zijn weg. In het Engels bleef er
+  // niets van over: /en/diensten, /en/seo, /en/geo en /en/marketing-automation
+  // gaan met een 301 naar /en/platform, de Engelse uitbesteed-pagina's en
+  // /en/leadopvolging geven 410, en alle doelgroep- en sectorpagina's zijn weg
+  // of omgeleid. Het Engelse menu is dus Platform, Tarieven en Contact.
   // Tarieven stond nergens in de navigatie, terwijl daar de drie smaken staan
   // die de hele positionering dragen. Gemeten 17 aug 2026: 15 links in de
   // header, 40 in de footer, en geen enkele naar /tarieven.
@@ -110,7 +59,6 @@ export default function Header() {
         { label: t('tarieven'), href: '/tarieven' },
       ]
     : [
-        { label: t('controle'), href: '/controle' },
         { label: t('tarieven'), href: '/tarieven' },
         { label: t('contact'), href: '/contact' },
       ]
@@ -147,40 +95,6 @@ export default function Header() {
           {/* Desktop nav */}
           <nav className="hidden min-w-0 items-center gap-4 lg:flex 2xl:gap-6">
             {!isNieuweHome && (<>
-            {/* Diensten dropdown */}
-            <div ref={dropdownRef} className="relative">
-              <button
-                onClick={() => setDienstenOpen(!dienstenOpen)}
-                className={`flex flex-none items-center gap-1 whitespace-nowrap text-[13px] font-medium transition-colors ${
-                  showDark
-                    ? 'text-white/70 hover:text-white'
-                    : 'text-slate-600 hover:text-primary'
-                }`}
-              >
-                {t('diensten')}
-                <svg className={`w-3.5 h-3.5 transition-transform ${dienstenOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {/* Altijd in de DOM (crawlbaar), zichtbaarheid via CSS. */}
-              <div
-                className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-border shadow-lg py-2 transition-opacity ${
-                  dienstenOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
-                }`}
-              >
-                  {dienstenItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-surface transition-colors"
-                      onClick={() => setDienstenOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-              </div>
-            </div>
-
             {/* Platform: gewone link, geen dropdown meer (W-042). De pagina is
                 een verhaal geworden; hem in de nav weer opknippen in vier ankers
                 werkt daartegen, en die ankers bestonden na de herbouw niet meer. */}
@@ -194,40 +108,6 @@ export default function Header() {
             >
               {t('platform')}
             </Link>
-
-            {/* Voor wie dropdown */}
-            <div ref={voorWieDropdownRef} className="relative">
-              <button
-                onClick={() => setVoorWieOpen(!voorWieOpen)}
-                className={`flex flex-none items-center gap-1 whitespace-nowrap text-[13px] font-medium transition-colors ${
-                  showDark
-                    ? 'text-white/70 hover:text-white'
-                    : 'text-slate-600 hover:text-primary'
-                }`}
-              >
-                {t('voor_wie')}
-                <svg className={`w-3.5 h-3.5 transition-transform ${voorWieOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {/* Altijd in de DOM (crawlbaar), zichtbaarheid via CSS. */}
-              <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-xl border border-border shadow-lg py-2 transition-opacity ${
-                  voorWieOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
-                }`}
-              >
-                  {voorWieItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block px-4 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-surface transition-colors"
-                      onClick={() => setVoorWieOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-              </div>
-            </div>
 
             </>)}
 
@@ -300,31 +180,6 @@ export default function Header() {
         <div className="lg:hidden bg-white border-t border-border">
           <div className="px-6 py-6 space-y-1">
             {!isNieuweHome && (<>
-            {/* Diensten accordion */}
-            <button
-              onClick={() => setMobileDienstenOpen(!mobileDienstenOpen)}
-              className="flex items-center justify-between w-full text-base font-medium text-primary py-3 border-b border-border/50"
-            >
-              {t('diensten')}
-              <svg className={`w-4 h-4 transition-transform ${mobileDienstenOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {mobileDienstenOpen && (
-              <div className="pl-4 space-y-0">
-                {dienstenItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block text-sm text-slate-600 py-2.5 border-b border-border/30"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-
             {/* Platform: gewone link, geen accordeon meer (W-042). */}
             <Link
               href="/platform"
@@ -333,31 +188,6 @@ export default function Header() {
             >
               {t('platform')}
             </Link>
-
-            {/* Voor wie accordion */}
-            <button
-              onClick={() => setMobileVoorWieOpen(!mobileVoorWieOpen)}
-              className="flex items-center justify-between w-full text-base font-medium text-primary py-3 border-b border-border/50"
-            >
-              {t('voor_wie')}
-              <svg className={`w-4 h-4 transition-transform ${mobileVoorWieOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {mobileVoorWieOpen && (
-              <div className="pl-4 space-y-0">
-                {voorWieItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block text-sm text-slate-600 py-2.5 border-b border-border/30"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            )}
 
             </>)}
 

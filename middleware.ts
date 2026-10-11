@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import createMiddleware from 'next-intl/middleware'
 import { routing } from './i18n/routing'
 import { getCampaignDomain } from './content/campaign-landings/domains'
+import gone from './data/gone-urls.json'
 
 const intlMiddleware = createMiddleware(routing)
 
@@ -202,6 +203,43 @@ async function marketingCheckPoort(request: NextRequest): Promise<NextResponse |
   return r
 }
 
+/**
+ * 410 Gone voor de pagina's die bij het snoeien zijn weggehaald (W-535, 12 okt
+ * 2026). De lijst staat in data/gone-urls.json; omleidingen staan apart in
+ * next.config.ts en gaan altijd voor, want Next draait redirects voor de
+ * middleware.
+ *
+ * Waarom 410 en geen 404: zonder deze regel geeft een weggehaalde route een
+ * 404, en de nieuwsberichten gingen met een 308 naar /blog, wat Google als
+ * zachte 404 telt. Een 410 zegt dat het bewust en blijvend is.
+ *
+ * /nl/... is een alias van het kale pad (localePrefix 'as-needed'), en een
+ * slash aan het eind telt niet mee. Een Engels pad staat apart in de lijst.
+ */
+const GONE = new Set<string>(gone.paden)
+
+function goneOpPad(pathname: string): string | null {
+  let pad = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname
+  if (pad === '/nl') pad = '/'
+  else if (pad.startsWith('/nl/')) pad = pad.slice(3)
+  return GONE.has(pad) ? pad : null
+}
+
+function weg(pad: string): NextResponse {
+  const en = pad === '/en' || pad.startsWith('/en/')
+  const html = en
+    ? '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>This page is gone | Stevin.AI</title></head><body style="font-family:system-ui,sans-serif;max-width:560px;margin:15vh auto;padding:0 16px;color:#1f2933;background:#f7f8fa"><h1 style="font-size:24px">This page is gone</h1><p>We removed it on purpose.</p><p><a href="/en" style="color:#1d63d8">Go to the Stevin.AI homepage</a></p></body></html>'
+    : '<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Deze pagina is weg | Stevin.AI</title></head><body style="font-family:system-ui,sans-serif;max-width:560px;margin:15vh auto;padding:0 16px;color:#1f2933;background:#f7f8fa"><h1 style="font-size:24px">Deze pagina is weg</h1><p>We hebben hem bewust weggehaald.</p><p><a href="/" style="color:#1d63d8">Naar de homepage van Stevin.AI</a></p></body></html>'
+  return new NextResponse(html, {
+    status: 410,
+    headers: {
+      'content-type': 'text/html; charset=utf-8',
+      'x-robots-tag': 'noindex',
+      'cache-control': 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+    },
+  })
+}
+
 export default async function middleware(request: NextRequest) {
   // Eerst de korte links van gedrukte QR-codes: die moeten altijd voorgaan.
   const kort = korteLink(request)
@@ -218,6 +256,11 @@ export default async function middleware(request: NextRequest) {
   if (aiBot) {
     logBotCrawl(aiBot, request.nextUrl.pathname).catch(() => {})
   }
+
+  // Na de botmeting, zodat we blijven zien welke AI-crawler nog weggehaalde
+  // pagina's opvraagt.
+  const wegPad = goneOpPad(request.nextUrl.pathname)
+  if (wegPad) return weg(wegPad)
 
   const hostname = (request.headers.get('host') ?? request.nextUrl.hostname)
     .split(':', 1)[0]

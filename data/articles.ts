@@ -8,7 +8,12 @@
  *   gebeurtenis + 1 paragraaf Stevin-duiding ("Wat dit betekent voor jou").
  *   Schrijf-regels: zie /docs/WRITING.md.
  */
-import retiredArticles from './retired-articles.json'
+import retiredArticlesJson from './retired-articles.json'
+
+// Kan leeg zijn (W-535), en een lege JSON-array heeft als type never[].
+const retiredArticles = retiredArticlesJson as { from: string; to: string; reason?: string; auditedAt?: string }[]
+import gone from './gone-urls.json'
+import snoeiRedirects from './redirects.json'
 
 export type ArticleFormat = 'editorial' | 'dispatch'
 
@@ -6822,12 +6827,32 @@ const allArticles: Article[] = [
 
 const RETIRED_SLUGS = new Set(retiredArticles.map((article) => article.from))
 
+// W-535 (12 okt 2026): retired-articles.json is leeg. De tien consolidaties die
+// daar stonden wezen allemaal naar een bericht dat nu zelf weg is, dus de oude
+// URL's geven 410 (data/gone-urls.json). Het bestand en de filter blijven voor
+// een volgende consolidatie; next.config.ts leest hem niet meer, een nieuwe
+// omleiding hoort in data/redirects.json.
+//
+// W-535 (12 okt 2026): het Journal is gesnoeid tot de lange eigen stukken en
+// een handvol marketingberichten. Wat weg is (410) of is samengevoegd met een
+// uitlegstuk (301) staat in data/gone-urls.json en data/redirects.json; die
+// artikelen worden niet meer gegenereerd en nergens meer gelinkt. Een nieuw
+// artikel uit de Journal-keten staat in geen van beide lijsten en verschijnt
+// dus gewoon.
+const GESNOEIDE_SLUGS = new Set(
+  [...gone.paden, ...snoeiRedirects.omleidingen.map((o) => o.van)]
+    .filter((pad) => pad.startsWith('/blog/'))
+    .map((pad) => pad.slice('/blog/'.length)),
+)
+
 /**
  * Alleen canonieke artikelen zijn publiek. De bronrecords blijven bewust in dit
  * bestand staan zodat een consolidatie controleerbaar en via git herstelbaar is;
- * permanente redirects staan centraal in retired-articles.json.
+ * waar een oude URL heen gaat staat in data/redirects.json en data/gone-urls.json.
  */
-export const articles: Article[] = allArticles.filter((article) => !RETIRED_SLUGS.has(article.slug))
+export const articles: Article[] = allArticles.filter(
+  (article) => !RETIRED_SLUGS.has(article.slug) && !GESNOEIDE_SLUGS.has(article.slug),
+)
 
 export function getArticle(slug: string) {
   return articles.find((a) => a.slug === slug)

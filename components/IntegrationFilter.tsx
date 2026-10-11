@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from 'react'
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
 import { categories, categoryName } from '@/data/categories'
 import { getVendorShortDescriptionEn } from '@/data/vendor-content-en'
 import type { Integration } from '@/data/integrations'
@@ -116,12 +115,8 @@ export default function IntegrationFilter({ integrations, locale }: IntegrationF
               {filtered.map((integration) => (
                 <tr key={integration.slug} className="group">
                   <td className="border-b border-[#D9E0EB] px-5 py-5 align-top sm:px-7">
-                    <Link
-                      href={`/integraties/${integration.slug}`}
-                      className="font-extrabold tracking-[-0.01em] text-[#0A0A0A] transition-colors group-hover:text-[#3C8EFF]"
-                    >
-                      {integration.name}
-                    </Link>
+                    {/* W-535: de losse koppelingspagina's zijn weg, de naam is geen link meer. */}
+                    <span className="font-extrabold tracking-[-0.01em] text-[#0A0A0A]">{integration.name}</span>
                   </td>
                   <td className="border-b border-[#D9E0EB] px-5 py-5 align-top font-bold text-[#1F2933]">
                     {labelForCategory(integration.category)}

@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   description:
     'Check of je VZW, IVZW of stichting in aanmerking komt voor Google Ad Grants. Stevin scant je website en helpt je aanvraag voorbereiden.',
   alternates: { canonical: 'https://stevin.ai/google-ad-grants-belgie' },
+  // W-535 (12 okt 2026): noindex, follow. De pagina blijft bestaan omdat
+  // verzonden LinkedIn-berichten en het oude adres erheen wijzen, maar hij had
+  // 0 vertoningen in 6 maanden en hoort niet bij de pagina's die Google ziet.
+  robots: { index: false, follow: true },
 }
 
 const faqs = [

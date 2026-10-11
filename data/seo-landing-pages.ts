@@ -128,8 +128,8 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     ],
     related: [
       { label: 'Leadopvolging', href: '/leadopvolging' },
-      { label: 'Google Ads en GA4', href: '/google-ads-ga4' },
-      { label: 'First-party data', href: '/first-party-data' },
+      { label: 'Google Ads en GA4', href: '/blog/google-ads-conversies-meten' },
+      { label: 'First-party data', href: '/blog/wat-is-first-party-data' },
     ],
   },
   {
@@ -142,7 +142,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
     h1Accent: 'laat liggen',
     sub: 'Wie zijn leadopvolging wil automatiseren, wil twee dingen: sneller reageren en niets missen. Stevin brengt formulieren, calls en signalen uit al je bronnen samen en stuurt ze direct naar de juiste persoon of je CRM.',
     ctaPrimary: { label: 'Start de diagnose', href: '/contact' },
-    ctaSecondary: { label: 'Website met CRM', href: '/website-met-crm' },
+    ctaSecondary: { label: 'Website met CRM', href: '/blog/crm-koppelen-aan-je-website' },
     pain: {
       eyebrow: 'Het probleem',
       h2: 'Waar leads nu verdwijnen',
@@ -231,9 +231,9 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       },
     ],
     related: [
-      { label: 'Website met CRM', href: '/website-met-crm' },
-      { label: 'Marketing automation', href: '/marketing-automation' },
-      { label: 'Lead generatie', href: '/lead-generatie' },
+      { label: 'Website met CRM', href: '/blog/crm-koppelen-aan-je-website' },
+      { label: 'Zo werkt Stevin', href: '/platform' },
+      { label: 'Lead generatie', href: '/blog/leadformulier-dat-echte-aanvragen-oplevert' },
     ],
   },
   {

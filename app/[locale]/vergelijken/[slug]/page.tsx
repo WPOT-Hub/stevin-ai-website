@@ -1,12 +1,10 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Link } from '@/i18n/navigation'
 import Section from '@/components/Section'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CTABlock from '@/components/CTABlock'
 import FAQAccordion from '@/components/FAQAccordion'
 import { comparisons, getComparison } from '@/data/comparisons'
-import { getIntegrationBySlug } from '@/lib/utils'
 import { metaOmschrijving } from '@/lib/seo'
 
 interface Props {
@@ -51,8 +49,6 @@ export default async function ComparisonPage({ params }: Props) {
   const comparison = getComparison(slug)
   if (!comparison) notFound()
 
-  const integrationA = getIntegrationBySlug(comparison.slugA)
-  const integrationB = getIntegrationBySlug(comparison.slugB)
   const image = `https://stevin.ai${locale === 'en' ? '/en' : ''}/opengraph-image`
 
   // Article schema voor de comparison-page (Article ipv Product, want
@@ -80,8 +76,8 @@ export default async function ComparisonPage({ params }: Props) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://stevin.ai/' },
-      { '@type': 'ListItem', position: 2, name: 'Vergelijken', item: 'https://stevin.ai/vergelijken' },
-      { '@type': 'ListItem', position: 3, name: `${comparison.nameA} vs ${comparison.nameB}`, item: `https://stevin.ai/vergelijken/${slug}` },
+      // W-535: /vergelijken is geen eigen pagina meer (301 naar deze vergelijking).
+      { '@type': 'ListItem', position: 2, name: `${comparison.nameA} vs ${comparison.nameB}`, item: `https://stevin.ai/vergelijken/${slug}` },
     ],
   }
 
@@ -119,7 +115,6 @@ export default async function ComparisonPage({ params }: Props) {
         <Breadcrumbs
           items={[
             { label: 'Home', href: '/' },
-            { label: 'Vergelijken', href: '/vergelijken' },
             { label: `${comparison.nameA} vs ${comparison.nameB}` },
           ]}
         />
@@ -144,28 +139,12 @@ export default async function ComparisonPage({ params }: Props) {
               Wanneer kies je {comparison.nameA}
             </h2>
             <p className="text-muted leading-relaxed whitespace-pre-line">{comparison.whenA}</p>
-            {integrationA && (
-              <Link
-                href={`/integraties/${comparison.slugA}`}
-                className="inline-block mt-4 text-sm text-accent hover:text-accent-dark"
-              >
-                Lees meer over {integrationA.name} →
-              </Link>
-            )}
           </div>
           <div>
             <h2 className="h-section text-primary mb-4">
               Wanneer kies je {comparison.nameB}
             </h2>
             <p className="text-muted leading-relaxed whitespace-pre-line">{comparison.whenB}</p>
-            {integrationB && (
-              <Link
-                href={`/integraties/${comparison.slugB}`}
-                className="inline-block mt-4 text-sm text-accent hover:text-accent-dark"
-              >
-                Lees meer over {integrationB.name} →
-              </Link>
-            )}
           </div>
         </div>
 

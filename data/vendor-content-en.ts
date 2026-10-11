@@ -8,6 +8,10 @@
  * dus dit is taalcoherentie voor /en-bezoekers, geen aparte EN-indexatie.
  *
  * Source: gegenereerd vertaald uit data/integrations.ts + vendor-enrichments.json.
+ *
+ * W-535 (12 okt 2026): de detailpagina's en /en/integraties zijn weg (410). Hier
+ * staan alleen nog de 19 koppelingen met status 'live'; de overzichtstabel
+ * gebruikt getVendorShortDescriptionEn.
  */
 
 import enData from './vendor-content-en.json'
