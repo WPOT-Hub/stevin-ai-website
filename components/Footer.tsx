@@ -85,25 +85,26 @@ export default function Footer() {
     ],
   }
 
-  // W-535: op de voorstelpagina's een korte footer. Koen, 10 okt 23:26: "we
-  // gaan heel veel pagina's snoeien, of verbergen op zijn minst". De pagina's
-  // blijven bestaan en staan in de sitemap; ze worden alleen niet meer vanuit
-  // elke pagina gelinkt. Snoeien gaat per URL volgens de SEO-inventaris.
-  if (pathname.startsWith('/voorstel-')) {
-    const kort = pathname.startsWith('/voorstel-c')
-    // Richting C: geen Samenwerken tot die pagina bestaat. Plan een
-    // kennismaking opent hetzelfde venster als de header (een boekingsroute),
-    // met /kennismaking als terugval zonder JS.
+  // W-535: op de nieuwe Nederlandse homepage een korte footer. Koen, 10 okt
+  // 23:26: "we gaan heel veel pagina's snoeien, of verbergen op zijn minst".
+  // De pagina's blijven bestaan en staan in de sitemap; de rest van de site
+  // houdt deze volledige footer tot de snoeironde. Op / blijven de links die
+  // moeten blijven (vindbaarheidstoets 11 okt, A3): de twee uitbesteed-pagina's
+  // zijn de enige commerciele zoektermen waar ons soort pagina bij de SERP
+  // past, en via Journal en Integraties blijven blog en integratiepagina's
+  // bereikbaar. Plan een kennismaking opent hetzelfde venster als de header,
+  // met /kennismaking als terugval zonder JS. usePathname geeft het pad zonder
+  // taal, dus ook op /en is dat '/': vandaar de taal erbij.
+  if (locale === 'nl' && pathname === '/') {
     const hoofd: { label: string; href: string; cta?: string }[] = [
-      { label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` },
-      ...(kort
-        ? []
-        : [
-            { label: 'In de praktijk', href: `${pathname}#in-de-praktijk` },
-            { label: 'Samenwerken', href: `${pathname}#samenwerken` },
-          ]),
+      { label: t('svc_ads_uitbesteden'), href: '/google-ads-uitbesteden' },
+      { label: t('svc_social_uitbesteden'), href: '/social-media-uitbesteden' },
+      { label: 'Zo werkt Stevin', href: '/platform' },
+      { label: 'Tarieven', href: '/tarieven' },
+      { label: t('journal'), href: '/blog' },
+      { label: t('bedrijf_integraties'), href: '/integraties' },
+      { label: t('bedrijf_contact'), href: '/contact' },
       { label: 'Plan een kennismaking', href: '/kennismaking', cta: 'footer_kennismaking' },
-      { label: 'Contact', href: '/contact' },
     ]
     return (
       <footer className="bg-[#0A1628] text-white">
@@ -138,7 +139,6 @@ export default function Footer() {
             </nav>
           </div>
           <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/10 pt-6 text-[13px] text-slate-400">
-            <span>Stevin.AI</span>
             {footerLinks.juridisch.map((l) => (
               <Link key={l.href} href={l.href} className="hover:text-slate-300">
                 {l.label}
@@ -146,6 +146,9 @@ export default function Footer() {
             ))}
             <ConsentSettingsButton />
           </div>
+          {/* Artikel 3:15d BW: naam, KVK- en btw-nummer staan op elke pagina,
+              ook in de korte footer. */}
+          <p className="m-0 mt-4 text-[12px] text-slate-500">{t('company_details')}</p>
         </div>
       </footer>
     )
