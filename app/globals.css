@@ -4,6 +4,16 @@
    blokkerend extern verzoek meer. */
 @import "tailwindcss";
 
+/* W-535, hero van richting C: wanneer tekst en brein naast elkaar staan
+   (zij), en de staande opbouw op een tablet (tablet). Niet lg: tussen 900
+   en 1024 breed liep de telefoonopbouw door met een breed vlak waarin het
+   brein verloren hing, en op een staande tablet van 1024 breed kwam de tekst
+   over het brein (Koen, 11 okt). De twee sluiten elkaar uit, dus de volgorde
+   in de CSS maakt niet uit. Dezelfde voorwaarde staat als ZIJ in
+   components/rethink/HeroUniversum.tsx. */
+@custom-variant zij (@media (min-width: 900px) and (min-aspect-ratio: 1/1));
+@custom-variant tablet (@media (min-width: 640px) and (max-width: 899.98px), (min-width: 640px) and (max-aspect-ratio: 999/1000));
+
 /* Italic van de broodtekst, los van next/font zodat hij niet op elke pagina
    vooraf laadt (W-333). font-family moet gelijk blijven aan de naam van de
    constante interBody in app/[locale]/layout.tsx. */
@@ -16,6 +26,12 @@
 }
 
 @theme {
+  /* W-535: extra breekpunt op 900px (tussen md en lg), voor blokken die vanaf
+     daar naast elkaar gaan staan zoals de hero (KlantLogos, ScrollStappen).
+     Als echt breekpunt staat het in de goede volgorde tussen sm, md en lg;
+     een losse min-[900px] kwam in de CSS voor sm: en verloor daarvan. */
+  --breakpoint-tussen: 56.25rem;
+
   /* Brand colors from logo */
   --color-primary: #0A1628;
   --color-primary-light: #1a2744;
@@ -615,7 +631,9 @@ section {
 .lb-spoor { animation: lb-schuif 46s linear infinite; }
 .lb-terug { animation-direction: reverse; animation-duration: 52s; }
 .lb-band:hover .lb-spoor, .lb-band:active .lb-spoor { animation-play-state: paused; }
-@keyframes lb-schuif { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 6px)); } }
+/* Een kopie plus een tussenruimte (12px) verder: een derde van het spoor plus
+   een derde van de tussenruimte. Drie kopieen, zie RethinkHome.tsx. */
+@keyframes lb-schuif { from { transform: translateX(0); } to { transform: translateX(calc(-100% / 3 - 4px)); } }
 @media (prefers-reduced-motion: reduce) {
   .lb-spoor { animation: none; flex-wrap: wrap; width: auto; }
   .lb-spoor > ul + ul { display: none; }

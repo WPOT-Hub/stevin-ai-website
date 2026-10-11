@@ -49,8 +49,15 @@ export default function KlantLogos({ locale }: { locale: string }) {
         <p className="text-[11px] font-display font-bold text-muted uppercase tracking-[0.08em] text-center mb-6">
           {c.label}
         </p>
-        <div className="flex items-center justify-center gap-12 sm:gap-16 flex-wrap">
-          {KLANTEN.map((k) => (
+        {/* Rijen met de hand gebroken (W-535, 11 okt): de rij liep vrij af en
+            liet op 980 en 1024 breed een logo alleen op de tweede regel staan,
+            en op een telefoon rijen van twee, drie, een en een. Nu op een
+            telefoon 2, 3, 2, op een tablet 4 en 3, en vanaf 900px alles op een
+            regel (met kleinere tussenruimte tot 1024). De breuken zijn lege
+            elementen van een hele regel breed. Breekpunt tussen (900px) staat
+            in app/globals.css. */}
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12 sm:gap-y-8 tussen:gap-x-8 lg:gap-x-12 xl:gap-x-16">
+          {KLANTEN.map((k, i) => [
             // eslint-disable-next-line @next/next/no-img-element
             <img
               key={k.src}
@@ -67,8 +74,10 @@ export default function KlantLogos({ locale }: { locale: string }) {
                 opacity: k.o,
                 mixBlendMode: 'multiply',
               }}
-            />
-          ))}
+            />,
+            (i === 1 || i === 4) && <span key={`breuk-${i}`} aria-hidden="true" className="h-0 basis-full sm:hidden" />,
+            i === 3 && <span key="breuk-tablet" aria-hidden="true" className="hidden h-0 basis-full sm:block tussen:hidden" />,
+          ])}
         </div>
       </div>
     </div>

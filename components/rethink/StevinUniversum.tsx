@@ -665,9 +665,13 @@ export default function StevinUniversum({
           const p = P[gk]
           const kb = kaart.offsetWidth || 260
           const kh = kaart.offsetHeight || 120
-          const x = Math.max(8, Math.min(W - kb - 8, p.X + 14))
+          // Niet over de tekst links en niet onder de kopbalk, als het
+          // vlak daar ruimte voor laat.
+          const links = Math.min(Math.max(8, vrijLinks), Math.max(8, W - kb - 8))
+          const x = Math.max(links, Math.min(W - kb - 8, p.X + 14))
+          const hoog = Math.max(8, vrijBoven)
           const boven = p.Y - kh - 14
-          const y = boven > 8 ? boven : Math.min(H - kh - 8, p.Y + 14)
+          const y = boven > hoog ? boven : Math.max(hoog, Math.min(H - kh - 8, p.Y + 14))
           kaart.style.transform = `translate(${x.toFixed(0)}px, ${y.toFixed(0)}px)`
           kaart.style.opacity = '1'
           kaartVak = { l: x, t: y, r: x + kb, b: y + kh }
@@ -697,7 +701,9 @@ export default function StevinUniversum({
         let dx = 0
         let v = vak(0)
         const pa = Pn[1]
-        const ra = (a1.r + 4) * pa.s * k
+        // Ruim om de Advisor heen, ook om zijn gloed: met alleen de stip plus
+        // 4 eenheden kwam "4 opdrachten" er op 980 en 1024 tegenaan.
+        const ra = (a1.r + 4) * pa.s * k + 12
         const adv: Vak = { l: pa.X - ra, r: pa.X + ra, t: pa.Y - ra, b: pa.Y + ra }
         if (raakt(v, adv)) {
           const links = (adv.l - TUSSEN - v.r) / sc

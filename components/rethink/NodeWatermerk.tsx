@@ -66,7 +66,10 @@ export default function NodeWatermerk({
       aria-hidden="true"
       viewBox="0 0 1200 600"
       preserveAspectRatio="xMidYMid slice"
-      className="pointer-events-none absolute inset-0 h-full w-full"
+      // Hoogstens 1600px breed en in het midden: over de hele breedte van een
+      // scherm van 2560 of 3440 werden de stipjes twee tot drie keer zo groot
+      // en stonden ze ver van de inhoud (gemeten 11 okt).
+      className="pointer-events-none absolute inset-y-0 left-1/2 h-full w-full max-w-[1600px] -translate-x-1/2"
     >
       {stelletjes.map((s, si) => (
         <g key={si} className="nw-zweef" style={{ animationDelay: `${-si * 7}s` }}>

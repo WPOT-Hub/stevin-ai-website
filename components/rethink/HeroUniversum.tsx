@@ -46,6 +46,30 @@ function zetBewegingAttribuut(uit: boolean) {
 const AUTO_NA = 1500
 const AUTO_ANTWOORD = 8000
 
+// Tekst en brein naast elkaar: vanaf 900px breed in een liggend venster.
+// Daaronder, en op een staande tablet, staat alles onder elkaar. Dezelfde
+// voorwaarde staat als variant zij in app/globals.css (Koen, 11 okt: rond
+// 980 breed hing het brein in een lege vlakte).
+const ZIJ = '(min-width: 900px) and (min-aspect-ratio: 1/1)'
+
+// Plek en maat van het brein naast de tekst, uit wat er echt staat. De bol
+// heeft straal 240 in eigen eenheden; StevinUniversum rekent met
+// k = min(breedte, hoogte) / 620 * schaal.
+//   - Even groot als voorheen op een gewoon scherm (0,92 van de hoogte), maar
+//     niet groter dan bij 1180px hoogte: op 2560 en 3440 breed werd het brein
+//     anders ruim 1000px groot naast een kop van 84px.
+//   - Niet breder dan rechts van de tekst past, met ruimte voor Telefonie en
+//     zijn label aan de rechterkant (op 1024 viel dat label weg).
+//   - Het midden staat een vast deel van de straal rechts van de tekst, zoals
+//     op 1440 (daar blijft alles op zijn plek). Op een breed scherm schuift
+//     het brein zo mee met de tekst in plaats van naar de rechterrand.
+function breinNaastTekst(W: number, H: number, rand: number) {
+  const R0 = 240
+  const k = Math.max(0.6, Math.min((Math.min(H, 1180) / 620) * 0.92, (W - rand - 95) / (1.76 * R0)))
+  const cx = rand + 0.72 * R0 * k
+  return { middenX: cx / W, schaal: (k * 620) / Math.min(W, H), cx, R: R0 * k }
+}
+
 function push(event: string, data: Record<string, unknown>) {
   const w = window as unknown as { dataLayer?: Record<string, unknown>[] }
   w.dataLayer = w.dataLayer ?? []
@@ -76,7 +100,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
   // maat, dus er verschuift niets als het brein na het laden verschijnt.
   const [desktop, setDesktop] = useState<boolean | null>(null)
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 1024px)')
+    const mq = window.matchMedia(ZIJ)
     const zet = () => setDesktop(mq.matches)
     zet()
     mq.addEventListener('change', zet)
@@ -182,7 +206,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
     let timer = 0
     let wacht: MutationObserver | null = null
     const deelInBeeld = (metBanner: boolean) => {
-      const vlak = window.matchMedia('(min-width: 1024px)').matches ? vlakDesktop.current : vlakMobiel.current
+      const vlak = window.matchMedia(ZIJ).matches ? vlakDesktop.current : vlakMobiel.current
       const r = vlak?.getBoundingClientRect()
       if (!r || r.height === 0) return 0
       const onder = window.innerHeight - (metBanner ? parseFloat(html.style.scrollPaddingBottom) || 0 : 0)
@@ -221,11 +245,13 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
     }
   }, [])
 
-  // Waar de tekst van de hero ophoudt (desktop): rechts daarvan mag een
-  // wisselend herinneringslabel staan, links ervan niet.
+  // Waar de tekst van de hero ophoudt (naast elkaar): rechts daarvan mag een
+  // wisselend herinneringslabel staan, links ervan niet. Daaruit volgen ook
+  // plek en maat van het brein.
   const tekstRef = useRef<HTMLDivElement>(null)
   const sectieRef = useRef<HTMLElement>(null)
   const [tekstRand, setTekstRand] = useState(0)
+  const [vlakMaat, setVlakMaat] = useState<{ w: number; h: number } | null>(null)
   useEffect(() => {
     const sectie = sectieRef.current
     if (!sectie) return
@@ -233,6 +259,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
       const t = tekstRef.current?.getBoundingClientRect()
       const s = sectie.getBoundingClientRect()
       setTekstRand(t ? Math.round(t.right - s.left + 16) : 0)
+      setVlakMaat((v) => (v && v.w === Math.round(s.width) && v.h === Math.round(s.height) ? v : { w: Math.round(s.width), h: Math.round(s.height) }))
     }
     meet()
     const ro = new ResizeObserver(meet)
@@ -256,15 +283,26 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
     </button>
   )
 
+  // Naast elkaar: plek en maat van het brein, en daarop de gloed erachter en
+  // het donkere verloop over de tekst. Voor de eerste meting de oude waarden.
+  const naast = vlakMaat && tekstRand > 0 ? breinNaastTekst(vlakMaat.w, vlakMaat.h, tekstRand) : null
+  const gloed = (plek: string) =>
+    `radial-gradient(${plek}, rgba(61,142,255,0.18) 0%, rgba(10,22,40,0) 70%)`
+
   return (
     <section ref={sectieRef} className="relative -mt-[72px] overflow-hidden bg-primary text-white">
+      {/* Gloed achter het brein: naast elkaar op het brein zelf, onder elkaar
+          midden achter het vlak. */}
       <div
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 hidden zij:block"
         aria-hidden="true"
-        style={{ background: 'radial-gradient(55% 60% at 64% 48%, rgba(61,142,255,0.18) 0%, rgba(10,22,40,0) 70%)' }}
+        style={{
+          background: gloed(naast ? `${Math.round(2.5 * naast.R)}px ${Math.round(1.7 * naast.R)}px at ${Math.round(naast.cx)}px 48%` : '55% 60% at 64% 48%'),
+        }}
       />
-      {/* Desktop: het brein over de hele breedte, middelpunt rechts van de tekst */}
-      <div ref={vlakDesktop} className="absolute inset-0 hidden lg:block">
+      <div className="pointer-events-none absolute inset-0 zij:hidden" aria-hidden="true" style={{ background: gloed('80% 42% at 50% 58%') }} />
+      {/* Naast elkaar: het brein over de hele breedte, middelpunt rechts van de tekst */}
+      <div ref={vlakDesktop} className="absolute inset-0 hidden zij:block">
         {desktop === true && (
           <StevinUniversum
             fase={fase}
@@ -275,35 +313,48 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
             onSluit={sluit}
             herinnering={herinnering}
             onKiesHerinnering={kiesHerinneringUitBeeld}
-            middenX={0.66}
+            middenX={naast?.middenX ?? 0.66}
             middenY={0.5}
-            schaal={0.92}
+            schaal={naast?.schaal ?? 0.92}
             vrijBoven={80}
             vrijLinks={tekstRand}
           />
         )}
       </div>
+      {/* Verloop over de tekst, tot net voorbij de tekstkolom (op een breed
+          scherm anders tot ver in het brein). */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 hidden w-[54%] lg:block"
+        className="pointer-events-none absolute inset-y-0 left-0 hidden w-[54%] zij:block"
         aria-hidden="true"
-        style={{ background: 'linear-gradient(90deg, rgba(10,22,40,0.96) 0%, rgba(10,22,40,0.85) 55%, rgba(10,22,40,0) 100%)' }}
+        style={{
+          width: tekstRand > 0 ? `${tekstRand + 60}px` : undefined,
+          background: 'linear-gradient(90deg, rgba(10,22,40,0.96) 0%, rgba(10,22,40,0.85) 55%, rgba(10,22,40,0) 100%)',
+        }}
       />
 
-      {/* Volgorde: op mobiel kop, brein, vraag, knop. Op desktop kop, knoppen,
-          bediening, met het brein rechts op de achtergrond. De knoppen staan
-          twee keer in de DOM (een per schermmaat, de andere op display:none),
-          zodat de tabvolgorde altijd gelijk is aan wat je ziet. */}
-      <div className="pointer-events-none relative mx-auto flex min-h-[100svh] max-w-[1200px] flex-col justify-center px-6 pb-12 pt-[96px] lg:pb-24 lg:pt-[136px]">
-        <div ref={tekstRef} className="pointer-events-auto max-w-[560px]">{kop}</div>
+      {/* Volgorde onder elkaar: kop, brein, vraag, knop. Naast elkaar: kop,
+          knoppen, bediening, met het brein rechts op de achtergrond. De knoppen
+          staan twee keer in de DOM (een per opbouw, de andere op
+          display:none), zodat de tabvolgorde altijd gelijk is aan wat je ziet.
+          Op een staande tablet staat alles op een as in het midden, met het
+          brein groot en de knoppen direct eronder. */}
+      <div className="pointer-events-none relative mx-auto flex min-h-[100svh] max-w-[1200px] flex-col justify-center px-6 pb-12 pt-[96px] tablet:items-center tablet:text-center zij:pb-24 zij:pt-[136px]">
+        <div ref={tekstRef} className="pointer-events-auto max-w-[560px] tablet:max-w-[620px] zij:max-w-[min(560px,44vw)]">
+          {kop}
+        </div>
 
-        <div className="pointer-events-auto hidden max-w-[560px] lg:block">{knoppen}</div>
+        <div className="pointer-events-auto hidden zij:block zij:max-w-[min(560px,44vw)]">{knoppen}</div>
 
-        {/* Mobiel: het brein groot onder de kop, zoals Koen vastlegde: het
-            eerste scherm is kop plus beeld. De vraagknop en de knop mogen onder
-            de vouw (11 okt). Het brein staat iets links van het midden, zodat
-            bij de vraag de Advisor en Telefonie rechts nog in beeld staan; een
-            label dat ergens niet past, komt aan een andere kant van zijn stip. */}
-        <div ref={vlakMobiel} className="pointer-events-auto relative -mx-6 mt-2 h-[min(56svh,480px)] lg:hidden">
+        {/* Onder elkaar: het brein groot onder de kop, zoals Koen vastlegde: het
+            eerste scherm is kop plus beeld. Op een telefoon mogen de vraagknop
+            en de knop onder de vouw (11 okt); het brein staat daar iets links
+            van het midden, zodat bij de vraag de Advisor en Telefonie rechts
+            nog in beeld staan. Op een staande tablet is het vlak hoger en het
+            brein bijna in het midden. */}
+        <div
+          ref={vlakMobiel}
+          className="pointer-events-auto relative -mx-6 mt-2 h-[min(56svh,480px)] self-stretch tablet:mt-4 tablet:h-[min(58svh,78vw,620px)] zij:hidden"
+        >
           {desktop === false && (
             <StevinUniversum
               fase={fase}
@@ -314,17 +365,17 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               onSluit={sluit}
               herinnering={herinnering}
               onKiesHerinnering={kiesHerinneringUitBeeld}
-              middenX={0.4}
+              middenX={vlakMaat && vlakMaat.w >= 640 ? 0.46 : 0.4}
               middenY={0.5}
-              schaal={1.25}
+              schaal={vlakMaat && vlakMaat.w >= 640 ? 1.02 : 1.25}
             />
           )}
           {pauzeKnop('bottom-1 right-4 grid')}
         </div>
 
         {/* Bediening */}
-        <div className="pointer-events-auto lg:mt-14 lg:max-w-[560px]">
-          <div className="flex flex-wrap items-center gap-2">
+        <div className="pointer-events-auto zij:mt-14 zij:max-w-[min(560px,44vw)]">
+          <div className="flex flex-wrap items-center gap-2 tablet:justify-center">
             <button
               type="button"
               onClick={() => vraag()}
@@ -338,7 +389,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               onClick={() => setLijstOpen((o) => !o)}
               aria-expanded={lijstOpen}
               aria-controls="hero-onderdelen"
-              className="sr-only text-[13.5px] text-white/60 underline-offset-2 hover:text-white hover:underline focus:not-sr-only lg:not-sr-only"
+              className="sr-only text-[13.5px] text-white/60 underline-offset-2 hover:text-white hover:underline focus:not-sr-only zij:not-sr-only"
             >
               {lijstOpen ? 'Minder' : 'Of kies een onderdeel'}
             </button>
@@ -347,7 +398,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               staat. De herinneringen zijn op elke schermmaat alleen zichtbaar
               met focus: er komt niets bij in beeld (11 okt). De wrappers dragen
               sr-only, zodat de marges van de lijsten blijven staan. */}
-          <div id="hero-onderdelen" className={lijstOpen ? 'sr-only focus-within:not-sr-only lg:not-sr-only' : 'hidden'}>
+          <div id="hero-onderdelen" className={lijstOpen ? 'sr-only focus-within:not-sr-only zij:not-sr-only' : 'hidden'}>
             <ul className="m-0 mt-3 flex list-none flex-wrap gap-1.5 p-0">
               {alle.map((n) => (
                 <li key={n.id}>
@@ -395,7 +446,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
           <p
             ref={uitlegRef}
             aria-live="polite"
-            className="m-0 mt-3 min-h-[20px] text-[14.5px] leading-snug text-white/70 lg:mt-4 lg:min-h-[44px]"
+            className="m-0 mt-3 min-h-[20px] text-[14.5px] leading-snug text-white/70 zij:mt-4 zij:min-h-[44px]"
           >
             {gekozen && !uitBeeld ? (
               <>
@@ -416,15 +467,15 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
                 {VRAAG.uitleg}
               </>
             ) : fase !== 'rust' ? null : bewegingUit ? null : (
-              <span className="hidden lg:inline">Sleep om te draaien.</span>
+              <span className="hidden zij:inline">Sleep om te draaien.</span>
             )}
           </p>
         </div>
 
-        <div className="pointer-events-auto mt-6 max-w-[560px] lg:hidden">{knoppen}</div>
+        <div className="pointer-events-auto mt-6 max-w-[560px] zij:hidden">{knoppen}</div>
 
-        {/* Desktop: pauzeknop rechtsonder in het breinvlak */}
-        {pauzeKnop('bottom-6 right-6 hidden lg:grid')}
+        {/* Naast elkaar: pauzeknop rechtsonder in het breinvlak */}
+        {pauzeKnop('bottom-6 right-6 hidden zij:grid')}
       </div>
     </section>
   )
