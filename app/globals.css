@@ -23,11 +23,11 @@
   --color-accent-dark: #2B7AEE;
   --color-accent-light: #5DA3FF;
 
-  /* CTA accent — brand teal for high-impact buttons */
+  /* CTA accent: brand teal for high-impact buttons */
   --color-neon: #00D4A0;
   --color-neon-dark: #00B889;
 
-  /* Brand pink — secondary accent */
+  /* Brand pink: secondary accent */
   --color-pink: #F4216A;
   --color-pink-dark: #D91D5E;
 
@@ -43,7 +43,7 @@
 }
 
 /* ---------------------------------------------------------------
-   Stevin Design System — bridge tokens (source naming → repo vars)
+   Stevin Design System: bridge tokens (source naming → repo vars)
    Aliases zodat geporteerde HTML uit Claude Design 1:1 werkt met
    oorspronkelijke variabele-namen (--navy, --accent, --muted, enz.)
    zonder de 22 bestaande routes aan te raken.
@@ -143,7 +143,7 @@
   --font-mono-stevin:    var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-/* Werkwijze H1 — linebreak spans: block on desktop, inline on mobile */
+/* Werkwijze H1: linebreak spans: block on desktop, inline on mobile */
 .linebreak { display: block; }
 @media (max-width: 639px) {
   .linebreak { display: inline; }
@@ -302,7 +302,7 @@ section {
   animation: blink 0.8s infinite;
 }
 
-/* DataRain — floating data lines upward */
+/* DataRain: floating data lines upward */
 @keyframes float-up {
   0% { transform: translateY(100vh); }
   100% { transform: translateY(-200%); }
@@ -312,7 +312,7 @@ section {
 }
 
 /* ───────────────────────────────────────────────────────────
-   Stevin Journal — article body typography
+   Stevin Journal: article body typography
    Match: Claude Design article.html .body
    ─────────────────────────────────────────────────────────── */
 .journal-body p {
@@ -570,10 +570,8 @@ section {
 .su-knoop .su-stip { fill: #9CC6FF; transition: fill .4s ease; }
 .su-hub .su-stip { fill: #D6E7FF; }
 .su-stof .su-stip { fill: #7FA9E6; }
-.su-brein .su-stip { fill: #FFFFFF; }
 .su-advisor .su-stip { fill: #0F1F38; stroke: #9CC6FF; stroke-width: 2; }
 .su-knoop[data-aan="1"] .su-stip { fill: #5DA3FF; }
-.su-brein[data-aan="1"] .su-stip { fill: #FFFFFF; }
 .su-advisor[data-aan="1"] .su-stip { fill: #5DA3FF; stroke: #FFFFFF; }
 .su-halo { opacity: 0; transition: opacity .5s ease; }
 .su-knoop[data-aan="1"] .su-halo { opacity: 1; }
@@ -599,7 +597,7 @@ section {
 .lb-rij { mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%); -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%); }
 .lb-spoor { animation: lb-schuif 46s linear infinite; }
 .lb-terug { animation-direction: reverse; animation-duration: 52s; }
-.lb-band:hover .lb-spoor { animation-play-state: paused; }
+.lb-band:hover .lb-spoor, .lb-band:active .lb-spoor { animation-play-state: paused; }
 @keyframes lb-schuif { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 6px)); } }
 @media (prefers-reduced-motion: reduce) {
   .lb-spoor { animation: none; flex-wrap: wrap; width: auto; }
@@ -635,3 +633,11 @@ section {
 @media (prefers-reduced-motion: reduce) { .vc-stip { animation: none; } }
 .vc-cursor { animation: vc-cursor 1s steps(1) infinite; }
 @keyframes vc-cursor { 50% { opacity: 0; } }
+
+/* W-535: de knop Beweging uit in de hero zet data-beweging="uit" op html en
+   zet alles stil wat vanzelf blijft bewegen (WCAG 2.2.2). Het brein leest
+   hetzelfde attribuut in zijn animatielus. */
+[data-beweging="uit"] .lb-spoor,
+[data-beweging="uit"] .nw-zweef,
+[data-beweging="uit"] .su-ademen,
+[data-beweging="uit"] .su-puls { animation-play-state: paused; }

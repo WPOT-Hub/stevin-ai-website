@@ -97,13 +97,11 @@ export default function Header() {
   // homepage tegensprak, en had nul zoekvertoningen, dus omgooien kon zonder
   // SEO-risico. De inhoud zit nu in /platform, de URL redirect daarheen.
   // Richting C heeft een korte homepage zonder praktijk- en samenwerkblok;
-  // die worden eigen pagina's (11 okt).
+  // die worden eigen pagina's (11 okt). Samenwerken komt terug in het menu
+  // zodra die pagina bestaat; nu zou het bij het kennismakingsblok uitkomen.
   const navItems = isVoorstel
     ? pathname.startsWith('/voorstel-c')
-      ? [
-          { label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` },
-          { label: 'Samenwerken', href: `${pathname}#kennismaken` },
-        ]
+      ? [{ label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` }]
       : [
           { label: 'Zo werkt Stevin', href: `${pathname}#hoe-het-werkt` },
           { label: 'In de praktijk', href: `${pathname}#in-de-praktijk` },
@@ -252,7 +250,10 @@ export default function Header() {
               href={ctaHref}
               data-cta={isVoorstel ? 'header_kennismaking' : undefined}
               data-open-kennismaking={isVoorstel ? '' : undefined}
-              className={`hidden flex-none items-center whitespace-nowrap rounded-lg bg-accent px-4 py-2 text-[13px] font-semibold text-white shadow-sm shadow-accent/20 transition-all duration-200 hover:bg-accent-dark ${isVoorstel ? "lg:inline-flex" : "2xl:inline-flex"}`}
+              // Op de voorstelpagina's #1D63D8: hetzelfde blauw, donker genoeg
+              // voor witte tekst (5,5:1). De huidige site verandert pas mee bij
+              // de livegang.
+              className={`hidden flex-none items-center whitespace-nowrap rounded-lg px-4 py-2 text-[13px] font-semibold text-white shadow-sm shadow-accent/20 transition-all duration-200 ${isVoorstel ? 'bg-[#1D63D8] hover:bg-[#1A56BD] lg:inline-flex' : 'bg-accent hover:bg-accent-dark 2xl:inline-flex'}`}
             >
               {ctaLabel}
             </Link>
@@ -362,7 +363,7 @@ export default function Header() {
                 href={ctaHref}
                 data-cta={isVoorstel ? 'menu_kennismaking' : undefined}
                 data-open-kennismaking={isVoorstel ? '' : undefined}
-                className="block w-full text-center px-5 py-3.5 text-sm font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors"
+                className={`block w-full text-center px-5 py-3.5 text-sm font-semibold text-white rounded-xl transition-colors ${isVoorstel ? 'bg-[#1D63D8] hover:bg-[#1A56BD]' : 'bg-accent hover:bg-accent-dark'}`}
                 onClick={() => setMobileOpen(false)}
               >
                 {ctaLabel}

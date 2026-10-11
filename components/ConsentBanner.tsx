@@ -95,8 +95,12 @@ export default function ConsentBanner() {
             <h3 className="text-base font-bold text-primary mb-2">
               Cookies en privacy
             </h3>
+            {/* Twee blokken, zodat deze tekst op een telefoon niet groter is dan
+                de kop van de pagina en niet het LCP-element wordt (hij
+                verschijnt pas na hydratie). */}
             <p className="text-sm text-muted leading-relaxed mb-6">
-              We gebruiken cookies om de website te verbeteren, gedrag te begrijpen en leads beter te herleiden. Je kunt zelf kiezen welke cookies je toestaat.
+              We gebruiken cookies om de website te verbeteren, gedrag te begrijpen en leads beter te herleiden.{' '}
+              <span className="block">Je kunt zelf kiezen welke cookies je toestaat.</span>
             </p>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button

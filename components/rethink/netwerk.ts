@@ -38,11 +38,11 @@ export const BRONNEN: NetwerkNode<BronId>[] = [
   { id: 'campagnes', label: 'Campagnes', uitleg: 'Google, Meta, LinkedIn en de rest: wat je uitgeeft en wat het oplevert.' },
   { id: 'website', label: 'Website', uitleg: 'Bezoek, formulieren en contactaanvragen.' },
   { id: 'klantgegevens', label: 'Klantgegevens', uitleg: 'Wie je klanten zijn en wat ze eerder kochten.' },
-  { id: 'telefonie', label: 'Telefonie', uitleg: 'Wie er belt, waarvandaan, en of er iemand opnam.' },
+  { id: 'telefonie', label: 'Telefonie', uitleg: 'Telefoontjes die uit je marketing komen.' },
   { id: 'crm', label: 'CRM', uitleg: 'Wat er met een aanvraag gebeurde en wie hem oppakte.' },
   { id: 'offertes', label: 'Offertes', uitleg: 'Welke aanvragen een offerte werden, en voor welk bedrag.' },
   { id: 'verkoop', label: 'Verkoop', uitleg: 'Welke offertes een klant werden.' },
-  { id: 'markt', label: 'Marktsignalen', uitleg: 'Zoekgedrag, seizoen, concurrenten en regelingen.' },
+  { id: 'markt', label: 'Marktsignalen', uitleg: 'Zoekgedrag, seizoen en concurrenten.' },
 ]
 
 export const BREIN: NetwerkNode = {

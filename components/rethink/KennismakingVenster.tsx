@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
-import { getLeadContext, pushConversionEvent } from '@/lib/tracking'
+import { getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/tracking'
 
 /**
  * Eigen venster "Plan een kennismaking" (W-535). Koen, 11 okt 01:24: Swoep
@@ -21,6 +21,12 @@ import { getLeadContext, pushConversionEvent } from '@/lib/tracking'
  * via het bestaande Hub-endpoint.
  *
  * Openen: elk element met data-open-kennismaking op de pagina.
+ *
+ * Toegankelijkheid: zolang het venster open is, krijgt alles ernaast inert
+ * (op elk niveau van body tot het venster: header, de rest van main, footer).
+ * Zo blijft Tab en Shift+Tab in het venster (WCAG 2.4.3), zonder extra
+ * knoppen. Na elke stap gaat de focus naar iets zinnigs in het venster, nooit
+ * naar body.
  */
 
 const API = process.env.NEXT_PUBLIC_KENNISMAKING_API?.replace(/\/$/, '') ?? ''
@@ -38,7 +44,11 @@ declare global {
   }
 }
 
-function Turnstile({ onToken }: { onToken: (t: string) => void }) {
+// Een token is maar een keer geldig: de ouder reset het widget na elke
+// verzending via widgetRef, en een nieuw widget erft nooit een oud token.
+// Het script laadt pas als iemand het formulier gebruikt (eerste focus), niet
+// al bij het openen van het venster.
+function Turnstile({ onToken, widgetRef }: { onToken: (t: string) => void; widgetRef: React.RefObject<string> }) {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (!TURNSTILE_SITEKEY || !ref.current) return
@@ -52,6 +62,7 @@ function Turnstile({ onToken }: { onToken: (t: string) => void }) {
         callback: onToken,
         'expired-callback': () => onToken(''),
       })
+      widgetRef.current = id
     }
     if (window.turnstile) teken()
     else {
@@ -66,8 +77,10 @@ function Turnstile({ onToken }: { onToken: (t: string) => void }) {
     }
     return () => {
       if (id && window.turnstile) window.turnstile.remove(id)
+      widgetRef.current = ''
+      onToken('')
     }
-  }, [onToken])
+  }, [onToken, widgetRef])
   if (!TURNSTILE_SITEKEY) return null
   return <div ref={ref} className="min-h-[65px]" />
 }
@@ -104,27 +117,46 @@ function push(event: string, data: Record<string, unknown> = {}) {
   w.dataLayer.push({ event, ...data, page_path: window.location.pathname })
 }
 
-// Voorbeeldagenda: de komende tien werkdagen volgens VENSTERS,
-// met een paar vaste bezette blokken. Alleen zolang er geen echte koppeling is.
+// Rekenen met kale datums (YYYY-MM-DD) in UTC, zodat de tijdzone van de
+// bezoeker nergens meetelt.
+const plusDagen = (datum: string, n: number) => {
+  const d = new Date(`${datum}T00:00:00Z`)
+  d.setUTCDate(d.getUTCDate() + n)
+  return d.toISOString().slice(0, 10)
+}
+const weekdag = (datum: string) => new Date(`${datum}T00:00:00Z`).getUTCDay()
+const maandagVan = (datum: string) => plusDagen(datum, -((weekdag(datum) + 6) % 7))
+
+// Vandaag en de UTC-afstand van een dag, in Nederlandse tijd. Per dag, zodat
+// ook de dagen rond de overgang naar wintertijd (25 okt) goed gaan.
+const vandaagInNederland = () =>
+  new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date())
+function nederlandseAfstand(datum: string): string {
+  const naam =
+    new Intl.DateTimeFormat('en-US', { timeZone: TZ, timeZoneName: 'shortOffset' })
+      .formatToParts(new Date(`${datum}T12:00:00Z`))
+      .find((p) => p.type === 'timeZoneName')?.value ?? ''
+  const m = /GMT([+-])(\d{1,2})(?::(\d{2}))?/.exec(naam)
+  return m ? `${m[1]}${m[2].padStart(2, '0')}:${m[3] ?? '00'}` : '+01:00'
+}
+
+// Voorbeeldagenda: de komende tien werkdagen volgens VENSTERS, in Nederlandse
+// tijd, met een paar vaste bezette blokken. Alleen zolang er geen echte
+// koppeling is.
 function voorbeeldAgenda(): Dag[] {
   const dagen: Dag[] = []
-  const d = new Date()
-  d.setHours(0, 0, 0, 0)
-  let n = 0
-  while (dagen.length < 10 && n < 40) {
-    d.setDate(d.getDate() + 1)
-    n++
-    const wd = d.getDay()
+  const vandaag = vandaagInNederland()
+  for (let n = 1; dagen.length < 10 && n < 40; n++) {
+    const datum = plusDagen(vandaag, n)
+    const wd = weekdag(datum)
     const venster = VENSTERS[wd]
     if (!venster) continue
-    // Lokale datum, niet toISOString: die rekent naar UTC en schuift in de
-    // zomer een dag terug (gezien 11 okt: "zo 11" in plaats van "ma 12").
-    const datum = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+    const afstand = nederlandseAfstand(datum)
     const slots: Slot[] = []
     const bezet: Slot[] = []
     for (let m = venster[0] * 60; m < venster[1] * 60; m += DUUR_MIN) {
-      const s = new Date(`${datum}T00:00:00`)
-      s.setMinutes(m)
+      const uur = `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`
+      const s = new Date(`${datum}T${uur}:00${afstand}`)
       const e = new Date(s.getTime() + DUUR_MIN * 60000)
       const blok = { start: s.toISOString(), end: e.toISOString() }
       // Vaste "bezette" momenten zodat het rooster er echt uitziet.
@@ -139,9 +171,15 @@ function voorbeeldAgenda(): Dag[] {
 const fmtTijd = (iso: string) =>
   new Intl.DateTimeFormat('nl-NL', { timeZone: TZ, hour: '2-digit', minute: '2-digit' }).format(new Date(iso))
 const fmtDagKort = (datum: string) =>
-  new Intl.DateTimeFormat('nl-NL', { timeZone: TZ, weekday: 'short', day: 'numeric' }).format(new Date(`${datum}T12:00:00`))
+  new Intl.DateTimeFormat('nl-NL', { timeZone: TZ, weekday: 'short', day: 'numeric' }).format(new Date(`${datum}T12:00:00Z`))
 const fmtDagLang = (iso: string) =>
   new Intl.DateTimeFormat('nl-NL', { timeZone: TZ, weekday: 'long', day: 'numeric', month: 'long' }).format(new Date(iso))
+// Alleen de eerste letter een hoofdletter ("Dinsdag 13 oktober"), niet elk
+// woord zoals CSS capitalize doet.
+const metHoofdletter = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
+// Het pad zonder taalvoorvoegsel, zoals ContactForm het als source meegeeft.
+const padZonderTaal = () => window.location.pathname.replace(/^\/(nl|en)(?=\/|$)/, '') || '/'
+const FOUT_VELDEN = 'Vul je naam en een geldig e-mailadres in.'
 
 export default function KennismakingVenster() {
   const [open, setOpen] = useState(false)
@@ -156,17 +194,27 @@ export default function KennismakingVenster() {
   const [fout, setFout] = useState('')
   const [token, setToken] = useState('')
   const zetToken = useCallback((t: string) => setToken(t), [])
+  const widgetId = useRef('')
+  // Eerste focus in het formulier: form_start, en dan pas Turnstile laden.
+  const [formGestart, setFormGestart] = useState(false)
+  const overlayRef = useRef<HTMLDivElement>(null)
   const dialoogRef = useRef<HTMLDivElement>(null)
   const vorigeFocus = useRef<HTMLElement | null>(null)
+  const gekozenRegelRef = useRef<HTMLSpanElement>(null)
+  const klaarKopRef = useRef<HTMLParagraphElement>(null)
+  const focusNa = useRef<'gekozen' | 'slot' | 'klaar' | null>(null)
+  const laadt = useRef(false)
 
   const laad = useCallback(async () => {
+    if (laadt.current) return
+    laadt.current = true
     setDagen(null)
-    if (!API) {
-      setVoorbeeld(true)
-      setDagen(voorbeeldAgenda())
-      return
-    }
     try {
+      if (!API) {
+        setVoorbeeld(true)
+        setDagen(voorbeeldAgenda())
+        return
+      }
       const res = await fetch(`${API}/beschikbaarheid`, { credentials: 'omit' })
       if (!res.ok) throw new Error(String(res.status))
       const json = (await res.json()) as { dagen: Dag[] }
@@ -176,18 +224,22 @@ export default function KennismakingVenster() {
       setFout('De agenda laadt nu niet. Laat je gegevens achter, dan bellen we je.')
       setTab('gegevens')
       setDagen([])
+    } finally {
+      laadt.current = false
     }
   }, [])
 
-  // Openen via data-open-kennismaking, sluiten met Esc.
+  // Openen via data-open-kennismaking. Alleen preventDefault, geen
+  // stopPropagation: de Next-link slaat zijn navigatie naar /kennismaking (de
+  // terugval zonder JS) dan over, en de klik bereikt de rest van de pagina nog
+  // wel (cta_click, het mobiele menu dat dichtgaat). Cmd-, Ctrl-, Shift- en
+  // Alt-klik blijven gewoon een link.
   useEffect(() => {
     const klik = (e: MouseEvent) => {
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
       const el = (e.target as Element | null)?.closest?.('[data-open-kennismaking]')
       if (!el) return
-      // In de capture-fase en met stopPropagation: anders navigeert de
-      // Next-link eerst naar /kennismaking (de terugvaloptie zonder JS).
       e.preventDefault()
-      e.stopPropagation()
       vorigeFocus.current = document.activeElement as HTMLElement
       setOpen(true)
       push('kennismaking_open', { bron: el.getAttribute('data-cta') ?? '' })
@@ -196,31 +248,94 @@ export default function KennismakingVenster() {
     return () => document.removeEventListener('click', klik, true)
   }, [])
 
+  // Open en dicht: Esc, scroll op slot, alles achter het venster inert, focus
+  // heen en terug. Alleen op open, zodat de opruimstap alleen bij echt sluiten
+  // draait (en de focus niet midden in een invulveld wegspringt).
   useEffect(() => {
     if (!open) return
-    if (!dagen) void laad()
     const esc = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
     window.addEventListener('keydown', esc)
     document.body.style.overflow = 'hidden'
-    window.setTimeout(() => dialoogRef.current?.focus(), 30)
+    const inert: HTMLElement[] = []
+    let node: Element | null = overlayRef.current
+    while (node && node !== document.body && node.parentElement) {
+      for (const el of Array.from(node.parentElement.children)) {
+        if (el === node || !(el instanceof HTMLElement) || el.inert) continue
+        if (['SCRIPT', 'STYLE', 'LINK', 'NOSCRIPT', 'TEMPLATE'].includes(el.tagName)) continue
+        el.inert = true
+        inert.push(el)
+      }
+      node = node.parentElement
+    }
+    const t = window.setTimeout(() => dialoogRef.current?.focus(), 30)
     return () => {
+      window.clearTimeout(t)
       window.removeEventListener('keydown', esc)
       document.body.style.overflow = ''
+      inert.forEach((el) => {
+        el.inert = false
+      })
       vorigeFocus.current?.focus?.()
     }
+  }, [open])
+
+  // De agenda laden bij openen, nooit twee keer tegelijk (laadt).
+  useEffect(() => {
+    if (open && !dagen) void laad()
   }, [open, dagen, laad])
 
+  // Focus na een stap: de gekozen tijd, de bevestiging, of terug naar de tijd
+  // die je eerder koos. Valt die weg, dan het venster zelf.
+  useEffect(() => {
+    const doel = focusNa.current
+    if (!doel) return
+    focusNa.current = null
+    if (doel === 'gekozen') gekozenRegelRef.current?.focus()
+    else if (doel === 'klaar') klaarKopRef.current?.focus()
+    else {
+      const knoppen = gekozen
+        ? Array.from(dialoogRef.current?.querySelectorAll<HTMLElement>(`[data-slot="${gekozen.start}"]`) ?? [])
+        : []
+      ;(knoppen.find((k) => k.offsetParent !== null) ?? dialoogRef.current)?.focus()
+    }
+  }, [stap, dagen, gekozen])
+
+  // Weken per kalenderweek (maandag tot en met vrijdag), met een lege kolom
+  // voor een werkdag zonder tijden (verleden, feestdag).
   const weken = useMemo(() => {
-    const w: Dag[][] = []
-    for (let i = 0; i < (dagen?.length ?? 0); i += DAGEN_PER_SCHERM) w.push(dagen!.slice(i, i + DAGEN_PER_SCHERM))
-    return w
+    const perWeek = new Map<string, Map<string, Dag>>()
+    for (const d of dagen ?? []) {
+      const ma = maandagVan(d.datum)
+      if (!perWeek.has(ma)) perWeek.set(ma, new Map())
+      perWeek.get(ma)!.set(d.datum, d)
+    }
+    return [...perWeek.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([ma, week]) =>
+        Array.from({ length: DAGEN_PER_SCHERM }, (_, i) => {
+          const datum = plusDagen(ma, i)
+          return { datum, dag: week.get(datum) ?? null }
+        }),
+      )
   }, [dagen])
 
   const kies = (s: Slot) => {
+    focusNa.current = 'gekozen'
     setGekozen(s)
     setStap('gegevens')
     setFout('')
     push('kennismaking_slot_gekozen')
+  }
+
+  const formStart = () => {
+    if (formGestart) return
+    setFormGestart(true)
+    rememberInteraction('form_start', {
+      label: 'kennismaking_venster',
+      page_path: window.location.pathname,
+      placement: 'kennismaking_venster',
+    })
+    push('form_start', { form: 'kennismaking_venster' })
   }
 
   const verstuur = async (e: React.FormEvent<HTMLFormElement>, modus: 'boek' | 'gegevens') => {
@@ -234,7 +349,7 @@ export default function KennismakingVenster() {
     const vraag = String(data.get('vraag') ?? '').trim()
     const honey = String(data.get('_honey') ?? '')
     if (!naam || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setFout('Vul je naam en een geldig e-mailadres in.')
+      setFout(FOUT_VELDEN)
       return
     }
     if (TURNSTILE_SITEKEY && !token) {
@@ -257,12 +372,14 @@ export default function KennismakingVenster() {
         })
         if (res.status === 409) {
           setFout('Dit moment is net vergeven. Kies een ander moment.')
+          focusNa.current = 'slot'
           setStap('kies')
           void laad()
           return
         }
         if (!res.ok) throw new Error(String(res.status))
-        void pushConversionEvent('meeting_booked', { email }, { event_slug: 'kennismaking', bron: 'eigen_agenda' })
+        // Eigen slug, zodat eigen agenda en Cal.com in GA4 uit elkaar te houden zijn.
+        void pushConversionEvent('meeting_booked', { email }, { event_slug: 'kennismaking_eigen', form: 'kennismaking_venster' })
       } else {
         const res = await fetch(HUB_ENDPOINT, {
           method: 'POST',
@@ -280,13 +397,24 @@ export default function KennismakingVenster() {
           }),
         })
         if (!res.ok) throw new Error(String(res.status))
-        void pushConversionEvent('generate_lead', { email }, { bron: 'kennismaking_venster' })
+        // Dezelfde parameters als ContactForm (form, source): die stuurt GTM door.
+        void pushConversionEvent('generate_lead', { email }, { form: 'kennismaking_venster', source: padZonderTaal() })
       }
+      focusNa.current = 'klaar'
       setStap('klaar')
     } catch {
-      setFout('Versturen lukte niet. Probeer het nog een keer, of mail naar koen@stevin.ai.')
+      setFout('Versturen lukte niet. Probeer het nog een keer, of mail naar info@stevin.ai.')
     } finally {
       setBezig(false)
+      // Een Turnstile-token is na een poging gebruikt: wissen en opnieuw laten aanvinken.
+      setToken('')
+      if (widgetId.current && window.turnstile) {
+        try {
+          window.turnstile.reset(widgetId.current)
+        } catch {
+          /* widget al weg (venster dicht) */
+        }
+      }
     }
   }
 
@@ -296,8 +424,10 @@ export default function KennismakingVenster() {
     'w-full rounded-xl border border-border bg-white px-3.5 py-2.5 text-[15px] text-primary outline-none transition-colors focus:border-accent'
 
   const label = 'mb-1.5 block font-mono text-[11.5px] font-semibold uppercase tracking-[0.08em] text-[#2A3A54]'
+  const veldFout = fout === FOUT_VELDEN
+  const foutProps = veldFout ? { 'aria-invalid': true, 'aria-describedby': 'kennismaking-fout' } : {}
   const formulier = (modus: 'boek' | 'gegevens') => (
-    <form onSubmit={(e) => verstuur(e, modus)} className="grid gap-4" noValidate>
+    <form onSubmit={(e) => verstuur(e, modus)} onFocusCapture={formStart} className="grid gap-4" noValidate>
       <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <label className="block">
         <span className={label}>Bedrijf</span>
@@ -305,8 +435,16 @@ export default function KennismakingVenster() {
       </label>
       <div className="grid grid-cols-2 gap-3">
         <label className="block">
-          <span className={label}>Voornaam</span>
-          <input name="voornaam" required placeholder="Voornaam" autoComplete="given-name" className={veld} maxLength={80} />
+          <span className={label}>Voornaam (verplicht)</span>
+          <input
+            name="voornaam"
+            required
+            placeholder="Voornaam"
+            autoComplete="given-name"
+            className={veld}
+            maxLength={80}
+            {...foutProps}
+          />
         </label>
         <label className="block">
           <span className={label}>Achternaam</span>
@@ -314,8 +452,17 @@ export default function KennismakingVenster() {
         </label>
       </div>
       <label className="block">
-        <span className={label}>E-mail</span>
-        <input name="email" required type="email" placeholder="naam@bedrijf.nl" autoComplete="email" className={veld} maxLength={200} />
+        <span className={label}>E-mail (verplicht)</span>
+        <input
+          name="email"
+          required
+          type="email"
+          placeholder="naam@bedrijf.nl"
+          autoComplete="email"
+          className={veld}
+          maxLength={200}
+          {...foutProps}
+        />
       </label>
       <label className="block">
         <span className={label}>Telefoon</span>
@@ -331,12 +478,17 @@ export default function KennismakingVenster() {
           maxLength={2000}
         />
       </label>
-      <Turnstile onToken={zetToken} />
-      {fout && <p className="m-0 text-[14px] text-[#B42B43]">{fout}</p>}
+      {formGestart && <Turnstile onToken={zetToken} widgetRef={widgetId} />}
+      {fout && (
+        <p id="kennismaking-fout" role="alert" className="m-0 text-[14px] text-[#B42B43]">
+          {fout}
+        </p>
+      )}
+      {/* #1D63D8: hetzelfde blauw, donker genoeg voor witte tekst (5,5:1). */}
       <button
         type="submit"
         disabled={bezig}
-        className="rounded-xl bg-accent px-5 py-3.5 font-display text-[15.5px] font-bold text-white transition-colors hover:bg-accent-dark disabled:opacity-60"
+        className="rounded-xl bg-[#1D63D8] px-5 py-3.5 font-display text-[15.5px] font-bold text-white transition-colors hover:bg-[#1A56BD] disabled:opacity-60"
       >
         {bezig ? 'Even geduld...' : modus === 'boek' ? 'Bevestig de afspraak' : 'Verstuur'}
       </button>
@@ -354,7 +506,11 @@ export default function KennismakingVenster() {
   const mobDagen = dagen ?? []
 
   return (
-    <div className="fixed inset-0 z-[80] flex items-end justify-center bg-[#0A1628]/55 backdrop-blur-sm sm:items-center sm:p-6" onClick={() => setOpen(false)}>
+    <div
+      ref={overlayRef}
+      className="fixed inset-0 z-[80] flex items-end justify-center bg-[#0A1628]/55 backdrop-blur-sm sm:items-center sm:p-6"
+      onClick={() => setOpen(false)}
+    >
       <div
         ref={dialoogRef}
         role="dialog"
@@ -377,23 +533,24 @@ export default function KennismakingVenster() {
           Plan een kennismaking
         </h2>
         <p className="m-0 mt-1.5 text-[15px] text-muted">
-          {DUUR_MIN} minuten, online. We kijken samen naar je cijfers en je hoort eerlijk of we iets voor je kunnen doen.
+          {DUUR_MIN} minuten, online.
         </p>
 
         {stap === 'klaar' ? (
-          <div className="mt-8 rounded-2xl bg-surface p-6 text-center">
-            <p className="m-0 font-display text-[20px] font-bold text-primary">
+          <div role="status" className="mt-8 rounded-2xl bg-surface p-6 text-center">
+            <p ref={klaarKopRef} tabIndex={-1} className="m-0 font-display text-[20px] font-bold text-primary outline-none">
               {tab === 'moment' && gekozen ? 'De afspraak staat.' : 'Dank je, we nemen contact op.'}
             </p>
             <p className="m-0 mt-2 text-[15px] text-muted">
               {tab === 'moment' && gekozen
-                ? `${fmtDagLang(gekozen.start)} om ${fmtTijd(gekozen.start)}. De uitnodiging staat in je mail.`
+                ? `${metHoofdletter(fmtDagLang(gekozen.start))} om ${fmtTijd(gekozen.start)}. De uitnodiging staat in je mail.`
                 : 'Meestal bellen of mailen we binnen een werkdag.'}
             </p>
           </div>
         ) : (
           <>
-            <div className="mt-6 grid grid-cols-2 rounded-xl bg-surface p-1" role="tablist">
+            {/* Twee knoppen met aria-pressed, geen tab-rollen zonder tabpaneel. */}
+            <div className="mt-6 grid grid-cols-2 rounded-xl bg-surface p-1">
               {(
                 [
                   ['moment', 'Kies een moment'],
@@ -403,8 +560,7 @@ export default function KennismakingVenster() {
                 <button
                   key={id}
                   type="button"
-                  role="tab"
-                  aria-selected={tab === id}
+                  aria-pressed={tab === id}
                   onClick={() => {
                     setTab(id)
                     setFout('')
@@ -421,10 +577,17 @@ export default function KennismakingVenster() {
             {tab === 'moment' && stap === 'gegevens' && gekozen && (
               <div className="mt-6">
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-accent/30 bg-accent/[0.06] px-4 py-3">
-                  <span className="text-[15px] font-semibold capitalize text-primary">
-                    {fmtDagLang(gekozen.start)}, {fmtTijd(gekozen.start)} tot {fmtTijd(gekozen.end)}
+                  <span ref={gekozenRegelRef} tabIndex={-1} className="text-[15px] font-semibold text-primary outline-none">
+                    {metHoofdletter(fmtDagLang(gekozen.start))}, {fmtTijd(gekozen.start)} tot {fmtTijd(gekozen.end)}
                   </span>
-                  <button type="button" onClick={() => setStap('kies')} className="text-[14px] font-semibold text-[#1D63D8] hover:underline">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      focusNa.current = 'slot'
+                      setStap('kies')
+                    }}
+                    className="text-[14px] font-semibold text-[#1D63D8] hover:underline"
+                  >
                     Ander moment
                   </button>
                 </div>
@@ -439,7 +602,7 @@ export default function KennismakingVenster() {
                     Voorbeeldagenda: nog niet gekoppeld aan de echte agenda.
                   </p>
                 )}
-                <p className="m-0 mb-3 text-[13px] text-muted">Tijden in Nederlandse tijd</p>
+                <p className="m-0 mb-3 text-[13px] text-muted">Nederlandse tijd</p>
                 {!dagen ? (
                   <p className="m-0 py-10 text-center text-[15px] text-muted">Agenda laden...</p>
                 ) : (
@@ -457,7 +620,8 @@ export default function KennismakingVenster() {
                           <ChevronLeft size={18} />
                         </button>
                         <span className="font-display text-[16px] font-bold text-primary">
-                          {huidigeWeek[0] && `${fmtDagKort(huidigeWeek[0].datum)} tot ${fmtDagKort(huidigeWeek[huidigeWeek.length - 1].datum)}`}
+                          {huidigeWeek[0] &&
+                            `${metHoofdletter(fmtDagKort(huidigeWeek[0].datum))} tot ${fmtDagKort(huidigeWeek[huidigeWeek.length - 1].datum)}`}
                         </span>
                         <button
                           type="button"
@@ -470,14 +634,18 @@ export default function KennismakingVenster() {
                         </button>
                       </div>
                       <div className="grid max-h-[46svh] grid-cols-5 gap-2 overflow-y-auto pr-1">
-                        {huidigeWeek.map((d) => {
-                          const alles = [...d.slots.map((s) => ({ ...s, vrij: true })), ...d.bezet.map((s) => ({ ...s, vrij: false }))].sort(
-                            (a, b) => a.start.localeCompare(b.start),
-                          )
+                        {huidigeWeek.map(({ datum, dag: d }) => {
+                          const alles = d
+                            ? [...d.slots.map((s) => ({ ...s, vrij: true })), ...d.bezet.map((s) => ({ ...s, vrij: false }))].sort((a, b) =>
+                                a.start.localeCompare(b.start),
+                              )
+                            : []
                           return (
-                            <div key={d.datum}>
-                              <p className="sticky top-0 m-0 bg-white pb-2 text-center text-[13.5px] font-semibold capitalize text-primary">
-                                {fmtDagKort(d.datum)}
+                            <div key={datum}>
+                              <p
+                                className={`sticky top-0 m-0 bg-white pb-2 text-center text-[13.5px] font-semibold capitalize text-primary ${d ? '' : 'opacity-40'}`}
+                              >
+                                {fmtDagKort(datum)}
                               </p>
                               <div className="grid gap-1.5">
                                 {alles.map((s) =>
@@ -485,6 +653,7 @@ export default function KennismakingVenster() {
                                     <button
                                       key={s.start}
                                       type="button"
+                                      data-slot={s.start}
                                       onClick={() => kies(s)}
                                       className="rounded-lg border-2 border-[#1D63D8]/70 py-2 text-[13.5px] font-semibold tabular-nums text-[#1D63D8] transition-colors hover:bg-[#1D63D8] hover:text-white"
                                     >
@@ -545,6 +714,7 @@ export default function KennismakingVenster() {
                           <button
                             key={s.start}
                             type="button"
+                            data-slot={s.start}
                             onClick={() => kies(s)}
                             className="rounded-xl border-2 border-[#1D63D8]/70 py-3 text-[16px] font-semibold tabular-nums text-[#1D63D8] active:bg-[#1D63D8] active:text-white"
                           >

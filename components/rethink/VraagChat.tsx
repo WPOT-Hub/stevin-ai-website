@@ -15,6 +15,13 @@ import { CornerDownLeft, Search } from 'lucide-react'
  * schaduw, cijfers in mono). De vraag typt zichzelf zodra het paneel in beeld
  * komt; daarna antwoordkaarten. Per aanvraag dezelfde keuze als de
  * terugkoppelmail van W-123: geen CRM nodig. Alles is voorbeeldgegevens.
+ *
+ * De eindstand (beide kaarten) staat al in de server-HTML, eerst onzichtbaar;
+ * de animatie verandert alleen opacity en transform. Zo groeit het paneel niet
+ * terwijl het in beeld staat, en lezen zoekmachines de demo mee.
+ *
+ * Meting: demo_gezien bij de automatische start, demo_vraag alleen bij een
+ * echte klik (ook bij Vraag opnieuw), demo_uitkomst en demo_afgerond.
  */
 
 type Uitkomst = 'ja' | 'nee' | 'nog_niet'
@@ -31,7 +38,7 @@ const WEEK = [
   ['38', 'Aanvragen'],
   ['24', 'Telefoontjes'],
   ['12', 'Offertes'],
-  ['4', 'Nieuwe klanten'],
+  ['4', 'Opdrachten'],
 ]
 
 const RAND = '#d6dde8'
@@ -51,9 +58,13 @@ function Label({ children, accent = false }: { children: React.ReactNode; accent
   )
 }
 
-function Kaart({ children }: { children: React.ReactNode }) {
+function Kaart({ children, zichtbaar }: { children: React.ReactNode; zichtbaar: boolean }) {
   return (
-    <div className="vd-in rounded-[12px] border bg-white p-3.5" style={{ borderColor: RAND }}>
+    <div
+      className="rounded-[12px] border bg-white p-3.5 transition-[opacity,transform] duration-[400ms] ease-out motion-reduce:transition-none"
+      style={{ borderColor: RAND, opacity: zichtbaar ? 1 : 0, transform: zichtbaar ? 'none' : 'translateY(6px)' }}
+      inert={!zichtbaar}
+    >
       {children}
     </div>
   )
@@ -70,17 +81,25 @@ export default function VraagChat() {
   useEffect(() => () => timers.current.forEach((t) => window.clearTimeout(t)), [])
 
   // Koen, 01:49: "gaan mensen echt klikken daarop?" Waarschijnlijk weinig.
-  // Daarom speelt het zichzelf af zodra het in beeld komt; klikken is een
-  // extra. De meting onderscheidt vanzelf en zelf (demo_bron).
+  // Daarom speelt het zichzelf af zodra het in beeld komt (demo_gezien), en
+  // telt demo_vraag alleen echte kliks. Na afloop blijft de knop actief als
+  // Vraag opnieuw, zodat klikken meetbaar wordt.
   const start = (bron: 'auto' | 'klik') => {
-    if (stapRef.current > 0) return
+    if (bron === 'auto' && stapRef.current > 0) return
+    if (stapRef.current > 0 && stapRef.current < 4) return // speelt nog
+    timers.current.forEach((t) => window.clearTimeout(t))
+    timers.current = []
     stapRef.current = 1
-    push('demo_vraag', { demo_vraag: 'resultaten_week', demo_bron: bron })
+    if (bron === 'auto') push('demo_gezien', { demo_vraag: 'resultaten_week' })
+    else push('demo_vraag', { demo_vraag: 'resultaten_week', demo_bron: 'klik' })
+    setUitkomsten({})
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setGetypt(VRAAG)
+      stapRef.current = 4
       setStap(4)
       return
     }
+    setGetypt('')
     setStap(1)
     VRAAG.split('').forEach((_, i) =>
       timers.current.push(window.setTimeout(() => setGetypt(VRAAG.slice(0, i + 1)), 40 * i)),
@@ -88,7 +107,12 @@ export default function VraagChat() {
     const t0 = VRAAG.length * 40 + 250
     timers.current.push(window.setTimeout(() => setStap(2), t0))
     timers.current.push(window.setTimeout(() => setStap(3), t0 + 700))
-    timers.current.push(window.setTimeout(() => setStap(4), t0 + 1500))
+    timers.current.push(
+      window.setTimeout(() => {
+        stapRef.current = 4
+        setStap(4)
+      }, t0 + 1500),
+    )
   }
 
   useEffect(() => {
@@ -129,8 +153,7 @@ export default function VraagChat() {
       className="mx-auto max-w-[640px] rounded-[14px] border bg-white p-4 sm:px-[18px] sm:py-4"
       style={{ borderColor: RAND, boxShadow: SCHADUW }}
     >
-      <div className="mb-3 flex items-center justify-between">
-        <span className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-[#6b7280]">Vraag het Stevin</span>
+      <div className="mb-3 flex items-center justify-end">
         <span className="rounded-full bg-[#FFF4DB] px-2 py-0.5 text-[10.5px] font-semibold text-[#8A5A00]">Voorbeeld</span>
       </div>
 
@@ -140,90 +163,86 @@ export default function VraagChat() {
           <Search size={15} aria-hidden="true" />
         </span>
         <span className="min-h-[22px] flex-1 truncate text-[14.5px] text-[#1f2933]">
-          {getypt || <span className="text-[#8190a3]">Stel een vraag over je marketing</span>}
+          {getypt || <span className="text-[#6b7280]">Stel een vraag over je marketing</span>}
           {stap === 1 && <span className="vc-cursor ml-px inline-block h-[15px] w-px translate-y-[2px] bg-[#1f2933]" />}
         </span>
         <button
           type="button"
           onClick={() => start('klik')}
-          disabled={stap > 0}
-          className="inline-flex items-center gap-1.5 rounded-md bg-[#3c8eff] px-3 py-1.5 text-[12px] font-medium text-white transition-opacity disabled:opacity-60"
+          disabled={stap > 0 && stap < 4}
+          className="inline-flex items-center gap-1.5 rounded-md bg-[#1D63D8] px-3 py-1.5 text-[12px] font-medium text-white transition-opacity disabled:opacity-60"
         >
-          Vraag <CornerDownLeft size={12} aria-hidden="true" />
+          {stap === 4 ? 'Vraag opnieuw' : 'Vraag'} <CornerDownLeft size={12} aria-hidden="true" />
         </button>
       </div>
 
-      <div className="mt-3 space-y-2.5" aria-live="polite">
+      <div className="relative mt-3 space-y-2.5" aria-live="polite">
         {stap === 2 && (
-          <p className="m-0 flex items-center gap-2 px-1 text-[12.5px] text-[#6b7280]">
+          <p className="absolute inset-x-0 top-0 m-0 flex items-center gap-2 px-1 pt-1 text-[12.5px] text-[#6b7280]">
             <span className="vc-stip h-1.5 w-1.5 rounded-full bg-[#3c8eff]" />
             Website, telefoon en offertes erbij pakken
           </p>
         )}
-        {stap >= 3 && (
-          <Kaart>
-            <Label>Deze week</Label>
-            <div className="grid grid-cols-4 overflow-hidden rounded-[10px] border" style={{ borderColor: RAND }}>
-              {WEEK.map(([n, l], i) => (
-                <div key={l} className="px-2.5 py-2" style={{ borderLeft: i ? `1px solid ${RAND}` : undefined }}>
-                  <div className="font-mono text-[19px] font-semibold tabular-nums leading-none text-[#0a0a0a]">{n}</div>
-                  <div className="mt-1 text-[11px] leading-tight text-[#6b7280]">{l}</div>
+        <Kaart zichtbaar={stap >= 3}>
+          <Label>Deze week</Label>
+          <div className="grid grid-cols-4 overflow-hidden rounded-[10px] border" style={{ borderColor: RAND }}>
+            {WEEK.map(([n, l], i) => (
+              <div key={l} className="px-2.5 py-2" style={{ borderLeft: i ? `1px solid ${RAND}` : undefined }}>
+                <div className="font-mono text-[19px] font-semibold tabular-nums leading-none text-[#0a0a0a]">{n}</div>
+                <div className="mt-1 text-[11px] leading-tight text-[#6b7280]">{l}</div>
+              </div>
+            ))}
+          </div>
+        </Kaart>
+        <Kaart zichtbaar={stap >= 4}>
+          <Label accent>Uitkomst onbekend</Label>
+          <p className="m-0 text-[14px] leading-snug text-[#1f2933]">Werd het een opdracht?</p>
+          <div className="mt-2.5 space-y-2">
+            {AANVRAGEN.map((a) => {
+              const u = uitkomsten[a.id]
+              return (
+                <div key={a.id} className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1.5">
+                  <span className="text-[13.5px] text-[#1f2933]">
+                    <strong className="font-semibold">{a.wat}</strong>{' '}
+                    <span className="font-mono text-[11.5px] text-[#6b7280]">{a.wanneer}</span>
+                  </span>
+                  {/* Segmentknop zoals in de Desk */}
+                  <span
+                    className="inline-flex overflow-hidden rounded-full border text-[12px]"
+                    style={{ borderColor: RAND }}
+                    role="group"
+                    aria-label={`Uitkomst ${a.wat}`}
+                  >
+                    {(
+                      [
+                        ['ja', 'Ja'],
+                        ['nee', 'Nee'],
+                        ['nog_niet', 'Weet ik nog niet'],
+                      ] as const
+                    ).map(([w, l], i) => (
+                      <button
+                        key={w}
+                        type="button"
+                        onClick={() => kies(a.id, w)}
+                        aria-pressed={u === w}
+                        className={`px-3 py-1 font-medium transition-colors ${u === w ? 'bg-[#1D63D8] text-white' : 'text-[#1f2933] hover:bg-[#f7f8fa]'}`}
+                        style={{ borderLeft: i ? `1px solid ${RAND}` : undefined }}
+                      >
+                        {l}
+                      </button>
+                    ))}
+                  </span>
                 </div>
-              ))}
-            </div>
-          </Kaart>
-        )}
-        {stap >= 4 && (
-          <Kaart>
-            <Label accent>Uitkomst onbekend</Label>
-            <p className="m-0 text-[14px] leading-snug text-[#1f2933]">Werd het een opdracht?</p>
-            <div className="mt-2.5 space-y-2">
-              {AANVRAGEN.map((a) => {
-                const u = uitkomsten[a.id]
-                return (
-                  <div key={a.id} className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1.5">
-                    <span className="text-[13.5px] text-[#1f2933]">
-                      <strong className="font-semibold">{a.wat}</strong>{' '}
-                      <span className="font-mono text-[11.5px] text-[#8190a3]">{a.wanneer}</span>
-                    </span>
-                    {/* Segmentknop zoals in de Desk */}
-                    <span
-                      className="inline-flex overflow-hidden rounded-full border text-[12px]"
-                      style={{ borderColor: RAND }}
-                      role="group"
-                      aria-label={`Uitkomst ${a.wat}`}
-                    >
-                      {(
-                        [
-                          ['ja', 'Ja'],
-                          ['nee', 'Nee'],
-                          ['nog_niet', 'Weet ik nog niet'],
-                        ] as const
-                      ).map(([w, l], i) => (
-                        <button
-                          key={w}
-                          type="button"
-                          onClick={() => kies(a.id, w)}
-                          aria-pressed={u === w}
-                          className={`px-3 py-1 font-medium transition-colors ${u === w ? 'bg-[#1D63D8] text-white' : 'text-[#1f2933] hover:bg-[#f7f8fa]'}`}
-                          style={{ borderLeft: i ? `1px solid ${RAND}` : undefined }}
-                        >
-                          {l}
-                        </button>
-                      ))}
-                    </span>
-                  </div>
-                )
-              })}
-            </div>
-            {klaar && (
-              <p className="vd-in m-0 mt-3 border-t pt-2.5 text-[13px] text-[#6b7280]" style={{ borderColor: RAND }}>
-                {opdrachten === 0 ? 'Geen opdracht.' : opdrachten === 1 ? 'Een opdracht.' : 'Twee opdrachten.'}{' '}
-                {nogNiet > 0 ? 'Wat je nog niet weet, vraag ik volgende week opnieuw.' : 'Genoteerd.'}
-              </p>
-            )}
-          </Kaart>
-        )}
+              )
+            })}
+          </div>
+          {klaar && (
+            <p className="vd-in m-0 mt-3 border-t pt-2.5 text-[13px] text-[#6b7280]" style={{ borderColor: RAND }}>
+              {opdrachten === 0 ? 'Geen opdracht.' : opdrachten === 1 ? 'Een opdracht.' : 'Twee opdrachten.'}{' '}
+              {nogNiet > 0 ? 'Wat je nog niet weet, vraag ik over twee weken nog een keer.' : 'Genoteerd.'}
+            </p>
+          )}
+        </Kaart>
       </div>
     </div>
   )

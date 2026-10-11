@@ -11,12 +11,20 @@ import { ADVISOR, BREIN, BRONNEN, type BronId } from './netwerk'
 
 type Kies = BronId | 'brein' | 'advisor'
 
+// Dezelfde bronnen als de vraagdemo verderop: geen CRM nodig (Koen, 11 okt).
 const VRAAG = {
   tekst: 'Resultaten deze week?',
-  bronnen: ['website', 'telefonie', 'crm', 'offertes', 'verkoop'] as BronId[],
-  signaal: '6 aanvragen zonder opvolging',
-  uitleg:
-    'Voorbeeld: met website, telefoon, CRM en offertes gekoppeld ziet Stevin dat bij zes aanvragen niet vastligt of iemand heeft gebeld.',
+  bronnen: ['website', 'telefonie', 'offertes'] as BronId[],
+  signaal: '6 aanvragen, opvolging onbekend',
+  uitleg: 'Voorbeeld: bij zes aanvragen staat nergens of iemand heeft teruggebeld.',
+}
+
+// Pauzeknop voor alle beweging die vanzelf loopt (WCAG 2.2.2): het brein, de
+// logoband en de watermerken. CSS en de lus van het brein lezen het attribuut.
+const BEWEGING_SLEUTEL = 'stevin_beweging'
+function zetBewegingAttribuut(uit: boolean) {
+  if (uit) document.documentElement.dataset.beweging = 'uit'
+  else delete document.documentElement.dataset.beweging
 }
 
 function push(event: string, data: Record<string, unknown>) {
@@ -35,11 +43,45 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
   const timers = useRef<number[]>([])
   useEffect(() => () => timers.current.forEach((t) => window.clearTimeout(t)), [])
 
+  // Een instantie van het brein, alleen in de browser: op desktop in het vlak
+  // achter de tekst, op mobiel onder de kop. Beide vlakken hebben een vaste
+  // maat, dus er verschuift niets als het brein na het laden verschijnt.
+  const [desktop, setDesktop] = useState<boolean | null>(null)
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)')
+    const zet = () => setDesktop(mq.matches)
+    zet()
+    mq.addEventListener('change', zet)
+    return () => mq.removeEventListener('change', zet)
+  }, [])
+
+  const [bewegingUit, setBewegingUit] = useState(false)
+  useEffect(() => {
+    try {
+      if (window.localStorage.getItem(BEWEGING_SLEUTEL) === 'uit') {
+        zetBewegingAttribuut(true)
+        setBewegingUit(true)
+      }
+    } catch {
+      /* opslag geblokkeerd: dan staat beweging gewoon aan */
+    }
+  }, [])
+  const wisselBeweging = () => {
+    const uit = !bewegingUit
+    setBewegingUit(uit)
+    zetBewegingAttribuut(uit)
+    try {
+      window.localStorage.setItem(BEWEGING_SLEUTEL, uit ? 'uit' : 'aan')
+    } catch {
+      /* opslag geblokkeerd: de keuze geldt dan alleen voor deze pagina */
+    }
+  }
+
   const vraag = () => {
     timers.current.forEach((t) => window.clearTimeout(t))
     timers.current = []
     setFocus(null)
-    push('demo_vraag', { demo_vraag: 'hero_resultaten_week' })
+    push('demo_vraag', { demo_vraag: 'hero_resultaten_week', demo_bron: 'hero_klik' })
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setFase('advies')
       return
@@ -69,16 +111,19 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
       />
       {/* Desktop: het brein over de hele breedte, middelpunt rechts van de tekst */}
       <div className="absolute inset-0 hidden lg:block">
-        <StevinUniversum
-          fase={fase}
-          actieveBronnen={fase === 'rust' ? [] : VRAAG.bronnen}
-          focus={focus}
-          signaal={VRAAG.signaal}
-          onKiesHub={(id) => kies(id as Kies, true)}
-          middenX={0.66}
-          middenY={0.5}
-          schaal={0.92}
-        />
+        {desktop === true && (
+          <StevinUniversum
+            fase={fase}
+            actieveBronnen={fase === 'rust' ? [] : VRAAG.bronnen}
+            focus={focus}
+            signaal={VRAAG.signaal}
+            onKiesHub={(id) => kies(id as Kies, true)}
+            onSluit={() => setFocus(null)}
+            middenX={0.66}
+            middenY={0.5}
+            schaal={0.92}
+          />
+        )}
       </div>
       <div
         className="pointer-events-none absolute inset-y-0 left-0 hidden w-[54%] lg:block"
@@ -87,28 +132,33 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
       />
 
       {/* Volgorde: op mobiel kop, brein, vraag, knop. Op desktop kop, knoppen,
-          bediening, met het brein rechts op de achtergrond. */}
+          bediening, met het brein rechts op de achtergrond. De knoppen staan
+          twee keer in de DOM (een per schermmaat, de andere op display:none),
+          zodat de tabvolgorde altijd gelijk is aan wat je ziet. */}
       <div className="pointer-events-none relative mx-auto flex min-h-[100svh] max-w-[1200px] flex-col justify-center px-6 pb-12 pt-[112px] lg:pb-24 lg:pt-[136px]">
-        <div className="pointer-events-auto order-1 max-w-[560px]">{kop}</div>
+        <div className="pointer-events-auto max-w-[560px]">{kop}</div>
 
-        <div className="pointer-events-auto order-4 mt-6 max-w-[560px] lg:order-2 lg:mt-0">{knoppen}</div>
+        <div className="pointer-events-auto hidden max-w-[560px] lg:block">{knoppen}</div>
 
         {/* Mobiel: het brein groot onder de kop */}
-        <div className="pointer-events-auto relative order-2 -mx-6 mt-2 h-[min(56svh,480px)] min-h-[360px] lg:hidden">
-          <StevinUniversum
-            fase={fase}
-            actieveBronnen={fase === 'rust' ? [] : VRAAG.bronnen}
-            focus={focus}
-            signaal={VRAAG.signaal}
-          onKiesHub={(id) => kies(id as Kies, true)}
-            middenX={0.36}
-            middenY={0.5}
-            schaal={1.15}
-          />
+        <div className="pointer-events-auto relative -mx-6 mt-2 h-[min(56svh,480px)] min-h-[360px] lg:hidden">
+          {desktop === false && (
+            <StevinUniversum
+              fase={fase}
+              actieveBronnen={fase === 'rust' ? [] : VRAAG.bronnen}
+              focus={focus}
+              signaal={VRAAG.signaal}
+              onKiesHub={(id) => kies(id as Kies, true)}
+              onSluit={() => setFocus(null)}
+              middenX={0.36}
+              middenY={0.5}
+              schaal={1.15}
+            />
+          )}
         </div>
 
         {/* Bediening */}
-        <div className="pointer-events-auto order-3 lg:mt-14 lg:max-w-[560px]">
+        <div className="pointer-events-auto lg:mt-14 lg:max-w-[560px]">
           <div className="flex flex-wrap items-center gap-2">
             <button
               type="button"
@@ -125,6 +175,13 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               className="hidden text-[13.5px] text-white/60 underline-offset-2 hover:text-white hover:underline lg:inline"
             >
               {lijstOpen ? 'Minder' : 'Of kies een onderdeel'}
+            </button>
+            <button
+              type="button"
+              onClick={wisselBeweging}
+              className="text-[13.5px] text-white/60 underline-offset-2 hover:text-white hover:underline"
+            >
+              {bewegingUit ? 'Beweging aan' : 'Beweging uit'}
             </button>
           </div>
           <ul
@@ -148,7 +205,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               </li>
             ))}
           </ul>
-          <p aria-live="polite" className="m-0 mt-3 text-[14.5px] leading-snug text-white/70 lg:mt-4 lg:min-h-[44px]">
+          <p aria-live="polite" className="m-0 mt-3 min-h-[80px] text-[14.5px] leading-snug text-white/70 lg:mt-4 lg:min-h-[44px]">
             {gekozen && !uitBeeld ? (
               <>
                 <strong className="font-semibold text-white">{gekozen.label}.</strong> {gekozen.uitleg}
@@ -161,12 +218,14 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
                 </a>
               </>
             ) : fase !== 'rust' ? (
-              'Stevin pakt website, telefoon, CRM, offertes en verkoop erbij...'
+              'Stevin pakt website, telefoon en offertes erbij...'
             ) : (
               <span className="hidden lg:inline">Sleep om het brein te draaien.</span>
             )}
           </p>
         </div>
+
+        <div className="pointer-events-auto mt-6 max-w-[560px] lg:hidden">{knoppen}</div>
       </div>
     </section>
   )

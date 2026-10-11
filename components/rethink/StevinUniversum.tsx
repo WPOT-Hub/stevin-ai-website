@@ -16,8 +16,11 @@ import { BRONNEN, BREIN, ADVISOR } from './netwerk'
  * naar het brein, verschijnt er een signaal en licht de Advisor op.
  *
  * Prestaties: React tekent de elementen een keer; de animatielus zet alleen
- * attributen via refs. Buiten beeld stopt de lus (IntersectionObserver). Onder
- * prefers-reduced-motion draait er niets en staat er een stil beeld.
+ * attributen via refs, hoogstens 30 keer per seconde, en raakt onzichtbare
+ * knopen en lijnen niet aan (display:none). De lus start pas als de browser
+ * na het laden tijd over heeft. Buiten beeld stopt de lus (IntersectionObserver).
+ * Onder prefers-reduced-motion, of met data-beweging="uit" op html (de knop
+ * Beweging uit), draait er niets en staat er een stil beeld.
  * Toegankelijkheid: de SVG is decoratie (aria-hidden); de bediening staat in
  * gewone knoppen die de ouder tekent.
  */
@@ -38,6 +41,8 @@ interface Props {
   className?: string
   /** Klik op een bron, het brein of de Advisor in het beeld. */
   onKiesHub?: (id: HubId) => void
+  /** Kaartje dicht (lege tik, Esc of sluitknop): de ouder zet zijn focus terug. */
+  onSluit?: () => void
 }
 
 const SATELLIETEN: Partial<Record<BronId, string[]>> = {
@@ -58,6 +63,8 @@ const SATELLIETEN: Partial<Record<BronId, string[]>> = {
 // meer, zie de oude nodes". Het oude brein (StevinBrainVisual) toonde 108
 // herinneringen; dit is dezelfde gedachte met het verhaal van deze pagina.
 // Een deel heeft een label en licht om de beurt op, de rest is massa.
+// Alles is verzonnen en staat op het kaartje als Voorbeeld. Geen herinnering
+// spreekt de bezoeker aan, anders leest hij het als iets over zijn eigen bedrijf.
 // Kort label in beeld, de rest op een kaartje als je erop klikt (Koen, 11 okt
 // 01:07: "dit is te lang, zoals de eerdere nodes moet je erop kunnen klikken").
 interface Herinnering {
@@ -77,13 +84,13 @@ const HERINNERINGEN: Herinnering[] = [
   { kort: 'Drukke maandag', soort: 'Kennis', wanneer: 'laatste 8 weken', uitleg: 'Op maandag komt een derde van de telefoontjes binnen. Dan worden er ook de meeste gemist.', bijVraag: true },
   { kort: 'Zonnepanelen', soort: 'Resultaat', wanneer: '2026', uitleg: 'Minder aanvragen dan vorig jaar. In april is het budget verschoven naar warmtepompen.' },
   { kort: 'Badkamers', soort: 'Resultaat', wanneer: 'laatste 6 maanden', uitleg: 'Een op de drie offertes wordt getekend, gemiddeld voor 11.400 euro.' },
-  { kort: 'Jouw bedrijfsnaam', soort: 'Marktsignaal', wanneer: 'sinds sep 2026', uitleg: 'Een concurrent adverteert op zoekopdrachten met jouw bedrijfsnaam.' },
+  { kort: 'Op de merknaam', soort: 'Marktsignaal', wanneer: 'sinds sep 2026', uitleg: 'Een concurrent adverteert op zoekopdrachten met de bedrijfsnaam.' },
   { kort: 'Herfstvakantie', soort: 'Kennis', wanneer: 'okt 2025', uitleg: 'Meer bezoek op de website, minder aanvragen. Mensen kijken rond, ze kopen nog niet.' },
   { kort: 'Kozijnen voorjaar', soort: 'Campagne', wanneer: 'mrt tot mei 2026', uitleg: 'Veel klikken, weinig offertes. De aanvragen kwamen vooral van huurders.' },
-  { kort: 'Wie volgt op', soort: 'Afspraak', wanneer: 'sinds mrt 2026', uitleg: 'Ruud belt de telefoontjes terug, Sanne pakt de aanvragen via de website op.', bijVraag: true },
+  { kort: 'Wie belt terug', soort: 'Afspraak', wanneer: 'sinds mrt 2026', uitleg: 'Ruud belt terug wie heeft gebeld, Sanne pakt de aanvragen via de website op.', bijVraag: true },
   { kort: 'Goede klant', soort: 'Kennis', wanneer: '2026', uitleg: 'Eigen woning, budget boven 8.000 euro, binnen 40 kilometer.' },
   { kort: 'Pagina warmtepomp', soort: 'Kennis', wanneer: 'jun 2026', uitleg: 'In juni vernieuwd. Sindsdien vult een groter deel van de bezoekers het formulier in.' },
-  { kort: 'Zoeken op je naam', soort: 'Marktsignaal', wanneer: 'laatste 12 maanden', uitleg: 'Het aantal mensen dat op je bedrijfsnaam zoekt, is stabiel.' },
+  { kort: 'Zoeken via Google', soort: 'Kennis', wanneer: 'laatste 12 maanden', uitleg: 'Wie via Google kwam, zocht meestal op warmtepomp met de eigen regio erbij.' },
 ]
 
 interface Knoop {
@@ -233,6 +240,7 @@ export default function StevinUniversum({
   schaal = 1,
   className = '',
   onKiesHub,
+  onSluit,
 }: Props) {
   const { knopen, lijnen } = useMemo(bouwKnopen, [])
   const wrapRef = useRef<HTMLDivElement>(null)
@@ -240,6 +248,12 @@ export default function StevinUniversum({
   const knoopEls = useRef<(SVGGElement | null)[]>([])
   const lijnEls = useRef<(SVGLineElement | null)[]>([])
   const pulsEls = useRef<(SVGCircleElement | null)[]>([])
+  // Onzichtbare raakcirkel per knoop; de straal volgt de schermmaat (24px).
+  const raakEls = useRef<(SVGCircleElement | null)[]>([])
+  const raakR = useRef<string[]>([])
+  const laatsteSortering = useRef(-1e9)
+  const onSluitRef = useRef(onSluit)
+  onSluitRef.current = onSluit
   const signaalEl = useRef<SVGGElement | null>(null)
   const [maat, setMaat] = useState({ w: 1200, h: 800 })
   // Het aangeklikte knooppunt; het kaartje volgt het in de animatielus.
@@ -345,6 +359,13 @@ export default function StevinUniversum({
       lijnen.forEach(([a, b], i) => {
         const el = lijnEls.current[i]
         if (!el) return
+        // Onzichtbaar (een satelliet van een bron die niet meedoet): een keer
+        // display:none, en geen coordinaten meer schrijven tot hij terugkomt.
+        if (!zichtbaar(knopen[a]) || !zichtbaar(knopen[b])) {
+          if (el.style.display !== 'none') el.style.display = 'none'
+          return
+        }
+        if (el.style.display === 'none') el.style.display = ''
         const pa = P[a]
         const pb = P[b]
         el.setAttribute('x1', pa.X.toFixed(1))
@@ -355,12 +376,8 @@ export default function StevinUniversum({
         const aan = isAan(knopen[a]) && isAan(knopen[b])
         const stil = isStil(knopen[a]) || isStil(knopen[b])
         el.setAttribute('stroke', aan ? '#5DA3FF' : '#93C5FD')
-        const weg = !zichtbaar(knopen[a]) || !zichtbaar(knopen[b])
         const wolk = knopen[a].soort === 'geheugen' || knopen[b].soort === 'geheugen'
-        el.setAttribute(
-          'stroke-opacity',
-          (weg ? 0 : aan ? 0.85 : stil ? 0.04 : wolk ? 0.09 * diepte : 0.13 * diepte).toFixed(3),
-        )
+        el.setAttribute('stroke-opacity', (aan ? 0.85 : stil ? 0.04 : wolk ? 0.09 * diepte : 0.13 * diepte).toFixed(3))
         el.setAttribute('stroke-width', aan ? '1.4' : '0.8')
       })
 
@@ -396,6 +413,11 @@ export default function StevinUniversum({
       knopen.forEach((n, i) => {
         const g = knoopEls.current[i]
         if (!g) return
+        if (!zichtbaar(n)) {
+          if (g.style.display !== 'none') g.style.display = 'none'
+          return
+        }
+        if (g.style.display === 'none') g.style.display = ''
         const p = P[i]
         const aan = isAan(n)
         const stil = isStil(n)
@@ -411,20 +433,28 @@ export default function StevinUniversum({
             ring.setAttribute('opacity', ok ? (0.7 * (1 - t)).toFixed(2) : '0')
           }
         }
-        g.setAttribute(
-          'opacity',
-          ((!zichtbaar(n)
-            ? 0
-            : stil
-              ? 0.16
-              : n.soort === 'stof'
-                ? 0.35 * diepte
-                : n.soort === 'geheugen' && !aan
-                  ? 0.3 + 0.55 * diepte
-                  : Math.max(0.3, diepte)
-          ) * bijBrein.zicht
-          ).toFixed(3),
-        )
+        const zicht =
+          (stil
+            ? 0.16
+            : n.soort === 'stof'
+              ? 0.35 * diepte
+              : n.soort === 'geheugen' && !aan
+                ? 0.3 + 0.55 * diepte
+                : Math.max(0.3, diepte)) * bijBrein.zicht
+        g.setAttribute('opacity', zicht.toFixed(3))
+        // Een knoop die je (bijna) niet ziet, vangt ook geen tik of cursor.
+        const pe = zicht > 0.05 ? '' : 'none'
+        if (g.style.pointerEvents !== pe) g.style.pointerEvents = pe
+        // Raakvlak minstens 24px doorsnee op het scherm (WCAG 2.5.8), ook als
+        // de knoop achteraan klein wordt getekend.
+        const raak = raakEls.current[i]
+        if (raak && n.soort !== 'brein') {
+          const r = Math.max(12 / (p.s * k), n.r + 8).toFixed(1)
+          if (raakR.current[i] !== r) {
+            raakR.current[i] = r
+            raak.setAttribute('r', r)
+          }
+        }
         g.dataset.aan = aan ? '1' : '0'
         // Labels alleen aan de voorkant van de bol, of als de node meedoet.
         const voor = p.z < 30
@@ -481,74 +511,126 @@ export default function StevinUniversum({
         signaalEl.current.setAttribute('opacity', zichtbaar ? '1' : '0')
       }
 
-      // Diepte: dichtbij bovenop. Elke paar frames de volgorde bijwerken.
+      // Diepte: dichtbij bovenop. Hoogstens om de 250 ms, en alleen de knopen
+      // die echt van plek wisselen. Elke verplaatsing in de DOM breekt lopende
+      // CSS-overgangen af; moveBefore (waar de browser het kent) niet. Het brein
+      // staat in een eigen laag erboven en wordt nooit verplaatst.
       const svg = svgRef.current
-      if (svg && Math.floor(tijd / 120) % 2 === 0) {
+      if (svg && tijd - laatsteSortering.current >= 250) {
+        laatsteSortering.current = tijd
         const laag = svg.querySelector('[data-laag="knopen"]')
         if (laag) {
-          const volgorde = knopen.map((_, i) => i).sort((a, b) => P[b].z - P[a].z)
-          volgorde.forEach((i) => {
+          const volgorde = knopen.map((_, i) => i).filter((i) => i !== 0).sort((a, b) => P[b].z - P[a].z)
+          // moveBefore staat in de typen, maar nog niet in elke browser.
+          const verplaats = laag as unknown as { moveBefore?: (n: Node, ref: Node | null) => void }
+          let plek: ChildNode | null = laag.firstChild
+          for (const i of volgorde) {
             const g = knoopEls.current[i]
-            if (g && i !== 0) laag.appendChild(g)
-          })
-          // Het brein altijd bovenop, zodat het icoon nooit wordt bedekt.
-          const brein = knoopEls.current[0]
-          if (brein) laag.appendChild(brein)
+            if (!g) continue
+            if (g === plek) {
+              plek = plek.nextSibling
+              continue
+            }
+            if (typeof verplaats.moveBefore === 'function') {
+              try {
+                verplaats.moveBefore(g, plek)
+                continue
+              } catch {
+                /* terugval hieronder */
+              }
+            }
+            laag.insertBefore(g, plek)
+          }
         }
       }
     },
     [knopen, lijnen, maat, middenX, middenY, schaal],
   )
 
-  // De lus
+  // De lus. Hoogstens 30 beelden per seconde: bij deze draaisnelheid zie je
+  // het verschil niet, en de hoofdthread houdt ruimte voor tikken. Camera en
+  // traagheid rekenen met de verstreken tijd, niet per beeld. De lus start pas
+  // als de browser na het laden tijd over heeft (requestIdleCallback).
   useEffect(() => {
     const stilVoorkeur = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const html = document.documentElement
+    const stil = () => stilVoorkeur || html.dataset.beweging === 'uit'
     let raf = 0
     let zichtbaar = true
+    let gestart = false
     let vorige = performance.now()
     const tik = (nu: number) => {
+      raf = 0
+      if (!zichtbaar || stil()) return
+      raf = requestAnimationFrame(tik)
+      if (nu - vorige < 30) return
       const dt = Math.min(48, nu - vorige)
       vorige = nu
+      const f = dt / 16.7
       const c = cam.current
-      if (!stilVoorkeur) {
-        if (c.doelYaw != null) {
-          let d = c.doelYaw - c.yaw
-          d = Math.atan2(Math.sin(d), Math.cos(d))
-          c.yaw += d * 0.05
-          c.pitch += ((c.doelPitch ?? 0.18) - c.pitch) * 0.05
-        } else if (gekozenRef.current == null) {
-          c.yaw += 0.00011 * dt
-          c.pitch += (0.18 - c.pitch) * 0.01
-        }
-        c.yaw += c.vx
-        c.pitch = Math.max(-0.7, Math.min(0.7, c.pitch + c.vy))
-        const wrijving = Math.pow(0.93, dt / 16.7)
-        c.vx *= wrijving
-        c.vy *= wrijving
+      if (c.doelYaw != null) {
+        let d = c.doelYaw - c.yaw
+        d = Math.atan2(Math.sin(d), Math.cos(d))
+        const naar = 1 - Math.pow(0.95, f)
+        c.yaw += d * naar
+        c.pitch += ((c.doelPitch ?? 0.18) - c.pitch) * naar
+      } else if (gekozenRef.current == null) {
+        c.yaw += 0.00011 * dt
+        c.pitch += (0.18 - c.pitch) * (1 - Math.pow(0.99, f))
       }
+      c.yaw += c.vx * f
+      c.pitch = Math.max(-0.7, Math.min(0.7, c.pitch + c.vy * f))
+      const wrijving = Math.pow(0.93, f)
+      c.vx *= wrijving
+      c.vy *= wrijving
       teken(nu)
-      if (zichtbaar && !stilVoorkeur) raf = requestAnimationFrame(tik)
+    }
+    const draai = () => {
+      if (!gestart || raf || !zichtbaar || stil()) return
+      vorige = performance.now() - 34
+      raf = requestAnimationFrame(tik)
     }
     const io = new IntersectionObserver(([e]) => {
-      const was = zichtbaar
       zichtbaar = e.isIntersecting
-      if (zichtbaar && !was && !stilVoorkeur) {
-        vorige = performance.now()
-        raf = requestAnimationFrame(tik)
-      }
+      draai()
     })
     if (wrapRef.current) io.observe(wrapRef.current)
-    raf = requestAnimationFrame(tik)
+    // Knop Beweging uit of aan: stilzetten met een laatste stil beeld, of door.
+    const mo = new MutationObserver(() => {
+      if (stil()) teken(performance.now())
+      else draai()
+    })
+    mo.observe(html, { attributes: true, attributeFilter: ['data-beweging'] })
+    // requestIdleCallback staat in de typen, maar Safari kent hem nog niet.
+    const w = window as unknown as {
+      requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number
+      cancelIdleCallback?: (id: number) => void
+    }
+    const begin = () => {
+      gestart = true
+      draai()
+    }
+    const idle = w.requestIdleCallback ? w.requestIdleCallback(begin, { timeout: 1500 }) : 0
+    const later = w.requestIdleCallback ? 0 : window.setTimeout(begin, 200)
     return () => {
-      cancelAnimationFrame(raf)
+      if (idle) w.cancelIdleCallback?.(idle)
+      if (later) window.clearTimeout(later)
+      if (raf) cancelAnimationFrame(raf)
       io.disconnect()
+      mo.disconnect()
     }
   }, [teken])
 
   // Onder reduced motion na elke wijziging een keer tekenen.
+  // Ook bij een gekozen knoop, anders verschijnt het kaartje niet.
   useEffect(() => {
     teken(performance.now())
-  }, [fase, actieveBronnen, focus, teken])
+  }, [fase, actieveBronnen, focus, gekozen, teken])
+
+  // Speelt de vraag af, dan gaat een open kaartje dicht.
+  useEffect(() => {
+    if (fase !== 'rust') setGekozen(null)
+  }, [fase])
 
   // Slepen met de muis; op een touchscherm niet, daar scrol je. Een korte tik
   // zonder verschuiven is een klik op een node (of ernaast: kaartje dicht).
@@ -575,8 +657,9 @@ export default function StevinUniversum({
     if (!s0 || Math.hypot(e.clientX - s0.x, e.clientY - s0.y) > 6) return
     if ((e.target as Element).closest('[data-kaart]')) return
     const el = (e.target as Element).closest('[data-knoop]')
-    if (!el) {
+    if (!el || (el as SVGElement).style.pointerEvents === 'none') {
       setGekozen(null)
+      onSluitRef.current?.()
       return
     }
     const i = Number(el.getAttribute('data-knoop'))
@@ -586,7 +669,10 @@ export default function StevinUniversum({
   }
   useEffect(() => {
     const esc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setGekozen(null)
+      if (e.key === 'Escape') {
+        setGekozen(null)
+        onSluitRef.current?.()
+      }
     }
     window.addEventListener('keydown', esc)
     return () => window.removeEventListener('keydown', esc)
@@ -597,7 +683,7 @@ export default function StevinUniversum({
     const n = knopen[gekozen]
     if (n.soort === 'geheugen' && n.herinnering != null) {
       const h = HERINNERINGEN[n.herinnering]
-      return { soort: h.soort, titel: h.kort, wanneer: h.wanneer, tekst: h.uitleg }
+      return { soort: `Voorbeeld, ${h.soort.toLowerCase()}`, titel: h.kort, wanneer: h.wanneer, tekst: h.uitleg }
     }
     if (n.soort === 'hub') {
       const b = BRONNEN.find((x) => x.id === n.hub)
@@ -607,10 +693,61 @@ export default function StevinUniversum({
     if (n.soort === 'advisor') return { soort: 'Stevin', titel: ADVISOR.label, wanneer: '', tekst: ADVISOR.uitleg }
     if (n.soort === 'sat') {
       const b = BRONNEN.find((x) => x.id === n.hub)
-      return { soort: b?.label ?? 'Bron', titel: n.label ?? '', wanneer: '', tekst: `Onderdeel van ${b?.label.toLowerCase() ?? 'deze bron'}.` }
+      return { soort: b?.label ?? 'Bron', titel: n.label ?? '', wanneer: '', tekst: '' }
     }
     return null
   })()
+
+  const tekenKnoop = (n: Knoop, i: number) => (
+    <g
+      key={n.id}
+      ref={(el) => {
+        knoopEls.current[i] = el
+      }}
+      className={`su-knoop su-${n.soort}`}
+      opacity={0}
+      data-knoop={n.soort === 'stof' || (n.soort === 'geheugen' && n.herinnering == null) ? undefined : i}
+    >
+      {/* Groter raakvlak dan de stip, anders raak je hem op een telefoon niet */}
+      {n.soort !== 'stof' && !(n.soort === 'geheugen' && n.herinnering == null) && (
+        <circle
+          ref={(el) => {
+            raakEls.current[i] = el
+          }}
+          r={n.soort === 'brein' ? n.r + 6 : Math.max(12, n.r + 8)}
+          fill="transparent"
+          className="cursor-pointer"
+        />
+      )}
+      {n.soort === 'brein' && <circle r={n.r * 3.4} fill={`url(#${breinId})`} className="su-ademen" />}
+      {n.soort === 'brein' && <circle r={n.r} fill="none" stroke="#9CC6FF" strokeWidth={2} opacity={0} className="su-hartslag" />}
+      {(n.soort === 'hub' || n.soort === 'advisor' || n.soort === 'sat' || n.soort === 'geheugen') && (
+        <circle r={n.r * 3.2} fill={`url(#${gloedId})`} className="su-halo" />
+      )}
+      {/* Het brein heeft geen stip: het Stevin-icoon staat los op het donkere
+          vlak, nooit in een gekleurd rondje. */}
+      {n.soort !== 'brein' && <circle r={n.r} className="su-stip" />}
+      {n.soort === 'brein' && (
+        // Het Stevin-icoon uit public/logos/logo-icon.svg (48x48), wit op donker.
+        <g transform="scale(0.78) translate(-24 -24)" fill="#FFFFFF">
+          <rect x={6} y={7} width={30} height={14} rx={4} />
+          <rect x={12} y={27} width={30} height={14} rx={4} />
+        </g>
+      )}
+      {n.label && (
+        <text
+          className="su-label"
+          x={n.soort === 'brein' ? 0 : n.r + 7}
+          y={n.soort === 'brein' ? n.r + 20 : 4.5}
+          textAnchor={n.soort === 'brein' ? 'middle' : 'start'}
+          fontSize={n.soort === 'sat' ? 11 : n.soort === 'geheugen' ? 12 : 13.5}
+          fontWeight={n.soort === 'sat' || n.soort === 'geheugen' ? 500 : 650}
+        >
+          {n.label}
+        </text>
+      )}
+    </g>
+  )
 
   return (
     <div
@@ -655,47 +792,10 @@ export default function StevinUniversum({
             <circle key={i} ref={(el) => { pulsEls.current[i] = el }} r={0} fill="#BFDBFF" opacity={0} />
           ))}
         </g>
-        <g data-laag="knopen">
-          {knopen.map((n, i) => (
-            <g
-              key={n.id}
-              ref={(el) => { knoopEls.current[i] = el }}
-              className={`su-knoop su-${n.soort}`}
-              opacity={0}
-              data-knoop={n.soort === 'stof' || (n.soort === 'geheugen' && n.herinnering == null) ? undefined : i}
-            >
-              {/* Groter raakvlak dan de stip, anders raak je hem op een telefoon niet */}
-              {n.soort !== 'stof' && !(n.soort === 'geheugen' && n.herinnering == null) && (
-                <circle r={n.soort === 'brein' ? n.r + 6 : Math.max(12, n.r + 8)} fill="transparent" className="cursor-pointer" />
-              )}
-              {n.soort === 'brein' && <circle r={n.r * 3.4} fill={`url(#${breinId})`} className="su-ademen" />}
-              {n.soort === 'brein' && <circle r={n.r} fill="none" stroke="#9CC6FF" strokeWidth={2} opacity={0} className="su-hartslag" />}
-              {(n.soort === 'hub' || n.soort === 'advisor' || n.soort === 'sat' || n.soort === 'geheugen') && (
-                <circle r={n.r * 3.2} fill={`url(#${gloedId})`} className="su-halo" />
-              )}
-              <circle r={n.r} className="su-stip" />
-              {n.soort === 'brein' && (
-                // Het Stevin-icoon uit public/logos/logo-icon.svg (48x48).
-                <g transform="scale(0.78) translate(-24 -24)" fill="#3D8EFF">
-                  <rect x={6} y={7} width={30} height={14} rx={4} />
-                  <rect x={12} y={27} width={30} height={14} rx={4} />
-                </g>
-              )}
-              {n.label && (
-                <text
-                  className="su-label"
-                  x={n.soort === 'brein' ? 0 : n.r + 7}
-                  y={n.soort === 'brein' ? n.r + 20 : 4.5}
-                  textAnchor={n.soort === 'brein' ? 'middle' : 'start'}
-                  fontSize={n.soort === 'sat' ? 11 : n.soort === 'geheugen' ? 12 : 13.5}
-                  fontWeight={n.soort === 'sat' || n.soort === 'geheugen' ? 500 : 650}
-                >
-                  {n.label}
-                </text>
-              )}
-            </g>
-          ))}
-        </g>
+        <g data-laag="knopen">{knopen.map((n, i) => (n.soort === 'brein' ? null : tekenKnoop(n, i)))}</g>
+        {/* Het brein in een eigen laag boven de knopen: altijd bovenop, en de
+            dieptesortering verplaatst het nooit (dan blijft het ademen lopen). */}
+        <g data-laag="brein">{tekenKnoop(knopen[0], 0)}</g>
         <g ref={signaalEl} opacity={0} className="su-overgang">
           <circle r={22} fill={`url(#${gloedId})`} className="su-puls" />
           <circle r={6} fill="#5DA3FF" />
@@ -727,7 +827,10 @@ export default function StevinUniversum({
               <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#9CC6FF]">{kaartInhoud.soort}</span>
               <button
                 type="button"
-                onClick={() => setGekozen(null)}
+                onClick={() => {
+                  setGekozen(null)
+                  onSluitRef.current?.()
+                }}
                 className="text-[18px] leading-none text-white/50 hover:text-white"
                 aria-label="Sluiten"
               >
@@ -736,7 +839,7 @@ export default function StevinUniversum({
             </div>
             <p className="m-0 font-display text-[16px] font-bold leading-snug text-white">{kaartInhoud.titel}</p>
             {kaartInhoud.wanneer && <p className="m-0 mt-0.5 text-[12.5px] text-white/50">{kaartInhoud.wanneer}</p>}
-            <p className="m-0 mt-2 text-[14px] leading-snug text-white/80">{kaartInhoud.tekst}</p>
+            {kaartInhoud.tekst && <p className="m-0 mt-2 text-[14px] leading-snug text-white/80">{kaartInhoud.tekst}</p>}
           </>
         )}
       </div>
