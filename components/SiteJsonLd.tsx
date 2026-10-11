@@ -15,8 +15,9 @@ const organization = {
   name: 'Stevin.AI',
   alternateName: 'Stevin',
   legalName: 'Stevin.AI',
+  // Zelfde verhaal als de homepage (vindbaarheidstoets 11 okt, A4).
   description:
-    'Stevin.AI regelt de marketing van Nederlandse en Belgische bedrijven, met de accounts op naam van de klant zelf. Elke wijziging staat in een logboek met de reden erbij, en een deel van het bewijs staat buiten ons om. Voor ondernemers, marketingteams en bureaus, werkzaam vanuit Breda.',
+    'Stevin.AI is een marketingbureau uit Breda voor mkb-bedrijven in Nederland en België. Je ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.',
   url: 'https://stevin.ai',
   logo: {
     '@type': 'ImageObject',
@@ -33,7 +34,6 @@ const organization = {
     { '@type': 'Country', name: 'Belgium' },
   ],
   knowsAbout: [
-    'Marketing Data Ownership',
     'First-party Marketing Data',
     'Marketing Intelligence',
     'Online Marketing',

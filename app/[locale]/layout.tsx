@@ -74,31 +74,34 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       ...previewRobots,
       metadataBase: new URL('https://stevin.ai'),
       alternates: { types: { 'application/rss+xml': 'https://stevin.ai/feed.xml' } },
+      // Zelfde title en description als de homepage (vindbaarheidstoets 11 okt,
+      // A2 en A4): geen "Alles blijft van jou" en geen "dag en nacht" meer.
       title: {
-        default: 'Stevin.AI · Wij regelen je marketing goed. Alles blijft van jou.',
+        default: 'Stevin.AI · Marketingbureau voor het mkb',
         template: '%s | Stevin.AI',
       },
-      description: 'Je marketing goed geregeld, met dag en nacht een oog erop. Je accounts, je data en je kennis blijven van jou.',
+      description: 'Stevin.AI doet de marketing van mkb-bedrijven. Jij ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.',
       openGraph: {
         type: 'website',
         locale: 'nl_NL',
         siteName: 'Stevin.AI',
-        title: 'Stevin.AI · Wij regelen je marketing goed. Alles blijft van jou.',
-        description: 'Stevin zet je marketing goed en let er dag en nacht op. En alles blijft van jou: je accounts, je data, je kennis.',
+        title: 'Stevin.AI · Marketingbureau voor het mkb',
+        description: 'Stevin.AI doet de marketing van mkb-bedrijven. Jij ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.',
         url: 'https://stevin.ai',
         images: [
           {
             url: '/opengraph-image',
             width: 1200,
             height: 630,
-            alt: 'Stevin: wij regelen je marketing goed. Alles blijft van jou.',
+            // Wat er op het beeld staat (app/[locale]/opengraph-image.tsx).
+            alt: 'Stevin.AI: Wonder? Het is geen wonder. Het is Stevin.',
           },
         ],
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'Stevin.AI · Wij regelen je marketing goed. Alles blijft van jou.',
-        description: 'Stevin zet je marketing goed en let er dag en nacht op. En alles blijft van jou: je accounts, je data, je kennis.',
+        title: 'Stevin.AI · Marketingbureau voor het mkb',
+        description: 'Stevin.AI doet de marketing van mkb-bedrijven. Jij ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.',
         images: ['/opengraph-image'],
       },
     }

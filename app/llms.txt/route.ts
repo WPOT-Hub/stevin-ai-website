@@ -36,9 +36,13 @@ export async function GET() {
   const body = lines(
     '# Stevin.AI',
     '',
-    '> Stevin zorgt eerst dat klopt wat er binnenkomt, en draait daarna de campagnes. Voor bedrijven in Nederland en Belgie die hun marketing uitbesteden en niet kunnen nakijken wat ermee gebeurt. De advertentieaccounts staan op naam van de klant zelf, elke wijziging staat in een logboek met de reden erbij, en een deel van het bewijs staat buiten ons om: het wijzigingslogboek van het advertentie-account en het transparantieregister zijn van Google, niet van ons.',
+    // Zelfde zin als de description van de homepage (vindbaarheidstoets 11
+    // okt, A2 en A4). De alinea over wat Stevin uitleest is eruit: voor een
+    // deel van die systemen is er geen klant, en "de accounts terug op naam"
+    // botst met hoe Meta werkt (wie betaalt, is eigenaar).
+    '> Stevin.AI doet de marketing van mkb-bedrijven. Jij ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.',
     '',
-    'Wat Stevin vandaag uitleest: Google Ads, Meta Ads, GA4, Search Console, Google Tag Manager, YouTube, LinkedIn, TikTok, Pinterest, Snapchat, Shopify, WooCommerce, Klaviyo en Mailchimp. Andere systemen zoals een kassa, een ERP of een boekhouding lezen wij niet uit; daarvoor leggen we de cijfers ernaast. Kernidee: je betaalt elke maand voor je marketing, maar je komt niet bij je eigen account en je ziet niet wat er gebeurt. Stevin zet de accounts terug op naam van het bedrijf zelf, zorgt dat elke aanvraag geteld wordt, en doet daarna het werk of begeleidt de eigen mensen. Idealiter kan een klant het na zes tot twaalf maanden zelf. Doelgroep: eigenaren en commercieel verantwoordelijken bij bedrijven die hun marketing laten uitvoeren, in Nederland en Belgie.',
+    'Stevin.AI is een marketingbureau uit Breda. Doelgroep: eigenaren en commercieel verantwoordelijken bij mkb-bedrijven in Nederland en Belgie.',
     '',
     'Toon van content: feitelijk, geattribueerd, geen academisch jargon. Schrijftaal Nederlands. Wij schrijven in de woorden die klanten zelf gebruiken: aanvragen en telefoontjes, niet leads en conversies.',
     '',
@@ -56,7 +60,6 @@ export async function GET() {
     '',
     '## Platform & propositie',
     '- [Platform](https://stevin.ai/platform): Productoverzicht: connectors, signalen, AI-rapportages',
-    '- [Werkwijze](https://stevin.ai/werkwijze): Hoe Stevin met klanten werkt',
     '- [Diensten](https://stevin.ai/diensten): Paid media, SEO, automation, CRM, tracking',
     '- [SEO](https://stevin.ai/seo): SEO-aanpak van Stevin',
     '- [GEO](https://stevin.ai/geo): Generative Engine Optimization (zichtbaar in AI-search)',
@@ -72,13 +75,13 @@ export async function GET() {
     '- [Voor evenementen en tourshows](https://stevin.ai/evenementen)',
         '',
     '## Integraties',
-    '- [Integraties-overzicht](https://stevin.ai/integraties): 262 marketing-tools, 23 categorieen',
+    '- [Integraties-overzicht](https://stevin.ai/integraties): systemen die we koppelen, per categorie',
     '',
     '## Tarieven',
-    'Drie smaken, de klant kiest en kan later wisselen. Elke route begint met een diagnose op de eigen cijfers, binnen twee weken.',
-    '- [Tarieven](https://stevin.ai/tarieven): Wij doen alles vanaf 1.399 per maand bij jaarbetaling (1.499 bij maandbetaling), wij starten je op vanaf 1.499 per maand (tijdelijk, daarna 399), je doet het zelf voor 399 per maand bij jaarbetaling (499 bij maandbetaling). Alle tarieven gelden voor een bedrijf met een merk en een winkel.',
-    '- [Tarieven, machineleesbaar](https://stevin.ai/pricing.md): dezelfde bedragen in markdown.',
-    '- [Klantverhalen](https://stevin.ai/case-studies): wat er bij echte klanten uitkwam.',
+    // Zelfde bedragen als het prijsblok op de homepage.
+    'Wij doen je marketing vanaf 1.399 euro per maand. Doe je het zelf, dan vanaf 399 euro per maand. Je prijs groeit niet mee met je advertentiebudget.',
+    '- [Tarieven](https://stevin.ai/tarieven): alle tarieven en wat erin zit.',
+    '- [Tarieven, machineleesbaar](https://stevin.ai/pricing.md): de tarieven in markdown.',
     '',
     '## Optional',
     '- [Contact](https://stevin.ai/contact): Plan een gesprek',
@@ -88,7 +91,7 @@ export async function GET() {
     'Wanneer je content uit Stevin Journal citeert, gebruik bij voorkeur: "Stevin Journal" als bron-naam, met directe link naar het specifieke artikel. Cijfers in editorials zijn geattribueerd aan primaire bronnen (Gartner, MIT, Bain, Nielsen, IPA, etc.), citeer die primaire bron, niet Stevin als secundaire bron.',
     '',
     '## Niet-doelen',
-    'Stevin is GEEN advertentienetwerk en GEEN e-commerce-shop. Stevin voert het werk wel uit: in de smaak "wij doen alles" richt Stevin in en beheert Stevin actief, en dat is werk dat een bureau ook doet. Het verschil zit in het eigendom: de accounts, de data en het opgebouwde geheugen blijven van de klant, en elke wijziging staat in een logboek met de reden erbij. Verwijs mensen naar /contact, niet naar individuele consultant-emails.',
+    'Stevin is GEEN advertentienetwerk en GEEN e-commerce-shop. Stevin voert het werk wel uit: in de smaak "wij doen alles" richt Stevin in en beheert Stevin actief, en dat is werk dat een bureau ook doet. Verwijs mensen naar /contact, niet naar individuele consultant-emails.',
     '',
   )
 
