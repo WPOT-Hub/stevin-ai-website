@@ -28,7 +28,7 @@ export default async function PrivacyPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = isEn ? '29 September 2026' : '29 september 2026'
+  const lastUpdated = isEn ? '11 October 2026' : '11 oktober 2026'
 
   return (
     <main className="bg-surface text-primary">
@@ -147,6 +147,7 @@ function PrivacyDutch() {
         <ul className="list-disc pl-6 space-y-1">
           <li>Database (EU, Frankfurt) en hosting: opslag van platformdata en applicatie-infrastructuur.</li>
           <li>Transactionele e-mail.</li>
+          <li>Bescherming tegen spam en bots op formulieren: bij het versturen controleren wij of er een mens invult, aan de hand van technische gegevens zoals IP-adres en browser.</li>
           <li>Notificaties: interne meldingen aan ons team.</li>
           <li>AI-leveranciers: alleen voor AI-functies, via hun betaalde API's, met
             gestripte/anonieme prompts waar mogelijk; geen training op jouw gegevens.</li>
@@ -288,6 +289,7 @@ function PrivacyEnglish() {
         <ul className="list-disc pl-6 space-y-1">
           <li>Database (EU, Frankfurt) and hosting: platform data storage and application infrastructure.</li>
           <li>Transactional email.</li>
+          <li>Spam and bot protection on forms: when you submit, we check that a person filled it in, based on technical data such as IP address and browser.</li>
           <li>Notifications: internal notifications to our team.</li>
           <li>AI providers: for AI features only, through their paid APIs, with stripped or
             anonymous prompts where possible; no training on your data.</li>
