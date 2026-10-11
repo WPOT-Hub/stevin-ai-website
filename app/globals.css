@@ -639,6 +639,12 @@ section {
 @media (prefers-reduced-motion: reduce) { .vc-stip { animation: none; } }
 .vc-cursor { animation: vc-cursor 1s steps(1) infinite; }
 @keyframes vc-cursor { 50% { opacity: 0; } }
+/* W-535: de sectie van de vraagdemo knipt het watermerk af zonder zelf een
+   scrollvlak te worden (overflow: hidden doet dat wel), zodat het paneel kan
+   vaststaan. Oudere browsers zonder clip houden hidden; VraagChat zet dan
+   niets vast. */
+.vc-klem { overflow: hidden; }
+@supports (overflow: clip) { .vc-klem { overflow: clip; } }
 
 /* W-535: de knop Beweging uit in de hero zet data-beweging="uit" op html en
    zet alles stil wat vanzelf blijft bewegen (WCAG 2.2.2). Het brein leest
