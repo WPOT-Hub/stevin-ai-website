@@ -106,3 +106,141 @@ export function bronPositie(index: number, totaal: number) {
     sin: Math.sin(hoek),
   }
 }
+
+// Wat we per bron meten (W-535, Koen 11 okt 21:51: "als je op de google node
+// klikt moet gelijk alles wat we doormeten om die campagne succesvol te maken
+// erbij komen"). Een klik op een bron laat de lijnen oplichten naar de bronnen
+// in KETEN, en het kaartje toont de keten met voorbeeldcijfers.
+//
+// Een verzonnen installatiebedrijf rond Breda, een maand. De cijfers kloppen
+// onderling:
+//   - 71 aanvragen via de website (Google 38, Meta 14, de rest 19) en 52
+//     telefoontjes (Google 24, Meta 5, de rest 23): samen 123 in het CRM.
+//   - 31 offertes, 11 getekend: 5 opdrachten uit een aanvraag op de website,
+//     6 uit een telefoontje. Google 4, Meta 1, vindbaar in Google 3,
+//     bestaande klanten 3.
+//   - Omzet 52.800 euro, gemiddeld 4.800 per opdracht; per bron opgeteld
+//     18.400 + 3.900 + 12.600 + 17.900.
+//   - 11 nieuwe opdrachten: 8 particulier, 3 zakelijk, 3 van eerdere klanten.
+//   - Het jaar: 468.000 van 600.000 euro begin oktober, op schema.
+export interface MeetStap {
+  label: string
+  waarde: string
+  /** De stap waar het om draait (opdrachten, omzet): in accent. */
+  nadruk?: boolean
+}
+
+export interface Meting {
+  /** keten: stappen na elkaar, met een pijl. lijst: regels onder elkaar. */
+  vorm: 'keten' | 'lijst'
+  stappen: MeetStap[]
+}
+
+const EUR = (n: string) => `€ ${n}`
+
+export const METINGEN: Partial<Record<BronId, Meting>> = {
+  google_ads: {
+    vorm: 'keten',
+    stappen: [
+      { label: 'Klikken', waarde: '1.240' },
+      { label: 'Aanvragen', waarde: '38' },
+      { label: 'Telefoontjes', waarde: '24' },
+      { label: 'Offertes', waarde: '12' },
+      { label: 'Opdrachten', waarde: '4', nadruk: true },
+      { label: 'Omzet', waarde: EUR('18.400'), nadruk: true },
+    ],
+  },
+  meta: {
+    vorm: 'keten',
+    stappen: [
+      { label: 'Klikken', waarde: '860' },
+      { label: 'Aanvragen', waarde: '14' },
+      { label: 'Telefoontjes', waarde: '5' },
+      { label: 'Offertes', waarde: '4' },
+      { label: 'Opdrachten', waarde: '1', nadruk: true },
+      { label: 'Omzet', waarde: EUR('3.900'), nadruk: true },
+    ],
+  },
+  website: {
+    vorm: 'keten',
+    stappen: [
+      { label: 'Bezoekers', waarde: '4.300' },
+      { label: 'Aanvragen', waarde: '71' },
+      { label: 'Opdrachten', waarde: '5', nadruk: true },
+    ],
+  },
+  telefonie: {
+    vorm: 'keten',
+    stappen: [
+      { label: 'Gesprekken', waarde: '52' },
+      { label: 'Gemist', waarde: '9' },
+      { label: 'Teruggebeld', waarde: '7' },
+      { label: 'Opdrachten', waarde: '6', nadruk: true },
+    ],
+  },
+  offertes: {
+    vorm: 'keten',
+    stappen: [
+      { label: 'Verstuurd', waarde: '31' },
+      { label: 'Getekend', waarde: '11', nadruk: true },
+      { label: 'Omzet', waarde: EUR('52.800'), nadruk: true },
+    ],
+  },
+  crm: {
+    vorm: 'keten',
+    stappen: [
+      { label: 'Aanvragen en telefoontjes', waarde: '123' },
+      { label: 'Opgevolgd binnen een werkdag', waarde: '104' },
+      { label: 'Opdrachten', waarde: '11', nadruk: true },
+    ],
+  },
+  verkoop: {
+    vorm: 'lijst',
+    stappen: [
+      { label: 'Google Ads', waarde: EUR('18.400') },
+      { label: 'Meta', waarde: EUR('3.900') },
+      { label: 'Vindbaar in Google', waarde: EUR('12.600') },
+      { label: 'Bestaande klanten', waarde: EUR('17.900') },
+      { label: 'Omzet deze maand', waarde: EUR('52.800'), nadruk: true },
+    ],
+  },
+  doelen: {
+    vorm: 'lijst',
+    stappen: [
+      { label: 'Omzet 2026', waarde: `${EUR('468.000')} van ${EUR('600.000')}`, nadruk: true },
+      { label: 'Zakelijke klanten', waarde: '19 van 26', nadruk: true },
+    ],
+  },
+  klantgegevens: {
+    vorm: 'lijst',
+    stappen: [
+      { label: 'Nieuwe opdrachten', waarde: '11' },
+      { label: 'Was al eerder klant', waarde: '3' },
+      { label: 'Gemiddelde opdracht', waarde: EUR('4.800'), nadruk: true },
+    ],
+  },
+  doelgroepen: {
+    vorm: 'lijst',
+    stappen: [
+      { label: 'Particulier, eigen woning', waarde: '8' },
+      { label: 'Zakelijk, VvE of kantoor', waarde: '3' },
+      { label: 'Binnen 40 kilometer', waarde: '10 van 11', nadruk: true },
+    ],
+  },
+}
+
+// Bij een klik op een bron lichten de lijnen op naar deze bronnen: waar zijn
+// keten verder wordt gemeten. Marktsignalen heeft geen keten; daar hangt de
+// context omheen.
+export const KETEN: Partial<Record<BronId, BronId[]>> = {
+  google_ads: ['website', 'telefonie', 'offertes', 'crm', 'verkoop'],
+  meta: ['website', 'telefonie', 'offertes', 'crm', 'verkoop'],
+  website: ['crm', 'offertes', 'verkoop'],
+  telefonie: ['crm', 'offertes', 'verkoop'],
+  offertes: ['crm', 'verkoop'],
+  crm: ['website', 'telefonie', 'offertes', 'verkoop'],
+  verkoop: ['google_ads', 'meta', 'website', 'klantgegevens'],
+  doelen: ['verkoop', 'klantgegevens', 'doelgroepen'],
+  klantgegevens: ['crm', 'verkoop', 'doelgroepen'],
+  doelgroepen: ['klantgegevens', 'google_ads', 'meta'],
+}

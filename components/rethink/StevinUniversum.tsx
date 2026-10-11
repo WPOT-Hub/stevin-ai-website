@@ -1,8 +1,9 @@
 'use client'
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
-import type { BronId } from './netwerk'
-import { BRONNEN, BREIN, ADVISOR } from './netwerk'
+import { ChevronRight } from 'lucide-react'
+import type { BronId, Meting } from './netwerk'
+import { BRONNEN, BREIN, ADVISOR, KETEN, METINGEN } from './netwerk'
 
 /**
  * Het Stevin-brein in 3D (W-535, richting C).
@@ -185,6 +186,10 @@ const GLAS_R = 14
 const GAP = 7
 // Lichtpuntjes die in rust tegelijk van een bron naar het brein lopen.
 const STROOM = 3
+// Lichtpuntjes langs de keten van een gekozen bron: een per lijn (W-535,
+// Koen 11 okt 21:51). Zo lang duurt een rondje van bron naar meetpunt (ms).
+const KETEN_MAX = Math.max(0, ...Object.values(KETEN).map((k) => k?.length ?? 0))
+const KETEN_DUUR = 2400
 
 // Wat Stevin onthoudt van het voorbeeldbedrijf (verzonnen installatiebedrijf
 // rond Breda, hetzelfde als in de vraagdemo). Koen, 10 okt 23:25: "aan het
@@ -250,7 +255,7 @@ function rng(seed: number) {
   }
 }
 
-function bouwKnopen(): { knopen: Knoop[]; lijnen: [number, number][] } {
+function bouwKnopen(): { knopen: Knoop[]; lijnen: [number, number][]; ketenVan: (BronId | null)[] } {
   const r = rng(535)
   const knopen: Knoop[] = []
   const lijnen: [number, number][] = []
@@ -299,8 +304,21 @@ function bouwKnopen(): { knopen: Knoop[]; lijnen: [number, number][] } {
     }
   })
 
-  // Geen dwarsverbanden tussen bronnen: Koen vond het eerste 3D-beeld te druk
-  // (10 okt, 23:21). Alles loopt via het brein, en dat is ook het verhaal.
+  // Geen vaste dwarsverbanden tussen bronnen: Koen vond het eerste 3D-beeld
+  // te druk (10 okt, 23:21). Alles loopt via het brein, en dat is ook het
+  // verhaal. Wel de keten van een bron (KETEN): die lijnen staan er alleen
+  // zolang je die bron kiest. ketenVan zegt per lijn bij welke bron hij hoort.
+  const ketenVan: (BronId | null)[] = lijnen.map(() => null)
+  const hubVan = (id: BronId) => knopen.findIndex((k) => k.soort === 'hub' && k.id === id)
+  for (const b of BRONNEN) {
+    for (const naar of KETEN[b.id] ?? []) {
+      const a = hubVan(b.id)
+      const z = hubVan(naar)
+      if (a < 0 || z < 0) continue
+      lijnen.push([a, z])
+      ketenVan.push(b.id)
+    }
+  }
 
   // De geheugenwolk: dicht om het brein, binnen de bronnen. Labels alleen bij
   // de herinneringen, en die lichten om de beurt op. Context hangt rond
@@ -329,6 +347,7 @@ function bouwKnopen(): { knopen: Knoop[]; lijnen: [number, number][] } {
           r: 2.8,
         }) - 1
       lijnen.push([ci, markt])
+      ketenVan.push(null)
       continue
     }
     wolk.push(
@@ -361,8 +380,14 @@ function bouwKnopen(): { knopen: Knoop[]; lijnen: [number, number][] } {
         beste = j
       }
     }
-    if (beste > i || r() < 0.35) lijnen.push([i, beste])
-    if (r() < 0.22) lijnen.push([i, 0])
+    if (beste > i || r() < 0.35) {
+      lijnen.push([i, beste])
+      ketenVan.push(null)
+    }
+    if (r() < 0.22) {
+      lijnen.push([i, 0])
+      ketenVan.push(null)
+    }
   }
 
   // Losse stofjes ver weg, voor diepte.
@@ -380,10 +405,54 @@ function bouwKnopen(): { knopen: Knoop[]; lijnen: [number, number][] } {
       r: 1.4,
     })
   }
-  return { knopen, lijnen }
+  return { knopen, lijnen, ketenVan }
 }
 
 const F = 760 // brandpuntsafstand van de camera
+
+function SluitKnop({ onClick }: { onClick: () => void }) {
+  return (
+    <button type="button" onClick={onClick} className="-mr-1 -mt-0.5 px-1 text-[18px] leading-none text-white/50 hover:text-white" aria-label="Sluiten">
+      ×
+    </button>
+  )
+}
+
+// Wat we meten bij een bron, met voorbeeldcijfers (METINGEN in netwerk.ts).
+// Een keten leest van links naar rechts met een pijl ertussen; een lijst
+// (omzet per bron, doel tegenover stand) regel voor regel. Cijfers in mono,
+// de stap waar het om draait in accent. Voor een schermlezer een gewone lijst;
+// de pijlen zijn decoratie.
+function MetingBlok({ meting }: { meting: Meting }) {
+  return (
+    <div className="mt-3 border-t border-white/10 pt-2.5">
+      <div className="flex items-center justify-between gap-2">
+        <p className="m-0 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#9CC6FF]">Wat we meten</p>
+        <span className="rounded-full border border-white/20 px-1.5 py-px text-[10.5px] leading-snug text-white/60">Voorbeeld</span>
+      </div>
+      {meting.vorm === 'keten' ? (
+        <ol className="m-0 mt-1.5 flex list-none flex-wrap items-center gap-x-1 gap-y-1 p-0 text-[12.5px] leading-snug">
+          {meting.stappen.map((st, i) => (
+            <li key={st.label} className="inline-flex items-center gap-1 whitespace-nowrap">
+              {i > 0 && <ChevronRight size={12} strokeWidth={2} aria-hidden="true" className="shrink-0 text-white/35" />}
+              <span className={st.nadruk ? 'text-[#5DA3FF]' : 'text-white/70'}>{st.label}</span>
+              <span className={`font-mono ${st.nadruk ? 'font-semibold text-[#5DA3FF]' : 'text-white'}`}>{st.waarde}</span>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <ul className="m-0 mt-1.5 list-none space-y-0.5 p-0 text-[12.5px] leading-snug">
+          {meting.stappen.map((st) => (
+            <li key={st.label} className="flex items-baseline justify-between gap-3">
+              <span className={st.nadruk ? 'text-[#5DA3FF]' : 'text-white/70'}>{st.label}</span>
+              <span className={`whitespace-nowrap font-mono ${st.nadruk ? 'font-semibold text-[#5DA3FF]' : 'text-white'}`}>{st.waarde}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
 
 // Labels in hoofdletters, ook voor een schermlezer niet van belang: de SVG is
 // decoratie.
@@ -402,7 +471,7 @@ export default function StevinUniversum({
   vrijBoven = 0,
   vrijLinks = 0,
 }: Props) {
-  const { knopen, lijnen } = useMemo(bouwKnopen, [])
+  const { knopen, lijnen, ketenVan } = useMemo(bouwKnopen, [])
   const wrapRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const knoopEls = useRef<(SVGGElement | null)[]>([])
@@ -426,6 +495,10 @@ export default function StevinUniversum({
   // volgende mag.
   const stroomEls = useRef<(SVGGElement | null)[]>([])
   const stroom = useRef(Array.from({ length: STROOM }, () => ({ hub: -1, start: 0, duur: 0, volgende: Infinity })))
+  // De lichtpuntjes langs de keten van de gekozen bron, en sinds wanneer die
+  // bron gekozen is (dan begint elk puntje bij de bron).
+  const ketenEls = useRef<(SVGGElement | null)[]>([])
+  const ketenStart = useRef({ fc: null as HubId | null, tijd: 0 })
   // De herinneringslabels van het vorige beeld: een bronlabel kiest liever een
   // kant waar het die niet raakt.
   const geheugenVorig = useRef<Vak[]>([])
@@ -499,11 +572,37 @@ export default function StevinUniversum({
       cam.current.doelPitch = null
       return
     }
-    const yaw = Math.atan2(doel.x, -doel.z)
+    // Niet recht voor het brein: daar ging de bron op in het logo op en was hij
+    // weg, met alle ketenlijnen in een punt (gemeten 11 okt). Schuin ervoor,
+    // rechts ervan, op ongeveer 80 eenheden van het midden: dan staat de bron
+    // met zijn label naast het brein en lopen de lijnen naar zijn keten uit
+    // elkaar. Het kaartje komt erboven.
+    const rho = Math.hypot(doel.x, doel.z)
+    const opzij = rho > 1 ? Math.asin(Math.min(1, 80 / rho)) : 0
+    const yaw = Math.atan2(doel.x, -doel.z) - opzij
     const z1 = -doel.x * Math.sin(yaw) + doel.z * Math.cos(yaw)
     cam.current.doelYaw = yaw
     cam.current.doelPitch = Math.max(-0.6, Math.min(0.6, Math.atan(doel.y / z1)))
+    // Draait er niets (reduced motion, Beweging uit), dan staat de bron meteen
+    // vooraan, net als bij een herinnering.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.dataset.beweging === 'uit') {
+      cam.current.yaw = yaw
+      cam.current.pitch = cam.current.doelPitch
+    }
   }, [focus, herinnering, gekozen, knopen])
+
+  // Een bron met een keten gekozen met een knop (toetsenbord, schermlezer):
+  // dan opent ook het kaartje bij die bron, met wat we meten. Zo zegt elke
+  // weg naar een bron hetzelfde. Het kaartje is een statusregel en wordt dus
+  // voorgelezen; op een telefoon schuift het in beeld als het erbuiten valt.
+  useEffect(() => {
+    if (!focus || !(focus in METINGEN)) return
+    const i = knopen.findIndex((k) => k.soort === 'hub' && k.hub === focus)
+    if (i < 0 || gekozenRef.current === i) return
+    setGekozen(i)
+    const id = window.setTimeout(() => kaartRef.current?.scrollIntoView({ block: 'nearest' }), 80)
+    return () => window.clearTimeout(id)
+  }, [focus, knopen])
 
   // Kiest de ouder iets anders (een knop), dan gaat een open kaartje dat daar
   // niet bij hoort dicht. Anders lichten er twee nodes op en zeggen kaartje en
@@ -587,12 +686,17 @@ export default function StevinUniversum({
       // Het wisselende label van de vorige keer; zijn stip licht op.
       const wi = wissel.current.i
       const zw = zweef.current
+      // De bronnen in de keten van de gekozen bron lichten mee op en dimmen
+      // niet (wat erin zit, hun satellieten, blijft verborgen).
+      const keten = fc != null && fc !== 'brein' && fc !== 'advisor' ? (KETEN[fc] ?? []) : []
+      const inKeten = (i: number) => knopen[i].soort === 'hub' && keten.includes(knopen[i].hub as BronId)
       const isAan = (i: number) => {
         const n = knopen[i]
         return (
           gk === i ||
           wi === i ||
           zw === i ||
+          inKeten(i) ||
           (hr != null && n.soort === 'geheugen' && n.herinnering === hr) ||
           (fc != null && n.hub === fc && n.soort !== 'stof' && n.soort !== 'geheugen')
         )
@@ -604,7 +708,7 @@ export default function StevinUniversum({
       const isStil = (i: number) => {
         const n = knopen[i]
         return (
-          (fc != null && n.hub !== fc && n.soort !== 'brein' && n.soort !== 'geheugen') ||
+          (fc != null && n.hub !== fc && n.soort !== 'brein' && n.soort !== 'geheugen' && !inKeten(i)) ||
           (fc != null && fc !== 'brein' && n.soort === 'geheugen' && n.hub !== fc)
         )
       }
@@ -613,6 +717,27 @@ export default function StevinUniversum({
       lijnen.forEach(([a, b], i) => {
         const el = lijnEls.current[i]
         if (!el) return
+        // Een ketenlijn staat er alleen als zijn bron gekozen is, en dan
+        // helder: een rustig licht van de bron naar elk meetpunt.
+        const eigen = ketenVan[i]
+        if (eigen) {
+          if (fc !== eigen) {
+            if (el.style.display !== 'none') el.style.display = 'none'
+            return
+          }
+          if (el.style.display === 'none') el.style.display = ''
+          const pa = P[a]
+          const pb = P[b]
+          el.setAttribute('x1', pa.X.toFixed(1))
+          el.setAttribute('y1', pa.Y.toFixed(1))
+          el.setAttribute('x2', pb.X.toFixed(1))
+          el.setAttribute('y2', pb.Y.toFixed(1))
+          const diepte = Math.max(0.35, Math.min(1, (pa.s + pb.s) / 2 - 0.2))
+          el.setAttribute('stroke', '#5DA3FF')
+          el.setAttribute('stroke-opacity', (0.6 * diepte).toFixed(3))
+          el.setAttribute('stroke-width', '1.2')
+          return
+        }
         // Onzichtbaar (een satelliet van een bron die niet gekozen is): een
         // keer display:none, en geen coordinaten meer schrijven tot hij terugkomt.
         if (!zichtbaar(a) || !zichtbaar(b)) {
@@ -745,8 +870,11 @@ export default function StevinUniversum({
           const links = Math.min(Math.max(8, vrijLinks), Math.max(8, W - kb - 8))
           const x = Math.max(links, Math.min(W - kb - 8, p.X + 14))
           const hoog = Math.max(8, vrijBoven)
-          const boven = p.Y - kh - 14
-          const y = boven > hoog ? boven : Math.max(hoog, Math.min(H - kh - 8, p.Y + 14))
+          // Boven of onder het rondje zelf, niet over de rand ervan (een bron
+          // vooraan is op het scherm groter dan 14 px).
+          const rr = Math.max(4, knopen[gk].r * p.s * k)
+          const boven = p.Y - rr - kh - 8
+          const y = boven > hoog ? boven : Math.max(hoog, Math.min(H - kh - 8, p.Y + rr + 8))
           kaart.style.transform = `translate(${x.toFixed(0)}px, ${y.toFixed(0)}px)`
           kaart.style.opacity = '1'
           kaartVak = { l: x, t: y, r: x + kb, b: y + kh }
@@ -822,6 +950,7 @@ export default function StevinUniversum({
           const stipWeg = (v: Vak) =>
             (n.soort !== 'brein' && v.l < vrijLinks) ||
             stippen.some((x) => x.i !== i && raakt(v, x.v)) ||
+            (metToon && kaartVak != null && raakt(v, kaartVak)) ||
             (metToon && geheugenVorig.current.some((x) => raakt(v, x)))
           const labelWeg = (v: Vak) => labels.some((x) => raakt(v, x))
           // Eerst de kant waar het label al staat: dan springt het niet heen
@@ -1019,6 +1148,29 @@ export default function StevinUniversum({
         el.setAttribute('opacity', o.toFixed(2))
       })
 
+      // Langs de keten van een gekozen bron loopt per lijn een lichtpuntje van
+      // de bron naar het meetpunt, om de beurt, steeds opnieuw. Onder reduced
+      // motion of Beweging uit niet: dan staan alleen de lijnen stil te lichten.
+      if (ketenStart.current.fc !== fc) ketenStart.current = { fc, tijd }
+      const bronI = keten.length ? knopen.findIndex((n) => n.soort === 'hub' && n.hub === fc) : -1
+      ketenEls.current.forEach((el, s) => {
+        if (!el) return
+        const naar = s < keten.length ? knopen.findIndex((n) => n.soort === 'hub' && n.hub === keten[s]) : -1
+        if (stilNu || bronI < 0 || naar < 0) {
+          if (el.getAttribute('opacity') !== '0') el.setAttribute('opacity', '0')
+          return
+        }
+        const a = knopen[bronI]
+        const b = knopen[naar]
+        const loop = (tijd - ketenStart.current.tijd) / KETEN_DUUR - s * 0.16
+        const u = loop < 0 ? 0 : loop % 1
+        const e = u * u * (3 - 2 * u)
+        const p = proj(a.x + (b.x - a.x) * e, a.y + (b.y - a.y) * e, a.z + (b.z - a.z) * e)
+        const o = loop < 0 ? 0 : Math.sin(Math.PI * u) * Math.max(0.4, Math.min(1, p.s * 1.25 - 0.3))
+        el.setAttribute('transform', `translate(${p.X.toFixed(1)} ${p.Y.toFixed(1)}) scale(${(p.s * k).toFixed(3)})`)
+        el.setAttribute('opacity', o.toFixed(2))
+      })
+
       // Diepte: dichtbij bovenop. Hoogstens om de 250 ms, en alleen de knopen
       // die echt van plek wisselen. Elke verplaatsing in de DOM breekt lopende
       // CSS-overgangen af; moveBefore (waar de browser het kent) niet. Het brein
@@ -1052,7 +1204,7 @@ export default function StevinUniversum({
         }
       }
     },
-    [knopen, lijnen, maat, middenX, middenY, schaal, vrijBoven, vrijLinks, geheugenIdx, labelIdx, hubIdx, maatVan],
+    [knopen, lijnen, ketenVan, maat, middenX, middenY, schaal, vrijBoven, vrijLinks, geheugenIdx, labelIdx, hubIdx, maatVan],
   )
 
   // De lus. Hoogstens 30 beelden per seconde: bij deze draaisnelheid zie je
@@ -1225,7 +1377,8 @@ export default function StevinUniversum({
     }
     if (n.soort === 'hub') {
       const b = BRONNEN.find((x) => x.id === n.hub)
-      return { soort: 'Bron', titel: b?.label ?? '', wanneer: '', tekst: b?.uitleg ?? '' }
+      const meting = METINGEN[n.hub as BronId]
+      return { soort: 'Bron', titel: b?.label ?? '', wanneer: '', tekst: b?.uitleg ?? '', meting }
     }
     if (n.soort === 'brein') return { soort: 'Stevin', titel: BREIN.label, wanneer: '', tekst: BREIN.uitleg }
     if (n.soort === 'advisor') return { soort: 'Stevin', titel: ADVISOR.label, wanneer: '', tekst: ADVISOR.uitleg }
@@ -1392,6 +1545,15 @@ export default function StevinUniversum({
             </g>
           ))}
         </g>
+        {/* Lichtpuntjes langs de keten van een gekozen bron. */}
+        <g data-laag="keten">
+          {Array.from({ length: KETEN_MAX }, (_, i) => (
+            <g key={i} ref={(el) => { ketenEls.current[i] = el }} opacity={0}>
+              <circle r={6} fill={`url(#${stroomId})`} />
+              <circle r={1.8} fill="#EAF3FF" />
+            </g>
+          ))}
+        </g>
         <g data-laag="knopen">{knopen.map((n, i) => (n.soort === 'brein' ? null : tekenKnoop(n, i)))}</g>
         {/* Het brein in een eigen laag boven de knopen: altijd bovenop, en de
             dieptesortering verplaatst het nooit (dan blijft het ademen lopen). */}
@@ -1432,24 +1594,36 @@ export default function StevinUniversum({
         ref={kaartRef}
         data-kaart
         role="status"
-        className="su-kaart pointer-events-auto absolute left-0 top-0 w-[260px] rounded-2xl border border-white/15 bg-[#0F1F38]/95 p-4 text-left shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur"
+        className="su-kaart pointer-events-auto absolute left-0 top-0 w-[min(288px,calc(100%-16px))] rounded-2xl border border-white/15 bg-[#0F1F38]/95 p-4 text-left shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur"
         style={{ opacity: 0, visibility: kaartInhoud ? 'visible' : 'hidden' }}
       >
-        {kaartInhoud && (
+        {kaartInhoud && 'meting' in kaartInhoud && kaartInhoud.meting ? (
+          // Een bron met een keten: naam, een regel wat het is, en wat we meten
+          // (Koen, 11 okt 21:51). Geen soortregel erboven: hoogstens drie
+          // regels plus de keten.
           <>
-            <div className="mb-1.5 flex items-center justify-between gap-3">
-              <span className="font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#9CC6FF]">{kaartInhoud.soort}</span>
-              <button
-                type="button"
+            <div className="flex items-start justify-between gap-3">
+              <p className="m-0 font-display text-[16px] font-bold leading-snug text-white">{kaartInhoud.titel}</p>
+              <SluitKnop
                 onClick={() => {
                   setGekozen(null)
                   onSluitRef.current?.()
                 }}
-                className="text-[18px] leading-none text-white/50 hover:text-white"
-                aria-label="Sluiten"
-              >
-                ×
-              </button>
+              />
+            </div>
+            <p className="m-0 mt-1 text-[13.5px] leading-snug text-white/75">{kaartInhoud.tekst}</p>
+            <MetingBlok meting={kaartInhoud.meting} />
+          </>
+        ) : kaartInhoud && (
+          <>
+            <div className="mb-1.5 flex items-center justify-between gap-3">
+              <span className="font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#9CC6FF]">{kaartInhoud.soort}</span>
+              <SluitKnop
+                onClick={() => {
+                  setGekozen(null)
+                  onSluitRef.current?.()
+                }}
+              />
             </div>
             <p className="m-0 font-display text-[16px] font-bold leading-snug text-white">{kaartInhoud.titel}</p>
             {kaartInhoud.wanneer && <p className="m-0 mt-0.5 text-[12.5px] text-white/50">{kaartInhoud.wanneer}</p>}

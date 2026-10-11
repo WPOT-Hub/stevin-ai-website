@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Pause, Play } from 'lucide-react'
 import StevinUniversum, { HERINNERINGEN } from './StevinUniversum'
-import { ADVISOR, BREIN, BRONNEN, type BronId } from './netwerk'
+import { ADVISOR, BREIN, BRONNEN, METINGEN, type BronId } from './netwerk'
 
 /**
  * Hero van richting C: het 3D-brein vult het scherm, de tekst staat ervoor.
@@ -123,7 +123,9 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
     setHerinnering(null)
     setFocus(aan ? id : null)
     if (aan) push('demo_node', { demo_node: id })
-    if (!vanuitBeeld) toonUitleg()
+    // Een bron met een keten opent zijn kaartje in het beeld (dat schuift zelf
+    // in beeld); de statusregel hieronder blijft dan leeg.
+    if (!vanuitBeeld && !(id in METINGEN)) toonUitleg()
   }
 
   const kiesHerinnering = (i: number) => {
@@ -340,7 +342,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
             aria-live="polite"
             className="m-0 text-[14.5px] leading-snug text-white/70 [&:not(:empty)]:mt-3 zij:mt-3 zij:min-h-[44px]"
           >
-            {gekozen && !uitBeeld ? (
+            {gekozen && !uitBeeld && !(gekozen.id in METINGEN) ? (
               <>
                 <strong className="font-semibold text-white">{gekozen.label}.</strong> {gekozen.uitleg}
               </>
