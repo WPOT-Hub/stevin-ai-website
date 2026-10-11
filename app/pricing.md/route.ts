@@ -23,7 +23,7 @@ const body = `# Tarieven, Stevin.AI
 
 Stevin.AI voert het commerciele werk van een bedrijf uit met software in plaats van uren: de website, de advertenties, de eigen kanalen en het opvolgen van leads. Het platform legt per klant vast wat is gedaan, wat het opleverde en welk besluit daarop volgde, en meet die uitkomst terug. Daardoor wordt het advies scherper naarmate het langer draait.
 
-Accounts, data en het opgebouwde geheugen blijven eigendom van de klant. Er komt geen nieuw centraal systeem voor in de plaats: de bestaande accounts bij Google, Meta en de rest blijven bestaan.
+Er komt geen nieuw centraal systeem voor in de plaats: de bestaande accounts bij Google, Meta en de rest blijven bestaan.
 
 ## Het begint met een diagnose
 

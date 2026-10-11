@@ -181,7 +181,8 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
         body:
           'Stevin kijkt mee op al je kanalen, ziet wat er misgaat en zet de oplossing klaar. Uitvoeren doet je eigen team, een freelancer of een ander bureau. Wil je een klus toch door ons laten doen, dan spreken we de prijs af voordat we beginnen.',
         punten: [
-          'Signalen dag en nacht, met de reden erbij',
+          // Geen "dag en nacht" zolang de Hub dat niet waarmaakt (W-535).
+          'Signalen met de reden erbij',
           'Acties klaargezet, jij kiest wie ze uitvoert',
           'Pay per fix: los een klus door ons, prijs vooraf',
           'Alsnog door ons laten draaien kan altijd',
@@ -280,7 +281,7 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
         body:
           'Stevin watches all your channels, spots what goes wrong and puts the fix ready. Your own team, a freelancer or another agency carries it out. If you do want a job done by us, we agree the price before we start.',
         punten: [
-          'Signals day and night, with the reason',
+          'Signals with the reason',
           'Actions ready to go, you pick who runs them',
           'Pay per fix: hand us one job, price upfront',
           'You can still hand it to us, at any time',
