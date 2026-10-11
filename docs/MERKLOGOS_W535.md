@@ -81,3 +81,17 @@ en foreignObject: geen gevonden. Niet nagekeken: of de merkrichtlijnen van
 WordPress een wit logo op donker toestaan in deze vorm (de WordPress
 Foundation biedt zelf witte varianten aan, maar die pagina heb ik niet
 geopend).
+
+## ChatGPT Ads (11 okt 2026)
+
+`chatgpt.svg` (zwart, logoband) en `chatgpt-wit.svg` (wit, brein) zijn
+`public/logos/tools/chatgpt.svg` met een vaste kleur in plaats van
+`currentColor`: in een `<img>` of SVG-`<image>` wordt `currentColor` zwart,
+en dat verdwijnt op het donkere glas. Nagekeken op scripts, externe
+verwijzingen en foreignObject: geen gevonden.
+
+Adverteren in ChatGPT kan voor Nederlandse bedrijven: op
+help.openai.com/en/articles/20001245-ads-manager-availability staat
+Netherlands op "Available" (gelezen 11 okt 2026, pagina 16 dagen eerder
+bijgewerkt). Niet nagekeken: de merkrichtlijnen van OpenAI voor gebruik van
+het logo als "werkt met".
