@@ -54,10 +54,13 @@ const PRINCIPES = [
     bron: 'Ehrenberg-Bass',
     grens: 'Betekent niet dat retentie er niet toe doet.',
   },
+  // Was "merk en activatie rond 60/40, IPA": het corpus zegt 60/40 nooit als
+  // voorschrift, en IPA is geen bron die we naar buiten noemen (alleen
+  // principes met een citeerbaar anker). Nu kern-03.
   {
-    p: 'Merk en activatie horen samen, rond 60/40.',
-    bron: 'IPA Databank, Binet en Field',
-    grens: 'Geen wet, maar een ijkpunt dat verschuift met categorie, groeifase en budget.',
+    p: 'Laat Google en Meta sturen op wie echt klant werd, niet op klikken of formulieren.',
+    bron: 'Kernprincipe, weegt altijd mee',
+    grens: 'Betekent niet dat je formulieren niet meer meet. Ze tellen nog mee, alleen niet als doel.',
   },
   {
     p: 'Controleer je meting voordat je iets anders beoordeelt.',
@@ -148,7 +151,7 @@ export default function RethinkPlatform() {
             Vraag maar waarom. Er ligt een bron onder.
           </h2>
           <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
-            Onder Stevin ligt een kennislaag van 105 principes uit gepubliceerd onderzoek. Drie ervan, zoals ze in het systeem staan.
+            Onder Stevin ligt een kennislaag van 105 principes. Die wegen mee bij elk advies. Drie ervan, zoals ze in het systeem staan.
           </p>
           <dl className="m-0 mt-10 border-t border-border">
             {PRINCIPES.map((p) => (
