@@ -58,6 +58,10 @@ const LOGOS = [
   { src: '/logos/merken/shopify.svg', naam: 'Shopify' },
   { src: '/logos/merken/wordpress.svg', naam: 'WordPress' },
   { src: '/logos/merken/hubspot.svg', naam: 'HubSpot' },
+  // De twee meest gebruikte boekhoudpakketten (Koen, 11 okt); keuze en bronnen
+  // in docs/MERKLOGOS_W535.md.
+  { src: '/logos/merken/exact-online.svg', naam: 'Exact Online' },
+  { src: '/logos/merken/moneybird.svg', naam: 'Moneybird' },
 ]
 
 // Systemen zonder vast merk: alleen tekst in een gestippelde chip. Geen
