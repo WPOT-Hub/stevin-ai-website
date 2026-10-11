@@ -1,21 +1,17 @@
 import { Link } from '@/i18n/navigation'
 import KlantLogos from '@/components/KlantLogos'
-import StevinNetwerk from './StevinNetwerk'
-import VraagDemo from './VraagDemo'
 import VraagChat from './VraagChat'
 import HeroUniversum from './HeroUniversum'
 import ScrollStappen from './ScrollStappen'
 import KennismakingVenster from './KennismakingVenster'
 import NodeWatermerk from './NodeWatermerk'
-import type { BronId } from './netwerk'
 
 /**
- * Voorstel nieuwe homepage, W-535 (briefing Koen 10 okt 2026, "Rethink your
- * marketing"). Twee richtingen met precies dezelfde inhoud:
- *
- *   a: licht, rustig en zakelijk. Netwerk naast de kop.
- *   b: donkere hero met het netwerk groot in beeld, daarna lichte blokken.
- *   c: het brein in 3D over het hele scherm (na "geen wow factor", 10 okt).
+ * De Nederlandse homepage, W-535 (briefing Koen 10 okt 2026, "Rethink your
+ * marketing"), richting C: het brein in 3D over het hele scherm. De richtingen
+ * A en B en hun blokken (brein, signalen, Advisor, praktijk, samenwerken)
+ * staan in de git-geschiedenis van dit bestand tot 69e2969; hun tekst gaat
+ * naar de verdiepingspagina's.
  *
  * Elke zin die iets belooft is nagekeken tegen de Hub-audit van 10 okt (zie
  * docs/research/W535_REDESIGN_STEVIN_AI.md in Stevin-Hub). Wat niet bij een
@@ -28,19 +24,8 @@ import type { BronId } from './netwerk'
  * pagina.
  */
 
-export type Richting = 'a' | 'b' | 'c'
-
-const HERO_DEMO = {
-  vraag: 'Resultaten deze week?',
-  bronnen: ['website', 'telefonie', 'crm', 'offertes', 'verkoop'] as BronId[],
-  signaal: '6 aanvragen open',
-  uitleg: 'Voorbeeld: met website, telefoon, CRM en offertes gekoppeld ziet Stevin dat bij zes aanvragen niet vastligt of iemand heeft gebeld.',
-  verderHref: '#hoe-het-werkt',
-}
-
 const h2 = 'font-display font-extrabold text-primary m-0'
 const h2Stijl = { fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08' } as const
-const eyebrow = 'text-accent-diep text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4'
 const tekst = 'text-[18px] leading-[1.6] text-[#2A3A54]'
 
 // Echte kleurlogo's (Koen, 10 okt 23:32). Herkomst en controle:
@@ -78,26 +63,6 @@ const LAGEN = [
   { kop: 'Je kanalen', tekst: 'Campagnes, website, zoekresultaten en telefoon.' },
   { kop: 'De markt', tekst: 'Seizoen, zoekgedrag en wat concurrenten doen.' },
   { kop: 'Afspraken', tekst: 'Wie wat oppakt, en of het gebeurd is.' },
-]
-
-const SIGNAALSOORTEN = [
-  'De vraag naar een dienst verandert',
-  'Een campagne trekt bezoek maar weinig aanvragen',
-  'Aanvragen worden beter of slechter',
-  'De opvolging blijft achter',
-  'Een concurrent adverteert meer',
-  'Er zoeken minder mensen op je naam',
-  'Een seizoen of regeling biedt een kans',
-]
-
-const ADVIEZEN = [
-  'Zorg eerst dat elke aanvraag wordt opgevolgd.',
-  'Kijk eerst of je cijfers kloppen.',
-  'Zoek uit waarom offertes geen klant worden.',
-  'Bouw aan je naamsbekendheid, niet alleen aan klikken.',
-  'Verbeter de pagina waar je advertentie naartoe leidt.',
-  'Laat marketing en verkoop dezelfde cijfers gebruiken.',
-  'Verander nog niets. De cijfers zijn niet betrouwbaar genoeg.',
 ]
 
 // Van signaal via advies naar uitvoering, met een hittegolf als voorbeeld
@@ -140,57 +105,11 @@ const WIE = [
   { kop: 'Je bureau', tekst: 'Je bureau blijft. Wij kijken mee en zeggen het als iets niet klopt.' },
 ]
 
-// "Less is more" (Koen, 11 okt 01:18): per situatie een kop en een zin.
-// De uitgewerkte versies (situatie en aanpak) gaan naar In de praktijk.
-const PRAKTIJK = [
-  { kop: 'Je investeert in naamsbekendheid', kort: 'We kijken niet alleen naar klikken, maar ook of meer mensen op je naam gaan zoeken.' },
-  { kop: 'Veel aanvragen, weinig goede', kort: 'We leggen je campagnes naast wat verkoop met de aanvragen deed.' },
-  { kop: 'Aanvragen blijven liggen', kort: 'We richten in hoe elke aanvraag wordt vastgelegd en opgevolgd.' },
-]
-
-const STAPPEN = [
-  'We leren je bedrijf en je doelen kennen.',
-  'We richten in wat nodig is.',
-  'We helpen, en jij gaat steeds meer zelf doen.',
-]
-
-export default function RethinkHome({ richting }: { richting: Richting }) {
-  const donkereHero = richting === 'b'
-
+export default function RethinkHome() {
   return (
     <>
       {/* ── 1. HERO ── */}
-      {richting === 'c' ? (
-        <HeroUniversum
-          kop={<HeroTekst donker deel="kop" mobielKort />}
-          knoppen={<HeroTekst donker deel="knoppen" mobielKort />}
-        />
-      ) : donkereHero ? (
-        <section className="relative -mt-[72px] overflow-hidden bg-primary px-6" style={{ padding: 'calc(88px + 72px) 24px 96px' }}>
-          <div
-            className="pointer-events-none absolute inset-0"
-            aria-hidden="true"
-            style={{ background: 'radial-gradient(60% 55% at 72% 45%, rgba(61,142,255,0.16) 0%, rgba(10,22,40,0) 70%)' }}
-          />
-          <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <HeroTekst donker />
-            </div>
-            <StevinNetwerk thema="donker" label="Stevin brengt je informatie samen" demo={HERO_DEMO} />
-          </div>
-        </section>
-      ) : (
-        // Ook de lichte hero schuift onder de header door: html is navy, en
-        // tussen de header (65px) en main (72px) bleef anders een donkere streep.
-        <section className="relative -mt-[72px] overflow-hidden bg-white" style={{ padding: 'calc(72px + 72px) 24px 88px' }}>
-          <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-[1fr_1fr]">
-            <div>
-              <HeroTekst />
-            </div>
-            <StevinNetwerk thema="licht" label="Stevin brengt je informatie samen" demo={HERO_DEMO} />
-          </div>
-        </section>
-      )}
+      <HeroUniversum kop={<HeroKop />} knoppen={<HeroKnoppen />} />
 
       {/* Voor wie we al werken: hetzelfde blok als op de huidige homepage
           (Koen, 11 okt 01:17: "voor wie we al werken is helemaal weg"). */}
@@ -250,26 +169,21 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             </div>
           ))}
         </div>
-        <div className="mx-auto max-w-[1200px]">
-        </div>
       </section>
 
       {/* ── 3. VRAAG HET STEVIN ── */}
-      {/* Richting C: overflow clip in plaats van hidden, anders blijft het
-          paneel van de vraagdemo niet vaststaan tijdens het scrollen. */}
+      {/* overflow clip in plaats van hidden, anders blijft het paneel van de
+          vraagdemo niet vaststaan tijdens het scrollen. */}
       <section
         id="hoe-het-werkt"
-        className={`relative scroll-mt-24 bg-white ${richting === 'c' ? 'vc-klem' : 'overflow-hidden'}`}
+        className="vc-klem relative scroll-mt-24 bg-white"
         style={{ padding: '112px 24px 104px' }}
       >
         <NodeWatermerk seed={23} thema="licht" />
         <div className="relative mx-auto max-w-[1200px]">
-          {/* Richting C: geen eyebrow en geen lege alinea's; het label
-              Voorbeeld staat in het paneel zelf. De kop staat mee vast met
-              het paneel, als die samen op het scherm passen. */}
-          {richting !== 'c' && <p className={eyebrow}>Stel een vraag</p>}
-          {richting === 'c' ? (
-            <>
+          {/* Geen eyebrow en geen lege alinea's; het label Voorbeeld staat in
+              het paneel zelf. De kop staat mee vast met het paneel, als die
+              samen op het scherm passen. */}
               <VraagChat
                 kop={
                   // In het midden, op dezelfde as als het paneel en de zin en
@@ -297,120 +211,17 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
                   Plan een kennismaking
                 </Link>
               </div>
-            </>
-          ) : (
-            <>
-              <h2 className={h2} style={{ ...h2Stijl, maxWidth: '18ch' }}>
-                Geen rapportje achteraf.
-              </h2>
-              <p className={`${tekst} mb-12 mt-5 max-w-[640px]`}>Probeer het: kies een vraag.</p>
-              <VraagDemo />
-              <p className="mt-8 max-w-[720px] text-[14px] leading-relaxed text-muted">Voorbeeld met verzonnen cijfers.</p>
-            </>
-          )}
         </div>
       </section>
 
-      {/* Richting C: kort ("less is more", "we zijn alles aan het vertellen",
-          Koen 11 okt). Deze blokken gaan naar de verdiepingspagina's. */}
-      {richting !== 'c' && (
-        <>
-      {/* ── 4. HET BREIN ── */}
-      <section className="bg-surface" style={{ padding: '112px 24px' }} aria-labelledby="brein">
-        <div className="mx-auto grid grid-cols-1 max-w-[1200px] items-center gap-14 lg:grid-cols-[1fr_1fr]">
-          <div>
-            <p className={eyebrow}>Het brein achter Stevin</p>
-            <h2 id="brein" className={h2} style={{ ...h2Stijl, maxWidth: '16ch' }}>
-              Niet alleen je cijfers. Ook wat je wilt bereiken.
-            </h2>
-            <p className={`${tekst} mt-5`}>
-              Een cijfer zegt pas iets als je weet wat de bedoeling was.
-            </p>
-          </div>
-          <StevinNetwerk
-            fase="brein"
-            actieveBronnen={['doelen', 'campagnes', 'website', 'verkoop', 'markt']}
-            label="Een bedrijfsdoel verbonden aan campagnes, website, verkoop en de markt"
-          />
-        </div>
-      </section>
-
-
-
-      {/* ── 5. SIGNALEN ── */}
-      <section className="relative overflow-hidden bg-white" style={{ padding: '112px 24px' }} aria-labelledby="signalen">
-        <NodeWatermerk seed={37} thema="licht" />
-        <div className="relative mx-auto max-w-[1200px]">
-          <p className={eyebrow}>Signalen</p>
-          <h2 id="signalen" className={h2} style={{ ...h2Stijl, maxWidth: '18ch' }}>
-            Niet alleen terugkijken.
-          </h2>
-          <p className={`${tekst} mt-5 max-w-[660px]`}>
-            We letten met je op wat verandert. Welke signalen voor jou tellen, bepalen we samen.
-          </p>
-          <div className="mt-10">
-            {/* Het uitgewerkte signaalvoorbeeld (gezien, waarom, nog uitzoeken)
-                hoort op Zo werkt Stevin, niet op de homepage (Koen, 11 okt
-                01:17). Tekst staat in docs/research/W535_REDESIGN_STEVIN_AI.md. */}
-            <div>
-              <p className="m-0 mb-4 font-display text-[16px] font-bold text-primary">Waar we samen op kunnen letten</p>
-              <ul className="veeg veeg-licht m-0 list-none space-y-3 p-0">
-                {SIGNAALSOORTEN.map((s) => (
-                  <li key={s} className="flex gap-3 text-[16px] leading-snug text-[#2A3A54]">
-                    <span aria-hidden="true" className="mt-[7px] inline-block h-2 w-2 shrink-0 rounded-full bg-accent" />
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 6. DE ADVISOR ── */}
-      <section className="relative overflow-hidden bg-primary text-white" style={{ padding: '112px 24px' }} aria-labelledby="advisor">
-        <NodeWatermerk seed={53} thema="donker" />
-        <div className="relative mx-auto grid grid-cols-1 max-w-[1200px] gap-14 lg:grid-cols-[1fr_1fr]">
-          <div>
-            <p className="mb-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent-light">De Advisor</p>
-            <h2 id="advisor" className="m-0 font-display font-extrabold text-white" style={{ ...h2Stijl, maxWidth: '16ch' }}>
-              Soms luidt het advies: nog niet.
-            </h2>
-            <p className="mt-5 text-[18px] leading-[1.6] text-white/75">
-              Meer budget is lang niet altijd het antwoord. Zijn de cijfers niet betrouwbaar, dan zegt de Advisor dat eerst.
-            </p>
-            <p className="mt-5 text-[18px] leading-[1.6] text-white/75">
-              <strong className="font-semibold text-white">De Advisor verandert niets in je advertentieaccounts.</strong> Jij of je
-              bureau beslist. Wij leggen uit waarom.
-            </p>
-          </div>
-          <div>
-            <p className="m-0 mb-4 font-display text-[16px] font-bold text-white">Een advies kan ook zijn</p>
-            <ul className="veeg m-0 list-none space-y-3 p-0">
-              {ADVIEZEN.map((a, i) => (
-                <li
-                  key={a}
-                  className={`rounded-xl border px-4 py-3 text-[16px] leading-snug ${i === ADVIEZEN.length - 1 ? 'border-accent-light/50 bg-accent/10 text-white' : 'border-white/12 text-white/85'}`}
-                >
-                  {a}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-        </>
-      )}
-
-      {/* ── 7. VAN ADVIES NAAR UITVOERING ── */}
+      {/* ── 4. VAN ADVIES NAAR UITVOERING ── */}
       {/* Scrollverhaal: bij elk stuk scrollen komt er een stap bij (Koen, 11 okt). */}
       {/* Wie het werk doet staat in het vastgezette deel van de stappen, niet
           in een eigen band en niet erna: allebei oogden als een zesde blok
-          (11 okt). In C volgt Kennismaken, ook donker; een haarlijn houdt de
+          (11 okt). Daarna volgt Kennismaken, ook donker; een haarlijn houdt de
           twee blokken uit elkaar. */}
       <section className="bg-primary px-6 text-white" aria-label="Uitvoering">
-        <div className={`mx-auto max-w-[1200px] pb-20 lg:pb-24 ${richting === 'c' ? 'border-b border-white/10' : ''}`}>
+        <div className="mx-auto max-w-[1200px] border-b border-white/10 pb-20 lg:pb-24">
           <ScrollStappen
             eyebrow="Uitvoering"
             kop={UITVOERING.kop}
@@ -422,64 +233,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
         </div>
       </section>
 
-      {/* Richting C: kort ("less is more", "we zijn alles aan het vertellen",
-          Koen 11 okt). Deze blokken gaan naar de verdiepingspagina's. */}
-      {richting !== 'c' && (
-        <>
-      {/* ── 8. IN DE PRAKTIJK ── */}
-      <section id="in-de-praktijk" className="relative overflow-hidden scroll-mt-24 bg-surface" style={{ padding: '112px 24px' }}>
-        <NodeWatermerk seed={67} thema="licht" />
-        <div className="relative mx-auto max-w-[1200px]">
-          <p className={eyebrow}>In de praktijk</p>
-          <h2 className={h2} style={{ ...h2Stijl, maxWidth: '20ch' }}>
-            Drie situaties die je misschien herkent.
-          </h2>
-          <div className="veeg veeg-breed mt-12 grid gap-5 lg:grid-cols-3">
-            {PRAKTIJK.map((p) => (
-              <article key={p.kop} className="flex flex-col rounded-[20px] border border-border bg-white p-6 sm:p-7">
-                <span className="mb-4 self-start rounded-full bg-[#FFF4DB] px-2.5 py-1 text-[11.5px] font-semibold text-[#8A5A00]">
-                  Voorbeeldsituatie
-                </span>
-                <h3 className="m-0 font-display text-[21px] font-bold leading-tight text-primary">{p.kop}</h3>
-                <p className="m-0 mt-3 text-[15.5px] leading-relaxed text-muted">{p.kort}</p>
-              </article>
-            ))}
-          </div>
-          <p className="mt-6 text-[14px] text-muted">
-            Dit zijn voorbeelden, geen klantcases. Echte cases zetten we hier zodra de resultaten vaststaan.
-          </p>
-        </div>
-      </section>
-
-      {/* ── 9. SAMENWERKEN ── */}
-      <section id="samenwerken" className="relative overflow-hidden scroll-mt-24 bg-white" style={{ padding: '112px 24px' }}>
-        <NodeWatermerk seed={79} thema="licht" />
-        <div className="relative mx-auto grid max-w-[1200px] gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className={eyebrow}>Samenwerken</p>
-            <h2 className={h2} style={{ ...h2Stijl, maxWidth: '14ch' }}>
-              Zo begint het.
-            </h2>
-            <p className={`${tekst} mt-5`}>
-              <strong className="font-semibold text-primary">Je advertentieaccounts en je meting staan op jouw naam, niet op de onze.</strong>{' '}
-              Je kunt elke maand opzeggen.
-            </p>
-          </div>
-          <ol className="m-0 list-none p-0">
-            {STAPPEN.map((s, i) => (
-              <li key={s} className="flex items-baseline gap-5 border-t border-border py-4 last:border-b">
-                <span className="w-7 shrink-0 font-mono text-[13px] font-semibold text-accent">{String(i + 1).padStart(2, '0')}</span>
-                <span className="text-[17.5px] leading-snug text-primary">{s}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-        </>
-      )}
-
-      {/* ── 10. KENNISMAKEN ── */}
+      {/* ── 5. KENNISMAKEN ── */}
       <section id="kennismaken" className="relative overflow-hidden scroll-mt-24 bg-primary text-white" style={{ padding: '112px 24px' }}>
         <NodeWatermerk seed={97} thema="donker" />
         <div className="relative mx-auto max-w-[880px]">
@@ -558,85 +312,52 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
   )
 }
 
-// deel: 'alles' voor richting A en B; richting C zet kop en knoppen los in de
-// hero, zodat op mobiel het brein ertussen kan. mobielKort: op mobiel een zin in
-// plaats van de alinea (Koen, 10 okt 23:08: "niet gelijk die hele tekst").
-function HeroTekst({
-  donker = false,
-  deel = 'alles',
-  mobielKort = false,
-}: {
-  donker?: boolean
-  deel?: 'alles' | 'kop' | 'knoppen'
-  mobielKort?: boolean
-}) {
-  const kop = (
+// De hero zet kop en knoppen los, zodat op mobiel het brein ertussen kan. Op
+// elke schermmaat alleen de korte zin onder de kop; de blokken eronder
+// vertellen de rest (Koen, 10 okt 23:08: "niet gelijk die hele tekst").
+function HeroKop() {
+  return (
     <>
       {/* De kop is Engels op een Nederlandse pagina: lang="en" zodat een
           schermlezer hem goed uitspreekt (WCAG 3.1.2). */}
       <h1
         lang="en"
-        className={`m-0 font-display font-extrabold ${donker ? 'text-white' : 'text-primary'}`}
+        className="m-0 font-display font-extrabold text-white"
         style={{ fontSize: 'clamp(44px, 6.2vw, 84px)', letterSpacing: '-0.045em', lineHeight: '0.98' }}
       >
         Rethink your marketing.
       </h1>
-      {/* Richting C: op elke schermmaat alleen de korte zin; de blokken
-          eronder vertellen de rest (W-535, less is more). */}
-      {mobielKort ? (
-        <p className={`mt-5 text-balance text-[19px] leading-[1.45] ${donker ? 'text-white/75' : 'text-[#2A3A54]'}`}>
-          Wij doen je marketing. Jij ziet eindelijk welke aanvraag een opdracht werd.
-        </p>
-      ) : (
-        <p className={`mt-7 max-w-[560px] text-[19px] leading-[1.55] ${donker ? 'text-white/70' : 'text-[#2A3A54]'}`}>
-          Elke maand gaat er geld naar je marketing, en wat het oplevert weet je niet precies. Wij leggen je campagnes, je website,
-          je telefoon en je verkoop naast elkaar, kijken mee en zeggen wat er beter kan.{' '}
-          <strong className={`font-semibold ${donker ? 'text-white' : 'text-primary'}`}>En we helpen je het te doen.</strong>
-        </p>
-      )}
+      <p className="mt-5 text-balance text-[19px] leading-[1.45] text-white/75">
+        Wij doen je marketing. Jij ziet eindelijk welke aanvraag een opdracht werd.
+      </p>
     </>
   )
-  const knoppen = (
-    <>
-      {/* Richting C: naast elkaar onder de kop, op een staande tablet in het
-          midden onder het brein (variant zij en tablet, app/globals.css). */}
-      <div className={`${deel === 'knoppen' ? 'zij:mt-9' : 'mt-9'} flex flex-wrap gap-3 ${mobielKort ? 'tablet:justify-center' : ''}`}>
-        {/* Opent het kennismakingsvenster (zelfde route als header en slot),
-            met /kennismaking als terugval zonder JS. */}
-        <Link
-          href="/kennismaking"
-          data-cta="hero_kennismaking"
-          data-open-kennismaking=""
-          className={`inline-flex items-center justify-center rounded-lg px-6 py-3.5 font-display text-[15px] font-bold transition-colors ${mobielKort ? 'w-full sm:w-auto' : ''} ${donker ? 'bg-accent-light text-primary hover:bg-[#7BB8FF]' : 'bg-accent text-white hover:bg-accent-dark'}`}
-        >
-          Plan een kennismaking
-        </Link>
-        <a
-          href="#hoe-het-werkt"
-          data-cta="hero_hoe"
-          className={`items-center rounded-lg border px-6 py-3.5 font-display text-[15px] font-bold transition-colors ${mobielKort ? 'hidden zij:inline-flex' : 'inline-flex'} ${donker ? 'border-white/25 bg-primary/80 text-white hover:border-white/60' : 'border-border text-primary hover:border-primary'}`}
-        >
-          {/* Donker: een eigen vlak, anders schemerde in richting C een node
-              van het brein door de knop heen (980 en 1024 breed). */}
-          Bekijk hoe het werkt
-        </a>
-      </div>
-      {/* Alleen A en B (ter vergelijking ongewijzigd). Richting C niet: de
-          naschrift van Uitvoering zegt het budgetdeel, en "op jouw naam"
-          belooft te veel (verkoopsynthese 11 okt). */}
-      {!mobielKort && (
-        <p className={`mt-5 text-[13.5px] ${donker ? 'text-white/60' : 'text-muted'}`}>
-          Wat we opzetten, staat op jouw naam. We verdienen niets aan je advertentiebudget.
-        </p>
-      )}
-    </>
-  )
-  if (deel === 'kop') return kop
-  if (deel === 'knoppen') return knoppen
+}
+
+// Naast elkaar onder de kop, op een staande tablet in het midden onder het
+// brein (variant zij en tablet, app/globals.css).
+function HeroKnoppen() {
   return (
-    <>
-      {kop}
-      {knoppen}
-    </>
+    <div className="zij:mt-9 flex flex-wrap gap-3 tablet:justify-center">
+      {/* Opent het kennismakingsvenster (zelfde route als header en slot),
+          met /kennismaking als terugval zonder JS. */}
+      <Link
+        href="/kennismaking"
+        data-cta="hero_kennismaking"
+        data-open-kennismaking=""
+        className="inline-flex w-full items-center justify-center rounded-lg bg-accent-light px-6 py-3.5 font-display text-[15px] font-bold text-primary transition-colors hover:bg-[#7BB8FF] sm:w-auto"
+      >
+        Plan een kennismaking
+      </Link>
+      {/* Een eigen vlak, anders schemerde een node van het brein door de knop
+          heen (980 en 1024 breed). */}
+      <a
+        href="#hoe-het-werkt"
+        data-cta="hero_hoe"
+        className="hidden items-center rounded-lg border border-white/25 bg-primary/80 px-6 py-3.5 font-display text-[15px] font-bold text-white transition-colors hover:border-white/60 zij:inline-flex"
+      >
+        Bekijk hoe het werkt
+      </a>
+    </div>
   )
 }
