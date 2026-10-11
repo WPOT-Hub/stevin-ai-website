@@ -60,14 +60,12 @@ const BUDGET = {
   ],
 }
 
-// Uit PR #113 (W-506): bedragen zelf gelezen op 8 okt 2026 op de
-// tarievenpagina's van zes Nederlandse bureaus die bovenaan staan op "google
-// ads uitbesteden kosten". Namen staan in die PR, niet op de pagina.
+// De marktprijzen van andere bureaus (225 tot 2.000 per maand, uit PR #113)
+// staan er bewust niet meer: naast "vanaf 1.399" verkoop je jezelf tegen 225,
+// en het zijn prijzen van anderen die we niet kunnen nagaan (Koen, 12 okt
+// 00:20). Het percentagemodel staat al in het budgetblok.
 const MARKT = {
-  kop: 'Wat bureaus in Nederland vragen',
-  antwoord:
-    'Voor het beheer van je advertenties vragen Nederlandse bureaus meestal 225 tot 2.000 euro per maand, of 10 tot 20 procent van je advertentiebudget. Dat zijn de prijzen die zes bureaus zelf online zetten, gelezen op 8 oktober 2026.',
-  inleiding: 'Het bedrag zegt weinig zonder wat erbij zit. Vraag daarom voordat je tekent:',
+  kop: 'Vraag dit voordat je tekent',
   vragen: [
     {
       v: 'Op wiens naam staan de accounts?',
@@ -201,9 +199,7 @@ export default function RethinkTarieven() {
           <h2 className="m-0 text-balance font-display font-extrabold text-primary" style={h2Stijl}>
             {MARKT.kop}
           </h2>
-          <p className="m-0 mt-6 max-w-[680px] text-[18px] leading-[1.6] text-[#2A3A54]">{MARKT.antwoord}</p>
-          <p className="m-0 mt-10 text-[18px] leading-[1.6] text-primary">{MARKT.inleiding}</p>
-          <dl className="m-0 mt-5 border-t border-border">
+          <dl className="m-0 mt-8 border-t border-border">
             {MARKT.vragen.map((q) => (
               <div key={q.v} className="grid gap-1.5 border-b border-border py-5 sm:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] sm:gap-8">
                 <dt className="font-display text-[17px] font-bold text-primary">{q.v}</dt>
