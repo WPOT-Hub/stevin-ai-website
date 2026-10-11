@@ -341,9 +341,10 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
 
       {/* ── 7. VAN ADVIES NAAR UITVOERING ── */}
       {/* Scrollverhaal: bij elk stuk scrollen komt er een stap bij (Koen, 11 okt). */}
-      {/* Wie het werk doet staat onder de stappen, niet in een eigen witte
-          band: die oogde als een zesde blok (11 okt). In C volgt Kennismaken,
-          ook donker; een haarlijn houdt de twee blokken uit elkaar. */}
+      {/* Wie het werk doet staat in het vastgezette deel van de stappen, niet
+          in een eigen band en niet erna: allebei oogden als een zesde blok
+          (11 okt). In C volgt Kennismaken, ook donker; een haarlijn houdt de
+          twee blokken uit elkaar. */}
       <section className="bg-primary px-6 text-white" aria-label="Uitvoering">
         <div className={`mx-auto max-w-[1200px] pb-20 lg:pb-24 ${richting === 'c' ? 'border-b border-white/10' : ''}`}>
           <ScrollStappen
@@ -352,10 +353,8 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             vaststelling={UITVOERING.vaststelling}
             stappen={UITVOERING.stappen}
             doel={UITVOERING.doel}
+            naschrift="Je kiest wie het werk doet: wij, je eigen team of je bureau."
           />
-          <p className="m-0 max-w-[640px] text-[18px] leading-[1.6] text-white/75">
-            Je kiest wie het werk doet: wij, je eigen team of je bureau.
-          </p>
         </div>
       </section>
 

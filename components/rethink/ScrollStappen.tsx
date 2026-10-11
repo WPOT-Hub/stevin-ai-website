@@ -40,12 +40,18 @@ export default function ScrollStappen({
   vaststelling,
   stappen,
   doel,
+  naschrift,
 }: {
   eyebrow: string
   kop: string
   vaststelling: string
   stappen: string[]
   doel: string
+  /** Een zin bij het blok (wie het werk doet). Staat in het vastgezette deel,
+   * zodat hij met de stappen meeschuift: desktop in de linkerkolom onder het
+   * voorbeeld, smal scherm onder de lijst. Na het vastgezette deel dreef hij
+   * los onder een leeg vlak en oogde hij als een zesde blok (11 okt). */
+  naschrift?: string
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const stickyRef = useRef<HTMLDivElement>(null)
@@ -187,6 +193,7 @@ export default function ScrollStappen({
                 {vaststelling}
               </span>
             </p>
+            {naschrift && <p className="m-0 mt-8 hidden max-w-[36ch] text-[17px] leading-[1.55] text-white/75 lg:block">{naschrift}</p>}
           </div>
 
           <ol ref={lijstRef} className="relative m-0 list-none p-0 pl-8" style={{ height: lijstHoogte }}>
@@ -281,6 +288,8 @@ export default function ScrollStappen({
               )
             })}
           </ol>
+          {/* Smal scherm: dezelfde zin onder de lijst (de lg-versie staat links). */}
+          {naschrift && <p className="m-0 -mt-4 text-[16px] leading-[1.55] text-white/75 lg:hidden">{naschrift}</p>}
         </div>
       </div>
     </div>

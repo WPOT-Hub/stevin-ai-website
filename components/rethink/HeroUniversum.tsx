@@ -50,6 +50,11 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
   const [uitBeeld, setUitBeeld] = useState(false)
   const timers = useRef<number[]>([])
   useEffect(() => () => timers.current.forEach((t) => window.clearTimeout(t)), [])
+  // De statusregel onder de bediening. Na een keuze met een knop schuift hij in
+  // beeld als hij net onder de rand of onder de cookiebanner valt (die zet
+  // scroll-padding-bottom zolang hij openstaat).
+  const uitlegRef = useRef<HTMLParagraphElement>(null)
+  const toonUitleg = () => window.requestAnimationFrame(() => uitlegRef.current?.scrollIntoView({ block: 'nearest' }))
 
   // Een instantie van het brein, alleen in de browser: op desktop in het vlak
   // achter de tekst, op mobiel onder de kop. Beide vlakken hebben een vaste
@@ -110,6 +115,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
     setHerinnering(null)
     setFocus(aan ? id : null)
     if (aan) push('demo_node', { demo_node: id })
+    if (!vanuitBeeld) toonUitleg()
   }
 
   const kiesHerinnering = (i: number) => {
@@ -120,6 +126,19 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
     setFocus(null)
     setHerinnering(aan ? i : null)
     if (aan) push('demo_node', { demo_node: `herinnering_${String(i + 1).padStart(2, '0')}` })
+    toonUitleg()
+  }
+
+  // Een herinnering aangetikt in het beeld: de knoppen en de statusregel lopen
+  // mee (anders bleef een eerder gekozen knop ingedrukt en noemde de regel nog
+  // de oude). De uitleg staat dan op het kaartje bij de node.
+  const kiesHerinneringUitBeeld = (i: number | null) => {
+    setUitBeeld(true)
+    timers.current.forEach((t) => window.clearTimeout(t))
+    setFase('rust')
+    setFocus(null)
+    setHerinnering(i)
+    if (i != null) push('demo_node', { demo_node: `herinnering_${String(i + 1).padStart(2, '0')}` })
   }
 
   const sluit = () => {
@@ -161,6 +180,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
             onKiesHub={(id) => kies(id as Kies, true)}
             onSluit={sluit}
             herinnering={herinnering}
+            onKiesHerinnering={kiesHerinneringUitBeeld}
             middenX={0.66}
             middenY={0.5}
             schaal={0.92}
@@ -177,13 +197,17 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
           bediening, met het brein rechts op de achtergrond. De knoppen staan
           twee keer in de DOM (een per schermmaat, de andere op display:none),
           zodat de tabvolgorde altijd gelijk is aan wat je ziet. */}
-      <div className="pointer-events-none relative mx-auto flex min-h-[100svh] max-w-[1200px] flex-col justify-center px-6 pb-12 pt-[112px] lg:pb-24 lg:pt-[136px]">
+      <div className="pointer-events-none relative mx-auto flex min-h-[100svh] max-w-[1200px] flex-col justify-center px-6 pb-12 pt-[96px] lg:pb-24 lg:pt-[136px]">
         <div className="pointer-events-auto max-w-[560px]">{kop}</div>
 
         <div className="pointer-events-auto hidden max-w-[560px] lg:block">{knoppen}</div>
 
-        {/* Mobiel: het brein groot onder de kop */}
-        <div className="pointer-events-auto relative -mx-6 mt-2 h-[min(56svh,480px)] min-h-[360px] lg:hidden">
+        {/* Mobiel: het brein onder de kop. Het vlak krijgt wat er overblijft
+            na kop, zin, vraagknop en knop (samen ongeveer 410px), zodat de knop
+            ook op een laag scherm in het eerste beeld staat (Koen: kop, zin,
+            brein, vraagknop, knop). Met een vaste minimumhoogte van 360px viel
+            de knop op elke telefoon onder de vouw (11 okt). */}
+        <div className="pointer-events-auto relative -mx-6 mt-2 h-[clamp(150px,calc(100svh-410px),480px)] lg:hidden">
           {desktop === false && (
             <StevinUniversum
               fase={fase}
@@ -193,6 +217,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               onKiesHub={(id) => kies(id as Kies, true)}
               onSluit={sluit}
               herinnering={herinnering}
+              onKiesHerinnering={kiesHerinneringUitBeeld}
               middenX={0.36}
               middenY={0.5}
               schaal={1.15}
@@ -272,6 +297,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
           {/* Minimumhoogte alleen als de vraag loopt: in rust duwde hij op
               mobiel de knop 80px omlaag. */}
           <p
+            ref={uitlegRef}
             aria-live="polite"
             className={`m-0 mt-3 text-[14.5px] leading-snug text-white/70 lg:mt-4 lg:min-h-[44px] ${fase !== 'rust' ? 'min-h-[80px]' : ''}`}
           >
@@ -279,7 +305,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               <>
                 <strong className="font-semibold text-white">{gekozen.label}.</strong> {gekozen.uitleg}
               </>
-            ) : gekozenHerinnering ? (
+            ) : gekozenHerinnering && !uitBeeld ? (
               <>
                 <strong className="font-semibold text-white">{gekozenHerinnering.kort}</strong> (voorbeeld,{' '}
                 {gekozenHerinnering.wanneer}). {gekozenHerinnering.uitleg}
