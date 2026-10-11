@@ -21,6 +21,11 @@ import type { BronId } from './netwerk'
  * docs/research/W535_REDESIGN_STEVIN_AI.md in Stevin-Hub). Wat niet bij een
  * klant draait, staat er als inrichting of als voorbeeld, niet als bestaande
  * koppeling.
+ *
+ * Koen, 11 okt 09:27: een belofte over wat ons team als managed dienst doet
+ * mag, ook als het per klant nog ingericht wordt. Alleen een softwarefunctie
+ * claimen die er niet is, mag niet. Geen voorbehouden over randgevallen op de
+ * pagina.
  */
 
 export type Richting = 'a' | 'b' | 'c'
@@ -92,19 +97,34 @@ const ADVIEZEN = [
 ]
 
 // Van signaal via advies naar uitvoering, met een hittegolf als voorbeeld
-// (Koen, 11 okt). Stevin ziet een hittegolf nog niet zelf: daarom staat de
-// vaststelling als Voorbeeld gemarkeerd, en staat nergens dat Stevin het weer
-// volgt.
+// (Koen, 11 okt). Stevin ziet een hittegolf nog niet zelf: daarom begint de
+// aanleiding met "Stel", en staat nergens dat Stevin het weer volgt. Tekst uit
+// de verkoopsynthese van 11 okt (managed: wij doen het werk, jij houdt de knop
+// over je budget).
 const UITVOERING = {
-  vaststelling: "Het is een hittegolf en je budget voor airco is 's middags al op.",
+  kop: 'Jij beslist over je budget. Wij regelen de rest.',
+  vaststelling: "Stel, het is een hittegolf en je budget voor airco is 's middags al op.",
   stappen: [
-    'We kijken eerst wat een aanvraag nu kost.',
-    'Als het loont, adviseren we tijdelijk meer budget.',
+    'We rekenen uit of meer budget loont.',
     'Pas als jij ja zegt, gaat je budget omhoog.',
     'We spreken af wie de telefoon opneemt.',
-    'Na een week tellen we de extra aanvragen.',
+    'Na een week laten we zien hoeveel aanvragen erbij kwamen.',
   ],
   doel: 'Meer aanvragen, zonder dat ze duurder worden.',
+  naschrift: 'We verdienen niets aan je advertentiebudget.',
+}
+
+// Prijsblok in Kennismaken (Koen, 11 okt 09:21: "noem gewoon de vanaf. 1399
+// wij worden jouw bureau. 399 je doet het zelf of met je bureau"). Managed
+// eerst en groot. Bedragen zoals op /tarieven (kaart 01 en 03, bij
+// jaarbetaling); de uitleg over jaar- of maandbetaling staat daar, niet hier.
+// Kop en zin: Koen, 11 okt 09:27 ("we mogen ons ook een bureau noemen") en
+// 09:31 (de inlossing in een korte zin).
+const PRIJZEN = {
+  kop: 'Het laatste bureau dat je nodig hebt.',
+  zin: 'We werken vanaf de eerste dag naar onze exit.',
+  hoofd: { wat: 'Wij worden jouw bureau', prijs: 'vanaf 1.399', per: 'per maand' },
+  zelf: { wat: 'Je doet het zelf of met je bureau', prijs: 'vanaf 399', per: 'per maand' },
 }
 
 // Niet meer op de homepage (W-535, less is more); de uitleg per keuze is voor
@@ -180,8 +200,11 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             <h2 id="koppelingen" className={h2} style={{ ...h2Stijl, fontSize: 'clamp(26px, 2.6vw, 36px)' }}>
               We verbinden wat je al gebruikt.
             </h2>
+            {/* "Je hoeft niets te vervangen" mag terug (Koen, 11 okt 09:27):
+                het geval waarin het bureau bij Meta betaalt is niet de
+                standaardklant. */}
             <p className={`${tekst} m-0`}>
-              Je hoeft niets te vervangen. Een deel koppelen we meteen, de rest richten we samen in.
+              Je hoeft niets te vervangen. Een deel koppelen we meteen, de rest richten we voor je in.
             </p>
           </div>
         </div>
@@ -231,12 +254,31 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
               Voorbeeld staat in het paneel zelf. */}
           {richting !== 'c' && <p className={eyebrow}>Stel een vraag</p>}
           <h2 className={h2} style={{ ...h2Stijl, maxWidth: '18ch' }}>
-            Vraag het Stevin.
+            Geen rapportje achteraf.
           </h2>
           {richting === 'c' ? (
-            <div className="mt-10">
-              <VraagChat />
-            </div>
+            <>
+              <div className="mt-10">
+                <VraagChat />
+              </div>
+              {/* Onder het paneel een zin en dezelfde knop als in de hero, in
+                  de hoofdstijl (accent-diep: wit haalt daarop AA). Google en
+                  Meta staan hier ook voor wie de demo niet invult (Koen, 11 okt
+                  09:27: "tuurlijk doen we dat straks wel"). */}
+              <div className="mx-auto mt-8 flex max-w-[640px] flex-col items-center gap-5 text-center">
+                <p className={`${tekst} m-0 text-balance`}>
+                  Het gaat ons om opdrachten, niet om klikken. Daarom vertellen we Google en Meta welke aanvraag een opdracht werd.
+                </p>
+                <Link
+                  href="/kennismaking"
+                  data-cta="demo_kennismaking"
+                  data-open-kennismaking=""
+                  className="inline-flex items-center rounded-lg bg-accent-diep px-7 py-3.5 font-display text-[15px] font-bold text-white transition-colors hover:bg-accent-dieper"
+                >
+                  Plan een kennismaking
+                </Link>
+              </div>
+            </>
           ) : (
             <>
               <p className={`${tekst} mb-12 mt-5 max-w-[640px]`}>Probeer het: kies een vraag.</p>
@@ -349,11 +391,11 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
         <div className={`mx-auto max-w-[1200px] pb-20 lg:pb-24 ${richting === 'c' ? 'border-b border-white/10' : ''}`}>
           <ScrollStappen
             eyebrow="Uitvoering"
-            kop="Het blijft niet bij een advies."
+            kop={UITVOERING.kop}
             vaststelling={UITVOERING.vaststelling}
             stappen={UITVOERING.stappen}
             doel={UITVOERING.doel}
-            naschrift="Je kiest wie het werk doet: wij, je eigen team of je bureau."
+            naschrift={UITVOERING.naschrift}
           />
         </div>
       </section>
@@ -418,36 +460,64 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
       {/* ── 10. KENNISMAKEN ── */}
       <section id="kennismaken" className="relative overflow-hidden scroll-mt-24 bg-primary text-white" style={{ padding: '112px 24px' }}>
         <NodeWatermerk seed={97} thema="donker" />
-        <div className="relative mx-auto max-w-[880px] text-center">
-          <h2 className="m-0 font-display font-extrabold text-white" style={h2Stijl}>
-            Benieuwd wat er in jouw marketing beter kan?
+        <div className="relative mx-auto max-w-[880px]">
+          {/* Prijzen: typografisch op donker zoals Uitvoering, geen kaartjes,
+              geen opsomming. Managed groot, zelf doen kleiner eronder. De kop
+              en een korte zin erboven (Koen, 11 okt 09:27 en 09:31: "wel veel
+              tekst"); pay per fix en klant blijven staan op /tarieven. */}
+          <h2 className="m-0 font-display font-extrabold text-white" style={{ ...h2Stijl, maxWidth: '16ch' }}>
+            {PRIJZEN.kop}
           </h2>
-          <p className="mx-auto mt-5 max-w-[620px] text-[18px] leading-[1.6] text-white/75">
-            We kijken samen naar je cijfers, en je hoort eerlijk of we iets voor je kunnen doen.
-          </p>
-          {/* De zin over twee weken hoort bij de diagnose, niet bij de
-              kennismaking: hij staat direct onder die knop (11 okt). */}
-          <div className="mt-9 flex flex-wrap items-start justify-center gap-4">
-            <Link
-              href="/kennismaking"
-              data-cta="kennismaking"
-              data-open-kennismaking=""
-              className="inline-flex items-center rounded-lg bg-accent-light px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-colors hover:bg-[#7BB8FF]"
-            >
-              Plan een kennismaking
-            </Link>
-            <div className="flex max-w-[260px] flex-col items-center">
-              <Link
-                href="/contact"
-                data-cta="diagnose"
-                aria-describedby="diagnose-uitleg"
-                className="inline-flex items-center rounded-lg border border-white/25 px-7 py-3.5 font-display text-[15px] font-bold text-white transition-colors hover:border-white/60"
+          <p className="m-0 mt-5 max-w-[620px] text-[18px] leading-[1.6] text-white/75">{PRIJZEN.zin}</p>
+          <dl className="m-0 mt-10 border-t border-white/12">
+            <div className="flex flex-col gap-1.5 border-b border-white/12 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+              <dt
+                className="font-display font-extrabold text-white"
+                style={{ fontSize: 'clamp(24px, 2.6vw, 34px)', letterSpacing: '-0.025em', lineHeight: '1.15' }}
               >
-                Liever eerst een diagnose
+                {PRIJZEN.hoofd.wat}
+              </dt>
+              <dd className="m-0 whitespace-nowrap font-display text-white">
+                <span className="font-extrabold" style={{ fontSize: 'clamp(24px, 2.6vw, 34px)', letterSpacing: '-0.025em' }}>
+                  {PRIJZEN.hoofd.prijs}
+                </span>{' '}
+                <span className="text-[15px] font-medium text-white/60">{PRIJZEN.hoofd.per}</span>
+              </dd>
+            </div>
+            <div className="flex flex-col gap-1 border-b border-white/12 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+              <dt className="text-[17px] leading-snug text-white/75">{PRIJZEN.zelf.wat}</dt>
+              <dd className="m-0 whitespace-nowrap text-[17px] text-white/75">
+                <span className="font-display font-bold text-white/90">{PRIJZEN.zelf.prijs}</span> {PRIJZEN.zelf.per}
+              </dd>
+            </div>
+          </dl>
+          <p className="m-0 mt-4 sm:text-right">
+            <Link
+              href="/tarieven"
+              data-cta="prijs_tarieven"
+              className="text-[14px] text-white/60 underline underline-offset-4 transition-colors hover:text-white"
+            >
+              Alle tarieven
+            </Link>
+          </p>
+
+          {/* Een knop: de diagnoseknop en de zin eronder zijn eraf (11 okt). */}
+          <div className="mt-20 text-center sm:mt-24">
+            <h2 className="m-0 font-display font-extrabold text-white" style={h2Stijl}>
+              Wat zouden wij bij jou als eerste doen?
+            </h2>
+            <p className="mx-auto mt-5 max-w-[620px] text-[18px] leading-[1.6] text-white/75">
+              Dat hoor je in een half uur. Past het niet, dan zeggen we dat ook.
+            </p>
+            <div className="mt-9 flex justify-center">
+              <Link
+                href="/kennismaking"
+                data-cta="kennismaking"
+                data-open-kennismaking=""
+                className="inline-flex items-center rounded-lg bg-accent-light px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-colors hover:bg-[#7BB8FF]"
+              >
+                Plan een kennismaking
               </Link>
-              <p id="diagnose-uitleg" className="m-0 mt-2.5 text-balance text-[13.5px] leading-snug text-white/60">
-                Binnen twee weken weet je wat klopt en wat niet.
-              </p>
             </div>
           </div>
         </div>
@@ -484,7 +554,7 @@ function HeroTekst({
           eronder vertellen de rest (W-535, less is more). */}
       {mobielKort ? (
         <p className={`mt-5 text-[19px] leading-[1.45] ${donker ? 'text-white/75' : 'text-[#2A3A54]'}`}>
-          Je ziet wat je marketing oplevert, en wat er beter kan.
+          Wij doen je marketing. Jij ziet eindelijk welke aanvraag een opdracht werd.
         </p>
       ) : (
         <p className={`mt-7 max-w-[560px] text-[19px] leading-[1.55] ${donker ? 'text-white/70' : 'text-[#2A3A54]'}`}>
@@ -498,13 +568,16 @@ function HeroTekst({
   const knoppen = (
     <>
       <div className={`${deel === 'knoppen' ? 'lg:mt-9' : 'mt-9'} flex flex-wrap gap-3`}>
-        <a
-          href="#kennismaken"
-          data-cta="hero_ontdek"
+        {/* Opent het kennismakingsvenster (zelfde route als header en slot),
+            met /kennismaking als terugval zonder JS. */}
+        <Link
+          href="/kennismaking"
+          data-cta="hero_kennismaking"
+          data-open-kennismaking=""
           className={`inline-flex items-center justify-center rounded-lg px-6 py-3.5 font-display text-[15px] font-bold transition-colors ${mobielKort ? 'w-full sm:w-auto' : ''} ${donker ? 'bg-accent-light text-primary hover:bg-[#7BB8FF]' : 'bg-accent text-white hover:bg-accent-dark'}`}
         >
-          Ontdek wat Stevin voor je kan doen
-        </a>
+          Plan een kennismaking
+        </Link>
         <a
           href="#hoe-het-werkt"
           data-cta="hero_hoe"
@@ -513,7 +586,9 @@ function HeroTekst({
           Bekijk hoe het werkt
         </a>
       </div>
-      {/* Richting C: deze zin staat al in de footer. */}
+      {/* Alleen A en B (ter vergelijking ongewijzigd). Richting C niet: de
+          naschrift van Uitvoering zegt het budgetdeel, en "op jouw naam"
+          belooft te veel (verkoopsynthese 11 okt). */}
       {!mobielKort && (
         <p className={`mt-5 text-[13.5px] ${donker ? 'text-white/60' : 'text-muted'}`}>
           Wat we opzetten, staat op jouw naam. We verdienen niets aan je advertentiebudget.

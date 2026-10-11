@@ -47,7 +47,7 @@ export default function ScrollStappen({
   vaststelling: string
   stappen: string[]
   doel: string
-  /** Een zin bij het blok (wie het werk doet). Staat in het vastgezette deel,
+  /** Een zin bij het blok. Staat in het vastgezette deel,
    * zodat hij met de stappen meeschuift: desktop in de linkerkolom onder het
    * voorbeeld, smal scherm onder de lijst. Na het vastgezette deel dreef hij
    * los onder een leeg vlak en oogde hij als een zesde blok (11 okt). */
@@ -188,10 +188,8 @@ export default function ScrollStappen({
               <span className="relative mt-1.5 flex h-2 w-2 shrink-0" aria-hidden="true">
                 <span className="su-puls absolute inline-flex h-full w-full rounded-full bg-accent-light" />
               </span>
-              <span>
-                <span className="mr-2 text-[11px] font-bold uppercase tracking-[0.12em] text-accent-light">Voorbeeld</span>
-                {vaststelling}
-              </span>
+              {/* Geen badge Voorbeeld meer: de aanleiding begint met "Stel". */}
+              <span>{vaststelling}</span>
             </p>
             {naschrift && <p className="m-0 mt-8 hidden max-w-[36ch] text-[17px] leading-[1.55] text-white/75 lg:block">{naschrift}</p>}
           </div>

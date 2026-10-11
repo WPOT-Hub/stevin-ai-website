@@ -153,9 +153,8 @@ export default function VraagChat() {
       className="mx-auto max-w-[640px] rounded-[14px] border bg-white p-4 sm:px-[18px] sm:py-4"
       style={{ borderColor: RAND, boxShadow: SCHADUW }}
     >
-      <div className="mb-3 flex items-center justify-end">
-        <span className="rounded-full bg-[#FFF4DB] px-2 py-0.5 text-[10.5px] font-semibold text-[#8A5A00]">Voorbeeld</span>
-      </div>
+      {/* Gewone paneeltitel in plaats van de gele badge (verkoopsynthese 11 okt). */}
+      <p className="m-0 mb-3 text-[13px] font-semibold text-[#1f2933]">Voorbeeld: installatiebedrijf</p>
 
       {/* Invoer zoals in de Desk */}
       <div className="flex items-center gap-2 rounded-[10px] border bg-[#f7f8fa] p-1.5" style={{ borderColor: RAND }}>
@@ -188,7 +187,12 @@ export default function VraagChat() {
           <div className="grid grid-cols-4 overflow-hidden rounded-[10px] border" style={{ borderColor: RAND }}>
             {WEEK.map(([n, l], i) => (
               <div key={l} className="px-2.5 py-2" style={{ borderLeft: i ? `1px solid ${RAND}` : undefined }}>
-                <div className="font-mono text-[19px] font-semibold tabular-nums leading-none text-[#0a0a0a]">{n}</div>
+                {/* De opdrachten in accent, zoals het antwoord in de hero. */}
+                <div
+                  className={`font-mono text-[19px] font-semibold tabular-nums leading-none ${i === WEEK.length - 1 ? 'text-accent-diep' : 'text-[#0a0a0a]'}`}
+                >
+                  {n}
+                </div>
                 <div className="mt-1 text-[11px] leading-tight text-[#6b7280]">{l}</div>
               </div>
             ))}
@@ -236,10 +240,22 @@ export default function VraagChat() {
               )
             })}
           </div>
-          {klaar && (
+          {/* Na een Ja meteen, anders als beide zijn ingevuld. */}
+          {(opdrachten > 0 || klaar) && (
             <p className="vd-in m-0 mt-3 border-t pt-2.5 text-[13px] text-[#6b7280]" style={{ borderColor: RAND }}>
-              {opdrachten === 0 ? 'Geen opdracht.' : opdrachten === 1 ? 'Een opdracht.' : 'Twee opdrachten.'}{' '}
-              {nogNiet > 0 ? 'Wat je nog niet weet, vraag ik over twee weken nog een keer.' : 'Genoteerd.'}
+              {/* In een stem, en elk antwoord eindigt bij wat wij doen
+                  (verkoopsynthese 11 okt). Na een Ja: Google en Meta (Koen,
+                  11 okt 09:27). */}
+              {[
+                opdrachten > 0
+                  ? 'Mooi. Dat geven we door aan Google en Meta, dan zoeken ze meer van zulke klanten.'
+                  : nogNiet === 0
+                    ? 'Genoteerd. Dat nemen we mee in je campagnes.'
+                    : '',
+                nogNiet > 0 ? 'Wat je nog niet weet, vragen we over twee weken nog een keer.' : '',
+              ]
+                .filter(Boolean)
+                .join(' ')}
             </p>
           )}
         </Kaart>

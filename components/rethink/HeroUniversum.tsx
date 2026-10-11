@@ -17,11 +17,13 @@ import { ADVISOR, BREIN, BRONNEN, type BronId } from './netwerk'
 type Kies = BronId | 'brein' | 'advisor'
 
 // Dezelfde bronnen als de vraagdemo verderop: geen CRM nodig (Koen, 11 okt).
+// Het antwoord in het brein is dezelfde week als in de demo (38 aanvragen,
+// 4 opdrachten), met de opdrachten in accent (verkoopsynthese 11 okt).
 const VRAAG = {
   tekst: 'Resultaten deze week?',
   bronnen: ['website', 'telefonie', 'offertes'] as BronId[],
-  signaal: '6 aanvragen, opvolging onbekend',
-  uitleg: 'Voorbeeld: bij zes aanvragen staat nergens of iemand heeft teruggebeld.',
+  antwoord: { label: 'DEZE WEEK', tekst: '38 aanvragen,', accent: '4 opdrachten' },
+  uitleg: 'Voorbeeld: installatiebedrijf.',
 }
 
 // Pauzeknop voor alle beweging die vanzelf loopt (WCAG 2.2.2): het brein, de
@@ -176,7 +178,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
             fase={fase}
             actieveBronnen={fase === 'rust' ? [] : VRAAG.bronnen}
             focus={focus}
-            signaal={VRAAG.signaal}
+            antwoord={VRAAG.antwoord}
             onKiesHub={(id) => kies(id as Kies, true)}
             onSluit={sluit}
             herinnering={herinnering}
@@ -213,7 +215,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               fase={fase}
               actieveBronnen={fase === 'rust' ? [] : VRAAG.bronnen}
               focus={focus}
-              signaal={VRAAG.signaal}
+              antwoord={VRAAG.antwoord}
               onKiesHub={(id) => kies(id as Kies, true)}
               onSluit={sluit}
               herinnering={herinnering}
@@ -295,11 +297,11 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
             </div>
           </div>
           {/* Minimumhoogte alleen als de vraag loopt: in rust duwde hij op
-              mobiel de knop 80px omlaag. */}
+              mobiel de knop omlaag. Het antwoord is nog een regel. */}
           <p
             ref={uitlegRef}
             aria-live="polite"
-            className={`m-0 mt-3 text-[14.5px] leading-snug text-white/70 lg:mt-4 lg:min-h-[44px] ${fase !== 'rust' ? 'min-h-[80px]' : ''}`}
+            className={`m-0 mt-3 text-[14.5px] leading-snug text-white/70 lg:mt-4 lg:min-h-[44px] ${fase !== 'rust' ? 'min-h-[20px]' : ''}`}
           >
             {gekozen && !uitBeeld ? (
               <>
@@ -312,15 +314,15 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               </>
             ) : fase === 'advies' ? (
               <>
-                {VRAAG.uitleg}{' '}
-                <a href="#hoe-het-werkt" className="font-semibold text-[#9CC6FF] underline-offset-2 hover:underline">
-                  Probeer het zelf
-                </a>
+                {/* Het antwoord staat in het beeld (aria-hidden); hier ook voor
+                    een schermlezer. */}
+                <span className="sr-only">
+                  Deze week: {VRAAG.antwoord.tekst} {VRAAG.antwoord.accent}.{' '}
+                </span>
+                {VRAAG.uitleg}
               </>
-            ) : fase !== 'rust' ? (
-              'Stevin pakt website, telefoon en offertes erbij...'
-            ) : bewegingUit ? null : (
-              <span className="hidden lg:inline">Sleep om het brein te draaien.</span>
+            ) : fase !== 'rust' ? null : bewegingUit ? null : (
+              <span className="hidden lg:inline">Sleep om te draaien.</span>
             )}
           </p>
         </div>

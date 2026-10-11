@@ -16,7 +16,11 @@ import { getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/
  *
  * Dit is de voorkant. De koppeling met de agenda komt via
  * NEXT_PUBLIC_KENNISMAKING_API (GET /beschikbaarheid, POST /boek). Zolang die
- * er niet is, toont het venster een duidelijk gemarkeerde voorbeeldagenda.
+ * er niet is, toont het venster een voorbeeldagenda, sinds de verkoopsynthese
+ * van 11 okt zonder gele markering: bij het gekozen moment staat een grijze
+ * regel "We mailen je of dit moment kan.", de knop heet "Vraag dit moment
+ * aan" en de bevestiging zegt dat het een aanvraag is.
+ *
  * Kies je daarin een moment, dan gaat dat als aanvraag naar het bestaande
  * Hub-endpoint (zelfde weg als "Laat je gegevens achter"), met het moment in
  * het bericht, en mailen we zelf of het moment kan. Zo gaan ingevulde gegevens
@@ -251,7 +255,6 @@ const FOUT_ROBOT = 'Even geduld, we controleren nog of je geen robot bent.'
 // De controle lukt niet (zie Turnstile): dan een uitweg. Het mailadres staat
 // als link in de melding.
 const FOUT_CONTROLE = 'De controle lukt nu niet. Mail dan naar info@stevin.ai.'
-const VOORBEELD_REGEL = 'Voorbeeldagenda: nog niet gekoppeld aan de echte agenda.'
 
 export default function KennismakingVenster() {
   const [open, setOpen] = useState(false)
@@ -691,11 +694,9 @@ export default function KennismakingVenster() {
 
             {tab === 'moment' && stap === 'gegevens' && gekozen && (
               <div className="mt-6">
-                {voorbeeld && (
-                  <p className="m-0 mb-3 rounded-lg bg-[#FFF4DB] px-3 py-2 text-[13px] font-medium text-[#8A5A00]">
-                    {VOORBEELD_REGEL} We mailen je of dit moment kan.
-                  </p>
-                )}
+                {/* Gewone grijze regel, geen geel vlak (verkoopsynthese 11 okt).
+                    Zolang de agenda niet gekoppeld is, is het een aanvraag. */}
+                {voorbeeld && <p className="m-0 mb-3 text-[13.5px] text-muted">We mailen je of dit moment kan.</p>}
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-accent/30 bg-accent/[0.06] px-4 py-3">
                   <span ref={gekozenRegelRef} tabIndex={-1} className="text-[15px] font-semibold text-primary outline-none">
                     {metHoofdletter(fmtDagLang(gekozen.start))}, {fmtTijd(gekozen.start)} tot {fmtTijd(gekozen.end)}
@@ -717,11 +718,6 @@ export default function KennismakingVenster() {
 
             {tab === 'moment' && stap === 'kies' && (
               <div className="mt-5">
-                {voorbeeld && (
-                  <p className="m-0 mb-3 rounded-lg bg-[#FFF4DB] px-3 py-2 text-[13px] font-medium text-[#8A5A00]">
-                    {VOORBEELD_REGEL}
-                  </p>
-                )}
                 <p className="m-0 mb-3 text-[13px] text-muted">Nederlandse tijd</p>
                 {!dagen ? (
                   <p className="m-0 py-10 text-center text-[15px] text-muted">Agenda laden...</p>
