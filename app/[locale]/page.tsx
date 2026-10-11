@@ -1,5 +1,6 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
+import RethinkHome from '@/components/rethink/RethinkHome'
 import { Link } from '@/i18n/navigation'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import StevinBrainVisual from '@/components/StevinBrainVisual'
@@ -177,20 +178,56 @@ const COPY = {
   },
 } as const
 
-// Zelfde canonical/hreflang als voorheen; extra: preview-deploys (Vercel
-// preview env) mogen nooit geindexeerd worden, productie wel.
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+// W-535: de Nederlandse homepage is richting C (RethinkHome). /en houdt de
+// huidige HomePage hieronder tot er een Engelse versie van C is.
+//
+// Title en description voor nl uit de vindbaarheidstoets van 11 okt (A2): het
+// merk voorop en "marketingbureau" erin, in het Nederlands. De description zegt
+// alleen wat ook op de pagina staat. Canonical, hreflang, RSS en de noindex
+// voor previews blijven zoals ze waren.
+const TITEL_NL = 'Stevin.AI · Marketingbureau voor het mkb'
+const BESCHRIJVING_NL =
+  'Stevin.AI doet de marketing van mkb-bedrijven. Jij ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.'
+
+// Preview-deploys (Vercel preview env) mogen nooit geindexeerd worden,
+// productie wel.
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
   const { locale } = await params
   const isEn = locale === 'en'
   const nlUrl = 'https://stevin.ai'
   const enUrl = 'https://stevin.ai/en'
-  return {
+  const basis: Metadata = {
     alternates: {
       canonical: isEn ? enUrl : nlUrl,
       languages: { 'nl-NL': nlUrl, en: enUrl, 'x-default': nlUrl },
       types: { 'application/rss+xml': 'https://stevin.ai/feed.xml' },
     },
     ...(process.env.VERCEL_ENV !== 'production' ? { robots: { index: false, follow: false } } : {}),
+  }
+  if (isEn) return basis
+  // openGraph en twitter vervangen die van de layout in hun geheel; daarom
+  // afbeelding, sitenaam en taal uit de layout meenemen.
+  const ouder = await parent
+  return {
+    ...basis,
+    // absolute: de layout heeft het sjabloon '%s | Stevin.AI'.
+    title: { absolute: TITEL_NL },
+    description: BESCHRIJVING_NL,
+    openGraph: {
+      type: 'website',
+      url: nlUrl,
+      locale: ouder.openGraph?.locale,
+      siteName: ouder.openGraph?.siteName,
+      images: ouder.openGraph?.images,
+      title: TITEL_NL,
+      description: BESCHRIJVING_NL,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: ouder.twitter?.images,
+      title: TITEL_NL,
+      description: BESCHRIJVING_NL,
+    },
   }
 }
 
@@ -203,7 +240,7 @@ const h2Style = { fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em'
 
 const REGISTER_URL = 'https://adstransparency.google.com/?region=NL'
 
-export default async function HomePage({ params }: Props) {
+async function HomePage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const c = locale === 'en' ? COPY.en : COPY.nl
@@ -505,4 +542,11 @@ export default async function HomePage({ params }: Props) {
       <StickyMobileCTA locale={locale} />
     </>
   )
+}
+
+export default async function Page({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  if (locale === 'nl') return <RethinkHome />
+  return <HomePage params={params} />
 }
