@@ -94,6 +94,9 @@ const PRIJZEN = {
   zin: ['Eerst zetten wij alles goed.', 'Daarna bouwen we agents die het werk voor je doen.'],
   hoofd: { wat: 'Wij worden jouw bureau', prijs: 'vanaf 1.399', per: 'per maand' },
   zelf: { wat: 'Je doet het zelf, of we zetten agents aan het werk', prijs: 'vanaf 399', per: 'per maand' },
+  // Onder de twee prijzen (Koen, 11 okt 13:57). De uitleg (2.000 tegen 10.000
+  // budget, geen marge) hoort op /tarieven.
+  budget: 'Je prijs groeit niet mee met je advertentiebudget.',
 }
 
 // Niet meer op de homepage (W-535, less is more); de uitleg per keuze is voor
@@ -276,15 +279,18 @@ export default function RethinkHome() {
               </dd>
             </div>
           </dl>
-          <p className="m-0 mt-4 sm:text-right">
-            <Link
-              href="/tarieven"
-              data-cta="prijs_tarieven"
-              className="text-[14px] text-white/60 underline underline-offset-4 transition-colors hover:text-white"
-            >
-              Alle tarieven
-            </Link>
-          </p>
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+            <p className="m-0 text-balance text-[15px] leading-snug text-white/60">{PRIJZEN.budget}</p>
+            <p className="m-0 shrink-0">
+              <Link
+                href="/tarieven"
+                data-cta="prijs_tarieven"
+                className="text-[14px] text-white/60 underline underline-offset-4 transition-colors hover:text-white"
+              >
+                Alle tarieven
+              </Link>
+            </p>
+          </div>
 
           {/* Een knop: de diagnoseknop en de zin eronder zijn eraf (11 okt). */}
           <div className="mt-20 text-center sm:mt-24">
