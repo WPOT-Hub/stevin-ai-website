@@ -100,6 +100,7 @@ const raakt = (a: Vak, b: Vak) =>
 const SATELLIETEN: Partial<Record<BronId, string[]>> = {
   google_ads: ['Zoeken', 'YouTube', 'Kosten'],
   meta: ['Facebook', 'Instagram'],
+  chatgpt_ads: ['Gesprekken', 'Kosten'],
   website: ['Formulieren', 'Bezoek', "Landingspagina's"],
   klantgegevens: ['Klanten', 'Eerdere orders'],
   telefonie: ['Gesprekken', 'Gemist', 'Herkomst'],
@@ -123,6 +124,7 @@ const BEELD: Record<BronId | 'advisor', { logo: string } | { glyph: Glyph }> = {
   doelgroepen: { glyph: 'mensen' },
   google_ads: { logo: '/logos/merken/google-ads.svg' },
   meta: { logo: '/logos/merken/meta.svg' },
+  chatgpt_ads: { logo: '/logos/merken/chatgpt-wit.svg' },
   website: { logo: '/logos/merken/wordpress-wit.svg' },
   klantgegevens: { glyph: 'kaart' },
   telefonie: { glyph: 'telefoon' },

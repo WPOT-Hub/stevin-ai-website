@@ -35,6 +35,7 @@ const LOGOS = [
   { src: '/logos/merken/google-analytics.svg', naam: 'Google Analytics 4' },
   { src: '/logos/merken/google-search-console.svg', naam: 'Search Console' },
   { src: '/logos/merken/meta.svg', naam: 'Meta' },
+  { src: '/logos/merken/chatgpt.svg', naam: 'ChatGPT Ads' },
   { src: '/logos/merken/facebook.svg', naam: 'Facebook' },
   { src: '/logos/merken/instagram.svg', naam: 'Instagram' },
   { src: '/logos/merken/youtube.svg', naam: 'YouTube' },

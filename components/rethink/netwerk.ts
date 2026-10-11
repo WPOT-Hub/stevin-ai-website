@@ -1,6 +1,6 @@
 // Gedeelde data voor de nodevisual van de nieuwe homepage (W-535).
 //
-// Twaalf nodes met een betekenis, geen sfeerstippen. Swoep zet 105 nodes
+// Dertien nodes met een betekenis, geen sfeerstippen. Swoep zet 105 nodes
 // zonder naam neer; dat oogt rijk maar zegt niets, en op mobiel lopen de
 // labels door elkaar. Hier heeft elke node een naam en een zin uitleg, zodat
 // de visual ook zonder animatie leesbaar is en met het toetsenbord te
@@ -11,6 +11,7 @@ export type NodeId =
   | 'doelgroepen'
   | 'google_ads'
   | 'meta'
+  | 'chatgpt_ads'
   | 'website'
   | 'klantgegevens'
   | 'telefonie'
@@ -40,6 +41,10 @@ export const BRONNEN: NetwerkNode<BronId>[] = [
   // logo's toont (Koen, 11 okt 20:12).
   { id: 'google_ads', label: 'Google Ads', uitleg: 'Wat je bij Google uitgeeft en wat het oplevert.' },
   { id: 'meta', label: 'Meta', uitleg: 'Wat je op Facebook en Instagram uitgeeft en wat het oplevert.' },
+  // Adverteren in ChatGPT kan in Nederland sinds eind augustus 2026 (Koen,
+  // 11 okt 23:04). Nagekeken op help.openai.com, "Ads Manager Availability",
+  // 11 okt 2026: Netherlands staat op Available.
+  { id: 'chatgpt_ads', label: 'ChatGPT Ads', uitleg: 'Wat je in ChatGPT uitgeeft en wat het oplevert.' },
   { id: 'website', label: 'Website', uitleg: 'Bezoek, formulieren en contactaanvragen.' },
   { id: 'klantgegevens', label: 'Klantgegevens', uitleg: 'Wie jouw klanten zijn en wat ze eerder kochten.' },
   { id: 'telefonie', label: 'Telefonie', uitleg: 'Telefoontjes die uit je marketing komen.' },
@@ -65,7 +70,7 @@ export const ADVISOR: NetwerkNode = {
 // diagonalen door het netwerk maakten het eerste ontwerp onrustig.
 export const DWARS: [BronId, BronId][] = [
   ['doelen', 'doelgroepen'],
-  ['meta', 'website'],
+  ['chatgpt_ads', 'website'],
   ['website', 'klantgegevens'],
   ['klantgegevens', 'telefonie'],
   ['telefonie', 'crm'],
@@ -114,13 +119,14 @@ export function bronPositie(index: number, totaal: number) {
 //
 // Een verzonnen installatiebedrijf rond Breda, een maand. De cijfers kloppen
 // onderling:
-//   - 71 aanvragen via de website (Google 38, Meta 14, de rest 19) en 52
-//     telefoontjes (Google 24, Meta 5, de rest 23): samen 123 in het CRM.
-//   - 31 offertes, 11 getekend: 5 opdrachten uit een aanvraag op de website,
-//     6 uit een telefoontje. Google 4, Meta 1, vindbaar in Google 3,
-//     bestaande klanten 3.
+//   - 71 aanvragen via de website (Google 38, Meta 14, ChatGPT 4, de rest 15)
+//     en 52 telefoontjes (Google 24, Meta 5, ChatGPT 1, de rest 22): samen
+//     123 in het CRM.
+//   - 31 offertes (Google 12, Meta 4, ChatGPT 2, de rest 13), 11 getekend:
+//     5 opdrachten uit een aanvraag op de website, 6 uit een telefoontje.
+//     Google 4, Meta 1, ChatGPT 1, vindbaar in Google 2, bestaande klanten 3.
 //   - Omzet 52.800 euro, gemiddeld 4.800 per opdracht; per bron opgeteld
-//     18.400 + 3.900 + 12.600 + 17.900.
+//     18.400 + 3.900 + 4.200 + 8.400 + 17.900.
 //   - 11 nieuwe opdrachten: 8 particulier, 3 zakelijk, 3 van eerdere klanten.
 //   - Het jaar: 468.000 van 600.000 euro begin oktober, op schema.
 export interface MeetStap {
@@ -161,6 +167,17 @@ export const METINGEN: Partial<Record<BronId, Meting>> = {
       { label: 'Omzet', waarde: EUR('3.900'), nadruk: true },
     ],
   },
+  chatgpt_ads: {
+    vorm: 'keten',
+    stappen: [
+      { label: 'Klikken', waarde: '210' },
+      { label: 'Aanvragen', waarde: '4' },
+      { label: 'Telefoontjes', waarde: '1' },
+      { label: 'Offertes', waarde: '2' },
+      { label: 'Opdrachten', waarde: '1', nadruk: true },
+      { label: 'Omzet', waarde: EUR('4.200'), nadruk: true },
+    ],
+  },
   website: {
     vorm: 'keten',
     stappen: [
@@ -199,7 +216,8 @@ export const METINGEN: Partial<Record<BronId, Meting>> = {
     stappen: [
       { label: 'Google Ads', waarde: EUR('18.400') },
       { label: 'Meta', waarde: EUR('3.900') },
-      { label: 'Vindbaar in Google', waarde: EUR('12.600') },
+      { label: 'ChatGPT Ads', waarde: EUR('4.200') },
+      { label: 'Vindbaar in Google', waarde: EUR('8.400') },
       { label: 'Bestaande klanten', waarde: EUR('17.900') },
       { label: 'Omzet deze maand', waarde: EUR('52.800'), nadruk: true },
     ],
@@ -235,12 +253,13 @@ export const METINGEN: Partial<Record<BronId, Meting>> = {
 export const KETEN: Partial<Record<BronId, BronId[]>> = {
   google_ads: ['website', 'telefonie', 'offertes', 'crm', 'verkoop'],
   meta: ['website', 'telefonie', 'offertes', 'crm', 'verkoop'],
+  chatgpt_ads: ['website', 'telefonie', 'offertes', 'crm', 'verkoop'],
   website: ['crm', 'offertes', 'verkoop'],
   telefonie: ['crm', 'offertes', 'verkoop'],
   offertes: ['crm', 'verkoop'],
   crm: ['website', 'telefonie', 'offertes', 'verkoop'],
-  verkoop: ['google_ads', 'meta', 'website', 'klantgegevens'],
+  verkoop: ['google_ads', 'meta', 'chatgpt_ads', 'website', 'klantgegevens'],
   doelen: ['verkoop', 'klantgegevens', 'doelgroepen'],
   klantgegevens: ['crm', 'verkoop', 'doelgroepen'],
-  doelgroepen: ['klantgegevens', 'google_ads', 'meta'],
+  doelgroepen: ['klantgegevens', 'google_ads', 'meta', 'chatgpt_ads'],
 }
