@@ -118,13 +118,13 @@ const UITVOERING = {
 // wij worden jouw bureau. 399 je doet het zelf of met je bureau"). Managed
 // eerst en groot. Bedragen zoals op /tarieven (kaart 01 en 03, bij
 // jaarbetaling); de uitleg over jaar- of maandbetaling staat daar, niet hier.
-// Kop en zin: Koen, 11 okt 09:27 ("we mogen ons ook een bureau noemen") en
-// 09:31 (de inlossing in een korte zin).
+// Kop: Koen, 11 okt 09:27 ("we mogen ons ook een bureau noemen"). Zin en de
+// twee regels letterlijk zoals Koen ze gaf (11 okt 09:48 en 09:49).
 const PRIJZEN = {
   kop: 'Het laatste bureau dat je nodig hebt.',
-  zin: 'We werken vanaf de eerste dag naar onze exit.',
+  zin: 'Eerst zetten wij alles goed. Daarna bouwen we agents die het werk voor je doen.',
   hoofd: { wat: 'Wij worden jouw bureau', prijs: 'vanaf 1.399', per: 'per maand' },
-  zelf: { wat: 'Je doet het zelf of met je bureau', prijs: 'vanaf 399', per: 'per maand' },
+  zelf: { wat: 'Je doet het zelf, of we zetten agents aan het werk', prijs: 'vanaf 399', per: 'per maand' },
 }
 
 // Niet meer op de homepage (W-535, less is more); de uitleg per keuze is voor
@@ -463,8 +463,8 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
         <div className="relative mx-auto max-w-[880px]">
           {/* Prijzen: typografisch op donker zoals Uitvoering, geen kaartjes,
               geen opsomming. Managed groot, zelf doen kleiner eronder. De kop
-              en een korte zin erboven (Koen, 11 okt 09:27 en 09:31: "wel veel
-              tekst"); pay per fix en klant blijven staan op /tarieven. */}
+              en Koens zin erboven (11 okt 09:27 en 09:48); pay per fix en
+              klant blijven staan op /tarieven. */}
           <h2 className="m-0 font-display font-extrabold text-white" style={{ ...h2Stijl, maxWidth: '16ch' }}>
             {PRIJZEN.kop}
           </h2>
