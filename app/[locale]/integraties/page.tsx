@@ -159,16 +159,15 @@ export default async function IntegratiesPage({ params }: Props) {
                   if (count === 0) return null
 
                   return (
-                    <Link
+                    // W-535 snoeien: de categoriepagina's gaan met een 301 terug
+                    // naar dit overzicht, dus geen link meer; alleen naam en aantal.
+                    <div
                       key={category.slug}
-                      href={`/integraties/${category.slug}`}
-                      className="group flex items-baseline justify-between gap-3 border-b border-[#E8EDF4] pb-2 text-sm"
+                      className="flex items-baseline justify-between gap-3 border-b border-[#E8EDF4] pb-2 text-sm"
                     >
-                      <span className="font-bold text-[#1F2933] transition-colors group-hover:text-[#3C8EFF]">
-                        {categoryName(category, locale)}
-                      </span>
+                      <span className="font-bold text-[#1F2933]">{categoryName(category, locale)}</span>
                       <span className="font-mono text-xs text-[#8A94A3]">{count}</span>
-                    </Link>
+                    </div>
                   )
                 })}
               </nav>

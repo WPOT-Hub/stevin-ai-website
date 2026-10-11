@@ -740,6 +740,14 @@
   {
    "van": "/woordenboek/uplift-meting",
    "naar": "/blog/mmm-attributie-incrementality-welke-meet-wat"
+  },
+  {
+   "van": "/en/producten/ads-radar",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/producten/dynamic-optimization",
+   "naar": "/en/platform"
   }
  ]
 }

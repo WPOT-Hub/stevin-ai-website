@@ -236,12 +236,6 @@ export default async function PlatformPage({ params }: Props) {
             >
               {t.cta}
             </Link>
-            <Link
-              href="/controle"
-              className="inline-flex px-8 py-3.5 text-sm font-semibold text-white/70 border border-white/20 rounded-xl hover:bg-white/5 transition-colors"
-            >
-              {t.cta_sec}
-            </Link>
           </div>
         </div>
       </section>
