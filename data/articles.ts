@@ -113,6 +113,25 @@ const allArticles: Article[] = [
     posterTag: 'DISTRIBUTIE',
     posterTopic: "Feed management, zonder de tool.",
   },
+  {
+    // W-535 (12 okt 2026): van kort bericht (Axios, juni) herschreven tot
+    // uitlegstuk. URL ongewijzigd, want de pagina kreeg al vertoningen op
+    // "chatgpt ads". publishedAt blijft de oorspronkelijke datum.
+    slug: 'chatgpt-wordt-advertentieplatform',
+    format: 'editorial',
+    edition: '028',
+    category: 'Platform',
+    title: "Adverteren in ChatGPT: wat het kost en voor wie het werkt",
+    dek:
+      "Sinds eind augustus kun je in Nederland adverteren in ChatGPT. Wat het kost, wat de eerste cijfers zeggen en hoe je het test zonder geld te verspillen.",
+    publishedAt: '2026-06-04',
+    updatedAt: '2026-10-12',
+    readMinutes: 6,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid',
+    posterTag: 'PLATFORM',
+    posterTopic: "Adverteren in ChatGPT.",
+  },
   /* ─── DISPATCHES ─── */
   {
     slug: 'ai-agents-muse-oppenclaw-instinct',
@@ -5401,21 +5420,6 @@ const allArticles: Article[] = [
     posterTag: 'PLATFORM',
     posterTopic: "AI in Google Ads: van zoekwoorden naar systeemontwerp",
     source: { url: 'https://stevin.ai', name: 'Stevin Journal' },
-  },
-  {
-    slug: 'chatgpt-wordt-advertentieplatform',
-    format: 'dispatch' as const,
-    edition: '115',
-    category: 'Platform',
-    title: "ChatGPT wordt een advertentieplatform",
-    dek: "OpenAI bouwt advertenties in ChatGPT: een self-serve Ads Manager met CPC-bieden, budget- en locatiecontroles en conversiegerichte campagnes. De uitrol schuift richting Europa. Wat het betekent voor adverteerders en bureaus.",
-    publishedAt: '2026-06-04',
-    readMinutes: 3,
-    author: { name: 'Stevin Journal', role: 'Redactie' },
-    posterStyle: 'gradient' as const,
-    posterTag: 'PLATFORM',
-    posterTopic: "ChatGPT wordt een advertentieplatform",
-    source: { url: 'https://www.axios.com/2026/05/05/openai-self-serve-ad-platform', name: 'Axios' },
   },
   {
     slug: 'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga',

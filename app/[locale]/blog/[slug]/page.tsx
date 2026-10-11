@@ -265,7 +265,13 @@ export default async function ArticlePage({
                 color: 'rgba(255,255,255,0.55)',
               }}
             >
-              <span>{dateNL(article.publishedAt)}</span>
+              {/* W-535: een herschreven stuk toont wanneer het is bijgewerkt,
+                  anders lijkt een tekst met bronnen uit oktober uit juni. */}
+              <span>
+                {article.updatedAt && article.updatedAt !== article.publishedAt
+                  ? `BIJGEWERKT ${dateNL(article.updatedAt)}`
+                  : dateNL(article.publishedAt)}
+              </span>
               <span
                 style={{
                   width: '4px',
@@ -346,12 +352,16 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'wat-is-feed-management' && (
             <ArticleFeedManagementBody />
           )}
+          {article.format === 'editorial' && article.slug === 'chatgpt-wordt-advertentieplatform' && (
+            <ArticleChatGPTAdsBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== 'wat-is-first-party-data' &&
             article.slug !== 'crm-koppelen-aan-je-website' &&
             article.slug !== 'google-ads-conversies-meten' &&
             article.slug !== 'leadformulier-dat-echte-aanvragen-oplevert' &&
             article.slug !== 'wat-is-feed-management' &&
+            article.slug !== 'chatgpt-wordt-advertentieplatform' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
             article.slug !== 'last-click-is-een-gewoonte' &&
@@ -6395,28 +6405,6 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
-  'chatgpt-wordt-advertentieplatform': (
-    <>
-      <p className="lead-para">
-        OpenAI maakt van ChatGPT een advertentieplatform. Niet als los experiment, maar als een echt kanaal: een self-serve Ads Manager in beta, cost-per-click als biedmodel, en knoppen voor budget en locatie. Het minimumbudget van 50.000 dollar dat eerder nodig was, is vervallen, meldde Axios. Daarmee komt advertentieruimte in ChatGPT binnen bereik van iedere adverteerder, niet alleen de grootste merken.
-      </p>
-      <p>
-        De advertenties zijn conversiegericht. Ze sturen op omzet en op concrete acties, niet alleen op bereik. In de Ads Manager Beta kun je budgetten regelen en geografisch targeten, dezelfde knoppen die je van Google en Meta kent. Het verschil zit in de plek: de advertentie verschijnt in het antwoord, op het moment dat iemand een vraag stelt.
-      </p>
-      <p>
-        Voor Europa gaat het langzamer. OpenAI bereidt de uitrol naar de EU en Nederland voor, maar privacywetgeving zoals de AVG vertraagt dat tot er duidelijkheid is over compliance. OpenAI loopt op een dun koord: advertenties mogen de antwoorden niet beinvloeden en gebruikersdata wordt niet met adverteerders gedeeld. Dat vertrouwen houdt het product overeind, en tegelijk moet het snel opschalen om de dure AI-infrastructuur te betalen.
-      </p>
-      <p>
-        Waarom dit groot is: mensen zoeken hun antwoord steeds vaker in een chat in plaats van in een lijst met links. Precies daar komen nu advertenties. Er ontstaat een nieuw kanaal naast zoekadvertenties en social, in de laag die de afgelopen jaren het hardst is gegroeid. Wie adverteert, krijgt er een vindplaats bij. Wie het negeert, mist straks de plek waar de aandacht zit.
-      </p>
-      <p>
-        De lastigste vraag is niet of je meedoet, maar hoe je het meet. Een aankoop die begint bij een gesprek met ChatGPT valt vaak buiten je analytics: geen klik die je herkent, geen kanaal dat netjes in je rapportage staat. Net als bij bezoek uit AI-zoekmachines loop je het risico dat de waarde als direct of onbekend wordt geboekt. Dan werkt het kanaal wel, maar kun je er niet op sturen.
-      </p>
-      <p>
-        Ons advies is nuchter: begin nu klein met leren. Wacht niet tot het in Nederland live staat, want dan ben je laat. Zet op tijd je meting klaar zodat je straks weet wat een advertentie in ChatGPT echt oplevert. Daar bouwen we met Stevin aan: een onafhankelijke laag over je kanalen, zodat je op echte cijfers stuurt en een nieuw kanaal niet pas in de maandrapportage ontdekt.
-      </p>
-    </>
-  ),
   'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga': (
     <>
       <p className="lead-para">
@@ -8505,8 +8493,6 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
     "Voor bedrijven die nu nog losse teams hebben voor SEO en affiliate marketing, is het tijd om de samenwerking structureel aan te pakken. Begin met het delen van data tussen beide afdelingen en definieer gezamenlijke KPI’s zoals ‘kosten per acquisitie’ of ‘zichtbaarheid in LLM’s’. Dit voorkomt dat teams elkaars inspanningen ondermijnen en creeert ruimte voor innovatie in hoe het merk online wordt gevonden.",
   'ai-aangedreven-google-ads-verandert-ppc-rol':
     "Deze ontwikkeling onderstreept dat automatisering in marketing niet louter een efficiencykwestie is, maar een fundamentele verandering in hoe we waarde creeren. Voor ondernemers betekent dit dat ze moeten investeren in kennis over systeemdenken en data-infrastructuur. Wie nu alleen nog maar campagnes beheert zonder zicht op het grotere plaatje, loopt het risico achterop te raken als concurrenten hun processen al hebben geoptimaliseerd voor deze nieuwe realiteit.",
-  'chatgpt-wordt-advertentieplatform':
-    "Het kanaal komt eraan, de vraag is niet of je meedoet maar hoe je het meet. Een aankoop die bij een ChatGPT-gesprek begint, valt nu buiten de meeste analytics. Wie vooroploopt, zet de meting nu klaar in plaats van te wachten tot het in Nederland live staat.",
   'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga':
     "Voor ondernemers die met digitale activa werken, toont deze uitspraak hoe belangrijk het is om investeringen strikt gescheiden te houden tussen prive en zakelijk. Zelfs als betalingen via bedrijfsrekeningen lopen, kan een fiscale autoriteit concluderen dat sprake is van een priverekening als er geen duidelijke zakelijke motivering of administratie is. Dit benadrukt het belang van heldere contractuele afspraken en bewijsvoering bij complexe financiele transacties.",
   'nieuwe-ecommerce-tools-juni-2026':
@@ -10865,6 +10851,176 @@ function ArticleFeedManagementBody() {
           {
             pct: '01',
             text: <>Kijk eerst hoeveel van je producten op dit moment zijn afgekeurd, en pas daarna naar tools. Afgekeurde producten kosten je omzet zonder dat er iets kapot lijkt, en dat is precies waarom het zo lang blijft staan.</>,
+          },
+        ]}
+      />
+
+      <EndRule />
+    </>
+  )
+}
+
+/** Externe bronlink in de lopende tekst: opent in een nieuw venster. */
+function Ext({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      {children}
+    </a>
+  )
+}
+
+/** W-535 (12 okt 2026): uitlegstuk over adverteren in ChatGPT. Elk blok begint
+ *  met een antwoord dat op zichzelf staat (ook gebruikt als FAQ in
+ *  data/article-faqs.json, dus samen wijzigen), daarna de uitleg. Bronnen en
+ *  datums staan in de tekst; de bronnenlijst met wat wel en niet zelf is gelezen
+ *  staat in de PR. */
+function ArticleChatGPTAdsBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Sinds eind augustus kun je als Nederlands bedrijf adverteren in ChatGPT. Het wordt gebracht als de volgende grote stap na Google, maar de eerste cijfers zijn nuchterder. Per klik levert het voorlopig minder op dan Google Search, de meting is nog niet op orde, en onafhankelijke cijfers voor Nederland zijn er niet.
+      </p>
+
+      <H2 num="01">Wat is adverteren in ChatGPT?</H2>
+
+      <p>
+        <b>Adverteren in ChatGPT betekent dat je betaalt om onder een antwoord van ChatGPT te verschijnen, met het label gesponsord. Welke advertentie verschijnt, hangt af van waar het gesprek over gaat, niet van een zoekwoord dat je inkoopt. Je zet het op in de Ads Manager van OpenAI en betaalt per klik of per duizend vertoningen.</b>
+      </p>
+
+      <p>
+        Volgens de{' '}
+        <Ext href="https://help.openai.com/en/articles/20001047-ads-in-chatgpt">uitleg van OpenAI</Ext> (gelezen op 12 oktober 2026) zie je advertenties alleen in de gratis versie en in Go, het goedkoopste abonnement. Niet in Plus, Pro, Business, Enterprise of Edu, niet bij mensen onder de 18, en niet bij gesprekken over gezondheid of politiek. In Europa zijn ze niet gepersonaliseerd: alleen het gesprek van dat moment telt, en eigen doelgroepen raadt OpenAI hier voorlopig af.
+      </p>
+
+      <p>
+        OpenAI zegt dat advertenties de antwoorden niet beinvloeden en dat je mensen bereikt op het moment dat ze een keuze maken. Dat kan kloppen, maar het is de verkoper die het zegt. Behandel het als een belofte die je zelf nameet.
+      </p>
+
+      <H2 num="02">Kan het in Nederland, en sinds wanneer?</H2>
+
+      <p>
+        <b>Ja. OpenAI kondigde op 18 augustus 2026 aan dat advertenties naar 31 Europese landen komen, waaronder Nederland. Eerst kon dat alleen via OpenAI zelf en partnerbureaus. Sinds 31 augustus open je zelf een account in Ads Manager. Voorwaarde: het bedrijf dat adverteert en betaalt, zit in een land waar het open is.</b>
+      </p>
+
+      <p>
+        Dat staat in de{' '}
+        <Ext href="https://openai.com/nl-NL/index/chatgpt-ads-expands-across-europe/">aankondiging van OpenAI</Ext> en in de{' '}
+        <Ext href="https://help.openai.com/en/articles/20001245-ads-manager-availability">lijst per land</Ext>, waar Nederland op 12 oktober 2026 als beschikbaar stond. Het kanaal is hier dus net open. Eind augustus waren de{' '}
+        <Ext href="https://www.adformatie.nl/tech/artificial-intelligence/eerste-nederlandse-adverteerders-in-chatgpt-zichtbaar">eerste Nederlandse adverteerders</Ext> zichtbaar (Adformatie, 28 augustus), en ABN Amro adverteert sinds 21 september.
+      </p>
+
+      <H2 num="03">Wat kost adverteren in ChatGPT?</H2>
+
+      <p>
+        <b>Er is geen vaste prijs, je biedt in een veiling. Je betaalt per klik (CPC) of per duizend vertoningen (CPM), ook als je op conversies stuurt, nooit per klant. Het minimum is 15 euro per dag. Een Nederlands partnerbureau noemt 2 tot 3 euro per klik, adverteerders in Engelstalige markten betalen meestal 4 tot 10 dollar.</b>
+      </p>
+
+      <p>
+        Het minimum staat in de{' '}
+        <Ext href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">uitleg over campagnes</Ext> (gelezen op 12 oktober 2026). Een dagbudget is een gemiddelde over de week: op een losse dag kan het oplopen tot het dubbele. Reken het door voor je begint. Zes weken op het minimum is ruim 600 euro, een jaar bijna 5.500 euro.
+      </p>
+
+      <p>
+        Voor de klikprijs zijn er alleen ervaringen van adverteerders.{' '}
+        <Ext href="https://www.searchenginejournal.com/6-months-into-chatgpt-ads-advertisers-still-dont-know-what-good-looks-like/587583/">Search Engine Journal</Ext> zette ze op 8 september op een rij: in Engelstalige markten meestal 4 tot 10 dollar per klik, met uitschieters boven de 20, en wie per duizend vertoningen kocht, betaalde meer dan 60 dollar. OpenAI zegt zelf nog geen benchmarks te hebben. Omnicom, partnerbureau van OpenAI, noemde in{' '}
+        <Ext href="https://www.emerce.nl/nieuws/chatgpt-ads-start-nederland">Emerce</Ext> (21 augustus) 2 tot 3 euro per klik.
+      </p>
+
+      <H2 num="04">Werkt het? Wat de eerste cijfers zeggen</H2>
+
+      <p>
+        <b>Per klik levert ChatGPT voorlopig minder op dan Google Search: minder mensen klikken, en minder klikken worden een aanvraag. Omdat een klik vaak goedkoper is, komen de kosten per lead soms in de buurt van Google. Of die leads even vaak klant worden, weet nog niemand. Onafhankelijke cijfers voor Nederland zijn er niet.</b>
+      </p>
+
+      <ul>
+        <li>
+          <b>Doorklik.</b> In Engelstalige markten leidt 0,6 tot 0,75 procent van de antwoorden met een advertentie tot een klik (panel van Similarweb, geanalyseerd door het bureau Graphite, via{' '}
+          <Ext href="https://ppc.land/chatgpt-ad-click-rate-gains-112-worldwide-similarweb-and-graphite-find/">PPC Land</Ext>, 28 september). Similarweb verkoopt zelf het instrument waar die cijfers uit komen. Voor zoekadvertenties in Google wordt vaak rond de 6 procent genoemd, maar dat is anders gemeten.
+        </li>
+        <li>
+          <b>Aanvragen.</b> Het bureau Stub Group vergeleek dertig dagen voor een zakelijke klant (
+          <Ext href="https://stubgroup.com/case-study/chatgpt-ads-case-study/">case</Ext>, bijgewerkt 1 oktober). In ChatGPT werd 0,8 procent van de klikken een aanvraag, in Google 6,64 procent. Een klik was in ChatGPT veel goedkoper, dus een lead ook: 92 tegen 158 dollar. Maar de leads uit Google werden duidelijk vaker klant. Het gaat om een klant van het bureau over een maand, en de verkoopcyclus was nog niet rond.
+        </li>
+        <li>
+          <b>Kosten per resultaat.</b> Omnicom zag gemiddeld kosten per conversie die vergelijkbaar waren met zoekadvertenties zonder merknaam, per adverteerder van de helft tot het dubbele (Emerce, 21 augustus).
+        </li>
+        <li>
+          <b>Nederland.</b> ABN Amro noemt de doorklik{' '}
+          <Ext href="https://www.adformatie.nl/tech/artificial-intelligence/abn-amro-reclames-in-chatgpt-doorklik-beter-dan-verwacht">beter dan verwacht</Ext>, zonder cijfers (Adformatie, 7 oktober).
+        </li>
+      </ul>
+
+      <p>
+        En de meting zelf rammelt. Een bureau zag in Ads Manager 57 kliks, terwijl Google Analytics minder dan 20 bezoeken telde (
+        <Ext href="https://www.adformatie.nl/tech/artificial-intelligence/chatgpt-advertenties-presteren-ondermaats-in-eerste-tests">Adformatie</Ext>, 7 september). Zolang zo&apos;n verschil bestaat, weet je niet welk cijfer klopt, tenzij je zelf meet tot in je CRM.
+      </p>
+
+      <p>
+        Lees deze cijfers als vroege ervaringen van een handvol adverteerders, vaak gedeeld door partijen die er iets aan verdienen. Een startpunt voor je eigen test, geen norm.
+      </p>
+
+      <H2 num="05">Voor wie het (nog) niet is</H2>
+
+      <p>
+        <b>Voor de meeste lokale bedrijven is het nog niet het moment. Zoeken jouw klanten naar een loodgieter, een fysiotherapeut of een dakdekker in de buurt, dan doen ze dat in Google, en daar zit de vraag van mensen die nu willen kopen. Zolang je daar nog winstgevend kunt groeien, verdient Google Search je eerste euro.</b>
+      </p>
+
+      <p>
+        Ook niet als je meting nog niet klopt. Weet je nu niet hoeveel aanvragen uit Google vorige maand klant werden, dan weet je dat straks voor ChatGPT ook niet. Begin dan bij{' '}
+        <Link href="/blog/google-ads-conversies-meten">je conversiemeting</Link>. En niet als je het budget uit een werkende Google-campagne moet halen: dan ruil je iets wat bewezen werkt in voor iets wat dat nog moet bewijzen.
+      </p>
+
+      <p>
+        Een test waard kan het zijn bij een aankoop waar mensen eerst opties vergelijken en vragen stellen, zoals software, een dienst voor bedrijven of een duurdere aanschaf.
+      </p>
+
+      <H2 num="06">Hoe je het test zonder geld te verspillen</H2>
+
+      <p>
+        <b>Zet eerst je meting klaar, tot opdracht en omzet, en start pas daarna een campagne. Geef ChatGPT een eigen budget, schrijf vooraf op wanneer de test geslaagd is, en oordeel pas na een volledige aankoopcyclus. Vergelijk dan wat een klant via ChatGPT kostte met wat een klant via Google Search kost. Klanten, geen klikken.</b>
+      </p>
+
+      <ol>
+        <li>
+          <b>Tel de aanvraag op de goede plek.</b> Zet de pixel van OpenAI op je site en tel een aanvraag pas op de bedankpagina, niet bij een klik op een knop. Geef je advertentielinks eigen UTM-parameters, zodat je dit bezoek in Google Analytics apart ziet.
+        </li>
+        <li>
+          <b>Bewaar de klik-ID.</b> OpenAI geeft elke klik een eigen code mee, de oppref. Zorg dat die een omleiding overleeft en bij de aanvraag in je CRM terechtkomt, anders weet je achteraf niet welke klant uit ChatGPT kwam.
+        </li>
+        <li>
+          <b>Stuur de uitkomst terug.</b> Via de{' '}
+          <Ext href="https://developers.openai.com/ads/conversions-api">Conversions API</Ext> geef je door dat een aanvraag een opdracht werd, met het bedrag. Doe dat snel: gebeurtenissen van meer dan zeven dagen geleden neemt de koppeling niet aan.
+        </li>
+        <li>
+          <b>Apart budget, vaste beslisdatum.</b> Schrijf vooraf op wat een klant via ChatGPT mag kosten en wanneer je beslist.
+        </li>
+        <li>
+          <b>Wacht een volledige aankoopcyclus af.</b> Duurt het bij jou zes weken van aanvraag tot opdracht, dan zegt de eerste week niets.
+        </li>
+        <li>
+          <b>Vergelijk met je Google-geld.</b> Zet de kosten per klant uit beide kanalen naast elkaar, uit je eigen CRM. Niet uit de rapporten van de platforms, want die tellen elk op hun eigen manier en verdienen allebei aan je budget.
+        </li>
+      </ol>
+
+      <H2 num="07">Wat Stevin.AI doet</H2>
+
+      <p>
+        <b>Voor klanten zetten we ChatGPT Ads op als test naast Google Search, niet in plaats ervan. Met dezelfde meting tot opdracht en omzet die we voor Google bouwen, een eigen budget en een meetlat die we vooraf vastleggen. Levert het klanten op tegen een prijs die klopt, dan schalen we op. Zo niet, dan stoppen we, en weet je waarom.</b>
+      </p>
+
+      <p>
+        Wil je weten of het voor jouw bedrijf een test waard is?{' '}
+        <Link href="/kennismaking">Plan een kennismaking</Link>, of kijk eerst{' '}
+        <Link href="/tarieven">wat het kost</Link>.
+      </p>
+
+      <Takeaways
+        label="DE KERN"
+        title="Wat je hiervan onthoudt"
+        items={[
+          {
+            pct: '01',
+            text: <>Test adverteren in ChatGPT pas als je meting tot omzet klopt, met een eigen budget naast Google Search, en oordeel op wat een klant kost, niet op klikken.</>,
           },
         ]}
       />

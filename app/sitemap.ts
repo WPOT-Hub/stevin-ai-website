@@ -74,7 +74,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Body-loze dispatches niet in de sitemap (thin content, Google-richtlijn).
   const blogEntries: MetadataRoute.Sitemap = articles.filter(isPublishableArticle).map((a) => ({
     url: `${baseUrl}/blog/${a.slug}`,
-    lastModified: a.publishedAt,
+    // W-535: een herschreven stuk meldt zijn bijwerkdatum, net als dateModified in de JSON-LD.
+    lastModified: a.updatedAt ?? a.publishedAt,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
     alternates: { languages: { 'nl-NL': `${baseUrl}/blog/${a.slug}`, 'x-default': `${baseUrl}/blog/${a.slug}` } },
