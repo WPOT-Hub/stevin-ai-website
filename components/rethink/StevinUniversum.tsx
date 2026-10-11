@@ -98,7 +98,7 @@ const raakt = (a: Vak, b: Vak) =>
   a.l < b.r + TUSSEN && a.r + TUSSEN > b.l && a.t < b.b + TUSSEN && a.b + TUSSEN > b.t
 
 const SATELLIETEN: Partial<Record<BronId, string[]>> = {
-  google_ads: ['Zoeken', 'YouTube', 'Kosten'],
+  google_ads: ['Search', 'YouTube', 'Kosten'],
   meta: ['Facebook', 'Instagram'],
   chatgpt_ads: ['Gesprekken', 'Kosten'],
   website: ['Formulieren', 'Bezoek', "Landingspagina's"],
@@ -218,7 +218,7 @@ export const HERINNERINGEN: Herinnering[] = [
   { kort: 'Hittegolf volgende week', soort: 'Context', uitleg: 'Vanaf dinsdag wordt het boven de 30 graden.', actie: 'Budget naar airco, warmtepomp even lager.' },
   { kort: 'Warmtepomp najaar', soort: 'Resultaat', wanneer: 'sep 2026', uitleg: 'Van aanvraag tot offerte duurt gemiddeld negen dagen. Het doel is vijf.' },
   { kort: 'Terugbelafspraak', soort: 'Afspraak', wanneer: 'sinds jan 2026', uitleg: 'Elke aanvraag wordt binnen een werkdag teruggebeld. Wie belt, zet het in het CRM.' },
-  { kort: 'Kermis in Prinsenbeek', soort: 'Context', uitleg: 'Vier dagen kermis, het hele dorp is op de been.', actie: 'Lokaal adverteren rond het weekend.' },
+  { kort: 'Kermis in Prinsenbeek', soort: 'Context', uitleg: 'Vier dagen kermis, het hele dorp is op de been.', actie: 'Meta rond Prinsenbeek dat weekend lager: veel klikken, weinig aanvragen.' },
   { kort: 'Opvolging september', soort: 'Resultaat', wanneer: 'sep 2026', uitleg: 'Twee aanvragen zonder opvolging. Een van die twee koos later voor een ander bedrijf.' },
   { kort: 'Doel 2026', soort: 'Doel', wanneer: '2026', uitleg: 'Dertig procent meer zakelijke klanten, vooral VvE\'s en kantoren in de eigen regio.' },
   { kort: 'Subsidieronde Breda open', soort: 'Context', uitleg: 'De gemeente opent een nieuwe ronde voor verduurzaming van woningen.', actie: 'Advertentieteksten aanpassen op de subsidie.' },
