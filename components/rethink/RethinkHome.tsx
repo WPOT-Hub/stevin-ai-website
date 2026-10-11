@@ -35,7 +35,7 @@ const HERO_DEMO = {
 
 const h2 = 'font-display font-extrabold text-primary m-0'
 const h2Stijl = { fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08' } as const
-const eyebrow = 'text-[#1D63D8] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4'
+const eyebrow = 'text-accent-diep text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4'
 const tekst = 'text-[18px] leading-[1.6] text-[#2A3A54]'
 
 // Echte kleurlogo's (Koen, 10 okt 23:32). Herkomst en controle:
@@ -91,13 +91,21 @@ const ADVIEZEN = [
   'Verander nog niets. De cijfers zijn niet betrouwbaar genoeg.',
 ]
 
-const UITVOERING = [
-  'We zoeken uit waar de aanvragen blijven liggen.',
-  'We richten de opvolging in.',
-  'We koppelen de systemen die nodig zijn.',
-  'We helpen je team met de nieuwe werkwijze.',
-  'We kijken na of het beter gaat, en of dat zo blijft.',
-]
+// Van signaal via advies naar uitvoering, met een hittegolf als voorbeeld
+// (Koen, 11 okt). Stevin ziet een hittegolf nog niet zelf: daarom staat de
+// vaststelling als Voorbeeld gemarkeerd, en staat nergens dat Stevin het weer
+// volgt.
+const UITVOERING = {
+  vaststelling: "Het is een hittegolf en je budget voor airco is 's middags al op.",
+  stappen: [
+    'We kijken eerst wat een aanvraag nu kost.',
+    'Als het loont, adviseren we tijdelijk meer budget.',
+    'Pas als jij ja zegt, gaat je budget omhoog.',
+    'We spreken af wie de telefoon opneemt.',
+    'Na een week tellen we de extra aanvragen.',
+  ],
+  doel: 'Meer aanvragen, zonder dat ze duurder worden.',
+}
 
 // Niet meer op de homepage (W-535, less is more); de uitleg per keuze is voor
 // de pagina Samenwerken.
@@ -173,7 +181,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
               We verbinden wat je al gebruikt.
             </h2>
             <p className={`${tekst} m-0`}>
-              Je hoeft niets te vervangen. Een deel koppelen we meteen, de rest bouwen we erbij.
+              Je hoeft niets te vervangen. Een deel koppelen we meteen, de rest richten we samen in.
             </p>
           </div>
         </div>
@@ -333,20 +341,21 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
 
       {/* ── 7. VAN ADVIES NAAR UITVOERING ── */}
       {/* Scrollverhaal: bij elk stuk scrollen komt er een stap bij (Koen, 11 okt). */}
+      {/* Wie het werk doet staat onder de stappen, niet in een eigen witte
+          band: die oogde als een zesde blok (11 okt). In C volgt Kennismaken,
+          ook donker; een haarlijn houdt de twee blokken uit elkaar. */}
       <section className="bg-primary px-6 text-white" aria-label="Uitvoering">
-        <div className="mx-auto max-w-[1200px]">
+        <div className={`mx-auto max-w-[1200px] pb-20 lg:pb-24 ${richting === 'c' ? 'border-b border-white/10' : ''}`}>
           <ScrollStappen
             eyebrow="Uitvoering"
             kop="Het blijft niet bij een advies."
-            vaststelling="We zien dat aanvragen te laat worden opgevolgd."
-            stappen={UITVOERING}
-            doel="Elke aanvraag binnen een werkdag opgevolgd."
+            vaststelling={UITVOERING.vaststelling}
+            stappen={UITVOERING.stappen}
+            doel={UITVOERING.doel}
           />
-        </div>
-      </section>
-      <section className="bg-white" style={{ padding: '24px 24px 112px' }}>
-        <div className="mx-auto max-w-[1200px]">
-          <p className={`${tekst} m-0 max-w-[640px]`}>Je kiest wie het werk doet: wij, je eigen team of je bureau.</p>
+          <p className="m-0 max-w-[640px] text-[18px] leading-[1.6] text-white/75">
+            Je kiest wie het werk doet: wij, je eigen team of je bureau.
+          </p>
         </div>
       </section>
 
@@ -417,7 +426,9 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
           <p className="mx-auto mt-5 max-w-[620px] text-[18px] leading-[1.6] text-white/75">
             We kijken samen naar je cijfers, en je hoort eerlijk of we iets voor je kunnen doen.
           </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-4">
+          {/* De zin over twee weken hoort bij de diagnose, niet bij de
+              kennismaking: hij staat direct onder die knop (11 okt). */}
+          <div className="mt-9 flex flex-wrap items-start justify-center gap-4">
             <Link
               href="/kennismaking"
               data-cta="kennismaking"
@@ -426,15 +437,20 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             >
               Plan een kennismaking
             </Link>
-            <Link
-              href="/contact"
-              data-cta="diagnose"
-              className="inline-flex items-center rounded-lg border border-white/25 px-7 py-3.5 font-display text-[15px] font-bold text-white transition-colors hover:border-white/60"
-            >
-              Liever eerst een diagnose
-            </Link>
+            <div className="flex max-w-[260px] flex-col items-center">
+              <Link
+                href="/contact"
+                data-cta="diagnose"
+                aria-describedby="diagnose-uitleg"
+                className="inline-flex items-center rounded-lg border border-white/25 px-7 py-3.5 font-display text-[15px] font-bold text-white transition-colors hover:border-white/60"
+              >
+                Liever eerst een diagnose
+              </Link>
+              <p id="diagnose-uitleg" className="m-0 mt-2.5 text-balance text-[13.5px] leading-snug text-white/60">
+                Binnen twee weken weet je wat klopt en wat niet.
+              </p>
+            </div>
           </div>
-          <p className="mt-5 text-[13.5px] text-white/60">Binnen twee weken weet je wat klopt en wat niet.</p>
         </div>
       </section>
       <KennismakingVenster />

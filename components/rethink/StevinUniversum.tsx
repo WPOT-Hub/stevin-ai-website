@@ -22,7 +22,9 @@ import { BRONNEN, BREIN, ADVISOR } from './netwerk'
  * Onder prefers-reduced-motion, of met data-beweging="uit" op html (de knop
  * Beweging uit), draait er niets en staat er een stil beeld.
  * Toegankelijkheid: de SVG is decoratie (aria-hidden); de bediening staat in
- * gewone knoppen die de ouder tekent.
+ * gewone knoppen die de ouder tekent, ook voor de herinneringen (prop
+ * herinnering, een index in HERINNERINGEN). Het kaartje bij een aangetikte
+ * node is een statusregel, geen dialoog.
  */
 
 export type UniversumFase = 'rust' | 'bronnen' | 'brein' | 'signaal' | 'advies'
@@ -43,6 +45,9 @@ interface Props {
   onKiesHub?: (id: HubId) => void
   /** Kaartje dicht (lege tik, Esc of sluitknop): de ouder zet zijn focus terug. */
   onSluit?: () => void
+  /** Herinnering die de ouder via een knop koos (index in HERINNERINGEN): die
+   * licht op met zijn label, en het brein draait zolang niet door. */
+  herinnering?: number | null
 }
 
 const SATELLIETEN: Partial<Record<BronId, string[]>> = {
@@ -67,14 +72,14 @@ const SATELLIETEN: Partial<Record<BronId, string[]>> = {
 // spreekt de bezoeker aan, anders leest hij het als iets over zijn eigen bedrijf.
 // Kort label in beeld, de rest op een kaartje als je erop klikt (Koen, 11 okt
 // 01:07: "dit is te lang, zoals de eerdere nodes moet je erop kunnen klikken").
-interface Herinnering {
+export interface Herinnering {
   kort: string
   soort: 'Campagne' | 'Resultaat' | 'Afspraak' | 'Kennis' | 'Doel' | 'Marktsignaal'
   wanneer: string
   uitleg: string
   bijVraag?: boolean
 }
-const HERINNERINGEN: Herinnering[] = [
+export const HERINNERINGEN: Herinnering[] = [
   { kort: 'Airco zomer 2026', soort: 'Campagne', wanneer: 'jun tot aug 2026', uitleg: '41 aanvragen in zes weken, vooral via Google. Elf werden een offerte, zes een klant.' },
   { kort: 'Warmtepomp najaar', soort: 'Resultaat', wanneer: 'sep 2026', uitleg: 'Van aanvraag tot offerte duurt gemiddeld negen dagen. Het doel is vijf.' },
   { kort: 'Terugbelafspraak', soort: 'Afspraak', wanneer: 'sinds jan 2026', uitleg: 'Elke aanvraag wordt binnen een werkdag teruggebeld. Wie belt, zet het in het CRM.', bijVraag: true },
@@ -90,7 +95,7 @@ const HERINNERINGEN: Herinnering[] = [
   { kort: 'Wie belt terug', soort: 'Afspraak', wanneer: 'sinds mrt 2026', uitleg: 'Ruud belt terug wie heeft gebeld, Sanne pakt de aanvragen via de website op.', bijVraag: true },
   { kort: 'Goede klant', soort: 'Kennis', wanneer: '2026', uitleg: 'Eigen woning, budget boven 8.000 euro, binnen 40 kilometer.' },
   { kort: 'Pagina warmtepomp', soort: 'Kennis', wanneer: 'jun 2026', uitleg: 'In juni vernieuwd. Sindsdien vult een groter deel van de bezoekers het formulier in.' },
-  { kort: 'Zoeken via Google', soort: 'Kennis', wanneer: 'laatste 12 maanden', uitleg: 'Wie via Google kwam, zocht meestal op warmtepomp met de eigen regio erbij.' },
+  { kort: 'Zoeken via Google', soort: 'Kennis', wanneer: 'laatste 12 maanden', uitleg: 'Wie via Google kwam, zocht meestal op warmtepomp met een plaatsnaam erbij.' },
 ]
 
 interface Knoop {
@@ -241,6 +246,7 @@ export default function StevinUniversum({
   className = '',
   onKiesHub,
   onSluit,
+  herinnering = null,
 }: Props) {
   const { knopen, lijnen } = useMemo(bouwKnopen, [])
   const wrapRef = useRef<HTMLDivElement>(null)
@@ -273,8 +279,8 @@ export default function StevinUniversum({
 
   // Camera en invoer leven in een ref: de lus mag React niet laten hertekenen.
   const cam = useRef({ yaw: -0.5, pitch: 0.18, vx: 0, vy: 0, doelYaw: null as number | null, doelPitch: null as number | null })
-  const stand = useRef({ fase, actieveBronnen, focus })
-  stand.current = { fase, actieveBronnen, focus }
+  const stand = useRef({ fase, actieveBronnen, focus, herinnering })
+  stand.current = { fase, actieveBronnen, focus, herinnering }
 
   // Camera draait naar de gekozen node.
   useEffect(() => {
@@ -309,7 +315,7 @@ export default function StevinUniversum({
   const teken = useCallback(
     (tijd: number) => {
       const { yaw, pitch } = cam.current
-      const { fase: f, actieveBronnen: actief, focus: fc } = stand.current
+      const { fase: f, actieveBronnen: actief, focus: fc, herinnering: hr } = stand.current
       const bezig = f !== 'rust'
       const cx = maat.w * middenX
       const cy = maat.h * middenY
@@ -334,11 +340,13 @@ export default function StevinUniversum({
       // Om de 3,2 seconden licht een herinnering op, in rust.
       // In de brein-stand twee tegelijk, anders een.
       const stap = Math.floor(tijd / 3200) % HERINNERINGEN.length
-      const uitgelicht = !bezig && (fc == null || fc === 'brein') ? stap : -1
+      // Is er via de knoppen een herinnering gekozen, dan licht alleen die op.
+      const uitgelicht = !bezig && hr == null && (fc == null || fc === 'brein') ? stap : -1
       const uitgelicht2 = !bezig && fc === 'brein' ? (stap + 8) % HERINNERINGEN.length : -1
       const gk = gekozenRef.current
       const isAan = (n: Knoop) =>
         (gk != null && knopen[gk] === n) ||
+        (hr != null && n.soort === 'geheugen' && n.herinnering === hr) ||
         (n.soort === 'geheugen' &&
           n.herinnering != null &&
           ((breinFase && HERINNERINGEN[n.herinnering].bijVraag) ||
@@ -574,7 +582,7 @@ export default function StevinUniversum({
         const naar = 1 - Math.pow(0.95, f)
         c.yaw += d * naar
         c.pitch += ((c.doelPitch ?? 0.18) - c.pitch) * naar
-      } else if (gekozenRef.current == null) {
+      } else if (gekozenRef.current == null && stand.current.herinnering == null) {
         c.yaw += 0.00011 * dt
         c.pitch += (0.18 - c.pitch) * (1 - Math.pow(0.99, f))
       }
@@ -625,7 +633,7 @@ export default function StevinUniversum({
   // Ook bij een gekozen knoop, anders verschijnt het kaartje niet.
   useEffect(() => {
     teken(performance.now())
-  }, [fase, actieveBronnen, focus, gekozen, teken])
+  }, [fase, actieveBronnen, focus, gekozen, herinnering, teken])
 
   // Speelt de vraag af, dan gaat een open kaartje dicht.
   useEffect(() => {
@@ -811,13 +819,12 @@ export default function StevinUniversum({
         </g>
       </svg>
 
-      {/* Het kaartje bij een aangeklikte node */}
+      {/* Het kaartje bij een aangeklikte node: een statusregel (leest voor
+          wat er verschijnt), geen dialoog, want de focus gaat er niet heen. */}
       <div
         ref={kaartRef}
         data-kaart
-        role="dialog"
-        aria-live="polite"
-        aria-label={kaartInhoud?.titel}
+        role="status"
         className="su-kaart pointer-events-auto absolute left-0 top-0 w-[260px] rounded-2xl border border-white/15 bg-[#0F1F38]/95 p-4 text-left shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur"
         style={{ opacity: 0, visibility: kaartInhoud ? 'visible' : 'hidden' }}
       >

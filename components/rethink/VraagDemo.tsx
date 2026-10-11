@@ -170,7 +170,7 @@ export default function VraagDemo({
               className={[
                 'rounded-full border px-4 py-2 text-[14.5px] font-medium transition-colors',
                 vraag?.id === v.id
-                  ? 'border-[#1D63D8] bg-[#1D63D8] text-white'
+                  ? 'border-accent-diep bg-accent-diep text-white'
                   : donker
                     ? 'border-white/20 text-white hover:border-accent-light'
                     : 'border-border bg-surface text-primary hover:border-accent',
@@ -265,7 +265,7 @@ function Kaart({
             : 'border-border bg-surface',
       ].join(' ')}
     >
-      <p className={`m-0 mb-2 text-[12px] font-bold uppercase tracking-[0.1em] ${accent ? 'text-[#1D63D8]' : donker ? 'text-white/55' : 'text-muted'}`}>
+      <p className={`m-0 mb-2 text-[12px] font-bold uppercase tracking-[0.1em] ${accent ? 'text-accent-diep' : donker ? 'text-white/55' : 'text-muted'}`}>
         {kop}
       </p>
       <div className={`text-[15px] leading-[1.55] ${donker ? 'text-white/85' : 'text-primary'}`}>{children}</div>
@@ -323,9 +323,9 @@ function AntwoordWeek({
                   aria-pressed={u === waarde}
                   className={`rounded-full px-3 py-1.5 text-[13px] font-semibold transition-colors ${
                     u === waarde
-                      ? 'bg-[#1D63D8] text-white'
+                      ? 'bg-accent-diep text-white'
                       : hoofd
-                        ? 'border border-[#1D63D8] text-[#1D63D8] hover:bg-[#1D63D8] hover:text-white'
+                        ? 'border border-accent-diep text-accent-diep hover:bg-accent-diep hover:text-white'
                         : donker
                           ? 'border border-white/25 text-white/85'
                           : 'border border-border text-primary hover:border-primary'

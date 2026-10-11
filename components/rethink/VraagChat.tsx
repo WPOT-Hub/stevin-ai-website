@@ -52,7 +52,7 @@ function push(event: string, data: Record<string, unknown> = {}) {
 
 function Label({ children, accent = false }: { children: React.ReactNode; accent?: boolean }) {
   return (
-    <p className={`m-0 mb-2 text-[10.5px] font-semibold uppercase tracking-[2px] ${accent ? 'text-[#1D63D8]' : 'text-[#6b7280]'}`}>
+    <p className={`m-0 mb-2 text-[10.5px] font-semibold uppercase tracking-[2px] ${accent ? 'text-accent-diep' : 'text-[#6b7280]'}`}>
       {children}
     </p>
   )
@@ -159,7 +159,7 @@ export default function VraagChat() {
 
       {/* Invoer zoals in de Desk */}
       <div className="flex items-center gap-2 rounded-[10px] border bg-[#f7f8fa] p-1.5" style={{ borderColor: RAND }}>
-        <span className="grid h-7 w-7 shrink-0 place-items-center rounded-md bg-[#3c8eff]/10 text-[#1D63D8]">
+        <span className="grid h-7 w-7 shrink-0 place-items-center rounded-md bg-[#3c8eff]/10 text-accent-diep">
           <Search size={15} aria-hidden="true" />
         </span>
         <span className="min-h-[22px] flex-1 truncate text-[14.5px] text-[#1f2933]">
@@ -170,7 +170,7 @@ export default function VraagChat() {
           type="button"
           onClick={() => start('klik')}
           disabled={stap > 0 && stap < 4}
-          className="inline-flex items-center gap-1.5 rounded-md bg-[#1D63D8] px-3 py-1.5 text-[12px] font-medium text-white transition-opacity disabled:opacity-60"
+          className="inline-flex items-center gap-1.5 rounded-md bg-accent-diep px-3 py-1.5 text-[12px] font-medium text-white transition-opacity disabled:opacity-60"
         >
           {stap === 4 ? 'Vraag opnieuw' : 'Vraag'} <CornerDownLeft size={12} aria-hidden="true" />
         </button>
@@ -225,7 +225,7 @@ export default function VraagChat() {
                         type="button"
                         onClick={() => kies(a.id, w)}
                         aria-pressed={u === w}
-                        className={`px-3 py-1 font-medium transition-colors ${u === w ? 'bg-[#1D63D8] text-white' : 'text-[#1f2933] hover:bg-[#f7f8fa]'}`}
+                        className={`px-3 py-1 font-medium transition-colors ${u === w ? 'bg-accent-diep text-white' : 'text-[#1f2933] hover:bg-[#f7f8fa]'}`}
                         style={{ borderLeft: i ? `1px solid ${RAND}` : undefined }}
                       >
                         {l}

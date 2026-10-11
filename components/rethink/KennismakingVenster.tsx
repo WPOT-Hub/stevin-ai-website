@@ -16,9 +16,11 @@ import { getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/
  *
  * Dit is de voorkant. De koppeling met de agenda komt via
  * NEXT_PUBLIC_KENNISMAKING_API (GET /beschikbaarheid, POST /boek). Zolang die
- * er niet is, toont het venster een duidelijk gemarkeerde voorbeeldagenda en
- * kan er niet geboekt worden; het tabblad "Laat je gegevens achter" werkt wel,
- * via het bestaande Hub-endpoint.
+ * er niet is, toont het venster een duidelijk gemarkeerde voorbeeldagenda.
+ * Kies je daarin een moment, dan gaat dat als aanvraag naar het bestaande
+ * Hub-endpoint (zelfde weg als "Laat je gegevens achter"), met het moment in
+ * het bericht, en bevestigen we het zelf per mail. Zo gaan ingevulde gegevens
+ * nooit verloren (11 okt).
  *
  * Openen: elk element met data-open-kennismaking op de pagina.
  *
@@ -46,8 +48,9 @@ declare global {
 
 // Een token is maar een keer geldig: de ouder reset het widget na elke
 // verzending via widgetRef, en een nieuw widget erft nooit een oud token.
-// Het script laadt pas als iemand het formulier gebruikt (eerste focus), niet
-// al bij het openen van het venster.
+// Het script laadt zodra het formulier verschijnt, niet al bij het openen van
+// het venster. Eerder pas bij de eerste focus: wie met automatisch invullen
+// meteen verstuurde, kreeg een melding over een vinkje dat er nog niet was.
 function Turnstile({ onToken, widgetRef }: { onToken: (t: string) => void; widgetRef: React.RefObject<string> }) {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -180,6 +183,10 @@ const metHoofdletter = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
 // Het pad zonder taalvoorvoegsel, zoals ContactForm het als source meegeeft.
 const padZonderTaal = () => window.location.pathname.replace(/^\/(nl|en)(?=\/|$)/, '') || '/'
 const FOUT_VELDEN = 'Vul je naam en een geldig e-mailadres in.'
+// Turnstile staat in Managed-modus: meestal valt er niets aan te vinken, de
+// controle loopt vanzelf. Zonder token is hij dus meestal nog bezig.
+const FOUT_ROBOT = 'Even geduld, we controleren nog of je geen robot bent.'
+const VOORBEELD_REGEL = 'Voorbeeldagenda: nog niet gekoppeld aan de echte agenda.'
 
 export default function KennismakingVenster() {
   const [open, setOpen] = useState(false)
@@ -193,10 +200,17 @@ export default function KennismakingVenster() {
   const [bezig, setBezig] = useState(false)
   const [fout, setFout] = useState('')
   const [token, setToken] = useState('')
-  const zetToken = useCallback((t: string) => setToken(t), [])
+  // Komt het token binnen terwijl de melding "even geduld" er staat, dan
+  // verdwijnt die melding vanzelf.
+  const zetToken = useCallback((t: string) => {
+    setToken(t)
+    if (t) setFout((f) => (f === FOUT_ROBOT ? '' : f))
+  }, [])
   const widgetId = useRef('')
-  // Eerste focus in het formulier: form_start, en dan pas Turnstile laden.
+  // Eerste focus in het formulier: form_start (een keer per venster).
   const [formGestart, setFormGestart] = useState(false)
+  // Verstuurd als aanvraag van een moment uit de voorbeeldagenda.
+  const [aangevraagd, setAangevraagd] = useState(false)
   const overlayRef = useRef<HTMLDivElement>(null)
   const dialoogRef = useRef<HTMLDivElement>(null)
   const vorigeFocus = useRef<HTMLElement | null>(null)
@@ -353,17 +367,15 @@ export default function KennismakingVenster() {
       return
     }
     if (TURNSTILE_SITEKEY && !token) {
-      setFout('Vink eerst aan dat je geen robot bent.')
+      setFout(FOUT_ROBOT)
       return
     }
-    if (modus === 'boek' && voorbeeld) {
-      setFout('Dit is nog een voorbeeldagenda. Boeken kan zodra de agenda gekoppeld is.')
-      return
-    }
+    // Voorbeeldagenda: het gekozen moment gaat als aanvraag mee, niet als boeking.
+    const aanvraag = modus === 'boek' && voorbeeld && gekozen ? gekozen : null
     setBezig(true)
     setFout('')
     try {
-      if (modus === 'boek' && gekozen) {
+      if (modus === 'boek' && gekozen && !aanvraag) {
         const res = await fetch(`${API}/boek`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -381,6 +393,12 @@ export default function KennismakingVenster() {
         // Eigen slug, zodat eigen agenda en Cal.com in GA4 uit elkaar te houden zijn.
         void pushConversionEvent('meeting_booked', { email }, { event_slug: 'kennismaking_eigen', form: 'kennismaking_venster' })
       } else {
+        // Het moment staat leesbaar in het bericht (de Hub bewaart en mailt
+        // alleen het bericht) en als apart veld voor de latere koppeling.
+        const moment = aanvraag ? `${metHoofdletter(fmtDagLang(aanvraag.start))} om ${fmtTijd(aanvraag.start)}` : ''
+        const bericht = aanvraag
+          ? `Gevraagd moment voor een kennismaking: ${moment} (Nederlandse tijd, ${DUUR_MIN} minuten).${vraag ? `\n\n${vraag}` : ''}`
+          : vraag
         const res = await fetch(HUB_ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -389,7 +407,8 @@ export default function KennismakingVenster() {
             email,
             company: bedrijf,
             phone: telefoon,
-            message: vraag,
+            message: bericht,
+            ...(aanvraag ? { gevraagd_moment: aanvraag.start } : {}),
             source: 'kennismaking_venster',
             _honey: honey,
             turnstile: token,
@@ -397,9 +416,16 @@ export default function KennismakingVenster() {
           }),
         })
         if (!res.ok) throw new Error(String(res.status))
-        // Dezelfde parameters als ContactForm (form, source): die stuurt GTM door.
-        void pushConversionEvent('generate_lead', { email }, { form: 'kennismaking_venster', source: padZonderTaal() })
+        // Dezelfde parameters als ContactForm (form, source): die stuurt GTM
+        // door. lead_soort onderscheidt een aangevraagd moment van alleen
+        // gegevens; een echte boeking is meeting_booked hierboven.
+        void pushConversionEvent(
+          'generate_lead',
+          { email },
+          { form: 'kennismaking_venster', source: padZonderTaal(), lead_soort: aanvraag ? 'moment_aangevraagd' : 'gegevens' },
+        )
       }
+      setAangevraagd(Boolean(aanvraag))
       focusNa.current = 'klaar'
       setStap('klaar')
     } catch {
@@ -478,19 +504,19 @@ export default function KennismakingVenster() {
           maxLength={2000}
         />
       </label>
-      {formGestart && <Turnstile onToken={zetToken} widgetRef={widgetId} />}
+      <Turnstile onToken={zetToken} widgetRef={widgetId} />
       {fout && (
         <p id="kennismaking-fout" role="alert" className="m-0 text-[14px] text-[#B42B43]">
           {fout}
         </p>
       )}
-      {/* #1D63D8: hetzelfde blauw, donker genoeg voor witte tekst (5,5:1). */}
+      {/* accent-diep (app/globals.css): donker genoeg voor witte tekst (5,5:1). */}
       <button
         type="submit"
         disabled={bezig}
-        className="rounded-xl bg-[#1D63D8] px-5 py-3.5 font-display text-[15.5px] font-bold text-white transition-colors hover:bg-[#1A56BD] disabled:opacity-60"
+        className="rounded-xl bg-accent-diep px-5 py-3.5 font-display text-[15.5px] font-bold text-white transition-colors hover:bg-accent-dieper disabled:opacity-60"
       >
-        {bezig ? 'Even geduld...' : modus === 'boek' ? 'Bevestig de afspraak' : 'Verstuur'}
+        {bezig ? 'Even geduld...' : modus === 'gegevens' ? 'Verstuur' : voorbeeld ? 'Vraag dit moment aan' : 'Bevestig de afspraak'}
       </button>
       <p className="m-0 text-[13px] leading-relaxed text-muted">
         Als je verstuurt, bewaren we je gegevens om contact met je op te nemen. Lees de{' '}
@@ -539,11 +565,17 @@ export default function KennismakingVenster() {
         {stap === 'klaar' ? (
           <div role="status" className="mt-8 rounded-2xl bg-surface p-6 text-center">
             <p ref={klaarKopRef} tabIndex={-1} className="m-0 font-display text-[20px] font-bold text-primary outline-none">
-              {tab === 'moment' && gekozen ? 'De afspraak staat.' : 'Dank je, we nemen contact op.'}
+              {tab === 'moment' && gekozen
+                ? aangevraagd
+                  ? 'Je moment is aangevraagd.'
+                  : 'De afspraak staat.'
+                : 'Dank je, we nemen contact op.'}
             </p>
             <p className="m-0 mt-2 text-[15px] text-muted">
               {tab === 'moment' && gekozen
-                ? `${metHoofdletter(fmtDagLang(gekozen.start))} om ${fmtTijd(gekozen.start)}. De uitnodiging staat in je mail.`
+                ? aangevraagd
+                  ? `${metHoofdletter(fmtDagLang(gekozen.start))} om ${fmtTijd(gekozen.start)}. Je krijgt binnen een werkdag een bevestiging per mail.`
+                  : `${metHoofdletter(fmtDagLang(gekozen.start))} om ${fmtTijd(gekozen.start)}. De uitnodiging staat in je mail.`
                 : 'Meestal bellen of mailen we binnen een werkdag.'}
             </p>
           </div>
@@ -576,6 +608,11 @@ export default function KennismakingVenster() {
 
             {tab === 'moment' && stap === 'gegevens' && gekozen && (
               <div className="mt-6">
+                {voorbeeld && (
+                  <p className="m-0 mb-3 rounded-lg bg-[#FFF4DB] px-3 py-2 text-[13px] font-medium text-[#8A5A00]">
+                    {VOORBEELD_REGEL} We bevestigen je moment per mail.
+                  </p>
+                )}
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-accent/30 bg-accent/[0.06] px-4 py-3">
                   <span ref={gekozenRegelRef} tabIndex={-1} className="text-[15px] font-semibold text-primary outline-none">
                     {metHoofdletter(fmtDagLang(gekozen.start))}, {fmtTijd(gekozen.start)} tot {fmtTijd(gekozen.end)}
@@ -586,7 +623,7 @@ export default function KennismakingVenster() {
                       focusNa.current = 'slot'
                       setStap('kies')
                     }}
-                    className="text-[14px] font-semibold text-[#1D63D8] hover:underline"
+                    className="text-[14px] font-semibold text-accent-diep hover:underline"
                   >
                     Ander moment
                   </button>
@@ -599,7 +636,7 @@ export default function KennismakingVenster() {
               <div className="mt-5">
                 {voorbeeld && (
                   <p className="m-0 mb-3 rounded-lg bg-[#FFF4DB] px-3 py-2 text-[13px] font-medium text-[#8A5A00]">
-                    Voorbeeldagenda: nog niet gekoppeld aan de echte agenda.
+                    {VOORBEELD_REGEL}
                   </p>
                 )}
                 <p className="m-0 mb-3 text-[13px] text-muted">Nederlandse tijd</p>
@@ -655,7 +692,7 @@ export default function KennismakingVenster() {
                                       type="button"
                                       data-slot={s.start}
                                       onClick={() => kies(s)}
-                                      className="rounded-lg border-2 border-[#1D63D8]/70 py-2 text-[13.5px] font-semibold tabular-nums text-[#1D63D8] transition-colors hover:bg-[#1D63D8] hover:text-white"
+                                      className="rounded-lg border-2 border-accent-diep/70 py-2 text-[13.5px] font-semibold tabular-nums text-accent-diep transition-colors hover:bg-accent-diep hover:text-white"
                                     >
                                       {fmtTijd(s.start)} tot {fmtTijd(s.end)}
                                     </button>
@@ -693,7 +730,7 @@ export default function KennismakingVenster() {
                               type="button"
                               onClick={() => setMobDag(i)}
                               aria-pressed={mobDag === i}
-                              className={`shrink-0 rounded-xl border px-3.5 py-2.5 text-[14px] font-semibold capitalize ${mobDag === i ? 'border-[#1D63D8] bg-[#1D63D8]/10 text-[#1D63D8]' : 'border-border text-primary'} ${d.slots.length === 0 ? 'opacity-40' : ''}`}
+                              className={`shrink-0 rounded-xl border px-3.5 py-2.5 text-[14px] font-semibold capitalize ${mobDag === i ? 'border-accent-diep bg-accent-diep/10 text-accent-diep' : 'border-border text-primary'} ${d.slots.length === 0 ? 'opacity-40' : ''}`}
                             >
                               {fmtDagKort(d.datum)}
                             </button>
@@ -716,7 +753,7 @@ export default function KennismakingVenster() {
                             type="button"
                             data-slot={s.start}
                             onClick={() => kies(s)}
-                            className="rounded-xl border-2 border-[#1D63D8]/70 py-3 text-[16px] font-semibold tabular-nums text-[#1D63D8] active:bg-[#1D63D8] active:text-white"
+                            className="rounded-xl border-2 border-accent-diep/70 py-3 text-[16px] font-semibold tabular-nums text-accent-diep active:bg-accent-diep active:text-white"
                           >
                             {fmtTijd(s.start)} tot {fmtTijd(s.end)}
                           </button>

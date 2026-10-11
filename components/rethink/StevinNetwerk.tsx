@@ -364,7 +364,7 @@ export default function StevinNetwerk({
                   className={[
                     'sn-overgang flex items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-left text-[13.5px] font-medium',
                     aan
-                      ? 'border-[#1D63D8] bg-[#1D63D8] text-white'
+                      ? 'border-accent-diep bg-accent-diep text-white'
                       : thema === 'donker'
                         ? 'border-white/20 text-white/85'
                         : 'border-border bg-white text-primary',
@@ -462,7 +462,7 @@ export default function StevinNetwerk({
               type="button"
               onClick={speelAf}
               aria-disabled={demoFase !== null && demoFase !== 'advies'}
-              className="rounded-full border border-[#1D63D8] bg-[#1D63D8]/10 px-3.5 py-1.5 text-[14px] font-semibold text-[#1D63D8] transition-colors hover:bg-[#1D63D8] hover:text-white"
+              className="rounded-full border border-accent-diep bg-accent-diep/10 px-3.5 py-1.5 text-[14px] font-semibold text-accent-diep transition-colors hover:bg-accent-diep hover:text-white"
             >
               {demo.vraag}
             </button>
@@ -470,7 +470,7 @@ export default function StevinNetwerk({
               <span className={k.kaartSub}>
                 {demo.uitleg}{' '}
                 {demo.verderHref && (
-                  <a href={demo.verderHref} className="font-semibold text-[#1D63D8] underline-offset-2 hover:underline">
+                  <a href={demo.verderHref} className="font-semibold text-accent-diep underline-offset-2 hover:underline">
                     Probeer het zelf
                   </a>
                 )}
