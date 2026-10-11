@@ -174,7 +174,10 @@ export default function ScrollStappen({
     <div
       ref={ref}
       className="relative"
-      style={actief ? { height: `calc(100svh + ${items.length * 34}svh)` } : undefined}
+      // Per stap 34svh scrollen; op een smal scherm 20svh, zodat de knop eronder
+      // eerder in beeld komt (CRO-synthese 11 okt, A6). De voortgang is een
+      // verhouding van de hoogte, dus het verloop blijft gelijk.
+      style={actief ? { height: `calc(100svh + ${items.length * (compact ? 20 : 34)}svh)` } : undefined}
     >
       <div ref={stickyRef} className={actief ? 'sticky top-0 flex min-h-[100svh] items-center' : ''}>
         <div className="grid w-full grid-cols-1 gap-10 py-8 tussen:grid-cols-[0.8fr_1.2fr] tussen:items-center tussen:gap-20 tussen:py-16">

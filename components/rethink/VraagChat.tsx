@@ -74,7 +74,10 @@ const VOL = L + 10
 // Vastgezet deel: waar elke stap begint, in eenheden van EENHEDEN.
 const DREMPELS = [0.05, 1, 1.6, 2.2, 2.8, 3.6, 4.3, 5.3, 6.3, 7.3]
 const EENHEDEN = 8.5
-const VAST_SCROLL = '110svh' // zo lang staat het paneel vast
+// Zo lang staat het paneel vast: 110svh, onder lg 70svh, zodat de knop
+// eronder op een telefoon eerder in beeld komt (CRO-synthese 11 okt, A6). De
+// stand is een verhouding van deze hoogte, dus het verloop blijft gelijk.
+const VAST_SCROLL = 'h-[70svh] lg:h-[110svh]'
 const AANLOOP = 0.45 // het typen loopt over dit deel van de schermhoogte
 const KOPBALK = 64 // vaste kopbalk van de site (Header, h-16)
 
@@ -502,7 +505,7 @@ export default function VraagChat({ kop }: { kop?: React.ReactNode }) {
         </div>
       </div>
       {/* Hierlangs scrolt de bezoeker terwijl het paneel vaststaat. */}
-      {vast && <div ref={ruimteRef} aria-hidden="true" style={{ height: VAST_SCROLL }} />}
+      {vast && <div ref={ruimteRef} aria-hidden="true" className={VAST_SCROLL} />}
     </div>
   )
 }
