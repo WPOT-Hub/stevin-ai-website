@@ -46,8 +46,13 @@ interface Props {
   /** Kaartje dicht (lege tik, Esc of sluitknop): de ouder zet zijn focus terug. */
   onSluit?: () => void
   /** Herinnering die de ouder via een knop koos (index in HERINNERINGEN): die
-   * licht op met zijn label, en het brein draait zolang niet door. */
+   * licht op met zijn label, de camera draait hem in beeld, en het brein
+   * draait zolang niet door. */
   herinnering?: number | null
+  /** Tik op een herinnering in het beeld (null: kaartje weer dicht). De ouder
+   * laat zijn herinnering meelopen, zodat knoppen, statusregel en beeld
+   * hetzelfde zeggen. */
+  onKiesHerinnering?: (i: number | null) => void
 }
 
 const SATELLIETEN: Partial<Record<BronId, string[]>> = {
@@ -247,6 +252,7 @@ export default function StevinUniversum({
   onKiesHub,
   onSluit,
   herinnering = null,
+  onKiesHerinnering,
 }: Props) {
   const { knopen, lijnen } = useMemo(bouwKnopen, [])
   const wrapRef = useRef<HTMLDivElement>(null)
@@ -292,6 +298,30 @@ export default function StevinUniversum({
       cam.current.doelPitch = 0.12
       return
     }
+    // Herinnering via een knop: schuin voor het brein, rechts ervan (60 graden
+    // van de kijkrichting), zodat hij met label in beeld staat. Recht ervoor,
+    // zoals bij een bron, zou hem in het brein laten opgaan. Zelf aangetikt:
+    // dan stond hij al in beeld en blijft de camera staan. Draait er niets
+    // (reduced motion, Beweging uit), dan springt de camera er meteen heen.
+    if (!focus && herinnering != null) {
+      const doel = knopen.find((k) => k.soort === 'geheugen' && k.herinnering === herinnering)
+      const getikt = gekozen != null && knopen[gekozen] === doel
+      if (!doel || getikt) {
+        cam.current.doelYaw = null
+        cam.current.doelPitch = null
+        return
+      }
+      const yaw = Math.atan2(doel.z, doel.x) + Math.PI / 6
+      cam.current.doelYaw = yaw
+      cam.current.doelPitch = 0.18
+      const stil =
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.dataset.beweging === 'uit'
+      if (stil) {
+        cam.current.yaw = yaw
+        cam.current.pitch = 0.18
+      }
+      return
+    }
     const doel = focus ? knopen.find((k) => k.id === focus) : null
     if (!doel || doel.id === 'brein') {
       cam.current.doelYaw = null
@@ -302,7 +332,20 @@ export default function StevinUniversum({
     const z1 = -doel.x * Math.sin(yaw) + doel.z * Math.cos(yaw)
     cam.current.doelYaw = yaw
     cam.current.doelPitch = Math.max(-0.6, Math.min(0.6, Math.atan(doel.y / z1)))
-  }, [focus, fase, knopen])
+  }, [focus, fase, herinnering, gekozen, knopen])
+
+  // Kiest de ouder iets anders (een knop), dan gaat een open kaartje dat daar
+  // niet bij hoort dicht. Anders lichten er twee nodes op en zeggen kaartje en
+  // statusregel iets anders.
+  useEffect(() => {
+    const g = gekozenRef.current
+    if (g == null) return
+    const n = knopen[g]
+    const hoortErbij =
+      (herinnering != null && n.soort === 'geheugen' && n.herinnering === herinnering) ||
+      (focus != null && n.hub === focus && n.soort !== 'geheugen' && n.soort !== 'stof')
+    if (!hoortErbij) setGekozen(null)
+  }, [focus, herinnering, knopen])
 
   useEffect(() => {
     const el = wrapRef.current
@@ -430,7 +473,9 @@ export default function StevinUniversum({
         const aan = isAan(n)
         const stil = isStil(n)
         const diepte = Math.max(0.12, Math.min(1, p.s * 1.25 - 0.35))
-        const bijBrein = n.soort === 'brein' ? { zicht: 1, labelWeg: false } : opgenomen(p)
+        // De via een knop gekozen herinnering blijft altijd zichtbaar, met label.
+        const uitgekozen = hr != null && n.soort === 'geheugen' && n.herinnering === hr
+        const bijBrein = n.soort === 'brein' || uitgekozen ? { zicht: 1, labelWeg: false } : opgenomen(p)
         const extra = n.soort === 'brein' ? 1 + slag : 1
         g.setAttribute('transform', `translate(${p.X.toFixed(1)} ${p.Y.toFixed(1)}) scale(${(p.s * k * extra).toFixed(3)})`)
         if (n.soort === 'brein') {
@@ -672,8 +717,10 @@ export default function StevinUniversum({
     }
     const i = Number(el.getAttribute('data-knoop'))
     const n = knopen[i]
-    setGekozen((g) => (g === i ? null : i))
+    const volgende = gekozenRef.current === i ? null : i
+    setGekozen(volgende)
     if (n.soort === 'hub' || n.soort === 'brein' || n.soort === 'advisor') onKiesHub?.(n.hub)
+    else if (n.soort === 'geheugen' && n.herinnering != null) onKiesHerinnering?.(volgende == null ? null : n.herinnering)
   }
   useEffect(() => {
     const esc = (e: KeyboardEvent) => {

@@ -19,8 +19,9 @@ import { getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/
  * er niet is, toont het venster een duidelijk gemarkeerde voorbeeldagenda.
  * Kies je daarin een moment, dan gaat dat als aanvraag naar het bestaande
  * Hub-endpoint (zelfde weg als "Laat je gegevens achter"), met het moment in
- * het bericht, en bevestigen we het zelf per mail. Zo gaan ingevulde gegevens
- * nooit verloren (11 okt).
+ * het bericht, en mailen we zelf of het moment kan. Zo gaan ingevulde gegevens
+ * nooit verloren (11 okt). De Hub stuurt meteen zijn gewone ontvangstmail
+ * (lead.ts, zonder het moment); de tekst na versturen zegt dat ook.
  *
  * Openen: elk element met data-open-kennismaking op de pagina.
  *
@@ -51,39 +52,92 @@ declare global {
 // Het script laadt zodra het formulier verschijnt, niet al bij het openen van
 // het venster. Eerder pas bij de eerste focus: wie met automatisch invullen
 // meteen verstuurde, kreeg een melding over een vinkje dat er nog niet was.
-function Turnstile({ onToken, widgetRef }: { onToken: (t: string) => void; widgetRef: React.RefObject<string> }) {
+//
+// Lukt de controle niet, dan meldt onFout dat, zodat de bezoeker een uitweg
+// krijgt in plaats van eindeloos "even geduld" (11 okt, nagespeeld: script
+// geblokkeerd, of fout 110200 bij een hostnaam die niet in het widget staat).
+// Signalen: error-callback (netwerk, mislukte controle), unsupported-callback
+// (browser), een fout bij het laden van het script, en na tien seconden nog
+// geen token terwijl er ook geen vinkje voor de bezoeker staat. Komt het token
+// later alsnog (Turnstile probeert het zelf opnieuw), dan verdwijnt de melding.
+const CONTROLE_WACHT_MS = 10000
+function Turnstile({
+  onToken,
+  onFout,
+  widgetRef,
+}: {
+  onToken: (t: string) => void
+  onFout: () => void
+  widgetRef: React.RefObject<string>
+}) {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (!TURNSTILE_SITEKEY || !ref.current) return
     let id = ''
+    let weg = false
+    let gekregen = false
+    let interactief = false
+    const fout = () => {
+      if (!weg) onFout()
+    }
+    const wacht = window.setTimeout(() => {
+      if (!gekregen && !interactief) fout()
+    }, CONTROLE_WACHT_MS)
     const teken = () => {
-      if (!window.turnstile || !ref.current || id) return
-      id = window.turnstile.render(ref.current, {
-        sitekey: TURNSTILE_SITEKEY,
-        language: 'nl',
-        appearance: 'always',
-        callback: onToken,
-        'expired-callback': () => onToken(''),
-      })
+      if (weg || !window.turnstile || !ref.current || id) return
+      try {
+        id = window.turnstile.render(ref.current, {
+          sitekey: TURNSTILE_SITEKEY,
+          language: 'nl',
+          appearance: 'always',
+          callback: (t: string) => {
+            gekregen = true
+            onToken(t)
+          },
+          'expired-callback': () => onToken(''),
+          // Met een error-callback gooit Turnstile zelf geen fout; true zegt
+          // dat hij is afgehandeld (Cloudflare, Client-side errors).
+          'error-callback': () => {
+            fout()
+            return true
+          },
+          'unsupported-callback': fout,
+          'before-interactive-callback': () => {
+            interactief = true
+          },
+          'after-interactive-callback': () => {
+            interactief = false
+          },
+        })
+      } catch {
+        fout()
+        return
+      }
       widgetRef.current = id
     }
+    let sc: Element | null = null
     if (window.turnstile) teken()
     else {
       const bestaand = document.querySelector('script[data-turnstile]')
-      const sc = bestaand ?? Object.assign(document.createElement('script'), {
+      sc = bestaand ?? Object.assign(document.createElement('script'), {
         src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',
         async: true,
       })
       sc.setAttribute('data-turnstile', '')
       sc.addEventListener('load', teken)
+      sc.addEventListener('error', fout)
       if (!bestaand) document.head.appendChild(sc)
     }
     return () => {
+      weg = true
+      window.clearTimeout(wacht)
+      sc?.removeEventListener('load', teken)
+      sc?.removeEventListener('error', fout)
       if (id && window.turnstile) window.turnstile.remove(id)
       widgetRef.current = ''
       onToken('')
     }
-  }, [onToken, widgetRef])
+  }, [onToken, onFout, widgetRef])
   if (!TURNSTILE_SITEKEY) return null
   return <div ref={ref} className="min-h-[65px]" />
 }
@@ -143,17 +197,25 @@ function nederlandseAfstand(datum: string): string {
   return m ? `${m[1]}${m[2].padStart(2, '0')}:${m[3] ?? '00'}` : '+01:00'
 }
 
-// Voorbeeldagenda: de komende tien werkdagen volgens VENSTERS, in Nederlandse
-// tijd, met een paar vaste bezette blokken. Alleen zolang er geen echte
-// koppeling is.
+// Voorbeeldagenda: tien werkdagen volgens VENSTERS, in Nederlandse tijd, met
+// een paar vaste bezette blokken. Alleen zolang er geen echte koppeling is.
+// Begint pas op de tweede werkdag na vandaag: een gekozen moment is dan een
+// aanvraag, en we beloven binnen een werkdag te mailen of het kan. Met de
+// eerstvolgende werkdag erbij (zondagavond kiest iemand maandag 09:00) kwam
+// dat bericht pas na het moment (11 okt).
 function voorbeeldAgenda(): Dag[] {
   const dagen: Dag[] = []
   const vandaag = vandaagInNederland()
+  let eersteOvergeslagen = false
   for (let n = 1; dagen.length < 10 && n < 40; n++) {
     const datum = plusDagen(vandaag, n)
     const wd = weekdag(datum)
     const venster = VENSTERS[wd]
     if (!venster) continue
+    if (!eersteOvergeslagen) {
+      eersteOvergeslagen = true
+      continue
+    }
     const afstand = nederlandseAfstand(datum)
     const slots: Slot[] = []
     const bezet: Slot[] = []
@@ -186,6 +248,9 @@ const FOUT_VELDEN = 'Vul je naam en een geldig e-mailadres in.'
 // Turnstile staat in Managed-modus: meestal valt er niets aan te vinken, de
 // controle loopt vanzelf. Zonder token is hij dus meestal nog bezig.
 const FOUT_ROBOT = 'Even geduld, we controleren nog of je geen robot bent.'
+// De controle lukt niet (zie Turnstile): dan een uitweg. Het mailadres staat
+// als link in de melding.
+const FOUT_CONTROLE = 'De controle lukt nu niet. Mail dan naar info@stevin.ai.'
 const VOORBEELD_REGEL = 'Voorbeeldagenda: nog niet gekoppeld aan de echte agenda.'
 
 export default function KennismakingVenster() {
@@ -200,11 +265,19 @@ export default function KennismakingVenster() {
   const [bezig, setBezig] = useState(false)
   const [fout, setFout] = useState('')
   const [token, setToken] = useState('')
-  // Komt het token binnen terwijl de melding "even geduld" er staat, dan
-  // verdwijnt die melding vanzelf.
+  const [controleMislukt, setControleMislukt] = useState(false)
+  // Komt het token binnen terwijl de melding "even geduld" of "lukt nu niet"
+  // er staat, dan verdwijnt die melding vanzelf.
   const zetToken = useCallback((t: string) => {
     setToken(t)
-    if (t) setFout((f) => (f === FOUT_ROBOT ? '' : f))
+    if (!t) return
+    setControleMislukt(false)
+    setFout((f) => (f === FOUT_ROBOT || f === FOUT_CONTROLE ? '' : f))
+  }, [])
+  // Lukt de controle niet, dan meteen zeggen, niet pas na het invullen.
+  const controleFout = useCallback(() => {
+    setControleMislukt(true)
+    setFout((f) => (f === '' || f === FOUT_ROBOT ? FOUT_CONTROLE : f))
   }, [])
   const widgetId = useRef('')
   // Eerste focus in het formulier: form_start (een keer per venster).
@@ -367,7 +440,7 @@ export default function KennismakingVenster() {
       return
     }
     if (TURNSTILE_SITEKEY && !token) {
-      setFout(FOUT_ROBOT)
+      setFout(controleMislukt ? FOUT_CONTROLE : FOUT_ROBOT)
       return
     }
     // Voorbeeldagenda: het gekozen moment gaat als aanvraag mee, niet als boeking.
@@ -504,10 +577,20 @@ export default function KennismakingVenster() {
           maxLength={2000}
         />
       </label>
-      <Turnstile onToken={zetToken} widgetRef={widgetId} />
+      <Turnstile onToken={zetToken} onFout={controleFout} widgetRef={widgetId} />
       {fout && (
         <p id="kennismaking-fout" role="alert" className="m-0 text-[14px] text-[#B42B43]">
-          {fout}
+          {fout === FOUT_CONTROLE ? (
+            <>
+              De controle lukt nu niet. Mail dan naar{' '}
+              <a href="mailto:info@stevin.ai" className="font-semibold underline underline-offset-2">
+                info@stevin.ai
+              </a>
+              .
+            </>
+          ) : (
+            fout
+          )}
         </p>
       )}
       {/* accent-diep (app/globals.css): donker genoeg voor witte tekst (5,5:1). */}
@@ -574,7 +657,7 @@ export default function KennismakingVenster() {
             <p className="m-0 mt-2 text-[15px] text-muted">
               {tab === 'moment' && gekozen
                 ? aangevraagd
-                  ? `${metHoofdletter(fmtDagLang(gekozen.start))} om ${fmtTijd(gekozen.start)}. Je krijgt binnen een werkdag een bevestiging per mail.`
+                  ? `${metHoofdletter(fmtDagLang(gekozen.start))} om ${fmtTijd(gekozen.start)}. Je krijgt meteen een mail dat je aanvraag binnen is. Binnen een werkdag hoor je of dit moment kan.`
                   : `${metHoofdletter(fmtDagLang(gekozen.start))} om ${fmtTijd(gekozen.start)}. De uitnodiging staat in je mail.`
                 : 'Meestal bellen of mailen we binnen een werkdag.'}
             </p>
@@ -610,7 +693,7 @@ export default function KennismakingVenster() {
               <div className="mt-6">
                 {voorbeeld && (
                   <p className="m-0 mb-3 rounded-lg bg-[#FFF4DB] px-3 py-2 text-[13px] font-medium text-[#8A5A00]">
-                    {VOORBEELD_REGEL} We bevestigen je moment per mail.
+                    {VOORBEELD_REGEL} We mailen je of dit moment kan.
                   </p>
                 )}
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-accent/30 bg-accent/[0.06] px-4 py-3">

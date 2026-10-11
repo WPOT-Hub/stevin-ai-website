@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { getStoredConsent, storeConsent, updateGoogleConsent, hasAnalyticsConsent, type ConsentChoice } from '@/lib/consent'
 
 function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
@@ -41,6 +41,7 @@ export default function ConsentBanner() {
   const [showPreferences, setShowPreferences] = useState(false)
   const [analyticsChecked, setAnalyticsChecked] = useState(false)
   const [marketingChecked, setMarketingChecked] = useState(false)
+  const bannerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const stored = getStoredConsent()
@@ -52,6 +53,28 @@ export default function ConsentBanner() {
       setVisible(true)
     }
   }, [])
+
+  // Zolang de banner openstaat, bedekt hij de onderkant van het scherm. Met
+  // scroll-padding-bottom ter hoogte van de banner schuift de browser een
+  // element dat focus krijgt boven de banner in plaats van eronder (WCAG
+  // 2.4.11, techniek C43). Gemeten 11 okt: op /voorstel-c vielen knoppen in de
+  // hero met focus helemaal onder de banner.
+  useEffect(() => {
+    if (!visible) return
+    const el = bannerRef.current
+    if (!el) return
+    const html = document.documentElement
+    const zet = () => {
+      html.style.scrollPaddingBottom = `${el.offsetHeight}px`
+    }
+    zet()
+    const ro = new ResizeObserver(zet)
+    ro.observe(el)
+    return () => {
+      ro.disconnect()
+      html.style.scrollPaddingBottom = ''
+    }
+  }, [visible])
 
   function handleChoice(choice: ConsentChoice) {
     if (!choice) return
@@ -87,7 +110,7 @@ export default function ConsentBanner() {
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[60] p-4 sm:p-6">
+    <div ref={bannerRef} className="fixed bottom-0 left-0 right-0 z-[60] p-4 sm:p-6">
       <div className="mx-auto max-w-2xl rounded-2xl bg-white border border-border shadow-2xl shadow-black/10 overflow-hidden">
         {!showPreferences ? (
           /* Main banner */
