@@ -468,7 +468,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
           <h2 className="m-0 font-display font-extrabold text-white" style={{ ...h2Stijl, maxWidth: '16ch' }}>
             {PRIJZEN.kop}
           </h2>
-          <p className="m-0 mt-5 max-w-[620px] text-[18px] leading-[1.6] text-white/75">{PRIJZEN.zin}</p>
+          <p className="m-0 mt-5 max-w-[620px] text-pretty text-[18px] leading-[1.6] text-white/75">{PRIJZEN.zin}</p>
           <dl className="m-0 mt-10 border-t border-white/12">
             <div className="flex flex-col gap-1.5 border-b border-white/12 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
               <dt
