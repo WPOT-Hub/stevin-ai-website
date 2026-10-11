@@ -12,7 +12,17 @@
    in de CSS maakt niet uit. Dezelfde voorwaarde staat als ZIJ in
    components/rethink/HeroUniversum.tsx. */
 @custom-variant zij (@media (min-width: 900px) and (min-aspect-ratio: 1/1));
-@custom-variant tablet (@media (min-width: 640px) and (max-width: 899.98px), (min-width: 640px) and (max-aspect-ratio: 999/1000));
+/* tablet in blokvorm: in de korte vorm splitst Tailwind de komma in de
+   mediaquery als selectorlijst, en viel de staande tablet vanaf 900 breed
+   (1024 x 1366) stil weg ("Invalid empty selector" bij het bouwen, 11 okt). */
+@custom-variant tablet {
+  @media (min-width: 640px) and (max-width: 899.98px) {
+    @slot;
+  }
+  @media (min-width: 640px) and (max-aspect-ratio: 999/1000) {
+    @slot;
+  }
+}
 
 /* Italic van de broodtekst, los van next/font zodat hij niet op elke pagina
    vooraf laadt (W-333). font-family moet gelijk blijven aan de naam van de
