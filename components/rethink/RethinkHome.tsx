@@ -94,7 +94,7 @@ const PRIJZEN = {
   kop: 'Het laatste bureau dat je nodig hebt.',
   zin: ['Eerst zetten wij alles goed.', 'Daarna bouwen we agents die het werk voor je doen.'],
   hoofd: { wat: 'Wij worden jouw bureau', prijs: 'vanaf 1.399', per: 'per maand' },
-  zelf: { wat: 'Je doet het zelf, of we zetten agents aan het werk', prijs: 'vanaf 399', per: 'per maand' },
+  zelf: { wat: 'Je doet het zelf, of we zetten jouw agents aan het werk', prijs: 'vanaf 399', per: 'per maand' },
   // Onder de twee prijzen (Koen, 11 okt 13:57). De uitleg (2.000 tegen 10.000
   // budget, geen marge) hoort op /tarieven.
   budget: 'Je prijs groeit niet mee met je advertentiebudget.',
