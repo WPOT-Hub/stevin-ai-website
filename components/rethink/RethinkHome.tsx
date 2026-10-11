@@ -126,7 +126,7 @@ const UITVOERING = {
 // twee regels letterlijk zoals Koen ze gaf (11 okt 09:48 en 09:49).
 const PRIJZEN = {
   kop: 'Het laatste bureau dat je nodig hebt.',
-  zin: 'Eerst zetten wij alles goed. Daarna bouwen we agents die het werk voor je doen.',
+  zin: ['Eerst zetten wij alles goed.', 'Daarna bouwen we agents die het werk voor je doen.'],
   hoofd: { wat: 'Wij worden jouw bureau', prijs: 'vanaf 1.399', per: 'per maand' },
   zelf: { wat: 'Je doet het zelf, of we zetten agents aan het werk', prijs: 'vanaf 399', per: 'per maand' },
 }
@@ -207,21 +207,25 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             {/* "Je hoeft niets te vervangen" mag terug (Koen, 11 okt 09:27):
                 het geval waarin het bureau bij Meta betaalt is niet de
                 standaardklant. */}
-            <p className={`${tekst} m-0`}>
+            <p className={`${tekst} m-0 max-w-[620px]`}>
               Je hoeft niets te vervangen. Een deel koppelen we meteen, de rest richten we voor je in.
             </p>
           </div>
         </div>
         {/* Logo-band: twee rijen chips die langzaam voorbij schuiven. Op mobiel
-            namen de tegels een heel scherm in (Koen, 11 okt 01:16). De tweede
-            kopie per rij is alleen voor de naadloze lus en is verborgen voor
-            schermlezers. Onder reduced motion staat alles stil en loopt het af. */}
-        <div className="lb-band relative mt-10 space-y-3" aria-label="Systemen die we koppelen">
+            namen de tegels een heel scherm in (Koen, 11 okt 01:16). De extra
+            kopieen per rij zijn alleen voor de naadloze lus en zijn verborgen
+            voor schermlezers. Drie kopieen en hoogstens 1440px breed: met twee
+            was een rij (ongeveer 1030px) smaller dan de band vanaf 1080px
+            breed, en schoof er aan het eind van elke ronde een leeg stuk in
+            beeld (gemeten 11 okt). Onder reduced motion staat alles stil en
+            loopt het af. */}
+        <div className="lb-band relative mx-auto mt-10 max-w-[1440px] space-y-3" aria-label="Systemen die we koppelen">
           {[LOGOS.slice(0, 7), [...LOGOS.slice(7)]].map((rij, ri) => (
             <div key={ri} className="lb-rij overflow-hidden">
               <div className={`lb-spoor flex w-max gap-3 ${ri === 1 ? 'lb-terug' : ''}`}>
-                {[0, 1].map((kopie) => (
-                  <ul key={kopie} className="m-0 flex list-none gap-3 p-0" aria-hidden={kopie === 1 ? true : undefined}>
+                {[0, 1, 2].map((kopie) => (
+                  <ul key={kopie} className="m-0 flex list-none gap-3 p-0" aria-hidden={kopie > 0 ? true : undefined}>
                     {rij.map((l) => (
                       <li
                         key={l.naam}
@@ -268,7 +272,10 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
             <>
               <VraagChat
                 kop={
-                  <h2 className={h2} style={{ ...h2Stijl, maxWidth: '18ch' }}>
+                  // In het midden, op dezelfde as als het paneel en de zin en
+                  // knop eronder. Links stond hij op een breed scherm los van
+                  // het paneel (1440: kop op 144px, paneel vanaf 400px).
+                  <h2 className={`${h2} mx-auto text-center`} style={{ ...h2Stijl, maxWidth: '18ch' }}>
                     Geen rapportje achteraf.
                   </h2>
                 }
@@ -483,7 +490,16 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
           <h2 className="m-0 font-display font-extrabold text-white" style={{ ...h2Stijl, maxWidth: '16ch' }}>
             {PRIJZEN.kop}
           </h2>
-          <p className="m-0 mt-5 max-w-[620px] text-pretty text-[18px] leading-[1.6] text-white/75">{PRIJZEN.zin}</p>
+          {/* Elke zin op een eigen regel: als een doorlopende alinea bleef er
+              op elke breedte "je doen." alleen op de laatste regel staan
+              (gemeten 11 okt, 360 tot 3440). */}
+          <p className="m-0 mt-5 max-w-[620px] text-balance text-[18px] leading-[1.6] text-white/75">
+            {PRIJZEN.zin.map((z) => (
+              <span key={z} className="block">
+                {z}
+              </span>
+            ))}
+          </p>
           <dl className="m-0 mt-10 border-t border-white/12">
             <div className="flex flex-col gap-1.5 border-b border-white/12 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
               <dt
@@ -500,7 +516,7 @@ export default function RethinkHome({ richting }: { richting: Richting }) {
               </dd>
             </div>
             <div className="flex flex-col gap-1 border-b border-white/12 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
-              <dt className="text-[17px] leading-snug text-white/75">{PRIJZEN.zelf.wat}</dt>
+              <dt className="text-balance text-[17px] leading-snug text-white/75">{PRIJZEN.zelf.wat}</dt>
               <dd className="m-0 whitespace-nowrap text-[17px] text-white/75">
                 <span className="font-display font-bold text-white/90">{PRIJZEN.zelf.prijs}</span> {PRIJZEN.zelf.per}
               </dd>
@@ -568,7 +584,7 @@ function HeroTekst({
       {/* Richting C: op elke schermmaat alleen de korte zin; de blokken
           eronder vertellen de rest (W-535, less is more). */}
       {mobielKort ? (
-        <p className={`mt-5 text-[19px] leading-[1.45] ${donker ? 'text-white/75' : 'text-[#2A3A54]'}`}>
+        <p className={`mt-5 text-balance text-[19px] leading-[1.45] ${donker ? 'text-white/75' : 'text-[#2A3A54]'}`}>
           Wij doen je marketing. Jij ziet eindelijk welke aanvraag een opdracht werd.
         </p>
       ) : (
@@ -582,7 +598,9 @@ function HeroTekst({
   )
   const knoppen = (
     <>
-      <div className={`${deel === 'knoppen' ? 'lg:mt-9' : 'mt-9'} flex flex-wrap gap-3`}>
+      {/* Richting C: naast elkaar onder de kop, op een staande tablet in het
+          midden onder het brein (variant zij en tablet, app/globals.css). */}
+      <div className={`${deel === 'knoppen' ? 'zij:mt-9' : 'mt-9'} flex flex-wrap gap-3 ${mobielKort ? 'tablet:justify-center' : ''}`}>
         {/* Opent het kennismakingsvenster (zelfde route als header en slot),
             met /kennismaking als terugval zonder JS. */}
         <Link
@@ -596,8 +614,10 @@ function HeroTekst({
         <a
           href="#hoe-het-werkt"
           data-cta="hero_hoe"
-          className={`items-center rounded-lg border px-6 py-3.5 font-display text-[15px] font-bold transition-colors ${mobielKort ? 'hidden lg:inline-flex' : 'inline-flex'} ${donker ? 'border-white/25 text-white hover:border-white/60' : 'border-border text-primary hover:border-primary'}`}
+          className={`items-center rounded-lg border px-6 py-3.5 font-display text-[15px] font-bold transition-colors ${mobielKort ? 'hidden zij:inline-flex' : 'inline-flex'} ${donker ? 'border-white/25 bg-primary/80 text-white hover:border-white/60' : 'border-border text-primary hover:border-primary'}`}
         >
+          {/* Donker: een eigen vlak, anders schemerde in richting C een node
+              van het brein door de knop heen (980 en 1024 breed). */}
           Bekijk hoe het werkt
         </a>
       </div>

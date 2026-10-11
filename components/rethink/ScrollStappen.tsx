@@ -18,7 +18,9 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react'
  * hoogtes worden gemeten (opnieuw als de lettertypen binnen zijn en bij elke
  * maatwijziging), en daaruit volgt waar elke stap staat.
  *
- * Smal scherm (onder lg, een kolom): alleen de huidige stap, op een vaste plek.
+ * Smal scherm (onder 900px, een kolom): alleen de huidige stap, op een vaste
+ * plek. Twee kolommen vanaf 900px, zoals de hero: op 980 bij 800 stond het
+ * blok anders in een smalle kolom links met een leeg vlak ernaast (11 okt).
  * Met de eerdere stappen erboven werd het vastgezette blok ongeveer 700px hoog
  * en viel het doel op een telefoon onder het scherm (11 okt). Op een laag
  * scherm (liggende telefoon) zetten we niets vast en staat alles onder elkaar.
@@ -67,7 +69,7 @@ export default function ScrollStappen({
 
   useEffect(() => {
     const stil = window.matchMedia('(prefers-reduced-motion: reduce), (max-height: 499px)')
-    const smal = window.matchMedia('(max-width: 1023px)')
+    const smal = window.matchMedia('(max-width: 899.98px)')
     const zet = () => {
       setActief(!stil.matches)
       setCompact(smal.matches)
@@ -175,7 +177,7 @@ export default function ScrollStappen({
       style={actief ? { height: `calc(100svh + ${items.length * 34}svh)` } : undefined}
     >
       <div ref={stickyRef} className={actief ? 'sticky top-0 flex min-h-[100svh] items-center' : ''}>
-        <div className="grid w-full grid-cols-1 gap-10 py-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20 lg:py-16">
+        <div className="grid w-full grid-cols-1 gap-10 py-8 tussen:grid-cols-[0.8fr_1.2fr] tussen:items-center tussen:gap-20 tussen:py-16">
           <div>
             <p className="mb-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent-light">{eyebrow}</p>
             <h2
@@ -191,7 +193,7 @@ export default function ScrollStappen({
               {/* Geen badge Voorbeeld meer: de aanleiding begint met "Stel". */}
               <span>{vaststelling}</span>
             </p>
-            {naschrift && <p className="m-0 mt-8 hidden max-w-[36ch] text-[17px] leading-[1.55] text-white/75 lg:block">{naschrift}</p>}
+            {naschrift && <p className="m-0 mt-8 hidden max-w-[36ch] text-[17px] leading-[1.55] text-white/75 tussen:block">{naschrift}</p>}
           </div>
 
           <ol ref={lijstRef} className="relative m-0 list-none p-0 pl-8" style={{ height: lijstHoogte }}>
@@ -286,8 +288,8 @@ export default function ScrollStappen({
               )
             })}
           </ol>
-          {/* Smal scherm: dezelfde zin onder de lijst (de lg-versie staat links). */}
-          {naschrift && <p className="m-0 -mt-4 text-[16px] leading-[1.55] text-white/75 lg:hidden">{naschrift}</p>}
+          {/* Smal scherm: dezelfde zin onder de lijst (vanaf 900px staat hij links). */}
+          {naschrift && <p className="m-0 -mt-4 text-[16px] leading-[1.55] text-white/75 tussen:hidden">{naschrift}</p>}
         </div>
       </div>
     </div>

@@ -113,9 +113,11 @@ export default function Footer() {
               <Link href="/" className="inline-block">
                 <Logo variant="mono-white" width={120} height={19} />
               </Link>
-              {/* De korte belofte uit D-086 (verkoopsynthese 11 okt). */}
-              <p className="mt-4 max-w-[320px] text-[14px] leading-relaxed text-slate-400">
-                Stevin.AI zorgt dat je marketing blijft werken. Op jouw naam.
+              {/* De korte belofte uit D-086 (verkoopsynthese 11 okt). "Op jouw
+                  naam." op een eigen regel: anders bleef "Op" op elke breedte
+                  los achteraan de eerste regel staan (11 okt). */}
+              <p className="mt-4 max-w-[320px] text-balance text-[14px] leading-relaxed text-slate-400">
+                Stevin.AI zorgt dat je marketing blijft werken. <span className="block">Op jouw naam.</span>
               </p>
             </div>
             <nav aria-label="Footer">
