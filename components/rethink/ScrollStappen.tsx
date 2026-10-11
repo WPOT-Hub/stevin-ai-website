@@ -15,8 +15,13 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react'
  * Geen layout shifts bij gewoon scrollen (CLS): in de browser staat elke stap
  * absoluut in een lijst met een vaste hoogte, en wisselen alleen opacity en
  * transform. Elke stap heeft een kleine en een grote versie op elkaar; de
- * hoogtes worden een keer gemeten (en opnieuw bij een andere breedte), en daaruit
- * volgt waar elke stap staat.
+ * hoogtes worden gemeten (opnieuw als de lettertypen binnen zijn en bij elke
+ * maatwijziging), en daaruit volgt waar elke stap staat.
+ *
+ * Smal scherm (onder lg, een kolom): alleen de huidige stap, op een vaste plek.
+ * Met de eerdere stappen erboven werd het vastgezette blok ongeveer 700px hoog
+ * en viel het doel op een telefoon onder het scherm (11 okt). Op een laag
+ * scherm (liggende telefoon) zetten we niets vast en staat alles onder elkaar.
  */
 
 const TUSSEN = 14 // ruimte tussen twee stappen
@@ -48,37 +53,57 @@ export default function ScrollStappen({
   const kleinRefs = useRef<(HTMLSpanElement | null)[]>([])
   const grootRefs = useRef<(HTMLSpanElement | null)[]>([])
   const [actief, setActief] = useState(false)
+  // Smal scherm: alleen de huidige stap (zie de uitleg bovenaan).
+  const [compact, setCompact] = useState(false)
   const [aantal, setAantal] = useState(stappen.length + 1)
   const [maten, setMaten] = useState<Maten | null>(null)
   const items = [...stappen, doel]
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    setActief(true)
+    const stil = window.matchMedia('(prefers-reduced-motion: reduce), (max-height: 499px)')
+    const smal = window.matchMedia('(max-width: 1023px)')
+    const zet = () => {
+      setActief(!stil.matches)
+      setCompact(smal.matches)
+    }
+    zet()
+    stil.addEventListener('change', zet)
+    smal.addEventListener('change', zet)
+    return () => {
+      stil.removeEventListener('change', zet)
+      smal.removeEventListener('change', zet)
+    }
   }, [])
 
-  // Hoogtes meten zodra het scrollverhaal actief is, en opnieuw als de lijst
-  // een andere breedte krijgt (dan lopen de regels anders af).
+  // Hoogtes meten zodra het scrollverhaal actief is. Opnieuw als de
+  // lettertypen binnen zijn (een later geladen lettertype loopt anders af en
+  // gaf overlap) en bij elke maatwijziging van de lijst of een stap. Alleen
+  // bij echt andere maten een nieuwe stand, anders zou het zetten van de
+  // lijsthoogte de meting steeds opnieuw starten.
   useLayoutEffect(() => {
     if (!actief) return
+    let vorige = ''
+    let weg = false
     const meet = () => {
-      setMaten({
-        klein: kleinRefs.current.map((el) => el?.offsetHeight ?? 0),
-        groot: grootRefs.current.map((el) => el?.offsetHeight ?? 0),
-      })
+      if (weg) return
+      const nieuw = {
+        klein: kleinRefs.current.slice(0, items.length).map((el) => el?.offsetHeight ?? 0),
+        groot: grootRefs.current.slice(0, items.length).map((el) => el?.offsetHeight ?? 0),
+      }
+      const sleutel = `${nieuw.klein.join(',')}|${nieuw.groot.join(',')}`
+      if (sleutel === vorige) return
+      vorige = sleutel
+      setMaten(nieuw)
     }
     meet()
-    const el = lijstRef.current
-    if (!el) return
-    let breedte = el.offsetWidth
-    const ro = new ResizeObserver(() => {
-      if (el.offsetWidth === breedte) return
-      breedte = el.offsetWidth
-      meet()
-    })
-    ro.observe(el)
-    return () => ro.disconnect()
-  }, [actief])
+    void document.fonts?.ready.then(meet)
+    const ro = new ResizeObserver(meet)
+    for (const el of [lijstRef.current, ...kleinRefs.current, ...grootRefs.current]) if (el) ro.observe(el)
+    return () => {
+      weg = true
+      ro.disconnect()
+    }
+  }, [actief, items.length])
 
   // Voortgang pas meten als het blok zijn scrollhoogte heeft (na actief), en
   // over het stuk waarin het vastgezette deel echt vaststaat: de hoogte van
@@ -116,15 +141,19 @@ export default function ScrollStappen({
 
   // Plek van elke stap: eerdere klein onder elkaar, de huidige groot eronder,
   // latere (nog onzichtbaar) net onder de huidige. De lijst krijgt de grootste
-  // hoogte die ooit nodig is, zodat er nooit iets verschuift.
+  // hoogte die ooit nodig is, zodat er nooit iets verschuift. Compact: elke
+  // stap op dezelfde plek, de vorige schuift weg naar boven, de volgende komt
+  // van onder.
   const geanimeerd = actief && maten !== null
   const boven = (h: number) => {
+    if (compact) return 0
     let y = 0
     for (let j = 0; j < h; j++) y += (maten?.klein[j] ?? 0) + TUSSEN
     return y + (h > 0 ? EXTRA : 0)
   }
   const lijstHoogte = geanimeerd ? Math.max(...items.map((_, h) => boven(h) + (maten?.groot[h] ?? 0))) : undefined
   const plek = (i: number) => {
+    if (compact) return i < huidig ? -14 : i > huidig ? 14 : 0
     if (i <= huidig) return i === huidig ? boven(huidig) : boven(i) - (i > 0 ? EXTRA : 0)
     return boven(huidig) + 12
   }
@@ -168,7 +197,9 @@ export default function ScrollStappen({
               className="absolute bottom-2 left-[3px] top-2 w-px origin-top bg-accent-light transition-transform duration-700 ease-out"
               style={{
                 transform: `scaleY(${
-                  geanimeerd && lijstHoogte
+                  compact && actief
+                    ? Math.min(1, aantal / items.length)
+                    : geanimeerd && lijstHoogte
                     ? Math.min(1, Math.max(0, (plek(huidig) + 8) / lijstHoogte))
                     : actief
                       ? huidig / Math.max(1, items.length - 1)
@@ -182,8 +213,8 @@ export default function ScrollStappen({
               const isHuidig = actief ? i === huidig && zichtbaar : isDoel
               const kleur = isDoel ? '#5FD39A' : '#5DA3FF'
               // Eerdere stappen gedimd, maar leesbaar (0,6: ongeveer 8:1 op
-              // navy). Zonder animatie staat alles op vol.
-              const opacity = !zichtbaar ? 0 : isHuidig || !actief ? 1 : 0.6
+              // navy); compact helemaal weg. Zonder animatie staat alles op vol.
+              const opacity = !zichtbaar ? 0 : isHuidig || !actief ? 1 : compact ? 0 : 0.6
               const label = isDoel ? 'DOEL' : `${String(i + 1).padStart(2, '0')} / ${String(stappen.length).padStart(2, '0')}`
               const stip = (
                 <span

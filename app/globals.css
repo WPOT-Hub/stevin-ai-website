@@ -22,6 +22,12 @@
   --color-accent: #3D8EFF;
   --color-accent-dark: #2B7AEE;
   --color-accent-light: #5DA3FF;
+  /* Donkerdere tint van accent #3c8eff (Desk-token), voor contrast AA op wit:
+     als tekst op wit en als vlak onder witte tekst haalt hij 5,5:1, het gewone
+     accent maar 3,2:1. Gebruikt in components/rethink (W-535): text-accent-diep,
+     bg-accent-diep, border-accent-diep/70. Hover: accent-dieper. */
+  --color-accent-diep: #1D63D8;
+  --color-accent-dieper: #1A56BD;
 
   /* CTA accent: brand teal for high-impact buttons */
   --color-neon: #00D4A0;

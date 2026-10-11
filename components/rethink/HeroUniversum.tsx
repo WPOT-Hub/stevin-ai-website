@@ -1,12 +1,17 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import StevinUniversum, { type UniversumFase } from './StevinUniversum'
+import { Pause, Play } from 'lucide-react'
+import StevinUniversum, { HERINNERINGEN, type UniversumFase } from './StevinUniversum'
 import { ADVISOR, BREIN, BRONNEN, type BronId } from './netwerk'
 
 /**
  * Hero van richting C: het 3D-brein vult het scherm, de tekst staat ervoor.
  * Bediening in gewone knoppen (toetsenbord, schermlezer), het beeld volgt.
+ *
+ * Mobiel blijft kop, zin, brein, vraagknop, knop (Koen, 11 okt). De lijst met
+ * onderdelen en herinneringen is daar alleen voor toetsenbord en schermlezer:
+ * onzichtbaar tot hij focus krijgt. Op desktop zijn de herinneringen dat ook.
  */
 
 type Kies = BronId | 'brein' | 'advisor'
@@ -21,6 +26,7 @@ const VRAAG = {
 
 // Pauzeknop voor alle beweging die vanzelf loopt (WCAG 2.2.2): het brein, de
 // logoband en de watermerken. CSS en de lus van het brein lezen het attribuut.
+// Een klein icoon in een hoek van het breinvlak, geen tekstknop in de hero.
 const BEWEGING_SLEUTEL = 'stevin_beweging'
 function zetBewegingAttribuut(uit: boolean) {
   if (uit) document.documentElement.dataset.beweging = 'uit'
@@ -37,6 +43,8 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
   const [fase, setFase] = useState<UniversumFase>('rust')
   const [focus, setFocus] = useState<Kies | null>(null)
   const [lijstOpen, setLijstOpen] = useState(false)
+  // Herinnering gekozen via de knoppenlijst (index in HERINNERINGEN).
+  const [herinnering, setHerinnering] = useState<number | null>(null)
   // Gekozen in het beeld zelf: dan staat de uitleg al op het kaartje bij de
   // node en hoeft hij niet nog een keer onder de knop.
   const [uitBeeld, setUitBeeld] = useState(false)
@@ -81,6 +89,7 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
     timers.current.forEach((t) => window.clearTimeout(t))
     timers.current = []
     setFocus(null)
+    setHerinnering(null)
     push('demo_vraag', { demo_vraag: 'hero_resultaten_week', demo_bron: 'hero_klik' })
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setFase('advies')
@@ -91,16 +100,48 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
     )
   }
 
+  // demo_node alleen bij kiezen, niet als je dezelfde knop nog eens indrukt
+  // om hem uit te zetten.
   const kies = (id: Kies, vanuitBeeld = false) => {
+    const aan = focus !== id
     setUitBeeld(vanuitBeeld)
     timers.current.forEach((t) => window.clearTimeout(t))
     setFase('rust')
-    setFocus((f) => (f === id ? null : id))
-    push('demo_node', { demo_node: id })
+    setHerinnering(null)
+    setFocus(aan ? id : null)
+    if (aan) push('demo_node', { demo_node: id })
+  }
+
+  const kiesHerinnering = (i: number) => {
+    const aan = herinnering !== i
+    setUitBeeld(false)
+    timers.current.forEach((t) => window.clearTimeout(t))
+    setFase('rust')
+    setFocus(null)
+    setHerinnering(aan ? i : null)
+    if (aan) push('demo_node', { demo_node: `herinnering_${String(i + 1).padStart(2, '0')}` })
+  }
+
+  const sluit = () => {
+    setFocus(null)
+    setHerinnering(null)
   }
 
   const alle = [...BRONNEN, BREIN, ADVISOR]
   const gekozen = alle.find((n) => n.id === focus)
+  const gekozenHerinnering = herinnering != null ? HERINNERINGEN[herinnering] : null
+
+  const pauzeKnop = (plek: string) => (
+    <button
+      type="button"
+      onClick={wisselBeweging}
+      aria-label={bewegingUit ? 'Beweging aan' : 'Beweging uit'}
+      title={bewegingUit ? 'Beweging aan' : 'Beweging uit'}
+      className={`pointer-events-auto absolute h-8 w-8 place-items-center rounded-full text-white/50 transition-colors hover:bg-white/10 hover:text-white focus-visible:text-white ${plek}`}
+    >
+      {bewegingUit ? <Play size={16} aria-hidden="true" /> : <Pause size={16} aria-hidden="true" />}
+    </button>
+  )
 
   return (
     <section className="relative -mt-[72px] overflow-hidden bg-primary text-white">
@@ -118,7 +159,8 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
             focus={focus}
             signaal={VRAAG.signaal}
             onKiesHub={(id) => kies(id as Kies, true)}
-            onSluit={() => setFocus(null)}
+            onSluit={sluit}
+            herinnering={herinnering}
             middenX={0.66}
             middenY={0.5}
             schaal={0.92}
@@ -149,12 +191,14 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               focus={focus}
               signaal={VRAAG.signaal}
               onKiesHub={(id) => kies(id as Kies, true)}
-              onSluit={() => setFocus(null)}
+              onSluit={sluit}
+              herinnering={herinnering}
               middenX={0.36}
               middenY={0.5}
               schaal={1.15}
             />
           )}
+          {pauzeKnop('bottom-1 right-4 grid')}
         </div>
 
         {/* Bediening */}
@@ -167,48 +211,78 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
             >
               {VRAAG.tekst}
             </button>
+            {/* Mobiel alleen zichtbaar met toetsenbordfocus (sr-only tot focus). */}
             <button
               type="button"
               onClick={() => setLijstOpen((o) => !o)}
               aria-expanded={lijstOpen}
               aria-controls="hero-onderdelen"
-              className="hidden text-[13.5px] text-white/60 underline-offset-2 hover:text-white hover:underline lg:inline"
+              className="sr-only text-[13.5px] text-white/60 underline-offset-2 hover:text-white hover:underline focus:not-sr-only lg:not-sr-only"
             >
               {lijstOpen ? 'Minder' : 'Of kies een onderdeel'}
             </button>
-            <button
-              type="button"
-              onClick={wisselBeweging}
-              className="text-[13.5px] text-white/60 underline-offset-2 hover:text-white hover:underline"
-            >
-              {bewegingUit ? 'Beweging aan' : 'Beweging uit'}
-            </button>
           </div>
-          <ul
-            id="hero-onderdelen"
-            className={`m-0 mt-3 list-none flex-wrap gap-1.5 p-0 ${lijstOpen ? 'hidden lg:flex' : 'hidden'}`}
+          {/* Open: op desktop zichtbaar, op mobiel alleen zolang de focus erin
+              staat. De herinneringen zijn op elke schermmaat alleen zichtbaar
+              met focus: er komt niets bij in beeld (11 okt). De wrappers dragen
+              sr-only, zodat de marges van de lijsten blijven staan. */}
+          <div id="hero-onderdelen" className={lijstOpen ? 'sr-only focus-within:not-sr-only lg:not-sr-only' : 'hidden'}>
+            <ul className="m-0 mt-3 flex list-none flex-wrap gap-1.5 p-0">
+              {alle.map((n) => (
+                <li key={n.id}>
+                  <button
+                    type="button"
+                    onClick={() => kies(n.id as Kies)}
+                    aria-pressed={focus === n.id}
+                    className={`rounded-full border px-2.5 py-1 text-[13px] transition-colors ${
+                      focus === n.id
+                        ? 'border-white bg-white text-primary'
+                        : 'border-white/20 text-white/75 hover:border-white/60 hover:text-white'
+                    }`}
+                  >
+                    {n.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <div role="group" aria-labelledby="hero-herinneringen" className="sr-only focus-within:not-sr-only">
+              <p id="hero-herinneringen" className="m-0 mt-3 text-[12px] font-semibold uppercase tracking-[0.1em] text-white/55">
+                Wat Stevin onthoudt (voorbeeld)
+              </p>
+              <ul className="m-0 mt-2 flex list-none flex-wrap gap-1.5 p-0">
+                {HERINNERINGEN.map((h, i) => (
+                  <li key={h.kort}>
+                    <button
+                      type="button"
+                      onClick={() => kiesHerinnering(i)}
+                      aria-pressed={herinnering === i}
+                      className={`rounded-full border px-2.5 py-1 text-[13px] transition-colors ${
+                        herinnering === i
+                          ? 'border-white bg-white text-primary'
+                          : 'border-white/20 text-white/75 hover:border-white/60 hover:text-white'
+                      }`}
+                    >
+                      {h.kort}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          {/* Minimumhoogte alleen als de vraag loopt: in rust duwde hij op
+              mobiel de knop 80px omlaag. */}
+          <p
+            aria-live="polite"
+            className={`m-0 mt-3 text-[14.5px] leading-snug text-white/70 lg:mt-4 lg:min-h-[44px] ${fase !== 'rust' ? 'min-h-[80px]' : ''}`}
           >
-            {alle.map((n) => (
-              <li key={n.id}>
-                <button
-                  type="button"
-                  onClick={() => kies(n.id as Kies)}
-                  aria-pressed={focus === n.id}
-                  className={`rounded-full border px-2.5 py-1 text-[13px] transition-colors ${
-                    focus === n.id
-                      ? 'border-white bg-white text-primary'
-                      : 'border-white/20 text-white/75 hover:border-white/60 hover:text-white'
-                  }`}
-                >
-                  {n.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-          <p aria-live="polite" className="m-0 mt-3 min-h-[80px] text-[14.5px] leading-snug text-white/70 lg:mt-4 lg:min-h-[44px]">
             {gekozen && !uitBeeld ? (
               <>
                 <strong className="font-semibold text-white">{gekozen.label}.</strong> {gekozen.uitleg}
+              </>
+            ) : gekozenHerinnering ? (
+              <>
+                <strong className="font-semibold text-white">{gekozenHerinnering.kort}</strong> (voorbeeld,{' '}
+                {gekozenHerinnering.wanneer}). {gekozenHerinnering.uitleg}
               </>
             ) : fase === 'advies' ? (
               <>
@@ -219,13 +293,16 @@ export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; 
               </>
             ) : fase !== 'rust' ? (
               'Stevin pakt website, telefoon en offertes erbij...'
-            ) : (
+            ) : bewegingUit ? null : (
               <span className="hidden lg:inline">Sleep om het brein te draaien.</span>
             )}
           </p>
         </div>
 
         <div className="pointer-events-auto mt-6 max-w-[560px] lg:hidden">{knoppen}</div>
+
+        {/* Desktop: pauzeknop rechtsonder in het breinvlak */}
+        {pauzeKnop('bottom-6 right-6 hidden lg:grid')}
       </div>
     </section>
   )
