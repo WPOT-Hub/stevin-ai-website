@@ -10935,7 +10935,7 @@ function ArticleChatGPTAdsBody() {
       <ul>
         <li>
           <b>Doorklik.</b> In Engelstalige markten leidt 0,6 tot 0,75 procent van de antwoorden met een advertentie tot een klik (panel van Similarweb, geanalyseerd door het bureau Graphite, via{' '}
-          <Ext href="https://ppc.land/chatgpt-ad-click-rate-gains-112-worldwide-similarweb-and-graphite-find/">PPC Land</Ext>, 28 september). Similarweb verkoopt zelf het instrument waar die cijfers uit komen. Voor zoekadvertenties in Google wordt vaak rond de 6 procent genoemd, maar dat is anders gemeten.
+          <Ext href="https://ppc.land/chatgpt-ad-click-rate-gains-112-worldwide-similarweb-and-graphite-find/">PPC Land</Ext>, 28 september). Similarweb verkoopt zelf het instrument waar die cijfers uit komen. Een zuivere vergelijking met Google Search bestaat nog niet; de enige meting bij dezelfde adverteerder in dezelfde periode staat hieronder.
         </li>
         <li>
           <b>Aanvragen.</b> Het bureau Stub Group vergeleek dertig dagen voor een zakelijke klant (
