@@ -27,6 +27,18 @@ import { getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/
  * nooit verloren (11 okt). De Hub stuurt meteen zijn gewone ontvangstmail
  * (lead.ts, zonder het moment); de tekst na versturen zegt dat ook.
  *
+ * Nooit een aanvraag kwijt (besluit Koen, 11 okt 09:17, zoals Swoep en een
+ * stap verder). De browser houdt niets meer tegen op het vinkje tegen robots:
+ * het formulier gaat altijd weg, met het token of leeg, en de server beslist
+ * (een aanvraag zonder geldig vinkje wordt daar gemarkeerd en bewaard). Wat er
+ * terugkomt, lezen we volgens het antwoordcontract bovenaan
+ * src/routes/kennismaking.ts in de Hub: eerst ingepland, dan bewaard, dan de
+ * status, nooit alleen res.ok. Lukt boeken niet en is er niets bewaard
+ * (storing, of geen verbinding met /boek), dan gaat dezelfde aanvraag met het
+ * moment nog via het Hub-endpoint van "Laat je gegevens achter". Bij elke
+ * melding blijven de ingevulde velden staan, ook als je een ander moment kiest
+ * of van tabblad wisselt.
+ *
  * Openen: elk element met data-open-kennismaking op de pagina.
  *
  * Toegankelijkheid: zolang het venster open is, krijgt alles ernaast inert
@@ -57,36 +69,16 @@ declare global {
 // het venster. Eerder pas bij de eerste focus: wie met automatisch invullen
 // meteen verstuurde, kreeg een melding over een vinkje dat er nog niet was.
 //
-// Lukt de controle niet, dan meldt onFout dat, zodat de bezoeker een uitweg
-// krijgt in plaats van eindeloos "even geduld" (11 okt, nagespeeld: script
-// geblokkeerd, of fout 110200 bij een hostnaam die niet in het widget staat).
-// Signalen: error-callback (netwerk, mislukte controle), unsupported-callback
-// (browser), een fout bij het laden van het script, en na tien seconden nog
-// geen token terwijl er ook geen vinkje voor de bezoeker staat. Komt het token
-// later alsnog (Turnstile probeert het zelf opnieuw), dan verdwijnt de melding.
-const CONTROLE_WACHT_MS = 10000
-function Turnstile({
-  onToken,
-  onFout,
-  widgetRef,
-}: {
-  onToken: (t: string) => void
-  onFout: () => void
-  widgetRef: React.RefObject<string>
-}) {
+// Lukt de controle niet (script geblokkeerd, netwerk, een hostnaam die niet
+// in het widget staat), dan is er geen token en gaat het formulier zonder weg.
+// Geen melding meer en geen uitweg naar de mail: de server bewaart de
+// aanvraag en markeert hem (11 okt 09:17).
+function Turnstile({ onToken, widgetRef }: { onToken: (t: string) => void; widgetRef: React.RefObject<string> }) {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (!TURNSTILE_SITEKEY || !ref.current) return
     let id = ''
     let weg = false
-    let gekregen = false
-    let interactief = false
-    const fout = () => {
-      if (!weg) onFout()
-    }
-    const wacht = window.setTimeout(() => {
-      if (!gekregen && !interactief) fout()
-    }, CONTROLE_WACHT_MS)
     const teken = () => {
       if (weg || !window.turnstile || !ref.current || id) return
       try {
@@ -94,27 +86,14 @@ function Turnstile({
           sitekey: TURNSTILE_SITEKEY,
           language: 'nl',
           appearance: 'always',
-          callback: (t: string) => {
-            gekregen = true
-            onToken(t)
-          },
+          callback: (t: string) => onToken(t),
           'expired-callback': () => onToken(''),
           // Met een error-callback gooit Turnstile zelf geen fout; true zegt
-          // dat hij is afgehandeld (Cloudflare, Client-side errors).
-          'error-callback': () => {
-            fout()
-            return true
-          },
-          'unsupported-callback': fout,
-          'before-interactive-callback': () => {
-            interactief = true
-          },
-          'after-interactive-callback': () => {
-            interactief = false
-          },
+          // dat hij is afgehandeld (Cloudflare, Client-side errors). Turnstile
+          // probeert het daarna zelf opnieuw.
+          'error-callback': () => true,
         })
       } catch {
-        fout()
         return
       }
       widgetRef.current = id
@@ -129,19 +108,16 @@ function Turnstile({
       })
       sc.setAttribute('data-turnstile', '')
       sc.addEventListener('load', teken)
-      sc.addEventListener('error', fout)
       if (!bestaand) document.head.appendChild(sc)
     }
     return () => {
       weg = true
-      window.clearTimeout(wacht)
       sc?.removeEventListener('load', teken)
-      sc?.removeEventListener('error', fout)
       if (id && window.turnstile) window.turnstile.remove(id)
       widgetRef.current = ''
       onToken('')
     }
-  }, [onToken, onFout, widgetRef])
+  }, [onToken, widgetRef])
   if (!TURNSTILE_SITEKEY) return null
   return <div ref={ref} className="min-h-[65px]" />
 }
@@ -249,12 +225,82 @@ const metHoofdletter = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
 // Het pad zonder taalvoorvoegsel, zoals ContactForm het als source meegeeft.
 const padZonderTaal = () => window.location.pathname.replace(/^\/(nl|en)(?=\/|$)/, '') || '/'
 const FOUT_VELDEN = 'Vul je naam en een geldig e-mailadres in.'
-// Turnstile staat in Managed-modus: meestal valt er niets aan te vinken, de
-// controle loopt vanzelf. Zonder token is hij dus meestal nog bezig.
-const FOUT_ROBOT = 'Even geduld, we controleren nog of je geen robot bent.'
-// De controle lukt niet (zie Turnstile): dan een uitweg. Het mailadres staat
-// als link in de melding.
-const FOUT_CONTROLE = 'De controle lukt nu niet. Mail dan naar info@stevin.ai.'
+// Meldingen bij een antwoord van de server (Koen, 11 okt 09:17). Bij elk van
+// deze blijven de ingevulde velden staan.
+const FOUT_CONTROLE = 'Rond de controle af en probeer het opnieuw.'
+const FOUT_VERGEVEN = 'Dit moment is net vergeven. Kies een andere tijd.'
+const FOUT_TE_VEEL = 'Te veel pogingen. Probeer het over een paar minuten opnieuw.'
+const FOUT_VERSTUREN = 'Versturen lukte niet. Probeer het nog een keer, of mail naar info@stevin.ai.'
+// Klaarscherm als de aanvraag binnen is maar het moment niet in de agenda
+// staat. Bellen kan alleen met een telefoonnummer; zonder mailen we (zoals de
+// Hub, binnenTekst in core/crm/kennismaking.ts).
+const NIET_VAST = 'We konden dit moment niet automatisch vastzetten.'
+const NIET_VAST_BELLEN = `${NIET_VAST} We bellen je binnen een werkdag.`
+const NIET_VAST_MAILEN = `${NIET_VAST} We mailen je binnen een werkdag.`
+
+type Veldnaam = 'bedrijf' | 'voornaam' | 'achternaam' | 'email' | 'telefoon' | 'vraag'
+type Waarden = Record<Veldnaam, string>
+const LEEG: Waarden = { bedrijf: '', voornaam: '', achternaam: '', email: '', telefoon: '', vraag: '' }
+// Het veld dat de server noemt bij een 400, op naam van ons invulveld.
+const SERVERVELD: Record<string, Veldnaam> = {
+  naam: 'voornaam',
+  email: 'email',
+  bedrijf: 'bedrijf',
+  telefoon: 'telefoon',
+  vraag: 'vraag',
+}
+
+// Wat een antwoord betekent, in de volgorde van het antwoordcontract in de
+// Hub (src/routes/kennismaking.ts): ingepland, dan bewaard, dan de status.
+// Nooit alleen op res.ok: een 202 is bewaard, geen boeking. storing is ook
+// geen antwoord: geen verbinding, of een antwoord dat de browser niet mag
+// lezen, zoals een 403 zonder CORS-kop.
+type Uitkomst =
+  | { soort: 'ingepland' }
+  | { soort: 'binnen' }
+  | { soort: 'vergeven'; melding: string }
+  | { soort: 'controle' }
+  | { soort: 'teVeel' }
+  | { soort: 'veld'; veld: string; melding: string }
+  | { soort: 'storing' }
+async function stuur(url: string, body: Record<string, unknown>): Promise<Uitkomst> {
+  let status = 0
+  let a: Record<string, unknown> = {}
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'omit',
+      body: JSON.stringify(body),
+    })
+    status = res.status
+    try {
+      const j: unknown = await res.json()
+      if (j && typeof j === 'object' && !Array.isArray(j)) a = j as Record<string, unknown>
+    } catch {
+      /* geen JSON, bijvoorbeeld een foutpagina van de proxy */
+    }
+  } catch {
+    return { soort: 'storing' }
+  }
+  const tekst = (v: unknown) => (typeof v === 'string' ? v.trim().slice(0, 300) : '')
+  const melding = tekst(a.melding) || tekst(a.error)
+  const goed = status >= 200 && status < 300 && a.ok !== false
+  if (goed && a.ingepland === true) return { soort: 'ingepland' }
+  if (goed) return { soort: 'binnen' }
+  if (status === 409) return { soort: 'vergeven', melding: '' }
+  if (status === 403) return { soort: 'controle' }
+  if (status === 429) return { soort: 'teVeel' }
+  if (status === 400) {
+    const veld = tekst(a.veld)
+    // Een moment dat niet (meer) in de agenda staat: zelfde weg als 409.
+    if (veld === 'start') return { soort: 'vergeven', melding }
+    return { soort: 'veld', veld, melding }
+  }
+  // Bijvoorbeeld een 502 waarbij het bewaren wel lukte.
+  if (a.bewaard === true) return { soort: 'binnen' }
+  return { soort: 'storing' }
+}
 
 export default function KennismakingVenster() {
   const [open, setOpen] = useState(false)
@@ -268,25 +314,17 @@ export default function KennismakingVenster() {
   const [bezig, setBezig] = useState(false)
   const [fout, setFout] = useState('')
   const [token, setToken] = useState('')
-  const [controleMislukt, setControleMislukt] = useState(false)
-  // Komt het token binnen terwijl de melding "even geduld" of "lukt nu niet"
-  // er staat, dan verdwijnt die melding vanzelf.
-  const zetToken = useCallback((t: string) => {
-    setToken(t)
-    if (!t) return
-    setControleMislukt(false)
-    setFout((f) => (f === FOUT_ROBOT || f === FOUT_CONTROLE ? '' : f))
-  }, [])
-  // Lukt de controle niet, dan meteen zeggen, niet pas na het invullen.
-  const controleFout = useCallback(() => {
-    setControleMislukt(true)
-    setFout((f) => (f === '' || f === FOUT_ROBOT ? FOUT_CONTROLE : f))
-  }, [])
   const widgetId = useRef('')
+  // De ingevulde velden staan hier en niet in het formulier zelf, zodat ze
+  // blijven staan als je een ander moment kiest of van tabblad wisselt.
+  const [waarden, setWaarden] = useState<Waarden>(LEEG)
+  const [foutVelden, setFoutVelden] = useState<Veldnaam[]>([])
   // Eerste focus in het formulier: form_start (een keer per venster).
   const [formGestart, setFormGestart] = useState(false)
-  // Verstuurd als aanvraag van een moment uit de voorbeeldagenda.
-  const [aangevraagd, setAangevraagd] = useState(false)
+  // Hoe het afliep: een afspraak, een aangevraagd moment (voorbeeldagenda),
+  // binnen maar niet in de agenda, of alleen gegevens.
+  const [klaar, setKlaar] = useState<'geboekt' | 'aangevraagd' | 'nietVast' | 'gegevens'>('gegevens')
+  const [metTelefoon, setMetTelefoon] = useState(false)
   const overlayRef = useRef<HTMLDivElement>(null)
   const dialoogRef = useRef<HTMLDivElement>(null)
   const vorigeFocus = useRef<HTMLElement | null>(null)
@@ -431,81 +469,105 @@ export default function KennismakingVenster() {
   const verstuur = async (e: React.FormEvent<HTMLFormElement>, modus: 'boek' | 'gegevens') => {
     e.preventDefault()
     if (bezig) return
-    const data = new FormData(e.currentTarget)
-    const naam = `${String(data.get('voornaam') ?? '').trim()} ${String(data.get('achternaam') ?? '').trim()}`.trim()
-    const email = String(data.get('email') ?? '').trim()
-    const bedrijf = String(data.get('bedrijf') ?? '').trim()
-    const telefoon = String(data.get('telefoon') ?? '').trim()
-    const vraag = String(data.get('vraag') ?? '').trim()
-    const honey = String(data.get('_honey') ?? '')
-    if (!naam || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    const honey = String(new FormData(e.currentTarget).get('_honey') ?? '')
+    const naam = `${waarden.voornaam.trim()} ${waarden.achternaam.trim()}`.trim()
+    const email = waarden.email.trim()
+    const bedrijf = waarden.bedrijf.trim()
+    const telefoon = waarden.telefoon.trim()
+    const vraag = waarden.vraag.trim()
+    const ontbreekt: Veldnaam[] = []
+    if (!naam) ontbreekt.push('voornaam')
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) ontbreekt.push('email')
+    if (ontbreekt.length) {
+      setFoutVelden(ontbreekt)
       setFout(FOUT_VELDEN)
       return
     }
-    if (TURNSTILE_SITEKEY && !token) {
-      setFout(controleMislukt ? FOUT_CONTROLE : FOUT_ROBOT)
-      return
-    }
-    // Voorbeeldagenda: het gekozen moment gaat als aanvraag mee, niet als boeking.
-    const aanvraag = modus === 'boek' && voorbeeld && gekozen ? gekozen : null
+    // Geen controle op het token hier: het formulier gaat altijd weg, met het
+    // token of leeg (Koen, 11 okt 09:17). De server beslist.
+    const moment = modus === 'boek' && gekozen ? gekozen : null
     setBezig(true)
     setFout('')
+    setFoutVelden([])
+    // Het moment staat leesbaar in het bericht (de Hub bewaart en mailt alleen
+    // het bericht) en als apart veld voor de latere koppeling.
+    const viaGegevens = () =>
+      stuur(HUB_ENDPOINT, {
+        name: naam,
+        email,
+        company: bedrijf,
+        phone: telefoon,
+        message: moment
+          ? `Gevraagd moment voor een kennismaking: ${metHoofdletter(fmtDagLang(moment.start))} om ${fmtTijd(moment.start)} (Nederlandse tijd, ${DUUR_MIN} minuten).${vraag ? `\n\n${vraag}` : ''}`
+          : vraag,
+        ...(moment ? { gevraagd_moment: moment.start } : {}),
+        source: 'kennismaking_venster',
+        _honey: honey,
+        turnstile: token,
+        context: getLeadContext(),
+      })
     try {
-      if (modus === 'boek' && gekozen && !aanvraag) {
-        const res = await fetch(`${API}/boek`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          credentials: 'omit',
-          body: JSON.stringify({ start: gekozen.start, naam, email, bedrijf, telefoon, vraag, _honey: honey, turnstile: token, context: getLeadContext() }),
+      let uit: Uitkomst
+      // Hoe een gelukte verzending heet: de echte agenda, of het moment als
+      // aanvraag (voorbeeldagenda, of boeken lukte niet), of alleen gegevens.
+      let gelukt: 'nietVast' | 'aangevraagd' | 'gegevens'
+      if (moment && !voorbeeld) {
+        uit = await stuur(`${API}/boek`, {
+          start: moment.start, naam, email, bedrijf, telefoon, vraag, _honey: honey, turnstile: token, context: getLeadContext(),
         })
-        if (res.status === 409) {
-          setFout('Dit moment is net vergeven. Kies een ander moment.')
-          focusNa.current = 'slot'
-          setStap('kies')
-          void laad()
+        gelukt = 'nietVast'
+        // Niets bewaard of geen antwoord: dezelfde aanvraag nog via het
+        // Hub-endpoint van "Laat je gegevens achter", met het moment erin.
+        if (uit.soort === 'storing') uit = await viaGegevens()
+      } else {
+        uit = await viaGegevens()
+        gelukt = moment ? 'aangevraagd' : 'gegevens'
+      }
+      switch (uit.soort) {
+        case 'ingepland':
+          // Eigen slug, zodat eigen agenda en Cal.com in GA4 uit elkaar te houden zijn.
+          void pushConversionEvent('meeting_booked', { email }, { event_slug: 'kennismaking_eigen', form: 'kennismaking_venster' })
+          setKlaar('geboekt')
+          break
+        case 'binnen':
+          // Dezelfde parameters als ContactForm (form, source): die stuurt GTM
+          // door. lead_soort onderscheidt een aangevraagd moment (ook als het
+          // niet in de agenda kwam) van alleen gegevens; een echte boeking is
+          // meeting_booked hierboven.
+          void pushConversionEvent(
+            'generate_lead',
+            { email },
+            { form: 'kennismaking_venster', source: padZonderTaal(), lead_soort: moment ? 'moment_aangevraagd' : 'gegevens' },
+          )
+          setMetTelefoon(Boolean(telefoon))
+          setKlaar(gelukt)
+          break
+        case 'vergeven':
+          setFout(uit.melding || FOUT_VERGEVEN)
+          if (moment) {
+            focusNa.current = 'slot'
+            setStap('kies')
+            void laad()
+          }
+          return
+        case 'controle':
+          setFout(FOUT_CONTROLE)
+          return
+        case 'teVeel':
+          setFout(FOUT_TE_VEEL)
+          return
+        case 'veld': {
+          const veld = Object.prototype.hasOwnProperty.call(SERVERVELD, uit.veld) ? SERVERVELD[uit.veld] : undefined
+          setFoutVelden(veld ? [veld] : [])
+          setFout(uit.melding || FOUT_VELDEN)
           return
         }
-        if (!res.ok) throw new Error(String(res.status))
-        // Eigen slug, zodat eigen agenda en Cal.com in GA4 uit elkaar te houden zijn.
-        void pushConversionEvent('meeting_booked', { email }, { event_slug: 'kennismaking_eigen', form: 'kennismaking_venster' })
-      } else {
-        // Het moment staat leesbaar in het bericht (de Hub bewaart en mailt
-        // alleen het bericht) en als apart veld voor de latere koppeling.
-        const moment = aanvraag ? `${metHoofdletter(fmtDagLang(aanvraag.start))} om ${fmtTijd(aanvraag.start)}` : ''
-        const bericht = aanvraag
-          ? `Gevraagd moment voor een kennismaking: ${moment} (Nederlandse tijd, ${DUUR_MIN} minuten).${vraag ? `\n\n${vraag}` : ''}`
-          : vraag
-        const res = await fetch(HUB_ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: naam,
-            email,
-            company: bedrijf,
-            phone: telefoon,
-            message: bericht,
-            ...(aanvraag ? { gevraagd_moment: aanvraag.start } : {}),
-            source: 'kennismaking_venster',
-            _honey: honey,
-            turnstile: token,
-            context: getLeadContext(),
-          }),
-        })
-        if (!res.ok) throw new Error(String(res.status))
-        // Dezelfde parameters als ContactForm (form, source): die stuurt GTM
-        // door. lead_soort onderscheidt een aangevraagd moment van alleen
-        // gegevens; een echte boeking is meeting_booked hierboven.
-        void pushConversionEvent(
-          'generate_lead',
-          { email },
-          { form: 'kennismaking_venster', source: padZonderTaal(), lead_soort: aanvraag ? 'moment_aangevraagd' : 'gegevens' },
-        )
+        default:
+          setFout(FOUT_VERSTUREN)
+          return
       }
-      setAangevraagd(Boolean(aanvraag))
       focusNa.current = 'klaar'
       setStap('klaar')
-    } catch {
-      setFout('Versturen lukte niet. Probeer het nog een keer, of mail naar info@stevin.ai.')
     } finally {
       setBezig(false)
       // Een Turnstile-token is na een poging gebruikt: wissen en opnieuw laten aanvinken.
@@ -523,79 +585,77 @@ export default function KennismakingVenster() {
   if (!open) return null
 
   const veld =
-    'w-full rounded-xl border border-border bg-white px-3.5 py-2.5 text-[15px] text-primary outline-none transition-colors focus:border-accent'
+    'w-full rounded-xl border border-border bg-white px-3.5 py-2.5 text-[15px] text-primary outline-none transition-colors focus:border-accent aria-[invalid=true]:border-[#B42B43]'
 
   const label = 'mb-1.5 block font-mono text-[11.5px] font-semibold uppercase tracking-[0.08em] text-[#2A3A54]'
-  const veldFout = fout === FOUT_VELDEN
-  const foutProps = veldFout ? { 'aria-invalid': true, 'aria-describedby': 'kennismaking-fout' } : {}
+  // Een gecontroleerd veld: de waarde staat in waarden, en bij een fout in
+  // dat veld wijst het naar de melding.
+  const invoer = (naam: Veldnaam) => ({
+    name: naam,
+    value: waarden[naam],
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const v = e.target.value
+      setWaarden((w) => ({ ...w, [naam]: v }))
+    },
+    ...(foutVelden.includes(naam) ? { 'aria-invalid': true, 'aria-describedby': 'kennismaking-fout' } : {}),
+  })
+  const foutRegel = fout ? (
+    <p id="kennismaking-fout" role="alert" className="m-0 text-[14px] text-[#B42B43]">
+      {fout}
+    </p>
+  ) : null
   const formulier = (modus: 'boek' | 'gegevens') => (
     <form onSubmit={(e) => verstuur(e, modus)} onFocusCapture={formStart} className="grid gap-4" noValidate>
       <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <label className="block">
         <span className={label}>Bedrijf</span>
-        <input name="bedrijf" placeholder="Naam van je bedrijf" autoComplete="organization" className={veld} maxLength={160} />
+        <input {...invoer('bedrijf')} placeholder="Naam van je bedrijf" autoComplete="organization" className={veld} maxLength={160} />
       </label>
       <div className="grid grid-cols-2 gap-3">
         <label className="block">
           <span className={label}>Voornaam (verplicht)</span>
           <input
-            name="voornaam"
+            {...invoer('voornaam')}
             required
             placeholder="Voornaam"
             autoComplete="given-name"
             className={veld}
             maxLength={80}
-            {...foutProps}
           />
         </label>
         <label className="block">
           <span className={label}>Achternaam</span>
-          <input name="achternaam" placeholder="Achternaam" autoComplete="family-name" className={veld} maxLength={80} />
+          <input {...invoer('achternaam')} placeholder="Achternaam" autoComplete="family-name" className={veld} maxLength={80} />
         </label>
       </div>
       <label className="block">
         <span className={label}>E-mail (verplicht)</span>
         <input
-          name="email"
+          {...invoer('email')}
           required
           type="email"
           placeholder="naam@bedrijf.nl"
           autoComplete="email"
           className={veld}
           maxLength={200}
-          {...foutProps}
         />
       </label>
       <label className="block">
         <span className={label}>Telefoon</span>
-        <input name="telefoon" type="tel" placeholder="06 12345678" autoComplete="tel" className={veld} maxLength={40} />
+        <input {...invoer('telefoon')} type="tel" placeholder="06 12345678" autoComplete="tel" className={veld} maxLength={40} />
       </label>
       <label className="block">
         <span className={label}>Bericht (mag leeg)</span>
         <textarea
-          name="vraag"
+          {...invoer('vraag')}
           rows={3}
           placeholder="Waar wil je het over hebben?"
           className={`${veld} resize-none`}
           maxLength={2000}
         />
       </label>
-      <Turnstile onToken={zetToken} onFout={controleFout} widgetRef={widgetId} />
-      {fout && (
-        <p id="kennismaking-fout" role="alert" className="m-0 text-[14px] text-[#B42B43]">
-          {fout === FOUT_CONTROLE ? (
-            <>
-              De controle lukt nu niet. Mail dan naar{' '}
-              <a href="mailto:info@stevin.ai" className="font-semibold underline underline-offset-2">
-                info@stevin.ai
-              </a>
-              .
-            </>
-          ) : (
-            fout
-          )}
-        </p>
-      )}
+      <Turnstile onToken={setToken} widgetRef={widgetId} />
+      {foutRegel}
       {/* accent-diep (app/globals.css): donker genoeg voor witte tekst (5,5:1). */}
       <button
         type="submit"
@@ -651,18 +711,24 @@ export default function KennismakingVenster() {
         {stap === 'klaar' ? (
           <div role="status" className="mt-8 rounded-2xl bg-surface p-6 text-center">
             <p ref={klaarKopRef} tabIndex={-1} className="m-0 font-display text-[20px] font-bold text-primary outline-none">
-              {tab === 'moment' && gekozen
-                ? aangevraagd
+              {klaar === 'geboekt'
+                ? 'De afspraak staat.'
+                : klaar === 'aangevraagd'
                   ? 'Je moment is aangevraagd.'
-                  : 'De afspraak staat.'
-                : 'Dank je, we nemen contact op.'}
+                  : klaar === 'nietVast'
+                    ? 'Je aanvraag is binnen.'
+                    : 'Dank je, we nemen contact op.'}
             </p>
             <p className="m-0 mt-2 text-[15px] text-muted">
-              {tab === 'moment' && gekozen
-                ? aangevraagd
+              {klaar === 'geboekt' && gekozen
+                ? `${metHoofdletter(fmtDagLang(gekozen.start))} om ${fmtTijd(gekozen.start)}. De uitnodiging staat in je mail.`
+                : klaar === 'aangevraagd' && gekozen
                   ? `${metHoofdletter(fmtDagLang(gekozen.start))} om ${fmtTijd(gekozen.start)}. Je krijgt meteen een mail dat je aanvraag binnen is. Binnen een werkdag hoor je of dit moment kan.`
-                  : `${metHoofdletter(fmtDagLang(gekozen.start))} om ${fmtTijd(gekozen.start)}. De uitnodiging staat in je mail.`
-                : 'Meestal bellen of mailen we binnen een werkdag.'}
+                  : klaar === 'nietVast'
+                    ? metTelefoon
+                      ? NIET_VAST_BELLEN
+                      : NIET_VAST_MAILEN
+                    : 'Meestal bellen of mailen we binnen een werkdag.'}
             </p>
           </div>
         ) : (
@@ -682,6 +748,7 @@ export default function KennismakingVenster() {
                   onClick={() => {
                     setTab(id)
                     setFout('')
+                    setFoutVelden([])
                   }}
                   className={`rounded-lg py-2.5 text-[14.5px] font-semibold transition-colors ${tab === id ? 'bg-white text-primary shadow-sm' : 'text-muted hover:text-primary'}`}
                 >
@@ -718,6 +785,9 @@ export default function KennismakingVenster() {
 
             {tab === 'moment' && stap === 'kies' && (
               <div className="mt-5">
+                {/* Na "net vergeven" staat de melding hier, boven de agenda;
+                    het formulier is dan niet in beeld. */}
+                {foutRegel && <div className="mb-3">{foutRegel}</div>}
                 <p className="m-0 mb-3 text-[13px] text-muted">Nederlandse tijd</p>
                 {!dagen ? (
                   <p className="m-0 py-10 text-center text-[15px] text-muted">Agenda laden...</p>
