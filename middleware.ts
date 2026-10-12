@@ -222,13 +222,16 @@ function goneOpPad(pathname: string): string | null {
   let pad = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname
   if (pad === '/nl') pad = '/'
   else if (pad.startsWith('/nl/')) pad = pad.slice(3)
+  // W-535 (13 okt 2026): de hele Engelse site is weg (Koen: "haal weg"). 0 klikken
+  // in 90 dagen; elke /en-URL geeft een 410.
+  if (pad === '/en' || pad.startsWith('/en/')) return pad
   return GONE.has(pad) ? pad : null
 }
 
 function weg(pad: string): NextResponse {
   const en = pad === '/en' || pad.startsWith('/en/')
   const html = en
-    ? '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>This page is gone | Stevin.AI</title></head><body style="font-family:system-ui,sans-serif;max-width:560px;margin:15vh auto;padding:0 16px;color:#1f2933;background:#f7f8fa"><h1 style="font-size:24px">This page is gone</h1><p>We removed it on purpose.</p><p><a href="/en" style="color:#1d63d8">Go to the Stevin.AI homepage</a></p></body></html>'
+    ? '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>This page is gone | Stevin.AI</title></head><body style="font-family:system-ui,sans-serif;max-width:560px;margin:15vh auto;padding:0 16px;color:#1f2933;background:#f7f8fa"><h1 style="font-size:24px">This page is gone</h1><p>We removed it on purpose.</p><p><a href="/" style="color:#1d63d8">Go to the Stevin.AI homepage (Dutch)</a></p></body></html>'
     : '<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Deze pagina is weg | Stevin.AI</title></head><body style="font-family:system-ui,sans-serif;max-width:560px;margin:15vh auto;padding:0 16px;color:#1f2933;background:#f7f8fa"><h1 style="font-size:24px">Deze pagina is weg</h1><p>We hebben hem bewust weggehaald.</p><p><a href="/" style="color:#1d63d8">Naar de homepage van Stevin.AI</a></p></body></html>'
   return new NextResponse(html, {
     status: 410,

@@ -14,4 +14,7 @@ export const routing = defineRouting({
   // niemand las die mail. De hreflang komt nu alleen nog uit de HTML-tags
   // (per pagina bepaald via translated: true/false) en de sitemap.
   alternateLinks: false,
+  // W-535 (13 okt 2026): de Engelse site is weg (410). Zonder dit stuurt
+  // next-intl een bezoeker met een Engelstalige browser van / naar /en.
+  localeDetection: false,
 })

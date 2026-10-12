@@ -37,7 +37,9 @@ interface LocalizedMetadataOpts {
 
 export function localizedMetadata(opts: LocalizedMetadataOpts): Metadata {
   const { path, locale, title, description } = opts
-  const translated = opts.translated !== false && !WEG.has(`/en${path}`)
+  // W-535 (13 okt 2026): de hele Engelse site geeft een 410, dus nergens meer een
+  // en-hreflang of /en-canonical.
+  const translated = false && opts.translated !== false && !WEG.has(`/en${path}`)
   const isEn = locale === 'en'
 
   const nlUrl = `${SITE_URL}${path}`

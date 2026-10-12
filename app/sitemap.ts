@@ -85,7 +85,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${path}`,
     changeFrequency: (path === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
     priority: priorityFor(path),
-    alternates: { languages: altLangs(path) },
+    alternates: { languages: nlAlleen(path) },
   }))
 
   const enEntries: MetadataRoute.Sitemap = translatedPages.map((path) => ({
@@ -119,5 +119,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  return [...nlEntries, ...enEntries, ...nlOnlyEntries, ...blogEntries, ...standaloneEnEntries]
+  // W-535 (13 okt 2026): de Engelse site is weg (410), dus geen /en-URL's meer.
+  void enEntries
+  void standaloneEnEntries
+  return [...nlEntries, ...nlOnlyEntries, ...blogEntries]
 }
