@@ -8,8 +8,15 @@ export default function LanguageSwitcher({ dark }: { dark?: boolean }) {
   const pathname = usePathname()
   const router = useRouter()
 
+  // W-535: van deze Nederlandse pagina's is de Engelse versie weg (410, zie
+  // data/gone-urls.json). Wie daar op EN klikt, gaat naar de Engelse homepage.
+  // Bewust een korte lijst hier en niet de hele JSON: dit is een
+  // client-component en die lijst telt ruim duizend paden.
+  const geenEngels = ['/google-ads-uitbesteden', '/social-media-uitbesteden', '/leadopvolging', '/integraties']
+
   const switchLocale = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale })
+    const doel = newLocale === 'en' && geenEngels.includes(pathname) ? '/' : pathname
+    router.replace(doel, { locale: newLocale })
   }
 
   const baseClass = `text-[13px] font-semibold transition-colors`

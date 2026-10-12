@@ -1,0 +1,745 @@
+{
+ "_uitleg": "W-535, snoeiplan stevin.ai (12 okt 2026). Permanente omleidingen (301), elk rechtstreeks naar het eindadres. next.config.ts zet er voor elk Nederlands pad ook de /nl-variant bij. Bron: snoeiplan.csv (keuze samenvoegen_301), aangevuld met de Engelse variant van elk NL-pad dat de CSV niet apart noemt.",
+ "omleidingen": [
+  {
+   "van": "/ai-agents",
+   "naar": "/platform"
+  },
+  {
+   "van": "/ai-briefing",
+   "naar": "/platform"
+  },
+  {
+   "van": "/alerts",
+   "naar": "/platform"
+  },
+  {
+   "van": "/artiesten",
+   "naar": "/"
+  },
+  {
+   "van": "/autodealer-campagnes",
+   "naar": "/"
+  },
+  {
+   "van": "/automotive",
+   "naar": "/"
+  },
+  {
+   "van": "/b2b",
+   "naar": "/"
+  },
+  {
+   "van": "/blog/b2b-content-geo-chatgpt-ai-tools",
+   "naar": "/blog/zichtbaar-in-ai-antwoorden-aeo-geo"
+  },
+  {
+   "van": "/blog/google-ads-zichtbaar-in-ai-overviews",
+   "naar": "/blog/zichtbaar-in-ai-antwoorden-aeo-geo"
+  },
+  {
+   "van": "/blog/google-zero-click-searches-stijgen-naar-68-procent-in-2026",
+   "naar": "/blog/zichtbaar-in-ai-antwoorden-aeo-geo"
+  },
+  {
+   "van": "/blog/incrementaliteit-testen-biedt-scherper-beeld-van-paid-search-waarde",
+   "naar": "/blog/mmm-attributie-incrementality-welke-meet-wat"
+  },
+  {
+   "van": "/blog/klanten-vragen-naar-chatgpt-zichtbaarheid",
+   "naar": "/blog/zichtbaar-in-ai-antwoorden-aeo-geo"
+  },
+  {
+   "van": "/case-studies/e-commerce",
+   "naar": "/case-studies"
+  },
+  {
+   "van": "/controle",
+   "naar": "/tarieven"
+  },
+  {
+   "van": "/creatieve-bureaus",
+   "naar": "/tarieven"
+  },
+  {
+   "van": "/data-verrijking",
+   "naar": "/platform"
+  },
+  {
+   "van": "/demo",
+   "naar": "/contact"
+  },
+  {
+   "van": "/diensten",
+   "naar": "/platform"
+  },
+  {
+   "van": "/e-commerce",
+   "naar": "/"
+  },
+  {
+   "van": "/en/ai-agents",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/ai-briefing",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/alerts",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/artiesten",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/autodealer-campagnes",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/automotive",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/b2b",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/blog/b2b-content-geo-chatgpt-ai-tools",
+   "naar": "/blog/zichtbaar-in-ai-antwoorden-aeo-geo"
+  },
+  {
+   "van": "/en/blog/google-ads-zichtbaar-in-ai-overviews",
+   "naar": "/blog/zichtbaar-in-ai-antwoorden-aeo-geo"
+  },
+  {
+   "van": "/en/blog/google-zero-click-searches-stijgen-naar-68-procent-in-2026",
+   "naar": "/blog/zichtbaar-in-ai-antwoorden-aeo-geo"
+  },
+  {
+   "van": "/en/blog/incrementaliteit-testen-biedt-scherper-beeld-van-paid-search-waarde",
+   "naar": "/blog/mmm-attributie-incrementality-welke-meet-wat"
+  },
+  {
+   "van": "/en/blog/klanten-vragen-naar-chatgpt-zichtbaarheid",
+   "naar": "/blog/zichtbaar-in-ai-antwoorden-aeo-geo"
+  },
+  {
+   "van": "/en/case-studies/e-commerce",
+   "naar": "/case-studies"
+  },
+  {
+   "van": "/en/controle",
+   "naar": "/en/tarieven"
+  },
+  {
+   "van": "/en/creatieve-bureaus",
+   "naar": "/en/tarieven"
+  },
+  {
+   "van": "/en/data-verrijking",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/demo",
+   "naar": "/en/contact"
+  },
+  {
+   "van": "/en/diensten",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/e-commerce",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/feed-management",
+   "naar": "/blog/wat-is-feed-management"
+  },
+  {
+   "van": "/en/first-party-data",
+   "naar": "/blog/wat-is-first-party-data"
+  },
+  {
+   "van": "/en/geo",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/google-ads-ga4",
+   "naar": "/blog/google-ads-conversies-meten"
+  },
+  {
+   "van": "/en/healthcare-marketing",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/influencers",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/integraties/analytics-tracking",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/bouw-techniek",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/cdp-data-warehousing",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/cms-ecommerce",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/consent-tagging",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/creative-intelligence",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/creator-tools",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/crm-sales",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/email-automation",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/facebook-graph",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/feed-management",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/google-analytics-4",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/google-merchant-center",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/google-search-console",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/google-sheets",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/instagram-graph-api",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/linkedin-ads",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/market-audience-intelligence",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/mmm-attribution",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/pinterest-ads",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/reporting-dashboards",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/snapchat-ads",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/social-community",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/streaming-audio",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/tiktok-ads",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/integraties/woocommerce",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/en/lead-generatie",
+   "naar": "/blog/leadformulier-dat-echte-aanvragen-oplevert"
+  },
+  {
+   "van": "/en/marketing",
+   "naar": "/en/tarieven"
+  },
+  {
+   "van": "/en/marketing-automation",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/marketing-check",
+   "naar": "/en/marketing-scan"
+  },
+  {
+   "van": "/en/mediabureaus",
+   "naar": "/en/tarieven"
+  },
+  {
+   "van": "/en/merken",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/mkb",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/multi-market",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/non-profit-marketing-belgie",
+   "naar": "/google-ad-grants-belgie"
+  },
+  {
+   "van": "/en/non-profit-marketing-nederland",
+   "naar": "/google-ad-grants-nederland"
+  },
+  {
+   "van": "/en/pr-bureaus",
+   "naar": "/en/tarieven"
+  },
+  {
+   "van": "/en/producten",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/producten/dynamic-pages",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/producten/quote",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/producten/signals",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/promotoren",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/retail",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/seo",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/voor-agencies",
+   "naar": "/en/tarieven"
+  },
+  {
+   "van": "/en/voor-artiesten",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/voor-dealers",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/voor-marketingteams",
+   "naar": "/en/tarieven"
+  },
+  {
+   "van": "/en/voor-non-profit",
+   "naar": "/google-ad-grants-nederland"
+  },
+  {
+   "van": "/en/voor-ondernemers",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/voor-retail",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/voor-verhuur",
+   "naar": "/en"
+  },
+  {
+   "van": "/en/website-met-crm",
+   "naar": "/blog/crm-koppelen-aan-je-website"
+  },
+  {
+   "van": "/en/websites",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/werkwijze",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/woordenboek",
+   "naar": "/blog"
+  },
+  {
+   "van": "/en/woordenboek/attribution",
+   "naar": "/blog/mmm-attributie-incrementality-welke-meet-wat"
+  },
+  {
+   "van": "/en/woordenboek/feed-management",
+   "naar": "/blog/wat-is-feed-management"
+  },
+  {
+   "van": "/en/woordenboek/first-party-data",
+   "naar": "/blog/wat-is-first-party-data"
+  },
+  {
+   "van": "/en/woordenboek/last-click",
+   "naar": "/blog/last-click-is-een-gewoonte"
+  },
+  {
+   "van": "/en/woordenboek/mmm",
+   "naar": "/blog/mmm-attributie-incrementality-welke-meet-wat"
+  },
+  {
+   "van": "/feed-management",
+   "naar": "/blog/wat-is-feed-management"
+  },
+  {
+   "van": "/first-party-data",
+   "naar": "/blog/wat-is-first-party-data"
+  },
+  {
+   "van": "/geo",
+   "naar": "/platform"
+  },
+  {
+   "van": "/google-ads-ga4",
+   "naar": "/blog/google-ads-conversies-meten"
+  },
+  {
+   "van": "/healthcare-marketing",
+   "naar": "/"
+  },
+  {
+   "van": "/influencers",
+   "naar": "/"
+  },
+  {
+   "van": "/integraties/advertising",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/analytics-tracking",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/bouw-techniek",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/cdp-data-warehousing",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/cms-ecommerce",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/consent-tagging",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/creative-intelligence",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/creator-tools",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/crm-sales",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/dv360",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/email-automation",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/facebook-graph",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/feed-management",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/google-ads",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/google-analytics-4",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/google-merchant-center",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/google-search-console",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/google-sheets",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/google-tag-manager",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/instagram-graph-api",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/klaviyo",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/linkedin-ads",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/live-ticketing",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/mailchimp",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/market-audience-intelligence",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/meta-ads",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/mmm-attribution",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/pinterest-ads",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/reporting-dashboards",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/shopify",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/snapchat-ads",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/social-community",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/streaming-audio",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/tiktok-ads",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/woocommerce",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/integraties/youtube-ads",
+   "naar": "/integraties"
+  },
+  {
+   "van": "/lead-generatie",
+   "naar": "/blog/leadformulier-dat-echte-aanvragen-oplevert"
+  },
+  {
+   "van": "/marketing",
+   "naar": "/tarieven"
+  },
+  {
+   "van": "/marketing-automation",
+   "naar": "/platform"
+  },
+  {
+   "van": "/marketing-check",
+   "naar": "/marketing-scan"
+  },
+  {
+   "van": "/mediabureaus",
+   "naar": "/tarieven"
+  },
+  {
+   "van": "/merken",
+   "naar": "/"
+  },
+  {
+   "van": "/mkb",
+   "naar": "/"
+  },
+  {
+   "van": "/multi-market",
+   "naar": "/platform"
+  },
+  {
+   "van": "/non-profit-marketing-belgie",
+   "naar": "/google-ad-grants-belgie"
+  },
+  {
+   "van": "/non-profit-marketing-nederland",
+   "naar": "/google-ad-grants-nederland"
+  },
+  {
+   "van": "/pr-bureaus",
+   "naar": "/tarieven"
+  },
+  {
+   "van": "/producten",
+   "naar": "/platform"
+  },
+  {
+   "van": "/producten/dynamic-pages",
+   "naar": "/platform"
+  },
+  {
+   "van": "/producten/quote",
+   "naar": "/platform"
+  },
+  {
+   "van": "/producten/signals",
+   "naar": "/platform"
+  },
+  {
+   "van": "/promotoren",
+   "naar": "/"
+  },
+  {
+   "van": "/retail",
+   "naar": "/"
+  },
+  {
+   "van": "/seo",
+   "naar": "/platform"
+  },
+  {
+   "van": "/voor-agencies",
+   "naar": "/tarieven"
+  },
+  {
+   "van": "/voor-artiesten",
+   "naar": "/"
+  },
+  {
+   "van": "/voor-dealers",
+   "naar": "/"
+  },
+  {
+   "van": "/voor-marketingteams",
+   "naar": "/tarieven"
+  },
+  {
+   "van": "/voor-non-profit",
+   "naar": "/google-ad-grants-nederland"
+  },
+  {
+   "van": "/voor-ondernemers",
+   "naar": "/"
+  },
+  {
+   "van": "/voor-retail",
+   "naar": "/"
+  },
+  {
+   "van": "/voor-verhuur",
+   "naar": "/"
+  },
+  {
+   "van": "/website-met-crm",
+   "naar": "/blog/crm-koppelen-aan-je-website"
+  },
+  {
+   "van": "/websites",
+   "naar": "/platform"
+  },
+  {
+   "van": "/werkwijze",
+   "naar": "/platform"
+  },
+  {
+   "van": "/woordenboek",
+   "naar": "/blog"
+  },
+  {
+   "van": "/woordenboek/attribution",
+   "naar": "/blog/mmm-attributie-incrementality-welke-meet-wat"
+  },
+  {
+   "van": "/woordenboek/feed-management",
+   "naar": "/blog/wat-is-feed-management"
+  },
+  {
+   "van": "/woordenboek/first-party-data",
+   "naar": "/blog/wat-is-first-party-data"
+  },
+  {
+   "van": "/woordenboek/last-click",
+   "naar": "/blog/last-click-is-een-gewoonte"
+  },
+  {
+   "van": "/woordenboek/mmm",
+   "naar": "/blog/mmm-attributie-incrementality-welke-meet-wat"
+  },
+  {
+   "van": "/woordenboek/uplift-meting",
+   "naar": "/blog/mmm-attributie-incrementality-welke-meet-wat"
+  },
+  {
+   "van": "/en/producten/ads-radar",
+   "naar": "/en/platform"
+  },
+  {
+   "van": "/en/producten/dynamic-optimization",
+   "naar": "/en/platform"
+  }
+ ]
+}

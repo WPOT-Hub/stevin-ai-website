@@ -17,10 +17,8 @@
  */
 
 import { articles } from '../data/articles'
-import { categories } from '../data/categories'
-import { integrations } from '../data/integrations'
 import { comparisons } from '../data/comparisons'
-import { glossary } from '../data/glossary'
+import sitemap from '../app/sitemap'
 
 const HOST = 'stevin.ai'
 const KEY = 'f8320e5bf8a4f23276040719d8a9548f'
@@ -65,37 +63,15 @@ function buildAllBlogUrls(): string[] {
   return articles.map((a) => `${baseUrl}/blog/${a.slug}`)
 }
 
-function buildAllIntegrationUrls(): string[] {
-  const baseUrl = `https://${HOST}`
-  return [
-    ...categories.map((c) => `${baseUrl}/integraties/${c.slug}`),
-    ...integrations.map((i) => `${baseUrl}/integraties/${i.slug}`),
-  ]
-}
-
+// W-535: de losse integratie-, woordenboek- en categoriepagina's zijn weg.
+// --all stuurt nu precies wat in de sitemap staat.
 function buildAllComparisonUrls(): string[] {
   const baseUrl = `https://${HOST}`
-  return [
-    `${baseUrl}/vergelijken`,
-    ...comparisons.map((c) => `${baseUrl}/vergelijken/${c.slug}`),
-  ]
-}
-
-function buildAllGlossaryUrls(): string[] {
-  const baseUrl = `https://${HOST}`
-  return [
-    `${baseUrl}/woordenboek`,
-    ...glossary.map((t) => `${baseUrl}/woordenboek/${t.slug}`),
-  ]
+  return comparisons.map((c) => `${baseUrl}/vergelijken/${c.slug}`)
 }
 
 function buildAllUrls(): string[] {
-  return [
-    ...buildAllBlogUrls(),
-    ...buildAllIntegrationUrls(),
-    ...buildAllComparisonUrls(),
-    ...buildAllGlossaryUrls(),
-  ]
+  return sitemap().map((e) => e.url)
 }
 
 const main = async () => {
@@ -105,12 +81,8 @@ const main = async () => {
     urls = buildAllBlogUrls()
   } else if (args[0] === '--all') {
     urls = buildAllUrls()
-  } else if (args[0] === '--integrations') {
-    urls = buildAllIntegrationUrls()
   } else if (args[0] === '--comparisons') {
     urls = buildAllComparisonUrls()
-  } else if (args[0] === '--glossary') {
-    urls = buildAllGlossaryUrls()
   } else {
     urls = args
   }

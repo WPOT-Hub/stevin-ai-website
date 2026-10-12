@@ -13,6 +13,11 @@
  * Blijft deze tekst gelijk aan https://stevin.ai/tarieven. Wijzigt die pagina,
  * dan wijzigt dit bestand mee.
  *
+ * 12 okt 2026 (W-535): bijgewerkt naar de nieuwe /tarieven met twee pakketten
+ * (components/rethink/RethinkTarieven.tsx). De zinnen komen van die pagina.
+ * Nooit "vast bedrag": de prijs hangt af van het werk en groeit niet mee met
+ * het advertentiebudget.
+ *
  * Endpoint: https://stevin.ai/pricing.md (text/markdown)
  */
 
@@ -21,40 +26,39 @@ export const revalidate = 3600
 
 const body = `# Tarieven, Stevin.AI
 
-Stevin.AI voert het commerciele werk van een bedrijf uit met software in plaats van uren: de website, de advertenties, de eigen kanalen en het opvolgen van leads. Het platform legt per klant vast wat is gedaan, wat het opleverde en welk besluit daarop volgde, en meet die uitkomst terug. Daardoor wordt het advies scherper naarmate het langer draait.
+Stevin.AI doet de marketing van mkb-bedrijven. Jij ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.
 
-Er komt geen nieuw centraal systeem voor in de plaats: de bestaande accounts bij Google, Meta en de rest blijven bestaan.
+Bij Stevin.AI betaal je vanaf 1.399 per maand als wij jouw bureau zijn, en vanaf 399 als je het zelf doet of jouw agents het werk laat doen. Wat je precies betaalt hangt af van het werk, niet van je advertentiebudget. Dat budget betaal je rechtstreeks aan Google en Meta, en daar verdienen wij niets aan.
 
-## Het begint met een diagnose
+## Wij worden jouw bureau
 
-Iedereen begint op dezelfde plek: uitzoeken wat er nodig is. Niet alleen de advertenties, ook de vindbaarheid, de webshop, de mail en het merk. Klopt wat er gemeten wordt, en ligt ergens vast wat werkte en wat niet. Je krijgt de lijst van wat daarvoor moet gebeuren, op je eigen cijfers, binnen twee weken.
+Vanaf 1.399 euro per maand bij jaarbetaling, 1.499 als je per maand betaalt. De opstart is maatwerk, de prijs hoor je vooraf.
 
-## Drie smaken, je kiest zelf
+- Eerst zetten we alles goed: meting, accounts en de koppeling met je CRM.
+- Daarna sturen we bij op aanvragen en omzet, niet op klikken.
+- Elk besluit leggen we vast, met de reden erbij.
+- Wil je later zelf verder? Dan bouwen we agents die het werk overnemen.
 
-### Wij doen alles
-Vanaf 1.399 euro per maand bij jaarbetaling, 1.499 euro per maand bij maandbetaling. Doorlopend, de opstart is maatwerk. Volledige inrichting en actief beheer, met elk besluit vastgelegd. Voor ondernemers die er zelf niet naar om willen kijken.
+## Je doet het zelf, of we zetten jouw agents aan het werk
 
-### Wij starten je op
-Vanaf 1.499 euro per maand, geen jaartarief want dit is tijdelijk. Meestal zes tot twaalf maanden, daarna 399 euro per maand. Stevin zet het goed neer en draait mee tot het staat, en draagt daarna over aan je eigen team of aan een bureau naar keuze.
+Vanaf 399 euro per maand bij jaarbetaling, 499 als je per maand betaalt.
 
-### Je doet het zelf
-399 euro per maand bij jaarbetaling, 499 euro per maand bij maandbetaling. Je krijgt de software en het geheugen, het werk doe je zelf of je laat het elders doen.
+- Stevin ziet wat er misgaat en zet de oplossing klaar.
+- Jij, je eigen team of jouw agents voeren het uit.
+- Een klus toch door ons? Dan hoor je de prijs vooraf.
+- Terug naar het bureau kan altijd.
 
-Je keuze is later om te draaien zonder dat je iets kwijtraakt.
+## Je prijs groeit niet mee met je advertentiebudget
 
-Alle tarieven gelden voor een bedrijf met een merk en een winkel. Meer vestigingen, merken of webshops kosten meer. Een groter mediabudget betekent niet automatisch een hogere prijs.
+Je budget zegt weinig over hoeveel werk het is. Een campagne van 2.000 euro kan lastiger zijn dan een van 10.000. Wij rekenen naar het werk dat er ligt, niet naar je budget. Wat je bij Google en Meta uitgeeft, gaat naar Google en Meta.
 
-## Voor wie
+## Meer vestigingen of merken
 
-Zakelijke klanten, vooral in Nederland en Belgie, en incidenteel daarbuiten. Van eenmanszaken en vakmensen tot bedrijven met een eigen marketingteam, en bureaus die het voor hun klanten inzetten.
-
-## Kanalen
-
-Elk kanaal met een API sluit erop aan, betaald en eigen: Google Ads, Meta, YouTube, TikTok, LinkedIn, Google Business Profile, Google Analytics, Search Console, en webshops als Shopify en WooCommerce.
+De tarieven gelden voor een bedrijf met een merk en een vestiging of webshop. Meer vestigingen, merken of webshops kosten meer. Hoeveel hoor je in de kennismaking.
 
 ## Contact
 
-Plan een gesprek via https://stevin.ai/contact of mail info@stevin.ai. De volledige tarievenpagina staat op https://stevin.ai/tarieven, in het Engels op https://stevin.ai/en/tarieven.
+Plan een kennismaking via https://stevin.ai/kennismaking of mail info@stevin.ai. De volledige tarievenpagina staat op https://stevin.ai/tarieven, in het Engels op https://stevin.ai/en/tarieven.
 `
 
 export async function GET() {

@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from 'react'
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
 import { categories, categoryName } from '@/data/categories'
 import { getVendorShortDescriptionEn } from '@/data/vendor-content-en'
 import type { Integration } from '@/data/integrations'
@@ -62,7 +61,7 @@ export default function IntegrationFilter({ integrations, locale }: IntegrationF
           aria-label={t('search_placeholder')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="h-11 w-full max-w-sm rounded-[10px] border border-[#D9E0EB] bg-[#F7F8FA] px-4 text-sm text-[#1F2933] placeholder:text-[#8A94A3] transition-colors focus:border-[#3C8EFF] focus:outline-none focus:ring-2 focus:ring-[#3C8EFF]/20"
+          className="h-11 w-full max-w-sm rounded-[10px] border border-[#D9E0EB] bg-[#F7F8FA] px-4 text-sm text-[#1F2933] placeholder:text-[#8A94A3] transition-colors focus:border-[#3D8EFF] focus:outline-none focus:ring-2 focus:ring-[#3D8EFF]/20"
         />
       </div>
 
@@ -73,7 +72,7 @@ export default function IntegrationFilter({ integrations, locale }: IntegrationF
           <select
             value={activeCategory ?? ''}
             onChange={(event) => setActiveCategory(event.target.value || null)}
-            className="h-10 min-w-64 rounded-[10px] border border-[#D9E0EB] bg-white px-3 text-sm font-bold text-[#1F2933] transition-colors focus:border-[#3C8EFF] focus:outline-none focus:ring-2 focus:ring-[#3C8EFF]/20"
+            className="h-10 min-w-64 rounded-[10px] border border-[#D9E0EB] bg-white px-3 text-sm font-bold text-[#1F2933] transition-colors focus:border-[#3D8EFF] focus:outline-none focus:ring-2 focus:ring-[#3D8EFF]/20"
           >
             <option value="">{t('filter_all_layers', { count: integrations.length })}</option>
             {categories.map((cat) => {
@@ -116,12 +115,8 @@ export default function IntegrationFilter({ integrations, locale }: IntegrationF
               {filtered.map((integration) => (
                 <tr key={integration.slug} className="group">
                   <td className="border-b border-[#D9E0EB] px-5 py-5 align-top sm:px-7">
-                    <Link
-                      href={`/integraties/${integration.slug}`}
-                      className="font-extrabold tracking-[-0.01em] text-[#0A0A0A] transition-colors group-hover:text-[#3C8EFF]"
-                    >
-                      {integration.name}
-                    </Link>
+                    {/* W-535: de losse koppelingspagina's zijn weg, de naam is geen link meer. */}
+                    <span className="font-extrabold tracking-[-0.01em] text-[#0A0A0A]">{integration.name}</span>
                   </td>
                   <td className="border-b border-[#D9E0EB] px-5 py-5 align-top font-bold text-[#1F2933]">
                     {labelForCategory(integration.category)}
@@ -136,7 +131,7 @@ export default function IntegrationFilter({ integrations, locale }: IntegrationF
                       boven de tabel, en die staan hier bovenaan. */}
                   <td className="border-b border-[#D9E0EB] px-5 py-5 align-top sm:px-7">
                     <span className="inline-flex items-center gap-2 whitespace-nowrap font-bold text-[#1F2933]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#3C8EFF]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#3D8EFF]" />
                       {t('filter_status')}
                     </span>
                   </td>

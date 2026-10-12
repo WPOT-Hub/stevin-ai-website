@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   description:
     'Check of je stichting, vereniging, ANBI of SBBI in aanmerking komt voor Google Ad Grants. Stevin helpt je aanvraag en campagnes voorbereiden.',
   alternates: { canonical: 'https://stevin.ai/google-ad-grants-nederland' },
+  // W-535 (12 okt 2026): noindex, follow. De pagina blijft bestaan omdat
+  // verzonden LinkedIn-berichten en het oude adres erheen wijzen, maar hij had
+  // 0 vertoningen in 6 maanden en hoort niet bij de pagina's die Google ziet.
+  robots: { index: false, follow: true },
 }
 
 const faqs = [
@@ -83,8 +87,8 @@ export default async function GoogleAdGrantsNederlandPage({ params }: Props) {
       {/* HERO */}
       <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 96px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             GOOGLE AD GRANTS · NEDERLAND
           </p>
 
@@ -92,7 +96,7 @@ export default async function GoogleAdGrantsNederlandPage({ params }: Props) {
             className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]"
             style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '18ch' }}
           >
-            Google Ad Grants aanvragen voor je <span className="text-[#5DA3FF]">stichting of vereniging</span>
+            Google Ad Grants aanvragen voor je <span className="text-[#3D8EFF]">stichting of vereniging</span>
           </h1>
 
           <p className="text-white/70 leading-[1.55] mt-8" style={{ fontSize: '20px', maxWidth: '640px' }}>
@@ -102,7 +106,7 @@ export default async function GoogleAdGrantsNederlandPage({ params }: Props) {
           <div className="flex flex-wrap gap-4 mt-10">
             <a
               href="#check"
-              className="inline-flex items-center gap-2 bg-[#5DA3FF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#7BB8FF] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#3D8EFF] transition-colors"
             >
               Check mijn organisatie
             </a>

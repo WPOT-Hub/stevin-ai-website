@@ -46,14 +46,14 @@
   --color-primary: #0A1628;
   --color-primary-light: #1a2744;
   --color-accent: #3D8EFF;
-  --color-accent-dark: #2B7AEE;
-  --color-accent-light: #5DA3FF;
-  /* Donkerdere tint van accent #3c8eff (Desk-token), voor contrast AA op wit:
-     als tekst op wit en als vlak onder witte tekst haalt hij 5,5:1, het gewone
-     accent maar 3,2:1. Gebruikt in components/rethink (W-535): text-accent-diep,
-     bg-accent-diep, border-accent-diep/70. Hover: accent-dieper. */
-  --color-accent-diep: #1D63D8;
-  --color-accent-dieper: #1A56BD;
+  /* Een blauw, dat van het logo (Koen, 12 okt 2026: "er is er maar een, die
+     van het logo"). De oude namen blijven bestaan zodat bestaande klassen
+     werken, maar wijzen allemaal naar #3D8EFF. Hover doen we met brightness,
+     niet met een tweede tint. */
+  --color-accent-dark: #3D8EFF;
+  --color-accent-light: #3D8EFF;
+  --color-accent-diep: #3D8EFF;
+  --color-accent-dieper: #3D8EFF;
 
   /* CTA accent: brand teal for high-impact buttons */
   --color-neon: #00D4A0;
@@ -601,16 +601,16 @@ section {
    data-puls, die de animatielus op het element zelf zet (niet alleen op de
    ouder: na moveBefore werkte Chrome een selector via de ouder soms niet bij,
    11 okt); de overgang doet CSS. */
-.su-knoop .su-stip { fill: #9CC6FF; transition: fill .4s ease; }
-.su-stof .su-stip { fill: #7FA9E6; }
-.su-knoop .su-stip[data-aan="1"] { fill: #5DA3FF; }
+.su-knoop .su-stip { fill: #3D8EFF; transition: fill .4s ease; }
+.su-stof .su-stip { fill: #3D8EFF; fill-opacity: .75; }
+.su-knoop .su-stip[data-aan="1"] { fill: #3D8EFF; }
 .su-halo { opacity: 0; transition: opacity .5s ease; }
 .su-halo[data-aan="1"] { opacity: 1; }
 /* Versie 2 (Koen, 11 okt 20:12): bronnen en de Advisor als glazen rondjes.
    De rand is een haarlijn die op elke diepte even dik blijft. */
 .su-glas { fill: none; stroke: rgba(214,231,255,.5); stroke-width: 1px; vector-effect: non-scaling-stroke; transition: stroke .4s ease, stroke-width .4s ease; }
-.su-glas[data-aan="1"] { stroke: #8FC0FF; stroke-width: 1.5px; }
-.su-advisor .su-glas { stroke: rgba(93,163,255,.85); }
+.su-glas[data-aan="1"] { stroke: #3D8EFF; stroke-width: 1.5px; }
+.su-advisor .su-glas { stroke: rgba(61,142,255,.85); }
 .su-advisor .su-glas[data-aan="1"] { stroke: #FFFFFF; }
 .su-glyph { fill: none; stroke: #D6E7FF; stroke-width: 1.4px; stroke-linecap: round; stroke-linejoin: round; }
 .su-glyph * { vector-effect: non-scaling-stroke; }
@@ -620,7 +620,7 @@ section {
    rand onder de letters houdt ze leesbaar op een lijn, zonder zware schaduw. */
 .su-label { font-family: var(--font-mono-stevin); font-size: 10.5px; font-weight: 500; letter-spacing: .12em; fill: rgba(214,231,255,.8); paint-order: stroke; stroke: rgba(10,22,40,.6); stroke-width: 2px; stroke-linejoin: round; transition: opacity .4s ease, fill .4s ease; }
 .su-lw-brein .su-label, .su-lw-hub .su-label, .su-lw-advisor .su-label { fill: rgba(232,241,255,.9); }
-.su-lw-sat .su-label { fill: rgba(156,198,255,.85); }
+.su-lw-sat .su-label { fill: rgba(61,142,255,.85); }
 .su-lw-geheugen .su-label { fill: #CFE1FF; transition-duration: .6s; }
 .su-label[data-label="0"] { opacity: 0; pointer-events: none; }
 .su-label[data-aan="1"] { fill: #FFFFFF; }
@@ -632,7 +632,7 @@ section {
 @media (prefers-reduced-motion: reduce) {
   .su-ademen, .su-puls { animation: none; }
 }
-.su-geheugen .su-stip { fill: #8DB8F5; pointer-events: none; }
+.su-geheugen .su-stip { fill: #3D8EFF; fill-opacity: .85; pointer-events: none; }
 .su-geheugen .su-stip[data-aan="1"] { fill: #FFFFFF; }
 /* Het wisselende herinneringslabel: zolang het staat, klopt de stip zacht. */
 .su-geheugen .su-halo[data-puls="1"] { animation: su-klop-halo 1.8s ease-in-out infinite; }

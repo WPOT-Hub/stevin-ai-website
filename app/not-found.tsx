@@ -22,7 +22,7 @@ export default function NotFound() {
               fontWeight: 700,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              color: '#5DA3FF',
+              color: '#3D8EFF',
               marginBottom: '24px',
             }}
           >

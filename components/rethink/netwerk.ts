@@ -124,9 +124,9 @@ export function bronPositie(index: number, totaal: number) {
 //     123 in het CRM.
 //   - 31 offertes (Google 12, Meta 4, ChatGPT 2, de rest 13), 11 getekend:
 //     5 opdrachten uit een aanvraag op de website, 6 uit een telefoontje.
-//     Google 4, Meta 1, ChatGPT 1, vindbaar in Google 2, bestaande klanten 3.
+//     Google 4, Meta 1, ChatGPT 1, SEO 1, GEO 1, bestaande klanten 3.
 //   - Omzet 52.800 euro, gemiddeld 4.800 per opdracht; per bron opgeteld
-//     18.400 + 3.900 + 3.400 + 9.200 + 17.900.
+//     18.400 + 3.900 + 3.400 + 6.800 + 2.400 + 17.900.
 //   - ChatGPT Ads bewust onderaan: een opdracht per 940 klikken, tegen 310 bij
 //     Google en 860 bij Meta, en aanvragen per klik ongeveer vijf keer lager
 //     dan bij Google (Koen, 11 okt 23:18 en 23:30: "loopt echt minder dan
@@ -225,7 +225,9 @@ export const METINGEN: Partial<Record<BronId, Meting>> = {
       { label: 'Google Ads', waarde: EUR('18.400') },
       { label: 'Meta', waarde: EUR('3.900') },
       { label: 'ChatGPT Ads', waarde: EUR('3.400') },
-      { label: 'Vindbaar in Google', waarde: EUR('9.200') },
+      // Koen 12 okt: altijd SEO noemen, nooit "vindbaar in Google"; GEO mag erbij.
+      { label: 'SEO', waarde: EUR('6.800') },
+      { label: 'GEO', waarde: EUR('2.400') },
       { label: 'Bestaande klanten', waarde: EUR('17.900') },
       { label: 'Omzet deze maand', waarde: EUR('52.800'), nadruk: true },
     ],

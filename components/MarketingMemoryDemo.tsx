@@ -209,9 +209,9 @@ export default function MarketingMemoryDemo({ locale }: { locale: string }) {
                     className="absolute w-2 h-2 rounded-full"
                     style={{
                       left: `${n.x}%`, top: `${n.y}%`,
-                      background: n.c ?? '#5DA3FF',
+                      background: n.c ?? '#3D8EFF',
                       opacity: n.hl ? 1 : 0.4,
-                      boxShadow: n.hl ? '0 0 0 6px rgba(93,163,255,.25), 0 0 18px rgba(93,163,255,.8)' : undefined,
+                      boxShadow: n.hl ? '0 0 0 6px rgba(61,142,255,.25), 0 0 18px rgba(61,142,255,.8)' : undefined,
                     }}
                   />
                 ))}
@@ -268,7 +268,7 @@ export default function MarketingMemoryDemo({ locale }: { locale: string }) {
               <p className="text-[14px] text-muted my-2">
                 <strong style={{ color: 'var(--color-primary)' }}>{c.detail.learnedLabel}</strong> {c.detail.learned}
               </p>
-              <p className="inline-block rounded-[10px] px-3.5 py-2 font-display font-bold text-[14px] mt-2.5 mb-0" style={{ background: 'rgba(93,163,255,0.14)', color: 'var(--color-primary)' }}>
+              <p className="inline-block rounded-[10px] px-3.5 py-2 font-display font-bold text-[14px] mt-2.5 mb-0" style={{ background: 'rgba(61,142,255,0.14)', color: 'var(--color-primary)' }}>
                 {c.detail.res}
               </p>
               <div className="mt-4">

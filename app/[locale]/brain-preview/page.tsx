@@ -34,7 +34,7 @@ export default async function BrainPreviewPage({ params }: Props) {
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <p
           style={{
-            color: '#5DA3FF',
+            color: '#3D8EFF',
             fontFamily: 'var(--font-display, system-ui, sans-serif)',
             fontSize: 12,
             fontWeight: 700,

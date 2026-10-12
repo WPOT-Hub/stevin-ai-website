@@ -77,7 +77,7 @@ export default async function IntegratiesPage({ params }: Props) {
               {t('hero_sub')}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#lagen" className="inline-flex min-h-12 items-center justify-center rounded-[10px] bg-[#3C8EFF] px-5 text-sm font-extrabold text-white transition-colors hover:bg-[#2B7AEE]">
+              <a href="#lagen" className="inline-flex min-h-12 items-center justify-center rounded-[10px] bg-[#3D8EFF] px-5 text-sm font-extrabold text-white transition-colors hover:bg-[#3D8EFF]">
                 {t('hero_cta_layers')}
               </a>
               <a href="#koppelingen" className="inline-flex min-h-12 items-center justify-center rounded-[10px] border border-white/20 px-5 text-sm font-extrabold text-white transition-colors hover:bg-white/5">
@@ -96,7 +96,7 @@ export default async function IntegratiesPage({ params }: Props) {
                 <span className="relative h-0.5 bg-white/15">
                   <span className="absolute -inset-y-1 left-0 rounded-full bg-white" style={{ width }} />
                 </span>
-                <span className="text-xs font-extrabold text-[#5DA3FF]">{label}</span>
+                <span className="text-xs font-extrabold text-[#3D8EFF]">{label}</span>
               </div>
             ))}
           </div>
@@ -111,7 +111,7 @@ export default async function IntegratiesPage({ params }: Props) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-9 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="mb-4 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3C8EFF] before:h-px before:w-7 before:bg-current">
+              <p className="mb-4 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3D8EFF] before:h-px before:w-7 before:bg-current">
                 {t('stack_eyebrow')}
               </p>
               <h2 className="max-w-3xl text-[clamp(2.125rem,4.2vw,3.625rem)] font-extrabold leading-[1.02] tracking-[-0.04em] text-[#0A0A0A]">
@@ -129,7 +129,7 @@ export default async function IntegratiesPage({ params }: Props) {
                 key={layer.num}
                 className={`grid grid-cols-[56px_1fr] gap-6 py-8 ${index > 0 ? 'border-t border-[#D9E0EB]' : ''}`}
               >
-                <span className="pt-0.5 text-[26px] font-extrabold leading-none tracking-[-0.02em] text-[#3C8EFF]">
+                <span className="pt-0.5 text-[26px] font-extrabold leading-none tracking-[-0.02em] text-[#3D8EFF]">
                   {layer.num}
                 </span>
                 <div>
@@ -150,7 +150,7 @@ export default async function IntegratiesPage({ params }: Props) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-[14px] border border-[#D9E0EB] bg-white px-5 py-4">
             <div className="grid gap-4 lg:grid-cols-[160px_1fr] lg:items-start">
-              <p className="m-0 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3C8EFF]">
+              <p className="m-0 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3D8EFF]">
                 {t('categories_eyebrow')}
               </p>
               <nav className="grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" aria-label={t('categories_aria')}>
@@ -159,16 +159,15 @@ export default async function IntegratiesPage({ params }: Props) {
                   if (count === 0) return null
 
                   return (
-                    <Link
+                    // W-535 snoeien: de categoriepagina's gaan met een 301 terug
+                    // naar dit overzicht, dus geen link meer; alleen naam en aantal.
+                    <div
                       key={category.slug}
-                      href={`/integraties/${category.slug}`}
-                      className="group flex items-baseline justify-between gap-3 border-b border-[#E8EDF4] pb-2 text-sm"
+                      className="flex items-baseline justify-between gap-3 border-b border-[#E8EDF4] pb-2 text-sm"
                     >
-                      <span className="font-bold text-[#1F2933] transition-colors group-hover:text-[#3C8EFF]">
-                        {categoryName(category, locale)}
-                      </span>
+                      <span className="font-bold text-[#1F2933]">{categoryName(category, locale)}</span>
                       <span className="font-mono text-xs text-[#8A94A3]">{count}</span>
-                    </Link>
+                    </div>
                   )
                 })}
               </nav>
@@ -186,7 +185,7 @@ export default async function IntegratiesPage({ params }: Props) {
       <section className="bg-[#0A1628] py-16 text-white sm:py-20 lg:py-24">
         <div className="mx-auto grid max-w-7xl items-end gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:px-8">
           <div>
-            <p className="mb-4 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3C8EFF] before:h-px before:w-7 before:bg-current">
+            <p className="mb-4 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3D8EFF] before:h-px before:w-7 before:bg-current">
               {t('missing_eyebrow')}
             </p>
             <h2 className="max-w-3xl text-[clamp(2.125rem,4.2vw,3.625rem)] font-extrabold leading-[1.02] tracking-[-0.04em] text-white">
@@ -198,7 +197,7 @@ export default async function IntegratiesPage({ params }: Props) {
           </div>
           <Link
             href="/contact"
-            className="inline-flex min-h-12 items-center justify-center rounded-[10px] bg-[#3C8EFF] px-5 text-sm font-extrabold text-white transition-colors hover:bg-[#2B7AEE]"
+            className="inline-flex min-h-12 items-center justify-center rounded-[10px] bg-[#3D8EFF] px-5 text-sm font-extrabold text-white transition-colors hover:bg-[#3D8EFF]"
           >
             {t('missing_cta')}
           </Link>

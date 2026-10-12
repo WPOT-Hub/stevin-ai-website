@@ -1,4 +1,3 @@
-import { Link } from '@/i18n/navigation'
 import { integrations } from '@/data/integrations'
 
 // W-078, 13 sep 2026. De bronnen die we vandaag echt uitlezen, groot in beeld
@@ -63,7 +62,7 @@ export default function KanalenStrip({ locale }: { locale: string }) {
     <section id="kanalen" className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <p className="mb-5 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3C8EFF] before:h-px before:w-7 before:bg-current">
+          <p className="mb-5 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3D8EFF] before:h-px before:w-7 before:bg-current">
             {c.eyebrow}
           </p>
           <h2 className="text-[clamp(2.125rem,4.2vw,3.625rem)] font-extrabold leading-[1.02] tracking-[-0.04em] text-[#0A0A0A]">
@@ -80,10 +79,8 @@ export default function KanalenStrip({ locale }: { locale: string }) {
         >
           {KANALEN.map((k) => (
             <li key={k.slug}>
-              <Link
-                href={`/integraties/${k.slug}`}
-                className="group flex h-full min-h-[104px] flex-col items-center justify-center gap-3 rounded-[12px] border border-[#D9E0EB] bg-white px-3 py-5 text-center transition-colors hover:border-[#3C8EFF] hover:bg-[#F7F8FA]"
-              >
+              {/* W-535: geen link meer, de losse koppelingspagina's zijn weg. */}
+              <div className="group flex h-full min-h-[104px] flex-col items-center justify-center gap-3 rounded-[12px] border border-[#D9E0EB] bg-white px-3 py-5 text-center">
                 {k.logo ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
@@ -95,7 +92,7 @@ export default function KanalenStrip({ locale }: { locale: string }) {
                   />
                 ) : null}
                 <span className={`font-extrabold leading-tight text-[#1F2933] ${k.logo ? 'text-[13px]' : 'text-[17px]'}`}>{k.naam}</span>
-              </Link>
+              </div>
             </li>
           ))}
         </ul>

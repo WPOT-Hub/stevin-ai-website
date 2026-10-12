@@ -159,15 +159,15 @@ export default async function VentureLabPage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_440px] gap-16 items-center">
             {/* Left: copy */}
             <div>
-              <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
-                <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+              <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+                <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
                 Stevin Venture Lab
               </p>
               <h1
                 className="font-display font-extrabold text-white leading-[1.04] tracking-[-0.03em]"
                 style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '15ch' }}
               >
-                {c.heroH1a}<span className="text-[#5DA3FF]">{c.heroH1b}</span>
+                {c.heroH1a}<span className="text-[#3D8EFF]">{c.heroH1b}</span>
               </h1>
               <p className="text-white/60 leading-[1.6]" style={{ fontSize: '19px', maxWidth: '540px', marginTop: '30px' }}>
                 {c.heroSub}
@@ -175,7 +175,7 @@ export default async function VentureLabPage({ params }: Props) {
               <div className="flex flex-wrap gap-4 mt-10">
                 <Link
                   href="#interesse"
-                  className="inline-flex items-center gap-2 bg-[#5DA3FF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#7BB8FF] transition-colors"
+                  className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#3D8EFF] transition-colors"
                 >
                   {c.ctaInteresse}
                 </Link>
@@ -222,11 +222,11 @@ export default async function VentureLabPage({ params }: Props) {
                 <svg className="absolute inset-0 z-10" width="440" height="540" viewBox="0 0 440 540" fill="none">
                   <path d="M40 150 L150 252 L70 354 L220 452" stroke="url(#vlpath)" strokeWidth="1.5" strokeDasharray="3 5" opacity="0.55" />
                   {GEO.map((p) => (
-                    <circle key={p.n} cx={p.x} cy={p.y} r="3.5" fill={p.highlight ? '#00D4A0' : '#5DA3FF'} />
+                    <circle key={p.n} cx={p.x} cy={p.y} r="3.5" fill={p.highlight ? '#00D4A0' : '#3D8EFF'} />
                   ))}
                   <defs>
                     <linearGradient id="vlpath" x1="0" y1="0" x2="440" y2="540" gradientUnits="userSpaceOnUse">
-                      <stop stopColor="#5DA3FF" />
+                      <stop stopColor="#3D8EFF" />
                       <stop offset="1" stopColor="#00D4A0" />
                     </linearGradient>
                   </defs>
@@ -241,7 +241,7 @@ export default async function VentureLabPage({ params }: Props) {
                     style={{ left: p.x + 12, top: p.y, transform: 'translateY(-50%)' }}
                   >
                     <div className="flex items-center gap-2">
-                      <span className={`font-mono text-[10px] ${p.highlight ? 'text-[#00D4A0]' : 'text-[#5DA3FF]'}`}>{p.n}</span>
+                      <span className={`font-mono text-[10px] ${p.highlight ? 'text-[#00D4A0]' : 'text-[#3D8EFF]'}`}>{p.n}</span>
                       <span className="font-display text-[14px] font-bold leading-tight text-white">{c.pipeline[i].label}</span>
                       {p.highlight && <span className="ml-auto text-[12px] text-[#00D4A0]">&#9650;</span>}
                     </div>
@@ -355,8 +355,8 @@ export default async function VentureLabPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
           <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1fr] gap-12 lg:gap-20 items-center">
             <div>
-              <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6 flex items-center gap-[14px]">
-                <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+              <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6 flex items-center gap-[14px]">
+                <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
                 {c.stevinEyebrow}
               </p>
               <h2 className="font-display font-extrabold text-white leading-[1.08] tracking-[-0.025em]" style={{ fontWeight: 800, fontSize: 'clamp(30px, 3.4vw, 48px)', maxWidth: '16ch' }}>

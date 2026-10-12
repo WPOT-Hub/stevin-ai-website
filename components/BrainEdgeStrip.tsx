@@ -55,7 +55,7 @@ const EDGES: [number, number][] = [
 
 const COLOR: Record<0 | 1 | 2, string> = {
   0: '#3D8EFF',
-  1: '#5DA3FF',
+  1: '#3D8EFF',
   2: '#7DB4FF',
 }
 
@@ -164,9 +164,9 @@ export default function BrainEdgeStrip({ className }: { className?: string }) {
     >
       <defs>
         <radialGradient id="brainEdgeGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#5DA3FF" stopOpacity="0.42" />
-          <stop offset="60%" stopColor="#5DA3FF" stopOpacity="0.1" />
-          <stop offset="100%" stopColor="#5DA3FF" stopOpacity="0" />
+          <stop offset="0%" stopColor="#3D8EFF" stopOpacity="0.42" />
+          <stop offset="60%" stopColor="#3D8EFF" stopOpacity="0.1" />
+          <stop offset="100%" stopColor="#3D8EFF" stopOpacity="0" />
         </radialGradient>
       </defs>
 

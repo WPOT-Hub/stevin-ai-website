@@ -1,6 +1,7 @@
 import { Link } from '@/i18n/navigation'
 import KennismakingVenster from './KennismakingVenster'
 import NodeWatermerk from './NodeWatermerk'
+import { PaginaKop } from './RethinkBlokken'
 
 // De nieuwe /tarieven (W-535), in de stijl van de homepage. Koen, 11 okt
 // 23:40: "deze pagina als volgende aanpakken", en twee pakketten zoals op de
@@ -104,26 +105,27 @@ const VRAGEN = [
 export default function RethinkTarieven() {
   return (
     <main className="bg-white">
-      {/* ── 1. ANTWOORD ── */}
-      <section className="px-6 pb-14 pt-28 sm:pt-32">
-        <div className="mx-auto max-w-[1080px]">
-          <p className="m-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent">Tarieven</p>
-          <h1 className="m-0 text-balance font-display font-extrabold text-primary" style={{ ...h2Stijl, fontSize: 'clamp(34px, 4vw, 56px)' }}>
-            Wat kost het uitbesteden van je marketing?
-          </h1>
-          <p className="m-0 mt-6 max-w-[680px] text-[18px] leading-[1.6] text-[#2A3A54]">
+      {/* ── 1. ANTWOORD ── Het brein als kop met Verkoop open: omzet per bron
+          (Koen, 12 okt 07:48, nodes per pagina). */}
+      <PaginaKop
+        brein="verkoop"
+        eyebrow="Tarieven"
+        kop="Wat kost het uitbesteden van je marketing?"
+        knop="tarieven_kop"
+        lede={
+          <p className="m-0">
             Bij Stevin.AI betaal je vanaf 1.399 per maand als wij jouw bureau zijn, en vanaf 399 als je het zelf doet of jouw agents het werk
             laat doen. Wat je precies betaalt hangt af van het werk, niet van je advertentiebudget. Dat budget betaal je rechtstreeks aan Google
             en Meta, en daar verdienen wij niets aan.
           </p>
-        </div>
-      </section>
+        }
+      />
 
       {/* ── 2. PAKKETTEN ── Het bureau donker en eerst: daar begint bijna
           iedereen (Koen, 11 okt: "in de regel zal iedereen onder managed
           starten, daar selecteren we op"). */}
-      <section className="px-6 pb-20" aria-label="Pakketten">
-        <div className="mx-auto grid max-w-[1080px] gap-5 md:grid-cols-[1.15fr_1fr]">
+      <section className="px-6 pb-20 pt-20 sm:pt-24" aria-label="Pakketten">
+        <div className="mx-auto grid max-w-[1152px] gap-5 md:grid-cols-[1.15fr_1fr]">
           {PAKKETTEN.map((p, i) => {
             const donker = i === 0
             return (
@@ -133,7 +135,7 @@ export default function RethinkTarieven() {
                   donker ? 'bg-primary text-white' : 'border border-border bg-white text-primary'
                 }`}
               >
-                <p className={`m-0 font-display text-[12px] font-bold uppercase tracking-[0.12em] ${donker ? 'text-accent-light' : 'text-accent'}`}>
+                <p className={`m-0 font-display text-[12px] font-bold uppercase tracking-[0.12em] ${donker ? 'text-accent' : 'text-accent'}`}>
                   {p.label}
                 </p>
                 <h2
@@ -153,7 +155,7 @@ export default function RethinkTarieven() {
                   {p.punten.map((pt) => (
                     <li key={pt} className={`flex gap-3 text-[16px] leading-[1.5] ${donker ? 'text-white/80' : 'text-[#2A3A54]'}`}>
                       <span
-                        className={`mt-[9px] inline-block h-1.5 w-1.5 shrink-0 rounded-full ${donker ? 'bg-accent-light' : 'bg-accent'}`}
+                        className={`mt-[9px] inline-block h-1.5 w-1.5 shrink-0 rounded-full ${donker ? 'bg-accent' : 'bg-accent'}`}
                         aria-hidden="true"
                       />
                       {pt}
@@ -164,12 +166,12 @@ export default function RethinkTarieven() {
             )
           })}
         </div>
-        <div className="mx-auto mt-8 flex max-w-[1080px] justify-center">
+        <div className="mx-auto mt-8 flex max-w-[1152px] justify-center">
           <Link
             href="/kennismaking"
             data-cta="tarieven_pakketten"
             data-open-kennismaking=""
-            className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-colors hover:bg-accent-dark"
+            className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-110"
           >
             Plan een kennismaking
           </Link>
@@ -179,7 +181,7 @@ export default function RethinkTarieven() {
       {/* ── 3. BUDGET ── */}
       <section className="relative overflow-hidden bg-primary px-6 text-white" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <NodeWatermerk seed={41} thema="donker" />
-        <div className="relative mx-auto max-w-[1080px]">
+        <div className="relative mx-auto max-w-[1152px]">
           <h2 className="m-0 font-display font-extrabold text-white" style={{ ...h2Stijl, maxWidth: '18ch' }}>
             {BUDGET.kop}
           </h2>
@@ -195,7 +197,7 @@ export default function RethinkTarieven() {
 
       {/* ── 4. MARKT ── */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 72 }}>
-        <div className="mx-auto max-w-[1080px]">
+        <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 text-balance font-display font-extrabold text-primary" style={h2Stijl}>
             {MARKT.kop}
           </h2>
@@ -212,7 +214,7 @@ export default function RethinkTarieven() {
 
       {/* ── 5. VRAGEN ── */}
       <section className="px-6 pb-24">
-        <div className="mx-auto max-w-[1080px]">
+        <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 font-display font-extrabold text-primary" style={{ ...h2Stijl, fontSize: 'clamp(26px, 2.6vw, 36px)' }}>
             Vragen over de prijs
           </h2>
@@ -247,7 +249,7 @@ export default function RethinkTarieven() {
               href="/kennismaking"
               data-cta="kennismaking"
               data-open-kennismaking=""
-              className="inline-flex items-center rounded-lg bg-accent-light px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-colors hover:bg-[#7BB8FF]"
+              className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-110"
             >
               Plan een kennismaking
             </Link>

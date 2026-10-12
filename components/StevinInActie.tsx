@@ -196,7 +196,7 @@ function Sparkline({ values }: { values: Trend }) {
     <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} className="flex-shrink-0" aria-hidden="true">
       <polyline
         fill="none"
-        stroke="#5DA3FF"
+        stroke="#3D8EFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -206,7 +206,7 @@ function Sparkline({ values }: { values: Trend }) {
         cx={(values.length - 1) * stepX}
         cy={h - ((values[values.length - 1] - min) / range) * h}
         r="2.5"
-        fill="#5DA3FF"
+        fill="#3D8EFF"
       />
     </svg>
   )
@@ -240,7 +240,7 @@ function Card({
       </div>
 
       <div className="mb-6">
-        <p className="font-mono text-[10px] tracking-[0.16em] text-[#5DA3FF] uppercase mb-2">{labels.signal}</p>
+        <p className="font-mono text-[10px] tracking-[0.16em] text-[#3D8EFF] uppercase mb-2">{labels.signal}</p>
         <div className="flex items-end justify-between gap-4">
           <div className="flex items-baseline gap-3 min-w-0">
             <span
@@ -256,13 +256,13 @@ function Card({
       </div>
 
       <div className="mb-6">
-        <p className="font-mono text-[10px] tracking-[0.16em] text-[#5DA3FF] uppercase mb-2">{labels.diagnose}</p>
+        <p className="font-mono text-[10px] tracking-[0.16em] text-[#3D8EFF] uppercase mb-2">{labels.diagnose}</p>
         <p className="text-white text-[15px] font-medium leading-snug mb-1">{card.diagnose.headline}</p>
         <p className="text-[#A3ABB8] text-[13px] leading-relaxed">{card.diagnose.detail}</p>
       </div>
 
       <div className="border-t border-white/8 pt-5">
-        <p className="font-mono text-[10px] tracking-[0.16em] text-[#5DA3FF] uppercase mb-2">{labels.advice}</p>
+        <p className="font-mono text-[10px] tracking-[0.16em] text-[#3D8EFF] uppercase mb-2">{labels.advice}</p>
         <p className="text-white text-[14px] leading-relaxed">{card.advies}</p>
       </div>
     </article>
@@ -281,8 +281,8 @@ export default function StevinInActie() {
     <section className="bg-[#0A1628] text-white" style={{ padding: '112px 24px' }}>
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-16 max-w-[760px]">
-          <p className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
-            <span className="inline-block w-6 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+            <span className="inline-block w-6 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {copy.eyebrow}
           </p>
           <h2
@@ -305,7 +305,7 @@ export default function StevinInActie() {
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[960px]">
           {copy.outcome.map((o) => (
             <div key={o.label}>
-              <p className="font-mono text-[10px] tracking-[0.16em] text-[#5DA3FF] uppercase mb-2">{o.label}</p>
+              <p className="font-mono text-[10px] tracking-[0.16em] text-[#3D8EFF] uppercase mb-2">{o.label}</p>
               <p className="text-white text-[15px] leading-snug">{o.body}</p>
             </div>
           ))}

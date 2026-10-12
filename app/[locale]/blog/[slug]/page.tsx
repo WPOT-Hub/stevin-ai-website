@@ -265,7 +265,13 @@ export default async function ArticlePage({
                 color: 'rgba(255,255,255,0.55)',
               }}
             >
-              <span>{dateNL(article.publishedAt)}</span>
+              {/* W-535: een herschreven stuk toont wanneer het is bijgewerkt,
+                  anders lijkt een tekst met bronnen uit oktober uit juni. */}
+              <span>
+                {article.updatedAt && article.updatedAt !== article.publishedAt
+                  ? `BIJGEWERKT ${dateNL(article.updatedAt)}`
+                  : dateNL(article.publishedAt)}
+              </span>
               <span
                 style={{
                   width: '4px',
@@ -346,12 +352,16 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'wat-is-feed-management' && (
             <ArticleFeedManagementBody />
           )}
+          {article.format === 'editorial' && article.slug === 'chatgpt-wordt-advertentieplatform' && (
+            <ArticleChatGPTAdsBody />
+          )}
           {article.format === 'editorial' &&
             article.slug !== 'wat-is-first-party-data' &&
             article.slug !== 'crm-koppelen-aan-je-website' &&
             article.slug !== 'google-ads-conversies-meten' &&
             article.slug !== 'leadformulier-dat-echte-aanvragen-oplevert' &&
             article.slug !== 'wat-is-feed-management' &&
+            article.slug !== 'chatgpt-wordt-advertentieplatform' &&
             article.slug !== '95-procent-ai-pilots-mislukt' &&
             article.slug !== 'autonome-agents-90-dagen' &&
             article.slug !== 'last-click-is-een-gewoonte' &&
@@ -563,15 +573,7 @@ function ArticleLeCunBody() {
       <p>
         Het opvallende zit niet in het bedrag. Het zit in de inzet. LeCun haalde dat geld op om precies
         het soort AI te vervangen waar de rest van de industrie honderden miljarden in pompt: het grote
-        taalmodel achter ChatGPT, Gemini en Claude. We schreven er in januari al een kort bericht over,
-        over{' '}
-        <Link
-          href="/blog/lecun-ami-labs-jepa-tegen-llms"
-          className="text-[var(--accent)] no-underline"
-        >
-          de aankondiging
-        </Link>
-        . Dit is de mening erachter.
+        taalmodel achter ChatGPT, Gemini en Claude.
       </p>
 
       <H2 num="01">De gok</H2>
@@ -2002,7 +2004,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Stel je voor: een scherm vol banners, waar elk merk dezelfde slogan roept. ‘Vandaag alleen!’ ‘Laatste kans!’ ‘Exclusief voor jou.’ Maar niemand klikt meer. Niet omdat de aanbiedingen slecht zijn, maar omdat ze allemaal hetzelfde zijn. Zo begint Black Friday 2026 voor veel merken die blind vertrouwen op geautomatiseerde advertentiecampagnes. De perfecte storm is al gaande: chatbots genereren advertenties in bulk, marges worden opgesoupeerd door AI-gedreven biedingen en de consument raakt overspoeld met identieke aanbiedingen die geen enkele emotionele waarde meer hebben.
       </p>
       <p>
-        De kern van het probleem ligt in de overmatige afhankelijkheid van automatisering. Waar PPC-teams vroeger wekenlang campagne-instellingen verfijnden, laten ze nu de meeste beslissingen over aan systemen die leren van historische data – data die steeds minder relevant wordt. Consumentengedrag verandert sneller dan ooit, maar algoritmes blijven hangen in patronen van vorig jaar. Het resultaat? Een race naar de bodem waar alleen de grootste spelers met diepste zakken kunnen meedoen. Kleine en middelgrote merken zien hun ROI dalen tot onder het kritieke punt, terwijl techgiganten als Amazon en Google hun marges juist zien stijgen dankzij schaalvoordelen.
+        De kern van het probleem ligt in de overmatige afhankelijkheid van automatisering. Waar PPC-teams vroeger wekenlang campagne-instellingen verfijnden, laten ze nu de meeste beslissingen over aan systemen die leren van historische data, data die steeds minder relevant wordt. Consumentengedrag verandert sneller dan ooit, maar algoritmes blijven hangen in patronen van vorig jaar. Het resultaat? Een race naar de bodem waar alleen de grootste spelers met diepste zakken kunnen meedoen. Kleine en middelgrote merken zien hun ROI dalen tot onder het kritieke punt, terwijl techgiganten als Amazon en Google hun marges juist zien stijgen dankzij schaalvoordelen.
       </p>
       <p>
         Wat gebeurt er als iedereen dezelfde tools gebruikt? De markt wordt een echo-kamer waar verschil maken alleen nog kan door buiten de gebaande paden te treden. Toch doen veel merken het tegenovergestelde: ze kopiëren elkaars strategieën, hopen dat automatisering hun problemen oplost en vergeten dat consumenten niet zozeer prijsgevoelig zijn als wel prijsbewust. Een aanbieding moet voelen als een deal, niet als een noodzakelijk kwaad. Maar hoe meet je dat met algoritmes die alleen kijken naar CTR en conversie?
@@ -2011,13 +2013,13 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Er is een hardnekkige mythe dat automatisering tijd bespaart én resultaten verbetert. In werkelijkheid creëert het een vicieuze cirkel: teams besteden minder tijd aan strategie en meer aan het managen van tools die hen vertellen wat ze al wisten. De echte uitdaging ligt niet in het optimaliseren van bestaande campagnes, maar in het ontwerpen van campagnes die nog steeds menselijk voelen in een wereld waar machines domineren. Wie durft nog te experimenteren met creatieve uitingen of unieke aanbiedingsstructuren als alles draait om A/B-testen volgens de regels van Silicon Valley?
       </p>
       <p>
-        De druk op marges komt niet alleen door automatisering, maar ook door de timing van productlanceringen. Merken lanceren hun kerstcollecties al in oktober om mee te liften op de Black Friday-hype, waardoor de periode tussen ‘Black November’ en ‘Cyber Monday’ overvol raakt met identieke producten. Consumenten krijgen zoveel keuze dat ze uiteindelijk niets kiezen – tenzij het merk een verhaal heeft dat boven de massa uitsteekt. Maar verhalen schrijven is geen taak voor algoritmes; het vereist creativiteit, timing en moed om anders te zijn.
+        De druk op marges komt niet alleen door automatisering, maar ook door de timing van productlanceringen. Merken lanceren hun kerstcollecties al in oktober om mee te liften op de Black Friday-hype, waardoor de periode tussen ‘Black November’ en ‘Cyber Monday’ overvol raakt met identieke producten. Consumenten krijgen zoveel keuze dat ze uiteindelijk niets kiezen, tenzij het merk een verhaal heeft dat boven de massa uitsteekt. Maar verhalen schrijven is geen taak voor algoritmes; het vereist creativiteit, timing en moed om anders te zijn.
       </p>
       <p>
-        Een tegenwerping is dat automatisering juist zorgt voor efficiëntie en schaalbaarheid. Dat klopt voor wie zich richt op volume, maar niet voor wie waarde wil creëren. Neem bijvoorbeeld een kledingmerk dat via dynamische advertenties zijn winterjas probeert te verkopen tegen elke prijs onder €150. Het algoritme optimaliseert voor conversies, maar wat als de jas eigenlijk €179 waard is? De klant betaalt uiteindelijk de prijs – letterlijk – voor deze kortetermijnstrategie wanneer het merk later moet terugschalen of zelfs failliet gaat omdat marges structureel te laag zijn.
+        Een tegenwerping is dat automatisering juist zorgt voor efficiëntie en schaalbaarheid. Dat klopt voor wie zich richt op volume, maar niet voor wie waarde wil creëren. Neem bijvoorbeeld een kledingmerk dat via dynamische advertenties zijn winterjas probeert te verkopen tegen elke prijs onder €150. Het algoritme optimaliseert voor conversies, maar wat als de jas eigenlijk €179 waard is? De klant betaalt uiteindelijk letterlijk de prijs voor deze kortetermijnstrategie wanneer het merk later moet terugschalen of zelfs failliet gaat omdat marges structureel te laag zijn.
       </p>
       <p>
-        De synthese ligt in balans: gebruik automatisering waar het werkt – bij routinematige taken zoals keyword-bidding of budgetallocatie – maar behoud menselijke controle over strategie en creativiteit. De beste PPC-teams van 2026 zullen niet diegene zijn met de meest geavanceerde AI-tools, maar degene die weten wanneer ze moeten ingrijpen om hun merk relevant te houden. Consumenten willen geen perfecte deals; ze willen eerlijke deals die passen bij hun behoeften en waarden.
+        De synthese ligt in balans: gebruik automatisering waar het werkt (bij routinematige taken zoals keyword-bidding of budgetallocatie), maar behoud menselijke controle over strategie en creativiteit. De beste PPC-teams van 2026 zullen niet diegene zijn met de meest geavanceerde AI-tools, maar degene die weten wanneer ze moeten ingrijpen om hun merk relevant te houden. Consumenten willen geen perfecte deals; ze willen eerlijke deals die passen bij hun behoeften en waarden.
       </p>
       <p>
         Uiteindelijk gaat Black Friday 2026 niet over technologie of tools, maar over menselijkheid in een gedigitaliseerde wereld. Merken die dit begrijpen zullen niet alleen overleven, maar sterker uit deze storm komen.
@@ -3892,19 +3894,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit': (
     <>
       <p className="lead-para">
-        Stel je voor: een hele industrie verzamelt zich in een stad waar de temperatuur hoog is, niet alleen buiten maar ook in de discussies. Terwijl de zon brandt op de Croisette, branden de gesprekken over kunstmatige intelligentie los – maar dan wel op het verkeerde niveau. Sir Martin Sorrell had het al door tijdens zijn speech bij C Wire’s Street Talk: Cannes draait nog steeds om vragen als 'Kan AI een betere reclame maken?' of 'Schrijft AI straks alle copy?'. De werkelijke revolutie speelt zich echter af op een niveau dat minder zichtbaar is voor het oog van de camera: media planning en buying.
+        Stel je voor: een hele industrie verzamelt zich in een stad waar de temperatuur hoog is, niet alleen buiten maar ook in de discussies. Terwijl de zon brandt op de Croisette, branden de gesprekken over kunstmatige intelligentie los, maar dan wel op het verkeerde niveau. Sir Martin Sorrell had het al door tijdens zijn speech bij C Wire’s Street Talk: Cannes draait nog steeds om vragen als 'Kan AI een betere reclame maken?' of 'Schrijft AI straks alle copy?'. De werkelijke revolutie speelt zich echter af op een niveau dat minder zichtbaar is voor het oog van de camera: media planning en buying.
       </p>
       <p>
         De ironie is niet te missen. Terwijl marketeers en bureaus uren steken in brainstormsessies over AI-g gegenereerde advertenties, sluipen algoritmes al stilletjes binnen in de systemen die bepalen waar, wanneer en hoe die advertenties überhaupt verschijnen. Het gaat niet om creativiteit, maar om efficiëntie, schaal en vooral: controle. Want wie bepaalt straks welke doelgroep welk bericht krijgt? Wie stelt de prijs vast als machines in milliseconden kunnen inschatten hoeveel een impressie waard is? En wat gebeurt er met menselijke planners als machines sneller en nauwkeuriger kunnen voorspellen dan zij ooit kunnen?
       </p>
       <p>
-        Neem het voorbeeld van Coca-Cola’s James Quincey. Hij wees erop dat personalisering een valkuil heeft: als iedereen dezelfde geavanceerde targetingtools gebruikt, wie wint er dan nog? De consument wordt overspoeld met gepersonaliseerde boodschappen die allemaal hetzelfde klinken. Het antwoord ligt niet in meer technologie, maar in minder – of beter gezegd: in slimme toepassing ervan. Menselijke planners moeten zich richten op strategische keuzes, terwijl machines de uitvoering doen. Maar dat vergt wel een fundamentele shift in denken.
+        Neem het voorbeeld van Coca-Cola’s James Quincey. Hij wees erop dat personalisering een valkuil heeft: als iedereen dezelfde geavanceerde targetingtools gebruikt, wie wint er dan nog? De consument wordt overspoeld met gepersonaliseerde boodschappen die allemaal hetzelfde klinken. Het antwoord ligt niet in meer technologie, maar in minder, of beter gezegd: in slimme toepassing ervan. Menselijke planners moeten zich richten op strategische keuzes, terwijl machines de uitvoering doen. Maar dat vergt wel een fundamentele shift in denken.
       </p>
       <p>
-        Dat brengt ons bij een tegenwerping die vaak wordt genegeerd: waarom zou media planning überhaupt veranderen? De argumenten zijn bekend – programmatic advertising bestaat al jaren – maar de snelheid en schaal van verandering zijn nu pas echt voelbaar. Waar eerst menselijke tussenpersonen nodig waren om deals te sluiten tussen adverteerders en publishers, nemen nu platforms als Google en Meta die rol over. En zij doen dat met data die niemand anders heeft. Het gevolg? Adverteerders betalen steeds vaker voor uitgangsprijzen (CPM) zonder te weten waar hun budget precies naartoe gaat.
+        Dat brengt ons bij een tegenwerping die vaak wordt genegeerd: waarom zou media planning überhaupt veranderen? De argumenten zijn bekend (programmatic advertising bestaat al jaren), maar de snelheid en schaal van verandering zijn nu pas echt voelbaar. Waar eerst menselijke tussenpersonen nodig waren om deals te sluiten tussen adverteerders en publishers, nemen nu platforms als Google en Meta die rol over. En zij doen dat met data die niemand anders heeft. Het gevolg? Adverteerders betalen steeds vaker voor uitgangsprijzen (CPM) zonder te weten waar hun budget precies naartoe gaat.
       </p>
       <p>
-        Toch is er hoop. Niet omdat technologie ineens slecht is geworden, maar omdat ze eindelijk haar ware potentieel laat zien. Voor bureaus betekent dit dat ze zich moeten herpositioneren van uitvoerders naar strategische partners die weten hoe ze technologie moeten inzetten zonder hun eigen waarde te verliezen. Voor marketeers betekent dit dat ze moeten leren vertrouwen op systemen die hen helpen beter te plannen – maar wel met menselijke controlepunten.
+        Toch is er hoop. Niet omdat technologie ineens slecht is geworden, maar omdat ze eindelijk haar ware potentieel laat zien. Voor bureaus betekent dit dat ze zich moeten herpositioneren van uitvoerders naar strategische partners die weten hoe ze technologie moeten inzetten zonder hun eigen waarde te verliezen. Voor marketeers betekent dit dat ze moeten leren vertrouwen op systemen die hen helpen beter te plannen, maar wel met menselijke controlepunten.
       </p>
       <p>
         De grootste uitdaging ligt misschien wel in het accepteren dat technologie niet alles kan oplossen. Quincey’s opmerking over personalisering onthult een fundamentele waarheid: zelfs met AI blijft marketing mensenwerk. De beste algoritmes kunnen patronen herkennen, maar ze begrijpen niet wat consumenten echt willen of nodig hebben. Dat blijft de taak van mensen.
@@ -4216,19 +4218,19 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         Deze verschuiving is geen toekomstmuziek meer. Bedrijven zoals bol.com en Coolblue zetten al jaren algoritmen in die niet alleen productaanbevelingen doen, maar ook de timing en inhoud van marketingboodschappen dynamisch aanpassen. Het verschil met traditionele campagnes is fundamenteel: waar vroeger marketeers maandenlang werkten aan een campagne die na vier weken afgelopen was, draait het nu om realtime beslissingen. AI analyseert gedrag, voorspelt intenties en past boodschappen aan voordat de klant zelfs maar weet dat hij een keuze moet maken. Dit is geen upgrade van bestaande tools, maar een complete herdefinitie van hoe marketing werkt.
       </p>
       <p>
-        Toch blijft er een groep ondernemers die deze transitie negeren of zelfs bagatelliseren. Ze wijzen naar de kosten, de complexiteit of het gebrek aan meetbare resultaten op korte termijn. Maar wie denkt dat AI alleen voor grote spelers is, vergist zich. Zelfs kleine webshops kunnen met tools zoals Shopify’s AI-aangedreven marketing of HubSpot’s automation functies dezelfde principes toepassen – vaak tegen lagere kosten dan traditionele advertentiecampagnes. De kernvraag is niet of je het kunt betalen, maar of je het kunt missen als concurrenten wel meegaan en jij niet.
+        Toch blijft er een groep ondernemers die deze transitie negeren of zelfs bagatelliseren. Ze wijzen naar de kosten, de complexiteit of het gebrek aan meetbare resultaten op korte termijn. Maar wie denkt dat AI alleen voor grote spelers is, vergist zich. Zelfs kleine webshops kunnen met tools zoals Shopify’s AI-aangedreven marketing of HubSpot’s automation functies dezelfde principes toepassen, vaak tegen lagere kosten dan traditionele advertentiecampagnes. De kernvraag is niet of je het kunt betalen, maar of je het kunt missen als concurrenten wel meegaan en jij niet.
       </p>
       <p>
-        Een veelgehoorde tegenwerping is dat AI te onvoorspelbaar is of dat klanten er afstand van nemen als ze merken dat hun gedrag wordt gevolgd. Maar deze angst is gebaseerd op een misvatting over hoe moderne AI werkt. Goed geïmplementeerde systemen gebruiken anonimiteit en transparantie: ze tonen niet zomaar willekeurige producten, maar bieden oplossingen die aansluiten bij eerdere keuzes en behoeften. Klanten waarderen dit juist – mits het relevant en niet opdringerig voelt. De sleutel ligt in balans: te veel personalisatie voelt als stalking, te weinig als spam.
+        Een veelgehoorde tegenwerping is dat AI te onvoorspelbaar is of dat klanten er afstand van nemen als ze merken dat hun gedrag wordt gevolgd. Maar deze angst is gebaseerd op een misvatting over hoe moderne AI werkt. Goed geïmplementeerde systemen gebruiken anonimiteit en transparantie: ze tonen niet zomaar willekeurige producten, maar bieden oplossingen die aansluiten bij eerdere keuzes en behoeften. Klanten waarderen dit juist, mits het relevant en niet opdringerig voelt. De sleutel ligt in balans: te veel personalisatie voelt als stalking, te weinig als spam.
       </p>
       <p>
-        De praktijk leert dat bedrijven die deze stap zetten vaak binnen enkele maanden een meetbare uplift zien in conversie én klanttevredenheid. Neem bijvoorbeeld een middelgroot e-commercebedrijf uit België dat vorig jaar overstapte naar een AI-gedreven platform voor dynamische pricing en content-personalisatie. Binnen zes maanden steeg de omzet met 23 procent terwijl de acquisitiekosten met 15 procent daalden. Niet omdat ze meer geld uitgaven aan advertenties, maar omdat elke euro efficiënter werd besteed – precies daar waar de klant op dat moment was.
+        De praktijk leert dat bedrijven die deze stap zetten vaak binnen enkele maanden een meetbare uplift zien in conversie én klanttevredenheid. Neem bijvoorbeeld een middelgroot e-commercebedrijf uit België dat vorig jaar overstapte naar een AI-gedreven platform voor dynamische pricing en content-personalisatie. Binnen zes maanden steeg de omzet met 23 procent terwijl de acquisitiekosten met 15 procent daalden. Niet omdat ze meer geld uitgaven aan advertenties, maar omdat elke euro efficiënter werd besteed, precies daar waar de klant op dat moment was.
       </p>
       <p>
-        Dit roept natuurlijk de vraag op: waar begin je? De eerste stap is niet het kopen van dure software, maar het in kaart brengen van je huidige data-infrastructuur. Welke meetdata heb je al? Hoe consistent zijn ze? Vaak ontbreekt het niet aan tools, maar aan schone en bruikbare data. Vervolgens kies je voor een gefaseerde implementatie: start met één pijnpunt – zoals verlaten winkelwagens of lage terugkerende bezoekers – en test oplossingen voordat je alles overhoop haalt.
+        Dit roept natuurlijk de vraag op: waar begin je? De eerste stap is niet het kopen van dure software, maar het in kaart brengen van je huidige data-infrastructuur. Welke meetdata heb je al? Hoe consistent zijn ze? Vaak ontbreekt het niet aan tools, maar aan schone en bruikbare data. Vervolgens kies je voor een gefaseerde implementatie: start met één pijnpunt (zoals verlaten winkelwagens of lage terugkerende bezoekers) en test oplossingen voordat je alles overhoop haalt.
       </p>
       <p>
-        De grootste valkuil ligt echter in denken dat AI alles zelf doet. Succesvolle implementaties vereisen menselijke supervisie: marketeers moeten blijven sturen op merkwaarden, ethiek en strategische doelen. AI kan patronen herkennen die wij overzien, maar het begrijpt niet wat ‘goed’ betekent voor jouw bedrijf – tenzij jij dat definieert.
+        De grootste valkuil ligt echter in denken dat AI alles zelf doet. Succesvolle implementaties vereisen menselijke supervisie: marketeers moeten blijven sturen op merkwaarden, ethiek en strategische doelen. AI kan patronen herkennen die wij overzien, maar het begrijpt niet wat ‘goed’ betekent voor jouw bedrijf, tenzij jij dat definieert.
       </p>
       <p>
         Uiteindelijk gaat deze revolutie niet over technologie alleen. Het gaat over mentaliteit: loslaten van de campagnegedachte waarin marketing een project is met begin- en einddatum, en omarmen van continuïteit waarin elke interactie kansen biedt.
@@ -6403,28 +6405,6 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
-  'chatgpt-wordt-advertentieplatform': (
-    <>
-      <p className="lead-para">
-        OpenAI maakt van ChatGPT een advertentieplatform. Niet als los experiment, maar als een echt kanaal: een self-serve Ads Manager in beta, cost-per-click als biedmodel, en knoppen voor budget en locatie. Het minimumbudget van 50.000 dollar dat eerder nodig was, is vervallen, meldde Axios. Daarmee komt advertentieruimte in ChatGPT binnen bereik van iedere adverteerder, niet alleen de grootste merken.
-      </p>
-      <p>
-        De advertenties zijn conversiegericht. Ze sturen op omzet en op concrete acties, niet alleen op bereik. In de Ads Manager Beta kun je budgetten regelen en geografisch targeten, dezelfde knoppen die je van Google en Meta kent. Het verschil zit in de plek: de advertentie verschijnt in het antwoord, op het moment dat iemand een vraag stelt.
-      </p>
-      <p>
-        Voor Europa gaat het langzamer. OpenAI bereidt de uitrol naar de EU en Nederland voor, maar privacywetgeving zoals de AVG vertraagt dat tot er duidelijkheid is over compliance. OpenAI loopt op een dun koord: advertenties mogen de antwoorden niet beinvloeden en gebruikersdata wordt niet met adverteerders gedeeld. Dat vertrouwen houdt het product overeind, en tegelijk moet het snel opschalen om de dure AI-infrastructuur te betalen.
-      </p>
-      <p>
-        Waarom dit groot is: mensen zoeken hun antwoord steeds vaker in een chat in plaats van in een lijst met links. Precies daar komen nu advertenties. Er ontstaat een nieuw kanaal naast zoekadvertenties en social, in de laag die de afgelopen jaren het hardst is gegroeid. Wie adverteert, krijgt er een vindplaats bij. Wie het negeert, mist straks de plek waar de aandacht zit.
-      </p>
-      <p>
-        De lastigste vraag is niet of je meedoet, maar hoe je het meet. Een aankoop die begint bij een gesprek met ChatGPT valt vaak buiten je analytics: geen klik die je herkent, geen kanaal dat netjes in je rapportage staat. Net als bij bezoek uit AI-zoekmachines loop je het risico dat de waarde als direct of onbekend wordt geboekt. Dan werkt het kanaal wel, maar kun je er niet op sturen.
-      </p>
-      <p>
-        Ons advies is nuchter: begin nu klein met leren. Wacht niet tot het in Nederland live staat, want dan ben je laat. Zet op tijd je meting klaar zodat je straks weet wat een advertentie in ChatGPT echt oplevert. Daar bouwen we met Stevin aan: een onafhankelijke laag over je kanalen, zodat je op echte cijfers stuurt en een nieuw kanaal niet pas in de maandrapportage ontdekt.
-      </p>
-    </>
-  ),
   'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga': (
     <>
       <p className="lead-para">
@@ -7930,7 +7910,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'geheugenprijs-record-2026':
     "Voor bedrijven die afhankelijk zijn van IT-infrastructuur betekent dit een forse kostenpost die direct doorwerkt in marges of eindproducten. Tegelijkertijd biedt het kansen voor spelers die flexibel kunnen schakelen tussen leveranciers of alternatieve opslagoplossingen overwegen. De marktdynamiek toont aan hoe kwetsbaar supply chains zijn voor onverwachte schokken, zelfs bij ogenschijnlijk stabiele grondstoffen.",
   'black-friday-2026-de-perfecte-storm-voor-marketeers':
-    "Bij Stevin zien we deze ontwikkelingen al jaren aankomen: merken die blind varen op geautomatiseerde systemen zonder zelf nog grip te hebben op hun positionering verliezen niet alleen marges, maar ook hun unieke stem in de markt. Onze benadering is simpel: technologie moet dienen als verlengstuk van strategie, niet als vervanging ervan. We adviseren klanten om eerst helder te definiëren welke emotionele waarde zij willen overbrengen voordat zij investeren in tools of automatiseringstrajecten.\nWaar veel bureaus zich richten op korte-termijn KPI’s zoals CTR of ROAS, kijken wij naar langetermijnimpact: bouwt dit merk autoriteit op? Creëert dit duurzame klantloyaliteit? In een markt waar iedere euro telt, is het cruciaal om te investeren in campagnes die niet alleen converteren vandaag, maar ook morgen nog relevant zijn.\nOnze ervaring leert dat merken met een sterke propositie en creatieve vrijheid vaak beter presteren dan hun geautomatiseerde concurrentie – zelfs bij lagere budgetten.",
+    "Bij Stevin zien we deze ontwikkelingen al jaren aankomen: merken die blind varen op geautomatiseerde systemen zonder zelf nog grip te hebben op hun positionering verliezen niet alleen marges, maar ook hun unieke stem in de markt. Onze benadering is simpel: technologie moet dienen als verlengstuk van strategie, niet als vervanging ervan. We adviseren klanten om eerst helder te definiëren welke emotionele waarde zij willen overbrengen voordat zij investeren in tools of automatiseringstrajecten.\nWaar veel bureaus zich richten op korte-termijn KPI’s zoals CTR of ROAS, kijken wij naar langetermijnimpact: bouwt dit merk autoriteit op? Creëert dit duurzame klantloyaliteit? In een markt waar iedere euro telt, is het cruciaal om te investeren in campagnes die niet alleen converteren vandaag, maar ook morgen nog relevant zijn.\nOnze ervaring leert dat merken met een sterke propositie en creatieve vrijheid vaak beter presteren dan hun geautomatiseerde concurrentie, zelfs bij lagere budgetten.",
   'europese-digitale-soevereiniteit-is-geen-ideologie-maar-een-businessrisico':
     "Bij Stevin zien we dagelijks hoe organisaties worstelen met vendor lock-in, vooral nu AI een steeds grotere rol speelt in hun operatie. Onze benadering is simpel: technologie moet werken voor jouw bedrijf, niet andersom. Dat betekent dat we systemen ontwerpen waarbij data altijd eigendom blijven van onze klanten en waarbij AI-modellen flexibel kunnen worden uitgewisseld zonder impact op de rest van de workflow.\n\nWe geloven niet in het volledig vermijden van grote techbedrijven – integendeel, hun innovatiekracht is vaak onmisbaar. Maar we pleiten wel voor een architectuur waarin keuzevrijheid centraal staat: waar data en proceskennis los staan van specifieke leveranciers en waar systemen modulair genoeg zijn om snel aan te passen als externe factoren veranderen.\n\nDigitale soevereiniteit is geen doel op zich, maar een bijproduct van slimme systeemdesigns die toekomstbestendig zijn. Onze klanten merken al hoe deze aanpak hen beschermt tegen onverwachte verstoringen – of het nu gaat om exportbeperkingen of prijsverhogingen door leveranciers.\n\nUiteindelijk gaat het erom dat technologie dienstbaar blijft aan je bedrijfsdoelen, in plaats van andersom.",
   'ai-modellen-getraind-op-copyright-teksten-wettelijk-grijs':
@@ -8164,7 +8144,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'data-infrastructuur-bepaalt-ai-race':
     "Bij Stevin zien we dezelfde trend terug bij klanten die volwassen willen worden in hun AI-strategieën. Veel organisaties beginnen met pilots rond generatieve AI of automatisering zonder eerst hun datahuishouding op orde te brengen. Dat werkt net zomin als een huis bouwen zonder fundering: tijdelijk resultaat is mogelijk, maar langetermijnsucces zit in geduldige investeringen in structuur en kwaliteit.\n\nSuccesvolle implementaties beginnen altijd met een grondige audit van bestaande datasets en processen waarbinnen deze worden gegenereerd. Daarna volgt het uitrollen van tools die meetdata verzamelen én oorzaak-en-gevolgrelaties blootleggen tussen acties en uitkomsten.",
   'cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit':
-    "Bij Stevin zien we deze verschuiving al jaren aankomen. Onze klanten worstelen vaak met dezelfde vraag: hoe blijven we relevant als technologie alles verandert? Onze antwoord is simpel: focus op wat technologie niet kan vervangen – strategisch denken en menselijke connectie. Wij geloven dat bureaus en marketeers zich moeten richten op het bouwen van systemen waarin AI ondersteunt in plaats van vervangt. Dat betekent investeren in tools die transparantie bieden over mediabestedingen, zodat adverteerders weer grip krijgen op hun budgetten. Maar bovenal betekent het durven loslaten van oude gewoontes en accepteren dat de toekomst ligt in samenwerking tussen mens en machine.",
+    "Bij Stevin zien we deze verschuiving al jaren aankomen. Onze klanten worstelen vaak met dezelfde vraag: hoe blijven we relevant als technologie alles verandert? Ons antwoord is simpel: focus op wat technologie niet kan vervangen: strategisch denken en menselijke connectie. Wij geloven dat bureaus en marketeers zich moeten richten op het bouwen van systemen waarin AI ondersteunt in plaats van vervangt. Dat betekent investeren in tools die transparantie bieden over mediabestedingen, zodat adverteerders weer grip krijgen op hun budgetten. Maar bovenal betekent het durven loslaten van oude gewoontes en accepteren dat de toekomst ligt in samenwerking tussen mens en machine.",
   'bending-spoons-18-miljard-ipo-minimaliseren-geluk':
     "Voor ondernemers die actief zijn in overnames of portefeuillebeheer kan de aanpak van Bending Spoons inspirerend zijn. Het benadrukt het belang van een gestructureerde methodiek bij het evalueren en transformeren van bedrijven, waarbij toeval zoveel mogelijk wordt uitgesloten. Tegelijkertijd laat het zien dat langetermijnwaarde vaak belangrijker is dan snelle groei of marktaandeel.",
   'ai-in-accountancy-evolutie-in-plaats-van-revolutie':
@@ -8206,7 +8186,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'ford-herinzet-experts-na-ai-teleurstelling':
     "Voor bedrijven die AI implementeren betekent dit dat technologie een hulpmiddel blijft, geen vervanging. Ervaring en vakmanschap blijven cruciaal bij het nemen van strategische beslissingen. Het is verstandig om investeringen in AI af te wegen tegen de noodzaak van menselijke expertise, vooral bij kernprocessen waar fouten grote gevolgen kunnen hebben.",
   'van-campagnes-naar-continue-groei-hoe-ai-marketing-transformeert':
-    "Bij Stevin zien we dagelijks hoe bedrijven worstelen met deze transitie omdat ze vasthouden aan oude paradigma’s zoals ‘campagneplanning’ of ‘budgetallocatie’. Onze benadering is simpel: begin klein maar denk groot. Kies één proces waar inefficiëntie duidelijk is – bijvoorbeeld lead nurturing of productaanbevelingen – en test daar eerst AI-gestuurde oplossingen op uitvoeren voordat je schaalt naar andere kanalen.\n\nWat ons verbaast is hoe vaak organisaties vergeten om hun eigen data eerst goed te structureren voordat ze externe tools integreren. Een schoon CRM-systeem met consistente tags levert vaak al direct betere resultaten op dan dure nieuwe software.\n\nTot slot merken we dat succesvolle adoptie begint met training: medewerkers moeten snappen wat AI kan én kan *niet* doen binnen hun rol. Pas als teams begrijpen hoe algoritmen werken (bijvoorbeeld door middel van simpele A/B-testcases), durven ze echt los te laten.\n\nOnze ervaring leert dat bedrijven die deze stap zetten niet alleen groeicijfers zien stijgen, maar ook teams ontwikkelen die proactief nieuwe kansen ontdekken – iets wat campagnes nooit kunnen opleveren.",
+    "Bij Stevin zien we dagelijks hoe bedrijven worstelen met deze transitie omdat ze vasthouden aan oude paradigma’s zoals ‘campagneplanning’ of ‘budgetallocatie’. Onze benadering is simpel: begin klein maar denk groot. Kies één proces waar inefficiëntie duidelijk is (bijvoorbeeld lead nurturing of productaanbevelingen) en test daar eerst AI-gestuurde oplossingen op uitvoeren voordat je schaalt naar andere kanalen.\n\nWat ons verbaast is hoe vaak organisaties vergeten om hun eigen data eerst goed te structureren voordat ze externe tools integreren. Een schoon CRM-systeem met consistente tags levert vaak al direct betere resultaten op dan dure nieuwe software.\n\nTot slot merken we dat succesvolle adoptie begint met training: medewerkers moeten snappen wat AI kan én kan *niet* doen binnen hun rol. Pas als teams begrijpen hoe algoritmen werken (bijvoorbeeld door middel van simpele A/B-testcases), durven ze echt los te laten.\n\nOnze ervaring leert dat bedrijven die deze stap zetten niet alleen groeicijfers zien stijgen, maar ook teams ontwikkelen die proactief nieuwe kansen ontdekken, iets wat campagnes nooit kunnen opleveren.",
   'google-ads-updates-en-annuleerknop-verplicht':
     "Voor bureau-eigenaars en in-house teams betekent dit dat campagnes flexibeler worden beheerd, maar ook dat AI-gestuurde optimalisatie een grotere rol gaat spelen. Het is raadzaam om bestaande workflows aan te passen en medewerkers te trainen in het interpreteren van deze nieuwe meetdata. De verplichte annuleerknop kan leiden tot minder zichtbaarheid voor sommige campagnes, dus plan campagnes strategisch in om pieken en dalen in bereik te voorkomen.",
   'google-ads-api-v24-2-transparantie-security-en-nieuwe-pmax-rapportage':
@@ -8513,8 +8493,6 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
     "Voor bedrijven die nu nog losse teams hebben voor SEO en affiliate marketing, is het tijd om de samenwerking structureel aan te pakken. Begin met het delen van data tussen beide afdelingen en definieer gezamenlijke KPI’s zoals ‘kosten per acquisitie’ of ‘zichtbaarheid in LLM’s’. Dit voorkomt dat teams elkaars inspanningen ondermijnen en creeert ruimte voor innovatie in hoe het merk online wordt gevonden.",
   'ai-aangedreven-google-ads-verandert-ppc-rol':
     "Deze ontwikkeling onderstreept dat automatisering in marketing niet louter een efficiencykwestie is, maar een fundamentele verandering in hoe we waarde creeren. Voor ondernemers betekent dit dat ze moeten investeren in kennis over systeemdenken en data-infrastructuur. Wie nu alleen nog maar campagnes beheert zonder zicht op het grotere plaatje, loopt het risico achterop te raken als concurrenten hun processen al hebben geoptimaliseerd voor deze nieuwe realiteit.",
-  'chatgpt-wordt-advertentieplatform':
-    "Het kanaal komt eraan, de vraag is niet of je meedoet maar hoe je het meet. Een aankoop die bij een ChatGPT-gesprek begint, valt nu buiten de meeste analytics. Wie vooroploopt, zet de meting nu klaar in plaats van te wachten tot het in Nederland live staat.",
   'hof-haagt-weigert-afwaardering-cryptotokens-bij-bv-door-privereinvestering-dga':
     "Voor ondernemers die met digitale activa werken, toont deze uitspraak hoe belangrijk het is om investeringen strikt gescheiden te houden tussen prive en zakelijk. Zelfs als betalingen via bedrijfsrekeningen lopen, kan een fiscale autoriteit concluderen dat sprake is van een priverekening als er geen duidelijke zakelijke motivering of administratie is. Dit benadrukt het belang van heldere contractuele afspraken en bewijsvoering bij complexe financiele transacties.",
   'nieuwe-ecommerce-tools-juni-2026':
@@ -10476,7 +10454,7 @@ function ArticleFirstPartyDataBody() {
       <H2 num="03">De drie stukken die het werkend maken</H2>
 
       <p>
-        <b>Toestemming die klopt.</b> Niet omdat het moet, maar omdat een meting die stilvalt zodra iemand de cookiemelding wegklikt je een vertekend beeld geeft. Je ziet dan vooral de mensen die alles accepteren, en dat is geen doorsnede van je klanten.
+        <b>Toestemming die klopt.</b> Niet omdat het moet, maar omdat een meting die stilvalt zodra iemand de cookiemelding wegklikt je een vertekend beeld geeft. Je ziet dan vooral de mensen die alles accepteren, en dat is geen doorsnede van jouw klanten.
       </p>
 
       <p>
@@ -10513,9 +10491,6 @@ function ArticleFirstPartyDataBody() {
 
       <H2 num="06">Verder lezen</H2>
 
-      <p>
-        Wat wij hierin doen staat op onze pagina over <Link href="/first-party-data">first-party data als basis voor je marketing</Link>.
-      </p>
 
       <Takeaways
         label="DE KERN"
@@ -10608,9 +10583,6 @@ function ArticleCrmKoppelenBody() {
 
       <H2 num="06">Verder lezen</H2>
 
-      <p>
-        Wat wij hierin doen staat op onze pagina over <Link href="/website-met-crm">een website die aan je CRM vastzit</Link>.
-      </p>
 
       <Takeaways
         label="DE KERN"
@@ -10695,9 +10667,6 @@ function ArticleConversiesMetenBody() {
 
       <H2 num="06">Verder lezen</H2>
 
-      <p>
-        Wat wij hierin doen staat op onze pagina over <Link href="/google-ads-ga4">Google Ads en GA4 die hetzelfde vertellen</Link>.
-      </p>
 
       <Takeaways
         label="DE KERN"
@@ -10782,9 +10751,6 @@ function ArticleLeadformulierBody() {
 
       <H2 num="06">Verder lezen</H2>
 
-      <p>
-        Wat wij hierin doen staat op onze pagina over <Link href="/lead-generatie">leadgeneratie die op uitkomsten stuurt</Link>.
-      </p>
 
       <Takeaways
         label="DE KERN"
@@ -10877,9 +10843,6 @@ function ArticleFeedManagementBody() {
 
       <H2 num="06">Verder lezen</H2>
 
-      <p>
-        Wat wij hierin doen staat op onze pagina over <Link href="/feed-management">feed management</Link>.
-      </p>
 
       <Takeaways
         label="DE KERN"
@@ -10888,6 +10851,176 @@ function ArticleFeedManagementBody() {
           {
             pct: '01',
             text: <>Kijk eerst hoeveel van je producten op dit moment zijn afgekeurd, en pas daarna naar tools. Afgekeurde producten kosten je omzet zonder dat er iets kapot lijkt, en dat is precies waarom het zo lang blijft staan.</>,
+          },
+        ]}
+      />
+
+      <EndRule />
+    </>
+  )
+}
+
+/** Externe bronlink in de lopende tekst: opent in een nieuw venster. */
+function Ext({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      {children}
+    </a>
+  )
+}
+
+/** W-535 (12 okt 2026): uitlegstuk over adverteren in ChatGPT. Elk blok begint
+ *  met een antwoord dat op zichzelf staat (ook gebruikt als FAQ in
+ *  data/article-faqs.json, dus samen wijzigen), daarna de uitleg. Bronnen en
+ *  datums staan in de tekst; de bronnenlijst met wat wel en niet zelf is gelezen
+ *  staat in de PR. */
+function ArticleChatGPTAdsBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Sinds eind augustus kun je als Nederlands bedrijf adverteren in ChatGPT. Het wordt gebracht als de volgende grote stap na Google, maar de eerste cijfers zijn nuchterder. Per klik levert het voorlopig minder op dan Google Search, de meting is nog niet op orde, en onafhankelijke cijfers voor Nederland zijn er niet.
+      </p>
+
+      <H2 num="01">Wat is adverteren in ChatGPT?</H2>
+
+      <p>
+        <b>Adverteren in ChatGPT betekent dat je betaalt om onder een antwoord van ChatGPT te verschijnen, met het label gesponsord. Welke advertentie verschijnt, hangt af van waar het gesprek over gaat, niet van een zoekwoord dat je inkoopt. Je zet het op in de Ads Manager van OpenAI en betaalt per klik of per duizend vertoningen.</b>
+      </p>
+
+      <p>
+        Volgens de{' '}
+        <Ext href="https://help.openai.com/en/articles/20001047-ads-in-chatgpt">uitleg van OpenAI</Ext> (gelezen op 12 oktober 2026) zie je advertenties alleen in de gratis versie en in Go, het goedkoopste abonnement. Niet in Plus, Pro, Business, Enterprise of Edu, niet bij mensen onder de 18, en niet bij gesprekken over gezondheid of politiek. In Europa zijn ze niet gepersonaliseerd: alleen het gesprek van dat moment telt, en eigen doelgroepen raadt OpenAI hier voorlopig af.
+      </p>
+
+      <p>
+        OpenAI zegt dat advertenties de antwoorden niet beinvloeden en dat je mensen bereikt op het moment dat ze een keuze maken. Dat kan kloppen, maar het is de verkoper die het zegt. Behandel het als een belofte die je zelf nameet.
+      </p>
+
+      <H2 num="02">Kan het in Nederland, en sinds wanneer?</H2>
+
+      <p>
+        <b>Ja. OpenAI kondigde op 18 augustus 2026 aan dat advertenties naar 31 Europese landen komen, waaronder Nederland. Eerst kon dat alleen via OpenAI zelf en partnerbureaus. Sinds 31 augustus open je zelf een account in Ads Manager. Voorwaarde: het bedrijf dat adverteert en betaalt, zit in een land waar het open is.</b>
+      </p>
+
+      <p>
+        Dat staat in de{' '}
+        <Ext href="https://openai.com/nl-NL/index/chatgpt-ads-expands-across-europe/">aankondiging van OpenAI</Ext> en in de{' '}
+        <Ext href="https://help.openai.com/en/articles/20001245-ads-manager-availability">lijst per land</Ext>, waar Nederland op 12 oktober 2026 als beschikbaar stond. Het kanaal is hier dus net open. Eind augustus waren de{' '}
+        <Ext href="https://www.adformatie.nl/tech/artificial-intelligence/eerste-nederlandse-adverteerders-in-chatgpt-zichtbaar">eerste Nederlandse adverteerders</Ext> zichtbaar (Adformatie, 28 augustus), en ABN Amro adverteert sinds 21 september.
+      </p>
+
+      <H2 num="03">Wat kost adverteren in ChatGPT?</H2>
+
+      <p>
+        <b>Er is geen vaste prijs, je biedt in een veiling. Je betaalt per klik (CPC) of per duizend vertoningen (CPM), ook als je op conversies stuurt, nooit per klant. Het minimum is 15 euro per dag. Een Nederlands partnerbureau noemt 2 tot 3 euro per klik, adverteerders in Engelstalige markten betalen meestal 4 tot 10 dollar.</b>
+      </p>
+
+      <p>
+        Het minimum staat in de{' '}
+        <Ext href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">uitleg over campagnes</Ext> (gelezen op 12 oktober 2026). Een dagbudget is een gemiddelde over de week: op een losse dag kan het oplopen tot het dubbele. Reken het door voor je begint. Zes weken op het minimum is ruim 600 euro, een jaar bijna 5.500 euro.
+      </p>
+
+      <p>
+        Voor de klikprijs zijn er alleen ervaringen van adverteerders.{' '}
+        <Ext href="https://www.searchenginejournal.com/6-months-into-chatgpt-ads-advertisers-still-dont-know-what-good-looks-like/587583/">Search Engine Journal</Ext> zette ze op 8 september op een rij: in Engelstalige markten meestal 4 tot 10 dollar per klik, met uitschieters boven de 20, en wie per duizend vertoningen kocht, betaalde meer dan 60 dollar. OpenAI zegt zelf nog geen benchmarks te hebben. Omnicom, partnerbureau van OpenAI, noemde in{' '}
+        <Ext href="https://www.emerce.nl/nieuws/chatgpt-ads-start-nederland">Emerce</Ext> (21 augustus) 2 tot 3 euro per klik.
+      </p>
+
+      <H2 num="04">Werkt het? Wat de eerste cijfers zeggen</H2>
+
+      <p>
+        <b>Per klik levert ChatGPT voorlopig minder op dan Google Search: minder mensen klikken, en minder klikken worden een aanvraag. Omdat een klik vaak goedkoper is, komen de kosten per lead soms in de buurt van Google. Of die leads even vaak klant worden, weet nog niemand. Onafhankelijke cijfers voor Nederland zijn er niet.</b>
+      </p>
+
+      <ul>
+        <li>
+          <b>Doorklik.</b> In Engelstalige markten leidt 0,6 tot 0,75 procent van de antwoorden met een advertentie tot een klik (panel van Similarweb, geanalyseerd door het bureau Graphite, via{' '}
+          <Ext href="https://ppc.land/chatgpt-ad-click-rate-gains-112-worldwide-similarweb-and-graphite-find/">PPC Land</Ext>, 28 september). Similarweb verkoopt zelf het instrument waar die cijfers uit komen. Een zuivere vergelijking met Google Search bestaat nog niet; de enige meting bij dezelfde adverteerder in dezelfde periode staat hieronder.
+        </li>
+        <li>
+          <b>Aanvragen.</b> Het bureau Stub Group vergeleek dertig dagen voor een zakelijke klant (
+          <Ext href="https://stubgroup.com/case-study/chatgpt-ads-case-study/">case</Ext>, bijgewerkt 1 oktober). In ChatGPT werd 0,8 procent van de klikken een aanvraag, in Google 6,64 procent. Een klik was in ChatGPT veel goedkoper, dus een lead ook: 92 tegen 158 dollar. Maar de leads uit Google werden duidelijk vaker klant. Het gaat om een klant van het bureau over een maand, en de verkoopcyclus was nog niet rond.
+        </li>
+        <li>
+          <b>Kosten per resultaat.</b> Omnicom zag gemiddeld kosten per conversie die vergelijkbaar waren met zoekadvertenties zonder merknaam, per adverteerder van de helft tot het dubbele (Emerce, 21 augustus).
+        </li>
+        <li>
+          <b>Nederland.</b> ABN Amro noemt de doorklik{' '}
+          <Ext href="https://www.adformatie.nl/tech/artificial-intelligence/abn-amro-reclames-in-chatgpt-doorklik-beter-dan-verwacht">beter dan verwacht</Ext>, zonder cijfers (Adformatie, 7 oktober).
+        </li>
+      </ul>
+
+      <p>
+        En de meting zelf rammelt. Een bureau zag in Ads Manager 57 kliks, terwijl Google Analytics minder dan 20 bezoeken telde (
+        <Ext href="https://www.adformatie.nl/tech/artificial-intelligence/chatgpt-advertenties-presteren-ondermaats-in-eerste-tests">Adformatie</Ext>, 7 september). Zolang zo&apos;n verschil bestaat, weet je niet welk cijfer klopt, tenzij je zelf meet tot in je CRM.
+      </p>
+
+      <p>
+        Lees deze cijfers als vroege ervaringen van een handvol adverteerders, vaak gedeeld door partijen die er iets aan verdienen. Een startpunt voor je eigen test, geen norm.
+      </p>
+
+      <H2 num="05">Voor wie het (nog) niet is</H2>
+
+      <p>
+        <b>Voor de meeste lokale bedrijven is het nog niet het moment. Zoeken jouw klanten naar een loodgieter, een fysiotherapeut of een dakdekker in de buurt, dan doen ze dat in Google, en daar zit de vraag van mensen die nu willen kopen. Zolang je daar nog winstgevend kunt groeien, verdient Google Search je eerste euro.</b>
+      </p>
+
+      <p>
+        Ook niet als je meting nog niet klopt. Weet je nu niet hoeveel aanvragen uit Google vorige maand klant werden, dan weet je dat straks voor ChatGPT ook niet. Begin dan bij{' '}
+        <Link href="/blog/google-ads-conversies-meten">je conversiemeting</Link>. En niet als je het budget uit een werkende Google-campagne moet halen: dan ruil je iets wat bewezen werkt in voor iets wat dat nog moet bewijzen.
+      </p>
+
+      <p>
+        Een test waard kan het zijn bij een aankoop waar mensen eerst opties vergelijken en vragen stellen, zoals software, een dienst voor bedrijven of een duurdere aanschaf.
+      </p>
+
+      <H2 num="06">Hoe je het test zonder geld te verspillen</H2>
+
+      <p>
+        <b>Zet eerst je meting klaar, tot opdracht en omzet, en start pas daarna een campagne. Geef ChatGPT een eigen budget, schrijf vooraf op wanneer de test geslaagd is, en oordeel pas na een volledige aankoopcyclus. Vergelijk dan wat een klant via ChatGPT kostte met wat een klant via Google Search kost. Klanten, geen klikken.</b>
+      </p>
+
+      <ol>
+        <li>
+          <b>Tel de aanvraag op de goede plek.</b> Zet de pixel van OpenAI op je site en tel een aanvraag pas op de bedankpagina, niet bij een klik op een knop. Geef je advertentielinks eigen UTM-parameters, zodat je dit bezoek in Google Analytics apart ziet.
+        </li>
+        <li>
+          <b>Bewaar de klik-ID.</b> OpenAI geeft elke klik een eigen code mee, de oppref. Zorg dat die een omleiding overleeft en bij de aanvraag in je CRM terechtkomt, anders weet je achteraf niet welke klant uit ChatGPT kwam.
+        </li>
+        <li>
+          <b>Stuur de uitkomst terug.</b> Via de{' '}
+          <Ext href="https://developers.openai.com/ads/conversions-api">Conversions API</Ext> geef je door dat een aanvraag een opdracht werd, met het bedrag. Doe dat snel: gebeurtenissen van meer dan zeven dagen geleden neemt de koppeling niet aan.
+        </li>
+        <li>
+          <b>Apart budget, vaste beslisdatum.</b> Schrijf vooraf op wat een klant via ChatGPT mag kosten en wanneer je beslist.
+        </li>
+        <li>
+          <b>Wacht een volledige aankoopcyclus af.</b> Duurt het bij jou zes weken van aanvraag tot opdracht, dan zegt de eerste week niets.
+        </li>
+        <li>
+          <b>Vergelijk met je Google-geld.</b> Zet de kosten per klant uit beide kanalen naast elkaar, uit je eigen CRM. Niet uit de rapporten van de platforms, want die tellen elk op hun eigen manier en verdienen allebei aan je budget.
+        </li>
+      </ol>
+
+      <H2 num="07">Wat Stevin.AI doet</H2>
+
+      <p>
+        <b>Voor klanten zetten we ChatGPT Ads op als test naast Google Search, niet in plaats ervan. Met dezelfde meting tot opdracht en omzet die we voor Google bouwen, een eigen budget en een meetlat die we vooraf vastleggen. Levert het klanten op tegen een prijs die klopt, dan schalen we op. Zo niet, dan stoppen we, en weet je waarom.</b>
+      </p>
+
+      <p>
+        Wil je weten of het voor jouw bedrijf een test waard is?{' '}
+        <Link href="/kennismaking">Plan een kennismaking</Link>, of kijk eerst{' '}
+        <Link href="/tarieven">wat het kost</Link>.
+      </p>
+
+      <Takeaways
+        label="DE KERN"
+        title="Wat je hiervan onthoudt"
+        items={[
+          {
+            pct: '01',
+            text: <>Test adverteren in ChatGPT pas als je meting tot omzet klopt, met een eigen budget naast Google Search, en oordeel op wat een klant kost, niet op klikken.</>,
           },
         ]}
       />
@@ -11139,16 +11272,15 @@ function PullQuote({ text, cite }: { text: string; cite: string }) {
 
 function Callout({ big, label }: { big: string; label: string }) {
   return (
+    // Op mobiel onder elkaar: met 120px plus 1fr bleef er op 375 breed
+    // ruim 100px over en liep een lang woord over de rand (W-535, 12 okt).
     <div
-      className="grid items-center"
+      className="grid grid-cols-1 items-center gap-4 p-6 sm:grid-cols-[120px_1fr] sm:gap-7 sm:p-8"
       style={{
         background: 'var(--surface)',
         border: '1px solid var(--border)',
         borderRadius: '14px',
-        padding: '32px',
         margin: '40px 0',
-        gridTemplateColumns: '120px 1fr',
-        gap: '28px',
       }}
     >
       <div
