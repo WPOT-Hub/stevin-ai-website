@@ -115,7 +115,7 @@
       [].forEach.call(document.querySelectorAll('a.card'),function(a){
         a.addEventListener('click',function(){
           var tag=a.querySelector('.tag');
-          try{(window.dataLayer=window.dataLayer||[]).push({event:'kies_choice',choice:tag?tag.textContent.trim():a.getAttribute('href')});}catch(e){}
+          try{(window.dataLayer=window.dataLayer||[]).push({event:'kies_choice',choice:tag?tag.textContent.trim():a.getAttribute('href')});window.dataLayer.push({choice:undefined});}catch(e){}
         });
       });
     })();
