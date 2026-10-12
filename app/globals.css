@@ -601,7 +601,7 @@ section {
    data-puls, die de animatielus op het element zelf zet (niet alleen op de
    ouder: na moveBefore werkte Chrome een selector via de ouder soms niet bij,
    11 okt); de overgang doet CSS. */
-.su-knoop .su-stip { fill: #9CC6FF; transition: fill .4s ease; }
+.su-knoop .su-stip { fill: #3D8EFF; transition: fill .4s ease; }
 .su-stof .su-stip { fill: #7FA9E6; }
 .su-knoop .su-stip[data-aan="1"] { fill: #3D8EFF; }
 .su-halo { opacity: 0; transition: opacity .5s ease; }
@@ -620,7 +620,7 @@ section {
    rand onder de letters houdt ze leesbaar op een lijn, zonder zware schaduw. */
 .su-label { font-family: var(--font-mono-stevin); font-size: 10.5px; font-weight: 500; letter-spacing: .12em; fill: rgba(214,231,255,.8); paint-order: stroke; stroke: rgba(10,22,40,.6); stroke-width: 2px; stroke-linejoin: round; transition: opacity .4s ease, fill .4s ease; }
 .su-lw-brein .su-label, .su-lw-hub .su-label, .su-lw-advisor .su-label { fill: rgba(232,241,255,.9); }
-.su-lw-sat .su-label { fill: rgba(156,198,255,.85); }
+.su-lw-sat .su-label { fill: rgba(61,142,255,.85); }
 .su-lw-geheugen .su-label { fill: #CFE1FF; transition-duration: .6s; }
 .su-label[data-label="0"] { opacity: 0; pointer-events: none; }
 .su-label[data-aan="1"] { fill: #FFFFFF; }

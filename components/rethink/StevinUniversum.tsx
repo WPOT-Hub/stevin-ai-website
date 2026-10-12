@@ -429,7 +429,7 @@ function MetingBlok({ meting }: { meting: Meting }) {
   return (
     <div className="mt-3 border-t border-white/10 pt-2.5">
       <div className="flex items-center justify-between gap-2">
-        <p className="m-0 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#9CC6FF]">Wat we meten</p>
+        <p className="m-0 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#3D8EFF]">Wat we meten</p>
         <span className="rounded-full border border-white/20 px-1.5 py-px text-[10.5px] leading-snug text-white/60">Voorbeeld</span>
       </div>
       {meting.vorm === 'keten' ? (
@@ -1447,7 +1447,7 @@ export default function StevinUniversum({
           />
         )}
         {n.soort === 'brein' && <circle r={n.r * 3.4} fill={`url(#${breinId})`} className="su-ademen" />}
-        {n.soort === 'brein' && <circle r={n.r} fill="none" stroke="#9CC6FF" strokeWidth={2} opacity={0} className="su-hartslag" />}
+        {n.soort === 'brein' && <circle r={n.r} fill="none" stroke="#3D8EFF" strokeWidth={2} opacity={0} className="su-hartslag" />}
         {(glas || n.soort === 'sat' || n.soort === 'geheugen') && (
           <circle
             ref={(el) => {
@@ -1511,7 +1511,7 @@ export default function StevinUniversum({
             <stop offset="100%" stopColor="#3D8EFF" stopOpacity="0" />
           </radialGradient>
           <radialGradient id={breinId}>
-            <stop offset="0%" stopColor="#9CC6FF" stopOpacity="0.5" />
+            <stop offset="0%" stopColor="#3D8EFF" stopOpacity="0.5" />
             <stop offset="60%" stopColor="#3D8EFF" stopOpacity="0.12" />
             <stop offset="100%" stopColor="#3D8EFF" stopOpacity="0" />
           </radialGradient>
@@ -1619,7 +1619,7 @@ export default function StevinUniversum({
         ) : kaartInhoud && (
           <>
             <div className="mb-1.5 flex items-center justify-between gap-3">
-              <span className="font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#9CC6FF]">{kaartInhoud.soort}</span>
+              <span className="font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#3D8EFF]">{kaartInhoud.soort}</span>
               <SluitKnop
                 onClick={() => {
                   setGekozen(null)
@@ -1631,7 +1631,7 @@ export default function StevinUniversum({
             {kaartInhoud.wanneer && <p className="m-0 mt-0.5 text-[12.5px] text-white/50">{kaartInhoud.wanneer}</p>}
             {kaartInhoud.tekst && <p className="m-0 mt-2 text-[14px] leading-snug text-white/80">{kaartInhoud.tekst}</p>}
             {'actie' in kaartInhoud && kaartInhoud.actie && (
-              <p className="m-0 mt-1.5 text-[14px] leading-snug text-[#9CC6FF]">
+              <p className="m-0 mt-1.5 text-[14px] leading-snug text-[#3D8EFF]">
                 <span className="sr-only">Wat we doen: </span>
                 {kaartInhoud.actie}
               </p>

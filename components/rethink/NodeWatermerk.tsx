@@ -58,7 +58,7 @@ export default function NodeWatermerk({
   aantal?: number
 }) {
   const stelletjes = maakStelletjes(seed, aantal)
-  const kleur = thema === 'donker' ? '#9CC6FF' : '#3D8EFF'
+  const kleur = thema === 'donker' ? '#3D8EFF' : '#3D8EFF'
   const lijnOp = thema === 'donker' ? 0.14 : 0.13
   const stipOp = thema === 'donker' ? 0.22 : 0.18
   return (
