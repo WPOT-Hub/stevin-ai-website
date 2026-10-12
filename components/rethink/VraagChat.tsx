@@ -416,7 +416,7 @@ export default function VraagChat({ kop }: { kop?: React.ReactNode }) {
           <div className="relative mt-3 space-y-2.5" aria-live="polite">
             {pakken && (
               <p className="absolute inset-x-0 top-0 m-0 flex items-center gap-2 px-1 pt-1 text-[12.5px] text-[#6b7280]">
-                <span className="vc-stip h-1.5 w-1.5 rounded-full bg-[#3c8eff]" />
+                <span className="vc-stip h-1.5 w-1.5 rounded-full bg-[#3D8EFF]" />
                 Website, telefoon en offertes erbij pakken
               </p>
             )}

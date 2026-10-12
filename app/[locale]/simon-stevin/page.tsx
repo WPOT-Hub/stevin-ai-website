@@ -466,7 +466,7 @@ export default async function SimonStevinPage({ params }: Props) {
         <div className="mx-auto max-w-[1120px]">
           <div style={{ borderTop: '1px solid var(--border)', paddingTop: '72px' }}>
             <p
-              className="font-display font-bold uppercase text-[#3C8EFF]"
+              className="font-display font-bold uppercase text-[#3D8EFF]"
               style={{ fontSize: '13px', letterSpacing: '0.12em', marginBottom: '12px' }}
             >
               {c.werkEyebrow}

@@ -756,7 +756,7 @@ export default function StevinUniversum({
         const diepte = Math.max(0.15, Math.min(1, (pa.s + pb.s) / 2 - 0.35))
         const aan = isAan(a) && isAan(b)
         const stil = isStil(a) || isStil(b)
-        el.setAttribute('stroke', aan ? '#3D8EFF' : '#93C5FD')
+        el.setAttribute('stroke', aan ? '#3D8EFF' : '#3D8EFF')
         const wolk = knopen[a].soort === 'geheugen' || knopen[b].soort === 'geheugen'
         el.setAttribute('stroke-opacity', (aan ? 0.85 : stil ? 0.04 : wolk ? 0.09 * diepte : 0.13 * diepte).toFixed(3))
         el.setAttribute('stroke-width', aan ? '1.4' : '0.8')
@@ -1535,7 +1535,7 @@ export default function StevinUniversum({
         </defs>
         <g data-laag="lijnen">
           {lijnen.map((_, i) => (
-            <line key={i} ref={(el) => { lijnEls.current[i] = el }} stroke="#93C5FD" strokeOpacity={0} strokeWidth={0.8} />
+            <line key={i} ref={(el) => { lijnEls.current[i] = el }} stroke="#3D8EFF" strokeOpacity={0} strokeWidth={0.8} />
           ))}
         </g>
         {/* Lichtpuntjes van bron naar brein; een vaste gloed, geen filter. */}

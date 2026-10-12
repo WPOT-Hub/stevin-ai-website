@@ -75,7 +75,7 @@ const PALET: Record<BrainTheme, BrainPalet> = {
     node: { campagne: '#3D8EFF', creatie: '#3fd0c9', outcome: '#5fd39a', kennis: '#e0a94a' },
     kern: 'rgba(255,255,255,0.92)',
     edge: 'rgba(255, 255, 255, 0.14)',
-    edgeHot: 'rgba(147, 197, 253, 0.42)',
+    edgeHot: 'rgba(61, 142, 255, 0.42)',
     ring: 'rgba(255, 255, 255, 0.5)',
     halo: 'lighter',
     haloAlpha: 1,

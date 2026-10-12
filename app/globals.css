@@ -602,14 +602,14 @@ section {
    ouder: na moveBefore werkte Chrome een selector via de ouder soms niet bij,
    11 okt); de overgang doet CSS. */
 .su-knoop .su-stip { fill: #3D8EFF; transition: fill .4s ease; }
-.su-stof .su-stip { fill: #7FA9E6; }
+.su-stof .su-stip { fill: #3D8EFF; fill-opacity: .75; }
 .su-knoop .su-stip[data-aan="1"] { fill: #3D8EFF; }
 .su-halo { opacity: 0; transition: opacity .5s ease; }
 .su-halo[data-aan="1"] { opacity: 1; }
 /* Versie 2 (Koen, 11 okt 20:12): bronnen en de Advisor als glazen rondjes.
    De rand is een haarlijn die op elke diepte even dik blijft. */
 .su-glas { fill: none; stroke: rgba(214,231,255,.5); stroke-width: 1px; vector-effect: non-scaling-stroke; transition: stroke .4s ease, stroke-width .4s ease; }
-.su-glas[data-aan="1"] { stroke: #8FC0FF; stroke-width: 1.5px; }
+.su-glas[data-aan="1"] { stroke: #3D8EFF; stroke-width: 1.5px; }
 .su-advisor .su-glas { stroke: rgba(61,142,255,.85); }
 .su-advisor .su-glas[data-aan="1"] { stroke: #FFFFFF; }
 .su-glyph { fill: none; stroke: #D6E7FF; stroke-width: 1.4px; stroke-linecap: round; stroke-linejoin: round; }
@@ -632,7 +632,7 @@ section {
 @media (prefers-reduced-motion: reduce) {
   .su-ademen, .su-puls { animation: none; }
 }
-.su-geheugen .su-stip { fill: #8DB8F5; pointer-events: none; }
+.su-geheugen .su-stip { fill: #3D8EFF; fill-opacity: .85; pointer-events: none; }
 .su-geheugen .su-stip[data-aan="1"] { fill: #FFFFFF; }
 /* Het wisselende herinneringslabel: zolang het staat, klopt de stip zacht. */
 .su-geheugen .su-halo[data-puls="1"] { animation: su-klop-halo 1.8s ease-in-out infinite; }

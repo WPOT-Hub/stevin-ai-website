@@ -62,7 +62,7 @@ export default function KanalenStrip({ locale }: { locale: string }) {
     <section id="kanalen" className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <p className="mb-5 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3C8EFF] before:h-px before:w-7 before:bg-current">
+          <p className="mb-5 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3D8EFF] before:h-px before:w-7 before:bg-current">
             {c.eyebrow}
           </p>
           <h2 className="text-[clamp(2.125rem,4.2vw,3.625rem)] font-extrabold leading-[1.02] tracking-[-0.04em] text-[#0A0A0A]">
