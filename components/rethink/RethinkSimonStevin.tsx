@@ -45,7 +45,7 @@ export default function RethinkSimonStevin({ kop, vragen }: { kop: string; vrage
   return (
     <main className="bg-white">
       <section className="px-6 pb-20 pt-28 sm:pt-32">
-        <div className="mx-auto grid max-w-[1080px] items-center gap-12 lg:grid-cols-[1fr_320px]">
+        <div className="mx-auto grid max-w-[1152px] items-center gap-12 lg:grid-cols-[1fr_320px]">
           <div>
             <p className="m-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent">De naam Stevin</p>
             <h1 className="m-0 text-balance font-display font-extrabold text-primary" style={{ ...h2Stijl, fontSize: 'clamp(34px, 4vw, 56px)' }}>
@@ -102,7 +102,7 @@ export default function RethinkSimonStevin({ kop, vragen }: { kop: string; vrage
       </DonkerBlok>
 
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
-        <div className="mx-auto grid max-w-[1080px] items-center gap-12 lg:grid-cols-[320px_1fr]">
+        <div className="mx-auto grid max-w-[1152px] items-center gap-12 lg:grid-cols-[320px_1fr]">
           <figure className="m-0 max-w-[300px]">
             <svg viewBox={CLOOTCRANS_VIEWBOX} role="img" aria-label="De clootcrans" style={{ width: '100%', height: 'auto', opacity: 0.62 }}>
               <Clootcrans kleur="var(--navy)" strook={1.5} />
@@ -125,7 +125,7 @@ export default function RethinkSimonStevin({ kop, vragen }: { kop: string; vrage
       </section>
 
       <section className="border-t border-border bg-surface px-6" style={{ paddingTop: 96, paddingBottom: 96 }}>
-        <div className="mx-auto max-w-[1080px]">
+        <div className="mx-auto max-w-[1152px]">
           <p className="m-0 mb-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent">Simon Stevin in de Republiek</p>
           <h2 className="m-0 font-display font-extrabold text-primary" style={h2Stijl}>
             Van Brugge naar Den Haag

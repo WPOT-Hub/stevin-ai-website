@@ -85,7 +85,7 @@ export function PaginaKop({
   }
   return (
     <section className="px-6 pb-16 pt-28 sm:pt-32">
-      <div className="mx-auto max-w-[1080px]">
+      <div className="mx-auto max-w-[1152px]">
         <p className="m-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent">{eyebrow}</p>
         <h1
           className="m-0 max-w-[20ch] text-balance font-display font-extrabold text-primary"
@@ -141,7 +141,7 @@ export function DonkerBlok({ seed, children, label }: { seed: number; children: 
       aria-label={label}
     >
       <NodeWatermerk seed={seed} thema="donker" />
-      <div className="relative mx-auto max-w-[1080px]">{children}</div>
+      <div className="relative mx-auto max-w-[1152px]">{children}</div>
     </section>
   )
 }
@@ -157,7 +157,7 @@ export function Vragen({ kop, vragen, schema: metSchema = true }: { kop: string;
   return (
     <section className="px-6" style={{ paddingTop: 96, paddingBottom: 96 }}>
       {metSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /> : null}
-      <div className="mx-auto max-w-[1080px]">
+      <div className="mx-auto max-w-[1152px]">
         <h2 className="m-0 font-display font-extrabold text-primary" style={{ ...h2Stijl, fontSize: 'clamp(26px, 2.6vw, 36px)' }}>
           {kop}
         </h2>

@@ -85,8 +85,8 @@ export default function RethinkPlatform() {
         }
       />
 
-      <section className="px-6 pb-24">
-        <div className="mx-auto max-w-[1080px]">
+      <section className="px-6 pb-24 pt-20 sm:pt-24">
+        <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 font-display font-extrabold text-primary" style={{ ...h2Stijl, fontSize: 'clamp(26px, 2.6vw, 36px)' }}>
             Drie dingen. Vandaag al.
           </h2>
@@ -105,7 +105,7 @@ export default function RethinkPlatform() {
       </DonkerBlok>
 
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
-        <div className="mx-auto max-w-[1080px]">
+        <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[18ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Het gaat ons om opdrachten, niet om klikken.
           </h2>
@@ -147,7 +147,7 @@ export default function RethinkPlatform() {
       </DonkerBlok>
 
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
-        <div className="mx-auto max-w-[1080px]">
+        <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Vraag maar waarom. Er ligt een bron onder.
           </h2>

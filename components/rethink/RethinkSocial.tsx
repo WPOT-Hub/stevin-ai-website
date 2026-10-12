@@ -28,7 +28,7 @@ const HERKEN = [
   },
   {
     t: 'Het account staat op naam van het bureau',
-    d: 'Wissel je van partij, dan begin je opnieuw: geen historie, geen doelgroepen, geen leerdata.',
+    d: 'Wissel je van partij, dan begin je opnieuw: geen historie, geen doelgroepen, geen leerdata. En vaak zit er een opslag op je advertentiebudget, dus betaal je meer dan nodig.',
   },
 ]
 
@@ -92,8 +92,8 @@ export default function RethinkSocial() {
         }
       />
 
-      <section className="px-6 pb-24">
-        <div className="mx-auto max-w-[1080px]">
+      <section className="px-6 pb-24 pt-20 sm:pt-24">
+        <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Waarom social vaak niets oplevert.
           </h2>
@@ -116,7 +116,7 @@ export default function RethinkSocial() {
       </DonkerBlok>
 
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
-        <div className="mx-auto max-w-[1080px]">
+        <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[18ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Het gaat ons om opdrachten, niet om klikken.
           </h2>

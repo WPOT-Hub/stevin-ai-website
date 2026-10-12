@@ -76,8 +76,8 @@ export default function RethinkMarketingIntelligence({ kop, accent }: { kop: str
         }
       />
 
-      <section className="px-6 pb-24">
-        <div className="mx-auto max-w-[1080px]">
+      <section className="px-6 pb-24 pt-20 sm:pt-24">
+        <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Waarom dashboards alleen niet genoeg zijn
           </h2>
@@ -101,7 +101,7 @@ export default function RethinkMarketingIntelligence({ kop, accent }: { kop: str
       </DonkerBlok>
 
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 32 }}>
-        <div className="mx-auto max-w-[1080px]">
+        <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Waar marketing intelligence direct verschil maakt
           </h2>
