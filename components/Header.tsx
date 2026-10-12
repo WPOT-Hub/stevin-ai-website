@@ -125,8 +125,10 @@ export default function Header() {
               </Link>
             ))}
 
-            {/* Language switcher */}
-            <LanguageSwitcher dark={showDark} />
+            {/* Taalschakelaar alleen op de Engelse pagina's, om terug te kunnen naar
+                NL. Koen, 12 okt: zolang de Engelse pagina's de oude zijn, de
+                schakelaar weg op de Nederlandse site. */}
+            {!isNieuweHome && <LanguageSwitcher dark={showDark} />}
 
             <Link
               href={ctaHref}
@@ -201,10 +203,12 @@ export default function Header() {
               </Link>
             ))}
 
-            {/* Language switcher in mobile */}
-            <div className="py-3 border-b border-border/50">
-              <LanguageSwitcher />
-            </div>
+            {/* Taalschakelaar mobiel: zelfde regel als hierboven. */}
+            {!isNieuweHome && (
+              <div className="py-3 border-b border-border/50">
+                <LanguageSwitcher />
+              </div>
+            )}
 
             <div className="pt-4">
               <Link
