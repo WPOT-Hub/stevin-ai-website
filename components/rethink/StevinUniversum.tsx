@@ -96,6 +96,33 @@ type Plek = Vak & { ax: number; by: number }
 type Kant = 'r' | 'l' | 'o' | 'm'
 const raakt = (a: Vak, b: Vak) =>
   a.l < b.r + TUSSEN && a.r + TUSSEN > b.l && a.t < b.b + TUSSEN && a.b + TUSSEN > b.t
+// Ligt een vak over een rondje (middelpunt x, y, straal r, in px)?
+const overRondje = (v: Vak, x: number, y: number, r: number) => {
+  const dx = x - Math.max(v.l, Math.min(x, v.r))
+  const dy = y - Math.max(v.t, Math.min(y, v.b))
+  return dx * dx + dy * dy < r * r
+}
+// Hoeveel van een rondje (als vierkant gerekend) onder een vak valt, in px².
+const bedekt = (v: Vak, x: number, y: number, r: number) =>
+  Math.max(0, Math.min(v.r, x + r) - Math.max(v.l, x - r)) * Math.max(0, Math.min(v.b, y + r) - Math.max(v.t, y - r))
+
+// Rust in het beeld (W-535, Koen 12 okt 19:42: "soms zit er een clinch in,
+// dan hapert hij"). Gemeten op 1440 breed: tijdens het draaien naar een
+// gekozen bron wisselden labels tot tien keer in twee seconden van kant, lag
+// het rondje van Google Ads 93 procent van de tijd over dat van Telefonie, en
+// lag het kaartje bij Website en Bedrijfsdoelen vrijwel altijd over een
+// rondje van de keten. De frametijden waren niet het probleem (geen frame
+// boven 32 ms), wel las elk beeld de maat van het kaartje terug na het
+// schrijven van de SVG, wat een extra layout afdwong.
+//   - Een label dat net van kant wisselde, verscheen of verdween, blijft zo
+//     lang (ms) zoals het is, tenzij het dan over een ander label, het logo of
+//     de rand gaat.
+//   - Rond de gekozen node houden de andere rondjes zoveel ruimte (px) tussen
+//     hun randen; ze schuiven er zacht opzij voor.
+//   - Het kaartje wisselt hoogstens zo vaak (ms) van plek.
+const LABEL_RUST = 700
+const RUIMTE = 16
+const KAART_RUST = 600
 
 const SATELLIETEN: Partial<Record<BronId, string[]>> = {
   google_ads: ['Search', 'YouTube', 'Kosten'],
@@ -495,6 +522,28 @@ export default function StevinUniversum({
   const haloEls = useRef<(SVGCircleElement | null)[]>([])
   const labelMaat = useRef<({ w: number; y: number; h: number } | null)[]>([])
   const labelKant = useRef<Kant[]>([])
+  // Per label: stond het vorige beeld aan, en wanneer wisselde het voor het
+  // laatst van kant of van aan naar uit (LABEL_RUST).
+  const labelAanVorig = useRef<boolean[]>([])
+  const labelWissel = useRef<number[]>([])
+  // Hoe ver een rondje (met wat erbij hoort) opzij staat voor de gekozen node,
+  // in px. Loopt zacht naar zijn doel, en terug naar nul als niets gekozen is.
+  const opzij = useRef<{ x: number; y: number }[]>([])
+  const opzijTijd = useRef(0)
+  // Het kaartje: bij welke knoop, de gekozen plek (ox, oy ten opzichte van
+  // de knoop), sinds wanneer, wanneer er voor het laatst gezocht is, en de
+  // verschuiving die er zacht naartoe loopt.
+  const kaartPlek = useRef({ gk: -1, ox: 0, oy: 0, sinds: -1e9, zocht: -1e9, dx: 0, dy: 0, tijd: 0 })
+  // Maat van het kaartje, bijgehouden door een ResizeObserver: elk beeld
+  // offsetWidth lezen na het schrijven van de SVG dwong een layout af.
+  const kaartMaat = useRef({ w: 0, h: 0 })
+  // De labels die het vorige beeld stonden: het kaartje legt zich er liefst
+  // niet overheen.
+  const labelVakVorig = useRef<Vak[]>([])
+  // Waar de naam van de gekozen node het vorige beeld stond: de rondjes
+  // eromheen schuiven daar ook voor opzij.
+  const ankerLabel = useRef<{ i: number; v: Vak } | null>(null)
+  const ringEl = useRef<SVGCircleElement | null>(null)
   // De lichtpuntjes: welke bron, sinds wanneer, hoe lang, en wanneer de
   // volgende mag.
   const stroomEls = useRef<(SVGGElement | null)[]>([])
@@ -629,6 +678,16 @@ export default function StevinUniversum({
     return () => ro.disconnect()
   }, [])
 
+  useEffect(() => {
+    const el = kaartRef.current
+    if (!el) return
+    const ro = new ResizeObserver(() => {
+      kaartMaat.current = { w: el.offsetWidth, h: el.offsetHeight }
+    })
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+
   // Knopen met een herinnering, alle knopen met een label, en de bronnen.
   const geheugenIdx = useMemo(
     () => knopen.map((n, i) => (n.soort === 'geheugen' && n.herinnering != null ? i : -1)).filter((i) => i >= 0),
@@ -636,6 +695,11 @@ export default function StevinUniversum({
   )
   const labelIdx = useMemo(() => knopen.map((n, i) => (n.label ? i : -1)).filter((i) => i >= 0), [knopen])
   const hubIdx = useMemo(() => knopen.map((n, i) => (n.soort === 'hub' ? i : -1)).filter((i) => i >= 0), [knopen])
+  // Alle glazen rondjes: de bronnen en de Advisor.
+  const rondIdx = useMemo(
+    () => knopen.map((n, i) => (n.soort === 'hub' || n.soort === 'advisor' ? i : -1)).filter((i) => i >= 0),
+    [knopen],
+  )
 
   // Maat van een label in px (de labellaag heeft geen schaal), een keer
   // gemeten. Een tekst die nog niet getekend is geeft nul; dan de volgende
@@ -715,6 +779,116 @@ export default function StevinUniversum({
           (fc != null && n.hub !== fc && n.soort !== 'brein' && n.soort !== 'geheugen' && !inKeten(i)) ||
           (fc != null && fc !== 'brein' && n.soort === 'geheugen' && n.hub !== fc)
         )
+      }
+
+      // Ruimte rond de gekozen node. De camera zet hem vooraan en groot neer,
+      // en dan schoof hij over de rondjes van zijn keten heen (Google Ads over
+      // Telefonie of CRM). Elk ander rondje dat te dichtbij komt, schuift op
+      // het scherm opzij tot er RUIMTE tussen de randen zit, met wat erbij
+      // hoort (wat erin zit, de context rond Marktsignalen) en zijn lijnen.
+      // Rondjes in de keten houden ook onderling ruimte. Zonder keuze staat
+      // alles waar het hoort: de homepage in rust verandert niet.
+      const anker =
+        gk != null && (knopen[gk].soort === 'hub' || knopen[gk].soort === 'advisor')
+          ? gk
+          : fc != null && fc !== 'brein'
+            ? knopen.findIndex((n) => (n.soort === 'hub' || n.soort === 'advisor') && n.hub === fc)
+            : -1
+      const doel: { x: number; y: number }[] = []
+      if (anker >= 0) {
+        const A = P[anker]
+        const ra = knopen[anker].r * A.s * k
+        for (const j of rondIdx) {
+          if (j === anker) continue
+          const Q = P[j]
+          let dx = Q.X - A.X
+          let dy = Q.Y - A.Y
+          let d = Math.hypot(dx, dy)
+          const min = ra + knopen[j].r * Q.s * k + RUIMTE
+          if (d >= min) continue
+          if (d < 0.5) {
+            dx = j % 2 ? 1 : -1
+            dy = 0
+            d = 1
+          }
+          doel[j] = { x: (dx / d) * (min - d), y: (dy / d) * (min - d) }
+        }
+        // Ook niet over de naam van de gekozen node: anders valt die over het
+        // rondje ernaast (Google Ads over Telefonie).
+        const al = ankerLabel.current
+        if (al && al.i === anker) {
+          const v = al.v
+          for (const j of rondIdx) {
+            if (j === anker) continue
+            const o = doel[j] ?? { x: 0, y: 0 }
+            const qx = P[j].X + o.x
+            const qy = P[j].Y + o.y
+            const r = knopen[j].r * P[j].s * k + RUIMTE / 2
+            const dx = qx - Math.max(v.l, Math.min(qx, v.r))
+            const dy = qy - Math.max(v.t, Math.min(qy, v.b))
+            const d = Math.hypot(dx, dy)
+            if (d >= r) continue
+            if (d < 0.5) {
+              // Middelpunt in het vak: langs de kortste weg eruit.
+              const uit = [
+                { x: v.l - r - qx, y: 0 },
+                { x: v.r + r - qx, y: 0 },
+                { x: 0, y: v.t - r - qy },
+                { x: 0, y: v.b + r - qy },
+              ].sort((a, b) => Math.abs(a.x + a.y) - Math.abs(b.x + b.y))[0]
+              doel[j] = { x: o.x + uit.x, y: o.y + uit.y }
+              continue
+            }
+            doel[j] = { x: o.x + (dx / d) * (r - d), y: o.y + (dy / d) * (r - d) }
+          }
+        }
+        const ketenR = rondIdx.filter((j) => j !== anker && inKeten(j))
+        for (let a = 0; a < ketenR.length; a++) {
+          for (let b = a + 1; b < ketenR.length; b++) {
+            const i = ketenR[a]
+            const j = ketenR[b]
+            const oi = doel[i] ?? { x: 0, y: 0 }
+            const oj = doel[j] ?? { x: 0, y: 0 }
+            let dx = P[j].X + oj.x - (P[i].X + oi.x)
+            let dy = P[j].Y + oj.y - (P[i].Y + oi.y)
+            let d = Math.hypot(dx, dy)
+            const min = (knopen[i].r * P[i].s + knopen[j].r * P[j].s) * k + RUIMTE
+            if (d >= min) continue
+            if (d < 0.5) {
+              dx = 1
+              dy = 0
+              d = 1
+            }
+            const h = (min - d) / 2
+            doel[i] = { x: oi.x - (dx / d) * h, y: oi.y - (dy / d) * h }
+            doel[j] = { x: oj.x + (dx / d) * h, y: oj.y + (dy / d) * h }
+          }
+        }
+      }
+      // Zacht naar het doel (in ongeveer een kwart seconde); draait er niets,
+      // dan meteen.
+      const dtOpzij = Math.min(100, Math.max(0, tijd - opzijTijd.current))
+      opzijTijd.current = tijd
+      const mee = stilNu ? 1 : 1 - Math.pow(0.7, dtOpzij / 33)
+      const opzijVan = new Map<HubId, { x: number; y: number }>()
+      for (const j of rondIdx) {
+        const nu = opzij.current[j] ?? { x: 0, y: 0 }
+        const dl = doel[j] ?? { x: 0, y: 0 }
+        nu.x += (dl.x - nu.x) * mee
+        nu.y += (dl.y - nu.y) * mee
+        if (Math.abs(nu.x) < 0.05 && Math.abs(nu.y) < 0.05) {
+          nu.x = 0
+          nu.y = 0
+        }
+        opzij.current[j] = nu
+        if (nu.x || nu.y) opzijVan.set(knopen[j].hub, nu)
+      }
+      if (opzijVan.size) {
+        knopen.forEach((n, i) => {
+          if (n.hub === 'brein' || n.soort === 'stof') return
+          const o = opzijVan.get(n.hub)
+          if (o) P[i] = { ...P[i], X: P[i].X + o.x, Y: P[i].Y + o.y }
+        })
       }
 
       // Lijnen
@@ -814,7 +988,7 @@ export default function StevinUniversum({
         const extra = n.soort === 'brein' ? 1 + slag : 1
         g.setAttribute('transform', `translate(${p.X.toFixed(1)} ${p.Y.toFixed(1)}) scale(${(p.s * k * extra).toFixed(3)})`)
         if (n.soort === 'brein') {
-          const ring = g.querySelector<SVGCircleElement>('.su-hartslag')
+          const ring = ringEl.current
           if (ring) {
             const ok = t >= 0 && t <= 1
             ring.setAttribute('r', (n.r * (1 + (ok ? t : 0) * 1.4)).toFixed(1))
@@ -865,20 +1039,90 @@ export default function StevinUniversum({
       if (kaart) {
         if (gk == null) {
           kaart.style.opacity = '0'
+          kaartPlek.current.gk = -1
         } else {
           const p = P[gk]
-          const kb = kaart.offsetWidth || 260
-          const kh = kaart.offsetHeight || 120
+          // De maat komt van de ResizeObserver; alleen het allereerste beeld
+          // meet zelf.
+          if (!kaartMaat.current.w) kaartMaat.current = { w: kaart.offsetWidth, h: kaart.offsetHeight }
+          const kb = kaartMaat.current.w || 260
+          const kh = kaartMaat.current.h || 120
           // Niet over de tekst links en niet onder de kopbalk, als het
           // vlak daar ruimte voor laat.
           const links = Math.min(Math.max(8, vrijLinks), Math.max(8, W - kb - 8))
-          const x = Math.max(links, Math.min(W - kb - 8, p.X + 14))
           const hoog = Math.max(8, vrijBoven)
+          const klem = (x: number, y: number) => ({
+            x: Math.max(links, Math.min(W - kb - 8, x)),
+            y: Math.max(hoog, Math.min(H - kh - 8, y)),
+          })
           // Boven of onder het rondje zelf, niet over de rand ervan (een bron
           // vooraan is op het scherm groter dan 14 px).
           const rr = Math.max(4, knopen[gk].r * p.s * k)
           const boven = p.Y - rr - kh - 8
-          const y = boven > hoog ? boven : Math.max(hoog, Math.min(H - kh - 8, p.Y + rr + 8))
+          // De oude plek: rechtsboven, of eronder als er boven geen ruimte is.
+          // Ligt die over een rondje dat je ziet (bij Website lag het kaartje
+          // bijna altijd over het Website-rondje), dan zoekt het kaartje boven,
+          // onder of naast de node een plek die minder bedekt, zo dicht
+          // mogelijk bij de node.
+          const oud = klem(p.X + 14, boven > hoog ? boven : p.Y + rr + 8)
+          const opties = [oud]
+          for (const y of [boven, p.Y + rr + 8, p.Y - kh / 2]) opties.push(klem(p.X + 14, y), klem(p.X - 14 - kb, y))
+          for (let y = hoog; y <= H - kh - 8; y += 24) for (let x = links; x <= W - kb - 8; x += 24) opties.push({ x, y })
+          const kosten = (o: { x: number; y: number }) => {
+            const v = { l: o.x, t: o.y, r: o.x + kb, b: o.y + kh }
+            // De gekozen node zelf telt zwaar, het brein (met zijn naam
+            // eronder) en de keten dubbel.
+            let s = 8 * bedekt(v, p.X, p.Y, rr + 6) + 3 * bedekt(v, B.X, B.Y + rBrein * 0.5, rBrein * 1.5)
+            for (const j of rondIdx) {
+              if (j === gk || (zichtL[j] ?? 1) < 0.2) continue
+              const q = P[j]
+              s += (inKeten(j) ? 4 : 2) * bedekt(v, q.X, q.Y, knopen[j].r * q.s * k + 6)
+            }
+            for (const x of labelVakVorig.current)
+              s += Math.max(0, Math.min(v.r, x.r + 3) - Math.max(v.l, x.l - 3)) * Math.max(0, Math.min(v.b, x.b + 3) - Math.max(v.t, x.t - 3))
+            // Liefst vlak bij de node: elke px tussen node en kaartje telt mee.
+            const dx = p.X - Math.max(v.l, Math.min(p.X, v.r))
+            const dy = p.Y - Math.max(v.t, Math.min(p.Y, v.b))
+            return s + 4 * Math.max(0, Math.hypot(dx, dy) - rr - 12)
+          }
+          const kp = kaartPlek.current
+          const nieuw = kp.gk !== gk
+          // De plek van nu: dezelfde verschuiving ten opzichte van de node.
+          let doelPlek = nieuw ? oud : klem(p.X + kp.ox, p.Y + kp.oy)
+          const nuKost = kosten(doelPlek)
+          // Zoeken kost wat (een raster van plekken), dus hoogstens eens per
+          // KAART_RUST, en alleen als de plek van nu iets bedekt.
+          if (nuKost > 0 && (nieuw || stilNu || (tijd - kp.sinds >= KAART_RUST && tijd - kp.zocht >= KAART_RUST))) {
+            kp.zocht = tijd
+            let beste = doelPlek
+            let besteKost = nuKost
+            for (const o of opties) {
+              const c = kosten(o)
+              if (c < besteKost) {
+                beste = o
+                besteKost = c
+              }
+            }
+            // Alleen wisselen als het duidelijk beter is: anders springt het
+            // kaartje heen en weer.
+            if (beste !== doelPlek && (nieuw || stilNu || besteKost < nuKost * 0.7 - 200)) {
+              doelPlek = beste
+              if (!nieuw) kp.sinds = tijd
+            }
+          }
+          kp.ox = doelPlek.x - p.X
+          kp.oy = doelPlek.y - p.Y
+          // Wisselt de plek, dan schuift het kaartje er zacht heen; bij een
+          // nieuwe node, of als er niets draait, staat het er meteen.
+          const dt = Math.min(100, Math.max(0, tijd - kp.tijd))
+          const mee = nieuw || stilNu ? 1 : 1 - Math.pow(0.6, dt / 33)
+          kp.dx += (kp.ox - kp.dx) * mee
+          kp.dy += (kp.oy - kp.dy) * mee
+          kp.gk = gk
+          kp.tijd = tijd
+          if (nieuw) kp.sinds = tijd
+          const x = Math.max(links, Math.min(W - kb - 8, p.X + kp.dx))
+          const y = Math.max(hoog, Math.min(H - kh - 8, p.Y + kp.dy))
           kaart.style.transform = `translate(${x.toFixed(0)}px, ${y.toFixed(0)}px)`
           kaart.style.opacity = '1'
           kaartVak = { l: x, t: y, r: x + kb, b: y + kh }
@@ -929,7 +1173,9 @@ export default function StevinUniversum({
       // herinneringslabel. Lukt dat nergens, dan wacht het tot het er voorbij
       // is; een gekozen bron mag dan wel over een rondje, maar nooit over een
       // ander label of het logo (een stapel labels leest niemand).
-      const vasteVolgorde = [0, 1, ...labelIdx.filter((i) => knopen[i].soort === 'hub' && isAan(i)),
+      // De gekozen node eerst: zijn naam gaat voor die van zijn keten.
+      const vasteVolgorde = [0, 1, ...(gk != null && knopen[gk].soort === 'hub' ? [gk] : []),
+        ...labelIdx.filter((i) => knopen[i].soort === 'hub' && isAan(i) && i !== gk),
         ...labelIdx.filter((i) => knopen[i].soort === 'hub' && !isAan(i)),
         ...labelIdx.filter((i) => knopen[i].soort === 'sat')]
       const stipIdx = labelIdx.filter((i) => knopen[i].soort === 'hub' || knopen[i].soort === 'advisor')
@@ -961,9 +1207,40 @@ export default function StevinUniversum({
           // en weer.
           const nu = metToon ? labelKant.current[i] : undefined
           const kanten: Kant[] = nu && nu !== 'm' ? [nu, ...(['r', 'l', 'o'] as Kant[]).filter((x) => x !== nu)] : ['r', 'l', 'o']
+          const moet = isAan(i) || fc === n.hub
+          // Net gewisseld, verschenen of verdwenen (LABEL_RUST): dan blijft
+          // het label zoals het was, zolang het niet over een ander label, het
+          // logo of de rand gaat. Anders sprong het tijdens het draaien heen en
+          // weer en knipperde het aan en uit.
+          const was = metToon && labelAanVorig.current[i] === true
+          const rustig = metToon && n.soort !== 'brein' && tijd - (labelWissel.current[i] ?? -1e9) < LABEL_RUST
+          // Een label dat over een rondje zou vallen dat dichterbij staat dan
+          // zijn eigen knoop, zoekt een andere kant of verdwijnt erachter, in
+          // plaats van erdoorheen te lopen. Niet bij de gekozen node zelf: die
+          // staat vooraan.
+          const achter = (v: Vak) =>
+            i !== gk &&
+            stippen.some((x) => x.i !== i && Pn[x.i].z < Pn[i].z - 4 && overRondje(v, Pn[x.i].X, Pn[x.i].Y, knopen[x.i].r * Pn[x.i].s * k))
+          let pl: { v: Plek; kant: Kant } | null = null
           // Het brein houdt altijd zijn naam; de rest moet ruimte vinden.
-          let pl = n.soort === 'brein' ? plaats(i, Pn[i]) : plaats(i, Pn[i], kanten, (v) => !vastWeg(v) && !stipWeg(v) && !labelWeg(v))
-          if (!pl && (isAan(i) || fc === n.hub)) pl = plaats(i, Pn[i], kanten, (v) => !vastWeg(v) && !labelWeg(v))
+          if (n.soort === 'brein') pl = plaats(i, Pn[i])
+          else {
+            if (rustig && was && nu && nu !== 'm') pl = plaats(i, Pn[i], [nu], (v) => !vastWeg(v) && !labelWeg(v) && !achter(v))
+            // Net verdwenen: dan nog even niet terug (behalve de gekozen node).
+            const wacht = rustig && !was && i !== gk
+            if (!pl && !wacht) pl = plaats(i, Pn[i], kanten, (v) => !vastWeg(v) && !stipWeg(v) && !labelWeg(v))
+            // Een label onder het kaartje leest niemand: dan liever een
+            // andere kant.
+            const onderKaart = (v: Vak) => metToon && kaartVak != null && raakt(v, kaartVak)
+            // Eerst een kant die geen enkel rondje raakt (de strenge toets
+            // houdt ook ruimte en de vorige herinneringslabels vrij), dan een
+            // die hoogstens over een verder weg gelegen rondje valt.
+            const overRondjes = (v: Vak) =>
+              stippen.some((x) => x.i !== i && overRondje(v, Pn[x.i].X, Pn[x.i].Y, knopen[x.i].r * Pn[x.i].s * k))
+            if (!pl && moet && !wacht) pl = plaats(i, Pn[i], kanten, (v) => !vastWeg(v) && !labelWeg(v) && !overRondjes(v) && !onderKaart(v))
+            if (!pl && moet && !wacht) pl = plaats(i, Pn[i], kanten, (v) => !vastWeg(v) && !labelWeg(v) && !achter(v) && !onderKaart(v))
+            if (!pl && moet && !wacht) pl = plaats(i, Pn[i], kanten, (v) => !vastWeg(v) && !labelWeg(v) && !achter(v))
+          }
           if (!pl) continue
           bezet.push(pl.v)
           labels.push(pl.v)
@@ -1070,6 +1347,7 @@ export default function StevinUniversum({
 
       // Labels in hun eigen laag: plek, kant en diepte (alleen opacity). Een
       // label dat net uitging loopt nog mee tot het weg is.
+      const labelVakNu: Vak[] = []
       for (const i of labelIdx) {
         const g = knoopEls.current[i]
         const lw = labelWrapEls.current[i]
@@ -1081,12 +1359,15 @@ export default function StevinUniversum({
         if (kant !== labelKant.current[i]) {
           el.setAttribute('text-anchor', kant === 'r' ? 'start' : kant === 'l' ? 'end' : 'middle')
           labelKant.current[i] = kant
+          labelWissel.current[i] = tijd
         }
         const label = toon[i] ? '1' : '0'
         if (el.getAttribute('data-label') !== label) {
           el.setAttribute('data-label', label)
           if (!toon[i]) labelUit.current[i] = tijd
+          labelWissel.current[i] = tijd
         }
+        labelAanVorig.current[i] = !!toon[i]
         const puls = i === w.i ? '1' : '0'
         if (g.dataset.puls !== puls) {
           g.dataset.puls = puls
@@ -1096,6 +1377,8 @@ export default function StevinUniversum({
         if (!zichtbaar(i) || (!toon[i] && tijd - (labelUit.current[i] ?? -1e9) > 700)) continue
         const pl = vakVan(i, P[i], kant)
         if (!pl) continue
+        if (toon[i]) labelVakNu.push(pl)
+        if (i === gk) ankerLabel.current = toon[i] ? { i, v: pl } : null
         lw.setAttribute('transform', `translate(${pl.ax.toFixed(1)} ${pl.by.toFixed(1)})`)
         const o = n.soort === 'brein' ? 1 : Math.min(1, 0.35 + 0.8 * (zichtL[i] ?? 1))
         if (Math.abs((labelZicht.current[i] ?? -1) - o) > 0.02) {
@@ -1103,6 +1386,8 @@ export default function StevinUniversum({
           lw.setAttribute('opacity', o.toFixed(2))
         }
       }
+
+      labelVakVorig.current = labelVakNu
 
       // Data stroomt: een paar lichtpuntjes lopen rustig langs de lijn van een
       // bron naar het brein en gaan erin op. Alleen als er iets draait, en
@@ -1164,12 +1449,14 @@ export default function StevinUniversum({
           if (el.getAttribute('opacity') !== '0') el.setAttribute('opacity', '0')
           return
         }
-        const a = knopen[bronI]
-        const b = knopen[naar]
+        // Op het scherm van rondje naar rondje, zodat het puntje ook aankomt
+        // bij een rondje dat opzij is geschoven.
+        const a = P[bronI]
+        const b = P[naar]
         const loop = (tijd - ketenStart.current.tijd) / KETEN_DUUR - s * 0.16
         const u = loop < 0 ? 0 : loop % 1
         const e = u * u * (3 - 2 * u)
-        const p = proj(a.x + (b.x - a.x) * e, a.y + (b.y - a.y) * e, a.z + (b.z - a.z) * e)
+        const p = { X: a.X + (b.X - a.X) * e, Y: a.Y + (b.Y - a.Y) * e, s: a.s + (b.s - a.s) * e }
         const o = loop < 0 ? 0 : Math.sin(Math.PI * u) * Math.max(0.4, Math.min(1, p.s * 1.25 - 0.3))
         el.setAttribute('transform', `translate(${p.X.toFixed(1)} ${p.Y.toFixed(1)}) scale(${(p.s * k).toFixed(3)})`)
         el.setAttribute('opacity', o.toFixed(2))
@@ -1208,7 +1495,7 @@ export default function StevinUniversum({
         }
       }
     },
-    [knopen, lijnen, ketenVan, maat, middenX, middenY, schaal, vrijBoven, vrijLinks, geheugenIdx, labelIdx, hubIdx, maatVan],
+    [knopen, lijnen, ketenVan, maat, middenX, middenY, schaal, vrijBoven, vrijLinks, geheugenIdx, labelIdx, hubIdx, rondIdx, maatVan],
   )
 
   // De lus. Hoogstens 30 beelden per seconde: bij deze draaisnelheid zie je
@@ -1449,7 +1736,19 @@ export default function StevinUniversum({
           />
         )}
         {n.soort === 'brein' && <circle r={n.r * 3.4} fill={`url(#${breinId})`} className="su-ademen" />}
-        {n.soort === 'brein' && <circle r={n.r} fill="none" stroke="#3D8EFF" strokeWidth={2} opacity={0} className="su-hartslag" />}
+        {n.soort === 'brein' && (
+          <circle
+            ref={(el) => {
+              ringEl.current = el
+            }}
+            r={n.r}
+            fill="none"
+            stroke="#3D8EFF"
+            strokeWidth={2}
+            opacity={0}
+            className="su-hartslag"
+          />
+        )}
         {(glas || n.soort === 'sat' || n.soort === 'geheugen') && (
           <circle
             ref={(el) => {
