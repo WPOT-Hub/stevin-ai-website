@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import gone from '@/data/gone-urls.json'
 
 // Centrale SEO-regel voor pagina-metadata. Elke nieuwe pagina hoort dit te
 // gebruiken in generateMetadata, zodat canonical, hreflang, OpenGraph en
@@ -19,6 +20,12 @@ import type { Metadata } from 'next'
 
 export const SITE_URL = 'https://stevin.ai'
 
+// W-535: van een paar pagina's die blijven is de Engelse versie weg (410),
+// bijvoorbeeld /en/google-ads-uitbesteden en /en/integraties. Die pagina's
+// gelden hier als NL-only, anders adverteert de NL-pagina een en-hreflang naar
+// een 410.
+const WEG = new Set<string>(gone.paden)
+
 interface LocalizedMetadataOpts {
   path: string // locale-agnostisch, bijv. '/platform' of '' voor home
   locale: string
@@ -30,7 +37,7 @@ interface LocalizedMetadataOpts {
 
 export function localizedMetadata(opts: LocalizedMetadataOpts): Metadata {
   const { path, locale, title, description } = opts
-  const translated = opts.translated !== false
+  const translated = opts.translated !== false && !WEG.has(`/en${path}`)
   const isEn = locale === 'en'
 
   const nlUrl = `${SITE_URL}${path}`

@@ -716,7 +716,7 @@ export default function KennismakingVenster() {
             setFout('')
             setTerugval(false)
           }}
-          className="text-[14px] font-semibold text-accent-diep underline underline-offset-2"
+          className="text-[14px] font-semibold text-primary underline decoration-accent underline-offset-2"
         >
           Laat je gegevens achter
         </button>
@@ -782,7 +782,7 @@ export default function KennismakingVenster() {
         <button
           type="button"
           onClick={() => setBerichtOpen(true)}
-          className="justify-self-start text-[14px] font-semibold text-accent-diep underline underline-offset-2"
+          className="justify-self-start text-[14px] font-semibold text-primary underline decoration-accent underline-offset-2"
         >
           Wil je alvast iets kwijt?
         </button>
@@ -790,11 +790,11 @@ export default function KennismakingVenster() {
       <Turnstile onToken={zetToken} onMislukt={markeerMislukt} widgetRef={widgetId} actiefRef={widgetActief} />
       {wachtRegel}
       {foutRegel}
-      {/* accent-diep (app/globals.css): donker genoeg voor witte tekst (5,5:1). */}
+      {/* Logoblauw met witte tekst (Koen 12 okt: een blauw, dat van het logo, en overal wit op de knoppen). */}
       <button
         type="submit"
         disabled={bezig}
-        className="rounded-xl bg-accent-diep px-5 py-3.5 font-display text-[15.5px] font-bold text-white transition-colors hover:bg-accent-dieper disabled:opacity-60"
+        className="rounded-xl bg-accent px-5 py-3.5 font-display text-[15.5px] font-bold text-white transition-[filter] hover:brightness-110 disabled:opacity-60"
       >
         {bezig ? 'Even geduld...' : modus === 'gegevens' ? 'Verstuur' : voorbeeld ? 'Vraag dit moment aan' : 'Bevestig de afspraak'}
       </button>
@@ -907,7 +907,7 @@ export default function KennismakingVenster() {
                       focusNa.current = 'slot'
                       setStap('kies')
                     }}
-                    className="text-[14px] font-semibold text-accent-diep hover:underline"
+                    className="text-[14px] font-semibold text-primary underline decoration-accent"
                   >
                     Ander moment
                   </button>
@@ -974,7 +974,7 @@ export default function KennismakingVenster() {
                                       type="button"
                                       data-slot={s.start}
                                       onClick={() => kies(s)}
-                                      className="rounded-lg border-2 border-accent-diep/70 py-2 text-[13.5px] font-semibold tabular-nums text-accent-diep transition-colors hover:bg-accent-diep hover:text-white"
+                                      className="rounded-lg border-2 border-accent py-2 text-[13.5px] font-semibold tabular-nums text-primary transition-colors hover:bg-accent hover:text-white"
                                     >
                                       {fmtTijd(s.start)} tot {fmtTijd(s.end)}
                                     </button>
@@ -1012,7 +1012,7 @@ export default function KennismakingVenster() {
                               type="button"
                               onClick={() => setMobDag(i)}
                               aria-pressed={mobDag === i}
-                              className={`shrink-0 rounded-xl border px-3.5 py-2.5 text-[14px] font-semibold capitalize ${mobDag === i ? 'border-accent-diep bg-accent-diep/10 text-accent-diep' : 'border-border text-primary'} ${d.slots.length === 0 ? 'opacity-40' : ''}`}
+                              className={`shrink-0 rounded-xl border px-3.5 py-2.5 text-[14px] font-semibold capitalize ${mobDag === i ? 'border-accent bg-accent/10 text-primary' : 'border-border text-primary'} ${d.slots.length === 0 ? 'opacity-40' : ''}`}
                             >
                               {fmtDagKort(d.datum)}
                             </button>
@@ -1035,7 +1035,7 @@ export default function KennismakingVenster() {
                             type="button"
                             data-slot={s.start}
                             onClick={() => kies(s)}
-                            className="rounded-xl border-2 border-accent-diep/70 py-3 text-[16px] font-semibold tabular-nums text-accent-diep active:bg-accent-diep active:text-white"
+                            className="rounded-xl border-2 border-accent py-3 text-[16px] font-semibold tabular-nums text-primary active:bg-accent active:text-white"
                           >
                             {fmtTijd(s.start)} tot {fmtTijd(s.end)}
                           </button>

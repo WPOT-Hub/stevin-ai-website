@@ -53,8 +53,8 @@ export default async function ApplyPage({ params }: Props) {
       <section className="hero-mesh-gradient -mt-[72px]" style={{ padding: 'calc(96px + 56px) 24px 80px' }}>
         <div className="mx-auto max-w-[1120px]">
           <VentureLabNav locale={locale} />
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {c.eyebrow}
           </p>
           <h1 className="font-display font-extrabold text-white leading-[1.05] tracking-[-0.03em]" style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '18ch' }}>

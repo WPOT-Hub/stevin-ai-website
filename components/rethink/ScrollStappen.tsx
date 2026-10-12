@@ -182,7 +182,7 @@ export default function ScrollStappen({
       <div ref={stickyRef} className={actief ? 'sticky top-0 flex min-h-[100svh] items-center' : ''}>
         <div className="grid w-full grid-cols-1 gap-10 py-8 tussen:grid-cols-[0.8fr_1.2fr] tussen:items-center tussen:gap-20 tussen:py-16">
           <div>
-            <p className="mb-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent-light">{eyebrow}</p>
+            <p className="mb-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent">{eyebrow}</p>
             <h2
               className="m-0 font-display font-extrabold text-white"
               style={{ fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', maxWidth: '14ch' }}
@@ -191,7 +191,7 @@ export default function ScrollStappen({
             </h2>
             <p className="m-0 mt-6 flex items-start gap-3 text-[16px] leading-snug text-white/70">
               <span className="relative mt-1.5 flex h-2 w-2 shrink-0" aria-hidden="true">
-                <span className="su-puls absolute inline-flex h-full w-full rounded-full bg-accent-light" />
+                <span className="su-puls absolute inline-flex h-full w-full rounded-full bg-accent" />
               </span>
               {/* Geen badge Voorbeeld meer: de aanleiding begint met "Stel". */}
               <span>{vaststelling}</span>
@@ -204,7 +204,7 @@ export default function ScrollStappen({
             <span aria-hidden="true" className="absolute bottom-2 left-[3px] top-2 w-px bg-white/12" />
             <span
               aria-hidden="true"
-              className="absolute bottom-2 left-[3px] top-2 w-px origin-top bg-accent-light transition-transform duration-700 ease-out"
+              className="absolute bottom-2 left-[3px] top-2 w-px origin-top bg-accent transition-transform duration-700 ease-out"
               style={{
                 transform: `scaleY(${
                   compact && actief
@@ -221,7 +221,7 @@ export default function ScrollStappen({
               const isDoel = i === items.length - 1
               const zichtbaar = !actief || i < aantal || (isDoel && doelZichtbaar)
               const isHuidig = actief ? i === huidig && zichtbaar : isDoel
-              const kleur = isDoel ? '#5FD39A' : '#5DA3FF'
+              const kleur = isDoel ? '#5FD39A' : '#3D8EFF'
               // Eerdere stappen gedimd, maar leesbaar (0,6: ongeveer 8:1 op
               // navy); compact helemaal weg. Zonder animatie staat alles op vol.
               const opacity = !zichtbaar ? 0 : isHuidig || !actief ? 1 : compact ? 0 : 0.6

@@ -87,8 +87,8 @@ export default async function FoundersPage({ params }: Props) {
       <section className="hero-mesh-gradient -mt-[72px]" style={{ padding: 'calc(96px + 56px) 24px 96px' }}>
         <div className="mx-auto max-w-[1120px]">
           <VentureLabNav locale={locale} />
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-6 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {c.eyebrow}
           </p>
           <h1 className="font-display font-extrabold text-white leading-[1.04] tracking-[-0.03em]" style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '16ch' }}>
@@ -169,7 +169,7 @@ export default async function FoundersPage({ params }: Props) {
           <p className="text-white/55 leading-[1.6] mb-9 mx-auto" style={{ fontSize: '18px', maxWidth: '480px' }}>
             {c.ctaSub}
           </p>
-          <Link href="/venture-lab/apply" className="inline-flex items-center gap-2 bg-[#5DA3FF] text-[#0A1628] font-display font-bold text-[15px] px-8 py-4 rounded-lg hover:bg-[#7BB8FF] transition-colors">
+          <Link href="/venture-lab/apply" className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-8 py-4 rounded-lg hover:bg-[#3D8EFF] transition-colors">
             {c.ctaBtn}
           </Link>
         </div>

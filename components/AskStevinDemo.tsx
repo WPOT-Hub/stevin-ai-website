@@ -194,7 +194,7 @@ function Chart({ locale, title, note }: { locale: Locale; title: string; note: s
           const piek = v === max
           return (
             <g key={i}>
-              <rect x={x} y={y} width={bw} height={bh} rx="3" fill={piek ? '#3c8eff' : '#9cc4ff'} />
+              <rect x={x} y={y} width={bw} height={bh} rx="3" fill="#3D8EFF" fillOpacity={piek ? 1 : 0.4} />
               <text x={x + bw / 2} y={y - 6} textAnchor="middle" fontSize="10" fill="#1f2933" fontWeight="600">{v.toLocaleString(locale === 'en' ? 'en-GB' : 'nl-NL')}</text>
               <text x={x + bw / 2} y={h - 8} textAnchor="middle" fontSize="10" fill="#6B7280">{labels[i]}</text>
             </g>
@@ -257,10 +257,10 @@ export default function AskStevinDemo({ locale, withHeader = true }: { locale: s
           messages.map((msg, i) => (
             <div key={i}>
               <div className={`flex gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === 'user' ? 'bg-[#3c8eff]/10 text-[#3c8eff]' : 'bg-white border border-[#d6dde8] text-[#6B7280]'}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === 'user' ? 'bg-[#3D8EFF]/10 text-[#3D8EFF]' : 'bg-white border border-[#d6dde8] text-[#6B7280]'}`}>
                   {msg.role === 'user' ? <User className="w-4 h-4" aria-hidden="true" /> : <Bot className="w-4 h-4" aria-hidden="true" />}
                 </div>
-                <div className={`max-w-[88%] px-4 py-3 rounded-2xl text-[14px] leading-[1.55] ${msg.role === 'user' ? 'bg-[#3c8eff] text-white rounded-br-md' : 'bg-white border border-[#d6dde8] text-[#374151] rounded-bl-md'}`}>
+                <div className={`max-w-[88%] px-4 py-3 rounded-2xl text-[14px] leading-[1.55] ${msg.role === 'user' ? 'bg-[#3D8EFF] text-white rounded-br-md' : 'bg-white border border-[#d6dde8] text-[#374151] rounded-bl-md'}`}>
                   {msg.role === 'user' ? msg.text : (
                     <>
                       <Blocks blocks={msg.blocks} />
@@ -306,13 +306,13 @@ export default function AskStevinDemo({ locale, withHeader = true }: { locale: s
               type="button"
               onClick={() => ask(qa)}
               disabled={typing}
-              className="text-[13px] font-display font-semibold bg-white border border-[#d6dde8] px-3.5 py-1.5 rounded-full text-[#1f2933] hover:border-[#3c8eff] hover:text-[#3c8eff] transition-colors disabled:opacity-50"
+              className="text-[13px] font-display font-semibold bg-white border border-[#d6dde8] px-3.5 py-1.5 rounded-full text-[#1f2933] hover:border-[#3D8EFF] hover:text-[#3D8EFF] transition-colors disabled:opacity-50"
             >
               {qa.q}
             </button>
           ))}
           {remaining.length === 0 && (
-            <button type="button" onClick={() => setMessages([])} className="text-[13px] font-display font-semibold text-[#3c8eff] px-1">
+            <button type="button" onClick={() => setMessages([])} className="text-[13px] font-display font-semibold text-[#3D8EFF] px-1">
               {c.reset}
             </button>
           )}
@@ -330,7 +330,7 @@ export default function AskStevinDemo({ locale, withHeader = true }: { locale: s
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="max-w-3xl mb-10">
-          <p className="mb-4 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3C8EFF] before:h-px before:w-7 before:bg-current">
+          <p className="mb-4 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#3D8EFF] before:h-px before:w-7 before:bg-current">
             {c.eyebrow}
           </p>
           <h2 className="font-display font-extrabold text-[#0A0A0A] m-0" style={{ fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}>

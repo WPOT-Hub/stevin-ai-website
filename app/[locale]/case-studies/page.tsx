@@ -47,8 +47,8 @@ export default async function CaseStudiesPage({ params }: Props) {
       {/* Hero */}
       <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 80px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('eyebrow')}
           </p>
           <h1
@@ -74,16 +74,16 @@ export default async function CaseStudiesPage({ params }: Props) {
                 className="group border-b border-border py-10 flex flex-col sm:flex-row sm:items-center gap-6 hover:bg-surface transition-colors px-2"
               >
                 <div className="flex-1">
-                  <span className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-4 block">
+                  <span className="text-[#3D8EFF] text-[12px] font-display font-bold tracking-[0.08em] uppercase mb-4 block">
                     {cs.industry}
                   </span>
-                  <h2 className="text-[19px] font-display font-bold text-primary mb-2 leading-tight group-hover:text-[#5DA3FF] transition-colors">
+                  <h2 className="text-[19px] font-display font-bold text-primary mb-2 leading-tight group-hover:text-[#3D8EFF] transition-colors">
                     {cs.title}
                   </h2>
                   <p className="text-[15px] text-muted leading-[1.6]">{cs.subtitle}</p>
                 </div>
                 <div className="flex-shrink-0">
-                  <p className="text-4xl font-display font-extrabold text-[#5DA3FF]">{cs.metric}</p>
+                  <p className="text-4xl font-display font-extrabold text-[#3D8EFF]">{cs.metric}</p>
                   <p className="text-sm text-muted">{cs.metricLabel}</p>
                 </div>
               </Link>

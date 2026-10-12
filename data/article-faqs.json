@@ -140,5 +140,31 @@
       "question": "Maakt Google Meridian MMM nu wel toegankelijk voor MKB?",
       "answer": "Het verlaagt de softwaredrempel: open source, gratis, expliciet ontworpen voor causale schatting via geo-level modeling en kalibratie met experimenten. Maar Google adviseert minimaal twee jaar wekelijkse data voor geo-modellen, drie jaar voor national-level, en max 20 kanalen. Open source haalt het 'te duur' deels weg, maar vervangt geen datadiscipline."
     }
+  ],
+  "chatgpt-wordt-advertentieplatform": [
+    {
+      "question": "Wat is adverteren in ChatGPT?",
+      "answer": "Adverteren in ChatGPT betekent dat je betaalt om onder een antwoord van ChatGPT te verschijnen, met het label gesponsord. Welke advertentie verschijnt, hangt af van waar het gesprek over gaat, niet van een zoekwoord dat je inkoopt. Je zet het op in de Ads Manager van OpenAI en betaalt per klik of per duizend vertoningen."
+    },
+    {
+      "question": "Kun je in Nederland adverteren in ChatGPT, en sinds wanneer?",
+      "answer": "Ja. OpenAI kondigde op 18 augustus 2026 aan dat advertenties naar 31 Europese landen komen, waaronder Nederland. Eerst kon dat alleen via OpenAI zelf en partnerbureaus. Sinds 31 augustus open je zelf een account in Ads Manager. Voorwaarde: het bedrijf dat adverteert en betaalt, zit in een land waar het open is."
+    },
+    {
+      "question": "Wat kost adverteren in ChatGPT?",
+      "answer": "Er is geen vaste prijs, je biedt in een veiling. Je betaalt per klik (CPC) of per duizend vertoningen (CPM), ook als je op conversies stuurt, nooit per klant. Het minimum is 15 euro per dag. Een Nederlands partnerbureau noemt 2 tot 3 euro per klik, adverteerders in Engelstalige markten betalen meestal 4 tot 10 dollar."
+    },
+    {
+      "question": "Werken advertenties in ChatGPT, wat zeggen de eerste cijfers?",
+      "answer": "Per klik levert ChatGPT voorlopig minder op dan Google Search: minder mensen klikken, en minder klikken worden een aanvraag. Omdat een klik vaak goedkoper is, komen de kosten per lead soms in de buurt van Google. Of die leads even vaak klant worden, weet nog niemand. Onafhankelijke cijfers voor Nederland zijn er niet."
+    },
+    {
+      "question": "Voor wie is adverteren in ChatGPT (nog) niet geschikt?",
+      "answer": "Voor de meeste lokale bedrijven is het nog niet het moment. Zoeken jouw klanten naar een loodgieter, een fysiotherapeut of een dakdekker in de buurt, dan doen ze dat in Google, en daar zit de vraag van mensen die nu willen kopen. Zolang je daar nog winstgevend kunt groeien, verdient Google Search je eerste euro."
+    },
+    {
+      "question": "Hoe test je adverteren in ChatGPT zonder geld te verspillen?",
+      "answer": "Zet eerst je meting klaar, tot opdracht en omzet, en start pas daarna een campagne. Geef ChatGPT een eigen budget, schrijf vooraf op wanneer de test geslaagd is, en oordeel pas na een volledige aankoopcyclus. Vergelijk dan wat een klant via ChatGPT kostte met wat een klant via Google Search kost. Klanten, geen klikken."
+    }
   ]
 }

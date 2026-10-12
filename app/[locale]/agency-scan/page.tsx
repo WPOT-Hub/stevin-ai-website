@@ -38,8 +38,8 @@ export default async function AgencyScanPage({ params }: Props) {
       <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 80px' }}>
         <div className="mx-auto max-w-[1200px]">
 
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('hero_eyebrow')}
           </p>
 
@@ -48,7 +48,7 @@ export default async function AgencyScanPage({ params }: Props) {
             style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '18ch' }}
           >
             {t('hero_h1')}{' '}
-            <span className="text-[#5DA3FF]">{t('hero_h1_accent')}</span>
+            <span className="text-[#3D8EFF]">{t('hero_h1_accent')}</span>
           </h1>
 
           <p
@@ -61,7 +61,7 @@ export default async function AgencyScanPage({ params }: Props) {
           <div className="mt-10">
             <a
               href="#scan"
-              className="inline-flex items-center gap-2 bg-[#5DA3FF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#7BB8FF] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#3D8EFF] transition-colors"
             >
               {t('hero_cta')}
             </a>
@@ -177,7 +177,7 @@ export default async function AgencyScanPage({ params }: Props) {
                 // nooit een beschuldiging.
                 {
                   label: 'HIGH',
-                  color: '#5DA3FF',
+                  color: '#3D8EFF',
                   title: '[TRACKING] Meting en werkelijkheid lopen uiteen',
                   body: 'Wat het platform rapporteert komt niet overeen met wat er in je eigen administratie binnenkomt. Zolang dat verschil er is, stuur je op het verkeerde getal.',
                 },

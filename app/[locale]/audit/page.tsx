@@ -35,8 +35,8 @@ export default async function AuditPage({ params }: Props) {
         <div className="mx-auto max-w-[1200px]">
 
           {/* Eyebrow */}
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('hero_eyebrow')}
           </p>
 
@@ -45,7 +45,7 @@ export default async function AuditPage({ params }: Props) {
             style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '16ch' }}
           >
             {t('hero_h1')}{' '}
-            <span className="text-[#5DA3FF]">{t('hero_h1_accent')}</span>
+            <span className="text-[#3D8EFF]">{t('hero_h1_accent')}</span>
           </h1>
 
           <p
@@ -137,7 +137,7 @@ export default async function AuditPage({ params }: Props) {
                 },
                 {
                   label: 'HIGH',
-                  color: '#5DA3FF',
+                  color: '#3D8EFF',
                   title: '[BUDGET WASTE] Uitgaven zonder resultaat',
                   body: 'Een campagne buiten je merknaam trekt verkeer zonder koopintentie: bijna iedereen klikt weg zonder iets te doen.',
                 },

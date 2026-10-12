@@ -20,7 +20,7 @@ import { ADVISOR, BREIN, BRONNEN, METINGEN, type BronId } from './netwerk'
  * bron of herinnering kiezen kan nog, in het beeld of met de knoppenlijst.
  */
 
-type Kies = BronId | 'brein' | 'advisor'
+export type Kies = BronId | 'brein' | 'advisor'
 
 // Pauzeknop voor alle beweging die vanzelf loopt (WCAG 2.2.2): het brein, de
 // logoband en de watermerken. CSS en de lus van het brein lezen het attribuut.
@@ -72,11 +72,25 @@ function push(event: string, data: Record<string, unknown>) {
 const naDubbelePunt = (zin: string) =>
   /^(Meta|Google|ChatGPT|YouTube)\b/.test(zin) ? zin : zin.charAt(0).toLowerCase() + zin.slice(1)
 
-export default function HeroUniversum({ kop, knoppen }: { kop: React.ReactNode; knoppen: React.ReactNode }) {
-  const [focus, setFocus] = useState<Kies | null>(null)
+// start: de bron die bij het openen al gekozen is, zodat elke pagina zijn eigen
+// keten laat zien (Koen, 12 okt 07:48: "verander je ook overal de nodes? pas ze
+// wel aan per pagina"). Zonder start is het de homepage: niets gekozen.
+export default function HeroUniversum({
+  kop,
+  knoppen,
+  start,
+}: {
+  kop: React.ReactNode
+  knoppen: React.ReactNode
+  start?: Kies | { herinnering: string }
+}) {
+  // Een herinnering (Context, Resultaat, Afspraak, Doel) als start: op label.
+  const startHerinnering =
+    start && typeof start === 'object' ? HERINNERINGEN.findIndex((h) => h.kort === start.herinnering) : -1
+  const [focus, setFocus] = useState<Kies | null>(start && typeof start === 'string' ? start : null)
   const [lijstOpen, setLijstOpen] = useState(false)
   // Herinnering gekozen via de knoppenlijst (index in HERINNERINGEN).
-  const [herinnering, setHerinnering] = useState<number | null>(null)
+  const [herinnering, setHerinnering] = useState<number | null>(startHerinnering >= 0 ? startHerinnering : null)
   // Gekozen in het beeld zelf: dan staat de uitleg al op het kaartje bij de
   // node en hoeft hij niet nog een keer onder de knop.
   const [uitBeeld, setUitBeeld] = useState(false)

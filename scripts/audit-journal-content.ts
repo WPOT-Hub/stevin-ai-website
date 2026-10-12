@@ -15,7 +15,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { articles } from '../data/articles'
-import retiredArticles from '../data/retired-articles.json'
+import retiredArticlesJson from '../data/retired-articles.json'
+
+// Kan leeg zijn (W-535), en een lege JSON-array heeft als type never[].
+const retiredArticles = retiredArticlesJson as { from: string; to: string; reason?: string; auditedAt?: string }[]
 
 const PAGE_PATH = path.join(process.cwd(), 'app/[locale]/blog/[slug]/page.tsx')
 const RELATED_PATH = path.join(process.cwd(), 'data/related-articles.json')

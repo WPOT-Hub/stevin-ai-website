@@ -429,7 +429,7 @@ function MetingBlok({ meting }: { meting: Meting }) {
   return (
     <div className="mt-3 border-t border-white/10 pt-2.5">
       <div className="flex items-center justify-between gap-2">
-        <p className="m-0 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#9CC6FF]">Wat we meten</p>
+        <p className="m-0 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#3D8EFF]">Wat we meten</p>
         <span className="rounded-full border border-white/20 px-1.5 py-px text-[10.5px] leading-snug text-white/60">Voorbeeld</span>
       </div>
       {meting.vorm === 'keten' ? (
@@ -437,8 +437,8 @@ function MetingBlok({ meting }: { meting: Meting }) {
           {meting.stappen.map((st, i) => (
             <li key={st.label} className="inline-flex items-center gap-1 whitespace-nowrap">
               {i > 0 && <ChevronRight size={12} strokeWidth={2} aria-hidden="true" className="shrink-0 text-white/35" />}
-              <span className={st.nadruk ? 'text-[#5DA3FF]' : 'text-white/70'}>{st.label}</span>
-              <span className={`font-mono ${st.nadruk ? 'font-semibold text-[#5DA3FF]' : 'text-white'}`}>{st.waarde}</span>
+              <span className={st.nadruk ? 'text-[#3D8EFF]' : 'text-white/70'}>{st.label}</span>
+              <span className={`font-mono ${st.nadruk ? 'font-semibold text-[#3D8EFF]' : 'text-white'}`}>{st.waarde}</span>
             </li>
           ))}
         </ol>
@@ -446,8 +446,8 @@ function MetingBlok({ meting }: { meting: Meting }) {
         <ul className="m-0 mt-1.5 list-none space-y-0.5 p-0 text-[12.5px] leading-snug">
           {meting.stappen.map((st) => (
             <li key={st.label} className="flex items-baseline justify-between gap-3">
-              <span className={st.nadruk ? 'text-[#5DA3FF]' : 'text-white/70'}>{st.label}</span>
-              <span className={`whitespace-nowrap font-mono ${st.nadruk ? 'font-semibold text-[#5DA3FF]' : 'text-white'}`}>{st.waarde}</span>
+              <span className={st.nadruk ? 'text-[#3D8EFF]' : 'text-white/70'}>{st.label}</span>
+              <span className={`whitespace-nowrap font-mono ${st.nadruk ? 'font-semibold text-[#3D8EFF]' : 'text-white'}`}>{st.waarde}</span>
             </li>
           ))}
         </ul>
@@ -735,7 +735,7 @@ export default function StevinUniversum({
           el.setAttribute('x2', pb.X.toFixed(1))
           el.setAttribute('y2', pb.Y.toFixed(1))
           const diepte = Math.max(0.35, Math.min(1, (pa.s + pb.s) / 2 - 0.2))
-          el.setAttribute('stroke', '#5DA3FF')
+          el.setAttribute('stroke', '#3D8EFF')
           el.setAttribute('stroke-opacity', (0.6 * diepte).toFixed(3))
           el.setAttribute('stroke-width', '1.2')
           return
@@ -756,7 +756,7 @@ export default function StevinUniversum({
         const diepte = Math.max(0.15, Math.min(1, (pa.s + pb.s) / 2 - 0.35))
         const aan = isAan(a) && isAan(b)
         const stil = isStil(a) || isStil(b)
-        el.setAttribute('stroke', aan ? '#5DA3FF' : '#93C5FD')
+        el.setAttribute('stroke', aan ? '#3D8EFF' : '#3D8EFF')
         const wolk = knopen[a].soort === 'geheugen' || knopen[b].soort === 'geheugen'
         el.setAttribute('stroke-opacity', (aan ? 0.85 : stil ? 0.04 : wolk ? 0.09 * diepte : 0.13 * diepte).toFixed(3))
         el.setAttribute('stroke-width', aan ? '1.4' : '0.8')
@@ -1447,7 +1447,7 @@ export default function StevinUniversum({
           />
         )}
         {n.soort === 'brein' && <circle r={n.r * 3.4} fill={`url(#${breinId})`} className="su-ademen" />}
-        {n.soort === 'brein' && <circle r={n.r} fill="none" stroke="#9CC6FF" strokeWidth={2} opacity={0} className="su-hartslag" />}
+        {n.soort === 'brein' && <circle r={n.r} fill="none" stroke="#3D8EFF" strokeWidth={2} opacity={0} className="su-hartslag" />}
         {(glas || n.soort === 'sat' || n.soort === 'geheugen') && (
           <circle
             ref={(el) => {
@@ -1506,12 +1506,12 @@ export default function StevinUniversum({
       >
         <defs>
           <radialGradient id={gloedId}>
-            <stop offset="0%" stopColor="#5DA3FF" stopOpacity="0.55" />
+            <stop offset="0%" stopColor="#3D8EFF" stopOpacity="0.55" />
             <stop offset="45%" stopColor="#3D8EFF" stopOpacity="0.16" />
             <stop offset="100%" stopColor="#3D8EFF" stopOpacity="0" />
           </radialGradient>
           <radialGradient id={breinId}>
-            <stop offset="0%" stopColor="#9CC6FF" stopOpacity="0.5" />
+            <stop offset="0%" stopColor="#3D8EFF" stopOpacity="0.5" />
             <stop offset="60%" stopColor="#3D8EFF" stopOpacity="0.12" />
             <stop offset="100%" stopColor="#3D8EFF" stopOpacity="0" />
           </radialGradient>
@@ -1525,17 +1525,17 @@ export default function StevinUniversum({
             <stop offset="48%" stopColor="#FFFFFF" stopOpacity="0" />
           </linearGradient>
           <radialGradient id={glasGloedId}>
-            <stop offset="50%" stopColor="#5DA3FF" stopOpacity="0.26" />
+            <stop offset="50%" stopColor="#3D8EFF" stopOpacity="0.26" />
             <stop offset="100%" stopColor="#3D8EFF" stopOpacity="0" />
           </radialGradient>
           <radialGradient id={stroomId}>
             <stop offset="0%" stopColor="#CFE4FF" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#5DA3FF" stopOpacity="0" />
+            <stop offset="100%" stopColor="#3D8EFF" stopOpacity="0" />
           </radialGradient>
         </defs>
         <g data-laag="lijnen">
           {lijnen.map((_, i) => (
-            <line key={i} ref={(el) => { lijnEls.current[i] = el }} stroke="#93C5FD" strokeOpacity={0} strokeWidth={0.8} />
+            <line key={i} ref={(el) => { lijnEls.current[i] = el }} stroke="#3D8EFF" strokeOpacity={0} strokeWidth={0.8} />
           ))}
         </g>
         {/* Lichtpuntjes van bron naar brein; een vaste gloed, geen filter. */}
@@ -1619,7 +1619,7 @@ export default function StevinUniversum({
         ) : kaartInhoud && (
           <>
             <div className="mb-1.5 flex items-center justify-between gap-3">
-              <span className="font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#9CC6FF]">{kaartInhoud.soort}</span>
+              <span className="font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#3D8EFF]">{kaartInhoud.soort}</span>
               <SluitKnop
                 onClick={() => {
                   setGekozen(null)
@@ -1631,7 +1631,7 @@ export default function StevinUniversum({
             {kaartInhoud.wanneer && <p className="m-0 mt-0.5 text-[12.5px] text-white/50">{kaartInhoud.wanneer}</p>}
             {kaartInhoud.tekst && <p className="m-0 mt-2 text-[14px] leading-snug text-white/80">{kaartInhoud.tekst}</p>}
             {'actie' in kaartInhoud && kaartInhoud.actie && (
-              <p className="m-0 mt-1.5 text-[14px] leading-snug text-[#9CC6FF]">
+              <p className="m-0 mt-1.5 text-[14px] leading-snug text-[#3D8EFF]">
                 <span className="sr-only">Wat we doen: </span>
                 {kaartInhoud.actie}
               </p>
