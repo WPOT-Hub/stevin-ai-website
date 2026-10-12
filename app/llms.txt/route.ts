@@ -14,7 +14,6 @@
 
 import { articles } from '@/data/articles'
 import { isPublishableArticle } from '../[locale]/blog/[slug]/page'
-import { comparisons } from '@/data/comparisons'
 
 export const dynamic = 'force-static'
 export const revalidate = 3600 // 1 uur cache
@@ -54,9 +53,7 @@ export async function GET() {
     // W-535 (12 okt 2026): alleen pagina's die na het snoeien blijven. Het
     // woordenboek, de diensten-, doelgroep- en sectorpagina's zijn weg of
     // omgeleid, en horen hier dus niet meer.
-    '## Vergelijking',
-    ...comparisons.map((c) => `- [${c.title}](https://stevin.ai/vergelijken/${c.slug}): ${c.dek}`),
-    '',
+    // Vergelijkingen staan uit tot ze herschreven zijn (W-535, Koen 12 okt).
     '## Wat we doen',
     '- [Zo werkt Stevin](https://stevin.ai/platform): hoe Stevin.AI je marketing doet en waar het advies op steunt',
     '- [Google Ads uitbesteden](https://stevin.ai/google-ads-uitbesteden)',
