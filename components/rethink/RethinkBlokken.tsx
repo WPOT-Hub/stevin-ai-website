@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { Link } from '@/i18n/navigation'
 import KennismakingVenster from './KennismakingVenster'
 import NodeWatermerk from './NodeWatermerk'
+import HeroUniversum, { type Kies } from './HeroUniversum'
 
 /**
  * Bouwstenen voor de verdiepingspagina's in de stijl van de homepage en
@@ -9,8 +10,10 @@ import NodeWatermerk from './NodeWatermerk'
  * "Plan een kennismaking". Zelfde typografie als RethinkTarieven.tsx, zodat
  * de pagina's niet elk een eigen variant krijgen.
  *
- * Geen zware beelden (brein, Desk-scherm): /tarieven laadde op mobiel in acht
- * seconden door zulke componenten.
+ * Geen Desk-scherm of oude StevinBrainVisual: /tarieven laadde op mobiel in
+ * acht seconden door zulke componenten. Het brein van de homepage
+ * (HeroUniversum) mag wel als kop: dat laadt pas in de browser en de tekst
+ * staat er al.
  */
 
 export const h2Stijl = { fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08' } as const
@@ -41,13 +44,45 @@ export function PaginaKop({
   accent,
   lede,
   knop,
+  brein,
 }: {
   eyebrow: string
   kop: string
   accent?: string
   lede: ReactNode
   knop?: string
+  /**
+   * Het brein van de homepage als kop, met de bron van deze pagina al gekozen
+   * (Koen, 12 okt 07:48: "verander je ook overal de nodes? pas ze wel aan per
+   * pagina"). 'alles' = het hele brein, niets gekozen.
+   */
+  brein?: Kies | 'alles' | { herinnering: string }
 }) {
+  if (brein) {
+    return (
+      <HeroUniversum
+        start={brein === 'alles' ? undefined : brein}
+        kop={
+          <>
+            <p className="m-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent-light">{eyebrow}</p>
+            <h1
+              className="m-0 text-balance font-display font-extrabold text-white"
+              style={{ ...h2Stijl, fontSize: 'clamp(34px, 4.4vw, 60px)' }}
+            >
+              {kop}
+              {accent ? <span className="text-accent-light"> {accent}</span> : null}
+            </h1>
+            <div className="mt-5 text-balance text-[18px] leading-[1.5] text-white/75">{lede}</div>
+          </>
+        }
+        knoppen={
+          <div className="zij:mt-9 flex flex-wrap gap-3 tablet:justify-center">
+            <Knop cta={knop ?? 'pagina_kop'} licht />
+          </div>
+        }
+      />
+    )
+  }
   return (
     <section className="px-6 pb-16 pt-28 sm:pt-32">
       <div className="mx-auto max-w-[1080px]">

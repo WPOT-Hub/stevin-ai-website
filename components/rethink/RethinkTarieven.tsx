@@ -1,6 +1,7 @@
 import { Link } from '@/i18n/navigation'
 import KennismakingVenster from './KennismakingVenster'
 import NodeWatermerk from './NodeWatermerk'
+import { PaginaKop } from './RethinkBlokken'
 
 // De nieuwe /tarieven (W-535), in de stijl van de homepage. Koen, 11 okt
 // 23:40: "deze pagina als volgende aanpakken", en twee pakketten zoals op de
@@ -104,25 +105,26 @@ const VRAGEN = [
 export default function RethinkTarieven() {
   return (
     <main className="bg-white">
-      {/* ── 1. ANTWOORD ── */}
-      <section className="px-6 pb-14 pt-28 sm:pt-32">
-        <div className="mx-auto max-w-[1080px]">
-          <p className="m-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent">Tarieven</p>
-          <h1 className="m-0 text-balance font-display font-extrabold text-primary" style={{ ...h2Stijl, fontSize: 'clamp(34px, 4vw, 56px)' }}>
-            Wat kost het uitbesteden van je marketing?
-          </h1>
-          <p className="m-0 mt-6 max-w-[680px] text-[18px] leading-[1.6] text-[#2A3A54]">
+      {/* ── 1. ANTWOORD ── Het brein als kop met Verkoop open: omzet per bron
+          (Koen, 12 okt 07:48, nodes per pagina). */}
+      <PaginaKop
+        brein="verkoop"
+        eyebrow="Tarieven"
+        kop="Wat kost het uitbesteden van je marketing?"
+        knop="tarieven_kop"
+        lede={
+          <p className="m-0">
             Bij Stevin.AI betaal je vanaf 1.399 per maand als wij jouw bureau zijn, en vanaf 399 als je het zelf doet of jouw agents het werk
             laat doen. Wat je precies betaalt hangt af van het werk, niet van je advertentiebudget. Dat budget betaal je rechtstreeks aan Google
             en Meta, en daar verdienen wij niets aan.
           </p>
-        </div>
-      </section>
+        }
+      />
 
       {/* ── 2. PAKKETTEN ── Het bureau donker en eerst: daar begint bijna
           iedereen (Koen, 11 okt: "in de regel zal iedereen onder managed
           starten, daar selecteren we op"). */}
-      <section className="px-6 pb-20" aria-label="Pakketten">
+      <section className="px-6 pb-20 pt-16" aria-label="Pakketten">
         <div className="mx-auto grid max-w-[1080px] gap-5 md:grid-cols-[1.15fr_1fr]">
           {PAKKETTEN.map((p, i) => {
             const donker = i === 0

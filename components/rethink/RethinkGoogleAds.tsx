@@ -74,6 +74,7 @@ export default function RethinkGoogleAds() {
   return (
     <main className="bg-white">
       <PaginaKop
+        brein="google_ads"
         eyebrow="Google Ads uitbesteden"
         kop="Google Ads uitbesteden."
         accent="Zonder de controle kwijt te raken."

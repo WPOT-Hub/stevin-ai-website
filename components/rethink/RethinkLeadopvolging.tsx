@@ -61,6 +61,7 @@ export default function RethinkLeadopvolging({ kop, accent }: { kop: string; acc
   return (
     <main className="bg-white">
       <PaginaKop
+        brein="crm"
         eyebrow="Leadopvolging"
         kop={kop}
         accent={accent}

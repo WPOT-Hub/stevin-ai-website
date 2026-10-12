@@ -9,9 +9,14 @@ import { DonkerBlok, Kennismaken, Kosten, PaginaKop, Punten, Vragen, h2Stijl, te
 // hetzelfde als de herkenning) en het Desk-scherm onderaan (zwaar op mobiel).
 
 const HERKEN = [
+  // Koen, 12 okt 08:57: social werkt voor naamsbekendheid en voor
+  // aanvragen; bij aanvragen gaat het mis als het platform niet hoort welke
+  // leads slecht waren. Corpus kern-03 (goedkoopste klikken en formulieren,
+  // inclusief spam en bots), tracking-voltooiing-primair (misklikken),
+  // kern-10 (merk en activatie elk een eigen meetlat).
   {
-    t: 'Je betaalt voor bereik, niet voor klanten',
-    d: 'Het rapport toont vertoningen, volgers en interacties. Hoeveel aanvragen eruit kwamen staat er niet, want dat wordt niet gemeten.',
+    t: 'Veel aanvragen, weinig klanten',
+    d: 'Social werkt voor naamsbekendheid en voor aanvragen. Bij aanvragen gaat het vaak mis. Krijgt Meta niet te horen welke aanvragen niets waren, dan zoekt het de makkelijkste weg: misklikken, spam en bots.',
   },
   {
     t: 'Er wordt gepost omdat het moet',
@@ -73,6 +78,7 @@ export default function RethinkSocial() {
   return (
     <main className="bg-white">
       <PaginaKop
+        brein="meta"
         eyebrow="Social media uitbesteden"
         kop="Social media uitbesteden."
         accent="Met cijfers die iets betekenen."

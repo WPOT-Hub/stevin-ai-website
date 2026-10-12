@@ -73,6 +73,7 @@ export default function RethinkPlatform() {
   return (
     <main className="bg-white">
       <PaginaKop
+        brein="alles"
         eyebrow="Zo werkt Stevin"
         kop="Je ziet het vandaag."
         accent="Niet pas in de maandrapportage."
