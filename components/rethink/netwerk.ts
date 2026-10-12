@@ -1,6 +1,6 @@
 // Gedeelde data voor de nodevisual van de nieuwe homepage (W-535).
 //
-// Dertien nodes met een betekenis, geen sfeerstippen. Swoep zet 105 nodes
+// Veertien nodes met een betekenis, geen sfeerstippen. Swoep zet 105 nodes
 // zonder naam neer; dat oogt rijk maar zegt niets, en op mobiel lopen de
 // labels door elkaar. Hier heeft elke node een naam en een zin uitleg, zodat
 // de visual ook zonder animatie leesbaar is en met het toetsenbord te
@@ -12,6 +12,7 @@ export type NodeId =
   | 'google_ads'
   | 'meta'
   | 'chatgpt_ads'
+  | 'bol'
   | 'website'
   | 'klantgegevens'
   | 'telefonie'
@@ -45,6 +46,10 @@ export const BRONNEN: NetwerkNode<BronId>[] = [
   // 11 okt 23:04). Nagekeken op help.openai.com, "Ads Manager Availability",
   // 11 okt 2026: Netherlands staat op Available.
   { id: 'chatgpt_ads', label: 'ChatGPT Ads', uitleg: 'Wat je in ChatGPT uitgeeft en wat het oplevert.' },
+  // bol (Koen, 12 okt 15:42: "wil ook het logotje van bol.com in onze brein").
+  // Te koppelen via de Retailer API (orders, retouren) en de Advertising API
+  // (cijfers per campagne); zie docs/MERKLOGOS_W535.md voor het logo.
+  { id: 'bol', label: 'bol', uitleg: 'Wat je via bol verkoopt en wat je advertenties daar opleveren.' },
   { id: 'website', label: 'Website', uitleg: 'Bezoek, formulieren en contactaanvragen.' },
   { id: 'klantgegevens', label: 'Klantgegevens', uitleg: 'Wie jouw klanten zijn en wat ze eerder kochten.' },
   { id: 'telefonie', label: 'Telefonie', uitleg: 'Telefoontjes die uit je marketing komen.' },
@@ -70,7 +75,8 @@ export const ADVISOR: NetwerkNode = {
 // diagonalen door het netwerk maakten het eerste ontwerp onrustig.
 export const DWARS: [BronId, BronId][] = [
   ['doelen', 'doelgroepen'],
-  ['chatgpt_ads', 'website'],
+  ['chatgpt_ads', 'bol'],
+  ['bol', 'website'],
   ['website', 'klantgegevens'],
   ['klantgegevens', 'telefonie'],
   ['telefonie', 'crm'],
@@ -186,6 +192,15 @@ export const METINGEN: Partial<Record<BronId, Meting>> = {
       { label: 'Omzet', waarde: EUR('3.400'), nadruk: true },
     ],
   },
+  bol: {
+    vorm: 'keten',
+    stappen: [
+      { label: 'Vertoningen', waarde: '18.200' },
+      { label: 'Klikken', waarde: '640' },
+      { label: 'Bestellingen', waarde: '41', nadruk: true },
+      { label: 'Omzet', waarde: EUR('2.900'), nadruk: true },
+    ],
+  },
   website: {
     vorm: 'keten',
     stappen: [
@@ -225,10 +240,11 @@ export const METINGEN: Partial<Record<BronId, Meting>> = {
       { label: 'Google Ads', waarde: EUR('18.400') },
       { label: 'Meta', waarde: EUR('3.900') },
       { label: 'ChatGPT Ads', waarde: EUR('3.400') },
+      { label: 'bol', waarde: EUR('2.900') },
       // Koen 12 okt: altijd SEO noemen, nooit "vindbaar in Google"; GEO mag erbij.
       { label: 'SEO', waarde: EUR('6.800') },
       { label: 'GEO', waarde: EUR('2.400') },
-      { label: 'Bestaande klanten', waarde: EUR('17.900') },
+      { label: 'Bestaande klanten', waarde: EUR('15.000') },
       { label: 'Omzet deze maand', waarde: EUR('52.800'), nadruk: true },
     ],
   },
@@ -264,11 +280,12 @@ export const KETEN: Partial<Record<BronId, BronId[]>> = {
   google_ads: ['website', 'telefonie', 'offertes', 'crm', 'verkoop'],
   meta: ['website', 'telefonie', 'offertes', 'crm', 'verkoop'],
   chatgpt_ads: ['website', 'telefonie', 'offertes', 'crm', 'verkoop'],
+  bol: ['klantgegevens', 'verkoop'],
   website: ['crm', 'offertes', 'verkoop'],
   telefonie: ['crm', 'offertes', 'verkoop'],
   offertes: ['crm', 'verkoop'],
   crm: ['website', 'telefonie', 'offertes', 'verkoop'],
-  verkoop: ['google_ads', 'meta', 'chatgpt_ads', 'website', 'klantgegevens'],
+  verkoop: ['google_ads', 'meta', 'chatgpt_ads', 'bol', 'website', 'klantgegevens'],
   doelen: ['verkoop', 'klantgegevens', 'doelgroepen'],
   klantgegevens: ['crm', 'verkoop', 'doelgroepen'],
   doelgroepen: ['klantgegevens', 'google_ads', 'meta', 'chatgpt_ads'],
