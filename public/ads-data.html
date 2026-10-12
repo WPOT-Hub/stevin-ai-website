@@ -975,7 +975,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; text-underline-o
 <script>
   (function(){
     var ckb=document.getElementById('ckb');if(!ckb)return;
-    function choose(c){try{localStorage.setItem('stevin_consent',c);}catch(e){}if(window.stevinApplyConsent)window.stevinApplyConsent(c);ckb.setAttribute('hidden','');}
+    function choose(c){var vorige=null;try{vorige=localStorage.getItem('stevin_consent');}catch(e){}function stat(x){return x==='all'||x==='analytics'||x==='analytics_and_marketing';}try{localStorage.setItem('stevin_consent',c);}catch(e){}if(window.stevinApplyConsent)window.stevinApplyConsent(c);/* W-346: zelfde seintje als ConsentBanner.tsx; de Google-tag in GTM start pas na analytics-toestemming */if(stat(c)&&!stat(vorige)){try{(window.dataLayer=window.dataLayer||[]).push({event:'toestemming_keuze'});}catch(e){}}ckb.setAttribute('hidden','');}
     var stored=null;try{stored=localStorage.getItem('stevin_consent');}catch(e){}
     if(!stored)ckb.removeAttribute('hidden');
     [].forEach.call(ckb.querySelectorAll('[data-c]'),function(b){b.addEventListener('click',function(){choose(b.getAttribute('data-c'));});});
