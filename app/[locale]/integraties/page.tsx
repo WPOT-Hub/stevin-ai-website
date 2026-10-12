@@ -24,8 +24,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function IntegratiesPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  // W-535: de Nederlandse pagina is de nieuwe in de stijl van de homepage.
-  if (locale !== 'en') return <RethinkIntegraties />
   const t = await getTranslations('integraties')
 
   // De vijf lagen staan als losse sleutels in messages/*.json in plaats van als
@@ -57,6 +55,17 @@ export default async function IntegratiesPage({ params }: Props) {
     // wijst de structured data naar een andere URL dan de pagina zelf.
     url: `${SITE_URL}${locale === 'en' ? '/en' : ''}/integraties`,
     inLanguage: locale === 'en' ? 'en' : 'nl',
+  }
+
+  // W-535: de Nederlandse pagina is de nieuwe in de stijl van de homepage,
+  // met dezelfde CollectionPage-gegevens (Codex op #151: die vielen weg).
+  if (locale !== 'en') {
+    return (
+      <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <RethinkIntegraties />
+      </>
+    )
   }
 
   return (

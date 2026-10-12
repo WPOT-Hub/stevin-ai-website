@@ -14,7 +14,6 @@ type Kanaal = { naam: string; logo?: string }
 
 const ELKE_DAG: Kanaal[] = [
   { naam: 'Google Ads', logo: '/logos/merken/google-ads.svg' },
-  { naam: 'Meta', logo: '/logos/merken/meta.svg' },
   { naam: 'Google Analytics', logo: '/logos/merken/google-analytics.svg' },
   { naam: 'Search Console', logo: '/logos/merken/google-search-console.svg' },
   { naam: 'YouTube', logo: '/logos/merken/youtube.svg' },
@@ -25,6 +24,9 @@ const ELKE_DAG: Kanaal[] = [
 // Retailer API; Amazon: aanmelden als Tool Provider of Agency). Nog niet
 // gebouwd in de Hub, dus hier "koppelen we", niet "elke dag".
 const KOPPELEN: Kanaal[] = [
+  // Meta werkt, maar de enige koppeling staat sinds 27 sep op pauze bij de
+  // klant; daarom hier en niet onder elke dag (Codex op #151).
+  { naam: 'Meta', logo: '/logos/merken/meta.svg' },
   { naam: 'ChatGPT Ads', logo: '/logos/merken/chatgpt.svg' },
   { naam: 'Microsoft Ads', logo: '/logos/merken/microsoft.svg' },
   { naam: 'bol', logo: '/logos/merken/bol.svg' },
@@ -81,7 +83,7 @@ export default function RethinkIntegraties() {
             Dit staat elke dag in het brein.
           </h2>
           <p className={`m-0 mt-5 max-w-[620px] ${tekst}`}>Per account, met de wijzigingen erbij.</p>
-          <ul className="m-0 mt-10 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="m-0 mt-10 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4">
             {ELKE_DAG.map((k) => (
               <Tegel key={k.naam} k={k} />
             ))}
