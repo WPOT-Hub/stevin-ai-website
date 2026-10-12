@@ -561,6 +561,8 @@ export default function StevinUniversum({
   // Herinnering onder de muis: die toont zijn label.
   const zweef = useRef<number | null>(null)
   const stilVoorkeur = useRef(false)
+  // De tekenfunctie voor wie hem eerder nodig heeft dan hij gedefinieerd is (ResizeObserver van het kaartje).
+  const tekenRef = useRef<((t: number) => void) | null>(null)
   const lijnEls = useRef<(SVGLineElement | null)[]>([])
   // Onzichtbare raakcirkel per knoop; de straal volgt de schermmaat (24px).
   const raakEls = useRef<(SVGCircleElement | null)[]>([])
@@ -683,6 +685,11 @@ export default function StevinUniversum({
     if (!el) return
     const ro = new ResizeObserver(() => {
       kaartMaat.current = { w: el.offsetWidth, h: el.offsetHeight }
+      // Zonder beweging volgt er geen volgend beeld dat de nieuwe maat oppakt
+      // (Codex op #152): dan hier zelf opnieuw tekenen.
+      if (stilVoorkeur.current || document.documentElement.dataset.beweging === 'uit') {
+        requestAnimationFrame(() => tekenRef.current?.(performance.now()))
+      }
     })
     ro.observe(el)
     return () => ro.disconnect()
@@ -1592,10 +1599,19 @@ export default function StevinUniversum({
     }
   }, [])
 
+  useEffect(() => {
+    tekenRef.current = teken
+  }, [teken])
+
   // Onder reduced motion na elke wijziging een keer tekenen.
   // Ook bij een gekozen knoop, anders verschijnt het kaartje niet.
+  // Zonder beweging twee keer: de plek van het label van de gekozen node
+  // ontstaat pas in de eerste tekenbeurt, en de rondjes kunnen er pas in de
+  // tweede voor uitwijken (Codex op #152).
   useEffect(() => {
-    teken(performance.now())
+    const t = performance.now()
+    teken(t)
+    if (stilVoorkeur.current || document.documentElement.dataset.beweging === 'uit') teken(t)
   }, [focus, gekozen, herinnering, teken])
 
   // Slepen met de muis; op een touchscherm niet, daar scrol je. Een korte tik
