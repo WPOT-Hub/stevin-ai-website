@@ -420,7 +420,7 @@ export default async function PreviewTarieven({ params }: Props) {
                     className={
                       s.prijsPer
                         ? `font-display font-extrabold ${s.accent ? 'text-white' : 'text-primary'}`
-                        : `font-display font-semibold ${s.accent ? 'text-[#5DA3FF]' : 'text-accent'}`
+                        : `font-display font-semibold ${s.accent ? 'text-[#3D8EFF]' : 'text-accent'}`
                     }
                     style={{
                       // "vanaf 798" is bijna twee keer zo breed als "399" en
@@ -463,7 +463,7 @@ export default async function PreviewTarieven({ params }: Props) {
                       style={{ fontSize: '14px', lineHeight: '1.5' }}
                     >
                       <svg
-                        className={`w-4 h-4 mt-0.5 flex-shrink-0 ${s.accent ? 'text-[#5DA3FF]' : 'text-accent'}`}
+                        className={`w-4 h-4 mt-0.5 flex-shrink-0 ${s.accent ? 'text-[#3D8EFF]' : 'text-accent'}`}
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         aria-hidden="true"
@@ -502,9 +502,9 @@ export default async function PreviewTarieven({ params }: Props) {
           <div className="max-w-[640px]">
             <p
               className="font-display font-bold m-0 mb-5 flex items-center gap-[14px]"
-              style={{ fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#5DA3FF' }}
+              style={{ fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#3D8EFF' }}
             >
-              <span className="inline-block w-6 h-px flex-shrink-0" style={{ background: '#5DA3FF', opacity: 0.6 }} aria-hidden="true" />
+              <span className="inline-block w-6 h-px flex-shrink-0" style={{ background: '#3D8EFF', opacity: 0.6 }} aria-hidden="true" />
               {c.breinEyebrow}
             </p>
             <h2
@@ -534,7 +534,7 @@ export default async function PreviewTarieven({ params }: Props) {
           <div className="grid gap-8 md:grid-cols-3" style={{ marginTop: '52px' }}>
             {c.breinPunten.map((p) => (
               <div key={p.t}>
-                <div className="w-8 h-px mb-4" style={{ background: '#5DA3FF' }} aria-hidden="true" />
+                <div className="w-8 h-px mb-4" style={{ background: '#3D8EFF' }} aria-hidden="true" />
                 <p className="font-display font-bold text-white m-0 mb-2" style={{ fontSize: '16px', letterSpacing: '-0.01em' }}>
                   {p.t}
                 </p>

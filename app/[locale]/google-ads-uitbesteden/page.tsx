@@ -191,18 +191,18 @@ export default async function GoogleAdsUitbestedenPage({ params }: Props) {
       {/* Hero */}
       <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 112px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {c.eyebrow}
           </p>
           <h1 className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]" style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '20ch' }}>
-            {c.h1_line} <span className="text-[#5DA3FF]">{c.h1_accent}</span>
+            {c.h1_line} <span className="text-[#3D8EFF]">{c.h1_accent}</span>
           </h1>
           <p className="text-white/60 leading-[1.6]" style={{ fontSize: '17px', maxWidth: '620px', marginTop: '28px' }}>
             {c.lede}
           </p>
           <div className="flex flex-wrap items-center gap-4 mt-9">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#5DA3FF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#7BB8FF] transition-colors">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#3D8EFF] transition-colors">
               {c.cta}
             </Link>
             <p className="text-white/45 text-[13.5px] m-0">{c.cta_micro}</p>
@@ -231,8 +231,8 @@ export default async function GoogleAdsUitbestedenPage({ params }: Props) {
       {/* Hoe wij het doen */}
       <section className="bg-primary" style={{ padding: '112px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
-            <span className="inline-block w-6 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]">
+            <span className="inline-block w-6 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {c.how_eyebrow}
           </p>
           <h2 className="font-display font-extrabold text-white m-0 mb-12" style={{ ...h2Style, maxWidth: '18ch' }}>{c.how_h2}</h2>
@@ -259,13 +259,13 @@ export default async function GoogleAdsUitbestedenPage({ params }: Props) {
             <div className="grid grid-cols-[0.7fr_1fr_1fr] border-b border-border">
               <div className="p-3 sm:p-4" aria-hidden="true" />
               <div className="p-3 sm:p-4 font-display font-bold uppercase tracking-wide text-muted" style={{ fontSize: '12px' }}>{c.before_label}</div>
-              <div className="p-3 sm:p-4 font-display font-bold uppercase tracking-wide text-accent" style={{ fontSize: '12px', backgroundColor: 'rgba(93,163,255,0.06)' }}>{c.after_label}</div>
+              <div className="p-3 sm:p-4 font-display font-bold uppercase tracking-wide text-accent" style={{ fontSize: '12px', backgroundColor: 'rgba(61,142,255,0.06)' }}>{c.after_label}</div>
             </div>
             {c.rows.map((row, i, arr) => (
               <div key={row.t} className={`grid grid-cols-[0.7fr_1fr_1fr] ${i < arr.length - 1 ? 'border-b border-border' : ''}`}>
                 <div className="p-3 sm:p-4 font-display font-semibold text-primary" style={{ fontSize: '14px' }}>{row.t}</div>
                 <div className="p-3 sm:p-4 text-muted leading-[1.5]" style={{ fontSize: '13.5px' }}>{row.before}</div>
-                <div className="p-3 sm:p-4 text-primary leading-[1.5]" style={{ fontSize: '13.5px', backgroundColor: 'rgba(93,163,255,0.06)' }}>{row.after}</div>
+                <div className="p-3 sm:p-4 text-primary leading-[1.5]" style={{ fontSize: '13.5px', backgroundColor: 'rgba(61,142,255,0.06)' }}>{row.after}</div>
               </div>
             ))}
           </div>
@@ -308,7 +308,7 @@ export default async function GoogleAdsUitbestedenPage({ params }: Props) {
           </h2>
           <div className="flex flex-col items-start lg:items-end gap-5">
             <p className="text-white/55 leading-[1.6] m-0 lg:text-right" style={{ fontSize: '15px', maxWidth: '380px' }}>{c.closing_body}</p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#5DA3FF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#7BB8FF] transition-colors">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#3D8EFF] transition-colors">
               {c.cta}
             </Link>
           </div>

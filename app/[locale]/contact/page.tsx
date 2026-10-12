@@ -4,6 +4,7 @@ import { FileText, CalendarClock, Unlock, Check } from 'lucide-react'
 import { localizedMetadata } from '@/lib/seo'
 import Section from '@/components/Section'
 import ContactForm from '@/components/ContactForm'
+import RethinkContact from '@/components/rethink/RethinkContact'
 
 // Herschreven 13 sep 2026 (W-078). Was "Plan een gesprek" met een lijst over
 // agents, systemen koppelen en sparren over AI. Dat sprak de rest van de site
@@ -23,14 +24,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return localizedMetadata({
     path: '/contact',
     locale,
-    title: locale === 'en' ? 'Request the diagnosis · Stevin' : 'Vraag de diagnose aan · Stevin',
-    description: t('desc'),
+    // W-535 (Koen, 12 okt): NL is een gewone contactpagina, geen diagnose meer.
+    title: locale === 'en' ? 'Request the diagnosis · Stevin' : 'Contact · Stevin.AI',
+    description:
+      locale === 'en'
+        ? t('desc')
+        : 'Plan een kennismaking van een half uur, of stel je vraag. We reageren binnen een werkdag.',
   })
 }
 
 export default async function ContactPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
+  if (locale !== 'en') return <RethinkContact />
   const t = await getTranslations('contact')
 
   const feiten = [

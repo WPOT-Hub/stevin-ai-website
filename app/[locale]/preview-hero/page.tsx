@@ -124,9 +124,9 @@ export default async function PreviewHero({ params }: Props) {
           <div>
             <p
               className="stv-tekst font-display font-bold m-0 mb-6 flex items-center gap-[14px]"
-              style={{ fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#5DA3FF', animationDelay: '0.05s' }}
+              style={{ fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#3D8EFF', animationDelay: '0.05s' }}
             >
-              <span className="inline-block w-6 h-px flex-shrink-0" style={{ background: '#5DA3FF', opacity: 0.6 }} aria-hidden="true" />
+              <span className="inline-block w-6 h-px flex-shrink-0" style={{ background: '#3D8EFF', opacity: 0.6 }} aria-hidden="true" />
               {COPY.eyebrow}
             </p>
 
@@ -136,7 +136,7 @@ export default async function PreviewHero({ params }: Props) {
             >
               {COPY.h1a}
               <br />
-              <span style={{ color: '#5DA3FF' }}>{COPY.h1b}</span>
+              <span style={{ color: '#3D8EFF' }}>{COPY.h1b}</span>
             </h1>
 
             <p
@@ -204,9 +204,9 @@ export default async function PreviewHero({ params }: Props) {
             >
               <p
                 className="stv-tekst flex items-center gap-2.5 m-0"
-                style={{ fontSize: '11px', letterSpacing: '0.09em', textTransform: 'uppercase', color: '#5DA3FF', animationDelay: '0.5s' }}
+                style={{ fontSize: '11px', letterSpacing: '0.09em', textTransform: 'uppercase', color: '#3D8EFF', animationDelay: '0.5s' }}
               >
-                <span className="stv-puls inline-block rounded-full" style={{ width: '7px', height: '7px', background: '#5DA3FF' }} aria-hidden="true" />
+                <span className="stv-puls inline-block rounded-full" style={{ width: '7px', height: '7px', background: '#3D8EFF' }} aria-hidden="true" />
                 {COPY.live}
               </p>
 

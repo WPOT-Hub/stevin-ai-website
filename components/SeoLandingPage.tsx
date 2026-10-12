@@ -29,8 +29,8 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
       {/* Hero */}
       <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {page.eyebrow}
           </p>
           <h1
@@ -38,7 +38,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
             style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '20ch' }}
           >
             {page.h1}<br />
-            <span className="text-[#5DA3FF]">{page.h1Accent}</span>
+            <span className="text-[#3D8EFF]">{page.h1Accent}</span>
           </h1>
           <p className="text-white/60 leading-[1.55]" style={{ fontSize: '20px', maxWidth: '640px', marginTop: '32px' }}>
             {page.sub}
@@ -46,7 +46,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link
               href={page.ctaPrimary.href}
-              className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#5DA3FF] text-primary rounded-xl hover:bg-[#7BB8FF] transition-colors"
+              className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#3D8EFF] text-primary rounded-xl hover:bg-[#3D8EFF] transition-colors"
             >
               {page.ctaPrimary.label}
             </Link>
@@ -68,8 +68,8 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
       {/* Probleem */}
       <section className="bg-white" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {page.pain.eyebrow}
           </p>
           <h2
@@ -92,8 +92,8 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
       {/* Oplossing / werkwijze */}
       <section className="bg-surface" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {page.solution.eyebrow}
           </p>
           <h2
@@ -152,8 +152,8 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
         <div className="mx-auto max-w-[1200px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <div>
-              <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
-                <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+              <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-7 flex items-center gap-[14px]">
+                <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
                 {page.list.eyebrow}
               </p>
               <h2
@@ -165,7 +165,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
               <ul className="space-y-0 border-t border-white/10">
                 {page.list.items.map((item) => (
                   <li key={item} className="flex items-start gap-4 py-5 border-b border-white/10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#5DA3FF] flex-shrink-0 mt-[9px]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3D8EFF] flex-shrink-0 mt-[9px]" />
                     <span className="text-[15px] text-white/70 leading-[1.6]">{item}</span>
                   </li>
                 ))}
@@ -186,7 +186,7 @@ export default function SeoLandingPage({ page }: { page: SeoLandingPageContent }
               </p>
               <Link
                 href="/contact"
-                className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#5DA3FF] text-primary rounded-xl hover:bg-[#7BB8FF] transition-colors"
+                className="inline-flex px-8 py-3.5 text-sm font-semibold bg-[#3D8EFF] text-primary rounded-xl hover:bg-[#3D8EFF] transition-colors"
               >
                 {page.ctaSlot.btn}
               </Link>

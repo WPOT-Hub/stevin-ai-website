@@ -24,8 +24,8 @@ export default async function WaitlistPage({ params }: Props) {
       {/* HERO */}
       <section className="bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 80px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
-            <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+            <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
             {t('hero_eyebrow')}
           </p>
 
@@ -34,7 +34,7 @@ export default async function WaitlistPage({ params }: Props) {
             style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '16ch' }}
           >
             {t('hero_h1')}{' '}
-            <span className="text-[#5DA3FF]">{t('hero_h1_accent')}</span>
+            <span className="text-[#3D8EFF]">{t('hero_h1_accent')}</span>
           </h1>
 
           <p

@@ -232,9 +232,9 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 }
 
 const eyebrowLight = 'text-accent text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]'
-const eyebrowDark = 'text-[#5DA3FF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]'
+const eyebrowDark = 'text-[#3D8EFF] text-[12px] font-display font-bold tracking-[0.12em] uppercase mb-4 flex items-center gap-[14px]'
 const dashLight = <span className="inline-block w-6 h-px bg-accent opacity-60 flex-shrink-0" aria-hidden="true" />
-const dashDark = <span className="inline-block w-6 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+const dashDark = <span className="inline-block w-6 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
 // Ladder-waarden, zie docs/TYPOGRAFIE.md.
 const h2Style = { fontSize: 'clamp(30px, 3.4vw, 48px)', letterSpacing: '-0.03em', lineHeight: '1.08', fontWeight: 800 } as const
 
@@ -310,7 +310,7 @@ async function HomePage({ params }: Props) {
           <div className="flex flex-wrap gap-4 mt-10">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-[#5DA3FF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#7BB8FF] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#3D8EFF] transition-colors"
             >
               {c.cta_primary}
             </Link>
@@ -504,8 +504,8 @@ async function HomePage({ params }: Props) {
       {/* ── SLOT ── */}
       <section className="bg-primary" style={{ padding: '112px 24px 128px' }}>
         <div className="mx-auto max-w-[1200px]">
-          <p className="text-[#5DA3FF] text-[14px] font-display font-bold tracking-[0.14em] uppercase mb-7 flex items-center gap-[14px]">
-            <span className="inline-block w-6 h-px bg-[#5DA3FF] flex-shrink-0" aria-hidden="true" />
+          <p className="text-[#3D8EFF] text-[14px] font-display font-bold tracking-[0.14em] uppercase mb-7 flex items-center gap-[14px]">
+            <span className="inline-block w-6 h-px bg-[#3D8EFF] flex-shrink-0" aria-hidden="true" />
             {c.slot_eyebrow}
           </p>
           <div className="flex items-end justify-between gap-12 flex-col lg:flex-row">
@@ -521,7 +521,7 @@ async function HomePage({ params }: Props) {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#5DA3FF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#7BB8FF] transition-colors"
+                className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#3D8EFF] transition-colors"
               >
                 {c.cta_primary}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -530,7 +530,7 @@ async function HomePage({ params }: Props) {
               </Link>
               <p className="text-white/50 text-[14px] m-0">
                 {c.slot_tweede_vraag}{' '}
-                <Link href="/kennismaking" className="text-[#5DA3FF] font-display font-semibold hover:text-[#7BB8FF] transition-colors">
+                <Link href="/kennismaking" className="text-[#3D8EFF] font-display font-semibold hover:text-[#3D8EFF] transition-colors">
                   {c.slot_tweede_link}
                 </Link>
               </p>

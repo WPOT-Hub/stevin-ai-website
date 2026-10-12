@@ -25,6 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: comparison.title,
     description: metaOmschrijving(comparison.dek),
+    // W-535, Koen 12 okt: "ik vind de vergelijking nog niet goed genoeg".
+    // Offline voor zoekmachines tot hij herschreven is (oude prijzen en de
+    // diagnose); ook uit de sitemap en de footer.
+    robots: { index: false, follow: true },
     alternates: { canonical },
     openGraph: {
       type: 'article',

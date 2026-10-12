@@ -790,11 +790,11 @@ export default function KennismakingVenster() {
       <Turnstile onToken={zetToken} onMislukt={markeerMislukt} widgetRef={widgetId} actiefRef={widgetActief} />
       {wachtRegel}
       {foutRegel}
-      {/* Logoblauw met donkere tekst (Koen 12 okt: een blauw, dat van het logo); navy op #3D8EFF haalt AA. */}
+      {/* Logoblauw met witte tekst (Koen 12 okt: een blauw, dat van het logo, en overal wit op de knoppen). */}
       <button
         type="submit"
         disabled={bezig}
-        className="rounded-xl bg-accent px-5 py-3.5 font-display text-[15.5px] font-bold text-primary transition-[filter] hover:brightness-110 disabled:opacity-60"
+        className="rounded-xl bg-accent px-5 py-3.5 font-display text-[15.5px] font-bold text-white transition-[filter] hover:brightness-110 disabled:opacity-60"
       >
         {bezig ? 'Even geduld...' : modus === 'gegevens' ? 'Verstuur' : voorbeeld ? 'Vraag dit moment aan' : 'Bevestig de afspraak'}
       </button>
@@ -974,7 +974,7 @@ export default function KennismakingVenster() {
                                       type="button"
                                       data-slot={s.start}
                                       onClick={() => kies(s)}
-                                      className="rounded-lg border-2 border-accent py-2 text-[13.5px] font-semibold tabular-nums text-primary transition-colors hover:bg-accent hover:text-primary"
+                                      className="rounded-lg border-2 border-accent py-2 text-[13.5px] font-semibold tabular-nums text-primary transition-colors hover:bg-accent hover:text-white"
                                     >
                                       {fmtTijd(s.start)} tot {fmtTijd(s.end)}
                                     </button>
@@ -1035,7 +1035,7 @@ export default function KennismakingVenster() {
                             type="button"
                             data-slot={s.start}
                             onClick={() => kies(s)}
-                            className="rounded-xl border-2 border-accent py-3 text-[16px] font-semibold tabular-nums text-primary active:bg-accent active:text-primary"
+                            className="rounded-xl border-2 border-accent py-3 text-[16px] font-semibold tabular-nums text-primary active:bg-accent active:text-white"
                           >
                             {fmtTijd(s.start)} tot {fmtTijd(s.end)}
                           </button>

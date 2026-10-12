@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next'
 import { articles } from '@/data/articles'
-import { comparisons } from '@/data/comparisons'
 import { isPublishableArticle } from './[locale]/blog/[slug]/page'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -42,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/marketing-intelligence',
     '/integraties',
     '/blog',
-    ...comparisons.map((c) => `/vergelijken/${c.slug}`),
+    // Vergelijkingen staan op noindex tot ze herschreven zijn (W-535, 12 okt).
   ]
 
   const priorityFor = (path: string) => {

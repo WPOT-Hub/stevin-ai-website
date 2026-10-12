@@ -132,9 +132,9 @@ export default function Header() {
               href={ctaHref}
               data-cta={isNieuweHome ? 'header_kennismaking' : undefined}
               data-open-kennismaking={isNieuweHome ? '' : undefined}
-              // Een blauw, dat van het logo (#3D8EFF), met donkere tekst: dat
-              // haalt AA, wit op dit blauw niet (Koen, 12 okt).
-              className={`hidden flex-none items-center whitespace-nowrap rounded-lg px-4 py-2 text-[13px] font-semibold shadow-sm shadow-accent/20 transition-all duration-200 ${isNieuweHome ? 'bg-accent text-primary hover:brightness-110 lg:inline-flex' : 'bg-accent text-white hover:bg-accent-dark 2xl:inline-flex'}`}
+              // Een blauw, dat van het logo (#3D8EFF), met witte tekst (Koen,
+              // 12 okt: overal wit, ook al haalt wit op dit blauw 3,2:1).
+              className={`hidden flex-none items-center whitespace-nowrap rounded-lg px-4 py-2 text-[13px] font-semibold shadow-sm shadow-accent/20 transition-all duration-200 ${isNieuweHome ? 'bg-accent text-white hover:brightness-110 lg:inline-flex' : 'bg-accent text-white hover:bg-accent-dark 2xl:inline-flex'}`}
             >
               {ctaLabel}
             </Link>
@@ -150,7 +150,7 @@ export default function Header() {
                 href="/kennismaking"
                 data-cta="header_kennismaking_mobiel"
                 data-open-kennismaking=""
-                className="whitespace-nowrap rounded-lg bg-accent px-3.5 py-2 text-[13px] font-semibold text-primary transition-[filter] hover:brightness-110"
+                className="whitespace-nowrap rounded-lg bg-accent px-3.5 py-2 text-[13px] font-semibold text-white transition-[filter] hover:brightness-110"
               >
                 Kennismaken
               </Link>
@@ -211,7 +211,7 @@ export default function Header() {
                 href={ctaHref}
                 data-cta={isNieuweHome ? 'menu_kennismaking' : undefined}
                 data-open-kennismaking={isNieuweHome ? '' : undefined}
-                className={`block w-full text-center px-5 py-3.5 text-sm font-semibold rounded-xl transition-colors ${isNieuweHome ? 'bg-accent text-primary hover:brightness-110' : 'bg-accent text-white hover:bg-accent-dark'}`}
+                className={`block w-full text-center px-5 py-3.5 text-sm font-semibold rounded-xl transition-colors ${isNieuweHome ? 'bg-accent text-white hover:brightness-110' : 'bg-accent text-white hover:bg-accent-dark'}`}
                 onClick={() => setMobileOpen(false)}
               >
                 {ctaLabel}

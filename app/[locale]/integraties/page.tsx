@@ -77,7 +77,7 @@ export default async function IntegratiesPage({ params }: Props) {
               {t('hero_sub')}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#lagen" className="inline-flex min-h-12 items-center justify-center rounded-[10px] bg-[#3C8EFF] px-5 text-sm font-extrabold text-white transition-colors hover:bg-[#2B7AEE]">
+              <a href="#lagen" className="inline-flex min-h-12 items-center justify-center rounded-[10px] bg-[#3C8EFF] px-5 text-sm font-extrabold text-white transition-colors hover:bg-[#3D8EFF]">
                 {t('hero_cta_layers')}
               </a>
               <a href="#koppelingen" className="inline-flex min-h-12 items-center justify-center rounded-[10px] border border-white/20 px-5 text-sm font-extrabold text-white transition-colors hover:bg-white/5">
@@ -96,7 +96,7 @@ export default async function IntegratiesPage({ params }: Props) {
                 <span className="relative h-0.5 bg-white/15">
                   <span className="absolute -inset-y-1 left-0 rounded-full bg-white" style={{ width }} />
                 </span>
-                <span className="text-xs font-extrabold text-[#5DA3FF]">{label}</span>
+                <span className="text-xs font-extrabold text-[#3D8EFF]">{label}</span>
               </div>
             ))}
           </div>
@@ -197,7 +197,7 @@ export default async function IntegratiesPage({ params }: Props) {
           </div>
           <Link
             href="/contact"
-            className="inline-flex min-h-12 items-center justify-center rounded-[10px] bg-[#3C8EFF] px-5 text-sm font-extrabold text-white transition-colors hover:bg-[#2B7AEE]"
+            className="inline-flex min-h-12 items-center justify-center rounded-[10px] bg-[#3C8EFF] px-5 text-sm font-extrabold text-white transition-colors hover:bg-[#3D8EFF]"
           >
             {t('missing_cta')}
           </Link>

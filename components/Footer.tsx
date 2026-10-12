@@ -65,7 +65,6 @@ export default function Footer() {
       { label: 'Tarieven', href: '/tarieven' },
       { label: t('journal'), href: '/blog' },
       { label: t('bedrijf_integraties'), href: '/integraties' },
-      { label: 'Aizy vs Stevin.AI', href: '/vergelijken/aizy-vs-stevin' },
       { label: t('bedrijf_simon'), href: '/simon-stevin' },
       { label: t('bedrijf_contact'), href: '/contact' },
       { label: 'Plan een kennismaking', href: '/kennismaking', cta: 'footer_kennismaking' },

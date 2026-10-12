@@ -171,7 +171,7 @@ export default function RethinkTarieven() {
             href="/kennismaking"
             data-cta="tarieven_pakketten"
             data-open-kennismaking=""
-            className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110"
+            className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-110"
           >
             Plan een kennismaking
           </Link>
@@ -249,7 +249,7 @@ export default function RethinkTarieven() {
               href="/kennismaking"
               data-cta="kennismaking"
               data-open-kennismaking=""
-              className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110"
+              className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-110"
             >
               Plan een kennismaking
             </Link>

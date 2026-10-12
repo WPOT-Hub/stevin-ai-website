@@ -74,13 +74,16 @@ const LAGEN = [
 const UITVOERING = {
   kop: 'Jij beslist over je budget. Wij regelen de rest.',
   vaststelling: "Stel, het is een hittegolf en je budget voor airco is 's middags al op.",
+  // Koen, 12 okt 09:29: "we kijken of je uberhaupt meer werk aan kan, budget
+  // verlagen is natuurlijk ook een optie". Was: uitrekenen, ja, "we spreken
+  // af wie de telefoon opneemt", na een week aanvragen tellen.
   stappen: [
-    'We rekenen uit of meer budget loont.',
-    'Pas als jij ja zegt, gaat je budget omhoog.',
-    'We spreken af wie de telefoon opneemt.',
-    'Na een week laten we zien hoeveel aanvragen erbij kwamen.',
+    'We kijken eerst of je meer werk aankunt.',
+    'We rekenen uit of meer budget loont. Soms is minder slimmer.',
+    'Pas als jij ja zegt, passen we je budget aan.',
+    'Na een week laten we zien wat het opleverde.',
   ],
-  doel: 'Meer aanvragen, zonder dat ze duurder worden.',
+  doel: 'Zoveel aanvragen als je aankunt, zonder dat ze duurder worden.',
   naschrift: 'We verdienen niets aan je advertentiebudget.',
 }
 
@@ -199,7 +202,7 @@ export default function RethinkHome() {
                 }
               />
               {/* Onder het paneel een zin en dezelfde knop als in de hero, in
-                  de hoofdstijl (logoblauw met donkere tekst, haalt AA). Google en
+                  de hoofdstijl (logoblauw met witte tekst). Google en
                   Meta staan hier ook voor wie de demo niet invult (Koen, 11 okt
                   09:27: "tuurlijk doen we dat straks wel"). */}
               <div className="mx-auto mt-8 flex max-w-[640px] flex-col items-center gap-5 text-center">
@@ -210,7 +213,7 @@ export default function RethinkHome() {
                   href="/kennismaking"
                   data-cta="demo_kennismaking"
                   data-open-kennismaking=""
-                  className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110"
+                  className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-110"
                 >
                   Plan een kennismaking
                 </Link>
@@ -306,7 +309,7 @@ export default function RethinkHome() {
                 href="/kennismaking"
                 data-cta="kennismaking"
                 data-open-kennismaking=""
-                className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110"
+                className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-110"
               >
                 Plan een kennismaking
               </Link>
@@ -352,7 +355,7 @@ function HeroKnoppen() {
         href="/kennismaking"
         data-cta="hero_kennismaking"
         data-open-kennismaking=""
-        className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-6 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110 sm:w-auto"
+        className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-6 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-110 sm:w-auto"
       >
         Plan een kennismaking
       </Link>

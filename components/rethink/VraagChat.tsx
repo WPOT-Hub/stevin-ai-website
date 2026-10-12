@@ -402,7 +402,7 @@ export default function VraagChat({ kop }: { kop?: React.ReactNode }) {
               type="button"
               onClick={vraag}
               disabled={speelt}
-              className="inline-flex items-center gap-1.5 rounded-md bg-accent px-3 py-1.5 text-[12px] font-medium text-primary transition-opacity disabled:opacity-60"
+              className="inline-flex items-center gap-1.5 rounded-md bg-accent px-3 py-1.5 text-[12px] font-medium text-white transition-opacity disabled:opacity-60"
             >
               {/* Op een telefoon alleen Vraag, zonder het Enter-teken: anders
                   viel de getypte vraag op 360 weg achter puntjes. */}
@@ -477,7 +477,7 @@ export default function VraagChat({ kop }: { kop?: React.ReactNode }) {
                             type="button"
                             onClick={() => kies(a.id, w)}
                             aria-pressed={u === w}
-                            className={`px-3 py-1 font-medium transition-colors duration-300 ${u === w ? 'bg-accent text-primary' : 'text-[#1f2933] hover:bg-[#f7f8fa]'}`}
+                            className={`px-3 py-1 font-medium transition-colors duration-300 ${u === w ? 'bg-accent text-white' : 'text-[#1f2933] hover:bg-[#f7f8fa]'}`}
                             style={{ borderLeft: i ? `1px solid ${RAND}` : undefined }}
                           >
                             {l}

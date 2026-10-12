@@ -119,8 +119,8 @@ export default function HeroHeadline({ locale }: { locale: string }) {
   return (
     <>
       {c.eyebrow && (
-        <p className="text-[#5DA3FF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
-          <span className="inline-block w-7 h-px bg-[#5DA3FF] opacity-60 flex-shrink-0" aria-hidden="true" />
+        <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
+          <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
           {c.eyebrow}
         </p>
       )}
@@ -128,7 +128,7 @@ export default function HeroHeadline({ locale }: { locale: string }) {
         className="font-display font-bold text-white leading-[1.05] tracking-[-0.035em]"
         style={{ fontWeight: 700, fontSize: 'clamp(40px, 4.6vw, 64px)', maxWidth: '18ch' }}
       >
-        {c.line} <span className="text-[#5DA3FF]">{c.accent}</span>
+        {c.line} <span className="text-[#3D8EFF]">{c.accent}</span>
       </h1>
 
       {showSwitch && (

@@ -29,8 +29,8 @@ export function Knop({ cta, licht = false }: { cta: string; licht?: boolean }) {
       data-open-kennismaking=""
       className={
         licht
-          ? 'inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110'
-          : 'inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110'
+          ? 'inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-110'
+          : 'inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-110'
       }
     >
       Plan een kennismaking

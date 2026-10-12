@@ -634,7 +634,7 @@ const allArticles: Article[] = [
     edition: '433',
     category: 'Markt',
     title: "De onzichtbare crisis van Black Friday 2026",
-    dek: "Automatisering slokt marges op, concurrentie wordt een algoritmisch gevecht en consumenten betalen de prijs – wie wint deze Black Friday?",
+    dek: "Automatisering slokt marges op, concurrentie wordt een algoritmisch gevecht en consumenten betalen de prijs. Wie wint deze Black Friday?",
     publishedAt: '2026-08-25',
     readMinutes: 3,
     author: { name: 'Stevin Journal', role: 'Redactie' },
