@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Pause, Play } from 'lucide-react'
 import StevinUniversum, { HERINNERINGEN } from './StevinUniversum'
 import { ADVISOR, BREIN, BRONNEN, METINGEN, type BronId } from './netwerk'
+import { pushDataLayerEvent } from '@/lib/datalayer'
 
 /**
  * Hero van richting C: het 3D-brein vult het scherm, de tekst staat ervoor.
@@ -62,9 +63,8 @@ function breinNaastTekst(W: number, H: number, rand: number) {
 }
 
 function push(event: string, data: Record<string, unknown>) {
-  const w = window as unknown as { dataLayer?: Record<string, unknown>[] }
-  w.dataLayer = w.dataLayer ?? []
-  w.dataLayer.push({ event, ...data, page_path: window.location.pathname })
+  // Via de helper, zodat de parameters niet meegaan met latere events (W-346).
+  pushDataLayerEvent(event, { ...data, page_path: window.location.pathname })
 }
 
 // Na "Wat we doen:" gaat de zin verder met een kleine letter, behalve als hij

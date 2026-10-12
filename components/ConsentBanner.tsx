@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { getStoredConsent, storeConsent, updateGoogleConsent, hasAnalyticsConsent, type ConsentChoice } from '@/lib/consent'
+import { pushDataLayerEvent } from '@/lib/datalayer'
 
 function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
   return (
@@ -78,8 +79,20 @@ export default function ConsentBanner() {
 
   function handleChoice(choice: ConsentChoice) {
     if (!choice) return
+    const hadAnalytics = hasAnalyticsConsent(getStoredConsent())
     storeConsent(choice)
     updateGoogleConsent(choice)
+    // W-346 (12 okt 2026): de Google-tag in GTM vuurt pas met analytics_storage
+    // (zoals bij Parrhesia). Bij een opgeslagen keuze gebeurt dat al bij het
+    // laden; bij een nieuw akkoord in de banner op dit event. Dan is de eerste
+    // hit van de sessie een gewone page_view met de vlaggen voor session_start
+    // en first_visit. Voorheen ging die eerste page_view anoniem (G100) weg en
+    // droeg geen enkele hit na het akkoord die vlaggen: op 11 okt 30 sessies,
+    // 10 session_start en 2 first_visit. Alleen bij een overgang van geen naar
+    // wel analytics, anders vuurt de Google-tag twee keer op dezelfde pagina.
+    if (hasAnalyticsConsent(choice) && !hadAnalytics) {
+      pushDataLayerEvent('toestemming_keuze')
+    }
     // W-346 (9 okt 2026): de paginaweergave van deze pagina ging voor de keuze
     // als anoniem signaal weg. Zonder deze regel begint GA4 na het akkoord een
     // sessie zonder paginaweergave (landingspagina "(not set)"): 9 van 45
@@ -91,6 +104,9 @@ export default function ConsentBanner() {
     // Via de dataLayer en niet via gtag('event'): de Google-tag in GTM negeert
     // een losse gtag-aanroep (gemeten op stevin.ai, 9 okt). GTM-tag "GA4 Event -
     // page_view na akkoord" (webcontainer v11) stuurt hem als page_view.
+    // Na de GTM-werkruimte "W-346 sessiestart na akkoord" gaat er voor de keuze
+    // geen anonieme page_view meer weg, dus is deze voorwaarde dan altijd onwaar.
+    // Blijft staan zolang de oude containerversie nog geserveerd kan worden.
     if (hasAnalyticsConsent(choice) && paginaweergaveAlAnoniemVerstuurd()) {
       window.dataLayer = window.dataLayer || []
       window.dataLayer.push({ event: 'pageview_na_akkoord' })

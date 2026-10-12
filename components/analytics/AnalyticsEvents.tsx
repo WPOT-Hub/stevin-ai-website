@@ -11,10 +11,13 @@
  *   3. Outbound contact-clicks (mailto:, tel:, plan-een-gesprek)
  *
  * Consent: events gaan via de dataLayer en GTM past consent mode v2 toe.
- * Zonder toestemming verstuurt de Google-tag in de geavanceerde consent mode
- * wel iets, namelijk een cookieloze ping (gcs G100; gemeten bij W-346). Een
- * event dat aan een GA4-tag hangt zonder consentSettings 'needed' met
- * analytics_storage, gaat dus ook voor de cookiekeuze weg.
+ * Tot 12 okt 2026 (W-346) verstuurde de Google-tag zonder toestemming een
+ * cookieloze ping (gcs G100). Vanaf de GTM-werkruimte "W-346 sessiestart na
+ * akkoord" vuren de Google-tag en de GA4-eventtags pas met analytics_storage;
+ * events van voor de cookiekeuze gaan dan nergens heen.
+ *
+ * Parameters: altijd via pushDataLayerEvent (lib/datalayer.ts), anders gaan
+ * ze mee met elk later event.
  *
  * Mount in root layout, niet per-page (dan loopt scroll-state niet door).
  */
@@ -22,6 +25,7 @@
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { deriveEntryChannel, getPageType, rememberInteraction, updateLeadContextPage } from '@/lib/tracking'
+import { pushDataLayerEvent } from '@/lib/datalayer'
 
 declare global {
   interface Window {
@@ -77,10 +81,8 @@ export function AnalyticsEvents() {
     // Reset scroll-state bij pathname-change
     const reachedThresholds = new Set<number>()
 
-    const pushEvent = (event: string, params: Record<string, unknown>) => {
-      window.dataLayer = window.dataLayer || []
-      window.dataLayer.push({ event, ...params })
-    }
+    // Via de helper, zodat de parameters niet meegaan met latere events (W-346).
+    const pushEvent = pushDataLayerEvent
 
     // ── Scroll depth tracking ────────────────────────────────
     const onScroll = () => {

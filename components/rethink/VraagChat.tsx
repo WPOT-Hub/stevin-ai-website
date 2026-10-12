@@ -2,6 +2,7 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { CornerDownLeft, Search } from 'lucide-react'
+import { pushDataLayerEvent } from '@/lib/datalayer'
 
 /**
  * De vraagdemo in de stijl van de Desk (W-535, richting C).
@@ -88,9 +89,8 @@ const RAND = '#d6dde8'
 const SCHADUW = '0 20px 60px rgba(31, 41, 51, 0.06)'
 
 function push(event: string, data: Record<string, unknown> = {}) {
-  const w = window as unknown as { dataLayer?: Record<string, unknown>[] }
-  w.dataLayer = w.dataLayer ?? []
-  w.dataLayer.push({ event, ...data, page_path: window.location.pathname })
+  // Via de helper, zodat de parameters niet meegaan met latere events (W-346).
+  pushDataLayerEvent(event, { ...data, page_path: window.location.pathname })
 }
 
 function slotTekst(opdrachten: number, nogNiet: number) {

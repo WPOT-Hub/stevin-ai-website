@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from 'react'
 import { generateEventId, getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/tracking'
+import { pushDataLayerEvent } from '@/lib/datalayer'
 
 // Alle stevin.ai-formulieren lopen via het eigen Hub-endpoint zodat elke lead op
 // een plek binnenkomt: Slack + Supabase + mail naar Koen + bevestiging aan de
@@ -146,9 +147,7 @@ export default function ContactForm({
           page_path: window.location.pathname,
           placement: 'contact_form',
         })
-        window.dataLayer = window.dataLayer || []
-        window.dataLayer.push({
-          event: 'form_start',
+        pushDataLayerEvent('form_start', {
           form: 'contact',
           page_path: window.location.pathname,
         })

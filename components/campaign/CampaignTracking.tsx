@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { pushConversionEvent } from '@/lib/tracking'
+import { pushDataLayerEvent } from '@/lib/datalayer'
 import {
   getCampaignCalNamespace,
   type CampaignDomain,
@@ -58,9 +59,7 @@ export function CampaignTracking({
 
     if (!window.stevinCampaignLandingViews.has(trackingKey)) {
       window.stevinCampaignLandingViews.add(trackingKey)
-      window.dataLayer = window.dataLayer ?? []
-      window.dataLayer.push({
-        event: 'campaign_landing_view',
+      pushDataLayerEvent('campaign_landing_view', {
         campaign_domain: domain,
         campaign_angle: angle,
         event_slug: eventSlug,
