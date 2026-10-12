@@ -1,11 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { articles } from '@/data/articles'
-import { categories } from '@/data/categories'
-import { integrations, isIndexableIntegration, isIndexableIntegrationCategory } from '@/data/integrations'
 import { comparisons } from '@/data/comparisons'
-import { glossary } from '@/data/glossary'
-import { alternatives } from '@/data/alternatives'
-import { seoLandingPages } from '@/data/seo-landing-pages'
 import { isPublishableArticle } from './[locale]/blog/[slug]/page'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -23,75 +18,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // naar zichzelf, dan hier; serveert /en Nederlandse tekst of canonicalt hij
   // naar NL, dan in nlOnlyPages. `npm run check:sitemap` toetst dat live.
 
+  // W-535 (12 okt 2026): gesnoeid van 723 naar ongeveer 45 URL's. Alleen wat
+  // blijft en indexeerbaar is staat hier; omleidingen (data/redirects.json) en
+  // weggehaalde pagina's (data/gone-urls.json) horen er nooit in. Proces- en
+  // campagnepagina's met noindex ook niet, net als de juridische pagina's.
+
   // Echt vertaald via messages/en.json, /en canonicalt naar zichzelf.
-  // Geverifieerd tegen productie op 26 juli 2026.
   const translatedPages = [
     '',
-    '/google-ads-uitbesteden',
-    '/social-media-uitbesteden',
-    '/voor-ondernemers',
-    '/voor-marketingteams',
-    '/controle',
-    '/mkb',
-    '/retail',
-    '/fmcg',
-    // Verticals nu geindexeerd (besluit 4 jul): eigen belofte + data-spine per sector
-    '/musea',
-    '/podia',
-    '/evenementen',
-    '/cultuur',
-    '/voor-dealers',
     '/platform',
-    '/diensten',
-    '/multi-market',
-    '/marketing-automation',
-    '/seo',
-    '/geo',
-    '/integraties',
-    // /case-studies staat sinds 13 sep (W-078) op noindex zolang hij leeg is, en
-    // hoort dan niet in de sitemap: de release-audit viel daar sinds 7 sep op.
+    '/tarieven',
     '/contact',
     '/simon-stevin',
-    // Tarieven. Stond tot 28 jul 2026 als voorbeeld op /preview-tarieven met
-    // noindex, en daarna als NL-only in de lijst hieronder omdat de Engelse
-    // copy nog niet apart was nagelopen. Sinds 17 aug 2026 heeft de pagina een
-    // eigen EN-kolom (geen vertaling maar copy), dus canonicalt /en/tarieven
-    // naar zichzelf en hoort hij hier.
-    '/tarieven',
   ]
 
-  // NL-only: /en serveert hier dezelfde Nederlandse tekst en canonicalt naar
-  // de NL-URL. Alleen de NL-entry, en ook geen en-hreflang.
+  // NL-only: canonical naar de NL-URL, geen /en-entry en geen en-hreflang.
+  // De drie uitbesteed-pagina's en /integraties hadden een Engelse versie; die
+  // geeft sinds W-535 een 410 (geen signaal, geen Engelse klant).
   const nlOnlyPages = [
+    '/google-ads-uitbesteden',
+    '/social-media-uitbesteden',
+    '/leadopvolging',
+    '/marketing-intelligence',
+    '/integraties',
     '/blog',
-    '/google-ad-grants-belgie',
-    '/google-ad-grants-nederland',
-    // Deze gaf even een 308 naar een niet-bestaande pagina, doordat de
-    // :locale-parameter in next.config.ts elk padstuk matchte. Dat is gefixt,
-    // de pagina bestaat gewoon.
-    // Productpagina's stonden hier tot 15 sep, maar /producten/* redirect sinds
-    // 4 sep (W-042) permanent naar /platform; een URL die 308 geeft hoort niet
-    // in de sitemap en liet de release-audit bij elke deploy omvallen.
-    // Categorie-hub pagina's, alleen de indexeerbare (zie NOINDEX_INTEGRATION_CATEGORIES)
-    ...categories.filter((c) => isIndexableIntegrationCategory(c.slug)).map((c) => `/integraties/${c.slug}`),
-    // Vendor-detail pagina's, alleen de indexeerbare (off-topic categorieen eruit)
-    ...integrations.filter(isIndexableIntegration).map((i) => `/integraties/${i.slug}`),
-    // Comparison pages (programmatic SEO playbook "X vs Y")
-    '/vergelijken',
     ...comparisons.map((c) => `/vergelijken/${c.slug}`),
-    // Alternatief-pages (programmatic SEO + GEO playbook "[tool] alternatief")
-    '/alternatief',
-    ...alternatives.map((a) => `/alternatief/${a.slug}`),
-    // Woordenboek (programmatic SEO playbook "wat is X")
-    '/woordenboek',
-    ...glossary.map((t) => `/woordenboek/${t.slug}`),
-    // /agency-scan en /audit weggelaten, hebben noindex
-    // /llms.txt weggelaten, is geen HTML-pagina
   ]
 
   const priorityFor = (path: string) => {
     if (path === '') return 1
-    if (path === '/google-ads-uitbesteden' || path === '/social-media-uitbesteden' || path === '/voor-ondernemers' || path === '/voor-marketingteams' || path === '/platform') return 0.9
+    if (path === '/google-ads-uitbesteden' || path === '/social-media-uitbesteden' || path === '/platform' || path === '/tarieven') return 0.9
     return 0.7
   }
 
@@ -118,7 +74,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Body-loze dispatches niet in de sitemap (thin content, Google-richtlijn).
   const blogEntries: MetadataRoute.Sitemap = articles.filter(isPublishableArticle).map((a) => ({
     url: `${baseUrl}/blog/${a.slug}`,
-    lastModified: a.publishedAt,
+    // W-535: een herschreven stuk meldt zijn bijwerkdatum, net als dateModified in de JSON-LD.
+    lastModified: a.updatedAt ?? a.publishedAt,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
     alternates: { languages: { 'nl-NL': `${baseUrl}/blog/${a.slug}`, 'x-default': `${baseUrl}/blog/${a.slug}` } },
@@ -146,15 +103,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: nlAlleen(path) },
   }))
 
-  // SEO-landingspagina's: NL-only content, canonical naar NL, dus geen /en-entry
-  // (zelfde regel als blogposts: geen duplicate-signaal, geen crawl-verspilling).
-  const landingEntries: MetadataRoute.Sitemap = seoLandingPages.map((p) => ({
-    url: `${baseUrl}/${p.slug}`,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-    alternates: { languages: { 'nl-NL': `${baseUrl}/${p.slug}`, 'x-default': `${baseUrl}/${p.slug}` } },
-  }))
-
   // Standalone EN outreach-editorial (bewust GEEN journal-item: het Journal is
   // NL-only). Alleen de /en-URL is canoniek en indexeerbaar; de prefix-loze
   // NL-variant canonicalt naar /en en hoort dus niet in de sitemap.
@@ -172,5 +120,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  return [...nlEntries, ...enEntries, ...nlOnlyEntries, ...landingEntries, ...blogEntries, ...standaloneEnEntries]
+  return [...nlEntries, ...enEntries, ...nlOnlyEntries, ...blogEntries, ...standaloneEnEntries]
 }
