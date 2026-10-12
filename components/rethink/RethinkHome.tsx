@@ -199,7 +199,7 @@ export default function RethinkHome() {
                 }
               />
               {/* Onder het paneel een zin en dezelfde knop als in de hero, in
-                  de hoofdstijl (accent-diep: wit haalt daarop AA). Google en
+                  de hoofdstijl (logoblauw met donkere tekst, haalt AA). Google en
                   Meta staan hier ook voor wie de demo niet invult (Koen, 11 okt
                   09:27: "tuurlijk doen we dat straks wel"). */}
               <div className="mx-auto mt-8 flex max-w-[640px] flex-col items-center gap-5 text-center">
@@ -210,7 +210,7 @@ export default function RethinkHome() {
                   href="/kennismaking"
                   data-cta="demo_kennismaking"
                   data-open-kennismaking=""
-                  className="inline-flex items-center rounded-lg bg-accent-diep px-7 py-3.5 font-display text-[15px] font-bold text-white transition-colors hover:bg-accent-dieper"
+                  className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110"
                 >
                   Plan een kennismaking
                 </Link>
@@ -306,7 +306,7 @@ export default function RethinkHome() {
                 href="/kennismaking"
                 data-cta="kennismaking"
                 data-open-kennismaking=""
-                className="inline-flex items-center rounded-lg bg-accent-light px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-colors hover:bg-[#7BB8FF]"
+                className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110"
               >
                 Plan een kennismaking
               </Link>
@@ -352,7 +352,7 @@ function HeroKnoppen() {
         href="/kennismaking"
         data-cta="hero_kennismaking"
         data-open-kennismaking=""
-        className="inline-flex w-full items-center justify-center rounded-lg bg-accent-light px-6 py-3.5 font-display text-[15px] font-bold text-primary transition-colors hover:bg-[#7BB8FF] sm:w-auto"
+        className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-6 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110 sm:w-auto"
       >
         Plan een kennismaking
       </Link>

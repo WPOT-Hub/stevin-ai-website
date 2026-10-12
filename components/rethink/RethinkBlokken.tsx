@@ -29,8 +29,8 @@ export function Knop({ cta, licht = false }: { cta: string; licht?: boolean }) {
       data-open-kennismaking=""
       className={
         licht
-          ? 'inline-flex items-center rounded-lg bg-accent-light px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-colors hover:bg-[#7BB8FF]'
-          : 'inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-colors hover:bg-accent-dark'
+          ? 'inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110'
+          : 'inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110'
       }
     >
       Plan een kennismaking
@@ -64,13 +64,13 @@ export function PaginaKop({
         start={brein === 'alles' ? undefined : brein}
         kop={
           <>
-            <p className="m-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent-light">{eyebrow}</p>
+            <p className="m-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent">{eyebrow}</p>
             <h1
               className="m-0 text-balance font-display font-extrabold text-white"
               style={{ ...h2Stijl, fontSize: 'clamp(34px, 4.4vw, 60px)' }}
             >
               {kop}
-              {accent ? <span className="text-accent-light"> {accent}</span> : null}
+              {accent ? <span className="text-accent"> {accent}</span> : null}
             </h1>
             <div className="mt-5 text-balance text-[18px] leading-[1.5] text-white/75">{lede}</div>
           </>

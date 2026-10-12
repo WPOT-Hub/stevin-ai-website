@@ -114,7 +114,7 @@ export default function RethinkPlatform() {
               <li key={k} className="flex items-center gap-2">
                 <span
                   className={`rounded-full border px-4 py-2 font-display text-[15px] font-bold ${
-                    i === KETEN.length - 1 ? 'border-accent bg-accent text-white' : 'border-border bg-surface text-primary'
+                    i === KETEN.length - 1 ? 'border-accent bg-accent text-primary' : 'border-border bg-surface text-primary'
                   }`}
                 >
                   {k}
@@ -137,7 +137,7 @@ export default function RethinkPlatform() {
         <ol className="m-0 mt-10 grid list-none gap-x-10 gap-y-8 p-0 sm:grid-cols-2 lg:grid-cols-3">
           {LADDER.map((s, i) => (
             <li key={s.t} className="border-t border-white/12 pt-5">
-              <p className="m-0 font-display text-[13px] font-bold text-accent-light">{String(i + 1).padStart(2, '0')}</p>
+              <p className="m-0 font-display text-[13px] font-bold text-accent">{String(i + 1).padStart(2, '0')}</p>
               <h3 className="m-0 mt-2 font-display text-[18px] font-bold text-white">{s.t}</h3>
               <p className="m-0 mt-2.5 text-[16px] leading-[1.55] text-white/70">{s.d}</p>
             </li>

@@ -135,7 +135,7 @@ export default function RethinkTarieven() {
                   donker ? 'bg-primary text-white' : 'border border-border bg-white text-primary'
                 }`}
               >
-                <p className={`m-0 font-display text-[12px] font-bold uppercase tracking-[0.12em] ${donker ? 'text-accent-light' : 'text-accent'}`}>
+                <p className={`m-0 font-display text-[12px] font-bold uppercase tracking-[0.12em] ${donker ? 'text-accent' : 'text-accent'}`}>
                   {p.label}
                 </p>
                 <h2
@@ -155,7 +155,7 @@ export default function RethinkTarieven() {
                   {p.punten.map((pt) => (
                     <li key={pt} className={`flex gap-3 text-[16px] leading-[1.5] ${donker ? 'text-white/80' : 'text-[#2A3A54]'}`}>
                       <span
-                        className={`mt-[9px] inline-block h-1.5 w-1.5 shrink-0 rounded-full ${donker ? 'bg-accent-light' : 'bg-accent'}`}
+                        className={`mt-[9px] inline-block h-1.5 w-1.5 shrink-0 rounded-full ${donker ? 'bg-accent' : 'bg-accent'}`}
                         aria-hidden="true"
                       />
                       {pt}
@@ -171,7 +171,7 @@ export default function RethinkTarieven() {
             href="/kennismaking"
             data-cta="tarieven_pakketten"
             data-open-kennismaking=""
-            className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-colors hover:bg-accent-dark"
+            className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110"
           >
             Plan een kennismaking
           </Link>
@@ -249,7 +249,7 @@ export default function RethinkTarieven() {
               href="/kennismaking"
               data-cta="kennismaking"
               data-open-kennismaking=""
-              className="inline-flex items-center rounded-lg bg-accent-light px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-colors hover:bg-[#7BB8FF]"
+              className="inline-flex items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-primary transition-[filter] hover:brightness-110"
             >
               Plan een kennismaking
             </Link>

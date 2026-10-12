@@ -111,7 +111,7 @@ const LANGSTE_SLOT = slotTekst(1, 1)
 
 function Label({ children, accent = false }: { children: React.ReactNode; accent?: boolean }) {
   return (
-    <p className={`m-0 mb-2 text-[10.5px] font-semibold uppercase tracking-[2px] ${accent ? 'text-accent-diep' : 'text-[#6b7280]'}`}>
+    <p className={`m-0 mb-2 text-[10.5px] font-semibold uppercase tracking-[2px] ${accent ? 'text-primary' : 'text-[#6b7280]'}`}>
       {children}
     </p>
   )
@@ -391,7 +391,7 @@ export default function VraagChat({ kop }: { kop?: React.ReactNode }) {
 
           {/* Invoer zoals in de Desk */}
           <div className="flex items-center gap-2 rounded-[10px] border bg-[#f7f8fa] p-1.5" style={{ borderColor: RAND }}>
-            <span className="grid h-7 w-7 shrink-0 place-items-center rounded-md bg-[#3c8eff]/10 text-accent-diep">
+            <span className="grid h-7 w-7 shrink-0 place-items-center rounded-md bg-accent/10 text-accent">
               <Search size={15} aria-hidden="true" />
             </span>
             <span className="min-h-[22px] flex-1 truncate text-[14.5px] text-[#1f2933]">
@@ -402,7 +402,7 @@ export default function VraagChat({ kop }: { kop?: React.ReactNode }) {
               type="button"
               onClick={vraag}
               disabled={speelt}
-              className="inline-flex items-center gap-1.5 rounded-md bg-accent-diep px-3 py-1.5 text-[12px] font-medium text-white transition-opacity disabled:opacity-60"
+              className="inline-flex items-center gap-1.5 rounded-md bg-accent px-3 py-1.5 text-[12px] font-medium text-primary transition-opacity disabled:opacity-60"
             >
               {/* Op een telefoon alleen Vraag, zonder het Enter-teken: anders
                   viel de getypte vraag op 360 weg achter puntjes. */}
@@ -431,7 +431,7 @@ export default function VraagChat({ kop }: { kop?: React.ReactNode }) {
                   >
                     {/* De opdrachten in accent, zoals het antwoord in de hero. */}
                     <div
-                      className={`font-mono text-[19px] font-semibold tabular-nums leading-none ${i === WEEK.length - 1 ? 'text-accent-diep' : 'text-[#0a0a0a]'}`}
+                      className={`font-mono text-[19px] font-semibold tabular-nums leading-none ${i === WEEK.length - 1 ? 'text-accent font-bold' : 'text-[#0a0a0a]'}`}
                     >
                       {n}
                     </div>
@@ -477,7 +477,7 @@ export default function VraagChat({ kop }: { kop?: React.ReactNode }) {
                             type="button"
                             onClick={() => kies(a.id, w)}
                             aria-pressed={u === w}
-                            className={`px-3 py-1 font-medium transition-colors duration-300 ${u === w ? 'bg-accent-diep text-white' : 'text-[#1f2933] hover:bg-[#f7f8fa]'}`}
+                            className={`px-3 py-1 font-medium transition-colors duration-300 ${u === w ? 'bg-accent text-primary' : 'text-[#1f2933] hover:bg-[#f7f8fa]'}`}
                             style={{ borderLeft: i ? `1px solid ${RAND}` : undefined }}
                           >
                             {l}
