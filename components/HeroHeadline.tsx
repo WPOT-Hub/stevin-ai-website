@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { pushDataLayerEvent } from '@/lib/datalayer'
 
 /**
  * H1 met kop-varianten voor de homepage-test (doc 12/16, onderzoek jul 2026).
@@ -97,14 +98,14 @@ export default function HeroHeadline({ locale }: { locale: string }) {
       }
     }
     setVariant(resolved)
-    window.dataLayer?.push({ event: 'kop_variant', kop_variant: resolved })
+    pushDataLayerEvent('kop_variant', { kop_variant: resolved })
     // W-346 (29 sep 2026): dit event vuurt bij het laden, voor de cookiekeuze.
     // Zonder toestemming stuurt GA4 alleen een anoniem signaal, dus wist GA4
     // bij niemand welke kop hij zag. Na toestemming voor analytics nog een keer.
     const naToestemming = (e: Event) => {
       const state = (e as CustomEvent<{ state?: { analytics_storage?: string } }>).detail?.state
       if (state?.analytics_storage === 'granted') {
-        window.dataLayer?.push({ event: 'kop_variant', kop_variant: resolved })
+        pushDataLayerEvent('kop_variant', { kop_variant: resolved })
       }
     }
     window.addEventListener('stevin:consent-updated', naToestemming, { once: true })

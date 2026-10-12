@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/tracking'
+import { pushDataLayerEvent } from '@/lib/datalayer'
 
 /**
  * Eigen venster "Plan een kennismaking" (W-535). Koen, 11 okt 01:24: Swoep
@@ -181,9 +182,8 @@ interface Dag {
 }
 
 function push(event: string, data: Record<string, unknown> = {}) {
-  const w = window as unknown as { dataLayer?: Record<string, unknown>[] }
-  w.dataLayer = w.dataLayer ?? []
-  w.dataLayer.push({ event, ...data, page_path: window.location.pathname })
+  // Via de helper, zodat de parameters niet meegaan met latere events (W-346).
+  pushDataLayerEvent(event, { ...data, page_path: window.location.pathname })
 }
 
 // Rekenen met kale datums (YYYY-MM-DD) in UTC, zodat de tijdzone van de

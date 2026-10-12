@@ -11,6 +11,7 @@
  * Only push user_data when ad_user_data consent is granted.
  */
 import { getStoredConsent, hasMarketingConsent } from './consent'
+import { pushDataLayerEvent } from './datalayer'
 
 /** SHA-256 hash a string using the Web Crypto API. Returns lowercase hex. */
 async function sha256(value: string): Promise<string> {
@@ -226,9 +227,9 @@ export async function pushConversionEvent(
     ? await hashUserData(userData)
     : undefined
 
-  window.dataLayer = window.dataLayer ?? []
-  window.dataLayer.push({
-    event: eventName,
+  // Via de helper, zodat event_id, user_data en de extra parameters niet
+  // meegaan met latere events (W-346).
+  pushDataLayerEvent(eventName, {
     event_id: eventId,
     ...(hashedUser ? { user_data: hashedUser } : {}),
     ...extraParams,
