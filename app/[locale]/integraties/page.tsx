@@ -6,6 +6,7 @@ import IntegrationFilter from '@/components/IntegrationFilter'
 import KanalenStrip from '@/components/KanalenStrip'
 import { integrations } from '@/data/integrations'
 import { categories, categoryName } from '@/data/categories'
+import RethinkIntegraties from '@/components/rethink/RethinkIntegraties'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -23,6 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function IntegratiesPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
+  // W-535: de Nederlandse pagina is de nieuwe in de stijl van de homepage.
+  if (locale !== 'en') return <RethinkIntegraties />
   const t = await getTranslations('integraties')
 
   // De vijf lagen staan als losse sleutels in messages/*.json in plaats van als

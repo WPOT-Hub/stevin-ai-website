@@ -95,3 +95,19 @@ help.openai.com/en/articles/20001245-ads-manager-availability staat
 Netherlands op "Available" (gelezen 11 okt 2026, pagina 16 dagen eerder
 bijgewerkt). Niet nagekeken: de merkrichtlijnen van OpenAI voor gebruik van
 het logo als "werkt met".
+
+## bol, Microsoft en Amazon (12 okt 2026, /integraties en het brein)
+
+- `bol.svg` en `bol-wit.svg`: het logo van bol uit 2025 ("bol." in #0000A4), van
+  Wikimedia Commons, "File:Logo of Bol (2025).svg" (licentie public domain,
+  beperking: handelsmerk; bron volgens Commons de aanlevervoorwaarden van bol op
+  partnerplatform.bol.com). Opgeschoond tot vier paden zonder Inkscape-gegevens;
+  de witte versie staat in het brein, waar donkerblauw op het donkere glas
+  verdwijnt. Officiele merkrichtlijnen van bol voor "werkt met"-gebruik niet
+  gevonden; bij twijfel vragen aan bol.
+- `microsoft.svg`: Iconify `logos:microsoft-icon` (CC0), voor Microsoft Ads.
+- `amazon.svg`: Iconify `simple-icons:amazon` (CC0), ingekleurd #221F1F.
+- Geen logo gevonden in Iconify voor Klaviyo, en Pipedrive en WooCommerce zijn
+  daar alleen woordmerken: die tegels tonen de eerste letter.
+
+Alle drie nagekeken op scripts, foreignObject en externe verwijzingen: geen.
