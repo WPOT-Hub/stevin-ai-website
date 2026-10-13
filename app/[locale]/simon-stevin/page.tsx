@@ -22,7 +22,7 @@ const COPY = {
     portraitAlt: 'Portret van Simon Stevin',
     portraitCaption: 'Simon Stevin, 1548 tot 1620, wetenschapper uit de Lage Landen.',
     introSub:
-      'Het eerste idee ontstond bij mijn eigen bureau in Belgie. We kwamen klanten tegen waar drie bureaus na elkaar aan de meting hadden gezeten, elk met een eigen tag erbij. Wat overbleef was dubbel gemeten verkeer in GA4 en niemand die nog kon zeggen welk getal klopte. Daar begon dit.',
+      'Het eerste idee ontstond bij mijn eigen bureau in Belgie. Ik zocht een slimmere manier om processen, systemen en data met elkaar te verbinden. Daar begon dit.',
     origin1:
       'Ik zocht geen nieuw systeem. Alles was er al: campagnedata, CRM, agenda, offertes, projectinformatie. Wat ontbrak was een laag eroverheen die het aan elkaar knoopte en op tijd iets zei. De juiste informatie kwam bijna altijd te laat bij de juiste persoon.',
     origin2:
@@ -91,7 +91,7 @@ const COPY = {
       {
         question: 'Waar komt Stevin vandaan?',
         answer:
-          'Het eerste idee ontstond in Belgie, bij het eigen bureau van de oprichter, bij klanten waar drie bureaus na elkaar aan de meting hadden gezeten. De verdere ontwikkeling vond plaats vanuit Breda, waar het platform werd uitgebouwd tot de laag die nu op de marketing van klanten meekijkt.',
+          'Het eerste idee ontstond in Belgie, bij het eigen bureau van de oprichter, op zoek naar een slimmere manier om processen, systemen en data met elkaar te verbinden. De verdere ontwikkeling vond plaats vanuit Breda, waar het platform werd uitgebouwd tot de laag die nu op de marketing van klanten meekijkt.',
       },
     ],
   },

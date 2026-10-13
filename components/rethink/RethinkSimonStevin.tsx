@@ -53,9 +53,8 @@ export default function RethinkSimonStevin({ kop, vragen }: { kop: string; vrage
             </h1>
             <div className={`mt-6 max-w-[620px] space-y-5 ${tekst}`}>
               <p className="m-0">
-                Het eerste idee ontstond bij mijn eigen bureau in Belgie. We kwamen klanten tegen waar drie bureaus na elkaar aan de meting hadden
-                gezeten, elk met een eigen tag erbij. Wat overbleef was dubbel gemeten verkeer in GA4, en niemand die nog kon zeggen welk getal
-                klopte.
+                Het eerste idee ontstond bij mijn eigen bureau in Belgie. Ik zocht een slimmere manier om processen, systemen en data met elkaar
+                te verbinden.
               </p>
               <p className="m-0">
                 Alles was er al: campagnedata, CRM, agenda, offertes. Wat ontbrak was een laag eroverheen die het aan elkaar knoopte en op tijd
