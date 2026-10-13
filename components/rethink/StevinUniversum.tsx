@@ -458,7 +458,7 @@ function MetingBlok({ meting }: { meting: Meting }) {
   return (
     <div className="mt-3 border-t border-white/10 pt-2.5">
       <div className="flex items-center justify-between gap-2">
-        <p className="m-0 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#3D8EFF]">Wat we meten</p>
+        <p className="m-0 font-mono text-[10.5px] font-bold uppercase tracking-[0.12em] text-[#3D8EFF]">Wat we meten</p>
         <span className="rounded-full border border-white/20 px-1.5 py-px text-[10.5px] leading-snug text-white/60">Voorbeeld</span>
       </div>
       {meting.vorm === 'keten' ? (
@@ -466,8 +466,8 @@ function MetingBlok({ meting }: { meting: Meting }) {
           {meting.stappen.map((st, i) => (
             <li key={st.label} className="inline-flex items-center gap-1 whitespace-nowrap">
               {i > 0 && <ChevronRight size={12} strokeWidth={2} aria-hidden="true" className="shrink-0 text-white/35" />}
-              <span className={st.nadruk ? 'text-[#3D8EFF]' : 'text-white/70'}>{st.label}</span>
-              <span className={`font-mono ${st.nadruk ? 'font-semibold text-[#3D8EFF]' : 'text-white'}`}>{st.waarde}</span>
+              <span className={st.nadruk ? 'font-semibold text-[#3D8EFF]' : 'text-white/70'}>{st.label}</span>
+              <span className={`font-mono ${st.nadruk ? 'font-bold text-[#3D8EFF]' : 'text-white'}`}>{st.waarde}</span>
             </li>
           ))}
         </ol>
@@ -475,8 +475,8 @@ function MetingBlok({ meting }: { meting: Meting }) {
         <ul className="m-0 mt-1.5 list-none space-y-0.5 p-0 text-[12.5px] leading-snug">
           {meting.stappen.map((st) => (
             <li key={st.label} className="flex items-baseline justify-between gap-3">
-              <span className={st.nadruk ? 'text-[#3D8EFF]' : 'text-white/70'}>{st.label}</span>
-              <span className={`whitespace-nowrap font-mono ${st.nadruk ? 'font-semibold text-[#3D8EFF]' : 'text-white'}`}>{st.waarde}</span>
+              <span className={st.nadruk ? 'font-semibold text-[#3D8EFF]' : 'text-white/70'}>{st.label}</span>
+              <span className={`whitespace-nowrap font-mono ${st.nadruk ? 'font-bold text-[#3D8EFF]' : 'text-white'}`}>{st.waarde}</span>
             </li>
           ))}
         </ul>
