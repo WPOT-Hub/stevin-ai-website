@@ -78,10 +78,11 @@ export default function Footer() {
                 <Logo variant="mono-white" width={120} height={19} />
               </Link>
               {/* De korte belofte uit D-086 (verkoopsynthese 11 okt). "Op jouw
-                  naam." op een eigen regel: anders bleef "Op" op elke breedte
-                  los achteraan de eerste regel staan (11 okt). */}
+                  naam." eraf op 14 okt (Koen: "je legt het er zo dik op"): de
+                  footer zette het op elke pagina. Het staat waar het uitgelegd
+                  wordt, op /platform en /google-ads-uitbesteden. */}
               <p className="mt-4 max-w-[320px] text-balance text-[14px] leading-relaxed text-slate-400">
-                Stevin.AI zorgt dat je marketing blijft werken. <span className="block">Op jouw naam.</span>
+                Stevin.AI zorgt dat je marketing blijft werken.
               </p>
             </div>
             <nav aria-label="Footer">

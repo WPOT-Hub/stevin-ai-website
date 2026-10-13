@@ -31,15 +31,15 @@ const HERKEN = [
 const STAPPEN = [
   {
     t: 'Eerst zetten we alles goed',
-    d: 'Accounts op naam van jouw bedrijf, meting die elke aanvraag telt, de koppeling met je CRM, en opgeruimde campagnes. Dit gebeurt voordat er een euro extra naar advertenties gaat.',
+    d: 'Meting die elke aanvraag telt, de koppeling met je CRM, en opgeruimde campagnes. Dit gebeurt voordat er een euro extra naar advertenties gaat.',
   },
   {
     t: 'Daarna beheren we actief',
     d: "Zoektermen, biedingen, advertenties en landingspagina's. We sturen op aanvragen en omzet, niet op klikken. Valt je meting uit, dan zien we dat dezelfde dag.",
   },
   {
-    t: 'Alles blijft van jou',
-    d: 'Je accounts, je data en een dossier met elk besluit en de reden erbij. Stop je, dan neem je alles mee.',
+    t: 'Je ziet wat er gedaan is',
+    d: 'Elke wijziging staat met datum en reden in een logboek. Je weet dus altijd waarvoor je betaalt.',
   },
 ]
 
@@ -81,9 +81,8 @@ export default function RethinkGoogleAds() {
         knop="google_ads_kop"
         lede={
           <p className="m-0">
-            Je wilt je Google Ads uitbesteden, maar je kent de verhalen: accounts op naam van het bureau, rapporten die niets zeggen en een
-            factuur die je niet kunt narekenen. Bij Stevin.AI blijven je accounts op naam van je eigen bedrijf, en staat elke wijziging met
-            datum en reden in een logboek. Het werk is van ons, alles blijft van jou.
+            Je wilt je Google Ads uitbesteden, maar je kent de verhalen: rapporten die niets zeggen en een factuur die je niet kunt narekenen.
+            Bij Stevin.AI weet je wat er in je account gebeurt en wat het oplevert.
           </p>
         }
       />
