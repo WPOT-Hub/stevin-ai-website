@@ -582,6 +582,8 @@ export default function StevinUniversum({
   const kaartRef = useRef<HTMLDivElement>(null)
   // De bron die bij het openen al gekozen is; zie het kaartje hieronder (W-513).
   const beginFocus = useRef(focus)
+  // Of de bezoeker sindsdien iets anders koos; pas dan schuift het kaartje.
+  const afgeweken = useRef(false)
   // Eigen ids per instantie: een verloop in een verborgen SVG wordt in Chrome
   // niet getekend in een andere.
   const uid = useId().replace(/:/g, '')
@@ -659,15 +661,13 @@ export default function StevinUniversum({
   // geen grootste weergave meer (NO_LCP, score 0). Pas bij een keuze van de
   // bezoeker schuift het kaartje in beeld.
   useEffect(() => {
-    if (focus !== beginFocus.current) beginFocus.current = null
+    // Idempotent: in de ontwikkelmodus draait React elk effect twee keer.
+    if (focus !== beginFocus.current) afgeweken.current = true
     if (!focus || !(focus in METINGEN)) return
     const i = knopen.findIndex((k) => k.soort === 'hub' && k.hub === focus)
     if (i < 0 || gekozenRef.current === i) return
     setGekozen(i)
-    if (beginFocus.current) {
-      beginFocus.current = null
-      return
-    }
+    if (!afgeweken.current) return
     const id = window.setTimeout(() => kaartRef.current?.scrollIntoView({ block: 'nearest' }), 80)
     return () => window.clearTimeout(id)
   }, [focus, knopen])
