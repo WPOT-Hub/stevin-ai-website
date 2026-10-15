@@ -580,6 +580,8 @@ export default function StevinUniversum({
   const hartslag = useRef({ start: -1e9, binnen: [] as boolean[] })
   gekozenRef.current = gekozen
   const kaartRef = useRef<HTMLDivElement>(null)
+  // De bron die bij het openen al gekozen is; zie het kaartje hieronder (W-513).
+  const beginFocus = useRef(focus)
   // Eigen ids per instantie: een verloop in een verborgen SVG wordt in Chrome
   // niet getekend in een andere.
   const uid = useId().replace(/:/g, '')
@@ -650,11 +652,22 @@ export default function StevinUniversum({
   // dan opent ook het kaartje bij die bron, met wat we meten. Zo zegt elke
   // weg naar een bron hetzelfde. Het kaartje is een statusregel en wordt dus
   // voorgelezen; op een telefoon schuift het in beeld als het erbuiten valt.
+  //
+  // W-513 (15 okt 2026): niet schuiven voor de bron die de pagina bij het
+  // openen al gekozen heeft (start in HeroUniversum). Dan schoof /tarieven op
+  // een telefoon vanzelf 427 px omlaag, de kop uit beeld, en vond PageSpeed
+  // geen grootste weergave meer (NO_LCP, score 0). Pas bij een keuze van de
+  // bezoeker schuift het kaartje in beeld.
   useEffect(() => {
+    if (focus !== beginFocus.current) beginFocus.current = null
     if (!focus || !(focus in METINGEN)) return
     const i = knopen.findIndex((k) => k.soort === 'hub' && k.hub === focus)
     if (i < 0 || gekozenRef.current === i) return
     setGekozen(i)
+    if (beginFocus.current) {
+      beginFocus.current = null
+      return
+    }
     const id = window.setTimeout(() => kaartRef.current?.scrollIntoView({ block: 'nearest' }), 80)
     return () => window.clearTimeout(id)
   }, [focus, knopen])
