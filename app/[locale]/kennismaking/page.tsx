@@ -5,9 +5,10 @@ import { Link } from '@/i18n/navigation'
 type Props = { params: Promise<{ locale: string }> }
 
 // W-480: de boekingslink die we in mails en appjes sturen (BOEKINGSLINK in de
-// Hub, src/core/crm/autoOpvolging.ts). Bestaat omdat de link naar cal.com in
-// WhatsApp de preview van Cal.com zelf gaf; deze pagina heeft een eigen
-// preview (opengraph-image.tsx hiernaast) en zet de agenda in de pagina.
+// Hub, src/core/crm/autoOpvolging.ts). Heeft een eigen preview
+// (opengraph-image.tsx hiernaast) en opent het eigen kennismakingsvenster.
+// Tot 17 okt 2026 stond hier de agenda van Cal.com; die is weg, we boeken
+// met de eigen engine (Hub).
 // Niet in de sitemap en niet in de index: je komt hier via een link die we
 // zelf sturen, niet via Google.
 
@@ -58,10 +59,9 @@ export default async function KennismakingPage({ params }: Props) {
         <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--color-accent)]">Stevin.AI</p>
         <h1 className="mt-3 font-display text-[30px] font-extrabold leading-tight text-white md:text-[40px]">{t.kop}</h1>
         <p className="mt-3 max-w-[620px] text-[16px] leading-relaxed text-slate-300">{t.alinea}</p>
-        {/* 17 okt 2026: geen Cal.com meer in de pagina. Het eigen
+        {/* 17 okt 2026: geen Cal.com meer; de eigen boekingsengine. Het
             kennismakingsvenster opent hier meteen (KennismakingLader in de
-            layout); deze knop opent het opnieuw na sluiten. Zonder JavaScript
-            gaat de knop naar de Cal.com-boeking. */}
+            layout); deze knop opent het opnieuw na sluiten. */}
         <Link
           href="/kennismaking"
           data-open-kennismaking=""
@@ -72,7 +72,8 @@ export default async function KennismakingPage({ params }: Props) {
         </Link>
         <noscript>
           <p className="mt-4 text-[14px] text-slate-300">
-            <a className="underline" href="https://cal.com/koen-hoogenboom/kennismaking">Open de agenda</a>
+            Zonder JavaScript kun je hier geen moment kiezen. Mail naar{' '}
+            <a className="underline" href="mailto:info@stevin.ai">info@stevin.ai</a>, dan plannen wij het in.
           </p>
         </noscript>
       </div>

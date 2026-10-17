@@ -1,7 +1,6 @@
 import Logo from '@/components/Logo'
 import type { CampaignDomain } from '@/content/campaign-landings/domains'
 import type { CampaignAngle } from '@/content/campaign-landings/types'
-import { CalInline } from './CalInline'
 import { CampaignTracking } from './CampaignTracking'
 
 interface CampaignLandingProps {
@@ -48,15 +47,30 @@ export function CampaignLanding({ domain, angle }: CampaignLandingProps) {
             </ul>
           </section>
 
-          <section className="rounded-2xl border border-border bg-white p-3 shadow-lg shadow-primary/[0.06] sm:p-5">
-            <h2 className="px-3 pb-2 pt-3 text-[22px] font-bold text-primary sm:px-5 sm:text-[26px]">
+          {/* 17 okt 2026: de agenda van Cal.com is weg. Boeken gaat met de
+              eigen engine op stevin.ai/kennismaking (het kennismakingsvenster
+              opent daar direct). Die staat op stevin.ai en niet hier, omdat de
+              Hub alleen stevin.ai als herkomst toelaat. De utm's dragen domein
+              en invalshoek mee, zoals eerder in de Cal-config. */}
+          <section className="rounded-2xl border border-border bg-white p-6 shadow-lg shadow-primary/[0.06] sm:p-9">
+            <h2 className="m-0 text-[22px] font-bold text-primary sm:text-[26px]">
               {angle.ctaText}
             </h2>
-            <CalInline
-              domain={domain}
-              angle={angle.id}
-              eventSlug={angle.eventSlug}
-            />
+            <p className="m-0 mt-3 text-[16px] leading-[1.6] text-muted">
+              Een half uur online met Koen. Je kiest zelf een moment, je zit nergens aan vast.
+            </p>
+            <a
+              href={`https://stevin.ai/kennismaking?${new URLSearchParams({
+                utm_source: 'lp',
+                utm_medium: 'cold',
+                utm_campaign: domain,
+                utm_content: angle.id,
+              }).toString()}`}
+              data-cta="campaign_kennismaking"
+              className="mt-7 inline-flex rounded-lg bg-accent px-6 py-3.5 text-[16px] font-semibold text-white transition-[filter] hover:brightness-110"
+            >
+              Kies een moment
+            </a>
           </section>
         </div>
 

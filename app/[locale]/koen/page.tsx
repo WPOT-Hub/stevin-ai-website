@@ -56,9 +56,9 @@ const KAARTEN: { titel: string; uitleg: string; href: string; accent?: boolean }
   {
     titel: 'Plan een half uur',
     uitleg: 'Vrijblijvend, we kijken samen naar je cijfers',
-    // Dezelfde link als in de scan (components/MarketingCheck.tsx), zelf
-    // nagekeken: cal.com/stevin/30min gaf 404.
-    href: 'https://cal.com/koen-hoogenboom/kennismaking',
+    // Eigen boekingsengine: /kennismaking opent het kennismakingsvenster
+    // (17 okt 2026, was de Cal.com-link).
+    href: '/kennismaking?utm_source=badge-koen',
   },
   {
     titel: 'Volg Stevin.AI op LinkedIn',

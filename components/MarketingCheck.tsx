@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Globe } from 'lucide-react'
 
 const HUB_LIVE = 'https://hub.stevin.ai/api/marketing-check'
-const CAL = 'https://cal.com/koen-hoogenboom/kennismaking'
+// Eigen boekingsengine: /kennismaking opent het kennismakingsvenster. De
+// scan-token gaat mee in de URL en komt via context.current_url in de Hub.
+const CAL = '/kennismaking'
 /** De Stevin-hartslag: het blauwe merk op transparant, voor lichte vlakken. Bestaand asset, nooit nagetekend; de variant zonder -white staat op een navy tegel. */
 const HEARTBEAT = '/logos/stevin-heartbeat-white.gif'
 
@@ -740,8 +742,8 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
     if (uitkomst?.token) q.set('scan', uitkomst.token)
 
     if (uitkomst?.token) {
-      // Server-side vastleggen voordat we wegsturen: de attributie mag niet
-      // afhangen van wat Cal.com in zijn metadata doorgeeft.
+      // Server-side vastleggen voordat we wegsturen, zodat de attributie
+      // niet afhangt van wat de boeking zelf meegeeft.
       fetch(`${hub.current}/result/${uitkomst.token}/event`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
