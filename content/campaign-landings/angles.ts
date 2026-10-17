@@ -11,7 +11,7 @@ export const CAMPAIGN_ANGLES = {
       'Controleer of advertentieaccounts, tracking en historische data echt van jou zijn.',
       'Krijg drie concrete aandachtspunten uit je eigen situatie.',
     ],
-    ctaText: 'Boek een scan van 15 minuten',
+    ctaText: 'Plan een kennismaking',
     eventSlug: 'marketing-scan',
   },
   'marketing-in-eigen-beheer': {
@@ -24,7 +24,7 @@ export const CAMPAIGN_ANGLES = {
       'Daarna draai je het zelf, of je laat AI-agents het zware werk doen.',
       'Nooit meer een bureau nodig om te weten hoe je ervoor staat.',
     ],
-    ctaText: 'Boek een kennismaking',
+    ctaText: 'Plan een kennismaking',
     eventSlug: 'kennismaking',
   },
   'marketing-brein': {
@@ -37,7 +37,7 @@ export const CAMPAIGN_ANGLES = {
       'Zie wat werkt en wat geld kost, zonder in tien dashboards te zoeken.',
       'Advies dat meebeweegt met je eigen cijfers, niet met een standaardverhaal.',
     ],
-    ctaText: 'Boek een sales-scan',
+    ctaText: 'Plan een kennismaking',
     eventSlug: 'sales-scan',
   },
   'ai-brein': {
@@ -50,7 +50,7 @@ export const CAMPAIGN_ANGLES = {
       'Van analyse naar concrete acties, elke week, op je eigen data.',
       'Je houdt de data en de controle, de AI doet het werk.',
     ],
-    ctaText: 'Boek een AI-scan',
+    ctaText: 'Plan een kennismaking',
     eventSlug: 'ai-scan',
   },
 } as const satisfies Record<CampaignAngleId, CampaignAngle>
