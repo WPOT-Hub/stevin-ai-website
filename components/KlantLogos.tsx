@@ -37,15 +37,15 @@ type Klant = { src: string; naam: string; h: number; o: number }
 // mix-blend-mode multiply haalt de witte achtergrond uit de bestanden die er
 // een hebben (Parrhesia), zonder de originelen te bewerken.
 const KLANTEN: Klant[] = [
-  { src: '/logos/klanten/boersma-witgoed.png', naam: 'Boersma Witgoed', h: 42, o: 0.8 },
-  { src: '/logos/klanten/antwerp-drone-company.png', naam: 'Antwerp Drone Company', h: 44, o: 1 },
+  { src: '/logos/klanten/boersma-witgoed.webp', naam: 'Boersma Witgoed', h: 42, o: 0.8 },
+  { src: '/logos/klanten/antwerp-drone-company.webp', naam: 'Antwerp Drone Company', h: 44, o: 1 },
   { src: '/logos/klanten/tonissteiner.svg', naam: 'Tonissteiner', h: 23, o: 0.62 },
-  { src: '/logos/klanten/parrhesia.png', naam: 'Parrhesia', h: 40, o: 0.82 },
+  { src: '/logos/klanten/parrhesia.webp', naam: 'Parrhesia', h: 40, o: 0.82 },
   { src: '/logos/klanten/totaallobby.svg', naam: 'Totaallobby', h: 36, o: 0.7 },
   { src: '/logos/klanten/hans-schepers.svg', naam: 'Hans Schepers Stoffering', h: 40, o: 0.75 },
-  { src: '/logos/klanten/autorijschool-bart.png', naam: 'Autorijschool Bart', h: 40, o: 0.9 },
-  { src: '/logos/klanten/rigo-bouw.png', naam: 'Rigo Bouw', h: 42, o: 0.7 },
-  { src: '/logos/klanten/sterker-witgoed.png', naam: 'Sterker Witgoed', h: 44, o: 0.65 },
+  { src: '/logos/klanten/autorijschool-bart.webp', naam: 'Autorijschool Bart', h: 40, o: 0.9 },
+  { src: '/logos/klanten/rigo-bouw.webp', naam: 'Rigo Bouw', h: 42, o: 0.7 },
+  { src: '/logos/klanten/sterker-witgoed.webp', naam: 'Sterker Witgoed', h: 44, o: 0.65 },
 ]
 
 const COPY = {

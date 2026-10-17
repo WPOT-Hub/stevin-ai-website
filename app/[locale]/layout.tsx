@@ -150,7 +150,18 @@ export default async function LocaleLayout({ children, params }: Props) {
   // Enable static rendering for this locale
   setRequestLocale(locale)
 
-  const messages = await getMessages()
+  // Alleen de vertalingen die client-componenten echt lezen gaan mee naar de
+  // browser. Eerst gingen alle 41 namespaces mee (153 KB nl.json) op ELKE
+  // pagina, als data in de HTML: pagina's van 230 tot 300 KB en seconden
+  // parseerwerk op een telefoon (Lighthouse 17 okt 2026: TBT 1,4 s op /).
+  // Server-componenten lezen hun teksten op de server en hebben dit niet
+  // nodig. Gebruik je useTranslations in een nieuw client-component, zet de
+  // namespace dan hier bij.
+  const alle = await getMessages()
+  const CLIENT_NAMESPACES = ['nav', 'footer', 'integraties', 'wachtlijst'] as const
+  const messages = Object.fromEntries(
+    CLIENT_NAMESPACES.filter((k) => k in alle).map((k) => [k, alle[k]]),
+  )
 
   return (
     <html lang={locale} className={`${interDisplay.variable} ${interBody.variable} ${jetbrainsMono.variable}`}>
