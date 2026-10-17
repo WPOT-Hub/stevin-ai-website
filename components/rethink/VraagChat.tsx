@@ -72,13 +72,15 @@ const TEGELRAND = ['', 'border-l', 'border-t sm:border-l sm:border-t-0', 'border
 //   L+10 de slotregel
 const VOL = L + 10
 
-// Vastgezet deel: waar elke stap begint, in eenheden van EENHEDEN.
-const DREMPELS = [0.05, 1, 1.6, 2.2, 2.8, 3.6, 4.3, 5.3, 6.3, 7.3]
-const EENHEDEN = 8.5
 // Zo lang staat het paneel vast: 45svh, onder lg 35svh (Koen 11 okt 20:15: "dit duurt te lang die scrol"), zodat de knop
 // eronder op een telefoon eerder in beeld komt (CRO-synthese 11 okt, A6). De
 // stand is een verhouding van deze hoogte, dus het verloop blijft gelijk.
-const VAST_SCROLL = 'h-[35svh] lg:h-[45svh]'
+// W-568 (Koen, 17 okt 2026, iPhone): "loopt niet lekker als je snel scrolt.
+// Typen is klaar dan gelijk bam resultaten." Het paneel staat niet meer vast
+// en de stappen volgen het scrollen niet meer. Het typen volgt nog wel het
+// binnenkomen; zodra de vraag staat, verschijnt alles in een keer. Geen
+// vastgezette scrollruimte meer, dus ook niets dat bij snel vegen hapert.
+const VAST_SCROLL = 'h-0'
 const AANLOOP = 0.45 // het typen loopt over dit deel van de schermhoogte
 const KOPBALK = 64 // vaste kopbalk van de site (Header, h-16)
 
@@ -241,9 +243,8 @@ export default function VraagChat({ kop }: { kop?: React.ReactNode }) {
         const f = Math.min(1, Math.max(0, (plek + aanloop - boven) / aanloop))
         s = Math.round(f * L)
       } else {
-        const lengte = ruimte.offsetHeight
-        const q = lengte > 0 ? Math.min(1, (plek - boven) / lengte) * EENHEDEN : EENHEDEN
-        s = L + DREMPELS.filter((d) => q >= d).length
+        // Vraag getypt: meteen de volledige uitkomst (W-568).
+        s = VOL
       }
       standRef.current = s
       setStand(s)
