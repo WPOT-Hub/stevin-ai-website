@@ -250,6 +250,14 @@ const fmtDagKort = (datum: string) =>
   new Intl.DateTimeFormat('nl-NL', { timeZone: TZ, weekday: 'short', day: 'numeric' }).format(new Date(`${datum}T12:00:00Z`))
 const fmtDagLang = (iso: string) =>
   new Intl.DateTimeFormat('nl-NL', { timeZone: TZ, weekday: 'long', day: 'numeric', month: 'long' }).format(new Date(iso))
+// Weekbereik boven de dagknoppen op een telefoon, zoals Swoep: "19 tot 23
+// oktober", of met twee maanden "30 oktober tot 3 november".
+const fmtWeekbereik = (ma: string, vr: string) => {
+  const dag = (d: string) => new Intl.DateTimeFormat('nl-NL', { timeZone: TZ, day: 'numeric' }).format(new Date(`${d}T12:00:00Z`))
+  const dagMaand = (d: string) =>
+    new Intl.DateTimeFormat('nl-NL', { timeZone: TZ, day: 'numeric', month: 'long' }).format(new Date(`${d}T12:00:00Z`))
+  return ma.slice(0, 7) === vr.slice(0, 7) ? `${dag(ma)} tot ${dagMaand(vr)}` : `${dagMaand(ma)} tot ${dagMaand(vr)}`
+}
 // Alleen de eerste letter een hoofdletter ("Dinsdag 13 oktober"), niet elk
 // woord zoals CSS capitalize doet.
 const metHoofdletter = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
@@ -355,6 +363,7 @@ export default function KennismakingVenster({
   const [voorbeeld, setVoorbeeld] = useState(false)
   const [week, setWeek] = useState(0)
   const [mobDag, setMobDag] = useState(0)
+  const dagRijRef = useRef<HTMLDivElement>(null)
   const [gekozen, setGekozen] = useState<Slot | null>(null)
   const [stap, setStap] = useState<'kies' | 'gegevens' | 'klaar'>('kies')
   const [bezig, setBezig] = useState(false)
@@ -534,6 +543,17 @@ export default function KennismakingVenster({
       ;(knoppen.find((k) => k.offsetParent !== null) ?? dialoogRef.current)?.focus()
     }
   }, [stap, dagen, gekozen])
+
+  // Telefoon: de gekozen dagknop in beeld houden als de rij breder is dan het scherm.
+  useEffect(() => {
+    const rij = dagRijRef.current
+    const chip = rij?.querySelector<HTMLElement>(`[data-dag="${mobDag}"]`)
+    if (!rij || !chip) return
+    const links = chip.offsetLeft - rij.offsetLeft
+    if (links < rij.scrollLeft || links + chip.offsetWidth > rij.scrollLeft + rij.clientWidth) {
+      rij.scrollLeft = Math.max(0, links - 8)
+    }
+  }, [mobDag, dagen])
 
   // Weken per kalenderweek (maandag tot en met vrijdag), met een lege kolom
   // voor een werkdag zonder tijden (verleden, feestdag).
@@ -1019,41 +1039,82 @@ export default function KennismakingVenster({
                       </div>
                     </div>
 
-                    {/* Mobiel: eerst een dag kiezen, dan een tijd (zoals Swoep) */}
+                    {/* Mobiel: eerst een dag kiezen, dan een tijd, zoals Swoep
+                        (Koen, 17 okt 2026: "Swoep doet het wel wat beter").
+                        Boven de dagen staat de week ("19 tot 23 oktober"), de
+                        pijlen gaan per week, de gekozen dag is gevuld blauw en
+                        de rij scrolt ernaartoe. Eerder stonden alle tien dagen
+                        in een rij, was de keuze een lichtblauw randje en stond
+                        de gekozen dag soms buiten beeld: je zag tijden zonder
+                        te weten van welke dag. */}
                     <div className="sm:hidden">
-                      <div className="flex items-center gap-2">
-                        <button
-                          type="button"
-                          onClick={() => setMobDag((i) => Math.max(0, i - 1))}
-                          disabled={mobDag === 0}
-                          aria-label="Vorige dag"
-                          className="shrink-0 rounded-xl border border-border p-2.5 disabled:opacity-30"
-                        >
-                          <ChevronLeft size={18} />
-                        </button>
-                        <div className="flex flex-1 gap-2 overflow-x-auto [scrollbar-width:none]">
-                          {mobDagen.map((d, i) => (
-                            <button
-                              key={d.datum}
-                              type="button"
-                              onClick={() => setMobDag(i)}
-                              aria-pressed={mobDag === i}
-                              className={`shrink-0 rounded-xl border px-3.5 py-2.5 text-[14px] font-semibold capitalize ${mobDag === i ? 'border-accent bg-accent/10 text-primary' : 'border-border text-primary'} ${d.slots.length === 0 ? 'opacity-40' : ''}`}
-                            >
-                              {fmtDagKort(d.datum)}
-                            </button>
-                          ))}
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => setMobDag((i) => Math.min(mobDagen.length - 1, i + 1))}
-                          disabled={mobDag >= mobDagen.length - 1}
-                          aria-label="Volgende dag"
-                          className="shrink-0 rounded-xl border border-border p-2.5 disabled:opacity-30"
-                        >
-                          <ChevronRight size={18} />
-                        </button>
-                      </div>
+                      {(() => {
+                        const gekozenDag = mobDagen[mobDag]
+                        const ma = gekozenDag ? maandagVan(gekozenDag.datum) : null
+                        const weekDagen = ma ? mobDagen.filter((d) => maandagVan(d.datum) === ma) : []
+                        const maandagen = [...new Set(mobDagen.map((d) => maandagVan(d.datum)))]
+                        const wi = ma ? maandagen.indexOf(ma) : -1
+                        // Naar de eerste dag met een vrij moment in die week, anders de eerste dag.
+                        const naarWeek = (w: number) => {
+                          const dagenVanWeek = mobDagen.filter((d) => maandagVan(d.datum) === maandagen[w])
+                          const doel = dagenVanWeek.find((d) => d.slots.length > 0) ?? dagenVanWeek[0]
+                          if (doel) setMobDag(mobDagen.indexOf(doel))
+                        }
+                        return (
+                          <>
+                            {ma && weekDagen.length > 0 && (
+                              <p className="m-0 mb-3 text-center font-display text-[16px] font-bold text-primary">
+                                {fmtWeekbereik(weekDagen[0].datum, weekDagen[weekDagen.length - 1].datum)}
+                              </p>
+                            )}
+                            <div className="flex items-center gap-2">
+                              <button
+                                type="button"
+                                onClick={() => naarWeek(wi - 1)}
+                                disabled={wi <= 0}
+                                aria-label="Vorige week"
+                                className="shrink-0 rounded-xl border border-border p-2.5 disabled:opacity-30"
+                              >
+                                <ChevronLeft size={18} />
+                              </button>
+                              <div ref={dagRijRef} className="flex flex-1 gap-2 overflow-x-auto [scrollbar-width:none]">
+                                {weekDagen.map((d) => {
+                                  const i = mobDagen.indexOf(d)
+                                  const actief = mobDag === i
+                                  const vrij = d.slots.length > 0
+                                  return (
+                                    <button
+                                      key={d.datum}
+                                      type="button"
+                                      data-dag={i}
+                                      onClick={() => setMobDag(i)}
+                                      aria-pressed={actief}
+                                      className={`shrink-0 rounded-xl border px-3.5 py-2.5 text-[14px] font-semibold capitalize ${
+                                        actief
+                                          ? 'border-accent bg-accent text-white'
+                                          : vrij
+                                            ? 'border-accent/40 text-accent'
+                                            : 'border-border text-muted opacity-50'
+                                      }`}
+                                    >
+                                      {fmtDagKort(d.datum)}
+                                    </button>
+                                  )
+                                })}
+                              </div>
+                              <button
+                                type="button"
+                                onClick={() => naarWeek(wi + 1)}
+                                disabled={wi < 0 || wi >= maandagen.length - 1}
+                                aria-label="Volgende week"
+                                className="shrink-0 rounded-xl border border-border p-2.5 disabled:opacity-30"
+                              >
+                                <ChevronRight size={18} />
+                              </button>
+                            </div>
+                          </>
+                        )
+                      })()}
                       <div className="mt-4 grid gap-2.5">
                         {(mobDagen[mobDag]?.slots ?? []).map((s) => (
                           <button
