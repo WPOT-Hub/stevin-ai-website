@@ -1521,7 +1521,7 @@ function DispatchPerspective({ slug }: { slug: string }) {
           margin: '0 0 12px',
         }}
       >
-        Stevins perspectief
+        Wat dit voor jou betekent
       </p>
       {/* W-049: nieuwe stukken hebben drie delen (wat het bewijs zegt, wat je
           nakijkt, wat wij doen), gescheiden door een lege regel. Oude stukken
@@ -8121,7 +8121,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'doelgroep-validatie-voor-bidding-strategieen':
     "Voor marketeers is het cruciaal om regelmatig te valideren of de gekozen bieddoelen nog haalbaar zijn binnen de huidige marktomstandigheden. Automatisering bespaart tijd, maar zonder periodieke controle loop je het risico op verspilling of gemiste kansen. Begin met kleine aanpassingen en meet het effect over minimaal twee weken voor je ingrijpende wijzigingen doorvoert.",
   'meta-invoert-onzichtbare-watermerken-voor-ai-content':
-    "Voor bedrijven die afhankelijk zijn van sociale media voor hun merkcommunicatie wordt het steeds belangrijker dat mensen kunnen zien of content echt is. Maak nu al afspraken over hoe je omgaat met beeld en tekst die door AI zijn gemaakt, in campagnes en in klantcommunicatie. Ben je zelf open over je gebruik van AI, dan bouw je daarmee vertrouwen op bij je doelgroep.",
+    "Gebruik je beelden van AI in je advertenties of posts, ga er dan van uit dat platforms dat steeds vaker zelf herkennen en laten zien. Houd bij welk beeld en welke tekst door AI is gemaakt, en laat nooit door AI gemaakte mensen zien als echte klanten.",
   'passionfroot-15m-us-expansion':
     "Voor bureaus en merken biedt dit platform een nieuwe manier om creators in te zetten zonder zelf een groot netwerk te hoeven onderhouden. Het is een signaal dat de vraag naar flexibele contentpartnerschap alleen maar groeit. Tegelijkertijd daagt het de traditionele rol van bureaus uit: waarom zou je vaste krachten houden als je direct toegang hebt tot gespecialiseerde creators?",
   'yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk':
@@ -8235,7 +8235,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'data-infrastructuur-bepaalt-ai-race':
     "Bij Stevin zien we dezelfde trend terug bij klanten die volwassen willen worden in hun AI-strategieën. Veel organisaties beginnen met pilots rond generatieve AI of automatisering zonder eerst hun datahuishouding op orde te brengen. Dat werkt net zomin als een huis bouwen zonder fundering: tijdelijk resultaat is mogelijk, maar langetermijnsucces zit in geduldige investeringen in structuur en kwaliteit.\n\nSuccesvolle implementaties beginnen altijd met een grondige audit van bestaande datasets en processen waarbinnen deze worden gegenereerd. Daarna volgt het uitrollen van tools die meetdata verzamelen én oorzaak-en-gevolgrelaties blootleggen tussen acties en uitkomsten.",
   'cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit':
-    "Bij Stevin zien we deze verschuiving al jaren aankomen. Onze klanten worstelen vaak met dezelfde vraag: hoe blijven we relevant als technologie alles verandert? Ons antwoord is simpel: richt je op wat technologie niet kan vervangen, namelijk strategisch denken en persoonlijk contact. Bureaus en marketeers moeten systemen bouwen waarin AI helpt in plaats van vervangt. Dat betekent investeren in tools die laten zien waar het mediageld naartoe gaat, zodat adverteerders weer grip krijgen op hun budgetten. En vooral: oude gewoontes durven loslaten. Mens en machine moeten het samen doen.",
+    "De vraag of AI betere reclame maakt, krijgt de meeste aandacht. Voor je budget telt meer waar het mediageld naartoe gaat. Vraag je bureau of platform om per kanaal te laten zien wat je inkoopt en tegen welke prijs, en beoordeel dat op wat het je aan klanten en omzet oplevert.",
   'bending-spoons-18-miljard-ipo-minimaliseren-geluk':
     "Voor ondernemers die actief zijn in overnames of portefeuillebeheer kan de aanpak van Bending Spoons inspirerend zijn. Het benadrukt het belang van een gestructureerde methodiek bij het evalueren en transformeren van bedrijven, waarbij toeval zoveel mogelijk wordt uitgesloten. Tegelijkertijd laat het zien dat langetermijnwaarde vaak belangrijker is dan snelle groei of marktaandeel.",
   'ai-in-accountancy-evolutie-in-plaats-van-revolutie':
@@ -8633,7 +8633,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'google-test-branded-search-controls-ai-max':
     "Voor bureaus en marketingteams betekent dit dat ze straks meer grip kunnen krijgen op de verdeling tussen merk- en generieke zoekopdrachten. Dat kan helpen om de uplift van merkactiviteiten beter te isoleren en de effectiviteit van campagnes nauwkeuriger te beoordelen. Het is verstandig om deze ontwikkelingen in de gaten te houden, vooral als je veel investeert in branded search.",
   'google-ads-introduceert-ingebouwd-lead-management-dashboard':
-    "Krijg je veel leads online binnen, dan scheelt dit tijd en geld. Met minder losse tools zijn er minder plekken in de keten waar je meting gaten krijgt. Spreek wel intern af wie leads beoordeelt en hoe, zodat dat aansluit op wat het dashboard kan.",
+    "Komen je leads binnen via formulieren in Google Ads, kijk dan of je ze ook naar je CRM doorstuurt. Een overzicht in Google Ads is handig, maar het biedalgoritme leert pas van wat er daarna met een lead gebeurt, en dat staat in je CRM.",
   'ai-zoekgedrag-verandert-internet':
     "Voor ondernemers betekent deze verschuiving dat ze hun online aanwezigheid moeten aanpassen. Focus op content die niet alleen trefwoorden bevat, maar ook directe antwoorden geeft op veelgestelde vragen. Daarnaast wordt het belangrijker om meetdata kritisch te analyseren, omdat klassieke KPI’s zoals doorklikratio minder betrouwbaar worden.",
   'ai-presentatrice-kids-top-20-wekt-teleurstelling':
