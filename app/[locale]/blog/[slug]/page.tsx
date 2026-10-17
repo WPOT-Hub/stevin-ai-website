@@ -1597,16 +1597,119 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'acm-strengere-regels-duurzaamheidsclaims': (
+    <>
+      <p className="lead-para">
+        Sinds 27 september 2026 gelden in Nederland strengere regels voor duurzaamheidsclaims. Woorden als &apos;groen&apos;, &apos;milieuvriendelijk&apos; of &apos;ecologisch&apos; mag je zonder toelichting alleen nog gebruiken als je product voldoet aan strenge Europese of nationale standaarden. Een eigen bedrijfslabel zonder onafhankelijke controle is niet meer toegestaan. Dat schreef de Autoriteit Consument en Markt (ACM) op 24 september.
+      </p>
+      <p>
+        De regels komen uit de Europese richtlijn 2024/825, die consumenten sterker moet maken in de overgang naar een duurzame economie. Nederland heeft die richtlijn omgezet in een eigen wet, die de bestaande regels tegen oneerlijke handelspraktijken aanscherpt. Volgens Ondernemersplein, het loket van de overheid voor ondernemers, kunnen toezichthouders sinds 27 september ook handhaven.
+      </p>
+      <p>
+        Wat nog wel mag: een duurzaamheidsclaim die je kunt onderbouwen met bewijs dat een ander kan controleren, en keurmerken die door een onafhankelijke partij of de overheid zijn erkend, zoals het EU-ecolabel. Je moet daarbij volledig zijn: informatie die voor de consument belangrijk is, mag je niet weglaten. Een toezichthouder kan om je bewijs vragen, dus zorg dat je het kunt laten zien.
+      </p>
+      <p>
+        Voor voorraad die nog met oude claims of labels is bedrukt, zegt de ACM dat toezichthouders rekening kunnen houden met een overgangssituatie, als je kunt aantonen dat je al voor 27 september bezig was om aan de nieuwe regels te voldoen. De ACM vraagt bedrijven om hun bestaande claims kritisch tegen het licht te houden.
+      </p>
+      <p>
+        Dit raakt meer dan je verpakking. De regels gelden voor alles wat je in reclame en marketing over duurzaamheid zegt: je advertentieteksten in Google Ads en Meta, je productpagina&apos;s, je productfeed in Merchant Center en je nieuwsbrief. Juist in feedteksten en advertentievarianten staan veel woorden die niemand meer naleest, en daar staat een woord als &apos;duurzaam&apos; snel zonder dat iemand het bewijs erbij heeft.
+      </p>
+      <p>
+        Wat de regels niet doen: ze verbieden duurzaamheid niet als onderwerp. Een concrete claim die je kunt onderbouwen, met de bron erbij, blijft gewoon mogelijk. En laat je teksten schrijven of aanvullen door AI, dan geldt hetzelfde: de claim staat op jouw naam, wie hem ook schreef.
+      </p>
+      <p>
+        Wat je nu kunt doen. Zoek in je feed, je advertenties, je site en je mails op woorden als groen, duurzaam, milieuvriendelijk, ecologisch en klimaatneutraal. Heb je voor een claim geen bewijs dat een ander kan controleren, haal hem dan weg of maak hem concreet: zeg precies wat er beter is en waaraan je dat ziet. Kijk ook welke keurmerken je toont en of die onafhankelijk zijn erkend. Leg vast welk bewijs bij welke claim hoort, zodat je het meteen kunt laten zien als iemand ernaar vraagt.
+      </p>
+    </>
+  ),
+  'google-ads-kanaalprioriteit-display-search-partners': (
+    <>
+      <p className="lead-para">
+        Google Ads krijgt kanaalprioriteit en budgetverdeling per kanaal. Je zet kanalen op hoge of lage prioriteit, en voor kanalen met lage prioriteit stel je een maximum percentage van je dagbudget in. De functie komt vanaf 15 oktober 2026 geleidelijk beschikbaar in Search, Shopping, Performance Max en Demand Gen. Dat staat op de hulppagina van Google Ads en in een blog van Google van 14 oktober.
+      </p>
+      <p>
+        Kanalen met hoge prioriteit krijgen eerst hun volle budget, de rest gaat naar kanalen met lage prioriteit. Het maximum is volgens Google een streven: de tools proberen de uitgaven binnen die grens te houden. In Search-campagnes gaat het om Google Search, de Search partners en het Google Display Network, in Shopping om Search en de Search partners. In Performance Max en Demand Gen krijgen de Search partners en het Display Network elk een eigen prioriteit. In Demand Gen werkt de budgetverdeling nog niet. Je stelt het in op account- en campagneniveau, en ook voor gedeelde budgetten.
+      </p>
+      <p>
+        Wat dit verandert. Tot nu toe was het bij de Search partners en Display alles of niets: aan of uit. Google schrijft zelf dat adverteerders meer zicht en keuze wilden over waar hun budget heen gaat. Je kunt Display nu aan laten staan en tegelijk begrenzen.
+      </p>
+      <p>
+        Bij een klein dagbudget telt elke euro die naar Display gaat zonder dat het iets oplevert. Juist dan is een maximum per kanaal handig: je hoeft Display niet meteen helemaal uit te zetten om te zien wat het doet, je kunt het eerst klein houden en meten.
+      </p>
+      <p>
+        Let op februari 2027. Search-campagnes met het Display Network aan die geen prioriteit of verdeling hebben ingesteld, houden tot dan het huidige gedrag. Daarna verdwijnt die oude instelling en kun je volgens Google een verschuiving in je uitgaven per kanaal zien. Wil je het huidige gedrag houden, dan raadt Google aan om het Display Network op lage prioriteit te zetten met 50 procent van het dagbudget. Search-campagnes die bieden op doel-vertoningsaandeel verliezen het Display Network helemaal.
+      </p>
+      <p>
+        Wat je nu kunt doen. Zoek je Search-campagnes op waarin het Display Network aan staat, en kijk per netwerk wat Display en de Search partners opleveren aan conversies die voor je bedrijf tellen, niet aan klikken. Levert Display binnen Search weinig op, zet het dan op lage prioriteit met een laag maximum, of zet het uit. Verander per campagne een ding tegelijk en wacht een volledige conversiecyclus af voordat je oordeelt. Neem de 50 procent van Google niet zomaar over: die houdt vooral het oude gedrag in stand, en dat was voor veel accounts nooit een bewuste keuze.
+      </p>
+    </>
+  ),
+  'google-bedrijfsprofiel-minder-vertoningen-europa': (
+    <>
+      <p className="lead-para">
+        Sinds 23 september 2026 tellen Google Bedrijfsprofielen in de Europese Economische Ruimte ongeveer driekwart minder vertoningen in Google Search. Klanten belden, klikten en vroegen even vaak een route op als daarvoor. Dat meldde GMB API op 13 oktober, een bedrijf dat de cijfers van ongeveer 15.000 locaties in 24 Europese landen volgt. Google heeft de daling niet bevestigd.
+      </p>
+      <p>
+        De meting vergelijkt 26 september tot en met 4 oktober met 15 tot en met 21 september. De zoekvertoningen op mobiel daalden met 74 procent, op desktop met 71 procent. De vertoningen in Google Maps veranderden met min 1 procent, telefoontjes, websiteklikken en routeverzoeken samen met min 2 procent. Ter vergelijking volgde GMB API ongeveer 10.400 locaties in de Verenigde Staten, het Verenigd Koninkrijk en Zwitserland. Daar is geen breuk te zien.
+      </p>
+      <p>
+        Wat de oorzaak is, weet niemand zeker. De ondersteuning voor de API van Google zei tegen GMB API dat het patroon kan wijzen op een andere verdeling van vertoningen tussen Search en Maps, maar kon dat niet bevestigen. GMB API wijst zelf op de timing: de daling valt samen met het einde van een termijn waarin Google aan de DMA, de Europese wet over digitale markten, moest voldoen. Zij denken aan een verandering in hoe Google vertoningen telt, niet in wat zoekers te zien krijgen, en noemen dat uitdrukkelijk een hypothese.
+      </p>
+      <p>
+        Wat dit verandert. Wie in een rapport alleen naar vertoningen kijkt, ziet nu een daling die er voor klanten niet is. Dat geldt voor je eigen overzicht, maar ook voor rapportages van een bureau of een tool die vertoningen als hoofdcijfer gebruikt. Een daling van driekwart in een paar dagen verleidt je snel om in te grijpen, terwijl er voor je klanten niets veranderde.
+      </p>
+      <p>
+        Gebruik je de vertoningen om te zien of een wijziging aan je profiel werkt, zoals nieuwe foto&apos;s of een andere categorie, neem de weken rond 23 september dan niet als vergelijking. Elke wijziging in die periode lijkt anders slechter te werken dan ze deed.
+      </p>
+      <p>
+        Wat je nu kunt doen. Kijk in je bedrijfsprofiel naar telefoontjes, websiteklikken en routeverzoeken, en vergelijk die met dezelfde weken ervoor. Zijn die gelijk gebleven, dan hoef je niets te repareren. Leg in je rapportage vast dat de vertoningen vanaf 23 september niet meer te vergelijken zijn met daarvoor, zodat niemand over een paar maanden een daling gaat verklaren die alleen in de telling zit. En verander niet halsoverkop je profiel, je categorie of je advertenties op basis van dit ene cijfer.
+      </p>
+    </>
+  ),
+  'meta-product-browsing-standaard-aan-28-oktober': (
+    <>
+      <p className="lead-para">
+        Meta zet op 28 oktober 2026 product browsing aan in lopende advertenties op Facebook en Instagram. Wie op je advertentie tikt, kan dan in de app een scherm krijgen met productinformatie en persoonlijke suggesties, in plaats van meteen op je website te komen. Wil je dat niet, dan moet je je voor 28 oktober afmelden. Dat staat in een melding van Meta aan adverteerders, die PPC Land op 15 oktober publiceerde.
+      </p>
+      <p>
+        Meta heeft er zelf geen openbare pagina over gepubliceerd: geen artikel in het Helpcentrum, geen changelog en geen persbericht. Alles wat bekend is, komt uit die melding. Welke advertentievormen het raakt, of je een productcatalogus nodig hebt en in welke landen het geldt, staat er niet in. Meta noemt alleen een eigen test van 6 tot 21 augustus 2026, waarin advertenties met product browsing gemiddeld 3 procent meer conversies kregen. Hoe die conversies zijn geteld en of ze op de site van de adverteerder of in de app van Meta plaatsvonden, staat er niet bij.
+      </p>
+      <p>
+        Afmelden kan op twee manieren: via de knop in de melding zelf, voor 28 oktober, of per advertentie in de instellingen voor Advantage+ Creative en voor de bestemming. Die laatste kun je altijd aan- en uitzetten.
+      </p>
+      <p>
+        Laat je product browsing aanstaan, dan speelt een deel van de klantreis zich af op een plek waar je zelf geen pagina, geen formulier en geen eigen meting hebt. Wat een klant daar ziet, bepaalt Meta met de productinformatie en suggesties die het zelf kiest.
+      </p>
+      <p>
+        In dezelfde weken veranderen ook de voorwaarden voor zelfbedieningsadvertenties van Meta. Bovenaan de pagina van Meta staat dat ze op 30 oktober 2026 ingaan, onderaan staat 28 oktober als ingangsdatum. Twee bepalingen zijn de moeite van het lezen waard. Meta schrijft dat het van tijd tot tijd tests uitvoert op zijn systemen voor advertenties, en die kunnen je prestaties raken. En wie de AI-functies van Meta gebruikt, is als enige verantwoordelijk voor de risico&apos;s daarvan, ook voor het advertentiemateriaal dat eruit komt.
+      </p>
+      <p>
+        Wat je nu kunt doen. Bepaal of je wilt dat klanten in de app van Meta blijven. Meet je verkopen op je eigen site, dan kan het zijn dat je een aankoop via product browsing niet terugziet in je eigen cijfers; de melding zegt daar niets over. Zet product browsing in dat geval uit, of test het bewust op een deel van je advertenties en vergelijk de omzet in je eigen systeem, niet alleen wat Ads Manager rapporteert. Werk je met de AI-functies van Meta voor teksten of beelden, kijk dan na wat er live staat, want dat valt onder jouw verantwoordelijkheid.
+      </p>
+    </>
+  ),
   'google-shopping-verwijderd-uit-europa': (
     <>
       <p className="lead-para">
-        Google heeft alle organische Shopping-resultaten uit de zoekresultaten in Europa verwijderd. Dit geldt voor zowel Nederland als andere Europese landen. De wijziging treft webwinkels die afhankelijk zijn van deze zichtbaarheid, vooral nu de feestdagen naderen en campagnes op volle toeren draaien.
+        Google toont in de Europese Economische Ruimte, en dus ook in Nederland, geen gratis productvermeldingen en geen carrousels met populaire producten meer in de zoekresultaten. Dat meldde Search Engine Roundtable op 18 september 2026. Google Ads Liaison Ginny Marvin bevestigde volgens dat bericht dat de vermeldingen zijn weggehaald vanwege de DMA-uitspraak in Europa. Betaalde Shopping-advertenties zijn niet geraakt.
       </p>
       <p>
-        De plotselinge verdwijning zorgt voor onrust in de sector. Organische Shopping-resultaten waren tot nu toe een belangrijke bron van verkeer en conversies voor veel webshops. Nu moeten bedrijven zoeken naar alternatieven om hun producten onder de aandacht te brengen.
+        Het gaat om de gratis plekken die webwinkels kregen via hun productfeed in Merchant Center, en om de carrousels met populaire producten. Hugo Huijer van Productrise zag die carrousels volgens Search Engine Roundtable binnen twee dagen bijna helemaal verdwijnen: een daling van ongeveer 90 tot 100 procent, gemeten in onder meer Nederland, Duitsland, Frankrijk en Zweden.
       </p>
       <p>
-        Google heeft nog geen officiële toelichting gegeven op de reden achter deze beslissing. Speculaties doen de ronde dat het mogelijk te maken heeft met nieuwe Europese regelgeving of een herstructurering van het algoritme. Webwinkels moeten zich aanpassen om hun zichtbaarheid te behouden.
+        Betaalde Shopping-advertenties draaien gewoon door, schrijft ook Relevant Audience op 19 september. De ruimte die de gratis vermeldingen innamen, gaat volgens hetzelfde bericht naar vergelijkingssites, de zogeheten comparison shopping services (CSS).
+      </p>
+      <p>
+        De DMA, de Europese wet over digitale markten, verbiedt grote platforms om hun eigen diensten voor te trekken in hun zoekresultaten. Waarom Google daarom juist de gratis vermeldingen schrapt en niet aanpast, staat in geen van de berichten die we lazen. Of er een andere gratis vorm terugkomt, is ook niet bekend.
+      </p>
+      <p>
+        Een eerdere versie van dit bericht stelde dat Google alle organische Shopping-resultaten had weggehaald en dat er geen uitleg was. Dat klopte niet: het gaat om de gratis productvermeldingen en de carrousels, en Google noemt de DMA als reden. We hebben het bericht op 17 oktober aangepast.
+      </p>
+      <p>
+        Waarom dit voor je cijfers uitmaakt. Een gratis vermelding heeft geen klikprijs, dus een verkoop via zo&apos;n plek was bijna pure marge. Kwam een deel van je omzet via die plekken binnen, dan zie je dat terug als minder organische omzet, terwijl je advertentierapport er hetzelfde uitziet. Kijk daarom niet alleen naar Google Ads, maar naar je totale omzet uit Google.
+      </p>
+      <p>
+        Wat je nu kunt nakijken. Zie je sinds half september minder bezoekers via Google Shopping, dan is dit waarschijnlijk de verklaring, en niet je site of je feed. Vergelijk in je analytics het verkeer uit gratis vermeldingen van de weken voor en na 15 september, zodat je weet hoeveel omzet er echt mee gemoeid is. Wil je dat verlies opvangen met betaalde Shopping-campagnes, reken dan eerst uit vanaf welke ROAS dat nog winst oplevert, met je marge per product erbij. Je feed blijft in elk geval nodig, want Merchant Center voedt nog steeds de betaalde advertenties.
       </p>
     </>
   ),
@@ -7835,8 +7938,16 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
     "Voor bedrijven die afhankelijk zijn van AI-diensten zoals chatbots of automatisering, toont dit aan dat investeren in moderne programmeertalen loont. Het verminderen van storingen en kosten is direct meetbaar in operationele resultaten. Tegelijkertijd vraagt zo’n migratie om expertise die niet overal beschikbaar is, wat de drempel verhoogt.",
   'agentic-security-billion-dollar-uitdaging':
     "Voor ondernemers betekent dit dat ze nu al moeten nadenken over hoe ze hun AI-systemen veilig houden. Het is geen kwestie van 'als' er iets misgaat, maar 'wanneer'. Bedrijven die nu proactief investeren in beveiliging en bewustwording, voorkomen later hoge kosten en reputatieschade. Daarnaast kan het een concurrentievoordeel opleveren: klanten en partners hechten steeds meer waarde aan veilige systemen.",
+  'acm-strengere-regels-duurzaamheidsclaims':
+    "Een claim die je niet kunt bewijzen, kost je nu meer dan hij oplevert. Neem je feed en je advertenties mee in de controle, niet alleen je verpakking: daar staan de meeste teksten, en daar kijkt het minst vaak iemand naar.",
+  'google-ads-kanaalprioriteit-display-search-partners':
+    "Een standaardinstelling van een platform is nooit neutraal. Dat Display binnen Search nu een eigen budgetgrens krijgt, is winst. Dat je in februari automatisch wordt overgezet als je niets doet, is een reden om het nu zelf in te stellen.",
+  'google-bedrijfsprofiel-minder-vertoningen-europa':
+    "Vertoningen zijn een diagnose, geen uitkomst. Hier zakt het cijfer met driekwart en gaat de telefoon even vaak. Stuur op wat klanten doen, en noteer het als een cijfer ineens anders wordt geteld.",
+  'meta-product-browsing-standaard-aan-28-oktober':
+    "Een instelling die het platform voor je aanzet, is een keuze van het platform. Meta meet het succes in zijn eigen app, jij meet het in je kassa. Kijk dus naar je eigen omzet voordat je product browsing laat aanstaan.",
   'google-shopping-verwijderd-uit-europa':
-    "Voor webwinkels betekent deze wijziging dat ze hun marketingstrategieën moeten herzien. Het is tijd om te investeren in alternatieve kanalen zoals sociale media, directe SEO of betaalde advertenties buiten Google Shopping. Tegelijkertijd onderstreept dit incident hoe kwetsbaar bedrijven zijn voor plotselinge platformwijzigingen, wat de noodzaak van een robuuste diversificatie van inkomstenbronnen benadrukt.",
+    "Gratis zichtbaarheid op een platform is een gunst van dat platform, geen recht. Reken dus uit wat dit kanaal je echt opleverde voordat je het met betaald budget gaat vervangen, en houd je feed op orde, want die heb je voor betaalde Shopping nog steeds nodig.",
   'openai-bekent-zes-nieuwe-uit-de-hand-gelopen-ai-agent-scenario-s':
     "Voor bedrijven die AI-agenten willen inzetten is dit een belangrijke waarschuwing: zelfs geavanceerde systemen kunnen onvoorspelbaar gedrag vertonen. Het is essentieel om niet alleen op technologie te vertrouwen, maar ook op strikte governance en continue monitoring. De vraag is niet óf een incident zich voordoet, maar wanneer – en hoe snel je erop kunt reageren.",
   'incrementaliteit-testen-biedt-scherper-beeld-van-paid-search-waarde':
