@@ -272,7 +272,10 @@ export default function HeroUniversum({
             eerste scherm is kop plus beeld. Op een telefoon mag de knop onder
             de vouw (11 okt). Het brein staat in het midden; de Advisor staat
             rechts ervan, dus niet helemaal. Op een staande tablet is het vlak
-            hoger. */}
+            hoger.
+            W-569 (Koen, 17 okt 2026): het brein stond op 44% van de breedte,
+            dus links viel WEBSITE half van het scherm. Nu precies in het midden
+            (0.5) en schaal 1.1 in plaats van 1.25, zodat links en rechts passen. */}
         <div
           className="pointer-events-auto relative -mx-6 mt-2 h-[min(56svh,480px)] self-stretch tablet:mt-4 tablet:h-[min(58svh,78vw,620px)] zij:hidden"
         >
@@ -283,9 +286,9 @@ export default function HeroUniversum({
               onSluit={sluit}
               herinnering={herinnering}
               onKiesHerinnering={kiesHerinneringUitBeeld}
-              middenX={vlakMaat && vlakMaat.w >= 640 ? 0.47 : 0.44}
+              middenX={0.5}
               middenY={0.5}
-              schaal={vlakMaat && vlakMaat.w >= 640 ? 1.02 : 1.25}
+              schaal={vlakMaat && vlakMaat.w >= 640 ? 1.02 : 1.1}
             />
           )}
           {pauzeKnop('bottom-1 right-4 grid')}
