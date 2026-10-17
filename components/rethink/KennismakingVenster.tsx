@@ -1073,15 +1073,21 @@ export default function KennismakingVenster({
                                 onClick={() => naarWeek(wi - 1)}
                                 disabled={wi <= 0}
                                 aria-label="Vorige week"
-                                className="shrink-0 rounded-xl border border-border p-2.5 disabled:opacity-30"
+                                className="shrink-0 rounded-xl border border-border p-2 disabled:opacity-30"
                               >
                                 <ChevronLeft size={18} />
                               </button>
-                              <div ref={dagRijRef} className="flex flex-1 gap-2 overflow-x-auto [scrollbar-width:none]">
+                              {/* Vijf werkdagen naast elkaar, even breed, dag boven
+                                  datum: zo past de hele week op een telefoon van
+                                  360 breed, zonder te scrollen. */}
+                              <div ref={dagRijRef} className="flex min-w-0 flex-1 gap-1.5">
                                 {weekDagen.map((d) => {
                                   const i = mobDagen.indexOf(d)
                                   const actief = mobDag === i
                                   const vrij = d.slots.length > 0
+                                  const datum = new Date(`${d.datum}T12:00:00Z`)
+                                  const wd = new Intl.DateTimeFormat('nl-NL', { timeZone: TZ, weekday: 'short' }).format(datum)
+                                  const nr = new Intl.DateTimeFormat('nl-NL', { timeZone: TZ, day: 'numeric' }).format(datum)
                                   return (
                                     <button
                                       key={d.datum}
@@ -1089,7 +1095,8 @@ export default function KennismakingVenster({
                                       data-dag={i}
                                       onClick={() => setMobDag(i)}
                                       aria-pressed={actief}
-                                      className={`shrink-0 rounded-xl border px-3.5 py-2.5 text-[14px] font-semibold capitalize ${
+                                      aria-label={metHoofdletter(fmtDagLang(`${d.datum}T12:00:00Z`)) + (vrij ? '' : ', vol')}
+                                      className={`flex min-w-0 flex-1 flex-col items-center rounded-xl border py-1.5 leading-tight ${
                                         actief
                                           ? 'border-accent bg-accent text-white'
                                           : vrij
@@ -1097,7 +1104,8 @@ export default function KennismakingVenster({
                                             : 'border-border text-muted opacity-50'
                                       }`}
                                     >
-                                      {fmtDagKort(d.datum)}
+                                      <span className="text-[11px] font-medium capitalize">{wd.replace('.', '')}</span>
+                                      <span className="text-[16px] font-bold tabular-nums">{nr}</span>
                                     </button>
                                   )
                                 })}
@@ -1107,7 +1115,7 @@ export default function KennismakingVenster({
                                 onClick={() => naarWeek(wi + 1)}
                                 disabled={wi < 0 || wi >= maandagen.length - 1}
                                 aria-label="Volgende week"
-                                className="shrink-0 rounded-xl border border-border p-2.5 disabled:opacity-30"
+                                className="shrink-0 rounded-xl border border-border p-2 disabled:opacity-30"
                               >
                                 <ChevronRight size={18} />
                               </button>
@@ -1128,7 +1136,11 @@ export default function KennismakingVenster({
                           </button>
                         ))}
                         {(mobDagen[mobDag]?.slots.length ?? 0) === 0 && (
-                          <p className="m-0 py-4 text-center text-[14px] text-muted">Deze dag is vol.</p>
+                          <p className="m-0 py-4 text-center text-[14px] text-muted">
+                            {mobDagen.filter((d) => maandagVan(d.datum) === maandagVan(mobDagen[mobDag]?.datum ?? '')).every((d) => d.slots.length === 0)
+                              ? 'Deze week is vol. Kies een volgende week.'
+                              : 'Deze dag is vol. Kies een andere dag.'}
+                          </p>
                         )}
                       </div>
                     </div>
