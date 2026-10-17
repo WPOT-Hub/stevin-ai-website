@@ -30,10 +30,19 @@ export default function Header() {
   // data-cta-namen eraan hangen.
   const isNieuweHome = locale === 'nl'
 
+  // Ook meteen bij het openen kijken, en bij een pagina die Safari uit het
+  // geheugen terughaalt (terugknop): opent de pagina al halverwege, dan kwam
+  // er geen scrollsignaal en bleef de balk doorzichtig boven de inhoud
+  // (Koen, iPhone, stevin.ai/laurentius, 17 okt 2026).
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60)
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('pageshow', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('pageshow', handleScroll)
+    }
   }, [])
 
   // W-535: de dropdowns Diensten en Voor wie zijn weg. In het Engels bleef er
