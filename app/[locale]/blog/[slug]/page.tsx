@@ -587,8 +587,7 @@ function ArticleLeCunBody() {
       </p>
 
       <p>
-        Zijn alternatief heet een &quot;world model&quot;. AMI bouwt voort op LeCun&apos;s eigen
-        architectuur, de &quot;Joint Embedding Predictive Architecture&quot;, afgekort JEPA. Een model
+        Zijn alternatief heet een &quot;world model&quot;. AMI bouwt voort op LeCuns eigen architectuur, de &quot;Joint Embedding Predictive Architecture&quot;, afgekort JEPA. Een model
         dat niet het volgende woord of de volgende pixel voorspelt, maar de betekenis van hoe een
         situatie verandert. Eerst de wereld leren begrijpen, dan pas handelen. AMI mikt op industrie,
         robotica en zorg, plekken waar de zwakte van taalmodellen het hardst aankomt.
@@ -623,7 +622,7 @@ function ArticleLeCunBody() {
       <H2 num="03">Wat een wereldmodel wel belooft</H2>
 
       <p>
-        De aantrekkingskracht van LeCun&apos;s plan is reeel. Een systeem dat de fysica van een situatie
+        De aantrekkingskracht van LeCuns plan is reëel. Een systeem dat de fysica van een situatie
         begrijpt, kan een handeling vooraf simuleren, de gevolgen inschatten en bijsturen voordat het
         iets doet. Dat is precies wat een robot, een zelfrijdende machine of een planningssysteem nodig
         heeft, en precies wat een taalmodel mist. Voor die domeinen, met fysieke gevolgen en weinig
@@ -666,18 +665,16 @@ function ArticleLeCunBody() {
         Want je kent die zwaktes. Een taalmodel verzint dingen, het plant slecht, het heeft geen model
         van jouw werkelijkheid. Dus geef je het die werkelijkheid. Je vraagt het niet om uit het niets
         te redeneren, je voert het met echte data uit de systemen die een bedrijf al gebruikt. De mail,
-        de planning, de offerte, de boekhouding. Dat is het wereldmodel dat je vandaag al hebt. Geen
-        from-scratch JEPA, maar de feitelijke staat van het bedrijf.
+        de planning, de offerte, de boekhouding. Dat is het wereldmodel dat je vandaag al hebt. Geen JEPA vanaf nul, maar de feitelijke staat van het bedrijf.
       </p>
 
       <p>
-        En je laat het taalmodel niet alleen beslissen. Elke serieuze uitkomst toont zijn bron. Elke
-        actie met impact gaat langs een mens. Alles wordt gelogd. Dan gebruik je het model voor wat het
+        En je laat het taalmodel niet alleen beslissen. Elke serieuze uitkomst toont zijn bron. Elke actie die ertoe doet gaat langs een mens. Alles wordt gelogd. Dan gebruik je het model voor wat het
         wel kan, taal en context begrijpen, en hou je het oordeel waar het hoort.
       </p>
 
       <PullQuote
-        text="Zo bouwen wij Stevin. Het taalmodel is niet de denker. Het is de laag die signalen herkent in echte data, en die elke stap met impact aan een mens voorlegt."
+        text="Zo bouwen wij Stevin. Het taalmodel is niet de denker. Het is de laag die signalen herkent in echte data, en die elke stap die ertoe doet aan een mens voorlegt."
         cite="Stevin"
       />
 
@@ -690,16 +687,13 @@ function ArticleLeCunBody() {
       </p>
 
       <p>
-        Het mooie van die keuze: je hoeft geen kant in zijn weddenschap te kiezen. Plateauen
-        taalmodellen? Een gegronde, gecontroleerde AI werkt nog steeds, want je vroeg hem nooit het
+        Het mooie van die keuze: je hoeft geen kant in zijn weddenschap te kiezen. Komen taalmodellen niet verder? Een AI die op echte data draait en gecontroleerd wordt, werkt nog steeds, want je vroeg hem nooit het
         onmogelijke. Komt het wereldmodel er wel, sneller en beter? Dan schuift dat er gewoon onder. De
         laag blijft, het model is verwisselbaar.
       </p>
 
       <p>
-        Voor wie nu een AI-product bouwt, is dat meteen het scherpste filter. Een venture die erop gokt
-        dat het taalmodel het probleem magisch oplost, is fragiel. Een venture die het taalmodel grondt
-        in echte data en menselijk toezicht, staat overeind, wat de onderzoekers de komende vijf jaar
+        Voor wie nu een AI-product bouwt, is dat meteen het scherpste filter. Een bedrijf dat erop gokt dat het taalmodel het probleem vanzelf oplost, is kwetsbaar. Een bedrijf dat het taalmodel laat werken met echte data en menselijk toezicht, blijft overeind, wat de onderzoekers de komende vijf jaar
         ook ontdekken.
       </p>
 
@@ -738,8 +732,7 @@ function ArticleLeCunBody() {
             pct: '04',
             text: (
               <>
-                <b>De uitweg bestaat al.</b> Grond het taalmodel in echte data, toon bronnen, hou een
-                mens in de lus.
+                <b>De uitweg bestaat al.</b> Laat het taalmodel werken met echte data, toon bronnen, laat een mens meekijken.
               </>
             ),
           },
@@ -761,7 +754,7 @@ function ArticleLeCunBody() {
         fascinerende vraag, en zijn lab is de juiste plek om hem te stellen. Maar voor een bedrijf dat
         deze maand een offerte niet wil laten liggen, is de vraag kleiner en concreter. Krijgt de juiste
         persoon op tijd het juiste signaal, met de bron erbij? Daar heb je geen wereldmodel voor nodig.
-        Je hebt grond onder de voeten nodig.
+        Je hebt vaste grond onder de voeten nodig.
       </p>
     </>
   )
@@ -773,34 +766,32 @@ function ArticleMITBody() {
       <p className="lead-para">
         Het cijfer 95% klinkt als clickbait. Toch komt het uit een serieus rapport: het
         NANDA-onderzoek van MIT, april 2026, waarin 312 generative-AI pilots in
-        marketingorganisaties zijn gevolgd over twaalf maanden. De kop is niet onjuist. Maar de
+        marketingorganisaties twaalf maanden lang zijn gevolgd. De kop klopt. Maar de
         oorzaak ligt niet waar je hem verwacht.
       </p>
 
       <BodyFigure
         tag="MIT · 2026"
         stat="95%"
-        statCap="van de gen-AI pilots haalt nooit de productie-fase. Niet door het model. Door de meetstructuur."
+        statCap="van de gen-AI pilots komt nooit in productie. Niet door het model. Door de meetstructuur."
         edition="EDITIE 014 / 052 · ONDERZOEK"
         source="Bron: NANDA, MIT (april 2026)"
       />
       <p className="body-figure-cap">
-        Visualisatie op basis van het NANDA-rapport. Cijfer afgerond. Werkelijke meting: 94,7% van
-        geanalyseerde pilots.
+        Visualisatie op basis van het NANDA-rapport. Cijfer afgerond. Werkelijke meting: 94,7% van de onderzochte pilots.
       </p>
 
       <p>
-        Het modale verhaal in de pers en op LinkedIn: AI is overhyped, modellen falen,
+        Het gangbare verhaal in de pers en op LinkedIn: AI is overhyped, modellen falen,
         hallucinaties, etcetera. Het rapport zegt iets fundamenteel anders.{' '}
         <strong>De modellen werken</strong>. In 88% van de pilots leverden ze meetbare output binnen
-        vier weken. Wat faalt, zit eronder.
+        vier weken. Wat misgaat, zit een laag dieper.
       </p>
 
       <H2 num="01">Het probleem zit niet in het model</H2>
 
       <p>
-        De onderzoekers groeperen de mislukkingen in drie categorieen, en exact een daarvan gaat
-        over modelkwaliteit. De andere twee, samen goed voor 81% van de pilots, gaan over iets
+        De onderzoekers delen de mislukkingen in drie groepen in, en maar een daarvan gaat over de kwaliteit van het model. De andere twee, samen goed voor 81% van de pilots, gaan over iets
         anders: niemand weet of het werkt.
       </p>
 
@@ -820,7 +811,7 @@ function ArticleMITBody() {
             pct: '34%',
             text: (
               <>
-                <b>Geen baseline.</b> Pilot werd uitgerold zonder referentie, dus &quot;werkt het&quot; was
+                <b>Geen baseline.</b> De pilot begon zonder nulmeting, dus &quot;werkt het&quot; was
                 niet te beantwoorden.
               </>
             ),
@@ -829,8 +820,7 @@ function ArticleMITBody() {
             pct: '47%',
             text: (
               <>
-                <b>Geen feedback-loop.</b> Output ging live, maar werd niet teruggekoppeld naar P&amp;L
-                of conversie.
+                <b>Geen feedback-loop.</b> Output ging live, maar werd nooit naast het resultaat of de conversies gelegd.
               </>
             ),
           },
@@ -839,23 +829,21 @@ function ArticleMITBody() {
 
       <p>
         Lees dat tweede en derde punt nog eens. Bij elkaar:{' '}
-        <strong>81% van de pilots faalt op meetinfrastructuur, niet op intelligence</strong>. Het
-        model schreef de ad-copy. Niemand kon vertellen of die copy meer of minder verkocht dan de
+        <strong>81% van de pilots loopt vast op de meting, niet op het model</strong>. Het model schreef de advertentietekst. Niemand kon vertellen of die copy meer of minder verkocht dan de
         oude.
       </p>
 
       <PullQuote
-        text='"Het is niet dat AI niet werkt. Het is dat we niet weten of hij werkt, en dat is een andere diagnose, met een andere oplossing."'
+        text='"Het probleem is niet dat AI niet werkt, maar dat we niet weten of het werkt. Dat is een andere diagnose, met een andere oplossing."'
         cite="uit het redactie-handboek"
       />
 
-      <H2 num="02">Waarom dit een meetlat-vraagstuk is</H2>
+      <H2 num="02">Waarom dit over meten gaat</H2>
 
       <p>
-        In de marketingafdelingen die wij maandelijks zien (bureaus, in-house teams, fractional
-        CMO&apos;s): het patroon hetzelfde. Een team koopt een tool. De tool produceert iets. Het
+        Bij de marketingafdelingen die we elke maand zien (bureaus, in-house teams, fractional CMO's) is het patroon hetzelfde. Een team koopt een tool. De tool produceert iets. Het
         dashboard van de tool laat zien dat het &quot;werkt&quot;. Maar de CRM-cijfers, de echte
-        conversies, de werkelijke pijplijn: die zijn ergens anders. Op een ander platform. In een
+        conversies, de werkelijke pijplijn: die staan ergens anders. Op een ander platform. In een
         andere week. Door een andere persoon onderhouden.
       </p>
 
@@ -867,35 +855,31 @@ function ArticleMITBody() {
 
       <Callout
         big="3,4×"
-        label="Volgens het rapport overdrijven gen-AI tools hun eigen impact gemiddeld met een factor 3,4. Gemeten tegen onafhankelijke uplift-tests."
+        label="Volgens het rapport overdrijven gen-AI-tools hun eigen effect gemiddeld 3,4 keer. Gemeten tegen onafhankelijke uplift-tests."
       />
 
       <h3>Een korte denkoefening</h3>
 
       <p>
-        Stel je hebt €50.000 per maand aan AI-gegenereerde social ads laten draaien, drie maanden
-        lang. Het Meta-dashboard zegt: ROAS 4,1. De vendor-tool zegt: +18% efficiency. Je marketing
-        director is tevreden.
+        Stel: je hebt drie maanden lang 50.000 euro per maand uitgegeven aan social ads die door AI zijn gemaakt. Het Meta-dashboard zegt: ROAS 4,1. De tool van de leverancier zegt: 18% efficiënter. Je marketingdirecteur is tevreden.
       </p>
 
       <p>
         Nu de vraag die niemand stelt:{' '}
-        <strong>wat zou er zijn gebeurd als die €150k niet was uitgegeven?</strong> Geen
-        0%-conversie. Er waren nog organische leads, klantretentie, return-traffic. Misschien had je
+        <strong>wat zou er zijn gebeurd als die €150k niet was uitgegeven?</strong> Dan had je heus niet nul conversies gehad. Er waren nog organische leads, vaste klanten en terugkerende bezoekers. Misschien had je
         80% van diezelfde resultaten ook zonder die ads gehaald. Misschien 60%. Niemand weet het,
         want niemand heeft een geo-test, een holdout-groep of een uplift-meting opgezet.
       </p>
 
       <p>
-        Dat is geen AI-probleem. Dat is een <strong>meetinfrastructuur</strong>-probleem. AI heeft
-        het alleen op scherp gezet, omdat AI-tools makkelijker overdrijven dan een handmatig
+        Dat is geen probleem van AI, maar van je <strong>meting</strong>. AI heeft het alleen zichtbaarder gemaakt, omdat AI-tools makkelijker overdrijven dan een handmatig
         opgezette campagne.
       </p>
 
       <H2 num="03">Wat moet je vragen voor je tekent?</H2>
 
       <p>
-        Wij gebruiken intern een lijstje van vier vragen. Stel ze aan elke vendor. Als ze er drie of
+        Wij gebruiken intern een lijstje van vier vragen. Stel ze aan elke leverancier. Als ze er drie of
         meer ontwijken, loop je weg.
       </p>
 
@@ -905,8 +889,7 @@ function ArticleMITBody() {
           tool&quot;, maar een externe baseline (CRM, P&amp;L, of een holdout-segment).
         </li>
         <li>
-          <strong>Hoe vaak ga je een geo-test of holdout-meting toelaten?</strong> Een serieuze
-          vendor zegt: maandelijks. Een onserieuze vendor probeert je dit uit te praten.
+          <strong>Hoe vaak ga je een geo-test of holdout-meting toelaten?</strong> Een serieuze leverancier zegt: elke maand. Een onserieuze probeert het je uit het hoofd te praten.
         </li>
         <li>
           <strong>Wat gebeurt er met je dashboard als ik een week lang de campagne uitzet?</strong>{' '}
@@ -914,14 +897,13 @@ function ArticleMITBody() {
           is: &quot;dat raden we af&quot;.
         </li>
         <li>
-          <strong>Wie bezit de meetdata?</strong> Als de vendor zegt &quot;wij&quot;, of
-          &quot;het is in ons platform geintegreerd&quot;, heb je geen meetdata. Je hebt een
-          marketing-tool met een grafiek erop.
+          <strong>Van wie is de meetdata?</strong> Als de leverancier zegt &quot;wij&quot;, of
+          &quot;het is in ons platform geïntegreerd&quot;, heb je geen meetdata. Je hebt een marketingtool met een grafiek erop.
         </li>
       </ol>
 
       <p>
-        Het zijn geen vijandige vragen. Een goede vendor verwelkomt ze. Het is hetzelfde principe
+        Het zijn geen vijandige vragen. Een goede leverancier is er blij mee. Het is hetzelfde principe
         waarmee Simon Stevin in 1586 schreef dat het wonder geen wonder is. Als je het niet kunt
         herleiden, is het geen feit, maar een verhaal.
       </p>
@@ -931,16 +913,14 @@ function ArticleMITBody() {
       <H2 num="04">De praktische conclusie</H2>
 
       <p>
-        Het MIT-rapport is geen AI-bashing. Het is een meetlat-rapport, alleen niet als zodanig
-        benoemd. De uitkomst is hoopvoller dan het percentage suggereert: de modellen werken. Wat we
+        Het MIT-rapport is geen AI-bashing. Het is een rapport over meten, ook al staat dat er niet op. De uitkomst is hoopvoller dan het percentage suggereert: de modellen werken. Wat we
         missen is de infrastructuur eromheen: een baseline, een feedback-loop, een onafhankelijke
         causale meting.
       </p>
 
       <p>
-        Dat klinkt saai. Het is ook saai. Maar het is wel de reden dat 5% van de pilots wel schaalt
-        naar productie, en dat die 5% gemiddeld een <strong>4,2× hogere ROI</strong> haalt dan
-        handmatig opgezette campagnes. De technologie is niet het verschil. De meetstructuur is dat.
+        Dat klinkt saai. Het is ook saai. Maar het is wel de reden dat 5% van de pilots wel doorgroeit tot productie, en dat die 5% gemiddeld een <strong>4,2× hogere ROI</strong> haalt dan
+        handmatig opgezette campagnes. Het verschil zit niet in de technologie, maar in hoe je meet.
       </p>
 
       <p>
@@ -961,14 +941,14 @@ function ArticleMMMBody() {
   return (
     <>
       <p className="lead-para">
-        Een Marketing Mix Model is geen rapport. Het is een statistisch model dat een hypothese uitspreekt over hoe historische sales en mediadata het beste samenhangen. De output (decomposition charts, response curves, ROI per kanaal) ziet eruit als een rapport. Maar onder de motorkap zit een schatting met intervallen, aannames en priors. Wie dat onderscheid niet leest, koopt false confidence in plaats van inzicht.
+        Een Marketing Mix Model is geen rapport. Het is een statistisch model dat een hypothese uitspreekt over hoe historische verkoopcijfers en mediadata het best samenhangen. De output (decomposition charts, response curves, ROI per kanaal) ziet eruit als een rapport. Maar onder de motorkap zit een schatting met intervallen, aannames en priors. Wie dat onderscheid niet leest, koopt schijnzekerheid in plaats van inzicht.
       </p>
 
       <BodyFigure
         tag="GARTNER · 2025"
         stat="MMM"
-        statCap='Volgens Gartner is MMM &quot;a statistical technique used to measure the impact of marketing activities on sales performance&quot;. Een techniek, niet een rapport. Bron: Gartner Marketing Mix Modeling guide (2025).'
-        edition="EDITIE 011 / 052 · ATTRIBUTION"
+        statCap='Volgens Gartner is MMM &quot;a statistical technique used to measure the impact of marketing activities on sales performance&quot;. Een techniek, geen rapport. Bron: Gartner Marketing Mix Modeling guide (2025).'
+        edition="EDITIE 011 / 052 · ATTRIBUTIE"
         source="Bron: Gartner, Marketing Mix Modeling guide (2025)"
       />
 
@@ -979,11 +959,11 @@ function ArticleMMMBody() {
       <H2 num="01">Wat een MMM in feite zegt</H2>
 
       <p>
-        Een MMM neemt twee a drie jaar wekelijkse data over sales en mediabestedingen, plus controle-variabelen voor seizoen, prijs, promotie, weer, concurrentie en macro-economie. Het model probeert vervolgens te schatten welke combinatie van inputs het beste de variatie in sales verklaart. Output: een decomposition (welk percentage van sales komt waarschijnlijk uit welk kanaal), een response curve per kanaal (waar zit diminishing returns), en een marginale ROI-schatting per kanaal.
+        Een MMM gebruikt twee tot drie jaar wekelijkse data over sales en mediabestedingen, plus controle-variabelen voor seizoen, prijs, promotie, weer, concurrentie en macro-economie. Het model probeert vervolgens te schatten welke combinatie van factoren de schommelingen in de verkoop het best verklaart. Output: een decomposition (welk percentage van sales komt waarschijnlijk uit welk kanaal), een response curve per kanaal (waar zit diminishing returns), en een marginale ROI-schatting per kanaal.
       </p>
 
       <p>
-        Cruciaal: elk getal in die output heeft een interval. Een goed MMM zegt niet &quot;Google Ads droeg 28 procent bij&quot;. Het zegt &quot;de mediaan-schatting is 28 procent, met een 80-procent geloofwaardigheidsinterval tussen 19 en 36 procent&quot;. Dat interval is geen detail. Het is de kernboodschap. Hoe groter het interval, hoe minder het model echt weet.
+        Cruciaal: elk getal in die output heeft een interval. Een goed MMM zegt niet &quot;Google Ads droeg 28 procent bij&quot;. Het zegt &quot;de mediaan-schatting is 28 procent, met een geloofwaardigheidsinterval van 80 procent, tussen 19 en 36 procent&quot;. Dat interval is geen detail. Het is de kernboodschap. Hoe groter het interval, hoe minder het model echt weet.
       </p>
 
       <PullQuote
@@ -994,22 +974,22 @@ function ArticleMMMBody() {
       <H2 num="02">Wat consultants ervan maken</H2>
 
       <p>
-        Het probleem zit zelden in het model. Het zit in de slide die het model omzet in een uitspraak. De interval verdwijnt. Het wordt &quot;Google Ads = 28 procent van sales&quot;. De verzameling priors waarmee het model is opgestart, wordt nergens benoemd. De gevoeligheidsanalyse (wat gebeurt er met de output als de prior 5 procent omhoog of omlaag schuift) ontbreekt vaak.
+        Het probleem zit zelden in het model. Het zit in de slide die het model omzet in een uitspraak. Het interval verdwijnt. Het wordt &quot;Google Ads = 28 procent van sales&quot;. De priors waarmee het model is gestart, staan nergens. De gevoeligheidsanalyse (wat gebeurt er met de output als de prior 5 procent omhoog of omlaag schuift) ontbreekt vaak.
       </p>
 
       <p>
-        Drie patronen zien we het vaakst. Een: een model dat met een sterke prior is opgestart en te weinig data heeft om die prior te overrulen. De output reflecteert dan vooral wat de modelbouwer al dacht. Twee: een decomposition die nooit is gekalibreerd met een echte uplift-test. Het model zegt search levert X op, niemand heeft ooit een geo-test gedaan om dat te verifieren. Drie: response curves die als feit worden gepresenteerd terwijl de data alleen het lineaire stuk dekt en de saturation-curve dus extrapolatie is.
+        Drie patronen zien we het vaakst. Een: een model dat met een sterke prior is opgestart en te weinig data heeft om die prior te corrigeren. De output laat dan vooral zien wat de modelbouwer al dacht. Twee: een decomposition die nooit is gekalibreerd met een echte uplift-test. Het model zegt search levert X op, niemand heeft ooit een geo-test gedaan om dat te controleren. Drie: response curves die als feit worden gepresenteerd terwijl de data alleen het lineaire stuk dekt en het afvlakkende deel van de curve dus een extrapolatie is.
       </p>
 
       <Callout
         big="2y"
-        label='Minimum aan wekelijkse data dat Google adviseert voor Meridian-modellen op geo-niveau. Voor national-level: 3 jaar. Onder die drempel wordt de schatting onbetrouwbaar, niet omdat het model slecht is, maar omdat er onvoldoende variatie zit om de parameters te identificeren. Bron: developers.google.com/meridian.'
+        label='Minimale hoeveelheid wekelijkse data die Google adviseert voor Meridian-modellen op geo-niveau. Op landelijk niveau: 3 jaar. Onder die drempel wordt de schatting onbetrouwbaar, niet omdat het model slecht is, maar omdat er onvoldoende variatie zit om de parameters te identificeren. Bron: developers.google.com/meridian.'
       />
 
       <H2 num="03">Wanneer is een MMM wel nuttig</H2>
 
       <p>
-        MMM beantwoordt een type vraag goed: hoe moeten we ons mediabudget over de komende periode verdelen, gegeven wat we historisch hebben gezien en gegeven wat onafhankelijke experimenten ons hebben verteld over kanaalspecifieke uplift. Dat is een budget-allocatievraag op kwartaal- of jaarbasis, niet een dagelijkse optimalisatievraag.
+        MMM is goed in een soort vraag: hoe verdelen we ons mediabudget over de komende periode, op basis van wat we in het verleden zagen en wat onafhankelijke experimenten ons vertelden over de uplift per kanaal. Dat is een vraag over het verdelen van budget per kwartaal of per jaar, geen vraag over dagelijks bijsturen.
       </p>
 
       <Takeaways
@@ -1020,7 +1000,7 @@ function ArticleMMMBody() {
             pct: '01',
             text: (
               <>
-                <b>Budget-allocatie over kanalen.</b> Bij budgetten boven enkele miljoenen per jaar over vijf of meer kanalen. Bij kleinere budgetten domineert ruis de schatting.
+                <b>Budget verdelen over kanalen.</b> Bij budgetten boven enkele miljoenen per jaar over vijf of meer kanalen. Bij kleinere budgetten overstemt de ruis de schatting.
               </>
             ),
           },
@@ -1028,7 +1008,7 @@ function ArticleMMMBody() {
             pct: '02',
             text: (
               <>
-                <b>Diminishing returns per kanaal.</b> Waar zit de saturation? Het model schat een response curve. Met experiment-kalibratie wordt die curve serieuzer dan zonder.
+                <b>Afnemende meeropbrengst per kanaal.</b> Waar raakt een kanaal verzadigd? Het model schat een response curve. Met experiment-kalibratie wordt die curve betrouwbaarder dan zonder.
               </>
             ),
           },
@@ -1036,28 +1016,28 @@ function ArticleMMMBody() {
             pct: '03',
             text: (
               <>
-                <b>Effect van externe factoren.</b> Hoeveel van de Q4-piek kwam door seizoen, hoeveel door advertising? Dit is precies wat MMM wel kan en wat last-click of platformdata structureel mist.
+                <b>Effect van externe factoren.</b> Hoeveel van de Q4-piek kwam door het seizoen, hoeveel door adverteren? Dit is precies wat MMM wel kan en wat last-click of platformdata structureel mist.
               </>
             ),
           },
         ]}
       />
 
-      <H2 num="04">Wanneer levert het false confidence</H2>
+      <H2 num="04">Wanneer geeft het schijnzekerheid</H2>
 
       <p>
         Vier signalen dat een MMM-output meer onzekerheid bevat dan de slide laat zien. Wie deze niet checkt, koopt een grafiek, geen analyse.
       </p>
 
       <Takeaways
-        label="DE VIER ROODBRAND-LICHTEN"
+        label="DE VIER RODE VLAGGEN"
         title="Wat je vraagt voordat je een MMM gelooft"
         items={[
           {
             pct: '01',
             text: (
               <>
-                <b>Geen intervallen.</b> Decomposition zonder geloofwaardigheidsinterval per kanaal: dit is een rapportage-grafiek, geen modeloutput. Vraag het interval expliciet.
+                <b>Geen intervallen.</b> Decomposition zonder geloofwaardigheidsinterval per kanaal: dit is een rapportage-grafiek, geen modeloutput. Vraag expliciet naar het interval.
               </>
             ),
           },
@@ -1065,7 +1045,7 @@ function ArticleMMMBody() {
             pct: '02',
             text: (
               <>
-                <b>Geen experiment-kalibratie.</b> Het model is nooit getoetst aan een geo-test, holdout of conversion lift-experiment. De priors zijn dan geleund op domeinexpertise (lees: een mening), niet op gemeten uplift.
+                <b>Geen experiment-kalibratie.</b> Het model is nooit getoetst aan een geo-test, holdout of conversion lift-experiment. De priors zijn dan gebaseerd op domeinkennis (lees: een mening), niet op gemeten uplift.
               </>
             ),
           },
@@ -1073,7 +1053,7 @@ function ArticleMMMBody() {
             pct: '03',
             text: (
               <>
-                <b>Geen sensitivity-analyse.</b> Hoe verandert de output als je een prior 5 procent omhoog of omlaag schuift? Als de output dramatisch beweegt, weet het model in feite weinig en reflecteert het vooral de input.
+                <b>Geen gevoeligheidsanalyse.</b> Hoe verandert de output als je een prior 5 procent omhoog of omlaag schuift? Verandert de output sterk, dan weet het model in feite weinig en laat het vooral zien wat erin is gestopt.
               </>
             ),
           },
@@ -1091,21 +1071,21 @@ function ArticleMMMBody() {
       <h3>Open source verandert de drempel, niet de discipline</h3>
 
       <p>
-        Google Meridian (open source MMM-framework, beschikbaar sinds 2024) verlaagt de prijs van software naar nul. Dat haalt het oude bezwaar &quot;te duur bureau&quot; deels weg. Maar het verandert niets aan de datavereisten (minimaal 2 jaar wekelijkse data), het maximumaantal kanalen (~20), de noodzaak tot experiment-kalibratie, of de leesvaardigheid om intervallen te interpreteren.
+        Google Meridian (open source MMM-framework, beschikbaar sinds 2024) maakt de software gratis. Dat haalt het oude bezwaar &quot;te duur bureau&quot; deels weg. Maar het verandert niets aan de datavereisten (minimaal 2 jaar wekelijkse data), het maximumaantal kanalen (~20), de noodzaak tot experiment-kalibratie, of aan het vermogen om intervallen te lezen.
       </p>
 
       <p>
-        De marktshift is dus niet &quot;MMM wordt makkelijk&quot;. Het is &quot;de toegang tot serieuze MMM is gedemocratiseerd, maar serieuze MMM blijft serieus werk&quot;. Wie Meridian draait zonder te kalibreren met experimenten, krijgt dezelfde false confidence als een bureau-MMM zonder kalibratie. Het verschil is de prijs van de licentie, niet de kwaliteit van de schatting.
+        Wat er in de markt verandert, is dus niet dat MMM makkelijk wordt. Serieuze MMM is voor veel meer bedrijven bereikbaar geworden, maar het blijft serieus werk. Wie Meridian draait zonder te kalibreren met experimenten, krijgt dezelfde schijnzekerheid als een bureau-MMM zonder kalibratie. Het verschil is de prijs van de licentie, niet de kwaliteit van de schatting.
       </p>
 
       <H2 num="05">De praktische conclusie</H2>
 
       <p>
-        Behandel de MMM-output zoals je een rapport van een onderzoeker behandelt. Niet als feit. Als hypothese-generator. Het model zegt: &quot;volgens mij ligt de waarheid hier&quot;. Daarna doe je experimenten om te testen of die hypothese klopt.
+        Behandel de MMM-output zoals je een rapport van een onderzoeker behandelt. Niet als feit. Als bron van hypotheses. Het model zegt: &quot;volgens mij ligt de waarheid hier&quot;. Daarna doe je experimenten om te testen of die hypothese klopt.
       </p>
 
       <p>
-        Concreet: pak de drie kanalen waar het MMM het sterkste effect schat. Zet daar een uplift-test op (geo, holdout, audience-split). Als de gemeten uplift binnen het MMM-interval valt, bevestigt het experiment het model. Als de uplift buiten het interval valt, weet je dat het model iets mist en moet je de priors of de specificatie herzien.
+        Concreet: pak de drie kanalen waarvoor het MMM het grootste effect schat. Zet daar een uplift-test op (geo, holdout, audience-split). Als de gemeten uplift binnen het MMM-interval valt, bevestigt het experiment het model. Als de uplift buiten het interval valt, weet je dat het model iets mist en moet je de priors of de specificatie herzien.
       </p>
 
       <p>
@@ -1137,44 +1117,44 @@ function ArticleLastClickBody() {
       />
 
       <p>
-        Bij vlakke budgetten groeit de druk om effect te bewijzen. En in die druk pakt elk team het meetmodel dat elke week een getal levert, niet het model dat de beste beslissing ondersteunt. Daar zit de kern van het probleem.
+        Bij vlakke budgetten groeit de druk om effect te bewijzen. En onder die druk pakt elk team het meetmodel dat elke week een getal levert, niet het model waarmee je de beste beslissing neemt. Daar zit de kern van het probleem.
       </p>
 
       <H2 num="01">Wat last-click meet, en wat niet</H2>
 
       <p>
-        Stel: iemand ziet drie weken lang advertenties op YouTube, LinkedIn en display. Daarna typt diegene je merknaam in Google, klikt op een branded search-advertentie en koopt. Last-click zegt: search leverde de conversie. Branded search krijgt het credit, het budget en de bonus.
+        Stel: iemand ziet drie weken lang advertenties op YouTube, LinkedIn en display. Daarna typt diegene je merknaam in Google, klikt op een branded search-advertentie en koopt. Last-click zegt: search leverde de conversie. Branded search krijgt de eer, het budget en de bonus.
       </p>
 
       <p>
-        De juiste vraag is een andere: <strong>had deze persoon ook gekocht zonder die laatste klik?</strong> Met andere woorden, was die advertentie vlak voor de aankoop oorzaak van de verkoop, of alleen het laatste meetbare contact? Last-click heeft op die vraag geen antwoord. Het model heeft geen vergelijking, geen referentie, geen counterfactual.
+        De juiste vraag is een andere: <strong>had deze persoon ook gekocht zonder die laatste klik?</strong> Met andere woorden, was die advertentie vlak voor de aankoop oorzaak van de verkoop, of alleen het laatste meetbare contact? Last-click heeft op die vraag geen antwoord. Het model vergelijkt met niets en weet niet wat er zonder die advertentie was gebeurd.
       </p>
 
       <p>
-        Dat is geen academische haarsplitserij. Het verschil tussen &quot;laatste klik&quot; en &quot;oorzaak van verkoop&quot; bepaalt waar het volgende kwartaal-budget heen gaat.
+        Dat is geen academische haarsplitserij. Het verschil tussen &quot;laatste klik&quot; en &quot;oorzaak van verkoop&quot; bepaalt waar het budget van volgend kwartaal heen gaat.
       </p>
 
       <Callout
         big="500M"
-        label="User-experiment-observations en 1,6 miljard ad impressions in 15 Facebook-experimenten. Gordon, Zettelmeyer, Bhargava en Chapsky vonden dat observationele methodes vaak niet hetzelfde effect produceren als gerandomiseerde experimenten, ook na controle voor demografie en gedrag. Marketing Science, INFORMS."
+        label="waarnemingen van gebruikers in experimenten en 1,6 miljard advertentievertoningen in 15 Facebook-experimenten. Gordon, Zettelmeyer, Bhargava en Chapsky vonden dat observationele methodes vaak niet op hetzelfde effect uitkomen als gerandomiseerde experimenten, ook als je corrigeert voor demografie en gedrag. Marketing Science, INFORMS."
       />
 
       <p>
-        De conclusie van die studie is ongemakkelijk: zelfs met enorme platformdata is causaliteit niet te bepalen zonder een experiment dat een controlegroep meet. Een Meta-rapport van 2.226 experimenten liet daarna zien dat last-click in 12 tot 20 procent van de campagnes tot een andere beslissing leidt dan een echt experiment. Een gemiddelde fout van een op de zes campagnes is veel als je een jaarbudget verdeelt.
+        De conclusie van die studie is ongemakkelijk: zelfs met enorme platformdata is causaliteit niet te bepalen zonder een experiment dat een controlegroep meet. Een Meta-rapport van 2.226 experimenten liet daarna zien dat last-click in 12 tot 20 procent van de campagnes tot een andere beslissing leidt dan een echt experiment. Als je een jaarbudget verdeelt, is een verkeerde beslissing bij gemiddeld een op de zes campagnes veel.
       </p>
 
       <H2 num="02">Waarom het toch blijft</H2>
 
       <p>
-        Last-click verdwijnt niet omdat het past in hoe teams sturen. Performance-marketeers krijgen targets op CPA of ROAS. Kanaalmanagers verdedigen hun eigen budget. Bureaus rapporteren per kanaal. Finance wil een concreet getal in plaats van een interval. Dashboards tonen conversies per bron. Elk van die rollen wordt elke week beloond voor &quot;wat heeft het opgeleverd&quot;, en last-click geeft daar elke week antwoord op.
+        Last-click verdwijnt niet, omdat het past bij hoe teams sturen. Performance-marketeers krijgen targets op CPA of ROAS. Kanaalmanagers verdedigen hun eigen budget. Bureaus rapporteren per kanaal. Finance wil een concreet getal in plaats van een bandbreedte. Dashboards tonen conversies per bron. Al die mensen worden elke week afgerekend op de vraag "wat heeft het opgeleverd", en last-click geeft daar elke week antwoord op.
       </p>
 
       <p>
-        Dat antwoord voelt afrekenbaar. Niet omdat het waar is, maar omdat het meetbaar is. Een uplift-meting die zegt &quot;dit kanaal levert tussen de 14 en 22 procent extra omzet&quot; is wetenschappelijk sterker dan &quot;branded search leverde 412 conversies&quot;, maar bestuurlijk lastiger. Een interval is geen score.
+        Op dat antwoord kun je iemand afrekenen. Niet omdat het waar is, maar omdat het meetbaar is. Een uplift-meting die zegt &quot;dit kanaal levert tussen de 14 en 22 procent extra omzet&quot; is wetenschappelijk sterker dan &quot;branded search leverde 412 conversies&quot;, maar bestuurlijk lastiger. Met een bandbreedte kun je niemand afrekenen.
       </p>
 
       <p>
-        Wat we vaak zien: teams die het verschil weten, blijven last-click gebruiken in de weekrapportage en zetten een aparte uplift-test op naast de standaard-stack. Dat is niet ideaal, maar het is realistischer dan een complete cultuuromslag in een kwartaal. Last-click blijft bestaan omdat het in het vergaderritme past, niet omdat iemand het verdedigt.
+        Wat we vaak zien: teams die het verschil weten, blijven last-click gebruiken in de weekrapportage en zetten een aparte uplift-test op naast hun gewone rapportage. Dat is niet ideaal, maar het is realistischer dan een complete cultuuromslag in een kwartaal. Last-click blijft bestaan omdat het in het vergaderritme past, niet omdat iemand het verdedigt.
       </p>
 
       <H2 num="03">Wat onderzoek wel laat zien</H2>
@@ -1191,7 +1171,7 @@ function ArticleLastClickBody() {
             pct: '60/40',
             text: (
               <>
-                <b>Binet en Field.</b> De IPA-onderzoekers waarschuwen dat zeer korte online-metrics als hoofdmaatstaf gevaarlijk zijn voor lange termijn groei. Hun 60:40-vuistregel: ongeveer 60 procent van marketingbudget naar merkbouw, 40 procent naar activatie, voor de meeste categorieen. Last-click ziet vooral die 40 procent.
+                <b>Binet en Field.</b> De IPA-onderzoekers waarschuwen dat je groei op lange termijn in gevaar brengt als je vooral stuurt op online cijfers voor de korte termijn. Hun 60:40-vuistregel: ongeveer 60 procent van het marketingbudget naar merkbouw, 40 procent naar activatie, voor de meeste categorieen. Last-click ziet vooral die 40 procent.
               </>
             ),
           },
@@ -1199,7 +1179,7 @@ function ArticleLastClickBody() {
             pct: 'EBI',
             text: (
               <>
-                <b>Ehrenberg-Bass.</b> Merken groeien via penetratie: zoveel mogelijk kopers, makkelijk te herinneren, makkelijk te kopen. Last-click beloont juist de kanalen het dichtst op de kassa (branded search, retargeting, affiliate, vouchers). Die vangen bestaande vraag op, ze creeren weinig nieuwe vraag.
+                <b>Ehrenberg-Bass.</b> Merken groeien via penetratie: zoveel mogelijk kopers, makkelijk te herinneren, makkelijk te kopen. Last-click beloont juist de kanalen het dichtst bij de kassa (branded search, retargeting, affiliate, vouchers). Die vangen bestaande vraag op, ze creëren weinig nieuwe vraag.
               </>
             ),
           },
@@ -1207,7 +1187,7 @@ function ArticleLastClickBody() {
             pct: '2%',
             text: (
               <>
-                <b>Nielsen.</b> Per kwartaal zonder advertising verliest een merk volgens Nielsen-data 2 procent toekomstige omzet. Herstel duurt drie tot vijf jaar. Doorlopende marketing verklaart 10 tot 35 procent van brand equity. Dat zie je niet terug in een conversie-rapport van vorige week.
+                <b>Nielsen.</b> Per kwartaal zonder adverteren verliest een merk volgens Nielsen-data 2 procent toekomstige omzet. Herstel duurt drie tot vijf jaar. Doorlopende marketing verklaart 10 tot 35 procent van de merkwaarde. Dat zie je niet terug in een conversie-rapport van vorige week.
               </>
             ),
           },
@@ -1215,17 +1195,17 @@ function ArticleLastClickBody() {
       />
 
       <p>
-        Het patroon: last-click meet vooral oogsten. Het meet slecht wat de oogst groter maakt. Een kanaal kan zwak ogen op directe sales en sterk zijn op merkbouw. Een ander kanaal kan sterk ogen op directe sales en vooral bestaande vraag binnenharken die zonder dat kanaal ook was binnengekomen.
+        Het patroon: last-click meet vooral oogsten. Het meet slecht wat de oogst groter maakt. Een kanaal kan zwak lijken op directe verkoop en sterk zijn voor het merk. Een ander kanaal kan sterk lijken op directe verkoop en vooral bestaande vraag binnenharken die zonder dat kanaal ook was binnengekomen.
       </p>
 
       <p>
-        Wie alleen op last-click stuurt, verschuift budget vrijwel altijd naar dat tweede type kanaal. Korte termijn lijkt het te werken; lange termijn slijt de vraag-pijplijn waar diezelfde kanalen op leunen. Dat is de boemerang.
+        Wie alleen op last-click stuurt, verschuift budget vrijwel altijd naar dat tweede type kanaal. Op korte termijn lijkt het te werken. Op lange termijn droogt de vraag op waar diezelfde kanalen van leven. Dat is de boemerang.
       </p>
 
       <H2 num="04">De stack die wel werkt</H2>
 
       <p>
-        De oplossing is geen vervanging. Het is een gelaagde meetstack waarbij elk model de vraag krijgt waar het goed in is. Vier lagen.
+        De oplossing is geen vervanging. Het is meten in lagen, waarbij elk model de vraag krijgt waar het goed in is. Vier lagen.
       </p>
 
       <Takeaways
@@ -1236,7 +1216,7 @@ function ArticleLastClickBody() {
             pct: '01',
             text: (
               <>
-                <b>Operationele attributie.</b> Gebruik last-click of platformdata voor korte feedback: tracking werkt, welke zoektermen converteren, welke landingspagina faalt. Operationeel debuggen, niet budget verdelen.
+                <b>Operationele attributie.</b> Gebruik last-click of platformdata voor snelle terugkoppeling: werkt de meting, welke zoektermen converteren, welke landingspagina faalt. Om fouten op te sporen, niet om budget te verdelen.
               </>
             ),
           },
@@ -1244,7 +1224,7 @@ function ArticleLastClickBody() {
             pct: '02',
             text: (
               <>
-                <b>Uplift-tests.</b> Geo-test, holdout, audience-split. Vooral op kanalen die last-click structureel overschat: branded search, retargeting, affiliate, voucher-sites, Performance Max met veel brand-traffic. Twee per jaar is een minimum.
+                <b>Uplift-tests.</b> Geo-test, holdout, audience-split. Vooral op kanalen die last-click structureel overschat: branded search, retargeting, affiliate, voucher-sites, Performance Max met veel verkeer op je merknaam. Doe er minstens twee per jaar.
               </>
             ),
           },
@@ -1252,7 +1232,7 @@ function ArticleLastClickBody() {
             pct: '03',
             text: (
               <>
-                <b>Marketing Mix Modeling.</b> Voor de budgetvraag: hoe verdelen we over kanalen, tijd, merk en activatie, rekening houdend met seizoen, prijs, promotie en concurrentie. MMM beantwoordt geen dagelijkse vraag, maar de jaarlijkse en kwartaal-vraag.
+                <b>Marketing Mix Modeling.</b> Voor de budgetvraag: hoe verdelen we over kanalen, tijd, merk en activatie, rekening houdend met seizoen, prijs, promotie en concurrentie. MMM is niet voor de vragen van elke dag, maar voor die per kwartaal en per jaar.
               </>
             ),
           },
@@ -1260,7 +1240,7 @@ function ArticleLastClickBody() {
             pct: '04',
             text: (
               <>
-                <b>Brand tracking.</b> Spontane bekendheid, overweging, voorkeur, category entry points. Wat last-click niet ziet maar wat Nielsen, Binet en Ehrenberg-Bass koppelen aan toekomstige sales.
+                <b>Brand tracking.</b> Spontane bekendheid, overweging, voorkeur, category entry points. Wat last-click niet ziet maar wat Nielsen, Binet en Ehrenberg-Bass koppelen aan toekomstige verkoop.
               </>
             ),
           },
@@ -1270,11 +1250,11 @@ function ArticleLastClickBody() {
       <h3>Over Meridian, en over &quot;MMM kost te veel&quot;</h3>
 
       <p>
-        De klassieke MMM-bezwaren waren reeel: duur bureau, lange doorlooptijd, jaarlijkse update, weinig actie voor performance-teams. Google&apos;s open source MMM-framework Meridian verandert daar een deel van. De software is gratis, de code is openbaar en aanpasbaar, en het framework is expliciet ontworpen voor causale schatting via onder andere geo-level modeling, reach en frequency, en kalibratie met experiment-resultaten.
+        De klassieke MMM-bezwaren waren reeel: duur bureau, lange doorlooptijd, jaarlijkse update, weinig waar performanceteams iets mee konden. Meridian, het opensourceframework van Google voor MMM, verandert daar een deel van. De software is gratis, de code is openbaar en aanpasbaar, en het framework is expliciet ontworpen voor causale schatting via onder andere geo-level modeling, bereik en frequentie, en kalibratie met experiment-resultaten.
       </p>
 
       <p>
-        Maar Meridian vervangt geen werk. Google&apos;s eigen documentatie adviseert minimaal twee jaar wekelijkse data voor geo-level modellen, drie jaar voor national-level. Maximaal 20 kanalen om genoeg variatie te houden. En altijd kalibreren met echte uplift-experimenten, niet alleen met platformdata. Open source haalt het excuus &quot;te duur&quot; deels weg. Het haalt de discipline-vereiste niet weg.
+        Maar Meridian vervangt geen werk. De documentatie van Google zelf adviseert minimaal twee jaar wekelijkse data voor geo-level modellen, drie jaar voor national-level. Maximaal 20 kanalen om genoeg variatie te houden. En altijd kalibreren met echte uplift-experimenten, niet alleen met platformdata. Open source haalt het excuus &quot;te duur&quot; deels weg. De discipline die het vraagt, blijft.
       </p>
 
       <PullQuote
@@ -1285,15 +1265,15 @@ function ArticleLastClickBody() {
       <H2 num="05">De praktische conclusie</H2>
 
       <p>
-        De vraag is niet of je last-click moet afschaffen. De vraag is: <strong>welke beslissing neem je met welk model?</strong> Een dagrapport mag op last-click. Een kwartaal-budget hoort dat niet te zijn. En de vraag &quot;werkt dit kanaal eigenlijk wel&quot; verdient een uplift-test, geen dashboard-screenshot.
+        De vraag is niet of je last-click moet afschaffen. De vraag is: <strong>welke beslissing neem je met welk model?</strong> Een dagrapport mag op last-click. Een kwartaalbudget niet. En de vraag &quot;werkt dit kanaal eigenlijk wel&quot; verdient een uplift-test, geen dashboard-screenshot.
       </p>
 
       <p>
-        Praktisch: degradeer last-click tot wat het is. Een operationeel signaal voor de week. Geen investeringsmodel voor het jaar. Bouw daarbovenop minstens twee uplift-tests per jaar op de kanalen die je het meest budgetteert. En gebruik MMM (open source of bureau) op het moment dat een budget-discussie verder gaat dan vijf procent verschuiving.
+        Praktisch: degradeer last-click tot wat het is. Een operationeel signaal voor de week. Geen investeringsmodel voor het jaar. Bouw daarbovenop minstens twee uplift-tests per jaar op de kanalen waar je het meeste budget in stopt. En gebruik MMM (open source of bureau) zodra de discussie over het verschuiven van meer dan vijf procent van het budget gaat.
       </p>
 
       <p>
-        Het systeem is verkeerd ingericht, niet de marketeers. Een rapportagemodel gebruiken voor investeringsbesluiten is precies waar Stevin in 1586 al voor waarschuwde: als je het niet kunt herleiden, is het geen feit. Het is een verhaal.
+        Het probleem zit in het systeem, niet in de marketeers. Een rapportagemodel gebruiken voor investeringsbesluiten is precies waar Stevin in 1586 al voor waarschuwde: als je het niet kunt herleiden, is het geen feit. Het is een verhaal.
       </p>
 
       <EndRule />
@@ -1309,7 +1289,7 @@ function ArticleAgentsBody() {
   return (
     <>
       <p className="lead-para">
-        DHL liet AI-agents van het Amerikaanse bedrijf HappyRobot vorig jaar honderdduizenden e-mails en miljoenen telefoonminuten per jaar afhandelen, volgens een persbericht van 11 november 2025. Gartner verwacht dat 60 procent van bedrijven met supply-chain-software in 2030 zulke agentic AI gebruikt. Vandaag is dat 5 procent. Tussen die twee cijfers ligt het echte verhaal.
+        DHL liet AI-agents van het Amerikaanse bedrijf HappyRobot honderdduizenden e-mails en miljoenen telefoonminuten per jaar afhandelen, volgens een persbericht van 11 november 2025. Gartner verwacht dat 60 procent van de bedrijven met supply-chain-software in 2030 zulke agentic AI gebruikt. Vandaag is dat 5 procent. Tussen die twee cijfers ligt het echte verhaal.
       </p>
 
       <BodyFigure
@@ -1317,17 +1297,17 @@ function ArticleAgentsBody() {
         stat="100k+"
         statCap="e-mails per jaar door een agent. Plus miljoenen telefoonminuten. Volgens DHL Group, persbericht 11 november 2025."
         edition="EDITIE 013 / 052 · AI &amp; AGENTS"
-        source="Bron: DHL Group press release (11 november 2025)"
+        source="Bron: persbericht DHL Group (11 november 2025)"
       />
 
       <p>
-        Datzelfde Gartner publiceerde een maand later iets minder hoopvols: meer dan 40 procent van agentic-AI-projecten wordt voor eind 2027 afgeblazen. Te dure pilots, te onduidelijke business cases, te zwakke risk-controls. De realiteit ligt ergens tussen de belofte en de teleurstelling, en het verschil zit niet in de modellen.
+        Datzelfde Gartner publiceerde een maand later iets minder hoopvols: meer dan 40 procent van de agentic-AI-projecten wordt voor eind 2027 afgeblazen. Te dure pilots, te onduidelijke business cases, te zwak risicobeheer. De realiteit ligt ergens tussen de belofte en de teleurstelling, en het verschil zit niet in de modellen.
       </p>
 
-      <H2 num="01">Wat een agent in DHL&apos;s warehouse echt doet</H2>
+      <H2 num="01">Wat een agent in het magazijn van DHL echt doet</H2>
 
       <p>
-        DHL Supply Chain noemt drie taken letterlijk in het persbericht: &quot;appointment scheduling, driver follow-up calls, and high-priority warehouse coordination&quot;. Vrij vertaald: afspraken inplannen met chauffeurs, achteraan e-mailen wanneer een rit niet op tijd binnenkomt, en bij urgente magazijn-issues de juiste mensen op de juiste plek krijgen. Werk dat normaal aan een planner of dispatcher hangt, en dat normaal in losse e-mails, telefoontjes en WhatsApp-berichten verzandt.
+        DHL Supply Chain noemt drie taken letterlijk in het persbericht: &quot;appointment scheduling, driver follow-up calls, and high-priority warehouse coordination&quot;. Vrij vertaald: afspraken inplannen met chauffeurs, chauffeurs nabellen wanneer een rit niet op tijd binnenkomt, en bij spoed in het magazijn de juiste mensen op de juiste plek krijgen. Werk dat normaal aan een planner of dispatcher hangt, en dat vaak in losse e-mails, telefoontjes en WhatsApp-berichten verzandt.
       </p>
 
       <p>
@@ -1335,7 +1315,7 @@ function ArticleAgentsBody() {
       </p>
 
       <p>
-        HappyRobot, het bedrijf achter de DHL-agents, haalde in september 2025 $44 miljoen op en heeft volgens Reuters meer dan 70 enterprise-klanten, waaronder ook Ryder en Flexport. FedEx loopt iets minder ver maar mikt op meer dan de helft van zijn kernprocessen in agent-handen tegen 2028: network planning, customs clearance (al deels live), shipment coordination en customer support.
+        HappyRobot, het bedrijf achter de DHL-agents, haalde in september 2025 44 miljoen dollar op en heeft volgens Reuters meer dan 70 grote zakelijke klanten, waaronder ook Ryder en Flexport. FedEx is iets minder ver, maar wil in 2028 meer dan de helft van zijn kernprocessen door agents laten doen: netwerkplanning, douaneafhandeling (al deels live), coordinatie van zendingen en klantenservice.
       </p>
 
       <PullQuote
@@ -1346,7 +1326,7 @@ function ArticleAgentsBody() {
       <H2 num="02">De drie cijfers die ertoe doen</H2>
 
       <p>
-        Drie cijfers van Gartner en Bain vertellen samen het hele verhaal. Een los geeft of marketing of doemdenken.
+        Drie cijfers van Gartner en Bain vertellen samen het hele verhaal. Los gelezen levert elk cijfer marketingpraat of doemdenken op.
       </p>
 
       <Takeaways
@@ -1373,7 +1353,7 @@ function ArticleAgentsBody() {
             pct: '41%',
             text: (
               <>
-                <b>De waarheid in het midden.</b> Aandeel bedrijven dat positieve ROI haalt binnen twaalf maanden na een agent-deployment. 19 procent bereikt het nooit. (Bain, 2026.)
+                <b>De waarheid in het midden.</b> Aandeel bedrijven dat positieve ROI haalt binnen twaalf maanden nadat ze een agent in gebruik namen. 19 procent haalt dat nooit. (Bain, 2026.)
               </>
             ),
           },
@@ -1381,13 +1361,13 @@ function ArticleAgentsBody() {
       />
 
       <p>
-        Lees die 41 procent nog eens. Minder dan de helft van wie aan een agent begint, krijgt het binnen een jaar terugverdiend. Dat is geen verdoemenis. Het zegt dat een agent een serieuze investering is met een duidelijk faalpercentage, geen plug-and-play. Wie zonder strakke executie begint, zit waarschijnlijk in de 59 procent.
+        Lees die 41 procent nog eens. Minder dan de helft van wie aan een agent begint, krijgt het binnen een jaar terugverdiend. Het betekent dat een agent een serieuze investering is met een duidelijk faalpercentage, geen plug-and-play. Wie begint zonder het strak uit te voeren, zit waarschijnlijk in de 59 procent.
       </p>
 
       <H2 num="03">Wat je over 90 dagen meet</H2>
 
       <p>
-        Negentig dagen is kort genoeg om snel duidelijk te krijgen of een agent werkt, en lang genoeg om voorbij de honeymoon-fase te kijken. Vier meetpunten zijn niet onderhandelbaar.
+        Negentig dagen is kort genoeg om snel duidelijk te krijgen of een agent werkt, en lang genoeg om voorbij de wittebroodsweken te kijken. Vier dingen meet je altijd.
       </p>
 
       <Takeaways
@@ -1398,7 +1378,7 @@ function ArticleAgentsBody() {
             pct: '01',
             text: (
               <>
-                <b>Latency.</b> Hoe snel reageert de agent op input? In seconden, niet in &quot;binnen werktijd&quot;. Een afspraakverzoek dat vier uur blijft liggen had een mens ook kunnen doen.
+                <b>Reactietijd.</b> Hoe snel reageert de agent op input? In seconden, niet in &quot;binnen werktijd&quot;. Een afspraakverzoek dat vier uur blijft liggen had een mens ook kunnen doen.
               </>
             ),
           },
@@ -1406,7 +1386,7 @@ function ArticleAgentsBody() {
             pct: '02',
             text: (
               <>
-                <b>Override-rate.</b> Hoe vaak grijpt een mens alsnog in om de output te corrigeren? Hoog cijfer betekent: de agent kost extra werk, niet minder.
+                <b>Correcties.</b> Hoe vaak grijpt een mens alsnog in om de output te corrigeren? Is dat cijfer hoog, dan kost de agent extra werk in plaats van minder.
               </>
             ),
           },
@@ -1414,7 +1394,7 @@ function ArticleAgentsBody() {
             pct: '03',
             text: (
               <>
-                <b>Exception-rate.</b> Hoe vaak escaleert de agent zelf naar een mens omdat &apos;ie het niet snapt? Een gezond cijfer ligt tussen 5 en 15 procent. Hoger: te ambitieus ingericht.
+                <b>Doorverwijzingen.</b> Hoe vaak geeft de agent een vraag zelf door aan een mens omdat hij het niet snapt? Een gezond cijfer ligt tussen 5 en 15 procent. Hoger: te ambitieus ingericht.
               </>
             ),
           },
@@ -1422,44 +1402,44 @@ function ArticleAgentsBody() {
             pct: '04',
             text: (
               <>
-                <b>Payback.</b> Aantal bespaarde uren maal interne uurprijs, gedeeld door maandelijkse vendor-fee plus integratie-uren. Onder 1 betaal je om er extra werk bij te krijgen.
+                <b>Terugverdienen.</b> Aantal bespaarde uren maal interne uurprijs, gedeeld door de maandelijkse kosten van de leverancier plus de uren voor de koppeling. Onder 1 betaal je om er extra werk bij te krijgen.
               </>
             ),
           },
         ]}
       />
 
-      <h3>De Convoy-les</h3>
+      <h3>De les van Convoy</h3>
 
       <p>
-        In oktober 2023 ging Convoy dicht. Het Amerikaanse digitale freight-bedrijf had meer dan een miljard dollar opgehaald, een prima technologie-stack en een net AI-team. Wat het niet had: vrachtwagens, drop networks of exclusieve capaciteit. Toen de markt omsloeg, was er geen fysieke hefboom om op terug te vallen. De technologie was niet het probleem; het ontbreken van een operationeel netwerk eromheen was dat wel.
+        In oktober 2023 ging Convoy dicht. Het Amerikaanse digitale vrachtplatform had meer dan een miljard dollar opgehaald, goede technologie en een sterk AI-team. Wat het niet had: vrachtwagens, drop networks of exclusieve capaciteit. Toen de markt omsloeg, was er niets fysieks om op terug te vallen. Het probleem was niet de technologie, maar dat er geen operationeel netwerk omheen zat.
       </p>
 
       <p>
-        Voor wie in 2026 een agent-pilot start: koppel de agent aan een bestaand proces dat al draait. Geen nieuwe business unit, geen apart team, geen apart budget. Een agent vergroot een bestaand systeem of vervangt een bestaand stuk werk. Hij vervangt geen markt.
+        Voor wie in 2026 een agent-pilot start: koppel de agent aan een bestaand proces dat al draait. Geen nieuwe afdeling, geen apart team, geen apart budget. Een agent versterkt een bestaand systeem of vervangt een bestaand stuk werk. Hij vervangt geen markt.
       </p>
 
       <Callout
         big="~130"
-        label='Aantal vendors dat volgens Gartner echt "agentic AI" levert. Uit duizenden die de term gebruiken. De rest noemt RPA en chatbots opnieuw "agent".'
+        label='Aantal leveranciers dat volgens Gartner echt agentic AI levert, van de duizenden die de term gebruiken. De rest plakt het label agent op bestaande RPA en chatbots.'
       />
 
       <p>
-        Gartner noemt het &quot;agent washing&quot;. Het is de versie van AI-washing die op dit moment plaatsvindt, en het maakt vendor-selectie het belangrijkste deel van een 90-dagen-pilot. Onder de oppervlakte zitten dan vaak workflow-tools die in 2019 al bestonden, met een nieuw frontje.
+        Gartner noemt het &quot;agent washing&quot;. Het is de AI-washing van dit moment, en daardoor is de keuze van de leverancier het belangrijkste deel van een pilot van 90 dagen. Onder de oppervlakte zitten dan vaak workflow-tools die in 2019 al bestonden, met een nieuw frontje.
       </p>
 
       <H2 num="04">De praktische conclusie</H2>
 
       <p>
-        De vraag voor 2026 is niet &quot;agents wel of niet&quot;. De richting (5 procent in 2025, 60 procent in 2030, volgens Gartner) is duidelijk genoeg. De vraag is: <strong>welke smalle taak bewijst zich in 90 dagen, met welke vendor, en wat is de meetlat?</strong>
+        De vraag voor 2026 is niet &quot;agents wel of niet&quot;. De richting (5 procent in 2025, 60 procent in 2030, volgens Gartner) is duidelijk genoeg. De vraag is: <strong>welke smalle taak bewijst zich in 90 dagen, met welke leverancier, en wat is de meetlat?</strong>
       </p>
 
       <p>
-        DHL koos voor een duidelijk werkterrein, operationele communicatie met chauffeurs en magazijnen, en een vendor (HappyRobot). FedEx phaseert het in over jaren, met customs eerst. Bain&apos;s data laat zien dat externe partnerships ongeveer twee keer zo vaak slagen als interne builds. De boodschap: niet zelf bouwen, niet alles tegelijk, niet zonder meetkader.
+        DHL koos voor een duidelijk werkterrein, operationele communicatie met chauffeurs en magazijnen, en een leverancier (HappyRobot). FedEx voert het over een aantal jaren in, te beginnen bij de douane. Uit de cijfers van Bain blijkt dat samenwerken met een externe partij ongeveer twee keer zo vaak slaagt als zelf bouwen. De boodschap: niet zelf bouwen, niet alles tegelijk, niet zonder meetkader.
       </p>
 
       <p>
-        Hou de vier cijfers van het meetkader bij. Latency, override-rate, exception-rate, payback. Als een daarvan 90 dagen lang de verkeerde kant op beweegt, weet je het: dit is de 19 procent die nooit positief eindigt. Beter daar in week 6 achter komen dan in maand 18.
+        Hou de vier cijfers van het meetkader bij. Reactietijd, correcties, doorverwijzingen, terugverdienen. Als een daarvan 90 dagen lang de verkeerde kant op beweegt, weet je het: dit is de 19 procent die nooit positief eindigt. Beter daar in week 6 achter komen dan in maand 18.
       </p>
 
       <EndRule />
@@ -3078,10 +3058,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'meta-invoert-onzichtbare-watermerken-voor-ai-content': (
     <>
       <p className="lead-para">
-        Meta introduceert vanaf deze maand Content Seal, een technologie die afbeeldingen gegenereerd door het bedrijf zijn nieuwe AI-modellen automatisch voorziet van een onzichtbaar watermerk. Dit moet helpen om nepnieuws en misleidende content sneller te herkennen en te beperken op sociale media. De Oversight Board van Meta riep het bedrijf eerder op om eigen tools in te zetten voor dit doel, aldus de organisatie zelf in een statement.
+        Meta zet vanaf deze maand automatisch een onzichtbaar watermerk op afbeeldingen die zijn eigen nieuwe AI-modellen maken. Het systeem heet Content Seal. Dit moet helpen om nepnieuws en misleidende content sneller te herkennen en te beperken op sociale media. De Oversight Board van Meta riep het bedrijf eerder op om eigen tools in te zetten voor dit doel, meldt de organisatie zelf in een verklaring.
       </p>
       <p>
-        De watermerken zijn niet zichtbaar voor gebruikers maar wel detecteerbaar door Meta’s systemen en externe partijen die samenwerken met het bedrijf. Hiermee volgt Meta een trend waarbij techbedrijven zelf actief bijdragen aan het markeren van synthetische content, in plaats van alleen op externe oplossingen te vertrouwen. Het systeem werkt momenteel alleen voor beelden maar zou later kunnen worden uitgebreid naar video en tekst.
+        Gebruikers zien de watermerken niet, maar de systemen van Meta en partijen waarmee Meta samenwerkt kunnen ze wel herkennen. Meta doet daarmee wat meer techbedrijven doen: zelf door AI gemaakte content markeren, in plaats van alleen op oplossingen van buiten te vertrouwen. Het systeem werkt momenteel alleen voor beelden maar zou later kunnen worden uitgebreid naar video en tekst.
       </p>
       <p>
         Critici wijzen erop dat dergelijke systemen nog steeds omzeild kunnen worden door kwaadwillenden, bijvoorbeeld door de beelden eerst te bewerken voordat ze worden gedeeld. Toch hoopt Meta met Content Seal de betrouwbaarheid van content op haar platformen te vergroten en de druk op moderators te verminderen.
@@ -3894,25 +3874,25 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit': (
     <>
       <p className="lead-para">
-        Stel je voor: een hele industrie verzamelt zich in een stad waar de temperatuur hoog is, niet alleen buiten maar ook in de discussies. Terwijl de zon brandt op de Croisette, branden de gesprekken over kunstmatige intelligentie los, maar dan wel op het verkeerde niveau. Sir Martin Sorrell had het al door tijdens zijn speech bij C Wire’s Street Talk: Cannes draait nog steeds om vragen als 'Kan AI een betere reclame maken?' of 'Schrijft AI straks alle copy?'. De werkelijke revolutie speelt zich echter af op een niveau dat minder zichtbaar is voor het oog van de camera: media planning en buying.
+        De hele reclamebranche zit in Cannes, en het is er heet, buiten en in de discussies. Terwijl de zon brandt op de Croisette, branden de gesprekken over kunstmatige intelligentie los, maar dan wel op het verkeerde niveau. Sir Martin Sorrell had het al door tijdens zijn speech bij C Wire’s Street Talk: Cannes draait nog steeds om vragen als 'Kan AI betere reclame maken?' of 'Schrijft AI straks alle copy?'. De echte omwenteling zit ergens waar geen camera op staat: mediaplanning en -inkoop.
       </p>
       <p>
-        De ironie is niet te missen. Terwijl marketeers en bureaus uren steken in brainstormsessies over AI-g gegenereerde advertenties, sluipen algoritmes al stilletjes binnen in de systemen die bepalen waar, wanneer en hoe die advertenties überhaupt verschijnen. Het gaat niet om creativiteit, maar om efficiëntie, schaal en vooral: controle. Want wie bepaalt straks welke doelgroep welk bericht krijgt? Wie stelt de prijs vast als machines in milliseconden kunnen inschatten hoeveel een impressie waard is? En wat gebeurt er met menselijke planners als machines sneller en nauwkeuriger kunnen voorspellen dan zij ooit kunnen?
+        Dat is best ironisch. Terwijl marketeers en bureaus uren steken in brainstormsessies over door AI gemaakte advertenties, sluipen algoritmes al stilletjes binnen in de systemen die bepalen waar, wanneer en hoe die advertenties überhaupt verschijnen. Het gaat niet om creativiteit, maar om efficiëntie, schaal en vooral: controle. Want wie bepaalt straks welke doelgroep welk bericht krijgt? Wie stelt de prijs vast als machines in milliseconden kunnen inschatten hoeveel een vertoning waard is? En wat gebeurt er met menselijke planners als machines sneller en nauwkeuriger kunnen voorspellen dan zij ooit kunnen?
       </p>
       <p>
-        Neem het voorbeeld van Coca-Cola’s James Quincey. Hij wees erop dat personalisering een valkuil heeft: als iedereen dezelfde geavanceerde targetingtools gebruikt, wie wint er dan nog? De consument wordt overspoeld met gepersonaliseerde boodschappen die allemaal hetzelfde klinken. Het antwoord ligt niet in meer technologie, maar in minder, of beter gezegd: in slimme toepassing ervan. Menselijke planners moeten zich richten op strategische keuzes, terwijl machines de uitvoering doen. Maar dat vergt wel een fundamentele shift in denken.
+        Neem James Quincey van Coca-Cola. Hij wees erop dat personalisering een valkuil heeft: als iedereen dezelfde geavanceerde targetingtools gebruikt, wie wint er dan nog? De consument wordt overspoeld met gepersonaliseerde boodschappen die allemaal hetzelfde klinken. Het antwoord is niet meer technologie, maar slimmer gebruik ervan. Menselijke planners moeten zich richten op strategische keuzes, terwijl machines de uitvoering doen. Maar dan moet je wel echt anders gaan denken.
       </p>
       <p>
-        Dat brengt ons bij een tegenwerping die vaak wordt genegeerd: waarom zou media planning überhaupt veranderen? De argumenten zijn bekend (programmatic advertising bestaat al jaren), maar de snelheid en schaal van verandering zijn nu pas echt voelbaar. Waar eerst menselijke tussenpersonen nodig waren om deals te sluiten tussen adverteerders en publishers, nemen nu platforms als Google en Meta die rol over. En zij doen dat met data die niemand anders heeft. Het gevolg? Adverteerders betalen steeds vaker voor uitgangsprijzen (CPM) zonder te weten waar hun budget precies naartoe gaat.
+        Dan de tegenwerping die vaak wordt genegeerd: waarom zou mediaplanning überhaupt veranderen? De argumenten zijn bekend (programmatic advertising bestaat al jaren), maar pas nu merk je hoe snel en hoe breed het verandert. Waar eerst menselijke tussenpersonen nodig waren om deals te sluiten tussen adverteerders en publishers, nemen nu platforms als Google en Meta die rol over. En zij doen dat met data die niemand anders heeft. Het gevolg? Adverteerders betalen steeds vaker per duizend vertoningen (CPM) zonder te weten waar hun budget precies naartoe gaat.
       </p>
       <p>
-        Toch is er hoop. Niet omdat technologie ineens slecht is geworden, maar omdat ze eindelijk haar ware potentieel laat zien. Voor bureaus betekent dit dat ze zich moeten herpositioneren van uitvoerders naar strategische partners die weten hoe ze technologie moeten inzetten zonder hun eigen waarde te verliezen. Voor marketeers betekent dit dat ze moeten leren vertrouwen op systemen die hen helpen beter te plannen, maar wel met menselijke controlepunten.
+        Toch is er hoop. Niet omdat technologie ineens slecht is geworden, maar omdat nu pas zichtbaar wordt wat ze echt kan. Bureaus moeten dan van uitvoerder naar strategisch partner, die weet hoe je technologie inzet zonder je eigen waarde kwijt te raken. Voor marketeers betekent dit dat ze moeten leren vertrouwen op systemen die hen helpen beter te plannen, maar wel met een mens die blijft meekijken.
       </p>
       <p>
-        De grootste uitdaging ligt misschien wel in het accepteren dat technologie niet alles kan oplossen. Quincey’s opmerking over personalisering onthult een fundamentele waarheid: zelfs met AI blijft marketing mensenwerk. De beste algoritmes kunnen patronen herkennen, maar ze begrijpen niet wat consumenten echt willen of nodig hebben. Dat blijft de taak van mensen.
+        Het moeilijkste is misschien accepteren dat technologie niet alles oplost. Wat Quincey over personalisering zei, komt hierop neer: zelfs met AI blijft marketing mensenwerk. De beste algoritmes kunnen patronen herkennen, maar ze begrijpen niet wat consumenten echt willen of nodig hebben. Dat blijft de taak van mensen.
       </p>
       <p>
-        Dus terwijl Cannes nog steeds praat over AI-g gegenereerde advertenties, zou het beter moeten luisteren naar Sorrells waarschuwing: focus op media planning en buying voordat het te laat is. Want wie straks controle heeft over hoe media wordt gekocht en geprijsd, heeft straks ook controle over hoe merken worden gezien.
+        Dus terwijl Cannes nog steeds praat over door AI gemaakte advertenties, kan het beter luisteren naar de waarschuwing van Sorrell: richt je op mediaplanning en -inkoop voordat het te laat is. Want wie straks bepaalt hoe media wordt ingekocht en wat het kost, bepaalt ook hoe merken worden gezien.
       </p>
     </>
   ),
@@ -6732,10 +6712,10 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
   'google-ads-introduceert-ingebouwd-lead-management-dashboard': (
     <>
       <p className="lead-para">
-        Google Ads introduceert een nieuw ingebouwd leadmanagementdashboard dat het mogelijk maakt om leads direct in het platform te volgen, te kwalificeren en te activeren. Hiermee verdwijnt de noodzaak om externe tools te gebruiken voor leadverwerking. De integratie met AI moet helpen om de conversiekwaliteit beter in te schatten en biedstrategieen automatisch aan te passen.
+        Google Ads krijgt een eigen dashboard waarin je leads direct in het platform kunt volgen, beoordelen en opvolgen. Daarmee heb je voor het verwerken van leads geen losse tools meer nodig. Met AI moet het de kwaliteit van conversies beter inschatten en biedstrategieën automatisch aanpassen.
       </p>
       <p>
-        Het dashboard toont standaard overzichten van leadbronnen, conversiepercentages en follow-up-acties. Gebruikers kunnen zelf filters instellen om specifieke leads prioriteit te geven, zoals hoge-intent leads of herhalingsaankopen. Daarnaast worden kwaliteitssignalen gedeeld met de AI van Google Ads, wat zou moeten leiden tot een hogere uplift in campagnes.
+        Het dashboard toont standaard overzichten van leadbronnen, conversieratio's en follow-up-acties. Gebruikers kunnen zelf filters instellen om specifieke leads prioriteit te geven, zoals leads met een duidelijke koopintentie of herhalingsaankopen. Daarnaast worden kwaliteitssignalen gedeeld met de AI van Google Ads, wat je campagnes beter zou moeten laten presteren.
       </p>
       <p>
         De functie is beschikbaar voor alle adverteerders die gebruikmaken van de leadgeneratie-extensies van Google Ads. Momenteel wordt het stapsgewijs uitgerold, waarbij sommige accounts al toegang hebben tot de nieuwe tool.
@@ -8030,7 +8010,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'doelgroep-validatie-voor-bidding-strategieen':
     "Voor marketeers is het cruciaal om regelmatig te valideren of de gekozen bieddoelen nog haalbaar zijn binnen de huidige marktomstandigheden. Automatisering bespaart tijd, maar zonder periodieke controle loop je het risico op verspilling of gemiste kansen. Begin met kleine aanpassingen en meet het effect over minimaal twee weken voor je ingrijpende wijzigingen doorvoert.",
   'meta-invoert-onzichtbare-watermerken-voor-ai-content':
-    "Voor bedrijven die afhankelijk zijn van sociale media voor hun merkcommunicatie wordt het steeds belangrijker om rekening te houden met de authenticiteit van content. Het is verstandig om nu al afspraken te maken over hoe om te gaan met door AI gegenereerde materialen in campagnes of klantcommunicatie. Bedrijven die zelf transparantie bieden over het gebruik van AI, kunnen hiermee vertrouwen opbouwen bij hun doelgroep.",
+    "Voor bedrijven die afhankelijk zijn van sociale media voor hun merkcommunicatie wordt het steeds belangrijker dat mensen kunnen zien of content echt is. Maak nu al afspraken over hoe je omgaat met beeld en tekst die door AI zijn gemaakt, in campagnes en in klantcommunicatie. Ben je zelf open over je gebruik van AI, dan bouw je daarmee vertrouwen op bij je doelgroep.",
   'passionfroot-15m-us-expansion':
     "Voor bureaus en merken biedt dit platform een nieuwe manier om creators in te zetten zonder zelf een groot netwerk te hoeven onderhouden. Het is een signaal dat de vraag naar flexibele contentpartnerschap alleen maar groeit. Tegelijkertijd daagt het de traditionele rol van bureaus uit: waarom zou je vaste krachten houden als je direct toegang hebt tot gespecialiseerde creators?",
   'yope-haalt-12-3-miljoen-op-voor-privatesociaal-netwerk':
@@ -8144,7 +8124,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'data-infrastructuur-bepaalt-ai-race':
     "Bij Stevin zien we dezelfde trend terug bij klanten die volwassen willen worden in hun AI-strategieën. Veel organisaties beginnen met pilots rond generatieve AI of automatisering zonder eerst hun datahuishouding op orde te brengen. Dat werkt net zomin als een huis bouwen zonder fundering: tijdelijk resultaat is mogelijk, maar langetermijnsucces zit in geduldige investeringen in structuur en kwaliteit.\n\nSuccesvolle implementaties beginnen altijd met een grondige audit van bestaande datasets en processen waarbinnen deze worden gegenereerd. Daarna volgt het uitrollen van tools die meetdata verzamelen én oorzaak-en-gevolgrelaties blootleggen tussen acties en uitkomsten.",
   'cannes-mist-de-realiteit-ai-heeft-media-meer-nodig-dan-creativiteit':
-    "Bij Stevin zien we deze verschuiving al jaren aankomen. Onze klanten worstelen vaak met dezelfde vraag: hoe blijven we relevant als technologie alles verandert? Ons antwoord is simpel: focus op wat technologie niet kan vervangen: strategisch denken en menselijke connectie. Wij geloven dat bureaus en marketeers zich moeten richten op het bouwen van systemen waarin AI ondersteunt in plaats van vervangt. Dat betekent investeren in tools die transparantie bieden over mediabestedingen, zodat adverteerders weer grip krijgen op hun budgetten. Maar bovenal betekent het durven loslaten van oude gewoontes en accepteren dat de toekomst ligt in samenwerking tussen mens en machine.",
+    "Bij Stevin zien we deze verschuiving al jaren aankomen. Onze klanten worstelen vaak met dezelfde vraag: hoe blijven we relevant als technologie alles verandert? Ons antwoord is simpel: richt je op wat technologie niet kan vervangen, namelijk strategisch denken en persoonlijk contact. Bureaus en marketeers moeten systemen bouwen waarin AI helpt in plaats van vervangt. Dat betekent investeren in tools die laten zien waar het mediageld naartoe gaat, zodat adverteerders weer grip krijgen op hun budgetten. En vooral: oude gewoontes durven loslaten. Mens en machine moeten het samen doen.",
   'bending-spoons-18-miljard-ipo-minimaliseren-geluk':
     "Voor ondernemers die actief zijn in overnames of portefeuillebeheer kan de aanpak van Bending Spoons inspirerend zijn. Het benadrukt het belang van een gestructureerde methodiek bij het evalueren en transformeren van bedrijven, waarbij toeval zoveel mogelijk wordt uitgesloten. Tegelijkertijd laat het zien dat langetermijnwaarde vaak belangrijker is dan snelle groei of marktaandeel.",
   'ai-in-accountancy-evolutie-in-plaats-van-revolutie':
@@ -8542,7 +8522,7 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
   'google-test-branded-search-controls-ai-max':
     "Voor bureaus en marketingteams betekent dit dat ze straks meer grip kunnen krijgen op de verdeling tussen merk- en generieke zoekopdrachten. Dat kan helpen om de uplift van merkactiviteiten beter te isoleren en de effectiviteit van campagnes nauwkeuriger te beoordelen. Het is verstandig om deze ontwikkelingen in de gaten te houden, vooral als je veel investeert in branded search.",
   'google-ads-introduceert-ingebouwd-lead-management-dashboard':
-    "Voor bedrijven die veel online leads genereren, biedt deze update een concrete besparing op tijd en middelen. Het elimineren van externe tools kan de meetdata verbeteren door minder blinde vlekken in de keten. Toch blijft het zaak om interne processen rond leadkwalificatie goed af te stemmen op de nieuwe mogelijkheden.",
+    "Krijg je veel leads online binnen, dan scheelt dit tijd en geld. Met minder losse tools zijn er minder plekken in de keten waar je meting gaten krijgt. Spreek wel intern af wie leads beoordeelt en hoe, zodat dat aansluit op wat het dashboard kan.",
   'ai-zoekgedrag-verandert-internet':
     "Voor ondernemers betekent deze verschuiving dat ze hun online aanwezigheid moeten aanpassen. Focus op content die niet alleen trefwoorden bevat, maar ook directe antwoorden geeft op veelgestelde vragen. Daarnaast wordt het belangrijker om meetdata kritisch te analyseren, omdat klassieke KPI’s zoals doorklikratio minder betrouwbaar worden.",
   'ai-presentatrice-kids-top-20-wekt-teleurstelling':
@@ -8923,68 +8903,68 @@ function ArticleTranscriptToolsBody() {
   return (
     <>
       <p className="lead-para">
-        Wij krijgen elke week een variant van dezelfde vraag: wat is nu de beste transcriptietool? Het antwoord uit twee jaar testen is Plaud. Niet omdat de andere tools slecht zijn, maar omdat Plaud op vier punten consistent wint: batterijduur, compactheid, app-ervaring en desktop-integratie tijdens video-calls. Hieronder de eerlijke ronde, inclusief waar we andere tools wel in voorzien zagen.
+        Wij krijgen elke week een variant van dezelfde vraag: wat is nu de beste transcriptietool? Het antwoord uit twee jaar testen is Plaud. Niet omdat de andere tools slecht zijn, maar omdat Plaud op vier punten consistent wint: batterijduur, compactheid, app-ervaring en desktop-integratie tijdens videogesprekken. Hieronder de eerlijke ronde, inclusief de punten waarop andere tools het wel goed deden.
       </p>
 
       <p>
-        Belangrijk vooraf: de winnaar haal je er niet zomaar uit. De out-of-the-box-ervaring is goed, maar de echte hefboom (transcripts automatisch koppelen aan klanten, follow-up-emails laten draften, agenda-context erbij trekken) vereist wat technische bouwwerk. Daar gaan we onderaan ook iets over zeggen.
+        Belangrijk vooraf: ook uit de winnaar haal je niet vanzelf alles. Zoals hij uit de doos komt, werkt hij goed, maar de echte winst (transcripts automatisch aan klanten koppelen, opvolgmails laten opstellen, je agenda erbij halen) vraagt wat technisch werk. Daarover verderop meer.
       </p>
 
       <H2 num="01">Wat we hebben getest</H2>
 
       <p>
-        Acht oplossingen, ruwweg in drie categorieen. Software-only: OpenAI Whisper (lokaal op Mac), Google Gemini transcript-modus, Otter.ai, en wat hier in jargon meestal "Microsoft AI-notitiemaker" heet (de Copilot-transcript-functie in Teams). Hardware-met-app: Plaud Note, Echo Scribe, en losse Jabra-conferentiemicrofoons gekoppeld aan transcript-software. Plus een tweede ronde apps die zich gespecialiseerd noemen in "AI-notitiemaker assistent"-categorie, namen we hier even niet bij naam noemen omdat ze de status van het experiment niet overleefden.
+        Acht oplossingen, ruwweg in drie categorieën. Alleen software: OpenAI Whisper (lokaal op Mac), de transcriptiemodus van Google Gemini, Otter.ai, en wat hier in jargon meestal "Microsoft AI-notitiemaker" heet (de Copilot-transcript-functie in Teams). Hardware met app: Plaud Note, Echo Scribe, en losse Jabra-conferentiemicrofoons gekoppeld aan transcriptiesoftware. Plus een tweede ronde apps die zichzelf specialist noemen in de categorie "AI-notitieassistent". Die noemen we hier niet bij naam, omdat ze de proeffase niet overleefden.
       </p>
 
       <p>
-        Beoordelingscriteria waren simpel en operationeel: hoeveel uur opnemen op een lading, hoe accuraat is het transcript bij Nederlands en bij twee tot vier sprekers, hoe snel ben je van opname-stop tot bruikbare tekst, en hoe makkelijk haal je het transcript daarna in een ander systeem (CRM, mailtool, document).
+        Beoordelingscriteria waren simpel en praktisch: hoeveel uur opnemen op een lading, hoe accuraat is het transcript bij Nederlands en bij twee tot vier sprekers, hoe snel ben je van het einde van de opname tot bruikbare tekst, en hoe makkelijk haal je het transcript daarna in een ander systeem (CRM, mailtool, document).
       </p>
 
-      <H2 num="02">Software-only: prima voor desk-werk, breekbaar onderweg</H2>
+      <H2 num="02">Alleen software: prima achter je bureau, lastig onderweg</H2>
 
       <p>
-        Whisper lokaal op een Mac geeft objectief de beste pure transcript-kwaliteit van het hele veld. Prive, gratis, geen cloud-call. Maar je hebt er een Mac voor nodig die aanstaat, en de workflow van "ik neem op met mijn telefoon, sleep het bestand in een script" is geen knop, het is een rituaal. Voor losse keynotes die je achteraf wilt uitschrijven: prima. Voor dagelijks gebruik: te veel handelingen.
-      </p>
-
-      <p>
-        Gemini's transcript-modus zit goed in elkaar voor wie al in Google Workspace werkt. Live transcript tijdens een Google Meet, achteraf samenvatting in een Doc. Het werkt. Het probleem zit in waar je niet bent: een belletje met je iPhone, een fysieke meeting bij een klant, een netwerk-event in een lawaaiige zaal. Daar is Gemini afwezig. En transcripts blijven hangen in Google Docs zonder dat een ander systeem ze automatisch oppikt.
+        Whisper lokaal op een Mac geeft objectief de zuiverste transcripties van alle tools. Privé, gratis, er gaat niets naar de cloud. Maar je hebt er een Mac voor nodig die aanstaat, en de werkwijze van "ik neem op met mijn telefoon, sleep het bestand in een script" is geen knop, het is een ritueel. Voor losse keynotes die je achteraf wilt uitschrijven: prima. Voor dagelijks gebruik: te veel handelingen.
       </p>
 
       <p>
-        Otter.ai en de Microsoft Copilot-transcripts in Teams zijn vergelijkbaar van klasse. Solide voor wie al in dat eco-systeem leeft. Beiden vallen om zodra je buiten de geplande video-call werkt. En de Nederlandse transcripts van beide zijn merkbaar minder accuraat dan Whisper of Plaud bij accenten en mark-namen.
+        Gemini's transcript-modus zit goed in elkaar voor wie al in Google Workspace werkt. Live transcript tijdens een Google Meet, achteraf samenvatting in een Doc. Het werkt. Het probleem zit in alle gesprekken daarbuiten: een belletje met je iPhone, een afspraak bij een klant, een netwerkbijeenkomst in een lawaaiige zaal. Daar doet Gemini niets. En transcripts blijven hangen in Google Docs zonder dat een ander systeem ze automatisch oppikt.
+      </p>
+
+      <p>
+        Otter.ai en de Microsoft Copilot-transcripts in Teams zijn vergelijkbaar van klasse. Degelijk voor wie al in die omgeving werkt. Beide vallen af zodra je buiten een gepland videogesprek werkt. En de Nederlandse transcripts van beide zijn merkbaar minder accuraat dan Whisper of Plaud bij accenten en merknamen.
       </p>
 
       <PullQuote
-        text='"Een transcript-tool die alleen in geplande video-calls werkt, mist 60 procent van de gesprekken die ertoe doen."'
+        text='"Een transcriptietool die alleen in geplande videogesprekken werkt, mist 60 procent van de gesprekken die ertoe doen."'
         cite="Stevin Journal, redactie."
       />
 
       <H2 num="03">Hardware: het Jabra-experiment en de Echo Scribe</H2>
 
       <p>
-        Op kantoor hebben we een tijdje vergaderingen geprobeerd op te nemen met Jabra-conferentiemicrofoons gekoppeld aan transcript-software op een laptop. De audio-kwaliteit is uitstekend voor wie aan de tafel zit. Het probleem: het is een opstelling. De microfoon ligt in het midden van de tafel, de laptop staat ernaast, iemand moet 'm starten en stoppen. Spontane gesprekken op de gang, in een auto, of staand bij een netwerkborrel vallen weg.
+        Op kantoor hebben we een tijdje vergaderingen geprobeerd op te nemen met Jabra-conferentiemicrofoons gekoppeld aan transcript-software op een laptop. De geluidskwaliteit is uitstekend voor wie aan de tafel zit. Het probleem: het is een opstelling. De microfoon ligt in het midden van de tafel, de laptop staat ernaast, iemand moet 'm starten en stoppen. Spontane gesprekken op de gang, in een auto, of staand bij een netwerkborrel vallen weg.
       </p>
 
       <p>
-        Echo Scribe (een hardware-recorder met cloud-transcript) is conceptueel dichter bij Plaud. Goede audio, draagbaar formaat. Wat 'm minder maakte voor ons dagelijks gebruik: de batterij valt op een halve werkdag van intensief opnemen, de bijbehorende app is rommelig, en de prijs zit hoger zonder dat we daar voor onze use-case meer waarde voor terugzagen.
+        Echo Scribe (een hardware-recorder met cloud-transcript) komt in opzet dichter bij Plaud. Goede audio, draagbaar formaat. Wat 'm minder maakte voor ons dagelijks gebruik: de batterij is na een halve werkdag intensief opnemen leeg, de bijbehorende app is rommelig, en de prijs ligt hoger zonder dat we er voor ons gebruik meer voor terugkregen.
       </p>
 
       <H2 num="04">Waarom Plaud op vier vlakken wint</H2>
 
       <p>
-        <b>Batterijduur.</b> Een hele werkdag van opnemen op een lading is geen marketing-claim, dat is wat we ervaren. Voor consultants die 's ochtends een klant bezoeken, 's middags een interne meeting hebben en 's avonds een networking-event aandoen: de tool gaat niet halverwege uit.
+        <b>Batterijduur.</b> Een hele werkdag opnemen op een lading is geen reclamepraat, zo werkt het bij ons. Voor consultants die 's ochtends een klant bezoeken, 's middags een interne meeting hebben en 's avonds een netwerkbijeenkomst aandoen: de tool gaat niet halverwege uit.
       </p>
 
       <p>
-        <b>Compactheid.</b> Het ding is op de achterkant van een iPhone gekleefd of in een zak. Geen aparte opstelling, geen "wacht, ik haal mijn recorder erbij"-moment. Een gesprek bij de koffieautomaat is op te nemen zonder dat de andere kant zich opgenomen voelt door een zichtbaar apparaat in het midden van de tafel.
+        <b>Compactheid.</b> Het ding plakt op de achterkant van je iPhone of zit in je zak. Geen aparte opstelling, geen "wacht, ik haal mijn recorder erbij"-moment. Een gesprek bij de koffieautomaat is op te nemen zonder dat de ander zich opgenomen voelt door een zichtbaar apparaat in het midden van de tafel.
       </p>
 
       <p>
-        <b>App-ervaring.</b> Transcript binnen enkele minuten na opname-stop, samenvatting erbij, exporteerbaar naar email of als deelbare link. Dit klinkt triviaal, maar de concurrentie verliest hier punten: rommelige UI, transcript pas een dag later, geen Nederlandse-taalondersteuning op niveau.
+        <b>App-ervaring.</b> Transcript binnen enkele minuten na het stoppen van de opname, samenvatting erbij, te exporteren naar e-mail of als deelbare link. Dit klinkt triviaal, maar de concurrentie verliest hier punten: een rommelige app, transcript pas een dag later, Nederlands dat niet goed genoeg wordt herkend.
       </p>
 
       <p>
-        <b>Desktop-integratie voor video-calls.</b> Hier verraste Plaud ons. De desktop-app pikt audio van een Zoom of Teams-gesprek op zonder dat je een aparte opname-tool hoeft te starten. Dezelfde transcript-flow als bij fysieke gesprekken. Voor agencies en consultants die dagelijks tussen video- en in-persoon-gesprekken pendelen: dit dicht een gat dat alle andere oplossingen lieten staan.
+        <b>Desktop-integratie voor videogesprekken.</b> Hier verraste Plaud ons. De desktop-app pikt audio van een Zoom- of Teams-gesprek op zonder dat je een aparte opnametool hoeft te starten. Dezelfde werkwijze als bij gesprekken in het echt. Voor bureaus en consultants die elke dag wisselen tussen videogesprekken en gesprekken op locatie: dit dicht een gat dat alle andere oplossingen openlieten.
       </p>
 
       <Takeaways
@@ -8995,7 +8975,7 @@ function ArticleTranscriptToolsBody() {
             pct: '01',
             text: (
               <>
-                <b>Wel: Nederlands accuraat genoeg.</b> Niet perfect bij heavy dialect of namen van merken die Plaud nooit eerder zag, maar consistent boven de drempel van bruikbaar.
+                <b>Wel: Nederlands accuraat genoeg.</b> Niet perfect bij zwaar dialect of namen van merken die Plaud nooit eerder zag, maar steeds goed genoeg om mee te werken.
               </>
             ),
           },
@@ -9011,7 +8991,7 @@ function ArticleTranscriptToolsBody() {
             pct: '03',
             text: (
               <>
-                <b>Niet: out-of-the-box gekoppeld aan je CRM.</b> Plaud levert een transcript-email, geen CRM-update. Wil je dat een transcript automatisch aan een klant wordt gehangen, een follow-up-email klaarzet, of een taak in je sales-pipeline aanmaakt: dat bouw je eromheen.
+                <b>Niet: meteen gekoppeld aan je CRM.</b> Plaud levert een transcript-email, geen CRM-update. Wil je dat een transcript automatisch aan een klant wordt gehangen, een follow-up-email klaarzet, of een taak in je sales-pipeline aanmaakt: dat bouw je eromheen.
               </>
             ),
           },
@@ -9019,7 +8999,7 @@ function ArticleTranscriptToolsBody() {
             pct: '04',
             text: (
               <>
-                <b>Niet: zonder leercurve.</b> Recorderen is simpel. Het systeem eromheen optimaliseren (prive-momenten knippen, agenda-koppeling, automatische follow-up-drafts) vereist technische bouwwerk of iemand die het voor je doet.
+                <b>Niet: zonder leercurve.</b> Opnemen is simpel. Het systeem eromheen goed inrichten (privémomenten wegknippen, je agenda koppelen, automatisch opvolgmails opstellen) vraagt technisch werk, of iemand die het voor je doet.
               </>
             ),
           },
@@ -9029,30 +9009,30 @@ function ArticleTranscriptToolsBody() {
       <H2 num="05">De leercurve, eerlijk uitgelegd</H2>
 
       <p>
-        Hier moeten we eerlijk zijn. Plaud uit de doos is goed voor "ik heb een transcript van mijn meeting van gisteren". Maar de echte tijdwinst zit niet in dat ene transcript, die zit in wat erna gebeurt. Wij hebben ervoor gekozen om Plaud te koppelen aan onze eigen sales-stack: transcripts worden automatisch aan klanten gekoppeld op basis van wie er gebeld is en welk agenda-event eraan vastzat, AI knipt prive-staartjes weg (Plaud blijft soms aanstaan na een gesprek), en een follow-up-email-draft staat binnen drie minuten na de meeting in de inbox van de juiste consultant.
+        Hier moeten we eerlijk zijn. Plaud uit de doos is goed voor "ik heb een transcript van mijn meeting van gisteren". Maar de echte tijdwinst zit niet in dat ene transcript, die zit in wat erna gebeurt. Wij hebben ervoor gekozen om Plaud te koppelen aan onze eigen verkoopsystemen: transcripts worden automatisch aan klanten gekoppeld op basis van wie er gebeld is en welke afspraak in de agenda erbij hoorde, AI knipt privéstukjes aan het eind weg (Plaud blijft soms aanstaan na een gesprek), en een concept voor de opvolgmail staat binnen drie minuten na het gesprek in de inbox van de juiste consultant.
       </p>
 
       <p>
-        Dat soort koppeling kan je zelf bouwen. Het vereist toegang tot je telefoon-belgeschiedenis, een agenda-API, een CRM en een mailtool. Het is werk, maar geen rocket science. Voor wie zelf wil prutsen: de communities rond AdsToAI en Build the Agent geven hier een hoop voorzetten.
+        Dat soort koppeling kan je zelf bouwen. Het vereist toegang tot de belgeschiedenis van je telefoon, een agenda-API, een CRM en een mailtool. Het is werk, maar geen hogere wiskunde. Voor wie zelf wil prutsen: de communities rond AdsToAI en Build the Agent geven hier een hoop voorzetten.
       </p>
 
       <p>
-        Voor wie liever wil dat het gewoon werkt: dat is precies wat wij voor klanten bouwen. Niet als productlicentie, maar als flow op maat. Een keer goed inrichten en je verliest geen 90 minuten per dag meer aan administratie na gesprekken.
+        Voor wie liever wil dat het gewoon werkt: dat is precies wat wij voor klanten bouwen. Niet als productlicentie, maar als maatwerk. Een keer goed inrichten en je verliest geen 90 minuten per dag meer aan administratie na gesprekken.
       </p>
 
       <H2 num="06">Conclusie</H2>
 
       <p>
-        Plaud is geen perfecte tool. Het is wel de tool waarmee we na twee jaar testen zijn gestopt met andere proberen. De rest van de markt is goed in deelproblemen, Plaud is goed in de hele werkdag van een consultant of marketeer die tussen klantgesprekken, video-calls en netwerkmomenten beweegt. Het apparaat is de helft van de oplossing. De andere helft is wat je eromheen bouwt.
+        Plaud is geen perfecte tool. Het is wel de tool waardoor we na twee jaar testen gestopt zijn met andere proberen. De rest van de markt is goed in deelproblemen, Plaud is goed in de hele werkdag van een consultant of marketeer die tussen klantgesprekken, videogesprekken en netwerkmomenten beweegt. Het apparaat is de helft van de oplossing. De andere helft is wat je eromheen bouwt.
       </p>
 
       <Callout
         big="0"
-        label="Aantal andere transcriptietools dat we sinds we Plaud actief gebruiken nog actief inzetten op een werkdag. Voor specifieke deelvragen (zoals lokaal Whisper voor een grote keynote-uitdraai) houden we 'm achter de hand. Voor dagelijks gebruik: een tool wint."
+        label="Aantal andere transcriptietools dat we sinds we Plaud actief gebruiken nog actief inzetten op een werkdag. Voor specifieke deelvragen (zoals lokaal Whisper voor het uitschrijven van een grote keynote) houden we 'm achter de hand. Voor dagelijks gebruik: een tool wint."
       />
 
       <p>
-        Een laatste opmerking. Wij hebben hier geen partnerschap met Plaud. Geen affiliate-link, geen commissie. Dit is gewoon wat we na een paar honderd uur opname-tijd zelf gebruiken. Als dat over een jaar verandert (een nieuwe speler, een verbeterde concurrent), zal je dat hier teruglezen.
+        Een laatste opmerking. Wij hebben hier geen partnerschap met Plaud. Geen affiliate-link, geen commissie. Dit is gewoon wat we na een paar honderd uur opnametijd zelf gebruiken. Als dat over een jaar verandert (een nieuwe speler, een verbeterde concurrent), lees je dat hier.
       </p>
     </>
   )
@@ -9066,15 +9046,13 @@ function ArticleOrglaagBody() {
     <>
       <p className="lead-para">
         Weet jij hoeveel AI-tools er op dit moment actief zijn binnen jouw team? Waarschijnlijk meer
-        dan je denkt. En waarschijnlijk weet je niet precies wat ze doen, wat ze kosten en welke
-        kennis er in verdwijnt. Dat is geen kritiek. Het is de realiteit van hoe AI-adoptie werkt:
-        snel, individueel, en bijna altijd sneller dan de organisatie-inrichting eromheen.
+        dan je denkt. En waarschijnlijk weet je niet precies wat ze doen, wat ze kosten en welke kennis erin verdwijnt. Zo gaat dat met AI: snel, per persoon, en bijna altijd sneller dan de organisatie eromheen.
       </p>
 
       <BodyFigure
         tag="CYERA · 2025"
         stat="13%"
-        statCap="Van enterprises met sterke zichtbaarheid op hoe AI met data omgaat. Terwijl 83% al actief AI gebruikt. Gebruik is niet hetzelfde als grip."
+        statCap="Van de grote bedrijven heeft goed zicht op hoe AI met hun data omgaat. Tegelijk gebruikt 83% al actief AI. Gebruik is niet hetzelfde als grip."
         edition="EDITIE 018 / 052 · OBSERVATIE"
         source="Bron: Cyera State of AI Data Security Report 2025"
       />
@@ -9082,26 +9060,22 @@ function ArticleOrglaagBody() {
       <p>
         De Wall Street Journal beschreef het eerder dit jaar als agent sprawl. Bedrijven bouwen
         steeds meer losse AI-agents, elk met een eigen functie, eigen data-toegang en eigen
-        beheerder. Of eigenlijk: zonder beheerder. Dubbele functies, onzichtbare kosten, vragen over
-        security die niemand beantwoordt. Niet omdat AI slecht werkt, maar omdat gebruik harder
+        beheerder. Of eigenlijk: zonder beheerder. Dubbele functies, onzichtbare kosten, vragen over beveiliging die niemand beantwoordt. Niet omdat AI slecht werkt, maar omdat gebruik harder
         groeit dan grip.
       </p>
 
       <H2 num="01">Gebruik is niet hetzelfde als grip</H2>
 
       <p>
-        McKinsey bevestigt dat in hun State of AI-rapport van dit jaar. AI-gebruik groeit in
+        McKinsey bevestigt dat in zijn State of AI-rapport van dit jaar. AI-gebruik groeit in
         vrijwel alle sectoren. Maar organisaties die er echt waarde uit halen, onderscheiden zich
-        niet door meer tools te gebruiken. Ze onderscheiden zich door governance, senior
-        eigenaarschap en herontworpen workflows. Niet de licentie maakt het verschil. De laag
+        niet door meer tools te gebruiken. Ze onderscheiden zich door duidelijke spelregels, een eigenaar hoog in de organisatie en werk dat opnieuw is ingericht. Niet de licentie maakt het verschil. De laag
         eromheen maakt het verschil.
       </p>
 
       <p>
-        Harvard Business Review voegde daar eerder dit jaar een interessante observatie aan toe:
-        medewerkers grijpen vaak naar eigen AI-tools niet omdat ze dwars zijn, maar omdat de
-        officiele oplossingen te traag, te beperkt of te onhandig zijn. De vraag naar slimmere
-        manieren van werken is er allang. Organisaties zien die vraag alleen niet goed genoeg.
+        Harvard Business Review zag eerder dit jaar nog iets:
+        medewerkers grijpen vaak naar eigen AI-tools niet omdat ze dwars zijn, maar omdat de officiële oplossingen te traag, te beperkt of te onhandig zijn. De behoefte om slimmer te werken is er allang. Organisaties zien die vraag alleen niet goed genoeg.
       </p>
 
       <PullQuote
@@ -9112,23 +9086,21 @@ function ArticleOrglaagBody() {
       <H2 num="02">Shadow AI is een symptoom, geen oorzaak</H2>
 
       <p>
-        Chronus beschreef het goed: shadow AI is niet alleen een securityprobleem. Het is een
-        signaal dat medewerkers waarde zoeken die de organisatie nog niet goed organiseert. TechRadar
-        formuleerde het nog directer: AI faalt niet. Onderliggende systemen falen. Rommelige data,
+        Chronus beschreef het goed: shadow AI is niet alleen een beveiligingsprobleem. Het laat zien dat medewerkers iets zoeken wat de organisatie ze nog niet geeft. TechRadar
+        formuleerde het nog directer: AI faalt niet, de systemen eronder falen. Rommelige data,
         slechte processen, organisaties die niet ingericht zijn om er iets mee te doen.
       </p>
 
       <p>
-        Individuele productiviteit is niet hetzelfde als organisatorische intelligentie. En de kloof
-        tussen die twee is precies waar waarde verdampt.
+        Dat een persoon sneller werkt, maakt de organisatie nog niet slimmer. En juist tussen die twee gaat waarde verloren.
       </p>
 
       <H2 num="03">Marketingteams kennen dit patroon al jaren</H2>
 
       <p>
-        Bij marketingteams en bureaus speelt dit al lang voordat AI op de agenda stond. Paid media
+        Bij marketingteams en bureaus speelde dit al lang voordat AI op de agenda stond. Paid media
         staat in Google Ads. Owned media staat in GA4, of in het hoofd van iemand die de content
-        bijhoudt. Klantnotities leven in Slack-threads. Signals komen boven als iemand er toevallig
+        bijhoudt. Klantnotities staan in Slack-threads. Signalen komen pas boven als iemand er toevallig
         bovenop zit, of als de maandrapportage er al is.
       </p>
 
@@ -9143,14 +9115,13 @@ function ArticleOrglaagBody() {
       <p>
         Stevin is gebouwd als antwoord op die kloof. Niet nog een plek met meer data. Niet een
         dashboard met meer grafieken. Maar een Desk waarop een heel team ziet welke klant aandacht
-        vraagt en waarom, voordat het in een rapportage staat. Een plek waar signals uit paid en
-        owned media samenkomen, waar klantkennis niet verdwijnt in het hoofd of account van een
+        vraagt en waarom, voordat het in een rapportage staat. Een plek waar signalen uit paid en owned media samenkomen, waar klantkennis niet verdwijnt in het hoofd of account van een
         individu, en waar het team samen slimmer wordt in plaats van dat iedereen individueel
         sneller wordt.
       </p>
 
       <p>
-        AI maakt mensen sneller. Organisatie-overzicht maakt bedrijven beter. Het verschil zit niet
+        AI maakt mensen sneller. Overzicht maakt bedrijven beter. Het verschil zit niet
         in de tool die je koopt. Het zit in de laag die je bouwt.
       </p>
 
@@ -9161,7 +9132,7 @@ function ArticleOrglaagBody() {
         <a href="https://stevin.ai/contact" style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}>
           Neem contact op
         </a>{' '}
-        of stuur me een bericht op LinkedIn. Geen sales-gesprek, gewoon een goed gesprek over hoe je
+        of stuur me een bericht op LinkedIn. Geen verkoopgesprek, gewoon een goed gesprek over hoe je
         dit soort versnippering aanpakt. · Editie 018 / 052
       </EndSig>
     </>
@@ -9175,25 +9146,25 @@ function ArticleAttributiePillarBody() {
   return (
     <>
       <p className="lead-para">
-        Er zijn grofweg drie manieren om te meten wat marketing oplevert: een marketing mix model, multi-touch attributie, en incrementality-testen. Ze worden vaak in een adem genoemd, alsof het drie smaken van hetzelfde zijn. Dat zijn ze niet. Ze beantwoorden drie verschillende vragen, met drie verschillende soorten zekerheid. Wie ze door elkaar haalt, stuurt zijn budget op de verkeerde grafiek.
+        Er zijn grofweg drie manieren om te meten wat marketing oplevert: een marketing mix model, multi-touch attributie, en incrementality-testen. Ze worden vaak in een adem genoemd, alsof het drie varianten van hetzelfde zijn. Dat zijn ze niet. Ze beantwoorden drie verschillende vragen, met drie verschillende soorten zekerheid. Wie ze door elkaar haalt, stuurt zijn budget op de verkeerde grafiek.
       </p>
 
       <p>
-        Dit stuk zet de drie naast elkaar. Wat meet elk echt, waar is het sterk, en waar geeft het je een getal dat eruitziet als een feit maar het niet is. En aan het eind: waarom geen van de drie alleen volstaat, en wat je in de plaats daarvan moet doen.
+        Dit stuk zet de drie naast elkaar. Wat meet elke methode echt, waar is die sterk, en waar geeft het je een getal dat eruitziet als een feit maar het niet is. En aan het eind: waarom geen van de drie alleen volstaat, en wat je in de plaats daarvan moet doen.
       </p>
 
       <H2 num="01">Drie methodes, drie vragen</H2>
 
       <p>
-        Begin bij de vraag, niet bij de tool. Een marketing mix model (MMM) vraagt: hoe verhouden mijn totale mediabestedingen zich historisch tot mijn totale sales, gecorrigeerd voor seizoen, prijs, promotie en macro-economie? Het kijkt van bovenaf, op week- of maandniveau, naar het hele bedrijf. Het raakt geen enkele individuele klik aan.
+        Begin bij de vraag, niet bij de tool. Een marketing mix model (MMM) vraagt: hoe verhouden mijn totale mediabestedingen zich historisch tot mijn totale omzet, gecorrigeerd voor seizoen, prijs, promotie en macro-economie? Het kijkt van bovenaf, op week- of maandniveau, naar het hele bedrijf. Losse klikken spelen er geen rol in.
       </p>
 
       <p>
-        Multi-touch attributie (MTA) vraagt iets heel anders: van de mensen die hebben geconverteerd, welke contactmomenten zaten er in hun pad, en hoeveel krediet geef ik aan elk? Het werkt op individueel niveau, op basis van trackbare touchpoints. Het ziet alleen wat het kan volgen, en alleen van mensen die uiteindelijk kochten.
+        Multi-touch attributie (MTA) vraagt iets heel anders: van de mensen die hebben geconverteerd, welke contactmomenten zaten er in hun pad, en hoeveel van de verkoop schrijf ik aan elk toe? Het werkt op individueel niveau, op basis van contactmomenten die te volgen zijn. Het ziet alleen wat het kan volgen, en alleen van mensen die uiteindelijk kochten.
       </p>
 
       <p>
-        Incrementality vraagt de enige vraag die echt over oorzaak gaat: wat zou er zijn gebeurd als ik deze campagne niet had gedraaid? Je houdt een groep bewust buiten de campagne (een holdout of een geo-test), en je vergelijkt. Het verschil is de werkelijke uplift. Niet de toegeschreven uplift, de werkelijke.
+        Incrementality stelt de enige vraag die echt over oorzaak gaat: wat zou er zijn gebeurd als ik deze campagne niet had gedraaid? Je houdt een groep bewust buiten de campagne (een holdout of een geo-test), en je vergelijkt. Het verschil is de werkelijke uplift. Niet de toegeschreven uplift, de werkelijke.
       </p>
 
       <PullQuote
@@ -9204,11 +9175,11 @@ function ArticleAttributiePillarBody() {
       <H2 num="02">Wat elk wel en niet kan</H2>
 
       <p>
-        Een MMM is sterk waar de andere twee blind zijn: het pakt offline, het pakt brand, het pakt het effect van weer en seizoen, en het heeft geen cookies of pixels nodig. Het is privacy-bestendig per ontwerp. Maar het is traag (je hebt twee tot drie jaar data nodig voordat de schatting betrouwbaar wordt), het is grof (het zegt iets over kanalen, niet over campagnes of doelgroepen), en elk getal dat het oplevert is een schatting met een interval, geen vaststelling. Wie de MMM-uitkomst als rapport leest in plaats van als hypothese, koopt false confidence. Dat schreven we eerder al uit in een apart stuk over waarom een MMM een hypothese is.
+        Een MMM is sterk waar de andere twee blind zijn: het neemt offline mee, en merkcampagnes, en het effect van weer en seizoen, en het heeft geen cookies of pixels nodig. Privacyregels raken het dus niet. Maar het is traag (je hebt twee tot drie jaar data nodig voordat de schatting betrouwbaar wordt), het is grof (het zegt iets over kanalen, niet over campagnes of doelgroepen), en elk getal dat het oplevert is een schatting met een interval, geen vaststelling. Wie de MMM-uitkomst als rapport leest in plaats van als hypothese, koopt schijnzekerheid. Dat werkten we eerder al uit in een apart stuk over waarom een MMM een hypothese is.
       </p>
 
       <p>
-        Multi-touch attributie is snel en gedetailleerd, en daarom zo verleidelijk. Je ziet per campagne, per advertentie, per zoekwoord een bijdrage. Het probleem is dat die details een precisie suggereren die er niet is. MTA ziet alleen trackbare touchpoints, en sinds de afbraak van third-party cookies, iOS-restricties en consent-weigering ziet het een steeds kleiner en steeds schever deel van de werkelijkheid. Het ziet ook alleen de paden van mensen die converteerden, dus het mist per definitie alles wat top-of-funnel gebeurde bij mensen die later, via een ander pad, terugkwamen. En het allergrootste bezwaar: correlatie in een pad is geen causaliteit. Dat iemand een advertentie zag voordat hij kocht, betekent niet dat de advertentie de aankoop veroorzaakte.
+        Multi-touch attributie is snel en gedetailleerd, en daarom zo verleidelijk. Je ziet per campagne, per advertentie, per zoekwoord een bijdrage. Het probleem is dat die details een precisie suggereren die er niet is. MTA ziet alleen contactmomenten die te volgen zijn, en sinds de afbraak van third-party cookies, iOS-restricties en consent-weigering ziet het een steeds kleiner en steeds schever deel van de werkelijkheid. Het ziet ook alleen de paden van mensen die converteerden, dus het mist per definitie alles wat er bovenin de trechter gebeurde bij mensen die later, via een ander pad, terugkwamen. En het allergrootste bezwaar: correlatie in een pad is geen causaliteit. Dat iemand een advertentie zag voordat hij kocht, betekent niet dat de advertentie de aankoop veroorzaakte.
       </p>
 
       <Callout
@@ -9217,7 +9188,7 @@ function ArticleAttributiePillarBody() {
       />
 
       <p>
-        Incrementality is de enige van de drie die causaliteit echt benadert, omdat het een controlegroep gebruikt. Het is de gouden standaard voor de vraag of een euro extra in dit kanaal een euro extra omzet oplevert. Maar het is duur in denkwerk, het kost je bewust een stuk bereik (de holdout krijgt de campagne niet), en je kunt niet alles tegelijk testen. Het beantwoordt scherpe, losse vragen, geen continu dashboard.
+        Incrementality is de enige van de drie die causaliteit echt benadert, omdat het een controlegroep gebruikt. Het is de gouden standaard voor de vraag of een euro extra in dit kanaal een euro extra omzet oplevert. Maar het kost veel denkwerk, het kost je bewust een stuk bereik (de holdout krijgt de campagne niet), en je kunt niet alles tegelijk testen. Het beantwoordt scherpe, losse vragen, geen continu dashboard.
       </p>
 
       <Takeaways
@@ -9228,7 +9199,7 @@ function ArticleAttributiePillarBody() {
             pct: '01',
             text: (
               <>
-                <b>Hoe verdeel ik mijn budget over kanalen voor het komende kwartaal?</b> MMM. Het is de enige die het hele plaatje pakt, inclusief offline en brand.
+                <b>Hoe verdeel ik mijn budget over kanalen voor het komende kwartaal?</b> MMM. Het is de enige die het hele plaatje pakt, inclusief offline en merkcampagnes.
               </>
             ),
           },
@@ -9244,7 +9215,7 @@ function ArticleAttributiePillarBody() {
             pct: '03',
             text: (
               <>
-                <b>Welke creatives en doelgroepen presteren relatief beter binnen een kanaal?</b> MTA, maar alleen als directioneel signaal, nooit als absolute waarheid.
+                <b>Welke creatives en doelgroepen presteren relatief beter binnen een kanaal?</b> MTA, maar alleen als richting, nooit als absolute waarheid.
               </>
             ),
           },
@@ -9254,11 +9225,11 @@ function ArticleAttributiePillarBody() {
       <H2 num="03">De denkfout die geld kost</H2>
 
       <p>
-        De fout die we het vaakst zien is niet dat iemand de verkeerde methode kiest. Het is dat iemand een getal uit de ene methode behandelt alsof het de vraag van een andere methode beantwoordt. Een MTA-dashboard zegt dat Meta 4,1 ROAS doet, en dat getal verschijnt in een budget-overleg alsof het de incrementele bijdrage van Meta is. Dat is het niet. Het is de toegeschreven bijdrage binnen een trackbaar pad, en de werkelijke uplift kan de helft zijn, of nul.
+        De fout die we het vaakst zien is niet dat iemand de verkeerde methode kiest. Het is dat iemand een getal uit de ene methode behandelt alsof het de vraag van een andere methode beantwoordt. Een MTA-dashboard zegt dat Meta een ROAS van 4,1 haalt, en dat getal verschijnt in een budgetoverleg alsof het de incrementele bijdrage van Meta is. Dat is het niet. Het is de toegeschreven bijdrage binnen een trackbaar pad, en de werkelijke uplift kan de helft zijn, of nul.
       </p>
 
       <p>
-        Andersom net zo goed. Een MMM zegt dat search historisch 28 procent van de sales verklaart, en iemand leidt daaruit af dat de search-campagne van volgende week 28 procent gaat opleveren. Dat is een schatting over het verleden, met een breed interval, omgebogen tot een belofte over de toekomst. De methode is niet fout. De lezing is fout.
+        Andersom net zo goed. Een MMM zegt dat search historisch 28 procent van de omzet verklaart, en iemand leidt daaruit af dat de search-campagne van volgende week 28 procent gaat opleveren. Dat is een schatting over het verleden, met een breed interval, omgebogen tot een belofte over de toekomst. De methode is niet fout. Je leest hem fout.
       </p>
 
       <PullQuote
@@ -9267,13 +9238,13 @@ function ArticleAttributiePillarBody() {
       />
 
       <p>
-        Het patroon erachter is altijd hetzelfde: een dashboard geeft een precies getal, een precies getal voelt als zekerheid, en zekerheid wint het in een vergadering van een eerlijk interval. Zo stuurt het bureau zijn budget op de grafiek die het zelfverzekerdst oogt, niet op de grafiek die het dichtst bij de waarheid zit. Dit is dezelfde meetlat-discrepantie die we beschreven in het stuk over waarom 95 procent van de AI-marketingpilots faalt: niet het model is het probleem, maar de vraag of iemand weet of het werkt.
+        Het patroon erachter is altijd hetzelfde: een dashboard geeft een precies getal, een precies getal voelt als zekerheid, en zekerheid wint het in een vergadering van een eerlijk interval. Zo stuurt het bureau zijn budget op de grafiek die het zelfverzekerdst oogt, niet op de grafiek die het dichtst bij de waarheid zit. Dit is hetzelfde meetprobleem dat we beschreven in het stuk over waarom 95 procent van de AI-marketingpilots mislukt: niet het model is het probleem, maar de vraag of iemand weet of het werkt.
       </p>
 
-      <H2 num="04">Triangulatie, niet een winnaar</H2>
+      <H2 num="04">Triangulatie, geen winnaar</H2>
 
       <p>
-        De eerlijke conclusie is ongemakkelijk voor wie een simpel antwoord wil: geen van de drie methodes is de juiste. Ze zijn alle drie nodig, omdat ze elkaars zwakte afdekken. MMM geeft de richting voor de grote budget-verdeling. Incrementality kalibreert die richting met een paar harde causale metingen, zodat de MMM niet op zichzelf hoeft te vertrouwen. En MTA vult de dagelijkse, fijnmazige optimalisatie in binnen de grenzen die de andere twee hebben uitgezet.
+        De eerlijke conclusie is ongemakkelijk voor wie een simpel antwoord wil: geen van de drie methodes is de juiste. Ze zijn alle drie nodig, omdat ze elkaars zwakte afdekken. MMM geeft de richting voor de grote budgetverdeling. Incrementality kalibreert die richting met een paar harde causale metingen, zodat de MMM niet op zichzelf hoeft te vertrouwen. En MTA vult de dagelijkse, fijnmazige optimalisatie in binnen de grenzen die de andere twee hebben uitgezet.
       </p>
 
       <p>
@@ -9282,7 +9253,7 @@ function ArticleAttributiePillarBody() {
 
       <Callout
         big="3×"
-        label="Triangulatie betekent niet drie keer zoveel werk. Het betekent dat je een MMM een paar keer per jaar kalibreert met een geo-test, en je MTA-dashboard leest als kompas in plaats van als waarheid. De drie methodes versterken elkaar pas als iemand ze actief tegen elkaar uitzet."
+        label="Triangulatie betekent niet drie keer zoveel werk. Het betekent dat je een MMM een paar keer per jaar kalibreert met een geo-test, en je MTA-dashboard leest als kompas in plaats van als waarheid. De drie methodes versterken elkaar pas als iemand ze actief tegen elkaar afzet."
       />
 
       <p>
@@ -9290,7 +9261,7 @@ function ArticleAttributiePillarBody() {
       </p>
 
       <p>
-        Dat samenbrengen is waar Stevin voor is gebouwd. Niet om een vierde meetmethode toe te voegen, maar om de drie die je al hebt te laten samenkomen, de afwijkingen zichtbaar te maken, en er een concrete volgende actie aan te hangen. Meten is niet het eindpunt. Een beslissing is het eindpunt. Marketing intelligence die beslist, niet alleen rapporteert.
+        Voor dat samenbrengen is Stevin gebouwd. Niet om een vierde meetmethode toe te voegen, maar om de drie die je al hebt te laten samenkomen, de afwijkingen zichtbaar te maken, en er een concrete volgende actie aan te hangen. Meten is niet het eindpunt. Een beslissing is het eindpunt. Marketing intelligence die beslist, niet alleen rapporteert.
       </p>
 
       <PullQuote text='"Wonder en is gheen wonder."' cite="Simon Stevin, 1586. Als je het niet kunt herleiden, is het geen feit maar een verhaal." />
@@ -9308,21 +9279,21 @@ function ArticleAItoolkeuzeBody() {
   return (
     <>
       <p className="lead-para">
-        Er is een vraag die bureau-eigenaren steeds vaker aan een AI stellen, en waar ze steeds een lijstje op terugkrijgen: wat is de beste AI-tool voor marketing? Het antwoord is altijd een opsomming van features, integraties en prijzen. Het is de verkeerde vraag, op precies dezelfde manier als waarop "wat is de beste transcriptietool" de verkeerde vraag is. De juiste vraag is niet welke tool het meeste kan. Het is: hoe weet ik of deze tool echt iets oplevert, en niet alleen een dashboard dat zegt dat het werkt.
+        Er is een vraag die bureaueigenaren steeds vaker aan een AI stellen, en waar ze steeds een lijstje op terugkrijgen: wat is de beste AI-tool voor marketing? Het antwoord is altijd een opsomming van functies, integraties en prijzen. Het is de verkeerde vraag, op precies dezelfde manier als waarop "wat is de beste transcriptietool" de verkeerde vraag is. De juiste vraag is niet welke tool het meeste kan. Het is: hoe weet ik of deze tool echt iets oplevert, en niet alleen een dashboard dat zegt dat het werkt.
       </p>
 
       <p>
-        Dit stuk gaat over dat verschil. Waarom een toolkeuze op features bijna altijd misgaat, waarom het dashboard van een tool nooit het bewijs is, en wat de enige test is die wel telt. Aan het eind: een concreet rijtje vragen dat je aan elke vendor stelt voordat je tekent.
+        Dit stuk gaat over dat verschil. Waarom een toolkeuze op functies bijna altijd misgaat, waarom het dashboard van een tool nooit het bewijs is, en wat de enige test is die wel telt. Aan het eind: een concreet rijtje vragen dat je aan elke leverancier stelt voordat je tekent.
       </p>
 
-      <H2 num="01">Features zijn geen bewijs</H2>
+      <H2 num="01">Functies zijn geen bewijs</H2>
 
       <p>
-        Een feature-lijst meet wat een tool kan doen, niet wat een tool voor jou oplevert. Dat klinkt als een open deur, maar het is precies waar de meeste keuzes op stranden. Twee tools met een vrijwel identieke feature-lijst kunnen een totaal verschillend effect hebben op jouw resultaat, omdat het effect niet in de feature zit maar in hoe goed de tool past op jouw proces, jouw data en jouw team. De vraag of tool X iets kan, is bijna altijd ja. De vraag of tool X bij jou meer oplevert dan wat je nu doet, is bijna nooit beantwoord voordat het contract getekend is.
+        Een functielijst meet wat een tool kan doen, niet wat een tool voor jou oplevert. Dat klinkt als een open deur, maar het is precies waar de meeste keuzes op stranden. Twee tools met een vrijwel identieke functielijst kunnen een totaal verschillend effect hebben op jouw resultaat, omdat het effect niet in de functie zit maar in hoe goed de tool past bij jouw proces, jouw data en jouw team. De vraag of tool X iets kan, is bijna altijd ja. De vraag of tool X bij jou meer oplevert dan wat je nu doet, is bijna nooit beantwoord voordat het contract getekend is.
       </p>
 
       <p>
-        We schreven dit eerder uit voor transcriptietools: de beste tool bestaat niet los van de vraag wat je ermee wilt. Hetzelfde geldt voor elke AI-marketingtool. Een tool die ad-copy genereert is niet beter of slechter dan een andere op grond van zijn feature-lijst. Hij is beter of slechter op grond van of die copy meer verkoopt dan wat je team nu schrijft. En dat staat in geen enkele demo.
+        We lieten dit eerder zien bij transcriptietools: de beste tool bestaat niet los van de vraag wat je ermee wilt. Hetzelfde geldt voor elke AI-marketingtool. Een tool die advertentieteksten schrijft is niet beter of slechter dan een andere door wat er op zijn functielijst staat. Dat hangt ervan af of die teksten meer verkopen dan wat je team nu schrijft. En dat staat in geen enkele demo.
       </p>
 
       <H2 num="02">Het dashboard liegt niet, maar het bewijst ook niks</H2>
@@ -9332,7 +9303,7 @@ function ArticleAItoolkeuzeBody() {
       </p>
 
       <p>
-        Dat onderscheid is precies de meetlat-discrepantie die we beschreven bij het MIT-onderzoek naar mislukte AI-pilots. 95 procent van die pilots haalde de productie nooit, en in de overgrote meerderheid lag dat niet aan het model maar aan het ontbreken van een baseline. Niemand kon zeggen of het werkte, omdat niemand een referentie had. Een tool die zijn eigen succes rapporteert is geen referentie. Het is een marketing-tool met een grafiek erop.
+        Dat is precies het meetprobleem die we beschreven bij het MIT-onderzoek naar mislukte AI-pilots. 95 procent van die pilots haalde de productie nooit, en in de overgrote meerderheid lag dat niet aan het model maar aan het ontbreken van een baseline. Niemand kon zeggen of het werkte, omdat niemand een referentie had. Een tool die zijn eigen succes rapporteert is geen referentie. Het is een marketingtool met een grafiek erop.
       </p>
 
       <Callout
@@ -9347,11 +9318,11 @@ function ArticleAItoolkeuzeBody() {
       </p>
 
       <p>
-        En hier wordt het ongemakkelijk voor de vendor. Een holdout op de tool zelf is precies wat de meeste leveranciers je liever niet laten doen, want het is het enige experiment dat hun dashboard kan tegenspreken. Een goede vendor verwelkomt het. Een vendor die je een holdout uit het hoofd praat (dat raden we af, dat vertekent de resultaten, ons model heeft alle data nodig om te werken) vertelt je daarmee precies wat je moet weten.
+        En hier wordt het ongemakkelijk voor de leverancier. Een holdout op de tool zelf is precies wat de meeste leveranciers je liever niet laten doen, want het is het enige experiment dat hun dashboard kan tegenspreken. Een goede leverancier vindt dat prima. Een leverancier die je een holdout uit het hoofd praat (dat raden we af, dat vertekent de resultaten, ons model heeft alle data nodig om te werken) vertelt je daarmee precies wat je moet weten.
       </p>
 
       <PullQuote
-        text='"Een vendor die je een holdout op zijn eigen tool afraadt, geeft je daarmee het belangrijkste antwoord dat je nodig hebt."'
+        text='"Een leverancier die je een holdout op zijn eigen tool afraadt, geeft je daarmee het belangrijkste antwoord dat je nodig hebt."'
         cite="Stevin Journal, redactie."
       />
 
@@ -9362,38 +9333,38 @@ function ArticleAItoolkeuzeBody() {
       </p>
 
       <p>
-        De tools die wel renderen, zijn de tools die een beslissing ondersteunen in plaats van vervangen. Die een signaal geven, de onderbouwing erbij leveren, en de mens laten beslissen of het klopt. Dat is trager dan volledige automatisering, en het is precies daarom betrouwbaarder: er zit een controlepunt in waar een fout zichtbaar wordt voordat hij geld kost. We schreven eerder dat AI in marketing in 2026 voelt als 2008: niet omdat de modellen falen, maar omdat mensen te veel rechten weggeven aan tools die ze niet helemaal begrijpen. Beslissingsondersteuning houdt dat controlepunt in stand. Automatisering haalt het weg.
+        De tools die wel iets opleveren, zijn de tools die een beslissing ondersteunen in plaats van vervangen. Die een signaal geven, de onderbouwing erbij leveren, en de mens laten beslissen of het klopt. Dat is trager dan volledige automatisering, en het is precies daarom betrouwbaarder: er zit een controlepunt in waar een fout zichtbaar wordt voordat hij geld kost. We schreven eerder dat AI in marketing in 2026 voelt als 2008: niet omdat de modellen falen, maar omdat mensen te veel rechten weggeven aan tools die ze niet helemaal begrijpen. Beslissingsondersteuning houdt dat controlepunt in stand. Automatisering haalt het weg.
       </p>
 
-      <H2 num="05">De vier vragen voor elke vendor</H2>
+      <H2 num="05">De vier vragen voor elke leverancier</H2>
 
       <p>
-        Concreet. Voordat je een AI-marketingtool inkoopt, stel deze vier vragen. Ontwijkt een vendor er twee of meer, loop dan weg.
+        Concreet. Voordat je een AI-marketingtool inkoopt, stel deze vier vragen. Ontwijkt een leverancier er twee of meer, loop dan weg.
       </p>
 
       <ol>
         <li>
-          <strong>Mag ik een holdout draaien op jullie tool?</strong> Een week, een segment, een geo. Het juiste antwoord is ja, graag. Het foute antwoord is een reden waarom dat niet kan.
+          <strong>Mag ik een holdout draaien op jullie tool?</strong> Een week, een segment, een regio. Het juiste antwoord is ja, graag. Het foute antwoord is een reden waarom dat niet kan.
         </li>
         <li>
-          <strong>Op welke baseline meten we de uplift?</strong> Niet jullie dashboard, maar mijn CRM, mijn P&amp;L, of een controlegroep. Als de enige baseline het dashboard van de tool zelf is, is er geen baseline.
+          <strong>Op welke baseline meten we de uplift?</strong> Niet jullie dashboard, maar mijn CRM, mijn winst-en-verliesrekening, of een controlegroep. Als de enige baseline het dashboard van de tool zelf is, is er geen baseline.
         </li>
         <li>
           <strong>Wat gebeurt er met jullie cijfers als ik de tool een week uitzet?</strong> Het juiste antwoord is: dat moet zichtbaar worden in een uplift-grafiek. Het foute antwoord is: dat raden we af.
         </li>
         <li>
-          <strong>Wie bezit de meetdata?</strong> Als het antwoord wij is, of het zit in ons platform, dan heb je geen meetdata. Dan heb je een tool met een grafiek.
+          <strong>Van wie is de meetdata?</strong> Als het antwoord wij is, of het zit in ons platform, dan heb je geen meetdata. Dan heb je een tool met een grafiek.
         </li>
       </ol>
 
-      <H2 num="06">Waarom dit een bureau-vraag is, geen tech-vraag</H2>
+      <H2 num="06">Waarom dit een vraag voor het bureau is, geen technische vraag</H2>
 
       <p>
-        Het kiezen van een AI-tool wordt vaak behandeld als een technische vraag, opgelost met een vergelijkingstabel. Maar het is een bureau-vraag, en de inzet is groter dan een abonnement. Een bureau dat een tool inzet zonder te weten of het werkt, verkoopt zijn klant uiteindelijk een verhaal dat het niet kan onderbouwen. En de dag dat de klant vraagt wat dit nou echt heeft opgeleverd, staat het bureau met hetzelfde dashboard dat de tool zelf produceerde. Dat is geen antwoord, dat is een doorverwijzing naar de marketingafdeling van de vendor.
+        Het kiezen van een AI-tool wordt vaak behandeld als een technische vraag, opgelost met een vergelijkingstabel. Maar het is een vraag voor het bureau zelf, en de inzet is groter dan een abonnement. Een bureau dat een tool inzet zonder te weten of het werkt, verkoopt zijn klant uiteindelijk een verhaal dat het niet kan onderbouwen. En de dag dat de klant vraagt wat dit nou echt heeft opgeleverd, staat het bureau daar met hetzelfde dashboard dat de tool zelf produceerde. Dat is geen antwoord, dat is een doorverwijzing naar de marketingafdeling van de leverancier.
       </p>
 
       <p>
-        Daarom is de toolkeuze niet het eindpunt, maar het begin van een meetvraag. Welke tool je ook kiest, de waarde ontstaat pas als je de uitkomst kunt herleiden tot iets buiten de tool om. Dat is waar Stevin voor is gebouwd: niet om nog een tool toe te voegen die zijn eigen succes rapporteert, maar om de signalen uit je hele stack samen te brengen, de afwijking zichtbaar te maken, en er een beslissing aan te koppelen die je kunt verantwoorden. Marketing intelligence die beslist, niet alleen rapporteert.
+        Daarom is de toolkeuze niet het eindpunt, maar het begin van een meetvraag. Welke tool je ook kiest, de waarde ontstaat pas als je de uitkomst kunt herleiden tot iets buiten de tool om. Daarvoor is Stevin gebouwd: niet om nog een tool toe te voegen die zijn eigen succes rapporteert, maar om de signalen uit al je tools samen te brengen, de afwijking zichtbaar te maken, en er een beslissing aan te koppelen die je kunt verantwoorden. Marketing intelligence die beslist, niet alleen rapporteert.
       </p>
 
       <PullQuote text='"Wonder en is gheen wonder."' cite="Simon Stevin, 1586. Als je het niet kunt herleiden, is het geen feit maar een verhaal." />
@@ -9411,11 +9382,11 @@ function ArticleAEOBody() {
   return (
     <>
       <p className="lead-para">
-        Een groeiend deel van je doelgroep stelt zijn vraag niet meer aan Google, maar aan ChatGPT, Perplexity of de AI-samenvatting bovenaan de zoekresultaten. Die geven een antwoord, geen lijst met links. En in dat antwoord sta je er wel of niet in. Het ongemakkelijke nieuws: de trucs waarvan iedereen denkt dat ze helpen, doen dat niet. Het goede nieuws: wat wel werkt, is precies wat je toch al had moeten doen.
+        Een groeiend deel van je doelgroep stelt zijn vraag niet meer aan Google, maar aan ChatGPT, Perplexity of de AI-samenvatting bovenaan de zoekresultaten. Die geven een antwoord, geen lijst met links. En in dat antwoord sta je wel of niet. Het ongemakkelijke nieuws: de trucs waarvan iedereen denkt dat ze helpen, doen dat niet. Het goede nieuws: wat wel werkt, is precies wat je toch al had moeten doen.
       </p>
 
       <p>
-        Dit stuk gaat over zichtbaar zijn in AI-antwoorden, een vakgebied dat inmiddels AEO of GEO heet (answer engine optimization, generative engine optimization). We baseren ons niet op speculatie maar op wat Google er zelf over zegt in zijn officiele guidance, en op hoe deze systemen technisch werken. Aan het eind weet je welke vier dingen tijdverspilling zijn, en welke drie het verschil maken.
+        Dit stuk gaat over zichtbaar zijn in AI-antwoorden, een vakgebied dat inmiddels AEO of GEO heet (answer engine optimization, generative engine optimization). We baseren ons niet op speculatie maar op wat Google er zelf over zegt in zijn officiële richtlijnen, en op hoe deze systemen technisch werken. Aan het eind weet je welke vier dingen tijdverspilling zijn, en welke drie het verschil maken.
       </p>
 
       <H2 num="01">Hoe een AI-antwoord zijn bronnen kiest</H2>
@@ -9425,23 +9396,23 @@ function ArticleAEOBody() {
       </p>
 
       <p>
-        Het tweede mechanisme heet query fan-out. In plaats van alleen jouw exacte vraag, genereert het systeem een serie gerelateerde deelvragen en haalt daar afzonderlijk bronnen bij. Een vraag over de beste meetmethode wordt opgeknipt in deelvragen over attributie, over incrementality, over budget-allocatie. Content die meerdere invalshoeken van een onderwerp grondig dekt, wordt daardoor vaker opgehaald dan een pagina die maar een hoekje raakt. Dat is precies waarom een diepe pillar het wint van tien losse korte berichten.
+        Het tweede mechanisme heet query fan-out. Het systeem zoekt niet alleen op jouw vraag, maar maakt er een reeks deelvragen van en zoekt bij elke deelvraag eigen bronnen. Een vraag over de beste meetmethode wordt opgeknipt in deelvragen over attributie, over incrementaliteit, over budgetverdeling. Content die een onderwerp van meerdere kanten grondig behandelt, wordt daardoor vaker opgehaald dan een pagina die maar een hoekje raakt. Dat is precies waarom een grondige pillar-pagina het wint van tien losse korte berichten.
       </p>
 
       <PullQuote
-        text='"Geen index, geen antwoord. En daarna wint niet de slimste markup, maar de bron die het onderwerp het grondigst en het eerlijkst dekt."'
+        text='"Geen index, geen antwoord. En daarna wint niet de slimste markup, maar de bron die het onderwerp het grondigst en het eerlijkst behandelt."'
         cite="Stevin Journal, redactie."
       />
 
       <H2 num="02">Vier dingen die niet werken</H2>
 
       <p>
-        Hier gaat veel tijd en geld verloren, omdat het intuitief klopt en toch onjuist is. Google is er in zijn eigen documentatie expliciet over.
+        Hier gaat veel tijd en geld verloren, omdat het logisch lijkt en toch niet klopt. Google is er in zijn eigen documentatie expliciet over.
       </p>
 
       <Takeaways
         label="TIJDVERSPILLING"
-        title="Wat je kunt laten staan"
+        title="Wat je kunt overslaan"
         items={[
           {
             pct: '01',
@@ -9463,7 +9434,7 @@ function ArticleAEOBody() {
             pct: '03',
             text: (
               <>
-                <b>Extra schema-markup als wondermiddel.</b> Structured data is niet vereist voor generatieve AI-zoek. Het helpt voor rich results in gewone Search, maar het is niet de hefboom voor citatie.
+                <b>Extra schema-markup als wondermiddel.</b> Structured data is niet vereist om in AI-zoekresultaten te verschijnen. Het helpt voor rich results in gewone Search, maar het zorgt er niet voor dat een AI je citeert.
               </>
             ),
           },
@@ -9471,7 +9442,7 @@ function ArticleAEOBody() {
             pct: '04',
             text: (
               <>
-                <b>Herschrijven in AI-taal of mentions kopen.</b> Tekst speciaal verdraaien voor AI, of kunstmatige vermeldingen verzamelen, valt onder spam en helpt niet duurzaam.
+                <b>Herschrijven in AI-taal of vermeldingen kopen.</b> Tekst speciaal verdraaien voor AI, of kunstmatige vermeldingen verzamelen, valt onder spam en helpt niet blijvend.
               </>
             ),
           },
@@ -9485,30 +9456,30 @@ function ArticleAEOBody() {
       <H2 num="03">Drie dingen die wel werken</H2>
 
       <p>
-        Wat overblijft is onspectaculair en juist daarom betrouwbaar. Een. Wees crawlbaar en indexeerbaar, want zonder dat begint niets. Twee. Schrijf content met een eigen standpunt dat nergens anders zo staat, want een AI citeert geen herhaling van wat al tien keer bestaat, maar de bron die iets toevoegt. Drie. Dek een onderwerp in de volle breedte, met heldere koppen en secties, zodat de query fan-out jouw pagina bij meerdere deelvragen oppikt.
+        Wat overblijft is onspectaculair en juist daarom betrouwbaar. Een. Wees crawlbaar en indexeerbaar, want zonder dat begint niets. Twee. Schrijf content met een eigen standpunt dat nergens anders zo staat, want een AI citeert geen herhaling van wat al tien keer bestaat, maar de bron die iets toevoegt. Drie. Behandel een onderwerp in de volle breedte, met heldere koppen en secties, zodat de query fan-out jouw pagina bij meerdere deelvragen oppikt.
       </p>
 
       <p>
-        Merk op dat dit exact de definitie van een goede pillar is. Geen toeval. De AI-zoekwereld beloont dezelfde dingen als een serieuze lezer: diepgang, een eigen mening, en een tekst die de moeite van het citeren waard is. Wie zijn content al schrijft om gezaghebbend te zijn op een onderwerp, doet aan AEO zonder het zo te noemen.
+        Dit is precies wat een goede pillar-pagina is. Geen toeval. De AI-zoekwereld beloont dezelfde dingen als een serieuze lezer: diepgang, een eigen mening, en een tekst die de moeite van het citeren waard is. Wie zijn content al schrijft om gezaghebbend te zijn op een onderwerp, doet aan AEO zonder het zo te noemen.
       </p>
 
       <Callout
         big="0"
-        label="Het aantal nieuwe technische bestanden of markup-formats dat je moet aanmaken om in AI-antwoorden te verschijnen, volgens Google's eigen guidance. De hefboom is content-uniekheid, niet een bestand."
+        label="Het aantal nieuwe technische bestanden of markup-formats dat je moet aanmaken om in AI-antwoorden te verschijnen, volgens de eigen richtlijnen van Google. Het verschil zit in unieke inhoud, niet in een bestand."
       />
 
       <H2 num="04">Waarom dit een merkvraag wordt</H2>
 
       <p>
-        Er is een verschuiving die dieper gaat dan techniek. Als de AI het antwoord geeft en de gebruiker niet meer doorklikt, verdwijnt de klik als ijkpunt. Wat overblijft is of jouw merk genoemd wordt in het antwoord. Dat maakt zichtbaarheid in AI minder een zoekwoord-spel en meer een merk-spel: word je herkend als de autoriteit op een onderwerp, dan citeert de AI je, ook zonder dat iemand op je naam zocht. We schreven eerder dat AI op merk zoekt, niet op zoekwoord. Dit is daar de mechaniek onder.
+        Er is een verschuiving die dieper gaat dan techniek. Als de AI het antwoord geeft en de gebruiker niet meer doorklikt, verdwijnt de klik als ijkpunt. Wat overblijft is of jouw merk genoemd wordt in het antwoord. Dat maakt zichtbaarheid in AI minder een spel om zoekwoorden en meer een spel om je merk: word je herkend als de autoriteit op een onderwerp, dan citeert de AI je, ook zonder dat iemand op je naam zocht. We schreven eerder dat AI op merk zoekt, niet op zoekwoord. Dit is het mechanisme daarachter.
       </p>
 
       <p>
-        Voor een marketingbureau of in-house team betekent dat een onaangename maar bevrijdende conclusie. Je kunt je niet meer een weg naar zichtbaarheid trucen. Je kunt alleen zichtbaar worden door op een onderwerp het beste, eerlijkste en grondigste te zijn dat er te vinden is. Dat is trager dan een SEO-hack, en het is het enige dat overeind blijft als de zoekmachine een antwoordmachine wordt.
+        Voor een marketingbureau of in-house team is dat een onaangename maar bevrijdende conclusie. Met trucs word je niet meer zichtbaar. Je kunt alleen zichtbaar worden door op een onderwerp het beste, eerlijkste en grondigste te zijn dat er te vinden is. Dat is trager dan een SEO-hack, en het is het enige dat overeind blijft als de zoekmachine een antwoordmachine wordt.
       </p>
 
       <p>
-        Dat is ook waarom dit stuk bestaat, en waarom Stevin schrijft zoals het schrijft. Niet om een algoritme te plezieren, maar om op de onderwerpen die ertoe doen, meetbaarheid, attributie, de keuze van AI-tools, het meest navolgbare standpunt te hebben. Zichtbaar zijn in AI is geen apart project naast goede content. Het is het gevolg ervan.
+        Dat is ook waarom dit stuk bestaat, en waarom Stevin schrijft zoals het schrijft. Niet om een algoritme te behagen, maar om op de onderwerpen die ertoe doen (meetbaarheid, attributie, de keuze van AI-tools) het standpunt te hebben dat je het best kunt nalopen. Zichtbaar zijn in AI is geen apart project naast goede content. Het is het gevolg ervan.
       </p>
 
       <PullQuote text='"Wonder en is gheen wonder."' cite="Simon Stevin, 1586. Geen truc maakt je zichtbaar. Alleen herleidbare kwaliteit." />
@@ -9552,7 +9523,7 @@ function ArticleTransparencyBody() {
       </p>
 
       <p>
-        Waarom dat uitmaakt: je betaalt wel voor de media, maar alles wat de campagnes ondertussen leren bouwt zich op buiten je eigen bedrijf. Stap je over, dan verhuist die geschiedenis meestal niet mee. En een AI-laag kan pas goede beslissingen voor je nemen als ze op jouw eigen data heeft geleerd.
+        Waarom dat uitmaakt: je betaalt wel voor de media, maar alles wat de campagnes ondertussen leren, blijft buiten je eigen bedrijf. Stap je over, dan verhuist die geschiedenis meestal niet mee. En AI kan pas goede beslissingen voor je nemen als het op jouw eigen data heeft geleerd.
       </p>
 
       <Callout
@@ -9565,17 +9536,17 @@ function ArticleTransparencyBody() {
       </p>
 
       <p>
-        Wat dat betekent, hangt af van de afspraken die eronder liggen. Een bureau dat de media vooruitbetaalt en later doorbelast is doodnormaal, en daar is niets mis mee. Het wordt een ander verhaal wanneer de ondernemer niet weet dat het zo staat, en er pas bij een overstap achter komt dat de geschiedenis niet meeverhuist. Dit is trouwens geen percentage van de markt: hoeveel Nederlandse bedrijven er in totaal adverteren is niet bekend, dus dat zou giswerk zijn. Het is een telling van wat er in het register staat.
+        Wat dat betekent, hangt af van de afspraken die eronder liggen. Een bureau dat de mediakosten voorschiet en later doorbelast is doodnormaal, en daar is niets mis mee. Het wordt een ander verhaal wanneer de ondernemer niet weet dat het zo staat, en er pas bij een overstap achter komt dat de geschiedenis niet meeverhuist. Dit is trouwens geen percentage van de markt: hoeveel Nederlandse bedrijven er in totaal adverteren is niet bekend, dus dat zou giswerk zijn. Het is een telling van wat er in het register staat.
       </p>
 
-      <H2 num="01">Waarom kun je publiek zien wie je advertenties betaalt?</H2>
+      <H2 num="01">Waarom kan iedereen zien wie je advertenties betaalt?</H2>
 
       <p>
         De Europese Digital Services Act verplicht grote platforms om een openbare advertentiebibliotheek bij te houden. Daarin staat per advertentie wie adverteert, wie betaalt, in welke periode de advertentie liep en in welke landen. Die verplichting geldt voor advertenties die aan gebruikers in de Europese Unie worden getoond. Draait een campagne alleen buiten de EU, dan verschijnt die niet.
       </p>
 
       <p>
-        Het veld dat telt heet meestal &quot;Betaald door&quot; of in het Engels &quot;Paid for by&quot;. Het platform vult dat met de geverifieerde betaler achter de advertentie. Bij een bedrijf dat zelf adverteert, staat daar de eigen bedrijfsnaam. Bij een bedrijf dat via een bureau adverteert, staat daar soms de naam van dat bureau.
+        Het veld waar het om gaat heet meestal &quot;Betaald door&quot; of in het Engels &quot;Paid for by&quot;. Het platform vult daar de geverifieerde betaler in achter de advertentie. Bij een bedrijf dat zelf adverteert, staat daar de eigen bedrijfsnaam. Bij een bedrijf dat via een bureau adverteert, staat daar soms de naam van dat bureau.
       </p>
 
       <H2 num="02" id="platforms">Op welke platforms kun je het opzoeken?</H2>
@@ -9585,7 +9556,7 @@ function ArticleTransparencyBody() {
       </p>
 
       <p>
-        <b>Zoek daarbij op je website, niet op je bedrijfsnaam.</b> Dat is het verschil tussen wel en niet vinden waar het om gaat. Zoek je op je naam, dan krijg je je eigen advertentieaccount te zien, constateer je dat alles er normaal uitziet en ben je klaar. Zoek je op je domein, dan verzamelt Google alle accounts waarvan advertenties naar jouw site wijzen, en staat dat eigen account daar gewoon tussen. Lopen er meerdere, dan waarschuwt Google daar zelf voor boven de resultaten.
+        <b>Zoek daarbij op je website, niet op je bedrijfsnaam.</b> Daarvan hangt af of je vindt waar het om gaat. Zoek je op je naam, dan krijg je je eigen advertentieaccount te zien, constateer je dat alles er normaal uitziet en ben je klaar. Zoek je op je domein, dan verzamelt Google alle accounts waarvan advertenties naar jouw site wijzen, en staat dat eigen account daar gewoon tussen. Lopen er meerdere, dan waarschuwt Google daar zelf voor boven de resultaten.
       </p>
 
       <Bron bron="Google Centrum voor advertentietransparantie" url="https://adstransparency.google.com">
@@ -9681,7 +9652,7 @@ function ArticleTransparencyBody() {
       </div>
 
       <p>
-        De Digital Services Act verplicht alle aangewezen zeer grote platforms en zoekmachines tot zo&apos;n openbare advertentierepository. De Europese Commissie houdt de{' '}
+        De Digital Services Act verplicht alle aangewezen zeer grote platforms en zoekmachines tot zo'n openbare advertentiebibliotheek. De Europese Commissie houdt de{' '}
         <a href="https://digital-strategy.ec.europa.eu/en/policies/list-designated-vlops-and-slops" target="_blank" rel="noopener noreferrer" style={extLink}>
           actuele lijst
         </a>{' '}
@@ -9696,7 +9667,7 @@ function ArticleTransparencyBody() {
           <a href="https://ads.twitter.com/ads-repository" target="_blank" rel="noopener noreferrer" style={extLink}>
             X Ads Repository
           </a>{' '}
-          Voor EU-advertenties met adverteerder, financierende partij, targeting, impressies en bereik.
+          Voor EU-advertenties met adverteerder, financierende partij, targeting, vertoningen en bereik.
         </li>
         <li style={{ marginBottom: '10px' }}>
           <a href="https://adlibrary.ads.microsoft.com" target="_blank" rel="noopener noreferrer" style={extLink}>
@@ -9708,7 +9679,7 @@ function ArticleTransparencyBody() {
           <a href="https://ads.pinterest.com/ads-repository/" target="_blank" rel="noopener noreferrer" style={extLink}>
             Pinterest Ads Repository
           </a>{' '}
-          EU-advertenties, openbaar maar leunt sterk op JavaScript.
+          EU-advertenties, openbaar, maar heeft veel JavaScript nodig.
         </li>
         <li style={{ marginBottom: '10px' }}>
           <a href="https://adsgallery.snap.com/" target="_blank" rel="noopener noreferrer" style={extLink}>
@@ -9750,7 +9721,7 @@ function ArticleTransparencyBody() {
           <a href="https://www.zalando.nl/ads-repository/" target="_blank" rel="noopener noreferrer" style={extLink}>
             Zalando Ads Repository
           </a>{' '}
-          Openbare repository, ook via de Nederlandse winkel.
+          Openbare advertentiebibliotheek, ook via de Nederlandse winkel.
         </li>
       </ul>
 
@@ -9764,7 +9735,7 @@ function ArticleTransparencyBody() {
             pct: '01',
             text: (
               <>
-                <b>Open de advertentiebibliotheek van het platform.</b> Er is geen inlog of account nodig. Het werkt op elke browser, ook op je telefoon.
+                <b>Open de advertentiebibliotheek van het platform.</b> Er is geen inlog of account nodig. Het werkt in elke browser, ook op je telefoon.
               </>
             ),
           },
@@ -9837,7 +9808,7 @@ function ArticleTransparencyBody() {
             pct: 'AI',
             text: (
               <>
-                <b>Je eigen AI kan er niet van leren.</b> Een AI-laag heeft je spend, leads, marge en klantwaarde nodig, aan elkaar gekoppeld. Blijft die data in het account van je bureau, dan kan een systeem dat voor jou leert er niet bij.
+                <b>Je eigen AI kan er niet van leren.</b> AI heeft je uitgaven, leads, marge en klantwaarde nodig, aan elkaar gekoppeld. Blijft die data in het account van je bureau, dan kan een systeem dat voor jou leert er niet bij.
               </>
             ),
           },
@@ -9845,7 +9816,7 @@ function ArticleTransparencyBody() {
       />
 
       <p>
-        Het is een startpunt voor een gesprek, geen aanklacht. De enige manier om zeker te weten hoe het bij jou zit, is het je bureau vragen.
+        Het is een reden om het gesprek aan te gaan, geen beschuldiging. De enige manier om zeker te weten hoe het bij jou zit, is het je bureau vragen.
       </p>
 
       <H2 num="05">Hoe hoort het te zijn ingericht?</H2>
@@ -9867,14 +9838,14 @@ function ArticleTransparencyBody() {
       </p>
 
       <Takeaways
-        label="DE JUISTE SETUP"
+        label="DE JUISTE INRICHTING"
         title="Jij bent eigenaar, het bureau krijgt toegang"
         items={[
           {
             pct: 'JIJ',
             text: (
               <>
-                <b>Op naam van jouw bedrijf.</b> Advertentieaccounts, Meta Business Portfolio, pixel en conversie-API, GA4, Tag Manager, Merchant Center en je CRM. Dit is jouw eigendom.
+                <b>Op naam van jouw bedrijf.</b> Advertentieaccounts, Meta Business Portfolio, pixel en Conversions API, GA4, Tag Manager, Merchant Center en je CRM. Dit is jouw eigendom.
               </>
             ),
           },
@@ -9890,21 +9861,21 @@ function ArticleTransparencyBody() {
             pct: 'GELD',
             text: (
               <>
-                <b>Facturatie op jouw betaalmethode.</b> Zo houd je zicht op de werkelijke mediakosten en zit de spend niet verstopt in een bureau-account.
+                <b>Facturatie op jouw betaalmethode.</b> Zo houd je zicht op de werkelijke mediakosten en zitten de uitgaven niet verstopt in een bureau-account.
               </>
             ),
           },
         ]}
       />
 
-      <H2 num="06">Wat betekent dit voor je AI-positie?</H2>
+      <H2 num="06">Wat betekent dit als je AI wilt inzetten?</H2>
 
       <p>
-        Marketing schuift naar AI. De advertentieplatforms sturen er zelf al op: Google en Meta optimaliseren op de data in het account waarin je campagnes draaien. En steeds meer bedrijven bouwen een eigen AI-laag bovenop hun marketing, om te sturen op omzet en klantwaarde in plaats van op klikken.
+        Marketing draait steeds meer op AI. De advertentieplatforms sturen er zelf al op: Google en Meta optimaliseren op de data in het account waarin je campagnes draaien. En steeds meer bedrijven zetten zelf AI in om hun marketing te sturen op omzet en klantwaarde in plaats van op klikken.
       </p>
 
       <p>
-        Beide leunen op data. Wie zijn eigen data bezit, kan die AI voeden en de voorsprong meenemen. Wie de data bij het bureau laat, begint bij een overstap opnieuw, of blijft afhankelijk van wat het bureau deelt. De voorsprong is cumulatief: elke maand eigen data maakt een model beter en een benchmark scherper. Die tijd haal je later niet in.
+        Allebei draaien ze op data. Wie zijn eigen data bezit, kan die AI voeden en de voorsprong meenemen. Wie de data bij het bureau laat, begint bij een overstap opnieuw, of blijft afhankelijk van wat het bureau deelt. Die voorsprong groeit: elke maand eigen data maakt een model beter en een vergelijking scherper. Die tijd haal je later niet in.
       </p>
 
       <p>
@@ -9941,7 +9912,7 @@ function ArticleTransparencyBody() {
             pct: '03',
             text: (
               <>
-                <b>Waar landt onze lead-data?</b> Is er een verwerkersovereenkomst, en weten we welke systemen onze klantgegevens verwerken?
+                <b>Waar komen de gegevens van onze leads terecht?</b> Is er een verwerkersovereenkomst, en weten we welke systemen onze klantgegevens verwerken?
               </>
             ),
           },
@@ -9953,7 +9924,7 @@ function ArticleTransparencyBody() {
       </p>
 
       <p>
-        Het punt is niet dat bureaus onbetrouwbaar zijn. Het punt is dat eigenaarschap van je eigen marketingdata een keuze hoort te zijn die je bewust maakt, niet een die je overkomt omdat je nooit in dat ene veld hebt gekeken. Twee minuten in de advertentiebibliotheek, en je weet waar je staat.
+        Het gaat er niet om dat bureaus onbetrouwbaar zijn. Het gaat erom dat je zelf bewust kiest van wie je marketingdata is, in plaats van dat het je overkomt omdat je nooit in dat ene veld hebt gekeken. Twee minuten in de advertentiebibliotheek, en je weet waar je staat.
       </p>
 
       <p>
@@ -9993,17 +9964,17 @@ function ArticleTegenwerpingenBody() {
 
       <Callout
         big="7 van 8"
-        label="Zoveel van de tegenwerpingen houden geen stand als reden om het account niet op jouw naam te zetten. Bij zes staat het antwoord in de handleiding van Google of Meta zelf, en die brontekst staat er onder. De zevende gaat niet over het platform maar over je contract."
+        label="Zoveel van de tegenwerpingen houden geen stand als reden om het account niet op jouw naam te zetten. Bij zes staat het antwoord in de handleiding van Google of Meta zelf, en die brontekst staat eronder. De zevende gaat niet over het platform maar over je contract."
       />
 
       <p>
-        Een ding vooraf, want anders leest de rest verkeerd. Dit is geen stuk tegen bureaus. De meeste doen het zo omdat het ooit zo begonnen is, niet omdat ze iets willen vasthouden, en zetten het zonder morren recht als je erom vraagt. Wat je zoekt is dan ook niet ja of nee, maar of het antwoord ergens op slaat.
+        Een ding vooraf, want anders lees je de rest verkeerd. Dit is geen stuk tegen bureaus. De meeste doen het zo omdat het ooit zo begonnen is, niet omdat ze iets willen vasthouden, en zetten het zonder morren recht als je erom vraagt. Wat je zoekt is dan ook niet ja of nee, maar of het antwoord ergens op slaat.
       </p>
 
       <H2 num="01">&quot;Dan heb je toegang tot al onze advertentieaccounts&quot;</H2>
 
       <p>
-        Dit klopt niet. Meta deelt per asset, niet per portfolio. Wie een partner toevoegt, kiest zelf welke assets hij deelt en met welke rechten. Die partner ziet vervolgens alleen wat er met hem gedeeld is. Een bureau kan dus een enkel advertentieaccount delen en de rest van zijn portfolio dicht houden.
+        Dit klopt niet. Meta deelt per asset, niet per portfolio. Wie een partner toevoegt, kiest zelf welke assets hij deelt en met welke rechten. Die partner ziet vervolgens alleen wat er met hem gedeeld is. Een bureau kan dus een enkel advertentieaccount delen en de rest van zijn portfolio afgeschermd houden.
       </p>
 
       <Bron bron="Meta Business Help Center" url="https://www.facebook.com/business/help/1717412048538897">
@@ -10071,7 +10042,7 @@ function ArticleTegenwerpingenBody() {
       </Bron>
 
       <p>
-        Wat wel historie kost, is een nieuw account moeten openen omdat je het oude niet mee kunt nemen. Bij Meta is dat een echt risico. Is een advertentieaccount eenmaal bevestigd eigendom van een bedrijf, dan kan dat bedrijf het niet meer uit zijn portfolio halen. Er is geen knop die het naar jou verplaatst.
+        Wat je wel historie kost, is dat je een nieuw account moet openen omdat je het oude niet mee kunt nemen. Bij Meta is dat een echt risico. Is een advertentieaccount eenmaal bevestigd eigendom van een bedrijf, dan kan dat bedrijf het niet meer uit zijn portfolio halen. Er is geen knop die het naar jou verplaatst.
       </p>
 
       <Bron bron="Meta, technische documentatie voor advertentieaccounts" url="https://developers.facebook.com/docs/marketing-api/business-asset-management/guides/ad-accounts/">
@@ -10089,7 +10060,7 @@ function ArticleTegenwerpingenBody() {
       <H2 num="04">&quot;Wij schieten de mediakosten voor, jij hebt geen kredietlimiet&quot;</H2>
 
       <p>
-        Dit klopt vaak wel, en het is een echte dienst. Voor maandfacturatie stelt Google eisen: het bedrijf moet minstens een jaar ingeschreven staan en in{' '}
+        Dit klopt vaak wel, en daar heb je echt iets aan. Voor maandfacturatie stelt Google eisen: het bedrijf moet minstens een jaar ingeschreven staan en in{' '}
         <a href="https://support.google.com/google-ads/answer/2375377" target="_blank" rel="noopener noreferrer" style={extLink}>
           3 van de laatste 12 maanden minstens 5.000 dollar
         </a>{' '}
@@ -10149,7 +10120,7 @@ function ArticleTegenwerpingenBody() {
       <H2 num="08">&quot;Je hebt niet eens een eigen Business Manager&quot;</H2>
 
       <p>
-        Dan maak je die aan. Het kost niets, en Meta beschrijft de nette route zelf, met het bureau-scenario er letterlijk in als voorbeeld.
+        Dan maak je die aan. Het kost niets, en Meta beschrijft de nette route zelf, met een bureau er letterlijk als voorbeeld in.
       </p>
 
       <PullQuote
@@ -10162,17 +10133,17 @@ function ArticleTegenwerpingenBody() {
       </Bron>
 
       <p>
-        Dat is dus Meta&apos;s eigen omschrijving van hoe het hoort: de klant bezit het account, het bureau vraagt toegang. Het omgekeerde is niet verboden, maar het is niet het patroon dat het platform beschrijft.
+        Dat is dus Meta&apos;s eigen omschrijving van hoe het hoort: de klant bezit het account, het bureau vraagt toegang. Het omgekeerde is niet verboden, maar zo beschrijft het platform het niet.
       </p>
 
       <H2 num="09">Wat we niet hebben kunnen nakijken</H2>
 
       <p>
-        Twee dingen zijn we niet rondgekregen, en die staan hier omdat je ze niet als argument moet gebruiken.
+        Twee dingen konden we niet hard maken, en die staan hier omdat je ze niet als argument moet gebruiken.
       </p>
 
       <p>
-        Of een bureau-account goedkopere klikken krijgt. Google beschrijft de prijs als uitkomst van de veiling, uit bod en kwaliteit, maar een expliciete uitspraak dat er geen kortingen op accountniveau bestaan hebben we niet gevonden.
+        Of een bureau-account goedkopere klikken krijgt. Google beschrijft de prijs als uitkomst van de veiling, op basis van bod en kwaliteit, maar een expliciete uitspraak dat er geen kortingen op accountniveau bestaan hebben we niet gevonden.
       </p>
 
       <p>
@@ -10264,7 +10235,7 @@ function ArticleDomeinBody() {
       />
 
       <p>
-        Een ding vooraf, want anders leest de rest verkeerd. Dit gebeurt zelden met opzet. Er moest snel een site komen, iemand registreerde het domein even op zijn eigen account om door te kunnen, en daarna heeft niemand er meer naar gekeken. Dat is geen kwade wil, dat is haast. Het punt is alleen dat het zo blijft staan tot iemand het rechtzet, en dat je dat het liefst doet op een moment dat het niet uitmaakt.
+        Een ding vooraf, want anders lees je de rest verkeerd. Dit gebeurt zelden met opzet. Er moest snel een site komen, iemand registreerde het domein even op zijn eigen account om door te kunnen, en daarna heeft niemand er meer naar gekeken. Dat is geen kwade wil, dat is haast. Het punt is alleen dat het zo blijft staan tot iemand het rechtzet, en dat je dat het liefst doet op een moment dat het niet uitmaakt.
       </p>
 
       <H2 num="01">Drie dingen die mensen door elkaar halen</H2>
@@ -10309,7 +10280,7 @@ function ArticleDomeinBody() {
       <H2 num="04">Bij een .com zie je de eigenaar meestal niet</H2>
 
       <p>
-        Sinds de privacyregels tonen de registers achter .com, .net en .org de naam van de houder niet meer. In het scherm van apple.com staat bij de eigenaar letterlijk dat de gegevens zijn afgeschermd. Dat is geen storing en het zegt ook niets over of het goed of fout staat.
+        Sinds de strengere privacyregels tonen de registers achter .com, .net en .org de naam van de houder niet meer. In het scherm van apple.com staat bij de eigenaar letterlijk dat de gegevens zijn afgeschermd. Dat is geen storing en het zegt ook niets over of het goed of fout staat.
       </p>
 
       <p>
@@ -10333,11 +10304,11 @@ function ArticleDomeinBody() {
       </p>
 
       <p>
-        <b>Neem eerst je DNS-instellingen over, voordat de verhuizing loopt.</b> Dat is de stap die vergeten wordt en die het meeste kapotmaakt. In die instellingen staat waar je mail heen gaat en waar je website staat. Verhuis je zonder ze eerst te noteren en opnieuw te zetten, dan ligt je mail er een halve dag uit terwijl niemand snapt waarom.
+        <b>Neem eerst je DNS-instellingen over, voordat de verhuizing loopt.</b> Dat is de stap die vergeten wordt en die het meeste kapotmaakt. In die instellingen staat waar je mail heen gaat en waar je website staat. Verhuis je zonder ze eerst te noteren en opnieuw in te stellen, dan ligt je mail er een halve dag uit terwijl niemand snapt waarom.
       </p>
 
       <p>
-        Bij een .com of .net levert een verhuizing meteen een extra jaar registratie op, dat is de regel van ICANN. Bij .nl loopt de looptijd via het abonnement bij je registrar; vraag dus even wat er met de einddatum gebeurt. Duur is het in geen van beide gevallen.
+        Bij een .com of .net levert een verhuizing meteen een extra jaar registratie op, dat is de regel van ICANN. Bij .nl hangt de looptijd af van het abonnement bij je registrar; vraag dus even wat er met de einddatum gebeurt. Duur is het in geen van beide gevallen.
       </p>
 
       <H2 num="07">En daarna: sleutel en papieren apart</H2>
@@ -10347,7 +10318,7 @@ function ArticleDomeinBody() {
       </p>
 
       <p>
-        Dat laatste is geen wantrouwen, het is gewoon hoe je het regelt met iets waar je bedrijf aan hangt. Je geeft de aannemer ook een sleutel van de voordeur zonder het huis op zijn naam te zetten.
+        Zo regel je dat met iets waar je bedrijf aan hangt. Je geeft de aannemer ook een sleutel van de voordeur zonder het huis op zijn naam te zetten.
       </p>
 
       <H2 num="08">Wat je onthoudt</H2>
@@ -10365,7 +10336,7 @@ function ArticleDomeinBody() {
       />
 
       <p>
-        Weet je niet hoe het bij jou staat, dan is dat geen slecht teken. Bijna niemand weet het. Zoek je domein op bij het register van je extensie en kijk bij de houder. Dat kost twee minuten en je hebt er niemand voor nodig.
+        Weet je niet hoe het bij jou staat? Bijna niemand weet het. Zoek je domein op bij het register van je extensie en kijk bij de houder. Dat kost twee minuten en je hebt er niemand voor nodig.
       </p>
 
       <p>
@@ -10420,7 +10391,7 @@ function ArticleFirstPartyDataBody() {
   return (
     <>
       <p className="lead-para">
-        De meeste stukken over first-party data beginnen bij het verdwijnen van third-party cookies. Dat is de verkeerde ingang, want het maakt er een technisch probleem van waar je een leverancier voor nodig hebt. First-party data is simpeler dan dat: het is wat je zelf over je eigen klanten weet, op een plek waar je er ook iets mee kunt. De vraag die telt is niet of je het hebt, maar of het ergens aankomt waar het je iets oplevert.
+        De meeste stukken over first-party data beginnen bij het verdwijnen van third-party cookies. Dat is de verkeerde ingang, want het maakt er een technisch probleem van waar je een leverancier voor nodig hebt. First-party data is simpeler dan dat: het is wat je zelf over je eigen klanten weet, op een plek waar je er ook iets mee kunt. Waar het om gaat is niet of je het hebt, maar of het ergens aankomt waar het je iets oplevert.
       </p>
 
       <H2 num="01">Wat het is</H2>
@@ -10458,7 +10429,7 @@ function ArticleFirstPartyDataBody() {
       </p>
 
       <p>
-        <b>Een koppeling naar je CRM.</b> Dit is het stuk dat het vaakst ontbreekt. Een formulier dat een mail naar info@ stuurt is geen first-party data, want de uitkomst van die aanvraag belandt nergens waar je hem kunt terugtellen. Je hebt een plek nodig waar aanvraag, offerte en opdracht aan elkaar vastzitten.
+        <b>Een koppeling naar je CRM.</b> Dit is het stuk dat het vaakst ontbreekt. Een formulier dat een mail naar info@ stuurt is geen first-party data, want de uitkomst van die aanvraag belandt nergens waar je hem kunt terugvinden. Je hebt een plek nodig waar aanvraag, offerte en opdracht aan elkaar vastzitten.
       </p>
 
       <p>
@@ -10472,7 +10443,7 @@ function ArticleFirstPartyDataBody() {
       </p>
 
       <p>
-        De meting staat goed, maar het formulier schrijft de aanvraag niet in het CRM. Of het CRM heeft de aanvraag wel, maar niemand vult in of het iets werd. Of iemand vult het in, maar er loopt geen weg terug naar de advertentiekant. Elk van die drie breekt het geheel, en geen van drie geeft een foutmelding.
+        De meting staat goed, maar het formulier schrijft de aanvraag niet in het CRM. Of het CRM heeft de aanvraag wel, maar niemand vult in of het iets werd. Of iemand vult het in, maar er loopt geen weg terug naar de advertentiekant. Elk van die drie maakt de keten kapot, en geen van de drie geeft een foutmelding.
       </p>
 
       <p>
@@ -10482,7 +10453,7 @@ function ArticleFirstPartyDataBody() {
       <H2 num="05">Wat je er niet mee oplost</H2>
 
       <p>
-        First-party data maakt je meting eerlijker en je sturing scherper. Het maakt geen vraag waar die niet is. Als er te weinig mensen naar je zoeken, zie je dat straks alleen beter.
+        First-party data maakt je meting eerlijker en je sturing scherper. Het zorgt niet voor vraag die er niet is. Als er te weinig mensen naar je zoeken, zie je dat straks alleen beter.
       </p>
 
       <p>
@@ -10498,7 +10469,7 @@ function ArticleFirstPartyDataBody() {
         items={[
           {
             pct: '01',
-            text: <>Begin niet bij de techniek maar bij een vraag: van de aanvragen van vorige maand, weet je van hoeveel of het iets werd. Kun je dat niet beantwoorden, dan is dat het eerste gat, en het heeft niets met cookies te maken.</>,
+            text: <>Begin niet bij de techniek maar bij een vraag: weet je van de aanvragen van vorige maand hoeveel er iets zijn geworden. Kun je dat niet beantwoorden, dan is dat het eerste gat, en het heeft niets met cookies te maken.</>,
           },
         ]}
       />
@@ -10515,14 +10486,14 @@ function ArticleCrmKoppelenBody() {
         Een koppeling tussen je website en je CRM wordt vaak uitgelegd als een installatie: zet er een stukje code op en de aanvragen komen binnen. Dat is het makkelijke deel, en het levert meestal niet op wat mensen ervan verwachten. De aanvragen komen dan wel binnen, maar je weet nog steeds niet welke advertentie of welke pagina ze heeft gebracht, en je weet ook niet welke aanvraag uiteindelijk iets werd. Dit stuk gaat over de drie koppelingen die je nodig hebt, waarom de tweede altijd vergeten wordt, en hoe je controleert of het klopt.
       </p>
 
-      <H2 num="01">Drie koppelingen, geen een</H2>
+      <H2 num="01">Drie koppelingen, niet één</H2>
 
       <p>
         <b>De aanvraag erin.</b> Iemand vult een formulier in, en er komt een contact of een kans in je CRM. Dit is het deel dat iedereen bouwt.
       </p>
 
       <p>
-        <b>De herkomst erbij.</b> Bij diezelfde aanvraag hoort te staan waar hij vandaan kwam. Niet alleen &quot;Google&quot;, maar de campagne, de zoekterm waar dat kan, en het nummer dat het advertentiesysteem aan die klik hangt. Zonder dat nummer kun je later niet terugvertellen welke klik een klant opleverde.
+        <b>De herkomst erbij.</b> Bij diezelfde aanvraag hoort te staan waar hij vandaan kwam. Niet alleen &quot;Google&quot;, maar de campagne, de zoekterm waar dat kan, en het nummer dat het advertentiesysteem aan die klik hangt. Zonder dat nummer kun je later niet nagaan welke klik een klant opleverde.
       </p>
 
       <p>
@@ -10658,7 +10629,7 @@ function ArticleConversiesMetenBody() {
       <H2 num="05">Wanneer het klopt</H2>
 
       <p>
-        Een handvol conversies, niet twintig. Een primaire conversie die bij je omzet past, en de rest op secundair. Aantallen die binnen een paar procent gelijk lopen met wat je in je CRM terugvindt. En een klik-nummer dat in je CRM staat, zodat je achteraf kunt terugvertellen welke advertentie een klant opleverde.
+        Een handvol conversies, niet twintig. Een primaire conversie die bij je omzet past, en de rest op secundair. Aantallen die binnen een paar procent gelijk lopen met wat je in je CRM terugvindt. En een klik-nummer dat in je CRM staat, zodat je achteraf kunt nagaan welke advertentie een klant opleverde.
       </p>
 
       <p>
@@ -10708,7 +10679,7 @@ function ArticleLeadformulierBody() {
       <H2 num="02">Het veld dat je wel moet toevoegen</H2>
 
       <p>
-        Een paar verborgen velden die meereizen naar je CRM: waar de bezoeker vandaan kwam, welke campagne het was, en het nummer dat het advertentiesysteem aan die klik hangt. De bezoeker merkt er niets van, en zonder die velden kun je later nooit terugvertellen welke advertentie een klant opleverde.
+        Een paar verborgen velden die meereizen naar je CRM: waar de bezoeker vandaan kwam, welke campagne het was, en het nummer dat het advertentiesysteem aan die klik hangt. De bezoeker merkt er niets van, en zonder die velden kun je later nooit nagaan welke advertentie een klant opleverde.
       </p>
 
       <p>
@@ -10796,7 +10767,7 @@ function ArticleFeedManagementBody() {
       </p>
 
       <p>
-        Dat derde is waar het meestal misgaat. Platforms keuren producten af zonder dat iemand een melding krijgt die hij leest. Een feed die vorige maand prima liep kan nu voor een kwart afgekeurd zijn.
+        Bij dat derde gaat het meestal mis. Platforms keuren producten af zonder dat iemand een melding krijgt die hij leest. Een feed die vorige maand prima liep kan nu voor een kwart afgekeurd zijn.
       </p>
 
       <H2 num="03">Waar je titels het verschil maken</H2>
@@ -10962,7 +10933,7 @@ function ArticleChatGPTAdsBody() {
       <H2 num="05">Voor wie het (nog) niet is</H2>
 
       <p>
-        <b>Voor de meeste lokale bedrijven is het nog niet het moment. Zoeken jouw klanten naar een loodgieter, een fysiotherapeut of een dakdekker in de buurt, dan doen ze dat in Google, en daar zit de vraag van mensen die nu willen kopen. Zolang je daar nog winstgevend kunt groeien, verdient Google Search je eerste euro.</b>
+        <b>Voor de meeste lokale bedrijven is het nog niet het moment. Zoeken jouw klanten naar een loodgieter, een fysiotherapeut of een dakdekker in de buurt, dan doen ze dat in Google, en daar zit de vraag van mensen die nu willen kopen. Zolang je daar nog winstgevend kunt groeien, gaat je eerste euro naar Google Search.</b>
       </p>
 
       <p>
@@ -10985,11 +10956,11 @@ function ArticleChatGPTAdsBody() {
           <b>Tel de aanvraag op de goede plek.</b> Zet de pixel van OpenAI op je site en tel een aanvraag pas op de bedankpagina, niet bij een klik op een knop. Geef je advertentielinks eigen UTM-parameters, zodat je dit bezoek in Google Analytics apart ziet.
         </li>
         <li>
-          <b>Bewaar de klik-ID.</b> OpenAI geeft elke klik een eigen code mee, de oppref. Zorg dat die een omleiding overleeft en bij de aanvraag in je CRM terechtkomt, anders weet je achteraf niet welke klant uit ChatGPT kwam.
+          <b>Bewaar de klik-ID.</b> OpenAI geeft elke klik een eigen code mee, de oppref. Zorg dat die bij een omleiding niet verloren gaat en bij de aanvraag in je CRM terechtkomt, anders weet je achteraf niet welke klant uit ChatGPT kwam.
         </li>
         <li>
-          <b>Stuur de uitkomst terug.</b> Via de{' '}
-          <Ext href="https://developers.openai.com/ads/conversions-api">Conversions API</Ext> geef je door dat een aanvraag een opdracht werd, met het bedrag. Doe dat snel: gebeurtenissen van meer dan zeven dagen geleden neemt de koppeling niet aan.
+          <b>Stuur het resultaat terug.</b> Via de{' '}
+          <Ext href="https://developers.openai.com/ads/conversions-api">Conversions API</Ext> geef je door dat een aanvraag een opdracht werd, met het bedrag. Doe dat snel: events die meer dan zeven dagen oud zijn, neemt de koppeling niet aan.
         </li>
         <li>
           <b>Apart budget, vaste beslisdatum.</b> Schrijf vooraf op wat een klant via ChatGPT mag kosten en wanneer je beslist.
@@ -11005,7 +10976,7 @@ function ArticleChatGPTAdsBody() {
       <H2 num="07">Wat Stevin.AI doet</H2>
 
       <p>
-        <b>Voor klanten zetten we ChatGPT Ads op als test naast Google Search, niet in plaats ervan. Met dezelfde meting tot opdracht en omzet die we voor Google bouwen, een eigen budget en een meetlat die we vooraf vastleggen. Levert het klanten op tegen een prijs die klopt, dan schalen we op. Zo niet, dan stoppen we, en weet je waarom.</b>
+        <b>Voor klanten zetten we ChatGPT Ads op als test naast Google Search, niet in plaats ervan. Met dezelfde meting tot opdracht en omzet die we voor Google bouwen, een eigen budget en een meetlat die we vooraf vastleggen. Levert het klanten op tegen een prijs die klopt, dan gaan we verder met een groter budget. Zo niet, dan stoppen we, en weet je waarom.</b>
       </p>
 
       <p>

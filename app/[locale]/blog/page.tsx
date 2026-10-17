@@ -23,7 +23,12 @@ export default function BlogIndex() {
   const allEditorials = editorials()
   // Vangrail: toon alleen dispatches die al een echte body hebben (geen thin
   // content in de lijst, geen kaarten die naar een 404 linken).
-  const allDispatches = dispatches().filter((d) => hasDispatchBody(d.slug))
+  // W-568: nieuwste eerst. Geen kop "deze week" en geen label "dagelijks": er
+  // verschijnen niet elke dag berichten, en een kop die oude stukken als nieuws
+  // brengt is precies wat REGEL #3 verbiedt.
+  const allDispatches = dispatches()
+    .filter((d) => hasDispatchBody(d.slug))
+    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
 
   return (
     <>
@@ -92,13 +97,13 @@ export default function BlogIndex() {
                     marginBottom: '6px',
                   }}
                 >
-                  KORT · DAGELIJKS
+                  KORT
                 </p>
                 <h3
                   className="font-display font-bold text-[var(--navy)] m-0"
                   style={{ fontSize: '24px', letterSpacing: '-0.02em' }}
                 >
-                  Wat er deze week gebeurde
+                  Korte berichten
                 </h3>
               </div>
               <span
@@ -157,7 +162,7 @@ export default function BlogIndex() {
                     >
                       {d.title}
                     </h4>
-                    {d.source && (
+                    {d.source && d.source.name !== 'Stevin Journal' && (
                       <p
                         style={{
                           fontFamily: 'Inter, sans-serif',
@@ -194,7 +199,7 @@ export default function BlogIndex() {
                     marginBottom: '6px',
                   }}
                 >
-                  EDITIES · WEKELIJKS
+                  EDITIES
                 </p>
                 <h3
                   className="font-display font-bold text-[var(--navy)] m-0"
