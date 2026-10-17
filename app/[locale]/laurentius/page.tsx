@@ -41,7 +41,10 @@ const TEKST = {
   eyebrow: 'Kavel in de veiling van KBS Laurentius',
   kop: 'Bied op een eigen website voor je bedrijf of vereniging',
   intro:
-    'Stevin.AI bouwt een website van één pagina voor de winnaar van dit kavel. Op je eigen domeinnaam, snel op je telefoon en net zo goed op je laptop.',
+    // Lezen, niet vinden: bovenaan in Google of genoemd in ChatGPT beloven we nooit.
+    // Let op: de renderer in stevin-sites weigert AI-zoekbots (middleware.ts, 403);
+    // voor de site van de winnaar moet dat open voordat hij live gaat.
+    'Stevin.AI bouwt een website van één pagina voor de winnaar van dit kavel. Op je eigen domeinnaam, net zo goed op je telefoon als op je laptop, en gebouwd zodat Google en AI-assistenten zoals ChatGPT hem goed kunnen lezen.',
   knopVoorbeelden: 'Bekijk de voorbeelden',
   knopVeiling: 'Naar de veiling',
   waarde: `Waarde ${WAARDE}, excl.\u00a0btw`,
