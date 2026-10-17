@@ -16,6 +16,17 @@
 //   (het blauw viel in grijstinten weg).
 // - totaallobby.svg: de titel zoals op het omslag, gezet in Anton (het
 //   lettertype van de Parrhesia-site), als paden zodat er geen font laadt.
+// W-567, 17 okt 2026: Rigo Bouw en Sterker Witgoed erbij, op Koens verzoek.
+// - rigo-bouw.png: rigobouwbv.nl, /manus-storage/FullLogo_Transparent3, al
+//   transparant; alleen de lege rand eraf en verkleind naar 160 hoog.
+// - sterker-witgoed.png: sterkerwitgoed.nl, wp-content/uploads/2025/03/
+//   logo-sterkerwitgoed.png. Wit beeld op een gekleurd vierkant; dat vierkant
+//   wordt in grijstinten een zwaar blok, dus net als bij Bart alleen het witte
+//   beeld bewaard en donker gemaakt op transparant.
+//   Bijgesteld na Koens blik op de live strook ("verhoudingen kloppen niet"):
+//   Rigo werd in grijstinten fletser dan de rest, dus ook donker gemaakt zoals
+//   Bart; de webadresregel onder Sterker eraf (onleesbaar op 44 hoog); beide
+//   lager en lichter gezet zodat ze even zwaar ogen als Hans Schepers en Boersma.
 
 type Klant = { src: string; naam: string; h: number; o: number }
 
@@ -33,6 +44,8 @@ const KLANTEN: Klant[] = [
   { src: '/logos/klanten/totaallobby.svg', naam: 'Totaallobby', h: 36, o: 0.7 },
   { src: '/logos/klanten/hans-schepers.svg', naam: 'Hans Schepers Stoffering', h: 40, o: 0.75 },
   { src: '/logos/klanten/autorijschool-bart.png', naam: 'Autorijschool Bart', h: 40, o: 0.9 },
+  { src: '/logos/klanten/rigo-bouw.png', naam: 'Rigo Bouw', h: 42, o: 0.7 },
+  { src: '/logos/klanten/sterker-witgoed.png', naam: 'Sterker Witgoed', h: 44, o: 0.65 },
 ]
 
 const COPY = {
@@ -55,8 +68,12 @@ export default function KlantLogos({ locale }: { locale: string }) {
             telefoon 2, 3, 2, op een tablet 4 en 3, en vanaf 900px alles op een
             regel (met kleinere tussenruimte tot 1024). De breuken zijn lege
             elementen van een hele regel breed. Breekpunt tussen (900px) staat
-            in app/globals.css. */}
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12 sm:gap-y-8 tussen:gap-x-8 lg:gap-x-12 xl:gap-x-16">
+            in app/globals.css.
+            W-567, 17 okt: met negen logo's past een regel pas vanaf 1280 breed
+            (samen ca. 790px logo plus 8 keer 40px ruimte). Daarom nu op een
+            telefoon 2, 3, 2, 2, van tablet tot 1280 5 en 4, en vanaf xl een
+            regel. Breekpunt tussen is hier niet meer nodig. */}
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12 sm:gap-y-8 xl:gap-x-10">
           {KLANTEN.map((k, i) => [
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -75,8 +92,8 @@ export default function KlantLogos({ locale }: { locale: string }) {
                 mixBlendMode: 'multiply',
               }}
             />,
-            (i === 1 || i === 4) && <span key={`breuk-${i}`} aria-hidden="true" className="h-0 basis-full sm:hidden" />,
-            i === 3 && <span key="breuk-tablet" aria-hidden="true" className="hidden h-0 basis-full sm:block tussen:hidden" />,
+            (i === 1 || i === 6) && <span key={`breuk-${i}`} aria-hidden="true" className="h-0 basis-full sm:hidden" />,
+            i === 4 && <span key="breuk-4" aria-hidden="true" className="h-0 basis-full xl:hidden" />,
           ])}
         </div>
       </div>

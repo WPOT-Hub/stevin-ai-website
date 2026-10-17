@@ -6,9 +6,9 @@ import { hasDispatchBody } from './[slug]/page'
 import { PosterWatermark } from '@/components/blog/PosterWatermark'
 
 export const metadata: Metadata = {
-  title: 'Stevin Journal, Marketing-intelligence redactie',
+  title: 'Stevin Journal: wat er speelt in marketing',
   description:
-    'Redactionele stukken over marketing-attribution, AI-tooling en meetstructuur. Geen hype, geen jargon, alleen wat herleidbaar is.',
+    'Het vaknieuws van de week, kort en met wat het voor jou betekent. En hoe je ziet wat je advertenties en je website echt opleveren.',
   alternates: { canonical: 'https://stevin.ai/blog' },
 }
 
@@ -57,7 +57,7 @@ export default function BlogIndex() {
               maxWidth: '18ch',
             }}
           >
-            Wat we lezen, meten en uitschrijven.
+            Wat er speelt in marketing, en wat je ermee moet.
           </h1>
           <p
             style={{
@@ -70,8 +70,8 @@ export default function BlogIndex() {
               fontWeight: 300,
             }}
           >
-            Onderzoek, methode en kritische lezingen. Voor wie zijn marketing serieus neemt en geen
-            genoegen meer neemt met een dashboard dat alleen zichzelf bevestigt.
+            Het vaknieuws van de week, kort en met wat het voor jou betekent. En hoe je ziet wat je
+            advertenties en je website echt opleveren.
           </p>
         </div>
       </header>
