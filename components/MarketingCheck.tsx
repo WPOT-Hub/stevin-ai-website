@@ -558,6 +558,23 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
     const q = new URLSearchParams(window.location.search)
     params.current = { p: q.get('p'), s: q.get('s'), b: bezoekerTeken() }
     hub.current = hubUrl()
+    // W-381: de pagina meldt zelf dat hij geopend is. Zonder dit bestond een
+    // bezoeker pas als hij een domein invulde, en zag niemand hoeveel mensen
+    // de scan openen en afhaken. Zelfde kanaal als de scan, dus wat een
+    // adblocker hier tegenhoudt, houdt hij ook daar tegen. Fire-and-forget:
+    // een mislukte melding mag de pagina nooit raken. Dubbelen (herladen,
+    // React in ontwikkeling) vallen in de Hub pas bij het tellen weg.
+    fetch(`${hub.current}/opened`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        variant,
+        placement_slug: params.current.p,
+        session_token: params.current.s,
+        bezoeker_token: params.current.b,
+      }),
+    }).catch(() => {})
     return () => {
       if (pollTimer.current) clearTimeout(pollTimer.current)
     }
