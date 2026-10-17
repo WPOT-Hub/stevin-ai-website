@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import { ScrollScherm } from './ScrollScherm'
-import { ArrowUpRight, Globe, MessageCircle, Smartphone, Gauge, PenLine, Clock } from 'lucide-react'
+import { ArrowUpRight, CalendarClock, Globe, MessageCircle, Smartphone, Gauge, PenLine, Clock } from 'lucide-react'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -110,10 +110,16 @@ function Hint({ licht }: { licht?: boolean }) {
   )
 }
 
-const STAPPEN = [
+const STAPPEN: { nr: string; titel: string; tekst: string; later?: boolean }[] = [
   { nr: '1', titel: 'Je wint het kavel', tekst: 'Na de veiling nemen we contact met je op.' },
   { nr: '2', titel: 'We bespreken je site', tekst: 'Wat je doet, voor wie, en welke foto’s en kleuren bij je passen.' },
   { nr: '3', titel: 'Je site gaat live', tekst: 'Op je eigen domeinnaam, binnen een week nadat we alles hebben.' },
+  {
+    nr: 'later',
+    titel: 'Na het eerste jaar',
+    tekst: `${DRAAIEN_PER_JAAR} per jaar, excl. btw, voor hosting, je domeinnaam, updates en back-ups. Je zit nergens aan vast: je domein, je site en je teksten blijven van jou.`,
+    later: true,
+  },
 ]
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -315,22 +321,34 @@ export default async function LaurentiusPage({ params }: Props) {
           <h2 className="font-display text-[28px] font-extrabold tracking-[-0.01em] text-white md:text-[36px]">
             Zo gaat het als je wint
           </h2>
-          <ol className="mt-10 grid gap-6 md:grid-cols-3">
-            {STAPPEN.map((s) => (
-              <li key={s.nr} className="rounded-[14px] border border-white/10 bg-white/[0.04] p-6">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-accent)] text-[15px] font-bold text-white">
-                  {s.nr}
-                </span>
-                <h3 className="mt-4 text-[17px] font-bold text-white">{s.titel}</h3>
-                <p className="mt-1.5 text-[15px] leading-relaxed text-slate-300">{s.tekst}</p>
+          {/* Tijdlijn zonder vakken: op de telefoon onder elkaar met een lijn links,
+              op de laptop naast elkaar met een lijn tussen de bolletjes. */}
+          <ol className="mt-10 grid gap-8 md:mt-12 md:grid-cols-4 md:gap-6">
+            {STAPPEN.map((s, i) => (
+              <li key={s.nr} className="relative flex gap-4 md:flex-col md:gap-5">
+                {i < STAPPEN.length - 1 && (
+                  <span
+                    aria-hidden
+                    className="absolute bottom-[-24px] left-[17.5px] top-11 w-px bg-white/15 md:bottom-auto md:left-11 md:right-[-16px] md:top-[17.5px] md:h-px md:w-auto"
+                  />
+                )}
+                {s.later ? (
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/25 text-slate-300">
+                    <CalendarClock className="h-4 w-4" aria-hidden />
+                  </span>
+                ) : (
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--color-accent)] text-[15px] font-bold text-white">
+                    {s.nr}
+                  </span>
+                )}
+                <div className="pt-1.5 md:pt-0">
+                  <h3 className={`text-[17px] font-bold ${s.later ? 'text-slate-200' : 'text-white'}`}>{s.titel}</h3>
+                  <p className="mt-1 text-[15px] leading-relaxed text-slate-300">{s.tekst}</p>
+                </div>
               </li>
             ))}
           </ol>
-          <p className="mt-8 max-w-[720px] text-[15px] leading-relaxed text-slate-300">
-            Na het eerste jaar betaal je {DRAAIEN_PER_JAAR} per jaar, excl. btw, voor hosting, je domeinnaam, updates en
-            back-ups. Je zit nergens aan vast. Je domein, je site en je teksten blijven van jou.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-4">
             <a
               href={VEILING_URL}
               className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent)] px-6 py-3 text-[15px] font-semibold text-white transition hover:brightness-110"
