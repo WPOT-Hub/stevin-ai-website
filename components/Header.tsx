@@ -47,14 +47,19 @@ export default function Header() {
   // 2026). Nu kijken we naar het element net onder de balk en zijn
   // achtergrondkleur. Elementen met pointer-events-none (de gloed, het brein)
   // slaat elementFromPoint over, zodat we de sectie zelf vinden.
+  // Alleen achtergronden over de volle breedte tellen: een donkere kaart in
+  // een witte pagina (de CTA-kaart onder een Journal-artikel, de kaarten in
+  // het Journal-overzicht) liet de balk anders even donker worden en weer
+  // wit, een flits van een paar honderd pixel scrollen (gezien 17 okt 2026).
   const [overDark, setOverDark] = useState(!isLightHero)
 
   useEffect(() => {
     let frame = 0
     const isDonker = (el: Element | null): boolean | null => {
+      const volleBreedte = window.innerWidth * 0.9
       while (el && el !== document.documentElement) {
         const m = getComputedStyle(el).backgroundColor.match(/[\d.]+/g)
-        if (m && m.length >= 3) {
+        if (m && m.length >= 3 && el.getBoundingClientRect().width >= volleBreedte) {
           const [r, g, b] = m.map(Number)
           const a = m.length >= 4 ? Number(m[3]) : 1
           if (a > 0.5) return 0.2126 * r + 0.7152 * g + 0.0722 * b < 128
