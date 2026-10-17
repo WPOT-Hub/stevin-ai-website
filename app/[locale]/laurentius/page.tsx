@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import { ScrollScherm } from './ScrollScherm'
-import { ArrowUpRight, CalendarClock, Globe, MessageCircle, Smartphone, Gauge, PenLine, Clock } from 'lucide-react'
+import { ArrowUpRight, CalendarClock, Globe, MessageCircle, Smartphone, Gauge, LayoutTemplate, Clock } from 'lucide-react'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -51,9 +51,11 @@ const TEKST = {
 
 const KRIJG = [
   {
-    icon: PenLine,
-    titel: 'Op maat gemaakt',
-    tekst: 'Wie je bent, wat je doet en hoe klanten of leden je bereiken, met je eigen teksten, foto’s en kleuren.',
+    // Een ontwerp kiezen, geen maatwerk: de basis is een vast ontwerp met een vaste
+    // prijs, extra maatwerk is een aparte opdracht (Koen, 17 okt 2026).
+    icon: LayoutTemplate,
+    titel: 'Kies je ontwerp',
+    tekst: 'Je kiest een van onze ontwerpen, zoals de voorbeelden hieronder. Daarin zetten we wie je bent, wat je doet en hoe klanten of leden je bereiken, met je eigen teksten, foto’s en kleuren.',
   },
   {
     icon: Globe,
@@ -112,7 +114,7 @@ function Hint({ licht }: { licht?: boolean }) {
 
 const STAPPEN: { nr: string; titel: string; tekst: string; later?: boolean }[] = [
   { nr: '1', titel: 'Je wint het kavel', tekst: 'Na de veiling nemen we contact met je op.' },
-  { nr: '2', titel: 'We bespreken je site', tekst: 'Wat je doet, voor wie, en welke foto’s en kleuren bij je passen.' },
+  { nr: '2', titel: 'We bespreken je site', tekst: 'Je kiest je ontwerp en we nemen samen je teksten, foto’s en kleuren door.' },
   { nr: '3', titel: 'Je site gaat live', tekst: 'Op je eigen domeinnaam, binnen een week nadat we alles hebben.' },
   {
     nr: 'later',
