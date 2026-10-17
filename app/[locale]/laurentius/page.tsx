@@ -15,7 +15,9 @@ type Props = { params: Promise<{ locale: string }> }
 // De drie voorbeelden zijn VERZONNEN demobedrijven uit stevin-sites (Studio
 // Adem, Barbier Wolff, Patisserie Saar) met stockfoto's. Daarom staan ze hier
 // als voorbeeld en nooit als klant. De schermafdrukken in public/laurentius
-// zijn op 17 okt 2026 gemaakt van de live sites (iPhone 13 en 1440 breed).
+// zijn op 17 okt 2026 gemaakt van de live sites (390 bij 844 en 1440 breed).
+// De telefoonbeelden moeten exact 390 bij 844 zijn, net als het frame: anders
+// snijdt object-cover de zijkanten af (eerste versie, Koen: "passen niet").
 //
 // De scores komen uit Lighthouse 12.6.0, op 17 okt 2026 gedraaid tegen de live
 // sites. SEO staat er bewust niet bij: de demo's staan op noindex en scoren
@@ -179,14 +181,14 @@ export default async function LaurentiusPage({ params }: Props) {
           <div className="relative mx-auto w-full max-w-[560px] pb-10 md:pb-14">
             <Laptop src="/laurentius/studioadem-laptop.jpg" alt="Voorbeeldsite Studio Adem op een laptop" />
             <Telefoon
-              src="/laurentius/barbierwolff-mobiel.jpg"
+              src="/laurentius/barbierwolff-telefoon.jpg"
               alt="Voorbeeldsite Barbier Wolff op een telefoon"
-              className="absolute -bottom-2 -left-3 w-[27%] -rotate-[4deg] md:-left-10"
+              className="absolute bottom-0 -left-2 w-[23%] md:-left-8"
             />
             <Telefoon
-              src="/laurentius/saar-mobiel.jpg"
+              src="/laurentius/saar-telefoon.jpg"
               alt="Voorbeeldsite Patisserie Saar op een telefoon"
-              className="absolute -bottom-4 -right-3 w-[27%] rotate-[4deg] md:-right-8"
+              className="absolute bottom-0 -right-2 w-[23%] md:-right-8"
             />
           </div>
         </div>
@@ -243,7 +245,7 @@ export default async function LaurentiusPage({ params }: Props) {
                     />
                   </div>
                   <Telefoon
-                    src={`/laurentius/${v.slug}-mobiel.jpg`}
+                    src={`/laurentius/${v.slug}-telefoon.jpg`}
                     alt={`Voorbeeldsite ${v.naam} op een telefoon`}
                     className="absolute bottom-[-18px] right-4 w-[26%]"
                   />
