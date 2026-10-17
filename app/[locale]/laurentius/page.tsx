@@ -29,32 +29,36 @@ type Props = { params: Promise<{ locale: string }> }
 
 const VEILING_URL = 'https://veiling.deleuksteschoolvannederland.nl'
 
-// Waarde van het kavel: de prijs van een onepager (Basis) op sites.stevin.ai.
-const WAARDE = '495 euro'
+// Waarde van het kavel: de one pager uit het vaste prijsmodel (Website_Keuzeblad,
+// 30 jul 2026, commit 63751df in Stevin-Hub): 999 euro exclusief btw, met de
+// domeinnaam geregistreerd en het eerste jaar hosting. Vanaf jaar twee 195 per
+// jaar voor het draaien. NIET de 495 van sites.stevin.ai: die pagina is ouder.
+const WAARDE = '999 euro'
+const DRAAIEN_PER_JAAR = '195 euro'
 
 const TEKST = {
   titel: 'Een eigen website, kavel in de Laurentius-veiling',
   omschrijving:
     'Stevin.AI bouwt een website van één pagina voor de winnaar, op je eigen domeinnaam. Bekijk hier drie voorbeelden.',
   eyebrow: 'Kavel in de veiling van KBS Laurentius',
-  kop: 'Bied op een eigen website voor je bedrijf',
+  kop: 'Bied op een eigen website voor je bedrijf of vereniging',
   intro:
     'Stevin.AI bouwt een website van één pagina voor de winnaar van dit kavel. Op je eigen domeinnaam, snel op je telefoon en net zo goed op je laptop.',
   knopVoorbeelden: 'Bekijk de voorbeelden',
   knopVeiling: 'Naar de veiling',
-  waarde: `Waarde ${WAARDE}`,
+  waarde: `Waarde ${WAARDE}, excl. btw`,
 }
 
 const KRIJG = [
   {
     icon: PenLine,
-    titel: 'Gemaakt voor jouw bedrijf',
-    tekst: 'Wie je bent, wat je doet en hoe klanten je bereiken, met je eigen teksten, foto’s en kleuren.',
+    titel: 'Op maat gemaakt',
+    tekst: 'Wie je bent, wat je doet en hoe klanten of leden je bereiken, met je eigen teksten, foto’s en kleuren.',
   },
   {
     icon: Globe,
     titel: 'Op je eigen domeinnaam',
-    tekst: 'Je site staat op jouw adres, bijvoorbeeld jouwbedrijf.nl.',
+    tekst: 'We registreren je domeinnaam, bijvoorbeeld jouwnaam.nl, en het eerste jaar hosting zit erbij. Heb je al een domein, dan koppelen we dat.',
   },
   {
     icon: Smartphone,
@@ -322,7 +326,11 @@ export default async function LaurentiusPage({ params }: Props) {
               </li>
             ))}
           </ol>
-          <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <p className="mt-8 max-w-[720px] text-[15px] leading-relaxed text-slate-300">
+            Na het eerste jaar betaal je {DRAAIEN_PER_JAAR} per jaar, excl. btw, voor hosting, je domeinnaam, updates en
+            back-ups. Je zit nergens aan vast. Je domein, je site en je teksten blijven van jou.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
             <a
               href={VEILING_URL}
               className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent)] px-6 py-3 text-[15px] font-semibold text-white transition hover:brightness-110"
