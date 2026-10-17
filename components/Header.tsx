@@ -1,5 +1,10 @@
 'use client'
 
+// VERGRENDELD (W-567, 17 okt 2026): de kleurwissel van deze header volgt de
+// achtergrond onder de balk. Goedgekeurd door Koen en niet meer aanpassen.
+// scripts/check-header-lock.ts draait in prebuild en laat de build falen als
+// dat gedrag verandert.
+
 import { useState, useEffect } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
