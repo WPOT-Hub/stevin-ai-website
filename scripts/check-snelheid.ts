@@ -100,22 +100,28 @@ function census(): string {
 }
 
 function htmlGewicht() {
-  const html = bestanden('.next/server/app', /\.html$/)
+  // Lokaal en in de Actions-runner zet next build de pagina's in
+  // .next/server/app. In Vercels eigen build (uitrol via de git-koppeling)
+  // blijft die map leeg en staat alles in .next/output: static voor de
+  // vooraf gebouwde pagina's, functions voor de rest. Gemeten in het
+  // buildlog van 18 okt 2026 (W-574), nadat elke git-uitrol sinds W-567
+  // hier was afgeketst terwijl productie alleen via de Actions-workflow
+  // overeind bleef.
+  const WORTELS = ['.next/server/app', '.next/output/static', '.next/output/functions']
+  let html = bestanden(WORTELS[0], /\.html$/)
+  if (!html.length) html = [...bestanden(WORTELS[1], /\.html$/), ...bestanden(WORTELS[2], /\.html$/)]
+  const naam = (f: string) => '/' + WORTELS.reduce((r, w) => r.replace(`${w}/`, ''), f).replace(/\.html$/, '')
   if (!html.length) {
-    // W-574 (18 okt 2026): op Vercel faalde elke git-uitrol hierop, terwijl
-    // de build lokaal en in de Actions-runner wel HTML in .next/server/app
-    // zet. Zeg dan wat er WEL staat, zodat de oorzaak uit het log te lezen
-    // is in plaats van geraden.
-    fouten.push(`Geen gebouwde pagina's gevonden in .next/server/app. Draai dit na next build. Census: ${census()}`)
+    fouten.push(`Geen gebouwde pagina's gevonden in ${WORTELS.join(', ')}. Draai dit na next build. Census: ${census()}`)
     return
   }
   for (const f of html) {
     const n = fs.statSync(f).size
-    if (n > GRENS.html) fouten.push(`${f.replace('.next/server/app/', '/').replace(/\.html$/, '')} is ${kb(n)} HTML (grens ${kb(GRENS.html)}). Kijk wat er in de pagina-data meegaat.`)
+    if (n > GRENS.html) fouten.push(`${naam(f)} is ${kb(n)} HTML (grens ${kb(GRENS.html)}). Kijk wat er in de pagina-data meegaat.`)
   }
   if (!fouten.length) {
     const zwaarste = html.map((f) => [f, fs.statSync(f).size] as const).sort((a, b) => b[1] - a[1])[0]
-    console.log(`  zwaarste pagina: ${zwaarste[0].replace('.next/server/app/', '/')} ${kb(zwaarste[1])} van ${kb(GRENS.html)}`)
+    console.log(`  ${html.length} pagina's, zwaarste: ${naam(zwaarste[0])} ${kb(zwaarste[1])} van ${kb(GRENS.html)}`)
   }
 }
 
