@@ -1,6 +1,4 @@
 import Image from 'next/image'
-import { Clootcrans, CLOOTCRANS_VIEWBOX } from '@/components/blog/PosterWatermark'
-import { StevinOntwerp, type Ontwerp } from '@/components/stevin/StevinOntwerpen'
 import { DonkerBlok, Kennismaken, Vragen, h2Stijl, tekst, type Vraag } from './RethinkBlokken'
 
 // De nieuwe /simon-stevin (W-535), in de stijl van de homepage. Tekst uit de
@@ -12,34 +10,19 @@ import { DonkerBlok, Kennismaken, Vragen, h2Stijl, tekst, type Vraag } from './R
 // weg: "Stevin stuurt niets naar buiten zonder dat een mens het zag" (spreekt
 // de agents op de homepage tegen), de alinea over andere vakgebieden en
 // "Start de diagnose".
-
-const ONTWERPEN: { naam: Ontwerp; titel: string; tekst: string }[] = [
-  {
-    naam: 'thiende',
-    titel: 'De Thiende, 1585',
-    tekst: 'Rekenen met tienden, honderdsten en duizendsten, voor kooplieden, landmeters en wijnroeiers. Een komma gebruikte hij nog niet: achter elk cijfer stond een getal in een cirkeltje.',
-  },
-  {
-    naam: 'hydrostatischeParadox',
-    titel: 'De hydrostatische paradox, 1586',
-    tekst: 'Hoe hard water op de bodem drukt, hangt alleen af van hoe hoog het staat. Stevin liet het zien lang voor Pascal, aan wie het meestal wordt toegeschreven.',
-  },
-  {
-    naam: 'vestingbouw',
-    titel: 'De vestingbouw, 1594',
-    tekst: 'Een regelmatige zeshoek met op elke hoek een bastion, zo gelegd dat elke muur vanaf een andere te verdedigen is.',
-  },
-  {
-    naam: 'havenvinding',
-    titel: 'De havenvinding, 1599',
-    tekst: 'Breedte en kompasafwijking samen wezen een plek op zee aan, zodat schepen een haven of elkaar terugvonden.',
-  },
-  {
-    naam: 'zeilwagen',
-    titel: 'De zeilwagen, rond 1600',
-    tekst: "Vier wielen, twee zeilen. Met prins Maurits aan het roer van Scheveningen naar Petten in zo'n twee uur. Sneller dan een paard.",
-  },
-]
+//
+// W-569, 17 okt 2026, na Koen ("wees kritisch, wat voegt dit allemaal toe?",
+// "misschien de logica achter Simon Stevin even beter uitleggen?", "die
+// clootcrans is misschien niet zo relevant en te sturend"): de clootcrans en de
+// vijf ontwerpen met tekeningen eruit. De tekeningen staan nog in
+// components/stevin/StevinOntwerpen.tsx en PosterWatermark.tsx, voor
+// watermerken. De naamgever wordt nu uitgelegd met drie echte verbanden in
+// plaats van "hij maakte wetenschap bruikbaar, wij data": dezelfde route
+// (Brugge naar het noorden), schrijven voor wie het werk doet (Nederlands in
+// plaats van Latijn, De Thiende voor kooplieden en landmeters) en zijn motto.
+// Bronnen: DBNL (stev001begh01, Beghinselen der weeghconst 1586, motto onder de
+// clootcrans) en Kool 1992 over zijn rekenkundige termen (niet beweren dat hij
+// woorden als wiskunde zelf bedacht: dat is omstreden).
 
 export default function RethinkSimonStevin({ kop, vragen }: { kop: string; vragen: Vraag[] }) {
   return (
@@ -80,11 +63,19 @@ export default function RethinkSimonStevin({ kop, vragen }: { kop: string; vrage
         <h2 className="m-0 font-display font-extrabold text-white" style={h2Stijl}>
           Vernoemd naar Simon Stevin
         </h2>
-        <div className="mt-8 max-w-[680px] space-y-5 text-[18px] leading-[1.6] text-white/75">
+        <div className="mt-8 flex max-w-[680px] flex-col gap-5 text-[18px] leading-[1.6] text-white/75">
           <p className="m-0">
-            Simon Stevin werd geboren in Brugge en maakte zijn naam in de Republiek, in Leiden en Den Haag. Zijn werk ging over kennis
-            bruikbaar maken. In De Thiende uit 1585 legde hij uit hoe je met decimale breuken rekent in het dagelijks werk. Niet voor
-            wiskundigen, maar voor landmeters, wijnroeiers, muntmeesters en kooplieden.
+            Simon Stevin werd in 1548 geboren in Brugge. Zijn naam maakte hij in het noorden, in Leiden en Den Haag, als leraar en adviseur
+            van prins Maurits. Dezelfde route als dit bedrijf, ruim vier eeuwen eerder.
+          </p>
+          <h3 className="m-0 pt-4 font-display text-[22px] font-bold text-white">Hij schreef voor wie het werk deed</h3>
+          <p className="m-0">
+            Geleerden schreven in het Latijn. Stevin schreef bewust in het Nederlands, zodat ook wie geen Latijn kende hem kon volgen. De
+            Thiende, zijn boekje over rekenen met tienden, was niet voor wiskundigen bedoeld maar voor kooplieden, landmeters en wijnroeiers.
+          </p>
+          <p className="m-0 text-white">
+            Zo werkt Stevin ook. Geen dashboard voor een analist, maar in gewone woorden wat er in je marketing speelt en wat je eraan kunt
+            doen.
           </p>
         </div>
         <blockquote className="m-0 mt-12">
@@ -93,59 +84,16 @@ export default function RethinkSimonStevin({ kop, vragen }: { kop: string; vrage
           </p>
           <footer className="mt-3 text-[14px] text-white/60">Simon Stevin, 1586</footer>
         </blockquote>
-        <p className="m-0 mt-12 max-w-[680px] text-[18px] leading-[1.6] text-white">
-          Zoals hij wetenschap bruikbaar maakte voor de praktijk, maken wij je data en systemen bruikbaar voor je dagelijkse beslissingen. Niet
-          door alles te vervangen, maar door te verbinden wat er al is.
-        </p>
-      </DonkerBlok>
-
-      <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
-        <div className="mx-auto grid max-w-[1152px] items-center gap-12 lg:grid-cols-[320px_1fr]">
-          <figure className="m-0 max-w-[300px]">
-            <svg viewBox={CLOOTCRANS_VIEWBOX} role="img" aria-label="De clootcrans" style={{ width: '100%', height: 'auto', opacity: 0.62 }}>
-              <Clootcrans kleur="var(--navy)" strook={1.5} />
-            </svg>
-          </figure>
-          <div>
-            <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-              Zichtbaar maken hoe krachten samen werken
-            </h2>
-            <p className={`m-0 mt-6 max-w-[620px] ${tekst}`}>
-              Simon Stevin maakte zichtbaar hoe krachten samen werken. Wij maken zichtbaar hoe marketing, data en opvolging samen werken, zodat
-              je weet waarop je beslist.
-            </p>
-            <p className="m-0 mt-6 max-w-[620px] border-t border-border pt-5 text-[14px] leading-[1.6] text-muted">
-              De clootcrans, 1586. Over twee hellingen hangt een gesloten snoer van even zware bollen. Op de lange helling liggen er twee keer zo
-              veel, en toch trekt die kant niet harder. Zou het snoer uit zichzelf gaan draaien, dan draaide het eeuwig door, en dat kan niet.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-border bg-surface px-6" style={{ paddingTop: 96, paddingBottom: 96 }}>
-        <div className="mx-auto max-w-[1152px]">
-          <p className="m-0 mb-4 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent">Simon Stevin in de Republiek</p>
-          <h2 className="m-0 font-display font-extrabold text-primary" style={h2Stijl}>
-            Van Brugge naar Den Haag
-          </h2>
-          <p className={`m-0 mt-6 max-w-[760px] ${tekst}`}>
-            In 1581 trok Stevin naar Leiden, schreef zich in aan de universiteit van Willem van Oranje en leerde diens zoon Maurits kennen. Hij
-            werd zijn leraar en adviseur, zette in 1600 een opleiding voor ingenieurs op en was vanaf 1604 kwartiermeester van het Staatse
-            leger. Hij stierf in 1620, waarschijnlijk in Den Haag.
+        <div className="mt-8 flex max-w-[680px] flex-col gap-5 text-[18px] leading-[1.6] text-white/75">
+          <p className="m-0">
+            Zijn motto: wat een wonder lijkt, is geen wonder, want je kunt het verklaren.
           </p>
-          <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {ONTWERPEN.map((o) => (
-              <div key={o.naam}>
-                <figure className="m-0 max-w-[200px]" style={{ opacity: 0.62 }}>
-                  <StevinOntwerp naam={o.naam} label={o.titel} kleur="var(--navy)" />
-                </figure>
-                <h3 className="m-0 mt-5 font-display text-[18px] font-bold text-primary">{o.titel}</h3>
-                <p className="m-0 mt-2.5 text-[16px] leading-[1.55] text-[#2A3A54]">{o.tekst}</p>
-              </div>
-            ))}
-          </div>
+          <p className="m-0 text-white">
+            Dat geldt ook voor je marketing. Komen er ineens minder aanvragen binnen, of kost een klik opeens het dubbele, dan heeft dat een
+            oorzaak. Die staat meestal ergens in je cijfers. Stevin zoekt hem op.
+          </p>
         </div>
-      </section>
+      </DonkerBlok>
 
       {/* Het FAQPage-schema staat al in het entity-schema van de pagina. */}
       <Vragen kop="Veelgestelde vragen" vragen={vragen} schema={false} />

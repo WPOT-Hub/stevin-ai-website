@@ -16,9 +16,9 @@ const COPY = {
   nl: {
     metaTitle: 'De naam Stevin, vernoemd naar Simon Stevin',
     metaDesc:
-      'Waarom Stevin.AI is vernoemd naar Simon Stevin, de Vlaams-Nederlandse wiskundige van De Thiende, de clootcrans en de zeilwagen.',
+      'Waarom Stevin.AI is vernoemd naar Simon Stevin: geboren in Brugge, groot geworden in de Republiek, en hij schreef voor wie het werk deed.',
     eyebrow: 'De naam Stevin',
-    h1: 'Een idee uit Belgie, gebouwd in Breda.',
+    h1: 'Geboren in Belgie, groot geworden in Nederland.',
     portraitAlt: 'Portret van Simon Stevin',
     portraitCaption: 'Simon Stevin, 1548 tot 1620, wetenschapper uit de Lage Landen.',
     introSub:
@@ -86,7 +86,7 @@ const COPY = {
       {
         question: 'Waarom heet het platform Stevin?',
         answer:
-          'Net zoals Simon Stevin wetenschap toegankelijk maakte voor de praktijk, maakt het platform Stevin data, systemen en informatie bruikbaar voor dagelijkse bedrijfsbeslissingen. Niet door alles te vervangen, maar door bestaande kennis slimmer met elkaar te verbinden.',
+          'Om drie redenen. Simon Stevin werd geboren in Brugge en werd groot in het noorden, net als dit bedrijf in Belgie begon en vanuit Breda werd uitgebouwd. Hij schreef in het Nederlands, voor de mensen die het werk deden. En zijn motto was dat wat een wonder lijkt, te verklaren is. Dat doet Stevin met je marketing: in gewone woorden laten zien wat er speelt en waar het vandaan komt.',
       },
       {
         question: 'Waar komt Stevin vandaan?',
@@ -98,13 +98,13 @@ const COPY = {
   en: {
     metaTitle: 'The name Stevin, named after Simon Stevin',
     metaDesc:
-      'Why Stevin.AI is named after Simon Stevin, the Flemish-Dutch mathematician behind De Thiende, the wreath of spheres and the sailing chariot.',
+      'Why Stevin.AI is named after Simon Stevin: born in Bruges, made his name in the Dutch Republic, and wrote for the people who did the work.',
     eyebrow: 'The name Stevin',
-    h1: 'An idea from Belgium, built in Breda.',
+    h1: 'Born in Belgium, raised in the Netherlands.',
     portraitAlt: 'Portrait of Simon Stevin',
     portraitCaption: 'Simon Stevin, 1548 to 1620, scientist from the Low Countries.',
     introSub:
-      'The first idea came from my own agency in Belgium. We kept meeting clients where three agencies in a row had worked on the measurement, each adding a tag of their own. What was left was double-counted traffic in GA4 and nobody who could still say which number was right. That is where this started.',
+      'The first idea came from my own agency in Belgium. That is where this started.',
     origin1:
       'I was not looking for a new system. Everything was already there: campaign data, CRM, calendar, quotes, project information. What was missing was a layer on top that tied it together and spoke up in time. The right information nearly always reached the right person too late.',
     origin2:
@@ -170,7 +170,7 @@ const COPY = {
       {
         question: 'Where does Stevin come from?',
         answer:
-          'The first idea was born in Belgium, at the founder’s own agency, with clients where three agencies in a row had worked on the measurement. The platform was further developed from Breda into the layer that now watches the marketing of clients.',
+          'The first idea was born in Belgium, at the founder’s own agency. The platform was further developed from Breda into the layer that now watches the marketing of clients.',
       },
     ],
   },
