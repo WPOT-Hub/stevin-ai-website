@@ -23,6 +23,10 @@
 //   logo-sterkerwitgoed.png. Wit beeld op een gekleurd vierkant; dat vierkant
 //   wordt in grijstinten een zwaar blok, dus net als bij Bart alleen het witte
 //   beeld bewaard en donker gemaakt op transparant.
+//   Bijgesteld na Koens blik op de live strook ("verhoudingen kloppen niet"):
+//   Rigo werd in grijstinten fletser dan de rest, dus ook donker gemaakt zoals
+//   Bart; de webadresregel onder Sterker eraf (onleesbaar op 44 hoog); beide
+//   lager en lichter gezet zodat ze even zwaar ogen als Hans Schepers en Boersma.
 
 type Klant = { src: string; naam: string; h: number; o: number }
 
@@ -40,8 +44,8 @@ const KLANTEN: Klant[] = [
   { src: '/logos/klanten/totaallobby.svg', naam: 'Totaallobby', h: 36, o: 0.7 },
   { src: '/logos/klanten/hans-schepers.svg', naam: 'Hans Schepers Stoffering', h: 40, o: 0.75 },
   { src: '/logos/klanten/autorijschool-bart.png', naam: 'Autorijschool Bart', h: 40, o: 0.9 },
-  { src: '/logos/klanten/rigo-bouw.png', naam: 'Rigo Bouw', h: 50, o: 0.9 },
-  { src: '/logos/klanten/sterker-witgoed.png', naam: 'Sterker Witgoed', h: 52, o: 0.8 },
+  { src: '/logos/klanten/rigo-bouw.png', naam: 'Rigo Bouw', h: 42, o: 0.7 },
+  { src: '/logos/klanten/sterker-witgoed.png', naam: 'Sterker Witgoed', h: 44, o: 0.65 },
 ]
 
 const COPY = {
