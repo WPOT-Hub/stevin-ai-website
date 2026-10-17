@@ -34,16 +34,52 @@ export default function Header() {
   // geheugen terughaalt (terugknop): opent de pagina al halverwege, dan kwam
   // er geen scrollsignaal en bleef de balk doorzichtig boven de inhoud
   // (Koen, iPhone, stevin.ai/laurentius, 17 okt 2026).
+  // De kleur van de balk volgt wat er ONDER de balk ligt, niet hoe ver je
+  // gescrold bent. Eerst wisselde hij na 60px naar licht met het blauwe logo,
+  // terwijl op een telefoon de donkere hero (100svh plus het brein) nog
+  // een heel scherm doorliep: een lichte balk met blauw logo boven donkere
+  // inhoud, op elke pagina met een donkere bovenkant (Koen, iPhone, 17 okt
+  // 2026). Nu kijken we naar het element net onder de balk en zijn
+  // achtergrondkleur. Elementen met pointer-events-none (de gloed, het brein)
+  // slaat elementFromPoint over, zodat we de sectie zelf vinden.
+  const [overDark, setOverDark] = useState(!isLightHero)
+
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60)
-    handleScroll()
+    let frame = 0
+    const isDonker = (el: Element | null): boolean | null => {
+      while (el && el !== document.documentElement) {
+        const m = getComputedStyle(el).backgroundColor.match(/[\d.]+/g)
+        if (m && m.length >= 3) {
+          const [r, g, b] = m.map(Number)
+          const a = m.length >= 4 ? Number(m[3]) : 1
+          if (a > 0.5) return 0.2126 * r + 0.7152 * g + 0.0722 * b < 128
+        }
+        el = el.parentElement
+      }
+      return null
+    }
+    const meet = () => {
+      frame = 0
+      setScrolled(window.scrollY > 60)
+      const header = document.querySelector('header')
+      const y = (header?.getBoundingClientRect().bottom ?? 64) + 1
+      const donker = isDonker(document.elementFromPoint(window.innerWidth / 2, y))
+      setOverDark(donker ?? !isLightHero)
+    }
+    const handleScroll = () => {
+      if (!frame) frame = requestAnimationFrame(meet)
+    }
+    meet()
     window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll, { passive: true })
     window.addEventListener('pageshow', handleScroll)
     return () => {
+      if (frame) cancelAnimationFrame(frame)
       window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
       window.removeEventListener('pageshow', handleScroll)
     }
-  }, [])
+  }, [pathname, isLightHero])
 
   // W-535: de dropdowns Diensten en Voor wie zijn weg. In het Engels bleef er
   // niets van over: /en/diensten, /en/seo, /en/geo en /en/marketing-automation
@@ -74,16 +110,23 @@ export default function Header() {
   const ctaHref = isNieuweHome ? '/kennismaking' : '/contact'
   const ctaLabel = isNieuweHome ? 'Plan een kennismaking' : t('cta')
 
-  // Dark = transparent header with white logo+text, floats over dark navy hero
-  const showDark = !isLightHero && !scrolled
+  // Donker = wit logo en witte tekst. Boven donkere inhoud is de balk
+  // doorzichtig (bovenaan) of donker glas (gescrold); boven lichte inhoud wit
+  // glas met het blauwe logo.
+  const showDark = overDark && !mobileOpen
 
+  // backdrop-filter staat bewust NIET in de transition: die overgang laat
+  // iPhone Safari elk frame de vervaging opnieuw rekenen en dat gaf haperend
+  // scrollen.
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 border-b transition-[background-color,border-color,box-shadow,backdrop-filter] duration-500 ease-out ${
-        scrolled
-          ? 'nav-glass bg-white/85 border-border/40 shadow-sm'
-          : isLightHero
-            ? 'nav-glass bg-white/70 border-border/20'
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-[background-color,border-color,box-shadow] duration-300 ease-out ${
+        !showDark
+          ? scrolled
+            ? 'nav-glass bg-white/85 border-border/40 shadow-sm'
+            : 'nav-glass bg-white/70 border-border/20'
+          : scrolled
+            ? 'nav-glass bg-primary/85 border-white/10'
             : 'bg-white/0 border-white/0'
       }`}
     >
