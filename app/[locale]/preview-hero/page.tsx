@@ -180,7 +180,7 @@ export default async function PreviewHero({ params }: Props) {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/product/desk-dashboard.png"
+                src="/product/desk-dashboard.webp"
                 alt="De Stevin Desk met meldingen, cijfers per kanaal en de markt-radar"
                 style={{ display: 'block', width: '112%', maxWidth: 'none', marginLeft: '-6%', opacity: 0.78 }}
               />

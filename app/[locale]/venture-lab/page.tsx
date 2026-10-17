@@ -1,4 +1,5 @@
 import { setRequestLocale } from 'next-intl/server'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import VentureLabForm from '@/components/VentureLabForm'
@@ -195,8 +196,7 @@ export default async function VentureLabPage({ params }: Props) {
                 style={{ background: 'radial-gradient(ellipse 70% 70% at 60% 35%, rgba(61,142,255,0.32) 0%, transparent 70%)' }}
               />
               <div className="relative h-[540px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/venture/hero-team.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+                <Image src="/venture/hero-team.jpg" alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
                 <div
                   className="absolute inset-0"
                   style={{ background: 'linear-gradient(155deg, rgba(10,22,40,0.74) 0%, rgba(10,22,40,0.88) 52%, rgba(10,22,40,0.97) 100%)' }}
