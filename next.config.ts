@@ -41,6 +41,14 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // W-566: kavelpagina Laurentius-veiling nooit in de index. De metatag
+      // staat ook in de pagina; deze kopregel dekt daarnaast de losse
+      // schermafdrukken in public/laurentius. Niet via robots.txt: dan ziet
+      // Google de noindex juist niet.
+      ...['/laurentius', '/laurentius/:pad*', '/en/laurentius'].map((source) => ({
+        source,
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      })),
     ]
   },
   async rewrites() {
