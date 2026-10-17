@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import { ScrollScherm } from './ScrollScherm'
-import { ArrowUpRight, CalendarClock, Globe, MessageCircle, Smartphone, Gauge, LayoutTemplate, Clock } from 'lucide-react'
+import { ArrowUpRight, CalendarClock, Globe, MessageCircle, Smartphone, ChartLine, LayoutTemplate, Clock } from 'lucide-react'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -71,9 +71,12 @@ const KRIJG = [
     tekst: 'Een vaste knop om te bellen of te WhatsAppen, en een contactformulier voor wie liever schrijft.',
   },
   {
-    icon: Gauge,
-    titel: 'Snel en vindbaar',
-    tekst: 'Licht gebouwd, zodat hij meteen laadt. Met alles wat Google nodig heeft om je te vinden.',
+    // De basis die Stevin voor de winnaar inricht (Koen, 17 okt 2026). De bouwsteen
+    // bestaat in stevin-sites (components/analytics.tsx, Consent Mode v2, draait bij
+    // Boersma); de voorbeeldsites zelf meten niet.
+    icon: ChartLine,
+    titel: 'De basis goed ingericht',
+    tekst: 'We zetten Google Analytics op, met een cookiemelding die klopt, zodat je ziet hoeveel mensen je site bezoeken en contact opnemen. Je Google Bedrijfsprofiel koppelen we eraan.',
   },
   {
     icon: Clock,
