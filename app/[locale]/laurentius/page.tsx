@@ -25,7 +25,9 @@ type Props = { params: Promise<{ locale: string }> }
 // het leest als net niet goed (Koen, 17 okt 2026). Gemeten op 17 okt met
 // Lighthouse 12.6.0: mobiel 88 tot 98, computer 100.
 
-const VEILING_URL = 'https://veiling.deleuksteschoolvannederland.nl'
+// Rechtstreeks naar het kavel (55). Zonder inlog stuurt de veiling door naar
+// /inlog?van=/kavel/55 en na de code terug naar het kavel (Koen, 17 okt 2026).
+const VEILING_URL = 'https://veiling.deleuksteschoolvannederland.nl/kavel/55'
 
 // Waarde van het kavel: de one pager uit het vaste prijsmodel (Website_Keuzeblad,
 // 30 jul 2026, commit 63751df in Stevin-Hub): 999 euro exclusief btw, met de
@@ -46,7 +48,7 @@ const TEKST = {
     // voor de site van de winnaar moet dat open voordat hij live gaat.
     'Stevin.AI bouwt een website van één pagina voor de winnaar van dit kavel. Op je eigen domeinnaam, net zo goed op je telefoon als op je laptop, en gebouwd zodat Google en AI-assistenten zoals ChatGPT hem goed kunnen lezen.',
   knopVoorbeelden: 'Bekijk de voorbeelden',
-  knopVeiling: 'Naar de veiling',
+  knopVeiling: 'Naar het kavel',
   waarde: `Waarde ${WAARDE}, excl.\u00a0btw`,
 }
 
@@ -345,7 +347,7 @@ export default async function LaurentiusPage({ params }: Props) {
               href={VEILING_URL}
               className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent)] px-6 py-3 text-[15px] font-semibold text-white transition hover:brightness-110"
             >
-              Bied mee in de veiling
+              Bied mee op dit kavel
               <ArrowUpRight className="h-4 w-4" aria-hidden />
             </a>
             <p className="text-[15px] text-slate-300">
