@@ -46,7 +46,7 @@ const TEKST = {
     'Stevin.AI bouwt een website van één pagina voor de winnaar van dit kavel. Op je eigen domeinnaam, snel op je telefoon en net zo goed op je laptop.',
   knopVoorbeelden: 'Bekijk de voorbeelden',
   knopVeiling: 'Naar de veiling',
-  waarde: `Waarde ${WAARDE}, excl. btw`,
+  waarde: `Waarde ${WAARDE}, excl.\u00a0btw`,
 }
 
 const KRIJG = [
@@ -117,7 +117,10 @@ const STAPPEN: { nr: string; titel: string; tekst: string; later?: boolean }[] =
   {
     nr: 'later',
     titel: 'Na het eerste jaar',
-    tekst: `${DRAAIEN_PER_JAAR} per jaar, excl. btw, voor hosting, je domeinnaam, updates en back-ups. Je zit nergens aan vast: je domein, je site en je teksten blijven van jou.`,
+    // Verhuizen kan, maar het contactformulier post naar hub.stevin.ai/api/sites/lead
+    // (stevin-sites, contact-form.tsx). Bij een verhuizing dat formulier omzetten,
+    // anders hangt de site toch nog aan ons.
+    tekst: `Je kiest zelf. Wij houden je site in de lucht voor ${DRAAIEN_PER_JAAR} per jaar, excl.\u00a0btw: hosting, je domeinnaam, updates en back-ups. Of we verhuizen hem naar je eigen hosting. Je domein, je site en je teksten blijven altijd van jou.`,
     later: true,
   },
 ]
