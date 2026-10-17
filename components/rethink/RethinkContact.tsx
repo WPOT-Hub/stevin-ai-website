@@ -28,9 +28,13 @@ const FEITEN = [
 ]
 
 export default function RethinkContact() {
+  // Trekt zichzelf onder de kopbalk door (-mt-[72px], met 72px extra
+  // bovenruimte), net als de donkere hero's. Anders zat achter de witte
+  // glasbalk de navy van <html>: een grijze balk met een donkere streep
+  // eronder, de enige pagina waar dat zo was (gezien 17 okt 2026).
   return (
-    <main className="bg-white">
-      <section className="px-6 pb-24 pt-28 sm:pt-32">
+    <main className="-mt-[72px] bg-white">
+      <section className="px-6 pb-24 pt-[184px] sm:pt-[200px]">
         <div className="mx-auto grid max-w-[1152px] gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
           <div>
             <p className="m-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent">Contact</p>
