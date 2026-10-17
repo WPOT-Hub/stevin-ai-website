@@ -1,5 +1,4 @@
 import { Link } from '@/i18n/navigation'
-import KennismakingVenster from './KennismakingVenster'
 import NodeWatermerk from './NodeWatermerk'
 import { PaginaKop } from './RethinkBlokken'
 
@@ -256,7 +255,6 @@ export default function RethinkTarieven() {
           </div>
         </div>
       </section>
-      <KennismakingVenster />
     </main>
   )
 }

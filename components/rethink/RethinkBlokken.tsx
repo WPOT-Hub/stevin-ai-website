@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import { Link } from '@/i18n/navigation'
-import KennismakingVenster from './KennismakingVenster'
 import NodeWatermerk from './NodeWatermerk'
 import HeroUniversum, { type Kies } from './HeroUniversum'
 
@@ -205,7 +204,6 @@ export function Kennismaken({
           </div>
         </div>
       </section>
-      <KennismakingVenster />
     </>
   )
 }

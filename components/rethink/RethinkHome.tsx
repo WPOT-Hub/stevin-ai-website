@@ -3,7 +3,6 @@ import KlantLogos from '@/components/KlantLogos'
 import VraagChat from './VraagChat'
 import HeroUniversum from './HeroUniversum'
 import ScrollStappen from './ScrollStappen'
-import KennismakingVenster from './KennismakingVenster'
 import NodeWatermerk from './NodeWatermerk'
 
 /**
@@ -317,7 +316,6 @@ export default function RethinkHome() {
           </div>
         </div>
       </section>
-      <KennismakingVenster />
     </>
   )
 }

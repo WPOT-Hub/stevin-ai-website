@@ -12,6 +12,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MainShell from '@/components/MainShell'
 import ConsentBanner from '@/components/ConsentBanner'
+import KennismakingLader from '@/components/rethink/KennismakingLader'
 import SiteJsonLd from '@/components/SiteJsonLd'
 
 // Fonts staan hier (niet in de root-layout) zodat de root pass-through blijft en
@@ -178,6 +179,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           </MainShell>
           <Footer />
           <ConsentBanner />
+          <KennismakingLader />
         </NextIntlClientProvider>
       </body>
     </html>

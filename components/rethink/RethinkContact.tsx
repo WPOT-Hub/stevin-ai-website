@@ -1,6 +1,5 @@
 import { CalendarClock, Mail, Unlock } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
-import KennismakingVenster from './KennismakingVenster'
 import { Knop, h2Stijl, tekst } from './RethinkBlokken'
 
 // De nieuwe /contact (W-535). Koen, 12 okt: een gewone contactpagina, het
@@ -77,7 +76,6 @@ export default function RethinkContact() {
           </div>
         </div>
       </section>
-      <KennismakingVenster />
     </main>
   )
 }

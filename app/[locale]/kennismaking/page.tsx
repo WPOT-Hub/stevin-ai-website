@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
-import { KennismakingAgenda } from '@/components/cal/KennismakingAgenda'
+import { Link } from '@/i18n/navigation'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -16,13 +16,15 @@ const TEKST = {
     titel: 'Kennismaken met Stevin.AI',
     omschrijving: 'Kies een moment dat jou uitkomt. Vrijblijvend, we kijken samen naar je cijfers.',
     kop: 'Plan een kennismaking',
-    alinea: 'Kies hieronder een moment dat jou uitkomt. Vrijblijvend: we kijken samen naar je cijfers en wat je kunt meten.',
+    alinea: 'Kies een moment dat jou uitkomt. Vrijblijvend: we kijken samen naar je cijfers en wat je kunt meten.',
+    knop: 'Kies een moment',
   },
   en: {
     titel: 'Meet Stevin.AI',
     omschrijving: 'Pick a time that suits you. No strings attached, we look at your numbers together.',
     kop: 'Book an introduction',
-    alinea: 'Pick a time below that suits you. No strings attached: we look at your numbers together and at what you can measure.',
+    alinea: 'Pick a time that suits you. No strings attached: we look at your numbers together and at what you can measure.',
+    knop: 'Pick a time',
   },
 } as const
 
@@ -56,9 +58,23 @@ export default async function KennismakingPage({ params }: Props) {
         <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--color-accent)]">Stevin.AI</p>
         <h1 className="mt-3 font-display text-[30px] font-extrabold leading-tight text-white md:text-[40px]">{t.kop}</h1>
         <p className="mt-3 max-w-[620px] text-[16px] leading-relaxed text-slate-300">{t.alinea}</p>
-        <div className="mt-8">
-          <KennismakingAgenda />
-        </div>
+        {/* 17 okt 2026: geen Cal.com meer in de pagina. Het eigen
+            kennismakingsvenster opent hier meteen (KennismakingLader in de
+            layout); deze knop opent het opnieuw na sluiten. Zonder JavaScript
+            gaat de knop naar de Cal.com-boeking. */}
+        <Link
+          href="/kennismaking"
+          data-open-kennismaking=""
+          data-cta="pagina_kennismaking_knop"
+          className="mt-8 inline-flex rounded-lg bg-accent px-6 py-3 text-[15px] font-semibold text-white transition-[filter] hover:brightness-110"
+        >
+          {t.knop}
+        </Link>
+        <noscript>
+          <p className="mt-4 text-[14px] text-slate-300">
+            <a className="underline" href="https://cal.com/koen-hoogenboom/kennismaking">Open de agenda</a>
+          </p>
+        </noscript>
       </div>
     </main>
   )

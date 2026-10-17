@@ -339,8 +339,17 @@ async function stuur(url: string, body: Record<string, unknown>): Promise<Uitkom
   return { soort: 'fout', melding }
 }
 
-export default function KennismakingVenster() {
-  const [open, setOpen] = useState(false)
+export default function KennismakingVenster({
+  startOpen = false,
+  bron,
+}: {
+  startOpen?: boolean
+  bron?: string
+} = {}) {
+  // startOpen: KennismakingLader laadt dit venster pas bij de eerste klik op
+  // een data-open-kennismaking (of direct op /kennismaking) en opent het dan
+  // meteen, met de bron van die klik voor kennismaking_open.
+  const [open, setOpen] = useState(startOpen)
   const [tab, setTab] = useState<'moment' | 'gegevens'>('moment')
   const [dagen, setDagen] = useState<Dag[] | null>(null)
   const [voorbeeld, setVoorbeeld] = useState(false)
@@ -436,6 +445,12 @@ export default function KennismakingVenster() {
     } finally {
       laadt.current = false
     }
+  }, [])
+
+  useEffect(() => {
+    if (!startOpen) return
+    push('kennismaking_open', { bron: bron ?? '' })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // Openen via data-open-kennismaking. Alleen preventDefault, geen
