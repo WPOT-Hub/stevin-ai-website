@@ -79,10 +79,34 @@ function bronregels() {
   if (!/dynamic\(/.test(lader)) fouten.push('components/rethink/KennismakingLader.tsx: het venster moet met dynamic() laden, niet mee in elke pagina.')
 }
 
+// Telt per map (twee niveaus diep onder .next) de bestanden per extensie.
+function census(): string {
+  const wortel = '.next'
+  if (!fs.existsSync(wortel)) return `cwd=${process.cwd()}, geen .next; VERCEL=${process.env.VERCEL ?? ''}`
+  const regels: string[] = []
+  const tel = (dir: string, diepte: number) => {
+    const per: Record<string, number> = {}
+    let sub: string[] = []
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (e.isDirectory()) sub.push(path.join(dir, e.name))
+      else { const ext = path.extname(e.name) || '(geen)'; per[ext] = (per[ext] ?? 0) + 1 }
+    }
+    const samenvatting = Object.entries(per).map(([k, v]) => `${k}:${v}`).join(' ')
+    regels.push(`${dir}${samenvatting ? ` [${samenvatting}]` : ''}`)
+    if (diepte < 2) for (const d of sub) tel(d, diepte + 1)
+  }
+  tel(wortel, 0)
+  return `cwd=${process.cwd()}, VERCEL=${process.env.VERCEL ?? ''}; ` + regels.join('; ')
+}
+
 function htmlGewicht() {
   const html = bestanden('.next/server/app', /\.html$/)
   if (!html.length) {
-    fouten.push('Geen gebouwde pagina\'s gevonden in .next/server/app. Draai dit na next build.')
+    // W-574 (18 okt 2026): op Vercel faalde elke git-uitrol hierop, terwijl
+    // de build lokaal en in de Actions-runner wel HTML in .next/server/app
+    // zet. Zeg dan wat er WEL staat, zodat de oorzaak uit het log te lezen
+    // is in plaats van geraden.
+    fouten.push(`Geen gebouwde pagina's gevonden in .next/server/app. Draai dit na next build. Census: ${census()}`)
     return
   }
   for (const f of html) {
