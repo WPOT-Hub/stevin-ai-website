@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
+import { ScrollScherm } from './ScrollScherm'
 import { ArrowUpRight, Globe, MessageCircle, Smartphone, Gauge, PenLine, Clock } from 'lucide-react'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -10,14 +10,16 @@ type Props = { params: Promise<{ locale: string }> }
 // Stevin.AI biedt de winnaar een website van een pagina aan, op een eigen
 // domeinnaam. Ouders komen hier via de kavelomschrijving in de veiling, niet via
 // Google: noindex in de metadata en als kopregel (next.config.ts), niet in de
-// sitemap, nergens op de site gelinkt. Alleen Nederlands; /en geeft 404.
+// sitemap, nergens op de site gelinkt. Alleen Nederlands; /en geeft 410 (W-535).
 //
 // De drie voorbeelden zijn VERZONNEN demobedrijven uit stevin-sites (Studio
 // Adem, Barbier Wolff, Patisserie Saar) met stockfoto's. Daarom staan ze hier
 // als voorbeeld en nooit als klant. De schermafdrukken in public/laurentius
-// zijn op 17 okt 2026 gemaakt van de live sites (390 bij 844 en 1440 breed).
-// De telefoonbeelden moeten exact 390 bij 844 zijn, net als het frame: anders
-// snijdt object-cover de zijkanten af (eerste versie, Koen: "passen niet").
+// zijn op 17 okt 2026 gemaakt van de live sites, over de hele pagina: telefoon
+// 390 breed (780 pixels), laptop 1440 breed. Daarvoor eerst helemaal naar
+// beneden gescrold, zodat secties die pas bij het scrollen verschijnen erop
+// staan. De vaste belbalk van de telefoon is apart opgenomen (*-balk.jpg), zie
+// ScrollScherm.tsx. Nieuwe schermafdruk? Werk ook de hoogtes in VOORBEELDEN bij.
 //
 // De scores komen uit Lighthouse 12.6.0, op 17 okt 2026 gedraaid tegen de live
 // sites. SEO staat er bewust niet bij: de demo's staan op noindex en scoren
@@ -84,11 +86,25 @@ const VOORBEELDEN: {
   url: string
   slug: string
   score: Score
+  /** Hoogte in pixels van de lange schermafdrukken (telefoon 780 breed, laptop 1440 breed). */
+  hoogte: { telefoon: number; laptop: number }
 }[] = [
-  { naam: 'Studio Adem', soort: 'Yoga en ademwerk', url: 'https://studioadem.stevin.ai', slug: 'studioadem', score: { mobiel: 92, computer: 100 } },
-  { naam: 'Barbier Wolff', soort: 'Herenkapper en barbier', url: 'https://barbierwolff.stevin.ai', slug: 'barbierwolff', score: { mobiel: 88, computer: 100 } },
-  { naam: 'Patisserie Saar', soort: 'Taarten op maat', url: 'https://saar.stevin.ai', slug: 'saar', score: { mobiel: 96, computer: 100 } },
+  { naam: 'Studio Adem', soort: 'Yoga en ademwerk', url: 'https://studioadem.stevin.ai', slug: 'studioadem', score: { mobiel: 92, computer: 100 }, hoogte: { telefoon: 13726, laptop: 4141 } },
+  { naam: 'Barbier Wolff', soort: 'Herenkapper en barbier', url: 'https://barbierwolff.stevin.ai', slug: 'barbierwolff', score: { mobiel: 88, computer: 100 }, hoogte: { telefoon: 11274, laptop: 3288 } },
+  { naam: 'Patisserie Saar', soort: 'Taarten op maat', url: 'https://saar.stevin.ai', slug: 'saar', score: { mobiel: 96, computer: 100 }, hoogte: { telefoon: 12448, laptop: 3389 } },
 ]
+
+const voorbeeld = (slug: string) => VOORBEELDEN.find((v) => v.slug === slug)!
+
+function Hint({ licht }: { licht?: boolean }) {
+  const kleur = licht ? 'text-slate-400' : 'text-[var(--color-muted)]'
+  return (
+    <p className={`text-[13px] ${kleur}`}>
+      <span className="pointer-coarse:hidden">Ga met je muis over een scherm en de site scrolt mee.</span>
+      <span className="hidden pointer-coarse:inline">Tik op een scherm en de site scrolt mee.</span>
+    </p>
+  )
+}
 
 const STAPPEN = [
   { nr: '1', titel: 'Je wint het kavel', tekst: 'Na de veiling nemen we contact met je op.' },
@@ -115,23 +131,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-function Telefoon({ src, alt, className }: { src: string; alt: string; className?: string }) {
+function Telefoon({ slug, naam, className }: { slug: string; naam: string; className?: string }) {
   return (
     <div className={`rounded-[26px] bg-[#0b0f17] p-[6px] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10 ${className ?? ''}`}>
-      <div className="relative aspect-[390/844] overflow-hidden rounded-[20px] bg-white">
-        <Image src={src} alt={alt} fill sizes="(min-width: 768px) 180px, 30vw" className="object-cover object-top" />
-      </div>
+      <ScrollScherm
+        soort="telefoon"
+        src={`/laurentius/${slug}-telefoon-lang.jpg`}
+        balk={`/laurentius/${slug}-balk.jpg`}
+        breedte={780}
+        hoogte={voorbeeld(slug).hoogte.telefoon}
+        alt={`Voorbeeldsite ${naam} op een telefoon`}
+        sizes="(min-width: 768px) 180px, 30vw"
+      />
     </div>
   )
 }
 
-function Laptop({ src, alt }: { src: string; alt: string }) {
+function Laptop({ slug, naam, priority }: { slug: string; naam: string; priority?: boolean }) {
   return (
     <div>
       <div className="rounded-t-[14px] bg-[#0b0f17] p-[8px] pb-[10px] ring-1 ring-white/10">
-        <div className="relative aspect-[1440/900] overflow-hidden rounded-[6px] bg-white">
-          <Image src={src} alt={alt} fill priority sizes="(min-width: 768px) 560px, 90vw" className="object-cover object-top" />
-        </div>
+        <ScrollScherm
+          soort="laptop"
+          src={`/laurentius/${slug}-laptop-lang.jpg`}
+          breedte={1440}
+          hoogte={voorbeeld(slug).hoogte.laptop}
+          alt={`Voorbeeldsite ${naam} op een laptop`}
+          sizes="(min-width: 768px) 560px, 90vw"
+          priority={priority}
+        />
       </div>
       <div className="mx-[-4%] h-[12px] rounded-b-[10px] bg-gradient-to-b from-[#c9d1dc] to-[#8b95a3]" />
     </div>
@@ -178,18 +206,15 @@ export default async function LaurentiusPage({ params }: Props) {
             </p>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[560px] pb-10 md:pb-14">
-            <Laptop src="/laurentius/studioadem-laptop.jpg" alt="Voorbeeldsite Studio Adem op een laptop" />
-            <Telefoon
-              src="/laurentius/barbierwolff-telefoon.jpg"
-              alt="Voorbeeldsite Barbier Wolff op een telefoon"
-              className="absolute bottom-0 -left-2 w-[23%] md:-left-8"
-            />
-            <Telefoon
-              src="/laurentius/saar-telefoon.jpg"
-              alt="Voorbeeldsite Patisserie Saar op een telefoon"
-              className="absolute bottom-0 -right-2 w-[23%] md:-right-8"
-            />
+          <div className="mx-auto w-full max-w-[560px]">
+            <div className="relative pb-10 md:pb-14">
+              <Laptop slug="studioadem" naam="Studio Adem" priority />
+              <Telefoon slug="barbierwolff" naam="Barbier Wolff" className="absolute bottom-0 -left-2 w-[23%] md:-left-8" />
+              <Telefoon slug="saar" naam="Patisserie Saar" className="absolute bottom-0 -right-2 w-[23%] md:-right-8" />
+            </div>
+            <div className="mt-6 text-center">
+              <Hint licht />
+            </div>
           </div>
         </div>
       </section>
@@ -224,31 +249,28 @@ export default async function LaurentiusPage({ params }: Props) {
             Deze bedrijven bestaan niet: we hebben ze verzonnen om te laten zien wat er kan. Open ze op je telefoon en op je
             computer. Jouw site krijgt je eigen teksten, foto’s en kleuren.
           </p>
+          <div className="mt-2">
+            <Hint />
+          </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {VOORBEELDEN.map((v) => (
-              <a
+              <div
                 key={v.slug}
-                href={v.url}
-                target="_blank"
-                rel="noopener"
-                className="group flex flex-col overflow-hidden rounded-[14px] border border-[var(--color-border)] bg-white transition hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-24px_rgba(10,22,40,0.35)]"
+                className="flex flex-col overflow-hidden rounded-[14px] border border-[var(--color-border)] bg-white"
               >
                 <div className="relative bg-[var(--color-surface-alt)] px-6 pt-6">
-                  <div className="relative aspect-[1440/900] overflow-hidden rounded-t-[8px] border border-b-0 border-[var(--color-border)]">
-                    <Image
-                      src={`/laurentius/${v.slug}-laptop.jpg`}
+                  <div className="overflow-hidden rounded-t-[8px] border border-b-0 border-[var(--color-border)]">
+                    <ScrollScherm
+                      soort="laptop"
+                      src={`/laurentius/${v.slug}-laptop-lang.jpg`}
+                      breedte={1440}
+                      hoogte={v.hoogte.laptop}
                       alt={`Voorbeeldsite ${v.naam} op een computer`}
-                      fill
                       sizes="(min-width: 768px) 340px, 90vw"
-                      className="object-cover object-top"
                     />
                   </div>
-                  <Telefoon
-                    src={`/laurentius/${v.slug}-telefoon.jpg`}
-                    alt={`Voorbeeldsite ${v.naam} op een telefoon`}
-                    className="absolute bottom-[-18px] right-4 w-[26%]"
-                  />
+                  <Telefoon slug={v.slug} naam={v.naam} className="absolute bottom-[-18px] right-4 w-[26%]" />
                 </div>
                 <div className="flex flex-1 flex-col px-6 pb-6 pt-8">
                   <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--color-muted)]">{v.soort}</p>
@@ -263,12 +285,17 @@ export default async function LaurentiusPage({ params }: Props) {
                       <dd className="text-[22px] font-extrabold text-[#1f9d55]">{v.score.computer}</dd>
                     </div>
                   </dl>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-semibold text-[var(--color-accent)]">
+                  <a
+                    href={v.url}
+                    target="_blank"
+                    rel="noopener"
+                    className="group mt-5 inline-flex items-center gap-1.5 self-start text-[15px] font-semibold text-[var(--color-accent)]"
+                  >
                     Bekijk de site
                     <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
-                  </span>
+                  </a>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
           <p className="mt-6 text-[13px] leading-relaxed text-[var(--color-muted)]">
