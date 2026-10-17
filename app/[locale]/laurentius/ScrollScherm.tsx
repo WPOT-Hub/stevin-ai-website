@@ -52,7 +52,7 @@ export function ScrollScherm({ src, alt, breedte, hoogte, soort, balk, sizes, pr
       aria-label={`${alt}. Scrolt door de hele site.`}
       aria-pressed={actief}
       className={`relative block w-full cursor-ns-resize overflow-hidden bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] ${
-        soort === 'telefoon' ? 'aspect-[390/844] rounded-[20px]' : 'aspect-[1440/900] rounded-[6px]'
+        soort === 'telefoon' ? 'aspect-[390/844] rounded-[11.5cqw]' : 'aspect-[1440/900] rounded-[6px]'
       }`}
       onPointerDown={(e) => {
         laatsteAanwijzer.current = e.pointerType

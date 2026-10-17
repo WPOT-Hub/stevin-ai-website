@@ -135,23 +135,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+// Rand en hoeken in cqw (procent van de breedte van de telefoon zelf), zodat een
+// kleine telefoon in een kaart dezelfde verhoudingen heeft als de grote bovenaan.
+// Met vaste pixels werd hij in de kaart een dikke zwarte pil (Koen: "ziet er raar uit").
 function Telefoon({ slug, naam, className }: { slug: string; naam: string; className?: string }) {
   return (
-    <div className={`rounded-[26px] bg-[#0b0f17] p-[6px] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10 ${className ?? ''}`}>
-      <ScrollScherm
-        soort="telefoon"
-        src={`/laurentius/${slug}-telefoon-lang.jpg`}
-        balk={`/laurentius/${slug}-balk.jpg`}
-        breedte={780}
-        hoogte={voorbeeld(slug).hoogte.telefoon}
-        alt={`Voorbeeldsite ${naam} op een telefoon`}
-        sizes="(min-width: 768px) 180px, 30vw"
-      />
+    <div className={`@container ${className ?? ''}`}>
+      <div className="rounded-[15cqw] bg-[#0b0f17] p-[3.5cqw] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
+        <ScrollScherm
+          soort="telefoon"
+          src={`/laurentius/${slug}-telefoon-lang.jpg`}
+          balk={`/laurentius/${slug}-balk.jpg`}
+          breedte={780}
+          hoogte={voorbeeld(slug).hoogte.telefoon}
+          alt={`Voorbeeldsite ${naam} op een telefoon`}
+          sizes="(min-width: 768px) 180px, 30vw"
+        />
+      </div>
     </div>
   )
 }
 
-function Laptop({ slug, naam, priority }: { slug: string; naam: string; priority?: boolean }) {
+function Laptop({ slug, naam, priority, sizes = '(min-width: 768px) 560px, 90vw' }: { slug: string; naam: string; priority?: boolean; sizes?: string }) {
   return (
     <div>
       <div className="rounded-t-[14px] bg-[#0b0f17] p-[8px] pb-[10px] ring-1 ring-white/10">
@@ -161,7 +166,7 @@ function Laptop({ slug, naam, priority }: { slug: string; naam: string; priority
           breedte={1440}
           hoogte={voorbeeld(slug).hoogte.laptop}
           alt={`Voorbeeldsite ${naam} op een laptop`}
-          sizes="(min-width: 768px) 560px, 90vw"
+          sizes={sizes}
           priority={priority}
         />
       </div>
@@ -263,20 +268,15 @@ export default async function LaurentiusPage({ params }: Props) {
                 key={v.slug}
                 className="flex flex-col overflow-hidden rounded-[14px] border border-[var(--color-border)] bg-white"
               >
-                <div className="relative bg-[var(--color-surface-alt)] px-6 pt-6">
-                  <div className="overflow-hidden rounded-t-[8px] border border-b-0 border-[var(--color-border)]">
-                    <ScrollScherm
-                      soort="laptop"
-                      src={`/laurentius/${v.slug}-laptop-lang.jpg`}
-                      breedte={1440}
-                      hoogte={v.hoogte.laptop}
-                      alt={`Voorbeeldsite ${v.naam} op een computer`}
-                      sizes="(min-width: 768px) 340px, 90vw"
-                    />
+                <div className="bg-[var(--color-surface-alt)] px-7 pb-6 pt-7">
+                  <div className="relative pb-[6%]">
+                    <div className="w-[84%]">
+                      <Laptop slug={v.slug} naam={v.naam} sizes="(min-width: 768px) 300px, 80vw" />
+                    </div>
+                    <Telefoon slug={v.slug} naam={v.naam} className="absolute bottom-0 right-0 w-[25%]" />
                   </div>
-                  <Telefoon slug={v.slug} naam={v.naam} className="absolute bottom-[-18px] right-4 w-[26%]" />
                 </div>
-                <div className="flex flex-1 flex-col px-6 pb-6 pt-8">
+                <div className="flex flex-1 flex-col px-6 pb-6 pt-6">
                   <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--color-muted)]">{v.soort}</p>
                   <h3 className="mt-1 text-[20px] font-bold text-[var(--color-primary)]">{v.naam}</h3>
                   <dl className="mt-4 grid grid-cols-2 gap-3">
