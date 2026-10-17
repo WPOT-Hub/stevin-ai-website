@@ -438,6 +438,17 @@ export default function KennismakingVenster({
       }
       setVoorbeeld(false)
       setDagen(json.dagen)
+      // Open op de eerste dag met een vrij moment. Anders begon het venster
+      // op de eerste dag van de lijst, en als die vol was stond er als
+      // eerste "Deze dag is vol." (gezien 17 okt 2026: ma 19 en di 20 vol,
+      // wo 21 zes sloten). Op een telefoon telt dat dubbel, daar zie je
+      // maar een dag tegelijk.
+      const eerste = json.dagen.findIndex((d) => d.slots.length > 0)
+      if (eerste > 0) {
+        setMobDag(eerste)
+        const maandagen = [...new Set(json.dagen.map((d) => maandagVan(d.datum)))]
+        setWeek(Math.max(0, maandagen.indexOf(maandagVan(json.dagen[eerste].datum))))
+      }
     } catch (e) {
       setFout((e instanceof Error && e.message) || AGENDA_LAADT_NIET)
       setTab('gegevens')
