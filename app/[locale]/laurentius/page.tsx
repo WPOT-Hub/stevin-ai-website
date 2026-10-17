@@ -21,11 +21,9 @@ type Props = { params: Promise<{ locale: string }> }
 // staan. De vaste belbalk van de telefoon is apart opgenomen (*-balk.jpg), zie
 // ScrollScherm.tsx. Nieuwe schermafdruk? Werk ook de hoogtes in VOORBEELDEN bij.
 //
-// De scores komen uit Lighthouse 12.6.0, op 17 okt 2026 gedraaid tegen de live
-// sites. SEO staat er bewust niet bij: de demo's staan op noindex en scoren
-// daardoor 60, terwijl elke andere SEO-controle slaagt. Een echte site gaat wel
-// de index in. Mobiel wisselt per run (Studio Adem 92 tot 98, Barbier Wolff 88
-// en 89, Saar 96 in drie runs); hier staat de laagste.
+// Geen snelheidsscores op de pagina: een ouder heeft niets aan "88 van 100" en
+// het leest als net niet goed (Koen, 17 okt 2026). Gemeten op 17 okt met
+// Lighthouse 12.6.0: mobiel 88 tot 98, computer 100.
 
 const VEILING_URL = 'https://veiling.deleuksteschoolvannederland.nl'
 
@@ -84,20 +82,17 @@ const KRIJG = [
   },
 ]
 
-type Score = { mobiel: number; computer: number }
-
 const VOORBEELDEN: {
   naam: string
   soort: string
   url: string
   slug: string
-  score: Score
   /** Hoogte in pixels van de lange schermafdrukken (telefoon 780 breed, laptop 1440 breed). */
   hoogte: { telefoon: number; laptop: number }
 }[] = [
-  { naam: 'Studio Adem', soort: 'Yoga en ademwerk', url: 'https://studioadem.stevin.ai', slug: 'studioadem', score: { mobiel: 92, computer: 100 }, hoogte: { telefoon: 13726, laptop: 4141 } },
-  { naam: 'Barbier Wolff', soort: 'Herenkapper en barbier', url: 'https://barbierwolff.stevin.ai', slug: 'barbierwolff', score: { mobiel: 88, computer: 100 }, hoogte: { telefoon: 11274, laptop: 3288 } },
-  { naam: 'Patisserie Saar', soort: 'Taarten op maat', url: 'https://saar.stevin.ai', slug: 'saar', score: { mobiel: 96, computer: 100 }, hoogte: { telefoon: 12448, laptop: 3389 } },
+  { naam: 'Studio Adem', soort: 'Yoga en ademwerk', url: 'https://studioadem.stevin.ai', slug: 'studioadem', hoogte: { telefoon: 13726, laptop: 4141 } },
+  { naam: 'Barbier Wolff', soort: 'Herenkapper en barbier', url: 'https://barbierwolff.stevin.ai', slug: 'barbierwolff', hoogte: { telefoon: 11274, laptop: 3288 } },
+  { naam: 'Patisserie Saar', soort: 'Taarten op maat', url: 'https://saar.stevin.ai', slug: 'saar', hoogte: { telefoon: 12448, laptop: 3389 } },
 ]
 
 const voorbeeld = (slug: string) => VOORBEELDEN.find((v) => v.slug === slug)!
@@ -259,7 +254,7 @@ export default async function LaurentiusPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Voorbeelden met gemeten scores */}
+      {/* Voorbeelden */}
       <section id="voorbeelden" className="scroll-mt-20 bg-[var(--color-surface)] px-5 py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1120px]">
           <h2 className="font-display text-[28px] font-extrabold tracking-[-0.01em] text-[var(--color-primary)] md:text-[36px]">
@@ -290,16 +285,6 @@ export default async function LaurentiusPage({ params }: Props) {
                 <div className="flex flex-1 flex-col px-6 pb-6 pt-6">
                   <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--color-muted)]">{v.soort}</p>
                   <h3 className="mt-1 text-[20px] font-bold text-[var(--color-primary)]">{v.naam}</h3>
-                  <dl className="mt-4 grid grid-cols-2 gap-3">
-                    <div className="rounded-[10px] bg-[var(--color-surface)] px-3 py-2.5">
-                      <dt className="text-[12px] text-[var(--color-muted)]">Snelheid mobiel</dt>
-                      <dd className="text-[22px] font-extrabold text-[#1f9d55]">{v.score.mobiel}</dd>
-                    </div>
-                    <div className="rounded-[10px] bg-[var(--color-surface)] px-3 py-2.5">
-                      <dt className="text-[12px] text-[var(--color-muted)]">Snelheid computer</dt>
-                      <dd className="text-[22px] font-extrabold text-[#1f9d55]">{v.score.computer}</dd>
-                    </div>
-                  </dl>
                   <a
                     href={v.url}
                     target="_blank"
@@ -313,10 +298,6 @@ export default async function LaurentiusPage({ params }: Props) {
               </div>
             ))}
           </div>
-          <p className="mt-6 text-[13px] leading-relaxed text-[var(--color-muted)]">
-            Snelheid uit 100, gemeten met Lighthouse van Google in oktober 2026. Toegankelijkheid scoort 95 en de technische
-            basis 100 op alle drie.
-          </p>
         </div>
       </section>
 
