@@ -870,7 +870,11 @@ export default function KennismakingVenster({
         aria-labelledby="kennismaking-titel"
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className="relative max-h-[92svh] w-full max-w-[880px] overflow-y-auto rounded-t-[24px] bg-white p-5 shadow-[0_30px_80px_rgba(10,22,40,0.35)] outline-none sm:rounded-[24px] sm:p-8"
+        // Telefoon: vrijwel schermvullend, zoals Swoep (Koen, 17 okt 2026). Eerder
+        // was het een paneel tot 92svh dat alleen zo hoog werd als de inhoud,
+        // dus de pagina bleef half zichtbaar boven de tijden. Vanaf sm weer
+        // een kaart in het midden.
+        className="relative h-[96svh] w-full max-w-[880px] overflow-y-auto rounded-t-[20px] bg-white p-5 pt-6 shadow-[0_30px_80px_rgba(10,22,40,0.35)] outline-none sm:h-auto sm:max-h-[92svh] sm:rounded-[24px] sm:p-8"
       >
         <button
           type="button"
