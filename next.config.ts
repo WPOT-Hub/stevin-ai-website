@@ -30,6 +30,19 @@ const nextConfig: NextConfig = {
   // CDN cachet 5 min en serveert stale tot 24u terwijl revalidatie draait.
   async headers() {
     return [
+      // W-574 (18 okt 2026): de basiskopregels die hub.stevin.ai, desk en
+      // portal al sturen, stonden hier niet. Gemeten op stevin.ai: alleen
+      // Strict-Transport-Security. Geen Content-Security-Policy hier: die
+      // vraagt eerst een inventaris van GTM, Clarity en de inline scripts.
+      {
+        source: '/(.*)',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+        ],
+      },
       {
         // Skip API routes, die hebben eigen policy. _next/static heeft al
         // immutable cache via Next.js.
