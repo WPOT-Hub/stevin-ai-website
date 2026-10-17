@@ -110,6 +110,13 @@ function htmlGewicht() {
   const WORTELS = ['.next/server/app', '.next/output/static', '.next/output/functions']
   let html = bestanden(WORTELS[0], /\.html$/)
   if (!html.length) html = [...bestanden(WORTELS[1], /\.html$/), ...bestanden(WORTELS[2], /\.html$/)]
+  // Vercel kopieert ook public/ naar .next/output/static. De losse
+  // campagnepagina's daar (ads-data.html, inhouse.html, 5,6 MB) zijn geen
+  // gebouwde pagina's en vallen buiten deze basis; die hebben een eigen klus.
+  const uitPublic = (f: string) => f.startsWith(`${WORTELS[1]}/`) && fs.existsSync(path.join('public', f.slice(WORTELS[1].length + 1)))
+  const overgeslagen = html.filter(uitPublic)
+  html = html.filter((f) => !uitPublic(f))
+  if (overgeslagen.length) console.log(`  overgeslagen, statisch uit public/: ${overgeslagen.map((f) => f.slice(WORTELS[1].length)).join(', ')}`)
   const naam = (f: string) => '/' + WORTELS.reduce((r, w) => r.replace(`${w}/`, ''), f).replace(/\.html$/, '')
   if (!html.length) {
     fouten.push(`Geen gebouwde pagina's gevonden in ${WORTELS.join(', ')}. Draai dit na next build. Census: ${census()}`)
