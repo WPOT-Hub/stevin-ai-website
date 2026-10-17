@@ -58,7 +58,7 @@ const KRIJG = [
     // prijs, extra maatwerk is een aparte opdracht (Koen, 17 okt 2026).
     icon: LayoutTemplate,
     titel: 'Kies je ontwerp',
-    tekst: 'Je kiest een van onze ontwerpen, zoals de voorbeelden hieronder. Daarin zetten we wie je bent, wat je doet en hoe klanten of leden je bereiken, met je eigen teksten, foto’s en kleuren.',
+    tekst: 'Je kiest een van onze ontwerpen, zoals de voorbeelden hierboven. Daarin zetten we wie je bent, wat je doet en hoe klanten of leden je bereiken, met je eigen teksten, foto’s en kleuren.',
   },
   {
     icon: Globe,
@@ -242,26 +242,6 @@ export default async function LaurentiusPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Wat je krijgt */}
-      <section className="bg-white px-5 py-20 md:py-24">
-        <div className="mx-auto w-full max-w-[1120px]">
-          <h2 className="font-display text-[28px] font-extrabold tracking-[-0.01em] text-[var(--color-primary)] md:text-[36px]">
-            Wat je krijgt
-          </h2>
-          <div className="mt-10 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
-            {KRIJG.map(({ icon: Icon, titel, tekst }) => (
-              <div key={titel}>
-                <div className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-[var(--color-surface-alt)] text-[var(--color-accent)]">
-                  <Icon className="h-5 w-5" aria-hidden />
-                </div>
-                <h3 className="mt-4 text-[17px] font-bold text-[var(--color-primary)]">{titel}</h3>
-                <p className="mt-1.5 text-[15px] leading-relaxed text-[var(--color-muted)]">{tekst}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Voorbeelden */}
       <section id="voorbeelden" className="scroll-mt-20 bg-[var(--color-surface)] px-5 py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1120px]">
@@ -303,6 +283,26 @@ export default async function LaurentiusPage({ params }: Props) {
                     <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
                   </a>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Wat je krijgt */}
+      <section className="bg-white px-5 py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1120px]">
+          <h2 className="font-display text-[28px] font-extrabold tracking-[-0.01em] text-[var(--color-primary)] md:text-[36px]">
+            Wat je krijgt
+          </h2>
+          <div className="mt-10 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+            {KRIJG.map(({ icon: Icon, titel, tekst }) => (
+              <div key={titel}>
+                <div className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-[var(--color-surface-alt)] text-[var(--color-accent)]">
+                  <Icon className="h-5 w-5" aria-hidden />
+                </div>
+                <h3 className="mt-4 text-[17px] font-bold text-[var(--color-primary)]">{titel}</h3>
+                <p className="mt-1.5 text-[15px] leading-relaxed text-[var(--color-muted)]">{tekst}</p>
               </div>
             ))}
           </div>
