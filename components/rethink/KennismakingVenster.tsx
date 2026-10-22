@@ -677,7 +677,8 @@ export default function KennismakingVenster({
       switch (uit.soort) {
         case 'ingepland':
           // Eigen slug, zodat eigen agenda en Cal.com in GA4 uit elkaar te houden zijn.
-          void pushConversionEvent('meeting_booked', { email }, { event_slug: 'kennismaking_eigen', form: 'kennismaking_venster' })
+          // W-647: telefoon mee voor betere match bij Google en Meta (alleen gehasht, alleen met toestemming).
+          void pushConversionEvent('meeting_booked', { email, phone: telefoon || undefined }, { event_slug: 'kennismaking_eigen', form: 'kennismaking_venster' })
           setKlaar('geboekt')
           break
         case 'binnen':
@@ -687,7 +688,7 @@ export default function KennismakingVenster({
           // meeting_booked hierboven.
           void pushConversionEvent(
             'generate_lead',
-            { email },
+            { email, phone: telefoon || undefined },
             { form: 'kennismaking_venster', source: padZonderTaal(), lead_soort: moment ? 'moment_aangevraagd' : 'gegevens' },
           )
           setMetTelefoon(Boolean(telefoon))

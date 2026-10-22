@@ -25,9 +25,23 @@ async function sha256(value: string): Promise<string> {
     .join('')
 }
 
-/** Normalize a phone number to digits-only (E.164 without leading +). */
-function normalizePhone(phone: string): string {
-  return phone.replace(/\D/g, '')
+/**
+ * Een telefoonnummer in E.164 (+31612345678), of null als het geen nummer is.
+ * Zonder landcode (06..., 076...) nemen we Nederland aan; 0032 en +32 blijven
+ * Belgisch. Te kort of te lang: null, liever geen hash dan een verkeerde.
+ */
+export function telefoonE164(phone: string): string | null {
+  const plus = phone.trim().startsWith('+')
+  let cijfers = phone.replace(/\D/g, '')
+  if (plus) {
+    // al met landcode
+  } else if (cijfers.startsWith('00')) {
+    cijfers = cijfers.slice(2)
+  } else if (cijfers.startsWith('0')) {
+    cijfers = '31' + cijfers.slice(1)
+  }
+  if (cijfers.length < 10 || cijfers.length > 15) return null
+  return '+' + cijfers
 }
 
 /** Generate a unique event ID for deduplication across browser pixel + CAPI. */
@@ -42,12 +56,19 @@ export interface UserData {
   lastName?: string
 }
 
+// W-647: Google herkent voorgehashte waarden alleen aan het voorvoegsel
+// sha256_ (developers.google.com/tag-platform/tag-manager/server-side/ads-user-data).
+// Onder email_address en phone_number verwacht Google platte tekst, dus een
+// hash daar telt niet. Telefoon hasht Google in E.164 met plus (+31612345678),
+// Meta zonder plus (31612345678): een hash kan niet beide, dus er gaan er twee.
 export interface HashedUserData {
-  email_address?: string
-  phone_number?: string
+  sha256_email_address?: string
+  sha256_phone_number?: string
+  /** Meta-variant van het nummer (landcode zonder plus), voor CAPI via sGTM. */
+  meta_ph?: string
   address?: {
-    first_name?: string
-    last_name?: string
+    sha256_first_name?: string
+    sha256_last_name?: string
   }
 }
 
@@ -56,15 +77,17 @@ export async function hashUserData(data: UserData): Promise<HashedUserData> {
   const result: HashedUserData = {}
 
   if (data.email) {
-    result.email_address = await sha256(data.email)
+    result.sha256_email_address = await sha256(data.email)
   }
-  if (data.phone) {
-    result.phone_number = await sha256(normalizePhone(data.phone))
+  const e164 = data.phone ? telefoonE164(data.phone) : null
+  if (e164) {
+    result.sha256_phone_number = await sha256(e164)
+    result.meta_ph = await sha256(e164.slice(1))
   }
   if (data.firstName || data.lastName) {
     result.address = {}
-    if (data.firstName) result.address.first_name = await sha256(data.firstName)
-    if (data.lastName) result.address.last_name = await sha256(data.lastName)
+    if (data.firstName) result.address.sha256_first_name = await sha256(data.firstName)
+    if (data.lastName) result.address.sha256_last_name = await sha256(data.lastName)
   }
 
   return result
