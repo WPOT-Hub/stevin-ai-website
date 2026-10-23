@@ -42,7 +42,8 @@ export interface PhpUitslag {
   gemetenOp: string
 }
 
-const VERSIE_RE = /PHP\/(\d+)\.(\d+)(?:\.(\d+))?([-+~][\w.+~-]*)?/i
+// Achtervoegsel mag met -, + of ~ beginnen, of direct met letters (PHP schrijft RC's als 8.4.27RC1).
+const VERSIE_RE = /PHP\/(\d+)\.(\d+)(?:\.(\d+))?((?:[-+~]|(?=[A-Za-z]))[\w.+~-]*)?/i
 
 export interface PhpVersie {
   versie: string

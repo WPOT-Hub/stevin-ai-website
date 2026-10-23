@@ -27,6 +27,8 @@ is('5.6.40 geen release', oordeel('5.6.40'), 'geen_release')
 is('8.3 zonder patchnummer', oordeel('8.3'), 'versie_verborgen')
 is('8.6 onbekende reeks', oordeel('8.6.0'), 'onbekend')
 is('rc-build verborgen', oordeel('8.4.27-rc1'), 'versie_verborgen')
+is('RC zonder streepje verborgen', oordeel('8.4.27RC1'), 'versie_verborgen')
+is('RC-versie blijft zichtbaar', leesPhpVersie('PHP/8.4.27RC1')?.versie, '8.4.27RC1')
 is('distributiebuild', beoordeelVersie(leesPhpVersie('PHP/8.3.6-1ubuntu0.24.04.5')!), { oordeel: 'versie_verborgen', patchversie: '8.3.36', distributie: true })
 
 is('WordPress-thema = PHP', herkenPlatform('<link href="/wp-content/themes/x/style.css">', {}), { platform: 'WordPress', php: true })
