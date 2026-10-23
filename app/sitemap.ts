@@ -41,6 +41,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/marketing-intelligence',
     '/integraties',
     '/blog',
+    // W-652 (23 okt 2026): PHP-lek-check, indexeerbaar op Koens vraag.
+    '/php-lek-check',
     // Vergelijkingen staan op noindex tot ze herschreven zijn (W-535, 12 okt).
   ]
 
