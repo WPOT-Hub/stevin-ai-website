@@ -5,7 +5,7 @@ import ContactForm from '@/components/ContactForm'
 import FAQAccordion from '@/components/FAQAccordion'
 import PhpCheck from '@/components/PhpCheck'
 
-// W-652 (23 okt 2026): PHP-lek-check. Indexeerbaar op Koens vraag ("Bouw en
+// W-652 (23 okt 2026): PHP-lekcheck. Indexeerbaar op Koens vraag ("Bouw en
 // SEO erop"). SERP van 23 okt voor "php lek check website" en "php lek
 // controleren" is gemengd (nieuws, uitleg, tools), zie
 // Stevin-Hub/docs/zoekintentie/stevin.ai.md.
@@ -15,12 +15,12 @@ type Props = { params: Promise<{ locale: string }> }
 const URL = 'https://stevin.ai/php-lek-check'
 
 export const metadata: Metadata = {
-  title: 'PHP-lek check: staat de update op je website?',
+  title: 'PHP-lekcheck: staat de update op je website?',
   description:
     'Vul je website in en zie welke PHP-versie je server meldt, of de update van 21 oktober erop staat en wat je nu moet doen. Gratis en zonder account.',
   alternates: { canonical: URL },
   openGraph: {
-    title: 'PHP-lek check: staat de update op je website?',
+    title: 'PHP-lekcheck: staat de update op je website?',
     description: 'Zie in een paar seconden welke PHP-versie je server meldt en wat je nu moet doen.',
     url: URL,
     type: 'website',
@@ -54,9 +54,9 @@ const faqs = [
       'De update dicht het lek, maar haalt geen inbraak weg die er al was. Wie het lek eerder gebruikte, kan iets hebben achtergelaten. Laat je bouwer nakijken of er sinds 21 oktober bestanden of beheerders zijn bijgekomen.',
   },
   {
-    question: 'Wat test deze check precies?',
+    question: 'Wat doet deze check precies?',
     answer:
-      'We halen je voorpagina op zoals een gewone bezoeker dat doet, en lezen wat je server zelf meldt over PHP en welk systeem je site gebruikt. Er wordt niets aangevallen, getest of veranderd, en we bewaren je adres niet.',
+      'We halen je voorpagina op zoals een gewone bezoeker dat doet, en lezen wat je server zelf meldt over PHP en welk systeem je site gebruikt. We vallen niets aan, veranderen niets en bewaren je adres niet.',
   },
 ]
 
@@ -88,7 +88,7 @@ export default async function PhpLekCheckPage({ params }: Props) {
   const jsonLdTool = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'PHP-lek check',
+    name: 'PHP-lekcheck',
     url: URL,
     applicationCategory: 'SecurityApplication',
     operatingSystem: 'Web',
@@ -100,7 +100,7 @@ export default async function PhpLekCheckPage({ params }: Props) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://stevin.ai' },
-      { '@type': 'ListItem', position: 2, name: 'PHP-lek check', item: URL },
+      { '@type': 'ListItem', position: 2, name: 'PHP-lekcheck', item: URL },
     ],
   }
 
@@ -115,7 +115,7 @@ export default async function PhpLekCheckPage({ params }: Props) {
         <div className="mx-auto max-w-[900px]">
           <p className="text-[#3D8EFF] text-[13px] font-display font-bold tracking-[0.08em] uppercase mb-8 flex items-center gap-[14px]">
             <span className="inline-block w-7 h-px bg-[#3D8EFF] opacity-60 flex-shrink-0" aria-hidden="true" />
-            PHP-LEK CHECK
+            PHP-LEKCHECK
           </p>
           <h1
             className="font-display font-extrabold text-white leading-[1.06] tracking-[-0.03em]"
@@ -130,7 +130,7 @@ export default async function PhpLekCheckPage({ params }: Props) {
           <div className="rounded-[14px] bg-surface p-6 md:p-8">
             <PhpCheck />
           </div>
-          <p className="text-white/40 text-sm mt-6">Gratis, zonder account. We bewaren je adres niet.</p>
+          <p className="text-white/60 text-sm mt-6">Gratis, zonder account. We bewaren je adres niet.</p>
         </div>
       </section>
 
@@ -151,15 +151,19 @@ export default async function PhpLekCheckPage({ params }: Props) {
               dan heeft hij het lek. Voor PHP 8.1 en ouder komt er geen nieuwe release meer.
             </p>
             <p>
-              Bronnen:{' '}
-              <a className="underline" href="https://github.com/NCSC-NL/php2shell" target="_blank" rel="noopener">
-                NCSC
-              </a>{' '}
-              en{' '}
-              <a className="underline" href="https://www.php.net/" target="_blank" rel="noopener">
-                php.net
+              Bronnen: de{' '}
+              <a className="underline" href="https://www.php.net/archive/2026.php#2026-10-21-5" target="_blank" rel="noopener">
+                beveiligingsadvisory van php.net
               </a>
-              .
+              , het{' '}
+              <a className="underline" href="https://github.com/NCSC-NL/php2shell" target="_blank" rel="noopener">
+                overzicht van het NCSC
+              </a>{' '}
+              en het{' '}
+              <a className="underline" href="https://www.rd.nl/a/nog-niet-alle-websites-weer-in-de-lucht-na-php-lek" target="_blank" rel="noopener">
+                Reformatorisch Dagblad
+              </a>{' '}
+              over hosters die sites offline haalden.
             </p>
           </div>
         </div>
@@ -216,10 +220,10 @@ export default async function PhpLekCheckPage({ params }: Props) {
             gegevens achter, dan bellen we je.
           </p>
           <div className="rounded-[14px] border border-border bg-surface p-8">
-            <ContactForm subject="PHP-lek check: gratis website zonder PHP" />
+            <ContactForm subject="PHP-lekcheck: gratis website zonder PHP" />
           </div>
           <p className="text-sm text-muted/80 mt-6">
-            De actie geldt voor een website tot vijf pagina&apos;s, zonder webshop. Je domein blijft van jou.
+            Aan de actie zitten voorwaarden; die lopen we samen door. Je domein blijft van jou.
           </p>
         </div>
       </section>

@@ -1,18 +1,28 @@
 'use client'
 
-// W-652: invoer en uitslag van de PHP-lek-check. De meting zelf draait in
+// W-652: invoer en uitslag van de PHP-lekcheck. De meting zelf draait in
 // app/api/php-check/route.ts; de regels staan in lib/php-check.ts.
 import { useState } from 'react'
 import type { PhpUitslag } from '@/lib/php-check'
 
 type Toon = 'goed' | 'actie' | 'neutraal'
 
-function uitleg(u: PhpUitslag): { toon: Toon; kop: string; tekst: string } {
+const REDEN: Record<string, string> = {
+  dns: 'We vonden geen adres voor deze naam. Klopt de spelling?',
+  te_traag: 'Je site antwoordde niet binnen negen seconden.',
+  geen_verbinding: 'We kregen geen verbinding met je site.',
+  te_veel_omleidingen: 'Je site stuurde ons te vaak door naar een ander adres.',
+  serverfout: 'Je site gaf een foutmelding van de server.',
+  ongeldig_adres: 'Je site stuurde ons door naar een ongeldig adres.',
+}
+
+function uitleg(u: PhpUitslag): { toon: Toon; kop: string; tekst: string; php: boolean } {
   const v = u.versie
   switch (u.oordeel) {
     case 'gepatcht':
       return {
         toon: 'goed',
+        php: true,
         kop: `Je server meldt PHP ${v}: de versie met de update.`,
         tekst:
           'Dat is goed nieuws. Let wel: een update dicht het lek, maar haalt geen inbraak weg die er al was. Twijfel je, laat je bouwer dan nakijken of er sinds 21 oktober iets op je server is veranderd.',
@@ -20,6 +30,7 @@ function uitleg(u: PhpUitslag): { toon: Toon; kop: string; tekst: string } {
     case 'niet_gepatcht':
       return {
         toon: 'actie',
+        php: true,
         kop: `Je server meldt PHP ${v}. De update zit pas in ${u.patchversie}.`,
         tekst:
           'Vraag je hoster of bouwer of de update erop staat. Soms bouwt een hoster de reparatie in zonder dat het versienummer verandert, maar dat moet je dan wel van hem horen.',
@@ -27,33 +38,53 @@ function uitleg(u: PhpUitslag): { toon: Toon; kop: string; tekst: string } {
     case 'geen_release':
       return {
         toon: 'actie',
+        php: true,
         kop: `Je server meldt PHP ${v}. Voor die versie brengt PHP geen nieuwe release meer uit.`,
         tekst:
           'Ook niet tegen dit lek. Er bestaan losse reparaties, maar de echte oplossing is overstappen naar een nieuwere PHP-versie, of naar een site die helemaal geen PHP nodig heeft.',
       }
     case 'versie_verborgen':
+      if (u.distributie)
+        return {
+          toon: 'neutraal',
+          php: true,
+          kop: `Je server meldt PHP ${v}, een versie van je Linux-distributie.`,
+          tekst:
+            'Zulke versies krijgen de reparatie vaak zonder hoger versienummer. Vraag je hoster of de beveiligingsupdate van 21 oktober erop staat.',
+        }
       return {
         toon: 'neutraal',
-        kop: u.platform ? `Je site draait op ${u.platform}, en dus op PHP.` : 'Je site draait op PHP.',
+        php: true,
+        kop: u.platform ? `We zien kenmerken van ${u.platform}, en dus van PHP.` : 'We zien kenmerken van PHP.',
         tekst:
-          'Je server laat de versie niet zien, en dat is op zich netjes. Vraag je hoster welke PHP-versie erop draait en of de update van 21 oktober erop staat.',
+          'Je server laat het versienummer niet zien. Vraag je hoster welke PHP-versie erop draait en of de update van 21 oktober erop staat.',
       }
     case 'geen_php':
       return {
         toon: 'goed',
+        php: false,
         kop: `We zien geen PHP. Je site draait op ${u.platform}.`,
-        tekst: 'Dan ligt dit lek bij het platform, niet bij jou. Die werken zulke updates zelf bij.',
+        tekst:
+          'Dat platform draait geen PHP-server voor je site. Heb je daarnaast een eigen server, bijvoorbeeld voor een blog of een webshop, laat die dan wel nakijken.',
+      }
+    case 'geblokkeerd':
+      return {
+        toon: 'neutraal',
+        php: false,
+        kop: 'Je site liet onze check niet binnen.',
+        tekst: `We kregen status ${u.status} terug, vaak van een beveiligingsfilter. Daardoor kunnen we niets zeggen over PHP. Vraag het je hoster of bouwer.`,
       }
     case 'onbereikbaar':
       return {
         toon: 'neutraal',
+        php: false,
         kop: 'We kregen geen goed antwoord van je site.',
-        tekst:
-          'De site reageerde niet of gaf een foutmelding. Mogelijk heeft je hoster hem uit voorzorg offline gehaald. Kijk zelf of je site het doet, en vraag je hoster wat er speelt.',
+        tekst: `${REDEN[u.reden || ''] || ''} Dat kan aan je site liggen, maar ook aan onze check. Kijk zelf of je site het doet, en vraag het anders je hoster.`.trim(),
       }
     default:
       return {
         toon: 'neutraal',
+        php: false,
         kop: 'We zien geen PHP-versie en geen bekend platform.',
         tekst:
           'Dat betekent niet dat er geen PHP draait. Veel servers houden dat voor zich. Vraag het voor de zekerheid even na bij je hoster of bouwer.',
@@ -127,14 +158,17 @@ export default function PhpCheck() {
         {fout && <p className="mt-4 text-[#d23f57]">{fout}</p>}
         {uitslag && u && (
           <div className={`mt-6 rounded-[14px] border-2 ${rand} bg-white p-7`}>
-            <p className="text-sm text-muted mb-2">{uitslag.domein}</p>
+            <p className="text-sm text-muted mb-2">
+              {uitslag.domein}
+              {uitslag.eindhost ? `, doorgestuurd naar ${uitslag.eindhost}` : ''}
+            </p>
             <h3 className="font-display font-bold text-primary text-xl mb-3">{u.kop}</h3>
             <p className="text-muted leading-relaxed">{u.tekst}</p>
             <p className="text-xs text-muted/80 mt-5">
               Gemeten van buitenaf op {new Date(uitslag.gemetenOp).toLocaleString('nl-NL')}, op basis van wat je server
-              zelf meldt. Er is niets op je site getest of veranderd.
+              zelf meldt. We hebben niets aangevallen of veranderd.
             </p>
-            {(u.toon !== 'goed') && (
+            {u.php && u.toon !== 'goed' && (
               <a
                 href="#aanbod"
                 className="inline-flex mt-6 items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-6 py-3 rounded-lg"
