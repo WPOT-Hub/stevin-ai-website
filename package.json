@@ -21,7 +21,8 @@
     "check:sitemap:structuur": "npx tsx scripts/check-sitemap-structuur.ts",
     "verify:production": "npx tsx scripts/verify-production-release.ts",
     "prebuild": "npx tsx scripts/check-header-lock.ts && npx tsx scripts/check-boeking-lock.ts && npx tsx scripts/check-snelheid.ts && npx tsx scripts/generate-related.ts && npx tsx scripts/check-sitemap-structuur.ts && npx tsx scripts/audit-journal-content.ts --check",
-    "check:copy": "npx tsx scripts/check-copy.ts"
+    "check:copy": "npx tsx scripts/check-copy.ts",
+    "check:php-check": "npx tsx scripts/check-php-check.ts"
   },
   "dependencies": {
     "lucide-react": "^1.7.0",
