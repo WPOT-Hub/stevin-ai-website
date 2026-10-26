@@ -220,7 +220,8 @@ export default async function PhpLekCheckPage({ params }: Props) {
                 kan kwalificeren ("zo kan ik niet kwalificeren met een opmerking"). */}
             <ContactForm
               subject="PHP-lekcheck: gratis website zonder PHP"
-              keuzeLabel="Wat wil je?"
+              keuzeLabel="Waar ben je naar op zoek?"
+              bedrijfEnTelefoonVerplicht
               keuzes={[
                 'Ik wil graag meer info over de actie',
                 'Ik wil mijn huidige site laten ombouwen',
