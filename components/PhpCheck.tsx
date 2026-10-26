@@ -148,7 +148,7 @@ export default function PhpCheck() {
         <button
           type="submit"
           disabled={bezig}
-          className="inline-flex items-center justify-center bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg disabled:opacity-60"
+          className="inline-flex items-center justify-center bg-accent text-white font-display font-bold text-[15px] px-7 py-3.5 rounded-lg transition-[filter] hover:brightness-110 disabled:opacity-60"
         >
           {bezig ? 'Bezig met checken' : 'Check mijn website'}
         </button>
@@ -171,7 +171,7 @@ export default function PhpCheck() {
             {u.php && u.toon !== 'goed' && (
               <a
                 href="#aanbod"
-                className="inline-flex mt-6 items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-6 py-3 rounded-lg"
+                className="inline-flex mt-6 items-center gap-2 bg-accent text-white font-display font-bold text-[15px] px-6 py-3 rounded-lg transition-[filter] hover:brightness-110"
               >
                 Liever een site zonder PHP?
               </a>

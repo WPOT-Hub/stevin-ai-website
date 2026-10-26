@@ -310,7 +310,7 @@ async function HomePage({ params }: Props) {
           <div className="flex flex-wrap gap-4 mt-10">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#3D8EFF] transition-colors"
+              className="inline-flex items-center gap-2 bg-accent text-white font-display font-bold text-[15px] px-7 py-3.5 rounded-lg transition-[filter] hover:brightness-110"
             >
               {c.cta_primary}
             </Link>
@@ -521,7 +521,7 @@ async function HomePage({ params }: Props) {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#3D8EFF] transition-colors"
+                className="inline-flex items-center gap-2 bg-accent text-white font-display font-bold text-[15px] px-7 py-3.5 rounded-lg transition-[filter] hover:brightness-110"
               >
                 {c.cta_primary}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
