@@ -4,7 +4,10 @@ import { setRequestLocale } from 'next-intl/server'
 import ContactForm from '@/components/ContactForm'
 import FAQAccordion from '@/components/FAQAccordion'
 import PhpCheck from '@/components/PhpCheck'
+import { Link } from '@/i18n/navigation'
 
+// W-663 (26 okt 2026): het aanbod onderaan is de Black Friday-actie (deadline
+// 30 november, vijf plekken); voorwaarden op /black-friday.
 // W-652 (23 okt 2026): PHP-lekcheck. Indexeerbaar op Koens vraag ("Bouw en
 // SEO erop"). SERP van 23 okt voor "php lek check website" en "php lek
 // controleren" is gemengd (nieuws, uitleg, tools), zie
@@ -207,7 +210,7 @@ export default async function PhpLekCheckPage({ params }: Props) {
       {/* AANBOD */}
       <section id="aanbod" className="bg-white" style={{ padding: '96px 24px' }}>
         <div className="mx-auto max-w-[900px]">
-          <Label>LIEVER GEEN ZORGEN MEER OVER PHP</Label>
+          <Label>ONZE BLACK FRIDAY-ACTIE, TOT EN MET 30 NOVEMBER</Label>
           <h2 className="font-display font-extrabold text-primary mb-6" style={kop}>
             Een nieuwe website zonder PHP, gratis.
           </h2>
@@ -216,14 +219,18 @@ export default async function PhpLekCheckPage({ params }: Props) {
             ziet wat die oplevert, van klik tot klant.
           </p>
           <p className="text-muted leading-relaxed mb-8 text-lg">
-            Ga je een jaar met Stevin.AI in zee, dan bouwen we je nieuwe website gratis, met een jaar hosting erbij. Laat je
-            gegevens achter, dan bellen we je.
+            Dit is onze Black Friday-actie. Teken voor 30 november voor een jaar met Stevin.AI, dan bouwen we je nieuwe
+            website gratis, met een jaar hosting erbij. Vijf plekken. Laat je gegevens achter, dan bellen we je.
           </p>
           <div className="rounded-[14px] border border-border bg-surface p-8">
             <ContactForm subject="PHP-lekcheck: gratis website zonder PHP" />
           </div>
           <p className="text-sm text-muted/80 mt-6">
-            Aan de actie zitten voorwaarden; die lopen we samen door. Je domein blijft van jou.
+            Aan de actie zitten voorwaarden; die staan op{' '}
+            <Link href="/black-friday" className="underline" data-cta="php_lek_check_black_friday_voorwaarden">
+              de Black Friday-pagina
+            </Link>{' '}
+            en lopen we samen door. Je domein blijft van jou.
           </p>
         </div>
       </section>
