@@ -1597,6 +1597,53 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'derde-php-lek-controleer-je-website': (
+    <>
+      <p className="lead-para">
+        PHP heeft op 23 oktober een nieuw lek bekendgemaakt: CVE-2026-115560. Het is het derde lek in PHP in een week, na de twee kritieke lekken van 21 oktober. Deze keer komt er geen noodupdate. PHP raadt aan om tot de volgende release een instelling uit te zetten: <code>session.upload_progress.enabled</code>. Dat staat in het{' '}
+        <a href="https://www.php.net/archive/2026.php#2026-10-23-1" target="_blank" rel="noopener noreferrer">beveiligingsarchief van PHP</a>.
+      </p>
+      <p>
+        Het lek zit in de functie die bijhoudt hoe ver een bestandsupload is, samen met de manier waarop PHP sessiegegevens opslaat. In het slechtste geval kan iemand van buitenaf er code mee uitvoeren op je server. Dat lukt volgens PHP alleen bij een ongebruikelijke combinatie: je applicatie zet <code>session.serialize_handler</code> in de configuratie op <code>php_binary</code> of <code>php_serialize</code>, zet die tijdens het draaien met <code>ini_set()</code> om naar <code>php</code>, en heeft de uploadvoortgang aan.
+      </p>
+      <p>
+        PHP verwacht dat die opzet in de praktijk weinig voorkomt. Daarom komt de echte oplossing met de volgende gewone release, samen met een volledige beschrijving van het lek. Een datum noemt PHP niet.
+      </p>
+      <h2>Bijgewerkt is niet genoeg</h2>
+      <p>
+        De update van vorige week helpt hier niet tegen. Volgens{' '}
+        <a href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection/" target="_blank" rel="noopener noreferrer">Cloudflare</a> zit het lek ook in volledig bijgewerkte versies, waaronder PHP 8.5.12. Heb je vorige week netjes bijgewerkt, dan ben je dus nog niet klaar.
+      </p>
+      <p>
+        Even terug naar 21 oktober. Toen bracht PHP noodupdates uit voor twee kritieke lekken, CVE-2026-109618 en CVE-2026-109619, ook bekend als PHP2Shell. Daarmee kon iemand zonder in te loggen een webserver overnemen. De update zit in PHP 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Voor PHP 8.1 en ouder brengt PHP geen nieuwe release meer uit.
+      </p>
+      <p>
+        Het{' '}
+        <a href="https://www.ncsc.nl/en/alerts/update-php-vulnerabilities-remain-a-reason-for-immediate-patching" target="_blank" rel="noopener noreferrer">NCSC</a> raadt aan om die updates zo snel mogelijk te installeren, en systemen die nog niet zijn bijgewerkt offline te houden. Het verwijst ook naar een lijst van softwareproducten waar PHP in zit, voor wie niet zeker weet waar PHP overal draait.
+      </p>
+      <h2>Wat je nu doet</h2>
+      <ol>
+        <li>Kijk welke PHP-versie je site draait en of de update van 21 oktober erop staat. Heb je gedeelde hosting, vraag het dan aan je hoster.</li>
+        <li>Laat <code>session.upload_progress.enabled</code> op 0 zetten. Dat moet in <code>php.ini</code> of in de configuratie van de server gebeuren, en daarna moeten alle PHP-processen opnieuw starten. Met <code>ini_set()</code> of een <code>.user.ini</code> werkt het niet, schrijft PHP. Had je hoster dit vorige week al gedaan, laat het dan zo staan.</li>
+        <li>Denk aan software waar PHP in zit zonder dat je het ziet: je CMS, je webshop, een beheerpaneel.</li>
+        <li>Werk opnieuw bij zodra de volgende release er is. De instelling is een tijdelijke maatregel, geen oplossing.</li>
+      </ol>
+      <h2>Zelf nakijken</h2>
+      <p>
+        Met de <Link href="/php-lek-check">PHP-lekcheck</Link> zie je in een paar seconden welke PHP-versie je server meldt en of de update van 21 oktober erop staat. De check kijkt van buitenaf. Of de uploadvoortgang uit staat en wat je code met de sessie-instelling doet, zie je daar niet. Dat weet alleen je hoster of je bouwer.
+      </p>
+      <p>
+        Liever helemaal geen PHP meer? Ga je een jaar met Stevin.AI in zee, dan bouwen we je nieuwe website gratis, zonder PHP en met een jaar hosting erbij. Aan de actie zitten voorwaarden, die lopen we samen door.{' '}
+        <Link href="/php-lek-check#aanbod">Bekijk de actie</Link>.
+      </p>
+      <p>
+        Bronnen: <a href="https://www.php.net/archive/2026.php" target="_blank" rel="noopener noreferrer">PHP</a>,{' '}
+        <a href="https://www.ncsc.nl/en/alerts/update-php-vulnerabilities-remain-a-reason-for-immediate-patching" target="_blank" rel="noopener noreferrer">NCSC</a>,{' '}
+        <a href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection/" target="_blank" rel="noopener noreferrer">Cloudflare</a> en{' '}
+        <a href="https://www.bleepingcomputer.com/news/security/php-shares-mitigation-for-new-and-unpatched-rce-vulnerability/" target="_blank" rel="noopener noreferrer">BleepingComputer</a>.
+      </p>
+    </>
+  ),
   'acm-strengere-regels-duurzaamheidsclaims': (
     <>
       <p className="lead-para">
@@ -7938,6 +7985,8 @@ const DISPATCH_PERSPECTIVES: Record<string, string> = {
     "Voor bedrijven die afhankelijk zijn van AI-diensten zoals chatbots of automatisering, toont dit aan dat investeren in moderne programmeertalen loont. Het verminderen van storingen en kosten is direct meetbaar in operationele resultaten. Tegelijkertijd vraagt zo’n migratie om expertise die niet overal beschikbaar is, wat de drempel verhoogt.",
   'agentic-security-billion-dollar-uitdaging':
     "Voor ondernemers betekent dit dat ze nu al moeten nadenken over hoe ze hun AI-systemen veilig houden. Het is geen kwestie van 'als' er iets misgaat, maar 'wanneer'. Bedrijven die nu proactief investeren in beveiliging en bewustwording, voorkomen later hoge kosten en reputatieschade. Daarnaast kan het een concurrentievoordeel opleveren: klanten en partners hechten steeds meer waarde aan veilige systemen.",
+  'derde-php-lek-controleer-je-website':
+    "PHP heeft het lek zelf gemeld, met een tijdelijke maatregel en nog zonder datum voor de echte oplossing. Dat ook bijgewerkte versies het lek hebben, schrijft Cloudflare.\n\nVraag je hoster twee dingen: staat de update van 21 oktober erop, en staat session.upload_progress.enabled op 0 in php.ini of de serverconfiguratie.\n\nWij volgen de meldingen van PHP en passen de PHP-lekcheck aan zodra de volgende release er is. De websites die wij bouwen hebben geen PHP nodig.",
   'acm-strengere-regels-duurzaamheidsclaims':
     "Een claim die je niet kunt bewijzen, kost je nu meer dan hij oplevert. Neem je feed en je advertenties mee in de controle, niet alleen je verpakking: daar staan de meeste teksten, en daar kijkt het minst vaak iemand naar.",
   'google-ads-kanaalprioriteit-display-search-partners':
