@@ -7,8 +7,9 @@ import PhpCheck from '@/components/PhpCheck'
 import NodeWatermerk from '@/components/rethink/NodeWatermerk'
 import { Punten, Vragen, h2Stijl, tekst, type Vraag } from '@/components/rethink/RethinkBlokken'
 
-// W-663 (26 okt 2026): het aanbod onderaan is de Black Friday-actie (deadline
-// 30 november, vijf plekken); voorwaarden op /black-friday.
+// W-663 (26 okt 2026, D-110): het aanbod onderaan is de Black Friday-actie
+// (tot en met 30 november, vijf plekken); voorwaarden op /black-friday. Na
+// 30 november gaat de actie hier en op /black-friday weg (CRM-taak 1 dec).
 // W-652 (23 okt 2026): PHP-lekcheck. Indexeerbaar op Koens vraag ("Bouw en
 // SEO erop"). SERP van 23 okt voor "php lek check website" en "php lek
 // controleren" is gemengd (nieuws, uitleg, tools), zie
@@ -67,7 +68,7 @@ const VRAGEN: Vraag[] = [
   // antagonist, php update strato).
   {
     v: 'Kan ik mijn huidige site laten ombouwen?',
-    a: 'Meestal wel. We kijken eerst wat je site doet. Een gewone bedrijfssite bouwen we opnieuw op zonder PHP, met je huidige teksten en beelden. Heb je een webshop, een inlog of een boekingssysteem, dan zeggen we vooraf eerlijk wat er zonder PHP wel en niet kan. Ga je een jaar met Stevin.AI in zee, dan bouwen we je nieuwe site gratis, met een jaar hosting erbij. Aan de actie zitten voorwaarden; die lopen we samen door.',
+    a: 'Meestal wel. We kijken eerst wat je site doet. Een gewone bedrijfssite bouwen we opnieuw op zonder PHP, met je huidige teksten en beelden. Heb je een webshop, een inlog of een boekingssysteem, dan zeggen we vooraf eerlijk wat er zonder PHP wel en niet kan. Tot en met 30 november is dat onze Black Friday-actie: teken je voor een jaar met Stevin.AI, dan bouwen we je nieuwe site gratis, met een jaar hosting erbij. Vijf plekken; de voorwaarden staan op stevin.ai/black-friday.',
   },
   {
     v: 'Hoe stap ik over van PHP?',
@@ -219,7 +220,7 @@ export default async function PhpLekCheckPage({ params }: Props) {
       {/* Aanbod */}
       <section id="aanbod" className="scroll-mt-24 px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[900px]">
-          <p className={label}>Onze Black Friday-actie, tot en met 30 november</p>
+          <p className={label}>Black Friday 2026, tot en met 30 november</p>
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Een nieuwe website zonder PHP, gratis.
           </h2>
@@ -229,8 +230,9 @@ export default async function PhpLekCheckPage({ params }: Props) {
               oplevert, van klik tot klant.
             </p>
             <p className="m-0">
-              Dit is onze Black Friday-actie. Teken voor 30 november voor een jaar met Stevin.AI, dan bouwen we je nieuwe website
-              gratis, met een jaar hosting erbij. Vijf plekken. Laat je gegevens achter, dan bellen we je.
+              Dit is onze Black Friday-actie: teken tot en met 30 november voor een jaar met Stevin.AI, dan bouwen we je nieuwe
+              website gratis, met een jaar hosting erbij. Vijf plekken, op volgorde van tekenen. Laat je gegevens achter, dan
+              bellen we je.
             </p>
           </div>
           <div className="mt-10">
@@ -253,11 +255,11 @@ export default async function PhpLekCheckPage({ params }: Props) {
             />
           </div>
           <p className="m-0 mt-6 text-sm text-muted">
-            Aan de actie zitten voorwaarden; die staan op{' '}
+            Aan de actie zitten voorwaarden. Die staan op{' '}
             <Link href="/black-friday" className="underline" data-cta="php_lek_check_black_friday_voorwaarden">
               de Black Friday-pagina
-            </Link>{' '}
-            en lopen we samen door. Je domein blijft van jou.
+            </Link>
+            , en we lopen ze samen door. Je domein blijft van jou.
           </p>
         </div>
       </section>
