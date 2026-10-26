@@ -6,6 +6,12 @@
 // CVE-2026-109619) en de releases 8.5.12, 8.4.27, 8.3.36 en 8.2.35 van die dag.
 // Elke eerdere versie in die reeksen heeft het lek. Reeksen onder 8.2 krijgen
 // geen nieuwe release meer, alleen losse reparaties.
+//
+// Derde lek, 23 oktober 2026 (CVE-2026-115560, php.net/archive/2026.php#2026-10-23-1):
+// zit ook in de versies hierboven en krijgt pas een update in de volgende gewone
+// release. Er is dus nog geen versiegrens; de uitslag 'gepatcht' noemt daarom de
+// tijdelijke maatregel (session.upload_progress.enabled=0). Komt die release,
+// dan krijgt deze tabel de nieuwe grenzen (W-670).
 
 export const GEPATCHT: Record<string, number> = {
   '8.2': 35,

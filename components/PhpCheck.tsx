@@ -3,6 +3,7 @@
 // W-652: invoer en uitslag van de PHP-lekcheck. De meting zelf draait in
 // app/api/php-check/route.ts; de regels staan in lib/php-check.ts.
 import { useState } from 'react'
+import { Link } from '@/i18n/navigation'
 import type { PhpUitslag } from '@/lib/php-check'
 
 type Toon = 'goed' | 'actie' | 'neutraal'
@@ -19,13 +20,16 @@ const REDEN: Record<string, string> = {
 function uitleg(u: PhpUitslag): { toon: Toon; kop: string; tekst: string; php: boolean } {
   const v = u.versie
   switch (u.oordeel) {
+    // W-670: niet meer groen. Het lek van 23 oktober (CVE-2026-115560) zit ook
+    // in deze versies, en of de tijdelijke maatregel aanstaat zien we van
+    // buitenaf niet (php.net/archive/2026.php#2026-10-23-1, Cloudflare).
     case 'gepatcht':
       return {
-        toon: 'goed',
+        toon: 'neutraal',
         php: true,
-        kop: `Je server meldt PHP ${v}: de versie met de update.`,
+        kop: `Je server meldt PHP ${v}: de versie met de update van 21 oktober.`,
         tekst:
-          'Dat is goed nieuws. Let wel: een update dicht het lek, maar haalt geen inbraak weg die er al was. Twijfel je, laat je bouwer dan nakijken of er sinds 21 oktober iets op je server is veranderd.',
+          'Tegen het lek van 23 oktober is nog geen update, ook niet in deze versie. Vraag je hoster om session.upload_progress.enabled op 0 te zetten tot de volgende release; van buitenaf zien we niet of dat al zo staat. En een update haalt geen inbraak weg die er al was.',
       }
     case 'niet_gepatcht':
       return {
@@ -33,7 +37,7 @@ function uitleg(u: PhpUitslag): { toon: Toon; kop: string; tekst: string; php: b
         php: true,
         kop: `Je server meldt PHP ${v}. De update zit pas in ${u.patchversie}.`,
         tekst:
-          'Vraag je hoster of bouwer of de update erop staat. Soms bouwt een hoster de reparatie in zonder dat het versienummer verandert, maar dat moet je dan wel van hem horen.',
+          'Vraag je hoster of bouwer of de update erop staat. Soms bouwt een hoster de reparatie in zonder dat het versienummer verandert, maar dat moet je dan wel van hem horen. Vraag ook of session.upload_progress.enabled op 0 staat, vanwege het lek van 23 oktober.',
       }
     case 'geen_release':
       return {
@@ -50,14 +54,14 @@ function uitleg(u: PhpUitslag): { toon: Toon; kop: string; tekst: string; php: b
           php: true,
           kop: `Je server meldt PHP ${v}, een versie van je Linux-distributie.`,
           tekst:
-            'Zulke versies krijgen de reparatie vaak zonder hoger versienummer. Vraag je hoster of de beveiligingsupdate van 21 oktober erop staat.',
+            'Zulke versies krijgen de reparatie vaak zonder hoger versienummer. Vraag je hoster of de beveiligingsupdate van 21 oktober erop staat, en of session.upload_progress.enabled op 0 staat.',
         }
       return {
         toon: 'neutraal',
         php: true,
         kop: u.platform ? `We zien kenmerken van ${u.platform}, en dus van PHP.` : 'We zien kenmerken van PHP.',
         tekst:
-          'Je server laat het versienummer niet zien. Vraag je hoster welke PHP-versie erop draait en of de update van 21 oktober erop staat.',
+          'Je server laat het versienummer niet zien. Vraag je hoster welke PHP-versie erop draait, of de update van 21 oktober erop staat en of session.upload_progress.enabled op 0 staat.',
       }
     case 'geen_php':
       return {
@@ -143,7 +147,7 @@ export default function PhpCheck() {
           placeholder="jouwbedrijf.nl"
           value={domein}
           onChange={(e) => setDomein(e.target.value)}
-          className="flex-1 rounded-lg border border-border bg-white px-4 py-3.5 text-[16px] text-primary outline-none focus:border-[#3D8EFF]"
+          className="flex-1 rounded-lg border border-border bg-white px-4 py-3.5 text-[16px] text-primary outline-none focus:border-accent"
         />
         <button
           type="submit"
@@ -168,6 +172,13 @@ export default function PhpCheck() {
               Gemeten van buitenaf op {new Date(uitslag.gemetenOp).toLocaleString('nl-NL')}, op basis van wat je server
               zelf meldt. We hebben niets aangevallen of veranderd.
             </p>
+            {u.php && (
+              <p className="mt-4 text-sm">
+                <Link href="/blog/derde-php-lek-controleer-je-website" className="font-semibold text-primary underline decoration-accent underline-offset-4">
+                  Lees wat er sinds 21 oktober speelt
+                </Link>
+              </p>
+            )}
             {u.php && u.toon !== 'goed' && (
               <a
                 href="#aanbod"
