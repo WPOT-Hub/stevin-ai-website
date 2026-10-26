@@ -216,10 +216,21 @@ export default async function PhpLekCheckPage({ params }: Props) {
             </p>
           </div>
           <div className="mt-10">
+            {/* W-671: een keuze in plaats van een open vraag, zodat Koen een aanvraag
+                kan kwalificeren ("zo kan ik niet kwalificeren met een opmerking"). */}
             <ContactForm
               subject="PHP-lekcheck: gratis website zonder PHP"
-              messageLabel="Wat wil je?"
-              messagePlaceholder="Bijvoorbeeld: een nieuwe website zonder PHP, of eerst laten nakijken of mijn site veilig is."
+              keuzeLabel="Wat wil je?"
+              keuzes={[
+                'Ik wil graag meer info over de actie',
+                'Ik wil mijn huidige site laten ombouwen',
+                'Ik wil een nieuwe site',
+                'Ik wil meer klanten uit mijn advertenties',
+                'Ik wil weten of mijn huidige site veilig is',
+                'Iets anders',
+              ]}
+              messageLabel="Toelichting (mag leeg blijven)"
+              messagePlaceholder="Bijvoorbeeld het adres van je huidige site, of wat je zoekt."
             />
           </div>
           <p className="m-0 mt-6 text-sm text-muted">Aan de actie zitten voorwaarden; die lopen we samen door. Je domein blijft van jou.</p>

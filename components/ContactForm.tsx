@@ -22,6 +22,11 @@ type ContactFormProps = {
   /** Extra veld voor de website. Aan op /contact, want zonder domein kunnen we
    *  de registercheck en de meetcheck niet draaien. */
   websiteField?: boolean
+  /** W-671: een verplichte keuze boven het tekstvak, om aanvragen te kunnen
+   *  kwalificeren. De gekozen optie gaat bovenaan het bericht naar de Hub,
+   *  net als het websiteveld; het tekstvak wordt dan optioneel. */
+  keuzes?: string[]
+  keuzeLabel?: string
   /** Tekst in het bedankscherm. */
   doneTitle?: string
   doneBody?: string
@@ -33,6 +38,8 @@ export default function ContactForm({
   messageLabel = 'Waar kunnen we je mee helpen?',
   messagePlaceholder = 'Vertel kort wat je wilt bereiken...',
   websiteField = false,
+  keuzes,
+  keuzeLabel = 'Wat wil je?',
   doneTitle = 'Bedankt voor je bericht',
   doneBody = 'We nemen zo snel mogelijk contact met je op.',
 }: ContactFormProps = {}) {
@@ -41,6 +48,7 @@ export default function ContactForm({
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const formStarted = useRef(false)
+  const [gekozen, setGekozen] = useState('')
 
   useEffect(() => {
     // Backwards-compat: oude FormSubmit-redirect kwam terug met ?verzonden=1.
@@ -71,7 +79,10 @@ export default function ContactForm({
     // Het Hub-endpoint kent geen website-veld. In plaats van daar een migratie
     // voor te doen zetten we het bovenaan het bericht, zodat het in Slack en in
     // de mail direct zichtbaar is.
-    const message = website.trim() ? `Website: ${website.trim()}\n\n${rawMessage}` : rawMessage
+    const keuze = ((data.get('keuze') as string) ?? '').trim()
+    const message = [website.trim() ? `Website: ${website.trim()}` : '', keuze ? `Keuze: ${keuze}` : '', rawMessage]
+      .filter(Boolean)
+      .join('\n\n')
     const honey = (data.get('_honey') as string) ?? ''
     // Bron = het meegegeven subject-label (bv. "Agency Scan aanvraag"), of
     // anders de pagina waar het formulier staat (locale-prefix eraf), zodat je
@@ -224,6 +235,32 @@ export default function ContactForm({
           />
         </div>
       )}
+      {keuzes && keuzes.length > 0 && (
+        <fieldset className="mt-6">
+          <legend className="block text-sm font-medium text-primary mb-3">{keuzeLabel}</legend>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {keuzes.map((k, i) => (
+              <label
+                key={k}
+                className={`flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 text-sm text-primary transition-colors hover:border-accent ${
+                  gekozen === k ? 'border-accent bg-accent/5' : 'border-border'
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="keuze"
+                  value={k}
+                  required={i === 0}
+                  checked={gekozen === k}
+                  onChange={() => setGekozen(k)}
+                  className="h-4 w-4 accent-[var(--color-accent)]"
+                />
+                {k}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      )}
       <div className="mt-6">
         <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
           {messageLabel}
@@ -234,7 +271,7 @@ export default function ContactForm({
           rows={4}
           // In diagnosemodus is het bericht optioneel: bedrijfsnaam en website
           // zijn genoeg om te beginnen, en elk verplicht veld kost inzendingen.
-          required={!websiteField}
+          required={!websiteField && !(keuzes && keuzes.length > 0)}
           className="w-full px-4 py-3 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors resize-none"
           placeholder={messagePlaceholder}
         />
