@@ -25,7 +25,7 @@ const BERICHT = '/blog/derde-php-lek-controleer-je-website'
 export const metadata: Metadata = {
   title: 'PHP-lekcheck: staat de update op je website?',
   description:
-    'Vul je website in en zie welke PHP-versie je server meldt, of de update van 21 oktober erop staat en wat je nu moet doen. Gratis en zonder account.',
+    'Check online welke PHP-versie je website draait, of de update van 21 oktober erop staat en wat je nu moet doen. Gratis en zonder account.',
   alternates: { canonical: URL },
   openGraph: {
     title: 'PHP-lekcheck: staat de update op je website?',
@@ -59,6 +59,21 @@ const VRAGEN: Vraag[] = [
   {
     v: 'De update staat erop. Ben ik nu klaar?',
     a: 'Nog niet helemaal. Zet ook session.upload_progress.enabled op 0 tot de volgende release, vanwege het lek van 23 oktober. En een update dicht het lek, maar haalt geen inbraak weg die er al was. Laat je bouwer nakijken of er sinds 21 oktober bestanden of beheerders zijn bijgekomen.',
+  },
+  // W-672: vragen van Koen (ombouwen, overstappen) en uit de aanvullingen van
+  // Google op "php updaten" (26 okt 2026: php updaten wordpress, php updaten
+  // antagonist, php update strato).
+  {
+    v: 'Kan ik mijn huidige site laten ombouwen?',
+    a: 'Ja. We bouwen je huidige site opnieuw op, zonder PHP, met je eigen teksten en beelden. Oude adressen sturen we door naar de nieuwe pagina\'s, zodat bestaande links blijven werken. Ga je een jaar met Stevin.AI in zee, dan doen we dat gratis, met een jaar hosting erbij. Aan de actie zitten voorwaarden; die lopen we samen door.',
+  },
+  {
+    v: 'Hoe stap ik over van PHP?',
+    a: 'Er zijn twee wegen. Je blijft op PHP en zorgt dat je hoster elke update bijhoudt; met WordPress houd je dan ook zelf je thema en plugins bij. Of je laat je site ombouwen naar een site die geen PHP nodig heeft, zonder database en zonder plugins die je moet bijwerken. Die tweede weg bouwen wij.',
+  },
+  {
+    v: 'Hoe update ik PHP op mijn website?',
+    a: 'Bij gedeelde hosting kies je de PHP-versie vaak zelf in het beheerpaneel van je hoster. Kies de nieuwste versie die je hoster aanbiedt en kijk daarna of je site het nog doet, want oude thema\'s en plugins werken soms niet met een nieuwe PHP-versie. Staat de update van 21 oktober er nog niet bij, vraag het dan aan je hoster.',
   },
   {
     v: 'Wat doet deze check precies?',
