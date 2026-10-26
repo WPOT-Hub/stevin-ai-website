@@ -199,7 +199,7 @@ export default async function SocialMediaUitbestedenPage({ params }: Props) {
             {c.lede}
           </p>
           <div className="flex flex-wrap items-center gap-4 mt-9">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#3D8EFF] transition-colors">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-accent text-white font-display font-bold text-[15px] px-7 py-3.5 rounded-lg transition-[filter] hover:brightness-110">
               {c.cta}
             </Link>
             <p className="text-white/45 text-[13.5px] m-0">{c.cta_micro}</p>
@@ -302,7 +302,7 @@ export default async function SocialMediaUitbestedenPage({ params }: Props) {
           </h2>
           <div className="flex flex-col items-start lg:items-end gap-5">
             <p className="text-white/55 leading-[1.6] m-0 lg:text-right" style={{ fontSize: '15px', maxWidth: '380px' }}>{c.closing_body}</p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#3D8EFF] transition-colors">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-accent text-white font-display font-bold text-[15px] px-7 py-3.5 rounded-lg transition-[filter] hover:brightness-110">
               {c.cta}
             </Link>
           </div>

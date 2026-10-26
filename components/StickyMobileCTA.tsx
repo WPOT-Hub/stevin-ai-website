@@ -46,7 +46,7 @@ export default function StickyMobileCTA({ locale }: { locale?: string }) {
         </p>
         <Link
           href="/contact"
-          className="flex-shrink-0 inline-flex items-center px-5 py-2.5 text-sm font-bold text-[#0A1628] bg-[#3D8EFF] rounded-lg hover:bg-[#3D8EFF] transition-all"
+          className="flex-shrink-0 inline-flex items-center px-5 py-2.5 text-sm font-bold text-white bg-accent rounded-lg transition-[filter] hover:brightness-110"
         >
           {c.knop}
         </Link>
