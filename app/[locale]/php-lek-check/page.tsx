@@ -220,7 +220,11 @@ export default async function PhpLekCheckPage({ params }: Props) {
             gegevens achter, dan bellen we je.
           </p>
           <div className="rounded-[14px] border border-border bg-surface p-8">
-            <ContactForm subject="PHP-lekcheck: gratis website zonder PHP" />
+            <ContactForm
+              subject="PHP-lekcheck: gratis website zonder PHP"
+              messageLabel="Wat wil je?"
+              messagePlaceholder="Bijvoorbeeld: een nieuwe website zonder PHP, of eerst laten nakijken of mijn site veilig is."
+            />
           </div>
           <p className="text-sm text-muted/80 mt-6">
             Aan de actie zitten voorwaarden; die lopen we samen door. Je domein blijft van jou.

@@ -150,7 +150,7 @@ export default async function BedrijvenPage({ params }: Props) {
           <p className="text-white/55 leading-[1.6] mb-9 mx-auto" style={{ fontSize: '18px', maxWidth: '460px' }}>
             {c.ctaSub}
           </p>
-          <Link href="/venture-lab/apply" className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-8 py-4 rounded-lg hover:bg-[#3D8EFF] transition-colors">
+          <Link href="/venture-lab/apply" className="inline-flex items-center gap-2 bg-accent text-white font-display font-bold text-[15px] px-8 py-4 rounded-lg transition-[filter] hover:brightness-110">
             {c.ctaBtn}
           </Link>
         </div>

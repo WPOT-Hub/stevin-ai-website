@@ -176,7 +176,7 @@ export default async function VentureLabPage({ params }: Props) {
               <div className="flex flex-wrap gap-4 mt-10">
                 <Link
                   href="#interesse"
-                  className="inline-flex items-center gap-2 bg-[#3D8EFF] text-[#0A1628] font-display font-bold text-[15px] px-7 py-3.5 rounded-lg hover:bg-[#3D8EFF] transition-colors"
+                  className="inline-flex items-center gap-2 bg-accent text-white font-display font-bold text-[15px] px-7 py-3.5 rounded-lg transition-[filter] hover:brightness-110"
                 >
                   {c.ctaInteresse}
                 </Link>
