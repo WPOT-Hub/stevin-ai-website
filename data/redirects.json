@@ -388,6 +388,10 @@
   {
    "van": "/woordenboek/uplift-meting",
    "naar": "/blog/mmm-attributie-incrementality-welke-meet-wat"
+  },
+  {
+   "van": "/blackfriday",
+   "naar": "/black-friday"
   }
  ]
 }
