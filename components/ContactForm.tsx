@@ -27,6 +27,10 @@ type ContactFormProps = {
    *  net als het websiteveld; het tekstvak wordt dan optioneel. */
   keuzes?: string[]
   keuzeLabel?: string
+  /** W-671: bedrijf en telefoonnummer verplicht, om een aanvraag te kunnen
+   *  kwalificeren en terug te bellen. Standaard uit, zodat de andere pagina's
+   *  met dit formulier niet veranderen. */
+  bedrijfEnTelefoonVerplicht?: boolean
   /** Tekst in het bedankscherm. */
   doneTitle?: string
   doneBody?: string
@@ -40,6 +44,7 @@ export default function ContactForm({
   websiteField = false,
   keuzes,
   keuzeLabel = 'Wat wil je?',
+  bedrijfEnTelefoonVerplicht = false,
   doneTitle = 'Bedankt voor je bericht',
   doneBody = 'We nemen zo snel mogelijk contact met je op.',
 }: ContactFormProps = {}) {
@@ -48,7 +53,6 @@ export default function ContactForm({
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const formStarted = useRef(false)
-  const [gekozen, setGekozen] = useState('')
 
   useEffect(() => {
     // Backwards-compat: oude FormSubmit-redirect kwam terug met ?verzonden=1.
@@ -202,6 +206,7 @@ export default function ContactForm({
             id="company"
             name="company"
             type="text"
+            required={bedrijfEnTelefoonVerplicht}
             className="w-full px-4 py-3 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors"
             placeholder="Je bedrijfsnaam"
           />
@@ -214,6 +219,8 @@ export default function ContactForm({
             id="phone"
             name="phone"
             type="tel"
+            required={bedrijfEnTelefoonVerplicht}
+            minLength={bedrijfEnTelefoonVerplicht ? 8 : undefined}
             className="w-full px-4 py-3 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors"
             placeholder="+31 6 12345678"
           />
@@ -236,30 +243,28 @@ export default function ContactForm({
         </div>
       )}
       {keuzes && keuzes.length > 0 && (
-        <fieldset className="mt-6">
-          <legend className="block text-sm font-medium text-primary mb-3">{keuzeLabel}</legend>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {keuzes.map((k, i) => (
-              <label
-                key={k}
-                className={`flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 text-sm text-primary transition-colors hover:border-accent ${
-                  gekozen === k ? 'border-accent bg-accent/5' : 'border-border'
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="keuze"
-                  value={k}
-                  required={i === 0}
-                  checked={gekozen === k}
-                  onChange={() => setGekozen(k)}
-                  className="h-4 w-4 accent-[var(--color-accent)]"
-                />
+        <div className="mt-6">
+          <label htmlFor="keuze" className="block text-sm font-medium text-primary mb-2">
+            {keuzeLabel}
+          </label>
+          {/* W-671: een keuzelijst in plaats van tegels, die namen te veel ruimte (Koen, 26 okt). */}
+          <select
+            id="keuze"
+            name="keuze"
+            required
+            defaultValue=""
+            className="w-full px-4 py-3 border border-border rounded-xl text-sm text-primary invalid:text-muted bg-white focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors"
+          >
+            <option value="" disabled>
+              Maak een keuze
+            </option>
+            {keuzes.map((k) => (
+              <option key={k} value={k} className="text-primary">
                 {k}
-              </label>
+              </option>
             ))}
-          </div>
-        </fieldset>
+          </select>
+        </div>
       )}
       <div className="mt-6">
         <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
