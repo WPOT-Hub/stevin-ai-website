@@ -20,13 +20,16 @@ const REDEN: Record<string, string> = {
 function uitleg(u: PhpUitslag): { toon: Toon; kop: string; tekst: string; php: boolean } {
   const v = u.versie
   switch (u.oordeel) {
+    // W-670: niet meer groen. Het lek van 23 oktober (CVE-2026-115560) zit ook
+    // in deze versies, en of de tijdelijke maatregel aanstaat zien we van
+    // buitenaf niet (php.net/archive/2026.php#2026-10-23-1, Cloudflare).
     case 'gepatcht':
       return {
-        toon: 'goed',
+        toon: 'neutraal',
         php: true,
         kop: `Je server meldt PHP ${v}: de versie met de update van 21 oktober.`,
         tekst:
-          'Dat is goed nieuws. Twee dingen nog. Op 23 oktober meldde PHP een derde lek dat ook in deze versie zit, al werkt het alleen bij een ongebruikelijke instelling; vraag je hoster om session.upload_progress.enabled op 0 te zetten tot de volgende release. En een update haalt geen inbraak weg die er al was.',
+          'Tegen het lek van 23 oktober is nog geen update, ook niet in deze versie. Vraag je hoster om session.upload_progress.enabled op 0 te zetten tot de volgende release; van buitenaf zien we niet of dat al zo staat. En een update haalt geen inbraak weg die er al was.',
       }
     case 'niet_gepatcht':
       return {

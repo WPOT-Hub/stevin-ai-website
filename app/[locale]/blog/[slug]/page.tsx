@@ -1604,15 +1604,15 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
         <a href="https://www.php.net/archive/2026.php#2026-10-23-1" target="_blank" rel="noopener noreferrer">beveiligingsarchief van PHP</a>.
       </p>
       <p>
-        Het lek zit in de functie die bijhoudt hoe ver een bestandsupload is, samen met de manier waarop PHP sessiegegevens opslaat. In het slechtste geval kan iemand van buitenaf er code mee uitvoeren op je server. Dat lukt volgens PHP alleen bij een ongebruikelijke combinatie: je applicatie zet <code>session.serialize_handler</code> in de configuratie op <code>php_binary</code> of <code>php_serialize</code>, zet die tijdens het draaien met <code>ini_set()</code> om naar <code>php</code>, en heeft de uploadvoortgang aan.
+        Het lek zit in de functie die bijhoudt hoe ver een upload is gevorderd, samen met de manier waarop PHP sessiegegevens opslaat. In het slechtste geval kan iemand van buitenaf er code mee uitvoeren op je server. Dat lukt volgens PHP alleen bij een ongebruikelijke combinatie: je applicatie zet <code>session.serialize_handler</code> in de configuratie op <code>php_binary</code> of <code>php_serialize</code>, zet die terwijl de applicatie draait met <code>ini_set()</code> om naar <code>php</code>, en heeft de uploadvoortgang aan.
       </p>
       <p>
         PHP verwacht dat die opzet in de praktijk weinig voorkomt. Daarom komt de echte oplossing met de volgende gewone release, samen met een volledige beschrijving van het lek. Een datum noemt PHP niet.
       </p>
       <h2>Bijgewerkt is niet genoeg</h2>
       <p>
-        De update van vorige week helpt hier niet tegen. Volgens{' '}
-        <a href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection/" target="_blank" rel="noopener noreferrer">Cloudflare</a> zit het lek ook in volledig bijgewerkte versies, waaronder PHP 8.5.12. Heb je vorige week netjes bijgewerkt, dan ben je dus nog niet klaar.
+        De update van 21 oktober helpt hier niet tegen. Volgens{' '}
+        <a href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection/" target="_blank" rel="noopener noreferrer">Cloudflare</a> zit het lek ook in volledig bijgewerkte versies, waaronder PHP 8.5.12. Heb je die update netjes geïnstalleerd, dan ben je dus nog niet klaar.
       </p>
       <p>
         Even terug naar 21 oktober. Toen bracht PHP noodupdates uit voor twee kritieke lekken, CVE-2026-109618 en CVE-2026-109619, ook bekend als PHP2Shell. Daarmee kon iemand zonder in te loggen een webserver overnemen. De update zit in PHP 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Voor PHP 8.1 en ouder brengt PHP geen nieuwe release meer uit.
@@ -1624,7 +1624,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       <h2>Wat je nu doet</h2>
       <ol>
         <li>Kijk welke PHP-versie je site draait en of de update van 21 oktober erop staat. Heb je gedeelde hosting, vraag het dan aan je hoster.</li>
-        <li>Laat <code>session.upload_progress.enabled</code> op 0 zetten. Dat moet in <code>php.ini</code> of in de configuratie van de server gebeuren, en daarna moeten alle PHP-processen opnieuw starten. Met <code>ini_set()</code> of een <code>.user.ini</code> werkt het niet, schrijft PHP. Had je hoster dit vorige week al gedaan, laat het dan zo staan.</li>
+        <li>Laat <code>session.upload_progress.enabled</code> op 0 zetten. Dat moet in <code>php.ini</code> of in de configuratie van de server gebeuren, en daarna moeten alle PHP-processen opnieuw starten. Met <code>ini_set()</code> of een <code>.user.ini</code> werkt het niet, schreef PHP in{' '}
+          <a href="https://www.php.net/archive/2026.php#2026-10-21-5" target="_blank" rel="noopener noreferrer">het advies van 21 oktober</a>. Had je hoster dit al eerder gedaan, laat het dan zo staan.</li>
         <li>Denk aan software waar PHP in zit zonder dat je het ziet: je CMS, je webshop, een beheerpaneel.</li>
         <li>Werk opnieuw bij zodra de volgende release er is. De instelling is een tijdelijke maatregel, geen oplossing.</li>
       </ol>

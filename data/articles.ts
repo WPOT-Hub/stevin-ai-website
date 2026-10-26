@@ -199,7 +199,7 @@ const allArticles: Article[] = [
     edition: '471',
     category: 'Tech',
     title: "Derde PHP-lek: controleer of je website risico loopt",
-    dek: "PHP meldde op 23 oktober nog een lek, ook in de versies die vorige week zijn bijgewerkt. Een update is er nog niet, een tijdelijke maatregel wel: een instelling die je uitzet.",
+    dek: "PHP meldde op 23 oktober nog een lek, ook in de versies met de update van 21 oktober. Een update is er nog niet, een tijdelijke maatregel wel: een instelling die je uitzet.",
     publishedAt: '2026-10-26',
     readMinutes: 4,
     author: { name: 'Stevin Journal', role: 'Redactie' },
