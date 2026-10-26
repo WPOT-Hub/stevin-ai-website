@@ -68,7 +68,7 @@ const VRAGEN: Vraag[] = [
   // antagonist, php update strato).
   {
     v: 'Kan ik mijn huidige site laten ombouwen?',
-    a: 'Meestal wel. We kijken eerst wat je site doet. Een gewone bedrijfssite bouwen we opnieuw op zonder PHP, met je huidige teksten en beelden. Heb je een webshop, een inlog of een boekingssysteem, dan zeggen we vooraf eerlijk wat er zonder PHP wel en niet kan. Tot en met 30 november is dat onze Black Friday-actie: teken je voor een jaar met Stevin.AI, dan bouwen we je nieuwe site gratis, met een jaar hosting erbij. Vijf plekken; de voorwaarden staan op stevin.ai/black-friday.',
+    a: 'Meestal wel. We kijken eerst wat je site doet. Een gewone bedrijfssite bouwen we opnieuw op zonder PHP, met je huidige teksten en beelden. Heb je een webshop, een inlog of een boekingssysteem, dan zeggen we vooraf eerlijk wat er zonder PHP wel en niet kan. Tot en met 30 november geldt onze Black Friday-actie: teken je voor een jaar met Stevin.AI, dan bouwen we je nieuwe site gratis, met een jaar hosting erbij. Vijf plekken; de voorwaarden staan op stevin.ai/black-friday.',
   },
   {
     v: 'Hoe stap ik over van PHP?',
@@ -230,9 +230,8 @@ export default async function PhpLekCheckPage({ params }: Props) {
               oplevert, van klik tot klant.
             </p>
             <p className="m-0">
-              Dit is onze Black Friday-actie: teken tot en met 30 november voor een jaar met Stevin.AI, dan bouwen we je nieuwe
-              website gratis, met een jaar hosting erbij. Vijf plekken, op volgorde van tekenen. Laat je gegevens achter, dan
-              bellen we je.
+              Teken tot en met 30 november voor een jaar met Stevin.AI, dan bouwen we je nieuwe website gratis, met een jaar
+              hosting erbij. Vijf plekken, op volgorde van tekenen. Laat je gegevens achter, dan bellen we je.
             </p>
           </div>
           <div className="mt-10">

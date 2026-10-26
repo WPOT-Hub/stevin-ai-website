@@ -37,8 +37,16 @@ export const metadata: Metadata = {
   description: OMSCHRIJVING,
   alternates: { canonical: URL },
   robots: { index: false, follow: true },
-  openGraph: { title: TITEL, description: OMSCHRIJVING, url: URL, type: 'website', siteName: 'Stevin.AI', locale: 'nl_NL' },
-  twitter: { card: 'summary_large_image', title: TITEL, description: OMSCHRIJVING },
+  openGraph: {
+    title: TITEL,
+    description: OMSCHRIJVING,
+    url: URL,
+    type: 'website',
+    siteName: 'Stevin.AI',
+    locale: 'nl_NL',
+    images: ['https://stevin.ai/opengraph-image'],
+  },
+  twitter: { card: 'summary_large_image', title: TITEL, description: OMSCHRIJVING, images: ['https://stevin.ai/opengraph-image'] },
 }
 
 const label = 'm-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent'
@@ -50,11 +58,11 @@ const KRIJG_JE = [
   },
   {
     t: 'De meting erin',
-    d: 'GA4, server-side meting en conversies die kloppen. Je ziet vanaf de eerste dag wat elke euro oplevert.',
+    d: 'GA4, server-side meting en conversies die kloppen. Je ziet vanaf de eerste dag wat je advertenties opleveren.',
   },
   {
     t: 'Een formulier dat in je CRM landt',
-    d: 'Elke aanvraag komt bij jou binnen, met de bron erbij. Geen aanvragen meer die in een mailbox blijven liggen.',
+    d: 'Elke aanvraag komt bij jou binnen, in je eigen CRM. Geen aanvragen meer die in een mailbox blijven liggen.',
   },
   {
     t: 'Teksten in overleg',
@@ -72,16 +80,16 @@ const KRIJG_JE = [
 
 const STAPPEN = [
   {
-    t: '1. Plan een gesprek, tot en met 30 november',
-    d: 'We kijken naar je cijfers en je huidige site, en zeggen eerlijk of het past. Een halfuur, geen verplichting.',
+    t: '1. Plan een kennismaking, zodat je uiterlijk 30 november kunt tekenen',
+    d: 'We kijken naar je cijfers en je huidige site, en zeggen eerlijk of het past. Een half uur, geen verplichting.',
   },
   {
     t: '2. Je tekent voor een jaar',
     d: 'Wij worden jouw bureau voor 1.399 euro per maand bij jaarbetaling. De opstart blijft maatwerk, met de prijs vooraf.',
   },
   {
-    t: '3. Wij bouwen, daarna adverteren we',
-    d: 'Binnen zes weken nadat je teksten en beelden hebt aangeleverd staat de site. Dan zetten we de campagnes erop.',
+    t: '3. Wij bouwen de site',
+    d: 'Binnen zes weken nadat je teksten en beelden hebt aangeleverd staat hij. Daarna beginnen we met het werk uit je overeenkomst: de meting, de accounts en de campagnes.',
   },
 ]
 
@@ -98,7 +106,7 @@ const VOORWAARDEN = [
 const VRAGEN: Vraag[] = [
   {
     v: 'Waarom geven jullie een website weg?',
-    a: 'Omdat elk traject bij ons toch met de basis begint: de meting, de accounts en de pagina waar je advertenties naartoe sturen. Een site die we zelf bouwen kunnen we vanaf de eerste dag meten. Dat scheelt ons het ombouwen van een site van een ander, en jou een losse opdracht.',
+    a: 'Omdat elk traject bij ons toch met de basis begint: de meting, de accounts en de pagina waar je advertenties naartoe leiden. Een site die we zelf bouwen kunnen we vanaf de eerste dag meten. Dat scheelt ons het ombouwen van een site van een ander, en jou een losse opdracht.',
   },
   {
     v: 'Ik heb al een website. Wat dan?',
@@ -110,7 +118,7 @@ const VRAGEN: Vraag[] = [
   },
   {
     v: 'Wat gebeurt er na dat jaar?',
-    a: 'De site is van jou, op je eigen domein. Je kunt bij ons blijven voor hosting en onderhoud (29 euro per maand, plus 15 euro als de server-side meting doorloopt), of je neemt hem mee. Wat er daarna met het bureauwerk gebeurt, spreken we af in je overeenkomst.',
+    a: 'De site is van jou, op je eigen domein. Je kunt bij ons blijven voor hosting en onderhoud (29 euro per maand, plus 15 euro als de server-side meting doorloopt), of je neemt hem mee. Of je daarna met ons als bureau doorgaat, spreken we af in je overeenkomst.',
   },
   {
     v: 'Kan ik ook per maand betalen?',
@@ -122,7 +130,7 @@ const VRAGEN: Vraag[] = [
   },
   {
     v: 'Hoe weet ik of er nog een plek is?',
-    a: 'Plan een gesprek of mail naar info@stevin.ai. We zeggen meteen hoeveel plekken er nog zijn. Vijf is het aantal dat we in december en januari zelf kunnen bouwen, en daar houden we ons aan.',
+    a: 'Plan een kennismaking of mail naar info@stevin.ai. We zeggen meteen hoeveel plekken er nog zijn. Vijf is het aantal dat we in december en januari zelf kunnen bouwen, en daar houden we ons aan.',
   },
 ]
 
@@ -146,7 +154,7 @@ export default async function BlackFridayPage({ params }: Props) {
           </h1>
           <p className="m-0 mt-6 max-w-[640px] text-[18px] leading-[1.55] text-white/75">
             Teken tot en met 30 november voor een jaar met Stevin.AI als jouw bureau, dan bouwen wij de website waar je
-            advertenties naartoe sturen. Op je eigen domein, op jouw naam, met de meting erin. Vijf plekken, want we bouwen
+            advertenties naartoe leiden. Op je eigen domein, op jouw naam, met de meting erin. Vijf plekken, want we bouwen
             elke site zelf, in december en januari.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -179,8 +187,8 @@ export default async function BlackFridayPage({ params }: Props) {
               koppeling met je CRM.
             </p>
             <p className="m-0">
-              Meestal zetten we die basis neer op een site die iemand anders heeft gebouwd. Bij een jaar bouwen we hem zelf,
-              zonder bouwkosten. Een site die wij bouwen, kunnen we vanaf de eerste dag meten.
+              Meestal zetten we die basis neer op een site die iemand anders heeft gebouwd. Teken je voor een jaar, dan bouwen we hem
+              zelf, zonder bouwkosten. Een site die wij bouwen, kunnen we vanaf de eerste dag meten.
             </p>
           </div>
         </div>
@@ -200,7 +208,7 @@ export default async function BlackFridayPage({ params }: Props) {
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Drie stappen, en dan bouwen wij.
+            Zo werkt het, in drie stappen.
           </h2>
           <Punten items={STAPPEN} kolommen={3} />
         </div>
@@ -228,10 +236,10 @@ export default async function BlackFridayPage({ params }: Props) {
       <section id="gesprek" className="scroll-mt-24 px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[900px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Kijk of het voor jou uitkomt.
+            Past het bij jouw bedrijf?
           </h2>
           <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
-            Kies een moment voor een kennismaking, of laat je gegevens achter. We zeggen meteen hoeveel plekken er nog zijn
+            Plan een kennismaking, of laat je gegevens achter. We zeggen meteen hoeveel plekken er nog zijn
             en of je huidige site vervangen moet worden.
           </p>
           <div className="mt-8">
