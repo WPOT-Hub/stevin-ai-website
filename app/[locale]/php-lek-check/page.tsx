@@ -4,7 +4,6 @@ import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import ContactForm from '@/components/ContactForm'
 import PhpCheck from '@/components/PhpCheck'
-import { Link } from '@/i18n/navigation'
 import NodeWatermerk from '@/components/rethink/NodeWatermerk'
 import { Punten, Vragen, h2Stijl, tekst, type Vraag } from '@/components/rethink/RethinkBlokken'
 
