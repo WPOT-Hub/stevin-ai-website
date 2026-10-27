@@ -321,7 +321,7 @@ export default function RethinkHome() {
 }
 
 // De hero zet kop en knoppen los, zodat op mobiel het brein ertussen kan. Op
-// elke schermmaat alleen de korte zin onder de kop; de blokken eronder
+// elke schermmaat alleen de korte subregel onder de kop; de blokken eronder
 // vertellen de rest (Koen, 10 okt 23:08: "niet gelijk die hele tekst").
 // W-684 (Koen, 27 okt): "Van klik tot klant" als kop, met AI in de regel
 // erboven en de volgorde eerst cijfers, dan AI in de subregel. De regel boven
@@ -339,7 +339,7 @@ function HeroKop() {
         Van klik tot klant.
       </h1>
       <p className="mt-5 text-balance text-[19px] leading-[1.45] text-white/75">
-        Eerst zetten we je marketing en je cijfers goed. Levert dat op, dan bouwen we de AI die het werk van je overneemt.
+        Eerst zetten we je marketing en je cijfers goed. Levert dat wat op, dan bouwen we de AI die het werk van je overneemt.
       </p>
     </>
   )
