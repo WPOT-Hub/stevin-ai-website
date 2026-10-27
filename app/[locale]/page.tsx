@@ -25,7 +25,7 @@ const COPY = {
   nl: {
     hero_sub_1: 'We schrijven op wat je marketing in een gewone week hoort op te leveren, en we zien het als dat niet meer gebeurt. ',
     hero_sub_bold: 'Alles staat op jouw naam.',
-    hero_sub_2: ' Je kijkt zelf mee, en stop je, dan neem je alles mee.',
+    hero_sub_2: ' Je kijkt zelf mee, en stop je, dan blijven je accounts van jou.',
     cta_primary: 'Start de diagnose',
     cta_micro: 'Binnen twee weken weet je wat er klopt en wat niet. Het rapport mag je houden.',
 
@@ -110,7 +110,7 @@ const COPY = {
   en: {
     hero_sub_1: 'We write down what your marketing should bring in during a normal week, and we see it when that stops happening. ',
     hero_sub_bold: 'Everything is in your name.',
-    hero_sub_2: ' You can always look along, and if you stop, you take everything with you.',
+    hero_sub_2: ' You can always look along, and if you stop, your accounts stay yours.',
     cta_primary: 'Start the diagnosis',
     cta_micro: 'Within two weeks you know what is right and what is not. You keep the report.',
 

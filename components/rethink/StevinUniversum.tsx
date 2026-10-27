@@ -39,7 +39,7 @@ import { BRONNEN, BREIN, ADVISOR, KETEN, METINGEN } from './netwerk'
  *     brein, niet onder reduced motion of Beweging uit.
  *   - Geen vraag, geen antwoord en geen signaal meer in het beeld: dat laat
  *     de vraagdemo verderop zien.
- *   - Rond Marktsignalen hangt context van buiten (weer, kermis, subsidie):
+ *   - Rond Marktsignalen hangt context van buiten (kermis, subsidie):
  *     herinneringen van de soort Context, met een kaartje dat zegt wat er
  *     speelt en wat we ermee doen. Ze wisselen mee met de herinneringen.
  *
@@ -144,9 +144,10 @@ const SATELLIETEN: Partial<Record<BronId, string[]>> = {
 // Het beeld in elk glazen rondje: het echte logo waar een bron een merk heeft,
 // anders een eigen dunne lijn-glyph (Koen, 11 okt 20:12). Logo's uit
 // public/logos/merken (herkomst in docs/MERKLOGOS_W535.md). WordPress staat
-// in wit: het grijze logo verdwijnt op het donkere glas. CRM toont HubSpot en
-// Verkoop toont Exact Online, systemen die ook in de logoband staan.
-type Glyph = 'doel' | 'mensen' | 'kaart' | 'telefoon' | 'offerte' | 'signaal' | 'advies'
+// in wit: het grijze logo verdwijnt op het donkere glas. W-677: CRM en
+// Verkoop toonden HubSpot en Exact Online, maar die draaien bij geen klant;
+// nu een eigen glyph, zodat geen logo een koppeling suggereert die er niet is.
+type Glyph = 'doel' | 'mensen' | 'kaart' | 'telefoon' | 'offerte' | 'crm' | 'verkoop' | 'signaal' | 'advies'
 const BEELD: Record<BronId | 'advisor', { logo: string } | { glyph: Glyph }> = {
   doelen: { glyph: 'doel' },
   doelgroepen: { glyph: 'mensen' },
@@ -157,9 +158,9 @@ const BEELD: Record<BronId | 'advisor', { logo: string } | { glyph: Glyph }> = {
   website: { logo: '/logos/merken/wordpress-wit.svg' },
   klantgegevens: { glyph: 'kaart' },
   telefonie: { glyph: 'telefoon' },
-  crm: { logo: '/logos/merken/hubspot.svg' },
+  crm: { glyph: 'crm' },
   offertes: { glyph: 'offerte' },
-  verkoop: { logo: '/logos/merken/exact-online.svg' },
+  verkoop: { glyph: 'verkoop' },
   markt: { glyph: 'signaal' },
   advisor: { glyph: 'advies' },
 }
@@ -199,6 +200,10 @@ function GlyphPaden({ glyph }: { glyph: Glyph }) {
       )
     case 'offerte':
       return <path d="M6 3h8l4 4v14H6zM14 3v4h4M9 11.5h6M9 15h6M9 18.5h3.5" />
+    case 'crm':
+      return <path d="M4 5h16v14H4zM4 9.5h16M7.5 13h9M7.5 16h5.5" />
+    case 'verkoop':
+      return <path d="M3.5 20.5h17M6.5 20.5v-5M11 20.5v-8.5M15.5 20.5v-12" />
     case 'signaal':
       return (
         <>
@@ -244,7 +249,10 @@ export interface Herinnering {
 }
 export const HERINNERINGEN: Herinnering[] = [
   { kort: 'Airco zomer 2026', soort: 'Campagne', wanneer: 'jun tot aug 2026', uitleg: '41 aanvragen in zes weken, vooral via Google. Elf werden een offerte, zes een klant.' },
-  { kort: 'Hittegolf volgende week', soort: 'Context', uitleg: 'Vanaf dinsdag wordt het boven de 30 graden.', actie: 'Budget naar airco, warmtepomp even lager.' },
+  // W-677: was "Hittegolf volgende week" (een weersverwachting) en "Komend
+  // weekend vriest het". Stevin volgt het weer niet; wat het wel onthoudt is
+  // wat er eerder bij hitte en vorst gebeurde.
+  { kort: 'Hittegolf', soort: 'Kennis', wanneer: 'zomer 2026', uitleg: 'Bij hitte kwamen er binnen een dag drie keer zoveel aanvragen voor airco.' },
   { kort: 'Warmtepomp najaar', soort: 'Resultaat', wanneer: 'sep 2026', uitleg: 'Van aanvraag tot offerte duurt gemiddeld negen dagen. Het doel is vijf.' },
   { kort: 'Terugbelafspraak', soort: 'Afspraak', wanneer: 'sinds jan 2026', uitleg: 'Elke aanvraag wordt binnen een werkdag teruggebeld. Wie belt, zet het in het CRM.' },
   { kort: 'Kermis in Prinsenbeek', soort: 'Context', uitleg: 'Vier dagen kermis, het hele dorp is op de been.', actie: 'Meta rond Prinsenbeek dat weekend lager: veel klikken, weinig aanvragen.' },
@@ -253,7 +261,7 @@ export const HERINNERINGEN: Herinnering[] = [
   { kort: 'Subsidieronde Breda open', soort: 'Context', uitleg: 'De gemeente opent een nieuwe ronde voor verduurzaming van woningen.', actie: 'Advertentieteksten aanpassen op de subsidie.' },
   { kort: 'Dakkapellen', soort: 'Kennis', wanneer: 'laatste 12 maanden', uitleg: 'De meeste aanvragen komen uit Breda en Etten-Leur.' },
   { kort: 'Drukke maandag', soort: 'Kennis', wanneer: 'laatste 8 weken', uitleg: 'Op maandag komt een derde van de telefoontjes binnen. Dan worden er ook de meeste gemist.' },
-  { kort: 'Eerste nachtvorst', soort: 'Context', uitleg: 'Komend weekend vriest het voor het eerst.', actie: 'Storingen aan de cv-ketel bovenaan in de advertenties.' },
+  { kort: 'Eerste nachtvorst', soort: 'Kennis', wanneer: 'nov 2025', uitleg: 'Na de eerste vorst kwamen er twee keer zoveel storingsmeldingen voor de cv-ketel binnen.' },
   { kort: 'Zonnepanelen', soort: 'Resultaat', wanneer: '2026', uitleg: 'Minder aanvragen dan vorig jaar. In april is het budget verschoven naar warmtepompen.' },
   { kort: 'Badkamers', soort: 'Resultaat', wanneer: 'laatste 6 maanden', uitleg: 'Een op de drie offertes wordt getekend, gemiddeld voor 11.400 euro.' },
   { kort: 'Herfstvakantie', soort: 'Context', uitleg: 'Een week lang zijn veel gezinnen weg. Vorig jaar kwam er die week meer bezoek en minder aanvragen.', actie: 'Budget die week omlaag, daarna weer op.' },

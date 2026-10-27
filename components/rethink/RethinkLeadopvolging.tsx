@@ -99,7 +99,7 @@ export default function RethinkLeadopvolging({ kop, accent }: { kop: string; acc
             Het gaat ons om opdrachten, niet om klikken.
           </h2>
           <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
-            We volgen elke aanvraag tot offerte, opdracht en omzet. Daarom vertellen we Google en Meta welke aanvraag een opdracht werd. Zo
+            We volgen elke aanvraag tot offerte, opdracht en omzet. Daarom sturen we je campagnes bij op de aanvragen die een opdracht werden. Zo
             weet je welke campagne klanten oplevert, en niet alleen klikken.
           </p>
           <p className="m-0 mt-6 text-[15px]">

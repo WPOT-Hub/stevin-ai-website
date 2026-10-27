@@ -29,10 +29,21 @@ const tekst = 'text-[18px] leading-[1.6] text-[#2A3A54]'
 
 // Echte kleurlogo's (Koen, 10 okt 23:32). Herkomst en controle:
 // docs/MERKLOGOS_W535.md.
-const LOGOS = [
+//
+// W-677 (27 okt 2026): twee rijen. Bovenaan alleen wat bij een klant echt
+// gekoppeld draait (audit 27 okt: Google Ads, GA4, Search Console en
+// GoHighLevel). Al het andere staat onder "Op aanvraag": Meta heeft code maar
+// geen werkende klant, HubSpot alleen de aanmelding, telefonie wordt bij geen
+// klant gemeten. Een logo in de bovenste rij betekent dus: draait nu.
+const GEKOPPELD = [
   { src: '/logos/merken/google-ads.svg', naam: 'Google Ads' },
   { src: '/logos/merken/google-analytics.svg', naam: 'Google Analytics 4' },
   { src: '/logos/merken/google-search-console.svg', naam: 'Search Console' },
+]
+// Zonder logobestand in public/logos/merken: als tekst, in een gewone chip.
+const GEKOPPELD_ZONDER_LOGO = ['GoHighLevel']
+
+const OP_AANVRAAG = [
   { src: '/logos/merken/meta.svg', naam: 'Meta' },
   { src: '/logos/merken/chatgpt.svg', naam: 'ChatGPT Ads' },
   { src: '/logos/merken/facebook.svg', naam: 'Facebook' },
@@ -78,7 +89,7 @@ const UITVOERING = {
   // af wie de telefoon opneemt", na een week aanvragen tellen.
   stappen: [
     'We kijken eerst of je meer werk aankunt.',
-    'We rekenen uit of meer budget loont. Soms is minder slimmer.',
+    'We rekenen uit of meer budget loont. Soms levert minder meer op.',
     'Pas als jij ja zegt, passen we je budget aan.',
     'Na een week laten we zien wat het opleverde.',
   ],
@@ -137,43 +148,67 @@ export default function RethinkHome() {
             </p>
           </div>
         </div>
-        {/* Logo-band: twee rijen chips die langzaam voorbij schuiven. Op mobiel
-            namen de tegels een heel scherm in (Koen, 11 okt 01:16). De extra
-            kopieen per rij zijn alleen voor de naadloze lus en zijn verborgen
-            voor schermlezers. Drie kopieen en hoogstens 1440px breed: met twee
-            was een rij (ongeveer 1030px) smaller dan de band vanaf 1080px
-            breed, en schoof er aan het eind van elke ronde een leeg stuk in
-            beeld (gemeten 11 okt). Onder reduced motion staat alles stil en
-            loopt het af. */}
-        <div className="lb-band relative mx-auto mt-10 max-w-[1440px] space-y-3" aria-label="Systemen die we koppelen">
-          {[LOGOS.slice(0, 7), [...LOGOS.slice(7)]].map((rij, ri) => (
-            <div key={ri} className="lb-rij overflow-hidden">
-              <div className={`lb-spoor flex w-max gap-3 ${ri === 1 ? 'lb-terug' : ''}`}>
-                {[0, 1, 2].map((kopie) => (
-                  <ul key={kopie} className="m-0 flex list-none gap-3 p-0" aria-hidden={kopie > 0 ? true : undefined}>
-                    {rij.map((l) => (
-                      <li
-                        key={l.naam}
-                        className="flex shrink-0 items-center gap-2.5 rounded-full border border-border bg-white py-2 pl-2.5 pr-4 shadow-[0_1px_2px_rgba(10,22,40,0.04)]"
-                      >
-                        <img src={l.src} alt="" width={22} height={22} className="h-[22px] w-[22px] object-contain" loading="lazy" />
-                        <span className="whitespace-nowrap text-[14px] font-medium text-[#2A3A54]">{l.naam}</span>
-                      </li>
-                    ))}
-                    {ri === 1 &&
-                      ZONDER_LOGO.map((naam) => (
-                        <li
-                          key={naam}
-                          className="flex shrink-0 items-center rounded-full border border-dashed border-[#C8D2E0] bg-surface px-4 py-2"
-                        >
-                          <span className="whitespace-nowrap text-[14px] font-medium text-muted">{naam}</span>
-                        </li>
-                      ))}
-                  </ul>
-                ))}
-              </div>
+        {/* W-677: bovenaan wat nu gekoppeld draait, stil en in het midden.
+            Daaronder een rij die langzaam voorbij schuift: wat we op aanvraag
+            inrichten. Op mobiel namen de tegels een heel scherm in (Koen,
+            11 okt 01:16). De extra kopieen van de schuifrij zijn alleen voor
+            de naadloze lus en zijn verborgen voor schermlezers. Drie kopieen
+            en hoogstens 1440px breed, anders schoof er aan het eind van elke
+            ronde een leeg stuk in beeld (gemeten 11 okt). Onder reduced motion
+            staat alles stil en loopt het af. */}
+        <div className="relative mx-auto mt-10 max-w-[1200px]">
+          <p id="nu-gekoppeld" className="m-0 text-center text-[13px] font-semibold uppercase tracking-[0.1em] text-muted">
+            Nu gekoppeld
+          </p>
+          <ul className="m-0 mt-3 flex list-none flex-wrap justify-center gap-3 p-0" aria-labelledby="nu-gekoppeld">
+            {GEKOPPELD.map((l) => (
+              <li
+                key={l.naam}
+                className="flex shrink-0 items-center gap-2.5 rounded-full border border-border bg-white py-2 pl-2.5 pr-4 shadow-[0_1px_2px_rgba(10,22,40,0.04)]"
+              >
+                <img src={l.src} alt="" width={22} height={22} className="h-[22px] w-[22px] object-contain" loading="lazy" />
+                <span className="whitespace-nowrap text-[14px] font-medium text-[#2A3A54]">{l.naam}</span>
+              </li>
+            ))}
+            {GEKOPPELD_ZONDER_LOGO.map((naam) => (
+              <li
+                key={naam}
+                className="flex shrink-0 items-center rounded-full border border-border bg-white px-4 py-2 shadow-[0_1px_2px_rgba(10,22,40,0.04)]"
+              >
+                <span className="whitespace-nowrap text-[14px] font-medium text-[#2A3A54]">{naam}</span>
+              </li>
+            ))}
+          </ul>
+          <p id="op-aanvraag" className="m-0 mt-8 text-center text-[13px] font-semibold uppercase tracking-[0.1em] text-muted">
+            Op aanvraag
+          </p>
+        </div>
+        <div className="lb-band relative mx-auto mt-3 max-w-[1440px]" role="group" aria-labelledby="op-aanvraag">
+          <div className="lb-rij overflow-hidden">
+            <div className="lb-spoor flex w-max gap-3">
+              {[0, 1, 2].map((kopie) => (
+                <ul key={kopie} className="m-0 flex list-none gap-3 p-0" aria-hidden={kopie > 0 ? true : undefined}>
+                  {OP_AANVRAAG.map((l) => (
+                    <li
+                      key={l.naam}
+                      className="flex shrink-0 items-center gap-2.5 rounded-full border border-border bg-white py-2 pl-2.5 pr-4 shadow-[0_1px_2px_rgba(10,22,40,0.04)]"
+                    >
+                      <img src={l.src} alt="" width={22} height={22} className="h-[22px] w-[22px] object-contain" loading="lazy" />
+                      <span className="whitespace-nowrap text-[14px] font-medium text-[#2A3A54]">{l.naam}</span>
+                    </li>
+                  ))}
+                  {ZONDER_LOGO.map((naam) => (
+                    <li
+                      key={naam}
+                      className="flex shrink-0 items-center rounded-full border border-dashed border-[#C8D2E0] bg-surface px-4 py-2"
+                    >
+                      <span className="whitespace-nowrap text-[14px] font-medium text-muted">{naam}</span>
+                    </li>
+                  ))}
+                </ul>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
@@ -203,10 +238,12 @@ export default function RethinkHome() {
               {/* Onder het paneel een zin en dezelfde knop als in de hero, in
                   de hoofdstijl (logoblauw met witte tekst). Google en
                   Meta staan hier ook voor wie de demo niet invult (Koen, 11 okt
-                  09:27: "tuurlijk doen we dat straks wel"). */}
+                  09:27: "tuurlijk doen we dat straks wel"). W-677: Google en
+                  Meta automatisch laten weten welke aanvraag een opdracht werd
+                  is nog geen functie (W-126); de zin gaat nu over ons werk. */}
               <div className="mx-auto mt-8 flex max-w-[640px] flex-col items-center gap-5 text-center">
                 <p className={`${tekst} m-0 text-balance`}>
-                  Het gaat ons om opdrachten, niet om klikken. Daarom vertellen we Google en Meta welke aanvraag een opdracht werd.
+                  Het gaat ons om opdrachten, niet om klikken. Daarom sturen we je campagnes bij op de aanvragen die een opdracht werden.
                 </p>
                 <Link
                   href="/kennismaking"
@@ -336,7 +373,7 @@ function HeroKop() {
         Rethink your marketing.
       </h1>
       <p className="mt-5 text-balance text-[19px] leading-[1.45] text-white/75">
-        Al je marketing en sales in één brein. Het weet wat je wilt bereiken, en zegt wat er nu moet gebeuren.
+        Je marketing en sales op één plek. Je ziet wat er speelt en wat er nu moet gebeuren.
       </p>
     </>
   )

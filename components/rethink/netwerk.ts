@@ -33,10 +33,15 @@ export interface NetwerkNode<Id extends NodeId = NodeId> {
   uitleg: string
 }
 
+// W-677 (27 okt 2026): ChatGPT Ads, bol, Telefonie en Offertes zijn bij geen
+// klant gekoppeld. Ze blijven in het voorbeeld (Koen, 11 okt: wat ons team
+// per klant inricht mag), maar hun uitleg zegt dat het op aanvraag is. Weer
+// staat niet meer bij Marktsignalen: Stevin volgt het weer niet. Doelen staan
+// niet als data in Stevin: het zijn afspraken met ons team.
 // Volgorde = volgorde op de boog, van boven naar beneden: eerst wat je wilt,
 // dan wat er gebeurt, dan wat het oplevert, en onderaan de markt.
 export const BRONNEN: NetwerkNode<BronId>[] = [
-  { id: 'doelen', label: 'Bedrijfsdoelen', uitleg: 'Wat je dit jaar wilt bereiken: omzet, regio, soort klant.' },
+  { id: 'doelen', label: 'Afgesproken doelen', uitleg: 'Wat je met ons afspreekt: omzet, regio, soort klant.' },
   { id: 'doelgroepen', label: 'Doelgroepen', uitleg: 'Voor wie je werkt en wat die klant belangrijk vindt.' },
   // Campagnes is gesplitst in Google Ads en Meta, zodat het brein de echte
   // logo's toont (Koen, 11 okt 20:12).
@@ -45,24 +50,24 @@ export const BRONNEN: NetwerkNode<BronId>[] = [
   // Adverteren in ChatGPT kan in Nederland sinds eind augustus 2026 (Koen,
   // 11 okt 23:04). Nagekeken op help.openai.com, "Ads Manager Availability",
   // 11 okt 2026: Netherlands staat op Available.
-  { id: 'chatgpt_ads', label: 'ChatGPT Ads', uitleg: 'Wat je in ChatGPT uitgeeft en wat het oplevert.' },
+  { id: 'chatgpt_ads', label: 'ChatGPT Ads', uitleg: 'Wat je in ChatGPT uitgeeft en wat het oplevert. Richten we op aanvraag in.' },
   // bol (Koen, 12 okt 15:42: "wil ook het logotje van bol.com in onze brein").
   // Te koppelen via de Retailer API (orders, retouren) en de Advertising API
   // (cijfers per campagne); zie docs/MERKLOGOS_W535.md voor het logo.
-  { id: 'bol', label: 'bol', uitleg: 'Wat je via bol verkoopt en wat je advertenties daar opleveren.' },
+  { id: 'bol', label: 'bol', uitleg: 'Wat je via bol verkoopt en wat je advertenties daar opleveren. Richten we op aanvraag in.' },
   { id: 'website', label: 'Website', uitleg: 'Bezoek, formulieren en contactaanvragen.' },
   { id: 'klantgegevens', label: 'Klantgegevens', uitleg: 'Wie jouw klanten zijn en wat ze eerder kochten.' },
-  { id: 'telefonie', label: 'Telefonie', uitleg: 'Telefoontjes die uit je marketing komen.' },
+  { id: 'telefonie', label: 'Telefonie', uitleg: 'Telefoontjes die uit je marketing komen. Richten we op aanvraag in.' },
   { id: 'crm', label: 'CRM', uitleg: 'Wat er met een aanvraag gebeurde en wie hem oppakte.' },
-  { id: 'offertes', label: 'Offertes', uitleg: 'Welke aanvragen een offerte werden, en voor welk bedrag.' },
+  { id: 'offertes', label: 'Offertes', uitleg: 'Welke aanvragen een offerte werden, en voor welk bedrag. Richten we op aanvraag in.' },
   { id: 'verkoop', label: 'Verkoop', uitleg: 'Welke offertes een klant werden.' },
-  { id: 'markt', label: 'Marktsignalen', uitleg: 'Wat er buiten speelt: weer, seizoen, feestdagen, de regio en concurrenten.' },
+  { id: 'markt', label: 'Marktsignalen', uitleg: 'Wat er buiten speelt: seizoen, feestdagen, de regio en concurrenten.' },
 ]
 
 export const BREIN: NetwerkNode = {
   id: 'brein',
   label: 'Stevin-brein',
-  uitleg: 'Legt de bronnen naast elkaar en naast wat je wilt bereiken.',
+  uitleg: 'Legt de bronnen naast elkaar en naast wat je met ons afspreekt.',
 }
 
 export const ADVISOR: NetwerkNode = {
