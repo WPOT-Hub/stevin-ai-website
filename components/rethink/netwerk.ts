@@ -36,11 +36,12 @@ export interface NetwerkNode<Id extends NodeId = NodeId> {
 // W-677 (27 okt 2026): ChatGPT Ads, bol, Telefonie en Offertes zijn bij geen
 // klant gekoppeld. Ze blijven in het voorbeeld (Koen, 11 okt: wat ons team
 // per klant inricht mag), maar hun uitleg zegt dat het op aanvraag is. Weer
-// staat niet meer bij Marktsignalen: Stevin volgt het weer niet.
+// staat niet meer bij Marktsignalen: Stevin volgt het weer niet. Doelen staan
+// niet als data in Stevin: het zijn afspraken met ons team.
 // Volgorde = volgorde op de boog, van boven naar beneden: eerst wat je wilt,
 // dan wat er gebeurt, dan wat het oplevert, en onderaan de markt.
 export const BRONNEN: NetwerkNode<BronId>[] = [
-  { id: 'doelen', label: 'Bedrijfsdoelen', uitleg: 'Wat je dit jaar wilt bereiken: omzet, regio, soort klant.' },
+  { id: 'doelen', label: 'Afgesproken doelen', uitleg: 'Wat je met ons afspreekt: omzet, regio, soort klant.' },
   { id: 'doelgroepen', label: 'Doelgroepen', uitleg: 'Voor wie je werkt en wat die klant belangrijk vindt.' },
   // Campagnes is gesplitst in Google Ads en Meta, zodat het brein de echte
   // logo's toont (Koen, 11 okt 20:12).
@@ -66,7 +67,7 @@ export const BRONNEN: NetwerkNode<BronId>[] = [
 export const BREIN: NetwerkNode = {
   id: 'brein',
   label: 'Stevin-brein',
-  uitleg: 'Legt de bronnen naast elkaar en naast wat je wilt bereiken.',
+  uitleg: 'Legt de bronnen naast elkaar en naast wat je met ons afspreekt.',
 }
 
 export const ADVISOR: NetwerkNode = {

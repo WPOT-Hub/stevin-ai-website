@@ -144,9 +144,10 @@ const SATELLIETEN: Partial<Record<BronId, string[]>> = {
 // Het beeld in elk glazen rondje: het echte logo waar een bron een merk heeft,
 // anders een eigen dunne lijn-glyph (Koen, 11 okt 20:12). Logo's uit
 // public/logos/merken (herkomst in docs/MERKLOGOS_W535.md). WordPress staat
-// in wit: het grijze logo verdwijnt op het donkere glas. CRM toont HubSpot en
-// Verkoop toont Exact Online, systemen die ook in de logoband staan.
-type Glyph = 'doel' | 'mensen' | 'kaart' | 'telefoon' | 'offerte' | 'signaal' | 'advies'
+// in wit: het grijze logo verdwijnt op het donkere glas. W-677: CRM en
+// Verkoop toonden HubSpot en Exact Online, maar die draaien bij geen klant;
+// nu een eigen glyph, zodat geen logo een koppeling suggereert die er niet is.
+type Glyph = 'doel' | 'mensen' | 'kaart' | 'telefoon' | 'offerte' | 'crm' | 'verkoop' | 'signaal' | 'advies'
 const BEELD: Record<BronId | 'advisor', { logo: string } | { glyph: Glyph }> = {
   doelen: { glyph: 'doel' },
   doelgroepen: { glyph: 'mensen' },
@@ -157,9 +158,9 @@ const BEELD: Record<BronId | 'advisor', { logo: string } | { glyph: Glyph }> = {
   website: { logo: '/logos/merken/wordpress-wit.svg' },
   klantgegevens: { glyph: 'kaart' },
   telefonie: { glyph: 'telefoon' },
-  crm: { logo: '/logos/merken/hubspot.svg' },
+  crm: { glyph: 'crm' },
   offertes: { glyph: 'offerte' },
-  verkoop: { logo: '/logos/merken/exact-online.svg' },
+  verkoop: { glyph: 'verkoop' },
   markt: { glyph: 'signaal' },
   advisor: { glyph: 'advies' },
 }
@@ -199,6 +200,10 @@ function GlyphPaden({ glyph }: { glyph: Glyph }) {
       )
     case 'offerte':
       return <path d="M6 3h8l4 4v14H6zM14 3v4h4M9 11.5h6M9 15h6M9 18.5h3.5" />
+    case 'crm':
+      return <path d="M4 5h16v14H4zM4 9.5h16M7.5 13h9M7.5 16h5.5" />
+    case 'verkoop':
+      return <path d="M3.5 20.5h17M6.5 20.5v-5M11 20.5v-8.5M15.5 20.5v-12" />
     case 'signaal':
       return (
         <>

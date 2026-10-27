@@ -89,7 +89,7 @@ const UITVOERING = {
   // af wie de telefoon opneemt", na een week aanvragen tellen.
   stappen: [
     'We kijken eerst of je meer werk aankunt.',
-    'We rekenen uit of meer budget loont. Soms is minder slimmer.',
+    'We rekenen uit of meer budget loont. Soms levert minder meer op.',
     'Pas als jij ja zegt, passen we je budget aan.',
     'Na een week laten we zien wat het opleverde.',
   ],
@@ -238,10 +238,12 @@ export default function RethinkHome() {
               {/* Onder het paneel een zin en dezelfde knop als in de hero, in
                   de hoofdstijl (logoblauw met witte tekst). Google en
                   Meta staan hier ook voor wie de demo niet invult (Koen, 11 okt
-                  09:27: "tuurlijk doen we dat straks wel"). */}
+                  09:27: "tuurlijk doen we dat straks wel"). W-677: Google en
+                  Meta automatisch laten weten welke aanvraag een opdracht werd
+                  is nog geen functie (W-126); de zin gaat nu over ons werk. */}
               <div className="mx-auto mt-8 flex max-w-[640px] flex-col items-center gap-5 text-center">
                 <p className={`${tekst} m-0 text-balance`}>
-                  Het gaat ons om opdrachten, niet om klikken. Daarom vertellen we Google en Meta welke aanvraag een opdracht werd.
+                  Het gaat ons om opdrachten, niet om klikken. Daarom sturen we je campagnes bij op de aanvragen die een opdracht werden.
                 </p>
                 <Link
                   href="/kennismaking"

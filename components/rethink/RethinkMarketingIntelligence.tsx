@@ -90,7 +90,7 @@ export default function RethinkMarketingIntelligence({ kop, accent }: { kop: str
           Wat marketing intelligence bij Stevin betekent
         </h2>
         <p className="m-0 mt-6 max-w-[620px] text-[18px] leading-[1.6] text-white/75">
-          Al je marketing en sales in één brein. Het weet wat je wilt bereiken, en zegt wat er nu moet gebeuren. Je data blijft van jou.
+          Je marketing en sales op één plek. Je ziet wat er speelt en wat er nu moet gebeuren. Je data blijft van jou.
         </p>
         <Punten items={STAPPEN} donker />
         <p className="m-0 mt-10 text-[15px]">

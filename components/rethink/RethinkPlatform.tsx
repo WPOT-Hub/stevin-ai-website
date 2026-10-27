@@ -63,7 +63,7 @@ export default function RethinkPlatform() {
             ))}
           </ol>
           <div className={`mt-10 max-w-[680px] space-y-5 ${tekst}`}>
-            <p className="m-0">We meten door tot omzet. Daarom vertellen we Google en Meta welke aanvraag een opdracht werd.</p>
+            <p className="m-0">We meten door tot omzet. Daarom sturen we je campagnes bij op de aanvragen die een opdracht werden.</p>
           </div>
         </div>
       </section>

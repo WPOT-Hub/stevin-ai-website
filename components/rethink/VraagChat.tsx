@@ -102,7 +102,7 @@ function slotTekst(opdrachten: number, nogNiet: number) {
   // functie (W-126), dus het blijft bij wat ons team met het antwoord doet.
   return [
     opdrachten > 0
-      ? 'Mooi. Daar sturen we je campagnes op bij.'
+      ? 'Mooi. Daar sturen wij je campagnes op bij.'
       : nogNiet === 0
         ? 'Genoteerd. Dat nemen we mee in je campagnes.'
         : '',

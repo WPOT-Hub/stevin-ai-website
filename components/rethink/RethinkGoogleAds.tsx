@@ -110,8 +110,8 @@ export default function RethinkGoogleAds() {
             Het gaat ons om opdrachten, niet om klikken.
           </h2>
           <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
-            We meten tot omzet: van klik naar aanvraag, telefoontje, offerte, opdracht en omzet. Daarom vertellen we Google welke aanvraag
-            een opdracht werd.
+            We meten tot omzet: van klik naar aanvraag, telefoontje, offerte, opdracht en omzet. Daarom sturen we je campagnes bij op de
+            aanvragen die een opdracht werden.
           </p>
         </div>
       </section>
