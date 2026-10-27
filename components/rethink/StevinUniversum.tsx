@@ -39,7 +39,7 @@ import { BRONNEN, BREIN, ADVISOR, KETEN, METINGEN } from './netwerk'
  *     brein, niet onder reduced motion of Beweging uit.
  *   - Geen vraag, geen antwoord en geen signaal meer in het beeld: dat laat
  *     de vraagdemo verderop zien.
- *   - Rond Marktsignalen hangt context van buiten (weer, kermis, subsidie):
+ *   - Rond Marktsignalen hangt context van buiten (kermis, subsidie):
  *     herinneringen van de soort Context, met een kaartje dat zegt wat er
  *     speelt en wat we ermee doen. Ze wisselen mee met de herinneringen.
  *
@@ -244,7 +244,10 @@ export interface Herinnering {
 }
 export const HERINNERINGEN: Herinnering[] = [
   { kort: 'Airco zomer 2026', soort: 'Campagne', wanneer: 'jun tot aug 2026', uitleg: '41 aanvragen in zes weken, vooral via Google. Elf werden een offerte, zes een klant.' },
-  { kort: 'Hittegolf volgende week', soort: 'Context', uitleg: 'Vanaf dinsdag wordt het boven de 30 graden.', actie: 'Budget naar airco, warmtepomp even lager.' },
+  // W-677: was "Hittegolf volgende week" (een weersverwachting) en "Komend
+  // weekend vriest het". Stevin volgt het weer niet; wat het wel onthoudt is
+  // wat er eerder bij hitte en vorst gebeurde.
+  { kort: 'Hittegolf', soort: 'Kennis', wanneer: 'zomer 2026', uitleg: 'Bij hitte kwamen er binnen een dag drie keer zoveel aanvragen voor airco.' },
   { kort: 'Warmtepomp najaar', soort: 'Resultaat', wanneer: 'sep 2026', uitleg: 'Van aanvraag tot offerte duurt gemiddeld negen dagen. Het doel is vijf.' },
   { kort: 'Terugbelafspraak', soort: 'Afspraak', wanneer: 'sinds jan 2026', uitleg: 'Elke aanvraag wordt binnen een werkdag teruggebeld. Wie belt, zet het in het CRM.' },
   { kort: 'Kermis in Prinsenbeek', soort: 'Context', uitleg: 'Vier dagen kermis, het hele dorp is op de been.', actie: 'Meta rond Prinsenbeek dat weekend lager: veel klikken, weinig aanvragen.' },
@@ -253,7 +256,7 @@ export const HERINNERINGEN: Herinnering[] = [
   { kort: 'Subsidieronde Breda open', soort: 'Context', uitleg: 'De gemeente opent een nieuwe ronde voor verduurzaming van woningen.', actie: 'Advertentieteksten aanpassen op de subsidie.' },
   { kort: 'Dakkapellen', soort: 'Kennis', wanneer: 'laatste 12 maanden', uitleg: 'De meeste aanvragen komen uit Breda en Etten-Leur.' },
   { kort: 'Drukke maandag', soort: 'Kennis', wanneer: 'laatste 8 weken', uitleg: 'Op maandag komt een derde van de telefoontjes binnen. Dan worden er ook de meeste gemist.' },
-  { kort: 'Eerste nachtvorst', soort: 'Context', uitleg: 'Komend weekend vriest het voor het eerst.', actie: 'Storingen aan de cv-ketel bovenaan in de advertenties.' },
+  { kort: 'Eerste nachtvorst', soort: 'Kennis', wanneer: 'nov 2025', uitleg: 'Na de eerste vorst kwamen er twee keer zoveel storingsmeldingen voor de cv-ketel binnen.' },
   { kort: 'Zonnepanelen', soort: 'Resultaat', wanneer: '2026', uitleg: 'Minder aanvragen dan vorig jaar. In april is het budget verschoven naar warmtepompen.' },
   { kort: 'Badkamers', soort: 'Resultaat', wanneer: 'laatste 6 maanden', uitleg: 'Een op de drie offertes wordt getekend, gemiddeld voor 11.400 euro.' },
   { kort: 'Herfstvakantie', soort: 'Context', uitleg: 'Een week lang zijn veel gezinnen weg. Vorig jaar kwam er die week meer bezoek en minder aanvragen.', actie: 'Budget die week omlaag, daarna weer op.' },

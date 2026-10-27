@@ -97,10 +97,12 @@ function push(event: string, data: Record<string, unknown> = {}) {
 
 function slotTekst(opdrachten: number, nogNiet: number) {
   // In een stem, en elk antwoord eindigt bij wat wij doen (verkoopsynthese
-  // 11 okt). Na een Ja: Google en Meta (Koen, 11 okt 09:27).
+  // 11 okt). Na een Ja stond hier dat we het aan Google en Meta doorgeven
+  // (Koen, 11 okt 09:27). W-677: die terugkoppeling bestaat nog niet als
+  // functie (W-126), dus het blijft bij wat ons team met het antwoord doet.
   return [
     opdrachten > 0
-      ? 'Mooi. Dat geven we door aan Google en Meta, dan zoeken ze meer van zulke klanten.'
+      ? 'Mooi. Daar sturen we je campagnes op bij.'
       : nogNiet === 0
         ? 'Genoteerd. Dat nemen we mee in je campagnes.'
         : '',

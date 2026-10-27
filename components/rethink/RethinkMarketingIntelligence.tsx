@@ -64,7 +64,7 @@ export default function RethinkMarketingIntelligence({ kop, accent }: { kop: str
   return (
     <main className="bg-white">
       <PaginaKop
-        brein={{ herinnering: 'Hittegolf volgende week' }}
+        brein={{ herinnering: 'Hittegolf' }}
         eyebrow="Marketing intelligence"
         kop={kop}
         accent={accent}
