@@ -48,6 +48,10 @@ const VRAGEN: Vraag[] = [
     a: 'De update tegen de lekken van 21 oktober zit in PHP 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Elke eerdere versie in die reeksen heeft die lekken. Voor PHP 8.1 en ouder brengt PHP geen nieuwe release meer uit; daar bestaan alleen losse reparaties. Let op: het lek van 23 oktober zit ook in deze bijgewerkte versies.',
   },
   {
+    v: 'Wordt het lek al misbruikt?',
+    a: 'Ja. Amazon zag al op 17 oktober een aanvalspoging, vier dagen voor de bekendmaking, en meldt nu breed misbruik. Op 26 oktober zette de Amerikaanse cyberdienst CISA beide lekken van 21 oktober op haar lijst van lekken die actief worden misbruikt. Draait je site nog op een versie zonder de update, regel die dan vandaag.',
+  },
+  {
     v: 'Is er na 21 oktober nog een lek gevonden?',
     a: 'Ja. Op 23 oktober meldde PHP een derde lek, CVE-2026-115560. Het werkt alleen bij een ongebruikelijke combinatie van instellingen en code, en zit ook in de bijgewerkte versies. Een update komt met de volgende gewone release. Tot dan raadt PHP aan om session.upload_progress.enabled op 0 te zetten, in php.ini of de serverconfiguratie.',
   },
@@ -170,6 +174,10 @@ export default async function PhpLekCheckPage({ params }: Props) {
               8.4.27, 8.3.36 en 8.2.35. Voor PHP 8.1 en ouder komt er geen nieuwe release meer.
             </p>
             <p className="m-0">
+              De lekken worden inmiddels actief misbruikt. Op 26 oktober zette de Amerikaanse cyberdienst CISA ze op haar lijst van
+              misbruikte lekken; de eerste aanvalspoging was al op 17 oktober, vier dagen voor de bekendmaking.
+            </p>
+            <p className="m-0">
               Op 23 oktober meldde PHP nog een lek. Dat zit ook in de bijgewerkte versies, maar werkt alleen bij een ongebruikelijke
               combinatie van instellingen en code. Een update komt met de volgende gewone release; tot dan raadt PHP aan om
               session.upload_progress.enabled op 0 te zetten.{' '}
@@ -191,6 +199,15 @@ export default async function PhpLekCheckPage({ params }: Props) {
                 rel="noopener noreferrer"
               >
                 waarschuwing van het NCSC
+              </a>
+              ,{' '}
+              <a
+                className="underline"
+                href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                lijst van misbruikte lekken van CISA
               </a>{' '}
               en het{' '}
               <a
