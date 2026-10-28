@@ -1609,6 +1609,12 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       <p>
         PHP verwacht dat die opzet in de praktijk weinig voorkomt. Daarom komt de echte oplossing met de volgende gewone release, samen met een volledige beschrijving van het lek. Een datum noemt PHP niet.
       </p>
+      <h2>Update 28 oktober: de lekken van 21 oktober worden misbruikt</h2>
+      <p>
+        De twee lekken van 21 oktober worden inmiddels actief misbruikt. De Amerikaanse cyberdienst CISA zette CVE-2026-109618 en CVE-2026-109619 op 26 oktober op haar{' '}
+        <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">lijst van lekken die actief worden misbruikt</a>. Amerikaanse overheidsdiensten moeten ze uiterlijk 29 oktober hebben gedicht. Volgens{' '}
+        <a href="https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote" target="_blank" rel="noopener noreferrer">Tenable</a> zag Amazon de eerste aanvalspoging al op 17 oktober, vier dagen voor de bekendmaking. Draait je site nog zonder de update van 21 oktober, regel die dan vandaag. Voor het derde lek is nog geen release en zijn geen aanvallen gemeld.
+      </p>
       <h2>Bijgewerkt is niet genoeg</h2>
       <p>
         De update van 21 oktober helpt hier niet tegen. Volgens{' '}
@@ -1640,7 +1646,9 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       <p>
         Bronnen: <a href="https://www.php.net/archive/2026.php" target="_blank" rel="noopener noreferrer">PHP</a>,{' '}
         <a href="https://www.ncsc.nl/en/alerts/update-php-vulnerabilities-remain-a-reason-for-immediate-patching" target="_blank" rel="noopener noreferrer">NCSC</a>,{' '}
-        <a href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection/" target="_blank" rel="noopener noreferrer">Cloudflare</a> en{' '}
+        <a href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection/" target="_blank" rel="noopener noreferrer">Cloudflare</a>,{' '}
+        <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">CISA</a>,{' '}
+        <a href="https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote" target="_blank" rel="noopener noreferrer">Tenable</a> en{' '}
         <a href="https://www.bleepingcomputer.com/news/security/php-shares-mitigation-for-new-and-unpatched-rce-vulnerability/" target="_blank" rel="noopener noreferrer">BleepingComputer</a>.
       </p>
     </>
