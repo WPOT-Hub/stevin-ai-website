@@ -78,16 +78,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       // Zelfde title en description als de homepage (vindbaarheidstoets 11 okt,
       // A2 en A4): geen "Alles blijft van jou" en geen "dag en nacht" meer.
       title: {
-        default: 'Stevin.AI · Marketingbureau voor het mkb',
+        default: 'Stevin.AI · AI-marketingbureau voor het mkb',
         template: '%s | Stevin.AI',
       },
-      description: 'Stevin.AI doet de marketing van mkb-bedrijven. Jij ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.',
+      description: 'Van klik tot klant. Stevin.AI zet je marketing en je cijfers goed, en bouwt daarna de AI die het werk overneemt. We verdienen niets aan je advertentiebudget.',
       openGraph: {
         type: 'website',
         locale: 'nl_NL',
         siteName: 'Stevin.AI',
-        title: 'Stevin.AI · Marketingbureau voor het mkb',
-        description: 'Stevin.AI doet de marketing van mkb-bedrijven. Jij ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.',
+        title: 'Stevin.AI · AI-marketingbureau voor het mkb',
+        description: 'Van klik tot klant. Stevin.AI zet je marketing en je cijfers goed, en bouwt daarna de AI die het werk overneemt. We verdienen niets aan je advertentiebudget.',
         url: 'https://stevin.ai',
         images: [
           {
@@ -101,8 +101,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'Stevin.AI · Marketingbureau voor het mkb',
-        description: 'Stevin.AI doet de marketing van mkb-bedrijven. Jij ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.',
+        title: 'Stevin.AI · AI-marketingbureau voor het mkb',
+        description: 'Van klik tot klant. Stevin.AI zet je marketing en je cijfers goed, en bouwt daarna de AI die het werk overneemt. We verdienen niets aan je advertentiebudget.',
         images: ['/opengraph-image'],
       },
     }

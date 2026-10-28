@@ -185,9 +185,12 @@ const COPY = {
 // merk voorop en "marketingbureau" erin, in het Nederlands. De description zegt
 // alleen wat ook op de pagina staat. Canonical, hreflang, RSS en de noindex
 // voor previews blijven zoals ze waren.
-const TITEL_NL = 'Stevin.AI · Marketingbureau voor het mkb'
+// W-684 (Koen, 27 okt): de title is gelijk aan de regel boven de kop. Hij dekt
+// "marketingbureau mkb" nog steeds en "ai marketing bureau" erbij
+// (docs/zoekintentie/stevin.ai.md in de Hub); de description begint met de kop.
+const TITEL_NL = 'Stevin.AI · AI-marketingbureau voor het mkb'
 const BESCHRIJVING_NL =
-  'Stevin.AI doet de marketing van mkb-bedrijven. Jij ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.'
+  'Van klik tot klant. Stevin.AI zet je marketing en je cijfers goed, en bouwt daarna de AI die het werk overneemt. We verdienen niets aan je advertentiebudget.'
 
 // Preview-deploys (Vercel preview env) mogen nooit geindexeerd worden,
 // productie wel.
