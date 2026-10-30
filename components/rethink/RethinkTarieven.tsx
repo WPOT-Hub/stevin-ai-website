@@ -96,6 +96,14 @@ const VRAGEN = [
     a: 'Ja. Staat alles goed, dan ga je naar vanaf 399 per maand en voeren jij, je team of jouw agents het werk uit. Terug kan ook.',
   },
   {
+    // W-702 (30 okt 2026): de vergelijkingslijsten van bureaus (AI Digitals,
+    // Searchlab) lezen de contractduur alleen van de site; die stond alleen in
+    // artikel 11 van de voorwaarden. Jaarbetaling bewust niet genoemd: wat er
+    // gebeurt als je dan eerder stopt is nog niet besloten (beslislijst 6 okt, punt 2).
+    v: 'Zit ik ergens aan vast?',
+    a: 'Betaal je per maand, dan kun je maandelijks opzeggen, tegen het einde van de lopende maand. Zo staat het in onze voorwaarden.',
+  },
+  {
     v: 'Wat als ik meer vestigingen of merken heb?',
     a: 'De tarieven gelden voor een bedrijf met een merk en een vestiging of webshop. Meer vestigingen, merken of webshops kosten meer. Hoeveel hoor je in de kennismaking.',
   },
