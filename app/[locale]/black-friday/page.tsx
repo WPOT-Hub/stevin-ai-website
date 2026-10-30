@@ -126,7 +126,7 @@ const VRAGEN: Vraag[] = [
   },
   {
     v: 'Geldt dit ook in België?',
-    a: 'Ja, voor bedrijven in Vlaanderen net zo goed als in Nederland. De prijzen zijn exclusief btw.',
+    a: 'Ja, voor bedrijven in Vlaanderen net zo goed als in Nederland. De prijzen zijn exclusief btw. Voor een Belgisch bedrijf met een btw-nummer wordt de btw verlegd: op onze factuur staat geen Nederlandse btw en je geeft de btw zelf aan in België.',
   },
   {
     v: 'Hoe weet ik of er nog een plek is?',
