@@ -1613,7 +1613,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       <p>
         De twee lekken van 21 oktober worden inmiddels actief misbruikt. De Amerikaanse cyberdienst CISA zette CVE-2026-109618 en CVE-2026-109619 op 26 oktober op haar{' '}
         <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">lijst van lekken die actief worden misbruikt</a>. Amerikaanse overheidsdiensten moeten ze uiterlijk 29 oktober hebben gedicht. Volgens{' '}
-        <a href="https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote" target="_blank" rel="noopener noreferrer">Tenable</a> zag Amazon de eerste aanvalspoging al op 17 oktober, vier dagen voor de bekendmaking. Draait je site nog zonder de update van 21 oktober, regel die dan vandaag. Voor het derde lek is nog geen release en zijn geen aanvallen gemeld.
+        <a href="https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote" target="_blank" rel="noopener noreferrer">Tenable</a> zag Amazon de eerste aanvalspoging al op 17 oktober, vier dagen voor de bekendmaking. Draait je site nog zonder de update van 21 oktober, regel die dan vandaag. Voor het derde lek is nog geen release. Wel staat er sinds 23 oktober openbare aanvalscode voor online, op GitHub; aanvallen zijn nog niet gemeld. Zet <code>session.upload_progress.enabled</code> dus nu op 0, niet pas later.
       </p>
       <h2>Bijgewerkt is niet genoeg</h2>
       <p>
