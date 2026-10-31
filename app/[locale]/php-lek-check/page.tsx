@@ -53,7 +53,7 @@ const VRAGEN: Vraag[] = [
   },
   {
     v: 'Is er na 21 oktober nog een lek gevonden?',
-    a: 'Ja. Op 23 oktober meldde PHP een derde lek, CVE-2026-115560. Het werkt alleen bij een ongebruikelijke combinatie van instellingen en code, en zit ook in de bijgewerkte versies. Een update komt met de volgende gewone release. Tot dan raadt PHP aan om session.upload_progress.enabled op 0 te zetten, in php.ini of de serverconfiguratie.',
+    a: 'Ja. Op 23 oktober meldde PHP een derde lek, CVE-2026-115560. Het werkt alleen bij een ongebruikelijke combinatie van instellingen en code, en zit ook in de bijgewerkte versies. Een update komt met de volgende gewone release. Tot dan raadt PHP aan om session.upload_progress.enabled op 0 te zetten, in php.ini of de serverconfiguratie. Sinds 23 oktober staat er openbare aanvalscode voor dit lek online; aanvallen zijn nog niet gemeld.',
   },
   {
     v: 'Helpt het als ik WordPress en mijn plugins bijwerk?',

@@ -201,7 +201,7 @@ const allArticles: Article[] = [
     title: "Derde PHP-lek: controleer of je website risico loopt",
     dek: "PHP meldde op 23 oktober nog een lek, ook in de versies met de update van 21 oktober. Een update is er nog niet, een tijdelijke maatregel wel: een instelling die je uitzet.",
     publishedAt: '2026-10-26',
-    updatedAt: '2026-10-28',
+    updatedAt: '2026-10-31',
     readMinutes: 4,
     author: { name: 'Stevin Journal', role: 'Redactie' },
     posterStyle: 'gradient' as const,
