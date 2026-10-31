@@ -85,7 +85,7 @@ const STAPPEN = [
   },
   {
     t: '2. Je tekent voor een jaar',
-    d: 'Wij worden jouw bureau voor 1.399 euro per maand bij jaarbetaling. De opstart blijft maatwerk, met de prijs vooraf.',
+    d: 'Wij worden jouw bureau vanaf 1.399 euro per maand bij jaarbetaling. De opstart blijft maatwerk, met de prijs vooraf.',
   },
   {
     t: '3. Wij bouwen de site',
@@ -94,7 +94,7 @@ const STAPPEN = [
 ]
 
 const VOORWAARDEN = [
-  'Voor nieuwe klanten in Nederland en Vlaanderen die uiterlijk 30 november 2026 tekenen voor een jaar met Stevin.AI als bureau: 1.399 euro per maand bij jaarbetaling. De opstart blijft maatwerk, met de prijs vooraf.',
+  'Voor nieuwe klanten in Nederland en Vlaanderen die uiterlijk 30 november 2026 tekenen voor een jaar met Stevin.AI als bureau: vanaf 1.399 euro per maand bij jaarbetaling. De opstart blijft maatwerk, met de prijs vooraf.',
   "De website: tot vijf pagina's, op je eigen domein, met de meting en een contactformulier dat in je CRM landt. Een correctieronde. Oplevering binnen zes weken nadat je teksten en beelden hebt aangeleverd.",
   "Niet inbegrepen: een webshop, een boekingssysteem, maatwerkkoppelingen, meer dan vijf pagina's, fotografie en vertalingen. Dat offreren we apart, met de prijs vooraf.",
   'Hosting en onderhoud zijn het eerste jaar inbegrepen. Daarna 29 euro per maand, plus 15 euro per maand als de server-side meting doorloopt.',
@@ -122,11 +122,11 @@ const VRAGEN: Vraag[] = [
   },
   {
     v: 'Kan ik ook per maand betalen?',
-    a: 'Per maand betalen kan altijd, voor 1.499 euro per maand. De website hoort bij de jaarbetaling.',
+    a: 'Per maand betalen kan altijd, vanaf 1.499 euro per maand. De website hoort bij de jaarbetaling.',
   },
   {
     v: 'Geldt dit ook in België?',
-    a: 'Ja, voor bedrijven in Vlaanderen net zo goed als in Nederland. De prijzen zijn exclusief btw.',
+    a: 'Ja, voor bedrijven in Vlaanderen net zo goed als in Nederland. De prijzen zijn exclusief btw. Voor een Belgisch bedrijf met een btw-nummer wordt de btw verlegd: op onze factuur staat geen Nederlandse btw en je geeft de btw zelf aan in België.',
   },
   {
     v: 'Hoe weet ik of er nog een plek is?',
@@ -168,8 +168,8 @@ export default async function BlackFridayPage({ params }: Props) {
             </a>
           </div>
           <p className="m-0 mt-6 text-sm text-white/70">
-            Voor bedrijven in Nederland en Vlaanderen. Wij worden jouw bureau voor 1.399 euro per maand bij jaarbetaling,
-            exclusief btw.
+            Voor bedrijven in Nederland en Vlaanderen. Wij worden jouw bureau voor minimaal 1.399 euro per maand bij
+            jaarbetaling, exclusief btw.
           </p>
         </div>
       </section>
