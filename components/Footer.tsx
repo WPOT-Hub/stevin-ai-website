@@ -5,6 +5,7 @@ import { Link } from '@/i18n/navigation'
 import Logo from './Logo'
 import { ConsentSettingsButton } from './ConsentBanner'
 import TrustBadges from './TrustBadges'
+import { TELEFOON_HREF, TELEFOON_WEERGAVE } from '@/lib/contact'
 
 export default function Footer() {
   const t = useTranslations('footer')
@@ -113,6 +114,13 @@ export default function Footer() {
           {/* Artikel 3:15d BW: naam, KVK- en btw-nummer staan op elke pagina,
               ook in de korte footer. */}
           <p className="m-0 mt-4 text-[12px] text-slate-500">{t('company_details')}</p>
+          {/* W-748: het vaste nummer, klein onder het adres. Geen icoon, knop
+              of accentkleur: aanwezig voor wie zoekt, niet opdringerig. */}
+          <p className="m-0 mt-1 text-[12px] text-slate-500">
+            <a href={TELEFOON_HREF} className="hover:text-slate-300">
+              {TELEFOON_WEERGAVE}
+            </a>
+          </p>
         </div>
       </footer>
     )
@@ -135,6 +143,12 @@ export default function Footer() {
             </p>
             <p className="mt-5 text-xs text-slate-500">
               {t('location')}
+            </p>
+            {/* W-748: het vaste nummer onder het adres, zelfde stijl. */}
+            <p className="mt-1 text-xs text-slate-500">
+              <a href={TELEFOON_HREF} className="hover:text-slate-300">
+                {TELEFOON_WEERGAVE}
+              </a>
             </p>
             <TrustBadges className="mt-7 justify-start gap-2" small />
           </div>

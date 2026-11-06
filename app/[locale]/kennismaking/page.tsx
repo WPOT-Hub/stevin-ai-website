@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import { TELEFOON_HREF, TELEFOON_WEERGAVE } from '@/lib/contact'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -19,6 +20,7 @@ const TEKST = {
     kop: 'Plan een kennismaking',
     alinea: 'Kies een moment dat jou uitkomt. Vrijblijvend: we kijken samen naar je cijfers en wat je kunt meten.',
     knop: 'Kies een moment',
+    bellen: 'Liever bellen?',
   },
   en: {
     titel: 'Meet Stevin.AI',
@@ -26,6 +28,7 @@ const TEKST = {
     kop: 'Book an introduction',
     alinea: 'Pick a time that suits you. No strings attached: we look at your numbers together and at what you can measure.',
     knop: 'Pick a time',
+    bellen: 'Rather call?',
   },
 } as const
 
@@ -70,6 +73,13 @@ export default async function KennismakingPage({ params }: Props) {
         >
           {t.knop}
         </Link>
+        {/* W-748: een rustige regel voor wie liever belt. */}
+        <p className="mt-5 text-[14px] text-slate-400">
+          {t.bellen}{' '}
+          <a href={TELEFOON_HREF} className="text-slate-300 hover:text-white">
+            {TELEFOON_WEERGAVE}
+          </a>
+        </p>
         <noscript>
           <p className="mt-4 text-[14px] text-slate-300">
             Zonder JavaScript kun je hier geen moment kiezen. Mail naar{' '}
