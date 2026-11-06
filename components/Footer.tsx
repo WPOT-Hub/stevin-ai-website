@@ -83,7 +83,7 @@ export default function Footer() {
                   footer zette het op elke pagina. Het staat waar het uitgelegd
                   wordt, op /platform en /google-ads-uitbesteden. */}
               <p className="mt-4 max-w-[320px] text-balance text-[14px] leading-relaxed text-slate-400">
-                Stevin.AI zorgt dat je marketing blijft werken.
+                Stevin.AI zorgt dat je marketing op winst stuurt.
               </p>
             </div>
             <nav aria-label="Footer">
