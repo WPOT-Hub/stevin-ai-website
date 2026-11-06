@@ -26,7 +26,7 @@ const URL = 'https://stevin.ai/php-lek-check'
 const BERICHT = '/blog/derde-php-lek-controleer-je-website'
 
 export const metadata: Metadata = {
-  title: 'PHP-lekcheck: staat de update op je website?',
+  title: 'PHP-versie checken: staat de lekupdate op je website?',
   description:
     'Check online welke PHP-versie je server meldt, of de update van 21 oktober erop staat en wat je nu moet doen. Gratis en zonder account.',
   alternates: { canonical: URL },
@@ -81,6 +81,14 @@ const VRAGEN: Vraag[] = [
   {
     v: 'Hoe update ik PHP op mijn website?',
     a: 'Bij gedeelde hosting kies je de PHP-versie vaak zelf in het beheerpaneel van je hoster. Maak eerst een back-up, kies dan de nieuwste versie die je hoster aanbiedt en kijk of je site het nog doet, want oude thema\'s en plugins werken soms niet met een nieuwe PHP-versie. Of de update van 21 oktober in die versie zit, weet alleen je hoster: vraag het na en draai daarna de check opnieuw.',
+  },
+  {
+    v: 'Hoe weet ik of mijn website op PHP draait?',
+    a: 'Draait je site op WordPress, Joomla, Drupal, Magento, WooCommerce of PrestaShop, dan draait hij op PHP. Vul je adres in de check hierboven in: die laat zien welk systeem je site gebruikt en welke PHP-versie de server meldt, als die dat doet. Toont de server niets, vraag het dan aan je hoster of je bouwer.',
+  },
+  {
+    v: 'Hoe controleer ik mijn PHP-versie?',
+    a: 'Van buitenaf met de check op deze pagina: die leest wat je server zelf meldt. Van binnenuit zie je de versie in het beheerpaneel van je hoster, en in WordPress onder Extra, Sitediagnose, Info, Server. Vergelijk de versie met 8.5.12, 8.4.27, 8.3.36 of 8.2.35: lager in dezelfde reeks betekent dat de update van 21 oktober er niet op staat.',
   },
   {
     v: 'Wat doet deze check precies?',
