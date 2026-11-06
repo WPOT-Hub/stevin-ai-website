@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { FileText, CalendarClock, Unlock, Check } from 'lucide-react'
 import { localizedMetadata } from '@/lib/seo'
+import { CONTACT } from '@/lib/contact'
 import Section from '@/components/Section'
 import ContactForm from '@/components/ContactForm'
 import RethinkContact from '@/components/rethink/RethinkContact'
@@ -53,7 +54,8 @@ export default async function ContactPage({ params }: Props) {
     name: 'Stevin.AI',
     url: 'https://stevin.ai',
     areaServed: { '@type': 'Country', name: 'Netherlands' },
-    contactPoint: { '@type': 'ContactPoint', contactType: 'sales', availableLanguage: 'Dutch' },
+    telephone: CONTACT.telefoon,
+    contactPoint: { '@type': 'ContactPoint', contactType: 'sales', telephone: CONTACT.telefoon, availableLanguage: 'Dutch' },
   }
 
   return (

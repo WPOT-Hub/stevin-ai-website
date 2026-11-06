@@ -1,3 +1,5 @@
+import { CONTACT } from '@/lib/contact'
+
 // Sitewide entiteit-schema: Organization + WebSite, op ELKE pagina via de
 // gedeelde layout. Reden: long-tail pagina's (diensten, vergelijken, etc.)
 // verwijzen via { '@id': 'https://stevin.ai/#organization' } naar de
@@ -19,6 +21,8 @@ const organization = {
   description:
     'Stevin.AI is een marketingbureau uit Breda voor mkb-bedrijven in Nederland en België. Je ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.',
   url: 'https://stevin.ai',
+  // W-748: het vaste nummer.
+  telephone: CONTACT.telefoon,
   logo: {
     '@type': 'ImageObject',
     url: 'https://stevin.ai/icon.png',
@@ -55,6 +59,7 @@ const organization = {
       '@type': 'ContactPoint',
       contactType: 'sales',
       email: 'info@stevin.ai',
+      telephone: CONTACT.telefoon,
       url: 'https://stevin.ai/contact',
       areaServed: ['NL', 'BE'],
       availableLanguage: ['Dutch', 'English'],
