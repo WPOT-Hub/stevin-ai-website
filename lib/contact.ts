@@ -1,4 +1,4 @@
-// W-748: het vaste nummer van Stevin.AI (076 201 0000, DIDWW naar Twilio).
+// W-748: het vaste nummer van Stevin.AI (076 201 0000).
 // Een plek voor nummer en WhatsApp-schakelaar, zodat footer, kennismaking,
 // JSON-LD en straks de vraagbot hetzelfde tonen.
 //

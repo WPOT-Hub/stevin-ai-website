@@ -28,7 +28,7 @@ const TEKST = {
     kop: 'Book an introduction',
     alinea: 'Pick a time that suits you. No strings attached: we look at your numbers together and at what you can measure.',
     knop: 'Pick a time',
-    bellen: 'Rather call?',
+    bellen: 'Prefer to call?',
   },
 } as const
 
