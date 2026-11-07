@@ -27,6 +27,7 @@ const API = (process.env.NEXT_PUBLIC_VRAAGBOT_API ?? 'https://hub.stevin.ai/api/
 const ZICHTBAAR_VOOR_IEDEREEN = process.env.NEXT_PUBLIC_VRAAGBOT === 'aan'
 const SLEUTEL_TEST = 'stevin_vraagbot'
 const SLEUTEL_GESPREK = 'stevin_vraagbot_gesprek'
+const SLEUTEL_BERICHTEN = 'stevin_vraagbot_berichten'
 
 type Taal = 'nl' | 'en'
 type Bericht = { van: 'bot' | 'bezoeker'; tekst: string; knoppen?: boolean }
@@ -117,9 +118,24 @@ export default function Vraagbot() {
     setZichtbaar(leesOpslag('local', SLEUTEL_TEST) === '1')
   }, [])
 
+  // Wegklikken, verder klikken op de site of herladen: het gesprek blijft staan
+  // zolang het tabblad open is (Koen, 7 nov 2026).
+  const hersteld = useRef(false)
   useEffect(() => {
     gesprekId.current = leesOpslag('session', SLEUTEL_GESPREK)
+    try {
+      const opgeslagen = JSON.parse(leesOpslag('session', SLEUTEL_BERICHTEN) || 'null')
+      if (Array.isArray(opgeslagen) && opgeslagen.length > 0 && gesprekId.current) setBerichten(opgeslagen.slice(-40))
+    } catch {
+      // kapotte opslag: begin gewoon opnieuw
+    }
+    hersteld.current = true
   }, [])
+
+  useEffect(() => {
+    if (!hersteld.current) return
+    schrijfOpslag('session', SLEUTEL_BERICHTEN, gesprekId.current ? JSON.stringify(berichten.slice(-40)) : null)
+  }, [berichten])
 
   useEffect(() => {
     lijst.current?.scrollTo({ top: lijst.current.scrollHeight })
@@ -230,7 +246,7 @@ export default function Vraagbot() {
                 e.preventDefault()
                 void stuur()
               }}
-              className="flex items-center gap-2 border-t border-[#d6dde8] px-3 py-3"
+              className="flex items-center gap-2 border-t border-[#d6dde8] bg-white px-3 py-3"
             >
               <input
                 value={invoer}
@@ -238,9 +254,9 @@ export default function Vraagbot() {
                 maxLength={500}
                 placeholder={t.plaats}
                 aria-label={t.plaats}
-                className="min-w-0 flex-1 rounded-full border border-[#d6dde8] px-3 py-2 text-[16px] sm:text-[14px] outline-none focus:border-[#3c8eff]"
+                className="min-w-0 flex-1 rounded-full border-2 border-[#9aa8bb] bg-white px-3 py-2 text-[16px] text-[#1f2933] placeholder:text-[#5b6675] sm:text-[14px] outline-none focus:border-[#3c8eff]"
               />
-              <button type="submit" disabled={bezig || !invoer.trim()} aria-label={t.stuur} className="rounded-full bg-[#3c8eff] p-2 text-white disabled:opacity-40">
+              <button type="submit" disabled={bezig || !invoer.trim()} aria-label={t.stuur} className="rounded-full bg-[#3c8eff] p-2.5 text-white disabled:bg-[#9cc3ff]">
                 <Send className="h-4 w-4" aria-hidden />
               </button>
             </form>
