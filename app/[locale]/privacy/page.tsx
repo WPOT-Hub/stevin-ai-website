@@ -116,6 +116,7 @@ function PrivacyDutch() {
             stevin.ai, dan bewaren wij je vragen en de antwoorden 90 dagen, samen met de pagina
             waar je de chat opende. Een AI-leverancier maakt de antwoorden. Je IP-adres
             bewaren wij niet, wij tellen alleen per dag hoeveel vragen er van een adres komen.
+            Je browser onthoudt het gesprek een dag, zodat je verder kunt na het sluiten.
             Laat je in de chat je naam en mailadres of telefoonnummer achter, dan komen die in
             ons klantsysteem, zodat wij contact met je kunnen opnemen.
           </li>
@@ -268,7 +269,8 @@ function PrivacyEnglish() {
             <strong>Website chat</strong>: when you ask the AI assistant on stevin.ai a question,
             we keep your questions and the answers for 90 days, together with the page where you
             opened the chat. An AI provider generates the answers. We do not store your IP
-            address, we only count per day how many questions come from an address. If you leave
+            address, we only count per day how many questions come from an address.
+            Your browser remembers the conversation for one day, so you can continue after closing it. If you leave
             your name and email address or phone number in the chat, they go into our customer
             system so we can contact you.
           </li>

@@ -146,7 +146,6 @@ export default function Vraagbot() {
   useEffect(() => {
     if (!hersteld.current) return
     schrijfOpslag('local', SLEUTEL_BERICHTEN, gesprekId.current ? JSON.stringify(berichten.slice(-40)) : null)
-    if (gesprekId.current) schrijfOpslag('local', SLEUTEL_TIJD, String(Date.now()))
   }, [berichten])
 
   useEffect(() => {
@@ -182,6 +181,7 @@ export default function Vraagbot() {
       if (typeof j.gesprekId === 'string') {
         gesprekId.current = j.gesprekId
         schrijfOpslag('local', SLEUTEL_GESPREK, j.gesprekId)
+        schrijfOpslag('local', SLEUTEL_TIJD, String(Date.now()))
       }
       if (typeof j.whatsapp === 'string' && j.whatsapp.startsWith('https://wa.me/')) setWhatsapp(j.whatsapp)
       const knoppen = j.uitnodiging === true || !res.ok
