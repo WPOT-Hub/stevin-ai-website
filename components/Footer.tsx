@@ -5,6 +5,7 @@ import { Link } from '@/i18n/navigation'
 import Logo from './Logo'
 import { ConsentSettingsButton } from './ConsentBanner'
 import TrustBadges from './TrustBadges'
+import { TELEFOON } from '@/lib/telefoon'
 
 export default function Footer() {
   const t = useTranslations('footer')
@@ -84,6 +85,21 @@ export default function Footer() {
               <p className="mt-4 max-w-[320px] text-balance text-[14px] leading-relaxed text-slate-400">
                 Stevin.AI zorgt dat je marketing blijft werken.
               </p>
+              <p className="m-0 mt-4 text-[14px] text-slate-300">
+                <a href={TELEFOON.tel} data-cta="footer_bellen" className="transition-colors hover:text-white">
+                  {TELEFOON.weergave}
+                </a>
+                <span className="mx-2 text-slate-500" aria-hidden="true">·</span>
+                <a
+                  href={TELEFOON.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cta="footer_whatsapp"
+                  className="transition-colors hover:text-white"
+                >
+                  WhatsApp
+                </a>
+              </p>
             </div>
             <nav aria-label="Footer">
               <ul className="m-0 grid list-none grid-cols-2 gap-x-10 gap-y-3 p-0 text-[15px]">
@@ -135,6 +151,21 @@ export default function Footer() {
             </p>
             <p className="mt-5 text-xs text-slate-500">
               {t('location')}
+            </p>
+            <p className="mt-3 text-sm text-slate-400">
+              <a href={TELEFOON.tel} data-cta="footer_bellen" className="hover:text-white transition-colors duration-200">
+                {TELEFOON.weergave.replace(/^0/, '+31 ')}
+              </a>
+              <span className="mx-2 text-slate-600" aria-hidden="true">·</span>
+              <a
+                href={TELEFOON.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cta="footer_whatsapp"
+                className="hover:text-white transition-colors duration-200"
+              >
+                WhatsApp
+              </a>
             </p>
             <TrustBadges className="mt-7 justify-start gap-2" small />
           </div>

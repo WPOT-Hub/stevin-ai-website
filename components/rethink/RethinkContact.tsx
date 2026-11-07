@@ -1,6 +1,7 @@
 import { CalendarClock, Mail, Unlock } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
 import { Knop, h2Stijl, tekst } from './RethinkBlokken'
+import { TELEFOON } from '@/lib/telefoon'
 
 // De nieuwe /contact (W-535). Koen, 12 okt: een gewone contactpagina, het
 // aanbod van een gratis diagnoserapport verdwijnt, net als op de homepage.
@@ -47,6 +48,23 @@ export default function RethinkContact() {
             <div className="mt-9">
               <Knop cta="contact_kennismaking" />
             </div>
+            <p className={`m-0 mt-6 ${tekst}`}>
+              Of bel{' '}
+              <a href={TELEFOON.tel} data-cta="contact_bellen" className="font-semibold text-primary underline-offset-4 hover:underline">
+                {TELEFOON.weergave}
+              </a>
+              , of stuur een{' '}
+              <a
+                href={TELEFOON.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cta="contact_whatsapp"
+                className="font-semibold text-primary underline-offset-4 hover:underline"
+              >
+                WhatsApp
+              </a>
+              .
+            </p>
             <ul className="m-0 mt-12 list-none space-y-6 border-t border-border p-0 pt-8">
               {FEITEN.map(({ icoon: Icoon, t, d }) => (
                 <li key={t} className="flex items-start gap-4">

@@ -1,3 +1,5 @@
+import { TELEFOON } from '@/lib/telefoon'
+
 // Sitewide entiteit-schema: Organization + WebSite, op ELKE pagina via de
 // gedeelde layout. Reden: long-tail pagina's (diensten, vergelijken, etc.)
 // verwijzen via { '@id': 'https://stevin.ai/#organization' } naar de
@@ -15,6 +17,7 @@ const organization = {
   name: 'Stevin.AI',
   alternateName: 'Stevin',
   legalName: 'Stevin.AI',
+  telephone: TELEFOON.e164,
   // Zelfde verhaal als de homepage (vindbaarheidstoets 11 okt, A4).
   description:
     'Stevin.AI is een marketingbureau uit Breda voor mkb-bedrijven in Nederland en België. Je ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.',
@@ -55,6 +58,7 @@ const organization = {
       '@type': 'ContactPoint',
       contactType: 'sales',
       email: 'info@stevin.ai',
+      telephone: TELEFOON.e164,
       url: 'https://stevin.ai/contact',
       areaServed: ['NL', 'BE'],
       availableLanguage: ['Dutch', 'English'],
