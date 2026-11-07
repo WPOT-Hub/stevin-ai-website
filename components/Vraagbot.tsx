@@ -294,6 +294,8 @@ function Gegevens({ taal, gesprekId, terug }: { taal: Taal; gesprekId: string; t
       setMelding(t.fout)
     } finally {
       setBezig(false)
+      // Een token is eenmalig: weg ermee voordat het widget een nieuwe maakt.
+      setToken('')
       if (widgetId.current && window.turnstile) {
         try {
           window.turnstile.reset(widgetId.current)
