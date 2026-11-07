@@ -12,6 +12,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MainShell from '@/components/MainShell'
 import ConsentBanner from '@/components/ConsentBanner'
+import Vraagbot from '@/components/Vraagbot'
 import KennismakingLader from '@/components/rethink/KennismakingLader'
 import SiteJsonLd from '@/components/SiteJsonLd'
 
@@ -180,6 +181,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <Footer />
           <ConsentBanner />
           <KennismakingLader />
+          <Vraagbot />
         </NextIntlClientProvider>
       </body>
     </html>
