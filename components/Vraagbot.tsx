@@ -25,6 +25,8 @@ import { Turnstile, TURNSTILE_SITEKEY } from '@/components/Turnstile'
 
 const API = (process.env.NEXT_PUBLIC_VRAAGBOT_API ?? 'https://hub.stevin.ai/api/vraagbot').replace(/\/$/, '')
 const ZICHTBAAR_VOOR_IEDEREEN = process.env.NEXT_PUBLIC_VRAAGBOT === 'aan'
+// In de chat internationaal, ook handig voor Belgen (Koen, 7 nov 2026).
+const NUMMER_INTERNATIONAAL = '+31 76 201 0000'
 const SLEUTEL_TEST = 'stevin_vraagbot'
 const SLEUTEL_GESPREK = 'stevin_vraagbot_gesprek'
 const SLEUTEL_BERICHTEN = 'stevin_vraagbot_berichten'
@@ -44,7 +46,7 @@ const T = {
     stuur: 'Versturen',
     bezig: 'Even denken',
     gegevens: 'Laat je gegevens achter',
-    bel: `Bel ${TELEFOON.weergave}`,
+    bel: `Bel ${NUMMER_INTERNATIONAAL}`,
     whatsapp: 'WhatsApp',
     naam: 'Naam',
     email: 'Mailadres',
@@ -53,7 +55,7 @@ const T = {
     toestemming: 'Koen mag contact met me opnemen over mijn vraag.',
     verstuur: 'Verstuur',
     privacy: 'We bewaren de chat 90 dagen. Lees de privacyverklaring.',
-    fout: `Dat lukte niet. Bel ${TELEFOON.weergave}.`,
+    fout: `Dat lukte niet. Bel ${NUMMER_INTERNATIONAAL}.`,
     terug: 'Terug naar de chat',
   },
   en: {
@@ -65,7 +67,7 @@ const T = {
     stuur: 'Send',
     bezig: 'Thinking',
     gegevens: 'Leave your details',
-    bel: `Call ${TELEFOON.weergave}`,
+    bel: `Call ${NUMMER_INTERNATIONAAL}`,
     whatsapp: 'WhatsApp',
     naam: 'Name',
     email: 'Email',
@@ -74,7 +76,7 @@ const T = {
     toestemming: 'Koen may contact me about my question.',
     verstuur: 'Send',
     privacy: 'We keep the chat for 90 days. Read the privacy statement.',
-    fout: `That did not work. Call ${TELEFOON.weergave}.`,
+    fout: `That did not work. Call ${NUMMER_INTERNATIONAAL}.`,
     terug: 'Back to the chat',
   },
 } as const
