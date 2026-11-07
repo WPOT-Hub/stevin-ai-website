@@ -144,13 +144,14 @@ export default function Vraagbot() {
   }, [])
 
   useEffect(() => {
-    if (!hersteld.current) return
+    // Alleen de begroeting is niets om te bewaren; zo overschrijft de eerste render (ook in Strict Mode) nooit een opgeslagen gesprek.
+    if (!hersteld.current || berichten.length < 2) return
     schrijfOpslag('local', SLEUTEL_BERICHTEN, gesprekId.current ? JSON.stringify(berichten.slice(-40)) : null)
   }, [berichten])
 
   useEffect(() => {
     lijst.current?.scrollTo({ top: lijst.current.scrollHeight })
-  }, [berichten, bezig, formulier])
+  }, [berichten, bezig, formulier, open])
 
   const openen = () => {
     setOpen(true)
