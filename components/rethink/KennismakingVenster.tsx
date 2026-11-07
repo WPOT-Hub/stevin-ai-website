@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/tracking'
 import { pushDataLayerEvent } from '@/lib/datalayer'
+import { Turnstile, TURNSTILE_SITEKEY } from '@/components/Turnstile'
 
 /**
  * Eigen venster "Plan een kennismaking" (W-535). Koen, 11 okt 01:24: Swoep
@@ -56,104 +57,7 @@ import { pushDataLayerEvent } from '@/lib/datalayer'
  */
 
 const API = process.env.NEXT_PUBLIC_KENNISMAKING_API?.replace(/\/$/, '') ?? ''
-// Cloudflare Turnstile, zoals Swoep (Koen, 11 okt 01:28). De server moet het
-// token controleren bij Cloudflare; zonder sitekey wordt er niets getoond.
-const TURNSTILE_SITEKEY = process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY ?? ''
-
-declare global {
-  interface Window {
-    turnstile?: {
-      render: (el: HTMLElement, opts: Record<string, unknown>) => string
-      reset: (id?: string) => void
-      remove: (id: string) => void
-    }
-  }
-}
-
-// Een token is maar een keer geldig: de ouder reset het widget na elke
-// verzending via widgetRef, en een nieuw widget erft nooit een oud token.
-// Het script laadt zodra het formulier verschijnt, niet al bij het openen van
-// het venster. Eerder pas bij de eerste focus: wie met automatisch invullen
-// meteen verstuurde, kreeg een melding over een vinkje dat er nog niet was.
-//
-// Lukt de controle niet (script geblokkeerd, netwerk, een hostnaam die niet
-// in het widget staat), dan is er geen token en gaat het formulier zonder weg.
-// Geen melding meer en geen uitweg naar de mail: de server bewaart de
-// aanvraag en markeert hem (11 okt 09:17).
-function Turnstile({
-  onToken,
-  onMislukt,
-  widgetRef,
-  actiefRef,
-}: {
-  onToken: (t: string) => void
-  onMislukt: () => void
-  widgetRef: React.RefObject<string>
-  // Staat er een widget op het scherm (ook als het script nog laadt)?
-  actiefRef: React.RefObject<boolean>
-}) {
-  const ref = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    if (!TURNSTILE_SITEKEY || !ref.current) return
-    let id = ''
-    let weg = false
-    actiefRef.current = true
-    const mislukt = () => {
-      if (!weg) onMislukt()
-    }
-    const teken = () => {
-      if (weg || !window.turnstile || !ref.current || id) return
-      try {
-        id = window.turnstile.render(ref.current, {
-          sitekey: TURNSTILE_SITEKEY,
-          language: 'nl',
-          // Alleen zichtbaar als Cloudflare een handeling vraagt; anders ziet de
-          // bezoeker niets (CRO-synthese 11 okt, A3).
-          appearance: 'interaction-only',
-          callback: (t: string) => onToken(t),
-          'expired-callback': () => onToken(''),
-          // Met een error-callback gooit Turnstile zelf geen fout; true zegt
-          // dat hij is afgehandeld (Cloudflare, Client-side errors). Turnstile
-          // probeert het daarna zelf opnieuw.
-          // Het formulier wacht dan niet meer op een token.
-          'error-callback': () => {
-            mislukt()
-            return true
-          },
-        })
-      } catch {
-        mislukt()
-        return
-      }
-      widgetRef.current = id
-    }
-    let sc: Element | null = null
-    if (window.turnstile) teken()
-    else {
-      const bestaand = document.querySelector('script[data-turnstile]')
-      sc = bestaand ?? Object.assign(document.createElement('script'), {
-        src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',
-        async: true,
-      })
-      sc.setAttribute('data-turnstile', '')
-      sc.addEventListener('load', teken)
-      // Script geblokkeerd of geen netwerk: niet wachten op een token.
-      sc.addEventListener('error', mislukt)
-      if (!bestaand) document.head.appendChild(sc)
-    }
-    return () => {
-      weg = true
-      sc?.removeEventListener('load', teken)
-      sc?.removeEventListener('error', mislukt)
-      actiefRef.current = false
-      if (id && window.turnstile) window.turnstile.remove(id)
-      widgetRef.current = ''
-      onToken('')
-    }
-  }, [onToken, onMislukt, widgetRef, actiefRef])
-  if (!TURNSTILE_SITEKEY) return null
-  return <div ref={ref} />
-}
+// Turnstile staat sinds W-752 in components/Turnstile.tsx, zodat de vraagbot hetzelfde vinkje gebruikt.
 const HUB_ENDPOINT = 'https://hub.stevin.ai/api/demo-request'
 const DUUR_MIN = 30
 const TZ = 'Europe/Amsterdam'
