@@ -25,8 +25,13 @@ import { Turnstile, TURNSTILE_SITEKEY } from '@/components/Turnstile'
 
 const API = (process.env.NEXT_PUBLIC_VRAAGBOT_API ?? 'https://hub.stevin.ai/api/vraagbot').replace(/\/$/, '')
 const ZICHTBAAR_VOOR_IEDEREEN = process.env.NEXT_PUBLIC_VRAAGBOT === 'aan'
+// In de chat internationaal, ook handig voor Belgen (Koen, 7 nov 2026).
+const NUMMER_INTERNATIONAAL = '+31 76 201 0000'
 const SLEUTEL_TEST = 'stevin_vraagbot'
 const SLEUTEL_GESPREK = 'stevin_vraagbot_gesprek'
+const SLEUTEL_BERICHTEN = 'stevin_vraagbot_berichten'
+const SLEUTEL_TIJD = 'stevin_vraagbot_tijd'
+const BEWAAR_MS = 24 * 60 * 60 * 1000
 
 type Taal = 'nl' | 'en'
 type Bericht = { van: 'bot' | 'bezoeker'; tekst: string; knoppen?: boolean }
@@ -41,7 +46,7 @@ const T = {
     stuur: 'Versturen',
     bezig: 'Even denken',
     gegevens: 'Laat je gegevens achter',
-    bel: `Bel ${TELEFOON.weergave}`,
+    bel: `Bel ${NUMMER_INTERNATIONAAL}`,
     whatsapp: 'WhatsApp',
     naam: 'Naam',
     email: 'Mailadres',
@@ -50,7 +55,7 @@ const T = {
     toestemming: 'Koen mag contact met me opnemen over mijn vraag.',
     verstuur: 'Verstuur',
     privacy: 'We bewaren de chat 90 dagen. Lees de privacyverklaring.',
-    fout: `Dat lukte niet. Bel ${TELEFOON.weergave}.`,
+    fout: `Dat lukte niet. Bel ${NUMMER_INTERNATIONAAL}.`,
     terug: 'Terug naar de chat',
   },
   en: {
@@ -62,7 +67,7 @@ const T = {
     stuur: 'Send',
     bezig: 'Thinking',
     gegevens: 'Leave your details',
-    bel: `Call ${TELEFOON.weergave}`,
+    bel: `Call ${NUMMER_INTERNATIONAAL}`,
     whatsapp: 'WhatsApp',
     naam: 'Name',
     email: 'Email',
@@ -71,7 +76,7 @@ const T = {
     toestemming: 'Koen may contact me about my question.',
     verstuur: 'Send',
     privacy: 'We keep the chat for 90 days. Read the privacy statement.',
-    fout: `That did not work. Call ${TELEFOON.weergave}.`,
+    fout: `That did not work. Call ${NUMMER_INTERNATIONAAL}.`,
     terug: 'Back to the chat',
   },
 } as const
@@ -117,13 +122,36 @@ export default function Vraagbot() {
     setZichtbaar(leesOpslag('local', SLEUTEL_TEST) === '1')
   }, [])
 
+  // Wegklikken, verder klikken op de site of herladen: het gesprek blijft staan
+  // tot een dag na de laatste vraag (Koen, 7 nov 2026).
+  const hersteld = useRef(false)
   useEffect(() => {
-    gesprekId.current = leesOpslag('session', SLEUTEL_GESPREK)
+    // Na een dag begint een nieuw gesprek; tot dan blijft het staan, ook na
+    // het sluiten van het tabblad (Koen, 7 nov 2026).
+    const tijd = Number(leesOpslag('local', SLEUTEL_TIJD) || 0)
+    if (!tijd || Date.now() - tijd > BEWAAR_MS) {
+      schrijfOpslag('local', SLEUTEL_GESPREK, null)
+      schrijfOpslag('local', SLEUTEL_BERICHTEN, null)
+    }
+    gesprekId.current = leesOpslag('local', SLEUTEL_GESPREK)
+    try {
+      const opgeslagen = JSON.parse(leesOpslag('local', SLEUTEL_BERICHTEN) || 'null')
+      if (Array.isArray(opgeslagen) && opgeslagen.length > 0 && gesprekId.current) setBerichten(opgeslagen.slice(-40))
+    } catch {
+      // kapotte opslag: begin gewoon opnieuw
+    }
+    hersteld.current = true
   }, [])
 
   useEffect(() => {
+    // Alleen de begroeting is niets om te bewaren; zo overschrijft de eerste render (ook in Strict Mode) nooit een opgeslagen gesprek.
+    if (!hersteld.current || berichten.length < 2) return
+    schrijfOpslag('local', SLEUTEL_BERICHTEN, gesprekId.current ? JSON.stringify(berichten.slice(-40)) : null)
+  }, [berichten])
+
+  useEffect(() => {
     lijst.current?.scrollTo({ top: lijst.current.scrollHeight })
-  }, [berichten, bezig, formulier])
+  }, [berichten, bezig, formulier, open])
 
   const openen = () => {
     setOpen(true)
@@ -153,14 +181,15 @@ export default function Vraagbot() {
       const tekst = typeof j.antwoord === 'string' ? j.antwoord : typeof j.melding === 'string' ? j.melding : t.fout
       if (typeof j.gesprekId === 'string') {
         gesprekId.current = j.gesprekId
-        schrijfOpslag('session', SLEUTEL_GESPREK, j.gesprekId)
+        schrijfOpslag('local', SLEUTEL_GESPREK, j.gesprekId)
+        schrijfOpslag('local', SLEUTEL_TIJD, String(Date.now()))
       }
       if (typeof j.whatsapp === 'string' && j.whatsapp.startsWith('https://wa.me/')) setWhatsapp(j.whatsapp)
       const knoppen = j.uitnodiging === true || !res.ok
       if (j.uitnodiging === true) pushDataLayerEvent('chat_uitnodiging')
       if (j.gesloten === true) {
         setGesloten(true)
-        schrijfOpslag('session', SLEUTEL_GESPREK, null)
+        schrijfOpslag('local', SLEUTEL_GESPREK, null)
       }
       setBerichten((b) => [...b, { van: 'bot', tekst, knoppen }])
     } catch {
@@ -221,7 +250,17 @@ export default function Vraagbot() {
               </div>
             ))}
             {bezig && <div className="text-[13px] text-slate-500">{t.bezig}...</div>}
-            {formulier && <Gegevens taal={taal} gesprekId={gesprekId.current} terug={() => setFormulier(false)} />}
+            {formulier && (
+              <Gegevens
+                taal={taal}
+                gesprekId={gesprekId.current}
+                terug={() => setFormulier(false)}
+                gelukt={(melding) => {
+                  setFormulier(false)
+                  if (melding) setBerichten((b) => [...b, { van: 'bot', tekst: melding }])
+                }}
+              />
+            )}
           </div>
 
           {!formulier && !gesloten && (
@@ -230,7 +269,7 @@ export default function Vraagbot() {
                 e.preventDefault()
                 void stuur()
               }}
-              className="flex items-center gap-2 border-t border-[#d6dde8] px-3 py-3"
+              className="flex items-center gap-2 border-t border-[#d6dde8] bg-white px-3 py-3"
             >
               <input
                 value={invoer}
@@ -238,9 +277,9 @@ export default function Vraagbot() {
                 maxLength={500}
                 placeholder={t.plaats}
                 aria-label={t.plaats}
-                className="min-w-0 flex-1 rounded-full border border-[#d6dde8] px-3 py-2 text-[16px] sm:text-[14px] outline-none focus:border-[#3c8eff]"
+                className="min-w-0 flex-1 rounded-full border-2 border-[#9aa8bb] bg-white px-3 py-2 text-[16px] text-[#1f2933] placeholder:text-[#5b6675] sm:text-[14px] outline-none focus:border-[#3c8eff]"
               />
-              <button type="submit" disabled={bezig || !invoer.trim()} aria-label={t.stuur} className="rounded-full bg-[#3c8eff] p-2 text-white disabled:opacity-40">
+              <button type="submit" disabled={bezig || !invoer.trim()} aria-label={t.stuur} className="rounded-full bg-[#3c8eff] p-2.5 text-white disabled:bg-[#9cc3ff]">
                 <Send className="h-4 w-4" aria-hidden />
               </button>
             </form>
@@ -254,7 +293,7 @@ export default function Vraagbot() {
   )
 }
 
-function Gegevens({ taal, gesprekId, terug }: { taal: Taal; gesprekId: string; terug: () => void }) {
+function Gegevens({ taal, gesprekId, terug, gelukt }: { taal: Taal; gesprekId: string; terug: () => void; gelukt: (melding: string) => void }) {
   const t = T[taal]
   const [naam, setNaam] = useState('')
   const [email, setEmail] = useState('')
@@ -265,7 +304,6 @@ function Gegevens({ taal, gesprekId, terug }: { taal: Taal; gesprekId: string; t
   const [token, setToken] = useState('')
   const [bezig, setBezig] = useState(false)
   const [melding, setMelding] = useState('')
-  const [klaar, setKlaar] = useState(false)
   const widgetId = useRef('')
   const widgetActief = useRef(false)
   const zetToken = useCallback((v: string) => setToken(v), [])
@@ -284,9 +322,10 @@ function Gegevens({ taal, gesprekId, terug }: { taal: Taal; gesprekId: string; t
       })
       const j: Record<string, unknown> = await res.json().catch(() => ({}))
       if (res.ok && j.ok === true) {
-        setKlaar(true)
-        setMelding(typeof j.melding === 'string' ? j.melding : '')
         pushDataLayerEvent('chat_gegevens')
+        // Terug naar de chat, zodat de bezoeker verder kan vragen (bijvoorbeeld
+        // de gegevens van een referentie, die de Hub pas na dit formulier geeft).
+        gelukt(typeof j.melding === 'string' ? j.melding : '')
       } else {
         setMelding(typeof j.melding === 'string' ? j.melding : t.fout)
       }
@@ -305,8 +344,6 @@ function Gegevens({ taal, gesprekId, terug }: { taal: Taal; gesprekId: string; t
       }
     }
   }
-
-  if (klaar) return <div className="rounded-[12px] border border-[#d6dde8] bg-white px-3 py-2">{melding}</div>
 
   const veld = 'w-full rounded-[12px] border border-[#d6dde8] bg-white px-3 py-2 text-[16px] sm:text-[14px] outline-none focus:border-[#3c8eff]'
   return (
