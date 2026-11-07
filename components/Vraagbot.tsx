@@ -53,6 +53,7 @@ const T = {
     bedrijf: 'Bedrijf of website (mag leeg)',
     toestemming: 'Jullie mogen contact met me opnemen over mijn vraag.',
     verstuur: 'Verstuur',
+    indicatie: 'Antwoorden zijn een eerste indicatie. Wat we afspreken staat in de offerte.',
     privacy: 'We bewaren de chat 90 dagen. Lees de privacyverklaring.',
     fout: `Dat lukte niet. Bel ${NUMMER_INTERNATIONAAL}.`,
     terug: 'Terug naar de chat',
@@ -74,6 +75,7 @@ const T = {
     bedrijf: 'Company or website (optional)',
     toestemming: 'You may contact me about my question.',
     verstuur: 'Send',
+    indicatie: 'Answers are a first indication. What we agree on is in the quote.',
     privacy: 'We keep the chat for 90 days. Read the privacy statement.',
     fout: `That did not work. Call ${NUMMER_INTERNATIONAAL}.`,
     terug: 'Back to the chat',
@@ -284,6 +286,7 @@ export default function Vraagbot() {
             </form>
           )}
           <p className="px-4 pb-2 pt-1 text-[11px] text-slate-500">
+            {t.indicatie}{' '}
             <a href={taal === 'en' ? '/en/privacy' : '/privacy'} className="underline">{t.privacy}</a>
           </p>
         </div>
