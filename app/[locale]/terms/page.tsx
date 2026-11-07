@@ -37,7 +37,7 @@ export default async function TermsPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = isEn ? '29 September 2026' : '29 september 2026'
+  const lastUpdated = isEn ? '7 November 2026' : '7 november 2026'
 
   return (
     <main className="bg-surface text-primary">
@@ -209,7 +209,7 @@ function TermsDutch() {
         <h2 className="text-xl font-semibold">9. Intellectueel eigendom</h2>
         <p>
           Het Stevin-platform, inclusief code, design, AI-prompts en datamodellen,
-          is eigendom van Stevin.AI B.V. Je krijgt een niet-exclusieve, niet-overdraagbare
+          is eigendom van Stevin.AI B.V. of haar licentiegevers. Je krijgt een niet-exclusieve, niet-overdraagbare
           gebruikslicentie voor de duur van het abonnement. Data die jij in Stevin
           inbrengt (jouw klantdata, campagnes, briefings) blijft van jou.
         </p>
@@ -384,7 +384,7 @@ function TermsEnglish() {
         <h2 className="text-xl font-semibold">9. Intellectual property</h2>
         <p>
           The Stevin platform, including code, design, AI prompts and data
-          models, is owned by Stevin.AI B.V. You receive a non-exclusive,
+          models, is owned by Stevin.AI B.V. or its licensors. You receive a non-exclusive,
           non-transferable usage licence for the duration of the subscription.
           Data you bring into Stevin (your client data, campaigns, briefings)
           remains yours.
