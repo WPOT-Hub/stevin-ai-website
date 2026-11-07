@@ -28,6 +28,8 @@ const ZICHTBAAR_VOOR_IEDEREEN = process.env.NEXT_PUBLIC_VRAAGBOT === 'aan'
 const SLEUTEL_TEST = 'stevin_vraagbot'
 const SLEUTEL_GESPREK = 'stevin_vraagbot_gesprek'
 const SLEUTEL_BERICHTEN = 'stevin_vraagbot_berichten'
+const SLEUTEL_TIJD = 'stevin_vraagbot_tijd'
+const BEWAAR_MS = 24 * 60 * 60 * 1000
 
 type Taal = 'nl' | 'en'
 type Bericht = { van: 'bot' | 'bezoeker'; tekst: string; knoppen?: boolean }
@@ -119,12 +121,19 @@ export default function Vraagbot() {
   }, [])
 
   // Wegklikken, verder klikken op de site of herladen: het gesprek blijft staan
-  // zolang het tabblad open is (Koen, 7 nov 2026).
+  // tot een dag na de laatste vraag (Koen, 7 nov 2026).
   const hersteld = useRef(false)
   useEffect(() => {
-    gesprekId.current = leesOpslag('session', SLEUTEL_GESPREK)
+    // Na een dag begint een nieuw gesprek; tot dan blijft het staan, ook na
+    // het sluiten van het tabblad (Koen, 7 nov 2026).
+    const tijd = Number(leesOpslag('local', SLEUTEL_TIJD) || 0)
+    if (!tijd || Date.now() - tijd > BEWAAR_MS) {
+      schrijfOpslag('local', SLEUTEL_GESPREK, null)
+      schrijfOpslag('local', SLEUTEL_BERICHTEN, null)
+    }
+    gesprekId.current = leesOpslag('local', SLEUTEL_GESPREK)
     try {
-      const opgeslagen = JSON.parse(leesOpslag('session', SLEUTEL_BERICHTEN) || 'null')
+      const opgeslagen = JSON.parse(leesOpslag('local', SLEUTEL_BERICHTEN) || 'null')
       if (Array.isArray(opgeslagen) && opgeslagen.length > 0 && gesprekId.current) setBerichten(opgeslagen.slice(-40))
     } catch {
       // kapotte opslag: begin gewoon opnieuw
@@ -134,7 +143,8 @@ export default function Vraagbot() {
 
   useEffect(() => {
     if (!hersteld.current) return
-    schrijfOpslag('session', SLEUTEL_BERICHTEN, gesprekId.current ? JSON.stringify(berichten.slice(-40)) : null)
+    schrijfOpslag('local', SLEUTEL_BERICHTEN, gesprekId.current ? JSON.stringify(berichten.slice(-40)) : null)
+    if (gesprekId.current) schrijfOpslag('local', SLEUTEL_TIJD, String(Date.now()))
   }, [berichten])
 
   useEffect(() => {
@@ -169,14 +179,14 @@ export default function Vraagbot() {
       const tekst = typeof j.antwoord === 'string' ? j.antwoord : typeof j.melding === 'string' ? j.melding : t.fout
       if (typeof j.gesprekId === 'string') {
         gesprekId.current = j.gesprekId
-        schrijfOpslag('session', SLEUTEL_GESPREK, j.gesprekId)
+        schrijfOpslag('local', SLEUTEL_GESPREK, j.gesprekId)
       }
       if (typeof j.whatsapp === 'string' && j.whatsapp.startsWith('https://wa.me/')) setWhatsapp(j.whatsapp)
       const knoppen = j.uitnodiging === true || !res.ok
       if (j.uitnodiging === true) pushDataLayerEvent('chat_uitnodiging')
       if (j.gesloten === true) {
         setGesloten(true)
-        schrijfOpslag('session', SLEUTEL_GESPREK, null)
+        schrijfOpslag('local', SLEUTEL_GESPREK, null)
       }
       setBerichten((b) => [...b, { van: 'bot', tekst, knoppen }])
     } catch {
