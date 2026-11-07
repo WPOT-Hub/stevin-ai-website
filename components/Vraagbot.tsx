@@ -247,7 +247,17 @@ export default function Vraagbot() {
               </div>
             ))}
             {bezig && <div className="text-[13px] text-slate-500">{t.bezig}...</div>}
-            {formulier && <Gegevens taal={taal} gesprekId={gesprekId.current} terug={() => setFormulier(false)} />}
+            {formulier && (
+              <Gegevens
+                taal={taal}
+                gesprekId={gesprekId.current}
+                terug={() => setFormulier(false)}
+                gelukt={(melding) => {
+                  setFormulier(false)
+                  if (melding) setBerichten((b) => [...b, { van: 'bot', tekst: melding }])
+                }}
+              />
+            )}
           </div>
 
           {!formulier && !gesloten && (
@@ -280,7 +290,7 @@ export default function Vraagbot() {
   )
 }
 
-function Gegevens({ taal, gesprekId, terug }: { taal: Taal; gesprekId: string; terug: () => void }) {
+function Gegevens({ taal, gesprekId, terug, gelukt }: { taal: Taal; gesprekId: string; terug: () => void; gelukt: (melding: string) => void }) {
   const t = T[taal]
   const [naam, setNaam] = useState('')
   const [email, setEmail] = useState('')
@@ -291,7 +301,6 @@ function Gegevens({ taal, gesprekId, terug }: { taal: Taal; gesprekId: string; t
   const [token, setToken] = useState('')
   const [bezig, setBezig] = useState(false)
   const [melding, setMelding] = useState('')
-  const [klaar, setKlaar] = useState(false)
   const widgetId = useRef('')
   const widgetActief = useRef(false)
   const zetToken = useCallback((v: string) => setToken(v), [])
@@ -310,9 +319,10 @@ function Gegevens({ taal, gesprekId, terug }: { taal: Taal; gesprekId: string; t
       })
       const j: Record<string, unknown> = await res.json().catch(() => ({}))
       if (res.ok && j.ok === true) {
-        setKlaar(true)
-        setMelding(typeof j.melding === 'string' ? j.melding : '')
         pushDataLayerEvent('chat_gegevens')
+        // Terug naar de chat, zodat de bezoeker verder kan vragen (bijvoorbeeld
+        // de gegevens van een referentie, die de Hub pas na dit formulier geeft).
+        gelukt(typeof j.melding === 'string' ? j.melding : '')
       } else {
         setMelding(typeof j.melding === 'string' ? j.melding : t.fout)
       }
@@ -331,8 +341,6 @@ function Gegevens({ taal, gesprekId, terug }: { taal: Taal; gesprekId: string; t
       }
     }
   }
-
-  if (klaar) return <div className="rounded-[12px] border border-[#d6dde8] bg-white px-3 py-2">{melding}</div>
 
   const veld = 'w-full rounded-[12px] border border-[#d6dde8] bg-white px-3 py-2 text-[16px] sm:text-[14px] outline-none focus:border-[#3c8eff]'
   return (
