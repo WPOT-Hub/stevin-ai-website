@@ -13,10 +13,9 @@ import { Turnstile, TURNSTILE_SITEKEY } from '@/components/Turnstile'
  * Alles wat de bot weet en mag, staat in de Hub (src/core/vraagbot/kennis.ts).
  * Hier staat alleen het venster: geen sleutel, geen prompt, geen model.
  *
- * Zichtbaar: met NEXT_PUBLIC_VRAAGBOT=aan voor iedereen. Anders alleen voor
- * wie de site een keer met ?vraagbot=1 opende (onthouden in localStorage),
- * zodat Koen hem live kan testen voordat bezoekers hem zien. ?vraagbot=0
- * zet hem weer weg.
+ * Zichtbaar voor iedereen sinds 7 nov 2026 (Koen: "hij staat nog niet op de
+ * website"). Uitzetten zonder codewijziging: NEXT_PUBLIC_VRAAGBOT=uit in
+ * Vercel, dan alleen nog voor wie de site met ?vraagbot=1 opende.
  *
  * Events (REGEL 7, elk te bewijzen in GA4): chat_open, chat_vraag,
  * chat_uitnodiging, chat_naar_mens (formulier of bellen), chat_naar_whatsapp,
@@ -24,7 +23,7 @@ import { Turnstile, TURNSTILE_SITEKEY } from '@/components/Turnstile'
  */
 
 const API = (process.env.NEXT_PUBLIC_VRAAGBOT_API ?? 'https://hub.stevin.ai/api/vraagbot').replace(/\/$/, '')
-const ZICHTBAAR_VOOR_IEDEREEN = process.env.NEXT_PUBLIC_VRAAGBOT === 'aan'
+const ZICHTBAAR_VOOR_IEDEREEN = process.env.NEXT_PUBLIC_VRAAGBOT !== 'uit'
 // In de chat internationaal, ook handig voor Belgen (Koen, 7 nov 2026).
 const NUMMER_INTERNATIONAAL = '+31 76 201 0000'
 const SLEUTEL_TEST = 'stevin_vraagbot'
