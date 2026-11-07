@@ -83,7 +83,7 @@ export default function Footer() {
                   footer zette het op elke pagina. Het staat waar het uitgelegd
                   wordt, op /platform en /google-ads-uitbesteden. */}
               <p className="mt-4 max-w-[320px] text-balance text-[14px] leading-relaxed text-slate-400">
-                Stevin.AI zorgt dat je marketing blijft werken.
+                Stevin.AI zorgt dat je marketing echt oplevert.
               </p>
               <p className="m-0 mt-4 text-[14px] text-slate-300">
                 <a href={TELEFOON.tel} data-cta="footer_bellen" className="transition-colors hover:text-white">
