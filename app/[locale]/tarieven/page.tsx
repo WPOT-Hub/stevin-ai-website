@@ -142,6 +142,8 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
           'Geen marge op je mediabudget',
           'Alsnog zelf overnemen kan altijd',
         ],
+        accent: true,
+        badge: 'Meest gekozen',
       },
       {
         nr: '02',
@@ -165,8 +167,6 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
           'Je eigen mensen leren mee',
           'Daarna 399 per maand, met pay per fix erbij',
         ],
-        accent: true,
-        badge: 'Meest gekozen',
       },
       {
         nr: '03',
@@ -254,6 +254,8 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
           'No margin on your media budget',
           'You can still take it over yourself, at any time',
         ],
+        accent: true,
+        badge: 'Most chosen',
       },
       {
         nr: '02',
@@ -270,8 +272,6 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
           'Your own people learn along the way',
           'Then €399 per month, with pay per fix on top',
         ],
-        accent: true,
-        badge: 'Most chosen',
       },
       {
         nr: '03',
