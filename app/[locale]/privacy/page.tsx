@@ -111,6 +111,14 @@ function PrivacyDutch() {
             de laatst bezochte pagina&apos;s. Dit gebruiken wij om aanvragen goed op te
             volgen en te begrijpen welke content en campagnes kwalitatieve leads opleveren.
           </li>
+          <li>
+            <strong>Chat op de website</strong>: stel je een vraag aan de AI-assistent op
+            stevin.ai, dan bewaren wij je vragen en de antwoorden 90 dagen, samen met de pagina
+            waar je de chat opende. Een AI-leverancier maakt de antwoorden. Je IP-adres
+            bewaren wij niet, wij tellen alleen per dag hoeveel vragen er van een adres komen.
+            Laat je in de chat je naam en mailadres of telefoonnummer achter, dan komen die in
+            ons klantsysteem, zodat wij contact met je kunnen opnemen.
+          </li>
         </ul>
       </section>
 
@@ -255,6 +263,14 @@ function PrivacyEnglish() {
             referrer, UTM parameters, campaign clicks and recently visited pages. We use
             this to follow up properly and understand which content and campaigns create
             qualified leads.
+          </li>
+          <li>
+            <strong>Website chat</strong>: when you ask the AI assistant on stevin.ai a question,
+            we keep your questions and the answers for 90 days, together with the page where you
+            opened the chat. An AI provider generates the answers. We do not store your IP
+            address, we only count per day how many questions come from an address. If you leave
+            your name and email address or phone number in the chat, they go into our customer
+            system so we can contact you.
           </li>
         </ul>
       </section>

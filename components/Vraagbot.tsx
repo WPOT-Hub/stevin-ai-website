@@ -49,7 +49,7 @@ const T = {
     bedrijf: 'Bedrijf of website (mag leeg)',
     toestemming: 'Koen mag contact met me opnemen over mijn vraag.',
     verstuur: 'Verstuur',
-    privacy: 'Zo gaan we om met je gegevens',
+    privacy: 'We bewaren de chat 90 dagen. Lees de privacyverklaring.',
     fout: `Dat lukte niet. Bel ${TELEFOON.weergave}.`,
     terug: 'Terug naar de chat',
   },
@@ -70,7 +70,7 @@ const T = {
     bedrijf: 'Company or website (optional)',
     toestemming: 'Koen may contact me about my question.',
     verstuur: 'Send',
-    privacy: 'How we handle your data',
+    privacy: 'We keep the chat for 90 days. Read the privacy statement.',
     fout: `That did not work. Call ${TELEFOON.weergave}.`,
     terug: 'Back to the chat',
   },
@@ -238,7 +238,7 @@ export default function Vraagbot() {
                 maxLength={500}
                 placeholder={t.plaats}
                 aria-label={t.plaats}
-                className="min-w-0 flex-1 rounded-full border border-[#d6dde8] px-3 py-2 text-[14px] outline-none focus:border-[#3c8eff]"
+                className="min-w-0 flex-1 rounded-full border border-[#d6dde8] px-3 py-2 text-[16px] sm:text-[14px] outline-none focus:border-[#3c8eff]"
               />
               <button type="submit" disabled={bezig || !invoer.trim()} aria-label={t.stuur} className="rounded-full bg-[#3c8eff] p-2 text-white disabled:opacity-40">
                 <Send className="h-4 w-4" aria-hidden />
@@ -306,7 +306,7 @@ function Gegevens({ taal, gesprekId, terug }: { taal: Taal; gesprekId: string; t
 
   if (klaar) return <div className="rounded-[12px] border border-[#d6dde8] bg-white px-3 py-2">{melding}</div>
 
-  const veld = 'w-full rounded-[10px] border border-[#d6dde8] bg-white px-3 py-2 text-[14px] outline-none focus:border-[#3c8eff]'
+  const veld = 'w-full rounded-[12px] border border-[#d6dde8] bg-white px-3 py-2 text-[16px] sm:text-[14px] outline-none focus:border-[#3c8eff]'
   return (
     <form
       onSubmit={(e) => {
