@@ -172,7 +172,7 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
         nr: '03',
         label: 'Voor wie het werk elders belegt',
         titel: 'Je doet het zelf, met Stevin',
-        prijs: '399',
+        prijs: 'vanaf 399',
         prijsPer: 'per maand',
         prijsSub: 'bij jaarbetaling, 499 per maand bij maandbetaling',
         // De bedoelde mechaniek is: signaal, actie, meteen het bedrag erbij, en
@@ -277,7 +277,7 @@ const COPY: Record<'nl' | 'en', TarievenCopy> = {
         nr: '03',
         label: 'For owners who place the work elsewhere',
         titel: 'You do it yourself, with Stevin',
-        prijs: '€399',
+        prijs: 'from €399',
         prijsPer: 'per month',
         prijsSub: 'on annual billing, €499 per month on monthly billing',
         body:
