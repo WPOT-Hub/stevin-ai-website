@@ -71,7 +71,7 @@ const COPY = {
     register_bron: 'Bron: eigen onderzoek op het openbare advertentieregister van Google, stand 12 september 2026.',
 
     doen_eyebrow: 'Wat we doen',
-    doen_h2: 'Stevin zorgt dat je marketing blijft werken.',
+    doen_h2: 'Stevin zorgt dat je marketing echt oplevert.',
     doen: [
       { n: '01', t: 'We leggen vast wat er hoort te gebeuren.', d: 'Hoeveel telefoontjes een gewone week oplevert. Welke aanvragen iets opleveren en welke niet. Welke campagne klanten moet brengen en welke vooral je naam bekend maakt, en hoe je ziet of dat lukt. Dat staat in geen enkel systeem. Daarom doen we het in de eerste weken samen met jou.' },
       { n: '02', t: 'We blijven kijken of het nog klopt.', d: 'We kijken of er binnenkomt wat er binnen hoort te komen, ook als alles op groen staat.' },
