@@ -3,11 +3,9 @@ import { setRequestLocale } from 'next-intl/server'
 import RethinkHome from '@/components/rethink/RethinkHome'
 import { Link } from '@/i18n/navigation'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
-import StevinBrainVisual from '@/components/StevinBrainVisual'
 import KlantLogos from '@/components/KlantLogos'
 import QuoteRotator from '@/components/QuoteRotator'
 import MarketingMemoryDemo from '@/components/MarketingMemoryDemo'
-import BrainEdgeStrip from '@/components/BrainEdgeStrip'
 import HeroHeadline from '@/components/HeroHeadline'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -252,25 +250,6 @@ async function HomePage({ params }: Props) {
     <>
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-primary -mt-[72px]" style={{ padding: 'calc(96px + 72px) 24px 128px' }}>
-        {/* W-462: de visual hangt aan hetzelfde kader als de header (1760px),
-            zodat hij op een ultrawide niet rechts van het menu belandt. Het
-            kader zelf laat kliks door naar de knop. */}
-        <div
-          className="pointer-events-none absolute inset-y-0 left-1/2 z-20 hidden w-full max-w-[1760px] -translate-x-1/2 lg:block"
-          aria-hidden="true"
-        >
-          <div
-            className="pointer-events-auto absolute inset-y-0 right-0 flex items-center justify-end overflow-hidden"
-            style={{
-              maskImage: 'linear-gradient(90deg, transparent 0%, black 26%)',
-              WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, black 26%)',
-            }}
-          >
-            <div className="w-[52vw] max-w-[600px] translate-x-[4%] min-[1760px]:translate-x-0">
-              <StevinBrainVisual aspect="3:4" brand={false} claim="" ariaLabel="" locale={locale} />
-            </div>
-          </div>
-        </div>
         <div
           className="absolute inset-0 z-0"
           aria-hidden="true"
@@ -283,21 +262,6 @@ async function HomePage({ params }: Props) {
         />
         <div className="relative z-10 mx-auto max-w-[1200px]">
           <div className="relative">
-            <div
-              className="absolute inset-y-0 right-0 z-0 flex lg:hidden items-stretch justify-end overflow-hidden pointer-events-none w-[30vw] max-w-[132px]"
-              aria-hidden="true"
-              style={{
-                maskImage:
-                  'linear-gradient(90deg, transparent 0%, black 58%), linear-gradient(180deg, transparent 0%, black 12%, black 88%, transparent 100%)',
-                WebkitMaskImage:
-                  'linear-gradient(90deg, transparent 0%, black 58%), linear-gradient(180deg, transparent 0%, black 12%, black 88%, transparent 100%)',
-                maskComposite: 'intersect',
-                WebkitMaskComposite: 'source-in',
-              }}
-            >
-              <BrainEdgeStrip className="w-full h-full" />
-            </div>
-
             <HeroHeadline locale={locale} />
 
             <p

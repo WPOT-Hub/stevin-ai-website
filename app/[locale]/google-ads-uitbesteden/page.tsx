@@ -315,7 +315,7 @@ export default async function GoogleAdsUitbestedenPage({ params }: Props) {
         </div>
       </section>
       {/* Consent-verlies raakt je Google-meting; het advies gaat over modeled conversions. */}
-      <DeskProof locale={locale} toonBrein={false} melding="consent-be" />
+      <DeskProof locale={locale} melding="consent-be" />
 
     </>
   )
