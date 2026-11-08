@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { generateEventId, getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/tracking'
 import { pushDataLayerEvent } from '@/lib/datalayer'
+import { WHATSAPP_TOESTEMMING_TEKST, whatsappToestemmingVeld } from '@/lib/whatsappToestemming'
 
 // Alle stevin.ai-formulieren lopen via het eigen Hub-endpoint zodat elke lead op
 // een plek binnenkomt: Slack + Supabase + mail naar Koen + bevestiging aan de
@@ -52,6 +53,7 @@ export default function ContactForm({
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
+  const [whatsapp, setWhatsapp] = useState(false)
   const formStarted = useRef(false)
 
   useEffect(() => {
@@ -104,7 +106,10 @@ export default function ContactForm({
       const res = await fetch(HUB_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, company, phone, message, source, _honey: honey, context }),
+        body: JSON.stringify({
+          name, email, company, phone, message, source, _honey: honey, context,
+          ...whatsappToestemmingVeld(whatsapp, phone),
+        }),
       })
       if (!res.ok) throw new Error('http ' + res.status)
     } catch {
@@ -266,6 +271,16 @@ export default function ContactForm({
           </select>
         </div>
       )}
+      <label className="mt-4 flex items-start gap-3 text-sm text-primary">
+        <input
+          type="checkbox"
+          name="whatsapp_toestemming"
+          checked={whatsapp}
+          onChange={(e) => setWhatsapp(e.target.checked)}
+          className="mt-0.5 h-4 w-4 shrink-0 rounded border-border accent-accent"
+        />
+        <span>{WHATSAPP_TOESTEMMING_TEKST}</span>
+      </label>
       <div className="mt-6">
         <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
           {messageLabel}
