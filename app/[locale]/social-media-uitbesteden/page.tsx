@@ -309,7 +309,7 @@ export default async function SocialMediaUitbestedenPage({ params }: Props) {
         </div>
       </section>
       {/* Pagina over social, dus de Meta-storing. */}
-      <DeskProof locale={locale} toonBrein={false} melding="meta-storing" />
+      <DeskProof locale={locale} melding="meta-storing" />
 
     </>
   )
