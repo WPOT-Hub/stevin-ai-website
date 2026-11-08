@@ -25,19 +25,19 @@
     "check:php-check": "npx tsx scripts/check-php-check.ts"
   },
   "dependencies": {
-    "lucide-react": "^1.7.0",
+    "lucide-react": "^1.69.0",
     "next": "^16.4.2",
-    "next-intl": "^4.9.1",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "next-intl": "^4.14.9",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.93.0",
-    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/postcss": "^4.3.4",
     "@types/node": "^25.5.0",
-    "@types/react": "^19.2.14",
-    "eslint": "^10.1.0",
-    "postcss": "^8.5.8",
+    "@types/react": "^19.3.0",
+    "eslint": "^10.14.0",
+    "postcss": "^8.5.32",
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.2"
   },
