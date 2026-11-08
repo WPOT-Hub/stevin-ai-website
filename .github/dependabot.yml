@@ -29,3 +29,5 @@ updates:
     groups:
       acties:
         patterns: ["*"]
+
+# Commits op deze repo komen van een account in team wpot, anders blokkeert Vercel de uitrol (W-341).
