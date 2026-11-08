@@ -1,0 +1,30 @@
+name: Dev-routes afkeuren
+
+# W-800: een route zoals dev/login mag nooit naar productie. Goedkoop: geen
+# installatie, alleen zoeken in de bronbestanden.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  dev-routes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Zoek dev-routes
+        run: |
+          set -u
+          gevonden=0
+          # 1. mappen of bestanden die dev, debug of test heten onder een route-map
+          while IFS= read -r f; do
+            echo "::error file=$f::Route onder een dev/debug/test-map: $f"; gevonden=1
+          done < <(find . -path ./node_modules -prune -o -path ./.next -prune -o -type f \
+            \( -name 'route.ts' -o -name 'route.js' -o -name 'page.tsx' -o -name 'page.jsx' \) -print \
+            | grep -E '/(app|pages)/(.*/)?(dev|debug|__dev|devtools)(/|$)' || true)
+          # 2. verwijzing naar dev/login in de code
+          while IFS= read -r f; do
+            echo "::error file=$f::Verwijzing naar dev/login"; gevonden=1
+          done < <(grep -rlE '/dev/login|dev-login|devLogin' --include='*.ts' --include='*.tsx' --include='*.js' --include='*.mjs' \
+            --exclude-dir=node_modules --exclude-dir=.next --exclude-dir=.github . || true)
+          exit $gevonden

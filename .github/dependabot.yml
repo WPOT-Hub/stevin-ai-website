@@ -1,14 +1,22 @@
 version: 2
+# W-800: dagelijks. Beveiligingsupdates in een eigen groep, minor en patch
+# samen in een PR. Majors komen los en worden niet automatisch gemerged.
 updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "daily"
     open-pull-requests-limit: 5
     labels:
       - "security"
       - "dependencies"
+    groups:
+      beveiliging:
+        applies-to: security-updates
+        patterns: ["*"]
+      onderhoud:
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -18,3 +26,6 @@ updates:
     labels:
       - "security"
       - "dependencies"
+    groups:
+      acties:
+        patterns: ["*"]
