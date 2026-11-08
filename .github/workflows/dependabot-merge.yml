@@ -1,0 +1,71 @@
+name: Dependabot automatisch mergen
+
+# W-800: beveiligings- en onderhoudsupdates (patch en minor) mergen zichzelf als
+# typecheck en tests groen (lint staat er niet in: die faalt al op main) zijn. Majors blijven met de hand en geven een
+# zichtbare rode stap, geen stille skip. Elke job kost minstens een hele minuut.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: dependabot-merge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  bepaal:
+    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
+    runs-on: ubuntu-latest
+    outputs:
+      soort: ${{ steps.soort.outputs.soort }}
+    steps:
+      - name: Soort update uit de Dependabot-commit lezen
+        id: soort
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          berichten=$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/commits" --jq '.[].commit.message')
+          types=$(printf '%s\n' "$berichten" | grep -oE 'update-type: [a-z:-]+' | sort -u || true)
+          echo "Gevonden: ${types:-niets}"
+          if [ -z "$types" ]; then echo "soort=onbekend" >> "$GITHUB_OUTPUT"
+          elif printf '%s\n' "$types" | grep -q 'semver-major'; then echo "soort=major" >> "$GITHUB_OUTPUT"
+          else echo "soort=klein" >> "$GITHUB_OUTPUT"; fi
+
+  controle:
+    needs: bepaal
+    if: ${{ needs.bepaal.outputs.soort == 'klein' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Installeren (zonder scripts van pakketten)
+        run: npm ci --ignore-scripts
+      - name: Typecheck
+        run: npx tsc --noEmit
+      - name: Tests
+        run: npm test --if-present
+
+  mergen:
+    needs: [bepaal, controle]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mergen met rebase (behoudt de oorspronkelijke auteur)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: gh pr merge "$PR" --rebase --repo "$GITHUB_REPOSITORY"
+
+  handwerk:
+    needs: bepaal
+    if: ${{ needs.bepaal.outputs.soort == 'major' || needs.bepaal.outputs.soort == 'onbekend' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Niet automatisch te mergen
+        run: |
+          echo "::error::Deze Dependabot-PR is een major of de soort is onbekend (${{ needs.bepaal.outputs.soort }}). Niet automatisch gemerged; nakijken met de hand."
+          exit 1
