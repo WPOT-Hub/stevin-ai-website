@@ -35,6 +35,17 @@ export const metadata: Metadata = {
     description: 'Zie in een paar seconden welke PHP-versie je server meldt en wat je nu moet doen.',
     url: URL,
     type: 'website',
+    // W-663 (26 okt 2026): zonder eigen afbeelding valt de afbeelding van de
+    // layout weg en faalt de nacontrole verify-production-release op elke
+    // uitrol ("og:image ontbreekt"), terwijl de uitrol zelf slaagt. Zelfde
+    // vaste afbeelding als de layout en /black-friday.
+    images: ['https://stevin.ai/opengraph-image'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PHP-lekcheck: staat de update op je website?',
+    description: 'Zie in een paar seconden welke PHP-versie je server meldt en wat je nu moet doen.',
+    images: ['https://stevin.ai/opengraph-image'],
   },
 }
 
