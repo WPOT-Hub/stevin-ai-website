@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     description: 'Zie in een paar seconden welke PHP-versie je server meldt en wat je nu moet doen.',
     url: URL,
     type: 'website',
+    siteName: 'Stevin.AI',
+    locale: 'nl_NL',
+    // Een eigen openGraph-object vervangt dat van de layout, dus de afbeelding
+    // moet hier opnieuw staan. Zonder faalt de productiecontrole na elke uitrol.
+    images: ['https://stevin.ai/opengraph-image'],
   },
 }
 
