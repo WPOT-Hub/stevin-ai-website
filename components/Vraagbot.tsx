@@ -162,6 +162,17 @@ export default function Vraagbot() {
   const naarMens = (soort: 'formulier' | 'bellen') => {
     pushDataLayerEvent('chat_naar_mens', { chat_soort: soort })
     if (soort === 'formulier') setFormulier(true)
+    // Een tel:-link neemt niets mee. Zo weet de Hub dat dit gesprek gaat bellen, en hoort Koen de vraag
+    // als hij opneemt (W-748). keepalive: de pagina mag weg zijn voordat dit klaar is. Alleen het gesprek-ID.
+    if (soort === 'bellen' && gesprekId.current) {
+      fetch(`${API}/bel`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'omit',
+        keepalive: true,
+        body: JSON.stringify({ gesprekId: gesprekId.current }),
+      }).catch(() => undefined)
+    }
   }
 
   const stuur = async () => {
