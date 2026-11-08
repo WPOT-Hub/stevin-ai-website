@@ -778,7 +778,7 @@ export const seoLandingPages: SeoLandingPageContent[] = [
       eyebrow: 'Lead tracking per kanaal',
       h2: 'Waar de leads vandaan komen, per kanaal geteld',
       items: [
-        'Paid media: campagnes gestuurd op leads en klanten, niet op klikken',
+        'Paid media: campagnes gestuurd op opdrachten, niet op klikken of vertoningen',
         "Organisch: pagina's die zoekintentie beantwoorden en converteren",
         'Owned media: e-mail en klantdata die slapende leads wakker maken',
         'Website: formulieren, call tracking en chat als meetbare instappunten',
