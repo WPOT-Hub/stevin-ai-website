@@ -206,7 +206,7 @@ export default function RethinkHome() {
                   09:27: "tuurlijk doen we dat straks wel"). */}
               <div className="mx-auto mt-8 flex max-w-[640px] flex-col items-center gap-5 text-center">
                 <p className={`${tekst} m-0 text-balance`}>
-                  Het gaat ons om opdrachten, niet om klikken. Daarom vertellen we Google en Meta welke aanvraag een opdracht werd.
+                  Het gaat ons om opdrachten, niet om klikken of vertoningen. Daarom vertellen we Google en Meta welke aanvraag een opdracht werd.
                 </p>
                 <Link
                   href="/kennismaking"

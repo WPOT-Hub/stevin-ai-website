@@ -35,7 +35,7 @@ const STAPPEN = [
   },
   {
     t: 'Daarna beheren we actief',
-    d: "Zoektermen, biedingen, advertenties en landingspagina's. We sturen op aanvragen en omzet, niet op klikken. Valt je meting uit, dan zien we dat dezelfde dag.",
+    d: "Zoektermen, biedingen, advertenties en landingspagina's. We sturen op opdrachten en omzet, niet op klikken of vertoningen. Valt je meting uit, dan zien we dat dezelfde dag.",
   },
   {
     t: 'Je ziet wat er gedaan is',
@@ -107,7 +107,7 @@ export default function RethinkGoogleAds() {
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[18ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Het gaat ons om opdrachten, niet om klikken.
+            Het gaat ons om opdrachten, niet om klikken of vertoningen.
           </h2>
           <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
             We meten tot omzet: van klik naar aanvraag, telefoontje, offerte, opdracht en omzet. Daarom vertellen we Google welke aanvraag

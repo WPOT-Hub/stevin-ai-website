@@ -35,7 +35,7 @@ const HERKEN = [
 const KANALEN = [
   {
     t: 'Meta: Facebook en Instagram',
-    d: 'Het zwaartepunt voor de meeste Nederlandse bedrijven. Breed bereik, scherp te sturen op je boodschap.',
+    d: 'Het zwaartepunt voor de meeste Nederlandse bedrijven. Wij sturen het op aanvragen die opdracht worden, niet op bereik.',
   },
   {
     t: 'LinkedIn',
@@ -118,7 +118,7 @@ export default function RethinkSocial() {
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[18ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Het gaat ons om opdrachten, niet om klikken.
+            Het gaat ons om opdrachten, niet om klikken of vertoningen.
           </h2>
           <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
             We meten tot omzet: van klik naar aanvraag, telefoontje, offerte, opdracht en omzet. Daarom vertellen we Meta welke aanvraag

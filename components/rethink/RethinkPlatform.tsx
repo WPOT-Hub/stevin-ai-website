@@ -46,7 +46,7 @@ export default function RethinkPlatform() {
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[18ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Het gaat ons om opdrachten, niet om klikken.
+            Het gaat ons om opdrachten, niet om klikken of vertoningen.
           </h2>
           <ol className="m-0 mt-10 flex list-none flex-wrap items-center gap-x-2 gap-y-3 p-0" aria-label="Wat we meten">
             {KETEN.map((k, i) => (
