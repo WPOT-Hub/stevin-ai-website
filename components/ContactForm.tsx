@@ -53,7 +53,6 @@ export default function ContactForm({
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
-  const [whatsapp, setWhatsapp] = useState(false)
   const formStarted = useRef(false)
 
   useEffect(() => {
@@ -108,7 +107,7 @@ export default function ContactForm({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name, email, company, phone, message, source, _honey: honey, context,
-          ...whatsappToestemmingVeld(whatsapp, phone),
+          ...whatsappToestemmingVeld(phone),
         }),
       })
       if (!res.ok) throw new Error('http ' + res.status)
@@ -228,7 +227,11 @@ export default function ContactForm({
             minLength={bedrijfEnTelefoonVerplicht ? 8 : undefined}
             className="w-full px-4 py-3 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors"
             placeholder="+31 6 12345678"
+            aria-describedby="contact-whatsapp-hulp"
           />
+          <p id="contact-whatsapp-hulp" className="mt-1 text-[12px] leading-snug text-muted">
+            {WHATSAPP_TOESTEMMING_TEKST}
+          </p>
         </div>
       </div>
       {websiteField && (
@@ -271,16 +274,6 @@ export default function ContactForm({
           </select>
         </div>
       )}
-      <label className="mt-4 flex items-start gap-3 text-sm text-primary">
-        <input
-          type="checkbox"
-          name="whatsapp_toestemming"
-          checked={whatsapp}
-          onChange={(e) => setWhatsapp(e.target.checked)}
-          className="mt-0.5 h-4 w-4 shrink-0 rounded border-border accent-accent"
-        />
-        <span>{WHATSAPP_TOESTEMMING_TEKST}</span>
-      </label>
       <div className="mt-6">
         <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
           {messageLabel}
