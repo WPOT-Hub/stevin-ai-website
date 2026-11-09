@@ -40,7 +40,7 @@ const T = {
     open: 'Stel een vraag',
     titel: 'Stel een vraag',
     sluit: 'Sluiten',
-    opening: 'Ik ben de AI-assistent van Stevin.AI. Vraag me hoe je meer klanten uit je advertenties en je site haalt, en wat dat kost. Liever iemand spreken? Dat kan altijd.',
+    opening: 'Hoi, ik ben Simon, de AI-assistent van Stevin.AI. Waar kan ik je mee helpen?',
     plaats: 'Typ je vraag',
     stuur: 'Versturen',
     bezig: 'Even denken',
