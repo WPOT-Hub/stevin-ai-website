@@ -324,7 +324,6 @@ export default function KennismakingVenster({
   const [klaar, setKlaar] = useState<'geboekt' | 'aangevraagd' | 'nietVast' | 'gegevens'>('gegevens')
   const [metTelefoon, setMetTelefoon] = useState(false)
   const [berichtOpen, setBerichtOpen] = useState(false)
-  const [whatsapp, setWhatsapp] = useState(false)
   // De zin van de Hub bij een 202 (bewaard, niet ingepland).
   const [klaarMelding, setKlaarMelding] = useState('')
   const overlayRef = useRef<HTMLDivElement>(null)
@@ -556,7 +555,7 @@ export default function KennismakingVenster({
         _honey: honey,
         turnstile: token,
         context: getLeadContext(),
-        ...whatsappToestemmingVeld(whatsapp, telefoon),
+        ...whatsappToestemmingVeld(telefoon),
       })
     try {
       let uit: Uitkomst
@@ -566,7 +565,7 @@ export default function KennismakingVenster({
       if (moment && !voorbeeld) {
         uit = await stuur(`${API}/boek`, {
           start: moment.start, naam, email, bedrijf, telefoon, vraag, _honey: honey, turnstile: token, context: getLeadContext(),
-          ...whatsappToestemmingVeld(whatsapp, telefoon),
+          ...whatsappToestemmingVeld(telefoon),
         })
         gelukt = 'nietVast'
         // Niets bewaard (storing, 403, 413, 415, 429, 5xx) of geen antwoord:
@@ -720,16 +719,7 @@ export default function KennismakingVenster({
         <span id="kennismaking-tel-hulp" className="mt-1.5 block text-[13px] text-muted">
           Liever gebeld? Zet je nummer erbij.
         </span>
-      </label>
-      <label className="flex items-start gap-3 text-[14px] leading-snug text-primary">
-        <input
-          type="checkbox"
-          name="whatsapp_toestemming"
-          checked={whatsapp}
-          onChange={(e) => setWhatsapp(e.target.checked)}
-          className="mt-0.5 h-4 w-4 shrink-0 accent-accent"
-        />
-        <span>{WHATSAPP_TOESTEMMING_TEKST}</span>
+        <span className="mt-0.5 block text-[12px] leading-snug text-muted">{WHATSAPP_TOESTEMMING_TEKST}</span>
       </label>
       {berichtOpen || waarden.vraag ? (
         <label className="block">
