@@ -1545,6 +1545,37 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+ 'je-klantgegevens-staan-op-meer-plekken-dan-je-denkt': (<>
+<p className="lead-para">Een klant schrijft zich in via je website. De gegevens komen in je CRM. Het e-mailadres gaat naar je nieuwsbriefprogramma. Een koppeling stuurt informatie door naar je boekingssysteem.</p>
+<p>Weet je waar die gegevens daarna blijven?</p>
+<p>Een datalek bij een softwareleverancier kan ook jouw klanten raken. Je kunt je eigen systemen zorgvuldig beheren, terwijl een leverancier gegevens bewaart waar je nauwelijks zicht op hebt.</p>
+<p>Welke klantgegevens staan bij jouw leveranciers? Wie kan erbij? En waarom bewaren jullie die gegevens nog?</p>
+<h2>Een extra tool betekent een extra plek met data</h2>
+<p>Je kiest een CRM om verkoopkansen bij te houden. Een e-mailplatform om klanten te informeren. Een formulier om aanvragen te ontvangen.</p>
+<p>Elke keuze heeft een doel. Maar bekijk die systemen ook eens samen.</p>
+<p>Een aanvraag kan een kopie achterlaten in je website, je mailbox, je CRM en de dienst die deze systemen verbindt. Verwijder je de aanvraag uit je CRM, dan kunnen de andere kopieën blijven bestaan.</p>
+<p>Ook een download verdient aandacht. Het klantenbestand dat je vorig jaar exporteerde voor een campagne, kan nog op een laptop of in een gedeelde map staan. Terwijl niemand het meer gebruikt.</p>
+<h2>Begin met één klant</h2>
+<p>Je hoeft niet direct al je systemen te onderzoeken. Volg eerst één klant, vanaf het eerste contact tot de laatste factuur.</p>
+<p>Waar komt die persoon binnen? Welke gegevens vraag je? Waar stuur je ze naartoe? Wie krijgt toegang? Wat blijft er staan nadat de opdracht is afgerond?</p>
+<p>Maak per systeem een overzicht met:</p>
+<ol><li>De gegevens die je bewaart.</li><li>Het doel waarvoor je ze gebruikt.</li><li>De mensen en koppelingen die toegang hebben.</li><li>Het moment waarop je controleert of de gegevens weg kunnen.</li></ol>
+<p>Zo zie je waar je moet doorvragen. Waarom staat een geboortedatum in je nieuwsbriefprogramma? Heeft een voormalige medewerker nog toegang? Gebruikt iemand die oude export nog?</p>
+<h2>Minder verzamelen vraagt om keuzes</h2>
+<p>Een veld toevoegen aan een formulier kost weinig tijd. Voor elk veld een goed doel benoemen vraagt meer aandacht.</p>
+<p>Heb je een volledig adres nodig voor een eerste kennismaking? Moet een vrije tekst uit een aanvraag automatisch mee naar je e-mailplatform? Moet elke medewerker het hele klantenbestand kunnen exporteren?</p>
+<p>Bewaar wat je nodig hebt voor je dienstverlening en geldende verplichtingen. Spreek af wanneer je de rest opruimt. Gegevens die je niet meer bewaart, kunnen bij een volgend incident ook niet uit dat systeem worden buitgemaakt.</p>
+<h2>AI maakt dit overzicht nog belangrijker</h2>
+<p>Een AI-assistent die aanvragen samenvat of verkoopgesprekken voorbereidt, kan je werk uit handen nemen. Daarvoor geef je hem toegang tot informatie.</p>
+<p>Bepaal vooraf welke informatie hij nodig heeft.</p>
+<p>Voor het samenvatten van een klantvraag zijn betaalgegevens meestal overbodig. Voor het schrijven van een campagnetekst hoeft een tool geen volledig klantenbestand te ontvangen.</p>
+<p>Controleer ook wat de leverancier met ingevoerde gegevens doet. Worden ze opgeslagen? Wie kan ze bekijken? Kun je ze verwijderen? Kan de assistent alleen informatie lezen, of ook gegevens aanpassen en versturen?</p>
+<p>Dat zijn keuzes die je maakt voordat je de koppeling aanzet.</p>
+<h2>Grip begint met weten wat er staat</h2>
+<p>Een overzicht voorkomt geen softwarefout. Het helpt je wel bepalen welke toegang nodig is, welke gegevens je kunt opruimen en waar je moet kijken als een leverancier een incident meldt.</p>
+<p>Bij Stevin begint het verbinden van marketing, sales en AI met die vragen. Welke informatie helpt je verder? Welke toegang is daarvoor nodig? En hoe houd je daar als ondernemer controle over?</p>
+<p>Pak vandaag één klantaanvraag erbij. Kun jij aanwijzen in welke systemen die terecht is gekomen?</p>
+</>),
   'ai-agents-muse-oppenclaw-instinct': (
     <>
       <p className="lead-para">

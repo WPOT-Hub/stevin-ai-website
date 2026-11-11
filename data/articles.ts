@@ -37,6 +37,23 @@ export interface Article {
 }
 
 const allArticles: Article[] = [
+{
+  "slug": "je-klantgegevens-staan-op-meer-plekken-dan-je-denkt",
+  "format": "dispatch",
+  "edition": "467",
+  "category": "Operations",
+  "title": "Je klantgegevens staan op meer plekken dan je denkt",
+  "dek": "Je CRM, nieuwsbriefprogramma en AI-tools bewaren klantgegevens. Weet jij waar die gegevens staan, wie erbij kan en wat je kunt opruimen?",
+  "publishedAt": "2026-11-11",
+  "readMinutes": 4,
+  "author": {
+    "name": "Stevin Journal",
+    "role": "Redactie"
+  },
+  "posterStyle": "solid",
+  "posterTag": "OPERATIONS",
+  "posterTopic": "Waar staan je klantgegevens?"
+},
   /* ─── UITLEGSTUKKEN (W-479) ─── */
   {
     slug: 'wat-is-first-party-data',
