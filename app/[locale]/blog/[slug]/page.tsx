@@ -1545,7 +1545,8 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
- 'je-klantgegevens-staan-op-meer-plekken-dan-je-denkt': (<>
+  'je-klantgegevens-staan-op-meer-plekken-dan-je-denkt': (
+    <>
 <p className="lead-para">Een klant schrijft zich in via je website. De gegevens komen in je CRM. Het e-mailadres gaat naar je nieuwsbriefprogramma. Een koppeling stuurt informatie door naar je boekingssysteem.</p>
 <p>Weet je waar die gegevens daarna blijven?</p>
 <p>Een datalek bij een softwareleverancier kan ook jouw klanten raken. Je kunt je eigen systemen zorgvuldig beheren, terwijl een leverancier gegevens bewaart waar je nauwelijks zicht op hebt.</p>
@@ -1575,7 +1576,8 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 <p>Een overzicht voorkomt geen softwarefout. Het helpt je wel bepalen welke toegang nodig is, welke gegevens je kunt opruimen en waar je moet kijken als een leverancier een incident meldt.</p>
 <p>Bij Stevin begint het verbinden van marketing, sales en AI met die vragen. Welke informatie helpt je verder? Welke toegang is daarvoor nodig? En hoe houd je daar als ondernemer controle over?</p>
 <p>Pak vandaag één klantaanvraag erbij. Kun jij aanwijzen in welke systemen die terecht is gekomen?</p>
-</>),
+    </>
+  ),
   'ai-agents-muse-oppenclaw-instinct': (
     <>
       <p className="lead-para">
