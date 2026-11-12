@@ -239,7 +239,7 @@ export function ConsentSettingsButton() {
       onClick={reopenBanner}
       className="text-sm text-slate-400 hover:text-white transition-colors duration-200"
     >
-      Cookie-instellingen
+      Cookies
     </button>
   )
 }
