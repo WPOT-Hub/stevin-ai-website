@@ -26,15 +26,15 @@ export default function Footer() {
       { label: t('journal'), href: '/blog' },
       { label: t('bedrijf_contact'), href: '/contact' },
     ],
-    // Juridisch. Deze pagina's bestonden al maar waren alleen bereikbaar als je
-    // de URL kende. Voor "ter hand stellen" bij het sluiten van een overeenkomst
-    // (art. 6:233 sub b en 6:234 BW) en voor de clickwrap in het klantportaal is
-    // dat te mager: ze horen sitewide vindbaar te zijn.
+    // Juridisch. Een link naar het overzicht (/juridisch). Die pagina legt de
+    // vier documenten uit en linkt rechtstreeks naar elk: Algemene
+    // Voorwaarden, Verwerkersovereenkomst, Privacyverklaring en
+    // Geheimhoudingsovereenkomst. Voor "ter hand stellen" bij het sluiten van
+    // een overeenkomst (art. 6:233 sub b en 6:234 BW) en voor de clickwrap in
+    // het klantportaal blijven ze op hun eigen URL staan. Koen, 12 nov 2026:
+    // vier losse links onder een kopje.
     juridisch: [
-      { label: t('legal_terms'), href: '/terms' },
-      { label: t('legal_dpa'), href: '/dpa' },
-      { label: t('legal_privacy'), href: '/privacy' },
-      { label: t('legal_nda'), href: '/nda' },
+      { label: t('legal_overview'), href: '/juridisch' },
     ],
   }
 
