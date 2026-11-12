@@ -202,7 +202,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   const basis: Metadata = {
     alternates: {
       canonical: isEn ? enUrl : nlUrl,
-      languages: { 'nl-NL': nlUrl, en: enUrl, 'x-default': nlUrl },
+      languages: { 'nl-NL': nlUrl, 'x-default': nlUrl },
       types: { 'application/rss+xml': 'https://stevin.ai/feed.xml' },
     },
     ...(process.env.VERCEL_ENV !== 'production' ? { robots: { index: false, follow: false } } : {}),
