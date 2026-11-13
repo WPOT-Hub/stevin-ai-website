@@ -31,8 +31,14 @@ function sendClarityConsent(choice = getStoredConsent()) {
   })
 }
 
+// W-346 (30 sep 2026): Clarity nam op 30 sep sessies op van localhost:3009
+// (25 minuten, 6 pagina's) in het productieproject. Alleen laden op het echte
+// domein; localhost en new.stevin.ai vallen buiten de meting.
+const PRODUCTIE_HOSTS = new Set(['stevin.ai', 'www.stevin.ai'])
+
 function loadClarity() {
   if (typeof window === 'undefined' || !PROJECT_ID || window.__stevinClarityLoaded) return
+  if (!PRODUCTIE_HOSTS.has(window.location.hostname)) return
 
   window.__stevinClarityLoaded = true
   if (!window.clarity) {
