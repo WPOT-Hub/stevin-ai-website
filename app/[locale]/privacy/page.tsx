@@ -204,6 +204,28 @@ function PrivacyDutch() {
           Je kunt via de cookie-instellingen kiezen tussen noodzakelijk, statistieken,
           marketing of alles accepteren. Wij verkopen geen persoonsgegevens.
         </p>
+        <p>
+          Dit zijn de cookies die stevin.ai plaatst, gemeten op 13 november 2026. Cookies voor statistieken komen er pas bij als je daarvoor kiest. Voor marketing plaatsen wij op dit moment geen extra cookies.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-sm">
+            <thead>
+              <tr className="border-b border-border"><th className="py-2 pr-4 font-semibold">Naam</th><th className="py-2 pr-4 font-semibold">Van</th><th className="py-2 pr-4 font-semibold">Soort</th><th className="py-2 pr-4 font-semibold">Doel</th><th className="py-2 pr-4 font-semibold">Bewaard</th></tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">NEXT_LOCALE</td><td className="py-2 pr-4">stevin.ai</td><td className="py-2 pr-4">Noodzakelijk</td><td className="py-2 pr-4">Onthoudt je taalkeuze</td><td className="py-2 pr-4">Sessie</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">stevin_consent (lokale opslag)</td><td className="py-2 pr-4">stevin.ai</td><td className="py-2 pr-4">Noodzakelijk</td><td className="py-2 pr-4">Onthoudt je cookiekeuze</td><td className="py-2 pr-4">Tot je hem wist</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">_ga, _ga_WGB40XGYLF</td><td className="py-2 pr-4">stevin.ai (Google Analytics)</td><td className="py-2 pr-4">Statistieken</td><td className="py-2 pr-4">Herkent een terugkerende browser</td><td className="py-2 pr-4">13 maanden</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">FPID</td><td className="py-2 pr-4">stevin.ai (Google Analytics, via eigen server)</td><td className="py-2 pr-4">Statistieken</td><td className="py-2 pr-4">Herkent een terugkerende browser</td><td className="py-2 pr-4">13 maanden</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">FPLC</td><td className="py-2 pr-4">stevin.ai (Google Analytics, via eigen server)</td><td className="py-2 pr-4">Statistieken</td><td className="py-2 pr-4">Koppelt bezoeken binnen een dag</td><td className="py-2 pr-4">20 uur</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">_clck</td><td className="py-2 pr-4">stevin.ai (Microsoft Clarity)</td><td className="py-2 pr-4">Statistieken</td><td className="py-2 pr-4">Herkent een terugkerende browser</td><td className="py-2 pr-4">1 jaar</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">_clsk</td><td className="py-2 pr-4">stevin.ai (Microsoft Clarity)</td><td className="py-2 pr-4">Statistieken</td><td className="py-2 pr-4">Bundelt paginabezoeken tot een sessie</td><td className="py-2 pr-4">1 dag</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">MUID</td><td className="py-2 pr-4">clarity.ms en bing.com (Microsoft)</td><td className="py-2 pr-4">Statistieken</td><td className="py-2 pr-4">Herkent een browser bij Microsoft</td><td className="py-2 pr-4">13 maanden</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">MR, SRM_B</td><td className="py-2 pr-4">bing.com (Microsoft)</td><td className="py-2 pr-4">Statistieken</td><td className="py-2 pr-4">Ververst en herkent de Microsoft-ID</td><td className="py-2 pr-4">7 dagen tot 13 maanden</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">MR, SM, ANONCHK</td><td className="py-2 pr-4">clarity.ms (Microsoft)</td><td className="py-2 pr-4">Statistieken</td><td className="py-2 pr-4">Sessie en controle van de Microsoft-ID</td><td className="py-2 pr-4">10 minuten tot 7 dagen</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section>
@@ -355,6 +377,28 @@ function PrivacyEnglish() {
           You can choose between necessary, statistics, marketing or accept all through
           the cookie settings. We do not sell personal data.
         </p>
+        <p>
+          These are the cookies stevin.ai sets, measured on 13 November 2026. Statistics cookies are only added once you choose them. We currently set no extra cookies for marketing.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-sm">
+            <thead>
+              <tr className="border-b border-border"><th className="py-2 pr-4 font-semibold">Name</th><th className="py-2 pr-4 font-semibold">From</th><th className="py-2 pr-4 font-semibold">Type</th><th className="py-2 pr-4 font-semibold">Purpose</th><th className="py-2 pr-4 font-semibold">Kept for</th></tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">NEXT_LOCALE</td><td className="py-2 pr-4">stevin.ai</td><td className="py-2 pr-4">Necessary</td><td className="py-2 pr-4">Remembers your language</td><td className="py-2 pr-4">Session</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">stevin_consent (local storage)</td><td className="py-2 pr-4">stevin.ai</td><td className="py-2 pr-4">Necessary</td><td className="py-2 pr-4">Remembers your cookie choice</td><td className="py-2 pr-4">Until you clear it</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">_ga, _ga_WGB40XGYLF</td><td className="py-2 pr-4">stevin.ai (Google Analytics)</td><td className="py-2 pr-4">Statistics</td><td className="py-2 pr-4">Recognises a returning browser</td><td className="py-2 pr-4">13 months</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">FPID</td><td className="py-2 pr-4">stevin.ai (Google Analytics, via our own server)</td><td className="py-2 pr-4">Statistics</td><td className="py-2 pr-4">Recognises a returning browser</td><td className="py-2 pr-4">13 months</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">FPLC</td><td className="py-2 pr-4">stevin.ai (Google Analytics, via our own server)</td><td className="py-2 pr-4">Statistics</td><td className="py-2 pr-4">Links visits within a day</td><td className="py-2 pr-4">20 hours</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">_clck</td><td className="py-2 pr-4">stevin.ai (Microsoft Clarity)</td><td className="py-2 pr-4">Statistics</td><td className="py-2 pr-4">Recognises a returning browser</td><td className="py-2 pr-4">1 year</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">_clsk</td><td className="py-2 pr-4">stevin.ai (Microsoft Clarity)</td><td className="py-2 pr-4">Statistics</td><td className="py-2 pr-4">Groups page views into a session</td><td className="py-2 pr-4">1 day</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">MUID</td><td className="py-2 pr-4">clarity.ms and bing.com (Microsoft)</td><td className="py-2 pr-4">Statistics</td><td className="py-2 pr-4">Recognises a browser at Microsoft</td><td className="py-2 pr-4">13 months</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">MR, SRM_B</td><td className="py-2 pr-4">bing.com (Microsoft)</td><td className="py-2 pr-4">Statistics</td><td className="py-2 pr-4">Refreshes and recognises the Microsoft ID</td><td className="py-2 pr-4">7 days to 13 months</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">MR, SM, ANONCHK</td><td className="py-2 pr-4">clarity.ms (Microsoft)</td><td className="py-2 pr-4">Statistics</td><td className="py-2 pr-4">Session and check of the Microsoft ID</td><td className="py-2 pr-4">10 minutes to 7 days</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section>
