@@ -52,6 +52,10 @@ Vanaf 399 euro per maand bij jaarbetaling, 499 als je per maand betaalt.
 
 Je budget zegt weinig over hoeveel werk het is. Een campagne van 2.000 euro kan lastiger zijn dan een van 10.000. Wij rekenen naar het werk dat er ligt, niet naar je budget. Wat je bij Google en Meta uitgeeft, gaat naar Google en Meta.
 
+## Opzeggen
+
+Betaal je per maand, dan kun je maandelijks opzeggen, tegen het einde van de lopende maand. Zo staat het in onze voorwaarden.
+
 ## Meer vestigingen of merken
 
 De tarieven gelden voor een bedrijf met een merk en een vestiging of webshop. Meer vestigingen, merken of webshops kosten meer. Hoeveel hoor je in de kennismaking.
