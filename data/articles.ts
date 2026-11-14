@@ -47,7 +47,7 @@ const allArticles: Article[] = [
   "publishedAt": "2026-11-14",
   "readMinutes": 4,
   "source": {
-    "url": "https://techcrunch.com/?p=3186097",
+    "url": "https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet/",
     "name": "TechCrunch"
   },
   "author": {
