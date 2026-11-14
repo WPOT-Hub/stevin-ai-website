@@ -1552,7 +1552,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 <p>Volgens TechCrunch geeft Spacefast een AI-gebouwde site of app ook de techniek eromheen: een database, inloggen, bestandsopslag, e-mail en statistieken. Je koppelt het aan een assistent zoals ChatGPT, Claude of Cursor, of aan een Git-opslagplaats. Het concurreert met Lovable en Emergent.</p>
 <p>Het hoofd van Spacefast, Batuhan İçöz, zegt volgens TechCrunch dat sommige sites straks helemaal geen content management systeem nodig hebben. Dat is een uitspraak over een deel van de sites. Het is geen uitspraak dat WordPress verdwijnt.</p>
 <h2>Wat de video daarvan maakt</h2>
-<p>In een reel van 12 november zegt techondernemer Mark Hadfield dat Automattic erkent dat WordPress als CMS over is, en dat de meeste bedrijven WordPress niet zouden moeten gebruiken. Die twee zinnen staan niet in de aankondiging.</p>
+<p>In een video op social media van 12 november zegt techondernemer Mark Hadfield dat Automattic erkent dat WordPress als CMS over is, en dat de meeste bedrijven WordPress niet zouden moeten gebruiken. Die twee zinnen staan niet in de aankondiging.</p>
 <p>Automattic bouwt aan beide kanten tegelijk. Op 20 maart 2026 kreeg WordPress.com de mogelijkheid dat AI-assistenten zoals Claude en ChatGPT berichten en pagina&#8217;s op een bestaande WordPress.com-site aanmaken en wijzigen. Nieuwe berichten starten als concept en je bevestigt elke wijziging. Een bedrijf dat dat uitbrengt, schrijft zijn eigen product niet af.</p>
 <h2>Waar de video wel gelijk heeft</h2>
 <p>Het onderhoud van WordPress zit in de plug-ins. Volgens Patchstack zat 91 procent van de nieuwe kwetsbaarheden in 2025 in plug-ins, en 9 procent in thema&#8217;s. WordPress zelf (de kern) valt daar nauwelijks onder.</p>
