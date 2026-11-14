@@ -1,4 +1,4 @@
-import { NextResponse, type NextRequest } from 'next/server'
+import { NextResponse, type NextFetchEvent, type NextRequest } from 'next/server'
 import createMiddleware from 'next-intl/middleware'
 import { routing } from './i18n/routing'
 import { getCampaignDomain } from './content/campaign-landings/domains'
@@ -61,7 +61,7 @@ async function logBotCrawl(bot: string, path: string): Promise<void> {
     return
   }
   try {
-    await fetch(`${SUPABASE_URL}/rest/v1/ai_bot_crawls`, {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/ai_bot_crawls`, {
       method: 'POST',
       headers: {
         apikey: SUPABASE_ANON,
@@ -73,7 +73,13 @@ async function logBotCrawl(bot: string, path: string): Promise<void> {
         path,
         crawled_at: new Date().toISOString(),
       }),
+      signal: AbortSignal.timeout(3000),
     })
+    // fetch gooit niet bij een 401 of 403. Zonder deze regel verdween een
+    // geweigerde insert zonder spoor (W-844).
+    if (!res.ok) {
+      console.log(JSON.stringify({ type: 'ai_bot_crawl_failed', bot, path, status: res.status }))
+    }
   } catch {
     // Niet-blokkerend: log naar Vercel als fallback
     console.log(JSON.stringify({ type: 'ai_bot_crawl_failed', bot, path }))
@@ -243,7 +249,7 @@ function weg(pad: string): NextResponse {
   })
 }
 
-export default async function middleware(request: NextRequest) {
+export default async function middleware(request: NextRequest, event: NextFetchEvent) {
   // Eerst de korte links van gedrukte QR-codes: die moeten altijd voorgaan.
   const kort = korteLink(request)
   if (kort) return kort
@@ -251,13 +257,13 @@ export default async function middleware(request: NextRequest) {
   const poort = await marketingCheckPoort(request)
   if (poort) return poort
 
-  // AI-bot crawl logging, fire-and-forget zodat middleware niet blokkeert.
-  // Edge runtime kapt losse fetches af na response, maar logBotCrawl()
-  // wacht intern al op de fetch, .catch() zorgt dat fouten stil blijven.
+  // AI-bot crawl logging zonder de bezoeker te laten wachten. De runtime kapt
+  // een losse fetch af zodra het antwoord weg is, en dan komt de rij nooit
+  // aan. waitUntil houdt de functie open tot de insert klaar is (W-844).
   const ua = request.headers.get('user-agent') ?? ''
   const aiBot = detectAIBot(ua)
   if (aiBot) {
-    logBotCrawl(aiBot, request.nextUrl.pathname).catch(() => {})
+    event.waitUntil(logBotCrawl(aiBot, request.nextUrl.pathname).catch(() => {}))
   }
 
   // Na de botmeting, zodat we blijven zien welke AI-crawler nog weggehaalde
