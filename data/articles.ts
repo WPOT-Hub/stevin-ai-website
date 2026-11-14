@@ -43,9 +43,9 @@ const allArticles: Article[] = [
   "edition": "468",
   "category": "Tech",
   "title": "Is WordPress voorbij? Wat Automattic wel en niet zegt",
-  "dek": "Een video zegt dat de eigenaar van WordPress.com erkent dat je geen CMS meer nodig hebt. Wat klopt, en wat betekent het voor de website van een installateur?",
+  "dek": "Een video zegt dat de eigenaar van WordPress.com erkent dat je geen CMS meer nodig hebt. Wat klopt, wat doet WordPress goed, en wie houdt de sleutel van jouw site?",
   "publishedAt": "2026-11-14",
-  "readMinutes": 4,
+  "readMinutes": 6,
   "source": {
     "url": "https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet/",
     "name": "TechCrunch"
