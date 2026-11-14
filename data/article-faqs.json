@@ -166,5 +166,27 @@
       "question": "Hoe test je adverteren in ChatGPT zonder geld te verspillen?",
       "answer": "Zet eerst je meting klaar, tot opdracht en omzet, en start pas daarna een campagne. Geef ChatGPT een eigen budget, schrijf vooraf op wanneer de test geslaagd is, en oordeel pas na een volledige aankoopcyclus. Vergelijk dan wat een klant via ChatGPT kostte met wat een klant via Google Search kost. Klanten, geen klikken."
     }
+  ],
+  "wordpress-in-2026-voorbij-of-veiliger": [
+    {
+      "question": "Is WordPress nog veilig?",
+      "answer": "De kern van WordPress wordt snel gepatcht: na WP2Shell kwamen binnen dagen een oplossing en geforceerde updates. Het risico zit vooral in plugins, goed voor 91 procent van de nieuwe kwetsbaarheden in 2025 volgens Patchstack. WordPress is dus veilig zolang iemand de plugins bijhoudt en verlaten onderdelen weghaalt."
+    },
+    {
+      "question": "Wat is Spacefast?",
+      "answer": "Spacefast is een dienst van Automattic, de eigenaar van WordPress.com, die op 9 november 2026 werd aangekondigd. Het zet websites en apps die met een AI assistent zijn gebouwd online, met een database, inloggen, bestandsopslag, mail en statistieken. Het is een apart product naast WordPress."
+    },
+    {
+      "question": "Moet ik mijn WordPress site vervangen?",
+      "answer": "Meestal niet. Vervang hem pas als niemand de site meer bijhoudt, als je er niet bij kunt, of als je site zo klein is dat een eenvoudiger oplossing volstaat. Een site vervangen omdat een video het zegt, lost het onderhoudsprobleem niet op."
+    },
+    {
+      "question": "Wat doe ik als mijn WordPress site gehackt is?",
+      "answer": "Zet de site zo mogelijk in onderhoudsmodus, wijzig alle wachtwoorden (WordPress, hosting en FTP), werk WordPress en alle plugins bij, scan de bestanden op verdachte code, verwijder achterdeuren en herstel zo nodig een schone back up. Schakel je hoster of een beveiligingsspecialist in als je het niet zeker weet."
+    },
+    {
+      "question": "Wat kost WordPress onderhoud?",
+      "answer": "Aanbieders noemen voor een basispakket met updates, back ups en bewaking ruwweg 30 tot 75 euro per maand, en voor een standaardpakket 75 tot 200 euro. Dat zijn prijzen van de aanbieders zelf, geen onafhankelijke meting. Vraag altijd wat er precies in het pakket zit en wie de beheerder is."
+    }
   ]
 }

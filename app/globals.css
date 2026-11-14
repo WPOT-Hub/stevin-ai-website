@@ -701,3 +701,24 @@ section {
 [data-beweging="uit"] .nw-zweef,
 [data-beweging="uit"] .su-ademen,
 [data-beweging="uit"] .su-puls { animation-play-state: paused; }
+
+/* Tabel in een Journal-stuk: leesbaar op mobiel, scrolt zijwaarts als hij te breed is. */
+.journal-body table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.journal-body th,
+.journal-body td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--fg) 16%, transparent);
+  min-width: 140px;
+}
+.journal-body thead th { font-weight: 600; border-bottom-width: 2px; }
+.journal-body tbody th { font-weight: 600; }

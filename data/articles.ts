@@ -38,6 +38,27 @@ export interface Article {
 
 const allArticles: Article[] = [
 {
+  "slug": "wordpress-in-2026-voorbij-of-veiliger",
+  "format": "dispatch",
+  "edition": "468",
+  "category": "Tech",
+  "title": "WordPress in 2026: voorbij of veiliger dan ooit?",
+  "dek": "Automattic lanceerde Spacefast en een video riep het einde van WordPress uit. Wat klopt, en wie houdt de sleutel van jouw site?",
+  "publishedAt": "2026-11-14",
+  "readMinutes": 8,
+  "source": {
+    "url": "https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet/",
+    "name": "TechCrunch"
+  },
+  "author": {
+    "name": "Stevin Journal",
+    "role": "Redactie"
+  },
+  "posterStyle": "solid",
+  "posterTag": "TECH",
+  "posterTopic": "WordPress: voorbij of veiliger?"
+},
+{
   "slug": "je-klantgegevens-staan-op-meer-plekken-dan-je-denkt",
   "format": "dispatch",
   "edition": "467",
