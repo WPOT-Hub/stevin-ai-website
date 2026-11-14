@@ -1545,6 +1545,29 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'is-wordpress-voorbij-spacefast-automattic': (
+    <>
+<p className="lead-para">Automattic, het bedrijf achter WordPress.com, lanceerde op 9 november 2026 Spacefast. Daarmee kun je websites en apps die een AI-assistent voor je bouwt direct online zetten. Een video die rondgaat, concludeert daaruit dat WordPress als CMS over is. Dat staat er niet.</p>
+<h2>Wat Automattic aankondigde</h2>
+<p>Volgens TechCrunch geeft Spacefast een AI-gebouwde site of app ook de techniek eromheen: een database, inloggen, bestandsopslag, e-mail en statistieken. Je koppelt het aan een assistent zoals ChatGPT, Claude of Cursor, of aan een Git-opslagplaats. Het concurreert met Lovable en Emergent.</p>
+<p>Het hoofd van Spacefast, Batuhan İçöz, zegt volgens TechCrunch dat sommige sites straks helemaal geen content management systeem nodig hebben. Dat is een uitspraak over een deel van de sites. Het is geen uitspraak dat WordPress verdwijnt.</p>
+<h2>Wat de video daarvan maakt</h2>
+<p>In een reel van 12 november zegt techondernemer Mark Hadfield dat Automattic erkent dat WordPress als CMS over is, en dat de meeste bedrijven WordPress niet zouden moeten gebruiken. Die twee zinnen staan niet in de aankondiging.</p>
+<p>Automattic bouwt aan beide kanten tegelijk. Op 20 maart 2026 kreeg WordPress.com de mogelijkheid dat AI-assistenten zoals Claude en ChatGPT berichten en pagina&#8217;s op een bestaande WordPress.com-site aanmaken en wijzigen. Nieuwe berichten starten als concept en je bevestigt elke wijziging. Een bedrijf dat dat uitbrengt, schrijft zijn eigen product niet af.</p>
+<h2>Waar de video wel gelijk heeft</h2>
+<p>Het onderhoud van WordPress zit in de plug-ins. Volgens Patchstack zat 91 procent van de nieuwe kwetsbaarheden in 2025 in plug-ins, en 9 procent in thema&#8217;s. WordPress zelf (de kern) valt daar nauwelijks onder.</p>
+<p>Het marktaandeel daalt ook. Volgens W3Techs, zoals opgenomen in overzichten van oktober 2026, draait WordPress op ongeveer 40 procent van alle websites. Eind 2025 was dat nog ruim 43 procent. Het blijft dus verreweg de grootste speler.</p>
+<h2>Wat dit betekent voor een installateur</h2>
+<p>Een installatie-, dak- of zonnepanelenbedrijf heeft meestal een website met diensten, een paar projecten en een formulier. Daar heb je geen nieuwe technologie voor nodig. Je moet wel weten wie de site onderhoudt.</p>
+<p>Vraag het na bij wie je website beheert:</p>
+<ol><li>Draait de site op WordPress, en welke plug-ins staan erop?</li><li>Wanneer zijn die voor het laatst bijgewerkt, en door wie?</li><li>Wat gebeurt er met een aanvraag die via het formulier binnenkomt? Waar komt hij terecht, en wie belt terug?</li></ol>
+<p>Dat laatste is voor bedrijven die nu leads kopen het belangrijkste. Een aanvraag via je eigen site komt rechtstreeks bij jou binnen, zonder leverancier ertussen. Een site die kapot of gehackt is, levert die aanvragen niet meer op.</p>
+<h2>Stevins perspectief</h2>
+<p>Officieel bevestigd is dat Spacefast bestaat en AI-gebouwde sites hosten kan. Nergens bevestigd is dat WordPress als CMS over is, en dat zegt Automattic zelf ook niet. De uitspraak komt van een videomaker.</p>
+<p>Controleer deze week bij je webbouwer welke plug-ins er op je site staan en wanneer ze voor het laatst zijn bijgewerkt. Open daarna je eigen contactformulier en kijk waar de testaanvraag aankomt en hoe snel iemand reageert.</p>
+<p>Websites bouwen en hosten doen wij niet. Wij kijken naar wat daarna gebeurt: waar aanvragen binnenkomen en hoe ze worden opgevolgd.</p>
+    </>
+  ),
   'je-klantgegevens-staan-op-meer-plekken-dan-je-denkt': (
     <>
 <p className="lead-para">Een klant schrijft zich in via je website. De gegevens komen in je CRM. Het e-mailadres gaat naar je nieuwsbriefprogramma. Een koppeling stuurt informatie door naar je boekingssysteem.</p>

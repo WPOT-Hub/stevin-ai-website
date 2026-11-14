@@ -38,6 +38,27 @@ export interface Article {
 
 const allArticles: Article[] = [
 {
+  "slug": "is-wordpress-voorbij-spacefast-automattic",
+  "format": "dispatch",
+  "edition": "468",
+  "category": "Tech",
+  "title": "Is WordPress voorbij? Wat Automattic wel en niet zegt",
+  "dek": "Een video zegt dat de eigenaar van WordPress.com erkent dat je geen CMS meer nodig hebt. Wat klopt, en wat betekent het voor de website van een installateur?",
+  "publishedAt": "2026-11-14",
+  "readMinutes": 4,
+  "source": {
+    "url": "https://techcrunch.com/?p=3186097",
+    "name": "TechCrunch"
+  },
+  "author": {
+    "name": "Stevin Journal",
+    "role": "Redactie"
+  },
+  "posterStyle": "solid",
+  "posterTag": "TECH",
+  "posterTopic": "Is WordPress voorbij?"
+},
+{
   "slug": "je-klantgegevens-staan-op-meer-plekken-dan-je-denkt",
   "format": "dispatch",
   "edition": "467",

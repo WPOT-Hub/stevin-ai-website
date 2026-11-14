@@ -1,0 +1,56 @@
+is WordPress on its way out as a platform.
+So in the past, I published a couple of videos
+talking about how WordPress was terribly antiquated
+and it should be replaced and will be replaced.
+And I received hundreds of comments
+from WordPress people who were very offended
+and said, I didn't know what I was talking about.
+WordPress was the bee's knees and absolutely
+was the best thing for enterprise websites
+and would continue on forever.
+Hundreds of hundreds of comments.
+Well, today TechCrunch announces that WordPress's owner,
+Automic, Automatic, I'm sorry,
+is the name of the company,
+is publishing a new service
+and it's designed for vibe coded apps to publish their apps.
+And it does things like the domain,
+it does file uploads, it gives you analytics,
+functional websites, et cetera, et cetera.
+So it does a lot of the hosting for you
+that Vercel does for a lot of people.
+But guess what?
+They actually said it probably people don't need a CMS.
+So it seems like Automatic,
+the actual company that makes WordPress.com
+is acknowledging here that WordPress as a CMS is over
+and most companies, at least ones that are using
+agents to create software,
+which is almost everybody right now,
+do not need a CMS in the future.
+So they're producing a completely new front end
+for their platform minus the CMS thinking
+this is the most appropriate thing for most business owners.
+So if you are one of those WordPress people
+who got very upset with me for criticizing WordPress
+and told me, I don't know what I was talking about.
+Guess what?
+It seems like the writing is on the wall.
+Most businesses don't need WordPress.
+Most businesses shouldn't be using WordPress.
+WordPress is antiquated and in dire need of replacement.
+It's a support nightmare with all of these plugins
+and it's security issues.
+And they are much better,
+more scalable infrastructure products.
+This is just one of them,
+but it seems that the WordPress owner Automatic
+is acknowledging that things are changing
+and the world is changing and the market is changing.
+What are your thoughts?
+Let me know.
+Are you still going to continue using WordPress
+after this or are you going to shift
+to something new and modern and more scalable
+and more secure?
+Love to hear.
