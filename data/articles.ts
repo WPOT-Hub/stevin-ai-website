@@ -43,7 +43,7 @@ const allArticles: Article[] = [
   "edition": "468",
   "category": "Tech",
   "title": "WordPress in 2026: voorbij of veiliger dan ooit?",
-  "dek": "Automattic lanceerde Spacefast en een video riep het einde van WordPress uit. Wat klopt, wat deed WordPress goed na WP2Shell, en wie houdt de sleutel van jouw site?",
+  "dek": "Automattic lanceerde Spacefast en een video riep het einde van WordPress uit. Wat klopt, en wie houdt de sleutel van jouw site?",
   "publishedAt": "2026-11-14",
   "readMinutes": 8,
   "source": {
