@@ -38,14 +38,14 @@ export interface Article {
 
 const allArticles: Article[] = [
 {
-  "slug": "is-wordpress-voorbij-spacefast-automattic",
+  "slug": "wordpress-in-2026-voorbij-of-veiliger",
   "format": "dispatch",
   "edition": "468",
   "category": "Tech",
-  "title": "Is WordPress voorbij? Wat Automattic wel en niet zegt",
-  "dek": "Een video zegt dat de eigenaar van WordPress.com erkent dat je geen CMS meer nodig hebt. Wat klopt, wat doet WordPress goed, en wie houdt de sleutel van jouw site?",
+  "title": "WordPress in 2026: voorbij of veiliger dan ooit?",
+  "dek": "Automattic lanceerde Spacefast en een video riep het einde van WordPress uit. Wat klopt, wat deed WordPress goed na WP2Shell, en wie houdt de sleutel van jouw site?",
   "publishedAt": "2026-11-14",
-  "readMinutes": 6,
+  "readMinutes": 8,
   "source": {
     "url": "https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet/",
     "name": "TechCrunch"
@@ -56,7 +56,7 @@ const allArticles: Article[] = [
   },
   "posterStyle": "solid",
   "posterTag": "TECH",
-  "posterTopic": "Is WordPress voorbij?"
+  "posterTopic": "WordPress: voorbij of veiliger?"
 },
 {
   "slug": "je-klantgegevens-staan-op-meer-plekken-dan-je-denkt",
