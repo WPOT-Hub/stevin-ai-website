@@ -30,7 +30,14 @@ const organization = {
   image: 'https://stevin.ai/og-image.png',
   foundingLocation: {
     '@type': 'Place',
-    address: { '@type': 'PostalAddress', addressCountry: 'NL' },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Claudius Prinsenlaan 12',
+      postalCode: '4811 DK',
+      addressLocality: 'Breda',
+      addressRegion: 'Noord-Brabant',
+      addressCountry: 'NL',
+    },
   },
   areaServed: [
     { '@type': 'Country', name: 'Netherlands' },

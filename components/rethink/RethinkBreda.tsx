@@ -75,7 +75,7 @@ const VOORBEELDEN = [
 const VRAGEN = [
   {
     v: 'Zitten jullie echt in Breda?',
-    a: 'Ja. Stevin.AI is een bureau uit Breda. We werken voor ondernemers in Breda en de rest van West-Brabant, en ook daarbuiten. Kennismaken kan op kantoor, bij jou of in een videogesprek.',
+    a: 'Ja. Ons kantoor staat aan de Claudius Prinsenlaan 12 in Breda. We werken voor ondernemers in Breda en de rest van West-Brabant, en ook daarbuiten. Kennismaken kan op kantoor, bij jou of in een videogesprek.',
   },
   {
     v: 'Wat doet een marketingbureau dat ook koppelt en automatiseert?',
@@ -106,7 +106,7 @@ export default function RethinkBreda() {
         knop="breda_kop"
         lede={
           <p className="m-0">
-            Je zoekt een marketingbureau in Breda dat meer doet dan advertenties aanzetten. Wij kijken naar de hele weg: hoe iemand je
+            Je zoekt een bureau voor online marketing in Breda dat meer doet dan advertenties aanzetten. Wij kijken naar de hele weg: hoe iemand je
             vindt, hoe de aanvraag binnenkomt, wie hem opvolgt en of het een opdracht werd. Waar het hapert, koppelen of automatiseren
             we het. Je advertenties en je data zijn van jou, en stoppen kan altijd.
           </p>
@@ -116,7 +116,7 @@ export default function RethinkBreda() {
       <section className="px-6 pb-24 pt-20 sm:pt-24">
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Wat ondernemers ons deze maand vertelden.
+            Wat ondernemers in Breda ons vertellen.
           </h2>
           <Punten items={HERKEN} />
           <p className={`m-0 mt-10 max-w-[640px] ${tekst}`}>
@@ -147,7 +147,7 @@ export default function RethinkBreda() {
           </p>
           <p className={`m-0 mt-5 max-w-[680px] ${tekst}`}>
             AI zonder verstand van marketing levert een site op die live staat en niets telt. Daar gaat dan elke maand
-            advertentiebudget naartoe, zonder dat iemand weet wat het oplevert. Dat zijn we dit najaar letterlijk zo tegengekomen.
+            advertentiebudget naartoe, zonder dat iemand weet wat het oplevert. Dat zijn we letterlijk zo tegengekomen.
           </p>
           <p className={`m-0 mt-5 max-w-[680px] ${tekst}`}>
             Koen Hoogenboom, oprichter, zit twintig jaar in online marketing en werkte onder meer voor Etex, Hyundai, Cirque du
@@ -166,7 +166,7 @@ export default function RethinkBreda() {
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Twee voorbeelden uit de afgelopen weken.
+            Twee voorbeelden uit ons werk.
           </h2>
           <Punten items={VOORBEELDEN} />
           <p className={`m-0 mt-10 max-w-[680px] ${tekst}`}>
