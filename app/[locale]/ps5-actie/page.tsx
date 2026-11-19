@@ -146,25 +146,18 @@ export default async function Ps5ActiePage({ params }: Props) {
           <div>
             <p className={label}>Actie tot en met 31 december 2026, vijf plekken</p>
             <h1
-              className="m-0 max-w-[24ch] text-balance font-display font-extrabold text-white"
-              style={{ ...h2Stijl, fontSize: 'clamp(28px, 3.4vw, 46px)' }}
+              className="m-0 max-w-[20ch] text-balance font-display font-extrabold text-white"
+              style={{ ...h2Stijl, fontSize: 'clamp(30px, 3.6vw, 48px)' }}
             >
-              Ben jij of is jouw bedrijf op zoek naar een nieuw bureau? En wil je iemand blij maken met een PS5 inclusief GTA VI?{' '}
-              <span className="text-accent">It&apos;s your lucky day.</span>
+              PlayStation 5 inclusief GTA&nbsp;VI als <span className="text-accent">welkomstcadeau</span>
             </h1>
-            <p className="m-0 mt-5 max-w-[600px] font-display text-[20px] font-bold leading-[1.35] text-white">
-              Net als GTA 6 leggen wij een nieuwe lat. Niet in gaming, maar in marketing en sales.
-            </p>
-            <p className="m-0 mt-8 font-display text-[22px] font-extrabold leading-[1.2] text-white">
-              PlayStation 5 inclusief GTA VI als welkomstcadeau
-            </p>
-            <ul className="m-0 mt-4 flex max-w-[600px] list-none flex-col gap-4 p-0">
+            <ul className="m-0 mt-8 flex max-w-[600px] list-none flex-col gap-4 p-0">
               <li className="rounded-xl border border-white/15 bg-white/5 p-5">
                 <p className="m-0 font-display text-[19px] font-bold leading-[1.3] text-white">
                   Word adverteerder bij Stevin en krijg een PS5 met GTA VI.
                 </p>
                 <p className="m-0 mt-1 text-[15px] leading-[1.5] text-white/70">
-                  Je kiest zelf een PS5 Digital Edition met tegoed voor GTA VI. Voor de eerste vijf nieuwe klanten, met een jaarcontract en een volledig opstarttraject.
+                  Voor de eerste vijf nieuwe klanten, met een jaarcontract.
                 </p>
               </li>
               <li className="rounded-xl border border-white/15 bg-white/5 p-5">
@@ -172,8 +165,7 @@ export default async function Ps5ActiePage({ params }: Props) {
                   Breng jij een adverteerder aan? Dan krijgt hij de PS5 met GTA VI, en jij GTA VI.
                 </p>
                 <p className="m-0 mt-1 text-[15px] leading-[1.5] text-white/70">
-                  Jouw GTA VI is PlayStation Store-tegoed voor GTA VI Standard, 79,99 euro. Meld hem aan voordat hij tekent, via
-                  info@stevin.ai.
+                  Meld hem aan voordat hij tekent, via info@stevin.ai.
                 </p>
               </li>
             </ul>
@@ -187,13 +179,6 @@ export default async function Ps5ActiePage({ params }: Props) {
                 Lees de voorwaarden
               </a>
             </div>
-            <p className="m-0 mt-5 text-[13px] text-white/50">
-              Er gelden{' '}
-              <a href="#voorwaarden" className="underline underline-offset-2 hover:text-white/80">
-                voorwaarden
-              </a>
-              , zie hieronder.
-            </p>
           </div>
           <figure className="m-0 mx-auto w-full max-w-[560px]">
             <Image
@@ -206,7 +191,7 @@ export default async function Ps5ActiePage({ params }: Props) {
               className="h-auto w-full rounded-2xl"
             />
             <figcaption className="mt-3 text-sm text-white/70">
-              Sfeerbeeld. Het cadeau is bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI.
+              Sfeerbeeld.
             </figcaption>
           </figure>
         </div>
@@ -215,10 +200,14 @@ export default async function Ps5ActiePage({ params }: Props) {
       {/* Wat het opstarttraject is */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
+          <p className={label}>Ben jij of is jouw bedrijf op zoek naar een nieuw bureau? It&apos;s your lucky day.</p>
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Eerst goed van start, dan pas de rest.
           </h2>
           <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
+            <p className="m-0">
+              Net als GTA VI leggen wij een nieuwe lat. Niet in gaming, maar in marketing en sales.
+            </p>
             <p className="m-0">
               Bij ons begint elk traject met de basis: een pagina waar je advertenties naartoe leiden, een campagne die
               erop stuurt, een telefoon die je kunt meten en cijfers die kloppen. Wij zijn een marketing- en salesbureau uit
