@@ -187,9 +187,12 @@ export default async function Ps5ActiePage({ params }: Props) {
                 Lees de voorwaarden
               </a>
             </div>
-            <p className="m-0 mt-6 max-w-[600px] text-sm text-white/70">
-              Voor nieuwe zakelijke klanten, op volgorde van tekenen. Wij bestellen het cadeau nadat je het opstarttraject
-              hebt betaald. Zeg je binnen drie maanden op, dan berekenen we de console door. Alle voorwaarden staan hieronder.
+            <p className="m-0 mt-5 text-[13px] text-white/50">
+              Er gelden{' '}
+              <a href="#voorwaarden" className="underline underline-offset-2 hover:text-white/80">
+                voorwaarden
+              </a>
+              , zie hieronder.
             </p>
           </div>
           <figure className="m-0 mx-auto w-full max-w-[560px]">
