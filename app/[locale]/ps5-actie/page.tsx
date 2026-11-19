@@ -156,7 +156,7 @@ export default async function Ps5ActiePage({ params }: Props) {
               Net als GTA 6 leggen wij een nieuwe lat. Niet in gaming, maar in marketing en sales.
             </p>
             <p className="m-0 mt-8 font-display text-[22px] font-extrabold leading-[1.2] text-white">
-              PlayStation 5 als welkomstcadeau
+              PlayStation 5 inclusief GTA VI als welkomstcadeau
             </p>
             <ul className="m-0 mt-4 flex max-w-[600px] list-none flex-col gap-4 p-0">
               <li className="rounded-xl border border-white/15 bg-white/5 p-5">
