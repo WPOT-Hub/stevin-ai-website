@@ -155,6 +155,10 @@ export default function RethinkBreda() {
             er tienduizenden euro&apos;s per jaar voor, en dan had je de uren van de consultants en de kosten van de invoering nog niet.
             AI heeft het bouwen zo veel goedkoper gemaakt dat het nu ook voor een gewone ondernemer kan.&rdquo;
           </p>
+          <p className={`m-0 mt-5 max-w-[680px] ${tekst}`}>
+            We hebben geen ambitie om het grootste bureau te worden. Wel om het beste werk te leveren. Je werkt bij ons met de
+            mensen die het zelf bouwen, niet met een accountmanager die het doorgeeft.
+          </p>
         </div>
       </section>
 
