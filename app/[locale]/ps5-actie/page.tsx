@@ -97,6 +97,14 @@ const VOORWAARDEN = [
   'Stevin.AI is niet verbonden aan Sony of Rockstar Games en wordt niet door hen gesponsord. Alle merknamen zijn van hun eigenaren.',
 ]
 
+const DOORVERWIJZEN = [
+  'Alleen voor klanten van Stevin.AI. Je krijgt per ondernemer die je aanbrengt en die klant wordt een tegoed.',
+  'De ondernemer moet nieuw zijn bij Stevin.AI en je meldt hem aan voordat hij tekent. Wij bevestigen de aanmelding.',
+  'Wij kopen het tegoed nadat de ondernemer zijn jaarcontract heeft getekend en zijn opstarttraject heeft betaald.',
+  'Zegt de ondernemer zijn contract binnen drie maanden na de start op, dan vervalt het tegoed. Heb je het al ontvangen, dan berekenen we het aan je door.',
+  'Het tegoed is niet in te ruilen voor geld of korting. Je krijgt het op je eigen PlayStation-account.',
+]
+
 const VRAGEN: Vraag[] = [
   {
     v: 'Waarom staat er geen "gratis" bij?',
@@ -232,7 +240,7 @@ export default async function Ps5ActiePage({ params }: Props) {
         </div>
       </section>
 
-      {/* Doorverwijzen: concept, voorwaarden nog niet door Koen vastgelegd (W-861). */}
+      {/* Doorverwijzen: de voorwaarden zijn een voorstel van Claude, Koen beslist (W-861). */}
       <section id="doorverwijzen" className="scroll-mt-24 bg-surface px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
@@ -248,6 +256,15 @@ export default async function Ps5ActiePage({ params }: Props) {
               opstarttraject heeft betaald. Je meldt hem aan bij ons voordat hij tekent, via info@stevin.ai.
             </p>
           </div>
+          <h3 className="m-0 mt-12 font-display text-[20px] font-bold text-primary">Voorwaarden voor doorverwijzen</h3>
+          <ul className={`m-0 mt-6 max-w-[760px] list-none space-y-4 p-0 ${tekst}`}>
+            {DOORVERWIJZEN.map((v) => (
+              <li key={v} className="flex gap-4">
+                <span className="mt-[11px] inline-block h-2 w-2 flex-shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                <span>{v}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
