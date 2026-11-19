@@ -191,8 +191,8 @@
   ],
   "adverteerder-en-betaler-meta-advertenties": [
     {
-      "question": "Wat is het verschil tussen adverteerder en betaler bij Meta?",
-      "answer": "De adverteerder (beneficiary) is de partij namens wie de advertentie wordt getoond. De betaler (payer) is de partij die ervoor betaalt. Ze kunnen dezelfde zijn, maar dat hoeft niet. Wat je invult moet kloppen met wie er echt betaalt."
+      "question": "Wat is de begunstigde en wat is de betaler bij Meta-advertenties?",
+      "answer": "De adverteerder, in het Engels beneficiary en ook wel begunstigde genoemd, is de partij namens wie de advertentie wordt getoond. De betaler (payer) is de partij die ervoor betaalt. Ze kunnen dezelfde zijn, maar dat hoeft niet. Wat je invult moet kloppen met wie er echt betaalt."
     },
     {
       "question": "Zijn adverteerder en betaler verplicht bij Meta-advertenties?",

@@ -47,7 +47,7 @@ const allArticles: Article[] = [
   "edition": "470",
   "category": "Platform",
   "title": "Adverteerder en betaler bij Meta-advertenties invullen",
-  "dek": "Meta vraagt per advertentieset om de adverteerder (beneficiary) en de betaler (payer). Wat de EU-regel zegt, waar je het instelt en wat je invult als een bureau meebeheert.",
+  "dek": "Meta vraagt per advertentieset om de adverteerder (beneficiary, ook wel begunstigde) en de betaler (payer). Wat de EU-regel zegt, waar je het instelt en wat je invult als een bureau meebeheert.",
   "publishedAt": "2026-11-19",
   "readMinutes": 5,
   "source": {

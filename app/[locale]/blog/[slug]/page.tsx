@@ -1569,7 +1569,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
     <>
 <p style={{ fontSize: '14px' }}><a href="/blog/beneficiary-and-payer-meta-ads" hrefLang="en" lang="en">Read this page in English</a></p>
 <p className="lead-para">Meta vraagt bij elke advertentieset die op de EU is gericht om twee namen: de adverteerder en de betaler. In het Engels heten die beneficiary en payer. De adverteerder is de partij namens wie de advertentie wordt getoond. De betaler is de partij die ervoor heeft betaald. Vaak is dat dezelfde partij, maar niet altijd.</p>
-<h2>Wat zijn de adverteerder en de betaler?</h2>
+<h2>Wat zijn de adverteerder (begunstigde) en de betaler?</h2>
 <p>In de Nederlandse Ads Manager heet het blok &#8220;Adverteerder en betaler&#8221;. Meta legt het zo uit: &#8220;Voor advertenties die op bepaalde locaties worden weergegeven, moeten details over de adverteerder en betaler worden verstrekt.&#8221; Dat stond zo in Ads Manager op 19 november 2026. Je ziet de adverteerder ook wel &#8220;begunstigde&#8221; genoemd, de vertaling van beneficiary.</p>
 <p>De regel komt uit de Digital Services Act van de EU (Verordening (EU) 2022/2065). Artikel 26 verplicht online platforms om bij elke advertentie te laten zien namens wie ze wordt getoond. Is dat een andere partij dan degene die betaalde, dan moet ook de betaler worden getoond.</p>
 <p>Let op de woorden. Het gaat niet om wie er voordeel van heeft. Het gaat om namens wie de advertentie wordt getoond en wie ze betaalt. En de betaler kies je niet naar gemak: het is de partij die echt betaalt.</p>
@@ -1596,11 +1596,11 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 <tr><th>Het bureau betaalt Meta en berekent de mediakosten door aan de klant</th><td>De klant</td><td>Kan het bureau zijn</td></tr>
 </tbody>
 </table>
-<p>Uit de namen alleen zie je niet wie het account bezit of wie de campagne beheert. Staat bij een advertentie een bureau als betaler, dan weet je alleen dat dat bureau betaalde.</p>
+<p>Uit de namen alleen zie je niet wie het account bezit of wie de campagne beheert. Staat bij een advertentie een bureau als betaler, dan weet je alleen dat dat bureau betaalde. Wie je advertentieaccount en de data bezit, is een aparte vraag. Die staat in <a href="/blog/wie-is-eigenaar-van-je-advertentiedata">wie is eigenaar van je advertentiedata</a> en in <a href="/blog/bureau-geen-toegang-advertentieaccount">bureau geeft geen toegang tot je advertentieaccount</a>.</p>
 <p>Twijfel je wie als betaler hoort? Leg vast wie de factuur van Meta betaalt en bespreek het met je boekhouder of jurist. Dit stuk legt de regel uit en is geen juridisch advies.</p>
 <h2>Veelgestelde vragen</h2>
-<h3>Wat is het verschil tussen adverteerder en betaler bij Meta?</h3>
-<p>De adverteerder (beneficiary) is de partij namens wie de advertentie wordt getoond. De betaler (payer) is de partij die ervoor betaalt. Ze kunnen dezelfde zijn, maar dat hoeft niet. Wat je invult moet kloppen met wie er echt betaalt.</p>
+<h3>Wat is de begunstigde en wat is de betaler bij Meta-advertenties?</h3>
+<p>De adverteerder, in het Engels beneficiary en ook wel begunstigde genoemd, is de partij namens wie de advertentie wordt getoond. De betaler (payer) is de partij die ervoor betaalt. Ze kunnen dezelfde zijn, maar dat hoeft niet. Wat je invult moet kloppen met wie er echt betaalt.</p>
 <h3>Zijn adverteerder en betaler verplicht bij Meta-advertenties?</h3>
 <p>Ja, voor advertentiesets die op de EU zijn gericht. Sinds 16 augustus 2023 publiceert Meta een advertentie niet zonder deze gegevens, volgens de documentatie van Meta voor ontwikkelaars.</p>
 <h3>Waar stel ik adverteerder en betaler in?</h3>
