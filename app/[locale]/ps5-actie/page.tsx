@@ -145,7 +145,7 @@ export default async function Ps5ActiePage({ params }: Props) {
               <span className="text-accent">It&apos;s your lucky day.</span>
             </h1>
             <p className="m-0 mt-5 max-w-[600px] font-display text-[20px] font-bold leading-[1.35] text-white">
-              De meest innovatieve game en het meest innovatieve bureau tegelijk in huis halen?
+              Net als GTA 6 leggen wij een nieuwe lat. Niet in gaming, maar in marketing en sales.
             </p>
             <p className="m-0 mt-6 max-w-[600px] text-[18px] leading-[1.55] text-white/75">
               Start nu met Stevin.AI als jouw bureau, met een jaarcontract en een volledig opstarttraject, bijvoorbeeld een
