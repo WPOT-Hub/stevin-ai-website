@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import ContactForm from '@/components/ContactForm'
 import NodeWatermerk from '@/components/rethink/NodeWatermerk'
-import ActieBeeld from '@/components/rethink/ActieBeeld'
 import { Knop, Punten, Vragen, h2Stijl, tekst, type Vraag } from '@/components/rethink/RethinkBlokken'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -22,9 +21,9 @@ type Props = { params: Promise<{ locale: string }> }
 //    ACM-pagina "iets gratis noemen" zegt hetzelfde over abonnementen.
 //  - Geen bedragen en geen drempel op de pagina. De doorberekening staat vooraf
 //    in de offerte.
-//  - Geen Sony-, PlayStation-, Rockstar- of GTA-logo's en geen nagemaakte hoes:
-//    eigen illustratie. De merknamen staan alleen als tekst, om te zeggen wat
-//    het cadeau is.
+//  - Geen Sony-, PlayStation-, Rockstar- of GTA-logo's, geen nagemaakte hoes
+//    en geen AI-beeld van een console (Koen, 19 nov: "nep"). Geen beeld tot er
+//    een eigen foto is. De merknamen staan alleen als tekst.
 //  - noindex en niet in de sitemap, zoals /black-friday: dit is een bestemming
 //    voor onze eigen lijsten, geen zoekpagina (REGEL 8).
 //  - Alleen Nederlands.
@@ -134,14 +133,15 @@ export default async function Ps5ActiePage({ params }: Props) {
       {/* Kop, donker zoals de hero's van de nieuwe pagina's. */}
       <section className="relative overflow-hidden bg-primary px-6 pb-24 pt-[184px] text-white sm:pt-[200px]">
         <NodeWatermerk seed={861} thema="donker" />
-        <div className="relative mx-auto grid max-w-[1152px] items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="relative mx-auto max-w-[1152px]">
           <div>
             <p className={label}>Actie tot en met 31 december 2026, vijf plekken</p>
             <h1
-              className="m-0 max-w-[18ch] text-balance font-display font-extrabold text-white"
-              style={{ ...h2Stijl, fontSize: 'clamp(34px, 4.4vw, 60px)' }}
+              className="m-0 max-w-[26ch] text-balance font-display font-extrabold text-white"
+              style={{ ...h2Stijl, fontSize: 'clamp(30px, 3.8vw, 52px)' }}
             >
-              GTA VI komt eraan. <span className="text-accent">Wij regelen de console.</span>
+              Ben jij of is jouw bedrijf op zoek naar een nieuw bureau? En wil je iemand blij maken met een PS5 inclusief GTA VI?{' '}
+              <span className="text-accent">It&apos;s your lucky day.</span>
             </h1>
             <p className="m-0 mt-6 max-w-[600px] text-[18px] leading-[1.55] text-white/75">
               Start nu met Stevin.AI als jouw bureau, met een jaarcontract en een volledig opstarttraject, bijvoorbeeld een
@@ -163,7 +163,6 @@ export default async function Ps5ActiePage({ params }: Props) {
               hebt betaald. Zeg je binnen drie maanden op, dan berekenen we de console door. Alle voorwaarden staan hieronder.
             </p>
           </div>
-          <ActieBeeld className="mx-auto w-full max-w-[520px]" />
         </div>
       </section>
 
