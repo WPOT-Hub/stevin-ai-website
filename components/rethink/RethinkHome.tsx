@@ -279,6 +279,14 @@ export default function RethinkHome() {
               <dt className="text-balance text-[17px] leading-snug text-white/75">{PRIJZEN.zelf.wat}</dt>
               <dd className="m-0 whitespace-nowrap text-[17px] text-white/75">
                 <span className="font-display font-bold text-white/90">{PRIJZEN.zelf.prijs}</span> {PRIJZEN.zelf.per}
+                {/* Koen, 19 nov 2026: vanaf 399 staat op de wachtlijst. */}
+                <Link
+                  href="/wachtlijst"
+                  data-cta="prijs_wachtlijst"
+                  className="ml-4 inline-flex items-center rounded-lg border border-white/30 px-4 py-1.5 text-[14px] font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
+                >
+                  Wachtlijst
+                </Link>
               </dd>
             </div>
           </dl>

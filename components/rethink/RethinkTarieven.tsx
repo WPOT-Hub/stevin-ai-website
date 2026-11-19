@@ -161,6 +161,18 @@ export default function RethinkTarieven() {
                     </li>
                   ))}
                 </ul>
+                {/* Koen, 19 nov 2026: vanaf 399 staat op de wachtlijst. */}
+                {p.id === 'zelf' && (
+                  <div className="mt-auto pt-8">
+                    <Link
+                      href="/wachtlijst"
+                      data-cta="tarieven_wachtlijst"
+                      className="inline-flex items-center rounded-lg bg-accent px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-accent/90"
+                    >
+                      Zet me op de wachtlijst
+                    </Link>
+                  </div>
+                )}
               </article>
             )
           })}
