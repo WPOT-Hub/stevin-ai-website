@@ -303,6 +303,17 @@ export default function RethinkHome() {
             <p className="mx-auto mt-5 max-w-[620px] text-[18px] leading-[1.6] text-white/75">
               Dat hoor je in een half uur. Past het niet, dan zeggen we dat ook.
             </p>
+            <p className="mx-auto mt-3 max-w-[620px] text-[15px] leading-[1.6] text-white/60">
+              Liever langskomen? We zijn een{' '}
+              <Link
+                href="/marketingbureau-breda"
+                data-cta="home_breda"
+                className="text-white/80 underline underline-offset-4 transition-colors hover:text-white"
+              >
+                marketingbureau in Breda
+              </Link>
+              .
+            </p>
             <div className="mt-9 flex justify-center">
               <Link
                 href="/kennismaking"
