@@ -6,7 +6,18 @@ import Image from 'next/image'
 import NodeWatermerk from '@/components/rethink/NodeWatermerk'
 import { Knop, Punten, Vragen, h2Stijl, tekst, type Vraag } from '@/components/rethink/RethinkBlokken'
 
-type Props = { params: Promise<{ locale: string }> }
+type Props = {
+  params: Promise<{ locale: string }>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
+}
+
+// W-861: elk vak krijgt in de advertentie een eigen link (?vak=dakdekker of ?vak=installateur).
+// Alleen waarden uit deze lijst tellen; al het andere wordt genegeerd, zodat niemand
+// via de link eigen tekst op de pagina kan zetten.
+const VAKKEN: Record<string, { enkelvoud: string; meervoud: string }> = {
+  dakdekker: { enkelvoud: 'dakdekker', meervoud: 'dakdekkers' },
+  installateur: { enkelvoud: 'installateur', meervoud: 'installateurs' },
+}
 
 // W-861 (19 nov 2026): de PS5-actie. De eerste vijf nieuwe klanten die tot en met
 // 31 december 2026 starten met een jaarcontract en een volledig opstarttraject
@@ -134,8 +145,10 @@ const VRAGEN: Vraag[] = [
   },
 ]
 
-export default async function Ps5ActiePage({ params }: Props) {
+export default async function Ps5ActiePage({ params, searchParams }: Props) {
   const { locale } = await params
+  const { vak: vakParam } = await searchParams
+  const vak = typeof vakParam === 'string' && Object.hasOwn(VAKKEN, vakParam) ? VAKKEN[vakParam] : null
   if (locale !== 'nl') notFound()
   setRequestLocale(locale)
 
@@ -146,6 +159,9 @@ export default async function Ps5ActiePage({ params }: Props) {
         <NodeWatermerk seed={861} thema="donker" />
         <div className="relative mx-auto grid max-w-[1152px] items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
+            {vak && (
+              <p className={label}>Voor {vak.meervoud}</p>
+            )}
             <h1
               className="m-0 max-w-[22ch] text-balance font-display font-extrabold text-white"
               style={{ ...h2Stijl, fontSize: 'clamp(26px, 3vw, 40px)' }}
@@ -273,7 +289,7 @@ export default async function Ps5ActiePage({ params }: Props) {
           </div>
           <div className="mt-10">
             <ContactForm
-              subject="PS5-actie 2026"
+              subject={vak ? `PS5-actie 2026 (${vak.enkelvoud})` : 'PS5-actie 2026'}
               keuzeLabel="Waar ben je naar op zoek?"
               bedrijfEnTelefoonVerplicht
               keuzes={[
