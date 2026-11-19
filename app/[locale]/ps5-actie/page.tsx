@@ -98,10 +98,10 @@ const VOORWAARDEN = [
 ]
 
 const DOORVERWIJZEN = [
-  'Alleen voor klanten van Stevin.AI. Je krijgt per ondernemer die je aanbrengt en die klant wordt een tegoed.',
-  'De ondernemer moet nieuw zijn bij Stevin.AI. Je meldt hem aan voordat hij tekent, via info@stevin.ai. Wij bevestigen de aanmelding. Meld je hem pas aan nadat hij getekend heeft, dan telt hij niet mee.',
-  'Wij kopen het tegoed nadat de ondernemer zijn jaarcontract heeft getekend en zijn opstarttraject heeft betaald.',
-  'Zegt de ondernemer zijn contract binnen drie maanden na de start op, dan vervalt het tegoed. Heb je het al ontvangen, dan berekenen we het aan je door.',
+  'Iedereen kan een adverteerder aanbrengen. Je krijgt per adverteerder die je aanbrengt en die klant wordt een tegoed.',
+  'De adverteerder moet nieuw zijn bij Stevin.AI. Je meldt hem aan voordat hij tekent, via info@stevin.ai. Wij bevestigen de aanmelding. Meld je hem pas aan nadat hij getekend heeft, dan telt hij niet mee.',
+  'Wij kopen het tegoed nadat de adverteerder zijn jaarcontract heeft getekend en zijn opstarttraject heeft betaald.',
+  'Zegt de adverteerder zijn contract binnen drie maanden na de start op, dan vervalt het tegoed. Heb je het al ontvangen, dan berekenen we het aan je door.',
   'Het tegoed is niet in te ruilen voor geld of korting. Je krijgt het op je eigen PlayStation-account.',
 ]
 
@@ -144,36 +144,22 @@ export default async function Ps5ActiePage({ params }: Props) {
         <NodeWatermerk seed={861} thema="donker" />
         <div className="relative mx-auto grid max-w-[1152px] items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <p className={label}>Actie tot en met 31 december 2026, vijf plekken</p>
             <h1
-              className="m-0 max-w-[24ch] text-balance font-display font-extrabold text-white"
-              style={{ ...h2Stijl, fontSize: 'clamp(28px, 3.4vw, 46px)' }}
+              className="m-0 max-w-[22ch] text-balance font-display font-extrabold text-white"
+              style={{ ...h2Stijl, fontSize: 'clamp(26px, 3vw, 40px)' }}
             >
-              Ben jij of is jouw bedrijf op zoek naar een nieuw bureau? En wil je iemand blij maken met een PS5 inclusief GTA VI?{' '}
-              <span className="text-accent">It&apos;s your lucky day.</span>
+              <span className="text-accent">Net als GTA&nbsp;VI leggen wij een nieuwe lat.</span> Niet in gaming, maar in marketing en sales.
             </h1>
-            <p className="m-0 mt-5 max-w-[600px] font-display text-[20px] font-bold leading-[1.35] text-white">
-              Net als GTA 6 leggen wij een nieuwe lat. Niet in gaming, maar in marketing en sales.
+            <p className="m-0 mt-5 max-w-[600px] text-[18px] leading-[1.55] text-white/75">
+              Ben jij of is jouw bedrijf op zoek naar een nieuw bureau? En wil je iemand blij maken met een PS5 inclusief GTA VI?{' '}
+              <span className="font-semibold text-white">It&apos;s your lucky day.</span>
             </p>
-            <p className="m-0 mt-6 max-w-[600px] text-[18px] leading-[1.55] text-white/75">
-              Start nu met Stevin.AI als jouw bureau, met een jaarcontract en een volledig opstarttraject, bijvoorbeeld een
-              nieuwe website, een campagne, je telefoon ingericht en de meting. De eerste vijf nieuwe klanten kiezen zelf hun
-              cadeau, binnen een vast budget van Stevin.AI. Bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI.
+            <p className="m-0 mt-7 max-w-[600px] text-[18px] font-semibold leading-[1.5] text-white">
+              Word nu klant bij Stevin.AI en kies een PS5 Digital Edition met tegoed voor GTA VI als welkomstcadeau, bij een jaarcontract met volledig opstarttraject. Voor de eerste vijf nieuwe klanten, tot 31 december.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="mt-9">
               <Knop cta="ps5_actie_hero_gesprek" licht />
-              <a
-                href="#voorwaarden"
-                data-cta="ps5_actie_hero_voorwaarden"
-                className="text-[15px] font-semibold text-white/80 underline underline-offset-4 transition-colors hover:text-white"
-              >
-                Lees de voorwaarden
-              </a>
             </div>
-            <p className="m-0 mt-6 max-w-[600px] text-sm text-white/70">
-              Voor nieuwe zakelijke klanten, op volgorde van tekenen. Wij bestellen het cadeau nadat je het opstarttraject
-              hebt betaald. Zeg je binnen drie maanden op, dan berekenen we de console door. Alle voorwaarden staan hieronder.
-            </p>
           </div>
           <figure className="m-0 mx-auto w-full max-w-[560px]">
             <Image
@@ -185,9 +171,6 @@ export default async function Ps5ActiePage({ params }: Props) {
               sizes="(min-width: 1024px) 480px, 100vw"
               className="h-auto w-full rounded-2xl"
             />
-            <figcaption className="mt-3 text-sm text-white/70">
-              Sfeerbeeld. Het cadeau is bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI.
-            </figcaption>
           </figure>
         </div>
       </section>
@@ -244,7 +227,7 @@ export default async function Ps5ActiePage({ params }: Props) {
       <section id="doorverwijzen" className="scroll-mt-24 bg-surface px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Breng een ondernemer mee, en speel samen.
+            Breng een adverteerder mee, en speel samen.
           </h2>
           <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
             <p className="m-0">
@@ -252,11 +235,11 @@ export default async function Ps5ActiePage({ params }: Props) {
               wat we echt leuk vinden: werk dat voor onze klanten op winst stuurt.
             </p>
             <p className="m-0">
-              Ken je een ondernemer die een bureau zoekt dat op winst stuurt? Stuur hem naar ons. Hij krijgt een campagne
-              waar we op winst sturen, jij krijgt PlayStation Store-tegoed voor GTA VI. Dan kun je samen met je maat spelen.
+              Ken je een adverteerder die een bureau zoekt dat op winst stuurt? Stuur hem naar ons. Wordt hij klant, dan krijgt
+              hij de PS5 met GTA VI. Jij krijgt GTA VI als PlayStation Store-tegoed. Dan kun je samen met je maat spelen.
             </p>
             <p className="m-0">
-              Het tegoed koopt Stevin.AI nadat de ondernemer die je aanbracht zijn jaarcontract heeft getekend en zijn
+              Het tegoed koopt Stevin.AI nadat de adverteerder die je aanbracht zijn jaarcontract heeft getekend en zijn
               opstarttraject heeft betaald. Je meldt hem aan bij ons voordat hij tekent, via info@stevin.ai.
             </p>
           </div>
