@@ -65,17 +65,6 @@ export const metadata: Metadata = {
 
 const label = 'm-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent'
 
-// W-861: wat hier niet af is, staat als "in aanbouw". Bij Rigô Bouw bewezen live (Voys, W-660, KLANTKRINGLOOP 14 nov): een gesprek komt als aanvraag binnen en het keuzemenu draait in hun Voys. Niet bewezen bij een klant: herkende beller met appje, meeschrijven, kwalificeren, inplannen. Nagekeken in Stevin-Hub (19 nov 2026):
-// de 076-lijn van Stevin zelf herkent bellers en legt gesprekken vast, maar de route per klant
-// (nummer naar klant) en het appje bij een gemiste oproep met de naam van de beller bestaan nog
-// niet voor klanten. Ook het terugsturen van gekwalificeerde aanvragen naar Google en Meta bestaat nog niet (geen code in Stevin-Hub, 19 nov). Pas "in aanbouw" weg als dat live is en in system_health groen staat.
-const DAK = [
-  { t: 'Elk gesprek wordt een aanvraag', d: 'Je klant belt en het gesprek staat in Stevin.AI, met de tijd en of het is opgenomen. Dit draait al bij een klant.' },
-  { t: 'Gemiste oproep, meteen een appje', d: 'De beller krijgt direct bericht en jij belt terug als het uitkomt. In aanbouw.' },
-  { t: 'Goede aanvragen terug naar Google en Meta', d: 'Is een aanvraag goed, bijvoorbeeld een VvE bij een dakdekker, dan geven wij dat door aan het advertentieplatform. Zo zoekt het meer aanvragen van dat soort. In aanbouw.' },
-  { t: 'Een aanvraag blijft niet liggen', d: 'Wie een aanvraag doet, krijgt snel een bericht en een herinnering, zodat jij niet hoeft na te jagen. In aanbouw.' },
-]
-
 const OPSTART = [
   {
     t: 'Een nieuwe website',
@@ -253,25 +242,18 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </p>
       </section>
 
-      {/* Op het dak: wat Stevin voor een vakman regelt. Eerlijk als "in aanbouw" gemarkeerd. */}
+      {/* Op het dak: alleen wat bij een klant bewezen draait (Voys naar Hub, W-660, 4 nov 2026). */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
         <div className="mx-auto max-w-[1152px]">
-          <p className={label}>Deels aan, deels in aanbouw</p>
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Je staat op het dak en je klant belt.
           </h2>
           <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
             <p className="m-0">
-              Je kunt niet opnemen. Het systeem herkent wie er belt en stuurt meteen een appje: &ldquo;Dag Jan, ik sta even
-              met mijn handen vol op het dak. Kan ik je straks even bellen?&rdquo;
-            </p>
-            <p className="m-0">
-              Zo blijft een klant niet in de wacht staan, en bel jij terug op een moment dat het past. Dat het gesprek als aanvraag binnenkomt, draait al
-              bij een klant. Het appje met de naam, het meeschrijven en het inplannen bouwen we nu. Wat je krijgt en wanneer,
-              staat in je offerte.
+              Je kunt niet opnemen. Het gesprek staat toch in Stevin.AI, met de tijd en of het is opgenomen. Zo weet je
+              wie je terug moet bellen, en blijft er geen klant liggen.
             </p>
           </div>
-          <Punten items={DAK} kolommen={2} />
         </div>
       </section>
 
