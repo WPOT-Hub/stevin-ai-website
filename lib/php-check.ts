@@ -12,12 +12,18 @@
 // release. Er is dus nog geen versiegrens; de uitslag 'gepatcht' noemt daarom de
 // tijdelijke maatregel (session.upload_progress.enabled=0). Komt die release,
 // dan krijgt deze tabel de nieuwe grenzen (W-670).
+//
+// Release 19 november 2026 (php.net/ChangeLog-8.php, aangekondigd als CRITICAL):
+// 8.5.13, 8.4.28, 8.3.37 en 8.2.36 dichten CVE-2026-115560 plus 11 tot 17 andere
+// lekken per reeks; 8.6.0 (GA, zelfde dag) heeft dezelfde reparaties. Vanaf nu is
+// de grens dus de release van 19 november; 21 oktober alleen is niet meer genoeg.
 
 export const GEPATCHT: Record<string, number> = {
-  '8.2': 35,
-  '8.3': 36,
-  '8.4': 27,
-  '8.5': 12,
+  '8.2': 36,
+  '8.3': 37,
+  '8.4': 28,
+  '8.5': 13,
+  '8.6': 0,
 }
 
 export type PhpOordeel =
@@ -76,7 +82,7 @@ export function beoordeelVersie(v: PhpVersie): { oordeel: PhpOordeel; patchversi
   if (hoofd < 8 || (hoofd === 8 && sub < 2)) return { oordeel: 'geen_release' }
   const reeks = `${hoofd}.${sub}`
   const grens = GEPATCHT[reeks]
-  // Een reeks die na 21 oktober is verschenen: geen bron, dus geen oordeel.
+  // Een reeks die na 19 november is verschenen: geen bron, dus geen oordeel.
   if (grens === undefined) return { oordeel: 'onbekend' }
   const patchversie = `${reeks}.${grens}`
   // Test- en ontwikkelbuilds zeggen niets over de release.
