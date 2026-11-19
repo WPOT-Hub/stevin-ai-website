@@ -3,6 +3,7 @@ import createMiddleware from 'next-intl/middleware'
 import { routing } from './i18n/routing'
 import { getCampaignDomain } from './content/campaign-landings/domains'
 import gone from './data/gone-urls.json'
+import { PS5_CODE, PS5_COOKIE, ps5CookieWaarde } from './lib/ps5Toegang'
 
 const intlMiddleware = createMiddleware(routing)
 
@@ -210,6 +211,45 @@ async function marketingCheckPoort(request: NextRequest): Promise<NextResponse |
 }
 
 /**
+ * Codepoort voor /ps5-actie (W-861, 19 nov 2026): de actiepagina staat op pauze
+ * (Koen: "zet er maar een code op 1500"). Zelfde opzet als de poort van
+ * /marketing-scan: ?code= zet een cookie en stuurt door naar het schone pad;
+ * zonder geldige cookie wordt de pagina herschreven naar het codescherm.
+ * De controle is server-side, en de beelden staan buiten /public en gaan via
+ * /api/ps5-beeld, dat dezelfde cookie eist. Een drempel van vier cijfers is geen
+ * beveiliging tegen iemand die gaat proberen, wel tegen iemand die de link vindt.
+ */
+const PS5_PAD = /^\/(?:nl\/)?ps5-actie\/?$/
+
+async function ps5Poort(request: NextRequest): Promise<NextResponse | null> {
+  if (!PS5_PAD.test(request.nextUrl.pathname)) return null
+  const verwacht = await ps5CookieWaarde()
+  const ingevoerd = request.nextUrl.searchParams.get('code')
+  if (ingevoerd !== null) {
+    const terug = request.nextUrl.clone()
+    terug.searchParams.delete('code')
+    if (ingevoerd.trim() === PS5_CODE) {
+      const r = NextResponse.redirect(terug)
+      r.cookies.set(PS5_COOKIE, verwacht, { httpOnly: true, sameSite: 'lax', secure: true, path: '/', maxAge: 60 * 60 * 24 * 14 })
+      r.headers.set('cache-control', 'private, no-store')
+      return r
+    }
+    terug.searchParams.set('fout', '1')
+    const r = NextResponse.redirect(terug)
+    r.headers.set('cache-control', 'private, no-store')
+    return r
+  }
+  if (request.cookies.get(PS5_COOKIE)?.value === verwacht) return null
+
+  const scherm = request.nextUrl.clone()
+  scherm.pathname = '/nl/ps5-actie-toegang'
+  const r = NextResponse.rewrite(scherm)
+  r.headers.set('X-Robots-Tag', 'noindex, nofollow')
+  r.headers.set('cache-control', 'private, no-store')
+  return r
+}
+
+/**
  * 410 Gone voor de pagina's die bij het snoeien zijn weggehaald (W-535, 12 okt
  * 2026). De lijst staat in data/gone-urls.json; omleidingen staan apart in
  * next.config.ts en gaan altijd voor, want Next draait redirects voor de
@@ -256,6 +296,9 @@ export default async function middleware(request: NextRequest, event: NextFetchE
 
   const poort = await marketingCheckPoort(request)
   if (poort) return poort
+
+  const ps5 = await ps5Poort(request)
+  if (ps5) return ps5
 
   // AI-bot crawl logging zonder de bezoeker te laten wachten. De runtime kapt
   // een losse fetch af zodra het antwoord weg is, en dan komt de rij nooit
@@ -306,6 +349,7 @@ export default async function middleware(request: NextRequest, event: NextFetchE
   }
 
   const response = intlMiddleware(request)
+  const ps5Pagina = PS5_PAD.test(request.nextUrl.pathname)
 
   // Edge-caching aanzetten voor de pagina's. De next-intl middleware rewrite
   // elke route naar /[locale]/..., en Vercel zet rewrite-responses standaard op
@@ -313,7 +357,10 @@ export default async function middleware(request: NextRequest, event: NextFetchE
   // is statische marketing-content (geen auth, geen personalisatie), dus een
   // deploy bust de cache vanzelf. Alleen op GET-rewrites, niet op redirects
   // (een Location-header), zodat taal-redirects niet vast komen te zitten.
-  if (request.method === 'GET' && !response.headers.has('location')) {
+  if (ps5Pagina) {
+    // De echte actiepagina (met cookie) nooit in een gedeelde cache laten belanden.
+    response.headers.set('cache-control', 'private, no-store')
+  } else if (request.method === 'GET' && !response.headers.has('location')) {
     response.headers.set(
       'cache-control',
       'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
