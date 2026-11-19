@@ -193,7 +193,10 @@ export default function RethinkBreda() {
 
       <Vragen kop="Wat ondernemers uit Breda ons vragen" vragen={VRAGEN} />
 
-      <Kennismaken />
+      <Kennismaken
+        kop="Geloof je ons niet? Prima."
+        zin="Er lopen veel cowboys rond in deze markt, ook cowboys die zeggen dat ze het niet zijn. Wij laten je de cijfers zien. Plan een gesprek, en bel daarna gerust een van onze klanten. Die staan je graag te woord."
+      />
     </main>
   )
 }
