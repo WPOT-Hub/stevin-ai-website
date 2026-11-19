@@ -98,10 +98,10 @@ const VOORWAARDEN = [
 ]
 
 const DOORVERWIJZEN = [
-  'Iedereen kan een ondernemer aanbrengen. Je krijgt per ondernemer die je aanbrengt en die klant wordt een tegoed.',
-  'De ondernemer moet nieuw zijn bij Stevin.AI. Je meldt hem aan voordat hij tekent, via info@stevin.ai. Wij bevestigen de aanmelding. Meld je hem pas aan nadat hij getekend heeft, dan telt hij niet mee.',
-  'Wij kopen het tegoed nadat de ondernemer zijn jaarcontract heeft getekend en zijn opstarttraject heeft betaald.',
-  'Zegt de ondernemer zijn contract binnen drie maanden na de start op, dan vervalt het tegoed. Heb je het al ontvangen, dan berekenen we het aan je door.',
+  'Iedereen kan een adverteerder aanbrengen. Je krijgt per adverteerder die je aanbrengt en die klant wordt een tegoed.',
+  'De adverteerder moet nieuw zijn bij Stevin.AI. Je meldt hem aan voordat hij tekent, via info@stevin.ai. Wij bevestigen de aanmelding. Meld je hem pas aan nadat hij getekend heeft, dan telt hij niet mee.',
+  'Wij kopen het tegoed nadat de adverteerder zijn jaarcontract heeft getekend en zijn opstarttraject heeft betaald.',
+  'Zegt de adverteerder zijn contract binnen drie maanden na de start op, dan vervalt het tegoed. Heb je het al ontvangen, dan berekenen we het aan je door.',
   'Het tegoed is niet in te ruilen voor geld of korting. Je krijgt het op je eigen PlayStation-account.',
 ]
 
@@ -259,7 +259,7 @@ export default async function Ps5ActiePage({ params }: Props) {
       <section id="doorverwijzen" className="scroll-mt-24 bg-surface px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Breng een ondernemer mee, en speel samen.
+            Breng een adverteerder mee, en speel samen.
           </h2>
           <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
             <p className="m-0">
@@ -267,11 +267,11 @@ export default async function Ps5ActiePage({ params }: Props) {
               wat we echt leuk vinden: werk dat voor onze klanten op winst stuurt.
             </p>
             <p className="m-0">
-              Ken je een ondernemer die een bureau zoekt dat op winst stuurt? Stuur hem naar ons. Hij krijgt een campagne
-              waar we op winst sturen, jij krijgt PlayStation Store-tegoed voor GTA VI. Dan kun je samen met je maat spelen.
+              Ken je een adverteerder die een bureau zoekt dat op winst stuurt? Stuur hem naar ons. Wordt hij klant, dan krijgt
+              hij de PS5 met GTA VI. Jij krijgt GTA VI als PlayStation Store-tegoed. Dan kun je samen met je maat spelen.
             </p>
             <p className="m-0">
-              Het tegoed koopt Stevin.AI nadat de ondernemer die je aanbracht zijn jaarcontract heeft getekend en zijn
+              Het tegoed koopt Stevin.AI nadat de adverteerder die je aanbracht zijn jaarcontract heeft getekend en zijn
               opstarttraject heeft betaald. Je meldt hem aan bij ons voordat hij tekent, via info@stevin.ai.
             </p>
           </div>
