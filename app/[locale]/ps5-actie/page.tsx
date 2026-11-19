@@ -169,7 +169,8 @@ export default async function Ps5ActiePage({ params }: Props) {
                   Breng jij een adverteerder aan, dan krijg jij GTA VI.
                 </p>
                 <p className="m-0 mt-1 text-[15px] leading-[1.5] text-white/70">
-                  PlayStation Store-tegoed voor GTA VI Standard, 79,99 euro. Meld hem aan voordat hij tekent, via info@stevin.ai.
+                  PlayStation Store-tegoed voor GTA VI Standard, 79,99 euro. De adverteerder die je aanbrengt krijgt zelf ook
+                  gewoon zijn PS5 met GTA VI. Meld hem aan voordat hij tekent, via info@stevin.ai.
                 </p>
               </li>
             </ul>
