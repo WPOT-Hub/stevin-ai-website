@@ -150,16 +150,13 @@ export default async function Ps5ActiePage({ params }: Props) {
             >
               <span className="text-accent">Net als GTA&nbsp;VI leggen wij een nieuwe lat.</span> Niet in gaming, maar in marketing en sales.
             </h1>
-            <p className="m-0 mt-5 font-display text-[22px] font-bold leading-[1.3] text-white">
-              PlayStation 5 incl. GTA&nbsp;VI als welkomstcadeau
-            </p>
-            <p className="m-0 mt-4 max-w-[600px] text-[18px] leading-[1.55] text-white/75">
+            <p className="m-0 mt-5 max-w-[600px] text-[18px] leading-[1.55] text-white/75">
               Ben jij of is jouw bedrijf op zoek naar een nieuw bureau? En wil je iemand blij maken met een PS5 inclusief GTA VI?{' '}
               <span className="font-semibold text-white">It&apos;s your lucky day.</span>
             </p>
-            <ul className="m-0 mt-7 flex max-w-[600px] list-none flex-col gap-3 p-0 text-[18px] font-semibold leading-[1.4] text-white">
-              <li>Word adverteerder bij Stevin en krijg een PS5 met GTA VI.</li>
-            </ul>
+            <p className="m-0 mt-7 max-w-[600px] text-[18px] font-semibold leading-[1.5] text-white">
+              Start nu met Stevin.AI als jouw bureau, met een jaarcontract en een volledig opstarttraject, bijvoorbeeld een nieuwe website, een campagne, je telefoon ingericht en de meting. De eerste vijf nieuwe klanten kiezen zelf hun cadeau, binnen een vast budget van Stevin.AI. Bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI.
+            </p>
             <div className="mt-9">
               <Knop cta="ps5_actie_hero_gesprek" licht />
             </div>
