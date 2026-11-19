@@ -171,9 +171,6 @@ export default async function Ps5ActiePage({ params }: Props) {
               sizes="(min-width: 1024px) 480px, 100vw"
               className="h-auto w-full rounded-2xl"
             />
-            <figcaption className="mt-3 text-sm text-white/70">
-              PS5 Digital Edition met tegoed voor GTA VI.
-            </figcaption>
           </figure>
         </div>
       </section>
