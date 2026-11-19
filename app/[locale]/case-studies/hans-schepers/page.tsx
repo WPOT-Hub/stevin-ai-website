@@ -30,7 +30,7 @@ const CASE: Case = {
     },
     {
       t: 'Het budget was te vroeg op',
-      d: 'Op 7 van de 9 gemeten dagen liep de campagne vertoningen mis, omdat het dagbudget van 13,30 euro op was.',
+      d: 'Op 7 van de 9 gemeten dagen liep de campagne vertoningen mis, omdat het dagbudget op was voordat de dag om was.',
     },
   ],
   aanpakKop: 'Eerst meten, dan pas sturen.',
@@ -38,17 +38,16 @@ const CASE: Case = {
   aanpak: [
     { t: 'Meting hersteld', d: 'Op 21 oktober kwamen de bezoeken weer binnen in Google Analytics, op 22 oktober telde het formulier als aanvraag.' },
     { t: 'Herkomst bij elke aanvraag', d: 'Sinds 2 november staat bij elk formulier uit welke advertentie en welke zoekterm de aanvraag kwam.' },
-    { t: 'Budget omhoog, met een reden', d: 'Op 27 oktober ging het dagbudget van 13,30 naar 20 euro, in overleg met Hans, omdat de campagne op 7 van de 9 dagen vertoningen miste.' },
+    { t: 'Budget omhoog, met een reden', d: 'Op 27 oktober ging het dagbudget omhoog, in overleg met Hans, omdat de campagne op 7 van de 9 dagen vertoningen miste.' },
     { t: 'Rekenen met wat een opdracht waard is', d: 'Een herstoffering levert gemiddeld 1.000 euro op en een op de drie aanvragen wordt een opdracht. Daar toetsen we de kosten aan.' },
   ],
-  uitkomstKop: 'Oktober in cijfers.',
+  uitkomstKop: 'De eerste weken in cijfers.',
   cijfers: [
-    { getal: '444 euro', uitleg: 'uitgegeven aan Google Ads, voor 272 klikken' },
-    { getal: '11', uitleg: 'aanvragen via het formulier, plus 1 via mail' },
-    { getal: '40 euro', uitleg: 'per aanvraag via het formulier, bij een opdracht van gemiddeld 1.000 euro' },
-    { getal: 'ROAS 8,3', uitleg: 'verwachte opbrengst per uitgegeven euro: 11 aanvragen, een op de drie wordt een opdracht van gemiddeld 1.000 euro' },
+    { getal: '+25 procent', uitleg: 'meer offerteaanvragen per dag via Google Ads in de eerste 18 dagen van november dan in oktober' },
+    { getal: '8 in 18 dagen', uitleg: 'offerteaanvragen via het formulier, tegen 11 in heel oktober' },
+    { getal: '5 extra', uitleg: 'contactmomenten die eerder niet werden geteld: 2 keer bellen, 2 keer mailen en 1 chat' },
   ],
-  bron: 'Bron: Google Ads en Google Analytics van Hans Schepers Stoffering, oktober 2026. De opbrengst per opdracht en de slagingskans zijn opgegeven door de klant.',
+  bron: 'Bron: Google Ads van Hans Schepers Stoffering, 1 oktober tot en met 18 november 2026, uitgelezen op 19 november.',
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
