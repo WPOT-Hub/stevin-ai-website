@@ -74,6 +74,27 @@ const VOORBEELDEN = [
   },
 ]
 
+// Namen en logo's: Hans Schepers en Sterker Witgoed staan al met toestemming
+// in de logostrook op de homepagina (W-416, W-567). KBS Laurentius: logo van
+// Koen, 19 nov. Alleen wat we doen, geen cijfers bij een naam.
+const KLANTEN = [
+  {
+    src: '/logos/klanten/sterker-witgoed.webp',
+    naam: 'Sterker Witgoed',
+    d: 'Webwinkel in witgoed. Wij doen de advertenties, de meting en de rapportage.',
+  },
+  {
+    src: '/logos/klanten/hans-schepers.svg',
+    naam: 'Hans Schepers Stoffering',
+    d: 'Meubelstoffeerder in Oirschot. Wij doen de Google Ads en zorgen dat elke aanvraag wordt geteld.',
+  },
+  {
+    src: '/logos/klanten/kbs-laurentius.webp',
+    naam: 'KBS Laurentius',
+    d: 'Basisschool in Breda. Voor het lustrum bouwde Koen als ouder de veilingsite. Onbetaald, de opbrengst gaat naar het schoolreisje.',
+  },
+]
+
 const VRAGEN = [
   {
     v: 'Zitten jullie echt in Breda?',
@@ -130,6 +151,34 @@ export default function RethinkBreda({ advertentie = false }: { advertentie?: bo
         }
       />
 
+      <section className="px-6 pt-20 sm:pt-24">
+        <div className="mx-auto grid max-w-[1152px] items-start gap-8 sm:grid-cols-[160px_1fr] sm:gap-12">
+          <Image
+            src="/images/oprichter.png"
+            alt="Koen Hoogenboom, oprichter van Stevin.AI"
+            width={320}
+            height={320}
+            className="block h-[120px] w-[120px] sm:h-[160px] sm:w-[160px]"
+          />
+          <div>
+            <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+              Ik ben Koen. Ik heb Stevin.AI opgericht.
+            </h2>
+            <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
+              Ik zit twintig jaar in online marketing. Ik werkte onder meer voor Etex, Hyundai, Cirque du Soleil, Goossens
+              Wonen &amp; Slapen, JBL en Leen Bakker. Daar bouwde ik voor grote bedrijven wat ik nu voor ondernemers in Breda
+              bouw. Zij betaalden er tienduizenden euro&apos;s per jaar voor, en dan had je de uren van de consultants en de
+              kosten van de invoering nog niet. AI heeft het bouwen zo veel goedkoper gemaakt dat het nu ook voor een gewone
+              ondernemer kan.
+            </p>
+            <p className={`m-0 mt-5 max-w-[680px] ${tekst}`}>
+              Ik wil niet het grootste bureau worden. Ik wil het beste werk leveren. Je werkt met de mensen die het zelf
+              bouwen, niet met een accountmanager die het doorgeeft. Ik ken Breda en de ondernemers hier.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 pb-24 pt-20 sm:pt-24">
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
@@ -167,15 +216,8 @@ export default function RethinkBreda({ advertentie = false }: { advertentie?: bo
             advertentiebudget naartoe, zonder dat iemand weet wat het oplevert. Dat zijn we letterlijk zo tegengekomen.
           </p>
           <p className={`m-0 mt-5 max-w-[680px] ${tekst}`}>
-            Koen Hoogenboom, oprichter, zit twintig jaar in online marketing en werkte onder meer voor Etex, Hyundai, Cirque du
-            Soleil, Goossens Wonen &amp; Slapen, JBL en Leen Bakker. &ldquo;Daar bouwde ik dit voor grote bedrijven. Die betaalden
-            er tienduizenden euro&apos;s per jaar voor, en dan had je de uren van de consultants en de kosten van de invoering nog niet.
-            AI heeft het bouwen zo veel goedkoper gemaakt dat het nu ook voor een gewone ondernemer kan.&rdquo;
-          </p>
-          <p className={`m-0 mt-5 max-w-[680px] ${tekst}`}>
             Stevin.AI is vanaf de eerste dag rond AI gebouwd. We zijn geen bureau dat AI erbij is gaan doen en nu merkt dat
-            het echt anders moet. We hebben geen ambitie om het grootste bureau te worden. Wel om het beste werk te leveren. Je werkt bij ons met de
-            mensen die het zelf bouwen, niet met een accountmanager die het doorgeeft.
+            het echt anders moet.
           </p>
         </div>
       </section>
@@ -217,8 +259,7 @@ export default function RethinkBreda({ advertentie = false }: { advertentie?: bo
               Kom langs in Breda.
             </h2>
             <p className={`m-0 mt-6 max-w-[520px] ${tekst}`}>
-              Ons kantoor staat aan de Claudius Prinsenlaan 12, vlak bij het centrum. Koen kent Breda en de ondernemers
-              hier. Kom langs, dan zie je meteen met wie je werkt.
+              Ons kantoor staat aan de Claudius Prinsenlaan 12, vlak bij het centrum. Kom langs, dan zie je meteen met wie je werkt.
             </p>
             <p className={`m-0 mt-4 max-w-[520px] ${tekst}`}>
               Liever bellen?{' '}
@@ -238,6 +279,24 @@ export default function RethinkBreda({ advertentie = false }: { advertentie?: bo
             />
             <figcaption className="mt-3 text-[13px] text-muted">Claudius Prinsenlaan 12, 4811 DK Breda.</figcaption>
           </figure>
+        </div>
+      </section>
+
+      <section className="px-6" style={{ paddingBottom: 104 }}>
+        <div className="mx-auto max-w-[1152px]">
+          <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+            Voor wie we werken.
+          </h2>
+          <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-3">
+            {KLANTEN.map((k) => (
+              <div key={k.naam} className="border-t border-border pt-6">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={k.src} alt={k.naam} height={48} loading="lazy" className="block h-[48px] w-auto" />
+                <h3 className="m-0 mt-5 font-display text-[18px] font-bold text-primary">{k.naam}</h3>
+                <p className="m-0 mt-2.5 text-[16px] leading-[1.55] text-[#2A3A54]">{k.d}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
