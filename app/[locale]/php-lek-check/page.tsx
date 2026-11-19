@@ -28,7 +28,7 @@ const BERICHT = '/blog/derde-php-lek-controleer-je-website'
 export const metadata: Metadata = {
   title: 'PHP-lekcheck: staat de update op je website?',
   description:
-    'Check online welke PHP-versie je server meldt, of de update van 21 oktober erop staat en wat je nu moet doen. Gratis en zonder account.',
+    'Check online welke PHP-versie je server meldt, of de update van 19 november erop staat en wat je nu moet doen. Gratis en zonder account.',
   alternates: { canonical: URL },
   openGraph: {
     title: 'PHP-lekcheck: staat de update op je website?',
@@ -50,7 +50,7 @@ const VRAGEN: Vraag[] = [
   },
   {
     v: 'Welke PHP-versies zijn veilig?',
-    a: 'De update tegen de lekken van 21 oktober zit in PHP 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Elke eerdere versie in die reeksen heeft die lekken. Voor PHP 8.1 en ouder brengt PHP geen nieuwe release meer uit; daar bestaan alleen losse reparaties. Let op: het lek van 23 oktober zit ook in deze bijgewerkte versies.',
+    a: 'Sinds 19 november: PHP 8.6.0, 8.5.13, 8.4.28, 8.3.37 en 8.2.36. Daarin zitten de reparaties van 21 oktober, het lek van 23 oktober en een reeks nieuwe lekken. Elke eerdere versie in die reeksen is kwetsbaar, ook de versies van 21 oktober (8.5.12, 8.4.27, 8.3.36 en 8.2.35). Voor PHP 8.1 en ouder brengt PHP geen nieuwe release meer uit; daar bestaan alleen losse reparaties.',
   },
   {
     v: 'Wordt het lek al misbruikt?',
@@ -58,7 +58,7 @@ const VRAGEN: Vraag[] = [
   },
   {
     v: 'Is er na 21 oktober nog een lek gevonden?',
-    a: 'Ja. Op 23 oktober meldde PHP een derde lek, CVE-2026-115560. Het werkt alleen bij een ongebruikelijke combinatie van instellingen en code, en zit ook in de bijgewerkte versies. Een update komt met de volgende gewone release. Tot dan raadt PHP aan om session.upload_progress.enabled op 0 te zetten, in php.ini of de serverconfiguratie. Sinds 23 oktober staat er openbare aanvalscode voor dit lek online; aanvallen zijn nog niet gemeld.',
+    a: 'Ja. Op 23 oktober meldde PHP een derde lek, CVE-2026-115560. Het werkt alleen bij een ongebruikelijke combinatie van instellingen en code, en zit ook in de bijgewerkte versies. Sinds 23 oktober staat er openbare aanvalscode voor online. Op 19 november heeft PHP het gedicht, in 8.6.0, 8.5.13, 8.4.28, 8.3.37 en 8.2.36. In dezelfde release zitten nog een reeks andere reparaties, waarvan PHP de zwaarste kritiek noemt; die werken volgens PHP alleen bij niet-standaard instellingen of ongebruikelijke opstellingen.',
   },
   {
     v: 'Helpt het als ik WordPress en mijn plugins bijwerk?',
@@ -66,11 +66,11 @@ const VRAGEN: Vraag[] = [
   },
   {
     v: 'Mijn site toont geen PHP-versie. Ben ik dan veilig?',
-    a: 'Niet per se. Veel servers houden hun versie voor zich, en dat is netjes. Het betekent alleen dat je het van buitenaf niet ziet. Vraag je hoster welke PHP-versie draait en of de update van 21 oktober erop staat.',
+    a: 'Niet per se. Veel servers houden hun versie voor zich, en dat is netjes. Het betekent alleen dat je het van buitenaf niet ziet. Vraag je hoster welke PHP-versie draait en of de update van 19 november erop staat.',
   },
   {
     v: 'De update staat erop. Ben ik nu klaar?',
-    a: 'Nog niet helemaal. Zet ook session.upload_progress.enabled op 0 tot de volgende release, vanwege het lek van 23 oktober. En een update dicht het lek, maar haalt geen inbraak weg die er al was. Laat je bouwer nakijken of er sinds 21 oktober bestanden of beheerders zijn bijgekomen.',
+    a: 'Staat de update van 19 november erop, dan zijn alle bekende lekken gedicht. Alleen de update van 21 oktober is niet meer genoeg. En een update dicht het lek, maar haalt geen inbraak weg die er al was. Laat je bouwer nakijken of er sinds 21 oktober bestanden of beheerders zijn bijgekomen.',
   },
   // W-672: vragen van Koen (ombouwen, overstappen) en uit de aanvullingen van
   // Google op "php updaten" (26 okt 2026: php updaten wordpress, php updaten
@@ -89,18 +89,18 @@ const VRAGEN: Vraag[] = [
   },
   {
     v: 'Wat doet deze check precies?',
-    a: 'We halen je voorpagina op zoals een gewone bezoeker dat doet, en lezen wat je server zelf meldt over PHP en welk systeem je site gebruikt. We vallen niets aan, veranderen niets en bewaren je adres niet. Instellingen zoals session.upload_progress.enabled zie je van buitenaf niet.',
+    a: 'We halen je voorpagina op zoals een gewone bezoeker dat doet, en lezen wat je server zelf meldt over PHP en welk systeem je site gebruikt. We vallen niets aan, veranderen niets en bewaren je adres niet.',
   },
 ]
 
 const STAPPEN = [
   {
     t: 'Vraag je hoster om de update',
-    d: 'Vraag welke PHP-versie je site draait en of de update van 21 oktober erop staat. Bij gedeelde hosting kan alleen de hoster dit doen.',
+    d: 'Vraag welke PHP-versie je site draait en of de update van 19 november erop staat. Bij gedeelde hosting kan alleen de hoster dit doen.',
   },
   {
     t: 'Laat een instelling uitzetten',
-    d: 'Tegen het lek van 23 oktober is nog geen update. Laat session.upload_progress.enabled op 0 zetten in php.ini of de serverconfiguratie, tot de volgende release er is.',
+    d: 'Laat de update van 19 november installeren: PHP 8.6.0, 8.5.13, 8.4.28, 8.3.37 of 8.2.36. Die dicht ook het lek van 23 oktober. Herstart daarna alle PHP-processen.',
   },
   {
     t: 'Laat nakijken of er iemand binnen was',
@@ -183,9 +183,9 @@ export default async function PhpLekCheckPage({ params }: Props) {
               misbruikte lekken; de eerste aanvalspoging was al op 17 oktober, vier dagen voor de bekendmaking.
             </p>
             <p className="m-0">
-              Op 23 oktober meldde PHP nog een lek. Dat zit ook in de bijgewerkte versies, maar werkt alleen bij een ongebruikelijke
-              combinatie van instellingen en code. Een update komt met de volgende gewone release; tot dan raadt PHP aan om
-              session.upload_progress.enabled op 0 te zetten.{' '}
+              Op 23 oktober meldde PHP nog een lek. Op 19 november kwam de update: PHP 8.6.0, 8.5.13, 8.4.28, 8.3.37 en 8.2.36
+              dichten dat lek en een reeks andere, waarvan PHP de zwaarste kritiek noemt. Alleen de update van 21 oktober is dus
+              niet meer genoeg.{' '}
               <Link href={BERICHT} className="font-semibold text-primary underline decoration-accent underline-offset-4">
                 Lees wat dat voor je betekent
               </Link>

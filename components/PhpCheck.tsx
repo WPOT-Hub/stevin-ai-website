@@ -20,16 +20,15 @@ const REDEN: Record<string, string> = {
 function uitleg(u: PhpUitslag): { toon: Toon; kop: string; tekst: string; php: boolean } {
   const v = u.versie
   switch (u.oordeel) {
-    // W-670: niet meer groen. Het lek van 23 oktober (CVE-2026-115560) zit ook
-    // in deze versies, en of de tijdelijke maatregel aanstaat zien we van
-    // buitenaf niet (php.net/archive/2026.php#2026-10-23-1, Cloudflare).
+    // 19 nov: de release van die dag dicht ook het lek van 23 oktober
+    // (CVE-2026-115560), dus deze versie heeft alle bekende reparaties.
     case 'gepatcht':
       return {
-        toon: 'neutraal',
+        toon: 'goed',
         php: true,
-        kop: `Je server meldt PHP ${v}: de versie met de update van 21 oktober.`,
+        kop: `Je server meldt PHP ${v}: de versie met de update van 19 november.`,
         tekst:
-          'Tegen het lek van 23 oktober is nog geen update, ook niet in deze versie. Vraag je hoster om session.upload_progress.enabled op 0 te zetten tot de volgende release; van buitenaf zien we niet of dat al zo staat. En een update haalt geen inbraak weg die er al was.',
+          'Daarin zitten de reparaties voor alle bekende PHP-lekken van oktober en november. Een update haalt alleen geen inbraak weg die er al was: laat je bouwer kijken naar nieuwe bestanden en beheerders sinds 21 oktober.',
       }
     case 'niet_gepatcht':
       return {
@@ -37,7 +36,7 @@ function uitleg(u: PhpUitslag): { toon: Toon; kop: string; tekst: string; php: b
         php: true,
         kop: `Je server meldt PHP ${v}. De update zit pas in ${u.patchversie}.`,
         tekst:
-          'Vraag je hoster of bouwer of de update erop staat. Soms bouwt een hoster de reparatie in zonder dat het versienummer verandert, maar dat moet je dan wel van hem horen. Vraag ook of session.upload_progress.enabled op 0 staat, vanwege het lek van 23 oktober.',
+          'Vraag je hoster of bouwer om de update van 19 november. Die dicht ook het lek van 23 oktober en een reeks nieuwe lekken. Soms bouwt een hoster de reparatie in zonder dat het versienummer verandert, maar dat moet je dan wel van hem horen.',
       }
     case 'geen_release':
       return {
@@ -54,14 +53,14 @@ function uitleg(u: PhpUitslag): { toon: Toon; kop: string; tekst: string; php: b
           php: true,
           kop: `Je server meldt PHP ${v}, een versie van je Linux-distributie.`,
           tekst:
-            'Zulke versies krijgen de reparatie vaak zonder hoger versienummer. Vraag je hoster of de beveiligingsupdate van 21 oktober erop staat, en of session.upload_progress.enabled op 0 staat.',
+            'Zulke versies krijgen de reparatie vaak zonder hoger versienummer. Vraag je hoster of de beveiligingsupdate van 19 november erop staat.',
         }
       return {
         toon: 'neutraal',
         php: true,
         kop: u.platform ? `We zien kenmerken van ${u.platform}, en dus van PHP.` : 'We zien kenmerken van PHP.',
         tekst:
-          'Je server laat het versienummer niet zien. Vraag je hoster welke PHP-versie erop draait, of de update van 21 oktober erop staat en of session.upload_progress.enabled op 0 staat.',
+          'Je server laat het versienummer niet zien. Vraag je hoster welke PHP-versie erop draait en of de update van 19 november erop staat.',
       }
     case 'geen_php':
       return {

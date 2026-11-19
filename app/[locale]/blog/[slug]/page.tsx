@@ -1700,6 +1700,14 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
       <p>
         PHP verwacht dat die opzet in de praktijk weinig voorkomt. Daarom komt de echte oplossing met de volgende gewone release, samen met een volledige beschrijving van het lek. Een datum noemt PHP niet.
       </p>
+      <h2>Update 19 november: het derde lek is gedicht</h2>
+      <p>
+        PHP heeft op 19 november een beveiligingsrelease uitgebracht: PHP 8.5.13, 8.4.28, 8.3.37 en 8.2.36, plus de nieuwe PHP 8.6.0. Volgens de{' '}
+        <a href="https://www.php.net/ChangeLog-8.php" target="_blank" rel="noopener noreferrer">ChangeLog van PHP</a> dicht die release CVE-2026-115560, het lek uit dit bericht, en daarnaast een reeks andere lekken. PHP noemt de zwaarste daarvan kritiek, maar schrijft ook dat die alleen werken bij niet-standaard instellingen of ongebruikelijke opstellingen.
+      </p>
+      <p>
+        Wat dat voor je betekent: alleen de update van 21 oktober is niet meer genoeg. Vraag je hoster om de versie van 19 november en laat daarna alle PHP-processen herstarten. Met de <Link href="/php-lek-check">PHP-lekcheck</Link> zie je of je server die versie meldt. De instelling <code>session.upload_progress.enabled</code> mag na de update weer aan, als je site de uploadvoortgang nodig heeft.
+      </p>
       <h2>Update 28 oktober: de lekken van 21 oktober worden misbruikt</h2>
       <p>
         De twee lekken van 21 oktober worden inmiddels actief misbruikt. De Amerikaanse cyberdienst CISA zette CVE-2026-109618 en CVE-2026-109619 op 26 oktober op haar{' '}
