@@ -108,7 +108,11 @@ export default function Header() {
   // Op de nieuwe homepage: Zo werkt Stevin (/platform) en Tarieven, plus de
   // knop die het kennismakingsvenster opent. Samenwerken komt in het menu
   // zodra die pagina bestaat.
-  const navItems = isNieuweHome
+  // W-860: op een advertentiepagina (/lp/...) geen menu, alleen logo en knop.
+  const advertentie = pathname.startsWith('/lp/')
+  const navItems = advertentie
+    ? []
+    : isNieuweHome
     ? [
         { label: 'Zo werkt Stevin', href: '/platform' },
         { label: t('tarieven'), href: '/tarieven' },
@@ -222,7 +226,7 @@ export default function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`p-2.5 transition-colors duration-500 ${showDark ? 'text-white' : 'text-primary'}`}
+              className={`p-2.5 transition-colors duration-500 ${showDark ? 'text-white' : 'text-primary'} ${advertentie ? 'hidden' : ''}`}
               aria-label="Menu"
               aria-expanded={mobileOpen}
             >
