@@ -86,8 +86,8 @@ const VRAGEN = [
     a: 'Soms. AI is handig voor werk dat vaak terugkomt en waar een fout niet duur is: aanvragen sorteren, spam eruit halen, een eerste antwoord klaarzetten, cijfers naast elkaar leggen. Voor een offerte of een klantgesprek blijf jij nodig. We beginnen bij wat jou tijd kost, niet bij de techniek.',
   },
   {
-    v: 'Van wie zijn de accounts en de data?',
-    a: 'Van jou. Advertentieaccounts, Analytics en de koppelingen staan op naam van jouw bedrijf en jij houdt beheerdersrechten. Stop je bij ons, dan neem je alles mee.',
+    v: 'Van wie zijn de accounts en de data, en zit ik ergens aan vast?',
+    a: 'Van jou. Advertentieaccounts, Analytics en de koppelingen staan op naam van jouw bedrijf en jij houdt beheerdersrechten. Stoppen kan altijd, en dan neem je alles mee.',
   },
   {
     v: 'Wat kost het?',
@@ -108,7 +108,7 @@ export default function RethinkBreda() {
           <p className="m-0">
             Je zoekt een marketingbureau in Breda dat meer doet dan advertenties aanzetten. Wij kijken naar de hele weg: hoe iemand je
             vindt, hoe de aanvraag binnenkomt, wie hem opvolgt en of het een opdracht werd. Waar het hapert, koppelen of automatiseren
-            we het. Je accounts en je data blijven van jou.
+            we het. Je advertenties en je data zijn van jou, en stoppen kan altijd.
           </p>
         }
       />
