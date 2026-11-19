@@ -145,49 +145,24 @@ export default async function Ps5ActiePage({ params }: Props) {
         <div className="relative mx-auto grid max-w-[1152px] items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <h1
-              className="m-0 max-w-[22ch] text-balance font-display font-extrabold text-white"
+              className="m-0 max-w-[22ch] text-balance font-display font-extrabold text-accent"
               style={{ ...h2Stijl, fontSize: 'clamp(26px, 3vw, 40px)' }}
             >
               Net als GTA&nbsp;VI leggen wij een nieuwe lat. Niet in gaming, maar in marketing en sales.
             </h1>
-            <p className="m-0 mt-5 font-display text-[22px] font-bold leading-[1.3] text-accent">
+            <p className="m-0 mt-5 font-display text-[22px] font-bold leading-[1.3] text-white">
               PlayStation 5 incl. GTA&nbsp;VI als welkomstcadeau
             </p>
             <p className="m-0 mt-4 max-w-[600px] text-[18px] leading-[1.55] text-white/75">
               Ben jij of is jouw bedrijf op zoek naar een nieuw bureau? En wil je iemand blij maken met een PS5 inclusief GTA VI?{' '}
-              <span className="font-semibold text-accent">It&apos;s your lucky day.</span>
+              <span className="font-semibold text-white">It&apos;s your lucky day.</span>
             </p>
-            <ul className="m-0 mt-8 flex max-w-[600px] list-none flex-col gap-4 p-0">
-              <li className="rounded-xl border border-white/15 bg-white/5 p-5">
-                <p className="m-0 font-display text-[19px] font-bold leading-[1.3] text-white">
-                  Word adverteerder bij Stevin en krijg een PS5 met GTA VI.
-                </p>
-                <p className="m-0 mt-1 text-[15px] leading-[1.5] text-white/70">
-                  Voor de eerste vijf nieuwe klanten, met een jaarcontract.
-                </p>
-              </li>
-              <li className="rounded-xl border border-white/15 bg-white/5 p-5">
-                <p className="m-0 font-display text-[19px] font-bold leading-[1.3] text-white">
-                  Breng jij een adverteerder aan? Dan krijgt hij de PS5 met GTA VI, en jij GTA VI.
-                </p>
-                <p className="m-0 mt-1 text-[15px] leading-[1.5] text-white/70">
-                  Meld hem aan voordat hij tekent, via info@stevin.ai.
-                </p>
-              </li>
+            <ul className="m-0 mt-7 flex max-w-[600px] list-none flex-col gap-3 p-0 text-[18px] font-semibold leading-[1.4] text-white">
+              <li>Word adverteerder bij Stevin en krijg een PS5 met GTA VI.</li>
+              <li>Breng jij een adverteerder aan? Dan krijgt hij de PS5 met GTA VI, en jij GTA VI.</li>
             </ul>
-            <div className="mt-10 flex flex-wrap items-center gap-5">
+            <div className="mt-9">
               <Knop cta="ps5_actie_hero_gesprek" licht />
-              <p className="m-0 text-[13px] text-white/50">
-                Er gelden{' '}
-                <a
-                  href="#voorwaarden"
-                  data-cta="ps5_actie_hero_voorwaarden"
-                  className="underline underline-offset-2 transition-colors hover:text-white/80"
-                >
-                  voorwaarden
-                </a>
-                , zie hieronder.
-              </p>
             </div>
           </div>
           <figure className="m-0 mx-auto w-full max-w-[560px]">
