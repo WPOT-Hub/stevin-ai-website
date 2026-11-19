@@ -246,11 +246,11 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Je staat op het dak en je klant belt.
+            Het bureau dat verder denkt dan leads.
           </h2>
           <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
             <p className="m-0">
-              Je kunt niet opnemen. Het gesprek staat toch in Stevin.AI, met de tijd en of het is opgenomen. Zo weet je
+              Je staat op het dak en je klant belt. Je kunt niet opnemen. Het gesprek staat toch in Stevin.AI, met de tijd en of het is opgenomen. Zo weet je
               wie je terug moet bellen, en blijft er geen klant liggen.
             </p>
           </div>
