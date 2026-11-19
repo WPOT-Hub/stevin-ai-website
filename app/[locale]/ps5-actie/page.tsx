@@ -164,15 +164,20 @@ export default async function Ps5ActiePage({ params }: Props) {
               hebt betaald. Zeg je binnen drie maanden op, dan berekenen we de console door. Alle voorwaarden staan hieronder.
             </p>
           </div>
-          <Image
-            src="/ps5-actie/ps5-gta-zonsondergang.webp"
-            alt="Een witte PS5 met controller en een GTA VI-spelhoes voor een stad bij zonsondergang"
-            width={620}
-            height={400}
-            priority
-            sizes="(min-width: 1024px) 480px, 100vw"
-            className="mx-auto h-auto w-full max-w-[560px] rounded-2xl"
-          />
+          <figure className="m-0 mx-auto w-full max-w-[560px]">
+            <Image
+              src="/ps5-actie/ps5-gta-zonsondergang.webp"
+              alt="Een witte PS5 met controller en een GTA VI-spelhoes voor een stad bij zonsondergang"
+              width={620}
+              height={400}
+              priority
+              sizes="(min-width: 1024px) 480px, 100vw"
+              className="h-auto w-full rounded-2xl"
+            />
+            <figcaption className="mt-3 text-sm text-white/70">
+              Sfeerbeeld. Het cadeau is bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
