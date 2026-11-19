@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { DonkerBlok, Kennismaken, PaginaKop, Punten, Vragen, h2Stijl, tekst } from './RethinkBlokken'
 
@@ -188,6 +189,31 @@ export default function RethinkBreda() {
             </Link>
             .
           </p>
+        </div>
+      </section>
+
+      <section className="px-6" style={{ paddingBottom: 104 }}>
+        <div className="mx-auto grid max-w-[1152px] items-center gap-10 lg:grid-cols-2">
+          <div>
+            <h2 className="m-0 max-w-[16ch] font-display font-extrabold text-primary" style={h2Stijl}>
+              Kom langs in Breda.
+            </h2>
+            <p className={`m-0 mt-6 max-w-[520px] ${tekst}`}>
+              Ons kantoor staat aan de Claudius Prinsenlaan 12, vlak bij het centrum. Koen kent Breda en de ondernemers
+              hier. Kom langs, dan zie je meteen met wie je werkt.
+            </p>
+          </div>
+          <figure className="m-0">
+            <Image
+              src="/mail/kantoor-claudius-prinsenlaan.jpg"
+              alt="Kantoor van Stevin.AI aan de Claudius Prinsenlaan 12 in Breda"
+              width={1200}
+              height={528}
+              sizes="(min-width: 1024px) 560px, 100vw"
+              className="block h-auto w-full rounded-[14px] border border-border"
+            />
+            <figcaption className="mt-3 text-[13px] text-muted">Claudius Prinsenlaan 12, 4811 DK Breda.</figcaption>
+          </figure>
         </div>
       </section>
 
