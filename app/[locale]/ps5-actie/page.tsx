@@ -232,8 +232,27 @@ export default async function Ps5ActiePage({ params }: Props) {
         </div>
       </section>
 
+      {/* Doorverwijzen: concept, voorwaarden nog niet door Koen vastgelegd (W-861). */}
+      <section id="doorverwijzen" className="scroll-mt-24 bg-surface px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
+        <div className="mx-auto max-w-[1152px]">
+          <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+            Breng een ondernemer mee, en speel samen.
+          </h2>
+          <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
+            <p className="m-0">
+              Ken je een ondernemer die een bureau zoekt dat stuurt op winst? Stuur hem naar ons. Hij krijgt een campagne waar we
+              op winst sturen, jij krijgt PlayStation Store-tegoed voor GTA VI. Dan kun je samen met je maat spelen.
+            </p>
+            <p className="m-0">
+              Het tegoed koopt Stevin.AI nadat de ondernemer die je aanbracht zijn jaarcontract heeft getekend en zijn
+              opstarttraject heeft betaald. Je meldt hem aan bij ons voordat hij tekent, via info@stevin.ai.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Gesprek en formulier */}
-      <section id="gesprek" className="scroll-mt-24 bg-surface px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
+      <section id="gesprek" className="scroll-mt-24 px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[900px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Past het bij jouw bedrijf?
