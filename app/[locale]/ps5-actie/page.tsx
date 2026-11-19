@@ -155,7 +155,10 @@ export default async function Ps5ActiePage({ params }: Props) {
             <p className="m-0 mt-5 max-w-[600px] font-display text-[20px] font-bold leading-[1.35] text-white">
               Net als GTA 6 leggen wij een nieuwe lat. Niet in gaming, maar in marketing en sales.
             </p>
-            <ul className="m-0 mt-8 flex max-w-[600px] list-none flex-col gap-4 p-0">
+            <p className="m-0 mt-8 font-display text-[22px] font-extrabold leading-[1.2] text-white">
+              PlayStation 5 als welkomstcadeau
+            </p>
+            <ul className="m-0 mt-4 flex max-w-[600px] list-none flex-col gap-4 p-0">
               <li className="rounded-xl border border-white/15 bg-white/5 p-5">
                 <p className="m-0 font-display text-[19px] font-bold leading-[1.3] text-white">
                   Word adverteerder bij Stevin en krijg een PS5 met GTA VI.
