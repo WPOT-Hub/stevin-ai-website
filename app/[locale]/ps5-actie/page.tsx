@@ -155,7 +155,7 @@ export default async function Ps5ActiePage({ params }: Props) {
               <span className="font-semibold text-white">It&apos;s your lucky day.</span>
             </p>
             <p className="m-0 mt-7 max-w-[600px] text-[18px] font-semibold leading-[1.5] text-white">
-              Start nu met Stevin.AI als jouw bureau, met een jaarcontract en een volledig opstarttraject, bijvoorbeeld een nieuwe website, een campagne, je telefoon ingericht en de meting. De eerste vijf nieuwe klanten kiezen zelf hun cadeau, binnen een vast budget van Stevin.AI. Bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI.
+              Word nu klant bij Stevin.AI en kies een PS5 Digital Edition met tegoed voor GTA VI als welkomstcadeau, bij een jaarcontract met volledig opstarttraject. Voor de eerste vijf nieuwe klanten, tot 31 december.
             </p>
             <div className="mt-9">
               <Knop cta="ps5_actie_hero_gesprek" licht />
