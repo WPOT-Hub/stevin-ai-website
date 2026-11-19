@@ -1596,7 +1596,7 @@ const DISPATCH_BODIES: Record<string, React.ReactNode> = {
 <tr><th>Het bureau betaalt Meta en berekent de mediakosten door aan de klant</th><td>De klant</td><td>Kan het bureau zijn</td></tr>
 </tbody>
 </table>
-<p>Uit de namen alleen zie je niet wie het account bezit of wie de campagne beheert. Staat bij een advertentie een bureau als betaler, dan weet je alleen dat dat bureau betaalde. Wie je advertentieaccount en de data bezit, is een aparte vraag. Die staat in <a href="/blog/wie-is-eigenaar-van-je-advertentiedata">wie is eigenaar van je advertentiedata</a> en in <a href="/blog/bureau-geen-toegang-advertentieaccount">bureau geeft geen toegang tot je advertentieaccount</a>.</p>
+<p>Uit de namen alleen zie je niet wie het account bezit of wie de campagne beheert. Staat bij een advertentie een bureau als betaler, dan weet je alleen dat dat bureau betaalde. Wie je advertentieaccount en de data bezit, is een aparte vraag. Die staat in <a href="/blog/wie-is-eigenaar-van-je-advertentiedata">wie is eigenaar van je advertentiedata</a> en in <a href="/blog/bureau-geen-toegang-advertentieaccount">wat je bureau zegt als je om toegang vraagt</a>.</p>
 <p>Twijfel je wie als betaler hoort? Leg vast wie de factuur van Meta betaalt en bespreek het met je boekhouder of jurist. Dit stuk legt de regel uit en is geen juridisch advies.</p>
 <h2>Veelgestelde vragen</h2>
 <h3>Wat is de begunstigde en wat is de betaler bij Meta-advertenties?</h3>
