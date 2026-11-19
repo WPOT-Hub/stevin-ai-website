@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Stevin.AI',
     locale: 'nl_NL',
-    images: ['https://stevin.ai/opengraph-image'],
+    images: ['https://stevin.ai/og/ps5-actie.jpg'],
   },
-  twitter: { card: 'summary_large_image', title: TITEL, description: OMSCHRIJVING, images: ['https://stevin.ai/opengraph-image'] },
+  twitter: { card: 'summary_large_image', title: TITEL, description: OMSCHRIJVING, images: ['https://stevin.ai/og/ps5-actie.jpg'] },
 }
 
 const label = 'm-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent'
