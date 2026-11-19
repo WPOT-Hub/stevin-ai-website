@@ -66,11 +66,11 @@ const FLOW = [
 const VOORBEELDEN = [
   {
     t: 'Een meubelstoffeerder',
-    d: 'De site stond live, maar Google Analytics telde nul bezoeken en het formulier meldde geen enkele aanvraag. Na het herstel kwamen er in oktober 11 offerteaanvragen binnen. Een op de drie wordt een opdracht van gemiddeld 1.000 euro. Dat is naar verwachting ruim 8 euro omzet op elke euro aan advertenties.',
+    d: 'De site stond live, maar Google Analytics telde nul bezoeken en het formulier meldde geen enkele aanvraag. Na het herstel komt elke aanvraag binnen, met erbij uit welke advertentie hij kwam. We rekenen nu met wat een opdracht waard is, niet met het aantal kliks.',
   },
   {
     t: 'Een webwinkel in witgoed',
-    d: 'Google Ads telde op een dag 5 aankopen, de winkel 10 betaalde orders. Wie op het eerste getal stuurt, zet campagnes uit die geld opleveren. De rapportage rekent nu met de orders uit de winkel.',
+    d: 'Google Ads telde op een dag de helft van de betaalde orders in de winkel. Wie op het eerste getal stuurt, zet campagnes uit die geld opleveren. De rapportage rekent nu met de orders uit de winkel.',
   },
 ]
 
