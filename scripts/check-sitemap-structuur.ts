@@ -43,7 +43,12 @@ function main() {
     // in de sitemap staat, wijst naar een pagina die terugcanonicalt. Zelfde rondje.
     if (!e.url.startsWith(`${BASIS}/en`) && talen.en) {
       const enUrl = talen.en
-      if (!enUrls.some((x) => x.url === enUrl)) {
+      // Een tweetalig paar zonder /en-prefix (journalstuk met eigen Engelse URL) mag ook:
+      // de Engelse URL staat dan zelf in de sitemap en verwijst naar zichzelf als en.
+      const doel = entries.find((x) => x.url === enUrl)
+      const doelTalen = (doel?.alternates?.languages ?? {}) as Record<string, string>
+      const tweetaligPaar = Boolean(doel) && !enUrl.startsWith(`${BASIS}/en`) && doelTalen.en === enUrl
+      if (!enUrls.some((x) => x.url === enUrl) && !tweetaligPaar) {
         fouten.push(`${e.url.replace(BASIS, '') || '/'} adverteert en-hreflang naar ${enUrl.replace(BASIS, '')}, maar die staat niet in de sitemap`)
       }
     }

@@ -51,6 +51,7 @@ export async function generateMetadata({
       // W-443: og:url is een verplichte OGP-tag en ontbrak op elk artikel.
       url: `https://stevin.ai/blog/${a.slug}`,
       siteName: 'Stevin.AI',
+      locale: a.lang === 'en' ? 'en_US' : 'nl_NL',
       title: a.title,
       description: metaOmschrijving(a.dek),
       publishedTime: a.publishedAt,
@@ -74,8 +75,26 @@ export async function generateMetadata({
       // en een hreflang op een niet-canonieke pagina is een half paar: hij
       // verwijst naar /blog/<slug>, maar die verwijst niet terug en de pagina
       // noemt zichzelf niet. Google negeert hreflang op zo'n pagina toch.
-      ...(locale === 'en' ? {} : { languages: { 'nl-NL': `https://stevin.ai/blog/${a.slug}` } }),
+      ...(a.alternate
+        ? // Tweetalig paar (nl en en, elk op een eigen URL zonder /en-prefix). Beide
+          // kanten krijgen dezelfde set, dus ze verwijzen naar elkaar en naar zichzelf.
+          { languages: hreflangPaar(a) }
+        : locale === 'en'
+          ? {}
+          : { languages: { 'nl-NL': `https://stevin.ai/blog/${a.slug}` } }),
     },
+  }
+}
+
+/** hreflang voor een tweetalig paar. De Nederlandse URL is x-default. */
+function hreflangPaar(a: Article): Record<string, string> {
+  const andere = getArticle(a.alternate ?? '')
+  const nlSlug = a.lang === 'en' ? andere?.slug ?? a.slug : a.slug
+  const enSlug = a.lang === 'en' ? a.slug : andere?.slug ?? a.slug
+  return {
+    'nl-NL': `https://stevin.ai/blog/${nlSlug}`,
+    en: `https://stevin.ai/blog/${enSlug}`,
+    'x-default': `https://stevin.ai/blog/${nlSlug}`,
   }
 }
 
@@ -98,7 +117,11 @@ export default async function ArticlePage({
   if (!isPublishableArticle(article)) notFound()
 
   // Geen kaarten naar body-loze dispatches (zouden naar een 404 linken).
-  const related = getRelatedArticles(article.slug).filter(isPublishableArticle)
+  // Alleen stukken in dezelfde taal: een Engelse pagina toont geen Nederlandse kaarten.
+  const related = getRelatedArticles(article.slug)
+    .filter(isPublishableArticle)
+    .filter((r) => (r.lang ?? 'nl') === (article.lang ?? 'nl'))
+  const taalEn = locale === 'en' || article.lang === 'en'
   // Author = Person als de naam expliciet een mens is, anders Organization.
   // Default 'Stevin Journal' wordt nog steeds als Organization gepubliceerd
   // omdat het de redactie als geheel is. Per-auteur Person-schema komt
@@ -108,6 +131,7 @@ export default async function ArticlePage({
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    inLanguage: article.lang === 'en' ? 'en' : 'nl',
     headline: article.title,
     description: metaOmschrijving(article.dek),
     image: `https://stevin.ai/blog/${article.slug}/opengraph-image`,
@@ -288,7 +312,7 @@ export default async function ArticlePage({
       </header>
 
       {/* ── BODY ── */}
-      <article className="bg-white" style={{ padding: '80px 24px 96px' }}>
+      <article className="bg-white" lang={article.lang} style={{ padding: '80px 24px 96px' }}>
         <div className="mx-auto journal-body" style={{ maxWidth: '680px' }}>
           {/* Article-specific body: switch on slug + format */}
           {article.format === 'dispatch' && <ArticleDispatchBody article={article} />}
@@ -411,7 +435,7 @@ export default async function ArticlePage({
               className="font-display font-bold text-white m-0"
               style={{ fontSize: '22px', lineHeight: 1.3, letterSpacing: '-0.015em' }}
             >
-              {locale === 'en'
+              {taalEn
                 ? 'How Stevin approaches marketing decisions'
                 : 'Hoe Stevin marketingbeslissingen benadert'}
             </h2>
@@ -419,7 +443,7 @@ export default async function ArticlePage({
               className="m-0 mt-3"
               style={{ fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}
             >
-              {locale === 'en'
+              {taalEn
                 ? 'Read how we substantiate decisions, preserve context and keep our working method current as the tooling changes.'
                 : 'Lees hoe we beslissingen onderbouwen, context bewaren en onze werkwijze actueel houden terwijl de tooling verandert.'}
             </p>
@@ -428,14 +452,15 @@ export default async function ArticlePage({
               className="inline-flex items-center mt-6 px-6 py-3 font-semibold no-underline rounded-xl transition-colors"
               style={{ fontSize: '15px', background: 'var(--accent, #3D8EFF)', color: '#fff' }}
             >
-              {locale === 'en' ? 'View our approach' : 'Bekijk onze werkwijze'}
+              {taalEn ? 'View our approach' : 'Bekijk onze werkwijze'}
             </Link>
           </div>
         </div>
       </section>
 
       {/* ── MORE FROM JOURNAL ── */}
-      <section
+      {related.length > 0 && (
+<section
         className="bg-[var(--surface)]"
         style={{ padding: '96px 24px', borderTop: '1px solid var(--border)' }}
       >
@@ -492,6 +517,7 @@ export default async function ArticlePage({
           </div>
         </div>
       </section>
+      )}
     </>
   )
 }
@@ -1545,6 +1571,110 @@ function DispatchPerspective({ slug }: { slug: string }) {
 }
 
 const DISPATCH_BODIES: Record<string, React.ReactNode> = {
+  'adverteerder-en-betaler-meta-advertenties': (
+    <>
+<p style={{ fontSize: '14px' }}><a href="/blog/beneficiary-and-payer-meta-ads" hrefLang="en" lang="en">Read this page in English</a></p>
+<p className="lead-para">Meta vraagt bij elke advertentieset die op de EU is gericht om twee namen: de adverteerder en de betaler. In het Engels heten die beneficiary en payer. De adverteerder is de partij namens wie de advertentie wordt getoond. De betaler is de partij die ervoor heeft betaald. Vaak is dat dezelfde partij, maar niet altijd.</p>
+<h2>Wat zijn de adverteerder (begunstigde) en de betaler?</h2>
+<p>In de Nederlandse Ads Manager heet het blok &#8220;Adverteerder en betaler&#8221;. Meta legt het zo uit: &#8220;Voor advertenties die op bepaalde locaties worden weergegeven, moeten details over de adverteerder en betaler worden verstrekt.&#8221; Dat stond zo in Ads Manager op 19 november 2026. Je ziet de adverteerder ook wel &#8220;begunstigde&#8221; genoemd, de vertaling van beneficiary.</p>
+<p>De regel komt uit de Digital Services Act van de EU (Verordening (EU) 2022/2065). Artikel 26 verplicht online platforms om bij elke advertentie te laten zien namens wie ze wordt getoond. Is dat een andere partij dan degene die betaalde, dan moet ook de betaler worden getoond.</p>
+<p>Let op de woorden. Het gaat niet om wie er voordeel van heeft. Het gaat om namens wie de advertentie wordt getoond en wie ze betaalt. En de betaler kies je niet naar gemak: het is de partij die echt betaalt.</p>
+<figure style={{ margin: '32px 0' }}>
+<img src="/blog/adverteerder-en-betaler-voorbeeld.svg" alt="Nagebouwd voorbeeld van het blok Adverteerder en betaler in de Meta Ad Library, met verzonnen namen: adverteerder Voorbeeld Kozijnen, betaler Voorbeeld Marketingbureau" width={1200} height={650} loading="lazy" style={{ width: '100%', height: 'auto', borderRadius: '10px', border: '1px solid #DADDE1' }} />
+<figcaption style={{ fontSize: '14px', marginTop: '10px' }}>Nagebouwd voorbeeld met verzonnen namen, geen schermafbeelding. De indeling volgt het blok &#8220;Adverteerder en betaler&#8221; bij een advertentie in de <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener noreferrer">Meta Ad Library</a>, zoals dat op 19 november 2026 te zien was.</figcaption>
+</figure>
+<h2>Waarom vraagt Meta dit?</h2>
+<p>Artikel 26 van de DSA verplicht het platform om te tonen namens wie een advertentie loopt en wie ervoor betaalde. Dat kan alleen als de adverteerder het opgeeft. Meta vraagt het in Ads Manager per advertentieset.</p>
+<p>Voor zeer grote online platforms komt artikel 39 erbij. Zij moeten een openbare database van advertenties bijhouden. Daarin staan onder meer de partij namens wie de advertentie wordt getoond en, als dat een andere is, de partij die betaalde. Die gegevens blijven bewaard tot een jaar nadat de advertentie voor het laatst is getoond. Facebook en Instagram staan op de lijst van zeer grote online platforms die de Europese Commissie in april 2023 aanwees.</p>
+<h2>Is het verplicht?</h2>
+<p>Voor advertentiesets die op de EU zijn gericht, ja. Volgens de documentatie van Meta voor ontwikkelaars zijn beide velden verplicht voor advertentiesets die op de EU en bijbehorende gebieden zijn gericht. Sinds 16 augustus 2023 wordt een advertentie niet gepubliceerd als de gegevens ontbreken. Voor andere regio&#8217;s slaat Meta de gegevens niet op.</p>
+<h2>Waar stel je adverteerder en betaler in?</h2>
+<p>Per advertentieset, niet per campagne en niet per advertentie. Dat volgt uit de documentatie van Meta, waar beide velden bij de advertentieset staan. Alle advertenties in die set krijgen dezelfde adverteerder en betaler.</p>
+<p>Op accountniveau kun je een standaardadverteerder en een standaardbetaler instellen. Meta vult die dan in bij een nieuwe advertentieset. Controleer ze toch bij elke nieuwe campagne. Adverteer je voor meerdere merken of klanten, dan klopt een standaardwaarde niet voor elk van hen.</p>
+<p>Meta kan namen voorstellen. In zijn documentatie schrijft Meta dat die suggesties niet gegarandeerd kloppen en dat je ze zelf moet nalopen voordat je publiceert.</p>
+<p>Ontbreken de gegevens, dan wordt de advertentie niet gepubliceerd.</p>
+<h2>Wie vul je in als een bureau meebeheert?</h2>
+<p>Wie het account bezit en wie de campagne beheert, bepaalt niet wat je invult. Dat bepaalt namens wie je adverteert en wie betaalt. Twee veelvoorkomende situaties:</p>
+<table>
+<thead><tr><th>Situatie</th><th>Adverteerder</th><th>Betaler</th></tr></thead>
+<tbody>
+<tr><th>De klant betaalt Meta rechtstreeks en het bureau beheert de campagne</th><td>De klant</td><td>Normaal de klant</td></tr>
+<tr><th>Het bureau betaalt Meta en berekent de mediakosten door aan de klant</th><td>De klant</td><td>Kan het bureau zijn</td></tr>
+</tbody>
+</table>
+<p>Uit de namen alleen zie je niet wie het account bezit of wie de campagne beheert. Staat bij een advertentie een bureau als betaler, dan weet je alleen dat dat bureau betaalde. Wie je advertentieaccount en de data bezit, is een aparte vraag. Die staat in <a href="/blog/wie-is-eigenaar-van-je-advertentiedata">wie is eigenaar van je advertentiedata</a> en in <a href="/blog/bureau-geen-toegang-advertentieaccount">wat je bureau zegt als je om toegang vraagt</a>.</p>
+<p>Twijfel je wie als betaler hoort? Leg vast wie de factuur van Meta betaalt en bespreek het met je boekhouder of jurist. Dit stuk legt de regel uit en is geen juridisch advies.</p>
+<h2>Veelgestelde vragen</h2>
+<h3>Wat is de begunstigde en wat is de betaler bij Meta-advertenties?</h3>
+<p>De adverteerder, in het Engels beneficiary en ook wel begunstigde genoemd, is de partij namens wie de advertentie wordt getoond. De betaler (payer) is de partij die ervoor betaalt. Ze kunnen dezelfde zijn, maar dat hoeft niet. Wat je invult moet kloppen met wie er echt betaalt.</p>
+<h3>Zijn adverteerder en betaler verplicht bij Meta-advertenties?</h3>
+<p>Ja, voor advertentiesets die op de EU zijn gericht. Sinds 16 augustus 2023 publiceert Meta een advertentie niet zonder deze gegevens, volgens de documentatie van Meta voor ontwikkelaars.</p>
+<h3>Waar stel ik adverteerder en betaler in?</h3>
+<p>Bij de advertentieset in Ads Manager. Je kunt op accountniveau een standaardadverteerder en standaardbetaler instellen, maar controleer ze bij elke nieuwe campagne.</p>
+<h3>Is zichtbaar wie de adverteerder en betaler zijn?</h3>
+<p>De DSA verplicht het platform om per advertentie te laten zien namens wie ze wordt getoond en, als dat een andere partij is, wie ervoor betaalde. Bij zeer grote platforms staat dat ook in een openbare database. Hoe dat bij Meta eruitziet, kun je zelf nakijken in de <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener noreferrer">Meta Ad Library</a>.</p>
+<h3>Hoe lang blijven advertentiegegevens bewaard?</h3>
+<p>Volgens artikel 39 van de DSA tot een jaar nadat de advertentie voor het laatst is getoond. Dat geldt voor zeer grote online platforms.</p>
+<h2>Bronnen</h2>
+<p>Verordening (EU) 2022/2065, <a href="https://eur-lex.europa.eu/eli/reg/2022/2065/oj/eng" target="_blank" rel="noopener noreferrer">artikel 26 en artikel 39</a>. Meta voor ontwikkelaars, <a href="https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign" target="_blank" rel="noopener noreferrer">advertentieset</a> en <a href="https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account/dsa_recommendations.md" target="_blank" rel="noopener noreferrer">suggesties voor adverteerder en betaler</a>, gelezen op 19 november 2026. Aanwijzing van Facebook en Instagram als zeer groot platform: <a href="https://www.helpnetsecurity.com/2023/04/28/eu-digital-services-act-tech/" target="_blank" rel="noopener noreferrer">Help Net Security</a>, 28 april 2023.</p>
+<h2>Stevins perspectief</h2>
+<p>Officieel bevestigd zijn de wettekst (artikel 26 en 39 van de DSA) en wat Meta in de documentatie voor ontwikkelaars zegt over de velden, het niveau en de verplichting. Wat Meta in het Help Center uitlegt, hebben we niet kunnen nalezen. Wat de Ad Library per advertentie toont, kennen we van een advertentie die we op 19 november 2026 hebben bekeken.</p>
+<p>Controleer deze week wie de factuur van Meta betaalt, welke standaardwaarden in je advertentieaccount staan en of die kloppen voor elke advertentieset.</p>
+<p>Dit stuk legt de regel uit. Het is geen juridisch advies.</p>
+    </>
+  ),
+  'beneficiary-and-payer-meta-ads': (
+    <>
+<p style={{ fontSize: '14px' }}><a href="/blog/adverteerder-en-betaler-meta-advertenties" hrefLang="nl" lang="nl">Lees deze pagina in het Nederlands</a></p>
+<p className="lead-para">For every ad set that targets the EU, Meta asks for two names: the beneficiary and the payer. The beneficiary is the party on whose behalf the ad is shown. The payer is the party that paid for it. Often that is the same party, but not always.</p>
+<h2>What are the beneficiary and the payer?</h2>
+<p>In Meta&#8217;s Dutch Ads Manager the block is called &#8220;Adverteerder en betaler&#8221; (advertiser and payer). Meta explains it like this, in our translation: &#8220;For ads shown in certain locations, details about the advertiser and payer must be provided.&#8221; That is what Ads Manager showed on 19 November 2026. So the Dutch interface says &#8220;advertiser&#8221; where this article says beneficiary.</p>
+<p>The rule comes from the EU Digital Services Act (Regulation (EU) 2022/2065). Article 26 requires online platforms to show, for each ad, on whose behalf it is presented. If that is a different party from the one that paid, the payer must be shown too.</p>
+<p>Watch the wording. This is not about who benefits from the ad. It is about on whose behalf the ad is shown and who pays for it. And you do not pick the payer for convenience: it is the party that actually pays.</p>
+<figure style={{ margin: '32px 0' }}>
+<img src="/blog/beneficiary-and-payer-example.svg" alt="Recreated example of the Beneficiary and payer block in the Meta Ad Library, with made-up names: beneficiary Example Windows, payer Example Marketing Agency" width={1200} height={650} loading="lazy" style={{ width: '100%', height: 'auto', borderRadius: '10px', border: '1px solid #DADDE1' }} />
+<figcaption style={{ fontSize: '14px', marginTop: '10px' }}>Recreated example with made-up names, not a screenshot. The layout follows the &#8220;Adverteerder en betaler&#8221; block on an ad in the <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener noreferrer">Meta Ad Library</a> as it looked on 19 November 2026. The English labels are our translation of the Dutch screen.</figcaption>
+</figure>
+<h2>Why does Meta ask for this?</h2>
+<p>Article 26 of the DSA requires the platform to show on whose behalf an ad runs and who paid for it. That is only possible if the advertiser provides it. Meta asks for it in Ads Manager, per ad set.</p>
+<p>Article 39 adds a duty for very large online platforms. They must keep a public repository of ads. It holds, among other things, the party on whose behalf the ad is presented and, if different, the party that paid. The information stays available until one year after the ad was last shown. Facebook and Instagram are on the list of very large online platforms that the European Commission designated in April 2023.</p>
+<h2>Is it mandatory?</h2>
+<p>For ad sets that target the EU, yes. According to Meta&#8217;s developer documentation, both fields are required for ad sets that target the EU and associated territories. Since 16 August 2023 an ad is not published if the information is missing. For other regions Meta does not store the information.</p>
+<h2>Where do you set the beneficiary and payer?</h2>
+<p>At the ad set level, not per campaign and not per ad. That follows from Meta&#8217;s documentation, where both fields belong to the ad set. Every ad in that set gets the same beneficiary and payer.</p>
+<p>At ad account level you can set a default beneficiary and a default payer. Meta then fills them in on a new ad set. Still check them on every new campaign. If you advertise for several brands or clients, one default will not fit all of them.</p>
+<p>Meta can suggest names. In its documentation Meta writes that these suggestions are not guaranteed to be correct and that you should review them before you publish.</p>
+<p>If the information is missing, the ad is not published.</p>
+<h2>What do you enter when an agency helps manage your ads?</h2>
+<p>Who owns the ad account and who manages the campaign does not decide what you enter. What decides it is on whose behalf you advertise and who pays. Two common situations:</p>
+<table>
+<thead><tr><th>Situation</th><th>Beneficiary</th><th>Payer</th></tr></thead>
+<tbody>
+<tr><th>The client pays Meta directly and the agency manages the campaign</th><td>The client</td><td>Normally the client</td></tr>
+<tr><th>The agency pays Meta and passes the media cost on to the client</th><td>The client</td><td>Can be the agency</td></tr>
+</tbody>
+</table>
+<p>The names alone do not tell you who owns the account or who manages the campaign. If an ad lists an agency as payer, all you know is that the agency paid.</p>
+<p>Unsure who the payer is? Write down who pays Meta&#8217;s invoice and talk it over with your accountant or lawyer. This article explains the rule and is not legal advice.</p>
+<h2>Frequently asked questions</h2>
+<h3>What is the difference between the beneficiary and the payer on Meta ads?</h3>
+<p>The beneficiary is the party on whose behalf the ad is shown. The payer is the party that pays for it. They can be the same, but they do not have to be. What you enter must match who actually pays.</p>
+<h3>Are the beneficiary and payer mandatory on Meta ads?</h3>
+<p>Yes, for ad sets that target the EU. Since 16 August 2023 Meta does not publish an ad without them, according to Meta&#8217;s developer documentation.</p>
+<h3>Where do I set the beneficiary and payer?</h3>
+<p>On the ad set in Ads Manager. You can set a default beneficiary and payer at ad account level, but check them on every new campaign.</p>
+<h3>What do people who see the ad get to see?</h3>
+<p>The DSA requires the platform to show, for each ad, on whose behalf it is presented and, if that is a different party, who paid for it. For very large platforms this is also kept in a public repository. You can see what Meta shows in the <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener noreferrer">Meta Ad Library</a>.</p>
+<h3>How long is ad information kept?</h3>
+<p>Under Article 39 of the DSA, until one year after the ad was last shown. That applies to very large online platforms.</p>
+<h2>Sources</h2>
+<p>Regulation (EU) 2022/2065, <a href="https://eur-lex.europa.eu/eli/reg/2022/2065/oj/eng" target="_blank" rel="noopener noreferrer">Article 26 and Article 39</a>. Meta for Developers, <a href="https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign" target="_blank" rel="noopener noreferrer">ad set</a> and <a href="https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account/dsa_recommendations.md" target="_blank" rel="noopener noreferrer">beneficiary and payer suggestions</a>, read on 19 November 2026. Designation of Facebook and Instagram as very large platforms: <a href="https://www.helpnetsecurity.com/2023/04/28/eu-digital-services-act-tech/" target="_blank" rel="noopener noreferrer">Help Net Security</a>, 28 April 2023.</p>
+<h2>Stevin&#8217;s perspective</h2>
+<p>Officially confirmed are the legal text (Articles 26 and 39 of the DSA) and what Meta&#8217;s developer documentation says about the fields, the level and the requirement. We could not read what Meta explains in its Help Center. What the Ad Library shows per ad, we know from one ad we looked at on 19 November 2026.</p>
+<p>This week, check who pays Meta&#8217;s invoice, which defaults are set in your ad account and whether they are right for every ad set.</p>
+<p>This article explains the rule. It is not legal advice.</p>
+    </>
+  ),
   'wordpress-in-2026-voorbij-of-veiliger': (
     <>
 <p className="lead-para">Is WordPress voorbij? Nee. Automattic, het bedrijf achter WordPress.com, lanceerde op 9 november Spacefast, een dienst om websites en apps die een AI assistent bouwt meteen online te zetten. Nergens zegt Automattic dat WordPress als CMS afloopt. Wat wel klopt: WordPress heeft een onderhoudsprobleem in de plugins, en dat probleem wordt groter nu aanvallers AI gebruiken. Voor een ondernemer is de vraag daarom niet welk systeem je kiest, maar wie het bijhoudt en wie de sleutel heeft.</p>

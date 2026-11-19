@@ -4,6 +4,11 @@
     "google-ads-introduceert-ingebouwd-lead-management-dashboard",
     "google-ads-kanaalprioriteit-display-search-partners"
   ],
+  "adverteerder-en-betaler-meta-advertenties": [
+    "beneficiary-and-payer-meta-ads",
+    "meta-product-browsing-standaard-aan-28-oktober",
+    "meta-invoert-onzichtbare-watermerken-voor-ai-content"
+  ],
   "ai-tool-werkt-echt-holdout-bureau": [
     "chatgpt-wordt-advertentieplatform",
     "wat-is-first-party-data",
@@ -18,6 +23,11 @@
     "ai-tool-werkt-echt-holdout-bureau",
     "last-click-is-een-gewoonte",
     "wie-is-eigenaar-van-je-domeinnaam"
+  ],
+  "beneficiary-and-payer-meta-ads": [
+    "adverteerder-en-betaler-meta-advertenties",
+    "meta-product-browsing-standaard-aan-28-oktober",
+    "meta-invoert-onzichtbare-watermerken-voor-ai-content"
   ],
   "beste-transcriptietool-2026": [
     "mmm-is-een-hypothese",
@@ -45,9 +55,9 @@
     "google-bedrijfsprofiel-minder-vertoningen-europa"
   ],
   "derde-php-lek-controleer-je-website": [
-    "wat-is-first-party-data",
-    "ai-tool-werkt-echt-holdout-bureau",
-    "wie-is-eigenaar-van-je-domeinnaam"
+    "wordpress-in-2026-voorbij-of-veiliger",
+    "wie-is-eigenaar-van-je-advertentiedata",
+    "je-klantgegevens-staan-op-meer-plekken-dan-je-denkt"
   ],
   "google-ads-conversies-meten": [
     "google-ads-kanaalprioriteit-display-search-partners",
@@ -67,12 +77,17 @@
   "google-bedrijfsprofiel-minder-vertoningen-europa": [
     "google-shopping-verwijderd-uit-europa",
     "chatgpt-wordt-advertentieplatform",
-    "google-ads-conversies-meten"
+    "google-ads-introduceert-ingebouwd-lead-management-dashboard"
   ],
   "google-shopping-verwijderd-uit-europa": [
     "google-ads-kanaalprioriteit-display-search-partners",
     "chatgpt-wordt-advertentieplatform",
     "wat-is-feed-management"
+  ],
+  "je-klantgegevens-staan-op-meer-plekken-dan-je-denkt": [
+    "wat-is-first-party-data",
+    "crm-koppelen-aan-je-website",
+    "wie-is-eigenaar-van-je-domeinnaam"
   ],
   "last-click-is-een-gewoonte": [
     "mmm-is-een-hypothese",
@@ -86,18 +101,18 @@
   ],
   "lecun-miljard-tegen-het-taalmodel": [
     "wie-is-eigenaar-van-je-advertentiedata",
-    "zichtbaar-in-ai-antwoorden-aeo-geo",
-    "ai-tools-organisatielaag-marketing"
+    "wordpress-in-2026-voorbij-of-veiliger",
+    "zichtbaar-in-ai-antwoorden-aeo-geo"
   ],
   "meta-invoert-onzichtbare-watermerken-voor-ai-content": [
     "meta-product-browsing-standaard-aan-28-oktober",
-    "bureau-geen-toegang-advertentieaccount",
-    "google-ads-introduceert-ingebouwd-lead-management-dashboard"
+    "beneficiary-and-payer-meta-ads",
+    "adverteerder-en-betaler-meta-advertenties"
   ],
   "meta-product-browsing-standaard-aan-28-oktober": [
-    "meta-invoert-onzichtbare-watermerken-voor-ai-content",
-    "wie-is-eigenaar-van-je-advertentiedata",
-    "bureau-geen-toegang-advertentieaccount"
+    "adverteerder-en-betaler-meta-advertenties",
+    "beneficiary-and-payer-meta-ads",
+    "meta-invoert-onzichtbare-watermerken-voor-ai-content"
   ],
   "mmm-attributie-incrementality-welke-meet-wat": [
     "mmm-is-een-hypothese",
@@ -112,12 +127,12 @@
   "wat-is-feed-management": [
     "google-shopping-verwijderd-uit-europa",
     "wat-is-first-party-data",
-    "ai-tool-werkt-echt-holdout-bureau"
+    "je-klantgegevens-staan-op-meer-plekken-dan-je-denkt"
   ],
   "wat-is-first-party-data": [
+    "je-klantgegevens-staan-op-meer-plekken-dan-je-denkt",
     "ai-tool-werkt-echt-holdout-bureau",
-    "leadformulier-dat-echte-aanvragen-oplevert",
-    "derde-php-lek-controleer-je-website"
+    "leadformulier-dat-echte-aanvragen-oplevert"
   ],
   "wie-is-eigenaar-van-je-advertentiedata": [
     "wie-is-eigenaar-van-je-domeinnaam",
@@ -127,7 +142,12 @@
   "wie-is-eigenaar-van-je-domeinnaam": [
     "wie-is-eigenaar-van-je-advertentiedata",
     "bureau-geen-toegang-advertentieaccount",
-    "meta-product-browsing-standaard-aan-28-oktober"
+    "adverteerder-en-betaler-meta-advertenties"
+  ],
+  "wordpress-in-2026-voorbij-of-veiliger": [
+    "chatgpt-wordt-advertentieplatform",
+    "derde-php-lek-controleer-je-website",
+    "ai-tool-werkt-echt-holdout-bureau"
   ],
   "zichtbaar-in-ai-antwoorden-aeo-geo": [
     "chatgpt-wordt-advertentieplatform",

@@ -73,13 +73,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // "reduce duplicate content". Zodra er per artikel een echte EN-vertaling is,
   // voeg je hier de /en/blog/<slug> entry met een eigen hreflang-paar weer toe.
   // Body-loze dispatches niet in de sitemap (thin content, Google-richtlijn).
+  // Tweetalig paar (nl en en, elk op een eigen URL zonder /en-prefix): beide
+  // URL's staan in de sitemap met dezelfde hreflang-set. De rest blijft NL-only.
+  const blogAlternates = (a: (typeof articles)[number]) => {
+    const andere = a.alternate ? articles.find((x) => x.slug === a.alternate) : undefined
+    if (!andere) return { 'nl-NL': `${baseUrl}/blog/${a.slug}`, 'x-default': `${baseUrl}/blog/${a.slug}` }
+    const nlSlug = a.lang === 'en' ? andere.slug : a.slug
+    const enSlug = a.lang === 'en' ? a.slug : andere.slug
+    return {
+      'nl-NL': `${baseUrl}/blog/${nlSlug}`,
+      en: `${baseUrl}/blog/${enSlug}`,
+      'x-default': `${baseUrl}/blog/${nlSlug}`,
+    }
+  }
   const blogEntries: MetadataRoute.Sitemap = articles.filter(isPublishableArticle).map((a) => ({
     url: `${baseUrl}/blog/${a.slug}`,
     // W-535: een herschreven stuk meldt zijn bijwerkdatum, net als dateModified in de JSON-LD.
     lastModified: a.updatedAt ?? a.publishedAt,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
-    alternates: { languages: { 'nl-NL': `${baseUrl}/blog/${a.slug}`, 'x-default': `${baseUrl}/blog/${a.slug}` } },
+    alternates: { languages: blogAlternates(a) },
   }))
 
   // Statische pagina's: geen lastModified (voorkomt dat crawlers het veld negeren)

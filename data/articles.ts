@@ -34,9 +34,59 @@ export interface Article {
   posterTopic: string
   /** Voor dispatches: external source URL + naam */
   source?: { url: string; name: string }
+  /** Taal van de tekst. Afwezig betekent Nederlands. */
+  lang?: 'nl' | 'en'
+  /** Slug van dezelfde pagina in de andere taal. Beide kanten verwijzen naar elkaar (hreflang). */
+  alternate?: string
 }
 
 const allArticles: Article[] = [
+{
+  "slug": "adverteerder-en-betaler-meta-advertenties",
+  "format": "dispatch",
+  "edition": "470",
+  "category": "Platform",
+  "title": "Adverteerder en betaler bij Meta-advertenties invullen",
+  "dek": "Meta vraagt per advertentieset om de adverteerder (beneficiary, ook wel begunstigde) en de betaler (payer). Wat de EU-regel zegt, waar je het instelt en wat je invult als een bureau meebeheert.",
+  "publishedAt": "2026-11-19",
+  "readMinutes": 5,
+  "source": {
+    "url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj/eng",
+    "name": "Verordening (EU) 2022/2065, artikel 26 en 39"
+  },
+  "author": {
+    "name": "Stevin Journal",
+    "role": "Redactie"
+  },
+  "posterStyle": "solid",
+  "posterTag": "PLATFORM",
+  "posterTopic": "Adverteerder en betaler bij Meta",
+  "lang": "nl",
+  "alternate": "beneficiary-and-payer-meta-ads"
+},
+{
+  "slug": "beneficiary-and-payer-meta-ads",
+  "format": "dispatch",
+  "edition": "471",
+  "category": "Platform",
+  "title": "Beneficiary and payer for Meta ads: what to enter",
+  "dek": "For every EU ad set, Meta asks who the beneficiary and who the payer is. What the EU rule says, where you set it and what to enter when an agency helps manage your ads.",
+  "publishedAt": "2026-11-19",
+  "readMinutes": 5,
+  "source": {
+    "url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj/eng",
+    "name": "Regulation (EU) 2022/2065, Articles 26 and 39"
+  },
+  "author": {
+    "name": "Stevin Journal",
+    "role": "Redactie"
+  },
+  "posterStyle": "solid",
+  "posterTag": "PLATFORM",
+  "posterTopic": "Beneficiary and payer on Meta",
+  "lang": "en",
+  "alternate": "adverteerder-en-betaler-meta-advertenties"
+},
 {
   "slug": "wordpress-in-2026-voorbij-of-veiliger",
   "format": "dispatch",
@@ -6994,8 +7044,9 @@ export function getRelatedArticles(currentSlug: string, count = 3) {
     if (matched.length > 0) return matched.slice(0, count)
   }
   // Fallback, willekeurige 3 anderen
-  return articles.filter((a) => a.slug !== currentSlug).slice(0, count)
+  return articles.filter((a) => a.slug !== currentSlug && a.lang !== 'en').slice(0, count)
 }
 
-export const editorials = () => articles.filter((a) => a.format === 'editorial')
-export const dispatches = () => articles.filter((a) => a.format === 'dispatch')
+// De Engelse tegenhanger van een stuk staat niet in de Nederlandse lijsten.
+export const editorials = () => articles.filter((a) => a.format === 'editorial' && a.lang !== 'en')
+export const dispatches = () => articles.filter((a) => a.format === 'dispatch' && a.lang !== 'en')
