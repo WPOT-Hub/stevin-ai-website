@@ -83,16 +83,20 @@ const VRAGEN = [
     a: 'Hetzelfde als een ander bureau, plus wat erna komt. We beheren je advertenties en je vindbaarheid, en we zorgen dat een aanvraag goed binnenkomt, wordt opgevolgd en als opdracht terug te zien is in je cijfers. Daarvoor koppelen we je site, je formulier, je CRM of webshop en je advertentieaccounts aan elkaar.',
   },
   {
+    v: 'Maken jullie ook websites?',
+    a: 'Ja, als je site je aanvragen kost. We zijn geen websitebouwer die een ontwerp oplevert en weer vertrekt. We bouwen of verbeteren een site als onderdeel van het geheel: hij moet gevonden worden, aanvragen opleveren en goed meten. Krijg je een nieuwe site, dan leggen we vooraf vast welke pagina\'s en plekken in Google moeten blijven.',
+  },
+  {
     v: 'Is AI iets voor een bedrijf als het mijne?',
     a: 'Soms. AI is handig voor werk dat vaak terugkomt en waar een fout niet duur is: aanvragen sorteren, spam eruit halen, een eerste antwoord klaarzetten, cijfers naast elkaar leggen. Voor een offerte of een klantgesprek blijf jij nodig. We beginnen bij wat jou tijd kost, niet bij de techniek.',
   },
   {
     v: 'Van wie zijn de accounts en de data, en zit ik ergens aan vast?',
-    a: 'Van jou. Advertentieaccounts, Analytics en de koppelingen staan op naam van jouw bedrijf en jij houdt beheerdersrechten. Stoppen kan altijd, en dan neem je alles mee.',
+    a: 'Van jou. Advertentieaccounts, Analytics en de koppelingen staan op naam van jouw bedrijf en jij houdt beheerdersrechten. Betaal je per maand, dan stop je wanneer je wilt, en dan neem je alles mee.',
   },
   {
     v: 'Wat kost het?',
-    a: 'Dat hangt af van het werk, niet van je advertentiebudget. De vaste prijzen staan op de pagina Tarieven. Los werk rekenen we per uur en spreken we vooraf af.',
+    a: 'Dat hangt af van het werk, niet van je advertentiebudget. Ons vaste pakket kost vanaf 1.399 per maand als je voor een jaar kiest, en 1.499 als je per maand betaalt. Wij raden het jaar aan. Alle prijzen staan op de pagina Tarieven. Los werk rekenen we per uur en spreken we vooraf af.',
   },
 ]
 
