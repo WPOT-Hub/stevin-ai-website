@@ -145,10 +145,10 @@ export default async function Ps5ActiePage({ params }: Props) {
         <div className="relative mx-auto grid max-w-[1152px] items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <h1
-              className="m-0 max-w-[22ch] text-balance font-display font-extrabold text-accent"
+              className="m-0 max-w-[22ch] text-balance font-display font-extrabold text-white"
               style={{ ...h2Stijl, fontSize: 'clamp(26px, 3vw, 40px)' }}
             >
-              Net als GTA&nbsp;VI leggen wij een nieuwe lat. Niet in gaming, maar in marketing en sales.
+              <span className="text-accent">Net als GTA&nbsp;VI leggen wij een nieuwe lat.</span> Niet in gaming, maar in marketing en sales.
             </h1>
             <p className="m-0 mt-5 font-display text-[22px] font-bold leading-[1.3] text-white">
               PlayStation 5 incl. GTA&nbsp;VI als welkomstcadeau
@@ -159,7 +159,6 @@ export default async function Ps5ActiePage({ params }: Props) {
             </p>
             <ul className="m-0 mt-7 flex max-w-[600px] list-none flex-col gap-3 p-0 text-[18px] font-semibold leading-[1.4] text-white">
               <li>Word adverteerder bij Stevin en krijg een PS5 met GTA VI.</li>
-              <li>Breng jij een adverteerder aan? Dan krijgt hij de PS5 met GTA VI, en jij GTA VI.</li>
             </ul>
             <div className="mt-9">
               <Knop cta="ps5_actie_hero_gesprek" licht />
