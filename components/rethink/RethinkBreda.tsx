@@ -156,7 +156,8 @@ export default function RethinkBreda() {
             AI heeft het bouwen zo veel goedkoper gemaakt dat het nu ook voor een gewone ondernemer kan.&rdquo;
           </p>
           <p className={`m-0 mt-5 max-w-[680px] ${tekst}`}>
-            We hebben geen ambitie om het grootste bureau te worden. Wel om het beste werk te leveren. Je werkt bij ons met de
+            Stevin.AI is vanaf de eerste dag rond AI gebouwd. We zijn geen bureau dat AI erbij is gaan doen en nu merkt dat
+            het echt anders moet. We hebben geen ambitie om het grootste bureau te worden. Wel om het beste werk te leveren. Je werkt bij ons met de
             mensen die het zelf bouwen, niet met een accountmanager die het doorgeeft.
           </p>
         </div>
