@@ -155,11 +155,24 @@ export default async function Ps5ActiePage({ params }: Props) {
             <p className="m-0 mt-5 max-w-[600px] font-display text-[20px] font-bold leading-[1.35] text-white">
               Net als GTA 6 leggen wij een nieuwe lat. Niet in gaming, maar in marketing en sales.
             </p>
-            <p className="m-0 mt-6 max-w-[600px] text-[18px] leading-[1.55] text-white/75">
-              Start nu met Stevin.AI als jouw bureau, met een jaarcontract en een volledig opstarttraject, bijvoorbeeld een
-              nieuwe website, een campagne, je telefoon ingericht en de meting. De eerste vijf nieuwe klanten kiezen zelf hun
-              cadeau, binnen een vast budget van Stevin.AI. Bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI.
-            </p>
+            <ul className="m-0 mt-8 flex max-w-[600px] list-none flex-col gap-4 p-0">
+              <li className="rounded-xl border border-white/15 bg-white/5 p-5">
+                <p className="m-0 font-display text-[19px] font-bold leading-[1.3] text-white">
+                  Word adverteerder bij ons en kies een PS5 Digital Edition met GTA VI.
+                </p>
+                <p className="m-0 mt-1 text-[15px] leading-[1.5] text-white/70">
+                  Voor de eerste vijf nieuwe klanten, met een jaarcontract en een volledig opstarttraject.
+                </p>
+              </li>
+              <li className="rounded-xl border border-white/15 bg-white/5 p-5">
+                <p className="m-0 font-display text-[19px] font-bold leading-[1.3] text-white">
+                  Breng jij een adverteerder aan, dan krijg jij GTA VI.
+                </p>
+                <p className="m-0 mt-1 text-[15px] leading-[1.5] text-white/70">
+                  PlayStation Store-tegoed voor GTA VI Standard, 79,99 euro. Meld hem aan voordat hij tekent, via info@stevin.ai.
+                </p>
+              </li>
+            </ul>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Knop cta="ps5_actie_hero_gesprek" licht />
               <a
