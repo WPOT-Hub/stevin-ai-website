@@ -64,7 +64,7 @@ const FLOW = [
 const VOORBEELDEN = [
   {
     t: 'Een meubelstoffeerder',
-    d: 'De site stond live, maar Google Analytics telde nul bezoeken en het formulier meldde geen enkele aanvraag. Van de 265 inzendingen waren er 235 spam. Na het herstel is per aanvraag te zien uit welke advertentie hij kwam.',
+    d: 'De site stond live, maar Google Analytics telde nul bezoeken en het formulier meldde geen enkele aanvraag. Na het herstel kwamen er in oktober 11 offerteaanvragen binnen. Een op de drie wordt een opdracht van gemiddeld 1.000 euro. Dat is naar verwachting ruim 8 euro omzet op elke euro aan advertenties.',
   },
   {
     t: 'Een webwinkel in witgoed',
