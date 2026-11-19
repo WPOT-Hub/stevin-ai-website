@@ -13,7 +13,7 @@ const CASE: Case = {
   kop: 'De site stond live.',
   accent: 'Alleen telde niemand mee.',
   knop: 'case_hans_kop',
-  lede: 'Hans Schepers herstoffeert banken, stoelen en fauteuils in Oirschot. Hij adverteerde op Google, maar wist niet wat het opleverde. Toen wij gingen kijken, bleek waarom: de meting deed het niet.',
+  lede: 'Hans Schepers herstoffeert banken, stoelen en fauteuils in Oirschot. Hij adverteerde op Google, maar wist niet wat het opleverde. De partij voor ons verkocht SEO met AI, maar keek niet naar de marketing erachter: wat kost een aanvraag en wat levert hij op? Toen wij gingen kijken, bleek dat niemand het kon weten. De meting deed het niet.',
   probleemKop: 'Wat we aantroffen.',
   problemen: [
     {
