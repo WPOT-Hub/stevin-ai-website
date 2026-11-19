@@ -144,13 +144,19 @@ export default async function Ps5ActiePage({ params }: Props) {
         <NodeWatermerk seed={861} thema="donker" />
         <div className="relative mx-auto grid max-w-[1152px] items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <p className={label}>Actie tot en met 31 december 2026, vijf plekken</p>
             <h1
-              className="m-0 max-w-[20ch] text-balance font-display font-extrabold text-white"
-              style={{ ...h2Stijl, fontSize: 'clamp(30px, 3.6vw, 48px)' }}
+              className="m-0 max-w-[22ch] text-balance font-display font-extrabold text-white"
+              style={{ ...h2Stijl, fontSize: 'clamp(26px, 3vw, 40px)' }}
             >
-              PlayStation 5 inclusief GTA&nbsp;VI als <span className="text-accent">welkomstcadeau</span>
+              Net als GTA&nbsp;VI leggen wij een nieuwe lat. Niet in gaming, maar in marketing en sales.
             </h1>
+            <p className="m-0 mt-5 font-display text-[22px] font-bold leading-[1.3] text-accent">
+              PlayStation 5 incl. GTA&nbsp;VI als welkomstcadeau
+            </p>
+            <p className="m-0 mt-4 max-w-[600px] text-[18px] leading-[1.55] text-white/75">
+              Ben jij of is jouw bedrijf op zoek naar een nieuw bureau? En wil je iemand blij maken met een PS5 inclusief GTA VI?{' '}
+              <span className="font-semibold text-accent">It&apos;s your lucky day.</span>
+            </p>
             <ul className="m-0 mt-8 flex max-w-[600px] list-none flex-col gap-4 p-0">
               <li className="rounded-xl border border-white/15 bg-white/5 p-5">
                 <p className="m-0 font-display text-[19px] font-bold leading-[1.3] text-white">
@@ -169,15 +175,19 @@ export default async function Ps5ActiePage({ params }: Props) {
                 </p>
               </li>
             </ul>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="mt-10 flex flex-wrap items-center gap-5">
               <Knop cta="ps5_actie_hero_gesprek" licht />
-              <a
-                href="#voorwaarden"
-                data-cta="ps5_actie_hero_voorwaarden"
-                className="text-[15px] font-semibold text-white/80 underline underline-offset-4 transition-colors hover:text-white"
-              >
-                Lees de voorwaarden
-              </a>
+              <p className="m-0 text-[13px] text-white/50">
+                Er gelden{' '}
+                <a
+                  href="#voorwaarden"
+                  data-cta="ps5_actie_hero_voorwaarden"
+                  className="underline underline-offset-2 transition-colors hover:text-white/80"
+                >
+                  voorwaarden
+                </a>
+                , zie hieronder.
+              </p>
             </div>
           </div>
           <figure className="m-0 mx-auto w-full max-w-[560px]">
@@ -200,14 +210,10 @@ export default async function Ps5ActiePage({ params }: Props) {
       {/* Wat het opstarttraject is */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
-          <p className={label}>Ben jij of is jouw bedrijf op zoek naar een nieuw bureau? It&apos;s your lucky day.</p>
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Eerst goed van start, dan pas de rest.
           </h2>
           <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
-            <p className="m-0">
-              Net als GTA VI leggen wij een nieuwe lat. Niet in gaming, maar in marketing en sales.
-            </p>
             <p className="m-0">
               Bij ons begint elk traject met de basis: een pagina waar je advertenties naartoe leiden, een campagne die
               erop stuurt, een telefoon die je kunt meten en cijfers die kloppen. Wij zijn een marketing- en salesbureau uit
