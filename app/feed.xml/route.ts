@@ -28,6 +28,7 @@ function esc(s: string): string {
 export async function GET() {
   const published = articles
     .filter(isPublishableArticle)
+    .filter((a) => a.lang !== 'en')
     .slice()
     .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
     .slice(0, 50)

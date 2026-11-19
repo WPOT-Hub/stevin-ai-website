@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="1200" height="650" role="img" aria-labelledby="t d" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <title id="t">Nagebouwd voorbeeld van het blok Adverteerder en betaler in de Ad Library</title>
+  <desc id="d">Nagebouwde en geanonimiseerde weergave van advertentiedetails. Adverteerder: Voorbeeld Kozijnen. Betaler: Voorbeeld Marketingbureau.</desc>
+  <defs>
+    <linearGradient id="img" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1628"/>
+      <stop offset="1" stop-color="#1B3358"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="650" fill="#F0F2F5"/>
+
+  <!-- koptekst -->
+  <rect width="1200" height="30" fill="#FFFFFF"/>
+  <text x="8" y="20" font-size="13" font-weight="700" fill="#1C1E21">Advertentiedetails</text>
+  <path d="M1172 10 L1182 20 M1182 10 L1172 20" stroke="#1C1E21" stroke-width="1.6" stroke-linecap="round"/>
+
+  <!-- linker kaart -->
+  <rect x="10" y="42" width="302" height="560" rx="6" fill="#FFFFFF"/>
+  <rect x="20" y="49" width="48" height="16" rx="8" fill="#E7F3EC"/>
+  <circle cx="28" cy="57" r="5" fill="#1F7A45"/>
+  <path d="M25.8 57 L27.4 58.6 L30.4 55.4" stroke="#FFFFFF" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="36" y="60" font-size="8.5" font-weight="600" fill="#1C1E21">Actief</text>
+  <text x="20" y="75" font-size="8" fill="#1C1E21">Bibliotheek-ID: 1234567890123456</text>
+  <text x="20" y="90" font-size="8" fill="#1C1E21">Uitgevoerd vanaf 12 okt 2026</text>
+  <text x="20" y="105" font-size="8" fill="#1C1E21">Platformen</text>
+  <text x="66" y="105" font-size="8" fill="#4B4F56">Facebook, Instagram</text>
+  <text x="20" y="120" font-size="8" fill="#1C1E21">Categorieën</text>
+  <rect x="84" y="113" width="8" height="7" rx="1.5" fill="#4B4F56"/>
+
+  <!-- advertentiekaart -->
+  <rect x="20" y="130" width="282" height="464" rx="6" fill="#FFFFFF" stroke="#DADDE1"/>
+  <circle cx="40" cy="152" r="12" fill="#0A1628"/>
+  <text x="40" y="155.5" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">VK</text>
+  <text x="58" y="148" font-size="9.5" font-weight="700" fill="#1C1E21">Voorbeeld Kozijnen</text>
+  <text x="58" y="160" font-size="8" fill="#65676B">Gesponsord</text>
+  <text x="58" y="172" font-size="8" fill="#65676B">Bibliotheek-ID: 1234567890123456</text>
+  <circle cx="272" cy="147" r="1.2" fill="#1C1E21"/><circle cx="277" cy="147" r="1.2" fill="#1C1E21"/><circle cx="282" cy="147" r="1.2" fill="#1C1E21"/>
+  <text x="28" y="196" font-size="8.6" fill="#1C1E21">Voorbeeldtekst van de advertentie</text>
+  <text x="28" y="218" font-size="8.6" fill="#1C1E21">Dit is verzonnen tekst voor een nagebouwd</text>
+  <text x="28" y="231" font-size="8.6" fill="#1C1E21">voorbeeld. Er staat geen echte advertentie in.</text>
+  <rect x="26" y="244" width="270" height="286" fill="#F0F2F5" stroke="#DADDE1"/>
+  <text x="161" y="392" font-size="18" font-weight="600" fill="#8A8D91" text-anchor="middle">Your ad</text>
+  <text x="28" y="548" font-size="7.5" fill="#65676B">VOORBEELD.NL</text>
+  <text x="28" y="564" font-size="9" fill="#1C1E21">Voorbeeldkop van de advertentie</text>
+  <rect x="222" y="540" width="70" height="28" rx="5" fill="#E4E6EB"/>
+  <text x="257" y="557" font-size="8.5" font-weight="600" fill="#4B4F56" text-anchor="middle">Meer informatie</text>
+
+  <!-- rechter kolom -->
+  <rect x="327" y="42" width="863" height="46" rx="6" fill="#FFFFFF"/>
+  <text x="342" y="70" font-size="12" font-weight="700" fill="#1C1E21">Transparantie per locatie</text>
+  <path d="M1167 62 L1173 68 L1179 62" stroke="#1C1E21" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="327" y="100" width="863" height="46" rx="6" fill="#FFFFFF"/>
+  <text x="342" y="128" font-size="12" font-weight="700" fill="#1C1E21">Informatie over de adverteerder</text>
+  <path d="M1167 120 L1173 126 L1179 120" stroke="#1C1E21" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="327" y="158" width="863" height="190" rx="6" fill="#FFFFFF"/>
+  <text x="342" y="186" font-size="12" font-weight="700" fill="#1C1E21">Adverteerder en betaler</text>
+  <path d="M1167 184 L1173 178 L1179 184" stroke="#1C1E21" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="342" y="211" font-size="8.6" fill="#1C1E21">Voor advertenties die op bepaalde locaties worden weergegeven, moeten details over de adverteerder en betaler worden verstrekt.</text>
+  <text x="342" y="233" font-size="8.6" fill="#1C1E21">Huidige</text>
+  <rect x="342" y="240" width="834" height="94" rx="6" fill="#FFFFFF" stroke="#E4E6EB"/>
+  <text x="356" y="270" font-size="10" font-weight="700" fill="#1C1E21">Adverteerder</text>
+  <text x="428" y="270" font-size="10" fill="#1C1E21">Voorbeeld Kozijnen</text>
+  <text x="356" y="298" font-size="10" font-weight="700" fill="#1C1E21">Betaler</text>
+  <text x="428" y="298" font-size="10" fill="#1C1E21">Voorbeeld Marketingbureau</text>
+
+  <line x1="327" y1="362" x2="1190" y2="362" stroke="#DADDE1"/>
+  <text x="327" y="384" font-size="9.5" fill="#1B5FD1">Over advertenties en het gebruik van gegevens</text>
+
+  <!-- toelichting -->
+  <g>
+    <circle cx="560" cy="270" r="0" fill="none"/>
+    <path d="M640 270 L700 270" stroke="#3D8EFF" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <circle cx="712" cy="270" r="11" fill="#3D8EFF"/>
+    <text x="712" y="274" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+    <path d="M700 298 L690 298" stroke="#3D8EFF" stroke-width="1.5" stroke-dasharray="3 3" opacity="0"/>
+    <path d="M730 298 L760 298" stroke="#3D8EFF" stroke-width="1.5" stroke-dasharray="3 3" opacity="0"/>
+  </g>
+  <g>
+    <circle cx="712" cy="298" r="11" fill="#3D8EFF"/>
+    <text x="712" y="302" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+    <path d="M660 298 L700 298" stroke="#3D8EFF" stroke-width="1.5" stroke-dasharray="3 3"/>
+  </g>
+  <text x="732" y="274" font-size="10.5" fill="#0A1628"><tspan font-weight="700">Adverteerder (beneficiary):</tspan> namens wie de advertentie loopt</text>
+  <text x="732" y="302" font-size="10.5" fill="#0A1628"><tspan font-weight="700">Betaler (payer):</tspan> wie de advertentie betaalt</text>
+
+  <!-- label voorbeeld -->
+  <rect x="327" y="430" width="400" height="150" rx="10" fill="#0A1628"/>
+  <rect x="345" y="448" width="108" height="20" rx="10" fill="#3D8EFF"/>
+  <text x="399" y="462" font-size="10" font-weight="700" fill="#0A1628" text-anchor="middle" letter-spacing="1">VOORBEELD</text>
+  <text x="345" y="496" font-size="13" font-weight="700" fill="#FFFFFF">Nagebouwd en geanonimiseerd</text>
+  <text x="345" y="516" font-size="10.5" fill="#C9D6EA">Dit is geen schermafbeelding. Namen, ID, datum,</text>
+  <text x="345" y="531" font-size="10.5" fill="#C9D6EA">tekst en beeld zijn verzonnen. De indeling volgt</text>
+  <text x="345" y="546" font-size="10.5" fill="#C9D6EA">de Ad Library zoals die op 19 november 2026 te zien was.</text>
+
+  <rect x="1115" y="606" width="76" height="30" rx="6" fill="#E4E6EB"/>
+  <text x="1153" y="625" font-size="10" font-weight="600" fill="#1C1E21" text-anchor="middle">Sluiten</text>
+</svg>
