@@ -37,7 +37,6 @@ type Klant = { src: string; naam: string; h: number; o: number }
 // mix-blend-mode multiply haalt de witte achtergrond uit de bestanden die er
 // een hebben (Parrhesia), zonder de originelen te bewerken.
 const KLANTEN: Klant[] = [
-  { src: '/logos/klanten/boersma-witgoed.webp', naam: 'Boersma Witgoed', h: 42, o: 0.8 },
   { src: '/logos/klanten/antwerp-drone-company.webp', naam: 'Antwerp Drone Company', h: 44, o: 1 },
   { src: '/logos/klanten/tonissteiner.svg', naam: 'Tonissteiner', h: 23, o: 0.62 },
   { src: '/logos/klanten/parrhesia.webp', naam: 'Parrhesia', h: 40, o: 0.82 },
