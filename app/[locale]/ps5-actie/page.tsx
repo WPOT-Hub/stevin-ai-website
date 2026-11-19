@@ -144,6 +144,9 @@ export default async function Ps5ActiePage({ params }: Props) {
               Ben jij of is jouw bedrijf op zoek naar een nieuw bureau? En wil je iemand blij maken met een PS5 inclusief GTA VI?{' '}
               <span className="text-accent">It&apos;s your lucky day.</span>
             </h1>
+            <p className="m-0 mt-5 max-w-[600px] font-display text-[20px] font-bold leading-[1.35] text-white">
+              De meest innovatieve game en het meest innovatieve bureau tegelijk in huis halen?
+            </p>
             <p className="m-0 mt-6 max-w-[600px] text-[18px] leading-[1.55] text-white/75">
               Start nu met Stevin.AI als jouw bureau, met een jaarcontract en een volledig opstarttraject, bijvoorbeeld een
               nieuwe website, een campagne, je telefoon ingericht en de meting. De eerste vijf nieuwe klanten kiezen zelf hun
