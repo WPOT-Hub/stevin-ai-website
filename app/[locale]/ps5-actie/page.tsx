@@ -25,11 +25,11 @@ const VAKKEN: Record<string, { enkelvoud: string; meervoud: string }> = {
 // voorwaarde), met de voorwaarden zichtbaar op de pagina zelf.
 //
 // Bewust zo:
-//  - Het woord "gratis" staat er niet. Er hangt een jaarcontract aan en de
+//  - Dat woord staat er niet. Er hangt een jaarcontract aan en de
 //    console wordt doorberekend bij opzeggen binnen drie maanden. De Nederlandse
-//    Reclame Code noemt "gratis" onder alle omstandigheden misleidend als er
+//    Reclame Code noemt dat woord onder alle omstandigheden misleidend als er
 //    toch kosten in rekening worden gebracht, ook als die elders staan; de
-//    ACM-pagina "iets gratis noemen" zegt hetzelfde over abonnementen.
+//    ACM-pagina over dat woord zegt hetzelfde over abonnementen.
 //  - Geen bedragen en geen drempel op de pagina. De doorberekening staat vooraf
 //    in de offerte.
 //  - Op pauze achter een code (19 nov, Koen: 1500), zie middleware.ts en
@@ -119,8 +119,8 @@ const DOORVERWIJZEN = [
 
 const VRAGEN: Vraag[] = [
   {
-    v: 'Waarom staat er geen "gratis" bij?',
-    a: 'Omdat het niet gratis is. Je tekent voor een jaar en je betaalt je opstarttraject. Zeg je binnen drie maanden op, dan berekenen we de console door. Dat noemen wij liever een cadeau met voorwaarden, en die staan hierboven.',
+    v: 'Wat kost het cadeau mij?',
+    a: 'Er hangen voorwaarden aan. Je tekent voor een jaar en je betaalt je opstarttraject. Zeg je binnen drie maanden op, dan berekenen we de console door. Dat noemen wij liever een cadeau met voorwaarden, en die staan hierboven.',
   },
   {
     v: 'Waarom doen jullie dit?',
