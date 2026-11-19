@@ -22,7 +22,10 @@ type Props = { params: Promise<{ locale: string }> }
 //    ACM-pagina "iets gratis noemen" zegt hetzelfde over abonnementen.
 //  - Geen bedragen en geen drempel op de pagina. De doorberekening staat vooraf
 //    in de offerte.
-//  - Beeld: de afbeelding die Koen zelf aanleverde (public/ps5-actie), met PS5-,
+//  - Op pauze achter een code (19 nov, Koen: 1500), zie middleware.ts en
+//    lib/ps5Toegang.ts. Daarom ook geen Open Graph-beeld meer en staan de
+//    beelden in private/ps5-actie en niet in public.
+//  - Beeld: de afbeelding die Koen zelf aanleverde (private/ps5-actie), met PS5-,
 //    GTA- en Rockstar-logo's en een gemaakte hoes. Koen koos dit bewust, 19 nov,
 //    nadat het merken- en misleidingsrisico was uitgelegd. Zie de PR-beschrijving.
 //  - noindex en niet in de sitemap, zoals /black-friday: dit is een bestemming
@@ -46,9 +49,8 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Stevin.AI',
     locale: 'nl_NL',
-    images: ['https://stevin.ai/og/ps5-actie.jpg'],
   },
-  twitter: { card: 'summary_large_image', title: TITEL, description: OMSCHRIJVING, images: ['https://stevin.ai/og/ps5-actie.jpg'] },
+  twitter: { card: 'summary_large_image', title: TITEL, description: OMSCHRIJVING },
 }
 
 const label = 'm-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent'
@@ -163,7 +165,8 @@ export default async function Ps5ActiePage({ params }: Props) {
           </div>
           <figure className="m-0 mx-auto w-full max-w-[560px]">
             <Image
-              src="/ps5-actie/ps5-gta-zonsondergang.webp"
+              src="/api/ps5-beeld/ps5-gta-zonsondergang.webp"
+              unoptimized
               alt="Een witte PS5 met controller en een GTA VI-spelhoes voor een stad bij zonsondergang"
               width={620}
               height={400}

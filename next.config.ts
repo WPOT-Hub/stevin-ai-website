@@ -23,6 +23,9 @@ const omleidingen = snoeiRedirects.omleidingen.flatMap(({ van, naar }) => {
 })
 
 const nextConfig: NextConfig = {
+  // W-861: de beelden van de PS5-actie staan buiten /public en worden door een
+  // route gelezen; zonder deze regel neemt de build ze niet mee.
+  outputFileTracingIncludes: { '/api/ps5-beeld/[bestand]': ['./private/ps5-actie/**'] },
   // Cache-Control voor static marketing-pages.
   // Default App Router serveert SSR pages met 'no-store' wat CDN-caching
   // uitschakelt (slecht voor performance + SEO PageSpeed). Override naar
