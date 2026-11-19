@@ -98,7 +98,7 @@ const VOORWAARDEN = [
 ]
 
 const DOORVERWIJZEN = [
-  'Alleen voor klanten van Stevin.AI. Je krijgt per ondernemer die je aanbrengt en die klant wordt een tegoed.',
+  'Iedereen kan een ondernemer aanbrengen. Je krijgt per ondernemer die je aanbrengt en die klant wordt een tegoed.',
   'De ondernemer moet nieuw zijn bij Stevin.AI. Je meldt hem aan voordat hij tekent, via info@stevin.ai. Wij bevestigen de aanmelding. Meld je hem pas aan nadat hij getekend heeft, dan telt hij niet mee.',
   'Wij kopen het tegoed nadat de ondernemer zijn jaarcontract heeft getekend en zijn opstarttraject heeft betaald.',
   'Zegt de ondernemer zijn contract binnen drie maanden na de start op, dan vervalt het tegoed. Heb je het al ontvangen, dan berekenen we het aan je door.',
