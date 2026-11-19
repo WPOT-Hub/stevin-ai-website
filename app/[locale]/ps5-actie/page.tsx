@@ -248,8 +248,12 @@ export default async function Ps5ActiePage({ params }: Props) {
           </h2>
           <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
             <p className="m-0">
-              Ken je een ondernemer die een bureau zoekt dat stuurt op winst? Stuur hem naar ons. Hij krijgt een campagne waar we
-              op winst sturen, jij krijgt PlayStation Store-tegoed voor GTA VI. Dan kun je samen met je maat spelen.
+              Wij hebben geen dure salesmensen. Wij geven liever een bonus aan jou. Zo houden wij meer tijd over voor
+              wat we echt leuk vinden: werk dat voor onze klanten op winst stuurt.
+            </p>
+            <p className="m-0">
+              Ken je een ondernemer die een bureau zoekt dat op winst stuurt? Stuur hem naar ons. Hij krijgt een campagne
+              waar we op winst sturen, jij krijgt PlayStation Store-tegoed voor GTA VI. Dan kun je samen met je maat spelen.
             </p>
             <p className="m-0">
               Het tegoed koopt Stevin.AI nadat de ondernemer die je aanbracht zijn jaarcontract heeft getekend en zijn
