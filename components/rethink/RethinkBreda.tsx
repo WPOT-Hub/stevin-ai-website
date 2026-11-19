@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
+import { TELEFOON } from '@/lib/telefoon'
 import { DonkerBlok, Kennismaken, PaginaKop, Punten, Vragen, h2Stijl, tekst } from './RethinkBlokken'
 
 // /marketingbureau-breda (W-860). Gemeten vraag (Keyword Planner, NL, 19 nov
@@ -100,7 +101,9 @@ const VRAGEN = [
   },
 ]
 
-export default function RethinkBreda() {
+// advertentie: de versie waar campagnes op landen (/lp/marketingbureau-breda).
+// Zelfde inhoud, zonder links naar andere pagina's: een actie per pagina.
+export default function RethinkBreda({ advertentie = false }: { advertentie?: boolean }) {
   return (
     <main className="bg-white">
       <PaginaKop
@@ -114,6 +117,15 @@ export default function RethinkBreda() {
             Je zoekt een bureau voor online marketing in Breda dat meer doet dan advertenties aanzetten. Wij kijken naar de hele weg: hoe iemand je
             vindt, hoe de aanvraag binnenkomt, wie hem opvolgt en of het een opdracht werd. Waar het hapert, koppelen of automatiseren
             we het. Je advertenties en je data zijn van jou, en stoppen kan altijd.
+            {advertentie && (
+              <>
+                {' '}
+                Liever bellen?{' '}
+                <a href={TELEFOON.tel} data-cta="breda_kop_bellen" className="font-semibold underline underline-offset-4">
+                  {TELEFOON.weergave}
+                </a>
+              </>
+            )}
           </p>
         }
       />
@@ -174,6 +186,7 @@ export default function RethinkBreda() {
             Twee voorbeelden uit ons werk.
           </h2>
           <Punten items={VOORBEELDEN} />
+          {!advertentie && (
           <p className={`m-0 mt-10 max-w-[680px] ${tekst}`}>
             Wil je alleen je advertenties uitbesteden? Dat kan ook. Lees verder over{' '}
             <Link href="/google-ads-uitbesteden" className="font-semibold text-accent underline-offset-4 hover:underline">
@@ -193,6 +206,7 @@ export default function RethinkBreda() {
             </Link>
             .
           </p>
+          )}
         </div>
       </section>
 
@@ -205,6 +219,12 @@ export default function RethinkBreda() {
             <p className={`m-0 mt-6 max-w-[520px] ${tekst}`}>
               Ons kantoor staat aan de Claudius Prinsenlaan 12, vlak bij het centrum. Koen kent Breda en de ondernemers
               hier. Kom langs, dan zie je meteen met wie je werkt.
+            </p>
+            <p className={`m-0 mt-4 max-w-[520px] ${tekst}`}>
+              Liever bellen?{' '}
+              <a href={TELEFOON.tel} data-cta="breda_bellen" className="font-semibold text-accent underline-offset-4 hover:underline">
+                {TELEFOON.weergave}
+              </a>
             </p>
           </div>
           <figure className="m-0">

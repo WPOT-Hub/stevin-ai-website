@@ -1,7 +1,7 @@
 'use client'
 
 import { useLocale, useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
+import { Link, usePathname } from '@/i18n/navigation'
 import Logo from './Logo'
 import { ConsentSettingsButton } from './ConsentBanner'
 import TrustBadges from './TrustBadges'
@@ -10,6 +10,9 @@ import { TELEFOON } from '@/lib/telefoon'
 export default function Footer() {
   const t = useTranslations('footer')
   const locale = useLocale()
+  // W-860: op een advertentiepagina (/lp/...) alleen de knop, geen links naar
+  // andere pagina's.
+  const advertentie = usePathname().startsWith('/lp/')
 
   const tNav = useTranslations('nav')
 
@@ -104,7 +107,7 @@ export default function Footer() {
             </div>
             <nav aria-label="Footer">
               <ul className="m-0 grid list-none grid-cols-2 gap-x-10 gap-y-3 p-0 text-[15px]">
-                {hoofd.map((l) => (
+                {hoofd.filter((l) => !advertentie || l.cta).map((l) => (
                   <li key={l.label}>
                     <Link
                       href={l.href}
