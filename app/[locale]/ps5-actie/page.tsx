@@ -68,10 +68,11 @@ const label = 'm-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0
 // W-861: wat hier staat is bewust "in aanbouw" genoemd. Nagekeken in Stevin-Hub (19 nov 2026):
 // de 076-lijn van Stevin zelf herkent bellers en legt gesprekken vast, maar de route per klant
 // (nummer naar klant) en het appje bij een gemiste oproep met de naam van de beller bestaan nog
-// niet voor klanten. Pas "in aanbouw" weg als dat live is en in system_health groen staat.
+// niet voor klanten. Ook het terugsturen van gekwalificeerde aanvragen naar Google en Meta bestaat nog niet (geen code in Stevin-Hub, 19 nov). Pas "in aanbouw" weg als dat live is en in system_health groen staat.
 const DAK = [
   { t: 'Gemiste oproep, meteen een appje', d: 'Je neemt niet op en de beller krijgt direct bericht. Jij belt terug als het uitkomt.' },
   { t: 'Je weet wie het was', d: 'Het nummer wordt herkend. Het gesprek staat daarna bij die klant, met wat er besproken is.' },
+  { t: 'Goede aanvragen terug naar Google en Meta', d: 'Is een aanvraag goed, bijvoorbeeld een VvE bij een dakdekker, dan geven wij dat door aan het advertentieplatform. Zo zoekt het meer aanvragen van dat soort.' },
   { t: 'Een aanvraag blijft niet liggen', d: 'Wie een aanvraag doet, krijgt snel een bericht en een herinnering, zodat jij niet hoeft na te jagen.' },
 ]
 
@@ -269,7 +270,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               deel draait al bij Stevin zelf, voor klanten is het nog niet aan. Wat je krijgt en wanneer, staat in je offerte.
             </p>
           </div>
-          <Punten items={DAK} kolommen={3} />
+          <Punten items={DAK} kolommen={2} />
         </div>
       </section>
 
