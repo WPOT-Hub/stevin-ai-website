@@ -146,6 +146,10 @@ export default function RethinkBreda() {
             plek zetten, zodat je ziet wat een advertentie heeft opgeleverd.
           </p>
           <p className={`m-0 mt-5 max-w-[680px] ${tekst}`}>
+            AI zonder verstand van marketing levert een site op die live staat en niets telt. Daar gaat dan elke maand
+            advertentiebudget naartoe, zonder dat iemand weet wat het oplevert. Dat zijn we dit najaar letterlijk zo tegengekomen.
+          </p>
+          <p className={`m-0 mt-5 max-w-[680px] ${tekst}`}>
             Koen Hoogenboom, oprichter, zit twintig jaar in online marketing en werkte onder meer voor Etex, Hyundai, Cirque du
             Soleil, Goossens Wonen &amp; Slapen, JBL en Leen Bakker. &ldquo;Daar bouwde ik dit voor grote bedrijven. Die betaalden
             er tienduizenden euro&apos;s per jaar voor, en dan had je de uren van de consultants en de kosten van de invoering nog niet.
