@@ -65,6 +65,16 @@ export const metadata: Metadata = {
 
 const label = 'm-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent'
 
+// W-861: wat hier staat is bewust "in aanbouw" genoemd. Nagekeken in Stevin-Hub (19 nov 2026):
+// de 076-lijn van Stevin zelf herkent bellers en legt gesprekken vast, maar de route per klant
+// (nummer naar klant) en het appje bij een gemiste oproep met de naam van de beller bestaan nog
+// niet voor klanten. Pas "in aanbouw" weg als dat live is en in system_health groen staat.
+const DAK = [
+  { t: 'Gemiste oproep, meteen een appje', d: 'Je neemt niet op en de beller krijgt direct bericht. Jij belt terug als het uitkomt.' },
+  { t: 'Je weet wie het was', d: 'Het nummer wordt herkend. Het gesprek staat daarna bij die klant, met wat er besproken is.' },
+  { t: 'Een aanvraag blijft niet liggen', d: 'Wie een aanvraag doet, krijgt snel een bericht en een herinnering, zodat jij niet hoeft na te jagen.' },
+]
+
 const OPSTART = [
   {
     t: 'Een nieuwe website',
@@ -240,6 +250,27 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         <p className="relative m-0 mx-auto mt-10 max-w-[1152px] text-[14px] text-white/90">
           PS5 bij jaarcontract. GTA6 via PlayStation Store-tegoed. T/m 31 december 2026.
         </p>
+      </section>
+
+      {/* Op het dak: wat Stevin voor een vakman regelt. Eerlijk als "in aanbouw" gemarkeerd. */}
+      <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
+        <div className="mx-auto max-w-[1152px]">
+          <p className={label}>In aanbouw</p>
+          <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+            Je staat op het dak en je klant belt.
+          </h2>
+          <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
+            <p className="m-0">
+              Je kunt niet opnemen. Het systeem herkent wie er belt en stuurt meteen een appje: &ldquo;Dag Jan, ik sta even
+              met mijn handen vol op het dak. Kan ik je straks even bellen?&rdquo;
+            </p>
+            <p className="m-0">
+              Zo blijft een klant niet in de wacht staan, en bel jij terug op een moment dat het past. Dit bouwen we nu. Een
+              deel draait al bij Stevin zelf, voor klanten is het nog niet aan. Wat je krijgt en wanneer, staat in je offerte.
+            </p>
+          </div>
+          <Punten items={DAK} kolommen={3} />
+        </div>
       </section>
 
       {/* Wat het opstarttraject is */}
