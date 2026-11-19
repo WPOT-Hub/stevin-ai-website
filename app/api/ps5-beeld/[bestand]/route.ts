@@ -7,6 +7,8 @@ import { ps5CookieWaarde } from '@/lib/ps5Toegang'
 // toegangscookie. /api valt buiten de middleware, dus de controle staat hier zelf.
 const BESTANDEN: Record<string, string> = {
   'ps5-gta-zonsondergang.webp': 'image/webp',
+  'ps5-scene.webp': 'image/webp',
+  'ps5-haal.webp': 'image/webp',
 }
 
 export async function GET(request: Request, { params }: { params: Promise<{ bestand: string }> }) {

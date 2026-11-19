@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import ContactForm from '@/components/ContactForm'
 import Image from 'next/image'
-import NodeWatermerk from '@/components/rethink/NodeWatermerk'
 import { Knop, Punten, Vragen, h2Stijl, tekst, type Vraag } from '@/components/rethink/RethinkBlokken'
 
 type Props = {
@@ -154,44 +153,93 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
 
   return (
     <main className="-mt-[72px] bg-white">
-      {/* Kop, donker zoals de hero's van de nieuwe pagina's. */}
-      <section className="relative overflow-hidden bg-primary px-6 pb-24 pt-[184px] text-white sm:pt-[200px]">
-        <NodeWatermerk seed={861} thema="donker" />
-        <div className="relative mx-auto grid max-w-[1152px] items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      {/* Kop in de stijl van de advertenties: blauw, rustig, vijf plekken per vak, PS5 met GTA VI en de gele sticker. */}
+      <section className="relative overflow-hidden px-6 pb-20 pt-[150px] text-white sm:pt-[170px]" style={{ background: '#3D8EFF' }}>
+        <div className="relative mx-auto grid max-w-[1152px] items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            {vak && (
-              <p className={label}>Voor {vak.meervoud}</p>
-            )}
             <h1
-              className="m-0 max-w-[22ch] text-balance font-display font-extrabold text-white"
-              style={{ ...h2Stijl, fontSize: 'clamp(26px, 3vw, 40px)' }}
+              className="m-0 text-balance font-display font-extrabold text-white"
+              style={{ fontSize: 'clamp(38px, 5.2vw, 68px)', lineHeight: 1.02, letterSpacing: '-0.02em' }}
             >
-              <span className="text-accent">Net als GTA&nbsp;VI leggen wij een nieuwe lat.</span> Niet in gaming, maar in marketing en sales.
+              {vak ? (
+                <>
+                  Wij zoeken
+                  <br />5 {vak.meervoud}.
+                </>
+              ) : (
+                <>
+                  Wij zoeken
+                  <br />5 klanten per vak.
+                </>
+              )}
             </h1>
-            <p className="m-0 mt-5 max-w-[600px] text-[18px] leading-[1.55] text-white/75">
-              Ben jij of is jouw bedrijf op zoek naar een nieuw bureau? En wil je iemand blij maken met een PS5 inclusief GTA VI?{' '}
-              <span className="font-semibold text-white">It&apos;s your lucky day.</span>
+            <ol className="m-0 mt-7 flex max-w-[560px] list-none gap-2.5 p-0 sm:gap-3.5" aria-label="Vijf plekken">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <li
+                  key={n}
+                  className="relative flex aspect-[1.3/1] flex-1 items-center justify-center rounded-2xl font-display text-[26px] font-extrabold sm:text-[34px]"
+                  style={{ border: '3px dashed rgba(255,255,255,.85)', background: 'rgba(255,255,255,.1)' }}
+                >
+                  {n === 1 && vak ? (
+                    <>
+                      <span className="sr-only">Plek 1 is bezet</span>
+                      <Image
+                        src="/api/ps5-beeld/ps5-haal.webp"
+                        unoptimized
+                        alt=""
+                        width={200}
+                        height={280}
+                        className="absolute left-1/2 top-1/2 h-[135%] w-auto max-w-none -translate-x-1/2 -translate-y-1/2"
+                      />
+                    </>
+                  ) : (
+                    n
+                  )}
+                </li>
+              ))}
+            </ol>
+            <p
+              className="m-0 mt-5 inline-block rounded-[14px] px-5 py-3 font-display text-[18px] font-extrabold text-white sm:text-[22px]"
+              style={{ background: '#0A1628' }}
+            >
+              Wij regelen je nieuwe klussen.
             </p>
-            <p className="m-0 mt-7 max-w-[600px] text-[18px] font-semibold leading-[1.5] text-white">
+            <p className="m-0 mt-7 max-w-[560px] text-[17px] font-semibold leading-[1.5] text-white">
               Word nu klant bij Stevin.AI en kies een PS5 Digital Edition met tegoed voor GTA VI als welkomstcadeau, bij een jaarcontract met volledig opstarttraject. Voor de eerste vijf nieuwe klanten per vak, tot 31 december.
             </p>
-            <div className="mt-9">
-              <Knop cta="ps5_actie_hero_gesprek" licht />
+            <div className="mt-8">
+              <a
+                href="/kennismaking"
+                data-cta="ps5_actie_hero_gesprek"
+                data-open-kennismaking=""
+                className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-125"
+                style={{ background: '#0A1628' }}
+              >
+                Plan een kennismaking
+              </a>
             </div>
           </div>
-          <figure className="m-0 mx-auto w-full max-w-[560px]">
+          <figure className="relative m-0 mx-auto w-full max-w-[560px]">
             <Image
-              src="/api/ps5-beeld/ps5-gta-zonsondergang.webp"
+              src="/api/ps5-beeld/ps5-scene.webp"
               unoptimized
-              alt="Een witte PS5 met controller en een GTA VI-spelhoes voor een stad bij zonsondergang"
-              width={620}
-              height={400}
+              alt="Een witte PS5 met controller en een GTA VI-spelhoes"
+              width={1042}
+              height={817}
               priority
-              sizes="(min-width: 1024px) 480px, 100vw"
-              className="h-auto w-full rounded-2xl"
+              className="h-auto w-full"
             />
+            <span
+              className="absolute bottom-[4%] right-[2%] rounded-2xl px-4 py-2 font-display text-[16px] font-extrabold sm:text-[22px]"
+              style={{ background: '#FFD400', color: '#0A1628', transform: 'rotate(-5deg)', boxShadow: '0 8px 22px rgba(10,22,40,.18)' }}
+            >
+              WELKOMSTCADEAU
+            </span>
           </figure>
         </div>
+        <p className="relative m-0 mx-auto mt-10 max-w-[1152px] text-[14px] text-white/90">
+          PS5 bij jaarcontract. GTA6 via PlayStation Store-tegoed. T/m 31 december 2026.
+        </p>
       </section>
 
       {/* Wat het opstarttraject is */}
