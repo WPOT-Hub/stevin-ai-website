@@ -117,7 +117,11 @@ export default async function ArticlePage({
   if (!isPublishableArticle(article)) notFound()
 
   // Geen kaarten naar body-loze dispatches (zouden naar een 404 linken).
-  const related = getRelatedArticles(article.slug).filter(isPublishableArticle)
+  // Alleen stukken in dezelfde taal: een Engelse pagina toont geen Nederlandse kaarten.
+  const related = getRelatedArticles(article.slug)
+    .filter(isPublishableArticle)
+    .filter((r) => (r.lang ?? 'nl') === (article.lang ?? 'nl'))
+  const taalEn = locale === 'en' || article.lang === 'en'
   // Author = Person als de naam expliciet een mens is, anders Organization.
   // Default 'Stevin Journal' wordt nog steeds als Organization gepubliceerd
   // omdat het de redactie als geheel is. Per-auteur Person-schema komt
@@ -431,7 +435,7 @@ export default async function ArticlePage({
               className="font-display font-bold text-white m-0"
               style={{ fontSize: '22px', lineHeight: 1.3, letterSpacing: '-0.015em' }}
             >
-              {locale === 'en'
+              {taalEn
                 ? 'How Stevin approaches marketing decisions'
                 : 'Hoe Stevin marketingbeslissingen benadert'}
             </h2>
@@ -439,7 +443,7 @@ export default async function ArticlePage({
               className="m-0 mt-3"
               style={{ fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}
             >
-              {locale === 'en'
+              {taalEn
                 ? 'Read how we substantiate decisions, preserve context and keep our working method current as the tooling changes.'
                 : 'Lees hoe we beslissingen onderbouwen, context bewaren en onze werkwijze actueel houden terwijl de tooling verandert.'}
             </p>
@@ -448,14 +452,15 @@ export default async function ArticlePage({
               className="inline-flex items-center mt-6 px-6 py-3 font-semibold no-underline rounded-xl transition-colors"
               style={{ fontSize: '15px', background: 'var(--accent, #3D8EFF)', color: '#fff' }}
             >
-              {locale === 'en' ? 'View our approach' : 'Bekijk onze werkwijze'}
+              {taalEn ? 'View our approach' : 'Bekijk onze werkwijze'}
             </Link>
           </div>
         </div>
       </section>
 
       {/* ── MORE FROM JOURNAL ── */}
-      <section
+      {related.length > 0 && (
+<section
         className="bg-[var(--surface)]"
         style={{ padding: '96px 24px', borderTop: '1px solid var(--border)' }}
       >
@@ -512,6 +517,7 @@ export default async function ArticlePage({
           </div>
         </div>
       </section>
+      )}
     </>
   )
 }
