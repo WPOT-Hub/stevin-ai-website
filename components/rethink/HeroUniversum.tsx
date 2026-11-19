@@ -377,7 +377,7 @@ export default function HeroUniversum({
                 )}
               </>
             ) : bewegingUit ? null : (
-              <span className="hidden zij:inline">Sleep om te draaien.</span>
+              <span className="hidden zij:inline">Sleep om te draaien. De meldingen in beeld zijn een voorbeeld.</span>
             )}
           </p>
         </div>
