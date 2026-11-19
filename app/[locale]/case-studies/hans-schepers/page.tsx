@@ -46,6 +46,7 @@ const CASE: Case = {
     { getal: '444 euro', uitleg: 'uitgegeven aan Google Ads, voor 272 klikken' },
     { getal: '11', uitleg: 'aanvragen via het formulier, plus 1 via mail' },
     { getal: '40 euro', uitleg: 'per aanvraag via het formulier, bij een opdracht van gemiddeld 1.000 euro' },
+    { getal: 'ROAS 8,3', uitleg: 'verwachte opbrengst per uitgegeven euro: 11 aanvragen, een op de drie wordt een opdracht van gemiddeld 1.000 euro' },
   ],
   bron: 'Bron: Google Ads en Google Analytics van Hans Schepers Stoffering, oktober 2026. De opbrengst per opdracht en de slagingskans zijn opgegeven door de klant.',
 }

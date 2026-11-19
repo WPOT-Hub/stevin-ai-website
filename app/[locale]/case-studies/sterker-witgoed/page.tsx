@@ -18,7 +18,7 @@ const CASE: Case = {
   problemen: [
     {
       t: 'Google Ads telt op de dag zelf de helft',
-      d: 'Op 14 november gaf Google Ads 5 aankopen en een opbrengst van 2,5 keer de uitgaven. In de winkel stonden 10 betaalde bestellingen via Google Ads: 4,6 keer de uitgaven.',
+      d: 'Op 14 november gaf Google Ads 5 aankopen. In de winkel stonden 10 betaalde bestellingen via Google Ads. Google zag dus 50 procent van de bestellingen en 54 procent van de opbrengst.',
     },
     {
       t: 'Een op de zes aankopen kwam niet aan in Analytics',
@@ -43,8 +43,8 @@ const CASE: Case = {
   ],
   uitkomstKop: 'Wat het verschil maakt.',
   cijfers: [
-    { getal: '2,5 of 4,6', uitleg: 'opbrengst per uitgegeven euro op dezelfde dag, volgens Google Ads of volgens de winkel' },
-    { getal: '44 van 252', uitleg: 'aankopen die Google Analytics miste in vier weken' },
+    { getal: '50 procent', uitleg: 'van de betaalde bestellingen zag Google Ads op de dag zelf' },
+    { getal: '17 procent', uitleg: 'van de aankopen kwam in vier weken niet aan in Google Analytics' },
     { getal: '40 tegen 10 procent', uitleg: 'geannuleerd bij betalen in termijnen tegenover iDEAL' },
   ],
   bron: 'Bron: Google Ads, Google Analytics en de webwinkel van Sterker Witgoed, 23 september tot en met 18 november 2026.',
