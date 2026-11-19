@@ -39,6 +39,14 @@ const organization = {
       addressCountry: 'NL',
     },
   },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Claudius Prinsenlaan 12',
+    postalCode: '4811 DK',
+    addressLocality: 'Breda',
+    addressRegion: 'Noord-Brabant',
+    addressCountry: 'NL',
+  },
   areaServed: [
     { '@type': 'Country', name: 'Netherlands' },
     { '@type': 'Country', name: 'Belgium' },
