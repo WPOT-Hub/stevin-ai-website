@@ -56,6 +56,7 @@ export default function Footer() {
     const hoofd: { label: string; href: string; cta?: string }[] = [
       { label: t('svc_ads_uitbesteden'), href: '/google-ads-uitbesteden' },
       { label: t('svc_social_uitbesteden'), href: '/social-media-uitbesteden' },
+      { label: 'Marketingbureau Breda', href: '/marketingbureau-breda' },
       // W-535: Leadopvolging, Marketing intelligence, Aizy vs Stevin.AI en
       // Simon Stevin blijven en staan in de sitemap, maar na het snoeien linkte
       // geen andere pagina er nog heen (de lange footer is weg). Zonder deze

@@ -146,12 +146,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: '/social-media-uitbesteden',
     locale,
     title: isNl
-      ? // W-535 (zoekwoorden 12 okt): Facebook en Instagram in de titel, was 'Social media uitbesteden, gemeten op aanvragen'.
-        'Social media uitbesteden: Facebook- en Instagram-advertenties'
+      ? // W-860 (19 nov 2026): korter en met de prijs erin. De vorige titel was met het achtervoegsel 73 tekens en
+        // werd afgekapt; 546 vertoningen op plaats 7,1 leverden nul klikken op (Search Console, 20 okt tot 16 nov).
+        'Social media uitbesteden vanaf 1.399 per maand'
       : 'Outsource social media with numbers that mean something',
     description: isNl
       ? // W-535: was 'vanaf 399'. Uitbesteden is vanaf 1.399 (wij worden jouw bureau); 399 is zelf doen.
-        'Facebook- en Instagram-advertenties uitbesteden: wij worden jouw bureau vanaf 1.399 per maand, zelf doen kan vanaf 399. Meten tot omzet, niet tot bereik.'
+        'Facebook, Instagram, LinkedIn en TikTok uitbesteden. Vaste prijs vanaf 1.399 per maand, geen opslag op je budget, accounts op jouw naam. Gemeten tot omzet.'
       : 'Outsource social media and Meta Ads from 399 per month. First a diagnosis on your own data, accounts in your own name, measured on enquiries instead of reach.',
   })
 }

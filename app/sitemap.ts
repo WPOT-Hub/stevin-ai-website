@@ -37,6 +37,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const nlOnlyPages = [
     '/google-ads-uitbesteden',
     '/social-media-uitbesteden',
+    // W-860 (19 nov 2026): Breda, 600 zoekopdrachten per maand over vier termen.
+    '/marketingbureau-breda',
     '/leadopvolging',
     '/marketing-intelligence',
     '/integraties',
