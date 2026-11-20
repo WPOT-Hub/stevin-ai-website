@@ -8,6 +8,7 @@ import { routing } from '@/i18n/routing'
 import { GoogleTagManagerHead, GoogleTagManagerBody } from '@/components/GoogleTagManager'
 import { MicrosoftClarity } from '@/components/MicrosoftClarity'
 import { AnalyticsEvents } from '@/components/analytics/AnalyticsEvents'
+import { MetaPixel } from '@/components/MetaPixel'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MainShell from '@/components/MainShell'
@@ -174,6 +175,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <GoogleTagManagerBody />
           <MicrosoftClarity />
           <AnalyticsEvents />
+          <MetaPixel />
           <Header />
           <MainShell>
             {children}
