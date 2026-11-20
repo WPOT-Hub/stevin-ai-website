@@ -3,10 +3,21 @@ import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import ContactForm from '@/components/ContactForm'
 import Image from 'next/image'
-import NodeWatermerk from '@/components/rethink/NodeWatermerk'
+import { TELEFOON } from '@/lib/telefoon'
 import { Knop, Punten, Vragen, h2Stijl, tekst, type Vraag } from '@/components/rethink/RethinkBlokken'
 
-type Props = { params: Promise<{ locale: string }> }
+type Props = {
+  params: Promise<{ locale: string }>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
+}
+
+// W-861: elk vak krijgt in de advertentie een eigen link (?vak=dakdekker of ?vak=installateur).
+// Alleen waarden uit deze lijst tellen; al het andere wordt genegeerd, zodat niemand
+// via de link eigen tekst op de pagina kan zetten.
+const VAKKEN: Record<string, { enkelvoud: string; meervoud: string }> = {
+  dakdekker: { enkelvoud: 'dakdekker', meervoud: 'dakdekkers' },
+  installateur: { enkelvoud: 'installateur', meervoud: 'installateurs' },
+}
 
 // W-861 (19 nov 2026): de PS5-actie. De eerste vijf nieuwe klanten die tot en met
 // 31 december 2026 starten met een jaarcontract en een volledig opstarttraject
@@ -15,11 +26,11 @@ type Props = { params: Promise<{ locale: string }> }
 // voorwaarde), met de voorwaarden zichtbaar op de pagina zelf.
 //
 // Bewust zo:
-//  - Het woord "gratis" staat er niet. Er hangt een jaarcontract aan en de
+//  - Dat woord staat er niet. Er hangt een jaarcontract aan en de
 //    console wordt doorberekend bij opzeggen binnen drie maanden. De Nederlandse
-//    Reclame Code noemt "gratis" onder alle omstandigheden misleidend als er
+//    Reclame Code noemt dat woord onder alle omstandigheden misleidend als er
 //    toch kosten in rekening worden gebracht, ook als die elders staan; de
-//    ACM-pagina "iets gratis noemen" zegt hetzelfde over abonnementen.
+//    ACM-pagina over dat woord zegt hetzelfde over abonnementen.
 //  - Geen bedragen en geen drempel op de pagina. De doorberekening staat vooraf
 //    in de offerte.
 //  - Op pauze achter een code (19 nov, Koen: 1500), zie middleware.ts en
@@ -35,7 +46,7 @@ type Props = { params: Promise<{ locale: string }> }
 const URL = 'https://stevin.ai/ps5-actie'
 const TITEL = 'Een PS5 met GTA VI cadeau als je nu klant wordt bij Stevin.AI'
 const OMSCHRIJVING =
-  'De eerste vijf nieuwe klanten tot en met 31 december 2026 die starten met een jaarcontract en een volledig opstarttraject kiezen zelf een cadeau binnen een vast budget van Stevin.AI, bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI. De voorwaarden staan op deze pagina.'
+  'De eerste vijf nieuwe klanten per vak tot en met 31 december 2026 die starten met een jaarcontract en een volledig opstarttraject kiezen zelf een cadeau binnen een vast budget van Stevin.AI, bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI. De voorwaarden staan op deze pagina.'
 
 export const metadata: Metadata = {
   title: TITEL,
@@ -90,7 +101,7 @@ const STAPPEN = [
 ]
 
 const VOORWAARDEN = [
-  'De actie geldt voor de eerste vijf nieuwe klanten die tot en met 31 december 2026 tekenen voor een jaarcontract met Stevin.AI als bureau, inclusief een volledig opstarttraject. Op volgorde van tekenen. Is het vijfde cadeau toegezegd, dan sluit de actie, ook als het nog geen 31 december is.',
+  'De actie geldt per vak voor de eerste vijf nieuwe klanten die tot en met 31 december 2026 tekenen voor een jaarcontract met Stevin.AI als bureau, inclusief een volledig opstarttraject. Dus vijf dakdekkers en vijf installateurs, niet vijf in totaal. Op volgorde van tekenen. Is het vijfde cadeau in jouw vak toegezegd, dan sluit de actie voor dat vak, ook als het nog geen 31 december is.',
   'Een volledig opstarttraject betekent dat het in je offerte vooraf is afgesproken en bestaat uit meerdere onderdelen, bijvoorbeeld een nieuwe website, een campagne, het inrichten van je telefoon en de meting. Welke onderdelen en wat ze kosten, staat in je offerte.',
   'Je kiest zelf je cadeau, binnen een vast budget van Stevin.AI. Wij denken aan een PlayStation 5 Digital Edition (Slim) met PlayStation Store-tegoed om GTA VI te kopen. Games zijn op PlayStation niet los cadeau te doen en de Digital Edition heeft geen schijfstation, dus het tegoed komt op jouw eigen PlayStation-account. Daarvoor heb je zo\'n account nodig.',
   'Wij bestellen het cadeau nadat je het opstarttraject hebt betaald. De levertijd hangt af van de voorraad. Bij de bestelling melden we je wanneer je de console verwacht.',
@@ -109,12 +120,12 @@ const DOORVERWIJZEN = [
 
 const VRAGEN: Vraag[] = [
   {
-    v: 'Waarom staat er geen "gratis" bij?',
-    a: 'Omdat het niet gratis is. Je tekent voor een jaar en je betaalt je opstarttraject. Zeg je binnen drie maanden op, dan berekenen we de console door. Dat noemen wij liever een cadeau met voorwaarden, en die staan hierboven.',
+    v: 'Wat kost het cadeau mij?',
+    a: 'Er hangen voorwaarden aan. Je tekent voor een jaar en je betaalt je opstarttraject. Zeg je binnen drie maanden op, dan berekenen we de console door. Dat noemen wij liever een cadeau met voorwaarden, en die staan hierboven.',
   },
   {
     v: 'Waarom doen jullie dit?',
-    a: 'Een nieuwe klant brengt in de eerste weken veel werk mee: website, campagne, telefoon, meting. Dit is onze manier om je te bedanken, en jij kiest zelf wat je er het leukst aan vindt. En het houdt de instroom beperkt: vijf plekken, omdat we alles zelf inrichten.',
+    a: 'Een nieuwe klant brengt in de eerste weken veel werk mee: website, campagne, telefoon, meting. Dit is onze manier om je te bedanken, en jij kiest zelf wat je er het leukst aan vindt. En het houdt de instroom beperkt: vijf plekken per vak, omdat we alles zelf inrichten.',
   },
   {
     v: 'Wat is een volledig opstarttraject?',
@@ -134,47 +145,144 @@ const VRAGEN: Vraag[] = [
   },
 ]
 
-export default async function Ps5ActiePage({ params }: Props) {
+export default async function Ps5ActiePage({ params, searchParams }: Props) {
   const { locale } = await params
+  const { vak: vakParam } = await searchParams
+  const vak = typeof vakParam === 'string' && Object.hasOwn(VAKKEN, vakParam) ? VAKKEN[vakParam] : null
   if (locale !== 'nl') notFound()
   setRequestLocale(locale)
 
   return (
     <main className="-mt-[72px] bg-white">
-      {/* Kop, donker zoals de hero's van de nieuwe pagina's. */}
-      <section className="relative overflow-hidden bg-primary px-6 pb-24 pt-[184px] text-white sm:pt-[200px]">
-        <NodeWatermerk seed={861} thema="donker" />
-        <div className="relative mx-auto grid max-w-[1152px] items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      {/* Kop in de stijl van de advertenties: blauw, rustig, vijf plekken per vak, PS5 met GTA VI en de gele sticker. */}
+      <section className="relative overflow-hidden px-6 pb-20 pt-[150px] text-white sm:pt-[170px]" style={{ background: '#3D8EFF' }}>
+        <div className="relative mx-auto grid max-w-[1152px] items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <h1
-              className="m-0 max-w-[22ch] text-balance font-display font-extrabold text-white"
-              style={{ ...h2Stijl, fontSize: 'clamp(26px, 3vw, 40px)' }}
+              className="m-0 text-balance font-display font-extrabold text-white"
+              style={{ fontSize: 'clamp(38px, 5.2vw, 68px)', lineHeight: 1.02, letterSpacing: '-0.02em' }}
             >
-              <span className="text-accent">Net als GTA&nbsp;VI leggen wij een nieuwe lat.</span> Niet in gaming, maar in marketing en sales.
+              {vak ? (
+                <>
+                  Wij zoeken
+                  <br />5 {vak.meervoud}.
+                </>
+              ) : (
+                <>
+                  Wij zoeken
+                  <br />5 klanten per vak.
+                </>
+              )}
             </h1>
-            <p className="m-0 mt-5 max-w-[600px] text-[18px] leading-[1.55] text-white/75">
-              Ben jij of is jouw bedrijf op zoek naar een nieuw bureau? En wil je iemand blij maken met een PS5 inclusief GTA VI?{' '}
-              <span className="font-semibold text-white">It&apos;s your lucky day.</span>
+            <ol className="m-0 mt-7 flex max-w-[560px] list-none gap-2.5 p-0 sm:gap-3.5" aria-label="Vijf plekken">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <li
+                  key={n}
+                  className="relative flex aspect-[1.3/1] flex-1 items-center justify-center rounded-2xl font-display text-[26px] font-extrabold sm:text-[34px]"
+                  style={{ border: '3px dashed rgba(255,255,255,.85)', background: 'rgba(255,255,255,.1)' }}
+                >
+                  {n === 1 && vak ? (
+                    <>
+                      <span className="sr-only">Plek 1 is bezet</span>
+                      <Image
+                        src="/api/ps5-beeld/ps5-haal.webp"
+                        unoptimized
+                        alt=""
+                        width={200}
+                        height={280}
+                        className="absolute left-1/2 top-1/2 h-[135%] w-auto max-w-none -translate-x-1/2 -translate-y-1/2"
+                      />
+                    </>
+                  ) : (
+                    n
+                  )}
+                </li>
+              ))}
+            </ol>
+            <p
+              className="m-0 mt-5 inline-block rounded-[14px] px-5 py-3 font-display text-[18px] font-extrabold text-white sm:text-[22px]"
+              style={{ background: '#0A1628' }}
+            >
+              Wij regelen je nieuwe klussen.
             </p>
-            <p className="m-0 mt-7 max-w-[600px] text-[18px] font-semibold leading-[1.5] text-white">
-              Word nu klant bij Stevin.AI en kies een PS5 Digital Edition met tegoed voor GTA VI als welkomstcadeau, bij een jaarcontract met volledig opstarttraject. Voor de eerste vijf nieuwe klanten, tot 31 december.
+            <p className="m-0 mt-7 max-w-[560px] text-[17px] font-semibold leading-[1.5] text-white">
+              Word klant en kies een PS5 met GTA VI als welkomstcadeau. Bij een jaarcontract met opstarttraject, voor de eerste vijf per vak, tot 31 december.
             </p>
-            <div className="mt-9">
-              <Knop cta="ps5_actie_hero_gesprek" licht />
+            <div className="mt-8">
+              <a
+                href={TELEFOON.tel}
+                data-cta="ps5_actie_hero_bel"
+                className="block font-display font-extrabold text-white hover:brightness-110"
+                style={{ fontSize: 'clamp(38px, 6vw, 64px)', letterSpacing: '-0.02em', lineHeight: 1 }}
+              >
+                {TELEFOON.weergave}
+              </a>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <a
+                  href={TELEFOON.tel}
+                  data-cta="ps5_actie_hero_bel_knop"
+                  className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white transition-[filter] hover:brightness-125"
+                  style={{ background: '#0A1628' }}
+                >
+                  Bel ons nu
+                </a>
+                <a
+                  href={TELEFOON.whatsapp}
+                  data-cta="ps5_actie_hero_whatsapp"
+                  className="inline-flex items-center rounded-lg bg-white px-7 py-3.5 font-display text-[16px] font-bold transition-[filter] hover:brightness-95"
+                  style={{ color: '#0A1628' }}
+                >
+                  App ons
+                </a>
+              </div>
+              <p className="m-0 mt-4 text-[15px] font-semibold text-white">
+                Of{' '}
+                <a href="/kennismaking" data-cta="ps5_actie_hero_gesprek" data-open-kennismaking="" className="underline underline-offset-4">
+                  plan een afspraak
+                </a>
+                .
+              </p>
             </div>
           </div>
-          <figure className="m-0 mx-auto w-full max-w-[560px]">
+          <figure className="relative m-0 mx-auto w-full max-w-[560px]">
             <Image
-              src="/api/ps5-beeld/ps5-gta-zonsondergang.webp"
+              src="/api/ps5-beeld/ps5-scene.webp"
               unoptimized
-              alt="Een witte PS5 met controller en een GTA VI-spelhoes voor een stad bij zonsondergang"
-              width={620}
-              height={400}
+              alt="Een witte PS5 met controller en een GTA VI-spelhoes"
+              width={1042}
+              height={817}
               priority
-              sizes="(min-width: 1024px) 480px, 100vw"
-              className="h-auto w-full rounded-2xl"
+              className="h-auto w-full"
             />
+            <span
+              className="absolute bottom-[4%] right-[2%] rounded-2xl px-4 py-2 font-display text-[16px] font-extrabold sm:text-[22px]"
+              style={{ background: '#FFD400', color: '#0A1628', transform: 'rotate(-5deg)', boxShadow: '0 8px 22px rgba(10,22,40,.18)' }}
+            >
+              WELKOMSTCADEAU
+            </span>
           </figure>
+        </div>
+        <p className="relative m-0 mx-auto mt-10 max-w-[1152px] text-[14px] text-white/90">
+          PS5 bij jaarcontract. GTA6 via PlayStation Store-tegoed. T/m 31 december 2026.
+        </p>
+      </section>
+
+      {/* Op het dak: alleen wat bij een klant bewezen draait (Voys naar Hub, W-660, 4 nov 2026). */}
+      <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
+        <div className="mx-auto max-w-[1152px]">
+          <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+            Je staat op het dak en je klant belt.
+          </h2>
+          <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
+            <p className="m-0">
+              Je kunt niet opnemen. Het gesprek staat toch in Stevin.AI, met de tijd en of het is opgenomen. Zo weet je
+              wie je terug moet bellen, en blijft er geen klant liggen.
+            </p>
+            <p className="m-0">
+              Jij belt terug als je van het dak af bent. Aan de telefoon hoor je wat er speelt en of de klus bij je past.
+              Dan weet je ook welke aanvragen waarde hebben.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -186,12 +294,7 @@ export default async function Ps5ActiePage({ params }: Props) {
           </h2>
           <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
             <p className="m-0">
-              Bij ons begint elk traject met de basis: een pagina waar je advertenties naartoe leiden, een campagne die
-              erop stuurt, een telefoon die je kunt meten en cijfers die kloppen. Wij zijn een marketing- en salesbureau uit
-              Breda dat meedenkt over de hele weg, en dat stuurt op winst in plaats van op losse aanvragen.
-            </p>
-            <p className="m-0">
-              Dat noemen we het opstarttraject. Wat erin zit, spreken we samen af, en het staat met de prijs in je offerte.
+              Wij zijn een marketing- en salesbureau uit Breda. Elk traject begint met de basis. Wat erin zit en wat het kost, staat vooraf in je offerte.
             </p>
           </div>
           <Punten items={OPSTART} kolommen={2} />
@@ -227,8 +330,9 @@ export default async function Ps5ActiePage({ params }: Props) {
       </section>
 
       {/* Doorverwijzen: de voorwaarden zijn een voorstel van Claude, Koen beslist (W-861). */}
-      <section id="doorverwijzen" className="scroll-mt-24 bg-surface px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
-        <div className="mx-auto max-w-[1152px]">
+      <section id="doorverwijzen" className="scroll-mt-24 bg-surface px-6" style={{ paddingTop: 48, paddingBottom: 48 }}>
+        <details className="mx-auto max-w-[1152px]">
+          <summary className="cursor-pointer font-display text-[20px] font-bold text-primary">Ken je een adverteerder? Breng hem mee.</summary>
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Breng een adverteerder mee, en speel samen.
           </h2>
@@ -255,25 +359,29 @@ export default async function Ps5ActiePage({ params }: Props) {
               </li>
             ))}
           </ul>
-        </div>
+        </details>
       </section>
 
       {/* Gesprek en formulier */}
       <section id="gesprek" className="scroll-mt-24 px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[900px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Past het bij jouw bedrijf?
+            Bel of app ons.
           </h2>
-          <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
-            Plan een kennismaking, of laat je gegevens achter. We zeggen meteen hoeveel plekken er nog zijn en wat een
-            opstarttraject voor jou zou inhouden.
+          <a href={TELEFOON.tel} data-cta="ps5_actie_onder_bel" className="mt-6 block font-display font-extrabold text-primary" style={{ fontSize: 'clamp(36px, 6vw, 60px)', letterSpacing: '-0.02em', lineHeight: 1 }}>
+            {TELEFOON.weergave}
+          </a>
+          <p className={`m-0 mt-4 max-w-[680px] ${tekst}`}>
+            We zeggen meteen hoeveel plekken er nog zijn.
           </p>
-          <div className="mt-8">
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={TELEFOON.whatsapp} data-cta="ps5_actie_onder_whatsapp" className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white" style={{ background: '#0A1628' }}>App ons</a>
             <Knop cta="ps5_actie_gesprek_knop" />
           </div>
-          <div className="mt-10">
+          <h3 className="m-0 mt-14 font-display text-[18px] font-bold text-primary">Liever dat wij je bellen?</h3>
+          <div className="mt-4">
             <ContactForm
-              subject="PS5-actie 2026"
+              subject={vak ? `PS5-actie 2026 (${vak.enkelvoud})` : 'PS5-actie 2026'}
               keuzeLabel="Waar ben je naar op zoek?"
               bedrijfEnTelefoonVerplicht
               keuzes={[
@@ -288,6 +396,11 @@ export default async function Ps5ActiePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      <div className="fixed inset-x-0 bottom-0 z-40 flex gap-2 p-3 sm:hidden" style={{ background: '#0A1628' }}>
+        <a href={TELEFOON.tel} data-cta="ps5_actie_sticky_bel" className="flex-1 rounded-lg py-3 text-center font-display text-[16px] font-bold text-white" style={{ background: '#3D8EFF' }}>Bel {TELEFOON.weergave}</a>
+        <a href={TELEFOON.whatsapp} data-cta="ps5_actie_sticky_whatsapp" className="flex-1 rounded-lg bg-white py-3 text-center font-display text-[16px] font-bold" style={{ color: '#0A1628' }}>App ons</a>
+      </div>
 
       {/* Geen FAQPage-schema: de pagina staat op noindex. */}
       <Vragen kop="Wat mensen ons hierover vragen" vragen={VRAGEN} schema={false} />
