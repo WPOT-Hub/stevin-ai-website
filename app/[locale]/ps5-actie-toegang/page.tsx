@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 
-type Props = { params: Promise<{ locale: string }>; searchParams: Promise<{ fout?: string }> }
+type Props = { params: Promise<{ locale: string }>; searchParams: Promise<{ fout?: string; vak?: string }> }
 
 // W-861: het codescherm voor /ps5-actie. De middleware herschrijft de actiepagina
 // hierheen zolang er geen geldige cookie is; de URL blijft /ps5-actie. Bewust
@@ -14,12 +14,17 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Ps5ActieToegangPage({ params, searchParams }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  const { fout } = await searchParams
+  const { fout, vak } = await searchParams
+  // Het vak uit de advertentielink gaat mee door het codescherm, anders ziet een
+  // nieuwe bezoeker na de code de algemene pagina. Alleen kleine letters; de
+  // actiepagina zelf kijkt of het een bestaand vak is.
+  const vakMee = typeof vak === 'string' && /^[a-z]{3,20}$/.test(vak) ? vak : null
   return (
     <main className="flex min-h-screen items-center justify-center bg-[var(--color-primary)] px-5">
       <form method="get" action="/ps5-actie" className="w-full max-w-[360px] text-center">
         <h1 className="font-display text-[24px] font-extrabold leading-tight text-white">Even op pauze</h1>
         <p className="mt-2 text-[14px] leading-relaxed text-slate-300">Voor deze pagina heb je een code nodig.</p>
+        {vakMee && <input type="hidden" name="vak" value={vakMee} />}
         <input
           name="code"
           type="password"
