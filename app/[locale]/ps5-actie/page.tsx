@@ -267,21 +267,30 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </p>
       </section>
 
-      {/* Op het dak: alleen wat bij een klant bewezen draait (Voys naar Hub, W-660, 4 nov 2026). */}
+      {/* Hoe wij klussen regelen (Koen, 20 nov: eerst dit uitleggen). De telefoon staat in stap 2:
+          alleen wat bij een klant bewezen draait (Voys naar Hub, W-660, 4 nov 2026). */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Je staat op het dak. Je telefoon gaat.
+            Zo regelen we je nieuwe klussen.
           </h2>
-          <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
-            <p className="m-0">
-              Opnemen gaat niet. Wie een klus heeft wacht niet op jou, die belt gewoon de volgende.
-            </p>
-            <p className="m-0">
-              Bij ons komt elk telefoontje binnen als aanvraag, ook als je niet opneemt. Beneden zie je wie er belde en
-              hoe laat, en bel je terug voor een ander het doet.
-            </p>
-          </div>
+          <Punten
+            items={[
+              {
+                t: 'Wij zetten je bovenaan',
+                d: `Iemand in jouw regio zoekt een ${vak ? vak.enkelvoud : 'vakman'}. Wij adverteren voor je in Google en op Facebook en Instagram, voor de klussen die jij wilt hebben.`,
+              },
+              {
+                t: 'Ze bellen of sturen een aanvraag',
+                d: 'Dat doen ze op je nieuwe website. Elk telefoontje en elk formulier komt in dezelfde lijst, ook als je aan het werk bent en niet opneemt.',
+              },
+              {
+                t: 'Jij belt terug en pakt de klus',
+                d: 'Wij houden bij welke advertenties aanvragen opleveren en zetten je budget daar. Zo gaat je geld naar wat klussen oplevert.',
+              },
+            ]}
+            kolommen={3}
+          />
         </div>
       </section>
 
