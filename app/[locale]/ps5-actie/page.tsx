@@ -14,9 +14,30 @@ type Props = {
 // W-861: elk vak krijgt in de advertentie een eigen link (?vak=dakdekker of ?vak=installateur).
 // Alleen waarden uit deze lijst tellen; al het andere wordt genegeerd, zodat niemand
 // via de link eigen tekst op de pagina kan zetten.
-const VAKKEN: Record<string, { enkelvoud: string; meervoud: string }> = {
-  dakdekker: { enkelvoud: 'dakdekker', meervoud: 'dakdekkers' },
-  installateur: { enkelvoud: 'installateur', meervoud: 'installateurs' },
+type Vak = { enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string }
+const VAKKEN: Record<string, Vak> = {
+  dakdekker: {
+    enkelvoud: 'dakdekker',
+    meervoud: 'dakdekkers',
+    kop: 'Meer aanvragen voor het dakwerk dat jij wilt doen.',
+    werk: 'Wil je vooral complete daken vervangen?',
+    bezig: 'terwijl je op het dak staat',
+    bedrijf: 'dakbedrijf',
+  },
+  installateur: {
+    enkelvoud: 'installateur',
+    meervoud: 'installateurs',
+    kop: 'Meer aanvragen voor het installatiewerk dat jij wilt doen.',
+    werk: 'Wil je vooral warmtepompen plaatsen?',
+    bezig: 'terwijl je bij een klant bezig bent',
+    bedrijf: 'installatiebedrijf',
+  },
+}
+const ALGEMEEN = {
+  kop: 'Meer aanvragen voor het werk dat jij wilt doen.',
+  werk: 'Wil je vooral de grotere klussen?',
+  bezig: 'terwijl je aan het werk bent',
+  bedrijf: 'bedrijf',
 }
 
 // W-861 (19 nov 2026): de PS5-actie. De eerste vijf nieuwe klanten die tot en met
@@ -149,12 +170,13 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
   const { locale } = await params
   const { vak: vakParam } = await searchParams
   const vak = typeof vakParam === 'string' && Object.hasOwn(VAKKEN, vakParam) ? VAKKEN[vakParam] : null
+  const kopTekst = vak ?? ALGEMEEN
   if (locale !== 'nl') notFound()
   setRequestLocale(locale)
 
   return (
     <main className="-mt-[72px] bg-white">
-      {/* Kop in de stijl van de advertenties: blauw, rustig, vijf plekken per vak, PS5 met GTA VI en de gele sticker. */}
+      {/* Eerste scherm (Koen, 20 nov): eerst wat je bij ons koopt, dan pas de vijf plekken en de PS5. Blauw als de advertenties. */}
       <section className="relative overflow-hidden px-6 pb-20 pt-[150px] text-white sm:pt-[170px]" style={{ background: '#3D8EFF' }}>
         <div className="relative mx-auto grid max-w-[1152px] items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
@@ -162,23 +184,33 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               className="m-0 text-balance font-display font-extrabold text-white"
               style={{ fontSize: 'clamp(38px, 5.2vw, 68px)', lineHeight: 1.02, letterSpacing: '-0.02em' }}
             >
-              {vak ? (
-                <>
-                  Wij zoeken
-                  <br />5 {vak.meervoud}.
-                </>
-              ) : (
-                <>
-                  Wij zoeken
-                  <br />5 klanten per vak.
-                </>
-              )}
+              {kopTekst.kop}
             </h1>
-            <ol className="m-0 mt-7 flex max-w-[560px] list-none gap-2.5 p-0 sm:gap-3.5" aria-label="Vijf plekken">
+            <p className="m-0 mt-6 max-w-[560px] text-[18px] font-semibold leading-[1.5] text-white sm:text-[20px]">
+              {kopTekst.werk} Dan richten we je website en advertenties op dat werk, in jouw regio. Belt iemand{' '}
+              {kopTekst.bezig}? Dan zie je achteraf wie belde en waarvoor.
+            </p>
+            <div className="mt-8">
+              <a
+                href={TELEFOON.whatsapp}
+                data-cta="ps5_actie_hero_whatsapp"
+                className="inline-flex items-center rounded-lg bg-white px-7 py-4 font-display text-[17px] font-bold transition-[filter] hover:brightness-95"
+                style={{ color: '#0A1628' }}
+              >
+                App ons over jouw {kopTekst.bedrijf}
+              </a>
+              <p className="m-0 mt-4 text-[16px] font-semibold text-white">
+                Liever bellen?{' '}
+                <a href={TELEFOON.tel} data-cta="ps5_actie_hero_bel" className="underline underline-offset-4">
+                  {TELEFOON.weergave}
+                </a>
+              </p>
+            </div>
+            <ol className="m-0 mt-10 flex max-w-[420px] list-none gap-2 p-0 sm:gap-3" aria-label="Vijf plekken">
               {[1, 2, 3, 4, 5].map((n) => (
                 <li
                   key={n}
-                  className="relative flex aspect-[1.3/1] flex-1 items-center justify-center rounded-2xl font-display text-[26px] font-extrabold sm:text-[34px]"
+                  className="relative flex aspect-[1.3/1] flex-1 items-center justify-center rounded-xl font-display text-[20px] font-extrabold sm:text-[26px]"
                   style={{ border: '3px dashed rgba(255,255,255,.85)', background: 'rgba(255,255,255,.1)' }}
                 >
                   {n === 1 && vak ? (
@@ -199,50 +231,10 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                 </li>
               ))}
             </ol>
-            <p
-              className="m-0 mt-5 inline-block rounded-[14px] px-5 py-3 font-display text-[18px] font-extrabold text-white sm:text-[22px]"
-              style={{ background: '#0A1628' }}
-            >
-              Wij regelen je nieuwe klussen.
+            <p className="m-0 mt-4 max-w-[560px] text-[15px] font-semibold leading-[1.5] text-white">
+              De eerste vijf nieuwe {vak ? vak.meervoud : 'klanten per vak'} met een jaarcontract en een volledig opstarttraject kiezen
+              een PS5 met GTA VI als welkomstcadeau. Tot en met 31 december.
             </p>
-            <p className="m-0 mt-7 max-w-[560px] text-[17px] font-semibold leading-[1.5] text-white">
-              Word klant en kies een PS5 met GTA VI als welkomstcadeau. Bij een jaarcontract met opstarttraject, voor de eerste vijf per vak, tot 31 december.
-            </p>
-            <div className="mt-8">
-              <a
-                href={TELEFOON.tel}
-                data-cta="ps5_actie_hero_bel"
-                className="block font-display font-extrabold text-white hover:brightness-110"
-                style={{ fontSize: 'clamp(38px, 6vw, 64px)', letterSpacing: '-0.02em', lineHeight: 1 }}
-              >
-                {TELEFOON.weergave}
-              </a>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <a
-                  href={TELEFOON.tel}
-                  data-cta="ps5_actie_hero_bel_knop"
-                  className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white transition-[filter] hover:brightness-125"
-                  style={{ background: '#0A1628' }}
-                >
-                  Bel ons nu
-                </a>
-                <a
-                  href={TELEFOON.whatsapp}
-                  data-cta="ps5_actie_hero_whatsapp"
-                  className="inline-flex items-center rounded-lg bg-white px-7 py-3.5 font-display text-[16px] font-bold transition-[filter] hover:brightness-95"
-                  style={{ color: '#0A1628' }}
-                >
-                  App ons
-                </a>
-              </div>
-              <p className="m-0 mt-4 text-[15px] font-semibold text-white">
-                Of{' '}
-                <a href="/kennismaking" data-cta="ps5_actie_hero_gesprek" data-open-kennismaking="" className="underline underline-offset-4">
-                  plan een afspraak
-                </a>
-                .
-              </p>
-            </div>
           </div>
           <figure className="relative m-0 mx-auto w-full max-w-[560px]">
             <Image
@@ -272,12 +264,12 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Zo regelen we je nieuwe klussen.
+            Zo komen die aanvragen binnen.
           </h2>
           <Punten
             items={[
               {
-                t: 'Wij zetten je bovenaan',
+                t: 'Wij zorgen dat ze jou vinden',
                 d: `Iemand in jouw regio zoekt een ${vak ? vak.enkelvoud : 'vakman'}. Wij adverteren voor je in Google en op Facebook en Instagram, voor de klussen die jij wilt hebben.`,
               },
               {
