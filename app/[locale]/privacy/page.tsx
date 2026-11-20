@@ -28,7 +28,7 @@ export default async function PrivacyPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = isEn ? '11 October 2026' : '11 oktober 2026'
+  const lastUpdated = isEn ? '20 November 2026' : '20 november 2026'
 
   return (
     <main className="bg-surface text-primary">
@@ -108,8 +108,12 @@ function PrivacyDutch() {
             <strong>Website- en leadcontext</strong>: wanneer je een contact- of
             demoformulier invult, bewaren wij de formuliergegevens samen met beperkte
             context zoals landingspagina, referrer, UTM-parameters, campagneklikken en
-            de laatst bezochte pagina&apos;s. Dit gebruiken wij om aanvragen goed op te
-            volgen en te begrijpen welke content en campagnes kwalitatieve leads opleveren.
+            de laatst bezochte pagina&apos;s. Kom je via een advertentie, dan hoort daar
+            ook het kenmerk bij dat Google, Meta of LinkedIn aan de link hangt, en het
+            vak dat in de link staat. Je browser onthoudt deze context tot je het
+            tabblad sluit. Wij krijgen haar pas als je een formulier verstuurt. Dit
+            gebruiken wij om aanvragen goed op te volgen en te begrijpen welke content
+            en campagnes kwalitatieve leads opleveren.
           </li>
           <li>
             <strong>Chat op de website</strong>: stel je een vraag aan de AI-assistent op
