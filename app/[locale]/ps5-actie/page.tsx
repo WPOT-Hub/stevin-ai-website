@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import ContactForm from '@/components/ContactForm'
 import Image from 'next/image'
+import { TELEFOON } from '@/lib/telefoon'
 import { Knop, Punten, Vragen, h2Stijl, tekst, type Vraag } from '@/components/rethink/RethinkBlokken'
 
 type Props = {
@@ -205,18 +206,42 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               Wij regelen je nieuwe klussen.
             </p>
             <p className="m-0 mt-7 max-w-[560px] text-[17px] font-semibold leading-[1.5] text-white">
-              Word nu klant bij Stevin.AI en kies een PS5 Digital Edition met tegoed voor GTA VI als welkomstcadeau, bij een jaarcontract met volledig opstarttraject. Voor de eerste vijf nieuwe klanten per vak, tot 31 december.
+              Word klant en kies een PS5 met GTA VI als welkomstcadeau. Bij een jaarcontract met opstarttraject, voor de eerste vijf per vak, tot 31 december.
             </p>
             <div className="mt-8">
               <a
-                href="/kennismaking"
-                data-cta="ps5_actie_hero_gesprek"
-                data-open-kennismaking=""
-                className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-125"
-                style={{ background: '#0A1628' }}
+                href={TELEFOON.tel}
+                data-cta="ps5_actie_hero_bel"
+                className="block font-display font-extrabold text-white hover:brightness-110"
+                style={{ fontSize: 'clamp(38px, 6vw, 64px)', letterSpacing: '-0.02em', lineHeight: 1 }}
               >
-                Plan een kennismaking
+                {TELEFOON.weergave}
               </a>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <a
+                  href={TELEFOON.tel}
+                  data-cta="ps5_actie_hero_bel_knop"
+                  className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white transition-[filter] hover:brightness-125"
+                  style={{ background: '#0A1628' }}
+                >
+                  Bel ons nu
+                </a>
+                <a
+                  href={TELEFOON.whatsapp}
+                  data-cta="ps5_actie_hero_whatsapp"
+                  className="inline-flex items-center rounded-lg bg-white px-7 py-3.5 font-display text-[16px] font-bold transition-[filter] hover:brightness-95"
+                  style={{ color: '#0A1628' }}
+                >
+                  App ons
+                </a>
+              </div>
+              <p className="m-0 mt-4 text-[15px] font-semibold text-white">
+                Of{' '}
+                <a href="/kennismaking" data-cta="ps5_actie_hero_gesprek" data-open-kennismaking="" className="underline underline-offset-4">
+                  plan een afspraak
+                </a>
+                .
+              </p>
             </div>
           </div>
           <figure className="relative m-0 mx-auto w-full max-w-[560px]">
@@ -261,13 +286,6 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </div>
       </section>
 
-      {/* Rustige tussenregel, tekst van Koen (19 nov). */}
-      <section className="px-6" style={{ paddingTop: 56, paddingBottom: 56 }}>
-        <p className="m-0 mx-auto max-w-[1152px] font-display font-extrabold text-accent" style={{ fontSize: 'clamp(24px, 3vw, 38px)', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
-          Het bureau dat verder denkt dan leads.
-        </p>
-      </section>
-
       {/* Wat het opstarttraject is */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
@@ -276,12 +294,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
           </h2>
           <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
             <p className="m-0">
-              Bij ons begint elk traject met de basis: een pagina waar je advertenties naartoe leiden, een campagne die
-              erop stuurt, een telefoon die je kunt meten en cijfers die kloppen. Wij zijn een marketing- en salesbureau uit
-              Breda dat meedenkt over de hele weg, en dat stuurt op winst in plaats van op losse aanvragen.
-            </p>
-            <p className="m-0">
-              Dat noemen we het opstarttraject. Wat erin zit, spreken we samen af, en het staat met de prijs in je offerte.
+              Wij zijn een marketing- en salesbureau uit Breda. Elk traject begint met de basis. Wat erin zit en wat het kost, staat vooraf in je offerte.
             </p>
           </div>
           <Punten items={OPSTART} kolommen={2} />
@@ -317,8 +330,9 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       </section>
 
       {/* Doorverwijzen: de voorwaarden zijn een voorstel van Claude, Koen beslist (W-861). */}
-      <section id="doorverwijzen" className="scroll-mt-24 bg-surface px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
-        <div className="mx-auto max-w-[1152px]">
+      <section id="doorverwijzen" className="scroll-mt-24 bg-surface px-6" style={{ paddingTop: 48, paddingBottom: 48 }}>
+        <details className="mx-auto max-w-[1152px]">
+          <summary className="cursor-pointer font-display text-[20px] font-bold text-primary">Ken je een adverteerder? Breng hem mee.</summary>
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Breng een adverteerder mee, en speel samen.
           </h2>
@@ -345,23 +359,27 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               </li>
             ))}
           </ul>
-        </div>
+        </details>
       </section>
 
       {/* Gesprek en formulier */}
       <section id="gesprek" className="scroll-mt-24 px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[900px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Past het bij jouw bedrijf?
+            Bel of app ons.
           </h2>
-          <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
-            Plan een kennismaking, of laat je gegevens achter. We zeggen meteen hoeveel plekken er nog zijn en wat een
-            opstarttraject voor jou zou inhouden.
+          <a href={TELEFOON.tel} data-cta="ps5_actie_onder_bel" className="mt-6 block font-display font-extrabold text-primary" style={{ fontSize: 'clamp(36px, 6vw, 60px)', letterSpacing: '-0.02em', lineHeight: 1 }}>
+            {TELEFOON.weergave}
+          </a>
+          <p className={`m-0 mt-4 max-w-[680px] ${tekst}`}>
+            We zeggen meteen hoeveel plekken er nog zijn.
           </p>
-          <div className="mt-8">
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={TELEFOON.whatsapp} data-cta="ps5_actie_onder_whatsapp" className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white" style={{ background: '#0A1628' }}>App ons</a>
             <Knop cta="ps5_actie_gesprek_knop" />
           </div>
-          <div className="mt-10">
+          <h3 className="m-0 mt-14 font-display text-[18px] font-bold text-primary">Liever dat wij je bellen?</h3>
+          <div className="mt-4">
             <ContactForm
               subject={vak ? `PS5-actie 2026 (${vak.enkelvoud})` : 'PS5-actie 2026'}
               keuzeLabel="Waar ben je naar op zoek?"
@@ -378,6 +396,11 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
           </div>
         </div>
       </section>
+
+      <div className="fixed inset-x-0 bottom-0 z-40 flex gap-2 p-3 sm:hidden" style={{ background: '#0A1628' }}>
+        <a href={TELEFOON.tel} data-cta="ps5_actie_sticky_bel" className="flex-1 rounded-lg py-3 text-center font-display text-[16px] font-bold text-white" style={{ background: '#3D8EFF' }}>Bel {TELEFOON.weergave}</a>
+        <a href={TELEFOON.whatsapp} data-cta="ps5_actie_sticky_whatsapp" className="flex-1 rounded-lg bg-white py-3 text-center font-display text-[16px] font-bold" style={{ color: '#0A1628' }}>App ons</a>
+      </div>
 
       {/* Geen FAQPage-schema: de pagina staat op noindex. */}
       <Vragen kop="Wat mensen ons hierover vragen" vragen={VRAGEN} schema={false} />
