@@ -223,7 +223,10 @@ export async function pushConversionEvent(
 ): Promise<string | null> {
   if (typeof window === 'undefined') return null
 
-  const eventId = generateEventId()
+  // Geeft de aanroeper zelf een event-ID mee (ContactForm stuurt het ook naar
+  // de Hub), dan geldt dat voor de dataLayer en voor Meta.
+  const meegegeven = extraParams?.event_id
+  const eventId = typeof meegegeven === 'string' && meegegeven ? meegegeven : generateEventId()
   const hashedUser = userData && hasMarketingConsent(getStoredConsent())
     ? await hashUserData(userData)
     : undefined
