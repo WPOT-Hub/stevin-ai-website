@@ -253,6 +253,10 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               Je kunt niet opnemen. Het gesprek staat toch in Stevin.AI, met de tijd en of het is opgenomen. Zo weet je
               wie je terug moet bellen, en blijft er geen klant liggen.
             </p>
+            <p className="m-0">
+              Jij belt terug als je van het dak af bent. Aan de telefoon hoor je wat er speelt en of de klus bij je past.
+              Dan weet je ook welke aanvragen waarde hebben.
+            </p>
           </div>
         </div>
       </section>
