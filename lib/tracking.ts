@@ -12,6 +12,7 @@
  */
 import { getStoredConsent, hasMarketingConsent } from './consent'
 import { pushDataLayerEvent } from './datalayer'
+import { metaLead } from './metaPixel'
 
 /** SHA-256 hash a string using the Web Crypto API. Returns lowercase hex. */
 async function sha256(value: string): Promise<string> {
@@ -234,5 +235,10 @@ export async function pushConversionEvent(
     ...(hashedUser ? { user_data: hashedUser } : {}),
     ...extraParams,
   })
+  // De Meta-pixel krijgt alleen de aanvraag, met hetzelfde event-ID. metaLead
+  // doet niets zonder toestemming voor marketing of zonder pixel-ID.
+  if (eventName === 'generate_lead') {
+    metaLead(eventId, typeof extraParams?.form === 'string' ? extraParams.form : undefined)
+  }
   return eventId
 }
