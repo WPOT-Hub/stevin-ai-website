@@ -192,17 +192,17 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
             </p>
             <div className="mt-8">
               <a
-                href={TELEFOON.whatsapp}
-                data-cta="ps5_actie_hero_whatsapp"
+                href={TELEFOON.tel}
+                data-cta="ps5_actie_hero_bel"
                 className="inline-flex items-center rounded-lg bg-white px-7 py-4 font-display text-[17px] font-bold transition-[filter] hover:brightness-95"
                 style={{ color: '#0A1628' }}
               >
-                App ons over jouw {kopTekst.bedrijf}
+                Bel {TELEFOON.weergave}
               </a>
               <p className="m-0 mt-4 text-[16px] font-semibold text-white">
-                Liever bellen?{' '}
-                <a href={TELEFOON.tel} data-cta="ps5_actie_hero_bel" className="underline underline-offset-4">
-                  {TELEFOON.weergave}
+                Liever appen?{' '}
+                <a href={TELEFOON.whatsapp} data-cta="ps5_actie_hero_whatsapp" className="underline underline-offset-4">
+                  App ons over jouw {kopTekst.bedrijf}
                 </a>
               </p>
             </div>
