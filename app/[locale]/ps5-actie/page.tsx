@@ -483,6 +483,8 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </div>
       </section>
 
+      {/* Op telefoons alleen het bolletje van de vraagbot: het label viel over de tekst en bellen en appen staan al in de balk. */}
+      <style>{`@media (max-width: 639px) { .vraagbot-label { display: none; } }`}</style>
       <div className="fixed inset-x-0 bottom-0 z-40 flex gap-2 p-3 sm:hidden" style={{ background: '#0A1628' }}>
         <a href={TELEFOON.tel} data-cta="ps5_actie_sticky_bel" className="flex-1 rounded-lg py-3 text-center font-display text-[16px] font-bold text-white" style={{ background: '#3D8EFF' }}>Bel {TELEFOON.weergave}</a>
         <a href={TELEFOON.whatsapp} data-cta="ps5_actie_sticky_whatsapp" className="flex-1 rounded-lg bg-white py-3 text-center font-display text-[16px] font-bold" style={{ color: '#0A1628' }}>App ons</a>
