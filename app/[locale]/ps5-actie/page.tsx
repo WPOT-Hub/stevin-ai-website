@@ -14,9 +14,33 @@ type Props = {
 // W-861: elk vak krijgt in de advertentie een eigen link (?vak=dakdekker of ?vak=installateur).
 // Alleen waarden uit deze lijst tellen; al het andere wordt genegeerd, zodat niemand
 // via de link eigen tekst op de pagina kan zetten.
-const VAKKEN: Record<string, { enkelvoud: string; meervoud: string }> = {
-  dakdekker: { enkelvoud: 'dakdekker', meervoud: 'dakdekkers' },
-  installateur: { enkelvoud: 'installateur', meervoud: 'installateurs' },
+type Vak = { enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string; pand: string }
+const VAKKEN: Record<string, Vak> = {
+  dakdekker: {
+    enkelvoud: 'dakdekker',
+    meervoud: 'dakdekkers',
+    kop: 'Meer aanvragen voor het dakwerk dat jij wilt doen.',
+    werk: 'Wil je vooral complete daken vervangen?',
+    bezig: 'terwijl je op het dak staat',
+    bedrijf: 'dakbedrijf',
+    pand: 'dak',
+  },
+  installateur: {
+    enkelvoud: 'installateur',
+    meervoud: 'installateurs',
+    kop: 'Meer aanvragen voor het installatiewerk dat jij wilt doen.',
+    werk: 'Wil je vooral warmtepompen plaatsen?',
+    bezig: 'terwijl je bij een klant bezig bent',
+    bedrijf: 'installatiebedrijf',
+    pand: 'huis',
+  },
+}
+const ALGEMEEN = {
+  kop: 'Meer aanvragen voor het werk dat jij wilt doen.',
+  werk: 'Wil je vooral de grotere klussen?',
+  bezig: 'terwijl je aan het werk bent',
+  bedrijf: 'bedrijf',
+  pand: 'pand',
 }
 
 // W-861 (19 nov 2026): de PS5-actie. De eerste vijf nieuwe klanten die tot en met
@@ -149,12 +173,13 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
   const { locale } = await params
   const { vak: vakParam } = await searchParams
   const vak = typeof vakParam === 'string' && Object.hasOwn(VAKKEN, vakParam) ? VAKKEN[vakParam] : null
+  const kopTekst = vak ?? ALGEMEEN
   if (locale !== 'nl') notFound()
   setRequestLocale(locale)
 
   return (
     <main className="-mt-[72px] bg-white">
-      {/* Kop in de stijl van de advertenties: blauw, rustig, vijf plekken per vak, PS5 met GTA VI en de gele sticker. */}
+      {/* Eerste scherm (Koen, 20 nov): eerst wat je bij ons koopt, dan pas de vijf plekken en de PS5. Blauw als de advertenties. */}
       <section className="relative overflow-hidden px-6 pb-20 pt-[150px] text-white sm:pt-[170px]" style={{ background: '#3D8EFF' }}>
         <div className="relative mx-auto grid max-w-[1152px] items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
@@ -162,23 +187,33 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               className="m-0 text-balance font-display font-extrabold text-white"
               style={{ fontSize: 'clamp(38px, 5.2vw, 68px)', lineHeight: 1.02, letterSpacing: '-0.02em' }}
             >
-              {vak ? (
-                <>
-                  Wij zoeken
-                  <br />5 {vak.meervoud}.
-                </>
-              ) : (
-                <>
-                  Wij zoeken
-                  <br />5 klanten per vak.
-                </>
-              )}
+              {kopTekst.kop}
             </h1>
-            <ol className="m-0 mt-7 flex max-w-[560px] list-none gap-2.5 p-0 sm:gap-3.5" aria-label="Vijf plekken">
+            <p className="m-0 mt-6 max-w-[560px] text-[18px] font-semibold leading-[1.5] text-white sm:text-[20px]">
+              {kopTekst.werk} Dan richten we je website en advertenties op dat werk, in jouw regio. Belt iemand{' '}
+              {kopTekst.bezig}? Dan zie je achteraf wie belde en waarvoor.
+            </p>
+            <div className="mt-8">
+              <a
+                href={TELEFOON.tel}
+                data-cta="ps5_actie_hero_bel"
+                className="inline-flex items-center rounded-lg bg-white px-7 py-4 font-display text-[17px] font-bold transition-[filter] hover:brightness-95"
+                style={{ color: '#0A1628' }}
+              >
+                Bel {TELEFOON.weergave}
+              </a>
+              <p className="m-0 mt-4 text-[16px] font-semibold text-white">
+                Liever appen?{' '}
+                <a href={TELEFOON.whatsapp} data-cta="ps5_actie_hero_whatsapp" className="underline underline-offset-4">
+                  App ons over jouw {kopTekst.bedrijf}
+                </a>
+              </p>
+            </div>
+            <ol className="m-0 mt-10 flex max-w-[420px] list-none gap-2 p-0 sm:gap-3" aria-label="Vijf plekken">
               {[1, 2, 3, 4, 5].map((n) => (
                 <li
                   key={n}
-                  className="relative flex aspect-[1.3/1] flex-1 items-center justify-center rounded-2xl font-display text-[26px] font-extrabold sm:text-[34px]"
+                  className="relative flex aspect-[1.3/1] flex-1 items-center justify-center rounded-xl font-display text-[20px] font-extrabold sm:text-[26px]"
                   style={{ border: '3px dashed rgba(255,255,255,.85)', background: 'rgba(255,255,255,.1)' }}
                 >
                   {n === 1 && vak ? (
@@ -199,50 +234,10 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                 </li>
               ))}
             </ol>
-            <p
-              className="m-0 mt-5 inline-block rounded-[14px] px-5 py-3 font-display text-[18px] font-extrabold text-white sm:text-[22px]"
-              style={{ background: '#0A1628' }}
-            >
-              Wij regelen je nieuwe klussen.
+            <p className="m-0 mt-4 max-w-[560px] text-[15px] font-semibold leading-[1.5] text-white">
+              De eerste vijf nieuwe {vak ? vak.meervoud : 'klanten per vak'} met een jaarcontract en een volledig opstarttraject kiezen
+              een PS5 met GTA VI als welkomstcadeau. Tot en met 31 december.
             </p>
-            <p className="m-0 mt-7 max-w-[560px] text-[17px] font-semibold leading-[1.5] text-white">
-              Word klant en kies een PS5 met GTA VI als welkomstcadeau. Bij een jaarcontract met opstarttraject, voor de eerste vijf per vak, tot 31 december.
-            </p>
-            <div className="mt-8">
-              <a
-                href={TELEFOON.tel}
-                data-cta="ps5_actie_hero_bel"
-                className="block font-display font-extrabold text-white hover:brightness-110"
-                style={{ fontSize: 'clamp(38px, 6vw, 64px)', letterSpacing: '-0.02em', lineHeight: 1 }}
-              >
-                {TELEFOON.weergave}
-              </a>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <a
-                  href={TELEFOON.tel}
-                  data-cta="ps5_actie_hero_bel_knop"
-                  className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white transition-[filter] hover:brightness-125"
-                  style={{ background: '#0A1628' }}
-                >
-                  Bel ons nu
-                </a>
-                <a
-                  href={TELEFOON.whatsapp}
-                  data-cta="ps5_actie_hero_whatsapp"
-                  className="inline-flex items-center rounded-lg bg-white px-7 py-3.5 font-display text-[16px] font-bold transition-[filter] hover:brightness-95"
-                  style={{ color: '#0A1628' }}
-                >
-                  App ons
-                </a>
-              </div>
-              <p className="m-0 mt-4 text-[15px] font-semibold text-white">
-                Of{' '}
-                <a href="/kennismaking" data-cta="ps5_actie_hero_gesprek" data-open-kennismaking="" className="underline underline-offset-4">
-                  plan een afspraak
-                </a>
-                .
-              </p>
-            </div>
           </div>
           <figure className="relative m-0 mx-auto w-full max-w-[560px]">
             <Image
@@ -267,22 +262,100 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </p>
       </section>
 
-      {/* Op het dak: alleen wat bij een klant bewezen draait (Voys naar Hub, W-660, 4 nov 2026). */}
+      {/* Case Ecomy (Koen, 21 nov): direct na het eerste scherm. Ecomy mag bij naam (Koens akkoord 21 nov).
+          Geen resultaten: hun site staat sinds 21 nov live. Het voorbeeld is bewust zonder adres, luchtbeeld
+          of cijfers van een echt huis, tot de eigenaar daar zelf akkoord op geeft. De quote gaat pas live
+          na Marcels eigen akkoord. */}
+      <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
+        <div className="mx-auto grid max-w-[1152px] gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className={label}>Zo doen we het voor Ecomy</p>
+            <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+              Je klant belt. Over welk {kopTekst.pand} gaat het?
+            </h2>
+            <div className={`mt-8 flex max-w-[640px] flex-col gap-5 ${tekst}`}>
+              <p className="m-0">
+                Meestal begint een aanvraag met een naam en een telefoonnummer. Jij belt terug, vraagt naar het adres
+                en plant een bezoek. Pas dan weet je of de klus iets voor je is.
+              </p>
+              <p className="m-0">
+                Voor Ecomy, een installateur uit Wijchen, draaien we dat om. Op hun site vult de bezoeker eerst zijn
+                adres in. Hij ziet zijn eigen dak van bovenaf, met de richting, de helling en de ruimte van elk vlak.
+                Daarna kiest hij wat hij wil en laat hij zijn nummer achter.
+              </p>
+              <p className="m-0">
+                Voor jou bouwen we zo&apos;n check voor jouw werk en jouw regio. Je weet om welk pand en welke klus het
+                gaat voordat je de telefoon pakt.
+              </p>
+            </div>
+            <a
+              href="https://ecomy.nl/check"
+              target="_blank"
+              rel="noopener"
+              data-cta="ps5_actie_case_ecomy"
+              className="mt-8 inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white"
+              style={{ background: '#0A1628' }}
+            >
+              Bekijk de check van Ecomy
+            </a>
+          </div>
+          <div className="flex flex-col gap-6">
+            <div className="rounded-2xl bg-surface p-7">
+              <p className="m-0 font-display text-[13px] font-bold uppercase tracking-[0.1em] text-accent">Wat er in de aanvraag staat</p>
+              <dl className="m-0 mt-5 space-y-4 text-[17px] leading-[1.5] text-[#2A3A54]">
+                <div>
+                  <dt className="font-display font-bold text-primary">Het dak</dt>
+                  <dd className="m-0">Elk vlak met richting, helling en ruimte.</dd>
+                </div>
+                <div>
+                  <dt className="font-display font-bold text-primary">De klus</dt>
+                  <dd className="m-0">Wat de klant wil laten doen.</dd>
+                </div>
+                <div>
+                  <dt className="font-display font-bold text-primary">Nakijken bij het bezoek</dt>
+                  <dd className="m-0">Het punt dat uit de check opvalt.</dd>
+                </div>
+              </dl>
+            </div>
+            <figure className="m-0 rounded-2xl border border-border p-7">
+              <blockquote className="m-0 text-[17px] leading-[1.6] text-[#2A3A54]">
+                Mijn oude site leverde niks op en mijn mailbox liep vol. Koen, mijn neef, heeft in een paar weken alles
+                nieuw neergezet: logo, website en een check waarmee mensen zelf zien wat hun huis kan opwekken. Aanvragen
+                komen nu direct op mijn telefoon binnen en ik bel ze zelf terug. Hij vroeg steeds door over hoe ik werk
+                en wat ik wel en niet doe, en zette niets op de site wat niet klopt.
+              </blockquote>
+              <figcaption className="mt-5 font-display text-[15px] font-bold text-primary">
+                Marcel Bloemendal, Ecomy Energie, Wijchen
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      {/* Hoe wij klussen regelen (Koen, 20 nov: eerst dit uitleggen). De telefoon staat in stap 2:
+          alleen wat bij een klant bewezen draait (Voys naar Hub, W-660, 4 nov 2026). */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Je staat op het dak en je klant belt.
+            Zo komen die aanvragen binnen.
           </h2>
-          <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
-            <p className="m-0">
-              Je kunt niet opnemen. Het gesprek staat toch in Stevin.AI, met de tijd en of het is opgenomen. Zo weet je
-              wie je terug moet bellen, en blijft er geen klant liggen.
-            </p>
-            <p className="m-0">
-              Jij belt terug als je van het dak af bent. Aan de telefoon hoor je wat er speelt en of de klus bij je past.
-              Dan weet je ook welke aanvragen waarde hebben.
-            </p>
-          </div>
+          <Punten
+            items={[
+              {
+                t: 'Wij zorgen dat ze jou vinden',
+                d: `Iemand in jouw regio zoekt een ${vak ? vak.enkelvoud : 'vakman'}. Wij adverteren voor je in Google en op Facebook en Instagram, voor de klussen die jij wilt hebben.`,
+              },
+              {
+                t: 'Ze bellen of sturen een aanvraag',
+                d: 'Dat doen ze op je nieuwe website. Elk telefoontje en elk formulier komt in dezelfde lijst, ook als je aan het werk bent en niet opneemt.',
+              },
+              {
+                t: 'Jij belt terug en pakt de klus',
+                d: 'Wij houden bij welke advertenties aanvragen opleveren en zetten je budget daar. Zo gaat je geld naar wat klussen oplevert.',
+              },
+            ]}
+            kolommen={3}
+          />
         </div>
       </section>
 
