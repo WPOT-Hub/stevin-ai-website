@@ -211,7 +211,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                 className="inline-flex items-center rounded-lg bg-white px-7 py-4 font-display text-[17px] font-bold transition-[filter] hover:brightness-95"
                 style={{ color: '#0A1628' }}
               >
-                Bel Koen: {TELEFOON.weergave}
+                Bel {TELEFOON.weergave}
               </a>
               <p className="m-0 mt-4 text-[16px] font-semibold text-white">
                 Liever appen?{' '}
