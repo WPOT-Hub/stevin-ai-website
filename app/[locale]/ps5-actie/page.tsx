@@ -269,7 +269,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
 
       {/* W-699 (21 nov 2026): twee klanten als bewijs, direct na het eerste scherm.
           Ecomy: de check staat live op ecomy.nl en een aanvraag kwam aantoonbaar binnen;
-          akkoord via Koen op 21 nov. Hans Schepers: zijn eigen woorden, door hem bevestigd
+          akkoord via Koen op 21 nov. Geen link naar ecomy.nl: de pagina heeft een doel, bellen of appen (Koen, 21 nov). Hans Schepers: zijn eigen woorden, door hem bevestigd
           in WhatsApp op 21 nov 19:59. Bewust geen aantallen of omzet: die zijn er nog niet. */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
         <div className="mx-auto max-w-[1152px]">
@@ -295,13 +295,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                   erbij.
                 </p>
               </div>
-              <a
-                href="https://ecomy.nl/check/"
-                target="_blank"
-                rel="noopener"
-                data-cta="ps5_actie_case_ecomy"
-                className="mt-6 block overflow-hidden rounded-[12px] border border-[#D6DDE8]"
-              >
+              <div className="mt-6 overflow-hidden rounded-[12px] border border-[#D6DDE8]">
                 <Image
                   src="/images/cases/ecomy-check.webp"
                   alt="De check op de site van Ecomy: een dak van bovenaf met de dakvlakken, het aantal panelen dat past en de opwek per jaar"
@@ -309,18 +303,9 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                   height={619}
                   className="h-auto w-full"
                 />
-              </a>
+              </div>
               <p className="m-0 mt-4 text-[15px] text-[#2A3A54]">
-                Het voorbeeld is het huis van de eigenaar zelf.{' '}
-                <a
-                  href="https://ecomy.nl/check/"
-                  target="_blank"
-                  rel="noopener"
-                  data-cta="ps5_actie_case_ecomy_link"
-                  className="font-semibold text-[#3D8EFF] underline underline-offset-4"
-                >
-                  Probeer de check van Ecomy
-                </a>
+                Het voorbeeld is het huis van de eigenaar zelf. De check staat op de site van Ecomy.
               </p>
             </div>
             <figure className="m-0 rounded-[14px] p-6 text-white sm:p-8" style={{ background: '#0A1628' }}>
