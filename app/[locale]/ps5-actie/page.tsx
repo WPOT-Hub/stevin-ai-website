@@ -19,7 +19,7 @@ const VAKKEN: Record<string, Vak> = {
   dakdekker: {
     enkelvoud: 'dakdekker',
     meervoud: 'dakdekkers',
-    kop: 'Wij regelen je nieuwe klussen.',
+    kop: 'Je ziet precies wat je advertenties opleveren.',
     soort: 'het dakwerk',
     werk: 'Wil je vooral complete daken vervangen?',
     bezig: 'terwijl je op het dak staat',
@@ -29,7 +29,7 @@ const VAKKEN: Record<string, Vak> = {
   installateur: {
     enkelvoud: 'installateur',
     meervoud: 'installateurs',
-    kop: 'Wij regelen je nieuwe klussen.',
+    kop: 'Je ziet precies wat je advertenties opleveren.',
     soort: 'het installatiewerk',
     werk: 'Wil je vooral warmtepompen plaatsen?',
     bezig: 'terwijl je bij een klant bezig bent',
@@ -43,7 +43,7 @@ const KLANTZINNEN = [
   { zin: 'Het levert me weer iets op.', naam: 'Faysal, Sterker Witgoed' },
 ]
 const ALGEMEEN = {
-  kop: 'Wij regelen je nieuwe klussen.',
+  kop: 'Je ziet precies wat je advertenties opleveren.',
   soort: 'het werk',
   werk: 'Wil je vooral de grotere klussen?',
   bezig: 'terwijl je aan het werk bent',
@@ -198,8 +198,8 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               {kopTekst.kop}
             </h1>
             <p className="m-0 mt-6 max-w-[560px] text-[18px] font-semibold leading-[1.5] text-white sm:text-[20px]">
-              Met campagnes in Google, Facebook en Instagram, gericht op {kopTekst.soort} dat jij wilt doen, in jouw
-              regio. Elke aanvraag komt op je telefoon. Jij belt terug en pakt de klus.
+              Wij adverteren voor jouw bedrijf in Google, Facebook en Instagram, op {kopTekst.soort} dat jij wilt doen.
+              Bij elke aanvraag zie je uit welke advertentie hij kwam en wat hij kostte.
             </p>
             <div className="mt-8">
               <a
