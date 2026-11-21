@@ -348,27 +348,68 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       {/* Hoe wij klussen regelen (Koen, 20 nov: eerst dit uitleggen). De telefoon staat in stap 2:
           alleen wat bij een klant bewezen draait (Voys naar Hub, W-660, 4 nov 2026). */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
-        <div className="mx-auto max-w-[1152px]">
-          <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Zo komen die aanvragen binnen.
-          </h2>
-          <Punten
-            items={[
-              {
-                t: 'Wij zorgen dat ze jou vinden',
-                d: `Iemand in jouw regio zoekt een ${vak ? vak.enkelvoud : 'vakman'}. Wij adverteren voor je in Google en op Facebook en Instagram, voor de klussen die jij wilt hebben.`,
-              },
-              {
-                t: 'Ze bellen of sturen een aanvraag',
-                d: 'Dat doen ze op je nieuwe website. Elk telefoontje en elk formulier komt in dezelfde lijst, ook als je aan het werk bent en niet opneemt.',
-              },
-              {
-                t: 'Jij belt terug en pakt de klus',
-                d: 'Wij houden bij welke advertenties aanvragen opleveren en zetten je budget daar. Zo gaat je geld naar wat klussen oplevert.',
-              },
-            ]}
-            kolommen={3}
-          />
+        <div className="mx-auto grid max-w-[1152px] items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+              Zo komen die aanvragen binnen.
+            </h2>
+            {/* Schema in drie stappen (Koen, 21 nov): het beeld vertelt het, de tekst is een regel per stap. */}
+            <ol className="m-0 mt-10 list-none p-0">
+              {[
+                { t: 'Aanvraag komt binnen', d: `Iemand in jouw regio zoekt een ${vak ? vak.enkelvoud : 'vakman'}, ziet je advertentie en belt of vult je formulier in.` },
+                { t: 'Jij krijgt bericht', d: 'Meteen op je telefoon, ook als je aan het werk bent en niet opneemt.' },
+                { t: 'Jij neemt contact op', d: 'Wij houden bij welke advertentie de aanvraag opleverde en zetten je budget daar.' },
+              ].map((stap, i, alle) => (
+                <li key={stap.t} className="relative flex gap-5 pb-8 last:pb-0">
+                  {i < alle.length - 1 && <span aria-hidden className="absolute left-[21px] top-11 bottom-0 w-[2px]" style={{ background: '#C4DCFF' }} />}
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full font-display text-[18px] font-extrabold text-white" style={{ background: '#3D8EFF' }}>
+                    {i + 1}
+                  </span>
+                  <div className="pt-1.5">
+                    <p className="m-0 font-display text-[20px] font-bold text-primary">{stap.t}</p>
+                    <p className="m-0 mt-1 max-w-[46ch] text-[17px] leading-[1.5] text-[#2A3A54]">{stap.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          {/* Voorbeeld van een aanvraag op een telefoon (Koen, 21 nov). Getekend in HTML, geen foto.
+              Het is een voorbeeld en staat er zo bij: geen naam, geen nummer, geen echte klant. */}
+          <figure className="m-0 mx-auto w-full max-w-[340px]">
+            <div className="rounded-[44px] p-3 shadow-[0_24px_60px_rgba(10,22,40,0.22)]" style={{ background: '#0A1628' }}>
+              <div className="overflow-hidden rounded-[34px] bg-white">
+                <div className="flex items-center justify-between px-6 pb-2 pt-4 font-display text-[13px] font-bold text-primary">
+                  <span>14:07</span>
+                  <span aria-hidden className="h-[18px] w-[72px] rounded-full" style={{ background: '#0A1628' }} />
+                  <span aria-hidden className="flex items-center gap-1">
+                    <span className="h-2 w-2 rounded-full" style={{ background: '#0A1628' }} />
+                    <span className="h-2 w-4 rounded-sm" style={{ background: '#0A1628' }} />
+                  </span>
+                </div>
+                <div className="px-4 pb-6 pt-6" style={{ background: '#EEF4FF' }}>
+                  <div className="rounded-2xl bg-white p-4 shadow-[0_6px_18px_rgba(10,22,40,0.10)]">
+                    <div className="flex items-center justify-between">
+                      <span className="font-display text-[13px] font-bold uppercase tracking-[0.08em] text-accent">Nieuwe aanvraag</span>
+                      <span className="text-[13px] text-[#5B6B85]">nu</span>
+                    </div>
+                    <p className="m-0 mt-2 font-display text-[21px] font-extrabold leading-[1.2] text-primary">
+                      {vak?.enkelvoud === 'installateur' ? 'Cv-ketel valt uit in Breda.' : 'Dak lekt in Breda.'}
+                    </p>
+                    <p className="m-0 mt-1 text-[16px] leading-[1.45] text-[#2A3A54]">Klant wil deze week contact.</p>
+                    <dl className="m-0 mt-4 space-y-1.5 border-t border-border pt-3 text-[14px] text-[#2A3A54]">
+                      <div className="flex justify-between gap-3"><dt>Via</dt><dd className="m-0 font-bold text-primary">Google-advertentie</dd></div>
+                      <div className="flex justify-between gap-3"><dt>Hoe</dt><dd className="m-0 font-bold text-primary">Formulier op je site</dd></div>
+                    </dl>
+                    <div className="mt-4 rounded-xl py-3 text-center font-display text-[16px] font-bold text-white" style={{ background: '#3D8EFF' }}>
+                      Bel terug
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption className="mt-4 text-center text-[14px] text-[#5B6B85]">Voorbeeld van een aanvraag zoals jij hem krijgt.</figcaption>
+          </figure>
         </div>
       </section>
 
