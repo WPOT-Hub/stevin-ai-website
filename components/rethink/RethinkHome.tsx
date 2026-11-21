@@ -256,7 +256,7 @@ export default function RethinkHome() {
           <p className="m-0 mt-5 max-w-[620px] text-balance text-[18px] leading-[1.6] text-white/75">
             {PRIJZEN.zin.map((z) => (
               <span key={z} className="block">
-                {z}
+                {z}{' '}
               </span>
             ))}
           </p>
