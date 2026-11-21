@@ -14,12 +14,13 @@ type Props = {
 // W-861: elk vak krijgt in de advertentie een eigen link (?vak=dakdekker of ?vak=installateur).
 // Alleen waarden uit deze lijst tellen; al het andere wordt genegeerd, zodat niemand
 // via de link eigen tekst op de pagina kan zetten.
-type Vak = { enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string; pand: string }
+type Vak = { enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string; pand: string; soort: string }
 const VAKKEN: Record<string, Vak> = {
   dakdekker: {
     enkelvoud: 'dakdekker',
     meervoud: 'dakdekkers',
-    kop: 'Meer aanvragen voor het dakwerk dat jij wilt doen.',
+    kop: 'Wij regelen je nieuwe klussen.',
+    soort: 'het dakwerk',
     werk: 'Wil je vooral complete daken vervangen?',
     bezig: 'terwijl je op het dak staat',
     bedrijf: 'dakbedrijf',
@@ -28,15 +29,22 @@ const VAKKEN: Record<string, Vak> = {
   installateur: {
     enkelvoud: 'installateur',
     meervoud: 'installateurs',
-    kop: 'Meer aanvragen voor het installatiewerk dat jij wilt doen.',
+    kop: 'Wij regelen je nieuwe klussen.',
+    soort: 'het installatiewerk',
     werk: 'Wil je vooral warmtepompen plaatsen?',
     bezig: 'terwijl je bij een klant bezig bent',
     bedrijf: 'installatiebedrijf',
     pand: 'huis',
   },
 }
+const KLANTZINNEN = [
+  { zin: 'Aanvragen komen nu direct op mijn telefoon binnen.', naam: 'Marcel, Ecomy Energie' },
+  { zin: 'Ik krijg meer aanvragen, dat merk ik.', naam: 'Hans, Hans Schepers Stoffering' },
+  { zin: 'Het levert me weer iets op.', naam: 'Faysal, Sterker Witgoed' },
+]
 const ALGEMEEN = {
-  kop: 'Meer aanvragen voor het werk dat jij wilt doen.',
+  kop: 'Wij regelen je nieuwe klussen.',
+  soort: 'het werk',
   werk: 'Wil je vooral de grotere klussen?',
   bezig: 'terwijl je aan het werk bent',
   bedrijf: 'bedrijf',
@@ -190,8 +198,8 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               {kopTekst.kop}
             </h1>
             <p className="m-0 mt-6 max-w-[560px] text-[18px] font-semibold leading-[1.5] text-white sm:text-[20px]">
-              {kopTekst.werk} Dan richten we je website en advertenties op dat werk, in jouw regio. Belt iemand{' '}
-              {kopTekst.bezig}? Dan zie je achteraf wie belde en waarvoor.
+              Met campagnes in Google, Facebook en Instagram, gericht op {kopTekst.soort} dat jij wilt doen, in jouw
+              regio. Elke aanvraag komt op je telefoon. Jij belt terug en pakt de klus.
             </p>
             <div className="mt-8">
               <a
@@ -317,19 +325,21 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                 </div>
               </dl>
             </div>
-            <figure className="m-0 rounded-2xl border border-border p-7">
-              <blockquote className="m-0 text-[17px] leading-[1.6] text-[#2A3A54]">
-                Mijn oude site leverde niks op en mijn mailbox liep vol. Koen, mijn neef, heeft in een paar weken alles
-                nieuw neergezet: logo, website en een check waarmee mensen zelf zien wat hun huis kan opwekken. Aanvragen
-                komen nu direct op mijn telefoon binnen en ik bel ze zelf terug. Hij vroeg steeds door over hoe ik werk
-                en wat ik wel en niet doe, en zette niets op de site wat niet klopt.
-              </blockquote>
-              <figcaption className="mt-5 font-display text-[15px] font-bold text-primary">
-                Marcel Bloemendal, Ecomy Energie, Wijchen
-              </figcaption>
-            </figure>
           </div>
         </div>
+      </section>
+
+      {/* Klanten (Koen, 21 nov: citaten namen te veel ruimte in). Drie naast elkaar, elk een zin.
+          Elke zin gaat pas live na het akkoord van de klant zelf. */}
+      <section className="px-6" style={{ paddingTop: 56, paddingBottom: 24 }}>
+        <ul className="m-0 mx-auto grid max-w-[1152px] list-none gap-4 p-0 md:grid-cols-3">
+          {KLANTZINNEN.map((k) => (
+            <li key={k.naam} className="rounded-2xl border border-border px-6 py-5">
+              <p className="m-0 font-display text-[18px] font-bold leading-[1.35] text-primary">&ldquo;{k.zin}&rdquo;</p>
+              <p className="m-0 mt-2 text-[15px] text-[#2A3A54]">{k.naam}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Hoe wij klussen regelen (Koen, 20 nov: eerst dit uitleggen). De telefoon staat in stap 2:
