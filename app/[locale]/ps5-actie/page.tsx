@@ -14,13 +14,14 @@ type Props = {
 // W-861: elk vak krijgt in de advertentie een eigen link (?vak=dakdekker of ?vak=installateur).
 // Alleen waarden uit deze lijst tellen; al het andere wordt genegeerd, zodat niemand
 // via de link eigen tekst op de pagina kan zetten.
-type Vak = { enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string; pand: string; soort: string }
+type Vak = { enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string; pand: string; soort: string; wil: string }
 const VAKKEN: Record<string, Vak> = {
   dakdekker: {
     enkelvoud: 'dakdekker',
     meervoud: 'dakdekkers',
-    kop: 'Je ziet precies wat je advertenties opleveren.',
+    kop: 'Wij zoeken 5 dakdekkers.',
     soort: 'het dakwerk',
+    wil: 'Dakdekkers die complete daken willen in plaats van losse reparaties.',
     werk: 'Wil je vooral complete daken vervangen?',
     bezig: 'terwijl je op het dak staat',
     bedrijf: 'dakbedrijf',
@@ -29,8 +30,9 @@ const VAKKEN: Record<string, Vak> = {
   installateur: {
     enkelvoud: 'installateur',
     meervoud: 'installateurs',
-    kop: 'Je ziet precies wat je advertenties opleveren.',
+    kop: 'Wij zoeken 5 installateurs.',
     soort: 'het installatiewerk',
+    wil: 'Installateurs die vooral warmtepompen willen plaatsen.',
     werk: 'Wil je vooral warmtepompen plaatsen?',
     bezig: 'terwijl je bij een klant bezig bent',
     bedrijf: 'installatiebedrijf',
@@ -43,8 +45,9 @@ const KLANTZINNEN = [
   { zin: 'Het levert me weer iets op.', naam: 'Faysal, Sterker Witgoed' },
 ]
 const ALGEMEEN = {
-  kop: 'Je ziet precies wat je advertenties opleveren.',
+  kop: 'Wij zoeken 5 bedrijven per vak.',
   soort: 'het werk',
+  wil: 'Bedrijven die vooral de grotere klussen willen.',
   werk: 'Wil je vooral de grotere klussen?',
   bezig: 'terwijl je aan het werk bent',
   bedrijf: 'bedrijf',
@@ -198,8 +201,8 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               {kopTekst.kop}
             </h1>
             <p className="m-0 mt-6 max-w-[560px] text-[18px] font-semibold leading-[1.5] text-white sm:text-[20px]">
-              Wij adverteren voor jouw bedrijf in Google, Facebook en Instagram, op {kopTekst.soort} dat jij wilt doen.
-              Bij elke aanvraag zie je uit welke advertentie hij kwam en wat hij kostte.
+              Vijf, niet meer. {kopTekst.wil} Voor die vijf adverteren wij in Google, Facebook en Instagram. Elke
+              maand zie je wat het kostte en welke aanvragen eruit kwamen.
             </p>
             <div className="mt-8">
               <a
@@ -208,7 +211,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                 className="inline-flex items-center rounded-lg bg-white px-7 py-4 font-display text-[17px] font-bold transition-[filter] hover:brightness-95"
                 style={{ color: '#0A1628' }}
               >
-                Bel {TELEFOON.weergave}
+                Bel Koen: {TELEFOON.weergave}
               </a>
               <p className="m-0 mt-4 text-[16px] font-semibold text-white">
                 Liever appen?{' '}
