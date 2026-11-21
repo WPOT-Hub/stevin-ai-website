@@ -82,7 +82,7 @@ const UITVOERING = {
     'Pas als jij ja zegt, passen we je budget aan.',
     'Na een week laten we zien wat het opleverde.',
   ],
-  doel: 'Zoveel aanvragen als je aankunt, zonder dat ze duurder worden.',
+  doel: 'Elke week zie je wat je budget opleverde.',
   naschrift: 'We verdienen niets aan je advertentiebudget.',
 }
 
