@@ -14,7 +14,7 @@ type Props = {
 // W-861: elk vak krijgt in de advertentie een eigen link (?vak=dakdekker of ?vak=installateur).
 // Alleen waarden uit deze lijst tellen; al het andere wordt genegeerd, zodat niemand
 // via de link eigen tekst op de pagina kan zetten.
-type Vak = { enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string }
+type Vak = { enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string; pand: string }
 const VAKKEN: Record<string, Vak> = {
   dakdekker: {
     enkelvoud: 'dakdekker',
@@ -23,6 +23,7 @@ const VAKKEN: Record<string, Vak> = {
     werk: 'Wil je vooral complete daken vervangen?',
     bezig: 'terwijl je op het dak staat',
     bedrijf: 'dakbedrijf',
+    pand: 'dak',
   },
   installateur: {
     enkelvoud: 'installateur',
@@ -31,6 +32,7 @@ const VAKKEN: Record<string, Vak> = {
     werk: 'Wil je vooral warmtepompen plaatsen?',
     bezig: 'terwijl je bij een klant bezig bent',
     bedrijf: 'installatiebedrijf',
+    pand: 'huis',
   },
 }
 const ALGEMEEN = {
@@ -38,6 +40,7 @@ const ALGEMEEN = {
   werk: 'Wil je vooral de grotere klussen?',
   bezig: 'terwijl je aan het werk bent',
   bedrijf: 'bedrijf',
+  pand: 'pand',
 }
 
 // W-861 (19 nov 2026): de PS5-actie. De eerste vijf nieuwe klanten die tot en met
@@ -257,6 +260,76 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         <p className="relative m-0 mx-auto mt-10 max-w-[1152px] text-[14px] text-white/90">
           PS5 bij jaarcontract. GTA6 via PlayStation Store-tegoed. T/m 31 december 2026.
         </p>
+      </section>
+
+      {/* Case Ecomy (Koen, 21 nov): direct na het eerste scherm. Ecomy mag bij naam (Koens akkoord 21 nov).
+          Geen resultaten: hun site staat sinds 21 nov live. Het voorbeeld is bewust zonder adres, luchtbeeld
+          of cijfers van een echt huis, tot de eigenaar daar zelf akkoord op geeft. De quote gaat pas live
+          na Marcels eigen akkoord. */}
+      <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
+        <div className="mx-auto grid max-w-[1152px] gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className={label}>Zo doen we het voor Ecomy</p>
+            <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+              Je klant belt. Over welk {kopTekst.pand} gaat het?
+            </h2>
+            <div className={`mt-8 flex max-w-[640px] flex-col gap-5 ${tekst}`}>
+              <p className="m-0">
+                Meestal begint een aanvraag met een naam en een telefoonnummer. Jij belt terug, vraagt naar het adres
+                en plant een bezoek. Pas dan weet je of de klus iets voor je is.
+              </p>
+              <p className="m-0">
+                Voor Ecomy, een installateur uit Wijchen, draaien we dat om. Op hun site vult de bezoeker eerst zijn
+                adres in. Hij ziet zijn eigen dak van bovenaf, met de richting, de helling en de ruimte van elk vlak.
+                Daarna kiest hij wat hij wil en laat hij zijn nummer achter.
+              </p>
+              <p className="m-0">
+                Voor jou bouwen we zo&apos;n check voor jouw werk en jouw regio. Je weet om welk pand en welke klus het
+                gaat voordat je de telefoon pakt.
+              </p>
+            </div>
+            <a
+              href="https://ecomy.nl/check"
+              target="_blank"
+              rel="noopener"
+              data-cta="ps5_actie_case_ecomy"
+              className="mt-8 inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white"
+              style={{ background: '#0A1628' }}
+            >
+              Bekijk de check van Ecomy
+            </a>
+          </div>
+          <div className="flex flex-col gap-6">
+            <div className="rounded-2xl bg-surface p-7">
+              <p className="m-0 font-display text-[13px] font-bold uppercase tracking-[0.1em] text-accent">Wat er in de aanvraag staat</p>
+              <dl className="m-0 mt-5 space-y-4 text-[17px] leading-[1.5] text-[#2A3A54]">
+                <div>
+                  <dt className="font-display font-bold text-primary">Het dak</dt>
+                  <dd className="m-0">Elk vlak met richting, helling en ruimte.</dd>
+                </div>
+                <div>
+                  <dt className="font-display font-bold text-primary">De klus</dt>
+                  <dd className="m-0">Wat de klant wil laten doen.</dd>
+                </div>
+                <div>
+                  <dt className="font-display font-bold text-primary">Nakijken bij het bezoek</dt>
+                  <dd className="m-0">Het punt dat uit de check opvalt.</dd>
+                </div>
+              </dl>
+            </div>
+            <figure className="m-0 rounded-2xl border border-border p-7">
+              <blockquote className="m-0 text-[17px] leading-[1.6] text-[#2A3A54]">
+                Mijn oude site leverde niks op en mijn mailbox liep vol. Koen, mijn neef, heeft in een paar weken alles
+                nieuw neergezet: logo, website en een check waarmee mensen zelf zien wat hun huis kan opwekken. Aanvragen
+                komen nu direct op mijn telefoon binnen en ik bel ze zelf terug. Hij vroeg steeds door over hoe ik werk
+                en wat ik wel en niet doe, en zette niets op de site wat niet klopt.
+              </blockquote>
+              <figcaption className="mt-5 font-display text-[15px] font-bold text-primary">
+                Marcel Bloemendal, Ecomy Energie, Wijchen
+              </figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       {/* Hoe wij klussen regelen (Koen, 20 nov: eerst dit uitleggen). De telefoon staat in stap 2:
