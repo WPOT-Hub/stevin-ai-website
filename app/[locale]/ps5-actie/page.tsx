@@ -21,7 +21,7 @@ const VAKKEN: Record<string, Vak> = {
     meervoud: 'dakdekkers',
     kop: 'Wij zoeken 5 dakdekkers.',
     soort: 'het dakwerk',
-    wil: 'Dakdekkers die complete daken willen in plaats van losse reparaties.',
+    wil: 'Wil je een dakcalculator op je site?',
     werk: 'Wil je vooral complete daken vervangen?',
     bezig: 'terwijl je op het dak staat',
     bedrijf: 'dakbedrijf',
@@ -32,7 +32,7 @@ const VAKKEN: Record<string, Vak> = {
     meervoud: 'installateurs',
     kop: 'Wij zoeken 5 installateurs.',
     soort: 'het installatiewerk',
-    wil: 'Installateurs die vooral warmtepompen willen plaatsen.',
+    wil: 'Wil je een check op je site waarmee klanten zien wat hun huis kan opwekken?',
     werk: 'Wil je vooral warmtepompen plaatsen?',
     bezig: 'terwijl je bij een klant bezig bent',
     bedrijf: 'installatiebedrijf',
@@ -47,7 +47,7 @@ const KLANTZINNEN = [
 const ALGEMEEN = {
   kop: 'Wij zoeken 5 bedrijven per vak.',
   soort: 'het werk',
-  wil: 'Bedrijven die vooral de grotere klussen willen.',
+  wil: 'Wil je een calculator op je site?',
   werk: 'Wil je vooral de grotere klussen?',
   bezig: 'terwijl je aan het werk bent',
   bedrijf: 'bedrijf',
@@ -201,8 +201,8 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               {kopTekst.kop}
             </h1>
             <p className="m-0 mt-6 max-w-[560px] text-[18px] font-semibold leading-[1.5] text-white sm:text-[20px]">
-              Vijf, niet meer. {kopTekst.wil} Voor die vijf adverteren wij in Google, Facebook en Instagram. Elke
-              maand zie je wat het kostte en welke aanvragen eruit kwamen.
+              Vijf, niet meer. Voor die vijf adverteren wij in Google, Facebook en Instagram. {kopTekst.wil} Een
+              slimme telefooncentrale met AI? Of gewoon precies zien wat jouw campagnes opleveren?
             </p>
             <div className="mt-8">
               <a
