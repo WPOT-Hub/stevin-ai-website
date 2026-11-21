@@ -267,6 +267,77 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </p>
       </section>
 
+      {/* W-699 (21 nov 2026): twee klanten als bewijs, direct na het eerste scherm.
+          Ecomy: de check staat live op ecomy.nl en een aanvraag kwam aantoonbaar binnen;
+          akkoord via Koen op 21 nov. Hans Schepers: zijn eigen woorden, door hem bevestigd
+          in WhatsApp op 21 nov 19:59. Bewust geen aantallen of omzet: die zijn er nog niet. */}
+      <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
+        <div className="mx-auto max-w-[1152px]">
+          <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+            Dit draait al bij onze klanten.
+          </h2>
+          <div className="mt-10 grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="rounded-[14px] border border-[#D6DDE8] bg-white p-6 sm:p-8">
+              <p className="m-0 font-display text-[14px] font-bold uppercase tracking-[0.06em] text-[#3D8EFF]">
+                Ecomy, installateur uit Wijchen
+              </p>
+              <h3 className="m-0 mt-3 font-display text-[24px] font-extrabold leading-[1.15] text-primary sm:text-[28px]">
+                De klant vult eerst zijn adres in.
+              </h3>
+              <div className={`mt-4 flex flex-col gap-4 ${tekst}`}>
+                <p className="m-0">
+                  Meestal begint een aanvraag met een naam en een nummer. Jij belt terug, vraagt naar het adres en plant
+                  een bezoek. Pas dan weet je of de klus iets voor je is.
+                </p>
+                <p className="m-0">
+                  Bij Ecomy ziet de bezoeker zijn eigen dak van bovenaf, met wat erop past. Daarna laat hij zijn nummer
+                  achter. De aanvraag komt als bericht op de telefoon van de eigenaar binnen, met het dak en de klus
+                  erbij.
+                </p>
+              </div>
+              <a
+                href="https://ecomy.nl/check/"
+                target="_blank"
+                rel="noopener"
+                data-cta="ps5_actie_case_ecomy"
+                className="mt-6 block overflow-hidden rounded-[12px] border border-[#D6DDE8]"
+              >
+                <Image
+                  src="/images/cases/ecomy-check.webp"
+                  alt="De check op de site van Ecomy: een dak van bovenaf met de dakvlakken, het aantal panelen dat past en de opwek per jaar"
+                  width={1200}
+                  height={619}
+                  className="h-auto w-full"
+                />
+              </a>
+              <p className="m-0 mt-4 text-[15px] text-[#2A3A54]">
+                Het voorbeeld is het huis van de eigenaar zelf.{' '}
+                <a
+                  href="https://ecomy.nl/check/"
+                  target="_blank"
+                  rel="noopener"
+                  data-cta="ps5_actie_case_ecomy_link"
+                  className="font-semibold text-[#3D8EFF] underline underline-offset-4"
+                >
+                  Probeer de check van Ecomy
+                </a>
+              </p>
+            </div>
+            <figure className="m-0 rounded-[14px] p-6 text-white sm:p-8" style={{ background: '#0A1628' }}>
+              <p className="m-0 font-display text-[14px] font-bold uppercase tracking-[0.06em] text-[#3D8EFF]">
+                Hans Schepers Stoffering
+              </p>
+              <blockquote className="m-0 mt-4 font-display text-[22px] font-bold leading-[1.35] sm:text-[26px]">
+                &ldquo;Ik was al blij als er iemand een keer belde. Nu zijn we weer offertes aan het maken. Ik betaal
+                geen cent meer dan bij de vorige jongens, maar dit levert wel op. Ik ben er oprecht heel blij
+                mee.&rdquo;
+              </blockquote>
+              <figcaption className="mt-6 text-[16px] text-white/80">Hans Schepers</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       {/* Op het dak: alleen wat bij een klant bewezen draait (Voys naar Hub, W-660, 4 nov 2026). */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
         <div className="mx-auto max-w-[1152px]">
