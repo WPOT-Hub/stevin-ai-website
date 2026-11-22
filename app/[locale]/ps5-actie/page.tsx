@@ -579,7 +579,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       {/* Doorverwijzen: de voorwaarden zijn een voorstel van Claude, Koen beslist (W-861). */}
       <section id="doorverwijzen" className="scroll-mt-24 bg-surface px-6" style={{ paddingTop: 48, paddingBottom: 48 }}>
         <details className="mx-auto max-w-[1152px]">
-          <summary className="cursor-pointer font-display text-[20px] font-bold text-primary">Ken je een adverteerder? Breng hem mee.</summary>
+          <summary className="cursor-pointer font-display text-[20px] font-bold text-primary">Ken je een adverteerder? Breng hem mee en ontvang jouw beloning.</summary>
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Breng een adverteerder mee, en speel samen.
           </h2>
