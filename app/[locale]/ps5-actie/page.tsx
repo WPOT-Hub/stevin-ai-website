@@ -14,7 +14,7 @@ type Props = {
 // W-861: elk vak krijgt in de advertentie een eigen link (?vak=dakdekker of ?vak=installateur).
 // Alleen waarden uit deze lijst tellen; al het andere wordt genegeerd, zodat niemand
 // via de link eigen tekst op de pagina kan zetten.
-type Vak = { bezet: number; enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string; pand: string; soort: string; wil: string }
+type Vak = { bezet: number; enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string; pand: string; soort: string }
 // bezet: aantal plekken dat in dit vak al vergeven is. Bij elke nieuwe klant in een vak
 // dit getal ophogen en de advertentie van dat vak wisselen (meta-advertenties/per-aantal-bezet).
 const VAKKEN: Record<string, Vak> = {
@@ -24,7 +24,6 @@ const VAKKEN: Record<string, Vak> = {
     meervoud: 'dakdekkers',
     kop: 'Wij zoeken 5 dakdekkers.',
     soort: 'het dakwerk',
-    wil: 'Wil je een dakcalculator op je site?',
     werk: 'Wil je vooral complete daken vervangen?',
     bezig: 'terwijl je op het dak staat',
     bedrijf: 'dakbedrijf',
@@ -36,7 +35,6 @@ const VAKKEN: Record<string, Vak> = {
     meervoud: 'installateurs',
     kop: 'Wij zoeken 5 installateurs.',
     soort: 'het installatiewerk',
-    wil: 'Wil je een check op je site waarmee klanten zien wat hun huis kan opwekken?',
     werk: 'Wil je vooral warmtepompen plaatsen?',
     bezig: 'terwijl je bij een klant bezig bent',
     bedrijf: 'installatiebedrijf',
@@ -46,7 +44,6 @@ const VAKKEN: Record<string, Vak> = {
 const ALGEMEEN = {
   kop: 'Wij zoeken 5 bedrijven per vak.',
   soort: 'het werk',
-  wil: 'Wil je een calculator op je site?',
   werk: 'Wil je vooral de grotere klussen?',
   bezig: 'terwijl je aan het werk bent',
   bedrijf: 'bedrijf',
@@ -194,21 +191,38 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
 
   return (
     <main className="-mt-[72px] bg-white">
-      {/* Eerste scherm (Koen, 20 nov): eerst wat je bij ons koopt, dan pas de vijf plekken en de PS5. Blauw als de advertenties. */}
-      <section className="relative overflow-hidden px-6 pb-20 pt-[150px] text-white sm:pt-[170px]" style={{ background: '#3D8EFF' }}>
-        <div className="relative mx-auto grid max-w-[1152px] items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <h1
-              className="m-0 text-balance font-display font-extrabold text-white"
-              style={{ fontSize: 'clamp(38px, 5.2vw, 68px)', lineHeight: 1.02, letterSpacing: '-0.02em' }}
+      {/* Eerste scherm (Koen, 22 nov: "moet de ps5 niet eerder in beeld", "veel tekst"): kop, PS5,
+          een zin, belknop. Op de telefoon staat het beeld direct onder de kop; op een breed scherm rechts. */}
+      <section className="relative overflow-hidden px-6 pb-16 pt-[104px] text-white sm:pb-20 sm:pt-[170px]" style={{ background: '#3D8EFF' }}>
+        <div className="relative mx-auto grid max-w-[1152px] gap-x-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <h1
+            className="m-0 text-balance font-display font-extrabold text-white lg:col-start-1 lg:row-start-1 lg:self-end"
+            style={{ fontSize: 'clamp(36px, 5.2vw, 68px)', lineHeight: 1.02, letterSpacing: '-0.02em' }}
+          >
+            {kopTekst.kop}
+          </h1>
+          <figure className="relative m-0 mx-auto mt-3 w-full max-w-[300px] sm:max-w-[420px] lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:mt-0 lg:max-w-[560px]">
+            <Image
+              src="/api/ps5-beeld/ps5-scene.webp"
+              unoptimized
+              alt="Een witte PS5 met controller en een GTA VI-spelhoes"
+              width={1042}
+              height={817}
+              priority
+              className="h-auto w-full"
+            />
+            <span
+              className="absolute bottom-[4%] right-[2%] rounded-2xl px-3 py-1.5 font-display text-[14px] font-extrabold sm:px-4 sm:py-2 sm:text-[22px]"
+              style={{ background: '#FFD400', color: '#0A1628', transform: 'rotate(-5deg)', boxShadow: '0 8px 22px rgba(10,22,40,.18)' }}
             >
-              {kopTekst.kop}
-            </h1>
-            <p className="m-0 mt-6 max-w-[560px] text-[18px] font-semibold leading-[1.5] text-white sm:text-[20px]">
-              Vijf, niet meer. Voor die vijf adverteren wij in Google, Facebook en Instagram. {kopTekst.wil} Een
-              slimme telefooncentrale met AI? Of gewoon precies zien wat jouw campagnes opleveren?
+              WELKOMSTCADEAU
+            </span>
+          </figure>
+          <div className="lg:col-start-1 lg:row-start-2">
+            <p className="m-0 mt-3 max-w-[560px] text-[18px] font-semibold leading-[1.45] text-white sm:mt-6 sm:text-[20px]">
+              Ben jij een van de vijf? Dan krijg je een PS5 met GTA VI cadeau.
             </p>
-            <div className="mt-8">
+            <div className="mt-5 sm:mt-8">
               <a
                 href={TELEFOON.tel}
                 data-vak={vakSleutel}
@@ -225,20 +239,8 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                 </a>
               </p>
             </div>
-            {/* Koen, 22 nov: ervaring als bewijs in het eerste scherm. Alleen wat klopt, geen budgetcijfer. */}
-            <dl className="m-0 mt-9 flex max-w-[520px] items-stretch gap-5 text-white sm:gap-7">
-              <div>
-                <dt className="font-display text-[30px] font-extrabold leading-none sm:text-[36px]">20+ jaar</dt>
-                <dd className="m-0 mt-2 text-[14px] font-semibold leading-[1.35]">ervaring in online marketing</dd>
-              </div>
-              <div className="w-px shrink-0" style={{ background: 'rgba(255,255,255,.45)' }} aria-hidden="true" />
-              <div>
-                <dt className="text-[14px] font-semibold leading-[1.35]">Onder meer voor</dt>
-                <dd className="m-0 mt-1 font-display text-[16px] font-extrabold leading-[1.3] sm:text-[18px]">
-                  Deceuninck, Etex, Hyundai, JBL en Leen Bakker
-                </dd>
-              </div>
-            </dl>
+          </div>
+          <div className="lg:col-start-1 lg:row-start-3 lg:self-start">
             <ol className="m-0 mt-10 flex max-w-[420px] list-none gap-2 p-0 sm:gap-3" aria-label="Vijf plekken">
               {[1, 2, 3, 4, 5].map((n) => (
                 <li
@@ -264,31 +266,24 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                 </li>
               ))}
             </ol>
-            <p className="m-0 mt-4 max-w-[560px] text-[15px] font-semibold leading-[1.5] text-white">
-              De eerste vijf nieuwe {vak ? vak.meervoud : 'klanten per vak'} met een jaarcontract en een volledig opstarttraject kiezen
-              een PS5 met GTA VI als welkomstcadeau.
-            </p>
+            {/* Koen, 22 nov: ervaring als bewijs. Alleen wat klopt, geen budgetcijfer. */}
+            <dl className="m-0 mt-9 flex max-w-[520px] items-stretch gap-5 text-white sm:gap-7">
+              <div>
+                <dt className="font-display text-[30px] font-extrabold leading-none sm:text-[36px]">20+ jaar</dt>
+                <dd className="m-0 mt-2 text-[14px] font-semibold leading-[1.35]">ervaring in online marketing</dd>
+              </div>
+              <div className="w-px shrink-0" style={{ background: 'rgba(255,255,255,.45)' }} aria-hidden="true" />
+              <div>
+                <dt className="text-[14px] font-semibold leading-[1.35]">Onder meer voor</dt>
+                <dd className="m-0 mt-1 font-display text-[16px] font-extrabold leading-[1.3] sm:text-[18px]">
+                  Deceuninck, Etex, Hyundai, JBL en Leen Bakker
+                </dd>
+              </div>
+            </dl>
           </div>
-          <figure className="relative m-0 mx-auto w-full max-w-[560px]">
-            <Image
-              src="/api/ps5-beeld/ps5-scene.webp"
-              unoptimized
-              alt="Een witte PS5 met controller en een GTA VI-spelhoes"
-              width={1042}
-              height={817}
-              priority
-              className="h-auto w-full"
-            />
-            <span
-              className="absolute bottom-[4%] right-[2%] rounded-2xl px-4 py-2 font-display text-[16px] font-extrabold sm:text-[22px]"
-              style={{ background: '#FFD400', color: '#0A1628', transform: 'rotate(-5deg)', boxShadow: '0 8px 22px rgba(10,22,40,.18)' }}
-            >
-              WELKOMSTCADEAU
-            </span>
-          </figure>
         </div>
         <p className="relative m-0 mx-auto mt-10 max-w-[1152px] text-[14px] text-white/90">
-          PS5 bij jaarcontract. GTA VI via PlayStation Store-tegoed.{' '}
+          PS5 bij jaarcontract en opstarttraject. GTA VI via PlayStation Store-tegoed.{' '}
           <a href="#voorwaarden" className="underline underline-offset-4">Bekijk de voorwaarden</a>.
         </p>
       </section>
