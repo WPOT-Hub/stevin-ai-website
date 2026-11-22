@@ -35,7 +35,7 @@ const VAKKEN: Record<string, Vak> = {
   },
 }
 const ALGEMEEN = {
-  kop: 'Wij zoeken 5 bedrijven die adverteren.',
+  kop: 'Wij zoeken 5 bedrijven in West-Brabant.',
   bedrijf: 'bedrijf',
 }
 
