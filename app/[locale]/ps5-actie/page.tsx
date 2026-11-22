@@ -229,7 +229,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                 className="h-auto w-[42%] shrink-0 rounded-[8px] sm:w-[220px]"
               />
               <figcaption className="text-[14px] font-semibold leading-[1.35] text-primary">
-                Ecomy uit Wijchen: bezoekers zien op de site meteen hoeveel zonnepanelen er op hun eigen dak passen.
+                Ecomy uit Wijchen: nieuwe site met een zonnepanelencheck op je eigen dak. De eerste aanvraag is al binnen.
               </figcaption>
             </figure>
             <p className="m-0 mt-3 text-[14px] leading-[1.4] text-[#2A3A54]">
