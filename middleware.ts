@@ -3,7 +3,7 @@ import createMiddleware from 'next-intl/middleware'
 import { routing } from './i18n/routing'
 import { getCampaignDomain } from './content/campaign-landings/domains'
 import gone from './data/gone-urls.json'
-import { PS5_CODE, PS5_COOKIE, ps5CookieWaarde } from './lib/ps5Toegang'
+import { PS5_CODE, PS5_COOKIE, PS5_OPEN, ps5CookieWaarde } from './lib/ps5Toegang'
 
 const intlMiddleware = createMiddleware(routing)
 
@@ -223,6 +223,7 @@ const PS5_PAD = /^\/(?:nl\/)?ps5-actie\/?$/
 
 async function ps5Poort(request: NextRequest): Promise<NextResponse | null> {
   if (!PS5_PAD.test(request.nextUrl.pathname)) return null
+  if (PS5_OPEN) return null
   const verwacht = await ps5CookieWaarde()
   const ingevoerd = request.nextUrl.searchParams.get('code')
   if (ingevoerd !== null) {
