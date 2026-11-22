@@ -39,11 +39,6 @@ const VAKKEN: Record<string, Vak> = {
     pand: 'huis',
   },
 }
-const KLANTZINNEN = [
-  { zin: 'Aanvragen komen nu direct op mijn telefoon binnen.', naam: 'Marcel, Ecomy Energie' },
-  { zin: 'Ik krijg meer aanvragen, dat merk ik.', naam: 'Hans, Hans Schepers Stoffering' },
-  { zin: 'Het levert me weer iets op.', naam: 'Faysal, Sterker Witgoed' },
-]
 const ALGEMEEN = {
   kop: 'Wij zoeken 5 bedrijven per vak.',
   soort: 'het werk',
@@ -184,6 +179,11 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
   const { locale } = await params
   const { vak: vakParam } = await searchParams
   const vak = typeof vakParam === 'string' && Object.hasOwn(VAKKEN, vakParam) ? VAKKEN[vakParam] : null
+  // Meting per vak (22 nov): de klik op bellen of appen draagt het vak, en het appje zelf ook.
+  const vakSleutel = vak && typeof vakParam === 'string' ? vakParam : undefined
+  const appLink = vak
+    ? `${TELEFOON.whatsapp}?text=${encodeURIComponent(`Hoi, ik ben ${vak.enkelvoud} en wil meer weten over de actie.`)}`
+    : TELEFOON.whatsapp
   const kopTekst = vak ?? ALGEMEEN
   if (locale !== 'nl') notFound()
   setRequestLocale(locale)
@@ -207,6 +207,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
             <div className="mt-8">
               <a
                 href={TELEFOON.tel}
+                data-vak={vakSleutel}
                 data-cta="ps5_actie_hero_bel"
                 className="inline-flex items-center rounded-lg bg-white px-7 py-4 font-display text-[17px] font-bold transition-[filter] hover:brightness-95"
                 style={{ color: '#0A1628' }}
@@ -215,7 +216,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               </a>
               <p className="m-0 mt-4 text-[16px] font-semibold text-white">
                 Liever appen?{' '}
-                <a href={TELEFOON.whatsapp} data-cta="ps5_actie_hero_whatsapp" className="underline underline-offset-4">
+                <a href={appLink} data-vak={vakSleutel} data-cta="ps5_actie_hero_whatsapp" className="underline underline-offset-4">
                   App ons over jouw {kopTekst.bedrijf}
                 </a>
               </p>
@@ -273,76 +274,60 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </p>
       </section>
 
-      {/* Case Ecomy (Koen, 21 nov): direct na het eerste scherm. Ecomy mag bij naam (Koens akkoord 21 nov).
-          Geen resultaten: hun site staat sinds 21 nov live. Het voorbeeld is bewust zonder adres, luchtbeeld
-          of cijfers van een echt huis, tot de eigenaar daar zelf akkoord op geeft. De quote gaat pas live
-          na Marcels eigen akkoord. */}
+      {/* W-699 (21 nov 2026): twee klanten als bewijs, direct na het eerste scherm.
+          Ecomy: de check staat live op ecomy.nl en een aanvraag kwam aantoonbaar binnen;
+          akkoord via Koen op 21 nov. Geen link naar ecomy.nl: de pagina heeft een doel, bellen of appen (Koen, 21 nov). Hans Schepers: zijn eigen woorden, door hem bevestigd
+          in WhatsApp op 21 nov 19:59. Bewust geen aantallen of omzet: die zijn er nog niet. */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
-        <div className="mx-auto grid max-w-[1152px] gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <p className={label}>Zo doen we het voor Ecomy</p>
-            <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-              Je klant belt. Over welk {kopTekst.pand} gaat het?
-            </h2>
-            <div className={`mt-8 flex max-w-[640px] flex-col gap-5 ${tekst}`}>
-              <p className="m-0">
-                Meestal begint een aanvraag met een naam en een telefoonnummer. Jij belt terug, vraagt naar het adres
-                en plant een bezoek. Pas dan weet je of de klus iets voor je is.
+        <div className="mx-auto max-w-[1152px]">
+          <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+            Dit draait al bij onze klanten.
+          </h2>
+          <div className="mt-10 grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="rounded-[14px] border border-[#D6DDE8] bg-white p-6 sm:p-8">
+              <p className="m-0 font-display text-[14px] font-bold uppercase tracking-[0.06em] text-[#3D8EFF]">
+                Ecomy, installateur uit Wijchen
               </p>
-              <p className="m-0">
-                Voor Ecomy, een installateur uit Wijchen, draaien we dat om. Op hun site vult de bezoeker eerst zijn
-                adres in. Hij ziet zijn eigen dak van bovenaf, met de richting, de helling en de ruimte van elk vlak.
-                Daarna kiest hij wat hij wil en laat hij zijn nummer achter.
-              </p>
-              <p className="m-0">
-                Voor jou bouwen we zo&apos;n check voor jouw werk en jouw regio. Je weet om welk pand en welke klus het
-                gaat voordat je de telefoon pakt.
+              <h3 className="m-0 mt-3 font-display text-[24px] font-extrabold leading-[1.15] text-primary sm:text-[28px]">
+                De klant vult eerst zijn adres in.
+              </h3>
+              <div className={`mt-4 flex flex-col gap-4 ${tekst}`}>
+                <p className="m-0">
+                  Meestal begint een aanvraag met een naam en een nummer. Jij belt terug, vraagt naar het adres en plant
+                  een bezoek. Pas dan weet je of de klus iets voor je is.
+                </p>
+                <p className="m-0">
+                  Bij Ecomy ziet de bezoeker zijn eigen dak van bovenaf, met wat erop past. Daarna laat hij zijn nummer
+                  achter. De aanvraag komt als bericht op de telefoon van de eigenaar binnen, met het dak en de klus
+                  erbij.
+                </p>
+              </div>
+              <div className="mt-6 overflow-hidden rounded-[12px] border border-[#D6DDE8]">
+                <Image
+                  src="/images/cases/ecomy-check.webp"
+                  alt="De check op de site van Ecomy: een dak van bovenaf met de dakvlakken, het aantal panelen dat past en de opwek per jaar"
+                  width={1200}
+                  height={619}
+                  className="h-auto w-full"
+                />
+              </div>
+              <p className="m-0 mt-4 text-[15px] text-[#2A3A54]">
+                Het voorbeeld is het huis van de eigenaar zelf. De check staat op de site van Ecomy.
               </p>
             </div>
-            <a
-              href="https://ecomy.nl/check"
-              target="_blank"
-              rel="noopener"
-              data-cta="ps5_actie_case_ecomy"
-              className="mt-8 inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white"
-              style={{ background: '#0A1628' }}
-            >
-              Bekijk de check van Ecomy
-            </a>
-          </div>
-          <div className="flex flex-col gap-6">
-            <div className="rounded-2xl bg-surface p-7">
-              <p className="m-0 font-display text-[13px] font-bold uppercase tracking-[0.1em] text-accent">Wat er in de aanvraag staat</p>
-              <dl className="m-0 mt-5 space-y-4 text-[17px] leading-[1.5] text-[#2A3A54]">
-                <div>
-                  <dt className="font-display font-bold text-primary">Het dak</dt>
-                  <dd className="m-0">Elk vlak met richting, helling en ruimte.</dd>
-                </div>
-                <div>
-                  <dt className="font-display font-bold text-primary">De klus</dt>
-                  <dd className="m-0">Wat de klant wil laten doen.</dd>
-                </div>
-                <div>
-                  <dt className="font-display font-bold text-primary">Nakijken bij het bezoek</dt>
-                  <dd className="m-0">Het punt dat uit de check opvalt.</dd>
-                </div>
-              </dl>
-            </div>
+            <figure className="m-0 rounded-[14px] p-6 text-white sm:p-8" style={{ background: '#0A1628' }}>
+              <p className="m-0 font-display text-[14px] font-bold uppercase tracking-[0.06em] text-[#3D8EFF]">
+                Hans Schepers Stoffering
+              </p>
+              <blockquote className="m-0 mt-4 font-display text-[22px] font-bold leading-[1.35] sm:text-[26px]">
+                &ldquo;Ik was al blij als er iemand een keer belde. Nu zijn we weer offertes aan het maken. Ik betaal
+                geen cent meer dan bij de vorige jongens, maar dit levert wel op. Ik ben er oprecht heel blij
+                mee.&rdquo;
+              </blockquote>
+              <figcaption className="mt-6 text-[16px] text-white/80">Hans Schepers</figcaption>
+            </figure>
           </div>
         </div>
-      </section>
-
-      {/* Klanten (Koen, 21 nov: citaten namen te veel ruimte in). Drie naast elkaar, elk een zin.
-          Elke zin gaat pas live na het akkoord van de klant zelf. */}
-      <section className="px-6" style={{ paddingTop: 56, paddingBottom: 24 }}>
-        <ul className="m-0 mx-auto grid max-w-[1152px] list-none gap-4 p-0 md:grid-cols-3">
-          {KLANTZINNEN.map((k) => (
-            <li key={k.naam} className="rounded-2xl border border-border px-6 py-5">
-              <p className="m-0 font-display text-[18px] font-bold leading-[1.35] text-primary">&ldquo;{k.zin}&rdquo;</p>
-              <p className="m-0 mt-2 text-[15px] text-[#2A3A54]">{k.naam}</p>
-            </li>
-          ))}
-        </ul>
       </section>
 
       {/* Hoe wij klussen regelen (Koen, 20 nov: eerst dit uitleggen). De telefoon staat in stap 2:
@@ -495,14 +480,14 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Bel of app ons.
           </h2>
-          <a href={TELEFOON.tel} data-cta="ps5_actie_onder_bel" className="mt-6 block font-display font-extrabold text-primary" style={{ fontSize: 'clamp(36px, 6vw, 60px)', letterSpacing: '-0.02em', lineHeight: 1 }}>
+          <a href={TELEFOON.tel} data-vak={vakSleutel} data-cta="ps5_actie_onder_bel" className="mt-6 block font-display font-extrabold text-primary" style={{ fontSize: 'clamp(36px, 6vw, 60px)', letterSpacing: '-0.02em', lineHeight: 1 }}>
             {TELEFOON.weergave}
           </a>
           <p className={`m-0 mt-4 max-w-[680px] ${tekst}`}>
             We zeggen meteen hoeveel plekken er nog zijn.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href={TELEFOON.whatsapp} data-cta="ps5_actie_onder_whatsapp" className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white" style={{ background: '#0A1628' }}>App ons</a>
+            <a href={appLink} data-vak={vakSleutel} data-cta="ps5_actie_onder_whatsapp" className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white" style={{ background: '#0A1628' }}>App ons</a>
             <Knop cta="ps5_actie_gesprek_knop" />
           </div>
           <h3 className="m-0 mt-14 font-display text-[18px] font-bold text-primary">Liever dat wij je bellen?</h3>
@@ -527,8 +512,8 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       {/* Op telefoons alleen het bolletje van de vraagbot: het label viel over de tekst en bellen en appen staan al in de balk. */}
       <style>{`@media (max-width: 639px) { .vraagbot-label { display: none; } }`}</style>
       <div className="fixed inset-x-0 bottom-0 z-40 flex gap-2 p-3 sm:hidden" style={{ background: '#0A1628' }}>
-        <a href={TELEFOON.tel} data-cta="ps5_actie_sticky_bel" className="flex-1 rounded-lg py-3 text-center font-display text-[16px] font-bold text-white" style={{ background: '#3D8EFF' }}>Bel {TELEFOON.weergave}</a>
-        <a href={TELEFOON.whatsapp} data-cta="ps5_actie_sticky_whatsapp" className="flex-1 rounded-lg bg-white py-3 text-center font-display text-[16px] font-bold" style={{ color: '#0A1628' }}>App ons</a>
+        <a href={TELEFOON.tel} data-vak={vakSleutel} data-cta="ps5_actie_sticky_bel" className="flex-1 rounded-lg py-3 text-center font-display text-[16px] font-bold text-white" style={{ background: '#3D8EFF' }}>Bel {TELEFOON.weergave}</a>
+        <a href={appLink} data-vak={vakSleutel} data-cta="ps5_actie_sticky_whatsapp" className="flex-1 rounded-lg bg-white py-3 text-center font-display text-[16px] font-bold" style={{ color: '#0A1628' }}>App ons</a>
       </div>
 
       {/* Geen FAQPage-schema: de pagina staat op noindex. */}

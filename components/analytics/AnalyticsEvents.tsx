@@ -26,6 +26,7 @@ import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { deriveEntryChannel, getPageType, rememberInteraction, updateLeadContextPage } from '@/lib/tracking'
 import { pushDataLayerEvent } from '@/lib/datalayer'
+import { metaContact } from '@/lib/metaPixel'
 
 declare global {
   interface Window {
@@ -136,13 +137,30 @@ export function AnalyticsEvents() {
         return
       }
       if (href.startsWith('tel:')) {
+        // Het vak (data-vak, alleen op de actiepagina) gaat mee: een telefoontje zelf draagt geen vak.
+        const vak = target.dataset.vak
         pushEvent('contact_click', {
           contact_method: 'phone',
           contact_value: href.replace('tel:', ''),
+          ...(target.dataset.cta ? { cta_id: target.dataset.cta } : {}),
+          ...(vak ? { contact_vak: vak } : {}),
           page_path: pathname,
         })
+        metaContact('phone', vak)
         rememberInteraction('contact_click', { href, label, page_path: pathname, placement: 'phone' })
         return
+      }
+
+      // Appen telt als contact, net als bellen. Loopt daarna door als uitgaande klik.
+      if (href.startsWith('https://wa.me/')) {
+        const vak = target.dataset.vak
+        pushEvent('contact_click', {
+          contact_method: 'whatsapp',
+          ...(target.dataset.cta ? { cta_id: target.dataset.cta } : {}),
+          ...(vak ? { contact_vak: vak } : {}),
+          page_path: pathname,
+        })
+        metaContact('whatsapp', vak)
       }
 
       // External http(s) links die naar een ander host gaan

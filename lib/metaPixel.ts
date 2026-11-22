@@ -85,3 +85,14 @@ export function metaLead(eventId: string, formulier?: string): void {
   if (!werkMetaPixelBij()) return
   window.fbq?.('track', 'Lead', formulier ? { content_name: formulier } : {}, { eventID: eventId })
 }
+
+/**
+ * Een klik op bellen of appen (W-861, 22 nov 2026). De actiepagina stuurt op
+ * bellen, en een telefoontje draagt geen vak. Deze klik wel: Meta hangt hem aan
+ * de advertentie, en de advertentiesets zijn per vak. Een klik is geen gesprek:
+ * het aantal gesprekken komt uit de telefoonlijn zelf.
+ */
+export function metaContact(methode: 'phone' | 'whatsapp', vak?: string): void {
+  if (!werkMetaPixelBij()) return
+  window.fbq?.('track', 'Contact', { content_category: methode, ...(vak ? { content_name: vak } : {}) })
+}
