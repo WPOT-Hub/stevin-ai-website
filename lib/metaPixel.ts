@@ -130,8 +130,13 @@ export function meldBelklik(vak?: string, fbclid?: string): void {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
       keepalive: true,
-    }).catch(() => undefined)
-  } catch {
-    // De meting mag het bellen nooit in de weg zitten.
+    })
+      .then((res) => {
+        if (!res.ok) console.warn(`[belklik] de Hub nam de klik niet aan (status ${res.status})`)
+      })
+      .catch((err) => console.warn('[belklik] klik niet gemeld aan de Hub', err))
+  } catch (err) {
+    // De meting mag het bellen nooit in de weg zitten. Een gesprek zonder klik staat in de Hub als "niet gemeld".
+    console.warn('[belklik] klik niet gemeld aan de Hub', err)
   }
 }

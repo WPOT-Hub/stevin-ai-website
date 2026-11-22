@@ -205,8 +205,8 @@ function PrivacyDutch() {
           formuliergegevens alleen gehasht door voor enhanced conversion meting. Klik je met
           die keuze op een belknop, dan meldt je browser die klik aan onze server, met
           het kenmerk dat Meta in zijn cookies bewaart, je browsertype en je
-          IP-adres. Bel je ons binnen tien minuten
-          daarna, dan melden wij aan Meta dat de klik een gesprek werd. Je
+          IP-adres. Komt er binnen tien minuten daarna een gesprek bij ons binnen, dan
+          melden wij aan Meta dat de klik een gesprek werd, met die kenmerken erbij. Je
           telefoonnummer, je naam en wat je zegt gaan daarbij niet naar Meta. De klik
           zelf bewaren wij hooguit drie uur.
         </p>
@@ -385,8 +385,8 @@ function PrivacyEnglish() {
           form for enhanced conversion measurement. If you click a call button
           with that choice, your browser reports the click to our server, with the
           identifier Meta keeps in its cookies, your browser type and your IP
-          address. If you call us within ten minutes, we
-          tell Meta that the click became a call. Your phone number, your name and
+          address. If a call reaches us within ten minutes, we
+          tell Meta that the click became a call and include those identifiers. Your phone number, your name and
           what you say are not sent to Meta. We keep the click for three hours at most.
         </p>
         <p>
