@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
-import { ps5CookieWaarde } from '@/lib/ps5Toegang'
+import { PS5_OPEN, ps5CookieWaarde } from '@/lib/ps5Toegang'
 
 // W-861: de beelden van de PS5-actie staan niet meer in /public, want daar kan
 // iedereen met de URL bij, ook zonder code. Deze route geeft ze alleen met de
@@ -15,11 +15,11 @@ export async function GET(request: Request, { params }: { params: Promise<{ best
   const { bestand } = await params
   const type = BESTANDEN[bestand]
   const cookie = /(?:^|;\s*)ps5_toegang=([a-f0-9]{64})/.exec(request.headers.get('cookie') ?? '')?.[1]
-  if (!type || cookie !== (await ps5CookieWaarde())) {
+  if (!type || (!PS5_OPEN && cookie !== (await ps5CookieWaarde()))) {
     return new Response('Niet gevonden', { status: 404, headers: { 'cache-control': 'no-store', 'x-robots-tag': 'noindex' } })
   }
   const data = await readFile(path.join(process.cwd(), 'private', 'ps5-actie', bestand))
   return new Response(new Uint8Array(data), {
-    headers: { 'content-type': type, 'cache-control': 'private, no-store', 'x-robots-tag': 'noindex, nofollow' },
+    headers: { 'content-type': type, 'cache-control': PS5_OPEN ? 'public, max-age=86400' : 'private, no-store', 'x-robots-tag': 'noindex, nofollow' },
   })
 }
