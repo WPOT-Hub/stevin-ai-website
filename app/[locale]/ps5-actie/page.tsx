@@ -201,38 +201,27 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       </section>
 
       {/* Koen, 22 nov: "neemt veel te veel ruimte in". Citaten in een rij die je op de telefoon
-          opzij veegt, Ecomy als klein beeld met een regel ernaast. Ingrid en Bart: akkoord via Koen.
+          opzij veegt, Ecomy als vierde kaart zonder citaat (Koen 22 nov 23:39), geen beeld. Ingrid en Bart: akkoord via Koen.
           Marcel en de eigenaar van Sterker blijven eruit tot ze hun zin zelf hebben bevestigd. */}
       <section className="pb-2 pt-6 sm:pt-16">
         <div className="mx-auto max-w-[1152px]">
-          <ul className="m-0 flex list-none snap-x snap-mandatory scroll-px-6 gap-3 overflow-x-auto px-6 pb-2 sm:grid sm:grid-cols-3 sm:overflow-visible">
+          <ul className="m-0 flex list-none snap-x snap-mandatory scroll-px-6 gap-3 overflow-x-auto px-6 pb-2 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4">
             {[
               { q: 'Ik was al blij als er iemand een keer belde. Nu zijn we weer offertes aan het maken.', a: 'Hans, Hans Schepers Stoffering' },
               { q: 'Koen denkt mee alsof het zijn eigen bedrijf is. Je krijgt antwoord, geen verhaal.', a: 'Ingrid, Tonnisteiner' },
               { q: 'Eindelijk iemand die gewoon zegt wat werkt en wat niet.', a: 'Bart, Rijschool Bart' },
-            ].map(({ q, a }) => (
+              { q: 'Nieuwe site met een zonnepanelencheck: je ziet meteen wat er op je eigen dak past.', a: 'Ecomy, Wijchen', geenCitaat: true },
+            ].map(({ q, a, geenCitaat }) => (
               <li key={a} className="w-[78%] shrink-0 snap-start rounded-[12px] border border-[#D6DDE8] bg-white p-4 sm:w-auto">
                 <figure className="m-0">
-                  <blockquote className="m-0 text-[15px] font-semibold leading-[1.4] text-primary">&ldquo;{q}&rdquo;</blockquote>
+                  <blockquote className="m-0 text-[15px] font-semibold leading-[1.4] text-primary">{geenCitaat ? q : <>&ldquo;{q}&rdquo;</>}</blockquote>
                   <figcaption className="mt-2 text-[13px] text-[#2A3A54]">{a}</figcaption>
                 </figure>
               </li>
             ))}
           </ul>
           <div className="mt-3 px-6">
-            <figure className="m-0 flex items-center gap-3 rounded-[12px] border border-[#D6DDE8] bg-white p-2 pr-4">
-              <Image
-                src="/images/cases/ecomy-check.webp"
-                alt="De check op de site van Ecomy: een dak van bovenaf met de dakvlakken, het aantal panelen dat past en de opwek per jaar"
-                width={1200}
-                height={619}
-                className="h-auto w-[42%] shrink-0 rounded-[8px] sm:w-[220px]"
-              />
-              <figcaption className="text-[14px] font-semibold leading-[1.35] text-primary">
-                Ecomy uit Wijchen: nieuwe site met een zonnepanelencheck op je eigen dak. De eerste aanvraag is al binnen.
-              </figcaption>
-            </figure>
-            <p className="m-0 mt-3 text-[14px] leading-[1.4] text-[#2A3A54]">
+            <p className="m-0 text-[14px] leading-[1.4] text-[#2A3A54]">
               <span className="font-semibold text-primary">20+ jaar online marketing</span>, onder meer voor Deceuninck, Etex, Hyundai, JBL en Leen Bakker.
             </p>
           </div>
