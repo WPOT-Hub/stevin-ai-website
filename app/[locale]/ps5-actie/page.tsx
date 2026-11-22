@@ -386,7 +386,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                     <span className="h-2 w-4 rounded-sm" style={{ background: '#0A1628' }} />
                   </span>
                 </div>
-                <div className="px-4 pb-6 pt-6" style={{ background: '#EEF4FF' }}>
+                <div className="flex min-h-[520px] flex-col px-4 pb-4 pt-6" style={{ background: '#EEF4FF' }}>
                   <div className="rounded-2xl bg-white p-4 shadow-[0_6px_18px_rgba(10,22,40,0.10)]">
                     <div className="flex items-center justify-between">
                       <span className="font-display text-[13px] font-bold uppercase tracking-[0.08em] text-accent">Nieuwe aanvraag</span>
@@ -404,6 +404,18 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                       Bel terug
                     </div>
                   </div>
+                  {/* Koen, 22 nov: een hele telefoon, geen afgesneden. Een eerdere aanvraag vult het scherm. */}
+                  <div className="mt-3 rounded-2xl bg-white/80 p-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-display text-[12px] font-bold uppercase tracking-[0.08em] text-[#5B6B85]">Aanvraag</span>
+                      <span className="text-[13px] text-[#5B6B85]">09:31</span>
+                    </div>
+                    <p className="m-0 mt-1.5 font-display text-[16px] font-bold leading-[1.25] text-primary">
+                      {vak?.enkelvoud === 'installateur' ? 'Offerte warmtepomp in Oosterhout.' : 'Offerte plat dak in Oosterhout.'}
+                    </p>
+                    <p className="m-0 mt-1 text-[14px] text-[#2A3A54]">Teruggebeld om 09:40.</p>
+                  </div>
+                  <span aria-hidden className="mx-auto mt-auto block h-[5px] w-[120px] rounded-full" style={{ background: '#0A1628' }} />
                 </div>
               </div>
             </div>
