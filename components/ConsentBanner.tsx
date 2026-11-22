@@ -126,37 +126,41 @@ export default function ConsentBanner() {
   if (!visible) return null
 
   return (
-    <div ref={bannerRef} className="fixed bottom-0 left-0 right-0 z-[60] p-4 sm:p-6">
+    <div ref={bannerRef} className="fixed bottom-0 left-0 right-0 z-[60] p-3 sm:p-6">
       <div className="mx-auto max-w-2xl rounded-2xl bg-white border border-border shadow-2xl shadow-black/10 overflow-hidden">
         {!showPreferences ? (
           /* Main banner */
-          <div className="p-6 sm:p-8">
-            <h3 className="text-base font-bold text-primary mb-2">
+          <div className="p-4 sm:p-8">
+            <h3 className="text-base font-bold text-primary mb-1 sm:mb-2">
               Cookies en privacy
             </h3>
             {/* Twee blokken, zodat deze tekst op een telefoon niet groter is dan
                 de kop van de pagina en niet het LCP-element wordt (hij
                 verschijnt pas na hydratie). */}
-            <p className="text-sm text-muted leading-relaxed mb-6">
+            <p className="text-[13px] sm:text-sm text-muted leading-snug sm:leading-relaxed mb-3 sm:mb-6">
               We gebruiken cookies om de website te verbeteren, gedrag te begrijpen en leads beter te herleiden.{' '}
-              <span className="block">Je kunt zelf kiezen welke cookies je toestaat.</span>
+              <span className="hidden sm:block">Je kunt zelf kiezen welke cookies je toestaat.</span>{' '}
+              <button type="button" onClick={() => setShowPreferences(true)} className="underline underline-offset-2 sm:hidden">
+                Instellingen
+              </button>
             </p>
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            {/* Op een telefoon de knoppen naast elkaar, zodat de melding de pagina niet bedekt (W-861, 22 nov). */}
+            <div className="flex flex-row flex-wrap items-center gap-2 sm:gap-3">
               <button
                 onClick={() => handleChoice('all')}
-                className="px-6 py-2.5 text-sm font-semibold text-white bg-accent rounded-lg hover:bg-accent-dark transition-colors"
+                className="px-4 sm:px-6 py-2.5 text-sm font-semibold text-white bg-accent rounded-lg hover:bg-accent-dark transition-colors"
               >
                 Accepteer alles
               </button>
               <button
                 onClick={() => handleChoice('necessary')}
-                className="px-6 py-2.5 text-sm font-semibold text-primary bg-surface-alt rounded-lg border border-border hover:bg-surface transition-colors"
+                className="px-4 sm:px-6 py-2.5 text-sm font-semibold text-primary bg-surface-alt rounded-lg border border-border hover:bg-surface transition-colors"
               >
                 Alleen noodzakelijk
               </button>
               <button
                 onClick={() => setShowPreferences(true)}
-                className="px-6 py-2.5 text-sm font-medium text-muted hover:text-primary transition-colors"
+                className="hidden sm:inline-block px-6 py-2.5 text-sm font-medium text-muted hover:text-primary transition-colors"
               >
                 Instellingen
               </button>

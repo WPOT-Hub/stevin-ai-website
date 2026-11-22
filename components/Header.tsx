@@ -109,7 +109,9 @@ export default function Header() {
   // knop die het kennismakingsvenster opent. Samenwerken komt in het menu
   // zodra die pagina bestaat.
   // W-860: op een advertentiepagina (/lp/...) geen menu, alleen logo en knop.
-  const advertentie = pathname.startsWith('/lp/')
+  // W-861: de PS5-actie heeft een eigen belbalk; daar ook geen menu en geen knop naar een ander venster.
+  const actiepagina = pathname === '/ps5-actie' || pathname.startsWith('/ps5-actie/')
+  const advertentie = pathname.startsWith('/lp/') || actiepagina
   const navItems = advertentie
     ? []
     : isNieuweHome
@@ -196,6 +198,7 @@ export default function Header() {
                 schakelaar weg op de Nederlandse site. */}
             {!isNieuweHome && <LanguageSwitcher dark={showDark} />}
 
+            {!actiepagina && (
             <Link
               href={ctaHref}
               data-cta={isNieuweHome ? 'header_kennismaking' : undefined}
@@ -206,6 +209,7 @@ export default function Header() {
             >
               {ctaLabel}
             </Link>
+            )}
           </nav>
 
           <div className="flex items-center gap-1 lg:hidden">
@@ -213,7 +217,7 @@ export default function Header() {
                 telefoon valt de heroknop onder de vouw, en daarna volgen twee
                 vastgezette scrollstukken (nakijkronde 11 okt, hoog). Zelfde
                 venster als de knop op desktop. */}
-            {isNieuweHome && (
+            {isNieuweHome && !actiepagina && (
               <Link
                 href="/kennismaking"
                 data-cta="header_kennismaking_mobiel"
