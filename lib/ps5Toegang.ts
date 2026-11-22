@@ -5,6 +5,9 @@
 //
 // Zelfde berekening in de middleware (edge) en in de beeldroute (node), daarom
 // alleen globalThis.crypto.subtle, dat beide hebben.
+// Staat de actie open, dan vraagt de pagina geen code en geven de beelden zonder
+// cookie antwoord. Opnieuw op pauze zetten is deze ene regel terug naar false.
+export const PS5_OPEN = true
 export const PS5_CODE = '1500'
 export const PS5_COOKIE = 'ps5_toegang'
 
