@@ -421,8 +421,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
             Dit zie je zelf, elke week.
           </h2>
           <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
-            Je krijgt een eigen inlog. Daar staat wat je uitgaf, wat het opleverde en wie er belde. Geen rapport
-            achteraf, je kijkt mee wanneer je wilt.
+            Elke week zie je wat je uitgaf, wat het opleverde en wie er belde. Per kanaal, in euro en in aanvragen.
           </p>
           <div className="mt-10 grid items-start gap-8 lg:grid-cols-2">
             <figure className="m-0">
