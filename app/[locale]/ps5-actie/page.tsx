@@ -119,7 +119,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
     <main className="-mt-[72px] bg-white">
       {/* Eerste scherm (Koen, 22 nov: "moet de ps5 niet eerder in beeld", "veel tekst"): kop, PS5,
           een zin, belknop. Op de telefoon staat het beeld direct onder de kop; op een breed scherm rechts. */}
-      <section className="relative overflow-hidden px-6 pb-16 pt-[104px] text-white sm:pb-20 sm:pt-[170px]" style={{ background: '#3D8EFF' }}>
+      <section className="relative overflow-hidden px-6 pb-8 pt-[104px] text-white sm:pb-20 sm:pt-[170px]" style={{ background: '#3D8EFF' }}>
         <div className="relative mx-auto grid max-w-[1152px] gap-x-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <h1
             className="m-0 text-balance font-display font-extrabold text-white lg:col-start-1 lg:row-start-1 lg:self-end"
@@ -200,67 +200,63 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </div>
       </section>
 
-      {/* Bewijs in een blok (Koen, 22 nov: "waar zijn de referenties", "bundel gewoon", "je vertelt teveel").
-          Hans: zijn eigen woorden, door hem bevestigd in WhatsApp op 21 nov 19:59. Ecomy: de check staat live
-          op ecomy.nl, akkoord via Koen op 21 nov. Geen logo's van derden, alleen de namen. */}
-      <section className="px-6 pb-4 pt-12 sm:pt-20">
-        <div className="mx-auto grid max-w-[1152px] items-start gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <figure className="m-0 rounded-[14px] p-6 text-white sm:p-8" style={{ background: '#0A1628' }}>
-            <blockquote className="m-0 font-display text-[22px] font-bold leading-[1.35] sm:text-[26px]">
-              &ldquo;Ik was al blij als er iemand een keer belde. Nu zijn we weer offertes aan het maken.&rdquo;
-            </blockquote>
-            <figcaption className="mt-4 text-[16px] text-white/80">Hans Schepers, Hans Schepers Stoffering</figcaption>
-          </figure>
-          <figure className="m-0 overflow-hidden rounded-[14px] border border-[#D6DDE8] bg-white">
-            <Image
-              src="/images/cases/ecomy-check.webp"
-              alt="De check op de site van Ecomy: een dak van bovenaf met de dakvlakken, het aantal panelen dat past en de opwek per jaar"
-              width={1200}
-              height={619}
-              className="h-auto w-full"
-            />
-            <figcaption className="px-5 py-4 text-[16px] font-semibold text-primary">
-              Ecomy, installateur uit Wijchen: de klant ziet eerst zijn eigen dak.
-            </figcaption>
-          </figure>
-          {/* Koen, 22 nov: "en alle andere reviews". Ingrid en Bart: citaten met hun akkoord via Koen.
-              Marcel en de eigenaar van Sterker blijven eruit tot ze hun zin zelf hebben bevestigd. */}
-          <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2">
+      {/* Koen, 22 nov: "neemt veel te veel ruimte in". Citaten in een rij die je op de telefoon
+          opzij veegt, Ecomy als klein beeld met een regel ernaast. Ingrid en Bart: akkoord via Koen.
+          Marcel en de eigenaar van Sterker blijven eruit tot ze hun zin zelf hebben bevestigd. */}
+      <section className="pb-2 pt-6 sm:pt-16">
+        <div className="mx-auto max-w-[1152px]">
+          <ul className="m-0 flex list-none snap-x snap-mandatory scroll-px-6 gap-3 overflow-x-auto px-6 pb-2 sm:grid sm:grid-cols-3 sm:overflow-visible">
             {[
+              { q: 'Ik was al blij als er iemand een keer belde. Nu zijn we weer offertes aan het maken.', a: 'Hans, Hans Schepers Stoffering' },
               { q: 'Koen denkt mee alsof het zijn eigen bedrijf is. Je krijgt antwoord, geen verhaal.', a: 'Ingrid, Tonnisteiner' },
               { q: 'Eindelijk iemand die gewoon zegt wat werkt en wat niet.', a: 'Bart, Rijschool Bart' },
             ].map(({ q, a }) => (
-              <figure key={a} className="m-0 rounded-[14px] border border-[#D6DDE8] bg-white p-5 sm:p-6">
-                <blockquote className="m-0 font-display text-[18px] font-bold leading-[1.4] text-primary">&ldquo;{q}&rdquo;</blockquote>
-                <figcaption className="mt-3 text-[15px] text-[#2A3A54]">{a}</figcaption>
-              </figure>
+              <li key={a} className="w-[78%] shrink-0 snap-start rounded-[12px] border border-[#D6DDE8] bg-white p-4 sm:w-auto">
+                <figure className="m-0">
+                  <blockquote className="m-0 text-[15px] font-semibold leading-[1.4] text-primary">&ldquo;{q}&rdquo;</blockquote>
+                  <figcaption className="mt-2 text-[13px] text-[#2A3A54]">{a}</figcaption>
+                </figure>
+              </li>
             ))}
+          </ul>
+          <div className="mt-3 px-6">
+            <figure className="m-0 flex items-center gap-3 rounded-[12px] border border-[#D6DDE8] bg-white p-2 pr-4">
+              <Image
+                src="/images/cases/ecomy-check.webp"
+                alt="De check op de site van Ecomy: een dak van bovenaf met de dakvlakken, het aantal panelen dat past en de opwek per jaar"
+                width={1200}
+                height={619}
+                className="h-auto w-[42%] shrink-0 rounded-[8px] sm:w-[220px]"
+              />
+              <figcaption className="text-[14px] font-semibold leading-[1.35] text-primary">
+                Ecomy, installateur uit Wijchen: de klant ziet eerst zijn eigen dak.
+              </figcaption>
+            </figure>
+            <p className="m-0 mt-3 text-[14px] leading-[1.4] text-[#2A3A54]">
+              <span className="font-semibold text-primary">20+ jaar online marketing</span>, onder meer voor Deceuninck, Etex, Hyundai, JBL en Leen Bakker.
+            </p>
           </div>
-          <p className="m-0 text-[17px] leading-[1.4] text-[#2A3A54] lg:col-span-2">
-            <span className="font-display font-extrabold text-primary">20+ jaar online marketing</span>, onder meer voor
-            Deceuninck, Etex, Hyundai, JBL en Leen Bakker.
-          </p>
         </div>
       </section>
 
       {/* Koen, 22 nov: "heb zo echt niet door wat we doen", "hoeft echt niet direct bovenin".
           Drie regels onder het bewijs, geen uitleg. Alleen wat bij klanten draait. */}
-      <section className="px-6 pt-14 sm:pt-20">
+      <section className="px-6 pt-10 sm:pt-16">
         <div className="mx-auto max-w-[1152px]">
-          <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+          <h2 className="m-0 font-display text-[22px] font-extrabold text-primary sm:text-[28px]">
             Wat wij voor je doen.
           </h2>
-          <ul className="m-0 mt-8 grid list-none gap-4 p-0 sm:grid-cols-3">
+          <ul className="m-0 mt-3 grid list-none gap-2 p-0 sm:grid-cols-3 sm:gap-4">
             {[
               { Icoon: Megaphone, t: 'Wij adverteren voor je in Google, Facebook en Instagram.' },
               { Icoon: Smartphone, t: 'Elke aanvraag komt direct binnen op je telefoon.' },
               { Icoon: BarChart3, t: 'Elke week zie je wat je budget opleverde.' },
             ].map(({ Icoon, t }) => (
-              <li key={t} className="flex items-start gap-4 rounded-[14px] border border-[#D6DDE8] bg-white p-5">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: '#EEF4FF' }}>
-                  <Icoon className="h-5 w-5 text-[#3D8EFF]" aria-hidden />
+              <li key={t} className="flex items-center gap-3">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg" style={{ background: '#EEF4FF' }}>
+                  <Icoon className="h-4 w-4 text-[#3D8EFF]" aria-hidden />
                 </span>
-                <span className="pt-1.5 text-[17px] font-semibold leading-[1.4] text-primary">{t}</span>
+                <span className="text-[15px] font-semibold leading-[1.35] text-primary">{t}</span>
               </li>
             ))}
           </ul>
