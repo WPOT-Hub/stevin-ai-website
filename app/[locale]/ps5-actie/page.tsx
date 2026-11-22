@@ -221,6 +221,20 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                 </a>
               </p>
             </div>
+            {/* Koen, 22 nov: ervaring als bewijs in het eerste scherm. Alleen wat klopt, geen budgetcijfer. */}
+            <dl className="m-0 mt-9 flex max-w-[520px] items-stretch gap-5 text-white sm:gap-7">
+              <div>
+                <dt className="font-display text-[30px] font-extrabold leading-none sm:text-[36px]">20+ jaar</dt>
+                <dd className="m-0 mt-2 text-[14px] font-semibold leading-[1.35]">ervaring in online marketing</dd>
+              </div>
+              <div className="w-px shrink-0" style={{ background: 'rgba(255,255,255,.45)' }} aria-hidden="true" />
+              <div>
+                <dt className="text-[14px] font-semibold leading-[1.35]">Onder meer voor</dt>
+                <dd className="m-0 mt-1 font-display text-[16px] font-extrabold leading-[1.3] sm:text-[18px]">
+                  Etex, Hyundai, JBL en Leen Bakker
+                </dd>
+              </div>
+            </dl>
             <ol className="m-0 mt-10 flex max-w-[420px] list-none gap-2 p-0 sm:gap-3" aria-label="Vijf plekken">
               {[1, 2, 3, 4, 5].map((n) => (
                 <li
