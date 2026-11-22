@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLocale } from 'next-intl'
-import { MessageCircle, Phone, Send, X } from 'lucide-react'
+import { CalendarDays, MessageCircle, Phone, Send, X } from 'lucide-react'
 import { pushDataLayerEvent } from '@/lib/datalayer'
 import { TELEFOON } from '@/lib/telefoon'
 import { Turnstile, TURNSTILE_SITEKEY } from '@/components/Turnstile'
@@ -44,6 +44,7 @@ const T = {
     plaats: 'Typ je vraag',
     stuur: 'Versturen',
     bezig: 'Even denken',
+    plan: 'Plan een kennismaking',
     gegevens: 'Laat je gegevens achter',
     bel: `Bel ${NUMMER_INTERNATIONAAL}`,
     whatsapp: 'WhatsApp',
@@ -66,6 +67,7 @@ const T = {
     plaats: 'Type your question',
     stuur: 'Send',
     bezig: 'Thinking',
+    plan: 'Book an intro call',
     gegevens: 'Leave your details',
     bel: `Call ${NUMMER_INTERNATIONAAL}`,
     whatsapp: 'WhatsApp',
@@ -247,6 +249,19 @@ export default function Vraagbot() {
                 </div>
                 {b.knoppen && !formulier && (
                   <div className="mt-2 flex flex-wrap gap-2">
+                    {/* Het bestaande planvenster (KennismakingVenster): elk element met data-open-kennismaking opent het. */}
+                    <a
+                      href="/kennismaking"
+                      data-open-kennismaking=""
+                      onClick={() => {
+                        pushDataLayerEvent('chat_naar_plannen')
+                        setOpen(false)
+                      }}
+                      className="inline-flex items-center gap-1 rounded-full border border-[#3c8eff] bg-[#3c8eff] px-3 py-1.5 text-[13px] font-medium text-white"
+                    >
+                      <CalendarDays className="h-3.5 w-3.5" aria-hidden />
+                      {t.plan}
+                    </a>
                     <button type="button" onClick={() => naarMens('formulier')} className="rounded-full border border-[#d6dde8] bg-white px-3 py-1.5 text-[13px] hover:border-[#3c8eff]">
                       {t.gegevens}
                     </button>
