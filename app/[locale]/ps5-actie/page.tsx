@@ -343,7 +343,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               {[
                 { t: 'Aanvraag komt binnen', d: `Iemand in jouw regio zoekt een ${vak ? vak.enkelvoud : 'vakman'}, ziet je advertentie en belt of vult je formulier in.` },
                 { t: 'Jij krijgt bericht', d: 'Meteen op je telefoon, ook als je aan het werk bent en niet opneemt.' },
-                { t: 'Jij neemt contact op', d: 'Wij houden bij welke advertentie de aanvraag opleverde en zetten je budget daar.' },
+                { t: 'Jij neemt contact op', d: 'Je belt terug terwijl de klant nog zoekt. Wij zien welke advertentie de aanvraag opleverde en zetten je budget daar.' },
               ].map((stap, i, alle) => (
                 <li key={stap.t} className="relative flex gap-5 pb-8 last:pb-0">
                   {i < alle.length - 1 && <span aria-hidden className="absolute left-[21px] top-11 bottom-0 w-[2px]" style={{ background: '#C4DCFF' }} />}
@@ -417,7 +417,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       <section className="bg-surface px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Zo werkt het, in drie stappen.
+            Zo word je klant, in drie stappen.
           </h2>
           <Punten items={STAPPEN} kolommen={3} />
         </div>
