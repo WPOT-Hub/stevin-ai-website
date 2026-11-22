@@ -188,5 +188,49 @@
       "question": "Wat kost WordPress onderhoud?",
       "answer": "Aanbieders noemen voor een basispakket met updates, back ups en bewaking ruwweg 30 tot 75 euro per maand, en voor een standaardpakket 75 tot 200 euro. Dat zijn prijzen van de aanbieders zelf, geen onafhankelijke meting. Vraag altijd wat er precies in het pakket zit en wie de beheerder is."
     }
+  ],
+  "adverteerder-en-betaler-meta-advertenties": [
+    {
+      "question": "Wat is de begunstigde en wat is de betaler bij Meta-advertenties?",
+      "answer": "De adverteerder, in het Engels beneficiary en ook wel begunstigde genoemd, is de partij namens wie de advertentie wordt getoond. De betaler (payer) is de partij die ervoor betaalt. Ze kunnen dezelfde zijn, maar dat hoeft niet. Wat je invult moet kloppen met wie er echt betaalt."
+    },
+    {
+      "question": "Zijn adverteerder en betaler verplicht bij Meta-advertenties?",
+      "answer": "Ja, voor advertentiesets die op de EU zijn gericht. Sinds 16 augustus 2023 publiceert Meta een advertentie niet zonder deze gegevens, volgens de documentatie van Meta voor ontwikkelaars."
+    },
+    {
+      "question": "Waar stel ik adverteerder en betaler in?",
+      "answer": "Bij de advertentieset in Ads Manager. Je kunt op accountniveau een standaardadverteerder en standaardbetaler instellen, maar controleer ze bij elke nieuwe campagne."
+    },
+    {
+      "question": "Is zichtbaar wie de adverteerder en betaler zijn?",
+      "answer": "De DSA verplicht het platform om per advertentie te laten zien namens wie ze wordt getoond en, als dat een andere partij is, wie ervoor betaalde. Bij zeer grote platforms staat dat ook in een openbare database. Hoe dat bij Meta eruitziet, kun je zelf nakijken in de Meta Ad Library."
+    },
+    {
+      "question": "Hoe lang blijven advertentiegegevens bewaard?",
+      "answer": "Volgens artikel 39 van de DSA tot een jaar nadat de advertentie voor het laatst is getoond. Dat geldt voor zeer grote online platforms."
+    }
+  ],
+  "beneficiary-and-payer-meta-ads": [
+    {
+      "question": "What is the difference between the beneficiary and the payer on Meta ads?",
+      "answer": "The beneficiary is the party on whose behalf the ad is shown. The payer is the party that pays for it. They can be the same, but they do not have to be. What you enter must match who actually pays."
+    },
+    {
+      "question": "Are the beneficiary and payer mandatory on Meta ads?",
+      "answer": "Yes, for ad sets that target the EU. Since 16 August 2023 Meta does not publish an ad without them, according to Meta’s developer documentation."
+    },
+    {
+      "question": "Where do I set the beneficiary and payer?",
+      "answer": "On the ad set in Ads Manager. You can set a default beneficiary and payer at ad account level, but check them on every new campaign."
+    },
+    {
+      "question": "What do people who see the ad get to see?",
+      "answer": "The DSA requires the platform to show, for each ad, on whose behalf it is presented and, if that is a different party, who paid for it. For very large platforms this is also kept in a public repository. You can see what Meta shows in the Meta Ad Library."
+    },
+    {
+      "question": "How long is ad information kept?",
+      "answer": "Under Article 39 of the DSA, until one year after the ad was last shown. That applies to very large online platforms."
+    }
   ]
 }
