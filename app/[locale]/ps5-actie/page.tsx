@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { BarChart3, Megaphone, Phone, Smartphone } from 'lucide-react'
 import { TELEFOON } from '@/lib/telefoon'
 import { h2Stijl } from '@/components/rethink/RethinkBlokken'
+import Citaten from '@/components/ps5/Citaten'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -200,25 +201,18 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </div>
       </section>
 
-      {/* Koen, 22 nov: "neemt veel te veel ruimte in". Citaten onder elkaar op de telefoon (Koen 22 nov 23:44: opzij vegen sneed het tweede citaat af), Marcel (Ecomy) als vierde citaat, Koen 22 nov 23:40 (zijn oom, Koen regelt het akkoord). Ingrid en Bart: akkoord via Koen.
+      {/* Koen, 22 nov: "neemt veel te veel ruimte in". Citaten in een schuifrij op de telefoon (Koen 22 nov 23:51), zie components/ps5/Citaten.tsx, Marcel (Ecomy) als vierde citaat, Koen 22 nov 23:40 (zijn oom, Koen regelt het akkoord). Ingrid en Bart: akkoord via Koen.
           De eigenaar van Sterker blijft eruit tot ze hun zin zelf hebben bevestigd. */}
       <section className="pb-2 pt-6 sm:pt-16">
         <div className="mx-auto max-w-[1152px]">
-          <ul className="m-0 grid list-none gap-2 px-6 pb-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4">
-            {[
+          <Citaten
+            items={[
               { q: 'Ik was al blij als er iemand een keer belde. Nu zijn we weer offertes aan het maken.', a: 'Hans, Hans Schepers Stoffering' },
               { q: 'Koen denkt mee alsof het zijn eigen bedrijf is. Je krijgt antwoord, geen verhaal.', a: 'Ingrid, Tonnisteiner' },
               { q: 'Eindelijk iemand die gewoon zegt wat werkt en wat niet.', a: 'Bart, Rijschool Bart' },
               { q: 'Ik houd alle aanvragen nu bij op mijn telefoon. Echt top!', a: 'Marcel, Ecomy Energie' },
-            ].map(({ q, a }) => (
-              <li key={a} className="rounded-[12px] border border-[#D6DDE8] bg-white px-4 py-3 sm:p-4">
-                <figure className="m-0">
-                  <blockquote className="m-0 text-[15px] font-semibold leading-[1.4] text-primary">&ldquo;{q}&rdquo;</blockquote>
-                  <figcaption className="mt-2 text-[13px] text-[#2A3A54]">{a}</figcaption>
-                </figure>
-              </li>
-            ))}
-          </ul>
+            ]}
+          />
           <div className="mt-3 px-6">
             <p className="m-0 text-[14px] leading-[1.4] text-[#2A3A54]">
               <span className="font-semibold text-primary">20+ jaar online marketing</span>, onder meer voor Deceuninck, Etex, Hyundai, JBL en Leen Bakker.
