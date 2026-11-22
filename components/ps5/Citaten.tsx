@@ -15,9 +15,10 @@ export default function Citaten({ items }: { items: Citaat[] }) {
   useEffect(() => {
     const el = rij.current
     if (!el || gestopt) return
-    if (window.matchMedia('(min-width: 640px)').matches) return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const t = window.setInterval(() => {
+      // Per tik controleren, zodat draaien van de telefoon (liggend naar staand) ook werkt.
+      if (window.matchMedia('(min-width: 640px)').matches) return
       const volgende = (actief + 1) % items.length
       const kaart = el.children[volgende] as HTMLElement | undefined
       if (kaart) el.scrollTo({ left: kaart.offsetLeft - el.offsetLeft - 24, behavior: 'smooth' })
