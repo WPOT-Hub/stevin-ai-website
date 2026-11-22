@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import ContactForm from '@/components/ContactForm'
 import Image from 'next/image'
-import { Phone } from 'lucide-react'
+import { BarChart3, Megaphone, Phone, Smartphone } from 'lucide-react'
 import { TELEFOON } from '@/lib/telefoon'
 import { h2Stijl } from '@/components/rethink/RethinkBlokken'
 
@@ -223,10 +223,47 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               Ecomy, installateur uit Wijchen: de klant ziet eerst zijn eigen dak.
             </figcaption>
           </figure>
+          {/* Koen, 22 nov: "en alle andere reviews". Ingrid en Bart: citaten met hun akkoord via Koen.
+              Marcel en de eigenaar van Sterker blijven eruit tot ze hun zin zelf hebben bevestigd. */}
+          <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2">
+            {[
+              { q: 'Koen denkt mee alsof het zijn eigen bedrijf is. Je krijgt antwoord, geen verhaal.', a: 'Ingrid, Tonnisteiner' },
+              { q: 'Eindelijk iemand die gewoon zegt wat werkt en wat niet.', a: 'Bart, Rijschool Bart' },
+            ].map(({ q, a }) => (
+              <figure key={a} className="m-0 rounded-[14px] border border-[#D6DDE8] bg-white p-5 sm:p-6">
+                <blockquote className="m-0 font-display text-[18px] font-bold leading-[1.4] text-primary">&ldquo;{q}&rdquo;</blockquote>
+                <figcaption className="mt-3 text-[15px] text-[#2A3A54]">{a}</figcaption>
+              </figure>
+            ))}
+          </div>
           <p className="m-0 text-[17px] leading-[1.4] text-[#2A3A54] lg:col-span-2">
             <span className="font-display font-extrabold text-primary">20+ jaar online marketing</span>, onder meer voor
             Deceuninck, Etex, Hyundai, JBL en Leen Bakker.
           </p>
+        </div>
+      </section>
+
+      {/* Koen, 22 nov: "heb zo echt niet door wat we doen", "hoeft echt niet direct bovenin".
+          Drie regels onder het bewijs, geen uitleg. Alleen wat bij klanten draait. */}
+      <section className="px-6 pt-14 sm:pt-20">
+        <div className="mx-auto max-w-[1152px]">
+          <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+            Wat wij voor je doen.
+          </h2>
+          <ul className="m-0 mt-8 grid list-none gap-4 p-0 sm:grid-cols-3">
+            {[
+              { Icoon: Megaphone, t: 'Wij adverteren voor je in Google, Facebook en Instagram.' },
+              { Icoon: Smartphone, t: 'Elke aanvraag komt direct binnen op je telefoon.' },
+              { Icoon: BarChart3, t: 'Elke week zie je wat je budget opleverde.' },
+            ].map(({ Icoon, t }) => (
+              <li key={t} className="flex items-start gap-4 rounded-[14px] border border-[#D6DDE8] bg-white p-5">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: '#EEF4FF' }}>
+                  <Icoon className="h-5 w-5 text-[#3D8EFF]" aria-hidden />
+                </span>
+                <span className="pt-1.5 text-[17px] font-semibold leading-[1.4] text-primary">{t}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
