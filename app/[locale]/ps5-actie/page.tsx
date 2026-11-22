@@ -210,7 +210,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               { q: 'Ik was al blij als er iemand een keer belde. Nu zijn we weer offertes aan het maken.', a: 'Hans, Hans Schepers Stoffering' },
               { q: 'Koen denkt mee alsof het zijn eigen bedrijf is. Je krijgt antwoord, geen verhaal.', a: 'Ingrid, Tonnisteiner' },
               { q: 'Eindelijk iemand die gewoon zegt wat werkt en wat niet.', a: 'Bart, Rijschool Bart' },
-              { q: 'Mijn oude site leverde niks op en mijn mailbox liep vol. Koen zette in een paar weken alles nieuw neer: logo, website en een check waarmee mensen zelf zien wat hun huis kan opwekken. Aanvragen komen nu direct op mijn telefoon binnen en ik bel ze zelf terug. Hij vroeg steeds door over hoe ik werk, en zette niets op de site wat niet klopt.', a: 'Marcel, Ecomy Energie' },
+              { q: 'Koen zette alles nieuw neer. Nu komen de aanvragen direct op mijn telefoon binnen.', a: 'Marcel, Ecomy Energie' },
             ].map(({ q, a }) => (
               <li key={a} className="w-[78%] shrink-0 snap-start rounded-[12px] border border-[#D6DDE8] bg-white p-4 sm:w-auto">
                 <figure className="m-0">
