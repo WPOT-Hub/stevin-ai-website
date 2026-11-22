@@ -201,15 +201,16 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       </section>
 
       {/* Koen, 22 nov: "neemt veel te veel ruimte in". Citaten in een rij die je op de telefoon
-          opzij veegt, Ecomy als klein beeld met een regel ernaast. Ingrid en Bart: akkoord via Koen.
-          Marcel en de eigenaar van Sterker blijven eruit tot ze hun zin zelf hebben bevestigd. */}
+          opzij veegt, Marcel (Ecomy) als vierde citaat, Koen 22 nov 23:40 (zijn oom, Koen regelt het akkoord). Ingrid en Bart: akkoord via Koen.
+          De eigenaar van Sterker blijft eruit tot ze hun zin zelf hebben bevestigd. */}
       <section className="pb-2 pt-6 sm:pt-16">
         <div className="mx-auto max-w-[1152px]">
-          <ul className="m-0 flex list-none snap-x snap-mandatory scroll-px-6 gap-3 overflow-x-auto px-6 pb-2 sm:grid sm:grid-cols-3 sm:overflow-visible">
+          <ul className="m-0 flex list-none snap-x snap-mandatory scroll-px-6 gap-3 overflow-x-auto px-6 pb-2 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4">
             {[
               { q: 'Ik was al blij als er iemand een keer belde. Nu zijn we weer offertes aan het maken.', a: 'Hans, Hans Schepers Stoffering' },
               { q: 'Koen denkt mee alsof het zijn eigen bedrijf is. Je krijgt antwoord, geen verhaal.', a: 'Ingrid, Tonnisteiner' },
               { q: 'Eindelijk iemand die gewoon zegt wat werkt en wat niet.', a: 'Bart, Rijschool Bart' },
+              { q: 'Koen zette alles nieuw neer. Nu komen de aanvragen direct op mijn telefoon binnen.', a: 'Marcel, Ecomy Energie' },
             ].map(({ q, a }) => (
               <li key={a} className="w-[78%] shrink-0 snap-start rounded-[12px] border border-[#D6DDE8] bg-white p-4 sm:w-auto">
                 <figure className="m-0">
@@ -220,19 +221,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
             ))}
           </ul>
           <div className="mt-3 px-6">
-            <figure className="m-0 flex items-center gap-3 rounded-[12px] border border-[#D6DDE8] bg-white p-2 pr-4">
-              <Image
-                src="/images/cases/ecomy-check.webp"
-                alt="De check op de site van Ecomy: een dak van bovenaf met de dakvlakken, het aantal panelen dat past en de opwek per jaar"
-                width={1200}
-                height={619}
-                className="h-auto w-[42%] shrink-0 rounded-[8px] sm:w-[220px]"
-              />
-              <figcaption className="text-[14px] font-semibold leading-[1.35] text-primary">
-                Ecomy, installateur uit Wijchen: de klant ziet eerst zijn eigen dak.
-              </figcaption>
-            </figure>
-            <p className="m-0 mt-3 text-[14px] leading-[1.4] text-[#2A3A54]">
+            <p className="m-0 text-[14px] leading-[1.4] text-[#2A3A54]">
               <span className="font-semibold text-primary">20+ jaar online marketing</span>, onder meer voor Deceuninck, Etex, Hyundai, JBL en Leen Bakker.
             </p>
           </div>
