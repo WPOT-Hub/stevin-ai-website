@@ -412,6 +412,111 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </div>
       </section>
 
+      {/* Ons systeem laten zien (Koen, 22 nov: "we kunnen wel net wat meer tonen, ons systeem etc").
+          Twee schermen getekend in HTML. Het zijn voorbeelden en zo staan ze erbij: geen klantnaam,
+          geen echte cijfers. */}
+      <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
+        <div className="mx-auto max-w-[1152px]">
+          <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+            Dit zie je zelf, elke week.
+          </h2>
+          <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
+            Je krijgt een eigen inlog. Daar staat wat je uitgaf, wat het opleverde en wie er belde. Geen rapport
+            achteraf, je kijkt mee wanneer je wilt.
+          </p>
+          <div className="mt-10 grid items-start gap-8 lg:grid-cols-2">
+            <figure className="m-0">
+              <div className="rounded-[14px] border border-[#D6DDE8] bg-white p-5 shadow-[0_12px_32px_rgba(10,22,40,0.08)] sm:p-7">
+                <div className="flex items-baseline justify-between gap-3">
+                  <span className="font-display text-[13px] font-bold uppercase tracking-[0.08em] text-accent">Deze week</span>
+                  <span className="text-[13px] text-[#5B6B85]">ma t/m zo</span>
+                </div>
+                <div className="mt-4 grid grid-cols-3 gap-3">
+                  {[
+                    { l: 'Uitgegeven', w: '€ 310' },
+                    { l: 'Aanvragen', w: '9' },
+                    { l: 'Per aanvraag', w: '€ 34' },
+                  ].map((c) => (
+                    <div key={c.l} className="rounded-[12px] p-3 sm:p-4" style={{ background: '#F7F8FA' }}>
+                      <p className="m-0 text-[12px] text-[#5B6B85] sm:text-[13px]">{c.l}</p>
+                      <p className="m-0 mt-1 font-display text-[22px] font-extrabold text-primary sm:text-[28px]">{c.w}</p>
+                    </div>
+                  ))}
+                </div>
+                <table className="mt-5 w-full border-collapse text-left text-[14px] text-[#2A3A54] sm:text-[15px]">
+                  <thead>
+                    <tr className="text-[12px] text-[#5B6B85] sm:text-[13px]">
+                      <th className="pb-2 font-semibold">Kanaal</th>
+                      <th className="pb-2 text-right font-semibold">Uitgegeven</th>
+                      <th className="pb-2 pl-3 text-right font-semibold">Aanvragen</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ['Google zoeken', '€ 190', '6'],
+                      ['Facebook en Instagram', '€ 120', '2'],
+                      ['Gevonden zonder advertentie', '€ 0', '1'],
+                    ].map(([k, u, a]) => (
+                      <tr key={k} className="border-t border-[#D6DDE8]">
+                        <td className="py-2.5 font-semibold text-primary">{k}</td>
+                        <td className="py-2.5 text-right">{u}</td>
+                        <td className="py-2.5 pl-3 text-right font-bold text-primary">{a}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <figcaption className="mt-4 text-[14px] text-[#5B6B85]">
+                Voorbeeld van je weekoverzicht. De cijfers zijn verzonnen.
+              </figcaption>
+            </figure>
+
+            <figure className="m-0">
+              <div className="rounded-[14px] border border-[#D6DDE8] bg-white p-5 shadow-[0_12px_32px_rgba(10,22,40,0.08)] sm:p-7">
+                <div className="flex items-baseline justify-between gap-3">
+                  <span className="font-display text-[13px] font-bold uppercase tracking-[0.08em] text-accent">Gesprekken</span>
+                  <span className="text-[13px] text-[#5B6B85]">vandaag</span>
+                </div>
+                <ul className="m-0 mt-4 list-none p-0">
+                  {[
+                    {
+                      t: '08:12',
+                      s: 'Gemist, teruggebeld',
+                      d: vak?.enkelvoud === 'installateur'
+                        ? 'Ketel geeft storing, woning in Etten-Leur. Wil vandaag iemand langs.'
+                        : 'Lekkage bij de dakgoot, woning in Etten-Leur. Wil vandaag iemand langs.',
+                    },
+                    {
+                      t: '10:40',
+                      s: 'Opgenomen',
+                      d: vak?.enkelvoud === 'installateur'
+                        ? 'Vraagt een offerte voor een warmtepomp, tussenwoning in Breda.'
+                        : 'Vraagt een offerte voor een nieuw plat dak, garage in Breda.',
+                    },
+                    {
+                      t: '13:05',
+                      s: 'Buiten werktijd, bericht ingesproken',
+                      d: 'Bestaande klant, vraagt naar de afspraak van donderdag.',
+                    },
+                  ].map((g, i) => (
+                    <li key={g.t} className={`flex gap-4 py-3.5 ${i > 0 ? 'border-t border-[#D6DDE8]' : ''}`}>
+                      <span className="w-[46px] shrink-0 font-display text-[15px] font-bold text-primary">{g.t}</span>
+                      <div>
+                        <p className="m-0 text-[13px] font-semibold text-[#3D8EFF]">{g.s}</p>
+                        <p className="m-0 mt-1 text-[15px] leading-[1.45] text-[#2A3A54]">{g.d}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <figcaption className="mt-4 text-[14px] text-[#5B6B85]">
+                Voorbeeld van je telefooncentrale. Elk gesprek wordt in een zin samengevat.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       {/* Wat het opstarttraject is */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
