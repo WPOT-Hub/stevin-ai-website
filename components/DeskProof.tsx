@@ -1,4 +1,3 @@
-import StevinBrainVisual from '@/components/StevinBrainVisual'
 /**
  * DeskProof, de tweede hero: een echte opname uit de Stevin Desk met een
  * melding eroverheen.
@@ -179,10 +178,6 @@ const COPY: Record<Locale, {
   labelAdvies: string
   altScreenshot: string
   bijschrift: string
-  breinKop: string
-  breinBody: string
-  breinBijschrift: string
-  breinHint: string
 }> = {
   nl: {
     eyebrow: 'Zo ziet dat eruit',
@@ -193,11 +188,6 @@ const COPY: Record<Locale, {
     labelAdvies: 'Advies:',
     altScreenshot: 'De Stevin Desk: meldingen met reden en advies, cijfers per kanaal en de markt-radar',
     bijschrift: 'Uit de Stevin Desk. LUMIOS is onze demo-omgeving, geen klantdata.',
-    breinKop: 'En alles wat geprobeerd is, staat er nog.',
-    breinBody:
-      'Elke campagne, elk besluit, elk resultaat en wat de concurrent ondertussen deed. Ook het werk dat pas over maanden betaalt, want dat is het eerste dat uit beeld verdwijnt. Wie hier morgen begint leest zich in, in plaats van dat jij het opnieuw gaat vertellen.',
-    breinBijschrift: 'Het geheugen van een klant, zoals het in de Desk staat.',
-    breinHint: 'Sleep gerust aan de knopen.',
   },
   en: {
     eyebrow: 'What that looks like',
@@ -208,30 +198,16 @@ const COPY: Record<Locale, {
     labelAdvies: 'Advice:',
     altScreenshot: 'The Stevin Desk: alerts with the reason and the advice, numbers per channel and the market radar',
     bijschrift: 'From the Stevin Desk. LUMIOS is our demo environment, not client data.',
-    breinKop: 'And everything that was tried is still there.',
-    breinBody:
-      'Every campaign, every decision, every result, and what the competition was doing at the time. Including the work that only pays off months later, which is the first thing to drop out of sight. Whoever starts here tomorrow reads up, instead of you explaining it all over again.',
-    breinBijschrift: 'A single client memory, the way it sits in the Desk.',
-    breinHint: 'Drag the nodes around.',
   },
 }
 
 export default function DeskProof({
   locale,
-  toonBrein = true,
   melding = 'meta-storing',
 }: {
   locale: string
   /** Welke melding je toont. Kies er een die bij het onderwerp van de pagina past. */
   melding?: MeldingSleutel
-  /**
-   * Het brein-blok aan of uit. Op de homepage uit: daar staat het brein al in
-   * de hero, en de sectie eronder ("Typ zomer") doet het geheugen beter, want
-   * daar zoek je zelf. Drie keer hetzelfde onderwerp op een pagina is precies
-   * de drukte die we bij Aizy nog net vermijden. Op de landingspagina's aan,
-   * want daar is geen hero-brein en geen geheugen-demo.
-   */
-  toonBrein?: boolean
 }) {
   const taal = (locale === 'en' ? 'en' : 'nl') as Locale
   const c = COPY[taal]
@@ -352,49 +328,6 @@ export default function DeskProof({
           {c.bijschrift}
         </p>
 
-        {/* Tweede blok, en bewust apart. De meldingen beantwoorden "wat vraagt
-            nu aandacht", de brein-kaart beantwoordt "en hoeveel weet dit ding
-            eigenlijk". Twee vragen, dus twee objecten onder elkaar, niet twee
-            beelden naast elkaar in een blok. */}
-        {toonBrein && (
-        <div style={{ marginTop: 'clamp(56px, 7vw, 104px)' }}>
-          <div className="max-w-[640px]">
-            <h3
-              className="font-display font-extrabold text-primary m-0"
-              style={{ fontSize: 'clamp(24px, 2.6vw, 34px)', letterSpacing: '-0.03em', lineHeight: '1.15', textWrap: 'balance' }}
-            >
-              {c.breinKop}
-            </h3>
-            <p className="text-muted leading-[1.65]" style={{ fontSize: '16px', maxWidth: '54ch', marginTop: '16px' }}>
-              {c.breinBody}
-            </p>
-          </div>
-
-          {/* Geen schermafdruk maar het echte ding. StevinBrainVisual bestond al
-              (canvas, physics, bevroren Lumos-snapshot) en kon al gesleept
-              worden; alleen stond hij nergens waar een bezoeker hem tegenkomt
-              behalve als sfeerbeeld in de hero. Hier mag hij zijn werk doen.
-              Lichte variant, zoals de brein-kaart in de Desk zelf: die staat
-              ook op licht. Het paneel is een tint donkerder dan wit zodat de
-              kaart een vlak is en niet in de pagina wegvalt. */}
-          <div
-            className="rounded-2xl overflow-hidden"
-            style={{
-              marginTop: 'clamp(24px, 3vw, 36px)',
-              background: '#F7F9FC',
-              border: '1px solid rgba(10,22,40,0.10)',
-              boxShadow: '0 32px 70px -30px rgba(10,22,40,0.36)',
-            }}
-          >
-            <StevinBrainVisual aspect="21:9" theme="light" brand={false} claim="" ariaLabel="" locale={locale} />
-          </div>
-
-          <p className="text-muted flex flex-wrap items-center gap-x-2 gap-y-1" style={{ fontSize: '13px', marginTop: '20px' }}>
-            <span>{c.breinBijschrift}</span>
-            <span className="text-accent font-semibold">{c.breinHint}</span>
-          </p>
-        </div>
-        )}
       </div>
     </section>
   )

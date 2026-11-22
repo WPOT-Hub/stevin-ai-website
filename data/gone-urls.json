@@ -1,6 +1,7 @@
 {
  "_uitleg": "W-535, snoeiplan stevin.ai (12 okt 2026). Deze paden geven 410 Gone via middleware.ts. Bron: snoeiplan.csv (keuze weg_410), aangevuld met de Engelse variant van elk NL-pad dat de CSV niet apart noemt, oude omleidingen naar een pagina die nu weg is, en de integratiepagina's van noindex-categorieen. Een pad terughalen: hier weghalen en de pagina weer laten genereren. W-568 (17 okt 2026): vijf journalstukken erbij op Koens go, omdat de inhoud niet klopte of verouderd was (MIT-rapport verkeerd beschreven, WK en Black Friday voorbij, modeltekst zonder bron).",
  "paden": [
+  "/brain-preview",
   "/ai-meetproef",
   "/alternatief",
   "/alternatief/adverity",
