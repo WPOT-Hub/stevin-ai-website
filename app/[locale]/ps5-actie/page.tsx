@@ -155,7 +155,7 @@ const VRAGEN: Vraag[] = [
   },
   {
     v: 'Waarom doen jullie dit?',
-    a: 'Omdat je het onthoudt. Je krijgt elke week een bureau aan de lijn en ze beloven allemaal hetzelfde. Een PS5 valt op. Wij verdienen hem terug als je een jaar klant blijft, daarom hoort hij bij een jaarcontract. En vijf per vak is het aantal dat wij zelf goed kunnen inrichten.',
+    a: 'Wij geven het voordeel liever aan jou dan aan dure verkopers. Andere bureaus betalen iemand om je te bellen tot je ja zegt. Wij hebben geen verkopers en geven dat geld aan de klant. De PS5 hoort bij een jaarcontract. En vijf per vak is het aantal dat wij zelf goed kunnen inrichten.',
   },
   {
     v: 'Wat is een volledig opstarttraject?',
