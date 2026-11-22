@@ -26,7 +26,7 @@ import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { deriveEntryChannel, getPageType, rememberInteraction, updateLeadContextPage } from '@/lib/tracking'
 import { pushDataLayerEvent } from '@/lib/datalayer'
-import { metaContact } from '@/lib/metaPixel'
+import { meldBelklik, metaContact } from '@/lib/metaPixel'
 
 declare global {
   interface Window {
@@ -147,6 +147,7 @@ export function AnalyticsEvents() {
           page_path: pathname,
         })
         metaContact('phone', vak)
+        meldBelklik(vak)
         rememberInteraction('contact_click', { href, label, page_path: pathname, placement: 'phone' })
         return
       }

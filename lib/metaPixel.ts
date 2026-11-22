@@ -96,3 +96,42 @@ export function metaContact(methode: 'phone' | 'whatsapp', vak?: string): void {
   if (!werkMetaPixelBij()) return
   window.fbq?.('track', 'Contact', { content_category: methode, ...(vak ? { content_name: vak } : {}) })
 }
+
+const HUB_BELKLIK = 'https://hub.stevin.ai/api/belklik'
+
+function leesCookie(naam: string): string | undefined {
+  const deel = document.cookie.split('; ').find((c) => c.startsWith(`${naam}=`))
+  return deel ? decodeURIComponent(deel.slice(naam.length + 1)).slice(0, 340) : undefined
+}
+
+/**
+ * Meldt een klik op de belknop aan de Hub (W-126, 22 nov 2026). De pagina stuurt
+ * op bellen, maar Meta telde alleen het formulier als Lead. De Hub onthoudt deze
+ * klik kort en meldt het gesprek dat erop volgt als Lead aan Meta. Een klik
+ * zonder gesprek wordt dus niets.
+ *
+ * Alleen met toestemming voor marketing, net als de pixel zelf. Mee gaan de
+ * kenmerken die de pixel al heeft (_fbc, _fbp, fbclid), het pad en het vak.
+ * Geen naam, geen nummer. Mislukt het verzoek, dan gaat het bellen gewoon door.
+ */
+export function meldBelklik(vak?: string, fbclid?: string): void {
+  if (!werkMetaPixelBij()) return
+  try {
+    const body = {
+      toestemming: true,
+      pad: window.location.pathname,
+      ...(vak ? { vak } : {}),
+      fbc: leesCookie('_fbc'),
+      fbp: leesCookie('_fbp'),
+      fbclid: fbclid ?? new URLSearchParams(window.location.search).get('fbclid') ?? undefined,
+    }
+    void fetch(HUB_BELKLIK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+      keepalive: true,
+    }).catch(() => undefined)
+  } catch {
+    // De meting mag het bellen nooit in de weg zitten.
+  }
+}
