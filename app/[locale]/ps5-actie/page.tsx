@@ -235,7 +235,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               <div>
                 <dt className="text-[14px] font-semibold leading-[1.35]">Onder meer voor</dt>
                 <dd className="m-0 mt-1 font-display text-[16px] font-extrabold leading-[1.3] sm:text-[18px]">
-                  Etex, Hyundai, JBL en Leen Bakker
+                  Deceuninck, Etex, Hyundai, JBL en Leen Bakker
                 </dd>
               </div>
             </dl>
