@@ -27,7 +27,7 @@ const PAKKETTEN = [
     sub: 'bij jaarbetaling, 1.499 als je per maand betaalt. De opstart is maatwerk, de prijs hoor je vooraf.',
     punten: [
       'Eerst zetten we alles goed: meting, accounts en de koppeling met je CRM.',
-      'Daarna sturen we bij op aanvragen en omzet, niet op klikken.',
+      'Daarna sturen we bij op opdrachten en omzet, niet op klikken of vertoningen.',
       'Elk besluit leggen we vast, met de reden erbij.',
       'Wil je later zelf verder? Dan bouwen we agents die het werk overnemen.',
     ],
