@@ -20,6 +20,6 @@ export async function GET(request: Request, { params }: { params: Promise<{ best
   }
   const data = await readFile(path.join(process.cwd(), 'private', 'ps5-actie', bestand))
   return new Response(new Uint8Array(data), {
-    headers: { 'content-type': type, 'cache-control': PS5_OPEN ? 'public, max-age=86400' : 'private, no-store', 'x-robots-tag': 'noindex, nofollow' },
+    headers: { 'content-type': type, 'cache-control': PS5_OPEN ? 'public, max-age=3600' : 'private, no-store', 'x-robots-tag': 'noindex, nofollow' },
   })
 }

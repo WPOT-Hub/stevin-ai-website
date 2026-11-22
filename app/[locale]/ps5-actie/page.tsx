@@ -63,9 +63,9 @@ const ALGEMEEN = {
 //    ACM-pagina over dat woord zegt hetzelfde over abonnementen.
 //  - Geen bedragen en geen drempel op de pagina. De doorberekening staat vooraf
 //    in de offerte.
-//  - Op pauze achter een code (19 nov, Koen: 1500), zie middleware.ts en
-//    lib/ps5Toegang.ts. Daarom ook geen Open Graph-beeld meer en staan de
-//    beelden in private/ps5-actie en niet in public.
+//  - Open sinds 22 nov (Koen: "code mag eraf"), via PS5_OPEN in lib/ps5Toegang.ts.
+//    De code 1500 en de poort in middleware.ts blijven staan voor een nieuwe pauze.
+//    Daarom nog geen Open Graph-beeld en staan de beelden in private/ps5-actie.
 //  - Beeld: de afbeelding die Koen zelf aanleverde (private/ps5-actie), met PS5-,
 //    GTA- en Rockstar-logo's en een gemaakte hoes. Koen koos dit bewust, 19 nov,
 //    nadat het merken- en misleidingsrisico was uitgelegd. Zie de PR-beschrijving.
@@ -155,7 +155,7 @@ const VRAGEN: Vraag[] = [
   },
   {
     v: 'Waarom doen jullie dit?',
-    a: 'Een nieuwe klant brengt in de eerste weken veel werk mee: website, campagne, telefoon, meting. Dit is onze manier om je te bedanken, en jij kiest zelf wat je er het leukst aan vindt. En het houdt de instroom beperkt: vijf plekken per vak, omdat we alles zelf inrichten.',
+    a: 'Omdat je het onthoudt. Je krijgt elke week een bureau aan de lijn en ze beloven allemaal hetzelfde. Een PS5 valt op. Wij verdienen hem terug als je een jaar klant blijft, daarom hoort hij bij een jaarcontract. En vijf per vak is het aantal dat wij zelf goed kunnen inrichten.',
   },
   {
     v: 'Wat is een volledig opstarttraject?',
@@ -464,7 +464,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                   </thead>
                   <tbody>
                     {[
-                      ['Google zoeken', '€ 190', '6'],
+                      ['Google Search', '€ 190', '6'],
                       ['Facebook en Instagram', '€ 120', '2'],
                       ['Gevonden zonder advertentie', '€ 0', '1'],
                     ].map(([k, u, a]) => (
