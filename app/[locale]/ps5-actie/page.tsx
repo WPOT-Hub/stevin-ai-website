@@ -201,8 +201,8 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       </section>
 
       {/* Koen, 22 nov: "neemt veel te veel ruimte in". Citaten in een rij die je op de telefoon
-          opzij veegt, Ecomy als vierde kaart zonder citaat (Koen 22 nov 23:39), geen beeld. Ingrid en Bart: akkoord via Koen.
-          Marcel en de eigenaar van Sterker blijven eruit tot ze hun zin zelf hebben bevestigd. */}
+          opzij veegt, Marcel (Ecomy) als vierde citaat, Koen 22 nov 23:40 (zijn oom, Koen regelt het akkoord). Ingrid en Bart: akkoord via Koen.
+          De eigenaar van Sterker blijft eruit tot ze hun zin zelf hebben bevestigd. */}
       <section className="pb-2 pt-6 sm:pt-16">
         <div className="mx-auto max-w-[1152px]">
           <ul className="m-0 flex list-none snap-x snap-mandatory scroll-px-6 gap-3 overflow-x-auto px-6 pb-2 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4">
@@ -210,11 +210,11 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               { q: 'Ik was al blij als er iemand een keer belde. Nu zijn we weer offertes aan het maken.', a: 'Hans, Hans Schepers Stoffering' },
               { q: 'Koen denkt mee alsof het zijn eigen bedrijf is. Je krijgt antwoord, geen verhaal.', a: 'Ingrid, Tonnisteiner' },
               { q: 'Eindelijk iemand die gewoon zegt wat werkt en wat niet.', a: 'Bart, Rijschool Bart' },
-              { q: 'Complete nieuwe site met een eigen dakcheck. Klanten zien hoeveel panelen er op hun dak passen en hoeveel stroom dat oplevert, nog voordat ze bellen.', a: 'Ecomy, Wijchen', geenCitaat: true },
-            ].map(({ q, a, geenCitaat }) => (
+              { q: 'Mijn oude site leverde niks op. Koen zette in een paar weken alles nieuw neer: logo, website en een check waarmee mensen zien wat hun dak kan opwekken. Aanvragen komen nu direct op mijn telefoon binnen.', a: 'Marcel, Ecomy Energie' },
+            ].map(({ q, a }) => (
               <li key={a} className="w-[78%] shrink-0 snap-start rounded-[12px] border border-[#D6DDE8] bg-white p-4 sm:w-auto">
                 <figure className="m-0">
-                  <blockquote className="m-0 text-[15px] font-semibold leading-[1.4] text-primary">{geenCitaat ? q : <>&ldquo;{q}&rdquo;</>}</blockquote>
+                  <blockquote className="m-0 text-[15px] font-semibold leading-[1.4] text-primary">&ldquo;{q}&rdquo;</blockquote>
                   <figcaption className="mt-2 text-[13px] text-[#2A3A54]">{a}</figcaption>
                 </figure>
               </li>
