@@ -200,19 +200,18 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </div>
       </section>
 
-      {/* Koen, 22 nov: "neemt veel te veel ruimte in". Citaten in een rij die je op de telefoon
-          opzij veegt, Marcel (Ecomy) als vierde citaat, Koen 22 nov 23:40 (zijn oom, Koen regelt het akkoord). Ingrid en Bart: akkoord via Koen.
+      {/* Koen, 22 nov: "neemt veel te veel ruimte in". Citaten onder elkaar op de telefoon (Koen 22 nov 23:44: opzij vegen sneed het tweede citaat af), Marcel (Ecomy) als vierde citaat, Koen 22 nov 23:40 (zijn oom, Koen regelt het akkoord). Ingrid en Bart: akkoord via Koen.
           De eigenaar van Sterker blijft eruit tot ze hun zin zelf hebben bevestigd. */}
       <section className="pb-2 pt-6 sm:pt-16">
         <div className="mx-auto max-w-[1152px]">
-          <ul className="m-0 flex list-none snap-x snap-mandatory scroll-px-6 gap-3 overflow-x-auto px-6 pb-2 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4">
+          <ul className="m-0 grid list-none gap-2 px-6 pb-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4">
             {[
               { q: 'Ik was al blij als er iemand een keer belde. Nu zijn we weer offertes aan het maken.', a: 'Hans, Hans Schepers Stoffering' },
               { q: 'Koen denkt mee alsof het zijn eigen bedrijf is. Je krijgt antwoord, geen verhaal.', a: 'Ingrid, Tonnisteiner' },
               { q: 'Eindelijk iemand die gewoon zegt wat werkt en wat niet.', a: 'Bart, Rijschool Bart' },
-              { q: 'Koen heeft onze website en campagnes opnieuw opgezet. Nieuwe aanvragen komen nu meteen op mijn telefoon binnen.', a: 'Marcel, Ecomy Energie' },
+              { q: 'Ik houd alle aanvragen nu bij op mijn telefoon. Echt top!', a: 'Marcel, Ecomy Energie' },
             ].map(({ q, a }) => (
-              <li key={a} className="w-[78%] shrink-0 snap-start rounded-[12px] border border-[#D6DDE8] bg-white p-4 sm:w-auto">
+              <li key={a} className="rounded-[12px] border border-[#D6DDE8] bg-white px-4 py-3 sm:p-4">
                 <figure className="m-0">
                   <blockquote className="m-0 text-[15px] font-semibold leading-[1.4] text-primary">&ldquo;{q}&rdquo;</blockquote>
                   <figcaption className="mt-2 text-[13px] text-[#2A3A54]">{a}</figcaption>
