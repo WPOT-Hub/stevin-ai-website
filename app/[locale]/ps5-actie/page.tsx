@@ -14,9 +14,39 @@ type Props = {
 // W-861: elk vak krijgt in de advertentie een eigen link (?vak=dakdekker of ?vak=installateur).
 // Alleen waarden uit deze lijst tellen; al het andere wordt genegeerd, zodat niemand
 // via de link eigen tekst op de pagina kan zetten.
-const VAKKEN: Record<string, { enkelvoud: string; meervoud: string }> = {
-  dakdekker: { enkelvoud: 'dakdekker', meervoud: 'dakdekkers' },
-  installateur: { enkelvoud: 'installateur', meervoud: 'installateurs' },
+type Vak = { enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string; pand: string; soort: string; wil: string }
+const VAKKEN: Record<string, Vak> = {
+  dakdekker: {
+    enkelvoud: 'dakdekker',
+    meervoud: 'dakdekkers',
+    kop: 'Wij zoeken 5 dakdekkers.',
+    soort: 'het dakwerk',
+    wil: 'Wil je een dakcalculator op je site?',
+    werk: 'Wil je vooral complete daken vervangen?',
+    bezig: 'terwijl je op het dak staat',
+    bedrijf: 'dakbedrijf',
+    pand: 'dak',
+  },
+  installateur: {
+    enkelvoud: 'installateur',
+    meervoud: 'installateurs',
+    kop: 'Wij zoeken 5 installateurs.',
+    soort: 'het installatiewerk',
+    wil: 'Wil je een check op je site waarmee klanten zien wat hun huis kan opwekken?',
+    werk: 'Wil je vooral warmtepompen plaatsen?',
+    bezig: 'terwijl je bij een klant bezig bent',
+    bedrijf: 'installatiebedrijf',
+    pand: 'huis',
+  },
+}
+const ALGEMEEN = {
+  kop: 'Wij zoeken 5 bedrijven per vak.',
+  soort: 'het werk',
+  wil: 'Wil je een calculator op je site?',
+  werk: 'Wil je vooral de grotere klussen?',
+  bezig: 'terwijl je aan het werk bent',
+  bedrijf: 'bedrijf',
+  pand: 'pand',
 }
 
 // W-861 (19 nov 2026): de PS5-actie. De eerste vijf nieuwe klanten die tot en met
@@ -149,12 +179,18 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
   const { locale } = await params
   const { vak: vakParam } = await searchParams
   const vak = typeof vakParam === 'string' && Object.hasOwn(VAKKEN, vakParam) ? VAKKEN[vakParam] : null
+  // Meting per vak (22 nov): de klik op bellen of appen draagt het vak, en het appje zelf ook.
+  const vakSleutel = vak && typeof vakParam === 'string' ? vakParam : undefined
+  const appLink = vak
+    ? `${TELEFOON.whatsapp}?text=${encodeURIComponent(`Hoi, ik ben ${vak.enkelvoud} en wil meer weten over de actie.`)}`
+    : TELEFOON.whatsapp
+  const kopTekst = vak ?? ALGEMEEN
   if (locale !== 'nl') notFound()
   setRequestLocale(locale)
 
   return (
     <main className="-mt-[72px] bg-white">
-      {/* Kop in de stijl van de advertenties: blauw, rustig, vijf plekken per vak, PS5 met GTA VI en de gele sticker. */}
+      {/* Eerste scherm (Koen, 20 nov): eerst wat je bij ons koopt, dan pas de vijf plekken en de PS5. Blauw als de advertenties. */}
       <section className="relative overflow-hidden px-6 pb-20 pt-[150px] text-white sm:pt-[170px]" style={{ background: '#3D8EFF' }}>
         <div className="relative mx-auto grid max-w-[1152px] items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
@@ -162,23 +198,34 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               className="m-0 text-balance font-display font-extrabold text-white"
               style={{ fontSize: 'clamp(38px, 5.2vw, 68px)', lineHeight: 1.02, letterSpacing: '-0.02em' }}
             >
-              {vak ? (
-                <>
-                  Wij zoeken
-                  <br />5 {vak.meervoud}.
-                </>
-              ) : (
-                <>
-                  Wij zoeken
-                  <br />5 klanten per vak.
-                </>
-              )}
+              {kopTekst.kop}
             </h1>
-            <ol className="m-0 mt-7 flex max-w-[560px] list-none gap-2.5 p-0 sm:gap-3.5" aria-label="Vijf plekken">
+            <p className="m-0 mt-6 max-w-[560px] text-[18px] font-semibold leading-[1.5] text-white sm:text-[20px]">
+              Vijf, niet meer. Voor die vijf adverteren wij in Google, Facebook en Instagram. {kopTekst.wil} Een
+              slimme telefooncentrale met AI? Of gewoon precies zien wat jouw campagnes opleveren?
+            </p>
+            <div className="mt-8">
+              <a
+                href={TELEFOON.tel}
+                data-vak={vakSleutel}
+                data-cta="ps5_actie_hero_bel"
+                className="inline-flex items-center rounded-lg bg-white px-7 py-4 font-display text-[17px] font-bold transition-[filter] hover:brightness-95"
+                style={{ color: '#0A1628' }}
+              >
+                Bel {TELEFOON.weergave}
+              </a>
+              <p className="m-0 mt-4 text-[16px] font-semibold text-white">
+                Liever appen?{' '}
+                <a href={appLink} data-vak={vakSleutel} data-cta="ps5_actie_hero_whatsapp" className="underline underline-offset-4">
+                  App ons over jouw {kopTekst.bedrijf}
+                </a>
+              </p>
+            </div>
+            <ol className="m-0 mt-10 flex max-w-[420px] list-none gap-2 p-0 sm:gap-3" aria-label="Vijf plekken">
               {[1, 2, 3, 4, 5].map((n) => (
                 <li
                   key={n}
-                  className="relative flex aspect-[1.3/1] flex-1 items-center justify-center rounded-2xl font-display text-[26px] font-extrabold sm:text-[34px]"
+                  className="relative flex aspect-[1.3/1] flex-1 items-center justify-center rounded-xl font-display text-[20px] font-extrabold sm:text-[26px]"
                   style={{ border: '3px dashed rgba(255,255,255,.85)', background: 'rgba(255,255,255,.1)' }}
                 >
                   {n === 1 && vak ? (
@@ -199,50 +246,10 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                 </li>
               ))}
             </ol>
-            <p
-              className="m-0 mt-5 inline-block rounded-[14px] px-5 py-3 font-display text-[18px] font-extrabold text-white sm:text-[22px]"
-              style={{ background: '#0A1628' }}
-            >
-              Wij regelen je nieuwe klussen.
+            <p className="m-0 mt-4 max-w-[560px] text-[15px] font-semibold leading-[1.5] text-white">
+              De eerste vijf nieuwe {vak ? vak.meervoud : 'klanten per vak'} met een jaarcontract en een volledig opstarttraject kiezen
+              een PS5 met GTA VI als welkomstcadeau. Tot en met 31 december.
             </p>
-            <p className="m-0 mt-7 max-w-[560px] text-[17px] font-semibold leading-[1.5] text-white">
-              Word klant en kies een PS5 met GTA VI als welkomstcadeau. Bij een jaarcontract met opstarttraject, voor de eerste vijf per vak, tot 31 december.
-            </p>
-            <div className="mt-8">
-              <a
-                href={TELEFOON.tel}
-                data-cta="ps5_actie_hero_bel"
-                className="block font-display font-extrabold text-white hover:brightness-110"
-                style={{ fontSize: 'clamp(38px, 6vw, 64px)', letterSpacing: '-0.02em', lineHeight: 1 }}
-              >
-                {TELEFOON.weergave}
-              </a>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <a
-                  href={TELEFOON.tel}
-                  data-cta="ps5_actie_hero_bel_knop"
-                  className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white transition-[filter] hover:brightness-125"
-                  style={{ background: '#0A1628' }}
-                >
-                  Bel ons nu
-                </a>
-                <a
-                  href={TELEFOON.whatsapp}
-                  data-cta="ps5_actie_hero_whatsapp"
-                  className="inline-flex items-center rounded-lg bg-white px-7 py-3.5 font-display text-[16px] font-bold transition-[filter] hover:brightness-95"
-                  style={{ color: '#0A1628' }}
-                >
-                  App ons
-                </a>
-              </div>
-              <p className="m-0 mt-4 text-[15px] font-semibold text-white">
-                Of{' '}
-                <a href="/kennismaking" data-cta="ps5_actie_hero_gesprek" data-open-kennismaking="" className="underline underline-offset-4">
-                  plan een afspraak
-                </a>
-                .
-              </p>
-            </div>
           </div>
           <figure className="relative m-0 mx-auto w-full max-w-[560px]">
             <Image
@@ -323,22 +330,71 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </div>
       </section>
 
-      {/* Op het dak: alleen wat bij een klant bewezen draait (Voys naar Hub, W-660, 4 nov 2026). */}
+      {/* Hoe wij klussen regelen (Koen, 20 nov: eerst dit uitleggen). De telefoon staat in stap 2:
+          alleen wat bij een klant bewezen draait (Voys naar Hub, W-660, 4 nov 2026). */}
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 24 }}>
-        <div className="mx-auto max-w-[1152px]">
-          <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            Je staat op het dak en je klant belt.
-          </h2>
-          <div className={`mt-8 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
-            <p className="m-0">
-              Je kunt niet opnemen. Het gesprek staat toch in Stevin.AI, met de tijd en of het is opgenomen. Zo weet je
-              wie je terug moet bellen, en blijft er geen klant liggen.
-            </p>
-            <p className="m-0">
-              Jij belt terug als je van het dak af bent. Aan de telefoon hoor je wat er speelt en of de klus bij je past.
-              Dan weet je ook welke aanvragen waarde hebben.
-            </p>
+        <div className="mx-auto grid max-w-[1152px] items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
+              Zo komen die aanvragen binnen.
+            </h2>
+            {/* Schema in drie stappen (Koen, 21 nov): het beeld vertelt het, de tekst is een regel per stap. */}
+            <ol className="m-0 mt-10 list-none p-0">
+              {[
+                { t: 'Aanvraag komt binnen', d: `Iemand in jouw regio zoekt een ${vak ? vak.enkelvoud : 'vakman'}, ziet je advertentie en belt of vult je formulier in.` },
+                { t: 'Jij krijgt bericht', d: 'Meteen op je telefoon, ook als je aan het werk bent en niet opneemt.' },
+                { t: 'Jij neemt contact op', d: 'Wij houden bij welke advertentie de aanvraag opleverde en zetten je budget daar.' },
+              ].map((stap, i, alle) => (
+                <li key={stap.t} className="relative flex gap-5 pb-8 last:pb-0">
+                  {i < alle.length - 1 && <span aria-hidden className="absolute left-[21px] top-11 bottom-0 w-[2px]" style={{ background: '#C4DCFF' }} />}
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full font-display text-[18px] font-extrabold text-white" style={{ background: '#3D8EFF' }}>
+                    {i + 1}
+                  </span>
+                  <div className="pt-1.5">
+                    <p className="m-0 font-display text-[20px] font-bold text-primary">{stap.t}</p>
+                    <p className="m-0 mt-1 max-w-[46ch] text-[17px] leading-[1.5] text-[#2A3A54]">{stap.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
+
+          {/* Voorbeeld van een aanvraag op een telefoon (Koen, 21 nov). Getekend in HTML, geen foto.
+              Het is een voorbeeld en staat er zo bij: geen naam, geen nummer, geen echte klant. */}
+          <figure className="m-0 mx-auto w-full max-w-[340px]">
+            <div className="rounded-[44px] p-3 shadow-[0_24px_60px_rgba(10,22,40,0.22)]" style={{ background: '#0A1628' }}>
+              <div className="overflow-hidden rounded-[34px] bg-white">
+                <div className="flex items-center justify-between px-6 pb-2 pt-4 font-display text-[13px] font-bold text-primary">
+                  <span>14:07</span>
+                  <span aria-hidden className="h-[18px] w-[72px] rounded-full" style={{ background: '#0A1628' }} />
+                  <span aria-hidden className="flex items-center gap-1">
+                    <span className="h-2 w-2 rounded-full" style={{ background: '#0A1628' }} />
+                    <span className="h-2 w-4 rounded-sm" style={{ background: '#0A1628' }} />
+                  </span>
+                </div>
+                <div className="px-4 pb-6 pt-6" style={{ background: '#EEF4FF' }}>
+                  <div className="rounded-2xl bg-white p-4 shadow-[0_6px_18px_rgba(10,22,40,0.10)]">
+                    <div className="flex items-center justify-between">
+                      <span className="font-display text-[13px] font-bold uppercase tracking-[0.08em] text-accent">Nieuwe aanvraag</span>
+                      <span className="text-[13px] text-[#5B6B85]">nu</span>
+                    </div>
+                    <p className="m-0 mt-2 font-display text-[21px] font-extrabold leading-[1.2] text-primary">
+                      {vak?.enkelvoud === 'installateur' ? 'Cv-ketel valt uit in Breda.' : 'Dak lekt in Breda.'}
+                    </p>
+                    <p className="m-0 mt-1 text-[16px] leading-[1.45] text-[#2A3A54]">Klant wil deze week contact.</p>
+                    <dl className="m-0 mt-4 space-y-1.5 border-t border-border pt-3 text-[14px] text-[#2A3A54]">
+                      <div className="flex justify-between gap-3"><dt>Via</dt><dd className="m-0 font-bold text-primary">Google-advertentie</dd></div>
+                      <div className="flex justify-between gap-3"><dt>Hoe</dt><dd className="m-0 font-bold text-primary">Formulier op je site</dd></div>
+                    </dl>
+                    <div className="mt-4 rounded-xl py-3 text-center font-display text-[16px] font-bold text-white" style={{ background: '#3D8EFF' }}>
+                      Bel terug
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption className="mt-4 text-center text-[14px] text-[#5B6B85]">Voorbeeld van een aanvraag zoals jij hem krijgt.</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -424,14 +480,14 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Bel of app ons.
           </h2>
-          <a href={TELEFOON.tel} data-cta="ps5_actie_onder_bel" className="mt-6 block font-display font-extrabold text-primary" style={{ fontSize: 'clamp(36px, 6vw, 60px)', letterSpacing: '-0.02em', lineHeight: 1 }}>
+          <a href={TELEFOON.tel} data-vak={vakSleutel} data-cta="ps5_actie_onder_bel" className="mt-6 block font-display font-extrabold text-primary" style={{ fontSize: 'clamp(36px, 6vw, 60px)', letterSpacing: '-0.02em', lineHeight: 1 }}>
             {TELEFOON.weergave}
           </a>
           <p className={`m-0 mt-4 max-w-[680px] ${tekst}`}>
             We zeggen meteen hoeveel plekken er nog zijn.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href={TELEFOON.whatsapp} data-cta="ps5_actie_onder_whatsapp" className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white" style={{ background: '#0A1628' }}>App ons</a>
+            <a href={appLink} data-vak={vakSleutel} data-cta="ps5_actie_onder_whatsapp" className="inline-flex items-center rounded-lg px-7 py-3.5 font-display text-[16px] font-bold text-white" style={{ background: '#0A1628' }}>App ons</a>
             <Knop cta="ps5_actie_gesprek_knop" />
           </div>
           <h3 className="m-0 mt-14 font-display text-[18px] font-bold text-primary">Liever dat wij je bellen?</h3>
@@ -453,9 +509,11 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
         </div>
       </section>
 
+      {/* Op telefoons alleen het bolletje van de vraagbot: het label viel over de tekst en bellen en appen staan al in de balk. */}
+      <style>{`@media (max-width: 639px) { .vraagbot-label { display: none; } }`}</style>
       <div className="fixed inset-x-0 bottom-0 z-40 flex gap-2 p-3 sm:hidden" style={{ background: '#0A1628' }}>
-        <a href={TELEFOON.tel} data-cta="ps5_actie_sticky_bel" className="flex-1 rounded-lg py-3 text-center font-display text-[16px] font-bold text-white" style={{ background: '#3D8EFF' }}>Bel {TELEFOON.weergave}</a>
-        <a href={TELEFOON.whatsapp} data-cta="ps5_actie_sticky_whatsapp" className="flex-1 rounded-lg bg-white py-3 text-center font-display text-[16px] font-bold" style={{ color: '#0A1628' }}>App ons</a>
+        <a href={TELEFOON.tel} data-vak={vakSleutel} data-cta="ps5_actie_sticky_bel" className="flex-1 rounded-lg py-3 text-center font-display text-[16px] font-bold text-white" style={{ background: '#3D8EFF' }}>Bel {TELEFOON.weergave}</a>
+        <a href={appLink} data-vak={vakSleutel} data-cta="ps5_actie_sticky_whatsapp" className="flex-1 rounded-lg bg-white py-3 text-center font-display text-[16px] font-bold" style={{ color: '#0A1628' }}>App ons</a>
       </div>
 
       {/* Geen FAQPage-schema: de pagina staat op noindex. */}

@@ -223,7 +223,8 @@ export default function Vraagbot() {
           className="fixed bottom-24 right-4 z-50 flex items-center gap-2 rounded-full border border-[#d6dde8] bg-white px-4 py-3 text-[14px] font-medium text-[#1f2933] shadow-[0_8px_24px_rgba(15,23,42,0.18)] transition hover:border-[#3c8eff] lg:bottom-6 lg:right-6"
         >
           <MessageCircle className="h-4 w-4 text-[#3c8eff]" aria-hidden />
-          {t.open}
+          {/* Een pagina met een eigen belbalk onderaan kan dit label op telefoons verbergen (ps5-actie). */}
+          <span className="vraagbot-label">{t.open}</span>
         </button>
       )}
       {open && (
