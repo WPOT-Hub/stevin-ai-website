@@ -76,7 +76,7 @@ const ALGEMEEN = {
 const URL = 'https://stevin.ai/ps5-actie'
 const TITEL = 'Een PS5 met GTA VI cadeau als je nu klant wordt bij Stevin.AI'
 const OMSCHRIJVING =
-  'De eerste vijf nieuwe klanten per vak tot en met 31 december 2026 die starten met een jaarcontract en een volledig opstarttraject kiezen zelf een cadeau binnen een vast budget van Stevin.AI, bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI. De voorwaarden staan op deze pagina.'
+  'De eerste vijf nieuwe klanten per vak die starten met een jaarcontract en een volledig opstarttraject kiezen zelf een cadeau binnen een vast budget van Stevin.AI, bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI. De voorwaarden staan op deze pagina.'
 
 export const metadata: Metadata = {
   title: TITEL,
@@ -262,7 +262,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
             </ol>
             <p className="m-0 mt-4 max-w-[560px] text-[15px] font-semibold leading-[1.5] text-white">
               De eerste vijf nieuwe {vak ? vak.meervoud : 'klanten per vak'} met een jaarcontract en een volledig opstarttraject kiezen
-              een PS5 met GTA VI als welkomstcadeau. Tot en met 31 december.
+              een PS5 met GTA VI als welkomstcadeau.
             </p>
           </div>
           <figure className="relative m-0 mx-auto w-full max-w-[560px]">
@@ -284,7 +284,8 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
           </figure>
         </div>
         <p className="relative m-0 mx-auto mt-10 max-w-[1152px] text-[14px] text-white/90">
-          PS5 bij jaarcontract. GTA6 via PlayStation Store-tegoed. T/m 31 december 2026.
+          PS5 bij jaarcontract. GTA VI via PlayStation Store-tegoed.{' '}
+          <a href="#voorwaarden" className="underline underline-offset-4">Bekijk de voorwaarden</a>.
         </p>
       </section>
 
