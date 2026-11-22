@@ -14,9 +14,12 @@ type Props = {
 // W-861: elk vak krijgt in de advertentie een eigen link (?vak=dakdekker of ?vak=installateur).
 // Alleen waarden uit deze lijst tellen; al het andere wordt genegeerd, zodat niemand
 // via de link eigen tekst op de pagina kan zetten.
-type Vak = { enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string; pand: string; soort: string; wil: string }
+type Vak = { bezet: number; enkelvoud: string; meervoud: string; kop: string; werk: string; bezig: string; bedrijf: string; pand: string; soort: string; wil: string }
+// bezet: aantal plekken dat in dit vak al vergeven is. Bij elke nieuwe klant in een vak
+// dit getal ophogen en de advertentie van dat vak wisselen (meta-advertenties/per-aantal-bezet).
 const VAKKEN: Record<string, Vak> = {
   dakdekker: {
+    bezet: 1,
     enkelvoud: 'dakdekker',
     meervoud: 'dakdekkers',
     kop: 'Wij zoeken 5 dakdekkers.',
@@ -28,6 +31,7 @@ const VAKKEN: Record<string, Vak> = {
     pand: 'dak',
   },
   installateur: {
+    bezet: 1,
     enkelvoud: 'installateur',
     meervoud: 'installateurs',
     kop: 'Wij zoeken 5 installateurs.',
@@ -242,9 +246,9 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                   className="relative flex aspect-[1.3/1] flex-1 items-center justify-center rounded-xl font-display text-[20px] font-extrabold sm:text-[26px]"
                   style={{ border: '3px dashed rgba(255,255,255,.85)', background: 'rgba(255,255,255,.1)' }}
                 >
-                  {n === 1 && vak ? (
+                  {vak && n <= vak.bezet ? (
                     <>
-                      <span className="sr-only">Plek 1 is bezet</span>
+                      <span className="sr-only">Plek {n} is bezet</span>
                       <Image
                         src="/api/ps5-beeld/ps5-haal.webp"
                         unoptimized
