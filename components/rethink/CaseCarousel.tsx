@@ -126,7 +126,7 @@ export default function CaseCarousel() {
       </div>
 
       <div
-        className="relative mx-auto mt-12 max-w-[1000px] touch-pan-y outline-none"
+        className="relative mx-auto mt-12 max-w-[1240px] touch-pan-y outline-none"
         aria-roledescription="carrousel"
         tabIndex={0}
         onKeyDown={(e) => {
@@ -161,12 +161,12 @@ export default function CaseCarousel() {
                   opacity: a > 1 ? 0 : 1,
                   pointerEvents: a > 1 ? 'none' : 'auto',
                 }}
-                className={`flex w-[min(560px,84vw)] flex-col gap-5 rounded-[32px] bg-[#F3F5F9] p-2.5 shadow-[0_24px_48px_-24px_rgba(10,22,40,0.28)] ring-1 ring-primary/5 transition-[transform,opacity] duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                className={`flex w-[min(560px,84vw)] flex-col gap-5 rounded-[32px] lg:grid lg:w-[min(1000px,84vw)] lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-6 bg-[#F3F5F9] p-2.5 shadow-[0_24px_48px_-24px_rgba(10,22,40,0.28)] ring-1 ring-primary/5 transition-[transform,opacity] duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   voor ? '' : 'cursor-pointer select-none'
                 }`}
               >
                 {k.beeld}
-                <div className={`flex flex-col gap-4 px-4 pb-4 pt-1 ${voor ? '' : 'pointer-events-none'}`}>
+                <div className={`flex flex-col gap-4 px-4 pb-4 pt-1 lg:px-6 lg:py-6 ${voor ? '' : 'pointer-events-none'}`}>
                   <p className="m-0 font-display text-[13px] font-bold uppercase tracking-[0.14em] text-primary">{k.klant}</p>
                   <h3 className="m-0 font-display text-[24px] font-bold text-primary md:text-[28px]" style={{ letterSpacing: '-0.02em', lineHeight: '1.15' }}>
                     {k.kop}
