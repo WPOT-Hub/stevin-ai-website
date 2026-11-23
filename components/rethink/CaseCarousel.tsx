@@ -1,14 +1,15 @@
 'use client'
 
 import Image from 'next/image'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import type { ReactNode } from 'react'
 import { Link } from '@/i18n/navigation'
 
-// Carrousel met de klantcases (W-860). Eigen opbouw, geen bibliotheek. Alleen
+// Kaartenstapel met de klantcases (W-860). Eigen opbouw, geen bibliotheek. Alleen
 // echte beelden en cijfers uit de klantdossiers, geen bedragen, geen citaten
-// zonder akkoord. Kaarten staan in een scrollcontainer met snap, de buren
-// kijken om de hoek mee. Pijlen en stippen sturen dezelfde scroll aan.
+// zonder akkoord. De actieve kaart ligt voorop, de rest ligt er verkleind en
+// iets lager achter. Pijlen, stippen en een klik op een kaart erachter
+// bladeren door de stapel.
 
 type Kaart = {
   slug: string
@@ -28,13 +29,13 @@ const KAARTEN: Kaart[] = [
     kop: 'Op zijn site stonden gokpagina’s. Hans wist van niets.',
     tekst: 'In de eerste week haalden we ze weg, bouwden de meting opnieuw op en zetten echte aanvragen terug die in de spambak waren beland.',
     beeld: (
-      <div className={FOTO}>
+      <div className="relative aspect-[8/5] w-full self-center overflow-hidden rounded-2xl border border-border bg-white">
         <Image
           src="/images/cases/hans-gokpagina-2026-04-17.jpg"
           alt="Een casinopagina op hansschepers.nl uit het Internet Archive"
           fill
           sizes="(min-width: 768px) 560px, 88vw"
-          className="object-cover object-top"
+          className="object-contain"
         />
       </div>
     ),
@@ -98,42 +99,13 @@ const KAARTEN: Kaart[] = [
 ]
 
 export default function CaseCarousel() {
-  const lijst = useRef<HTMLDivElement>(null)
   const [actief, setActief] = useState(0)
-
-  const naar = useCallback((i: number) => {
-    const el = lijst.current
-    const kaart = el?.children[i] as HTMLElement | undefined
-    if (!el || !kaart) return
-    el.scrollTo({ left: kaart.offsetLeft - (el.clientWidth - kaart.clientWidth) / 2, behavior: 'smooth' })
-  }, [])
-
-  useEffect(() => {
-    const el = lijst.current
-    if (!el) return
-    const bijwerken = () => {
-      const midden = el.scrollLeft + el.clientWidth / 2
-      let dichtst = 0
-      let afstand = Infinity
-      Array.from(el.children).forEach((k, i) => {
-        const c = k as HTMLElement
-        const d = Math.abs(c.offsetLeft + c.clientWidth / 2 - midden)
-        if (d < afstand) {
-          afstand = d
-          dichtst = i
-        }
-      })
-      setActief(dichtst)
-    }
-    el.addEventListener('scroll', bijwerken, { passive: true })
-    return () => el.removeEventListener('scroll', bijwerken)
-  }, [])
-
-  const stap = (r: -1 | 1) => naar(Math.min(KAARTEN.length - 1, Math.max(0, actief + r)))
+  const n = KAARTEN.length
+  const naar = (i: number) => setActief(((i % n) + n) % n)
 
   return (
-    <section className="bg-white px-0 py-20 sm:py-24" aria-label="Klantcases">
-      <div className="mx-auto max-w-[1152px] px-6 text-center">
+    <section className="bg-white px-6 py-20 sm:py-24" aria-label="Klantcases">
+      <div className="mx-auto max-w-[1152px] text-center">
         <p className="m-0 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent">Klantcases</p>
         <h2
           className="m-0 mt-4 text-balance font-display font-extrabold text-primary"
@@ -143,69 +115,76 @@ export default function CaseCarousel() {
         </h2>
       </div>
 
-      <div className="relative mt-12">
-        <div
-          ref={lijst}
-          className="flex snap-x snap-mandatory gap-6 overflow-x-auto px-[6vw] pb-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          tabIndex={0}
-          aria-roledescription="carrousel"
-        >
-          {KAARTEN.map((k, i) => (
-            <article
-              key={k.slug}
-              aria-label={`${i + 1} van ${KAARTEN.length}: ${k.klant}`}
-              className={`grid w-[88vw] max-w-[1080px] shrink-0 snap-center gap-6 rounded-[28px] border border-border bg-[#F7F8FA] p-4 shadow-[0_10px_40px_rgba(10,22,40,0.08)] transition-opacity duration-300 md:grid-cols-[1.05fr_1fr] md:p-5 ${
-                i === actief ? 'opacity-100' : 'opacity-50'
-              }`}
-            >
-              {k.beeld}
-              <div className="flex flex-col justify-center gap-5 px-2 py-3 md:px-4">
-                <p className="m-0 font-display text-[13px] font-bold uppercase tracking-[0.14em] text-primary">{k.klant}</p>
-                <h3 className="m-0 font-display text-[26px] font-bold text-primary md:text-[30px]" style={{ letterSpacing: '-0.02em', lineHeight: '1.15' }}>
-                  {k.kop}
-                </h3>
-                <p className="m-0 text-[16px] leading-[1.55] text-[#2A3A54]">{k.tekst}</p>
-                <Link
-                  href={`/case-studies/${k.slug}`}
-                  data-cta={`case_carrousel_${k.slug}`}
-                  className="inline-flex w-fit items-center gap-2 border-b-2 border-primary font-display text-[16px] font-semibold text-primary"
-                >
-                  Lees de case <span aria-hidden="true">{'→'}</span>
-                </Link>
-                <dl className="m-0 mt-2 grid grid-cols-3 gap-3">
-                  {k.cijfers.map((c) => (
-                    <div key={c.label}>
-                      <dt className="font-display text-[26px] font-extrabold text-primary" style={{ letterSpacing: '-0.02em', lineHeight: '1.1' }}>{c.getal}</dt>
-                      <dd className="m-0 mt-1 text-[13px] leading-[1.35] text-[#5B6B85]">{c.label}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </article>
-          ))}
+      <div className="relative mx-auto mt-12 max-w-[1080px] pb-28" aria-roledescription="carrousel">
+        <div className="grid">
+          {KAARTEN.map((k, i) => {
+            const d = (i - actief + n) % n
+            const voor = d === 0
+            return (
+              <article
+                key={k.slug}
+                aria-label={`${i + 1} van ${n}: ${k.klant}`}
+                aria-hidden={!voor}
+                onClick={voor ? undefined : () => naar(i)}
+                style={{
+                  gridArea: '1 / 1',
+                  zIndex: n - d,
+                  transform: `translateY(${d * 38}px) scale(${1 - d * 0.05})`,
+                  opacity: d > 2 ? 0 : 1 - d * 0.12,
+                  transformOrigin: 'top center',
+                }}
+                className={`grid gap-6 rounded-[28px] border border-border bg-[#F7F8FA] p-4 shadow-[0_14px_44px_rgba(10,22,40,0.10)] transition-all duration-500 ease-out md:grid-cols-[1.05fr_1fr] md:p-5 ${
+                  voor ? '' : 'pointer-events-auto cursor-pointer select-none'
+                }`}
+              >
+                <div className={voor ? '' : 'invisible'}>{k.beeld}</div>
+                <div className={`flex flex-col justify-center gap-5 px-2 py-3 md:px-4 ${voor ? '' : 'invisible'}`}>
+                  <p className="m-0 font-display text-[13px] font-bold uppercase tracking-[0.14em] text-primary">{k.klant}</p>
+                  <h3 className="m-0 font-display text-[26px] font-bold text-primary md:text-[30px]" style={{ letterSpacing: '-0.02em', lineHeight: '1.15' }}>
+                    {k.kop}
+                  </h3>
+                  <p className="m-0 text-[16px] leading-[1.55] text-[#2A3A54]">{k.tekst}</p>
+                  <Link
+                    href={`/case-studies/${k.slug}`}
+                    tabIndex={voor ? 0 : -1}
+                    data-cta={`case_carrousel_${k.slug}`}
+                    className="inline-flex w-fit items-center gap-2 border-b-2 border-primary font-display text-[16px] font-semibold text-primary"
+                  >
+                    Lees de case <span aria-hidden="true">{'\u2192'}</span>
+                  </Link>
+                  <dl className="m-0 mt-2 grid grid-cols-3 gap-3">
+                    {k.cijfers.map((c) => (
+                      <div key={c.label}>
+                        <dt className="font-display text-[26px] font-extrabold text-primary" style={{ letterSpacing: '-0.02em', lineHeight: '1.1' }}>{c.getal}</dt>
+                        <dd className="m-0 mt-1 text-[13px] leading-[1.35] text-[#5B6B85]">{c.label}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              </article>
+            )
+          })}
         </div>
 
         <button
           type="button"
-          onClick={() => stap(-1)}
-          disabled={actief === 0}
+          onClick={() => naar(actief - 1)}
           aria-label="Vorige case"
-          className="absolute left-3 top-1/2 hidden h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-[22px] text-white shadow-lg transition-opacity disabled:opacity-30 md:flex"
+          className="absolute left-0 top-[42%] z-10 hidden h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-[22px] text-white shadow-lg md:flex"
         >
-          {'‹'}
+          {'\u2039'}
         </button>
         <button
           type="button"
-          onClick={() => stap(1)}
-          disabled={actief === KAARTEN.length - 1}
+          onClick={() => naar(actief + 1)}
           aria-label="Volgende case"
-          className="absolute right-3 top-1/2 hidden h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-[22px] text-white shadow-lg transition-opacity disabled:opacity-30 md:flex"
+          className="absolute right-0 top-[42%] z-10 hidden h-14 w-14 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-[22px] text-white shadow-lg md:flex"
         >
-          {'›'}
+          {'\u203A'}
         </button>
       </div>
 
-      <div className="mt-2 flex items-center justify-center gap-2" role="tablist" aria-label="Kies een case">
+      <div className="-mt-8 flex items-center justify-center gap-2" role="tablist" aria-label="Kies een case">
         {KAARTEN.map((k, i) => (
           <button
             key={k.slug}
