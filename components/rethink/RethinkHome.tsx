@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/navigation'
 import KlantLogos from '@/components/KlantLogos'
+import CaseCarousel from './CaseCarousel'
 import VraagChat from './VraagChat'
 import HeroUniversum from './HeroUniversum'
 import ScrollStappen from './ScrollStappen'
@@ -120,6 +121,9 @@ export default function RethinkHome() {
       {/* Voor wie we al werken: hetzelfde blok als op de huidige homepage
           (Koen, 11 okt 01:17: "voor wie we al werken is helemaal weg"). */}
       <KlantLogos locale="nl" />
+
+      {/* Klantcases direct onder de logostrook (Koen, 23 nov 2026, W-860). */}
+      <CaseCarousel />
 
       {/* ── 2. WAT WE VERBINDEN ── */}
       <section className="relative overflow-hidden border-y border-border bg-surface" style={{ padding: '64px 24px' }} aria-labelledby="koppelingen">
