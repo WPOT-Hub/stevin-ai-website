@@ -83,7 +83,9 @@ const UITVOERING = {
     'Pas als jij ja zegt, passen we je budget aan.',
     'Na een week laten we zien wat het opleverde.',
   ],
-  doel: 'Zoveel aanvragen als je aankunt, zonder dat ze duurder worden.',
+  // 23 nov 2026 (W-867): de oude slotzin beloofde aantallen aanvragen, en dat
+  // maken we niet voor elke klant waar. Koens keuze, zoals in PR 253.
+  doel: 'Elke week zie je wat je budget opleverde.',
   naschrift: 'We verdienen niets aan je advertentiebudget.',
 }
 
