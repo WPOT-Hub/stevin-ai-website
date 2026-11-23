@@ -20,7 +20,7 @@ const CASE: Case = {
   beeld: (
     <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.4fr]">
       <div className="flex items-center justify-center rounded-xl border border-border bg-[#F7F8FA] px-8 py-14">
-        <Image src="/logos/klanten/ecomy.webp" alt="Het nieuwe logo van Ecomy Energie, een aan-knop" width={698} height={160} className="h-auto w-full max-w-[280px]" />
+        <Image src="/images/cases/ecomy-logo-kleur.webp" alt="Het nieuwe logo van Ecomy Energie in de originele kleuren: een groene aan-knop met geel streepje en de naam in donkergroen" width={1004} height={230} className="h-auto w-full max-w-[280px]" />
       </div>
       <p className="m-0 max-w-[520px] text-[18px] leading-[1.6] text-[#2A3A54]">
         Het nieuwe logo is een aan-knop. Je herkent hem op een bus, op een shirt en als icoontje in je browser.
