@@ -224,6 +224,13 @@ function PrivacyDutch() {
           meten. Wil je dat niet, mail dan naar koen@stevin.ai.
         </p>
         <p>
+          Kom je via een advertentie op onze actiepagina, dan melden wij dat bezoek aan Meta, ook als je
+          geen marketingcookies hebt gekozen. Daarbij gaan het kenmerk van de advertentieklik, je
+          browsertype en je IP-adres mee. Zonder advertentieklik melden wij een bezoek niet aan Meta.
+          Wij tellen elk bezoek aan die pagina zelf, zonder iets te bewaren waarmee je te herkennen
+          bent. Wil je dat niet, mail dan naar koen@stevin.ai.
+        </p>
+        <p>
           Je kunt via de cookie-instellingen kiezen tussen noodzakelijk, statistieken,
           marketing of alles accepteren. Wij verkopen geen persoonsgegevens.
         </p>
@@ -413,6 +420,13 @@ function PrivacyEnglish() {
           us within ten minutes. Your phone number, your name and what you say are not sent to
           Meta. We keep the call click for three hours at most. We do this based on our legitimate
           interest in measuring our ads. If you object, email koen@stevin.ai.
+        </p>
+        <p>
+          If you reach our campaign page through an ad, we report that visit to Meta, also when you
+          did not choose marketing cookies. This includes the identifier of the ad click, your
+          browser type and your IP address. We do not report a visit to Meta without an ad click.
+          We count every visit to that page ourselves, without storing anything that identifies you.
+          If you do not want this, email koen@stevin.ai.
         </p>
         <p>
           You can choose between necessary, statistics, marketing or accept all through
