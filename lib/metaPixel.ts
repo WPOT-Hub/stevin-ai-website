@@ -60,7 +60,13 @@ function laadScript(): void {
  */
 export function werkMetaPixelBij(): boolean {
   if (typeof window === 'undefined' || !META_PIXEL_ID) return false
-  const mag = hasMarketingConsent(getStoredConsent())
+  // Geblokkeerde opslag telt als geen toestemming, en mag nooit de melding aan de Hub tegenhouden.
+  let mag = false
+  try {
+    mag = hasMarketingConsent(getStoredConsent())
+  } catch {
+    mag = false
+  }
   if (mag && !geladen) {
     laadScript()
     window.fbq?.('init', META_PIXEL_ID)
