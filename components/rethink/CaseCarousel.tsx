@@ -112,6 +112,8 @@ export default function CaseCarousel() {
   const n = KAARTEN.length
   const naar = (i: number) => setActief(Math.min(n - 1, Math.max(0, i)))
   const start = useRef<number | null>(null)
+  // Na een swipe stuurt de browser nog een klik. Die mag de swipe niet ongedaan maken.
+  const geswipet = useRef(false)
 
   return (
     <section className="overflow-x-clip bg-white px-4 py-20 sm:py-24" aria-label="Klantcases">
@@ -135,12 +137,16 @@ export default function CaseCarousel() {
         }}
         onPointerDown={(e) => {
           start.current = e.clientX
+          geswipet.current = false
         }}
         onPointerUp={(e) => {
           if (start.current === null) return
           const dx = e.clientX - start.current
           start.current = null
-          if (Math.abs(dx) > 50) naar(actief + (dx < 0 ? 1 : -1))
+          if (Math.abs(dx) > 50) {
+            geswipet.current = true
+            naar(actief + (dx < 0 ? 1 : -1))
+          }
         }}
       >
         <div className="grid justify-items-center">
@@ -153,7 +159,17 @@ export default function CaseCarousel() {
                 key={k.slug}
                 aria-label={`${i + 1} van ${n}: ${k.klant}`}
                 aria-hidden={!voor}
-                onClick={voor ? undefined : () => naar(i)}
+                onClick={
+                  voor
+                    ? undefined
+                    : () => {
+                        if (geswipet.current) {
+                          geswipet.current = false
+                          return
+                        }
+                        naar(i)
+                      }
+                }
                 style={{
                   gridArea: '1 / 1',
                   zIndex: 100 - a * 10,
