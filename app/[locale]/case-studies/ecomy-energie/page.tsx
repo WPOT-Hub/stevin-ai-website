@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { setRequestLocale } from 'next-intl/server'
 import { localizedMetadata } from '@/lib/seo'
 import RethinkCase, { type Case } from '@/components/rethink/RethinkCase'
-import { BeeldKader, TelefoonMelding, Tijdlijn } from '@/components/rethink/CaseVisuals'
+import { BeeldKader, Insluiting, TelefoonMelding, Tijdlijn } from '@/components/rethink/CaseVisuals'
 
 // W-860. NIET LIVE ZETTEN ZONDER AKKOORD VAN MARCEL (ECOMY). Staat op noindex
 // en niet in de sitemap, zonder citaat tot Marcel akkoord geeft. Bron:
@@ -42,30 +42,29 @@ const CASE: Case = {
     { t: 'Elke aanvraag direct op zijn telefoon', d: 'Een bericht met naam en nummer, een knop om te appen en knoppen voor Gebeld, Afspraak gemaakt en Niet bereikt.' },
   ],
   aanpakBeeld: (
-    <div className="grid items-start gap-10 lg:grid-cols-[1.5fr_1fr]">
-      <BeeldKader
-        src="/images/cases/ecomy-check.webp"
-        alt="De check van Ecomy: een dak van bovenaf met de panelen erop, het aantal panelen dat past en de opbrengst per jaar"
-        breedte={1200}
-        hoogte={619}
-        donker
-        bijschrift="De check legt de panelen op elk dakvlak, hier bij een voorbeeldadres. Het rekent met de regels van Marcel zelf en geeft een indicatie, geen offerte."
+    <div className="grid gap-12">
+      <Insluiting
+        src="https://ecomy.nl/check/"
+        titel="De check van Ecomy: wat kan jouw huis opwekken?"
+        bijschrift="Dit is de echte check van ecomy.nl. Vul een adres in en je ziet je dak."
       />
-      <TelefoonMelding
-        kop="Nieuwe aanvraag"
-        regels={['Voorbeeld Klant', '06 12 34 56 78', 'Zonnepanelen en thuisbatterij']}
-        knoppen={['Stuur een appje', 'Gebeld', 'Afspraak gemaakt', 'Niet bereikt']}
-        donker
-        bijschrift="Zo ziet een aanvraag eruit op Marcels telefoon (voorbeeld)."
-      />
-      <a
-        href="https://ecomy.nl/check"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex w-fit items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-110 lg:col-span-2"
-      >
-        Probeer de check zelf
-      </a>
+      <div className="grid items-start gap-10 lg:grid-cols-[1.5fr_1fr]">
+        <BeeldKader
+          src="/images/cases/ecomy-check.webp"
+          alt="De check van Ecomy: een dak van bovenaf met de panelen erop, het aantal panelen dat past en de opbrengst per jaar"
+          breedte={1200}
+          hoogte={619}
+          donker
+          bijschrift="De uitkomst voor een voorbeeldadres: de panelen op elk dakvlak. Het rekent met de regels van Marcel zelf en geeft een indicatie, geen offerte."
+        />
+        <TelefoonMelding
+          kop="Nieuwe aanvraag"
+          regels={['Voorbeeld Klant', '06 12 34 56 78', 'Zonnepanelen en thuisbatterij']}
+          knoppen={['Stuur een appje', 'Gebeld', 'Afspraak gemaakt', 'Niet bereikt']}
+          donker
+          bijschrift="Zo ziet een aanvraag eruit op Marcels telefoon (voorbeeld)."
+        />
+      </div>
     </div>
   ),
   uitkomstKop: 'In drie weken van oud naar compleet.',
