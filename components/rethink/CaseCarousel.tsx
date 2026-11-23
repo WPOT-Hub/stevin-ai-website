@@ -81,7 +81,9 @@ const ALLE_KAARTEN: Kaart[] = [
     // Telefoon telt pas sinds 23 okt mee.
     actie: {
       kop: 'Eerst 23 aanvragen in zes maanden. Met Stevin 21 in de eerste maand.',
-      tekst: 'Hans stoffeert en repareert meubels. Wij zetten de meting recht en de advertenties op het werk dat hij het liefst doet.',
+      // Bureaufee gelijk aan het vorige bureau: bron Koen, 23 nov 18:06. Drie keer zoveel per
+      // advertentie-euro volgt uit de 68% lagere kosten per aanvraag (93,22 tegen 29,86).
+      tekst: 'Hans stoffeert en repareert meubels. Hij betaalt ons geen euro meer dan zijn vorige bureau, en krijgt per advertentie-euro drie keer zoveel aanvragen.',
       beeld: (
         <div className={`${FOTO} flex flex-col justify-center gap-6 p-8 text-white`}>
           <div>
