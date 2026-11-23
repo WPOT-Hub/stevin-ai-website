@@ -26,13 +26,9 @@ export default async function CaseStudiesPage({ params }: Props) {
   setRequestLocale(locale)
   const t = await getTranslations('case_studies')
 
-  // 17 aug 2026 leeggemaakt. Hier stond een naamloos e-commercebedrijf met
-  // "+42% meer leads en 8 uur per week bespaard", een cijfer dat niemand kan
-  // nakijken. Dat is precies de claim die je niet wilt maken als je verkoopt
-  // dat alles controleerbaar is en het bewijs buiten ons om te vinden is.
-  // De echte cijfers komen na de lancering van 1 september; vul dit dan met
-  // klanten die met naam genoemd mogen worden. De teksten cs1_* staan nog in
-  // messages/nl.json en en.json, zodat de opmaak meteen weer werkt.
+  // 17 aug 2026 leeggemaakt, omdat er een cijfer stond dat niemand kon nakijken.
+  // 23 nov 2026 (W-860) gevuld met drie echte klantcases: alleen aantallen en
+  // verhoudingen uit de klantdossiers, geen bedragen en geen citaten zonder akkoord.
   const caseStudies: Array<{
     slug: string
     industry: string
@@ -40,7 +36,32 @@ export default async function CaseStudiesPage({ params }: Props) {
     subtitle: string
     metric: string
     metricLabel: string
-  }> = []
+  }> = [
+    {
+      slug: 'hans-schepers',
+      industry: 'Stoffering',
+      title: 'Op zijn site stonden gokpagina\u2019s. Hans wist van niets.',
+      subtitle: 'Weggehaald, de meting opnieuw opgebouwd en echte aanvragen teruggezet.',
+      metric: '137+',
+      metricLabel: 'gokpagina\u2019s weggehaald',
+    },
+    {
+      slug: 'ecomy-energie',
+      industry: 'Energie',
+      title: 'Nieuw logo, nieuwe site en een check die je dak tekent.',
+      subtitle: 'Een installateur in Wijchen kreeg in een paar weken het hele merk opnieuw.',
+      metric: '342',
+      metricLabel: 'gemeenten met een eigen leningregeling',
+    },
+    {
+      slug: 'sterker-witgoed',
+      industry: 'Webwinkel in witgoed',
+      title: 'Elke handeling met bewijs vastgelegd.',
+      subtitle: 'Productfeed hersteld en een begeleide livegang van de nieuwe site.',
+      metric: '667',
+      metricLabel: 'handelingen in acht weken',
+    },
+  ]
 
   return (
     <main>
