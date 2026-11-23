@@ -141,3 +141,26 @@ export function TelefoonMelding({ kop, regels, knoppen, bijschrift, donker = fal
     </figure>
   )
 }
+
+/** De echte pagina van de klant, ingesloten in een browserkader. Met een link voor als insluiten niet lukt. */
+export function Insluiting({ src, titel, hoogte = 760, bijschrift }: { src: string; titel: string; hoogte?: number; bijschrift: string }) {
+  return (
+    <figure className="m-0">
+      <div className="overflow-hidden rounded-xl border border-border bg-white shadow-[0_8px_30px_rgba(10,22,40,0.08)]">
+        <div className="flex items-center gap-2 border-b border-border bg-[#F3F5F9] px-4 py-2.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#D6DDE8]" aria-hidden="true" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#D6DDE8]" aria-hidden="true" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#D6DDE8]" aria-hidden="true" />
+          <span className="ml-3 truncate text-[12px] text-[#5B6B85]">{src.replace(/^https?:\/\//, '')}</span>
+        </div>
+        <iframe src={src} title={titel} loading="lazy" className="block w-full border-0" style={{ height: hoogte }} referrerPolicy="no-referrer" />
+      </div>
+      <figcaption className="mt-3 text-[14px] leading-[1.5] text-white/70">
+        {bijschrift}{' '}
+        <a href={src} target="_blank" rel="noopener noreferrer" className="font-semibold text-white underline">
+          Opent hij niet? Open de check in een nieuw tabblad.
+        </a>
+      </figcaption>
+    </figure>
+  )
+}
