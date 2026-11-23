@@ -58,6 +58,14 @@ const CASE: Case = {
         donker
         bijschrift="Zo ziet een aanvraag eruit op Marcels telefoon (voorbeeld)."
       />
+      <a
+        href="https://ecomy.nl/check"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex w-fit items-center rounded-lg bg-accent px-7 py-3.5 font-display text-[15px] font-bold text-white transition-[filter] hover:brightness-110 lg:col-span-2"
+      >
+        Probeer de check zelf
+      </a>
     </div>
   ),
   uitkomstKop: 'In drie weken van oud naar compleet.',
