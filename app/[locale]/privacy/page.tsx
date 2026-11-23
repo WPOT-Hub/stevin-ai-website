@@ -224,6 +224,15 @@ function PrivacyDutch() {
           meten. Wil je dat niet, mail dan naar koen@stevin.ai.
         </p>
         <p>
+          Vul je een formulier in om contact met ons op te nemen, dan melden wij die
+          aanvraag aan Meta, ook als je geen marketingcookies hebt gekozen. Zo zien wij welke
+          advertentie tot een aanvraag leidde. Je e-mailadres, telefoonnummer en naam gaan
+          daarbij alleen gehasht naar Meta, samen met het kenmerk van de advertentieklik, je
+          browsertype en je IP-adres. Wat je in het bericht schrijft gaat niet naar Meta.
+          Wij doen dit op basis van ons gerechtvaardigd belang om onze advertenties te
+          meten. Wil je dat niet, mail dan naar koen@stevin.ai.
+        </p>
+        <p>
           Je kunt via de cookie-instellingen kiezen tussen noodzakelijk, statistieken,
           marketing of alles accepteren. Wij verkopen geen persoonsgegevens.
         </p>
@@ -412,6 +421,14 @@ function PrivacyEnglish() {
           WhatsApp or email click to Meta right away. We report a call click only if a call reaches
           us within ten minutes. Your phone number, your name and what you say are not sent to
           Meta. We keep the call click for three hours at most. We do this based on our legitimate
+          interest in measuring our ads. If you object, email koen@stevin.ai.
+        </p>
+        <p>
+          If you fill in a form to contact us, we report that request to Meta, also when you
+          did not choose marketing cookies. This shows us which ad led to a request. Your
+          email address, phone number and name are sent to Meta in hashed form only, together
+          with the identifier of the ad click, your browser type and your IP address. What you
+          write in your message is not sent to Meta. We do this based on our legitimate
           interest in measuring our ads. If you object, email koen@stevin.ai.
         </p>
         <p>
