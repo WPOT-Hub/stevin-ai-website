@@ -21,8 +21,17 @@ export function MetaPixel() {
   const gemeld = useRef<string | null>(null)
   const bezoekGemeld = useRef<string | null>(null)
   const eventId = useRef<{ pad: string; id: string } | null>(null)
+  const laatstePad = useRef<string | null>(null)
 
   useEffect(() => {
+    // Een nieuwe navigatie is een nieuw bezoek, ook als je terugkomt op een pagina die je eerder meldde
+    // (terug via de browser of een link): zonder reset telt het tweede bezoek niet.
+    if (laatstePad.current !== pathname) {
+      laatstePad.current = pathname
+      bezoekGemeld.current = null
+      gemeld.current = null
+      eventId.current = null
+    }
     if (eventId.current?.pad !== pathname) eventId.current = { pad: pathname, id: generateEventId() }
     const id = eventId.current.id
     // Eerst het bezoek zelf: onafhankelijk van de cookiekeuze en van of de pixel een ID heeft.
