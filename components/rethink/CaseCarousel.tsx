@@ -105,9 +105,20 @@ const ALLE_KAARTEN: Kaart[] = [
   },
 ]
 
-const KAARTEN = ALLE_KAARTEN.filter((k) => k.openbaar)
+// De homepage toont alleen kaarten met openbaar: true. De PS5-actiepagina toont
+// ze alle drie (Koen, 23 nov: Sterker mag daar wel bij); de casepagina van
+// Sterker zelf blijft noindex tot de klant akkoord geeft.
+type Props = {
+  // true: ook kaarten met openbaar: false (alleen de actiepagina).
+  alles?: boolean
+  // Voorvoegsel voor data-cta, zodat klikken per pagina te scheiden zijn.
+  bron?: string
+  // false: geen knop naar het casesoverzicht (een actiepagina stuurt niet weg).
+  metOverzicht?: boolean
+}
 
-export default function CaseCarousel() {
+export default function CaseCarousel({ alles = false, bron = 'case_carrousel', metOverzicht = true }: Props = {}) {
+  const KAARTEN = alles ? ALLE_KAARTEN : ALLE_KAARTEN.filter((k) => k.openbaar)
   const [actief, setActief] = useState(0)
   const n = KAARTEN.length
   const naar = (i: number) => setActief(Math.min(n - 1, Math.max(0, i)))
@@ -199,7 +210,7 @@ export default function CaseCarousel() {
                   <Link
                     href={`/case-studies/${k.slug}`}
                     tabIndex={voor ? 0 : -1}
-                    data-cta={`case_carrousel_${k.slug}`}
+                    data-cta={`${bron}_${k.slug}`}
                     className="inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 font-display text-[15px] font-semibold text-white transition-[filter] hover:brightness-125"
                   >
                     Lees de case <span aria-hidden="true">{'\u2192'}</span>
@@ -244,15 +255,17 @@ export default function CaseCarousel() {
         ))}
       </div>
 
+      {metOverzicht && (
       <div className="mt-10 text-center">
         <Link
           href="/case-studies"
-          data-cta="case_carrousel_alle"
+          data-cta={`${bron}_alle`}
           className="inline-flex items-center rounded-full border border-primary px-8 py-4 font-display text-[16px] font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
         >
           Bekijk alle cases
         </Link>
       </div>
+      )}
     </section>
   )
 }

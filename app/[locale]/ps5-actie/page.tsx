@@ -7,6 +7,7 @@ import { BarChart3, Megaphone, Phone, Smartphone } from 'lucide-react'
 import { TELEFOON } from '@/lib/telefoon'
 import { h2Stijl } from '@/components/rethink/RethinkBlokken'
 import Citaten from '@/components/ps5/Citaten'
+import CaseCarousel from '@/components/rethink/CaseCarousel'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -264,6 +265,10 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
           </ul>
         </div>
       </section>
+
+      {/* Koen, 23 nov: de casepagina's ook op de actiepagina, Sterker mag hier wel bij.
+          Dezelfde kaartstapel als op de homepage, zonder knop naar het overzicht. */}
+      <CaseCarousel alles bron="ps5_case" metOverzicht={false} />
 
       {/* Gesprek en formulier */}
       <section id="gesprek" className="scroll-mt-24 px-6" style={{ paddingTop: 72, paddingBottom: 48 }}>
