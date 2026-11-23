@@ -116,9 +116,11 @@ type Props = {
   bron?: string
   // false: geen knop naar het casesoverzicht (een actiepagina stuurt niet weg).
   metOverzicht?: boolean
+  // false: geen knop "Lees de case" (Koen, 23 nov: op de actiepagina niet doorklikken).
+  metLink?: boolean
 }
 
-export default function CaseCarousel({ alles = false, bron = 'case_carrousel', metOverzicht = true }: Props = {}) {
+export default function CaseCarousel({ alles = false, bron = 'case_carrousel', metOverzicht = true, metLink = true }: Props = {}) {
   const KAARTEN = alles ? ALLE_KAARTEN : ALLE_KAARTEN.filter((k) => k.openbaar)
   const [actief, setActief] = useState(0)
   const n = KAARTEN.length
@@ -208,6 +210,7 @@ export default function CaseCarousel({ alles = false, bron = 'case_carrousel', m
                       </div>
                     ))}
                   </dl>
+                  {metLink && (
                   <Link
                     href={`/case-studies/${k.slug}`}
                     tabIndex={voor ? 0 : -1}
@@ -216,6 +219,7 @@ export default function CaseCarousel({ alles = false, bron = 'case_carrousel', m
                   >
                     Lees de case <span aria-hidden="true">{'\u2192'}</span>
                   </Link>
+                  )}
                 </div>
               </article>
             )
