@@ -1,15 +1,17 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import { Link } from '@/i18n/navigation'
 
 // Kaartenstapel met de klantcases (W-860). Eigen opbouw, geen bibliotheek. Alleen
 // echte beelden en cijfers uit de klantdossiers, geen bedragen, geen citaten
-// zonder akkoord. De actieve kaart ligt voorop, de rest ligt er verkleind en
-// iets lager achter. Pijlen, stippen en een klik op een kaart erachter
-// bladeren door de stapel.
+// zonder akkoord. Alle kaarten liggen in dezelfde gridcel. De actieve staat
+// voorop op ware grootte, de buren liggen er aan beide kanten verkleind
+// (84%) en opzij geschoven achter, een stap verder is onzichtbaar.
+// Bladeren kan met pijlen, stippen, een klik op een buur, swipen en de
+// pijltjestoetsen.
 
 type Kaart = {
   slug: string
@@ -108,10 +110,11 @@ const KAARTEN = ALLE_KAARTEN.filter((k) => k.openbaar)
 export default function CaseCarousel() {
   const [actief, setActief] = useState(0)
   const n = KAARTEN.length
-  const naar = (i: number) => setActief(((i % n) + n) % n)
+  const naar = (i: number) => setActief(Math.min(n - 1, Math.max(0, i)))
+  const start = useRef<number | null>(null)
 
   return (
-    <section className="bg-white px-6 py-20 sm:py-24" aria-label="Klantcases">
+    <section className="overflow-x-clip bg-white px-4 py-20 sm:py-24" aria-label="Klantcases">
       <div className="mx-auto max-w-[1152px] text-center">
         <p className="m-0 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent">Klantcases</p>
         <h2
@@ -122,10 +125,28 @@ export default function CaseCarousel() {
         </h2>
       </div>
 
-      <div className="relative mx-auto mt-12 max-w-[1080px] pb-28" aria-roledescription="carrousel">
-        <div className="grid">
+      <div
+        className="relative mx-auto mt-12 max-w-[1000px] touch-pan-y outline-none"
+        aria-roledescription="carrousel"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'ArrowLeft') naar(actief - 1)
+          if (e.key === 'ArrowRight') naar(actief + 1)
+        }}
+        onPointerDown={(e) => {
+          start.current = e.clientX
+        }}
+        onPointerUp={(e) => {
+          if (start.current === null) return
+          const dx = e.clientX - start.current
+          start.current = null
+          if (Math.abs(dx) > 50) naar(actief + (dx < 0 ? 1 : -1))
+        }}
+      >
+        <div className="grid justify-items-center">
           {KAARTEN.map((k, i) => {
-            const d = (i - actief + n) % n
+            const d = i - actief
+            const a = Math.abs(d)
             const voor = d === 0
             return (
               <article
@@ -135,38 +156,38 @@ export default function CaseCarousel() {
                 onClick={voor ? undefined : () => naar(i)}
                 style={{
                   gridArea: '1 / 1',
-                  zIndex: n - d,
-                  transform: `translateY(${d * 38}px) scale(${1 - d * 0.05})`,
-                  opacity: d > 2 ? 0 : 1 - d * 0.12,
-                  transformOrigin: 'top center',
+                  zIndex: 100 - a * 10,
+                  transform: `translateX(${d * 22}%) scale(${1 - a * 0.16})`,
+                  opacity: a > 1 ? 0 : 1,
+                  pointerEvents: a > 1 ? 'none' : 'auto',
                 }}
-                className={`grid gap-6 rounded-[28px] border border-border bg-[#F7F8FA] p-4 shadow-[0_14px_44px_rgba(10,22,40,0.10)] transition-all duration-500 ease-out md:grid-cols-[1.05fr_1fr] md:p-5 ${
-                  voor ? '' : 'pointer-events-auto cursor-pointer select-none'
+                className={`flex w-[min(560px,84vw)] flex-col gap-5 rounded-[32px] bg-[#F3F5F9] p-2.5 shadow-[0_24px_48px_-24px_rgba(10,22,40,0.28)] ring-1 ring-primary/5 transition-[transform,opacity] duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  voor ? '' : 'cursor-pointer select-none'
                 }`}
               >
-                <div className={voor ? '' : 'invisible'}>{k.beeld}</div>
-                <div className={`flex flex-col justify-center gap-5 px-2 py-3 md:px-4 ${voor ? '' : 'invisible'}`}>
+                {k.beeld}
+                <div className={`flex flex-col gap-4 px-4 pb-4 pt-1 ${voor ? '' : 'pointer-events-none'}`}>
                   <p className="m-0 font-display text-[13px] font-bold uppercase tracking-[0.14em] text-primary">{k.klant}</p>
-                  <h3 className="m-0 font-display text-[26px] font-bold text-primary md:text-[30px]" style={{ letterSpacing: '-0.02em', lineHeight: '1.15' }}>
+                  <h3 className="m-0 font-display text-[24px] font-bold text-primary md:text-[28px]" style={{ letterSpacing: '-0.02em', lineHeight: '1.15' }}>
                     {k.kop}
                   </h3>
                   <p className="m-0 text-[16px] leading-[1.55] text-[#2A3A54]">{k.tekst}</p>
+                  <dl className="m-0 grid grid-cols-3 gap-2 border-t border-border pt-4 sm:gap-3">
+                    {k.cijfers.map((c) => (
+                      <div key={c.label}>
+                        <dt className="font-display text-[20px] font-extrabold text-primary sm:text-[24px]" style={{ letterSpacing: '-0.02em', lineHeight: '1.1' }}>{c.getal}</dt>
+                        <dd className="m-0 mt-1 break-words text-[11.5px] leading-[1.35] text-[#5B6B85] sm:text-[12.5px]">{c.label}</dd>
+                      </div>
+                    ))}
+                  </dl>
                   <Link
                     href={`/case-studies/${k.slug}`}
                     tabIndex={voor ? 0 : -1}
                     data-cta={`case_carrousel_${k.slug}`}
-                    className="inline-flex w-fit items-center gap-2 border-b-2 border-primary font-display text-[16px] font-semibold text-primary"
+                    className="inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 font-display text-[15px] font-semibold text-white transition-[filter] hover:brightness-125"
                   >
                     Lees de case <span aria-hidden="true">{'\u2192'}</span>
                   </Link>
-                  <dl className="m-0 mt-2 grid grid-cols-3 gap-3">
-                    {k.cijfers.map((c) => (
-                      <div key={c.label}>
-                        <dt className="font-display text-[26px] font-extrabold text-primary" style={{ letterSpacing: '-0.02em', lineHeight: '1.1' }}>{c.getal}</dt>
-                        <dd className="m-0 mt-1 text-[13px] leading-[1.35] text-[#5B6B85]">{c.label}</dd>
-                      </div>
-                    ))}
-                  </dl>
                 </div>
               </article>
             )
@@ -176,22 +197,24 @@ export default function CaseCarousel() {
         <button
           type="button"
           onClick={() => naar(actief - 1)}
+          disabled={actief === 0}
           aria-label="Vorige case"
-          className="absolute left-0 top-[42%] z-10 hidden h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-[22px] text-white shadow-lg md:flex"
+          className="absolute left-0 top-[38%] z-[110] flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[22px] text-primary shadow-lg ring-1 ring-primary/10 transition-opacity disabled:opacity-30 sm:h-14 sm:w-14"
         >
           {'\u2039'}
         </button>
         <button
           type="button"
           onClick={() => naar(actief + 1)}
+          disabled={actief === n - 1}
           aria-label="Volgende case"
-          className="absolute right-0 top-[42%] z-10 hidden h-14 w-14 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-[22px] text-white shadow-lg md:flex"
+          className="absolute right-0 top-[38%] z-[110] flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[22px] text-primary shadow-lg ring-1 ring-primary/10 transition-opacity disabled:opacity-30 sm:h-14 sm:w-14"
         >
           {'\u203A'}
         </button>
       </div>
 
-      <div className="-mt-8 flex items-center justify-center gap-2" role="tablist" aria-label="Kies een case">
+      <div className="mt-8 flex items-center justify-center gap-2" role="tablist" aria-label="Kies een case">
         {KAARTEN.map((k, i) => (
           <button
             key={k.slug}
@@ -209,7 +232,7 @@ export default function CaseCarousel() {
         <Link
           href="/case-studies"
           data-cta="case_carrousel_alle"
-          className="inline-flex items-center rounded-full bg-primary px-8 py-4 font-display text-[16px] font-semibold text-white transition-[filter] hover:brightness-125"
+          className="inline-flex items-center rounded-full border border-primary px-8 py-4 font-display text-[16px] font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
         >
           Bekijk alle cases
         </Link>
