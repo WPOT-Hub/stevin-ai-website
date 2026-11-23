@@ -212,7 +212,13 @@ function leesMetaCookie(naam: '_fbc' | '_fbp'): string | undefined {
 export function getLeadContext(extra: Record<string, unknown> = {}): Record<string, unknown> {
   if (typeof window === 'undefined') return extra
   const ctx = readContext()
-  const marketing = hasMarketingConsent(getStoredConsent())
+  // Geblokkeerde opslag (privacy-instelling) mag de aanvraag nooit tegenhouden: dan geen toestemming.
+  let marketing = false
+  try {
+    marketing = hasMarketingConsent(getStoredConsent())
+  } catch {
+    marketing = false
+  }
   const fbc = marketing ? leesMetaCookie('_fbc') : undefined
   const fbp = marketing ? leesMetaCookie('_fbp') : undefined
   return {
