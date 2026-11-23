@@ -26,30 +26,8 @@ type Kaart = {
 
 const FOTO = 'relative min-h-[240px] overflow-hidden rounded-2xl bg-primary md:min-h-[320px]'
 
+// Ecomy voorop (Koen, 23 nov: "zet marcel op de voorgrond").
 const ALLE_KAARTEN: Kaart[] = [
-  {
-    slug: 'hans-schepers',
-    openbaar: true,
-    klant: 'Hans Schepers Stoffering',
-    kop: 'Op zijn site stonden gokpagina’s. Hans wist van niets.',
-    tekst: 'In de eerste week haalden we ze weg, bouwden de meting opnieuw op en zetten echte aanvragen terug die in de spambak waren beland.',
-    beeld: (
-      <div className="relative aspect-[8/5] w-full self-center overflow-hidden rounded-2xl border border-border bg-white">
-        <Image
-          src="/images/cases/hans-gokpagina-2026-04-17.jpg"
-          alt="Een casinopagina op hansschepers.nl uit het Internet Archive"
-          fill
-          sizes="(min-width: 768px) 560px, 88vw"
-          className="object-contain"
-        />
-      </div>
-    ),
-    cijfers: [
-      { getal: '137+', label: 'gokpagina’s weggehaald' },
-      { getal: '605', label: 'spaminzendingen doorgelezen' },
-      { getal: '2', label: 'echte aanvragen teruggezet' },
-    ],
-  },
   {
     slug: 'ecomy-energie',
     openbaar: true,
@@ -71,6 +49,29 @@ const ALLE_KAARTEN: Kaart[] = [
       { getal: '342', label: 'gemeenten met een eigen leningregeling' },
       { getal: '4', label: 'gemeentepagina’s live' },
       { getal: '1', label: 'telefoon voor elke aanvraag' },
+    ],
+  },
+  {
+    slug: 'hans-schepers',
+    openbaar: true,
+    klant: 'Hans Schepers Stoffering',
+    kop: 'Op zijn site stonden gokpagina’s. Hans wist van niets.',
+    tekst: 'In de eerste week haalden we ze weg, bouwden de meting opnieuw op en zetten echte aanvragen terug die in de spambak waren beland.',
+    beeld: (
+      <div className="relative aspect-[8/5] w-full self-center overflow-hidden rounded-2xl border border-border bg-white">
+        <Image
+          src="/images/cases/hans-gokpagina-2026-04-17.jpg"
+          alt="Een casinopagina op hansschepers.nl uit het Internet Archive"
+          fill
+          sizes="(min-width: 768px) 560px, 88vw"
+          className="object-contain"
+        />
+      </div>
+    ),
+    cijfers: [
+      { getal: '137+', label: 'gokpagina’s weggehaald' },
+      { getal: '605', label: 'spaminzendingen doorgelezen' },
+      { getal: '2', label: 'echte aanvragen teruggezet' },
     ],
   },
   {
