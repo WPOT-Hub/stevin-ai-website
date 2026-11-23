@@ -168,8 +168,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
           </figure>
           <div className="lg:col-start-1 lg:row-start-2">
             <p className="m-0 mt-3 max-w-[560px] font-display text-[24px] font-extrabold leading-[1.2] text-white sm:mt-6 sm:text-[30px]">
-              <span className="mr-2 inline-block rounded-lg px-2 py-0.5" style={{ background: '#FFD400', color: '#0A1628' }}>GRATIS</span>
-              PS5 incl. GTA VI.
+              Gratis PS5 incl. GTA VI.
               <span className="mt-1 block text-[17px] font-semibold text-white/90 sm:text-[19px]">Als je klant wordt. Voor de eerste 5 ondernemers.</span>
             </p>
             <div className="mt-5 sm:mt-8">
