@@ -60,7 +60,13 @@ function laadScript(): void {
  */
 export function werkMetaPixelBij(): boolean {
   if (typeof window === 'undefined' || !META_PIXEL_ID) return false
-  const mag = hasMarketingConsent(getStoredConsent())
+  // Geblokkeerde opslag telt als geen toestemming, en mag nooit de melding aan de Hub tegenhouden.
+  let mag = false
+  try {
+    mag = hasMarketingConsent(getStoredConsent())
+  } catch {
+    mag = false
+  }
   if (mag && !geladen) {
     laadScript()
     window.fbq?.('init', META_PIXEL_ID)
@@ -92,9 +98,9 @@ export function metaLead(eventId: string, formulier?: string): void {
  * de advertentie, en de advertentiesets zijn per vak. Een klik is geen gesprek:
  * het aantal gesprekken komt uit de telefoonlijn zelf.
  */
-export function metaContact(methode: 'phone' | 'whatsapp', vak?: string): void {
+export function metaContact(methode: 'phone' | 'whatsapp' | 'email', vak?: string, eventId?: string): void {
   if (!werkMetaPixelBij()) return
-  window.fbq?.('track', 'Contact', { content_category: methode, ...(vak ? { content_name: vak } : {}) })
+  window.fbq?.('track', 'Contact', { content_category: methode, ...(vak ? { content_name: vak } : {}) }, eventId ? { eventID: eventId } : undefined)
 }
 
 const HUB_BELKLIK = 'https://hub.stevin.ai/api/belklik'
@@ -110,20 +116,30 @@ function leesCookie(naam: string): string | undefined {
  * klik kort en meldt het gesprek dat erop volgt als Lead aan Meta. Een klik
  * zonder gesprek wordt dus niets.
  *
- * Alleen met toestemming voor marketing, net als de pixel zelf. Mee gaan de
- * kenmerken die de pixel al heeft (_fbc, _fbp, fbclid), het pad en het vak.
+ * Sinds 23 nov 2026 ook zonder toestemming voor marketing (Koen: "altijd,
+ * gehasht"). Dan gaat alleen het klik-ID uit de advertentielink mee; de
+ * Meta-cookies _fbc en _fbp alleen met toestemming. Verder het pad en het vak.
  * Geen naam, geen nummer. Mislukt het verzoek, dan gaat het bellen gewoon door.
+ *
+ * Met `soort` (whatsapp of mail) meldt de Hub de klik zelf meteen als Contact
+ * aan Meta, met hetzelfde event-ID als de pixel.
  */
-export function meldBelklik(vak?: string, fbclid?: string): void {
-  if (!werkMetaPixelBij()) return
+export function meldBelklik(vak?: string, fbclid?: string, extra?: { soort: 'whatsapp' | 'mail'; eventId: string }): void {
+  if (typeof window === 'undefined') return
   try {
+    let toestemming = false
+    try {
+      toestemming = hasMarketingConsent(getStoredConsent())
+    } catch {
+      toestemming = false
+    }
     const body = {
-      toestemming: true,
+      toestemming,
       pad: window.location.pathname,
       ...(vak ? { vak } : {}),
-      fbc: leesCookie('_fbc'),
-      fbp: leesCookie('_fbp'),
+      ...(toestemming ? { fbc: leesCookie('_fbc'), fbp: leesCookie('_fbp') } : {}),
       fbclid: fbclid ?? new URLSearchParams(window.location.search).get('fbclid') ?? undefined,
+      ...(extra ? { soort: extra.soort, event_id: extra.eventId } : {}),
     }
     void fetch(HUB_BELKLIK, {
       method: 'POST',

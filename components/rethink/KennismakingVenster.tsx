@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
-import { getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/tracking'
+import { generateEventId, getLeadContext, pushConversionEvent, rememberInteraction } from '@/lib/tracking'
 import { pushDataLayerEvent } from '@/lib/datalayer'
 import { Turnstile, TURNSTILE_SITEKEY } from '@/components/Turnstile'
 import { WHATSAPP_TOESTEMMING_TEKST, whatsappToestemmingVeld } from '@/lib/whatsappToestemming'
@@ -541,6 +541,9 @@ export default function KennismakingVenster({
     }
     // Het moment staat leesbaar in het bericht (de Hub bewaart en mailt alleen
     // het bericht) en als apart veld voor de latere koppeling.
+    // Een event-ID voor de hele inzending: de Hub meldt de aanvraag ermee aan
+    // Meta, de pixel ook, en Meta telt hem dan een keer (W-126).
+    const eventId = generateEventId()
     const viaGegevens = () =>
       stuur(HUB_ENDPOINT, {
         name: naam,
@@ -554,7 +557,7 @@ export default function KennismakingVenster({
         source: 'kennismaking_venster',
         _honey: honey,
         turnstile: token,
-        context: getLeadContext(),
+        context: getLeadContext({ event_id: eventId }),
         ...whatsappToestemmingVeld(telefoon),
       })
     try {
@@ -564,7 +567,7 @@ export default function KennismakingVenster({
       let gelukt: 'nietVast' | 'aangevraagd' | 'gegevens'
       if (moment && !voorbeeld) {
         uit = await stuur(`${API}/boek`, {
-          start: moment.start, naam, email, bedrijf, telefoon, vraag, _honey: honey, turnstile: token, context: getLeadContext(),
+          start: moment.start, naam, email, bedrijf, telefoon, vraag, _honey: honey, turnstile: token, context: getLeadContext({ event_id: eventId }),
           ...whatsappToestemmingVeld(telefoon),
         })
         gelukt = 'nietVast'
@@ -584,7 +587,7 @@ export default function KennismakingVenster({
       switch (uit.soort) {
         case 'ingepland':
           // Eigen slug, zodat eigen agenda en Cal.com in GA4 uit elkaar te houden zijn.
-          void pushConversionEvent('meeting_booked', { email }, { event_slug: 'kennismaking_eigen', form: 'kennismaking_venster' })
+          void pushConversionEvent('meeting_booked', { email }, { event_id: eventId, event_slug: 'kennismaking_eigen', form: 'kennismaking_venster' })
           setKlaar('geboekt')
           break
         case 'binnen':
@@ -595,7 +598,7 @@ export default function KennismakingVenster({
           void pushConversionEvent(
             'generate_lead',
             { email },
-            { form: 'kennismaking_venster', source: padZonderTaal(), lead_soort: moment ? 'moment_aangevraagd' : 'gegevens' },
+            { event_id: eventId, form: 'kennismaking_venster', source: padZonderTaal(), lead_soort: moment ? 'moment_aangevraagd' : 'gegevens' },
           )
           setMetTelefoon(Boolean(telefoon))
           setKlaarMelding(gelukt === 'nietVast' ? uit.melding : '')

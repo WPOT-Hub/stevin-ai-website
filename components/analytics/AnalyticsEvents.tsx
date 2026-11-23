@@ -24,7 +24,7 @@
 
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { deriveEntryChannel, getPageType, rememberInteraction, updateLeadContextPage } from '@/lib/tracking'
+import { deriveEntryChannel, generateEventId, getLeadContext, getPageType, rememberInteraction, updateLeadContextPage } from '@/lib/tracking'
 import { pushDataLayerEvent } from '@/lib/datalayer'
 import { meldBelklik, metaContact } from '@/lib/metaPixel'
 
@@ -42,6 +42,21 @@ const SCROLL_THRESHOLDS = [25, 50, 75, 100]
 // zijn (bijv. "recordings van betaald verkeer dat demo-intentie toonde maar
 // niet converteerde"). Clarity laadt via strategy afterInteractive, dus
 // window.clarity kan vlak na mount nog niet bestaan: kort pollen.
+/**
+ * Het klik-ID van de advertentie: eerst uit de huidige URL (een tweede advertentieklik in
+ * dezelfde sessie wint), anders uit de sessie, ook als de bezoeker op een andere pagina is.
+ */
+function fbclidUitSessie(): string | undefined {
+  try {
+    const uitUrl = new URLSearchParams(window.location.search).get('fbclid')
+    if (uitUrl) return uitUrl
+    const utm = getLeadContext().utm_params as Record<string, unknown> | undefined
+    return typeof utm?.fbclid === 'string' ? utm.fbclid : undefined
+  } catch {
+    return undefined
+  }
+}
+
 function tagClarity(key: string, value: string) {
   if (typeof window.clarity === 'function') {
     window.clarity('set', key, value)
@@ -133,6 +148,10 @@ export function AnalyticsEvents() {
           contact_value: href.replace('mailto:', ''),
           page_path: pathname,
         })
+        // W-126: ook als Contact naar Meta, via de pixel en de Hub met hetzelfde event-ID.
+        const eventId = generateEventId()
+        metaContact('email', undefined, eventId)
+        meldBelklik(undefined, fbclidUitSessie(), { soort: 'mail', eventId })
         rememberInteraction('contact_click', { href, label, page_path: pathname, placement: 'mailto' })
         return
       }
@@ -147,7 +166,7 @@ export function AnalyticsEvents() {
           page_path: pathname,
         })
         metaContact('phone', vak)
-        meldBelklik(vak)
+        meldBelklik(vak, fbclidUitSessie())
         rememberInteraction('contact_click', { href, label, page_path: pathname, placement: 'phone' })
         return
       }
@@ -161,7 +180,9 @@ export function AnalyticsEvents() {
           ...(vak ? { contact_vak: vak } : {}),
           page_path: pathname,
         })
-        metaContact('whatsapp', vak)
+        const eventId = generateEventId()
+        metaContact('whatsapp', vak, eventId)
+        meldBelklik(vak, fbclidUitSessie(), { soort: 'whatsapp', eventId })
       }
 
       // External http(s) links die naar een ander host gaan

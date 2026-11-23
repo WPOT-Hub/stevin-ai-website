@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
+import { generateEventId, getLeadContext, pushConversionEvent } from '@/lib/tracking'
 
 const HUB_ENDPOINT = 'https://hub.stevin.ai/api/wachtlijst'
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -30,6 +31,7 @@ export default function WaitlistForm() {
     setStatus('loading')
     setErrorMsg('')
 
+    const eventId = generateEventId()
     const payload = {
       email,
       name: String(data.get('name') || '').trim() || null,
@@ -38,6 +40,7 @@ export default function WaitlistForm() {
       monthly_media_budget: String(data.get('monthly_media_budget') || '').trim() || null,
       primary_use_case: String(data.get('primary_use_case') || '').trim() || null,
       source: 'stevin.ai/wachtlijst',
+      context: getLeadContext({ event_id: eventId, form_id: 'wachtlijst' }),
     }
 
     try {
@@ -54,6 +57,8 @@ export default function WaitlistForm() {
       }
       setStatus('success')
       form.reset()
+      // Na een geslaagde inschrijving, met hetzelfde event-ID als de Hub naar Meta stuurt (W-126).
+      void pushConversionEvent('generate_lead', { email }, { event_id: eventId, form: 'wachtlijst', source: 'wachtlijst' }).catch(() => undefined)
     } catch {
       setStatus('error')
       setErrorMsg(t('error_generic'))

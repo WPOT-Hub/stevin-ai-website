@@ -268,7 +268,8 @@ export async function pushConversionEvent(
   })
   // De Meta-pixel krijgt alleen de aanvraag, met hetzelfde event-ID. metaLead
   // doet niets zonder toestemming voor marketing of zonder pixel-ID.
-  if (eventName === 'generate_lead') {
+  // Een geboekte kennismaking telt voor Meta ook als aanvraag (de Hub meldt hem met hetzelfde ID).
+  if (eventName === 'generate_lead' || eventName === 'meeting_booked') {
     metaLead(eventId, typeof extraParams?.form === 'string' ? extraParams.form : undefined)
   }
   return eventId
