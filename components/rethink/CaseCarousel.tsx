@@ -75,9 +75,10 @@ const ALLE_KAARTEN: Kaart[] = [
       { getal: '605', label: 'spaminzendingen doorgelezen' },
       { getal: '2', label: 'echte aanvragen teruggezet' },
     ],
-    // Google Ads, metrics_paid, gelezen 23 nov: 58,67 per conversie (21 jul t/m 20 okt)
-    // tegen 29,86 (21 okt t/m 22 nov), allebei 21 conversies. Telefoon telt pas sinds 23 okt mee.
-    uitgelicht: { getal: '49% lager', label: 'kosten per aanvraag sinds wij de meting rechtzetten' },
+    // Koens keuze, 23 nov. Google Ads, metrics_paid, gelezen 23 nov: augustus 404 euro
+    // op 3 conversies (134,83 per aanvraag), 21 okt t/m 22 nov 627 euro op 21 (29,86).
+    // Verschil 104,97. Telefoon telt pas sinds 23 okt mee.
+    uitgelicht: { getal: '100+ euro', label: 'lagere kosten per aanvraag dan in augustus' },
   },
   {
     slug: 'sterker-witgoed',
