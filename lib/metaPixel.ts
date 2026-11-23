@@ -78,9 +78,14 @@ export function werkMetaPixelBij(): boolean {
   return geladen && toegestaan
 }
 
-export function metaPaginaweergave(): void {
+/**
+ * Met `eventId` (W-879) krijgt de pixel-PageView hetzelfde ID als de melding aan de Hub, zodat Meta
+ * het bezoek dat ook vanaf de server binnenkomt een keer telt.
+ */
+export function metaPaginaweergave(eventId?: string): void {
   if (!werkMetaPixelBij()) return
-  window.fbq?.('track', 'PageView')
+  if (eventId) window.fbq?.('track', 'PageView', {}, { eventID: eventId })
+  else window.fbq?.('track', 'PageView')
 }
 
 /**
@@ -154,5 +159,81 @@ export function meldBelklik(vak?: string, fbclid?: string, extra?: { soort: 'wha
   } catch (err) {
     // De meting mag het bellen nooit in de weg zitten. Een gesprek zonder klik staat in de Hub als "niet gemeld".
     console.warn('[belklik] klik niet gemeld aan de Hub', err)
+  }
+}
+
+const HUB_BEZOEK = 'https://hub.stevin.ai/api/bezoek'
+/** De pagina's die de Hub telt: de actiepagina en de toegangspagina, met of zonder taalpad. Moet gelijk zijn aan MEET_PAD_RE in de Hub. */
+export const MEET_PAD = /^\/(?:[a-z]{2}\/)?ps5-actie(?:-toegang)?\/?$/
+const SESSIE_GEZIEN_KEY = 'stevin_bezoek_gezien'
+const UTM_SLEUTELS = ['source', 'medium', 'campaign', 'term', 'content'] as const
+
+function opgeslagenUtm(): Record<string, string> {
+  try {
+    const ctx = JSON.parse(sessionStorage.getItem('stevin_lead_context') || '{}') as { utm_params?: Record<string, unknown> }
+    const u = ctx.utm_params ?? {}
+    const uit: Record<string, string> = {}
+    for (const k of [...UTM_SLEUTELS.map((x) => `utm_${x}`), 'fbclid', 'vak']) {
+      if (typeof u[k] === 'string') uit[k] = u[k] as string
+    }
+    return uit
+  } catch {
+    return {}
+  }
+}
+
+/**
+ * Meldt een bezoek aan de actiepagina aan de Hub (W-879, 23 nov 2026), ook zonder cookiekeuze.
+ *
+ * Aanleiding: zonder keuze, of na "Alleen noodzakelijk", ging er niets naar Meta en niets naar GA4. De Hub
+ * telt het bezoek per utm (voor de vergelijking met kliks uit Meta) en meldt het als PageView aan Meta, met
+ * hetzelfde `eventId` als de pixel. Net als bij de klik op de belknop (meldBelklik) gaat zonder toestemming
+ * alleen het klik-ID uit de advertentielink mee; _fbc en _fbp alleen met toestemming. Geen cookie, geen
+ * opslag voor het meten zelf: een vlag in sessionStorage zegt alleen of dit de eerste pagina van de sessie is.
+ *
+ * Mislukt het verzoek, dan merkt de bezoeker niets. De Hub schrijft zijn eigen fouten naar system_health.
+ */
+export function meldBezoek(eventId: string): void {
+  if (typeof window === 'undefined') return
+  try {
+    if (!MEET_PAD.test(window.location.pathname)) return
+    const q = new URLSearchParams(window.location.search)
+    const bewaard = opgeslagenUtm()
+    const waarde = (k: string): string | undefined => q.get(k) || bewaard[k] || undefined
+    let toestemming = false
+    try {
+      toestemming = hasMarketingConsent(getStoredConsent())
+    } catch {
+      toestemming = false
+    }
+    let nieuweSessie = false
+    try {
+      nieuweSessie = !sessionStorage.getItem(SESSIE_GEZIEN_KEY)
+      if (nieuweSessie) sessionStorage.setItem(SESSIE_GEZIEN_KEY, '1')
+    } catch {
+      nieuweSessie = false
+    }
+    const body = {
+      pad: window.location.pathname,
+      vak: waarde('vak'),
+      utm: Object.fromEntries(UTM_SLEUTELS.map((k) => [k, waarde(`utm_${k}`)])),
+      fbclid: waarde('fbclid'),
+      ...(toestemming ? { fbc: leesCookie('_fbc'), fbp: leesCookie('_fbp') } : {}),
+      toestemming,
+      nieuwe_sessie: nieuweSessie,
+      event_id: eventId,
+    }
+    void fetch(HUB_BEZOEK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+      keepalive: true,
+    })
+      .then((res) => {
+        if (!res.ok) console.warn(`[bezoek] de Hub nam het bezoek niet aan (status ${res.status})`)
+      })
+      .catch((err) => console.warn('[bezoek] bezoek niet gemeld aan de Hub', err))
+  } catch (err) {
+    console.warn('[bezoek] bezoek niet gemeld aan de Hub', err)
   }
 }
