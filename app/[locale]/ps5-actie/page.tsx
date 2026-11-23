@@ -160,7 +160,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               className="h-auto w-full"
             />
             <span
-              className="absolute bottom-[4%] right-[2%] rounded-2xl px-3 py-1.5 font-display text-[14px] font-extrabold sm:px-4 sm:py-2 sm:text-[22px]"
+              className="absolute bottom-[4%] right-[0%] rounded-2xl px-4 py-2 font-display text-[26px] font-extrabold leading-none sm:px-6 sm:py-3 sm:text-[40px]"
               style={{ background: '#FFD400', color: '#0A1628', transform: 'rotate(-5deg)', boxShadow: '0 8px 22px rgba(10,22,40,.18)' }}
             >
               GRATIS
