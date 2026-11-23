@@ -66,22 +66,22 @@ const ALGEMEEN = {
 //  - Alleen Nederlands.
 
 const URL = 'https://stevin.ai/ps5-actie'
-const TITEL = 'Een PS5 met GTA VI cadeau als je nu klant wordt bij Stevin.AI'
+const TITEL = 'Gratis PS5 met GTA VI als je nu klant wordt bij Stevin.AI'
 const OMSCHRIJVING =
-  'De eerste vijf nieuwe klanten die starten met een jaarcontract en een volledig opstarttraject kiezen zelf een cadeau binnen een vast budget van Stevin.AI, bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI. De voorwaarden staan op deze pagina.'
+  'De eerste vijf nieuwe klanten die starten met een jaarcontract en een volledig opstarttraject krijgen gratis een PS5 met GTA VI of een gratis website, binnen een vast budget van Stevin.AI. De voorwaarden staan op deze pagina.'
 
 // Deelbeeld per variant (Koen 23 nov: "betere og image met de actie"). Beeld uit
 // meta-advertenties/bron/og-ps5-actie.html, zelfde opmaak als de advertenties.
 // Bij een hoger aantal bezette plekken opnieuw renderen met ?bezet=N.
 const DEELBEELD: Record<string, { beeld: string; titel: string }> = {
-  dakdekker: { beeld: 'og-dakdekkers', titel: 'Wij zoeken 5 dakdekkers. Jij krijgt een PS5 met GTA VI cadeau.' },
-  installateur: { beeld: 'og-installateurs', titel: 'Wij zoeken 5 installateurs. Jij krijgt een PS5 met GTA VI cadeau.' },
+  dakdekker: { beeld: 'og-dakdekkers', titel: 'Wij zoeken 5 dakdekkers. Gratis PS5 met GTA VI als je klant wordt.' },
+  installateur: { beeld: 'og-installateurs', titel: 'Wij zoeken 5 installateurs. Gratis PS5 met GTA VI als je klant wordt.' },
 }
 const DEELBEELD_ALGEMEEN = {
   beeld: 'og-bedrijven',
-  titel: 'Wij zoeken 5 bedrijven in West-Brabant. Jij krijgt een PS5 met GTA VI cadeau.',
+  titel: 'Wij zoeken 5 bedrijven in West-Brabant. Gratis PS5 met GTA VI als je klant wordt.',
 }
-const DEELTEKST = 'Wij regelen je nieuwe klanten. Welkomstcadeau bij een jaarcontract. Bel of app ons.'
+const DEELTEKST = 'Wij regelen je nieuwe klanten. Gratis PS5 met GTA VI of een gratis website bij een jaarcontract. Bel of app ons.'
 
 export async function generateMetadata({ searchParams }: Pick<Props, 'searchParams'>): Promise<Metadata> {
   const { vak } = await searchParams
@@ -107,12 +107,12 @@ export async function generateMetadata({ searchParams }: Pick<Props, 'searchPara
 }
 
 const VOORWAARDEN = [
-  'De actie geldt voor de eerste vijf nieuwe klanten die tot en met 31 december 2026 tekenen voor een jaarcontract met Stevin.AI als bureau, inclusief een volledig opstarttraject. Vijf in totaal, ongeacht je vak. Op volgorde van tekenen. Is het vijfde cadeau toegezegd, dan sluit de actie, ook als het nog geen 31 december is.',
+  'De actie geldt voor de eerste vijf nieuwe klanten die tot en met 31 december 2026 tekenen voor een jaarcontract met Stevin.AI als bureau, inclusief een volledig opstarttraject. Vijf in totaal, ongeacht je vak. Op volgorde van tekenen. Is de vijfde plek toegezegd, dan sluit de actie, ook als het nog geen 31 december is.',
   'Een volledig opstarttraject betekent dat het in je offerte vooraf is afgesproken en bestaat uit meerdere onderdelen, bijvoorbeeld een nieuwe website, een campagne, het inrichten van je telefoon en de meting. Welke onderdelen en wat ze kosten, staat in je offerte.',
-  'Je kiest zelf je cadeau, binnen een vast budget van Stevin.AI. Wij denken aan een PlayStation 5 Digital Edition (Slim) met PlayStation Store-tegoed om GTA VI te kopen. Games zijn op PlayStation niet los cadeau te doen en de Digital Edition heeft geen schijfstation, dus het tegoed komt op jouw eigen PlayStation-account. Daarvoor heb je zo\'n account nodig.',
-  'Wij bestellen het cadeau nadat je het opstarttraject hebt betaald. De levertijd hangt af van de voorraad. Bij de bestelling melden we je wanneer je de console verwacht.',
+  'Je kiest zelf wat je gratis krijgt, binnen een vast budget van Stevin.AI: een PS5 met GTA VI of een gratis website. Wat die website inhoudt, staat in je offerte. Bij de PS5 denken we aan een PlayStation 5 Digital Edition (Slim) met PlayStation Store-tegoed om GTA VI te kopen. Games zijn op PlayStation niet los weg te geven en de Digital Edition heeft geen schijfstation, dus het tegoed komt op jouw eigen PlayStation-account. Daarvoor heb je zo\'n account nodig.',
+  'Wij bestellen de PS5 nadat je het opstarttraject hebt betaald. De levertijd hangt af van de voorraad. Bij de bestelling melden we je wanneer je de console verwacht.',
   'Zeg je je jaarcontract binnen drie maanden nadat je bent gestart op, dan berekenen we de console aan je door. Het bedrag staat vooraf in je offerte.',
-  'Dit is een actie voor bedrijven in Nederland en Vlaanderen die nieuw zijn bij Stevin.AI. Het cadeau is niet in te ruilen voor korting of geld en is niet over te dragen.',
+  'Dit is een actie voor bedrijven in Nederland en Vlaanderen die nieuw zijn bij Stevin.AI. Wat je gratis krijgt, is niet in te ruilen voor korting of geld en is niet over te dragen.',
   'Stevin.AI is niet verbonden aan Sony of Rockstar Games en wordt niet door hen gesponsord. Alle merknamen zijn van hun eigenaren.',
 ]
 
@@ -163,12 +163,13 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               className="absolute bottom-[4%] right-[2%] rounded-2xl px-3 py-1.5 font-display text-[14px] font-extrabold sm:px-4 sm:py-2 sm:text-[22px]"
               style={{ background: '#FFD400', color: '#0A1628', transform: 'rotate(-5deg)', boxShadow: '0 8px 22px rgba(10,22,40,.18)' }}
             >
-              WELKOMSTCADEAU
+              GRATIS
             </span>
           </figure>
           <div className="lg:col-start-1 lg:row-start-2">
             <p className="m-0 mt-3 max-w-[560px] font-display text-[24px] font-extrabold leading-[1.2] text-white sm:mt-6 sm:text-[30px]">
-              Jij krijgt deze PS5 met GTA VI cadeau.
+              Gratis PS5 incl. GTA VI. Of een gratis website.
+              <span className="mt-1 block text-[17px] font-semibold text-white/90 sm:text-[19px]">Als je klant wordt. Voor de eerste 5 ondernemers.</span>
             </p>
             <div className="mt-5 sm:mt-8">
               <a
