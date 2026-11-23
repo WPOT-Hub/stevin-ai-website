@@ -84,15 +84,23 @@ const ALLE_KAARTEN: Kaart[] = [
       // Bureaufee gelijk aan het vorige bureau: bron Koen, 23 nov 18:06. Drie keer zoveel per
       // advertentie-euro volgt uit de 68% lagere kosten per aanvraag (93,22 tegen 29,86).
       tekst: 'Hans stoffeert en repareert meubels. Hij betaalt ons geen euro meer dan zijn vorige bureau, en krijgt per advertentie-euro drie keer zoveel aanvragen.',
+      // Per maand: 23 in zes maanden is 3,8; 21 in 33 dagen is 19,1. Dat is +400%;
+      // Koen koos "300%" (23 nov 18:09), dus een ondergrens die klopt.
       beeld: (
-        <div className={`${FOTO} flex flex-col justify-center gap-6 p-8 text-white`}>
+        <div className={`${FOTO} flex flex-col justify-center gap-7 p-8 text-white`}>
           <div>
-            <p className="m-0 font-display text-[72px] font-extrabold leading-none text-accent md:text-[96px]" style={{ letterSpacing: '-0.03em' }}>21</p>
-            <p className="m-0 mt-2 text-[16px] text-white/80">aanvragen in de eerste maand met Stevin</p>
+            <p className="m-0 font-display text-[72px] font-extrabold leading-none text-accent md:text-[96px]" style={{ letterSpacing: '-0.03em' }}>+300%</p>
+            <p className="m-0 mt-3 text-[17px] font-semibold text-white">meer aanvragen per maand</p>
           </div>
-          <div>
-            <p className="m-0 font-display text-[40px] font-extrabold leading-none text-white/60 md:text-[48px]" style={{ letterSpacing: '-0.03em' }}>23</p>
-            <p className="m-0 mt-2 text-[15px] text-white/60">aanvragen in de zes maanden ervoor</p>
+          <div className="grid gap-4 text-[14px] text-white/80">
+            <div>
+              <div className="flex justify-between"><span>Daarvoor</span><span>4 per maand</span></div>
+              <div className="mt-1.5 h-3 rounded-full bg-white/15"><div className="h-3 rounded-full bg-white/50" style={{ width: '20%' }} /></div>
+            </div>
+            <div>
+              <div className="flex justify-between"><span>Met Stevin</span><span>19 per maand</span></div>
+              <div className="mt-1.5 h-3 rounded-full bg-white/15"><div className="h-3 rounded-full bg-accent" style={{ width: '100%' }} /></div>
+            </div>
           </div>
         </div>
       ),
