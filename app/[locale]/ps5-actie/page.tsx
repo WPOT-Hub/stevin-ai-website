@@ -269,7 +269,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       {/* Koen, 23 nov: de casepagina's ook op de actiepagina, Sterker mag hier wel bij.
           Dezelfde kaartstapel als op de homepage, zonder knop naar het overzicht en zonder
           doorklik naar de casepagina (Koen, 23 nov: bezoeker blijft op de actiepagina). */}
-      <CaseCarousel alles bron="ps5_case" metOverzicht={false} metLink={false} />
+      <CaseCarousel alles bron="ps5_case" metOverzicht={false} metLink={false} metUitlichting />
 
       {/* Gesprek en formulier */}
       <section id="gesprek" className="scroll-mt-24 px-6" style={{ paddingTop: 72, paddingBottom: 48 }}>

@@ -22,6 +22,8 @@ type Kaart = {
   tekst: string
   beeld: ReactNode
   cijfers: { getal: string; label: string }[]
+  // Groot cijfer bovenaan de tekst, alleen waar de pagina dat vraagt (metUitlichting).
+  uitgelicht?: { getal: string; label: string }
 }
 
 const FOTO = 'relative min-h-[240px] overflow-hidden rounded-2xl bg-primary md:min-h-[320px]'
@@ -73,6 +75,9 @@ const ALLE_KAARTEN: Kaart[] = [
       { getal: '605', label: 'spaminzendingen doorgelezen' },
       { getal: '2', label: 'echte aanvragen teruggezet' },
     ],
+    // Google Ads, metrics_paid, gelezen 23 nov: 58,67 per conversie (21 jul t/m 20 okt)
+    // tegen 29,86 (21 okt t/m 22 nov), allebei 21 conversies. Telefoon telt pas sinds 23 okt mee.
+    uitgelicht: { getal: '49% lager', label: 'kosten per aanvraag sinds wij de meting rechtzetten' },
   },
   {
     slug: 'sterker-witgoed',
@@ -118,9 +123,11 @@ type Props = {
   metOverzicht?: boolean
   // false: geen knop "Lees de case" (Koen, 23 nov: op de actiepagina niet doorklikken).
   metLink?: boolean
+  // true: toon het uitgelichte cijfer van een kaart (Koen, 23 nov: "moet eruit knallen").
+  metUitlichting?: boolean
 }
 
-export default function CaseCarousel({ alles = false, bron = 'case_carrousel', metOverzicht = true, metLink = true }: Props = {}) {
+export default function CaseCarousel({ alles = false, bron = 'case_carrousel', metOverzicht = true, metLink = true, metUitlichting = false }: Props = {}) {
   const KAARTEN = alles ? ALLE_KAARTEN : ALLE_KAARTEN.filter((k) => k.openbaar)
   const [actief, setActief] = useState(0)
   const n = KAARTEN.length
@@ -198,6 +205,14 @@ export default function CaseCarousel({ alles = false, bron = 'case_carrousel', m
                 {k.beeld}
                 <div className={`flex flex-col gap-4 px-4 pb-4 pt-1 lg:px-6 lg:py-6 ${voor ? '' : 'pointer-events-none'}`}>
                   <p className="m-0 font-display text-[13px] font-bold uppercase tracking-[0.14em] text-primary">{k.klant}</p>
+                  {metUitlichting && k.uitgelicht && (
+                    <div className="rounded-2xl bg-primary px-5 py-4 text-white">
+                      <p className="m-0 font-display text-[44px] font-extrabold leading-none text-accent md:text-[56px]" style={{ letterSpacing: '-0.03em' }}>
+                        {k.uitgelicht.getal}
+                      </p>
+                      <p className="m-0 mt-2 text-[15px] leading-[1.35] text-white/80">{k.uitgelicht.label}</p>
+                    </div>
+                  )}
                   <h3 className="m-0 font-display text-[24px] font-bold text-primary md:text-[28px]" style={{ letterSpacing: '-0.02em', lineHeight: '1.15' }}>
                     {k.kop}
                   </h3>
