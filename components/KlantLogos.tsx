@@ -27,6 +27,11 @@
 //   Rigo werd in grijstinten fletser dan de rest, dus ook donker gemaakt zoals
 //   Bart; de webadresregel onder Sterker eraf (onleesbaar op 44 hoog); beide
 //   lager en lichter gezet zodat ze even zwaar ogen als Hans Schepers en Boersma.
+// W-861, 23 nov 2026: Ecomy Energie erbij, op Koens verzoek (Marcel, klant).
+// - ecomy.webp: het logo dat wij maakten (Stevin-company legal/klanten/
+//   mbe-ecomy/logo/ecomy-logobundel/logo/ecomy-logo-donkergroen.png), lege
+//   rand eraf en verkleind naar 160 hoog. Met negen logo's klopt de
+//   rijindeling hieronder weer: telefoon 2, 3, 2, 2, tablet 5 en 4.
 
 type Klant = { src: string; naam: string; h: number; o: number }
 
@@ -45,6 +50,7 @@ const KLANTEN: Klant[] = [
   { src: '/logos/klanten/autorijschool-bart.webp', naam: 'Autorijschool Bart', h: 40, o: 0.9 },
   { src: '/logos/klanten/rigo-bouw.webp', naam: 'Rigo Bouw', h: 42, o: 0.7 },
   { src: '/logos/klanten/sterker-witgoed.webp', naam: 'Sterker Witgoed', h: 44, o: 0.65 },
+  { src: '/logos/klanten/ecomy.webp', naam: 'Ecomy Energie', h: 25, o: 0.6 },
 ]
 
 const COPY = {
