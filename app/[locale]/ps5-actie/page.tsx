@@ -69,20 +69,40 @@ const TITEL = 'Een PS5 met GTA VI cadeau als je nu klant wordt bij Stevin.AI'
 const OMSCHRIJVING =
   'De eerste vijf nieuwe klanten die starten met een jaarcontract en een volledig opstarttraject kiezen zelf een cadeau binnen een vast budget van Stevin.AI, bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI. De voorwaarden staan op deze pagina.'
 
-export const metadata: Metadata = {
-  title: TITEL,
-  description: OMSCHRIJVING,
-  alternates: { canonical: URL },
-  robots: { index: false, follow: true },
-  openGraph: {
+// Deelbeeld per variant (Koen 23 nov: "betere og image met de actie"). Beeld uit
+// meta-advertenties/bron/og-ps5-actie.html, zelfde opmaak als de advertenties.
+// Bij een hoger aantal bezette plekken opnieuw renderen met ?bezet=N.
+const DEELBEELD: Record<string, { beeld: string; titel: string }> = {
+  dakdekker: { beeld: 'og-dakdekkers', titel: 'Wij zoeken 5 dakdekkers. Jij krijgt een PS5 met GTA VI cadeau.' },
+  installateur: { beeld: 'og-installateurs', titel: 'Wij zoeken 5 installateurs. Jij krijgt een PS5 met GTA VI cadeau.' },
+}
+const DEELBEELD_ALGEMEEN = {
+  beeld: 'og-bedrijven',
+  titel: 'Wij zoeken 5 bedrijven in West-Brabant. Jij krijgt een PS5 met GTA VI cadeau.',
+}
+const DEELTEKST = 'Wij regelen je nieuwe klanten. Welkomstcadeau bij een jaarcontract. Bel of app ons.'
+
+export async function generateMetadata({ searchParams }: Pick<Props, 'searchParams'>): Promise<Metadata> {
+  const { vak } = await searchParams
+  const d = typeof vak === 'string' && Object.hasOwn(DEELBEELD, vak) ? DEELBEELD[vak] : DEELBEELD_ALGEMEEN
+  const url = d === DEELBEELD_ALGEMEEN ? URL : `${URL}?vak=${vak}`
+  const beeld = { url: `https://stevin.ai/images/ps5-actie/${d.beeld}.jpg`, width: 1200, height: 630, alt: d.titel }
+  return {
     title: TITEL,
     description: OMSCHRIJVING,
-    url: URL,
-    type: 'website',
-    siteName: 'Stevin.AI',
-    locale: 'nl_NL',
-  },
-  twitter: { card: 'summary_large_image', title: TITEL, description: OMSCHRIJVING },
+    alternates: { canonical: URL },
+    robots: { index: false, follow: true },
+    openGraph: {
+      title: d.titel,
+      description: DEELTEKST,
+      url,
+      type: 'website',
+      siteName: 'Stevin.AI',
+      locale: 'nl_NL',
+      images: [beeld],
+    },
+    twitter: { card: 'summary_large_image', title: d.titel, description: DEELTEKST, images: [beeld.url] },
+  }
 }
 
 const VOORWAARDEN = [
