@@ -96,7 +96,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: 'Een installateur kreeg in een paar weken een nieuw logo, een nieuwe site en een check die het dak van je huis tekent.',
       translated: false,
     }),
-    robots: { index: false, follow: false },
+    robots: { index: true, follow: true },
   }
 }
 

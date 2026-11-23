@@ -8,8 +8,8 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'case_studies' })
-  // W-078, 13 sep 2026: noindex zolang de pagina leeg is. De audit van 12 sep
-  // wees dit aan als het enige bewijsmoment op de site, en het valt negatief uit.
+  // W-078, 13 sep 2026: noindex zolang de pagina leeg was. Sinds 23 nov 2026
+  // (W-860) staan er drie echte cases op, dus indexeerbaar op Koens go.
   return {
     ...localizedMetadata({
       path: '/case-studies',
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${t('h1')}, Stevin`,
       description: t('sub'),
     }),
-    robots: { index: false, follow: true },
+    robots: { index: true, follow: true },
   }
 }
 
@@ -26,21 +26,44 @@ export default async function CaseStudiesPage({ params }: Props) {
   setRequestLocale(locale)
   const t = await getTranslations('case_studies')
 
-  // 17 aug 2026 leeggemaakt. Hier stond een naamloos e-commercebedrijf met
-  // "+42% meer leads en 8 uur per week bespaard", een cijfer dat niemand kan
-  // nakijken. Dat is precies de claim die je niet wilt maken als je verkoopt
-  // dat alles controleerbaar is en het bewijs buiten ons om te vinden is.
-  // De echte cijfers komen na de lancering van 1 september; vul dit dan met
-  // klanten die met naam genoemd mogen worden. De teksten cs1_* staan nog in
-  // messages/nl.json en en.json, zodat de opmaak meteen weer werkt.
+  // 17 aug 2026 leeggemaakt, omdat er een cijfer stond dat niemand kon nakijken.
+  // 23 nov 2026 (W-860) gevuld met drie echte klantcases: alleen aantallen en
+  // verhoudingen uit de klantdossiers, geen bedragen en geen citaten zonder akkoord.
   const caseStudies: Array<{
     slug: string
+    openbaar?: boolean
     industry: string
     title: string
     subtitle: string
     metric: string
     metricLabel: string
-  }> = []
+  }> = [
+    {
+      slug: 'hans-schepers',
+      industry: 'Stoffering',
+      title: 'Op zijn site stonden gokpagina\u2019s. Hans wist van niets.',
+      subtitle: 'Weggehaald, de meting opnieuw opgebouwd en echte aanvragen teruggezet.',
+      metric: '137+',
+      metricLabel: 'gokpagina\u2019s weggehaald',
+    },
+    {
+      slug: 'ecomy-energie',
+      industry: 'Energie',
+      title: 'Nieuw logo, nieuwe site en een check die je dak tekent.',
+      subtitle: 'Een installateur in Wijchen kreeg in een paar weken het hele merk opnieuw.',
+      metric: '342',
+      metricLabel: 'gemeenten met een eigen leningregeling',
+    },
+    {
+      slug: 'sterker-witgoed',
+      openbaar: false, // wacht op akkoord van Faysal
+      industry: 'Webwinkel in witgoed',
+      title: 'Elke handeling met bewijs vastgelegd.',
+      subtitle: 'Productfeed hersteld en een begeleide livegang van de nieuwe site.',
+      metric: '667',
+      metricLabel: 'handelingen in acht weken',
+    },
+  ]
 
   return (
     <main>
@@ -67,7 +90,7 @@ export default async function CaseStudiesPage({ params }: Props) {
       <section className="bg-white" style={{ padding: '80px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
           <div className="grid grid-cols-1 gap-0 border-t border-border">
-            {caseStudies.map((cs) => (
+            {caseStudies.filter((cs) => cs.openbaar !== false).map((cs) => (
               <Link
                 key={cs.slug}
                 href={`/case-studies/${cs.slug}`}
