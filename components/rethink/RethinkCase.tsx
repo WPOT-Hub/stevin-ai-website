@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { DonkerBlok, Kennismaken, PaginaKop, Punten, h2Stijl, tekst } from './RethinkBlokken'
 
 // Klantcase (W-860). Een case noemt een klant bij naam en gebruikt alleen
@@ -18,12 +19,20 @@ export type Case = {
   cijfers: { getal: string; uitleg: string }[]
   bron: string
   knop: string
+  /** Beeld direct onder de kop (W-860). */
+  beeld?: ReactNode
+  /** Beeld in de band 'wat we deden'. */
+  aanpakBeeld?: ReactNode
+  /** Beeld boven de cijfers. */
+  uitkomstBeeld?: ReactNode
 }
 
 export default function RethinkCase({ c }: { c: Case }) {
   return (
     <main className="bg-white">
       <PaginaKop eyebrow={c.eyebrow} kop={c.kop} accent={c.accent} knop={c.knop} lede={<p className="m-0">{c.lede}</p>} />
+
+      {c.beeld ? <section className="px-6 pb-4"><div className="mx-auto max-w-[1152px]">{c.beeld}</div></section> : null}
 
       <section className="px-6 pb-24 pt-20 sm:pt-24">
         <div className="mx-auto max-w-[1152px]">
@@ -40,6 +49,7 @@ export default function RethinkCase({ c }: { c: Case }) {
         </h2>
         <p className="m-0 mt-6 max-w-[620px] text-[18px] leading-[1.6] text-white/75">{c.aanpakZin}</p>
         <Punten items={c.aanpak} donker />
+        {c.aanpakBeeld ? <div className="mt-14">{c.aanpakBeeld}</div> : null}
       </DonkerBlok>
 
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
@@ -47,6 +57,7 @@ export default function RethinkCase({ c }: { c: Case }) {
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             {c.uitkomstKop}
           </h2>
+          {c.uitkomstBeeld ? <div className="mt-10">{c.uitkomstBeeld}</div> : null}
           <dl className="m-0 mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {c.cijfers.map((x) => (
               <div key={x.uitleg} className="border-t border-border pt-5">
