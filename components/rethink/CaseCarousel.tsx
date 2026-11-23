@@ -22,8 +22,8 @@ type Kaart = {
   tekst: string
   beeld: ReactNode
   cijfers: { getal: string; label: string }[]
-  // Groot cijfer bovenaan de tekst, alleen waar de pagina dat vraagt (metUitlichting).
-  uitgelicht?: { getal: string; label: string }
+  // Andere invulling voor de actiepagina (metUitlichting): resultaat voorop, geen spamverhaal.
+  actie?: Partial<Pick<Kaart, 'kop' | 'tekst' | 'beeld' | 'cijfers'>>
 }
 
 const FOTO = 'relative min-h-[240px] overflow-hidden rounded-2xl bg-primary md:min-h-[320px]'
@@ -75,10 +75,31 @@ const ALLE_KAARTEN: Kaart[] = [
       { getal: '605', label: 'spaminzendingen doorgelezen' },
       { getal: '2', label: 'echte aanvragen teruggezet' },
     ],
-    // Koens keuze, 23 nov. Google Ads, metrics_paid, gelezen 23 nov: augustus 404 euro
-    // op 3 conversies (134,83 per aanvraag), 21 okt t/m 22 nov 627 euro op 21 (29,86).
-    // Verschil 104,97. Telefoon telt pas sinds 23 okt mee.
-    uitgelicht: { getal: '100+ euro', label: 'lagere kosten per aanvraag dan in augustus' },
+    // Koens tekst, 23 nov 18:04, en "zonder die spam site" (18:05). Google Ads, metrics_paid,
+    // gelezen 23 nov: maart t/m augustus 23 conversies op 2.144 euro (93,22 per aanvraag),
+    // 21 okt t/m 22 nov (33 dagen) 21 op 627 euro (29,86), dat is 68% lager.
+    // Telefoon telt pas sinds 23 okt mee.
+    actie: {
+      kop: 'Eerst 23 aanvragen in zes maanden. Met Stevin 21 in de eerste maand.',
+      tekst: 'Hans stoffeert en repareert meubels. Wij zetten de meting recht en de advertenties op het werk dat hij het liefst doet.',
+      beeld: (
+        <div className={`${FOTO} flex flex-col justify-center gap-6 p-8 text-white`}>
+          <div>
+            <p className="m-0 font-display text-[72px] font-extrabold leading-none text-accent md:text-[96px]" style={{ letterSpacing: '-0.03em' }}>21</p>
+            <p className="m-0 mt-2 text-[16px] text-white/80">aanvragen in de eerste maand met Stevin</p>
+          </div>
+          <div>
+            <p className="m-0 font-display text-[40px] font-extrabold leading-none text-white/60 md:text-[48px]" style={{ letterSpacing: '-0.03em' }}>23</p>
+            <p className="m-0 mt-2 text-[15px] text-white/60">aanvragen in de zes maanden ervoor</p>
+          </div>
+        </div>
+      ),
+      cijfers: [
+        { getal: '23', label: 'aanvragen in zes maanden' },
+        { getal: '21', label: 'aanvragen in de eerste maand' },
+        { getal: '68%', label: 'lagere advertentiekosten per aanvraag' },
+      ],
+    },
   },
   {
     slug: 'sterker-witgoed',
@@ -124,12 +145,17 @@ type Props = {
   metOverzicht?: boolean
   // false: geen knop "Lees de case" (Koen, 23 nov: op de actiepagina niet doorklikken).
   metLink?: boolean
-  // true: toon het uitgelichte cijfer van een kaart (Koen, 23 nov: "moet eruit knallen").
+  // true: toon de actie-invulling van een kaart (Koen, 23 nov: "moet eruit knallen").
   metUitlichting?: boolean
+  // slug van de kaart die voorop moet (actiepagina: Hans, Koen 23 nov 18:05).
+  eerst?: string
 }
 
-export default function CaseCarousel({ alles = false, bron = 'case_carrousel', metOverzicht = true, metLink = true, metUitlichting = false }: Props = {}) {
-  const KAARTEN = alles ? ALLE_KAARTEN : ALLE_KAARTEN.filter((k) => k.openbaar)
+export default function CaseCarousel({ alles = false, bron = 'case_carrousel', metOverzicht = true, metLink = true, metUitlichting = false, eerst }: Props = {}) {
+  const KAARTEN = (alles ? ALLE_KAARTEN : ALLE_KAARTEN.filter((k) => k.openbaar)).map((k) =>
+    metUitlichting && k.actie ? { ...k, ...k.actie } : k,
+  )
+  if (eerst) KAARTEN.sort((a, b) => Number(b.slug === eerst) - Number(a.slug === eerst))
   const [actief, setActief] = useState(0)
   const n = KAARTEN.length
   const naar = (i: number) => setActief(Math.min(n - 1, Math.max(0, i)))
@@ -206,14 +232,6 @@ export default function CaseCarousel({ alles = false, bron = 'case_carrousel', m
                 {k.beeld}
                 <div className={`flex flex-col gap-4 px-4 pb-4 pt-1 lg:px-6 lg:py-6 ${voor ? '' : 'pointer-events-none'}`}>
                   <p className="m-0 font-display text-[13px] font-bold uppercase tracking-[0.14em] text-primary">{k.klant}</p>
-                  {metUitlichting && k.uitgelicht && (
-                    <div className="rounded-2xl bg-primary px-5 py-4 text-white">
-                      <p className="m-0 font-display text-[44px] font-extrabold leading-none text-accent md:text-[56px]" style={{ letterSpacing: '-0.03em' }}>
-                        {k.uitgelicht.getal}
-                      </p>
-                      <p className="m-0 mt-2 text-[15px] leading-[1.35] text-white/80">{k.uitgelicht.label}</p>
-                    </div>
-                  )}
                   <h3 className="m-0 font-display text-[24px] font-bold text-primary md:text-[28px]" style={{ letterSpacing: '-0.02em', lineHeight: '1.15' }}>
                     {k.kop}
                   </h3>
