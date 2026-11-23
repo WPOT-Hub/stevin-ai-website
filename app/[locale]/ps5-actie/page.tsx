@@ -68,7 +68,7 @@ const ALGEMEEN = {
 const URL = 'https://stevin.ai/ps5-actie'
 const TITEL = 'Gratis PS5 met GTA VI als je nu klant wordt bij Stevin.AI'
 const OMSCHRIJVING =
-  'De eerste vijf nieuwe klanten die starten met een jaarcontract en een volledig opstarttraject krijgen gratis een PS5 met GTA VI of een gratis website, binnen een vast budget van Stevin.AI. De voorwaarden staan op deze pagina.'
+  'De eerste vijf nieuwe klanten die starten met een jaarcontract en een volledig opstarttraject krijgen gratis een PS5 met GTA VI, binnen een vast budget van Stevin.AI. De voorwaarden staan op deze pagina.'
 
 // Deelbeeld per variant (Koen 23 nov: "betere og image met de actie"). Beeld uit
 // meta-advertenties/bron/og-ps5-actie.html, zelfde opmaak als de advertenties.
@@ -81,7 +81,7 @@ const DEELBEELD_ALGEMEEN = {
   beeld: 'og-bedrijven',
   titel: 'Wij zoeken 5 bedrijven in West-Brabant. Gratis PS5 met GTA VI als je klant wordt.',
 }
-const DEELTEKST = 'Wij regelen je nieuwe klanten. Gratis PS5 met GTA VI of een gratis website bij een jaarcontract. Bel of app ons.'
+const DEELTEKST = 'Wij regelen je nieuwe klanten. Gratis PS5 met GTA VI bij een jaarcontract. Bel of app ons.'
 
 export async function generateMetadata({ searchParams }: Pick<Props, 'searchParams'>): Promise<Metadata> {
   const { vak } = await searchParams
@@ -109,7 +109,7 @@ export async function generateMetadata({ searchParams }: Pick<Props, 'searchPara
 const VOORWAARDEN = [
   'De actie geldt voor de eerste vijf nieuwe klanten die tot en met 31 december 2026 tekenen voor een jaarcontract met Stevin.AI als bureau, inclusief een volledig opstarttraject. Vijf in totaal, ongeacht je vak. Op volgorde van tekenen. Is de vijfde plek toegezegd, dan sluit de actie, ook als het nog geen 31 december is.',
   'Een volledig opstarttraject betekent dat het in je offerte vooraf is afgesproken en bestaat uit meerdere onderdelen, bijvoorbeeld een nieuwe website, een campagne, het inrichten van je telefoon en de meting. Welke onderdelen en wat ze kosten, staat in je offerte.',
-  'Je kiest zelf wat je gratis krijgt, binnen een vast budget van Stevin.AI: een PS5 met GTA VI of een gratis website. Wat die website inhoudt, staat in je offerte. Bij de PS5 denken we aan een PlayStation 5 Digital Edition (Slim) met PlayStation Store-tegoed om GTA VI te kopen. Games zijn op PlayStation niet los weg te geven en de Digital Edition heeft geen schijfstation, dus het tegoed komt op jouw eigen PlayStation-account. Daarvoor heb je zo\'n account nodig.',
+  'Je krijgt de PS5 binnen een vast budget van Stevin.AI. We denken aan een PlayStation 5 Digital Edition (Slim) met PlayStation Store-tegoed om GTA VI te kopen. Games zijn op PlayStation niet los weg te geven en de Digital Edition heeft geen schijfstation, dus het tegoed komt op jouw eigen PlayStation-account. Daarvoor heb je zo\'n account nodig.',
   'Wij bestellen de PS5 nadat je het opstarttraject hebt betaald. De levertijd hangt af van de voorraad. Bij de bestelling melden we je wanneer je de console verwacht.',
   'Zeg je je jaarcontract binnen drie maanden nadat je bent gestart op, dan berekenen we de console aan je door. Het bedrag staat vooraf in je offerte.',
   'Dit is een actie voor bedrijven in Nederland en Vlaanderen die nieuw zijn bij Stevin.AI. Wat je gratis krijgt, is niet in te ruilen voor korting of geld en is niet over te dragen.',
@@ -168,7 +168,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
           </figure>
           <div className="lg:col-start-1 lg:row-start-2">
             <p className="m-0 mt-3 max-w-[560px] font-display text-[24px] font-extrabold leading-[1.2] text-white sm:mt-6 sm:text-[30px]">
-              Gratis PS5 incl. GTA VI. Of een gratis website.
+              Gratis PS5 incl. GTA VI.
               <span className="mt-1 block text-[17px] font-semibold text-white/90 sm:text-[19px]">Als je klant wordt. Voor de eerste 5 ondernemers.</span>
             </p>
             <div className="mt-5 sm:mt-8">
