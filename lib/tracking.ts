@@ -193,13 +193,35 @@ export function rememberInteraction(kind: InteractionKind, payload: Record<strin
   writeContext(ctx)
 }
 
+function leesMetaCookie(naam: '_fbc' | '_fbp'): string | undefined {
+  try {
+    const deel = document.cookie.split('; ').find((c) => c.startsWith(`${naam}=`))
+    return deel ? decodeURIComponent(deel.slice(naam.length + 1)).slice(0, 340) : undefined
+  } catch {
+    return undefined
+  }
+}
+
+/**
+ * De context die met een aanvraag naar de Hub gaat. Sinds 23 nov 2026 (W-126)
+ * ook de keuze voor marketingcookies en de Meta-cookies _fbc en _fbp: de Hub
+ * meldt de aanvraag dan vanaf de server als Lead aan Meta, met hetzelfde
+ * event_id als de pixel, zodat Meta hem een keer telt. Die cookies bestaan
+ * alleen als de bezoeker marketing koos, want pas dan laadt de pixel.
+ */
 export function getLeadContext(extra: Record<string, unknown> = {}): Record<string, unknown> {
   if (typeof window === 'undefined') return extra
   const ctx = readContext()
+  const marketing = hasMarketingConsent(getStoredConsent())
+  const fbc = marketing ? leesMetaCookie('_fbc') : undefined
+  const fbp = marketing ? leesMetaCookie('_fbp') : undefined
   return {
     ...ctx,
     page_path: window.location.pathname,
     current_url: window.location.href.slice(0, 500),
+    marketing_toestemming: marketing,
+    ...(fbc ? { fbc } : {}),
+    ...(fbp ? { fbp } : {}),
     ...extra,
   }
 }
