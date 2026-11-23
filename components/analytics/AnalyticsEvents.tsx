@@ -42,9 +42,14 @@ const SCROLL_THRESHOLDS = [25, 50, 75, 100]
 // zijn (bijv. "recordings van betaald verkeer dat demo-intentie toonde maar
 // niet converteerde"). Clarity laadt via strategy afterInteractive, dus
 // window.clarity kan vlak na mount nog niet bestaan: kort pollen.
-/** Het klik-ID van de advertentie uit de sessie, ook als de bezoeker inmiddels op een andere pagina is. */
+/**
+ * Het klik-ID van de advertentie: eerst uit de huidige URL (een tweede advertentieklik in
+ * dezelfde sessie wint), anders uit de sessie, ook als de bezoeker op een andere pagina is.
+ */
 function fbclidUitSessie(): string | undefined {
   try {
+    const uitUrl = new URLSearchParams(window.location.search).get('fbclid')
+    if (uitUrl) return uitUrl
     const utm = getLeadContext().utm_params as Record<string, unknown> | undefined
     return typeof utm?.fbclid === 'string' ? utm.fbclid : undefined
   } catch {
