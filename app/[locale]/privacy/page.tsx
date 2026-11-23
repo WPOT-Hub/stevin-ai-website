@@ -224,11 +224,11 @@ function PrivacyDutch() {
           meten. Wil je dat niet, mail dan naar koen@stevin.ai.
         </p>
         <p>
-          Kom je via een advertentie op onze actiepagina, dan melden wij dat bezoek aan Meta, ook als je
-          geen marketingcookies hebt gekozen. Daarbij gaan het kenmerk van de advertentieklik, je
-          browsertype en je IP-adres mee. Zonder advertentieklik melden wij een bezoek niet aan Meta.
-          Wij tellen elk bezoek aan die pagina zelf, zonder iets te bewaren waarmee je te herkennen
-          bent. Wil je dat niet, mail dan naar koen@stevin.ai.
+          Kom je op onze actiepagina, dan melden wij dat bezoek aan Meta, ook als je geen
+          marketingcookies hebt gekozen. Daarbij gaan je browsertype en je IP-adres mee, en het
+          kenmerk van de advertentieklik als je via een advertentie kwam. Wij tellen elk bezoek
+          aan die pagina ook zelf, zonder iets te bewaren waarmee je te herkennen bent. Wil je
+          dat niet, mail dan naar koen@stevin.ai.
         </p>
         <p>
           Je kunt via de cookie-instellingen kiezen tussen noodzakelijk, statistieken,
@@ -422,11 +422,11 @@ function PrivacyEnglish() {
           interest in measuring our ads. If you object, email koen@stevin.ai.
         </p>
         <p>
-          If you reach our campaign page through an ad, we report that visit to Meta, also when you
-          did not choose marketing cookies. This includes the identifier of the ad click, your
-          browser type and your IP address. We do not report a visit to Meta without an ad click.
-          We count every visit to that page ourselves, without storing anything that identifies you.
-          If you do not want this, email koen@stevin.ai.
+          If you visit our campaign page, we report that visit to Meta, also when you did not
+          choose marketing cookies. This includes your browser type and your IP address, and the
+          identifier of the ad click if you came through an ad. We also count every visit to that
+          page ourselves, without storing anything that identifies you. If you do not want this,
+          email koen@stevin.ai.
         </p>
         <p>
           You can choose between necessary, statistics, marketing or accept all through
