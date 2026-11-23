@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLocale } from 'next-intl'
 import { MessageCircle, Phone, Send, X } from 'lucide-react'
 import { pushDataLayerEvent } from '@/lib/datalayer'
+import { generateEventId, getLeadContext, pushConversionEvent } from '@/lib/tracking'
 import { TELEFOON } from '@/lib/telefoon'
 import { Turnstile, TURNSTILE_SITEKEY } from '@/components/Turnstile'
 
@@ -327,16 +328,19 @@ function Gegevens({ taal, gesprekId, terug, gelukt }: { taal: Taal; gesprekId: s
     if (bezig) return
     setBezig(true)
     setMelding('')
+    // Een event-ID voor de Hub en de pixel, zodat Meta de aanvraag een keer telt (W-126).
+    const eventId = generateEventId()
     try {
       const res = await fetch(`${API}/gegevens`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'omit',
-        body: JSON.stringify({ gesprekId: gesprekId || undefined, naam, email, telefoon, bedrijf, toestemming: akkoord, turnstile: token, _honey: honey, taal }),
+        body: JSON.stringify({ gesprekId: gesprekId || undefined, naam, email, telefoon, bedrijf, toestemming: akkoord, turnstile: token, _honey: honey, taal, context: getLeadContext({ event_id: eventId, form_id: 'chat' }) }),
       })
       const j: Record<string, unknown> = await res.json().catch(() => ({}))
       if (res.ok && j.ok === true) {
         pushDataLayerEvent('chat_gegevens')
+        void pushConversionEvent('generate_lead', email ? { email } : undefined, { event_id: eventId, form: 'chat', source: 'chat' }).catch(() => undefined)
         // Terug naar de chat, zodat de bezoeker verder kan vragen (bijvoorbeeld
         // de gegevens van een referentie, die de Hub pas na dit formulier geeft).
         gelukt(typeof j.melding === 'string' ? j.melding : '')

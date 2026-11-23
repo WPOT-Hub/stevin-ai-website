@@ -202,20 +202,24 @@ function PrivacyDutch() {
           Clarity om paginabezoeken, interacties, scrollgedrag, klikken, heatmaps en
           sessie-opnames te analyseren. Kies je voor marketing, dan gebruiken wij Google
           Ads en Meta voor campagne- en conversiemeting. Waar relevant sturen wij
-          formuliergegevens alleen gehasht door voor enhanced conversion meting. Klik je met
-          die keuze op een belknop, dan meldt je browser die klik aan onze server, met
-          het kenmerk dat Meta in zijn cookies bewaart, je browsertype en je
-          IP-adres. Komt er binnen tien minuten daarna een gesprek bij ons binnen, dan
-          melden wij aan Meta dat de klik een gesprek werd, met die kenmerken erbij. Je
-          telefoonnummer, je naam en wat je zegt gaan daarbij niet naar Meta. De klik
-          zelf bewaren wij hooguit drie uur.
+          formuliergegevens alleen gehasht door voor enhanced conversion meting.
         </p>
         <p>
-          Vul je een formulier in om contact met ons op te nemen, dan melden wij die
+          Vul je een formulier in, plan je een kennismaking, laat je je gegevens achter in
+          de chat of de marketingcheck, of zet je je op de wachtlijst, dan melden wij die
           aanvraag aan Meta, ook als je geen marketingcookies hebt gekozen. Zo zien wij welke
           advertentie tot een aanvraag leidde. Je e-mailadres, telefoonnummer en naam gaan
           daarbij alleen gehasht naar Meta, samen met het kenmerk van de advertentieklik, je
           browsertype en je IP-adres. Wat je in het bericht schrijft gaat niet naar Meta.
+        </p>
+        <p>
+          Klik je op bellen, WhatsApp of mail, dan meldt je browser die klik aan onze server,
+          met het kenmerk van de advertentieklik, je browsertype en je IP-adres. Heb je
+          marketingcookies gekozen, dan gaat ook het kenmerk mee dat Meta in zijn cookies
+          bewaart. Een klik op WhatsApp of mail melden wij meteen aan Meta. Een klik op bellen
+          melden wij alleen als er binnen tien minuten een gesprek bij ons binnenkomt. Je
+          telefoonnummer, je naam en wat je zegt gaan niet naar Meta. De klik op bellen
+          bewaren wij hooguit drie uur.
           Wij doen dit op basis van ons gerechtvaardigd belang om onze advertenties te
           meten. Wil je dat niet, mail dan naar koen@stevin.ai.
         </p>
@@ -391,19 +395,23 @@ function PrivacyEnglish() {
           analyze page views, interactions, scroll behavior, clicks, heatmaps and session
           recordings. If you choose marketing, we use Google Ads and Meta for campaign
           and conversion measurement. Where relevant, form data is only sent in hashed
-          form for enhanced conversion measurement. If you click a call button
-          with that choice, your browser reports the click to our server, with the
-          identifier Meta keeps in its cookies, your browser type and your IP
-          address. If a call reaches us within ten minutes, we
-          tell Meta that the click became a call and include those identifiers. Your phone number, your name and
-          what you say are not sent to Meta. We keep the click for three hours at most.
+          form for enhanced conversion measurement.
         </p>
         <p>
-          If you fill in a form to contact us, we report that request to Meta, also when you
+          If you fill in a form, book an introduction, leave your details in the chat or the
+          marketing check, or join the waiting list, we report that request to Meta, also when you
           did not choose marketing cookies. This shows us which ad led to a request. Your
           email address, phone number and name are sent to Meta in hashed form only, together
           with the identifier of the ad click, your browser type and your IP address. What you
-          write in your message is not sent to Meta. We do this based on our legitimate
+          write in your message is not sent to Meta.
+        </p>
+        <p>
+          If you click call, WhatsApp or email, your browser reports that click to our server,
+          with the identifier of the ad click, your browser type and your IP address. If you chose
+          marketing cookies, the identifier Meta keeps in its cookies is included too. We report a
+          WhatsApp or email click to Meta right away. We report a call click only if a call reaches
+          us within ten minutes. Your phone number, your name and what you say are not sent to
+          Meta. We keep the call click for three hours at most. We do this based on our legitimate
           interest in measuring our ads. If you object, email koen@stevin.ai.
         </p>
         <p>

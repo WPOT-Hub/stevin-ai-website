@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Globe } from 'lucide-react'
+import { generateEventId, getLeadContext, pushConversionEvent } from '@/lib/tracking'
 
 const HUB_LIVE = 'https://hub.stevin.ai/api/marketing-check'
 // Eigen boekingsengine: /kennismaking opent het kennismakingsvenster. De
@@ -760,6 +761,8 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
     if (!token || cStatus === 'bezig') return
     setCStatus('bezig')
     setCFout(null)
+    // Een event-ID voor de Hub en de pixel, zodat Meta de aanvraag een keer telt (W-126).
+    const eventId = generateEventId()
     try {
       const res = await fetch(`${hub.current}/result/${token}/contact`, {
         method: 'POST',
@@ -769,6 +772,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
           naam: cNaam, email: cEmail, telefoon: cTel,
           bericht: cBericht || (uitkomst?.bevinding ? `Uit de scan: ${diagnoseVan(uitkomst.bevinding).label.toLowerCase()}` : ''),
           session_token: params.current.s,
+          context: getLeadContext({ event_id: eventId, form_id: 'marketingcheck' }),
         }),
       })
       const data = await res.json()
@@ -778,6 +782,7 @@ export default function MarketingCheck({ variant = 'marketing' }: { variant?: 'm
         return
       }
       setCStatus('klaar')
+      void pushConversionEvent('generate_lead', cEmail ? { email: cEmail } : undefined, { event_id: eventId, form: 'marketingcheck', source: 'marketingcheck' }).catch(() => undefined)
     } catch {
       setCFout('Dat lukte niet. Controleer je verbinding en probeer het nog eens.')
       setCStatus('invoer')
