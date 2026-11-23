@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { BarChart3, Megaphone, Phone, Smartphone } from 'lucide-react'
 import { TELEFOON } from '@/lib/telefoon'
 import { h2Stijl } from '@/components/rethink/RethinkBlokken'
+import Citaten from '@/components/ps5/Citaten'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -15,19 +16,19 @@ type Props = {
 // W-861: elk vak krijgt in de advertentie een eigen link (?vak=dakdekker of ?vak=installateur).
 // Alleen waarden uit deze lijst tellen; al het andere wordt genegeerd, zodat niemand
 // via de link eigen tekst op de pagina kan zetten.
-type Vak = { bezet: number; enkelvoud: string; meervoud: string; kop: string; bedrijf: string }
-// bezet: aantal plekken dat in dit vak al vergeven is. Bij elke nieuwe klant in een vak
-// dit getal ophogen en de advertentie van dat vak wisselen (meta-advertenties/per-aantal-bezet).
+type Vak = { enkelvoud: string; meervoud: string; kop: string; bedrijf: string }
+// Koen 22 nov 23:19: breed op alle adverteerders, vijf plekken in totaal, niet per vak.
+// BEZET is het aantal vergeven plekken, voor alle varianten van de pagina samen. Bij elke
+// nieuwe klant ophogen en de advertenties wisselen (meta-advertenties/per-aantal-bezet).
+const BEZET = 1
 const VAKKEN: Record<string, Vak> = {
   dakdekker: {
-    bezet: 1,
     enkelvoud: 'dakdekker',
     meervoud: 'dakdekkers',
     kop: 'Wij zoeken 5 dakdekkers.',
     bedrijf: 'dakbedrijf',
   },
   installateur: {
-    bezet: 1,
     enkelvoud: 'installateur',
     meervoud: 'installateurs',
     kop: 'Wij zoeken 5 installateurs.',
@@ -35,7 +36,7 @@ const VAKKEN: Record<string, Vak> = {
   },
 }
 const ALGEMEEN = {
-  kop: 'Wij zoeken 5 bedrijven per vak.',
+  kop: 'Wij zoeken 5 bedrijven in West-Brabant.',
   bedrijf: 'bedrijf',
 }
 
@@ -66,7 +67,7 @@ const ALGEMEEN = {
 const URL = 'https://stevin.ai/ps5-actie'
 const TITEL = 'Een PS5 met GTA VI cadeau als je nu klant wordt bij Stevin.AI'
 const OMSCHRIJVING =
-  'De eerste vijf nieuwe klanten per vak die starten met een jaarcontract en een volledig opstarttraject kiezen zelf een cadeau binnen een vast budget van Stevin.AI, bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI. De voorwaarden staan op deze pagina.'
+  'De eerste vijf nieuwe klanten die starten met een jaarcontract en een volledig opstarttraject kiezen zelf een cadeau binnen een vast budget van Stevin.AI, bijvoorbeeld een PS5 Digital Edition met tegoed voor GTA VI. De voorwaarden staan op deze pagina.'
 
 export const metadata: Metadata = {
   title: TITEL,
@@ -85,7 +86,7 @@ export const metadata: Metadata = {
 }
 
 const VOORWAARDEN = [
-  'De actie geldt per vak voor de eerste vijf nieuwe klanten die tot en met 31 december 2026 tekenen voor een jaarcontract met Stevin.AI als bureau, inclusief een volledig opstarttraject. Dus vijf dakdekkers en vijf installateurs, niet vijf in totaal. Op volgorde van tekenen. Is het vijfde cadeau in jouw vak toegezegd, dan sluit de actie voor dat vak, ook als het nog geen 31 december is.',
+  'De actie geldt voor de eerste vijf nieuwe klanten die tot en met 31 december 2026 tekenen voor een jaarcontract met Stevin.AI als bureau, inclusief een volledig opstarttraject. Vijf in totaal, ongeacht je vak. Op volgorde van tekenen. Is het vijfde cadeau toegezegd, dan sluit de actie, ook als het nog geen 31 december is.',
   'Een volledig opstarttraject betekent dat het in je offerte vooraf is afgesproken en bestaat uit meerdere onderdelen, bijvoorbeeld een nieuwe website, een campagne, het inrichten van je telefoon en de meting. Welke onderdelen en wat ze kosten, staat in je offerte.',
   'Je kiest zelf je cadeau, binnen een vast budget van Stevin.AI. Wij denken aan een PlayStation 5 Digital Edition (Slim) met PlayStation Store-tegoed om GTA VI te kopen. Games zijn op PlayStation niet los cadeau te doen en de Digital Edition heeft geen schijfstation, dus het tegoed komt op jouw eigen PlayStation-account. Daarvoor heb je zo\'n account nodig.',
   'Wij bestellen het cadeau nadat je het opstarttraject hebt betaald. De levertijd hangt af van de voorraad. Bij de bestelling melden we je wanneer je de console verwacht.',
@@ -175,7 +176,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                   className="relative flex aspect-[1.3/1] flex-1 items-center justify-center rounded-xl font-display text-[20px] font-extrabold sm:text-[26px]"
                   style={{ border: '3px dashed rgba(255,255,255,.85)', background: 'rgba(255,255,255,.1)' }}
                 >
-                  {vak && n <= vak.bezet ? (
+                  {n <= BEZET ? (
                     <>
                       <span className="sr-only">Plek {n} is bezet</span>
                       <Image
@@ -194,45 +195,26 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               ))}
             </ol>
             <p className="m-0 mt-3 text-[15px] font-bold text-white">
-              {vak ? `Nog ${5 - vak.bezet} van de 5 plekken vrij.` : 'Vijf plekken per vak.'}
+              {`Nog ${5 - BEZET} van de 5 plekken vrij.`}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Koen, 22 nov: "neemt veel te veel ruimte in". Citaten in een rij die je op de telefoon
-          opzij veegt, Ecomy als klein beeld met een regel ernaast. Ingrid en Bart: akkoord via Koen.
-          Marcel en de eigenaar van Sterker blijven eruit tot ze hun zin zelf hebben bevestigd. */}
+      {/* Koen, 22 nov: "neemt veel te veel ruimte in". Citaten in een schuifrij op de telefoon (Koen 22 nov 23:51), zie components/ps5/Citaten.tsx, Marcel (Ecomy) als vierde citaat, Koen 22 nov 23:40 (zijn oom, Koen regelt het akkoord). Ingrid en Bart: akkoord via Koen.
+          De eigenaar van Sterker blijft eruit tot ze hun zin zelf hebben bevestigd. */}
       <section className="pb-2 pt-6 sm:pt-16">
         <div className="mx-auto max-w-[1152px]">
-          <ul className="m-0 flex list-none snap-x snap-mandatory scroll-px-6 gap-3 overflow-x-auto px-6 pb-2 sm:grid sm:grid-cols-3 sm:overflow-visible">
-            {[
+          <Citaten
+            items={[
               { q: 'Ik was al blij als er iemand een keer belde. Nu zijn we weer offertes aan het maken.', a: 'Hans, Hans Schepers Stoffering' },
               { q: 'Koen denkt mee alsof het zijn eigen bedrijf is. Je krijgt antwoord, geen verhaal.', a: 'Ingrid, Tonnisteiner' },
               { q: 'Eindelijk iemand die gewoon zegt wat werkt en wat niet.', a: 'Bart, Rijschool Bart' },
-            ].map(({ q, a }) => (
-              <li key={a} className="w-[78%] shrink-0 snap-start rounded-[12px] border border-[#D6DDE8] bg-white p-4 sm:w-auto">
-                <figure className="m-0">
-                  <blockquote className="m-0 text-[15px] font-semibold leading-[1.4] text-primary">&ldquo;{q}&rdquo;</blockquote>
-                  <figcaption className="mt-2 text-[13px] text-[#2A3A54]">{a}</figcaption>
-                </figure>
-              </li>
-            ))}
-          </ul>
+              { q: 'Ik houd alle aanvragen nu bij op mijn telefoon. Echt top!', a: 'Marcel, Ecomy Energie' },
+            ]}
+          />
           <div className="mt-3 px-6">
-            <figure className="m-0 flex items-center gap-3 rounded-[12px] border border-[#D6DDE8] bg-white p-2 pr-4">
-              <Image
-                src="/images/cases/ecomy-check.webp"
-                alt="De check op de site van Ecomy: een dak van bovenaf met de dakvlakken, het aantal panelen dat past en de opwek per jaar"
-                width={1200}
-                height={619}
-                className="h-auto w-[42%] shrink-0 rounded-[8px] sm:w-[220px]"
-              />
-              <figcaption className="text-[14px] font-semibold leading-[1.35] text-primary">
-                Ecomy, installateur uit Wijchen: de klant ziet eerst zijn eigen dak.
-              </figcaption>
-            </figure>
-            <p className="m-0 mt-3 text-[14px] leading-[1.4] text-[#2A3A54]">
+            <p className="m-0 text-[14px] leading-[1.4] text-[#2A3A54]">
               <span className="font-semibold text-primary">20+ jaar online marketing</span>, onder meer voor Deceuninck, Etex, Hyundai, JBL en Leen Bakker.
             </p>
           </div>
@@ -267,7 +249,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       <section id="gesprek" className="scroll-mt-24 px-6" style={{ paddingTop: 72, paddingBottom: 48 }}>
         <div className="mx-auto max-w-[900px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
-            {vak ? `Nog ${5 - vak.bezet} plekken voor ${vak.meervoud}. Bel of app ons.` : 'Bel of app ons.'}
+            {`Nog ${5 - BEZET} plekken. Bel of app ons.`}
           </h2>
           <a href={TELEFOON.tel} data-vak={vakSleutel} data-cta="ps5_actie_onder_bel" className="mt-6 block font-display font-extrabold text-primary" style={{ fontSize: 'clamp(36px, 6vw, 60px)', letterSpacing: '-0.02em', lineHeight: 1 }}>
             {TELEFOON.weergave}
