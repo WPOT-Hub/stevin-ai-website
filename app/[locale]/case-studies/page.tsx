@@ -31,6 +31,7 @@ export default async function CaseStudiesPage({ params }: Props) {
   // verhoudingen uit de klantdossiers, geen bedragen en geen citaten zonder akkoord.
   const caseStudies: Array<{
     slug: string
+    openbaar?: boolean
     industry: string
     title: string
     subtitle: string
@@ -55,6 +56,7 @@ export default async function CaseStudiesPage({ params }: Props) {
     },
     {
       slug: 'sterker-witgoed',
+      openbaar: false, // wacht op akkoord van Faysal
       industry: 'Webwinkel in witgoed',
       title: 'Elke handeling met bewijs vastgelegd.',
       subtitle: 'Productfeed hersteld en een begeleide livegang van de nieuwe site.',
@@ -88,7 +90,7 @@ export default async function CaseStudiesPage({ params }: Props) {
       <section className="bg-white" style={{ padding: '80px 24px' }}>
         <div className="mx-auto max-w-[1200px]">
           <div className="grid grid-cols-1 gap-0 border-t border-border">
-            {caseStudies.map((cs) => (
+            {caseStudies.filter((cs) => cs.openbaar !== false).map((cs) => (
               <Link
                 key={cs.slug}
                 href={`/case-studies/${cs.slug}`}

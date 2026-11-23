@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: 'Een webwinkel in witgoed kreeg elke handeling vastgelegd, een herstelde productfeed en een begeleide livegang.',
       translated: false,
     }),
-    robots: { index: true, follow: true },
+    robots: { index: false, follow: false },
   }
 }
 

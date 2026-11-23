@@ -13,6 +13,8 @@ import { Link } from '@/i18n/navigation'
 
 type Kaart = {
   slug: string
+  // false tot de klant akkoord heeft gegeven op openbare vermelding.
+  openbaar: boolean
   klant: string
   kop: string
   tekst: string
@@ -22,9 +24,10 @@ type Kaart = {
 
 const FOTO = 'relative min-h-[240px] overflow-hidden rounded-2xl bg-primary md:min-h-[320px]'
 
-const KAARTEN: Kaart[] = [
+const ALLE_KAARTEN: Kaart[] = [
   {
     slug: 'hans-schepers',
+    openbaar: true,
     klant: 'Hans Schepers Stoffering',
     kop: 'Op zijn site stonden gokpagina’s. Hans wist van niets.',
     tekst: 'In de eerste week haalden we ze weg, bouwden de meting opnieuw op en zetten echte aanvragen terug die in de spambak waren beland.',
@@ -47,6 +50,7 @@ const KAARTEN: Kaart[] = [
   },
   {
     slug: 'ecomy-energie',
+    openbaar: true,
     klant: 'Ecomy Energie',
     kop: 'Nieuw logo, nieuwe site en een check die je dak tekent.',
     tekst: 'Een installateur in Wijchen kreeg in een paar weken het hele merk opnieuw, met een check die de panelen op je eigen dak legt.',
@@ -69,6 +73,7 @@ const KAARTEN: Kaart[] = [
   },
   {
     slug: 'sterker-witgoed',
+    openbaar: false,
     klant: 'Sterker Witgoed',
     kop: '667 handelingen in acht weken, elk met bewijs vastgelegd.',
     tekst: 'Een webwinkel in witgoed kreeg zijn productfeed hersteld en een begeleide livegang van zijn nieuwe site.',
@@ -97,6 +102,8 @@ const KAARTEN: Kaart[] = [
     ],
   },
 ]
+
+const KAARTEN = ALLE_KAARTEN.filter((k) => k.openbaar)
 
 export default function CaseCarousel() {
   const [actief, setActief] = useState(0)
