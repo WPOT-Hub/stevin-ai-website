@@ -164,7 +164,7 @@ export function meldBelklik(vak?: string, fbclid?: string, extra?: { soort: 'wha
 
 const HUB_BEZOEK = 'https://hub.stevin.ai/api/bezoek'
 /** De pagina's die de Hub telt: de actiepagina en de toegangspagina, met of zonder taalpad. Moet gelijk zijn aan MEET_PAD_RE in de Hub. */
-export const MEET_PAD = /^\/(?:[a-z]{2}\/)?ps5-actie(?:-toegang)?\/?$/
+export const MEET_PAD = /^\/(?:(?:nl|en)\/)?ps5-actie(?:-toegang)?\/?$/
 const SESSIE_GEZIEN_KEY = 'stevin_bezoek_gezien'
 const UTM_SLEUTELS = ['source', 'medium', 'campaign', 'term', 'content'] as const
 
