@@ -8,8 +8,8 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'case_studies' })
-  // W-078, 13 sep 2026: noindex zolang de pagina leeg is. De audit van 12 sep
-  // wees dit aan als het enige bewijsmoment op de site, en het valt negatief uit.
+  // W-078, 13 sep 2026: noindex zolang de pagina leeg was. Sinds 23 nov 2026
+  // (W-860) staan er drie echte cases op, dus indexeerbaar op Koens go.
   return {
     ...localizedMetadata({
       path: '/case-studies',
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${t('h1')}, Stevin`,
       description: t('sub'),
     }),
-    robots: { index: false, follow: true },
+    robots: { index: true, follow: true },
   }
 }
 

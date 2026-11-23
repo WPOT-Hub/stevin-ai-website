@@ -78,7 +78,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: 'Op de site van een stoffeerder stonden gokpagina’s en de meting liep scheef. Wat we vonden en wat we deden.',
       translated: false,
     }),
-    robots: { index: false, follow: false },
+    robots: { index: true, follow: true },
   }
 }
 

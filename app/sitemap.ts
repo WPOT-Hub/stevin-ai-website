@@ -45,6 +45,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog',
     // W-652 (23 okt 2026): PHP-lek-check, indexeerbaar op Koens vraag.
     '/php-lek-check',
+    // W-860 (23 nov 2026): drie klantcases, indexeerbaar op Koens go.
+    '/case-studies',
+    '/case-studies/hans-schepers',
+    '/case-studies/ecomy-energie',
+    '/case-studies/sterker-witgoed',
     // Vergelijkingen staan op noindex tot ze herschreven zijn (W-535, 12 okt).
   ]
 
