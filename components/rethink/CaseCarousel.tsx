@@ -97,7 +97,7 @@ const ALLE_KAARTEN: Kaart[] = [
       cijfers: [
         { getal: '23', label: 'aanvragen in zes maanden' },
         { getal: '21', label: 'aanvragen in de eerste maand' },
-        { getal: '68%', label: 'lagere advertentiekosten per aanvraag' },
+        { getal: '68%', label: 'lagere kosten per aanvraag' },
       ],
     },
   },
