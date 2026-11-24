@@ -195,11 +195,15 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
                 href={TELEFOON.tel}
                 data-vak={vakSleutel}
                 data-cta="ps5_actie_hero_bel"
-                className="flex w-full items-center justify-center gap-3 rounded-xl bg-white px-7 py-5 font-display text-[20px] font-extrabold shadow-[0_10px_28px_rgba(10,22,40,0.22)] transition-[filter] hover:brightness-95 sm:inline-flex sm:w-auto sm:py-4 sm:text-[18px]"
-                style={{ color: '#0A1628' }}
+                className="relative flex w-full items-center justify-center gap-3 rounded-xl px-7 py-5 font-display text-[22px] font-extrabold shadow-[0_10px_28px_rgba(10,22,40,0.28)] transition-[filter] hover:brightness-95 sm:inline-flex sm:w-auto sm:py-4 sm:text-[20px]"
+                style={{ background: '#FFD400', color: '#0A1628' }}
               >
-                <Phone className="h-5 w-5" aria-hidden />
-                Bel {TELEFOON.weergave}
+                {/* Zachte puls rond de belknop, zodat hij opvalt naast het GRATIS-label. Uit bij reduced motion. */}
+                <span aria-hidden className="pointer-events-none absolute inset-0 rounded-xl motion-safe:animate-ping" style={{ background: '#FFD400', opacity: 0.35, animationDuration: '2s' }} />
+                <span className="relative flex h-9 w-9 items-center justify-center rounded-full" style={{ background: '#0A1628' }}>
+                  <Phone className="h-5 w-5" style={{ color: '#FFD400' }} aria-hidden />
+                </span>
+                <span className="relative">Bel {TELEFOON.weergave}</span>
               </a>
               <p className="m-0 mt-4 text-[16px] font-semibold text-white">
                 Liever appen?{' '}
