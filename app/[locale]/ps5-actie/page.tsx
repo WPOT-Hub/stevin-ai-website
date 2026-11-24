@@ -44,12 +44,13 @@ const ALGEMEEN = {
 // (?regio=eindhoven). Dezelfde vijf plekken in totaal, alleen het gebied in de kop
 // verschilt. Zelfde pad, zodat de meting (MEET_PAD in lib/metaPixel.ts en in de Hub)
 // en de codepoort in middleware.ts ongewijzigd blijven. Alleen waarden uit deze lijst.
-type Regio = { kop: string; app: string; deeltitel: string }
+type Regio = { kop: string; app: string; deeltitel: string; beeld: string }
 const REGIOS: Record<string, Regio> = {
   eindhoven: {
     kop: 'Wij zoeken 5 bedrijven in regio Eindhoven.',
     app: 'Hoi, ik zit in de regio Eindhoven en wil meer weten over de actie.',
     deeltitel: 'Wij zoeken 5 bedrijven in regio Eindhoven. Gratis PS5 met GTA VI als je klant wordt.',
+    beeld: 'og-eindhoven',
   },
 }
 
@@ -101,7 +102,7 @@ export async function generateMetadata({ searchParams }: Pick<Props, 'searchPara
   // Het deelbeeld van de algemene variant noemt West-Brabant; een regio deelt zonder beeldtekst met dat gebied.
   const d = typeof vak === 'string' && Object.hasOwn(DEELBEELD, vak)
     ? DEELBEELD[vak]
-    : r ? { beeld: 'og-bedrijven', titel: r.deeltitel } : DEELBEELD_ALGEMEEN
+    : r ? { beeld: r.beeld, titel: r.deeltitel } : DEELBEELD_ALGEMEEN
   const url = r && typeof regio === 'string' ? `${URL}?regio=${regio}` : d === DEELBEELD_ALGEMEEN ? URL : `${URL}?vak=${vak}`
   const beeld = { url: `https://stevin.ai/images/ps5-actie/${d.beeld}.jpg`, width: 1200, height: 630, alt: d.titel }
   return {
