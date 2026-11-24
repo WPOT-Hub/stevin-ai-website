@@ -40,6 +40,18 @@ const ALGEMEEN = {
   kop: 'Wij zoeken 5 bedrijven in West-Brabant.',
   bedrijf: 'bedrijf',
 }
+// Koen 24 nov 2026: een tweede campagne in de regio Eindhoven, met een eigen link
+// (?regio=eindhoven). Dezelfde vijf plekken in totaal, alleen het gebied in de kop
+// verschilt. Zelfde pad, zodat de meting (MEET_PAD in lib/metaPixel.ts en in de Hub)
+// en de codepoort in middleware.ts ongewijzigd blijven. Alleen waarden uit deze lijst.
+type Regio = { kop: string; app: string; deeltitel: string }
+const REGIOS: Record<string, Regio> = {
+  eindhoven: {
+    kop: 'Wij zoeken 5 bedrijven in regio Eindhoven.',
+    app: 'Hoi, ik zit in de regio Eindhoven en wil meer weten over de actie.',
+    deeltitel: 'Wij zoeken 5 bedrijven in regio Eindhoven. Gratis PS5 met GTA VI als je klant wordt.',
+  },
+}
 
 // W-861 (19 nov 2026): de PS5-actie. De eerste vijf nieuwe klanten die tot en met
 // 31 december 2026 starten met een jaarcontract en een volledig opstarttraject
@@ -84,9 +96,13 @@ const DEELBEELD_ALGEMEEN = {
 const DEELTEKST = 'Wij regelen je nieuwe klanten. Gratis PS5 met GTA VI bij een jaarcontract. Bel of app ons.'
 
 export async function generateMetadata({ searchParams }: Pick<Props, 'searchParams'>): Promise<Metadata> {
-  const { vak } = await searchParams
-  const d = typeof vak === 'string' && Object.hasOwn(DEELBEELD, vak) ? DEELBEELD[vak] : DEELBEELD_ALGEMEEN
-  const url = d === DEELBEELD_ALGEMEEN ? URL : `${URL}?vak=${vak}`
+  const { vak, regio } = await searchParams
+  const r = typeof regio === 'string' && Object.hasOwn(REGIOS, regio) ? REGIOS[regio] : null
+  // Het deelbeeld van de algemene variant noemt West-Brabant; een regio deelt zonder beeldtekst met dat gebied.
+  const d = typeof vak === 'string' && Object.hasOwn(DEELBEELD, vak)
+    ? DEELBEELD[vak]
+    : r ? { beeld: 'og-bedrijven', titel: r.deeltitel } : DEELBEELD_ALGEMEEN
+  const url = r && typeof regio === 'string' ? `${URL}?regio=${regio}` : d === DEELBEELD_ALGEMEEN ? URL : `${URL}?vak=${vak}`
   const beeld = { url: `https://stevin.ai/images/ps5-actie/${d.beeld}.jpg`, width: 1200, height: 630, alt: d.titel }
   return {
     title: TITEL,
@@ -126,14 +142,17 @@ const DOORVERWIJZEN = [
 
 export default async function Ps5ActiePage({ params, searchParams }: Props) {
   const { locale } = await params
-  const { vak: vakParam } = await searchParams
+  const { vak: vakParam, regio: regioParam } = await searchParams
   const vak = typeof vakParam === 'string' && Object.hasOwn(VAKKEN, vakParam) ? VAKKEN[vakParam] : null
+  const regio = typeof regioParam === 'string' && Object.hasOwn(REGIOS, regioParam) ? REGIOS[regioParam] : null
   // Meting per vak (22 nov): de klik op bellen of appen draagt het vak, en het appje zelf ook.
   const vakSleutel = vak && typeof vakParam === 'string' ? vakParam : undefined
   const appLink = vak
     ? `${TELEFOON.whatsapp}?text=${encodeURIComponent(`Hoi, ik ben ${vak.enkelvoud} en wil meer weten over de actie.`)}`
-    : TELEFOON.whatsapp
-  const kopTekst = vak ?? ALGEMEEN
+    : regio
+      ? `${TELEFOON.whatsapp}?text=${encodeURIComponent(regio.app)}`
+      : TELEFOON.whatsapp
+  const kopTekst = vak ?? (regio ? { ...ALGEMEEN, kop: regio.kop } : ALGEMEEN)
   if (locale !== 'nl') notFound()
   setRequestLocale(locale)
 
