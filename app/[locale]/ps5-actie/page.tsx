@@ -242,7 +242,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
       </section>
 
       {/* Koen, 22 nov: "neemt veel te veel ruimte in". Citaten in een schuifrij op de telefoon (Koen 22 nov 23:51), zie components/ps5/Citaten.tsx, Marcel (Ecomy) als vierde citaat, Koen 22 nov 23:40 (zijn oom, Koen regelt het akkoord). Ingrid en Bart: akkoord via Koen.
-          De eigenaar van Sterker blijft eruit tot ze hun zin zelf hebben bevestigd. */}
+          Faysal (Sterker Witgoed) als vijfde, Koen 24 nov 11:44: een zin letterlijk uit zijn eigen Google-review van 23 nov. */}
       <section className="pb-2 pt-6 sm:pt-16">
         <div className="mx-auto max-w-[1152px]">
           <Citaten
@@ -251,6 +251,7 @@ export default async function Ps5ActiePage({ params, searchParams }: Props) {
               { q: 'Koen denkt mee alsof het zijn eigen bedrijf is. Je krijgt antwoord, geen verhaal.', a: 'Ingrid, Tonnisteiner' },
               { q: 'Eindelijk iemand die gewoon zegt wat werkt en wat niet.', a: 'Bart, Rijschool Bart' },
               { q: 'Ik houd alle aanvragen nu bij op mijn telefoon. Echt top!', a: 'Marcel, Ecomy Energie' },
+              { q: 'Ze denken actief mee, communiceren duidelijk en zoeken altijd naar passende oplossingen.', a: 'Faysal, Sterker Witgoed' },
             ]}
           />
           <div className="mt-3 px-6">

@@ -6,7 +6,7 @@ type Citaat = { q: string; a: string }
 
 /* Koen, 22 nov 23:51: op de telefoon een rij die van rechts naar links schuift.
    Schuift elke 4 seconden een kaart door, stopt zodra iemand zelf veegt.
-   Vanaf sm een gewone rij (2 kolommen, lg 4), zonder automatisch schuiven. */
+   Vanaf sm een gewone rij (2 kolommen, lg 5), zonder automatisch schuiven. */
 export default function Citaten({ items }: { items: Citaat[] }) {
   const rij = useRef<HTMLUListElement>(null)
   const [actief, setActief] = useState(0)
@@ -40,7 +40,7 @@ export default function Citaten({ items }: { items: Citaat[] }) {
         ref={rij}
         onScroll={bijScroll}
         onTouchStart={() => setGestopt(true)}
-        className="m-0 flex list-none snap-x snap-mandatory scroll-px-6 gap-3 overflow-x-auto px-6 pb-2 [scrollbar-width:none] sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4 [&::-webkit-scrollbar]:hidden"
+        className="m-0 flex list-none snap-x snap-mandatory scroll-px-6 gap-3 overflow-x-auto px-6 pb-2 [scrollbar-width:none] sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-5 [&::-webkit-scrollbar]:hidden"
       >
         {items.map(({ q, a }) => (
           <li key={a} className="w-[85%] shrink-0 snap-start rounded-[12px] border border-[#D6DDE8] bg-white p-4 sm:w-auto">
