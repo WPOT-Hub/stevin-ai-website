@@ -33,7 +33,7 @@ const CASE: Case = {
   problemen: [
     {
       t: '137 of meer gokpagina’s die Hans nooit maakte',
-      d: 'Casinoreviews en gokgidsen, in meerdere talen, tussen zijn eigen pagina’s. Het Internet Archive had ze al op 17 april vastgelegd, zes maanden voor onze start. Hoe ze er kwamen weten we niet.',
+      d: 'Casinoreviews en gokgidsen, in meerdere talen, tussen zijn eigen pagina’s. Het Internet Archive had ze al maanden voor onze start vastgelegd. Hoe ze er kwamen weten we niet.',
     },
     {
       t: 'De meting was kapot, en de advertenties optimaliseerden daarop',
@@ -51,9 +51,9 @@ const CASE: Case = {
   aanpakKop: 'Eerst opruimen, dan meten, dan pas sturen.',
   aanpakZin: 'We hebben niets aan de advertenties veranderd voordat de cijfers klopten.',
   aanpak: [
-    { t: 'Gokpagina’s weg', d: 'Op 15 oktober haalden we alle pagina’s weg, in elk posttype en elke status. Daarna 0 treffers. De oude adressen geven nu 404.' },
+    { t: 'Gokpagina’s weg', d: 'In de eerste week haalden we alle pagina’s weg, in elk posttype en elke status. Daarna 0 treffers. De oude adressen geven nu 404.' },
     { t: 'Meting opnieuw opgebouwd', d: 'Een formulier, een telefoontje en een mail tellen nu elk mee, en bij elke aanvraag staat waar die vandaan kwam.' },
-    { t: 'Advertenties op het werk dat hij wil', d: 'Herstofferen en reparatie, zoals afgesproken met Hans op 23 oktober.' },
+    { t: 'Advertenties op het werk dat hij wil', d: 'Herstofferen en reparatie, zoals afgesproken met Hans.' },
     { t: 'Alle spam doorgelezen', d: 'We lazen de 605 inzendingen door, zetten de 2 echte terug en bouwden een regel: een aanvraag met een foto en een Nederlands of Belgisch nummer gaat nooit meer naar de spam.' },
   ],
   uitkomstKop: 'Wat het oplevert.',
