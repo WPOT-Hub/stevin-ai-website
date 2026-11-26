@@ -44,7 +44,7 @@ const CASE: Case = {
     },
     {
       t: 'Echte aanvragen belandden in de spambak',
-      d: 'Sinds 1 augustus kwamen 605 inzendingen als spam binnen. Twee daarvan waren echte aanvragen met een foto van een meubel.',
+      d: 'In ruim drie maanden kwamen 605 inzendingen als spam binnen. Twee daarvan waren echte aanvragen met een foto van een meubel.',
     },
   ],
   aanpakKop: 'Eerst opruimen, dan meten, dan pas sturen.',
