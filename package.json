@@ -25,9 +25,9 @@
     "check:php-check": "npx tsx scripts/check-php-check.ts"
   },
   "dependencies": {
-    "lucide-react": "^1.77.0",
+    "lucide-react": "^1.78.0",
     "next": "^16.4.6",
-    "next-intl": "^4.15.3",
+    "next-intl": "^4.16.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
