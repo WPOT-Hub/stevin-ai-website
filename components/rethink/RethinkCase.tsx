@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { Link } from '@/i18n/navigation'
 import { DonkerBlok, Kennismaken, PaginaKop, Punten, h2Stijl, tekst } from './RethinkBlokken'
 
 // Klantcase (W-860). Een case noemt een klant bij naam en gebruikt alleen
@@ -25,6 +26,8 @@ export type Case = {
   aanpakBeeld?: ReactNode
   /** Beeld boven de cijfers. */
   uitkomstBeeld?: ReactNode
+  /** Link naar een verwante case, onder de bron. */
+  verwant?: { tekst: string; label: string; href: string }
 }
 
 export default function RethinkCase({ c }: { c: Case }) {
@@ -69,6 +72,14 @@ export default function RethinkCase({ c }: { c: Case }) {
             ))}
           </dl>
           <p className={`m-0 mt-10 max-w-[680px] ${tekst}`}>{c.bron}</p>
+          {c.verwant ? (
+            <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
+              {c.verwant.tekst}{' '}
+              <Link href={c.verwant.href} className="font-semibold text-accent underline underline-offset-4">
+                {c.verwant.label}
+              </Link>
+            </p>
+          ) : null}
         </div>
       </section>
 

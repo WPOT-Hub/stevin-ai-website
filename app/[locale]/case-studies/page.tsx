@@ -41,10 +41,10 @@ export default async function CaseStudiesPage({ params }: Props) {
     {
       slug: 'hans-schepers',
       industry: 'Stoffering',
-      title: 'Op zijn site stonden gokpagina\u2019s. Hans wist van niets.',
-      subtitle: 'Weggehaald, de meting opnieuw opgebouwd en echte aanvragen teruggezet.',
-      metric: '137+',
-      metricLabel: 'gokpagina\u2019s weggehaald',
+      title: 'Hoe Hans +116% meer formulieraanvragen per maand kreeg.',
+      subtitle: 'De meting opnieuw opgebouwd en de advertenties gericht op herstofferen en reparatie.',
+      metric: '+116%',
+      metricLabel: 'formulieraanvragen per maand',
     },
     {
       slug: 'ecomy-energie',
