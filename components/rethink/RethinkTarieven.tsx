@@ -23,8 +23,8 @@ const PAKKETTEN = [
     id: 'bureau',
     label: 'Hier begint bijna iedereen',
     wat: 'Wij worden jouw bureau',
-    prijs: 'vanaf 1.399',
-    sub: 'bij jaarbetaling, 1.499 als je per maand betaalt. De opstart is maatwerk, de prijs hoor je vooraf.',
+    prijs: 'vanaf €1.399',
+    sub: 'Excl. btw, bij jaarbetaling. €1.499 als je per maand betaalt. De opstart is maatwerk, de prijs hoor je vooraf.',
     punten: [
       'Eerst zetten we alles goed: meting, accounts en de koppeling met je CRM.',
       'Daarna sturen we bij op aanvragen en omzet, niet op klikken.',
@@ -36,8 +36,8 @@ const PAKKETTEN = [
     id: 'zelf',
     label: 'Als het goed staat',
     wat: 'Je doet het zelf, of we zetten jouw agents aan het werk',
-    prijs: 'vanaf 399',
-    sub: 'bij jaarbetaling, 499 als je per maand betaalt.',
+    prijs: 'vanaf €399',
+    sub: 'Excl. btw, bij jaarbetaling. €499 als je per maand betaalt.',
     punten: [
       'Stevin ziet wat er misgaat en zet de oplossing klaar.',
       'Jij, je eigen team of jouw agents voeren het uit.',
@@ -89,11 +89,11 @@ const VRAGEN = [
   },
   {
     v: 'Wat kost Google Ads uitbesteden bij Stevin.AI?',
-    a: 'Vanaf 1.399 per maand bij jaarbetaling. Google Ads valt daaronder, samen met je andere kanalen, zoals Meta en je website.',
+    a: 'Vanaf €1.399 per maand, excl. btw, bij jaarbetaling. Google Ads valt daaronder, samen met je andere kanalen, zoals Meta en je website.',
   },
   {
     v: 'Kan ik later overstappen naar zelf doen?',
-    a: 'Ja. Staat alles goed, dan ga je naar vanaf 399 per maand en voeren jij, je team of jouw agents het werk uit. Terug kan ook.',
+    a: 'Ja. Staat alles goed, dan ga je naar vanaf €399 per maand, excl. btw, en voeren jij, je team of jouw agents het werk uit. Terug kan ook.',
   },
   {
     v: 'Wat als ik meer vestigingen of merken heb?',
@@ -113,8 +113,8 @@ export default function RethinkTarieven() {
         knop="tarieven_kop"
         lede={
           <p className="m-0">
-            Bij Stevin.AI betaal je vanaf 1.399 per maand als wij jouw bureau zijn, en vanaf 399 als je het zelf doet of jouw agents het werk
-            laat doen. Wat je precies betaalt hangt af van het werk, niet van je advertentiebudget. Dat budget betaal je rechtstreeks aan Google
+            Bij Stevin.AI betaal je vanaf €1.399 per maand als wij jouw bureau zijn, en vanaf €399 als je het zelf doet of jouw agents het werk
+            laat doen. Alle bedragen zijn exclusief btw. Wat je precies betaalt hangt af van het werk, niet van je advertentiebudget. Dat budget betaal je rechtstreeks aan Google
             en Meta, en daar verdienen wij niets aan.
           </p>
         }

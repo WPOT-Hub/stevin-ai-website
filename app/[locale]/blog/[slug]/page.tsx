@@ -355,7 +355,11 @@ export default async function ArticlePage({
           {article.format === 'editorial' && article.slug === 'chatgpt-wordt-advertentieplatform' && (
             <ArticleChatGPTAdsBody />
           )}
+          {article.format === 'editorial' && article.slug === 'wat-is-marketing-intelligence' && (
+            <ArticleMarketingIntelligenceBody />
+          )}
           {article.format === 'editorial' &&
+            article.slug !== 'wat-is-marketing-intelligence' &&
             article.slug !== 'wat-is-first-party-data' &&
             article.slug !== 'crm-koppelen-aan-je-website' &&
             article.slug !== 'google-ads-conversies-meten' &&
@@ -10738,6 +10742,120 @@ function ArticleFirstPartyDataBody() {
           {
             pct: '01',
             text: <>Begin niet bij de techniek maar bij een vraag: weet je van de aanvragen van vorige maand hoeveel er iets zijn geworden. Kun je dat niet beantwoorden, dan is dat het eerste gat, en het heeft niets met cookies te maken.</>,
+          },
+        ]}
+      />
+
+      <EndRule />
+    </>
+  )
+}
+
+// W-905 (26 nov 2026): uitlegstuk bij de zoekterm "marketing intelligence". De
+// SERP (google.nl, 26 nov) is uitleg: begrip, vergelijking met verwante termen,
+// opleidingen. Onze dienstpagina /marketing-intelligence verloor daar op soort.
+function ArticleMarketingIntelligenceBody() {
+  return (
+    <>
+      <p className="lead-para">
+        Marketing intelligence is het doorlopend verzamelen en lezen van wat er speelt bij je klanten, je concurrenten, je campagnes en je markt, zodat je besluiten neemt op wat er nu aan de hand is. Meestal wordt het uitgelegd als een softwarecategorie met een prijskaartje, en daardoor lijkt het groter dan het is. In de kern is het een vraag: weet je op tijd wat je moet weten om een goed besluit te nemen? Dit stuk legt uit waar het uit bestaat, hoe het verschilt van wat je al kent, en waar je als mkb-bedrijf begint.
+      </p>
+
+      <H2 num="01">Wat het is</H2>
+
+      <p>
+        Het woord dat telt is doorlopend. Een marktonderzoek beantwoordt een vraag op een moment: wat vinden klanten van ons nieuwe aanbod? Marketing intelligence blijft draaien en laat zien wat er deze week anders is dan vorige week.
+      </p>
+
+      <p>
+        En het draait om een besluit. Informatie waar niemand iets mee doet is geen intelligence, hoe mooi het dashboard ook is. De toets is simpel: heeft iemand door deze informatie vandaag iets anders gedaan?
+      </p>
+
+      <H2 num="02">Waar het uit bestaat</H2>
+
+      <p>
+        <b>Je eigen cijfers.</b> Je advertenties, je website en je CRM. Wat kost een aanvraag, en welke aanvragen worden klant? Dit is de bron die je al hebt, en bijna altijd de bron die het slechtst wordt gelezen.
+      </p>
+
+      <p>
+        <b>Je klanten.</b> Wie koopt er en waarom, wat zeggen ze in gesprekken en in reviews, en waar haken ze af.
+      </p>
+
+      <p>
+        <b>Je concurrenten.</b> Welke advertenties laten ze draaien, welke acties en prijzen noemen ze, en waar worden ze genoemd.
+      </p>
+
+      <p>
+        <b>Je markt.</b> Waar zoeken mensen naar, wat is seizoensgebonden, en welke wijzigingen van platforms of regels komen eraan.
+      </p>
+
+      <p>
+        De meeste bedrijven kijken naar de eerste bron en lezen die ook nog te laat. De andere drie komen pas aan bod als er iets misgaat.
+      </p>
+
+      <H2 num="03">Hoe het verschilt van wat je al kent</H2>
+
+      <p>
+        <b>Marktonderzoek</b> is eenmalig en beantwoordt een vraag. Marketing intelligence is de stroom eromheen, en kan zo&apos;n onderzoek ook aanwijzen: hier weten we te weinig.
+      </p>
+
+      <p>
+        <b>Business intelligence</b> gaat over het hele bedrijf, vooral over financiële en operationele cijfers. Marketing intelligence is het deel dat over marketing gaat, en het kijkt ook naar buiten, naar markt en concurrenten.
+      </p>
+
+      <p>
+        <b>Concurrentieanalyse</b> kijkt alleen naar rivalen. Het is een onderdeel van marketing intelligence, niet het geheel.
+      </p>
+
+      <p>
+        <b>Rapportage</b> kijkt terug. Een maandrapport vertelt wat er gebeurd is, en tegen die tijd heeft een dip al weken geld gekost. Marketing intelligence hoort een signaal te geven terwijl je er nog iets aan kunt doen.
+      </p>
+
+      <H2 num="04">Hoe het eruitziet in een mkb-bedrijf</H2>
+
+      <p>
+        Je hebt er niet meteen een apart platform voor nodig. Voor de meeste bedrijven zit de basis al in de advertentieaccounts, de website en het CRM. Het gaat erom dat iemand die bronnen naast elkaar legt en let op wat verandert.
+      </p>
+
+      <p>
+        Een voorbeeld van zo&apos;n signaal: de kosten per aanvraag in je Google Ads-account lopen een week lang op terwijl het aantal klikken gelijk blijft. Of: je meting registreert sinds woensdag geen formulierverzendingen meer. In een maandrapport zie je dat pas als het geld al kost, en in het tweede geval stuurt je advertentiesysteem intussen op niets.
+      </p>
+
+      <H2 num="05">Waar het misgaat</H2>
+
+      <p>
+        <b>De meting klopt niet.</b> Alles wat je erop bouwt klopt dan ook niet, en het ziet er toch overtuigend uit. Hoe je dat nakijkt staat in <a href="/blog/google-ads-conversies-meten">vier fouten die je cijfers waardeloos maken</a>.
+      </p>
+
+      <p>
+        <b>Te veel bronnen en geen besluit.</b> Tien dashboards, en niemand die weet wie er iets mee moet doen. Elke bron die je toevoegt moet een besluit beter maken, anders is het ruis.
+      </p>
+
+      <p>
+        <b>Het gebeurt een keer.</b> Een scan in januari is een foto. Zonder vervolg weet je in maart niet meer wat er sindsdien is veranderd. En weten welke aanvraag klant werd, het stuk dat het vaakst ontbreekt, staat uitgelegd in <a href="/blog/wat-is-first-party-data">wat first-party data is</a>.
+      </p>
+
+      <H2 num="06">Waar je begint</H2>
+
+      <p>
+        Begin met drie vragen. Welk besluit neem je nu op gevoel? Welke informatie zou dat besluit beter maken, en staat die al ergens? En wie ziet het, en hoe snel, als daar iets in verandert?
+      </p>
+
+      <p>
+        Is het antwoord op de laatste vraag &quot;bij het maandrapport&quot;, dan weet je waar het gat zit.
+      </p>
+
+      <p>
+        Wat wij op onze eigen pagina <a href="/marketing-intelligence">marketing intelligence</a> noemen, is precies dat: je advertenties, analytics, CRM en meting naast elkaar leggen en zeggen wat nu aandacht nodig heeft.
+      </p>
+
+      <Takeaways
+        label="DE KERN"
+        title="Wat je hiervan onthoudt"
+        items={[
+          {
+            pct: '01',
+            text: <>Zoek het besluit dat je nu op gevoel neemt, en bepaal welke cijfers dat besluit zouden veranderen. Daar begint marketing intelligence, nog voor je een tool kiest.</>,
           },
         ]}
       />

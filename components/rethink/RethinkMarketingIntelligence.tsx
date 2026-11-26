@@ -93,9 +93,16 @@ export default function RethinkMarketingIntelligence({ kop, accent }: { kop: str
           Al je marketing en sales in één brein. Het weet wat je wilt bereiken, en zegt wat er nu moet gebeuren. Je data blijft van jou.
         </p>
         <Punten items={STAPPEN} donker />
-        <p className="m-0 mt-10 text-[15px]">
+        <p className="m-0 mt-10 flex flex-wrap gap-x-8 gap-y-3 text-[15px]">
           <Link href="/platform" className="text-white/70 underline underline-offset-4 transition-colors hover:text-white">
             Zo werkt Stevin
+          </Link>
+          {/* W-905: het uitlegstuk waar Google bij deze zoekterm om vraagt. */}
+          <Link
+            href="/blog/wat-is-marketing-intelligence"
+            className="text-white/70 underline underline-offset-4 transition-colors hover:text-white"
+          >
+            Wat is marketing intelligence?
           </Link>
         </p>
       </DonkerBlok>

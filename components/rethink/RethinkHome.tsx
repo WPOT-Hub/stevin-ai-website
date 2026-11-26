@@ -98,8 +98,9 @@ const UITVOERING = {
 const PRIJZEN = {
   kop: 'Het laatste bureau dat je nodig hebt.',
   zin: ['Eerst zetten wij alles goed.', 'Daarna bouwen we agents die het werk voor je doen.'],
-  hoofd: { wat: 'Wij worden jouw bureau', prijs: 'vanaf 1.399', per: 'per maand' },
-  zelf: { wat: 'Je doet het zelf, of we zetten jouw agents aan het werk', prijs: 'vanaf 399', per: 'per maand' },
+  // W-905: euroteken erbij en "excl. btw" (zo staat het ook in onze offertes).
+  hoofd: { wat: 'Wij worden jouw bureau', prijs: 'vanaf €1.399', per: 'per maand, excl. btw' },
+  zelf: { wat: 'Je doet het zelf, of we zetten jouw agents aan het werk', prijs: 'vanaf €399', per: 'per maand, excl. btw' },
   // Onder de twee prijzen (Koen, 11 okt 13:57). De uitleg (2.000 tegen 10.000
   // budget, geen marge) hoort op /tarieven.
   budget: 'Je prijs groeit niet mee met je advertentiebudget.',
@@ -283,13 +284,16 @@ export default function RethinkHome() {
             </div>
             <div className="flex flex-col gap-1 border-b border-white/12 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
               <dt className="text-balance text-[17px] leading-snug text-white/75">{PRIJZEN.zelf.wat}</dt>
-              <dd className="m-0 whitespace-nowrap text-[17px] text-white/75">
-                <span className="font-display font-bold text-white/90">{PRIJZEN.zelf.prijs}</span> {PRIJZEN.zelf.per}
+              {/* W-905: met "excl. btw" erbij past prijs en knop niet meer naast elkaar op een telefoon, dus de knop mag eronder. */}
+              <dd className="m-0 flex flex-wrap items-center gap-x-4 gap-y-2 text-[17px] text-white/75 sm:flex-nowrap sm:whitespace-nowrap">
+                <span>
+                  <span className="font-display font-bold text-white/90">{PRIJZEN.zelf.prijs}</span> {PRIJZEN.zelf.per}
+                </span>
                 {/* Koen, 19 nov 2026: vanaf 399 staat op de wachtlijst. */}
                 <Link
                   href="/wachtlijst"
                   data-cta="prijs_wachtlijst"
-                  className="ml-4 inline-flex items-center rounded-lg border border-white/30 px-4 py-1.5 text-[14px] font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
+                  className="inline-flex items-center rounded-lg border border-white/30 px-4 py-1.5 text-[14px] font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
                 >
                   Wachtlijst
                 </Link>
