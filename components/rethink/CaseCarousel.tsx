@@ -22,7 +22,7 @@ type Kaart = {
   tekst: string
   beeld: ReactNode
   cijfers: { getal: string; label: string }[]
-  // Andere invulling voor de actiepagina (metUitlichting): resultaat voorop, geen spamverhaal.
+  // Andere invulling voor de actiepagina (metUitlichting).
   actie?: Partial<Pick<Kaart, 'kop' | 'tekst' | 'beeld' | 'cijfers'>>
 }
 
@@ -57,59 +57,24 @@ const ALLE_KAARTEN: Kaart[] = [
     slug: 'hans-schepers',
     openbaar: true,
     klant: 'Hans Schepers Stoffering',
-    kop: 'Op zijn site stonden gokpagina’s. Hans wist van niets.',
-    tekst: 'In de eerste week haalden we ze weg, bouwden de meting opnieuw op en zetten echte aanvragen terug die in de spambak waren beland.',
+    kop: 'Hoe Hans +116% meer formulieraanvragen per maand kreeg.',
+    tekst: 'Hans herstoffeert meubels in Oirschot. We bouwden de meting opnieuw op en stuurden de advertenties op herstofferen en reparatie.',
+    // Google Ads API, gelezen 26 nov 2026, alleen formulieren: 23 in 112 dagen (1 jul t/m 20 okt)
+    // tegen 16 in 36 dagen (21 okt t/m 25 nov) is +116%. Voetnoot met budget en meting staat op de casepagina.
+    // Citaat: Hans' eigen zin van de PS5-pagina (Koen, 26 nov).
     beeld: (
-      <div className="relative aspect-[8/5] w-full self-center overflow-hidden rounded-2xl border border-border bg-white">
-        <Image
-          src="/images/cases/hans-gokpagina-2026-04-17.jpg"
-          alt="Een casinopagina op hansschepers.nl uit het Internet Archive"
-          fill
-          sizes="(min-width: 768px) 560px, 88vw"
-          className="object-contain"
-        />
+      <div className={`${FOTO} flex flex-col justify-center gap-6 p-8 text-white`}>
+        <p className="m-0 font-display text-[28px] font-extrabold leading-[1.15] md:text-[34px]" style={{ letterSpacing: '-0.02em' }}>
+          “Ik was al blij als er iemand een keer belde.”
+        </p>
+        <p className="m-0 text-[14px] text-white/70">Hans, Hans Schepers Stoffering</p>
       </div>
     ),
     cijfers: [
-      { getal: '137+', label: 'gokpagina’s weggehaald' },
-      { getal: '605', label: 'spaminzendingen doorgelezen' },
-      { getal: '2', label: 'echte aanvragen teruggezet' },
+      { getal: '+116%', label: 'formulieraanvragen per maand' },
+      { getal: '2', label: 'echte aanvragen teruggehaald uit de spam' },
+      { getal: '3 kanalen', label: 'formulier, telefoon en mail tellen mee' },
     ],
-    // Koens tekst, 23 nov 18:04, en "zonder die spam site" (18:05). Google Ads, metrics_paid,
-    // gelezen 23 nov: maart t/m augustus 23 conversies op 2.144 euro (93,22 per aanvraag),
-    // 21 okt t/m 22 nov (33 dagen) 21 op 627 euro (29,86), dat is 68% lager.
-    // Telefoon telt pas sinds 23 okt mee.
-    actie: {
-      kop: 'Eerst 23 aanvragen in zes maanden. Met Stevin 21 in de eerste maand.',
-      // Bureaufee gelijk aan het vorige bureau: bron Koen, 23 nov 18:06. Drie keer zoveel per
-      // advertentie-euro volgt uit de 68% lagere kosten per aanvraag (93,22 tegen 29,86).
-      tekst: 'Hans stoffeert en repareert meubels. Hij betaalt ons geen euro meer dan zijn vorige bureau, en krijgt per advertentie-euro drie keer zoveel aanvragen.',
-      // Per maand: 23 in zes maanden is 3,8; 21 in 33 dagen is 19,1. Dat is +400%;
-      // Koen koos "300%" (23 nov 18:09), dus een ondergrens die klopt.
-      beeld: (
-        <div className={`${FOTO} flex flex-col justify-center gap-7 p-8 text-white`}>
-          <div>
-            <p className="m-0 font-display text-[72px] font-extrabold leading-none text-accent md:text-[96px]" style={{ letterSpacing: '-0.03em' }}>+300%</p>
-            <p className="m-0 mt-3 text-[17px] font-semibold text-white">meer aanvragen per maand</p>
-          </div>
-          <div className="grid gap-4 text-[14px] text-white/80">
-            <div>
-              <div className="flex justify-between"><span>Daarvoor</span><span>4 per maand</span></div>
-              <div className="mt-1.5 h-3 rounded-full bg-white/15"><div className="h-3 rounded-full bg-white/50" style={{ width: '20%' }} /></div>
-            </div>
-            <div>
-              <div className="flex justify-between"><span>Met Stevin</span><span>19 per maand</span></div>
-              <div className="mt-1.5 h-3 rounded-full bg-white/15"><div className="h-3 rounded-full bg-accent" style={{ width: '100%' }} /></div>
-            </div>
-          </div>
-        </div>
-      ),
-      cijfers: [
-        { getal: '23', label: 'aanvragen in zes maanden' },
-        { getal: '21', label: 'aanvragen in de eerste maand' },
-        { getal: '68%', label: 'lagere kosten per aanvraag' },
-      ],
-    },
   },
   {
     slug: 'sterker-witgoed',
