@@ -39,8 +39,8 @@ const CASE: Case = {
       d: 'Ze stuurden op alles wat Hans doet. Hij doet het liefst herstofferen en reparatie.',
     },
     {
-      t: 'De meting was kapot, en de advertenties optimaliseerden daarop',
-      d: 'Telefoon en mail telden niet als aanvraag en de tag laadde dubbel. Google leerde van verkeerde signalen.',
+      t: 'Google kreeg een scheef beeld van de aanvragen',
+      d: 'Bij Hans telde elke aanvraag via het formulier dubbel in Google Ads. Aanvragen per telefoon of mail bleven buiten beeld. Met die cijfers zocht Google naar meer mensen die een formulier zouden invullen. Welke aanvragen ook echt een klant opleverden, wist Google niet.',
     },
     {
       t: 'Echte aanvragen belandden in de spambak',
