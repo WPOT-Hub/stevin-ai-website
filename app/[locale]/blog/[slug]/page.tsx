@@ -10818,7 +10818,7 @@ function ArticleMarketingIntelligenceBody() {
       </p>
 
       <p>
-        Een voorbeeld van zo&apos;n signaal: de kosten per aanvraag in je Google Ads-account lopen een week lang op terwijl het aantal klikken gelijk blijft. Of: je meting registreert sinds woensdag geen formulierverzendingen meer. In een maandrapport zie je dat pas als het geld al kost, en in het tweede geval stuurt je advertentiesysteem intussen op niets.
+        Een voorbeeld van zo&apos;n signaal: de kosten per aanvraag in je Google Ads-account lopen een week lang op terwijl het aantal klikken gelijk blijft. Of: je meting registreert sinds woensdag geen formulierverzendingen meer. In een maandrapport zie je dat pas als het geld al kost, en in het tweede geval heeft je advertentiesysteem ondertussen niets meer om op te sturen.
       </p>
 
       <H2 num="05">Waar het misgaat</H2>
@@ -10832,7 +10832,7 @@ function ArticleMarketingIntelligenceBody() {
       </p>
 
       <p>
-        <b>Het gebeurt een keer.</b> Een scan in januari is een foto. Zonder vervolg weet je in maart niet meer wat er sindsdien is veranderd. En weten welke aanvraag klant werd, het stuk dat het vaakst ontbreekt, staat uitgelegd in <a href="/blog/wat-is-first-party-data">wat first-party data is</a>.
+        <b>Het blijft bij een keer.</b> Een scan in januari is een foto. Zonder vervolg weet je in maart niet meer wat er sindsdien is veranderd. En weten welke aanvraag klant werd, het stuk dat het vaakst ontbreekt, staat uitgelegd in <a href="/blog/wat-is-first-party-data">wat first-party data is</a>.
       </p>
 
       <H2 num="06">Waar je begint</H2>

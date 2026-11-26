@@ -275,7 +275,7 @@ export default function RethinkHome() {
               >
                 {PRIJZEN.hoofd.wat}
               </dt>
-              <dd className="m-0 whitespace-nowrap font-display text-white">
+              <dd className="m-0 font-display text-white sm:whitespace-nowrap">
                 <span className="font-extrabold" style={{ fontSize: 'clamp(24px, 2.6vw, 34px)', letterSpacing: '-0.025em' }}>
                   {PRIJZEN.hoofd.prijs}
                 </span>{' '}
