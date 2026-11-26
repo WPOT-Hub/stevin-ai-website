@@ -23,7 +23,7 @@ const CASE: Case = {
   kop: 'Hoe Hans +116% meer formulieraanvragen per maand kreeg.',
   accent: 'Eerst belde er bijna niemand.',
   knop: 'case_hans_kop',
-  lede: 'Hans Schepers herstoffeert meubels in Oirschot. Zijn advertenties stuurden op alles wat hij doet, en de meting telde alleen het formulier. Sinds 15 oktober sturen we op herstofferen en reparatie, en tellen formulier, telefoon en mail elk mee.',
+  lede: 'Hans Schepers herstoffeert meubels in Oirschot. Zijn advertenties stuurden op alles wat hij doet, en de meting telde alleen het formulier. Nu sturen we op herstofferen en reparatie, en tellen formulier, telefoon en mail elk mee.',
   beeld: (
     <figure className="m-0 rounded-2xl border border-border bg-[#F3F6FA] p-8 sm:p-12">
       <blockquote className="m-0 font-display font-extrabold text-primary" style={{ fontSize: 'clamp(26px, 3.4vw, 40px)', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
@@ -51,15 +51,15 @@ const CASE: Case = {
   aanpakZin: 'We hebben niets aan de advertenties veranderd voordat de cijfers klopten.',
   aanpak: [
     { t: 'Meting opnieuw opgebouwd', d: 'Een formulier, een telefoontje en een mail tellen nu elk mee, en bij elke aanvraag staat waar die vandaan kwam.' },
-    { t: 'Advertenties op het werk dat hij wil', d: 'Herstofferen en reparatie, zoals afgesproken met Hans op 23 oktober.' },
+    { t: 'Advertenties op het werk dat hij wil', d: 'Herstofferen en reparatie, zoals afgesproken met Hans.' },
     { t: 'Alle spam doorgelezen', d: 'We lazen de 605 inzendingen door, zetten de 2 echte terug en bouwden een regel: een aanvraag met een foto en een Nederlands of Belgisch nummer gaat nooit meer naar de spam.' },
     { t: 'De site opgeruimd', d: 'Op zijn site stonden gokpagina’s die hij nooit maakte. Die haalden we weg.' },
   ],
-  uitkomstKop: 'Resultaten, 21 oktober tot en met 25 november ten opzichte van 1 juli tot en met 20 oktober.',
+  uitkomstKop: 'Wat het oplevert.',
   uitkomstBeeld: (
     <Tellers
       items={[
-        { getal: '+116%', label: 'formulieraanvragen per maand' },
+        { getal: '+116%', label: 'formulieraanvragen per maand, tegenover de periode ervoor' },
         { getal: '2', label: 'echte aanvragen teruggehaald uit 605 spaminzendingen' },
         { getal: '3 kanalen', label: 'formulier, telefoon en mail tellen weer mee' },
       ]}
