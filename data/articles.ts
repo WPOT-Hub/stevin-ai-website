@@ -170,6 +170,24 @@ const allArticles: Article[] = [
     posterTag: 'PLATFORM',
     posterTopic: "Adverteren in ChatGPT.",
   },
+  {
+    // W-905 (26 nov 2026): uitlegstuk bij "marketing intelligence". Google
+    // zet daar uitleg bovenaan; de dienstpagina /marketing-intelligence
+    // blijft de plek voor wie het wil laten doen.
+    slug: 'wat-is-marketing-intelligence',
+    format: 'editorial',
+    edition: '029',
+    category: 'Strategie',
+    title: "Wat is marketing intelligence? Kort uitgelegd",
+    dek:
+      "Het klinkt als een softwarecategorie, maar het is een vraag: weet je op tijd wat je moet weten om een marketingbesluit te nemen? Waar het uit bestaat, hoe het verschilt van wat je kent, en waar je begint.",
+    publishedAt: '2026-11-26',
+    readMinutes: 5,
+    author: { name: 'Stevin Journal', role: 'Redactie' },
+    posterStyle: 'solid',
+    posterTag: 'STRATEGIE',
+    posterTopic: "Marketing intelligence, zonder de tool.",
+  },
   /* ─── DISPATCHES ─── */
   {
     slug: 'ai-agents-muse-oppenclaw-instinct',
