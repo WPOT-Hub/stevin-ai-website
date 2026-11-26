@@ -113,7 +113,7 @@ const ALLE_KAARTEN: Kaart[] = [
   },
   {
     slug: 'sterker-witgoed',
-    openbaar: false,
+    openbaar: true,
     klant: 'Sterker Witgoed',
     kop: '667 handelingen in acht weken, elk met bewijs vastgelegd.',
     tekst: 'Een webwinkel in witgoed kreeg zijn productfeed hersteld en een begeleide livegang van zijn nieuwe site.',
@@ -143,9 +143,8 @@ const ALLE_KAARTEN: Kaart[] = [
   },
 ]
 
-// De homepage toont alleen kaarten met openbaar: true. De PS5-actiepagina toont
-// ze alle drie (Koen, 23 nov: Sterker mag daar wel bij); de casepagina van
-// Sterker zelf blijft noindex tot de klant akkoord geeft.
+// De homepage toont alleen kaarten met openbaar: true. Sterker staat daar sinds
+// 26 nov bij, na akkoord van Faysal (Koen).
 type Props = {
   // true: ook kaarten met openbaar: false (alleen de actiepagina).
   alles?: boolean

@@ -49,7 +49,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/case-studies',
     '/case-studies/hans-schepers',
     '/case-studies/ecomy-energie',
-    // Sterker Witgoed volgt zodra Faysal akkoord geeft (Koen, 23 nov 2026).
+    // Sterker Witgoed: Faysal akkoord, Koen 26 nov 2026.
+    '/case-studies/sterker-witgoed',
     // Vergelijkingen staan op noindex tot ze herschreven zijn (W-535, 12 okt).
   ]
 

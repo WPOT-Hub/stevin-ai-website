@@ -4,8 +4,9 @@ import { localizedMetadata } from '@/lib/seo'
 import RethinkCase, { type Case } from '@/components/rethink/RethinkCase'
 import { Stippen, VoorNaBalken } from '@/components/rethink/CaseVisuals'
 
-// W-860. NIET LIVE ZETTEN ZONDER AKKOORD VAN STERKER WITGOED. Staat op noindex
-// en niet in de sitemap, zonder citaat tot Faysal de exacte zin goedkeurt.
+// W-860. Live sinds 26 nov 2026: Koen meldt dat Faysal akkoord heeft gegeven.
+// Indexeerbaar, in de sitemap en met een eigen canonical. Zonder citaat tot
+// Faysal de exacte zin goedkeurt.
 // Bron: Stevin-company/legal/klanten/sterker-witgoed (logboek 30 sep tot 22 nov 2026)
 // en de feedmeting van 21 tot 23 nov. Geen bedragen. Bewust geen groeicijfer:
 // de nieuwe opzet draait nog geen vier weken (eerst rond 14 december).
@@ -76,7 +77,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: 'Een webwinkel in witgoed kreeg elke handeling vastgelegd, een herstelde productfeed en een begeleide livegang.',
       translated: false,
     }),
-    robots: { index: false, follow: false },
+    robots: { index: true, follow: true },
   }
 }
 

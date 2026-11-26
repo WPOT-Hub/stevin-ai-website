@@ -56,9 +56,8 @@ export default async function CaseStudiesPage({ params }: Props) {
     },
     {
       slug: 'sterker-witgoed',
-      openbaar: false, // wacht op akkoord van Faysal
       industry: 'Webwinkel in witgoed',
-      title: 'Elke handeling met bewijs vastgelegd.',
+      title: '667 handelingen in acht weken, elk met bewijs vastgelegd.',
       subtitle: 'Productfeed hersteld en een begeleide livegang van de nieuwe site.',
       metric: '667',
       metricLabel: 'handelingen in acht weken',
