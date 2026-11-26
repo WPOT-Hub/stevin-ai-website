@@ -22,7 +22,7 @@ const LADDER = [
   { t: 'Meting', d: 'Een conversie is een echte aanvraag, geen klik.' },
   { t: 'Een bron', d: 'Alle cijfers op een plek.' },
   { t: 'Geheugen', d: 'Wat werkte en wat niet, blijft bewaard.' },
-  { t: 'Automatiseren', d: 'Wat vaak hetzelfde gaat, doet zichzelf.' },
+  { t: 'Automatiseren', d: 'Terugkerend werk loopt vanzelf.' },
   { t: 'AI', d: 'Pas bovenop, niet eronder.' },
 ]
 
