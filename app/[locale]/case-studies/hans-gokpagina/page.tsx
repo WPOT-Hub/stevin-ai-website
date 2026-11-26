@@ -36,8 +36,8 @@ const CASE: Case = {
       d: 'Casinoreviews en gokgidsen, in meerdere talen, tussen zijn eigen pagina’s. Het Internet Archive had ze al op 17 april vastgelegd, zes maanden voor onze start. Hoe ze er kwamen weten we niet.',
     },
     {
-      t: 'De meting laadde twee keer',
-      d: 'Google Tag Manager stond dubbel op de site. Telefoontjes en mails telden al maanden niet meer als aanvraag, alleen het formulier. Wie op de advertenties stuurde, stuurde blind.',
+      t: 'De meting was kapot, en de advertenties optimaliseerden daarop',
+      d: 'Google Tag Manager stond dubbel op de site en telefoontjes en mails telden al maanden niet meer als aanvraag. Google leerde van verkeerde signalen.',
     },
     {
       t: 'Echte aanvragen belandden in de spambak',
