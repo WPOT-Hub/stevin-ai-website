@@ -44,8 +44,8 @@ const CASE: Case = {
       d: 'Sinds 1 augustus kwamen 605 inzendingen als spam binnen. Twee daarvan waren echte aanvragen met een foto van een meubel.',
     },
     {
-      t: 'Advertenties zonder duidelijk doel',
-      d: 'Ze stuurden op alles wat Hans doet. Hij doet het liefst herstofferen en reparatie.',
+      t: 'Advertenties voor elke klus, behalve de goede',
+      d: 'De advertenties vroegen om alle klussen die Hans kan doen. Het werk dat hij het liefst doet, herstofferen en reparatie, kreeg geen voorrang.',
     },
   ],
   aanpakKop: 'Eerst opruimen, dan meten, dan pas sturen.',

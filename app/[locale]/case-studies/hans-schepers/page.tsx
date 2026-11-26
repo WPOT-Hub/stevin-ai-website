@@ -35,8 +35,8 @@ const CASE: Case = {
   probleemKop: 'Waar hij mee zat.',
   problemen: [
     {
-      t: 'Advertenties zonder duidelijk doel',
-      d: 'Ze stuurden op alles wat Hans doet. Hij doet het liefst herstofferen en reparatie.',
+      t: 'Advertenties voor elke klus, behalve de goede',
+      d: 'De advertenties vroegen om alle klussen die Hans kan doen. Het werk dat hij het liefst doet, herstofferen en reparatie, kreeg geen voorrang.',
     },
     {
       t: 'Google kreeg een scheef beeld van de aanvragen',
