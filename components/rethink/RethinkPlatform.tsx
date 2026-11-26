@@ -81,7 +81,7 @@ export default function RethinkPlatform() {
             </li>
           ))}
         </ol>
-        <p className="m-0 mt-10 max-w-[620px] text-[18px] leading-[1.6] text-white">We beginnen altijd bij de basis.</p>
+        <p className="m-0 mt-10 max-w-[620px] text-[18px] leading-[1.6] text-white">We beginnen altijd bij de basis. Pas als die klopt, heeft AI zin.</p>
       </DonkerBlok>
 
       <Kennismaken />
