@@ -134,7 +134,7 @@ export default function RethinkSocial() {
       <LeesVerder
         items={[
           { label: 'Klantcases', href: '/case-studies', d: 'Wat we voor klanten deden, met de cijfers erbij.' },
-          { label: 'Wie is eigenaar van je advertentiedata?', href: '/blog/wie-is-eigenaar-van-je-advertentiedata', d: 'Zo kijk je na op wiens naam je advertentieaccount staat.' },
+          { label: 'Wie is eigenaar van je advertentiedata?', href: '/blog/wie-is-eigenaar-van-je-advertentiedata', d: 'Zo kijk je zelf na wie je advertenties betaalt.' },
           { label: 'Google Ads uitbesteden', href: '/google-ads-uitbesteden', d: 'Hetzelfde werk, voor je zoekadvertenties.' },
         ]}
       />
