@@ -302,13 +302,16 @@ export default function RethinkBreda({ advertentie = false }: { advertentie?: bo
 
       <Vragen kop="Wat ondernemers uit Breda ons vragen" vragen={VRAGEN} />
 
-      <LeesVerder
-        items={[
-          { label: 'Klantcase: Hans Schepers Stoffering', href: '/case-studies/hans-schepers', d: 'Bijna drie keer zoveel aanvragen, voor het werk dat hij het liefst doet.' },
-          { label: 'Klantcase: Sterker Witgoed', href: '/case-studies/sterker-witgoed', d: '667 handelingen in acht weken, elk met bewijs vastgelegd.' },
-          { label: 'Alle klantcases', href: '/case-studies', d: 'Wat we voor klanten deden, met de cijfers erbij.' },
-        ]}
-      />
+      {/* Niet op de advertentiepagina (/lp/...): daar staat een actie, geen links naar andere pagina's (W-860). */}
+      {!advertentie && (
+        <LeesVerder
+          items={[
+            { label: 'Klantcase: Hans Schepers Stoffering', href: '/case-studies/hans-schepers', d: 'Bijna drie keer zoveel aanvragen, voor het werk dat hij het liefst doet.' },
+            { label: 'Klantcase: Sterker Witgoed', href: '/case-studies/sterker-witgoed', d: '667 handelingen in acht weken, elk met bewijs vastgelegd.' },
+            { label: 'Alle klantcases', href: '/case-studies', d: 'Wat we voor klanten deden, met de cijfers erbij.' },
+          ]}
+        />
+      )}
 
       <Kennismaken
         kop="Geloof je ons niet? Prima."
