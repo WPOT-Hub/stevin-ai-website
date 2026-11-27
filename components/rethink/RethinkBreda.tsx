@@ -118,7 +118,7 @@ const VRAGEN = [
   },
   {
     v: 'Wat kost het?',
-    a: 'Dat hangt af van het werk, niet van je advertentiebudget. Ons vaste pakket kost vanaf 1.399 per maand als je voor een jaar kiest, en 1.499 als je per maand betaalt. Wij raden het jaar aan. Alle prijzen staan op de pagina Tarieven. Los werk rekenen we per uur en spreken we vooraf af.',
+    a: 'Dat hangt af van het werk, niet van je advertentiebudget. Ons vaste pakket kost vanaf €1.399 per maand als je voor een jaar kiest, en €1.499 als je per maand betaalt. Beide bedragen zijn exclusief btw. Wij raden het jaar aan. Alle prijzen staan op de pagina Tarieven. Los werk rekenen we per uur en spreken we vooraf af.',
   },
 ]
 

@@ -220,9 +220,9 @@ export function Kosten({ kop, kanaal }: { kop: string; kanaal: string }) {
       </h2>
       <div className="mt-8 max-w-[680px] space-y-5 text-[18px] leading-[1.6]">
         <p className="m-0 text-white/75">
-          Wij worden jouw bureau vanaf 1.399 per maand bij jaarbetaling, 1.499 als je per maand betaalt. {kanaal} valt daaronder,
-          samen met je andere kanalen. Staat alles goed en wil je het zelf doen, of jouw agents het werk laten doen, dan is het vanaf 399
-          per maand.
+          Wij worden jouw bureau vanaf €1.399 per maand bij jaarbetaling, €1.499 als je per maand betaalt. {kanaal} valt daaronder,
+          samen met je andere kanalen. Staat alles goed en wil je het zelf doen, of jouw agents het werk laten doen, dan is het vanaf €399
+          per maand. Alle bedragen zijn exclusief btw.
         </p>
         {/* Zelfde uitleg als het budgetblok op /tarieven (BUDGET in RethinkTarieven.tsx). */}
         <p className="m-0 text-white/75">

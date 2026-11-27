@@ -18,6 +18,10 @@
  * Nooit "vast bedrag": de prijs hangt af van het werk en groeit niet mee met
  * het advertentiebudget.
  *
+ * 27 nov 2026 (W-909): euroteken en "excl. btw" bij elk bedrag, zoals op
+ * /tarieven sinds W-905. De verwijzing naar /en/tarieven is weg: de Engelse
+ * site geeft sinds W-535 een 410.
+ *
  * Endpoint: https://stevin.ai/pricing.md (text/markdown)
  */
 
@@ -28,11 +32,11 @@ const body = `# Tarieven, Stevin.AI
 
 Stevin.AI doet de marketing van mkb-bedrijven. Jij ziet welke aanvraag een opdracht werd, en we verdienen niets aan je advertentiebudget.
 
-Bij Stevin.AI betaal je vanaf 1.399 per maand als wij jouw bureau zijn, en vanaf 399 als je het zelf doet of jouw agents het werk laat doen. Wat je precies betaalt hangt af van het werk, niet van je advertentiebudget. Dat budget betaal je rechtstreeks aan Google en Meta, en daar verdienen wij niets aan.
+Bij Stevin.AI betaal je vanaf €1.399 per maand als wij jouw bureau zijn, en vanaf €399 als je het zelf doet of jouw agents het werk laat doen. Alle bedragen zijn exclusief btw. Wat je precies betaalt hangt af van het werk, niet van je advertentiebudget. Dat budget betaal je rechtstreeks aan Google en Meta, en daar verdienen wij niets aan.
 
 ## Wij worden jouw bureau
 
-Vanaf 1.399 euro per maand bij jaarbetaling, 1.499 als je per maand betaalt. De opstart is maatwerk, de prijs hoor je vooraf.
+Vanaf €1.399 per maand, excl. btw, bij jaarbetaling. €1.499 als je per maand betaalt. De opstart is maatwerk, de prijs hoor je vooraf.
 
 - Eerst zetten we alles goed: meting, accounts en de koppeling met je CRM.
 - Daarna sturen we bij op aanvragen en omzet, niet op klikken.
@@ -41,7 +45,7 @@ Vanaf 1.399 euro per maand bij jaarbetaling, 1.499 als je per maand betaalt. De 
 
 ## Je doet het zelf, of we zetten jouw agents aan het werk
 
-Vanaf 399 euro per maand bij jaarbetaling, 499 als je per maand betaalt.
+Vanaf €399 per maand, excl. btw, bij jaarbetaling. €499 als je per maand betaalt.
 
 - Stevin ziet wat er misgaat en zet de oplossing klaar.
 - Jij, je eigen team of jouw agents voeren het uit.
@@ -58,7 +62,7 @@ De tarieven gelden voor een bedrijf met een merk en een vestiging of webshop. Me
 
 ## Contact
 
-Plan een kennismaking via https://stevin.ai/kennismaking of mail info@stevin.ai. De volledige tarievenpagina staat op https://stevin.ai/tarieven, in het Engels op https://stevin.ai/en/tarieven.
+Plan een kennismaking via https://stevin.ai/kennismaking of mail info@stevin.ai. De volledige tarievenpagina staat op https://stevin.ai/tarieven.
 `
 
 export async function GET() {

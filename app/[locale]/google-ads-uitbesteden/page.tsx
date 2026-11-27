@@ -154,7 +154,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : 'Outsource Google Ads without losing your data and control',
     description: isNl
       ? // W-535: was 'Vanaf 399'. Uitbesteden is vanaf 1.399 (wij worden jouw bureau); 399 is zelf doen.
-        'Wij worden jouw bureau vanaf 1.399 per maand, zelf doen kan vanaf 399. Accounts op je eigen naam, meten tot omzet en geen marge op je budget.'
+        // W-909: euroteken en excl. btw erbij; 154 tekens, de grens van metaOmschrijving is 155.
+        'Wij worden jouw bureau vanaf €1.399 per maand, zelf doen kan vanaf €399, excl. btw. Accounts op je eigen naam, meten tot omzet en geen marge op je budget.'
       : 'Outsource Google Ads from 399 per month, with accounts in your own name, every change logged and no margin on your media budget. First a diagnosis on your own numbers.',
   })
 }

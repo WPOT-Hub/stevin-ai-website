@@ -54,7 +54,7 @@ const KANALEN = [
 const VRAGEN = [
   {
     v: 'Wat kost het om social media uit te besteden?',
-    a: 'Vanaf 1.399 per maand bij jaarbetaling. Daarbovenop komt je advertentiebudget, dat je rechtstreeks aan Meta, LinkedIn of TikTok betaalt vanaf je eigen account. Wij rekenen er geen marge op. Wat je precies betaalt hangt af van het werk, niet van je budget.',
+    a: 'Vanaf €1.399 per maand, excl. btw, bij jaarbetaling. Daarbovenop komt je advertentiebudget, dat je rechtstreeks aan Meta, LinkedIn of TikTok betaalt vanaf je eigen account. Wij rekenen er geen marge op. Wat je precies betaalt hangt af van het werk, niet van je budget.',
   },
   {
     v: 'Doen jullie ook Meta Ads en Facebook advertenties?',
