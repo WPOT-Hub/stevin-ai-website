@@ -28,6 +28,8 @@ export type Case = {
   uitkomstBeeld?: ReactNode
   /** Link naar een verwante case, onder de bron. */
   verwant?: { tekst: string; label: string; href: string }
+  /** Link naar de dienstpagina die bij deze case hoort (W-911). */
+  dienst?: { tekst: string; label: string; href: string }
 }
 
 export default function RethinkCase({ c }: { c: Case }) {
@@ -77,6 +79,14 @@ export default function RethinkCase({ c }: { c: Case }) {
               {c.verwant.tekst}{' '}
               <Link href={c.verwant.href} className="font-semibold text-accent underline underline-offset-4">
                 {c.verwant.label}
+              </Link>
+            </p>
+          ) : null}
+          {c.dienst ? (
+            <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
+              {c.dienst.tekst}{' '}
+              <Link href={c.dienst.href} className="font-semibold text-accent underline underline-offset-4">
+                {c.dienst.label}
               </Link>
             </p>
           ) : null}

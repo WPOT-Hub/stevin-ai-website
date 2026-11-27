@@ -1,4 +1,4 @@
-import { DonkerBlok, Kennismaken, Kosten, PaginaKop, Punten, Vragen, h2Stijl, tekst } from './RethinkBlokken'
+import { DonkerBlok, Kennismaken, Kosten, LeesVerder, PaginaKop, Punten, Vragen, h2Stijl, tekst } from './RethinkBlokken'
 
 // De nieuwe /social-media-uitbesteden (W-535), in de stijl van de homepage.
 // Zoekterm "social media uitbesteden" (docs/zoekintentie/stevin.ai.md in
@@ -130,6 +130,14 @@ export default function RethinkSocial() {
       <Kosten kop="Social media uitbesteden: de kosten." kanaal="Social" />
 
       <Vragen kop="Wat ondernemers ons vragen" vragen={VRAGEN} />
+
+      <LeesVerder
+        items={[
+          { label: 'Klantcases', href: '/case-studies', d: 'Wat we voor klanten deden, met de cijfers erbij.' },
+          { label: 'Wie is eigenaar van je advertentiedata?', href: '/blog/wie-is-eigenaar-van-je-advertentiedata', d: 'Zo kijk je na op wiens naam je advertentieaccount staat.' },
+          { label: 'Google Ads uitbesteden', href: '/google-ads-uitbesteden', d: 'Hetzelfde werk, voor je zoekadvertenties.' },
+        ]}
+      />
 
       <Kennismaken />
     </main>

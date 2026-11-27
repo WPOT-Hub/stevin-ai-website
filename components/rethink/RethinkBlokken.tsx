@@ -178,6 +178,34 @@ export function Vragen({ kop, vragen, schema: metSchema = true }: { kop: string;
   )
 }
 
+/**
+ * Verwante cases en uitlegstukken onder een dienstpagina (W-911). Uit het
+ * SEO-onderzoek van 27 nov 2026: de dienstpagina's kregen elk een link uit
+ * lopende tekst en linkten zelf alleen naar /tarieven en /kennismaking, en de
+ * klantcases waren vanaf een pagina bereikbaar. Alleen links naar pagina's die
+ * bestaan en in de sitemap staan; de regel eronder zegt niets wat niet op de
+ * gelinkte pagina staat.
+ */
+export function LeesVerder({ items }: { items: { label: string; href: string; d: string }[] }) {
+  return (
+    <section className="px-6" style={{ paddingBottom: 96 }}>
+      <div className="mx-auto max-w-[1152px] border-t border-border pt-12">
+        <h2 className="m-0 font-display text-[22px] font-bold text-primary">Lees verder</h2>
+        <ul className="m-0 mt-7 grid list-none gap-x-10 gap-y-7 p-0 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((x) => (
+            <li key={x.href}>
+              <Link href={x.href} className="font-display text-[17px] font-bold text-accent underline-offset-4 hover:underline">
+                {x.label}
+              </Link>
+              <span className="mt-1.5 block max-w-[38ch] text-[16px] leading-[1.55] text-[#2A3A54]">{x.d}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}
+
 /** Het slot van de homepage, met het kennismakingsvenster erbij. */
 export function Kennismaken({
   kop = 'Wat zouden wij bij jou als eerste doen?',

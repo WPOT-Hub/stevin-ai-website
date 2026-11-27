@@ -1,18 +1,18 @@
 {
   "acm-strengere-regels-duurzaamheidsclaims": [
     "bureau-geen-toegang-advertentieaccount",
-    "google-ads-introduceert-ingebouwd-lead-management-dashboard",
-    "google-ads-kanaalprioriteit-display-search-partners"
+    "wat-is-marketing-intelligence",
+    "google-ads-introduceert-ingebouwd-lead-management-dashboard"
   ],
   "ai-tool-werkt-echt-holdout-bureau": [
     "chatgpt-wordt-advertentieplatform",
-    "wat-is-first-party-data",
+    "mmm-attributie-incrementality-welke-meet-wat",
     "autonome-agents-90-dagen"
   ],
   "ai-tools-organisatielaag-marketing": [
+    "wat-is-first-party-data",
     "last-click-is-een-gewoonte",
-    "ai-tool-werkt-echt-holdout-bureau",
-    "google-ads-conversies-meten"
+    "ai-tool-werkt-echt-holdout-bureau"
   ],
   "autonome-agents-90-dagen": [
     "ai-tool-werkt-echt-holdout-bureau",
@@ -20,8 +20,8 @@
     "wie-is-eigenaar-van-je-domeinnaam"
   ],
   "beste-transcriptietool-2026": [
-    "mmm-is-een-hypothese",
     "google-ads-conversies-meten",
+    "mmm-is-een-hypothese",
     "wie-is-eigenaar-van-je-advertentiedata"
   ],
   "bureau-geen-toegang-advertentieaccount": [
@@ -41,23 +41,23 @@
   ],
   "crm-koppelen-aan-je-website": [
     "leadformulier-dat-echte-aanvragen-oplevert",
-    "bureau-geen-toegang-advertentieaccount",
-    "google-bedrijfsprofiel-minder-vertoningen-europa"
+    "wat-is-first-party-data",
+    "wat-is-marketing-intelligence"
   ],
   "derde-php-lek-controleer-je-website": [
-    "wat-is-first-party-data",
-    "ai-tool-werkt-echt-holdout-bureau",
-    "wie-is-eigenaar-van-je-domeinnaam"
+    "wordpress-in-2026-voorbij-of-veiliger",
+    "wie-is-eigenaar-van-je-advertentiedata",
+    "je-klantgegevens-staan-op-meer-plekken-dan-je-denkt"
   ],
   "google-ads-conversies-meten": [
+    "wat-is-first-party-data",
     "google-ads-kanaalprioriteit-display-search-partners",
-    "mmm-is-een-hypothese",
     "beste-transcriptietool-2026"
   ],
   "google-ads-introduceert-ingebouwd-lead-management-dashboard": [
     "google-ads-kanaalprioriteit-display-search-partners",
     "bureau-geen-toegang-advertentieaccount",
-    "google-bedrijfsprofiel-minder-vertoningen-europa"
+    "google-ads-conversies-meten"
   ],
   "google-ads-kanaalprioriteit-display-search-partners": [
     "google-ads-introduceert-ingebouwd-lead-management-dashboard",
@@ -66,13 +66,18 @@
   ],
   "google-bedrijfsprofiel-minder-vertoningen-europa": [
     "google-shopping-verwijderd-uit-europa",
-    "chatgpt-wordt-advertentieplatform",
-    "google-ads-conversies-meten"
+    "google-ads-conversies-meten",
+    "chatgpt-wordt-advertentieplatform"
   ],
   "google-shopping-verwijderd-uit-europa": [
+    "wat-is-feed-management",
     "google-ads-kanaalprioriteit-display-search-partners",
-    "chatgpt-wordt-advertentieplatform",
-    "wat-is-feed-management"
+    "chatgpt-wordt-advertentieplatform"
+  ],
+  "je-klantgegevens-staan-op-meer-plekken-dan-je-denkt": [
+    "wat-is-first-party-data",
+    "wie-is-eigenaar-van-je-domeinnaam",
+    "crm-koppelen-aan-je-website"
   ],
   "last-click-is-een-gewoonte": [
     "mmm-is-een-hypothese",
@@ -81,13 +86,13 @@
   ],
   "leadformulier-dat-echte-aanvragen-oplevert": [
     "crm-koppelen-aan-je-website",
-    "wat-is-first-party-data",
-    "google-ads-conversies-meten"
+    "google-ads-conversies-meten",
+    "google-bedrijfsprofiel-minder-vertoningen-europa"
   ],
   "lecun-miljard-tegen-het-taalmodel": [
     "wie-is-eigenaar-van-je-advertentiedata",
-    "zichtbaar-in-ai-antwoorden-aeo-geo",
-    "ai-tools-organisatielaag-marketing"
+    "wordpress-in-2026-voorbij-of-veiliger",
+    "zichtbaar-in-ai-antwoorden-aeo-geo"
   ],
   "meta-invoert-onzichtbare-watermerken-voor-ai-content": [
     "meta-product-browsing-standaard-aan-28-oktober",
@@ -112,12 +117,17 @@
   "wat-is-feed-management": [
     "google-shopping-verwijderd-uit-europa",
     "wat-is-first-party-data",
-    "ai-tool-werkt-echt-holdout-bureau"
+    "google-ads-kanaalprioriteit-display-search-partners"
   ],
   "wat-is-first-party-data": [
-    "ai-tool-werkt-echt-holdout-bureau",
-    "leadformulier-dat-echte-aanvragen-oplevert",
-    "derde-php-lek-controleer-je-website"
+    "wat-is-marketing-intelligence",
+    "google-ads-conversies-meten",
+    "wat-is-feed-management"
+  ],
+  "wat-is-marketing-intelligence": [
+    "wat-is-first-party-data",
+    "google-ads-conversies-meten",
+    "google-bedrijfsprofiel-minder-vertoningen-europa"
   ],
   "wie-is-eigenaar-van-je-advertentiedata": [
     "wie-is-eigenaar-van-je-domeinnaam",
@@ -127,7 +137,12 @@
   "wie-is-eigenaar-van-je-domeinnaam": [
     "wie-is-eigenaar-van-je-advertentiedata",
     "bureau-geen-toegang-advertentieaccount",
-    "meta-product-browsing-standaard-aan-28-oktober"
+    "je-klantgegevens-staan-op-meer-plekken-dan-je-denkt"
+  ],
+  "wordpress-in-2026-voorbij-of-veiliger": [
+    "chatgpt-wordt-advertentieplatform",
+    "derde-php-lek-controleer-je-website",
+    "ai-tool-werkt-echt-holdout-bureau"
   ],
   "zichtbaar-in-ai-antwoorden-aeo-geo": [
     "chatgpt-wordt-advertentieplatform",

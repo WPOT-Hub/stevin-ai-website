@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: '/contact',
     locale,
     // W-535 (Koen, 12 okt): NL is een gewone contactpagina, geen diagnose meer.
-    title: locale === 'en' ? 'Request the diagnosis · Stevin' : 'Contact · Stevin.AI',
+    title: locale === 'en' ? 'Request the diagnosis · Stevin' : 'Contact en kennismaking',
     description:
       locale === 'en'
         ? t('desc')

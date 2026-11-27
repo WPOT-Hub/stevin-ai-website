@@ -10734,6 +10734,9 @@ function ArticleFirstPartyDataBody() {
 
       <H2 num="06">Verder lezen</H2>
 
+      <p>
+        Klopt de meting niet, dan heb je aan eigen gegevens weinig. Lees daarom ook <a href="/blog/google-ads-conversies-meten">Google Ads-conversies meten: vier fouten die je cijfers waardeloos maken</a>. Hoe wij advertenties, analytics en CRM voor klanten naast elkaar leggen, staat op de pagina <a href="/marketing-intelligence">marketing intelligence</a>.
+      </p>
 
       <Takeaways
         label="DE KERN"
@@ -10940,6 +10943,9 @@ function ArticleCrmKoppelenBody() {
 
       <H2 num="06">Verder lezen</H2>
 
+      <p>
+        Het begint bij het formulier zelf: lees <a href="/blog/leadformulier-dat-echte-aanvragen-oplevert">een leadformulier dat echte aanvragen oplevert</a>. Wil je de opvolging daarna niet zelf bouwen, kijk dan bij <a href="/leadopvolging">leadopvolging</a>.
+      </p>
 
       <Takeaways
         label="DE KERN"
@@ -11024,6 +11030,9 @@ function ArticleConversiesMetenBody() {
 
       <H2 num="06">Verder lezen</H2>
 
+      <p>
+        Bij Sterker Witgoed telde Google Ads in een week een kwart minder aankopen dan de winkel. Wat we daarmee deden, lees je in de <a href="/case-studies/sterker-witgoed">klantcase van Sterker Witgoed</a>. Wil je de meting en het beheer uit handen geven, kijk dan bij <a href="/google-ads-uitbesteden">Google Ads uitbesteden</a>.
+      </p>
 
       <Takeaways
         label="DE KERN"
@@ -11108,6 +11117,9 @@ function ArticleLeadformulierBody() {
 
       <H2 num="06">Verder lezen</H2>
 
+      <p>
+        Wat er na het verzenden moet gebeuren, staat in <a href="/blog/crm-koppelen-aan-je-website">je website koppelen aan je CRM</a>. Bij Hans Schepers zaten twee echte aanvragen tussen 605 spaminzendingen. Dat lees je in de <a href="/case-studies/hans-schepers">klantcase van Hans Schepers Stoffering</a>. Hoe wij aanvragen opvolgen, staat op de pagina <a href="/leadopvolging">leadopvolging</a>.
+      </p>
 
       <Takeaways
         label="DE KERN"
@@ -11200,6 +11212,9 @@ function ArticleFeedManagementBody() {
 
       <H2 num="06">Verder lezen</H2>
 
+      <p>
+        Verkoop je via Shopping, lees dan ook <a href="/blog/google-shopping-verwijderd-uit-europa">Google haalt gratis productvermeldingen weg in Europa</a>. Bij Sterker Witgoed stonden refurbished apparaten na een overstap als nieuw in Google. Hoe we dat vonden, lees je in de <a href="/case-studies/sterker-witgoed">klantcase van Sterker Witgoed</a>. Shopping hoort bij hetzelfde werk als zoekadvertenties. Dat staat op de pagina <a href="/google-ads-uitbesteden">Google Ads uitbesteden</a>.
+      </p>
 
       <Takeaways
         label="DE KERN"

@@ -1,4 +1,4 @@
-import { DonkerBlok, Kennismaken, Kosten, PaginaKop, Punten, Vragen, h2Stijl, tekst } from './RethinkBlokken'
+import { DonkerBlok, Kennismaken, Kosten, LeesVerder, PaginaKop, Punten, Vragen, h2Stijl, tekst } from './RethinkBlokken'
 
 // De nieuwe /google-ads-uitbesteden (W-535), in de stijl van de homepage.
 // Zoekterm "ads uitbesteden" (docs/zoekintentie/stevin.ai.md in Stevin-Hub):
@@ -119,6 +119,14 @@ export default function RethinkGoogleAds() {
       <Kosten kop="Google Ads en SEA uitbesteden: de kosten." kanaal="Google Ads" />
 
       <Vragen kop="Wat ondernemers ons vragen" vragen={VRAGEN} />
+
+      <LeesVerder
+        items={[
+          { label: 'Klantcase: Hans Schepers Stoffering', href: '/case-studies/hans-schepers', d: 'Bijna drie keer zoveel aanvragen, voor het werk dat hij het liefst doet.' },
+          { label: 'Klantcase: Sterker Witgoed', href: '/case-studies/sterker-witgoed', d: '667 handelingen in acht weken, elk met bewijs vastgelegd.' },
+          { label: 'Google Ads-conversies meten', href: '/blog/google-ads-conversies-meten', d: 'Vier fouten die je cijfers waardeloos maken, en hoe je ze nakijkt.' },
+        ]}
+      />
 
       <Kennismaken />
     </main>

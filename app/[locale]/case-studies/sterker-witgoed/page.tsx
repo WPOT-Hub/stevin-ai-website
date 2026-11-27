@@ -64,6 +64,11 @@ const CASE: Case = {
     { getal: '11', uitleg: 'incidenten rond de nieuwe site gevonden en vastgelegd met bewijs' },
     { getal: '1 van 128', uitleg: 'Shopping-klikken ging na het herstel nog naar een apparaat dat als nieuw stond' },
   ],
+  dienst: {
+    tekst: 'Het logboek waarin elke wijziging met datum en reden staat, hoort bij ons werk voor elke klant.',
+    label: 'Lees over Google Ads uitbesteden',
+    href: '/google-ads-uitbesteden',
+  },
   bron: 'Bron: logboek, Google Ads en de webwinkel van Sterker Witgoed, 30 september tot en met 23 november 2026. Een groeicijfer volgt als de nieuwe opzet vier weken draait.',
 }
 

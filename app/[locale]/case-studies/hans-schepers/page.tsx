@@ -72,6 +72,11 @@ const CASE: Case = {
     label: 'Lees over de gokpagina’s',
     href: '/case-studies/hans-gokpagina',
   },
+  dienst: {
+    tekst: 'Zo werken wij voor elke klant met Google Ads: eerst goed zetten, dan pas beheren.',
+    label: 'Lees over Google Ads uitbesteden',
+    href: '/google-ads-uitbesteden',
+  },
   bron: 'Bron: Google Ads van Hans Schepers Stoffering, gelezen op 27 november 2026. We tellen aanvragen via het formulier, kliks op het telefoonnummer en het mailadres op de site, en gestarte chats. Van 1 juli tot en met 20 oktober waren dat er 26 in 112 dagen (23 formulieren, 2 telefoon, 1 mail). Van 21 oktober tot en met 25 november 23 in 36 dagen (16 formulieren, 3 telefoon, 3 mail, 1 chat). Per maand is dat 2,75 keer zoveel. In de tweede periode ging het dagbudget omhoog, is de meting hersteld en kwam de chat erbij, dus een deel van de stijging komt daarvan. Een klik op het telefoonnummer of mailadres is nog geen gesprek. Hoeveel opdrachten de aanvragen opleverden is nog niet nagekeken.',
 }
 
