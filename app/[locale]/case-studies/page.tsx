@@ -41,10 +41,10 @@ export default async function CaseStudiesPage({ params }: Props) {
     {
       slug: 'hans-schepers',
       industry: 'Stoffering',
-      title: 'Hoe Hans +116% meer formulieraanvragen per maand kreeg.',
-      subtitle: 'De meting opnieuw opgebouwd en de advertenties gericht op herstofferen en reparatie.',
-      metric: '+116%',
-      metricLabel: 'formulieraanvragen per maand',
+      title: 'Bijna drie keer zoveel aanvragen voor Hans.',
+      subtitle: 'Advertenties gericht op herstofferen en reparatie, het werk dat hij het liefst doet.',
+      metric: 'Bijna 3x',
+      metricLabel: 'zoveel aanvragen per maand',
     },
     {
       slug: 'ecomy-energie',
