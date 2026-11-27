@@ -10,20 +10,21 @@ import { Tellers } from '@/components/rethink/CaseVisuals'
 // Het gokpagina- en opruimverhaal staat in een aparte, verstopte case
 // (/case-studies/hans-gokpagina, noindex) waar onderaan naar verwezen wordt.
 // Citaat: Hans' eigen zin van de PS5-pagina, door Koen goedgekeurd (26 nov).
-// Cijfer: Google Ads API (account Hans, actie 'offerte aanvraag indienen'), gelezen
-// 26 nov 2026. 1 jul t/m 20 okt: 23 formulieren in 112 dagen. 21 okt t/m 25 nov:
-// 16 in 36 dagen. (16/36)/(23/112) = 2,16, dus +116%. Voor 1 juli bestond er geen
-// formuliermeting. Budget ging in de tweede periode omhoog (13,30 naar 20 euro per
-// dag, logboek 27 okt) en de meting van het formulier is op 21 okt hersteld (https-fix);
-// dat staat in de voetnoot. Geen bedragen.
+// Cijfer (27 nov 2026, Koen: "bijna drie keer"): Google Ads API, account Hans, gelezen
+// 27 nov 2026 10:18, per conversieactie. 1 jul t/m 20 okt (112 dagen): formulier 23,
+// Telefoonklik 2, Mail klik 1, samen 26. 21 okt t/m 25 nov (36 dagen): formulier 16,
+// Telefoonklik 3, Mail klik 3, chat 1, samen 23. (23/36)/(26/112) = 2,75. GA4 Telefoon en
+// GA4 Email zijn dezelfde klik en tellen niet dubbel mee. Kanttekeningen staan in de
+// voetnoot: dagbudget omhoog (13,30 naar 20 euro, logboek 27 okt), meting hersteld rond
+// 21 okt, chat bestond eerder niet, telefoon en mail zijn kliks. Geen bedragen.
 type Props = { params: Promise<{ locale: string }> }
 
 const CASE: Case = {
   eyebrow: 'Klantcase: Hans Schepers Stoffering',
-  kop: 'Hoe Hans +116% meer formulieraanvragen per maand kreeg.',
-  accent: 'Eerst belde er bijna niemand.',
+  kop: 'Bijna drie keer zoveel aanvragen voor Hans.',
+  accent: 'Voor het werk dat hij het liefst doet.',
   knop: 'case_hans_kop',
-  lede: 'Hans Schepers herstoffeert meubels in Oirschot. Zijn advertenties stuurden op alles wat hij doet, en de meting telde alleen het formulier. Nu sturen we op herstofferen en reparatie, en tellen formulier, telefoon en mail elk mee.',
+  lede: 'Hans Schepers herstoffeert meubels in Oirschot. Zijn advertentiebudget ging naar alle klussen tegelijk, en echte aanvragen belandden in de spam. Wij richtten zijn advertenties op herstofferen en reparatie. Nu komen er bijna drie keer zoveel aanvragen binnen als daarvoor.',
   beeld: (
     <figure className="m-0 rounded-2xl border border-border bg-[#F3F6FA] p-8 sm:p-12">
       <blockquote className="m-0 font-display font-extrabold text-primary" style={{ fontSize: 'clamp(26px, 3.4vw, 40px)', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
@@ -59,7 +60,7 @@ const CASE: Case = {
   uitkomstBeeld: (
     <Tellers
       items={[
-        { getal: '+116%', label: 'formulieraanvragen per maand, tegenover de periode ervoor' },
+        { getal: 'Bijna 3x', label: 'zoveel aanvragen per maand als in de periode ervoor' },
         { getal: '2', label: 'echte aanvragen teruggehaald uit 605 spaminzendingen' },
         { getal: '3 kanalen', label: 'formulier, telefoon en mail tellen weer mee' },
       ]}
@@ -71,7 +72,7 @@ const CASE: Case = {
     label: 'Lees over de gokpagina’s',
     href: '/case-studies/hans-gokpagina',
   },
-  bron: 'Bron: Google Ads van Hans Schepers Stoffering, conversieactie offerte aanvraag indienen, gelezen op 26 november 2026. We vergelijken alleen formulieraanvragen, want die zijn in beide periodes op dezelfde manier gemeten: 23 in de 112 dagen van 1 juli tot en met 20 oktober, 16 in de 36 dagen van 21 oktober tot en met 25 november. Voor 1 juli bestond die meting niet. In de tweede periode ging het dagbudget omhoog en is de meting van het formulier op 21 oktober hersteld, dus een deel van de stijging komt daarvan. Hoeveel opdrachten de aanvragen opleverden is nog niet nagekeken.',
+  bron: 'Bron: Google Ads van Hans Schepers Stoffering, gelezen op 27 november 2026. We tellen aanvragen via het formulier, kliks op het telefoonnummer en het mailadres op de site, en gestarte chats. Van 1 juli tot en met 20 oktober waren dat er 26 in 112 dagen (23 formulieren, 2 telefoon, 1 mail). Van 21 oktober tot en met 25 november 23 in 36 dagen (16 formulieren, 3 telefoon, 3 mail, 1 chat). Per maand is dat 2,75 keer zoveel. In de tweede periode ging het dagbudget omhoog, is de meting hersteld en kwam de chat erbij, dus een deel van de stijging komt daarvan. Een klik op het telefoonnummer of mailadres is nog geen gesprek. Hoeveel opdrachten de aanvragen opleverden is nog niet nagekeken.',
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -81,7 +82,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       path: '/case-studies/hans-schepers',
       locale,
       title: 'Klantcase Hans Schepers Stoffering',
-      description: 'Eerst belde er bijna niemand. Nu 116% meer formulieraanvragen per maand voor een stoffeerder in Oirschot.',
+      description: 'Bijna drie keer zoveel aanvragen per maand voor een stoffeerder in Oirschot. Zo pakten we het aan.',
       translated: false,
     }),
     robots: { index: true, follow: true },

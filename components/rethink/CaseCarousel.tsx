@@ -57,10 +57,10 @@ const ALLE_KAARTEN: Kaart[] = [
     slug: 'hans-schepers',
     openbaar: true,
     klant: 'Hans Schepers Stoffering',
-    kop: 'Hoe Hans +116% meer formulieraanvragen per maand kreeg.',
-    tekst: 'Hans herstoffeert meubels in Oirschot. We bouwden de meting opnieuw op en stuurden de advertenties op herstofferen en reparatie.',
-    // Google Ads API, gelezen 26 nov 2026, alleen formulieren: 23 in 112 dagen (1 jul t/m 20 okt)
-    // tegen 16 in 36 dagen (21 okt t/m 25 nov) is +116%. Voetnoot met budget en meting staat op de casepagina.
+    kop: 'Bijna drie keer zoveel aanvragen voor Hans.',
+    tekst: 'Hans herstoffeert meubels in Oirschot. Wij richtten zijn advertenties op herstofferen en reparatie, het werk dat hij het liefst doet.',
+    // Google Ads API, gelezen 27 nov 2026: formulier, telefoonklik, mailklik en chat samen 26 in 112 dagen
+    // (1 jul t/m 20 okt) tegen 23 in 36 dagen (21 okt t/m 25 nov) is 2,75 keer. Voetnoot staat op de casepagina.
     // Citaat: Hans' eigen zin van de PS5-pagina (Koen, 26 nov).
     beeld: (
       <div className={`${FOTO} flex flex-col justify-center gap-6 p-8 text-white`}>
@@ -71,7 +71,7 @@ const ALLE_KAARTEN: Kaart[] = [
       </div>
     ),
     cijfers: [
-      { getal: '+116%', label: 'formulieraanvragen per maand' },
+      { getal: 'Bijna 3x', label: 'zoveel aanvragen per maand' },
       { getal: '2', label: 'echte aanvragen teruggehaald uit de spam' },
       { getal: '3 kanalen', label: 'formulier, telefoon en mail tellen mee' },
     ],
