@@ -24,7 +24,7 @@ const CASE: Case = {
   kop: 'Bijna drie keer zoveel aanvragen voor Hans.',
   accent: 'Voor het werk dat hij het liefst doet.',
   knop: 'case_hans_kop',
-  lede: 'Hans Schepers herstoffeert meubels in Oirschot. Zijn advertentiebudget ging naar alle klussen tegelijk, en echte aanvragen belandden in de spam. Wij richtten zijn advertenties op herstofferen en reparatie. Nu komen er bijna drie keer zoveel aanvragen binnen als daarvoor.',
+  lede: 'Hans Schepers herstoffeert meubels in Oirschot. Zijn advertentiebudget ging naar alle klussen tegelijk, en echte aanvragen belandden in de spam. Wij richtten zijn advertenties op herstofferen en reparatie. Nu komen er bijna drie keer zoveel aanvragen binnen als daarvoor, en een aanvraag kost hem nog maar de helft.',
   beeld: (
     <figure className="m-0 rounded-2xl border border-border bg-[#F3F6FA] p-8 sm:p-12">
       <blockquote className="m-0 font-display font-extrabold text-primary" style={{ fontSize: 'clamp(26px, 3.4vw, 40px)', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
@@ -61,7 +61,7 @@ const CASE: Case = {
     <Tellers
       items={[
         { getal: 'Bijna 3x', label: 'zoveel aanvragen per maand als in de periode ervoor' },
-        { getal: '2', label: 'echte aanvragen teruggehaald uit 605 spaminzendingen' },
+        { getal: 'De helft', label: 'van de advertentiekosten per aanvraag' },
         { getal: '3 kanalen', label: 'formulier, telefoon en mail tellen weer mee' },
       ]}
     />
@@ -72,7 +72,7 @@ const CASE: Case = {
     label: 'Lees over de gokpagina’s',
     href: '/case-studies/hans-gokpagina',
   },
-  bron: 'Bron: Google Ads van Hans Schepers Stoffering. Aanvragen per maand sinds 21 oktober 2026, vergeleken met de maanden ervoor. In die tijd ging ook het advertentiebudget omhoog.',
+  bron: 'Bron: Google Ads van Hans Schepers Stoffering. Aanvragen en kosten per aanvraag sinds 21 oktober 2026, vergeleken met de maanden ervoor.',
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
