@@ -62,7 +62,7 @@ const CASE: Case = {
       items={[
         { getal: 'Bijna 3x', label: 'zoveel aanvragen per maand als in de periode ervoor' },
         { getal: 'De helft', label: 'van de advertentiekosten per aanvraag' },
-        { getal: '3 kanalen', label: 'formulier, telefoon en mail tellen weer mee' },
+        { getal: '7 op de 10', label: 'keer in beeld als iemand zoekt, dat was 4 op de 10' },
       ]}
     />
   ),
