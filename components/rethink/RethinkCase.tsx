@@ -32,10 +32,35 @@ export type Case = {
   dienst?: { tekst: string; label: string; href: string }
 }
 
-export default function RethinkCase({ c }: { c: Case }) {
+/**
+ * advertentie: de versie waar een advertentie op landt (/lp/case/..., W-912).
+ * De zin uit het advertentiebeeld staat boven de kop, met een zin die de stap
+ * naar de case maakt, en de links naar andere pagina's onderaan vallen weg
+ * (zelfde regel als /lp/marketingbureau-breda, W-860).
+ */
+export default function RethinkCase({ c, advertentie }: { c: Case; advertentie?: { zin: string; brug: string } }) {
   return (
     <main className="bg-white">
-      <PaginaKop eyebrow={c.eyebrow} kop={c.kop} accent={c.accent} knop={c.knop} lede={<p className="m-0">{c.lede}</p>} />
+      <PaginaKop
+        eyebrow={c.eyebrow}
+        kop={c.kop}
+        accent={c.accent}
+        knop={c.knop}
+        lede={<p className="m-0">{c.lede}</p>}
+        boven={
+          advertentie ? (
+            <div className="mb-12 max-w-[760px] border-l-4 border-accent pl-5 sm:pl-6">
+              <p
+                className="m-0 text-balance font-display font-extrabold text-primary"
+                style={{ fontSize: 'clamp(26px, 3vw, 40px)', letterSpacing: '-0.03em', lineHeight: '1.08' }}
+              >
+                {advertentie.zin}
+              </p>
+              <p className={`m-0 mt-3 ${tekst}`}>{advertentie.brug}</p>
+            </div>
+          ) : undefined
+        }
+      />
 
       {c.beeld ? <section className="px-6 pb-4"><div className="mx-auto max-w-[1152px]">{c.beeld}</div></section> : null}
 
@@ -74,7 +99,7 @@ export default function RethinkCase({ c }: { c: Case }) {
             ))}
           </dl>
           <p className={`m-0 mt-10 max-w-[680px] ${tekst}`}>{c.bron}</p>
-          {c.verwant ? (
+          {c.verwant && !advertentie ? (
             <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
               {c.verwant.tekst}{' '}
               <Link href={c.verwant.href} className="font-semibold text-accent underline underline-offset-4">
@@ -82,7 +107,7 @@ export default function RethinkCase({ c }: { c: Case }) {
               </Link>
             </p>
           ) : null}
-          {c.dienst ? (
+          {c.dienst && !advertentie ? (
             <p className={`m-0 mt-6 max-w-[680px] ${tekst}`}>
               {c.dienst.tekst}{' '}
               <Link href={c.dienst.href} className="font-semibold text-accent underline underline-offset-4">

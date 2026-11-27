@@ -44,12 +44,15 @@ export function PaginaKop({
   lede,
   knop,
   brein,
+  boven,
 }: {
   eyebrow: string
   kop: string
   accent?: string
   lede: ReactNode
   knop?: string
+  /** Blok boven het label, alleen in de gewone kop zonder brein (W-912). */
+  boven?: ReactNode
   /**
    * Het brein van de homepage als kop, met de bron van deze pagina al gekozen
    * (Koen, 12 okt 07:48: "verander je ook overal de nodes? pas ze wel aan per
@@ -85,6 +88,7 @@ export function PaginaKop({
   return (
     <section className="px-6 pb-16 pt-28 sm:pt-32">
       <div className="mx-auto max-w-[1152px]">
+        {boven}
         <p className="m-0 mb-5 font-display text-[12px] font-bold uppercase tracking-[0.12em] text-accent">{eyebrow}</p>
         <h1
           className="m-0 max-w-[20ch] text-balance font-display font-extrabold text-primary"
