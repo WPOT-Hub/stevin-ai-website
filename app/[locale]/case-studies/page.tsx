@@ -14,7 +14,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ...localizedMetadata({
       path: '/case-studies',
       locale,
-      title: `${t('h1')}, Stevin`,
+      // W-911: de titel was "Bewezen in de praktijk., Stevin | Stevin.AI".
+      title: locale === 'nl' ? 'Klantcases: wat we voor klanten deden' : `${t('h1')}, Stevin`,
       description: t('sub'),
     }),
     robots: { index: true, follow: true },

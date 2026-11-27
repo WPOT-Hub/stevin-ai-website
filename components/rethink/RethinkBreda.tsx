@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { TELEFOON } from '@/lib/telefoon'
-import { DonkerBlok, Kennismaken, PaginaKop, Punten, Vragen, h2Stijl, tekst } from './RethinkBlokken'
+import { DonkerBlok, Kennismaken, LeesVerder, PaginaKop, Punten, Vragen, h2Stijl, tekst } from './RethinkBlokken'
 
 // /marketingbureau-breda (W-860). Gemeten vraag (Keyword Planner, NL, 19 nov
 // 2026): online marketing bureau breda 210, marketingbureau breda 170, website
@@ -301,6 +301,14 @@ export default function RethinkBreda({ advertentie = false }: { advertentie?: bo
       </section>
 
       <Vragen kop="Wat ondernemers uit Breda ons vragen" vragen={VRAGEN} />
+
+      <LeesVerder
+        items={[
+          { label: 'Klantcase: Hans Schepers Stoffering', href: '/case-studies/hans-schepers', d: 'Bijna drie keer zoveel aanvragen, voor het werk dat hij het liefst doet.' },
+          { label: 'Klantcase: Sterker Witgoed', href: '/case-studies/sterker-witgoed', d: '667 handelingen in acht weken, elk met bewijs vastgelegd.' },
+          { label: 'Alle klantcases', href: '/case-studies', d: 'Wat we voor klanten deden, met de cijfers erbij.' },
+        ]}
+      />
 
       <Kennismaken
         kop="Geloof je ons niet? Prima."

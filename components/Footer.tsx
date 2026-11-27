@@ -67,6 +67,9 @@ export default function Footer() {
       { label: 'Leadopvolging', href: '/leadopvolging' },
       { label: 'Marketing intelligence', href: '/marketing-intelligence' },
       { label: 'Zo werkt Stevin', href: '/platform' },
+      // W-911: /case-studies was vanaf een pagina bereikbaar en stond bij
+      // Google op "gevonden, niet geindexeerd" (URL-inspectie 27 nov 2026).
+      { label: 'Klantcases', href: '/case-studies' },
       { label: 'Tarieven', href: '/tarieven' },
       { label: t('journal'), href: '/blog' },
       { label: t('bedrijf_integraties'), href: '/integraties' },

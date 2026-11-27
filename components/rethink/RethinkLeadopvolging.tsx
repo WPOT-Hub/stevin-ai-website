@@ -1,5 +1,5 @@
 import { Link } from '@/i18n/navigation'
-import { DonkerBlok, Kennismaken, PaginaKop, Punten, Vragen, h2Stijl, tekst } from './RethinkBlokken'
+import { DonkerBlok, Kennismaken, LeesVerder, PaginaKop, Punten, Vragen, h2Stijl, tekst } from './RethinkBlokken'
 
 // De nieuwe /leadopvolging (W-535), in de stijl van de homepage. Tekst uit
 // data/seo-landing-pages.ts (slug leadopvolging), ingekort. Titel,
@@ -114,6 +114,14 @@ export default function RethinkLeadopvolging({ kop, accent }: { kop: string; acc
       </section>
 
       <Vragen kop="Vragen over leadopvolging" vragen={VRAGEN} />
+
+      <LeesVerder
+        items={[
+          { label: 'Je website koppelen aan je CRM', href: '/blog/crm-koppelen-aan-je-website', d: 'Wat er echt moet gebeuren, en wat de meeste koppelingen overslaan.' },
+          { label: 'Een leadformulier dat echte aanvragen oplevert', href: '/blog/leadformulier-dat-echte-aanvragen-oplevert', d: 'Welke velden je schrapt en welke je toevoegt.' },
+          { label: 'Klantcase: Hans Schepers Stoffering', href: '/case-studies/hans-schepers', d: 'Formulier, telefoon en mail tellen weer mee.' },
+        ]}
+      />
 
       <Kennismaken />
     </main>
