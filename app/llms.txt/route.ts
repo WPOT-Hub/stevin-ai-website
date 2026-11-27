@@ -65,7 +65,8 @@ export async function GET() {
     '## Tarieven',
     // Zelfde bedragen en woorden als /tarieven (components/rethink/RethinkTarieven.tsx).
     // Nooit "vast bedrag": de prijs hangt af van het werk.
-    'Bij Stevin.AI betaal je vanaf 1.399 euro per maand als wij jouw bureau zijn, en vanaf 399 euro als je het zelf doet of jouw agents het werk laat doen. Wat je precies betaalt hangt af van het werk, niet van je advertentiebudget.',
+    // W-909: euroteken en de btw-regel erbij, in dezelfde woorden als /tarieven.
+    'Bij Stevin.AI betaal je vanaf €1.399 per maand als wij jouw bureau zijn, en vanaf €399 als je het zelf doet of jouw agents het werk laat doen. Alle bedragen zijn exclusief btw. Wat je precies betaalt hangt af van het werk, niet van je advertentiebudget.',
     '- [Tarieven](https://stevin.ai/tarieven): alle tarieven en wat erin zit.',
     '- [Tarieven, machineleesbaar](https://stevin.ai/pricing.md): de tarieven in markdown.',
     '',

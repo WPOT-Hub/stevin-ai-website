@@ -37,7 +37,7 @@ const ROUTE = [
 const VRAGEN = [
   {
     v: 'Wat kost leadopvolging uitbesteden?',
-    a: 'Als wij jouw bureau zijn, hoort leadopvolging bij het werk, vanaf 1.399 per maand. Doe je het zelf of laat je jouw agents het werk doen, dan is het vanaf 399 per maand. Wat je precies betaalt hangt af van het werk.',
+    a: 'Als wij jouw bureau zijn, hoort leadopvolging bij het werk, vanaf €1.399 per maand. Doe je het zelf of laat je jouw agents het werk doen, dan is het vanaf €399 per maand. Beide bedragen zijn exclusief btw. Wat je precies betaalt hangt af van het werk.',
   },
   {
     v: 'Hoe snel wordt een lead doorgestuurd?',

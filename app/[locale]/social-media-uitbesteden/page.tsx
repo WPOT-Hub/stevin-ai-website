@@ -148,11 +148,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: isNl
       ? // W-860 (19 nov 2026): korter en met de prijs erin. De vorige titel was met het achtervoegsel 73 tekens en
         // werd afgekapt; 546 vertoningen op plaats 7,1 leverden nul klikken op (Search Console, 20 okt tot 16 nov).
-        'Social media uitbesteden vanaf 1.399 per maand'
+        'Social media uitbesteden vanaf €1.399 per maand'
       : 'Outsource social media with numbers that mean something',
     description: isNl
       ? // W-535: was 'vanaf 399'. Uitbesteden is vanaf 1.399 (wij worden jouw bureau); 399 is zelf doen.
-        'Facebook, Instagram, LinkedIn en TikTok uitbesteden. Vaste prijs vanaf 1.399 per maand, geen opslag op je budget, accounts op jouw naam. Gemeten tot omzet.'
+        // W-909: euroteken en excl. btw erbij. "Vaste prijs" is eruit om binnen 155 tekens te blijven
+        // (met die woorden erbij 167, en dan kapt metaOmschrijving de laatste zin af); nu 154.
+        'Facebook, Instagram, LinkedIn en TikTok uitbesteden vanaf €1.399 per maand, excl. btw. Geen opslag op je budget, accounts op jouw naam. Gemeten tot omzet.'
       : 'Outsource social media and Meta Ads from 399 per month. First a diagnosis on your own data, accounts in your own name, measured on enquiries instead of reach.',
   })
 }

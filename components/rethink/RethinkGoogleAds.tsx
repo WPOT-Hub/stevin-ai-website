@@ -46,7 +46,7 @@ const STAPPEN = [
 const VRAGEN = [
   {
     v: 'Wat kost het om Google Ads uit te besteden?',
-    a: 'Vanaf 1.399 per maand bij jaarbetaling. Daarbovenop komt je advertentiebudget, dat je rechtstreeks aan Google betaalt vanaf je eigen account. Wij rekenen er geen marge op. Wat je precies betaalt hangt af van het werk, niet van je budget.',
+    a: 'Vanaf €1.399 per maand, excl. btw, bij jaarbetaling. Daarbovenop komt je advertentiebudget, dat je rechtstreeks aan Google betaalt vanaf je eigen account. Wij rekenen er geen marge op. Wat je precies betaalt hangt af van het werk, niet van je budget.',
   },
   {
     v: 'Blijft mijn Google Ads-account van mij?',
