@@ -187,6 +187,8 @@ export function Vragen({ kop, vragen, schema: metSchema = true }: { kop: string;
  * gelinkte pagina staat.
  */
 export function LeesVerder({ items }: { items: { label: string; href: string; d: string }[] }) {
+  // Zonder links geen losse kop met een lege lijst.
+  if (items.length === 0) return null
   return (
     <section className="px-6" style={{ paddingBottom: 96 }}>
       <div className="mx-auto max-w-[1152px] border-t border-border pt-12">
