@@ -4,6 +4,7 @@ import { routing } from './i18n/routing'
 import { getCampaignDomain } from './content/campaign-landings/domains'
 import gone from './data/gone-urls.json'
 import { PS5_CODE, PS5_COOKIE, PS5_OPEN, ps5CookieWaarde } from './lib/ps5Toegang'
+import { FLES_COOKIE, flesCookieVoorCode } from './lib/flesToegang'
 
 const intlMiddleware = createMiddleware(routing)
 
@@ -290,6 +291,41 @@ function weg(pad: string): NextResponse {
   })
 }
 
+/**
+ * De code van de relatiefles (W-918, 28 nov 2026). De QR-code op de fles wijst
+ * naar stevin.ai/f/<code>; een geldige code zet een cookie en stuurt door naar
+ * /fles. Wie de code met de hand intikt op het codescherm komt binnen via
+ * /fles?code=<code>. De pagina zelf kijkt of de cookie klopt (zie
+ * app/[locale]/fles/page.tsx), dus hier hoeft niets herschreven te worden.
+ *
+ * Een foute code gaat ook naar /fles: daar staat het codescherm, geen
+ * foutpagina.
+ */
+const FLES_PAD = /^\/(?:nl\/)?fles\/?$/
+const FLES_KORT = /^\/f\/([^/]{1,40})\/?$/
+
+async function flesPoort(request: NextRequest): Promise<NextResponse | null> {
+  const pad = request.nextUrl.pathname
+  const kort = FLES_KORT.exec(pad)
+  if (!kort && !FLES_PAD.test(pad)) return null
+  const ingevoerd = kort ? kort[1] : request.nextUrl.searchParams.get('code')
+  if (ingevoerd === null) return null
+
+  const terug = request.nextUrl.clone()
+  terug.pathname = '/fles'
+  terug.search = ''
+  const cookie = await flesCookieVoorCode(ingevoerd)
+  if (!cookie) terug.searchParams.set('fout', '1')
+  const r = NextResponse.redirect(terug)
+  if (cookie) {
+    // Een jaar: de fles gaat langer mee dan twee weken.
+    r.cookies.set(FLES_COOKIE, cookie, { httpOnly: true, sameSite: 'lax', secure: true, path: '/', maxAge: 60 * 60 * 24 * 365 })
+  }
+  r.headers.set('cache-control', 'private, no-store')
+  r.headers.set('X-Robots-Tag', 'noindex, nofollow')
+  return r
+}
+
 export default async function middleware(request: NextRequest, event: NextFetchEvent) {
   // Eerst de korte links van gedrukte QR-codes: die moeten altijd voorgaan.
   const kort = korteLink(request)
@@ -300,6 +336,9 @@ export default async function middleware(request: NextRequest, event: NextFetchE
 
   const ps5 = await ps5Poort(request)
   if (ps5) return ps5
+
+  const fles = await flesPoort(request)
+  if (fles) return fles
 
   // AI-bot crawl logging zonder de bezoeker te laten wachten. De runtime kapt
   // een losse fetch af zodra het antwoord weg is, en dan komt de rij nooit
@@ -351,6 +390,7 @@ export default async function middleware(request: NextRequest, event: NextFetchE
 
   const response = intlMiddleware(request)
   const ps5Pagina = PS5_PAD.test(request.nextUrl.pathname)
+  const flesPagina = FLES_PAD.test(request.nextUrl.pathname)
 
   // Edge-caching aanzetten voor de pagina's. De next-intl middleware rewrite
   // elke route naar /[locale]/..., en Vercel zet rewrite-responses standaard op
@@ -358,9 +398,10 @@ export default async function middleware(request: NextRequest, event: NextFetchE
   // is statische marketing-content (geen auth, geen personalisatie), dus een
   // deploy bust de cache vanzelf. Alleen op GET-rewrites, niet op redirects
   // (een Location-header), zodat taal-redirects niet vast komen te zitten.
-  if (ps5Pagina) {
-    // De echte actiepagina (met cookie) nooit in een gedeelde cache laten belanden.
+  if (ps5Pagina || flesPagina) {
+    // De echte pagina (met cookie) nooit in een gedeelde cache laten belanden.
     response.headers.set('cache-control', 'private, no-store')
+    if (flesPagina) response.headers.set('X-Robots-Tag', 'noindex, nofollow')
   } else if (request.method === 'GET' && !response.headers.has('location')) {
     response.headers.set(
       'cache-control',
