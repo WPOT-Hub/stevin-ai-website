@@ -121,15 +121,22 @@ type Props = {
   metLink?: boolean
   // true: toon de actie-invulling van een kaart (Koen, 23 nov: "moet eruit knallen").
   metUitlichting?: boolean
-  // slug van de kaart die voorop moet (actiepagina: Hans, Koen 23 nov 18:05).
-  eerst?: string
+  // slug van de kaart die voorop moet (actiepagina: Hans, Koen 23 nov 18:05), of
+  // meerdere slugs in volgorde (W-914: de advertentiepagina van Breda volgt de
+  // volgorde van de LinkedIn-carrousel). Een onbekende slug doet niets.
+  eerst?: string | string[]
 }
 
 export default function CaseCarousel({ alles = false, bron = 'case_carrousel', metOverzicht = true, metLink = true, metUitlichting = false, eerst }: Props = {}) {
   const KAARTEN = (alles ? ALLE_KAARTEN : ALLE_KAARTEN.filter((k) => k.openbaar)).map((k) =>
     metUitlichting && k.actie ? { ...k, ...k.actie } : k,
   )
-  if (eerst) KAARTEN.sort((a, b) => Number(b.slug === eerst) - Number(a.slug === eerst))
+  const voorop = eerst === undefined ? [] : Array.isArray(eerst) ? eerst : [eerst]
+  const rang = (slug: string) => {
+    const i = voorop.indexOf(slug)
+    return i === -1 ? voorop.length : i
+  }
+  if (voorop.length) KAARTEN.sort((a, b) => rang(a.slug) - rang(b.slug))
   const [actief, setActief] = useState(0)
   const n = KAARTEN.length
   const naar = (i: number) => setActief(Math.min(n - 1, Math.max(0, i)))
