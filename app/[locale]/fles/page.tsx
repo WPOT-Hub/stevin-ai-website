@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import { cookies } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import { Caveat } from 'next/font/google'
 import { Link } from '@/i18n/navigation'
 import FlesPlaylist from '@/components/FlesPlaylist'
+import { FLES_COOKIE, flesCookieGeldig } from '@/lib/flesToegang'
 import NodeWatermerk from '@/components/rethink/NodeWatermerk'
 import { DonkerBlok, Punten, h2Stijl, tekst } from '@/components/rethink/RethinkBlokken'
 
@@ -14,9 +16,12 @@ import { DonkerBlok, Punten, h2Stijl, tekst } from '@/components/rethink/Rethink
  * En kort verhaaltje hoe stevin is ontstaan, mijn dankwoord voor het
  * vertrouwen en de playlist erin imbedden met uitleg."
  *
- * Zelfde opzet als /koen: de bestemming van een code die wij zelf uitdelen,
- * dus noindex, niet in de sitemap en zonder codepoort (besluit 18 sep 2026:
- * wie de code heeft, hoort binnen te komen).
+ * De bestemming van een code die wij zelf uitdelen, dus noindex en niet in de
+ * sitemap, net als /koen. Anders dan /koen staat er wel een code op (Koen,
+ * 28 nov: "Zet online met een code die je enkel vanuit de QR code op kunt").
+ * De QR wijst naar /f/<code>; de middleware zet de cookie, en deze pagina kijkt
+ * zelf of die klopt. Daardoor wordt hij per verzoek gemaakt en bestaat er geen
+ * vooraf gebouwde versie die om de poort heen op te halen is.
  *
  * Het adres is in metaal gebrand en kan dus niet meer veranderen. De inhoud
  * wel: dat is de reden dat de code hierheen wijst en niet naar Spotify.
@@ -27,13 +32,21 @@ import { DonkerBlok, Punten, h2Stijl, tekst } from '@/components/rethink/Rethink
  * eigen lijst met verbeteringen in de Wisconstighe Ghedachtenissen, deel 5.
  */
 
-type Props = { params: Promise<{ locale: string }> }
+type Props = { params: Promise<{ locale: string }>; searchParams: Promise<{ fout?: string }> }
 
-export const metadata: Metadata = {
-  title: 'Spiegheling en daet',
-  description:
-    'Bij de fles die je van Stevin.AI kreeg: waarom je hem kreeg, wat erop staat, wie Simon Stevin was en de playlist die erbij hoort.',
-  robots: 'noindex, nofollow',
+async function heeftToegang(): Promise<boolean> {
+  return flesCookieGeldig((await cookies()).get(FLES_COOKIE)?.value)
+}
+
+// Zonder code zegt ook de titel niets over wat erachter staat.
+export async function generateMetadata(): Promise<Metadata> {
+  if (!(await heeftToegang())) return { title: { absolute: 'Stevin.AI' }, robots: 'noindex, nofollow' }
+  return {
+    title: 'Spiegheling en daet',
+    description:
+      'Bij de fles die je van Stevin.AI kreeg: waarom je hem kreeg, wat erop staat, wie Simon Stevin was en de playlist die erbij hoort.',
+    robots: 'noindex, nofollow',
+  }
 }
 
 // Alleen op deze pagina geladen, voor het handgeschreven dankwoord. next/font
@@ -78,10 +91,50 @@ function Kop({ children, licht = false }: { children: ReactNode; licht?: boolean
   )
 }
 
-export default async function FlesPage({ params }: Props) {
+/** Het codescherm, naar het voorbeeld van /ps5-actie-toegang. Bewust neutraal. */
+function CodeScherm({ fout }: { fout: boolean }) {
+  return (
+    <main className="-mt-[72px] flex min-h-screen items-center justify-center bg-primary px-5">
+      <form method="get" action="/fles" className="w-full max-w-[360px] text-center">
+        <h1 className="m-0 font-display text-[24px] font-extrabold leading-tight text-white">Alleen met de code</h1>
+        <p className="m-0 mt-2 text-[14px] leading-relaxed text-white/70">
+          Scan de code op je fles, of vul hem hier in.
+        </p>
+        <label htmlFor="fles-code" className="sr-only">
+          Code
+        </label>
+        <input
+          id="fles-code"
+          name="code"
+          type="text"
+          autoComplete="off"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
+          maxLength={16}
+          placeholder="Code"
+          className="mt-6 w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3.5 text-center text-[17px] tracking-[0.2em] text-white outline-none placeholder:tracking-normal placeholder:text-white/40 focus:border-accent"
+        />
+        {fout ? <p className="m-0 mt-3 text-[13px] text-[var(--color-pink)]">Die code klopt niet.</p> : null}
+        <button
+          type="submit"
+          className="mt-4 w-full cursor-pointer rounded-xl bg-accent px-5 py-3.5 font-display text-[16px] font-bold text-white transition-[filter] hover:brightness-110"
+        >
+          Verder
+        </button>
+      </form>
+    </main>
+  )
+}
+
+export default async function FlesPage({ params, searchParams }: Props) {
   const { locale } = await params
   if (locale !== 'nl') notFound()
   setRequestLocale(locale)
+  if (!(await heeftToegang())) {
+    const { fout } = await searchParams
+    return <CodeScherm fout={fout === '1'} />
+  }
 
   return (
     <main className="-mt-[72px] bg-white">
