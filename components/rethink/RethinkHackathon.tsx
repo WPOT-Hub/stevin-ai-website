@@ -73,7 +73,7 @@ const PARTIJEN = [
   },
   {
     t: 'AiOps Community',
-    d: 'Gratis Nederlandstalige community voor IT-professionals die met AI werken, met meetups en coworkingdagen door het hele land.',
+    d: 'Nederlandstalige community voor IT-professionals die met AI werken, met meetups en coworkingdagen door het hele land.',
   },
 ]
 
