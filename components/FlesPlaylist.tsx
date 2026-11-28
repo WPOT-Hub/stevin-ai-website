@@ -42,7 +42,7 @@ export default function FlesPlaylist() {
   return (
     <div className="mt-10 rounded-xl border border-border bg-white p-7 sm:p-9">
       <p className="m-0 font-display text-[20px] font-bold text-primary" style={{ letterSpacing: '-0.01em' }}>
-        31 nummers, ruim twee uur
+        Luister mee
       </p>
       <p className="m-0 mt-2 max-w-[560px] text-[16px] leading-[1.55] text-[#2A3A54]">
         De speler komt van Spotify zelf en laadt pas als je erop tikt.

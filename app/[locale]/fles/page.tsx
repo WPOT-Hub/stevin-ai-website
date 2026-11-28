@@ -204,7 +204,7 @@ export default async function FlesPage({ params, searchParams }: Props) {
             </p>
             <p className="m-0">
               Wat begon als een oplossing voor ons eigen bureau, is vanuit Breda uitgebouwd tot wat het nu is. Stevin.AI
-              kijkt elke dag mee op je marketing en onthoudt wat er gebeurde.
+              kijkt elke dag met je mee en onthoudt wat er gebeurde.
             </p>
           </div>
         </div>
