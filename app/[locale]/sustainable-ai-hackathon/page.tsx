@@ -8,7 +8,10 @@ import RethinkHackathon, { HACKATHON_FOTO } from '@/components/rethink/RethinkHa
 type Props = { params: Promise<{ locale: string }> }
 
 const PAD = '/sustainable-ai-hackathon'
-const TITEL = 'Koen Hoogenboom wint Sustainable AI Hackathon met 80.000 tokens'
+// Koen 28 nov: "Stevin.AI wint Sustainable AI Hackathon". De merknaam staat er
+// al in, dus absolute titel: anders plakt de layout er nog "| Stevin.AI" achter.
+// Zijn naam staat in de omschrijving, de alt-tekst en het bijschrift.
+const TITEL = 'Stevin.AI wint Sustainable AI Hackathon'
 const OMSCHRIJVING =
   'Koen Hoogenboom van Stevin.AI won met zijn team de Sustainable AI Hackathon in Utrecht: werkende software in drie en een half uur, met 80.000 tokens.'
 const FOTO_URL = `${SITE_URL}${HACKATHON_FOTO.src}`
@@ -21,6 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const beeld = { url: FOTO_URL, width: HACKATHON_FOTO.breed, height: HACKATHON_FOTO.hoog, alt: HACKATHON_FOTO.alt }
   return {
     ...meta,
+    title: { absolute: TITEL },
     openGraph: { ...meta.openGraph, images: [beeld] },
     twitter: { ...meta.twitter, images: [FOTO_URL] },
   }
