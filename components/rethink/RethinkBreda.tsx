@@ -77,7 +77,9 @@ const VOORBEELDEN = [
 
 // Namen en logo's: Hans Schepers en Sterker Witgoed staan al met toestemming
 // in de logostrook op de homepagina (W-416, W-567). KBS Laurentius: logo van
-// Koen, 19 nov. Alleen wat we doen, geen cijfers bij een naam.
+// Koen, 19 nov. In deze strook alleen wat we doen, geen cijfers bij een naam.
+// De cijfers bij een naam staan sinds W-914 in de kaartenstapel bovenaan de
+// advertentieversie (CaseCarousel, alleen kaarten met openbaar: true).
 const KLANTEN = [
   {
     src: '/logos/klanten/sterker-witgoed.webp',
@@ -155,9 +157,11 @@ export default function RethinkBreda({ advertentie = false }: { advertentie?: bo
       {/* W-914 (Koen, 28 nov 2026): de klantcases ook op de advertentiepagina. Wie op de
           LinkedIn-carrousel klikt, zag daar 667 handelingen en de case van Hans en moet
           die hier terugzien. Zelfde kaartstapel als op de homepagina, zonder doorklik en
-          zonder knop naar het overzicht (W-860: een actie per pagina). Sterker voorop,
-          omdat de carrousel met dat cijfer opent. */}
-      {advertentie && <CaseCarousel bron="breda_lp_case" metOverzicht={false} metLink={false} eerst="sterker-witgoed" />}
+          zonder knop naar het overzicht (W-860: een actie per pagina). Sterker en Hans
+          voorop, in de volgorde van de carrousel. */}
+      {advertentie && (
+        <CaseCarousel bron="breda_lp_case" metOverzicht={false} metLink={false} eerst={['sterker-witgoed', 'hans-schepers']} />
+      )}
 
       <section className="px-6 pt-20 sm:pt-24">
         <div className="mx-auto grid max-w-[1152px] items-start gap-8 sm:grid-cols-[160px_1fr] sm:gap-12">
@@ -210,7 +214,7 @@ export default function RethinkBreda({ advertentie = false }: { advertentie?: bo
         <Punten items={FLOW} donker kolommen={3} />
       </DonkerBlok>
 
-      <section className="px-6" style={{ paddingTop: 104 }}>
+      <section className="px-6" style={{ paddingTop: 104, paddingBottom: advertentie ? 104 : 0 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[22ch] font-display font-extrabold text-primary" style={h2Stijl}>
             AI is een verzamelnaam geworden. Dit is wat we echt doen.
@@ -230,13 +234,15 @@ export default function RethinkBreda({ advertentie = false }: { advertentie?: bo
         </div>
       </section>
 
+      {/* W-914: niet op de advertentieversie. Daar staan dezelfde twee klanten al met naam
+          en cijfers in de kaartenstapel bovenaan; anoniem erbij leest als twee andere klanten. */}
+      {!advertentie && (
       <section className="px-6" style={{ paddingTop: 104, paddingBottom: 104 }}>
         <div className="mx-auto max-w-[1152px]">
           <h2 className="m-0 max-w-[20ch] font-display font-extrabold text-primary" style={h2Stijl}>
             Twee voorbeelden uit ons werk.
           </h2>
           <Punten items={VOORBEELDEN} />
-          {!advertentie && (
           <p className={`m-0 mt-10 max-w-[680px] ${tekst}`}>
             Wil je alleen je advertenties uitbesteden? Dat kan ook. Lees verder over{' '}
             <Link href="/google-ads-uitbesteden" className="font-semibold text-accent underline-offset-4 hover:underline">
@@ -256,9 +262,9 @@ export default function RethinkBreda({ advertentie = false }: { advertentie?: bo
             </Link>
             .
           </p>
-          )}
         </div>
       </section>
+      )}
 
       <section className="px-6" style={{ paddingBottom: 104 }}>
         <div className="mx-auto grid max-w-[1152px] items-center gap-10 lg:grid-cols-2">
