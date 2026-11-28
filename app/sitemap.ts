@@ -51,6 +51,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/case-studies/ecomy-energie',
     // Sterker Witgoed: Faysal akkoord, Koen 26 nov 2026.
     '/case-studies/sterker-witgoed',
+    // W-916 (28 nov 2026): de gewonnen Sustainable AI Hackathon, op Koens vraag.
+    '/sustainable-ai-hackathon',
     // Vergelijkingen staan op noindex tot ze herschreven zijn (W-535, 12 okt).
   ]
 
