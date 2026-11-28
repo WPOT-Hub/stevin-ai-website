@@ -15,7 +15,8 @@ import { DonkerBlok, Kennismaken, Punten, h2Stijl, tekst } from './RethinkBlokke
 //   dus 80.000 tokens kost hooguit 0,35 dollar: "nog geen 40 dollarcent");
 // - 80.000 tokens en de winnaars: de LinkedIn-post van de AiOps Community en die
 //   van Remy Gankema;
-// - werkwijze en Koens rol: het bouwplan van het team ("Impact Compare").
+// - werkwijze: het bouwplan van het team ("Impact Compare"). Een zin over
+//   Koens eigen rol is er op 28 nov op zijn vraag weer uit gehaald.
 //   Bewust niet "voor de eerste prompt": het plan is pas om 16:59 afgedrukt;
 // - organisatoren en jury: hun eigen sites (yoink.nl, greenpt.com, orq.ai,
 //   aiopscommunity.ai) en sprekersprofielen.
@@ -140,9 +141,6 @@ export default function RethinkHackathon() {
           Hoe we het aanpakten
         </h2>
         <Punten items={AANPAK} donker />
-        <p className="m-0 mt-12 max-w-[680px] text-[18px] leading-[1.6] text-white">
-          Mijn rol: bewaken wat er wel en niet in kwam, het scherm beoordelen, met de hand testen, het tokenverbruik bijhouden en de demo geven.
-        </p>
       </DonkerBlok>
 
       <section className="px-6" style={{ paddingTop: 96, paddingBottom: 24 }}>
