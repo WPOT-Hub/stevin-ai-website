@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { TELEFOON } from '@/lib/telefoon'
 import { DonkerBlok, Kennismaken, LeesVerder, PaginaKop, Punten, Vragen, h2Stijl, tekst } from './RethinkBlokken'
+import CaseCarousel from './CaseCarousel'
 
 // /marketingbureau-breda (W-860). Gemeten vraag (Keyword Planner, NL, 19 nov
 // 2026): online marketing bureau breda 210, marketingbureau breda 170, website
@@ -150,6 +151,13 @@ export default function RethinkBreda({ advertentie = false }: { advertentie?: bo
           </p>
         }
       />
+
+      {/* W-914 (Koen, 28 nov 2026): de klantcases ook op de advertentiepagina. Wie op de
+          LinkedIn-carrousel klikt, zag daar 667 handelingen en de case van Hans en moet
+          die hier terugzien. Zelfde kaartstapel als op de homepagina, zonder doorklik en
+          zonder knop naar het overzicht (W-860: een actie per pagina). Sterker voorop,
+          omdat de carrousel met dat cijfer opent. */}
+      {advertentie && <CaseCarousel bron="breda_lp_case" metOverzicht={false} metLink={false} eerst="sterker-witgoed" />}
 
       <section className="px-6 pt-20 sm:pt-24">
         <div className="mx-auto grid max-w-[1152px] items-start gap-8 sm:grid-cols-[160px_1fr] sm:gap-12">
