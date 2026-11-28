@@ -135,7 +135,14 @@ export default async function FlesPage({ params }: Props) {
       <section className="border-t border-border px-6 py-24">
         <div className="mx-auto max-w-[1152px]">
           <Kop>Hoe Stevin.AI is ontstaan</Kop>
-          <div className={`mt-7 max-w-[680px] flex flex-col gap-5 ${tekst}`}>
+          <div className={`mt-7 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
+            {/* Koens eigen woorden, 28 nov 2026. De naam van het derde blad staat
+                hier zoals hij hem typte en is nog niet bevestigd: navragen voor
+                de pagina live gaat. */}
+            <p className="m-0">
+              Mijn vader gaf bladen uit: De Nieuwe Drogist, Marketing Results en Hones & More, waar ik later zelf
+              ook werkte. Het ondernemerschap heeft me altijd getrokken.
+            </p>
             <p className="m-0">
               Ik werk twintig jaar in online marketing. Het eerste idee voor Stevin.AI ontstond bij mijn eigen bureau
               in België. Ik zocht geen nieuw systeem, want alles was er al: de campagnecijfers, het CRM, de agenda, de
@@ -145,6 +152,25 @@ export default async function FlesPage({ params }: Props) {
             <p className="m-0">
               Wat begon als een oplossing voor ons eigen bureau, is vanuit Breda uitgebouwd tot wat het nu is. Stevin.AI
               kijkt elke dag mee op je marketing en onthoudt wat er gebeurde.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border px-6 py-24">
+        <div className="mx-auto max-w-[1152px]">
+          <Kop>Waarom ik je soms gek zeur</Kop>
+          <div className={`mt-7 flex max-w-[680px] flex-col gap-5 ${tekst}`}>
+            <p className="m-0">
+              Ik verwonder me oprecht over alle mooie bedrijven waar wij deel van mogen uitmaken. Samen groeien, daar
+              word ik blij van.
+            </p>
+            <p className="m-0">
+              Voor details is er vaak weinig tijd. Juist daar gaan wij lekker op. Soms zit het in een kleine, wat
+              ingewikkelde oplossing die ervoor zorgt dat het net iets beter loopt.
+            </p>
+            <p className="m-0">
+              En ja, soms zeur ik je gek over de kleinste dingen. Allemaal uit liefde, en altijd met je bedrijf voorop.
             </p>
           </div>
         </div>
