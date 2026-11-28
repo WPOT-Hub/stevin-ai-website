@@ -22,9 +22,13 @@ import { DonkerBlok, Kennismaken, Punten, h2Stijl, tekst } from './RethinkBlokke
 // Niet gebruikt: het aantal teams (nergens openbaar) en de cijfers op het
 // dashboard achter de foto (geen bron die zegt wat ze betekenen).
 
-// Zet hier het pad naar de foto zodra hij in public/ staat. Zonder foto
-// verschijnt er geen leeg vak.
-const FOTO: { src: string; breed: number; hoog: number } | null = null
+// Foto van de prijsuitreiking, van Koen (28 nov 2026), Koen in het midden.
+// Zet FOTO op null om hem weg te halen: dan verschijnt er geen leeg vak.
+const FOTO: { src: string; breed: number; hoog: number } | null = {
+  src: '/images/hackathon-utrecht.jpg',
+  breed: 1280,
+  hoog: 960,
+}
 
 const AANPAK = [
   {
