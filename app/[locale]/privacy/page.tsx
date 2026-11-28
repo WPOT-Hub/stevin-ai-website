@@ -28,7 +28,7 @@ export default async function PrivacyPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const isEn = locale === 'en'
-  const lastUpdated = isEn ? '20 November 2026' : '20 november 2026'
+  const lastUpdated = isEn ? '28 November 2026' : '28 november 2026'
 
   return (
     <main className="bg-surface text-primary">
@@ -201,8 +201,19 @@ function PrivacyDutch() {
           Kies je voor statistieken, dan gebruiken wij Google Analytics en Microsoft
           Clarity om paginabezoeken, interacties, scrollgedrag, klikken, heatmaps en
           sessie-opnames te analyseren. Kies je voor marketing, dan gebruiken wij Google
-          Ads en Meta voor campagne- en conversiemeting. Waar relevant sturen wij
+          Ads, Meta en LinkedIn voor campagne- en conversiemeting. Waar relevant sturen wij
           formuliergegevens alleen gehasht door voor enhanced conversion meting.
+        </p>
+        <p>
+          Voor LinkedIn gebruiken wij de LinkedIn Insight Tag. Die laden wij alleen als je
+          marketingcookies hebt gekozen. De tag stuurt LinkedIn de pagina die je bekijkt, de
+          pagina waar je vandaan kwam, je IP-adres, je browser en apparaat, en het tijdstip.
+          LinkedIn kort je IP-adres in of hasht het, haalt binnen zeven dagen weg waarmee je
+          direct te herkennen bent en wist de rest binnen 180 dagen. Wij krijgen van LinkedIn
+          alleen overzichten waarin je niet te herkennen bent. Wij sturen LinkedIn geen
+          e-mailadressen of andere gegevens uit formulieren. Ben je lid van LinkedIn, dan kun
+          je dit gebruik voor advertenties uitzetten in{' '}
+          <a href="https://www.linkedin.com/psettings/advertising/actions-that-showed-interest" className="underline" target="_blank" rel="noopener noreferrer">je instellingen bij LinkedIn</a>.
         </p>
         <p>
           Vul je een formulier in, plan je een kennismaking, laat je je gegevens achter in
@@ -235,7 +246,7 @@ function PrivacyDutch() {
           marketing of alles accepteren. Wij verkopen geen persoonsgegevens.
         </p>
         <p>
-          Dit zijn de cookies die stevin.ai plaatst, gemeten op 13 november 2026. Cookies voor statistieken komen er pas bij als je daarvoor kiest. Voor marketing plaatsen wij op dit moment geen extra cookies.
+          Dit zijn de cookies die stevin.ai plaatst, gemeten op 13 november 2026. Cookies voor statistieken komen er pas bij als je daarvoor kiest. Kies je voor marketing, dan komen daar de cookies van LinkedIn bij. Die staan hieronder zoals LinkedIn ze beschrijft in zijn{' '}<a href="https://www.linkedin.com/legal/l/cookie-table" className="underline" target="_blank" rel="noopener noreferrer">cookietabel</a> (bijgewerkt 26 augustus 2026). Wij meten ze zelf na zodra de tag draait.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
@@ -254,6 +265,13 @@ function PrivacyDutch() {
               <tr className="border-b border-border align-top"><td className="py-2 pr-4">MUID</td><td className="py-2 pr-4">clarity.ms en bing.com (Microsoft)</td><td className="py-2 pr-4">Statistieken</td><td className="py-2 pr-4">Herkent een browser bij Microsoft</td><td className="py-2 pr-4">13 maanden</td></tr>
               <tr className="border-b border-border align-top"><td className="py-2 pr-4">MR, SRM_B</td><td className="py-2 pr-4">bing.com (Microsoft)</td><td className="py-2 pr-4">Statistieken</td><td className="py-2 pr-4">Ververst en herkent de Microsoft-ID</td><td className="py-2 pr-4">7 dagen tot 13 maanden</td></tr>
               <tr className="border-b border-border align-top"><td className="py-2 pr-4">MR, SM, ANONCHK</td><td className="py-2 pr-4">clarity.ms (Microsoft)</td><td className="py-2 pr-4">Statistieken</td><td className="py-2 pr-4">Sessie en controle van de Microsoft-ID</td><td className="py-2 pr-4">10 minuten tot 7 dagen</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">li_fat_id, li_giant</td><td className="py-2 pr-4">stevin.ai (LinkedIn)</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Herkent een LinkedIn-lid of een groep leden voor het meten van onze advertenties op LinkedIn</td><td className="py-2 pr-4">7 tot 30 dagen</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">ar_debug</td><td className="py-2 pr-4">stevin.ai (LinkedIn)</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Helpt advertenties meten via de Attribution Reporting API van Chrome</td><td className="py-2 pr-4">Sessie</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">bcookie</td><td className="py-2 pr-4">linkedin.com</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Herkent je browser bij LinkedIn</td><td className="py-2 pr-4">1 jaar</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">lidc</td><td className="py-2 pr-4">linkedin.com</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Kiest het datacenter van LinkedIn</td><td className="py-2 pr-4">24 uur</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">lms_ads, lms_analytics</td><td className="py-2 pr-4">linkedin.com</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Herkent een LinkedIn-lid buiten LinkedIn voor advertenties en statistieken</td><td className="py-2 pr-4">30 dagen</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">UserMatchHistory, AnalyticsSyncHistory</td><td className="py-2 pr-4">linkedin.com</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Onthoudt wanneer LinkedIn je browser voor het laatst koppelde</td><td className="py-2 pr-4">30 dagen</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">li_sugr</td><td className="py-2 pr-4">linkedin.com</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Schat in of je browser bij een LinkedIn-lid hoort</td><td className="py-2 pr-4">90 dagen</td></tr>
             </tbody>
           </table>
         </div>
@@ -400,9 +418,19 @@ function PrivacyEnglish() {
         <p>
           If you choose statistics, we use Google Analytics and Microsoft Clarity to
           analyze page views, interactions, scroll behavior, clicks, heatmaps and session
-          recordings. If you choose marketing, we use Google Ads and Meta for campaign
+          recordings. If you choose marketing, we use Google Ads, Meta and LinkedIn for campaign
           and conversion measurement. Where relevant, form data is only sent in hashed
           form for enhanced conversion measurement.
+        </p>
+        <p>
+          For LinkedIn we use the LinkedIn Insight Tag. We only load it if you chose marketing
+          cookies. The tag sends LinkedIn the page you view, the page you came from, your IP
+          address, your browser and device, and the time. LinkedIn truncates or hashes your IP
+          address, removes what directly identifies you within seven days and deletes the rest
+          within 180 days. LinkedIn only gives us reports that do not identify you. We do not
+          send LinkedIn email addresses or any other form data. If you are a LinkedIn member,
+          you can turn off this use for advertising in{' '}
+          <a href="https://www.linkedin.com/psettings/advertising/actions-that-showed-interest" className="underline" target="_blank" rel="noopener noreferrer">your LinkedIn settings</a>.
         </p>
         <p>
           If you fill in a form, book an introduction, leave your details in the chat or the
@@ -433,7 +461,7 @@ function PrivacyEnglish() {
           the cookie settings. We do not sell personal data.
         </p>
         <p>
-          These are the cookies stevin.ai sets, measured on 13 November 2026. Statistics cookies are only added once you choose them. We currently set no extra cookies for marketing.
+          These are the cookies stevin.ai sets, measured on 13 November 2026. Statistics cookies are only added once you choose them. If you choose marketing, LinkedIn's cookies are added. They are listed below as LinkedIn describes them in its{' '}<a href="https://www.linkedin.com/legal/l/cookie-table" className="underline" target="_blank" rel="noopener noreferrer">cookie table</a> (updated 26 August 2026). We will measure them ourselves once the tag is running.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
@@ -452,6 +480,13 @@ function PrivacyEnglish() {
               <tr className="border-b border-border align-top"><td className="py-2 pr-4">MUID</td><td className="py-2 pr-4">clarity.ms and bing.com (Microsoft)</td><td className="py-2 pr-4">Statistics</td><td className="py-2 pr-4">Recognises a browser at Microsoft</td><td className="py-2 pr-4">13 months</td></tr>
               <tr className="border-b border-border align-top"><td className="py-2 pr-4">MR, SRM_B</td><td className="py-2 pr-4">bing.com (Microsoft)</td><td className="py-2 pr-4">Statistics</td><td className="py-2 pr-4">Refreshes and recognises the Microsoft ID</td><td className="py-2 pr-4">7 days to 13 months</td></tr>
               <tr className="border-b border-border align-top"><td className="py-2 pr-4">MR, SM, ANONCHK</td><td className="py-2 pr-4">clarity.ms (Microsoft)</td><td className="py-2 pr-4">Statistics</td><td className="py-2 pr-4">Session and check of the Microsoft ID</td><td className="py-2 pr-4">10 minutes to 7 days</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">li_fat_id, li_giant</td><td className="py-2 pr-4">stevin.ai (LinkedIn)</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Identifies a LinkedIn member or a group of members to measure our ads on LinkedIn</td><td className="py-2 pr-4">7 to 30 days</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">ar_debug</td><td className="py-2 pr-4">stevin.ai (LinkedIn)</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Helps measure ads through the Attribution Reporting API in Chrome</td><td className="py-2 pr-4">Session</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">bcookie</td><td className="py-2 pr-4">linkedin.com</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Identifies your browser at LinkedIn</td><td className="py-2 pr-4">1 year</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">lidc</td><td className="py-2 pr-4">linkedin.com</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Selects the LinkedIn data center</td><td className="py-2 pr-4">24 hours</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">lms_ads, lms_analytics</td><td className="py-2 pr-4">linkedin.com</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Identifies a LinkedIn member outside LinkedIn for advertising and analytics</td><td className="py-2 pr-4">30 days</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">UserMatchHistory, AnalyticsSyncHistory</td><td className="py-2 pr-4">linkedin.com</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Remembers when LinkedIn last matched your browser</td><td className="py-2 pr-4">30 days</td></tr>
+              <tr className="border-b border-border align-top"><td className="py-2 pr-4">li_sugr</td><td className="py-2 pr-4">linkedin.com</td><td className="py-2 pr-4">Marketing</td><td className="py-2 pr-4">Estimates whether your browser belongs to a LinkedIn member</td><td className="py-2 pr-4">90 days</td></tr>
             </tbody>
           </table>
         </div>

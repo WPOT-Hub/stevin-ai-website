@@ -195,7 +195,7 @@ export default function ConsentBanner() {
               <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-surface">
                 <div>
                   <p className="text-sm font-semibold text-primary">Marketing</p>
-                  <p className="text-xs text-muted mt-0.5">Campagne- en conversiemeting (Google Ads, Meta). Nodig om leadkwaliteit en campagne-effectiviteit te meten.</p>
+                  <p className="text-xs text-muted mt-0.5">Campagne- en conversiemeting (Google Ads, Meta, LinkedIn). Nodig om leadkwaliteit en campagne-effectiviteit te meten.</p>
                 </div>
                 <Toggle checked={marketingChecked} onChange={setMarketingChecked} />
               </div>
