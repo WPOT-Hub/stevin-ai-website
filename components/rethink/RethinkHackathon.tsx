@@ -76,7 +76,7 @@ export default function RethinkHackathon() {
             <h1 className="m-0 max-w-[20ch] text-balance font-display font-extrabold text-primary" style={{ ...h2Stijl, fontSize: 'clamp(34px, 4vw, 56px)' }}>
               Werkende software, gebouwd met 80.000 tokens.
             </h1>
-            <div className={`mt-6 max-w-[620px] space-y-5 ${tekst}`}>
+            <div className={`mt-6 max-w-[620px] flex flex-col gap-5 ${tekst}`}>
               <p className="m-0">
                 Op 25 augustus 2026 won ik met mijn team de Sustainable AI Hackathon in Utrecht. De opdracht: bouw in drie en een half uur
                 werkende software, met zo weinig mogelijk AI.
@@ -109,7 +109,7 @@ export default function RethinkHackathon() {
           <h2 className="m-0 font-display font-extrabold text-primary" style={h2Stijl}>
             De opdracht
           </h2>
-          <div className={`mt-6 max-w-[680px] space-y-5 ${tekst}`}>
+          <div className={`mt-6 max-w-[680px] flex flex-col gap-5 ${tekst}`}>
             <p className="m-0">
               Bouw een programma dat de milieu-impact van twee producten naast elkaar zet, bijvoorbeeld water in een glazen fles tegenover
               water in PET. Op drie punten: CO2, vervuiling van zoet water en waterverbruik. Het moest lokaal draaien, alles bewaren,
@@ -138,7 +138,7 @@ export default function RethinkHackathon() {
           <h2 className="m-0 font-display font-extrabold text-primary" style={h2Stijl}>
             Zo werken we ook voor jou
           </h2>
-          <div className={`mt-6 max-w-[680px] space-y-5 ${tekst}`}>
+          <div className={`mt-6 max-w-[680px] flex flex-col gap-5 ${tekst}`}>
             <p className="m-0">
               Minder AI is geen doel op zich. Het gaat erom dat je weet waar AI iets toevoegt en waar gewone code beter past.
             </p>
