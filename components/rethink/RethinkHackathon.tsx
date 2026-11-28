@@ -23,12 +23,20 @@ import { DonkerBlok, Kennismaken, Punten, h2Stijl, tekst } from './RethinkBlokke
 // dashboard achter de foto (geen bron die zegt wat ze betekenen).
 
 // Foto van de prijsuitreiking, van Koen (28 nov 2026), Koen in het midden.
+// Koen 28 nov: "zorg dat als iemand op Koen Hoogenboom googeld hij deze foto
+// tegen kan komen". Daarom (Google, Image SEO best practices): een bestandsnaam
+// met zijn naam, zijn naam in alt-tekst en bijschrift, een vaste URL zonder
+// queryparameters (unoptimized), en dezelfde URL in og:image, de JSON-LD van
+// de pagina en de afbeeldingen-sitemap. Pad en maten staan in een plek.
 // Zet FOTO op null om hem weg te halen: dan verschijnt er geen leeg vak.
-const FOTO: { src: string; breed: number; hoog: number } | null = {
-  src: '/images/hackathon-utrecht.jpg',
+export const HACKATHON_FOTO = {
+  src: '/images/koen-hoogenboom-sustainable-ai-hackathon-utrecht.jpg',
   breed: 1280,
   hoog: 960,
+  alt: 'Koen Hoogenboom (midden) met zijn teamgenoten na de prijsuitreiking van de Sustainable AI Hackathon in Utrecht',
+  bijschrift: 'Koen Hoogenboom (midden) met teamgenoten Jurre Machielsen en Remy Gankema, na de prijsuitreiking.',
 }
+const FOTO: typeof HACKATHON_FOTO | null = HACKATHON_FOTO
 
 const AANPAK = [
   {
@@ -95,14 +103,14 @@ export default function RethinkHackathon() {
             <figure className="m-0">
               <Image
                 src={FOTO.src}
-                alt="Koen Hoogenboom met zijn twee teamgenoten na de prijsuitreiking van de Sustainable AI Hackathon"
+                alt={FOTO.alt}
                 width={FOTO.breed}
                 height={FOTO.hoog}
-                sizes="(min-width: 1024px) 440px, 100vw"
                 className="block h-auto w-full rounded-[14px] border border-border"
+                unoptimized
                 priority
               />
-              <figcaption className="mt-3 text-[13px] text-muted">Met teamgenoten Jurre Machielsen en Remy Gankema, na de prijsuitreiking.</figcaption>
+              <figcaption className="mt-3 text-[13px] text-muted">{FOTO.bijschrift}</figcaption>
             </figure>
           ) : null}
         </div>

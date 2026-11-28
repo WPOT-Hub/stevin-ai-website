@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { articles } from '@/data/articles'
 import { isPublishableArticle } from './[locale]/blog/[slug]/page'
+import { HACKATHON_FOTO } from '@/components/rethink/RethinkHackathon'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://stevin.ai'
@@ -107,11 +108,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: altLangs(path) },
   }))
 
+  // W-916: afbeeldingen die Google via de sitemap moet kennen, per pagina.
+  // Koen wil dat de hackathonfoto opduikt als iemand zijn naam zoekt.
+  const beeldenPerPagina: Record<string, string[]> = {
+    '/sustainable-ai-hackathon': [`${baseUrl}${HACKATHON_FOTO.src}`],
+  }
+
   const nlOnlyEntries: MetadataRoute.Sitemap = nlOnlyPages.map((path) => ({
     url: `${baseUrl}${path}`,
     changeFrequency: 'monthly' as const,
     priority: priorityFor(path),
     alternates: { languages: nlAlleen(path) },
+    ...(beeldenPerPagina[path] ? { images: beeldenPerPagina[path] } : {}),
   }))
 
   // Standalone EN outreach-editorial (bewust GEEN journal-item: het Journal is
